@@ -1,4 +1,4 @@
-import { useApi, useEventManager, useUser, useNotifications } from 'react-components';
+import { useApi, useEventManager, useUser, useNotifications, usePreventLeave } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import { decryptMessage, encryptMessage } from 'pmcrypto';
 import { c } from 'ttag';
@@ -10,12 +10,13 @@ import {
     generateLookupHash,
     getStreamMessage,
 } from 'proton-shared/lib/keys/driveKeys';
-import { range } from 'proton-shared/lib/helpers/array';
+import { range, mergeUint8Arrays } from 'proton-shared/lib/helpers/array';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { serializeUint8Array } from 'proton-shared/lib/helpers/serialization';
+
 import {
     DriveFileRevisionResult,
     CreateFileResult,
@@ -38,8 +39,6 @@ import useDebouncedRequest from '../util/useDebouncedRequest';
 import { FILE_CHUNK_SIZE } from '../../constants';
 import useQueuedFunction from '../util/useQueuedFunction';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import { mergeUint8Arrays } from '../../utils/array';
-import usePreventLeave from '../util/usePreventLeave';
 import { isFile } from '../../utils/file';
 import { getMetaForTransfer } from '../../utils/transfer';
 

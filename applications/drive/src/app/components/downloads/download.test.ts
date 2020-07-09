@@ -1,6 +1,6 @@
+import { mergeUint8Arrays } from 'proton-shared/lib/helpers/array';
 import { ReadableStream } from 'web-streams-polyfill';
 import { streamToBuffer } from '../../utils/stream';
-import { mergeUint8Arrays } from '../../utils/array';
 import { TransferCancel } from '../../interfaces/transfer';
 import { initDownload } from './download';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useKeyPress } from 'react-components';
 import { c } from 'ttag';
 import Header from './Header';
 import ImagePreview from './ImagePreview';
@@ -7,7 +8,6 @@ import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import NavigationControl from './NavigationControl';
 import { LinkMeta } from '../../interfaces/link';
-import useKeyPress from '../../hooks/util/useKeyPress';
 import PDFPreview from './PDFPreview';
 import { isPreviewAvailable, isSupportedImage, isSupportedText, isPDF } from './helpers';
 
