@@ -79,7 +79,7 @@ const usePayment = ({ amount, currency, onPay }) => {
 
     useEffect(() => {
         if (isPayPalActive && amount) {
-            paypal.onToken().then(() => paypalCredit.onToken());
+            Promise.all([paypal.onToken(), paypalCredit.onToken()]);
         }
     }, [isPayPalActive, amount, currency]);
 
