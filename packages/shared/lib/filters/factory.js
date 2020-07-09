@@ -1,48 +1,7 @@
-import { c } from 'ttag';
-
-import { FILTER_VERSION } from '../constants';
-import { templates as sieveTemplates, computeFromTree, computeTree } from './sieve';
-import { omit } from '../helpers/object';
+import { templates as sieveTemplates, computeFromTree } from './sieve';
+import { FILTER_VERSION, TYPES, COMPARATORS, OPERATORS } from './constants';
 
 const find = (list = [], value) => list.find((item) => item.value === value);
-
-export const getI18n = () => ({
-    TYPES: [
-        { label: c('Filter modal type').t`Select ...`, value: 'select' },
-        { label: c('Filter modal type').t`If the subject`, value: 'subject' },
-        { label: c('Filter modal type').t`If the sender`, value: 'sender' },
-        { label: c('Filter modal type').t`If the recipient`, value: 'recipient' },
-        { label: c('Filter modal type').t`If the attachments`, value: 'attachments' }
-    ],
-    COMPARATORS: [
-        { label: c('Condition for custom filter').t`contains`, value: 'contains' },
-        { label: c('Condition for custom filter').t`is exactly`, value: 'is' },
-        { label: c('Condition for custom filter').t`begins with`, value: 'starts' },
-        { label: c('Condition for custom filter').t`ends with`, value: 'ends' },
-        { label: c('Condition for custom filter').t`matches`, value: 'matches' },
-        {
-            label: c('Condition for custom filter').t`does not contain`,
-            value: '!contains'
-        },
-        { label: c('Condition for custom filter').t`is not`, value: '!is' },
-        {
-            label: c('Condition for custom filter').t`does not begin with`,
-            value: '!starts'
-        },
-        {
-            label: c('Condition for custom filter').t`does not end with`,
-            value: '!ends'
-        },
-        {
-            label: c('Condition for custom filter').t`does not match`,
-            value: '!matches'
-        }
-    ],
-    OPERATORS: [
-        { label: c('Filter modal operators').t`All conditions must be fulfilled (AND)`, value: 'all' },
-        { label: c('Filter modal operators').t`One condition must be fulfilled (OR)`, value: 'any' }
-    ]
-});
 
 const prepareID = ({ ID = '' } = {}) => ID;
 const prepareName = ({ Name = '' } = {}) => Name;
@@ -50,12 +9,11 @@ const prepareStatus = ({ Status = 1 } = {}) => Status;
 const prepareVersion = ({ Version = FILTER_VERSION } = {}) => Version;
 const prepareOperator = ({ Simple = {} } = {}) => {
     const { value = 'all' } = Simple.Operator || {};
-    return find(getI18n().OPERATORS, value);
+    return find(OPERATORS, value);
 };
 
 function prepareConditions({ Simple = {} } = {}) {
     const { Conditions = [] } = Simple;
-    const { TYPES, COMPARATORS } = getI18n();
 
     const conditions = Conditions.map(({ Type = {}, Comparator = {}, Values = [], value = '' }) => ({
         value: value ? '' : value,
@@ -96,8 +54,6 @@ const prepareSieveTemplate = ({ Sieve } = {}, { Version }) => {
     return Sieve || sieveTemplates[Version] || '';
 };
 
-export const getComparator = (value) => find(getI18n().COMPARATORS, value);
-
 function main(model = {}, mode) {
     const config = {
         ID: prepareID(model),
@@ -127,23 +83,6 @@ function main(model = {}, mode) {
     return config;
 }
 
-export const newCondition = () => {
-    const {
-        COMPARATORS: [Comparator],
-        TYPES: [Type]
-    } = getI18n();
-
-    return {
-        Type,
-        Comparator,
-        Values: []
-    };
-};
-
-export function isComplex(filter) {
-    return !computeFromTree(filter);
-}
-
 export function newFilter(filter, mode = 'simple') {
     if (filter) {
         const simple = computeFromTree(filter);
@@ -155,35 +94,6 @@ export function newFilter(filter, mode = 'simple') {
     }
 
     return main(filter, mode);
-}
-
-export function format(filter, mode) {
-    if (mode === 'complex') {
-        return omit(filter, ['Tree', 'Simple']);
-    }
-
-    // Order is always [<move-dir>, ...<add-labels>]
-    const { FileInto = [], Labels = [] } = filter.Simple.Actions;
-
-    const newFilter = {
-        ...omit(filter, ['Sieve']),
-        Simple: {
-            ...filter.Simple,
-            Conditions: filter.Simple.Conditions.map((Condition) => ({
-                ...Condition,
-                Values: Condition.Values.filter((value) => value !== null)
-            })),
-            Actions: {
-                ...omit(filter.Simple.Actions, 'Labels'),
-                FileInto: FileInto.concat(Labels)
-            }
-        }
-    };
-
-    return {
-        ...newFilter,
-        Tree: computeTree(newFilter)
-    };
 }
 
 export default main;

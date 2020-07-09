@@ -49,7 +49,7 @@ export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
 export const UID_KEY = 'proton:oauth:UID';
 export const INTERVAL_EVENT_TIMER = 30 * 1000;
 export const MAX_SIZE_SCREENSHOT = 500 * 1000;
-export const FILTER_VERSION = 2;
+
 export enum EVENT_ACTIONS {
     DELETE = 0,
     CREATE = 1,

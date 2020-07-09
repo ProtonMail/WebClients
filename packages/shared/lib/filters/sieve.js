@@ -21,7 +21,7 @@ spamtest :value "ge" :comparator "i;ascii-numeric" "\${1}")
 
 /**
  * Computes the simple representation of a filter.
- * @param {{Tree: Object, Version: Number}} filter
+ * @param {{Tree?: Object, Version?: Number}} filter
  * @return {Boolean|{}} false if undefined, simple object else.
  */
 export const computeFromTree = (filter) => {
