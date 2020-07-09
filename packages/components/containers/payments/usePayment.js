@@ -76,6 +76,12 @@ const usePayment = ({ amount, currency, onPay }) => {
         }
     }, [method, card]);
 
+    useEffect(() => {
+        if (amount) {
+            paypal.onToken().then(() => paypalCredit.onToken());
+        }
+    }, [amount, currency]);
+
     return {
         paypal,
         paypalCredit,

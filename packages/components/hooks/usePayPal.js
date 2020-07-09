@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { createToken } from 'proton-shared/lib/api/payments';
 import { useApi, useLoading, useModals } from 'react-components';
 
@@ -13,14 +13,19 @@ const usePayPal = ({ amount: Amount = 0, currency: Currency = '', type: Type, on
     const { createModal } = useModals();
 
     const onToken = async () => {
-        const result = await api(
-            createToken({
-                Amount,
-                Currency,
-                Payment: { Type }
-            })
-        );
-        setModel(result);
+        try {
+            const result = await api(
+                createToken({
+                    Amount,
+                    Currency,
+                    Payment: { Type }
+                })
+            );
+            setModel(result);
+        } catch (error) {
+            setModel({});
+            throw error;
+        }
     };
 
     const onVerification = async () => {
@@ -53,12 +58,6 @@ const usePayPal = ({ amount: Amount = 0, currency: Currency = '', type: Type, on
         });
         onPay(result);
     };
-
-    useEffect(() => {
-        if (Amount) {
-            withLoadingToken(onToken());
-        }
-    }, [Amount, Currency]);
 
     return {
         isReady: !!model.Token,
