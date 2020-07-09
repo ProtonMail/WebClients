@@ -2,12 +2,12 @@ import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { Button, Select, Tooltip, classnames, Icon, useModals } from '../../..';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
+import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 import { Actions } from 'proton-shared/lib/filters/interfaces';
 
 import EditLabelModal from '../../labels/modals/Edit';
 
-export const DEFAULT_FOLDERS = [
+export const DEFAULT_FOLDERS: SelectOption[] = [
     {
         group: c('Option group').t`Move to...`,
         text: c('Filter Actions').t`Select a folder`,
@@ -44,10 +44,6 @@ interface Props {
     isDark: boolean;
 }
 
-interface FolderWithSubFolders extends Folder {
-    subfolders: FolderWithSubFolders[];
-}
-
 type ChangePayload = {
     folder?: string;
     isOpen: boolean;
@@ -57,6 +53,7 @@ type SelectOption = {
     value: string;
     text: string;
     group: string;
+    disabled?: boolean;
 };
 
 const formatOption = ({ Path, Name }: FolderWithSubFolders, level = 0) => ({
@@ -65,7 +62,7 @@ const formatOption = ({ Path, Name }: FolderWithSubFolders, level = 0) => ({
     group: c('Option group').t`Custom folders`
 });
 
-const reducer = (acc: SelectOption[] = [], folder: FolderWithSubFolders, level = 0) => {
+const reducer = (acc: SelectOption[] = [], folder: FolderWithSubFolders, level = 0): SelectOption[] => {
     acc.push(formatOption(folder, level));
 
     if (Array.isArray(folder.subfolders)) {
@@ -79,9 +76,11 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
     const { createModal } = useModals();
     const treeview = buildTreeview(folders);
 
-    const options = [...DEFAULT_FOLDERS].concat(
-        treeview.reduce((acc: SelectOption[], folder: FolderWithSubFolders) => reducer(acc, folder), [])
-    );
+    const reducedFolders = treeview.reduce<SelectOption[]>((acc, folder) => {
+        return reducer(acc, folder, 0);
+    }, []);
+
+    const options = [...DEFAULT_FOLDERS].concat(reducedFolders);
 
     const { moveTo } = actions;
     const { isOpen } = moveTo;
