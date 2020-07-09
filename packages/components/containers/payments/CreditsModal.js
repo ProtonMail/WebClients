@@ -12,8 +12,9 @@ import {
     useConfig,
     useModals,
     useApi,
-    useLoading
-} from 'react-components';
+    useLoading,
+    useDebounceInput
+} from '../..';
 import { buyCredit } from 'proton-shared/lib/api/payments';
 import {
     DEFAULT_CURRENCY,
@@ -45,12 +46,13 @@ const CreditsModal = (props) => {
     const [loading, withLoading] = useLoading();
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [amount, setAmount] = useState(DEFAULT_CREDITS_AMOUNT);
+    const debouncedAmount = useDebounceInput(amount);
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
 
     const handleSubmit = async (params) => {
         const requestBody = await handlePaymentToken({
-            params: { ...params, Amount: amount, Currency: currency },
+            params: { ...params, Amount: debouncedAmount, Currency: currency },
             api,
             createModal
         });
@@ -61,15 +63,15 @@ const CreditsModal = (props) => {
     };
 
     const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
-        amount,
+        amount: debouncedAmount,
         currency,
         onPay: handleSubmit
     });
 
     const submit =
-        amount >= MIN_CREDIT_AMOUNT ? (
+        debouncedAmount >= MIN_CREDIT_AMOUNT ? (
             method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-                <PayPalButton paypal={paypal} className="pm-button--primary" amount={amount}>{c('Action')
+                <PayPalButton paypal={paypal} className="pm-button--primary" amount={debouncedAmount}>{c('Action')
                     .t`Continue`}</PayPalButton>
             ) : (
                 <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action')
@@ -107,7 +109,7 @@ const CreditsModal = (props) => {
             <Payment
                 type="credit"
                 method={method}
-                amount={amount}
+                amount={debouncedAmount}
                 currency={currency}
                 card={card}
                 onMethod={setMethod}
