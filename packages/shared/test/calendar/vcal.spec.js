@@ -6,7 +6,6 @@ DTSTAMP:20190719T130854Z
 UID:7E018059-2165-4170-B32F-6936E88E61E5
 DTSTART;TZID=America/New_York:20190719T120000
 DTEND;TZID=Europe/Zurich:20190719T130000
-SEQUENCE:0
 CATEGORIES:ANNIVERSARY,PERSONAL,SPECIAL OCCASION
 SUMMARY:Our Blissful Anniversary
 END:VEVENT`;
@@ -248,9 +247,6 @@ END:VCALENDAR`);
             dtend: {
                 value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: false },
                 parameters: { tzid: 'Europe/Zurich' }
-            },
-            sequence: {
-                value: 0
             },
             categories: [
                 {

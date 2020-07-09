@@ -97,6 +97,10 @@ export interface VcalUidProperty {
     value: string;
 }
 
+export interface VcalGeoProperty {
+    value: number[];
+}
+
 export interface VcalValarmComponent {
     component: 'valarm';
     action: {
@@ -117,16 +121,8 @@ export interface VcalStringProperty {
     value: string;
 }
 
-export interface VcalNumberProperty {
-    value: number;
-}
-
 export interface VcalStringArrayProperty {
     value: string[];
-}
-
-export interface VcalNumberArrayProperty {
-    value: number[];
 }
 
 export interface VcalStringWithParamsProperty {
@@ -168,10 +164,10 @@ export interface VcalVeventComponent {
     summary?: VcalStringProperty;
     duration?: VcalDurationValue;
     location?: VcalStringProperty;
-    geo?: VcalNumberArrayProperty;
+    geo?: VcalGeoProperty;
     class?: VcalStringProperty;
     priority?: VcalStringProperty;
-    sequence?: VcalNumberProperty;
+    sequence?: VcalStringProperty;
     status?: VcalStringProperty;
     created?: VcalDateTimeProperty;
     'last-modified'?: VcalDateTimeProperty;
