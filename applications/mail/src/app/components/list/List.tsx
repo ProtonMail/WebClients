@@ -73,7 +73,7 @@ const List = ({
 
     useEffect(() => {
         if (loading) {
-            listRef.current?.scroll({ top: 0 });
+            listRef.current?.scroll?.({ top: 0 });
         }
     }, [loading]);
 
