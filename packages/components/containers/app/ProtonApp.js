@@ -20,6 +20,7 @@ import AuthenticationProvider from '../authentication/Provider';
 import RightToLeftProvider from '../rightToLeft/Provider';
 import { setTmpEventID } from './loadEventID';
 import clearKeyCache from './clearKeyCache';
+import { PreventLeaveProvider } from '../../hooks/usePreventLeave';
 
 /** @type any */
 const ProtonApp = ({ config, children }) => {
@@ -98,15 +99,17 @@ const ProtonApp = ({ config, children }) => {
                 <RightToLeftProvider>
                     <Router>
                         <React.Fragment key={UID}>
-                            <NotificationsProvider>
-                                <ModalsProvider>
-                                    <ApiProvider UID={UID} config={config} onLogout={handleLogout}>
-                                        <AuthenticationProvider store={authenticationValue}>
-                                            <CacheProvider cache={cacheRef.current}>{children}</CacheProvider>
-                                        </AuthenticationProvider>
-                                    </ApiProvider>
-                                </ModalsProvider>
-                            </NotificationsProvider>
+                            <PreventLeaveProvider>
+                                <NotificationsProvider>
+                                    <ModalsProvider>
+                                        <ApiProvider UID={UID} config={config} onLogout={handleLogout}>
+                                            <AuthenticationProvider store={authenticationValue}>
+                                                <CacheProvider cache={cacheRef.current}>{children}</CacheProvider>
+                                            </AuthenticationProvider>
+                                        </ApiProvider>
+                                    </ModalsProvider>
+                                </NotificationsProvider>
+                            </PreventLeaveProvider>
                         </React.Fragment>
                     </Router>
                 </RightToLeftProvider>
