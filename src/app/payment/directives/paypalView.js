@@ -27,22 +27,21 @@ function paypalView(Payment, notification) {
                         scope.errorDetails = false;
                     });
 
-                    const [paypalResult, paypalCreditResult] = await Promise.all([
-                        Payment.createToken({
-                            Amount,
-                            Currency,
-                            Payment: {
-                                Type: 'paypal'
-                            }
-                        }),
-                        Payment.createToken({
-                            Amount,
-                            Currency,
-                            Payment: {
-                                Type: 'paypal-credit'
-                            }
-                        })
-                    ]);
+                    const paypalResult = await Payment.createToken({
+                        Amount,
+                        Currency,
+                        Payment: {
+                            Type: 'paypal'
+                        }
+                    });
+
+                    const paypalCreditResult = await Payment.createToken({
+                        Amount,
+                        Currency,
+                        Payment: {
+                            Type: 'paypal-credit'
+                        }
+                    });
 
                     scope.$applyAsync(() => {
                         scope.paypalModel = paypalResult;
@@ -52,6 +51,8 @@ function paypalView(Payment, notification) {
                 } catch (error) {
                     scope.$applyAsync(() => {
                         scope.loadingTokens = false;
+                        delete scope.paypalModel;
+                        delete scope.paypalCreditModel;
                     });
                 }
             };
