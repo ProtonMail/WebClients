@@ -10,6 +10,7 @@ const usePayment = ({ amount, currency, onPay }) => {
     const [card, setCard, errors, isValid] = useCard();
     const [method, setMethod] = useState('');
     const [parameters, setParameters] = useState({});
+    const isPayPalActive = method === PAYPAL;
 
     const paypal = usePayPal({
         amount,
@@ -77,10 +78,10 @@ const usePayment = ({ amount, currency, onPay }) => {
     }, [method, card]);
 
     useEffect(() => {
-        if (amount) {
+        if (isPayPalActive && amount) {
             paypal.onToken().then(() => paypalCredit.onToken());
         }
-    }, [amount, currency]);
+    }, [isPayPalActive, amount, currency]);
 
     return {
         paypal,
