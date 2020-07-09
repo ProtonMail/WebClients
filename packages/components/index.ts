@@ -321,6 +321,8 @@ export { default as ContactUpgradeModal } from './components/contacts/ContactUpg
 export { default as ContactDeleteModal } from './containers/contacts/modals/ContactDeleteModal';
 export { default as ContactProvider } from './containers/contacts/ContactProvider';
 export { default as ContactGroupLabels } from './components/contacts/ContactGroupLabels';
+export { default as DragMoveContainer } from './components/dragMoveContainer/DragMoveContainer';
+export { default as useDragMove } from './hooks/useDragMove';
 export { default as useStep } from './hooks/useStep';
 export { default as useOnline } from './hooks/useOnline';
 export { default as useApiWithoutResult } from './hooks/useApiWithoutResult';
