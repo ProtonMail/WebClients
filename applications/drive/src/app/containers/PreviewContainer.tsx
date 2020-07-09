@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
-import { useLoading } from 'react-components';
+import { useLoading, usePreventLeave } from 'react-components';
 
 import useFiles from '../hooks/drive/useFiles';
 import useDrive from '../hooks/drive/useDrive';
-import usePreventLeave from '../hooks/util/usePreventLeave';
 
 import FileSaver from '../utils/FileSaver/FileSaver';
 import { LinkURLType } from '../constants';

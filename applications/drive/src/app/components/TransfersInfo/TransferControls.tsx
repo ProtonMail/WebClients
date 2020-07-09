@@ -1,10 +1,9 @@
 import React from 'react';
-import { Icon, useLoading } from 'react-components';
+import { Icon, useLoading, usePreventLeave } from 'react-components';
 import { c } from 'ttag';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import { isTransferInitializing, isTransferPaused, isTransferFinished, isTransferFailed } from '../../utils/transfer';
 import FileSaver from '../../utils/FileSaver/FileSaver';
-import usePreventLeave from '../../hooks/util/usePreventLeave';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { LinkType } from '../../interfaces/link';
 import useFiles from '../../hooks/drive/useFiles';

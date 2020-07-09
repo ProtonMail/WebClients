@@ -1,13 +1,12 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton } from 'react-components';
+import { ToolbarButton, usePreventLeave } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
 import { LinkType } from '../../../interfaces/link';
 import useFiles from '../../../hooks/drive/useFiles';
 import FileSaver from '../../../utils/FileSaver/FileSaver';
-import usePreventLeave from '../../../hooks/util/usePreventLeave';
 import { useDriveActiveFolder } from '../DriveFolderProvider';
 import { getMetaForTransfer } from '../../../utils/transfer';
 import { logSettledErrors } from '../../../utils/async';

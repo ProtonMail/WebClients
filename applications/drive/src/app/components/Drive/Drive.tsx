@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef } from 'react';
+import { usePreventLeave } from 'react-components';
 import useFiles from '../../hooks/drive/useFiles';
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
 import FileBrowser from '../FileBrowser/FileBrowser';
@@ -9,7 +10,6 @@ import EmptyFolder from '../FileBrowser/EmptyFolder';
 import { LinkType } from '../../interfaces/link';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import useDrive from '../../hooks/drive/useDrive';
-import usePreventLeave from '../../hooks/util/usePreventLeave';
 import { getMetaForTransfer } from '../../utils/transfer';
 import { isPreviewAvailable } from '../FilePreview/helpers';
 import { FileBrowserItem } from '../FileBrowser/interfaces';

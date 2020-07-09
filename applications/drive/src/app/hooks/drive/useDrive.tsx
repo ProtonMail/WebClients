@@ -1,6 +1,8 @@
 import React from 'react';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-import { useModals } from 'react-components';
+import { useModals, usePreventLeave } from 'react-components';
+import { lookup } from 'mime-types';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import {
     decryptUnsigned,
     generateDriveBootstrap,
@@ -13,11 +15,9 @@ import {
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
-import { lookup } from 'mime-types';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import { useDriveCache, LinkKeys } from '../../components/DriveCache/DriveCacheProvider';
 import useDriveCrypto from './useDriveCrypto';
 import { LinkMetaResult, isFolderLinkMeta, LinkChildrenResult, LinkMeta, LinkType } from '../../interfaces/link';
+import { useDriveCache, LinkKeys } from '../../components/DriveCache/DriveCacheProvider';
 import { queryGetLink } from '../../api/link';
 import { queryFolderChildren, queryCreateFolder } from '../../api/folder';
 import { FOLDER_PAGE_SIZE, EVENT_TYPES, MAX_THREADS_PER_REQUEST, DEFAULT_SORT_PARAMS } from '../../constants';
@@ -31,7 +31,6 @@ import { ShareEvent, useDriveEventManager } from '../../components/DriveEventMan
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import useQueuedFunction from '../util/useQueuedFunction';
 import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
-import usePreventLeave from '../util/usePreventLeave';
 import runInQueue from '../../utils/runInQueue';
 
 interface FetchLinkConfig {

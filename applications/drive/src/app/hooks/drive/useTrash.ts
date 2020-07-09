@@ -1,3 +1,4 @@
+import { usePreventLeave } from 'react-components';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteLinks } from '../../api/link';
 import { LinkMeta, FolderLinkMeta } from '../../interfaces/link';
@@ -8,7 +9,6 @@ import { queryTrashList } from '../../api/share';
 import runInQueue from '../../utils/runInQueue';
 import useDrive from './useDrive';
 import useDebouncedRequest from '../util/useDebouncedRequest';
-import usePreventLeave from '../util/usePreventLeave';
 
 function useTrash() {
     const debouncedRequest = useDebouncedRequest();
