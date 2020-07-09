@@ -1,10 +1,11 @@
 import { orderBy, range } from './array';
 import { ROOT_FOLDER } from '../constants';
+import { Folder, FolderWithSubFolders } from '../interfaces/Folder';
 
-export const order = (folders = []) => orderBy(folders, 'Order');
+export const order = (folders: Folder[] = []) => orderBy(folders, 'Order');
 
-export const getParents = (folders = []) => {
-    return folders.reduce((acc, item) => {
+export const getParents = (folders: Folder[] = []) => {
+    return folders.reduce<{ [key: string]: Folder[] }>((acc, item) => {
         const { ParentID = ROOT_FOLDER } = item;
         acc[ParentID] = acc[ParentID] || [];
         acc[ParentID].push(item);
@@ -12,9 +13,9 @@ export const getParents = (folders = []) => {
     }, {});
 };
 
-export const buildTreeview = (folders = []) => {
+export const buildTreeview = (folders: Folder[] = []) => {
     const parents = getParents(folders);
-    const build = (parentID = ROOT_FOLDER) => {
+    const build = (parentID: string | number = ROOT_FOLDER): FolderWithSubFolders[] => {
         if (!Array.isArray(parents[parentID])) {
             return [];
         }
