@@ -115,7 +115,7 @@ const CustomFilterDropdown = ({ message }: Props) => {
         filter.Simple.Conditions = formatConditions(conditions);
         filter.Tree = computeTree(filter);
 
-        createModal(<AddFilterModal filter={filter} type="simple" />);
+        createModal(<AddFilterModal filter={filter} />);
     };
 
     const buttonDisabled = !Object.values(filtersState).some(identity);
