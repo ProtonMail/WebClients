@@ -233,6 +233,31 @@ END:VEVENT`;
         );
     });
 
+    test('should catch recurring events with no occurrences', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTART;TZID=Europe/Warsaw:20130820T145000
+DTEND;TZID=Europe/Warsaw:20130820T152000
+RRULE:FREQ=DAILY;UNTIL=20130822T125000Z
+EXDATE;TZID=Europe/Warsaw:20130820T145000
+EXDATE;TZID=Europe/Warsaw:20130821T145000
+EXDATE;TZID=Europe/Warsaw:20130822T145000
+DTSTAMP:20200708T215912Z
+UID:qkbndaqtgkuj4nfr21adr86etk@google.com
+CREATED:20130902T220905Z
+DESCRIPTION:
+LAST-MODIFIED:20130902T220905Z
+LOCATION:Twinpigs - Żory\\, Katowicka 4
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Scenka: napad na bank
+TRANSP:OPAQUE
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(() => getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toThrowError(
+            'Recurring rule inconsistent'
+        );
+    });
+
     test('should catch non-supported rrules', () => {
         const vevent = `BEGIN:VEVENT
 DTSTART;TZID=Europe/Vilnius:20200518T150000

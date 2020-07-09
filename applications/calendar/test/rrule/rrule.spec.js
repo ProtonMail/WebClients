@@ -384,16 +384,56 @@ describe('getHasConsistentRrule', () => {
             rrule: {
                 value: {
                     freq: 'DAILY',
-                    until: { year: 2015, month: 8, day: 26, hours: 16, minutes: 29, seconds: 59, isUTC: true },
+                    until: { year: 2015, month: 8, day: 30, hours: 16, minutes: 29, seconds: 59, isUTC: true },
                 },
             },
-            exdate: {
+            exdate: [
+                {
+                    value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+                    parameters: {
+                        tzid: 'Europe/Paris',
+                    },
+                },
+            ],
+        };
+        expect(getHasConsistentRrule(vevent)).toEqual(true);
+    });
+
+    test('should filter out events that generate no occurrence ', () => {
+        const vevent = {
+            dtstart: {
                 value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
                 parameters: {
                     tzid: 'Europe/Paris',
                 },
             },
+            dtend: {
+                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
+                parameters: {
+                    tzid: 'Europe/Paris',
+                },
+            },
+            rrule: {
+                value: {
+                    freq: 'DAILY',
+                    count: 2,
+                },
+            },
+            exdate: [
+                {
+                    value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+                    parameters: {
+                        tzid: 'Europe/Paris',
+                    },
+                },
+                {
+                    value: { year: 2015, month: 8, day: 26, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+                    parameters: {
+                        tzid: 'Europe/Paris',
+                    },
+                },
+            ],
         };
-        expect(getHasConsistentRrule(vevent)).toEqual(true);
+        expect(getHasConsistentRrule(vevent)).toEqual(false);
     });
 });

@@ -265,6 +265,12 @@ export const getHasConsistentRrule = (vevent: VcalVeventComponent) => {
         }
     }
 
+    // make sure the event generates some occurrence
+    const [firstOccurrence] = getOccurrences({ component: vevent, maxCount: 1 });
+    if (!firstOccurrence) {
+        return false;
+    }
+
     // make sure DTSTART matches the pattern of the recurring series
     const [first] = getOccurrences({ component: omit(vevent, ['exdate']), maxCount: 1 });
     if (!first) {
