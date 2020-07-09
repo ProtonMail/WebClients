@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { classnames, Button, PrivateMainArea } from 'react-components';
+import { Button, PrivateMainArea } from 'react-components';
 import { History, Location } from 'history';
-import { DENSITY } from 'proton-shared/lib/constants';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
@@ -72,7 +71,6 @@ const MailboxContainer = ({
         limit: PAGE_SIZE
     });
 
-    const isCompactView = userSettings.Density === DENSITY.COMPACT;
     const searchParams = getSearchParams(location.search);
     const conversationMode = isConversationMode(inputLabelID, mailSettings, location);
     const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [
@@ -204,30 +202,21 @@ const MailboxContainer = ({
             )}
             <PrivateMainArea className="flex" hasToolbar={showToolbar} hasRowMode={!showContentView}>
                 {showList && (
-                    <div
-                        className={classnames([
-                            'items-column-list scroll-if-needed scroll-smooth-touch',
-                            isCompactView && 'is-compact'
-                        ])}
-                    >
-                        <div className="items-column-list-inner flex flex-nowrap flex-column">
-                            <List
-                                location={location}
-                                labelID={labelID}
-                                loading={loading}
-                                expectedLength={expectedLength}
-                                columnLayout={columnLayout}
-                                mailSettings={mailSettings}
-                                elementID={elementID}
-                                elements={elements}
-                                checkedIDs={checkedIDs}
-                                onCheck={handleCheck}
-                                onClick={handleElement}
-                                userSettings={userSettings}
-                                isSearch={isSearch}
-                            />
-                        </div>
-                    </div>
+                    <List
+                        location={location}
+                        labelID={labelID}
+                        loading={loading}
+                        expectedLength={expectedLength}
+                        columnLayout={columnLayout}
+                        mailSettings={mailSettings}
+                        elementID={elementID}
+                        elements={elements}
+                        checkedIDs={checkedIDs}
+                        onCheck={handleCheck}
+                        onClick={handleElement}
+                        userSettings={userSettings}
+                        isSearch={isSearch}
+                    />
                 )}
                 {showContentView && (
                     <section className="view-column-detail flex flex-column flex-item-fluid no-scroll">

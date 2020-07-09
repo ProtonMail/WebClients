@@ -1,13 +1,14 @@
-import React, { useState, useEffect, ChangeEvent, DragEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent, DragEvent, useRef } from 'react';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
-import { useLabels, useContactEmails, useContactGroups } from 'react-components';
+import { useLabels, useContactEmails, useContactGroups, classnames } from 'react-components';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
+import { DENSITY } from 'proton-shared/lib/constants';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
 import Item from './Item';
 import { Element } from '../../models/element';
 import EmptyView from '../view/EmptyView';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { DRAG_ELEMENT_KEY } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
@@ -45,6 +46,8 @@ const List = ({
     location,
     isSearch
 }: Props) => {
+    const isCompactView = userSettings.Density === DENSITY.COMPACT;
+
     const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [contactGroups = []] = useContactGroups();
     const [labels] = useLabels();
@@ -52,6 +55,8 @@ const List = ({
     const [dragElement, setDragElement] = useState<HTMLDivElement>();
     const [draggedIDs, setDraggedIDs] = useState<string[]>([]);
     const [savedCheck, setSavedCheck] = useState<string[]>();
+
+    const listRef = useRef<HTMLDivElement>(null);
 
     const elements = usePlaceholders(inputElements, loading, expectedLength);
 
@@ -65,6 +70,12 @@ const List = ({
             onCheck(filteredCheckedIDs, true, true);
         }
     }, [elements]);
+
+    useEffect(() => {
+        if (loading) {
+            listRef.current?.scroll({ top: 0 });
+        }
+    }, [loading]);
 
     const handleCheck = (elementID: string) => (event: ChangeEvent) => {
         const target = event.target as HTMLInputElement;
@@ -136,36 +147,44 @@ const List = ({
         }
     };
 
-    return expectedLength === 0 ? (
-        <EmptyView labelID={labelID} isSearch={isSearch} />
-    ) : (
-        <>
-            {elements.map((element, index) => {
-                return (
-                    <Item
-                        key={element.ID}
-                        location={location}
-                        labels={labels}
-                        labelID={labelID}
-                        loading={loading}
-                        columnLayout={columnLayout}
-                        elementID={elementID}
-                        element={element}
-                        checked={checkedIDs.includes(element.ID || '')}
-                        contacts={contacts}
-                        contactGroups={contactGroups}
-                        onCheck={handleCheck(element.ID || '')}
-                        onClick={onClick}
-                        userSettings={userSettings}
-                        mailSettings={mailSettings}
-                        onDragStart={handleDragStart(element)}
-                        onDragEnd={handleDragEnd}
-                        dragged={draggedIDs.includes(element.ID || '')}
-                        index={index}
-                    />
-                );
-            })}
-        </>
+    return (
+        <div
+            ref={listRef}
+            className={classnames([
+                'items-column-list scroll-if-needed scroll-smooth-touch',
+                isCompactView && 'is-compact'
+            ])}
+        >
+            <div className="items-column-list-inner flex flex-nowrap flex-column">
+                {expectedLength === 0 ? (
+                    <EmptyView labelID={labelID} isSearch={isSearch} />
+                ) : (
+                    elements.map((element, index) => (
+                        <Item
+                            key={element.ID}
+                            location={location}
+                            labels={labels}
+                            labelID={labelID}
+                            loading={loading}
+                            columnLayout={columnLayout}
+                            elementID={elementID}
+                            element={element}
+                            checked={checkedIDs.includes(element.ID || '')}
+                            contacts={contacts}
+                            contactGroups={contactGroups}
+                            onCheck={handleCheck(element.ID || '')}
+                            onClick={onClick}
+                            userSettings={userSettings}
+                            mailSettings={mailSettings}
+                            onDragStart={handleDragStart(element)}
+                            onDragEnd={handleDragEnd}
+                            dragged={draggedIDs.includes(element.ID || '')}
+                            index={index}
+                        />
+                    ))
+                )}
+            </div>
+        </div>
     );
 };
 
