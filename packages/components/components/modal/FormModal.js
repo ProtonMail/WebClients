@@ -8,6 +8,7 @@ import {
     InnerModal,
     ResetButton,
     PrimaryButton,
+    Icon
 } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -92,7 +93,11 @@ function DemoModal({ onAdd, ...rest }) {
                 <HeaderModal hasClose={hasClose} modalTitleID={modalTitleID} onClose={onClose}>
                     {title}
                 </HeaderModal>
-            ) : null}
+            ) : (
+                <button type="button" className="pm-modalClose" onClick={onClose}>
+                    <Icon className="pm-modalClose-icon" name="close" />
+                </button>
+            )}
             <ContentModal
                 onSubmit={rest.isClosing || loading ? noop : onSubmit}
                 onReset={onClose}
