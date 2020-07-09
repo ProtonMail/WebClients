@@ -1,18 +1,16 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-
 import { Icon, Tooltip, classnames } from 'react-components';
-
 import { Transfer, Download, Upload } from '../../interfaces/transfer';
-import { TransfersStats } from './TransfersInfo';
 import {
     isTransferActive,
     isTransferDone,
     isTransferPaused,
     isTransferError,
     isTransferCanceled,
-    isTransferFinished
+    isTransferFinished,
 } from '../../utils/transfer';
+import { TransfersStats } from './interfaces';
 
 interface Props {
     downloads: Download[];
@@ -48,7 +46,7 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
         if (activeUploadsCount) {
             setCurrentUploads((currentUploads) => [
                 ...currentUploads.filter((upload) => activeUploads.every(({ id }) => id !== upload.id)),
-                ...activeUploads
+                ...activeUploads,
             ]);
         } else {
             setCurrentUploads([]);
@@ -59,7 +57,7 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
         if (activeDownloadsCount) {
             setCurrentDownloads((currentDownloads) => [
                 ...currentDownloads.filter((download) => activeDownloads.every(({ id }) => id !== download.id)),
-                ...activeDownloads
+                ...activeDownloads,
             ]);
         } else {
             setCurrentDownloads([]);
@@ -164,6 +162,7 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
     return (
         <div className="pd-transfers-heading flex flex-items-center flex-nowrap pl0-5 pr0-5 color-global-light">
             <div
+                role="presentation"
                 className="flex-item-fluid p0-5"
                 aria-atomic="true"
                 aria-live="polite"
@@ -190,7 +189,7 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
                 title={closeTitle}
                 className={classnames([
                     'pd-transfers-headingTooltip flex-item-noshrink flex',
-                    !allTransfersFinished && 'pd-transfers-headingTooltip--isDisabled'
+                    !allTransfersFinished && 'pd-transfers-headingTooltip--isDisabled',
                 ])}
             >
                 <button

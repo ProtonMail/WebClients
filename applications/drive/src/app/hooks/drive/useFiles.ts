@@ -1,28 +1,29 @@
 import { useApi, useEventManager, useUser, useNotifications } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
-import {
-    DriveFileRevisionResult,
-    CreateFileResult,
-    FileRevisionState,
-    RequestUploadResult,
-    NestedFileStream
-} from '../../interfaces/file';
 import { decryptMessage, encryptMessage } from 'pmcrypto';
 import { c } from 'ttag';
 import { lookup } from 'mime-types';
-import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
 import {
     generateNodeKeys,
     generateContentKeys,
     encryptUnsigned,
     generateLookupHash,
-    getStreamMessage
+    getStreamMessage,
 } from 'proton-shared/lib/keys/driveKeys';
 import { range } from 'proton-shared/lib/helpers/array';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { serializeUint8Array } from 'proton-shared/lib/helpers/serialization';
+import {
+    DriveFileRevisionResult,
+    CreateFileResult,
+    FileRevisionState,
+    RequestUploadResult,
+    NestedFileStream,
+} from '../../interfaces/file';
+import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
 import { TransferMeta, TransferState, DownloadInfo } from '../../interfaces/transfer';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
@@ -37,11 +38,10 @@ import useDebouncedRequest from '../util/useDebouncedRequest';
 import { FILE_CHUNK_SIZE } from '../../constants';
 import useQueuedFunction from '../util/useQueuedFunction';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import { getMetaForTransfer } from '../../components/Drive/Drive';
-import { serializeUint8Array } from 'proton-shared/lib/helpers/serialization';
 import { mergeUint8Arrays } from '../../utils/array';
 import usePreventLeave from '../util/usePreventLeave';
 import { isFile } from '../../utils/file';
+import { getMetaForTransfer } from '../../utils/transfer';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -94,7 +94,7 @@ function useFiles() {
                         const adjustedFileName = adjustName(i);
                         return {
                             filename: adjustedFileName,
-                            hash: await generateLookupHash(adjustedFileName.toLowerCase(), parentKeys.hashKey)
+                            hash: await generateLookupHash(adjustedFileName.toLowerCase(), parentKeys.hashKey),
                         };
                     })
                 );
@@ -139,7 +139,7 @@ function useFiles() {
 
                 const [parentKeys, addressKeyInfo] = await Promise.all([
                     getLinkKeys(shareId, ParentLinkID),
-                    getPrimaryAddressKey()
+                    getPrimaryAddressKey(),
                 ]);
 
                 const generateNameHash = async () => {
@@ -148,7 +148,7 @@ function useFiles() {
                     }
                     return {
                         filename: file.name,
-                        hash: await generateLookupHash(lowercaseName, parentKeys.hashKey)
+                        hash: await generateLookupHash(lowercaseName, parentKeys.hashKey),
                     };
                 };
 
@@ -171,7 +171,7 @@ function useFiles() {
 
                 const Name = await encryptUnsigned({
                     message: filename,
-                    publicKey: parentKeys.privateKey.toPublic()
+                    publicKey: parentKeys.privateKey.toPublic(),
                 });
 
                 const MIMEType = lookup(filename) || 'application/octet-stream';
@@ -186,7 +186,7 @@ function useFiles() {
                         NodePassphrase,
                         NodePassphraseSignature,
                         SignatureAddress: addressKeyInfo.address.Email,
-                        ContentKeyPacket
+                        ContentKeyPacket,
                     })
                 );
 
@@ -198,7 +198,7 @@ function useFiles() {
                     sessionKey,
                     filename,
                     addressKeyInfo,
-                    ParentLinkID
+                    ParentLinkID,
                 };
             }),
             5
@@ -210,15 +210,15 @@ function useFiles() {
                 meta: {
                     size: blob.size,
                     mimeType: MIMEType,
-                    filename
+                    filename,
                 },
                 info: {
                     blob,
                     ParentLinkID,
                     LinkID: File.ID,
                     RevisionID: File.RevisionID,
-                    ShareID: shareId
-                }
+                    ShareID: shareId,
+                },
             })),
             {
                 transform: async (data) => {
@@ -230,12 +230,12 @@ function useFiles() {
                         sessionKey,
                         privateKeys: privateKey,
                         armor: false,
-                        detached: true
+                        detached: true,
                     });
 
                     return {
                         encryptedData: message.packets.write(),
-                        signature: signature.armor()
+                        signature: signature.armor(),
                     };
                 },
                 requestUpload: async (Blocks) => {
@@ -251,7 +251,7 @@ function useFiles() {
                             AddressID: addressKeyInfo.address.ID,
                             LinkID: File.ID,
                             RevisionID: File.RevisionID,
-                            ShareID: shareId
+                            ShareID: shareId,
                         })
                     );
                     return UploadLinks;
@@ -264,7 +264,7 @@ function useFiles() {
                             hashes.push(Hash);
                             return {
                                 Index,
-                                Token
+                                Token,
                             };
                         });
                         const contentHashes = mergeUint8Arrays(hashes);
@@ -277,16 +277,15 @@ function useFiles() {
                                 State: FileRevisionState.Active,
                                 BlockList,
                                 ManifestSignature: signature,
-                                SignatureAddress
+                                SignatureAddress,
                             })
                         );
 
                         // Update quota metrics and drive links
-                        call();
-                        events.call(shareId);
+                        Promise.all([call(), events.call(shareId)]).catch(console.error);
                     },
                     5
-                )
+                ),
             }
         );
     };
@@ -335,7 +334,7 @@ function useFiles() {
                 const formattedRemaining = humanSize(total);
                 createNotification({
                     text: c('Notification').t`Not enough space to upload ${formattedRemaining}`,
-                    type: 'error'
+                    type: 'error',
                 });
                 throw new Error('Insufficient storage left');
             }
@@ -343,77 +342,85 @@ function useFiles() {
             const folderPromises = new Map<string, ReturnType<typeof createNewFolder>>();
 
             for (let i = 0; i < files.length; i++) {
-                setTimeout(async () => {
-                    const entry = files[i];
+                const entry = files[i];
 
-                    if (filesOnly && !(await isFile(entry))) {
-                        return;
-                    }
+                if (!filesOnly && !(await isFile(entry))) {
+                    return;
+                }
 
-                    if (!('path' in entry)) {
-                        preventLeave(uploadDriveFile(shareId, ParentLinkID, entry));
-                        return;
-                    }
+                isFile(entry)
+                    .then((isEntryFile) => {
+                        if (!isEntryFile) {
+                            return;
+                        }
 
-                    const file = entry.file;
-                    const folders = entry.path;
-
-                    if (folders.length) {
-                        const folder = folders.slice(-1)[0];
-
-                        const parent = folders.slice(0, -1).join('/');
-                        const path = parent ? folders.join('/') : folder;
-
-                        if (!folderPromises.get(path)) {
-                            let promise: Promise<any>;
-                            const parentFolderPromise = folderPromises.get(parent);
-
-                            if (parentFolderPromise) {
-                                // Wait for parent folders to be created first
-                                promise = parentFolderPromise.then(({ Folder: { ID } }) =>
-                                    createNewFolder(shareId, ID, folder)
-                                );
-                            } else {
-                                // If root folder in a tree, it's name must be checked, all other folders are new ones
-                                promise = parent
-                                    ? createNewFolder(shareId, ParentLinkID, folder)
-                                    : findAvailableName(
-                                          shareId,
-                                          ParentLinkID,
-                                          folder
-                                      ).then(({ filename: adjustedName }) =>
-                                          createNewFolder(shareId, ParentLinkID, adjustedName)
-                                      );
+                        setTimeout(() => {
+                            if (!('path' in entry)) {
+                                preventLeave(uploadDriveFile(shareId, ParentLinkID, entry)).catch(console.error);
+                                return;
                             }
 
-                            // Fetch events to get keys required for encryption in the new folder
-                            folderPromises.set(
-                                path,
-                                promise.then(async (args) => {
-                                    await events.call(shareId);
-                                    return args;
-                                })
-                            );
-                        }
+                            const { file } = entry;
+                            const folders = entry.path;
 
-                        const folderPromise = folderPromises.get(path);
+                            if (folders.length) {
+                                const folder = folders.slice(-1)[0];
 
-                        if (!file || !folderPromise) {
-                            return; // No file to upload
-                        }
+                                const parent = folders.slice(0, -1).join('/');
+                                const path = parent ? folders.join('/') : folder;
 
-                        preventLeave(
-                            uploadDriveFile(
-                                shareId,
-                                folderPromise.then(({ Folder: { ID } }) => ID),
-                                file,
-                                true
-                            )
-                        );
-                    } else if (file) {
-                        preventLeave(uploadDriveFile(shareId, ParentLinkID, file));
-                    }
-                }, 0);
+                                if (!folderPromises.get(path)) {
+                                    let promise: Promise<any>;
+                                    const parentFolderPromise = folderPromises.get(parent);
+
+                                    if (parentFolderPromise) {
+                                        // Wait for parent folders to be created first
+                                        promise = parentFolderPromise.then(({ Folder: { ID } }) =>
+                                            createNewFolder(shareId, ID, folder)
+                                        );
+                                    } else {
+                                        // If root folder in a tree, it's name must be checked, all other folders are new ones
+                                        promise = parent
+                                            ? createNewFolder(shareId, ParentLinkID, folder)
+                                            : findAvailableName(
+                                                  shareId,
+                                                  ParentLinkID,
+                                                  folder
+                                              ).then(({ filename: adjustedName }) =>
+                                                  createNewFolder(shareId, ParentLinkID, adjustedName)
+                                              );
+                                    }
+
+                                    // Fetch events to get keys required for encryption in the new folder
+                                    folderPromises.set(
+                                        path,
+                                        promise.then(async (args) => {
+                                            await events.call(shareId);
+                                            return args;
+                                        })
+                                    );
+                                }
+
+                                const folderPromise = folderPromises.get(path);
+
+                                if (!file || !folderPromise) {
+                                    return; // No file to upload
+                                }
+
+                                preventLeave(
+                                    uploadDriveFile(
+                                        shareId,
+                                        folderPromise.then(({ Folder: { ID } }) => ID),
+                                        file,
+                                        true
+                                    )
+                                ).catch(console.error);
+                            } else if (file) {
+                                preventLeave(uploadDriveFile(shareId, ParentLinkID, file)).catch(console.error);
+                            }
+                        }, 0);
+                    })
+                    .catch(console.error);
             }
         }
     );
@@ -431,7 +438,7 @@ function useFiles() {
             sessionKeys: keys.sessionKeys,
             publicKeys: keys.privateKey.toPublic(),
             streaming: 'web',
-            format: 'binary'
+            format: 'binary',
         });
 
         return data as ReadableStream<Uint8Array>;
@@ -472,20 +479,20 @@ function useFiles() {
             onStart: async (stream) => {
                 resolve(streamToBuffer(stream));
                 return getFileBlocks(shareId, linkId);
-            }
+            },
         });
 
         downloadControls.start(api).catch(reject);
 
         return {
             contents: contentsPromise,
-            controls: downloadControls
+            controls: downloadControls,
         };
     };
 
     const saveFileTransferFromBuffer = async (content: Uint8Array[], meta: TransferMeta, info: DownloadInfo) => {
         return addToDownloadQueue(meta, info, {
-            onStart: async () => content
+            onStart: async () => content,
         });
     };
 
@@ -495,7 +502,7 @@ function useFiles() {
             { ShareID: shareId, LinkID: linkId },
             {
                 transformBlockStream: decryptBlockStream(shareId, linkId),
-                onStart: async () => getFileBlocks(shareId, linkId)
+                onStart: async () => getFileBlocks(shareId, linkId),
             }
         );
     };
@@ -514,7 +521,7 @@ function useFiles() {
     ) => {
         const { addDownload, startDownloads } = addFolderToDownloadQueue(folderName, {
             ShareID: shareId,
-            LinkID: linkId
+            LinkID: linkId,
         });
         const fileStreamPromises: Promise<void>[] = [];
 
@@ -534,7 +541,7 @@ function useFiles() {
             const promises = children.map(async (child) => {
                 const path = `${filePath}/${child.Name}`;
                 if (child.Type === LinkType.FILE) {
-                    const promise = new Promise<void>((resolve, reject) =>
+                    const promise = new Promise<void>((resolve, reject) => {
                         addDownload(
                             getMetaForTransfer(child),
                             { ShareID: shareId, LinkID: linkId },
@@ -543,7 +550,7 @@ function useFiles() {
                                 onStart: async (stream) => {
                                     cb.onStartFileTransfer({
                                         stream,
-                                        path
+                                        path,
                                     }).catch(reject);
                                     return getFileBlocks(shareId, child.LinkID);
                                 },
@@ -552,10 +559,10 @@ function useFiles() {
                                 },
                                 onError(err) {
                                     reject(err);
-                                }
+                                },
                             }
-                        ).catch(reject)
-                    );
+                        ).catch(reject);
+                    });
                     fileStreamPromises.push(promise);
                 } else {
                     cb.onStartFolderTransfer(path).catch((err) => console.error(`Failed to zip empty folder ${err}`));
@@ -577,7 +584,7 @@ function useFiles() {
         uploadDriveFile,
         uploadDriveFiles,
         downloadDriveFile,
-        saveFileTransferFromBuffer
+        saveFileTransferFromBuffer,
     };
 }
 

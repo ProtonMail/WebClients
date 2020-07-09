@@ -2,20 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint, TableRowSticky } from 'react-components';
 import { c } from 'ttag';
 import ItemRow from './ItemRow';
-import { LinkType } from '../../interfaces/link';
 import useDriveDragMove from '../../hooks/drive/useDriveDragMove';
-
-export interface FileBrowserItem {
-    Name: string;
-    LinkID: string;
-    Type: LinkType;
-    ModifyTime: number;
-    Trashed: number | null;
-    MIMEType: string;
-    Size: number;
-    ParentLinkID: string;
-    Location?: string;
-}
+import { FileBrowserItem } from './interfaces';
 
 interface Props {
     loading?: boolean;
@@ -44,7 +32,7 @@ const FileBrowser = ({
     onToggleAllSelected,
     onItemClick,
     onEmptyAreaClick,
-    onShiftClick
+    onShiftClick,
 }: Props) => {
     const [secondaryActionActive, setSecondaryActionActive] = useState(false);
     const { isDesktop } = useActiveBreakpoint();
@@ -72,13 +60,23 @@ const FileBrowser = ({
     const colSpan = 4 + Number(isDesktop) + Number(isTrash);
 
     return (
-        <div ref={scrollAreaRef} className="flex flex-item-fluid scroll-if-needed" onClick={onEmptyAreaClick}>
+        <div
+            role="presentation"
+            ref={scrollAreaRef}
+            className="flex flex-item-fluid scroll-if-needed"
+            onClick={onEmptyAreaClick}
+        >
             <table className="pm-simple-table pm-simple-table--isHoverable pd-fb-table noborder border-collapse">
                 <caption className="sr-only">{caption}</caption>
                 <thead>
                     <TableRowSticky scrollAreaRef={scrollAreaRef}>
                         <th scope="col">
-                            <div key="select-all" className="flex" onClick={(e) => e.stopPropagation()}>
+                            <div
+                                role="presentation"
+                                key="select-all"
+                                className="flex"
+                                onClick={(e) => e.stopPropagation()}
+                            >
                                 <Checkbox
                                     readOnly
                                     className="increase-surface-click"

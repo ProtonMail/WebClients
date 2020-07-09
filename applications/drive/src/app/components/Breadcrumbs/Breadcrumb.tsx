@@ -7,14 +7,12 @@ interface Props {
     active?: boolean;
 }
 
-const Breadcrumb = React.forwardRef<HTMLLIElement, Props>(({ children, onClick, active }, ref) => {
-    return (
-        <li ref={ref} className={classnames(['pd-breadcrumb', active && 'pd-breadcrumb--active'])}>
-            <button title={children} onClick={onClick} className="pd-breadcrumb-button">
-                {children}
-            </button>
-        </li>
-    );
-});
+const Breadcrumb = ({ children, onClick, active }: Props, ref: any) => (
+    <li ref={ref} className={classnames(['pd-breadcrumb', active && 'pd-breadcrumb--active'])}>
+        <button type="button" title={children} onClick={onClick} className="pd-breadcrumb-button">
+            {children}
+        </button>
+    </li>
+);
 
-export default Breadcrumb;
+export default React.forwardRef<HTMLLIElement, Props>(Breadcrumb);

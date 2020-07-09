@@ -1,5 +1,5 @@
-import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import { LinkType, LinkMeta } from '../../interfaces/link';
+import { FileBrowserItem } from '../FileBrowser/interfaces';
 
 export const selectMessageForItemList = (
     types: LinkType[],
@@ -25,6 +25,6 @@ export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[
         Size,
         MIMEType,
         ParentLinkID,
-        Trashed
+        Trashed,
     }));
 };

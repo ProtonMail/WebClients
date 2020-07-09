@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved, import/no-webpack-loader-syntax
 import registerServiceWorker from 'service-worker-loader!./downloadSW';
 import { isSafari, isEdge, isEdgeChromium, isIos } from 'proton-shared/lib/helpers/browser';
 import { WritableStream } from 'web-streams-polyfill';
@@ -28,7 +28,7 @@ async function wakeUpServiceWorker() {
     if (worker) {
         worker.postMessage({ action: 'ping' });
     } else {
-        const url = location.href.substr(0, location.href.indexOf('/')) + '/drive/sw/ping';
+        const url = `${document.location.href.substr(0, document.location.href.indexOf('/'))}/drive/sw/ping`;
         const res = await fetch(url);
         const body = await res.text();
         if (!res.ok || body !== 'pong') {
@@ -73,11 +73,11 @@ export async function openDownloadStream(
         },
         abort(reason) {
             channel.port1.postMessage({ action: 'abort', reason });
-        }
+        },
     });
 
     if (abortSignal) {
-        abortSignal.onabort = function() {
+        abortSignal.onabort = () => {
             channel.port1.postMessage({ action: 'abort', reason: 'Download stream aborted' });
         };
     }

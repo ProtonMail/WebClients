@@ -52,7 +52,7 @@ export async function upload(
         formData.append('Block', new Blob([content]));
 
         if (signal) {
-            signal.onabort = function() {
+            signal.onabort = () => {
                 xhr.abort();
                 reject(new TransferCancel(id));
             };
@@ -81,7 +81,7 @@ export function initUpload({ requestUpload, transform, onProgress, finalize, onE
                 Signature: signature,
                 Hash: (await generateContentHash(encryptedData)).BlockHash,
                 Size: encryptedData.byteLength,
-                Index: startIndex + i
+                Index: startIndex + i,
             }))
         );
 
@@ -110,7 +110,7 @@ export function initUpload({ requestUpload, transform, onProgress, finalize, onE
         return UploadLinks.map(({ Token }, i) => ({
             Index: BlockList[i].Index,
             Hash: BlockList[i].Hash,
-            Token
+            Token,
         }));
     };
 
@@ -149,7 +149,7 @@ export function initUpload({ requestUpload, transform, onProgress, finalize, onE
                 onError?.(err);
                 throw err;
             }),
-        cancel
+        cancel,
     };
 
     return { id, uploadControls };

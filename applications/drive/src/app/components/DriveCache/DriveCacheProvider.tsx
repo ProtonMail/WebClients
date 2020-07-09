@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useRef, useState } from 'react';
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta, SortKeys } from '../../interfaces/link';
 import { ShareMeta } from '../../interfaces/share';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { DEFAULT_SORT_PARAMS } from '../../constants';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 interface FileLinkKeys {
     privateKey: OpenPGPKey;
@@ -75,7 +75,7 @@ const useDriveCacheState = () => {
         shareId: string,
         { isNew = false, rerender = true }: { isNew?: boolean; rerender?: boolean } = {}
     ) => {
-        const links = cacheRef.current[shareId].links;
+        const { links } = cacheRef.current[shareId];
         const linkMetas = Array.isArray(metas) ? metas : [metas];
 
         linkMetas.forEach((meta) => {
@@ -95,13 +95,13 @@ const useDriveCacheState = () => {
                               sorted: ['Type', 'ModifyTime', 'Size'].reduce((sorted, sortKey) => {
                                   sorted[sortKey as SortKeys] = {
                                       ASC: { list: [], complete: isNew },
-                                      DESC: { list: [], complete: isNew }
+                                      DESC: { list: [], complete: isNew },
                                   };
                                   return sorted;
                               }, {} as SortedChildren),
-                              unlisted: []
+                              unlisted: [],
                           },
-                          foldersOnly: { complete: isNew, list: [], unlisted: [] }
+                          foldersOnly: { complete: isNew, list: [], unlisted: [] },
                       }
                     : { meta };
             }
@@ -109,7 +109,7 @@ const useDriveCacheState = () => {
 
         cacheRef.current[shareId] = {
             ...cacheRef.current[shareId],
-            links
+            links,
         };
 
         if (rerender) {
@@ -121,7 +121,7 @@ const useDriveCacheState = () => {
         const link = cacheRef.current[shareId].links[linkId];
 
         if (link && isCachedFolderLink(link)) {
-            const list = link.children.sorted[sortField][sortOrder].list;
+            const { list } = link.children.sorted[sortField][sortOrder];
             return [...list, ...link.children.unlisted.filter((item) => !list.includes(item))];
         }
 
@@ -129,7 +129,7 @@ const useDriveCacheState = () => {
     };
 
     const getTrashLinks = (shareId: string) => {
-        const trash = cacheRef.current[shareId].trash;
+        const { trash } = cacheRef.current[shareId];
         return [...trash.list, ...trash.unlisted];
     };
 
@@ -174,7 +174,7 @@ const useDriveCacheState = () => {
         method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create',
         sortParams = DEFAULT_SORT_PARAMS
     ) => {
-        const links = cacheRef.current[shareId].links;
+        const { links } = cacheRef.current[shareId];
         const parent = links[linkId];
 
         setLinkMeta(metas, shareId, { rerender: false, isNew: method === 'unlisted_create' });
@@ -186,29 +186,29 @@ const useDriveCacheState = () => {
             if (['unlisted', 'unlisted_create'].includes(method)) {
                 parent.children.unlisted = [
                     ...parent.children.unlisted,
-                    ...linkIds.filter((id) => !existing.includes(id))
+                    ...linkIds.filter((id) => !existing.includes(id)),
                 ];
             } else {
                 const { sortField, sortOrder } = sortParams;
                 const folder = parent.children.sorted[sortField][sortOrder];
                 parent.children.sorted[sortField][sortOrder] = {
                     list: [...folder.list.filter((id) => !linkIds.includes(id)), ...linkIds],
-                    complete: method === 'complete' || folder.complete
+                    complete: method === 'complete' || folder.complete,
                 };
             }
         }
 
         cacheRef.current[shareId] = {
             ...cacheRef.current[shareId],
-            links
+            links,
         };
 
         setRerender((old) => ++old);
     };
 
     const setTrashLinkMetas = (metas: LinkMeta[], shareId: string, method: 'unlisted' | 'complete' | 'incremental') => {
-        const links = cacheRef.current[shareId].links;
-        const trash = cacheRef.current[shareId].trash;
+        const { links } = cacheRef.current[shareId];
+        const { trash } = cacheRef.current[shareId];
 
         setLinkMeta(metas, shareId, { rerender: false });
 
@@ -226,7 +226,7 @@ const useDriveCacheState = () => {
         cacheRef.current[shareId] = {
             ...cacheRef.current[shareId],
             trash,
-            links
+            links,
         };
 
         setRerender((old) => ++old);
@@ -238,7 +238,7 @@ const useDriveCacheState = () => {
         linkId: string,
         method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create'
     ) => {
-        const links = cacheRef.current[shareId].links;
+        const { links } = cacheRef.current[shareId];
         const parent = links[linkId];
         const folderMetas = metas.filter(isFolderLinkMeta);
 
@@ -251,12 +251,12 @@ const useDriveCacheState = () => {
             if (['unlisted', 'unlisted_create'].includes(method)) {
                 parent.foldersOnly.unlisted = [
                     ...parent.foldersOnly.unlisted,
-                    ...linkIds.filter((id) => !existing.includes(id))
+                    ...linkIds.filter((id) => !existing.includes(id)),
                 ];
             } else {
                 parent.foldersOnly.list = [
                     ...parent.foldersOnly.list,
-                    ...linkIds.filter((id) => !parent.foldersOnly.list.includes(id))
+                    ...linkIds.filter((id) => !parent.foldersOnly.list.includes(id)),
                 ];
                 parent.foldersOnly.unlisted = parent.foldersOnly.unlisted.filter((id) => !linkIds.includes(id));
                 parent.foldersOnly.complete = method === 'complete' || parent.foldersOnly.complete;
@@ -265,18 +265,18 @@ const useDriveCacheState = () => {
 
         cacheRef.current[shareId] = {
             ...cacheRef.current[shareId],
-            links
+            links,
         };
 
         setRerender((old) => ++old);
     };
 
     const setLinkKeys = (keys: FileLinkKeys | FolderLinkKeys, shareId: string, linkId: string) => {
-        const links = cacheRef.current[shareId].links;
+        const { links } = cacheRef.current[shareId];
         links[linkId].keys = keys;
         cacheRef.current[shareId] = {
             ...cacheRef.current[shareId],
-            links
+            links,
         };
     };
 
@@ -327,7 +327,7 @@ const useDriveCacheState = () => {
     const setShareKeys = (keys: ShareKeys, shareID: string) => {
         cacheRef.current[shareID] = {
             ...cacheRef.current[shareID],
-            keys
+            keys,
         };
     };
 
@@ -335,7 +335,7 @@ const useDriveCacheState = () => {
         const shareID = meta.ShareID;
         cacheRef.current[shareID] = {
             ...cacheRef.current[shareID],
-            meta
+            meta,
         };
         setRerender((old) => ++old);
     };
@@ -344,7 +344,7 @@ const useDriveCacheState = () => {
         ids.forEach((id) => {
             cacheRef.current[id] = {
                 links: {},
-                trash: { complete: false, list: [], unlisted: [] }
+                trash: { complete: false, list: [], unlisted: [] },
             };
         });
         setRerender((old) => ++old);
@@ -361,7 +361,7 @@ const useDriveCacheState = () => {
             if (meta) {
                 const parentLinkId = meta.ParentLinkID;
                 const parent = cacheRef.current[shareId].links[parentLinkId];
-                const trash = cacheRef.current[shareId].trash;
+                const { trash } = cacheRef.current[shareId];
 
                 if (parent && isCachedFolderLink(parent)) {
                     Object.entries(parent.children.sorted).forEach(([sortKey, listsByDirection]) => {
@@ -380,7 +380,7 @@ const useDriveCacheState = () => {
                 trash.unlisted = trash.unlisted.filter((id) => meta.LinkID !== id);
 
                 if (!softDelete) {
-                    const links = cacheRef.current[shareId].links;
+                    const { links } = cacheRef.current[shareId];
                     const childrenIds = Object.keys(links).filter(
                         (key) => links[key].meta.ParentLinkID === meta.LinkID
                     );
@@ -405,7 +405,7 @@ const useDriveCacheState = () => {
             linkKeys: setLinkKeys,
             shareMeta: setShareMeta,
             shareKeys: setShareKeys,
-            emptyShares: setEmptyShares
+            emptyShares: setEmptyShares,
         },
         get: {
             trashMetas: getTrashMetas,
@@ -423,11 +423,11 @@ const useDriveCacheState = () => {
             linkKeys: getLinkKeys,
             shareMeta: getShareMeta,
             shareKeys: getShareKeys,
-            shareIds: getShareIds
+            shareIds: getShareIds,
         },
         delete: {
-            links: deleteLinks
-        }
+            links: deleteLinks,
+        },
     };
 };
 

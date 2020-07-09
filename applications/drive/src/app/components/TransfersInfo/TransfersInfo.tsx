@@ -1,19 +1,15 @@
 import React, { useCallback, useEffect } from 'react';
+import { useToggle, classnames } from 'react-components';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import Heading from './Heading';
-import Transfer, { TransferType, TransferStats } from './Transfer';
-import { useToggle, classnames } from 'react-components';
+import Transfer from './Transfer';
 import { TransferState } from '../../interfaces/transfer';
 import { isTransferProgress } from '../../utils/transfer';
+import { TransfersStats, TransferType, TransferStats } from './interfaces';
 
 const PROGRESS_UPDATE_INTERVAL = 500;
 const SPEED_SNAPSHOTS = 10; // How many snapshots should the speed be average of
-
-export interface TransfersStats {
-    timestamp: Date;
-    stats: { [id: string]: TransferStats };
-}
 
 function TransfersInfo() {
     const { state: minimized, toggle: toggleMinimized } = useToggle();
@@ -41,8 +37,8 @@ function TransfersInfo() {
                             ? (progresses[id] - lastStats(id).progress) * (1000 / PROGRESS_UPDATE_INTERVAL)
                             : 0,
                         state: getTransfer(id)?.state ?? TransferState.Error,
-                        progress
-                    }
+                        progress,
+                    },
                 }),
                 {} as { [id: string]: TransferStats }
             );
@@ -103,10 +99,10 @@ function TransfersInfo() {
                 type={TransferType.Download}
                 stats={{
                     progress: latestStats.stats[download.id]?.progress ?? 0,
-                    speed: calculateAverageSpeed(download.id)
+                    speed: calculateAverageSpeed(download.id),
                 }}
             />
-        )
+        ),
     }));
 
     const uploadTransfers = uploads.map((upload) => ({
@@ -118,10 +114,10 @@ function TransfersInfo() {
                 type={TransferType.Upload}
                 stats={{
                     progress: latestStats.stats[upload.id]?.progress ?? 0,
-                    speed: calculateAverageSpeed(upload.id)
+                    speed: calculateAverageSpeed(upload.id),
                 }}
             />
-        )
+        ),
     }));
 
     const transfers = [...downloadTransfers, ...uploadTransfers]

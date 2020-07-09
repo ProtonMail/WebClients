@@ -17,6 +17,7 @@ const ZoomControl = ({ scale, onZoomIn, onZoomOut, onReset }: Props) => {
         <div className="w100 p2 flex">
             <div className="center flex flex-items-center">
                 <button
+                    type="button"
                     disabled={isZoomOutDisabled}
                     onClick={onZoomOut}
                     title={c('Action').t`Zoom out`}
@@ -24,10 +25,16 @@ const ZoomControl = ({ scale, onZoomIn, onZoomOut, onReset }: Props) => {
                 >
                     <Icon name="minus" size={12} />
                 </button>
-                <button title={c('Action').t`Reset zoom`} className="color-white ml0-5 mr0-5" onClick={onReset}>
+                <button
+                    type="button"
+                    title={c('Action').t`Reset zoom`}
+                    className="color-white ml0-5 mr0-5"
+                    onClick={onReset}
+                >
                     <span>{Math.round(scale * 100)}%</span>
                 </button>
                 <button
+                    type="button"
                     disabled={isZoomInDisabled}
                     onClick={onZoomIn}
                     title={c('Action').t`Zoom in`}

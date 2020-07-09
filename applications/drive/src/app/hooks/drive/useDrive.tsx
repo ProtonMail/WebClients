@@ -1,8 +1,6 @@
 import React from 'react';
-import { useDriveCache, LinkKeys } from '../../components/DriveCache/DriveCacheProvider';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { useModals } from 'react-components';
-import useDriveCrypto from './useDriveCrypto';
 import {
     decryptUnsigned,
     generateDriveBootstrap,
@@ -10,11 +8,15 @@ import {
     generateLookupHash,
     encryptUnsigned,
     generateNodeKeys,
-    encryptPassphrase
+    encryptPassphrase,
 } from 'proton-shared/lib/keys/driveKeys';
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
+import { lookup } from 'mime-types';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { useDriveCache, LinkKeys } from '../../components/DriveCache/DriveCacheProvider';
+import useDriveCrypto from './useDriveCrypto';
 import { LinkMetaResult, isFolderLinkMeta, LinkChildrenResult, LinkMeta, LinkType } from '../../interfaces/link';
 import { queryGetLink } from '../../api/link';
 import { queryFolderChildren, queryCreateFolder } from '../../api/folder';
@@ -25,14 +27,12 @@ import { CreatedDriveVolumeResult } from '../../interfaces/volume';
 import { queryCreateDriveVolume } from '../../api/volume';
 import OnboardingModal from '../../components/OnboardingModal/OnboardingModal';
 import { validateLinkName, ValidationError } from '../../utils/validation';
-import { lookup } from 'mime-types';
 import { ShareEvent, useDriveEventManager } from '../../components/DriveEventManager/DriveEventManagerProvider';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import useQueuedFunction from '../util/useQueuedFunction';
 import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
 import usePreventLeave from '../util/usePreventLeave';
 import runInQueue from '../../utils/runInQueue';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -62,7 +62,7 @@ function useDrive() {
                 VolumeName: 'MainVolume',
                 ShareName: 'MainShare',
                 FolderHashKey,
-                ...bootstrap
+                ...bootstrap,
             })
         );
 
@@ -124,12 +124,12 @@ function useDrive() {
             armoredPassphrase: meta.Passphrase,
             armoredSignature: meta.PassphraseSignature,
             privateKeys,
-            publicKeys
+            publicKeys,
         });
 
         const privateKey = await decryptPrivateKey(meta.Key, decryptedSharePassphrase);
         const keys = {
-            privateKey
+            privateKey,
         };
         cache.set.shareKeys(keys, shareId);
 
@@ -139,7 +139,7 @@ function useDrive() {
     const decryptLink = async (meta: LinkMeta, privateKey: OpenPGPKey): Promise<LinkMeta> => {
         return {
             ...meta,
-            Name: await decryptUnsigned({ armoredMessage: meta.Name, privateKey })
+            Name: await decryptUnsigned({ armoredMessage: meta.Name, privateKey }),
         };
     };
 
@@ -147,14 +147,14 @@ function useDrive() {
         const [{ privateKey: parentKey }, { publicKeys }] = await Promise.all([
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             meta.ParentLinkID ? await getLinkKeys(shareId, meta.ParentLinkID, config) : await getShareKeys(shareId),
-            getVerificationKeys(meta.SignatureAddress)
+            getVerificationKeys(meta.SignatureAddress),
         ]);
 
         return decryptPassphrase({
             armoredPassphrase: meta.NodePassphrase,
             armoredSignature: meta.NodePassphraseSignature,
             privateKeys: [parentKey],
-            publicKeys
+            publicKeys,
         });
     };
 
@@ -175,8 +175,8 @@ function useDrive() {
                 privateKey,
                 hashKey: await decryptUnsigned({
                     armoredMessage: meta.FolderProperties.NodeHashKey,
-                    privateKey
-                })
+                    privateKey,
+                }),
             };
             cache.set.linkKeys(keys, shareId, linkId);
             return keys;
@@ -186,7 +186,7 @@ function useDrive() {
         const sessionKeys = await getDecryptedSessionKey(blockKeys, privateKey);
         const keys = {
             privateKey,
-            sessionKeys
+            sessionKeys,
         };
         cache.set.linkKeys(keys, shareId, linkId);
         return keys;
@@ -301,15 +301,15 @@ function useDrive() {
             generateLookupHash(lowerCaseName, parentKeys.hashKey),
             encryptUnsigned({
                 message: newName,
-                publicKey: parentKeys.privateKey.toPublic()
-            })
+                publicKey: parentKeys.privateKey.toPublic(),
+            }),
         ]);
 
         await debouncedRequest(
             queryRenameLink(shareId, linkId, {
                 Name: encryptedName,
                 MIMEType,
-                Hash
+                Hash,
             })
         );
     };
@@ -327,7 +327,7 @@ function useDrive() {
 
             const [parentKeys, { privateKey: addressKey, address }] = await Promise.all([
                 getLinkKeys(shareId, ParentLinkID),
-                getPrimaryAddressKey()
+                getPrimaryAddressKey(),
             ]);
 
             if (!('hashKey' in parentKeys)) {
@@ -337,17 +337,17 @@ function useDrive() {
             const [
                 Hash,
                 { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature },
-                encryptedName
+                encryptedName,
             ] = await Promise.all([
                 generateLookupHash(lowerCaseName, parentKeys.hashKey),
                 generateNodeKeys(parentKeys.privateKey, addressKey),
                 encryptUnsigned({
                     message: name,
-                    publicKey: parentKeys.privateKey.toPublic()
-                })
+                    publicKey: parentKeys.privateKey.toPublic(),
+                }),
             ]);
 
-            const { NodeHashKey: NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
+            const { NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
 
             return debouncedRequest<{ Folder: { ID: string } }>(
                 queryCreateFolder(shareId, {
@@ -358,7 +358,7 @@ function useDrive() {
                     NodePassphrase,
                     NodePassphraseSignature,
                     SignatureAddress: address.Email,
-                    ParentLinkID
+                    ParentLinkID,
                 })
             );
         },
@@ -371,7 +371,7 @@ function useDrive() {
         const [meta, parentKeys, { privateKey: addressKey, address }] = await Promise.all([
             getLinkMeta(shareId, linkId),
             getLinkKeys(shareId, ParentLinkID),
-            getPrimaryAddressKey()
+            getPrimaryAddressKey(),
         ]);
 
         if (!('hashKey' in parentKeys)) {
@@ -387,8 +387,8 @@ function useDrive() {
             ),
             encryptUnsigned({
                 message: meta.Name,
-                publicKey: parentKeys.privateKey.toPublic()
-            })
+                publicKey: parentKeys.privateKey.toPublic(),
+            }),
         ]);
 
         const data = {
@@ -397,7 +397,7 @@ function useDrive() {
             ParentLinkID,
             NodePassphrase,
             NodePassphraseSignature,
-            SignatureAddress: address.Email
+            SignatureAddress: address.Email,
         };
 
         await debouncedRequest(queryMoveLink(shareId, linkId, data));
@@ -452,7 +452,7 @@ function useDrive() {
                     if (EventType === CREATE) {
                         actions.create[Link.ParentLinkID] = [
                             ...(actions.create[Link.ParentLinkID] ?? []),
-                            decryptedLinkPromise
+                            decryptedLinkPromise,
                         ];
                     }
 
@@ -462,7 +462,7 @@ function useDrive() {
                         } else {
                             actions.update[Link.ParentLinkID] = [
                                 ...(actions.update[Link.ParentLinkID] ?? []),
-                                decryptedLinkPromise
+                                decryptedLinkPromise,
                             ];
                         }
                     }
@@ -474,7 +474,7 @@ function useDrive() {
                     softDelete: [] as string[],
                     trash: [] as Promise<LinkMeta>[],
                     create: {} as { [parentId: string]: Promise<LinkMeta>[] },
-                    update: {} as { [parentId: string]: Promise<LinkMeta>[] }
+                    update: {} as { [parentId: string]: Promise<LinkMeta>[] },
                 }
             );
 
@@ -501,7 +501,7 @@ function useDrive() {
             return Promise.allSettled([
                 trashPromise,
                 Promise.allSettled(createPromises).then(logSettledErrors),
-                Promise.allSettled(updatePromises).then(logSettledErrors)
+                Promise.allSettled(updatePromises).then(logSettledErrors),
             ]);
         },
 
@@ -512,7 +512,7 @@ function useDrive() {
 
         call: (shareId: string): Promise<void> => {
             return getShareEventManager(shareId).call();
-        }
+        },
     };
 
     return {
@@ -529,7 +529,7 @@ function useDrive() {
         fetchAllFolderPages,
         moveLink,
         moveLinks,
-        events
+        events,
     };
 }
 

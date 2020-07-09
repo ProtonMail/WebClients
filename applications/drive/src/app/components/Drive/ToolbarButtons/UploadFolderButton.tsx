@@ -26,7 +26,7 @@ const UploadFolderButton = () => {
     };
 
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const files = e.target.files;
+        const { files } = e.target;
 
         if (!activeFolder || !files) {
             return;
@@ -53,7 +53,7 @@ const UploadFolderButton = () => {
             }
         }
 
-        uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload, true);
+        uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload, true).catch(console.error);
     };
 
     return (

@@ -1,5 +1,4 @@
 import React from 'react';
-import { isSafari, hasPDFSupport } from 'proton-shared/lib/helpers/browser';
 import { c } from 'ttag';
 import Header from './Header';
 import ImagePreview from './ImagePreview';
@@ -10,29 +9,7 @@ import NavigationControl from './NavigationControl';
 import { LinkMeta } from '../../interfaces/link';
 import useKeyPress from '../../hooks/util/useKeyPress';
 import PDFPreview from './PDFPreview';
-
-export const isSupportedImage = (mimeType: string) =>
-    [
-        'image/apng',
-        'image/bmp',
-        'image/gif',
-        'image/x-icon',
-        'image/vnd.microsoft.icon',
-        'image/jpeg',
-        'image/png',
-        'image/svg+xml',
-        !isSafari() && 'image/webp'
-    ]
-        .filter(Boolean)
-        .includes(mimeType);
-
-export const isSupportedText = (mimeType: string) => mimeType.startsWith('text/');
-export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
-export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
-
-// Will include more rules in the future
-export const isPreviewAvailable = (mimeType: string) =>
-    isSupportedImage(mimeType) || isSupportedText(mimeType) || (hasPDFSupport() && isPDF(mimeType));
+import { isPreviewAvailable, isSupportedImage, isSupportedText, isPDF } from './helpers';
 
 interface Props {
     loading: boolean;
@@ -76,9 +53,11 @@ const FilePreview = ({ contents, meta, loading, availableLinks = [], onOpen, onC
 
         if (isSupportedImage(meta.MIMEType)) {
             return <ImagePreview contents={contents} mimeType={meta.MIMEType} onSave={onSave} />;
-        } else if (isSupportedText(meta.MIMEType)) {
+        }
+        if (isSupportedText(meta.MIMEType)) {
             return <TextPreview contents={contents} />;
-        } else if (isPDF(meta.MIMEType)) {
+        }
+        if (isPDF(meta.MIMEType)) {
             return <PDFPreview contents={contents} filename={meta.Name} />;
         }
     };

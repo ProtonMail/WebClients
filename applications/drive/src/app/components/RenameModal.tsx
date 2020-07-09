@@ -1,13 +1,13 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
-import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { LinkType } from '../interfaces/link';
 import { validateLinkName } from '../utils/validation';
 import useDrive from '../hooks/drive/useDrive';
 import { DriveFolder } from './Drive/DriveFolderProvider';
 import { MAX_NAME_LENGTH } from '../constants';
+import { FileBrowserItem } from './FileBrowser/interfaces';
 
 interface Props {
     activeFolder: DriveFolder;

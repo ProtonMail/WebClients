@@ -35,13 +35,14 @@ class FileSaver {
         }
     }
 
+    // eslint-disable-next-line class-methods-use-this
     private async saveViaBuffer(stream: ReadableStream<Uint8Array>, filename: string) {
         try {
             const chunks = await streamToBuffer(stream);
             downloadFile(new Blob(chunks, { type: 'application/octet-stream; charset=utf-8' }), filename);
         } catch (err) {
             if (!isTransferCancelError(err)) {
-                console.error(`File download for ${filename} failed: ${err}`);
+                throw new Error(`File download for ${filename} failed: ${err}`);
             }
         }
     }
@@ -62,7 +63,7 @@ class FileSaver {
         const writer = writable.getWriter();
 
         if (this.useBlobFallback) {
-            this.saveViaBuffer(readable, filename);
+            this.saveViaBuffer(readable, filename).catch(console.error);
         } else {
             try {
                 const mimeType = lookup(filename) || undefined;
@@ -70,16 +71,18 @@ class FileSaver {
 
                 const saveStream = await openDownloadStream(zipMeta, {
                     onCancel: () => {
-                        files.forEach(({ stream }) => stream.cancel('user canceled'));
+                        files.forEach(({ stream }) => {
+                            stream.cancel('user canceled').catch(console.error);
+                        });
                     },
-                    abortSignal: abortController.signal
+                    abortSignal: abortController.signal,
                 });
 
                 // ZipWriter creates it's own streams that are not aborted, using abort signal to force cancel manually
-                readable.pipeTo(saveStream);
+                readable.pipeTo(saveStream).catch(console.error);
             } catch (err) {
                 console.error('Failed to save zip via download, falling back to in-memory download:', err);
-                this.saveViaBuffer(readable, filename);
+                await this.saveViaBuffer(readable, filename);
             }
         }
 
@@ -89,22 +92,20 @@ class FileSaver {
                 await writer.write({
                     name: file.path,
                     lastModified: new Date(),
-                    stream: () => file.stream
+                    stream: () => file.stream,
                 });
             },
             addFolder: async (path: string) => {
                 await writer.write({
                     directory: true,
-                    name: path
+                    name: path,
                 });
             },
-            close: () => {
-                writer.close();
-            },
+            close: () => writer.close(),
             abort: async (reason: any) => {
                 abortController.abort();
-                writer.abort(reason);
-            }
+                return writer.abort(reason);
+            },
         };
     }
 }

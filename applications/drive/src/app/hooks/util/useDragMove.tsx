@@ -1,6 +1,5 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, DragEvent, ReactNode, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { DragEvent, ReactNode, useRef } from 'react';
 
 interface DragMoveContentProps<T> {
     data?: T;
@@ -40,7 +39,12 @@ function useDragMove({ dragging, setDragging }: UseDragMoveParams) {
             function Component<T>({ children, data }: DragMoveContentProps<T>) {
                 transferData.current = data;
 
-                useEffect(() => () => (transferData.current = undefined), []);
+                useEffect(
+                    () => () => {
+                        transferData.current = undefined;
+                    },
+                    []
+                );
 
                 if (dragging && container.current) {
                     return createPortal(children, container.current);

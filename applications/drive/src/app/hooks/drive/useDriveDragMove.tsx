@@ -1,9 +1,8 @@
-import React from 'react';
-import { FileBrowserItem } from '../../components/FileBrowser/FileBrowser';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { LinkType } from '../../interfaces/link';
 import useDrive from './useDrive';
 import useListNotifications from '../util/useListNotifications';
+import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
 
 export interface DragMoveControls {
     handleDragOver: ((event: React.DragEvent<HTMLTableRowElement>) => void) | undefined;
@@ -36,13 +35,12 @@ function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[]) {
             await events.call(shareId);
         };
 
-        const handleDragOver =
-            item.Type === LinkType.FOLDER && allDragging.every(({ LinkID }) => item.LinkID !== LinkID)
-                ? (event: React.DragEvent<HTMLTableRowElement>) => {
-                      event.dataTransfer.dropEffect = 'move';
-                      event.preventDefault();
-                  }
-                : undefined;
+        const handleDragOver = (event: React.DragEvent<HTMLTableRowElement>) => {
+            if (item.Type === LinkType.FOLDER && allDragging.every(({ LinkID }) => item.LinkID !== LinkID)) {
+                event.dataTransfer.dropEffect = 'move';
+                event.preventDefault();
+            }
+        };
 
         return { handleDragOver, handleDrop, dragging, setDragging };
     };

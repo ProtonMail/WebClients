@@ -2,7 +2,7 @@ import React from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { classnames, Loader } from 'react-components';
 import ProgressBar, { ProgressBarStatus } from './ProgressBar';
-import { TransferState, Download, Upload } from '../../interfaces/transfer';
+import { TransferState } from '../../interfaces/transfer';
 import TransferStateIndicator from './TransferStateIndicator';
 import TransferControls from './TransferControls';
 import FileIcon from '../FileIcon/FileIcon';
@@ -11,29 +11,9 @@ import {
     isTransferProgress,
     isTransferPaused,
     isTransferCanceled,
-    isTransferDone
+    isTransferDone,
 } from '../../utils/transfer';
-
-export enum TransferType {
-    Download = 'download',
-    Upload = 'upload'
-}
-
-export interface DownloadProps {
-    transfer: Download;
-    type: TransferType.Download;
-}
-
-export interface UploadProps {
-    transfer: Upload;
-    type: TransferType.Upload;
-}
-
-export interface TransferStats {
-    state: TransferState;
-    progress: number;
-    speed: number;
-}
+import { DownloadProps, UploadProps } from './interfaces';
 
 type Props = (DownloadProps | UploadProps) & {
     stats: {
@@ -62,7 +42,7 @@ const Transfer = ({ stats, ...props }: Props) => {
         <div
             className={classnames([
                 'pd-transfers-listItem pb1 pt1 ml1 mr1',
-                isCanceled && 'pd-transfers-listItem--canceled'
+                isCanceled && 'pd-transfers-listItem--canceled',
             ])}
         >
             <div className="pd-transfers-listItem-name flex flex-nowrap flex-items-center ellipsis">
@@ -94,7 +74,7 @@ const Transfer = ({ stats, ...props }: Props) => {
                     ({
                         [TransferState.Done]: ProgressBarStatus.Success,
                         [TransferState.Canceled]: ProgressBarStatus.Disabled,
-                        [TransferState.Error]: ProgressBarStatus.Error
+                        [TransferState.Error]: ProgressBarStatus.Error,
                     } as any)[transfer.state] || ProgressBarStatus.Running
                 }
                 aria-describedby={transfer.id}

@@ -1,6 +1,6 @@
 import React from 'react';
-import ExpandableRow from './ExpandableRow';
 import { TableRowBusy } from 'react-components';
+import ExpandableRow from './ExpandableRow';
 
 export interface FolderTreeItem {
     linkId: string;
@@ -25,7 +25,7 @@ const FolderTree = ({
     selectedFolderId,
     loading = false,
     onSelect,
-    loadChildren
+    loadChildren,
 }: Props) => {
     const generateRows = (folders: FolderTreeItem[], depth = 0) => {
         const rows = folders.map(({ linkId, name, children }: FolderTreeItem) => {

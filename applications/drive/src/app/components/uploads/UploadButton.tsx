@@ -1,8 +1,8 @@
 import React, { useRef, ChangeEvent } from 'react';
-import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
-import useFiles from '../../hooks/drive/useFiles';
 import { LargeButton, FloatingButton } from 'react-components';
 import { c } from 'ttag';
+import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
+import useFiles from '../../hooks/drive/useFiles';
 
 interface Props {
     floating?: boolean;
@@ -23,13 +23,13 @@ const UploadButton = ({ floating }: Props) => {
     };
 
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const files = e.target.files;
+        const { files } = e.target;
 
         if (!folder || !files) {
             return;
         }
 
-        uploadDriveFiles(folder.shareId, folder.linkId, files, true);
+        uploadDriveFiles(folder.shareId, folder.linkId, files, true).catch(console.error);
     };
 
     return (

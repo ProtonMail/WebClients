@@ -1,14 +1,9 @@
 import React, { useMemo, Fragment } from 'react';
-import Breadcrumb from './Breadcrumb';
 import { useActiveBreakpoint, Icon } from 'react-components';
-import GroupedBreadcrumb from './GroupedBreadcrumb';
+import Breadcrumb from './Breadcrumb';
+import GroupedBreadcrumb, { BreadcrumbInfo } from './GroupedBreadcrumb';
 
-export interface BreadcrumbInfo {
-    name: string;
-    key: string | number;
-    onClick: () => void;
-}
-type GroupedBreadcrumbs = (BreadcrumbInfo | BreadcrumbInfo[])[];
+export type GroupedBreadcrumbs = (BreadcrumbInfo | BreadcrumbInfo[])[];
 
 interface Props {
     breadcrumbs: BreadcrumbInfo[];

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FileBrowserItem } from './FileBrowser';
+import { FileBrowserItem } from './interfaces';
 
 const useFileBrowser = (folderChildren: FileBrowserItem[]) => {
     const [selectedItemIds, setSelectedItems] = useState<string[]>([]);
@@ -69,7 +69,7 @@ const useFileBrowser = (folderChildren: FileBrowserItem[]) => {
         selectItem,
         selectedItems,
         clearSelections,
-        selectRange
+        selectRange,
     };
 };
 

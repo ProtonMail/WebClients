@@ -16,6 +16,7 @@ const NavigationControl = ({ current, total, onNext, onPrev }: Props) => {
     return (
         <div className="flex flex-items-center centered-absolute">
             <button
+                type="button"
                 disabled={isPrevDisabled}
                 onClick={onPrev}
                 title={c('Action').t`Previous`}
@@ -29,6 +30,7 @@ const NavigationControl = ({ current, total, onNext, onPrev }: Props) => {
                 <span>{total}</span>
             </span>
             <button
+                type="button"
                 disabled={isNextDisabled}
                 onClick={onNext}
                 title={c('Action').t`Next`}

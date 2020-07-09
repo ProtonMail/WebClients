@@ -11,14 +11,13 @@ import {
     HeaderModal,
     InnerModal,
     FooterModal,
-    PrimaryButton
+    PrimaryButton,
 } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-
-import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import { LinkType } from '../interfaces/link';
 import { DriveFolder } from './Drive/DriveFolderProvider';
 import useDrive from '../hooks/drive/useDrive';
+import { FileBrowserItem } from './FileBrowser/interfaces';
 
 interface Props {
     item: FileBrowserItem;
@@ -46,11 +45,13 @@ const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
 
         let canceled = false;
 
-        getLocationItems(activeFolder.linkId).then((items) => {
-            if (!canceled) {
-                setLocation(`/${items.join('/')}`);
-            }
-        });
+        getLocationItems(activeFolder.linkId)
+            .then((items) => {
+                if (!canceled) {
+                    setLocation(`/${items.join('/')}`);
+                }
+            })
+            .catch(console.error);
 
         return () => {
             canceled = true;
@@ -83,7 +84,6 @@ const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
             case 'Size':
                 return humanSize(item.Size);
             default:
-                return;
         }
     };
 
