@@ -1,10 +1,10 @@
 import React from 'react';
-import { TransferState, Upload, Download } from '../../interfaces/transfer';
-import { TransferType } from './Transfer';
 import { Icon, classnames, Tooltip } from 'react-components';
 import { c } from 'ttag';
-import { isTransferPaused, isTransferProgress, isTransferDone, isTransferError } from '../../utils/transfer';
 import { getErrorText } from 'react-components/containers/login/helper';
+import { TransferState, Upload, Download } from '../../interfaces/transfer';
+import { isTransferPaused, isTransferProgress, isTransferDone, isTransferError } from '../../utils/transfer';
+import { TransferType } from './interfaces';
 
 interface Props {
     transfer: Upload | Download;
@@ -17,32 +17,32 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
 
     const statusInfo = {
         [TransferState.Initializing]: {
-            text: c('Info').t`Initializing`
+            text: c('Info').t`Initializing`,
         },
         [TransferState.Pending]: {
             text: c('Info').t`Queued`,
-            icon: 'clock'
+            icon: 'clock',
         },
         [TransferState.Progress]: {
             text: c('Info').t`${speed}/s`,
-            icon: type === TransferType.Download ? 'download' : 'upload'
+            icon: type === TransferType.Download ? 'download' : 'upload',
         },
         [TransferState.Paused]: {
             text: c('Info').t`Paused`,
-            icon: 'pause'
+            icon: 'pause',
         },
         [TransferState.Done]: {
             text: type === TransferType.Download ? c('Info').t`Downloaded` : c('Info').t`Uploaded`,
-            icon: 'on'
+            icon: 'on',
         },
         [TransferState.Error]: {
             text: c('Info').t`Failed`,
-            icon: 'attention'
+            icon: 'attention',
         },
         [TransferState.Canceled]: {
             text: c('Info').t`Canceled`,
-            icon: 'off'
-        }
+            icon: 'off',
+        },
     }[transfer.state];
 
     const errorText = transfer.error && getErrorText(transfer.error);
@@ -53,7 +53,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
                 'ellipsis flex flex-items-center',
                 isTransferPaused(transfer) && 'color-global-info',
                 isTransferDone(transfer) && 'color-global-success',
-                isTransferError(transfer) && 'color-global-warning'
+                isTransferError(transfer) && 'color-global-warning',
             ])}
             id={transfer.id}
             title={isTransferProgress(transfer) ? progressTitle : statusInfo.text}

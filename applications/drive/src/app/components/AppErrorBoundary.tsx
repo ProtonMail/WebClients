@@ -6,11 +6,11 @@ import {
     InternalServerError,
     NotFoundError,
     AccessDeniedError,
-    PrivateMainArea
+    PrivateMainArea,
 } from 'react-components';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { useDriveActiveFolder } from './Drive/DriveFolderProvider';
 import { ApiError } from 'proton-shared/lib/fetch/ApiError';
+import { useDriveActiveFolder } from './Drive/DriveFolderProvider';
 
 interface Props extends RouteComponentProps {
     children: React.ReactNode;
@@ -19,7 +19,7 @@ interface Props extends RouteComponentProps {
 const AppErrorBoundary = ({ children, location }: Props) => {
     const { setFolder } = useDriveActiveFolder();
     const [state, setState] = useState<{ id: string; error?: Error }>({
-        id: generateUID('error-boundary')
+        id: generateUID('error-boundary'),
     });
 
     useEffect(() => {

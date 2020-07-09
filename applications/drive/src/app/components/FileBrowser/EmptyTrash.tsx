@@ -1,7 +1,7 @@
 import React from 'react';
-import noContentSvg from './no-trash.svg';
 import { c } from 'ttag';
 import { IllustrationPlaceholder } from 'react-components';
+import noContentSvg from './no-trash.svg';
 
 const EmptyTrash = () => (
     <div className="p2 mt2 flex w100">

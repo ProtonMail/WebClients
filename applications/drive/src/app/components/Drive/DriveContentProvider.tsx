@@ -1,8 +1,5 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
-
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-
-import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import useFileBrowser from '../FileBrowser/useFileBrowser';
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
@@ -10,6 +7,7 @@ import { DriveFolder, useDriveActiveFolder } from './DriveFolderProvider';
 import { mapLinksToChildren } from './helpers';
 import { SortKeys } from '../../interfaces/link';
 import useDriveSorting from '../../hooks/drive/useDriveSorting';
+import { FileBrowserItem } from '../FileBrowser/interfaces';
 
 interface DriveContentProviderState {
     contents: FileBrowserItem[];
@@ -26,7 +24,7 @@ const DriveContentContext = createContext<DriveContentProviderState | null>(null
 
 const DriveContentProviderInner = ({
     children,
-    activeFolder: { linkId, shareId }
+    activeFolder: { linkId, shareId },
 }: {
     children: React.ReactNode;
     activeFolder: DriveFolder;
@@ -93,7 +91,7 @@ const DriveContentProviderInner = ({
         }
 
         if (!initialized || !cache.get.listedChildLinks(shareId, linkId)?.length) {
-            loadNextPage();
+            loadNextPage().catch(console.error);
         }
 
         return () => {
@@ -112,7 +110,7 @@ const DriveContentProviderInner = ({
                 sortParams,
                 contents,
                 complete,
-                initialized
+                initialized,
             }}
         >
             {children}

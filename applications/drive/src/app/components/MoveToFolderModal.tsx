@@ -11,18 +11,18 @@ import {
     FooterModal,
     ResetButton,
     LinkButton,
-    useModals
+    useModals,
 } from 'react-components';
 
 import FolderTree, { FolderTreeItem } from './FolderTree/FolderTree';
 import { DriveFolder } from './Drive/DriveFolderProvider';
-import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import HasNoFolders from './HasNoFolders/HasNoFolders';
 import { selectMessageForItemList } from './Drive/helpers';
 import CreateFolderModal from './CreateFolderModal';
 import useDrive from '../hooks/drive/useDrive';
 import useListNotifications from '../hooks/util/useListNotifications';
 import { useDriveCache } from './DriveCache/DriveCacheProvider';
+import { FileBrowserItem } from './FileBrowser/interfaces';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -49,7 +49,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
         const list = childrenMetas.map((item) => ({
             linkId: item.LinkID,
             name: item.Name,
-            children: { list: [], complete: false }
+            children: { list: [], complete: false },
         }));
         const complete = isChildrenComplete(linkId);
 
@@ -80,7 +80,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
             setFolders([rootFolder]);
         };
 
-        withInitialize(initializeData());
+        withInitialize(initializeData()).catch(console.error);
     }, [activeFolder.shareId]);
 
     const onSelect = (linkId: string) => {
@@ -130,7 +130,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
         }
     };
 
-    const handleCreateNewFolderClick = async (parentFolderId: string) => {
+    const handleCreateNewFolderClick = (parentFolderId: string) => {
         createModal(
             <CreateFolderModal
                 folder={{ shareId: activeFolder.shareId, linkId: parentFolderId }}
@@ -153,7 +153,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
             `Move ${itemsToMoveCount} folders`,
             itemsToMoveCount
         ),
-        mixed: c('Notification').ngettext(msgid`Move 1 item`, `Move ${itemsToMoveCount} items`, itemsToMoveCount)
+        mixed: c('Notification').ngettext(msgid`Move 1 item`, `Move ${itemsToMoveCount} items`, itemsToMoveCount),
     };
     const moveIsDisabled =
         !selectedFolder || itemsToMove.includes(selectedFolder) || activeFolder.linkId === selectedFolder;
@@ -184,7 +184,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
                         {c('Action').t`Create New Folder`}
                     </LinkButton>
                     <div>
-                        <ResetButton disabled={loading} autoFocus={true}>
+                        <ResetButton disabled={loading} autoFocus>
                             {c('Action').t`Close`}
                         </ResetButton>
                         <PrimaryButton className="ml1" loading={loading} type="submit" disabled={moveIsDisabled}>
@@ -193,7 +193,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
                     </div>
                 </div>
             </FooterModal>
-        ) as ReactNode
+        ) as ReactNode,
     };
 
     if (hasNoChildren) {
@@ -207,7 +207,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
                 />
             ),
             title: '',
-            footer: null
+            footer: null,
         };
     }
 
@@ -218,7 +218,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
             </HeaderModal>
             <ContentModal
                 onSubmit={() => {
-                    withLoading(handleSubmit());
+                    withLoading(handleSubmit()).catch(console.error);
                 }}
                 onReset={() => {
                     onClose?.();

@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 
 import { ToolbarSeparator, Toolbar } from 'react-components';
 
+import { getDevice } from 'proton-shared/lib/helpers/browser';
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveContent } from './DriveContentProvider';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder } from './DriveFolderProvider';
 import { LinkType } from '../../interfaces/link';
-import { isPreviewAvailable } from '../FilePreview/FilePreview';
 import {
     PreviewButton,
     SortDropdown,
@@ -17,10 +17,10 @@ import {
     MoveToTrashButton,
     MoveToFolderButton,
     BackButton,
-    CreateNewFolderButton
+    CreateNewFolderButton,
 } from './ToolbarButtons';
 import UploadFolderButton from './ToolbarButtons/UploadFolderButton';
-import { getDevice } from 'proton-shared/lib/helpers/browser';
+import { isPreviewAvailable } from '../FilePreview/helpers';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -40,7 +40,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
     useEffect(() => {
         if (!ParentLinkID) {
-            getLinkMeta(shareId, linkId);
+            getLinkMeta(shareId, linkId).catch(console.error);
         }
     }, [shareId, linkId, ParentLinkID]);
 

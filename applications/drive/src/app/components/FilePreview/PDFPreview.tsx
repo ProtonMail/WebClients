@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 interface Props {
     filename: string;
     contents?: Uint8Array[];

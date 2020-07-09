@@ -1,4 +1,6 @@
-import { TransferState } from '../interfaces/transfer';
+import { TransferState, TransferMeta } from '../interfaces/transfer';
+import { LinkMeta } from '../interfaces/link';
+import { FileBrowserItem } from '../components/FileBrowser/interfaces';
 
 export const isTransferFinished = ({ state }: { state: TransferState }) =>
     [TransferState.Error, TransferState.Canceled, TransferState.Done].includes(state);
@@ -24,3 +26,11 @@ export const isTransferPaused = ({ state }: { state: TransferState }) => state =
 export const isTransferPending = ({ state }: { state: TransferState }) => state === TransferState.Pending;
 
 export const isTransferCancelError = (error: Error) => error.name === 'TransferCancel' || error.name === 'AbortError';
+
+export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
+    return {
+        filename: item.Name,
+        mimeType: item.MIMEType,
+        size: item.Size,
+    };
+};

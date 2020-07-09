@@ -1,11 +1,9 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-
 import { useNotifications, LinkButton } from 'react-components';
-
 import { LinkType } from '../../interfaces/link';
-import { FileBrowserItem } from '../../components/FileBrowser/FileBrowser';
 import { selectMessageForItemList } from '../../components/Drive/helpers';
+import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
 
 const getNotificationTextForItemList = (
     types: LinkType[],
@@ -64,7 +62,7 @@ const useListNotifications = () => {
                 msgid`"${firstItemName}" deleted permanently from Trash`,
                 `${deletedItemsCount} items deleted permanently from Trash`,
                 deletedItemsCount
-            )
+            ),
         };
 
         const notificationText = getNotificationTextForItemList(
@@ -99,7 +97,7 @@ const useListNotifications = () => {
                 msgid`"${firstItemName}" moved to Trash`,
                 `${trashedLinksCount} items moved to Trash`,
                 trashedLinksCount
-            )
+            ),
         };
 
         const movedToTrashText = getNotificationTextForItemList(
@@ -109,7 +107,7 @@ const useListNotifications = () => {
         );
         createNotification({
             type: 'success',
-            text: movedToTrashText
+            text: movedToTrashText,
         });
     };
 
@@ -118,7 +116,7 @@ const useListNotifications = () => {
         {
             restored,
             alreadyExisting,
-            otherErrors
+            otherErrors,
         }: {
             restored: string[];
             alreadyExisting: string[];
@@ -144,7 +142,7 @@ const useListNotifications = () => {
                     msgid`"${firstItemName}" restored from Trash`,
                     `${restoredItemsCount} items restored from Trash`,
                     restoredItemsCount
-                )
+                ),
             };
 
             const notificationText = getNotificationTextForItemList(
@@ -171,7 +169,7 @@ const useListNotifications = () => {
         toMove: FileBrowserItem[],
         {
             moved,
-            failed
+            failed,
         }: {
             moved: {
                 Name: string;
@@ -200,7 +198,7 @@ const useListNotifications = () => {
                     msgid`"${firstItemName}" successfully moved`,
                     `${movedLinksCount} items successfully moved`,
                     movedLinksCount
-                )
+                ),
             };
             const notificationMessage = getNotificationTextForItemList(
                 moved.map((item) => item.Type),
@@ -209,7 +207,7 @@ const useListNotifications = () => {
 
             createNotification({
                 type: 'success',
-                text: notificationMessage
+                text: notificationMessage,
             });
         }
 
@@ -234,7 +232,7 @@ const useListNotifications = () => {
                 msgid`"${firstItemName}" failed to be moved`,
                 `${failedMovesCount} items failed to be moved`,
                 failedMovesCount
-            )
+            ),
         };
 
         const notificationMessage = getNotificationTextForItemList(
@@ -243,7 +241,7 @@ const useListNotifications = () => {
         );
         createNotification({
             type: 'error',
-            text: notificationMessage
+            text: notificationMessage,
         });
     };
 
@@ -251,7 +249,7 @@ const useListNotifications = () => {
         createRestoredLinksNotifications,
         createTrashLinksNotifications,
         createMoveLinksNotifications,
-        createDeleteLinksNotifications
+        createDeleteLinksNotifications,
     };
 };
 

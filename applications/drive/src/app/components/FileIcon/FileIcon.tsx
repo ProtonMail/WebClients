@@ -1,29 +1,29 @@
 import React from 'react';
 import { Icon, classnames } from 'react-components';
-import { isSupportedImage, isVideo, isSupportedText } from '../FilePreview/FilePreview';
+import { isSupportedImage, isSupportedText, isVideo } from '../FilePreview/helpers';
 
 const iconsMap: { [mimeType: string]: { name: string; colorClass?: string } } = {
     Folder: { name: 'folder' },
     'application/msword': { name: 'file-doc', colorClass: 'pd-icon-blue' },
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document': {
         name: 'file-docx',
-        colorClass: 'pd-icon-blue'
+        colorClass: 'pd-icon-blue',
     },
     'application/pdf': { name: 'file-pdf', colorClass: 'pd-icon-red' },
     'application/vnd.ms-powerpoint': { name: 'file-ppt', colorClass: 'pd-icon-orange' },
     'application/vnd.openxmlformats-officedocument.presentationml.presentation': {
         name: 'file-pptx',
-        colorClass: 'pd-icon-orange'
+        colorClass: 'pd-icon-orange',
     },
     'application/x-rar-compressed': { name: 'file-rar-zip' },
     'application/zip': { name: 'file-rar-zip' },
     'application/vnd.ms-excel': { name: 'file-xls', colorClass: 'pd-icon-green' },
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': {
         name: 'file-xslx',
-        colorClass: 'pd-icon-green'
+        colorClass: 'pd-icon-green',
     },
     'application/xliff+xml': { name: 'file-xliff' },
-    'application/xml': { name: 'file-xml' }
+    'application/xml': { name: 'file-xml' },
 };
 
 const getIconName = (mimeType: string) => {

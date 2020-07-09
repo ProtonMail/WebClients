@@ -28,21 +28,21 @@ const ExpandableRow = ({
     onSelect,
     loadChildren,
     childrenComplete,
-    children
+    children,
 }: Props) => {
     const [expanded, setExpanded] = useState(isExpanded);
     const [loadingChildren, withLoadingChildren] = useLoading();
 
     const handleExpand = (linkId: string) => {
         if (!expanded) {
-            withLoadingChildren(loadChildren(linkId));
+            withLoadingChildren(loadChildren(linkId)).catch(console.error);
         }
 
         setExpanded(!expanded);
     };
 
     const handleLoadMore = (linkId: string) => () => {
-        withLoadingChildren(loadChildren(linkId, true));
+        withLoadingChildren(loadChildren(linkId, true)).catch(console.error);
     };
 
     const handleSelect = (linkId: string) => () => {

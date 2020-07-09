@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-
 import useDrive from '../../hooks/drive/useDrive';
-import { FileBrowserItem } from './FileBrowser';
+import { FileBrowserItem } from './interfaces';
 
 interface Props {
     shareId: string;
@@ -26,7 +25,8 @@ const LocationCell = ({ item, shareId }: Props) => {
 
         getLocationItems(shareId, item.ParentLinkID)
             .then((items: string[]) => `/${items.join('/')}`)
-            .then(setLocation);
+            .then(setLocation)
+            .catch(console.error);
     }, []);
 
     return (

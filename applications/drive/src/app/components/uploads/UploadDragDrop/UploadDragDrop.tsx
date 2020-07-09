@@ -40,7 +40,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
         async (e: React.DragEvent<HTMLDivElement>) => {
             e.preventDefault();
             setOverlayIsVisible(false);
-            const items = e.dataTransfer.items;
+            const { items } = e.dataTransfer;
 
             if (!folder || !items) {
                 return;
@@ -48,7 +48,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
 
             const filesToUpload: { path: string[]; file?: File }[] = [];
 
-            const traverseDirectories = async function(item: any, path: string[] = []) {
+            const traverseDirectories = async (item: any, path: string[] = []) => {
                 if (item.isFile) {
                     return new Promise((resolve, reject) => {
                         item.file(
@@ -56,10 +56,11 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                                 filesToUpload.push({ path, file });
                                 resolve();
                             },
-                            (error: Error) => reject(`Unable to get File ${item}: ${error}`)
+                            (error: Error) => reject(new Error(`Unable to get File ${item}: ${error}`))
                         );
                     });
-                } else if (item.isDirectory) {
+                }
+                if (item.isDirectory) {
                     const reader = item.createReader();
                     const newPath = [...path, item.name];
 
@@ -80,7 +81,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                                         resolve();
                                     }
                                 },
-                                (error: Error) => reject(`Unable to traverse directory ${item}: ${error}`)
+                                (error: Error) => reject(new Error(`Unable to traverse directory ${item}: ${error}`))
                             );
                         });
 
@@ -114,7 +115,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 console.error(errors);
             }
 
-            uploadDriveFiles(folder.shareId, folder.linkId, filesToUpload);
+            uploadDriveFiles(folder.shareId, folder.linkId, filesToUpload).catch(console.error);
         },
         [overlayIsVisible]
     );

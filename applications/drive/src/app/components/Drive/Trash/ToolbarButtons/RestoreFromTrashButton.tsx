@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { ToolbarButton, useLoading } from 'react-components';
 
-import { useTrashContent } from '../../Trash/TrashContentProvider';
+import { useTrashContent } from '../TrashContentProvider';
 import useTrash from '../../../../hooks/drive/useTrash';
 import useDrive from '../../../../hooks/drive/useDrive';
 import useListNotifications from '../../../../hooks/util/useListNotifications';

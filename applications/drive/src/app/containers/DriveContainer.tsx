@@ -15,7 +15,7 @@ import UploadButton from '../components/uploads/UploadButton';
 const toLinkURLType = (type: LinkType) => {
     const linkType = {
         [LinkType.FILE]: LinkURLType.FILE,
-        [LinkType.FOLDER]: LinkURLType.FOLDER
+        [LinkType.FOLDER]: LinkURLType.FOLDER,
     }[type];
 
     if (!linkType) {
@@ -27,7 +27,7 @@ const toLinkURLType = (type: LinkType) => {
 
 function DriveContainer({
     match,
-    history
+    history,
 }: RouteComponentProps<{ shareId?: string; type?: LinkURLType; linkId?: string }>) {
     const cache = useDriveCache();
     const [, setError] = useState();
@@ -42,11 +42,10 @@ function DriveContainer({
 
             if (meta) {
                 return { shareId: meta.ShareID, linkId: meta.LinkID };
-            } else {
-                setError(() => {
-                    throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
-                });
             }
+            setError(() => {
+                throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
+            });
         } else if (!shareId || !type || !linkId) {
             setError(() => {
                 throw new Error('Missing parameters, should be none or shareId/type/linkId');

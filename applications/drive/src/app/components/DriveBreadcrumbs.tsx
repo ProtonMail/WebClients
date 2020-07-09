@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { DriveFolder } from './Drive/DriveFolderProvider';
 import { c } from 'ttag';
-import Breadcrumbs, { BreadcrumbInfo } from './Breadcrumbs/Breadcrumbs';
+import { DriveFolder } from './Drive/DriveFolderProvider';
+import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import useDrive from '../hooks/drive/useDrive';
 import { LinkType } from '../interfaces/link';
+import { BreadcrumbInfo } from './Breadcrumbs/GroupedBreadcrumb';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -21,7 +22,7 @@ const DriveBreadcrumbs = ({ activeFolder, openLink }: Props) => {
             const breadcrumb: BreadcrumbInfo = {
                 key: linkId,
                 name: !meta.ParentLinkID ? c('Title').t`My files` : meta.Name,
-                onClick: () => openLink(activeFolder.shareId, linkId, LinkType.FOLDER)
+                onClick: () => openLink(activeFolder.shareId, linkId, LinkType.FOLDER),
             };
 
             if (!meta.ParentLinkID) {
@@ -35,11 +36,13 @@ const DriveBreadcrumbs = ({ activeFolder, openLink }: Props) => {
 
         let canceled = false;
 
-        getBreadcrumbs(activeFolder.linkId).then((result) => {
-            if (!canceled) {
-                setBreadcrumbs(result);
-            }
-        });
+        getBreadcrumbs(activeFolder.linkId)
+            .then((result) => {
+                if (!canceled) {
+                    setBreadcrumbs(result);
+                }
+            })
+            .catch(console.error);
 
         return () => {
             canceled = true;

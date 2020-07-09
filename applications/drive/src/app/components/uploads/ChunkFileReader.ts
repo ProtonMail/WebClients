@@ -1,6 +1,8 @@
 class ChunkFileReader {
     private blob: Blob;
+
     private chunkSize: number;
+
     private offset = 0;
 
     constructor(file: Blob, chunkSize: number) {

@@ -2,13 +2,13 @@ import React from 'react';
 import { Icon, useLoading } from 'react-components';
 import { c } from 'ttag';
 import { useUploadProvider } from '../uploads/UploadProvider';
-import { TransferType, UploadProps, DownloadProps } from './Transfer';
 import { isTransferInitializing, isTransferPaused, isTransferFinished, isTransferFailed } from '../../utils/transfer';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import usePreventLeave from '../../hooks/util/usePreventLeave';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { LinkType } from '../../interfaces/link';
 import useFiles from '../../hooks/drive/useFiles';
+import { TransferType, UploadProps, DownloadProps } from './interfaces';
 
 function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();
@@ -28,17 +28,17 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
     const removeText = c('Action').t`Remove from this list`;
 
     const handleClick = () => {
-        switch (type) {
-            case TransferType.Download:
-                if (isFinished) {
-                    return removeDownload(transfer.id);
-                }
-                return cancelDownload(transfer.id);
-            case TransferType.Upload:
-                if (isFinished) {
-                    return removeUpload(transfer.id);
-                }
-                return cancelUpload(transfer.id);
+        if (type === TransferType.Download) {
+            if (isFinished) {
+                return removeDownload(transfer.id);
+            }
+            return cancelDownload(transfer.id);
+        }
+        if (type === TransferType.Upload) {
+            if (isFinished) {
+                return removeUpload(transfer.id);
+            }
+            return cancelUpload(transfer.id);
         }
     };
 
@@ -46,7 +46,7 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
         if (isTransferPaused(transfer)) {
             resumeDownload(transfer.id);
         } else {
-            withPauseInProgress(pauseDownload(transfer.id));
+            withPauseInProgress(pauseDownload(transfer.id)).catch(console.error);
         }
     };
     const restartTransfer = async () => {
@@ -57,7 +57,7 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
         removeDownload(transfer.id);
 
         if (transfer.type === LinkType.FILE) {
-            preventLeave(
+            await preventLeave(
                 FileSaver.saveAsFile(
                     await startFileTransfer(transfer.downloadInfo.ShareID, transfer.downloadInfo.LinkID, transfer.meta),
                     transfer.meta
@@ -75,13 +75,13 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
                             transfer.downloadInfo.LinkID,
                             {
                                 onStartFileTransfer: zipSaver.addFile,
-                                onStartFolderTransfer: zipSaver.addFolder
+                                onStartFolderTransfer: zipSaver.addFolder,
                             }
                         )
                     );
-                    zipSaver.close();
+                    await zipSaver.close();
                 } catch (e) {
-                    zipSaver.abort(e);
+                    await zipSaver.abort(e);
                 }
             }
         }
@@ -110,16 +110,14 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
                     <Icon size={12} name="repeat" />
                 </button>
             )}
-            {
-                <button
-                    type="button"
-                    onClick={handleClick}
-                    className="pd-transfers-listItem-controls-button pm-button pm-button--for-icon flex flex-item-noshrink"
-                    title={isFinished ? removeText : cancelText}
-                >
-                    <Icon size={12} name={isFinished ? 'swipe' : 'off'} />
-                </button>
-            }
+            <button
+                type="button"
+                onClick={handleClick}
+                className="pd-transfers-listItem-controls-button pm-button pm-button--for-icon flex flex-item-noshrink"
+                title={isFinished ? removeText : cancelText}
+            >
+                <Icon size={12} name={isFinished ? 'swipe' : 'off'} />
+            </button>
         </div>
     );
 }

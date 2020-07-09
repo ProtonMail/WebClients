@@ -1,15 +1,15 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
+import { useApi, generateUID } from 'react-components';
+import { ReadableStream } from 'web-streams-polyfill';
 import {
     TransferState,
     TransferProgresses,
     TransferMeta,
     Download,
     PartialDownload,
-    DownloadInfo
+    DownloadInfo,
 } from '../../interfaces/transfer';
 import { initDownload, DownloadControls, DownloadCallbacks } from './download';
-import { useApi, generateUID } from 'react-components';
-import { ReadableStream } from 'web-streams-polyfill';
 import { FILE_CHUNK_SIZE, MAX_THREADS_PER_DOWNLOAD } from '../../constants';
 import { LinkType } from '../../interfaces/link';
 import {
@@ -17,7 +17,7 @@ import {
     isTransferPaused,
     isTransferProgress,
     isTransferPending,
-    isTransferCancelError
+    isTransferCancelError,
 } from '../../utils/transfer';
 
 const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
@@ -84,7 +84,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                       state: newState,
                       resumeState: isTransferPaused(download) ? newState : download.state,
                       startDate: download.startDate ?? startDate,
-                      error
+                      error,
                   }
                 : download;
         });
@@ -201,7 +201,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 onStart: (stream) => {
                     resolve(stream);
                     return cb.onStart(stream);
-                }
+                },
             });
 
             callbacks.current[id] = cb;
@@ -216,8 +216,8 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                     downloadInfo,
                     state: TransferState.Pending,
                     startDate: new Date(),
-                    type: LinkType.FILE
-                }
+                    type: LinkType.FILE,
+                },
             ]);
         });
     };
@@ -230,7 +230,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         const partialsPromises: Promise<void>[] = [];
         const folderMeta = {
             filename: folderName.endsWith('.zip') ? folderName : `${folderName}.zip`,
-            mimeType: 'application/zip'
+            mimeType: 'application/zip',
         };
         let aborted = false;
 
@@ -261,14 +261,14 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 try {
                     // Partials are `Initializing` until Folder download is started, then partials are set to Pending
                     updatePartialDownloadState(Object.keys(files), TransferState.Pending, {
-                        force: true
+                        force: true,
                     });
                     await Promise.all(partialsPromises);
                 } catch (err) {
                     abortDownload(groupId);
                     throw err;
                 }
-            }
+            },
         };
 
         setDownloads((downloads) => [
@@ -279,8 +279,8 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 downloadInfo,
                 state: TransferState.Initializing,
                 startDate: new Date(),
-                type: LinkType.FOLDER
-            }
+                type: LinkType.FOLDER,
+            },
         ]);
 
         return {
@@ -304,7 +304,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                         onError(err) {
                             reject(err);
                             cb.onError?.(err);
-                        }
+                        },
                     });
                     progresses.current[id] = 0;
                     controls.current[id] = downloadControls;
@@ -327,7 +327,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                             ? {
                                   ...download,
                                   meta: { ...folderMeta, size },
-                                  state: TransferState.Pending
+                                  state: TransferState.Pending,
                               }
                             : download
                     )
@@ -342,10 +342,10 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                         partOf: groupId,
                         state: TransferState.Initializing,
                         type: LinkType.FILE,
-                        startDate: new Date()
-                    }))
+                        startDate: new Date(),
+                    })),
                 ]);
-            }
+            },
         };
     };
 
@@ -360,7 +360,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 removeDownload,
                 addFolderToDownloadQueue,
                 pauseDownload,
-                resumeDownload
+                resumeDownload,
             }}
         >
             {children}

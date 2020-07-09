@@ -58,7 +58,7 @@ const PrivateApp = ({ onLogout, history, location }: Props) => {
                                                         component={TrashContainer}
                                                     />
                                                     <Route
-                                                        path={`/drive/:shareId?/:type?/:linkId?`}
+                                                        path="/drive/:shareId?/:type?/:linkId?"
                                                         exact
                                                         component={DriveContainer}
                                                     />

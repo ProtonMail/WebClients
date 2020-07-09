@@ -10,13 +10,13 @@ import usePreventLeave from '../hooks/util/usePreventLeave';
 import FileSaver from '../utils/FileSaver/FileSaver';
 import { LinkURLType } from '../constants';
 import { LinkMeta } from '../interfaces/link';
-import { getMetaForTransfer } from '../components/Drive/Drive';
 import { DownloadControls } from '../components/downloads/download';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
-import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
+import FilePreview from '../components/FilePreview/FilePreview';
 import useDriveSorting from '../hooks/drive/useDriveSorting';
-import { isTransferCancelError } from '../utils/transfer';
+import { isTransferCancelError, getMetaForTransfer } from '../utils/transfer';
+import { isPreviewAvailable } from '../components/FilePreview/helpers';
 
 const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
@@ -54,7 +54,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
                 setFolder({ shareId, linkId: ParentLinkID });
 
-                fetchAllFolderPages(shareId, ParentLinkID);
+                fetchAllFolderPages(shareId, ParentLinkID).catch(console.error);
 
                 if (isPreviewAvailable(MIMEType)) {
                     const { contents, controls } = await downloadDriveFile(shareId, linkId);
@@ -77,7 +77,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
             setContents(undefined);
         }
 
-        withLoading(preloadFile());
+        withLoading(preloadFile()).catch(console.error);
 
         return () => {
             canceled = true;
@@ -109,7 +109,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
             ? saveFileTransferFromBuffer(contents, transferMeta, { ShareID: shareId, LinkID: linkId })
             : startFileTransfer(shareId, linkId, transferMeta));
 
-        preventLeave(FileSaver.saveAsFile(fileStream, transferMeta));
+        preventLeave(FileSaver.saveAsFile(fileStream, transferMeta)).catch(console.error);
     }, [meta, contents, shareId, linkId]);
 
     return (

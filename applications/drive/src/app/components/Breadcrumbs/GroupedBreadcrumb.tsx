@@ -1,8 +1,12 @@
 import React, { useMemo } from 'react';
 import { generateUID, usePopperAnchor, Dropdown, DropdownMenu, DropdownMenuButton, Icon } from 'react-components';
 import Breadcrumb from './Breadcrumb';
-import { BreadcrumbInfo } from './Breadcrumbs';
 
+export interface BreadcrumbInfo {
+    name: string;
+    key: string | number;
+    onClick: () => void;
+}
 interface Props {
     breadcrumbs: BreadcrumbInfo[];
 }

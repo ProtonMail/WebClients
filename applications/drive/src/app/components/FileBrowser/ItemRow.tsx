@@ -1,18 +1,16 @@
 import React, { useRef } from 'react';
 import { c, msgid } from 'ttag';
-
 import { TableRow, Checkbox, Time, useActiveBreakpoint, classnames } from 'react-components';
 import readableTime from 'proton-shared/lib/helpers/readableTime';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-
 import { LinkType } from '../../interfaces/link';
-import { FileBrowserItem } from './FileBrowser';
 import FileIcon from '../FileIcon/FileIcon';
 import LocationCell from './LocationCell';
 import useDragMove from '../../hooks/util/useDragMove';
 import { DragMoveControls } from '../../hooks/drive/useDriveDragMove';
 import { selectMessageForItemList } from '../Drive/helpers';
+import { FileBrowserItem } from './interfaces';
 
 interface Props {
     item: FileBrowserItem;
@@ -35,7 +33,7 @@ const ItemRow = ({
     onShiftClick,
     showLocation,
     secondaryActionActive,
-    dragMoveControls
+    dragMoveControls,
 }: Props) => {
     const { handleDragOver, handleDrop } = dragMoveControls;
     const { dragging, handleDragEnd, handleDragStart, DragMoveContent } = useDragMove(dragMoveControls);
@@ -92,7 +90,13 @@ const ItemRow = ({
     const isFolder = item.Type === LinkType.FOLDER;
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
     const cells = [
-        <div key="select" className="flex" onClick={handleSelect} onTouchStart={(e) => e.stopPropagation()}>
+        <div
+            role="presentation"
+            key="select"
+            className="flex"
+            onClick={handleSelect}
+            onTouchStart={(e) => e.stopPropagation()}
+        >
             <Checkbox
                 className="increase-surface-click"
                 checked={isSelected}
@@ -128,7 +132,7 @@ const ItemRow = ({
             <div key="size" className="ellipsis" title={humanSize(item.Size)}>
                 {humanSize(item.Size)}
             </div>
-        )
+        ),
     ].filter(Boolean);
 
     const dragMoveItems = selectedItems.some(({ LinkID }) => LinkID === item.LinkID) ? selectedItems : [item];
@@ -141,7 +145,7 @@ const ItemRow = ({
             `Move ${movingCount} folders`,
             movingCount
         ),
-        mixed: c('Notification').ngettext(msgid`Move ${movingCount} item`, `Move ${movingCount} items`, movingCount)
+        mixed: c('Notification').ngettext(msgid`Move ${movingCount} item`, `Move ${movingCount} items`, movingCount),
     };
 
     const moveText = selectMessageForItemList(
@@ -166,7 +170,7 @@ const ItemRow = ({
                     'no-outline',
                     (onClick || secondaryActionActive) && 'cursor-pointer',
                     isSelected && 'bg-global-highlight',
-                    dragging && 'opacity-50'
+                    dragging && 'opacity-50',
                 ])}
                 onMouseDown={() => document.getSelection()?.removeAllRanges()}
                 onKeyDown={handleKeyDown}

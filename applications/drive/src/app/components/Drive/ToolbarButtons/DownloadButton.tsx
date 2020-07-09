@@ -5,11 +5,12 @@ import { ToolbarButton } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
 import { LinkType } from '../../../interfaces/link';
-import { getMetaForTransfer } from '../Drive';
 import useFiles from '../../../hooks/drive/useFiles';
 import FileSaver from '../../../utils/FileSaver/FileSaver';
 import usePreventLeave from '../../../hooks/util/usePreventLeave';
 import { useDriveActiveFolder } from '../DriveFolderProvider';
+import { getMetaForTransfer } from '../../../utils/transfer';
+import { logSettledErrors } from '../../../utils/async';
 
 interface Props {
     disabled?: boolean;
@@ -22,15 +23,16 @@ const DownloadButton = ({ disabled }: Props) => {
     const { selectedItems } = fileBrowserControls;
     const { preventLeave } = usePreventLeave();
 
-    const handleDownloadClick = () => {
+    const handleDownloadClick = async () => {
         if (!folder) {
             return;
         }
-        selectedItems.forEach(async (item) => {
+
+        const promises = selectedItems.map(async (item) => {
             if (item.Type === LinkType.FILE) {
                 const meta = getMetaForTransfer(item);
                 const fileStream = await startFileTransfer(folder.shareId, item.LinkID, meta);
-                preventLeave(FileSaver.saveAsFile(fileStream, meta));
+                preventLeave(FileSaver.saveAsFile(fileStream, meta)).catch(console.error);
             } else {
                 const zipSaver = await FileSaver.saveAsZip(item.Name);
 
@@ -39,16 +41,18 @@ const DownloadButton = ({ disabled }: Props) => {
                         await preventLeave(
                             startFolderTransfer(item.Name, folder.shareId, item.LinkID, {
                                 onStartFileTransfer: zipSaver.addFile,
-                                onStartFolderTransfer: zipSaver.addFolder
+                                onStartFolderTransfer: zipSaver.addFolder,
                             })
                         );
-                        zipSaver.close();
+                        await zipSaver.close();
                     } catch (e) {
-                        zipSaver.abort(e);
+                        await zipSaver.abort(e);
                     }
                 }
             }
         });
+
+        logSettledErrors(await Promise.allSettled(promises));
     };
 
     return (
