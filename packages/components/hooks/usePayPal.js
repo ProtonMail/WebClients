@@ -11,6 +11,7 @@ const usePayPal = ({ amount: Amount = 0, currency: Currency = '', type: Type, on
     const [loadingVerification, withLoadingVerification] = useLoading();
     const [loadingToken, withLoadingToken] = useLoading();
     const { createModal } = useModals();
+    const clear = () => setModel({});
 
     const onToken = async () => {
         try {
@@ -23,7 +24,7 @@ const usePayPal = ({ amount: Amount = 0, currency: Currency = '', type: Type, on
             );
             setModel(result);
         } catch (error) {
-            setModel({});
+            clear();
             throw error;
         }
     };
@@ -64,7 +65,8 @@ const usePayPal = ({ amount: Amount = 0, currency: Currency = '', type: Type, on
         loadingToken,
         loadingVerification,
         onToken: () => withLoadingToken(onToken()),
-        onVerification: () => withLoadingVerification(onVerification())
+        onVerification: () => withLoadingVerification(onVerification()),
+        clear
     };
 };
 

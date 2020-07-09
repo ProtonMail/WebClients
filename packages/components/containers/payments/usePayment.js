@@ -78,8 +78,10 @@ const usePayment = ({ amount, currency, onPay }) => {
     }, [method, card]);
 
     useEffect(() => {
+        paypal.clear();
+        paypalCredit.clear();
         if (isPayPalActive && amount) {
-            Promise.all([paypal.onToken(), paypalCredit.onToken()]);
+            paypal.onToken().then(() => paypalCredit.onToken());
         }
     }, [isPayPalActive, amount, currency]);
 
