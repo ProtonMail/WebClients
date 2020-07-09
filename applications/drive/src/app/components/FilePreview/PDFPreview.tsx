@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 interface Props {
-    filename: string;
+    filename?: string;
     contents?: Uint8Array[];
 }
-const PDFPreview = ({ filename, contents }: Props) => {
+const PDFPreview = ({ filename = 'preview.pdf', contents }: Props) => {
     const [url, setUrl] = useState<string>();
 
     useEffect(() => {

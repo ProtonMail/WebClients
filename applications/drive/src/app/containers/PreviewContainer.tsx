@@ -1,11 +1,8 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-
 import { useLoading, usePreventLeave } from 'react-components';
-
 import useFiles from '../hooks/drive/useFiles';
 import useDrive from '../hooks/drive/useDrive';
-
 import FileSaver from '../utils/FileSaver/FileSaver';
 import { LinkURLType } from '../constants';
 import { LinkMeta } from '../interfaces/link';
@@ -16,6 +13,7 @@ import FilePreview from '../components/FilePreview/FilePreview';
 import useDriveSorting from '../hooks/drive/useDriveSorting';
 import { isTransferCancelError, getMetaForTransfer } from '../utils/transfer';
 import { isPreviewAvailable } from '../components/FilePreview/helpers';
+import FilePreviewNavigation from '../components/FilePreviewNavigation';
 
 const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
@@ -115,11 +113,19 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
         <FilePreview
             loading={loading}
             contents={contents}
-            meta={meta}
-            availableLinks={linksAvailableForPreview}
-            onOpen={navigateToLink}
+            fileName={meta?.Name}
+            mimeType={meta?.MIMEType}
             onClose={navigateToParent}
             onSave={saveFile}
+            navigationControls={
+                meta && (
+                    <FilePreviewNavigation
+                        availableLinks={linksAvailableForPreview}
+                        openLinkId={meta.LinkID}
+                        onOpen={navigateToLink}
+                    />
+                )
+            }
         />
     );
 };
