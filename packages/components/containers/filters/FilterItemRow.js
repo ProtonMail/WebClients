@@ -13,11 +13,12 @@ import {
     useLoading,
     useNotifications
 } from 'react-components';
-import { isComplex } from 'proton-shared/lib/filters/factory';
+import { isComplex } from 'proton-shared/lib/filters/utils';
 import { FILTER_STATUS } from 'proton-shared/lib/constants';
 import { toggleEnable, deleteFilter } from 'proton-shared/lib/api/filters';
 
-import AddFilterModal from './AddFilterModal';
+import FilterModal from './modal/FilterModal';
+import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
 
 function FilterItemRow({ filter, ...rest }) {
     const api = useApi();
@@ -54,7 +55,10 @@ function FilterItemRow({ filter, ...rest }) {
     };
 
     const handleEdit = (type) => () => {
-        createModal(<AddFilterModal mode="update" filter={filter} type={type} />);
+        if (type === 'sieve') {
+            return createModal(<AdvancedFilterModal filter={filter} />);
+        }
+        createModal(<FilterModal filter={filter} />);
     };
 
     const list = [
@@ -64,7 +68,7 @@ function FilterItemRow({ filter, ...rest }) {
         },
         {
             text: c('Action').t`Edit sieve`,
-            onClick: handleEdit('complex')
+            onClick: handleEdit('sieve')
         },
         {
             text: c('Action').t`Delete`,

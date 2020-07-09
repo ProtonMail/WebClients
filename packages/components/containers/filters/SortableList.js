@@ -15,7 +15,7 @@ const FilterSortableList = ({ items, ...rest }) => (
                 <th scope="col" className="w8e nomobile">
                     {c('Settings/filters - table').t`Status`}
                 </th>
-                <th scope="col" className="w8e">
+                <th scope="col" className="w10e">
                     {c('Settings/filters - table').t`Action`}
                 </th>
             </tr>

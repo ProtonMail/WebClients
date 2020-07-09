@@ -6,11 +6,12 @@ import ErrorZone from '../text/ErrorZone';
 
 const DEFAULT_GROUP = 'GROUP';
 
-interface OptionProps
+export interface OptionProps
     extends React.DetailedHTMLProps<React.OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement> {
     value: string | number;
     text: string | number;
     group?: string;
+    disabled?: boolean;
 }
 
 const buildOptions = (options: OptionProps[] = []) => {

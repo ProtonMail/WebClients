@@ -355,7 +355,7 @@ export { default as FoldersSection } from './containers/labels/FoldersSection';
 export { default as LabelsModal } from './containers/labels/modals/Edit';
 export { default as SpamFiltersSection } from './containers/filters/SpamFiltersSection';
 export { default as FiltersSection } from './containers/filters/FiltersSection';
-export { default as AddFilterModal } from './containers/filters/AddFilterModal';
+export { default as AddFilterModal } from './containers/filters/modal/FilterModal';
 export { default as AddEmailToListModal } from './containers/filters/AddEmailToListModal';
 export { default as AppVersion } from './components/version/AppVersion';
 export { default as ChangelogModal } from './components/version/ChangelogModal';

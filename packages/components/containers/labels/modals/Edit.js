@@ -9,7 +9,15 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import NewLabelForm from '../NewLabelForm';
 
-function EditLabelModal({ label, mode = 'create', onEdit = noop, onAdd = noop, type = 'label', ...props }) {
+function EditLabelModal({
+    label = null,
+    mode = 'create',
+    onEdit = noop,
+    onClose = noop,
+    onAdd = noop,
+    type = 'label',
+    ...props
+}) {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -46,7 +54,7 @@ function EditLabelModal({ label, mode = 'create', onEdit = noop, onAdd = noop, t
             text: c('label/folder notification').t`${Label.Name} created`
         });
         onAdd(Label);
-        props.onClose();
+        onClose();
     };
 
     const update = async (label) => {
@@ -56,7 +64,7 @@ function EditLabelModal({ label, mode = 'create', onEdit = noop, onAdd = noop, t
             text: c('Filter notification').t`${Label.Name} updated`
         });
         onEdit(Label);
-        props.onClose();
+        onClose();
     };
 
     const ACTIONS = { create, edition: update };
@@ -90,6 +98,7 @@ function EditLabelModal({ label, mode = 'create', onEdit = noop, onAdd = noop, t
             onSubmit={handleSubmit}
             loading={loading}
             title={I18N[mode](model)}
+            onClose={onClose}
             {...props}
         >
             <NewLabelForm

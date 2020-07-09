@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Icon from './Icon';
 import { classnames } from '../../helpers/component';
@@ -10,30 +9,37 @@ const TYPES = {
     error: 'bg-global-warning'
 };
 
+interface Props {
+    iconClassName?: string;
+    className?: string;
+    type?: 'success' | 'warning' | 'error';
+    title?: string;
+    padding?: string;
+    name: string;
+}
+
 const RoundedIcon = ({
     className = '',
     iconClassName = 'color-white',
     type = 'success',
     padding = 'p0-5',
     title,
+    name,
     ...rest
-}) => {
+}: Props) => {
     return (
         <span
-            className={classnames(['inline-flex rounded50 flex-item-noshrink', className, padding, TYPES[type]])}
+            className={classnames([
+                'inline-flex rounded50 flex-item-noshrink',
+                className,
+                padding,
+                type && TYPES[type]
+            ])}
             title={title}
         >
-            <Icon size="12" className={iconClassName} {...rest} />
+            <Icon size={12} className={iconClassName} name={name} {...rest} />
         </span>
     );
-};
-
-RoundedIcon.propTypes = {
-    iconClassName: PropTypes.string,
-    className: PropTypes.string,
-    type: PropTypes.string,
-    title: PropTypes.string,
-    padding: PropTypes.string
 };
 
 export default RoundedIcon;
