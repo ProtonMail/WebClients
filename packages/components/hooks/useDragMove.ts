@@ -9,9 +9,11 @@ interface DragMoveContentProps<T> {
 interface UseDragMoveParams {
     dragging: boolean;
     setDragging: (value: boolean) => void;
+    format?: string;
+    formatter?: (value: any) => string;
 }
 
-function useDragMove({ dragging, setDragging }: UseDragMoveParams) {
+function useDragMove({ dragging, setDragging, format = 'text/plain', formatter = (str) => str }: UseDragMoveParams) {
     const container = useRef<HTMLDivElement>();
     const transferData = useRef<any>();
 
@@ -22,7 +24,7 @@ function useDragMove({ dragging, setDragging }: UseDragMoveParams) {
         }
         document.body.appendChild(container.current);
         event.dataTransfer.setDragImage(container.current, 0, 0);
-        event.dataTransfer.setData('text/plain', JSON.stringify(transferData.current));
+        event.dataTransfer.setData(format, formatter(transferData.current));
         setDragging(true);
     };
 
