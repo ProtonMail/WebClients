@@ -9,7 +9,8 @@ import {
     normalizeEmail,
     normalizeInternalEmail,
     validateEmailAddress,
-    truncateMore
+    truncateMore,
+    validateDomain
 } from '../../lib/helpers/string';
 
 describe('string', () => {
@@ -120,6 +121,32 @@ describe('string', () => {
             strings.forEach((string) => {
                 expect(decodeBase64URL(encodeBase64URL(string))).toEqual(string);
             });
+        });
+    });
+
+    describe('validateDomain', () => {
+        it('should accept valid domains', () => {
+            const domains = [
+                'protonmail.com',
+                'mail.proton.me.',
+                'vpn.at.proton.me',
+                'pro-ton.mail.com',
+                'xn--80ak6aa92e.com',
+                '_dnslink.ipfs.io',
+                'n.mk',
+                'a-1234567890-1234567890-1234567890-1234567890-1234567890-1234-z.eu.us',
+                'external.asd1230-123.asd_internal.asd.gm-_ail.com'
+            ];
+            const results = domains.map((domain) => validateDomain(domain));
+            const expected = domains.map(() => true);
+            expect(results).toEqual(expected);
+        });
+
+        it('should reject invalid domains', () => {
+            const domains = ['protonmail', '-mail.proton.me.', '1234', '[123.32]', 'pro*ton.mail.com'];
+            const results = domains.map((domain) => validateDomain(domain));
+            const expected = domains.map(() => false);
+            expect(results).toEqual(expected);
         });
     });
 
