@@ -1,9 +1,6 @@
 import React, { useState, ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
-
-import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy } from 'react-components';
-
-import FileIcon from '../FileIcon/FileIcon';
+import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy, FileIcon } from 'react-components';
 
 interface Props {
     linkId: string;

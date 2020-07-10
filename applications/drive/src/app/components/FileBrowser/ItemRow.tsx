@@ -8,12 +8,12 @@ import {
     classnames,
     useDragMove,
     DragMoveContainer,
+    FileIcon,
 } from 'react-components';
 import readableTime from 'proton-shared/lib/helpers/readableTime';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { LinkType } from '../../interfaces/link';
-import FileIcon from '../FileIcon/FileIcon';
 import LocationCell from './LocationCell';
 import { DragMoveControls } from '../../hooks/drive/useDriveDragMove';
 import { selectMessageForItemList } from '../Drive/helpers';
