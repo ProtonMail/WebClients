@@ -31,6 +31,7 @@ import { Message } from '../models/message';
 import { Breakpoints } from '../models/utils';
 import { OnCompose } from '../hooks/useCompose';
 import { useWelcomeFlag } from '../hooks/useWelcomeFlag';
+import useNewEmailNotification from '../hooks/useNewEmailNotification';
 
 import './MailboxContainer.scss';
 
@@ -88,7 +89,7 @@ const MailboxContainer = ({
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
 
     const [checkedElements, setCheckedElements] = useState<{ [ID: string]: boolean }>({});
-
+    useNewEmailNotification(history, location);
     const { labelID, elements, loading, expectedLength, total } = useElements({
         conversationMode,
         labelID: inputLabelID,
