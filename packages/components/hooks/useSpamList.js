@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
-
-const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
-const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
+import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
 
 const getFilterSearch = (input = '') => {
     const defaultFilter = (i) => i;
+
     if (!input) {
         return defaultFilter;
     }
-    return ({ Email }) => Email.toLowerCase().includes(input.toLowerCase());
+
+    return ({ Email = '', Domain = '' }) =>
+        Email.toLowerCase().includes(input.toLowerCase()) || Domain.toLowerCase().includes(input.toLowerCase());
 };
 
 const useSpamList = () => {
@@ -61,7 +61,7 @@ const useSpamList = () => {
 
         const { white, black } = data.reduce(
             (acc, item) => {
-                const key = item.Location === WHITELIST_TYPE ? 'white' : 'black';
+                const key = item.Location === WHITELIST_LOCATION ? 'white' : 'black';
                 acc[key].push(item);
                 return acc;
             },
@@ -74,17 +74,17 @@ const useSpamList = () => {
 
     /**
      * Move an email from a list to another
-     * @param  {String} dest       (white|black)list
-     * @param  {String} options.ID Email's ID
+     * @param  {String} dest
+     * @param  {Object} data
      * @return {void}
      */
     const move = (dest, data) => {
-        if (dest === 'whitelist') {
+        if (dest === WHITELIST_LOCATION) {
             refreshBlackList(blackList.filter((item) => item.ID !== data.ID));
             refreshWhiteList(whiteList.concat(data));
         }
 
-        if (dest === 'blacklist') {
+        if (dest === BLACKLIST_LOCATION) {
             refreshWhiteList(whiteList.filter((item) => item.ID !== data.ID));
             refreshBlackList(blackList.concat(data));
         }
@@ -97,28 +97,44 @@ const useSpamList = () => {
      * @return {void}
      */
     const remove = ({ ID, Location }) => {
-        if (Location === WHITELIST_TYPE) {
+        if (Location === WHITELIST_LOCATION) {
             refreshWhiteList(whiteList.filter((item) => item.ID !== ID));
         }
 
-        if (Location === BLACKLIST_TYPE) {
+        if (Location === BLACKLIST_LOCATION) {
             refreshBlackList(blackList.filter((item) => item.ID !== ID));
         }
     };
 
     /**
      * Move an email from a list to another
-     * @param  {String} dest       (white|black)list
-     * @param  {String} options.ID Email's ID
+     * @param  {String} dest
+     * @param  {Object} data
      * @return {void}
      */
     const create = (dest, data) => {
-        if (dest === 'whitelist') {
+        if (dest === WHITELIST_LOCATION) {
             refreshWhiteList(whiteList.concat(data));
         }
 
-        if (dest === 'blacklist') {
+        if (dest === BLACKLIST_LOCATION) {
             refreshBlackList(blackList.concat(data));
+        }
+    };
+
+    /**
+     * Move an email from a list to another
+     * @param  {String} dest
+     * @param  {Object} data
+     * @return {void}
+     */
+    const edit = (dest, data) => {
+        if (dest === WHITELIST_LOCATION) {
+            refreshWhiteList(whiteList.filter(({ ID }) => ID !== data.ID).concat(data));
+        }
+
+        if (dest === BLACKLIST_LOCATION) {
+            refreshBlackList(blackList.filter(({ ID }) => ID !== data.ID).concat(data));
         }
     };
 
@@ -129,6 +145,7 @@ const useSpamList = () => {
         refreshBlackList,
         remove,
         create,
+        edit,
         search,
         move
     };

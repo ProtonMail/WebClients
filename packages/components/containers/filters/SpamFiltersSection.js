@@ -1,22 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { Alert, useApiResult, useApiWithoutResult } from 'react-components';
-import { getIncomingDefaults } from 'proton-shared/lib/api/incomingDefaults';
-import { MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
+import {
+    Alert,
+    useApiResult,
+    useApiWithoutResult,
+    useApi,
+    useNotifications,
+    useModals,
+    SearchInput
+} from 'react-components';
+import {
+    getIncomingDefaults,
+    updateIncomingDefault,
+    deleteIncomingDefaults
+} from 'proton-shared/lib/api/incomingDefaults';
+import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
 
 import useSpamList from '../../hooks/useSpamList';
 import SpamListItem from './spamlist/SpamListItem';
-import SearchEmailIntoList from './spamlist/SearchEmailIntoList';
+import AddEmailToListModal from './AddEmailToListModal';
 
-const BLACKLIST_TYPE = +MAILBOX_IDENTIFIERS.spam;
-const WHITELIST_TYPE = +MAILBOX_IDENTIFIERS.inbox;
-
-const getWhiteList = () => getIncomingDefaults({ Location: WHITELIST_TYPE });
-const getBlackList = () => getIncomingDefaults({ Location: BLACKLIST_TYPE });
+const getWhiteList = () => getIncomingDefaults({ Location: WHITELIST_LOCATION });
+const getBlackList = () => getIncomingDefaults({ Location: BLACKLIST_LOCATION });
 
 function SpamFiltersSection() {
+    const api = useApi();
+    const { createNotification } = useNotifications();
+    const { createModal } = useModals();
     const reqSearch = useApiWithoutResult(getIncomingDefaults);
-    const { blackList, whiteList, refreshWhiteList, refreshBlackList, move, remove, search, create } = useSpamList();
+    const {
+        blackList,
+        whiteList,
+        refreshWhiteList,
+        refreshBlackList,
+        move,
+        remove,
+        search,
+        create,
+        edit
+    } = useSpamList();
 
     const { result: white = {}, loading: loadingWhite } = useApiResult(getWhiteList, []);
     const { result: black = {}, loading: loadingBlack } = useApiResult(getBlackList, []);
@@ -33,12 +55,6 @@ function SpamFiltersSection() {
         setLoader({ ...loader, black: loadingBlack });
     }, [black.IncomingDefaults]);
 
-    const handleAction = (action) => (type, data) => {
-        action === 'create' && create(type, data);
-        action === 'remove' && remove(data);
-        action === 'move' && move(type, data);
-    };
-
     const handleSearchChange = async (Keyword) => {
         search(Keyword);
         setLoader({ white: true, black: true });
@@ -51,6 +67,42 @@ function SpamFiltersSection() {
         }
     };
 
+    const handleCreate = async (type) => {
+        const data = await new Promise((resolve) => {
+            createModal(<AddEmailToListModal type={type} onAdd={resolve} />);
+        });
+        create(type, data);
+    };
+
+    const handleEdit = async (type, incomingDefault) => {
+        const data = await new Promise((resolve) => {
+            createModal(<AddEmailToListModal type={type} onAdd={resolve} incomingDefault={incomingDefault} />);
+        });
+        edit(type, data);
+    };
+
+    const handleMove = async (incomingDefault) => {
+        const { Email, Domain, ID, Location } = incomingDefault;
+        const type = Location === WHITELIST_LOCATION ? BLACKLIST_LOCATION : WHITELIST_LOCATION;
+        const { IncomingDefault: data } = await api(updateIncomingDefault(ID, { Location: type }));
+        const item = Email || Domain;
+        createNotification({
+            text:
+                Location === WHITELIST_LOCATION
+                    ? c('Spam filter moved to whitelist').t`${item} moved to whitelist`
+                    : c('Spam filter moved to blacklist').t`${item} moved to blacklist`
+        });
+        move(type, data);
+    };
+
+    const handleRemove = async (incomingDefault) => {
+        const { Email, Domain, ID } = incomingDefault;
+        await api(deleteIncomingDefaults([ID]));
+        const item = Email || Domain;
+        createNotification({ text: c('Moved to black/whitelist').t`${item} removed` });
+        remove(incomingDefault);
+    };
+
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/spam-filtering/">
@@ -58,24 +110,31 @@ function SpamFiltersSection() {
                     .t`Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds it to the Whitelist.`}
             </Alert>
             <div className="mb1">
-                <SearchEmailIntoList onChange={handleSearchChange} />
+                <SearchInput
+                    onChange={handleSearchChange}
+                    placeholder={c('FilterSettings').t`Search in Whitelist and Blacklist`}
+                />
             </div>
 
             <div className="flex onmobile-flex-column">
                 <SpamListItem
                     list={whiteList}
-                    type="whitelist"
-                    dest="blacklist"
+                    type={WHITELIST_LOCATION}
                     loading={loader.white}
-                    onAction={handleAction}
+                    onCreate={handleCreate}
+                    onEdit={handleEdit}
+                    onRemove={handleRemove}
+                    onMove={handleMove}
                 />
                 <SpamListItem
                     list={blackList}
-                    type="blacklist"
-                    dest="whitelist"
+                    type={BLACKLIST_LOCATION}
                     className="ml1 onmobile-ml0"
                     loading={loader.black}
-                    onAction={handleAction}
+                    onCreate={handleCreate}
+                    onEdit={handleEdit}
+                    onRemove={handleRemove}
+                    onMove={handleMove}
                 />
             </div>
         </>
