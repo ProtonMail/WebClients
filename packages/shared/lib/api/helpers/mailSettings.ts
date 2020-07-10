@@ -1,4 +1,4 @@
-import { DRAFT_MIME_TYPES, PACKAGE_TYPE, PGP_SCHEMES, PGP_SIGN } from '../../constants';
+import { MIME_TYPES, DRAFT_MIME_TYPES, PACKAGE_TYPE, PGP_SCHEMES, PGP_SIGN } from '../../constants';
 import { ContactPublicKeyModel, MailSettings } from '../../interfaces';
 
 /**
@@ -31,10 +31,7 @@ export const extractDraftMIMEType = (model: ContactPublicKeyModel, mailSettings:
     const sign = extractSign(model, mailSettings);
     const scheme = extractScheme(model, mailSettings);
     if (sign) {
-        return scheme === PGP_SCHEMES.PGP_INLINE ? DRAFT_MIME_TYPES.PLAINTEXT : mailSettings.DraftMIMEType;
+        return scheme === PGP_SCHEMES.PGP_INLINE ? MIME_TYPES.PLAINTEXT : mailSettings.DraftMIMEType;
     }
-    if (mimeType === DRAFT_MIME_TYPES.PLAINTEXT) {
-        return mimeType;
-    }
-    return mailSettings.DraftMIMEType;
+    return mimeType || mailSettings.DraftMIMEType;
 };

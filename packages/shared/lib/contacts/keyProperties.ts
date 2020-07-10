@@ -1,5 +1,5 @@
 import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64, getKeys, OpenPGPKey } from 'pmcrypto';
-import { DRAFT_MIME_TYPES, PGP_SCHEMES } from '../constants';
+import { PGP_SCHEMES, MIME_TYPES } from '../constants';
 import { noop } from '../helpers/function';
 import isTruthy from '../helpers/isTruthy';
 import { MimeTypeVcard, PinnedKeysConfig, PublicKeyWithPref } from '../interfaces';
@@ -26,7 +26,7 @@ const getPGPSchemeVcard = (scheme: string): PGP_SCHEMES | undefined => {
  * 'text/plain' for plain text format
  */
 const getMimeTypeVcard = (mimeType: string): MimeTypeVcard | undefined => {
-    return mimeType === DRAFT_MIME_TYPES.PLAINTEXT ? mimeType : undefined;
+    return mimeType === MIME_TYPES.PLAINTEXT ? mimeType : undefined;
 };
 /**
  * Given an array of vCard properties, extract the keys and key-related fields relevant for an email address

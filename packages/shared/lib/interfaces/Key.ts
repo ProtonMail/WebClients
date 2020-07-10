@@ -44,7 +44,7 @@ export interface SelfSend {
     publicKey?: OpenPGPKey;
 }
 
-export type MimeTypeVcard = DRAFT_MIME_TYPES.PLAINTEXT;
+export type MimeTypeVcard = MIME_TYPES.PLAINTEXT;
 
 export interface ApiKeysConfig {
     Keys: Key[];

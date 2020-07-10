@@ -1,7 +1,7 @@
 import { OpenPGPKey } from 'pmcrypto';
 import {
     CONTACT_MIME_TYPES,
-    DRAFT_MIME_TYPES,
+    MIME_TYPES,
     MIME_TYPES_MORE,
     PACKAGE_TYPE,
     PGP_SCHEMES,
@@ -91,7 +91,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
     const mailSettings = {
         Sign: PGP_SIGN,
         PGPScheme: PACKAGE_TYPE.SEND_PGP_MIME,
-        DraftMIMEType: DRAFT_MIME_TYPES.DEFAULT
+        DraftMIMEType: MIME_TYPES.DEFAULT
     } as MailSettings;
 
     it('should extract the primary API key when the email address does not belong to any contact', () => {
@@ -110,7 +110,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         expect(result).toEqual({
             encrypt: true,
             sign: true,
-            mimeType: DRAFT_MIME_TYPES.DEFAULT,
+            mimeType: MIME_TYPES.DEFAULT,
             scheme: PGP_SCHEMES.PGP_MIME,
             sendKey: fakeKey1,
             isSendKeyPinned: false,
@@ -140,7 +140,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         expect(result).toEqual({
             encrypt: true,
             sign: true,
-            mimeType: DRAFT_MIME_TYPES.DEFAULT,
+            mimeType: MIME_TYPES.DEFAULT,
             scheme: PGP_SCHEMES.PGP_MIME,
             sendKey: fakeKey1,
             isSendKeyPinned: false,
@@ -171,7 +171,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         expect(result).toEqual({
             encrypt: true,
             sign: true,
-            mimeType: DRAFT_MIME_TYPES.DEFAULT,
+            mimeType: MIME_TYPES.DEFAULT,
             scheme: PGP_SCHEMES.PGP_MIME,
             sendKey: pinnedFakeKey1,
             isSendKeyPinned: true,
@@ -288,7 +288,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         emailAddress: 'user@pm.me',
         publicKeys: { apiKeys: [], pinnedKeys: [] },
         scheme: PGP_SCHEMES.PGP_INLINE,
-        mimeType: DRAFT_MIME_TYPES.PLAINTEXT as CONTACT_MIME_TYPES,
+        mimeType: MIME_TYPES.PLAINTEXT as CONTACT_MIME_TYPES,
         trustedFingerprints: new Set([]),
         expiredFingerprints: new Set([]),
         revokedFingerprints: new Set([]),
@@ -304,7 +304,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
     const mailSettings = {
         Sign: 0,
         PGPScheme: PACKAGE_TYPE.SEND_PGP_MIME,
-        DraftMIMEType: DRAFT_MIME_TYPES.DEFAULT
+        DraftMIMEType: MIME_TYPES.DEFAULT
     } as MailSettings;
 
     it('should extract the primary API key when the email address does not belong to any contact', () => {
@@ -323,7 +323,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         expect(result).toEqual({
             encrypt: true,
             sign: true,
-            mimeType: DRAFT_MIME_TYPES.PLAINTEXT,
+            mimeType: MIME_TYPES.PLAINTEXT,
             scheme: PGP_SCHEMES.PGP_INLINE,
             sendKey: fakeKey1,
             isSendKeyPinned: false,
@@ -353,7 +353,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         expect(result).toEqual({
             encrypt: true,
             sign: true,
-            mimeType: DRAFT_MIME_TYPES.PLAINTEXT,
+            mimeType: MIME_TYPES.PLAINTEXT,
             scheme: PGP_SCHEMES.PGP_INLINE,
             sendKey: fakeKey1,
             isSendKeyPinned: false,
@@ -384,7 +384,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         expect(result).toEqual({
             encrypt: true,
             sign: true,
-            mimeType: DRAFT_MIME_TYPES.PLAINTEXT,
+            mimeType: MIME_TYPES.PLAINTEXT,
             scheme: PGP_SCHEMES.PGP_INLINE,
             sendKey: pinnedFakeKey1,
             isSendKeyPinned: true,
@@ -498,7 +498,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
     const mailSettings = {
         Sign: PGP_SIGN,
         PGPScheme: PACKAGE_TYPE.SEND_PGP_MIME,
-        DraftMIMEType: DRAFT_MIME_TYPES.PLAINTEXT
+        DraftMIMEType: MIME_TYPES.PLAINTEXT
     } as MailSettings;
 
     it('should take into account the mail Settings', () => {
@@ -508,7 +508,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         expect(result).toEqual({
             encrypt: false,
             sign: true,
-            mimeType: DRAFT_MIME_TYPES.PLAINTEXT,
+            mimeType: MIME_TYPES.PLAINTEXT,
             scheme: PGP_SCHEMES.PGP_MIME,
             apiKeys: [],
             pinnedKeys: [],
@@ -534,7 +534,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         expect(result).toEqual({
             encrypt: false,
             sign: false,
-            mimeType: DRAFT_MIME_TYPES.PLAINTEXT,
+            mimeType: MIME_TYPES.PLAINTEXT,
             scheme: PGP_SCHEMES.PGP_MIME,
             apiKeys: [],
             pinnedKeys: [],
@@ -553,7 +553,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         expect(result).toEqual({
             encrypt: false,
             sign: false,
-            mimeType: DRAFT_MIME_TYPES.PLAINTEXT,
+            mimeType: MIME_TYPES.PLAINTEXT,
             scheme: PGP_SCHEMES.PGP_MIME,
             apiKeys: [],
             pinnedKeys: [],
@@ -579,7 +579,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         expect(result).toEqual({
             encrypt: false,
             sign: false,
-            mimeType: DRAFT_MIME_TYPES.PLAINTEXT,
+            mimeType: MIME_TYPES.PLAINTEXT,
             scheme: PGP_SCHEMES.PGP_MIME,
             sendKey: pinnedFakeKey2,
             isSendKeyPinned: true,
@@ -653,7 +653,7 @@ describe('extractEncryptionPreferences for an own address', () => {
     const mailSettings = {
         Sign: PGP_SIGN,
         PGPScheme: PACKAGE_TYPE.SEND_PGP_MIME,
-        DraftMIMEType: DRAFT_MIME_TYPES.PLAINTEXT
+        DraftMIMEType: MIME_TYPES.PLAINTEXT
     } as MailSettings;
 
     it('should not pick the public key from the keys in selfSend.address', () => {
@@ -669,7 +669,7 @@ describe('extractEncryptionPreferences for an own address', () => {
         expect(result).toEqual({
             encrypt: true,
             sign: true,
-            mimeType: DRAFT_MIME_TYPES.PLAINTEXT,
+            mimeType: MIME_TYPES.PLAINTEXT,
             scheme: PGP_SCHEMES.PGP_MIME,
             sendKey: pinnedFakeKey1,
             isSendKeyPinned: false,
