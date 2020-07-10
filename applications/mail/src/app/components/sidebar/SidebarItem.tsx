@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { classnames, SidebarItem as CommonSidebarItem, SidebarItemContent, useEventManager } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
+import { wait } from 'proton-shared/lib/helpers/promise';
 
 import LocationAside from './LocationAside';
 import { LABEL_IDS_TO_HUMAN, DRAG_ELEMENT_KEY } from '../../constants';
@@ -40,7 +41,7 @@ const SidebarItem = ({
     const { call } = useEventManager();
     const [elementsCache] = useElementsCache();
 
-    const [refresh, setRefresh] = useState(false);
+    const [refreshing, setRefreshing] = useState(false);
 
     const [dragOver, dragProps] = useDragOver(
         (event: DragEvent) =>
@@ -62,10 +63,10 @@ const SidebarItem = ({
     const ariaCurrent = active ? 'page' : undefined;
 
     const handleClick = async () => {
-        if (link === location.pathname) {
-            setRefresh(true);
-            await call();
-            setRefresh(false);
+        if (link === location.pathname && !refreshing) {
+            setRefreshing(true);
+            await Promise.all([call(), wait(1000)]);
+            setRefreshing(false);
         }
     };
 
@@ -96,7 +97,7 @@ const SidebarItem = ({
                     iconSize={iconSize}
                     title={text}
                     text={content}
-                    aside={<LocationAside count={count} active={active} refreshing={refresh} />}
+                    aside={<LocationAside count={count} active={active} refreshing={refreshing} />}
                 />
             </NavLink>
         </CommonSidebarItem>
