@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { c } from 'ttag';
 import { History } from 'history';
 
@@ -24,6 +24,7 @@ import useEventManager from '../../eventManager/useEventManager';
 import Alert from '../../../components/alert/Alert';
 import FormModal from '../../../components/modal/FormModal';
 import { generateUID } from '../../../helpers/component';
+import PrimaryButton from '../../../components/button/PrimaryButton';
 
 const DEFAULT_MODEL = [
     { field: 'fn', value: '' },
@@ -70,6 +71,13 @@ const ContactModal = ({
     const { call } = useEventManager();
     const [userKeysList, loadingUserKeys] = useUserKeys();
     const [properties, setProperties] = useState<ContactProperties>(formatModel(initialProperties));
+    const submitDisabled = useMemo(() => {
+        if (properties.every((p) => !p.value)) {
+            return true;
+        }
+        return false;
+    }, [properties]);
+
     const title = contactID ? c('Title').t`Edit contact details` : c('Title').t`Create contact`;
 
     const handleRemove = (propertyUID: string) => {
@@ -152,7 +160,15 @@ const ContactModal = ({
             loading={loading || loadingUserKeys}
             onSubmit={() => withLoading(handleSubmit())}
             title={title}
-            submit={c('Action').t`Save`}
+            submit={
+                <PrimaryButton
+                    loading={loading || loadingUserKeys}
+                    disabled={submitDisabled}
+                    onClick={() => withLoading(handleSubmit())}
+                >
+                    {c('Action').t`Save`}
+                </PrimaryButton>
+            }
             onClose={onClose}
             {...rest}
         >
