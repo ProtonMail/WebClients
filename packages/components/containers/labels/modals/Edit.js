@@ -5,19 +5,14 @@ import { FormModal, useEventManager, useLoading, useApi, useNotifications } from
 import { LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { create as createLabel, updateLabel } from 'proton-shared/lib/api/labels';
-import { noop } from 'proton-shared/lib/helpers/function';
 
 import NewLabelForm from '../NewLabelForm';
 
-function EditLabelModal({
-    label = null,
-    mode = 'create',
-    onEdit = noop,
-    onClose = noop,
-    onAdd = noop,
-    type = 'label',
-    ...props
-}) {
+/**
+ * @type any
+ * @param {any} options
+ */
+function EditLabelModal({ label = null, mode = 'create', onEdit, onClose, onAdd, type = 'label', ...props }) {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -53,8 +48,8 @@ function EditLabelModal({
         createNotification({
             text: c('label/folder notification').t`${Label.Name} created`
         });
-        onAdd(Label);
-        onClose();
+        onAdd?.(Label);
+        onClose?.();
     };
 
     const update = async (label) => {
@@ -63,8 +58,8 @@ function EditLabelModal({
         createNotification({
             text: c('Filter notification').t`${Label.Name} updated`
         });
-        onEdit(Label);
-        onClose();
+        onEdit?.(Label);
+        onClose?.();
     };
 
     const ACTIONS = { create, edition: update };
