@@ -96,10 +96,11 @@ const Toolbar = ({
                 )}
                 <ToolbarSeparator />
                 <ReadUnreadButtons
-                    labelID={labelID}
                     mailSettings={mailSettings}
                     selectedIDs={selectedIDs}
-                    location={location}
+                    onBack={onBack}
+                    labelID={labelID}
+                    elements={elements}
                 />
                 <ToolbarSeparator />
                 <MoveButtons

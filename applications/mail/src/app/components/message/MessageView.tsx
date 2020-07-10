@@ -10,13 +10,14 @@ import HeaderCollapsed from './header/HeaderCollapsed';
 import HeaderExpanded from './header/HeaderExpanded';
 import MessageFooter from './MessageFooter';
 import { Message } from '../../models/message';
+import { Element } from '../../models/element';
 import { useMessage } from '../../hooks/useMessage';
+import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import {
     useInitializeMessage,
     useLoadMessage,
     useLoadRemoteImages,
     useLoadEmbeddedImages,
-    useMarkAsRead,
     useTrustSigningPublicKey,
     useResignContact,
     useTrustAttachedPublicKey
@@ -59,13 +60,13 @@ const MessageView = ({
 
     const { message, addAction } = useMessage(inputMessage.ID);
     const load = useLoadMessage(inputMessage);
-    const initialize = useInitializeMessage(message.localID);
+    const initialize = useInitializeMessage(message.localID, labelID);
     const trustSigningPublicKey = useTrustSigningPublicKey(message.localID);
     const trustAttachedPublicKey = useTrustAttachedPublicKey(message.localID);
     const loadRemoteImages = useLoadRemoteImages(message.localID);
     const loadEmbeddedImages = useLoadEmbeddedImages(message.localID);
-    const markAsRead = useMarkAsRead(message.localID);
     const resignContact = useResignContact(message.localID);
+    const markAs = useMarkAs();
 
     const draft = isDraft(message.data);
     const messageLoaded = !!message.data?.Subject;
@@ -107,7 +108,7 @@ const MessageView = ({
     // Mark as read a message already loaded (when user marked as unread)
     useEffect(() => {
         if (expanded && unread && bodyLoaded && !message.actionStatus) {
-            addAction(markAsRead);
+            markAs([message.data as Element], labelID, MARK_AS_STATUS.READ);
         }
     }, [expanded, unread, bodyLoaded, message.actionStatus]);
 

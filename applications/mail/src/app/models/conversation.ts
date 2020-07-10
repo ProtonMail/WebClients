@@ -11,6 +11,7 @@ export interface Conversation {
     Senders?: Recipient[];
     Recipients?: Recipient[];
     ContextNumUnread?: number;
+    ContextNumMessages?: number;
     Labels?: ConversationLabel[];
     LabelIDs?: string[];
     Order?: number;

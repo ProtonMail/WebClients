@@ -1,44 +1,38 @@
 import React from 'react';
-import { Location } from 'history';
 import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
-import { Icon, useApi, useEventManager, useLoading } from 'react-components';
-import { markMessageAsRead, markMessageAsUnread } from 'proton-shared/lib/api/messages';
-import { markConversationsAsRead, markConversationsAsUnread } from 'proton-shared/lib/api/conversations';
+import { Icon, useLoading } from 'react-components';
 import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
-import { getCurrentType } from '../../helpers/elements';
-import { ELEMENT_TYPES } from '../../constants';
 
-const UNREAD = 0;
-const READ = 1;
+import { Element } from '../../models/element';
+import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
+
+const { READ, UNREAD } = MARK_AS_STATUS;
 
 interface Props {
+    labelID: string;
     mailSettings: any;
     selectedIDs: string[];
-    labelID: string;
-    location: Location;
+    onBack: () => void;
+    elements: Element[];
 }
 
-const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [], location }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
+const ReadUnreadButtons = ({ labelID, mailSettings, elements, selectedIDs = [], onBack }: Props) => {
     const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings;
-    const type = getCurrentType({ mailSettings, labelID, location });
     const [loading, withLoading] = useLoading();
+    const markAs = useMarkAs();
 
-    const markAs = async (status = UNREAD) => {
+    const handleMarkAs = async (status: MARK_AS_STATUS) => {
         const isUnread = status === UNREAD;
-        const action =
-            type === ELEMENT_TYPES.CONVERSATION
-                ? isUnread
-                    ? markConversationsAsUnread
-                    : markConversationsAsRead
-                : isUnread
-                ? markMessageAsUnread
-                : markMessageAsRead;
-        await api(action(selectedIDs));
-        await call();
+
+        const selectedElements = selectedIDs.map((ID: string) => {
+            return elements.find((e: Element) => e.ID === ID) as Element;
+        });
+        if (isUnread) {
+            onBack();
+        }
+        await markAs(selectedElements, labelID, status);
     };
 
     const buttons = [
@@ -47,7 +41,7 @@ const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [], location }
             title={c('Action').t`Mark as read`}
             loading={loading}
             disabled={!selectedIDs.length}
-            onClick={() => withLoading(markAs(READ))}
+            onClick={() => withLoading(handleMarkAs(READ))}
             className="notablet nomobile"
             data-cy="read"
         >
@@ -59,7 +53,7 @@ const ReadUnreadButtons = ({ mailSettings, labelID, selectedIDs = [], location }
             title={c('Action').t`Mark as unread`}
             loading={loading}
             disabled={!selectedIDs.length}
-            onClick={() => withLoading(markAs(UNREAD))}
+            onClick={() => withLoading(handleMarkAs(UNREAD))}
             data-cy="unread"
         >
             <Icon className="toolbar-icon mauto" name="unread" />

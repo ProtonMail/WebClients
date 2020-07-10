@@ -43,11 +43,12 @@ describe('useElements', () => {
     const defaultFilter = {};
     const defaultSearch = {};
 
-    const getElements = (count: number, label = labelID): Element[] =>
+    const getElements = (count: number, label = labelID, elementProps: any = {}): Element[] =>
         range(0, count).map((i) => ({
             ID: `id${i}`,
             Labels: [{ ID: label, ContextTime: i }] as ConversationLabel[],
-            LabelIDs: [label]
+            LabelIDs: [label],
+            ...elementProps
         }));
 
     let renderHookResult: RenderHookResult<any, any> | null = null;
@@ -194,17 +195,19 @@ describe('useElements', () => {
             expect(api.mock.calls.length).toBe(2);
         });
 
-        it('should reload the list on an update event if a filter is active', async () => {
+        it('should not reload the list on an update event if a filter is active', async () => {
             const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
             const filter = { Unread: 1 } as Filter;
-            const hook = await setup({ elements: getElements(page.total), page, filter });
+            const elements = getElements(page.total, labelID, { NumUnread: 1 });
+
+            const hook = await setup({ elements, page, filter });
 
             const ID = 'id0';
             await sendEvent({
                 Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }]
             });
             expect(hook.result.current.elements.length).toBe(3);
-            expect(api.mock.calls.length).toBe(2);
+            expect(api.mock.calls.length).toBe(1);
         });
 
         it('should not reload the list on an update event if has list from start', async () => {

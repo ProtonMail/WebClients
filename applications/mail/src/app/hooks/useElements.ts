@@ -7,7 +7,14 @@ import { toMap } from 'proton-shared/lib/helpers/object';
 import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
-import { sort as sortElements, hasLabel, parseLabelIDsInEvent, isSearch, isFilter } from '../helpers/elements';
+import {
+    sort as sortElements,
+    hasLabel,
+    parseLabelIDsInEvent,
+    isSearch,
+    isFilter,
+    isUnread
+} from '../helpers/elements';
 import { Element } from '../models/element';
 import { Page, Filter, Sort, SearchParameters } from '../models/tools';
 import { expectedPageLength } from '../helpers/paging';
@@ -101,7 +108,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         // Getting all params from the cache and not from scoped params
         // To prevent any desynchronization between cache and the output of the memo
         const {
-            params: { labelID, sort },
+            params: { labelID, sort, filter },
             page
         } = cache;
 
@@ -109,7 +116,15 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         const startIndex = (page.page - minPage) * page.size;
         const endIndex = startIndex + page.size;
         const elementsArray = Object.values(cache.elements);
-        const filtered = elementsArray.filter((element) => hasLabel(element, labelID));
+        const filtered = elementsArray
+            .filter((element) => hasLabel(element, labelID))
+            .filter((element) => {
+                if (!isFilter(filter)) {
+                    return true;
+                }
+                const elementUnread = isUnread(element, labelID);
+                return filter.Unread ? elementUnread : !elementUnread;
+            });
         const sorted = sortElements(filtered, sort, labelID);
         return sorted.slice(startIndex, endIndex);
     }, [cache]);
@@ -149,7 +164,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         cache.updatedElements.includes(elements[elements.length - 1].ID || '');
 
     // Live cache means we listen to events from event manager without refreshing the list every time
-    const isLiveCache = () => !isSearch(search) && !isFilter(filter) && hasListFromTheStart();
+    const isLiveCache = () => !isSearch(search) && hasListFromTheStart();
 
     const shouldResetCache = () => paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated();
 

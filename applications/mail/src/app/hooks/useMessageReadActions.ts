@@ -2,14 +2,15 @@ import { arrayToBinaryString, getKeys, OpenPGPKey } from 'pmcrypto';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { useCallback } from 'react';
-import { useApi, useEventManager, useGetEncryptionPreferences, useMailSettings } from 'react-components';
+import { useApi, useGetEncryptionPreferences, useMailSettings } from 'react-components';
 import { getMessage } from 'proton-shared/lib/api/messages';
 import { getMatchingKey } from 'pmcrypto';
 
 import { LARGE_KEY_SIZE, VERIFICATION_STATUS } from '../constants';
 import { get } from '../helpers/attachment/attachmentLoader';
-import { MessageExtended, Message, MessageErrors, MessageExtendedWithData } from '../models/message';
-import { loadMessage, markAsRead } from '../helpers/message/messageRead';
+import { MessageExtended, Message, MessageErrors } from '../models/message';
+import { Element } from '../models/element';
+import { loadMessage } from '../helpers/message/messageRead';
 import { useMessageKeys } from './useMessageKeys';
 import { decryptMessage } from '../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
@@ -20,6 +21,7 @@ import { prepareMailDocument } from '../helpers/transforms/transforms';
 import { isApiError } from '../helpers/errors';
 import { useBase64Cache } from './useBase64Cache';
 import { isPlainText } from '../helpers/message/messages';
+import { useMarkAs, MARK_AS_STATUS } from './useMarkAs';
 
 export const useLoadMessage = (inputMessage: Message) => {
     const api = useApi();
@@ -38,24 +40,12 @@ export const useLoadMessage = (inputMessage: Message) => {
     }, [inputMessage]);
 };
 
-export const useMarkAsRead = (localID: string) => {
+export const useInitializeMessage = (localID: string, labelID?: string) => {
     const api = useApi();
-    const messageCache = useMessageCache();
-    const { call } = useEventManager();
-
-    return useCallback(async () => {
-        const messageFromCache = messageCache.get(localID) as MessageExtendedWithData;
-        const message = await markAsRead(messageFromCache, api, call);
-        updateMessageCache(messageCache, localID, message);
-    }, [localID]);
-};
-
-export const useInitializeMessage = (localID: string) => {
-    const api = useApi();
+    const markAs = useMarkAs();
     const messageCache = useMessageCache();
     const getMessageKeys = useMessageKeys();
     const attachmentsCache = useAttachmentCache();
-    const { call } = useEventManager();
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
     const getEncryptionPreferences = useGetEncryptionPreferences();
@@ -146,7 +136,7 @@ export const useInitializeMessage = (localID: string) => {
                     : undefined;
             verificationStatus = decryption.verified;
 
-            await markAsRead(message, api, call);
+            await markAs([data as Element], labelID, MARK_AS_STATUS.READ);
             data = { ...data, Unread: 0 };
 
             preparation = isPlainText(data)

@@ -15,7 +15,6 @@ import {
     ButtonGroup,
     Tooltip
 } from 'react-components';
-import { markMessageAsUnread } from 'proton-shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
@@ -31,6 +30,8 @@ import { exportBlob } from '../../../helpers/message/messageExport';
 import HeaderDropdown from './HeaderDropdown';
 import { useMoveToFolder } from '../../../hooks/useApplyLabels';
 import { getFolderName, getCurrentFolderID } from '../../../helpers/labels';
+import { useMarkAs, MARK_AS_STATUS } from '../../../hooks/useMarkAs';
+import { Element } from '../../../models/element';
 
 const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
@@ -61,6 +62,7 @@ const HeaderMoreDropdown = ({
     const closeDropdown = useRef<() => void>();
     const moveToFolder = useMoveToFolder();
     const [folders = []] = useFolders();
+    const markAs = useMarkAs();
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
@@ -71,7 +73,7 @@ const HeaderMoreDropdown = ({
     const handleUnread = async () => {
         closeDropdown.current?.();
         onCollapse();
-        await api(markMessageAsUnread([message.data?.ID]));
+        await markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
         await call();
     };
 
