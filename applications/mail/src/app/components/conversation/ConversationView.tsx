@@ -31,14 +31,13 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
     const [conversationData, loading] = useConversation(conversationID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
 
-    useShouldMoveOutConversation(labelID, conversationData, onBack);
+    useShouldMoveOutConversation(labelID, loading, conversationData, onBack);
 
     if (loading) {
         return <Loader />;
     }
 
     if (!conversationData) {
-        onBack();
         return null;
     }
 

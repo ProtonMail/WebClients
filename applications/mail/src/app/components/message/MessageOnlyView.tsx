@@ -27,7 +27,7 @@ const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }
     // MessageView will be in charge to trigger all messages actions
     const { message } = useMessage(messageID);
 
-    useShouldMoveOutMessage(labelID, message.data, onBack);
+    useShouldMoveOutMessage(labelID, message, onBack);
 
     // Message content could be undefined
     const data = message.data || ({ ID: messageID } as Message);
