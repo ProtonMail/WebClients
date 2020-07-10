@@ -1,0 +1,14 @@
+.ellipsis-loader {
+	&::before {
+		content: '\00a0\00a0\00a0';
+		font-family: monospace;
+		animation: ellipsis-loading linear 1s infinite;
+	}
+}
+
+@keyframes ellipsis-loading {
+	0%  { content: '\00a0\00a0\00a0'; }
+	25% { content: '.\00a0\00a0'; }
+	50% { content: '..\00a0'; }
+	75% { content: '...'; }
+}
