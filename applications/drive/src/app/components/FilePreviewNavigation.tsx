@@ -1,7 +1,6 @@
 import React from 'react';
-import { useKeyPress } from 'react-components';
+import { useKeyPress, NavigationControl } from 'react-components';
 import { LinkMeta } from '../interfaces/link';
-import NavigationControl from './FilePreview/NavigationControl';
 
 interface Props {
     openLinkId: string;

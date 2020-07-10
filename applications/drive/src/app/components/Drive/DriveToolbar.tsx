@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { ToolbarSeparator, Toolbar } from 'react-components';
+import { ToolbarSeparator, Toolbar, isPreviewAvailable } from 'react-components';
 
 import { getDevice } from 'proton-shared/lib/helpers/browser';
 import useDrive from '../../hooks/drive/useDrive';
@@ -20,7 +20,6 @@ import {
     CreateNewFolderButton,
 } from './ToolbarButtons';
 import UploadFolderButton from './ToolbarButtons/UploadFolderButton';
-import { isPreviewAvailable } from '../FilePreview/helpers';
 
 interface Props {
     activeFolder: DriveFolder;

@@ -1,11 +1,10 @@
 import React from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { classnames, Loader } from 'react-components';
+import { classnames, Loader, FileIcon } from 'react-components';
 import ProgressBar, { ProgressBarStatus } from './ProgressBar';
 import { TransferState } from '../../interfaces/transfer';
 import TransferStateIndicator from './TransferStateIndicator';
 import TransferControls from './TransferControls';
-import FileIcon from '../FileIcon/FileIcon';
 import {
     isTransferInitializing,
     isTransferProgress,

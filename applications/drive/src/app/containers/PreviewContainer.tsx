@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { useLoading, usePreventLeave } from 'react-components';
+import { useLoading, usePreventLeave, isPreviewAvailable, FilePreview } from 'react-components';
 import useFiles from '../hooks/drive/useFiles';
 import useDrive from '../hooks/drive/useDrive';
 import FileSaver from '../utils/FileSaver/FileSaver';
@@ -9,10 +9,8 @@ import { LinkMeta } from '../interfaces/link';
 import { DownloadControls } from '../components/downloads/download';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
-import FilePreview from '../components/FilePreview/FilePreview';
 import useDriveSorting from '../hooks/drive/useDriveSorting';
 import { isTransferCancelError, getMetaForTransfer } from '../utils/transfer';
-import { isPreviewAvailable } from '../components/FilePreview/helpers';
 import FilePreviewNavigation from '../components/FilePreviewNavigation';
 
 const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
