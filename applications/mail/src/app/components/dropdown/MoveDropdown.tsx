@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { c } from 'ttag';
 import {
     LabelModal,
     SearchInput,
@@ -12,7 +13,6 @@ import {
     generateUID
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
-import { c } from 'ttag';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { buildTreeview } from 'proton-shared/lib/helpers/folder';
@@ -65,13 +65,13 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
     const treeview = buildTreeview(folders);
 
     const list = treeview
-        .reduce((acc: FolderItem[], folder: Folder) => folderReducer(acc, folder), [])
+        .reduce<FolderItem[]>((acc, folder) => folderReducer(acc, folder), [])
         .concat([
             { ID: INBOX, Name: c('Mailbox').t`Inbox`, icon: 'inbox' },
             { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive' },
             { ID: SPAM, Name: c('Mailbox').t`Spam`, icon: 'spam' },
             { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' }
-        ])
+        ] as FolderItem[])
         .filter(({ Name = '' }: { Name: string }) => {
             if (!search) {
                 return true;
