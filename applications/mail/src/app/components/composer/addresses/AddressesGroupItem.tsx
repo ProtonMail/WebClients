@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import { Icon, useModals } from 'react-components';
 
@@ -18,23 +18,23 @@ interface Props {
 }
 
 const AddressesGroupItem = ({ recipientGroup, contacts, messageSendInfo, onChange, onRemove }: Props) => {
-    const { createModal } = useModals();
+    const { createModal, getModal, hideModal, removeModal } = useModals();
+    const [modalID, setModalID] = useState();
 
     const contactsInGroup = getContactsOfGroup(contacts, recipientGroup?.group?.ID);
     const label = getRecipientGroupLabel(recipientGroup, contactsInGroup.length);
 
-    const { mapLoading, handleRemove } = useUpdateGroupSendInfo(messageSendInfo, contactsInGroup, onRemove);
+    const { handleRemove } = useUpdateGroupSendInfo(messageSendInfo, contactsInGroup, onRemove);
 
-    const handleGroupModal = () => {
-        createModal(
-            <AddressesGroupModal
-                recipientGroup={recipientGroup}
-                contacts={contactsInGroup}
-                messageSendInfo={messageSendInfo}
-                mapLoading={mapLoading}
-                onSubmit={onChange}
-            />
-        );
+    const handleOpenGroupModal = () => {
+        setModalID(createModal());
+    };
+    const handleCloseGroupModal = () => {
+        hideModal(modalID);
+    };
+    const handleRemoveGroupModal = () => {
+        removeModal(modalID);
+        setModalID(undefined);
     };
 
     return (
@@ -45,7 +45,7 @@ const AddressesGroupItem = ({ recipientGroup, contacts, messageSendInfo, onChang
                 </span>
                 <span
                     className="composer-addresses-item-label mtauto mbauto pl0-5 ellipsis pr0-5"
-                    onClick={handleGroupModal}
+                    onClick={handleOpenGroupModal}
                 >
                     {label}
                 </span>
@@ -59,6 +59,17 @@ const AddressesGroupItem = ({ recipientGroup, contacts, messageSendInfo, onChang
                     <span className="sr-only">{c('Action').t`Remove`}</span>
                 </button>
             </div>
+            {modalID && (
+                <AddressesGroupModal
+                    recipientGroup={recipientGroup}
+                    contacts={contactsInGroup}
+                    messageSendInfo={messageSendInfo}
+                    onSubmit={onChange}
+                    onClose={handleCloseGroupModal}
+                    onExit={handleRemoveGroupModal}
+                    {...getModal(modalID)}
+                />
+            )}
         </>
     );
 };

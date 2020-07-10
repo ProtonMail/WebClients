@@ -73,11 +73,11 @@ export const generateTopPackages = async (
     api: Api
 ): Promise<Packages> => {
     const packagesStatus: PackageStatus = Object.values(mapSendPrefs).reduce(
-        (packages, { encrypt, sign, pgpScheme, mimetype }) => ({
-            [PLAINTEXT]: packages[PLAINTEXT] || mimetype === MIME_TYPES.PLAINTEXT,
+        (packages, { encrypt, sign, pgpScheme, mimeType }) => ({
+            [PLAINTEXT]: packages[PLAINTEXT] || mimeType === MIME_TYPES.PLAINTEXT,
             [DEFAULT]:
                 packages[DEFAULT] ||
-                mimetype === DEFAULT ||
+                mimeType === DEFAULT ||
                 (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && !encrypt && !sign),
             [MIME]: packages[MIME] || (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && (encrypt || sign))
         }),

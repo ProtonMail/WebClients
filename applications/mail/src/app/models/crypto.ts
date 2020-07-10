@@ -6,7 +6,7 @@ export interface SendPreferences {
     encrypt: boolean;
     sign: boolean;
     pgpScheme: PACKAGE_TYPE;
-    mimetype: MIME_TYPES;
+    mimeType: MIME_TYPES;
     publicKeys?: OpenPGPKey[];
     isPublicKeyPinned?: boolean;
     hasApiKeys: boolean;
@@ -57,6 +57,7 @@ export interface MapStatusIcons {
 export interface SendInfo {
     sendPreferences?: SendPreferences;
     sendIcon?: StatusIcon;
+    loading: boolean;
     emailValidation: boolean;
     emailAddressWarnings?: string[];
 }

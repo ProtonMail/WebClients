@@ -2,6 +2,7 @@ import React, { MutableRefObject, DragEvent, useState, DragEventHandler } from '
 import { c } from 'ttag';
 import { classnames } from 'react-components';
 
+import { MessageSendInfo } from '../../hooks/useSendInfo';
 import { MessageExtended } from '../../models/message';
 import { getAttachments } from '../../helpers/message/messages';
 import AttachmentsList from './attachments/AttachmentsList';
@@ -16,6 +17,7 @@ import { Breakpoints } from '../../models/utils';
 
 interface Props {
     message: MessageExtended;
+    messageSendInfo: MessageSendInfo;
     disabled: boolean;
     breakpoints: Breakpoints;
     onEditorReady: () => void;
@@ -37,6 +39,7 @@ interface Props {
 
 const ComposerContent = ({
     message,
+    messageSendInfo,
     disabled,
     breakpoints,
     onEditorReady,
@@ -95,6 +98,7 @@ const ComposerContent = ({
             <div className="flex-item-fluid w100 flex flex-column flex-nowrap relative">
                 <SquireEditorWrapper
                     message={message}
+                    messageSendInfo={messageSendInfo}
                     disabled={disabled}
                     breakpoints={breakpoints}
                     onReady={onEditorReady}

@@ -9,6 +9,7 @@ import {
     isRequestReadReceipt as testIsRequestReadReceipt
 } from '../../../helpers/message/messages';
 import { MESSAGE_FLAGS } from '../../../constants';
+import { MessageChangeFlag } from '../Composer';
 
 const { FLAG_SIGN, FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
 
@@ -16,7 +17,7 @@ const getClassname = (status: boolean) => (status ? undefined : 'nonvisible');
 
 interface Props {
     message: MessageExtended;
-    onChangeFlag: (changes: Map<number, boolean>) => void;
+    onChangeFlag: MessageChangeFlag;
 }
 
 const EditorToolbarExtension = ({ message, onChangeFlag }: Props) => {
@@ -24,7 +25,10 @@ const EditorToolbarExtension = ({ message, onChangeFlag }: Props) => {
     const isAttachPublicKey = testIsAttachPublicKey(message.data);
     const isReceiptRequest = testIsRequestReadReceipt(message.data);
 
-    const handleToggleSign = () => onChangeFlag(new Map([[FLAG_SIGN, !isSign]]));
+    const handleToggleSign = () => {
+        const changes = new Map<number, boolean>([[MESSAGE_FLAGS.FLAG_SIGN, !isSign]]);
+        onChangeFlag(changes, true);
+    };
 
     const handleTogglePublicKey = async () => {
         const changes = new Map([[FLAG_PUBLIC_KEY, !isAttachPublicKey]]);

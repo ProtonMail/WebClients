@@ -5,6 +5,7 @@ import { SquireEditorRef, SquireEditorMetadata } from 'react-components/componen
 import { RIGHT_TO_LEFT, MIME_TYPES } from 'proton-shared/lib/constants';
 import { diff } from 'proton-shared/lib/helpers/array';
 
+import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { MessageExtended, EmbeddedMap } from '../../../models/message';
 import { Breakpoints } from '../../../models/utils';
 import { MessageChange } from '../Composer';
@@ -32,6 +33,7 @@ export type EditorActionsRef = MutableRefObject<ExternalEditorActions | undefine
 
 interface Props {
     message: MessageExtended;
+    messageSendInfo: MessageSendInfo;
     disabled: boolean;
     breakpoints: Breakpoints;
     onReady: () => void;
@@ -220,6 +222,8 @@ const SquireEditorWrapper = ({
         };
     }, []);
 
+    const toolbarMoreDropdownExtension = <EditorToolbarExtension message={message} onChangeFlag={onChangeFlag} />;
+
     return (
         <SquireEditor
             ref={squireEditorRef}
@@ -234,7 +238,7 @@ const SquireEditorWrapper = ({
             onEllipseClick={() => setBlockquoteExpanded(true)}
             onReady={() => setEditorReady(true)}
             onAddImages={onAddAttachments}
-            toolbarMoreDropdownExtension={<EditorToolbarExtension message={message} onChangeFlag={onChangeFlag} />}
+            toolbarMoreDropdownExtension={toolbarMoreDropdownExtension}
         />
     );
 };

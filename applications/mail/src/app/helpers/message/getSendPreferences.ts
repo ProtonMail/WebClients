@@ -1,8 +1,8 @@
 import { EncryptionPreferences } from 'proton-shared/lib/mail/encryptionPreferences';
 import { SendPreferences } from '../../models/crypto';
 import { Message } from '../../models/message';
-import { isSign } from './messages';
-import { getMimeType, getPGPScheme } from './sendPreferences';
+import { isEO, isSign } from './messages';
+import { getPGPSchemeAndMimeType } from './sendPreferences';
 
 /**
  * Get the send preferences for sending a message based on the encryption preferences
@@ -19,19 +19,20 @@ const getSendPreferences = (encryptionPreferences: EncryptionPreferences, messag
         warnings,
         failure
     } = encryptionPreferences;
+    const isEncryptedToOutside = isEO(message);
+    // override encrypt if necessary
+    const newEncrypt = encrypt || isEncryptedToOutside;
     // override sign if necessary
     // (i.e. when the contact sign preference is false and the user toggles "Sign" on the composer)
-    const newSign = sign || isSign(message);
+    const newSign = isEncryptedToOutside ? false : sign || isSign(message);
     // cast PGP scheme into what API expects. Override if necessary
-    const pgpScheme = getPGPScheme(encryptionPreferences, message);
-    // use message MIME type if no MIME type has been specified
-    const newMimeType = getMimeType(encryptionPreferences, message);
+    const { pgpScheme, mimeType } = getPGPSchemeAndMimeType({ ...encryptionPreferences, sign: newSign }, message);
 
     return {
-        encrypt,
+        encrypt: newEncrypt,
         sign: newSign,
         pgpScheme,
-        mimetype: newMimeType,
+        mimeType,
         publicKeys: sendKey ? [sendKey] : undefined,
         isPublicKeyPinned: isSendKeyPinned,
         hasApiKeys,

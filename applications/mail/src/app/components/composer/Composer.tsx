@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { classnames, useToggle, useNotifications, useMailSettings } from 'react-components';
+import {
+    classnames,
+    useToggle,
+    useNotifications,
+    useMailSettings,
+    useGetEncryptionPreferences
+} from 'react-components';
 import { c } from 'ttag';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -27,7 +33,7 @@ import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerP
 import { WindowSize, Breakpoints } from '../../models/utils';
 import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
-import { useMessageSendInfo } from '../../hooks/useSendInfo';
+import { reloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
 import UndoButton from '../notifications/UndoButton';
 import { OnCompose } from '../../hooks/useCompose';
@@ -42,7 +48,11 @@ enum ComposerInnerModal {
 export type MessageUpdate = PartialMessageExtended | ((message: MessageExtended) => PartialMessageExtended);
 
 export interface MessageChange {
-    (update: MessageUpdate): void;
+    (update: MessageUpdate, reloadSendInfo?: boolean): void;
+}
+
+export interface MessageChangeFlag {
+    (changes: Map<number, boolean>, reloadSendInfo?: boolean): void;
 }
 
 interface Props {
@@ -114,6 +124,7 @@ const Composer = ({
 
     // Map of send preferences and send icons for each recipient
     const messageSendInfo = useMessageSendInfo(modelMessage);
+    const getEncryptionPreferences = useGetEncryptionPreferences();
 
     // Synced with server version of the edited message
     const { message: syncedMessage, addAction } = useMessage(messageID);
@@ -221,10 +232,13 @@ const Composer = ({
 
     const [pendingSave, autoSave] = useDebouncedHandler(actualSave, 2000);
 
-    const handleChange: MessageChange = (update) => {
+    const handleChange: MessageChange = (update, shouldReloadSendInfo) => {
         setModelMessage((modelMessage) => {
             const messageChanges = update instanceof Function ? update(modelMessage) : update;
             const newModelMessage = mergeMessages(modelMessage, messageChanges);
+            if (shouldReloadSendInfo) {
+                reloadSendInfo(messageSendInfo, newModelMessage, getEncryptionPreferences);
+            }
             autoSave(newModelMessage);
             return newModelMessage;
         });
@@ -242,13 +256,15 @@ const Composer = ({
         }
     };
 
-    const handleChangeFlag = (changes: Map<number, boolean>) => {
-        let Flags = modelMessage.data?.Flags || 0;
-        changes.forEach((isAdd, flag) => {
-            const action = isAdd ? setBit : clearBit;
-            Flags = action(Flags, flag);
-        });
-        handleChange({ data: { Flags } });
+    const handleChangeFlag = (changes: Map<number, boolean>, shouldReloadSendInfo = false) => {
+        handleChange((message) => {
+            let Flags = message.data?.Flags || 0;
+            changes.forEach((isAdd, flag) => {
+                const action = isAdd ? setBit : clearBit;
+                Flags = action(Flags, flag);
+            });
+            return { data: { Flags } };
+        }, shouldReloadSendInfo);
     };
 
     /**
@@ -441,6 +457,7 @@ const Composer = ({
                         />
                         <ComposerContent
                             message={modelMessage}
+                            messageSendInfo={messageSendInfo}
                             disabled={contentLocked}
                             breakpoints={breakpoints}
                             onEditorReady={() => setEditorReady(true)}

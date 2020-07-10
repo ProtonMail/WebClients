@@ -1,16 +1,17 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { Alert, Href, Label, Input, generateUID, useNotifications } from 'react-components';
-import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
-import { MESSAGE_FLAGS } from '../../constants';
 
-import { Message, PartialMessageExtended } from '../../models/message';
+import { Message } from '../../models/message';
 import ComposerInnerModal from './ComposerInnerModal';
+import { MessageChange } from './Composer';
+import { clearBit, setBit } from 'proton-shared/lib/helpers/bitset';
+import { MESSAGE_FLAGS } from '../../constants';
 
 interface Props {
     message?: Message;
     onClose: () => void;
-    onChange: (message: PartialMessageExtended) => void;
+    onChange: MessageChange;
 }
 
 const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
@@ -32,25 +33,30 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
             });
             return;
         }
-
-        onChange({
-            data: {
-                Flags: setBit(message?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
-                Password: password,
-                PasswordHint: passwordHint
-            }
-        });
+        onChange(
+            (message) => ({
+                data: {
+                    Flags: setBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
+                    Password: password,
+                    PasswordHint: passwordHint
+                }
+            }),
+            true
+        );
         onClose();
     };
 
     const handleCancel = () => {
-        onChange({
-            data: {
-                Flags: clearBit(message?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
-                Password: undefined,
-                PasswordHint: undefined
-            }
-        });
+        onChange(
+            (message) => ({
+                data: {
+                    Flags: clearBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
+                    Password: undefined,
+                    PasswordHint: undefined
+                }
+            }),
+            true
+        );
         onClose();
     };
 
@@ -100,10 +106,10 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                 </div>
             </div>
             <div className="flex flex-nowrap mb1 onmobile-flex-column">
-                <Label htmlFor={`composer-password-verif-${uid}`}>{c('Info').t`Password Hint (Optional)`}</Label>
+                <Label htmlFor={`composer-password-hint-${uid}`}>{c('Info').t`Password Hint (Optional)`}</Label>
                 <div className="flex-item-fluid">
                     <Input
-                        id={`composer-password-verif-${uid}`}
+                        id={`composer-password-hint-${uid}`}
                         type="text"
                         autoComplete="off"
                         value={passwordHint}

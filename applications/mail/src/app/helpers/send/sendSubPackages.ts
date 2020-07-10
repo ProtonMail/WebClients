@@ -1,9 +1,13 @@
+import { arrayToBinaryString, encodeBase64, encryptMessage, generateSessionKey } from 'pmcrypto';
 import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
+import { Api } from 'proton-shared/lib/interfaces';
+import { srpGetVerify } from 'proton-shared/lib/srp';
+import { AES256 } from '../../constants';
 import { MapSendPreferences, SendPreferences } from '../../models/crypto';
 
 import { Package, Packages } from './sendTopPackages';
 import { Message, MessageExtendedWithData } from '../../models/message';
-import { isEO, getAttachments } from '../message/messages';
+import { getAttachments, isEO } from '../message/messages';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
 const { SEND_PM, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME, SEND_EO } = PACKAGE_TYPE;
@@ -22,35 +26,29 @@ const sendPM = async ({ publicKeys }: Pick<SendPreferences, 'publicKeys'>, messa
 /**
  * Package for a outside user using ProtonMail encryption
  */
-const sendPMEncryptedOutside = async (message: Message) => {
-    console.warn('Unsuported yet', message);
+const sendPMEncryptedOutside = async (message: Message, api: Api) => {
+    try {
+        const sessionKey = await generateSessionKey(AES256);
+        const Token = encodeBase64(arrayToBinaryString(sessionKey));
 
-    // TODO
+        const [{ data: EncToken }, { Auth }] = await Promise.all([
+            encryptMessage({ data: Token, publicKeys: [], passwords: [message.Password] }),
+            srpGetVerify({ api, credentials: { password: message.Password || '' } })
+        ]);
 
-    return {};
-
-    // try {
-    //     const Token = await message.generateReplyToken();
-
-    //     const [{ data: EncToken }, { Auth }] = await Promise.all([
-    //         encryptMessage({ data: Token, publicKeys: [], passwords: [message.Password] }),
-    //         srp.getVerify({ Password: message.Password })
-    //     ]);
-
-    //     return {
-    //         Auth,
-    //         Type: SEND_TYPES.SEND_EO,
-    //         PasswordHint: message.PasswordHint,
-    //         Token,
-    //         EncToken,
-    //         Signature: +message.Attachments.every(({ Signature }) => Signature)
-    //     };
-    // } catch (err) {
-    //     message.encrypting = false;
-    //     dispatchMessageAction(message);
-    //     console.error(err);
-    //     throw err;
-    // }
+        return {
+            Auth,
+            Type: PACKAGE_TYPE.SEND_EO,
+            PasswordHint: message.PasswordHint,
+            Token,
+            EncToken,
+            Signature: +message.Attachments.every(({ Signature }) => Signature)
+        };
+    } catch (err) {
+        // TODO: mark encryption failed
+        console.error(err);
+        throw err;
+    }
 };
 
 /**
@@ -106,7 +104,8 @@ export const attachSubPackages = async (
     packages: Packages,
     message: MessageExtendedWithData,
     emails: string[],
-    mapSendPrefs: MapSendPreferences
+    mapSendPrefs: MapSendPreferences,
+    api: Api
 ): Promise<Packages> => {
     const bindPackageSet = async (promise: Promise<Package>, email: string, type: MIME_TYPES) => {
         const pack = await promise;
@@ -124,9 +123,7 @@ export const attachSubPackages = async (
     };
 
     const promises = emails.map((email: string) => {
-        const { encrypt, sign, pgpScheme, mimetype, publicKeys } = mapSendPrefs[email];
-
-        const mimeType = mimetype === null ? message.data?.MIMEType : mimetype;
+        const { encrypt, sign, pgpScheme, mimeType, publicKeys } = mapSendPrefs[email];
         const packageType = mimeType === 'text/html' ? DEFAULT : PLAINTEXT;
 
         switch (pgpScheme) {
@@ -143,9 +140,8 @@ export const attachSubPackages = async (
             case SEND_CLEAR:
                 // Encrypted for outside (EO)
                 if (isEO(message.data)) {
-                    return bindPackageSet(sendPMEncryptedOutside(message.data), email, packageType);
+                    return bindPackageSet(sendPMEncryptedOutside(message.data, api), email, packageType);
                 }
-
                 return bindPackageSet(sendClear(), email, packageType);
         }
     });

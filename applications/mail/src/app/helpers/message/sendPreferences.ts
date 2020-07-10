@@ -10,36 +10,42 @@ const { SEND_PM, SEND_EO, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE
  * The API expects a package type.
  */
 export const getPGPScheme = (
-    { sign, scheme, isInternal }: Pick<EncryptionPreferences, 'sign' | 'scheme' | 'isInternal'>,
+    { encrypt, sign, scheme, isInternal }: Pick<EncryptionPreferences, 'encrypt' | 'sign' | 'scheme' | 'isInternal'>,
     message?: Message
 ): PACKAGE_TYPE => {
     if (isInternal) {
         return SEND_PM;
     }
+    if (!encrypt && isEO(message)) {
+        return SEND_EO;
+    }
     if (sign) {
         return scheme === PGP_SCHEMES.PGP_INLINE ? SEND_PGP_INLINE : SEND_PGP_MIME;
-    }
-    if (isEO(message)) {
-        // notice encrypt must be false at this point; otherwise sign would be true
-        return SEND_EO;
     }
     return SEND_CLEAR;
 };
 
-export const getMimeType = (
-    { sign, scheme, isInternal, mimeType }: Pick<EncryptionPreferences, 'sign' | 'scheme' | 'mimeType' | 'isInternal'>,
+export const getPGPSchemeAndMimeType = (
+    {
+        encrypt,
+        sign,
+        scheme,
+        isInternal,
+        mimeType
+    }: Pick<EncryptionPreferences, 'encrypt' | 'sign' | 'scheme' | 'mimeType' | 'isInternal'>,
     message?: Message
-): MIME_TYPES => {
+): { pgpScheme: PACKAGE_TYPE; mimeType: MIME_TYPES } => {
     const messageMimeType = message?.MIMEType as MIME_TYPES;
-    const pgpScheme = getPGPScheme({ sign, scheme, isInternal }, message);
+    const pgpScheme = getPGPScheme({ encrypt, sign, scheme, isInternal }, message);
 
     if (sign && [SEND_PGP_INLINE, SEND_PGP_MIME].includes(pgpScheme)) {
-        return pgpScheme === SEND_PGP_INLINE ? MIME_TYPES.PLAINTEXT : MIME_TYPES.MIME;
+        const mimeType = pgpScheme === SEND_PGP_INLINE ? MIME_TYPES.PLAINTEXT : MIME_TYPES.MIME;
+        return { pgpScheme, mimeType };
     }
     // If sending EO, respect the MIME type of the composer, since it will be what the API returns when retrieving the message.
     // If plain text is selected in the composer and the message is not signed, send in plain text
     if (pgpScheme === SEND_EO || messageMimeType === MIME_TYPES.PLAINTEXT) {
-        return messageMimeType || mimeType;
+        return { pgpScheme, mimeType: messageMimeType || mimeType };
     }
-    return (mimeType as unknown) as MIME_TYPES;
+    return { pgpScheme, mimeType };
 };

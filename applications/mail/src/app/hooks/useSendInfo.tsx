@@ -8,18 +8,19 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
+import { EncryptionPreferences, EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
-import { Alert, useGetEncryptionPreferences, useLoading, useModals } from 'react-components';
+import { Alert, useGetEncryptionPreferences, useModals } from 'react-components';
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import getSendPreferences from '../helpers/message/getSendPreferences';
 import { getSendStatusIcon } from '../helpers/message/icon';
+import { getRecipientsAddresses } from '../helpers/message/messages';
 
 import { MapSendInfo } from '../models/crypto';
 import { MessageExtended } from '../models/message';
-import { MapLoading, RequireSome } from '../models/utils';
+import { RequireSome } from '../models/utils';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = EncryptionPreferencesFailureTypes;
 
@@ -43,13 +44,9 @@ export const useUpdateRecipientSendInfo = (
     recipient: RequireSome<Recipient, 'Address' | 'ContactID'>,
     onRemove: () => void
 ) => {
-    const emailAddress = recipient.Address;
-    const sendInfo = messageSendInfo?.mapSendInfo[emailAddress];
-    const icon = sendInfo?.sendIcon;
-
     const { createModal } = useModals();
-    const [loading, withLoading] = useLoading(!icon);
     const getEncryptionPreferences = useGetEncryptionPreferences();
+    const emailAddress = recipient.Address;
 
     const handleRemove = () => {
         if (messageSendInfo) {
@@ -75,13 +72,20 @@ export const useUpdateRecipientSendInfo = (
                     [emailAddress]: {
                         sendPreferences: undefined,
                         sendIcon: undefined,
+                        loading: false,
                         emailValidation,
                         emailAddressWarnings: []
                     }
                 }));
                 return;
             }
-
+            setMapSendInfo((mapSendInfo) => ({
+                ...mapSendInfo,
+                [emailAddress]: {
+                    loading: true,
+                    emailValidation
+                }
+            }));
             const encryptionPreferences = await getEncryptionPreferences(emailAddress);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
 
@@ -140,16 +144,17 @@ export const useUpdateRecipientSendInfo = (
                 [emailAddress]: {
                     sendPreferences,
                     sendIcon,
+                    loading: false,
                     emailValidation,
                     emailAddressWarnings: encryptionPreferences.emailAddressWarnings || []
                 }
             }));
         };
 
-        withLoading(updateRecipientIcon());
+        updateRecipientIcon();
     }, [emailAddress]);
 
-    return { loading, handleRemove };
+    return { handleRemove };
 };
 
 interface LoadParams {
@@ -167,14 +172,6 @@ export const useUpdateGroupSendInfo = (
 ) => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const { createModal } = useModals();
-
-    const [mapLoading, setMapLoading] = useState<MapLoading>(() =>
-        contacts.reduce<MapLoading>((acc, { Email }) => {
-            acc[Email] = !messageSendInfo?.mapSendInfo[Email]?.sendPreferences;
-            return acc;
-        }, {})
-    );
-
     const emailsInGroup = contacts.map(({ Email }) => Email);
 
     const handleRemove = () => {
@@ -211,6 +208,14 @@ export const useUpdateGroupSendInfo = (
             }
 
             const { message, setMapSendInfo } = messageSendInfo;
+            !signal.aborted &&
+                setMapSendInfo((mapSendInfo) => {
+                    const sendInfo = mapSendInfo[emailAddress];
+                    return {
+                        ...mapSendInfo,
+                        [emailAddress]: { ...sendInfo, loading: true, emailValidation }
+                    };
+                });
             const encryptionPreferences = await getEncryptionPreferences(emailAddress);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
             const sendIcon = getSendStatusIcon(sendPreferences);
@@ -220,11 +225,11 @@ export const useUpdateGroupSendInfo = (
                     [emailAddress]: {
                         sendPreferences,
                         sendIcon,
+                        loading: false,
                         emailValidation,
                         emailAddressWarnings: encryptionPreferences.emailAddressWarnings || []
                     }
                 }));
-            !signal.aborted && setMapLoading((loadingMap) => ({ ...loadingMap, [emailAddress]: false }));
             if (checkForFailure && sendPreferences.failure) {
                 return {
                     failure: sendPreferences.failure,
@@ -316,5 +321,60 @@ export const useUpdateGroupSendInfo = (
         };
     }, []);
 
-    return { mapLoading, handleRemove };
+    return { handleRemove };
+};
+
+const getUpdatedSendInfo = async (
+    emailAddress: string,
+    message: MessageExtended,
+    setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>,
+    getEncryptionPreferences: (emailAddress: string, silence?: any) => Promise<EncryptionPreferences>
+) => {
+    const encryptionPreferences = await getEncryptionPreferences(emailAddress);
+    const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
+    const sendIcon = getSendStatusIcon(sendPreferences);
+    const updatedSendInfo = {
+        sendPreferences,
+        sendIcon,
+        loading: false,
+        emailAddressWarnings: encryptionPreferences.emailAddressWarnings || []
+    };
+    setMapSendInfo((mapSendInfo) => {
+        const sendInfo = mapSendInfo[emailAddress];
+        if (!sendInfo) {
+            return { ...mapSendInfo };
+        }
+        return {
+            ...mapSendInfo,
+            [emailAddress]: { ...sendInfo, ...updatedSendInfo }
+        };
+    });
+};
+
+export const reloadSendInfo = async (
+    messageSendInfo: MessageSendInfo | undefined,
+    message: MessageExtended,
+    getEncryptionPreferences: (emailAddress: string, silence?: any) => Promise<EncryptionPreferences>
+) => {
+    const { mapSendInfo, setMapSendInfo } = messageSendInfo || {};
+    if (!mapSendInfo || !setMapSendInfo || !message.data) {
+        return;
+    }
+    const recipients = getRecipientsAddresses(message.data);
+    const requests = recipients.map((emailAddress) => () =>
+        getUpdatedSendInfo(emailAddress, message, setMapSendInfo, getEncryptionPreferences)
+    );
+    const loadingMapSendInfo = recipients.reduce(
+        (acc, emailAddress) => {
+            const sendInfo = acc[emailAddress];
+            if (sendInfo) {
+                acc[emailAddress] = { ...sendInfo, loading: true };
+            }
+            return acc;
+        },
+        { ...mapSendInfo }
+    );
+    setMapSendInfo(loadingMapSendInfo);
+    // the routes called in requests support 100 calls every 10 seconds
+    await processApiRequestsSafe(requests, 100, 10 * 1000);
 };

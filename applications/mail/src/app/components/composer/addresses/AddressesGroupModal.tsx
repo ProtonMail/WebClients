@@ -2,13 +2,11 @@ import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { Checkbox, FormModal, generateUID, Label, classnames, PrimaryButton } from 'react-components';
 
-import { noop } from 'proton-shared/lib/helpers/function';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
 import { contactToInput } from '../../../helpers/addresses';
 import { RecipientGroup } from '../../../models/address';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
-import { MapLoading } from '../../../models/utils';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 
@@ -16,24 +14,15 @@ interface Props {
     recipientGroup: RecipientGroup;
     contacts: ContactEmail[];
     messageSendInfo?: MessageSendInfo;
-    mapLoading?: MapLoading;
-    onClose?: () => void;
+    onClose: () => void;
     onSubmit: (recipientGroup: RecipientGroup) => void;
 }
 
-const AddressesGroupModal = ({
-    recipientGroup,
-    contacts,
-    messageSendInfo,
-    mapLoading,
-    onSubmit,
-    onClose = noop,
-    ...rest
-}: Props) => {
+const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubmit, onClose, ...rest }: Props) => {
     const [uid] = useState<string>(generateUID('addresses-group-modal'));
     const [model, setModel] = useState<RecipientGroup>(recipientGroup);
 
-    const allIconsLoaded = !contacts.some(({ Email }) => mapLoading?.[Email] === true);
+    const allIconsLoaded = !contacts.some(({ Email }) => messageSendInfo?.mapSendInfo?.[Email]?.loading === true);
     const isChecked = (contact: ContactEmail) =>
         !!model?.recipients?.find((recipient) => contact.Email === recipient.Address);
 
@@ -67,9 +56,10 @@ const AddressesGroupModal = ({
             <ul className="unstyled">
                 {contacts.map((contact) => {
                     const id = `${uid}-${contact.ID}`;
-                    const icon = messageSendInfo?.mapSendInfo[contact.Email]?.sendIcon;
-                    const loading = mapLoading?.[contact.Email];
-                    const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL;
+                    const sendInfo = messageSendInfo?.mapSendInfo[contact.Email];
+                    const icon = sendInfo?.sendIcon;
+                    const loading = sendInfo?.loading;
+                    const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL && !loading;
                     return (
                         <li key={contact.ID} className="mb0-5">
                             <Checkbox id={id} checked={isChecked(contact)} onChange={handleChange(contact)} />

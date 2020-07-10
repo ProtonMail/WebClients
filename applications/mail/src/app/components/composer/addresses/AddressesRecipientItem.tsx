@@ -20,11 +20,12 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
     const emailAddress = recipient.Address;
     const sendInfo = messageSendInfo?.mapSendInfo[emailAddress];
     const icon = sendInfo?.sendIcon;
+    const loading = sendInfo?.loading;
     const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL;
 
     const editableRef = useRef<HTMLSpanElement | null>(null);
 
-    const { loading, handleRemove } = useUpdateRecipientSendInfo(messageSendInfo, recipient, onRemove);
+    const { handleRemove } = useUpdateRecipientSendInfo(messageSendInfo, recipient, onRemove);
 
     // Hide invalid when no send info or while loading
     const valid = !sendInfo || loading || (sendInfo?.emailValidation && !sendInfo?.emailAddressWarnings?.length);

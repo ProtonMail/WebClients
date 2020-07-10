@@ -184,14 +184,21 @@ export const useSendMessage = () => {
             await saveDraft(messageToSave);
 
             const message = messageCache.get(messageToSave.localID) as MessageExtendedWithData;
+            const messageWithGoodFlags = {
+                ...message,
+                data: {
+                    ...message.data,
+                    Flags: inputMessage.data.Flags
+                }
+            };
 
             // TODO: handleAttachmentSigs ?
 
             const emails = unique(getRecipientsAddresses(inputMessage.data));
 
-            let packages = await generateTopPackages(message, mapSendPrefs, attachmentCache, api);
-            packages = await attachSubPackages(packages, message, emails, mapSendPrefs);
-            packages = await encryptPackages(message, packages, getAddressKeys);
+            let packages = await generateTopPackages(messageWithGoodFlags, mapSendPrefs, attachmentCache, api);
+            packages = await attachSubPackages(packages, messageWithGoodFlags, emails, mapSendPrefs, api);
+            packages = await encryptPackages(messageWithGoodFlags, packages, getAddressKeys);
 
             // TODO: Implement retry system
             // const suppress = retry ? [API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED] : [];
