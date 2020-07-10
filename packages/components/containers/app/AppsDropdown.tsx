@@ -22,7 +22,12 @@ const AppsDropdown = () => {
     const spaceHuman = `${humanSize(UsedSpace)} / ${humanSize(MaxSpace)}`;
 
     const apps = [
-        { appNames: [PROTONMAIL, PROTONMAIL_SETTINGS], icon: 'protonmail', title: 'ProtonMail', link: '/inbox' },
+        {
+            appNames: [APP_NAME === PROTONMAIL_SETTINGS ? PROTONMAIL_SETTINGS : PROTONMAIL],
+            icon: 'protonmail',
+            title: 'ProtonMail',
+            link: '/inbox'
+        },
         { appNames: [PROTONCONTACTS], icon: 'protoncontacts', title: 'ProtonContacts', link: '/contacts' },
         {
             appNames: [PROTONCALENDAR],
