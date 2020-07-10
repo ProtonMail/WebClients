@@ -38,7 +38,7 @@ function Trash({ shareId }: Props) {
             contents={contents}
             selectedItems={selectedItems}
             onToggleItemSelected={toggleSelectItem}
-            onEmptyAreaClick={clearSelections}
+            clearSelections={clearSelections}
             onToggleAllSelected={toggleAllSelected}
             onShiftClick={selectRange}
         />

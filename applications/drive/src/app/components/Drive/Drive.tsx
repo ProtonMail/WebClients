@@ -75,7 +75,7 @@ function Drive({ activeFolder, openLink }: Props) {
             selectedItems={selectedItems}
             onItemClick={handleClick}
             onToggleItemSelected={toggleSelectItem}
-            onEmptyAreaClick={clearSelections}
+            clearSelections={clearSelections}
             onToggleAllSelected={toggleAllSelected}
             onShiftClick={selectRange}
         />

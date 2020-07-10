@@ -16,7 +16,7 @@ interface Props {
     onToggleItemSelected: (item: string) => void;
     onItemClick?: (item: FileBrowserItem) => void;
     onShiftClick: (item: string) => void;
-    onEmptyAreaClick: () => void;
+    clearSelections: () => void;
     onToggleAllSelected: () => void;
 }
 
@@ -31,12 +31,12 @@ const FileBrowser = ({
     onToggleItemSelected,
     onToggleAllSelected,
     onItemClick,
-    onEmptyAreaClick,
+    clearSelections,
     onShiftClick,
 }: Props) => {
     const [secondaryActionActive, setSecondaryActionActive] = useState(false);
     const { isDesktop } = useActiveBreakpoint();
-    const getDragMoveControls = useDriveDragMove(shareId, selectedItems);
+    const getDragMoveControls = useDriveDragMove(shareId, selectedItems, clearSelections);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -64,7 +64,7 @@ const FileBrowser = ({
             role="presentation"
             ref={scrollAreaRef}
             className="flex flex-item-fluid scroll-if-needed"
-            onClick={onEmptyAreaClick}
+            onClick={clearSelections}
         >
             <table className="pm-simple-table pm-simple-table--isHoverable pd-fb-table noborder border-collapse">
                 <caption className="sr-only">{caption}</caption>

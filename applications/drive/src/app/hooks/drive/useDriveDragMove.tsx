@@ -4,19 +4,23 @@ import useDrive from './useDrive';
 import useListNotifications from '../util/useListNotifications';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
 
+type MovingItems = { [linkId: string]: FileBrowserItem };
+
 export interface DragMoveControls {
-    handleDragOver: ((event: React.DragEvent<HTMLTableRowElement>) => void) | undefined;
+    handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
     handleDrop: (e: React.DragEvent<HTMLTableRowElement>) => void;
     handleDragLeave: (e: React.DragEvent<HTMLTableRowElement>) => void;
     dragging: boolean;
     setDragging: (value: boolean) => void;
     isActiveDropTarget: boolean;
+    moving: MovingItems;
 }
 
-function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[]) {
+function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[], clearSelections: () => void) {
     const { moveLinks, events } = useDrive();
     const { createMoveLinksNotifications } = useListNotifications();
     const [allDragging, setAllDragging] = useState<FileBrowserItem[]>([]);
+    const [moving, setMoving] = useState<MovingItems>({});
     const [activeDropTarget, setActiveDropTarget] = useState<FileBrowserItem>();
 
     const getDragMoveControls = (item: FileBrowserItem): DragMoveControls => {
@@ -27,15 +31,38 @@ function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[]) {
                 : setAllDragging([]);
 
         const handleDrop = async () => {
+            const toMove = [...allDragging];
+
+            setMoving((moving) => ({
+                ...moving,
+                ...toMove.reduce(
+                    (items, item) => ({
+                        ...items,
+                        [item.LinkID]: item,
+                    }),
+                    {}
+                ),
+            }));
+
+            clearSelections();
+
             const result = await moveLinks(
                 shareId,
                 item.LinkID,
-                allDragging.map(({ LinkID }) => LinkID)
+                toMove.map(({ LinkID }) => LinkID)
             );
 
-            createMoveLinksNotifications(selectedItems, result);
+            createMoveLinksNotifications(toMove, result);
 
             await events.call(shareId);
+
+            setMoving((moving) => {
+                const remaining = { ...moving };
+                toMove.forEach(({ LinkID }) => {
+                    delete remaining[LinkID];
+                });
+                return remaining;
+            });
         };
 
         const isActiveDropTarget = activeDropTarget?.LinkID === item.LinkID;
@@ -62,6 +89,7 @@ function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[]) {
             dragging,
             setDragging,
             isActiveDropTarget,
+            moving,
         };
     };
 

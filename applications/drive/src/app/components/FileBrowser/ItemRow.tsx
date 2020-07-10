@@ -42,10 +42,24 @@ const ItemRow = ({
     secondaryActionActive,
     dragMoveControls,
 }: Props) => {
-    const { handleDragOver, handleDrop, handleDragLeave, isActiveDropTarget } = dragMoveControls;
-    const { dragging, handleDragEnd, handleDragStart, DragMoveContent } = useDragMove(dragMoveControls);
+    const {
+        handleDragOver,
+        handleDrop,
+        handleDragLeave,
+        isActiveDropTarget,
+        moving,
+        ...draggingControls
+    } = dragMoveControls;
+    const { dragging, handleDragEnd, handleDragStart, DragMoveContent } = useDragMove({
+        ...draggingControls,
+        format: 'pd-custom',
+        formatter: JSON.stringify,
+    });
     const { isDesktop } = useActiveBreakpoint();
     const touchStarted = useRef(false);
+    const isMoving = !!moving[item.LinkID];
+
+    const unlessDisabled = <A extends any[], R>(fn: (...args: A) => R) => (isMoving ? undefined : fn);
 
     const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
@@ -105,6 +119,7 @@ const ItemRow = ({
             onTouchStart={(e) => e.stopPropagation()}
         >
             <Checkbox
+                disabled={isMoving}
                 className="increase-surface-click"
                 checked={isSelected}
                 onChange={(e) => {
@@ -166,28 +181,30 @@ const ItemRow = ({
                 <DragMoveContainer>{moveText}</DragMoveContainer>
             </DragMoveContent>
             <TableRow
+                cells={cells}
                 draggable
                 tabIndex={0}
                 role="button"
-                onDragStart={handleDragStart}
-                onDragEnd={handleDragEnd}
-                onDragOver={handleDragOver}
-                onDrop={handleDrop}
-                onDragLeave={handleDragLeave}
+                aria-disabled={isMoving}
                 className={classnames([
                     'no-outline',
                     (onClick || secondaryActionActive) && 'cursor-pointer',
                     (isSelected || isActiveDropTarget) && 'bg-global-highlight',
-                    dragging && 'opacity-50',
+                    (dragging || isMoving) && 'opacity-50',
+                    isMoving && 'no-pointer-events no-pointer-events-children bg-global-highlight',
                 ])}
+                onKeyDown={unlessDisabled(handleKeyDown)}
+                onClick={unlessDisabled(handleRowClick)}
+                onTouchStart={unlessDisabled(handleTouchStart)}
+                onTouchMove={unlessDisabled(handleTouchCancel)}
+                onTouchCancel={unlessDisabled(handleTouchCancel)}
+                onTouchEnd={unlessDisabled(handleTouchEnd)}
+                onDragStart={unlessDisabled(handleDragStart)}
+                onDragOver={unlessDisabled(handleDragOver)}
+                onDrop={unlessDisabled(handleDrop)}
+                onDragLeave={unlessDisabled(handleDragLeave)}
+                onDragEnd={handleDragEnd}
                 onMouseDown={() => document.getSelection()?.removeAllRanges()}
-                onKeyDown={handleKeyDown}
-                onClick={handleRowClick}
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchCancel}
-                onTouchCancel={handleTouchCancel}
-                onTouchEnd={handleTouchEnd}
-                cells={cells}
             />
         </>
     );
