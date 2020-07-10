@@ -31,9 +31,7 @@ const AddressesSummary = ({
 }: Props) => {
     return (
         <div className="flex flex-row flex-nowrap flex-items-center m0-5 pl0-5 pr0-5" onClick={onFocus}>
-            <Label htmlFor={null} className="composer-meta-label pr0-5 pt0 bold">
-                {c('Title').t`To`}
-            </Label>
+            <Label className="composer-meta-label pr0-5 pt0 bold">{c('Title').t`To`}</Label>
             <div className="pm-field flex composer-addresses-fakefield flex-row flex-item-fluid w100 relative">
                 <span className="ellipsis composer-addresses-fakefield-inner">
                     {getRecipients(data).length === 0 ? (
