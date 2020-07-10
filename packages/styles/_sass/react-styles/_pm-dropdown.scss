@@ -279,7 +279,7 @@
 	/* Arrow for wide screens */
 	@include respond-to($breakpoint-small, 'min') {
 
-		&::before {
+		&:not(#{&}--noCaret)::before {
 			--size: 1.5rem;
 			--offset: #{2.12rem - 1.5rem}; // Pythagore powa for middle line alignement!
 
