@@ -1,4 +1,4 @@
-export const noop: () => void = () => undefined;
+export const noop = () => undefined;
 export const identity = <T>(value: T) => value;
 
 export const debounce = <A extends any[]>(func: (...args: A) => void, wait: number, isImmediate?: boolean) => {
