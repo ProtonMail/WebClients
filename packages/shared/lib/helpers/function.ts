@@ -1,5 +1,5 @@
-export const noop = () => undefined;
-export const identity = (value: any) => value;
+export const noop: () => void = () => undefined;
+export const identity = <T>(value: T) => value;
 
 export const debounce = <A extends any[]>(func: (...args: A) => void, wait: number, isImmediate?: boolean) => {
     let timeoutId: ReturnType<typeof setTimeout> | undefined;
