@@ -11,7 +11,6 @@ import { isPreviewAvailable, isSupportedImage, isSupportedText, isPDF } from './
 
 interface Props {
     loading: boolean;
-
     fileName?: string;
     mimeType?: string;
     navigationControls?: React.ReactNode;
