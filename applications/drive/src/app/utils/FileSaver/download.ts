@@ -77,9 +77,9 @@ export async function openDownloadStream(
     });
 
     if (abortSignal) {
-        abortSignal.onabort = () => {
+        abortSignal.addEventListener('abort', () => {
             channel.port1.postMessage({ action: 'abort', reason: 'Download stream aborted' });
-        };
+        });
     }
 
     const worker = await wakeUpServiceWorker();

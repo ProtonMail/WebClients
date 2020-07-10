@@ -46,17 +46,21 @@ export async function upload(
     const xhr = new XMLHttpRequest();
 
     return new Promise<void>((resolve, reject) => {
-        let lastLoaded = 0;
-        const formData = new FormData();
-
-        formData.append('Block', new Blob([content]));
+        if (signal?.aborted) {
+            reject(new TransferCancel(id));
+            return;
+        }
 
         if (signal) {
-            signal.onabort = () => {
+            signal.addEventListener('abort', () => {
                 xhr.abort();
                 reject(new TransferCancel(id));
-            };
+            });
         }
+
+        let lastLoaded = 0;
+        const formData = new FormData();
+        formData.append('Block', new Blob([content]));
 
         xhr.upload.onprogress = (e) => {
             onProgress((e.loaded - lastLoaded) / e.total);
