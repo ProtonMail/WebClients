@@ -18,7 +18,7 @@ $path-images: '~design-system/assets/img/shared/';
 @import '~design-system/_sass/pm-styles/pm-forms';
 @import '~design-system/_sass/pm-styles/pm-tabs';
 @import '~design-system/_sass/pm-styles/pm-loadingcontent';
-@import "~design-system/_sass/pm-styles/pm-loader-animation";
+@import '~design-system/_sass/pm-styles/pm-loader-animation';
 @import '~design-system/_sass/pm-styles/pm-layout';
 @import '~design-system/_sass/pm-styles/pm-modal';
 @import '~design-system/_sass/pm-styles/pm-notifications';
@@ -47,6 +47,8 @@ $path-images: '~design-system/assets/img/shared/';
 @import '~design-system/_sass/pm-styles/pm-subnav';
 
 @import '~design-system/_sass/pm-styles/pm-treeview';
+
+@import '~design-system/_sass/pd-styles/_pd-file-preview';
 
 @import '~design-system/_sass/design-system-website/global-structure';
 @import '~design-system/_sass/design-system-website/inside-content';

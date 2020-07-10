@@ -368,6 +368,15 @@ export { default as OpenVPNAccountSection } from './containers/vpn/OpenVPNAccoun
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
 
+export { default as FilePreview } from './containers/filePreview/FilePreview';
+export { default as NavigationControl } from './containers/filePreview/NavigationControl';
+export { default as PDFPreview } from './containers/filePreview/PDFPreview';
+export { default as ImagePreview } from './containers/filePreview/ImagePreview';
+export { default as TextPreview } from './containers/filePreview/TextPreview';
+export { default as ZoomControl } from './containers/filePreview/ZoomControl';
+export * from './containers/filePreview/helpers';
+export { default as FileIcon } from './components/fileIcon/FileIcon';
+
 export { default as usePayPal } from './hooks/usePayPal';
 export { default as useBeforeUnload } from './hooks/useBeforeUnload';
 export { useUser, useGetUser } from './hooks/useUser';
