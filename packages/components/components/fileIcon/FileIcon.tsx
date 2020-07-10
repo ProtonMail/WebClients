@@ -1,6 +1,6 @@
 import React from 'react';
 import { isSupportedImage, isSupportedText, isVideo } from '../../containers/filePreview/helpers';
-import Icon from '../icon/Icon';
+import Icon, { Props as IconProps } from '../icon/Icon';
 
 const iconsMap: { [mimeType: string]: { name: string } } = {
     Folder: { name: 'folder' },
@@ -39,7 +39,7 @@ const getIconName = (mimeType: string) => {
     return name;
 };
 
-interface Props {
+interface Props extends Omit<IconProps, 'name'> {
     mimeType: string;
 }
 
