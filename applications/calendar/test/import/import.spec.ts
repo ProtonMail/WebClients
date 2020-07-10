@@ -229,7 +229,36 @@ UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
         expect(() => getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Recurring rule inconsistent'
+            'Malformed recurring event'
+        );
+    });
+
+    test('should catch malformed rrules', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTART;TZID=Europe/Vilnius:20200503T150000
+DTEND;TZID=Europe/Vilnius:20200503T160000
+EXDATE;TZID=Europe/Vilnius:20200503T150000
+DTSTAMP:20200508T121218Z
+UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(() => getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toThrowError(
+            'Malformed recurring event'
+        );
+    });
+
+    test('should catch recurring single edits', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTART;TZID=Europe/Vilnius:20200503T150000
+DTEND;TZID=Europe/Vilnius:20200503T160000
+RRULE:DAILY
+RECURRENCE-ID;TZID=Europe/Vilnius:20200505T150000
+DTSTAMP:20200508T121218Z
+UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(() => getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toThrowError(
+            'Edited event not supported'
         );
     });
 
@@ -254,7 +283,7 @@ TRANSP:OPAQUE
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
         expect(() => getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Recurring rule inconsistent'
+            'Malformed recurring event'
         );
     });
 

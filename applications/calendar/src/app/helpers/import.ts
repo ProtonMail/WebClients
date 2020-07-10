@@ -323,6 +323,9 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             throw new ImportEventError(IMPORT_EVENT_TYPE.DTSTART_OUT_OF_BOUNDS, 'vevent', componentId);
         }
         if (exdate) {
+            if (!rrule) {
+                throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_MALFORMED, 'vevent', componentId);
+            }
             const supportedExdate = exdate.map((property) =>
                 getSupportedDateOrDateTimeProperty({
                     property,
@@ -344,6 +347,9 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             );
         }
         if (recurrenceId) {
+            if (rrule) {
+                throw new ImportEventError(IMPORT_EVENT_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', componentId);
+            }
             validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
                 property: recurrenceId,
                 component: 'vevent',
@@ -389,7 +395,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             }
             validated.rrule = supportedRrule;
             if (!getHasConsistentRrule(validated)) {
-                throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_INCONSISTENT, 'vevent', componentId);
+                throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_MALFORMED, 'vevent', componentId);
             }
         }
 
@@ -527,9 +533,13 @@ export const getSupportedEventsWithRecurrenceId = async ({
         if (!mapParentEvents[uid]) {
             return new ImportEventError(IMPORT_EVENT_TYPE.PARENT_EVENT_MISSING, 'vevent', uid);
         }
+        const parentEvent = mapParentEvents[uid] as VcalVeventComponent;
+        if (!parentEvent.rrule) {
+            return new ImportEventError(IMPORT_EVENT_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', uid);
+        }
         const recurrenceId = event['recurrence-id'];
         try {
-            const parentDtstart = (mapParentEvents[uid] as VcalVeventComponent).dtstart;
+            const parentDtstart = parentEvent.dtstart;
             const supportedRecurrenceId = getLinkedDateTimeProperty({
                 property: recurrenceId,
                 component: 'vevent',
