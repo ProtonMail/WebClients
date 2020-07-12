@@ -12,6 +12,7 @@ import { IMPORT_STEPS, ImportCalendarModel, StoredEncryptedEvent } from '../../i
 
 import AttachingModalContent from './AttachingModalContent';
 import { upsertImportedEvents } from './encryptAndSubmit';
+import { ImportFatalError } from './ImportFatalError';
 import ImportingModalContent from './ImportingModalContent';
 import ImportSummaryModalContent from './ImportSummaryModalContent';
 import WarningModalContent from './WarningModalContent';
@@ -102,7 +103,7 @@ const ImportModal = ({ calendars, defaultCalendar, calendarsEventsCacheRef, ...r
                 } catch (e) {
                     setModel({
                         ...getInitialState(model.calendar),
-                        failure: e,
+                        failure: new ImportFatalError(e),
                     });
                 }
             };
