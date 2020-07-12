@@ -34,14 +34,6 @@ export interface ImportCalendarModel {
     loading: boolean;
 }
 
-export type Unwrap<T> = T extends Promise<infer U>
-    ? U
-    : T extends (...args: any) => Promise<infer U>
-    ? U
-    : T extends (...args: any) => infer U
-    ? U
-    : T;
-
 export interface SyncMultipleApiResponses {
     Index: number;
     Response: {
