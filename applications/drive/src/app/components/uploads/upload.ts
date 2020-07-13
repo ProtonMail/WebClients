@@ -26,7 +26,7 @@ export interface BlockMeta {
 export interface UploadCallbacks {
     transform: (buffer: Uint8Array) => Promise<{ encryptedData: Uint8Array; signature: string }>;
     requestUpload: (blockList: BlockList) => Promise<UploadLink[]>;
-    finalize: (blocklist: BlockMeta[]) => Promise<void>;
+    finalize: (blocklist: BlockMeta[], config?: { signal?: AbortSignal }) => Promise<void>;
     onProgress?: (bytes: number) => void;
     onError?: (error: Error) => void;
 }
