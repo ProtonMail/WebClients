@@ -284,8 +284,14 @@ const useDriveCacheState = () => {
 
     const setLinksLocked = (locked: boolean, shareId: string, linkIds: string[]) => {
         const { links } = cacheRef.current[shareId];
+        let changed = false;
 
         linkIds.forEach((linkId) => {
+            if (!links[linkId]) {
+                return;
+            }
+
+            changed = true;
             links[linkId].locked = locked;
             cacheRef.current[shareId] = {
                 ...cacheRef.current[shareId],
@@ -293,7 +299,9 @@ const useDriveCacheState = () => {
             };
         });
 
-        setRerender((old) => ++old);
+        if (changed) {
+            setRerender((old) => ++old);
+        }
     };
 
     const getShareIds = () => Object.keys(cacheRef.current);
