@@ -51,6 +51,7 @@ function paypalView(Payment, notification) {
                 } catch (error) {
                     scope.$applyAsync(() => {
                         scope.loadingTokens = false;
+                        scope.errorDetails = { validator: 'tokens' };
                         delete scope.paypalModel;
                         delete scope.paypalCreditModel;
                     });

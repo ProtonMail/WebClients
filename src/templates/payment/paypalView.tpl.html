@@ -1,11 +1,10 @@
-<div class="paypal-container">
+<div class="paypal-container margin-top">
     <div class="alert alert-danger" ng-if="errorDetails">
-        <div class="margin-bottom">
-            <span ng-if="errorDetails.validator === 'duckduckgo'" translate-context="PayPal error" translate>The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.</span>
-            <span ng-if="errorDetails.validator === 'min'" translate-context="Paypal error" translate>Amount below minimum.</span>
-            <span ng-if="errorDetails.validator === 'max'" translate-context="Paypal error" translate>Amount above the maximum.</span>
-            <span ng-if="errorDetails.validator === 'min' || errorDetails.validator === 'max'">({{ errorDetails.amount / 100 }} {{ currency }})</span>
-        </div>
+        <span ng-if="errorDetails.validator === 'tokens'" translate-context="PayPal error" translate>Error to generate payment tokens. <button class="pm_button" type="button" ng-click="retry()">Retry</button></span>
+        <span ng-if="errorDetails.validator === 'duckduckgo'" translate-context="PayPal error" translate>The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.</span>
+        <span ng-if="errorDetails.validator === 'min'" translate-context="Paypal error" translate>Amount below minimum.</span>
+        <span ng-if="errorDetails.validator === 'max'" translate-context="Paypal error" translate>Amount above the maximum.</span>
+        <span ng-if="errorDetails.validator === 'min' || errorDetails.validator === 'max'">({{ errorDetails.amount / 100 }} {{ currency }})</span>
     </div>
 
     <div ng-if="loadingTokens">
