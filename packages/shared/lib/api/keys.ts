@@ -89,7 +89,7 @@ export const updatePrivateKeyRoute = (data: {
 
 export const resetKeysRoute = (data: {
     Username: string;
-    PrimaryKey: string;
+    PrimaryKey?: string;
     Token: string;
     KeySalt: string;
     AddressKeys: AddressKey[];

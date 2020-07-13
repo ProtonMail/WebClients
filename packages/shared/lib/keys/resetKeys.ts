@@ -35,7 +35,7 @@ export const getResetAddressesKeys = async ({
 }: {
     addresses: Address[];
     passphrase: string;
-    encryptionConfig: EncryptionConfig;
+    encryptionConfig?: EncryptionConfig;
 }) => {
     const newAddressesKeys = await Promise.all(
         addresses.map(({ Email }) => {
