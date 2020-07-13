@@ -282,11 +282,11 @@ const useDriveCacheState = () => {
         };
     };
 
-    const setLinksLocked = (loked: boolean, shareId: string, linkIds: string[]) => {
+    const setLinksLocked = (locked: boolean, shareId: string, linkIds: string[]) => {
         const { links } = cacheRef.current[shareId];
 
         linkIds.forEach((linkId) => {
-            links[linkId].loked = loked;
+            links[linkId].locked = locked;
             cacheRef.current[shareId] = {
                 ...cacheRef.current[shareId],
                 links,
