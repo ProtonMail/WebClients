@@ -4,6 +4,7 @@ import { StandardPrivateApp, ErrorBoundary, GenericError, LoaderPage, ModalsChil
 import { UserModel, AddressesModel } from 'proton-shared/lib/models';
 import { c } from 'ttag';
 
+import locales from './locales';
 import DriveContainer from './containers/DriveContainer';
 import PrivateLayout from './components/layout/PrivateLayout';
 import { DownloadProvider } from './components/downloads/DownloadProvider';
@@ -34,6 +35,7 @@ const PrivateApp = ({ onLogout, history, location }: Props) => {
 
     return (
         <StandardPrivateApp
+            locales={locales}
             openpgpConfig={openpgpConfig}
             onLogout={onLogout}
             preloadModels={[UserModel, AddressesModel]}
