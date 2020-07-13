@@ -1,12 +1,12 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Loader, ModalsChildren, ResetPasswordContainer, ForgotUsernameContainer } from 'react-components';
+import { Loader, ModalsChildren } from 'react-components';
+import { Redirect } from 'react-router';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
 import PublicLayout from './components/layout/PublicLayout';
 import LoginContainer from './containers/LoginContainer';
 import SignupContainer from './containers/SignupContainer';
-import { Redirect } from 'react-router';
 
 interface Props {
     onLogin: () => void;
@@ -39,8 +39,6 @@ const PublicApp = ({ onLogin }: Props) => {
             <ModalsChildren />
             <PublicLayout>
                 <Switch>
-                    <Route path="/reset-password" render={() => <ResetPasswordContainer onLogin={onLogin} />} />
-                    <Route path="/forgot-username" component={ForgotUsernameContainer} />
                     <Route
                         path="/login"
                         render={({ history, location }) => (

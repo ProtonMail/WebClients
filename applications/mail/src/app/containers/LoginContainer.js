@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, SignInLayout } from 'react-components';
 
@@ -24,16 +23,6 @@ const LoginContainer = ({ stopRedirect, history, location, onLogin }) => {
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
                         <DropdownMenu>
                             <ul className="unstyled mt0 mb0">
-                                <li className="dropDown-item">
-                                    <Link className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1" to="/reset-password">
-                                        {c('Link').t`Reset password`}
-                                    </Link>
-                                </li>
-                                <li className="dropDown-item">
-                                    <Link className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1" to="/forgot-username">
-                                        {c('Link').t`Forgot username?`}
-                                    </Link>
-                                </li>
                                 <li className="dropDown-item">
                                     <Href
                                         className="dropDown-item-link bl pt0-5 pb0-5 pl1 pr1"
