@@ -2,7 +2,8 @@ import React from 'react';
 import { classnames } from '../../helpers/component';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
-    children: React.ReactNode;
+    children?: React.ReactNode;
+    className?: string;
 }
 
 const Toolbar = ({ children, className, ...rest }: Props) => (

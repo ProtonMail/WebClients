@@ -16,6 +16,7 @@ export { default as TableCellBusy } from './components/table/TableCellBusy';
 export { default as TableRowSticky } from './components/table/TableRowSticky';
 export { default as Select } from './components/select/Select';
 export { default as Breadcrumb } from './components/breadcrumb/Breadcrumb';
+export { default as CollapsingBreadcrumbs } from './components/collapsingBreadcrumbs/CollapsingBreadcrumbs';
 export { default as Wizard } from './components/wizard/Wizard';
 export { default as Alert } from './components/alert/Alert';
 export { default as DoNotWindowOpenAlertError } from './components/alert/DoNotWindowOpenAlertError';
