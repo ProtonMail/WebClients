@@ -7,7 +7,7 @@ export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
         timeout: UPLOAD_TIMEOUT,
         url: `drive/shares/${shareId}/files`,
         silence: true,
-        data
+        data,
     };
 };
 
@@ -15,7 +15,7 @@ export const queryFileRevision = (shareId: string, linkId: string, revisionId: n
     return {
         method: 'get',
         url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}`,
-        silence: true
+        silence: true,
     };
 };
 
@@ -29,7 +29,7 @@ export const queryRequestUpload = (data: {
     return {
         method: 'post',
         url: 'drive/blocks',
-        data
+        data,
     };
 };
 
@@ -37,7 +37,7 @@ export const queryFileBlock = (url: string) => {
     return {
         method: 'get',
         output: 'stream',
-        url
+        url,
     };
 };
 
@@ -46,7 +46,7 @@ export const queryUploadFileBlock = (url: string, chunk: Uint8Array) => {
         method: 'put',
         input: 'binary',
         data: new Blob([chunk]),
-        url
+        url,
     };
 };
 
@@ -59,7 +59,6 @@ export const queryUpdateFileRevision = (
     return {
         method: 'put',
         url: `drive/shares/${shareID}/files/${linkID}/revisions/${revisionID}`,
-        silence: true,
-        data
+        data,
     };
 };

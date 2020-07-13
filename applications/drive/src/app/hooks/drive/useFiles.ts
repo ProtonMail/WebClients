@@ -26,7 +26,7 @@ import {
 } from '../../interfaces/file';
 import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
-import { TransferMeta, TransferState, DownloadInfo } from '../../interfaces/transfer';
+import { TransferMeta, TransferState, DownloadInfo, TransferCancel } from '../../interfaces/transfer';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../../components/downloads/download';
 import { streamToBuffer } from '../../utils/stream';
@@ -257,7 +257,7 @@ function useFiles() {
                 },
                 finalize: queuedFunction(
                     'upload_finalize',
-                    async (blockMetas) => {
+                    async (blockMetas, config) => {
                         const hashes: Uint8Array[] = [];
                         const BlockList = blockMetas.map(({ Index, Token, Hash }) => {
                             hashes.push(Hash);
@@ -267,21 +267,24 @@ function useFiles() {
                             };
                         });
                         const contentHashes = mergeUint8Arrays(hashes);
-                        const { File } = await setupPromise;
+                        const { File, Name, ParentLinkID } = await setupPromise;
                         const { signature, address } = await sign(contentHashes);
                         const SignatureAddress = address.Email;
 
-                        await debouncedRequest(
+                        if (config?.signal?.aborted) {
+                            throw new TransferCancel(`${ParentLinkID}: ${Name}`);
+                        }
+
+                        debouncedRequest(
                             queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
                                 State: FileRevisionState.Active,
                                 BlockList,
                                 ManifestSignature: signature,
                                 SignatureAddress,
                             })
-                        );
-
-                        // Update quota metrics and drive links
-                        Promise.all([call(), events.call(shareId)]).catch(console.error);
+                        )
+                            .then(() => Promise.all([call(), events.call(shareId)]))
+                            .catch(console.error);
                     },
                     5
                 ),
