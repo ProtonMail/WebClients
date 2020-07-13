@@ -10,4 +10,5 @@ export interface FileBrowserItem {
     Size: number;
     ParentLinkID: string;
     Location?: string;
+    Disabled?: boolean;
 }

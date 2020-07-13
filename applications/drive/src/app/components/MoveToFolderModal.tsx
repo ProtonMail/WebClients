@@ -33,7 +33,7 @@ interface Props {
 const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Props) => {
     const { createModal } = useModals();
     const cache = useDriveCache();
-    const { getShareMeta, getLinkMeta, getFoldersOnlyMetas, moveLinks, events } = useDrive();
+    const { getShareMeta, getLinkMeta, getFoldersOnlyMetas, moveLinks } = useDrive();
     const { createMoveLinksNotifications } = useListNotifications();
     const [loading, withLoading] = useLoading();
     const [initializing, withInitialize] = useLoading(true);
@@ -64,8 +64,6 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
         );
 
         createMoveLinksNotifications(selectedItems, result);
-
-        await events.call(activeFolder.shareId);
     };
 
     useEffect(() => {

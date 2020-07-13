@@ -38,7 +38,7 @@ const DriveContentProviderInner = ({
     const { sortParams, sortedList, setSorting } = useDriveSorting(
         (sortParams) => cache.get.childLinkMetas(shareId, linkId, sortParams) || []
     );
-    const contents = mapLinksToChildren(sortedList);
+    const contents = mapLinksToChildren(sortedList, (linkId) => cache.get.isLinkLocked(shareId, linkId));
     const complete = cache.get.childrenComplete(shareId, linkId, sortParams);
 
     const fileBrowserControls = useFileBrowser(contents);

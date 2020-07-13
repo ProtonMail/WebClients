@@ -42,24 +42,17 @@ const ItemRow = ({
     secondaryActionActive,
     dragMoveControls,
 }: Props) => {
-    const {
-        handleDragOver,
-        handleDrop,
-        handleDragLeave,
-        isActiveDropTarget,
-        moving,
-        ...draggingControls
-    } = dragMoveControls;
+    const { handleDragOver, handleDrop, handleDragLeave, isActiveDropTarget, ...draggingControls } = dragMoveControls;
     const { dragging, handleDragEnd, handleDragStart, DragMoveContent } = useDragMove({
         ...draggingControls,
         format: 'pd-custom',
         formatter: JSON.stringify,
     });
+
     const { isDesktop } = useActiveBreakpoint();
     const touchStarted = useRef(false);
-    const isMoving = !!moving[item.LinkID];
 
-    const unlessDisabled = <A extends any[], R>(fn: (...args: A) => R) => (isMoving ? undefined : fn);
+    const unlessDisabled = <A extends any[], R>(fn: (...args: A) => R) => (item.Disabled ? undefined : fn);
 
     const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
@@ -119,7 +112,7 @@ const ItemRow = ({
             onTouchStart={(e) => e.stopPropagation()}
         >
             <Checkbox
-                disabled={isMoving}
+                disabled={item.Disabled}
                 className="increase-surface-click"
                 checked={isSelected}
                 onChange={(e) => {
@@ -185,13 +178,13 @@ const ItemRow = ({
                 draggable
                 tabIndex={0}
                 role="button"
-                aria-disabled={isMoving}
+                aria-disabled={item.Disabled}
                 className={classnames([
                     'no-outline',
                     (onClick || secondaryActionActive) && 'cursor-pointer',
                     (isSelected || isActiveDropTarget) && 'bg-global-highlight',
-                    (dragging || isMoving) && 'opacity-50',
-                    isMoving && 'no-pointer-events no-pointer-events-children bg-global-highlight',
+                    (dragging || item.Disabled) && 'opacity-50',
+                    item.Disabled && 'no-pointer-events no-pointer-events-children bg-global-highlight',
                 ])}
                 onKeyDown={unlessDisabled(handleKeyDown)}
                 onClick={unlessDisabled(handleRowClick)}
