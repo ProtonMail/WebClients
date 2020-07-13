@@ -40,11 +40,13 @@ interface CachedFolderLink {
         complete: boolean;
     };
     keys?: FolderLinkKeys;
+    locked?: boolean;
 }
 
 interface CachedFileLink {
     meta: FileLinkMeta;
     keys?: FileLinkKeys;
+    locked?: boolean;
 }
 
 const isCachedFolderLink = (link: CachedFileLink | CachedFolderLink): link is CachedFolderLink => {
@@ -280,6 +282,20 @@ const useDriveCacheState = () => {
         };
     };
 
+    const setLinksLocked = (loked: boolean, shareId: string, linkIds: string[]) => {
+        const { links } = cacheRef.current[shareId];
+
+        linkIds.forEach((linkId) => {
+            links[linkId].loked = loked;
+            cacheRef.current[shareId] = {
+                ...cacheRef.current[shareId],
+                links,
+            };
+        });
+
+        setRerender((old) => ++old);
+    };
+
     const getShareIds = () => Object.keys(cacheRef.current);
     const getShareMeta = (shareId: string) => cacheRef.current[shareId].meta;
     const getShareKeys = (shareId: string) => cacheRef.current[shareId].keys;
@@ -290,6 +306,7 @@ const useDriveCacheState = () => {
     const getLinkMeta = (shareId: string, linkId: string): LinkMeta | undefined =>
         cacheRef.current[shareId].links[linkId]?.meta;
     const getLinkKeys = (shareId: string, linkId: string) => cacheRef.current[shareId].links[linkId]?.keys;
+    const isLinkLocked = (shareId: string, linkId: string) => !!cacheRef.current[shareId].links[linkId]?.locked;
     const getTrashComplete = (shareId: string) => cacheRef.current[shareId].trash.complete;
     const getChildrenComplete = (shareId: string, linkId: string, { sortField, sortOrder } = DEFAULT_SORT_PARAMS) => {
         const link = cacheRef.current[shareId].links[linkId];
@@ -407,6 +424,7 @@ const useDriveCacheState = () => {
             shareMeta: setShareMeta,
             shareKeys: setShareKeys,
             emptyShares: setEmptyShares,
+            linksLocked: setLinksLocked,
         },
         get: {
             trashMetas: getTrashMetas,
@@ -425,6 +443,7 @@ const useDriveCacheState = () => {
             shareMeta: getShareMeta,
             shareKeys: getShareKeys,
             shareIds: getShareIds,
+            isLinkLocked,
         },
         delete: {
             links: deleteLinks,

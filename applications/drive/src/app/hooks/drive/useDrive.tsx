@@ -404,6 +404,7 @@ function useDrive() {
     };
 
     const moveLinks = async (shareId: string, parentFolderId: string, linkIds: string[]) => {
+        cache.set.linksLocked(true, shareId, linkIds);
         const moved: { Name: string; Type: LinkType }[] = [];
         const failed: string[] = [];
         const moveQueue = linkIds.map((linkId) => async () => {
@@ -418,8 +419,15 @@ function useDrive() {
                     }
                 });
         });
-        await preventLeave(runInQueue(moveQueue, MAX_THREADS_PER_REQUEST));
-        return { moved, failed };
+
+        try {
+            await preventLeave(runInQueue(moveQueue, MAX_THREADS_PER_REQUEST));
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            await events.call(shareId);
+            return { moved, failed };
+        } finally {
+            cache.set.linksLocked(false, shareId, linkIds);
+        }
     };
 
     const events = {

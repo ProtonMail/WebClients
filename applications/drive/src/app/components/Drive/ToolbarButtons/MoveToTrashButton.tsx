@@ -5,7 +5,6 @@ import { ToolbarButton, useLoading } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
 import useTrash from '../../../hooks/drive/useTrash';
-import useDrive from '../../../hooks/drive/useDrive';
 import useListNotifications from '../../../hooks/util/useListNotifications';
 import { useDriveActiveFolder } from '../DriveFolderProvider';
 
@@ -14,7 +13,6 @@ interface Props {
 }
 
 const MoveToTrashButton = ({ disabled }: Props) => {
-    const { events } = useDrive();
     const { folder: activeFolder } = useDriveActiveFolder();
     const { trashLinks, restoreLinks } = useTrash();
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
@@ -42,12 +40,9 @@ const MoveToTrashButton = ({ disabled }: Props) => {
                 toTrash.map(({ LinkID }) => LinkID)
             );
             createRestoredLinksNotifications(toTrash, result);
-            await events.call(shareId);
         };
 
         createTrashLinksNotifications(toTrash, trashed, undoAction);
-
-        await events.call(shareId);
     };
 
     return (

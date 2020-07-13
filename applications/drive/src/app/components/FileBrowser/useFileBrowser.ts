@@ -42,12 +42,12 @@ const useFileBrowser = (folderChildren: FileBrowserItem[]) => {
         let matchConditions = lastSelectedId ? [lastSelectedId, selectedItem] : [selectedItem];
         let i = 0;
         while (matchConditions.length) {
-            const itemId = folderChildren[i].LinkID;
-            if (matchConditions.includes(itemId)) {
-                matchConditions = matchConditions.filter((id) => id !== itemId);
-                selected.push(itemId);
+            const { LinkID } = folderChildren[i];
+            if (matchConditions.includes(LinkID)) {
+                matchConditions = matchConditions.filter((id) => id !== LinkID);
+                selected.push(LinkID);
             } else if (selected.length) {
-                selected.push(itemId);
+                selected.push(LinkID);
             }
             i++;
         }
@@ -59,7 +59,7 @@ const useFileBrowser = (folderChildren: FileBrowserItem[]) => {
 
     const selectedItems = folderChildren
         ? (selectedItemIds
-              .map((selectedId) => folderChildren.find(({ LinkID }) => selectedId === LinkID))
+              .map((selectedId) => folderChildren.find(({ LinkID, Disabled }) => !Disabled && selectedId === LinkID))
               .filter(Boolean) as FileBrowserItem[])
         : [];
 

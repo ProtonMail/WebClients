@@ -1,11 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton, useEventManager } from 'react-components';
+import { ToolbarButton } from 'react-components';
 
 import { useTrashContent } from '../TrashContentProvider';
 import useTrash from '../../../../hooks/drive/useTrash';
-import useDrive from '../../../../hooks/drive/useDrive';
 import useListNotifications from '../../../../hooks/util/useListNotifications';
 import useConfirm from '../../../../hooks/util/useConfirm';
 
@@ -15,8 +14,6 @@ interface Props {
 }
 
 const DeletePermanentlyButton = ({ shareId, disabled }: Props) => {
-    const { call } = useEventManager();
-    const { events } = useDrive();
     const { deleteLinks } = useTrash();
     const { fileBrowserControls } = useTrashContent();
     const { createDeleteLinksNotifications } = useListNotifications();
@@ -40,9 +37,7 @@ const DeletePermanentlyButton = ({ shareId, disabled }: Props) => {
                 shareId,
                 toDelete.map(({ LinkID }) => LinkID)
             );
-
             createDeleteLinksNotifications(toDelete, deleted);
-            Promise.all([call(), events.call(shareId)]).catch(console.error);
         });
     };
 

@@ -5,7 +5,6 @@ import { ToolbarButton, useLoading } from 'react-components';
 
 import { useTrashContent } from '../TrashContentProvider';
 import useTrash from '../../../../hooks/drive/useTrash';
-import useDrive from '../../../../hooks/drive/useDrive';
 import useListNotifications from '../../../../hooks/util/useListNotifications';
 
 interface Props {
@@ -14,7 +13,6 @@ interface Props {
 }
 
 const RestoreFromTrashButton = ({ shareId, disabled }: Props) => {
-    const { events } = useDrive();
     const { restoreLinks } = useTrash();
     const [restoreLoading, withRestoreLoading] = useLoading();
     const { createRestoredLinksNotifications } = useListNotifications();
@@ -33,7 +31,6 @@ const RestoreFromTrashButton = ({ shareId, disabled }: Props) => {
             selectedItems.map(({ LinkID }) => LinkID)
         );
         createRestoredLinksNotifications(toRestore, result);
-        await events.call(shareId);
     };
 
     return (

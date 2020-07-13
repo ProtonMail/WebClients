@@ -16,7 +16,10 @@ export const selectMessageForItemList = (
     return message;
 };
 
-export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[] => {
+export const mapLinksToChildren = (
+    decryptedLinks: LinkMeta[],
+    isDisabled: (linkId: string) => boolean
+): FileBrowserItem[] => {
     return decryptedLinks.map(({ LinkID, Type, Name, ModifyTime, Size, MIMEType, ParentLinkID, Trashed }) => ({
         Name,
         LinkID,
@@ -26,5 +29,6 @@ export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[
         MIMEType,
         ParentLinkID,
         Trashed,
+        Disabled: isDisabled(LinkID),
     }));
 };
