@@ -131,7 +131,7 @@ export const useMoveToFolder = () => {
             const isMessage = testIsMessage(elements[0]);
             const action = isMessage ? labelMessages : labelConversations;
             const canUndo = isMessage
-                ? true
+                ? MAILBOX_LABEL_IDS.ALL_MAIL !== fromLabelID
                 : ![
                       ...labelIDs,
                       MAILBOX_LABEL_IDS.ALL_DRAFTS,
