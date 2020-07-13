@@ -1,17 +1,33 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { Link, withRouter } from 'react-router-dom';
 import { c } from 'ttag';
-import { Link } from 'react-router-dom';
-import { EmailInput, Alert, PrimaryButton } from 'react-components';
+import * as H from 'history';
+import { requestUsername } from 'proton-shared/lib/api/reset';
+import { useApi, useNotifications, useLoading, EmailInput, PrimaryButton, Alert } from '../../index';
 
-const ForgotUsernameForm = ({ onSubmit, loading }) => {
-    const [email, updateEmail] = useState('');
+interface Props {
+    history: H.History;
+}
+const MinimalForgotUsernameContainer = ({ history }: Props) => {
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
+    const { createNotification } = useNotifications();
+    const [email, setEmail] = useState('');
+
+    const handleSubmit = async () => {
+        await api(requestUsername(email));
+        createNotification({
+            text: c('Success')
+                .t`If you entered a valid notification email we will send you an email with your usernames in the next minute.`
+        });
+        history.push('/login');
+    };
 
     return (
         <form
             onSubmit={(e) => {
                 e.preventDefault();
-                onSubmit(email);
+                withLoading(handleSubmit());
             }}
         >
             <Alert>{c('Info')
@@ -25,7 +41,7 @@ const ForgotUsernameForm = ({ onSubmit, loading }) => {
                     id="email"
                     placeholder={c('Placeholder').t`Email`}
                     value={email}
-                    onChange={({ target }) => updateEmail(target.value)}
+                    onChange={({ target }) => setEmail(target.value)}
                     required
                 />
             </div>
@@ -37,9 +53,4 @@ const ForgotUsernameForm = ({ onSubmit, loading }) => {
     );
 };
 
-ForgotUsernameForm.propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-    loading: PropTypes.bool
-};
-
-export default ForgotUsernameForm;
+export default withRouter(MinimalForgotUsernameContainer);

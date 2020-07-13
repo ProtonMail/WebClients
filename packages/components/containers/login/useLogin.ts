@@ -14,19 +14,13 @@ import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallbac
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
 import { getAuthTypes, handleUnlockKey } from './helper';
 import { useApi } from '../../index';
+import { OnLoginArgs } from './interface';
 
 export enum FORM {
     LOGIN,
     TOTP,
     U2F,
     UNLOCK
-}
-
-export interface OnLoginArgs {
-    UID: string;
-    User?: tsUser;
-    keyPassword?: string;
-    EventID: string;
 }
 
 export interface Props {
@@ -40,7 +34,7 @@ interface AuthCacheResult {
     userSaltResult?: [tsUser, tsKeySalt[]];
 }
 
-export interface State {
+interface State {
     username: string;
     password: string;
     totp: string;
