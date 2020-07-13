@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { StandardPublicApp, ResetPasswordContainer, ForgotUsernameContainer } from 'react-components';
+import { StandardPublicApp } from 'react-components';
 
+import ForgotUsernameContainer from './containers/ForgotUsernameContainer';
+import ResetPasswordContainer from './containers/ResetPasswordContainer';
 import PublicLayout from './components/layout/PublicLayout';
 import LoginContainer from './containers/LoginContainer';
 import RedeemContainer from './containers/RedeemContainer';

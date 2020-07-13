@@ -1,29 +1,34 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, SignInLayout } from 'react-components';
+import { MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, SignInLayout, OnLoginArgs } from 'react-components';
 import { isMember } from 'proton-shared/lib/user/helpers';
+import * as H from 'history';
 
-const LoginContainer = ({ stopRedirect, history, onLogin }) => {
-    const handleLogin = (...args) => {
-        stopRedirect();
+interface Props {
+    onLogin: (args: OnLoginArgs) => void;
+    history: H.History;
+    stopRedirect: () => void;
+}
 
-        const [{ User }] = args;
-
-        if (isMember(User)) {
-            history.push('/account');
-        } else {
-            history.push('/dashboard');
-        }
-
-        onLogin(...args);
-    };
+const LoginContainer = ({ stopRedirect, history, onLogin }: Props) => {
     return (
         <SignInLayout title={c('Title').t`Log in`}>
             <h2>{c('Title').t`User log in`}</h2>
             <MinimalLoginContainer
-                onLogin={handleLogin}
+                onLogin={(...args) => {
+                    stopRedirect();
+
+                    const [{ User }] = args;
+
+                    if (User && isMember(User)) {
+                        history.push('/account');
+                    } else {
+                        history.push('/dashboard');
+                    }
+
+                    onLogin(...args);
+                }}
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
                         <DropdownMenu>
@@ -61,13 +66,6 @@ const LoginContainer = ({ stopRedirect, history, onLogin }) => {
             />
         </SignInLayout>
     );
-};
-
-LoginContainer.propTypes = {
-    history: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    onLogin: PropTypes.func.isRequired,
-    stopRedirect: PropTypes.func.isRequired
 };
 
 export default LoginContainer;
