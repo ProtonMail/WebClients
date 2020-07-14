@@ -34,7 +34,7 @@ describe('MailboxContainer', () => {
     });
 
     it('should show loader instead of list when elements loading', async () => {
-        addApiResolver('conversations');
+        addApiResolver('mail/v4/conversations');
 
         const { container } = await render(<MailboxContainer {...props} />);
 
@@ -44,7 +44,7 @@ describe('MailboxContainer', () => {
     });
 
     it('should show list when elements finish loading', async () => {
-        addApiMock('conversations', () => conversationsResult);
+        addApiMock('mail/v4/conversations', () => conversationsResult);
 
         const { container } = await render(<MailboxContainer {...props} />);
 
@@ -54,7 +54,7 @@ describe('MailboxContainer', () => {
     });
 
     it('should select all', async () => {
-        addApiMock('conversations', () => conversationsResult);
+        addApiMock('mail/v4/conversations', () => conversationsResult);
 
         const { container } = await render(<MailboxContainer {...props} />);
 

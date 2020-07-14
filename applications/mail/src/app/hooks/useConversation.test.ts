@@ -36,7 +36,7 @@ describe('useConversation', () => {
 
     it('should lauch api request when needed', async () => {
         const response = { Conversation: {} };
-        addApiMock('conversations/ID', () => response);
+        addApiMock('mail/v4/conversations/ID', () => response);
         const hook = setup();
         expect(hook.result.current[0]).toBe(undefined);
         await act(async () => await wait(0));

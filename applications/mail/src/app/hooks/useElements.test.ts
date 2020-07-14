@@ -65,7 +65,7 @@ describe('useElements', () => {
         const counts = { LabelID: inputLabelID, Total: page.total };
         addToCache('ConversationCounts', conversationMode ? [counts] : []);
         addToCache('MessageCounts', conversationMode ? [] : [counts]);
-        addApiMock('conversations', () => ({ Total: page.total, Conversations: elements }));
+        addApiMock('mail/v4/conversations', () => ({ Total: page.total, Conversations: elements }));
 
         if (renderHookResult === null) {
             renderHookResult = renderHook((props: any = {}) =>
@@ -299,7 +299,7 @@ describe('useElements', () => {
         });
 
         it('should not show the loader if not live cache but params has not changed', async () => {
-            const resolve = addApiResolver('conversations');
+            const resolve = addApiResolver('mail/v4/conversations');
 
             const page: Page = { page: 0, size: 5, limit: 5, total: 5 };
             const search = { keyword: 'test' } as SearchParameters;
@@ -346,7 +346,7 @@ describe('useElements', () => {
         });
 
         it('should show the loader if not live cache and params has changed', async () => {
-            const resolve = addApiResolver('conversations');
+            const resolve = addApiResolver('mail/v4/conversations');
 
             const page: Page = { page: 0, size: 5, limit: 5, total: 5 };
             const search = { keyword: 'test' } as SearchParameters;
