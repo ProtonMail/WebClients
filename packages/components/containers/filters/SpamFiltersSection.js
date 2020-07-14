@@ -89,8 +89,8 @@ function SpamFiltersSection() {
         createNotification({
             text:
                 Location === WHITELIST_LOCATION
-                    ? c('Spam filter moved to whitelist').t`${item} moved to whitelist`
-                    : c('Spam filter moved to blacklist').t`${item} moved to blacklist`
+                    ? c('Spam filter moved to blacklist').t`${item} moved to blacklist`
+                    : c('Spam filter moved to whitelist').t`${item} moved to whitelist`
         });
         move(type, data);
     };
