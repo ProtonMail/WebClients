@@ -8,15 +8,15 @@ import {
     useFolders,
     useConversationCounts,
     useMessageCounts,
-    SidebarMenu as CommonSidebarMenu
+    SidebarList,
+    SimpleSidebarListItemHeader,
+    SidebarListItemHeaderLink
 } from 'react-components';
 import { SHOW_MOVED, MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { redirectTo } from 'proton-shared/lib/helpers/browser';
 
 import { getCounterMap } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import SidebarItem from './SidebarItem';
-import SidebarGroupHeader from './SidebarGroupHeader';
 import SidebarFolders from './SidebarFolders';
 import SidebarLabels from './SidebarLabels';
 
@@ -25,7 +25,7 @@ interface Props {
     location: Location;
 }
 
-const SidebarMenu = ({ labelID: currentLabelID, location }: Props) => {
+const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
     const [conversationCounts = [], actualLoadingConversationCounts] = useConversationCounts();
     const [messageCounts = [], actualLoadingMessageCounts] = useMessageCounts();
     const [mailSettings, loadingMailSettings] = useMailSettings();
@@ -62,7 +62,7 @@ const SidebarMenu = ({ labelID: currentLabelID, location }: Props) => {
     });
 
     return (
-        <CommonSidebarMenu className="mt0">
+        <SidebarList>
             <SidebarItem
                 {...getCommonProps(MAILBOX_LABEL_IDS.INBOX)}
                 icon="inbox"
@@ -121,24 +121,38 @@ const SidebarMenu = ({ labelID: currentLabelID, location }: Props) => {
                 isFolder={true}
                 data-cy="allmail"
             />
-            <SidebarGroupHeader
-                toggled={displayFolders}
+            <SimpleSidebarListItemHeader
+                toggle={displayFolders}
                 onToggle={() => toggleFolders(!displayFolders)}
                 text={c('Link').t`Folders`}
-                editText={c('Info').t`Manage your folders`}
-                onEdit={() => redirectTo('/settings/labels')}
+                right={
+                    <SidebarListItemHeaderLink
+                        to="/settings/labels"
+                        external={true}
+                        icon="settings-singular"
+                        title={c('Info').t`Manage your folders`}
+                        info={c('Link').t`Folders`}
+                    />
+                }
             />
             {displayFolders && <SidebarFolders currentLabelID={currentLabelID} counterMap={counterMap} />}
-            <SidebarGroupHeader
-                toggled={displayLabels}
+            <SimpleSidebarListItemHeader
+                toggle={displayLabels}
                 onToggle={() => toggleLabels(!displayLabels)}
                 text={c('Link').t`Labels`}
-                editText={c('Info').t`Manage your labels`}
-                onEdit={() => redirectTo('/settings/labels')}
+                right={
+                    <SidebarListItemHeaderLink
+                        to="/settings/labels"
+                        external={true}
+                        icon="settings-singular"
+                        title={c('Info').t`Manage your labels`}
+                        info={c('Link').t`Labels`}
+                    />
+                }
             />
             {displayLabels && <SidebarLabels currentLabelID={currentLabelID} counterMap={counterMap} />}
-        </CommonSidebarMenu>
+        </SidebarList>
     );
 };
 
-export default SidebarMenu;
+export default MailSidebarList;

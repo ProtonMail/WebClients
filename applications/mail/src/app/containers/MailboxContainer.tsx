@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Button, PrivateMainArea } from 'react-components';
+import { PrivateMainArea } from 'react-components';
 import { History, Location } from 'history';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
@@ -24,7 +24,7 @@ import List from '../components/list/List';
 import ConversationView from '../components/conversation/ConversationView';
 import PlaceholderView from '../components/view/PlaceholderView';
 import MessageOnlyView from '../components/message/MessageOnlyView';
-import { PAGE_SIZE, MESSAGE_ACTIONS } from '../constants';
+import { PAGE_SIZE } from '../constants';
 import { isMessage, isSearch as testIsSearch } from '../helpers/elements';
 import { isDraft } from '../helpers/message/messages';
 import { Message } from '../models/message';
@@ -163,21 +163,13 @@ const MailboxContainer = ({
 
     const handleUncheckAll = () => handleCheck([], true, true);
 
-    const handleCompose = () => {
-        onCompose({ action: MESSAGE_ACTIONS.NEW });
-    };
-
     const showToolbar = !breakpoints.isNarrow || !inputElementID;
     const showList = columnMode || !inputElementID;
     const showContentView = (columnMode && !!expectedLength) || !!inputElementID;
     const showPlaceholder = !breakpoints.isNarrow && !elementID;
-    const showMobileCompose = breakpoints.isNarrow;
 
     return (
         <>
-            {showMobileCompose && (
-                <Button className="pm-button--primary mobile-compose" icon="compose" onClick={handleCompose} />
-            )}
             {showToolbar && (
                 <Toolbar
                     location={location}

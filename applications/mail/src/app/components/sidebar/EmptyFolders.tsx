@@ -1,7 +1,14 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { SidebarItem, SidebarItemContent, LabelModal, useModals } from 'react-components';
+import {
+    SidebarListItem,
+    SidebarListItemButton,
+    SidebarListItemContentIcon,
+    SidebarListItemContent,
+    LabelModal,
+    useModals
+} from 'react-components';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
@@ -19,11 +26,13 @@ const EmptyFolders = () => {
     };
 
     return (
-        <SidebarItem>
-            <button className="navigation__link w100 alignleft" onClick={handleClick}>
-                <SidebarItemContent icon="plus" iconColor="white" text={c('Link').t`Add folder`} />
-            </button>
-        </SidebarItem>
+        <SidebarListItem>
+            <SidebarListItemButton onClick={handleClick}>
+                <SidebarListItemContent right={<SidebarListItemContentIcon name="plus" color="white" />}>
+                    {c('Link').t`Add folder`}
+                </SidebarListItemContent>
+            </SidebarListItemButton>
+        </SidebarListItem>
     );
 };
 

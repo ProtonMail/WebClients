@@ -1,6 +1,12 @@
 import React, { useState, DragEvent, ReactNode } from 'react';
-import { NavLink } from 'react-router-dom';
-import { classnames, SidebarItem as CommonSidebarItem, SidebarItemContent, useEventManager } from 'react-components';
+import {
+    classnames,
+    SidebarListItem,
+    SidebarListItemContent,
+    SidebarListItemContentIcon,
+    useEventManager,
+    SidebarListItemLink
+} from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { wait } from 'proton-shared/lib/helpers/promise';
@@ -82,25 +88,23 @@ const SidebarItem = ({
     };
 
     return (
-        <CommonSidebarItem className={classnames([dragOver && 'navigation__dragover'])}>
-            <NavLink
-                className={classnames(['navigation__link'])}
+        <SidebarListItem className={classnames([dragOver && 'navigation__dragover'])}>
+            <SidebarListItemLink
                 aria-current={ariaCurrent}
                 to={link}
                 onClick={handleClick}
                 {...dragProps}
                 onDrop={handleDrop}
             >
-                <SidebarItemContent
-                    icon={icon}
-                    iconColor={color}
-                    iconSize={iconSize}
+                <SidebarListItemContent
+                    left={icon ? <SidebarListItemContentIcon name={icon} color={color} size={iconSize} /> : undefined}
+                    right={<LocationAside count={count} active={active} refreshing={refreshing} />}
                     title={text}
-                    text={content}
-                    aside={<LocationAside count={count} active={active} refreshing={refreshing} />}
-                />
-            </NavLink>
-        </CommonSidebarItem>
+                >
+                    {content}
+                </SidebarListItemContent>
+            </SidebarListItemLink>
+        </SidebarListItem>
     );
 };
 

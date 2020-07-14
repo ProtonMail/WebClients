@@ -2,8 +2,8 @@ import React, { useState, useEffect, ReactNode } from 'react';
 import { PrivateAppContainer } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
-import PrivateHeader from '../header/PrivateHeader';
-import PrivateSidebar from '../sidebar/PrivateSidebar';
+import MailHeader from '../header/MailHeader';
+import MailSidebar from '../sidebar/MailSidebar';
 import { Location, History } from 'history';
 import { getHumanLabelID } from '../../helpers/labels';
 import { setKeywordInUrl } from '../../helpers/mailboxUrl';
@@ -34,7 +34,7 @@ const PrivateLayout = ({ children, location, history, breakpoints, labelID, elem
     }, [location.pathname]);
 
     const header = (
-        <PrivateHeader
+        <MailHeader
             labelID={labelID}
             elementID={elementID}
             location={location}
@@ -43,16 +43,16 @@ const PrivateLayout = ({ children, location, history, breakpoints, labelID, elem
             expanded={expanded}
             onToggleExpand={handleToggleExpand}
             onSearch={handleSearch}
+            onCompose={onCompose}
         />
     );
 
     const sidebar = (
-        <PrivateSidebar
+        <MailSidebar
             labelID={labelID}
             expanded={expanded}
             location={location}
             onToggleExpand={handleToggleExpand}
-            breakpoints={breakpoints}
             onCompose={onCompose}
         />
     );

@@ -5,11 +5,15 @@ import { Sort, Filter, SearchParameters } from '../models/tools';
 import { Location } from 'history';
 import { getHumanLabelID } from './labels';
 
-export const setPathInUrl = (location: Location, labelID: string, elementID?: string): Location => {
+export const getUrlPathname = (location: Location, labelID: string, elementID?: string) => {
     const urlFragment = elementID === undefined ? '' : `/${elementID}`;
+    return `/${getHumanLabelID(labelID)}${urlFragment}`;
+};
+
+export const setPathInUrl = (location: Location, labelID: string, elementID?: string): Location => {
     return {
         ...location,
-        pathname: `/${getHumanLabelID(labelID)}${urlFragment}`
+        pathname: getUrlPathname(location, labelID, elementID)
     };
 };
 
