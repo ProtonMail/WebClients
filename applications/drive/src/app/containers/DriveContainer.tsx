@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { RouteComponentProps } from 'react-router';
-import { Toolbar, PrivateMainArea, useAppTitle, useActiveBreakpoint } from 'react-components';
+import { Toolbar, PrivateMainArea, useAppTitle } from 'react-components';
 import { c } from 'ttag';
 import Drive from '../components/Drive/Drive';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
@@ -10,7 +10,6 @@ import { LinkType } from '../interfaces/link';
 import { LinkURLType } from '../constants';
 import DriveBreadcrumbs from '../components/DriveBreadcrumbs';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
-import UploadButton from '../components/uploads/UploadButton';
 
 const toLinkURLType = (type: LinkType) => {
     const linkType = {
@@ -32,7 +31,6 @@ function DriveContainer({
     const cache = useDriveCache();
     const [, setError] = useState();
     const { setFolder } = useDriveActiveFolder();
-    const { isNarrow } = useActiveBreakpoint();
 
     const folder = useMemo(() => {
         const { shareId, type, linkId } = match.params;
@@ -78,8 +76,6 @@ function DriveContainer({
                 </div>
 
                 {folder && <Drive activeFolder={folder} openLink={navigateToLink} />}
-
-                {isNarrow && <UploadButton floating />}
             </PrivateMainArea>
         </DriveContentProvider>
     );

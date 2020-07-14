@@ -1,5 +1,5 @@
 import React, { useRef, ChangeEvent } from 'react';
-import { LargeButton, FloatingButton } from 'react-components';
+import { FloatingButton, SidebarPrimaryButton } from 'react-components';
 import { c } from 'ttag';
 import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
 import useFiles from '../../hooks/drive/useFiles';
@@ -35,15 +35,16 @@ const UploadButton = ({ floating }: Props) => {
     return (
         <>
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
-
-            {floating && folder?.shareId ? (
-                <FloatingButton onClick={handleClick} title={c('Action').t`Upload`} icon="plus" />
-            ) : (
-                <LargeButton
-                    className="pm-button--primary ml1 mr1 mt0-25 strong"
+            {floating ? (
+                <FloatingButton
                     disabled={!folder?.shareId}
                     onClick={handleClick}
-                >{c('Action').t`Upload`}</LargeButton>
+                    title={c('Action').t`Upload`}
+                    icon="plus"
+                />
+            ) : (
+                <SidebarPrimaryButton disabled={!folder?.shareId} onClick={handleClick}>{c('Action')
+                    .t`Upload`}</SidebarPrimaryButton>
             )}
         </>
     );
