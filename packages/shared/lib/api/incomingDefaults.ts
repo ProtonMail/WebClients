@@ -10,7 +10,7 @@ export const getIncomingDefaults = ({
     Keyword?: string;
 }) => ({
     method: 'get',
-    url: 'incomingdefaults',
+    url: 'mail/v4/incomingdefaults',
     params: { Location, Page, PageSize, Keyword }
 });
 
@@ -22,7 +22,7 @@ interface IncomingDefaultConfig {
 
 export const addIncomingDefault = ({ Email, Domain, Location }: IncomingDefaultConfig) => ({
     method: 'post',
-    url: 'incomingdefaults',
+    url: 'mail/v4/incomingdefaults',
     data: { Email, Domain, Location }
 });
 
@@ -31,17 +31,17 @@ export const updateIncomingDefault = (
     { Email, Domain, Location }: IncomingDefaultConfig
 ) => ({
     method: 'put',
-    url: `incomingdefaults/${incomingDefaultID}`,
+    url: `mail/v4/incomingdefaults/${incomingDefaultID}`,
     data: { Email, Domain, Location }
 });
 
 export const deleteIncomingDefaults = (IDs: string[]) => ({
     method: 'put',
-    url: 'incomingdefaults/delete',
+    url: 'mail/v4/incomingdefaults/delete',
     data: { IDs }
 });
 
 export const clearIncomingDefaults = () => ({
     method: 'delete',
-    url: 'incomingdefaults'
+    url: 'mail/v4/incomingdefaults'
 });

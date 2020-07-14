@@ -22,7 +22,7 @@ export const queryMessageMetadata = ({
     AutoWildcard
 }) => ({
     method: 'get',
-    url: 'messages',
+    url: 'mail/v4/messages',
     params: {
         Location,
         Page,
@@ -50,76 +50,76 @@ export const queryMessageMetadata = ({
 
 export const queryMessageCount = (AddressID) => ({
     method: 'get',
-    url: 'messages/count',
+    url: 'mail/v4/messages/count',
     params: { AddressID }
 });
 
 export const getMessage = (messageID) => ({
     method: 'get',
-    url: `messages/${messageID}`
+    url: `mail/v4/messages/${messageID}`
 });
 
 export const sendMessage = (messageID, { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages }) => ({
     method: 'post',
-    url: `messages/${messageID}`,
+    url: `mail/v4/messages/${messageID}`,
     data: { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages }
 });
 
 export const createDraft = ({ Message, ParentID, Action, AttachmentKeyPackets }) => ({
     method: 'post',
-    url: 'messages',
+    url: 'mail/v4/messages',
     data: { Message, ParentID, Action, AttachmentKeyPackets }
 });
 
 export const updateDraft = (messageID, Message, AttachmentKeyPackets) => ({
     method: 'put',
-    url: `messages/${messageID}`,
+    url: `mail/v4/messages/${messageID}`,
     data: { Message, AttachmentKeyPackets }
 });
 
 export const readReceipt = (messageID) => ({
     method: 'post',
-    url: `messages/${messageID}/receipt`
+    url: `mail/v4/messages/${messageID}/receipt`
 });
 
 export const markMessageAsRead = (IDs) => ({
     method: 'put',
-    url: 'messages/read',
+    url: 'mail/v4/messages/read',
     data: { IDs }
 });
 
 export const markMessageAsUnread = (IDs) => ({
     method: 'put',
-    url: 'messages/unread',
+    url: 'mail/v4/messages/unread',
     data: { IDs }
 });
 
 export const deleteMessages = (IDs) => ({
     method: 'put',
-    url: 'messages/delete',
+    url: 'mail/v4/messages/delete',
     data: { IDs }
 });
 
 export const undeleteMessages = (IDs) => ({
     method: 'put',
-    url: 'messages/undelete',
+    url: 'mail/v4/messages/undelete',
     data: { IDs }
 });
 
 export const labelMessages = ({ LabelID, IDs }) => ({
     method: 'put',
-    url: 'messages/label',
+    url: 'mail/v4/messages/label',
     data: { LabelID, IDs }
 });
 
 export const unlabelMessages = ({ LabelID, IDs }) => ({
     method: 'put',
-    url: 'messages/unlabel',
+    url: 'mail/v4/messages/unlabel',
     data: { LabelID, IDs }
 });
 
 export const emptyLabel = ({ LabelID, AddressID }) => ({
     method: 'delete',
-    url: 'messages/empty',
+    url: 'mail/v4/messages/empty',
     params: { LabelID, AddressID }
 });

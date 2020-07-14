@@ -1,144 +1,144 @@
 import { AutoResponder } from '../interfaces/AutoResponder';
 
 export const getMailSettings = () => ({
-    url: 'settings/mail',
+    url: 'mail/v4/settings',
     method: 'get'
 });
 
 export const updateShowMoved = (ShowMoved: number) => ({
-    url: 'settings/mail/moved',
+    url: 'mail/v4/settings/moved',
     method: 'put',
     data: { ShowMoved }
 });
 
 export const updateShowImages = (ShowImages: number) => ({
-    url: 'settings/mail/images',
+    url: 'mail/v4/settings/images',
     method: 'put',
     data: { ShowImages }
 });
 
 export const updateAutoSaveContacts = (AutoSaveContacts: number) => ({
-    url: 'settings/mail/autocontacts',
+    url: 'mail/v4/settings/autocontacts',
     method: 'put',
     data: { AutoSaveContacts }
 });
 
 export const updateTheme = (Theme: string | number) => ({
-    url: 'settings/mail/theme',
+    url: 'mail/v4/settings/theme',
     method: 'put',
     data: { Theme }
 });
 
 export const updateDisplayName = (DisplayName: string) => ({
-    url: 'settings/mail/display',
+    url: 'mail/v4/settings/display',
     method: 'put',
     data: { DisplayName }
 });
 
 export const updateSignature = (Signature: string) => ({
-    url: 'settings/mail/signature',
+    url: 'mail/v4/settings/signature',
     method: 'put',
     data: { Signature }
 });
 
 export const updatePMSignature = (PMSignature: string) => ({
-    url: 'settings/mail/pmsignature',
+    url: 'mail/v4/settings/pmsignature',
     method: 'put',
     data: { PMSignature }
 });
 
 export const updateComposerMode = (ComposerMode: number) => ({
-    url: 'settings/mail/composermode',
+    url: 'mail/v4/settings/composermode',
     method: 'put',
     data: { ComposerMode }
 });
 
 export const updateMessageButtons = (MessageButtons: number) => ({
-    url: 'settings/mail/messagebuttons',
+    url: 'mail/v4/settings/messagebuttons',
     method: 'put',
     data: { MessageButtons }
 });
 
 export const updateViewMode = (ViewMode: number) => ({
-    url: 'settings/mail/viewmode',
+    url: 'mail/v4/settings/viewmode',
     method: 'put',
     data: { ViewMode }
 });
 
 export const updateStickyLabels = (StickyLabels: number) => ({
-    url: 'settings/mail/stickylabels',
+    url: 'mail/v4/settings/stickylabels',
     method: 'put',
     data: { StickyLabels }
 });
 
 export const updateDraftType = (MIMEType: string) => ({
-    url: 'settings/mail/drafttype',
+    url: 'mail/v4/settings/drafttype',
     method: 'put',
     data: { MIMEType }
 });
 
 export const updateRightToLeft = (RightToLeft: number) => ({
-    url: 'settings/mail/righttoleft',
+    url: 'mail/v4/settings/righttoleft',
     method: 'put',
     data: { RightToLeft }
 });
 
 export const updateViewLayout = (ViewLayout: number) => ({
-    url: 'settings/mail/viewlayout',
+    url: 'mail/v4/settings/viewlayout',
     method: 'put',
     data: { ViewLayout }
 });
 
 export const updatePromptPin = (PromptPin: number) => ({
-    url: 'settings/mail/promptpin',
+    url: 'mail/v4/settings/promptpin',
     method: 'put',
     data: { PromptPin }
 });
 
 export const updateAutocrypt = (Autocrypt: any) => ({
-    url: 'settings/mail/autocrypt',
+    url: 'mail/v4/settings/autocrypt',
     method: 'put',
     data: { Autocrypt }
 });
 
 export const updatePGPScheme = (PGPScheme: number) => ({
-    url: 'settings/mail/pgpscheme',
+    url: 'mail/v4/settings/pgpscheme',
     method: 'put',
     data: { PGPScheme }
 });
 
 export const updateSign = (Sign: number) => ({
-    url: 'settings/mail/sign',
+    url: 'mail/v4/settings/sign',
     method: 'put',
     data: { Sign }
 });
 
 export const updateAttachPublicKey = (AttachPublicKey: number) => ({
-    url: 'settings/mail/attachpublic',
+    url: 'mail/v4/settings/attachpublic',
     method: 'put',
     data: { AttachPublicKey }
 });
 
 export const updateHotkeys = (Hotkeys: number) => ({
-    url: 'settings/mail/hotkeys',
+    url: 'mail/v4/settings/hotkeys',
     method: 'put',
     data: { Hotkeys }
 });
 
 export const updateAutoresponder = (AutoResponder: AutoResponder) => ({
-    url: 'settings/mail/autoresponder',
+    url: 'mail/v4/settings/autoresponder',
     method: 'put',
     data: { AutoResponder }
 });
 
 export const updateConfirmLink = (ConfirmLink: number) => ({
-    url: 'settings/mail/confirmlink',
+    url: 'mail/v4/settings/confirmlink',
     method: 'put',
     data: { ConfirmLink }
 });
 
 export const updateAutoWildcardSearch = (AutoWildcardSearch: number) => ({
-    url: 'settings/mail/autowildcard',
+    url: 'mail/v4/settings/autowildcard',
     method: 'put',
     data: { AutoWildcardSearch }
 });

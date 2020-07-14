@@ -22,7 +22,7 @@ export const queryConversations = ({
     AutoWildcard
 } = {}) => ({
     method: 'get',
-    url: 'conversations',
+    url: 'mail/v4/conversations',
     params: {
         Location,
         Page,
@@ -50,42 +50,42 @@ export const queryConversations = ({
 
 export const getConversation = (conversationID, MessageID) => ({
     method: 'get',
-    url: `conversations/${conversationID}`,
+    url: `mail/v4/conversations/${conversationID}`,
     params: { MessageID }
 });
 
 export const queryConversationCount = (AddressID) => ({
     method: 'get',
-    url: 'conversations/count',
+    url: 'mail/v4/conversations/count',
     params: { AddressID }
 });
 
 export const markConversationsAsRead = (IDs) => ({
     method: 'put',
-    url: 'conversations/read',
+    url: 'mail/v4/conversations/read',
     data: { IDs }
 });
 
 export const markConversationsAsUnread = (IDs) => ({
     method: 'put',
-    url: 'conversations/unread',
+    url: 'mail/v4/conversations/unread',
     data: { IDs }
 });
 
 export const deleteConversations = (IDs) => ({
     method: 'put',
-    url: 'conversations/delete',
+    url: 'mail/v4/conversations/delete',
     data: { IDs }
 });
 
 export const labelConversations = ({ LabelID, IDs } = {}) => ({
     method: 'put',
-    url: 'conversations/label',
+    url: 'mail/v4/conversations/label',
     data: { LabelID, IDs }
 });
 
 export const unlabelConversations = ({ LabelID, IDs } = {}) => ({
     method: 'put',
-    url: 'conversations/unlabel',
+    url: 'mail/v4/conversations/unlabel',
     data: { LabelID, IDs }
 });
