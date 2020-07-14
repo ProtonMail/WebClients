@@ -4,7 +4,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { classnames } from '../../helpers/component';
 import { usePopper } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
-import { ALL_PLACEMENTS } from '../popper/utils';
+import { ALL_PLACEMENTS, Position } from '../popper/utils';
 import Portal from '../portal/Portal';
 import useIsClosing from './useIsClosing';
 
@@ -20,7 +20,10 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     originalPlacement?: string;
     isOpen?: boolean;
     noMaxSize?: boolean;
+    noCaret?: boolean;
     availablePlacements?: string[];
+    originalPosition?: Position;
+    offset?: number;
     autoClose?: boolean;
     autoCloseOutside?: boolean;
     contentProps?: ContentProps;
@@ -32,9 +35,12 @@ const Dropdown = ({
     className,
     originalPlacement = 'bottom',
     availablePlacements = ALL_PLACEMENTS,
+    originalPosition,
+    offset = 20,
     onClose = noop,
     isOpen = false,
     noMaxSize = false,
+    noCaret = false,
     autoClose = true,
     autoCloseOutside = true,
     contentProps,
@@ -52,7 +58,8 @@ const Dropdown = ({
         isOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
         availablePlacements,
-        offset: 20,
+        originalPosition,
+        offset,
         scrollContainerClass: 'main'
     });
 
@@ -106,6 +113,7 @@ const Dropdown = ({
         'dropDown',
         `dropDown--${placement}`,
         isClosing && `is-dropdownOut`,
+        noCaret && 'dropDown--noCaret',
         className
     ]);
 
@@ -116,7 +124,7 @@ const Dropdown = ({
     const varPosition = {
         '--top': position.top,
         '--left': position.left
-    } as any;
+    };
 
     const varSize = contentRect
         ? {

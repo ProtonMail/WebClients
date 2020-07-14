@@ -6,12 +6,12 @@ interface Props extends React.HTMLAttributes<HTMLTableRowElement> {
     children?: React.ReactNode;
 }
 
-const TableRow = ({ cells = [], children, ...rest }: Props) => {
+const TableRow = React.forwardRef<HTMLTableRowElement, Props>(({ cells = [], children, ...rest }, ref) => {
     return (
-        <tr {...rest}>
+        <tr ref={ref} {...rest}>
             {children || cells.map((cell, index) => <TableCell key={index.toString()}>{cell}</TableCell>)}
         </tr>
     );
-};
+});
 
 export default TableRow;

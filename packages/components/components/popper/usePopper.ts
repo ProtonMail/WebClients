@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { adjustPosition, computedSize, ALL_PLACEMENTS } from './utils';
+import { adjustPosition, computedSize, ALL_PLACEMENTS, Position } from './utils';
 
 const getPosition = (
     anchorEl: HTMLElement,
     popperEl: HTMLElement,
     originalPlacement: string,
+    availablePlacements: string[],
     offset: number,
-    availablePlacements: string[]
+    originalPosition?: Position
 ) => {
     const wrapperBounds = anchorEl.getBoundingClientRect();
     const tooltipBounds = popperEl.getBoundingClientRect();
@@ -29,6 +30,7 @@ const getPosition = (
         },
         originalPlacement,
         offset,
+        originalPosition,
         availablePlacements
     );
 };
@@ -39,6 +41,7 @@ interface Props {
     isOpen?: boolean;
     originalPlacement?: string;
     availablePlacements?: string[];
+    originalPosition?: Position;
     offset?: number;
     scrollContainerClass?: string;
 }
@@ -49,11 +52,13 @@ const usePopper = ({
     isOpen = false,
     originalPlacement = 'bottom',
     availablePlacements = ALL_PLACEMENTS,
+    originalPosition,
     offset = 10,
     scrollContainerClass = ''
 }: Props) => {
+    const initialPosition = { top: -1000, left: -1000 };
     const [placement, setPlacement] = useState(originalPlacement);
-    const [position, setPosition] = useState({ top: -1000, left: -1000 });
+    const [position, setPosition] = useState(initialPosition);
 
     useEffect(() => {
         if (!isOpen) {
@@ -66,8 +71,9 @@ const usePopper = ({
                     anchorEl,
                     popperEl,
                     originalPlacement,
+                    availablePlacements,
                     offset,
-                    availablePlacements
+                    originalPosition
                 );
                 setPlacement(adjustedPlacement);
                 setPosition(adjustedPosition);
@@ -75,7 +81,7 @@ const usePopper = ({
             }
 
             setPlacement(originalPlacement);
-            setPosition({ top: -1000, left: -1000 });
+            setPosition(initialPosition);
         };
 
         updatePosition();
