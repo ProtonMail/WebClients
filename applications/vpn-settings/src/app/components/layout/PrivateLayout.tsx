@@ -7,13 +7,17 @@ import {
     usePermissions,
     useUser,
     AppVersion,
-    getSectionConfigProps,
-    PrivateAppContainer
+    PrivateAppContainer,
+    PrivateHeader,
+    useActiveBreakpoint,
+    SidebarList,
+    SidebarNav,
+    SidebarListItemsWithSubsections
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
+import { c } from 'ttag';
 
 import { getPages } from '../../pages';
-import PrivateHeader from './PrivateHeader';
 import DashboardContainer from '../../containers/DashboardContainer';
 import AccountContainer from '../../containers/AccountContainer';
 import DownloadsContainer from '../../containers/DownloadsContainer';
@@ -23,26 +27,47 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
     const [user] = useUser();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const userPermissions = usePermissions();
+    const { isNarrow } = useActiveBreakpoint();
+
     const [activeSection, setActiveSection] = useState('');
     const filteredPages = getPages(user).filter(({ permissions: pagePermissions = [] }) =>
         hasPermission(userPermissions, pagePermissions)
     );
-    const list = getSectionConfigProps(filteredPages, location.pathname, activeSection);
 
     useEffect(() => {
         setExpand(false);
     }, [location.pathname]);
 
-    const header = <PrivateHeader location={location} expanded={expanded} onToggleExpand={onToggleExpand} />;
+    const base = '/account';
+
+    const header = (
+        <PrivateHeader
+            url={base}
+            title={c('Title').t`Settings`}
+            expanded={expanded}
+            onToggleExpand={onToggleExpand}
+            isNarrow={isNarrow}
+            hasAppsDropdown={false}
+        />
+    );
 
     const sidebar = (
         <Sidebar
-            url="/account"
+            url={base}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            list={list}
             version={<AppVersion appName="ProtonVPN" />}
-        />
+        >
+            <SidebarNav>
+                <SidebarList>
+                    <SidebarListItemsWithSubsections
+                        list={filteredPages}
+                        pathname={location.pathname}
+                        activeSection={activeSection}
+                    />
+                </SidebarList>
+            </SidebarNav>
+        </Sidebar>
     );
 
     return (

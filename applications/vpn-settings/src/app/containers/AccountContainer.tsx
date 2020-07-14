@@ -16,7 +16,7 @@ import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMa
 export const getAccountPage = () => {
     return {
         text: c('Title').t`Account`,
-        link: '/account',
+        to: '/account',
         icon: 'account',
         subsections: [
             {

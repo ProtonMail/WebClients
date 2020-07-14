@@ -7,7 +7,7 @@ import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMa
 export const getDownloadsPage = () => {
     return {
         text: c('Title').t`Downloads`,
-        link: '/downloads',
+        to: '/downloads',
         icon: 'download',
         subsections: [
             {

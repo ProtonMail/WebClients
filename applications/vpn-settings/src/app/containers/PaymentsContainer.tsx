@@ -10,7 +10,7 @@ const { UPGRADER } = PERMISSIONS;
 export const getPaymentsPage = () => {
     return {
         text: c('Title').t`Payments`,
-        link: '/payments',
+        to: '/payments',
         icon: 'payments',
         permissions: [UPGRADER],
         subsections: [

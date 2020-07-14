@@ -24,7 +24,7 @@ const { UPGRADER, PAID } = PERMISSIONS;
 export const getDashboardPage = (user: UserModel) => {
     return {
         text: c('Title').t`Dashboard`,
-        link: '/dashboard',
+        to: '/dashboard',
         icon: 'dashboard',
         permissions: [UPGRADER],
         subsections: [
