@@ -67,10 +67,9 @@ function DriveContainer({
 
     useAppTitle(c('Title').t`My files`, 'ProtonDrive');
 
-    // TODO: change toolbar props to optional children in react-components
     return (
         <DriveContentProvider folder={folder}>
-            {folder ? <DriveToolbar activeFolder={folder} openLink={navigateToLink} /> : <Toolbar>{null}</Toolbar>}
+            {folder ? <DriveToolbar activeFolder={folder} openLink={navigateToLink} /> : <Toolbar />}
 
             <PrivateMainArea hasToolbar className="flex flex-column">
                 <div className="mw100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
