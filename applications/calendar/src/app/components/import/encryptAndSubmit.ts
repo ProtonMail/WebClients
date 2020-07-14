@@ -22,7 +22,7 @@ import { HOUR } from '../../constants';
 const { SINGLE_SUCCESS } = API_CODES;
 const BATCH_SIZE = 10;
 
-export const encryptEvent = async (
+const encryptEvent = async (
     eventComponent: VcalVeventComponent,
     addressKeys: CachedKey[],
     calendarKeys: CachedKey[]
@@ -40,7 +40,7 @@ export const encryptEvent = async (
     }
 };
 
-export const submitEvents = async (events: EncryptedEvent[], calendarID: string, memberID: string, api: Api) => {
+const submitEvents = async (events: EncryptedEvent[], calendarID: string, memberID: string, api: Api) => {
     // prepare the events data in the way the API wants it
     const Events = events.map(
         (event): CreateCalendarEventSyncData => ({
