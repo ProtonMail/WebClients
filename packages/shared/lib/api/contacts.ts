@@ -41,7 +41,6 @@ export const addContacts = ({
     Contacts,
     Overwrite,
     Labels,
-    timeout,
 }: {
     Contacts: {
         Cards: Card[];
@@ -53,7 +52,6 @@ export const addContacts = ({
     url: 'contacts',
     method: 'post',
     data: { Contacts, Overwrite, Labels },
-    timeout,
 });
 
 export const updateContact = (contactID: string, { Cards }: { Cards: Card[] }) => ({

@@ -1,5 +1,4 @@
 import isTruthy from '../helpers/isTruthy';
-import { ContactProperty } from '../interfaces/contacts';
 
 /**
  * ICAL library can crash if the value saved in the vCard is improperly formatted
@@ -35,21 +34,6 @@ export const getValue = (property: any): string | string[] => {
     });
 
     return value;
-};
-
-/**
- * Returns true if a property has an empty value
- */
-export const isEmptyValued = (property: ContactProperty): boolean => {
-    const { value } = property;
-    // property values must be strings or arrays of strings
-    if (typeof value === 'string') {
-        return !value;
-    }
-    if (Array.isArray(value)) {
-        return !value.some((str) => str);
-    }
-    return true;
 };
 
 /**

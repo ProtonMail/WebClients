@@ -76,8 +76,8 @@ export const addPref = (properties: ContactProperties = []): ContactProperties =
  * Function that sorts properties by preference
  */
 export const sortByPref = (
-    firstEl: ContactProperty | PublicKeyWithPref,
-    secondEl: ContactProperty | PublicKeyWithPref
+    firstEl: Partial<ContactProperty> | PublicKeyWithPref,
+    secondEl: Partial<ContactProperty> | PublicKeyWithPref
 ): number => {
     if (firstEl.pref && secondEl.pref) {
         return firstEl.pref - secondEl.pref;

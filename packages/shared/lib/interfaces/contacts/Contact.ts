@@ -61,11 +61,13 @@ export interface ContactOrGroup {
     major?: string;
 }
 
+export type ContactValue = string | string[];
+
 export interface ContactProperty {
     uid?: string;
     pref?: number;
     field: string;
-    value: string | string[];
+    value: ContactValue;
     type?: string;
     group?: string;
 }
