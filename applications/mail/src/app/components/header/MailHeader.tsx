@@ -79,6 +79,7 @@ const MailHeader = ({
             backUrl={showBackButton && backUrl ? backUrl : undefined}
             title={labelName}
             settingsUrl="/settings"
+            externalSettingsUrl={true}
             searchBox={searchBox}
             searchDropdown={searchDropdown}
             expanded={!!expanded}
