@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
+import { Link } from 'react-router-dom';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import {
     Table,
     TableBody,
     TableRow,
-    SmallButton,
     DropdownActions,
     Tooltip,
     TableCell,
     useApiWithoutResult,
     useNotifications,
+    useUser,
     Icon,
     classnames
 } from 'react-components';
@@ -18,10 +22,7 @@ import { c } from 'ttag';
 
 import LoadIndicator from './LoadIndicator';
 import Country from './Country';
-import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { isP2PEnabled, isTorEnabled } from './utils';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 export const CATEGORY = {
     SECURE_CORE: 'SecureCore',
@@ -66,6 +67,7 @@ const Tor = () => (
 const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isUpgradeRequired }) => {
     const { request } = useApiWithoutResult(getVPNServerConfig);
     const { createNotification } = useNotifications();
+    const [{ hasPaidVpn }] = useUser();
 
     const handleClickDownload = ({ ID, ExitCountry, Domain }) => async () => {
         const buffer = await request({
@@ -128,8 +130,18 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                 {isTorEnabled(server.Features) && <Tor />}
                             </div>,
                             isUpgradeRequired(server) ? (
-                                <Tooltip key="download" title={c('Info').t`Plan upgrade required`}>
-                                    <SmallButton disabled>{c('Action').t`Download`}</SmallButton>
+                                <Tooltip
+                                    key="download"
+                                    title={
+                                        server.Tier === 2
+                                            ? c('Info').t`Plus or Visionary subscription required`
+                                            : c('Info').t`Basic, Plus or Visionary subscription required`
+                                    }
+                                >
+                                    <Link
+                                        className="pm-button--primary pm-button--small"
+                                        to={`/dashboard${hasPaidVpn ? '?plan=vpnplus' : ''}`}
+                                    >{c('Action').t`Upgrade`}</Link>
                                 </Tooltip>
                             ) : (
                                 <DropdownActions

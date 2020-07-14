@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Radio = ({ id, children, className = 'inline-flex', ...rest }) => {
     return (
-        <label htmlFor={id} className={className}>
+        <label htmlFor={id} className={`relative ${className}`}>
             <input id={id} type="radio" className="pm-radio" {...rest} />
             <span className="pm-radio-fakeradio" />
             {children}

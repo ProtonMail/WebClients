@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { isSecureCoreEnabled } from './utils';
 import { groupWith, compare } from 'proton-shared/lib/helpers/array';
@@ -30,13 +30,17 @@ const ServerConfigs = ({ servers, category, ...rest }) => {
     }, [servers]);
 
     const [{ hasPaidVpn }] = useUser();
-    const { result = {} } = useUserVPN();
+    const { result = {}, fetch: fetchUserVPN } = useUserVPN();
 
     const userVPN = result.VPN;
     const isBasicVPN = userVPN && userVPN.PlanName === 'vpnbasic';
 
     const isUpgradeRequired = (server) =>
         !userVPN || (!hasPaidVpn && server.Tier > 0) || (isBasicVPN && server.Tier === 2);
+
+    useEffect(() => {
+        fetchUserVPN();
+    }, [hasPaidVpn]);
 
     return (
         <div className="mb1-5">
