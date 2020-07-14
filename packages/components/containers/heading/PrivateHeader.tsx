@@ -18,6 +18,7 @@ interface Props extends HeaderProps {
     url?: string;
     externalUrl?: boolean;
     settingsUrl?: string;
+    externalSettingsUrl?: boolean;
     backUrl?: string;
     floatingButton?: React.ReactNode;
     searchBox?: React.ReactNode;
@@ -34,6 +35,7 @@ const PrivateHeader = ({
     url,
     externalUrl,
     settingsUrl,
+    externalSettingsUrl,
     backUrl,
     searchBox,
     searchDropdown,
@@ -87,6 +89,7 @@ const PrivateHeader = ({
                         <TopNavbarLink
                             data-test-id="view:general-settings"
                             to={settingsUrl}
+                            external={externalSettingsUrl}
                             icon="settings-master"
                             text={c('Title').t`Settings`}
                         />
