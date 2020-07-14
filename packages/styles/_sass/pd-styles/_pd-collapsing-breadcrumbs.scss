@@ -13,5 +13,8 @@
 	@extend .flex-nowrap;
 	display: flex;
 	flex: 0 1 auto;
-	min-width: 1.5em;
+
+	&:not(#{&}--noShrink) {
+		min-width: 1.5em;
+	}
 }
