@@ -12,7 +12,7 @@ import Icon from '../../components/icon/Icon';
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
 import Meter from '../../components/progress/Meter';
 
-const { PROTONMAIL, PROTONCONTACTS, PROTONMAIL_SETTINGS, PROTONCALENDAR, PROTONDRIVE } = APPS;
+const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONDRIVE } = APPS;
 
 const AppsDropdown = () => {
     const [user] = useUser();
@@ -23,7 +23,7 @@ const AppsDropdown = () => {
 
     const apps = [
         {
-            appNames: [APP_NAME === PROTONMAIL_SETTINGS ? PROTONMAIL_SETTINGS : PROTONMAIL],
+            appNames: [PROTONMAIL],
             icon: 'protonmail',
             title: 'ProtonMail',
             link: '/inbox'
