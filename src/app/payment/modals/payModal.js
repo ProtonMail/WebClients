@@ -29,7 +29,7 @@ function payModal(
         controllerAs: 'ctrl',
         templateUrl: require('../../../templates/modals/pay.tpl.html'),
         /* @ngInject */
-        controller: function(params) {
+        controller: function(params, $scope) {
             this.checkInvoice = params.checkInvoice;
             this.invoice = params.invoice;
             this.cancel = params.close;
@@ -76,13 +76,19 @@ function payModal(
             };
 
             this.submit = async () => {
-                this.process = true;
-                const parameters = await getParameters();
-                await pay(params.invoice.ID, parameters);
-                await eventManager.call();
-                this.process = false;
-                params.close(true);
-                notification.success(I18N.success);
+                try {
+                    this.process = true;
+                    const parameters = await getParameters();
+                    await pay(params.invoice.ID, parameters);
+                    await eventManager.call();
+                    params.close(true);
+                    notification.success(I18N.success);
+                } catch (error) {
+                    $scope.$applyAsync(() => {
+                        this.process = false;
+                    });
+                    throw error;
+                }
             };
         }
     });
