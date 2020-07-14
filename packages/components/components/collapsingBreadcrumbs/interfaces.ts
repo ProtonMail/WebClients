@@ -3,4 +3,5 @@ export interface BreadcrumbInfo {
     text: string;
     collapsedText?: React.ReactNode;
     onClick?: () => void;
+    noShrink?: boolean;
 }

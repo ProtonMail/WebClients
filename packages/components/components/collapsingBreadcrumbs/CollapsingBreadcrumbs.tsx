@@ -53,7 +53,7 @@ const CollapsingBreadcrumbs = ({ breadcrumbs }: Props) => {
                         {group instanceof Array && group.length > 1 ? (
                             <CollapsedBreadcrumbs breadcrumbs={group} />
                         ) : (
-                            <Breadcrumb onClick={breadcrumb.onClick} active={isLast}>
+                            <Breadcrumb noShrink={breadcrumb.noShrink} onClick={breadcrumb.onClick} active={isLast}>
                                 {breadcrumb.text}
                             </Breadcrumb>
                         )}

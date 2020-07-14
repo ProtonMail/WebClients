@@ -1,16 +1,25 @@
 import React from 'react';
 import { classnames } from '../../helpers/component';
 
-interface Props {
+interface Props extends React.LiHTMLAttributes<HTMLLIElement> {
     children: string;
     onClick?: () => void;
     active?: boolean;
+    noShrink?: boolean;
 }
 
-const Breadcrumb = ({ children, onClick, active }: Props, ref: any) => {
+const Breadcrumb = ({ children, onClick, active, noShrink, ...rest }: Props, ref: any) => {
     const textClass = classnames(['pre p0-25 m0 ellipsis', active && 'strong']);
     return (
-        <li ref={ref} className={classnames(['pd-collapsing-breadcrumb', active && 'flex-item-fluid-auto'])}>
+        <li
+            {...rest}
+            ref={ref}
+            className={classnames([
+                'pd-collapsing-breadcrumb',
+                active && 'flex-item-fluid-auto',
+                noShrink && 'pd-collapsing-breadcrumb--noShrink'
+            ])}
+        >
             {onClick ? (
                 <button type="button" title={children} onClick={onClick} className={textClass}>
                     {children}
@@ -24,4 +33,4 @@ const Breadcrumb = ({ children, onClick, active }: Props, ref: any) => {
     );
 };
 
-export default React.forwardRef<HTMLLIElement, Props>(Breadcrumb);
+export default React.forwardRef<HTMLLIElement | undefined, Props>(Breadcrumb);
