@@ -15,16 +15,22 @@
                     <strong translate translate-context="Info" translate-comment="account deletion warning">WARNING: THIS ALSO DELETES ALL CONNECTED SERVICES (ex: <i>ProtonVPN</i>)</strong>
                 </p>
 
+                <div class="margin">
+                    <label translate translate-context="Label">What is the main reason you are deleting your account?</label>
+                    <span class="pm_select">
+                        <select ng-model="ctrl.reason" ng-options="reason as reason.label disable when reason.disabled for reason in ctrl.reasons track by reason.value" required></select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                </div>
                 <div class="margin" ng-if="ctrl.isAdmin">
-                    <label translate translate-context="Label">We are sorry to see you go!</label>
-                    <label translate translate-context="Label">Please tell us why you are leaving:</label>
+                    <label translate translate-context="Label">Please explain why you are leaving to help us improve:</label>
                     <textarea
                         ng-model="ctrl.feedback"
                         placeholder-translate-context="Placeholder"
                         placeholder-translate="Feedback"></textarea>
                 </div>
                 <div class="margin">
-                    <label translate translate-context="Label">Please provide an email address in case we need to contact you (optional):</label>
+                    <label translate translate-context="Label">Please provide an email address in case we need to contact you:</label>
                     <input
                         type="email"
                         placeholder-translate-context="Placeholder"
@@ -46,11 +52,17 @@
                         placeholder-translate-context="Placeholder"
                         placeholder-translate="Two-factor passcode"></two-fa-field>
                 </div>
+                <div class="margin">
+                    <label>
+                        <custom-checkbox data-custom-ng-model="ctrl.check"></custom-checkbox>
+                        <span translate-context="Label for checkbox in delete account modal" translate>Yes, I want to permanently delete this account and all its data</span>
+                    </label>
+                </div>
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="pm_button modal-footer-button" ng-click="ctrl.cancel()" translate-context="Action" translate>Cancel</button>
-            <button type="submit" class="pm_button error modal-footer-button disabled-if-network-activity" translate-context="Action" translate>Delete</button>
+            <button type="submit" ng-disabled="ctrl.isSubmitDisabled()" class="pm_button error modal-footer-button disabled-if-network-activity" translate-context="Action" translate>Delete</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
