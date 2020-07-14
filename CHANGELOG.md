@@ -1,3 +1,13 @@
+# [3.16.30] - 2020-07-14
+
+## Updates
+
+- DKIM guide improvements
+
+## Fixed
+
+- Improve paypal verification flow
+
 # [3.16.29] - 2020-06-27
 
 ## Fixed
