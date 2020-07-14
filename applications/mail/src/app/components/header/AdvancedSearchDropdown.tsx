@@ -117,7 +117,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
 
         history.push(
             changeSearchParams(`/${getHumanLabelID(model.labelID)}`, location.search, {
-                keyword: reset ? UNDEFINED : isNarrow ? keyword || UNDEFINED : keywordToString(fullInput),
+                keyword: reset ? UNDEFINED : isNarrow ? keywordToString(fullInput) : keyword || UNDEFINED,
                 address: address === ALL_ADDRESSES ? UNDEFINED : address,
                 from: from.length ? formatRecipients(from) : UNDEFINED,
                 to: to.length ? formatRecipients(to) : UNDEFINED,
