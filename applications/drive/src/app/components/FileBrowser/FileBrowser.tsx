@@ -78,7 +78,6 @@ const FileBrowser = ({
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <Checkbox
-                                    readOnly
                                     className="increase-surface-click"
                                     disabled={!contents.length}
                                     checked={allSelected}
