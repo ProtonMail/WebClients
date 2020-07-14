@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Alert, Input, Label, Row, Field, ColorPicker } from 'react-components';
-import { LABEL_TYPE } from 'proton-shared/lib/constants';
+import { LABEL_TYPE, FEATURE_FLAGS } from 'proton-shared/lib/constants';
 
 import ParentFolderSelector from './ParentFolderSelector';
 
@@ -38,9 +38,8 @@ function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID }) 
                     </Field>
                 </Row>
             ) : null}
-            {label.Type === LABEL_TYPE.MESSAGE_FOLDER ? (
-                // TODO Once sub-folder available remove <div className="hidden">
-                <div className="hidden">
+            {label.Type === LABEL_TYPE.MESSAGE_FOLDER && FEATURE_FLAGS.includes('sub-folder') ? (
+                <>
                     <Alert>{c('Info')
                         .t`Select the parent folder you want to put the new folder in. If no parent folder is selected, the folder will be created as a new top level folder.`}</Alert>
                     <Row>
@@ -54,7 +53,7 @@ function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID }) 
                             />
                         </Field>
                     </Row>
-                </div>
+                </>
             ) : null}
         </div>
     );

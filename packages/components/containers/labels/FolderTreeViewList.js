@@ -12,7 +12,7 @@ import {
 } from 'react-components';
 import { order, getParents } from 'proton-shared/lib/helpers/folder';
 import { orderFolders, updateLabel } from 'proton-shared/lib/api/labels';
-import { ROOT_FOLDER } from 'proton-shared/lib/constants';
+import { ROOT_FOLDER, FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import ActionsLabel from './ActionsLabel';
@@ -118,8 +118,7 @@ const FolderTreeViewList = ({ items = [] }) => {
                                 } else if (pointer > quarter * 3) {
                                     setPosition(AFTER);
                                 } else {
-                                    // TODO Once sub-folder available uncomment next line
-                                    // setPosition(INSIDE);
+                                    FEATURE_FLAGS.includes('sub-folder') && setPosition(INSIDE);
                                 }
                             }}
                             onDrop={() => withLoading(handleDrop())}
