@@ -228,10 +228,7 @@ export { default as DeleteSection } from './containers/account/DeleteSection';
 export { default as PasswordsSection } from './containers/account/PasswordsSection';
 export { default as TwoFactorSection } from './containers/account/TwoFactorSection';
 
-export { default as UserDropdown } from './containers/heading/UserDropdown';
-export { default as UpgradeButton } from './containers/heading/UpgradeButton';
-export { default as SupportDropdown } from './containers/heading/SupportDropdown';
-export { default as SupportDropdownButton } from './containers/heading/SupportDropdownButton';
+export * from './containers/heading';
 
 export { default as RecoveryEmail } from './containers/notification/RecoveryEmail';
 export { default as EmailSection } from './containers/notification/EmailSection';
@@ -438,7 +435,6 @@ export { default as TopBanners } from './containers/app/TopBanners';
 export { default as StandardPrivateApp } from './containers/app/StandardPrivateApp';
 export { default as StandardPublicApp } from './containers/app/StandardPublicApp';
 export { default as AppsDropdown } from './containers/app/AppsDropdown';
-export { default as MobileAppsLinks } from './components/sidebar/MobileAppsLinks';
 export { default as TopNavbar } from './containers/app/TopNavbar';
 export { default as LoaderPage } from './containers/app/LoaderPage';
 

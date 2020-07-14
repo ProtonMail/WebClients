@@ -6,13 +6,13 @@ import LinkItem from './LinkItem';
 import { SubSectionConfig } from '../../components/layout';
 
 interface Props {
-    link: string;
+    to: string;
     text: string;
     subsections?: SubSectionConfig[];
     permissions?: PERMISSIONS[];
     pagePermissions?: PERMISSIONS[];
 }
-const Sections = ({ link, subsections = [], text, permissions = [], pagePermissions = [] }: Props) => {
+const Sections = ({ to, subsections = [], text, permissions = [], pagePermissions = [] }: Props) => {
     return (
         <ul className="unstyled mt0-5">
             {subsections.length ? (
@@ -22,7 +22,7 @@ const Sections = ({ link, subsections = [], text, permissions = [], pagePermissi
                         return (
                             <li key={id}>
                                 <LinkItem
-                                    to={`${link}#${id}`}
+                                    to={`${to}#${id}`}
                                     text={text}
                                     permission={hasPermission(permissions, pagePermissions, sectionPermissions)}
                                 />
@@ -31,7 +31,7 @@ const Sections = ({ link, subsections = [], text, permissions = [], pagePermissi
                     })
             ) : (
                 <li>
-                    <LinkItem to={link} text={text} permission={hasPermission(permissions, pagePermissions)} />
+                    <LinkItem to={to} text={text} permission={hasPermission(permissions, pagePermissions)} />
                 </li>
             )}
         </ul>

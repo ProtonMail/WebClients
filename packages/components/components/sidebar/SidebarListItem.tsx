@@ -8,7 +8,7 @@ interface Props extends LiHTMLAttributes<HTMLLIElement> {
     children?: ReactNode;
 }
 
-const SidebarItem = ({ className = '', itemClassName = 'navigation__item', children, ...rest }: Props) => {
+const SidebarListItem = ({ className = '', itemClassName = 'navigation__item', children, ...rest }: Props) => {
     return (
         <li className={classnames([itemClassName, className])} {...rest}>
             {children}
@@ -16,4 +16,8 @@ const SidebarItem = ({ className = '', itemClassName = 'navigation__item', child
     );
 };
 
-export default SidebarItem;
+export const SubSidebarListItem = (props: Props) => {
+    return <SidebarListItem itemClassName="navigation__subitem" {...props} />;
+};
+
+export default SidebarListItem;

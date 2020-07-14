@@ -18,10 +18,10 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }: Props) => {
     return (
         <button
             type="button"
-            className="flex flex-items-center flex-nowrap p0-5 dropDown-logout-button"
             aria-expanded={isOpen}
             ref={buttonRef}
             {...rest}
+            className="flex flex-items-center flex-nowrap p0-5 dropDown-logout-button"
         >
             <span className="alignright flex flex-column mr0-5 lh130 nomobile">
                 <span className="inbl mw100 ellipsis dropDown-logout-displayName">{DisplayName || Name}</span>
@@ -29,7 +29,6 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }: Props) => {
                     <span className="inbl mw100 ellipsis m0 opacity-30 dropDown-logout-email">{Email}</span>
                 ) : null}
             </span>
-
             <span className="mtauto mbauto bordered rounded p0-25 inbl dropDown-logout-initials relative flex flex-item-noshrink">
                 <span className="dropDown-logout-text center">{initials}</span>
                 <DropdownCaret isOpen={isOpen} className="icon-12p expand-caret mauto" />

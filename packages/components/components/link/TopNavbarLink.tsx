@@ -10,7 +10,7 @@ export interface Props extends LinkProps {
 
 const TopNavbarLink = ({ icon, text, ...rest }: Props) => {
     return (
-        <Link {...rest}>
+        <Link className="topnav-link" {...rest}>
             <Icon className="topnav-icon mr0-5 flex-item-centered-vert" name={icon} />
             <span className="navigation-title topnav-linkText">{text}</span>
         </Link>
