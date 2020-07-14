@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import {
     Row,
     Field,
     Label,
+    Select,
     TextArea,
     EmailInput,
     PasswordInput,
@@ -16,15 +17,19 @@ import {
     useNotifications,
     useUserSettings,
     useApi,
+    useLoading,
     useAuthentication,
     useConfig,
     ErrorButton
 } from 'react-components';
+import { ACCOUNT_DELETION_REASONS } from 'proton-shared/lib/constants';
 import { deleteUser, unlockPasswordChanges } from 'proton-shared/lib/api/user';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { collectInfo, getClient } from '../../helpers/report';
 import { wait } from 'proton-shared/lib/helpers/promise';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import Checkbox from '../../components/input/Checkbox';
 
 const DeleteAccountModal = ({ onClose, ...rest }) => {
     const { createNotification } = useNotifications();
@@ -33,8 +38,10 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
     const authentication = useAuthentication();
     const [{ isAdmin, Name } = {}] = useUser();
     const [{ TwoFactor } = {}] = useUserSettings();
-    const [loading, setLoading] = useState(false);
+    const [loading, withLoading] = useLoading();
     const [model, setModel] = useState({
+        check: false,
+        reason: '',
         feedback: '',
         email: '',
         password: '',
@@ -42,13 +49,34 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
     });
     const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
     const Client = getClient(CLIENT_ID);
+    const isDisabled = useMemo(() => {
+        if (!model.check || !model.reason || !model.feedback || !model.email || !model.password) {
+            return true;
+        }
+        if (TwoFactor && !model.twoFa) {
+            return true;
+        }
+        return false;
+    }, [model.check, model.reason, model.feedback, model.email, model.password, model.twoFa]);
 
     const handleChange = (key) => ({ target }) => setModel({ ...model, [key]: target.value });
+    const reasons = [
+        { label: c('Option').t`Select a reason`, value: '', disabled: true },
+        { label: c('Option').t`I use a different Proton account`, value: ACCOUNT_DELETION_REASONS.DIFFERENT_ACCOUNT },
+        isAdmin && { label: c('Option').t`It's too expensive`, value: ACCOUNT_DELETION_REASONS.TOO_EXPENSIVE },
+        {
+            label: c('Option').t`It's missing a key feature that I need`,
+            value: ACCOUNT_DELETION_REASONS.MISSING_FEATURE
+        },
+        {
+            label: c('Option').t`I found another service that I like better`,
+            value: ACCOUNT_DELETION_REASONS.USE_OTHER_SERVICE
+        },
+        { label: c('Option').t`My reason isn't listed`, value: ACCOUNT_DELETION_REASONS.OTHER }
+    ].filter(isTruthy);
 
     const handleSubmit = async () => {
         try {
-            setLoading(true);
-
             eventManager.stop();
 
             await srpAuth({
@@ -72,7 +100,13 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
                 );
             }
 
-            await api(deleteUser());
+            await api(
+                deleteUser({
+                    Reason: model.reason,
+                    Feedback: model.feedback,
+                    Email: model.email
+                })
+            );
 
             createNotification({ text: c('Success').t`Account deleted. Logging out...` });
 
@@ -83,36 +117,51 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
             authentication.logout();
         } catch (error) {
             eventManager.start();
-            setLoading(false);
             throw error;
         }
     };
 
     return (
         <FormModal
-            onSubmit={handleSubmit}
+            onSubmit={() => withLoading(handleSubmit())}
             onClose={onClose}
             close={c('Action').t`Cancel`}
-            submit={<ErrorButton loading={loading} type="submit">{c('Action').t`Delete`}</ErrorButton>}
+            submit={
+                <ErrorButton loading={loading} disabled={isDisabled} type="submit">{c('Action').t`Delete`}</ErrorButton>
+            }
             title={c('Title').t`Delete account`}
             loading={loading}
             {...rest}
         >
-            <Alert type="warning">
-                <div className="bold uppercase">{c('Info').t`Warning: This also deletes all connected services`}</div>
-                <div>{c('Info').t`Example: ProtonMail, ProtonContact, ProtonVPN, ProtonDrive, ProtonCalendar`}</div>
-            </Alert>
             <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/combine-accounts/">
                 <div className="bold uppercase">{c('Info').t`Warning: deletion is permanent`}</div>
                 <div>{c('Info')
                     .t`If you wish to delete this account in order to combine it with another one, do NOT delete it.`}</div>
             </Alert>
+            <Alert type="warning">
+                <div className="bold uppercase">{c('Info').t`Warning: This also deletes all connected services`}</div>
+                <div>{c('Info').t`Example: ProtonMail, ProtonContact, ProtonVPN, ProtonDrive, ProtonCalendar`}</div>
+            </Alert>
             <Row>
-                <Label htmlFor="feedback">{c('Label').t`Feedback`}</Label>
+                <Label htmlFor="reason">{c('Label').t`What is the main reason you are deleting your account?`}</Label>
+                <Field>
+                    <Select
+                        id="reason"
+                        autoFocus
+                        options={reasons}
+                        value={model.reason}
+                        onChange={handleChange('reason')}
+                        disabled={loading}
+                        required
+                    />
+                </Field>
+            </Row>
+            <Row>
+                <Label htmlFor="feedback">{c('Label')
+                    .t`We are sorry to see you go. Please explain why you are leaving to help us to improve.`}</Label>
                 <Field>
                     <TextArea
                         id="feedback"
-                        autoFocus
                         required
                         value={model.feedback}
                         placeholder={c('Placeholder').t`Feedback`}
@@ -124,30 +173,33 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
             <Row>
                 <Label htmlFor="email">{c('Label').t`Email address`}</Label>
                 <Field>
-                    <EmailInput
-                        id="email"
-                        required={true}
-                        disabled={loading}
-                        value={model.email}
-                        onChange={handleChange('email')}
-                        placeholder={c('Placeholder').t`Email address`}
-                    />
-                    <br />
-                    {c('Info').t`Please provide an email address in case we need to contact you.`}
+                    <div className="mb0-5">
+                        <EmailInput
+                            id="email"
+                            required={true}
+                            disabled={loading}
+                            value={model.email}
+                            onChange={handleChange('email')}
+                            placeholder={c('Placeholder').t`Email address`}
+                        />
+                    </div>
+                    <div className="small m0">{c('Info')
+                        .t`Please provide an email address in case we need to contact you.`}</div>
                 </Field>
             </Row>
             <Row>
                 <Label htmlFor="password">{c('Label').t`Login password`}</Label>
                 <Field>
-                    <PasswordInput
-                        id="password"
-                        disabled={loading}
-                        value={model.password}
-                        onChange={handleChange('password')}
-                        placeholder={c('Placeholder').t`Password`}
-                    />
-                    <br />
-                    {c('Info').t`Enter your login password to confirm your identity.`}
+                    <div className="mb0-5">
+                        <PasswordInput
+                            id="password"
+                            disabled={loading}
+                            value={model.password}
+                            onChange={handleChange('password')}
+                            placeholder={c('Placeholder').t`Password`}
+                        />
+                    </div>
+                    <div className="small m0">{c('Info').t`Enter your login password to confirm your identity.`}</div>
                 </Field>
             </Row>
             {TwoFactor ? (
@@ -164,6 +216,15 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
                     </Field>
                 </Row>
             ) : null}
+            <Row>
+                <Checkbox
+                    required
+                    id="check"
+                    checked={model.check}
+                    disabled={loading}
+                    onChange={({ target }) => setModel({ ...model, check: target.checked })}
+                >{c('Label').t`Yes, I want to permanently delete this account and all its data.`}</Checkbox>
+            </Row>
         </FormModal>
     );
 };
