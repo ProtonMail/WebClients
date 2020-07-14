@@ -72,11 +72,8 @@ const ItemRow = ({
         }
     };
 
-    const handleSelect = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
-        e.preventDefault();
-
-        onToggleSelect(item.LinkID);
         if (e.shiftKey) {
             onShiftClick(item.LinkID);
         }
@@ -103,13 +100,15 @@ const ItemRow = ({
 
     const isFolder = item.Type === LinkType.FOLDER;
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
+
     const cells = [
         <div
             role="presentation"
             key="select"
             className="flex"
-            onClick={handleSelect}
+            onClick={handleClick}
             onTouchStart={(e) => e.stopPropagation()}
+            onKeyDown={(e) => e.stopPropagation()}
         >
             <Checkbox
                 disabled={item.Disabled}
@@ -117,7 +116,7 @@ const ItemRow = ({
                 checked={isSelected}
                 onChange={(e) => {
                     if (isSelected) {
-                        e.target.blur();
+                        e.currentTarget.blur();
                     }
                     onToggleSelect(item.LinkID);
                 }}
