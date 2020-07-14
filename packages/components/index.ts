@@ -282,6 +282,7 @@ export { default as LayoutsSection } from './containers/layouts/LayoutsSection';
 export { default as ToolbarsSection } from './containers/layouts/ToolbarsSection';
 export { default as ViewLayoutRadios } from './containers/layouts/ViewLayoutRadios';
 export { default as ComposerModeRadios } from './containers/layouts/ComposerModeRadios';
+export { default as DensityInjector } from './containers/layouts/DensityInjector';
 export { default as ThemeInjector } from './containers/themes/ThemeInjector';
 export { default as ThemesSection } from './containers/themes/ThemesSection';
 export { default as ThemeCard } from './containers/themes/ThemeCard';
