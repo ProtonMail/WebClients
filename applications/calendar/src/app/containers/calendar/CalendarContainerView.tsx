@@ -4,15 +4,16 @@ import {
     LocalizedMiniCalendar,
     useToggle,
     TextLoader,
+    PrivateHeader,
     PrivateMainArea,
     PrivateAppContainer,
+    FloatingButton,
 } from 'react-components';
 import { c } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
 
 import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import PrivateHeader from '../../components/layout/PrivateHeader';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import DateCursorButtons from '../../components/DateCursorButtons';
@@ -118,15 +119,16 @@ const CalendarContainerView = ({
         setExpand(false);
     }, [window.location.pathname]);
 
+    const base = '/calendar';
     const header = (
         <PrivateHeader
-            url="/calendar"
-            inSettings={false}
+            url={base}
+            settingsUrl={`${base}/settings/general`}
             title={c('Title').t`Calendar`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            onCreateEvent={onCreateEvent}
             isNarrow={isNarrow}
+            floatingButton={<FloatingButton onClick={onCreateEvent} icon="plus" />}
         />
     );
 

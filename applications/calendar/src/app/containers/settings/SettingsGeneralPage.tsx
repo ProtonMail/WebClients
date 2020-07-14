@@ -9,7 +9,7 @@ import { displayNotification } from '../alarms/AlarmWatcher';
 
 export const getGeneralSettingsPage = () => {
     return {
-        link: '/calendar/settings/general',
+        to: '/calendar/settings/general',
         icon: 'settings-master',
         text: c('Link').t`General`,
         subsections: [

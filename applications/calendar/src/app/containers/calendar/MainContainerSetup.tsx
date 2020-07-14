@@ -68,9 +68,10 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
             <Switch>
                 <Route
                     path="/calendar/settings"
-                    render={() => {
+                    render={({ history }) => {
                         return (
                             <SettingsContainer
+                                history={history}
                                 isNarrow={isNarrow}
                                 activeAddresses={activeAddresses}
                                 calendars={calendars}

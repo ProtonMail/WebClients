@@ -1,18 +1,47 @@
 import React, { MutableRefObject, useEffect, useState } from 'react';
-import { useToggle, Sidebar, Info, getSectionConfigProps, PrivateAppContainer, useModals } from 'react-components';
+import * as H from 'history';
+import {
+    useToggle,
+    Sidebar,
+    Info,
+    PrivateAppContainer,
+    useModals,
+    SidebarNav,
+    SidebarList,
+    SidebarListItem,
+    SidebarListItemContent,
+    SidebarListItemButton,
+    SidebarListItemContentIcon,
+    SidebarListItemsWithSubsections,
+    PrivateHeader,
+    SidebarBackButton,
+    FloatingButton,
+} from 'react-components';
 import { Redirect, Route, Switch } from 'react-router';
 import { c } from 'ttag';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
 import { Address } from 'proton-shared/lib/interfaces';
 
-import PrivateHeader from '../../components/layout/PrivateHeader';
 import GeneralPage, { getGeneralSettingsPage } from './SettingsGeneralPage';
 import CalendarsPage, { getCalendarSettingsPage } from './SettingsCalendarPage';
 import CalendarSidebarVersion from '../calendar/CalendarSidebarVersion';
 import ImportModal from '../../components/import/ImportModal';
 import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 
+const getDisabledCalendarContent = () => {
+    return (
+        <>
+            {c('Action').t`Import`}
+            <Info
+                buttonClass="ml0-5 inline-flex"
+                title={c('Disabled import').t`You need to have an active calendar before importing your events.`}
+            />
+        </>
+    );
+};
+
 interface Props {
+    history: H.History;
     isNarrow: boolean;
     activeAddresses: Address[];
     calendars: Calendar[];
@@ -24,6 +53,7 @@ interface Props {
 }
 
 const SettingsContainer = ({
+    history,
     isNarrow,
     activeAddresses,
     calendars,
@@ -43,64 +73,60 @@ const SettingsContainer = ({
         setExpand(false);
     }, [window.location.pathname]);
 
-    const list = [
-        ...getSectionConfigProps(
-            [getGeneralSettingsPage(), getCalendarSettingsPage()],
-            window.location.pathname,
-            activeSection
-        ),
-        hasActiveCalendars && defaultCalendar
-            ? {
-                  type: 'button',
-                  className: 'alignleft',
-                  icon: 'import',
-                  onClick() {
-                      createModal(
-                          <ImportModal
-                              defaultCalendar={defaultCalendar}
-                              calendars={activeCalendars}
-                              calendarsEventsCacheRef={calendarsEventsCacheRef}
-                          />
-                      );
-                  },
-                  text: c('Action').t`Import`,
+    const canImport = hasActiveCalendars && defaultCalendar;
+
+    const handleImport =
+        canImport && defaultCalendar
+            ? () => {
+                  createModal(
+                      <ImportModal
+                          defaultCalendar={defaultCalendar}
+                          calendars={activeCalendars}
+                          calendarsEventsCacheRef={calendarsEventsCacheRef}
+                      />
+                  );
               }
-            : {
-                  type: 'button',
-                  className: 'alignleft',
-                  icon: 'import',
-                  text: (
-                      <>
-                          {c('Action').t`Import`}
-                          <Info
-                              buttonClass="ml0-5 inline-flex"
-                              title={c('Disabled import')
-                                  .t`You need to have an active calendar before importing your events.`}
-                          />
-                      </>
-                  ),
-              },
-    ];
+            : undefined;
+
+    const base = '/calendar';
+    const goBack = () => history.push(base);
 
     const header = (
         <PrivateHeader
-            url="/calendar"
-            inSettings
+            url={base}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
+            floatingButton={<FloatingButton onClick={goBack} icon="arrow-left" />}
         />
     );
 
     const sidebar = (
         <Sidebar
-            url="/calendar"
-            list={list}
+            url={base}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
+            primary={<SidebarBackButton onClick={goBack}>{c('Action').t`Back to Calendar`}</SidebarBackButton>}
             version={<CalendarSidebarVersion />}
-        />
+        >
+            <SidebarNav>
+                <SidebarList>
+                    <SidebarListItemsWithSubsections
+                        list={[getGeneralSettingsPage(), getCalendarSettingsPage()]}
+                        pathname={window.location.pathname}
+                        activeSection={activeSection}
+                    />
+                    <SidebarListItem>
+                        <SidebarListItemButton onClick={handleImport}>
+                            <SidebarListItemContent left={<SidebarListItemContentIcon name="import" />}>
+                                {canImport ? c('Action').t`Import` : getDisabledCalendarContent()}
+                            </SidebarListItemContent>
+                        </SidebarListItemButton>
+                    </SidebarListItem>
+                </SidebarList>
+            </SidebarNav>
+        </Sidebar>
     );
 
     return (

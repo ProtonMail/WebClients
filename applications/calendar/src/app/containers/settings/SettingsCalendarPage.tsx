@@ -8,7 +8,7 @@ import CalendarsSection from './section/CalendarsSection';
 
 export const getCalendarSettingsPage = () => {
     return {
-        link: '/calendar/settings/calendars',
+        to: '/calendar/settings/calendars',
         icon: 'calendar',
         text: c('Link').t`Calendars`,
         subsections: [
