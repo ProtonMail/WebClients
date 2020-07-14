@@ -21,6 +21,7 @@ export const DOMAIN_PLACEHOLDER = 'example.com';
 export const EXTERNAL_EMAIL_PLACEHOLDER = 'jane.doe@example.com';
 
 export enum APPS {
+    PROTONACCOUNT = 'proton-account',
     PROTONMAIL = 'proton-mail',
     PROTONMAIL_SETTINGS = 'proton-mail-settings',
     PROTONCONTACTS = 'proton-contacts',
