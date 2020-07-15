@@ -81,13 +81,10 @@ export const parseURL = (url = '') => {
 
 export const getActiveXObject = (name: string) => {
     try {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
+        // @ts-expect-error
         // eslint-disable-next-line no-undef
         return new ActiveXObject(name);
     } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error(error);
         return undefined;
     }
 };
