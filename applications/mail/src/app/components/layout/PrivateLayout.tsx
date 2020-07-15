@@ -31,7 +31,7 @@ const PrivateLayout = ({ children, location, history, breakpoints, labelID, elem
 
     useEffect(() => {
         setExpand(false);
-    }, [location.pathname]);
+    }, [location.pathname, location.hash]);
 
     const header = (
         <MailHeader
