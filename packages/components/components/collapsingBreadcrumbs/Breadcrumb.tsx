@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Ref } from 'react';
 import { classnames } from '../../helpers/component';
 
 interface Props extends React.LiHTMLAttributes<HTMLLIElement> {
@@ -8,7 +8,7 @@ interface Props extends React.LiHTMLAttributes<HTMLLIElement> {
     noShrink?: boolean;
 }
 
-const Breadcrumb = ({ children, onClick, active, noShrink, ...rest }: Props, ref: any) => {
+const Breadcrumb = ({ children, onClick, active, noShrink, ...rest }: Props, ref: Ref<HTMLLIElement>) => {
     const textClass = classnames(['pre p0-25 m0 ellipsis', active && 'strong']);
     return (
         <li
@@ -33,4 +33,4 @@ const Breadcrumb = ({ children, onClick, active, noShrink, ...rest }: Props, ref
     );
 };
 
-export default React.forwardRef<HTMLLIElement | undefined, Props>(Breadcrumb);
+export default React.forwardRef<HTMLLIElement, Props>(Breadcrumb);
