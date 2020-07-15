@@ -1,4 +1,5 @@
 import React from 'react';
+import { APPS } from 'proton-shared/lib/constants';
 import {
     AppsDropdown,
     Hamburger,
@@ -7,7 +8,9 @@ import {
     TopNavbar,
     TopNavbarLink,
     UpgradeButton,
-    useUser
+    UpgradeVPNButton,
+    useUser,
+    useConfig
 } from '../../index';
 import { c } from 'ttag';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
@@ -44,7 +47,8 @@ const PrivateHeader = ({
     onToggleExpand,
     title
 }: Props) => {
-    const [{ hasPaidMail }] = useUser();
+    const [{ hasPaidMail, hasPaidVpn }] = useUser();
+    const { APP_NAME } = useConfig();
 
     if (backUrl) {
         return (
@@ -79,9 +83,14 @@ const PrivateHeader = ({
             {isNarrow ? null : searchBox}
             <TopNavbar>
                 {isNarrow && searchDropdown ? <TopNavbarItem>{searchDropdown}</TopNavbarItem> : null}
-                {hasPaidMail || isNarrow ? null : (
+                {hasPaidMail || isNarrow || APP_NAME === APPS.PROTONVPN_SETTINGS ? null : (
                     <TopNavbarItem>
                         <UpgradeButton external={true} />
+                    </TopNavbarItem>
+                )}
+                {hasPaidVpn || isNarrow || APP_NAME !== APPS.PROTONVPN_SETTINGS ? null : (
+                    <TopNavbarItem>
+                        <UpgradeVPNButton />
                     </TopNavbarItem>
                 )}
                 {!settingsUrl ? null : (
