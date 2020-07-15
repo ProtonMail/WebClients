@@ -1,16 +1,19 @@
 import React from 'react';
 import Icon from '../icon/Icon';
+import PrimaryButton from '../button/PrimaryButton';
+import { classnames } from '../../helpers/component';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     icon: string;
     title?: string;
+    className?: string;
 }
-const FloatingButton = ({ icon, title, ...rest }: Props) => {
+const FloatingButton = ({ icon, title, className, ...rest }: Props) => {
     return (
-        <button type="button" className="compose-fab pm-button--primary flex" {...rest}>
+        <PrimaryButton className={classnames(['compose-fab flex', className])} {...rest}>
             <Icon size={24} className="mauto" name={icon} />
             {title ? <span className="sr-only">{title}</span> : null}
-        </button>
+        </PrimaryButton>
     );
 };
 
