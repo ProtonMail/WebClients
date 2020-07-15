@@ -36,7 +36,7 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
 
     useEffect(() => {
         setExpand(false);
-    }, [location.pathname]);
+    }, [location.pathname, location.hash]);
 
     const base = '/account';
 
