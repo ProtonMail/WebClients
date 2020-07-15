@@ -8,7 +8,7 @@ import {
     useActiveBreakpoint,
     SidebarList,
     SidebarNav,
-    SimpleSidebarListItemLink
+    SimpleSidebarListItemLink,
 } from 'react-components';
 import { match as Match } from 'react-router-dom';
 import { Location } from 'history';
@@ -23,13 +23,13 @@ const getSidebarList = () => {
             to: '/drive',
             isActive: (match: Match<any>, location: Location) =>
                 !!match && (match.isExact || !location.pathname.includes('trash')),
-            icon: 'inbox'
+            icon: 'inbox',
         },
         {
             text: c('Link').t`Trash`,
             to: '/drive/trash',
-            icon: 'trash'
-        }
+            icon: 'trash',
+        },
     ];
 };
 
@@ -67,13 +67,11 @@ const PrivateLayout = ({ children }: Props) => {
         >
             <SidebarNav>
                 <SidebarList>
-                    {getSidebarList().map(({ text, to, isActive, icon }) => {
-                        return (
-                            <SimpleSidebarListItemLink key={to} to={to} isActive={isActive} icon={icon}>
-                                {text}
-                            </SimpleSidebarListItemLink>
-                        );
-                    })}
+                    {getSidebarList().map(({ text, to, isActive, icon }) => (
+                        <SimpleSidebarListItemLink key={to} to={to} isActive={isActive} icon={icon}>
+                            {text}
+                        </SimpleSidebarListItemLink>
+                    ))}
                 </SidebarList>
             </SidebarNav>
         </Sidebar>
