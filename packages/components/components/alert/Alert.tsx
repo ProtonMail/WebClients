@@ -1,16 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { LearnMore } from 'react-components';
 import { classnames } from '../../helpers/component';
+import LearnMore from '../link/LearnMore';
 
 const CLASSES = {
     info: 'mb1 block-info-standard',
     warning: 'mb1 block-info-standard-warning',
     error: 'mb1 block-info-standard-error',
     success: 'mb1 block-info-standard-success'
-};
+} as const;
 
-const Alert = ({ type = 'info', children, learnMore, className }) => {
+interface Props {
+    type?: 'info' | 'error' | 'warning' | 'success';
+    children?: React.ReactNode;
+    learnMore?: string;
+    className?: string;
+}
+const Alert = ({ type = 'info', children, learnMore, className }: Props) => {
     return (
         <div className={classnames([CLASSES[type], className])}>
             <div>{children}</div>
@@ -21,13 +26,6 @@ const Alert = ({ type = 'info', children, learnMore, className }) => {
             ) : null}
         </div>
     );
-};
-
-Alert.propTypes = {
-    type: PropTypes.oneOf(['info', 'error', 'warning', 'success']),
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string,
-    learnMore: PropTypes.string
 };
 
 export default Alert;
