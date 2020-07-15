@@ -170,6 +170,13 @@ const SquireEditor = forwardRef(
                     />
                 ) : (
                     <>
+                        {showEllipseButton && ( // Ellispsis button is placed before because the flex flow is reversed
+                            <div className="editor-ellipsis-button-container p0-5 bg-white color-global-grey">
+                                <Button className="pm-button--small" onClick={onEllipseClick}>
+                                    ...
+                                </Button>
+                            </div>
+                        )}
                         <SquireIframe
                             ref={squireRef}
                             placeholder={placeholder}
@@ -180,13 +187,6 @@ const SquireEditor = forwardRef(
                             onAddImages={onAddImages}
                             data-cy="body"
                         />
-                        {showEllipseButton && (
-                            <div className="editor-ellipsis-button-container p0-5 bg-white color-global-grey">
-                                <Button className="pm-button--small" onClick={onEllipseClick}>
-                                    ...
-                                </Button>
-                            </div>
-                        )}
                     </>
                 )}
                 <EditorToolbar
