@@ -1,13 +1,16 @@
 import React from 'react';
-import { useActiveBreakpoint } from '../../index';
+import { APPS } from 'proton-shared/lib/constants';
+
+import { useActiveBreakpoint, useConfig } from '../../index';
 
 interface Props {
     children: React.ReactNode;
 }
 const MobileNavServices = ({ children }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
+    const { APP_NAME } = useConfig();
 
-    if (!isNarrow) {
+    if (!isNarrow || APP_NAME === APPS.PROTONVPN_SETTINGS) {
         return null;
     }
 
