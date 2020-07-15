@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
-import { generateUID, Dropdown, DropdownMenu, DropdownMenuButton, Icon } from '../..';
+import { generateUID, Dropdown } from '../..';
 import { CORNERS_ONLY_PLACEMENTS } from '../popper/utils';
 
 interface Props {
     anchorRef: React.RefObject<HTMLElement>;
     isOpen: boolean;
+    children: React.ReactNode;
     position?: {
         top: number;
         left: number;
     };
     close: () => void;
     autoClose?: boolean;
-    menuItems: {
-        name: string;
-        icon: string;
-        onClick: () => void;
-    }[];
 }
 
-const ContextMenu = ({ anchorRef, isOpen, position, close, autoClose = true, menuItems }: Props) => {
+const ContextMenu = ({ anchorRef, children, isOpen, position, close, autoClose = true }: Props) => {
     const [uid] = useState(generateUID('context-menu'));
 
     useEffect(() => {
@@ -40,14 +36,7 @@ const ContextMenu = ({ anchorRef, isOpen, position, close, autoClose = true, men
         };
     }, [isOpen, autoClose, close]);
 
-    const dropdownMenuButtons = menuItems.map((item) => (
-        <DropdownMenuButton key={item.name} className="flex flex-nowrap alignleft" onClick={item.onClick}>
-            <Icon className="mt0-25 mr0-5" name={item.icon} />
-            {item.name}
-        </DropdownMenuButton>
-    ));
-
-    const drowpdown = menuItems.length ? (
+    return (
         <Dropdown
             id={uid}
             isOpen={isOpen}
@@ -59,11 +48,9 @@ const ContextMenu = ({ anchorRef, isOpen, position, close, autoClose = true, men
             anchorRef={anchorRef}
             onClose={close}
         >
-            <DropdownMenu>{dropdownMenuButtons}</DropdownMenu>
+            {children}
         </Dropdown>
-    ) : null;
-
-    return drowpdown;
+    );
 };
 
 export default ContextMenu;
