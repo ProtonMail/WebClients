@@ -1,7 +1,9 @@
 import { getOS, getBrowser, getDevice } from 'proton-shared/lib/helpers/browser';
 import { CLIENT_IDS } from 'proton-shared/lib/constants';
 
-export const getClient = (clientID) => CLIENT_IDS[clientID];
+export const getClient = (clientID: keyof typeof CLIENT_IDS) => {
+    return CLIENT_IDS[clientID];
+};
 
 export const collectInfo = () => {
     const os = getOS();
