@@ -101,7 +101,7 @@ const HeaderRecipientItem = ({
     };
 
     const icon = globalIcon ? globalIcon : mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined;
-    const label = getRecipientLabel(recipient);
+    const label = getRecipientLabel(recipient, contacts);
     const initial = getInitial(label);
 
     return (

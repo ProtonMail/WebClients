@@ -73,7 +73,7 @@ const Item = ({
         isCustomLabel(labelID, labels);
     const senders = isConversation ? getSenders(element) : [getSender(element as Message)];
     const recipients = isConversation ? getConversationRecipients(element) : getMessageRecipients(element as Message);
-    const sendersLabels = senders.map(getRecipientLabel);
+    const sendersLabels = senders.map((sender) => getRecipientLabel(sender, contacts));
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
     const recipientsLabels = recipientsOrGroup.map((recipientOrGroup) =>
         getRecipientOrGroupLabel(recipientOrGroup, contacts)

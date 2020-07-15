@@ -51,7 +51,8 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
                 <div className="message-print-header pb1 mb1">
                     <h2 className="message-print-subject bold pb0-5 mb0-5">{message.data?.Subject}</h2>
                     <HeaderRecipientType label={c('Label').t`From:`}>
-                        {getRecipientLabel(sender)} <span className="opacity-50">&lt;{sender?.Address}&gt;</span>
+                        {getRecipientLabel(sender, contacts)}{' '}
+                        <span className="opacity-50">&lt;{sender?.Address}&gt;</span>
                     </HeaderRecipientType>
                     <HeaderRecipientsDetails
                         message={message.data}

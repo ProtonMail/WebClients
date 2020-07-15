@@ -109,8 +109,12 @@ export const contactToInput = (contact: Partial<ContactEmail> = {}): string =>
 export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: string) =>
     recipients.filter((recipient) => recipient.Group !== groupPath);
 
-export const getRecipientLabel = (recipient?: Recipient) => {
+export const getRecipientLabel = (recipient?: Recipient, allContacts?: ContactEmail[]) => {
     const { Name, Address } = recipient || {};
+    const contact = (allContacts || []).find(({ Email }) => normalizeEmail(Email) === normalizeEmail(Address));
+    if (contact) {
+        return contact.Name;
+    }
     if (!Name || Name === Address) {
         const index = Address?.indexOf('@') || -1;
         if (index === -1) {
@@ -133,7 +137,7 @@ export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contacts
 
 export const getRecipientOrGroupLabel = ({ recipient, group }: RecipientOrGroup, allContacts: ContactEmail[]) =>
     recipient
-        ? getRecipientLabel(recipient)
+        ? getRecipientLabel(recipient, allContacts)
         : getRecipientGroupLabel(group, getContactsOfGroup(allContacts, group?.group?.ID).length);
 
 export const recipientsToRecipientOrGroup = (recipients: Recipient[], groups: ContactGroup[]) =>
