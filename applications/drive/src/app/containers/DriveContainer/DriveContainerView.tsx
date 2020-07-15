@@ -2,14 +2,14 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { Toolbar, PrivateMainArea, useAppTitle } from 'react-components';
 import { c } from 'ttag';
-import Drive from '../components/Drive/Drive';
-import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
-import DriveContentProvider from '../components/Drive/DriveContentProvider';
-import DriveToolbar from '../components/Drive/DriveToolbar';
-import { LinkType } from '../interfaces/link';
-import { LinkURLType } from '../constants';
-import DriveBreadcrumbs from '../components/DriveBreadcrumbs';
-import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
+import Drive from '../../components/Drive/Drive';
+import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
+import DriveContentProvider from '../../components/Drive/DriveContentProvider';
+import DriveToolbar from '../../components/Drive/DriveToolbar';
+import { LinkType } from '../../interfaces/link';
+import { LinkURLType } from '../../constants';
+import DriveBreadcrumbs from '../../components/DriveBreadcrumbs';
+import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 
 const toLinkURLType = (type: LinkType) => {
     const linkType = {
@@ -24,7 +24,7 @@ const toLinkURLType = (type: LinkType) => {
     return linkType;
 };
 
-function DriveContainer({
+function DriveContainerView({
     match,
     history,
 }: RouteComponentProps<{ shareId?: string; type?: LinkURLType; linkId?: string }>) {
@@ -68,16 +68,14 @@ function DriveContainer({
     return (
         <DriveContentProvider folder={folder}>
             {folder ? <DriveToolbar activeFolder={folder} openLink={navigateToLink} /> : <Toolbar />}
-
             <PrivateMainArea hasToolbar className="flex flex-column flex-nowrap">
                 <div className="mw100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
                     {folder && <DriveBreadcrumbs activeFolder={folder} openLink={navigateToLink} />}
                 </div>
-
                 {folder && <Drive activeFolder={folder} openLink={navigateToLink} />}
             </PrivateMainArea>
         </DriveContentProvider>
     );
 }
 
-export default DriveContainer;
+export default DriveContainerView;
