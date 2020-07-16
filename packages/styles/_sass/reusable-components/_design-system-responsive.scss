@@ -151,6 +151,9 @@
 	&flex-item-fluid {
 		flex: 1 1 0px;
 	}
+	&flex-item-fluid-auto {
+		flex: 1 1 auto;
+	}
 	&no-flex {
 		flex: 0 0 auto;
 	}
@@ -160,6 +163,9 @@
 	&flex-self-start {
 		align-self: start;
 	}
+	&mw100 {
+      max-width: 100%;
+    }
 	&min-w100 {
       min-width: 100%;
     }

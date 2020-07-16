@@ -370,7 +370,7 @@ svg {
 }
 
 /* here you may add px widths */
-$list-width-px: 50, 150, 200, 500 !default;
+$list-width-px: 40, 50, 70, 150, 200, 500 !default;
 // ex .w500p { width: 500px; }
 
 @each $width in $list-width-px {
@@ -402,8 +402,7 @@ $list-width-em: 6, 8, 10, 2, 14, 16 !default;
 /* max-block widths */
 
 /* here you may add max-widths % */
-$list-max-widths: 50, 80, 100 !default;
-
+$list-max-widths: 50, 60, 80, 100 !default;
 @each $max-width in $list-max-widths {
     .mw#{$max-width} {
         max-width: #{$max-width * 1%};
@@ -437,7 +436,7 @@ $list-max-width-em: 8, 13, 15, 37, 40, 50 !default;
     }
 }
 
-$list-min-width-em: 1.4, 3, 5, 35 !default;
+$list-min-width-em: 1.4, 3, 5, 14, 35 !default;
 
 @each $min-width in $list-min-width-em {
     $fragment-class: str-replace(inspect($min-width), '.', '-'); // inspect to convert to string
@@ -707,9 +706,10 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4 !default; // sp
 }
 
 /* fix aspect ratio */
-.flex > * {
-    min-height: 0;
-    min-width: 0;
+.flex > *,
+.no-min-dims {
+  min-height: 0;
+  min-width: 0;
 }
 
 .inline-flex-vcenter > *,

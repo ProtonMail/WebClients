@@ -5,6 +5,8 @@
 use:target { display: block; }
 .white { fill: #fff; }
 .black { fill: #000; }
+.primary-blue { fill: #798ce8; }
+.primary-green { fill: #4da358; }
 
 .success { fill: #5db039; }
 .rotated-right,
@@ -64,6 +66,8 @@ opacity: .3;
   <use id="css-search-black-rtl" href="#symbol-search" class="black mirror" />
   <use id="css-caret" href="#symbol-caret" class="black" />
   <use id="css-caret-white" href="#symbol-caret" class="white" />
+  <use id="css-caret-primary-blue" href="#symbol-caret" class="primary-blue" />
+  <use id="css-caret-primary-green" href="#symbol-caret" class="primary-green" />
   <use id="css-caret-close" href="#symbol-caret" class="black rotated-180" />
   <use id="css-caret-close-white" href="#symbol-caret" class="white rotated-180" />
   <use id="css-greater" href="#symbol-caret" class="black rotated-right" />

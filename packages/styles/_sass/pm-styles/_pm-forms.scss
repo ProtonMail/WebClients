@@ -103,7 +103,27 @@ select.pm-field {
   > optgroup {
 	background-color: var(--bgcolor-highlight, $pm-global-light);
   }
+  &.pm-field--linkSelect {
+		border: 1px solid transparent;
+		padding-left: 0;
+		width: auto;
+		color: $pm-primary;
+		@if ($pm-primary == $pm-blue) {
+			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-primary-blue");
+		}
+		@else {
+			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-primary-green");
+		}
+		&,
+		&:focus,
+		&.focus,
+		&:focus-within {
+			background-color: transparent;
+			box-shadow: none;
+		}
+  }
 }
+
 
 
 
@@ -377,7 +397,7 @@ $width: 5.5em !default;
 
 
 /* label */
-$pm-label-width: 18em !default;
+// $pm-label-width defined in global vars
 .pm-label {
   padding-top: .5em;
   width: var(--label-width, $pm-label-width);
@@ -426,6 +446,30 @@ $pm-label-icon-width: 2em !default;
     border-color: $pm-global-warning;
   }
 }
+
+/* @protonmail.com field */
+.pm-field--username {
+	padding-right: 9em;
+}
+
+
+/* @protonmail.com field */
+.pm-field--username {
+	padding-right: 9em;
+}
+
+
+/* @protonmail.com field */
+.pm-field--username {
+	padding-right: 9em;
+}
+
+
+/* @protonmail.com field */
+.pm-field--username {
+	padding-right: 9em;
+}
+
 
 /* @protonmail.com field */
 .pm-field--username {
