@@ -8,5 +8,5 @@ export const getFiltersModel = (api) => {
 export const FiltersModel = {
     key: 'Filters',
     get: getFiltersModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ Filter }) => Filter })
+    update: (model, events) => updateCollection({ model, events, item: ({ Filter }) => Filter }),
 };

@@ -20,12 +20,12 @@ export default async ({ localeCode, dateLocaleCode, longDateLocaleCode, language
         loadDateFnLocale({
             locale: dateLocaleCode,
             longLocale: longDateLocaleCode,
-            locales: dateFnLocales
+            locales: dateFnLocales,
         }),
         loadTtagLocale({
             locale: localeCode,
-            locales
-        })
+            locales,
+        }),
     ]);
 
     setLocales({
@@ -33,7 +33,7 @@ export default async ({ localeCode, dateLocaleCode, longDateLocaleCode, language
         dateLocaleCode,
         longDateLocaleCode,
         languageCode,
-        dateLocale
+        dateLocale,
     });
 
     document.documentElement.lang = languageCode;

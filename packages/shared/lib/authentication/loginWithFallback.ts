@@ -16,7 +16,7 @@ interface Arguments {
 const loginWithFallback = async ({ api, credentials, initialAuthInfo }: Arguments) => {
     let state: { authInfo?: InfoResponse; lastAuthVersion?: AuthVersion } = {
         authInfo: initialAuthInfo,
-        lastAuthVersion: undefined
+        lastAuthVersion: undefined,
     };
     const { username } = credentials;
     const data = { Username: username };
@@ -35,23 +35,23 @@ const loginWithFallback = async ({ api, credentials, initialAuthInfo }: Argument
             const suppress = done ? undefined : { suppress: [PASSWORD_WRONG_ERROR] };
             const srpConfig = {
                 ...auth(data),
-                ...suppress
+                ...suppress,
             };
             const result = await srpAuth<AuthResponse>({
                 api,
                 credentials,
                 config: srpConfig,
                 info: authInfo,
-                version
+                version,
             });
             return {
                 authVersion: version,
-                result
+                result,
             };
         } catch (e) {
             if (e.data && e.data.Code === PASSWORD_WRONG_ERROR && !done) {
                 state = {
-                    lastAuthVersion: version
+                    lastAuthVersion: version,
                 };
                 continue; // eslint-disable-line
             }

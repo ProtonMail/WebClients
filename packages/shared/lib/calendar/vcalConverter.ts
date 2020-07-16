@@ -6,7 +6,7 @@ import {
     VcalDateProperty,
     VcalDateTimeProperty,
     VcalDaysKeys,
-    VcalDays
+    VcalDays,
 } from '../interfaces/calendar/VcalModel';
 import { mod } from '../helpers/math';
 import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
@@ -14,7 +14,7 @@ import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
 export const dateToProperty = ({
     year = 1,
     month = 1,
-    day = 1
+    day = 1,
 }: {
     year: number;
     month: number;
@@ -22,7 +22,7 @@ export const dateToProperty = ({
 }): VcalDateProperty => {
     return {
         value: { year, month, day },
-        parameters: { type: 'date' }
+        parameters: { type: 'date' },
     };
 };
 
@@ -34,14 +34,14 @@ export const dateTimeToProperty = (
     const value = { year, month, day, hours, minutes, seconds, isUTC };
     if (!tzid || isUTC) {
         return {
-            value
+            value,
         };
     }
     return {
         value,
         parameters: {
-            tzid
-        }
+            tzid,
+        },
     };
 };
 

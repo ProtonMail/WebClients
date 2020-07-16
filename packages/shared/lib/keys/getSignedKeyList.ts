@@ -6,9 +6,9 @@ export const getSignature = async (data: string, signingKey: OpenPGPKey) => {
         data,
         privateKeys: [signingKey],
         armor: true,
-        detached: true
+        detached: true,
     });
-    return '' + signature;
+    return `${signature}`;
 };
 
 const transformKeysOutput = (keys: KeyAction[]) => {
@@ -16,7 +16,7 @@ const transformKeysOutput = (keys: KeyAction[]) => {
         return {
             Primary: primary,
             Flags: flags,
-            Fingerprint: fingerprint
+            Fingerprint: fingerprint,
         };
     });
 };
@@ -30,7 +30,7 @@ const getSignedKeyList = async (keys: KeyAction[], signingKey: OpenPGPKey): Prom
     const data = JSON.stringify(transformKeysOutput(keys));
     return {
         Data: data,
-        Signature: await getSignature(data, signingKey)
+        Signature: await getSignature(data, signingKey),
     };
 };
 

@@ -9,7 +9,7 @@ import {
     CalendarEventData,
     CalendarEventDataMap,
     CalendarEvent,
-    CalendarPersonalEventData
+    CalendarPersonalEventData,
 } from '../interfaces/calendar';
 import { VcalVeventComponent } from '../interfaces/calendar/VcalModel';
 
@@ -26,7 +26,7 @@ export const readSessionKeys = (
 ) => {
     return Promise.all([
         getDecryptedSessionKey(deserializeUint8Array(SharedKeyPacket), privateKeys),
-        CalendarKeyPacket ? getDecryptedSessionKey(deserializeUint8Array(CalendarKeyPacket), privateKeys) : undefined
+        CalendarKeyPacket ? getDecryptedSessionKey(deserializeUint8Array(CalendarKeyPacket), privateKeys) : undefined,
     ]);
 };
 
@@ -43,7 +43,7 @@ export const readCalendarEvent = async ({
     event: { SharedEvents = [], CalendarEvents = [], AttendeesEvent, Attendees = [] },
     publicKeys,
     sharedSessionKey,
-    calendarSessionKey
+    calendarSessionKey,
 }: ReadCalendarEventArguments) => {
     const sharedPart = SharedEvents.reduce<CalendarEventDataMap>((acc, data) => {
         acc[data.Type] = data;
@@ -58,7 +58,7 @@ export const readCalendarEvent = async ({
     const [
         [sharedSignedResult, sharedEncryptedResult],
         [calendarSignedResult, calendarEncryptedResult],
-        attendeesResult
+        attendeesResult,
     ] = await Promise.all([
         decryptAndVerifyPart(sharedPart, publicKeys, sharedSessionKey),
         decryptAndVerifyPart(calendarPart, publicKeys, calendarSessionKey),
@@ -68,7 +68,7 @@ export const readCalendarEvent = async ({
                 attendeesPartEncrypted.Signature,
                 publicKeys,
                 sharedSessionKey
-            )
+            ),
     ]);
 
     return {
@@ -76,7 +76,7 @@ export const readCalendarEvent = async ({
         ...(sharedSignedResult && parse(unwrap(sharedSignedResult))),
         ...(calendarEncryptedResult && parse(unwrap(calendarEncryptedResult))),
         ...(calendarSignedResult && parse(unwrap(calendarSignedResult))),
-        ...(attendeesResult && toInternalAttendee(parse(unwrap(attendeesResult)), Attendees))
+        ...(attendeesResult && toInternalAttendee(parse(unwrap(attendeesResult)), Attendees)),
     } as VcalVeventComponent;
 };
 

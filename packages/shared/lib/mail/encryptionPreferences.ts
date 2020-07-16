@@ -13,7 +13,7 @@ export enum EncryptionPreferencesFailureTypes {
     PRIMARY_NOT_PINNED = 3,
     WKD_USER_NO_VALID_WKD_KEY = 4,
     EXTERNAL_USER_NO_VALID_PINNED_KEY = 6,
-    CONTACT_SIGNATURE_NOT_VERIFIED
+    CONTACT_SIGNATURE_NOT_VERIFIED,
 }
 
 export interface EncryptionPreferencesFailure {
@@ -52,7 +52,7 @@ const extractEncryptionPreferencesOwnAddress = (
         isContact,
         isContactSignatureVerified,
         emailAddressWarnings,
-        emailAddressErrors
+        emailAddressErrors,
     } = publicKeyModel;
     const { address, publicKey } = selfSend;
     const hasApiKeys = !!address.HasKeys;
@@ -69,7 +69,7 @@ const extractEncryptionPreferencesOwnAddress = (
         hasPinnedKeys: false,
         isContact,
         isContactSignatureVerified,
-        emailAddressWarnings
+        emailAddressWarnings,
     };
     if (emailAddressErrors?.length) {
         const errorString = emailAddressErrors[0];
@@ -77,8 +77,8 @@ const extractEncryptionPreferencesOwnAddress = (
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
-                error: new Error(errorString)
-            }
+                error: new Error(errorString),
+            },
         };
     }
     if (!canAddressReceive) {
@@ -86,8 +86,8 @@ const extractEncryptionPreferencesOwnAddress = (
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.INTERNAL_USER_DISABLED,
-                error: new Error(c('Error').t`Email address disabled`)
-            }
+                error: new Error(c('Error').t`Email address disabled`),
+            },
         };
     }
     if (!hasApiKeys) {
@@ -95,8 +95,8 @@ const extractEncryptionPreferencesOwnAddress = (
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.INTERNAL_USER_NO_API_KEY,
-                error: new Error(c('Error').t`No keys retrieved for internal user`)
-            }
+                error: new Error(c('Error').t`No keys retrieved for internal user`),
+            },
         };
     }
     if (!publicKey) {
@@ -104,8 +104,8 @@ const extractEncryptionPreferencesOwnAddress = (
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.INTERNAL_USER_NO_VALID_API_KEY,
-                error: new Error(c('Error').t`No valid keys retrieved for internal user`)
-            }
+                error: new Error(c('Error').t`No valid keys retrieved for internal user`),
+            },
         };
     }
     const warnings = getEmailMismatchWarning(publicKey, emailAddress, true);
@@ -122,7 +122,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         isContact,
         isContactSignatureVerified,
         emailAddressWarnings,
-        emailAddressErrors
+        emailAddressErrors,
     } = publicKeyModel;
     const hasApiKeys = !!apiKeys.length;
     const hasPinnedKeys = !!pinnedKeys.length;
@@ -138,7 +138,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         hasPinnedKeys,
         isContact,
         isContactSignatureVerified,
-        emailAddressWarnings
+        emailAddressWarnings,
     };
     if (emailAddressErrors?.length) {
         const errorString = emailAddressErrors[0];
@@ -146,8 +146,8 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
-                error: new Error(errorString)
-            }
+                error: new Error(errorString),
+            },
         };
     }
     if (isContact && !isContactSignatureVerified) {
@@ -155,8 +155,8 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED,
-                error: new Error(c('Error').t`Contact signature could not be verified`)
-            }
+                error: new Error(c('Error').t`Contact signature could not be verified`),
+            },
         };
     }
     if (!hasApiKeys) {
@@ -164,8 +164,8 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.INTERNAL_USER_NO_API_KEY,
-                error: new Error(c('Error').t`No keys retrieved for internal user`)
-            }
+                error: new Error(c('Error').t`No keys retrieved for internal user`),
+            },
         };
     }
     // API keys are ordered in terms of user preference. The primary key (first in the list) will be used for sending
@@ -177,8 +177,8 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.INTERNAL_USER_NO_VALID_API_KEY,
-                error: new Error(c('Error').t`No key retrieved for internal user is valid for sending`)
-            }
+                error: new Error(c('Error').t`No key retrieved for internal user is valid for sending`),
+            },
         };
     }
     if (!hasPinnedKeys) {
@@ -194,8 +194,8 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             sendKey: validApiSendKey,
             failure: {
                 type: EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED,
-                error: new Error(c('Error').t`Trusted keys are not valid for sending`)
-            }
+                error: new Error(c('Error').t`Trusted keys are not valid for sending`),
+            },
         };
     }
     // return the pinned key, not the API one
@@ -214,7 +214,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         isContact,
         isContactSignatureVerified,
         emailAddressWarnings,
-        emailAddressErrors
+        emailAddressErrors,
     } = publicKeyModel;
     const hasApiKeys = true;
     const hasPinnedKeys = !!pinnedKeys.length;
@@ -230,7 +230,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         hasPinnedKeys,
         isContact,
         isContactSignatureVerified,
-        emailAddressWarnings
+        emailAddressWarnings,
     };
     if (emailAddressErrors?.length) {
         const errorString = emailAddressErrors[0];
@@ -238,8 +238,8 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
-                error: new Error(errorString)
-            }
+                error: new Error(errorString),
+            },
         };
     }
     if (isContact && !isContactSignatureVerified) {
@@ -247,8 +247,8 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED,
-                error: new Error(c('Error').t`Contact signature could not be verified`)
-            }
+                error: new Error(c('Error').t`Contact signature could not be verified`),
+            },
         };
     }
     // WKD keys are ordered in terms of user preference. The primary key (first in the list) will be used for sending
@@ -260,8 +260,8 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.WKD_USER_NO_VALID_WKD_KEY,
-                error: new Error(c('Error').t`No WKD key retrieved for user is valid for sending`)
-            }
+                error: new Error(c('Error').t`No WKD key retrieved for user is valid for sending`),
+            },
         };
     }
     if (!hasPinnedKeys) {
@@ -277,8 +277,8 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
             sendKey: validApiSendKey,
             failure: {
                 type: EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED,
-                error: new Error(c('Error').t`Trusted keys are not valid for sending`)
-            }
+                error: new Error(c('Error').t`Trusted keys are not valid for sending`),
+            },
         };
     }
     // return the pinned key, not the API one
@@ -298,7 +298,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         isContact,
         isContactSignatureVerified,
         emailAddressWarnings,
-        emailAddressErrors
+        emailAddressErrors,
     } = publicKeyModel;
     const hasPinnedKeys = !!pinnedKeys.length;
     const result = {
@@ -313,7 +313,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         hasPinnedKeys,
         isContact,
         isContactSignatureVerified,
-        emailAddressWarnings
+        emailAddressWarnings,
     };
     if (emailAddressErrors?.length) {
         const errorString = emailAddressErrors[0];
@@ -321,8 +321,8 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR,
-                error: new Error(errorString)
-            }
+                error: new Error(errorString),
+            },
         };
     }
     if (isContact && !isContactSignatureVerified) {
@@ -330,8 +330,8 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED,
-                error: new Error(c('Error').t`Contact signature could not be verified`)
-            }
+                error: new Error(c('Error').t`Contact signature could not be verified`),
+            },
         };
     }
     if (!hasPinnedKeys) {
@@ -344,8 +344,8 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
             ...result,
             failure: {
                 type: EncryptionPreferencesFailureTypes.EXTERNAL_USER_NO_VALID_PINNED_KEY,
-                error: new Error(c('Error').t`The sending key is not valid`)
-            }
+                error: new Error(c('Error').t`The sending key is not valid`),
+            },
         };
     }
     const warnings = getEmailMismatchWarning(sendKey, emailAddress, false);
@@ -372,7 +372,7 @@ const extractEncryptionPreferences = (
         encrypt,
         sign: encrypt || sign,
         scheme,
-        mimeType
+        mimeType,
     };
     // case of own address
     if (selfSend) {

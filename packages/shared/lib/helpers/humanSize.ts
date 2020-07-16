@@ -8,7 +8,7 @@ const units = {
     B: 1,
     KB: BASE_SIZE,
     MB: BASE_SIZE * BASE_SIZE,
-    GB: BASE_SIZE * BASE_SIZE * BASE_SIZE
+    GB: BASE_SIZE * BASE_SIZE * BASE_SIZE,
 };
 
 const i18nSuffix = (key: SizeUnits) => {
@@ -16,7 +16,7 @@ const i18nSuffix = (key: SizeUnits) => {
         B: c('file size format').t`bytes`,
         KB: c('file size format').t`KB`,
         MB: c('file size format').t`MB`,
-        GB: c('file size format').t`GB`
+        GB: c('file size format').t`GB`,
     };
 
     return map[key];

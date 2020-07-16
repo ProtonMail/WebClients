@@ -49,7 +49,7 @@ const splitProperties = (properties: ContactProperties): SplitProperties => {
         {
             toEncryptAndSign: [],
             toSign: [],
-            toClearText: []
+            toClearText: [],
         }
     );
 };
@@ -74,7 +74,7 @@ export const prepareCards = (
                     const card: ContactCard = {
                         Type: ENCRYPTED_AND_SIGNED,
                         Data,
-                        Signature
+                        Signature,
                     };
                     return card;
                 }
@@ -103,7 +103,7 @@ export const prepareCards = (
                 const card: ContactCard = {
                     Type: SIGNED,
                     Data: data,
-                    Signature
+                    Signature,
                 };
                 return card;
             })
@@ -116,7 +116,7 @@ export const prepareCards = (
         promises.push({
             Type: CLEAR_TEXT,
             Data,
-            Signature: null
+            Signature: null,
         });
     }
 

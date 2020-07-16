@@ -9,7 +9,7 @@ import {
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
     VcalRruleProperty,
-    VcalVeventComponent
+    VcalVeventComponent,
 } from '../interfaces/calendar/VcalModel';
 
 interface CacheInner {
@@ -49,8 +49,8 @@ const isInInterval = (a1: number, a2: number, b1: number, b2: number) => a1 <= b
 const DEFAULT_RRULE = {
     value: {
         freq: 'DAILY',
-        count: 1
-    }
+        count: 1,
+    },
 };
 
 interface FillOccurrencesBetween {
@@ -69,7 +69,7 @@ const fillOccurrencesBetween = ({
     originalDtstart,
     originalDtend,
     isAllDay,
-    exdateMap
+    exdateMap,
 }: FillOccurrencesBetween) => {
     const result = [];
     let next;
@@ -117,7 +117,7 @@ const fillOccurrencesBetween = ({
                 localEnd,
                 utcStart,
                 utcEnd,
-                occurrenceNumber: iterator.occurrence_number as number
+                occurrenceNumber: iterator.occurrence_number as number,
             });
         }
     }
@@ -139,9 +139,9 @@ const getModifiedUntilRrule = (internalRrule: VcalRruleProperty, startTzid: stri
             ...internalRrule.value,
             until: {
                 ...localUntil,
-                isUTC: true
-            }
-        }
+                isUTC: true,
+            },
+        },
     };
 };
 
@@ -155,7 +155,7 @@ const getOccurrenceSetup = (component: RequiredVcalVeventComponent) => {
     // Pretend the (local) date is in UTC time to keep the absolute times.
     const dtstart = internalValueToIcalValue(dtstartType, {
         ...internalDtstart.value,
-        isUTC: true
+        isUTC: true,
     }) as VcalDateOrDateTimeValue;
     // Since the local date is pretended in UTC time, the until has to be converted into a fake local UTC time too
     const safeRrule = getModifiedUntilRrule(internalRrule || DEFAULT_RRULE, getPropertyTzid(internalDtstart));
@@ -183,7 +183,7 @@ const getOccurrenceSetup = (component: RequiredVcalVeventComponent) => {
         isAllDay,
         eventDuration,
         modifiedRrule: safeRrule,
-        exdateMap: createExdateMap(internalExdate)
+        exdateMap: createExdateMap(internalExdate),
     };
 };
 
@@ -197,7 +197,7 @@ export const getOccurrences = ({
     component,
     maxStart = new Date(9999, 0, 1),
     maxCount = 1,
-    cache = {}
+    cache = {},
 }: GetOccurrences) => {
     if (maxCount <= 0) {
         return [];
@@ -227,7 +227,7 @@ export const getOccurrences = ({
         result.push({
             localStart,
             localEnd,
-            occurrenceNumber: iterator.occurrence_number
+            occurrenceNumber: iterator.occurrence_number,
         });
     }
     return result;
@@ -267,13 +267,13 @@ export const getOccurrencesBetween = (
                 originalDtstart,
                 originalDtend,
                 isAllDay,
-                exdateMap
+                exdateMap,
             });
 
             cache.iteration = {
                 iterator,
                 result,
-                interval
+                interval,
             };
         } catch (e) {
             console.error(e);

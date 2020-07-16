@@ -44,6 +44,6 @@ export const getClosestMatches = ({ locale = DEFAULT_LOCALE, browserLocale = DEF
         localeCode,
         languageCode,
         dateLocaleCode,
-        longDateLocaleCode
+        longDateLocaleCode,
     };
 };

@@ -6,11 +6,9 @@ import {
     getSignature,
     OpenPGPKey,
     reformatKey,
-    VERIFICATION_STATUS
+    VERIFICATION_STATUS,
 } from 'pmcrypto';
 import { c } from 'ttag';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore - pm-srp does not have typings, todo
 import { computeKeyPassword, generateKeySalt } from 'pm-srp';
 
 import { decryptMemberToken } from './memberToken';
@@ -20,7 +18,7 @@ export const generateKeySaltAndPassphrase = async (password: string): Promise<{ 
     const salt = generateKeySalt();
     return {
         salt,
-        passphrase: await computeKeyPassword(password, salt)
+        passphrase: await computeKeyPassword(password, salt),
     };
 };
 
@@ -36,7 +34,7 @@ export const getPrimaryKeyWithSalt = (Keys: Key[] = [], KeySalts: tsKeySalt[] = 
     // Not verifying that KeySalt exists because of old auth versions.
     return {
         PrivateKey,
-        KeySalt
+        KeySalt,
     };
 };
 
@@ -50,12 +48,12 @@ export const generateAddressKey = async ({
     email,
     name = email,
     passphrase,
-    encryptionConfig
+    encryptionConfig,
 }: GenerateAddressKeyArguments) => {
     const { key: privateKey, privateKeyArmored } = await generateKey({
         userIds: [{ name, email }],
         passphrase,
-        ...encryptionConfig
+        ...encryptionConfig,
     });
 
     await privateKey.decrypt(passphrase);
@@ -73,12 +71,12 @@ export const reformatAddressKey = async ({
     email,
     name = email,
     passphrase,
-    privateKey: originalKey
+    privateKey: originalKey,
 }: ReformatAddressKeyArguments) => {
     const { key: privateKey, privateKeyArmored } = await reformatKey({
         userIds: [{ name, email }],
         passphrase,
-        privateKey: originalKey
+        privateKey: originalKey,
     });
 
     await privateKey.decrypt(passphrase);
@@ -99,13 +97,13 @@ export const decryptAddressKeyToken = async ({
     Token,
     Signature,
     privateKeys,
-    publicKeys
+    publicKeys,
 }: DecryptAddressKeyTokenArguments) => {
     const { data: decryptedToken, verified } = await decryptMessage({
         message: await getMessage(Token),
         signature: await getSignature(Signature),
         privateKeys,
-        publicKeys
+        publicKeys,
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -143,7 +141,7 @@ export const getAddressKeyToken = ({
     Signature,
     organizationKey,
     privateKeys,
-    publicKeys
+    publicKeys,
 }: GetAddressKeyTokenArguments) => {
     // New address key format
     if (Signature) {
@@ -152,7 +150,7 @@ export const getAddressKeyToken = ({
             Signature,
             privateKeys,
             // Verify against the organization key in case an admin is signed in to a non-private member.
-            publicKeys: organizationKey ? [organizationKey.toPublic()] : publicKeys
+            publicKeys: organizationKey ? [organizationKey.toPublic()] : publicKeys,
         });
     }
     if (!organizationKey) {
@@ -165,7 +163,7 @@ export const getAddressKeyToken = ({
 export const decryptPrivateKeyWithSalt = async ({
     password,
     keySalt,
-    PrivateKey
+    PrivateKey,
 }: {
     password: string;
     keySalt?: string;

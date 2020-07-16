@@ -7,7 +7,7 @@ const format = (user) => {
         isPaid: isPaid(user),
         isAdmin: isAdmin(user),
         isMember: isMember(user),
-        canPay: canPay(user)
+        canPay: canPay(user),
     };
 };
 

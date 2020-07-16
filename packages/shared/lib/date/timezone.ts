@@ -8,7 +8,7 @@ export const toLocalDate = ({
     day = 0,
     hours = 0,
     minutes = 0,
-    seconds = 0
+    seconds = 0,
 }: Partial<DateTime>) => {
     return new Date(year, month - 1, day, hours, minutes, seconds);
 };
@@ -24,7 +24,7 @@ export const fromLocalDate = (date: Date) => {
         day: date.getDate(),
         hours: date.getHours(),
         minutes: date.getMinutes(),
-        seconds: date.getSeconds()
+        seconds: date.getSeconds(),
     };
 };
 
@@ -35,7 +35,7 @@ export const fromUTCDate = (date: Date) => {
         day: date.getUTCDate(),
         hours: date.getUTCHours(),
         minutes: date.getUTCMinutes(),
-        seconds: date.getUTCSeconds()
+        seconds: date.getUTCSeconds(),
     };
 };
 
@@ -134,7 +134,7 @@ export const getTimeZoneOptions = (date = new Date()) => {
                 return {
                     name,
                     offset,
-                    abbreviation
+                    abbreviation,
                 };
             })
             .sort(({ offset: offsetA, name: nameA }, { offset: offsetB, name: nameB }) => {
@@ -148,7 +148,7 @@ export const getTimeZoneOptions = (date = new Date()) => {
                 return {
                     text: `${name} (GMT${formatTimezoneOffset(offset)})`,
                     value: name,
-                    key: i
+                    key: i,
                 };
             })
     );
@@ -173,7 +173,7 @@ const findZoneTransitionIndex = ({
     untils,
     offsets,
     moveAmbiguousForward = true,
-    moveInvalidForward = true
+    moveInvalidForward = true,
 }: {
     unixTime: number;
     untils: number[];
@@ -220,7 +220,7 @@ export const convertZonedDateTimeToUTC = (dateTime: DateTime, tzid: string, opti
         ...options,
         unixTime,
         untils: timezone.untils,
-        offsets: timezone.offsets
+        offsets: timezone.offsets,
     });
     const offset = timezone.offsets[idx];
     const date = new Date(unixTime + offset * 60000);

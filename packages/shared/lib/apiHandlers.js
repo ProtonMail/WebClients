@@ -3,7 +3,7 @@ export const getError = (e) => {
 
     if (!data) {
         return {
-            status
+            status,
         };
     }
 
@@ -11,14 +11,14 @@ export const getError = (e) => {
 
     if (!errorMessage) {
         return {
-            status
+            status,
         };
     }
 
     return {
         status,
         code: errorCode,
-        message: errorMessage
+        message: errorMessage,
     };
 };
 

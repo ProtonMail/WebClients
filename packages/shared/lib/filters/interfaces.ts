@@ -1,6 +1,6 @@
 export enum FilterStatement {
     ALL = 'all',
-    ANY = 'any'
+    ANY = 'any',
 }
 
 export enum ConditionType {
@@ -8,7 +8,7 @@ export enum ConditionType {
     SUBJECT = 'subject',
     SENDER = 'sender',
     RECIPIENT = 'recipient',
-    ATTACHMENTS = 'attachments'
+    ATTACHMENTS = 'attachments',
 }
 
 export enum ConditionComparator {
@@ -21,7 +21,7 @@ export enum ConditionComparator {
     DOES_NOT_CONTAIN = '!contains',
     DOES_NOT_START = '!starts',
     DOES_NOT_END = '!ends',
-    DOES_NOT_MATCH = '!matches'
+    DOES_NOT_MATCH = '!matches',
 }
 
 /* Simple Modal Filter Model interfaces */
@@ -30,7 +30,7 @@ export enum Step {
     NAME,
     CONDITIONS,
     ACTIONS,
-    PREVIEW
+    PREVIEW,
 }
 
 export interface Errors {
@@ -80,7 +80,7 @@ export interface SimpleFilterModalModel {
 
 export enum StepSieve {
     NAME,
-    SIEVE
+    SIEVE,
 }
 
 export interface SieveIssue {

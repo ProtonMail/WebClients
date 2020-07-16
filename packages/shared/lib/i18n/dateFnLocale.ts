@@ -19,7 +19,7 @@ export const loadDateFnLocale = async ({ locale, longLocale, locales }: Config) 
      */
     return {
         ...appDateFnLocale,
-        formatLong: longDateFnLocale.formatLong
+        formatLong: longDateFnLocale.formatLong,
     };
 };
 
@@ -29,7 +29,7 @@ export const loadDateFnLocale = async ({ locale, longLocale, locales }: Config) 
  */
 export const loadDateFnTimeFormat = ({
     dateLocale,
-    displayAMPM = false
+    displayAMPM = false,
 }: {
     dateLocale: Locale;
     displayAMPM?: boolean;
@@ -43,7 +43,7 @@ export const loadDateFnTimeFormat = ({
         ...dateLocale,
         formatLong: {
             ...dateLocale.formatLong,
-            time: (displayAMPM ? enUSLocale : enGBLocale).formatLong?.time
-        }
+            time: (displayAMPM ? enUSLocale : enGBLocale).formatLong?.time,
+        },
     };
 };

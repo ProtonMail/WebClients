@@ -8,5 +8,5 @@ export const getMembersModel = (api) => {
 export const MembersModel = {
     key: 'Members',
     get: getMembersModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ Member }) => Member })
+    update: (model, events) => updateCollection({ model, events, item: ({ Member }) => Member }),
 };

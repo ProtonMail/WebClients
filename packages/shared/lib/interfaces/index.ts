@@ -3,6 +3,7 @@ export * from './Api';
 export * from './CachedKey';
 export * from './Domain';
 export * from './Key';
+export * from './EncryptionPreferences';
 export * from './KeyAction';
 export * from './KeySalt';
 export * from './MailSettings';

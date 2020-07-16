@@ -3,7 +3,7 @@ import { isManagedByMozilla } from './helpers';
 const format = (subscription = {}) => {
     return {
         ...subscription,
-        isManagedByMozilla: isManagedByMozilla(subscription)
+        isManagedByMozilla: isManagedByMozilla(subscription),
     };
 };
 

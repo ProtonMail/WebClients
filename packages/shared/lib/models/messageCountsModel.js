@@ -8,5 +8,5 @@ export const getMessageCountsModel = (api) => {
 export const MessageCountsModel = {
     key: 'MessageCounts',
     get: getMessageCountsModel,
-    update: updateCounter
+    update: updateCounter,
 };

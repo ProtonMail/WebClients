@@ -10,7 +10,7 @@ interface PaginationParams {
 export const queryCalendars = (params?: PaginationParams) => ({
     url: `${CALENDAR_V1}`,
     method: 'get',
-    params
+    params,
 });
 
 export type CalendarCreateData = Omit<Calendar, 'Flags' | 'ID'>;
@@ -20,7 +20,7 @@ export interface CalendarCreateArguments extends CalendarCreateData {
 export const createCalendar = (data: CalendarCreateArguments) => ({
     url: `${CALENDAR_V1}`,
     method: 'post',
-    data
+    data,
 });
 
 interface CalendarSetupData {
@@ -35,48 +35,48 @@ interface CalendarSetupData {
 export const setupCalendar = (calendarID: string, data: CalendarSetupData) => ({
     url: `${CALENDAR_V1}/${calendarID}/keys`,
     method: 'post',
-    data
+    data,
 });
 
 export const getCalendar = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}`,
-    method: 'get'
+    method: 'get',
 });
 
 export const getFullCalendar = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/bootstrap`,
-    method: 'get'
+    method: 'get',
 });
 
 export const getCalendarKeys = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/keys`,
-    method: 'get'
+    method: 'get',
 });
 
 export const getAllCalendarKeys = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/keys/all`,
-    method: 'get'
+    method: 'get',
 });
 
 export const getPassphrases = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/passphrases`,
-    method: 'get'
+    method: 'get',
 });
 
 export const getPassphrase = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/passphrase`,
-    method: 'get'
+    method: 'get',
 });
 
 export const reactivateCalendarKey = (calendarID: string, keyID: string, data: { PrivateKey: string }) => ({
     url: `${CALENDAR_V1}/${calendarID}/keys/${keyID}`,
     method: 'put',
-    data
+    data,
 });
 
 export const getCalendarGroupReset = () => ({
     url: `${CALENDAR_V1}/keys/reset`,
-    method: 'get'
+    method: 'get',
 });
 
 interface CalendarKeysResetData {
@@ -85,29 +85,29 @@ interface CalendarKeysResetData {
 export const resetCalendarGroup = (data: { CalendarKeys: CalendarKeysResetData }) => ({
     url: `${CALENDAR_V1}/keys/reset`,
     method: 'post',
-    data
+    data,
 });
 
 export const updateCalendar = (calendarID: string, data: Partial<CalendarCreateData>) => ({
     url: `${CALENDAR_V1}/${calendarID}`,
     method: 'put',
-    data
+    data,
 });
 
 export const removeCalendar = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}`,
-    method: 'delete'
+    method: 'delete',
 });
 
 export const queryMembers = (calendarID: string, params?: PaginationParams) => ({
     url: `${CALENDAR_V1}/${calendarID}/members`,
     method: 'get',
-    params
+    params,
 });
 
 export const getAllMembers = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/members/all`,
-    method: 'get'
+    method: 'get',
 });
 
 interface CalendarMemberData {
@@ -118,18 +118,18 @@ interface CalendarMemberData {
 export const addMember = (calendarID: string, data: { Members: CalendarMemberData[] }) => ({
     url: `${CALENDAR_V1}/${calendarID}`,
     method: 'post',
-    data
+    data,
 });
 
 export const updateMember = (calendarID: string, memberID: string, data: { Member: Partial<CalendarMemberData> }) => ({
     url: `${CALENDAR_V1}/${calendarID}/members/${memberID}`,
     method: 'put',
-    data
+    data,
 });
 
 export const removeMember = (calendarID: string, memberID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/members/${memberID}`,
-    method: 'delete'
+    method: 'delete',
 });
 
 export enum CalendarEventsQueryType {
@@ -148,12 +148,12 @@ interface CalendarEventsQuery extends PaginationParams {
 export const queryEvents = (calendarID: string, params: CalendarEventsQuery) => ({
     url: `${CALENDAR_V1}/${calendarID}/events`,
     method: 'get',
-    params
+    params,
 });
 
 export const getEvent = (calendarID: string, eventID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}`,
-    method: 'get'
+    method: 'get',
 });
 
 interface GetEventByUIDArguments extends PaginationParams {
@@ -162,7 +162,7 @@ interface GetEventByUIDArguments extends PaginationParams {
 export const getEventByUID = (params: GetEventByUIDArguments) => ({
     url: `${CALENDAR_V1}/events`,
     method: 'get',
-    params
+    params,
 });
 
 export interface CreateCalendarEventBlobData {
@@ -181,51 +181,51 @@ export interface CreateSingleCalendarEventData extends CreateCalendarEventData {
 export const createEvent = (calendarID: string, data: CreateSingleCalendarEventData) => ({
     url: `${CALENDAR_V1}/${calendarID}/events`,
     method: 'post',
-    data
+    data,
 });
 
 export const updateEvent = (calendarID: string, eventID: string, data: CreateSingleCalendarEventData) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}`,
     method: 'put',
-    data
+    data,
 });
 
 export const deleteEvent = (calendarID: string, eventID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}`,
-    method: 'delete'
+    method: 'delete',
 });
 
 export const getAttendees = (calendarID: string, eventID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}/attendees`,
-    method: 'get'
+    method: 'get',
 });
 
 export const acceptInvite = (uid: string, data: { Signature: string }) => ({
     url: `${CALENDAR_V1}/events/${uid}/accept`,
     method: 'put',
-    data
+    data,
 });
 
 export const getCalendarSettings = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/settings`,
-    method: 'get'
+    method: 'get',
 });
 
 export const updateCalendarSettings = (calendarID: string, data: Partial<CalendarSettings>) => ({
     url: `${CALENDAR_V1}/${calendarID}/settings`,
     method: 'put',
-    data
+    data,
 });
 
 export const getCalendarUserSettings = () => ({
     url: 'settings/calendar',
-    method: 'get'
+    method: 'get',
 });
 
 export const updateCalendarUserSettings = (data: Partial<CalendarUserSettings>) => ({
     url: 'settings/calendar',
     method: 'put',
-    data
+    data,
 });
 
 interface QueryCalendarAlarms {
@@ -236,12 +236,12 @@ interface QueryCalendarAlarms {
 export const queryCalendarAlarms = (calendarID: string, params: QueryCalendarAlarms) => ({
     url: `${CALENDAR_V1}/${calendarID}/alarms`,
     method: 'get',
-    params
+    params,
 });
 
 export const getCalendarAlarm = (calendarID: string, alarmID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/alarms/${alarmID}`,
-    method: 'get'
+    method: 'get',
 });
 
 export interface CreateCalendarEventSyncData {
@@ -273,5 +273,5 @@ interface SyncMultipleEventsData {
 export const syncMultipleEvents = (calendarID: string, data: SyncMultipleEventsData) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/sync`,
     method: 'put',
-    data
+    data,
 });

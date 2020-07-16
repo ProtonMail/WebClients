@@ -4,13 +4,13 @@ const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'tel:': LINK_TYPES.PHONE,
     'mailto:': LINK_TYPES.EMAIL,
     'http://': LINK_TYPES.WEB,
-    'https://': LINK_TYPES.WEB
+    'https://': LINK_TYPES.WEB,
 };
 
 const TYPE_TO_PREFIX = {
     [LINK_TYPES.PHONE]: { regex: /^tel:/, defaultPrefix: 'tel:' },
     [LINK_TYPES.EMAIL]: { regex: /^mailto:/, defaultPrefix: 'mailto:' },
-    [LINK_TYPES.WEB]: { regex: /^http(|s):\/\//, defaultPrefix: 'https://' }
+    [LINK_TYPES.WEB]: { regex: /^http(|s):\/\//, defaultPrefix: 'https://' },
 };
 
 // Create one big regexp of all the regexes in TYPE_TO_PREFIX.

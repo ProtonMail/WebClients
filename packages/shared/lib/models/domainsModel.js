@@ -7,7 +7,7 @@ export const updateDomainsModel = (api, Domains) => {
             const { Addresses = [] } = await api(queryDomainAddresses(domain.ID));
             return {
                 ...domain,
-                addresses: Addresses
+                addresses: Addresses,
             };
         })
     );
@@ -21,5 +21,5 @@ export const DomainsModel = {
     key: 'Domains',
     get: getDomainsModel,
     update: (model, events) => updateCollection({ model, events, item: ({ Domain }) => Domain }),
-    sync: updateDomainsModel
+    sync: updateDomainsModel,
 };

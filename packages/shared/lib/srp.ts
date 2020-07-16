@@ -34,14 +34,14 @@ const callAndValidate = async <T>({
     api,
     config: { data, ...restConfig },
     authData,
-    expectedServerProof
+    expectedServerProof,
 }: CallAndValidateArguments) => {
     const result = await api<T & { ServerProof: string }>({
         ...restConfig,
         data: {
             ...authData,
-            ...data
-        }
+            ...data,
+        },
     });
     const { ServerProof } = result;
 
@@ -69,13 +69,13 @@ export const srpAuth = async <T>({ api, credentials, config, info, version }: Sr
         ClientProof: clientProof,
         ClientEphemeral: clientEphemeral,
         TwoFactorCode: credentials.totp,
-        SRPSession: actualInfo.SRPSession
+        SRPSession: actualInfo.SRPSession,
     };
     return callAndValidate<T>({
         api,
         config,
         authData,
-        expectedServerProof
+        expectedServerProof,
     });
 };
 
@@ -89,10 +89,10 @@ export const srpGetVerify = async ({ api, credentials }: { api: Api; credentials
         ModulusID: data.ModulusID,
         Version: version,
         Salt: salt,
-        Verifier: verifier
+        Verifier: verifier,
     };
     return {
-        Auth: authData
+        Auth: authData,
     };
 };
 
@@ -102,7 +102,7 @@ export const srpGetVerify = async ({ api, credentials }: { api: Api; credentials
 export const srpVerify = async <T>({
     api,
     credentials,
-    config: { data, ...restConfig }
+    config: { data, ...restConfig },
 }: {
     api: Api;
     credentials: Credentials;
@@ -113,7 +113,7 @@ export const srpVerify = async <T>({
         ...restConfig,
         data: {
             ...data,
-            ...authData
-        }
+            ...authData,
+        },
     });
 };

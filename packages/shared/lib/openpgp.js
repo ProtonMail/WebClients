@@ -6,7 +6,7 @@ let promise;
 const dl = ({ filepath, integrity }) => {
     const options = {
         integrity,
-        credentials: 'include'
+        credentials: 'include',
     };
     return fetch(filepath, options).then((response) => response.text());
 };

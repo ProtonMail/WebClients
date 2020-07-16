@@ -10,5 +10,5 @@ export const handleMailSettingsEvents = updateObject;
 export const MailSettingsModel = {
     key: 'MailSettings',
     get: getMailSettingsModel,
-    update: updateObject
+    update: updateObject,
 };

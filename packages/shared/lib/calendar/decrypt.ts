@@ -7,7 +7,7 @@ import {
     OpenPGPKey,
     SessionKey,
     VERIFICATION_STATUS,
-    verifyMessage
+    verifyMessage,
 } from 'pmcrypto';
 
 import { deserializeUint8Array } from '../helpers/serialization';
@@ -27,7 +27,7 @@ export const verifySignedCard = async (
         message: await createCleartextMessage(dataToVerify),
         publicKeys,
         signature: await getSignature(signature),
-        detached: true
+        detached: true,
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -49,7 +49,7 @@ export const decryptCard = async (
         message: await getMessage(dataToDecrypt),
         publicKeys,
         signature: await getSignature(signature),
-        sessionKeys: sessionKey ? [sessionKey] : undefined
+        sessionKeys: sessionKey ? [sessionKey] : undefined,
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -68,7 +68,7 @@ export const decryptCard = async (
 export const decryptAndVerifyPart = (
     {
         [CALENDAR_CARD_TYPE.SIGNED]: signed,
-        [CALENDAR_CARD_TYPE.ENCRYPTED_AND_SIGNED]: encryptedAndSigned
+        [CALENDAR_CARD_TYPE.ENCRYPTED_AND_SIGNED]: encryptedAndSigned,
     }: CalendarEventDataMap,
     publicKeys: OpenPGPKey | OpenPGPKey[],
     sessionKey: SessionKey | undefined
@@ -81,6 +81,6 @@ export const decryptAndVerifyPart = (
                 encryptedAndSigned.Signature,
                 publicKeys,
                 sessionKey
-            )
+            ),
     ]);
 };

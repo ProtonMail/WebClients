@@ -18,7 +18,7 @@ export const SHARED_SIGNED_FIELDS = [
     'recurrence-id',
     'rrule',
     'exdate',
-    'sequence'
+    'sequence',
 ] as const;
 export const SHARED_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'created', 'description', 'summary', 'location'] as const;
 
@@ -43,8 +43,8 @@ const TAKEN_KEYS = [
         ...USER_SIGNED_FIELDS,
         ...USER_ENCRYPTED_FIELDS,
         ...ATTENDEES_ENCRYPTED_FIELDS,
-        ...ATTENDEES_SIGNED_FIELDS
-    ])
+        ...ATTENDEES_SIGNED_FIELDS,
+    ]),
 ] as const;
 
 export const withUid = (properties: VcalVeventComponent): VcalVeventComponent => {
@@ -53,7 +53,7 @@ export const withUid = (properties: VcalVeventComponent): VcalVeventComponent =>
     }
     return {
         ...properties,
-        uid: { value: generateUID() }
+        uid: { value: generateUID() },
     };
 };
 
@@ -63,7 +63,7 @@ export const withDtstamp = (properties: VcalVeventComponent): VcalVeventComponen
     }
     return {
         ...properties,
-        dtstamp: dateTimeToProperty(fromUTCDate(new Date()), true)
+        dtstamp: dateTimeToProperty(fromUTCDate(new Date()), true),
     };
 };
 
@@ -74,21 +74,21 @@ export const withRequiredProperties = (properties: VcalVeventComponent): VcalVev
 export const getSharedPart = (properties: VcalVeventComponent) => {
     return {
         [SIGNED]: pick(properties, SHARED_SIGNED_FIELDS),
-        [ENCRYPTED_AND_SIGNED]: pick(properties, SHARED_ENCRYPTED_FIELDS)
+        [ENCRYPTED_AND_SIGNED]: pick(properties, SHARED_ENCRYPTED_FIELDS),
     };
 };
 
 export const getCalendarPart = (properties: VcalVeventComponent) => {
     return {
         [SIGNED]: pick(properties, CALENDAR_SIGNED_FIELDS),
-        [ENCRYPTED_AND_SIGNED]: pick(properties, CALENDAR_ENCRYPTED_FIELDS)
+        [ENCRYPTED_AND_SIGNED]: pick(properties, CALENDAR_ENCRYPTED_FIELDS),
     };
 };
 
 export const getUserPart = (veventProperties: VcalVeventComponent) => {
     return {
         [SIGNED]: pick(veventProperties, USER_SIGNED_FIELDS),
-        [ENCRYPTED_AND_SIGNED]: pick(veventProperties, USER_ENCRYPTED_FIELDS)
+        [ENCRYPTED_AND_SIGNED]: pick(veventProperties, USER_ENCRYPTED_FIELDS),
     };
 };
 
@@ -108,18 +108,18 @@ export const getAttendeesPart = (veventProperties: VcalVeventComponent) => {
     if (!formattedAttendees) {
         return {
             [ENCRYPTED_AND_SIGNED]: {},
-            [CLEAR]: []
+            [CLEAR]: [],
         };
     }
 
     const result: Pick<VcalVeventComponent, 'uid' | 'attendee'> = {
         uid: veventProperties.uid,
-        attendee: formattedAttendees.attendee
+        attendee: formattedAttendees.attendee,
     };
 
     return {
         [ENCRYPTED_AND_SIGNED]: result,
-        [CLEAR]: formattedAttendees[CLEAR]
+        [CLEAR]: formattedAttendees[CLEAR],
     };
 };
 
@@ -128,7 +128,7 @@ const toResult = (veventProperties: Partial<VcalVeventComponent>, veventComponen
         serialize({
             ...veventProperties,
             component: 'vevent',
-            components: veventComponents
+            components: veventComponents,
         })
     );
 };
@@ -162,24 +162,24 @@ export const getVeventParts = ({ components, ...properties }: VcalVeventComponen
             // Store all the rest of the properties in the shared encrypted part
             [ENCRYPTED_AND_SIGNED]: toResult({
                 ...sharedPart[ENCRYPTED_AND_SIGNED],
-                ...restProperties
-            })
+                ...restProperties,
+            }),
         },
         calendarPart: {
             [SIGNED]: toResultOptimized(calendarPart[SIGNED]),
-            [ENCRYPTED_AND_SIGNED]: toResultOptimized(calendarPart[ENCRYPTED_AND_SIGNED])
+            [ENCRYPTED_AND_SIGNED]: toResultOptimized(calendarPart[ENCRYPTED_AND_SIGNED]),
         },
         personalPart: {
             // Assume all sub-components are valarm that go in the personal part
             [SIGNED]: toResultOptimized(personalPart[SIGNED], components),
             // Nothing to encrypt for now
-            [ENCRYPTED_AND_SIGNED]: undefined
+            [ENCRYPTED_AND_SIGNED]: undefined,
         },
         attendeesPart: {
             // Nothing to sign for now
             [SIGNED]: undefined,
             [ENCRYPTED_AND_SIGNED]: toResultOptimized(attendeesPart[ENCRYPTED_AND_SIGNED]),
-            [CLEAR]: attendeesPart[CLEAR]
-        }
+            [CLEAR]: attendeesPart[CLEAR],
+        },
     };
 };

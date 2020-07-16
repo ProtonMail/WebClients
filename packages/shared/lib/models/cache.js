@@ -5,5 +5,5 @@ const REJECTED = 3;
 export const STATUS = {
     PENDING,
     RESOLVED,
-    REJECTED
+    REJECTED,
 };

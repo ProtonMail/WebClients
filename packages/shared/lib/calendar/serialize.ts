@@ -37,7 +37,7 @@ export const formatData = ({
     calendarSessionKey,
     personalSignedPart,
     attendeesEncryptedPart,
-    attendeesClearPart
+    attendeesClearPart,
 }: FormatDataArguments) => {
     return {
         SharedKeyPacket: sharedSessionKey ? serializeUint8Array(sharedSessionKey) : undefined,
@@ -46,13 +46,13 @@ export const formatData = ({
             {
                 Type: SIGNED,
                 Data: sharedSignedPart.data,
-                Signature: getArmoredSignatureString(sharedSignedPart.signature)
+                Signature: getArmoredSignatureString(sharedSignedPart.signature),
             },
             {
                 Type: ENCRYPTED_AND_SIGNED,
                 Data: serializeUint8Array(sharedEncryptedPart.dataPacket),
-                Signature: getArmoredSignatureString(sharedEncryptedPart.signature)
-            }
+                Signature: getArmoredSignatureString(sharedEncryptedPart.signature),
+            },
         ],
         CalendarKeyPacket:
             calendarEncryptedPart && calendarSessionKey ? serializeUint8Array(calendarSessionKey) : undefined,
@@ -63,13 +63,13 @@ export const formatData = ({
                       calendarSignedPart && {
                           Type: SIGNED,
                           Data: calendarSignedPart.data,
-                          Signature: getArmoredSignatureString(calendarSignedPart.signature)
+                          Signature: getArmoredSignatureString(calendarSignedPart.signature),
                       },
                       calendarEncryptedPart && {
                           Type: ENCRYPTED_AND_SIGNED,
                           Data: serializeUint8Array(calendarEncryptedPart.dataPacket),
-                          Signature: getArmoredSignatureString(calendarEncryptedPart.signature)
-                      }
+                          Signature: getArmoredSignatureString(calendarEncryptedPart.signature),
+                      },
                   ].filter(isTruthy)
                 : undefined,
         // Personal part is optional
@@ -77,19 +77,19 @@ export const formatData = ({
             ? {
                   Type: SIGNED,
                   Data: personalSignedPart.data,
-                  Signature: getArmoredSignatureString(personalSignedPart.signature)
+                  Signature: getArmoredSignatureString(personalSignedPart.signature),
               }
             : undefined,
         AttendeesEventContent: attendeesEncryptedPart
             ? {
                   Type: ENCRYPTED_AND_SIGNED,
                   Data: serializeUint8Array(attendeesEncryptedPart.dataPacket),
-                  Signature: getArmoredSignatureString(attendeesEncryptedPart.signature)
+                  Signature: getArmoredSignatureString(attendeesEncryptedPart.signature),
               }
             : undefined,
         Attendees: attendeesClearPart
             ? attendeesClearPart.map(({ token, permissions }) => ({ Token: token, Permissions: permissions }))
-            : undefined
+            : undefined,
     };
 };
 
@@ -122,7 +122,7 @@ export const createCalendarEvent = async ({
     signingKey,
     sharedSessionKey: oldSharedSessionKey,
     calendarSessionKey: oldCalendarSessionKey,
-    isSwitchCalendar = false
+    isSwitchCalendar = false,
 }: CreateCalendarEventArguments) => {
     const { sharedPart, calendarPart, personalPart, attendeesPart } = getParts(eventComponent);
 
@@ -131,7 +131,7 @@ export const createCalendarEvent = async ({
 
     const [calendarSessionKey, sharedSessionKey] = await Promise.all([
         shouldCreateCalendarKey ? oldCalendarSessionKey || createSessionKey(publicKey) : undefined,
-        oldSharedSessionKey || createSessionKey(publicKey)
+        oldSharedSessionKey || createSessionKey(publicKey),
     ]);
 
     const [
@@ -142,7 +142,7 @@ export const createCalendarEvent = async ({
         calendarSignedPart,
         calendarEncryptedPart,
         personalSignedPart,
-        attendeesEncryptedPart
+        attendeesEncryptedPart,
     ] = await Promise.all([
         // If there was no old calendar session key, and we created one, encrypt it to be sent to the API.
         !oldCalendarSessionKey && calendarSessionKey
@@ -155,7 +155,7 @@ export const createCalendarEvent = async ({
         signPart(calendarPart[SIGNED], signingKey),
         calendarSessionKey && encryptPart(calendarPart[ENCRYPTED_AND_SIGNED], signingKey, calendarSessionKey),
         signPart(personalPart[SIGNED], signingKey),
-        encryptPart(attendeesPart[ENCRYPTED_AND_SIGNED], signingKey, sharedSessionKey)
+        encryptPart(attendeesPart[ENCRYPTED_AND_SIGNED], signingKey, sharedSessionKey),
     ]);
 
     return formatData({
@@ -167,6 +167,6 @@ export const createCalendarEvent = async ({
         calendarSessionKey: encryptedCalendarSessionKey,
         personalSignedPart,
         attendeesEncryptedPart,
-        attendeesClearPart: attendeesPart[CLEAR]
+        attendeesClearPart: attendeesPart[CLEAR],
     });
 };

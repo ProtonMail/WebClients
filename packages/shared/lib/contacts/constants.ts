@@ -7,18 +7,18 @@ export enum CRYPTO_PROCESSING_TYPES {
     SIGNATURE_NOT_VERIFIED,
     FAIL_TO_READ,
     FAIL_TO_LOAD,
-    FAIL_TO_DECRYPT
+    FAIL_TO_DECRYPT,
 }
 
 export enum OVERWRITE {
     // when UID conflict at contact import
     THROW_ERROR_IF_CONFLICT = 0,
-    OVERWRITE_CONTACT = 1
+    OVERWRITE_CONTACT = 1,
 }
 
 export enum CATEGORIES {
     IGNORE = 0,
-    INCLUDE = 1
+    INCLUDE = 1,
 }
 
 export const OTHER_INFORMATION_FIELDS = [
@@ -35,12 +35,12 @@ export const OTHER_INFORMATION_FIELDS = [
     'org',
     'member',
     'note',
-    'url'
+    'url',
 ];
 
 export enum PGP_SCHEME_TEXT {
     INLINE = 'PGP/Inline',
-    MIME = 'PGP/MIME'
+    MIME = 'PGP/MIME',
 }
 
 export enum ADDRESS_COMPONENTS {
@@ -50,7 +50,7 @@ export enum ADDRESS_COMPONENTS {
     LOCALITY,
     REGION,
     POSTAL_CODE,
-    COUNTRY
+    COUNTRY,
 }
 
 export const CONTACT_IMG_SIZE = 180;

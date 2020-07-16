@@ -1,65 +1,65 @@
 export const queryMembers = () => ({
     method: 'get',
-    url: 'members'
+    url: 'members',
 });
 
 export const getMember = (memberID) => ({
     method: 'get',
-    url: `members/${memberID}`
+    url: `members/${memberID}`,
 });
 
 export const queryAddresses = (memberID) => ({
     method: 'get',
-    url: `members/${memberID}/addresses`
+    url: `members/${memberID}/addresses`,
 });
 
 export const createMember = (data) => ({
     method: 'post',
     url: 'members',
-    data
+    data,
 });
 
 export const createMemberAddress = (memberID, data) => ({
     method: 'post',
     url: `members/${memberID}/addresses`,
-    data
+    data,
 });
 
 export const updateName = (memberID, Name) => ({
     method: 'put',
     url: `members/${memberID}/name`,
-    data: { Name }
+    data: { Name },
 });
 
 export const updateQuota = (memberID, MaxSpace) => ({
     method: 'put',
     url: `members/${memberID}/quota`,
-    data: { MaxSpace }
+    data: { MaxSpace },
 });
 
 export const updateRole = (memberID, Role) => ({
     method: 'put',
     url: `members/${memberID}/role`,
-    data: { Role }
+    data: { Role },
 });
 
 export const updateVPN = (memberID, MaxVPN) => ({
     method: 'put',
     url: `members/${memberID}/vpn`,
-    data: { MaxVPN }
+    data: { MaxVPN },
 });
 
 export const removeMember = (memberID) => ({
     method: 'delete',
-    url: `members/${memberID}`
+    url: `members/${memberID}`,
 });
 
 export const privatizeMember = (memberID) => ({
     method: 'put',
-    url: `members/${memberID}/privatize`
+    url: `members/${memberID}/privatize`,
 });
 
 export const authMember = (memberID) => ({
     method: 'post',
-    url: `members/${memberID}/auth`
+    url: `members/${memberID}/auth`,
 });

@@ -43,7 +43,7 @@ export const PROPERTIES: { [key: string]: { cardinality: string } } = {
     key: { cardinality: ONE_OR_MORE_MAY_BE_PRESENT },
     fburl: { cardinality: ONE_OR_MORE_MAY_BE_PRESENT },
     caladruri: { cardinality: ONE_OR_MORE_MAY_BE_PRESENT },
-    caluri: { cardinality: ONE_OR_MORE_MAY_BE_PRESENT }
+    caluri: { cardinality: ONE_OR_MORE_MAY_BE_PRESENT },
 };
 
 export const isCustomField = (field = '') => field.startsWith('x-');
@@ -103,8 +103,12 @@ export const toICAL = (properties: ContactProperties = []) => {
         const fieldWithGroup = [group, field].filter(isTruthy).join('.');
         const property = new ICAL.Property(fieldWithGroup);
         property.setValue(value);
-        type && property.setParameter('type', type);
-        pref && property.setParameter('pref', '' + pref);
+        if (type) {
+            property.setParameter('type', type);
+        }
+        if (pref) {
+            property.setParameter('pref', `${pref}`);
+        }
         component.addProperty(property);
         return component;
     }, comp);
@@ -158,5 +162,5 @@ export const readVcf = async (file: File): Promise<string> => {
 export const extractVcards = (vcf = ''): string[] => {
     const vcards = vcf.split('END:VCARD');
     vcards.pop();
-    return vcards.map((vcard) => vcard.trim() + '\r\nEND:VCARD');
+    return vcards.map((vcard) => `${vcard.trim()}\r\nEND:VCARD`);
 };

@@ -8,5 +8,5 @@ export const getUserSettingsModel = (api) => {
 export const UserSettingsModel = {
     key: 'UserSettings',
     get: getUserSettingsModel,
-    update: updateObject
+    update: updateObject,
 };

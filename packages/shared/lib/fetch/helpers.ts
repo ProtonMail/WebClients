@@ -61,13 +61,13 @@ export const serializeData = (data: any, input: string) => {
         return {
             body: JSON.stringify(data),
             headers: {
-                'Content-Type': 'application/json'
-            }
+                'Content-Type': 'application/json',
+            },
         };
     }
     if (input === 'form') {
         return {
-            body: serializeFormData(data)
+            body: serializeFormData(data),
         };
     }
     return {};

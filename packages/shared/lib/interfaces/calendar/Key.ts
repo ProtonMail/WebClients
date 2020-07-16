@@ -1,4 +1,8 @@
-import { KeyFlags } from '../../keys/calendarKeys';
+export enum KeyFlags {
+    INACTIVE = 0,
+    ACTIVE = 1,
+    PRIMARY = 2,
+}
 
 export interface Key {
     ID: string;

@@ -37,7 +37,7 @@ const createCache = <K, V>(map = new Map<K, V>()): Cache<K, V> => {
             return this;
         },
         subscribe: listeners.subscribe,
-        clearListeners: listeners.clear
+        clearListeners: listeners.clear,
     };
 };
 

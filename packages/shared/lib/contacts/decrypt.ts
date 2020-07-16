@@ -4,7 +4,7 @@ import {
     getSignature,
     verifyMessage,
     createCleartextMessage,
-    VERIFICATION_STATUS
+    VERIFICATION_STATUS,
 } from 'pmcrypto';
 import { c } from 'ttag';
 import { KeysPair } from '../interfaces';
@@ -70,14 +70,14 @@ export const readSigned = async (
         const { verified } = await verifyMessage({
             message: createCleartextMessage(Data),
             publicKeys,
-            signature
+            signature,
         });
 
         if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
             return {
                 data: Data,
                 type: SIGNATURE_NOT_VERIFIED,
-                error: new Error(c('Error').t`Contact signature not verified`)
+                error: new Error(c('Error').t`Contact signature not verified`),
             };
         }
         return { type: SUCCESS, data: Data };
@@ -96,12 +96,10 @@ export const decryptSigned = async (
         }
         const [message, signature] = await Promise.all([getMessage(Data), getSignature(Signature)]);
         const { data, verified } = await decryptMessage({
-            // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-            // @ts-ignore
             message,
             privateKeys,
             publicKeys,
-            signature
+            signature,
         });
 
         if (data && typeof data !== 'string') {
@@ -124,7 +122,7 @@ const ACTIONS: { [index: number]: any } = {
     [ENCRYPTED_AND_SIGNED]: decryptSigned,
     [SIGNED]: readSigned,
     [ENCRYPTED]: decrypt,
-    [CLEAR_TEXT]: clearText
+    [CLEAR_TEXT]: clearText,
 };
 
 export const prepareContact = async (

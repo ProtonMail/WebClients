@@ -15,7 +15,7 @@ export const escape = (string: string) => {
         '<': '&lt;',
         '>': '&gt;',
         '"': '&quot;',
-        "'": '&#39;'
+        "'": '&#39;',
     };
 
     return string.replace(UNESCAPE_HTML_REGEX, HTML_ESCAPES as any);
@@ -28,7 +28,7 @@ export const unescape = (string: string) => {
         '&lt;': '<',
         '&gt;': '>',
         '&quot;': '"',
-        '&#39;': "'"
+        '&#39;': "'",
     };
 
     return string.replace(ESCAPED_HTML_REGEX, HTML_UNESCAPES as any);

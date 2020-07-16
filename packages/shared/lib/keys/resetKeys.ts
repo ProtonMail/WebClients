@@ -12,14 +12,14 @@ const getResetKeys = (Keys: Key[], { canReceive, fingerprint }: { canReceive: bo
             // Special case for reset where it trusts the fingerprint received from the server.
             Fingerprint,
             Primary: 0,
-            Flags: clearBit(Flags, ENCRYPTED)
+            Flags: clearBit(Flags, ENCRYPTED),
         };
     });
 
     const newPrimary = {
         Fingerprint: fingerprint,
         Primary: 1,
-        Flags: Keys.length && !canReceive ? SIGNED : ENCRYPTED_AND_SIGNED
+        Flags: Keys.length && !canReceive ? SIGNED : ENCRYPTED_AND_SIGNED,
     };
 
     return [newPrimary, ...oldKeys];
@@ -31,7 +31,7 @@ const getResetKeys = (Keys: Key[], { canReceive, fingerprint }: { canReceive: bo
 export const getResetAddressesKeys = async ({
     addresses = [],
     passphrase = '',
-    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG]
+    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
 }: {
     addresses: Address[];
     passphrase: string;
@@ -48,7 +48,7 @@ export const getResetAddressesKeys = async ({
             const data = JSON.stringify(
                 getResetKeys(Keys, {
                     canReceive: !!Receive,
-                    fingerprint: privateKey.getFingerprint()
+                    fingerprint: privateKey.getFingerprint(),
                 })
             );
             return {
@@ -56,8 +56,8 @@ export const getResetAddressesKeys = async ({
                 PrivateKey: privateKeyArmored,
                 SignedKeyList: {
                     Data: data,
-                    Signature: await getSignature(data, privateKey)
-                }
+                    Signature: await getSignature(data, privateKey),
+                },
             };
         })
     );

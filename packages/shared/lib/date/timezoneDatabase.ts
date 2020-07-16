@@ -48,7 +48,7 @@ export const unsupportedTimezoneLinks: { [key: string]: string } = {
     MST: 'Europe/Paris',
     MST7MDT: 'America/Denver',
     PST8PDT: 'America/Los_Angeles',
-    WET: 'Europe/Lisbon'
+    WET: 'Europe/Lisbon',
 };
 
 export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
@@ -511,5 +511,5 @@ export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
     'yakutsk standard time': 'Asia/Yakutsk',
     yekaterinburg: 'Asia/Yekaterinburg',
     yerevan: 'Asia/Yerevan',
-    yukon: 'America/Yakutat'
+    yukon: 'America/Yakutat',
 };

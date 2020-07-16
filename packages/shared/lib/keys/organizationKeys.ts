@@ -1,6 +1,4 @@
 import { encryptMessage, encryptPrivateKey, generateKey, OpenPGPKey } from 'pmcrypto';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore - pm-srp does not have typings, todo
 import { computeKeyPassword, generateKeySalt } from 'pm-srp';
 
 import { generateAddressKey } from './keys';
@@ -9,7 +7,7 @@ import { Member, EncryptionConfig, Address } from '../interfaces';
 
 export const getBackupKeyData = async ({
     backupPassword,
-    organizationKey
+    organizationKey,
 }: {
     backupPassword: string;
     organizationKey: OpenPGPKey;
@@ -20,7 +18,7 @@ export const getBackupKeyData = async ({
 
     return {
         backupKeySalt,
-        backupArmoredPrivateKey
+        backupArmoredPrivateKey,
     };
 };
 
@@ -32,12 +30,12 @@ interface GenerateOrganizationKeysArguments {
 export const generateOrganizationKeys = async ({
     keyPassword,
     backupPassword,
-    encryptionConfig
+    encryptionConfig,
 }: GenerateOrganizationKeysArguments) => {
     const { key: privateKey, privateKeyArmored } = await generateKey({
         userIds: [{ name: 'not_for_email_use@domain.tld', email: 'not_for_email_use@domain.tld' }],
         passphrase: keyPassword,
-        ...encryptionConfig
+        ...encryptionConfig,
     });
 
     await privateKey.decrypt(keyPassword);
@@ -45,7 +43,7 @@ export const generateOrganizationKeys = async ({
     return {
         privateKey,
         privateKeyArmored,
-        ...(await getBackupKeyData({ backupPassword, organizationKey: privateKey }))
+        ...(await getBackupKeyData({ backupPassword, organizationKey: privateKey })),
     };
 };
 
@@ -59,7 +57,7 @@ export const reEncryptOrganizationTokens = ({
     nonPrivateMembers = [],
     nonPrivateMembersAddresses = [],
     oldOrganizationKey,
-    newOrganizationKey
+    newOrganizationKey,
 }: ReEncryptOrganizationTokens) => {
     const newOrganizationPublicKey = newOrganizationKey.toPublic();
 
@@ -76,7 +74,7 @@ export const reEncryptOrganizationTokens = ({
             const { data } = await encryptMessage({
                 data: decryptedToken,
                 privateKeys: newOrganizationKey,
-                publicKeys: newOrganizationPublicKey
+                publicKeys: newOrganizationPublicKey,
             });
 
             return { ID, Token: data };
@@ -104,7 +102,7 @@ export const generateMemberAddressKey = async ({
     email,
     primaryKey,
     organizationKey,
-    encryptionConfig
+    encryptionConfig,
 }: GenerateMemberAddressKeyArguments) => {
     const memberKeyToken = generateMemberToken();
     const orgKeyToken = generateMemberToken();
@@ -112,14 +110,14 @@ export const generateMemberAddressKey = async ({
     const { privateKey, privateKeyArmored } = await generateAddressKey({
         email,
         passphrase: memberKeyToken,
-        encryptionConfig
+        encryptionConfig,
     });
 
     const privateKeyArmoredOrganization = await encryptPrivateKey(privateKey, orgKeyToken);
 
     const [activationToken, organizationToken] = await Promise.all([
         encryptMemberToken(memberKeyToken, primaryKey),
-        encryptMemberToken(orgKeyToken, organizationKey)
+        encryptMemberToken(orgKeyToken, organizationKey),
     ]);
 
     return {
@@ -127,6 +125,6 @@ export const generateMemberAddressKey = async ({
         privateKeyArmored,
         activationToken,
         privateKeyArmoredOrganization,
-        organizationToken
+        organizationToken,
     };
 };

@@ -5,7 +5,7 @@ import { noop } from './function';
 export enum Status {
     DENIED = 'denied',
     DEFAULT = 'default',
-    GRANTED = 'granted'
+    GRANTED = 'granted',
 }
 
 export const getStatus = (): Status => {

@@ -15,7 +15,7 @@ export const loadModels = async (models = [], { api, cache, useCache = true }) =
     models.forEach((model, i) => {
         cache.set(model.key, {
             value: result[i],
-            status: STATUS.RESOLVED
+            status: STATUS.RESOLVED,
         });
     });
 

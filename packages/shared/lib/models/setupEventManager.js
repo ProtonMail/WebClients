@@ -31,14 +31,14 @@ const resolveModel = (cache, api, model, eventValue) => {
             cache.set(key, {
                 status: STATUS.RESOLVED,
                 value: sync ? await sync(api, updatedValue) : updatedValue,
-                dependencies: oldDependencies
+                dependencies: oldDependencies,
             });
         })
         .catch((e) => {
             cache.set(key, {
                 status: STATUS.REJECTED,
                 value: e,
-                dependencies: oldDependencies
+                dependencies: oldDependencies,
             });
         });
 };
@@ -54,7 +54,7 @@ export const setupEventManager = ({ models, cache, eventID, api }) => {
     const modelsMap = models.reduce((acc, model) => {
         return {
             ...acc,
-            [model.key]: model
+            [model.key]: model,
         };
     }, {});
 
@@ -90,6 +90,6 @@ export const setupEventManager = ({ models, cache, eventID, api }) => {
         api,
         eventID,
         onSuccess,
-        onError
+        onError,
     });
 };

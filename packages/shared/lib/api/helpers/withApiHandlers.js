@@ -35,7 +35,7 @@ export const CancelVerificationError = () => {
  */
 const retryHandler = (e) => {
     const {
-        response: { headers }
+        response: { headers },
     } = e;
 
     const retryAfterSeconds = parseInt(headers.get('retry-after') || 0, 10);
@@ -170,7 +170,7 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                     }
 
                     const {
-                        Details: { HumanVerificationToken: captchaToken, HumanVerificationMethods: methods = [] } = {}
+                        Details: { HumanVerificationToken: captchaToken, HumanVerificationMethods: methods = [] } = {},
                     } = e.data || {};
 
                     const onVerify = (token, tokenType) => {
@@ -180,8 +180,8 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                             headers: {
                                 ...options.headers,
                                 'x-pm-human-verification-token': token,
-                                'x-pm-human-verification-token-type': tokenType
-                            }
+                                'x-pm-human-verification-token-type': tokenType,
+                            },
                         }).catch(onError);
                     };
 

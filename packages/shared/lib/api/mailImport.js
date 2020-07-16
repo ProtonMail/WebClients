@@ -1,74 +1,74 @@
 // Manage imports of user emails from external providers
 export const queryMailImport = () => ({
     url: 'mail/import',
-    method: 'get'
+    method: 'get',
 });
 
 export const queryMailImportCurrent = () => ({
     url: 'mail/import/current',
-    method: 'get'
+    method: 'get',
 });
 
 export const queryMailImportReport = () => ({
     url: 'mail/import/report',
-    method: 'get'
+    method: 'get',
 });
 
 export const getMailImport = (importID) => ({
     url: `mail/import/${importID}`,
-    method: 'get'
+    method: 'get',
 });
 
 export const getMailImportFolders = (importID) => ({
     url: `mail/import/${importID}/folders`,
-    method: 'get'
+    method: 'get',
 });
 
 export const getAuthenticationMethod = (params) => ({
     url: 'mail/import/authinfo',
     method: 'get',
-    params
+    params,
 });
 
 export const downloadMailImportReport = (reportID) => ({
     url: `mail/import/report/${reportID}/download`,
-    method: 'get'
+    method: 'get',
 });
 
 export const deleteMailImportReport = (reportID) => ({
     url: `mail/import/report/${reportID}`,
-    method: 'delete'
+    method: 'delete',
 });
 
 export const createMailImport = (data) => ({
     url: 'mail/import',
     method: 'post',
-    data
+    data,
 });
 
 export const updateMailImport = (importID, data) => ({
     url: `mail/import/${importID}`,
     method: 'put',
-    data
+    data,
 });
 
 export const resumeMailImport = (importID) => ({
     url: `mail/import/${importID}/resume`,
-    method: 'put'
+    method: 'put',
 });
 
 export const cancelMailImport = (importID) => ({
     url: `mail/import/${importID}/cancel`,
-    method: 'put'
+    method: 'put',
 });
 
 export const createJobImport = (importID, data) => ({
     url: `mail/import/${importID}`,
     method: 'post',
-    data
+    data,
 });
 
 export const deleteMailImport = (importID) => ({
     url: `mail/import/${importID}`,
-    method: 'delete'
+    method: 'delete',
 });

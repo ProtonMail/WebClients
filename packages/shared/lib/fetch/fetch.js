@@ -12,7 +12,7 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
         credentials: 'include',
         redirect: 'follow',
         signal: abortController.signal,
-        ...rest
+        ...rest,
     };
 
     const url = createUrl(urlString, params);
@@ -55,8 +55,8 @@ export default ({ data, headers, input = 'json', ...config }) => {
         ...config,
         headers: {
             ...headers,
-            ...dataHeaders
+            ...dataHeaders,
         },
-        body
+        body,
     });
 };

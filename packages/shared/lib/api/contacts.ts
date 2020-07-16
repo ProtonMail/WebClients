@@ -1,7 +1,7 @@
 export const queryContacts = ({
     Page = 0,
     PageSize = 1000,
-    LabelID
+    LabelID,
 }: {
     Page?: number;
     PageSize?: number;
@@ -9,13 +9,13 @@ export const queryContacts = ({
 } = {}) => ({
     url: 'contacts',
     method: 'get',
-    params: { Page, PageSize, LabelID }
+    params: { Page, PageSize, LabelID },
 });
 
 export const queryContactExport = ({
     Page = 0,
     PageSize = 50,
-    LabelID
+    LabelID,
 }: {
     Page?: number;
     PageSize?: number;
@@ -23,12 +23,12 @@ export const queryContactExport = ({
 } = {}) => ({
     url: 'contacts/export',
     method: 'get',
-    params: { Page, PageSize, LabelID }
+    params: { Page, PageSize, LabelID },
 });
 
 export const getContact = (contactID: string) => ({
     url: `contacts/${contactID}`,
-    method: 'get'
+    method: 'get',
 });
 
 interface Card {
@@ -41,7 +41,7 @@ export const addContacts = ({
     Contacts,
     Overwrite,
     Labels,
-    timeout
+    timeout,
 }: {
     Contacts: {
         Cards: Card[];
@@ -53,66 +53,69 @@ export const addContacts = ({
     url: 'contacts',
     method: 'post',
     data: { Contacts, Overwrite, Labels },
-    timeout
+    timeout,
 });
 
 export const updateContact = (contactID: string, { Cards }: { Cards: Card[] }) => ({
     url: `contacts/${contactID}`,
     method: 'put',
-    data: { Cards }
+    data: { Cards },
 });
 
 export const labelContacts = ({ LabelID, ContactIDs }: { LabelID: string; ContactIDs: string[] }) => ({
     url: 'contacts/label',
     method: 'put',
-    data: { LabelID, ContactIDs }
+    data: { LabelID, ContactIDs },
 });
 
 export const unLabelContacts = ({ LabelID, ContactIDs }: { LabelID: string; ContactIDs: string[] }) => ({
     url: 'contacts/unlabel',
     method: 'put',
-    data: { LabelID, ContactIDs }
+    data: { LabelID, ContactIDs },
 });
 
 export const deleteContacts = (IDs: string[]) => ({
     url: 'contacts/delete',
     method: 'put',
-    data: { IDs }
+    data: { IDs },
 });
 
 export const clearContacts = () => ({
     url: 'contacts',
-    method: 'delete'
+    method: 'delete',
 });
 
 export const queryContactEmails = ({
     Page,
     PageSize,
     Email,
-    LabelID
+    LabelID,
 }: {
     Page?: number;
     PageSize?: number;
-} & ({
-    Email?: string;
-    LabelID?: never;
-} | {
-    Email?: never;
-    LabelID?: string;
-}) = {}) => ({
+} & (
+    | {
+          Email?: string;
+          LabelID?: never;
+      }
+    | {
+          Email?: never;
+          LabelID?: string;
+      }
+) = {}) => ({
     url: 'contacts/emails',
     method: 'get',
-    params: { Page, PageSize, Email, LabelID }
+    params: { Page, PageSize, Email, LabelID },
 });
 
 export const labelContactEmails = ({ LabelID, ContactEmailIDs }: { LabelID: string; ContactEmailIDs: string[] }) => ({
     url: 'contacts/emails/label',
     method: 'put',
-    data: { LabelID, ContactEmailIDs }
+    data: { LabelID, ContactEmailIDs },
 });
 
 export const unLabelContactEmails = ({ LabelID, ContactEmailIDs }: { LabelID: string; ContactEmailIDs: string[] }) => ({
     url: 'contacts/emails/unlabel',
     method: 'put',
-    data: { LabelID, ContactEmailIDs }
+    data: { LabelID, ContactEmailIDs },
 });

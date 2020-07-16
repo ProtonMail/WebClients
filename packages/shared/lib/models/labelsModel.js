@@ -7,7 +7,7 @@ export const getLabelsModel = async (api) => {
     const [labels = [], folders = [], contactGroups = []] = await Promise.all([
         api(getLabels()).then(extractLabels),
         api(getFolders()).then(extractLabels),
-        api(getContactGroup()).then(extractLabels)
+        api(getContactGroup()).then(extractLabels),
     ]);
     return [...labels, ...folders, ...contactGroups];
 };
@@ -15,5 +15,5 @@ export const getLabelsModel = async (api) => {
 export const LabelsModel = {
     key: 'Labels',
     get: getLabelsModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ Label }) => Label, merge: (a, b) => b })
+    update: (model, events) => updateCollection({ model, events, item: ({ Label }) => Label, merge: (a, b) => b }),
 };

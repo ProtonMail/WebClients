@@ -3,12 +3,12 @@ import { AddressKey, SignedKeyList } from '../interfaces';
 export const getPublicKeys = (params: { Email: string; Fingerprint?: string }) => ({
     url: 'keys',
     method: 'get',
-    params
+    params,
 });
 
 export const getKeySalts = () => ({
     url: 'keys/salts',
-    method: 'get'
+    method: 'get',
 });
 
 export const createAddressKeyRoute = (data: {
@@ -19,13 +19,13 @@ export const createAddressKeyRoute = (data: {
 }) => ({
     url: 'keys',
     method: 'post',
-    data
+    data,
 });
 
 export const setupKeys = (data: { PrimaryKey: string; KeySalt: string; AddressKeys: AddressKey[] }) => ({
     url: 'keys/setup',
     method: 'post',
-    data
+    data,
 });
 
 /**
@@ -36,7 +36,7 @@ export const setupKeys = (data: { PrimaryKey: string; KeySalt: string; AddressKe
 export const reactivateKeyRoute = ({
     ID,
     PrivateKey,
-    SignedKeyList
+    SignedKeyList,
 }: {
     ID: string;
     PrivateKey: string;
@@ -46,22 +46,22 @@ export const reactivateKeyRoute = ({
     method: 'put',
     data: {
         PrivateKey,
-        SignedKeyList
-    }
+        SignedKeyList,
+    },
 });
 
 export const setKeyPrimaryRoute = ({ ID, SignedKeyList }: { ID: string; SignedKeyList: SignedKeyList }) => ({
     url: `keys/${ID}/primary`,
     method: 'put',
     data: {
-        SignedKeyList
-    }
+        SignedKeyList,
+    },
 });
 
 export const setKeyFlagsRoute = ({
     ID,
     Flags,
-    SignedKeyList
+    SignedKeyList,
 }: {
     ID: string;
     Flags: number;
@@ -71,16 +71,16 @@ export const setKeyFlagsRoute = ({
     method: 'put',
     data: {
         Flags,
-        SignedKeyList
-    }
+        SignedKeyList,
+    },
 });
 
 export const removeKeyRoute = ({ ID, SignedKeyList }: { ID: string; SignedKeyList: SignedKeyList }) => ({
     url: `keys/${ID}/delete`,
     method: 'put',
     data: {
-        SignedKeyList
-    }
+        SignedKeyList,
+    },
 });
 
 export const updatePrivateKeyRoute = (data: {
@@ -90,7 +90,7 @@ export const updatePrivateKeyRoute = (data: {
 }) => ({
     url: 'keys/private',
     method: 'put',
-    data
+    data,
 });
 
 export const resetKeysRoute = (data: {
@@ -102,5 +102,5 @@ export const resetKeysRoute = (data: {
 }) => ({
     url: 'keys/reset',
     method: 'post',
-    data
+    data,
 });

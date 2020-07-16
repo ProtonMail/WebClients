@@ -19,7 +19,7 @@ function prepareConditions({ Simple = {} } = {}) {
         value: value ? '' : value,
         Type: find(TYPES, Type.value),
         Values: value ? Values.concat(value) : Values,
-        Comparator: find(COMPARATORS, Comparator.value)
+        Comparator: find(COMPARATORS, Comparator.value),
     }));
 
     if (!conditions.length) {
@@ -27,7 +27,7 @@ function prepareConditions({ Simple = {} } = {}) {
             value: '',
             Values: [],
             Type: TYPES[0],
-            Comparator: COMPARATORS[0]
+            Comparator: COMPARATORS[0],
         });
     }
 
@@ -44,7 +44,7 @@ function prepareActions({ Simple = {} } = {}, labels = []) {
         }),
         FileInto,
         Vacation,
-        Mark
+        Mark,
     };
 
     return Actions;
@@ -59,7 +59,7 @@ function main(model = {}, mode) {
         ID: prepareID(model),
         Name: prepareName(model),
         Status: prepareStatus(model),
-        Version: prepareVersion(model)
+        Version: prepareVersion(model),
     };
 
     if (mode === 'simple') {
@@ -68,15 +68,15 @@ function main(model = {}, mode) {
             Simple: {
                 Operator: prepareOperator(model),
                 Conditions: prepareConditions(model),
-                Actions: prepareActions(model)
-            }
+                Actions: prepareActions(model),
+            },
         };
     }
 
     if (mode === 'complex') {
         return {
             ...config,
-            Sieve: prepareSieveTemplate(model, config)
+            Sieve: prepareSieveTemplate(model, config),
         };
     }
 
@@ -88,8 +88,9 @@ export function newFilter(filter, mode = 'simple') {
         const simple = computeFromTree(filter);
         if (!simple) {
             delete filter.Simple;
+        } else {
+            filter.Simple = simple;
         }
-        simple && (filter.Simple = simple);
         return filter;
     }
 

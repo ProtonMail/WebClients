@@ -5,7 +5,7 @@ import {
     FilterActions,
     SimpleFilterModalModel,
     Filter,
-    AdvancedSimpleFilterModalModel
+    AdvancedSimpleFilterModalModel,
 } from './interfaces';
 import { toMap } from '../helpers/object';
 import { computeTree, computeFromTree } from './sieve';
@@ -22,7 +22,7 @@ const convertConditions = ({ conditions }: SimpleFilterModalModel): FilterCondit
     return conditions.map((cond) => ({
         Comparator: comparatorsMap[cond.comparator],
         Type: typesMap[cond.type],
-        Values: cond.values || []
+        Values: cond.values || [],
     }));
 };
 
@@ -31,7 +31,7 @@ const convertActions = ({ actions }: SimpleFilterModalModel): FilterActions => {
         labelAs: { labels },
         moveTo: { folder },
         markAs,
-        autoReply
+        autoReply,
     } = actions;
 
     return {
@@ -39,9 +39,9 @@ const convertActions = ({ actions }: SimpleFilterModalModel): FilterActions => {
         // Labels: [...labels],
         Mark: {
             Read: markAs.read,
-            Starred: markAs.starred
+            Starred: markAs.starred,
         },
-        Vacation: autoReply || null
+        Vacation: autoReply || null,
     };
 };
 
@@ -53,7 +53,7 @@ export const convertModel = (
         ID: modalModel.id || '',
         Name: modalModel.name || '',
         Status: modalModel.status || 1,
-        Version: modalModel.version || FILTER_VERSION
+        Version: modalModel.version || FILTER_VERSION,
     };
 
     if (isSieve) {
@@ -61,7 +61,7 @@ export const convertModel = (
 
         return {
             ...config,
-            Sieve: model.sieve || ''
+            Sieve: model.sieve || '',
         };
     }
 
@@ -70,13 +70,13 @@ export const convertModel = (
         Simple: {
             Operator: convertOperator(modalModel as SimpleFilterModalModel),
             Conditions: convertConditions(modalModel as SimpleFilterModalModel),
-            Actions: convertActions(modalModel as SimpleFilterModalModel)
-        }
+            Actions: convertActions(modalModel as SimpleFilterModalModel),
+        },
     };
 
     return {
         ...newModel,
-        Tree: computeTree(newModel)
+        Tree: computeTree(newModel),
     };
 };
 

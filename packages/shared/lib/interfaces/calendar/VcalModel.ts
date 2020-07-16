@@ -5,7 +5,7 @@ export enum VcalDays {
     WE,
     TH,
     FR,
-    SA
+    SA,
 }
 
 export type VcalDaysKeys = keyof typeof VcalDays;

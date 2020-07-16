@@ -188,7 +188,7 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
                 plansMap[PLUS].ID,
                 plansMap[PROFESSIONAL].ID,
                 plansMap[VISIONARY].ID,
-                plansMap[MEMBER].ID
+                plansMap[MEMBER].ID,
             ]),
             [plansMap[DOMAIN].ID]:
                 transferDomains(PROFESSIONAL, PLUS) ||
@@ -197,7 +197,7 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
             [plansMap[ADDRESS].ID]:
                 getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[ADDRESS]) || 0,
             [plansMap[SPACE].ID]: getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[SPACE]) || 0,
-            [planID]: 1
+            [planID]: 1,
         };
     }
 
@@ -208,7 +208,7 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
                 plansMap[PROFESSIONAL].ID,
                 plansMap[VISIONARY].ID,
                 plansMap[ADDRESS].ID,
-                plansMap[SPACE].ID
+                plansMap[SPACE].ID,
             ]),
             [plansMap[MEMBER].ID]:
                 Math.max(
@@ -220,14 +220,14 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
                 transferDomains(PLUS, PROFESSIONAL) ||
                 getAddonQuantity(selectedPlan, UsedDomains, 'MaxDomains', plansMap[DOMAIN]) ||
                 0,
-            [planID]: 1
+            [planID]: 1,
         };
     }
 
     if (plansMap[VPNBASIC].ID === planID) {
         return {
             ...omit(planIDs, [plansMap[VPNBASIC].ID, plansMap[VPNPLUS].ID, plansMap[VISIONARY].ID, plansMap[VPN].ID]),
-            [planID]: 1
+            [planID]: 1,
         };
     }
 
@@ -237,7 +237,7 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
             [plansMap[VPN].ID]: planIDs[plansMap[PROFESSIONAL].ID]
                 ? getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[VPN])
                 : 0,
-            [planID]: 1
+            [planID]: 1,
         };
     }
 

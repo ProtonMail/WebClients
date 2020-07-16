@@ -12,7 +12,7 @@ const getIcalDateValue = (value, tzid, isDate) => {
         hour: value.hours || 0,
         minute: value.minutes || 0,
         second: value.seconds || 0,
-        isDate
+        isDate,
     };
     return ICAL.Time.fromData(icalData, icalTimezone);
 };
@@ -22,7 +22,7 @@ const getIcalPeriodValue = (value, tzid) => {
         // periods must be of date-time
         start: value.start ? getIcalDateValue(value.start, tzid, false) : undefined,
         end: value.end ? getIcalDateValue(value.end, tzid, false) : undefined,
-        duration: value.duration ? ICAL.Duration.fromData(value.duration) : undefined
+        duration: value.duration ? ICAL.Duration.fromData(value.duration) : undefined,
     });
 };
 
@@ -67,7 +67,7 @@ const getInternalDateValue = (value) => {
     return {
         year: value.year,
         month: value.month,
-        day: value.day
+        day: value.day,
     };
 };
 
@@ -77,7 +77,7 @@ export const getInternalDateTimeValue = (value) => {
         hours: value.hour,
         minutes: value.minute,
         seconds: value.second,
-        isUTC: value.zone.tzid === 'UTC'
+        isUTC: value.zone.tzid === 'UTC',
     };
 };
 
@@ -88,7 +88,7 @@ const getInternalDurationValue = (value) => {
         hours: value.hours,
         minutes: value.minutes,
         seconds: value.seconds,
-        isNegative: value.isNegative
+        isNegative: value.isNegative,
     };
 };
 
@@ -104,7 +104,7 @@ const getInternalRecur = (value) => {
         return;
     }
     const result = {
-        ...value.toJSON()
+        ...value.toJSON(),
     };
     const until = getInternalUntil(value.until);
     if (until) {
@@ -238,7 +238,7 @@ const getParameters = (type, property) => {
     const isDefaultType = type === property.getDefaultType();
 
     const result = {
-        ...parameters
+        ...parameters,
     };
 
     if (!isDefaultType) {
@@ -269,7 +269,7 @@ const fromIcalProperties = (properties = []) => {
         const parameters = getParameters(type, property);
         const propertyAsObject = {
             value: property.isMultiValue ? values : values[0],
-            ...(Object.keys(parameters).length && { parameters })
+            ...(Object.keys(parameters).length && { parameters }),
         };
 
         if (PROPERTIES[name] === UNIQUE) {
@@ -303,7 +303,7 @@ export const fromIcalComponent = (component) => {
     return {
         component: component.name,
         ...(components.length && { components }),
-        ...fromIcalProperties(component ? component.getAllProperties() : undefined)
+        ...fromIcalProperties(component ? component.getAllProperties() : undefined),
     };
 };
 
@@ -318,7 +318,7 @@ export const fromIcalComponentWithErrors = (component) => {
     return {
         component: component.name,
         ...(components.length && { components }),
-        ...fromIcalProperties(component ? component.getAllProperties() : undefined)
+        ...fromIcalProperties(component ? component.getAllProperties() : undefined),
     };
 };
 
@@ -373,7 +373,7 @@ const durationToMilliseconds = ({
     hours = 0,
     minutes = 0,
     seconds = 0,
-    milliseconds = 0
+    milliseconds = 0,
 }) => {
     const lapse = weeks * WEEK + days * DAY + hours * HOUR + minutes * MINUTE + seconds * SECOND + milliseconds;
     return isNegative ? -lapse : lapse;

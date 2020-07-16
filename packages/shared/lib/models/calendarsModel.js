@@ -9,7 +9,7 @@ export const getCalendars = (api) => {
         api(
             queryCalendars({
                 Page,
-                PageSize: pageSize
+                PageSize: pageSize,
             })
         );
 
@@ -17,7 +17,7 @@ export const getCalendars = (api) => {
         requestPage,
         pageSize,
         pagesPerChunk: 10,
-        delayPerChunk: 100
+        delayPerChunk: 100,
     }).then((pages) => {
         return pages.map(({ Calendars }) => Calendars).flat();
     });
@@ -26,5 +26,5 @@ export const getCalendars = (api) => {
 export const CalendarsModel = {
     key: 'Calendars',
     get: getCalendars,
-    update: (model, events) => updateCollection({ model, events, item: ({ Calendar }) => Calendar })
+    update: (model, events) => updateCollection({ model, events, item: ({ Calendar }) => Calendar }),
 };

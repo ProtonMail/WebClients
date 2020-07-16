@@ -1,77 +1,17 @@
 {
-    "parserOptions": {
-        "ecmaVersion": 2020,
-        "sourceType": "module",
-        "allowImportExportEverywhere": true
-    },
-    "settings": {
-        "import/resolver": {
-            "node": {
-                "extensions": [".js", ".ts", ".tsx"]
-            }
-        }
-    },
+    "extends": ["proton-lint"],
     "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint"],
     "env": {
-        "browser": true,
-        "node": true,
         "jasmine": true
     },
-    "globals": {
-        "document": "readonly",
-        "window": "readonly",
-        "expectAsync": "readonly"
+    "parserOptions": {
+        "project": "./tsconfig.json"
     },
-    "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"],
     "rules": {
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/indent": "off",
-        "arrow-parens": ["error", "always"],
-        "indent": "off",
-        "comma-dangle": ["error", "never"],
-        "consistent-return": "off",
-        "object-curly-newline": "off",
-        "prefer-template": "off",
-        "no-plusplus": "off",
-        "no-continue": "off",
-        "no-bitwise": "off",
-        "no-await-in-loop": "off",
-        "arrow-body-style": "off",
-        "space-before-function-paren": "off",
-        "no-sequences": "warn",
-        "no-param-reassign": "warn",
-        "no-return-assign": "warn",
-        "no-shadow": "off",
-        "no-unused-expressions": ["error", { "allowShortCircuit": true }],
-        "operator-linebreak": "off",
-        "implicit-arrow-linebreak": "off",
-        "import/no-unresolved": ["error", { "ignore": [".svg", ".scss"] }],
-        "import/named": "error",
-        "import/namespace": "error",
-        "import/default": "error",
-        "import/export": "error",
-        "import/prefer-default-export": "off",
-        "import/no-extraneous-dependencies": "off",
-        "max-len": [
+        "import/no-unresolved": [
             "error",
             {
-                "ignoreComments": true,
-                "code": 120,
-                "ignoreStrings": true,
-                "ignoreTemplateLiterals": true,
-                "ignoreRegExpLiterals": true
-            }
-        ],
-        "import/extensions": [
-            "error",
-            "ignorePackages",
-            {
-                "js": "never",
-                "jsx": "never",
-                "ts": "never",
-                "tsx": "never"
+                "ignore": ["design-system"]
             }
         ]
     }

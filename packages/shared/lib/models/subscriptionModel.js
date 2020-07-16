@@ -9,5 +9,5 @@ export const getSubscriptionModel = (api) => {
 export const SubscriptionModel = {
     key: 'Subscription',
     get: getSubscriptionModel,
-    update: (model, events) => formatSubscription(updateObject(model, events))
+    update: (model, events) => formatSubscription(updateObject(model, events)),
 };

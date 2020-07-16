@@ -6,7 +6,7 @@ export default async (keys: CachedKey[] = []): Promise<CachedKey[]> => {
         keys.map(async (keyObject) => {
             const {
                 Key: { PrivateKey },
-                privateKey
+                privateKey,
             } = keyObject;
             if (privateKey) {
                 return keyObject;
@@ -17,7 +17,7 @@ export default async (keys: CachedKey[] = []): Promise<CachedKey[]> => {
             return {
                 ...keyObject,
                 privateKey: key,
-                publicKey
+                publicKey,
             };
         })
     );

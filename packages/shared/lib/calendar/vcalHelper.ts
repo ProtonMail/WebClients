@@ -8,7 +8,7 @@ import {
     VcalVfreebusyComponent,
     VcalVjournalComponent,
     VcalVtimezoneComponent,
-    VcalVtodoComponent
+    VcalVtodoComponent,
 } from '../interfaces/calendar/VcalModel';
 
 export const getIsPropertyAllDay = (property: VcalDateOrDateTimeProperty): property is VcalDateProperty => {

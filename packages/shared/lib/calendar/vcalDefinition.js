@@ -33,5 +33,5 @@ export const PROPERTIES = {
     'x-wr-timezone': UNIQUE,
     version: UNIQUE,
     calscale: UNIQUE,
-    method: UNIQUE
+    method: UNIQUE,
 };

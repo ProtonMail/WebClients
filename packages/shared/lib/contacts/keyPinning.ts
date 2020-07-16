@@ -29,7 +29,7 @@ export const pinKeyUpdateContact = async ({
     isInternal,
     bePinnedPublicKey,
     publicKeys,
-    privateKeys
+    privateKeys,
 }: ParamsUpdate): Promise<ContactCard[]> => {
     // get the signed card of the contact that contains the key properties. Throw if there are errors
     const [signedCard, ...otherCards] = contactCards.reduce<ContactCard[]>((acc, card) => {
@@ -42,7 +42,10 @@ export const pinKeyUpdateContact = async ({
     }, []);
     const readSignedCard = await readSigned(signedCard, { publicKeys });
     if (readSignedCard.type !== CRYPTO_PROCESSING_TYPES.SUCCESS) {
-        throw readSignedCard.error;
+        if (readSignedCard.error) {
+            throw readSignedCard.error;
+        }
+        throw new Error('Unknown error');
     }
     const signedVcard = readSignedCard.data;
 
@@ -67,7 +70,7 @@ export const pinKeyUpdateContact = async ({
     const shiftedPrefKeyProperties = keyProperties.map((property) => ({ ...property, pref: property.pref + 1 }));
     const newKeyProperties = [
         toKeyProperty({ publicKey: bePinnedPublicKey, group: emailGroup, index: 0 }),
-        ...shiftedPrefKeyProperties
+        ...shiftedPrefKeyProperties,
     ];
     const untouchedSignedProperties = signedProperties.filter(
         ({ field, group }) => field !== 'key' || group !== emailGroup
@@ -80,7 +83,7 @@ export const pinKeyUpdateContact = async ({
     const newSignedCard = {
         Type: CONTACT_CARD_TYPE.SIGNED,
         Data: toSignVcard,
-        Signature: signature
+        Signature: signature,
     };
     return [newSignedCard, ...otherCards];
 };
@@ -101,7 +104,7 @@ export const pinKeyCreateContact = async ({
     name,
     isInternal,
     bePinnedPublicKey,
-    privateKeys
+    privateKeys,
 }: ParamsCreate): Promise<ContactCard[]> => {
     const properties: ContactProperty[] = [
         { field: 'fn', value: name || emailAddress },
@@ -109,7 +112,7 @@ export const pinKeyCreateContact = async ({
         { field: 'email', value: emailAddress, group: 'item1' },
         !isInternal && { field: 'x-pm-encrypt', value: 'true', group: 'item1' },
         !isInternal && { field: 'x-pm-sign', value: 'true', group: 'item1' },
-        toKeyProperty({ publicKey: bePinnedPublicKey, group: 'item1', index: 0 })
+        toKeyProperty({ publicKey: bePinnedPublicKey, group: 'item1', index: 0 }),
     ].filter(isTruthy);
     // sign the properties
     const toSignVcard = toICAL(properties).toString();
@@ -117,7 +120,7 @@ export const pinKeyCreateContact = async ({
     const newSignedCard = {
         Type: CONTACT_CARD_TYPE.SIGNED,
         Data: toSignVcard,
-        Signature: signature
+        Signature: signature,
     };
     return [newSignedCard];
 };

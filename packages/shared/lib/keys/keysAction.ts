@@ -28,7 +28,7 @@ export const addKeyAction = ({ keys, ID: newKeyID, fingerprint, flags }: AddKeyA
         ID: newKeyID,
         primary: isNewPrimary,
         flags,
-        fingerprint
+        fingerprint,
     };
 
     if (isNewPrimary) {
@@ -55,7 +55,7 @@ export const reactivateKeyAction = ({ keys, ID: targetID, fingerprint, flags }: 
         if (keyContainer === oldKey) {
             return {
                 ...oldKey,
-                flags
+                flags,
             };
         }
         return keyContainer;
@@ -73,7 +73,7 @@ export const setPrimaryKeyAction = ({ keys, ID }: { keys: KeyAction[]; ID: strin
         .map((key) => {
             return {
                 ...key,
-                primary: key.ID === ID ? 1 : 0
+                primary: key.ID === ID ? 1 : 0,
             };
         })
         .sort((a, b) => b.primary - a.primary);
@@ -85,7 +85,7 @@ export const setFlagsKeyAction = ({ keys, ID, flags }: { keys: KeyAction[]; ID: 
         if (key === oldKey) {
             return {
                 ...key,
-                flags
+                flags,
             };
         }
         return key;

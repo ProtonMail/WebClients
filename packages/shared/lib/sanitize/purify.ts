@@ -8,7 +8,7 @@ const { LIST_PROTON_ATTR, MAP_PROTON_ATTR } = [
     'srcset',
     'background',
     'poster',
-    'xlink:href'
+    'xlink:href',
 ].reduce(
     (acc, attr) => {
         acc.LIST_PROTON_ATTR.push(`proton-${attr}`);
@@ -17,7 +17,7 @@ const { LIST_PROTON_ATTR, MAP_PROTON_ATTR } = [
     },
     {
         LIST_PROTON_ATTR: [] as string[],
-        MAP_PROTON_ATTR: Object.create(null)
+        MAP_PROTON_ATTR: Object.create(null),
     }
 );
 
@@ -27,7 +27,7 @@ const CONFIG: { [key: string]: any } = {
         ADD_TAGS: ['proton-src', 'base', 'proton-svg'],
         ADD_ATTR: ['target', 'proton-src'],
         FORBID_TAGS: ['style', 'input', 'form'],
-        FORBID_ATTR: ['srcset']
+        FORBID_ATTR: ['srcset'],
     },
     // When we display a message we need to be global and return more informations
     raw: { WHOLE_DOCUMENT: true, RETURN_DOM: true },
@@ -36,14 +36,14 @@ const CONFIG: { [key: string]: any } = {
         FORBID_ATTR: {},
         ADD_ATTR: ['target'].concat(LIST_PROTON_ATTR),
         WHOLE_DOCUMENT: true,
-        RETURN_DOM: true
+        RETURN_DOM: true,
     },
     content: {
         ALLOW_UNKNOWN_PROTOCOLS: true,
         WHOLE_DOCUMENT: false,
         RETURN_DOM: true,
-        RETURN_DOM_FRAGMENT: true
-    }
+        RETURN_DOM_FRAGMENT: true,
+    },
 };
 
 const beforeSanitizeElements = (node: Element) => {
@@ -55,7 +55,7 @@ const beforeSanitizeElements = (node: Element) => {
     Array.from(node.attributes).forEach((type) => {
         const item = type.name;
         if (MAP_PROTON_ATTR[item]) {
-            node.setAttribute('proton-' + item, node.getAttribute(item) || '');
+            node.setAttribute(`proton-${item}`, node.getAttribute(item) || '');
             node.removeAttribute(item);
         }
 
@@ -87,7 +87,7 @@ const clean = (mode: string) => {
         purifyHTMLHooks(false); // Always remove the hooks
         if (mode === 'str') {
             // When trusted types is available, DOMPurify returns a trustedHTML object and not a string, force cast it.
-            return value + '';
+            return `${value}`;
         }
         return value;
     };
@@ -121,4 +121,7 @@ export const content = clean('content') as (input: string) => Node;
 /**
  * Default config we don't want any custom behaviour
  */
-export const input = (str: string) => DOMPurify.sanitize(str, {}) + '';
+export const input = (str: string) => {
+    const result = DOMPurify.sanitize(str, {});
+    return `${result}`;
+};

@@ -6,7 +6,7 @@ import {
     generateSessionKey,
     encryptSessionKey,
     SessionKey,
-    OpenPGPKey
+    OpenPGPKey,
 } from 'pmcrypto';
 
 import { EncryptPartResult, SignPartResult } from './interface';
@@ -25,11 +25,11 @@ export async function signPart(
         data: dataToSign,
         privateKeys: [signingKey],
         armor: false,
-        detached: true
+        detached: true,
     });
     return {
         data: dataToSign,
-        signature
+        signature,
     };
 }
 
@@ -57,12 +57,12 @@ export async function encryptPart(
         privateKeys: [signingKey],
         sessionKey,
         armor: false,
-        detached: true
+        detached: true,
     });
     const { encrypted } = await splitMessage(message);
     return {
         dataPacket: encrypted[0],
-        signature
+        signature,
     };
 }
 
@@ -77,6 +77,6 @@ export const createSessionKey = async (publicKey: OpenPGPKey) => {
     const sessionKey = await generateSessionKey(algorithm);
     return {
         data: sessionKey,
-        algorithm
+        algorithm,
     };
 };

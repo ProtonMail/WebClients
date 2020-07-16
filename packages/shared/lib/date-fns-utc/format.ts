@@ -1,7 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
 import longFormatters from 'date-fns/_lib/format/longFormatters';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
 import formatters from 'date-fns/_lib/format/formatters/index';
 import defaultLocale from 'date-fns/locale/en-US';
@@ -116,9 +114,7 @@ const formatUTC = (utcDate: Date, formatString: string, options: Options = {}) =
             }
 
             if (firstCharacter.match(unescapedLatinCharacterRegExp)) {
-                throw new Error(
-                    'Format string contains an unescaped latin alphabet character `' + firstCharacter + '`'
-                );
+                throw new Error(`Format string contains an unescaped latin alphabet character \`${firstCharacter}\``);
             }
 
             return substring;

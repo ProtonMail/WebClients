@@ -12,7 +12,7 @@ function sort(list = [], sortByKey) {
 const defaultMerge = (oldModel, newModel) => {
     return {
         ...oldModel,
-        ...newModel
+        ...newModel,
     };
 };
 
@@ -69,7 +69,7 @@ const updateCollection = ({ model = [], events = [], item, merge = defaultMerge 
             MAP: copy.reduce((acc, element, index) => {
                 acc[element.ID] = index;
                 return acc;
-            }, Object.create(null))
+            }, Object.create(null)),
         }
     );
 

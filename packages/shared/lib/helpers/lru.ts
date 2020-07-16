@@ -32,7 +32,9 @@ function createLRU<K, V>({ max, onDispose }: Args<K, V>): Map<K, V> {
                 const keyToDispose = getOldestKey();
                 const valueToDispose = map.get(keyToDispose);
                 map.delete(keyToDispose);
-                onDispose && onDispose([keyToDispose, valueToDispose]);
+                if (onDispose) {
+                    onDispose([keyToDispose, valueToDispose]);
+                }
             }
             map.set(key, value);
             return map;
@@ -45,7 +47,7 @@ function createLRU<K, V>({ max, onDispose }: Args<K, V>): Map<K, V> {
             map.delete(key);
             map.set(key, item);
             return item;
-        }
+        },
     };
 }
 

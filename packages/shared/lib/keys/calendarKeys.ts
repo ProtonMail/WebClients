@@ -8,7 +8,7 @@ import {
     generateKey,
     VERIFICATION_STATUS,
     decryptPrivateKey,
-    OpenPGPKey
+    OpenPGPKey,
 } from 'pmcrypto';
 import getRandomValues from 'get-random-values';
 import { c } from 'ttag';
@@ -18,12 +18,6 @@ import { normalize } from '../helpers/string';
 import { serializeUint8Array } from '../helpers/serialization';
 import { Address, EncryptionConfig } from '../interfaces';
 import { Key as tsKey, Member } from '../interfaces/calendar';
-
-export enum KeyFlags {
-    INACTIVE = 0,
-    ACTIVE = 1,
-    PRIMARY = 2
-}
 
 export const generatePassphrase = () => {
     const value = getRandomValues(new Uint8Array(32));
@@ -35,7 +29,7 @@ export const generatePassphrase = () => {
  */
 export const generateCalendarKey = async ({
     passphrase,
-    encryptionConfig
+    encryptionConfig,
 }: {
     passphrase: string;
     encryptionConfig: EncryptionConfig;
@@ -43,7 +37,7 @@ export const generateCalendarKey = async ({
     const { key: privateKey, privateKeyArmored } = await generateKey({
         userIds: [{ name: 'Calendar key' }],
         passphrase,
-        ...encryptionConfig
+        ...encryptionConfig,
     });
 
     await privateKey.decrypt(passphrase);
@@ -54,7 +48,7 @@ export const generateCalendarKey = async ({
 export const encryptPassphrase = async ({
     passphrase,
     privateKey,
-    memberPublicKeys
+    memberPublicKeys,
 }: {
     passphrase: string;
     privateKey: OpenPGPKey;
@@ -65,7 +59,7 @@ export const encryptPassphrase = async ({
         message: await createMessage(passphrase),
         publicKeys: memberPublicKeysList.map(([, publicKey]) => publicKey),
         privateKeys: [privateKey],
-        detached: true
+        detached: true,
     });
     const message = await getMessage(data);
     const { asymmetric, encrypted } = await splitMessage(message);
@@ -76,7 +70,7 @@ export const encryptPassphrase = async ({
             return acc;
         }, Object.create(null)),
         dataPacket: serializeUint8Array(encrypted[0]),
-        signature
+        signature,
     };
 };
 
@@ -87,7 +81,7 @@ export const decryptPassphrase = async ({
     armoredPassphrase,
     armoredSignature,
     privateKeys,
-    publicKeys
+    publicKeys,
 }: {
     armoredPassphrase: string;
     armoredSignature: string;
@@ -98,7 +92,7 @@ export const decryptPassphrase = async ({
         message: await getMessage(armoredPassphrase),
         signature: await getSignature(armoredSignature),
         privateKeys,
-        publicKeys
+        publicKeys,
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -138,12 +132,12 @@ export const decryptCalendarKeys = async (
             return {
                 Key,
                 privateKey,
-                publicKey: privateKey.toPublic()
+                publicKey: privateKey.toPublic(),
             };
         } catch (e) {
             return {
                 Key,
-                error: e
+                error: e,
             };
         }
     };
@@ -167,7 +161,7 @@ export const getKeysMemberMap = <T>(Members: Member[] = [], emailMap: { [key: st
 export const generateCalendarKeyPayload = async ({
     addressID,
     privateKey,
-    memberPublicKeys
+    memberPublicKeys,
 }: {
     addressID: string;
     privateKey: OpenPGPKey;
@@ -177,10 +171,10 @@ export const generateCalendarKeyPayload = async ({
     const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519];
     const [
         { privateKeyArmored: PrivateKey },
-        { dataPacket: DataPacket, keyPackets: KeyPackets, signature: Signature }
+        { dataPacket: DataPacket, keyPackets: KeyPackets, signature: Signature },
     ] = await Promise.all([
         generateCalendarKey({ passphrase, encryptionConfig }),
-        encryptPassphrase({ passphrase, privateKey, memberPublicKeys })
+        encryptPassphrase({ passphrase, privateKey, memberPublicKeys }),
     ]);
 
     return {
@@ -189,7 +183,7 @@ export const generateCalendarKeyPayload = async ({
         PrivateKey,
         Passphrase: {
             DataPacket,
-            KeyPackets
-        }
+            KeyPackets,
+        },
     };
 };

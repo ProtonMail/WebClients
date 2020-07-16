@@ -10,7 +10,7 @@ export const decryptMemberToken = async (token: string, privateKey: OpenPGPKey) 
     const { data: decryptedToken, verified } = await decryptMessage({
         message: await getMessage(token),
         privateKeys: [privateKey],
-        publicKeys: privateKey.toPublic()
+        publicKeys: privateKey.toPublic(),
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -19,7 +19,7 @@ export const decryptMemberToken = async (token: string, privateKey: OpenPGPKey) 
         throw error;
     }
 
-    return '' + decryptedToken;
+    return `${decryptedToken}`;
 };
 
 /**
@@ -39,7 +39,7 @@ export const encryptMemberToken = async (token: string, privateKey: OpenPGPKey) 
     const { data: encryptedToken } = await encryptMessage({
         data: token,
         publicKeys: [privateKey.toPublic()],
-        privateKeys: [privateKey]
+        privateKeys: [privateKey],
     });
     return encryptedToken;
 };

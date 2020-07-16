@@ -5,7 +5,7 @@ import updateObject from '../helpers/updateObject';
 export const formatUser = (User) => {
     return {
         ...User,
-        ...getInfo(User)
+        ...getInfo(User),
     };
 };
 
@@ -16,5 +16,5 @@ export const getUserModel = (api) => {
 export const UserModel = {
     key: 'User',
     get: getUserModel,
-    update: (model, events) => formatUser(updateObject(model, events))
+    update: (model, events) => formatUser(updateObject(model, events)),
 };

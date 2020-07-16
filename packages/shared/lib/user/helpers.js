@@ -24,6 +24,6 @@ export const getInfo = (User) => {
         isDelinquent: isDelinquent(User),
         hasPaidMail: hasPaidMail(User),
         hasPaidVpn: hasPaidVpn(User),
-        canPay: canPay(User)
+        canPay: canPay(User),
     };
 };

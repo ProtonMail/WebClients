@@ -21,7 +21,7 @@ export const setupMemberKeyRoute = ({
 }) => ({
     url: `members/${MemberID}/keys/setup`,
     method: 'post',
-    data: rest
+    data: rest,
 });
 
 export const createMemberKeyRoute = ({
@@ -39,5 +39,5 @@ export const createMemberKeyRoute = ({
 }) => ({
     url: `members/${MemberID}/keys`,
     method: 'post',
-    data: rest
+    data: rest,
 });

@@ -8,5 +8,5 @@ export const getPaymentMethodsModel = (api) => {
 export const PaymentMethodsModel = {
     key: 'PaymentMethods',
     get: getPaymentMethodsModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ PaymentMethod }) => PaymentMethod })
+    update: (model, events) => updateCollection({ model, events, item: ({ PaymentMethod }) => PaymentMethod }),
 };

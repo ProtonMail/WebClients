@@ -29,7 +29,7 @@ export default ({
     api,
     eventID: initialEventID,
     interval = INTERVAL_EVENT_TIMER,
-    query = getEvents
+    query = getEvents,
 }: EventManagerConfig) => {
     const listeners = createListeners();
 
@@ -46,7 +46,7 @@ export default ({
         retryIndex: 0,
         lastEventID: initialEventID,
         timeoutHandle: undefined,
-        abortController: undefined
+        abortController: undefined,
     };
 
     const setEventID = (eventID: string) => {
@@ -134,7 +134,7 @@ export default ({
                 const result = await api<EventResponse>({
                     ...query(eventID),
                     signal: abortController.signal,
-                    silence: true
+                    silence: true,
                 });
 
                 await Promise.all(listeners.notify(result));
@@ -166,6 +166,6 @@ export default ({
         stop,
         call,
         reset,
-        subscribe: listeners.subscribe
+        subscribe: listeners.subscribe,
     };
 };

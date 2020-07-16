@@ -20,7 +20,7 @@ export default ({ xhr, UID, API_URL, APP_VERSION, CLIENT_ID, CLIENT_SECRET, API_
         accept: 'application/vnd.protonmail.v1+json',
         'x-pm-appversion': `${CLIENT_ID}_${APP_VERSION}`,
         'x-pm-apiversion': `${API_VERSION}`,
-        ...authHeaders
+        ...authHeaders,
     };
 
     return ({ url, data, headers, ...rest }) => {
@@ -32,9 +32,9 @@ export default ({ xhr, UID, API_URL, APP_VERSION, CLIENT_ID, CLIENT_SECRET, API_
             data: dataWithClientSecret,
             headers: {
                 ...defaultHeaders,
-                ...headers
+                ...headers,
             },
-            ...rest
+            ...rest,
         });
     };
 };

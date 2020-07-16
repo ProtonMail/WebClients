@@ -18,6 +18,6 @@ export default (initialState: { [key: string]: any } = {}) => {
         get,
         remove,
         reset,
-        getState: () => state
+        getState: () => state,
     };
 };

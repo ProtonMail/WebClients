@@ -21,7 +21,7 @@ export const buildTreeview = (folders: Folder[] = []) => {
         }
         return order(parents[parentID]).map((item) => ({
             ...item,
-            subfolders: build(item.ID)
+            subfolders: build(item.ID),
         }));
     };
     return build();

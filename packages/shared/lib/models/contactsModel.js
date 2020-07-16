@@ -20,7 +20,7 @@ export const getContactsModel = (api) => {
         api(
             queryContacts({
                 Page,
-                PageSize: pageSize
+                PageSize: pageSize,
             })
         );
 
@@ -28,7 +28,7 @@ export const getContactsModel = (api) => {
         requestPage,
         pageSize,
         pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
-        delayPerChunk: 100
+        delayPerChunk: 100,
     }).then((pages) => {
         return pages
             .map(({ Contacts }) => Contacts.map(pick))
@@ -50,6 +50,6 @@ export const ContactsModel = {
             model,
             events,
             item: ({ Contact }) => pick(Contact),
-            merge: mergeModel
-        }).sort(compareName)
+            merge: mergeModel,
+        }).sort(compareName),
 };

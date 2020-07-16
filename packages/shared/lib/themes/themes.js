@@ -15,7 +15,7 @@ export const DEFAULT_THEME = {
     identifier: '/* default-theme */',
     src: themeDarkSvg,
     theme: '',
-    customizable: false
+    customizable: false,
 };
 
 export const CUSTOM_THEME = {
@@ -24,7 +24,7 @@ export const CUSTOM_THEME = {
     },
     identifier: '/* custom-theme */',
     src: themeTestSvg,
-    customizable: true
+    customizable: true,
 };
 
 export const PROTON_THEMES = {
@@ -35,7 +35,7 @@ export const PROTON_THEMES = {
         identifier: '/* light-theme */',
         src: themeLightSvg,
         theme: lightTheme,
-        customizable: false
+        customizable: false,
     },
     BLUE: {
         getI18NLabel() {
@@ -44,7 +44,7 @@ export const PROTON_THEMES = {
         identifier: '/* blue-theme */',
         src: themeBlueSvg,
         theme: blueTheme,
-        customizable: false
+        customizable: false,
     },
     DARK: {
         getI18NLabel() {
@@ -53,6 +53,6 @@ export const PROTON_THEMES = {
         identifier: '/* dark-mode */',
         src: themeDarkmodeSvg,
         theme: darkMode,
-        customizable: false
-    }
+        customizable: false,
+    },
 };

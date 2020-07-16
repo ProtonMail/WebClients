@@ -82,7 +82,7 @@ export const getKeyInfoFromProperties = async (
                 encrypt: undefined,
                 sign: undefined,
                 scheme: undefined,
-                mimeType: undefined
+                mimeType: undefined,
             }
         );
     const rawPinnedKeys = (await Promise.all(pinnedKeyPromises)).filter(isTruthy);
@@ -106,5 +106,5 @@ export const toKeyProperty = ({ publicKey, group, index }: VcardPublicKey): Cont
         arrayToBinaryString(publicKey.toPacketlist().write() as Uint8Array)
     )}`,
     group,
-    pref: index + 1 // order is important
+    pref: index + 1, // order is important
 });

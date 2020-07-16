@@ -29,7 +29,7 @@ const createListeners = <A extends any[], R>(): Listeners<A, R> => {
     return {
         notify,
         subscribe,
-        clear
+        clear,
     };
 };
 

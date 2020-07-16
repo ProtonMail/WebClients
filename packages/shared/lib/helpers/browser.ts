@@ -75,7 +75,7 @@ export const parseURL = (url = '') => {
         pathname: parser.pathname,
         search: parser.search,
         searchObject,
-        hash: parser.hash
+        hash: parser.hash,
     };
 };
 

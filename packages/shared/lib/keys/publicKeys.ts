@@ -4,7 +4,7 @@ import { KEY_FLAGS, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '.
 import isTruthy from '../helpers/isTruthy';
 import { toBitMap } from '../helpers/object';
 import { normalizeEmail } from '../helpers/string';
-import { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces/Key';
+import { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
 
 const { TYPE_INTERNAL } = RECIPIENT_TYPES;
 const { ENABLE_ENCRYPTION } = KEY_FLAGS;
@@ -57,7 +57,7 @@ export const sortApiKeys = (
                 // calculate order through a bitmap
                 const index = toBitMap({
                     isVerificationOnly: verifyOnlyFingerprints.has(fingerprint),
-                    isNotTrusted: !trustedFingerprints.has(fingerprint)
+                    isNotTrusted: !trustedFingerprints.has(fingerprint),
                 });
                 acc[index].push(key);
                 return acc;
@@ -80,7 +80,7 @@ export const sortPinnedKeys = (
                 const fingerprint = key.getFingerprint();
                 // calculate order through a bitmap
                 const index = toBitMap({
-                    cannotSend: expiredFingerprints.has(fingerprint) || revokedFingerprints.has(fingerprint)
+                    cannotSend: expiredFingerprints.has(fingerprint) || revokedFingerprints.has(fingerprint),
                 });
                 acc[index].push(key);
                 return acc;
@@ -146,7 +146,7 @@ export const getIsValidForSending = (
 export const getContactPublicKeyModel = async ({
     emailAddress,
     apiKeysConfig,
-    pinnedKeysConfig
+    pinnedKeysConfig,
 }: Omit<PublicKeyConfigs, 'mailSettings'>): Promise<ContactPublicKeyModel> => {
     const {
         pinnedKeys = [],
@@ -155,7 +155,7 @@ export const getContactPublicKeyModel = async ({
         scheme: vcardScheme,
         mimeType: vcardMimeType,
         isContact,
-        isContactSignatureVerified
+        isContactSignatureVerified,
     } = pinnedKeysConfig;
     const trustedFingerprints = new Set<string>();
     const expiredFingerprints = new Set<string>();
@@ -167,8 +167,12 @@ export const getContactPublicKeyModel = async ({
             const fingerprint = publicKey.getFingerprint();
             const { isExpired, isRevoked } = await getKeyEncryptStatus(publicKey);
             trustedFingerprints.add(fingerprint);
-            isExpired && expiredFingerprints.add(fingerprint);
-            isRevoked && revokedFingerprints.add(fingerprint);
+            if (isExpired) {
+                expiredFingerprints.add(fingerprint);
+            }
+            if (isRevoked) {
+                revokedFingerprints.add(fingerprint);
+            }
         })
     );
     const orderedPinnedKeys = sortPinnedKeys(pinnedKeys, expiredFingerprints, revokedFingerprints);
@@ -203,6 +207,6 @@ export const getContactPublicKeyModel = async ({
         pgpAddressDisabled: isDisabledUser(apiKeysConfig),
         isContact,
         isContactSignatureVerified,
-        emailAddressErrors: apiKeysConfig.Errors
+        emailAddressErrors: apiKeysConfig.Errors,
     };
 };

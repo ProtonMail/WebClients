@@ -2,7 +2,7 @@ import { HumanVerificationMethodType } from '../interfaces';
 
 export const getUser = () => ({
     url: 'users',
-    method: 'get'
+    method: 'get',
 });
 
 export const queryCreateUser = (data: {
@@ -19,7 +19,7 @@ export const queryCreateUser = (data: {
 }) => ({
     url: 'v4/users',
     method: 'post',
-    data
+    data,
 });
 
 export const queryCreateUserExternal = (data: {
@@ -35,12 +35,12 @@ export const queryCreateUserExternal = (data: {
 }) => ({
     url: 'users/external',
     method: 'post',
-    data
+    data,
 });
 
 export const queryUnlock = () => ({
     url: 'users/unlock',
-    method: 'put'
+    method: 'put',
 });
 
 export const deleteUser = (data: {
@@ -54,22 +54,22 @@ export const deleteUser = (data: {
 }) => ({
     url: 'users/delete',
     method: 'put',
-    data
+    data,
 });
 
 export const unlockPasswordChanges = () => ({
     url: 'users/password',
-    method: 'put'
+    method: 'put',
 });
 
 export const lockSensitiveSettings = () => ({
     url: 'users/lock',
-    method: 'put'
+    method: 'put',
 });
 
 export const getHumanVerificationMethods = () => ({
     url: 'users/human',
-    method: 'get'
+    method: 'get',
 });
 
 export const queryVerificationCode = (
@@ -86,13 +86,13 @@ export const queryVerificationCode = (
 ) => ({
     url: 'users/code',
     method: 'post',
-    data: { Type, Destination }
+    data: { Type, Destination },
 });
 
 export const queryCheckUsernameAvailability = (Name: string) => ({
     url: 'users/available',
     method: 'get',
-    params: { Name }
+    params: { Name },
 });
 
 export const queryDirectSignupStatus = (
@@ -100,7 +100,7 @@ export const queryDirectSignupStatus = (
 ) => ({
     url: 'users/direct',
     method: 'get',
-    params: { Type }
+    params: { Type },
 });
 
 export const queryCheckVerificationCode = (
@@ -110,5 +110,5 @@ export const queryCheckVerificationCode = (
 ) => ({
     url: 'users/check',
     method: 'put',
-    data: { Token, TokenType, Type }
+    data: { Token, TokenType, Type },
 });

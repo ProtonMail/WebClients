@@ -8,5 +8,5 @@ export const getCalendarUserSettingsModel = (api) => {
 export const CalendarUserSettingsModel = {
     key: 'CalendarUserSettings',
     get: getCalendarUserSettingsModel,
-    update: updateObject
+    update: updateObject,
 };

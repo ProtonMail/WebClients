@@ -11,17 +11,17 @@ export const mergeHeaders = ({ headers: configHeaders, ...restConfig }: MergeHea
     ...restConfig,
     headers: {
         ...configHeaders,
-        ...headers
-    }
+        ...headers,
+    },
 });
 
 export const getUIDHeaders = (UID: string) => ({
-    'x-pm-uid': UID
+    'x-pm-uid': UID,
 });
 
 export const getAuthHeaders = (UID: string, AccessToken: string) => ({
     'x-pm-uid': UID,
-    Authorization: `Bearer ${AccessToken}`
+    Authorization: `Bearer ${AccessToken}`,
 });
 
 export const withAuthHeaders = (UID: string, AccessToken: string, config: any) =>
@@ -33,6 +33,6 @@ export const getVerificationHeaders = (token?: string, tokenType?: HumanVerifica
     }
     return {
         'x-pm-human-verification-token': token,
-        'x-pm-human-verification-token-type': tokenType
+        'x-pm-human-verification-token-type': tokenType,
     };
 };

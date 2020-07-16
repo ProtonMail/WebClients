@@ -67,7 +67,7 @@ export const addPref = (properties: ContactProperties = []): ContactProperties =
 
         return {
             ...property,
-            pref: newPref
+            pref: newPref,
         };
     });
 };
@@ -142,7 +142,7 @@ export const addGroup = (properties: ContactProperties = []) => {
 
         return {
             ...property,
-            group
+            group,
         };
     });
 };

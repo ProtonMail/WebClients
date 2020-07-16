@@ -8,5 +8,5 @@ export const getOrganizationModel = (api) => {
 export const OrganizationModel = {
     key: 'Organization',
     get: getOrganizationModel,
-    update: updateObject
+    update: updateObject,
 };

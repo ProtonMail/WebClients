@@ -1,6 +1,6 @@
 const updateObject = <T>(model: T, newModel: Partial<T>) => ({
     ...model,
-    ...newModel
+    ...newModel,
 });
 
 export default updateObject;

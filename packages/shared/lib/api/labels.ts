@@ -5,7 +5,7 @@ const { MESSAGE_LABEL, MESSAGE_FOLDER, CONTACT_GROUP } = LABEL_TYPE;
 export const get = (Type: number) => ({
     url: 'v4/labels',
     method: 'get',
-    params: { Type }
+    params: { Type },
 });
 
 interface PartialLabelOrderArgument {
@@ -18,7 +18,7 @@ interface LabelOrderArgument extends PartialLabelOrderArgument {
 export const order = ({ LabelIDs, ParentID, Type }: LabelOrderArgument) => ({
     method: 'put',
     url: 'v4/labels/order',
-    data: { LabelIDs, ParentID, Type }
+    data: { LabelIDs, ParentID, Type },
 });
 
 interface PartialCreateLabelArgument {
@@ -35,7 +35,7 @@ interface CreateLabelArgument extends PartialCreateLabelArgument {
 export const create = ({ Name, Color, Type, Notify, ParentID, Expanded }: CreateLabelArgument) => ({
     method: 'post',
     url: 'v4/labels',
-    data: { Name, Color, Type, Notify, ParentID, Expanded }
+    data: { Name, Color, Type, Notify, ParentID, Expanded },
 });
 
 export const updateLabel = (
@@ -46,17 +46,17 @@ export const updateLabel = (
         Notify,
         ParentID,
         Sticky,
-        Expanded
+        Expanded,
     }: { Name: string; Color: string; Notify?: number; ParentID?: string; Sticky?: number; Expanded?: number }
 ) => ({
     method: 'put',
     url: `v4/labels/${labelID}`,
-    data: { Name, Color, Notify, ParentID, Sticky, Expanded }
+    data: { Name, Color, Notify, ParentID, Sticky, Expanded },
 });
 
 export const deleteLabel = (labelID: string) => ({
     method: 'delete',
-    url: `v4/labels/${labelID}`
+    url: `v4/labels/${labelID}`,
 });
 
 export const getLabels = () => get(MESSAGE_LABEL);

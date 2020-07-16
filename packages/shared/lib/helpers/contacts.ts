@@ -24,7 +24,7 @@ export const getAllFields = () => [
     { text: c('Contact field label').t`IMPP`, value: 'impp' },
     { text: c('Contact field label').t`Related`, value: 'related' },
     { text: c('Contact field label').t`Categories`, value: 'categories' },
-    { text: c('Contact field label').t`Sound`, value: 'sound' }
+    { text: c('Contact field label').t`Sound`, value: 'sound' },
 ];
 
 export const getEditableFields = () => [
@@ -45,7 +45,7 @@ export const getEditableFields = () => [
     { text: c('Contact field label').t`Language`, value: 'lang' },
     { text: c('Contact field label').t`Timezone`, value: 'tz' },
     { text: c('Contact field label').t`Geo`, value: 'geo' },
-    { text: c('Contact field label').t`Logo`, value: 'logo' }
+    { text: c('Contact field label').t`Logo`, value: 'logo' },
 ];
 export const getOtherInformationFields = () => [
     { text: c('Contact field label').t`Photo`, value: 'photo' },
@@ -61,7 +61,7 @@ export const getOtherInformationFields = () => [
     { text: c('Contact field label').t`Language`, value: 'lang' },
     { text: c('Contact field label').t`Timezone`, value: 'tz' },
     { text: c('Contact field label').t`Geo`, value: 'geo' },
-    { text: c('Contact field label').t`Logo`, value: 'logo' }
+    { text: c('Contact field label').t`Logo`, value: 'logo' },
 ];
 
 export const getAllFieldLabels = () => ({
@@ -88,7 +88,7 @@ export const getAllFieldLabels = () => ({
     impp: c('Contact field label').t`IMPP`,
     related: c('Contact field label').t`Related`,
     categories: c('Contact field label').t`Categories`,
-    sound: c('Contact field label').t`Sound`
+    sound: c('Contact field label').t`Sound`,
 });
 
 // ** NOT USED FOR THE MOMENT **
@@ -119,13 +119,13 @@ export const getTypeLabels = () => ({
     yomi: c('Contact type label').t`Yomi`,
     other: c('Contact type label').t`Other`,
     fax: c('Contact type label').t`Fax`,
-    pager: c('Contact type label').t`Pager`
+    pager: c('Contact type label').t`Pager`,
 });
 
 export const getAllTypes = () => ({
     fn: [
         { text: c('Property type').t`Name`, value: '' },
-        { text: c('Property type').t`Yomi`, value: 'yomi' }
+        { text: c('Property type').t`Yomi`, value: 'yomi' },
     ],
     n: [],
     nickname: [],
@@ -133,7 +133,7 @@ export const getAllTypes = () => ({
         { text: c('Property type').t`Email`, value: '' },
         { text: c('Property type').t`Home`, value: 'home' },
         { text: c('Property type').t`Work`, value: 'work' },
-        { text: c('Property type').t`Other`, value: 'other' }
+        { text: c('Property type').t`Other`, value: 'other' },
     ],
     tel: [
         { text: c('Property type').t`Phone`, value: '' },
@@ -143,13 +143,13 @@ export const getAllTypes = () => ({
         { text: c('Property type').t`Mobile`, value: 'cell' },
         { text: c('Property type').t`Main`, value: 'main' },
         { text: c('Property type').t`Fax`, value: 'fax' },
-        { text: c('Property type').t`Pager`, value: 'pager' }
+        { text: c('Property type').t`Pager`, value: 'pager' },
     ],
     adr: [
         { text: c('Property type').t`Address`, value: '' },
         { text: c('Property type').t`Home`, value: 'home' },
         { text: c('Property type').t`Work`, value: 'work' },
-        { text: c('Property type').t`Other`, value: 'other' }
+        { text: c('Property type').t`Other`, value: 'other' },
     ],
     bday: [],
     anniversary: [],
@@ -182,11 +182,11 @@ export const getAllTypes = () => ({
         { text: c('Property type').t`Sweetheart`, value: 'sweetheart' },
         { text: c('Property type').t`Me`, value: 'me' },
         { text: c('Property type').t`Agent`, value: 'agent' },
-        { text: c('Property type').t`Emergency`, value: 'emergency' }
+        { text: c('Property type').t`Emergency`, value: 'emergency' },
     ],
     member: [],
     note: [],
-    url: []
+    url: [],
 });
 
 export const getTypeValues = () => ({
@@ -226,9 +226,9 @@ export const getTypeValues = () => ({
         'sweetheart',
         'me',
         'agent',
-        'emergency'
+        'emergency',
     ],
     member: [],
     note: [],
-    url: []
+    url: [],
 });

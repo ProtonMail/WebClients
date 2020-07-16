@@ -7,7 +7,7 @@ import { parse } from '../../contacts/vcard';
 import { normalizeEmail } from '../../helpers/string';
 
 import { Api, PinnedKeysConfig } from '../../interfaces';
-import { Contact, ContactEmail } from '../../interfaces/contacts';
+import { Contact as tsContact, ContactEmail } from '../../interfaces/contacts';
 import { getContact, queryContactEmails } from '../contacts';
 
 /**
@@ -30,9 +30,9 @@ const getPublicKeysVcardHelper = async (
         }
         isContact = true;
         // pick the first contact with the desired email. The API returns them ordered by decreasing priority already
-        const { Contact } = await api<{ Contact: Contact }>(getContact(ContactEmails[0].ContactID));
+        const { Contact } = await api<{ Contact: tsContact }>(getContact(ContactEmails[0].ContactID));
         // all the info we need is in the signed part
-        const signedCard = Contact.Cards.find(({ Type, Data }) => Type === CONTACT_CARD_TYPE.SIGNED);
+        const signedCard = Contact.Cards.find(({ Type }) => Type === CONTACT_CARD_TYPE.SIGNED);
         if (!signedCard) {
             // contacts created by the server are not signed
             return { pinnedKeys: [], isContact: !!Contact.Cards.length, isContactSignatureVerified: true };
@@ -51,7 +51,7 @@ const getPublicKeysVcardHelper = async (
         return {
             ...(await getKeyInfoFromProperties(properties, emailProperty.group)),
             isContact,
-            isContactSignatureVerified
+            isContactSignatureVerified,
         };
     } catch (error) {
         return { pinnedKeys: [], isContact, isContactSignatureVerified: false, error };

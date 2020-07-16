@@ -9,7 +9,7 @@
 export default ({ UID, mailboxPassword, url: urlString, timeout = 20000 }) => {
     return new Promise((resolve, reject) => {
         const url = new URL(urlString);
-        const child = window.open('' + url, '_blank');
+        const child = window.open(`${url}`, '_blank');
 
         const receive = ({ origin, data, source }) => {
             if (origin !== url.origin || source !== child) {

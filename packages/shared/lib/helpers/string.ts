@@ -5,7 +5,7 @@ import isTruthy from './isTruthy';
 enum CURRENCIES {
     USD = '$',
     EUR = '€',
-    CHF = 'CHF'
+    CHF = 'CHF',
 }
 
 export const getRandomString = (length: number) => {
@@ -107,7 +107,6 @@ export const arrayToBinaryString = (bytes: Uint8Array): string => {
     const j = bytes.length;
     const result = [];
     for (let i = 0; i < j; i += bs) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
         // eslint-disable-next-line prefer-spread
         result.push(String.fromCharCode.apply(String, buffer.subarray(i, i + bs < j ? i + bs : j)));
@@ -132,10 +131,7 @@ export const binaryStringToArray = (str: string) => {
  * @dev WE REMOVE THE PADDING CHARACTERS
  */
 export const encodeBase64URL = (str: string) => {
-    return encodeBase64(str)
-        .replace(/\+/g, '-')
-        .replace(/\//g, '_')
-        .replace(/=/g, '');
+    return encodeBase64(str).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
 };
 
 /**
@@ -205,10 +201,7 @@ export const validateDomain = (domain: string) => {
     if (/\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\]/.test(domain)) {
         return true;
     }
-    const dnsLabels = domain
-        .toLowerCase()
-        .split('.')
-        .filter(isTruthy);
+    const dnsLabels = domain.toLowerCase().split('.').filter(isTruthy);
     if (dnsLabels.length < 2) {
         return false;
     }

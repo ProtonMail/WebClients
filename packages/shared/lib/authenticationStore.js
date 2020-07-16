@@ -19,6 +19,6 @@ export default ({ set, get }) => {
         setUID,
         hasSession,
         setPassword,
-        getPassword
+        getPassword,
     };
 };

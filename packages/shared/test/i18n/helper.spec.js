@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import { c } from 'ttag';
 import { format } from 'date-fns';
 import cnLocale from 'date-fns/locale/zh-CN';
@@ -19,13 +18,13 @@ describe('helper', () => {
 const getTranslation = (data) => {
     return {
         headers: {
-            'plural-forms': 'nplurals=2; plural=(n != 1);'
+            'plural-forms': 'nplurals=2; plural=(n != 1);',
         },
         contexts: {
             Action: {
-                'Hey monique': [data]
-            }
-        }
+                'Hey monique': [data],
+            },
+        },
     };
 };
 
@@ -34,7 +33,7 @@ describe('Load the locale', () => {
         await loadTtagLocale({
             locale: 'fr_FR',
             language: 'fr',
-            locales: { fr_FR: async () => getTranslation('Salut monique') }
+            locales: { fr_FR: async () => getTranslation('Salut monique') },
         });
         expect(c('Action').t`Hey monique`).toBe('Salut monique');
     });
@@ -47,7 +46,7 @@ describe('Load date locales', () => {
         const dateFnLocale = await loadDateFnLocale({
             locale: 'fr',
             longLocale: 'fr',
-            locales: dateFnLocales
+            locales: dateFnLocales,
         });
         expect(format(zero, 'iiii', { locale: dateFnLocale })).toBe('samedi');
     });
@@ -56,7 +55,7 @@ describe('Load date locales', () => {
         const dateFnLocale = await loadDateFnLocale({
             locale: 'en_US',
             longLocale: 'fr',
-            locales: dateFnLocales
+            locales: dateFnLocales,
         });
         expect(format(zero, 'Pp', { locale: dateFnLocale })).toBe('01/01/2000, 00:00');
     });
@@ -65,14 +64,14 @@ describe('Load date locales', () => {
         const dateFnLocale = await loadDateFnLocale({
             locale: 'en_US',
             longLocale: 'fr',
-            locales: dateFnLocales
+            locales: dateFnLocales,
         });
         expect(
             format(zero, 'p', {
                 locale: loadDateFnTimeFormat({
                     dateLocale: dateFnLocale,
-                    displayAMPM: true
-                })
+                    displayAMPM: true,
+                }),
             })
         ).toBe('12:00 AM');
 
@@ -80,8 +79,8 @@ describe('Load date locales', () => {
             format(zero, 'p', {
                 locale: loadDateFnTimeFormat({
                     dateLocale: dateFnLocale,
-                    displayAMPM: false
-                })
+                    displayAMPM: false,
+                }),
             })
         ).toBe('00:00');
 
@@ -89,8 +88,8 @@ describe('Load date locales', () => {
             format(zero, 'p', {
                 locale: loadDateFnTimeFormat({
                     dateLocale: cnLocale,
-                    displayAMPM: false
-                })
+                    displayAMPM: false,
+                }),
             })
         ).toBe('00:00');
 
@@ -98,8 +97,8 @@ describe('Load date locales', () => {
             format(zero, 'p', {
                 locale: loadDateFnTimeFormat({
                     dateLocale: cnLocale,
-                    displayAMPM: true
-                })
+                    displayAMPM: true,
+                }),
             })
         ).toBe('上午 12:00');
     });

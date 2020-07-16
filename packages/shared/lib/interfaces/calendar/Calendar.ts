@@ -16,24 +16,24 @@ export enum SETTINGS_VIEW {
     WEEK = 1,
     MONTH = 2,
     YEAR = 3,
-    PLANNING = 4
+    PLANNING = 4,
 }
 
 export enum SETTINGS_WEEK_START {
     MONDAY = 1,
     SATURDAY = 6,
-    SUNDAY = 7
+    SUNDAY = 7,
 }
 
 export enum SETTINGS_DATE_FORMAT {
     DDMMYYYY = 0,
     MMDDYYYY = 1,
-    YYYYMMDD = 2
+    YYYYMMDD = 2,
 }
 
 export enum SETTINGS_TIME_FORMAT {
     H24 = 0,
-    H12 = 1
+    H12 = 1,
 }
 
 export interface CalendarUserSettings {
@@ -52,7 +52,7 @@ export interface CalendarUserSettings {
 
 export enum SETTINGS_NOTIFICATION_TYPE {
     EMAIL = 0,
-    DEVICE = 1
+    DEVICE = 1,
 }
 
 export interface CalendarNotificationSettings {

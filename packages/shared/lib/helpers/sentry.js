@@ -19,7 +19,7 @@ function main({ SENTRY_DSN, COMMIT_RELEASE, APP_VERSION }) {
     Sentry.init({
         dsn,
         release: isProduction(host) ? APP_VERSION : COMMIT_RELEASE,
-        environment: host
+        environment: host,
     });
 
     Sentry.configureScope((scope) => {

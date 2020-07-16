@@ -16,7 +16,7 @@ spamtest :value "ge" :comparator "i;ascii-numeric" "\${1}")
 }
 
 
-`
+`,
 };
 
 /**

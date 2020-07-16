@@ -10,7 +10,7 @@ export const getContactEmailsModel = (api) => {
         return api(
             queryContactEmails({
                 Page: page,
-                PageSize: pageSize
+                PageSize: pageSize,
             })
         );
     };
@@ -19,7 +19,7 @@ export const getContactEmailsModel = (api) => {
         requestPage,
         pageSize,
         pagesPerChunk: CONTACTS_REQUESTS_PER_SECOND,
-        delayPerChunk: 1000
+        delayPerChunk: 1000,
     }).then((pages) => {
         return pages.map(({ ContactEmails }) => ContactEmails).flat();
     });
@@ -28,5 +28,5 @@ export const getContactEmailsModel = (api) => {
 export const ContactEmailsModel = {
     key: 'ContactEmails',
     get: getContactEmailsModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ ContactEmail }) => ContactEmail })
+    update: (model, events) => updateCollection({ model, events, item: ({ ContactEmail }) => ContactEmail }),
 };

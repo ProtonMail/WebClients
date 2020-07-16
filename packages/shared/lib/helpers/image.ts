@@ -66,7 +66,7 @@ export const resizeImage = async ({
     maxHeight = 0,
     finalMimeType = 'image/jpeg',
     encoderOptions = 1,
-    bigResize = false
+    bigResize = false,
 }: ResizeImageProps) => {
     const image = await toImage(original);
     // Resize the image
@@ -145,7 +145,7 @@ export const downSize = async (base64str: string, maxSize: number, mimeType = 'i
             maxWidth,
             maxHeight,
             finalMimeType: mimeType,
-            encoderOptions
+            encoderOptions,
         });
         const { size } = new Blob([resized]);
 

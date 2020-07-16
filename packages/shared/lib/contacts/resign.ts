@@ -20,7 +20,7 @@ export const resignCards = async ({ contactCards, privateKeys }: Params): Promis
             return {
                 Type: CONTACT_CARD_TYPE.SIGNED,
                 Data,
-                Signature: signature
+                Signature: signature,
             };
         })
     );

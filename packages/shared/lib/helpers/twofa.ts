@@ -20,7 +20,7 @@ export const getUri = ({
     issuer = 'ProtonMail',
     digits = 6,
     algorithm = 'SHA1',
-    period = 30
+    period = 30,
 }: GetUriArguments) => {
     return `otpauth://totp/${identifier}?secret=${sharedSecret}&issuer=${issuer}&algorithm=${algorithm}&digits=${digits}&period=${period}`;
 };
