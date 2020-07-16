@@ -13,12 +13,35 @@ const SOURCE_FILE_INDEX = "find dist -maxdepth 1 -type f -name 'index*.js'";
  * @return {Object}       app's config
  */
 async function getNewConfig(api, flags = process.argv.slice(3), isCurrent = false) {
+    debug({ api, flags, isCurrent }, 'flags getNewConfig');
     if (isWebClientLegacy()) {
-        const branch = !isCurrent ? api.replace('+proxy', '') : 'dev';
+        /**
+         * Compat layer for old build as it binds dev API env instead of old :/
+         * It doesn't make sense, but the main thing is we should upgrade the config setup on legacy
+         * to match how it's done via proton-pack today for the react applications.
+         * It will be easier to use than what we have today, build on top of obsolete config -> branches
+         * so quick and dirty is the way sadly
+         */
+        const getBranch = () => {
+            if (api.includes('old')) {
+                return api.replace('+proxy', '');
+            }
+            return !isCurrent ? api.replace('+proxy', '') : 'dev';
+        };
+
+        const branch = getBranch();
+        const cleanApi = (api) => {
+            // When we deploy to these targets we must use the proxy api
+            if (/prod|old|beta|tor/.test(api) && api.includes('+proxy')) {
+                return (item) => item.replace(/\w+\+proxy/, 'proxy');
+            }
+            return (a) => a;
+        };
+
         const { stdout = '' } = await bash('NODE_ENV=dist ./tasks/setupConfig.js', [
             '--print-config',
             `--branch deploy-${branch}`,
-            ...flags
+            ...flags.map(cleanApi(api))
         ]);
         debug(stdout, 'stdout config angular');
 
@@ -37,7 +60,6 @@ async function getNewConfig(api, flags = process.argv.slice(3), isCurrent = fals
         };
 
         debug(newConfig, 'new config angular with right dsn');
-
         return newConfig;
     }
 
