@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { KeyFlags } from 'proton-shared/lib/keys/calendarKeys';
+import { KeyFlags } from 'proton-shared/lib/calendar/interface';
 import { readSessionKeys } from 'proton-shared/lib/calendar/deserialize';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
