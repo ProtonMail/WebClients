@@ -27,5 +27,9 @@ describe('paging helper', () => {
         it('should be the size if not last page', () => {
             expect(expectedPageLength({ total: 125, page: 1, size: 50, limit: 50 })).toBe(50);
         });
+
+        it('should be 0 if page is after the total', () => {
+            expect(expectedPageLength({ total: 100, page: 2, size: 50, limit: 50 })).toBe(0);
+        });
     });
 });

@@ -6,10 +6,14 @@ export const expectedPageLength = (page: Page) => {
     if (page.total === 0) {
         return 0;
     }
+    const count = pageCount(page);
+    if (page.page >= count) {
+        return 0;
+    }
     if (page.total % page.size === 0) {
         return page.size;
     }
-    if (pageCount(page) - 1 === page.page) {
+    if (count - 1 === page.page) {
         return page.total % page.size;
     }
     return page.size;

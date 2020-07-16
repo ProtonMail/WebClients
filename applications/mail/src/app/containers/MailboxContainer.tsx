@@ -140,6 +140,13 @@ const MailboxContainer = ({
     const handleFilter = (filter: Filter) => history.push(setFilterInUrl(location, filter));
     const handleNavigate = (labelID: string) => history.push(`/${labelID}`);
 
+    // Move to the previous page if the current one becomes empty
+    useEffect(() => {
+        if (!loading && elements.length === 0 && page.page > 0) {
+            handlePage(page.page - 1);
+        }
+    }, [loading]);
+
     /**
      * Put *IDs* to *checked* state
      * Uncheck others id *replace* is true
