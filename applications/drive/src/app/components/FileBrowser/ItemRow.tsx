@@ -115,8 +115,9 @@ const ItemRow = ({
                 className="increase-surface-click"
                 checked={isSelected}
                 onChange={(e) => {
-                    if (isSelected) {
-                        e.currentTarget.blur();
+                    const el = document.activeElement ?? e.currentTarget;
+                    if (isSelected && 'blur' in el) {
+                        (el as any).blur();
                     }
                     onToggleSelect(item.LinkID);
                 }}
@@ -195,7 +196,10 @@ const ItemRow = ({
                 onDragOver={unlessDisabled(handleDragOver)}
                 onDrop={unlessDisabled(handleDrop)}
                 onDragLeave={unlessDisabled(handleDragLeave)}
-                onDragEnd={handleDragEnd}
+                onDragEnd={(e) => {
+                    e.currentTarget.blur();
+                    handleDragEnd();
+                }}
                 onMouseDown={() => document.getSelection()?.removeAllRanges()}
             />
         </>
