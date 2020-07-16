@@ -7,7 +7,7 @@ import {
     Alert,
     Row,
     Label,
-    Input,
+    EmailInput,
     Field,
     useLoading,
     useModals,
@@ -73,13 +73,7 @@ const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }) => {
             <Row>
                 <Label htmlFor="emailInput">{c('Label').t`Email`}</Label>
                 <Field>
-                    <Input
-                        id="emailInput"
-                        value={input}
-                        placeholder="name@domain.com"
-                        onChange={handleChange}
-                        autoFocus={true}
-                    />
+                    <EmailInput id="emailInput" value={input} onChange={handleChange} autoFocus={true} />
                 </Field>
             </Row>
         </FormModal>
