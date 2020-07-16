@@ -24,8 +24,8 @@ import SignupSubmitRow from './SignupSubmitRow';
 interface Props {
     model: SignupModel;
     onChange: (model: SignupModel) => void;
-    onSubmit: (payload: ChallengeResult) => void;
-    onSkip: (payload: ChallengeResult) => void;
+    onSubmit: (payload?: ChallengeResult) => void;
+    onSkip: (payload?: ChallengeResult) => void;
     errors: SignupErrors;
     loading: boolean;
 }
@@ -53,14 +53,20 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
                 </ConfirmModal>
             );
         });
-        const payload = await challengeRefRecovery.current?.getChallenge();
-        onSkip(payload);
+        if (model.step === RECOVERY_EMAIL) {
+            const payload = await challengeRefRecovery.current?.getChallenge();
+            return onSkip(payload);
+        }
+        onSkip();
     };
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const payload = await challengeRefRecovery.current?.getChallenge();
-        onSubmit(payload);
+        if (model.step === RECOVERY_EMAIL) {
+            const payload = await challengeRefRecovery.current?.getChallenge();
+            return onSubmit(payload);
+        }
+        onSubmit();
     };
 
     const handleChallengeLoaded = () => setChallengeLoading(false);
