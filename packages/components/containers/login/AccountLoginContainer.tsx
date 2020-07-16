@@ -155,7 +155,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
                     <SignupSubmitRow>
                         <PrimaryButton
                             type="submit"
-                            disabled={!totp}
+                            disabled={totp.length < 6}
                             className="pm-button--large"
                             loading={loading}
                             data-cy-login="submit TOTP"

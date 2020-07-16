@@ -86,7 +86,12 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
                 </div>
                 <div className="flex flex-spacebetween">
                     {cancelButton}
-                    <PrimaryButton type="submit" loading={loading} data-cy-login="submit TOTP">
+                    <PrimaryButton
+                        type="submit"
+                        disabled={totp.length < 6}
+                        loading={loading}
+                        data-cy-login="submit TOTP"
+                    >
                         {c('Action').t`Submit`}
                     </PrimaryButton>
                 </div>
