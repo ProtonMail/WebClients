@@ -18,10 +18,11 @@
 - added some mobile helpers
 - better element list with placeholders
 - new design for header links
-- add 'question-nocircle' icon
+- add `question-nocircle` icon
 - add scss fragment dedicated to mail reset styles
 - fix - `td` and `img` reset for Mail - added some Sass variables to trigger them or not (Mail is the special case, newsletter compatibility)
 - huge fix - vocalization of all checkboxes/radios/toggle
+- signup styles!
 
 
 ## Updated/fixes
@@ -60,7 +61,7 @@
 - fix - `.trashed-messages` styles added
 - fix modal scroll shadow! (not yet fixed on Design system website)
 - fix - crazy combination of `.pm-button--redborder` mixed with `.pm-button--link` and `.pm-button`
-- fix - bgcolor of read messages
+- fix - bgcolor of read messages/labels/again
 - fix - move file preview styles from proton-drive
 - fix - added possibility to hide arrow for dropdown
 - moved breadcrumbs component from drive to shared

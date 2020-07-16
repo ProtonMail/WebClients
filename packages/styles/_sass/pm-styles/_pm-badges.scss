@@ -126,10 +126,10 @@ $label-border-color: var(--bgcolor-view-column-detail, $white) !default;
 	&.read {
 		.pm-badgeLabel-container--collapsed {
 			.badgeLabel {
-				border-color: var(--bgcolor-item-column-list, $pm-global-light);
+				border-color: var(--bgcolor-item-column-list, $pm-global-muted);
 				&:not(:first-child) {
 					&::before {
-						border-color: var(--bgcolor-item-column-list, $pm-global-light);
+						border-color: var(--bgcolor-item-column-list, $pm-global-muted);
 					}
 				}
 			}
@@ -154,10 +154,10 @@ $label-border-color: var(--bgcolor-view-column-detail, $white) !default;
 .message-header-expanded {
 		.pm-badgeLabel-container--collapsed {
 			.badgeLabel {
-				border-color: var(--bgcolor-item-column-list, $pm-global-light);
+				border-color: var(--bgcolor-item-column-list, $pm-global-muted);
 				&:not(:first-child) {
 					&::before {
-						border-color: var(--bgcolor-item-column-list, $pm-global-light);
+						border-color: var(--bgcolor-item-column-list, $pm-global-muted);
 					}
 				}
 			}
