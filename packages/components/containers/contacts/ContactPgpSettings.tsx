@@ -4,7 +4,7 @@ import { OpenPGPKey } from 'pmcrypto';
 
 import { getIsValidForSending, getKeyEncryptStatus } from 'proton-shared/lib/keys/publicKeys';
 import { MailSettings } from 'proton-shared/lib/interfaces';
-import { ContactPublicKeyModel } from 'proton-shared/lib/interfaces/Key';
+import { ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
 
 import ContactSchemeSelect from '../../components/contacts/ContactSchemeSelect';
 import ContactKeysTable from '../../components/contacts/ContactKeysTable';

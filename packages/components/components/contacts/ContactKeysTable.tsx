@@ -7,7 +7,7 @@ import { move, uniqueBy } from 'proton-shared/lib/helpers/array';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { describe } from 'proton-shared/lib/keys/keysAlgorithm';
-import { ContactPublicKeyModel } from 'proton-shared/lib/interfaces/Key';
+import { ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
 
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import { Table, TableBody, TableRow } from '../table';
