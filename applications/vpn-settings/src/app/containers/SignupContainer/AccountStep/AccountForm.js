@@ -177,13 +177,7 @@ const AccountForm = ({ model, onSubmit }) => {
                     <Field className="auto flex-item-fluid">
                         <div className="mb1">
                             <Challenge challengeRef={challengeRefEmail} type="1" onLoaded={handleChallengeLoaded}>
-                                <EmailInput
-                                    id="email"
-                                    required
-                                    value={email}
-                                    onChange={handleChangeEmail}
-                                    placeholder={c('Placeholder').t`user@domain.com`}
-                                />
+                                <EmailInput id="email" required value={email} onChange={handleChangeEmail} />
                             </Challenge>
                         </div>
                         <p>
