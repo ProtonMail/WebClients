@@ -5,3 +5,5 @@ export { default as SupportDropdown } from './SupportDropdown';
 export { default as SupportDropdownButton } from './SupportDropdownButton';
 export { default as PrivateHeader } from './PrivateHeader';
 export { default as Header } from '../../components/header/Header';
+export { default as AccountSupportDropdown } from './AccountSupportDropdown';
+export { default as AccountSupportDropdownButton } from './AccountSupportDropdownButton';

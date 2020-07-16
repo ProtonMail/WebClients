@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
+import { EMAIL_PLACEHOLDER } from 'proton-shared/lib/constants';
 import { EmailInput, Label, Row, Field } from '../../..';
-import { EXTERNAL_EMAIL_PLACEHOLDER } from 'proton-shared/lib/constants';
 
 interface Props {
     email: string;
@@ -19,7 +19,7 @@ function AddEmailToList({ email, onChange }: Props) {
                     id="email"
                     value={email}
                     onChange={handleChange}
-                    placeholder={EXTERNAL_EMAIL_PLACEHOLDER}
+                    placeholder={EMAIL_PLACEHOLDER}
                     required={true}
                     autoFocus={true}
                 />

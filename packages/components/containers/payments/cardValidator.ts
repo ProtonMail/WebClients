@@ -3,12 +3,23 @@ import valid from 'card-validator';
 import creditCardType from 'credit-card-type';
 import { isEmpty } from 'proton-shared/lib/helpers/validators';
 
-export const isCardNumber = (value) => valid.number(value).isValid;
-export const isCVV = (value, maxLength) => valid.cvv(value, maxLength).isValid;
-export const isPostalCode = (value) => valid.postalCode(value, { minLength: 4 }).isValid;
-export const isExpirationDate = (month, year) => valid.expirationDate({ month, year }).isValid;
+export const isCardNumber = (value: string) => valid.number(value).isValid;
+export const isCVV = (value: string, maxLength: number) => valid.cvv(value, maxLength).isValid;
+export const isPostalCode = (value: string) => valid.postalCode(value, { minLength: 4 }).isValid;
+export const isExpirationDate = (month: string, year: string) => valid.expirationDate({ month, year }).isValid;
 
-const check = (card, key) => {
+interface Card {
+    fullname: string;
+    month: string;
+    year: string;
+    number: string;
+    cvc: string;
+    zip: string;
+}
+
+type keyCard = 'fullname' | 'month' | 'year' | 'number' | 'cvc' | 'zip';
+
+const check = (card: Card, key: keyCard): string | undefined => {
     const value = card[key];
     switch (key) {
         case 'fullname':
@@ -48,9 +59,18 @@ const check = (card, key) => {
     }
 };
 
-export const getErrors = (card) => {
+export const getErrors = (
+    card: Card
+): {
+    fullname?: string;
+    month?: string;
+    year?: string;
+    number?: string;
+    cvc?: string;
+    zip?: string;
+} => {
     return ['fullname', 'number', 'month', 'year', 'cvc', 'zip', 'country'].reduce((acc, key) => {
-        const error = check(card, key);
+        const error = check(card, key as keyCard);
         if (error) {
             acc[key] = error;
         }

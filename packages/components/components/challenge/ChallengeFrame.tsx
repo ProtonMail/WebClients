@@ -6,8 +6,10 @@ import { getChallengeURL, handleEvent, normalizeSelectOptions } from './challeng
 const ERROR_TIMEOUT_MS = 10000;
 const CHALLENGE_TIMEOUT_MS = 7000;
 
+export type ChallengeResult = { [key: string]: string } | undefined;
+
 export interface ChallengeRef {
-    getChallenge: () => Promise<{ [key: string]: string } | undefined>;
+    getChallenge: () => Promise<ChallengeResult>;
 }
 
 export interface Props

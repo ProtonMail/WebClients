@@ -7,7 +7,7 @@ import { isNumber } from 'proton-shared/lib/helpers/validators';
 import CurrencySelector from './CurrencySelector';
 import AmountButton from './AmountButton';
 
-const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount }) => {
+const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, minAmount, maxAmount }) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleButton = (value) => {
@@ -16,6 +16,12 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount })
     };
     const handleChange = ({ target }) => {
         if (target.value && !isNumber(target.value)) {
+            return;
+        }
+        if (minAmount && target.value < minAmount / 100) {
+            return;
+        }
+        if (maxAmount && target.value > maxAmount / 100) {
             return;
         }
         setInputValue(target.value);
@@ -61,6 +67,8 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount })
 
 PaymentSelector.propTypes = {
     currency: PropTypes.string.isRequired,
+    minAmount: PropTypes.number,
+    maxAmount: PropTypes.number,
     amount: PropTypes.number.isRequired,
     onChangeCurrency: PropTypes.func.isRequired,
     onChangeAmount: PropTypes.func.isRequired

@@ -28,6 +28,7 @@ const STEPS = {
 
 const PROCESSING_DELAY = 5000;
 
+/** @type any */
 const PaymentVerificationModal = ({
     params,
     token,

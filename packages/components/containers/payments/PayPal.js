@@ -38,7 +38,7 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
             onPay(toParams({ Amount, Currency }, Token, type));
         } catch (error) {
             // if not coming from API error
-            if (error.message && !error.config) {
+            if (error && error.message && !error.config) {
                 setTextError(error.message);
             }
         }
@@ -82,7 +82,7 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     if (type === 'payment' && Amount < MIN_PAYPAL_AMOUNT) {
         return (
             <Alert type="error">
-                {c('Error').t`Amount below minimum.`} {`(${<Price currency={Currency}>{MIN_PAYPAL_AMOUNT}</Price>})`}
+                {c('Error').t`Amount below minimum.`} {`(${(<Price currency={Currency}>{MIN_PAYPAL_AMOUNT}</Price>)})`}
             </Alert>
         );
     }
@@ -169,7 +169,7 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
                         .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}</Alert>
                 </>
             ) : null}
-            {!loadingVerification && type === 'donation' ? (
+            {!loadingVerification && ['donation', 'human-verification'].includes(type) ? (
                 <>
                     <Alert>
                         {c('Info')
@@ -188,7 +188,7 @@ PayPal.propTypes = {
     amount: PropTypes.number.isRequired,
     currency: PropTypes.string.isRequired,
     onPay: PropTypes.func.isRequired,
-    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update'])
+    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update', 'human-verification'])
 };
 
 export default PayPal;

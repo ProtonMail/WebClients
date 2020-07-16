@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from 'proton-shared/lib/constants';
 import { getTokenStatus, createToken } from 'proton-shared/lib/api/payments';
+import { Api } from 'proton-shared/lib/interfaces';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { c } from 'ttag';
-import { PaymentVerificationModal } from 'react-components';
 import { getHostname } from 'proton-shared/lib/helpers/url';
-import { omit } from 'proton-shared/lib/helpers/object';
+import { PaymentVerificationModal } from '../../index';
+import { PaymentParameters } from './usePayment';
 
 const {
     STATUS_PENDING,
@@ -22,13 +23,18 @@ const DELAY_LISTENING = 1000;
 
 /**
  * Recursive function to check token status
- * @param {Number} timer
- * @param {String} Token
- * @param {Object} api useApi
- * @param {AbortSignal} signal instance
- * @returns {Promise}
  */
-const pull = async ({ timer = 0, Token, api, signal }) => {
+const pull = async ({
+    timer = 0,
+    Token,
+    api,
+    signal
+}: {
+    timer?: number;
+    Token: string;
+    api: Api;
+    signal: AbortSignal;
+}): Promise<any> => {
     if (signal.aborted) {
         throw new Error(c('Error').t`Process aborted`);
     }
@@ -57,7 +63,7 @@ const pull = async ({ timer = 0, Token, api, signal }) => {
 
     if (Status === STATUS_PENDING) {
         await wait(DELAY_PULLING);
-        return pull({ Token, api, timer: timer + DELAY_PULLING });
+        return pull({ Token, api, timer: timer + DELAY_PULLING, signal });
     }
 
     throw new Error(c('Error').t`Unknown payment token status`);
@@ -65,14 +71,20 @@ const pull = async ({ timer = 0, Token, api, signal }) => {
 
 /**
  * Initialize new tab and listen it
- * @param {String} Token from API
- * @param {Object} api useApi
- * @param {String} ApprovalURL from API
- * @param {String} ReturnHost from API
- * @param {AbortSignal} signal instance
- * @returns {Promise}
  */
-export const process = ({ Token, api, ApprovalURL, ReturnHost, signal }) => {
+export const process = ({
+    Token,
+    api,
+    ApprovalURL,
+    ReturnHost,
+    signal
+}: {
+    Token: string;
+    api: Api;
+    ApprovalURL: string;
+    ReturnHost: string;
+    signal: AbortSignal;
+}) => {
     const tab = window.open(ApprovalURL);
 
     return new Promise((resolve, reject) => {
@@ -86,35 +98,35 @@ export const process = ({ Token, api, ApprovalURL, ReturnHost, signal }) => {
             signal.removeEventListener('abort', abort);
         };
 
-        const listenTab = async () => {
+        const listenTab = async (): Promise<any> => {
             if (!listen) {
                 return;
             }
 
-            if (tab.closed) {
-                reset();
-                return pull({ Token, api, signal })
-                    .then(resolve)
-                    .catch(() => {
-                        const error = new Error(c('Error').t`Tab closed`);
-                        error.tryAgain = true;
-                        return reject(error);
-                    });
+            if (tab && tab.closed) {
+                try {
+                    reset();
+                    const { Status } = await api({ ...getTokenStatus(Token), signal });
+                    if (Status === STATUS_CHARGEABLE) {
+                        return resolve();
+                    }
+                    throw new Error(c('Error').t`Tab closed`);
+                } catch (error) {
+                    return reject({ ...error, tryAgain: true });
+                }
             }
 
             await wait(DELAY_LISTENING);
-            return listenTab(tab);
+            return listenTab();
         };
 
-        const onMessage = (event) => {
-            const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
-
-            if (getHostname(origin) !== ReturnHost) {
+        const onMessage = (event: MessageEvent) => {
+            if (getHostname(event.origin) !== ReturnHost) {
                 return;
             }
 
             reset();
-            tab.close();
+            tab && tab.close();
 
             const { cancel } = event.data;
 
@@ -129,7 +141,7 @@ export const process = ({ Token, api, ApprovalURL, ReturnHost, signal }) => {
 
         const abort = () => {
             reset();
-            tab.close();
+            tab && tab.close();
             reject(new Error(c('Error').t`Process aborted`));
         };
 
@@ -142,15 +154,11 @@ export const process = ({ Token, api, ApprovalURL, ReturnHost, signal }) => {
 
 /**
  * Prepare parameters to be sent to API
- * @param {Object} params
- * @param {String} Token
- * @param {String} type original type used to generate the token (card, paypal, paypal-credit)
- * @returns {Object}
  */
-export const toParams = (params, Token, type) => {
+export const toParams = (params: Params, Token: string, type?: string) => {
     return {
+        ...params,
         type,
-        ...omit(params, ['PaymentMethodID']),
         Payment: {
             Type: TOKEN,
             Details: {
@@ -160,15 +168,30 @@ export const toParams = (params, Token, type) => {
     };
 };
 
-export const handlePaymentToken = async ({ params, api, createModal, mode }) => {
+interface Params extends PaymentParameters {
+    Amount: number;
+    Currency: string;
+}
+
+export const handlePaymentToken = async ({
+    params,
+    api,
+    createModal,
+    mode
+}: {
+    createModal: (modal: ReactNode) => void;
+    mode?: string;
+    api: Api;
+    params: Params;
+}): Promise<Params> => {
     const { Payment, Amount, Currency, PaymentMethodID } = params;
     const { Type } = Payment || {};
 
     if (Amount === 0) {
-        return omit(params, ['PaymentMethodID', 'Payment']);
+        return params;
     }
 
-    if ([CASH, BITCOIN, TOKEN].includes(Type)) {
+    if (Type && [CASH, BITCOIN, TOKEN].includes(Type)) {
         return params;
     }
 

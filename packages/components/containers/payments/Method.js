@@ -95,7 +95,7 @@ Method.propTypes = {
     loading: PropTypes.bool,
     method: PropTypes.string.isRequired,
     methods: PropTypes.array.isRequired,
-    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit']).isRequired,
+    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'human-verification']).isRequired,
     amount: PropTypes.number.isRequired,
     card: PropTypes.object.isRequired,
     onCard: PropTypes.func.isRequired,

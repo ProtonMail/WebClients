@@ -21,7 +21,7 @@ const MailFeaturesTable = ({ cycle, currency }) => {
                 <thead>
                     <tr>
                         <th scope="col" className="aligncenter aligntop pm-simple-table-row-th pt1">
-                            <strong className="uppercase ellipsis" title="Free">
+                            <strong className="uppercase ellipsis inbl mw100" title="Free">
                                 Free
                             </strong>
                             <div>
@@ -29,7 +29,7 @@ const MailFeaturesTable = ({ cycle, currency }) => {
                             </div>
                         </th>
                         <th scope="col" className="aligncenter aligntop pm-simple-table-row-th pt1">
-                            <strong className="uppercase ellipsis" title="Plus">
+                            <strong className="uppercase ellipsis inbl mw100" title="Plus">
                                 Plus
                             </strong>
                             <div>
@@ -37,7 +37,7 @@ const MailFeaturesTable = ({ cycle, currency }) => {
                             </div>
                         </th>
                         <th scope="col" className="aligncenter aligntop pm-simple-table-row-th pt1">
-                            <strong className="uppercase ellipsis" title="Professional">
+                            <strong className="uppercase ellipsis inbl mw100" title="Professional">
                                 Professional
                             </strong>
                             <div>
@@ -49,7 +49,7 @@ const MailFeaturesTable = ({ cycle, currency }) => {
                             </div>
                         </th>
                         <th scope="col" className="aligncenter aligntop pm-simple-table-row-th pt1">
-                            <strong className="uppercase ellipsis" title="Visionary">
+                            <strong className="uppercase ellipsis inbl mw100" title="Visionary">
                                 Visionary
                             </strong>
                             <div>

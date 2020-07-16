@@ -68,13 +68,13 @@ const VpnFeaturesTable = ({ cycle, currency }) => {
                     </tr>
                     <tr>
                         <td>
-                            <del>{c('Feature').t`Secure core and Tor VPN`}</del>
+                            <del>{c('Feature').t`Secure Core and Tor VPN`}</del>
                         </td>
                         <td>
-                            <del>{c('Feature').t`Secure core and Tor VPN`}</del>
+                            <del>{c('Feature').t`Secure Core and Tor VPN`}</del>
                         </td>
-                        <td>{c('Feature').t`Secure core and Tor VPN`}</td>
-                        <td>{c('Feature').t`Secure core and Tor VPN`}</td>
+                        <td>{c('Feature').t`Secure Core and Tor VPN`}</td>
+                        <td>{c('Feature').t`Secure Core and Tor VPN`}</td>
                     </tr>
                     <tr>
                         <td>
@@ -115,7 +115,7 @@ const VpnFeaturesTable = ({ cycle, currency }) => {
                         <td colSpan={4}>{c('Feature').t`DNS leak protection`}</td>
                     </tr>
                     <tr>
-                        <td colSpan={4}>{c('Feature').t`Kill switch`}</td>
+                        <td colSpan={4}>{c('Feature').t`Kill Switch`}</td>
                     </tr>
                     <tr>
                         <td colSpan={4}>{c('Feature').t`Always-on VPN`}</td>

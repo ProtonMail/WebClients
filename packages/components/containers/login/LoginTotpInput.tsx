@@ -1,0 +1,28 @@
+import { Input } from '../../index';
+import React from 'react';
+
+interface Props {
+    totp: string;
+    setTotp: (totp: string) => void;
+    id: string;
+}
+const LoginTotpInput = ({ totp, setTotp, id }: Props) => {
+    return (
+        <Input
+            type="text"
+            name="twoFa"
+            autoFocus
+            autoCapitalize="off"
+            autoCorrect="off"
+            id={id}
+            required
+            value={totp}
+            className="w100 mb1"
+            placeholder="123456"
+            onChange={({ target: { value } }) => setTotp(value)}
+            data-cy-login="TOTP"
+        />
+    );
+};
+
+export default LoginTotpInput;

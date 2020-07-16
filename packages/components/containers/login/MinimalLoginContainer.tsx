@@ -2,14 +2,15 @@ import React, { FormEvent } from 'react';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
-import { useLoading, LinkButton, PrimaryButton, useNotifications, useModals } from '../../index';
+import { useLoading, LinkButton, PrimaryButton, useNotifications, useModals, Label } from '../../index';
 
-import PasswordForm from './PasswordForm';
-import TOTPForm from './TOTPForm';
-import UnlockForm from './UnlockForm';
 import { getErrorText } from './helper';
 import AbuseModal from './AbuseModal';
 import useLogin, { FORM, Props as UseLoginProps } from './useLogin';
+import LoginPasswordInput from './LoginPasswordInput';
+import LoginUsernameInput from './LoginUsernameInput';
+import LoginTotpInput from './LoginTotpInput';
+import LoginUnlockInput from './LoginUnlockInput';
 
 interface Props extends UseLoginProps {
     needHelp?: React.ReactNode;
@@ -48,12 +49,14 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
         };
         return (
             <form name="loginForm" onSubmit={handleSubmit}>
-                <PasswordForm
-                    username={username}
-                    setUsername={loading ? noop : setUsername}
-                    password={password}
-                    setPassword={loading ? noop : setPassword}
-                />
+                <Label className="sr-only" htmlFor="login">{c('Label').t`Email or Username`}</Label>
+                <div className="mb1">
+                    <LoginUsernameInput id="login" username={username} setUsername={loading ? noop : setUsername} />
+                </div>
+                <Label className="sr-only" htmlFor="password">{c('Label').t`Password`}</Label>
+                <div className="mb1">
+                    <LoginPasswordInput password={password} setPassword={loading ? noop : setPassword} id="password" />
+                </div>
                 <div className="flex flex-spacebetween">
                     {needHelp}
                     <PrimaryButton type="submit" loading={loading} data-cy-login="submit">
@@ -77,7 +80,10 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
         };
         return (
             <form name="totpForm" onSubmit={handleSubmit}>
-                <TOTPForm totp={totp} setTotp={loading ? noop : setTotp} />
+                <Label htmlFor="twoFa">{c('Label').t`Two-factor code`}</Label>
+                <div className="mb1">
+                    <LoginTotpInput totp={totp} setTotp={loading ? noop : setTotp} id="twoFa" />
+                </div>
                 <div className="flex flex-spacebetween">
                     {cancelButton}
                     <PrimaryButton type="submit" loading={loading} data-cy-login="submit TOTP">
@@ -105,7 +111,14 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
         };
         return (
             <form name="unlockForm" onSubmit={handleSubmit}>
-                <UnlockForm password={keyPassword} setPassword={loading ? noop : setKeyPassword} />
+                <Label htmlFor="password">{c('Label').t`Mailbox password`}</Label>
+                <div className="mb1">
+                    <LoginUnlockInput
+                        password={keyPassword}
+                        setPassword={loading ? noop : setKeyPassword}
+                        id="password"
+                    />
+                </div>
                 <div className="flex flex-spacebetween">
                     {cancelButton}
                     <PrimaryButton type="submit" loading={loading} data-cy-login="submit mailbox password">

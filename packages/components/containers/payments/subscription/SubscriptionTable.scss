@@ -33,6 +33,9 @@
     .amount,
     .currency  {
         font-size: 3rem;
+        @include respond-to($breakpoint-tiny) {
+            font-size: 2rem;
+        }
         line-height: 1;
     }
 

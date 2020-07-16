@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
+
 import ChallengeFrame, { Props as ChallengeProps } from './ChallengeFrame';
 import { Alert, Href, Loader } from '../../index';
+import { classnames } from '../../helpers/component';
 
-const Challenge = ({ children, style, onLoaded, ...rest }: Omit<ChallengeProps, 'src'>) => {
+const Challenge = ({ children, style, onLoaded, bodyClassName, ...rest }: Omit<ChallengeProps, 'src'>) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
@@ -29,7 +31,7 @@ const Challenge = ({ children, style, onLoaded, ...rest }: Omit<ChallengeProps, 
                     src="https://secure.protonmail.com/challenge/challenge.html"
                     className={isLoading || hasError ? 'hidden' : 'w100'}
                     innerClassName="flex-item-fluid-auto"
-                    bodyClassName="color-black bg-white"
+                    bodyClassName={classnames(['color-black bg-white', bodyClassName])}
                     style={style}
                     onLoaded={() => {
                         setIsLoading(false);

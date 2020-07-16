@@ -32,7 +32,7 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }) => {
                     <LinkButton
                         className="flex flex-items-center ml0-25"
                         onClick={() => onApply('')}
-                        title={c('Action').t`Remove git code`}
+                        title={c('Action').t`Remove gift code`}
                     >
                         <Icon name="trash" className="fill-primary" />
                         <span className="sr-only">{c('Action').t`Remove gift code`}</span>

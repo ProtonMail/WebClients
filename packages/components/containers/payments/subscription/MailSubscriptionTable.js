@@ -18,6 +18,7 @@ const INDEXES = {
     [PLANS.VISIONARY]: 3
 };
 
+/** @type any */
 const MailSubscriptionTable = ({
     planNameSelected,
     plans: apiPlans = [],

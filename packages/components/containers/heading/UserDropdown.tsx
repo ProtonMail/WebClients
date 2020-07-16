@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { Link } from 'react-router-dom';
 import {
     useUser,
     useOrganization,
@@ -14,7 +13,8 @@ import {
     generateUID,
     PrimaryButton,
     useConfig,
-    useSubscription
+    useSubscription,
+    Link
 } from '../../';
 import { revoke } from 'proton-shared/lib/api/auth';
 import { APPS, CLIENT_TYPES, PLANS } from 'proton-shared/lib/constants';
@@ -22,7 +22,6 @@ import { getPlanName } from 'proton-shared/lib/helpers/subscription';
 
 import UserDropdownButton from './UserDropdownButton';
 
-const { PROTONMAIL_SETTINGS } = APPS;
 const { VPN } = CLIENT_TYPES;
 const { PROFESSIONAL, VISIONARY } = PLANS;
 
@@ -76,25 +75,16 @@ const UserDropdown = ({ ...rest }) => {
                             </span>
                         ) : null}
                     </li>
-                    {CLIENT_TYPE === VPN ? null : (
+                    {CLIENT_TYPE === VPN || APP_NAME === APPS.PROTONACCOUNT ? null : (
                         <li className="dropDown-item">
-                            {APP_NAME === PROTONMAIL_SETTINGS ? (
-                                <Link
-                                    to="/settings"
-                                    className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
-                                >
-                                    <Icon className="mt0-25 mr0-5" name="settings" />
-                                    {c('Action').t`Settings`}
-                                </Link>
-                            ) : (
-                                <a
-                                    className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
-                                    href="/settings"
-                                >
-                                    <Icon className="mt0-25 mr0-5" name="settings-master" />
-                                    {c('Action').t`Settings`}
-                                </a>
-                            )}
+                            <Link
+                                external={APP_NAME !== APPS.PROTONMAIL_SETTINGS}
+                                className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
+                                to="/settings"
+                            >
+                                <Icon className="mt0-25 mr0-5" name="settings-master" />
+                                {c('Action').t`Settings`}
+                            </Link>
                         </li>
                     )}
                     <li className="dropDown-item">

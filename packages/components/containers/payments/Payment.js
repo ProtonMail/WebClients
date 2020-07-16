@@ -44,7 +44,7 @@ const Payment = ({
         onMethod(value);
     }, [options.length]);
 
-    if (type === 'donation' && amount < MIN_DONATION_AMOUNT) {
+    if (['donation', 'human-verification'].includes(type) && amount < MIN_DONATION_AMOUNT) {
         const price = (
             <Price key="price" currency={currency}>
                 {MIN_DONATION_AMOUNT}
@@ -104,7 +104,7 @@ const Payment = ({
                     })}
                 </div>
                 <div className="pm-field-container payment-right">
-                    <div className="mw37e">
+                    <div className="mw37e onmobile-mw100">
                         <Method
                             loading={loading}
                             paypal={paypal}
@@ -128,7 +128,7 @@ const Payment = ({
 
 Payment.propTypes = {
     children: PropTypes.node,
-    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit']),
+    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'human-verification']),
     amount: PropTypes.number.isRequired,
     coupon: PropTypes.string,
     currency: PropTypes.oneOf(CURRENCIES),

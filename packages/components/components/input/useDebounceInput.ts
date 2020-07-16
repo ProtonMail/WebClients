@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 
 export default function useDebounceInput<T>(value: T, delay = 500) {
-    const [currentValue, setCurrentValue] = useState(value);
+    const [currentValue, setCurrentValue] = useState<T>(value);
     const interval = useRef(0);
 
     const clean = useCallback(() => {
