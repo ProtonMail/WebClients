@@ -169,7 +169,7 @@ export const insertCustomStyle = (document: Document) => {
         }
         *::-webkit-scrollbar-thumb:horizontal:hover,
         *::-webkit-scrollbar-thumb:vertical:hover {
-            background-color: var(--scrollbar-thumb-hover-color);
+            background-color: var(--scrollbar-thumb-hover-color, rgba(0, 0, 0, 0.5) );
         }
         *::-webkit-scrollbar-corner {
             visibility: hidden;
