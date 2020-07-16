@@ -532,14 +532,14 @@ function useFiles() {
             LinkID: linkId,
         });
         const fileStreamPromises: Promise<void>[] = [];
+        const abortController = new AbortController();
 
         const downloadFolder = async (linkId: string, filePath = ''): Promise<any> => {
-            const isComplete = cache.get.childrenComplete(shareId, linkId);
-            const listed = cache.get.listedChildLinks(shareId, linkId);
-            if (!isComplete && !listed?.length) {
-                await fetchAllFolderPages(shareId, linkId);
+            if (abortController.signal.aborted) {
+                throw Error(`Folder download canceled for ${filePath}`);
             }
 
+            await fetchAllFolderPages(shareId, linkId);
             const children = cache.get.childLinkMetas(shareId, linkId);
 
             if (!children) {
@@ -570,9 +570,21 @@ function useFiles() {
                                 },
                             }
                         ).catch(reject);
+                    }).catch((e) => {
+                        if (!abortController.signal.aborted) {
+                            console.error(e);
+                            abortController.abort();
+                            throw e;
+                        }
                     });
-                    fileStreamPromises.push(promise);
-                } else {
+                    fileStreamPromises.push(
+                        promise.catch((e) => {
+                            if (!abortController.signal.aborted) {
+                                throw e;
+                            }
+                        })
+                    );
+                } else if (!abortController.signal.aborted) {
                     cb.onStartFolderTransfer(path).catch((err) => console.error(`Failed to zip empty folder ${err}`));
                     await downloadFolder(child.LinkID, path);
                 }
