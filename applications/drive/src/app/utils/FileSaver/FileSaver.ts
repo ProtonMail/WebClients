@@ -82,7 +82,7 @@ class FileSaver {
                 readable.pipeTo(saveStream).catch(console.error);
             } catch (err) {
                 console.error('Failed to save zip via download, falling back to in-memory download:', err);
-                await this.saveViaBuffer(readable, filename);
+                this.saveViaBuffer(readable, filename).catch(console.error);
             }
         }
 
