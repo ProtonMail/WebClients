@@ -1,64 +1,57 @@
 import React from 'react';
-import { OrganizationSection, OrganizationPasswordSection, RelatedSettingsSection } from 'react-components';
+import {
+    OrganizationSection,
+    MembersSection,
+    OrganizationPasswordSection,
+    DomainsSection,
+    SettingsPropsShared
+} from 'react-components';
 import { c } from 'ttag';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
 
-import Page from '../components/Page';
+import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
 const { ADMIN } = PERMISSIONS;
 
 export const getOrganizationPage = () => {
     return {
         text: c('Title').t`Organization`,
-        route: '/settings/organization',
+        to: '/settings/organization',
         icon: 'organization',
         permissions: [ADMIN],
-        sections: [
+        subsections: [
             {
-                text: c('Title').t`Name`,
+                text: c('Title').t`Multi-user support`,
                 id: 'name'
             },
             {
-                text: c('Title').t`Password & key`,
+                text: c('Title').t`Password and key`,
                 id: 'password'
             },
             {
-                text: c('Title').t`Related settings`,
-                id: 'related-settings',
-                hide: true
+                text: c('Title').t`Users`,
+                id: 'members'
+            },
+            {
+                text: c('Title').t`Custom domains`,
+                id: 'domains'
             }
         ]
     };
 };
 
-interface Props {
-    setActiveSection: (newActiveSection: string) => void;
-}
-
-const OrganizationContainer = ({ setActiveSection }: Props) => {
+const OrganizationContainer = ({ location, setActiveSection }: SettingsPropsShared) => {
     return (
-        <Page config={getOrganizationPage()} setActiveSection={setActiveSection}>
+        <PrivateMainSettingsAreaWithPermissions
+            location={location}
+            config={getOrganizationPage()}
+            setActiveSection={setActiveSection}
+        >
             <OrganizationSection />
             <OrganizationPasswordSection />
-            <RelatedSettingsSection
-                list={[
-                    {
-                        icon: 'domains',
-                        text: c('Info')
-                            .t`Go to the domain settings if you want to create and manage custom domains, including electing a catch-all email address.`,
-                        link: c('Link').t`Domain settings`,
-                        to: '/settings/domains'
-                    },
-                    {
-                        icon: 'contacts-group-people',
-                        text: c('Info')
-                            .t`Go to the user settings if you want to create and manage the users of your organization.`,
-                        link: c('Link').t`User settings`,
-                        to: '/settings/members'
-                    }
-                ]}
-            />
-        </Page>
+            <MembersSection />
+            <DomainsSection />
+        </PrivateMainSettingsAreaWithPermissions>
     );
 };
 

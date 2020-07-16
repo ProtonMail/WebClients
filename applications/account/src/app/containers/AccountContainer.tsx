@@ -5,18 +5,19 @@ import {
     NewsSection,
     DeleteSection,
     EmailSection,
-    TwoFactorSection
+    TwoFactorSection,
+    SettingsPropsShared
 } from 'react-components';
 import { c } from 'ttag';
 
-import Page, { PageConfig } from '../components/Page';
+import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
-export const getAccountPage = (): PageConfig => {
+export const getAccountPage = () => {
     return {
         text: c('Title').t`Account`,
-        route: '/settings/account',
+        to: '/settings/account',
         icon: 'account',
-        sections: [
+        subsections: [
             {
                 text: c('Title').t`Username`,
                 id: 'username'
@@ -45,20 +46,20 @@ export const getAccountPage = (): PageConfig => {
     };
 };
 
-interface Props {
-    setActiveSection: (newActiveSection: string) => void;
-}
-
-const AccountContainer = ({ setActiveSection }: Props) => {
+const AccountContainer = ({ location, setActiveSection }: SettingsPropsShared) => {
     return (
-        <Page config={getAccountPage()} setActiveSection={setActiveSection}>
+        <PrivateMainSettingsAreaWithPermissions
+            location={location}
+            config={getAccountPage()}
+            setActiveSection={setActiveSection}
+        >
             <UsernameSection />
             <PasswordsSection />
             <TwoFactorSection />
             <EmailSection />
             <NewsSection />
             <DeleteSection />
-        </Page>
+        </PrivateMainSettingsAreaWithPermissions>
     );
 };
 

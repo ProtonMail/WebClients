@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainLogo, TopNavbar, Hamburger, useActiveBreakpoint } from 'react-components';
+import { MainLogo, TopNavbar, Hamburger, useActiveBreakpoint, AppsDropdown } from 'react-components';
 
 interface Props {
     title: string;
@@ -12,7 +12,10 @@ const PrivateHeader = ({ title, expanded, onToggleExpand }: Props) => {
 
     return (
         <header className="header flex flex-items-center flex-nowrap reset4print">
-            <MainLogo url="/settings" className="nomobile" external={true} />
+            <div className="logo-container flex flex-spacebetween flex-items-center flex-nowrap nomobile">
+                <MainLogo url="/settings" external={true} />
+                <AppsDropdown />
+            </div>
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
             {title && isNarrow ? <span className="h3 mb0 ellipsis lh-standard">{title}</span> : null}
             <TopNavbar />

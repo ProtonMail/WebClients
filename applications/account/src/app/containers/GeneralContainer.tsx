@@ -1,16 +1,22 @@
 import React from 'react';
 import { c } from 'ttag';
-import { LanguageSection, MessagesSection, ShortcutsSection, SearchSection } from 'react-components';
+import {
+    LanguageSection,
+    MessagesSection,
+    ShortcutsSection,
+    SearchSection,
+    SettingsPropsShared
+} from 'react-components';
 
 import locales from '../locales';
-import Page from '../components/Page';
+import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getGeneralPage = () => {
     return {
         text: c('Title').t`General`,
-        route: '/settings/general',
+        to: '/settings/general',
         icon: 'general',
-        sections: [
+        subsections: [
             {
                 text: c('Title').t`Language`,
                 id: 'language'
@@ -31,18 +37,18 @@ export const getGeneralPage = () => {
     };
 };
 
-interface Props {
-    setActiveSection: (newActiveSection: string) => void;
-}
-
-const GeneralContainer = ({ setActiveSection }: Props) => {
+const GeneralContainer = ({ location, setActiveSection }: SettingsPropsShared) => {
     return (
-        <Page config={getGeneralPage()} setActiveSection={setActiveSection}>
+        <PrivateMainSettingsAreaWithPermissions
+            location={location}
+            config={getGeneralPage()}
+            setActiveSection={setActiveSection}
+        >
             <LanguageSection locales={locales} />
             <MessagesSection />
             <SearchSection />
             <ShortcutsSection />
-        </Page>
+        </PrivateMainSettingsAreaWithPermissions>
     );
 };
 
