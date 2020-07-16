@@ -9,7 +9,7 @@ const RedeemCouponForm = ({ history }) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { CLIENT_TYPE } = useConfig();
-    const [couponCode, setCouponCode] = useState();
+    const [couponCode, setCouponCode] = useState('');
 
     const handleCouponCodeChange = useCallback(({ target: { value } }) => {
         setCouponCode(value);
@@ -17,6 +17,10 @@ const RedeemCouponForm = ({ history }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!couponCode) {
+            return;
+        }
 
         const { Plans = [] } = await api(queryCheckVerificationCode(couponCode, TOKEN_TYPES.COUPON, CLIENT_TYPE));
         const [{ Cycle, Name }] = Plans;
@@ -33,10 +37,12 @@ const RedeemCouponForm = ({ history }) => {
                 autoFocus={true}
                 className="redeem-coupon-code-input"
                 placeholder={c('Placeholder').t`Enter coupon code`}
+                value={couponCode}
                 onChange={handleCouponCodeChange}
             />
             <PrimaryButton
                 loading={loading}
+                disabled={!couponCode}
                 type="submit"
                 className="redeem-submit-button pm-button--noborder uppercase bold mt2 pt1 pb1"
             >
