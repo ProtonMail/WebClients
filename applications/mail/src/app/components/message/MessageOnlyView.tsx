@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { useLabels, Icon } from 'react-components';
+import { useLabels, Icon, classnames } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import MessageView from '../message/MessageView';
@@ -10,9 +10,10 @@ import { useMessage } from '../../hooks/useMessage';
 import { getNumParticipants } from '../../helpers/addresses';
 import { Message } from '../../models/message';
 import { OnCompose } from '../../hooks/useCompose';
-import { useShouldMoveOutMessage } from '../../hooks/useShouldMoveOut';
+import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 
 interface Props {
+    hidden: boolean;
     labelID: string;
     messageID: string;
     mailSettings: MailSettings;
@@ -20,14 +21,14 @@ interface Props {
     onCompose: OnCompose;
 }
 
-const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }: Props) => {
+const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onCompose }: Props) => {
     const [labels = []] = useLabels();
 
     // There is only reading on the message here, no actions
     // MessageView will be in charge to trigger all messages actions
-    const { message } = useMessage(messageID);
+    const { message, loading } = useMessage(messageID);
 
-    useShouldMoveOutMessage(labelID, message, onBack);
+    useShouldMoveOut(false, messageID, loading, onBack);
 
     // Message content could be undefined
     const data = message.data || ({ ID: messageID } as Message);
@@ -35,7 +36,12 @@ const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }
 
     return (
         <>
-            <header className="border-bottom mw100 message-conversation-summary p0-5 pb1 flex-item-noshrink">
+            <header
+                className={classnames([
+                    'border-bottom mw100 message-conversation-summary p0-5 pb1 flex-item-noshrink',
+                    hidden && 'hidden'
+                ])}
+            >
                 <div className="flex flex-nowrap mb1">
                     <h2 className="mb0 h3 ellipsis lh-standard flex-item-fluid pr1" title={data?.Subject}>
                         {data?.Subject}
@@ -61,7 +67,7 @@ const MessageOnlyView = ({ labelID, messageID, mailSettings, onBack, onCompose }
                 </div>
             </header>
 
-            <div className="scroll-if-needed flex-item-fluid pt0-5 mw100">
+            <div className={classnames(['scroll-if-needed flex-item-fluid pt0-5 mw100', hidden && 'hidden'])}>
                 <MessageView
                     labelID={labelID}
                     conversationMode={false}

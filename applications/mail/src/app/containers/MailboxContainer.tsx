@@ -52,7 +52,7 @@ const MailboxContainer = ({
     userSettings,
     mailSettings,
     breakpoints,
-    elementID: inputElementID,
+    elementID,
     location,
     history,
     onCompose,
@@ -115,13 +115,6 @@ const MailboxContainer = ({
         }, [] as string[]);
     }, [checkedElements]);
 
-    const elementID = useMemo(() => {
-        if (checkedIDs.length > 0) {
-            return undefined;
-        }
-        return inputElementID;
-    }, [inputElementID, checkedIDs]);
-
     const selectedIDs = useMemo(() => {
         if (checkedIDs.length) {
             return checkedIDs;
@@ -163,10 +156,12 @@ const MailboxContainer = ({
 
     const handleUncheckAll = () => handleCheck([], true, true);
 
-    const showToolbar = !breakpoints.isNarrow || !inputElementID;
-    const showList = columnMode || !inputElementID;
-    const showContentView = (columnMode && !!expectedLength) || !!inputElementID;
-    const showPlaceholder = !breakpoints.isNarrow && !elementID;
+    const showToolbar = !breakpoints.isNarrow || !elementID;
+    const showList = columnMode || !elementID;
+    const showContentPanel = (columnMode && !!expectedLength) || !!elementID;
+    const showPlaceholder = !breakpoints.isNarrow && (!elementID || !!checkedIDs.length);
+    const showContentView = showContentPanel && !!elementID;
+    const elementIDForList = checkedIDs.length ? undefined : elementID;
 
     return (
         <>
@@ -193,7 +188,7 @@ const MailboxContainer = ({
                     onNavigate={handleNavigate}
                 />
             )}
-            <PrivateMainArea className="flex" hasToolbar={showToolbar} hasRowMode={!showContentView}>
+            <PrivateMainArea className="flex" hasToolbar={showToolbar} hasRowMode={!showContentPanel}>
                 {showList && (
                     <List
                         location={location}
@@ -202,7 +197,7 @@ const MailboxContainer = ({
                         expectedLength={expectedLength}
                         columnLayout={columnLayout}
                         mailSettings={mailSettings}
-                        elementID={elementID}
+                        elementID={elementIDForList}
                         elements={elements}
                         checkedIDs={checkedIDs}
                         onCheck={handleCheck}
@@ -211,9 +206,9 @@ const MailboxContainer = ({
                         isSearch={isSearch}
                     />
                 )}
-                {showContentView && (
+                {showContentPanel && (
                     <section className="view-column-detail flex flex-column flex-item-fluid no-scroll">
-                        {showPlaceholder ? (
+                        {showPlaceholder && (
                             <PlaceholderView
                                 welcomeFlag={welcomeFlag}
                                 location={location}
@@ -223,23 +218,27 @@ const MailboxContainer = ({
                                 checkedIDs={checkedIDs}
                                 onUncheckAll={handleUncheckAll}
                             />
-                        ) : conversationMode ? (
-                            <ConversationView
-                                labelID={labelID}
-                                mailSettings={mailSettings}
-                                conversationID={inputElementID as string}
-                                onBack={handleBack}
-                                onCompose={onCompose}
-                            />
-                        ) : (
-                            <MessageOnlyView
-                                labelID={labelID}
-                                mailSettings={mailSettings}
-                                messageID={inputElementID as string}
-                                onBack={handleBack}
-                                onCompose={onCompose}
-                            />
                         )}
+                        {showContentView &&
+                            (conversationMode ? (
+                                <ConversationView
+                                    hidden={showPlaceholder}
+                                    labelID={labelID}
+                                    mailSettings={mailSettings}
+                                    conversationID={elementID as string}
+                                    onBack={handleBack}
+                                    onCompose={onCompose}
+                                />
+                            ) : (
+                                <MessageOnlyView
+                                    hidden={showPlaceholder}
+                                    labelID={labelID}
+                                    mailSettings={mailSettings}
+                                    messageID={elementID as string}
+                                    onBack={handleBack}
+                                    onCompose={onCompose}
+                                />
+                            ))}
                     </section>
                 )}
             </PrivateMainArea>

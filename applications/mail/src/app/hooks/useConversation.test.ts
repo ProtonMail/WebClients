@@ -18,29 +18,29 @@ describe('useConversation', () => {
         const reference = { Conversation: {} };
         conversationCache.set(ID, reference);
         const hook = setup();
-        expect(hook.result.current[0]).toBe(reference);
+        expect(hook.result.current[1]).toBe(reference);
     });
 
     it('should update value if cache is updated', async () => {
         const reference1 = { Conversation: {} };
         conversationCache.set(ID, reference1);
         const hook = setup();
-        expect(hook.result.current[0]).toBe(reference1);
+        expect(hook.result.current[1]).toBe(reference1);
 
         const reference2 = { Conversation: {} };
         await act(async () => {
             conversationCache.set(ID, reference2);
         });
-        expect(hook.result.current[0]).toBe(reference2);
+        expect(hook.result.current[1]).toBe(reference2);
     });
 
     it('should lauch api request when needed', async () => {
         const response = { Conversation: {} };
         addApiMock('mail/v4/conversations/ID', () => response);
         const hook = setup();
-        expect(hook.result.current[0]).toBe(undefined);
+        expect(hook.result.current[1]).toBe(undefined);
         await act(async () => await wait(0));
-        expect(hook.result.current[0]).toBe(response);
+        expect(hook.result.current[1]).toBe(response);
     });
 
     it('should change conversation when id change', async () => {
@@ -50,8 +50,8 @@ describe('useConversation', () => {
         conversationCache.set(ID, reference1);
         conversationCache.set(ID2, reference2);
         const hook = setup();
-        expect(hook.result.current[0]).toBe(reference1);
+        expect(hook.result.current[1]).toBe(reference1);
         hook.rerender(ID2);
-        expect(hook.result.current[0]).toBe(reference2);
+        expect(hook.result.current[1]).toBe(reference2);
     });
 });

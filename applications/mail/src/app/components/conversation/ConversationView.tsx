@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Loader, useLabels, useToggle, Icon } from 'react-components';
+import { Loader, useLabels, useToggle, Icon, classnames } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import MessageView from '../message/MessageView';
@@ -13,11 +13,12 @@ import TrashWarning from './TrashWarning';
 import { hasLabel } from '../../helpers/elements';
 import { getNumParticipants } from '../../helpers/addresses';
 import { OnCompose } from '../../hooks/useCompose';
-import { useShouldMoveOutConversation } from '../../hooks/useShouldMoveOut';
+import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 
 const { TRASH } = MAILBOX_LABEL_IDS;
 
 interface Props {
+    hidden: boolean;
     labelID: string;
     conversationID: string;
     messageID?: string;
@@ -26,12 +27,19 @@ interface Props {
     onCompose: OnCompose;
 }
 
-const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCompose }: Props) => {
+const ConversationView = ({
+    hidden,
+    labelID,
+    conversationID: inputConversationID,
+    mailSettings,
+    onBack,
+    onCompose
+}: Props) => {
     const [labels = []] = useLabels();
-    const [conversationData, loading] = useConversation(conversationID);
+    const [conversationID, conversationData, loading] = useConversation(inputConversationID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
 
-    useShouldMoveOutConversation(labelID, loading, conversationData, onBack);
+    useShouldMoveOut(true, conversationID, loading, onBack);
 
     if (loading) {
         return <Loader />;
@@ -52,7 +60,12 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
 
     return (
         <>
-            <header className="border-bottom mw100 message-conversation-summary p0-5 pb1 flex-item-noshrink">
+            <header
+                className={classnames([
+                    'border-bottom mw100 message-conversation-summary p0-5 pb1 flex-item-noshrink',
+                    hidden && 'hidden'
+                ])}
+            >
                 <div className="flex flex-nowrap mb1">
                     <h2 className="mb0 h3 ellipsis lh-standard flex-item-fluid pr1" title={conversation.Subject}>
                         <NumMessages className="mr0-25" conversation={conversation} />
@@ -78,7 +91,7 @@ const ConversationView = ({ labelID, conversationID, mailSettings, onBack, onCom
                     </div>
                 </div>
             </header>
-            <div className="scroll-if-needed flex-item-fluid pt0-5 mw100">
+            <div className={classnames(['scroll-if-needed flex-item-fluid pt0-5 mw100', hidden && 'hidden'])}>
                 {showTrashWarning && <TrashWarning inTrash={inTrash} filter={filter} onToggle={toggleFilter} />}
                 {messagesToShow.map((message, index) => (
                     <MessageView

@@ -23,12 +23,7 @@ interface FolderMap {
     [id: string]: FolderInfo;
 }
 
-const alwaysMessageLabels = [
-    MAILBOX_LABEL_IDS.DRAFTS,
-    MAILBOX_LABEL_IDS.ALL_DRAFTS,
-    MAILBOX_LABEL_IDS.SENT,
-    MAILBOX_LABEL_IDS.ALL_SENT
-];
+const alwaysMessageLabels = [DRAFTS, ALL_DRAFTS, SENT, ALL_SENT];
 
 export const getHumanLabelID = (labelID: string) => LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] || labelID;
 
@@ -86,22 +81,22 @@ export const getStandardFolders = (): FolderMap => ({
     [SENT]: {
         icon: 'sent',
         name: c('Mailbox').t`Sent`,
-        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SENT]}`
+        to: `/${LABEL_IDS_TO_HUMAN[SENT]}`
     },
     [ALL_SENT]: {
         icon: 'sent',
         name: c('Mailbox').t`Sent`,
-        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_SENT]}`
+        to: `/${LABEL_IDS_TO_HUMAN[ALL_SENT]}`
     },
     [DRAFTS]: {
         icon: 'drafts',
         name: c('Mailbox').t`Drafts`,
-        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.DRAFTS]}`
+        to: `/${LABEL_IDS_TO_HUMAN[DRAFTS]}`
     },
     [ALL_DRAFTS]: {
         icon: 'drafts',
         name: c('Mailbox').t`Drafts`,
-        to: `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_DRAFTS]}`
+        to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`
     }
 });
 
@@ -141,15 +136,7 @@ export const getCurrentFolders = (
 };
 
 export const getCurrentFolderID = (labelIDs: string[] = [], customFoldersList: Folder[] = []): string => {
-    const allFolderIDs = [
-        MAILBOX_LABEL_IDS.INBOX,
-        MAILBOX_LABEL_IDS.ARCHIVE,
-        MAILBOX_LABEL_IDS.SPAM,
-        MAILBOX_LABEL_IDS.TRASH,
-        MAILBOX_LABEL_IDS.SENT,
-        MAILBOX_LABEL_IDS.DRAFTS,
-        ...customFoldersList.map(({ ID }) => ID)
-    ];
+    const allFolderIDs = [INBOX, ARCHIVE, SPAM, TRASH, SENT, DRAFTS, ...customFoldersList.map(({ ID }) => ID)];
     return labelIDs.find((labeID) => allFolderIDs.includes(labeID)) || '';
 };
 

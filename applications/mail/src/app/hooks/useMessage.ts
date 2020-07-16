@@ -7,6 +7,7 @@ interface UseMessage {
     (localID: string): {
         message: MessageExtended;
         addAction: <T>(action: MessageAction<T>) => Promise<T>;
+        loading: boolean;
     };
 }
 
@@ -53,5 +54,7 @@ export const useMessage: UseMessage = (inputLocalID: string) => {
         });
     };
 
-    return { message, addAction };
+    const loading = !Object.prototype.hasOwnProperty.call(message, 'actionStatus') || !!message?.actionStatus;
+
+    return { message, addAction, loading };
 };

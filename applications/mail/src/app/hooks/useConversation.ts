@@ -11,30 +11,32 @@ export interface ConversationResult {
     Messages?: Message[];
 }
 
-export const useConversation = (conversationID: string): [ConversationResult | undefined, boolean] => {
+export const useConversation = (inputConversationID: string): [string, ConversationResult | undefined, boolean] => {
     const cache = useConversationCache();
     const api = useApi();
+    const [conversationID, setConversationID] = useState(inputConversationID);
     const [loading, withLoading] = useLoading(!cache.has(conversationID));
     const [conversation, setConversation] = useState<ConversationResult | undefined>(cache.get(conversationID));
 
     useEffect(() => {
         const load = async () => {
-            const result = (await api(getConversation(conversationID))) as ConversationResult;
-            cache.set(conversationID, result);
+            const result = (await api(getConversation(inputConversationID))) as ConversationResult;
+            cache.set(inputConversationID, result);
         };
 
-        if (!cache.has(conversationID)) {
+        if (!cache.has(inputConversationID)) {
             withLoading(load());
         }
 
-        setConversation(cache.get(conversationID));
+        setConversationID(inputConversationID);
+        setConversation(cache.get(inputConversationID));
 
         return cache.subscribe((changedId: string) => {
-            if (conversationID === changedId) {
-                setConversation(cache.get(conversationID));
+            if (inputConversationID === changedId) {
+                setConversation(cache.get(inputConversationID));
             }
         });
-    }, [conversationID, api, cache]);
+    }, [inputConversationID, api, cache]);
 
-    return [conversation, loading];
+    return [conversationID, conversation, loading];
 };
