@@ -32,11 +32,9 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
         setExpand(false);
     }, [location.pathname, location.hash]);
 
-    const base = '/';
-
     const header = (
         <PrivateHeader
-            url={base}
+            url="/"
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
@@ -45,7 +43,7 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
     );
 
     const sidebar = (
-        <Sidebar url={base} expanded={expanded} onToggleExpand={onToggleExpand} version={<SidebarVersion />}>
+        <Sidebar url="/" expanded={expanded} onToggleExpand={onToggleExpand} version={<SidebarVersion />}>
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
@@ -61,38 +59,38 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
     return (
         <PrivateAppContainer header={header} sidebar={sidebar}>
             <Switch>
-                <Route path={base} exact render={() => 'Overview'} />
+                <Route path="/" exact render={() => 'Overview'} />
                 <Route
-                    path={`${base}/account`}
+                    path="/account"
                     render={({ location }) => (
                         <AccountContainer location={location} setActiveSection={setActiveSection} />
                     )}
                 />
                 <Route
-                    path={`${base}/organization`}
+                    path="/organization"
                     render={({ location }) => (
                         <OrganizationContainer location={location} setActiveSection={setActiveSection} />
                     )}
                 />
                 <Route
-                    path={`${base}/subscription`}
+                    path="/subscription"
                     render={({ location }) => (
                         <SubscriptionContainer location={location} setActiveSection={setActiveSection} />
                     )}
                 />
                 <Route
-                    path={`${base}/general`}
+                    path="/general"
                     render={({ location }) => (
                         <GeneralContainer location={location} setActiveSection={setActiveSection} />
                     )}
                 />
                 <Route
-                    path={`${base}/security`}
+                    path="/security"
                     render={({ location }) => (
                         <SecurityContainer location={location} setActiveSection={setActiveSection} />
                     )}
                 />
-                <Redirect to={base} />
+                <Redirect to="/" />
             </Switch>
         </PrivateAppContainer>
     );

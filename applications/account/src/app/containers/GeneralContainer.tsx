@@ -14,7 +14,7 @@ import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSet
 export const getGeneralPage = () => {
     return {
         text: c('Title').t`General`,
-        to: '/settings/general',
+        to: '/general',
         icon: 'general',
         subsections: [
             {
