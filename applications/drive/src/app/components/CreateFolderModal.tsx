@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FocusEvent } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
 import { validateLinkName } from '../utils/validation';
@@ -20,10 +20,6 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
 
-    const formatFolderName = (name: string) => {
-        return name.trim();
-    };
-
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setFolderName(target.value);
     };
@@ -37,11 +33,8 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
 
         const { shareId, linkId } = parentFolder;
 
-        const name = formatFolderName(folderName);
-        setFolderName(name);
-
         try {
-            const { Folder } = await createNewFolder(shareId, linkId, name);
+            const { Folder } = await createNewFolder(shareId, linkId, folderName);
             await events.call(shareId);
             onCreateDone?.(Folder.ID);
         } catch (e) {
@@ -53,15 +46,11 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
 
         const notificationText = (
             <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
-                {c('Success').t`"${name}" created successfully`}
+                {c('Success').t`"${folderName}" created successfully`}
             </span>
         );
         createNotification({ text: notificationText });
         onClose?.();
-    };
-
-    const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
-        setFolderName(formatFolderName(target.value));
     };
 
     const validationError = validateLinkName(folderName);
@@ -86,7 +75,6 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
                         value={folderName}
                         placeholder={c('Placeholder').t`Enter a new folder name`}
                         onChange={handleChange}
-                        onBlur={handleBlur}
                         error={validationError}
                         required
                     />
