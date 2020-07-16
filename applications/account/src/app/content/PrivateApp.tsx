@@ -11,7 +11,7 @@ import {
     OrganizationModel,
     MembersModel,
     SubscriptionModel,
-    PaymentMethodsModel
+    PaymentMethodsModel,
 } from 'proton-shared/lib/models';
 
 import PrivateLayout from './PrivateLayout';
@@ -28,7 +28,7 @@ const EVENT_MODELS = [
     SubscriptionModel,
     OrganizationModel,
     MembersModel,
-    PaymentMethodsModel
+    PaymentMethodsModel,
 ];
 
 const PRELOAD_MODELS = [UserSettingsModel, UserModel, MailSettingsModel];

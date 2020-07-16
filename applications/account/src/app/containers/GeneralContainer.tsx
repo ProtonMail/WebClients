@@ -5,7 +5,7 @@ import {
     MessagesSection,
     ShortcutsSection,
     SearchSection,
-    SettingsPropsShared
+    SettingsPropsShared,
 } from 'react-components';
 
 import locales from '../locales';
@@ -19,21 +19,21 @@ export const getGeneralPage = () => {
         subsections: [
             {
                 text: c('Title').t`Language`,
-                id: 'language'
+                id: 'language',
             },
             {
                 text: c('Title').t`Messages`,
-                id: 'messages'
+                id: 'messages',
             },
             {
                 text: c('Title').t`Search`,
-                id: 'search'
+                id: 'search',
             },
             {
                 text: c('Title').t`Shortcuts`,
-                id: 'shortcuts'
-            }
-        ]
+                id: 'shortcuts',
+            },
+        ],
     };
 };
 

@@ -4,7 +4,7 @@ import {
     Paragraph,
     SettingsPropsShared,
     PrivateMainSettingsArea,
-    SectionConfig
+    SectionConfig,
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
@@ -20,6 +20,10 @@ const { ADMIN, MEMBER } = PERMISSIONS;
 interface Props extends SettingsPropsShared {
     config: SectionConfig;
     children?: React.ReactNode;
+}
+
+interface PermissionProps {
+    permission?: boolean;
 }
 
 const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, setActiveSection }: Props) => {
@@ -57,16 +61,16 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
     })();
 
     const childrenWithPermissions = React.Children.toArray(children)
-        .filter(React.isValidElement)
         .map((child, index) => {
+            if (!React.isValidElement<PermissionProps>(child)) {
+                return null;
+            }
             const { permissions: sectionPermissions } = subsections[index] || { id: 'no-id', text: '' };
-
             return React.cloneElement(child, {
-                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                // @ts-ignore
-                permission: hasPermission(userPermissions, sectionPermissions)
+                permission: hasPermission(userPermissions, sectionPermissions),
             });
-        });
+        })
+        .filter((x) => x !== null);
 
     return (
         <PrivateMainSettingsArea

@@ -12,8 +12,9 @@ const AccountPublicLayoutWrapper = ({ children, ...rest }: AccountProps) => {
             locales={locales}
             center={<ProtonLogo />}
             right={
-                <AccountSupportDropdown noCaret={true} className="link">{c('Action')
-                    .t`Need help?`}</AccountSupportDropdown>
+                <AccountSupportDropdown noCaret className="link">
+                    {c('Action').t`Need help?`}
+                </AccountSupportDropdown>
             }
             {...rest}
         >

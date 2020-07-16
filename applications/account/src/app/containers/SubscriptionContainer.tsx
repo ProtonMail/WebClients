@@ -6,7 +6,7 @@ import {
     BillingSection,
     SubscriptionSection,
     useUser,
-    SettingsPropsShared
+    SettingsPropsShared,
 } from 'react-components';
 import { c } from 'ttag';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
@@ -26,27 +26,27 @@ export const getSubscriptionPage = (user: UserModel) => {
         subsections: [
             !user.hasPaidMail && {
                 text: c('Title').t`Plans`,
-                id: 'plans'
+                id: 'plans',
             },
             {
                 text: c('Title').t`Subscription`,
                 id: 'subscription',
-                permissions: [PAID]
+                permissions: [PAID],
             },
             {
                 text: c('Title').t`Billing details`,
                 id: 'billing',
-                permissions: [PAID]
+                permissions: [PAID],
             },
             {
                 text: c('Title').t`Payment methods`,
-                id: 'payment-methods'
+                id: 'payment-methods',
             },
             {
                 text: c('Title').t`Invoices`,
-                id: 'invoices'
-            }
-        ].filter(isTruthy)
+                id: 'invoices',
+            },
+        ].filter(isTruthy),
     };
 };
 

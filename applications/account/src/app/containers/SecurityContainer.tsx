@@ -12,13 +12,13 @@ export const getSecurityPage = () => {
         subsections: [
             {
                 text: c('Title').t`Session management`,
-                id: 'sessions'
+                id: 'sessions',
             },
             {
                 text: c('Title').t`Authentication logs`,
-                id: 'logs'
-            }
-        ]
+                id: 'logs',
+            },
+        ],
     };
 };
 

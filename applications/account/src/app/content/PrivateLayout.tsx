@@ -11,7 +11,7 @@ import {
     useToggle,
     useUser,
     PrivateHeader,
-    PrivateAppContainer
+    PrivateAppContainer,
 } from 'react-components';
 
 import { getPages } from '../pages';

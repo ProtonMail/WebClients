@@ -5,7 +5,7 @@ import {
     AccountLoginContainer,
     AccountSignupContainer,
     AccountForgotUsernameContainer,
-    AccountResetPasswordContainer
+    AccountResetPasswordContainer,
 } from 'react-components';
 import ForceRefreshContext from 'react-components/containers/forceRefresh/context';
 import locales from '../locales';

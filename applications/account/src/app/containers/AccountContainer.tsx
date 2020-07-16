@@ -6,7 +6,7 @@ import {
     DeleteSection,
     EmailSection,
     TwoFactorSection,
-    SettingsPropsShared
+    SettingsPropsShared,
 } from 'react-components';
 import { c } from 'ttag';
 
@@ -20,29 +20,29 @@ export const getAccountPage = () => {
         subsections: [
             {
                 text: c('Title').t`Username`,
-                id: 'username'
+                id: 'username',
             },
             {
                 text: c('Title').t`Passwords`,
-                id: 'passwords'
+                id: 'passwords',
             },
             {
                 text: c('Title').t`Two factor authentication`,
-                id: 'two-fa'
+                id: 'two-fa',
             },
             {
                 text: c('Title').t`Recovery & notification`,
-                id: 'email'
+                id: 'email',
             },
             {
                 text: c('Title').t`Email subscriptions`,
-                id: 'news'
+                id: 'news',
             },
             {
                 text: c('Title').t`Delete account`,
-                id: 'delete'
-            }
-        ]
+                id: 'delete',
+            },
+        ],
     };
 };
 

@@ -4,7 +4,7 @@ import {
     MembersSection,
     OrganizationPasswordSection,
     DomainsSection,
-    SettingsPropsShared
+    SettingsPropsShared,
 } from 'react-components';
 import { c } from 'ttag';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
@@ -22,21 +22,21 @@ export const getOrganizationPage = () => {
         subsections: [
             {
                 text: c('Title').t`Multi-user support`,
-                id: 'name'
+                id: 'name',
             },
             {
                 text: c('Title').t`Password and key`,
-                id: 'password'
+                id: 'password',
             },
             {
                 text: c('Title').t`Users`,
-                id: 'members'
+                id: 'members',
             },
             {
                 text: c('Title').t`Custom domains`,
-                id: 'domains'
-            }
-        ]
+                id: 'domains',
+            },
+        ],
     };
 };
 
