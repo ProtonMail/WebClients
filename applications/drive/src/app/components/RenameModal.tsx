@@ -22,8 +22,6 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);
 
-    const formatName = (name: string) => name.trim();
-
     const selectNamePart = (e: FocusEvent<HTMLInputElement>) => {
         if (autofocusDone) {
             return;
@@ -41,11 +39,8 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
     };
 
     const handleSubmit = async () => {
-        const formattedName = formatName(name);
-        setName(formattedName);
-
         try {
-            await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, formattedName, item.Type);
+            await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, name, item.Type);
             await events.call(activeFolder.shareId);
         } catch (e) {
             if (e.name === 'ValidationError') {
@@ -56,15 +51,11 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
 
         const nameElement = (
             <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
-                &quot;{formattedName}&quot;
+                &quot;{name}&quot;
             </span>
         );
         createNotification({ text: c('Success').jt`${nameElement} renamed successfully` });
         onClose?.();
-    };
-
-    const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
-        setName(formatName(target.value));
     };
 
     const isFolder = item.Type === LinkType.FOLDER;
@@ -90,7 +81,6 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
                         maxLength={MAX_NAME_LENGTH}
                         placeholder={c('Placeholder').t`New name`}
                         onChange={handleChange}
-                        onBlur={handleBlur}
                         onFocus={selectNamePart}
                         error={validationError}
                         required
