@@ -234,10 +234,9 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         };
         let aborted = false;
 
-        const abortDownload = (groupId: string) => {
+        const abortPartialDownloads = () => {
             aborted = true;
             Object.values(files).forEach(({ controls }) => controls.cancel());
-            updateDownloadState(groupId, TransferState.Canceled);
             updatePartialDownloadState(Object.keys(files), TransferState.Canceled);
         };
 
@@ -255,7 +254,8 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 await Promise.all(Object.values(files).map(({ controls }) => controls.pause()));
             },
             cancel: () => {
-                abortDownload(groupId);
+                updateDownloadState(groupId, TransferState.Canceled);
+                abortPartialDownloads();
             },
             start: async () => {
                 try {
@@ -265,7 +265,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                     });
                     await Promise.all(partialsPromises);
                 } catch (err) {
-                    abortDownload(groupId);
+                    abortPartialDownloads();
                     throw err;
                 }
             },
