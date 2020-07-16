@@ -1,7 +1,7 @@
-export const requestUsername = (NotificationEmail: string) => ({
+export const requestUsername = (Email: string) => ({
     url: 'reset/username',
     method: 'post',
-    data: { NotificationEmail }
+    data: { Email }
 });
 
 export const validateResetToken = (username: string, token: string) => ({

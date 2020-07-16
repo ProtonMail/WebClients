@@ -1,3 +1,5 @@
+import { HumanVerificationMethodType } from '../interfaces';
+
 interface Headers {
     [key: string]: any;
 }
@@ -24,3 +26,13 @@ export const getAuthHeaders = (UID: string, AccessToken: string) => ({
 
 export const withAuthHeaders = (UID: string, AccessToken: string, config: any) =>
     mergeHeaders(config, getAuthHeaders(UID, AccessToken));
+
+export const getVerificationHeaders = (token?: string, tokenType?: HumanVerificationMethodType) => {
+    if (!token || !tokenType) {
+        return {};
+    }
+    return {
+        'x-pm-human-verification-token': token,
+        'x-pm-human-verification-token-type': tokenType
+    };
+};

@@ -1,3 +1,5 @@
+import { HumanVerificationMethodType } from '../interfaces';
+
 export const getUser = () => ({
     url: 'users',
     method: 'get'
@@ -6,22 +8,32 @@ export const getUser = () => ({
 export const queryCreateUser = (data: {
     Username: string;
     Email: string;
-    Token: string;
-    TokenType: 'captcha' | 'email' | 'sms' | 'invite' | 'payment';
+    Token?: string;
+    TokenType?: HumanVerificationMethodType;
     Type: 1 | 2; // 1 = mail, 2 = VPN
-    Auth: {
-        Version: number;
-        ModulusID: string;
-        Salt: string;
-        Verifier: string;
-    };
     Referrer?: string;
     Payload?: {
         [key: string]: string;
     };
     Salt?: string;
 }) => ({
-    url: 'users',
+    url: 'v4/users',
+    method: 'post',
+    data
+});
+
+export const queryCreateUserExternal = (data: {
+    Email: string;
+    Token?: string;
+    TokenType?: HumanVerificationMethodType;
+    Type: 1 | 2; // 1 = mail, 2 = VPN
+    Referrer?: string;
+    Payload?: {
+        [key: string]: string;
+    };
+    Salt?: string;
+}) => ({
+    url: 'users/external',
     method: 'post',
     data
 });

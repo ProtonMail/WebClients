@@ -22,6 +22,12 @@ export const createAddressKeyRoute = (data: {
     data
 });
 
+export const setupKeys = (data: { PrimaryKey: string; KeySalt: string; AddressKeys: AddressKey[] }) => ({
+    url: 'keys/setup',
+    method: 'post',
+    data
+});
+
 /**
  * @param ID
  * @param PrivateKey
