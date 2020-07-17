@@ -22,6 +22,12 @@ export const queryCreateUser = (data: {
     data,
 });
 
+export const getRecoveryMethods = (Username: string) => ({
+    url: 'users/reset',
+    method: 'get',
+    params: { Username },
+});
+
 export const queryCreateUserExternal = (data: {
     Email: string;
     Token?: string;
