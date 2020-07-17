@@ -64,8 +64,11 @@ const DeleteButton = ({ labelID = '', mailSettings, breakpoints, selectedIDs = [
                 </ConfirmModal>
             );
         });
-        const action = type === ELEMENT_TYPES.CONVERSATION ? deleteConversations : deleteMessages;
-        await api(action(selectedIDs));
+        const action =
+            type === ELEMENT_TYPES.CONVERSATION
+                ? deleteConversations(selectedIDs, labelID)
+                : deleteMessages(selectedIDs);
+        await api(action);
         await call();
         createNotification({ text: c('Success').t`Elements deleted` });
     };
