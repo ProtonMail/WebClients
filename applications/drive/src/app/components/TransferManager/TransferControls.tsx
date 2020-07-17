@@ -7,9 +7,10 @@ import FileSaver from '../../utils/FileSaver/FileSaver';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { LinkType } from '../../interfaces/link';
 import useFiles from '../../hooks/drive/useFiles';
-import { TransferType, UploadProps, DownloadProps } from './interfaces';
+import { TransferType, TransferProps } from './interfaces';
+import { Download } from '../../interfaces/transfer';
 
-function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
+function TransferControls<T extends TransferType>({ transfer, type }: TransferProps<T>) {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();
     const { startFolderTransfer, startFileTransfer } = useFiles();
     const { removeUpload, cancelUpload } = useUploadProvider();
@@ -49,29 +50,30 @@ function TransferControls({ transfer, type }: UploadProps | DownloadProps) {
         }
     };
     const restartTransfer = async () => {
-        if (type !== TransferType.Download || !('downloadInfo' in transfer) || !('type' in transfer)) {
+        if (type !== TransferType.Download) {
             return;
         }
 
-        removeDownload(transfer.id);
+        const download = transfer as Download;
+        removeDownload(download.id);
 
-        if (transfer.type === LinkType.FILE) {
+        if (download.type === LinkType.FILE) {
             await preventLeave(
                 FileSaver.saveAsFile(
-                    await startFileTransfer(transfer.downloadInfo.ShareID, transfer.downloadInfo.LinkID, transfer.meta),
-                    transfer.meta
+                    await startFileTransfer(download.downloadInfo.ShareID, download.downloadInfo.LinkID, download.meta),
+                    download.meta
                 )
             );
         } else if ('downloadInfo' in transfer) {
-            const zipSaver = await FileSaver.saveAsZip(transfer.meta.filename);
+            const zipSaver = await FileSaver.saveAsZip(download.meta.filename);
 
             if (zipSaver) {
                 try {
                     await preventLeave(
                         startFolderTransfer(
-                            transfer.meta.filename,
-                            transfer.downloadInfo.ShareID,
-                            transfer.downloadInfo.LinkID,
+                            download.meta.filename,
+                            download.downloadInfo.ShareID,
+                            download.downloadInfo.LinkID,
                             {
                                 onStartFileTransfer: zipSaver.addFile,
                                 onStartFolderTransfer: zipSaver.addFolder,

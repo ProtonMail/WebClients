@@ -10,6 +10,11 @@ export interface UploadProps {
     type: TransferType.Upload;
 }
 
+export interface TransferProps<T extends TransferType> {
+    transfer: T extends TransferType.Download ? Download : Upload;
+    type: T;
+}
+
 export interface TransferStats {
     state: TransferState;
     progress: number;

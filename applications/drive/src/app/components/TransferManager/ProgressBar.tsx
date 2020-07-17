@@ -6,7 +6,7 @@ export enum ProgressBarStatus {
     Running = 'running',
     Success = 'success',
     Warning = 'warning',
-    Error = 'error'
+    Error = 'error',
 }
 
 interface Props {

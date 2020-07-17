@@ -48,8 +48,7 @@
     }
 
     &-list {
-        max-height: 20em; // 4x listItem
-        overflow-y: auto;
+        max-height: 25em; // 5x listItem
         background-color: var(--bgcolor-input, $pm-global-light);
         transition: inherit;
 

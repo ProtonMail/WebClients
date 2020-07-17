@@ -12,17 +12,17 @@ import {
     isTransferCanceled,
     isTransferDone,
 } from '../../utils/transfer';
-import { DownloadProps, UploadProps } from './interfaces';
+import { TransferType, TransferProps } from './interfaces';
 
-type Props = (DownloadProps | UploadProps) & {
-    stats: {
-        progress: number;
-        speed: number;
+type Props<T extends TransferType> = React.HTMLAttributes<HTMLDivElement> &
+    TransferProps<T> & {
+        stats: {
+            progress: number;
+            speed: number;
+        };
     };
-};
 
-const Transfer = ({ stats, ...props }: Props) => {
-    const { transfer, type } = props;
+const Transfer = <T extends TransferType>({ stats, transfer, type, className, ...rest }: Props<T>) => {
     const isInitializing = isTransferInitializing(transfer);
     const isProgress = isTransferProgress(transfer);
     const isPaused = isTransferPaused(transfer);
@@ -40,9 +40,11 @@ const Transfer = ({ stats, ...props }: Props) => {
     return (
         <div
             className={classnames([
-                'pd-transfers-listItem pb1 pt1 ml1 mr1',
+                'pd-transfers-listItem pb1 pt1 pl1 pr1',
                 isCanceled && 'pd-transfers-listItem--canceled',
+                className,
             ])}
+            {...rest}
         >
             <div className="pd-transfers-listItem-name flex flex-nowrap flex-items-center ellipsis">
                 <span className="pd-transfers-listItem-icon flex flex-item-noshrink">
@@ -59,14 +61,17 @@ const Transfer = ({ stats, ...props }: Props) => {
                     <span className="pre">{transfer.meta.filename}</span>
                 </span>
             </div>
+
             <div className="pd-transfers-listItem-size alignright ellipsis" title={`${percentageDone}%`}>
                 {(isProgress || isPaused) && <span className="notablet nomobile">{humanSize(progress)} / </span>}
                 {fileSize !== undefined && humanSize(fileSize)}
             </div>
+
             <div className="pd-transfers-listItem-status flex flex-nowrap flex-items-center flex-justify-end ellipsis">
                 <TransferStateIndicator transfer={transfer} type={type} speed={speed} />
             </div>
-            <TransferControls {...props} />
+
+            <TransferControls transfer={transfer} type={type} />
 
             <ProgressBar
                 status={

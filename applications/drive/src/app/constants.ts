@@ -13,7 +13,7 @@ export const DEFAULT_SORT_FIELD = 'ModifyTime';
 export const DEFAULT_SORT_ORDER = SORT_DIRECTION.ASC;
 export const DEFAULT_SORT_PARAMS: { sortField: SortKeys; sortOrder: SORT_DIRECTION } = {
     sortField: DEFAULT_SORT_FIELD,
-    sortOrder: DEFAULT_SORT_ORDER
+    sortOrder: DEFAULT_SORT_ORDER,
 };
 export const UPLOAD_TIMEOUT = 60000;
 export const DOWNLOAD_TIMEOUT = 60000;
@@ -22,12 +22,12 @@ export const MAX_NAME_LENGTH = 255;
 
 export enum LinkURLType {
     FOLDER = 'folder',
-    FILE = 'file'
+    FILE = 'file',
 }
 
 export enum EVENT_TYPES {
     DELETE = 0,
     CREATE = 1,
     UPDATE = 2,
-    UPDATE_METADATA = 3
+    UPDATE_METADATA = 3,
 }

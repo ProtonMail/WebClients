@@ -11,7 +11,7 @@ import TrashContainer from './TrashContainer/TrashContainer';
 import DriveContainer from './DriveContainer/DriveContainer';
 import PreviewContainer from './PreviewContainer';
 import { LinkURLType } from '../constants';
-import TransfersInfo from '../components/TransfersInfo/TransfersInfo';
+import TransferManager from '../components/TransferManager/TransferManager';
 
 const MainContainer = () => {
     return (
@@ -22,7 +22,7 @@ const MainContainer = () => {
                         <DownloadProvider>
                             <ModalsChildren />
                             <AppErrorBoundary>
-                                <TransfersInfo />
+                                <TransferManager />
                                 <Switch>
                                     <Route path="/drive/trash" component={TrashContainer} />
                                     <Route path="/drive" component={DriveContainer} />

@@ -21,7 +21,7 @@ interface Props {
     onClose: () => void;
 }
 
-const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, minimized = false }: Props) => {
+const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, minimized = false }: Props) => {
     const [currentUploads, setCurrentUploads] = useState<Upload[]>([]);
     const [currentDownloads, setCurrentDownloads] = useState<Download[]>([]);
 
@@ -206,4 +206,4 @@ const Heading = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, m
     );
 };
 
-export default Heading;
+export default Header;
