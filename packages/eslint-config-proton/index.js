@@ -38,21 +38,21 @@ module.exports = {
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        "selector": "variable",
-        "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+        selector: "variable",
+        format: ["camelCase", "PascalCase", "UPPER_CASE"],
       },
       {
-        "selector": "function",
-        "format": ["camelCase", "PascalCase"]
+        selector: "function",
+        format: ["camelCase", "PascalCase"],
       },
       {
-        "selector": "typeLike",
-        "format": ["PascalCase", "UPPER_CASE"]
+        selector: "typeLike",
+        format: ["PascalCase", "UPPER_CASE"],
       },
       {
-        "selector": "enum",
-        "format": ["PascalCase", "UPPER_CASE"]
-      }
+        selector: "enum",
+        format: ["PascalCase", "UPPER_CASE"],
+      },
     ],
     "consistent-return": "off",
     "import/default": 2,
@@ -78,6 +78,7 @@ module.exports = {
     "no-plusplus": "off",
     "no-restricted-syntax": "off",
     "no-shadow": "off",
+    "no-void": [2, { allowAsStatement: true }],
     "react-hooks/rules-of-hooks": "error",
     "react/display-name": "warn",
     "react/jsx-filename-extension": [
@@ -88,7 +89,7 @@ module.exports = {
     ],
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "warn",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
   },
   settings: {
     "import/resolver": {
