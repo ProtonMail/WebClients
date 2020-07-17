@@ -6,7 +6,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import validateEventModel from './eventForm/validateEventModel';
 
 import EventForm from './EventForm';
-import { useForm } from './hooks/useForm';
+import { useForm, ACTION } from './hooks/useForm';
 import { EventModel } from '../../interfaces/EventModel';
 import { WeekStartsOn } from '../../containers/calendar/interface';
 
@@ -35,7 +35,7 @@ const CreateEventModal = ({
     ...rest
 }: Props) => {
     const errors = validateEventModel(model);
-    const { isSubmitted, loadingAction, handleDelete, handleSubmit } = useForm({
+    const { isSubmitted, loadingAction, handleDelete, handleSubmit, lastAction } = useForm({
         containerEl: document.body, // Annoying to get a ref, mostly fine to use this
         model,
         errors,
@@ -51,7 +51,12 @@ const CreateEventModal = ({
     );
 
     const submitButton = (
-        <PrimaryButton data-test-id="create-event-modal:save" loading={loadingAction} type="submit">
+        <PrimaryButton
+            data-test-id="create-event-modal:save"
+            loading={loadingAction && lastAction === ACTION.SUBMIT}
+            disabled={loadingAction}
+            type="submit"
+        >
             {c('Action').t`Save`}
         </PrimaryButton>
     );
@@ -60,8 +65,12 @@ const CreateEventModal = ({
         submitButton
     ) : (
         <div>
-            <Button onClick={loadingAction ? noop : handleDelete} loading={loadingAction} className="mr1">{c('Action')
-                .t`Delete`}</Button>
+            <Button
+                onClick={loadingAction ? noop : handleDelete}
+                loading={loadingAction && lastAction === ACTION.DELETE}
+                disabled={loadingAction}
+                className="mr1"
+            >{c('Action').t`Delete`}</Button>
             {submitButton}
         </div>
     );

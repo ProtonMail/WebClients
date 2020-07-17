@@ -27,6 +27,11 @@ const handleValidation = (errors: EventModelErrors, containerEl: HTMLElement | n
     return false;
 };
 
+export enum ACTION {
+    SUBMIT,
+    DELETE,
+}
+
 interface Arguments {
     containerEl: HTMLElement | null;
     model: EventModel;
@@ -34,23 +39,27 @@ interface Arguments {
     onSave: (value: EventModel) => Promise<void>;
     onDelete?: () => Promise<void>;
 }
+
 export const useForm = ({ containerEl, model, errors, onSave, onDelete }: Arguments) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [loadingAction, withLoadingAction] = useLoading();
+    const [lastAction, setLastAction] = useState<ACTION | null>(null);
 
     const handleSubmit = () => {
         setIsSubmitted(true);
+        setLastAction(ACTION.SUBMIT);
         if (handleValidation(errors, containerEl)) {
             return;
         }
-        withLoadingAction(onSave(model));
+        void withLoadingAction(onSave(model));
     };
 
     const handleDelete = () => {
+        setLastAction(ACTION.DELETE);
         if (!onDelete) {
             return;
         }
-        withLoadingAction(onDelete());
+        void withLoadingAction(onDelete());
     };
 
     return {
@@ -58,5 +67,6 @@ export const useForm = ({ containerEl, model, errors, onSave, onDelete }: Argume
         loadingAction,
         handleDelete,
         handleSubmit,
+        lastAction,
     };
 };
