@@ -6,6 +6,10 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';
 import { parseInDiv, isHTMLEmpty } from '../dom';
+import { MessageExtended } from '../../models/message';
+import { isPlainText } from './messages';
+import { getPlainTextContent, exportPlainText } from './messageContent';
+import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
 
 export const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
 export const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
@@ -102,4 +106,44 @@ export const insertSignature = (
     element.insertAdjacentHTML(position, template);
 
     return element.innerHTML;
+};
+
+/**
+ * Return the content of the message with the signature switched from the old one to the new one
+ */
+export const changeSignature = (
+    message: MessageExtended,
+    mailSettings: MailSettings,
+    oldSignature: string,
+    newSignature: string
+) => {
+    if (isPlainText(message.data)) {
+        const oldTemplate = templateBuilder(oldSignature, mailSettings, false, true);
+        const newTemplate = templateBuilder(newSignature, mailSettings, false, true);
+        const content = getPlainTextContent(message);
+        const oldSignatureText = exportPlainText(oldTemplate).trim();
+        const newSignatureText = exportPlainText(newTemplate).trim();
+        return content.replace(oldSignatureText, newSignatureText);
+    } else {
+        const document = message.document as Element;
+
+        const userSignature = [...document.querySelectorAll(`.${CLASSNAME_SIGNATURE_USER}`)].find(
+            (element) => element.closest(`.${CLASSNAME_BLOCKQUOTE}`) === null
+        );
+
+        if (userSignature) {
+            const protonSignature = getProtonSignature(mailSettings);
+            const { userClass, containerClass } = getClassNamesSignature(newSignature, protonSignature);
+
+            userSignature.innerHTML = replaceLineBreaks(newSignature);
+            userSignature.className = `${CLASSNAME_SIGNATURE_USER} ${userClass}`;
+
+            const signatureContainer = userSignature?.closest(`.${CLASSNAME_SIGNATURE_CONTAINER}`);
+            if (signatureContainer && signatureContainer !== null) {
+                signatureContainer.className = `${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}`;
+            }
+        }
+
+        return document.innerHTML;
+    }
 };

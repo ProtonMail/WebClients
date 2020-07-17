@@ -8,7 +8,7 @@ import { MessageExtended } from '../../models/message';
 import { getFromAdresses } from '../../helpers/addresses';
 import { MessageChange } from './Composer';
 import { MessageSendInfo } from '../../hooks/useSendInfo';
-import { changeSignature } from '../../helpers/message/messageContent';
+import { changeSignature } from '../../helpers/message/messageSignature';
 
 interface Props {
     message: MessageExtended;
