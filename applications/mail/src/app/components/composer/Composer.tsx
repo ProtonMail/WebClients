@@ -25,7 +25,7 @@ import { useHandler } from '../../hooks/useHandler';
 import { useMessage } from '../../hooks/useMessage';
 import { useInitializeMessage } from '../../hooks/useMessageReadActions';
 import { useSaveDraft, useDeleteDraft } from '../../hooks/useMessageWriteActions';
-import { useSendMessage, useSendVerifications } from '../../hooks/useSendMessage';
+import { useSendMessage, useSendVerifications, useSendWithUndo } from '../../hooks/useSendMessage';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { useAttachments } from '../../hooks/useAttachments';
 import { getDate } from '../../helpers/elements';
@@ -35,9 +35,7 @@ import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { reloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
-import UndoButton from '../notifications/UndoButton';
 import { OnCompose } from '../../hooks/useCompose';
-import { UNDO_SEND_DELAY } from '../../constants';
 
 enum ComposerInnerModal {
     None,
@@ -134,6 +132,7 @@ const Composer = ({
     const saveDraft = useSaveDraft();
     const sendVerifications = useSendVerifications();
     const sendMessage = useSendMessage();
+    const sendWithUndo = useSendWithUndo();
     const deleteDraft = useDeleteDraft(syncedMessage);
 
     // Computed composer status
@@ -309,10 +308,6 @@ const Composer = ({
         }
     };
 
-    const onBeforeUnload = () => {
-        return c('Info').t`The message you are sending will not be sent if you leave the page.`;
-    };
-
     const handleSend = async () => {
         setSending(true);
         let verificationResults;
@@ -324,34 +319,13 @@ const Composer = ({
         }
         try {
             const { cleanMessage, mapSendPrefs } = verificationResults;
+            const alreadySaved = !pendingSave;
             autoSave.abort?.();
-            window.addEventListener('beforeunload', onBeforeUnload);
-            const timeoutID = setTimeout(async () => {
-                createNotification({ text: c('Info').t`Message sent` });
-                await addAction(() => sendMessage(cleanMessage, mapSendPrefs));
-                window.removeEventListener('beforeunload', onBeforeUnload);
-            }, UNDO_SEND_DELAY);
-            createNotification({
-                text: (
-                    <>
-                        <span className="mr1">{c('Success').t`Sending message...`}</span>
-                        <UndoButton
-                            onUndo={() => {
-                                // Cancel send action
-                                clearTimeout(timeoutID);
-                                // Re-open the message
-                                onCompose({
-                                    existingDraft: {
-                                        localID: syncedMessage.localID,
-                                        data: syncedMessage.data
-                                    }
-                                });
-                            }}
-                        />
-                    </>
-                ),
-                expiration: UNDO_SEND_DELAY
-            });
+            await sendWithUndo(
+                () => addAction(() => sendMessage(cleanMessage, mapSendPrefs, alreadySaved)),
+                onCompose,
+                syncedMessage
+            );
             onClose();
         } catch (error) {
             createNotification({

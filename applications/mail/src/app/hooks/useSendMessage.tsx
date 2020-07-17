@@ -13,11 +13,12 @@ import {
     Alert,
     useNotifications
 } from 'react-components';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 
 import SendWithErrorsModal from '../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../helpers/message/cleanMessage';
 import { MapSendPreferences } from '../models/crypto';
-import { MessageExtendedWithData } from '../models/message';
+import { MessageExtendedWithData, MessageExtended } from '../models/message';
 import { getRecipientsAddresses, isAttachPublicKey } from '../helpers/message/messages';
 import getSendPreferences from '../helpers/message/getSendPreferences';
 import { generateTopPackages } from '../helpers/send/sendTopPackages';
@@ -27,10 +28,12 @@ import { useAttachmentCache } from '../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../containers/MessageProvider';
 import { attachPublicKey } from '../helpers/message/messageAttachPublicKey';
 import { Attachment } from '../models/attachment';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 import SendWithWarningsModal from '../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
 import { useSaveDraft } from './useMessageWriteActions';
+import UndoButton from '../components/notifications/UndoButton';
+import { UNDO_SEND_DELAY } from '../constants';
+import { OnCompose } from './useCompose';
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();
@@ -159,7 +162,6 @@ export const useSendVerifications = () => {
 // Reference: Angular/src/app/composer/services/sendMessage.js
 
 export const useSendMessage = () => {
-    const cache = new Map(); // TODO
     const api = useApi();
     const getAddressKeys = useGetAddressKeys();
     const attachmentCache = useAttachmentCache();
@@ -169,21 +171,24 @@ export const useSendMessage = () => {
     const saveDraft = useSaveDraft();
 
     return useCallback(
-        async (inputMessage: MessageExtendedWithData, mapSendPrefs: MapSendPreferences) => {
+        async (inputMessage: MessageExtendedWithData, mapSendPrefs: MapSendPreferences, alreadySaved = false) => {
+            const localID = inputMessage.localID;
+
+            if (!alreadySaved) {
+                await saveDraft(inputMessage);
+            }
+
             // Add public key if selected
-            const Attachments: Attachment[] = isAttachPublicKey(inputMessage.data)
-                ? await attachPublicKey(inputMessage, auth.UID)
-                : inputMessage.data.Attachments;
+            if (isAttachPublicKey(inputMessage.data)) {
+                const savedMessage = messageCache.get(localID) as MessageExtendedWithData;
+                const Attachments: Attachment[] = await attachPublicKey(savedMessage, auth.UID);
+                await saveDraft({
+                    ...savedMessage,
+                    data: { ...savedMessage.data, Attachments }
+                });
+            }
 
-            // Processed message representing what we send
-            const messageToSave: MessageExtendedWithData = {
-                ...inputMessage,
-                data: { ...inputMessage.data, Attachments }
-            };
-
-            await saveDraft(messageToSave);
-
-            const message = messageCache.get(messageToSave.localID) as MessageExtendedWithData;
+            const message = messageCache.get(localID) as MessageExtendedWithData;
             const messageWithGoodFlags = {
                 ...message,
                 data: {
@@ -211,7 +216,7 @@ export const useSendMessage = () => {
             );
             await call();
 
-            updateMessageCache(messageCache, inputMessage.localID, { data: Sent });
+            updateMessageCache(messageCache, localID, { data: Sent });
 
             // } catch (e) {
             //     if (retry && e.data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED) {
@@ -223,6 +228,47 @@ export const useSendMessage = () => {
             //     throw e;
             // }
         },
-        [cache]
+        []
+    );
+};
+
+export const useSendWithUndo = () => {
+    const { createNotification } = useNotifications();
+
+    const onBeforeUnload = () => {
+        return c('Info').t`The message you are sending will not be sent if you leave the page.`;
+    };
+
+    return useCallback(
+        async (actualSend: () => Promise<void>, onCompose: OnCompose, syncedMessage: MessageExtended) => {
+            window.addEventListener('beforeunload', onBeforeUnload);
+            const timeoutID = setTimeout(async () => {
+                createNotification({ text: c('Info').t`Message sent` });
+                await actualSend();
+                window.removeEventListener('beforeunload', onBeforeUnload);
+            }, UNDO_SEND_DELAY);
+            createNotification({
+                text: (
+                    <>
+                        <span className="mr1">{c('Success').t`Sending message...`}</span>
+                        <UndoButton
+                            onUndo={() => {
+                                // Cancel send action
+                                clearTimeout(timeoutID);
+                                // Re-open the message
+                                onCompose({
+                                    existingDraft: {
+                                        localID: syncedMessage.localID,
+                                        data: syncedMessage.data
+                                    }
+                                });
+                            }}
+                        />
+                    </>
+                ),
+                expiration: UNDO_SEND_DELAY
+            });
+        },
+        []
     );
 };
