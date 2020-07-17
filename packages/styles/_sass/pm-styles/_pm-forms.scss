@@ -26,6 +26,7 @@ $field-container: 26rem !default;
   width: $field-container;
   @extend .mw100;
   @extend .inbl;
+  @extend .relative;
   &.auto {
     @extend .auto;
   }
