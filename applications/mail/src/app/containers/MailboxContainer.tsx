@@ -32,6 +32,7 @@ import { Breakpoints } from '../models/utils';
 import { OnCompose } from '../hooks/useCompose';
 import { useWelcomeFlag } from '../hooks/useWelcomeFlag';
 import useNewEmailNotification from '../hooks/useNewEmailNotification';
+import { pageCount } from '../helpers/paging';
 
 import './MailboxContainer.scss';
 
@@ -142,14 +143,14 @@ const MailboxContainer = ({
 
     // Move to the previous page if the current one becomes empty
     useEffect(() => {
-        if (!loading && elements.length === 0 && page.page > 0) {
+        if (page.total && page.page >= pageCount(page)) {
             handlePage(page.page - 1);
         }
-    }, [loading]);
+    }, [page]);
 
     /**
      * Put *IDs* to *checked* state
-     * Uncheck others id *replace* is true
+     * Uncheck others if *replace* is true
      */
     const handleCheck = (IDs: string[], checked: boolean, replace: boolean) =>
         setCheckedElements(
