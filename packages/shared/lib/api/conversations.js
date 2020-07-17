@@ -66,16 +66,16 @@ export const markConversationsAsRead = (IDs) => ({
     data: { IDs },
 });
 
-export const markConversationsAsUnread = (IDs) => ({
+export const markConversationsAsUnread = (IDs, LabelID) => ({
     method: 'put',
     url: 'mail/v4/conversations/unread',
-    data: { IDs },
+    data: { IDs, LabelID },
 });
 
-export const deleteConversations = (IDs) => ({
+export const deleteConversations = (IDs, LabelID) => ({
     method: 'put',
     url: 'mail/v4/conversations/delete',
-    data: { IDs },
+    data: { IDs, LabelID },
 });
 
 export const labelConversations = ({ LabelID, IDs } = {}) => ({
