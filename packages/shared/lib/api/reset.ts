@@ -9,7 +9,7 @@ export const validateResetToken = (username: string, token: string) => ({
     method: 'get',
 });
 
-export const requestLoginResetToken = (data: { Username: string; NotificationEmail: string }) => ({
+export const requestLoginResetToken = (data: { Username: string; Email?: string; Phone?: string }) => ({
     url: 'reset',
     method: 'post',
     data,
