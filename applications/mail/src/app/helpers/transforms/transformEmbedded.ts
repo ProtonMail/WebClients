@@ -1,11 +1,12 @@
-import { SHOW_IMAGES } from 'proton-shared/lib/constants';
+import { Api, MailSettings } from 'proton-shared/lib/interfaces';
+
 import { find } from '../embedded/embeddedFinder';
 import { mutateHTMLBlob, decrypt, prepareImages } from '../embedded/embeddedParser';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { isDraft } from '../message/messages';
 import { MessageExtended } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { Api, MailSettings } from 'proton-shared/lib/interfaces';
+import { hasShowEmbedded } from '../settings';
 
 export const transformEmbedded = async (
     message: MessageExtended,
@@ -13,8 +14,7 @@ export const transformEmbedded = async (
     api: Api,
     mailSettings: MailSettings
 ) => {
-    const { ShowImages = 0 } = mailSettings as { ShowImages: number };
-    const show = message.showEmbeddedImages === true || ShowImages === SHOW_IMAGES.EMBEDDED || isDraft(message.data);
+    const show = message.showEmbeddedImages === true || hasShowEmbedded(mailSettings) || isDraft(message.data);
     const isReplyForward =
         message.action === MESSAGE_ACTIONS.REPLY ||
         message.action === MESSAGE_ACTIONS.REPLY_ALL ||

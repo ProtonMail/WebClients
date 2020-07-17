@@ -1,8 +1,9 @@
-import { SHOW_IMAGES } from 'proton-shared/lib/constants';
-import { isDraft } from '../message/messages';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+
+import { isDraft } from '../message/messages';
 import { MessageExtended } from '../../models/message';
 import { getContent, setContent } from '../message/messageContent';
+import { hasShowRemote } from '../settings';
 
 const WHITELIST = ['notify@protonmail.com'];
 
@@ -75,7 +76,7 @@ export const transformRemote = (message: MessageExtended, mailSettings: MailSett
     const regex = new RegExp(REGEXP_FIXER, 'g');
     const showImages =
         message.showRemoteImages ||
-        !!(mailSettings.ShowImages & SHOW_IMAGES.REMOTE || WHITELIST.includes(message.data?.Sender?.Address || '')) ||
+        !!(hasShowRemote(mailSettings) || WHITELIST.includes(message.data?.Sender?.Address || '')) ||
         isDraft(message.data);
     const content = getContent(message);
     const hasImages = regex.test(content);
