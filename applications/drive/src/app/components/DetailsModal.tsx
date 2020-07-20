@@ -91,7 +91,7 @@ const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
         const fieldValue = extractFieldValue(field, item);
         return (
             <Row key={field}>
-                <Label>{field}</Label>
+                <Label style={{ cursor: 'default' }}>{field}</Label>
                 <Field className="ellipsis">
                     <b>{fieldValue}</b>
                 </Field>
