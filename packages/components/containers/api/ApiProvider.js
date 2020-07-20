@@ -18,6 +18,7 @@ import ApiContext from './apiContext';
 import useNotifications from '../notifications/useNotifications';
 import useModals from '../modals/useModals';
 import UnlockModal from '../login/UnlockModal';
+import DelinquentModal from './DelinquentModal';
 import HumanVerificationModal from './humanVerification/HumanVerificationModal';
 import OfflineNotification from './OfflineNotification';
 
@@ -114,7 +115,12 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
             throw e;
         };
 
-        const handleUnlock = () => {
+        const handleUnlock = (missingScopes = []) => {
+            if (missingScopes.includes('nondelinquent')) {
+                return new Promise((resolve, reject) => {
+                    createModal(<DelinquentModal onClose={() => reject(CancelUnlockError())} />);
+                });
+            }
             return new Promise((resolve, reject) => {
                 createModal(<UnlockModal onClose={() => reject(CancelUnlockError())} onSuccess={resolve} />);
             });
