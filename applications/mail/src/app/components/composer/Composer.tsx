@@ -319,7 +319,7 @@ const Composer = ({
         }
         try {
             const { cleanMessage, mapSendPrefs } = verificationResults;
-            const alreadySaved = !pendingSave;
+            const alreadySaved = !!cleanMessage.data.ID;
             autoSave.abort?.();
             await sendWithUndo(
                 () => addAction(() => sendMessage(cleanMessage, mapSendPrefs, alreadySaved)),
