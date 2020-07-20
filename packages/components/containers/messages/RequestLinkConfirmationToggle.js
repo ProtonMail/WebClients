@@ -30,7 +30,7 @@ const RequestLinkConfirmationToggle = ({ id, confirmLink }) => {
 
 RequestLinkConfirmationToggle.propTypes = {
     id: PropTypes.string,
-    confirmLink: PropTypes.number
+    confirmLink: PropTypes.number,
 };
 
 export default RequestLinkConfirmationToggle;

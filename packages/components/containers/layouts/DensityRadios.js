@@ -19,7 +19,7 @@ const DensityRadios = ({ density, onChange, loading, id, ...rest }) => {
         onChange() {
             onChange(COMFORTABLE);
         },
-        children: <img alt="Comfortable" src={comfortableDensitySvg} />
+        children: <img alt="Comfortable" src={comfortableDensitySvg} />,
     };
     const radioCardCompact = {
         value: COMPACT,
@@ -31,7 +31,7 @@ const DensityRadios = ({ density, onChange, loading, id, ...rest }) => {
         onChange() {
             onChange(COMPACT);
         },
-        children: <img alt="Compact" src={compactDensitySvg} />
+        children: <img alt="Compact" src={compactDensitySvg} />,
     };
 
     return <RadioCards list={[radioCardComfortable, radioCardCompact]} id={id} {...rest} />;
@@ -41,7 +41,7 @@ DensityRadios.propTypes = {
     density: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
     loading: PropTypes.bool,
-    id: PropTypes.string
+    id: PropTypes.string,
 };
 
 export default DensityRadios;

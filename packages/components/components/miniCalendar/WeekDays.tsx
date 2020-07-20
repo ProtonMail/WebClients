@@ -12,7 +12,7 @@ export interface Props {
 
 const WeekDays = ({ weekdaysShort, weekdaysLong, weekStartsOn = 1, numberOfDays }: Props) => {
     const style = {
-        '--minicalendar-weekdays-numberOfDaysInWeek': numberOfDays
+        '--minicalendar-weekdays-numberOfDaysInWeek': numberOfDays,
     };
 
     const weekDaysLabels = useMemo(() => {

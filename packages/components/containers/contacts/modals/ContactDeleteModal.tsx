@@ -44,7 +44,7 @@ const DeleteModal = ({ contactIDs = [], deleteAll, onDelete, onClose = noop, ...
             return createNotification({ text: c('Error').t`Some contacts could not be deleted`, type: 'warning' });
         }
         createNotification({
-            text: c('Success').ngettext(msgid`Contact deleted`, `Contacts deleted`, contactIDs.length)
+            text: c('Success').ngettext(msgid`Contact deleted`, `Contacts deleted`, contactIDs.length),
         });
     };
     return (

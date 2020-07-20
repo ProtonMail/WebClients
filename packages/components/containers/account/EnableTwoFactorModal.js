@@ -16,7 +16,7 @@ import {
     useAddresses,
     useUser,
     useApi,
-    useEventManager
+    useEventManager,
 } from 'react-components';
 import QRCode from 'qrcode.react';
 import { generateSharedSecret, getUri } from 'proton-shared/lib/helpers/twofa';
@@ -32,7 +32,7 @@ const STEPS = {
     INFO: 1,
     SCAN_CODE: 2,
     CONFIRM_CODE: 3,
-    RECOVERY_CODES: 4
+    RECOVERY_CODES: 4,
 };
 
 const EnableTwoFactorModal = (props) => {
@@ -68,16 +68,16 @@ const EnableTwoFactorModal = (props) => {
                 sharedSecret: generatedSharedSecret,
                 period: PERIOD,
                 digits: DIGITS,
-                algorithm: ALGORITHM
+                algorithm: ALGORITHM,
             }),
-            sharedSecret: generatedSharedSecret
+            sharedSecret: generatedSharedSecret,
         });
     }, [addresses]);
 
     const { section, ...modalProps } = (() => {
         if (!sharedSecret) {
             return {
-                section: <Loader />
+                section: <Loader />,
             };
         }
 
@@ -104,7 +104,7 @@ const EnableTwoFactorModal = (props) => {
                 ),
                 onSubmit() {
                     setStep(STEPS.SCAN_CODE);
-                }
+                },
             };
         }
 
@@ -131,7 +131,7 @@ const EnableTwoFactorModal = (props) => {
                         </div>
                     </>
                 ),
-                onSubmit: handleSubmitScan
+                onSubmit: handleSubmitScan,
             };
         }
 
@@ -171,7 +171,7 @@ const EnableTwoFactorModal = (props) => {
                         </div>
                     </>
                 ),
-                onSubmit: handleSubmitScan
+                onSubmit: handleSubmitScan,
             };
         }
 
@@ -181,7 +181,7 @@ const EnableTwoFactorModal = (props) => {
                     const { TwoFactorRecoveryCodes } = await srpAuth({
                         api,
                         credentials: { password },
-                        config: setupTotp(sharedSecret, totp)
+                        config: setupTotp(sharedSecret, totp),
                     });
                     await call();
                     createNotification({ text: c('Info').t`Two-factor authentication enabled` });
@@ -219,7 +219,7 @@ const EnableTwoFactorModal = (props) => {
                 onSubmit() {
                     withLoading(handleSubmit());
                 },
-                submit: c('Action').t`Submit`
+                submit: c('Action').t`Submit`,
             };
         }
 
@@ -248,7 +248,7 @@ const EnableTwoFactorModal = (props) => {
                             <Button
                                 onClick={() => {
                                     const blob = new Blob([recoveryCodes.join('\r\n')], {
-                                        type: 'text/plain;charset=utf-8;'
+                                        type: 'text/plain;charset=utf-8;',
                                     });
                                     const filename = 'proton_recovery_codes.txt';
                                     downloadFile(blob, filename);
@@ -262,7 +262,7 @@ const EnableTwoFactorModal = (props) => {
                 onSubmit() {
                     props.onClose();
                 },
-                submit: c('Action').t`Ok`
+                submit: c('Action').t`Ok`,
             };
         }
     })();
@@ -281,7 +281,7 @@ const EnableTwoFactorModal = (props) => {
 };
 
 EnableTwoFactorModal.propTypes = {
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default EnableTwoFactorModal;

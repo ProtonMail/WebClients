@@ -39,13 +39,13 @@ const Rows = ({ subscription, user }) => {
 
 Rows.propTypes = {
     subscription: PropTypes.object.isRequired,
-    user: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
 };
 
 const SummarySection = ({ subscription, user, userSettings }) => {
     const ROLES = {
         [MEMBER_ROLE]: c('Role').t`Member`,
-        [ADMIN_ROLE]: c('Role').t`Administrator`
+        [ADMIN_ROLE]: c('Role').t`Administrator`,
     };
 
     return (
@@ -92,7 +92,7 @@ const SummarySection = ({ subscription, user, userSettings }) => {
 SummarySection.propTypes = {
     subscription: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired,
-    userSettings: PropTypes.object.isRequired
+    userSettings: PropTypes.object.isRequired,
 };
 
 export default SummarySection;

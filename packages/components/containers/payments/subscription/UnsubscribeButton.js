@@ -11,7 +11,7 @@ import {
     useModals,
     useEventManager,
     useOrganization,
-    useSubscription
+    useSubscription,
 } from 'react-components';
 import { c } from 'ttag';
 import { deleteSubscription } from 'proton-shared/lib/api/payments';
@@ -34,7 +34,7 @@ const UnsubscribeButton = ({ className, children }) => {
             type: 'info',
             text: c('State').t`Downgrading your account, please wait`,
             id: DOWNGRADING_ID,
-            expiration: 99999
+            expiration: 99999,
         });
         try {
             await api(deleteSubscription());
@@ -80,7 +80,7 @@ const UnsubscribeButton = ({ className, children }) => {
 
 UnsubscribeButton.propTypes = {
     className: PropTypes.string,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
 
 export default UnsubscribeButton;

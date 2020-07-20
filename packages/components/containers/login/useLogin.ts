@@ -20,7 +20,7 @@ export enum FORM {
     LOGIN,
     TOTP,
     U2F,
-    UNLOCK
+    UNLOCK,
 }
 
 export interface Props {
@@ -49,7 +49,7 @@ const INITIAL_STATE = {
     totp: '',
     isTotpRecovery: false,
     keyPassword: '',
-    form: FORM.LOGIN
+    form: FORM.LOGIN,
 };
 
 const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
@@ -84,7 +84,7 @@ const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
             await srpVerify({
                 api,
                 credentials: { password },
-                config: withAuthHeaders(UID, AccessToken, upgradePassword())
+                config: withAuthHeaders(UID, AccessToken, upgradePassword()),
             });
         }
 
@@ -151,7 +151,7 @@ const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
                 api<{ User: tsUser }>(withAuthHeaders(UID, AccessToken, getUser())).then(({ User }) => User),
                 api<{ KeySalts: tsKeySalt[] }>(withAuthHeaders(UID, AccessToken, getKeySalts())).then(
                     ({ KeySalts }) => KeySalts
-                )
+                ),
             ]);
         }
         const [User] = cache.userSaltResult;
@@ -203,12 +203,12 @@ const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
             const { authVersion, result: authResult } = await loginWithFallback({
                 api,
                 credentials: { username, password },
-                initialAuthInfo: infoResult
+                initialAuthInfo: infoResult,
             });
 
             cacheRef.current = {
                 authResult,
-                authVersion
+                authVersion,
             };
 
             await next(FORM.LOGIN);
@@ -238,7 +238,7 @@ const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
         setPassword,
         setKeyPassword,
         setTotp,
-        setIsTotpRecovery
+        setIsTotpRecovery,
     };
 };
 

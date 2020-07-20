@@ -24,7 +24,7 @@ const NotificationsContainer = ({ notifications, removeNotification, hideNotific
 NotificationsContainer.propTypes = {
     notifications: PropTypes.arrayOf(PropTypes.object).isRequired,
     removeNotification: PropTypes.func.isRequired,
-    hideNotification: PropTypes.func.isRequired
+    hideNotification: PropTypes.func.isRequired,
 };
 
 export default NotificationsContainer;

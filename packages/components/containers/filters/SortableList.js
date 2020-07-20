@@ -29,7 +29,7 @@ const FilterSortableList = ({ items, ...rest }) => (
 );
 
 FilterSortableList.propTypes = {
-    items: PropTypes.array.isRequired
+    items: PropTypes.array.isRequired,
 };
 
 export default FilterSortableList;

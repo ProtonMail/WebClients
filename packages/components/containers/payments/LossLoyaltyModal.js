@@ -41,7 +41,7 @@ const LossLoyaltyModal = ({ user = {}, organization = {}, subscription = {}, ...
 LossLoyaltyModal.propTypes = {
     user: PropTypes.object.isRequired,
     organization: PropTypes.object.isRequired,
-    subscription: PropTypes.object.isRequired
+    subscription: PropTypes.object.isRequired,
 };
 
 export default LossLoyaltyModal;

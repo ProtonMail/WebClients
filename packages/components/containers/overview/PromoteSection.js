@@ -33,7 +33,7 @@ const Panel = ({ model }) => {
 };
 
 Panel.propTypes = {
-    model: PropTypes.object.isRequired
+    model: PropTypes.object.isRequired,
 };
 
 const PromoteSection = ({ user }) => {
@@ -42,14 +42,14 @@ const PromoteSection = ({ user }) => {
         member: {
             title: c('Title').t`Need help?`,
             text: c('Info').t`Reach out to your system administrator for further assistance and support`,
-            image: contactYourAdminSvg
+            image: contactYourAdminSvg,
         },
         free: {
             title: c('Title').t`Upgrade to a paid plan`,
             text: c('Info').t`Get additional storage capacity and more addresses with ProtonMail Plus.`,
             link: '/settings/subscription',
             image: upgradeToPaidPlanSvg,
-            action: c('Action').t`Upgrade ProtonMail`
+            action: c('Action').t`Upgrade ProtonMail`,
         },
         pay: {
             title: c('Title').t`Thanks for your support`,
@@ -57,15 +57,15 @@ const PromoteSection = ({ user }) => {
                 .t`Help us improve our service and get early access to new features by enrolling in our Beta programs.`,
             link: '/settings/apps',
             image: thanksForYourSupportSvg,
-            action: c('Action').t`Join`
+            action: c('Action').t`Join`,
         },
         payBundle: {
             title: c('Title').t`Get 20% discount`,
             text: c('Info').t`Pay for both ProtonMail and ProtonVPN and get 20% off your entire subscription.`,
             link: '/settings/subscription',
             image: get20PerscentDiscountSvg,
-            action: c('Action').t`Upgrade`
-        }
+            action: c('Action').t`Upgrade`,
+        },
     };
 
     if (isMember) {
@@ -84,7 +84,7 @@ const PromoteSection = ({ user }) => {
 };
 
 PromoteSection.propTypes = {
-    user: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
 };
 
 export default PromoteSection;

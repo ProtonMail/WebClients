@@ -50,7 +50,7 @@ const ProtonApp = ({ config, children }) => {
         User &&
             cache.set(UserModel.key, {
                 value: formatUser(User),
-                status: STATUS.RESOLVED
+                status: STATUS.RESOLVED,
             });
 
         setTmpEventID(cache, EventID);
@@ -81,14 +81,14 @@ const ProtonApp = ({ config, children }) => {
     const authenticationValue = useMemo(() => {
         if (!UID) {
             return {
-                login: handleLogin
+                login: handleLogin,
             };
         }
         return {
             UID,
             ...authentication,
             login: handleLogin,
-            logout: handleLogout
+            logout: handleLogout,
         };
     }, [UID]);
 
@@ -120,7 +120,7 @@ const ProtonApp = ({ config, children }) => {
 
 ProtonApp.propTypes = {
     config: PropTypes.object.isRequired,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
 
 export default ProtonApp;

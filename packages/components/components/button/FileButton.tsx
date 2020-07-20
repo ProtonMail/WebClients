@@ -29,7 +29,7 @@ const FileButton = ({ onAddFiles, icon = 'attach', disabled, className, children
                     'pm-button inline-flex flex-items-center',
                     icon && !children && 'pm-button--for-icon',
                     disabled && 'is-disabled',
-                    className
+                    className,
                 ])}
             >
                 <Icon name="attach" />

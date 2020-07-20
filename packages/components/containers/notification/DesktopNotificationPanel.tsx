@@ -10,7 +10,7 @@ const testDefaultNotification = () => {
         icon: '/assets/img/notification-badge.gif',
         onClick() {
             window.focus();
-        }
+        },
     });
 };
 

@@ -25,12 +25,12 @@ function AddEmailToListModal({ type, incomingDefault, onAdd = noop, onClose, ...
     const I18N = {
         ADD: {
             [BLACKLIST_LOCATION]: c('Title').t`Add to blacklist`,
-            [WHITELIST_LOCATION]: c('Title').t`Add to whitelist`
+            [WHITELIST_LOCATION]: c('Title').t`Add to whitelist`,
         },
         EDIT: {
             [BLACKLIST_LOCATION]: c('Title').t`Edit blacklist`,
-            [WHITELIST_LOCATION]: c('Title').t`Edit whitelist`
-        }
+            [WHITELIST_LOCATION]: c('Title').t`Edit whitelist`,
+        },
     };
 
     const { ID, Domain, Email } = incomingDefault || {};
@@ -44,14 +44,14 @@ function AddEmailToListModal({ type, incomingDefault, onAdd = noop, onClose, ...
     const handleSubmit = async () => {
         const parameters = {
             Location: type,
-            ...(mode === EMAIL_MODE ? { Email: email } : { Domain: domain })
+            ...(mode === EMAIL_MODE ? { Email: email } : { Domain: domain }),
         };
         const { IncomingDefault: data } = ID
             ? await api(updateIncomingDefault(ID, parameters))
             : await api(addIncomingDefault(parameters));
         const value = mode === EMAIL_MODE ? email : domain;
         createNotification({
-            text: ID ? c('Spam notification').t`${value} updated` : c('Spam notification').t`${value} added`
+            text: ID ? c('Spam notification').t`${value} updated` : c('Spam notification').t`${value} added`,
         });
         onAdd(data);
         onClose();

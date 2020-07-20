@@ -24,7 +24,7 @@ const Sidebar = ({
     url = '',
     primary,
     children,
-    version
+    version,
 }: Props) => {
     return (
         <div className="sidebar flex flex-nowrap flex-column noprint" data-expanded={expanded}>

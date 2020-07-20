@@ -8,24 +8,24 @@ export const MINUTES_SECONDS = 60;
 export const getDurationOptions = () => [
     {
         text: c('Option').t`Fixed duration`,
-        value: AutoReplyDuration.FIXED
+        value: AutoReplyDuration.FIXED,
     },
     {
         text: c('Option').t`Repeat daily`,
-        value: AutoReplyDuration.DAILY
+        value: AutoReplyDuration.DAILY,
     },
     {
         text: c('Option').t`Repeat weekly`,
-        value: AutoReplyDuration.WEEKLY
+        value: AutoReplyDuration.WEEKLY,
     },
     {
         text: c('Option').t`Repeat monthly`,
-        value: AutoReplyDuration.MONTHLY
+        value: AutoReplyDuration.MONTHLY,
     },
     {
         text: c('Option').t`Permanent`,
-        value: AutoReplyDuration.PERMANENT
-    }
+        value: AutoReplyDuration.PERMANENT,
+    },
 ];
 
 export const getMatchingTimezone = (timezone: string, timezoneOptions: { text: string; value: string }[]) => {
@@ -77,5 +77,5 @@ export const getDaysOfMonthOptions = () => [
     { text: c('Option').t`28th of the month`, value: 27 },
     { text: c('Option').t`29th of the month`, value: 28 },
     { text: c('Option').t`30th of the month`, value: 29 },
-    { text: c('Option').t`31st of the month`, value: 30 }
+    { text: c('Option').t`31st of the month`, value: 30 },
 ];

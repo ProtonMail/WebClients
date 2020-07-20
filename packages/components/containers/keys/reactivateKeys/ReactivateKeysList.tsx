@@ -13,7 +13,7 @@ const getKeyStatusError = (error: any) => {
     return {
         tooltip: error?.message,
         title: c('Key state badge').t`Error`,
-        type: 'error'
+        type: 'error',
     };
 };
 
@@ -86,7 +86,7 @@ const ReactivateKeysList = ({ loading = false, allKeys, onUpload }: Props) => {
                                 {fingerprint}
                             </code>,
                             keyStatus,
-                            isUpload ? uploadColumn : null
+                            isUpload ? uploadColumn : null,
                         ].filter(Boolean)}
                     />
                 );
@@ -111,7 +111,7 @@ const ReactivateKeysList = ({ loading = false, allKeys, onUpload }: Props) => {
                         c('Title header for keys table').t`Email`,
                         c('Title header for keys table').t`Fingerprint`,
                         c('Title header for keys table').t`Status`,
-                        isUpload ? c('Title header for keys table').t`Action` : null
+                        isUpload ? c('Title header for keys table').t`Action` : null,
                     ].filter(Boolean)}
                 />
                 <TableBody>{list}</TableBody>

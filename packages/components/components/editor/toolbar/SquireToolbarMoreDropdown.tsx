@@ -40,7 +40,7 @@ const SquireToolbarMoreDropdown = ({
     children,
     isNarrow = false,
     squireInfos,
-    squireActions
+    squireActions,
 }: Props) => {
     const isRTL = metadata.rightToLeft === RIGHT_TO_LEFT.ON;
     const isPlainText = metadata.isPlainText;
@@ -172,7 +172,7 @@ const SquireToolbarMoreDropdown = ({
                             <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Insert image`}</span>
                             <Icon name="file-image" className="mt0-25 mr0-5" />
                         </DropdownMenuButton>
-                    )
+                    ),
                 ]}
                 {metadata.supportRightToLeft &&
                     !metadata.isPlainText && [
@@ -192,7 +192,7 @@ const SquireToolbarMoreDropdown = ({
                         >
                             <Icon name="on" className={classnames(['mt0-25', getClassname(isRTL)])} />
                             <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Right to Left`}</span>
-                        </DropdownMenuButton>
+                        </DropdownMenuButton>,
                     ]}
                 {metadata.supportPlainText && [
                     <DropdownMenuButton
@@ -211,7 +211,7 @@ const SquireToolbarMoreDropdown = ({
                     >
                         <Icon name="on" className={classnames(['mt0-25', getClassname(isPlainText)])} />
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Plain text`}</span>
-                    </DropdownMenuButton>
+                    </DropdownMenuButton>,
                 ]}
                 {children}
             </DropdownMenu>

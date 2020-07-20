@@ -10,7 +10,7 @@ import {
     useSubscription,
     Loader,
     useAddresses,
-    useConfig
+    useConfig,
 } from 'react-components';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 

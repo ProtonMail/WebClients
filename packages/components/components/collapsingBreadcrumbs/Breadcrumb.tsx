@@ -17,7 +17,7 @@ const Breadcrumb = ({ children, onClick, active, noShrink, ...rest }: Props, ref
             className={classnames([
                 'pd-collapsing-breadcrumb',
                 active && 'flex-item-fluid-auto',
-                noShrink && 'pd-collapsing-breadcrumb--noShrink'
+                noShrink && 'pd-collapsing-breadcrumb--noShrink',
             ])}
         >
             {onClick ? (

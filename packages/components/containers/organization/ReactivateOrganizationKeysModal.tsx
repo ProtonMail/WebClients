@@ -13,7 +13,7 @@ import {
     Row,
     Label,
     Field,
-    PasswordInput
+    PasswordInput,
 } from '../../index';
 import { encryptPrivateKey } from 'pmcrypto';
 
@@ -23,7 +23,7 @@ import { decryptPrivateKeyWithSalt } from 'proton-shared/lib/keys/keys';
 
 export enum MODES {
     ACTIVATE,
-    REACTIVATE
+    REACTIVATE,
 }
 
 interface Props {
@@ -49,7 +49,7 @@ const ReactivateOrganizationKeysModal = ({ onClose, mode, ...rest }: Props) => {
                     .t`You must activate your organization private key with the backup organization key password provided to you by your organization administrator.`,
                 warning: c('Info')
                     .t`Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`,
-                success: c('Info').t`Organization keys activated`
+                success: c('Info').t`Organization keys activated`,
             };
         }
 
@@ -63,7 +63,7 @@ const ReactivateOrganizationKeysModal = ({ onClose, mode, ...rest }: Props) => {
                     .jt`Enter the Organization Password to restore administrator privileges. ${learnMore}`,
                 warning: c('Info')
                     .t`If another administrator changed this password, you will need to ask them for the new Organization Password.`,
-                success: c('Info').t`Organization keys restored`
+                success: c('Info').t`Organization keys restored`,
             };
         }
 
@@ -78,7 +78,7 @@ const ReactivateOrganizationKeysModal = ({ onClose, mode, ...rest }: Props) => {
             const decryptedPrivateKey = await decryptPrivateKeyWithSalt({
                 PrivateKey,
                 password: backupPassword,
-                keySalt: KeySalt
+                keySalt: KeySalt,
             });
             const armoredPrivateKey = await encryptPrivateKey(decryptedPrivateKey, authentication.getPassword());
             await api(activateOrganizationKey(armoredPrivateKey));

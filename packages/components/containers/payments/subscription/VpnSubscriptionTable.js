@@ -15,7 +15,7 @@ import SubscriptionFeaturesModal from './SubscriptionFeaturesModal';
 const INDEXES = {
     [PLANS.VPNBASIC]: 1,
     [PLANS.VPNPLUS]: 2,
-    [PLANS.VISIONARY]: 3
+    [PLANS.VISIONARY]: 3,
 };
 
 const VpnSubscriptionTable = ({
@@ -52,23 +52,23 @@ const VpnSubscriptionTable = ({
                     content: (
                         <del className="opacity-50" key="filesharing">{c('Feature')
                             .t`Filesharing/bitorrent support`}</del>
-                    )
+                    ),
                 },
                 {
                     icon: 'close',
-                    content: <del className="opacity-50" key="secure">{c('Feature').t`Secure Core and Tor VPN`}</del>
+                    content: <del className="opacity-50" key="secure">{c('Feature').t`Secure Core and Tor VPN`}</del>,
                 },
                 {
                     icon: 'close',
                     content: (
                         <del className="opacity-50" key="advanced">{c('Feature').t`Advanced privacy features`}</del>
-                    )
+                    ),
                 },
                 {
                     icon: 'close',
-                    content: <del className="opacity-50" key="access">{c('Feature').t`Access blocked content`}</del>
-                }
-            ]
+                    content: <del className="opacity-50" key="access">{c('Feature').t`Access blocked content`}</del>,
+                },
+            ],
         },
         vpnBasicPlan && {
             name: vpnBasicPlan.Name,
@@ -85,19 +85,19 @@ const VpnSubscriptionTable = ({
                 { icon: 'arrow-right', content: c('Feature').t`Filesharing/bitorrent support` },
                 {
                     icon: 'close',
-                    content: <del className="opacity-50" key="secure">{c('Feature').t`Secure Core and Tor VPN`}</del>
+                    content: <del className="opacity-50" key="secure">{c('Feature').t`Secure Core and Tor VPN`}</del>,
                 },
                 {
                     icon: 'close',
                     content: (
                         <del className="opacity-50" key="advanced">{c('Feature').t`Advanced privacy features`}</del>
-                    )
+                    ),
                 },
                 {
                     icon: 'close',
-                    content: <del className="opacity-50" key="access">{c('Feature').t`Access blocked content`}</del>
-                }
-            ]
+                    content: <del className="opacity-50" key="access">{c('Feature').t`Access blocked content`}</del>,
+                },
+            ],
         },
         vpnPlusPlan && {
             name: vpnPlusPlan.Name,
@@ -114,8 +114,8 @@ const VpnSubscriptionTable = ({
                 { icon: 'arrow-right', content: c('Feature').t`Filesharing/bitorrent support` },
                 { icon: 'arrow-right', content: c('Feature').t`Secure Core and Tor VPN` },
                 { icon: 'arrow-right', content: c('Feature').t`Advanced privacy features` },
-                { icon: 'arrow-right', content: c('Feature').t`Access blocked content` }
-            ]
+                { icon: 'arrow-right', content: c('Feature').t`Access blocked content` },
+            ],
         },
         visionaryPlan && {
             name: visionaryPlan.Name,
@@ -127,9 +127,9 @@ const VpnSubscriptionTable = ({
             features: [
                 { icon: 'arrow-right', content: c('Feature').t`All Plus plan features` },
                 { icon: 'arrow-right', content: c('Feature').t`10 simultaneous VPN connections` },
-                { icon: 'arrow-right', content: c('Feature').t`ProtonMail Visionary account` }
-            ]
-        }
+                { icon: 'arrow-right', content: c('Feature').t`ProtonMail Visionary account` },
+            ],
+        },
     ];
 
     return (
@@ -162,7 +162,7 @@ VpnSubscriptionTable.propTypes = {
     plans: PropTypes.arrayOf(PropTypes.object),
     onSelect: PropTypes.func.isRequired,
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]).isRequired,
-    currency: PropTypes.oneOf(CURRENCIES).isRequired
+    currency: PropTypes.oneOf(CURRENCIES).isRequired,
 };
 
 export default VpnSubscriptionTable;

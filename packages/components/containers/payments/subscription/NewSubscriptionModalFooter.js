@@ -102,7 +102,7 @@ const NewSubscriptionModalFooter = ({ submit, step, model, plans, onClose, metho
                     {c('Info').t`Payments are protected with TLS encryption and Swiss privacy laws`}
                 </span>
             </div>
-        )
+        ),
     ].filter(Boolean);
 
     return (
@@ -122,7 +122,7 @@ NewSubscriptionModalFooter.propTypes = {
     onClose: PropTypes.func.isRequired,
     step: PropTypes.number,
     model: PropTypes.object,
-    method: PropTypes.string
+    method: PropTypes.string,
 };
 
 export default NewSubscriptionModalFooter;

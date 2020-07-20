@@ -18,7 +18,7 @@ const handleCreateKeys = async ({ api, password, addresses }: Args) => {
     const newAddressesKeys = await getResetAddressesKeys({
         addresses,
         passphrase,
-        encryptionConfig: ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG]
+        encryptionConfig: ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
     });
     // Assume the primary address is the first item in the list.
     const [primaryAddress] = newAddressesKeys;
@@ -28,8 +28,8 @@ const handleCreateKeys = async ({ api, password, addresses }: Args) => {
         config: setupKeys({
             KeySalt: salt,
             PrimaryKey: primaryAddress.PrivateKey,
-            AddressKeys: newAddressesKeys
-        })
+            AddressKeys: newAddressesKeys,
+        }),
     });
 };
 

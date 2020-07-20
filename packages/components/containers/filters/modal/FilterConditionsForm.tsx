@@ -8,14 +8,14 @@ import {
     FilterStatement,
     ConditionType,
     ConditionComparator,
-    SimpleFilterModalModel
+    SimpleFilterModalModel,
 } from 'proton-shared/lib/filters/interfaces';
 import FilterConditionsFormRow from './FilterConditionsFormRow';
 
 const conditionTemplate = {
     type: ConditionType.SELECT,
     comparator: ConditionComparator.CONTAINS,
-    isOpen: true
+    isOpen: true,
 };
 
 interface Props {
@@ -66,7 +66,7 @@ const FilterConditionsForm = ({ isNarrow, model, isDark, onChange }: Props) => {
                         onChange={() =>
                             onChange({
                                 ...model,
-                                statement: FilterStatement.ALL
+                                statement: FilterStatement.ALL,
                             })
                         }
                     >
@@ -82,7 +82,7 @@ const FilterConditionsForm = ({ isNarrow, model, isDark, onChange }: Props) => {
                         onChange={() =>
                             onChange({
                                 ...model,
-                                statement: FilterStatement.ANY
+                                statement: FilterStatement.ANY,
                             })
                         }
                     >

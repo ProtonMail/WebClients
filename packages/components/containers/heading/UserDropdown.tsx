@@ -14,7 +14,7 @@ import {
     PrimaryButton,
     useConfig,
     useSubscription,
-    Link
+    Link,
 } from '../../';
 import { revoke } from 'proton-shared/lib/api/auth';
 import { APPS, CLIENT_TYPES, PLANS } from 'proton-shared/lib/constants';

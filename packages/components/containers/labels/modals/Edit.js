@@ -30,7 +30,7 @@ function EditLabelModal({ label = null, mode = 'create', onEdit, onClose, onAdd,
                 return c('Label/folder modal').t`Create label`;
             }
             return c('Label/folder modal').t`Create folder`;
-        }
+        },
     };
 
     const [model, setModel] = useState(
@@ -38,7 +38,7 @@ function EditLabelModal({ label = null, mode = 'create', onEdit, onClose, onAdd,
             Name: '',
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
-            ParentID: type === 'folder' ? ROOT_FOLDER : undefined
+            ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
         }
     );
 
@@ -46,7 +46,7 @@ function EditLabelModal({ label = null, mode = 'create', onEdit, onClose, onAdd,
         const { Label } = await api(createLabel(label));
         await call();
         createNotification({
-            text: c('label/folder notification').t`${Label.Name} created`
+            text: c('label/folder notification').t`${Label.Name} created`,
         });
         onAdd?.(Label);
         onClose?.();
@@ -56,7 +56,7 @@ function EditLabelModal({ label = null, mode = 'create', onEdit, onClose, onAdd,
         const { Label } = await api(updateLabel(label.ID, label));
         await call();
         createNotification({
-            text: c('Filter notification').t`${Label.Name} updated`
+            text: c('Filter notification').t`${Label.Name} updated`,
         });
         onEdit?.(Label);
         onClose?.();
@@ -69,21 +69,21 @@ function EditLabelModal({ label = null, mode = 'create', onEdit, onClose, onAdd,
     const handleChangeColor = (Color) => {
         setModel({
             ...model,
-            Color
+            Color,
         });
     };
 
     const handleChangeName = ({ target }) => {
         setModel({
             ...model,
-            Name: target.value
+            Name: target.value,
         });
     };
 
     const handleChangeParentID = (ParentID) => {
         setModel({
             ...model,
-            ParentID
+            ParentID,
         });
     };
 
@@ -112,7 +112,7 @@ EditLabelModal.propTypes = {
     mode: PropTypes.string,
     onAdd: PropTypes.func,
     onEdit: PropTypes.func,
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default EditLabelModal;

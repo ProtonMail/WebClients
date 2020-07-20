@@ -6,7 +6,7 @@ import { classnames } from '../../helpers/component';
 const TYPES = {
     success: 'bg-global-success',
     warning: 'bg-global-attention',
-    error: 'bg-global-warning'
+    error: 'bg-global-warning',
 };
 
 interface Props {
@@ -33,7 +33,7 @@ const RoundedIcon = ({
                 'inline-flex rounded50 flex-item-noshrink',
                 className,
                 padding,
-                type && TYPES[type]
+                type && TYPES[type],
             ])}
             title={title}
         >

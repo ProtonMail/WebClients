@@ -12,7 +12,7 @@ import {
     Row,
     Label,
     Field,
-    PasswordInput
+    PasswordInput,
 } from '../../index';
 import { getBackupKeyData } from 'proton-shared/lib/keys/organizationKeys';
 import { OpenPGPKey } from 'pmcrypto';
@@ -39,7 +39,7 @@ const ChangeOrganizationPasswordModal = ({ onClose, hasOtherAdmins, organization
 
         const { backupKeySalt, backupArmoredPrivateKey } = await getBackupKeyData({
             backupPassword: newPassword,
-            organizationKey
+            organizationKey,
         });
         await new Promise((resolve, reject) => {
             createModal(

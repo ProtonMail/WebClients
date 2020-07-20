@@ -17,6 +17,6 @@ export const collectInfo = () => {
         BrowserVersion: browser.version,
         Resolution: `${window.innerHeight} x ${window.innerWidth}`,
         DeviceName: device.vendor,
-        DeviceModel: device.model
+        DeviceModel: device.model,
     };
 };

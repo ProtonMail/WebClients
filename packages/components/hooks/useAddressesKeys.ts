@@ -16,7 +16,7 @@ export const useGetAddressesKeys = (): (() => Promise<{ [key: string]: CachedKey
         return addresses.reduce((acc, { ID }, i) => {
             return {
                 ...acc,
-                [ID]: keys[i]
+                [ID]: keys[i],
             };
         }, {});
     }, [getAddresses, getAddressKeys]);

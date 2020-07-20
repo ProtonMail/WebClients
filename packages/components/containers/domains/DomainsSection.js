@@ -10,7 +10,7 @@ import {
     Block,
     useModals,
     useLoading,
-    Loader
+    Loader,
 } from 'react-components';
 import { wait } from 'proton-shared/lib/helpers/promise';
 

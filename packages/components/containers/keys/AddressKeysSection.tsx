@@ -13,7 +13,7 @@ import {
     useEventManager,
     useModals,
     useUser,
-    useUserKeys
+    useUserKeys,
 } from '../../index';
 import { removeKeyAction, setFlagsKeyAction, setPrimaryKeyAction } from 'proton-shared/lib/keys/keysAction';
 import getKeysActionList from 'proton-shared/lib/keys/getKeysActionList';
@@ -66,7 +66,7 @@ const AddressKeysSection = () => {
         keys: addressKeys,
         Address,
         User,
-        loadingKeyID
+        loadingKeyID,
     });
 
     useEffect(() => {
@@ -99,12 +99,12 @@ const AddressKeysSection = () => {
         const process = async () => {
             const updatedKeys = setPrimaryKeyAction({
                 keys: await getKeysActionList(addressKeys),
-                ID
+                ID,
             });
             await api(
                 setKeyPrimaryRoute({
                     ID,
-                    SignedKeyList: await getSignedKeyList(updatedKeys, newPrimaryKew)
+                    SignedKeyList: await getSignedKeyList(updatedKeys, newPrimaryKew),
                 })
             );
             await call();
@@ -133,13 +133,13 @@ const AddressKeysSection = () => {
             const updatedKeys = setFlagsKeyAction({
                 keys: await getKeysActionList(addressKeys),
                 ID,
-                flags: newKeyFlags
+                flags: newKeyFlags,
             });
             await api(
                 setKeyFlagsRoute({
                     ID,
                     Flags: newKeyFlags,
-                    SignedKeyList: await getSignedKeyList(updatedKeys, primaryPrivateKey)
+                    SignedKeyList: await getSignedKeyList(updatedKeys, primaryPrivateKey),
                 })
             );
             await call();
@@ -175,7 +175,7 @@ const AddressKeysSection = () => {
         const onDelete = async (): Promise<void> => {
             const updatedKeys = removeKeyAction({
                 keys: await getKeysActionList(addressKeys),
-                ID
+                ID,
             });
             const signedKeyList = await getSignedKeyList(updatedKeys, primaryPrivateKey);
             await api(removeKeyRoute({ ID, SignedKeyList: signedKeyList }));
@@ -220,7 +220,7 @@ const AddressKeysSection = () => {
             const { privateKey, privateKeyArmored } = await generateAddressKey({
                 email: Address.Email,
                 passphrase: authentication.getPassword(),
-                encryptionConfig
+                encryptionConfig,
             });
             const fingerprint = privateKey.getFingerprint();
             await createKeyHelper({
@@ -229,7 +229,7 @@ const AddressKeysSection = () => {
                 fingerprint,
                 Address,
                 keys: await getKeysActionList(addressKeys),
-                signingKey: primaryPrivateKey
+                signingKey: primaryPrivateKey,
             });
             await call();
             return fingerprint;
@@ -257,7 +257,7 @@ const AddressKeysSection = () => {
                 keys: await getKeysActionList(addressKeys),
                 addressKeys,
                 signingKey: primaryPrivateKey,
-                Address
+                Address,
             });
             await call();
         };
@@ -292,7 +292,7 @@ const AddressKeysSection = () => {
             keysToReactivate,
             setKeysToReactivate,
             isUploadMode,
-            oldPassword
+            oldPassword,
         }: ReactivateProcessArguments) => {
             await reactivateKeysProcess({
                 api,
@@ -302,7 +302,7 @@ const AddressKeysSection = () => {
                 newPassword: authentication.getPassword(),
                 oldPassword,
                 addressesKeysMap,
-                userKeysList
+                userKeysList,
             });
             await call();
         };
@@ -317,8 +317,8 @@ const AddressKeysSection = () => {
         return handleReactivateKeys([
             {
                 Address,
-                keys: [addressKey]
-            }
+                keys: [addressKey],
+            },
         ]);
     };
 

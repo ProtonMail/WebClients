@@ -8,7 +8,7 @@ const CLASSNAMES = {
     origin: 'badgeLabel-grey',
     warning: 'badgeLabel-warning',
     error: 'badgeLabel-error',
-    primary: 'badgeLabel-primary'
+    primary: 'badgeLabel-primary',
 };
 
 const wrapTooltip = (children, title, className) => (
@@ -31,7 +31,7 @@ Badge.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node.isRequired,
     type: PropTypes.string,
-    tooltip: PropTypes.string
+    tooltip: PropTypes.string,
 };
 
 export default Badge;

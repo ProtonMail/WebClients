@@ -7,12 +7,12 @@ import {
     useApi,
     useNotifications,
     useModals,
-    SearchInput
+    SearchInput,
 } from 'react-components';
 import {
     getIncomingDefaults,
     updateIncomingDefault,
-    deleteIncomingDefaults
+    deleteIncomingDefaults,
 } from 'proton-shared/lib/api/incomingDefaults';
 import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
 
@@ -37,7 +37,7 @@ function SpamFiltersSection() {
         remove,
         search,
         create,
-        edit
+        edit,
     } = useSpamList();
 
     const { result: white = {}, loading: loadingWhite } = useApiResult(getWhiteList, []);
@@ -90,7 +90,7 @@ function SpamFiltersSection() {
             text:
                 Location === WHITELIST_LOCATION
                     ? c('Spam filter moved to blacklist').t`${item} moved to blacklist`
-                    : c('Spam filter moved to whitelist').t`${item} moved to whitelist`
+                    : c('Spam filter moved to whitelist').t`${item} moved to whitelist`,
         });
         move(type, data);
     };

@@ -4,7 +4,7 @@ const TOP_COUNTRIES = [
     { label: 'Switzerland', value: 'CH' },
     { label: 'France', value: 'FR' },
     { label: 'Germany', value: 'DE' },
-    { label: 'Canada', value: 'CA' }
+    { label: 'Canada', value: 'CA' },
 ];
 const DEFAULT_SEPARATOR = { label: '------------------', value: '', disabled: true };
 const COUNTRIES = [
@@ -239,7 +239,7 @@ const COUNTRIES = [
     { value: 'EH', label: 'Western Sahara' },
     { value: 'YE', label: 'Yemen' },
     { value: 'ZM', label: 'Zambia' },
-    { value: 'ZW', label: 'Zimbabwe' }
+    { value: 'ZW', label: 'Zimbabwe' },
 ];
 
 const countriesByAbbr = COUNTRIES.reduce((list, country) => ({ ...list, [country.value]: country.label }), {});

@@ -9,7 +9,7 @@ const OrderableTableHeader = ({ cells = [], className = '', children = null, ...
     <TableHeader
         cells={[
             null, // column for icon
-            ...cells
+            ...cells,
         ]}
         className={classnames(['orderableTableHeader', className])}
         {...rest}
@@ -21,7 +21,7 @@ const OrderableTableHeader = ({ cells = [], className = '', children = null, ...
 OrderableTableHeader.propTypes = {
     cells: PropTypes.arrayOf(PropTypes.node),
     className: PropTypes.string,
-    children: PropTypes.node
+    children: PropTypes.node,
 };
 
 export default OrderableTableHeader;

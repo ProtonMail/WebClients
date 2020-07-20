@@ -12,7 +12,7 @@ import {
     useApi,
     useLoading,
     useNotifications,
-    useEventManager
+    useEventManager,
 } from '../../index';
 import { SquireEditorRef } from '../../components/editor/SquireEditor';
 
@@ -30,7 +30,7 @@ const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const [model, updateModel] = useState({
         displayName: address.DisplayName,
-        signature: address.Signature
+        signature: address.Signature,
     });
     const { createNotification } = useNotifications();
     const editorRef = useRef<SquireEditorRef>(null);

@@ -17,7 +17,7 @@ PreviewPDFModal.propTypes = {
     onClose: PropTypes.func,
     url: PropTypes.string,
     title: PropTypes.string,
-    filename: PropTypes.string
+    filename: PropTypes.string,
 };
 
 export default PreviewPDFModal;

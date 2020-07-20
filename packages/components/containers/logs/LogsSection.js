@@ -12,7 +12,7 @@ import {
     useUserSettings,
     useApiResult,
     useApiWithoutResult,
-    useModals
+    useModals,
 } from 'react-components';
 import { fromUnixTime } from 'date-fns';
 import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
@@ -31,7 +31,7 @@ const getEventsI18N = () => ({
     [LOGIN_SUCCESS]: c('Log event').t`Login success`,
     [LOGOUT]: c('Log event').t`Logout`,
     [LOGIN_FAILURE_2FA]: c('Log event').t`Login failure (2FA)`,
-    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Login failure (2FA)`
+    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Login failure (2FA)`,
 });
 
 const LogsSection = () => {
@@ -44,7 +44,7 @@ const LogsSection = () => {
         () =>
             queryLogs({
                 Page: page - 1,
-                PageSize: ELEMENTS_PER_PAGE
+                PageSize: ELEMENTS_PER_PAGE,
             }),
         [page]
     );

@@ -13,23 +13,23 @@ const AddressKeysHeaderActions = ({ onAddKey, onImportKey, onExportPublic, onExp
     const createActions = [
         onAddKey && {
             text: c('Action').t`Create key`,
-            onClick: onAddKey
+            onClick: onAddKey,
         },
         onImportKey && {
             text: c('Action').t`Import key`,
-            onClick: onImportKey
-        }
+            onClick: onImportKey,
+        },
     ].filter(isTruthy);
 
     const exportActions = [
         onExportPublic && {
             text: c('Action').t`Export`,
-            onClick: onExportPublic
+            onClick: onExportPublic,
         },
         onExportPrivate && {
             text: c('Address action').t`Export private key`,
-            onClick: onExportPrivate
-        }
+            onClick: onExportPrivate,
+        },
     ].filter(isTruthy);
 
     if (!exportActions.length && !createActions.length) {

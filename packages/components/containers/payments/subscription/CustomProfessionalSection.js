@@ -14,11 +14,11 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
     const domainAddon = getAddon(plans, { name: ADDON_NAMES.DOMAIN });
     const memberOptions = range(1, 5001).map((value, index) => ({
         text: getTextOption('member', value, index),
-        value: index
+        value: index,
     }));
     const domainOptions = range(2, 101).map((value, index) => ({
         text: getTextOption('domain', value, index),
-        value: index
+        value: index,
     }));
 
     const handleChange = (key) => ({ target }) => {
@@ -91,7 +91,7 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
 CustomProfessionalSection.propTypes = {
     plans: PropTypes.array.isRequired,
     model: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default CustomProfessionalSection;

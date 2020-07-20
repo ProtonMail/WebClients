@@ -9,7 +9,7 @@ import {
     useApi,
     useAuthentication,
     useNotifications,
-    useEventManager
+    useEventManager,
 } from 'react-components';
 import { c } from 'ttag';
 import { authMember, removeMember, updateRole, privatizeMember } from 'proton-shared/lib/api/members';
@@ -37,7 +37,7 @@ const MemberActions = ({ member, addresses = [], organization }) => {
     const login = async () => {
         const apiConfig = authMember(member.ID);
         const {
-            result: { UID }
+            result: { UID },
         } = await new Promise((resolve, reject) => {
             createModal(<AuthModal onClose={reject} onSuccess={resolve} config={apiConfig} />);
         });
@@ -98,32 +98,32 @@ const MemberActions = ({ member, addresses = [], organization }) => {
     const list = [
         canEdit && {
             text: c('Member action').t`Edit`,
-            onClick: openEdit
+            onClick: openEdit,
         },
         canDelete && {
             text: c('Member action').t`Delete`,
-            onClick: openDelete
+            onClick: openDelete,
         },
         canMakeAdmin && {
             text: c('Member action').t`Make admin`,
-            onClick: () => withLoading(makeAdmin())
+            onClick: () => withLoading(makeAdmin()),
         },
         canRevoke && {
             text: c('Member action').t`Revoke admin`,
-            onClick: () => withLoading(revokeAdmin())
+            onClick: () => withLoading(revokeAdmin()),
         },
         canLogin && {
             text: c('Member action').t`Login`,
-            onClick: login
+            onClick: login,
         },
         canMakePrivate && {
             text: c('Member action').t`Make private`,
-            onClick: () => withLoading(makePrivate())
+            onClick: () => withLoading(makePrivate()),
         },
         canRevokeSessions && {
             text: c('Member action').t`Revoke sessions`,
-            onClick: () => withLoading(revokeMemberSessions())
-        }
+            onClick: () => withLoading(revokeMemberSessions()),
+        },
     ].filter(Boolean);
 
     return <DropdownActions loading={loading} list={list} className="pm-button--small" />;
@@ -132,7 +132,7 @@ const MemberActions = ({ member, addresses = [], organization }) => {
 MemberActions.propTypes = {
     member: PropTypes.object.isRequired,
     addresses: PropTypes.array.isRequired,
-    organization: PropTypes.object.isRequired
+    organization: PropTypes.object.isRequired,
 };
 
 export default MemberActions;

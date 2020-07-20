@@ -18,7 +18,7 @@ const ProtonMailBridgeSection = ({ permission }) => {
 };
 
 ProtonMailBridgeSection.propTypes = {
-    permission: PropTypes.bool
+    permission: PropTypes.bool,
 };
 
 export default ProtonMailBridgeSection;

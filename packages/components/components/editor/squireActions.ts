@@ -12,7 +12,7 @@ import {
     DEFAULT_FONT_FACE,
     DEFAULT_FONT_SIZE,
     FONT_SIZES,
-    EMBEDDABLE_TYPES
+    EMBEDDABLE_TYPES,
 } from './squireConfig';
 
 const pathInfoTests: { [type: string]: RegExp } = {
@@ -26,7 +26,7 @@ const pathInfoTests: { [type: string]: RegExp } = {
     alignCenter: /\.align-center/,
     alignLeft: /\.align-left/,
     alignRight: /\.align-right/,
-    alignJustify: /\.align-justify/
+    alignJustify: /\.align-justify/,
 };
 
 const REGEX_DIRECTION = /\[(dir=(rtl|ltr))]/g;
@@ -122,10 +122,7 @@ export const getFontLabel = (font: FONT_FACE) => Object.entries(FONT_FACE).find(
 
 export const getFontFaceAtCursor = (squire: SquireType) => {
     const { family = 'arial' } = squire.getFontInfo();
-    const first = family
-        .split(',')[0]
-        .replace(/"/g, '')
-        .trim();
+    const first = family.split(',')[0].replace(/"/g, '').trim();
     return Object.entries(FONT_FACE).find(([, value]) => value.includes(first))?.[1] || DEFAULT_FONT_FACE;
 };
 
@@ -160,7 +157,7 @@ export const getLinkAtCursor = (squire: SquireType): LinkData => {
 
     return {
         link: a?.href || DEFAULT_LINK,
-        title: a?.textContent || range.toString() || DEFAULT_LINK
+        title: a?.textContent || range.toString() || DEFAULT_LINK,
     };
 };
 
@@ -186,7 +183,7 @@ export const makeLink = (squire: SquireType, { link = '', title }: LinkData) => 
     squire.makeLink(link, {
         target: '_blank',
         title: link,
-        rel: 'nofollow'
+        rel: 'nofollow',
     });
 
     // Ex we select an image to create a link, we don't want a default textContent (will erase the image)
@@ -209,7 +206,7 @@ export const insertImage = (
 ) => {
     const attributes = {
         ...inputAttributes,
-        class: (inputAttributes.class ? inputAttributes.class + ' ' : '') + 'proton-embedded'
+        class: (inputAttributes.class ? inputAttributes.class + ' ' : '') + 'proton-embedded',
     };
 
     squire.focus();

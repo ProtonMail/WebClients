@@ -7,7 +7,7 @@ import React, {
     MouseEventHandler,
     forwardRef,
     Ref,
-    ReactNode
+    ReactNode,
 } from 'react';
 import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -35,7 +35,7 @@ const defaultMetadata: SquireEditorMetadata = {
     supportPlainText: false,
     isPlainText: false,
     supportRightToLeft: false,
-    rightToLeft: RIGHT_TO_LEFT.OFF
+    rightToLeft: RIGHT_TO_LEFT.OFF,
 };
 
 export interface SquireEditorRef {
@@ -83,7 +83,7 @@ const SquireEditor = forwardRef(
             onReady = noop,
             onFocus = noop,
             onAddImages = noop,
-            toolbarMoreDropdownExtension = null
+            toolbarMoreDropdownExtension = null,
         }: Props,
         ref: Ref<SquireEditorRef>
     ) => {
@@ -130,7 +130,7 @@ const SquireEditor = forwardRef(
                 },
                 insertImage: (url: string, attrs: { [key: string]: string | undefined } = {}) => {
                     insertImage(squireRef.current, url, attrs);
-                }
+                },
             };
         }, [metadata]);
 
@@ -156,7 +156,7 @@ const SquireEditor = forwardRef(
                     className,
                     'editor w100 h100 rounded flex flex-column-reverse',
                     disabled && 'editor--disabled',
-                    showEllipseButton && 'editor--showEllipsisButton'
+                    showEllipseButton && 'editor--showEllipsisButton',
                 ])}
             >
                 {metadata.isPlainText ? (

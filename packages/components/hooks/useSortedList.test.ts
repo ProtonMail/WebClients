@@ -41,13 +41,13 @@ describe('useSortedList hook', () => {
         const list = [
             { t: 2, k: 'c' },
             { t: 3, k: 'b' },
-            { t: 1, k: 'a' }
+            { t: 1, k: 'a' },
         ];
         const { result } = renderHook(() => useSortedList(list, { key: 't', direction: SORT_DIRECTION.ASC }));
         expect(result.current.sortedList).toEqual([
             { t: 1, k: 'a' },
             { t: 2, k: 'c' },
-            { t: 3, k: 'b' }
+            { t: 3, k: 'b' },
         ]);
         expect(result.current.sortConfig).toEqual({ key: 't', direction: SORT_DIRECTION.ASC });
 
@@ -56,7 +56,7 @@ describe('useSortedList hook', () => {
         expect(result.current.sortedList).toEqual([
             { t: 1, k: 'a' },
             { t: 3, k: 'b' },
-            { t: 2, k: 'c' }
+            { t: 2, k: 'c' },
         ]);
         expect(result.current.sortConfig).toEqual({ key: 'k', direction: SORT_DIRECTION.ASC });
     });

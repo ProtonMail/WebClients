@@ -13,12 +13,12 @@ const ToggleNotify = ({ label }) => {
     const handleChange = async ({ target }) => {
         const newLabel = {
             ...label,
-            Notify: +target.checked
+            Notify: +target.checked,
         };
         await api(updateLabel(label.ID, newLabel));
         await call();
         createNotification({
-            text: c('label/folder notification').t`${label.Name} updated`
+            text: c('label/folder notification').t`${label.Name} updated`,
         });
     };
     return (
@@ -34,7 +34,7 @@ const ToggleNotify = ({ label }) => {
 };
 
 ToggleNotify.propTypes = {
-    label: PropTypes.object.isRequired
+    label: PropTypes.object.isRequired,
 };
 
 export default ToggleNotify;

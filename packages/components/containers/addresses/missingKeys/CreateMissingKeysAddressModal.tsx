@@ -11,7 +11,7 @@ import {
     Table,
     TableHeader,
     TableBody,
-    TableRow
+    TableRow,
 } from '../../../index';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
 import { decryptMemberToken } from 'proton-shared/lib/keys/memberToken';
@@ -29,7 +29,7 @@ import { OrganizationKey } from '../../../hooks/useGetOrganizationKeyRaw';
 enum STEPS {
     INIT = 0,
     DONE,
-    ERROR
+    ERROR,
 }
 
 interface Props {
@@ -49,8 +49,8 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
         addresses.map((address) => ({
             ...address,
             status: {
-                type: Status.QUEUED
-            }
+                type: Status.QUEUED,
+            },
         }))
     );
 
@@ -82,7 +82,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
             member,
             setFormattedAddresses,
             primaryMemberKey,
-            organizationKey: organizationKey.privateKey
+            organizationKey: organizationKey.privateKey,
         });
         await call();
     };
@@ -93,7 +93,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
             addresses,
             password: authentication.getPassword(),
             encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
-            setFormattedAddresses
+            setFormattedAddresses,
         });
         await call();
     };

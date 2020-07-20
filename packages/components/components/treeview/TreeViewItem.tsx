@@ -32,7 +32,7 @@ const TreeView = ({
     children,
     onToggle,
     onFocus,
-    title
+    title,
 }: Props) => {
     const handleClick = (event: React.MouseEvent) => {
         event.stopPropagation();

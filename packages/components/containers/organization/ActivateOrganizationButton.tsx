@@ -15,7 +15,7 @@ const ActivateOrganizationButton = () => {
             return createNotification({
                 type: 'error',
                 text: c('Error')
-                    .t`Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.`
+                    .t`Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.`,
             });
         }
 

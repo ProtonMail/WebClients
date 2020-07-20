@@ -16,7 +16,7 @@ const MobileAppsLinks = () => {
         { appNames: [PROTONMAIL, PROTONMAIL_SETTINGS], to: '/inbox', icon: 'protonmail' },
         { appNames: [PROTONCONTACTS], to: '/contacts', icon: 'protoncontacts' },
         { appNames: [PROTONCALENDAR], to: '/calendar', icon: 'protoncalendar' },
-        FEATURE_FLAGS.includes('drive') && { appNames: [PROTONDRIVE], to: '/drive', icon: 'protondrive' }
+        FEATURE_FLAGS.includes('drive') && { appNames: [PROTONDRIVE], to: '/drive', icon: 'protondrive' },
     ].filter(isTruthy);
 
     return (

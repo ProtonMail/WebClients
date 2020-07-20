@@ -18,7 +18,7 @@ PlanPrice.propTypes = {
     amount: PropTypes.number,
     cycle: PropTypes.number,
     currency: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
 };
 
 export default PlanPrice;

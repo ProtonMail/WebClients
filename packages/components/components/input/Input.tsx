@@ -52,12 +52,12 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
                 <div
                     className={classnames([
                         'relative pm-field-icon-container w100',
-                        hasError && 'pm-field-icon-container--invalid'
+                        hasError && 'pm-field-icon-container--invalid',
                     ])}
                 >
                     {child}
                     {React.cloneElement(icon, {
-                        className: classnames([icon.props.className, 'right-icon absolute flex'])
+                        className: classnames([icon.props.className, 'right-icon absolute flex']),
                     })}
                 </div>
             );

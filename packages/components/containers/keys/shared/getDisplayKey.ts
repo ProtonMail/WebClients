@@ -23,7 +23,7 @@ export const getDisplayKey = ({
     fingerprint,
     isDecrypted,
     isLoading,
-    Key: { ID, Primary, Flags }
+    Key: { ID, Primary, Flags },
 }: Arguments): KeyDisplay => {
     const { Status } = Address || {};
     const { isSubUser, isPrivate } = User;
@@ -41,7 +41,7 @@ export const getDisplayKey = ({
         isDecrypted,
         isLoading,
         isCompromised,
-        isObsolete
+        isObsolete,
     };
 
     const hasUserPermission = !isSubUser || isPrivate;
@@ -56,7 +56,7 @@ export const getDisplayKey = ({
         canSetNotObsolete: canModify && isObsolete,
         canSetCompromised: canModify && !isCompromised,
         canSetNotCompromised: canModify && isCompromised,
-        canDelete: canModify
+        canDelete: canModify,
     };
 
     return {
@@ -65,6 +65,6 @@ export const getDisplayKey = ({
         algorithmInfo,
         algorithm: describe(algorithmInfo),
         status,
-        permissions
+        permissions,
     };
 };

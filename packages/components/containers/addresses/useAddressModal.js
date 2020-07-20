@@ -5,7 +5,7 @@ const toModel = ({ Self, addresses = [] }) => {
     return {
         name: Self ? DisplayName || '' : '', // DisplayName can be null
         address: '',
-        domain: ''
+        domain: '',
     };
 };
 
@@ -16,7 +16,7 @@ const useAddressModal = (member) => {
 
     return {
         model,
-        update
+        update,
     };
 };
 

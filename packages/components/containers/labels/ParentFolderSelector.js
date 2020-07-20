@@ -18,7 +18,7 @@ const ParentFolderSelector = ({ id, value, onChange, className, disableOptions =
     const formatOption = ({ Name, ID }, level = 0) => ({
         disabled: disableOptions.includes(ID),
         value: ID,
-        text: formatFolderName(level, Name, ' ∙ ')
+        text: formatFolderName(level, Name, ' ∙ '),
     });
 
     const reducer = (acc = [], folder, level = 0) => {
@@ -33,7 +33,7 @@ const ParentFolderSelector = ({ id, value, onChange, className, disableOptions =
 
     const treeview = buildTreeview(folders);
     const options = treeview.reduce((acc, folder) => reducer(acc, folder), [
-        { value: ROOT_FOLDER, text: c('Option').t`No parent folder` }
+        { value: ROOT_FOLDER, text: c('Option').t`No parent folder` },
     ]);
 
     return (
@@ -52,7 +52,7 @@ ParentFolderSelector.propTypes = {
     className: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     onChange: PropTypes.func,
-    disableOptions: PropTypes.arrayOf(PropTypes.string)
+    disableOptions: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default ParentFolderSelector;

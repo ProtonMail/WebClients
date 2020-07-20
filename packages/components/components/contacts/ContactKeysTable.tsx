@@ -91,7 +91,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     isUploaded,
                     canBePrimary,
                     canBeTrusted,
-                    canBeUntrusted
+                    canBeUntrusted,
                 };
             })
         );
@@ -132,7 +132,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         isUploaded,
                         canBePrimary,
                         canBeTrusted,
-                        canBeUntrusted
+                        canBeUntrusted,
                     }) => {
                         const creation = new Date(creationTime);
                         const expiration = new Date(expirationTime);
@@ -141,15 +141,15 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 text: c('Action').t`Download`,
                                 onClick: () => {
                                     const blob = new Blob([publicKey.armor()], {
-                                        type: 'data:text/plain;charset=utf-8;'
+                                        type: 'data:text/plain;charset=utf-8;',
                                     });
                                     const filename = `publickey - ${model.emailAddress} - 0x${fingerprint
                                         .slice(0, 8)
                                         .toUpperCase()}.asc`;
 
                                     downloadFile(blob, filename);
-                                }
-                            }
+                                },
+                            },
                         ];
                         if (canBePrimary) {
                             list.push({
@@ -171,9 +171,9 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                             : model.publicKeys.pinnedKeys;
                                     setModel({
                                         ...model,
-                                        publicKeys: { apiKeys: reOrderedApiKeys, pinnedKeys: reOrderedPinnedKeys }
+                                        publicKeys: { apiKeys: reOrderedApiKeys, pinnedKeys: reOrderedPinnedKeys },
                                     });
-                                }
+                                },
                             });
                         }
                         if (canBeTrusted) {
@@ -190,11 +190,11 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                             ...model,
                                             publicKeys: {
                                                 ...model.publicKeys,
-                                                pinnedKeys: [...model.publicKeys.pinnedKeys, trustedKey]
+                                                pinnedKeys: [...model.publicKeys.pinnedKeys, trustedKey],
                                             },
-                                            trustedFingerprints
+                                            trustedFingerprints,
                                         });
-                                }
+                                },
                             });
                         }
 
@@ -211,11 +211,11 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                         ...model,
                                         publicKeys: {
                                             ...model.publicKeys,
-                                            pinnedKeys
+                                            pinnedKeys,
                                         },
-                                        trustedFingerprints
+                                        trustedFingerprints,
                                     });
-                                }
+                                },
                             });
                         }
                         if (isUploaded) {
@@ -237,10 +237,10 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                             ...model.publicKeys,
                                             pinnedKeys: model.publicKeys.pinnedKeys.filter(
                                                 (publicKey) => publicKey.getFingerprint() !== fingerprint
-                                            )
-                                        }
+                                            ),
+                                        },
                                     });
-                                }
+                                },
                             });
                         }
 
@@ -268,7 +268,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 {isRevoked ? <Badge type="error">{c('Key badge').t`Revoked`}</Badge> : null}
                                 {isExpired ? <Badge type="error">{c('Key badge').t`Expired`}</Badge> : null}
                             </React.Fragment>,
-                            <DropdownActions key={fingerprint} className="pm-button--small" list={list} />
+                            <DropdownActions key={fingerprint} className="pm-button--small" list={list} />,
                         ].filter(Boolean);
                         return <TableRow key={fingerprint} cells={cells} />;
                     }

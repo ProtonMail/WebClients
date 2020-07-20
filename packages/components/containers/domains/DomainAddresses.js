@@ -33,7 +33,7 @@ const DomainAddresses = ({ domainAddresses }) => {
 };
 
 DomainAddresses.propTypes = {
-    domainAddresses: PropTypes.array.isRequired
+    domainAddresses: PropTypes.array.isRequired,
 };
 
 export default DomainAddresses;

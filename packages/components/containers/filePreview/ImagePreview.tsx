@@ -19,7 +19,7 @@ const calculateImagePosition = (scale: number, image?: HTMLImageElement | null, 
 
     return {
         x: width >= bounds.width ? '0px' : `${centerX}px`,
-        y: height >= bounds.height ? '0px' : `${centerY}px`
+        y: height >= bounds.height ? '0px' : `${centerY}px`,
     };
 };
 
@@ -61,7 +61,7 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
     const [scale, setScale] = useState(0);
     const [imageData, setImageData] = useState({
         src: '',
-        rotation: 0
+        rotation: 0,
     });
 
     useEffect(() => {
@@ -78,7 +78,7 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
                 src = URL.createObjectURL(blob);
                 setImageData({
                     src,
-                    rotation: parseRotation(exif)
+                    rotation: parseRotation(exif),
                 });
             }
         });
@@ -135,7 +135,7 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
                                 style={{
                                     transform: `translate(${position.x}, ${position.y}) rotate(${imageData.rotation}deg)`,
                                     height: imageRef.current ? imageRef.current.naturalHeight * scale : undefined,
-                                    width: imageRef.current ? imageRef.current.naturalWidth * scale : undefined
+                                    width: imageRef.current ? imageRef.current.naturalWidth * scale : undefined,
                                 }}
                                 src={imageData.src}
                                 alt={c('Info').t`Preview`}

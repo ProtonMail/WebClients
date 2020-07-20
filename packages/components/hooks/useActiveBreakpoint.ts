@@ -6,10 +6,7 @@ const getBreakpoint = () => {
     if (!bodyEl) {
         return '';
     }
-    return window
-        .getComputedStyle(bodyEl, ':before')
-        .getPropertyValue('content')
-        .replace(/['"]+/g, '');
+    return window.getComputedStyle(bodyEl, ':before').getPropertyValue('content').replace(/['"]+/g, '');
 };
 
 const useActiveBreakpoint = () => {
@@ -39,7 +36,7 @@ const useActiveBreakpoint = () => {
             isTablet,
             isMobile,
             isTinyMobile,
-            isNarrow: isMobile || isTinyMobile
+            isNarrow: isMobile || isTinyMobile,
         };
     }, [breakpoint]);
 };

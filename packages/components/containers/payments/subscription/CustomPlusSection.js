@@ -14,15 +14,15 @@ const CustomPlusSection = ({ plans, model, onChange }) => {
     const domainAddon = getAddon(plans, { name: ADDON_NAMES.DOMAIN });
     const spaceOptions = range(5, 21).map((value, index) => ({
         text: getTextOption('space', value, index),
-        value: index
+        value: index,
     }));
     const addressOptions = range(5, 51, 5).map((value, index) => ({
         text: getTextOption('address', value, index),
-        value: index
+        value: index,
     }));
     const domainOptions = range(1, 11).map((value, index) => ({
         text: getTextOption('domain', value, index),
-        value: index
+        value: index,
     }));
 
     const handleChange = (key) => ({ target }) => {
@@ -112,7 +112,7 @@ const CustomPlusSection = ({ plans, model, onChange }) => {
 CustomPlusSection.propTypes = {
     plans: PropTypes.array.isRequired,
     model: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default CustomPlusSection;

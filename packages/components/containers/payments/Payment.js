@@ -7,7 +7,7 @@ import {
     MIN_DONATION_AMOUNT,
     MIN_CREDIT_AMOUNT,
     DEFAULT_CURRENCY,
-    CURRENCIES
+    CURRENCIES,
 } from 'proton-shared/lib/constants';
 
 import Method from './Method';
@@ -24,7 +24,7 @@ const Payment = ({
     onMethod,
     card,
     onCard,
-    errors
+    errors,
 }) => {
     const { methods, options, loading } = useMethods({ amount, coupon, type });
     const lastCustomMethod = [...options]
@@ -35,7 +35,7 @@ const Payment = ({
                     PAYMENT_METHOD_TYPES.CARD,
                     PAYMENT_METHOD_TYPES.PAYPAL,
                     PAYMENT_METHOD_TYPES.CASH,
-                    PAYMENT_METHOD_TYPES.BITCOIN
+                    PAYMENT_METHOD_TYPES.BITCOIN,
                 ].includes(value)
         );
 
@@ -87,7 +87,7 @@ const Payment = ({
                                 key={value}
                                 className={classnames([
                                     'pt0-5 pb0-5 flex flex-nowrap flex-items-center',
-                                    lastCustomMethod && lastCustomMethod.value === value && 'border-bottom'
+                                    lastCustomMethod && lastCustomMethod.value === value && 'border-bottom',
                                 ])}
                             >
                                 <Radio
@@ -139,7 +139,7 @@ Payment.propTypes = {
     onMethod: PropTypes.func,
     errors: PropTypes.object,
     paypal: PropTypes.object,
-    paypalCredit: PropTypes.object
+    paypalCredit: PropTypes.object,
 };
 
 export default Payment;

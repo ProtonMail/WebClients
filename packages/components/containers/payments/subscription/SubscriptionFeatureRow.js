@@ -15,7 +15,7 @@ const SubscriptionFeatureRow = ({ icon, feature, info }) => {
 SubscriptionFeatureRow.propTypes = {
     icon: PropTypes.string.isRequired,
     feature: PropTypes.node.isRequired,
-    info: PropTypes.string
+    info: PropTypes.string,
 };
 
 export default SubscriptionFeatureRow;

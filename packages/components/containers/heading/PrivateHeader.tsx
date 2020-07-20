@@ -10,7 +10,7 @@ import {
     UpgradeButton,
     UpgradeVPNButton,
     useUser,
-    useConfig
+    useConfig,
 } from '../../index';
 import { c } from 'ttag';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
@@ -45,7 +45,7 @@ const PrivateHeader = ({
     floatingButton,
     expanded,
     onToggleExpand,
-    title
+    title,
 }: Props) => {
     const [{ hasPaidMail, hasPaidVpn }] = useUser();
     const { APP_NAME } = useConfig();

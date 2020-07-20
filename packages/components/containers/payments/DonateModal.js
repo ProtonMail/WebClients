@@ -7,7 +7,7 @@ import {
     DEFAULT_CURRENCY,
     DEFAULT_DONATION_AMOUNT,
     PAYMENT_METHOD_TYPES,
-    MIN_DONATION_AMOUNT
+    MIN_DONATION_AMOUNT,
 } from 'proton-shared/lib/constants';
 
 import './DonateModal.scss';
@@ -31,20 +31,20 @@ const DonateModal = ({ ...rest }) => {
         const requestBody = await handlePaymentToken({
             params: { ...params, Amount: debouncedAmount, Currency: currency },
             api,
-            createModal
+            createModal,
         });
         await api(donate(requestBody));
         rest.onClose();
         createNotification({
             text: c('Success')
-                .t`Your support is essential to keeping Proton running. Thank you for supporting internet privacy!`
+                .t`Your support is essential to keeping Proton running. Thank you for supporting internet privacy!`,
         });
     };
 
     const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
         amount: debouncedAmount,
         currency,
-        onPay: handleSubmit
+        onPay: handleSubmit,
     });
 
     const submit =
@@ -92,7 +92,7 @@ const DonateModal = ({ ...rest }) => {
 };
 
 DonateModal.propTypes = {
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default DonateModal;

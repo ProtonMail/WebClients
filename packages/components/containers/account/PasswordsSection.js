@@ -10,7 +10,7 @@ import {
     Field,
     useAddresses,
     useModals,
-    useUserSettings
+    useUserSettings,
 } from 'react-components';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 

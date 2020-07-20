@@ -10,7 +10,7 @@ const useStep = (initialStep = 0) => {
         step,
         next,
         previous,
-        goTo
+        goTo,
     };
 };
 

@@ -14,7 +14,7 @@ import {
     useModals,
     useNotifications,
     useApi,
-    useLoading
+    useLoading,
 } from 'react-components';
 import { checkInvoice, payInvoice } from 'proton-shared/lib/api/payments';
 import { toPrice } from 'proton-shared/lib/helpers/string';
@@ -36,7 +36,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
         const requestBody = await handlePaymentToken({
             params: { ...params, Amount: AmountDue, Currency },
             api,
-            createModal
+            createModal,
         });
         await api(payInvoice(invoice.ID, requestBody));
         fetchInvoices();
@@ -47,7 +47,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
     const { card, setCard, errors, method, setMethod, parameters, canPay, paypal } = usePayment({
         amount: AmountDue,
         currency: Currency,
-        onPay: handleSubmit
+        onPay: handleSubmit,
     });
 
     const submit =
@@ -117,7 +117,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
 
 PayInvoiceModal.propTypes = {
     invoice: PropTypes.object.isRequired,
-    fetchInvoices: PropTypes.func.isRequired
+    fetchInvoices: PropTypes.func.isRequired,
 };
 
 export default PayInvoiceModal;

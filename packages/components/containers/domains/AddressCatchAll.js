@@ -26,7 +26,7 @@ const AddressCatchAll = ({ address, domain, onChange }) => {
             event.stopPropagation();
             createNotification({
                 type: 'info',
-                text: c('Warning').t`This feature is only available for ProtonMail Professional plans or higher`
+                text: c('Warning').t`This feature is only available for ProtonMail Professional plans or higher`,
             });
         }
     };
@@ -43,7 +43,7 @@ const AddressCatchAll = ({ address, domain, onChange }) => {
 AddressCatchAll.propTypes = {
     address: PropTypes.object.isRequired,
     domain: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default AddressCatchAll;

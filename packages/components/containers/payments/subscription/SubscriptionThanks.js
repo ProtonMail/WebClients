@@ -53,7 +53,7 @@ const SubscriptionThanks = ({ method = '', onClose }) => {
 
 SubscriptionThanks.propTypes = {
     method: PropTypes.string,
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func.isRequired,
 };
 
 export default SubscriptionThanks;

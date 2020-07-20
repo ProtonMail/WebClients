@@ -32,7 +32,7 @@ export default (setNotifications) => {
                 }
                 return {
                     ...oldNotification,
-                    isClosing: true
+                    isClosing: true,
                 };
             });
         });
@@ -54,8 +54,8 @@ export default (setNotifications) => {
                     expiration,
                     type,
                     ...rest,
-                    isClosing: false
-                }
+                    isClosing: false,
+                },
             ];
         });
 
@@ -78,6 +78,6 @@ export default (setNotifications) => {
         createNotification,
         removeNotification,
         hideNotification,
-        clearNotifications
+        clearNotifications,
     };
 };

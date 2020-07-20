@@ -10,7 +10,7 @@ const usePaginationAsync = (initialPage = 1) => {
         page,
         onNext,
         onPrevious,
-        onSelect
+        onSelect,
     };
 };
 

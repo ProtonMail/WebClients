@@ -12,7 +12,7 @@ const CycleSelector = ({
     options = [
         { text: c('Billing cycle option').t`Monthly`, value: MONTHLY },
         { text: c('Billing cycle option').t`Annually`, value: YEARLY },
-        { text: c('Billing cycle option').t`Two-year`, value: TWO_YEARS }
+        { text: c('Billing cycle option').t`Two-year`, value: TWO_YEARS },
     ],
     ...rest
 }) => {
@@ -28,9 +28,9 @@ CycleSelector.propTypes = {
     options: PropTypes.arrayOf(
         PropTypes.shape({
             text: PropTypes.string.isRequired,
-            value: PropTypes.number.isRequired
+            value: PropTypes.number.isRequired,
         })
-    )
+    ),
 };
 
 export default CycleSelector;

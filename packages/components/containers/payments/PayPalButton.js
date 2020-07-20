@@ -57,7 +57,7 @@ PayPalButton.propTypes = {
     className: PropTypes.string,
     amount: PropTypes.number.isRequired,
     children: PropTypes.node.isRequired,
-    paypal: PropTypes.object.isRequired
+    paypal: PropTypes.object.isRequired,
 };
 
 export default PayPalButton;

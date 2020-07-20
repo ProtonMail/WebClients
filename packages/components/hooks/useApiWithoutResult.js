@@ -18,7 +18,7 @@ const useApiWithoutResult = (fn) => {
 
     return {
         loading,
-        request: requestAndSetLoading
+        request: requestAndSetLoading,
     };
 };
 

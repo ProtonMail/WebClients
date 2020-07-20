@@ -22,7 +22,7 @@ const CatchAllModal = ({ domain, domainAddresses, onClose, ...rest }) => {
 CatchAllModal.propTypes = {
     onClose: PropTypes.func,
     domain: PropTypes.object.isRequired,
-    domainAddresses: PropTypes.array.isRequired
+    domainAddresses: PropTypes.array.isRequired,
 };
 
 export default CatchAllModal;

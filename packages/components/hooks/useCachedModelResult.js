@@ -8,7 +8,7 @@ export const getState = ({ value, status } = { status: STATUS.PENDING }, oldStat
         // The old state value is returned in case the model has been deleted from the cache
         status === STATUS.PENDING || status === STATUS.RESOLVED ? value || oldState[0] : undefined,
         status === STATUS.PENDING,
-        status === STATUS.REJECTED ? value : undefined
+        status === STATUS.REJECTED ? value : undefined,
     ];
 };
 
@@ -16,7 +16,7 @@ const getRecordPending = (promise) => {
     return {
         status: STATUS.PENDING,
         value: undefined,
-        promise
+        promise,
     };
 };
 
@@ -25,13 +25,13 @@ const getRecordThen = (promise) => {
         .then((value) => {
             return {
                 status: STATUS.RESOLVED,
-                value
+                value,
             };
         })
         .catch((error) => {
             return {
                 status: STATUS.REJECTED,
-                value: error
+                value: error,
             };
         });
 };

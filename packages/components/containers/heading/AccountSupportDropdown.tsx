@@ -11,7 +11,7 @@ import {
     BugModal,
     DropdownMenu,
     DropdownMenuButton,
-    DropdownMenuLink
+    DropdownMenuLink,
 } from '../../';
 import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
 import { c } from 'ttag';

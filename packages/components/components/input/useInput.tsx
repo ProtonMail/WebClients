@@ -6,7 +6,7 @@ import {
     KeyboardEvent,
     KeyboardEventHandler,
     ChangeEventHandler,
-    FocusEventHandler
+    FocusEventHandler,
 } from 'react';
 
 const FOCUSED_CLASS = 'focused';
@@ -18,7 +18,7 @@ const DEFAULT_STATE = {
     isFocused: false,
     isBlurred: false,
     isDirty: false,
-    isPristine: true
+    isPristine: true,
 };
 
 interface Arguments<T> {
@@ -48,7 +48,7 @@ function useInput<T>(
             isPristine && PRISTINE_CLASS,
             isFocused && FOCUSED_CLASS,
             isBlurred && BLURRED_CLASS,
-            isDirty && DIRTY_CLASS
+            isDirty && DIRTY_CLASS,
         ]
             .filter(Boolean)
             .map((className) => `${prefix}-${className}`)
@@ -70,7 +70,7 @@ function useInput<T>(
                         ...status,
                         isBlurred: false,
                         isFocused: true,
-                        isPristine: false
+                        isPristine: false,
                     });
                 }
 
@@ -84,7 +84,7 @@ function useInput<T>(
                         ...status,
                         isBlurred: true,
                         isFocused: false,
-                        isPristine: false
+                        isPristine: false,
                     });
                 }
 
@@ -97,7 +97,7 @@ function useInput<T>(
                     changeStatus({
                         ...status,
                         isDirty: true,
-                        isPristine: false
+                        isPristine: false,
                     });
                 }
 
@@ -113,8 +113,8 @@ function useInput<T>(
                 if (onKeyDown) {
                     onKeyDown(event);
                 }
-            }
-        }
+            },
+        },
     };
 }
 

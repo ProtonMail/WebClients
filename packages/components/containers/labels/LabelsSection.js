@@ -23,7 +23,7 @@ function LabelsSection() {
         const newLabels = arrayMove(labels, oldIndex, newIndex);
         await api(
             orderLabels({
-                LabelIDs: newLabels.map(({ ID }) => ID)
+                LabelIDs: newLabels.map(({ ID }) => ID),
             })
         );
         await call();

@@ -20,7 +20,7 @@ const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false 
                         className="ellipsis inbl alignbottom mw100"
                         title={c('Header for addresses table').t`Addresses`}
                     >{c('Header for addresses table').t`Addresses`}</span>,
-                    c('Header for addresses table').t`Actions`
+                    c('Header for addresses table').t`Actions`,
                 ]}
             />
             <TableBody loading={loading} colSpan={4}>
@@ -33,7 +33,7 @@ const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false 
                                 <DomainName key={0} domain={domain} />,
                                 <DomainStatus key={1} domain={domain} domainAddresses={domainAddresses} />,
                                 <DomainAddresses key={2} domainAddresses={domainAddresses} />,
-                                <DomainActions key={3} domain={domain} domainAddresses={domainAddresses} />
+                                <DomainActions key={3} domain={domain} domainAddresses={domainAddresses} />,
                             ]}
                         />
                     );
@@ -46,7 +46,7 @@ const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false 
 DomainsTable.propTypes = {
     domains: PropTypes.array,
     domainsAddressesMap: PropTypes.object,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
 };
 
 export default DomainsTable;

@@ -10,7 +10,7 @@ const useLoader = (initialState = false) => {
         isDisplay,
         show,
         toggle,
-        hide
+        hide,
     };
 };
 

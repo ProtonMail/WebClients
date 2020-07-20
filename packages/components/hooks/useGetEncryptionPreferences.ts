@@ -45,7 +45,7 @@ const useGetEncryptionPreferences = () => {
             const publicKeyModel = await getContactPublicKeyModel({
                 emailAddress,
                 apiKeysConfig,
-                pinnedKeysConfig
+                pinnedKeysConfig,
             });
             return extractEncryptionPreferences(publicKeyModel, mailSettings, selfSend);
         },

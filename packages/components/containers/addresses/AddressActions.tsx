@@ -8,7 +8,7 @@ import {
     useEventManager,
     useLoading,
     ConfirmModal,
-    Alert
+    Alert,
 } from '../../index';
 import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
 import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
@@ -88,30 +88,30 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
         member,
         address,
         user,
-        organizationKey
+        organizationKey,
     });
 
     const list = [
         canEdit && {
             text: c('Address action').t`Edit`,
-            onClick: () => createModal(<EditAddressModal address={address} />)
+            onClick: () => createModal(<EditAddressModal address={address} />),
         },
         canEnable && {
             text: c('Address action').t`Enable`,
-            onClick: () => withLoading(handleEnable())
+            onClick: () => withLoading(handleEnable()),
         },
         canDisable && {
             text: c('Address action').t`Disable`,
-            onClick: () => withLoading(handleDisable())
+            onClick: () => withLoading(handleDisable()),
         },
         canGenerate && {
             text: c('Address action').t`Generate missing keys`,
-            onClick: () => withLoading(handleGenerate())
+            onClick: () => withLoading(handleGenerate()),
         },
         canDelete && {
             text: c('Address action').t`Delete`,
-            onClick: () => withLoading(handleDelete())
-        }
+            onClick: () => withLoading(handleDelete()),
+        },
     ].filter(isTruthy);
 
     return <DropdownActions className="pm-button--small" list={list} loading={loading} />;

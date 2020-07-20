@@ -27,8 +27,8 @@ const LoadIndicator = ({ server: { Load = 0 } }) => {
 
 LoadIndicator.propTypes = {
     server: PropTypes.shape({
-        Load: PropTypes.number
-    })
+        Load: PropTypes.number,
+    }),
 };
 
 export default LoadIndicator;

@@ -22,7 +22,7 @@ const FeaturesList = ({ features = [] }) => {
 };
 
 FeaturesList.propTypes = {
-    features: PropTypes.arrayOf(PropTypes.string)
+    features: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default FeaturesList;

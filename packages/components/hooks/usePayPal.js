@@ -19,7 +19,7 @@ const usePayPal = ({ amount: Amount = 0, currency: Currency = '', type: Type, on
                 createToken({
                     Amount,
                     Currency,
-                    Payment: { Type }
+                    Payment: { Type },
                 })
             );
             setModel(result);
@@ -40,9 +40,9 @@ const usePayPal = ({ amount: Amount = 0, currency: Currency = '', type: Type, on
                         api,
                         ReturnHost,
                         ApprovalURL,
-                        signal: abort.signal
+                        signal: abort.signal,
                     }),
-                    abort
+                    abort,
                 };
             };
             createModal(
@@ -66,7 +66,7 @@ const usePayPal = ({ amount: Amount = 0, currency: Currency = '', type: Type, on
         loadingVerification,
         onToken: () => withLoadingToken(onToken()),
         onVerification: () => withLoadingVerification(onVerification()),
-        clear
+        clear,
     };
 };
 

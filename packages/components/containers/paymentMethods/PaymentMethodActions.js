@@ -9,7 +9,7 @@ import {
     EditCardModal,
     useApi,
     useNotifications,
-    useEventManager
+    useEventManager,
 } from 'react-components';
 import { deletePaymentMethod, orderPaymentMethods } from 'proton-shared/lib/api/payments';
 import { isExpired } from 'proton-shared/lib/helpers/card';
@@ -24,7 +24,7 @@ const toCard = ({ Details = {}, Type }) => {
             year: Details.ExpYear.slice(-2),
             cvc: '',
             zip: Details.ZIP,
-            country: Details.Country
+            country: Details.Country,
         };
     }
     return Details;
@@ -56,12 +56,12 @@ const PaymentMethodActions = ({ method, methods, index }) => {
     const list = [
         method.Type === PAYMENT_METHOD_TYPES.CARD && {
             text: c('Action').t`Edit`,
-            onClick: () => createModal(<EditCardModal card={card} />)
+            onClick: () => createModal(<EditCardModal card={card} />),
         },
         index > 0 &&
             !isExpired(method.Details) && {
                 text: c('Action').t`Mark as default`,
-                onClick: markAsDefault
+                onClick: markAsDefault,
             },
         {
             text: c('Action').t`Delete`,
@@ -72,8 +72,8 @@ const PaymentMethodActions = ({ method, methods, index }) => {
                             .t`Are you sure you want to delete this payment method?`}</Alert>
                     </ConfirmModal>
                 );
-            }
-        }
+            },
+        },
     ].filter(Boolean);
 
     return <DropdownActions className="pm-button--small" list={list} />;
@@ -82,7 +82,7 @@ const PaymentMethodActions = ({ method, methods, index }) => {
 PaymentMethodActions.propTypes = {
     method: PropTypes.object.isRequired,
     methods: PropTypes.array.isRequired,
-    index: PropTypes.number.isRequired
+    index: PropTypes.number.isRequired,
 };
 
 export default PaymentMethodActions;

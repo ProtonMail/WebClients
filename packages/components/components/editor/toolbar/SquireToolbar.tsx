@@ -19,7 +19,7 @@ import {
     toggleUnorderedList,
     toggleBlockquote,
     listenToCursor,
-    getPathInfo
+    getPathInfo,
 } from '../squireActions';
 import SquireToolbarButton from './SquireToolbarButton';
 import SquireToolbarSeparator from './SquireToolbarSeparator';
@@ -34,7 +34,7 @@ export enum ALIGNMENT {
     Left = 'left',
     Center = 'center',
     Justify = 'justify',
-    Right = 'right'
+    Right = 'right',
 }
 
 interface Props {
@@ -54,7 +54,7 @@ const SquireToolbar = ({
     squireRef,
     editorReady,
     onAddImages,
-    moreDropdownExtension
+    moreDropdownExtension,
 }: Props) => {
     const [squireInfos, setSquireInfos] = useState<{ [test: string]: boolean }>({});
 
@@ -218,7 +218,7 @@ const SquireToolbar = ({
                         handleBlockquote,
                         handleLink,
                         handleClearFormatting,
-                        handleImage
+                        handleImage,
                     }}
                 >
                     {moreDropdownExtension}

@@ -33,7 +33,7 @@ const MemberAddresses = ({ member, addresses }) => {
 
 MemberAddresses.propTypes = {
     member: PropTypes.object.isRequired,
-    addresses: PropTypes.array.isRequired
+    addresses: PropTypes.array.isRequired,
 };
 
 export default MemberAddresses;

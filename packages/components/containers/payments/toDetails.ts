@@ -15,7 +15,7 @@ const toDetails = ({ number, month: ExpMonth, year, cvc: CVC, fullname, zip: ZIP
         ExpYear: formatYear(year),
         CVC, // Don't clean ZIP, space is allowed
         ZIP,
-        Country
+        Country,
     };
 };
 

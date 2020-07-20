@@ -15,7 +15,7 @@ const getComputedMargin = (el: HTMLLIElement) => {
 
 const INITIAL_STATE = {
     scale: 0,
-    translate: '0px'
+    translate: '0px',
 };
 
 export const useIndicator = (tabs: Tab[], currentTabIndex: number) => {
@@ -33,7 +33,7 @@ export const useIndicator = (tabs: Tab[], currentTabIndex: number) => {
         const tabsListItems = tabsEl.querySelectorAll<HTMLLIElement>('.tabs-list-item');
         const tabProperties = [...tabsListItems].map((el) => ({
             width: getWidth(el),
-            margin: getComputedMargin(el)
+            margin: getComputedMargin(el),
         }));
         const totalTabWidth = tabProperties.reduce((acc, { width, margin }) => acc + width + margin, 0);
 
@@ -57,13 +57,13 @@ export const useIndicator = (tabs: Tab[], currentTabIndex: number) => {
         // indicator scale is proportion to whole container width
         setIndicatorParams({
             scale: width / getWidth(tabsEl),
-            translate: `${offset}px`
+            translate: `${offset}px`,
         });
     }, [tabs, currentTabIndex]);
 
     return {
         scale,
         translate,
-        ref: tabsRef
+        ref: tabsRef,
     };
 };

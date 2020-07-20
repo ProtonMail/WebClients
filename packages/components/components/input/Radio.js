@@ -14,7 +14,7 @@ const Radio = ({ id, children, className = 'inline-flex', ...rest }) => {
 Radio.propTypes = {
     id: PropTypes.string,
     className: PropTypes.string,
-    children: PropTypes.node
+    children: PropTypes.node,
 };
 
 export default Radio;

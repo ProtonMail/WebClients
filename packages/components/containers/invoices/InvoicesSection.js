@@ -16,7 +16,7 @@ import {
     Time,
     useModals,
     useSubscription,
-    useUser
+    useUser,
 } from 'react-components';
 import { queryInvoices } from 'proton-shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE } from 'proton-shared/lib/constants';
@@ -45,7 +45,7 @@ const InvoicesSection = () => {
         queryInvoices({
             Page: page - 1,
             PageSize: ELEMENTS_PER_PAGE,
-            Owner: owner
+            Owner: owner,
         });
 
     const { result = {}, loading, request } = useApiResult(query, [page, owner]);
@@ -69,7 +69,7 @@ const InvoicesSection = () => {
         { node: c('Title').t`Type`, className: 'notablet nomobile' },
         { node: c('Title').t`Status`, className: 'nomobile' },
         { node: c('Title').t`Date`, className: 'nomobile' },
-        { node: c('Title').t`Action` }
+        { node: c('Title').t`Action` },
     ].map(({ node, className = '' }, i) => {
         return (
             <TableCell key={i.toString()} className={className} type="header">
@@ -125,7 +125,7 @@ const InvoicesSection = () => {
                                     <InvoiceType key={key} invoice={invoice} />,
                                     <InvoiceState key={key} invoice={invoice} />,
                                     <Time key={key}>{invoice.CreateTime}</Time>,
-                                    <InvoiceActions key={key} invoice={invoice} fetchInvoices={request} />
+                                    <InvoiceActions key={key} invoice={invoice} fetchInvoices={request} />,
                                 ]}
                                 className="ontablet-hideTd3 onmobile-hideTd4 onmobile-hideTd5"
                             />

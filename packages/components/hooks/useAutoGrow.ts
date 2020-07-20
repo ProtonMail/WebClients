@@ -30,7 +30,7 @@ const useAutoGrow = ({ maxRows = 5, minRows = 1, autoGrow = false }) => {
 
     if (!autoGrow) {
         return {
-            rows: maxRows
+            rows: maxRows,
         };
     }
 

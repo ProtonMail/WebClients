@@ -26,7 +26,7 @@ function LabelItem({ label, onEditLabel = noop, onRemoveLabel = noop, ...rest })
                         {Name}
                     </span>
                 </div>,
-                <ActionsLabel key="2" label={label} onChange={handleChange} />
+                <ActionsLabel key="2" label={label} onChange={handleChange} />,
             ]}
             {...rest}
         />
@@ -37,7 +37,7 @@ LabelItem.propTypes = {
     label: PropTypes.object.isRequired,
     onEditLabel: PropTypes.func,
     onRemoveLabel: PropTypes.func,
-    index: PropTypes.number.isRequired
+    index: PropTypes.number.isRequired,
 };
 
 export default LabelItem;

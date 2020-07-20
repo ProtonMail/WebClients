@@ -9,7 +9,7 @@ const BitcoinQRCode = ({ amount, address, ...rest }) => {
 
 BitcoinQRCode.propTypes = {
     amount: PropTypes.number,
-    address: PropTypes.string.isRequired
+    address: PropTypes.string.isRequired,
 };
 
 export default BitcoinQRCode;

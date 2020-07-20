@@ -30,7 +30,7 @@ const useUserVPN = () => {
     return useMemo(
         () => ({
             ...state,
-            fetch
+            fetch,
         }),
         [state]
     );

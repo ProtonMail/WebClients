@@ -6,21 +6,21 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     Folder: { name: 'folder' },
     'application/msword': { name: 'file-doc' },
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document': {
-        name: 'file-docx'
+        name: 'file-docx',
     },
     'application/pdf': { name: 'file-pdf' },
     'application/vnd.ms-powerpoint': { name: 'file-ppt' },
     'application/vnd.openxmlformats-officedocument.presentationml.presentation': {
-        name: 'file-pptx'
+        name: 'file-pptx',
     },
     'application/x-rar-compressed': { name: 'file-rar-zip' },
     'application/zip': { name: 'file-rar-zip' },
     'application/vnd.ms-excel': { name: 'file-xls' },
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': {
-        name: 'file-xslx'
+        name: 'file-xslx',
     },
     'application/xliff+xml': { name: 'file-xliff' },
-    'application/xml': { name: 'file-xml' }
+    'application/xml': { name: 'file-xml' },
 };
 
 const getIconName = (mimeType: string) => {

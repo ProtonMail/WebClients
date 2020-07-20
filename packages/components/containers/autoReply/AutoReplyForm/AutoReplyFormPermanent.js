@@ -15,7 +15,7 @@ const AutoReplyFormPermanent = () => {
 
 AutoReplyFormPermanent.propTypes = {
     model: modelShape,
-    updateModel: PropTypes.func
+    updateModel: PropTypes.func,
 };
 
 export default AutoReplyFormPermanent;

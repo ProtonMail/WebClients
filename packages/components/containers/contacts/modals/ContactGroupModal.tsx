@@ -51,14 +51,14 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) =
                 ? contactGroup.Color
                 : LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
         contactEmails: contactGroupID ? existingContactEmails : [],
-        contactEmailID: ''
+        contactEmailID: '',
     });
     const contactEmailIDs = model.contactEmails.map(({ ID }: ContactEmail) => ID);
     const options = orderBy(contactEmails as ContactEmail[], 'Email')
         .filter(({ ID }: ContactEmail) => !contactEmailIDs.includes(ID))
         .map(({ ID, Email, Name }: ContactEmail) => ({
             text: Email === Name ? `<${Email}>` : `${Name} <${Email}>`,
-            value: ID
+            value: ID,
         }));
 
     const handleChangeName = ({ target }: ChangeEvent<HTMLInputElement>) => setModel({ ...model, name: target.value });
@@ -102,7 +102,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) =
             await Promise.all(
                 [
                     toLabel.length && api(labelContactEmails({ LabelID: ID, ContactEmailIDs: toLabel })),
-                    toUnlabel.length && api(unLabelContactEmails({ LabelID: ID, ContactEmailIDs: toUnlabel }))
+                    toUnlabel.length && api(unLabelContactEmails({ LabelID: ID, ContactEmailIDs: toUnlabel })),
                 ].filter(Boolean)
             );
             await call();
@@ -110,7 +110,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) =
             createNotification({
                 text: contactGroupID
                     ? c('Notification').t`Contact group updated`
-                    : c('Notification').t`Contact group created`
+                    : c('Notification').t`Contact group created`,
             });
         } catch (error) {
             setLoading(false);
@@ -122,7 +122,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) =
         if (options.length) {
             setModel({
                 ...model,
-                contactEmailID: options[0].value
+                contactEmailID: options[0].value,
             });
         }
     }, [model.contactEmails.length]);

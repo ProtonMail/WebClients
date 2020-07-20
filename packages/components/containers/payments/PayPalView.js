@@ -96,7 +96,7 @@ PayPalView.propTypes = {
     currency: PropTypes.string.isRequired,
     onPay: PropTypes.func,
     paypal: PropTypes.object.isRequired,
-    paypalCredit: PropTypes.object.isRequired
+    paypalCredit: PropTypes.object.isRequired,
 };
 
 export default PayPalView;

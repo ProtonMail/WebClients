@@ -43,7 +43,7 @@ const DiscountBadge = ({ code }) => {
 };
 
 DiscountBadge.propTypes = {
-    code: PropTypes.string
+    code: PropTypes.string,
 };
 
 export default DiscountBadge;

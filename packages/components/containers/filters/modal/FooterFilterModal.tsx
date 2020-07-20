@@ -16,14 +16,14 @@ const NEXT_STEP = {
     [Step.NAME]: Step.CONDITIONS,
     [Step.CONDITIONS]: Step.ACTIONS,
     [Step.ACTIONS]: Step.PREVIEW,
-    [Step.PREVIEW]: Step.PREVIEW
+    [Step.PREVIEW]: Step.PREVIEW,
 };
 
 const BACK_STEP = {
     [Step.NAME]: Step.NAME,
     [Step.CONDITIONS]: Step.NAME,
     [Step.ACTIONS]: Step.CONDITIONS,
-    [Step.PREVIEW]: Step.ACTIONS
+    [Step.PREVIEW]: Step.ACTIONS,
 };
 
 const FooterFilterModal = ({ model, errors, onClose, onChange, loading }: Props) => {

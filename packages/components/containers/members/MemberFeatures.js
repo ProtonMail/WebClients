@@ -19,7 +19,7 @@ const MemberFeatures = ({ member }) => {
 };
 
 MemberFeatures.propTypes = {
-    member: PropTypes.object.isRequired
+    member: PropTypes.object.isRequired,
 };
 
 export default MemberFeatures;

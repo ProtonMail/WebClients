@@ -9,7 +9,7 @@ import {
     useMailSettings,
     useEventManager,
     useLoading,
-    useApi
+    useApi,
 } from 'react-components';
 import { updateAutoWildcardSearch } from 'proton-shared/lib/api/mailSettings';
 

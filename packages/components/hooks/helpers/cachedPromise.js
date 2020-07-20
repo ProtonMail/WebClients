@@ -19,7 +19,7 @@ export const cachedPromise = (cache, key, miss, dependency) => {
 
     cache.set(key, {
         dependency: dependency,
-        promise
+        promise,
     });
 
     promise.then((result) => {
@@ -31,7 +31,7 @@ export const cachedPromise = (cache, key, miss, dependency) => {
 
         cache.set(key, {
             dependency,
-            result
+            result,
         });
 
         return result;

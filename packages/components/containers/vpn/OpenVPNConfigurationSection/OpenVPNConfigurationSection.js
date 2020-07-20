@@ -14,7 +14,7 @@ import {
     useSortedList,
     useUserVPN,
     Radio,
-    RadioGroup
+    RadioGroup,
 } from 'react-components';
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
@@ -32,12 +32,12 @@ const PLATFORM = {
     WINDOWS: 'Windows',
     ANDROID: 'Android',
     IOS: 'iOS',
-    ROUTER: 'Router'
+    ROUTER: 'Router',
 };
 
 const PROTOCOL = {
     TCP: 'tcp',
-    UDP: 'udp'
+    UDP: 'udp',
 };
 
 const OpenVPNConfigurationSection = () => {
@@ -56,7 +56,7 @@ const OpenVPNConfigurationSection = () => {
             Category: category === CATEGORY.FREE ? CATEGORY.SERVER : category,
             Platform: platform,
             Protocol: protocol,
-            Tier: userVPN.PlanName === 'trial' || category === CATEGORY.FREE ? 0 : userVPN.MaxTier
+            Tier: userVPN.PlanName === 'trial' || category === CATEGORY.FREE ? 0 : userVPN.MaxTier,
         });
         const blob = new Blob([buffer], { type: 'application/zip' });
         downloadFile(blob, 'ProtonVPN_server_configs.zip');
@@ -67,7 +67,7 @@ const OpenVPNConfigurationSection = () => {
             (result.LogicalServers || []).map((server) => {
                 return {
                     ...server,
-                    Country: getCountryByAbbr(correctAbbr(server.ExitCountry))
+                    Country: getCountryByAbbr(correctAbbr(server.ExitCountry)),
                 };
             }),
         [result.LogicalServers]
@@ -87,7 +87,7 @@ const OpenVPNConfigurationSection = () => {
             ...first,
             Load: isNaN(load) ? 0 : Math.round(load),
             Domain: `${first.EntryCountry.toLowerCase()}.protonvpn.com`, // Forging domain
-            Servers: groups.reduce((acc, { Servers = [] }) => (acc.push(...Servers), acc), [])
+            Servers: groups.reduce((acc, { Servers = [] }) => (acc.push(...Servers), acc), []),
         };
     });
     const freeServers = allServers.filter(({ Tier }) => Tier === 0).map((server) => ({ ...server, open: true }));
@@ -124,33 +124,33 @@ const OpenVPNConfigurationSection = () => {
                     {
                         value: PLATFORM.ANDROID,
                         link: 'https://protonvpn.com/support/android-vpn-setup/',
-                        label: c('Option').t`Android`
+                        label: c('Option').t`Android`,
                     },
                     {
                         value: PLATFORM.IOS,
                         link: 'https://protonvpn.com/support/ios-vpn-setup/',
-                        label: c('Option').t`iOS`
+                        label: c('Option').t`iOS`,
                     },
                     {
                         value: PLATFORM.WINDOWS,
                         link: 'https://protonvpn.com/support/openvpn-windows-setup/',
-                        label: c('Option').t`Windows`
+                        label: c('Option').t`Windows`,
                     },
                     {
                         value: PLATFORM.MACOS,
                         link: 'https://protonvpn.com/support/mac-vpn-setup/',
-                        label: c('Option').t`MacOS`
+                        label: c('Option').t`MacOS`,
                     },
                     {
                         value: PLATFORM.LINUX,
                         link: 'https://protonvpn.com/support/linux-vpn-setup/',
-                        label: c('Option').t`GNU/Linux`
+                        label: c('Option').t`GNU/Linux`,
                     },
                     {
                         value: PLATFORM.ROUTER,
                         link: 'https://protonvpn.com/support/installing-protonvpn-on-a-router/',
-                        label: c('Option').t`Router`
-                    }
+                        label: c('Option').t`Router`,
+                    },
                 ].map(({ value, label, link }) => {
                     return (
                         <div key={value} className="mr2">
@@ -177,7 +177,7 @@ const OpenVPNConfigurationSection = () => {
                     onChange={setProtocol}
                     options={[
                         { value: PROTOCOL.UDP, label: c('Option').t`UDP` },
-                        { value: PROTOCOL.TCP, label: c('Option').t`TCP` }
+                        { value: PROTOCOL.TCP, label: c('Option').t`TCP` },
                     ]}
                 />
             </div>
@@ -196,7 +196,7 @@ const OpenVPNConfigurationSection = () => {
                         { value: CATEGORY.SECURE_CORE, label: c('Option').t`Secure Core configs` },
                         { value: CATEGORY.COUNTRY, label: c('Option').t`Country configs` },
                         { value: CATEGORY.SERVER, label: c('Option').t`Standard server configs` },
-                        { value: CATEGORY.FREE, label: c('Option').t`Free server configs` }
+                        { value: CATEGORY.FREE, label: c('Option').t`Free server configs` },
                     ]}
                 />
             </div>

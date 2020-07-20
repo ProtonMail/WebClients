@@ -8,8 +8,8 @@ const FREE_PLAN = {
     Pricing: {
         [CYCLE.MONTHLY]: 0,
         [CYCLE.YEARLY]: 0,
-        [CYCLE.TWO_YEARS]: 0
-    }
+        [CYCLE.TWO_YEARS]: 0,
+    },
 };
 
 const SubscriptionPrices = ({ cycle, currency, plan = FREE_PLAN, suffix = c('Suffix').t`/month` }) => {
@@ -20,7 +20,11 @@ const SubscriptionPrices = ({ cycle, currency, plan = FREE_PLAN, suffix = c('Suf
     );
     return (
         <>
-            <Price currency={currency} className="subscriptionPrices-monthly inline-flex flex-justify-center" suffix={suffix}>
+            <Price
+                currency={currency}
+                className="subscriptionPrices-monthly inline-flex flex-justify-center"
+                suffix={suffix}
+            >
                 {plan.Pricing[cycle] / cycle}
             </Price>
             {cycle === CYCLE.YEARLY && (
@@ -38,8 +42,8 @@ SubscriptionPrices.propTypes = {
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]).isRequired,
     currency: PropTypes.oneOf(CURRENCIES).isRequired,
     plan: PropTypes.shape({
-        Pricing: PropTypes.object
-    })
+        Pricing: PropTypes.object,
+    }),
 };
 
 export default SubscriptionPrices;

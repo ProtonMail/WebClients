@@ -12,7 +12,7 @@ const ICONS = {
     [LOGIN_SUCCESS]: <Icon name="on" />,
     [LOGOUT]: <Icon name="on" />,
     [LOGIN_FAILURE_2FA]: <Icon name="off" />,
-    [LOGIN_SUCCESS_AWAIT_2FA]: <Icon name="on" />
+    [LOGIN_SUCCESS_AWAIT_2FA]: <Icon name="on" />,
 };
 
 const getEventsI18N = () => ({
@@ -20,7 +20,7 @@ const getEventsI18N = () => ({
     [LOGIN_SUCCESS]: c('Log event').t`Login success`,
     [LOGOUT]: c('Log event').t`Logout`,
     [LOGIN_FAILURE_2FA]: c('Log event').t`Login failure (2FA)`,
-    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Login success (2FA)`
+    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Login success (2FA)`,
 });
 
 const LogsTable = ({ logs, logAuth, loading }) => {
@@ -54,7 +54,7 @@ const LogsTable = ({ logs, logAuth, loading }) => {
                                 logAuth === ADVANCED ? IP : '',
                                 <Time key={key} format="PPp">
                                     {time}
-                                </Time>
+                                </Time>,
                             ]}
                         />
                     );
@@ -67,7 +67,7 @@ const LogsTable = ({ logs, logAuth, loading }) => {
 LogsTable.propTypes = {
     logs: PropTypes.array.isRequired,
     logAuth: PropTypes.number.isRequired,
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
 };
 
 export default LogsTable;

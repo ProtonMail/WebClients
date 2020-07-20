@@ -15,24 +15,24 @@ const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKey
     const list = [
         isDefault && {
             text: c('Address status').t`Default`,
-            type: 'default'
+            type: 'default',
         },
         isActive && {
             text: c('Address status').t`Active`,
-            type: 'success'
+            type: 'success',
         },
         isDisabled && {
             text: c('Address status').t`Disabled`,
-            type: 'warning'
+            type: 'warning',
         },
         isOrphan && {
             text: c('Address status').t`Orphan`,
-            type: 'origin'
+            type: 'origin',
         },
         isMissingKeys && {
             text: c('Address status').t`Missing keys`,
-            type: 'warning'
-        }
+            type: 'warning',
+        },
     ]
         .filter(isTruthy)
         .map(({ text, type }) => {

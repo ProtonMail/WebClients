@@ -24,7 +24,7 @@ const AccountForgotUsernameContainer = ({ history, Layout }: Props) => {
         await api(requestUsername(email));
         createNotification({
             text: c('Success')
-                .t`If you entered a valid notification email we will send you an email with your usernames in the next minute.`
+                .t`If you entered a valid notification email we will send you an email with your usernames in the next minute.`,
         });
         history.push('/login');
     };

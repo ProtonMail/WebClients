@@ -21,7 +21,7 @@ export const handleCreateUser = async ({
     email,
     recoveryEmail,
     clientType,
-    payload
+    payload,
 }: CreateUserArgs) => {
     if (username) {
         try {
@@ -33,11 +33,11 @@ export const handleCreateUser = async ({
                         Type: clientType,
                         Email: recoveryEmail,
                         Username: username,
-                        Payload: payload
+                        Payload: payload,
                     }),
                     silence: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
-                    ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED]
-                }
+                    ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
+                },
             });
         } catch (error) {
             const { data: { Code, Details } = { Code: 0, Details: {} } } = error;
@@ -58,8 +58,8 @@ export const handleCreateUser = async ({
             config: queryCreateUserExternal({
                 Type: clientType,
                 Email: email,
-                Payload: payload
-            })
+                Payload: payload,
+            }),
         });
     }
 

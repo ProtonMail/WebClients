@@ -12,21 +12,21 @@ const VPNBlackFridayModal = ({ plans = [], ...rest }) => {
             name: 'ProtonVPN Plus',
             cycle: CYCLE.YEARLY,
             planIDs: [plansMap.vpnplus.ID],
-            couponCode: BLACK_FRIDAY.COUPON_CODE
+            couponCode: BLACK_FRIDAY.COUPON_CODE,
         },
         {
             name: 'ProtonVPN Plus',
             cycle: CYCLE.TWO_YEARS,
             planIDs: [plansMap.vpnplus.ID],
             couponCode: BLACK_FRIDAY.COUPON_CODE,
-            popular: true
+            popular: true,
         },
         {
             name: 'VPN Plus & Mail Plus',
             cycle: CYCLE.TWO_YEARS,
             planIDs: [plansMap.plus.ID, plansMap.vpnplus.ID],
-            couponCode: BLACK_FRIDAY.COUPON_CODE
-        }
+            couponCode: BLACK_FRIDAY.COUPON_CODE,
+        },
     ];
 
     return <BlackFridayModal bundles={bundles} {...rest} />;
@@ -36,9 +36,9 @@ VPNBlackFridayModal.propTypes = {
     plans: PropTypes.arrayOf(
         PropTypes.shape({
             ID: PropTypes.string.isRequired,
-            Name: PropTypes.string.isRequired
+            Name: PropTypes.string.isRequired,
         })
-    ).isRequired
+    ).isRequired,
 };
 
 export default VPNBlackFridayModal;

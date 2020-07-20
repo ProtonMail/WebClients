@@ -9,14 +9,14 @@ import {
     ThemeCards,
     useModals,
     useNotifications,
-    ConfirmModal
+    ConfirmModal,
 } from 'react-components';
 import { updateTheme } from 'proton-shared/lib/api/mailSettings';
 import {
     getThemeIdentifier,
     isCustomTheme,
     isCustomThemeIdentifier,
-    stripThemeIdentifier
+    stripThemeIdentifier,
 } from 'proton-shared/lib/themes/helpers';
 import { DEFAULT_THEME, CUSTOM_THEME, PROTON_THEMES } from 'proton-shared/lib/themes/themes.js';
 

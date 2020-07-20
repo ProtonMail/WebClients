@@ -73,7 +73,7 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }) => {
 PaymentGiftCode.propTypes = {
     loading: PropTypes.bool,
     gift: PropTypes.string,
-    onApply: PropTypes.func.isRequired
+    onApply: PropTypes.func.isRequired,
 };
 
 export default PaymentGiftCode;

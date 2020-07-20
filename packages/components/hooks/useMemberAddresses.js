@@ -31,7 +31,7 @@ const useMemberAddresses = (members) => {
         return members.reduce((acc, { ID }, i) => {
             return {
                 ...acc,
-                [ID]: memberAddresses[i]
+                [ID]: memberAddresses[i],
             };
         }, {});
     }, [members, addresses]);

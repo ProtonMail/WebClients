@@ -12,7 +12,7 @@ export const ALL_PLACEMENTS = [
     'left-top',
     'right',
     'right-bottom',
-    'right-top'
+    'right-top',
 ];
 
 export const CORNERS_ONLY_PLACEMENTS = [
@@ -23,14 +23,14 @@ export const CORNERS_ONLY_PLACEMENTS = [
     'left-bottom',
     'left-top',
     'right-bottom',
-    'right-top'
+    'right-top',
 ];
 
 const inverted: { [key: string]: string } = {
     left: 'right',
     right: 'left',
     bottom: 'top',
-    top: 'bottom'
+    top: 'bottom',
 };
 
 export type Position = { top: number; left: number };
@@ -95,7 +95,7 @@ const calculatePosition = (
 ): Position => {
     let alignCenter = {
         top: target.top + target.height / 2 - tooltip.height / 2,
-        left: target.left + target.width / 2 - tooltip.width / 2
+        left: target.left + target.width / 2 - tooltip.width / 2,
     };
 
     let alignTop = target.top;
@@ -111,7 +111,7 @@ const calculatePosition = (
     if (originalPosition) {
         alignCenter = {
             top: originalPosition.top + target.height / 2 - tooltip.height / 2,
-            left: originalPosition.left + target.width / 2 - tooltip.width / 2
+            left: originalPosition.left + target.width / 2 - tooltip.width / 2,
         };
 
         alignTop = originalPosition.top;
@@ -137,7 +137,7 @@ const calculatePosition = (
         'right-bottom': { left: placeRight, top: alignBottom },
         'right-top': { left: placeRight, top: alignTop },
         'left-bottom': { left: placeLeft, top: alignBottom },
-        'left-top': { left: placeLeft, top: alignTop }
+        'left-top': { left: placeLeft, top: alignTop },
     };
 
     return placementList[placement];
@@ -193,7 +193,7 @@ export const adjustPosition = (
         const position = calculatePosition(target, tooltip, placement, offset, originalPosition);
         return {
             position,
-            placement
+            placement,
         };
     }
     return optimalLocation;

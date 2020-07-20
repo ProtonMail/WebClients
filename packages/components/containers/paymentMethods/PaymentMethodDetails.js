@@ -33,7 +33,7 @@ const BANKS = {
     Maestro: 'maestro',
     MasterCard: 'mastercard',
     UnionPay: 'unionpay',
-    Visa: 'visa'
+    Visa: 'visa',
 };
 
 const PaymentMethodDetails = ({ type, details = {} }) => {
@@ -101,7 +101,7 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
 
 PaymentMethodDetails.propTypes = {
     type: PropTypes.string.isRequired,
-    details: PropTypes.object.isRequired
+    details: PropTypes.object.isRequired,
 };
 
 export default PaymentMethodDetails;

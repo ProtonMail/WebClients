@@ -7,7 +7,7 @@ import {
     Icon,
     usePopperAnchor,
     PrimaryButton,
-    ResetButton
+    ResetButton,
 } from 'react-components';
 import { c } from 'ttag';
 
@@ -79,7 +79,7 @@ SearchDropdown.propTypes = {
     search: PropTypes.string,
     onSearch: PropTypes.func,
     originalPlacement: PropTypes.string,
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
 };
 
 export default SearchDropdown;

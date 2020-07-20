@@ -9,7 +9,7 @@ import {
     useModals,
     useSubscription,
     useConfig,
-    usePaymentMethods
+    usePaymentMethods,
 } from 'react-components';
 import { CLIENT_TYPES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 

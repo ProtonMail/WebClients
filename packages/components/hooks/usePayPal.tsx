@@ -22,7 +22,7 @@ interface Model {
 const DEFAULT_MODEL = {
     Token: '',
     ApprovalURL: '',
-    ReturnHost: ''
+    ReturnHost: '',
 };
 
 const usePayPal = ({ amount = 0, currency: Currency = '', type: Type, onPay }: Props) => {
@@ -39,7 +39,7 @@ const usePayPal = ({ amount = 0, currency: Currency = '', type: Type, onPay }: P
                 createToken({
                     Amount: amount,
                     Currency,
-                    Payment: { Type }
+                    Payment: { Type },
                 })
             );
             setModel(result);
@@ -60,9 +60,9 @@ const usePayPal = ({ amount = 0, currency: Currency = '', type: Type, onPay }: P
                         api,
                         ReturnHost,
                         ApprovalURL,
-                        signal: abort.signal
+                        signal: abort.signal,
                     }),
-                    abort
+                    abort,
                 };
             };
             createModal(
@@ -86,7 +86,7 @@ const usePayPal = ({ amount = 0, currency: Currency = '', type: Type, onPay }: P
         loadingVerification,
         onToken: () => withLoadingToken(onToken()),
         onVerification: () => withLoadingVerification(onVerification()),
-        clear
+        clear,
     };
 };
 

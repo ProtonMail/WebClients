@@ -14,7 +14,7 @@ const ContactGroupLabels = ({ contactGroups }: Props) => (
             <span
                 className="badgeLabel flex flex-row flex-items-center"
                 style={{
-                    color: contactGroup.Color
+                    color: contactGroup.Color,
                 }}
                 key={contactGroup.ID}
             >

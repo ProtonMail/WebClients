@@ -8,7 +8,7 @@ import {
     useApi,
     useModals,
     useEventManager,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { LABEL_TYPE } from 'proton-shared/lib/constants';
 import { deleteLabel } from 'proton-shared/lib/api/labels';
@@ -25,13 +25,13 @@ function ActionsLabel({ label, onChange }) {
         [LABEL_TYPE.MESSAGE_LABEL]: {
             title: c('Title').t`Delete label`,
             content: c('Info')
-                .t`Are you sure you want to delete this label? Removing a label will not remove the messages with that label.`
+                .t`Are you sure you want to delete this label? Removing a label will not remove the messages with that label.`,
         },
         [LABEL_TYPE.MESSAGE_FOLDER]: {
             title: c('Title').t`Delete folder`,
             content: c('Info')
-                .t`Are you sure you want to delete this folder? Messages in the folders aren’t deleted if the folder is deleted, they can still be found in all mail. If you want to delete all messages in a folder, move them to trash.`
-        }
+                .t`Are you sure you want to delete this folder? Messages in the folders aren’t deleted if the folder is deleted, they can still be found in all mail. If you want to delete all messages in a folder, move them to trash.`,
+        },
     };
 
     const confirmDelete = async ({ Type }) => {
@@ -49,7 +49,7 @@ function ActionsLabel({ label, onChange }) {
         await api(deleteLabel(label.ID));
         await call();
         createNotification({
-            text: c('Success notification').t`${label.Name} removed`
+            text: c('Success notification').t`${label.Name} removed`,
         });
         onChange && onChange('remove', label);
     };
@@ -64,13 +64,13 @@ function ActionsLabel({ label, onChange }) {
         {
             text: c('Action').t`Edit`,
             onClick: handleEdit,
-            'data-test-id': 'folders/labels:item-edit'
+            'data-test-id': 'folders/labels:item-edit',
         },
         {
             text: c('Action').t`Delete`,
             onClick: handleRemove,
-            'data-test-id': 'folders/labels:item-delete'
-        }
+            'data-test-id': 'folders/labels:item-delete',
+        },
     ];
 
     return <DropdownActions className="pm-button--small" list={list} />;
@@ -78,7 +78,7 @@ function ActionsLabel({ label, onChange }) {
 
 ActionsLabel.propTypes = {
     label: PropTypes.object.isRequired,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
 };
 
 export default ActionsLabel;

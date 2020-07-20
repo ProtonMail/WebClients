@@ -22,14 +22,14 @@ export const setupMemberKey = async ({
     Address,
     password,
     organizationKey,
-    encryptionConfig
+    encryptionConfig,
 }: SetupMemberKeyArguments) => {
     const { salt: keySalt, passphrase: memberMailboxPassword } = await generateKeySaltAndPassphrase(password);
 
     const { privateKey, privateKeyArmored } = await generateAddressKey({
         email: Address.Email,
         passphrase: memberMailboxPassword,
-        encryptionConfig
+        encryptionConfig,
     });
 
     const memberKeyToken = generateMemberToken();
@@ -40,7 +40,7 @@ export const setupMemberKey = async ({
         ID: 'temp',
         flags: getKeyFlagsAddress(Address, []),
         keys: [],
-        fingerprint: privateKey.getFingerprint()
+        fingerprint: privateKey.getFingerprint(),
     });
 
     const newKey = updatedKeys.find(({ ID }) => 'temp' === ID);
@@ -51,13 +51,13 @@ export const setupMemberKey = async ({
     const PrimaryKey = {
         UserKey: privateKeyArmored,
         MemberKey: privateKeyArmoredOrganization,
-        Token: organizationToken
+        Token: organizationToken,
     };
 
     const {
         Member: {
-            Keys: [Key]
-        }
+            Keys: [Key],
+        },
     } = await srpVerify({
         api,
         credentials: { password },
@@ -67,12 +67,12 @@ export const setupMemberKey = async ({
                 {
                     AddressID: Address.ID,
                     SignedKeyList: await getSignedKeyList(updatedKeys, privateKey),
-                    ...PrimaryKey
-                }
+                    ...PrimaryKey,
+                },
             ],
             PrimaryKey,
-            KeySalt: keySalt
-        })
+            KeySalt: keySalt,
+        }),
     });
 
     newKey.ID = Key.ID;
@@ -102,13 +102,13 @@ export const createMemberAddressKeys = async ({
     privateKeyArmored,
     activationToken,
     privateKeyArmoredOrganization,
-    organizationToken
+    organizationToken,
 }: CreateMemberAddressKeysArguments) => {
     const newKeys = addKeyAction({
         keys,
         ID: 'temp',
         flags: getKeyFlagsAddress(Address, keys),
-        fingerprint: privateKey.getFingerprint()
+        fingerprint: privateKey.getFingerprint(),
     });
 
     const newKey = newKeys.find(({ ID }) => 'temp' === ID);
@@ -126,7 +126,7 @@ export const createMemberAddressKeys = async ({
             Token: organizationToken,
             MemberKey: privateKeyArmoredOrganization,
             Primary: primary,
-            SignedKeyList: await getSignedKeyList(newKeys, signingKey)
+            SignedKeyList: await getSignedKeyList(newKeys, signingKey),
         })
     );
 

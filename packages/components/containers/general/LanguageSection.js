@@ -12,7 +12,7 @@ import {
     useNotifications,
     useForceRefresh,
     useEventManager,
-    useUserSettings
+    useUserSettings,
 } from 'react-components';
 import { updateLocale } from 'proton-shared/lib/api/settings';
 import loadLocale from 'proton-shared/lib/i18n/loadLocale';
@@ -29,7 +29,7 @@ const LanguageSection = ({ locales = {} }) => {
 
     const options = Object.keys(LOCALES).map((value) => ({
         text: LOCALES[value],
-        value
+        value,
     }));
 
     const handleChange = async ({ target }) => {
@@ -39,9 +39,9 @@ const LanguageSection = ({ locales = {} }) => {
             ...getClosestMatches({
                 locale: newLocale,
                 browserLocale: getBrowserLocale(),
-                locales
+                locales,
             }),
-            locales
+            locales,
         });
         await call();
         createNotification({ text: c('Success').t`Locale updated` });
@@ -67,7 +67,7 @@ const LanguageSection = ({ locales = {} }) => {
 };
 
 LanguageSection.propTypes = {
-    locales: PropTypes.object.isRequired
+    locales: PropTypes.object.isRequired,
 };
 
 export default LanguageSection;

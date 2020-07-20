@@ -27,7 +27,7 @@ const AutoSaveContactsToggle = ({ autoSaveContacts, ...rest }) => {
 };
 
 AutoSaveContactsToggle.propTypes = {
-    autoSaveContacts: PropTypes.bool
+    autoSaveContacts: PropTypes.bool,
 };
 
 export default AutoSaveContactsToggle;

@@ -73,7 +73,7 @@ const collectContacts = (contactEmails: ContactEmail[] = [], contacts: Contact[]
         },
         {
             contacts: [] as Contact[],
-            duplicate: Object.create(null)
+            duplicate: Object.create(null),
         }
     );
 };
@@ -144,7 +144,7 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
         );
         await call();
         createNotification({
-            text: c('Info').ngettext(msgid`Contact group apply`, `Contact groups apply`, groupEntries.length)
+            text: c('Info').ngettext(msgid`Contact group apply`, `Contact groups apply`, groupEntries.length),
         });
         close();
     };

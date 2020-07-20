@@ -27,7 +27,7 @@ function SpamListItem({ list, type, onCreate, onEdit, onMove, onRemove, classNam
             const type = this[mode];
             return c('Info')
                 .t`No emails or domains in the ${type}, click Add to add addresses or domains to the ${type}`;
-        }
+        },
     };
 
     return (
@@ -56,7 +56,7 @@ function SpamListItem({ list, type, onCreate, onEdit, onMove, onRemove, classNam
                                             text: c('Action').t`Edit`,
                                             onClick() {
                                                 onEdit(type, item);
-                                            }
+                                            },
                                         },
                                         {
                                             text:
@@ -65,14 +65,14 @@ function SpamListItem({ list, type, onCreate, onEdit, onMove, onRemove, classNam
                                                     : c('Action').t`Move to whitelist`,
                                             onClick() {
                                                 onMove(item);
-                                            }
+                                            },
                                         },
                                         {
                                             text: c('Action').t`Delete`,
                                             onClick() {
                                                 onRemove(item);
-                                            }
-                                        }
+                                            },
+                                        },
                                     ]}
                                 />
                             </li>

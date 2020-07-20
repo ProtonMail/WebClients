@@ -8,7 +8,7 @@ import {
     useApi,
     useLoading,
     useEventManager,
-    useActiveBreakpoint
+    useActiveBreakpoint,
 } from 'react-components';
 import { order, getParents } from 'proton-shared/lib/helpers/folder';
 import { orderFolders, updateLabel } from 'proton-shared/lib/api/labels';
@@ -36,7 +36,7 @@ const Header = ({ isNarrow }) => {
 };
 
 Header.propTypes = {
-    isNarrow: PropTypes.bool
+    isNarrow: PropTypes.bool,
 };
 
 const FolderTreeViewList = ({ items = [] }) => {
@@ -135,7 +135,7 @@ const FolderTreeViewList = ({ items = [] }) => {
                                         isOverred && position === BEFORE && 'treeview-item--moveTop',
                                         isOverred && position === AFTER && 'treeview-item--moveBottom',
                                         isOverred && position === INSIDE && 'treeview-item--moveInside',
-                                        grabbed && grabbed.ID === item.ID && 'treeview-item--selfGrabbed'
+                                        grabbed && grabbed.ID === item.ID && 'treeview-item--selfGrabbed',
                                     ])}
                                 >
                                     <div className="treeview-item-name flex flex-nowrap flex-items-center flex-item-fluid">
@@ -198,9 +198,9 @@ FolderTreeViewList.propTypes = {
             Notify: PropTypes.number.isRequired,
             Order: PropTypes.number.isRequired,
             Expanded: PropTypes.number.isRequired,
-            Sticky: PropTypes.number.isRequired
+            Sticky: PropTypes.number.isRequired,
         })
-    )
+    ),
 };
 
 export default FolderTreeViewList;

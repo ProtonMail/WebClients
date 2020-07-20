@@ -10,7 +10,7 @@ import {
     useApiWithoutResult,
     useEventManager,
     useNotifications,
-    useLoading
+    useLoading,
 } from 'react-components';
 import { validateCredit, buyCredit } from 'proton-shared/lib/api/payments';
 import { isValid } from 'proton-shared/lib/helpers/giftCode';
@@ -68,7 +68,7 @@ const GiftCodeModal = ({ onClose, ...rest }) => {
 };
 
 GiftCodeModal.propTypes = {
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default GiftCodeModal;

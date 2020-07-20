@@ -9,7 +9,7 @@ const QRCode = ({ url: text, width = 128, height = 128, ...rest }) => {
         const qrcode = new QRCodeJS(divRef.current, {
             text,
             width,
-            height
+            height,
         });
 
         return () => {
@@ -23,7 +23,7 @@ const QRCode = ({ url: text, width = 128, height = 128, ...rest }) => {
 QRCode.propTypes = {
     url: PropTypes.string.isRequired,
     width: PropTypes.number,
-    height: PropTypes.number
+    height: PropTypes.number,
 };
 
 export default QRCode;

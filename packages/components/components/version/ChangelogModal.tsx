@@ -6,7 +6,7 @@ import { FormModal } from '../../index';
 
 const md = markdownit('default', {
     breaks: true,
-    linkify: true
+    linkify: true,
 });
 
 interface Props {
@@ -16,7 +16,7 @@ interface Props {
 const ChangelogModal = ({ changelog = '', ...rest }: Props) => {
     const [html] = useState(() => {
         return {
-            __html: md.render(changelog)
+            __html: md.render(changelog),
         };
     });
 

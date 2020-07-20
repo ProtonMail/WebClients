@@ -37,7 +37,7 @@ const Info = ({
         anchorEl: anchorRef?.current,
         isOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
-        scrollContainerClass
+        scrollContainerClass,
     });
 
     const handleClick = (event: React.MouseEvent) => {

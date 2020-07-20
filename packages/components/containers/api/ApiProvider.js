@@ -6,7 +6,7 @@ import { ping } from 'proton-shared/lib/api/tests';
 import configureApi from 'proton-shared/lib/api';
 import withApiHandlers, {
     CancelUnlockError,
-    CancelVerificationError
+    CancelVerificationError,
 } from 'proton-shared/lib/api/helpers/withApiHandlers';
 import { getError } from 'proton-shared/lib/apiHandlers';
 import { getDateHeader } from 'proton-shared/lib/fetch/helpers';
@@ -70,7 +70,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                     type: 'error',
                     text: message || c('Info').t`Application upgrade required`,
                     expiration: -1,
-                    disableAutoClose: true
+                    disableAutoClose: true,
                 });
                 throw e;
             }
@@ -94,7 +94,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                         />
                     ),
                     expiration: -1,
-                    disableAutoClose: true
+                    disableAutoClose: true,
                 });
                 offlineRef.current = { id };
                 throw e;
@@ -137,7 +137,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
         const call = configureApi({
             ...config,
             xhr,
-            UID
+            UID,
         });
 
         const callWithApiHandlers = withApiHandlers({
@@ -145,7 +145,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
             hasSession: !!UID,
             onError: handleError,
             onUnlock: handleUnlock,
-            onVerification: handleVerification
+            onVerification: handleVerification,
         });
 
         apiRef.current = ({ output = 'json', ...rest }) => {
@@ -170,7 +170,7 @@ ApiProvider.propTypes = {
     children: PropTypes.node.isRequired,
     config: PropTypes.object.isRequired,
     UID: PropTypes.string,
-    onLogout: PropTypes.func
+    onLogout: PropTypes.func,
 };
 
 export default ApiProvider;

@@ -7,16 +7,16 @@ const ProtonMailAppsSection = () => {
         {
             name: 'ProtonMail - Encrypted Email',
             plateform: 'Android',
-            link: 'https://play.google.com/store/apps/details?id=ch.protonmail.android'
+            link: 'https://play.google.com/store/apps/details?id=ch.protonmail.android',
         },
         {
             name: 'ProtonMail - Encrypted Email',
             plateform: 'iOS',
-            link: 'https://itunes.apple.com/app/protonmail-encrypted-email/id979659905'
+            link: 'https://itunes.apple.com/app/protonmail-encrypted-email/id979659905',
         },
         { name: 'ProtonMail Bridge', plateform: 'Windows', link: 'https://protonmail.com/bridge/install' },
         { name: 'ProtonMail Bridge', plateform: 'MacOS', link: 'https://protonmail.com/bridge/install' },
-        { name: 'ProtonMail Bridge', plateform: 'Linux', link: 'https://protonmail.com/bridge/install' }
+        { name: 'ProtonMail Bridge', plateform: 'Linux', link: 'https://protonmail.com/bridge/install' },
     ];
 
     return (
@@ -26,7 +26,7 @@ const ProtonMailAppsSection = () => {
                     cells={[
                         c('Title for downloads section').t`Platform`,
                         c('Title for downloads section').t`Name`,
-                        c('Title for downloads section').t`Action`
+                        c('Title for downloads section').t`Action`,
                     ]}
                 />
                 <TableBody>

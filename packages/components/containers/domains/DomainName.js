@@ -9,7 +9,7 @@ const DomainName = ({ domain }) => {
     const ICONS = {
         [DOMAIN_STATE_DEFAULT]: <RoundedIcon type="error" name="off" />,
         [DOMAIN_STATE_ACTIVE]: <RoundedIcon name="on" />,
-        [DOMAIN_STATE_WARN]: <RoundedIcon type="warning" name="off" />
+        [DOMAIN_STATE_WARN]: <RoundedIcon type="warning" name="off" />,
     };
 
     return (
@@ -23,7 +23,7 @@ const DomainName = ({ domain }) => {
 };
 
 DomainName.propTypes = {
-    domain: PropTypes.object.isRequired
+    domain: PropTypes.object.isRequired,
 };
 
 export default DomainName;

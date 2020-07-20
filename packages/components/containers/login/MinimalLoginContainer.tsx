@@ -28,7 +28,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
         setUsername,
         setPassword,
         setKeyPassword,
-        setTotp
+        setTotp,
     } = useLogin({ onLogin, ignoreUnlock });
 
     const [loading, withLoading] = useLoading();

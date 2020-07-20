@@ -21,7 +21,7 @@ const useGetCalendarKeysRaw = () => {
         async (calendarID) => {
             const [{ Keys = [], Passphrase = {}, Members = [] }, Addresses = []] = await Promise.all([
                 getCalendarBootstrap(calendarID),
-                getAddresses()
+                getAddresses(),
             ]);
 
             const getCalendarKeyPassphrase = async (
@@ -39,7 +39,7 @@ const useGetCalendarKeysRaw = () => {
                     const result = await decryptPassphrase({
                         armoredPassphrase: Passphrase,
                         armoredSignature: Signature,
-                        ...splitKeys(addressKeys)
+                        ...splitKeys(addressKeys),
                     }).catch(noop);
                     if (result) {
                         return result;

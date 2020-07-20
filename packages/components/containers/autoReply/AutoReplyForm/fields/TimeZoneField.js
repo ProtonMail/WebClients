@@ -23,7 +23,7 @@ const TimeZoneField = ({ value, onChange }) => {
 
 TimeZoneField.propTypes = {
     value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default TimeZoneField;

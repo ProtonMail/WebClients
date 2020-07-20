@@ -25,7 +25,7 @@ const Contact = ({
     ownAddresses,
     userKeysList = [],
     isModal = false,
-    onDelete
+    onDelete,
 }: Props) => {
     const [contact, contactLoading] = useContact(contactID);
     const { properties, errors, ID } = useContactProperties({ contact, userKeysList });

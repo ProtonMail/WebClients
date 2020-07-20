@@ -18,7 +18,7 @@ const getMonday = (days: Date[], start: number, end: number) => {
 
 const WeekNumbers = ({ days, numberOfWeeks }: Props) => {
     const style = {
-        '--minicalendar-weeknumbers-numberOfWeeks': numberOfWeeks + 1
+        '--minicalendar-weeknumbers-numberOfWeeks': numberOfWeeks + 1,
     };
 
     const weekNumberLabels = useMemo(() => {

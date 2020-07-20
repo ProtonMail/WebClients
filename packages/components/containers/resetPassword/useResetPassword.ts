@@ -15,7 +15,7 @@ export enum STEPS {
     VALIDATE_RESET_TOKEN,
     DANGER_VERIFICATION,
     NEW_PASSWORD,
-    ERROR
+    ERROR,
 }
 
 interface Props {
@@ -39,7 +39,7 @@ const INITIAL_STATE = {
     confirmPassword: '',
     token: '',
     danger: '',
-    step: STEPS.REQUEST_RESET_TOKEN
+    step: STEPS.REQUEST_RESET_TOKEN,
 };
 
 const useResetPassword = ({ onLogin }: Props) => {
@@ -87,7 +87,7 @@ const useResetPassword = ({ onLogin }: Props) => {
         }
         createNotification({
             text: c('Info').t`This can take a few seconds or a few minutes depending on your device.`,
-            type: 'info'
+            type: 'info',
         });
         const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
         const newAddressesKeys = await getResetAddressesKeys({ addresses, passphrase });
@@ -102,14 +102,14 @@ const useResetPassword = ({ onLogin }: Props) => {
                 Token: token,
                 KeySalt: salt,
                 PrimaryKey: primaryAddress ? primaryAddress.PrivateKey : undefined,
-                AddressKeys: newAddressesKeys
-            })
+                AddressKeys: newAddressesKeys,
+            }),
         });
 
         const { UID, EventID, AccessToken, RefreshToken } = await srpAuth({
             api,
             credentials: { username, password },
-            config: auth({ Username: username })
+            config: auth({ Username: username }),
         });
         await api(setCookies({ UID, AccessToken, RefreshToken, State: getRandomString(24) }));
 
@@ -164,7 +164,7 @@ const useResetPassword = ({ onLogin }: Props) => {
                     throw e;
                 })
             );
-        }
+        },
     };
 };
 

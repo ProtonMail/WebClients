@@ -27,7 +27,7 @@ const DaysOfWeekField = ({ value, onChange }) => {
 
 DaysOfWeekField.propTypes = {
     onChange: PropTypes.func.isRequired,
-    value: PropTypes.arrayOf(PropTypes.number).isRequired
+    value: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export default DaysOfWeekField;

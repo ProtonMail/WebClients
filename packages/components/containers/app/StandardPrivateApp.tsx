@@ -38,7 +38,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     preloadModels = [],
     eventModels = [],
     noModals = false,
-    children
+    children,
 }: Props<T, M, E, EvtM>) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -55,7 +55,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             .then(([userSettings]) => {
                 return loadLocale({
                     ...getClosestMatches({ locale: userSettings.Locale, browserLocale: getBrowserLocale(), locales }),
-                    locales
+                    locales,
                 });
             })
             .then(() => onInit?.()); // onInit has to happen after locales have been loaded to allow applications to override it

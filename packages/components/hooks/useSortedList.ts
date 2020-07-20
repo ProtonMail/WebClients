@@ -60,8 +60,8 @@ const useSortedList = <T>(list: T[], initialConfig?: SortConfig<T>) => {
             setConfigs((configs) => [
                 {
                     key,
-                    direction: configs[0]?.direction === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC
-                }
+                    direction: configs[0]?.direction === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC,
+                },
             ]);
         } else {
             setConfigs([{ key, direction: SORT_DIRECTION.ASC }]);

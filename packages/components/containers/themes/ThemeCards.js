@@ -30,7 +30,7 @@ ThemeCards.propTypes = {
     onChange: PropTypes.func,
     onCustomization: PropTypes.func,
     loading: PropTypes.bool,
-    list: PropTypes.array.isRequired
+    list: PropTypes.array.isRequired,
 };
 
 export default ThemeCards;

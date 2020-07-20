@@ -16,7 +16,7 @@ export default ({
     encryptionConfig,
     addresses,
     password,
-    setFormattedAddresses
+    setFormattedAddresses,
 }: MissingKeysSelfProcessArguments) => {
     return Promise.all(
         addresses.map(async (address) => {
@@ -28,7 +28,7 @@ export default ({
                 const { privateKey, privateKeyArmored } = await generateAddressKey({
                     email: address.Email,
                     passphrase: password,
-                    encryptionConfig
+                    encryptionConfig,
                 });
 
                 await createKeyHelper({
@@ -37,7 +37,7 @@ export default ({
                     fingerprint: privateKey.getFingerprint(),
                     Address: address,
                     keys: [],
-                    signingKey: privateKey
+                    signingKey: privateKey,
                 });
 
                 setFormattedAddresses((oldState) => {
@@ -46,7 +46,7 @@ export default ({
             } catch (e) {
                 setFormattedAddresses((oldState) => {
                     return updateAddress(oldState, address.ID, {
-                        status: { type: Status.FAILURE, tooltip: e.message }
+                        status: { type: Status.FAILURE, tooltip: e.message },
                     });
                 });
             }

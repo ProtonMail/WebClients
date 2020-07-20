@@ -51,7 +51,7 @@ const BugModal = ({ onClose = noop, username: Username = '', location, addresses
         { value: 'Slow speed problem', text: c('Bug category').t`Slow speed problem` },
         { value: 'VPN problem', text: c('Bug category').t`VPN problem` },
         { value: 'Feature request', text: c('Bug category').t`Feature request` },
-        { value: 'Other', text: c('Bug category').t`Other` }
+        { value: 'Other', text: c('Bug category').t`Other` },
     ];
 
     const vpnTitles = [
@@ -66,7 +66,7 @@ const BugModal = ({ onClose = noop, username: Username = '', location, addresses
         { value: 'Manual setup problem', text: c('Bug category').t`Manual setup problem` },
         { value: 'Website access problem', text: c('Bug category').t`Website access problem` },
         { value: 'Streaming problem', text: c('Bug category').t`Streaming problem` },
-        { value: 'Feature request', text: c('Bug category').t`Feature request` }
+        { value: 'Feature request', text: c('Bug category').t`Feature request` },
     ];
 
     const isVpn = CLIENT_TYPE === VPN;
@@ -92,13 +92,13 @@ const BugModal = ({ onClose = noop, username: Username = '', location, addresses
         Title: '',
         Description: '',
         Email,
-        Username
+        Username,
     });
     const { state: showDetails, toggle: toggleDetails } = useToggle(false);
     const [images, setImages] = useState([]);
     const link = <Href key="linkClearCache" url={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
     const handleChange = (key: string) => ({
-        target
+        target,
     }: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
         update({ ...model, [key]: target.value });
 
@@ -118,7 +118,7 @@ const BugModal = ({ onClose = noop, username: Username = '', location, addresses
             Client,
             ClientVersion: APP_VERSION,
             ClientType: CLIENT_TYPE,
-            Title
+            Title,
         };
     };
 

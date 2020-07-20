@@ -25,8 +25,8 @@ const FilterActionsForm = ({ isNarrow, labels, folders, model, onChange, isEdit,
             ...model,
             actions: {
                 ...model.actions,
-                ...payload
-            }
+                ...payload,
+            },
         });
     };
 

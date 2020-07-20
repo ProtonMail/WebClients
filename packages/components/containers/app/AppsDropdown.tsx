@@ -26,21 +26,21 @@ const AppsDropdown = () => {
             appNames: [PROTONMAIL],
             icon: 'protonmail',
             title: 'ProtonMail',
-            link: '/inbox'
+            link: '/inbox',
         },
         { appNames: [PROTONCONTACTS], icon: 'protoncontacts', title: 'ProtonContacts', link: '/contacts' },
         {
             appNames: [PROTONCALENDAR],
             icon: 'protoncalendar',
             title: 'ProtonCalendar',
-            link: '/calendar'
+            link: '/calendar',
         },
         FEATURE_FLAGS.includes('drive') && {
             appNames: [PROTONDRIVE],
             icon: 'protondrive',
             title: 'ProtonDrive',
-            link: '/drive'
-        }
+            link: '/drive',
+        },
     ].filter(isTruthy);
 
     return (

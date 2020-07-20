@@ -20,7 +20,7 @@ const RemoteImage = ({ src, text = c('Action').t`Load image`, ...rest }) => {
 
 RemoteImage.propTypes = {
     src: PropTypes.string.isRequired,
-    text: PropTypes.string
+    text: PropTypes.string,
 };
 
 export default RemoteImage;

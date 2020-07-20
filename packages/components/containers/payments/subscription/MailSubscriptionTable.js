@@ -15,7 +15,7 @@ import SubscriptionFeaturesModal from './SubscriptionFeaturesModal';
 const INDEXES = {
     [PLANS.PLUS]: 1,
     [PLANS.PROFESSIONAL]: 2,
-    [PLANS.VISIONARY]: 3
+    [PLANS.VISIONARY]: 3,
 };
 
 /** @type any */
@@ -53,24 +53,24 @@ const MailSubscriptionTable = ({
                     content: (
                         <del key="advanced">{c('Feature')
                             .t`Advanced mail features: folders, labels, filters, auto-reply, IMAP/SMTP and more`}</del>
-                    )
+                    ),
                 },
                 {
                     icon: 'close',
                     content: (
                         <del key="business">{c('Feature')
                             .t`Business mail features: Catch all email, multi user management and more`}</del>
-                    )
+                    ),
                 },
                 {
                     icon: 'close',
-                    content: <del key="support">{c('Feature').t`Priority support`}</del>
+                    content: <del key="support">{c('Feature').t`Priority support`}</del>,
                 },
                 {
                     icon: 'plus',
-                    content: c('Feature').t`ProtonVPN (optional) *`
-                }
-            ]
+                    content: c('Feature').t`ProtonVPN (optional) *`,
+                },
+            ],
         },
         plusPlan && {
             name: plusPlan.Name,
@@ -89,18 +89,18 @@ const MailSubscriptionTable = ({
                 {
                     icon: 'arrow-right',
                     content: c('Feature')
-                        .t`Advanced mail features: folders, labels, filters, auto-reply, IMAP/SMTP and more`
+                        .t`Advanced mail features: folders, labels, filters, auto-reply, IMAP/SMTP and more`,
                 },
                 {
                     icon: 'close',
                     content: (
                         <del key="business">{c('Feature')
                             .t`Business mail features: Catch all email, multi user management and more`}</del>
-                    )
+                    ),
                 },
                 { icon: 'close', content: <del key="support">{c('Feature').t`Priority support`}</del> },
-                { icon: 'plus', content: c('Feature').t`ProtonVPN (optional) *` }
-            ]
+                { icon: 'plus', content: c('Feature').t`ProtonVPN (optional) *` },
+            ],
         },
         professionalPlan && {
             name: professionalPlan.Name,
@@ -126,15 +126,15 @@ const MailSubscriptionTable = ({
                 {
                     icon: 'arrow-right',
                     content: c('Feature')
-                        .t`Advanced mail features: folders, labels, filters, auto-reply, IMAP/SMTP and more`
+                        .t`Advanced mail features: folders, labels, filters, auto-reply, IMAP/SMTP and more`,
                 },
                 {
                     icon: 'arrow-right',
-                    content: c('Feature').t`Business mail features: Catch all email, multi user management and more`
+                    content: c('Feature').t`Business mail features: Catch all email, multi user management and more`,
                 },
                 { icon: 'arrow-right', content: c('Feature').t`Priority support` },
-                { icon: 'plus', content: c('Feature').t`ProtonVPN (optional) *` }
-            ]
+                { icon: 'plus', content: c('Feature').t`ProtonVPN (optional) *` },
+            ],
         },
         visionaryPlan && {
             name: visionaryPlan.Name,
@@ -153,16 +153,16 @@ const MailSubscriptionTable = ({
                 {
                     icon: 'arrow-right',
                     content: c('Feature')
-                        .t`Advanced mail features: folders, labels, filters, auto-reply, IMAP/SMTP and more`
+                        .t`Advanced mail features: folders, labels, filters, auto-reply, IMAP/SMTP and more`,
                 },
                 {
                     icon: 'arrow-right',
-                    content: c('Feature').t`Business mail features: Catch all email, multi user management and more`
+                    content: c('Feature').t`Business mail features: Catch all email, multi user management and more`,
                 },
                 { icon: 'arrow-right', content: c('Feature').t`Priority support` },
-                { icon: 'arrow-right', content: c('Feature').t`ProtonVPN included` }
-            ]
-        }
+                { icon: 'arrow-right', content: c('Feature').t`ProtonVPN included` },
+            ],
+        },
     ];
 
     return (
@@ -201,7 +201,7 @@ MailSubscriptionTable.propTypes = {
     plans: PropTypes.arrayOf(PropTypes.object),
     onSelect: PropTypes.func.isRequired,
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]).isRequired,
-    currency: PropTypes.oneOf(CURRENCIES).isRequired
+    currency: PropTypes.oneOf(CURRENCIES).isRequired,
 };
 
 export default MailSubscriptionTable;

@@ -11,7 +11,7 @@ import {
     Select,
     useApi,
     useNotifications,
-    useEventManager
+    useEventManager,
 } from '../../index';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA } from 'proton-shared/lib/constants';
 import { createMember, createMemberAddress } from 'proton-shared/lib/api/members';
@@ -47,7 +47,7 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
         address: '',
         domain: domains[0].DomainName,
         vpn: vpnRange[0],
-        storage: Math.min(storageRange[1], FIVE_GIGA)
+        storage: Math.min(storageRange[1], FIVE_GIGA),
     });
     const update = (key: string, value: any) => updateModel({ ...model, [key]: value });
 
@@ -72,14 +72,14 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
                 Name: model.name,
                 Private: +model.private,
                 MaxSpace: +model.storage,
-                MaxVPN: model.vpn
-            })
+                MaxVPN: model.vpn,
+            }),
         });
 
         const { Address } = await api(
             createMemberAddress(Member.ID, {
                 Local: model.address,
-                Domain: model.domain
+                Domain: model.domain,
             })
         );
 
@@ -93,7 +93,7 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
                 Address,
                 organizationKey: organizationKey.privateKey,
                 encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
-                password: model.password
+                password: model.password,
             });
         }
     };

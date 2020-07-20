@@ -21,7 +21,7 @@ const {
     PROTONDRIVE,
     PROTONMAIL,
     PROTONMAIL_SETTINGS,
-    PROTONVPN_SETTINGS
+    PROTONVPN_SETTINGS,
 } = APPS;
 
 interface Props {

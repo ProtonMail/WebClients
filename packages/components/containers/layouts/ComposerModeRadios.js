@@ -19,7 +19,7 @@ const ComposerModeRadios = ({ composerMode, onChange, loading, id, ...rest }) =>
         onChange() {
             onChange(POPUP);
         },
-        children: <img alt="Popup" src={composerPopUpSvg} />
+        children: <img alt="Popup" src={composerPopUpSvg} />,
     };
     const radioCardMaximized = {
         value: MAXIMIZED,
@@ -31,7 +31,7 @@ const ComposerModeRadios = ({ composerMode, onChange, loading, id, ...rest }) =>
         onChange() {
             onChange(MAXIMIZED);
         },
-        children: <img alt="Maximized" src={composerMaximizedSvg} />
+        children: <img alt="Maximized" src={composerMaximizedSvg} />,
     };
 
     return <RadioCards list={[radioCardPopup, radioCardMaximized]} id={id} {...rest} />;
@@ -41,7 +41,7 @@ ComposerModeRadios.propTypes = {
     composerMode: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
     loading: PropTypes.bool,
-    id: PropTypes.string
+    id: PropTypes.string,
 };
 
 export default ComposerModeRadios;

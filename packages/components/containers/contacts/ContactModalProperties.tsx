@@ -16,7 +16,7 @@ const ICONS: { [key: string]: string } = {
     email: 'email',
     tel: 'phone',
     adr: 'address',
-    other: 'info'
+    other: 'info',
 };
 
 const TITLES: { [key: string]: string } = {
@@ -24,7 +24,7 @@ const TITLES: { [key: string]: string } = {
     email: c('Title').t`Email addresses`,
     tel: c('Title').t`Phone numbers`,
     adr: c('Title').t`Addresses`,
-    other: c('Title').t`Other information`
+    other: c('Title').t`Other information`,
 };
 
 interface Props {
@@ -42,7 +42,7 @@ const ContactModalProperties = ({
     onChange,
     onOrderChange,
     onAdd,
-    onRemove
+    onRemove,
 }: Props) => {
     const title = field ? TITLES[field] : TITLES.other;
     const iconName = field ? ICONS[field] : ICONS.other;

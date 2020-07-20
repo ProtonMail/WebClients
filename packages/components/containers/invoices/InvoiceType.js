@@ -13,14 +13,14 @@ const InvoiceType = ({ invoice }) => {
         [INVOICE_TYPE.RENEWAL]: c('Invoice type display as badge').t`Renewal`,
         [INVOICE_TYPE.REFUND]: c('Invoice type display as badge').t`Refund`,
         [INVOICE_TYPE.MODIFICATION]: c('Invoice type display as badge').t`Modification`,
-        [INVOICE_TYPE.ADDITION]: c('Invoice type display as badge').t`Addition`
+        [INVOICE_TYPE.ADDITION]: c('Invoice type display as badge').t`Addition`,
     };
 
     return TYPES[invoice.Type];
 };
 
 InvoiceType.propTypes = {
-    invoice: PropTypes.object.isRequired
+    invoice: PropTypes.object.isRequired,
 };
 
 export default InvoiceType;

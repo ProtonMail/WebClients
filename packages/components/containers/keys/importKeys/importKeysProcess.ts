@@ -26,7 +26,7 @@ export default async ({
     password,
     keys,
     setKeysToImport,
-    Address
+    Address,
 }: Arguments) => {
     let updatedAddressKeys = keys;
 
@@ -42,7 +42,7 @@ export default async ({
             if (maybeOldKey) {
                 const {
                     Key: { ID, PrivateKey },
-                    privateKey: oldPrivateKey
+                    privateKey: oldPrivateKey,
                 } = maybeOldKey;
 
                 if (oldPrivateKey && oldPrivateKey.isDecrypted()) {
@@ -55,7 +55,7 @@ export default async ({
                     PrivateKey,
                     uploadedPrivateKey,
                     keyList: updatedAddressKeys,
-                    email: Address?.Email
+                    email: Address?.Email,
                 });
                 updatedAddressKeys = await reactivatePrivateKey({
                     api,
@@ -64,13 +64,13 @@ export default async ({
                     encryptedPrivateKeyArmored,
                     privateKey,
                     signingKey,
-                    Address
+                    Address,
                 });
             } else {
                 const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
                     email: Address.Email,
                     passphrase: password,
-                    privateKey: uploadedPrivateKey
+                    privateKey: uploadedPrivateKey,
                 });
 
                 updatedAddressKeys = await createKeyHelper({
@@ -79,7 +79,7 @@ export default async ({
                     fingerprint: reformattedPrivateKey.getFingerprint(),
                     Address,
                     keys: updatedAddressKeys,
-                    signingKey
+                    signingKey,
                 });
             }
 

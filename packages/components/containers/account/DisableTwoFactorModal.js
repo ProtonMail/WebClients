@@ -7,7 +7,7 @@ import {
     useLoading,
     useApi,
     useEventManager,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { disableTotp } from 'proton-shared/lib/api/settings';
 import { srpAuth } from 'proton-shared/lib/srp';
@@ -15,7 +15,7 @@ import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 
 const STEPS = {
     CONFIRM: 1,
-    PASSWORD: 2
+    PASSWORD: 2,
 };
 
 const DisableTwoFactorModal = (props) => {
@@ -35,7 +35,7 @@ const DisableTwoFactorModal = (props) => {
                 onSubmit() {
                     setStep(STEPS.PASSWORD);
                 },
-                submit: c('Action').t`Yes`
+                submit: c('Action').t`Yes`,
             };
         }
 
@@ -45,7 +45,7 @@ const DisableTwoFactorModal = (props) => {
                     await srpAuth({
                         api,
                         credentials: { password, totp },
-                        config: disableTotp()
+                        config: disableTotp(),
                     });
                     await call();
                     createNotification({ text: c('Info').t`Two-factor authentication disabled` });
@@ -73,7 +73,7 @@ const DisableTwoFactorModal = (props) => {
                 onSubmit() {
                     withLoading(handleSubmit());
                 },
-                submit: c('Action').t`Submit`
+                submit: c('Action').t`Submit`,
             };
         }
     })();

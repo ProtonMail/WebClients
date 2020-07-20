@@ -32,14 +32,14 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
                         filename={filename}
                     />
                 );
-            }
+            },
         },
         {
             text: c('Action').t`Download`,
             async onClick() {
                 const blob = await get();
                 downloadFile(blob, filename);
-            }
+            },
         },
         invoice.State === INVOICE_STATE.UNPAID && {
             text: c('Action').t`Pay`,
@@ -50,13 +50,13 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
                 if (!canPay) {
                     createNotification({
                         type: 'error',
-                        text: c('Error').t`Payments are currently not available, please try again later`
+                        text: c('Error').t`Payments are currently not available, please try again later`,
                     });
                 }
 
                 createModal(<PayInvoiceModal invoice={invoice} fetchInvoices={fetchInvoices} />);
-            }
-        }
+            },
+        },
     ].filter(Boolean);
 
     return <DropdownActions list={list} className="pm-button--small" />;
@@ -64,7 +64,7 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
 
 InvoiceActions.propTypes = {
     invoice: PropTypes.object.isRequired,
-    fetchInvoices: PropTypes.func.isRequired
+    fetchInvoices: PropTypes.func.isRequired,
 };
 
 export default InvoiceActions;

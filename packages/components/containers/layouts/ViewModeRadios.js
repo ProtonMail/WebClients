@@ -19,7 +19,7 @@ const ViewModeRadios = ({ viewMode, onChange, loading, id, ...rest }) => {
         onChange() {
             onChange(GROUP);
         },
-        children: <img alt="Group" src={conversationGroupSvg} />
+        children: <img alt="Group" src={conversationGroupSvg} />,
     };
     const radioCardSingle = {
         value: SINGLE,
@@ -31,7 +31,7 @@ const ViewModeRadios = ({ viewMode, onChange, loading, id, ...rest }) => {
         onChange() {
             onChange(SINGLE);
         },
-        children: <img alt="Single" src={conversationSingleSvg} />
+        children: <img alt="Single" src={conversationSingleSvg} />,
     };
 
     return <RadioCards list={[radioCardGroup, radioCardSingle]} id={id} {...rest} />;
@@ -41,7 +41,7 @@ ViewModeRadios.propTypes = {
     viewMode: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
     loading: PropTypes.bool,
-    id: PropTypes.string
+    id: PropTypes.string,
 };
 
 export default ViewModeRadios;

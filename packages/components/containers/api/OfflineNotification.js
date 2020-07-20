@@ -18,7 +18,7 @@ const OfflineNotification = ({ onRetry }) => {
 };
 
 OfflineNotification.propTypes = {
-    onRetry: PropTypes.func
+    onRetry: PropTypes.func,
 };
 
 export default OfflineNotification;

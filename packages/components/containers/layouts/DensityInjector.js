@@ -6,7 +6,7 @@ const { COMPACT, COMFORTABLE } = DENSITY;
 
 const CLASSES = {
     [COMPACT]: 'is-compact',
-    [COMFORTABLE]: 'is-comfortable'
+    [COMFORTABLE]: 'is-comfortable',
 };
 
 const DensityInjector = () => {

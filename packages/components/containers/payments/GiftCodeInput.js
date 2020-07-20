@@ -20,7 +20,7 @@ const GiftCodeInput = ({ value, ...rest }) => {
 };
 
 GiftCodeInput.propTypes = {
-    value: PropTypes.string
+    value: PropTypes.string,
 };
 
 export default GiftCodeInput;

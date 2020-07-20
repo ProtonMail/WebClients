@@ -7,7 +7,7 @@ import {
     ContentModal,
     InnerModal,
     ResetButton,
-    PrimaryButton
+    PrimaryButton,
 } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -122,7 +122,7 @@ Modal.propTypes = {
     hasClose: PropTypes.bool,
     autoFocusClose: PropTypes.bool,
     disableCloseOnLocation: PropTypes.bool,
-    disableCloseOnOnEscape: PropTypes.bool
+    disableCloseOnOnEscape: PropTypes.bool,
 };
 
 export default Modal;

@@ -45,7 +45,7 @@ const AutoReplyFormFixed = ({ model: { start, end, timezone }, updateModel }) =>
 
 AutoReplyFormFixed.propTypes = {
     model: modelShape,
-    updateModel: PropTypes.func
+    updateModel: PropTypes.func,
 };
 
 export default AutoReplyFormFixed;

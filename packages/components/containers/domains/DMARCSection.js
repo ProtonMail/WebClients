@@ -20,7 +20,7 @@ const DMARCSection = () => {
                     cells={[
                         c('Header for domain modal').t`Type`,
                         c('Header for domain modal').t`Host name`,
-                        c('Header for domain modal').t`Value / Data / Points to`
+                        c('Header for domain modal').t`Value / Data / Points to`,
                     ]}
                 />
                 <TableBody>
@@ -37,7 +37,7 @@ const DMARCSection = () => {
                                 <code className="ellipsis" title={valueToCopy}>
                                     {valueToCopy}
                                 </code>
-                            </div>
+                            </div>,
                         ]}
                     />
                 </TableBody>

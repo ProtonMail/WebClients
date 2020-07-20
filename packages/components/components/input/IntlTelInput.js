@@ -14,7 +14,7 @@ const IntlTelInput = ({ containerClassName, inputClassName, ...rest }) => (
 
 IntlTelInput.propTypes = {
     containerClassName: PropTypes.string,
-    inputClassName: PropTypes.string
+    inputClassName: PropTypes.string,
 };
 
 export default IntlTelInput;

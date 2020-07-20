@@ -47,7 +47,7 @@ PasswordTotpInputs.propTypes = {
     totp: PropTypes.string.isRequired,
     totpError: PropTypes.string,
     setTotp: PropTypes.func.isRequired,
-    showTotp: PropTypes.bool
+    showTotp: PropTypes.bool,
 };
 
 export default PasswordTotpInputs;

@@ -44,7 +44,7 @@ export const getArmoredPrivateKeys = async ({
     userKeysList,
     addressesKeysMap,
     organizationKey,
-    keyPassword
+    keyPassword,
 }: GetArmoredPrivateKeysArguments) => {
     const userKeysPromises = userKeysList.map((key) => getEncryptedArmoredKey(key, keyPassword));
     const userKeysAndAddressesKeysPromises = Object.keys(addressesKeysMap).reduce((acc, addressKey) => {
@@ -62,7 +62,7 @@ export const getArmoredPrivateKeys = async ({
 
     return {
         armoredKeys,
-        armoredOrganizationKey: await getEncryptedArmoredOrganizationKey(organizationKey, keyPassword)
+        armoredOrganizationKey: await getEncryptedArmoredOrganizationKey(organizationKey, keyPassword),
     };
 };
 
@@ -76,13 +76,13 @@ export const handleChangeMailboxPassword = ({
     api,
     armoredKeys,
     armoredOrganizationKey,
-    keySalt
+    keySalt,
 }: ChangeMailboxPasswordArguments) => {
     return api(
         updatePrivateKeyRoute({
             Keys: armoredKeys,
             KeySalt: keySalt,
-            OrganizationKey: armoredOrganizationKey
+            OrganizationKey: armoredOrganizationKey,
         })
     );
 };
@@ -97,19 +97,19 @@ export const handleChangeOnePassword = ({
     armoredOrganizationKey,
     keySalt,
     newPassword,
-    totp
+    totp,
 }: ChangeOnePasswordArguments) => {
     return srpVerify({
         api,
         credentials: {
             password: newPassword,
-            totp
+            totp,
         },
         config: updatePrivateKeyRoute({
             Keys: armoredKeys,
             OrganizationKey: armoredOrganizationKey,
-            KeySalt: keySalt
-        })
+            KeySalt: keySalt,
+        }),
     });
 };
 
@@ -118,9 +118,9 @@ export const handleUnlock = ({ api, oldPassword, totp }: { api: Api; oldPassword
         api,
         credentials: {
             password: oldPassword,
-            totp
+            totp,
         },
-        config: unlockPasswordChanges()
+        config: unlockPasswordChanges(),
     });
 };
 
@@ -128,8 +128,8 @@ export const handleChangeLoginPassword = async ({ api, newPassword }: { api: Api
     return srpVerify({
         api,
         credentials: {
-            password: newPassword
+            password: newPassword,
         },
-        config: updatePassword()
+        config: updatePassword(),
     });
 };

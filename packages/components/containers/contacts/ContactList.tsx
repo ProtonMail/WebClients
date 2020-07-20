@@ -19,7 +19,7 @@ const ContactsList = ({
     contactRowHeightCompact = 46,
     rowRenderer,
     className = '',
-    userSettings
+    userSettings,
 }: Props) => {
     const listRef = useRef(null);
     const containerRef = useRef(null);

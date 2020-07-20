@@ -78,7 +78,7 @@
     border-radius: $global-border-radius;
 }
 .isDarkMode .editor--disabled::after {
-    opacity: .9;
+    opacity: 0.9;
 }
 
 .editor-toolbar-more-menu .dropDown-item.dropDown-item--no-separator {

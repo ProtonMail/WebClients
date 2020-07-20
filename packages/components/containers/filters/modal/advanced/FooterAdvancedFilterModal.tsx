@@ -14,12 +14,12 @@ interface Props {
 
 const NEXT_STEP = {
     [StepSieve.NAME]: StepSieve.SIEVE,
-    [StepSieve.SIEVE]: StepSieve.SIEVE
+    [StepSieve.SIEVE]: StepSieve.SIEVE,
 };
 
 const BACK_STEP = {
     [StepSieve.NAME]: StepSieve.NAME,
-    [StepSieve.SIEVE]: StepSieve.NAME
+    [StepSieve.SIEVE]: StepSieve.NAME,
 };
 
 const FooterAdvancedFilterModal = ({ model, errors, onClose, onChange, loading }: Props) => {

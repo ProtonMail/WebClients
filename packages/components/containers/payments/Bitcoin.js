@@ -88,7 +88,7 @@ const Bitcoin = ({ amount, currency, type }) => {
 Bitcoin.propTypes = {
     amount: PropTypes.number.isRequired,
     currency: PropTypes.oneOf(CURRENCIES),
-    type: PropTypes.string
+    type: PropTypes.string,
 };
 
 export default Bitcoin;

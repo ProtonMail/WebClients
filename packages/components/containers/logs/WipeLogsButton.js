@@ -24,7 +24,7 @@ const WipeLogsButton = ({ onWipe, className }) => {
 
 WipeLogsButton.propTypes = {
     onWipe: PropTypes.func.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
 };
 
 export default WipeLogsButton;

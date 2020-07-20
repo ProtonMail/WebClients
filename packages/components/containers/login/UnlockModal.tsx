@@ -19,7 +19,7 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
             await srpAuth({
                 api,
                 credentials: { password },
-                config: queryUnlock()
+                config: queryUnlock(),
             });
             onSuccess?.();
             onClose?.();

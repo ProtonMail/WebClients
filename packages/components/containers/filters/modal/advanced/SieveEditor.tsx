@@ -39,7 +39,7 @@ const SieveEditor = ({ value, issues = [], onChange, theme }: Props) => {
         readOnly: false,
         fixedGutter: false,
         gutters: ['CodeMirror-lint-markers'],
-        ...(theme ? { theme } : {})
+        ...(theme ? { theme } : {}),
     };
 
     useEffect(() => {

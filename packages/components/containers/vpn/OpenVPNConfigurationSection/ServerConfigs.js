@@ -90,9 +90,9 @@ ServerConfigs.propTypes = {
             Domain: PropTypes.string,
             Features: PropTypes.number,
             Load: PropTypes.number,
-            Tier: PropTypes.number
+            Tier: PropTypes.number,
         })
-    )
+    ),
 };
 
 export default ServerConfigs;

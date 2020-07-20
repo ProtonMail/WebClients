@@ -19,49 +19,49 @@ const KeysActions = ({
     onSetCompromised,
     onSetNotCompromised,
     onSetObsolete,
-    onSetNotObsolete
+    onSetNotObsolete,
 }: Props) => {
     const list = [
         onReactivateKey && {
             text: c('Keys actions').t`Reactivate`,
-            onClick: () => onReactivateKey(ID)
+            onClick: () => onReactivateKey(ID),
         },
         onExportPublicKey && {
             text: c('Keys actions').t`Export`,
-            onClick: () => onExportPublicKey(ID)
+            onClick: () => onExportPublicKey(ID),
         },
         onExportPrivateKey && {
             text: c('Keys actions').t`Export private key`,
-            onClick: () => onExportPrivateKey(ID)
+            onClick: () => onExportPrivateKey(ID),
         },
         onSetPrimary && {
             text: c('Keys actions').t`Make primary`,
-            onClick: () => onSetPrimary(ID)
+            onClick: () => onSetPrimary(ID),
         },
         onSetObsolete && {
             text: c('Keys actions').t`Mark obsolete`,
             tooltip: c('Keys actions').t`Disables encryption with this key`,
-            onClick: () => onSetObsolete(ID)
+            onClick: () => onSetObsolete(ID),
         },
         onSetNotObsolete && {
             text: c('Keys actions').t`Mark not obsolete`,
             tooltip: c('Keys actions').t`Enable encryption with this key`,
-            onClick: () => onSetNotObsolete(ID)
+            onClick: () => onSetNotObsolete(ID),
         },
         onSetCompromised && {
             text: c('Keys actions').t`Mark compromised`,
             tooltip: c('Keys actions').t`Disables signature verification and encryption with this key`,
-            onClick: () => onSetCompromised(ID)
+            onClick: () => onSetCompromised(ID),
         },
         onSetNotCompromised && {
             text: c('Keys actions').t`Mark not compromised`,
             tooltip: c('Keys actions').t`Enable signature verification and encryption with this key`,
-            onClick: () => onSetNotCompromised(ID)
+            onClick: () => onSetNotCompromised(ID),
         },
         onDeleteKey && {
             text: c('Keys actions').t`Delete`,
-            onClick: () => onDeleteKey(ID)
-        }
+            onClick: () => onDeleteKey(ID),
+        },
     ].filter(isTruthy);
 
     return <DropdownActions className="pm-button--small" loading={isLoading} list={list} />;

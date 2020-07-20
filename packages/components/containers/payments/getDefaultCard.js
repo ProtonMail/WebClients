@@ -10,7 +10,7 @@ const getDefault = () => {
         year: '',
         cvc: '',
         zip: '',
-        country
+        country,
     };
 };
 

@@ -7,7 +7,7 @@ export enum Status {
     UPLOADED = 2,
     SUCCESS = 3,
     LOADING = 4,
-    ERROR = 5
+    ERROR = 5,
 }
 
 export interface KeyReactivation {

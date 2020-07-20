@@ -24,8 +24,8 @@ const StandardPublicApp = ({ locales = {}, openpgpConfig, children }: Props) => 
                 loadOpenPGP(openpgpConfig),
                 loadLocale({
                     ...getClosestMatches({ locale: browserLocale, browserLocale, locales }),
-                    locales
-                })
+                    locales,
+                }),
             ]);
         })()
             .then(() => setLoading(false))

@@ -10,7 +10,7 @@ import {
     PasswordInput,
     useLoading,
     useNotifications,
-    useApi
+    useApi,
 } from 'react-components';
 import { updateVPNName, updateVPNPassword } from 'proton-shared/lib/api/vpn';
 
@@ -28,7 +28,7 @@ const OpenVPNCredentialsModal = ({ username = '', password = '', fetchUserVPN, .
         const RESERVED_USERNAMES = ['guest'];
         if (RESERVED_USERNAMES.includes(credentials.username.toLowerCase())) {
             createNotification({
-                text: c('Error').t`'${credentials.username}' is a reserved word. Please set another username.`
+                text: c('Error').t`'${credentials.username}' is a reserved word. Please set another username.`,
             });
             return;
         }
@@ -80,7 +80,7 @@ const OpenVPNCredentialsModal = ({ username = '', password = '', fetchUserVPN, .
 OpenVPNCredentialsModal.propTypes = {
     username: PropTypes.string,
     password: PropTypes.string,
-    fetchUserVPN: PropTypes.func.isRequired
+    fetchUserVPN: PropTypes.func.isRequired,
 };
 
 export default OpenVPNCredentialsModal;

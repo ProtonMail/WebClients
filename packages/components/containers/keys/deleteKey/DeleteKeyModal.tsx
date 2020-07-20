@@ -7,7 +7,7 @@ enum STEPS {
     EXPORT_KEY = 2,
     DELETE_KEY = 3,
     SUCCESS = 4,
-    FAILURE = 5
+    FAILURE = 5,
 }
 
 interface Props {
@@ -43,7 +43,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                         {c('Info')
                             .t`This feature is intended for advanced users only! After deleting this key, you will not be able to decrypt any message that is encrypted with this key. It may lead to data loss. Are you sure you want to continue?`}
                     </Alert>
-                )
+                ),
             };
         }
 
@@ -62,7 +62,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                         {c('alert')
                             .t`Deleting your keys is irreversible. To be able to access any message encrypted with this key, you might want to make a back up of this key for later use. Do you want to export this key?`}
                     </Alert>
-                )
+                ),
             };
         }
 
@@ -70,7 +70,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
             return {
                 submit: c('Action').t`Done`,
                 loading: true,
-                children: <Alert>{c('alert').t`The key for your address is now being deleted.`}</Alert>
+                children: <Alert>{c('alert').t`The key for your address is now being deleted.`}</Alert>,
             };
         }
 
@@ -78,14 +78,14 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
             const fp = <code key="0">{fingerprint}</code>;
             return {
                 submit: c('Action').t`Done`,
-                children: <Alert>{c('Info').jt`Key with fingerprint ${fp} deleted`}</Alert>
+                children: <Alert>{c('Info').jt`Key with fingerprint ${fp} deleted`}</Alert>,
             };
         }
 
         if (step === STEPS.FAILURE) {
             return {
                 submit: c('Action').t`Ok`,
-                children: <GenericError />
+                children: <GenericError />,
             };
         }
 

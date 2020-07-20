@@ -45,7 +45,7 @@ const DomainSection = ({ domain, onChange }) => {
 
 DomainSection.propTypes = {
     domain: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default DomainSection;

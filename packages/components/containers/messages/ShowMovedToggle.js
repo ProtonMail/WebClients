@@ -7,7 +7,7 @@ import {
     useToggle,
     useMailSettings,
     useNotifications,
-    useLoading
+    useLoading,
 } from 'react-components';
 import { updateShowMoved } from 'proton-shared/lib/api/mailSettings';
 import { SHOW_MOVED } from 'proton-shared/lib/constants';
@@ -41,7 +41,7 @@ const ShowMovedToggle = ({ id }) => {
 };
 
 ShowMovedToggle.propTypes = {
-    id: PropTypes.string
+    id: PropTypes.string,
 };
 
 export default ShowMovedToggle;

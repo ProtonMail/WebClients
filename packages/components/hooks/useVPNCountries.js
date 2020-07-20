@@ -27,9 +27,9 @@ const useVPNCountries = () => {
         {
             free,
             basic,
-            all
+            all,
         },
-        loading
+        loading,
     ];
 };
 

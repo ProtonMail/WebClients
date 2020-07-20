@@ -12,7 +12,7 @@ import {
     useOrganizationKey,
     useModals,
     useNotifications,
-    usePremiumDomains
+    usePremiumDomains,
 } from '../../index';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 
@@ -39,7 +39,7 @@ const PmMeButton = () => {
             setupAddress({
                 Domain,
                 DisplayName: DisplayName ? DisplayName : '', // DisplayName can be null
-                Signature: Signature ? Signature : '' // Signature can be null
+                Signature: Signature ? Signature : '', // Signature can be null
             })
         );
         await call();

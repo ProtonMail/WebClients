@@ -24,9 +24,9 @@ export const getInitialState = async (keys: KeyReactivation[]): Promise<Reactiva
                         PrivateKey: keys[i].Key.PrivateKey,
                         fingerprint: privateKey?.getFingerprint(),
                         status: privateKey ? Status.INACTIVE : Status.ERROR,
-                        result: undefined
+                        result: undefined,
                     };
-                })
+                }),
             };
         })
     );
@@ -48,9 +48,9 @@ export const updateKey = (oldAllKeys: ReactivateKeys[], key: ReactivateKey, newK
                 }
                 return {
                     ...oldKey,
-                    ...newKey
+                    ...newKey,
                 };
-            })
+            }),
         };
     });
 };
@@ -65,7 +65,7 @@ export const getUploadedKeys = (keys: ReactivateKeys[]): ReactivateKeys[] => {
             }
             return {
                 ...toReactivate,
-                keys: uploadedKeys
+                keys: uploadedKeys,
             };
         })
         .filter(isTruthy);

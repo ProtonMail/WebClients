@@ -46,14 +46,14 @@ const usePayment = ({ amount, currency, onPay }: Props) => {
         amount,
         currency,
         type: PAYPAL,
-        onPay
+        onPay,
     });
 
     const paypalCredit = usePayPal({
         amount,
         currency,
         type: PAYPAL_CREDIT,
-        onPay
+        onPay,
     });
 
     const hasToken = (): boolean => {
@@ -125,7 +125,7 @@ const usePayment = ({ amount, currency, onPay }: Props) => {
         setMethod,
         parameters,
         setParameters,
-        canPay: canPay()
+        canPay: canPay(),
     };
 };
 

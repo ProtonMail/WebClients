@@ -22,7 +22,7 @@ const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = 
             className={classnames([
                 'searchbox-container relative flex-item-centered-vert',
                 className,
-                value !== '' && advanced && 'searchbox-container--reset-advanced'
+                value !== '' && advanced && 'searchbox-container--reset-advanced',
             ])}
             onSubmit={handleSubmit}
             onReset={handleReset}
@@ -60,7 +60,7 @@ Searchbox.propTypes = {
     value: PropTypes.string,
     onSearch: PropTypes.func,
     onChange: PropTypes.func.isRequired,
-    advanced: PropTypes.node
+    advanced: PropTypes.node,
 };
 
 export default Searchbox;

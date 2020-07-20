@@ -10,7 +10,7 @@ import {
     useLoading,
     PrimaryButton,
     LinkButton,
-    DoNotWindowOpenAlertError
+    DoNotWindowOpenAlertError,
 } from 'react-components';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { createToken } from 'proton-shared/lib/api/payments';
@@ -51,8 +51,8 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
                     Amount,
                     Currency,
                     Payment: {
-                        Type: PAYMENT_METHOD_TYPES.PAYPAL
-                    }
+                        Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                    },
                 })
             ),
             api(
@@ -60,18 +60,18 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
                     Amount,
                     Currency,
                     Payment: {
-                        Type: PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
-                    }
+                        Type: PAYMENT_METHOD_TYPES.PAYPAL_CREDIT,
+                    },
                 })
-            )
+            ),
         ]);
         paypalRef.current = {
             ...paypalResult,
-            type: PAYMENT_METHOD_TYPES.PAYPAL
+            type: PAYMENT_METHOD_TYPES.PAYPAL,
         };
         paypalCreditRef.current = {
             ...paypalCreditResult,
-            type: PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
+            type: PAYMENT_METHOD_TYPES.PAYPAL_CREDIT,
         };
     };
 
@@ -188,7 +188,7 @@ PayPal.propTypes = {
     amount: PropTypes.number.isRequired,
     currency: PropTypes.string.isRequired,
     onPay: PropTypes.func.isRequired,
-    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update', 'human-verification'])
+    type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update', 'human-verification']),
 };
 
 export default PayPal;

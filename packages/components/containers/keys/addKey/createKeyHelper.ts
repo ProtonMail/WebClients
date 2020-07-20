@@ -18,7 +18,7 @@ export default async ({ api, fingerprint, privateKeyArmored, signingKey, keys, A
         ID: 'temp',
         flags: getKeyFlagsAddress(Address, keys),
         keys,
-        fingerprint
+        fingerprint,
     });
 
     const createdKey = updatedKeys.find(({ ID }) => ID === 'temp');
@@ -32,7 +32,7 @@ export default async ({ api, fingerprint, privateKeyArmored, signingKey, keys, A
             AddressID: Address.ID,
             Primary: primary,
             PrivateKey: privateKeyArmored,
-            SignedKeyList: await getSignedKeyList(updatedKeys, signingKey)
+            SignedKeyList: await getSignedKeyList(updatedKeys, signingKey),
         })
     );
 

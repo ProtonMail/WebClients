@@ -20,7 +20,7 @@ const Loader = ({ size = 'small', className = 'center flex mb2 mt2' }: Props) =>
     const IMAGES = {
         small: loadingSmallerSvg,
         medium: loadingSvg,
-        big: loadingSvg
+        big: loadingSvg,
     };
 
     return (

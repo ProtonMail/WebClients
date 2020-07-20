@@ -11,7 +11,7 @@ import {
     Challenge,
     Label,
     useLoading,
-    FullLoader
+    FullLoader,
 } from '../../index';
 
 import { SignupModel, SignupErrors } from './interfaces';

@@ -10,7 +10,7 @@ export enum FONT_FACE {
     Tahoma = 'tahoma, sans-serif',
     Verdana = 'verdana',
     'Times New Roman' = 'times new roman',
-    'Trebuchet MS' = 'trebuchet ms'
+    'Trebuchet MS' = 'trebuchet ms',
 }
 
 export const FONT_SIZES = [10, 12, 14, 16, 18, 20, 22, 24, 26];
@@ -55,7 +55,7 @@ export const FONT_COLORS = [
     '#FDF84E',
     '#F2C246',
     '#BE8F35',
-    '#7F6124'
+    '#7F6124',
 ];
 
 export const HEADER_CLASS = 'h4';
@@ -128,7 +128,7 @@ export const SQUIRE_CONFIG = {
         // Use proton's instance of DOMPurify to allow proton-src attributes to be displayed in squire.
         const frag = html ? content(html) : null;
         return frag ? doc.importNode(frag, true) : doc.createDocumentFragment();
-    }
+    },
 };
 
 /**

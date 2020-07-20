@@ -63,7 +63,7 @@ NewLabelForm.propTypes = {
     label: PropTypes.object,
     onChangeName: PropTypes.func.isRequired,
     onChangeColor: PropTypes.func.isRequired,
-    onChangeParentID: PropTypes.func
+    onChangeParentID: PropTypes.func,
 };
 
 export default NewLabelForm;

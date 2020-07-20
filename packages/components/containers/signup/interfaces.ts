@@ -6,7 +6,7 @@ export enum SERVICES {
     calendar = 'ProtonCalendar',
     contacts = 'ProtonContacts',
     drive = 'ProtonDrive',
-    vpn = 'ProtonVPN'
+    vpn = 'ProtonVPN',
 }
 export type SERVICES_KEYS = keyof typeof SERVICES;
 

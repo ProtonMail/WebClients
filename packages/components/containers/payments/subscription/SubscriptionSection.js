@@ -12,7 +12,7 @@ import {
     useSubscription,
     useOrganization,
     useUser,
-    useAddresses
+    useAddresses,
 } from 'react-components';
 import { PLAN_NAMES } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
@@ -44,7 +44,7 @@ AddonRow.propTypes = {
     label: PropTypes.string.isRequired,
     used: PropTypes.number,
     max: PropTypes.number.isRequired,
-    format: PropTypes.func
+    format: PropTypes.func,
 };
 
 const SubscriptionSection = ({ permission }) => {
@@ -78,7 +78,7 @@ const SubscriptionSection = ({ permission }) => {
         MaxAddresses,
         UsedMembers,
         MaxMembers,
-        MaxVPN
+        MaxVPN,
     } = organization || {};
 
     const { mailPlan, vpnPlan } = formatPlans(Plans);
@@ -104,16 +104,16 @@ const SubscriptionSection = ({ permission }) => {
             used: UsedSpace,
             max: MaxSpace,
             humanSize,
-            format: (v) => humanSize(v)
+            format: (v) => humanSize(v),
         },
         hasPaidMail && { label: c('Label').t`Custom domains`, used: UsedDomains, max: MaxDomains },
-        mailPlanName === 'visionary' && { label: c('Label').t`VPN connections`, max: MaxVPN }
+        mailPlanName === 'visionary' && { label: c('Label').t`VPN connections`, max: MaxVPN },
     ].filter(Boolean);
 
     const vpnAddons = [
         hasPaidVpn
             ? { label: c('Label').t`VPN connections`, max: MaxVPN }
-            : { label: c('Label').t`VPN connections`, max: 1 }
+            : { label: c('Label').t`VPN connections`, max: 1 },
     ];
 
     return (
@@ -174,7 +174,7 @@ const SubscriptionSection = ({ permission }) => {
 };
 
 SubscriptionSection.propTypes = {
-    permission: PropTypes.bool
+    permission: PropTypes.bool,
 };
 
 export default SubscriptionSection;

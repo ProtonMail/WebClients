@@ -53,7 +53,7 @@ NewSubscriptionSubmitButton.propTypes = {
     method: PropTypes.string,
     checkResult: PropTypes.object,
     step: PropTypes.number.isRequired,
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func.isRequired,
 };
 
 export default NewSubscriptionSubmitButton;

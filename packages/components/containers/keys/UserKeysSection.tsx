@@ -10,7 +10,7 @@ import {
     useUserKeys,
     useEventManager,
     useAuthentication,
-    useApi
+    useApi,
 } from '../../index';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 import getCachedKeyByID from 'proton-shared/lib/keys/getCachedKeyByID';
@@ -66,7 +66,7 @@ const UserKeysSections = () => {
             keysToReactivate,
             setKeysToReactivate,
             isUploadMode,
-            oldPassword
+            oldPassword,
         }: ReactivateProcessArguments) => {
             await reactivateKeysProcess({
                 api,
@@ -75,7 +75,7 @@ const UserKeysSections = () => {
                 isUploadMode,
                 newPassword: authentication.getPassword(),
                 oldPassword,
-                userKeysList
+                userKeysList,
             });
             await call();
         };
@@ -90,8 +90,8 @@ const UserKeysSections = () => {
         return handleReactivateKeys([
             {
                 User,
-                keys: [userKey]
-            }
+                keys: [userKey],
+            },
         ]);
     };
 

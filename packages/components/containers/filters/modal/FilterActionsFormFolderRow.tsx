@@ -12,28 +12,28 @@ export const DEFAULT_FOLDERS: SelectOption[] = [
         group: c('Option group').t`Move to...`,
         text: c('Filter Actions').t`Select a folder`,
         value: '',
-        disabled: true
+        disabled: true,
     },
     {
         group: c('Option group').t`Default folders`,
         text: c('Filter Actions').t`Archive`,
-        value: 'archive'
+        value: 'archive',
     },
     {
         group: c('Option group').t`Default folders`,
         text: c('Filter Actions').t`Inbox`,
-        value: 'inbox'
+        value: 'inbox',
     },
     {
         group: c('Option group').t`Default folders`,
         text: c('Filter Actions').t`Spam`,
-        value: 'spam'
+        value: 'spam',
     },
     {
         group: c('Option group').t`Default folders`,
         text: c('Filter Actions').t`Trash`,
-        value: 'trash'
-    }
+        value: 'trash',
+    },
 ];
 
 interface Props {
@@ -59,7 +59,7 @@ type SelectOption = {
 const formatOption = ({ Path, Name }: FolderWithSubFolders, level = 0) => ({
     value: Path || '',
     text: formatFolderName(level, Name, ' • '),
-    group: c('Option group').t`Custom folders`
+    group: c('Option group').t`Custom folders`,
 });
 
 const reducer = (acc: SelectOption[] = [], folder: FolderWithSubFolders, level = 0): SelectOption[] => {
@@ -89,8 +89,8 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
         handleUpdateActions({
             moveTo: {
                 ...actions.moveTo,
-                ...payload
-            }
+                ...payload,
+            },
         });
     };
 
@@ -137,7 +137,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                             name="caret"
                             className="ml0-5"
                             style={{
-                                transform: 'rotate(-90deg)'
+                                transform: 'rotate(-90deg)',
                             }}
                         />
                     )}

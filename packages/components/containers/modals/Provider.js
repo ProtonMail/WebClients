@@ -20,7 +20,7 @@ const ModalsProvider = ({ children }) => {
 };
 
 ModalsProvider.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
 
 export default ModalsProvider;

@@ -40,7 +40,7 @@ const MonthDays = ({
     selectedDate,
     activeDate,
     numberOfDays,
-    numberOfWeeks
+    numberOfWeeks,
 }: Props) => {
     const [temporaryDateRange, setTemporaryDateRange] = useState<[Date, Date | undefined] | undefined>(undefined);
     const rangeStartRef = useRef<Date | undefined>(undefined);
@@ -48,7 +48,7 @@ const MonthDays = ({
 
     const style = {
         '--minicalendar-days-numberOfDays': numberOfDays,
-        '--minicalendar-days-numberOfWeeks': numberOfWeeks
+        '--minicalendar-days-numberOfWeeks': numberOfWeeks,
     };
 
     const handleMouseDown = ({ target }: React.MouseEvent<HTMLUListElement>) => {
@@ -140,7 +140,7 @@ const MonthDays = ({
                     isIntervalBound && 'minicalendar-day--range-bound',
                     isIntervalBoundBegin && 'minicalendar-day--range-bound-begin',
                     isIntervalBoundEnd && 'minicalendar-day--range-bound-end',
-                    isInterval && 'minicalendar-day--range'
+                    isInterval && 'minicalendar-day--range',
                 ]);
 
                 return (

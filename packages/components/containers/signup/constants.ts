@@ -9,7 +9,7 @@ export enum SIGNUP_STEPS {
     PAYMENT = 'payment',
     HUMAN_VERIFICATION = 'human-verification',
     CREATING_ACCOUNT = 'creating-account',
-    COMPLETE = 'complete'
+    COMPLETE = 'complete',
 }
 
 export const YANDEX_DOMAINS = ['yandex.ru', 'yandex.ua'];
@@ -54,7 +54,7 @@ export const YAHOO_DOMAINS = [
     'yahoo.ro',
     'yahoo.se',
     'ymail.com',
-    'rocketmail.com'
+    'rocketmail.com',
 ];
 export const AOL_DOMAINS = [
     'aol.asia',
@@ -88,7 +88,7 @@ export const AOL_DOMAINS = [
     'wow.com',
     'games.com',
     'love.com',
-    'ygm.com'
+    'ygm.com',
 ];
 export const MAIL_RU_DOMAINS = ['mail.ru', 'inbox.ru', 'list.ru', 'bk.ru'];
 export const GMAIL_DOMAINS = ['gmail.com', 'googlemail.com', 'google.com', 'googlegroups.com'];
@@ -98,7 +98,7 @@ export const INSECURE_DOMAINS = [
     ...AOL_DOMAINS,
     ...YAHOO_DOMAINS,
     ...YANDEX_DOMAINS,
-    ...MAIL_RU_DOMAINS
+    ...MAIL_RU_DOMAINS,
 ];
 
 export const DEFAULT_SIGNUP_MODEL = {
@@ -119,7 +119,7 @@ export const DEFAULT_SIGNUP_MODEL = {
     humanVerificationToken: '',
     verificationToken: '',
     paymentToken: '',
-    payload: {}
+    payload: {},
 };
 
 export const DEFAULT_CHECK_RESULT = {
@@ -131,5 +131,5 @@ export const DEFAULT_CHECK_RESULT = {
     Cycle: 0,
     Gift: 0,
     CouponDiscount: 0,
-    Coupon: null
+    Coupon: null,
 };

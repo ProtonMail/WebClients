@@ -27,7 +27,7 @@ const RadioCards = ({ list = [], id, ...rest }) => {
 
 RadioCards.propTypes = {
     list: PropTypes.array.isRequired,
-    id: PropTypes.string
+    id: PropTypes.string,
 };
 
 export default RadioCards;

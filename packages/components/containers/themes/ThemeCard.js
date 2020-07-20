@@ -57,7 +57,7 @@ ThemeCard.propTypes = {
     disabled: PropTypes.bool,
     customizable: PropTypes.bool,
     onChange: PropTypes.func,
-    onCustomization: PropTypes.func
+    onCustomization: PropTypes.func,
 };
 
 export default ThemeCard;

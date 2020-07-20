@@ -23,7 +23,7 @@ const EventNotices = () => {
             createNotification({
                 type: 'info',
                 text,
-                expiration: -1
+                expiration: -1,
             });
         };
 

@@ -35,7 +35,7 @@ const EmbeddedToggle = ({ id, showImages, onChange }) => {
 EmbeddedToggle.propTypes = {
     id: PropTypes.string,
     showImages: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default EmbeddedToggle;

@@ -12,7 +12,7 @@ import {
     useMailSettings,
     useEventManager,
     useLoading,
-    useApi
+    useApi,
 } from 'react-components';
 import {
     updateComposerMode,
@@ -20,7 +20,7 @@ import {
     updateViewLayout,
     updateStickyLabels,
     updateDraftType,
-    updateRightToLeft
+    updateRightToLeft,
 } from 'proton-shared/lib/api/mailSettings';
 import { updateDensity } from 'proton-shared/lib/api/settings';
 import { VIEW_MODE, STICKY_LABELS, FEATURE_FLAGS } from 'proton-shared/lib/constants';
@@ -38,7 +38,7 @@ const { GROUP } = VIEW_MODE;
 const LayoutsSection = () => {
     const [
         { ComposerMode, ViewMode, ViewLayout, StickyLabels, DraftMIMEType, RightToLeft },
-        loadingMailSettings
+        loadingMailSettings,
     ] = useMailSettings();
     const [{ Density }, loadingUserSettings] = useUserSettings();
     const { call } = useEventManager();

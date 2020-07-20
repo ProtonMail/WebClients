@@ -71,7 +71,7 @@ PaymentSelector.propTypes = {
     maxAmount: PropTypes.number,
     amount: PropTypes.number.isRequired,
     onChangeCurrency: PropTypes.func.isRequired,
-    onChangeAmount: PropTypes.func.isRequired
+    onChangeAmount: PropTypes.func.isRequired,
 };
 
 export default PaymentSelector;

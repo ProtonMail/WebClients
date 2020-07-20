@@ -51,7 +51,7 @@ const BlackFridayNavbarLink = ({ to, location, getModal, ...rest }) => {
 BlackFridayNavbarLink.propTypes = {
     to: PropTypes.string.isRequired,
     location: PropTypes.object.isRequired,
-    getModal: PropTypes.func.isRequired
+    getModal: PropTypes.func.isRequired,
 };
 
 export default BlackFridayNavbarLink;

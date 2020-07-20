@@ -42,8 +42,8 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                 <div className="flex-autogrid-item ">
                     <Label className="mb0-5 bl" htmlFor="exp">{c('Label').t`Expiry date`}</Label>
                     <ExpInput
-                         id="exp"
-                         month={card.month}
+                        id="exp"
+                        month={card.month}
                         year={card.year}
                         error={errors.month}
                         disabled={loading}
@@ -109,7 +109,7 @@ Card.propTypes = {
     loading: PropTypes.bool,
     card: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default Card;

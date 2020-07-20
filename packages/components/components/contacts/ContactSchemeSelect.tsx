@@ -24,10 +24,10 @@ const ContactSchemeSelect = ({ value, mailSettings, onChange }: Props) => {
     const options = [
         {
             value: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
-            text: c('Default encryption scheme').t`Use global default (${defaultValueText})`
+            text: c('Default encryption scheme').t`Use global default (${defaultValueText})`,
         },
         { value: PGP_MIME, text: MIME },
-        { value: PGP_INLINE, text: INLINE }
+        { value: PGP_INLINE, text: INLINE },
     ];
 
     const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => onChange(target.value as CONTACT_PGP_SCHEMES);

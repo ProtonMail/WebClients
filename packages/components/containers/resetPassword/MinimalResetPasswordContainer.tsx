@@ -12,7 +12,7 @@ import {
     PasswordInput,
     PrimaryButton,
     useConfig,
-    useModals
+    useModals,
 } from '../../index';
 import useResetPassword, { STEPS } from './useResetPassword';
 import { OnLoginArgs } from '../login/interface';
@@ -41,7 +41,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
         setPassword,
         setConfirmPassword,
         setToken,
-        setDanger
+        setDanger,
     } = useResetPassword({ onLogin });
 
     const { CLIENT_TYPE } = useConfig();

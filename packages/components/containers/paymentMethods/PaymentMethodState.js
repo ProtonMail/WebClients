@@ -22,7 +22,7 @@ const PaymentMethodState = ({ method, index }) => {
 
 PaymentMethodState.propTypes = {
     method: PropTypes.object.isRequired,
-    index: PropTypes.number.isRequired
+    index: PropTypes.number.isRequired,
 };
 
 export default PaymentMethodState;

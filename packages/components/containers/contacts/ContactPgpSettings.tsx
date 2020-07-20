@@ -44,7 +44,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
         if (!files.length) {
             return createNotification({
                 type: 'error',
-                text: c('Error').t`Invalid public key file`
+                text: c('Error').t`Invalid public key file`,
             });
         }
         const pinnedKeys = [...model.publicKeys.pinnedKeys];
@@ -58,7 +58,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                     // do not allow to upload private keys
                     createNotification({
                         type: 'error',
-                        text: c('Error').t`Invalid public key file`
+                        text: c('Error').t`Invalid public key file`,
                     });
                     return;
                 }
@@ -83,7 +83,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
             publicKeys: { ...model.publicKeys, pinnedKeys },
             trustedFingerprints,
             expiredFingerprints,
-            revokedFingerprints
+            revokedFingerprints,
         });
     };
 
@@ -134,7 +134,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                                 setModel({
                                     ...model,
                                     encrypt: target.checked,
-                                    sign: target.checked ? true : model.sign
+                                    sign: target.checked ? true : model.sign,
                                 })
                             }
                         />
@@ -160,7 +160,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                                 setModel({
                                     ...model,
                                     sign: target.checked,
-                                    mimeType: MIME_TYPES_MORE.AUTOMATIC
+                                    mimeType: MIME_TYPES_MORE.AUTOMATIC,
                                 })
                             }
                         />

@@ -14,7 +14,7 @@ import {
     useLoading,
     useEventManager,
     useNotifications,
-    useConfig
+    useConfig,
 } from 'react-components';
 
 import RecoveryEmail from './RecoveryEmail';

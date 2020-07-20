@@ -16,7 +16,7 @@ import {
     useEventManager,
     useAuthentication,
     useLoading,
-    useNotifications
+    useNotifications,
 } from '../../index';
 import { GIGA } from 'proton-shared/lib/constants';
 import { range } from 'proton-shared/lib/helpers/array';
@@ -33,7 +33,7 @@ enum STEPS {
     KEYS,
     PASSWORD,
     STORAGE,
-    VPN
+    VPN,
 }
 
 interface Props {
@@ -59,7 +59,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
         password: '',
         confirm: '',
         storage: 5 * GIGA,
-        vpn: 3
+        vpn: 3,
     });
 
     const handleChange = (key: string) => {
@@ -87,7 +87,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                 async onSubmit() {
                     await api(updateOrganizationName(model.name));
                     setStep(STEPS.KEYS);
-                }
+                },
             };
         }
 
@@ -103,7 +103,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                 ),
                 async onSubmit() {
                     setStep(STEPS.PASSWORD);
-                }
+                },
             };
         }
 
@@ -156,11 +156,11 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                     const {
                         privateKeyArmored,
                         backupKeySalt,
-                        backupArmoredPrivateKey
+                        backupArmoredPrivateKey,
                     } = await generateOrganizationKeys({
                         keyPassword: authentication.getPassword(),
                         backupPassword: model.password,
-                        encryptionConfig: ENCRYPTION_CONFIGS[encryptionType]
+                        encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
                     });
 
                     await api(
@@ -168,12 +168,12 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                             PrivateKey: privateKeyArmored,
                             BackupPrivateKey: backupArmoredPrivateKey,
                             BackupKeySalt: backupKeySalt,
-                            Tokens: []
+                            Tokens: [],
                         })
                     );
 
                     setStep(STEPS.STORAGE);
-                }
+                },
             };
         }
 
@@ -206,7 +206,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                     await call();
                     createNotification({ text: c('Success').t`Organization activated` });
                     onClose();
-                }
+                },
             };
         }
 
@@ -235,7 +235,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
 
                     createNotification({ text: c('Success').t`Organization activated` });
                     onClose();
-                }
+                },
             };
         }
 

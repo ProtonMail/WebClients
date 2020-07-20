@@ -25,7 +25,7 @@ const ImportKeysList = ({ keys }: Props) => {
                     <span key={0} className="mw100 inbl ellipsis">
                         {fingerprint}
                     </span>,
-                    keyStatus
+                    keyStatus,
                 ]}
             />
         );

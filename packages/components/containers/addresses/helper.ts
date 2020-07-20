@@ -18,7 +18,7 @@ export const getStatus = (address: Address, i: number) => {
         isActive,
         isDisabled,
         isOrphan,
-        isMissingKeys
+        isMissingKeys,
     };
 };
 
@@ -26,7 +26,7 @@ export const getPermissions = ({
     member,
     address: { Status, HasKeys, Type, Order },
     user: { isAdmin },
-    organizationKey
+    organizationKey,
 }: {
     member?: Member;
     address: Address;
@@ -45,6 +45,6 @@ export const getPermissions = ({
         canDisable: Status === ADDRESS_STATUS.STATUS_ENABLED && isAdmin && !isSpecialAddress && !isPrimaryAddress,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
         canDelete: Type === TYPE_CUSTOM_DOMAIN && isAdmin,
-        canEdit: isSelf
+        canEdit: isSelf,
     };
 };

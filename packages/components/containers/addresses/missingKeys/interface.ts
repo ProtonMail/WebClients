@@ -4,7 +4,7 @@ export enum Status {
     QUEUED,
     DONE,
     FAILURE,
-    LOADING
+    LOADING,
 }
 
 export interface AddressWithStatus extends Address {

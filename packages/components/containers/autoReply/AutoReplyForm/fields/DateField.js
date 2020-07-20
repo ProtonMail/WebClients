@@ -31,7 +31,7 @@ DateField.propTypes = {
     value: PropTypes.instanceOf(Date).isRequired,
     min: PropTypes.instanceOf(Date),
     max: PropTypes.instanceOf(Date),
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default DateField;

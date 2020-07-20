@@ -27,7 +27,7 @@ const useDomainsAddresses = (domains) => {
         return domains.reduce((acc, { ID }, i) => {
             return {
                 ...acc,
-                [ID]: domainAddresses[i]
+                [ID]: domainAddresses[i],
             };
         }, {});
     }, [domains]);

@@ -29,8 +29,8 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
         handleUpdateActions({
             labelAs: {
                 ...actions.labelAs,
-                ...payload
-            }
+                ...payload,
+            },
         });
     };
 
@@ -71,7 +71,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                             className="ml0-5 mr0-5 mb0-5 badgeLabel flex flex-row flex-items-center ellipsis"
                             role="listitem"
                             style={{
-                                color: label?.Color
+                                color: label?.Color,
                             }}
                             title={label?.Name}
                         >
@@ -116,7 +116,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                                 className="ml0-5 badgeLabel flex flex-row flex-items-center"
                                                 role="listitem"
                                                 style={{
-                                                    color: label.Color
+                                                    color: label.Color,
                                                 }}
                                                 title={label.Name}
                                             >

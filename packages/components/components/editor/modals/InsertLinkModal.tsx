@@ -18,13 +18,13 @@ import { LinkData } from '../squireConfig';
 const LABEL_DETAILS = {
     [LINK_TYPES.WEB]: c('Info').t`To what URL should this link go?`,
     [LINK_TYPES.EMAIL]: c('Info').t`To what email address should this link?`,
-    [LINK_TYPES.PHONE]: c('Info').t`To what phone number should this link?`
+    [LINK_TYPES.PHONE]: c('Info').t`To what phone number should this link?`,
 };
 
 const PLACEHOLDERS = {
     [LINK_TYPES.WEB]: c('Placeholder').t`Add a web address`,
     [LINK_TYPES.EMAIL]: c('Placeholder').t`Add an email address`,
-    [LINK_TYPES.PHONE]: c('Placeholder').t`Add a phone address`
+    [LINK_TYPES.PHONE]: c('Placeholder').t`Add a phone address`,
 };
 
 const getActualUrl = (url: string, type: LINK_TYPES) =>

@@ -13,7 +13,7 @@ import {
     TableHeader,
     TableBody,
     TableRow,
-    useOrganizationKey
+    useOrganizationKey,
 } from '../../index';
 import { c } from 'ttag';
 import { UserModel, Address, Organization, Member } from 'proton-shared/lib/interfaces';
@@ -92,7 +92,7 @@ const AddressesWithMembers = ({ match, user, organization }: Props) => {
                             c('Header for addresses table').t`Address`,
                             showUsername ? c('Header for addresses table').t`Username` : null,
                             c('Header for addresses table').t`Status`,
-                            c('Header for addresses table').t`Actions`
+                            c('Header for addresses table').t`Actions`,
                         ].filter(Boolean)}
                     />
                     <TableBody
@@ -113,7 +113,7 @@ const AddressesWithMembers = ({ match, user, organization }: Props) => {
                                             address={address}
                                             user={user}
                                             organizationKey={loadingOrganizationKey ? undefined : organizationKey}
-                                        />
+                                        />,
                                     ].filter(Boolean)}
                                 />
                             ))

@@ -17,7 +17,7 @@ SimpleFormModal.propTypes = {
     modalTitleID: PropTypes.string,
     children: PropTypes.node.isRequired,
     onSubmit: PropTypes.func,
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func.isRequired,
 };
 
 export default SimpleFormModal;

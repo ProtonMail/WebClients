@@ -38,7 +38,7 @@ const DowngradeModal = ({ user, ...rest }: Props) => {
                     hasMail &&
                         c('Info')
                             .t`You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.`,
-                    hasVpn && c('Info').t`Downgrading will terminate any connections to paid ProtonVPN servers.`
+                    hasVpn && c('Info').t`Downgrading will terminate any connections to paid ProtonVPN servers.`,
                 ]
                     .filter(Boolean)
                     .join(' ')}

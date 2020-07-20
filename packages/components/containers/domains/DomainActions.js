@@ -8,7 +8,7 @@ import {
     useModals,
     useApiWithoutResult,
     useNotifications,
-    useEventManager
+    useEventManager,
 } from 'react-components';
 import { deleteDomain } from 'proton-shared/lib/api/domains';
 
@@ -30,12 +30,12 @@ const DomainActions = ({ domain, domainAddresses }) => {
     const list = [
         {
             text: c('Action').t`Edit`,
-            onClick: () => createModal(<DomainModal domain={domain} domainAddresses={domainAddresses} />)
+            onClick: () => createModal(<DomainModal domain={domain} domainAddresses={domainAddresses} />),
         },
         Array.isArray(domainAddresses) &&
             domainAddresses.length && {
                 text: c('Action').t`Set catch-all`,
-                onClick: () => createModal(<CatchAllModal domain={domain} domainAddresses={domainAddresses} />)
+                onClick: () => createModal(<CatchAllModal domain={domain} domainAddresses={domainAddresses} />),
             },
         {
             text: c('Action').t`Delete`,
@@ -45,8 +45,8 @@ const DomainActions = ({ domain, domainAddresses }) => {
                         <Alert type="warning">{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
                     </ConfirmModal>
                 );
-            }
-        }
+            },
+        },
     ].filter(Boolean);
 
     return <DropdownActions className="pm-button--small" list={list} />;
@@ -54,7 +54,7 @@ const DomainActions = ({ domain, domainAddresses }) => {
 
 DomainActions.propTypes = {
     domain: PropTypes.object.isRequired,
-    domainAddresses: PropTypes.array
+    domainAddresses: PropTypes.array,
 };
 
 export default DomainActions;

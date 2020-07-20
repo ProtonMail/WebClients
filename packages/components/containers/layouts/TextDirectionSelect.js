@@ -9,7 +9,7 @@ const { ON, OFF } = RIGHT_TO_LEFT;
 const TextDirectionSelect = ({ rightToLeft, onChange, loading }) => {
     const options = [
         { text: c('Option').t`Left to Right`, value: OFF },
-        { text: c('Option').t`Right to Left`, value: ON }
+        { text: c('Option').t`Right to Left`, value: ON },
     ];
 
     const handleChange = ({ target }) => {
@@ -22,7 +22,7 @@ const TextDirectionSelect = ({ rightToLeft, onChange, loading }) => {
 TextDirectionSelect.propTypes = {
     rightToLeft: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
 };
 
 export default TextDirectionSelect;

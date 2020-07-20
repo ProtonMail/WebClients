@@ -147,7 +147,7 @@ const useSpamList = () => {
         create,
         edit,
         search,
-        move
+        move,
     };
 };
 

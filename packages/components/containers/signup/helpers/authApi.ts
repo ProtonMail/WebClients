@@ -15,9 +15,9 @@ const createAuthApi = async ({ api, username, password }: Args) => {
         api,
         credentials: {
             username,
-            password
+            password,
         },
-        config: auth({ Username: username })
+        config: auth({ Username: username }),
     });
 
     const { UID, AccessToken, RefreshToken } = authResponse;
@@ -29,7 +29,7 @@ const createAuthApi = async ({ api, username, password }: Args) => {
         getAuthResponse: () => authResponse,
         setCookies: () => {
             return api(setCookies({ UID, AccessToken, RefreshToken, State: getRandomString(24) }));
-        }
+        },
     };
 };
 

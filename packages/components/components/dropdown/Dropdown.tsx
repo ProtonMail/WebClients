@@ -60,7 +60,7 @@ const Dropdown = ({
         availablePlacements,
         originalPosition,
         offset,
-        scrollContainerClass: 'main'
+        scrollContainerClass: 'main',
     });
 
     const handleClickContent = () => {
@@ -114,7 +114,7 @@ const Dropdown = ({
         `dropDown--${placement}`,
         isClosing && `is-dropdownOut`,
         noCaret && 'dropDown--noCaret',
-        className
+        className,
     ]);
 
     if (isClosed) {
@@ -123,13 +123,13 @@ const Dropdown = ({
 
     const varPosition = {
         '--top': position.top,
-        '--left': position.left
+        '--left': position.left,
     };
 
     const varSize = contentRect
         ? {
               '--width': '' + contentRect.width,
-              '--height': '' + contentRect.height
+              '--height': '' + contentRect.height,
           }
         : {};
 

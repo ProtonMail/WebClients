@@ -26,7 +26,7 @@ import './ContactListModal.scss';
 const convertContactToRecipient = ({ Name, ContactID, Email }: ContactEmail) => ({
     Name,
     ContactID,
-    Address: Email
+    Address: Email,
 });
 
 interface Props {
@@ -90,7 +90,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
     const handleCheck = (e: ChangeEvent<HTMLInputElement>, checkedID: string) => {
         const {
             target,
-            nativeEvent
+            nativeEvent,
         }: {
             target: EventTarget & HTMLInputElement;
             nativeEvent: Event & { shiftKey?: boolean };

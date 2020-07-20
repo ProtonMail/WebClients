@@ -4,7 +4,7 @@ import { Icon } from 'react-components';
 
 const PRIVATE = {
     0: <Icon name="off" />,
-    1: <Icon name="on" />
+    1: <Icon name="on" />,
 };
 
 const MemberPrivate = ({ member }) => {
@@ -12,7 +12,7 @@ const MemberPrivate = ({ member }) => {
 };
 
 MemberPrivate.propTypes = {
-    member: PropTypes.object.isRequired
+    member: PropTypes.object.isRequired,
 };
 
 export default MemberPrivate;

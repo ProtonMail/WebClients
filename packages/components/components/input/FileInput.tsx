@@ -26,7 +26,7 @@ const FileInput = forwardRef<FileInputHandle, Props>(
         useImperativeHandle(ref, () => ({
             click: () => {
                 inputRef.current?.click();
-            }
+            },
         }));
 
         return (

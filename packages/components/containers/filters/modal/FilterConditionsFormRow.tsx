@@ -27,7 +27,7 @@ const FilterConditionsRow = ({
     condition,
     handleDelete,
     handleUpdateCondition,
-    displayDelete
+    displayDelete,
 }: Props) => {
     const typeOptions = TYPES.map(({ label: text, value }, i) => {
         const option: OptionProps = { text, value };
@@ -38,7 +38,7 @@ const FilterConditionsRow = ({
     });
     const ConditionComparatorOptions = COMPARATORS.map(({ label: text, value }) => ({
         text,
-        value
+        value,
     }));
     const [isOpen, setIsOpen] = useState(condition.isOpen);
     const [tokens, setTokens] = useState<string[]>(condition.values || []);
@@ -77,14 +77,14 @@ const FilterConditionsRow = ({
     useEffect(() => {
         handleUpdateCondition(conditionIndex, {
             ...condition,
-            values: tokens
+            values: tokens,
         });
     }, [tokens]);
 
     useEffect(() => {
         handleUpdateCondition(conditionIndex, {
             ...condition,
-            isOpen
+            isOpen,
         });
     }, [isOpen]);
 
@@ -97,7 +97,7 @@ const FilterConditionsRow = ({
         const toggleAttachment = () => {
             handleUpdateCondition(conditionIndex, {
                 ...condition,
-                comparator: withAttachment ? ConditionComparator.DOES_NOT_CONTAIN : ConditionComparator.CONTAINS
+                comparator: withAttachment ? ConditionComparator.DOES_NOT_CONTAIN : ConditionComparator.CONTAINS,
             });
         };
 
@@ -250,7 +250,7 @@ const FilterConditionsRow = ({
                                     onChange={(e: ChangeEvent<HTMLSelectElement>) => {
                                         handleUpdateCondition(conditionIndex, {
                                             ...condition,
-                                            type: e.target.value as ConditionType
+                                            type: e.target.value as ConditionType,
                                         });
                                     }}
                                 />
@@ -266,7 +266,7 @@ const FilterConditionsRow = ({
                                             onChange={(e: ChangeEvent<HTMLSelectElement>) => {
                                                 handleUpdateCondition(conditionIndex, {
                                                     ...condition,
-                                                    comparator: e.target.value as ConditionComparator
+                                                    comparator: e.target.value as ConditionComparator,
                                                 });
                                             }}
                                         />

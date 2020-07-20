@@ -11,7 +11,7 @@ import {
     useNotifications,
     useEventManager,
     useOrganization,
-    useLoading
+    useLoading,
 } from 'react-components';
 import { updateName, updateQuota, updateVPN } from 'proton-shared/lib/api/members';
 import { GIGA } from 'proton-shared/lib/constants';
@@ -94,7 +94,7 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
 
 EditMemberModal.propTypes = {
     onClose: PropTypes.func,
-    member: PropTypes.object.isRequired
+    member: PropTypes.object.isRequired,
 };
 
 export default EditMemberModal;

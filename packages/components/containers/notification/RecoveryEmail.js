@@ -20,7 +20,7 @@ const RecoveryEmail = ({ email, onClick }) => {
 
 RecoveryEmail.propTypes = {
     email: PropTypes.string,
-    onClick: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired,
 };
 
 export default RecoveryEmail;

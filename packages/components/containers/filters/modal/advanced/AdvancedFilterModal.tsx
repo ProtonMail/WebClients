@@ -13,7 +13,7 @@ import {
     useEventManager,
     useApiWithoutResult,
     ConfirmModal,
-    Alert
+    Alert,
 } from '../../../../index';
 import { FILTER_VERSION } from 'proton-shared/lib/filters/constants';
 import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from 'proton-shared/lib/filters/interfaces';
@@ -55,7 +55,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         step: StepSieve.NAME,
         sieve: filter?.Sieve || sieveTemplate || '',
         name: filter?.Name || '',
-        issues: []
+        issues: [],
     };
 
     const [model, setModel] = useState<AdvancedSimpleFilterModalModel>(initialModel);
@@ -72,7 +72,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                 ? model.issues.length
                     ? c('Error').t`Invalid sieve code`
                     : ''
-                : c('Error').t`This field is required`
+                : c('Error').t`This field is required`,
         };
     }, [model.name, model.sieve, model.issues]);
 
@@ -83,7 +83,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         try {
             const { Filter } = await reqCreate.request(filter);
             createNotification({
-                text: c('Notification').t`${Filter.Name} created`
+                text: c('Notification').t`${Filter.Name} created`,
             });
         } finally {
             // Some failed request will add the filter but in disabled mode
@@ -97,7 +97,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         const { Filter } = await reqUpdate.request(filter.ID, filter);
         call();
         createNotification({
-            text: c('Filter notification').t`Filter ${Filter.Name} updated`
+            text: c('Filter notification').t`Filter ${Filter.Name} updated`,
         });
         onClose();
     };
@@ -129,7 +129,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         const { Issues = [] } = await api(checkSieveFilter({ Version: FILTER_VERSION, Sieve: sieve }));
         setModel({
             ...model,
-            issues: Issues.length ? Issues : []
+            issues: Issues.length ? Issues : [],
         });
     };
 

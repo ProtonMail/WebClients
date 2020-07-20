@@ -15,7 +15,7 @@ import {
     Row,
     Label,
     Field,
-    PasswordInput
+    PasswordInput,
 } from '../../index';
 import { OpenPGPKey } from 'pmcrypto';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
@@ -61,11 +61,11 @@ const ChangeOrganizationKeysModal = ({
             privateKey,
             privateKeyArmored,
             backupKeySalt,
-            backupArmoredPrivateKey
+            backupArmoredPrivateKey,
         } = await generateOrganizationKeys({
             keyPassword: authentication.getPassword(),
             backupPassword: newPassword,
-            encryptionConfig: ENCRYPTION_CONFIGS[encryptionType]
+            encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
         });
 
         // Check this case for safety.
@@ -83,14 +83,14 @@ const ChangeOrganizationKeysModal = ({
             nonPrivateMembers,
             nonPrivateMembersAddresses,
             oldOrganizationKey: organizationKey,
-            newOrganizationKey: privateKey
+            newOrganizationKey: privateKey,
         });
 
         const apiConfig = updateOrganizationKeys({
             PrivateKey: privateKeyArmored,
             BackupPrivateKey: backupArmoredPrivateKey,
             BackupKeySalt: backupKeySalt,
-            Tokens: tokens
+            Tokens: tokens,
         });
 
         await new Promise((resolve, reject) => {
@@ -115,7 +115,7 @@ const ChangeOrganizationKeysModal = ({
                 ),
                 onSubmit() {
                     next();
-                }
+                },
             };
         }
 
@@ -172,7 +172,7 @@ const ChangeOrganizationKeysModal = ({
                 ),
                 onSubmit() {
                     withLoading(handleSubmit());
-                }
+                },
             };
         }
 

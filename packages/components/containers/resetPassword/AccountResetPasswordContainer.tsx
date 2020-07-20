@@ -34,7 +34,7 @@ const AccountResetPasswordContainer = ({ onLogin, history, Layout }: Props) => {
         setPassword,
         setConfirmPassword,
         setToken,
-        setDanger
+        setDanger,
     } = useResetPassword({ onLogin });
 
     const { createModal } = useModals();

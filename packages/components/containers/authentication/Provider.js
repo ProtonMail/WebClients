@@ -9,7 +9,7 @@ const AuthenticationProvider = ({ store, children }) => {
 
 AuthenticationProvider.propTypes = {
     children: PropTypes.node.isRequired,
-    store: PropTypes.object.isRequired
+    store: PropTypes.object.isRequired,
 };
 
 export default AuthenticationProvider;

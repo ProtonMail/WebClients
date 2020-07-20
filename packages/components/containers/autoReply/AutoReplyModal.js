@@ -51,7 +51,7 @@ const AutoReplyModal = ({ onClose, autoresponder, ...rest }) => {
                     [AutoReplyDuration.DAILY]: <AutoReplyFormDaily model={model} updateModel={updateModel} />,
                     [AutoReplyDuration.MONTHLY]: <AutoReplyFormMonthly model={model} updateModel={updateModel} />,
                     [AutoReplyDuration.WEEKLY]: <AutoReplyFormWeekly model={model} updateModel={updateModel} />,
-                    [AutoReplyDuration.PERMANENT]: <AutoReplyFormPermanent model={model} updateModel={updateModel} />
+                    [AutoReplyDuration.PERMANENT]: <AutoReplyFormPermanent model={model} updateModel={updateModel} />,
                 }[model.duration]
             }
             <SimpleSquireEditor
@@ -66,7 +66,7 @@ const AutoReplyModal = ({ onClose, autoresponder, ...rest }) => {
 
 AutoReplyModal.propTypes = {
     onClose: PropTypes.func,
-    autoresponder: PropTypes.object
+    autoresponder: PropTypes.object,
 };
 
 export default AutoReplyModal;

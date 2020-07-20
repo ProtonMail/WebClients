@@ -22,7 +22,7 @@ const getSignupErrors = (model: SignupModel, usernameError: string) => {
                 : c('Signup error').t`Email address invalid`
             : c('Signup error').t`This field is required`,
         recoveryPhone: model.recoveryPhone ? '' : c('Signup error').t`This field is required`,
-        verificationCode: model.verificationCode ? '' : c('Signup error').t`This field is required`
+        verificationCode: model.verificationCode ? '' : c('Signup error').t`This field is required`,
     };
 };
 

@@ -8,7 +8,7 @@ import {
     Alert,
     useLoading,
     useApi,
-    useEventManager
+    useEventManager,
 } from 'react-components';
 import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
 

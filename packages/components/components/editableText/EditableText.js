@@ -57,7 +57,7 @@ EditableText.propTypes = {
     readOnly: PropTypes.bool,
     children: PropTypes.func,
     icon: PropTypes.string,
-    small: PropTypes.bool
+    small: PropTypes.bool,
 };
 
 export default EditableText;

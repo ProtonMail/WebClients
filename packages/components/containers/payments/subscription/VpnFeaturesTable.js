@@ -144,7 +144,7 @@ const VpnFeaturesTable = ({ cycle, currency }) => {
 
 VpnFeaturesTable.propTypes = {
     cycle: PropTypes.number,
-    currency: PropTypes.string
+    currency: PropTypes.string,
 };
 
 export default VpnFeaturesTable;

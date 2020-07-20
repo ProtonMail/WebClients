@@ -35,18 +35,18 @@ const compats = [
     {
         name: 'Cookies',
         valid: isSSR || hasCookies(),
-        text: 'Please enable cookies in your browser.'
+        text: 'Please enable cookies in your browser.',
     },
     {
         name: 'Storage',
         valid: isSSR || hasSessionStorage(),
-        text: 'Please enable sessionStorage in your browser.'
+        text: 'Please enable sessionStorage in your browser.',
     },
     {
         name: 'PRNG',
         valid: isSSR || isGoodPrngAvailable(),
-        text: 'Please update to a modern browser with support for PRNG.'
-    }
+        text: 'Please update to a modern browser with support for PRNG.',
+    },
 ];
 
 const compat = compats.every(({ valid }) => valid);
@@ -107,7 +107,7 @@ const CompatibilityCheck = ({ children }) => {
 };
 
 CompatibilityCheck.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
 };
 
 export default CompatibilityCheck;

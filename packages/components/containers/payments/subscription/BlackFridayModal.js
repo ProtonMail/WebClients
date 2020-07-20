@@ -9,7 +9,7 @@ import {
     CurrencySelector,
     useLoading,
     useApi,
-    Price
+    Price,
 } from 'react-components';
 import { checkSubscription } from 'proton-shared/lib/api/payments';
 import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, BLACK_FRIDAY, SECOND } from 'proton-shared/lib/constants';
@@ -22,7 +22,7 @@ const EVERY_SECOND = SECOND;
 const NOTICES = {
     1: '*',
     2: '**',
-    3: '***'
+    3: '***',
 };
 
 const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
@@ -35,14 +35,14 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
     const DEAL_TITLE = {
         [MONTHLY]: c('Title').t`1 month deal`,
         [YEARLY]: c('Title').t`1 year deal`,
-        [TWO_YEARS]: c('Title').t`2 year deal`
+        [TWO_YEARS]: c('Title').t`2 year deal`,
     };
 
     const BILLED_DESCRIPTION = ({ cycle, amount, notice }) =>
         ({
             [MONTHLY]: c('Title').jt`Billed as ${amount} for 1 month ${NOTICES[notice]}`,
             [YEARLY]: c('Title').jt`Billed as ${amount} for 1 year ${NOTICES[notice]}`,
-            [TWO_YEARS]: c('Title').jt`Billed as ${amount} for 2 years ${NOTICES[notice]}`
+            [TWO_YEARS]: c('Title').jt`Billed as ${amount} for 2 years ${NOTICES[notice]}`,
         }[cycle]);
 
     const AFTER_INFO = ({ amount, notice }) =>
@@ -52,7 +52,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
             2: c('Title')
                 .jt`${NOTICES[notice]} Renews after 2 years at a discounted 2-year price of ${amount} every 2 years (33% discount).`,
             3: c('Title')
-                .jt`${NOTICES[notice]} Renews after 2 years at a discounted 2-year & bundle price of ${amount} every 2 years (47% discount).`
+                .jt`${NOTICES[notice]} Renews after 2 years at a discounted 2-year & bundle price of ${amount} every 2 years (47% discount).`,
         }[notice]);
 
     const getBundlePrices = async () => {
@@ -64,23 +64,23 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
                             PlanIDs: planIDs,
                             CouponCode: couponCode,
                             Currency: currency,
-                            Cycle: cycle
+                            Cycle: cycle,
                         })
                     ),
                     api(
                         checkSubscription({
                             PlanIDs: planIDs,
                             Currency: currency,
-                            Cycle: cycle
+                            Cycle: cycle,
                         })
                     ),
                     api(
                         checkSubscription({
                             PlanIDs: planIDs,
                             Currency: currency,
-                            Cycle: MONTHLY
+                            Cycle: MONTHLY,
                         })
-                    )
+                    ),
                 ]);
             })
         );
@@ -92,7 +92,8 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
                     withoutCoupon: withoutCoupon.Amount + withoutCoupon.CouponDiscount, // BUNDLE discount can be applied
                     withoutCouponMonthly: withoutCouponMonthly.Amount,
                     save:
-                        withoutCouponMonthly.Amount * withCoupon.Cycle - (withCoupon.Amount + withCoupon.CouponDiscount)
+                        withoutCouponMonthly.Amount * withCoupon.Cycle -
+                        (withCoupon.Amount + withCoupon.CouponDiscount),
                 };
                 return acc;
             }, {})
@@ -180,7 +181,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }) => {
                                         <Button
                                             className={classnames([
                                                 'mb1',
-                                                popular ? 'pm-button--primary' : 'pm-button--primaryborder'
+                                                popular ? 'pm-button--primary' : 'pm-button--primaryborder',
                                             ])}
                                             onClick={() => {
                                                 rest.onClose();
@@ -233,9 +234,9 @@ BlackFridayModal.propTypes = {
             cycle: PropTypes.oneOf([MONTHLY, YEARLY, TWO_YEARS]).isRequired,
             couponCode: PropTypes.string,
             percentage: PropTypes.number,
-            popular: PropTypes.bool
+            popular: PropTypes.bool,
         })
-    )
+    ),
 };
 
 export default BlackFridayModal;

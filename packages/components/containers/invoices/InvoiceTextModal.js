@@ -10,7 +10,7 @@ import {
     useApiWithoutResult,
     useUserSettings,
     useEventManager,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { updateInvoiceText } from 'proton-shared/lib/api/settings';
 
@@ -59,7 +59,7 @@ const InvoiceTextModal = ({ onClose, ...rest }) => {
 };
 
 InvoiceTextModal.propTypes = {
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default InvoiceTextModal;

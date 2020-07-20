@@ -20,7 +20,7 @@ InputField.propTypes = {
     id: PropTypes.string,
     value: PropTypes.string,
     placeholder: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
 };
 
 const InputModal = ({
@@ -71,7 +71,7 @@ InputModal.propTypes = {
     cancel: PropTypes.string,
     placeholder: PropTypes.string,
     submit: PropTypes.string,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
 };
 
 export default InputModal;

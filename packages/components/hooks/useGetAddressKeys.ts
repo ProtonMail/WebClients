@@ -22,7 +22,7 @@ export const useGetAddressKeysRaw = (): ((id: string) => Promise<CachedKey[]>) =
             const [{ OrganizationPrivateKey }, Addresses, userKeys] = await Promise.all([
                 getUser(),
                 getAddresses(),
-                getUserKeys()
+                getUserKeys(),
             ]);
 
             const Address = Addresses.find(({ ID: AddressID }) => AddressID === addressID);
@@ -48,19 +48,19 @@ export const useGetAddressKeysRaw = (): ((id: string) => Promise<CachedKey[]>) =
                               Signature,
                               organizationKey,
                               privateKeys,
-                              publicKeys
+                              publicKeys,
                           })
                         : mailboxPassword;
                     const privateKey = await decryptPrivateKey(PrivateKey, keyPassword);
                     return {
                         Key,
                         privateKey,
-                        publicKey: privateKey.toPublic()
+                        publicKey: privateKey.toPublic(),
                     };
                 } catch (e) {
                     return {
                         Key,
-                        error: e
+                        error: e,
                     };
                 }
             };

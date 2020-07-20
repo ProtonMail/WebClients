@@ -14,7 +14,7 @@ import {
     useApi,
     useLoading,
     useModals,
-    useNotifications
+    useNotifications,
 } from '../../../index';
 
 import RequestNewCodeModal from './RequestNewCodeModal';
@@ -22,12 +22,12 @@ import InvalidVerificationCodeModal from './InvalidVerificationCodeModal';
 
 const STEPS = {
     ENTER_DESTINATION: 0,
-    VERIFY_CODE: 1
+    VERIFY_CODE: 1,
 };
 
 const METHODS = {
     EMAIL: 'email',
-    SMS: 'sms'
+    SMS: 'sms',
 } as const;
 
 interface Props {
@@ -171,11 +171,7 @@ const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props)
         };
         return (
             <>
-                {(isEmailMethod ? (
-                    email
-                ) : (
-                    phone
-                )) ? (
+                {(isEmailMethod ? email : phone) ? (
                     <Alert>
                         <div>{c('Info').jt`Enter the verification code that was sent to ${destinationText}.`}</div>
                         {isEmailMethod ? (

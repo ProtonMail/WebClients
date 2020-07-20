@@ -11,7 +11,7 @@ import {
     Label,
     Challenge,
     useLoading,
-    FullLoader
+    FullLoader,
 } from '../../index';
 import { USERNAME_PLACEHOLDER } from 'proton-shared/lib/constants';
 

@@ -13,7 +13,7 @@ const {
     STATUS_CHARGEABLE,
     STATUS_FAILED,
     STATUS_CONSUMED,
-    STATUS_NOT_SUPPORTED
+    STATUS_NOT_SUPPORTED,
 } = PAYMENT_TOKEN_STATUS;
 
 const { TOKEN, BITCOIN, CASH } = PAYMENT_METHOD_TYPES;
@@ -28,7 +28,7 @@ const pull = async ({
     timer = 0,
     Token,
     api,
-    signal
+    signal,
 }: {
     timer?: number;
     Token: string;
@@ -77,7 +77,7 @@ export const process = ({
     api,
     ApprovalURL,
     ReturnHost,
-    signal
+    signal,
 }: {
     Token: string;
     api: Api;
@@ -134,9 +134,7 @@ export const process = ({
                 return reject();
             }
 
-            pull({ Token, api, signal })
-                .then(resolve)
-                .catch(reject);
+            pull({ Token, api, signal }).then(resolve).catch(reject);
         };
 
         const abort = () => {
@@ -162,9 +160,9 @@ export const toParams = (params: Params, Token: string, type?: string) => {
         Payment: {
             Type: TOKEN,
             Details: {
-                Token
-            }
-        }
+                Token,
+            },
+        },
     };
 };
 
@@ -177,7 +175,7 @@ export const handlePaymentToken = async ({
     params,
     api,
     createModal,
-    mode
+    mode,
 }: {
     createModal: (modal: ReactNode) => void;
     mode?: string;
@@ -200,7 +198,7 @@ export const handlePaymentToken = async ({
             Payment,
             Amount,
             Currency,
-            PaymentMethodID
+            PaymentMethodID,
         })
     );
 
@@ -225,9 +223,9 @@ export const handlePaymentToken = async ({
                             api,
                             ReturnHost,
                             ApprovalURL,
-                            signal: abort.signal
+                            signal: abort.signal,
                         }),
-                        abort
+                        abort,
                     };
                 }}
             />

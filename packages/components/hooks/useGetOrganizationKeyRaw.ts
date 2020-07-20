@@ -19,7 +19,7 @@ export const useGetOrganizationKeyRaw = (): (() => Promise<OrganizationKey>) => 
         const Key = await api<{ PublicKey: string; PrivateKey: string }>(getOrganizationKeys());
         if (!Key.PrivateKey) {
             return {
-                Key
+                Key,
             };
         }
         try {
@@ -27,12 +27,12 @@ export const useGetOrganizationKeyRaw = (): (() => Promise<OrganizationKey>) => 
             const privateKey = await decryptPrivateKey(Key.PrivateKey, mailboxPassword);
             return {
                 Key,
-                privateKey
+                privateKey,
             };
         } catch (e) {
             return {
                 Key,
-                error: e
+                error: e,
             };
         }
     }, []);

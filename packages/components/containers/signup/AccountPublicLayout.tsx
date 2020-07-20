@@ -44,7 +44,7 @@ const AccountPublicLayout = ({ children, title, aside, larger, left, center, rig
                         <div
                             className={classnames([
                                 'center bg-white-dm color-global-grey-dm mt2 mb2 onmobile-mt0 onmobile-mb0  onmobile-pb1 w100 mw100 bordered-container flex-item-noshrink flex flex-nowrap signup-container',
-                                larger ? '' : aside ? 'mw50e' : 'mw40e'
+                                larger ? '' : aside ? 'mw50e' : 'mw40e',
                             ])}
                         >
                             <main className="p2 onmobile-p1 flex-item-fluid">

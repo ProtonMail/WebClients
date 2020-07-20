@@ -13,7 +13,7 @@ const ExpInput = ({ month, year, onChange, ...rest }) => {
         if (target.value.includes('/')) {
             onChange({
                 month: isValidMonth(newMonth) ? newMonth : month,
-                year: isValidYear(newYear) ? newYear : year
+                year: isValidYear(newYear) ? newYear : year,
             });
         } else if (newMonth.length > 2) {
             // User removes the '/'
@@ -23,13 +23,13 @@ const ExpInput = ({ month, year, onChange, ...rest }) => {
             const [first = ''] = newMonth;
             onChange({
                 year: '',
-                month: isValidMonth(first) ? first : month
+                month: isValidMonth(first) ? first : month,
             });
         } else {
             const [first = '', second = ''] = newMonth;
             onChange({
                 year: '',
-                month: isValidMonth(`${first}${second}`) ? `${first}${second}` : month
+                month: isValidMonth(`${first}${second}`) ? `${first}${second}` : month,
             });
         }
     };
@@ -49,7 +49,7 @@ const ExpInput = ({ month, year, onChange, ...rest }) => {
 ExpInput.propTypes = {
     month: PropTypes.string,
     year: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
 };
 
 export default ExpInput;

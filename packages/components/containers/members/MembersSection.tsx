@@ -17,7 +17,7 @@ import {
     useDomains,
     useNotifications,
     useModals,
-    useOrganizationKey
+    useOrganizationKey,
 } from '../../index';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { DOMAIN_STATE } from 'proton-shared/lib/constants';
@@ -130,7 +130,7 @@ const MembersSection = () => {
                         <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
                     </span>
                 </>
-            )
+            ),
         },
         {
             node: (
@@ -139,7 +139,7 @@ const MembersSection = () => {
                     <Info url="https://protonmail.com/support/knowledge-base/private-members/" />
                 </>
             ),
-            className: 'notablet nomobile'
+            className: 'notablet nomobile',
         },
         {
             node: (
@@ -149,7 +149,7 @@ const MembersSection = () => {
                         title={c('Title header for members table').t`Addresses`}
                     >{c('Title header for members table').t`Addresses`}</span>
                 </>
-            )
+            ),
         },
         {
             node: (
@@ -160,9 +160,9 @@ const MembersSection = () => {
                     >{c('Title header for members table').t`Features`}</span>
                 </>
             ),
-            className: 'nomobile'
+            className: 'nomobile',
         },
-        { node: c('Title').t`Action` }
+        { node: c('Title').t`Action` },
     ].map(({ node, className = '' }, i) => {
         return (
             <TableCell key={i.toString()} className={className} type="header">
@@ -217,7 +217,7 @@ const MembersSection = () => {
                                         member={member}
                                         addresses={memberAddresses}
                                         organization={organization}
-                                    />
+                                    />,
                                 ]}
                                 className="ontablet-hideTd3 onmobile-hideTd5"
                             />

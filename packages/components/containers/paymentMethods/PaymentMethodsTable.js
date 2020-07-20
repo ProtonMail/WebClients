@@ -39,7 +39,7 @@ const PaymentMethodsTable = ({ methods, loading }) => {
                 cells={[
                     c('Title for payment methods table').t`Method`,
                     c('Title for payment methods table').t`Status`,
-                    c('Title for payment methods table').t`Actions`
+                    c('Title for payment methods table').t`Actions`,
                 ]}
             />
             <TableBody loading={loading} colSpan={5}>
@@ -55,7 +55,7 @@ const PaymentMethodsTable = ({ methods, loading }) => {
                                     index={index}
                                     methods={orderedMethods}
                                     method={method}
-                                />
+                                />,
                             ]}
                         />
                     );
@@ -67,7 +67,7 @@ const PaymentMethodsTable = ({ methods, loading }) => {
 
 PaymentMethodsTable.propTypes = {
     methods: PropTypes.array.isRequired,
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
 };
 
 export default PaymentMethodsTable;

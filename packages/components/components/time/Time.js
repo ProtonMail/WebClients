@@ -10,7 +10,7 @@ const Time = ({ children = 0, format = 'PP', options = { locale: dateLocale }, .
 Time.propTypes = {
     children: PropTypes.number.isRequired,
     format: PropTypes.string,
-    options: PropTypes.object
+    options: PropTypes.object,
 };
 
 export default Time;

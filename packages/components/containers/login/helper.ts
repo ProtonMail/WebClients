@@ -11,7 +11,7 @@ export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode }: AuthResponse)
     return {
         hasTotp: hasBit(Enabled, TWO_FA_FLAGS.TOTP),
         hasU2F: hasBit(Enabled, TWO_FA_FLAGS.U2F),
-        hasUnlock: PasswordMode === PASSWORD_MODE.TWO_PASSWORD
+        hasUnlock: PasswordMode === PASSWORD_MODE.TWO_PASSWORD,
     };
 };
 

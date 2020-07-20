@@ -25,20 +25,20 @@ export const reactivatePrivateKey = async ({
     privateKey,
     signingKey,
     encryptedPrivateKeyArmored,
-    Address
+    Address,
 }: ReactivatePrivateKeyArguments) => {
     const result = reactivateKeyAction({
         ID,
         keys: keyList,
         fingerprint: privateKey.getFingerprint(),
-        flags: Address ? getKeyFlagsAddress(Address, keyList) : getKeyFlagsUser()
+        flags: Address ? getKeyFlagsAddress(Address, keyList) : getKeyFlagsUser(),
     });
 
     await api(
         reactivateKeyRoute({
             ID,
             PrivateKey: encryptedPrivateKeyArmored,
-            SignedKeyList: Address ? await getSignedKeyList(result, signingKey) : undefined
+            SignedKeyList: Address ? await getSignedKeyList(result, signingKey) : undefined,
         })
     );
 
@@ -67,7 +67,7 @@ export const reactivateByUpload = async ({
     PrivateKey,
     uploadedPrivateKey,
     keyList,
-    email
+    email,
 }: ReactivateByUploadArguments) => {
     const fingerprint = uploadedPrivateKey.getFingerprint();
     const oldKeyContainer = findKeyByFingerprint(keyList, fingerprint);
@@ -85,12 +85,12 @@ export const reactivateByUpload = async ({
     const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
         email: oldUserId,
         passphrase: newPassword,
-        privateKey: uploadedPrivateKey
+        privateKey: uploadedPrivateKey,
     });
 
     return {
         privateKey: reformattedPrivateKey,
-        encryptedPrivateKeyArmored: privateKeyArmored
+        encryptedPrivateKeyArmored: privateKeyArmored,
     };
 };
 
@@ -106,14 +106,14 @@ export const reactivateByPassword = async ({
     keySalts,
     PrivateKey,
     oldPassword,
-    newPassword
+    newPassword,
 }: ReactivateByPasswordArguments) => {
     const { KeySalt } = keySalts.find(({ ID: keySaltID }) => ID === keySaltID) || {};
 
     const oldPrivateKey = await decryptPrivateKeyWithSalt({
         PrivateKey,
         keySalt: KeySalt,
-        password: oldPassword
+        password: oldPassword,
     }).catch(noop);
 
     if (!oldPrivateKey) {
@@ -125,6 +125,6 @@ export const reactivateByPassword = async ({
 
     return {
         privateKey,
-        encryptedPrivateKeyArmored
+        encryptedPrivateKeyArmored,
     };
 };

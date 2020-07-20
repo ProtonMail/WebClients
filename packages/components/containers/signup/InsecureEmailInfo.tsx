@@ -14,10 +14,7 @@ const InsecureEmailInfo = ({ email }: Props) => {
         return null;
     }
 
-    const [, domain = ''] = email
-        .trim()
-        .toLowerCase()
-        .split('@');
+    const [, domain = ''] = email.trim().toLowerCase().split('@');
 
     if (INSECURE_DOMAINS.includes(domain)) {
         return (

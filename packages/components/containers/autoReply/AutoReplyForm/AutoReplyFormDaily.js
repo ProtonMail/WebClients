@@ -33,7 +33,7 @@ const AutoReplyFormDaily = ({ model: { daysOfWeek, start, end, timezone }, updat
 
 AutoReplyFormDaily.propTypes = {
     model: modelShape,
-    updateModel: PropTypes.func
+    updateModel: PropTypes.func,
 };
 
 export default AutoReplyFormDaily;

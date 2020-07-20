@@ -19,7 +19,7 @@ const usePagination = <T>(initialList: T[] = [], initialPage = 1, limit = 10) =>
         list,
         onNext,
         onPrevious,
-        onSelect
+        onSelect,
     };
 };
 

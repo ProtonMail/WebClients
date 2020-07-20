@@ -14,7 +14,7 @@ const SessionAction = ({ session, onRevoke, currentUID }) => {
 SessionAction.propTypes = {
     session: PropTypes.object.isRequired,
     onRevoke: PropTypes.func.isRequired,
-    currentUID: PropTypes.string.isRequired
+    currentUID: PropTypes.string.isRequired,
 };
 
 export default SessionAction;

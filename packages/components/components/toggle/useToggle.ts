@@ -11,7 +11,7 @@ const useToggle = (initialState = false) => {
     return {
         state,
         toggle,
-        set: setState
+        set: setState,
     };
 };
 

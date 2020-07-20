@@ -26,7 +26,7 @@ const getImage = (type) => {
         'american-express': americanExpressSafekeySvg,
         discover: discoverProtectBuySvg,
         mastercard: mastercardSecurecodeSvg,
-        visa: verifiedByVisaSvg
+        visa: verifiedByVisaSvg,
     };
 
     return images[type] || treeDSecureSvg;
@@ -46,7 +46,7 @@ const PaymentVerificationImage = ({ payment = {}, type: paymentMethodType = PAYM
 
 PaymentVerificationImage.propTypes = {
     payment: PropTypes.object,
-    type: PropTypes.string
+    type: PropTypes.string,
 };
 
 export default PaymentVerificationImage;

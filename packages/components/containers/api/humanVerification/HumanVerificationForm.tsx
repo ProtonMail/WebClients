@@ -19,23 +19,23 @@ const HumanVerificationForm = ({ methods, token, onSubmit }: Props) => {
         methods.includes('captcha') && {
             method: 'captcha',
             title: c('Human verification method').t`CAPTCHA`,
-            content: <Captcha token={token} onSubmit={(token) => onSubmit(token, 'captcha')} />
+            content: <Captcha token={token} onSubmit={(token) => onSubmit(token, 'captcha')} />,
         },
         methods.includes('email') && {
             method: 'email',
             title: c('Human verification method').t`Email`,
-            content: <CodeVerification onSubmit={(token) => onSubmit(token, 'email')} method="email" />
+            content: <CodeVerification onSubmit={(token) => onSubmit(token, 'email')} method="email" />,
         },
         methods.includes('sms') && {
             method: 'sms',
             title: c('Human verification method').t`SMS`,
-            content: <CodeVerification onSubmit={(token) => onSubmit(token, 'sms')} method="sms" />
+            content: <CodeVerification onSubmit={(token) => onSubmit(token, 'sms')} method="sms" />,
         },
         methods.includes('invite') && {
             method: 'invite',
             title: c('Human verification method').t`Manual verification`,
-            content: <RequestInvite />
-        }
+            content: <RequestInvite />,
+        },
     ].filter(isTruthy);
 
     const [index, setIndex] = useState(0);

@@ -21,7 +21,7 @@
 }
 
 // Hide visionary plan for the second table in the subscription modal
-.subscription-modal .subscriptionCustomization-section:nth-child(2) [data-plan-name="visionary"] {
+.subscription-modal .subscriptionCustomization-section:nth-child(2) [data-plan-name='visionary'] {
     display: none;
 }
 
@@ -51,22 +51,19 @@
 }
 
 @include respond-to(1100) {
-   .cycle-currency-selectors.flex-nowrap {
+    .cycle-currency-selectors.flex-nowrap {
         flex-wrap: wrap;
         .pm-field {
             width: 100%;
             margin-right: 0;
-            margin-bottom: .25em;
+            margin-bottom: 0.25em;
         }
-   }
+    }
 }
 
-
 @include respond-to($breakpoint-small) {
-
     .subscription-modal .pm-label.payment-left,
     .subscription-modal .pm-field-container.payment-right {
         width: 100%;
     }
-
 }

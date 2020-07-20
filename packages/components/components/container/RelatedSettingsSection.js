@@ -29,7 +29,7 @@ const RelatedSettingsSection = ({ list = [{}] }) => {
 };
 
 RelatedSettingsSection.propTypes = {
-    list: PropTypes.array
+    list: PropTypes.array,
 };
 
 export default RelatedSettingsSection;

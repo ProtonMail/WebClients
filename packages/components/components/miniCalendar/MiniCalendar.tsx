@@ -61,12 +61,12 @@ const MiniCalendar = ({
         'September',
         'October',
         'November',
-        'December'
+        'December',
     ],
     numberOfDays = 7,
     numberOfWeeks = 6,
     displayWeekNumbers = false,
-    displayedOnDarkBackground = false
+    displayedOnDarkBackground = false,
 }: Props) => {
     const [temporaryDate, setTemporaryDate] = useState<Date | undefined>();
 

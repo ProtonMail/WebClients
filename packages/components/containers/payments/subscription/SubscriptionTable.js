@@ -12,7 +12,7 @@ const SubscriptionTable = ({
     selected = c('Info').t`Selected`,
     select = c('Action').t`Select`,
     disabled = false,
-    mode = 'radio'
+    mode = 'radio',
 }) => {
     return (
         <div className="mt2 subscriptionTable">
@@ -58,14 +58,20 @@ const SubscriptionTable = ({
                                     })}
                                 </ul>
                                 <footer className="subscriptionTable-footer aligncenter flex flex-column">
-                                    {mode === 'radio' ? (<Button
-                                        disabled={disabled || index === currentPlanIndex}
-                                        className={classnames([index !== currentPlanIndex && 'pm-button--primary'])}
-                                        onClick={() => onSelect(index)}
-                                    >
-                                        {index === currentPlanIndex ? selected : select}
-                                    </Button>) : null}
-                                    {mode === 'button' ? (<Button className="pm-button--primary" onClick={() => onSelect(index)}>{select}</Button>) : null}
+                                    {mode === 'radio' ? (
+                                        <Button
+                                            disabled={disabled || index === currentPlanIndex}
+                                            className={classnames([index !== currentPlanIndex && 'pm-button--primary'])}
+                                            onClick={() => onSelect(index)}
+                                        >
+                                            {index === currentPlanIndex ? selected : select}
+                                        </Button>
+                                    ) : null}
+                                    {mode === 'button' ? (
+                                        <Button className="pm-button--primary" onClick={() => onSelect(index)}>
+                                            {select}
+                                        </Button>
+                                    ) : null}
                                     {canCustomize ? (
                                         <LinkButton
                                             disabled={disabled}
@@ -96,9 +102,9 @@ SubscriptionTable.propTypes = {
             features: PropTypes.arrayOf(
                 PropTypes.shape({
                     icon: PropTypes.string.isRequired,
-                    content: PropTypes.node.isRequired
+                    content: PropTypes.node.isRequired,
                 })
-            ).isRequired
+            ).isRequired,
         })
     ),
     onSelect: PropTypes.func.isRequired,
@@ -106,7 +112,7 @@ SubscriptionTable.propTypes = {
     mostPopularIndex: PropTypes.number,
     selected: PropTypes.string,
     select: PropTypes.string,
-    mode: PropTypes.oneOf(['radio', 'button'])
+    mode: PropTypes.oneOf(['radio', 'button']),
 };
 
 export default SubscriptionTable;

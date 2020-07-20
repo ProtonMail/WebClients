@@ -19,7 +19,7 @@ TimeField.propTypes = {
     value: PropTypes.instanceOf(Date).isRequired,
     min: PropTypes.number,
     max: PropTypes.number,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default TimeField;

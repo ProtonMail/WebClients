@@ -8,7 +8,7 @@ import {
     OrderableTable,
     OrderableTableHeader,
     OrderableTableBody,
-    OrderableTableRow
+    OrderableTableRow,
 } from '../../index';
 import { move } from 'proton-shared/lib/helpers/array';
 import { orderAddress } from 'proton-shared/lib/api/addresses';
@@ -42,7 +42,7 @@ const AddressesUser = ({ user }: Props) => {
                 if (isDisabled && isDefault) {
                     createNotification({
                         type: 'error',
-                        text: c('Notification').t`A disabled address cannot be primary`
+                        text: c('Notification').t`A disabled address cannot be primary`,
                     });
                     setAddresses(addresses);
                     return;
@@ -72,7 +72,7 @@ const AddressesUser = ({ user }: Props) => {
                 cells={[
                     c('Header for addresses table').t`Address`,
                     c('Header for addresses table').t`Status`,
-                    c('Header for addresses table').t`Actions`
+                    c('Header for addresses table').t`Actions`,
                 ]}
             />
             <OrderableTableBody colSpan={3} loading={loadingAddresses}>
@@ -86,7 +86,7 @@ const AddressesUser = ({ user }: Props) => {
                                     {address.Email}
                                 </div>,
                                 <AddressStatus key={1} {...getStatus(address, i)} />,
-                                <AddressActions key={2} address={address} user={user} />
+                                <AddressActions key={2} address={address} user={user} />,
                             ]}
                         />
                     ))}

@@ -16,7 +16,7 @@ AmountButton.propTypes = {
     amount: PropTypes.number,
     onSelect: PropTypes.func.isRequired,
     currency: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
 };
 
 export default AmountButton;

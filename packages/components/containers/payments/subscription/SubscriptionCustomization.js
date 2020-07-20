@@ -15,7 +15,7 @@ import {
     MAX_SPACE_ADDON,
     MAX_MEMBER_ADDON,
     MAX_DOMAIN_PRO_ADDON,
-    MAX_DOMAIN_PLUS_ADDON
+    MAX_DOMAIN_PLUS_ADDON,
 } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
@@ -37,7 +37,7 @@ const TITLE = {
     [PLANS.VISIONARY]: 'Proton Visionary',
     [VPNFREE]: 'ProtonVPN Free',
     [PLANS.VPNBASIC]: 'ProtonVPN Basic',
-    [PLANS.VPNPLUS]: 'ProtonVPN Plus'
+    [PLANS.VPNPLUS]: 'ProtonVPN Plus',
 };
 
 const Description = ({ planName, setModel, model, plans, organization }) => {
@@ -55,8 +55,8 @@ const Description = ({ planName, setModel, model, plans, organization }) => {
                         plans,
                         planID: plusPlan.ID,
                         service: PLAN_SERVICES.MAIL,
-                        organization
-                    })
+                        organization,
+                    }),
                 })
             }
         >{c('Action').t`Upgrade to ProtonMail Plus`}</a>
@@ -72,8 +72,8 @@ const Description = ({ planName, setModel, model, plans, organization }) => {
                         plans,
                         planID: vpnPlusPlan.ID,
                         service: PLAN_SERVICES.VPN,
-                        organization
-                    })
+                        organization,
+                    }),
                 })
             }
         >{c('Link').t`Upgrade to ProtonVPN Plus`}</a>
@@ -90,7 +90,7 @@ const Description = ({ planName, setModel, model, plans, organization }) => {
         [PLANS.VPNBASIC]: c('Description plan')
             .jt`To get advanced security features and the highest speed, ${upgradeToVpnPlus}.`,
         [PLANS.VPNPLUS]: c('Description plan')
-            .t`You can customize the number of connections when combining ProtonVPN with ProtonMail Professional.`
+            .t`You can customize the number of connections when combining ProtonVPN with ProtonMail Professional.`,
     };
 
     const annualBilling = (
@@ -111,7 +111,7 @@ Description.propTypes = {
     plans: PropTypes.array.isRequired,
     planName: PropTypes.string.isRequired,
     model: PropTypes.object.isRequired,
-    setModel: PropTypes.func.isRequired
+    setModel: PropTypes.func.isRequired,
 };
 
 const SubscriptionCustomization = ({
@@ -121,7 +121,7 @@ const SubscriptionCustomization = ({
     model,
     setModel,
     expanded = false,
-    loading = false
+    loading = false,
 }) => {
     const { CLIENT_TYPE } = useConfig();
     const plansMap = toMap(plans, 'Name');
@@ -168,14 +168,14 @@ const SubscriptionCustomization = ({
         [PLANS.VISIONARY]: false,
         [VPNFREE]: false,
         [PLANS.VPNBASIC]: false,
-        [PLANS.VPNPLUS]: !!model.planIDs[professionalPlan.ID]
+        [PLANS.VPNPLUS]: !!model.planIDs[professionalPlan.ID],
     };
 
     const DESCRIPTIONS = {
         [PLANS.VPNPLUS]: c('Decription')
             .t`VPN connections can be allocated to users within your organization. Each device requires one connection.`,
         [PLANS.PROFESSIONAL]: c('Decription')
-            .t`Each additional user comes automatically with 5 GB storage space and 5 email addresses.`
+            .t`Each additional user comes automatically with 5 GB storage space and 5 email addresses.`,
     };
 
     const plusAddresses = (model.planIDs[addressAddon.ID] || 0) * addressAddon.MaxAddresses + plusPlan.MaxAddresses;
@@ -193,7 +193,7 @@ const SubscriptionCustomization = ({
             <SubscriptionFeatureRow key="user" icon="organization-users" feature={c('Feature').t`1 user`} />,
             <SubscriptionFeatureRow key="storage" icon="user-storage" feature={c('Feature').t`500 MB storage`} />,
             <SubscriptionFeatureRow key="address" icon="email-address" feature={c('Feature').t`1 email address`} />,
-            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`150 messages per day`} />
+            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`150 messages per day`} />,
         ],
         [PLANS.PLUS]: [
             <SubscriptionFeatureRow key="user" icon="organization-users" feature={c('Feature').t`1 user`} />,
@@ -219,7 +219,7 @@ const SubscriptionCustomization = ({
                     plusDomains
                 )}
             />,
-            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All plus features`} />
+            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All plus features`} />,
         ],
         [PLANS.PROFESSIONAL]: [
             <SubscriptionFeatureRow
@@ -257,7 +257,7 @@ const SubscriptionCustomization = ({
                     professionalDomains
                 )}
             />,
-            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All professional features`} />
+            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All professional features`} />,
         ],
         [PLANS.VISIONARY]: [
             <SubscriptionFeatureRow key="user" icon="organization-users" feature={c('Feature').t`6 users`} />,
@@ -265,7 +265,7 @@ const SubscriptionCustomization = ({
             <SubscriptionFeatureRow key="address" icon="email-address" feature={c('Feature').t`50 email addresses`} />,
             <SubscriptionFeatureRow key="domain" icon="domains" feature={c('Feature').t`10 custom domains`} />,
             <SubscriptionFeatureRow key="vpn" icon="vpn-connx" feature={c('Feature').t`10 VPN connections`} />,
-            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All Visionary features`} />
+            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All Visionary features`} />,
         ],
         [VPNFREE]: [
             <SubscriptionFeatureRow key="connection" icon="vpn-connx" feature={c('Feature').t`1 VPN connection`} />,
@@ -275,7 +275,7 @@ const SubscriptionCustomization = ({
                 feature={c('Feature').t`${vpnCountries.free.length} countries`}
             />,
             <SubscriptionFeatureRow key="speed" icon="speed-low" feature={c('Feature').t`Medium speed`} />,
-            <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`Unlimited bandwidth`} />
+            <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`Unlimited bandwidth`} />,
         ],
         [PLANS.VPNBASIC]: [
             <SubscriptionFeatureRow key="connection" icon="vpn-connx" feature={c('Feature').t`2 VPN connections`} />,
@@ -285,7 +285,7 @@ const SubscriptionCustomization = ({
                 feature={c('Feature').t`${vpnCountries.basic.length} countries`}
             />,
             <SubscriptionFeatureRow key="speed" icon="speed-medium" feature={c('Feature').t`High speed`} />,
-            <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`P2P/Bittorrent support`} />
+            <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`P2P/Bittorrent support`} />,
         ],
         [PLANS.VPNPLUS]: [
             <SubscriptionFeatureRow
@@ -304,8 +304,8 @@ const SubscriptionCustomization = ({
                 key="blocked-content"
                 icon="blocked-content"
                 feature={c('Feature').t`Access blocked content`}
-            />
-        ]
+            />,
+        ],
     };
 
     const ADDONS = {
@@ -361,7 +361,7 @@ const SubscriptionCustomization = ({
                 onChange={(quantity) =>
                     setModel({ ...model, planIDs: { ...model.planIDs, [domainAddon.ID]: quantity } })
                 }
-            />
+            />,
         ],
         [PLANS.PROFESSIONAL]: [
             <SubscriptionAddonRow
@@ -397,7 +397,7 @@ const SubscriptionCustomization = ({
                 onChange={(quantity) =>
                     setModel({ ...model, planIDs: { ...model.planIDs, [domainAddon.ID]: quantity } })
                 }
-            />
+            />,
         ],
         [PLANS.VPNPLUS]: [
             <SubscriptionAddonRow
@@ -414,8 +414,8 @@ const SubscriptionCustomization = ({
                 start={vpnplusPlan.MaxVPN}
                 quantity={model.planIDs[vpnAddon.ID]}
                 onChange={(quantity) => setModel({ ...model, planIDs: { ...model.planIDs, [vpnAddon.ID]: quantity } })}
-            />
-        ]
+            />,
+        ],
     };
 
     const sections = [
@@ -445,8 +445,8 @@ const SubscriptionCustomization = ({
                                 plans,
                                 planID,
                                 service: PLAN_SERVICES.MAIL,
-                                organization
-                            })
+                                organization,
+                            }),
                         });
                     }}
                 />
@@ -486,8 +486,8 @@ const SubscriptionCustomization = ({
                             plans,
                             planID,
                             service: PLAN_SERVICES.VPN,
-                            organization
-                        })
+                            organization,
+                        }),
                     });
                 }}
             />
@@ -500,7 +500,7 @@ const SubscriptionCustomization = ({
                 plan={vpnPlan}
                 description={DESCRIPTIONS[vpnPlan.Name]}
             />
-        </section>
+        </section>,
     ].filter(Boolean);
 
     if (loadingAddresses) {
@@ -524,12 +524,12 @@ SubscriptionCustomization.propTypes = {
     vpnCountries: PropTypes.shape({
         free: PropTypes.array,
         basic: PropTypes.array,
-        all: PropTypes.array
+        all: PropTypes.array,
     }),
     plans: PropTypes.arrayOf(PropTypes.object).isRequired,
     expanded: PropTypes.bool,
     model: PropTypes.object.isRequired,
-    setModel: PropTypes.func.isRequired
+    setModel: PropTypes.func.isRequired,
 };
 
 export default SubscriptionCustomization;

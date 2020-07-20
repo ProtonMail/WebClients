@@ -16,7 +16,7 @@ import {
     useNotifications,
     useUser,
     Icon,
-    classnames
+    classnames,
 } from 'react-components';
 import { c } from 'ttag';
 
@@ -28,7 +28,7 @@ export const CATEGORY = {
     SECURE_CORE: 'SecureCore',
     COUNTRY: 'Country',
     SERVER: 'Server',
-    FREE: 'Free'
+    FREE: 'Free',
 };
 
 const PlusBadge = () => (
@@ -74,7 +74,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
             LogicalID: category === CATEGORY.COUNTRY ? undefined : ID,
             Platform: platform,
             Protocol: protocol,
-            Country: ExitCountry
+            Country: ExitCountry,
         });
         const blob = new Blob([buffer], { type: 'application/x-openvpn-profile' });
         const [country, ...rest] = Domain.split('.');
@@ -150,7 +150,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                     list={[
                                         {
                                             text: c('Action').t`Download`,
-                                            onClick: handleClickDownload(server)
+                                            onClick: handleClickDownload(server),
                                         },
                                         category !== CATEGORY.SECURE_CORE && {
                                             text: (
@@ -162,13 +162,13 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                             onClick() {
                                                 textToClipboard(server.Domain);
                                                 createNotification({
-                                                    text: c('Success').t`${server.Domain} copied in your clipboard`
+                                                    text: c('Success').t`${server.Domain} copied in your clipboard`,
                                                 });
-                                            }
-                                        }
+                                            },
+                                        },
                                     ].filter(isTruthy)}
                                 />
-                            )
+                            ),
                         ].filter(isTruthy)}
                     />
                 ))}
@@ -193,9 +193,9 @@ ConfigsTable.propTypes = {
             Domain: PropTypes.string,
             Features: PropTypes.number,
             Load: PropTypes.number,
-            Tier: PropTypes.number
+            Tier: PropTypes.number,
         })
-    )
+    ),
 };
 
 export default ConfigsTable;

@@ -36,7 +36,7 @@ const TextArea = ({
             if (onChange) {
                 onChange(e);
             }
-        }
+        },
     });
 
     useEffect(() => {

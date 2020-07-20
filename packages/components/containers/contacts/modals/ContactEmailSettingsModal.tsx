@@ -10,7 +10,7 @@ import {
     sortPinnedKeys,
     sortApiKeys,
     getContactPublicKeyModel,
-    getIsValidForSending
+    getIsValidForSending,
 } from 'proton-shared/lib/keys/publicKeys';
 import { uniqueBy } from 'proton-shared/lib/helpers/array';
 import { getKeyInfoFromProperties, toKeyProperty } from 'proton-shared/lib/contacts/keyProperties';
@@ -84,7 +84,7 @@ const ContactEmailSettingsModal = ({
         const publicKeyModel = await getContactPublicKeyModel({
             emailAddress,
             apiKeysConfig,
-            pinnedKeysConfig: { ...pinnedKeysConfig, isContact: true }
+            pinnedKeysConfig: { ...pinnedKeysConfig, isContact: true },
         });
         setModel(publicKeyModel);
     };
@@ -131,7 +131,7 @@ const ContactEmailSettingsModal = ({
         const Contacts = await prepareContacts([allProperties], userKeysList[0]);
         const labels = hasCategories(allProperties) ? INCLUDE : IGNORE;
         const {
-            Responses: [{ Response: { Code = 0 } = {} }]
+            Responses: [{ Response: { Code = 0 } = {} }],
         } = await api(addContacts({ Contacts, Overwrite: +!!contactID as 0 | 1, Labels: labels }));
         if (Code !== API_CODES.SINGLE_SUCCESS) {
             onClose();
@@ -184,14 +184,14 @@ const ContactEmailSettingsModal = ({
                     model?.publicKeys?.pinnedKeys,
                     model.expiredFingerprints,
                     model.revokedFingerprints
-                )
-            }
+                ),
+            },
         }));
     }, [
         model?.trustedFingerprints,
         model?.expiredFingerprints,
         model?.revokedFingerprints,
-        model?.verifyOnlyFingerprints
+        model?.verifyOnlyFingerprints,
     ]);
 
     useEffect(() => {

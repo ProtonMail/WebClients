@@ -22,7 +22,7 @@ const VerifySection = ({ domain }) => {
                     cells={[
                         c('Header for domain modal').t`Type`,
                         c('Header for domain modal').t`Host name`,
-                        c('Header for domain modal').t`Value / Data / Points to`
+                        c('Header for domain modal').t`Value / Data / Points to`,
                     ]}
                 />
                 <TableBody>
@@ -39,7 +39,7 @@ const VerifySection = ({ domain }) => {
                                 <code className="ellipsis" title={domain.VerifyCode}>
                                     {domain.VerifyCode}
                                 </code>
-                            </div>
+                            </div>,
                         ]}
                     />
                 </TableBody>
@@ -51,7 +51,7 @@ const VerifySection = ({ domain }) => {
 };
 
 VerifySection.propTypes = {
-    domain: PropTypes.object.isRequired
+    domain: PropTypes.object.isRequired,
 };
 
 export default VerifySection;

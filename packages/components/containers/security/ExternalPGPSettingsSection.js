@@ -13,7 +13,7 @@ import {
     useApi,
     useLoading,
     useNotifications,
-    useModals
+    useModals,
 } from 'react-components';
 import { updateAttachPublicKey, updatePGPScheme, updateSign } from 'proton-shared/lib/api/mailSettings';
 

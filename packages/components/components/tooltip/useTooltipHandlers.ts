@@ -99,7 +99,7 @@ const useTooltipHandlers = (open: () => void, close: () => void, isOpen: boolean
         onMouseEnter: handleMouseEnter,
         onMouseLeave: handleMouseLeave,
         onFocus: handleFocus,
-        onBlur: handleCloseTooltip
+        onBlur: handleCloseTooltip,
     };
 };
 

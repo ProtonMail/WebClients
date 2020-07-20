@@ -7,7 +7,7 @@ import {
     PrimaryButton,
     Loader,
     useAddresses,
-    useOrganization
+    useOrganization,
 } from 'react-components';
 import { hasMailPlus, hasVpnBasic, switchPlan, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLANS } from 'proton-shared/lib/constants';
@@ -54,13 +54,13 @@ const UpsellSubscription = () => {
                                         plans,
                                         planID: plansMap[PLANS.PLUS].ID,
                                         service: PLAN_SERVICES.MAIL,
-                                        organization
+                                        organization,
                                     })}
                                 />
                             );
                         }}
                     >{c('Action').t`Upgrade`}</PrimaryButton>
-                )
+                ),
             },
         hasMailPlus(subscription) &&
             hasAddresses && {
@@ -80,13 +80,13 @@ const UpsellSubscription = () => {
                                         plans,
                                         planID: plansMap[PLANS.PROFESSIONAL].ID,
                                         service: PLAN_SERVICES.MAIL,
-                                        organization
+                                        organization,
                                     })}
                                 />
                             );
                         }}
                     >{c('Action').t`Upgrade`}</PrimaryButton>
-                )
+                ),
             },
         (isFreeVpn || hasVpnBasic(subscription)) && {
             title: c('Title').t`Upgrade to ProtonVPN Plus`,
@@ -105,14 +105,14 @@ const UpsellSubscription = () => {
                                     plans,
                                     planID: plansMap[PLANS.VPNPLUS].ID,
                                     service: PLAN_SERVICES.VPN,
-                                    organization
+                                    organization,
                                 })}
                             />
                         );
                     }}
                 >{c('Action').t`Upgrade`}</PrimaryButton>
-            )
-        }
+            ),
+        },
     ]
         .filter(Boolean)
         .map(({ title = '', description = '', upgradeButton }, index) => {

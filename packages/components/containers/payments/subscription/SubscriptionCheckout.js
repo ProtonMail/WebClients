@@ -27,7 +27,7 @@ CheckoutRow.propTypes = {
     className: PropTypes.string,
     title: PropTypes.node.isRequired,
     amount: PropTypes.number.isRequired,
-    currency: PropTypes.string.isRequired
+    currency: PropTypes.string.isRequired,
 };
 
 /** @type any */
@@ -47,7 +47,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                 const { Name } = plansMap[planID];
                 acc[Name] = quantity;
                 return acc;
-            }, {})
+            }, {}),
         }) / model.cycle;
     const total = checkResult.Amount + checkResult.CouponDiscount;
     const monthlyTotal = total / model.cycle;
@@ -79,7 +79,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                 domains
             ),
             [ADDON_NAMES.MEMBER]: c('Addon').ngettext(msgid`+ ${members} user`, `+ ${members} users`, members),
-            [ADDON_NAMES.VPN]: c('Addon').ngettext(msgid`+ ${vpn} connection`, `+ ${vpn} connections`, vpn)
+            [ADDON_NAMES.VPN]: c('Addon').ngettext(msgid`+ ${vpn} connection`, `+ ${vpn} connections`, vpn),
         }[planName];
     };
 
@@ -119,7 +119,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                     options={[
                         { text: c('Billing cycle option').t`Monthly`, value: CYCLE.MONTHLY },
                         { text: c('Billing cycle option').t`Annually SAVE 20%`, value: CYCLE.YEARLY },
-                        { text: c('Billing cycle option').t`Two years SAVE 33%`, value: CYCLE.TWO_YEARS }
+                        { text: c('Billing cycle option').t`Two years SAVE 33%`, value: CYCLE.TWO_YEARS },
                     ]}
                 />
                 <CurrencySelector
@@ -256,7 +256,7 @@ SubscriptionCheckout.propTypes = {
     checkResult: PropTypes.object.isRequired,
     model: PropTypes.object.isRequired,
     setModel: PropTypes.func.isRequired,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
 };
 
 export default SubscriptionCheckout;

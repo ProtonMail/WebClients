@@ -37,7 +37,7 @@ const SignupPayment = ({
     onMethodChange,
     errors,
     loading,
-    onSubmit
+    onSubmit,
 }: Props) => {
     return (
         <form name="payment-form" onSubmit={onSubmit}>

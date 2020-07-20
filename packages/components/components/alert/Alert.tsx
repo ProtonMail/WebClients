@@ -6,7 +6,7 @@ const CLASSES = {
     info: 'mb1 block-info-standard',
     warning: 'mb1 block-info-standard-warning',
     error: 'mb1 block-info-standard-error',
-    success: 'mb1 block-info-standard-success'
+    success: 'mb1 block-info-standard-success',
 } as const;
 
 interface Props {

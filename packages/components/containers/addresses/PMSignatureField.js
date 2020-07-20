@@ -9,7 +9,7 @@ import {
     useToggle,
     useNotifications,
     useEventManager,
-    useApiWithoutResult
+    useApiWithoutResult,
 } from 'react-components';
 import { PM_SIGNATURE } from 'proton-shared/lib/constants';
 import { updatePMSignature } from 'proton-shared/lib/api/mailSettings';
@@ -58,7 +58,7 @@ const PMSignatureField = ({ id }) => {
 };
 
 PMSignatureField.propTypes = {
-    id: PropTypes.string.isRequired
+    id: PropTypes.string.isRequired,
 };
 
 export default PMSignatureField;

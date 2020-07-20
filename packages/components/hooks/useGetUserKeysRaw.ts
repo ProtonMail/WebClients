@@ -32,12 +32,12 @@ export const useGetUserKeysRaw = (): (() => Promise<CachedKey[]>) => {
                 return {
                     Key,
                     privateKey,
-                    publicKey: privateKey.toPublic()
+                    publicKey: privateKey.toPublic(),
                 };
             } catch (e) {
                 return {
                     Key,
-                    error: e
+                    error: e,
                 };
             }
         };

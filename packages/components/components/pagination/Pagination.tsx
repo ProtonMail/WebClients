@@ -24,7 +24,7 @@ const Pagination = ({
     hasPrevious = true,
     page = 1,
     total,
-    limit
+    limit,
 }: Props) => {
     if (!total) {
         return null;

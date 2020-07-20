@@ -12,7 +12,7 @@ const Footer = ({ children, className = 'flex flex-spacebetween flex-items-cente
 
 Footer.propTypes = {
     children: PropTypes.node.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
 };
 
 export default Footer;

@@ -11,7 +11,7 @@ import {
     BugModal,
     DropdownMenu,
     DropdownMenuButton,
-    DropdownMenuLink
+    DropdownMenuLink,
 } from '../../';
 import { c } from 'ttag';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';

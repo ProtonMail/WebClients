@@ -29,7 +29,7 @@ Wizard.propTypes = {
     // steps
     steps: PropTypes.arrayOf(PropTypes.string),
     // hide text for steps
-    hideText: PropTypes.bool
+    hideText: PropTypes.bool,
 };
 
 export default Wizard;

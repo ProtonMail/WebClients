@@ -17,7 +17,7 @@ enum ImageState {
     Initial,
     Loading,
     Error,
-    Ok
+    Ok,
 }
 
 interface Props {

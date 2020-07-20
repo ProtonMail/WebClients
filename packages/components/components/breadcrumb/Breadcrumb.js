@@ -34,7 +34,7 @@ const Breadcrumb = ({ list, current = 0, onClick }) => {
 Breadcrumb.propTypes = {
     onClick: PropTypes.func,
     list: PropTypes.array.isRequired,
-    current: PropTypes.number.isRequired
+    current: PropTypes.number.isRequired,
 };
 
 export default Breadcrumb;

@@ -13,7 +13,7 @@ import {
     useStep,
     useNotifications,
     useDomains,
-    classnames
+    classnames,
 } from 'react-components';
 import { withRouter } from 'react-router-dom';
 import { addDomain, getDomain } from 'proton-shared/lib/api/domains';
@@ -34,7 +34,7 @@ const STEPS = {
     SPF: 3,
     DKIM: 4,
     DMARC: 5,
-    ADDRESSES: 6
+    ADDRESSES: 6,
 };
 
 const verifyDomain = ({ VerifyState }) => {
@@ -67,7 +67,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
 
     const renderDKIMIcon = () => {
         const {
-            DKIM: { State }
+            DKIM: { State },
         } = domainModel;
         const { DKIM_STATE_ERROR, DKIM_STATE_GOOD, DKIM_STATE_WARNING } = DKIM_STATE;
 
@@ -106,7 +106,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
         'SPF',
         'DKIM',
         'DMARC',
-        c('Label in domain modal').t`Addresses`
+        c('Label in domain modal').t`Addresses`,
     ];
 
     const breadcrumbIcons = [
@@ -162,7 +162,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
                 type={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'success' : 'error'}
                 name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'on' : 'off'}
             />
-        ) : null
+        ) : null,
     ];
 
     const { section, ...modalProps } = (() => {
@@ -178,7 +178,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
 
             return {
                 section: <DomainSection domain={domainModel} onChange={updateDomainName} />,
-                onSubmit: () => withLoading(handleSubmit())
+                onSubmit: () => withLoading(handleSubmit()),
             };
         }
 
@@ -202,35 +202,35 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
 
             return {
                 section: <VerifySection domain={domainModel} />,
-                onSubmit: () => withLoading(handleSubmit())
+                onSubmit: () => withLoading(handleSubmit()),
             };
         }
 
         if (step === STEPS.MX) {
             return {
                 section: <MXSection />,
-                onSubmit: next
+                onSubmit: next,
             };
         }
 
         if (step === STEPS.SPF) {
             return {
                 section: <SPFSection />,
-                onSubmit: next
+                onSubmit: next,
             };
         }
 
         if (step === STEPS.DKIM) {
             return {
                 section: <DKIMSection domain={domainModel} />,
-                onSubmit: next
+                onSubmit: next,
             };
         }
 
         if (step === STEPS.DMARC) {
             return {
                 section: <DMARCSection />,
-                onSubmit: next
+                onSubmit: next,
             };
         }
 
@@ -238,7 +238,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
             return {
                 section: <AddressesSection onRedirect={handleRedirect} />,
                 submit: c('Action').t`Done`,
-                onSubmit: onClose
+                onSubmit: onClose,
             };
         }
     })();
@@ -266,7 +266,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
                         key={index}
                         className={classnames([
                             'flex flex-nowrap flex-items-center pm-button--for-icon onmobile-pl0-25 onmobile-pr0-25',
-                            index === step && 'is-active'
+                            index === step && 'is-active',
                         ])}
                         disabled={
                             (index > STEPS.DOMAIN && !domainModel.ID) ||
@@ -289,7 +289,7 @@ DomainModal.propTypes = {
     onClose: PropTypes.func,
     domain: PropTypes.object,
     history: PropTypes.object.isRequired,
-    staticContext: PropTypes.object
+    staticContext: PropTypes.object,
 };
 
 export default withRouter(DomainModal);

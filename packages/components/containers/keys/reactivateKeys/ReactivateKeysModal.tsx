@@ -11,7 +11,7 @@ import {
     InlineLinkButton,
     FormModal,
     GenericError,
-    Loader
+    Loader,
 } from '../../../index';
 
 import ReactivateKeysList from './ReactivateKeysList';
@@ -26,7 +26,7 @@ enum STEPS {
     OR_PASSWORD,
     PROCESS,
     DONE,
-    FAILURE
+    FAILURE,
 }
 
 interface Props {
@@ -70,7 +70,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onProcess, onClose, ...r
         if (step === STEPS.LOADING) {
             return {
                 submit: null,
-                children: <Loader />
+                children: <Loader />,
             };
         }
 
@@ -93,7 +93,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onProcess, onClose, ...r
                         <ReactivateKeysList allKeys={allKeys} />
                         <Alert>{c('Info').jt`You can also reactivate your keys by ${uploadButton}`}</Alert>
                     </>
-                )
+                ),
             };
         }
 
@@ -157,7 +157,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onProcess, onClose, ...r
                         onProcess({
                             keysToReactivate: onlyUploadedKeys,
                             setKeysToReactivate: setAllKeys,
-                            isUploadMode: true
+                            isUploadMode: true,
                         })
                     );
                 },
@@ -170,7 +170,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onProcess, onClose, ...r
                         <ReactivateKeysList allKeys={allKeys} onUpload={handleUpload} />
                         <Alert>{c('Info').jt`You can also reactivate your keys by ${passwordButton}`}</Alert>
                     </>
-                )
+                ),
             };
         }
 
@@ -182,7 +182,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onProcess, onClose, ...r
                             setKeysToReactivate: setAllKeys,
                             keysToReactivate: allKeys,
                             isUploadMode: false,
-                            oldPassword
+                            oldPassword,
                         })
                     );
                 },
@@ -203,7 +203,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onProcess, onClose, ...r
                             />
                         </Field>
                     </>
-                )
+                ),
             };
         }
 
@@ -219,7 +219,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onProcess, onClose, ...r
                                 .t`If a key remains inactive, it means that the decryption password provided does not apply to the key.`}
                         </Alert>
                     </>
-                )
+                ),
             };
         }
 
@@ -234,14 +234,14 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onProcess, onClose, ...r
                                 .t`If a key remains inactive, it means that the decryption password provided does not apply to the key.`}
                         </Alert>
                     </>
-                )
+                ),
             };
         }
 
         if (step === STEPS.FAILURE) {
             return {
                 submit: c('Action').t`Ok`,
-                children: <GenericError />
+                children: <GenericError />,
             };
         }
 

@@ -36,8 +36,8 @@ const Country = ({ server: { EntryCountry, ExitCountry } }) => {
 Country.propTypes = {
     server: PropTypes.shape({
         EntryCountry: PropTypes.string,
-        ExitCountry: PropTypes.string
-    })
+        ExitCountry: PropTypes.string,
+    }),
 };
 
 export default Country;

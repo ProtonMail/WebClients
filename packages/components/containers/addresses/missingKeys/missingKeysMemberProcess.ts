@@ -21,7 +21,7 @@ export default ({
     setFormattedAddresses,
     member,
     primaryMemberKey,
-    organizationKey
+    organizationKey,
 }: MissingKeysMemberProcessArguments) => {
     return Promise.all(
         addresses.map(async (address) => {
@@ -34,7 +34,7 @@ export default ({
                     email: address.Email,
                     primaryKey: primaryMemberKey,
                     organizationKey,
-                    encryptionConfig
+                    encryptionConfig,
                 });
 
                 await createMemberAddressKeys({
@@ -44,7 +44,7 @@ export default ({
                     keys: [], // Assume no keys exists for this address since we are in this modal.
                     signingKey: privateKey,
                     privateKey,
-                    ...rest
+                    ...rest,
                 });
 
                 setFormattedAddresses((oldState) => {

@@ -9,14 +9,14 @@ import {
     convertZonedDateTimeToUTC,
     getTimezone,
     getTimeZoneOptions,
-    toLocalDate
+    toLocalDate,
 } from 'proton-shared/lib/date/timezone';
 import { AutoReplyDuration } from 'proton-shared/lib/constants';
 import { DAY_SECONDS, HOUR_SECONDS, MINUTES_SECONDS, getDurationOptions, getMatchingTimezone } from '../utils';
 
 const getDefaultFixedTimes = () => ({
     StartTime: getUnixTime(new Date()),
-    EndTime: getUnixTime(addHours(addDays(new Date(), 7), 2))
+    EndTime: getUnixTime(addHours(addDays(new Date(), 7), 2)),
 });
 
 const getDefaultAutoResponder = (AutoResponder) => {
@@ -28,7 +28,7 @@ const getDefaultAutoResponder = (AutoResponder) => {
         Subject: 'Auto',
         Message: AutoResponder.Message || c('Autoresponse').t`I'm out of the office with limited access to my email.`,
         Repeat: AutoReplyDuration.FIXED,
-        ...getDefaultFixedTimes()
+        ...getDefaultFixedTimes(),
     };
 };
 
@@ -41,7 +41,7 @@ const toDateTimes = (unixTimestamp, timezone, repeat) => {
         const zonedTime = convertUTCDateTimeToZone(fromUTCDate(fromUnixTime(unixTimestamp)), timezone);
         return {
             date: startOfDay(toLocalDate(zonedTime)),
-            time: new Date(2000, 0, 1, zonedTime.hours, zonedTime.minutes)
+            time: new Date(2000, 0, 1, zonedTime.hours, zonedTime.minutes),
         };
     }
 
@@ -54,21 +54,21 @@ const toDateTimes = (unixTimestamp, timezone, repeat) => {
 
     if (repeat === AutoReplyDuration.DAILY) {
         return {
-            time: localTime
+            time: localTime,
         };
     }
 
     if (repeat === AutoReplyDuration.MONTHLY) {
         return {
             day: day % 31,
-            time: localTime
+            time: localTime,
         };
     }
 
     if (repeat === AutoReplyDuration.WEEKLY) {
         return {
             day: day % 7,
-            time: localTime
+            time: localTime,
         };
     }
 };
@@ -79,7 +79,7 @@ export const getMatchingValues = ({ Zone, Repeat }) => {
     const matchingTimezone = getMatchingTimezone(Zone, timezones) || getMatchingTimezone(getTimezone(), timezones);
     return {
         timezone: matchingTimezone,
-        duration
+        duration,
     };
 };
 
@@ -92,7 +92,7 @@ export const toModel = ({ Message, StartTime, EndTime, DaysSelected, Subject, Is
         duration,
         timezone,
         start: toDateTimes(StartTime, timezone, duration),
-        end: toDateTimes(EndTime, timezone, duration)
+        end: toDateTimes(EndTime, timezone, duration),
     };
 };
 
@@ -108,7 +108,7 @@ const toUnixTime = ({ date, time, day }, timezone, repeat) => {
                     {
                         ...fromLocalDate(date),
                         hours: time.getHours(),
-                        minutes: time.getMinutes()
+                        minutes: time.getMinutes(),
                     },
                     timezone
                 )
@@ -139,7 +139,7 @@ const toAutoResponder = ({ message, duration, daysOfWeek, timezone, subject, sta
     Subject: subject,
     IsEnabled: true,
     StartTime: toUnixTime(start, timezone, duration),
-    EndTime: toUnixTime(end, timezone, duration)
+    EndTime: toUnixTime(end, timezone, duration),
 });
 
 const useAutoReplyForm = (AutoResponder) => {
@@ -148,7 +148,7 @@ const useAutoReplyForm = (AutoResponder) => {
     const [model, setModel] = useState(() => {
         return toModel(AutoResponder.IsEnabled ? AutoResponder : getDefaultAutoResponder(AutoResponder), {
             timezone: matches.timezone.value,
-            duration: matches.duration.value
+            duration: matches.duration.value,
         });
     });
 
@@ -166,15 +166,15 @@ const useAutoReplyForm = (AutoResponder) => {
                              */
                             ...(value === AutoReplyDuration.FIXED && AutoResponder.Duration !== AutoReplyDuration.FIXED
                                 ? {
-                                      ...getDefaultFixedTimes()
+                                      ...getDefaultFixedTimes(),
                                   }
-                                : undefined)
+                                : undefined),
                         },
                         {
                             timezone: matches.timezone.value,
-                            duration: value
+                            duration: value,
                         }
-                    )
+                    ),
                 });
         }
 
@@ -187,8 +187,8 @@ const useAutoReplyForm = (AutoResponder) => {
                     ? value
                     : {
                           ...prev[a],
-                          [b]: value
-                      }
+                          [b]: value,
+                      },
             }));
         };
     };
@@ -196,7 +196,7 @@ const useAutoReplyForm = (AutoResponder) => {
     return {
         model,
         toAutoResponder,
-        updateModel
+        updateModel,
     };
 };
 

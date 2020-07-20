@@ -30,7 +30,7 @@ const useContactList = ({ search, contactGroupID, contactGroups, contacts, conta
         }
         return {
             contactGroupName: contactGroup.Name,
-            totalContactsInGroup: contacts.filter(({ LabelIDs = [] }) => LabelIDs.includes(contactGroupID)).length
+            totalContactsInGroup: contacts.filter(({ LabelIDs = [] }) => LabelIDs.includes(contactGroupID)).length,
         };
     }, [contacts, contactGroups, contactGroupID]);
 
@@ -70,7 +70,7 @@ const useContactList = ({ search, contactGroupID, contactGroups, contacts, conta
             return {
                 ...contact,
                 emails: (contactEmailsMap[ID] || []).map(({ Email }) => Email),
-                isChecked: !!checkedContacts[ID]
+                isChecked: !!checkedContacts[ID],
             };
         });
     }, [filteredContacts, checkedContacts, contactEmailsMap]);
@@ -99,7 +99,7 @@ const useContactList = ({ search, contactGroupID, contactGroups, contacts, conta
         contactEmailsMap,
         contactGroupName,
         totalContactsInGroup,
-        formattedContacts
+        formattedContacts,
     };
 };
 

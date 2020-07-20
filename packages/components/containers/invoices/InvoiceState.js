@@ -9,7 +9,7 @@ const TYPES = {
     [INVOICE_STATE.PAID]: 'success',
     [INVOICE_STATE.VOID]: 'default',
     [INVOICE_STATE.BILLED]: 'default',
-    [INVOICE_STATE.WRITEOFF]: 'default'
+    [INVOICE_STATE.WRITEOFF]: 'default',
 };
 
 const getStatesI18N = () => ({
@@ -17,7 +17,7 @@ const getStatesI18N = () => ({
     [INVOICE_STATE.PAID]: c('Invoice state display as badge').t`Paid`,
     [INVOICE_STATE.VOID]: c('Invoice state display as badge').t`Void`,
     [INVOICE_STATE.BILLED]: c('Invoice state display as badge').t`Billed`,
-    [INVOICE_STATE.WRITEOFF]: c('Invoice state display as badge').t`Writeoff`
+    [INVOICE_STATE.WRITEOFF]: c('Invoice state display as badge').t`Writeoff`,
 });
 
 const InvoiceState = ({ invoice }) => {
@@ -27,7 +27,7 @@ const InvoiceState = ({ invoice }) => {
 };
 
 InvoiceState.propTypes = {
-    invoice: PropTypes.object.isRequired
+    invoice: PropTypes.object.isRequired,
 };
 
 export default InvoiceState;

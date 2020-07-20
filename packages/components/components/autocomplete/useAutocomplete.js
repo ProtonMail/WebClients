@@ -6,7 +6,7 @@ const useAutocomplete = ({
     initialSelectedItems = [],
     initialInputValue = '',
     labelToItem = identity,
-    onChange = noop
+    onChange = noop,
 } = {}) => {
     const initializedRef = useRef(false);
     const [selectedItems, setSelectedItems] = useState(initialSelectedItems);
@@ -41,7 +41,7 @@ const useAutocomplete = ({
         inputValue,
         submit,
         select,
-        deselect
+        deselect,
     };
 };
 

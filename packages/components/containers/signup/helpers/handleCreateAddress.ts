@@ -17,7 +17,7 @@ const handleCreateAddress = async ({ api, username, domains }: Args) => {
         setupAddress({
             Domain: domain,
             DisplayName: username,
-            Signature: ''
+            Signature: '',
         })
     );
     return [Address];

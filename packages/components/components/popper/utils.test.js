@@ -15,7 +15,7 @@ describe('popper utils', () => {
                 'top-right',
                 'right-bottom',
                 'right',
-                'right-top'
+                'right-top',
             ]);
         });
 
@@ -32,7 +32,7 @@ describe('popper utils', () => {
                 'top-left',
                 'left-bottom',
                 'left',
-                'left-top'
+                'left-top',
             ]);
         });
 
@@ -49,7 +49,7 @@ describe('popper utils', () => {
                 'left',
                 'left-top',
                 'right',
-                'right-top'
+                'right-top',
             ]);
         });
 
@@ -66,7 +66,7 @@ describe('popper utils', () => {
                 'right-top',
                 'top-left',
                 'top',
-                'top-right'
+                'top-right',
             ]);
         });
 
@@ -83,7 +83,7 @@ describe('popper utils', () => {
                 'right-bottom',
                 'bottom-left',
                 'bottom',
-                'bottom-right'
+                'bottom-right',
             ]);
         });
 
@@ -100,7 +100,7 @@ describe('popper utils', () => {
                 'bottom-right',
                 'right-top',
                 'right',
-                'right-bottom'
+                'right-bottom',
             ]);
         });
     });

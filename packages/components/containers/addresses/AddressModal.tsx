@@ -16,7 +16,7 @@ import {
     useApi,
     useAddresses,
     usePremiumDomains,
-    useUser
+    useUser,
 } from '../../index';
 
 import useAddressModal from './useAddressModal';
@@ -51,7 +51,7 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
             return createNotification({
                 text: c('Error')
                     .t`${Local} is your username. To create ${Local}@${Domain}, please go to Settings > Identity > Short domain (pm.me)`,
-                type: 'error'
+                type: 'error',
             });
         }
 
@@ -62,7 +62,7 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
                 MemberID: member.ID,
                 Local,
                 Domain,
-                DisplayName
+                DisplayName,
             })
         );
 

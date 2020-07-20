@@ -28,7 +28,7 @@ const useDisplayOrganizationKey = (organizationKey?: OrganizationKey) => {
         return {
             algorithm: describe(algorithmInfo),
             fingerprint,
-            isDecrypted
+            isDecrypted,
         };
     }, [parsedKey]);
 };

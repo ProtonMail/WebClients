@@ -16,13 +16,13 @@ const PrivateAppContainer = ({
     children,
     hasTopBanners = true,
     isBlurred = false,
-    containerRef
+    containerRef,
 }: Props) => {
     return (
         <div
             className={classnames([
                 'content-container flex flex-column flex-nowrap no-scroll',
-                isBlurred && 'filter-blur'
+                isBlurred && 'filter-blur',
             ])}
             ref={containerRef}
         >

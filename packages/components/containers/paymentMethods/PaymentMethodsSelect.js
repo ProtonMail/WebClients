@@ -19,7 +19,7 @@ PaymentMethodsSelect.propTypes = {
     method: PropTypes.string,
     methods: PropTypes.array,
     loading: PropTypes.bool,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default PaymentMethodsSelect;

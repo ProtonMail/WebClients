@@ -29,7 +29,7 @@ AmountRow.propTypes = {
     amount: PropTypes.number.isRequired,
     onChangeAmount: PropTypes.func.isRequired,
     currency: PropTypes.string.isRequired,
-    onChangeCurrency: PropTypes.func.isRequired
+    onChangeCurrency: PropTypes.func.isRequired,
 };
 
 export default AmountRow;

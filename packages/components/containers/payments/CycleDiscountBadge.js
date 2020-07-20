@@ -8,12 +8,12 @@ const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
 const DISCOUNT = {
     [YEARLY]: '-20%',
-    [TWO_YEARS]: '-33%'
+    [TWO_YEARS]: '-33%',
 };
 
 const getTooltipI18N = () => ({
     [YEARLY]: c('Tooltip').t`Discount applied for annual billing cycle`,
-    [TWO_YEARS]: c('Tooltip').t`Discount applied for two-year billing cycle`
+    [TWO_YEARS]: c('Tooltip').t`Discount applied for two-year billing cycle`,
 });
 
 const CycleDiscountBadge = ({ cycle = MONTHLY }) => {
@@ -30,7 +30,7 @@ const CycleDiscountBadge = ({ cycle = MONTHLY }) => {
 };
 
 CycleDiscountBadge.propTypes = {
-    cycle: PropTypes.number.isRequired
+    cycle: PropTypes.number.isRequired,
 };
 
 export default CycleDiscountBadge;

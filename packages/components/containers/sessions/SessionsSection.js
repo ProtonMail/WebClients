@@ -16,7 +16,7 @@ import {
     useModals,
     useLoading,
     usePagination,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { querySessions, revokeOtherSessions, revokeSession } from 'proton-shared/lib/api/auth';
 import { ELEMENTS_PER_PAGE } from 'proton-shared/lib/constants';
@@ -53,7 +53,7 @@ const getClientsI18N = () => ({
     macOSImportExport: c('Badge').t`ProtonMail Import-Export for macOS`,
     macOSBridge: c('Badge').t`ProtonMail Bridge for macOS`,
     LinuxImportExport: c('Badge').t`ProtonMail Import-Export for GNU/Linux`,
-    LinuxBridge: c('Badge').t`ProtonMail Bridge for GNU/Linux`
+    LinuxBridge: c('Badge').t`ProtonMail Bridge for GNU/Linux`,
 });
 
 const SessionsSection = () => {
@@ -126,7 +126,7 @@ const SessionsSection = () => {
                                         session={session}
                                         currentUID={currentUID}
                                         onRevoke={() => withLoading(handleRevoke(session.UID))}
-                                    />
+                                    />,
                                 ]}
                             />
                         );

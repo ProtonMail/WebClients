@@ -5,7 +5,7 @@ const getState = ({ value, status } = { status: STATUS.PENDING }) => {
     return [
         status === STATUS.PENDING || status === STATUS.RESOLVED ? value : undefined,
         status === STATUS.PENDING || status === STATUS.REJECTED,
-        status === STATUS.REJECTED ? value : undefined
+        status === STATUS.REJECTED ? value : undefined,
     ];
 };
 
@@ -41,7 +41,7 @@ const usePromiseResult = (miss, dependencies) => {
         const record = {
             status: STATUS.PENDING,
             value: ref.current ? ref.current.value : undefined,
-            promise
+            promise,
         };
         ref.current = record;
         dispatch(record);
@@ -50,13 +50,13 @@ const usePromiseResult = (miss, dependencies) => {
             .then((value) => {
                 return {
                     status: STATUS.RESOLVED,
-                    value
+                    value,
                 };
             })
             .catch((error) => {
                 return {
                     status: STATUS.REJECTED,
-                    value: error
+                    value: error,
                 };
             })
             .then((record) => {

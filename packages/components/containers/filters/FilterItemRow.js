@@ -11,7 +11,7 @@ import {
     useModals,
     useEventManager,
     useLoading,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { isComplex } from 'proton-shared/lib/filters/utils';
 import { FILTER_STATUS } from 'proton-shared/lib/constants';
@@ -43,7 +43,7 @@ function FilterItemRow({ filter, ...rest }) {
         await api(toggleEnable(ID, target.checked));
         await call();
         createNotification({
-            text: c('Success notification').t`Status updated`
+            text: c('Success notification').t`Status updated`,
         });
     };
 
@@ -64,16 +64,16 @@ function FilterItemRow({ filter, ...rest }) {
     const list = [
         !isComplex(filter) && {
             text: c('Action').t`Edit`,
-            onClick: handleEdit()
+            onClick: handleEdit(),
         },
         {
             text: c('Action').t`Edit sieve`,
-            onClick: handleEdit('sieve')
+            onClick: handleEdit('sieve'),
         },
         {
             text: c('Action').t`Delete`,
-            onClick: handleRemove
-        }
+            onClick: handleRemove,
+        },
     ].filter(Boolean);
 
     return (
@@ -90,7 +90,7 @@ function FilterItemRow({ filter, ...rest }) {
                         onChange={(e) => withLoading(handleChangeStatus(e))}
                     />
                 </div>,
-                <DropdownActions key="dropdown" className="pm-button--small" list={list} />
+                <DropdownActions key="dropdown" className="pm-button--small" list={list} />,
             ]}
             {...rest}
             className="onmobile-hideTd3"
@@ -99,7 +99,7 @@ function FilterItemRow({ filter, ...rest }) {
 }
 
 FilterItemRow.propTypes = {
-    filter: PropTypes.object.isRequired
+    filter: PropTypes.object.isRequired,
 };
 
 export default FilterItemRow;

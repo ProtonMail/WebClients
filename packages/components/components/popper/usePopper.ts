@@ -20,13 +20,13 @@ const getPosition = (
             top: wrapperBounds.top,
             left: wrapperBounds.left,
             width: computedSize(wrapperStyles.width, wrapperBounds.width),
-            height: computedSize(wrapperStyles.height, wrapperBounds.height)
+            height: computedSize(wrapperStyles.height, wrapperBounds.height),
         },
         {
             top: tooltipBounds.top,
             left: tooltipBounds.left,
             width: computedSize(tooltipStyles.width, tooltipBounds.width),
-            height: computedSize(tooltipStyles.height, tooltipBounds.height)
+            height: computedSize(tooltipStyles.height, tooltipBounds.height),
         },
         originalPlacement,
         offset,
@@ -54,7 +54,7 @@ const usePopper = ({
     availablePlacements = ALL_PLACEMENTS,
     originalPosition,
     offset = 10,
-    scrollContainerClass = ''
+    scrollContainerClass = '',
 }: Props) => {
     const initialPosition = { top: -1000, left: -1000 };
     const [placement, setPlacement] = useState(originalPlacement);

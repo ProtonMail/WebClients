@@ -15,18 +15,18 @@ const PublicLanguageSelect = ({ className, locales = {} }: Props) => {
     const { LOCALES = {} } = useConfig();
     const options = Object.keys(LOCALES).map((value) => ({
         text: LOCALES[value],
-        value
+        value,
     }));
     const handleChange = async ({ target }: ChangeEvent<HTMLSelectElement>) => {
         const newLocale = target.value;
         const matches = getClosestMatches({
             locale: newLocale,
             browserLocale: getBrowserLocale(),
-            locales: locales
+            locales: locales,
         });
         await loadLocale({
             ...matches,
-            locales: locales
+            locales: locales,
         });
         forceRefresh();
     };

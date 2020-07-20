@@ -5,7 +5,7 @@ import { classnames } from '../../helpers/component';
 
 const CLASSES = {
     OVERLAY: 'pm-modalOverlay',
-    OVERLAY_OUT: 'pm-modalOverlayOut'
+    OVERLAY_OUT: 'pm-modalOverlayOut',
 };
 
 const Overlay = ({ isClosing = false, className: extraClassName = '', onExit, ...rest }) => {
@@ -29,7 +29,7 @@ const Overlay = ({ isClosing = false, className: extraClassName = '', onExit, ..
 Overlay.propTypes = {
     onExit: PropTypes.func.isRequired,
     className: PropTypes.string,
-    isClosing: PropTypes.bool
+    isClosing: PropTypes.bool,
 };
 
 export default Overlay;

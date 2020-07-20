@@ -43,7 +43,7 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
             isLast,
             isBehind,
             isClosing,
-            key: id
+            key: id,
         });
     });
 
@@ -63,7 +63,7 @@ ModalsContainer.propTypes = {
     modals: PropTypes.arrayOf(PropTypes.object).isRequired,
     removeModal: PropTypes.func.isRequired,
     hideModal: PropTypes.func.isRequired,
-    location: PropTypes.object
+    location: PropTypes.object,
 };
 
 export default ModalsContainer;

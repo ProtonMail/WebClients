@@ -11,7 +11,7 @@ const SubscriptionPlan = ({
     addons = [],
     description,
     plan,
-    currency
+    currency,
 }) => {
     const { state, toggle } = useToggle(expanded);
 
@@ -68,7 +68,7 @@ SubscriptionPlan.propTypes = {
     addons: PropTypes.arrayOf(PropTypes.node),
     currency: PropTypes.oneOf(CURRENCIES),
     plan: PropTypes.object.isRequired,
-    description: PropTypes.string
+    description: PropTypes.string,
 };
 
 export default SubscriptionPlan;

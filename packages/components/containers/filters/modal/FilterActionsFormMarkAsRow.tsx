@@ -26,8 +26,8 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions, is
         handleUpdateActions({
             markAs: {
                 ...actions.markAs,
-                ...payload
-            }
+                ...payload,
+            },
         });
     };
 

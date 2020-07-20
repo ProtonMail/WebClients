@@ -19,7 +19,7 @@ const ViewLayoutRadios = ({ viewLayout, onChange, loading, id, ...rest }) => {
         onChange() {
             onChange(COLUMN);
         },
-        children: <img alt="Column" src={inboxColumnSvg} />
+        children: <img alt="Column" src={inboxColumnSvg} />,
     };
     const radioCardRow = {
         value: ROW,
@@ -31,7 +31,7 @@ const ViewLayoutRadios = ({ viewLayout, onChange, loading, id, ...rest }) => {
         onChange() {
             onChange(ROW);
         },
-        children: <img alt="Row" src={inboxRowSvg} />
+        children: <img alt="Row" src={inboxRowSvg} />,
     };
 
     return <RadioCards list={[radioCardColumn, radioCardRow]} id={id} {...rest} />;
@@ -41,7 +41,7 @@ ViewLayoutRadios.propTypes = {
     viewLayout: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
     loading: PropTypes.bool,
-    id: PropTypes.string
+    id: PropTypes.string,
 };
 
 export default ViewLayoutRadios;

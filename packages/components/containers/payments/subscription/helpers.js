@@ -25,7 +25,7 @@ const I18N = {
     },
     vpn(value) {
         return c('Option').ngettext(msgid`${value} VPN connection`, `${value} VPN connections`, value);
-    }
+    },
 };
 
 /**
@@ -87,7 +87,7 @@ export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
             ...plansMap,
             [ADDON_NAMES.DOMAIN]: currentPlansMap[ADDON_NAMES.DOMAIN],
             [ADDON_NAMES.ADDRESS]: currentPlansMap[ADDON_NAMES.ADDRESS],
-            [ADDON_NAMES.SPACE]: currentPlansMap[ADDON_NAMES.SPACE]
+            [ADDON_NAMES.SPACE]: currentPlansMap[ADDON_NAMES.SPACE],
         };
     }
 
@@ -97,7 +97,7 @@ export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
             [ADDON_NAMES.DOMAIN]:
                 currentPlansMap[ADDON_NAMES.DOMAIN] > 1 ? currentPlansMap[ADDON_NAMES.DOMAIN] : undefined, // pro starts with 2 custom domain
             [ADDON_NAMES.MEMBER]: currentPlansMap[ADDON_NAMES.MEMBER],
-            [ADDON_NAMES.VPN]: currentPlansMap[ADDON_NAMES.VPN] // Only possible with vpnplus and professional
+            [ADDON_NAMES.VPN]: currentPlansMap[ADDON_NAMES.VPN], // Only possible with vpnplus and professional
         };
     }
 
@@ -111,7 +111,7 @@ export const mergePlansMap = (plansMap = {}, { Plans = [] }) => {
             [ADDON_NAMES.ADDRESS]: currentPlansMap[ADDON_NAMES.ADDRESS],
             [ADDON_NAMES.SPACE]: currentPlansMap[ADDON_NAMES.SPACE],
             [ADDON_NAMES.MEMBER]: currentPlansMap[ADDON_NAMES.MEMBER],
-            [ADDON_NAMES.VPN]: currentPlansMap[ADDON_NAMES.VPN]
+            [ADDON_NAMES.VPN]: currentPlansMap[ADDON_NAMES.VPN],
         };
     }
 
@@ -170,7 +170,7 @@ const mergeAddons = (
     MaxVPN: MaxVPN + addon.MaxVPN,
     MaxDomains: MaxDomains + addon.MaxDomains,
     Quantity: Quantity + addon.Quantity,
-    Amount: Amount + addon.Amount
+    Amount: Amount + addon.Amount,
 });
 
 /**
@@ -284,7 +284,7 @@ export const getCheckParams = ({
         CouponCode,
         Currency,
         Cycle,
-        ...rest
+        ...rest,
     };
 };
 

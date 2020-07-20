@@ -7,7 +7,7 @@ const SUPER_ADMIN_ROLE = 'superman';
 const getRolesI18N = () => ({
     [USER_ROLES.ADMIN_ROLE]: c('User role').t`Admin`,
     [USER_ROLES.MEMBER_ROLE]: c('User role').t`Member`,
-    [SUPER_ADMIN_ROLE]: c('User role').t`Primary admin`
+    [SUPER_ADMIN_ROLE]: c('User role').t`Primary admin`,
 });
 
 const MemberRole = ({ member }) => {
@@ -17,7 +17,7 @@ const MemberRole = ({ member }) => {
 };
 
 MemberRole.propTypes = {
-    member: PropTypes.object.isRequired
+    member: PropTypes.object.isRequired,
 };
 
 export default MemberRole;

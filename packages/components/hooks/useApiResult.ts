@@ -50,7 +50,7 @@ const useApiResult = <R, F extends QueryFunction>(
         result,
         error,
         loading,
-        request: requestAndSetResults
+        request: requestAndSetResults,
     };
 };
 

@@ -2,7 +2,7 @@ const updatePosition = (modal, i, arr) => ({
     ...modal,
     isFirst: i === 0,
     isLast: i === arr.length - 1,
-    isBehind: i !== arr.length - 1
+    isBehind: i !== arr.length - 1,
 });
 
 export default (modals, setModals) => {
@@ -14,7 +14,7 @@ export default (modals, setModals) => {
                 }
                 return {
                     ...old,
-                    isClosing: true
+                    isClosing: true,
                 };
             });
         });
@@ -27,9 +27,7 @@ export default (modals, setModals) => {
     };
 
     const createModal = (content) => {
-        const id = Math.random()
-            .toString(36)
-            .substr(2, 9);
+        const id = Math.random().toString(36).substr(2, 9);
 
         setModals((oldModals) => {
             return [
@@ -37,8 +35,8 @@ export default (modals, setModals) => {
                 {
                     id,
                     content,
-                    isClosing: false
-                }
+                    isClosing: false,
+                },
             ].map(updatePosition);
         });
 
@@ -54,6 +52,6 @@ export default (modals, setModals) => {
         hideModal,
         removeModal,
         getModal,
-        resetModals: () => setModals([])
+        resetModals: () => setModals([]),
     };
 };

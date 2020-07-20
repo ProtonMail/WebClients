@@ -52,8 +52,8 @@ const useMethods = ({ amount, coupon, type }) => {
         {
             icon: 'payments-type-card',
             value: PAYMENT_METHOD_TYPES.CARD,
-            text: c('Payment method option').t`Credit/debit card`
-        }
+            text: c('Payment method option').t`Credit/debit card`,
+        },
     ];
 
     if (methods.length) {
@@ -64,7 +64,7 @@ const useMethods = ({ amount, coupon, type }) => {
                     .filter(Boolean)
                     .join(' '),
                 value,
-                disabled: isExpired(Details)
+                disabled: isExpired(Details),
             }))
         );
     }
@@ -73,7 +73,7 @@ const useMethods = ({ amount, coupon, type }) => {
         options.push({
             icon: 'payments-type-pp',
             text: c('Payment method option').t`PayPal`,
-            value: PAYMENT_METHOD_TYPES.PAYPAL
+            value: PAYMENT_METHOD_TYPES.PAYPAL,
         });
     }
 
@@ -81,7 +81,7 @@ const useMethods = ({ amount, coupon, type }) => {
         options.push({
             icon: 'payments-type-bt',
             text: c('Payment method option').t`Bitcoin`,
-            value: 'bitcoin'
+            value: 'bitcoin',
         });
     }
 
@@ -89,7 +89,7 @@ const useMethods = ({ amount, coupon, type }) => {
         options.push({
             icon: 'payments-type-cash',
             text: c('Label').t`Cash`,
-            value: 'cash'
+            value: 'cash',
         });
     }
 
@@ -102,7 +102,7 @@ const useMethods = ({ amount, coupon, type }) => {
     return {
         methods,
         loading,
-        options
+        options,
     };
 };
 

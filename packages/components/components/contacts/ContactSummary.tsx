@@ -28,7 +28,7 @@ const ContactSummary = ({
     handleDelete,
     handleExport,
     isPreview,
-    leftBlockWidth = 'w30'
+    leftBlockWidth = 'w30',
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
@@ -51,7 +51,7 @@ const ContactSummary = ({
                         {c('Action').t`Add email`}
                     </LinkButton>
                 )
-            )
+            ),
         },
         {
             icon: 'phone',
@@ -63,7 +63,7 @@ const ContactSummary = ({
                         {c('Action').t`Add phone number`}
                     </LinkButton>
                 )
-            )
+            ),
         },
         {
             icon: 'address',
@@ -73,8 +73,8 @@ const ContactSummary = ({
                       <LinkButton className="p0" onClick={() => handleEdit('adr')}>
                           {c('Action').t`Add address`}
                       </LinkButton>
-                  )
-        }
+                  ),
+        },
     ].filter(Boolean);
 
     return (

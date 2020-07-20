@@ -17,7 +17,7 @@ const OrderableTable = ({ children = [], className = '', caption = undefined, ..
 OrderableTable.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
-    caption: PropTypes.string
+    caption: PropTypes.string,
 };
 
 export default OrderableTable;

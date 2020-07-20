@@ -21,7 +21,7 @@ const SubscriptionFeaturesModal = ({ cycle = CYCLE.MONTHLY, currency = DEFAULT_C
 
 SubscriptionFeaturesModal.propTypes = {
     cycle: PropTypes.number,
-    currency: PropTypes.string
+    currency: PropTypes.string,
 };
 
 export default SubscriptionFeaturesModal;

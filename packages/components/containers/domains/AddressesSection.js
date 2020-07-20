@@ -22,7 +22,7 @@ const AddressesSection = ({ onRedirect }) => {
 };
 
 AddressesSection.propTypes = {
-    onRedirect: PropTypes.func.isRequired
+    onRedirect: PropTypes.func.isRequired,
 };
 
 export default AddressesSection;

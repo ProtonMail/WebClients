@@ -33,7 +33,7 @@ const SelectEmailsModal = ({ contacts, onSubmit, onClose, ...rest }: Props) => {
                 ...contact,
                 contactEmails: contactEmails
                     .filter(({ ContactID }: ContactEmail) => ContactID === contact.ID)
-                    .map((contactEmail: ContactEmail) => ({ ...contactEmail, isChecked: true }))
+                    .map((contactEmail: ContactEmail) => ({ ...contactEmail, isChecked: true })),
             };
         })
     );

@@ -23,7 +23,7 @@ ShortcutsToggle.propTypes = {
     id: PropTypes.string,
     hotkeys: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
 };
 
 export default ShortcutsToggle;

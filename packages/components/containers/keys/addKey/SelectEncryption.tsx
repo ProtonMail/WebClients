@@ -17,16 +17,16 @@ const SelectEncryption = ({ encryptionType, setEncryptionType }: Props) => {
     const radios = [
         {
             label: c('Option').jt`${highSecurity} RSA 2048-bit (Older but faster)`,
-            value: RSA2048
+            value: RSA2048,
         },
         {
             label: c('Option').jt`${highestSecurity} RSA 4096-bit (Secure but slow)`,
-            value: RSA4096
+            value: RSA4096,
         },
         {
             label: c('Option').jt`${stateOfTheArt} X25519 (Modern, fastest, secure)`,
-            value: X25519
-        }
+            value: X25519,
+        },
     ];
 
     return (

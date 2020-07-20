@@ -19,13 +19,13 @@ const KeysTable = ({
     onSetCompromised,
     onSetNotCompromised,
     onSetObsolete,
-    onSetNotObsolete
+    onSetNotObsolete,
 }: Props) => {
     const headerCells = [
         { node: c('Title header for keys table').t`Fingerprint`, className: 'ellipsis' },
         { node: c('Title header for keys table').t`Key type`, className: 'w15 nomobile' },
         { node: c('Title header for keys table').t`Status`, className: 'w10e notinymobile' },
-        { node: c('Title header for keys table').t`Actions`, className: 'w10e' }
+        { node: c('Title header for keys table').t`Actions`, className: 'w10e' },
     ].map(({ node, className = '' }, i) => {
         return (
             <TableCell key={i.toString()} className={className} type="header">
@@ -73,7 +73,7 @@ const KeysTable = ({
                                     }
                                     onSetObsolete={permissions.canSetObsolete ? onSetObsolete : undefined}
                                     onSetNotObsolete={permissions.canSetNotObsolete ? onSetNotObsolete : undefined}
-                                />
+                                />,
                             ]}
                             className="onmobile-hideTd2 ontinymobile-hideTd3"
                         />

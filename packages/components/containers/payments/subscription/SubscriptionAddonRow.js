@@ -15,12 +15,12 @@ const SubscriptionAddonRow = ({
     quantity = 0,
     onChange,
     step = 1,
-    loading = false
+    loading = false,
 }) => {
     const [idRef] = useState(() => generateUID('subscription-addon-row'));
     const options = range(min, max).map((quantity) => ({
         text: format(start + quantity * step),
-        value: quantity
+        value: quantity,
     }));
 
     return (
@@ -81,7 +81,7 @@ SubscriptionAddonRow.propTypes = {
     step: PropTypes.number,
     quantity: PropTypes.number,
     onChange: PropTypes.func.isRequired,
-    format: PropTypes.func
+    format: PropTypes.func,
 };
 
 export default SubscriptionAddonRow;

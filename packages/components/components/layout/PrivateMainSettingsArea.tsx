@@ -5,7 +5,7 @@ import {
     PrivateMainArea,
     SubSettingsSection,
     SubSectionConfig,
-    useAppTitle
+    useAppTitle,
 } from '../../index';
 import { SettingsPropsShared } from './interface';
 import useActiveSection from './useActiveSection';

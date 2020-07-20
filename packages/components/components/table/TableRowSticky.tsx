@@ -38,7 +38,7 @@ function TableRowSticky<T extends HTMLElement>({ children, scrollAreaRef, classN
             className={classnames([
                 'pm-simple-table-stickyRow',
                 isScrollTop && 'pm-simple-table-stickyRow--isOnTop',
-                className
+                className,
             ])}
         >
             {children}

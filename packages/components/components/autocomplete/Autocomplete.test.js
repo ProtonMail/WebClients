@@ -39,7 +39,10 @@ describe('Autocomplete component', () => {
 
     it('should render a list of object values', () => {
         const enteredValue = 't';
-        const list = [{ l: 'test1', v: 'T1' }, { l: 'test2', v: 'T2' }];
+        const list = [
+            { l: 'test1', v: 'T1' },
+            { l: 'test2', v: 'T2' },
+        ];
         const dataMapper = ({ l, v }) => ({ label: l, value: v });
         const { getByText, getByDisplayValue } = render(
             <Autocomplete minChars={1} list={list} inputValue={enteredValue} data={dataMapper} />

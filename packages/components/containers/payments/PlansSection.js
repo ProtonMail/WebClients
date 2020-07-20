@@ -17,7 +17,7 @@ import {
     useEventManager,
     useNotifications,
     useConfig,
-    useLoading
+    useLoading,
 } from 'react-components';
 
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
@@ -28,7 +28,7 @@ import {
     getPlan,
     switchPlan,
     getPlanIDs,
-    clearPlanIDs
+    clearPlanIDs,
 } from 'proton-shared/lib/helpers/subscription';
 import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
 
@@ -99,7 +99,7 @@ const PlansSection = () => {
             plans,
             planID,
             service: CLIENT_TYPE === CLIENT_TYPES.MAIL ? PLAN_SERVICES.MAIL : PLAN_SERVICES.VPN,
-            organization
+            organization,
         });
         const { Coupon } = await withLoading(
             api(
@@ -107,7 +107,7 @@ const PlansSection = () => {
                     PlanIDs: clearPlanIDs(plansIDs),
                     Currency: currency,
                     Cycle: cycle,
-                    CouponCode: couponCode
+                    CouponCode: couponCode,
                 })
             )
         );
@@ -163,7 +163,7 @@ const PlansSection = () => {
                         options={[
                             { text: c('Billing cycle option').t`Monthly`, value: CYCLE.MONTHLY },
                             { text: c('Billing cycle option').t`Annually SAVE 20%`, value: CYCLE.YEARLY },
-                            { text: c('Billing cycle option').t`Two years SAVE 33%`, value: CYCLE.TWO_YEARS }
+                            { text: c('Billing cycle option').t`Two years SAVE 33%`, value: CYCLE.TWO_YEARS },
                         ]}
                     />
                     <CurrencySelector currency={currency} onSelect={setCurrency} className="wauto" />

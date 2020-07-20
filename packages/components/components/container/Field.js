@@ -7,7 +7,7 @@ const Field = ({ children, className }) => {
 
 Field.propTypes = {
     children: PropTypes.node,
-    className: PropTypes.string
+    className: PropTypes.string,
 };
 
 export default Field;

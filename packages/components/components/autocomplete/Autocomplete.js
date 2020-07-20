@@ -53,7 +53,7 @@ const Autocomplete = ({
         const awesompleteInstance = new Awesomplete(inputRef.current, {
             container: () => containerRef.current,
             minChars,
-            ...rest
+            ...rest,
         });
 
         awesompleteInstance.ul.className = dropdownListClasses;
@@ -127,7 +127,7 @@ Autocomplete.propTypes = {
     minChars: PropTypes.number,
     maxItems: PropTypes.number,
     filter: PropTypes.func,
-    data: PropTypes.func
+    data: PropTypes.func,
 };
 
 export default Autocomplete;

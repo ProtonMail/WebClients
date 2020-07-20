@@ -14,7 +14,7 @@ const AddressesTable = ({ domain, domainAddresses }) => {
             addresses.map((address) => {
                 return {
                     ...address,
-                    CatchAll: address.ID === ID ? +newValue : 0
+                    CatchAll: address.ID === ID ? +newValue : 0,
                 };
             })
         );
@@ -29,7 +29,7 @@ const AddressesTable = ({ domain, domainAddresses }) => {
                     <>
                         {c('Title header for addresses domain table').t`Catch all`}
                         <Info url="https://protonmail.com/support/knowledge-base/catch-all/" />
-                    </>
+                    </>,
                 ]}
             />
             <TableBody colSpan={4}>
@@ -48,7 +48,7 @@ const AddressesTable = ({ domain, domainAddresses }) => {
                                     address={address}
                                     domain={domain}
                                     onChange={handleChange(address)}
-                                />
+                                />,
                             ]}
                         />
                     );
@@ -60,7 +60,7 @@ const AddressesTable = ({ domain, domainAddresses }) => {
 
 AddressesTable.propTypes = {
     domain: PropTypes.object.isRequired,
-    domainAddresses: PropTypes.array.isRequired
+    domainAddresses: PropTypes.array.isRequired,
 };
 
 export default AddressesTable;

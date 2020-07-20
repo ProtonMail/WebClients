@@ -12,7 +12,7 @@ import {
     useLoading,
     useModals,
     useNotifications,
-    useEventManager
+    useEventManager,
 } from 'react-components';
 import { c } from 'ttag';
 import { updateEmail } from 'proton-shared/lib/api/settings';
@@ -84,7 +84,7 @@ EmailModal.propTypes = {
     email: PropTypes.string,
     hasReset: PropTypes.bool,
     hasNotify: PropTypes.bool,
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default EmailModal;

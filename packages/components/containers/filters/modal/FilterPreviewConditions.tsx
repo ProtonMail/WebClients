@@ -8,7 +8,7 @@ import {
     FilterStatement,
     SimpleFilterModalModel,
     ConditionType,
-    ConditionComparator
+    ConditionComparator,
 } from 'proton-shared/lib/filters/interfaces';
 
 interface Props {
@@ -44,7 +44,7 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
 
                 return {
                     element: c('Label').jt`the email was sent ${attachment}`,
-                    title: c('Label').t`the email was sent ${label}`
+                    title: c('Label').t`the email was sent ${label}`,
                 };
             }
 
@@ -91,7 +91,7 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
                         {values}
                     </>
                 ),
-                title: `${typeLabel?.toLowerCase()} ${comparatorLabel} ${titleValues}`
+                title: `${typeLabel?.toLowerCase()} ${comparatorLabel} ${titleValues}`,
             };
         });
 

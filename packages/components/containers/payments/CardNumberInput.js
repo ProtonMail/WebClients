@@ -69,7 +69,7 @@ const CardNumberInput = ({ value, onChange, errors = [], ...rest }) => {
 CardNumberInput.propTypes = {
     value: PropTypes.string,
     onChange: PropTypes.func,
-    errors: PropTypes.array
+    errors: PropTypes.array,
 };
 
 export default CardNumberInput;

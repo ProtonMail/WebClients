@@ -13,7 +13,7 @@ import {
     useModals,
     useApi,
     useLoading,
-    useDebounceInput
+    useDebounceInput,
 } from '../..';
 import { buyCredit } from 'proton-shared/lib/api/payments';
 import {
@@ -21,7 +21,7 @@ import {
     DEFAULT_CREDITS_AMOUNT,
     CLIENT_TYPES,
     MIN_CREDIT_AMOUNT,
-    PAYMENT_METHOD_TYPES
+    PAYMENT_METHOD_TYPES,
 } from 'proton-shared/lib/constants';
 
 import Payment from './Payment';
@@ -32,7 +32,7 @@ import PayPalButton from './PayPalButton';
 const getCurrenciesI18N = () => ({
     EUR: c('Monetary unit').t`Euro`,
     CHF: c('Monetary unit').t`Swiss franc`,
-    USD: c('Monetary unit').t`Dollar`
+    USD: c('Monetary unit').t`Dollar`,
 });
 
 const { VPN } = CLIENT_TYPES;
@@ -54,7 +54,7 @@ const CreditsModal = (props) => {
         const requestBody = await handlePaymentToken({
             params: { ...params, Amount: debouncedAmount, Currency: currency },
             api,
-            createModal
+            createModal,
         });
         await api(buyCredit(requestBody));
         await call();
@@ -65,7 +65,7 @@ const CreditsModal = (props) => {
     const { card, setCard, errors, method, setMethod, parameters, canPay, paypal, paypalCredit } = usePayment({
         amount: debouncedAmount,
         currency,
-        onPay: handleSubmit
+        onPay: handleSubmit,
     });
 
     const submit =
@@ -123,7 +123,7 @@ const CreditsModal = (props) => {
 };
 
 CreditsModal.propTypes = {
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default CreditsModal;

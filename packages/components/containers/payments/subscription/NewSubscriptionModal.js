@@ -18,7 +18,7 @@ import {
     useNotifications,
     useOrganization,
     useSubscription,
-    useModals
+    useModals,
 } from 'react-components';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE, CURRENCIES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
@@ -65,7 +65,7 @@ const NewSubscriptionModal = ({
         [SUBSCRIPTION_STEPS.CUSTOMIZATION]: c('Title').t`Plan customization`,
         [SUBSCRIPTION_STEPS.PAYMENT]: c('Title').t`Checkout`,
         [SUBSCRIPTION_STEPS.UPGRADE]: <div className="aligncenter">{c('Title').t`Processing...`}</div>,
-        [SUBSCRIPTION_STEPS.THANKS]: <div className="aligncenter">{c('Title').t`Thank you!`}</div>
+        [SUBSCRIPTION_STEPS.THANKS]: <div className="aligncenter">{c('Title').t`Thank you!`}</div>,
     };
 
     const api = useApi();
@@ -87,7 +87,7 @@ const NewSubscriptionModal = ({
         cycle,
         currency,
         coupon,
-        planIDs
+        planIDs,
     });
     const [step, setStep] = useState(initialStep);
 
@@ -99,7 +99,7 @@ const NewSubscriptionModal = ({
         Cycle: model.cycle,
         Proration: 0,
         Gift: 0,
-        Credit: 0
+        Credit: 0,
     };
 
     const handleUnsubscribe = async () => {
@@ -134,7 +134,7 @@ const NewSubscriptionModal = ({
                     PlanIDs: clearPlanIDs(model.planIDs),
                     Codes: getCodes(model),
                     Cycle: model.cycle,
-                    ...params // Contains Payment, Amount and Currency
+                    ...params, // Contains Payment, Amount and Currency
                 })
             );
             await call();
@@ -150,7 +150,7 @@ const NewSubscriptionModal = ({
         currency: checkResult.Currency,
         onPay(params) {
             return withLoading(handleSubscribe(params));
-        }
+        },
     });
 
     const check = async (newModel = model) => {
@@ -165,7 +165,7 @@ const NewSubscriptionModal = ({
                     PlanIDs: clearPlanIDs(newModel.planIDs),
                     Currency: newModel.currency,
                     Cycle: newModel.cycle,
-                    Codes: getCodes(newModel)
+                    Codes: getCodes(newModel),
                 })
             );
 
@@ -195,7 +195,7 @@ const NewSubscriptionModal = ({
                 }
                 return check({
                     ...model,
-                    planIDs: getPlanIDs(subscription)
+                    planIDs: getPlanIDs(subscription),
                 });
             }
         }
@@ -210,10 +210,10 @@ const NewSubscriptionModal = ({
             params: {
                 Amount: checkResult.AmountDue,
                 Currency: model.currency,
-                ...parameters
+                ...parameters,
             },
             createModal,
-            api
+            api,
         });
 
         return handleSubscribe(params);
@@ -270,7 +270,7 @@ const NewSubscriptionModal = ({
             className={classnames([
                 'subscription-modal',
                 [SUBSCRIPTION_STEPS.CUSTOMIZATION, SUBSCRIPTION_STEPS.PAYMENT].includes(step) && 'pm-modal--full',
-                user.isFree && 'is-free-user'
+                user.isFree && 'is-free-user',
             ])}
             title={TITLE[step]}
             loading={loading || loadingPlans || loadingVpnCountries || loadingOrganization || loadingSubscription}
@@ -399,13 +399,13 @@ NewSubscriptionModal.propTypes = {
         SUBSCRIPTION_STEPS.CUSTOMIZATION,
         SUBSCRIPTION_STEPS.PAYMENT,
         SUBSCRIPTION_STEPS.UPGRADE,
-        SUBSCRIPTION_STEPS.THANKS
+        SUBSCRIPTION_STEPS.THANKS,
     ]),
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]),
     currency: PropTypes.oneOf(CURRENCIES),
     coupon: PropTypes.string,
     planIDs: PropTypes.object,
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default NewSubscriptionModal;

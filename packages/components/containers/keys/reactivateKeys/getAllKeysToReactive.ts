@@ -20,7 +20,7 @@ export const getAllKeysToReactivate = ({
     Addresses = [],
     addressesKeysMap = {},
     User = {},
-    userKeysList = []
+    userKeysList = [],
 }: Arguments) => {
     const allAddressesKeys = Addresses.map((Address) => {
         const { ID } = Address;
@@ -31,7 +31,7 @@ export const getAllKeysToReactivate = ({
         }
         return {
             Address,
-            keys: addressKeysToReactivate
+            keys: addressKeysToReactivate,
         };
     }, []);
 
@@ -41,9 +41,9 @@ export const getAllKeysToReactivate = ({
         inactiveUserKeys.length
             ? {
                   User,
-                  keys: inactiveUserKeys
+                  keys: inactiveUserKeys,
               }
             : undefined,
-        ...allAddressesKeys
+        ...allAddressesKeys,
     ].filter(isTruthy);
 };

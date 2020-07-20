@@ -7,7 +7,7 @@ const CLASSES = {
     MODAL: 'pm-modal',
     MODAL_IN: 'pm-modalIn',
     MODAL_OUT: 'pm-modalOut',
-    MODAL_SMALL: 'pm-modal--smaller'
+    MODAL_SMALL: 'pm-modal--smaller',
 };
 
 /** @type any */
@@ -48,7 +48,7 @@ const Dialog = ({
                         isSmall && CLASSES.MODAL_SMALL,
                         isSmall && 'pm-modal--shorterLabels',
                         isClosing && CLASSES.MODAL_OUT,
-                        extraClassNames
+                        extraClassNames,
                     ])}
                     onAnimationEnd={handleAnimationEnd}
                     {...rest}
@@ -71,7 +71,7 @@ Dialog.propTypes = {
     isBehind: PropTypes.bool,
     isFirst: PropTypes.bool,
     isLast: PropTypes.bool,
-    isClosing: PropTypes.bool
+    isClosing: PropTypes.bool,
 };
 
 export default Dialog;

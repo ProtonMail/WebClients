@@ -14,7 +14,7 @@ enum STEPS {
     SELECT_FILES = 2,
     PROCESS = 3,
     DONE = 4,
-    FAILURE = 5
+    FAILURE = 5,
 }
 
 interface Props {
@@ -53,7 +53,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                 privateKey: decryptedPrivateKey,
                 fingerprint,
                 status: Status.LOADING,
-                result: undefined
+                result: undefined,
             };
             const newList = [...acc, newKey];
             setKeys(newList);
@@ -71,7 +71,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                 .catch((e: Error) => {
                     return createNotification({
                         type: 'error',
-                        text: e.message
+                        text: e.message,
                     });
                 });
             return;
@@ -92,7 +92,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
         if (privateKeys.length === 0) {
             return createNotification({
                 type: 'error',
-                text: c('Error').t`Invalid private key file`
+                text: c('Error').t`Invalid private key file`,
             });
         }
         const list = privateKeys.map((privateKey) => {
@@ -100,7 +100,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                 fingerprint: privateKey.getFingerprint(),
                 privateKey,
                 status: Status.LOADING,
-                result: undefined
+                result: undefined,
             };
         });
         handleUpload(list, []);
@@ -118,7 +118,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                         {c('Alert')
                             .t`Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.`}
                     </Alert>
-                )
+                ),
             };
         }
 
@@ -137,7 +137,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                             autoClick={true}
                         />
                     </>
-                )
+                ),
             };
         }
 
@@ -145,21 +145,21 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
             return {
                 submit: c('Action').t`Done`,
                 loading: true,
-                children: <ImportKeysList keys={keys} />
+                children: <ImportKeysList keys={keys} />,
             };
         }
 
         if (step === STEPS.DONE) {
             return {
                 submit: c('Action').t`Done`,
-                children: <ImportKeysList keys={keys} />
+                children: <ImportKeysList keys={keys} />,
             };
         }
 
         if (step === STEPS.FAILURE) {
             return {
                 submit: c('Action').t`Ok`,
-                children: <GenericError />
+                children: <GenericError />,
             };
         }
 

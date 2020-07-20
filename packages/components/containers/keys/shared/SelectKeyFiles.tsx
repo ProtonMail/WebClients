@@ -28,7 +28,7 @@ const SelectKeyFiles = forwardRef<FileInputHandle, Props>(
         useImperativeHandle(ref, () => ({
             click: () => {
                 fileRef.current?.click();
-            }
+            },
         }));
 
         return (

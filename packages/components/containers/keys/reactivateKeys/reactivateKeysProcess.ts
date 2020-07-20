@@ -26,7 +26,7 @@ export default async ({
     newPassword,
     addressesKeysMap,
     userKeysList,
-    isUploadMode
+    isUploadMode,
 }: Arguments) => {
     const keySalts = await api<any>(getKeySalts()).then(({ KeySalts }: { KeySalts: KeySalt[] }) => KeySalts);
 
@@ -47,7 +47,7 @@ export default async ({
 
             const {
                 Key: { PrivateKey },
-                privateKey: oldPrivateKey
+                privateKey: oldPrivateKey,
             } = completeKeyList.find(({ Key: { ID: otherID } }) => ID === otherID) || { Key: {} };
             if (!PrivateKey) {
                 throw new Error(c('Error').t`Key not found`);
@@ -64,7 +64,7 @@ export default async ({
                         PrivateKey,
                         uploadedPrivateKey,
                         keyList: updatedKeyList,
-                        email: Address?.Email
+                        email: Address?.Email,
                     });
                     updatedKeyList = await reactivatePrivateKey({
                         api,
@@ -73,7 +73,7 @@ export default async ({
                         encryptedPrivateKeyArmored,
                         privateKey,
                         signingKey: primaryPrivateKey,
-                        Address
+                        Address,
                     });
                 } else {
                     if (!oldPassword) {
@@ -84,7 +84,7 @@ export default async ({
                         keySalts,
                         PrivateKey,
                         oldPassword,
-                        newPassword
+                        newPassword,
                     });
                     updatedKeyList = await reactivatePrivateKey({
                         api,
@@ -93,7 +93,7 @@ export default async ({
                         encryptedPrivateKeyArmored,
                         privateKey,
                         signingKey: primaryPrivateKey,
-                        Address
+                        Address,
                     });
                 }
 

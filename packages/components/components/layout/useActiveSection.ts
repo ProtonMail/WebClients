@@ -45,7 +45,7 @@ const useActiveSection = (setActiveSection: (section: string) => void) => {
         const options = {
             root: null,
             rootMargin: '0px',
-            threshold: [0.5, 0.99]
+            threshold: [0.5, 0.99],
             /*
                 A 0.5 threshold takes care of observing changes in big sections, while the 0.99 takes care of small sections.
                 Using 0.99 instead of 1 should help in case intersectionRatio doesn't fully reach 1, which has been observed to happen

@@ -21,7 +21,7 @@ const VPNClientCard = ({ title, link, icon }) => {
 VPNClientCard.propTypes = {
     title: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired
+    icon: PropTypes.string.isRequired,
 };
 
 export default VPNClientCard;

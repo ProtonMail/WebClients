@@ -7,7 +7,7 @@ const { MEMBER, ADMIN, FREE, MULTI_USERS, PAID, PAID_MAIL, PAID_VPN, UPGRADER } 
 const ROLES = {
     [MEMBER_ROLE]: MEMBER,
     [ADMIN_ROLE]: ADMIN,
-    [FREE_ROLE]: FREE
+    [FREE_ROLE]: FREE,
 };
 
 const usePermissions = () => {

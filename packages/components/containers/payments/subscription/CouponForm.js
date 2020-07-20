@@ -32,7 +32,7 @@ const CouponForm = ({ onChange, model }) => {
 
 CouponForm.propTypes = {
     onChange: PropTypes.func.isRequired,
-    model: PropTypes.object.isRequired
+    model: PropTypes.object.isRequired,
 };
 
 export default CouponForm;

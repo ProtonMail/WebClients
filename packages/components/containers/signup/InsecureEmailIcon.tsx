@@ -32,10 +32,7 @@ const getInfo = (domain: string) => {
 };
 
 const InsecureEmailIcon = ({ email }: Props) => {
-    const [, domain = ''] = email
-        .trim()
-        .toLowerCase()
-        .split('@');
+    const [, domain = ''] = email.trim().toLowerCase().split('@');
     const title = getInfo(domain);
 
     if (title) {

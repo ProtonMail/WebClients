@@ -58,7 +58,7 @@ DomainsSelect.propTypes = {
     user: PropTypes.object,
     domains: PropTypes.object,
     fetchDomains: PropTypes.func,
-    className: PropTypes.string
+    className: PropTypes.string,
 };
 
 export default DomainsSelect;

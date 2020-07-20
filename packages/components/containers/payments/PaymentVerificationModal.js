@@ -8,7 +8,7 @@ import {
     ResetButton,
     useNotifications,
     PrimaryButton,
-    DoNotWindowOpenAlertError
+    DoNotWindowOpenAlertError,
 } from 'react-components';
 import { c } from 'ttag';
 import errorSvg from 'design-system/assets/img/pm-images/error.svg';
@@ -23,7 +23,7 @@ const STEPS = {
     REDIRECT: 'redirect',
     REDIRECTING: 'redirecting',
     REDIRECTED: 'redirected',
-    FAIL: 'fail'
+    FAIL: 'fail',
 };
 
 const PROCESSING_DELAY = 5000;
@@ -49,7 +49,9 @@ const PaymentVerificationModal = ({
         [STEPS.REDIRECTED]: isAddCard
             ? c('Title').t`Card verification in progress`
             : c('Title').t`Payment verification in progress`,
-        [STEPS.FAIL]: isPayPal ? c('Title').t`PayPal verification failed` : c('Title').t`3-D Secure verification failed`
+        [STEPS.FAIL]: isPayPal
+            ? c('Title').t`PayPal verification failed`
+            : c('Title').t`3-D Secure verification failed`,
     };
     const [step, setStep] = useState(() => (doNotWindowOpen() ? STEPS.DO_NOT_WINDOW_OPEN : STEPS.REDIRECT));
     const [error, setError] = useState({});
@@ -182,7 +184,7 @@ const PaymentVerificationModal = ({
                                 </PrimaryButton>
                             </p>
                         </div>
-                    )
+                    ),
                 }[step]
             }
         </FormModal>
@@ -198,7 +200,7 @@ PaymentVerificationModal.propTypes = {
     mode: PropTypes.string,
     type: PropTypes.string,
     onProcess: PropTypes.func.isRequired,
-    initialProcess: PropTypes.object
+    initialProcess: PropTypes.object,
 };
 
 export default PaymentVerificationModal;

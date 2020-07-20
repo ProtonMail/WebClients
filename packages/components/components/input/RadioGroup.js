@@ -25,9 +25,9 @@ RadioGroup.propTypes = {
     options: PropTypes.arrayOf(
         PropTypes.shape({
             label: PropTypes.node,
-            value: PropTypes.any
+            value: PropTypes.any,
         }).isRequired
-    )
+    ),
 };
 
 export default RadioGroup;

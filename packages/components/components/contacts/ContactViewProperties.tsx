@@ -14,7 +14,7 @@ const TITLES: { [key: string]: string } = {
     email: c('Title').t`Email addresses`,
     tel: c('Title').t`Phone numbers`,
     adr: c('Title').t`Addresses`,
-    other: c('Title').t`Other information`
+    other: c('Title').t`Other information`,
 };
 
 const ICONS: { [key: string]: string } = {
@@ -22,7 +22,7 @@ const ICONS: { [key: string]: string } = {
     email: 'email',
     tel: 'phone',
     adr: 'address',
-    other: 'info'
+    other: 'info',
 };
 
 interface Props {
@@ -48,7 +48,7 @@ const ContactViewProperties = ({
     userKeysList,
     leftBlockWidth = 'w30',
     rightBlockWidth = 'w70',
-    isPreview = false
+    isPreview = false,
 }: Props) => {
     const title = field ? TITLES[field] : TITLES.other;
     const iconName = field ? ICONS[field] : ICONS.other;

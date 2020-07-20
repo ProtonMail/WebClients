@@ -33,7 +33,7 @@ const useDisplayKeys = ({ keys, User, Address, loadingKeyID }: Props) => {
                 algorithmInfo,
                 fingerprint,
                 isLoading: loadingKeyID === Key.ID,
-                isDecrypted
+                isDecrypted,
             });
         });
     }, [User, Address, parsedKeys, loadingKeyID]);

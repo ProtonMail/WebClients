@@ -44,7 +44,7 @@ AutocompleteSelection.propTypes = {
     className: PropTypes.string,
     label: PropTypes.node,
     onRemove: PropTypes.func,
-    onLabelChange: PropTypes.func
+    onLabelChange: PropTypes.func,
 };
 
 export default AutocompleteSelection;

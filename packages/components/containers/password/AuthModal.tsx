@@ -22,7 +22,7 @@ const AuthModal = ({ onClose, onError, onSuccess, config, ...rest }: Props) => {
             const result = await srpAuth({
                 api,
                 credentials: { password, totp },
-                config
+                config,
             });
 
             onSuccess({ password, totp, result });

@@ -13,7 +13,7 @@ import {
     useModals,
     useNotifications,
     useOrganization,
-    useOrganizationKey
+    useOrganizationKey,
 } from '../../index';
 import { USER_ROLES } from 'proton-shared/lib/constants';
 
@@ -134,7 +134,7 @@ const OrganizationSection = () => {
                                 <code key={1} className="mw100 inbl ellipsis">
                                     {displayOrganizationKey.fingerprint}
                                 </code>,
-                                displayOrganizationKey.algorithm
+                                displayOrganizationKey.algorithm,
                             ]}
                         />
                     </TableBody>

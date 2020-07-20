@@ -35,7 +35,7 @@ const RemoteToggle = ({ id, showImages, onChange }) => {
 RemoteToggle.propTypes = {
     id: PropTypes.string,
     showImages: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default RemoteToggle;

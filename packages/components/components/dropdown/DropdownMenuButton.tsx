@@ -26,7 +26,7 @@ const DropdownMenuButton = ({
             className={classnames([
                 'dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5',
                 isSelected && 'dropDown-item--isSelected',
-                className
+                className,
             ])}
             {...rest}
         >

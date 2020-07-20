@@ -23,7 +23,7 @@ const AddressStatus = ({ address }) => {
 };
 
 AddressStatus.propTypes = {
-    address: PropTypes.object.isRequired
+    address: PropTypes.object.isRequired,
 };
 
 export default AddressStatus;

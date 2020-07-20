@@ -12,7 +12,7 @@ import { OVERWRITE, CATEGORIES } from 'proton-shared/lib/contacts/constants';
 import {
     ContactProperties,
     ContactProperty,
-    ContactPropertyChange
+    ContactPropertyChange,
 } from 'proton-shared/lib/interfaces/contacts/Contact';
 
 import ContactModalProperties from '../ContactModalProperties';
@@ -28,7 +28,7 @@ import PrimaryButton from '../../../components/button/PrimaryButton';
 
 const DEFAULT_MODEL = [
     { field: 'fn', value: '' },
-    { field: 'email', value: '' }
+    { field: 'email', value: '' },
 ];
 const { OVERWRITE_CONTACT, THROW_ERROR_IF_CONFLICT } = OVERWRITE;
 const { INCLUDE, IGNORE } = CATEGORIES;
@@ -90,7 +90,7 @@ const ContactModal = ({
             const index = randomIntFromInterval(0, otherInformationFields.length - 1);
             return setProperties([
                 ...properties,
-                { field: otherInformationFields[index], value: '', uid: generateUID(UID_PREFIX) }
+                { field: otherInformationFields[index], value: '', uid: generateUID(UID_PREFIX) },
             ]);
         }
         setProperties([...properties, { field, value: '', uid: generateUID(UID_PREFIX) }]);
@@ -101,12 +101,12 @@ const ContactModal = ({
         const Contacts = await prepareContacts([properties.concat(notEditableProperties)], userKeysList[0]);
         const labels = hasCategories(notEditableProperties) ? INCLUDE : IGNORE;
         const {
-            Responses: [{ Response: { Code = null, Contact: { ID = null } = {} } = {} }]
+            Responses: [{ Response: { Code = null, Contact: { ID = null } = {} } = {} }],
         } = await api(
             addContacts({
                 Contacts,
                 Overwrite: contactID ? OVERWRITE_CONTACT : THROW_ERROR_IF_CONFLICT,
-                Labels: labels
+                Labels: labels,
             })
         );
         if (Code !== SINGLE_SUCCESS) {
@@ -131,7 +131,7 @@ const ContactModal = ({
             if (property.uid === propertyUID) {
                 return {
                     ...property,
-                    [key]: value
+                    [key]: value,
                 };
             }
             return property;

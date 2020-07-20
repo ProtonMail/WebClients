@@ -38,7 +38,7 @@ const ContactView = ({
     errors,
     isModal,
     onDelete,
-    isPreview = false
+    isPreview = false,
 }: Props) => {
     const { createModal } = useModals();
     const { isNarrow } = useActiveBreakpoint();
@@ -61,7 +61,7 @@ const ContactView = ({
         properties,
         contactGroupsMap,
         leftBlockWidth: 'w100 mw100p',
-        rightBlockWidth: 'w100'
+        rightBlockWidth: 'w100',
     };
 
     return (

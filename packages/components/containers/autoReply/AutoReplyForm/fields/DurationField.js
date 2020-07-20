@@ -19,7 +19,7 @@ const DurationField = ({ value, onChange }) => {
 
 DurationField.propTypes = {
     value: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
 };
 
 export default DurationField;

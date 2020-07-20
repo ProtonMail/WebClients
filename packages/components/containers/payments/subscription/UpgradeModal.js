@@ -16,7 +16,7 @@ const UpgradeModal = ({ plans, onUpgrade, ...rest }) => {
         c('Info').t`5 email addresses`,
         c('Info').t`Custom domain support`,
         c('Info').t`ProtonMail bridge`,
-        c('Info').t`Auto-reply, filters & much more`
+        c('Info').t`Auto-reply, filters & much more`,
     ];
 
     return (
@@ -75,7 +75,7 @@ const UpgradeModal = ({ plans, onUpgrade, ...rest }) => {
 
 UpgradeModal.propTypes = {
     plans: PropTypes.array.isRequired,
-    onUpgrade: PropTypes.func
+    onUpgrade: PropTypes.func,
 };
 
 export default UpgradeModal;

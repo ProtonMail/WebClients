@@ -5,7 +5,7 @@ import {
     SidebarListItemContent,
     SubSidebarListItem,
     SidebarListItem,
-    SidebarListItemContentIcon
+    SidebarListItemContentIcon,
 } from '../sidebar';
 import SidebarListItemLink, { SubSidebarListItemLink } from '../sidebar/SidebarListItemLink';
 

@@ -214,7 +214,7 @@ const ShortcutsModal = (props) => {
 };
 
 ShortcutsModal.propTypes = {
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default ShortcutsModal;

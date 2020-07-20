@@ -20,7 +20,7 @@ StickyLabelsToggle.propTypes = {
     id: PropTypes.string.isRequired,
     stickyLabels: PropTypes.number.isRequired,
     onToggle: PropTypes.func.isRequired,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
 };
 
 export default StickyLabelsToggle;

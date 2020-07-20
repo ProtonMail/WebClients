@@ -27,7 +27,7 @@ const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerCl
         anchorEl: anchorRef.current,
         isOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
-        scrollContainerClass
+        scrollContainerClass,
     });
     const tooltipHandlers = useTooltipHandlers(open, close, isOpen);
 

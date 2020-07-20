@@ -13,7 +13,7 @@ enum STEPS {
     WARNING = 2,
     GENERATE_KEY = 3,
     SUCCESS = 4,
-    FAILURE = 5
+    FAILURE = 5,
 }
 
 interface Props {
@@ -58,7 +58,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                         </Alert>
                         <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
                     </>
-                )
+                ),
             };
         }
 
@@ -74,7 +74,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                         {c('Info')
                             .t`A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?`}
                     </Alert>
-                )
+                ),
             };
         }
 
@@ -87,7 +87,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                         {c('alert')
                             .t`The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.`}
                     </Alert>
-                )
+                ),
             };
         }
 
@@ -95,14 +95,14 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
             const fp = <code key="0">{newKeyFingerprint}</code>;
             return {
                 submit: c('Action').t`Done`,
-                children: <Alert>{c('Info').jt`Key with fingerprint ${fp} successfully created`}</Alert>
+                children: <Alert>{c('Info').jt`Key with fingerprint ${fp} successfully created`}</Alert>,
             };
         }
 
         if (step === STEPS.FAILURE) {
             return {
                 submit: c('Action').t`Ok`,
-                children: <GenericError />
+                children: <GenericError />,
             };
         }
 

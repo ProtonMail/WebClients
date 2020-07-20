@@ -14,12 +14,12 @@ const AddressesToolbar = ({ memberIndex, onAddAddress, onChangeMemberIndex, memb
     const options = [
         {
             text: c('Option').t`All users`,
-            value: ALL_MEMBERS_ID
+            value: ALL_MEMBERS_ID,
         },
         ...members.map(({ Name }, i) => ({
             text: Name,
-            value: i
-        }))
+            value: i,
+        })),
     ];
 
     return (

@@ -43,7 +43,7 @@ const AutoReplyFormWeekly = ({ model: { start, end, timezone }, updateModel }) =
 
 AutoReplyFormWeekly.propTypes = {
     model: modelShape,
-    updateModel: PropTypes.func
+    updateModel: PropTypes.func,
 };
 
 export default AutoReplyFormWeekly;

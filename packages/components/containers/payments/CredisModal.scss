@@ -5,10 +5,8 @@
 }
 
 @include respond-to($breakpoint-small) {
-
     .credits-modal .pm-label.payment-left,
     .credits-modal .pm-field-container.payment-right {
         width: 100%;
     }
-
 }

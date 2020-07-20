@@ -19,7 +19,7 @@ import {
     useGetUserKeys,
     useGetAddressesKeys,
     useGetOrganizationKeyRaw,
-    useApi
+    useApi,
 } from '../../index';
 import { lockSensitiveSettings } from 'proton-shared/lib/api/user';
 import { InfoAuthedResponse, TwoFaResponse } from 'proton-shared/lib/authentication/interface';
@@ -29,7 +29,7 @@ import {
     handleChangeMailboxPassword,
     handleChangeLoginPassword,
     handleChangeOnePassword,
-    getArmoredPrivateKeys
+    getArmoredPrivateKeys,
 } from './changePasswordHelper';
 import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
@@ -40,7 +40,7 @@ export enum MODES {
     CHANGE_TWO_PASSWORD_MAILBOX_MODE = 2,
     CHANGE_TWO_PASSWORD_LOGIN_MODE = 3,
     SWITCH_ONE_PASSWORD = 4,
-    SWITCH_TWO_PASSWORD = 5
+    SWITCH_TWO_PASSWORD = 5,
 }
 
 interface Props {
@@ -63,7 +63,7 @@ interface Errors {
 const DEFAULT_ERRORS = {
     loginError: '',
     confirmPasswordError: '',
-    fatalError: false
+    fatalError: false,
 };
 
 const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
@@ -100,7 +100,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         oldPassword: '',
         newPassword: '',
         confirmPassword: '',
-        totp: ''
+        totp: '',
     });
     const [loading, setLoading] = useState<boolean>(false);
     const [errors, setErrors] = useState<Errors>(DEFAULT_ERRORS);
@@ -114,7 +114,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         if (inputs.confirmPassword !== inputs.newPassword) {
             setPartialError({
                 ...DEFAULT_ERRORS,
-                confirmPasswordError: c('Error').t`Passwords do not match`
+                confirmPasswordError: c('Error').t`Passwords do not match`,
             });
             throw new Error('PasswordMatch');
         }
@@ -124,7 +124,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         if (Code === PASSWORD_WRONG_ERROR) {
             setPartialError({
                 ...DEFAULT_ERRORS,
-                loginError: Error
+                loginError: Error,
             });
         }
     };
@@ -146,7 +146,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 labels: {
                     oldPassword: c('Label').t`Old login password`,
                     newPassword: c('Label').t`New login password`,
-                    confirmPassword: c('Label').t`Confirm login password`
+                    confirmPassword: c('Label').t`Confirm login password`,
                 },
                 async onSubmit() {
                     try {
@@ -164,7 +164,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         setLoading(false);
                         checkLoginError(e);
                     }
-                }
+                },
             };
         }
 
@@ -180,7 +180,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 labels: {
                     oldPassword: c('Label').t`Old password`,
                     newPassword: c('Label').t`New login password`,
-                    confirmPassword: c('Label').t`Confirm login password`
+                    confirmPassword: c('Label').t`Confirm login password`,
                 },
                 async onSubmit() {
                     try {
@@ -196,14 +196,14 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                             newPassword: '',
                             confirmPassword: '',
                             totp: '',
-                            oldPassword: ''
+                            oldPassword: '',
                         });
                         setLoading(false);
                     } catch (e) {
                         setLoading(false);
                         checkLoginError(e);
                     }
-                }
+                },
             };
         }
 
@@ -212,7 +212,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 title: c('Title').t`Switch to two-password mode`,
                 labels: {
                     newPassword: c('Label').t`New mailbox password`,
-                    confirmPassword: c('Label').t`Confirm mailbox password`
+                    confirmPassword: c('Label').t`Confirm mailbox password`,
                 },
                 async onSubmit() {
                     try {
@@ -222,7 +222,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         const [userKeysList, addressesKeysMap, organizationKey] = await Promise.all([
                             getUserKeys(),
                             getAddressesKeys(),
-                            isAdmin ? getOrganizationKey() : undefined
+                            isAdmin ? getOrganizationKey() : undefined,
                         ]);
 
                         validateConfirmPassword();
@@ -236,7 +236,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                             userKeysList,
                             addressesKeysMap,
                             organizationKey: organizationKey?.privateKey,
-                            keyPassword
+                            keyPassword,
                         });
                         await handleChangeMailboxPassword({ api, keySalt, armoredOrganizationKey, armoredKeys });
                         authentication.setPassword(keyPassword);
@@ -251,7 +251,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                     } finally {
                         start();
                     }
-                }
+                },
             };
         }
 
@@ -262,7 +262,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 const [userKeysList, addressesKeysMap, organizationKey] = await Promise.all([
                     getUserKeys(),
                     getAddressesKeys(),
-                    isAdmin ? getOrganizationKey() : undefined
+                    isAdmin ? getOrganizationKey() : undefined,
                 ]);
                 /**
                  * This is the case for a user who does not have any keys set-up.
@@ -273,7 +273,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 if (userKeysList.length === 0) {
                     return createNotification({
                         type: 'error',
-                        text: c('Error').t`Please generate keys before you try to change your password.`
+                        text: c('Error').t`Please generate keys before you try to change your password.`,
                     });
                 }
                 validateConfirmPassword();
@@ -287,13 +287,13 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                     userKeysList,
                     addressesKeysMap,
                     organizationKey: organizationKey?.privateKey,
-                    keyPassword
+                    keyPassword,
                 });
 
                 await handleUnlock({
                     api,
                     oldPassword: inputs.oldPassword,
-                    totp: inputs.totp
+                    totp: inputs.totp,
                 });
 
                 if (mode === MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE) {
@@ -305,7 +305,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         armoredOrganizationKey,
                         keySalt,
                         newPassword: inputs.newPassword,
-                        totp: inputs.totp
+                        totp: inputs.totp,
                     });
                 }
                 authentication.setPassword(keyPassword);
@@ -329,7 +329,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 labels: {
                     oldPassword: c('Label').t`Old login password`,
                     newPassword: c('Label').t`New password`,
-                    confirmPassword: c('Label').t`Confirm password`
+                    confirmPassword: c('Label').t`Confirm password`,
                 },
                 extraAlert: (
                     <Alert>
@@ -337,7 +337,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                             .t`ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.`}
                     </Alert>
                 ),
-                onSubmit
+                onSubmit,
             };
         }
 
@@ -347,9 +347,9 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 labels: {
                     oldPassword: c('Label').t`Old password`,
                     newPassword: c('Label').t`New password`,
-                    confirmPassword: c('Label').t`Confirm password`
+                    confirmPassword: c('Label').t`Confirm password`,
                 },
-                onSubmit
+                onSubmit,
             };
         }
 
@@ -359,9 +359,9 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 labels: {
                     oldPassword: c('Label').t`Old login password`,
                     newPassword: c('Label').t`New mailbox password`,
-                    confirmPassword: c('Label').t`Confirm mailbox password`
+                    confirmPassword: c('Label').t`Confirm mailbox password`,
                 },
-                onSubmit
+                onSubmit,
             };
         }
 

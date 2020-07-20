@@ -40,7 +40,7 @@ function LabelSortableList({ items, onEditLabel = noop, onRemoveLabel = noop, ..
 LabelSortableList.propTypes = {
     items: PropTypes.array.isRequired,
     onEditLabel: PropTypes.func,
-    onRemoveLabel: PropTypes.func
+    onRemoveLabel: PropTypes.func,
 };
 
 export default LabelSortableList;

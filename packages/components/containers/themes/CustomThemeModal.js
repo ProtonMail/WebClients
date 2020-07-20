@@ -35,7 +35,7 @@ const CustomThemeModal = ({ onSave, theme: initialTheme = '', ...rest }) => {
 
 CustomThemeModal.propTypes = {
     onSave: PropTypes.func.isRequired,
-    theme: PropTypes.string
+    theme: PropTypes.string,
 };
 
 export default CustomThemeModal;

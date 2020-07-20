@@ -125,7 +125,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
             return {
                 minutes,
                 value,
-                label: displayDuration ? `${label} (${formatDuration(label, minutes)})` : label
+                label: displayDuration ? `${label} (${formatDuration(label, minutes)})` : label,
             };
         });
     }, [normalizedMinutes, base]);
@@ -194,7 +194,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
                         // Prevent default to stop the input getting blurred.
                         event.preventDefault();
                     },
-                    ref: scrollRef
+                    ref: scrollRef,
                 }}
             >
                 <DropdownMenu listRef={listRef}>

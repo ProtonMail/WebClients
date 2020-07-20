@@ -2,11 +2,9 @@
  * signup specific styles
  */
 $default-height-fields: 4.1rem;
-@import "~design-system/_sass/reusable-components/design-system-config";
-
+@import '~design-system/_sass/reusable-components/design-system-config';
 
 .signLayout-container {
-
     // selector to improve
     .signup-label-field-container {
         flex-direction: column;
@@ -18,7 +16,7 @@ $default-height-fields: 4.1rem;
     .pm-label {
         font-weight: 600;
         font-size: 1.2rem;
-        padding-bottom: .2em;
+        padding-bottom: 0.2em;
     }
     .pm-field {
         padding: em(10) em(16); // design want 42px height (actually 42 to avoid .5px)
@@ -34,7 +32,7 @@ $default-height-fields: 4.1rem;
     }
 
     .signup-container {
-        transition: max-width .15s easing(easeIn);
+        transition: max-width 0.15s easing(easeIn);
 
         .payment-left {
             width: 15em;
@@ -48,7 +46,6 @@ $default-height-fields: 4.1rem;
         }
 
         @include respond-to($breakpoint-small) {
-
             border-radius: 0;
             max-width: none;
             width: 100%;
@@ -60,7 +57,6 @@ $default-height-fields: 4.1rem;
                 padding-right: 0;
             }
         }
-
     }
 }
 
@@ -69,27 +65,24 @@ $default-height-fields: 4.1rem;
 // 	--label-width: 10em;
 // }
 .payment-container {
-	--label-width: #{$pm-label-width};
+    --label-width: #{$pm-label-width};
 }
-
-
 
 /* display for currency/plans */
 .account-form-cycle-currency-selectors {
-	width: calc( (100% - 3em)/4 ); // 4 plans
+    width: calc((100% - 3em) / 4); // 4 plans
 
-	@include respond-to(1100) {
-		&.flex-nowrap {
-			flex-wrap: wrap;
-			.pm-field {
-				width: 100%;
-				margin-right: 0;
-				margin-bottom: .25em;
-			}
-	   }
-	}
+    @include respond-to(1100) {
+        &.flex-nowrap {
+            flex-wrap: wrap;
+            .pm-field {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 0.25em;
+            }
+        }
+    }
 }
-
 
 // Hide icons (caret, support1) in <SupportDropdown>
 .signLayout-container {
@@ -109,7 +102,7 @@ $default-height-fields: 4.1rem;
 .signup-footer-link {
     &:focus,
     &:hover {
-        color: rgba($white, .5);
+        color: rgba($white, 0.5);
     }
 }
 
@@ -119,5 +112,4 @@ $default-height-fields: 4.1rem;
     }
 }
 
-
-@import "../payments/subscription/SubscriptionTable.scss";
+@import '../payments/subscription/SubscriptionTable.scss';

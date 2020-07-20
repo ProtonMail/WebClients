@@ -35,7 +35,7 @@ GiftCodeForm.propTypes = {
     onSubmit: PropTypes.func,
     loading: PropTypes.bool,
     disabled: PropTypes.bool,
-    code: PropTypes.string
+    code: PropTypes.string,
 };
 
 export default GiftCodeForm;

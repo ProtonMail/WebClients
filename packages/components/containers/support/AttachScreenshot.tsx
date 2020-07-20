@@ -29,7 +29,7 @@ const AttachScreenshot = ({ id, onUpload, onReset }: Props) => {
         if (!images.length) {
             return createNotification({
                 type: 'error',
-                text: c('Error notification in the bug report modal when the user upload file').t`No image selected`
+                text: c('Error notification in the bug report modal when the user upload file').t`No image selected`,
             });
         }
 
@@ -39,7 +39,7 @@ const AttachScreenshot = ({ id, onUpload, onReset }: Props) => {
                 images.map((img) =>
                     resize(img, MAX_SIZE_SCREENSHOT).then((base64str) => ({
                         name: img.name,
-                        blob: toBlob(base64str)
+                        blob: toBlob(base64str),
                     }))
                 )
             )

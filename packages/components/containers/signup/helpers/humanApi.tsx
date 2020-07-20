@@ -26,9 +26,9 @@ const humanApiHelper = <T,>(
         ...config,
         headers: {
             ...config.headers,
-            ...getVerificationHeaders(verificationToken, verificationTokenType)
+            ...getVerificationHeaders(verificationToken, verificationTokenType),
         },
-        ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED]
+        ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
     }).catch((error: any) => {
         if (
             error.data?.Code !== API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED ||
@@ -42,10 +42,10 @@ const humanApiHelper = <T,>(
                 ...config,
                 headers: {
                     ...config.headers,
-                    ...getVerificationHeaders(token, tokenType)
+                    ...getVerificationHeaders(token, tokenType),
                 },
                 ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
-                silence: [API_CUSTOM_ERROR_CODES.TOKEN_INVALID]
+                silence: [API_CUSTOM_ERROR_CODES.TOKEN_INVALID],
             })
                 .then((result: T) => {
                     onToken(token, tokenType);
@@ -93,7 +93,7 @@ const createHumanApi = ({ api, createModal }: { api: Api; createModal: (node: Re
     const setToken = (token: string, tokenType: HumanVerificationMethodType) => {
         verificationsTokens = {
             verificationToken: token,
-            verificationTokenType: tokenType
+            verificationTokenType: tokenType,
         };
     };
 
@@ -102,13 +102,13 @@ const createHumanApi = ({ api, createModal }: { api: Api; createModal: (node: Re
             api,
             createModal,
             ...verificationsTokens,
-            onToken: setToken
+            onToken: setToken,
         });
 
     return {
         api: humanApiCaller,
         setToken,
-        clearToken
+        clearToken,
     };
 };
 

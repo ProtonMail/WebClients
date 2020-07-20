@@ -1,4 +1,4 @@
-.subscriptionTable-plan[data-current-plan="true"] {
+.subscriptionTable-plan[data-current-plan='true'] {
     border-left: 2px solid $pm-primary;
     border-right: 2px solid $pm-primary;
     border-bottom: 2px solid $pm-primary;
@@ -31,14 +31,13 @@
 .subscriptionPrices-monthly,
 .subscriptionPlan-customize {
     .amount,
-    .currency  {
+    .currency {
         font-size: 3rem;
         @include respond-to($breakpoint-tiny) {
             font-size: 2rem;
         }
         line-height: 1;
     }
-
 }
 .subscriptionPlan-customize {
     .prefix {
@@ -51,7 +50,7 @@
     .amount,
     .currency,
     .prefix,
-    .subscriptionPlan-customize-included  {
+    .subscriptionPlan-customize-included {
         font-size: 2.2rem;
     }
 }
@@ -68,7 +67,7 @@
 
 .subscriptionTable-mostPopular {
     position: absolute;
-    top: .5rem;
+    top: 0.5rem;
     left: 0;
     right: 0;
 }

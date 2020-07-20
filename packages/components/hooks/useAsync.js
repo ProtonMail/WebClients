@@ -2,7 +2,7 @@ import { useCallback, useReducer, useRef } from 'react';
 import useIsMounted from './useIsMounted';
 
 const DEFAULT_STATE = {
-    loading: false
+    loading: false,
 };
 
 const reducer = (state, action) => {
@@ -10,19 +10,19 @@ const reducer = (state, action) => {
         case 'loading':
             return {
                 ...state,
-                loading: true
+                loading: true,
             };
         case 'success':
             return {
                 error: undefined,
                 loading: false,
-                result: action.payload
+                result: action.payload,
             };
         case 'error':
             return {
                 result: undefined,
                 loading: false,
-                error: action.payload
+                error: action.payload,
             };
     }
 };
@@ -55,7 +55,7 @@ const useAsync = (setResults = true) => {
         result,
         error,
         loading,
-        run
+        run,
     };
 };
 

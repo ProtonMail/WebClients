@@ -37,7 +37,7 @@ Header.propTypes = {
     onClose: PropTypes.func,
     className: PropTypes.string,
     closeTextIsHidden: PropTypes.bool,
-    modalTitleID: PropTypes.string.isRequired
+    modalTitleID: PropTypes.string.isRequired,
 };
 
 export default Header;

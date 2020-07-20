@@ -13,7 +13,7 @@ const InvoiceAmount = ({ invoice }) => {
 };
 
 InvoiceAmount.propTypes = {
-    invoice: PropTypes.object.isRequired
+    invoice: PropTypes.object.isRequired,
 };
 
 export default InvoiceAmount;

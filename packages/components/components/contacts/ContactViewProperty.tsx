@@ -10,7 +10,7 @@ import {
     ContactProperty,
     ContactProperties,
     ContactEmail,
-    ContactGroup
+    ContactGroup,
 } from 'proton-shared/lib/interfaces/contacts/Contact';
 
 import { useNotifications } from '../..';
@@ -52,7 +52,7 @@ const ContactViewProperty = ({
     userKeysList,
     leftBlockWidth = 'w30',
     rightBlockWidth = 'w70',
-    isPreview
+    isPreview,
 }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const { createModal } = useModals();

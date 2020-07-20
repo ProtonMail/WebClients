@@ -25,7 +25,7 @@ export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
 const Icon = ({ name, alt, color, className = '', viewBox = '0 0 16 16', size = 16, rotate = 0, ...rest }: Props) => {
     const style = {
         ...(color && { color }),
-        ...(rotate && { transform: `rotate(${rotate}deg)` })
+        ...(rotate && { transform: `rotate(${rotate}deg)` }),
     };
     return (
         <>

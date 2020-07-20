@@ -61,7 +61,7 @@ const GenerateKeyModal = ({ domain, ...rest }) => {
 };
 
 GenerateKeyModal.propTypes = {
-    domain: PropTypes.object.isRequired
+    domain: PropTypes.object.isRequired,
 };
 
 export default GenerateKeyModal;

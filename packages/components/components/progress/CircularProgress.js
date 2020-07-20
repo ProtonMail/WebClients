@@ -38,7 +38,7 @@ CircularProgress.propTypes = {
     className: PropTypes.string,
     rootRef: PropTypes.object,
     size: PropTypes.number,
-    progress: PropTypes.number.isRequired
+    progress: PropTypes.number.isRequired,
 };
 
 export default CircularProgress;

@@ -14,7 +14,7 @@ import {
     useApiWithoutResult,
     ConfirmModal,
     Alert,
-    useModals
+    useModals,
 } from '../../..';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import {
@@ -27,7 +27,7 @@ import {
     FilterStatement,
     FilterOperator,
     FilterActions,
-    FilterCondition
+    FilterCondition,
 } from 'proton-shared/lib/filters/interfaces';
 import { isDarkTheme } from 'proton-shared/lib/themes/helpers';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -99,7 +99,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         const {
             Actions,
             Conditions,
-            Operator
+            Operator,
         }: {
             Operator?: FilterOperator;
             Actions?: FilterActions;
@@ -136,24 +136,24 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                     type: cond.Type.value,
                     comparator: cond.Comparator.value,
                     values: cond.Values,
-                    isOpen: true
+                    isOpen: true,
                 })) || [],
             actions: {
                 labelAs: {
                     labels: foldersLabelsMap?.labels || [],
-                    isOpen: true
+                    isOpen: true,
                 },
                 moveTo: {
                     folder: foldersLabelsMap?.folder ? foldersLabelsMap?.folder[0] : undefined,
-                    isOpen: true
+                    isOpen: true,
                 },
                 markAs: {
                     read: Actions?.Mark.Read || false,
                     starred: Actions?.Mark.Starred || false,
-                    isOpen: true
+                    isOpen: true,
                 },
-                autoReply: Actions?.Vacation || null
-            }
+                autoReply: Actions?.Vacation || null,
+            },
         };
     };
 
@@ -168,7 +168,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         return {
             name: checkNameErrors(filters, name, isEdit),
             conditions: checkConditionsErrors(conditions),
-            actions: checkActionsErrors(actions)
+            actions: checkActionsErrors(actions),
         };
     }, [name, actions, conditions]);
 
@@ -179,7 +179,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         try {
             const { Filter } = await reqCreate.request(filter);
             createNotification({
-                text: c('Notification').t`${Filter.Name} created`
+                text: c('Notification').t`${Filter.Name} created`,
             });
         } finally {
             // Some failed request will add the filter but in disabled mode
@@ -193,7 +193,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         const { Filter } = await reqUpdate.request(filter.ID, filter);
         call();
         createNotification({
-            text: c('Filter notification').t`Filter ${Filter.Name} updated`
+            text: c('Filter notification').t`Filter ${Filter.Name} updated`,
         });
         onClose();
     };

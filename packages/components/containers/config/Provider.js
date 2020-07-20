@@ -9,7 +9,7 @@ const Provider = ({ config, children }) => {
 
 Provider.propTypes = {
     children: PropTypes.node.isRequired,
-    config: PropTypes.object.isRequired
+    config: PropTypes.object.isRequired,
 };
 
 export default Provider;

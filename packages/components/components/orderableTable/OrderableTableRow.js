@@ -14,7 +14,7 @@ const OrderableTableRow = ({ index, cells = [], ...rest }) => (
                         <Icon className="mtauto mbauto cursor-row-resize" name="text-justify" />
                     </span>
                 </OrderableHandle>,
-                ...cells
+                ...cells,
             ]}
             {...rest}
         />
@@ -23,7 +23,7 @@ const OrderableTableRow = ({ index, cells = [], ...rest }) => (
 
 OrderableTableRow.propTypes = {
     index: PropTypes.number.isRequired,
-    cells: PropTypes.arrayOf(PropTypes.node)
+    cells: PropTypes.arrayOf(PropTypes.node),
 };
 
 export default OrderableTableRow;

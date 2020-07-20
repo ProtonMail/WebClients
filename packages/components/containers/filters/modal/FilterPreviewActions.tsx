@@ -23,7 +23,7 @@ const LABELS_ACTION = {
     labelAs: c('Action').t`label emails as`,
     moveTo: c('Action').t`move emails to`,
     markAs: c('Action').t`mark emails as`,
-    autoReply: c('Action').t`send auto-reply email`
+    autoReply: c('Action').t`send auto-reply email`,
 };
 
 const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, model }: Props) => {
@@ -45,7 +45,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                             className="ml0-5 mr0-5 mb0-5 badgeLabel flex flex-row flex-items-center ellipsis"
                             role="listitem"
                             style={{
-                                color: labelsMap[l].Color
+                                color: labelsMap[l].Color,
                             }}
                         >
                             <span className="pm-badgeLabel-link color-white ellipsis nodecoration" title={l}>
@@ -66,7 +66,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                         {labelsElements}
                     </span>
                 ),
-                title: `${LABELS_ACTION.labelAs} ${labelsTitles}`
+                title: `${LABELS_ACTION.labelAs} ${labelsTitles}`,
             });
         }
 
@@ -94,7 +94,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                         {folderElement}
                     </>
                 ),
-                title: `${LABELS_ACTION.moveTo} ${selectedFolder}`
+                title: `${LABELS_ACTION.moveTo} ${selectedFolder}`,
             });
         }
 
@@ -114,9 +114,9 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                 <strong>{c('Filter preview').t`starred`}</strong>
             );
 
-            const markAsTitle = `${actions.markAs.read && c('Filter preview').t`read`}${actions.markAs.read &&
-                actions.markAs.starred &&
-                ` ${c('Label').t`and`} `}${actions.markAs.starred && c('Filter preview').t`starred`}`;
+            const markAsTitle = `${actions.markAs.read && c('Filter preview').t`read`}${
+                actions.markAs.read && actions.markAs.starred && ` ${c('Label').t`and`} `
+            }${actions.markAs.starred && c('Filter preview').t`starred`}`;
 
             actionsRows.push({
                 element: (
@@ -134,7 +134,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                         {actions.markAs.starred && starredElement}
                     </>
                 ),
-                title: `${LABELS_ACTION.markAs} ${markAsTitle}`
+                title: `${LABELS_ACTION.markAs} ${markAsTitle}`,
             });
         }
 
@@ -151,7 +151,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
 
             actionsRows.push({
                 element: label,
-                title: LABELS_ACTION.autoReply
+                title: LABELS_ACTION.autoReply,
             });
         }
 

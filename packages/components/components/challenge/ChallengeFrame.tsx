@@ -118,8 +118,8 @@ const ChallengeFrame = ({
                         payload: {
                             styles: styleSrcs,
                             scripts: scriptSrcs,
-                            bodyClassName
-                        }
+                            bodyClassName,
+                        },
                     },
                     targetOrigin
                 );
@@ -147,7 +147,7 @@ const ChallengeFrame = ({
                     return;
                 }
                 challengeResolve?.({
-                    [messageData.id]: messageData.fingerprint
+                    [messageData.id]: messageData.fingerprint,
                 });
             }
         };
@@ -167,14 +167,14 @@ const ChallengeFrame = ({
                         {
                             type: 'env.loaded',
                             data: {
-                                targetOrigin: window.location.origin
-                            }
+                                targetOrigin: window.location.origin,
+                            },
                         },
                         targetOrigin
                     );
                     contentWindow.postMessage(
                         {
-                            type: 'submit.broadcast'
+                            type: 'submit.broadcast',
                         },
                         targetOrigin
                     );
@@ -182,7 +182,7 @@ const ChallengeFrame = ({
                         reject(new Error('Challenge timeout'));
                     }, CHALLENGE_TIMEOUT_MS);
                 });
-            }
+            },
         };
 
         window.addEventListener('message', cb);
@@ -203,7 +203,7 @@ const ChallengeFrame = ({
             contentWindow.postMessage(
                 {
                     type: 'html',
-                    payload: renderEl.outerHTML
+                    payload: renderEl.outerHTML,
                 },
                 targetOrigin
             );

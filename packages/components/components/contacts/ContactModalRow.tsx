@@ -39,7 +39,7 @@ const ContactModalRow = ({ property, onChange, onRemove, isOrderable = false }: 
     if (canEdit) {
         list.push({
             text: isImage ? c('Action').t`Change` : c('Action').t`Edit`,
-            onClick: handleChangeImage
+            onClick: handleChangeImage,
         });
     }
     if (canDelete) {
@@ -53,7 +53,7 @@ const ContactModalRow = ({ property, onChange, onRemove, isOrderable = false }: 
                 if (property.uid) {
                     onRemove(property.uid);
                 }
-            }
+            },
         });
     }
 

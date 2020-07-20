@@ -56,7 +56,7 @@ const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, mode = 'selec
 CurrencySelector.propTypes = {
     mode: PropTypes.oneOf(['select', 'buttons']),
     currency: PropTypes.string,
-    onSelect: PropTypes.func.isRequired
+    onSelect: PropTypes.func.isRequired,
 };
 
 export default CurrencySelector;

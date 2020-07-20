@@ -20,7 +20,7 @@ import {
     useLoading,
     useAuthentication,
     useConfig,
-    ErrorButton
+    ErrorButton,
 } from 'react-components';
 import { ACCOUNT_DELETION_REASONS } from 'proton-shared/lib/constants';
 import { deleteUser, unlockPasswordChanges } from 'proton-shared/lib/api/user';
@@ -45,7 +45,7 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
         feedback: '',
         email: '',
         password: '',
-        twoFa: ''
+        twoFa: '',
     });
     const { CLIENT_ID, APP_VERSION, CLIENT_TYPE } = useConfig();
     const Client = getClient(CLIENT_ID);
@@ -66,13 +66,13 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
         isAdmin && { label: c('Option').t`It's too expensive`, value: ACCOUNT_DELETION_REASONS.TOO_EXPENSIVE },
         {
             label: c('Option').t`It's missing a key feature that I need`,
-            value: ACCOUNT_DELETION_REASONS.MISSING_FEATURE
+            value: ACCOUNT_DELETION_REASONS.MISSING_FEATURE,
         },
         {
             label: c('Option').t`I found another service that I like better`,
-            value: ACCOUNT_DELETION_REASONS.USE_OTHER_SERVICE
+            value: ACCOUNT_DELETION_REASONS.USE_OTHER_SERVICE,
         },
-        { label: c('Option').t`My reason isn't listed`, value: ACCOUNT_DELETION_REASONS.OTHER }
+        { label: c('Option').t`My reason isn't listed`, value: ACCOUNT_DELETION_REASONS.OTHER },
     ].filter(isTruthy);
 
     const handleSubmit = async () => {
@@ -82,7 +82,7 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
             await srpAuth({
                 api,
                 credentials: { password: model.password, totp: model.twoFa },
-                config: unlockPasswordChanges()
+                config: unlockPasswordChanges(),
             });
 
             if (isAdmin) {
@@ -95,7 +95,7 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
                         Title: `[DELETION FEEDBACK] ${Name}`,
                         Username: Name,
                         Email: model.email,
-                        Description: model.feedback
+                        Description: model.feedback,
                     })
                 );
             }
@@ -104,7 +104,7 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
                 deleteUser({
                     Reason: model.reason,
                     Feedback: model.feedback,
-                    Email: model.email
+                    Email: model.email,
                 })
             );
 
@@ -230,7 +230,7 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
 };
 
 DeleteAccountModal.propTypes = {
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default DeleteAccountModal;

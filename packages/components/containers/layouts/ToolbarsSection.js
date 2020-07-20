@@ -8,7 +8,7 @@ import {
     useEventManager,
     useMailSettings,
     useNotifications,
-    useApiWithoutResult
+    useApiWithoutResult,
 } from 'react-components';
 import { c } from 'ttag';
 import { updateMessageButtons } from 'proton-shared/lib/api/mailSettings';
@@ -28,7 +28,7 @@ const ToolbarsSection = () => {
         await request(newState);
         await call();
         createNotification({
-            text: c('Success').t`Buttons position saved`
+            text: c('Success').t`Buttons position saved`,
         });
     };
 

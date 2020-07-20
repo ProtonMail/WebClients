@@ -13,7 +13,7 @@ const PaymentInfo = ({ method }) => {
 };
 
 PaymentInfo.propTypes = {
-    method: PropTypes.string.isRequired
+    method: PropTypes.string.isRequired,
 };
 
 export default PaymentInfo;

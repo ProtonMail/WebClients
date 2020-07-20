@@ -12,7 +12,7 @@ import {
     useLoading,
     useMailSettings,
     useEventManager,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 
 const AddressVerificationSection = () => {

@@ -7,7 +7,7 @@ import { classnames } from '../../helpers/component';
 const CURRENCIES = {
     USD: '$',
     EUR: '€',
-    CHF: 'CHF'
+    CHF: 'CHF',
 };
 
 const Price = ({ children: amount = 0, currency = '', className = '', divisor = 100, suffix = '', prefix = '' }) => {
@@ -47,7 +47,7 @@ Price.propTypes = {
     className: PropTypes.string,
     divisor: PropTypes.number,
     suffix: PropTypes.string,
-    prefix: PropTypes.string
+    prefix: PropTypes.string,
 };
 
 export default Price;

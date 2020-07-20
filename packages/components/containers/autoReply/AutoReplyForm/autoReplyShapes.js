@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 export const dateShape = PropTypes.shape({
     date: PropTypes.instanceOf(Date),
     time: PropTypes.instanceOf(Date),
-    day: PropTypes.number
+    day: PropTypes.number,
 });
 
 export const modelShape = PropTypes.shape({
@@ -14,5 +14,5 @@ export const modelShape = PropTypes.shape({
     subject: PropTypes.string,
     enabled: PropTypes.bool,
     start: dateShape,
-    end: dateShape
+    end: dateShape,
 });

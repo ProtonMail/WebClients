@@ -29,12 +29,12 @@ const EditCardModal = ({ card: existingCard, onClose, ...rest }) => {
             params: {
                 Payment: {
                     Type: PAYMENT_METHOD_TYPES.CARD,
-                    Details: toDetails(card)
-                }
+                    Details: toDetails(card),
+                },
             },
             mode: ADD_CARD_MODE,
             api,
-            createModal
+            createModal,
         });
         await api(setPaymentMethod(Payment));
         await call();
@@ -59,7 +59,7 @@ const EditCardModal = ({ card: existingCard, onClose, ...rest }) => {
 
 EditCardModal.propTypes = {
     card: PropTypes.object,
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
 };
 
 export default EditCardModal;

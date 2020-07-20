@@ -27,7 +27,7 @@ describe('useAutocomplete hook', () => {
         const items = [
             { label: 'test1', value: 'T1' },
             { label: 'test2', value: 'T2' },
-            { label: 'test3', value: 'T3' }
+            { label: 'test3', value: 'T3' },
         ];
         const { result } = renderHook(() => useAutocomplete({ multiple: true, initialSelectedItems: items }));
         act(() => result.current.deselect(1));
@@ -52,7 +52,7 @@ describe('useAutocomplete hook', () => {
             useAutocomplete({
                 multiple: true,
                 initialSelectedItems,
-                onChange: onChangeSpy
+                onChange: onChangeSpy,
             })
         );
         expect(onChangeSpy).toHaveBeenCalledTimes(0);

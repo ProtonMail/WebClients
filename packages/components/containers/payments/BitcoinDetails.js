@@ -30,7 +30,7 @@ const BitcoinDetails = ({ amount, address }) => {
 
 BitcoinDetails.propTypes = {
     amount: PropTypes.number,
-    address: PropTypes.string.isRequired
+    address: PropTypes.string.isRequired,
 };
 
 export default BitcoinDetails;

@@ -46,7 +46,7 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, onClose, ...rest }:
                     maxHeight: CONTACT_IMG_SIZE,
                     finalMimeType: 'image/jpeg',
                     encoderOptions: 1,
-                    bigResize: true
+                    bigResize: true,
                 });
                 onSubmit(base64str);
                 onClose?.();

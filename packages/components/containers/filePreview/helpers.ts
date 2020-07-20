@@ -10,7 +10,7 @@ export const isSupportedImage = (mimeType: string) =>
         'image/jpeg',
         'image/png',
         'image/svg+xml',
-        !isSafari() && 'image/webp'
+        !isSafari() && 'image/webp',
     ]
         .filter(Boolean)
         .includes(mimeType);

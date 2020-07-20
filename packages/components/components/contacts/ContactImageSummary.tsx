@@ -53,7 +53,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
                 original: photo,
                 maxWidth: CONTACT_IMG_SIZE,
                 maxHeight: CONTACT_IMG_SIZE,
-                bigResize: true
+                bigResize: true,
             });
             setImage({ src: resized });
         };
@@ -83,7 +83,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
             backgroundImage: `url(${image.src})`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover'
+            backgroundSize: 'cover',
         };
 
         if (!image.isSmall) {

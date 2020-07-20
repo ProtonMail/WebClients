@@ -24,7 +24,7 @@ const EventModelListener = ({ models }) => {
         const modelsMap = models.reduce((acc, model) => {
             return {
                 ...acc,
-                [model.key]: model
+                [model.key]: model,
             };
         }, {});
 
@@ -40,7 +40,7 @@ const EventModelListener = ({ models }) => {
                 if (status === STATUS.RESOLVED) {
                     cache.set(key, {
                         status: STATUS.RESOLVED,
-                        value: model.update(oldValue, data[key])
+                        value: model.update(oldValue, data[key]),
                     });
                 }
             }
@@ -77,8 +77,8 @@ const EventModelListener = ({ models }) => {
                     ...oldUserRecord,
                     value: {
                         ...oldUserRecord.value,
-                        UsedSpace: data.UsedSpace
-                    }
+                        UsedSpace: data.UsedSpace,
+                    },
                 });
             }
 
@@ -92,7 +92,7 @@ const EventModelListener = ({ models }) => {
 };
 
 EventModelListener.propTypes = {
-    models: PropTypes.array.isRequired
+    models: PropTypes.array.isRequired,
 };
 
 export default EventModelListener;

@@ -48,7 +48,7 @@ const Method = ({
     card = {},
     errors = {},
     paypal = {},
-    paypalCredit = {}
+    paypalCredit = {},
 }) => {
     if (loading) {
         return <Loader />;
@@ -102,7 +102,7 @@ Method.propTypes = {
     errors: PropTypes.object.isRequired,
     currency: PropTypes.oneOf(CURRENCIES).isRequired,
     paypal: PropTypes.object,
-    paypalCredit: PropTypes.object
+    paypalCredit: PropTypes.object,
 };
 
 export default Method;

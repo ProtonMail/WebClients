@@ -9,7 +9,7 @@ import {
     COVID_PLUS_BONUS_STORAGE,
     PLANS,
     COVID_PROFESSIONAL_BONUS_STORAGE,
-    COVID_VISIONARY_BONUS_STORAGE
+    COVID_VISIONARY_BONUS_STORAGE,
 } from 'proton-shared/lib/constants';
 import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
 import { unique } from 'proton-shared/lib/helpers/array';
@@ -25,7 +25,7 @@ import {
     useSubscription,
     useOrganization,
     useModals,
-    usePlans
+    usePlans,
 } from 'react-components';
 import { getMonthlyBaseAmount, hasVisionary, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
@@ -43,13 +43,13 @@ const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 const getCyclesI18N = () => ({
     [MONTHLY]: c('Billing cycle').t`Monthly`,
     [YEARLY]: c('Billing cycle').t`Yearly`,
-    [TWO_YEARS]: c('Billing cycle').t`2-year`
+    [TWO_YEARS]: c('Billing cycle').t`2-year`,
 });
 
 const COVID_STORAGE = {
     [PLANS.PLUS]: COVID_PLUS_BONUS_STORAGE,
     [PLANS.PROFESSIONAL]: COVID_PROFESSIONAL_BONUS_STORAGE,
-    [PLANS.VISIONARY]: COVID_VISIONARY_BONUS_STORAGE
+    [PLANS.VISIONARY]: COVID_VISIONARY_BONUS_STORAGE,
 };
 
 const BillingSection = ({ permission }) => {
@@ -476,7 +476,7 @@ const BillingSection = ({ permission }) => {
 };
 
 BillingSection.propTypes = {
-    permission: PropTypes.bool
+    permission: PropTypes.bool,
 };
 
 export default BillingSection;

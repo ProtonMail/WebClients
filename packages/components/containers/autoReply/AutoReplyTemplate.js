@@ -19,8 +19,8 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
             durationText: duration.text,
             model: toModel(autoresponder, {
                 timezone: timezone.value,
-                duration: duration.value
-            })
+                duration: duration.value,
+            }),
         };
     }, [autoresponder]);
 
@@ -42,7 +42,7 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
             const weekdaysMap = getFormattedWeekdays('iii', dateOptions);
             const orderedDaysSelected = [
                 ...autoresponder.DaysSelected.filter((day) => day >= weekStartsOn).sort((a, b) => a - b),
-                ...autoresponder.DaysSelected.filter((day) => day < weekStartsOn).sort((a, b) => a - b)
+                ...autoresponder.DaysSelected.filter((day) => day < weekStartsOn).sort((a, b) => a - b),
             ];
             const weekdays = orderedDaysSelected.map((day) => weekdaysMap[day]).join(', ');
             return autoresponder.DaysSelected.length < 7
@@ -99,9 +99,9 @@ AutoReplyTemplate.propTypes = {
         StartTime: PropTypes.number,
         EndTime: PropTypes.number,
         Zone: PropTypes.string,
-        Message: PropTypes.string
+        Message: PropTypes.string,
     }).isRequired,
-    onEdit: PropTypes.func.isRequired
+    onEdit: PropTypes.func.isRequired,
 };
 
 export default AutoReplyTemplate;
