@@ -101,9 +101,10 @@ const ImportModal = ({ calendars, defaultCalendar, calendarsEventsCacheRef, ...r
                         loading: false,
                     });
                 } catch (e) {
+                    const failure = e instanceof ImportFileError ? e : new ImportFatalError(e);
                     setModel({
                         ...getInitialState(model.calendar),
-                        failure: new ImportFatalError(e),
+                        failure,
                     });
                 }
             };
