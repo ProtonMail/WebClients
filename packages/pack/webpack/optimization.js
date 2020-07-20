@@ -19,6 +19,7 @@ const minimizer = [
     new TerserPlugin({
         exclude: /\/node_modules\/(?!(asmcrypto\.js|pmcrypto))/,
         cache: true,
+        extractComments: false,
         parallel: !isWSL(),
         sourceMap: true,
         terserOptions: {
