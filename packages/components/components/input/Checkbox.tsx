@@ -34,7 +34,15 @@ const Checkbox = ({
     }, [indeterminate]);
 
     return (
-        <label htmlFor={id} className={classnames(['inline-flex relative', className])} onClick={labelOnClick}>
+        <label
+            htmlFor={id}
+            className={classnames([
+                'inline-flex',
+                !className?.includes('increase-surface-click') && 'relative',
+                className
+            ])}
+            onClick={labelOnClick}
+        >
             <input
                 ref={inputRef}
                 disabled={disabled || loading}
