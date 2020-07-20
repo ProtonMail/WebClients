@@ -3,7 +3,7 @@ import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } fro
 import { c } from 'ttag';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { LinkType } from '../interfaces/link';
-import { validateLinkName } from '../utils/validation';
+import { validateLinkNameField, formatLinkName } from '../utils/validation';
 import useDrive from '../hooks/drive/useDrive';
 import { DriveFolder } from './Drive/DriveFolderProvider';
 import { MAX_NAME_LENGTH } from '../constants';
@@ -34,13 +34,20 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
         e.target.setSelectionRange(0, namePart.length);
     };
 
+    const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
+        setName(formatLinkName(target.value));
+    };
+
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setName(target.value);
     };
 
     const handleSubmit = async () => {
+        const formattedName = formatLinkName(name);
+        setName(formattedName);
+
         try {
-            await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, name, item.Type);
+            await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, formattedName, item.Type);
             await events.call(activeFolder.shareId);
         } catch (e) {
             if (e.name === 'ValidationError') {
@@ -51,7 +58,7 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
 
         const nameElement = (
             <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
-                &quot;{name}&quot;
+                &quot;{formattedName}&quot;
             </span>
         );
         createNotification({ text: c('Success').jt`${nameElement} renamed successfully` });
@@ -59,7 +66,7 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
     };
 
     const isFolder = item.Type === LinkType.FOLDER;
-    const validationError = validateLinkName(name);
+    const validationError = validateLinkNameField(name);
 
     return (
         <FormModal
@@ -81,6 +88,7 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
                         maxLength={MAX_NAME_LENGTH}
                         placeholder={c('Placeholder').t`New name`}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         onFocus={selectNamePart}
                         error={validationError}
                         required

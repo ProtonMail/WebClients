@@ -1,7 +1,7 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
-import { validateLinkName } from '../utils/validation';
+import { validateLinkNameField, formatLinkName } from '../utils/validation';
 import useDrive from '../hooks/drive/useDrive';
 import { useDriveActiveFolder, DriveFolder } from './Drive/DriveFolderProvider';
 import { MAX_NAME_LENGTH } from '../constants';
@@ -20,11 +20,18 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
 
+    const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
+        setFolderName(formatLinkName(target.value));
+    };
+
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setFolderName(target.value);
     };
 
     const handleSubmit = async () => {
+        const formattedName = formatLinkName(folderName);
+        setFolderName(formattedName);
+
         const parentFolder = folder || activeFolder;
 
         if (!parentFolder) {
@@ -34,7 +41,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
         const { shareId, linkId } = parentFolder;
 
         try {
-            const { Folder } = await createNewFolder(shareId, linkId, folderName);
+            const { Folder } = await createNewFolder(shareId, linkId, formattedName);
             await events.call(shareId);
             onCreateDone?.(Folder.ID);
         } catch (e) {
@@ -46,14 +53,14 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
 
         const notificationText = (
             <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
-                {c('Success').t`"${folderName}" created successfully`}
+                {c('Success').t`"${formattedName}" created successfully`}
             </span>
         );
         createNotification({ text: notificationText });
         onClose?.();
     };
 
-    const validationError = validateLinkName(folderName);
+    const validationError = validateLinkNameField(folderName);
 
     return (
         <FormModal
@@ -75,6 +82,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
                         value={folderName}
                         placeholder={c('Placeholder').t`Enter a new folder name`}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         error={validationError}
                         required
                     />
