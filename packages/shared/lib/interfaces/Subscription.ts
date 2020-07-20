@@ -1,4 +1,4 @@
-import { CYCLE, PLAN_TYPES } from 'proton-shared/lib/constants';
+import { CYCLE, PLAN_TYPES } from '../constants';
 
 type Currency = 'EUR' | 'CHF' | 'USD';
 
