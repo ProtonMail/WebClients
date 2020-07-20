@@ -13,6 +13,7 @@ import {
 import readableTime from 'proton-shared/lib/helpers/readableTime';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { noop } from 'proton-shared/lib/helpers/function';
 import { LinkType } from '../../interfaces/link';
 import LocationCell from './LocationCell';
 import { DragMoveControls } from '../../hooks/drive/useDriveDragMove';
@@ -28,7 +29,7 @@ interface Props {
     onClick?: (item: FileBrowserItem) => void;
     showLocation?: boolean;
     secondaryActionActive?: boolean;
-    dragMoveControls: DragMoveControls;
+    dragMoveControls?: DragMoveControls;
 }
 
 const ItemRow = ({
@@ -42,9 +43,9 @@ const ItemRow = ({
     secondaryActionActive,
     dragMoveControls,
 }: Props) => {
-    const { handleDragOver, handleDrop, handleDragLeave, isActiveDropTarget, ...draggingControls } = dragMoveControls;
     const { dragging, handleDragEnd, handleDragStart, DragMoveContent } = useDragMove({
-        ...draggingControls,
+        dragging: dragMoveControls?.dragging ?? false,
+        setDragging: dragMoveControls?.setDragging ?? noop,
         format: 'pd-custom',
         formatter: JSON.stringify,
     });
@@ -52,7 +53,7 @@ const ItemRow = ({
     const { isDesktop } = useActiveBreakpoint();
     const touchStarted = useRef(false);
 
-    const unlessDisabled = <A extends any[], R>(fn: (...args: A) => R) => (item.Disabled ? undefined : fn);
+    const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.Disabled ? undefined : fn);
 
     const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
@@ -170,9 +171,11 @@ const ItemRow = ({
 
     return (
         <>
-            <DragMoveContent>
-                <DragMoveContainer>{moveText}</DragMoveContainer>
-            </DragMoveContent>
+            {dragMoveControls && (
+                <DragMoveContent>
+                    <DragMoveContainer>{moveText}</DragMoveContainer>
+                </DragMoveContent>
+            )}
             <TableRow
                 cells={cells}
                 draggable
@@ -182,7 +185,7 @@ const ItemRow = ({
                 className={classnames([
                     'no-outline',
                     (onClick || secondaryActionActive) && 'cursor-pointer',
-                    (isSelected || isActiveDropTarget) && 'bg-global-highlight',
+                    (isSelected || dragMoveControls?.isActiveDropTarget) && 'bg-global-highlight',
                     (dragging || item.Disabled) && 'opacity-50',
                     item.Disabled && 'no-pointer-events no-pointer-events-children bg-global-highlight',
                 ])}
@@ -193,9 +196,9 @@ const ItemRow = ({
                 onTouchCancel={unlessDisabled(handleTouchCancel)}
                 onTouchEnd={unlessDisabled(handleTouchEnd)}
                 onDragStart={unlessDisabled(handleDragStart)}
-                onDragOver={unlessDisabled(handleDragOver)}
-                onDrop={unlessDisabled(handleDrop)}
-                onDragLeave={unlessDisabled(handleDragLeave)}
+                onDragOver={unlessDisabled(dragMoveControls?.handleDragOver)}
+                onDrop={unlessDisabled(dragMoveControls?.handleDrop)}
+                onDragLeave={unlessDisabled(dragMoveControls?.handleDragLeave)}
                 onDragEnd={(e) => {
                     e.currentTarget.blur();
                     handleDragEnd();
