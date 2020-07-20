@@ -39,7 +39,6 @@ const getAppMode = () => {
     return getSingleArgument(argv.appMode) || 'bundle';
 };
 
-
 async function main() {
 
     const {
