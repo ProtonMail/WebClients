@@ -1,7 +1,10 @@
 import React, { ReactNode, useState, useCallback, SyntheticEvent } from 'react';
 import { c } from 'ttag';
 
-import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.svg';
+import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
+
+import dragdropImageSvgLight from 'design-system/assets/img/pd-images/drag-and-drop.svg';
+import dragdropImageSvgDark from 'design-system/assets/img/pd-images/drag-and-drop-dark.svg';
 
 import useFiles from '../../../hooks/drive/useFiles';
 import { useDriveActiveFolder } from '../../Drive/DriveFolderProvider';
@@ -138,7 +141,12 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                     onDrop={handleDrop}
                 >
                     <section className="pd-drag-drop-infobox p2">
-                        <img className="pd-drag-drop-image" src={dragdropImageSvg} alt="" aria-hidden="true" />
+                        <img
+                            className="pd-drag-drop-image"
+                            src={getLightOrDark(dragdropImageSvgLight, dragdropImageSvgDark)}
+                            alt=""
+                            aria-hidden="true"
+                        />
                         <h2 className="bold m0">{c('Title').t`Drop to upload`}</h2>
                         <p className="m0">{c('Info').t`Your files will be encrypted and then saved.`}</p>
                     </section>
