@@ -178,7 +178,7 @@ const ItemRow = ({
             )}
             <TableRow
                 cells={cells}
-                draggable
+                draggable={!!dragMoveControls}
                 tabIndex={0}
                 role="button"
                 aria-disabled={item.Disabled}
