@@ -110,7 +110,7 @@ const FileBrowser = ({
                             onClick={onItemClick}
                             showLocation={isTrash}
                             secondaryActionActive={secondaryActionActive}
-                            dragMoveControls={getDragMoveControls(item)}
+                            dragMoveControls={isTrash ? undefined : getDragMoveControls(item)}
                         />
                     ))}
                     {loading && <TableRowBusy colSpan={colSpan} />}

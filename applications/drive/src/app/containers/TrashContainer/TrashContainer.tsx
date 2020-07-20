@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useCallback } from 'react';
 import { PrivateAppContainer, useToggle } from 'react-components';
 import { Route, Redirect, Switch, RouteComponentProps } from 'react-router-dom';
 import AppHeader from '../../components/layout/AppHeader';
@@ -41,10 +41,12 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
         />
     );
 
+    const renderContainerView = useCallback(() => <TrashContainerView shareId={shareId} />, [shareId]);
+
     return (
         <PrivateAppContainer header={header} sidebar={sidebar}>
             <Switch>
-                <Route path="/drive/trash/:shareId?" exact component={() => <TrashContainerView shareId={shareId} />} />
+                <Route path="/drive/trash/:shareId?" exact component={renderContainerView} />
                 <Redirect to="/drive/trash" />
             </Switch>
         </PrivateAppContainer>
