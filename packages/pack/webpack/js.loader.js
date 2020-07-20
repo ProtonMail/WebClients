@@ -97,8 +97,9 @@ module.exports = ({ isProduction }, flow) => {
 
     return [
         {
-            test: /\.js$|\.tsx?$/,
+            test: /\.(ts|tsx|js|jsx)?$/,
             use: ['source-map-loader'],
+            exclude: /web-streams-polyfill/,
             enforce: 'pre'
         },
         {
