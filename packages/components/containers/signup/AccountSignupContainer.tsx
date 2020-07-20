@@ -20,10 +20,13 @@ import {
     usePayment,
     HumanVerificationForm,
     BackButton,
+    OnLoginArgs,
 } from '../../index';
 import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { Address } from 'proton-shared/lib/interfaces';
+import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
+import { getResetAddressesKeys } from 'proton-shared/lib/keys/resetKeys';
 import { Props as AccountPublicLayoutProps } from './AccountPublicLayout';
 import SignupAccountForm from './SignupAccountForm';
 import SignupRecoveryForm from './SignupRecoveryForm';
@@ -58,7 +61,7 @@ import OneAccountIllustration from '../illustration/OneAccountIllustration';
 
 interface Props {
     history: History;
-    onLogin: (data: { UID: string; EventID: string }) => void;
+    onLogin: (args: OnLoginArgs) => void;
     Layout: FunctionComponent<AccountPublicLayoutProps>;
 }
 
@@ -234,13 +237,17 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
                 ? await handleCreateAddress({ api: authApi.api, domains, username })
                 : await authApi.api<{ Addresses: Address[] }>(queryAddresses()).then(({ Addresses }) => Addresses);
 
+            let keyPassword;
             if (addresses.length) {
-                await handleCreateKeys({ api: authApi.api, addresses, password });
+                const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
+                keyPassword = passphrase;
+                const newAddressesKeys = await getResetAddressesKeys({ addresses, passphrase });
+                await handleCreateKeys({ api: authApi.api, salt, addressKeys: newAddressesKeys, password });
             }
 
             await authApi.setCookies();
             const { UID, EventID } = authApi.getAuthResponse();
-            await onLogin({ UID, EventID });
+            onLogin({ UID, EventID, keyPassword });
         } catch (error) {
             // TODO: If any of these requests fail we should probably handle it differently
             return setModelDiff({ step: oldStep });
