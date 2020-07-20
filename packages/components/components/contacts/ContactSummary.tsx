@@ -104,23 +104,27 @@ const ContactSummary = ({
             </div>
             {!isPreview && (
                 <div className="flex-item-noshrink pt0-5 onmobile-aligncenter">
-                    <Button onClick={() => handleEdit()} className="ml0-5 pm-button--for-icon">
-                        <Tooltip title={c('Action').t`Edit`} className="color-primary">
-                            <Icon name="pen" />
-                        </Tooltip>
-                    </Button>
+                    <Tooltip title={c('Action').t`Edit`} className="ml0-5">
+                        <Button onClick={() => handleEdit()} className="pm-button--for-icon">
+                            <span className="color-primary">
+                                <Icon name="pen" />
+                            </span>
+                        </Button>
+                    </Tooltip>
 
-                    <Button onClick={handleExport} className="ml0-5 pm-button--for-icon">
-                        <Tooltip title={c('Action').t`Export`}>
+                    <Tooltip title={c('Action').t`Export`} className="ml0-5">
+                        <Button onClick={handleExport} className="pm-button--for-icon">
                             <Icon name="export" />
-                        </Tooltip>
-                    </Button>
+                        </Button>
+                    </Tooltip>
 
-                    <Button onClick={handleDelete} className="ml0-5 pm-button--for-icon">
-                        <Tooltip title={c('Action').t`Delete`} className="color-global-warning">
-                            <Icon name="trash" />
-                        </Tooltip>
-                    </Button>
+                    <Tooltip title={c('Action').t`Delete`} className="ml0-5">
+                        <Button onClick={handleDelete} className="pm-button--for-icon">
+                            <span className="color-global-warning">
+                                <Icon name="trash" />
+                            </span>
+                        </Button>
+                    </Tooltip>
                 </div>
             )}
         </div>
