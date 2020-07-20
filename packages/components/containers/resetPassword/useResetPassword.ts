@@ -57,7 +57,7 @@ const useResetPassword = ({ onLogin }: Props) => {
 
     const handleRequest = async () => {
         const { username, email } = state;
-        await api(requestLoginResetToken({ Username: username, NotificationEmail: email }));
+        await api(requestLoginResetToken({ Username: username, Email: email }));
         gotoStep(STEPS.VALIDATE_RESET_TOKEN);
     };
 
