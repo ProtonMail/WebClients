@@ -97,10 +97,17 @@ export const useOptimisticApplyLabels = () => {
 
         // Updates in message cache
         elements.forEach((element) => {
-            const changes = inputChanges;
+            const changes = { ...inputChanges };
 
             if (isMove) {
-                changes[getCurrentFolderID(element, folders)] = false;
+                const currentFolderID = getCurrentFolderID(element, folders);
+
+                if (changes[currentFolderID]) {
+                    // It's a move to the folder where the elements is already, so nothing to do or undo
+                    return;
+                }
+
+                changes[currentFolderID] = false;
             }
 
             rollbackChanges.push({ element, changes: computeRollbackLabelChanges(element, changes) });
