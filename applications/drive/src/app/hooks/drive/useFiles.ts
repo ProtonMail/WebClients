@@ -26,7 +26,14 @@ import {
 } from '../../interfaces/file';
 import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
-import { TransferMeta, TransferState, DownloadInfo, TransferCancel } from '../../interfaces/transfer';
+import {
+    TransferMeta,
+    TransferState,
+    DownloadInfo,
+    TransferCancel,
+    PreUploadData,
+    UploadInfo,
+} from '../../interfaces/transfer';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../../components/downloads/download';
 import { streamToBuffer } from '../../utils/stream';
@@ -168,8 +175,6 @@ function useFiles() {
                     ? await generateNameHash()
                     : await findAvailableName(shareId, ParentLinkID, file.name);
 
-                const blob = new Blob([file], { type: file.type });
-
                 const Name = await encryptUnsigned({
                     message: filename,
                     publicKey: parentKeys.privateKey.toPublic(),
@@ -193,11 +198,10 @@ function useFiles() {
 
                 return {
                     File,
-                    blob,
+                    filename,
                     Name,
                     MIMEType,
                     sessionKey,
-                    filename,
                     addressKeyInfo,
                     ParentLinkID,
                 };
@@ -205,20 +209,27 @@ function useFiles() {
             5
         )();
 
-        return addToUploadQueue(
+        const preUploadData: PreUploadData = {
             file,
-            setupPromise.then(({ blob, MIMEType, File, filename, ParentLinkID }) => ({
+            ParentLinkID: parentLinkID,
+            ShareID: shareId,
+        };
+
+        return addToUploadQueue(
+            preUploadData,
+            setupPromise.then(({ filename, MIMEType, File, ParentLinkID }): {
+                meta: TransferMeta;
+                info: UploadInfo;
+            } => ({
                 meta: {
-                    size: blob.size,
+                    size: file.size,
                     mimeType: MIMEType,
                     filename,
                 },
                 info: {
-                    blob,
                     ParentLinkID,
                     LinkID: File.ID,
                     RevisionID: File.RevisionID,
-                    ShareID: shareId,
                 },
             })),
             {
@@ -277,16 +288,24 @@ function useFiles() {
                             throw new TransferCancel(`${ParentLinkID}: ${Name}`);
                         }
 
-                        debouncedRequest(
-                            queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
-                                State: FileRevisionState.Active,
-                                BlockList,
-                                ManifestSignature: signature,
-                                SignatureAddress,
-                            })
-                        )
-                            .then(() => Promise.all([call(), events.call(shareId)]))
-                            .catch(console.error);
+                        const updateRevision = async () => {
+                            try {
+                                await debouncedRequest(
+                                    queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
+                                        State: FileRevisionState.Active,
+                                        BlockList,
+                                        ManifestSignature: signature,
+                                        SignatureAddress,
+                                    })
+                                );
+                                events.callAll(shareId).catch(console.error);
+                            } catch (e) {
+                                deleteLinks(shareId, [File.ID]).catch(console.error);
+                                throw e;
+                            }
+                        };
+
+                        updateRevision().catch(console.error);
                     },
                     5
                 ),

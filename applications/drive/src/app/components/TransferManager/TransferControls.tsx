@@ -8,11 +8,11 @@ import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { LinkType } from '../../interfaces/link';
 import useFiles from '../../hooks/drive/useFiles';
 import { TransferType, TransferProps } from './interfaces';
-import { Download } from '../../interfaces/transfer';
+import { Download, Upload } from '../../interfaces/transfer';
 
 function TransferControls<T extends TransferType>({ transfer, type }: TransferProps<T>) {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();
-    const { startFolderTransfer, startFileTransfer } = useFiles();
+    const { startFolderTransfer, startFileTransfer, uploadDriveFile } = useFiles();
     const { removeUpload, cancelUpload } = useUploadProvider();
     const [pauseInProgress, withPauseInProgress] = useLoading();
     const isInitializing = isTransferInitializing(transfer);
@@ -49,11 +49,8 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
             withPauseInProgress(pauseDownload(transfer.id)).catch(console.error);
         }
     };
-    const restartTransfer = async () => {
-        if (type !== TransferType.Download) {
-            return;
-        }
 
+    const restartDownload = async () => {
         const download = transfer as Download;
         removeDownload(download.id);
 
@@ -64,7 +61,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                     download.meta
                 )
             );
-        } else if ('downloadInfo' in transfer) {
+        } else {
             const zipSaver = await FileSaver.saveAsZip(download.meta.filename);
 
             if (zipSaver) {
@@ -88,9 +85,31 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
         }
     };
 
+    const restartUpload = async () => {
+        const upload = transfer as Upload;
+        removeUpload(upload.id);
+        const { file, ParentLinkID, ShareID } = upload.preUploadData;
+        return preventLeave(uploadDriveFile(ShareID, ParentLinkID, file));
+    };
+
+    const restartTransfer = async () => {
+        try {
+            if (type === TransferType.Download) {
+                await restartDownload();
+            } else {
+                await restartUpload();
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+    const isPauseResumeAvailable = type === TransferType.Download && !isInitializing && !isFinished;
+    const isRestartAvailable = isFailed;
+
     return (
         <div className="pd-transfers-listItem-controls flex flex-nowrap flex-justify-end">
-            {type === TransferType.Download && !isInitializing && !isFinished && (
+            {isPauseResumeAvailable && (
                 <button
                     type="button"
                     onClick={togglePause}
@@ -101,7 +120,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                     <Icon size={12} name={isTransferPaused(transfer) ? 'resume' : 'pause'} />
                 </button>
             )}
-            {type === TransferType.Download && isFailed && (
+            {isRestartAvailable && (
                 <button
                     type="button"
                     onClick={restartTransfer}

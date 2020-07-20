@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { useNotifications, useEventManager, FloatingButton, SidebarPrimaryButton } from 'react-components';
+import { useNotifications, FloatingButton, SidebarPrimaryButton } from 'react-components';
 import useDrive from '../../../hooks/drive/useDrive';
 import useTrash from '../../../hooks/drive/useTrash';
 import useConfirm from '../../../hooks/util/useConfirm';
@@ -13,7 +13,6 @@ interface Props {
 
 const EmptyTrashButton = ({ shareId, floating }: Props) => {
     const cache = useDriveCache();
-    const { call } = useEventManager();
     const { events } = useDrive();
     const { emptyTrash } = useTrash();
     const { openConfirmModal } = useConfirm();
@@ -30,7 +29,7 @@ const EmptyTrashButton = ({ shareId, floating }: Props) => {
                 await emptyTrash(shareId);
                 const notificationText = c('Notification').t`All the items are permanently deleted from Trash`;
                 createNotification({ text: notificationText });
-                await Promise.all([call(), events.call(shareId)]);
+                await events.callAll(shareId);
             } catch (e) {
                 console.error(e);
             }
