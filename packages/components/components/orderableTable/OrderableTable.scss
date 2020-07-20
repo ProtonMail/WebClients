@@ -1,24 +1,24 @@
 @import '~design-system/_sass/reusable-components/design-system-config';
 .orderableHelper {
-    z-index: 666;
-    display: flex;
-    align-items: center;
-    color: var(--color-main-area, $pm-global-grey);
-    background: var(--bgcolor-main-area, $white);
-    border-top: 1px solid var(--bordercolor-input, $pm-global-border);
-    border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+	z-index: 666;
+	display: flex;
+	align-items: center;
+	color: var(--color-main-area, $pm-global-grey);
+	background: var(--bgcolor-main-area, $white);
+	border-top: 1px solid var(--bordercolor-input, $pm-global-border);
+	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 
-    /**
+	/**
      * We replace td with custom class here because we don't have direct access to it.
      * See: https://github.com/ProtonMail/react-components/pull/113/files#r305374317
      */
-    td {
-        flex: 1;
-        border: none;
-        height: 100%;
-        &:first-child {
-            flex-grow: 0;
-            flex-basis: 3.5rem;
-        }
-    }
+	td {
+		flex: 1;
+		border: none;
+		height: 100%;
+		&:first-child {
+			flex-grow: 0;
+			flex-basis: 3.5rem;
+		}
+	}
 }

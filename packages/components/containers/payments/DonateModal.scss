@@ -1,12 +1,12 @@
 @import '~design-system/_sass/reusable-components/design-system-config';
 
 .donate-modal .pm-field-container.payment-right {
-    width: 70%;
+	width: 70%;
 }
 
 @include respond-to($breakpoint-small) {
-    .donate-modal .pm-label.payment-left,
-    .donate-modal .pm-field-container.payment-right {
-        width: 100%;
-    }
+	.donate-modal .pm-label.payment-left,
+	.donate-modal .pm-field-container.payment-right {
+		width: 100%;
+	}
 }

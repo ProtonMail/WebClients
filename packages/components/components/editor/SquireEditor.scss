@@ -1,105 +1,105 @@
 @import '~design-system/_sass/reusable-components/_design-system-config.scss';
 
 .simple-squire-editor.editor {
-    min-height: 14em;
+	min-height: 14em;
 }
 
 .editor {
-    border: 1px solid var(--bordercolor-input, $pm-global-border);
-    textarea {
-        color: currentColor;
-    }
-    .editor-toolbar-button {
-        padding: 0.3em 0.5em;
-        min-height: 2.1em;
-        &:focus,
-        &:hover,
-        &[aria-pressed='true'] {
-            background-color: var(--bordercolor-input, $pm-global-border);
-        }
-    }
-    .composer-toolbar-fontDropDown {
-        flex-shrink: 1;
-        > span {
-            display: flex;
-            > * {
-                min-width: 0;
-            }
-        }
-    }
+	border: 1px solid var(--bordercolor-input, $pm-global-border);
+	textarea {
+		color: currentColor;
+	}
+	.editor-toolbar-button {
+		padding: 0.3em 0.5em;
+		min-height: 2.1em;
+		&:focus,
+		&:hover,
+		&[aria-pressed='true'] {
+			background-color: var(--bordercolor-input, $pm-global-border);
+		}
+	}
+	.composer-toolbar-fontDropDown {
+		flex-shrink: 1;
+		> span {
+			display: flex;
+			> * {
+				min-width: 0;
+			}
+		}
+	}
 }
 
 .editor-toolbar {
-    border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 .editor-toolbar-separator {
-    border-left: 1px solid var(--bordercolor-input, $pm-global-border);
+	border-left: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
 .editor-squire-wrapper {
-    .placeholder {
-        margin-top: 1.2em;
-    }
+	.placeholder {
+		margin-top: 1.2em;
+	}
 }
 
 .editor-toolbar-dropdown {
-    ul {
-        margin: 0;
-    }
+	ul {
+		margin: 0;
+	}
 
-    button {
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-    }
+	button {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
 
-    button:disabled {
-        opacity: 0.5;
-    }
+	button:disabled {
+		opacity: 0.5;
+	}
 }
 
 .editor-toolbar-dropdown .ColorSelector-container {
-    max-width: 21rem;
+	max-width: 21rem;
 }
 
 .editor-toolbar-dropdown .ColorSelector-item {
-    height: 2.8rem;
-    width: 2.8rem;
-    margin: 0 0.2rem 0.2rem 0;
+	height: 2.8rem;
+	width: 2.8rem;
+	margin: 0 0.2rem 0.2rem 0;
 }
 
 .editor--disabled::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--bgcolor-item-column-list, #eeee);
-    border-radius: $global-border-radius;
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--bgcolor-item-column-list, #eeee);
+	border-radius: $global-border-radius;
 }
 .isDarkMode .editor--disabled::after {
-    opacity: 0.9;
+	opacity: 0.9;
 }
 
 .editor-toolbar-more-menu .dropDown-item.dropDown-item--no-separator {
-    border-top: none;
+	border-top: none;
 }
 
 .editor-toolbar-button {
-    padding: 0.5em;
-    > span {
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        > .mr0-5 {
-            flex: 1 1 0px;
-            text-align: left;
-            display: inline-flex;
-        }
-    }
-    .editor-toolbar-icon {
-        color: var(--color-main-area, $pm-global-grey);
-    }
+	padding: 0.5em;
+	> span {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		> .mr0-5 {
+			flex: 1 1 0px;
+			text-align: left;
+			display: inline-flex;
+		}
+	}
+	.editor-toolbar-icon {
+		color: var(--color-main-area, $pm-global-grey);
+	}
 }

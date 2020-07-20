@@ -1,16 +1,16 @@
 @import '~design-system/_sass/reusable-components/design-system-config';
 
 .contact-list {
-    .ReactVirtualized__Grid__innerScrollContainer {
-        border-right: 0;
-    }
+	.ReactVirtualized__Grid__innerScrollContainer {
+		border-right: 0;
+	}
 }
 
 .contact-list-row {
-    user-select: none;
-    border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+	user-select: none;
+	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 
-    &--selected {
-        background: rgba($pm-blue-light, 0.1);
-    }
+	&--selected {
+		background: rgba($pm-blue-light, 0.1);
+	}
 }

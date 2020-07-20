@@ -1,20 +1,20 @@
 @import '~design-system/_sass/reusable-components/design-system-config';
 
 .human-verification-modal {
-    .pm-field-container.payment-right {
-        width: 70%;
-    }
-    .country-list {
-        left: 0;
-        right: 0;
-    }
+	.pm-field-container.payment-right {
+		width: 70%;
+	}
+	.country-list {
+		left: 0;
+		right: 0;
+	}
 }
 
 @include respond-to($breakpoint-small) {
-    .human-verification-modal {
-        .pm-label.payment-left,
-        .pm-field-container.payment-right {
-            width: 100%;
-        }
-    }
+	.human-verification-modal {
+		.pm-label.payment-left,
+		.pm-field-container.payment-right {
+			width: 100%;
+		}
+	}
 }

@@ -1,15 +1,15 @@
 @import '~design-system/_sass/reusable-components/design-system-config';
 
 .contactsummary-container {
-    background-color: var(--bgcolor-input, $pm-global-muted);
+	background-color: var(--bgcolor-input, $pm-global-muted);
 }
 
 .contactsummary-list-item {
-    height: 2.5rem;
+	height: 2.5rem;
 }
 
 @include respond-to($breakpoint-small) {
-    .contact-modal-select {
-        max-width: calc(100% - 3em);
-    }
+	.contact-modal-select {
+		max-width: calc(100% - 3em);
+	}
 }
