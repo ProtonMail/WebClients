@@ -29,12 +29,12 @@ export const createOnceHandler = (createPromise) => {
         promise = undefined;
     };
 
-    return () => {
+    return (...args) => {
         if (promise) {
             return promise;
         }
 
-        promise = createPromise()
+        promise = createPromise(...args)
             .then(clear)
             .catch((e) => {
                 clear();

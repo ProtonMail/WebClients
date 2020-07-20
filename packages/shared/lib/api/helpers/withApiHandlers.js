@@ -145,7 +145,8 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                 }
 
                 if (status === HTTP_ERROR_CODES.UNLOCK) {
-                    return unlockHandler().then(
+                    const { Details: { MissingScopes: missingScopes = [] } = {} } = e.data || {};
+                    return unlockHandler(missingScopes).then(
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
                         (unlockError) => onError(unlockError)
                     );
