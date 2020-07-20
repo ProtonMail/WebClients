@@ -1,4 +1,4 @@
-import { usePreventLeave, useEventManager } from 'react-components';
+import { usePreventLeave } from 'react-components';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteLinks } from '../../api/link';
 import { LinkMeta, FolderLinkMeta } from '../../interfaces/link';
@@ -15,7 +15,6 @@ function useTrash() {
     const { preventLeave } = usePreventLeave();
     const cache = useDriveCache();
     const { getLinkKeys, decryptLink, getShareKeys } = useDrive();
-    const { call } = useEventManager();
     const { events } = useDrive();
 
     const fetchTrash = async (shareId: string, Page: number, PageSize: number) => {
@@ -128,7 +127,7 @@ function useTrash() {
         );
 
         const deletedBatches = await preventLeave(runInQueue(deleteQueue, MAX_THREADS_PER_REQUEST));
-        await Promise.all([call(), events.call(shareId)]).catch(console.error);
+        await events.callAll(shareId).catch(console.error);
         return ([] as string[]).concat(...deletedBatches);
     };
 

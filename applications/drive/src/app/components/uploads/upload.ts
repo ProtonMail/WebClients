@@ -1,5 +1,7 @@
 import { generateUID } from 'react-components';
 import { generateContentHash } from 'proton-shared/lib/keys/driveKeys';
+import { serializeFormData } from 'proton-shared/lib/fetch/helpers';
+import { createApiError } from 'proton-shared/lib/fetch/ApiError';
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
 import { TransferCancel, UploadInfo } from '../../interfaces/transfer';
@@ -43,13 +45,13 @@ export async function upload(
     onProgress: (relativeIncrement: number) => void,
     signal?: AbortSignal
 ) {
-    const xhr = new XMLHttpRequest();
-
     return new Promise<void>((resolve, reject) => {
         if (signal?.aborted) {
             reject(new TransferCancel(id));
             return;
         }
+
+        const xhr = new XMLHttpRequest();
 
         if (signal) {
             signal.addEventListener('abort', () => {
@@ -59,22 +61,41 @@ export async function upload(
         }
 
         let lastLoaded = 0;
-        const formData = new FormData();
-        formData.append('Block', new Blob([content]));
-
         xhr.upload.onprogress = (e) => {
             onProgress((e.loaded - lastLoaded) / e.total);
             lastLoaded = e.loaded;
         };
-        xhr.onload = () => resolve();
+
+        xhr.onload = async () => {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                resolve();
+            } else {
+                reject(
+                    createApiError(
+                        'StatusCodeError',
+                        {
+                            status: xhr.status,
+                            statusText: xhr.statusText,
+                        } as Response,
+                        undefined,
+                        xhr.responseType === 'json' ? JSON.parse(xhr.response) : undefined
+                    )
+                );
+            }
+        };
+
         xhr.upload.onerror = reject;
         xhr.onerror = reject;
         xhr.open('POST', url);
-        xhr.send(formData);
+        xhr.send(
+            serializeFormData({
+                Block: new Blob([content]),
+            })
+        );
     });
 }
 
-export function initUpload({ requestUpload, transform, onProgress, finalize, onError }: UploadCallbacks) {
+export function initUpload(file: File, { requestUpload, transform, onProgress, finalize, onError }: UploadCallbacks) {
     const id = generateUID('drive-transfers');
     const abortController = new AbortController();
 
@@ -118,12 +139,12 @@ export function initUpload({ requestUpload, transform, onProgress, finalize, onE
         }));
     };
 
-    const start = async ({ blob }: UploadInfo) => {
+    const start = async () => {
         if (abortController.signal.aborted) {
             throw new TransferCancel(id);
         }
 
-        const reader = new ChunkFileReader(blob, FILE_CHUNK_SIZE);
+        const reader = new ChunkFileReader(file, FILE_CHUNK_SIZE);
         const blockTokens: BlockMeta[] = [];
         let startIndex = 1;
 
@@ -148,8 +169,8 @@ export function initUpload({ requestUpload, transform, onProgress, finalize, onE
     };
 
     const uploadControls: UploadControls = {
-        start: (...args) =>
-            start(...args).catch((err) => {
+        start: () =>
+            start().catch((err) => {
                 onError?.(err);
                 throw err;
             }),

@@ -1,6 +1,6 @@
 import React from 'react';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-import { useModals, usePreventLeave } from 'react-components';
+import { useModals, usePreventLeave, useEventManager } from 'react-components';
 import { lookup } from 'mime-types';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import {
@@ -43,6 +43,7 @@ const { CREATE, DELETE, UPDATE_METADATA } = EVENT_TYPES;
 
 function useDrive() {
     const cache = useDriveCache();
+    const { call } = useEventManager();
     const { getShareEventManager, createShareEventManager } = useDriveEventManager();
     const queuedFunction = useQueuedFunction();
     const { createModal } = useModals();
@@ -520,6 +521,8 @@ function useDrive() {
         call: (shareId: string): Promise<void> => {
             return getShareEventManager(shareId).call();
         },
+
+        callAll: (shareId: string) => Promise.all([call(), events.call(shareId)]),
     };
 
     return {
