@@ -46,10 +46,11 @@ const DeleteButton = ({ labelID = '', mailSettings, breakpoints, selectedIDs = [
         (!breakpoints.isNarrow || !labelIncludes(labelID, SENT, ALL_SENT));
 
     const handleDelete = async () => {
+        const count = selectedIDs.length;
         await new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal
-                    title={c('Title').ngettext(msgid`Delete email`, `Delete emails`, selectedIDs.length)}
+                    title={c('Title').ngettext(msgid`Delete email`, `Delete emails`, count)}
                     confirm={(<ErrorButton type="submit" icon={null}>{c('Action').t`Delete`}</ErrorButton>) as any}
                     onConfirm={resolve}
                     onClose={reject}
@@ -58,19 +59,20 @@ const DeleteButton = ({ labelID = '', mailSettings, breakpoints, selectedIDs = [
                         {c('Info').ngettext(
                             msgid`This action will permanently delete the selected email. Are you sure you want to delete this email?`,
                             `This action will permanently delete the selected emails. Are you sure you want to delete these emails?`,
-                            selectedIDs.length
+                            count
                         )}
                     </Alert>
                 </ConfirmModal>
             );
         });
-        const action =
-            type === ELEMENT_TYPES.CONVERSATION
-                ? deleteConversations(selectedIDs, labelID)
-                : deleteMessages(selectedIDs);
+        const isConversation = type === ELEMENT_TYPES.CONVERSATION;
+        const action = isConversation ? deleteConversations(selectedIDs, labelID) : deleteMessages(selectedIDs);
         await api(action);
         await call();
-        createNotification({ text: c('Success').t`Elements deleted` });
+        const text = isConversation
+            ? c('Success').ngettext(msgid`conversation removed`, `${count} conversations removed`, count)
+            : c('Success').ngettext(msgid`message removed`, `${count} messages removed`, count);
+        createNotification({ text });
     };
 
     if (!displayDelete) {
