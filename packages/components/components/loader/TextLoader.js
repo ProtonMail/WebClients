@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { classnames } from '../../helpers/component';
+import EllipsisLoader from './EllipsisLoader';
 
 const TextLoader = ({ children, className }) => {
-    return <p className={classnames(['atomLoader-text', className])}>{children}</p>;
+    return (
+        <p className={className}>
+            {children}
+            <EllipsisLoader />
+        </p>
+    );
 };
 
 TextLoader.propTypes = {
     children: PropTypes.node,
-    className: PropTypes.string,
+    className: PropTypes.string
 };
 
 export default TextLoader;
