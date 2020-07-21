@@ -11,7 +11,7 @@ import {
     AccountSupportDropdown,
     useNotifications,
     useModals,
-    Label,
+    Label
 } from '../..';
 import { getErrorText } from './helper';
 import AbuseModal from './AbuseModal';
@@ -44,7 +44,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
         setPassword,
         setKeyPassword,
         setTotp,
-        setIsTotpRecovery,
+        setIsTotpRecovery
     } = useLogin({ onLogin, ignoreUnlock });
 
     const [loading, withLoading] = useLoading();
@@ -85,7 +85,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
         );
 
         return (
-            <Layout title={c('Title').t`Sign in`} aside={<OneAccountIllustration />}>
+            <Layout title={c('Title').t`Sign in`} aside={<OneAccountIllustration />} right={null}>
                 <form name="loginForm" className="signup-form" onSubmit={handleSubmit}>
                     {usernameInput}
                     {passwordInput}
