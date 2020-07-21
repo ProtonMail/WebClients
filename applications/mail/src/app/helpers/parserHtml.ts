@@ -9,8 +9,8 @@ import { identity } from 'proton-shared/lib/helpers/function';
 export const toText = (html: string, appendLines = true, convertImages = false) => {
     const turndownService = new TurndownService({
         bulletListMarker: '-',
-        // strongDelimiter: '',
-        // emDelimiter: '',
+        strongDelimiter: '' as any,
+        emDelimiter: '' as any,
         hr: ''
     });
 
@@ -30,7 +30,7 @@ export const toText = (html: string, appendLines = true, convertImages = false) 
             }
 
             // ex <li>monique<br></li>
-            if (node.parentElement?.lastElementChild?.nodeName === 'BR' && node.parentElement.textContent) {
+            if (node.parentElement?.lastChild === node && node.parentElement.textContent) {
                 return node.parentElement.nodeName !== 'LI' ? '\n' : '';
             }
 
