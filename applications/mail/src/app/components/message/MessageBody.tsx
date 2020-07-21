@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { classnames, useToggle, Button } from 'react-components';
+import React, { useMemo, useState } from 'react';
+import { classnames, Button } from 'react-components';
 
 import { isPlainText } from '../../helpers/message/messages';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
@@ -20,7 +20,7 @@ interface Props {
 }
 
 const MessageBody = ({ message: { document, plainText, data: message }, showBlockquote = true }: Props) => {
-    const { state: expand, toggle } = useToggle();
+    const [expanded, setExpanded] = useState(false);
 
     const plain = isPlainText(message);
 
@@ -28,6 +28,10 @@ const MessageBody = ({ message: { document, plainText, data: message }, showBloc
         document?.innerHTML,
         plain
     ]);
+
+    const isBlockquote = blockquote !== '';
+    const showButton = showBlockquote && isBlockquote && !expanded;
+    const __html = showBlockquote && !expanded ? content : content + blockquote;
 
     return (
         <div
@@ -37,14 +41,11 @@ const MessageBody = ({ message: { document, plainText, data: message }, showBloc
                 getLightOrDark('', 'bg-white color-global-grey')
             ])}
         >
-            <div dangerouslySetInnerHTML={{ __html: showBlockquote ? content : content + blockquote }} />
-            {showBlockquote && blockquote !== '' && (
-                <>
-                    <Button className="pm-button--small m0-5" onClick={toggle}>
-                        ...
-                    </Button>
-                    {expand && <div dangerouslySetInnerHTML={{ __html: blockquote }} />}
-                </>
+            <div dangerouslySetInnerHTML={{ __html }} />
+            {showButton && (
+                <Button className="pm-button--small m0-5" onClick={() => setExpanded(true)}>
+                    ...
+                </Button>
             )}
         </div>
     );
