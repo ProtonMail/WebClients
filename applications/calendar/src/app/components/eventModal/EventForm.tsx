@@ -48,7 +48,7 @@ const EventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, mode
             weekStartsOn={weekStartsOn}
             errors={errors}
             isSubmitted={isSubmitted}
-            onChange={(frequencyModel) => setModel({ ...model, frequencyModel, hasModifiedRrule: true })}
+            onChange={(frequencyModel) => setModel({ ...model, frequencyModel, hasTouchedRrule: true })}
         />
     );
 
@@ -110,8 +110,8 @@ const EventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, mode
                                 setModel({
                                     ...model,
                                     fullDayNotifications: notifications,
-                                    hasModifiedNotifications: {
-                                        ...model.hasModifiedNotifications,
+                                    hasTouchedNotifications: {
+                                        ...model.hasTouchedNotifications,
                                         fullDay: true,
                                     },
                                 });
@@ -127,8 +127,8 @@ const EventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, mode
                                 setModel({
                                     ...model,
                                     partDayNotifications: notifications,
-                                    hasModifiedNotifications: {
-                                        ...model.hasModifiedNotifications,
+                                    hasTouchedNotifications: {
+                                        ...model.hasTouchedNotifications,
                                         partDay: true,
                                     },
                                 });

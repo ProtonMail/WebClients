@@ -269,6 +269,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             description,
             summary,
             location,
+            sequence,
             'recurrence-id': recurrenceId,
             duration,
         } = vevent;
@@ -302,6 +303,9 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
                 value: truncate(trimmedLocationValue, MAX_LENGTHS.LOCATION),
             };
         }
+        const sequenceValue = sequence?.value || 0;
+        const sequenceSafeValue = Number.isSafeInteger(sequenceValue) ? sequenceValue : 0;
+        validated.sequence = { value: Math.max(0, sequenceSafeValue) };
 
         const isAllDayStart = getIsPropertyAllDay(validated.dtstart);
         const isAllDayEnd = dtend ? getIsPropertyAllDay(dtend) : undefined;

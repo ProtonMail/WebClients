@@ -65,13 +65,13 @@ const CalendarSelect = ({ withIcon = false, model, setModel, ...rest }: Props) =
 
         const partDayNotifications =
             getHasEditedNotifications(oldDefaultPartDayNotifications, model.partDayNotifications) ||
-            model.hasModifiedNotifications.partDay
+            model.hasTouchedNotifications.partDay
                 ? model.partDayNotifications
                 : newDefaultPartDayNotifications;
 
         const fullDayNotifications =
             getHasEditedNotifications(oldDefaultFullDayNotifications, model.fullDayNotifications) ||
-            model.hasModifiedNotifications.fullDay
+            model.hasTouchedNotifications.fullDay
                 ? model.fullDayNotifications
                 : newDefaultFullDayNotifications;
 

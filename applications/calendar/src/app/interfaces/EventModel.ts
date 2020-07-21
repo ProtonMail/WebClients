@@ -56,6 +56,7 @@ export interface EventModelView {
     title: string;
     location: string;
     description: string;
+    sequence?: number;
     start: DateTimeModel;
     end: DateTimeModel;
     rest?: any;
@@ -79,8 +80,8 @@ export interface EventModel extends EventModelView {
     initialDate: Date;
     initialTzid: string;
     defaultEventDuration: number;
-    hasModifiedRrule: boolean;
-    hasModifiedNotifications: {
+    hasTouchedRrule: boolean;
+    hasTouchedNotifications: {
         partDay: boolean;
         fullDay: boolean;
     };

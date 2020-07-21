@@ -62,13 +62,37 @@ END:VEVENT`;
         );
     });
 
-    test('should accept (and re-format) events with negative duration', () => {
+    test('should accept events with sequence', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART;TZID=America/New_York:20020312T083000
+DTEND;TZID=America/New_York:20020312T082959
+SEQUENCE:11
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 3, day: 12, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            sequence: { value: 11 },
+        });
+    });
+
+    test('should accept (and re-format) events with negative duration and negative sequence', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
 DTSTART;TZID=America/New_York:20020312T083000
 DTEND;TZID=America/New_York:20020312T082959
 LOCATION:1CP Conference Room 4350
+SEQUENCE:-1
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
         expect(getSupportedEvent({ vcalComponent: event, hasXWrTimezone: false })).toEqual({
@@ -82,6 +106,7 @@ END:VEVENT`;
                 parameters: { tzid: 'America/New_York' },
             },
             location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
         });
     });
 
@@ -105,6 +130,7 @@ END:VEVENT`;
                 parameters: { tzid: 'America/New_York' },
             },
             location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
         });
     });
 
@@ -128,6 +154,7 @@ END:VEVENT`;
                 parameters: { type: 'date' },
             },
             location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
         });
     });
 
@@ -173,6 +200,7 @@ END:VEVENT`;
                 parameters: { tzid: 'America/New_York' },
             },
             location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
         });
     });
 
@@ -200,6 +228,7 @@ END:VEVENT`;
                 parameters: { type: 'date' },
             },
             location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
             components: [
                 {
                     component: 'valarm',
@@ -320,6 +349,7 @@ END:VEVENT`;
                 value: { year: 2002, month: 12, day: 30, hours: 20, minutes: 30, seconds: 0, isUTC: false },
                 parameters: { tzid: 'Europe/Berlin' },
             },
+            sequence: { value: 0 },
             exdate: [
                 {
                     parameters: {
@@ -377,6 +407,7 @@ END:VEVENT`;
                 value: { year: 2002, month: 12, day: 30 },
                 parameters: { type: 'date' },
             },
+            sequence: { value: 0 },
             exdate: [
                 {
                     parameters: { type: 'date' },
@@ -415,6 +446,7 @@ END:VEVENT`;
                 value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
                 parameters: { tzid: 'Europe/Berlin' },
             },
+            sequence: { value: 0 },
             'recurrence-id': {
                 value: { year: 2003, month: 1, day: 2, hours: 0, minutes: 30, seconds: 0, isUTC: false },
                 parameters: { tzid: 'Europe/Sarajevo' },
@@ -448,6 +480,7 @@ END:VEVENT`;
                 value: { year: 2011, month: 6, day: 13, hours: 18, minutes: 0, seconds: 0, isUTC: false },
                 parameters: { tzid: 'Europe/Zurich' },
             },
+            sequence: { value: 0 },
             location: { value: '1CP Conference Room 4350' },
         });
     });
@@ -480,6 +513,7 @@ END:VEVENT`;
                 value: { year: 2011, month: 6, day: 18, hours: 15, minutes: 0, seconds: 0, isUTC: true },
             },
             location: { value: '1CP Conference Room 4350' },
+            sequence: { value: 0 },
         });
     });
 
@@ -529,6 +563,7 @@ END:VEVENT`;
             ...event,
             dtstart: { value: event.dtstart.value, parameters: { tzid } },
             dtend: { value: event.dtend.value, parameters: { tzid } },
+            sequence: { value: 0 },
         });
     });
 
@@ -540,6 +575,7 @@ UID:test-event
 DTSTART;TZID=Europe/Vilnius:20200518T150000
 DTEND;TZID=Europe/Vilnius:20200518T160000
 LOCATION:1CP Conference Room 4350
+SEQUENCE:0
 END:VEVENT`;
         const tzid = 'Europe/Brussels';
         const event = parse(vevent) as VcalVeventComponent;
@@ -554,6 +590,7 @@ UID:test-event
 DTSTART;VALUE=DATE:20200518
 DTEND;VALUE=DATE:20200520
 LOCATION:1CP Conference Room 4350
+SEQUENCE:1
 END:VEVENT`;
         const tzid = 'Europe/Brussels';
         const event = parse(vevent) as VcalVeventComponent;
@@ -597,6 +634,7 @@ END:VEVENT`;
             summary: { value: truncate(loremIpsum, MAX_LENGTHS.TITLE) },
             location: { value: truncate(loremIpsum, MAX_LENGTHS.LOCATION) },
             description: { value: truncate(loremIpsum, MAX_LENGTHS.EVENT_DESCRIPTION) },
+            sequence: { value: 0 },
         });
     });
 });
