@@ -9,7 +9,7 @@ interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLB
     buttonRef?: Ref<HTMLButtonElement>;
 }
 
-const SupportDropdownButton = ({ content = c('Header').t`Support`, className, isOpen, buttonRef, ...rest }: Props) => {
+const SupportDropdownButton = ({ content = c('Header').t`Help`, className, isOpen, buttonRef, ...rest }: Props) => {
     return (
         <button type="button" className={className} aria-expanded={isOpen} ref={buttonRef} {...rest}>
             <Icon name="support1" className="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert" />
