@@ -6,7 +6,6 @@ import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
 import PublicLayout from './components/layout/PublicLayout';
 import LoginContainer from './containers/LoginContainer';
-import SignupContainer from './containers/SignupContainer';
 
 interface Props {
     onLogin: () => void;
@@ -46,17 +45,6 @@ const PublicApp = ({ onLogin }: Props) => {
                                 stopRedirect={stopRedirect}
                                 history={history}
                                 location={location}
-                                onLogin={onLogin}
-                            />
-                        )}
-                    />
-                    <Route
-                        path="/signup/:step?"
-                        render={({ history, match }) => (
-                            <SignupContainer
-                                stopRedirect={stopRedirect}
-                                history={history}
-                                match={match}
                                 onLogin={onLogin}
                             />
                         )}
