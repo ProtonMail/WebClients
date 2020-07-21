@@ -76,9 +76,12 @@ const SidebarItem = ({
         }
     };
 
-    const handleDrop = (event: DragEvent) => {
+    const handleDrop = async (event: DragEvent) => {
         dragProps.onDrop();
         const elementIDs = JSON.parse(event.dataTransfer.getData(DRAG_ELEMENT_KEY)) as string[];
+        // This wait will allow the drag end event to be propagated on the source element
+        // Without this, the optimistic moveToFolder may remove it before and the event will be lost
+        await wait(0);
         const elements = elementIDs.map((elementID) => elementsCache.elements[elementID]);
         if (isFolder) {
             moveToFolder(elements, labelID, text, currentLabelID);

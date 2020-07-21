@@ -91,14 +91,6 @@ const Item = ({
         onClick(element);
     };
 
-    const handleDragStart = (event: DragEvent) => {
-        onDragStart(event);
-    };
-
-    const handleDragEnd = (event: DragEvent) => {
-        onDragEnd(event);
-    };
-
     const itemCheckboxType = isCompactView ? (
         <Checkbox className="item-icon-compact mr0-75 stop-propagation" checked={checked} onChange={onCheck} />
     ) : (
@@ -115,8 +107,8 @@ const Item = ({
         <div
             onClick={handleClick}
             draggable
-            onDragStart={handleDragStart}
-            onDragEnd={handleDragEnd}
+            onDragStart={onDragStart}
+            onDragEnd={onDragEnd}
             className={classnames([
                 'flex flex-nowrap flex-items-center cursor-pointer',
                 columnLayout ? 'item-container' : 'item-container-row',
