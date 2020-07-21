@@ -9,7 +9,7 @@ import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { Attachment } from '../../models/attachment';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 
-const { NOT_SIGNED } = VERIFICATION_STATUS;
+const { NOT_VERIFIED } = VERIFICATION_STATUS;
 
 const decryptMimeMessage = async (
     message: Message,
@@ -35,7 +35,7 @@ const decryptMimeMessage = async (
         return {
             decryptedBody: '',
             Attachments: [],
-            verified: 0,
+            verified: NOT_VERIFIED,
             errors: {
                 decryption: [error]
             }
@@ -76,7 +76,7 @@ const decryptLegacyMessage = async (message: Message, publicKeys: OpenPGPKey[], 
     } catch (error) {
         return {
             decryptedBody: '',
-            verified: 0,
+            verified: NOT_VERIFIED,
             errors: {
                 decryption: error
             }
@@ -85,7 +85,7 @@ const decryptLegacyMessage = async (message: Message, publicKeys: OpenPGPKey[], 
 
     const {
         data,
-        verified = NOT_SIGNED,
+        verified = NOT_VERIFIED,
         signatures: [signature],
         errors
     } = result;

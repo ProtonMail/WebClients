@@ -87,7 +87,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 privateKeys: userKeys.privateKeys
             };
 
-            // To verify the signature of the message, we just need to take into account pinned keys
+            // To verify the signature of the message, we can only use pinned keys
             // API keys could always be forged by the server to verify the signature
             decryption = await decryptMessage(
                 data,

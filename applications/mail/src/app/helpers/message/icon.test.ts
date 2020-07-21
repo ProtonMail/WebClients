@@ -1,8 +1,25 @@
+import { OpenPGPKey } from 'pmcrypto';
 import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
+import { SIGNATURE_START, VERIFICATION_STATUS } from '../../constants';
 import { STATUS_ICONS_FILLS } from '../../models/crypto';
 import { MessageExtended } from '../../models/message';
-import { getSendStatusIcon, getSentStatusIconInfo } from './icon';
+import { getReceivedStatusIcon, getSendStatusIcon, getSentStatusIconInfo } from './icon';
 import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
+
+const { NOT_VERIFIED } = VERIFICATION_STATUS;
+
+const fakeKey1: OpenPGPKey = {
+    getFingerprint() {
+        return 'fakeKey1';
+    },
+    users: [
+        {
+            userId: {
+                userid: '<user@pm.me>'
+            }
+        }
+    ]
+} as any;
 
 describe('icon', () => {
     describe('getSendStatusIcon', () => {
@@ -543,6 +560,80 @@ describe('icon', () => {
             expect(icon).toMatchObject({
                 colorClassName: 'color-global-grey-dm',
                 isEncrypted: true,
+                fill: STATUS_ICONS_FILLS.PLAIN,
+                text: 'Stored with zero-access encryption'
+            });
+        });
+    });
+
+    describe('getReceivedStatusIcon', () => {
+        const getIconFromHeaders = (
+            headers: { [key: string]: string },
+            senderPinnedKeys: OpenPGPKey[],
+            verificationStatus: VERIFICATION_STATUS
+        ) => {
+            const message = ({
+                data: {
+                    Time: SIGNATURE_START.USER + 10 * 1000,
+                    ParsedHeaders: headers
+                },
+                senderPinnedKeys,
+                verificationStatus
+            } as unknown) as MessageExtended;
+            return getReceivedStatusIcon(message);
+        };
+
+        it('should return a blue lock with in case of decryption error for internal users (end-to-end encryption)', () => {
+            const headers = {
+                'X-Pm-Origin': 'internal',
+                'X-Pm-Content-Encryption': 'end-to-end'
+            };
+            const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
+            expect(icon).toMatchObject({
+                colorClassName: 'color-pm-blue',
+                isEncrypted: true,
+                fill: STATUS_ICONS_FILLS.PLAIN,
+                text: 'End-to-end encrypted message'
+            });
+        });
+
+        it('should return a blue lock with in case of decryption error for internal users (on-delivery encryption)', () => {
+            const headers = {
+                'X-Pm-Origin': 'internal',
+                'X-Pm-Content-Encryption': 'on-delivery'
+            };
+            const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
+            expect(icon).toMatchObject({
+                colorClassName: 'color-pm-blue',
+                isEncrypted: true,
+                fill: STATUS_ICONS_FILLS.PLAIN,
+                text: 'Sent by ProtonMail with zero-access encryption'
+            });
+        });
+
+        it('should return a green lock with in case of decryption error for external users (end-to-end encryption)', () => {
+            const headers = {
+                'X-Pm-Origin': 'external',
+                'X-Pm-Content-Encryption': 'end-to-end'
+            };
+            const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
+            expect(icon).toMatchObject({
+                colorClassName: 'color-global-success',
+                isEncrypted: true,
+                fill: STATUS_ICONS_FILLS.PLAIN,
+                text: 'PGP-encrypted message'
+            });
+        });
+
+        it('should return a black lock with in case of decryption error for internal users (on-delivery encryption)', () => {
+            const headers = {
+                'X-Pm-Origin': 'external',
+                'X-Pm-Content-Encryption': 'on-delivery'
+            };
+            const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
+            expect(icon).toMatchObject({
+                colorClassName: 'color-global-grey-dm',
+                isEncrypted: false,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Stored with zero-access encryption'
             });

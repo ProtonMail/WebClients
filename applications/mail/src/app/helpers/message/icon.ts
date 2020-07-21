@@ -9,7 +9,7 @@ import { inSigningPeriod } from './messages';
 // https://confluence.protontech.ch/display/MAILFE/Encryption+status+for+outgoing+and+incoming+email
 
 const { SEND_PM, SEND_EO, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE_TYPE;
-const { NOT_SIGNED, SIGNED_AND_INVALID, SIGNED_AND_VALID } = VERIFICATION_STATUS;
+const { NOT_VERIFIED, NOT_SIGNED, SIGNED_AND_INVALID, SIGNED_AND_VALID } = VERIFICATION_STATUS;
 const { PLAIN, CHECKMARK, SIGN, WARNING, FAIL } = STATUS_ICONS_FILLS;
 const {
     NONE,
@@ -279,7 +279,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
     }
     const origin = message.data.ParsedHeaders['X-Pm-Origin'];
     const encryption = message.data.ParsedHeaders['X-Pm-Content-Encryption'];
-    const { verificationStatus } = message;
+    const { verificationStatus, senderVerified } = message;
     const hasPinnedKeys = !!message.senderPinnedKeys?.length;
 
     if (origin === INTERNAL) {
@@ -320,6 +320,13 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
             }
             if (verificationStatus === SIGNED_AND_VALID) {
                 if (hasPinnedKeys) {
+                    if (!senderVerified) {
+                        return {
+                            ...result,
+                            fill: WARNING,
+                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`
+                        };
+                    }
                     return {
                         ...result,
                         fill: CHECKMARK,
@@ -374,6 +381,13 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
             }
             if (verificationStatus === SIGNED_AND_VALID) {
                 if (hasPinnedKeys) {
+                    if (!senderVerified) {
+                        return {
+                            ...result,
+                            fill: WARNING,
+                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`
+                        };
+                    }
                     return {
                         ...result,
                         fill: CHECKMARK,
@@ -389,7 +403,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
             return { ...result, fill: PLAIN, text: c('Received email icon').t`PGP-encrypted message` };
         }
         if (encryption === ON_DELIVERY) {
-            if (verificationStatus === NOT_SIGNED) {
+            if ([NOT_SIGNED, NOT_VERIFIED].includes(verificationStatus)) {
                 return {
                     colorClassName: 'color-global-grey-dm',
                     isEncrypted: false,
@@ -413,6 +427,13 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
             }
             if (verificationStatus === SIGNED_AND_VALID) {
                 if (hasPinnedKeys) {
+                    if (!senderVerified) {
+                        return {
+                            ...result,
+                            fill: WARNING,
+                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`
+                        };
+                    }
                     return {
                         ...result,
                         fill: CHECKMARK,
