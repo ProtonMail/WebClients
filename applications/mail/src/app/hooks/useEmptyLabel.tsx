@@ -10,7 +10,8 @@ import {
     useApi
 } from 'react-components';
 import { emptyLabel as emptyLabelRequest } from 'proton-shared/lib/api/messages';
-import { useOptimisticEmptyLabel } from './useOptimisticChange';
+
+import { useOptimisticEmptyLabel } from './optimistic/useOptimisticEmptyLabel';
 
 export const useEmptyLabel = () => {
     const { createNotification } = useNotifications();

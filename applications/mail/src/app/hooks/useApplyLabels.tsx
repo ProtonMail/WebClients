@@ -6,9 +6,9 @@ import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import UndoButton from '../components/notifications/UndoButton';
-import { useOptimisticApplyLabels } from './useOptimisticChange';
 import { isMessage as testIsMessage } from '../helpers/elements';
 import { Element } from '../models/element';
+import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
 
 const EXPIRATION = 7500;
 

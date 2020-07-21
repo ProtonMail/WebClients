@@ -9,8 +9,11 @@ import { Message } from '../models/message';
 import { getLabelIDs } from './elements';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { ConversationLabel, Conversation } from '../models/conversation';
 
 const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
+
+export type LabelChanges = { [labelID: string]: boolean };
 
 interface FolderInfo {
     icon: string;
@@ -151,3 +154,48 @@ export const getFolderName = (labelID: string, customFoldersList: Folder[] = [])
 
 export const labelIncludes = (labelID: string, ...labels: (MAILBOX_LABEL_IDS | string)[]) =>
     labels.includes(labelID as MAILBOX_LABEL_IDS);
+
+const applyChangesOnLabelIDs = (labelIDs: string[], changes: LabelChanges) => {
+    const result = [...labelIDs];
+    Object.keys(changes).forEach((labelID) => {
+        const index = result.findIndex((existingLabelID) => existingLabelID === labelID);
+        if (changes[labelID]) {
+            if (index === -1) {
+                result.push(labelID);
+            }
+        } else {
+            if (index >= 0) {
+                result.splice(index, 1);
+            }
+        }
+    });
+    return result;
+};
+
+const applyChangesOnConversationLabels = (labels: ConversationLabel[] = [], changes: LabelChanges) => {
+    const result = [...labels];
+    Object.keys(changes).forEach((labelID) => {
+        const index = result.findIndex((existingLabel) => existingLabel.ID === labelID);
+        if (changes[labelID]) {
+            if (index === -1) {
+                result.push({ ID: labelID });
+            }
+        } else {
+            if (index >= 0) {
+                result.splice(index, 1);
+            }
+        }
+    });
+    return result;
+};
+
+export const applyLabelChangesOnMessage = (message: Message, changes: LabelChanges): Message => {
+    const LabelIDs = applyChangesOnLabelIDs(message.LabelIDs, changes);
+    return { ...message, LabelIDs };
+};
+
+export const applyLabelChangesOnConversation = (conversation: Conversation, changes: LabelChanges): Conversation => {
+    const LabelIDs = conversation.LabelIDs ? applyChangesOnLabelIDs(conversation.LabelIDs, changes) : undefined;
+    const Labels = applyChangesOnConversationLabels(conversation.Labels, changes);
+    return { ...conversation, LabelIDs, Labels };
+};

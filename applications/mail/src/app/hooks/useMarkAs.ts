@@ -6,7 +6,7 @@ import { markConversationsAsRead, markConversationsAsUnread } from 'proton-share
 import { isMessage as testIsMessage } from '../helpers/elements';
 import { Element } from '../models/element';
 
-import { useOptimisticMarkAs } from './useOptimisticChange';
+import { useOptimisticMarkAs } from './optimistic/useOptimisticMarkAs';
 
 export enum MARK_AS_STATUS {
     READ = 'read',
