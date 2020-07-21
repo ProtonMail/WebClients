@@ -11,7 +11,6 @@ const OPTIONS = {
     linkify: true
 };
 
-const FAKE_BODY = document.createElement('body');
 const md = markdownit('default', OPTIONS);
 
 /**
@@ -122,12 +121,7 @@ export const textToHtml = (input = '', signature: string, mailSettings: MailSett
         placeholder
     );
 
-    FAKE_BODY.innerHTML = html;
-    [...FAKE_BODY.querySelectorAll('p')].forEach((element) => {
-        const div = document.createElement('div');
-        div.innerHTML = element.innerHTML;
-        element.parentNode?.replaceChild(div, element);
-    });
+    const result = attachSignature(html, signature, text, mailSettings);
 
-    return attachSignature(FAKE_BODY.innerHTML, signature, text, mailSettings);
+    return result;
 };
