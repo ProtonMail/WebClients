@@ -23,9 +23,10 @@ const { VPN } = CLIENT_TYPES;
 interface Props {
     className?: string;
     content?: string;
+    hasButtonCaret?: boolean;
 }
 
-const SupportDropdown = ({ className, content }: Props) => {
+const SupportDropdown = ({ className, content, hasButtonCaret = false }: Props) => {
     const { UID } = useAuthentication();
     const { CLIENT_TYPE } = useConfig();
     const { createModal } = useModals();
@@ -46,6 +47,7 @@ const SupportDropdown = ({ className, content }: Props) => {
                 buttonRef={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
+                noCaret={!hasButtonCaret}
             />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom">
                 <DropdownMenu>
