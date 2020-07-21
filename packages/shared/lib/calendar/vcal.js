@@ -1,7 +1,7 @@
 import ICAL from 'ical.js';
 
-import { PROPERTIES, UNIQUE } from './vcalDefinition';
-import { WEEK, DAY, HOUR, MINUTE, SECOND } from '../constants';
+import { PROPERTIES, UNIQUE_PROPERTIES } from './vcalDefinition';
+import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../constants';
 
 const getIcalDateValue = (value, tzid, isDate) => {
     const icalTimezone = value.isUTC ? ICAL.Timezone.utcTimezone : ICAL.Timezone.localTimezone;
@@ -272,7 +272,7 @@ const fromIcalProperties = (properties = []) => {
             ...(Object.keys(parameters).length && { parameters }),
         };
 
-        if (PROPERTIES[name] === UNIQUE) {
+        if (UNIQUE_PROPERTIES.has(name)) {
             acc[name] = propertyAsObject;
             return acc;
         }
@@ -335,13 +335,41 @@ export const parse = (vcal = '') => {
 };
 
 /**
+ * Naively try to reformat badly formatted line breaks in a vcalendar string
+ */
+const reformatLineBreaks = (vcal = '') => {
+    const crlf = '\r\n';
+    const lines = vcal.includes(crlf) ? vcal.split(crlf) : vcal.split('\n');
+    return lines.reduce((acc, line) => {
+        const fieldMatch = line.match(/(\w+-?\w*)(?::|;)/);
+        if (!fieldMatch) {
+            return `${acc}\\n${line}`;
+        }
+        const field = fieldMatch[1].toLowerCase();
+        if (PROPERTIES.has(field) || field.startsWith('x-') || ['begin', 'end'].includes(field)) {
+            return `${acc}\r\n${line}`;
+        }
+        return `${acc}\\n${line}`;
+    }, '');
+};
+
+/**
  * Same as the parse function, but catching errors
  */
-export const parseWithErrors = (vcal = '') => {
-    if (!vcal) {
-        return {};
+export const parseWithErrors = (vcal = '', retry = true) => {
+    try {
+        if (!vcal) {
+            return {};
+        }
+        return fromIcalComponentWithErrors(new ICAL.Component(ICAL.parse(vcal)));
+    } catch (e) {
+        // try to recover from line break errors
+        if (e.message.toLowerCase().includes('invalid line (no token ";" or ":")') && retry) {
+            const reformattedVcal = reformatLineBreaks(vcal);
+            return parseWithErrors(reformattedVcal, false);
+        }
+        throw e;
     }
-    return fromIcalComponentWithErrors(new ICAL.Component(ICAL.parse(vcal)));
 };
 
 export const fromRruleString = (rrule = '') => {

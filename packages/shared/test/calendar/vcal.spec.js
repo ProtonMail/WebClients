@@ -1,4 +1,10 @@
-import { parse, fromTriggerString, serialize, getMillisecondsFromTriggerString } from '../../lib/calendar/vcal';
+import {
+    parse,
+    fromTriggerString,
+    serialize,
+    getMillisecondsFromTriggerString,
+    parseWithErrors,
+} from '../../lib/calendar/vcal';
 import { WEEK, DAY, HOUR, MINUTE, SECOND } from '../../lib/constants';
 
 const vevent = `BEGIN:VEVENT
@@ -209,23 +215,23 @@ END:VCALENDAR`);
         expect(result).toEqual({
             component: 'vcalendar',
             version: {
-                value: '2.0'
+                value: '2.0',
             },
             prodid: {
-                value: '-//Google Inc//Google Calendar 70.9054//EN'
+                value: '-//Google Inc//Google Calendar 70.9054//EN',
             },
             calscale: {
-                value: 'GREGORIAN'
+                value: 'GREGORIAN',
             },
             method: {
-                value: 'PUBLISH'
+                value: 'PUBLISH',
             },
             'x-wr-timezone': {
-                value: 'Europe/Vilnius'
+                value: 'Europe/Vilnius',
             },
             'x-wr-calname': {
-                value: 'Daily'
-            }
+                value: 'Daily',
+            },
         });
     });
 
@@ -235,27 +241,78 @@ END:VCALENDAR`);
         expect(result).toEqual({
             component: 'vevent',
             uid: {
-                value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                value: '7E018059-2165-4170-B32F-6936E88E61E5',
             },
             dtstamp: {
-                value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 8, seconds: 54, isUTC: true }
+                value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 8, seconds: 54, isUTC: true },
             },
             dtstart: {
                 value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
-                parameters: { tzid: 'America/New_York' }
+                parameters: { tzid: 'America/New_York' },
             },
             dtend: {
                 value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: false },
-                parameters: { tzid: 'Europe/Zurich' }
+                parameters: { tzid: 'Europe/Zurich' },
             },
             categories: [
                 {
-                    value: ['ANNIVERSARY', 'PERSONAL', 'SPECIAL OCCASION']
-                }
+                    value: ['ANNIVERSARY', 'PERSONAL', 'SPECIAL OCCASION'],
+                },
             ],
             summary: {
-                value: 'Our Blissful Anniversary'
-            }
+                value: 'Our Blissful Anniversary',
+            },
+        });
+    });
+
+    it('should parse vevent with bad line breaks', () => {
+        const result = parseWithErrors(`BEGIN:VEVENT
+DTSTAMP:20190719T130854Z
+UID:7E018059-2165-4170-B32F-6936E88E61E5
+DTSTART;TZID=America/New_York:20190719T120000
+DTEND;TZID=Europe/Zurich:20190719T130000
+CATEGORIES:ANNIVERSARY,PERSONAL,SPECIAL OCCASION
+SUMMARY:Our Blissful Anniversary
+
+---
+
+Wonderful!
+LOCATION:A
+
+secret
+
+
+...
+place
+END:VEVENT`);
+
+        expect(result).toEqual({
+            component: 'vevent',
+            uid: {
+                value: '7E018059-2165-4170-B32F-6936E88E61E5',
+            },
+            dtstamp: {
+                value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 8, seconds: 54, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            dtend: {
+                value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            categories: [
+                {
+                    value: ['ANNIVERSARY', 'PERSONAL', 'SPECIAL OCCASION'],
+                },
+            ],
+            summary: {
+                value: 'Our Blissful Anniversary\n\n---\n\nWonderful!',
+            },
+            location: {
+                value: 'A\n\nsecret\n\n\n...\nplace',
+            },
         });
     });
 
@@ -265,17 +322,17 @@ END:VCALENDAR`);
         expect(result).toEqual({
             component: 'valarm',
             uid: {
-                value: 'CF0E1C05-CD9A-43D5-AD24-6C631EA2E6A7'
+                value: 'CF0E1C05-CD9A-43D5-AD24-6C631EA2E6A7',
             },
             trigger: {
-                value: { weeks: 0, days: 0, hours: 15, minutes: 0, seconds: 0, isNegative: true }
+                value: { weeks: 0, days: 0, hours: 15, minutes: 0, seconds: 0, isNegative: true },
             },
             action: {
-                value: 'DISPLAY'
+                value: 'DISPLAY',
             },
             description: {
-                value: 'asd'
-            }
+                value: 'asd',
+            },
         });
     });
 
@@ -283,13 +340,13 @@ END:VCALENDAR`);
         expect(parse(vfreebusy2)).toEqual({
             component: 'vfreebusy',
             uid: {
-                value: '19970901T115957Z-76A912@example.com'
+                value: '19970901T115957Z-76A912@example.com',
             },
             dtstamp: {
-                value: { year: 1997, month: 9, day: 1, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                value: { year: 1997, month: 9, day: 1, hours: 12, minutes: 0, seconds: 0, isUTC: true },
             },
             organizer: {
-                value: 'jsmith@example.com'
+                value: 'jsmith@example.com',
             },
             dtstart: {
                 value: {
@@ -299,8 +356,8 @@ END:VCALENDAR`);
                     hours: 14,
                     minutes: 17,
                     seconds: 11,
-                    isUTC: true
-                }
+                    isUTC: true,
+                },
             },
             dtend: {
                 value: {
@@ -310,8 +367,8 @@ END:VCALENDAR`);
                     hours: 14,
                     minutes: 17,
                     seconds: 11,
-                    isUTC: true
-                }
+                    isUTC: true,
+                },
             },
             freebusy: [
                 {
@@ -324,7 +381,7 @@ END:VCALENDAR`);
                                 hours: 23,
                                 minutes: 30,
                                 seconds: 0,
-                                isUTC: true
+                                isUTC: true,
                             },
                             end: {
                                 year: 1998,
@@ -333,10 +390,10 @@ END:VCALENDAR`);
                                 hours: 0,
                                 minutes: 30,
                                 seconds: 0,
-                                isUTC: true
-                            }
-                        }
-                    ]
+                                isUTC: true,
+                            },
+                        },
+                    ],
                 },
                 {
                     value: [
@@ -348,7 +405,7 @@ END:VCALENDAR`);
                                 hours: 15,
                                 minutes: 30,
                                 seconds: 0,
-                                isUTC: true
+                                isUTC: true,
                             },
                             end: {
                                 year: 1998,
@@ -357,10 +414,10 @@ END:VCALENDAR`);
                                 hours: 16,
                                 minutes: 30,
                                 seconds: 0,
-                                isUTC: true
-                            }
-                        }
-                    ]
+                                isUTC: true,
+                            },
+                        },
+                    ],
                 },
                 {
                     value: [
@@ -372,7 +429,7 @@ END:VCALENDAR`);
                                 hours: 3,
                                 minutes: 0,
                                 seconds: 0,
-                                isUTC: true
+                                isUTC: true,
                             },
                             end: {
                                 year: 1998,
@@ -381,15 +438,15 @@ END:VCALENDAR`);
                                 hours: 4,
                                 minutes: 0,
                                 seconds: 0,
-                                isUTC: true
-                            }
-                        }
-                    ]
-                }
+                                isUTC: true,
+                            },
+                        },
+                    ],
+                },
             ],
             url: {
-                value: 'http://www.example.com/calendar/busytime/jsmith.ifb'
-            }
+                value: 'http://www.example.com/calendar/busytime/jsmith.ifb',
+            },
         });
     });
 
@@ -397,45 +454,45 @@ END:VCALENDAR`);
         expect(parse(vfreebusy)).toEqual({
             component: 'vfreebusy',
             uid: {
-                value: '19970901T095957Z-76A912@example.com'
+                value: '19970901T095957Z-76A912@example.com',
             },
             dtstamp: {
-                value: { year: 1997, month: 9, day: 1, hours: 10, minutes: 0, seconds: 0, isUTC: true }
+                value: { year: 1997, month: 9, day: 1, hours: 10, minutes: 0, seconds: 0, isUTC: true },
             },
             organizer: {
-                value: 'mailto:jane_doe@example.com'
+                value: 'mailto:jane_doe@example.com',
             },
             attendee: [
                 {
-                    value: 'mailto:john_public@example.com'
-                }
+                    value: 'mailto:john_public@example.com',
+                },
             ],
             freebusy: [
                 {
                     value: [
                         {
                             start: { year: 1997, month: 10, day: 15, hours: 5, minutes: 0, seconds: 0, isUTC: true },
-                            duration: { weeks: 0, days: 0, hours: 8, minutes: 30, seconds: 0, isNegative: false }
+                            duration: { weeks: 0, days: 0, hours: 8, minutes: 30, seconds: 0, isNegative: false },
                         },
                         {
                             start: { year: 1997, month: 10, day: 15, hours: 16, minutes: 0, seconds: 0, isUTC: true },
-                            duration: { weeks: 0, days: 0, hours: 5, minutes: 30, seconds: 0, isNegative: false }
+                            duration: { weeks: 0, days: 0, hours: 5, minutes: 30, seconds: 0, isNegative: false },
                         },
                         {
                             start: { year: 1997, month: 10, day: 15, hours: 22, minutes: 30, seconds: 0, isUTC: true },
-                            duration: { weeks: 0, days: 0, hours: 6, minutes: 30, seconds: 0, isNegative: false }
-                        }
-                    ]
-                }
+                            duration: { weeks: 0, days: 0, hours: 6, minutes: 30, seconds: 0, isNegative: false },
+                        },
+                    ],
+                },
             ],
             comment: [
                 {
-                    value: 'This iCalendar file contains busy time information for the next three months.'
-                }
+                    value: 'This iCalendar file contains busy time information for the next three months.',
+                },
             ],
             url: {
-                value: 'http://example.com/pub/busy/jpublic-01.ifb'
-            }
+                value: 'http://example.com/pub/busy/jpublic-01.ifb',
+            },
         });
     });
 
@@ -444,7 +501,7 @@ END:VCALENDAR`);
 
         expect(dtstart).toEqual({
             value: { year: 2019, month: 8, day: 12 },
-            parameters: { type: 'date' }
+            parameters: { type: 'date' },
         });
     });
 
@@ -453,12 +510,12 @@ END:VCALENDAR`);
 
         expect(recurrenceId).toEqual({
             value: { year: 2020, month: 3, day: 11, hours: 10, minutes: 0, seconds: 0, isUTC: false },
-            parameters: { tzid: 'Europe/Zurich' }
+            parameters: { tzid: 'Europe/Zurich' },
         });
 
         expect(dtstart).toEqual({
             value: { year: 2020, month: 3, day: 11, hours: 10, minutes: 0, seconds: 0, isUTC: false },
-            parameters: { tzid: 'Europe/Zurich' }
+            parameters: { tzid: 'Europe/Zurich' },
         });
     });
 
@@ -471,19 +528,19 @@ END:VCALENDAR`);
                 {
                     component: 'valarm',
                     trigger: {
-                        value: { weeks: 0, days: 0, hours: 15, minutes: 0, seconds: 0, isNegative: true }
-                    }
-                }
+                        value: { weeks: 0, days: 0, hours: 15, minutes: 0, seconds: 0, isNegative: true },
+                    },
+                },
             ],
             uid: {
-                value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                value: '7E018059-2165-4170-B32F-6936E88E61E5',
             },
             dtstart: {
-                value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true },
             },
             dtend: {
-                value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
-            }
+                value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
+            },
         });
     });
 
@@ -494,79 +551,79 @@ END:VCALENDAR`);
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
-                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'DAILY',
                         count: 10,
-                        interval: 3
-                    }
-                }
+                        interval: 3,
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
                     value: { year: 2019, month: 7, day: 19 },
-                    parameters: { type: 'date' }
+                    parameters: { type: 'date' },
                 },
                 dtend: {
                     value: { year: 2019, month: 7, day: 19 },
-                    parameters: { type: 'date' }
+                    parameters: { type: 'date' },
                 },
                 rrule: {
                     value: {
                         freq: 'DAILY',
-                        until: { year: 2020, month: 1, day: 30 }
-                    }
-                }
+                        until: { year: 2020, month: 1, day: 30 },
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
-                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'DAILY',
-                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true }
-                    }
-                }
+                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true },
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
                     value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
-                    parameters: { tzid: 'America/New_York' }
+                    parameters: { tzid: 'America/New_York' },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'DAILY',
-                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true }
-                    }
-                }
-            }
+                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true },
+                    },
+                },
+            },
         ]);
     });
 
@@ -577,83 +634,83 @@ END:VCALENDAR`);
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
-                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'WEEKLY',
                         count: 10,
                         interval: 3,
-                        byday: ['WE', 'TH']
-                    }
-                }
+                        byday: ['WE', 'TH'],
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
                     value: { year: 2019, month: 7, day: 19 },
-                    parameters: { type: 'date' }
+                    parameters: { type: 'date' },
                 },
                 dtend: {
                     value: { year: 2019, month: 7, day: 19 },
-                    parameters: { type: 'date' }
+                    parameters: { type: 'date' },
                 },
                 rrule: {
                     value: {
                         freq: 'WEEKLY',
                         byday: 'MO',
-                        until: { year: 2020, month: 1, day: 30 }
-                    }
-                }
+                        until: { year: 2020, month: 1, day: 30 },
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
-                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'WEEKLY',
                         byday: 'MO',
-                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true }
-                    }
-                }
+                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true },
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
                     value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
-                    parameters: { tzid: 'America/New_York' }
+                    parameters: { tzid: 'America/New_York' },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'WEEKLY',
                         byday: 'MO',
-                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true }
-                    }
-                }
-            }
+                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true },
+                    },
+                },
+            },
         ]);
     });
 
@@ -664,85 +721,85 @@ END:VCALENDAR`);
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
-                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'MONTHLY',
                         interval: 2,
                         bymonthday: 13,
-                        until: { year: 2020, month: 1, day: 30, hours: 23, minutes: 0, seconds: 0, isUTC: true }
-                    }
-                }
+                        until: { year: 2020, month: 1, day: 30, hours: 23, minutes: 0, seconds: 0, isUTC: true },
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
-                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'MONTHLY',
                         bysetpos: 2,
                         byday: 'TU',
-                        count: 4
-                    }
-                }
+                        count: 4,
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
                     value: { year: 2019, month: 7, day: 19 },
-                    parameters: { type: 'date' }
+                    parameters: { type: 'date' },
                 },
                 dtend: {
                     value: { year: 2019, month: 7, day: 19 },
-                    parameters: { type: 'date' }
+                    parameters: { type: 'date' },
                 },
                 rrule: {
                     value: {
                         freq: 'MONTHLY',
                         bysetpos: -1,
                         byday: 'MO',
-                        until: { year: 2020, month: 1, day: 30 }
-                    }
-                }
+                        until: { year: 2020, month: 1, day: 30 },
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
                     value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
-                    parameters: { tzid: 'America/New_York' }
+                    parameters: { tzid: 'America/New_York' },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'MONTHLY',
                         bymonthday: 2,
-                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true }
-                    }
-                }
-            }
+                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true },
+                    },
+                },
+            },
         ]);
     });
 
@@ -753,54 +810,54 @@ END:VCALENDAR`);
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
-                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'YEARLY',
                         bymonth: 7,
                         bymonthday: 25,
-                        count: 4
-                    }
-                }
+                        count: 4,
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
                     value: { year: 2019, month: 7, day: 19 },
-                    parameters: { type: 'date' }
+                    parameters: { type: 'date' },
                 },
                 dtend: {
                     value: { year: 2019, month: 7, day: 19 },
-                    parameters: { type: 'date' }
+                    parameters: { type: 'date' },
                 },
                 rrule: {
                     value: {
                         freq: 'YEARLY',
                         interval: 2,
-                        until: { year: 2020, month: 1, day: 30 }
-                    }
-                }
+                        until: { year: 2020, month: 1, day: 30 },
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
-                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
@@ -808,29 +865,29 @@ END:VCALENDAR`);
                         interval: 2,
                         bymonth: 7,
                         bymonthday: 25,
-                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true }
-                    }
-                }
+                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true },
+                    },
+                },
             },
             {
                 component: 'vevent',
                 uid: {
-                    value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                    value: '7E018059-2165-4170-B32F-6936E88E61E5',
                 },
                 dtstart: {
                     value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
-                    parameters: { tzid: 'America/New_York' }
+                    parameters: { tzid: 'America/New_York' },
                 },
                 dtend: {
-                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true }
+                    value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: true },
                 },
                 rrule: {
                     value: {
                         freq: 'YEARLY',
-                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true }
-                    }
-                }
-            }
+                        until: { year: 2020, month: 1, day: 30, hours: 22, minutes: 59, seconds: 59, isUTC: true },
+                    },
+                },
+            },
         ]);
     });
 
@@ -840,18 +897,18 @@ END:VCALENDAR`);
         expect(component).toEqual({
             component: 'vevent',
             uid: {
-                value: '7E018059-2165-4170-B32F-6936E88E61E5'
+                value: '7E018059-2165-4170-B32F-6936E88E61E5',
             },
             dtstart: {
                 value: { year: 2019, month: 8, day: 12 },
-                parameters: { type: 'date' }
+                parameters: { type: 'date' },
             },
             dtend: {
                 value: { year: 2019, month: 8, day: 13 },
-                parameters: { type: 'date' }
+                parameters: { type: 'date' },
             },
             summary: {
-                value: 'text'
+                value: 'text',
             },
             attendee: [
                 {
@@ -861,8 +918,8 @@ END:VCALENDAR`);
                         role: 'REQ-PARTICIPANT',
                         rsvp: 'TRUE',
                         'x-pm-token': '123',
-                        cn: 'james@bond.co.uk'
-                    }
+                        cn: 'james@bond.co.uk',
+                    },
                 },
                 {
                     value: 'mailto:dr.no@mi6.co.uk',
@@ -871,8 +928,8 @@ END:VCALENDAR`);
                         role: 'REQ-PARTICIPANT',
                         rsvp: 'TRUE',
                         'x-pm-token': '123',
-                        cn: 'Dr No.'
-                    }
+                        cn: 'Dr No.',
+                    },
                 },
                 {
                     value: 'mailto:moneypenny@mi6.co.uk',
@@ -880,10 +937,10 @@ END:VCALENDAR`);
                         cutype: 'INDIVIDUAL',
                         role: 'NON-PARTICIPANT',
                         rsvp: 'FALSE',
-                        cn: 'Miss Moneypenny'
-                    }
-                }
-            ]
+                        cn: 'Miss Moneypenny',
+                    },
+                },
+            ],
         });
     });
 
@@ -963,7 +1020,7 @@ END:VEVENT`;
             hours: 0,
             minutes: 30,
             seconds: 0,
-            isNegative: true
+            isNegative: true,
         });
     });
 
