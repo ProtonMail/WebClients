@@ -1,6 +1,6 @@
 .dropDown {
 	--dropdown-border-color: var(--bordercolor-input, transparent);
-	--dropdown-bg-color: var(--bgcolor-main-area, $white);
+	--dropdown-bg-color: var(--bgcolor-main-area, #{$white});
 
 	position: fixed;
 	z-index: 666;
