@@ -19,7 +19,9 @@ import { getRecipientLabel, recipientsToRecipientOrGroup, getRecipientOrGroupLab
 import { isCustomLabel } from '../../helpers/labels';
 import { Message } from '../../models/message';
 
-const { SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
+const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
+
+const labelsWithIcons = [ALL_MAIL, STARRED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS] as string[];
 
 interface Props {
     location: Location;
@@ -67,10 +69,7 @@ const Item = ({
     const type = getCurrentType({ mailSettings, labelID, location });
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
-    const showIcon =
-        labelID === MAILBOX_LABEL_IDS.ALL_MAIL ||
-        labelID === MAILBOX_LABEL_IDS.STARRED ||
-        isCustomLabel(labelID, labels);
+    const showIcon = labelsWithIcons.includes(labelID) || isCustomLabel(labelID, labels);
     const senders = isConversation ? getSenders(element) : [getSender(element as Message)];
     const recipients = isConversation ? getConversationRecipients(element) : getMessageRecipients(element as Message);
     const sendersLabels = senders.map((sender) => getRecipientLabel(sender, contacts));
