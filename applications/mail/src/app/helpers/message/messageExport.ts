@@ -33,7 +33,7 @@ const encryptBody = async (content: string, publicKeys?: OpenPGPKey[], privateKe
     const { data } = await encryptMessage({
         data: content,
         publicKeys: [publicKeys?.[0]] as OpenPGPKey[],
-        privateKeys: privateKeys,
+        privateKeys: [privateKeys?.[0]] as OpenPGPKey[],
         // format: 'utf8',
         compression: enums.compression.zip
     });
