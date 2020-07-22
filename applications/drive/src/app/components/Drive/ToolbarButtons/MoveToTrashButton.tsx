@@ -3,54 +3,25 @@ import { c } from 'ttag';
 
 import { ToolbarButton, useLoading } from 'react-components';
 
+import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { useDriveContent } from '../DriveContentProvider';
-import useTrash from '../../../hooks/drive/useTrash';
-import useListNotifications from '../../../hooks/util/useListNotifications';
-import { useDriveActiveFolder } from '../DriveFolderProvider';
 
 interface Props {
     disabled?: boolean;
 }
 
 const MoveToTrashButton = ({ disabled }: Props) => {
-    const { folder: activeFolder } = useDriveActiveFolder();
-    const { trashLinks, restoreLinks } = useTrash();
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
-    const { createRestoredLinksNotifications, createTrashLinksNotifications } = useListNotifications();
+    const { openMoveToTrash } = useToolbarActions();
     const { fileBrowserControls } = useDriveContent();
-
     const { selectedItems } = fileBrowserControls;
-
-    const moveToTrash = async () => {
-        if (!activeFolder || !selectedItems.length) {
-            return;
-        }
-
-        const { linkId, shareId } = activeFolder;
-        const toTrash = selectedItems;
-        const trashed = await trashLinks(
-            shareId,
-            linkId,
-            toTrash.map(({ LinkID }) => LinkID)
-        );
-
-        const undoAction = async () => {
-            const result = await restoreLinks(
-                shareId,
-                toTrash.map(({ LinkID }) => LinkID)
-            );
-            createRestoredLinksNotifications(toTrash, result);
-        };
-
-        createTrashLinksNotifications(toTrash, trashed, undoAction);
-    };
 
     return (
         <ToolbarButton
             disabled={disabled || moveToTrashLoading}
             title={c('Action').t`Move to Trash`}
             icon="trash"
-            onClick={() => withMoveToTrashLoading(moveToTrash())}
+            onClick={() => withMoveToTrashLoading(openMoveToTrash(selectedItems))}
             data-testid="toolbar-trash"
         />
     );

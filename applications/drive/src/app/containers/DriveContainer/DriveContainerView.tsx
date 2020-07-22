@@ -10,19 +10,7 @@ import { LinkType } from '../../interfaces/link';
 import { LinkURLType } from '../../constants';
 import DriveBreadcrumbs from '../../components/DriveBreadcrumbs';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-
-const toLinkURLType = (type: LinkType) => {
-    const linkType = {
-        [LinkType.FILE]: LinkURLType.FILE,
-        [LinkType.FOLDER]: LinkURLType.FOLDER,
-    }[type];
-
-    if (!linkType) {
-        throw new Error(`Type ${type} is unexpected, must be integer representing link type`);
-    }
-
-    return linkType;
-};
+import { toLinkURLType } from '../../components/Drive/helpers';
 
 function DriveContainerView({
     match,

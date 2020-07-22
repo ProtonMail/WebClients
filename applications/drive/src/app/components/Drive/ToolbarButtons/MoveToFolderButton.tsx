@@ -1,37 +1,26 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton, useModals } from 'react-components';
+import { ToolbarButton } from 'react-components';
 
+import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { useDriveContent } from '../DriveContentProvider';
-import { useDriveActiveFolder } from '../DriveFolderProvider';
-import MoveToFolderModal from '../../MoveToFolderModal';
 
 interface Props {
     disabled?: boolean;
 }
 
 const MoveToFolderButton = ({ disabled }: Props) => {
-    const { createModal } = useModals();
-    const { folder } = useDriveActiveFolder();
+    const { openMoveToFolder } = useToolbarActions();
     const { fileBrowserControls } = useDriveContent();
-
     const { selectedItems } = fileBrowserControls;
-
-    const moveToFolder = () => {
-        if (!folder || !selectedItems.length) {
-            return;
-        }
-
-        createModal(<MoveToFolderModal activeFolder={folder} selectedItems={selectedItems} />);
-    };
 
     return (
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Move to Folder`}
             icon="arrow-cross"
-            onClick={moveToFolder}
+            onClick={() => openMoveToFolder(selectedItems)}
             data-testid="toolbar-move"
         />
     );

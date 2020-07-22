@@ -5,7 +5,7 @@ import { ToolbarButton } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
 import { LinkType } from '../../../interfaces/link';
-import { useDriveActiveFolder } from '../DriveFolderProvider';
+import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 
 interface Props {
     disabled?: boolean;
@@ -13,25 +13,20 @@ interface Props {
 }
 
 const PreviewButton = ({ disabled, openLink }: Props) => {
-    const { folder } = useDriveActiveFolder();
+    const { preview } = useToolbarActions();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
-
-    const handlePreview = () => {
-        if (!folder || !selectedItems.length) {
-            return;
-        }
-
-        const item = selectedItems[0];
-        openLink(folder.shareId, item.LinkID, item.Type);
-    };
 
     return (
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Preview`}
             icon="read"
-            onClick={handlePreview}
+            onClick={() => {
+                if (selectedItems.length) {
+                    preview(selectedItems[0], openLink);
+                }
+            }}
             data-testid="toolbar-preview"
         />
     );
