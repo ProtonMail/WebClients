@@ -27,16 +27,17 @@ export const useMarkAs = () => {
         const markAsReadAction = isMessage ? markMessageAsRead : markConversationsAsRead;
         const markAsUnreadAction = isMessage ? markMessageAsUnread : markConversationsAsUnread;
         const action = status === MARK_AS_STATUS.READ ? markAsReadAction : markAsUnreadAction;
-
         const rollback = optimisticMarkAs(elements, labelID, { status });
-
-        try {
-            await api(action(elements.map((element) => element.ID)));
-        } catch (error) {
-            rollback();
-            throw error;
-        }
-        await call();
+        const request = async () => {
+            try {
+                await api(action(elements.map((element) => element.ID)));
+            } catch (error) {
+                rollback();
+                throw error;
+            }
+            await call();
+        };
+        request(); // No await since we are doing optimistic UI here
     }, []);
 
     return markAs;
