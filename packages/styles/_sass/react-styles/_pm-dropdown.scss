@@ -1,5 +1,6 @@
 .dropDown {
 	--dropdown-border-color: var(--bordercolor-input, transparent);
+	--dropdown-bg-color: var(--bgcolor-main-area, $white);
 
 	position: fixed;
 	z-index: 666;
@@ -54,7 +55,7 @@
 		transform: scale(1);
 		border-radius: $global-border-radius;
 		box-shadow: 0 .5rem 1.5rem 0 var(--dropdown-box-shadow, $input-shadow-color);
-		background: var(--bgcolor-main-area, $white);
+		background: var(--dropdown-bg-color);
 		animation-name: dropdownInLarge;
 
 		@keyframes dropdownInLarge {
@@ -150,7 +151,7 @@
 		min-height: 1em;
 		overflow: auto;
 		border-radius: $global-border-radius;
-		background: var(--bgcolor-main-area, $white) no-repeat;
+		background: var(--dropdown-bg-color) no-repeat;
 		background-image:
 			radial-gradient(
 				farthest-side at 50% 0,
@@ -195,7 +196,7 @@
 			display: block;
 			height: .3rem;
 			flex: 0 0 .3rem;
-			background: var(--bgcolor-main-area, $white);
+			background: var(--dropdown-bg-color);
 		}
 
 		button {
@@ -290,7 +291,7 @@
 			height: var(--size);
 			transform: rotate(45deg);
 			border: 1px solid var(--dropdown-border-color);
-			background-color: var(--bgcolor-main-area, $white);
+			background-color: var(--dropdown-bg-color);
 			pointer-events: none;
 		}
 
