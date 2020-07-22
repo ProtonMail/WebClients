@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
+
 import {
     TableRow,
     Checkbox,
@@ -9,16 +10,19 @@ import {
     useDragMove,
     DragMoveContainer,
     FileIcon,
+    usePopperAnchor,
 } from 'react-components';
 import readableTime from 'proton-shared/lib/helpers/readableTime';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { noop } from 'proton-shared/lib/helpers/function';
+
+import { FileBrowserItem } from './interfaces';
 import { LinkType } from '../../interfaces/link';
 import LocationCell from './LocationCell';
 import { DragMoveControls } from '../../hooks/drive/useDriveDragMove';
 import { selectMessageForItemList } from '../Drive/helpers';
-import { FileBrowserItem } from './interfaces';
+import RowContextMenu from './RowContextMenu';
 
 interface Props {
     item: FileBrowserItem;
@@ -52,8 +56,13 @@ const ItemRow = ({
 
     const { isDesktop } = useActiveBreakpoint();
     const touchStarted = useRef(false);
+    const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLTableRowElement>();
+    const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
 
     const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.Disabled ? undefined : fn);
+
+    const isFolder = item.Type === LinkType.FOLDER;
+    const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
 
     const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
@@ -65,6 +74,25 @@ const ItemRow = ({
         } else {
             onClick?.(item);
         }
+    };
+
+    const handleContextMenu = (e: React.MouseEvent<HTMLTableRowElement>) => {
+        if (item.Disabled || item.Trashed) {
+            return;
+        }
+
+        e.stopPropagation();
+        e.preventDefault();
+
+        if (selectedItems.length && !isSelected) {
+            onToggleSelect(item.LinkID);
+        }
+
+        if (isOpen) {
+            close();
+        }
+
+        setContextMenuPosition({ top: e.clientY, left: e.clientX });
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLTableRowElement>) => {
@@ -98,9 +126,6 @@ const ItemRow = ({
         }
         touchStarted.current = false;
     };
-
-    const isFolder = item.Type === LinkType.FOLDER;
-    const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
 
     const cells = [
         <div
@@ -181,6 +206,7 @@ const ItemRow = ({
                 draggable={!!dragMoveControls}
                 tabIndex={0}
                 role="button"
+                ref={anchorRef}
                 aria-disabled={item.Disabled}
                 className={classnames([
                     'no-outline',
@@ -191,6 +217,7 @@ const ItemRow = ({
                 ])}
                 onKeyDown={unlessDisabled(handleKeyDown)}
                 onClick={unlessDisabled(handleRowClick)}
+                onContextMenu={handleContextMenu}
                 onTouchStart={unlessDisabled(handleTouchStart)}
                 onTouchMove={unlessDisabled(handleTouchCancel)}
                 onTouchCancel={unlessDisabled(handleTouchCancel)}
@@ -205,6 +232,16 @@ const ItemRow = ({
                 }}
                 onMouseDown={() => document.getSelection()?.removeAllRanges()}
             />
+            {!item.Disabled && !item.Trashed && (
+                <RowContextMenu
+                    item={item}
+                    isOpen={isOpen}
+                    open={open}
+                    close={close}
+                    position={contextMenuPosition}
+                    anchorRef={anchorRef}
+                />
+            )}
         </>
     );
 };
