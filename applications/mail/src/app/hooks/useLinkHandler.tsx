@@ -48,7 +48,7 @@ export const useLinkHandler = (onCompose: OnCompose) => {
         } catch (e) {
             createNotification({
                 text: c('Error')
-                    .t`This message may contains some URL links that cannot be properly opened by your current browser`,
+                    .t`This message may contain some link's URL that cannot be properly opened by your current browser`,
                 type: 'error'
             });
             return { raw: '' };
