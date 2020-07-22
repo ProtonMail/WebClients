@@ -24,9 +24,15 @@ function SpamListItem({ list, type, onCreate, onEdit, onMove, onRemove, classNam
         [WHITELIST_LOCATION]: c('Title').t`Whitelist`,
         [BLACKLIST_LOCATION]: c('Title').t`Blacklist`,
         empty(mode: WHITE_OR_BLACK_LOCATION) {
-            const type = this[mode];
+            
+            // we do not use the variable for both mode because of declension issues with ex: Polish
+            if (mode === WHITELIST_LOCATION) {
+                return c('Info')
+                  .t`No emails or domains in the Whitelist, click Add to add addresses or domains to the Whitelist`;
+            }
+
             return c('Info')
-                .t`No emails or domains in the ${type}, click Add to add addresses or domains to the ${type}`;
+                .t`No emails or domains in the Blacklist, click Add to add addresses or domains to the Blacklist`;
         },
     };
 

@@ -46,7 +46,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const [modelChanged, setModelChanged] = useState(false);
 
     const isEdit = !!filter?.ID;
-    const title = isEdit ? c('Title').t`Edit sieve filter` : c('Title').t`Add sieve filter`;
+    const title = isEdit ? c('Title').t`Edit Sieve filter` : c('Title').t`Add Sieve filter`;
 
     const sieveTemplate = sieveTemplates[filter?.Version || FILTER_VERSION];
 
@@ -70,7 +70,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                 : '',
             sieve: model.sieve
                 ? model.issues.length
-                    ? c('Error').t`Invalid sieve code`
+                    ? c('Error').t`Invalid Sieve code`
                     : ''
                 : c('Error').t`This field is required`,
         };

@@ -13,7 +13,7 @@ function ActionsFilterToolbar() {
             <PrimaryButton onClick={() => createModal(<FilterModal />)} className="onmobile-mb0-5 mr1">{c('Action')
                 .t`Add Filter`}</PrimaryButton>
             <Button onClick={() => createModal(<AdvancedFilterModal />)} className="onmobile-mb0-5">
-                {c('Action').t`Add sieve filter`}
+                {c('Action').t`Add Sieve filter`}
             </Button>
         </>
     );

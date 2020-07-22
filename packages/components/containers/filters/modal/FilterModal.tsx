@@ -56,14 +56,14 @@ const checkNameErrors = (filters: Filter[], name: string, isEdit = false) => {
         return c('Error').t`This field is required`;
     }
     if (!isEdit && filters.find(({ Name }: Filter) => normalize(Name) === normalize(name))) {
-        return c('Error').t`Filter with this name already exist`;
+        return c('Error').t`Filter with this name already exists`;
     }
     return '';
 };
 
 const checkConditionsErrors = (conditions: Condition[]) => {
     if (conditions.some((c) => !!c.error)) {
-        return c('Error').t`Error in one of the condition(s)`;
+        return c('Error').t`Error in one of the conditions`;
     }
     if (!conditions.length) {
         return c('Error').t`Require at least one condition`;

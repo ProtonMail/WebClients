@@ -67,7 +67,7 @@ function FilterItemRow({ filter, ...rest }) {
             onClick: handleEdit(),
         },
         {
-            text: c('Action').t`Edit sieve`,
+            text: c('Action').t`Edit Sieve`,
             onClick: handleEdit('sieve'),
         },
         {
