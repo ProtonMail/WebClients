@@ -151,7 +151,7 @@
 		min-height: 1em;
 		overflow: auto;
 		border-radius: $global-border-radius;
-		background: var(--dropdown-bg-color) no-repeat;
+		background-color: var(--dropdown-bg-color);
 		background-image:
 			radial-gradient(
 				farthest-side at 50% 0,
@@ -165,6 +165,7 @@
 			);
 		background-position: 50% 0, 0 100%;
 		background-size: calc(100% - 2rem) .3rem;
+		background-repeat: no-repeat;
 
 		@include respond-to($breakpoint-small, 'max') {
 			position: relative;
