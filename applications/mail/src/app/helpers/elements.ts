@@ -101,6 +101,8 @@ export const isUnread = (element: Element | undefined, labelID: string | undefin
     return false;
 };
 
+export const isUnreadMessage = (message: Message) => isUnread(message, undefined);
+
 export const getLabelIDs = (element?: Element) =>
     isMessage(element)
         ? element?.LabelIDs || []

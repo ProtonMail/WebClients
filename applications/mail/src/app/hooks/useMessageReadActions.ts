@@ -21,6 +21,7 @@ import { isApiError } from '../helpers/errors';
 import { useBase64Cache } from './useBase64Cache';
 import { isPlainText } from '../helpers/message/messages';
 import { useMarkAs, MARK_AS_STATUS } from './useMarkAs';
+import { isUnreadMessage } from '../helpers/elements';
 
 export const useLoadMessage = (inputMessage: Message) => {
     const api = useApi();
@@ -135,8 +136,10 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                     : undefined;
             verificationStatus = decryption.verified;
 
-            await markAs([data as Element], labelID, MARK_AS_STATUS.READ);
-            data = { ...data, Unread: 0 };
+            if (isUnreadMessage(data)) {
+                await markAs([data as Element], labelID, MARK_AS_STATUS.READ);
+                data = { ...data, Unread: 0 };
+            }
 
             preparation = isPlainText(data)
                 ? ({ plainText: decryption.decryptedBody } as any)
