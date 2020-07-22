@@ -23,7 +23,15 @@ const MobileAppsLinks = () => {
         <MobileNavServices>
             {apps.map(({ appNames, to, icon }, index) => {
                 const isCurrent = appNames.includes(APP_NAME);
-                return <MobileNavLink key={index} to={to} icon={icon} external={!isCurrent} current={isCurrent} />;
+                return (
+                    <MobileNavLink
+                        key={index}
+                        to={to}
+                        icon={icon}
+                        external={appNames[0] !== APP_NAME}
+                        current={isCurrent}
+                    />
+                );
             })}
         </MobileNavServices>
     );
