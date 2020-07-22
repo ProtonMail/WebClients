@@ -1,34 +1,52 @@
 import { useEffect, useState, useMemo } from 'react';
 
-import { MessageExtended, MessageAction } from '../models/message';
+import { MessageExtended, MessageAction, Message } from '../models/message';
 import { useMessageCache, getLocalID } from '../containers/MessageProvider';
+import { useElementsCache } from './useElementsCache';
+import { useConversationCache } from '../containers/ConversationProvider';
 
-interface UseMessage {
-    (localID: string): {
-        message: MessageExtended;
-        addAction: <T>(action: MessageAction<T>) => Promise<T>;
-        loading: boolean;
-    };
+interface ReturnValue {
+    message: MessageExtended;
+    addAction: <T>(action: MessageAction<T>) => Promise<T>;
+    loading: boolean;
+    messageLoaded: boolean;
+    bodyLoaded: boolean;
 }
 
-export const useMessage: UseMessage = (inputLocalID: string) => {
+interface UseMessage {
+    (localID: string, conversationID?: string): ReturnValue;
+}
+
+export const useMessage: UseMessage = (inputLocalID: string, conversationID = '') => {
     const cache = useMessageCache();
+    const [elementsCache] = useElementsCache();
+    const conversationCache = useConversationCache();
 
     const localID = useMemo(() => getLocalID(cache, inputLocalID), [inputLocalID]);
 
+    const initMessage = () => {
+        if (cache.has(localID)) {
+            return cache.get(localID) as MessageExtended;
+        }
+
+        const messageFromElementsCache = elementsCache.elements[localID] as Message;
+        const conversationFromCache = conversationCache.get(conversationID);
+        const messageFromConversationCache = conversationFromCache?.Messages?.find((Message) => Message.ID === localID);
+        const messageFromCache = messageFromElementsCache || messageFromConversationCache;
+
+        const message = messageFromCache ? { localID, data: messageFromCache } : { localID };
+
+        cache.set(localID, message);
+        return message;
+    };
+
     // Main subject of the hook
     // Will be updated based on an effect listening on the event manager
-    const [message, setMessage] = useState<MessageExtended>(cache.get(localID) || { localID });
+    const [message, setMessage] = useState<MessageExtended>(initMessage);
 
     // Update message state and listen to cache for updates on the current message
     useEffect(() => {
-        if (cache.has(localID)) {
-            setMessage(cache.get(localID) as MessageExtended);
-        } else {
-            const newMessage = { localID };
-            cache.set(localID, newMessage);
-            setMessage(newMessage);
-        }
+        setMessage(initMessage());
 
         return cache.subscribe((changedMessageID) => {
             // Prevent updates on message deletion from the cache to prevent undefined message in state.
@@ -55,6 +73,8 @@ export const useMessage: UseMessage = (inputLocalID: string) => {
     };
 
     const loading = !Object.prototype.hasOwnProperty.call(message, 'actionStatus') || !!message?.actionStatus;
+    const messageLoaded = !!message.data?.Subject;
+    const bodyLoaded = !!message.initialized;
 
-    return { message, addAction, loading };
+    return { message, addAction, loading, messageLoaded, bodyLoaded };
 };

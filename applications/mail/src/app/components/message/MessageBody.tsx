@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { classnames, Button } from 'react-components';
+import { classnames, Button, EllipsisLoader } from 'react-components';
+import { c } from 'ttag';
 
 import { isPlainText } from '../../helpers/message/messages';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
@@ -9,6 +10,9 @@ import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import './MessageBody.scss';
 
 interface Props {
+    messageLoaded: boolean;
+    bodyLoaded: boolean;
+    sourceMode: boolean;
     message: MessageExtended;
 
     /**
@@ -19,16 +23,27 @@ interface Props {
     showBlockquote?: boolean;
 }
 
-const MessageBody = ({ message: { document, plainText, data: message }, showBlockquote = true }: Props) => {
+const MessageBody = ({
+    messageLoaded,
+    bodyLoaded,
+    sourceMode: inputSourceMode,
+    message,
+    showBlockquote = true
+}: Props) => {
+    const plain = isPlainText(message.data);
+
     const [expanded, setExpanded] = useState(false);
 
-    const plain = isPlainText(message);
+    const [content, blockquote] = useMemo(
+        () => (plain ? [message.plainText as string, ''] : locateBlockquote(message.document)),
+        [message.document?.innerHTML, message.plainText, plain]
+    );
 
-    const [content, blockquote] = useMemo(() => (plain ? [plainText as string, ''] : locateBlockquote(document)), [
-        document?.innerHTML,
-        plain
-    ]);
-
+    const encryptedMode = messageLoaded && message.errors?.decryption;
+    const sourceMode = !encryptedMode && inputSourceMode;
+    const decryptingMode = !encryptedMode && !sourceMode && !bodyLoaded && messageLoaded;
+    const loadingMode = !messageLoaded;
+    const contentMode = !encryptedMode && !sourceMode && bodyLoaded;
     const isBlockquote = blockquote !== '';
     const showButton = showBlockquote && isBlockquote && !expanded;
     const __html = showBlockquote && !expanded ? content : content + blockquote;
@@ -38,14 +53,27 @@ const MessageBody = ({ message: { document, plainText, data: message }, showBloc
             className={classnames([
                 'message-content scroll-horizontal-if-needed relative bodyDecrypted',
                 plain && 'plain',
-                getLightOrDark('', 'bg-white color-global-grey')
+                !loadingMode && getLightOrDark('', 'bg-white color-global-grey')
             ])}
         >
-            <div dangerouslySetInnerHTML={{ __html }} />
-            {showButton && (
-                <Button className="pm-button--small m0-5" onClick={() => setExpanded(true)}>
-                    ...
-                </Button>
+            {encryptedMode && <pre>{message.data?.Body}</pre>}
+            {sourceMode && <pre>{message.decryptedBody}</pre>}
+            {loadingMode && <div className="message-content-loading-placeholder"></div>}
+            {decryptingMode && (
+                <div>
+                    {c('Message').t`Decrypting content`}
+                    <EllipsisLoader />
+                </div>
+            )}
+            {contentMode && (
+                <>
+                    <div dangerouslySetInnerHTML={{ __html }} />
+                    {showButton && (
+                        <Button className="pm-button--small m0-5" onClick={() => setExpanded(true)}>
+                            ...
+                        </Button>
+                    )}
+                </>
             )}
         </div>
     );

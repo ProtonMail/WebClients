@@ -128,7 +128,8 @@ const HeaderExpanded = ({
             className={classnames([
                 'message-header message-header-expanded',
                 showDetails && 'message-header--showDetails',
-                isSentMessage ? 'is-outbound' : 'is-inbound'
+                isSentMessage ? 'is-outbound' : 'is-inbound',
+                !messageLoaded && 'is-loading'
             ])}
         >
             <div className="flex flex-nowrap flex-items-center cursor-pointer" onClick={handleClick}>
@@ -138,20 +139,21 @@ const HeaderExpanded = ({
                             {from}
                         </HeaderRecipientType>
                     ) : (
-                        <div className="flex flex-nowrap pr0-5">{from}</div>
+                        <div className="flex-item-fluid flex flex-nowrap pr0-5">{from}</div>
                     )}
                     <ItemAction element={message.data} className="mtauto mbauto" />
                 </span>
-                <div className="flex-item-noshrink flex">
-                    {showDetails ? null : (
+                <div className="flex flex-items-center flex-item-noshrink onmobile-flex-self-start">
+                    {messageLoaded && !showDetails && (
                         <>
-                            <span className="ml0-5 inline-flex">
+                            <span className="ml0-5 inline-flex is-appearing-content">
                                 <ItemLocation message={message.data} mailSettings={mailSettings} />
                             </span>
-                            <ItemDate className="ml0-5" element={message.data} labelID={labelID} />
+                            <ItemDate className="ml0-5 is-appearing-content" element={message.data} labelID={labelID} />
                         </>
                     )}
-                    <span className="ml0-5 inline-flex">
+                    {!messageLoaded && <span className="message-header-metas ml0-5 inline-flex"></span>}
+                    <span className="message-header-star ml0-5 inline-flex">
                         <ItemStar element={message.data} />
                     </span>
                 </div>
@@ -176,16 +178,32 @@ const HeaderExpanded = ({
                             message={message.data}
                             contacts={contacts}
                             contactGroups={contactGroups}
+                            isLoading={!messageLoaded}
                         />
                     )}
-                    <a onClick={toggleDetails} className="bold message-show-hide-link flex-item-noshrink">
-                        {showDetails ? c('Action').t`Hide details` : c('Action').t`Show details`}
-                    </a>
+                    <span className="message-show-hide-link-container flex-item-noshrink">
+                        {messageLoaded && (
+                            <button
+                                type="button"
+                                onClick={toggleDetails}
+                                className="message-show-hide-link pm-button--link alignbaseline is-appearing-content"
+                                disabled={!messageLoaded}
+                            >
+                                {showDetails ? c('Action').t`Hide details` : c('Action').t`Show details`}
+                            </button>
+                        )}
+                    </span>
                 </div>
-                {!showDetails && (
-                    <div className="flex-item-noshrink onmobile-w100 onmobile-mt0-5 message-header-expanded-label-container">
-                        <ItemAttachmentIcon element={message.data} />
-                        <ItemLabels max={4} element={message.data} labels={labels} showUnlabel />
+                {messageLoaded && !showDetails && (
+                    <div className="flex-item-noshrink onmobile-w100 message-header-expanded-label-container is-appearing-content">
+                        <ItemAttachmentIcon element={message.data} className="onmobile-mt0-5" />
+                        <ItemLabels
+                            max={4}
+                            element={message.data}
+                            labels={labels}
+                            showUnlabel
+                            className="onmobile-mt0-5"
+                        />
                     </div>
                 )}
             </div>
@@ -229,6 +247,7 @@ const HeaderExpanded = ({
                             className="pm-button pm-group-button pm-button--for-icon"
                             dropDownClassName="customFilterDropdown"
                             title={c('Action').t`Custom filter`}
+                            loading={!messageLoaded}
                         >
                             {() => <CustomFilterDropdown message={message.data as Message} />}
                         </HeaderDropdown>
@@ -239,6 +258,7 @@ const HeaderExpanded = ({
                             className="pm-button pm-group-button pm-button--for-icon"
                             dropDownClassName="moveDropdown"
                             title={c('Action').t`Move to`}
+                            loading={!messageLoaded}
                         >
                             {({ onClose, onLock }) => (
                                 <MoveDropdown
@@ -258,6 +278,7 @@ const HeaderExpanded = ({
                             className="pm-button pm-group-button pm-button--for-icon"
                             dropDownClassName="labelDropdown"
                             title={c('Action').t`Label as`}
+                            loading={!messageLoaded}
                         >
                             {({ onClose, onLock }) => (
                                 <LabelDropdown

@@ -5,18 +5,49 @@ import { useApi, useLoading } from 'react-components';
 import { Conversation } from '../models/conversation';
 import { Message } from '../models/message';
 import { useConversationCache } from '../containers/ConversationProvider';
+import { useElementsCache } from './useElementsCache';
 
 export interface ConversationResult {
     Conversation: Conversation;
     Messages?: Message[];
 }
 
-export const useConversation = (inputConversationID: string): [string, ConversationResult | undefined, boolean] => {
+interface ReturnValue {
+    conversationID: string;
+    conversation: ConversationResult | undefined;
+    pendingRequest: boolean;
+    loadingConversation: boolean;
+    loadingMessages: boolean;
+    numMessages: number | undefined;
+}
+
+interface UseConversation {
+    (conversationID: string): ReturnValue;
+}
+
+export const useConversation: UseConversation = (inputConversationID) => {
     const cache = useConversationCache();
+    const [elementsCache] = useElementsCache();
     const api = useApi();
+
     const [conversationID, setConversationID] = useState(inputConversationID);
-    const [loading, withLoading] = useLoading(!cache.has(conversationID));
-    const [conversation, setConversation] = useState<ConversationResult | undefined>(cache.get(conversationID));
+    const [pendingRequest, withPendingRequest] = useLoading(!cache.has(conversationID));
+
+    const initConversation = (): ConversationResult | undefined => {
+        if (cache.has(inputConversationID)) {
+            return cache.get(inputConversationID) as ConversationResult;
+        }
+
+        const conversationFromElementsCache = elementsCache.elements[inputConversationID] as Conversation;
+
+        if (conversationFromElementsCache) {
+            return { Conversation: conversationFromElementsCache, Messages: undefined };
+        }
+
+        return;
+    };
+
+    const [conversation, setConversation] = useState<ConversationResult | undefined>(initConversation);
 
     useEffect(() => {
         const load = async () => {
@@ -24,12 +55,17 @@ export const useConversation = (inputConversationID: string): [string, Conversat
             cache.set(inputConversationID, result);
         };
 
-        if (!cache.has(inputConversationID)) {
-            withLoading(load());
+        const conversation = initConversation();
+        setConversationID(inputConversationID);
+        setConversation(conversation);
+
+        if (conversation) {
+            cache.set(inputConversationID, conversation);
         }
 
-        setConversationID(inputConversationID);
-        setConversation(cache.get(inputConversationID));
+        if (!conversation || !conversation.Messages) {
+            withPendingRequest(load());
+        }
 
         return cache.subscribe((changedId: string) => {
             if (inputConversationID === changedId) {
@@ -38,5 +74,9 @@ export const useConversation = (inputConversationID: string): [string, Conversat
         });
     }, [inputConversationID, api, cache]);
 
-    return [conversationID, conversation, loading];
+    const loadingConversation = !conversation?.Conversation;
+    const loadingMessages = !conversation?.Messages;
+    const numMessages = conversation?.Messages?.length || conversation?.Conversation?.NumMessages;
+
+    return { conversationID, conversation, pendingRequest, loadingConversation, loadingMessages, numMessages };
 };

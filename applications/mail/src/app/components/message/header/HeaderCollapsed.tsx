@@ -19,6 +19,7 @@ interface Props {
     labelID: string;
     message: MessageExtended;
     messageViewIcons?: MessageViewIcons;
+    messageLoaded: boolean;
     mailSettings: MailSettings;
     isSentMessage: boolean;
     isUnreadMessage: boolean;
@@ -31,6 +32,7 @@ const HeaderCollapsed = ({
     labelID,
     message,
     messageViewIcons,
+    messageLoaded,
     mailSettings,
     isSentMessage,
     isUnreadMessage,
@@ -55,7 +57,8 @@ const HeaderCollapsed = ({
             className={classnames([
                 'message-header message-header-collapsed flex flex-nowrap flex-items-center cursor-pointer',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
-                isUnreadMessage && 'unread'
+                isUnreadMessage && 'is-unread',
+                !messageLoaded && 'is-loading'
             ])}
             onClick={handleClick}
         >
@@ -67,21 +70,36 @@ const HeaderCollapsed = ({
                     onCompose={onCompose}
                     contacts={contacts}
                 />
-                <ItemExpiration element={message.data} className="ml0-5" />
-                <ItemAction element={message.data} className="ml0-5" />
+                {messageLoaded && (
+                    <>
+                        <ItemExpiration element={message.data} className="ml0-5 is-appearing-content" />
+                        <ItemAction element={message.data} className="ml0-5 is-appearing-content" />
+                    </>
+                )}
             </div>
             <div className="flex flex-items-center flex-item-noshrink">
-                {isDraftMessage && <span className="badgeLabel-success">{c('Info').t`Draft`}</span>}
-                {!!hasAttachments(message.data) && (
-                    <span className="ml0-5 inline-flex">
-                        <ItemAttachmentIcon element={message.data} className="mauto" />
-                    </span>
+                {messageLoaded ? (
+                    <>
+                        {isDraftMessage && (
+                            <span className="badgeLabel-success is-appearing-content">{c('Info').t`Draft`}</span>
+                        )}
+
+                        {!!hasAttachments(message.data) && (
+                            <span className="ml0-5 inline-flex is-appearing-content">
+                                <ItemAttachmentIcon element={message.data} className="mauto" />
+                            </span>
+                        )}
+
+                        <span className="ml0-5 inline-flex is-appearing-content">
+                            <ItemLocation message={message.data} mailSettings={mailSettings} />
+                        </span>
+
+                        <ItemDate className="ml0-5 is-appearing-content" element={message.data} labelID={labelID} />
+                    </>
+                ) : (
+                    <span className="message-header-metas ml0-5 inline-flex"></span>
                 )}
-                <span className="ml0-5 inline-flex">
-                    <ItemLocation message={message.data} mailSettings={mailSettings} />
-                </span>
-                <ItemDate className="ml0-5" element={message.data} labelID={labelID} />
-                <span className="ml0-5 inline-flex">
+                <span className="message-header-star ml0-5 inline-flex">
                     <ItemStar element={message.data} />
                 </span>
             </div>

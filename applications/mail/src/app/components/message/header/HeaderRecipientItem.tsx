@@ -16,7 +16,6 @@ import {
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
@@ -62,7 +61,25 @@ const HeaderRecipientItem = ({
         );
     }
 
-    const recipient = recipientOrGroup.recipient as Recipient;
+    if (!recipientOrGroup.recipient) {
+        return (
+            <span className="flex-item-fluid flex flex-items-center flex-nowrap message-recipient-item">
+                <span className="container-to container-to--item noprint">
+                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded50 bl mr0-5"></span>
+                </span>
+                <span
+                    className={classnames(['flex-item-fluid flex flex-nowrap', showAddress && 'onmobile-flex-column'])}
+                >
+                    <span className="message-recipient-item-label"></span>
+                    {showAddress && (
+                        <span className="message-recipient-item-address opacity-50 ml0-5 onmobile-ml0"></span>
+                    )}
+                </span>
+            </span>
+        );
+    }
+
+    const recipient = recipientOrGroup.recipient;
     const contact = contacts?.find(({ Email }) => normalizeEmail(Email) === normalizeEmail(recipient.Address));
     const { ContactID } = contact || {};
 
@@ -70,7 +87,7 @@ const HeaderRecipientItem = ({
         event.stopPropagation();
         onCompose({
             action: MESSAGE_ACTIONS.NEW,
-            referenceMessage: { data: { ToList: [recipientOrGroup.recipient as Recipient] } }
+            referenceMessage: { data: { ToList: [recipient] } }
         });
         close();
     };
@@ -105,12 +122,12 @@ const HeaderRecipientItem = ({
     const initial = getInitial(label);
 
     return (
-        <span className="flex flex-items-center flex-nowrap message-recipient-item">
+        <span className="flex flex-items-center flex-nowrap message-recipient-item is-appearing-content">
             <span className="container-to container-to--item noprint">
                 <button
                     ref={anchorRef}
                     onClick={toggle}
-                    className="item-icon flex-item-noshrink rounded50 bg-white inline-flex stop-propagation mr0-5"
+                    className="item-icon flex-item-noshrink rounded50 inline-flex stop-propagation mr0-5"
                 >
                     <span className="mauto item-abbr" aria-hidden="true">
                         {initial}

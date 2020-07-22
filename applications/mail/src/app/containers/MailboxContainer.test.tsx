@@ -50,7 +50,7 @@ describe('MailboxContainer', () => {
 
         const items = container.querySelectorAll('.items-column-list .item-container') as NodeList;
 
-        expect(items.length === conversationsResult.Conversations.length).toBeDefined();
+        expect(items.length === conversationsResult.Conversations.length).toBe(true);
     });
 
     it('should select all', async () => {

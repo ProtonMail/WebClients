@@ -1,10 +1,9 @@
-import { arrayToBinaryString, getKeys, OpenPGPKey } from 'pmcrypto';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { arrayToBinaryString, getKeys, OpenPGPKey, getMatchingKey } from 'pmcrypto';
 import { useCallback } from 'react';
 import { useApi, useGetEncryptionPreferences, useMailSettings } from 'react-components';
+import { splitExtension } from 'proton-shared/lib/helpers/file';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { getMessage } from 'proton-shared/lib/api/messages';
-import { getMatchingKey } from 'pmcrypto';
 
 import { LARGE_KEY_SIZE, VERIFICATION_STATUS } from '../constants';
 import { get } from '../helpers/attachment/attachmentLoader';

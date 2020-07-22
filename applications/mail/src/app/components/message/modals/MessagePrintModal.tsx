@@ -64,7 +64,13 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
                         <ItemDate element={message.data} labelID={labelID} mode="full" />
                     </HeaderRecipientType>
                 </div>
-                <MessageBody message={message} showBlockquote={false} />
+                <MessageBody
+                    messageLoaded={true}
+                    bodyLoaded={true}
+                    sourceMode={false}
+                    message={message}
+                    showBlockquote={false}
+                />
                 {hasAttachments(message.data) ? <MessageFooter message={message} showActions={false} /> : null}
             </div>
         </FormModal>

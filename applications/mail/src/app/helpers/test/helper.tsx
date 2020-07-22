@@ -67,6 +67,7 @@ export const minimalCache = () => {
     addToCache('Addresses', []);
     addToCache('MailSettings', {});
     addToCache('ContactEmails', []);
+    cache.set(ELEMENTS_CACHE_KEY, { elements: {}, params: { sort: {} }, pages: [], page: {}, updatedElements: [] });
 };
 
 export const eventManagerListeners: ((...args: any[]) => any)[] = [];

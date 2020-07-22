@@ -14,8 +14,6 @@ const FORMATERS = {
     distance: formatDistanceToNow
 };
 
-// TODO: Update with a setInterval?
-
 interface Props {
     element: Element | undefined;
     labelID: string;
@@ -24,9 +22,12 @@ interface Props {
 }
 
 const ItemDate = ({ element, labelID, className, mode = 'simple' }: Props) => {
-    const [formattedDate, setFormattedDate] = useState('');
-
     const formater = FORMATERS[mode] || FORMATERS.distance;
+
+    const [formattedDate, setFormattedDate] = useState(() => {
+        const date = getDate(element, labelID);
+        return date.getTime() === 0 ? '' : formater(date);
+    });
 
     useEffect(() => {
         const date = getDate(element, labelID);

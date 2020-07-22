@@ -13,7 +13,7 @@ const HeaderRecipientType = ({
 }: Props) => {
     return (
         <span className={className}>
-            <span className="container-to">{label}</span>
+            <span className="container-to is-appearing-content">{label}</span>
             <span className="flex-self-vcenter mr1">{children}</span>
         </span>
     );

@@ -1,7 +1,7 @@
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
-import { Button, useModals, ConfirmModal, Alert, classnames, Tooltip, Icon } from 'react-components';
+import { Button, useModals, ConfirmModal, Alert, classnames, Tooltip, Icon, EllipsisLoader } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { formatSimpleDate } from '../../helpers/date';
@@ -61,11 +61,13 @@ const ComposerActions = ({
     const isExpiration = !!message.expiresIn;
     const hasRecipients = getRecipients(message.data).length > 0;
 
-    let dateMessage = '';
+    let dateMessage: string | string[] = '';
     if (opening) {
-        dateMessage = c('Action').t`Loading...`;
+        const ellipsis = <EllipsisLoader key="ellipsis1" />;
+        dateMessage = c('Action').jt`Loading${ellipsis}`;
     } else if (syncInProgress) {
-        dateMessage = c('Action').t`Saving...`;
+        const ellipsis = <EllipsisLoader key="ellipsis2" />;
+        dateMessage = c('Action').jt`Saving${ellipsis}`;
     } else {
         if (date.getTime() !== 0) {
             const dateString = formatSimpleDate(date);

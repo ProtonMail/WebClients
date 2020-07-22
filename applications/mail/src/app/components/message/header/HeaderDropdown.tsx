@@ -14,6 +14,7 @@ interface Props {
     children: (props: LockableDropdownProps) => ReactNode;
     autoClose?: boolean;
     noMaxSize?: boolean;
+    loading?: boolean;
     [rest: string]: any;
 }
 
@@ -23,6 +24,7 @@ const HeaderDropdown = ({
     children,
     autoClose,
     noMaxSize,
+    loading,
     className,
     dropDownClassName,
     ...rest
@@ -40,6 +42,7 @@ const HeaderDropdown = ({
                 isOpen={isOpen}
                 onClick={toggle}
                 hasCaret={true}
+                disabled={loading}
                 {...rest}
             >
                 <Tooltip className="increase-surface-click" title={title}>

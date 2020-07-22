@@ -36,6 +36,10 @@ const ItemLabels = ({
     const labelsSorted = orderBy(labelsObjects, 'Order') as Label[];
     const labelsToShow = labelsSorted.slice(0, max);
 
+    if (!labelsToShow.length) {
+        return null;
+    }
+
     const handleUnlabel = (labelID: string) => applyLabels([element], { [labelID]: false });
 
     return (

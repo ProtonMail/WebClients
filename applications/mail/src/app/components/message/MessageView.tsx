@@ -1,6 +1,6 @@
 import { OpenPGPKey } from 'pmcrypto';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Loader, classnames } from 'react-components';
+import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import { hasAttachments, isDraft, isSent } from '../../helpers/message/messages';
@@ -28,11 +28,13 @@ import { OnCompose } from '../../hooks/useCompose';
 interface Props {
     labelID: string;
     conversationMode: boolean;
+    loading: boolean;
     labels: Label[];
     message: Message;
     mailSettings: any;
     expand?: boolean;
     conversationIndex?: number;
+    conversationID?: string;
     onBack: () => void;
     onCompose: OnCompose;
 }
@@ -40,16 +42,20 @@ interface Props {
 const MessageView = ({
     labelID,
     conversationMode,
+    loading,
     labels = [],
     message: inputMessage,
     mailSettings,
     expand: inputExpand = true,
     conversationIndex = 0,
+    conversationID,
     onBack,
     onCompose
 }: Props) => {
+    const inputMessageIsDraft = !loading && isDraft(inputMessage);
+
     // Actual expanded state
-    const [expanded, setExpanded] = useState(inputExpand && !isDraft(inputMessage));
+    const [expanded, setExpanded] = useState(inputExpand && !inputMessageIsDraft);
 
     // Whether or not the focus has already been made
     const [hasBeenFocused, setHasBeenFocused] = useState(false);
@@ -58,7 +64,7 @@ const MessageView = ({
 
     const elementRef = useRef<HTMLElement>(null);
 
-    const { message, addAction } = useMessage(inputMessage.ID);
+    const { message, addAction, messageLoaded, bodyLoaded } = useMessage(inputMessage.ID, conversationID);
     const load = useLoadMessage(inputMessage);
     const initialize = useInitializeMessage(message.localID, labelID);
     const trustSigningPublicKey = useTrustSigningPublicKey(message.localID);
@@ -68,12 +74,9 @@ const MessageView = ({
     const resignContact = useResignContact(message.localID);
     const markAs = useMarkAs();
 
-    const draft = isDraft(message.data);
-    const messageLoaded = !!message.data?.Subject;
-    const bodyLoaded = !!message.initialized;
+    const draft = !loading && isDraft(message.data);
     const sent = isSent(message.data);
     const unread = isUnread(message.data, labelID);
-    const encryptedMode = messageLoaded && message.errors?.decryption;
 
     const messageViewIcons = useMemo<MessageViewIcons>(() => {
         if (sent) {
@@ -85,17 +88,17 @@ const MessageView = ({
 
     // Manage loading the message
     useEffect(() => {
-        if (!messageLoaded) {
+        if (!loading && !messageLoaded) {
             addAction(load);
         }
-    }, [messageLoaded]);
+    }, [loading, messageLoaded]);
 
     // Manage preparing the content of the message
     useEffect(() => {
-        if (expanded && message.initialized === undefined) {
+        if (!loading && expanded && message.initialized === undefined) {
             addAction(initialize);
         }
-    }, [expanded, message.initialized]);
+    }, [loading, expanded, message.initialized]);
 
     // Manage the focus to the message
     useEffect(() => {
@@ -120,10 +123,6 @@ const MessageView = ({
             setSourceMode(false);
         }
     }, [draft, message.data?.ID]);
-
-    if (!messageLoaded) {
-        return null;
-    }
 
     const handleTrustSigningPublicKey = async (key: OpenPGPKey) => {
         await addAction(() => trustSigningPublicKey(key));
@@ -161,6 +160,7 @@ const MessageView = ({
                 expanded && 'is-opened',
                 hasAttachments(message.data) && 'message-container--hasAttachment'
             ])}
+            style={{ '--index': conversationIndex * 2 }}
         >
             {expanded ? (
                 <>
@@ -169,7 +169,7 @@ const MessageView = ({
                         conversationMode={conversationMode}
                         message={message}
                         messageViewIcons={messageViewIcons}
-                        messageLoaded={bodyLoaded}
+                        messageLoaded={messageLoaded}
                         isSentMessage={sent}
                         sourceMode={sourceMode}
                         onTrustSigningKey={handleTrustSigningPublicKey}
@@ -184,26 +184,20 @@ const MessageView = ({
                         onCompose={onCompose}
                         onSourceMode={setSourceMode}
                     />
-                    {bodyLoaded ? (
-                        <>
-                            {sourceMode || encryptedMode ? (
-                                <pre className="ml1 mr1">
-                                    {encryptedMode ? message.data?.Body : sourceMode ? message.decryptedBody : null}
-                                </pre>
-                            ) : (
-                                <MessageBody message={message} />
-                            )}
-                            {hasAttachments(message.data) ? <MessageFooter message={message} /> : null}
-                        </>
-                    ) : (
-                        <Loader />
-                    )}
+                    <MessageBody
+                        messageLoaded={messageLoaded}
+                        bodyLoaded={bodyLoaded}
+                        sourceMode={sourceMode}
+                        message={message}
+                    />
+                    {hasAttachments(message.data) ? <MessageFooter message={message} /> : null}
                 </>
             ) : (
                 <HeaderCollapsed
                     labelID={labelID}
                     message={message}
                     messageViewIcons={messageViewIcons}
+                    messageLoaded={messageLoaded}
                     mailSettings={mailSettings}
                     isSentMessage={sent}
                     isUnreadMessage={unread}

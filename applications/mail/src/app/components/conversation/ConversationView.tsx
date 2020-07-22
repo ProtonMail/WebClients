@@ -1,19 +1,17 @@
 import React from 'react';
-import { c } from 'ttag';
-import { Loader, useLabels, useToggle, Icon, classnames } from 'react-components';
+import { useLabels, useToggle, classnames } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import MessageView from '../message/MessageView';
-import ItemStar from '../list/ItemStar';
-import NumMessages from './NumMessages';
-import ItemLabels from '../list/ItemLabels';
-import { ConversationResult, useConversation } from '../../hooks/useConversation';
+import { useConversation } from '../../hooks/useConversation';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import TrashWarning from './TrashWarning';
 import { hasLabel } from '../../helpers/elements';
-import { getNumParticipants } from '../../helpers/addresses';
 import { OnCompose } from '../../hooks/useCompose';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
+import { usePlaceholders } from '../../hooks/usePlaceholders';
+import { Message } from '../../models/message';
+import ConversationHeader from './ConversationHeader';
 
 const { TRASH } = MAILBOX_LABEL_IDS;
 
@@ -36,73 +34,48 @@ const ConversationView = ({
     onCompose
 }: Props) => {
     const [labels = []] = useLabels();
-    const [conversationID, conversationData, loading] = useConversation(inputConversationID);
+    const {
+        conversationID,
+        conversation: conversationResult,
+        pendingRequest,
+        loadingConversation,
+        loadingMessages
+    } = useConversation(inputConversationID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
 
-    useShouldMoveOut(true, conversationID, loading, onBack);
+    useShouldMoveOut(true, conversationID, pendingRequest, onBack);
 
-    if (loading) {
-        return <Loader />;
-    }
+    const { Conversation: conversation = {}, Messages: inputMessages = [] } = conversationResult || {};
+    const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
 
-    if (!conversationData) {
-        return null;
-    }
-
-    const { Conversation: conversation = {}, Messages: messages = [] } = conversationData as ConversationResult;
     const inTrash = labelID === TRASH;
     const filteredMessages = messages.filter((message) => inTrash === hasLabel(message, TRASH));
-    const messagesToShow = filter ? filteredMessages : messages;
-    const showTrashWarning = filteredMessages.length !== messages.length;
-    const numParticipants = getNumParticipants(conversation);
+    const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
+    const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
 
     const expand = findMessageToExpand(labelID, messagesToShow)?.ID;
 
     return (
         <>
-            <header
-                className={classnames([
-                    'border-bottom mw100 message-conversation-summary p0-5 pb1 flex-item-noshrink',
-                    hidden && 'hidden'
-                ])}
-            >
-                <div className="flex flex-nowrap mb1">
-                    <h2 className="mb0 h3 ellipsis lh-standard flex-item-fluid pr1" title={conversation.Subject}>
-                        <NumMessages className="mr0-25" conversation={conversation} />
-                        {conversation.Subject}
-                    </h2>
-                    <div className="flex-item-noshrink pt0-25">
-                        <ItemStar element={conversation} />
-                    </div>
-                </div>
-                <div className="flex flex-nowrap">
-                    <div className="flex-item-fluid flex flex-items-center pr1">
-                        <span className="mr1 flex flex-items-center flex-item-noshrink">
-                            <Icon name="email-address" className="opacity-50" alt={c('label').t`Number of messages:`} />
-                            <span className="ml0-25">{conversation.NumMessages}</span>
-                        </span>
-                        <span className="mr1 flex flex-items-center flex-item-noshrink">
-                            <Icon name="contact" className="opacity-50" alt={c('label').t`Number of participants:`} />
-                            <span className="ml0-25">{numParticipants}</span>
-                        </span>
-                    </div>
-                    <div className="flex-item-noshrink">
-                        <ItemLabels labels={labels} max={4} element={conversation} showUnlabel />
-                    </div>
-                </div>
-            </header>
+            <ConversationHeader
+                className={classnames([hidden && 'hidden'])}
+                loading={loadingConversation}
+                element={conversation}
+            />
             <div className={classnames(['scroll-if-needed flex-item-fluid pt0-5 mw100', hidden && 'hidden'])}>
                 {showTrashWarning && <TrashWarning inTrash={inTrash} filter={filter} onToggle={toggleFilter} />}
                 {messagesToShow.map((message, index) => (
                     <MessageView
+                        key={message.ID}
                         labelID={labelID}
                         conversationMode={true}
-                        key={message.ID}
+                        loading={loadingMessages}
                         message={message}
                         expand={message.ID === expand}
                         labels={labels}
                         mailSettings={mailSettings}
                         conversationIndex={index}
+                        conversationID={conversationID}
                         onBack={onBack}
                         onCompose={onCompose}
                     />

@@ -3,6 +3,7 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { isCustomLabelOrFolder } from '../labels';
 import { hasLabel } from '../elements';
 import { isDraft, isSentAutoReply } from './messages';
+import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
 
 // Reference: Angular/src/app/message/services/findExpandableMessage.js
 
@@ -48,6 +49,10 @@ const getLast = (messages: Message[]): Message | undefined => {
 export const findMessageToExpand = (labelID = '', messages: Message[] = []): Message | undefined => {
     if (messages.length === 0) {
         return;
+    }
+
+    if (messages[0].ID.startsWith(PLACEHOLDER_ID_PREFIX)) {
+        return getLast(messages);
     }
 
     if (labelID === MAILBOX_LABEL_IDS.STARRED || isCustomLabelOrFolder(labelID)) {

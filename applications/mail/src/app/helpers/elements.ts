@@ -102,7 +102,9 @@ export const isUnread = (element: Element | undefined, labelID: string | undefin
 };
 
 export const getLabelIDs = (element?: Element) =>
-    isMessage(element) ? element?.LabelIDs || [] : (element as Conversation).Labels?.map(({ ID }) => ID || '') || [];
+    isMessage(element)
+        ? element?.LabelIDs || []
+        : (element as Conversation | undefined)?.Labels?.map(({ ID }) => ID || '') || [];
 
 export const hasLabel = (element: Element, labelID?: string) => {
     return getLabelIDs(element).some((ID) => labelID === ID);
