@@ -1,10 +1,13 @@
 import React from 'react';
 
-import SidebarPrimaryButton from './SidebarPrimaryButton';
-import { Props as ButtonProps } from '../button/Button';
+import Button, { Props as ButtonProps } from '../button/Button';
 
 const SidebarBackButton = ({ children, ...rest }: ButtonProps) => {
-    return <SidebarPrimaryButton {...rest}>{children}</SidebarPrimaryButton>;
+    return (
+        <Button className="pm-button--primaryborder-dark pm-button--large bold mt0-25 w100" {...rest}>
+            {children}
+        </Button>
+    );
 };
 
 export default SidebarBackButton;
