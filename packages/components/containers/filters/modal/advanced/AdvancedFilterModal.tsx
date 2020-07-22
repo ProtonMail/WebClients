@@ -20,7 +20,7 @@ import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from '
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { checkSieveFilter, addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
 import { convertModel } from 'proton-shared/lib/filters/utils';
-import { templates as sieveTemplates } from 'proton-shared/lib/filters//sieve';
+import { templates as sieveTemplates } from 'proton-shared/lib/filters/sieve';
 
 import FilterNameForm from '../FilterNameForm';
 import HeaderAdvancedFilterModal from './HeaderAdvancedFilterModal';
