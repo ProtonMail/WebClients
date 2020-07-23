@@ -70,8 +70,8 @@ const DeleteButton = ({ labelID = '', mailSettings, breakpoints, selectedIDs = [
         await api(action);
         await call();
         const text = isConversation
-            ? c('Success').ngettext(msgid`conversation removed`, `${count} conversations removed`, count)
-            : c('Success').ngettext(msgid`message removed`, `${count} messages removed`, count);
+            ? c('Success').ngettext(msgid`conversation deleted`, `${count} conversations deleted`, count)
+            : c('Success').ngettext(msgid`message deleted`, `${count} messages deleted`, count);
         createNotification({ text });
     };
 
