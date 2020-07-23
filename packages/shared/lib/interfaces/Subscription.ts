@@ -2,7 +2,7 @@ import { CYCLE, PLAN_TYPES } from '../constants';
 
 type Currency = 'EUR' | 'CHF' | 'USD';
 
-interface Plan {
+export interface Plan {
     ID: string;
     Type: PLAN_TYPES;
     Cycle: CYCLE;
