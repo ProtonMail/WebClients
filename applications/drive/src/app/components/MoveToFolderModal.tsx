@@ -59,17 +59,18 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
     };
 
     const moveLinksToFolder = async (parentFolderId: string) => {
-        const itemsToMove = [...selectedItems];
-        const itemsToMoveIds = itemsToMove.map(({ LinkID }) => LinkID);
+        const toMove = [...selectedItems];
+        const toMoveIds = toMove.map(({ LinkID }) => LinkID);
 
-        const result = await moveLinks(shareId, parentFolderId, itemsToMoveIds);
+        const moveResult = await moveLinks(shareId, parentFolderId, toMoveIds);
 
         const undoAction = async () => {
-            const result = await moveLinks(shareId, linkId, itemsToMoveIds);
-            createMoveLinksNotifications(itemsToMove, result);
+            const toMoveBackIds = moveResult.moved.map(({ LinkID }) => LinkID);
+            const moveBackResult = await moveLinks(shareId, linkId, toMoveBackIds);
+            createMoveLinksNotifications(toMove, moveBackResult);
         };
 
-        createMoveLinksNotifications(itemsToMove, result, undoAction);
+        createMoveLinksNotifications(toMove, moveResult, undoAction);
     };
 
     useEffect(() => {

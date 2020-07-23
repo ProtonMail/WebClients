@@ -35,17 +35,18 @@ function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[], cle
 
             clearSelections();
 
-            const result = await moveLinks(shareId, item.LinkID, toMoveIds);
+            const moveResult = await moveLinks(shareId, item.LinkID, toMoveIds);
 
             const undoAction = async () => {
                 if (!parentFolderId) {
                     return;
                 }
-                const result = await moveLinks(shareId, parentFolderId, toMoveIds);
-                createMoveLinksNotifications(toMove, result);
+                const toMoveBackIds = moveResult.moved.map(({ LinkID }) => LinkID);
+                const moveBackResult = await moveLinks(shareId, parentFolderId, toMoveBackIds);
+                createMoveLinksNotifications(toMove, moveBackResult);
             };
 
-            createMoveLinksNotifications(toMove, result, undoAction);
+            createMoveLinksNotifications(toMove, moveResult, undoAction);
         };
 
         const isActiveDropTarget = activeDropTarget?.LinkID === item.LinkID;
