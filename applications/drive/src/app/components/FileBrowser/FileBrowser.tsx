@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint, TableRowSticky } from 'react-components';
+import React, { useEffect, useState, useCallback } from 'react';
 import { c } from 'ttag';
+
+import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint, TableRowSticky, TableCell } from 'react-components';
+
 import ItemRow from './ItemRow';
 import useDriveDragMove from '../../hooks/drive/useDriveDragMove';
 import { FileBrowserItem } from './interfaces';
+import FolderContextMenu from './FolderContextMenu';
 
 interface Props {
     loading?: boolean;
@@ -35,6 +38,8 @@ const FileBrowser = ({
     onShiftClick,
 }: Props) => {
     const [secondaryActionActive, setSecondaryActionActive] = useState(false);
+    const [isContextMenuOpen, setIsOpen] = useState(false);
+    const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const { isDesktop } = useActiveBreakpoint();
     const getDragMoveControls = useDriveDragMove(shareId, selectedItems, clearSelections);
 
@@ -55,6 +60,27 @@ const FileBrowser = ({
         };
     }, [secondaryActionActive]);
 
+    const openContextMenu = useCallback(() => {
+        setIsOpen(true);
+    }, []);
+
+    const closeContextMenu = useCallback(() => {
+        setIsOpen(false);
+    }, []);
+
+    const handleContextMenu = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        clearSelections();
+
+        if (isContextMenuOpen) {
+            closeContextMenu();
+        }
+
+        setContextMenuPosition({ top: e.clientY, left: e.clientX });
+    };
+
     const allSelected = !!contents.length && contents.length === selectedItems.length;
     const modifiedHeader = isTrash ? c('TableHeader').t`Deleted` : c('TableHeader').t`Modified`;
     const colSpan = 4 + Number(isDesktop) + Number(isTrash);
@@ -64,13 +90,20 @@ const FileBrowser = ({
             role="presentation"
             ref={scrollAreaRef}
             className="flex flex-item-fluid scroll-if-needed"
-            onClick={clearSelections}
+            onClick={() => {
+                // Close folder context menu
+                if (isContextMenuOpen) {
+                    closeContextMenu();
+                }
+                clearSelections();
+            }}
+            onContextMenu={handleContextMenu}
         >
             <table className="pm-simple-table pm-simple-table--isHoverable pd-fb-table noborder border-collapse">
                 <caption className="sr-only">{caption}</caption>
                 <thead>
                     <TableRowSticky scrollAreaRef={scrollAreaRef}>
-                        <th scope="col">
+                        <TableCell type="header" scope="col">
                             <div
                                 role="presentation"
                                 key="select-all"
@@ -84,18 +117,24 @@ const FileBrowser = ({
                                     onChange={onToggleAllSelected}
                                 />
                             </div>
-                        </th>
-                        <th scope="col">
+                        </TableCell>
+                        <TableCell type="header" scope="col">
                             <div className="ellipsis">{c('TableHeader').t`Name`}</div>
-                        </th>
-                        {isTrash && <th scope="col" className="w25">{c('TableHeader').t`Location`}</th>}
-                        <th scope="col" className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader').t`Type`}</th>
-                        {isDesktop && (
-                            <th scope="col" className="w20">
-                                {modifiedHeader}
-                            </th>
+                        </TableCell>
+                        {isTrash && (
+                            <TableCell type="header" scope="col" className="w25">{c('TableHeader')
+                                .t`Location`}</TableCell>
                         )}
-                        <th scope="col" className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader').t`Size`}</th>
+                        <TableCell type="header" scope="col" className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader')
+                            .t`Type`}</TableCell>
+                        {isDesktop && (
+                            <TableCell type="header" scope="col" className="w20">
+                                {modifiedHeader}
+                            </TableCell>
+                        )}
+                        <TableCell type="header" scope="col" className={isDesktop ? 'w10' : 'w15'}>
+                            {c('TableHeader').t`Size`}{' '}
+                        </TableCell>
                     </TableRowSticky>
                 </thead>
                 <TableBody colSpan={colSpan}>
@@ -116,6 +155,15 @@ const FileBrowser = ({
                     {loading && <TableRowBusy colSpan={colSpan} />}
                 </TableBody>
             </table>
+            {!isTrash && (
+                <FolderContextMenu
+                    isOpen={isContextMenuOpen}
+                    open={openContextMenu}
+                    close={closeContextMenu}
+                    position={contextMenuPosition}
+                    anchorRef={scrollAreaRef}
+                />
+            )}
         </div>
     );
 };

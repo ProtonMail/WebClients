@@ -1,36 +1,18 @@
-import React, { useRef, ChangeEvent } from 'react';
-import { FloatingButton, SidebarPrimaryButton } from 'react-components';
+import React from 'react';
 import { c } from 'ttag';
+
+import { FloatingButton, SidebarPrimaryButton } from 'react-components';
+
 import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
-import useFiles from '../../hooks/drive/useFiles';
+import useFileUploadInput from '../../hooks/drive/useFileUploadInput';
 
 interface Props {
     floating?: boolean;
 }
 
 const UploadButton = ({ floating }: Props) => {
-    const fileInput = useRef<HTMLInputElement>(null);
     const { folder } = useDriveActiveFolder();
-    const { uploadDriveFiles } = useFiles();
-
-    const handleClick = () => {
-        if (!folder || !fileInput.current) {
-            return;
-        }
-
-        fileInput.current.value = '';
-        fileInput.current.click();
-    };
-
-    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const { files } = e.target;
-
-        if (!folder || !files) {
-            return;
-        }
-
-        uploadDriveFiles(folder.shareId, folder.linkId, files, true).catch(console.error);
-    };
+    const { inputRef: fileInput, handleClick, handleChange: handleFileChange } = useFileUploadInput();
 
     return (
         <>
