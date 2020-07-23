@@ -3,6 +3,7 @@ import { LinkType } from '../../interfaces/link';
 import useDrive from './useDrive';
 import useListNotifications from '../util/useListNotifications';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
+import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
 
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
@@ -15,6 +16,7 @@ export interface DragMoveControls {
 
 function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[], clearSelections: () => void) {
     const { moveLinks } = useDrive();
+    const { folder: activeFolder } = useDriveActiveFolder();
     const { createMoveLinksNotifications } = useListNotifications();
     const [allDragging, setAllDragging] = useState<FileBrowserItem[]>([]);
     const [activeDropTarget, setActiveDropTarget] = useState<FileBrowserItem>();
@@ -28,16 +30,22 @@ function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[], cle
 
         const handleDrop = async () => {
             const toMove = [...allDragging];
+            const toMoveIds = toMove.map(({ LinkID }) => LinkID);
+            const parentFolderId = activeFolder?.linkId;
 
             clearSelections();
 
-            const result = await moveLinks(
-                shareId,
-                item.LinkID,
-                toMove.map(({ LinkID }) => LinkID)
-            );
+            const result = await moveLinks(shareId, item.LinkID, toMoveIds);
 
-            createMoveLinksNotifications(toMove, result);
+            const undoAction = async () => {
+                if (!parentFolderId) {
+                    return;
+                }
+                const result = await moveLinks(shareId, parentFolderId, toMoveIds);
+                createMoveLinksNotifications(toMove, result);
+            };
+
+            createMoveLinksNotifications(toMove, result, undoAction);
         };
 
         const isActiveDropTarget = activeDropTarget?.LinkID === item.LinkID;
