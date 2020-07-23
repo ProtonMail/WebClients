@@ -42,10 +42,12 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const [hasNoChildren, setHasNoChildren] = useState(false);
 
-    const isChildrenComplete = (LinkID: string) => !!cache.get.foldersOnlyComplete(activeFolder.shareId, LinkID);
+    const { shareId, linkId } = activeFolder;
+
+    const isChildrenComplete = (LinkID: string) => !!cache.get.foldersOnlyComplete(shareId, LinkID);
 
     const fetchChildrenData = async (linkId: string, loadNextPage = false) => {
-        const childrenMetas = await getFoldersOnlyMetas(activeFolder.shareId, linkId, loadNextPage);
+        const childrenMetas = await getFoldersOnlyMetas(shareId, linkId, loadNextPage);
         const list = childrenMetas.map((item) => ({
             linkId: item.LinkID,
             name: item.Name,
@@ -57,19 +59,23 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
     };
 
     const moveLinksToFolder = async (parentFolderId: string) => {
-        const result = await moveLinks(
-            activeFolder.shareId,
-            parentFolderId,
-            selectedItems.map(({ LinkID }) => LinkID)
-        );
+        const itemsToMove = [...selectedItems];
+        const itemsToMoveIds = itemsToMove.map(({ LinkID }) => LinkID);
 
-        createMoveLinksNotifications(selectedItems, result);
+        const result = await moveLinks(shareId, parentFolderId, itemsToMoveIds);
+
+        const undoAction = async () => {
+            const result = await moveLinks(shareId, linkId, itemsToMoveIds);
+            createMoveLinksNotifications(itemsToMove, result);
+        };
+
+        createMoveLinksNotifications(itemsToMove, result, undoAction);
     };
 
     useEffect(() => {
         const initializeData = async () => {
-            const { LinkID } = await getShareMeta(activeFolder.shareId);
-            const meta = await getLinkMeta(activeFolder.shareId, LinkID);
+            const { LinkID } = await getShareMeta(shareId);
+            const meta = await getLinkMeta(shareId, LinkID);
             const children = await fetchChildrenData(LinkID);
             const rootFolder = { linkId: meta.LinkID, name: 'My Files', children };
 
@@ -79,7 +85,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
         };
 
         withInitialize(initializeData()).catch(console.error);
-    }, [activeFolder.shareId]);
+    }, [shareId]);
 
     const onSelect = (linkId: string) => {
         if (!loading) {
@@ -131,7 +137,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
     const handleCreateNewFolderClick = (parentFolderId: string) => {
         createModal(
             <CreateFolderModal
-                folder={{ shareId: activeFolder.shareId, linkId: parentFolderId }}
+                folder={{ shareId, linkId: parentFolderId }}
                 onCreateDone={async (newFolderId) => {
                     await loadChildren(parentFolderId);
                     setInitiallyExpandedFolders([...initiallyExpandedFolders, parentFolderId]);
@@ -153,8 +159,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
         ),
         mixed: c('Notification').ngettext(msgid`Move 1 item`, `Move ${itemsToMoveCount} items`, itemsToMoveCount),
     };
-    const moveIsDisabled =
-        !selectedFolder || itemsToMove.includes(selectedFolder) || activeFolder.linkId === selectedFolder;
+    const moveIsDisabled = !selectedFolder || itemsToMove.includes(selectedFolder) || linkId === selectedFolder;
 
     let modalContents = {
         title: selectMessageForItemList(

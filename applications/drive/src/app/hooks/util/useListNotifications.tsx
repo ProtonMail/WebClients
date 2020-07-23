@@ -176,7 +176,8 @@ const useListNotifications = () => {
                 Type: LinkType;
             }[];
             failed: string[];
-        }
+        },
+        undoAction?: () => any
     ) => {
         const movedLinksCount = moved.length;
         const failedMovesCount = failed.length;
@@ -202,7 +203,8 @@ const useListNotifications = () => {
             };
             const notificationMessage = getNotificationTextForItemList(
                 moved.map((item) => item.Type),
-                notificationMessages
+                notificationMessages,
+                undoAction
             );
 
             createNotification({
