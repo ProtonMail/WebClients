@@ -108,7 +108,7 @@ export const useApplyLabels = () => {
                 });
             }
         },
-        []
+        [labels]
     );
 
     return applyLabels;
@@ -187,7 +187,7 @@ export const useMoveToFolder = () => {
                 });
             }
         },
-        []
+        [labels]
     );
 
     return moveToFolder;
