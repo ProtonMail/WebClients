@@ -99,6 +99,7 @@ export enum MESSAGE_ACTIONS {
 }
 
 export const DRAG_ELEMENT_KEY = 'drag-element';
+export const DRAG_ELEMENT_ID_KEY = 'drag-element-id';
 
 export const PROTON_DOMAINS = [
     'protonmail.com',

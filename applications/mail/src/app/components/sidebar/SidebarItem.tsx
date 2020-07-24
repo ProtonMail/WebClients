@@ -12,7 +12,7 @@ import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { wait } from 'proton-shared/lib/helpers/promise';
 
 import LocationAside from './LocationAside';
-import { LABEL_IDS_TO_HUMAN, DRAG_ELEMENT_KEY } from '../../constants';
+import { LABEL_IDS_TO_HUMAN, DRAG_ELEMENT_KEY, DRAG_ELEMENT_ID_KEY } from '../../constants';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { useDragOver } from '../../hooks/useDragOver';
 import { useElementsCache } from '../../hooks/useElementsCache';
@@ -78,10 +78,15 @@ const SidebarItem = ({
 
     const handleDrop = async (event: DragEvent) => {
         dragProps.onDrop();
+
+        // Manual trigger of the dragend event on the drag element because native event is not reliable
+        const dragElement = document.getElementById(event.dataTransfer.getData(DRAG_ELEMENT_ID_KEY));
+        const dragendEvent = new Event('dragend') as any;
+        dragendEvent.dataTransfer = event.dataTransfer;
+        dragendEvent.dataTransfer.dropEffect = isFolder ? 'move' : 'link'; // Chrome is losing the original dropEffect
+        dragElement?.dispatchEvent(dragendEvent);
+
         const elementIDs = JSON.parse(event.dataTransfer.getData(DRAG_ELEMENT_KEY)) as string[];
-        // This wait will allow the drag end event to be propagated on the source element
-        // Without this, the optimistic moveToFolder may remove it before and the event will be lost
-        await wait(0);
         const elements = elementIDs.map((elementID) => elementsCache.elements[elementID]);
         if (isFolder) {
             moveToFolder(elements, labelID, text, currentLabelID);

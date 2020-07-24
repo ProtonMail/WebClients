@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ChangeEvent, DragEvent, useRef } from 'react';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
-import { useLabels, useContactEmails, useContactGroups, classnames } from 'react-components';
+import { useLabels, useContactEmails, useContactGroups, classnames, useHandler, generateUID } from 'react-components';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { DENSITY } from 'proton-shared/lib/constants';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -9,7 +9,7 @@ import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import Item from './Item';
 import { Element } from '../../models/element';
 import EmptyView from '../view/EmptyView';
-import { DRAG_ELEMENT_KEY } from '../../constants';
+import { DRAG_ELEMENT_KEY, DRAG_ELEMENT_ID_KEY } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 
@@ -94,6 +94,36 @@ const List = ({
         onCheck(elementIDs, target.checked, false);
     };
 
+    const clearDragElement = useHandler(() => {
+        if (dragElement) {
+            document.body.removeChild(dragElement);
+            setDragElement(undefined);
+        }
+    });
+
+    const handleDragCanceled = useHandler(() => {
+        clearDragElement();
+
+        setDraggedIDs([]);
+
+        if (savedCheck) {
+            onCheck(savedCheck, true, true);
+            setSavedCheck(undefined);
+        }
+    });
+
+    const handleDragSucceed = useHandler((action: string | undefined) => {
+        clearDragElement();
+
+        if (savedCheck) {
+            if (action === 'link') {
+                // Labels
+                onCheck(savedCheck, true, true);
+            }
+            setSavedCheck(undefined);
+        }
+    });
+
     const handleDragStart = (element: Element) => (event: DragEvent) => {
         const elementID = element.ID || '';
         const dragInSelection = checkedIDs.includes(elementID);
@@ -120,31 +150,14 @@ const List = ({
                   selection.length
               );
         dragElement.className = 'drag-element p1 bordered-container rounded';
+        dragElement.id = generateUID(DRAG_ELEMENT_ID_KEY);
+        // Wiring the dragend event on the drag element because the one from drag start is not reliable
+        dragElement.addEventListener('dragend', (event) => handleDragSucceed(event.dataTransfer?.dropEffect));
         document.body.appendChild(dragElement);
         event.dataTransfer.setDragImage(dragElement, 0, 0);
         event.dataTransfer.setData(DRAG_ELEMENT_KEY, JSON.stringify(selection));
+        event.dataTransfer.setData(DRAG_ELEMENT_ID_KEY, dragElement.id);
         setDragElement(dragElement);
-    };
-
-    const handleDragEnd = (event: DragEvent) => {
-        if (dragElement) {
-            document.body.removeChild(dragElement);
-            setDragElement(undefined);
-        }
-        const action = event.dataTransfer.dropEffect;
-
-        if (action === 'none') {
-            setDraggedIDs([]);
-        }
-
-        if (savedCheck) {
-            if (action === 'none' || action === 'label') {
-                onCheck(savedCheck, true, true);
-            } /* else {
-                onCheck([], true, true);
-            } */
-            setSavedCheck(undefined);
-        }
     };
 
     return (
@@ -177,7 +190,7 @@ const List = ({
                             userSettings={userSettings}
                             mailSettings={mailSettings}
                             onDragStart={handleDragStart(element)}
-                            onDragEnd={handleDragEnd}
+                            onDragCanceled={handleDragCanceled}
                             dragged={draggedIDs.includes(element.ID || '')}
                             index={index}
                         />

@@ -39,7 +39,7 @@ interface Props {
     onCheck: (event: ChangeEvent) => void;
     onClick: (element: Element) => void;
     onDragStart: (event: DragEvent) => void;
-    onDragEnd: (event: DragEvent) => void;
+    onDragCanceled: () => void;
     dragged: boolean;
     index: number;
 }
@@ -60,7 +60,7 @@ const Item = ({
     onCheck,
     onClick,
     onDragStart,
-    onDragEnd,
+    onDragCanceled,
     dragged,
     index
 }: Props) => {
@@ -90,6 +90,12 @@ const Item = ({
         onClick(element);
     };
 
+    const handleDragEnd = (event: DragEvent) => {
+        if (event.dataTransfer.dropEffect === 'none') {
+            return onDragCanceled();
+        }
+    };
+
     const itemCheckboxType = isCompactView ? (
         <Checkbox className="item-icon-compact mr0-75 stop-propagation" checked={checked} onChange={onCheck} />
     ) : (
@@ -107,7 +113,7 @@ const Item = ({
             onClick={handleClick}
             draggable
             onDragStart={onDragStart}
-            onDragEnd={onDragEnd}
+            onDragEnd={handleDragEnd}
             className={classnames([
                 'flex flex-nowrap flex-items-center cursor-pointer',
                 columnLayout ? 'item-container' : 'item-container-row',
