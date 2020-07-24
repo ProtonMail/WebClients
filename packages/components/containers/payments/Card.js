@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Label, Block, Input, Select } from 'react-components';
+import { Label, Block, Input, Select, Info } from 'react-components';
 
 import { getFullList } from '../../helpers/countries';
 import ExpInput from './ExpInput';
@@ -55,7 +55,13 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                     />
                 </div>
                 <div className="flex-autogrid-item">
-                    <Label className="mb0-5 bl" htmlFor="cvc">{c('Label').t`Security code`}</Label>
+                    <Label className="mb0-5 bl" htmlFor="cvc">
+                        <span className="mr0-5">{c('Label').t`Security code`}</span>
+                        <Info
+                            title={c('Info')
+                                .t`For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.`}
+                        />
+                    </Label>
                     <Input
                         autoComplete="cc-csc"
                         id="cvc"
