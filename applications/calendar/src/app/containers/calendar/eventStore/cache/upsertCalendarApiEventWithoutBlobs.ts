@@ -5,7 +5,15 @@ import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './u
 import getComponentFromCalendarEventWithoutBlob from './getComponentFromCalendarEventWithoutBlob';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 
-const FIELDS_TO_KEEP = ['ID', 'SharedEventID', 'CalendarID', 'CreateTime', 'ModifyTime', 'Permissions'] as const;
+const FIELDS_TO_KEEP = [
+    'ID',
+    'Author',
+    'SharedEventID',
+    'CalendarID',
+    'CreateTime',
+    'ModifyTime',
+    'Permissions',
+] as const;
 
 const upsertCalendarApiEventWithoutBlob = (
     Event: CalendarEventWithoutBlob,
