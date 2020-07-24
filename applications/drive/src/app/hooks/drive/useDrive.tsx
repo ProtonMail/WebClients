@@ -401,12 +401,12 @@ function useDrive() {
         };
 
         await debouncedRequest(queryMoveLink(shareId, linkId, data));
-        return { Type: meta.Type, Name: meta.Name };
+        return { LinkID: meta.LinkID, Type: meta.Type, Name: meta.Name };
     };
 
     const moveLinks = async (shareId: string, parentFolderId: string, linkIds: string[]) => {
         cache.set.linksLocked(true, shareId, linkIds);
-        const moved: { Name: string; Type: LinkType }[] = [];
+        const moved: { LinkID: string; Name: string; Type: LinkType }[] = [];
         const failed: string[] = [];
         const moveQueue = linkIds.map((linkId) => async () => {
             await moveLink(shareId, parentFolderId, linkId)
