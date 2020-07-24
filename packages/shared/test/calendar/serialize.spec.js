@@ -16,6 +16,9 @@ const veventComponent = {
         }
     ],
     uid: { value: '123' },
+    dtstamp: {
+        value: { year: 2019, month: 12, day: 11, hours: 12, minutes: 12, seconds: 12, isUTC: true }
+    },
     dtstart: {
         value: { year: 2019, month: 12, day: 11, hours: 12, minutes: 12, seconds: 12, isUTC: true }
     },
@@ -61,6 +64,29 @@ const veventComponent = {
     ]
 };
 
+const transformToExternal = (data, publicAddressKey, sharedSessionKey, calendarSessionKey) => {
+    const withAuthor = (x, author) => {
+        if (!x) {
+            return;
+        }
+        return x.map((y) => ({ ...y, Author: author }));
+    };
+
+    return {
+        event: {
+            SharedEvents: withAuthor(data.SharedEventContent, 'me'),
+            CalendarEvents: withAuthor(data.CalendarEventContent, 'me'),
+            AttendeesEvents: withAuthor([data.AttendeesEventContent], 'me'),
+            Attendees: data.Attendees
+        },
+        publicKeysMap: {
+            me: [publicAddressKey]
+        },
+        sharedSessionKey,
+        calendarSessionKey
+    };
+};
+
 describe('calendar encryption', () => {
     it('should encrypt and sign calendar events', async () => {
         const primaryCalendarKey = await decryptPrivateKey(DecryptableKey.PrivateKey, '123');
@@ -77,13 +103,13 @@ describe('calendar encryption', () => {
                 {
                     Type: 2,
                     Data: wrap(
-                        'BEGIN:VEVENT\r\nUID:123\r\nDTSTART:20191211T121212Z\r\nDTEND:20191212T121212Z\r\nEND:VEVENT'
+                        'BEGIN:VEVENT\r\nUID:123\r\nDTSTAMP:20191211T121212Z\r\nDTSTART:20191211T121212Z\r\nDTEND:20191212T121212Z\r\nEND:VEVENT'
                     ),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/)
                 },
                 {
                     Type: 3,
-                    Data: jasmine.stringMatching(/0pgB8pECtS5Mmdeh\+pBh0SN5j5TqWO.*/g),
+                    Data: jasmine.stringMatching(/0rIB8pECtS5Mmdeh\+pBh0SN5j5TqWA.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g)
                 }
             ],
@@ -92,13 +118,15 @@ describe('calendar encryption', () => {
             CalendarEventContent: [
                 {
                     Type: 3,
-                    Data: jasmine.stringMatching(/0pYB8pECtS5Mmdeh\+pBh0SN5.*/g),
+                    Data: jasmine.stringMatching(/0rAB8pECtS5Mmdeh\+pBh0SN5.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g)
                 }
             ],
             PersonalEventContent: {
                 Type: 2,
-                Data: wrap('BEGIN:VEVENT\r\nUID:123\r\nBEGIN:VALARM\r\nTRIGGER:-PT15H\r\nEND:VALARM\r\nEND:VEVENT'),
+                Data: wrap(
+                    'BEGIN:VEVENT\r\nUID:123\r\nDTSTAMP:20191211T121212Z\r\nBEGIN:VALARM\r\nTRIGGER:-PT15H\r\nEND:VALARM\r\nEND:VEVENT'
+                ),
                 Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g)
             },
             AttendeesEventContent: {
@@ -128,17 +156,9 @@ describe('calendar encryption', () => {
         });
 
         const [sharedSessionKey, calendarSessionKey] = await readSessionKeys(data, primaryCalendarKey);
-        const otherVeventComponent = await readCalendarEvent({
-            event: {
-                SharedEvents: data.SharedEventContent,
-                CalendarEvents: data.CalendarEventContent,
-                AttendeesEvent: data.AttendeesEventContent,
-                Attendees: data.Attendees
-            },
-            publicKeys: publicAddressKey,
-            sharedSessionKey,
-            calendarSessionKey
-        });
+        const otherVeventComponent = await readCalendarEvent(
+            transformToExternal(data, publicAddressKey, sharedSessionKey, calendarSessionKey)
+        );
         const { components } = await readPersonalPart(data.PersonalEventContent, publicAddressKey);
 
         expect({ ...otherVeventComponent, components }).toEqual(veventComponent);

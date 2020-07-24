@@ -167,10 +167,10 @@ export const getEventByUID = (params: GetEventByUIDArguments) => ({
 
 export interface CreateCalendarEventBlobData {
     CalendarKeyPacket?: string;
-    CalendarEventContent?: CalendarEventData[];
+    CalendarEventContent?: Omit<CalendarEventData, 'Author'>[];
     SharedKeyPacket?: string;
-    SharedEventContent: CalendarEventData[];
-    PersonalEventContent?: CalendarEventData;
+    SharedEventContent: Omit<CalendarEventData, 'Author'>[];
+    PersonalEventContent?: Omit<CalendarEventData, 'Author'>;
 }
 export interface CreateCalendarEventData extends CreateCalendarEventBlobData {
     Permissions: number;

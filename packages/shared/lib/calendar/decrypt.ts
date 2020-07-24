@@ -11,8 +11,9 @@ import {
 } from 'pmcrypto';
 
 import { deserializeUint8Array } from '../helpers/serialization';
+import { SimpleMap } from '../interfaces/utils';
 import { CALENDAR_CARD_TYPE } from './constants';
-import { CalendarEventDataMap } from '../interfaces/calendar';
+import { CalendarEventData } from '../interfaces/calendar';
 
 export const getDecryptedSessionKey = async (data: Uint8Array, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
     return decryptSessionKey({ message: await getMessage(data), privateKeys });
@@ -51,8 +52,9 @@ export const decryptCard = async (
         signature: await getSignature(signature),
         sessionKeys: sessionKey ? [sessionKey] : undefined,
     });
+    const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
 
-    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+    if (hasPublicKeys && verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         const error = new Error('Signature verification failed');
         error.name = 'SignatureError';
         throw error;
@@ -65,22 +67,19 @@ export const decryptCard = async (
     return decryptedData;
 };
 
-export const decryptAndVerifyPart = (
-    {
-        [CALENDAR_CARD_TYPE.SIGNED]: signed,
-        [CALENDAR_CARD_TYPE.ENCRYPTED_AND_SIGNED]: encryptedAndSigned,
-    }: CalendarEventDataMap,
-    publicKeys: OpenPGPKey | OpenPGPKey[],
+export const decryptAndVerifyCalendarEvent = (
+    { Type, Data, Signature, Author }: CalendarEventData,
+    publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]>,
     sessionKey: SessionKey | undefined
 ) => {
-    return Promise.all([
-        signed && verifySignedCard(signed.Data, signed.Signature, publicKeys),
-        encryptedAndSigned &&
-            decryptCard(
-                deserializeUint8Array(encryptedAndSigned.Data),
-                encryptedAndSigned.Signature,
-                publicKeys,
-                sessionKey
-            ),
-    ]);
+    const publicKeys = publicKeysMap[Author] || [];
+    if (Type === CALENDAR_CARD_TYPE.CLEAR) {
+        return Data;
+    }
+    if (Type === CALENDAR_CARD_TYPE.SIGNED) {
+        return verifySignedCard(Data, Signature, publicKeys);
+    }
+    if (Type === CALENDAR_CARD_TYPE.ENCRYPTED_AND_SIGNED) {
+        return decryptCard(deserializeUint8Array(Data), Signature, publicKeys, sessionKey);
+    }
 };

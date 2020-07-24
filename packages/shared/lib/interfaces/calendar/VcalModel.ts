@@ -1,3 +1,5 @@
+import { ATTENDEE_PERMISSIONS } from '../../calendar/constants';
+
 export enum VcalDays {
     SU,
     MO,
@@ -145,8 +147,11 @@ export interface VcalAttendeePropertyParameters {
     language?: string;
     'sent-by'?: string;
     'delegated-from'?: string;
-    'delegated-to': string;
+    'delegated-to'?: string;
+    'x-pm-permissions'?: ATTENDEE_PERMISSIONS;
+    'x-pm-token'?: string;
 }
+
 export interface VcalAttendeeProperty {
     value: string;
     parameters?: VcalAttendeePropertyParameters;

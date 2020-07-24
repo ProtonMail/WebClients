@@ -1,17 +1,13 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 
 import { deserializeUint8Array } from '../helpers/serialization';
-import { decryptAndVerifyPart, decryptCard, getDecryptedSessionKey, verifySignedCard } from './decrypt';
+import { SimpleMap } from '../interfaces/utils';
+import { decryptAndVerifyCalendarEvent, getDecryptedSessionKey, verifySignedCard } from './decrypt';
 import { parse } from './vcal';
 import { unwrap } from './helper';
 import { toInternalAttendee } from './attendees';
-import {
-    CalendarEventData,
-    CalendarEventDataMap,
-    CalendarEvent,
-    CalendarPersonalEventData,
-} from '../interfaces/calendar';
-import { VcalVeventComponent } from '../interfaces/calendar/VcalModel';
+import { CalendarEventData, CalendarEvent, CalendarPersonalEventData } from '../interfaces/calendar';
+import { VcalAttendeeProperty, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
 
 export const readSessionKey = (KeyPacket: string, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
     return getDecryptedSessionKey(deserializeUint8Array(KeyPacket), privateKeys);
@@ -35,49 +31,45 @@ export const readSessionKeys = (
  */
 interface ReadCalendarEventArguments {
     event: CalendarEvent;
-    publicKeys: OpenPGPKey | OpenPGPKey[];
+    publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]>;
     sharedSessionKey?: SessionKey;
     calendarSessionKey?: SessionKey;
 }
+
 export const readCalendarEvent = async ({
-    event: { SharedEvents = [], CalendarEvents = [], AttendeesEvent, Attendees = [] },
-    publicKeys,
+    event: { SharedEvents = [], CalendarEvents = [], AttendeesEvents = [], Attendees = [] },
+    publicKeysMap,
     sharedSessionKey,
     calendarSessionKey,
 }: ReadCalendarEventArguments) => {
-    const sharedPart = SharedEvents.reduce<CalendarEventDataMap>((acc, data) => {
-        acc[data.Type] = data;
-        return acc;
-    }, {});
-    const calendarPart = CalendarEvents.reduce<CalendarEventDataMap>((acc, data) => {
-        acc[data.Type] = data;
-        return acc;
-    }, {});
-    const attendeesPartEncrypted = AttendeesEvent;
-
-    const [
-        [sharedSignedResult, sharedEncryptedResult],
-        [calendarSignedResult, calendarEncryptedResult],
-        attendeesResult,
-    ] = await Promise.all([
-        decryptAndVerifyPart(sharedPart, publicKeys, sharedSessionKey),
-        decryptAndVerifyPart(calendarPart, publicKeys, calendarSessionKey),
-        attendeesPartEncrypted &&
-            decryptCard(
-                deserializeUint8Array(attendeesPartEncrypted.Data),
-                attendeesPartEncrypted.Signature,
-                publicKeys,
-                sharedSessionKey
-            ),
+    const [decryptedSharedEvents, decryptedCalendarEvents, decryptedAttendeesEvents] = await Promise.all([
+        Promise.all(SharedEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey))),
+        Promise.all(CalendarEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, calendarSessionKey))),
+        Promise.all(AttendeesEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey))),
     ]);
 
+    const vevent = [...decryptedSharedEvents, ...decryptedCalendarEvents].reduce<VcalVeventComponent>((acc, event) => {
+        if (!event) {
+            return acc;
+        }
+        return { ...acc, ...(event && parse(unwrap(event))) };
+    }, {} as VcalVeventComponent);
+
+    const veventAttendees = decryptedAttendeesEvents.reduce<VcalAttendeeProperty[]>((acc, event) => {
+        if (!event) {
+            return acc;
+        }
+        return acc.concat(toInternalAttendee(parse(unwrap(event)), Attendees));
+    }, []);
+
+    if (!veventAttendees.length) {
+        return vevent;
+    }
+
     return {
-        ...(sharedEncryptedResult && parse(unwrap(sharedEncryptedResult))),
-        ...(sharedSignedResult && parse(unwrap(sharedSignedResult))),
-        ...(calendarEncryptedResult && parse(unwrap(calendarEncryptedResult))),
-        ...(calendarSignedResult && parse(unwrap(calendarSignedResult))),
-        ...(attendeesResult && toInternalAttendee(parse(unwrap(attendeesResult)), Attendees)),
-    } as VcalVeventComponent;
+        ...vevent,
+        attendee: veventAttendees,
+    };
 };
 
 export const readPersonalPart = async (
