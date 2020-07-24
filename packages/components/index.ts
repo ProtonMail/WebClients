@@ -19,6 +19,7 @@ export { default as Breadcrumb } from './components/breadcrumb/Breadcrumb';
 export { default as CollapsingBreadcrumbs } from './components/collapsingBreadcrumbs/CollapsingBreadcrumbs';
 export { default as Wizard } from './components/wizard/Wizard';
 export { default as Alert } from './components/alert/Alert';
+export { default as AttachedFile } from './components/attachedFile/AttachedFile';
 export { default as DoNotWindowOpenAlertError } from './components/alert/DoNotWindowOpenAlertError';
 export { default as Icon } from './components/icon/Icon';
 export { default as RoundedIcon } from './components/icon/RoundedIcon';
@@ -127,6 +128,7 @@ export { default as ChallengeFrame } from './components/challenge/ChallengeFrame
 export { default as ContextMenu } from './components/contextMenu/ContextMenu';
 export { default as Price } from './components/price/Price';
 export { default as Progress } from './components/progress/Progress';
+export { default as DynamicProgress } from './components/progress/DynamicProgress';
 export { default as Meter } from './components/progress/Meter';
 export { default as CircularProgress } from './components/progress/CircularProgress';
 export { default as Legend } from './components/text/Legend';
