@@ -1,11 +1,10 @@
-import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { Bordered, FileInput, Alert, Label, Field, Select, classnames } from 'react-components';
+import React, { ChangeEvent } from 'react';
+import { Bordered, FileInput, Alert, Label, Field, Select, AttachedFile, classnames } from 'react-components';
 
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ImportCalendarModel } from '../../interfaces/Import';
 
-import AttachedFile from './AttachedFile';
 import { IMPORT_CALENDAR_FAQ_URL, MAX_IMPORT_EVENTS_STRING, MAX_IMPORT_FILE_SIZE_STRING } from '../../constants';
 
 interface Props {

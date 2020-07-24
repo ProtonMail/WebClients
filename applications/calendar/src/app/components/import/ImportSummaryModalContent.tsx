@@ -1,9 +1,8 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Alert } from 'react-components';
+import { Alert, DynamicProgress } from 'react-components';
 import { ImportCalendarModel } from '../../interfaces/Import';
 
-import DynamicProgress from './DynamicProgress';
 import { extractTotals } from './encryptAndSubmit';
 import ErrorDetails from './ErrorDetails';
 

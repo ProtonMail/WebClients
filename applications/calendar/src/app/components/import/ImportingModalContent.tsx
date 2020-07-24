@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect } from 'react';
 import {
     Alert,
+    DynamicProgress,
     useApi,
     useGetAddresses,
     useGetAddressKeys,
@@ -13,7 +14,6 @@ import getMemberAndAddress, { getMemberAndAddressID } from '../../helpers/getMem
 import { getSupportedEventsWithRecurrenceId, splitByRecurrenceId, splitErrors } from '../../helpers/import';
 import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel, StoredEncryptedEvent } from '../../interfaces/Import';
 
-import DynamicProgress from './DynamicProgress';
 import { extractTotals, processInBatches } from './encryptAndSubmit';
 import { ImportEventError } from './ImportEventError';
 import { ImportFatalError } from './ImportFatalError';
