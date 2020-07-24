@@ -1,28 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { useMailSettings, useOrganization } from 'react-components';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { getThemeIdentifier, getTheme, toStyle, isDarkTheme } from 'proton-shared/lib/themes/helpers';
-import { PROTON_THEMES, DEFAULT_THEME } from 'proton-shared/lib/themes/themes';
+import { DEFAULT_THEME } from 'proton-shared/lib/themes/themes';
 import { DARK_MODE_CLASS } from 'proton-shared/lib/constants';
+import { useMailSettings, useOrganization } from '../../index';
 
-const protonThemeIdentifiers = Object.values(PROTON_THEMES).map(({ identifier }) => identifier);
+const getStyle = (userTheme: string, orgTheme: string) => {
+    const themeIdentifier = getThemeIdentifier(userTheme);
+    if (themeIdentifier === DEFAULT_THEME.identifier) {
+        return orgTheme;
+    }
+    const themeValue = getTheme(themeIdentifier);
+    if (themeValue) {
+        return toStyle([themeValue, orgTheme]);
+    }
+    return toStyle([userTheme, orgTheme]);
+};
 
 const ThemeInjector = () => {
     const [{ Theme: userTheme = '' } = {}] = useMailSettings();
     const [{ Theme: orgTheme = '' } = {}] = useOrganization();
-    const themeIdentifier = getThemeIdentifier(userTheme);
-    const [style, setStyle] = useState('');
+    const [style, setStyle] = useState(() => getStyle(userTheme, orgTheme));
 
     useEffect(() => {
-        if (themeIdentifier === DEFAULT_THEME.identifier) {
-            return setStyle(orgTheme);
-        }
-        if (protonThemeIdentifiers.includes(themeIdentifier)) {
-            return setStyle(toStyle([getTheme(themeIdentifier), orgTheme]));
-        }
-        setStyle(toStyle([userTheme, orgTheme]));
+        setStyle(getStyle(userTheme, orgTheme));
     }, [userTheme, orgTheme]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (isDarkTheme(userTheme)) {
             document.body.classList.add(DARK_MODE_CLASS);
         } else {

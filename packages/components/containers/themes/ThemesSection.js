@@ -18,9 +18,9 @@ import {
     isCustomThemeIdentifier,
     stripThemeIdentifier,
 } from 'proton-shared/lib/themes/helpers';
-import { DEFAULT_THEME, CUSTOM_THEME, PROTON_THEMES } from 'proton-shared/lib/themes/themes.js';
+import { DEFAULT_THEME, CUSTOM_THEME, PROTON_THEMES } from 'proton-shared/lib/themes/themes';
 
-import CustomThemeModal from './CustomThemeModal.js';
+import CustomThemeModal from './CustomThemeModal';
 
 const availableThemes = [DEFAULT_THEME, PROTON_THEMES.DARK, CUSTOM_THEME];
 
