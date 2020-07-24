@@ -101,7 +101,7 @@ const FileBrowser = ({
         >
             <table className="pm-simple-table pm-simple-table--isHoverable pd-fb-table noborder border-collapse">
                 <caption className="sr-only">{caption}</caption>
-                <thead>
+                <thead onContextMenu={(e) => e.stopPropagation()}>
                     <TableRowSticky scrollAreaRef={scrollAreaRef}>
                         <TableCell type="header" scope="col">
                             <div
