@@ -15,7 +15,11 @@ import ItemRowLayout from './ItemRowLayout';
 import { Element } from '../../models/element';
 import { ELEMENT_TYPES } from '../../constants';
 import { getSenders, getRecipients as getConversationRecipients } from '../../helpers/conversation';
-import { getRecipientLabel, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../helpers/addresses';
+import {
+    recipientsToRecipientOrGroup,
+    getRecipientLabelDetailed,
+    getRecipientOrGroupLabelDetailed
+} from '../../helpers/addresses';
 import { isCustomLabel } from '../../helpers/labels';
 import { Message } from '../../models/message';
 
@@ -72,10 +76,10 @@ const Item = ({
     const showIcon = labelsWithIcons.includes(labelID) || isCustomLabel(labelID, labels);
     const senders = isConversation ? getSenders(element) : [getSender(element as Message)];
     const recipients = isConversation ? getConversationRecipients(element) : getMessageRecipients(element as Message);
-    const sendersLabels = senders.map((sender) => getRecipientLabel(sender, contacts));
+    const sendersLabels = senders.map((sender) => getRecipientLabelDetailed(sender, contacts));
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
     const recipientsLabels = recipientsOrGroup.map((recipientOrGroup) =>
-        getRecipientOrGroupLabel(recipientOrGroup, contacts)
+        getRecipientOrGroupLabelDetailed(recipientOrGroup, contacts)
     );
 
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;

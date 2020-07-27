@@ -4,7 +4,7 @@ import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Message } from '../models/message';
-import { getContactsOfGroup } from './contacts';
+import { getContactsOfGroup, getContactOfRecipient } from './contacts';
 import { Address, Key } from 'proton-shared/lib/interfaces';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { isMessage } from './elements';
@@ -109,9 +109,21 @@ export const contactToInput = (contact: Partial<ContactEmail> = {}): string =>
 export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: string) =>
     recipients.filter((recipient) => recipient.Group !== groupPath);
 
+export const getRecipientLabelDetailed = (recipient?: Recipient, allContacts?: ContactEmail[]) => {
+    const { Name, Address } = recipient || {};
+    const contact = getContactOfRecipient(allContacts, Address);
+    if (contact) {
+        return contact.Name;
+    }
+    if (Name) {
+        return Name;
+    }
+    return Address;
+};
+
 export const getRecipientLabel = (recipient?: Recipient, allContacts?: ContactEmail[]) => {
     const { Name, Address } = recipient || {};
-    const contact = (allContacts || []).find(({ Email }) => normalizeEmail(Email) === normalizeEmail(Address));
+    const contact = getContactOfRecipient(allContacts, Address);
     if (contact) {
         return contact.Name;
     }
@@ -120,7 +132,7 @@ export const getRecipientLabel = (recipient?: Recipient, allContacts?: ContactEm
         if (index === -1) {
             return Address;
         } else {
-            return Address?.substring(0, Address.indexOf('@'));
+            return Address?.substring(0, index);
         }
     }
     if (Name) {
@@ -138,6 +150,11 @@ export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contacts
 export const getRecipientOrGroupLabel = ({ recipient, group }: RecipientOrGroup, allContacts: ContactEmail[]) =>
     recipient
         ? getRecipientLabel(recipient, allContacts)
+        : getRecipientGroupLabel(group, getContactsOfGroup(allContacts, group?.group?.ID).length);
+
+export const getRecipientOrGroupLabelDetailed = ({ recipient, group }: RecipientOrGroup, allContacts: ContactEmail[]) =>
+    recipient
+        ? getRecipientLabelDetailed(recipient, allContacts)
         : getRecipientGroupLabel(group, getContactsOfGroup(allContacts, group?.group?.ID).length);
 
 export const recipientsToRecipientOrGroup = (recipients: Recipient[], groups: ContactGroup[]) =>

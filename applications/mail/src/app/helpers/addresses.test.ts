@@ -6,10 +6,6 @@ import { findSender, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } fr
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { Message } from '../models/message';
 
-jest.mock('./contacts', () => ({
-    getContactsOfGroup: jest.fn((arg: any[]) => arg.map(() => ({})))
-}));
-
 const recipient1: Recipient = { Address: 'address1' };
 const recipient2: Recipient = { Name: 'recipient2', Address: 'address2' };
 const recipient3: Recipient = { Name: 'recipient3', Address: 'address3', Group: 'Group1' };
@@ -109,7 +105,7 @@ describe('addresses', () => {
         it('should compute group size with contact list', () => {
             const result = getRecipientOrGroupLabel(
                 { group: { group: group1, recipients: [recipient3, recipient4] } },
-                range(0, 8).map(() => ({})) as ContactEmail[]
+                range(0, 8).map(() => ({ LabelIDs: [group1.ID] })) as ContactEmail[]
             );
             expect(result).toEqual('GroupName1 (2/8 Members)');
         });

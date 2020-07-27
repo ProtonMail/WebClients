@@ -19,7 +19,7 @@ import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
-import { getRecipientLabel, getRecipientGroupLabel } from '../../../helpers/addresses';
+import { getRecipientGroupLabel, getRecipientLabelDetailed } from '../../../helpers/addresses';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { getContactsOfGroup } from '../../../helpers/contacts';
 import { normalizeEmail } from '../../../helpers/addresses';
@@ -118,7 +118,7 @@ const HeaderRecipientItem = ({
     };
 
     const icon = globalIcon ? globalIcon : mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined;
-    const label = getRecipientLabel(recipient, contacts);
+    const label = getRecipientLabelDetailed(recipient, contacts);
     const initial = getInitial(label);
 
     return (

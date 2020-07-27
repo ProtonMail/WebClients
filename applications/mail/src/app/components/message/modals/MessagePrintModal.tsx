@@ -9,7 +9,7 @@ import HeaderRecipientsDetails from '../header/HeaderRecipientsDetails';
 import ItemDate from '../../list/ItemDate';
 import MessageFooter from '../MessageFooter';
 import { hasAttachments, getSender } from '../../../helpers/message/messages';
-import { getRecipientLabel } from '../../../helpers/addresses';
+import { getRecipientLabelDetailed } from '../../../helpers/addresses';
 import HeaderRecipientType from '../header/HeaderRecipientType';
 
 import './MessagePrint.scss';
@@ -51,7 +51,7 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
                 <div className="message-print-header pb1 mb1">
                     <h2 className="message-print-subject bold pb0-5 mb0-5">{message.data?.Subject}</h2>
                     <HeaderRecipientType label={c('Label').t`From:`}>
-                        {getRecipientLabel(sender, contacts)}{' '}
+                        {getRecipientLabelDetailed(sender, contacts)}{' '}
                         <span className="opacity-50">&lt;{sender?.Address}&gt;</span>
                     </HeaderRecipientType>
                     <HeaderRecipientsDetails
