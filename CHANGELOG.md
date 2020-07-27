@@ -1,3 +1,9 @@
+# [3.16.31] - 2020-07-27
+
+## Updates
+
+- User deletion improvements
+
 # [3.16.30] - 2020-07-14
 
 ## Updates
