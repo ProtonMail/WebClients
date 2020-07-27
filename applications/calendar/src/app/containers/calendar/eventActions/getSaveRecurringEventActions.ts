@@ -15,6 +15,7 @@ import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
 import updateAllRecurrence from '../recurrence/updateAllRecurrence';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
+import { withIncreasedSequence, withVeventSequence } from './sequence';
 
 interface SaveRecurringArguments {
     type: RECURRING_TYPES;
@@ -24,12 +25,13 @@ interface SaveRecurringArguments {
     newEditEventData: EventNewData;
     recurrence: CalendarEventRecurring;
     updateAllPossibilities: UpdateAllPossibilities;
+    hasModifiedRrule: boolean;
 }
 
 const getSaveRecurringEventActions = ({
     type,
     recurrences,
-    oldEditEventData: { eventData: oldEvent },
+    oldEditEventData: { eventData: oldEvent, veventComponent: oldVeventComponent },
     originalEditEventData: {
         eventData: originalEvent,
         calendarID: originalCalendarID,
@@ -45,16 +47,21 @@ const getSaveRecurringEventActions = ({
     },
     recurrence,
     updateAllPossibilities,
+    hasModifiedRrule,
 }: SaveRecurringArguments): SyncEventActionOperations[] => {
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
 
     if (!originalVeventComponent) {
         throw new Error('Original component missing');
     }
+    if (!oldVeventComponent) {
+        throw Error('Old component missing');
+    }
 
     if (type === RECURRING_TYPES.SINGLE) {
         if (isSingleEdit) {
-            const updateOperation = getUpdateSyncOperation(updateSingleRecurrence(newVeventComponent), oldEvent);
+            const newVeventWithSequence = withVeventSequence(newVeventComponent, oldVeventComponent, false);
+            const updateOperation = getUpdateSyncOperation(updateSingleRecurrence(newVeventWithSequence), oldEvent);
             return [
                 {
                     calendarID: originalCalendarID,
@@ -65,8 +72,9 @@ const getSaveRecurringEventActions = ({
             ];
         }
 
+        const newVeventWithSequence = withVeventSequence(newVeventComponent, oldVeventComponent, hasModifiedRrule);
         const createOperation = getCreateSyncOperation(
-            createSingleRecurrence(newVeventComponent, originalVeventComponent, recurrence.localStart)
+            createSingleRecurrence(newVeventWithSequence, originalVeventComponent, recurrence.localStart)
         );
 
         return [
@@ -80,6 +88,11 @@ const getSaveRecurringEventActions = ({
     }
 
     if (type === RECURRING_TYPES.FUTURE) {
+        const newVeventWithSequence = {
+            ...newVeventComponent,
+            sequence: { value: 0 },
+        };
+        const originalVeventWithSequence = withIncreasedSequence(originalVeventComponent);
         // Any single edits in the recurrence chain.
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
 
@@ -90,11 +103,11 @@ const getSaveRecurringEventActions = ({
         // So potentially instead of deleting, we could update all the events to be linked to the new UID but this is easier
         const deleteOperations = singleEditRecurrencesAfter.map(getDeleteSyncOperation);
         const updateOperation = getUpdateSyncOperation(
-            deleteFutureRecurrence(originalVeventComponent, recurrence.localStart, recurrence.occurrenceNumber),
+            deleteFutureRecurrence(originalVeventWithSequence, recurrence.localStart, recurrence.occurrenceNumber),
             originalEvent
         );
         const createOperation = getCreateSyncOperation(
-            createFutureRecurrence(newVeventComponent, originalVeventComponent, recurrence)
+            createFutureRecurrence(newVeventWithSequence, originalVeventWithSequence, recurrence)
         );
 
         return [
@@ -113,15 +126,18 @@ const getSaveRecurringEventActions = ({
 
         const deleteOperations = singleEditRecurrences.map(getDeleteSyncOperation);
 
-        const updateOperation = getUpdateSyncOperation(
-            updateAllRecurrence({
-                component: newVeventComponent,
-                originalComponent: originalVeventComponent,
-                mode: updateAllPossibilities,
-                isSingleEdit,
-            }),
-            originalEvent
+        const newRecurrentVevent = updateAllRecurrence({
+            component: newVeventComponent,
+            originalComponent: originalVeventComponent,
+            mode: updateAllPossibilities,
+            isSingleEdit,
+        });
+        const newRecurrentVeventWithSequence = withVeventSequence(
+            newRecurrentVevent,
+            originalVeventComponent,
+            hasModifiedRrule
         );
+        const updateOperation = getUpdateSyncOperation(newRecurrentVeventWithSequence, originalEvent);
 
         if (originalCalendarID !== newCalendarID) {
             const deleteOriginalOperation = getDeleteSyncOperation(originalEvent);

@@ -19,7 +19,7 @@ import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibili
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
 import getSaveSingleEventActions from './getSaveSingleEventActions';
 import getRecurringSaveType from './getRecurringSaveType';
-import { getSaveRecurringEventDataWithSequence, getSaveSingleEventDataWithSequence } from './sequence';
+import { withVeventSequence } from './sequence';
 
 interface Arguments {
     temporaryEvent: CalendarViewEventTemporaryEvent;
@@ -62,8 +62,16 @@ const getSaveEventActions = async ({
 
     // Creation
     if (!oldEventData) {
-        const saveSingleEventData = getSaveSingleEventDataWithSequence(newEditEventData);
-        const multiActions = getSaveSingleEventActions(saveSingleEventData);
+        const newVeventWithSequence = {
+            ...newEditEventData.veventComponent,
+            sequence: { value: 0 },
+        };
+        const multiActions = getSaveSingleEventActions({
+            newEditEventData: {
+                ...newEditEventData,
+                veventComponent: newVeventWithSequence,
+            },
+        });
         const successText = getSingleEventText(undefined, newEditEventData);
         return {
             actions: multiActions,
@@ -89,8 +97,14 @@ const getSaveEventActions = async ({
 
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
     if (!eventRecurrence && !oldEditEventData.recurrenceID) {
-        const saveSingleEventData = getSaveSingleEventDataWithSequence(newEditEventData, oldEditEventData);
-        const multiActions = getSaveSingleEventActions(saveSingleEventData);
+        const newVeventWithSequence = withVeventSequence(
+            newEditEventData.veventComponent,
+            oldEditEventData.mainVeventComponent
+        );
+        const multiActions = getSaveSingleEventActions({
+            newEditEventData: { ...newEditEventData, veventComponent: newVeventWithSequence },
+            oldEditEventData: { ...oldEditEventData },
+        });
         const successText = getSingleEventText(oldEditEventData, newEditEventData);
         return {
             actions: multiActions,
@@ -139,19 +153,15 @@ const getSaveEventActions = async ({
         recurrence: actualEventRecurrence,
         recurrences,
     });
-    const saveRecurringEventData = getSaveRecurringEventDataWithSequence({
-        newEditEventData,
-        oldEditEventData,
-        originalEditEventData,
-        hasModifiedRrule,
-        saveType,
-    });
     const multiActions = getSaveRecurringEventActions({
         type: saveType,
         recurrences,
         recurrence: actualEventRecurrence,
         updateAllPossibilities,
-        ...saveRecurringEventData,
+        newEditEventData,
+        oldEditEventData,
+        originalEditEventData,
+        hasModifiedRrule,
     });
     const successText = getRecurringEventUpdatedText(saveType);
     return {

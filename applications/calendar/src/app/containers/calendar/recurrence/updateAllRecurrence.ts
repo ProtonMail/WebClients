@@ -32,7 +32,7 @@ interface Arguments {
     mode: UpdateAllPossibilities;
     isSingleEdit: boolean;
 }
-const updateAllRecurrence = ({ component, originalComponent, mode }: Arguments) => {
+const updateAllRecurrence = ({ component, originalComponent, mode }: Arguments): VcalVeventComponent => {
     // Have to set the old UID (this won't be necessary until we merge chains)
     const veventWithOldUID = {
         ...component,
