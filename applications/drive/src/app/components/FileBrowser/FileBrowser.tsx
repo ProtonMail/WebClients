@@ -71,6 +71,10 @@ const FileBrowser = ({
     }, []);
 
     const handleContextMenu = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (isTrash) {
+            return;
+        }
+
         e.stopPropagation();
         e.preventDefault();
 

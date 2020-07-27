@@ -79,11 +79,11 @@ const ItemRow = ({
     };
 
     const handleContextMenu = (e: React.MouseEvent<HTMLTableRowElement>) => {
-        if (item.Disabled || item.Trashed) {
+        e.stopPropagation();
+
+        if (item.Trashed || item.Disabled) {
             return;
         }
-
-        e.stopPropagation();
         e.preventDefault();
 
         if (selectedItems.length && !isSelected) {
@@ -220,10 +220,9 @@ const ItemRow = ({
                 aria-disabled={item.Disabled}
                 className={classnames([
                     'no-outline',
-                    (onClick || secondaryActionActive) && 'cursor-pointer',
-                    (isSelected || dragMoveControls?.isActiveDropTarget) && 'bg-global-highlight',
+                    (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
+                    (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-global-highlight',
                     (dragging || item.Disabled) && 'opacity-50',
-                    item.Disabled && 'no-pointer-events no-pointer-events-children bg-global-highlight',
                 ])}
                 onKeyDown={unlessDisabled(handleKeyDown)}
                 onClick={unlessDisabled(handleRowClick)}

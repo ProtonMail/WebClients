@@ -86,7 +86,12 @@ const RowContextMenu = ({ item, anchorRef, isOpen, position, open, close, histor
     ]
         .filter((button) => !button.hidden)
         .map((button) => (
-            <DropdownMenuButton key={button.name} className="flex flex-nowrap alignleft" onClick={button.action}>
+            <DropdownMenuButton
+                key={button.name}
+                onContextMenu={(e) => e.stopPropagation()}
+                className="flex flex-nowrap alignleft"
+                onClick={button.action}
+            >
                 <Icon className="mt0-25 mr0-5" name={button.icon} />
                 {button.name}
             </DropdownMenuButton>
