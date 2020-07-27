@@ -1,6 +1,6 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { unique } from 'proton-shared/lib/helpers/array';
-import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/string';
+import { normalizeInternalEmail } from 'proton-shared/lib/helpers/string';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import {
     useGetAddresses,
@@ -13,7 +13,7 @@ import {
 import { useCallback } from 'react';
 import { readCalendarEvent, readSessionKeys } from 'proton-shared/lib/calendar/deserialize';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarEvent, CalendarEventData } from 'proton-shared/lib/interfaces/calendar';
 
 const useGetCalendarEventRaw = () => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
@@ -29,7 +29,7 @@ const useGetCalendarEventRaw = () => {
                 const publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]> = {};
                 const authors = unique(
                     [...Event.SharedEvents, ...Event.CalendarEvents, ...Event.PersonalEvent].map(({ Author }) =>
-                        normalizeEmail(Author)
+                        normalizeInternalEmail(Author)
                     )
                 );
                 const addresses = await getAddresses();
@@ -62,8 +62,23 @@ const useGetCalendarEventRaw = () => {
                 Event,
                 splitKeys(calendarKeys).privateKeys
             );
+            const withNormalizedAuthor = (x: CalendarEventData) => ({
+                ...x,
+                Author: normalizeInternalEmail(x.Author),
+            });
+            const withNormalizedAuthors = (x: CalendarEventData[]) => {
+                if (!x) {
+                    return [];
+                }
+                return x.map(withNormalizedAuthor);
+            };
             return readCalendarEvent({
-                event: Event,
+                event: {
+                    SharedEvents: withNormalizedAuthors(Event.SharedEvents),
+                    CalendarEvents: withNormalizedAuthors(Event.CalendarEvents),
+                    AttendeesEvents: withNormalizedAuthors(Event.AttendeesEvents),
+                    Attendees: Event.Attendees,
+                },
                 publicKeysMap,
                 sharedSessionKey,
                 calendarSessionKey,
