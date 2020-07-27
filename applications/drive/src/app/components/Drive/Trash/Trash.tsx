@@ -20,7 +20,7 @@ function Trash({ shareId }: Props) {
         selectItem,
         toggleSelectItem,
         toggleAllSelected,
-        selectRange,
+        toggleRange,
     } = fileBrowserControls;
 
     const handleScrollEnd = useCallback(() => {
@@ -47,7 +47,7 @@ function Trash({ shareId }: Props) {
             onToggleItemSelected={toggleSelectItem}
             clearSelections={clearSelections}
             onToggleAllSelected={toggleAllSelected}
-            onShiftClick={selectRange}
+            onShiftClick={toggleRange}
             selectItem={selectItem}
         />
     );
