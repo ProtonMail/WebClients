@@ -29,7 +29,7 @@ const ItemLocation = ({ message, mailSettings, shouldStack = false }: Props) => 
         <>
             {infos.map(({ icon, name, to }) => (
                 <span className="inline-flex flex-item-noshrink" key={to} title={name}>
-                    <Icon name={icon} />
+                    <Icon name={icon} alt={name} />
                 </span>
             ))}
         </>

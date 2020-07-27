@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 import { getDate } from '../../helpers/elements';
 import { formatSimpleDate, formatFullDate, formatDistanceToNow } from '../../helpers/date';
@@ -29,6 +29,11 @@ const ItemDate = ({ element, labelID, className, mode = 'simple' }: Props) => {
         return date.getTime() === 0 ? '' : formater(date);
     });
 
+    const fullDate = useMemo(() => {
+        const date = getDate(element, labelID);
+        return date.getTime() === 0 ? '' : FORMATERS.full(date);
+    }, [element, labelID]);
+
     useEffect(() => {
         const date = getDate(element, labelID);
 
@@ -44,9 +49,13 @@ const ItemDate = ({ element, labelID, className, mode = 'simple' }: Props) => {
             const intervalID = setInterval(update, REFRESH_DATE_INTERVAL);
             return () => clearInterval(intervalID);
         }
-    }, [element, mode]);
+    }, [element, mode, labelID]);
 
-    return <span className={className}>{formattedDate}</span>;
+    return (
+        <span className={className} title={fullDate}>
+            {formattedDate}
+        </span>
+    );
 };
 
 export default ItemDate;

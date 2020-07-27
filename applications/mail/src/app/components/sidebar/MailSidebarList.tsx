@@ -125,6 +125,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 toggle={displayFolders}
                 onToggle={() => toggleFolders(!displayFolders)}
                 text={c('Link').t`Folders`}
+                title={c('Link').t`Folders`}
                 right={
                     <SidebarListItemHeaderLink
                         to="/settings/labels"
@@ -140,6 +141,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 toggle={displayLabels}
                 onToggle={() => toggleLabels(!displayLabels)}
                 text={c('Link').t`Labels`}
+                title={c('Link').t`Labels`}
                 right={
                     <SidebarListItemHeaderLink
                         to="/settings/labels"

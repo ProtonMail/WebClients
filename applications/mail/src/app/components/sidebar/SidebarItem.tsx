@@ -103,11 +103,11 @@ const SidebarItem = ({
                 onClick={handleClick}
                 {...dragProps}
                 onDrop={handleDrop}
+                title={text}
             >
                 <SidebarListItemContent
                     left={icon ? <SidebarListItemContentIcon name={icon} color={color} size={iconSize} /> : undefined}
                     right={<LocationAside count={count} active={active} refreshing={refreshing} />}
-                    title={text}
                 >
                     {content}
                 </SidebarListItemContent>

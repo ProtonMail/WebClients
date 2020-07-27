@@ -23,6 +23,7 @@ interface Props {
     type: string;
     showIcon: boolean;
     senders: string;
+    addresses: string;
     unread: boolean;
     displayRecipients: boolean;
     loading: boolean;
@@ -36,6 +37,7 @@ const ItemColumnLayout = ({
     type,
     showIcon,
     senders,
+    addresses,
     unread,
     displayRecipients,
     loading
@@ -47,7 +49,7 @@ const ItemColumnLayout = ({
         <div className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender">
             <div className="flex flex-items-center item-firstline">
                 <div className="item-senders flex-item-fluid flex pr1">
-                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>
+                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])} title={addresses}>
                         {!loading && displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
                     </span>
                     <ItemAction element={element} className="ml0-5 mtauto mbauto" />
@@ -79,7 +81,9 @@ const ItemColumnLayout = ({
                             conversation={element}
                         />
                     )}
-                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}>{Subject}</span>
+                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])} title={Subject}>
+                        {Subject}
+                    </span>
                 </div>
                 <div className="item-icons ml0-5 flex-item-noshrink">
                     <ItemLabels max={4} labels={labels} element={element} />

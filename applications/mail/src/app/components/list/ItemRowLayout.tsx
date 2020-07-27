@@ -23,6 +23,7 @@ interface Props {
     type: string;
     showIcon: boolean;
     senders: string;
+    addresses: string;
     unread: boolean;
     displayRecipients: boolean;
     loading: boolean;
@@ -36,6 +37,7 @@ const ItemRowLayout = ({
     type,
     showIcon,
     senders,
+    addresses,
     unread,
     displayRecipients,
     loading
@@ -50,7 +52,7 @@ const ItemRowLayout = ({
                 <ItemStar element={element} />
             </div>
             <div className={classnames(['item-senders w20 flex mauto pr1', unread && 'bold'])}>
-                <span className="mw100 ellipsis">
+                <span className="mw100 ellipsis" title={addresses}>
                     {!loading && displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
                 </span>
             </div>
@@ -64,7 +66,9 @@ const ItemRowLayout = ({
                 {isConversation && (
                     <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />
                 )}
-                <span className={classnames(['inbl mw100 ellipsis pr1', unread && 'bold'])}>{Subject}</span>
+                <span className={classnames(['inbl mw100 ellipsis pr1', unread && 'bold'])} title={Subject}>
+                    {Subject}
+                </span>
                 <ItemLabels
                     max={4}
                     labels={labels}

@@ -77,10 +77,16 @@ const Item = ({
     const senders = isConversation ? getSenders(element) : [getSender(element as Message)];
     const recipients = isConversation ? getConversationRecipients(element) : getMessageRecipients(element as Message);
     const sendersLabels = senders.map((sender) => getRecipientLabelDetailed(sender, contacts));
+    const sendersAddresses = senders.map((sender) => sender?.Address);
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
     const recipientsLabels = recipientsOrGroup.map((recipientOrGroup) =>
         getRecipientOrGroupLabelDetailed(recipientOrGroup, contacts)
     );
+    const recipientsAddresses = recipientsOrGroup
+        .map(({ recipient, group }) =>
+            recipient ? recipient.Address : group?.recipients.map((recipient) => recipient.Address)
+        )
+        .flat();
 
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element, labelID);
@@ -137,6 +143,7 @@ const Item = ({
                 type={type}
                 showIcon={showIcon}
                 senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
+                addresses={(displayRecipients ? recipientsAddresses : sendersAddresses).join(', ')}
                 unread={unread}
                 displayRecipients={displayRecipients}
                 loading={loading}
