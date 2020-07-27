@@ -478,7 +478,7 @@ $list-min-height-em: 16 !default;
 }
 
 $list-margins: m, mt, mr, mb, ml !default;
-$list-margins-values: 0, 0.1, 0.25, 0.4, 0.5, 0.6, 0.75, 1, 1.5, 2 !default; // specify 2.5 if needed
+$list-margins-values: 0, 0.1, 0.25, 0.4, 0.5, 0.6, 0.75, 1, 1.5, 2, 4 !default; // specify 2.5 if needed
 
 @include margin-generator($list-margins, $list-margins-values);
 
