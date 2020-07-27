@@ -162,7 +162,9 @@ $mobilePopupMargin: 3rem;
       white-space: normal;
     }
 
-    max-height: 200px;
+	max-height: 10rem;
+	left: 0;
+	right: 0;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 
