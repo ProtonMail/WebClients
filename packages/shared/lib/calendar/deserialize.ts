@@ -30,7 +30,7 @@ export const readSessionKeys = (
  * Read the parts of a calendar event into an internal vcal component.
  */
 interface ReadCalendarEventArguments {
-    event: CalendarEvent;
+    event: Pick<CalendarEvent, 'SharedEvents' | 'CalendarEvents' | 'AttendeesEvents' | 'Attendees'>;
     publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]>;
     sharedSessionKey?: SessionKey;
     calendarSessionKey?: SessionKey;
