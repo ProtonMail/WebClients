@@ -1,4 +1,5 @@
 import { CLIENT_TYPE, ACCOUNT_DELETION_REASONS } from '../../constants';
+import { wait } from '../../../helpers/promiseHelper';
 
 /* @ngInject */
 function deleteAccountModal(
@@ -11,7 +12,9 @@ function deleteAccountModal(
     gettextCatalog,
     userSettingsModel,
     userType,
-    translator
+    translator,
+    eventManager,
+    notification
 ) {
     const I18N = translator(() => ({
         selectReason: gettextCatalog.getString('Select a reason', null, 'Reason to delete account'),
@@ -33,16 +36,6 @@ function deleteAccountModal(
         ),
         notListed: gettextCatalog.getString("My reason isn't listed", null, 'Reason to delete account')
     }));
-
-    async function report(params, isAdmin) {
-        if (isAdmin) {
-            return Report.bug(params);
-        }
-    }
-
-    function deleteUser(params) {
-        return User.delete(params).then(({ data = {} }) => data);
-    }
 
     return pmModal({
         controllerAs: 'ctrl',
@@ -110,17 +103,38 @@ function deleteAccountModal(
                     Description: this.feedback
                 };
 
-                const promise = deleteUser({
-                    Password: this.password,
-                    TwoFactorCode: this.twoFactorCode,
-                    Reason: this.reason.value,
-                    Email: this.email,
-                    Feedback: this.feedback
-                })
-                    .then(() => report(params, this.isAdmin))
-                    .then(() => $state.go('login'));
+                const handleDeleteUser = async () => {
+                    try {
+                        eventManager.stop();
 
-                networkActivityTracker.track(promise);
+                        // First ensure the password and totp is correct
+                        await User.password({ Password: this.password, TwoFactorCode: this.twoFactorCode });
+
+                        if (this.isAdmin) {
+                            await Report.bug(params);
+                        }
+
+                        await User.delete({
+                            Reason: this.reason.value,
+                            Email: this.email,
+                            Feedback: this.feedback
+                        });
+
+                        notification.success(gettextCatalog.getString('Account deleted. Logging out...', null, 'Info'));
+
+                        authentication.logout(false, false);
+
+                        // Add an artificial delay to show the notification.
+                        await wait(2500);
+
+                        $state.go('login');
+                    } catch (e) {
+                        eventManager.start();
+                        throw e;
+                    }
+                };
+
+                networkActivityTracker.track(handleDeleteUser());
             };
         }
     });
