@@ -29,6 +29,7 @@ interface Props {
     shareId: string;
     selectedItems: FileBrowserItem[];
     onToggleSelect: (item: string) => void;
+    selectItem: (item: string) => void;
     onShiftClick: (item: string) => void;
     onClick?: (item: FileBrowserItem) => void;
     showLocation?: boolean;
@@ -44,6 +45,7 @@ const ItemRow = ({
     onClick,
     onShiftClick,
     showLocation,
+    selectItem,
     secondaryActionActive,
     dragMoveControls,
 }: Props) => {
@@ -176,7 +178,8 @@ const ItemRow = ({
         ),
     ].filter(Boolean);
 
-    const dragMoveItems = selectedItems.some(({ LinkID }) => LinkID === item.LinkID) ? selectedItems : [item];
+    const isDraggingSelected = selectedItems.some(({ LinkID }) => LinkID === item.LinkID);
+    const dragMoveItems = isDraggingSelected ? selectedItems : [item];
     const movingCount = dragMoveItems.length;
 
     const texts = {
@@ -193,6 +196,13 @@ const ItemRow = ({
         dragMoveItems.map((item) => item.Type),
         texts
     );
+
+    const handleRowDragStart = (e: React.DragEvent<HTMLTableRowElement>) => {
+        if (!isDraggingSelected) {
+            selectItem(item.LinkID);
+        }
+        handleDragStart(e);
+    };
 
     return (
         <>
@@ -222,7 +232,7 @@ const ItemRow = ({
                 onTouchMove={unlessDisabled(handleTouchCancel)}
                 onTouchCancel={unlessDisabled(handleTouchCancel)}
                 onTouchEnd={unlessDisabled(handleTouchEnd)}
-                onDragStart={unlessDisabled(handleDragStart)}
+                onDragStart={unlessDisabled(handleRowDragStart)}
                 onDragOver={unlessDisabled(dragMoveControls?.handleDragOver)}
                 onDrop={unlessDisabled(dragMoveControls?.handleDrop)}
                 onDragLeave={unlessDisabled(dragMoveControls?.handleDragLeave)}

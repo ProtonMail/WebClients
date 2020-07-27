@@ -19,6 +19,7 @@ interface Props {
     onToggleItemSelected: (item: string) => void;
     onItemClick?: (item: FileBrowserItem) => void;
     onShiftClick: (item: string) => void;
+    selectItem: (item: string) => void;
     clearSelections: () => void;
     onToggleAllSelected: () => void;
 }
@@ -34,6 +35,7 @@ const FileBrowser = ({
     onToggleItemSelected,
     onToggleAllSelected,
     onItemClick,
+    selectItem,
     clearSelections,
     onShiftClick,
 }: Props) => {
@@ -148,6 +150,7 @@ const FileBrowser = ({
                             onShiftClick={onShiftClick}
                             onClick={onItemClick}
                             showLocation={isTrash}
+                            selectItem={selectItem}
                             secondaryActionActive={secondaryActionActive}
                             dragMoveControls={isTrash ? undefined : getDragMoveControls(item)}
                         />

@@ -27,7 +27,14 @@ function Drive({ activeFolder, openLink }: Props) {
     const { preventLeave } = usePreventLeave();
 
     const { linkId, shareId } = activeFolder;
-    const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, selectRange } = fileBrowserControls;
+    const {
+        clearSelections,
+        selectedItems,
+        selectItem,
+        toggleSelectItem,
+        toggleAllSelected,
+        selectRange,
+    } = fileBrowserControls;
 
     const folderName = cache.get.linkMeta(shareId, linkId)?.Name;
 
@@ -78,6 +85,7 @@ function Drive({ activeFolder, openLink }: Props) {
             clearSelections={clearSelections}
             onToggleAllSelected={toggleAllSelected}
             onShiftClick={selectRange}
+            selectItem={selectItem}
         />
     );
 }
