@@ -150,7 +150,10 @@ const ItemRow = ({
             />
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
-            <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} />
+            <FileIcon
+                mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
+                alt={`${isFolder ? c('Label').t`Folder` : `${c('Label').t`File`} - ${item.MIMEType}`} - ${item.Name}`}
+            />
             <span title={item.Name} className="ellipsis">
                 <span className="pre">{item.Name}</span>
             </span>
