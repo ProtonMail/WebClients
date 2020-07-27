@@ -34,6 +34,7 @@ function useDriveDragMove(shareId: string, selectedItems: FileBrowserItem[], cle
             const parentFolderId = activeFolder?.linkId;
 
             clearSelections();
+            setActiveDropTarget(undefined);
 
             const moveResult = await moveLinks(shareId, item.LinkID, toMoveIds);
 

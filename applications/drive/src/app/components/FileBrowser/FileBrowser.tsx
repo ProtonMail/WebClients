@@ -133,7 +133,7 @@ const FileBrowser = ({
                             </TableCell>
                         )}
                         <TableCell type="header" scope="col" className={isDesktop ? 'w10' : 'w15'}>
-                            {c('TableHeader').t`Size`}{' '}
+                            {c('TableHeader').t`Size`}
                         </TableCell>
                     </TableRowSticky>
                 </thead>
