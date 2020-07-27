@@ -64,6 +64,7 @@ const ItemRow = ({
     const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.Disabled ? undefined : fn);
 
     const isFolder = item.Type === LinkType.FOLDER;
+
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
 
     const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
@@ -142,12 +143,14 @@ const ItemRow = ({
                 disabled={item.Disabled}
                 className="increase-surface-click"
                 checked={isSelected}
-                onChange={(e) => {
+                onClick={(e) => {
                     const el = document.activeElement ?? e.currentTarget;
                     if (isSelected && 'blur' in el) {
                         (el as any).blur();
                     }
-                    onToggleSelect(item.LinkID);
+                    if (!e.shiftKey) {
+                        onToggleSelect(item.LinkID);
+                    }
                 }}
             />
         </div>,

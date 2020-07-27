@@ -1,7 +1,7 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
 import { useSortedList } from 'react-components';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import useFileBrowser from '../../FileBrowser/useFileBrowser';
+import useSelection from '../../../hooks/util/useSelection';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import useTrash from '../../../hooks/drive/useTrash';
 import { mapLinksToChildren } from '../helpers';
@@ -10,7 +10,9 @@ import { FileBrowserItem } from '../../FileBrowser/interfaces';
 interface TrashContentProviderState {
     contents: FileBrowserItem[];
     loadNextPage: () => void;
-    fileBrowserControls: ReturnType<typeof useFileBrowser>;
+    fileBrowserControls: Omit<ReturnType<typeof useSelection>, 'selectedItems'> & {
+        selectedItems: FileBrowserItem[];
+    };
     loading: boolean;
     initialized: boolean;
     complete?: boolean;
@@ -39,7 +41,17 @@ const TrashContentProvider = ({ children, shareId }: { children: React.ReactNode
             direction: SORT_DIRECTION.ASC,
         }
     );
-    const fileBrowserControls = useFileBrowser(sortedList);
+    const selectionControls = useSelection(
+        sortedList.map((data) => ({
+            id: data.LinkID,
+            disabled: data.Disabled,
+            data,
+        }))
+    );
+    const fileBrowserControls = {
+        ...selectionControls,
+        selectedItems: selectionControls.selectedItems.map(({ data }) => data),
+    };
     const abortSignal = useRef<AbortSignal>();
     const contentLoading = useRef(false);
 
