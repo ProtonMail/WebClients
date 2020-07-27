@@ -284,7 +284,9 @@ subsection: buttons
 <div class="flex flex-nowrap mb2 onmobile-flex-column">
     <span class="p1 w200p  {% if alias == 'whiteborder'  %} bg-primary{% endif %}">
         <button class="{% if alias == 'link' or alias == 'error' or alias == 'warning' %}pm-button{% endif %} pm-button--{{ alias }} {% if alias == 'whiteborder'  %} pm-button--primary{% endif %}">Button {{ alias }}</button>
-        <!-- <button class="pm-button pm-button--{{ alias }}">Button {{ alias }}</button> -->
+		{% if alias == 'primaryborder'  %}
+		<br /><br /><button class="pm-button pm-button--{{ alias }}">Button {{ alias }}</button>
+		{% endif %}
     </span>
     <span class="p1 flex-self-vcenter">
         <code>.pm-button--{{ alias }}</code>
@@ -296,7 +298,7 @@ subsection: buttons
         </button>
     </span>
 </div>
-{% if alias == 'link' or alias == 'primary' or alias == 'primaryborder'  %}
+{% if alias == 'link' or alias == 'primary'  %}
 <div class="flex flex-nowrap mb2 onmobile-flex-column">
     <span class="p1 w200p">
         <button class="pm-button pm-button--{{ alias }}" disabled>Button {{ alias }} (disabled)</button>
