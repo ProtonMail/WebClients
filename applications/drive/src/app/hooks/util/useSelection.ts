@@ -27,7 +27,11 @@ const useSelection = <T>(items: Item<T>[]) => {
             const previousExcludingSelected = selectedItemIds.filter((itemId) => itemId !== id);
             const isPreviouslySelected = previousExcludingSelected.length !== selectedItemIds.length;
 
-            setMultiSelectStartId(id);
+            if (!isPreviouslySelected || previousExcludingSelected.length) {
+                setMultiSelectStartId(id);
+            } else {
+                setMultiSelectStartId(undefined);
+            }
 
             return isPreviouslySelected ? previousExcludingSelected : [...selectedItemIds, id];
         });
