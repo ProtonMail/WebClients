@@ -39,6 +39,7 @@ const SelectMonthlyType = ({ id, value, date, onChange }: Props) => {
 
     return (
         <Select
+            className="w-unset ml0-5 flex-item-fluid"
             id={id}
             value={value}
             options={options}

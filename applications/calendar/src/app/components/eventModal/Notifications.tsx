@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkButton, ErrorZone } from 'react-components';
+import { LinkButton, ErrorZone, Icon } from 'react-components';
 import { c } from 'ttag';
 
 import NotificationInput from './inputs/NotificationInput';
@@ -30,9 +30,8 @@ const Notifications = ({
     return (
         <div>
             {notifications.map((notification, index) => {
-                const key = `${index}`;
                 return (
-                    <div key={key} className="mb1 flex flex-nowrap">
+                    <div className="mb1 flex flex-nowrap">
                         <NotificationInput
                             className="mr1"
                             hasWhen={hasWhen}
@@ -43,16 +42,19 @@ const Notifications = ({
                         />
                         <LinkButton
                             data-test-id="delete-notification"
-                            className="flex-item-noshrink ml0-5"
+                            className="flex-item-noshrink ml0-5 pm-button--currentColor"
                             title={c('Action').t`Remove notification`}
                             onClick={() => onChange(removeItem(notifications, index))}
-                        >{c('Action').t`Delete`}</LinkButton>
+                        >
+                            <Icon name="close" />
+                        </LinkButton>
                     </div>
                 );
             })}
             {canAdd && (
                 <div>
                     <LinkButton
+                        className="capitalize add-notification"
                         data-test-id="add-notification"
                         onClick={() => onChange(addItem(notifications, { ...defaultNotification }))}
                     >{c('Action').t`Add notification`}</LinkButton>

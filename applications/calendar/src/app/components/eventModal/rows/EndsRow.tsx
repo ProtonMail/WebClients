@@ -1,6 +1,6 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Row, Radio, DateInput, IntegerInput } from 'react-components';
+import { Radio, DateInput, IntegerInput } from 'react-components';
 import { isValid } from 'date-fns';
 
 import { END_TYPE, FREQUENCY_COUNT_MAX, MAXIMUM_DATE } from '../../../constants';
@@ -21,18 +21,8 @@ interface Props {
     errors: EventModelErrors;
     isSubmitted: boolean;
     onChange: (value: FrequencyModel) => void;
-    collapseOnMobile?: boolean;
 }
-const EndsRow = ({
-    frequencyModel,
-    start,
-    displayWeekNumbers,
-    weekStartsOn,
-    errors,
-    isSubmitted,
-    onChange,
-    collapseOnMobile,
-}: Props) => {
+const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, errors, isSubmitted, onChange }: Props) => {
     const handleChangeEndType = (type: END_TYPE) => {
         onChange({ ...frequencyModel, ends: { ...frequencyModel.ends, type } });
     };
@@ -52,11 +42,10 @@ const EndsRow = ({
     const safeCountPlural = frequencyModel.ends.count || 1; // Can get undefined through the input
 
     return (
-        <>
-            <Row collapseOnMobile={collapseOnMobile}>
-                <label htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
-            </Row>
-            <div className="calendar-recurringFrequencyEnd-grid">
+        <div className="flex flex-column flex-items-start w100">
+            <label htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
+
+            <div className="calendar-recurringFrequencyEnd-grid mt0-5">
                 <div className="flex flex-nowrap flex-item-fluid calendar-recurringFrequencyEnd-grid-fullLine">
                     <span className="flex flex-item-noshrink">
                         <Radio
@@ -126,7 +115,7 @@ const EndsRow = ({
                     {c('Custom frequency option').ngettext(msgid`Occurrence`, `Occurrences`, safeCountPlural)}
                 </span>
             </div>
-        </>
+        </div>
     );
 };
 

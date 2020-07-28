@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
-import { Row } from 'react-components';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { dateLocale } from 'proton-shared/lib/i18n';
 
@@ -37,32 +36,28 @@ const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange }: Props) =
     };
 
     return (
-        <>
-            <Row>
-                <div className="mr1 flex flex-items-center">
-                    <label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat on`}</label>
-                </div>
-                <div className="flex flex-nowrap flex-item-fluid">
-                    {DAYS.map((dayIndex) => {
-                        const day = (dayIndex + weekStartsOn) % 7;
-                        const dayLong = weekdaysLong[day];
-                        const dayAbbreviation = weekdaysAbbreviations[day];
-                        const checked = frequencyModel.weekly.days.includes(day);
-                        return (
-                            <span key={day.toString()}>
-                                <DayCheckbox
-                                    id={dayLong}
-                                    checked={checked}
-                                    dayAbbreviation={dayAbbreviation}
-                                    dayLong={dayLong}
-                                    onChange={() => handleToggleDay(day)}
-                                />
-                            </span>
-                        );
-                    })}
-                </div>
-            </Row>
-        </>
+        <div className="flex flex-column flex-items-start">
+            <label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat on`}</label>
+            <div className="flex flex-nowrap mt0-5">
+                {DAYS.map((dayIndex) => {
+                    const day = (dayIndex + weekStartsOn) % 7;
+                    const dayLong = weekdaysLong[day];
+                    const dayAbbreviation = weekdaysAbbreviations[day];
+                    const checked = frequencyModel.weekly.days.includes(day);
+                    return (
+                        <span key={day.toString()}>
+                            <DayCheckbox
+                                id={dayLong}
+                                checked={checked}
+                                dayAbbreviation={dayAbbreviation}
+                                dayLong={dayLong}
+                                onChange={() => handleToggleDay(day)}
+                            />
+                        </span>
+                    );
+                })}
+            </div>
+        </div>
     );
 };
 

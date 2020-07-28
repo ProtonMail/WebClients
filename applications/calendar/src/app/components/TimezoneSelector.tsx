@@ -25,7 +25,7 @@ const TimezoneSelector = ({
     ...rest
 }: Props) => {
     const timezoneOptions = useMemo(() => {
-        const options = getTimeZoneOptions(date || new Date()) as any[];
+        const options = getTimeZoneOptions(date || new Date());
         return options.map(({ text, value, key }) => (
             <option key={key} value={value}>
                 {text}

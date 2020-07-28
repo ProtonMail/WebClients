@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
-import { Row, Select, IntegerInput } from 'react-components';
+import { Select, IntegerInput, classnames } from 'react-components';
 
 import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from '../../../constants';
 
@@ -21,6 +21,7 @@ const getMaxFrequencyInterval = (frequency: FREQUENCY) => {
 
 const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted }: Props) => {
     const isMonthly = frequencyModel.frequency === FREQUENCY.MONTHLY;
+    const isWeekly = frequencyModel.frequency === FREQUENCY.WEEKLY;
     const safeIntervalPlural = frequencyModel.interval || 1; // Can get undefined through the input
     const intervalOptions = [
         { text: c('Option').ngettext(msgid`Day`, `Days`, safeIntervalPlural), value: FREQUENCY.DAILY },
@@ -42,57 +43,48 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted }
     };
 
     return (
-        <>
-            <Row>
-                <div className="mr1 flex flex-items-center">
-                    <label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat every`}</label>
+        <div className={classnames(['flex flex-column flex-items-start mb0-5 mr1', isWeekly && 'w45'])}>
+            <label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat every`}</label>
+            <div className="flex flex-nowrap mt0-5">
+                <div className="flex flex-item-fluid">
+                    <IntegerInput
+                        data-test-id="event-modal/custom-frequency/interval:input"
+                        min={1}
+                        value={frequencyModel.interval}
+                        onChange={handleChangeInterval}
+                        onBlur={() => {
+                            if (!frequencyModel.interval) {
+                                handleChangeInterval(1);
+                            }
+                        }}
+                        aria-invalid={isSubmitted && !!errors.interval}
+                        isSubmitted={isSubmitted}
+                    />
                 </div>
-                <div className="flex flex-wrap flex-item-fluid onmobile-flex-column onpopover-flex-column">
-                    <div className="flex flex-nowrap onmobile-w100 flex-item-fluid">
-                        <div className="w6e">
-                            <IntegerInput
-                                data-test-id="event-modal/custom-frequency/interval:input"
-                                min={1}
-                                value={frequencyModel.interval}
-                                onChange={handleChangeInterval}
-                                onBlur={() => {
-                                    if (!frequencyModel.interval) {
-                                        handleChangeInterval(1);
-                                    }
-                                }}
-                                aria-invalid={isSubmitted && !!errors.interval}
-                                isSubmitted={isSubmitted}
-                            />
-                        </div>
-                        <div className="mr1" />
-                        <div className="flex-item-fluid">
-                            <Select
-                                id="event-custom-frequency-select"
-                                data-test-id="event-modal/custom-frequency/interval:frequency"
-                                value={frequencyModel.frequency}
-                                options={intervalOptions}
-                                onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
-                                    handleChangeFrequency(target.value as FREQUENCY)
-                                }
-                            />
-                        </div>
+                <div className="flex flex-item-grow-2">
+                    <Select
+                        className="ml0-5"
+                        id="event-custom-frequency-select"
+                        data-test-id="event-modal/custom-frequency/interval:frequency"
+                        value={frequencyModel.frequency}
+                        options={intervalOptions}
+                        onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
+                            handleChangeFrequency(target.value as FREQUENCY)
+                        }
+                    />
+                </div>
+                {isMonthly && (
+                    <div className="flex">
+                        <SelectMonthlyType
+                            id="event-custom-monthly-select"
+                            value={frequencyModel.monthly.type}
+                            date={start.date}
+                            onChange={(type) => onChange({ ...frequencyModel, monthly: { type } })}
+                        />
                     </div>
-                    {isMonthly && (
-                        <div className="flex flex-item-fluid onmobile-w100 mb0-5">
-                            <div className="mr1 nomobile noInEventPopover" />
-                            <div className="flex flex-item-fluid">
-                                <SelectMonthlyType
-                                    id="event-custom-monthly-select"
-                                    value={frequencyModel.monthly.type}
-                                    date={start.date}
-                                    onChange={(type) => onChange({ ...frequencyModel, monthly: { type } })}
-                                />
-                            </div>
-                        </div>
-                    )}
-                </div>
-            </Row>
-        </>
+                )}
+            </div>
+        </div>
     );
 };
 

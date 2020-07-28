@@ -20,6 +20,7 @@ interface Props {
     onDelete: () => Promise<void>;
     onClose: () => void;
     setModel: (value: EventModel) => void;
+    tzid: string;
 }
 
 const CreateEventModal = ({
@@ -32,6 +33,7 @@ const CreateEventModal = ({
     onSave,
     onDelete,
     onClose,
+    tzid,
     ...rest
 }: Props) => {
     const errors = validateEventModel(model);
@@ -57,7 +59,7 @@ const CreateEventModal = ({
             disabled={loadingAction}
             type="submit"
         >
-            {c('Action').t`Save`}
+            {isCreateEvent ? c('Action').t`Create event` : c('Action').t`Save`}
         </PrimaryButton>
     );
 
@@ -75,33 +77,9 @@ const CreateEventModal = ({
         </div>
     );
 
-    const form = (() => {
-        /*
-        if (model.type === 'alarm') {
-            return (<AlarmForm model={model} setModel={setModel}/>);
-        }
-        if (model.type === 'task') {
-            return (<TaskForm model={model} setModel={setModel}/>);
-        }
-        */
-        return (
-            <EventForm
-                displayWeekNumbers={displayWeekNumbers}
-                weekStartsOn={weekStartsOn}
-                isSubmitted={isSubmitted}
-                errors={errors}
-                model={model}
-                setModel={setModel}
-            />
-        );
-    })();
-
-    const title = isCreateEvent ? c('Title').t`Create new event` : c('Title').t`Edit event`;
-
     return (
         <FormModal
-            className="pm-modal--shorterLabels"
-            title={title}
+            className="eventpopover--simple"
             loading={loadingAction}
             onSubmit={loadingAction ? noop : handleSubmit}
             submit={submit}
@@ -109,7 +87,15 @@ const CreateEventModal = ({
             onClose={onClose}
             {...rest}
         >
-            {form}
+            <EventForm
+                displayWeekNumbers={displayWeekNumbers}
+                weekStartsOn={weekStartsOn}
+                isSubmitted={isSubmitted}
+                errors={errors}
+                model={model}
+                setModel={setModel}
+                tzid={tzid}
+            />
         </FormModal>
     );
 };

@@ -15,7 +15,6 @@ interface Props {
     errors: object;
     isSubmitted: boolean;
     onChange: (value: FrequencyModel) => void;
-    collapseOnMobile?: boolean;
 }
 const CustomFrequencySelector = ({
     frequencyModel,
@@ -25,10 +24,9 @@ const CustomFrequencySelector = ({
     errors,
     onChange,
     isSubmitted,
-    collapseOnMobile,
 }: Props) => {
     return (
-        <div className="w100">
+        <div className="frequency-selector w100 flex flex-wrap">
             <RepeatEveryRow
                 frequencyModel={frequencyModel}
                 start={start}
@@ -52,7 +50,6 @@ const CustomFrequencySelector = ({
                 errors={errors}
                 isSubmitted={isSubmitted}
                 onChange={onChange}
-                collapseOnMobile={collapseOnMobile}
             />
         </div>
     );

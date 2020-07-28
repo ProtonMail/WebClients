@@ -87,7 +87,7 @@ const CalendarSelect = ({ withIcon = false, model, setModel, ...rest }: Props) =
 
     return (
         <>
-            {!withIcon ? <CalendarIcon className="mr1" color={color} /> : null}
+            {withIcon !== false && <CalendarIcon className="mr1" color={color} />}
             <Select
                 options={options}
                 value={id}

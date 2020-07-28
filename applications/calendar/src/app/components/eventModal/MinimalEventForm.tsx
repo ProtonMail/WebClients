@@ -17,6 +17,7 @@ import CalendarSelect from './inputs/CalendarSelect';
 import { EnDash } from '../EnDash';
 import MinimalErrowRow from './MinimalErrorRow';
 import MinimalEventRow from './MinimalEventRow';
+import IconRow from './IconRow';
 
 interface Props {
     isSubmitted: boolean;
@@ -124,18 +125,10 @@ const MinimalEventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, error
                     onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
                 />
             </MinimalEventRow>
-            {model.calendars.length > 1 ? (
-                <MinimalEventRow
-                    label={
-                        <>
-                            <Icon name="calendar" color={model.calendar.color} />
-                            <span className="sr-only">{c('Label').t`Calendar`}</span>
-                        </>
-                    }
-                    labelFor="event-calendar-select"
-                >
-                    <CalendarSelect id="event-calendar-select" withIcon model={model} setModel={setModel} />
-                </MinimalEventRow>
+            {model.calendars.length > 0 ? (
+                <IconRow icon="calendar" title={c('Label').t`Calendar`} className="flex-item-fluid relative">
+                    <CalendarSelect {...{ model, setModel }} />
+                </IconRow>
             ) : null}
             <MinimalEventRow
                 label={
