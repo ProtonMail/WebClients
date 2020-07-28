@@ -7,6 +7,7 @@ import { MessageExtended, PartialMessageExtended } from '../models/message';
 import { MESSAGE_ACTIONS } from '../constants';
 import { useDraft } from './useDraft';
 import { isDirtyAddress } from '../helpers/addresses';
+import { useMessageCache, getLocalID } from '../containers/MessageProvider';
 
 export interface ComposeExisting {
     existingDraft: MessageExtended;
@@ -45,6 +46,7 @@ export const useCompose = (
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const createDraft = useDraft();
+    const cache = useMessageCache();
 
     return useHandler(async (composeArgs: ComposeArgs) => {
         const activeAddresses = addresses.filter((address) => !isDirtyAddress(address));
@@ -98,15 +100,16 @@ export const useCompose = (
 
         if (composeExisting) {
             const { existingDraft } = composeExisting;
+            const localID = getLocalID(cache, existingDraft.localID);
 
-            const existingMessageID = openComposers.find((id) => id === existingDraft.localID);
+            const existingMessageID = openComposers.find((id) => id === localID);
             if (existingMessageID) {
                 focusComposer(existingMessageID);
                 return;
             }
 
-            openComposer(existingDraft.localID);
-            focusComposer(existingDraft.localID);
+            openComposer(localID);
+            focusComposer(localID);
             return;
         }
 
