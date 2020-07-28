@@ -88,11 +88,8 @@
 .composer-meta .composer-addresses-fakefield {
     min-height: 3.5rem;
     max-height: 2.5em;
-    padding-right: 4.5em;
+    padding-right: 5em;
 }
-// .composer-addresses-fakefield-inner {
-//     max-width: calc(100% - 5em);
-// }
 
 .composer-addresses-container-line:not(:first-child) {
     padding-right: 3rem;
@@ -109,6 +106,10 @@
 
     &.pm-field {
         padding: 0.25em 0.5em;
+    }
+
+    &.composer-addresses-container-closed {
+        padding-right: 5em;
     }
 
     &::after {

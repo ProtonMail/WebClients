@@ -78,6 +78,7 @@ const AddressesEditor = ({
                     inputFocusRef={inputFocusRef}
                     placeholder={c('Placeholder').t`Email address`}
                     data-test-id="composer:to"
+                    expanded={expanded}
                 />
                 {!expanded && (
                     <LinkButton

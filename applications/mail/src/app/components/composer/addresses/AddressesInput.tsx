@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, ChangeEvent, MutableRefObject, useRef, MouseEvent } from 'react';
-import { Input } from 'react-components';
+import { Input, classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { ContactGroup, ContactEmail, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
@@ -27,6 +27,7 @@ interface Props {
     onChange: (value: Partial<Recipient>[]) => void;
     inputFocusRef?: MutableRefObject<() => void>;
     placeholder?: string;
+    expanded?: boolean;
 }
 
 const AddressesInput = ({
@@ -38,6 +39,7 @@ const AddressesInput = ({
     onChange,
     inputFocusRef,
     placeholder,
+    expanded = false,
     ...rest
 }: Props) => {
     const [inputModel, setInputModel] = useState('');
@@ -155,7 +157,10 @@ const AddressesInput = ({
             currentValue={recipients}
         >
             <div
-                className="composer-addresses-container pm-field flex-item-fluid bordered-container"
+                className={classnames([
+                    'composer-addresses-container pm-field flex-item-fluid bordered-container',
+                    !expanded && 'composer-addresses-container-closed'
+                ])}
                 onClick={handleClick}
             >
                 {recipientsOrGroups.map((recipientsOrGroup) =>
@@ -188,7 +193,7 @@ const AddressesInput = ({
                         onKeyDown={handleInputKey}
                         onBlur={handleBlur}
                         ref={inputRef}
-                        placeholder={placeholder}
+                        placeholder={recipients.length > 0 ? '' : placeholder}
                         data-testid="composer-addresses-input"
                         {...rest}
                     />
