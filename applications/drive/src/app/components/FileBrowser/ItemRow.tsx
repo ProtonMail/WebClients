@@ -87,8 +87,8 @@ const ItemRow = ({
         }
         e.preventDefault();
 
-        if (selectedItems.length && !isSelected) {
-            onToggleSelect(item.LinkID);
+        if (!isSelected) {
+            selectItem(item.LinkID);
         }
 
         if (isOpen) {
