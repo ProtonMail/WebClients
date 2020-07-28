@@ -14,7 +14,7 @@
     border-radius: $global-border-radius $global-border-radius 0 0;
     color: var(--color-main-area, $pm-global-grey);
 
-    transition: .15s easing(easeOutQuint);
+    transition: 0.15s easing(easeOutQuint);
 
     .composer-content {
         min-height: 10em;
@@ -237,13 +237,12 @@
     .pm-modal {
         z-index: 667;
         footer {
-            padding-bottom: .5em;
+            padding-bottom: 0.5em;
         }
     }
     .pm-modalHeader {
-        padding-top: .5em;
+        padding-top: 0.5em;
     }
-
 
     .pm-modalTitle {
         padding-right: 0;
@@ -278,8 +277,6 @@
     input[type='file'] {
         position: absolute;
         opacity: 0;
-        visibility: hidden;
-        z-index: -1;
     }
 
     input[type='file']:hover + .pm-button,
@@ -349,8 +346,8 @@
         padding-right: 0.5em;
     }
     // fix on last only if there are more than 4
-    &:nth-child(n+5):last-child {
-        padding-bottom: .5em;
+    &:nth-child(n + 5):last-child {
+        padding-bottom: 0.5em;
     }
 
     &--uploadInProgress {
@@ -367,14 +364,13 @@
     max-height: 90%;
 }
 
-
 /*
  * footer = action buttons
  */
 
 .composer-actions--has-scroll {
-    margin-top: .5em;
-    padding-top: .5em;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
     box-shadow: 0 -5px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -386,5 +382,3 @@
         min-width: 0;
     }
 }
-
-
