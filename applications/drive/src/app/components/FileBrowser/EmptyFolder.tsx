@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { IllustrationPlaceholder, usePopperAnchor } from 'react-components';
@@ -10,22 +10,35 @@ import UploadButton from '../uploads/UploadButton';
 import FolderContextMenu from './FolderContextMenu';
 
 const EmptyFolder = () => {
-    const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLTableRowElement>();
+    const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
 
-    const handleContextMenu = (e: React.MouseEvent<HTMLTableRowElement>) => {
-        e.stopPropagation();
-        e.preventDefault();
-
-        if (isOpen) {
-            close();
+    useEffect(() => {
+        if (!anchorRef.current) {
+            return;
         }
 
-        setContextMenuPosition({ top: e.clientY, left: e.clientX });
-    };
+        const handleContextMenu = (ev: MouseEvent) => {
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            if (isOpen) {
+                close();
+            }
+
+            setContextMenuPosition({ top: ev.clientY, left: ev.clientX });
+        };
+
+        anchorRef.current.addEventListener('contextmenu', handleContextMenu);
+
+        return () => {
+            anchorRef.current?.removeEventListener('contextmenu', handleContextMenu);
+        };
+    }, [anchorRef, isOpen, close, setContextMenuPosition]);
+
     return (
         <>
-            <div ref={anchorRef} onContextMenu={handleContextMenu} className="p2 mt2 flex w100 flex flex-item-fluid">
+            <div role="presentation" ref={anchorRef} onClick={close} className="p2 mt2 flex w100 flex flex-item-fluid">
                 <IllustrationPlaceholder
                     url={getLightOrDark(noContentSvgLight, noContentSvgDark)}
                     title={c('Info').t`There are no files yet`}
