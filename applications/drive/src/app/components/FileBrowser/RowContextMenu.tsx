@@ -90,7 +90,10 @@ const RowContextMenu = ({ item, anchorRef, isOpen, position, open, close, histor
                 key={button.name}
                 onContextMenu={(e) => e.stopPropagation()}
                 className="flex flex-nowrap alignleft"
-                onClick={button.action}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    button.action();
+                }}
             >
                 <Icon className="mt0-25 mr0-5" name={button.icon} />
                 {button.name}
