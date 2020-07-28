@@ -43,6 +43,7 @@ export const useSendVerifications = () => {
     return useCallback(async (message: MessageExtendedWithData): Promise<{
         cleanMessage: MessageExtendedWithData;
         mapSendPrefs: MapSendPreferences;
+        hasChanged: boolean;
     }> => {
         // Empty subject
         if (!message.data.Subject) {
@@ -155,7 +156,7 @@ export const useSendVerifications = () => {
             data: removeMessageRecipients(uniqueMessage.data, emailsWithErrors)
         } as MessageExtendedWithData;
 
-        return { cleanMessage, mapSendPrefs };
+        return { cleanMessage, mapSendPrefs, hasChanged: emailsWithErrors.length > 0 };
     }, []);
 };
 
