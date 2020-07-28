@@ -5,11 +5,26 @@ export const getUser = () => ({
     method: 'get',
 });
 
-export const queryCreateUser = (data: {
+export const queryCreateOldUser = (data: {
     Username: string;
     Email: string;
     Token?: string;
     TokenType?: HumanVerificationMethodType;
+    Type: 1 | 2; // 1 = mail, 2 = VPN
+    Referrer?: string;
+    Payload?: {
+        [key: string]: string;
+    };
+    Salt?: string;
+}) => ({
+    url: 'users',
+    method: 'post',
+    data,
+});
+
+export const queryCreateUser = (data: {
+    Username: string;
+    Email: string;
     Type: 1 | 2; // 1 = mail, 2 = VPN
     Referrer?: string;
     Payload?: {
