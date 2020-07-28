@@ -104,13 +104,6 @@ const ItemRow = ({
         }
     };
 
-    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        e.stopPropagation();
-        if (e.shiftKey) {
-            onShiftClick(item.LinkID);
-        }
-    };
-
     const handleTouchStart = (e: React.TouchEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
         touchStarted.current = true;
@@ -135,7 +128,7 @@ const ItemRow = ({
             role="presentation"
             key="select"
             className="flex"
-            onClick={handleClick}
+            onClick={(e) => e.stopPropagation()}
             onTouchStart={(e) => e.stopPropagation()}
             onKeyDown={(e) => e.stopPropagation()}
         >
@@ -143,12 +136,16 @@ const ItemRow = ({
                 disabled={item.Disabled}
                 className="increase-surface-click"
                 checked={isSelected}
-                onClick={(e) => {
+                onChange={(e) => {
                     const el = document.activeElement ?? e.currentTarget;
                     if (isSelected && 'blur' in el) {
                         (el as any).blur();
                     }
-                    if (!e.shiftKey) {
+                }}
+                onClick={(e) => {
+                    if (e.shiftKey) {
+                        onShiftClick(item.LinkID);
+                    } else {
                         onToggleSelect(item.LinkID);
                     }
                 }}
