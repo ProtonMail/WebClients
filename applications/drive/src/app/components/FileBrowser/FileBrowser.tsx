@@ -95,7 +95,7 @@ const FileBrowser = ({
         <div
             role="presentation"
             ref={scrollAreaRef}
-            className="scroll-if-needed"
+            className="flex-noMinChildren flex-item-fluid scroll-if-needed"
             onClick={() => {
                 // Close folder context menu
                 if (isContextMenuOpen) {
