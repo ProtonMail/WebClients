@@ -11,7 +11,7 @@ import {
     useNotifications
 } from 'react-components';
 import { c } from 'ttag';
-import { queryCreateUser, queryDirectSignupStatus } from 'proton-shared/lib/api/user';
+import { queryCreateOldUser, queryDirectSignupStatus } from 'proton-shared/lib/api/user';
 import { auth, setCookies } from 'proton-shared/lib/api/auth';
 import { subscribe, setPaymentMethod, verifyPayment, checkSubscription } from 'proton-shared/lib/api/payments';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
@@ -226,7 +226,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
         await srpVerify({
             api,
             credentials: { password },
-            config: queryCreateUser({
+            config: queryCreateOldUser({
                 Token,
                 TokenType,
                 Type: CLIENT_TYPE,
