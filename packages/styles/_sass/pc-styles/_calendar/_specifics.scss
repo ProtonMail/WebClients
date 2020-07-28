@@ -17,6 +17,13 @@
 	grid-column-start: span 3;
 }
 
+.frequency-selector {
+	label {
+		font-size: 1.2rem;
+		line-height: 2rem;
+	}
+}
+
 @include respond-to($breakpoint-small) {
 
 	// we show abbreviated version only on week/month view
