@@ -132,6 +132,7 @@ function useTrash() {
     };
 
     const emptyTrash = async (shareId: string) => {
+        cache.set.allTrashedLocked(true, shareId);
         return debouncedRequest(queryEmptyTrashOfShare(shareId));
     };
 
