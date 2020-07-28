@@ -79,8 +79,22 @@ const AddressesAutocomplete = ({
 
             awesomplete.list = [...contactList, ...groupList, ...majorList];
 
-            (awesomplete as any).item = (text: string, input: string, itemId: string) =>
-                (Awesomplete.ITEM as any)(text.replace('<', '&lt;'), input, itemId);
+            (awesomplete as any).item = ({ label }: { label: string }, input: string) => {
+                const trimmed = input.replace(/</gi, '&lt;');
+
+                const addMark = (s: string | undefined) => s?.replace(new RegExp(trimmed, 'gi'), '<mark>$&</mark>');
+
+                let [name, email] = label.split('<') as [string, string | undefined];
+                name = name.trim();
+                email = email?.replace('>', '');
+
+                const li = document.createElement('li');
+                li.setAttribute('role', 'option');
+                li.setAttribute('aria-selected', 'false');
+                li.innerHTML = email ? `${addMark(name)} &lt;${addMark(email)}&gt;` : `${addMark(name)}`;
+
+                return li;
+            };
         }
     }, [awesomplete, contacts, contactGroups, majorDomains, currentValue]);
 
