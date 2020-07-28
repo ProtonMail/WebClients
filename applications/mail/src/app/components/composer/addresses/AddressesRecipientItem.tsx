@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, KeyboardEvent } from 'react';
 import { classnames, Icon, Tooltip } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -30,11 +30,22 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
     // Hide invalid when no send info or while loading
     const valid = !sendInfo || loading || (sendInfo?.emailValidation && !sendInfo?.emailAddressWarnings?.length);
 
+    const confirmInput = () => {
+        onChange(inputToRecipient(editableRef.current?.textContent as string));
+    };
+
     const handleBlur = () => {
-        if (!editableRef.current) {
+        if (!editableRef.current || editableRef.current.textContent === recipientToInput(recipient)) {
             return;
         }
-        onChange(inputToRecipient(editableRef.current.textContent as string));
+        confirmInput();
+    };
+
+    const handleInputKey = (event: KeyboardEvent) => {
+        if (event.key === 'Enter') {
+            confirmInput();
+            event.preventDefault();
+        }
     };
 
     useEffect(() => {
@@ -65,6 +76,7 @@ const AddressesRecipientItem = ({ recipient, messageSendInfo, onChange = noop, o
                     className="composer-addresses-item-label mtauto mbauto pl0-5 ellipsis pr0-5"
                     contentEditable={onChange !== noop}
                     onBlur={handleBlur}
+                    onKeyDown={handleInputKey}
                     ref={editableRef}
                 />
             </Tooltip>
