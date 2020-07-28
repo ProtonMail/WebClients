@@ -30,6 +30,7 @@ const AccountForm = ({ model, onSubmit }) => {
     const [password, setPassword] = useState(model.password);
     const [confirmPassword, setConfirmPassword] = useState(model.password);
     const [email, setEmail] = useState(model.email);
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const [usernameError, setUsernameError] = useState();
     const [loading, withLoading] = useLoading();
 
@@ -46,6 +47,7 @@ const AccountForm = ({ model, onSubmit }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitted(true);
 
         if (password !== confirmPassword) {
             return;
@@ -177,7 +179,14 @@ const AccountForm = ({ model, onSubmit }) => {
                     <Field className="auto flex-item-fluid">
                         <div className="mb1">
                             <Challenge challengeRef={challengeRefEmail} type="1" onLoaded={handleChallengeLoaded}>
-                                <EmailInput id="email" required value={email} onChange={handleChangeEmail} />
+                                <EmailInput
+                                    id="email"
+                                    required
+                                    value={email}
+                                    onChange={handleChangeEmail}
+                                    isSubmitted={isSubmitted}
+                                    error={isSubmitted && !email ? c('Error').t`This field is required` : ''}
+                                />
                             </Challenge>
                         </div>
                         <p>
