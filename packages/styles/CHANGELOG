@@ -3,7 +3,7 @@
 ## New
 
 - list MIME icons
-- add `swipe`, `pause`, `resume` icon
+- add `swipe`, `pause`, `resume`, `question-nocircle` icons
 - added helper `onmobile-flex-self-start` and `onmobile-p0-5/pl0-5/pt0-5/etc.` stuff
 - new app switcher!
 - new tab switcher component
@@ -18,12 +18,12 @@
 - added some mobile helpers
 - better element list with placeholders
 - new design for header links
-- add `question-nocircle` icon
 - add scss fragment dedicated to mail reset styles
 - fix - `td` and `img` reset for Mail - added some Sass variables to trigger them or not (Mail is the special case, newsletter compatibility)
 - huge fix - vocalization of all checkboxes/radios/toggle
 - signup styles!
 - new ellipsis-loader component
+- new loading placeholders in discussion view
 
 ## Updated/fixes
 
@@ -67,6 +67,9 @@
 - moved breadcrumbs component from drive to shared
 - fix - added `input type="number"` for Design team
 - hotfix - `checkbox` issue with Safari (need a `relative` container)
+- fix - meterbars in Chrome
+- fix dropdowns
+- fix - dark mode “primaryborders-buttons”
 
 
 ## Misc

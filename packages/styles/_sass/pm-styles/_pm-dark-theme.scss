@@ -9,12 +9,24 @@
 .pm-button--info {
   @include pm-button-dark;
 }
-.pm-button-blueborder {
+
+// didn’t used extend, not possible in @media for design system website
+$primary-border-blue-selectors: ".pm-button-blueborder";
+@if ($pm-primary == $pm-blue) {
+	$primary-border-blue-selectors: $primary-border-blue-selectors + ", .pm-button--primaryborder";
+}
+#{$primary-border-blue-selectors} {
   @include pm-button-blueborder-dark;
 }
-.pv-button-greenborder {
+
+$primary-border-green-selectors: ".pv-button-greenborder";
+@if ($pm-primary == $pv-green) {
+	$primary-border-green-selectors: $primary-border-green-selectors + ", .pm-button--primaryborder";
+}
+#{$primary-border-green-selectors} {
   @include pv-button-greenborder-dark;
 }
+
 
 .pm-button--redborder,
 .pm-button.pm-button--redborder {
