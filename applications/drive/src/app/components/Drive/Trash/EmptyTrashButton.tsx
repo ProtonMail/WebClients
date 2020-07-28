@@ -27,7 +27,7 @@ const EmptyTrashButton = ({ shareId, floating }: Props) => {
         openConfirmModal(title, confirm, message, async () => {
             try {
                 await emptyTrash(shareId);
-                const notificationText = c('Notification').t`All the items are permanently deleted from Trash`;
+                const notificationText = c('Notification').t`All items will soon be permanently deleted from Trash`;
                 createNotification({ text: notificationText });
                 await events.callAll(shareId);
             } catch (e) {
