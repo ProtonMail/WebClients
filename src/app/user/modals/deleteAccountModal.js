@@ -122,10 +122,10 @@ function deleteAccountModal(
 
                         notification.success(gettextCatalog.getString('Account deleted. Logging out...', null, 'Info'));
 
-                        authentication.logout(false, false);
-
                         // Add an artificial delay to show the notification.
                         await wait(2500);
+
+                        authentication.logout(false, false);
 
                         $state.go('login');
                     } catch (e) {
