@@ -56,7 +56,7 @@ function DriveContainerView({
     return (
         <DriveContentProvider folder={folder}>
             {folder ? <DriveToolbar activeFolder={folder} openLink={navigateToLink} /> : <Toolbar />}
-            <PrivateMainArea hasToolbar className="flex flex-column flex-nowrap">
+            <PrivateMainArea hasToolbar className="flex-noMinChildren flex-column flex-nowrap">
                 <div className="mw100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
                     {folder && <DriveBreadcrumbs activeFolder={folder} openLink={navigateToLink} />}
                 </div>

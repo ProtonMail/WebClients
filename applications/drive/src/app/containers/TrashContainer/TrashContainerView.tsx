@@ -15,7 +15,7 @@ const TrashContainerView = ({ shareId }: Props) => {
     return (
         <TrashContentProvider shareId={shareId}>
             <TrashToolbar shareId={shareId} />
-            <PrivateMainArea hasToolbar className="flex flex-column flex-nowrap">
+            <PrivateMainArea hasToolbar className="flex-noMinChildren flex-column flex-nowrap">
                 <div className="p1 strong border-bottom">{c('Info').t`Trash`}</div>
                 {shareId && <Trash shareId={shareId} />}
             </PrivateMainArea>
