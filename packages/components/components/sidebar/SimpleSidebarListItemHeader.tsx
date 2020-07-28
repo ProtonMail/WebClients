@@ -19,6 +19,7 @@ const SimpleSidebarListItemHeader = ({ toggle, onToggle, hasCaret = true, right,
                     type="button"
                     onClick={onToggle}
                     title={title}
+                    aria-expanded={toggle}
                 >
                     <span className="mr0-5 small">{text}</span>
                     {hasCaret && (
