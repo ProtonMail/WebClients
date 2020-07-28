@@ -33,7 +33,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
         >
             <div className="flex flex-nowrap mb1">
                 <h2
-                    className="message-conversation-summary-header mb0 h3 ellipsis lh-standard flex-item-fluid pr1"
+                    className="message-conversation-summary-header mb0 h3 ellipsis-two-lines lh-standard flex-item-fluid pr1"
                     title={element.Subject}
                 >
                     {!loading ? (
