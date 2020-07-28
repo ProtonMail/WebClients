@@ -6,7 +6,7 @@ import { SimpleDropdown, DropdownMenu } from 'react-components';
 
 const MemberAddresses = ({ member, addresses }) => {
     const list = addresses.map(({ ID, Email }) => (
-        <div key={ID} className="inbl w100 pt0-5 pb0-5 pl1 pr1 ellipsis">
+        <div key={ID} className="w100 flex flex-nowrap pl1 pr1 pt0-5 pb0-5">
             {Email}
         </div>
     ));
@@ -22,10 +22,11 @@ const MemberAddresses = ({ member, addresses }) => {
     return (
         <>
             <SimpleDropdown className="pm-button--link" content={contentDropDown}>
-                <DropdownMenu>{list}</DropdownMenu>
-                <div className="alignright p1">
-                    <Link className="pm-button" to={`/settings/addresses/${member.ID}`}>{c('Link').t`Manage`}</Link>
+                <div className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex">
+                    <Link className="pm-button w100 aligncenter" to={`/settings/addresses/${member.ID}`}>{c('Link')
+                        .t`Manage`}</Link>
                 </div>
+                <DropdownMenu>{list}</DropdownMenu>
             </SimpleDropdown>
         </>
     );
