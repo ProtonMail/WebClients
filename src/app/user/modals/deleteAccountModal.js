@@ -44,6 +44,7 @@ function deleteAccountModal(
         controller: function(params) {
             this.hasTwoFactor = userSettingsModel.get('TwoFactor');
             this.isAdmin = userType().isAdmin;
+            this.isFree = userType().isFree;
             this.cancel = params.close;
             this.check = false;
             this.email = '';
@@ -60,7 +61,10 @@ function deleteAccountModal(
                     label: I18N.differentAccount,
                     value: ACCOUNT_DELETION_REASONS.DIFFERENT_ACCOUNT
                 },
-                this.isAdmin && { label: I18N.tooExpensive, value: ACCOUNT_DELETION_REASONS.TOO_EXPENSIVE },
+                {
+                    label: I18N.tooExpensive,
+                    value: ACCOUNT_DELETION_REASONS.TOO_EXPENSIVE
+                },
                 {
                     label: I18N.missingKeyFeature,
                     value: ACCOUNT_DELETION_REASONS.MISSING_FEATURE
