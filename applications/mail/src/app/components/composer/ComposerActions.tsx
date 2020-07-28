@@ -96,7 +96,7 @@ const ComposerActions = ({
             <div className="flex mb0-5">
                 <Tooltip title={c('Action').t`Attachments`} className="flex">
                     <AttachmentsButton
-                        className={classnames([isAttachments && 'pm-button-blueborder'])}
+                        className={classnames([isAttachments && 'pm-button--primaryborder'])}
                         disabled={lock}
                         onAddAttachments={onAddAttachments}
                     />
@@ -106,7 +106,7 @@ const ComposerActions = ({
                         icon="expiration"
                         className={classnames([
                             'inline-flex flex-items-center pm-button--for-icon',
-                            isExpiration && 'pm-button-blueborder'
+                            isExpiration && 'pm-button--primaryborder'
                         ])}
                         onClick={onExpiration}
                         disabled={lock}
@@ -119,7 +119,7 @@ const ComposerActions = ({
                         icon="lock-alone"
                         className={classnames([
                             'inline-flex flex-items-center pm-button--for-icon',
-                            isPassword && 'pm-button-blueborder'
+                            isPassword && 'pm-button--primaryborder'
                         ])}
                         onClick={onPassword}
                         disabled={lock}
