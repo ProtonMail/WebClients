@@ -184,6 +184,7 @@ function useDrive() {
 
         const blockKeys = deserializeUint8Array(meta.FileProperties.ContentKeyPacket);
         const sessionKeys = await getDecryptedSessionKey(blockKeys, privateKey);
+
         const keys = {
             privateKey,
             sessionKeys,

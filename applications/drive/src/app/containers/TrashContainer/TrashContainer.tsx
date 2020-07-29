@@ -7,6 +7,7 @@ import TrashContainerView from './TrashContainerView';
 import EmptyTrashButton from '../../components/Drive/Trash/EmptyTrashButton';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
+import AppErrorBoundary from '../../components/AppErrorBoundary';
 
 const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) => {
     const cache = useDriveCache();
@@ -45,10 +46,12 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
 
     return (
         <PrivateAppContainer header={header} sidebar={sidebar}>
-            <Switch>
-                <Route path="/drive/trash/:shareId?" exact component={renderContainerView} />
-                <Redirect to="/drive/trash" />
-            </Switch>
+            <AppErrorBoundary>
+                <Switch>
+                    <Route path="/drive/trash/:shareId?" exact component={renderContainerView} />
+                    <Redirect to="/drive/trash" />
+                </Switch>
+            </AppErrorBoundary>
         </PrivateAppContainer>
     );
 };

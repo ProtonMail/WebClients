@@ -93,9 +93,9 @@ const FileBrowser = ({
 
     return (
         <div
-            role="presentation"
             ref={scrollAreaRef}
-            className="flex-noMinChildren flex-item-fluid scroll-if-needed"
+            role="presentation"
+            onContextMenu={handleContextMenu}
             onClick={() => {
                 // Close folder context menu
                 if (isContextMenuOpen) {
@@ -103,74 +103,76 @@ const FileBrowser = ({
                 }
                 clearSelections();
             }}
-            onContextMenu={handleContextMenu}
+            className="flex-noMinChildren flex-item-fluid scroll-if-needed"
         >
-            <table className="pm-simple-table pm-simple-table--isHoverable pd-fb-table noborder border-collapse">
-                <caption className="sr-only">{caption}</caption>
-                <thead onContextMenu={(e) => e.stopPropagation()}>
-                    <TableRowSticky scrollAreaRef={scrollAreaRef}>
-                        <TableCell type="header" scope="col">
-                            <div
-                                role="presentation"
-                                key="select-all"
-                                className="flex"
-                                onClick={(e) => e.stopPropagation()}
-                            >
-                                <Checkbox
-                                    className="increase-surface-click"
-                                    disabled={!contents.length}
-                                    checked={allSelected}
-                                    onChange={onToggleAllSelected}
-                                />
-                            </div>
-                        </TableCell>
-                        <TableCell type="header" scope="col">
-                            <div className="ellipsis">{c('TableHeader').t`Name`}</div>
-                        </TableCell>
-                        {isTrash && (
-                            <TableCell type="header" scope="col" className="w25">{c('TableHeader')
-                                .t`Location`}</TableCell>
-                        )}
-                        <TableCell type="header" scope="col" className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader')
-                            .t`Type`}</TableCell>
-                        {isDesktop && (
-                            <TableCell type="header" scope="col" className="w20">
-                                {modifiedHeader}
+            <div>
+                <table className="pm-simple-table pm-simple-table--isHoverable pd-fb-table noborder border-collapse">
+                    <caption className="sr-only">{caption}</caption>
+                    <thead onContextMenu={(e) => e.stopPropagation()}>
+                        <TableRowSticky scrollAreaRef={scrollAreaRef}>
+                            <TableCell type="header" scope="col">
+                                <div
+                                    role="presentation"
+                                    key="select-all"
+                                    className="flex"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <Checkbox
+                                        className="increase-surface-click"
+                                        disabled={!contents.length}
+                                        checked={allSelected}
+                                        onChange={onToggleAllSelected}
+                                    />
+                                </div>
                             </TableCell>
-                        )}
-                        <TableCell type="header" scope="col" className={isDesktop ? 'w10' : 'w15'}>
-                            {c('TableHeader').t`Size`}
-                        </TableCell>
-                    </TableRowSticky>
-                </thead>
-                <TableBody colSpan={colSpan}>
-                    {contents.map((item) => (
-                        <ItemRow
-                            key={item.LinkID}
-                            item={item}
-                            shareId={shareId}
-                            selectedItems={selectedItems}
-                            onToggleSelect={onToggleItemSelected}
-                            onShiftClick={onShiftClick}
-                            onClick={onItemClick}
-                            showLocation={isTrash}
-                            selectItem={selectItem}
-                            secondaryActionActive={secondaryActionActive}
-                            dragMoveControls={isTrash ? undefined : getDragMoveControls(item)}
-                        />
-                    ))}
-                    {loading && <TableRowBusy colSpan={colSpan} />}
-                </TableBody>
-            </table>
-            {!isTrash && (
-                <FolderContextMenu
-                    isOpen={isContextMenuOpen}
-                    open={openContextMenu}
-                    close={closeContextMenu}
-                    position={contextMenuPosition}
-                    anchorRef={scrollAreaRef}
-                />
-            )}
+                            <TableCell type="header" scope="col">
+                                <div className="ellipsis">{c('TableHeader').t`Name`}</div>
+                            </TableCell>
+                            {isTrash && (
+                                <TableCell type="header" scope="col" className="w25">{c('TableHeader')
+                                    .t`Location`}</TableCell>
+                            )}
+                            <TableCell type="header" scope="col" className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader')
+                                .t`Type`}</TableCell>
+                            {isDesktop && (
+                                <TableCell type="header" scope="col" className="w20">
+                                    {modifiedHeader}
+                                </TableCell>
+                            )}
+                            <TableCell type="header" scope="col" className={isDesktop ? 'w10' : 'w15'}>
+                                {c('TableHeader').t`Size`}
+                            </TableCell>
+                        </TableRowSticky>
+                    </thead>
+                    <TableBody colSpan={colSpan}>
+                        {contents.map((item) => (
+                            <ItemRow
+                                key={item.LinkID}
+                                item={item}
+                                shareId={shareId}
+                                selectedItems={selectedItems}
+                                onToggleSelect={onToggleItemSelected}
+                                onShiftClick={onShiftClick}
+                                onClick={onItemClick}
+                                showLocation={isTrash}
+                                selectItem={selectItem}
+                                secondaryActionActive={secondaryActionActive}
+                                dragMoveControls={isTrash ? undefined : getDragMoveControls(item)}
+                            />
+                        ))}
+                        {loading && <TableRowBusy colSpan={colSpan} />}
+                    </TableBody>
+                </table>
+                {!isTrash && (
+                    <FolderContextMenu
+                        isOpen={isContextMenuOpen}
+                        open={openContextMenu}
+                        close={closeContextMenu}
+                        position={contextMenuPosition}
+                        anchorRef={scrollAreaRef}
+                    />
+                )}
+            </div>
         </div>
     );
 };
