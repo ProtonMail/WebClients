@@ -1,25 +1,25 @@
 import React from 'react';
+import { classnames, Input, TextArea } from 'react-components';
 import { c } from 'ttag';
-import { Input, TextArea, classnames } from 'react-components';
-
-import Notifications from './Notifications';
-import DateTimeRow from './rows/DateTimeRow';
-import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
+import { FREQUENCY, MAX_LENGTHS, MAX_NOTIFICATIONS } from '../../constants';
 import { WeekStartsOn } from '../../containers/calendar/interface';
-import { MAX_NOTIFICATIONS, MAX_LENGTHS, FREQUENCY } from '../../constants';
-import createPropFactory from './eventForm/createPropFactory';
-import FrequencyInput from './inputs/FrequencyInput';
-import CustomFrequencySelector from './inputs/CustomFrequencySelector';
-import CalendarSelect from './inputs/CalendarSelect';
-import IconRow from './IconRow';
+import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
 import { NotificationModel } from '../../interfaces/NotificationModel';
 import {
-    TITLE_INPUT_ID,
-    FREQUENCY_INPUT_ID,
-    LOCATION_INPUT_ID,
     CALENDAR_INPUT_ID,
     DESCRIPTION_INPUT_ID,
+    FREQUENCY_INPUT_ID,
+    LOCATION_INPUT_ID,
+    TITLE_INPUT_ID,
 } from './const';
+import createPropFactory from './eventForm/createPropFactory';
+import IconRow from './IconRow';
+import CalendarSelect from './inputs/CalendarSelect';
+import CustomFrequencySelector from './inputs/CustomFrequencySelector';
+import FrequencyInput from './inputs/FrequencyInput';
+import LocationInput from './inputs/LocationInput';
+import Notifications from './Notifications';
+import DateTimeRow from './rows/DateTimeRow';
 
 interface Props {
     isSubmitted: boolean;
@@ -86,12 +86,7 @@ const EventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, mode
                 </div>
             </IconRow>
             <IconRow icon="address" title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
-                <Input
-                    id={LOCATION_INPUT_ID}
-                    placeholder={c('Placeholder').t`Add location`}
-                    maxLength={MAX_LENGTHS.LOCATION}
-                    {...propsFor('location')}
-                />
+                <LocationInput id={LOCATION_INPUT_ID} {...propsFor('location')} />
             </IconRow>
             <IconRow icon="notifications-enabled" title={c('Label').t`Notifications`}>
                 {model.isAllDay ? (
@@ -153,6 +148,7 @@ const EventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, mode
                     onChange={({ target }: React.ChangeEvent<HTMLTextAreaElement>) =>
                         propsFor('description').onChange(target.value)
                     }
+                    value={model.description}
                     maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
                 />
             </IconRow>
