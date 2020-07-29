@@ -29,6 +29,7 @@ interface Props {
     shareId: string;
     selectedItems: FileBrowserItem[];
     onToggleSelect: (item: string) => void;
+    selectItem: (item: string) => void;
     onShiftClick: (item: string) => void;
     onClick?: (item: FileBrowserItem) => void;
     showLocation?: boolean;
@@ -44,6 +45,7 @@ const ItemRow = ({
     onClick,
     onShiftClick,
     showLocation,
+    selectItem,
     secondaryActionActive,
     dragMoveControls,
 }: Props) => {
@@ -62,6 +64,7 @@ const ItemRow = ({
     const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.Disabled ? undefined : fn);
 
     const isFolder = item.Type === LinkType.FOLDER;
+
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
 
     const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
@@ -77,15 +80,15 @@ const ItemRow = ({
     };
 
     const handleContextMenu = (e: React.MouseEvent<HTMLTableRowElement>) => {
-        if (item.Disabled || item.Trashed) {
+        e.stopPropagation();
+
+        if (item.Trashed || item.Disabled) {
             return;
         }
-
-        e.stopPropagation();
         e.preventDefault();
 
-        if (selectedItems.length && !isSelected) {
-            onToggleSelect(item.LinkID);
+        if (!isSelected) {
+            selectItem(item.LinkID);
         }
 
         if (isOpen) {
@@ -98,13 +101,6 @@ const ItemRow = ({
     const handleKeyDown = (e: React.KeyboardEvent<HTMLTableRowElement>) => {
         if (e.key === ' ' || e.key === 'Enter') {
             onClick?.(item);
-        }
-    };
-
-    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        e.stopPropagation();
-        if (e.shiftKey) {
-            onShiftClick(item.LinkID);
         }
     };
 
@@ -132,7 +128,13 @@ const ItemRow = ({
             role="presentation"
             key="select"
             className="flex"
-            onClick={handleClick}
+            onClick={(e) => {
+                e.stopPropagation();
+                // Wrapper handles shift key, because FF has issues: https://bugzilla.mozilla.org/show_bug.cgi?id=559506
+                if (e.shiftKey) {
+                    onShiftClick(item.LinkID);
+                }
+            }}
             onTouchStart={(e) => e.stopPropagation()}
             onKeyDown={(e) => e.stopPropagation()}
         >
@@ -145,7 +147,11 @@ const ItemRow = ({
                     if (isSelected && 'blur' in el) {
                         (el as any).blur();
                     }
-                    onToggleSelect(item.LinkID);
+                }}
+                onClick={(e) => {
+                    if (!e.shiftKey) {
+                        onToggleSelect(item.LinkID);
+                    }
                 }}
             />
         </div>,
@@ -179,7 +185,8 @@ const ItemRow = ({
         ),
     ].filter(Boolean);
 
-    const dragMoveItems = selectedItems.some(({ LinkID }) => LinkID === item.LinkID) ? selectedItems : [item];
+    const isDraggingSelected = selectedItems.some(({ LinkID }) => LinkID === item.LinkID);
+    const dragMoveItems = isDraggingSelected ? selectedItems : [item];
     const movingCount = dragMoveItems.length;
 
     const texts = {
@@ -197,6 +204,13 @@ const ItemRow = ({
         texts
     );
 
+    const handleRowDragStart = (e: React.DragEvent<HTMLTableRowElement>) => {
+        if (!isDraggingSelected) {
+            selectItem(item.LinkID);
+        }
+        handleDragStart(e);
+    };
+
     return (
         <>
             {dragMoveControls && (
@@ -213,10 +227,9 @@ const ItemRow = ({
                 aria-disabled={item.Disabled}
                 className={classnames([
                     'no-outline',
-                    (onClick || secondaryActionActive) && 'cursor-pointer',
-                    (isSelected || dragMoveControls?.isActiveDropTarget) && 'bg-global-highlight',
+                    (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
+                    (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-global-highlight',
                     (dragging || item.Disabled) && 'opacity-50',
-                    item.Disabled && 'no-pointer-events no-pointer-events-children bg-global-highlight',
                 ])}
                 onKeyDown={unlessDisabled(handleKeyDown)}
                 onClick={unlessDisabled(handleRowClick)}
@@ -225,7 +238,7 @@ const ItemRow = ({
                 onTouchMove={unlessDisabled(handleTouchCancel)}
                 onTouchCancel={unlessDisabled(handleTouchCancel)}
                 onTouchEnd={unlessDisabled(handleTouchEnd)}
-                onDragStart={unlessDisabled(handleDragStart)}
+                onDragStart={unlessDisabled(handleRowDragStart)}
                 onDragOver={unlessDisabled(dragMoveControls?.handleDragOver)}
                 onDrop={unlessDisabled(dragMoveControls?.handleDrop)}
                 onDragLeave={unlessDisabled(dragMoveControls?.handleDragLeave)}

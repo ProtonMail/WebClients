@@ -14,7 +14,14 @@ function Trash({ shareId }: Props) {
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls } = useTrashContent();
 
-    const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, selectRange } = fileBrowserControls;
+    const {
+        clearSelections,
+        selectedItems,
+        selectItem,
+        toggleSelectItem,
+        toggleAllSelected,
+        toggleRange,
+    } = fileBrowserControls;
 
     const handleScrollEnd = useCallback(() => {
         // Only load on scroll after initial load from backend
@@ -40,7 +47,8 @@ function Trash({ shareId }: Props) {
             onToggleItemSelected={toggleSelectItem}
             clearSelections={clearSelections}
             onToggleAllSelected={toggleAllSelected}
-            onShiftClick={selectRange}
+            onShiftClick={toggleRange}
+            selectItem={selectItem}
         />
     );
 }

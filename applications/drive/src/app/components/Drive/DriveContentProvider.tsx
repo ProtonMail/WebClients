@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import useFileBrowser from '../FileBrowser/useFileBrowser';
+import useSelection from '../../hooks/util/useSelection';
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder, useDriveActiveFolder } from './DriveFolderProvider';
@@ -14,7 +14,9 @@ interface DriveContentProviderState {
     loadNextPage: () => void;
     setSorting: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
     sortParams: { sortField: SortKeys; sortOrder: SORT_DIRECTION };
-    fileBrowserControls: ReturnType<typeof useFileBrowser>;
+    fileBrowserControls: Omit<ReturnType<typeof useSelection>, 'selectedItems'> & {
+        selectedItems: FileBrowserItem[];
+    };
     loading: boolean;
     initialized: boolean;
     complete?: boolean;
@@ -41,7 +43,17 @@ const DriveContentProviderInner = ({
     const contents = mapLinksToChildren(sortedList, (linkId) => cache.get.isLinkLocked(shareId, linkId));
     const complete = cache.get.childrenComplete(shareId, linkId, sortParams);
 
-    const fileBrowserControls = useFileBrowser(contents);
+    const selectionControls = useSelection(
+        contents.map((data) => ({
+            id: data.LinkID,
+            disabled: data.Disabled,
+            data,
+        }))
+    );
+    const fileBrowserControls = {
+        ...selectionControls,
+        selectedItems: selectionControls.selectedItems.map(({ data }) => data),
+    };
     const abortSignal = useRef<AbortSignal>();
     const contentLoading = useRef(false);
 
