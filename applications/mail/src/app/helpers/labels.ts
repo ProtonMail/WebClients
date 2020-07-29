@@ -155,7 +155,7 @@ export const getFolderName = (labelID: string, customFoldersList: Folder[] = [])
 export const labelIncludes = (labelID: string, ...labels: (MAILBOX_LABEL_IDS | string)[]) =>
     labels.includes(labelID as MAILBOX_LABEL_IDS);
 
-const applyChangesOnLabelIDs = (labelIDs: string[], changes: LabelChanges) => {
+const applyChangesOnLabelIDs = (labelIDs: string[] | undefined = [], changes: LabelChanges) => {
     const result = [...labelIDs];
     Object.keys(changes).forEach((labelID) => {
         const index = result.findIndex((existingLabelID) => existingLabelID === labelID);
