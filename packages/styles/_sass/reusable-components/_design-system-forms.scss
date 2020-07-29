@@ -27,6 +27,7 @@ input[type="reset"][disabled] {
 /* avoid dummy resize */
 textarea {
   resize: vertical;
+  cursor: auto; // fixes an issue on Chrome using CSS custom scroll
 }
 /* remove a Firefox difference on button tag */
 button::-moz-focus-inner { border: 0; padding: 0; }
