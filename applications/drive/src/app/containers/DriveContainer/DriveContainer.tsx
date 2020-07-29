@@ -6,6 +6,9 @@ import AppSidebar from '../../components/layout/AppSidebar';
 import DriveContainerView from './DriveContainerView';
 import UploadButton from '../../components/uploads/UploadButton';
 import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
+import AppErrorBoundary from '../../components/AppErrorBoundary';
+import PreviewContainer from '../PreviewContainer';
+import { LinkURLType } from '../../constants';
 
 const DriveContainer = () => {
     const { state: expanded, toggle: toggleExpanded } = useToggle();
@@ -25,10 +28,13 @@ const DriveContainer = () => {
     return (
         <UploadDragDrop>
             <PrivateAppContainer header={header} sidebar={sidebar}>
-                <Switch>
-                    <Route path="/drive/:shareId?/:type?/:linkId?" exact component={DriveContainerView} />
-                    <Redirect to="/drive" />
-                </Switch>
+                <AppErrorBoundary>
+                    <Switch>
+                        <Route path="/drive/:shareId?/:type?/:linkId?" exact component={DriveContainerView} />
+                        <Redirect to="/drive" />
+                    </Switch>
+                    <Route path={`/drive/:shareId?/${LinkURLType.FILE}/:linkId?`} component={PreviewContainer} exact />
+                </AppErrorBoundary>
             </PrivateAppContainer>
         </UploadDragDrop>
     );
