@@ -1,10 +1,9 @@
 import { binaryStringToArray, unsafeSHA1, arrayToHexString } from 'pmcrypto';
-import { API_CODES } from '../constants';
+import { getCanonicalEmailMap } from '../api/helpers/canonicalEmailMap';
 import { getEmailTo } from '../helpers/email';
-import { Attendee, GetCanonicalAddressesResponse } from '../interfaces/calendar';
+import { Attendee } from '../interfaces/calendar';
 import { VcalAttendeeProperty, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
 import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_STATUS, ATTENDEE_PERMISSIONS } from './constants';
-import { getCanonicalAddresses } from '../api/addresses';
 import { Api } from '../interfaces';
 
 export const generateAttendeeToken = async (normalizedEmail: string, uid: string) => {
@@ -106,13 +105,11 @@ export const withPmAttendees = async (vevent: VcalVeventComponent, api: Api): Pr
             emailAddress,
         };
     });
-    const { Responses, Code } = await api<GetCanonicalAddressesResponse>(
-        getCanonicalAddresses(attendeesWithEmail.map(({ emailAddress }) => emailAddress))
-    );
-    const unexpectedResponse = Responses.some(({ Response }) => Response.Code !== API_CODES.SINGLE_SUCCESS);
-    if (Code !== API_CODES.GLOBAL_SUCCESS || unexpectedResponse) {
-        throw new Error('Canonize operation failed');
-    }
+    const emailsWithoutToken = attendeesWithEmail
+        .filter(({ attendee }) => !attendee.parameters?.['x-pm-token'])
+        .map(({ emailAddress }) => emailAddress);
+    const canonicalEmailMap = await getCanonicalEmailMap(emailsWithoutToken, api);
+
     const pmAttendees = await Promise.all(
         attendeesWithEmail.map(async ({ attendee: { parameters, ...rest }, emailAddress }) => {
             const attendeeWithCn = {
@@ -123,9 +120,13 @@ export const withPmAttendees = async (vevent: VcalVeventComponent, api: Api): Pr
                 },
             };
             if (parameters?.['x-pm-token']) {
-                return { ...attendeeWithCn };
+                return attendeeWithCn;
             }
-            const token = await generateAttendeeToken(emailAddress, uid.value);
+            const canonicalEmail = canonicalEmailMap[emailAddress];
+            if (!canonicalEmail) {
+                throw new Error('No canonical email provided');
+            }
+            const token = await generateAttendeeToken(canonicalEmail, uid.value);
             return {
                 ...attendeeWithCn,
                 parameters: {
