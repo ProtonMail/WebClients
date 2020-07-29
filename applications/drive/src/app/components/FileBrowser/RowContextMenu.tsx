@@ -93,6 +93,7 @@ const RowContextMenu = ({ item, anchorRef, isOpen, position, open, close, histor
                 onClick={(e) => {
                     e.stopPropagation();
                     button.action();
+                    close();
                 }}
             >
                 <Icon className="mt0-25 mr0-5" name={button.icon} />
