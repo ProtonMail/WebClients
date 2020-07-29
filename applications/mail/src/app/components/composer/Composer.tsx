@@ -167,7 +167,7 @@ const Composer = ({
     // Manage populating the model from the server
     useEffect(() => {
         if (modelMessage.document === undefined || modelMessage.data?.ID !== syncedMessage.data?.ID) {
-            setModelMessage({
+            const newModelMessage = {
                 ...syncedMessage,
                 ...modelMessage,
                 data: {
@@ -181,7 +181,9 @@ const Composer = ({
                 } as Message,
                 document: syncedMessage.document,
                 embeddeds: syncedMessage.embeddeds
-            });
+            };
+            setModelMessage(newModelMessage);
+            reloadSendInfo(messageSendInfo, newModelMessage, getEncryptionPreferences);
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID]);
 

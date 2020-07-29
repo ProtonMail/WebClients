@@ -357,19 +357,19 @@ export const reloadSendInfo = async (
     getEncryptionPreferences: (emailAddress: string, silence?: any) => Promise<EncryptionPreferences>
 ) => {
     const { mapSendInfo, setMapSendInfo } = messageSendInfo || {};
-    if (!mapSendInfo || !setMapSendInfo || !message.data) {
+
+    if (mapSendInfo === undefined || !setMapSendInfo || !message.data) {
         return;
     }
+
     const recipients = getRecipientsAddresses(message.data);
     const requests = recipients.map((emailAddress) => () =>
         getUpdatedSendInfo(emailAddress, message, setMapSendInfo, getEncryptionPreferences)
     );
     const loadingMapSendInfo = recipients.reduce(
         (acc, emailAddress) => {
-            const sendInfo = acc[emailAddress];
-            if (sendInfo) {
-                acc[emailAddress] = { ...sendInfo, loading: true };
-            }
+            const sendInfo = acc[emailAddress] || { emailValidation: validateEmailAddress(emailAddress) };
+            acc[emailAddress] = { ...sendInfo, loading: true };
             return acc;
         },
         { ...mapSendInfo }
