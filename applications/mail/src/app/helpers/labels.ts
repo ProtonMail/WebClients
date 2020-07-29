@@ -3,12 +3,12 @@ import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { LABEL_IDS_TO_HUMAN, LABEL_IDS_TO_I18N } from '../constants';
 import { Message } from '../models/message';
 import { getLabelIDs } from './elements';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { MailSettings } from 'proton-shared/lib/interfaces';
 import { ConversationLabel, Conversation } from '../models/conversation';
 
 const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;

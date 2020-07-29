@@ -7,11 +7,13 @@ import {
     useNotifications,
     useModals,
     useEventManager,
-    useApi
+    useApi,
+    useLabels
 } from 'react-components';
 import { emptyLabel as emptyLabelRequest } from 'proton-shared/lib/api/messages';
 
 import { useOptimisticEmptyLabel } from './optimistic/useOptimisticEmptyLabel';
+import { isCustomLabel } from '../helpers/labels';
 
 export const useEmptyLabel = () => {
     const { createNotification } = useNotifications();
@@ -19,18 +21,25 @@ export const useEmptyLabel = () => {
     const { call } = useEventManager();
     const api = useApi();
     const optimisticEmptyLabel = useOptimisticEmptyLabel();
+    const [labels = []] = useLabels();
 
     const emptyLabel = useCallback(async (labelID: string) => {
+        const isLabel = isCustomLabel(labelID, labels);
         await new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal
-                    title={c('Title').t`Empty folder`}
+                    title={isLabel ? c('Title').t`Empty label` : c('Title').t`Empty folder`}
                     confirm={<ErrorButton type="submit" icon={null}>{c('Action').t`Empty`}</ErrorButton>}
                     onConfirm={resolve}
                     onClose={reject}
                 >
-                    <Alert type="warning">{c('Info')
-                        .t`This action will permanently delete your emails. Are you sure you want to empty this folder?`}</Alert>
+                    <Alert type="warning">
+                        {isLabel
+                            ? c('Info')
+                                  .t`This action will permanently delete your emails. Are you sure you want to empty this label?`
+                            : c('Info')
+                                  .t`This action will permanently delete your emails. Are you sure you want to empty this folder?`}
+                    </Alert>
                 </ConfirmModal>
             );
         });
@@ -42,7 +51,7 @@ export const useEmptyLabel = () => {
             throw error;
         }
         await call();
-        createNotification({ text: c('Success').t`Folder cleared` });
+        createNotification({ text: isLabel ? c('Success').t`Label cleared` : c('Success').t`Folder cleared` });
     }, []);
 
     return emptyLabel;
