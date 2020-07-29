@@ -125,7 +125,7 @@ const Item = ({
             onDragStart={onDragStart}
             onDragEnd={handleDragEnd}
             className={classnames([
-                'flex flex-nowrap flex-items-center cursor-pointer',
+                'cursor-pointer',
                 columnLayout ? 'item-container' : 'item-container-row',
                 elementID === ID && 'item-is-selected',
                 !unread && 'read',
@@ -134,20 +134,22 @@ const Item = ({
             ])}
             style={{ '--index': index }}
         >
-            {itemCheckboxType}
-            <ItemLayout
-                labelID={labelID}
-                labels={labels}
-                element={element}
-                mailSettings={mailSettings}
-                type={type}
-                showIcon={showIcon}
-                senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
-                addresses={(displayRecipients ? recipientsAddresses : sendersAddresses).join(', ')}
-                unread={unread}
-                displayRecipients={displayRecipients}
-                loading={loading}
-            />
+            <div className="item-container-inner flex flex-nowrap flex-items-center">
+                {itemCheckboxType}
+                <ItemLayout
+                    labelID={labelID}
+                    labels={labels}
+                    element={element}
+                    mailSettings={mailSettings}
+                    type={type}
+                    showIcon={showIcon}
+                    senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
+                    addresses={(displayRecipients ? recipientsAddresses : sendersAddresses).join(', ')}
+                    unread={unread}
+                    displayRecipients={displayRecipients}
+                    loading={loading}
+                />
+            </div>
         </div>
     );
 };
