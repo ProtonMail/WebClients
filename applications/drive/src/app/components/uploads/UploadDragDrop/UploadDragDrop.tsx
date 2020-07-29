@@ -1,7 +1,10 @@
 import React, { ReactNode, useState, useCallback, SyntheticEvent } from 'react';
 import { c } from 'ttag';
 
-import dragdropImageSvg from 'design-system/assets/img/pd-images/drag-and-drop.svg';
+import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
+
+import dragdropImageSvgLight from 'design-system/assets/img/pd-images/drag-and-drop.svg';
+import dragdropImageSvgDark from 'design-system/assets/img/pd-images/drag-and-drop-dark.svg';
 
 import useFiles from '../../../hooks/drive/useFiles';
 import { useDriveActiveFolder } from '../../Drive/DriveFolderProvider';
@@ -40,7 +43,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
         async (e: React.DragEvent<HTMLDivElement>) => {
             e.preventDefault();
             setOverlayIsVisible(false);
-            const items = e.dataTransfer.items;
+            const { items } = e.dataTransfer;
 
             if (!folder || !items) {
                 return;
@@ -48,7 +51,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
 
             const filesToUpload: { path: string[]; file?: File }[] = [];
 
-            const traverseDirectories = async function(item: any, path: string[] = []) {
+            const traverseDirectories = async (item: any, path: string[] = []) => {
                 if (item.isFile) {
                     return new Promise((resolve, reject) => {
                         item.file(
@@ -56,10 +59,11 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                                 filesToUpload.push({ path, file });
                                 resolve();
                             },
-                            (error: Error) => reject(`Unable to get File ${item}: ${error}`)
+                            (error: Error) => reject(new Error(`Unable to get File ${item}: ${error}`))
                         );
                     });
-                } else if (item.isDirectory) {
+                }
+                if (item.isDirectory) {
                     const reader = item.createReader();
                     const newPath = [...path, item.name];
 
@@ -80,7 +84,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                                         resolve();
                                     }
                                 },
-                                (error: Error) => reject(`Unable to traverse directory ${item}: ${error}`)
+                                (error: Error) => reject(new Error(`Unable to traverse directory ${item}: ${error}`))
                             );
                         });
 
@@ -114,7 +118,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                 console.error(errors);
             }
 
-            uploadDriveFiles(folder.shareId, folder.linkId, filesToUpload);
+            uploadDriveFiles(folder.shareId, folder.linkId, filesToUpload).catch(console.error);
         },
         [overlayIsVisible]
     );
@@ -137,7 +141,12 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                     onDrop={handleDrop}
                 >
                     <section className="pd-drag-drop-infobox p2">
-                        <img className="pd-drag-drop-image" src={dragdropImageSvg} alt="" aria-hidden="true" />
+                        <img
+                            className="pd-drag-drop-image"
+                            src={getLightOrDark(dragdropImageSvgLight, dragdropImageSvgDark)}
+                            alt=""
+                            aria-hidden="true"
+                        />
                         <h2 className="bold m0">{c('Title').t`Drop to upload`}</h2>
                         <p className="m0">{c('Info').t`Your files will be encrypted and then saved.`}</p>
                     </section>

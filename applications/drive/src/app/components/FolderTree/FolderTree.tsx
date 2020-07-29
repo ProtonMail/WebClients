@@ -1,6 +1,6 @@
 import React from 'react';
-import ExpandableRow from './ExpandableRow';
 import { TableRowBusy } from 'react-components';
+import ExpandableRow from './ExpandableRow';
 
 export interface FolderTreeItem {
     linkId: string;
@@ -11,17 +11,28 @@ export interface FolderTreeItem {
 interface Props {
     folders: FolderTreeItem[];
     itemsToMove: string[];
+    initiallyExpandedFolders: string[];
     selectedFolderId?: string;
     loading?: boolean;
     onSelect: (LinkID: string) => void;
     loadChildren: (LinkID: string, loadNextPage?: boolean) => Promise<void>;
 }
 
-const FolderTree = ({ folders, itemsToMove, selectedFolderId, loading = false, onSelect, loadChildren }: Props) => {
+const FolderTree = ({
+    folders,
+    itemsToMove,
+    initiallyExpandedFolders,
+    selectedFolderId,
+    loading = false,
+    onSelect,
+    loadChildren,
+}: Props) => {
     const generateRows = (folders: FolderTreeItem[], depth = 0) => {
         const rows = folders.map(({ linkId, name, children }: FolderTreeItem) => {
             const disabled = itemsToMove.includes(linkId);
             const childrenRows = children.list.length ? generateRows(children.list, depth + 1) : null;
+            const isExpanded = initiallyExpandedFolders.includes(linkId);
+
             return (
                 <ExpandableRow
                     key={linkId}
@@ -29,7 +40,7 @@ const FolderTree = ({ folders, itemsToMove, selectedFolderId, loading = false, o
                     name={name}
                     depth={depth}
                     isSelected={selectedFolderId === linkId}
-                    isExpanded={depth === 0}
+                    isExpanded={isExpanded}
                     disabled={disabled}
                     onSelect={onSelect}
                     loadChildren={loadChildren}

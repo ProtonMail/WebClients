@@ -1,40 +1,23 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton, useModals } from 'react-components';
+import { ToolbarButton } from 'react-components';
 
-import useDrive from '../../../hooks/drive/useDrive';
-import CreateFolderModal from '../../CreateFolderModal';
-import { DriveFolder } from '../DriveFolderProvider';
+import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 
 interface Props {
-    activeFolder: DriveFolder;
     disabled?: boolean;
 }
 
-const CreateNewFolderButton = ({ activeFolder, disabled }: Props) => {
-    const { createModal } = useModals();
-    const { createNewFolder, events } = useDrive();
-
-    const { linkId, shareId } = activeFolder;
-
-    const handleCreateFolder = async () => {
-        createModal(
-            <CreateFolderModal
-                createNewFolder={async (name) => {
-                    await createNewFolder(shareId, linkId, name);
-                    events.call(shareId);
-                }}
-            />
-        );
-    };
+const CreateNewFolderButton = ({ disabled }: Props) => {
+    const { openCreateFolder } = useToolbarActions();
 
     return (
         <ToolbarButton
             disabled={disabled}
             icon="folder-new"
             title={c('Action').t`New Folder`}
-            onClick={handleCreateFolder}
+            onClick={openCreateFolder}
             data-testid="toolbar-new-folder"
         />
     );

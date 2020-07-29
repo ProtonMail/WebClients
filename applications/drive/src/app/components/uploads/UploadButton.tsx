@@ -1,41 +1,33 @@
-import React, { useRef, ChangeEvent } from 'react';
-import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
-import useFiles from '../../hooks/drive/useFiles';
-import { LargeButton } from 'react-components';
+import React from 'react';
 import { c } from 'ttag';
 
-const UploadButton = () => {
-    const fileInput = useRef<HTMLInputElement>(null);
+import { FloatingButton, SidebarPrimaryButton } from 'react-components';
+
+import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
+import useFileUploadInput from '../../hooks/drive/useFileUploadInput';
+
+interface Props {
+    floating?: boolean;
+}
+
+const UploadButton = ({ floating }: Props) => {
     const { folder } = useDriveActiveFolder();
-    const { uploadDriveFiles } = useFiles();
-
-    const handleClick = () => {
-        if (!folder || !fileInput.current) {
-            return;
-        }
-
-        fileInput.current.value = '';
-        fileInput.current.click();
-    };
-
-    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const files = e.target.files;
-
-        if (!folder || !files) {
-            return;
-        }
-
-        uploadDriveFiles(folder.shareId, folder.linkId, files);
-    };
+    const { inputRef: fileInput, handleClick, handleChange: handleFileChange } = useFileUploadInput();
 
     return (
         <>
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
-            <LargeButton
-                className="pm-button--primary ml1 mr1 mt0-25 strong"
-                disabled={!folder?.shareId}
-                onClick={handleClick}
-            >{c('Action').t`Upload`}</LargeButton>
+            {floating ? (
+                <FloatingButton
+                    disabled={!folder?.shareId}
+                    onClick={handleClick}
+                    title={c('Action').t`Upload`}
+                    icon="plus"
+                />
+            ) : (
+                <SidebarPrimaryButton disabled={!folder?.shareId} onClick={handleClick}>{c('Action')
+                    .t`Upload`}</SidebarPrimaryButton>
+            )}
         </>
     );
 };

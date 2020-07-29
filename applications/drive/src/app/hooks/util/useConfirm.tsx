@@ -6,7 +6,7 @@ import { useModals, Alert, ConfirmModal, ErrorButton } from 'react-components';
 const useConfirm = () => {
     const { createModal } = useModals();
 
-    const openConfirmModal = (title: string, confirm: string, message: string, onConfirm: () => void) => {
+    const openConfirmModal = (title: string, confirm: string, message: string, onConfirm: () => any) => {
         const content = (
             <>
                 {c('Info').t`Are you sure you want to ${message}?`}

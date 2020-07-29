@@ -6,14 +6,11 @@ import {
     InternalServerError,
     NotFoundError,
     AccessDeniedError,
-    PrivateMainArea
+    PrivateMainArea,
 } from 'react-components';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { ApiError } from 'proton-shared/lib/fetch/ApiError';
 import { useDriveActiveFolder } from './Drive/DriveFolderProvider';
-
-interface ApiError extends Error {
-    response: Response;
-}
 
 interface Props extends RouteComponentProps {
     children: React.ReactNode;
@@ -22,7 +19,7 @@ interface Props extends RouteComponentProps {
 const AppErrorBoundary = ({ children, location }: Props) => {
     const { setFolder } = useDriveActiveFolder();
     const [state, setState] = useState<{ id: string; error?: Error }>({
-        id: generateUID('error-boundary')
+        id: generateUID('error-boundary'),
     });
 
     useEffect(() => {
@@ -37,23 +34,24 @@ const AppErrorBoundary = ({ children, location }: Props) => {
     };
 
     const renderError = () => {
-        if (!state.error) {
+        const { error } = state;
+        if (!error) {
             return null;
         }
 
-        if (state.error.name !== 'StatusCodeError') {
-            return <GenericError />;
+        if (error instanceof ApiError) {
+            if (error.status === 500) {
+                return <InternalServerError />;
+            }
+            if (error.status === 404) {
+                return <NotFoundError />;
+            }
+            if (error.status === 403) {
+                return <AccessDeniedError />;
+            }
         }
 
-        const response = (state.error as ApiError).response;
-
-        if (response.status === 500) {
-            return <InternalServerError />;
-        } else if (response.status === 404) {
-            return <NotFoundError />;
-        } else if (response.status === 403) {
-            return <AccessDeniedError />;
-        }
+        return <GenericError />;
     };
 
     return (

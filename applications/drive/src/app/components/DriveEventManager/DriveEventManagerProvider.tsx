@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, createContext, ReactNode } from 'react';
+import React, { useEffect, useRef, createContext, ReactNode, useContext } from 'react';
 import { useApi } from 'react-components';
 import eventManager from 'proton-shared/lib/eventManager/eventManager';
-import { useContext } from 'react';
+
 import { queryEvents, queryLatestEvents } from '../../api/share';
 import { LinkMeta } from '../../interfaces/link';
 import { EVENT_TYPES } from '../../constants';
@@ -46,7 +46,7 @@ const DriveEventManagerProvider = ({ children }: { children: ReactNode }) => {
         shareEventManagers.current[shareId] = eventManager({
             api,
             eventID: EventID,
-            query: (eventId: string) => queryEvents(shareId, eventId)
+            query: (eventId: string) => queryEvents(shareId, eventId),
         });
         const manager = getShareEventManager(shareId);
         manager.start();
@@ -57,7 +57,7 @@ const DriveEventManagerProvider = ({ children }: { children: ReactNode }) => {
         <EventManagerContext.Provider
             value={{
                 getShareEventManager,
-                createShareEventManager
+                createShareEventManager,
             }}
         >
             {children}

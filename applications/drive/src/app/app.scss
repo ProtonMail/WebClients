@@ -5,12 +5,9 @@
 @import '~react-components/styles/index';
 
 @import './components/FileBrowser/FileBrowser.scss';
-@import './components/TransfersInfo/TransfersInfo.scss';
-@import './components/FilePreview/FilePreview.scss';
-@import './components/Breadcrumbs/Breadcrumbs.scss';
+@import './components/TransferManager/TransferManager.scss';
 @import './components/uploads/UploadDragDrop/UploadDragDrop.scss';
 @import './components/FolderTree/FolderTree.scss';
-@import './components/FileIcon/FileIcon.scss';
 
 // stuff for responsive
 @import '~design-system/_sass/reusable-components/design-system-responsive';

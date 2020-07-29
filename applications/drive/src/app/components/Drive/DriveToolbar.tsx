@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 
-import { ToolbarSeparator, Toolbar } from 'react-components';
+import { ToolbarSeparator, Toolbar, isPreviewAvailable } from 'react-components';
 
+import { getDevice } from 'proton-shared/lib/helpers/browser';
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveContent } from './DriveContentProvider';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder } from './DriveFolderProvider';
 import { LinkType } from '../../interfaces/link';
-import { isPreviewAvailable } from '../FilePreview/FilePreview';
 import {
     PreviewButton,
     SortDropdown,
@@ -17,7 +17,7 @@ import {
     MoveToTrashButton,
     MoveToFolderButton,
     BackButton,
-    CreateNewFolderButton
+    CreateNewFolderButton,
 } from './ToolbarButtons';
 import UploadFolderButton from './ToolbarButtons/UploadFolderButton';
 
@@ -30,6 +30,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
     const { fileBrowserControls } = useDriveContent();
     const { getLinkMeta } = useDrive();
     const cache = useDriveCache();
+    const isDesktop = !getDevice()?.type;
 
     const { linkId, shareId } = activeFolder;
 
@@ -38,7 +39,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
     useEffect(() => {
         if (!ParentLinkID) {
-            getLinkMeta(shareId, linkId);
+            getLinkMeta(shareId, linkId).catch(console.error);
         }
     }, [shareId, linkId, ParentLinkID]);
 
@@ -46,9 +47,13 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
         if (!selectedItems.length) {
             return (
                 <>
-                    <CreateNewFolderButton activeFolder={activeFolder} />
-                    <ToolbarSeparator />
-                    <UploadFolderButton activeFolder={activeFolder} />
+                    <CreateNewFolderButton />
+                    {isDesktop && (
+                        <>
+                            <ToolbarSeparator />
+                            <UploadFolderButton />
+                        </>
+                    )}
                 </>
             );
         }
@@ -63,15 +68,15 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
         return (
             <>
-                <PreviewButton shareId={shareId} disabled={isPreviewDisabled} openLink={openLink} />
-                <DownloadButton shareId={shareId} />
-                <RenameButton shareId={shareId} disabled={isMultiSelect} />
-                <DetailsButton activeFolder={activeFolder} disabled={isMultiSelect} />
+                <PreviewButton disabled={isPreviewDisabled} openLink={openLink} />
+                <DownloadButton />
+                <RenameButton disabled={isMultiSelect} />
+                <DetailsButton disabled={isMultiSelect} />
 
                 <ToolbarSeparator />
 
-                <MoveToTrashButton activeFolder={activeFolder} />
-                <MoveToFolderButton activeFolder={activeFolder} />
+                <MoveToTrashButton />
+                <MoveToFolderButton />
             </>
         );
     };

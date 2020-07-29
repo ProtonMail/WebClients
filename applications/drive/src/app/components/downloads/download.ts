@@ -1,12 +1,11 @@
 import { generateUID } from 'react-components';
-import { orderBy } from 'proton-shared/lib/helpers/array';
+import { orderBy, areUint8Arrays } from 'proton-shared/lib/helpers/array';
 import { ReadableStream } from 'web-streams-polyfill';
 import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
 import { Api } from 'proton-shared/lib/interfaces';
 import { DriveFileBlock } from '../../interfaces/file';
 import { queryFileBlock } from '../../api/files';
 import { ObserverStream, untilStreamEnd } from '../../utils/stream';
-import { areUint8Arrays } from '../../utils/array';
 import { TransferCancel } from '../../interfaces/transfer';
 import runInQueue from '../../utils/runInQueue';
 import { waitUntil } from '../../utils/async';
@@ -98,7 +97,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
                             ...queryFileBlock(URL),
                             timeout: DOWNLOAD_TIMEOUT,
                             signal: abortController.signal,
-                            silence: true
+                            silence: true,
                         })
                     ) as ReadableStream<Uint8Array>;
 
@@ -153,7 +152,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
             } catch (e) {
                 if (!paused) {
                     abortController.abort();
-                    fsWriter.abort(e);
+                    fsWriter.abort(e).catch(console.error);
                     throw e;
                 }
 
@@ -188,7 +187,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
         paused = false;
         abortController.abort();
         const error = new TransferCancel(id);
-        fsWriter.abort(error);
+        fsWriter.abort(error).catch(console.error);
         onError?.(error);
     };
 
@@ -217,7 +216,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
                 }),
         cancel,
         pause,
-        resume
+        resume,
     };
 
     return { id, downloadControls };

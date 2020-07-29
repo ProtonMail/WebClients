@@ -16,15 +16,18 @@ describe('useDebouncedRequest', () => {
 
     beforeEach(() => {
         const cache = createCache();
+        const Wrapper = ({ children }: { children?: React.ReactNode }) => (
+            <CacheProvider cache={cache}>{children as any}</CacheProvider>
+        );
         const { result } = renderHook(() => useDebouncedRequest(), {
-            wrapper: ({ children }) => <CacheProvider cache={cache}>{children as any}</CacheProvider>
+            wrapper: Wrapper,
         });
         debouncedRequest = result.current;
         mockApi.mockClear();
     });
 
-    it('should initially call debounced function instantly', () => {
-        debouncedRequest({ test: 'test' });
+    it('should initially call debounced function instantly', async () => {
+        await debouncedRequest({ test: 'test' });
 
         expect(mockApi).toHaveBeenCalledTimes(1);
     });

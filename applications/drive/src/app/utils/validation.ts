@@ -1,4 +1,32 @@
 import { c } from 'ttag';
+import { MAX_NAME_LENGTH } from '../constants';
+
+// eslint-disable-next-line no-control-regex
+const RESERVED_CHARACTERS = /[<>:"\\/|?*]|[\x00-\x1F]/;
+const RESERVED_NAMES = [
+    'CON',
+    'PRN',
+    'AUX',
+    'NUL',
+    'COM1',
+    'COM2',
+    'COM3',
+    'COM4',
+    'COM5',
+    'COM6',
+    'COM7',
+    'COM8',
+    'COM9',
+    'LPT1',
+    'LPT2',
+    'LPT3',
+    'LPT4',
+    'LPT5',
+    'LPT6',
+    'LPT7',
+    'LPT8',
+    'LPT9',
+];
 
 export class ValidationError extends Error {
     constructor(message: string) {
@@ -7,63 +35,66 @@ export class ValidationError extends Error {
     }
 }
 
-const MAX_NAME_LENGTH = 255;
-
-export const validateLinkName = (name: string) => {
-    // eslint-disable-next-line no-control-regex
-    const reservedCharacters = /[<>:"\\/|?*]|[\x00-\x1F]/;
-    const reservedNames = [
-        'CON',
-        'PRN',
-        'AUX',
-        'NUL',
-        'COM1',
-        'COM2',
-        'COM3',
-        'COM4',
-        'COM5',
-        'COM6',
-        'COM7',
-        'COM8',
-        'COM9',
-        'LPT1',
-        'LPT2',
-        'LPT3',
-        'LPT4',
-        'LPT5',
-        'LPT6',
-        'LPT7',
-        'LPT8',
-        'LPT9'
-    ];
-
-    if (!name) {
-        return c('Validation Error').t`Name must not be empty`;
+const composeValidators = <T>(validators: ((value: T) => string | undefined)[]) => (value: T) => {
+    for (const validator of validators) {
+        const result = validator(value);
+        if (result) {
+            return result;
+        }
     }
-
-    if (reservedCharacters.test(name)) {
-        return c('Validation Error').t`Name must not contain special characters: <>:"\\/|?*`;
-    }
-
-    if (reservedNames.includes(name.toUpperCase())) {
-        return c('Validation Error').t`Name must not be a system reserved name`;
-    }
-
-    if (name.length > 255) {
-        return c('Validation Error').t`Name must be ${MAX_NAME_LENGTH} characters long at most`;
-    }
-
-    if (name.endsWith('.')) {
-        return c('Validation Error').t`Name must not end with a period`;
-    }
-
-    if (name.startsWith(' ')) {
-        return c('Validation Error').t`Name must not begin with a space`;
-    }
-
-    if (name.endsWith(' ')) {
-        return c('Validation Error').t`Name must not end with a space`;
-    }
-
     return undefined;
 };
+
+const validateSpaceEnd = (str: string) => {
+    return str.endsWith(' ') ? c('Validation Error').t`Name must not begin with a space` : undefined;
+};
+
+const validateSpaceStart = (str: string) => {
+    return str.startsWith(' ') ? c('Validation Error').t`Name must not begin with a space` : undefined;
+};
+
+const validateDotEnd = (str: string) => {
+    return str.endsWith('.') ? c('Validation Error').t`Name must not end with a period` : undefined;
+};
+
+const validateNameLength = (str: string) => {
+    return str.length > MAX_NAME_LENGTH
+        ? c('Validation Error').t`Name must be ${MAX_NAME_LENGTH} characters long at most`
+        : undefined;
+};
+
+const validateReservedName = (str: string) => {
+    return RESERVED_NAMES.includes(str.toUpperCase())
+        ? c('Validation Error').t`Name must not be a system reserved name`
+        : undefined;
+};
+
+const validateReservedCharacters = (str: string) => {
+    return RESERVED_CHARACTERS.test(str)
+        ? c('Validation Error').t`Name must not contain special characters: <>:"\\/|?*`
+        : undefined;
+};
+
+const validateNameEmpty = (str: string) => {
+    return !str ? c('Validation Error').t`Name must not be empty` : undefined;
+};
+
+export const validateLinkName = composeValidators([
+    validateNameEmpty,
+    validateReservedCharacters,
+    validateReservedName,
+    validateNameLength,
+    validateDotEnd,
+    validateSpaceStart,
+    validateSpaceEnd,
+]);
+
+export const validateLinkNameField = composeValidators([
+    validateNameEmpty,
+    validateReservedCharacters,
+    validateReservedName,
+    validateNameLength,
+    validateDotEnd,
+]);
+
+export const formatLinkName = (str: string) => str.trim();

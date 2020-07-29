@@ -1,46 +1,30 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton, useModals } from 'react-components';
+import { ToolbarButton } from 'react-components';
 
+import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { useDriveContent } from '../DriveContentProvider';
-import RenameModal from '../../RenameModal';
-import useDrive from '../../../hooks/drive/useDrive';
 
 interface Props {
-    shareId: string;
     disabled?: boolean;
 }
 
-const RenameButton = ({ shareId, disabled }: Props) => {
-    const { createModal } = useModals();
-    const { renameLink, events } = useDrive();
+const RenameButton = ({ disabled }: Props) => {
+    const { openRename } = useToolbarActions();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
-
-    const handleRename = () => {
-        if (!selectedItems.length) {
-            return;
-        }
-
-        const item = selectedItems[0];
-        createModal(
-            <RenameModal
-                item={item}
-                renameLink={async (name) => {
-                    await renameLink(shareId, item.LinkID, item.ParentLinkID, name, item.Type);
-                    events.call(shareId);
-                }}
-            />
-        );
-    };
 
     return (
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Rename`}
             icon="file-edit"
-            onClick={handleRename}
+            onClick={() => {
+                if (selectedItems.length) {
+                    openRename(selectedItems[0]);
+                }
+            }}
             data-testid="toolbar-rename"
         />
     );

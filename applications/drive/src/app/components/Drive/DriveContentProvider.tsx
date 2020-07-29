@@ -1,23 +1,22 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
-
-import { useMultiSortedList, useCache } from 'react-components';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-
-import { FileBrowserItem } from '../FileBrowser/FileBrowser';
-import useFileBrowser from '../FileBrowser/useFileBrowser';
+import useSelection from '../../hooks/util/useSelection';
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder, useDriveActiveFolder } from './DriveFolderProvider';
 import { mapLinksToChildren } from './helpers';
-import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../../constants';
 import { SortKeys } from '../../interfaces/link';
+import useDriveSorting from '../../hooks/drive/useDriveSorting';
+import { FileBrowserItem } from '../FileBrowser/interfaces';
 
 interface DriveContentProviderState {
     contents: FileBrowserItem[];
     loadNextPage: () => void;
     setSorting: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
     sortParams: { sortField: SortKeys; sortOrder: SORT_DIRECTION };
-    fileBrowserControls: ReturnType<typeof useFileBrowser>;
+    fileBrowserControls: Omit<ReturnType<typeof useSelection>, 'selectedItems'> & {
+        selectedItems: FileBrowserItem[];
+    };
     loading: boolean;
     initialized: boolean;
     complete?: boolean;
@@ -27,41 +26,34 @@ const DriveContentContext = createContext<DriveContentProviderState | null>(null
 
 const DriveContentProviderInner = ({
     children,
-    activeFolder: { linkId, shareId }
+    activeFolder: { linkId, shareId },
 }: {
     children: React.ReactNode;
     activeFolder: DriveFolder;
 }) => {
-    const sortCacheKey = 'sortParams';
-    const sortCache = useCache();
-    if (!sortCache.has(sortCacheKey)) {
-        sortCache.set(sortCacheKey, {
-            sortField: DEFAULT_SORT_FIELD as SortKeys,
-            sortOrder: DEFAULT_SORT_ORDER
-        });
-    }
     const cache = useDriveCache();
     const { fetchNextFolderContents } = useDrive();
     const [initialized, setInitialized] = useState(false);
     const [loading, setLoading] = useState(false);
-    const sortParams = sortCache.get(sortCacheKey);
     const [, setError] = useState();
 
-    const list = mapLinksToChildren(cache.get.childLinkMetas(shareId, linkId, sortParams) || []);
+    const { sortParams, sortedList, setSorting } = useDriveSorting(
+        (sortParams) => cache.get.childLinkMetas(shareId, linkId, sortParams) || []
+    );
+    const contents = mapLinksToChildren(sortedList, (linkId) => cache.get.isLinkLocked(shareId, linkId));
     const complete = cache.get.childrenComplete(shareId, linkId, sortParams);
 
-    const { sortedList, setConfigs } = useMultiSortedList(list, [
-        {
-            key: sortParams.sortField,
-            direction: sortParams.sortOrder
-        },
-        {
-            key: 'Name',
-            direction: SORT_DIRECTION.ASC
-        }
-    ]);
-
-    const fileBrowserControls = useFileBrowser(sortedList);
+    const selectionControls = useSelection(
+        contents.map((data) => ({
+            id: data.LinkID,
+            disabled: data.Disabled,
+            data,
+        }))
+    );
+    const fileBrowserControls = {
+        ...selectionControls,
+        selectedItems: selectionControls.selectedItems.map(({ data }) => data),
+    };
     const abortSignal = useRef<AbortSignal>();
     const contentLoading = useRef(false);
 
@@ -100,17 +92,6 @@ const DriveContentProviderInner = ({
         }
     }, [shareId, linkId, sortParams]);
 
-    const setSorting = async (sortField: SortKeys, sortOrder: SORT_DIRECTION) => {
-        sortCache.set(sortCacheKey, { sortField, sortOrder });
-        setConfigs([
-            { key: sortField, direction: sortOrder },
-            {
-                key: 'Name',
-                direction: SORT_DIRECTION.ASC
-            }
-        ]);
-    };
-
     useEffect(() => {
         const abortController = new AbortController();
 
@@ -122,7 +103,7 @@ const DriveContentProviderInner = ({
         }
 
         if (!initialized || !cache.get.listedChildLinks(shareId, linkId)?.length) {
-            loadNextPage();
+            loadNextPage().catch(console.error);
         }
 
         return () => {
@@ -139,9 +120,9 @@ const DriveContentProviderInner = ({
                 loadNextPage,
                 setSorting,
                 sortParams,
-                contents: sortedList,
+                contents,
                 complete,
-                initialized
+                initialized,
             }}
         >
             {children}

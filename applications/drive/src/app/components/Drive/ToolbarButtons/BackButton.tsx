@@ -7,14 +7,16 @@ import { LinkType } from '../../../interfaces/link';
 
 interface Props {
     shareId: string;
-    parentLinkId: string;
+    parentLinkId?: string;
     disabled?: boolean;
     openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
 const BackButton = ({ shareId, parentLinkId, disabled, openLink }: Props) => {
     const handleBackClick = () => {
-        openLink(shareId, parentLinkId, LinkType.FOLDER);
+        if (parentLinkId) {
+            openLink(shareId, parentLinkId, LinkType.FOLDER);
+        }
     };
 
     return (

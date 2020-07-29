@@ -1,20 +1,27 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
-import { validateLinkName } from '../utils/validation';
+import { validateLinkNameField, formatLinkName } from '../utils/validation';
+import useDrive from '../hooks/drive/useDrive';
+import { useDriveActiveFolder, DriveFolder } from './Drive/DriveFolderProvider';
+import { MAX_NAME_LENGTH } from '../constants';
 
 interface Props {
     onClose?: () => void;
-    createNewFolder: (name: string) => Promise<void>;
+    onCreateDone?: (folderId: string) => void;
+    folder?: DriveFolder;
 }
 
-const CreateFolderModal = ({ onClose, createNewFolder, ...rest }: Props) => {
+const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) => {
     const { createNotification } = useNotifications();
+
+    const { folder: activeFolder } = useDriveActiveFolder();
+    const { createNewFolder, events } = useDrive();
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
 
-    const formatFolderName = (name: string) => {
-        return name.trim();
+    const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
+        setFolderName(formatLinkName(target.value));
     };
 
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -22,11 +29,21 @@ const CreateFolderModal = ({ onClose, createNewFolder, ...rest }: Props) => {
     };
 
     const handleSubmit = async () => {
-        const name = formatFolderName(folderName);
-        setFolderName(name);
+        const formattedName = formatLinkName(folderName);
+        setFolderName(formattedName);
+
+        const parentFolder = folder || activeFolder;
+
+        if (!parentFolder) {
+            return;
+        }
+
+        const { shareId, linkId } = parentFolder;
 
         try {
-            await createNewFolder(name);
+            const { Folder } = await createNewFolder(shareId, linkId, formattedName);
+            await events.call(shareId);
+            onCreateDone?.(Folder.ID);
         } catch (e) {
             if (e.name === 'ValidationError') {
                 createNotification({ text: e.message, type: 'error' });
@@ -35,19 +52,15 @@ const CreateFolderModal = ({ onClose, createNewFolder, ...rest }: Props) => {
         }
 
         const notificationText = (
-            <span key="name" style={{ whiteSpace: 'pre' }}>
-                {c('Success').t`"${name}" created successfully`}
+            <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
+                {c('Success').t`"${formattedName}" created successfully`}
             </span>
         );
         createNotification({ text: notificationText });
         onClose?.();
     };
 
-    const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
-        setFolderName(formatFolderName(target.value));
-    };
-
-    const validationError = validateLinkName(folderName);
+    const validationError = validateLinkNameField(folderName);
 
     return (
         <FormModal
@@ -65,6 +78,7 @@ const CreateFolderModal = ({ onClose, createNewFolder, ...rest }: Props) => {
                     <Input
                         id="folder-name"
                         autoFocus
+                        maxLength={MAX_NAME_LENGTH}
                         value={folderName}
                         placeholder={c('Placeholder').t`Enter a new folder name`}
                         onChange={handleChange}

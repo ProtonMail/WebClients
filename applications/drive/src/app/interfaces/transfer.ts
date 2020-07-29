@@ -7,7 +7,7 @@ export enum TransferState {
     Done = 'done',
     Canceled = 'canceled',
     Error = 'error',
-    Paused = 'paused'
+    Paused = 'paused',
 }
 
 export interface TransferProgresses {
@@ -27,10 +27,14 @@ export class TransferCancel extends Error {
     }
 }
 
-export interface UploadInfo {
-    blob: Blob;
-    LinkID: string;
+export interface PreUploadData {
+    file: File;
     ShareID: string;
+    ParentLinkID: string | Promise<string>;
+}
+
+export interface UploadInfo {
+    LinkID: string;
     RevisionID: string;
     ParentLinkID: string;
 }
@@ -38,15 +42,22 @@ export interface UploadInfo {
 export interface Upload {
     id: string;
     meta: TransferMeta;
+    preUploadData: PreUploadData;
     info?: UploadInfo;
     state: TransferState;
     startDate: Date;
     error?: Error;
 }
 
+export interface DownloadInfo {
+    LinkID: string;
+    ShareID: string;
+}
+
 export interface Download {
     id: string;
     meta: TransferMeta;
+    downloadInfo: DownloadInfo;
     state: TransferState;
     type: LinkType;
     startDate: Date;

@@ -1,26 +1,26 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
-import { FileBrowserItem } from './FileBrowser/FileBrowser';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { LinkType } from '../interfaces/link';
-import { validateLinkName } from '../utils/validation';
+import { validateLinkNameField, formatLinkName } from '../utils/validation';
+import useDrive from '../hooks/drive/useDrive';
+import { DriveFolder } from './Drive/DriveFolderProvider';
+import { MAX_NAME_LENGTH } from '../constants';
+import { FileBrowserItem } from './FileBrowser/interfaces';
 
 interface Props {
+    activeFolder: DriveFolder;
     onClose?: () => void;
     item: FileBrowserItem;
-    renameLink: (name: string) => Promise<void>;
 }
 
-const RenameModal = ({ renameLink, item, onClose, ...rest }: Props) => {
+const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
     const { createNotification } = useNotifications();
+    const { renameLink, events } = useDrive();
     const [name, setName] = useState(item.Name);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);
-
-    const formatName = (name: string) => {
-        return name.trim();
-    };
 
     const selectNamePart = (e: FocusEvent<HTMLInputElement>) => {
         if (autofocusDone) {
@@ -34,16 +34,21 @@ const RenameModal = ({ renameLink, item, onClose, ...rest }: Props) => {
         e.target.setSelectionRange(0, namePart.length);
     };
 
+    const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
+        setName(formatLinkName(target.value));
+    };
+
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setName(target.value);
     };
 
     const handleSubmit = async () => {
-        const formattedName = formatName(name);
+        const formattedName = formatLinkName(name);
         setName(formattedName);
 
         try {
-            await renameLink(formattedName);
+            await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, formattedName, item.Type);
+            await events.call(activeFolder.shareId);
         } catch (e) {
             if (e.name === 'ValidationError') {
                 createNotification({ text: e.message, type: 'error' });
@@ -52,7 +57,7 @@ const RenameModal = ({ renameLink, item, onClose, ...rest }: Props) => {
         }
 
         const nameElement = (
-            <span key="name" style={{ whiteSpace: 'pre' }}>
+            <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
                 &quot;{formattedName}&quot;
             </span>
         );
@@ -60,12 +65,8 @@ const RenameModal = ({ renameLink, item, onClose, ...rest }: Props) => {
         onClose?.();
     };
 
-    const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
-        setName(formatName(target.value));
-    };
-
     const isFolder = item.Type === LinkType.FOLDER;
-    const validationError = validateLinkName(name);
+    const validationError = validateLinkNameField(name);
 
     return (
         <FormModal
@@ -84,6 +85,7 @@ const RenameModal = ({ renameLink, item, onClose, ...rest }: Props) => {
                         id="link-name"
                         value={name}
                         autoFocus
+                        maxLength={MAX_NAME_LENGTH}
                         placeholder={c('Placeholder').t`New name`}
                         onChange={handleChange}
                         onBlur={handleBlur}

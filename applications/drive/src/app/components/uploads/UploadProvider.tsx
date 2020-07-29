@@ -1,12 +1,19 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
-import { TransferState, TransferProgresses, TransferMeta, Upload, UploadInfo } from '../../interfaces/transfer';
-import { isTransferProgress, isTransferPending } from '../../utils/transfer';
+import {
+    TransferState,
+    TransferProgresses,
+    TransferMeta,
+    Upload,
+    UploadInfo,
+    PreUploadData,
+} from '../../interfaces/transfer';
+import { isTransferProgress, isTransferPending, isTransferFailed, isTransferCancelError } from '../../utils/transfer';
 
 interface UploadProviderState {
     uploads: Upload[];
     addToUploadQueue: (
-        file: File,
+        data: PreUploadData,
         metadataPromise: Promise<{ meta: TransferMeta; info: UploadInfo }>,
         callbacks: UploadCallbacks
     ) => Promise<void>;
@@ -14,6 +21,7 @@ interface UploadProviderState {
     getUploadsImmediate: () => Upload[];
     clearUploads: () => void;
     removeUpload: (id: string) => void;
+    cancelUpload: (id: string) => void;
 }
 
 const MAX_ACTIVE_UPLOADS = 3;
@@ -31,17 +39,13 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     const controls = useRef<{ [id: string]: UploadControls }>({});
     const progresses = useRef<TransferProgresses>({});
 
-    const updateUploadByID = (id: string, data: Partial<Upload>) => {
-        uploadsRef.current = uploadsRef.current.map((upload) => (upload.id === id ? { ...upload, ...data } : upload));
-        setUploads(uploadsRef.current);
-    };
-
     const removeUpload = (id: string) => {
         uploadsRef.current = uploadsRef.current.filter((upload) => upload.id !== id);
         setUploads(uploadsRef.current);
     };
 
-    const addNewUpload = (id: string, file: File) => {
+    const addNewUpload = (id: string, preUploadData: PreUploadData) => {
+        const { file } = preUploadData;
         uploadsRef.current = [
             ...uploadsRef.current,
             {
@@ -49,11 +53,12 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                 meta: {
                     filename: file.name,
                     mimeType: file.type,
-                    size: file.size
+                    size: file.size,
                 },
+                preUploadData,
                 state: TransferState.Initializing,
-                startDate: new Date()
-            }
+                startDate: new Date(),
+            },
         ];
         setUploads(uploadsRef.current);
     };
@@ -64,9 +69,15 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         setUploads(uploadsRef.current);
     };
 
-    const updateUploadState = (id: string, state: TransferState, { error }: { error?: Error } = {}) =>
-        updateUploadByID(id, { state, error });
-
+    const updateUploadState = (id: string, state: TransferState, data: Partial<Upload> = {}) => {
+        const currentUpload = uploadsRef.current.find((upload) => upload.id === id);
+        if (currentUpload && !isTransferFailed(currentUpload)) {
+            uploadsRef.current = uploadsRef.current.map((upload) =>
+                upload.id === id ? { ...upload, ...data, state } : upload
+            );
+            setUploads(uploadsRef.current);
+        }
+    };
     useEffect(() => {
         const uploading = uploads.filter(isTransferProgress);
         const nextPending = uploads.find(isTransferPending);
@@ -94,19 +105,23 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                     updateUploadState(id, TransferState.Done);
                 })
                 .catch((error) => {
-                    console.error(`Failed to upload: ${error}`);
-                    updateUploadState(id, TransferState.Error, { error });
+                    if (isTransferCancelError(error)) {
+                        updateUploadState(id, TransferState.Canceled);
+                    } else {
+                        console.error(`Download ${id} failed: ${error}`);
+                        updateUploadState(id, TransferState.Error, { error });
+                    }
                 });
         }
     }, [uploads]);
 
     const addToUploadQueue = async (
-        file: File,
+        preUploadData: PreUploadData,
         metadataPromise: Promise<{ meta: TransferMeta; info: UploadInfo }>,
         callbacks: UploadCallbacks
     ) =>
         new Promise<void>((resolve, reject) => {
-            const { id, uploadControls } = initUpload({
+            const { id, uploadControls } = initUpload(preUploadData.file, {
                 ...callbacks,
                 finalize: async (...args) => {
                     await callbacks.finalize(...args);
@@ -119,34 +134,35 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                 onError: (err) => {
                     callbacks.onError?.(err);
                     reject(err);
-                }
+                },
             });
 
             controls.current[id] = uploadControls;
             progresses.current[id] = 0;
 
-            addNewUpload(id, file);
+            addNewUpload(id, preUploadData);
 
             metadataPromise
                 .then(({ meta, info }) => {
-                    updateUploadByID(id, {
+                    updateUploadState(id, TransferState.Pending, {
                         meta,
                         info,
-                        state: TransferState.Pending
                     });
                 })
                 .catch((error) => {
                     updateUploadState(id, TransferState.Error, { error });
-
                     reject(error);
                 });
         });
 
+    const cancelUpload = (id: string) => {
+        updateUploadState(id, TransferState.Canceled);
+        controls.current[id].cancel();
+    };
+
     const getUploadsProgresses = () => ({ ...progresses.current });
 
-    const getUploadsImmediate = () => {
-        return uploadsRef.current;
-    };
+    const getUploadsImmediate = () => uploadsRef.current;
 
     return (
         <UploadContext.Provider
@@ -156,7 +172,8 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                 addToUploadQueue,
                 getUploadsProgresses,
                 clearUploads,
-                removeUpload
+                removeUpload,
+                cancelUpload,
             }}
         >
             {children}

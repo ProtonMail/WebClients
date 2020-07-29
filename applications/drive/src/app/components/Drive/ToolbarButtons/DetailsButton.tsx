@@ -1,38 +1,30 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton, useModals } from 'react-components';
+import { ToolbarButton } from 'react-components';
 
+import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { useDriveContent } from '../DriveContentProvider';
-import useDrive from '../../../hooks/drive/useDrive';
-import DetailsModal from '../../DetailsModal';
-import { DriveFolder } from '../DriveFolderProvider';
 
 interface Props {
-    activeFolder: DriveFolder;
     disabled?: boolean;
 }
 
-const DetailsButton = ({ activeFolder, disabled }: Props) => {
-    const { createModal } = useModals();
-    const { getLinkMeta } = useDrive();
+const DetailsButton = ({ disabled }: Props) => {
+    const { openDetails } = useToolbarActions();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
-
-    const handleDetailsClick = () => {
-        if (!selectedItems.length) {
-            return;
-        }
-
-        createModal(<DetailsModal item={selectedItems[0]} activeFolder={activeFolder} getLinkMeta={getLinkMeta} />);
-    };
 
     return (
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Details`}
             icon="info"
-            onClick={handleDetailsClick}
+            onClick={() => {
+                if (selectedItems.length) {
+                    openDetails(selectedItems[0]);
+                }
+            }}
             data-testid="toolbar-details"
         />
     );

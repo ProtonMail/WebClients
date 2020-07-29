@@ -1,25 +1,17 @@
 import React, { useCallback, useEffect, useRef } from 'react';
+import { usePreventLeave, isPreviewAvailable } from 'react-components';
 import useFiles from '../../hooks/drive/useFiles';
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
-import FileBrowser, { FileBrowserItem } from '../FileBrowser/FileBrowser';
+import FileBrowser from '../FileBrowser/FileBrowser';
 import { DriveFolder } from './DriveFolderProvider';
-import { TransferMeta } from '../../interfaces/transfer';
 import FileSaver from '../../utils/FileSaver/FileSaver';
-import { isPreviewAvailable } from '../FilePreview/FilePreview';
 import { useDriveContent } from './DriveContentProvider';
 import EmptyFolder from '../FileBrowser/EmptyFolder';
-import { LinkMeta, LinkType } from '../../interfaces/link';
+import { LinkType } from '../../interfaces/link';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import useDrive from '../../hooks/drive/useDrive';
-import usePreventLeave from '../../hooks/util/usePreventLeave';
-
-export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
-    return {
-        filename: item.Name,
-        mimeType: item.MIMEType,
-        size: item.Size
-    };
-};
+import { getMetaForTransfer } from '../../utils/transfer';
+import { FileBrowserItem } from '../FileBrowser/interfaces';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -35,13 +27,20 @@ function Drive({ activeFolder, openLink }: Props) {
     const { preventLeave } = usePreventLeave();
 
     const { linkId, shareId } = activeFolder;
-    const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, selectRange } = fileBrowserControls;
+    const {
+        clearSelections,
+        selectedItems,
+        toggleSelectItem,
+        toggleAllSelected,
+        toggleRange,
+        selectItem,
+    } = fileBrowserControls;
 
     const folderName = cache.get.linkMeta(shareId, linkId)?.Name;
 
     useEffect(() => {
         if (folderName === undefined) {
-            getLinkMeta(shareId, linkId);
+            getLinkMeta(shareId, linkId).catch(console.error);
         }
     }, [shareId, linkId, folderName]);
 
@@ -66,7 +65,7 @@ function Drive({ activeFolder, openLink }: Props) {
             } else {
                 const meta = getMetaForTransfer(item);
                 const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
-                preventLeave(FileSaver.saveAsFile(fileStream, meta));
+                preventLeave(FileSaver.saveAsFile(fileStream, meta)).catch(console.error);
             }
         }
     };
@@ -83,9 +82,10 @@ function Drive({ activeFolder, openLink }: Props) {
             selectedItems={selectedItems}
             onItemClick={handleClick}
             onToggleItemSelected={toggleSelectItem}
-            onEmptyAreaClick={clearSelections}
+            clearSelections={clearSelections}
             onToggleAllSelected={toggleAllSelected}
-            onShiftClick={selectRange}
+            onShiftClick={toggleRange}
+            selectItem={selectItem}
         />
     );
 }

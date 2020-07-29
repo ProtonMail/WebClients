@@ -1,5 +1,6 @@
-import { FileBrowserItem } from '../FileBrowser/FileBrowser';
 import { LinkType, LinkMeta } from '../../interfaces/link';
+import { FileBrowserItem } from '../FileBrowser/interfaces';
+import { LinkURLType } from '../../constants';
 
 export const selectMessageForItemList = (
     types: LinkType[],
@@ -16,7 +17,10 @@ export const selectMessageForItemList = (
     return message;
 };
 
-export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[] => {
+export const mapLinksToChildren = (
+    decryptedLinks: LinkMeta[],
+    isDisabled: (linkId: string) => boolean
+): FileBrowserItem[] => {
     return decryptedLinks.map(({ LinkID, Type, Name, ModifyTime, Size, MIMEType, ParentLinkID, Trashed }) => ({
         Name,
         LinkID,
@@ -25,6 +29,20 @@ export const mapLinksToChildren = (decryptedLinks: LinkMeta[]): FileBrowserItem[
         Size,
         MIMEType,
         ParentLinkID,
-        Trashed
+        Trashed,
+        Disabled: isDisabled(LinkID),
     }));
+};
+
+export const toLinkURLType = (type: LinkType) => {
+    const linkType = {
+        [LinkType.FILE]: LinkURLType.FILE,
+        [LinkType.FOLDER]: LinkURLType.FOLDER,
+    }[type];
+
+    if (!linkType) {
+        throw new Error(`Type ${type} is unexpected, must be integer representing link type`);
+    }
+
+    return linkType;
 };

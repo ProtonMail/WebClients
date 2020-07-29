@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import { contentType } from 'mime-types';
 
 interface DownloadConfig {
@@ -25,12 +26,14 @@ function createDownloadStream(port: MessagePort) {
                         return controller.enqueue(data?.payload);
                     case 'abort':
                         return controller.error(data?.reason);
+                    default:
+                        console.error(`received unknown action "${data?.action}"`);
                 }
             };
         },
         cancel() {
             port.postMessage({ action: 'download_canceled' });
-        }
+        },
     });
 }
 
@@ -61,7 +64,7 @@ class DownloadServiceWorker {
      * and responds with a stream, that client itself controls.
      */
     onFetch = (event: any) => {
-        const url = event.request.url;
+        const { url } = event.request;
 
         if (url.endsWith('/sw/ping')) {
             return event.respondWith(new Response('pong'));
@@ -79,11 +82,11 @@ class DownloadServiceWorker {
         const headers = new Headers({
             ...(size ? { 'Content-Length': `${size}` } : {}),
             'Content-Type': `${contentType(mimeType || 'application/octet-stream')}`,
-            'Content-Disposition': 'attachment; filename=' + `"${encodeURI(filename || 'file')}"`,
+            'Content-Disposition': `attachment; filename="${encodeURI(filename || 'file')}"`,
             'Content-Security-Policy': "default-src 'none'",
             'X-Content-Security-Policy': "default-src 'none'",
             'X-WebKit-CSP': "default-src 'none'",
-            'X-XSS-Protection': '1; mode=block'
+            'X-XSS-Protection': '1; mode=block',
         });
 
         event.respondWith(new Response(stream, { headers }));
@@ -99,7 +102,7 @@ class DownloadServiceWorker {
         }
 
         const { filename, mimeType, size } = event.data.payload;
-        const downloadUrl = encodeURI((self as any).registration.scope + `sw/${Math.random()}/` + filename);
+        const downloadUrl = encodeURI(`${(self as any).registration.scope}sw/${Math.random()}/${filename}`);
 
         const port = event.ports[0];
 
@@ -108,7 +111,7 @@ class DownloadServiceWorker {
             filename,
             mimeType,
             size,
-            port
+            port,
         });
 
         port.postMessage({ action: 'download_started', payload: downloadUrl });

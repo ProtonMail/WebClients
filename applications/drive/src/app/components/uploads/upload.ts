@@ -1,5 +1,7 @@
 import { generateUID } from 'react-components';
 import { generateContentHash } from 'proton-shared/lib/keys/driveKeys';
+import { serializeFormData } from 'proton-shared/lib/fetch/helpers';
+import { createApiError } from 'proton-shared/lib/fetch/ApiError';
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
 import { TransferCancel, UploadInfo } from '../../interfaces/transfer';
@@ -26,7 +28,7 @@ export interface BlockMeta {
 export interface UploadCallbacks {
     transform: (buffer: Uint8Array) => Promise<{ encryptedData: Uint8Array; signature: string }>;
     requestUpload: (blockList: BlockList) => Promise<UploadLink[]>;
-    finalize: (blocklist: BlockMeta[]) => Promise<void>;
+    finalize: (blocklist: BlockMeta[], config?: { signal?: AbortSignal }) => Promise<void>;
     onProgress?: (bytes: number) => void;
     onError?: (error: Error) => void;
 }
@@ -43,34 +45,57 @@ export async function upload(
     onProgress: (relativeIncrement: number) => void,
     signal?: AbortSignal
 ) {
-    const xhr = new XMLHttpRequest();
-
     return new Promise<void>((resolve, reject) => {
-        let lastLoaded = 0;
-        const formData = new FormData();
-
-        formData.append('Block', new Blob([content]));
-
-        if (signal) {
-            signal.onabort = function() {
-                xhr.abort();
-                reject(new TransferCancel(id));
-            };
+        if (signal?.aborted) {
+            reject(new TransferCancel(id));
+            return;
         }
 
+        const xhr = new XMLHttpRequest();
+
+        if (signal) {
+            signal.addEventListener('abort', () => {
+                xhr.abort();
+                reject(new TransferCancel(id));
+            });
+        }
+
+        let lastLoaded = 0;
         xhr.upload.onprogress = (e) => {
             onProgress((e.loaded - lastLoaded) / e.total);
             lastLoaded = e.loaded;
         };
-        xhr.onload = () => resolve();
+
+        xhr.onload = async () => {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                resolve();
+            } else {
+                reject(
+                    createApiError(
+                        'StatusCodeError',
+                        {
+                            status: xhr.status,
+                            statusText: xhr.statusText,
+                        } as Response,
+                        undefined,
+                        xhr.responseType === 'json' ? JSON.parse(xhr.response) : undefined
+                    )
+                );
+            }
+        };
+
         xhr.upload.onerror = reject;
         xhr.onerror = reject;
         xhr.open('POST', url);
-        xhr.send(formData);
+        xhr.send(
+            serializeFormData({
+                Block: new Blob([content]),
+            })
+        );
     });
 }
 
-export function initUpload({ requestUpload, transform, onProgress, finalize, onError }: UploadCallbacks) {
+export function initUpload(file: File, { requestUpload, transform, onProgress, finalize, onError }: UploadCallbacks) {
     const id = generateUID('drive-transfers');
     const abortController = new AbortController();
 
@@ -81,7 +106,7 @@ export function initUpload({ requestUpload, transform, onProgress, finalize, onE
                 Signature: signature,
                 Hash: (await generateContentHash(encryptedData)).BlockHash,
                 Size: encryptedData.byteLength,
-                Index: startIndex + i
+                Index: startIndex + i,
             }))
         );
 
@@ -110,16 +135,16 @@ export function initUpload({ requestUpload, transform, onProgress, finalize, onE
         return UploadLinks.map(({ Token }, i) => ({
             Index: BlockList[i].Index,
             Hash: BlockList[i].Hash,
-            Token
+            Token,
         }));
     };
 
-    const start = async ({ blob }: UploadInfo) => {
+    const start = async () => {
         if (abortController.signal.aborted) {
-            return;
+            throw new TransferCancel(id);
         }
 
-        const reader = new ChunkFileReader(blob, FILE_CHUNK_SIZE);
+        const reader = new ChunkFileReader(file, FILE_CHUNK_SIZE);
         const blockTokens: BlockMeta[] = [];
         let startIndex = 1;
 
@@ -140,15 +165,16 @@ export function initUpload({ requestUpload, transform, onProgress, finalize, onE
 
     const cancel = () => {
         abortController.abort();
+        onError?.(new TransferCancel(id));
     };
 
     const uploadControls: UploadControls = {
-        start: (...args) =>
-            start(...args).catch((err) => {
+        start: () =>
+            start().catch((err) => {
                 onError?.(err);
                 throw err;
             }),
-        cancel
+        cancel,
     };
 
     return { id, uploadControls };

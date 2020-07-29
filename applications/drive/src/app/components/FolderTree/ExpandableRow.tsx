@@ -1,9 +1,6 @@
-import React, { useState, ReactNode } from 'react';
+import React, { useState, ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
-
-import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy } from 'react-components';
-
-import FileIcon from '../FileIcon/FileIcon';
+import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy, FileIcon } from 'react-components';
 
 interface Props {
     linkId: string;
@@ -11,7 +8,7 @@ interface Props {
     depth: number;
     disabled?: boolean;
     isSelected: boolean;
-    isExpanded?: boolean;
+    isExpanded: boolean;
     onSelect: (LinkID: string) => void;
     loadChildren: (LinkID: string, loadNextPage?: boolean) => Promise<void>;
     childrenComplete: boolean;
@@ -24,33 +21,40 @@ const ExpandableRow = ({
     depth,
     disabled = false,
     isSelected,
-    isExpanded = false,
+    isExpanded,
     onSelect,
     loadChildren,
     childrenComplete,
-    children
+    children,
 }: Props) => {
     const [expanded, setExpanded] = useState(isExpanded);
     const [loadingChildren, withLoadingChildren] = useLoading();
 
     const handleExpand = (linkId: string) => {
         if (!expanded) {
-            withLoadingChildren(loadChildren(linkId));
+            withLoadingChildren(loadChildren(linkId)).catch(console.error);
         }
 
         setExpanded(!expanded);
     };
 
     const handleLoadMore = (linkId: string) => () => {
-        withLoadingChildren(loadChildren(linkId, true));
+        withLoadingChildren(loadChildren(linkId, true)).catch(console.error);
     };
 
     const handleSelect = (linkId: string) => () => {
         if (disabled) {
             return;
         }
+
         onSelect(linkId);
     };
+
+    useEffect(() => {
+        if (isExpanded && !expanded) {
+            handleExpand(linkId);
+        }
+    }, [isExpanded]);
 
     const paddingLeft = `${depth * 1.5}em`;
     const viewMorePadding = { paddingLeft: `${(depth + 1) * 1.5}em` };
@@ -67,14 +71,14 @@ const ExpandableRow = ({
     return (
         <>
             <tr
-                className={classnames(['cursor-pointer', isSelected && 'bg-global-highlight'])}
+                className={classnames(['pd-folder-tree-listItem cursor-pointer', isSelected && 'bg-global-highlight'])}
                 onClick={handleSelect(linkId)}
             >
                 <td style={{ paddingLeft }} className="flex flex-items-center flex-nowrap m0">
-                    <div className="flex-item-noshrink pl0-5 pr0-5">
+                    <div className="pd-folder-tree-listItem-expand flex-item-noshrink relative">
                         <Button
                             disabled={disabled}
-                            className="pd-folder-tree-listItem-button"
+                            className="pd-folder-tree-listItem-expand-button increase-surface-click"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 e.currentTarget.blur();
@@ -92,7 +96,7 @@ const ExpandableRow = ({
                     </div>
                     {isSelected && (
                         <div className="pd-folder-tree-listItem-selected flex flex-item-noshrink">
-                            <span className="inline-flex bg-pm-blue rounded50 p0-25">
+                            <span className="inline-flex bg-pm-blue rounded50 pd-folder-tree-listItem-selected-check">
                                 <Icon name="on" className="stroke-global-light p0-25" size={16} />
                             </span>
                         </div>

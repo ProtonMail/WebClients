@@ -19,7 +19,7 @@ interface Step {
     header?: string;
 }
 
-const OnboardingModal = ({ modalTitleID = 'modalTitle', onClose = noop, ...rest }: Props) => {
+const OnboardingModal = ({ modalTitleID = 'onboardingModal', onClose = noop, ...rest }: Props) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     // Workaround to fix modal flickering, while re-rendering content.
@@ -82,7 +82,7 @@ const OnboardingModal = ({ modalTitleID = 'modalTitle', onClose = noop, ...rest 
                             src={step.image}
                             alt={
                                 isFirstStep
-                                    ? c('info').t`Protont Drive interface`
+                                    ? c('info').t`ProtonDrive interface`
                                     : c('info').t`Location of report bug button`
                             }
                         />

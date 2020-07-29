@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { LoginForm, StandardPublicApp } from 'react-components';
-import PublicLayout from './components/layout/PublicLayout';
+import { Route, Switch } from 'react-router-dom';
+import { MinimalLoginContainer, StandardPublicApp } from 'react-components';
 import { openpgpConfig } from './openpgpConfig';
 
 interface Props {
@@ -11,13 +10,9 @@ interface Props {
 const PublicApp = ({ onLogin }: Props) => {
     return (
         <StandardPublicApp openpgpConfig={openpgpConfig}>
-            <PublicLayout>
-                <Router>
-                    <Switch>
-                        <Route render={() => <LoginForm onLogin={onLogin} />} />
-                    </Switch>
-                </Router>
-            </PublicLayout>
+            <Switch>
+                <Route render={() => <MinimalLoginContainer onLogin={onLogin} />} />
+            </Switch>
         </StandardPublicApp>
     );
 };

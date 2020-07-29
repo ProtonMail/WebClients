@@ -1,24 +1,23 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import useFiles from '../hooks/drive/useFiles';
 import { RouteComponentProps } from 'react-router-dom';
-import FilePreview, { isPreviewAvailable } from '../components/FilePreview/FilePreview';
-import { useLoading } from 'react-components';
+import { useLoading, usePreventLeave, isPreviewAvailable, FilePreview } from 'react-components';
+import useFiles from '../hooks/drive/useFiles';
+import useDrive from '../hooks/drive/useDrive';
 import FileSaver from '../utils/FileSaver/FileSaver';
 import { LinkURLType } from '../constants';
 import { LinkMeta } from '../interfaces/link';
-import { getMetaForTransfer } from '../components/Drive/Drive';
 import { DownloadControls } from '../components/downloads/download';
-import useDrive from '../hooks/drive/useDrive';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
-import usePreventLeave from '../hooks/util/usePreventLeave';
+import useDriveSorting from '../hooks/drive/useDriveSorting';
+import { isTransferCancelError, getMetaForTransfer } from '../utils/transfer';
+import FilePreviewNavigation from '../components/FilePreviewNavigation';
 
 const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
-    const downloadControls = useRef<DownloadControls>();
-
-    const { setFolder } = useDriveActiveFolder();
     const cache = useDriveCache();
+    const downloadControls = useRef<DownloadControls>();
+    const { setFolder } = useDriveActiveFolder();
     const { getLinkMeta, fetchAllFolderPages } = useDrive();
     const { downloadDriveFile, saveFileTransferFromBuffer, startFileTransfer } = useFiles();
     const { preventLeave } = usePreventLeave();
@@ -27,15 +26,22 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
     const [, setError] = useState();
 
     const meta = cache.get.linkMeta(shareId, linkId);
-    const links = (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID)) || [];
-    const linksAvailableForPreview = links.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
+    const { sortedList } = useDriveSorting(
+        (sortParams) => (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID, sortParams)) || []
+    );
+
+    const linksAvailableForPreview = sortedList.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
 
     useEffect(() => {
         let canceled = false;
 
         const preloadFile = async () => {
             try {
-                const { ParentLinkID, MIMEType } = meta ?? (await getLinkMeta(shareId, linkId));
+                const { ParentLinkID, MIMEType, Trashed } = meta ?? (await getLinkMeta(shareId, linkId));
+
+                if (Trashed) {
+                    throw new Error('Link is trashed.');
+                }
 
                 if (canceled) {
                     return;
@@ -43,7 +49,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
                 setFolder({ shareId, linkId: ParentLinkID });
 
-                fetchAllFolderPages(shareId, ParentLinkID);
+                fetchAllFolderPages(shareId, ParentLinkID).catch(console.error);
 
                 if (isPreviewAvailable(MIMEType)) {
                     const { contents, controls } = await downloadDriveFile(shareId, linkId);
@@ -54,7 +60,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
                     setContents(undefined);
                 }
             } catch (err) {
-                if (err.name !== 'AbortError' && err.name !== 'TransferCancel') {
+                if (!isTransferCancelError(err)) {
                     setError(() => {
                         throw err;
                     });
@@ -66,7 +72,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
             setContents(undefined);
         }
 
-        withLoading(preloadFile());
+        withLoading(preloadFile()).catch(console.error);
 
         return () => {
             canceled = true;
@@ -95,21 +101,29 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
         const transferMeta = getMetaForTransfer(meta);
         const fileStream = await (contents
-            ? saveFileTransferFromBuffer(contents, transferMeta)
+            ? saveFileTransferFromBuffer(contents, transferMeta, { ShareID: shareId, LinkID: linkId })
             : startFileTransfer(shareId, linkId, transferMeta));
 
-        preventLeave(FileSaver.saveAsFile(fileStream, transferMeta));
+        preventLeave(FileSaver.saveAsFile(fileStream, transferMeta)).catch(console.error);
     }, [meta, contents, shareId, linkId]);
 
     return (
         <FilePreview
             loading={loading}
             contents={contents}
-            meta={meta}
-            availableLinks={linksAvailableForPreview}
-            onOpen={navigateToLink}
+            fileName={meta?.Name}
+            mimeType={meta?.MIMEType}
             onClose={navigateToParent}
             onSave={saveFile}
+            navigationControls={
+                meta && (
+                    <FilePreviewNavigation
+                        availableLinks={linksAvailableForPreview}
+                        openLinkId={meta.LinkID}
+                        onOpen={navigateToLink}
+                    />
+                )
+            }
         />
     );
 };
