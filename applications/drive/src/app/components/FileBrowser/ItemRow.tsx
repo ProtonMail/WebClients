@@ -128,7 +128,13 @@ const ItemRow = ({
             role="presentation"
             key="select"
             className="flex"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+                e.stopPropagation();
+                // Wrapper handles shift key, because FF has issues: https://bugzilla.mozilla.org/show_bug.cgi?id=559506
+                if (e.shiftKey) {
+                    onShiftClick(item.LinkID);
+                }
+            }}
             onTouchStart={(e) => e.stopPropagation()}
             onKeyDown={(e) => e.stopPropagation()}
         >
@@ -143,9 +149,7 @@ const ItemRow = ({
                     }
                 }}
                 onClick={(e) => {
-                    if (e.shiftKey) {
-                        onShiftClick(item.LinkID);
-                    } else {
+                    if (!e.shiftKey) {
                         onToggleSelect(item.LinkID);
                     }
                 }}
