@@ -1,16 +1,19 @@
 import React, { useRef, useState } from 'react';
-import PropTypes from 'prop-types';
-
 import NotificationsContext from './notificationsContext';
 import NotificationsContainer from './Container';
-import createManager from './manager';
+import createNotificationManager from './manager';
+import { NotificationOptions } from './interfaces';
 
-const NotificationsProvider = ({ children }) => {
-    const [notifications, setNotifications] = useState([]);
-    const managerRef = useRef();
+interface Props {
+    children: React.ReactNode;
+}
+
+const NotificationsProvider = ({ children }: Props) => {
+    const [notifications, setNotifications] = useState<NotificationOptions[]>([]);
+    const managerRef = useRef<ReturnType<typeof createNotificationManager>>();
 
     if (!managerRef.current) {
-        managerRef.current = createManager(setNotifications);
+        managerRef.current = createNotificationManager(setNotifications);
     }
 
     const manager = managerRef.current;
@@ -29,7 +32,4 @@ const NotificationsProvider = ({ children }) => {
     );
 };
 
-NotificationsProvider.propTypes = {
-    children: PropTypes.node.isRequired,
-};
 export default NotificationsProvider;

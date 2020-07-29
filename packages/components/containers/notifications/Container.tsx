@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import Notification from './Notification';
+import { NotificationOptions } from './interfaces';
 
-const NotificationsContainer = ({ notifications, removeNotification, hideNotification }) => {
+interface Props {
+    notifications: NotificationOptions[];
+    removeNotification: (id: number) => void;
+    hideNotification: (id: number) => void;
+}
+const NotificationsContainer = ({ notifications, removeNotification, hideNotification }: Props) => {
     const list = notifications.map(({ id, type, text, isClosing, disableAutoClose }) => {
         return (
             <Notification
@@ -19,12 +23,6 @@ const NotificationsContainer = ({ notifications, removeNotification, hideNotific
     });
 
     return <div className="notifications-container flex flex-column flex-items-center">{list}</div>;
-};
-
-NotificationsContainer.propTypes = {
-    notifications: PropTypes.arrayOf(PropTypes.object).isRequired,
-    removeNotification: PropTypes.func.isRequired,
-    hideNotification: PropTypes.func.isRequired,
 };
 
 export default NotificationsContainer;

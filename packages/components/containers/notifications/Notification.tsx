@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import { classnames } from '../../helpers/component';
+import { NotificationType } from './interfaces';
 
 const TYPES_CLASS = {
     error: 'notification-alert',
@@ -16,8 +15,16 @@ const CLASSES = {
     NOTIFICATION_OUT: 'notificationOut',
 };
 
-const Notification = ({ children, type, isClosing, onClick, onExit }) => {
-    const handleAnimationEnd = ({ animationName }) => {
+interface Props {
+    children: React.ReactNode;
+    type: NotificationType;
+    isClosing: boolean;
+    onExit: () => void;
+    onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+}
+
+const Notification = ({ children, type, isClosing, onClick, onExit }: Props) => {
+    const handleAnimationEnd = ({ animationName }: React.AnimationEvent<HTMLDivElement>) => {
         if (animationName === CLASSES.NOTIFICATION_OUT && isClosing) {
             onExit();
         }
@@ -43,13 +50,4 @@ const Notification = ({ children, type, isClosing, onClick, onExit }) => {
         </div>
     );
 };
-
-Notification.propTypes = {
-    children: PropTypes.node.isRequired,
-    type: PropTypes.string.isRequired,
-    isClosing: PropTypes.bool.isRequired,
-    onExit: PropTypes.func.isRequired,
-    onClick: PropTypes.func.isRequired,
-};
-
 export default Notification;
