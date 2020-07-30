@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { FormModal, useContactEmails, useContactGroups } from 'react-components';
 import { c } from 'ttag';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 import { MessageExtendedWithData } from '../../../models/message';
 import MessageBody from '../MessageBody';
@@ -13,7 +14,6 @@ import { getRecipientLabelDetailed } from '../../../helpers/addresses';
 import HeaderRecipientType from '../header/HeaderRecipientType';
 
 import './MessagePrint.scss';
-import { noop } from 'proton-shared/lib/helpers/function';
 
 interface Props {
     labelID: string;
@@ -59,6 +59,7 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
                         contacts={contacts}
                         contactGroups={contactGroups}
                         onCompose={noop}
+                        isLoading={false}
                     />
                     <HeaderRecipientType label={c('Label').t`Date:`}>
                         <ItemDate element={message.data} labelID={labelID} mode="full" />

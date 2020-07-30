@@ -23,17 +23,22 @@ const HeaderRecipientsSimple = ({ message, contacts, contactGroups, isLoading }:
                 {!isLoading && c('Label').t`To:`}
             </span>
             <span className="message-header-contact flex-self-vcenter mr0-5 ellipsis">
-                {!isLoading &&
-                    recipientsOrGroup.map((recipientOrGroup, index) => {
-                        const label = getRecipientOrGroupLabel(recipientOrGroup, contacts);
+                {!isLoading && (
+                    <>
+                        {recipients.length
+                            ? recipientsOrGroup.map((recipientOrGroup, index) => {
+                                  const label = getRecipientOrGroupLabel(recipientOrGroup, contacts);
 
-                        return (
-                            <span key={index} className="mr0-5" title={label}>
-                                {label}
-                                {index < recipientsOrGroup.length - 1 && ','}
-                            </span>
-                        );
-                    })}
+                                  return (
+                                      <span key={index} className="mr0-5" title={label}>
+                                          {label}
+                                          {index < recipientsOrGroup.length - 1 && ','}
+                                      </span>
+                                  );
+                              })
+                            : c('Label').t`Undisclosed Recipients`}
+                    </>
+                )}
             </span>
         </div>
     );

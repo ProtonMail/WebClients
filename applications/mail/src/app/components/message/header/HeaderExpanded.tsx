@@ -120,6 +120,7 @@ const HeaderExpanded = ({
             globalIcon={messageViewIcons.globalIcon}
             contacts={contacts}
             onCompose={onCompose}
+            isLoading={!messageLoaded}
         />
     );
 
@@ -172,6 +173,7 @@ const HeaderExpanded = ({
                             contacts={contacts}
                             contactGroups={contactGroups}
                             onCompose={onCompose}
+                            isLoading={!messageLoaded}
                         />
                     ) : (
                         <HeaderRecipientsSimple

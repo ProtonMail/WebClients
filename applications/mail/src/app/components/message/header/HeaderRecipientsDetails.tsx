@@ -16,6 +16,7 @@ interface Props {
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
     onCompose: OnCompose;
+    isLoading: boolean;
 }
 
 interface ListProps {
@@ -24,9 +25,10 @@ interface ListProps {
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
     onCompose: OnCompose;
+    isLoading: boolean;
 }
 
-const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompose }: ListProps) => {
+const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompose, isLoading }: ListProps) => {
     const recipientsOrGroup = recipientsToRecipientOrGroup(list, contactGroups);
 
     return (
@@ -38,14 +40,17 @@ const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompo
                     mapStatusIcons={mapStatusIcons}
                     contacts={contacts}
                     onCompose={onCompose}
+                    isLoading={isLoading}
                 />
             ))}
         </>
     );
 };
 
-const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGroups, onCompose }: Props) => {
+const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGroups, onCompose, isLoading }: Props) => {
     const { ToList = [], CCList = [], BCCList = [] } = message || {};
+
+    const undisclosedRecipients = ToList.length + CCList.length + BCCList.length === 0;
 
     return (
         <div className="flex flex-column">
@@ -57,6 +62,7 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contacts={contacts}
                         contactGroups={contactGroups}
                         onCompose={onCompose}
+                        isLoading={isLoading}
                     />
                 </HeaderRecipientType>
             )}
@@ -68,6 +74,7 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contacts={contacts}
                         contactGroups={contactGroups}
                         onCompose={onCompose}
+                        isLoading={isLoading}
                     />
                 </HeaderRecipientType>
             )}
@@ -79,6 +86,17 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contacts={contacts}
                         contactGroups={contactGroups}
                         onCompose={onCompose}
+                        isLoading={isLoading}
+                    />
+                </HeaderRecipientType>
+            )}
+            {undisclosedRecipients && (
+                <HeaderRecipientType label={c('Label').t`To:`}>
+                    <HeaderRecipientItem
+                        recipientOrGroup={{}}
+                        contacts={contacts}
+                        onCompose={onCompose}
+                        isLoading={isLoading}
                     />
                 </HeaderRecipientType>
             )}

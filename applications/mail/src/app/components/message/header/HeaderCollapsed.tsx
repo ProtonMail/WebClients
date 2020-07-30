@@ -69,6 +69,7 @@ const HeaderCollapsed = ({
                     showAddress={false}
                     onCompose={onCompose}
                     contacts={contacts}
+                    isLoading={!messageLoaded}
                 />
                 {messageLoaded && (
                     <>
