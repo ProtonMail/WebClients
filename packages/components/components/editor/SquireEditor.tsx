@@ -106,7 +106,10 @@ const SquireEditor = forwardRef(
                 },
                 set value(value: string) {
                     if (metadata.isPlainText) {
-                        textareaRef.current && (textareaRef.current.value = value);
+                        if (textareaRef.current) {
+                            textareaRef.current.value = value;
+                            textareaRef.current.setSelectionRange(0, 0);
+                        }
                     } else {
                         squireRef.current?.setHTML(value);
                         setTextDirectionWithoutFocus(squireRef.current, metadata.rightToLeft || RIGHT_TO_LEFT.OFF);
@@ -122,11 +125,7 @@ const SquireEditor = forwardRef(
                 },
                 focus: () => {
                     if (metadata.isPlainText) {
-                        if (textareaRef.current) {
-                            textareaRef.current.focus();
-                            textareaRef.current.setSelectionRange(0, 0);
-                            textareaRef.current.scrollTop = 0;
-                        }
+                        textareaRef.current?.focus();
                     } else {
                         squireRef.current?.focus();
                     }
