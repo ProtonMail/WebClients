@@ -9,7 +9,7 @@ import {
     queryCheckUsernameAvailability,
     queryDirectSignupStatus,
     queryVerificationCode,
-    queryCheckVerificationCode
+    queryCheckVerificationCode,
 } from 'proton-shared/lib/api/user';
 import {
     useApi,
@@ -20,7 +20,7 @@ import {
     usePayment,
     HumanVerificationForm,
     BackButton,
-    OnLoginArgs
+    OnLoginArgs,
 } from '../../index';
 import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
@@ -42,7 +42,7 @@ import {
     SERVICES_KEYS,
     SignupModel,
     SignupPlan,
-    SubscriptionCheckResult
+    SubscriptionCheckResult,
 } from './interfaces';
 import { DEFAULT_SIGNUP_MODEL, DEFAULT_CHECK_RESULT, SIGNUP_STEPS } from './constants';
 import createHumanApi from './helpers/humanApi';
@@ -54,6 +54,7 @@ import getSignupErrors from './helpers/getSignupErrors';
 import { hasPaidPlan } from './helpers/helper';
 import { handlePaymentToken } from '../payments/paymentTokenHelper';
 import handleCreateUser from './helpers/handleCreateUser';
+import handleCreateExternalUser from './helpers/handleCreateExternalUser';
 import createAuthApi from './helpers/authApi';
 import handleCreateAddress from './helpers/handleCreateAddress';
 import handleCreateKeys from './helpers/handleCreateKeys';
@@ -75,7 +76,7 @@ const {
     PLANS,
     PAYMENT,
     HUMAN_VERIFICATION,
-    CREATING_ACCOUNT
+    CREATING_ACCOUNT,
 } = SIGNUP_STEPS;
 
 interface CacheRef {
@@ -110,19 +111,21 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
         const oldPayload = cacheRef.current.payload || {};
         cacheRef.current.payload = {
             ...oldPayload,
-            ...payload
+            ...payload,
         };
     };
 
     const [model, setModel] = useState<SignupModel>({
         ...DEFAULT_SIGNUP_MODEL,
         ...(currency ? { currency } : {}),
-        ...(cycle ? { cycle } : {})
+        ...(cycle ? { cycle } : {}),
         // NOTE preSelectedPlan is used in a useEffect
     });
     const [usernameError, setUsernameError] = useState<string>('');
 
     const setModelDiff = (diff: Partial<SignupModel>) => setModel((model) => ({ ...model, ...diff }));
+
+    const isInternalSignup = !!model.username;
 
     const {
         card,
@@ -133,7 +136,7 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
         parameters: paymentParameters,
         canPay,
         paypal,
-        paypalCredit
+        paypalCredit,
     } = usePayment({
         amount: checkResult.AmountDue,
         currency: model.currency,
@@ -141,12 +144,12 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
             if (!Payment) {
                 throw new Error('Missing payment details');
             }
-            if ('Token' in Payment?.Details) {
+            if (isInternalSignup && 'Token' in Payment?.Details) {
                 humanApi.setToken(Payment.Details.Token, TOKEN_TYPES.PAYMENT);
             }
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             handleFinalizeSignup({ payment: Payment });
-        }
+        },
     });
 
     const getCardPayment = async () => {
@@ -154,17 +157,17 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
             params: {
                 ...paymentParameters,
                 Amount: checkResult.AmountDue,
-                Currency: model.currency
+                Currency: model.currency,
             },
             api,
             createModal,
-            mode: ''
+            mode: '',
         });
     };
 
     const handleFinalizeSignup = async ({
         planIDs = model.planIDs,
-        payment
+        payment,
     }: { planIDs?: PlanIDs; payment?: Payment } = {}) => {
         const isBuyingPaidPlan = hasPaidPlan(planIDs);
 
@@ -181,7 +184,7 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
         if (isBuyingPaidPlan && method === PAYMENT_METHOD_TYPES.CARD) {
             try {
                 const { Payment } = await getCardPayment();
-                if (username && Payment && 'Token' in Payment.Details) {
+                if (isInternalSignup && Payment && 'Token' in Payment.Details) {
                     // Use payment token to prove humanity for internal paid account
                     humanApi.setToken(Payment.Details.Token, TOKEN_TYPES.PAYMENT);
                 }
@@ -192,21 +195,23 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
         }
 
         try {
-            await handleCreateUser({
+            const sharedCreationProps = {
                 api: humanApi.api,
-                username,
-                email,
-                password,
-                recoveryEmail,
                 clientType: CLIENT_TYPE,
-                payload: cacheRef.current.payload
-            });
+                payload: cacheRef.current.payload,
+                password,
+            };
+            if (isInternalSignup) {
+                await handleCreateUser({ ...sharedCreationProps, username, recoveryEmail });
+            } else {
+                await handleCreateExternalUser({ ...sharedCreationProps, email });
+            }
         } catch (error) {
             if (error instanceof HumanVerificationError) {
                 return setModelDiff({
                     step: HUMAN_VERIFICATION,
                     humanVerificationMethods: error.methods,
-                    humanVerificationToken: error.token
+                    humanVerificationToken: error.token,
                 });
             }
             return setModelDiff({ step: oldStep });
@@ -216,7 +221,7 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
             const authApi = await createAuthApi({
                 api,
                 username: username || email,
-                password
+                password,
             });
 
             if (Object.keys(planIDs).length) {
@@ -227,7 +232,7 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
                         // TODO: Why not use checkResult here?
                         Currency: currency,
                         Cycle: cycle,
-                        Payment: actualPayment
+                        Payment: actualPayment,
                         // TODO add coupon code
                     })
                 );
@@ -297,7 +302,7 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
                 checkSubscription({
                     PlanIDs: model.planIDs,
                     Currency: model.currency,
-                    Cycle: model.cycle
+                    Cycle: model.cycle,
                     // CouponCode: model.couponCode
                 })
             );
@@ -345,8 +350,8 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
                     ...queryCheckUsernameAvailability(username),
                     silence: [
                         API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED,
-                        API_CUSTOM_ERROR_CODES.USER_EXISTS_USERNAME_ALREADY_USED
-                    ]
+                        API_CUSTOM_ERROR_CODES.USER_EXISTS_USERNAME_ALREADY_USED,
+                    ],
                 });
                 setModelDiff({ step: RECOVERY_EMAIL });
             } catch (error) {
@@ -440,7 +445,7 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
                         onEdit={() => {
                             setModelDiff({
                                 step: ACCOUNT_CREATION_EMAIL,
-                                verificationCode: ''
+                                verificationCode: '',
                             });
                         }}
                         onResend={() => {
@@ -462,7 +467,7 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
                     onEdit={() => {
                         setModelDiff({
                             verificationCode: '',
-                            step: ACCOUNT_CREATION_EMAIL
+                            step: ACCOUNT_CREATION_EMAIL,
                         });
                     }}
                     onResend={() => {
@@ -504,7 +509,7 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
             }
             setModelDiff({
                 planIDs: { [plan.ID]: 1 },
-                step: PAYMENT
+                step: PAYMENT,
             });
         };
         const getBackStep = () => {
