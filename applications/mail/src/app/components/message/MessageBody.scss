@@ -1,3 +1,5 @@
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
 .bodyDecrypted {
     /* Forbidden property on almost ALL clients IE add a space :) */
     [style*='position:absolute'],
@@ -29,7 +31,7 @@
 
 .bodyDecrypted.plain {
     white-space: pre-wrap;
-    font-family: monospace;
+    font-family: $font-family-monospace;
 }
 
 /* Also exist inside squireEditor.js */
