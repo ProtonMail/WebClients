@@ -69,15 +69,17 @@ const ItemRowLayout = ({
                 <span className={classnames(['inbl mw100 ellipsis pr1', unread && 'bold'])} title={Subject}>
                     {Subject}
                 </span>
-                <ItemLabels
-                    max={4}
-                    labels={labels}
-                    element={element}
-                    className="mlauto flex-item-noshrink flex flex-nowrap"
-                />
-                <ItemAttachmentIcon element={element} className="ml0-5 flex-item-noshrink flex-self-vcenter" />
+                <span className="mlauto flex flex-item-noshrink">
+                    <ItemLabels
+                        max={4}
+                        labels={labels}
+                        element={element}
+                        className="flex-item-noshrink flex flex-nowrap"
+                    />
+                    <ItemAttachmentIcon element={element} className="ml0-5 flex-item-noshrink flex-self-vcenter" />
+                </span>
             </div>
-            <span className="item-weight mtauto mbauto mr1 ml1 ng-binding">{!loading && size}</span>
+            <span className="item-weight mtauto mbauto mr1 ml1 alignright">{!loading && size}</span>
             <span className="item-senddate-row mauto w10e alignright">
                 <ItemDate element={element} labelID={labelID} className={unread ? 'bold' : undefined} />
             </span>
