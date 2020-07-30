@@ -109,6 +109,7 @@ select.pm-field {
 		padding-left: 0;
 		width: auto;
 		color: $pm-primary;
+		padding-right: 2.5rem;
 		@if ($pm-primary == $pm-blue) {
 			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-primary-blue");
 		}
@@ -118,9 +119,23 @@ select.pm-field {
 		&,
 		&:focus,
 		&.focus,
-		&:focus-within {
+		&:focus-within,
+		&:hover {
 			background-color: transparent;
 			box-shadow: none;
+		}
+		&:focus,
+		&.focus,
+		&:focus-within,
+		&:hover {
+			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret");
+			border-color: transparent;
+			text-decoration: underline;
+			color: $color-hover;
+		}
+
+		> * {
+			color: $pm-primary;
 		}
   }
 }
