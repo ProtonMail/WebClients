@@ -9,6 +9,7 @@ function unsubscribePanel(
     translator
 ) {
     const I18N = translator(() => ({
+        forwardedMessage: gettextCatalog.getString('Cannot unsubscribe from forwarded message. Please contact the list owner to remove your subscription', null, 'Error'),
         cannotSend(email) {
             return gettextCatalog.getString(
                 'Cannot unsubscribe with {{email}}, please upgrade to a paid plan or enable the address',
@@ -33,6 +34,10 @@ function unsubscribePanel(
 
     const confirmFirst = (message) => {
         const address = addressesModel.getByEmail(message.xOriginalTo);
+
+        if (!address) {
+            return notification.error(I18N.forwardedMessage);
+        }
 
         if (!address.Send) {
             return notification.error(I18N.cannotSend(message.xOriginalTo));
