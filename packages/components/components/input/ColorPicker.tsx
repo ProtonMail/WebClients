@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { Icon, Dropdown, DropdownButton, generateUID, usePopperAnchor, ColorSelector } from '../../index';
 import tinycolor from 'tinycolor2';
+import { Icon, Dropdown, DropdownButton, generateUID, usePopperAnchor, ColorSelector } from '../../index';
 
 interface Props {
     color: string;
@@ -17,10 +17,10 @@ const ColorPicker = ({ color = 'blue', onChange = noop }: Props) => {
 
     return (
         <>
-            <DropdownButton buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret={true}>
+            <DropdownButton buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret>
                 <Icon className="flex-item-noshrink" name="circle" color={iconColor} />
             </DropdownButton>
-            <Dropdown id={uid} isOpen={isOpen} noMaxSize={true} anchorRef={anchorRef} onClose={close}>
+            <Dropdown id={uid} isOpen={isOpen} noMaxSize anchorRef={anchorRef} onClose={close}>
                 <ColorSelector
                     selected={color}
                     onChange={onChange}

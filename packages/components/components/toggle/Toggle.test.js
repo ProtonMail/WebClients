@@ -9,7 +9,7 @@ describe('Toggle component', () => {
 
     it('should be checked', () => {
         const mockOnChange = jest.fn();
-        const { container } = render(<Toggle id={id} checked={true} onChange={mockOnChange} />);
+        const { container } = render(<Toggle id={id} checked onChange={mockOnChange} />);
         const inputNode = getInput(container);
 
         expect(inputNode.checked).toBeTruthy();
@@ -34,7 +34,7 @@ describe('Toggle component', () => {
 
     it("should not call onChange since it's disabled", () => {
         const mockOnChange = jest.fn();
-        const { container } = render(<Toggle id={id} checked={false} disabled={true} onChange={mockOnChange} />);
+        const { container } = render(<Toggle id={id} checked={false} disabled onChange={mockOnChange} />);
 
         fireEvent.click(container.firstChild);
         expect(mockOnChange).toHaveBeenCalledTimes(0);

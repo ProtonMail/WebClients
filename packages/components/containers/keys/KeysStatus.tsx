@@ -1,7 +1,7 @@
 import React from 'react';
-import { Badge } from '../../index';
 import { c } from 'ttag';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { Badge } from '../../index';
 import { KeyStatus } from './shared/interface';
 
 const KeysStatus = ({ isPrimary, isDecrypted, isCompromised, isObsolete, isAddressDisabled }: Partial<KeyStatus>) => {

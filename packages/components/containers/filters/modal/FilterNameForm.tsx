@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
-import { Alert, classnames, Field, Input } from '../../..';
 import { c } from 'ttag';
 import { SimpleFilterModalModel, AdvancedSimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
+import { Alert, classnames, Field, Input } from '../../..';
 
 interface Errors {
     name: string;
@@ -32,7 +32,7 @@ const FilterNameForm = ({ isNarrow, model, errors, onChange }: Props) => {
                         onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
                             onChange({ ...model, name: target.value })
                         }
-                        autoFocus={true}
+                        autoFocus
                         required
                     />
                 </Field>

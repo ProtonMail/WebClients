@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
+import { revoke } from 'proton-shared/lib/api/auth';
+import { APPS, CLIENT_TYPES, PLANS } from 'proton-shared/lib/constants';
+import { getPlanName } from 'proton-shared/lib/helpers/subscription';
 import {
     useUser,
     useOrganization,
@@ -15,10 +18,7 @@ import {
     useConfig,
     useSubscription,
     Link,
-} from '../../';
-import { revoke } from 'proton-shared/lib/api/auth';
-import { APPS, CLIENT_TYPES, PLANS } from 'proton-shared/lib/constants';
-import { getPlanName } from 'proton-shared/lib/helpers/subscription';
+} from '../..';
 
 import UserDropdownButton from './UserDropdownButton';
 
@@ -54,7 +54,7 @@ const UserDropdown = ({ ...rest }) => {
                 id={uid}
                 className="userDropdown"
                 isOpen={isOpen}
-                noMaxSize={true}
+                noMaxSize
                 anchorRef={anchorRef}
                 onClose={close}
                 originalPlacement="bottom-right"

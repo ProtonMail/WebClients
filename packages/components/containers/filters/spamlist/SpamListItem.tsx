@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Bordered, Loader, Alert, classnames, DropdownActions, PrimaryButton } from '../../..';
 import { IncomingDefault } from 'proton-shared/lib/interfaces/IncomingDefault';
 import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
+import { Bordered, Loader, Alert, classnames, DropdownActions, PrimaryButton } from '../../..';
 
 import './SpamListItem.scss';
 
@@ -24,11 +24,10 @@ function SpamListItem({ list, type, onCreate, onEdit, onMove, onRemove, classNam
         [WHITELIST_LOCATION]: c('Title').t`Whitelist`,
         [BLACKLIST_LOCATION]: c('Title').t`Blacklist`,
         empty(mode: WHITE_OR_BLACK_LOCATION) {
-            
             // we do not use the variable for both mode because of declension issues with ex: Polish
             if (mode === WHITELIST_LOCATION) {
                 return c('Info')
-                  .t`No emails or domains in the Whitelist, click Add to add addresses or domains to the Whitelist`;
+                    .t`No emails or domains in the Whitelist, click Add to add addresses or domains to the Whitelist`;
             }
 
             return c('Info')

@@ -1,8 +1,8 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { Input, Label, Row, Field } from '../../..';
 import { DOMAIN_PLACEHOLDER } from 'proton-shared/lib/constants';
 import { isDomain } from 'proton-shared/lib/helpers/validators';
+import { Input, Label, Row, Field } from '../../..';
 
 interface Props {
     domain: string;
@@ -26,8 +26,8 @@ const AddDomainToList = ({ domain, onChange }: Props) => {
                     onChange={handleChange}
                     placeholder={DOMAIN_PLACEHOLDER}
                     error={error}
-                    required={true}
-                    autoFocus={true}
+                    required
+                    autoFocus
                 />
             </Field>
         </Row>

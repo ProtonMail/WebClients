@@ -1,6 +1,11 @@
 import React, { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 import { updateOrganizationKeys } from 'proton-shared/lib/api/organization';
+import { OpenPGPKey } from 'pmcrypto';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
+import { generateOrganizationKeys, reEncryptOrganizationTokens } from 'proton-shared/lib/keys/organizationKeys';
+import { queryAddresses } from 'proton-shared/lib/api/members';
+import { Address, Member } from 'proton-shared/lib/interfaces';
 import {
     useEventManager,
     useLoading,
@@ -17,11 +22,6 @@ import {
     Field,
     PasswordInput,
 } from '../../index';
-import { OpenPGPKey } from 'pmcrypto';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
-import { generateOrganizationKeys, reEncryptOrganizationTokens } from 'proton-shared/lib/keys/organizationKeys';
-import { queryAddresses } from 'proton-shared/lib/api/members';
-import { Address, Member } from 'proton-shared/lib/interfaces';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 

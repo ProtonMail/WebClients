@@ -127,7 +127,7 @@ const EnableTwoFactorModal = (props) => {
                                 .jt`Scan this code with your two-factor authentication device to set up your account. ${switchButton}.`}
                         </Alert>
                         <div className="aligncenter">
-                            <QRCode value={uri} size={200} includeMargin={false} renderAs={'svg'} />
+                            <QRCode value={uri} size={200} includeMargin={false} renderAs="svg" />
                         </div>
                     </>
                 ),
@@ -212,7 +212,7 @@ const EnableTwoFactorModal = (props) => {
                         totp={totp}
                         setTotp={setTotp}
                         totpError={totpError}
-                        showTotp={true}
+                        showTotp
                     />
                 ),
                 close: <Button type="button" onClick={() => setStep(STEPS.SCAN_CODE)}>{c('Action').t`Back`}</Button>,

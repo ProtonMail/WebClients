@@ -20,8 +20,8 @@ function AddEmailToList({ email, onChange }: Props) {
                     value={email}
                     onChange={handleChange}
                     placeholder={EMAIL_PLACEHOLDER}
-                    required={true}
-                    autoFocus={true}
+                    required
+                    autoFocus
                 />
             </Field>
         </Row>

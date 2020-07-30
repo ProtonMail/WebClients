@@ -1,5 +1,5 @@
-import { Input } from '../../index';
 import React from 'react';
+import { Input } from '../../index';
 
 interface Props {
     code: string;

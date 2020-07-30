@@ -108,9 +108,8 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
                     // In case of any other error than password error, automatically cancel here to allow the user to retry.
                     if (e.name !== 'PasswordError') {
                         return handleCancel();
-                    } else {
-                        createNotification({ type: 'error', text: getErrorText(e) });
                     }
+                    createNotification({ type: 'error', text: getErrorText(e) });
                 })
             );
         };
@@ -135,7 +134,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
     }
 
     if (form === FORM.U2F) {
-        return <>{'U2F not implemented'}</>;
+        return <>U2F not implemented</>;
     }
 
     throw new Error('Unsupported form');

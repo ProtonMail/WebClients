@@ -26,9 +26,9 @@ import { ACCOUNT_DELETION_REASONS } from 'proton-shared/lib/constants';
 import { deleteUser, unlockPasswordChanges } from 'proton-shared/lib/api/user';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { srpAuth } from 'proton-shared/lib/srp';
-import { collectInfo, getClient } from '../../helpers/report';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { collectInfo, getClient } from '../../helpers/report';
 import Checkbox from '../../components/input/Checkbox';
 
 const DeleteAccountModal = ({ onClose, ...rest }) => {
@@ -176,7 +176,7 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
                     <div className="mb0-5">
                         <EmailInput
                             id="email"
-                            required={true}
+                            required
                             disabled={loading}
                             value={model.email}
                             onChange={handleChange('email')}

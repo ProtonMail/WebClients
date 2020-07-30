@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 
-import { classnames } from '../../..';
-
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { SimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
+import { classnames } from '../../..';
 
 import FilterPreviewActions from './FilterPreviewActions';
 import FilterPreviewConditions from './FilterPreviewConditions';

@@ -1,7 +1,7 @@
 import { describe } from 'proton-shared/lib/keys/keysAlgorithm';
 import { KEY_FLAG } from 'proton-shared/lib/constants';
-import { Address } from 'proton-shared/lib/interfaces';
-import { Key } from 'proton-shared/lib/interfaces';
+import { Address, Key } from 'proton-shared/lib/interfaces';
+
 import { algorithmInfo } from 'pmcrypto';
 import { KeyDisplay } from './interface';
 

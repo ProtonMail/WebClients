@@ -78,7 +78,6 @@ const ChallengeFrame = ({
         const handleAssetLoaded = () => {
             if (++assetsLoaded === assetsTotal) {
                 handleInitDone();
-                return;
             }
         };
 

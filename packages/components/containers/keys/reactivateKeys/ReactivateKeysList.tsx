@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import { c } from 'ttag';
+import { OpenPGPKey } from 'pmcrypto';
 import { Badge, Button, LoaderIcon, Table, TableRow, TableHeader, TableBody } from '../../../index';
 
 import SelectKeyFiles from '../shared/SelectKeyFiles';
 
 import KeysStatus from '../KeysStatus';
 import { Status, ReactivateKeys, ReactivateKey } from './interface';
-import { OpenPGPKey } from 'pmcrypto';
 import { FileInputHandle } from '../../../components/input/FileInput';
 
 const getKeyStatusError = (error: any) => {
@@ -30,7 +30,7 @@ const getStatus = (status: Status, result: any) => {
         return <KeysStatus isDecrypted={false} />;
     }
     if (status === Status.SUCCESS) {
-        return <KeysStatus isDecrypted={true} />;
+        return <KeysStatus isDecrypted />;
     }
 };
 

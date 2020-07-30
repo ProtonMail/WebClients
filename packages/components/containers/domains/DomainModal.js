@@ -71,7 +71,10 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
         } = domainModel;
         const { DKIM_STATE_ERROR, DKIM_STATE_GOOD, DKIM_STATE_WARNING } = DKIM_STATE;
 
-        let title, type, name, icon;
+        let title;
+        let type;
+        let name;
+        let icon;
 
         switch (State) {
             case DKIM_STATE_ERROR:

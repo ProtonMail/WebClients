@@ -1,5 +1,18 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { c } from 'ttag';
+import { lockSensitiveSettings } from 'proton-shared/lib/api/user';
+import { InfoAuthedResponse, TwoFaResponse } from 'proton-shared/lib/authentication/interface';
+import { getInfo, PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
+import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { TWO_FA_FLAGS } from 'proton-shared/lib/constants';
+import {
+    handleUnlock,
+    handleChangeMailboxPassword,
+    handleChangeLoginPassword,
+    handleChangeOnePassword,
+    getArmoredPrivateKeys,
+} from './changePasswordHelper';
 import {
     Alert,
     GenericError,
@@ -21,19 +34,6 @@ import {
     useGetOrganizationKeyRaw,
     useApi,
 } from '../../index';
-import { lockSensitiveSettings } from 'proton-shared/lib/api/user';
-import { InfoAuthedResponse, TwoFaResponse } from 'proton-shared/lib/authentication/interface';
-import { getInfo, PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
-import {
-    handleUnlock,
-    handleChangeMailboxPassword,
-    handleChangeLoginPassword,
-    handleChangeOnePassword,
-    getArmoredPrivateKeys,
-} from './changePasswordHelper';
-import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { TWO_FA_FLAGS } from 'proton-shared/lib/constants';
 
 export enum MODES {
     CHANGE_ONE_PASSWORD_MODE = 1,

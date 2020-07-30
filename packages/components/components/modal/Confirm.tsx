@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
-import FormModal from '../modal/FormModal';
+import FormModal from './FormModal';
 
 interface Props {
     onClose?: () => void;

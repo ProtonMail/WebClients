@@ -24,8 +24,8 @@ const AutocompleteSelection = ({ className, label, onRemove, onLabelChange }) =>
                 className="flex ml0-5 mr0-5 flex-item-centered-vert"
                 onKeyDown={handleKeyDown}
                 onBlur={handleBlur}
-                contentEditable={true}
-                suppressContentEditableWarning={true}
+                contentEditable
+                suppressContentEditableWarning
             >
                 {label}
             </div>

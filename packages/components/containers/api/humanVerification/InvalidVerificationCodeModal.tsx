@@ -1,6 +1,6 @@
 import React from 'react';
-import { ConfirmModal, Button, PrimaryButton, Alert } from '../../../index';
 import { c } from 'ttag';
+import { ConfirmModal, Button, PrimaryButton, Alert } from '../../../index';
 
 interface Props {
     edit?: string;

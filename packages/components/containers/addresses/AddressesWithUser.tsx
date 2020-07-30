@@ -1,5 +1,8 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { c } from 'ttag';
+import { move } from 'proton-shared/lib/helpers/array';
+import { orderAddress } from 'proton-shared/lib/api/addresses';
+import { Address, UserModel } from 'proton-shared/lib/interfaces';
 import {
     useApi,
     useEventManager,
@@ -10,14 +13,11 @@ import {
     OrderableTableBody,
     OrderableTableRow,
 } from '../../index';
-import { move } from 'proton-shared/lib/helpers/array';
-import { orderAddress } from 'proton-shared/lib/api/addresses';
 
 import AddressStatus from './AddressStatus';
 import AddressActions from './AddressActions';
 import { getStatus } from './helper';
 import useNotifications from '../notifications/useNotifications';
-import { Address, UserModel } from 'proton-shared/lib/interfaces';
 
 interface Props {
     user: UserModel;

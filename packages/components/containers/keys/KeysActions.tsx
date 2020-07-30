@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { DropdownActions } from '../../index';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { DropdownActions } from '../../index';
 import { KeyActions } from './shared/interface';
 
 interface Props extends Partial<KeyActions> {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Badge } from '../../index';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { Badge } from '../../index';
 
 interface Props {
     isDefault: boolean;

@@ -14,8 +14,8 @@ const LoadIndicator = ({ server: { Load = 0 } }) => {
                 <div className="flex inline-flex-vcenter">
                     <CircularProgress progress={Load} size={22} className={className}>
                         <g className="circle-chart__info">
-                            <rect x="17" y="14" width="1.55" height="9.1" className="circle-chart__percent"></rect>
-                            <rect x="17" y="11" width="1.55" height="1.53" className="circle-chart__percent"></rect>
+                            <rect x="17" y="14" width="1.55" height="9.1" className="circle-chart__percent" />
+                            <rect x="17" y="11" width="1.55" height="1.53" className="circle-chart__percent" />
                         </g>
                     </CircularProgress>
                     <div className="ml0-5">{Load}%</div>

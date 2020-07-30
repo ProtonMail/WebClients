@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, ConfirmModal } from '../../';
 import { PLAN_SERVICES } from 'proton-shared/lib/constants';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { UserModel } from 'proton-shared/lib/interfaces';
+import { Alert, ConfirmModal } from '../..';
 
 interface Props {
     user: UserModel;

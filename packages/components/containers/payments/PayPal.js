@@ -15,8 +15,8 @@ import {
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { createToken } from 'proton-shared/lib/api/payments';
 
-import { toParams, process } from './paymentTokenHelper';
 import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
+import { toParams, process } from './paymentTokenHelper';
 
 const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     const api = useApi();

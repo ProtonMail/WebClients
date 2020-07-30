@@ -1,5 +1,5 @@
-import { SectionConfig } from './interface';
 import React from 'react';
+import { SectionConfig } from './interface';
 import {
     SubSidebarList,
     SidebarListItemContent,

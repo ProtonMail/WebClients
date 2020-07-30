@@ -39,7 +39,7 @@ const Checkbox = ({
             className={classnames([
                 'inline-flex',
                 !className?.includes('increase-surface-click') && 'relative',
-                className
+                className,
             ])}
             onClick={labelOnClick}
         >
@@ -52,10 +52,7 @@ const Checkbox = ({
                 checked={checked}
                 {...rest}
             />
-            <span
-                className="pm-checkbox-fakecheck"
-                style={{ borderColor: borderColor, background: backgroundColor, color }}
-            >
+            <span className="pm-checkbox-fakecheck" style={{ borderColor, background: backgroundColor, color }}>
                 <Icon className="pm-checkbox-fakecheck-img" name="on" color={color} />
             </span>
             {children}

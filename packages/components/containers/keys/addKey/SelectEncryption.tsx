@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Radio, Row } from '../../../index';
 import { ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
+import { Alert, Radio, Row } from '../../../index';
 
 const { RSA2048, RSA4096, X25519 } = ENCRYPTION_TYPES;
 

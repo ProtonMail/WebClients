@@ -130,8 +130,8 @@ const Dropdown = ({
 
     const varSize = contentRect
         ? {
-              '--width': '' + contentRect.width,
-              '--height': '' + contentRect.height,
+              '--width': `${contentRect.width}`,
+              '--height': `${contentRect.height}`,
           }
         : {};
 

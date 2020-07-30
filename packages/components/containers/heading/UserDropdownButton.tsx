@@ -1,7 +1,7 @@
 import React, { Ref } from 'react';
 import { UserModel } from 'proton-shared/lib/interfaces';
 import { getInitial } from 'proton-shared/lib/helpers/string';
-import { DropdownCaret } from '../../';
+import { DropdownCaret } from '../..';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     user: UserModel;

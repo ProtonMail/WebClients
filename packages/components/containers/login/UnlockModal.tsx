@@ -47,7 +47,7 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
                         id="password"
                         value={password}
                         onChange={({ target }) => setPassword(target.value)}
-                        autoFocus={true}
+                        autoFocus
                         required
                     />
                 </Field>

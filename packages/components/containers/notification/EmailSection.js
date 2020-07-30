@@ -17,10 +17,10 @@ import {
     useConfig,
 } from 'react-components';
 
-import RecoveryEmail from './RecoveryEmail';
-import EmailModal from './EmailModal';
 import { updateNotifyEmail, updateResetEmail } from 'proton-shared/lib/api/settings';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import RecoveryEmail from './RecoveryEmail';
+import EmailModal from './EmailModal';
 
 const { VPN } = CLIENT_TYPES;
 

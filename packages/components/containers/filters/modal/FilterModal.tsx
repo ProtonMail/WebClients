@@ -1,21 +1,6 @@
 import React, { useState, useMemo, FormEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
-import {
-    FormModal,
-    useLoading,
-    useLabels,
-    useFolders,
-    useMailSettings,
-    useActiveBreakpoint,
-    useNotifications,
-    useFilters,
-    useEventManager,
-    useApiWithoutResult,
-    ConfirmModal,
-    Alert,
-    useModals,
-} from '../../..';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import {
     SimpleFilterModalModel,
@@ -35,6 +20,21 @@ import { addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
 import { convertModel } from 'proton-shared/lib/filters/utils';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { computeFromTree } from 'proton-shared/lib/filters/sieve';
+import {
+    FormModal,
+    useLoading,
+    useLabels,
+    useFolders,
+    useMailSettings,
+    useActiveBreakpoint,
+    useNotifications,
+    useFilters,
+    useEventManager,
+    useApiWithoutResult,
+    ConfirmModal,
+    Alert,
+    useModals,
+} from '../../..';
 
 import HeaderFilterModal from './HeaderFilterModal';
 import FooterFilterModal from './FooterFilterModal';

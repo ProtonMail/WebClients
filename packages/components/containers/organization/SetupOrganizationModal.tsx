@@ -1,5 +1,12 @@
 import React, { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
+import { GIGA, DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
+import { range } from 'proton-shared/lib/helpers/array';
+import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { updateOrganizationName, updateOrganizationKeys } from 'proton-shared/lib/api/organization';
+import { updateVPN, updateQuota } from 'proton-shared/lib/api/members';
+
+import { generateOrganizationKeys } from 'proton-shared/lib/keys/organizationKeys';
 import {
     FormModal,
     Button,
@@ -18,13 +25,6 @@ import {
     useLoading,
     useNotifications,
 } from '../../index';
-import { GIGA } from 'proton-shared/lib/constants';
-import { range } from 'proton-shared/lib/helpers/array';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { updateOrganizationName, updateOrganizationKeys } from 'proton-shared/lib/api/organization';
-import { updateVPN, updateQuota } from 'proton-shared/lib/api/members';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
-import { generateOrganizationKeys } from 'proton-shared/lib/keys/organizationKeys';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Tooltip, Icon } from '../../index';
 import { c } from 'ttag';
+import { Tooltip, Icon } from '../../index';
 
 interface Props {
     to: string;

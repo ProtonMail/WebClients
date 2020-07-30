@@ -1,6 +1,6 @@
 import React from 'react';
-import { Icon, Input } from '../../index';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
+import { Icon, Input } from '../../index';
 
 import { classnames } from '../../helpers/component';
 
@@ -18,7 +18,7 @@ const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS }:
                 const isSelected = selected?.toLowerCase() === color?.toLowerCase();
                 return (
                     <li
-                        key={'mykey' + i}
+                        key={`mykey${i}`}
                         className={classnames(['ColorSelector-item', isSelected && 'selected'])}
                         style={{ color }}
                     >

@@ -3,12 +3,11 @@ import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 
 import { getIsValidForSending, getKeyEncryptStatus } from 'proton-shared/lib/keys/publicKeys';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
+import { MailSettings, ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
 
+import { CONTACT_PGP_SCHEMES, MIME_TYPES_MORE } from 'proton-shared/lib/constants';
 import ContactSchemeSelect from '../../components/contacts/ContactSchemeSelect';
 import ContactKeysTable from '../../components/contacts/ContactKeysTable';
-import { CONTACT_PGP_SCHEMES, MIME_TYPES_MORE } from 'proton-shared/lib/constants';
 import useNotifications from '../notifications/useNotifications';
 import Alert from '../../components/alert/Alert';
 import Row from '../../components/container/Row';
@@ -74,7 +73,6 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                 const indexFound = pinnedKeys.findIndex((publicKey) => publicKey.getFingerprint() === fingerprint);
                 createNotification({ text: c('Info').t`Duplicate key updated`, type: 'warning' });
                 pinnedKeys.splice(indexFound, 1, publicKey);
-                return;
             })
         );
 
@@ -196,7 +194,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                     />
                 </Label>
                 <Field className="onmobile-mt0-5">
-                    {model.isPGPExternalWithoutWKDKeys && <SelectKeyFiles onFiles={handleUploadKeys} multiple={true} />}
+                    {model.isPGPExternalWithoutWKDKeys && <SelectKeyFiles onFiles={handleUploadKeys} multiple />}
                 </Field>
             </Row>
             {(hasApiKeys || hasPinnedKeys) && <ContactKeysTable model={model} setModel={setModel} />}

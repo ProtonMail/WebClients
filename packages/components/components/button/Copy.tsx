@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { Icon, Button, Tooltip } from '../../index';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
+import { Icon, Button, Tooltip } from '../../index';
 
 interface Props {
     value: string;

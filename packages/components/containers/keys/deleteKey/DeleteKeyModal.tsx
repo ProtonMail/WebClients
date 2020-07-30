@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Alert, GenericError, FormModal } from '../../../';
+import { Alert, GenericError, FormModal } from '../../..';
 
 enum STEPS {
     WARNING = 1,

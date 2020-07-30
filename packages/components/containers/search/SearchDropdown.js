@@ -56,7 +56,7 @@ const SearchDropdown = ({
                 <form className="p1" name="search-dropdown" onSubmit={handleSubmit}>
                     <div className="mb1">
                         <SearchInput
-                            autoFocus={true}
+                            autoFocus
                             delay={0}
                             value={search}
                             onChange={(newValue) => updateSearch(newValue)}

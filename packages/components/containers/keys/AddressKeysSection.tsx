@@ -1,5 +1,14 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
+import { removeKeyAction, setFlagsKeyAction, setPrimaryKeyAction } from 'proton-shared/lib/keys/keysAction';
+import getKeysActionList from 'proton-shared/lib/keys/getKeysActionList';
+import { generateAddressKey } from 'proton-shared/lib/keys/keys';
+import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
+import { removeKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from 'proton-shared/lib/api/keys';
+import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
+import getCachedKeyByID from 'proton-shared/lib/keys/getCachedKeyByID';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { EncryptionConfig } from 'proton-shared/lib/interfaces';
 import {
     Alert,
     Block,
@@ -15,14 +24,6 @@ import {
     useUser,
     useUserKeys,
 } from '../../index';
-import { removeKeyAction, setFlagsKeyAction, setPrimaryKeyAction } from 'proton-shared/lib/keys/keysAction';
-import getKeysActionList from 'proton-shared/lib/keys/getKeysActionList';
-import { generateAddressKey } from 'proton-shared/lib/keys/keys';
-import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
-import { removeKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from 'proton-shared/lib/api/keys';
-import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
-import getCachedKeyByID from 'proton-shared/lib/keys/getCachedKeyByID';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { getAllKeysToReactivate, getKeysToReactivateCount } from './reactivateKeys/getAllKeysToReactive';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
@@ -41,7 +42,6 @@ import { getNewKeyFlags } from './shared/flags';
 import { FlagAction, KeyDisplay } from './shared/interface';
 import reactivateKeysProcess from './reactivateKeys/reactivateKeysProcess';
 import { KeyReactivation, OnProcessArguments as ReactivateProcessArguments } from './reactivateKeys/interface';
-import { EncryptionConfig } from 'proton-shared/lib/interfaces';
 
 const getDisplayKeyByID = (keys: KeyDisplay[], ID: string) => {
     return keys.find(({ ID: otherID }) => ID === otherID);

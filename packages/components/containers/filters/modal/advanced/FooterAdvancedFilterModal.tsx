@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Button, PrimaryButton } from '../../../..';
 import { AdvancedSimpleFilterModalModel, StepSieve, ErrorsSieve } from 'proton-shared/lib/filters/interfaces';
+import { Button, PrimaryButton } from '../../../..';
 
 interface Props {
     model: AdvancedSimpleFilterModalModel;

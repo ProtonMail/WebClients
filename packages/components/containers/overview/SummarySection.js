@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { USER_ROLES, PLANS } from 'proton-shared/lib/constants';
 
-const { MEMBER_ROLE, ADMIN_ROLE } = USER_ROLES;
-
 import { formatPlans } from '../payments/subscription/helpers';
+
+const { MEMBER_ROLE, ADMIN_ROLE } = USER_ROLES;
 
 const Rows = ({ subscription, user }) => {
     const { mailPlan = {}, vpnPlan = {} } = formatPlans(subscription.Plans);

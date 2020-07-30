@@ -38,8 +38,8 @@ const PmMeButton = () => {
         const { Address } = await api(
             setupAddress({
                 Domain,
-                DisplayName: DisplayName ? DisplayName : '', // DisplayName can be null
-                Signature: Signature ? Signature : '', // Signature can be null
+                DisplayName: DisplayName || '', // DisplayName can be null
+                Signature: Signature || '', // Signature can be null
             })
         );
         await call();

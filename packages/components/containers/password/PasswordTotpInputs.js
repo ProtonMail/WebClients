@@ -15,7 +15,7 @@ const PasswordTotpInputs = ({ password, setPassword, passwordError, totp, setTot
                         value={password}
                         onChange={({ target: { value } }) => setPassword(value)}
                         error={passwordError}
-                        autoFocus={true}
+                        autoFocus
                         autoComplete="current-password"
                         required
                     />

@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS, FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
+
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { useUser } from '../../hooks/useUser';
@@ -73,7 +73,7 @@ const AppsDropdown = () => {
                 <li className="dropDown-item appsDropdown-item">
                     <Link
                         to="/settings/subscription"
-                        external={true}
+                        external
                         className="appsDropdown-link big m0 bl p1 pt0-75 pb0-25"
                         title={c('Apps dropdown').t`Add storage space`}
                     >

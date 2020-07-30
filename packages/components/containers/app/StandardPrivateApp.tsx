@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { EventManagerProvider, ModalsChildren, ThemeInjector, DensityInjector, ContactProvider } from '../../index';
 import { UserModel, UserSettingsModel } from 'proton-shared/lib/models';
 import { unique } from 'proton-shared/lib/helpers/array';
 import loadLocale from 'proton-shared/lib/i18n/loadLocale';
@@ -8,12 +7,21 @@ import createEventManager from 'proton-shared/lib/eventManager/eventManager';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { destroyOpenPGP, loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { Model } from 'proton-shared/lib/interfaces/Model';
+import {
+    EventManagerProvider,
+    ModalsChildren,
+    ThemeInjector,
+    DensityInjector,
+    ContactProvider,
+    useApi,
+    useCache,
+} from '../../index';
 
 import EventModelListener from '../eventManager/EventModelListener';
 import EventNotices from '../eventManager/EventNotices';
 import LoaderPage from './LoaderPage';
 import ForceRefreshProvider from '../forceRefresh/Provider';
-import { useApi, useCache } from '../../index';
+
 import loadEventID from './loadEventID';
 import StandardLoadError from './StandardLoadError';
 

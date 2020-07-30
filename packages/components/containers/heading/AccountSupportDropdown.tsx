@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
+import { c } from 'ttag';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 import {
     Icon,
     Dropdown,
@@ -12,10 +15,7 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     DropdownMenuLink,
-} from '../../';
-import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
-import { c } from 'ttag';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+} from '../..';
 
 import AccountSupportDropdownButton from './AccountSupportDropdownButton';
 

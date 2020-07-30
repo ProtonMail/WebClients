@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { PrimaryButton, AuthModal, useOrganization, useNotifications, useModals } from '../../index';
 import { unlockPasswordChanges } from 'proton-shared/lib/api/user';
+import { PrimaryButton, AuthModal, useOrganization, useNotifications, useModals } from '../../index';
 
 import SetupOrganizationModal from './SetupOrganizationModal';
 

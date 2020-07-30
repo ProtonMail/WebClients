@@ -17,7 +17,6 @@ const ExpInput = ({ month, year, onChange, ...rest }) => {
             });
         } else if (newMonth.length > 2) {
             // User removes the '/'
-            return;
         } else if (month.length === 2) {
             // User removes the '/' and year is empty
             const [first = ''] = newMonth;

@@ -47,7 +47,7 @@ const SquireToolbarDropdown = ({
                     buttonRef={anchorRef}
                     isOpen={isOpen}
                     onClick={handleClick}
-                    hasCaret={true}
+                    hasCaret
                     disabled={disabled}
                     caretClassName="editor-toolbar-icon"
                     className="editor-toolbar-button composer-toolbar-fontDropDown mw100"

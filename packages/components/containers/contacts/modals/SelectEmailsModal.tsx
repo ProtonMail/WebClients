@@ -46,7 +46,7 @@ const SelectEmailsModal = ({ contacts, onSubmit, onClose, ...rest }: Props) => {
                 }
             });
             return acc;
-        }, [] as Array<CheckableContact>);
+        }, [] as CheckableContact[]);
         onSubmit(toSubmit);
         onClose?.();
     };

@@ -1,5 +1,18 @@
 import React, { useState, FormEvent, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
+import { FILTER_VERSION } from 'proton-shared/lib/filters/constants';
+import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from 'proton-shared/lib/filters/interfaces';
+import { normalize } from 'proton-shared/lib/helpers/string';
+import { checkSieveFilter, addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
+import { convertModel } from 'proton-shared/lib/filters/utils';
+import { templates as sieveTemplates } from 'proton-shared/lib/filters/sieve';
+
+import { noop } from 'proton-shared/lib/helpers/function';
+import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
+import FilterNameForm from '../FilterNameForm';
+import HeaderAdvancedFilterModal from './HeaderAdvancedFilterModal';
+import FooterAdvancedFilterModal from './FooterAdvancedFilterModal';
+import SieveForm from './SieveForm';
 import {
     FormModal,
     useModals,
@@ -15,19 +28,6 @@ import {
     ConfirmModal,
     Alert,
 } from '../../../../index';
-import { FILTER_VERSION } from 'proton-shared/lib/filters/constants';
-import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from 'proton-shared/lib/filters/interfaces';
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { checkSieveFilter, addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
-import { convertModel } from 'proton-shared/lib/filters/utils';
-import { templates as sieveTemplates } from 'proton-shared/lib/filters/sieve';
-
-import FilterNameForm from '../FilterNameForm';
-import HeaderAdvancedFilterModal from './HeaderAdvancedFilterModal';
-import FooterAdvancedFilterModal from './FooterAdvancedFilterModal';
-import SieveForm from './SieveForm';
-import { noop } from 'proton-shared/lib/helpers/function';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 
 interface Props {
     filter: Filter;

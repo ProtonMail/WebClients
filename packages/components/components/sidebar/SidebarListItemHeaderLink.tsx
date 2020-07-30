@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '../../index';
-import Link, { Props as LinkProps } from '../../components/link/Link';
+import Link, { Props as LinkProps } from '../link/Link';
 
 interface Props extends LinkProps {
     icon: string;

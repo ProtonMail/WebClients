@@ -1,6 +1,6 @@
 import React from 'react';
-import { Icon } from '../../index';
 import { c } from 'ttag';
+import { Icon } from '../../index';
 
 interface Props {
     onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

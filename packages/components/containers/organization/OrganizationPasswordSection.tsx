@@ -1,5 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
+import { USER_ROLES } from 'proton-shared/lib/constants';
 import {
     Alert,
     Block,
@@ -15,7 +16,6 @@ import {
     useOrganization,
     useOrganizationKey,
 } from '../../index';
-import { USER_ROLES } from 'proton-shared/lib/constants';
 
 import ChangeOrganizationPasswordModal from './ChangeOrganizationPasswordModal';
 import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';

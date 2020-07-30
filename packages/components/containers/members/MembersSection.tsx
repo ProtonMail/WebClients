@@ -1,5 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { c, msgid } from 'ttag';
+import { normalize } from 'proton-shared/lib/helpers/string';
+import { DOMAIN_STATE } from 'proton-shared/lib/constants';
+import { Organization as tsOrganization, Domain } from 'proton-shared/lib/interfaces';
 import {
     Table,
     TableCell,
@@ -19,8 +22,6 @@ import {
     useModals,
     useOrganizationKey,
 } from '../../index';
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { DOMAIN_STATE } from 'proton-shared/lib/constants';
 
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
@@ -32,7 +33,6 @@ import MemberModal from './MemberModal';
 import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
 import useDomainsAddresses from '../../hooks/useDomainsAddresses';
 import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
-import { Organization as tsOrganization, Domain } from 'proton-shared/lib/interfaces';
 
 const validateAddUser = (
     organization: tsOrganization,

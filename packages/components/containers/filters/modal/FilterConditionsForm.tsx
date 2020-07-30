@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { classnames, Radio, LinkButton } from '../../..';
-
 import {
     Condition,
     FilterStatement,
@@ -10,6 +8,8 @@ import {
     ConditionComparator,
     SimpleFilterModalModel,
 } from 'proton-shared/lib/filters/interfaces';
+import { classnames, Radio, LinkButton } from '../../..';
+
 import FilterConditionsFormRow from './FilterConditionsFormRow';
 
 const conditionTemplate = {

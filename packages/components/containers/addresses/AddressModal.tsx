@@ -2,6 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { createAddress } from 'proton-shared/lib/api/addresses';
 import { ADDRESS_TYPE, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
+import { Member } from 'proton-shared/lib/interfaces';
 import {
     FormModal,
     Alert,
@@ -22,7 +23,6 @@ import {
 import useAddressModal from './useAddressModal';
 import DomainsSelect from './DomainsSelect';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
-import { Member } from 'proton-shared/lib/interfaces';
 import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
 
 interface Props {

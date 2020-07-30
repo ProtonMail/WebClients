@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-import { Alert, Row, Label, Field, PasswordInput, FormModal } from '../../../';
 import { c } from 'ttag';
+import { Alert, Row, Label, Field, PasswordInput, FormModal } from '../../..';
 
 import { generateUID } from '../../../helpers/component';
 
@@ -52,7 +52,7 @@ const DecryptFileKeyModal = ({ privateKey, onSuccess, onClose, ...rest }: Props)
                         value={password}
                         error={error}
                         onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setPassword(value)}
-                        autoFocus={true}
+                        autoFocus
                         required
                     />
                 </Field>

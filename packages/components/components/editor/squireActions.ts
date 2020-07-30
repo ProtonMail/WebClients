@@ -206,7 +206,7 @@ export const insertImage = (
 ) => {
     const attributes = {
         ...inputAttributes,
-        class: (inputAttributes.class ? inputAttributes.class + ' ' : '') + 'proton-embedded',
+        class: `${inputAttributes.class ? `${inputAttributes.class} ` : ''}proton-embedded`,
     };
 
     squire.focus();
@@ -245,7 +245,7 @@ export const setTextDirectionWithoutFocus = (squire: SquireType, direction: RIGH
  * Deals with pasting images
  */
 export const pasteFileHandler = (onAddImages: (files: File[]) => void) => (event: ClipboardEvent) => {
-    const clipboardData = event.clipboardData;
+    const { clipboardData } = event;
     // Edge needs items as files is undefined
     const files = Array.from(clipboardData?.files || ((clipboardData?.items as any) as FileList) || []);
     if (files.length && files.every((file) => EMBEDDABLE_TYPES.includes(file.type))) {

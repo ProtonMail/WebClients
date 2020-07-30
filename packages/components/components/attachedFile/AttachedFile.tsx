@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, Button } from '../../index';
 
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
+import { Icon, Button } from '../../index';
 
 interface Props {
     file: File;

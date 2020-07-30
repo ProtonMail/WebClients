@@ -1,8 +1,8 @@
 import React from 'react';
-import { classnames, Icon, Tooltip } from '../../index';
 import { getEmailMismatchWarning } from 'proton-shared/lib/keys/publicKeys';
 
 import { OpenPGPKey } from 'pmcrypto';
+import { classnames, Icon, Tooltip } from '../../index';
 
 interface Props {
     publicKey: OpenPGPKey;

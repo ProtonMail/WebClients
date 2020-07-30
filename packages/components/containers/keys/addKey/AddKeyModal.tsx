@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { Alert, GenericError, FormModal } from '../../../index';
 import { algorithmInfo } from 'pmcrypto';
 import { getAlgorithmExists } from 'proton-shared/lib/keys/keysAlgorithm';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
 import { EncryptionConfig } from 'proton-shared/lib/interfaces';
+import { Alert, GenericError, FormModal } from '../../../index';
 
 import SelectEncryption from './SelectEncryption';
 

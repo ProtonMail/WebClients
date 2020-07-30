@@ -93,7 +93,7 @@ const PlansSection = () => {
             return;
         }
 
-        const couponCode = CouponCode ? CouponCode : undefined; // From current subscription; CouponCode can be null
+        const couponCode = CouponCode || undefined; // From current subscription; CouponCode can be null
         const plansIDs = switchPlan({
             planIDs: getPlanIDs(subscription),
             plans,

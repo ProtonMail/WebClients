@@ -1,8 +1,8 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { Block, Select, PrimaryButton } from '../../index';
 import { ALL_MEMBERS_ID } from 'proton-shared/lib/constants';
 import { Member } from 'proton-shared/lib/interfaces';
+import { Block, Select, PrimaryButton } from '../../index';
 
 interface Props {
     memberIndex: number;

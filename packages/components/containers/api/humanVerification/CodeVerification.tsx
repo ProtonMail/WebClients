@@ -104,7 +104,7 @@ const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props)
                 <div className="mb1">
                     <EmailInput
                         id="email"
-                        autoFocus={true}
+                        autoFocus
                         value={email}
                         placeholder={c('Placeholder').t`Enter an email address`}
                         onChange={handleChangeEmail}
@@ -138,7 +138,7 @@ const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props)
                 <div className="mb1">
                     <IntlTelInput
                         id="phone"
-                        autoFocus={true}
+                        autoFocus
                         value={phone}
                         containerClassName="w100"
                         inputClassName="w100"
@@ -195,8 +195,8 @@ const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props)
                                 return withLoadingVerification(verifyCode());
                             }
                         }}
-                        autoFocus={true}
-                        required={true}
+                        autoFocus
+                        required
                         error={codeError}
                     />
                 </div>

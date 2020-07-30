@@ -100,9 +100,8 @@ const SquireEditor = forwardRef(
                 get value() {
                     if (metadata.isPlainText) {
                         return textareaRef.current?.value || '';
-                    } else {
-                        return squireRef.current?.getHTML() || '';
                     }
+                    return squireRef.current?.getHTML() || '';
                 },
                 set value(value: string) {
                     if (metadata.isPlainText) {
@@ -119,9 +118,8 @@ const SquireEditor = forwardRef(
                 get document() {
                     if (metadata.isPlainText) {
                         return undefined;
-                    } else {
-                        return (squireRef.current.getDocument() as any) as Element;
                     }
+                    return (squireRef.current.getDocument() as any) as Element;
                 },
                 focus: () => {
                     if (metadata.isPlainText) {

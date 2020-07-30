@@ -198,7 +198,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onProcess, onClose, ...r
                                 onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
                                     setOldPassword(value)
                                 }
-                                autoFocus={true}
+                                autoFocus
                                 required
                             />
                         </Field>
@@ -213,7 +213,7 @@ const ReactivateKeysModal = ({ allKeys: initialAllKeys, onProcess, onClose, ...r
                 submit: c('Action').t`Done`,
                 children: (
                     <>
-                        <ReactivateKeysList loading={true} allKeys={allKeys} />
+                        <ReactivateKeysList loading allKeys={allKeys} />
                         <Alert>
                             {c('Info')
                                 .t`If a key remains inactive, it means that the decryption password provided does not apply to the key.`}

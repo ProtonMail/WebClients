@@ -11,7 +11,7 @@ import {
     AccountSupportDropdown,
     useNotifications,
     useModals,
-    Label
+    Label,
 } from '../..';
 import { getErrorText } from './helper';
 import AbuseModal from './AbuseModal';
@@ -44,7 +44,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
         setPassword,
         setKeyPassword,
         setTotp,
-        setIsTotpRecovery
+        setIsTotpRecovery,
     } = useLogin({ onLogin, ignoreUnlock });
 
     const [loading, withLoading] = useLoading();
@@ -90,7 +90,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
                     {usernameInput}
                     {passwordInput}
                     <div className="mb1">
-                        <AccountSupportDropdown noCaret={true} className="link">
+                        <AccountSupportDropdown noCaret className="link">
                             {c('Action').t`Need help?`}
                         </AccountSupportDropdown>
                     </div>
@@ -177,9 +177,8 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
                     // In case of any other error than password error, automatically cancel here to allow the user to retry.
                     if (e.name !== 'PasswordError') {
                         return handleCancel();
-                    } else {
-                        createNotification({ type: 'error', text: getErrorText(e) });
                     }
+                    createNotification({ type: 'error', text: getErrorText(e) });
                 })
             );
         };

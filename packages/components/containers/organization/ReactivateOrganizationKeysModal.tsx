@@ -1,5 +1,10 @@
 import React, { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
+import { encryptPrivateKey } from 'pmcrypto';
+
+import { activateOrganizationKey, getOrganizationBackupKeys } from 'proton-shared/lib/api/organization';
+import { OrganizationModel } from 'proton-shared/lib/models';
+import { decryptPrivateKeyWithSalt } from 'proton-shared/lib/keys/keys';
 import {
     useCache,
     useLoading,
@@ -15,11 +20,6 @@ import {
     Field,
     PasswordInput,
 } from '../../index';
-import { encryptPrivateKey } from 'pmcrypto';
-
-import { activateOrganizationKey, getOrganizationBackupKeys } from 'proton-shared/lib/api/organization';
-import { OrganizationModel } from 'proton-shared/lib/models';
-import { decryptPrivateKeyWithSalt } from 'proton-shared/lib/keys/keys';
 
 export enum MODES {
     ACTIVATE,

@@ -54,13 +54,7 @@ const GiftCodeModal = ({ onClose, ...rest }) => {
             <Row>
                 <Label htmlFor="giftCodeInput">{c('Label').t`Enter gift code`}</Label>
                 <Field>
-                    <GiftCodeInput
-                        id="giftCodeInput"
-                        value={value}
-                        onChange={handleChange}
-                        required={true}
-                        autoFocus={true}
-                    />
+                    <GiftCodeInput id="giftCodeInput" value={value} onChange={handleChange} required autoFocus />
                 </Field>
             </Row>
         </FormModal>

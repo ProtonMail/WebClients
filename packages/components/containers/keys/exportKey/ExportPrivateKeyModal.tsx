@@ -2,8 +2,8 @@ import React, { ChangeEvent, useState } from 'react';
 import { OpenPGPKey, encryptPrivateKey } from 'pmcrypto';
 import { KEY_FILE_EXTENSION } from 'proton-shared/lib/constants';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { useModals, UnlockModal, Alert, Row, Field, Label, PasswordInput, FormModal } from '../../../';
 import { c } from 'ttag';
+import { useModals, UnlockModal, Alert, Row, Field, Label, PasswordInput, FormModal } from '../../..';
 
 import { generateUID } from '../../../helpers/component';
 
@@ -59,7 +59,7 @@ const ExportPrivateKeyModal = ({ name, privateKey, onSuccess, onClose, ...rest }
                         value={password}
                         onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setPassword(value)}
                         placeholder={c('Placeholder').t`Password`}
-                        autoFocus={true}
+                        autoFocus
                         required
                     />
                 </Field>

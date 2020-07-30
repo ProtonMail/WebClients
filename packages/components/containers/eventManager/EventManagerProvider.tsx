@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
-import EventManagerContext from './context';
 import createEventManager from 'proton-shared/lib/eventManager/eventManager';
+import EventManagerContext from './context';
 
 interface Props {
     eventManager: ReturnType<typeof createEventManager>;

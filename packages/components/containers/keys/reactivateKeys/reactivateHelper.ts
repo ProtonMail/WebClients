@@ -2,11 +2,11 @@ import { c } from 'ttag';
 import { decryptPrivateKey, encryptPrivateKey, getKeys, OpenPGPKey } from 'pmcrypto';
 import { reformatAddressKey, decryptPrivateKeyWithSalt } from 'proton-shared/lib/keys/keys';
 import { KeySalt, KeyAction, Api, Address } from 'proton-shared/lib/interfaces';
-import { reactivateKeyAction } from 'proton-shared/lib/keys/keysAction';
+import { reactivateKeyAction, findKeyByFingerprint } from 'proton-shared/lib/keys/keysAction';
 import { getKeyFlagsAddress, getKeyFlagsUser } from 'proton-shared/lib/keys/keyFlags';
 import { reactivateKeyRoute } from 'proton-shared/lib/api/keys';
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
-import { findKeyByFingerprint } from 'proton-shared/lib/keys/keysAction';
+
 import { noop } from 'proton-shared/lib/helpers/function';
 
 interface ReactivatePrivateKeyArguments {

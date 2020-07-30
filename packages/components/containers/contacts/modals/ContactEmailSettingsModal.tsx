@@ -14,9 +14,9 @@ import {
 } from 'proton-shared/lib/keys/publicKeys';
 import { uniqueBy } from 'proton-shared/lib/helpers/array';
 import { getKeyInfoFromProperties, toKeyProperty } from 'proton-shared/lib/contacts/keyProperties';
-import { CachedKey, Api } from 'proton-shared/lib/interfaces';
+import { CachedKey, Api, ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
 import { ContactProperties, ContactProperty } from 'proton-shared/lib/interfaces/contacts/Contact';
-import { ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
+
 import { VCARD_KEY_FIELDS, CATEGORIES } from 'proton-shared/lib/contacts/constants';
 import { API_CODES, CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -118,10 +118,10 @@ const ContactEmailSettingsModal = ({
             emailProperties.push({ field: 'x-pm-mimetype', value: model?.mimeType, group: emailGroup });
         }
         if (model?.isPGPExternalWithoutWKDKeys && model?.encrypt !== undefined) {
-            emailProperties.push({ field: 'x-pm-encrypt', value: '' + model?.encrypt, group: emailGroup });
+            emailProperties.push({ field: 'x-pm-encrypt', value: `${model?.encrypt}`, group: emailGroup });
         }
         if (model?.isPGPExternalWithoutWKDKeys && model?.sign !== undefined) {
-            emailProperties.push({ field: 'x-pm-sign', value: '' + model?.sign, group: emailGroup });
+            emailProperties.push({ field: 'x-pm-sign', value: `${model?.sign}`, group: emailGroup });
         }
         if (model?.isPGPExternalWithoutWKDKeys && model?.scheme) {
             emailProperties.push({ field: 'x-pm-scheme', value: model?.scheme, group: emailGroup });

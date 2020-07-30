@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 
-import { classnames, Icon } from '../../..';
-
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { SimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
 import { toMap } from 'proton-shared/lib/helpers/object';
+import { classnames, Icon } from '../../..';
 
 import { DEFAULT_FOLDERS } from './FilterActionsFormFolderRow';
 

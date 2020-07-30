@@ -1,10 +1,10 @@
 import React, { useState, ChangeEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { classnames, Input, Select, Radio, Tooltip, Icon, Button } from '../../..';
 import { TYPES, COMPARATORS } from 'proton-shared/lib/filters/constants';
-import { OptionProps } from '../../../components/select/Select';
 import { Condition, FilterStatement, ConditionType, ConditionComparator } from 'proton-shared/lib/filters/interfaces';
+import { classnames, Input, Select, Radio, Tooltip, Icon, Button } from '../../..';
+import { OptionProps } from '../../../components/select/Select';
 
 import './FilterConditionsFormRow.scss';
 

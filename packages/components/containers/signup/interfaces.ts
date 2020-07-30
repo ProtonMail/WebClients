@@ -85,7 +85,9 @@ export interface SignupPayPal {
 
 export class HumanVerificationError extends Error {
     methods: HumanVerificationMethodType[];
+
     token: string;
+
     constructor(methods: HumanVerificationMethodType[], token: string) {
         super('HumanVerificationError');
         this.methods = methods;

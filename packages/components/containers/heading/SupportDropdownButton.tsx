@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import { c } from 'ttag';
-import { Icon, DropdownCaret } from '../../';
+import { Icon, DropdownCaret } from '../..';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     content?: string;

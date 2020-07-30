@@ -67,7 +67,7 @@ const DisableTwoFactorModal = (props) => {
                         totp={totp}
                         setTotp={setTotp}
                         totpError={error}
-                        showTotp={true}
+                        showTotp
                     />
                 ),
                 onSubmit() {

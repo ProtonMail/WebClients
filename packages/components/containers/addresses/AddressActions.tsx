@@ -1,5 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
+import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
+import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { Address, UserModel, Member } from 'proton-shared/lib/interfaces';
 import {
     DropdownActions,
     useApi,
@@ -10,15 +14,11 @@ import {
     ConfirmModal,
     Alert,
 } from '../../index';
-import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
-import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 
 import EditAddressModal from './EditAddressModal';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 import { getPermissions } from './helper';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
-import { Address, UserModel, Member } from 'proton-shared/lib/interfaces';
 
 interface Props {
     address: Address;

@@ -43,7 +43,7 @@ const SquireToolbarMoreDropdown = ({
     squireActions,
 }: Props) => {
     const isRTL = metadata.rightToLeft === RIGHT_TO_LEFT.ON;
-    const isPlainText = metadata.isPlainText;
+    const { isPlainText } = metadata;
 
     const handleChangeDirection = (rightToLeft: RIGHT_TO_LEFT) => () => {
         onChangeMetadata({ rightToLeft });

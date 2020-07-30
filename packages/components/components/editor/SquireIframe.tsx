@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect, forwardRef, Ref } from 'react';
 
+import { noop } from 'proton-shared/lib/helpers/function';
 import { useHandler } from '../../hooks/useHandler';
 import { SquireType, getSquireRef, setSquireRef, initSquire } from './squireConfig';
 import { pasteFileHandler } from './squireActions';
 import { SquireEditorMetadata } from './SquireEditor';
-import { noop } from 'proton-shared/lib/helpers/function';
 
 const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div>' || html === '<div><br></div>';
 
@@ -102,7 +102,7 @@ const SquireIframe = forwardRef(
                 {placeholder && isEmpty && (
                     <div className="absolute ml1 no-pointer-events placeholder">{placeholder}</div>
                 )}
-                <iframe ref={iframeRef} frameBorder="0" className="w100 h100 squireIframe" {...rest}></iframe>
+                <iframe ref={iframeRef} frameBorder="0" className="w100 h100 squireIframe" {...rest} />
             </div>
         );
     }

@@ -1,6 +1,8 @@
 import React, { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 import { updateBackupKey } from 'proton-shared/lib/api/organization';
+import { getBackupKeyData } from 'proton-shared/lib/keys/organizationKeys';
+import { OpenPGPKey } from 'pmcrypto';
 import {
     useEventManager,
     useLoading,
@@ -14,8 +16,6 @@ import {
     Field,
     PasswordInput,
 } from '../../index';
-import { getBackupKeyData } from 'proton-shared/lib/keys/organizationKeys';
-import { OpenPGPKey } from 'pmcrypto';
 
 interface Props {
     onClose?: () => void;

@@ -13,13 +13,13 @@ interface Props extends Omit<InputProps, 'onChange' | 'value' | 'min' | 'max'> {
  * Small helper to transform a string or a number into a string
  * For other type of arguments, return undefined
  */
-const toString = (x: any) => (['number', 'string'].includes(typeof x) ? '' + x : undefined);
+const toString = (x: any) => (['number', 'string'].includes(typeof x) ? `${x}` : undefined);
 
 const IntegerInput = ({ value, onChange, max, min, step, ...rest }: Props) => {
     const minStr = toString(min);
     const maxStr = toString(max);
     const stepStr = toString(step) || '1';
-    const intValue = parseInt('' + value, 10);
+    const intValue = parseInt(`${value}`, 10);
 
     return (
         <Input
@@ -33,15 +33,15 @@ const IntegerInput = ({ value, onChange, max, min, step, ...rest }: Props) => {
                 // Prevent broken input on certain browsers since it allows to enter other characters than integer numbers
                 if (newValue === '') {
                     const emptyOrOldValue = isClear ? undefined : value;
-                    target.value = '' + (emptyOrOldValue || '');
+                    target.value = `${emptyOrOldValue || ''}`;
                     return onChange(emptyOrOldValue);
                 }
                 const newIntValue = parseInt(newValue, 10);
                 if (isNaN(newIntValue) || (minStr && newIntValue < +minStr) || (maxStr && newIntValue > +maxStr)) {
-                    target.value = '' + intValue;
+                    target.value = `${intValue}`;
                     return;
                 }
-                target.value = '' + newIntValue;
+                target.value = `${newIntValue}`;
                 onChange(newIntValue);
             }}
             {...rest}

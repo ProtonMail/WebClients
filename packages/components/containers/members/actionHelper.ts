@@ -43,7 +43,7 @@ export const setupMemberKey = async ({
         fingerprint: privateKey.getFingerprint(),
     });
 
-    const newKey = updatedKeys.find(({ ID }) => 'temp' === ID);
+    const newKey = updatedKeys.find(({ ID }) => ID === 'temp');
     if (!newKey) {
         throw new Error('Temp key not found');
     }
@@ -111,7 +111,7 @@ export const createMemberAddressKeys = async ({
         fingerprint: privateKey.getFingerprint(),
     });
 
-    const newKey = newKeys.find(({ ID }) => 'temp' === ID);
+    const newKey = newKeys.find(({ ID }) => ID === 'temp');
     if (!newKey) {
         throw new Error('Temp key not found');
     }

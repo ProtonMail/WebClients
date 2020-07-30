@@ -1,6 +1,6 @@
 {
     "parser": "@typescript-eslint/parser",
-    "plugins": ["react", "react-hooks", "@typescript-eslint"],
+    "plugins": ["react", "react-hooks", "@typescript-eslint", "import"],
     "parserOptions": {
         "ecmaVersion": 2018,
         "sourceType": "module",
@@ -30,6 +30,15 @@
     },
     "extends": ["plugin:@typescript-eslint/recommended", "eslint:recommended", "plugin:react/recommended"],
     "rules": {
+        "consistent-return": "off",
+        "import/default": 2,
+        "import/export": 2,
+        "import/named": 2,
+        "import/order": [2, { "groups": [["builtin", "external", "internal"]] }],
+        "import/namespace": 2,
+        "import/no-extraneous-dependencies": "off",
+        "import/no-named-as-default": "off",
+        "import/prefer-default-export": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/indent": "off",

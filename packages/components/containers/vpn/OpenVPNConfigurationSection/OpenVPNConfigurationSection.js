@@ -17,14 +17,14 @@ import {
     RadioGroup,
 } from 'react-components';
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
-import ConfigsTable, { CATEGORY } from './ConfigsTable';
-import { isSecureCoreEnabled } from './utils';
 import { groupWith } from 'proton-shared/lib/helpers/array';
-import ServerConfigs from './ServerConfigs';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { getCountryByAbbr, correctAbbr } from 'react-components/helpers/countries';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { Link } from 'react-router-dom';
+import ServerConfigs from './ServerConfigs';
+import { isSecureCoreEnabled } from './utils';
+import ConfigsTable, { CATEGORY } from './ConfigsTable';
 
 const PLATFORM = {
     MACOS: 'macOS',

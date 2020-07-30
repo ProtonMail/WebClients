@@ -18,7 +18,7 @@ export const cachedPromise = (cache, key, miss, dependency) => {
     const promise = miss();
 
     cache.set(key, {
-        dependency: dependency,
+        dependency,
         promise,
     });
 

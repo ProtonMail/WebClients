@@ -1,9 +1,9 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { Button, Select, Tooltip, classnames, Icon, useModals } from '../../..';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 import { Actions } from 'proton-shared/lib/filters/interfaces';
+import { Button, Select, Tooltip, classnames, Icon, useModals } from '../../..';
 
 import EditLabelModal from '../../labels/modals/Edit';
 

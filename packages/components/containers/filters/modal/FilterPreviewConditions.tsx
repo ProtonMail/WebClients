@@ -1,8 +1,6 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 
-import { classnames, Icon } from '../../..';
-
 import { TYPES, COMPARATORS } from 'proton-shared/lib/filters/constants';
 import {
     FilterStatement,
@@ -10,6 +8,7 @@ import {
     ConditionType,
     ConditionComparator,
 } from 'proton-shared/lib/filters/interfaces';
+import { classnames, Icon } from '../../..';
 
 interface Props {
     isNarrow: boolean;

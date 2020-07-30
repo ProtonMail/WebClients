@@ -2,6 +2,7 @@ import React, { useRef, useState, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { History } from 'history';
+import { USERNAME_PLACEHOLDER } from 'proton-shared/lib/constants';
 import {
     Input,
     EmailInput,
@@ -13,7 +14,6 @@ import {
     useLoading,
     FullLoader,
 } from '../../index';
-import { USERNAME_PLACEHOLDER } from 'proton-shared/lib/constants';
 
 import { SignupModel, SignupErrors, SERVICES } from './interfaces';
 import { SIGNUP_STEPS } from './constants';

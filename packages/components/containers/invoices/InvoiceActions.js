@@ -9,7 +9,7 @@ import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import PayInvoiceModal from './PayInvoiceModal';
 
 const InvoiceActions = ({ invoice, fetchInvoices }) => {
-    const filename = c('Title for PDF file').t`ProtonMail invoice` + ` ${invoice.ID}.pdf`;
+    const filename = `${c('Title for PDF file').t`ProtonMail invoice`} ${invoice.ID}.pdf`;
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const api = useApi();

@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
+import { decryptMemberToken } from 'proton-shared/lib/keys/memberToken';
+import { noop } from 'proton-shared/lib/helpers/function';
+
+import { decryptPrivateKey } from 'pmcrypto';
+import { Address, Member } from 'proton-shared/lib/interfaces';
+import SelectEncryption from '../../keys/addKey/SelectEncryption';
+import MissingKeysStatus from './MissingKeysStatus';
 import {
     useApi,
     useAuthentication,
@@ -13,14 +21,6 @@ import {
     TableBody,
     TableRow,
 } from '../../../index';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
-import { decryptMemberToken } from 'proton-shared/lib/keys/memberToken';
-import { noop } from 'proton-shared/lib/helpers/function';
-
-import SelectEncryption from '../../keys/addKey/SelectEncryption';
-import MissingKeysStatus from './MissingKeysStatus';
-import { decryptPrivateKey } from 'pmcrypto';
-import { Address, Member } from 'proton-shared/lib/interfaces';
 import { AddressWithStatus, Status } from './interface';
 import missingKeysSelfProcess from './missingKeysSelfProcess';
 import missingKeysMemberProcess from './missingKeysMemberProcess';

@@ -1,5 +1,6 @@
 import React from 'react';
 import { APPS } from 'proton-shared/lib/constants';
+import { c } from 'ttag';
 import {
     AppsDropdown,
     Hamburger,
@@ -12,7 +13,6 @@ import {
     useUser,
     useConfig,
 } from '../../index';
-import { c } from 'ttag';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 import UserDropdown from './UserDropdown';
 import { TopNavbarItem } from '../app/TopNavbar';
@@ -85,7 +85,7 @@ const PrivateHeader = ({
                 {isNarrow && searchDropdown ? <TopNavbarItem>{searchDropdown}</TopNavbarItem> : null}
                 {hasPaidMail || isNarrow || APP_NAME === APPS.PROTONVPN_SETTINGS ? null : (
                     <TopNavbarItem>
-                        <UpgradeButton external={true} />
+                        <UpgradeButton external />
                     </TopNavbarItem>
                 )}
                 {hasPaidVpn || isNarrow || APP_NAME !== APPS.PROTONVPN_SETTINGS ? null : (

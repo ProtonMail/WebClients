@@ -16,7 +16,7 @@ const CouponForm = ({ onChange, model }) => {
         <div className="flex flex-spacebetween mb1">
             <div className="mr1">
                 <Input
-                    autoFocus={true}
+                    autoFocus
                     placeholder={c('Placeholder').t`Coupon`}
                     value={coupon}
                     onChange={handleChange}

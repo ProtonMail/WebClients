@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '../icon/Icon';
-import PrimaryButton from '../button/PrimaryButton';
+import PrimaryButton from './PrimaryButton';
 import { classnames } from '../../helpers/component';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {

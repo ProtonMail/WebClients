@@ -183,7 +183,7 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
                 anchorRef={anchorRef}
                 onClose={close}
                 autoClose={false}
-                noMaxSize={true}
+                noMaxSize
             >
                 <div className="flex flex-spacebetween flex-items-center m1 mb0">
                     <strong>{c('Label').t`Add to group`}</strong>
@@ -197,7 +197,7 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
                     <SearchInput
                         value={keyword}
                         onChange={setKeyword}
-                        autoFocus={true}
+                        autoFocus
                         placeholder={c('Placeholder').t`Filter groups`}
                     />
                 </div>

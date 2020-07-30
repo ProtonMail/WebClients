@@ -129,13 +129,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                 children: (
                     <>
                         <Alert>{c('Label').t`Please select files to upload`}</Alert>
-                        <SelectKeyFiles
-                            ref={selectRef}
-                            onFiles={handleFiles}
-                            multiple={true}
-                            className="hidden"
-                            autoClick={true}
-                        />
+                        <SelectKeyFiles ref={selectRef} onFiles={handleFiles} multiple className="hidden" autoClick />
                     </>
                 ),
             };

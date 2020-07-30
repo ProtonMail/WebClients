@@ -125,7 +125,7 @@ const FolderTreeViewList = ({ items = [] }) => {
                             draggable={!isNarrow}
                             disabled={loading}
                             key={item.ID}
-                            toggled={true}
+                            toggled
                             focussed={false}
                             title={item.Path}
                             content={

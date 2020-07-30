@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { c } from 'ttag';
+import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 import {
     Icon,
     Dropdown,
@@ -12,9 +14,7 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     DropdownMenuLink,
-} from '../../';
-import { c } from 'ttag';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+} from '../..';
 
 import SupportDropdownButton from './SupportDropdownButton';
 

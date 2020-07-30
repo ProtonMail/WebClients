@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA } from 'proton-shared/lib/constants';
+import { createMember, createMemberAddress } from 'proton-shared/lib/api/members';
+import { srpVerify } from 'proton-shared/lib/srp';
+import { Domain, Organization, Address } from 'proton-shared/lib/interfaces';
 import {
     FormModal,
     Row,
@@ -13,10 +17,6 @@ import {
     useNotifications,
     useEventManager,
 } from '../../index';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA } from 'proton-shared/lib/constants';
-import { createMember, createMemberAddress } from 'proton-shared/lib/api/members';
-import { srpVerify } from 'proton-shared/lib/srp';
-import { Domain, Organization, Address } from 'proton-shared/lib/interfaces';
 
 import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
 import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';

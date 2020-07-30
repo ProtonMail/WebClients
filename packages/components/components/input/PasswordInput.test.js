@@ -26,7 +26,7 @@ describe('PasswordInput component', () => {
     });
 
     it('should disable input and button', () => {
-        const { container } = render(<PasswordInput disabled={true} />);
+        const { container } = render(<PasswordInput disabled />);
         const inputNode = container.querySelector('input');
         const buttonNode = container.querySelector('button');
 

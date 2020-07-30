@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import useSortedList from './useSortedList';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import useSortedList from './useSortedList';
 
 describe('useSortedList hook', () => {
     it('should return sorted list initially if config is provided', () => {

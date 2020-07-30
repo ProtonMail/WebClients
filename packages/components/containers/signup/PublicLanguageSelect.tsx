@@ -22,11 +22,11 @@ const PublicLanguageSelect = ({ className, locales = {} }: Props) => {
         const matches = getClosestMatches({
             locale: newLocale,
             browserLocale: getBrowserLocale(),
-            locales: locales,
+            locales,
         });
         await loadLocale({
             ...matches,
-            locales: locales,
+            locales,
         });
         forceRefresh();
     };

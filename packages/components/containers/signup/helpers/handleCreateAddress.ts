@@ -1,6 +1,5 @@
 import { setupAddress } from 'proton-shared/lib/api/addresses';
-import { Api } from 'proton-shared/lib/interfaces';
-import { Address as tsAddress } from 'proton-shared/lib/interfaces';
+import { Api, Address as tsAddress } from 'proton-shared/lib/interfaces';
 
 interface Args {
     api: Api;

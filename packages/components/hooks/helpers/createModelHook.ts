@@ -1,8 +1,8 @@
+import { useCallback } from 'react';
+import { Api } from 'proton-shared/lib/interfaces';
 import useCachedModelResult from '../useCachedModelResult';
 import useApi from '../../containers/api/useApi';
 import useCache from '../../containers/cache/useCache';
-import { useCallback } from 'react';
-import { Api } from 'proton-shared/lib/interfaces';
 
 /**
  * Creates an async fn model hook.

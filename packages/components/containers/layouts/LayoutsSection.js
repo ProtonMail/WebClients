@@ -167,7 +167,7 @@ const LayoutsSection = () => {
             ) : null}
             {ViewMode === GROUP ? (
                 <Row>
-                    <Label htmlFor={'stickyLabelsToggle'}>
+                    <Label htmlFor="stickyLabelsToggle">
                         <span className="mr0-5">{c('Label').t`Use sticky labels`}</span>
                         <Info
                             title={c('Tooltip')

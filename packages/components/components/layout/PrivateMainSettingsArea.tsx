@@ -34,7 +34,7 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, 
     };
 
     useEffect(() => {
-        const hash = location.hash;
+        const { hash } = location;
         if (!hash) {
             return;
         }

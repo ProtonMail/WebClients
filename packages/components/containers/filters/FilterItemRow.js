@@ -94,7 +94,7 @@ function FilterItemRow({ filter, ...rest }) {
             ]}
             {...rest}
             className="onmobile-hideTd3"
-        ></OrderableTableRow>
+        />
     );
 }
 

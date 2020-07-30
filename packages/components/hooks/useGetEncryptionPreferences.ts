@@ -1,12 +1,12 @@
 import { RECIPIENT_TYPES } from 'proton-shared/lib/constants';
 import { normalizeInternalEmail } from 'proton-shared/lib/helpers/string';
 import { useCallback } from 'react';
-import { useAddresses, useApi, useGetAddressKeys, useGetUserKeys, useMailSettings } from '../index';
 import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
 import getPublicKeysEmailHelper from 'proton-shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
 import extractEncryptionPreferences from 'proton-shared/lib/mail/encryptionPreferences';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { useAddresses, useApi, useGetAddressKeys, useGetUserKeys, useMailSettings } from '../index';
 
 // Implement the logic in the document 'Encryption preferences for outgoing email'
 /**

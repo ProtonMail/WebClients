@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { buyCredit } from 'proton-shared/lib/api/payments';
+import {
+    DEFAULT_CURRENCY,
+    DEFAULT_CREDITS_AMOUNT,
+    CLIENT_TYPES,
+    MIN_CREDIT_AMOUNT,
+    PAYMENT_METHOD_TYPES,
+} from 'proton-shared/lib/constants';
 import {
     FormModal,
     PrimaryButton,
@@ -15,14 +23,6 @@ import {
     useLoading,
     useDebounceInput,
 } from '../..';
-import { buyCredit } from 'proton-shared/lib/api/payments';
-import {
-    DEFAULT_CURRENCY,
-    DEFAULT_CREDITS_AMOUNT,
-    CLIENT_TYPES,
-    MIN_CREDIT_AMOUNT,
-    PAYMENT_METHOD_TYPES,
-} from 'proton-shared/lib/constants';
 
 import Payment from './Payment';
 import usePayment from './usePayment';

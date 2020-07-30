@@ -8,7 +8,7 @@ const getID = async (text) => {
     return `NOTICE-${id}`;
 };
 
-const serialize = (number) => '' + number;
+const serialize = (number) => `${number}`;
 const deserialize = (string) => (string ? +string : 0);
 // Two weeks in milliseconds.
 const EXPIRATION = 86400 * 1000 * 14;

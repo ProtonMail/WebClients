@@ -7,7 +7,7 @@ describe('Button component', () => {
     const text = 'Panda';
 
     it('should render a loading button', () => {
-        const { container } = render(<Button loading={true}>{text}</Button>);
+        const { container } = render(<Button loading>{text}</Button>);
         const buttonNode = container.querySelector('button');
 
         expect(buttonNode.getAttribute('aria-busy')).toBe('true');
@@ -16,7 +16,7 @@ describe('Button component', () => {
     it('should render a disabled button', () => {
         const mockOnClick = jest.fn();
         const { container } = render(
-            <Button disabled={true} onClick={mockOnClick}>
+            <Button disabled onClick={mockOnClick}>
                 {text}
             </Button>
         );

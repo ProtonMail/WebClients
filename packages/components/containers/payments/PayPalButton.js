@@ -30,7 +30,7 @@ const PayPalButton = ({ amount, type, children, className, paypal }) => {
     }
 
     if (paypal.loadingVerification) {
-        return <Button loading={true} className={className}>{c('Action').t`Loading verification`}</Button>;
+        return <Button loading className={className}>{c('Action').t`Loading verification`}</Button>;
     }
 
     const handleClick = async () => {

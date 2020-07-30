@@ -2,6 +2,8 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { withRouter } from 'react-router';
 import { RouteComponentProps } from 'react-router-dom';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
+import { c } from 'ttag';
+import { UserModel, Address, Organization, Member } from 'proton-shared/lib/interfaces';
 import {
     useMembers,
     useMemberAddresses,
@@ -15,8 +17,6 @@ import {
     TableRow,
     useOrganizationKey,
 } from '../../index';
-import { c } from 'ttag';
-import { UserModel, Address, Organization, Member } from 'proton-shared/lib/interfaces';
 
 import AddressesToolbar from './AddressesToolbar';
 import AddressStatus from './AddressStatus';

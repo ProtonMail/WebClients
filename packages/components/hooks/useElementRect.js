@@ -44,7 +44,7 @@ const useElementRect = (ref) => {
             // eslint-disable-next-line no-unused-vars
             const onResize = debounce(([{ contentRect }]) => {
                 // The contentRect does not give correct global positions?
-                //setElementRect((old) => reducer(old, contentRect));
+                // setElementRect((old) => reducer(old, contentRect));
                 setElementRect((old) => reducer(old, getElementRect(target)));
             }, 100);
             const resizeObserver = new ResizeObserver(onResize, { box: 'border-box' });

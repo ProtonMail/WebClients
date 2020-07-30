@@ -43,7 +43,7 @@ const MemberActions = ({ member, addresses = [], organization }) => {
         });
 
         const url = `${location.origin}/login/sub`;
-        await memberLogin({ UID, mailboxPassword: authentication.getPassword(), url: url });
+        await memberLogin({ UID, mailboxPassword: authentication.getPassword(), url });
     };
 
     const makeAdmin = async () => {

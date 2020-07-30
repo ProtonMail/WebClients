@@ -92,7 +92,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
                         <Field>
                             <Input
                                 className="pm-field--highlight no-pointer-events strong alignright"
-                                readOnly={true}
+                                readOnly
                                 value={toPrice(AmountDue, Currency)}
                             />
                         </Field>

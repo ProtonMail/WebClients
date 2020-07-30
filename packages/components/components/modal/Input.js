@@ -7,12 +7,10 @@ import { generateUID } from '../../helpers/component';
 
 const InputField = ({ type, id, value, placeholder, onChange }) => {
     if (type === 'textarea') {
-        return (
-            <TextArea id={id} value={value} placeholder={placeholder} onChange={onChange} autoFocus={true} required />
-        );
+        return <TextArea id={id} value={value} placeholder={placeholder} onChange={onChange} autoFocus required />;
     }
 
-    return <Input id={id} value={value} placeholder={placeholder} onChange={onChange} autoFocus={true} required />;
+    return <Input id={id} value={value} placeholder={placeholder} onChange={onChange} autoFocus required />;
 };
 
 InputField.propTypes = {

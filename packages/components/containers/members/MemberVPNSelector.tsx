@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
-import { Select } from '../../index';
 import { range } from 'proton-shared/lib/helpers/array';
+import { Select } from '../../index';
 
 export const getVPNRange = (
     { MaxVPN: memberMaxVPN = 0 } = {},

@@ -48,7 +48,7 @@ const ContactAdrField = ({ value, onChange }: Props) => {
                 />
             </div>
             <div className="mb1">
-                <label className="small opacity-50" htmlFor="region"></label>
+                <label className="small opacity-50" htmlFor="region" />
                 <Input
                     id="region"
                     value={address[REGION]}
