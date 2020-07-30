@@ -169,7 +169,7 @@ const SquireEditor = forwardRef(
                         onFocus={onFocus}
                         onChange={handlePlainTextChange}
                         placeholder={placeholder}
-                        data-cy="body"
+                        data-test-id="composer:body"
                     />
                 ) : (
                     <>
@@ -188,7 +188,7 @@ const SquireEditor = forwardRef(
                             onReady={handleReady}
                             onInput={onChange}
                             onAddImages={onAddImages}
-                            data-cy="body"
+                            data-test-id="composer:body"
                         />
                     </>
                 )}
