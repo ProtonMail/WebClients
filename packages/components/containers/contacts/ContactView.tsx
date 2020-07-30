@@ -65,7 +65,7 @@ const ContactView = ({
     };
 
     return (
-        <div className={classnames([!isModal && 'view-column-detail flex-item-fluid'])}>
+        <div className={classnames([!isModal && 'view-column-detail flex-item-fluid scroll-if-needed'])}>
             <ContactViewErrors errors={errors} />
             <ContactSummary
                 handleExport={handleExport}
