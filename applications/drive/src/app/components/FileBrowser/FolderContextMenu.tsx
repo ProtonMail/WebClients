@@ -44,7 +44,7 @@ const FolderContextMenu = ({ anchorRef, isOpen, position, open, close }: Props) 
             action: uploadFolder,
         },
         {
-            name: c('Action').t`Create Folder`,
+            name: c('Action').t`Create New Folder`,
             icon: 'folder-new',
             action: openCreateFolder,
         },
