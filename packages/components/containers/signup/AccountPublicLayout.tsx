@@ -70,7 +70,7 @@ const AccountPublicLayout = ({ children, title, aside, larger, left, center, rig
                                 </footer>
                             </main>
                             {aside ? (
-                                <aside className="nomobile bg-global-light p2 flex flex-items-center flex-justify-center small m0">
+                                <aside className="nomobile bg-global-highlight w33 p2 flex flex-items-center flex-justify-center small m0">
                                     {aside}
                                 </aside>
                             ) : null}
