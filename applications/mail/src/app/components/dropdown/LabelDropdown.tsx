@@ -101,6 +101,8 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
         onClose();
     };
 
+    const handleClickIcon = (labelID: string) => () => handleApply({ [labelID]: LabelState.On });
+
     const applyCheck = (labelIDs: string[], selected: boolean) => {
         const update = labelIDs.reduce((acc, ID) => {
             acc[ID] = selected ? LabelState.On : LabelState.Off;
@@ -171,13 +173,6 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                             key={ID}
                             className="dropDown-item w100 flex flex-nowrap flex-items-center pt0-5 pb0-5 pl1 pr1"
                         >
-                            <Checkbox
-                                className="flex-item-noshrink"
-                                id={labelCheckID(ID)}
-                                checked={selectedLabelIDs[ID] === LabelState.On}
-                                indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
-                                onChange={handleCheck(ID)}
-                            />
                             <label
                                 htmlFor={labelCheckID(ID)}
                                 title={Name}
@@ -188,11 +183,19 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                                     size={12}
                                     color={Color}
                                     className="flex-item-noshrink ml0-25 mr0-5"
+                                    onClick={handleClickIcon(ID)}
                                 />
                                 <span className="ellipsis">
                                     <Mark value={search}>{Name}</Mark>
                                 </span>
                             </label>
+                            <Checkbox
+                                className="flex-item-noshrink"
+                                id={labelCheckID(ID)}
+                                checked={selectedLabelIDs[ID] === LabelState.On}
+                                indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
+                                onChange={handleCheck(ID)}
+                            />
                         </li>
                     ))}
                     {list.length === 0 && (
