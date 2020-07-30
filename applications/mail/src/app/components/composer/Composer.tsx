@@ -166,7 +166,10 @@ const Composer = ({
 
     // Manage populating the model from the server
     useEffect(() => {
-        if (modelMessage.document === undefined || modelMessage.data?.ID !== syncedMessage.data?.ID) {
+        if (
+            (modelMessage.document === undefined && modelMessage.plainText === undefined) ||
+            modelMessage.data?.ID !== syncedMessage.data?.ID
+        ) {
             const newModelMessage = {
                 ...syncedMessage,
                 ...modelMessage,
