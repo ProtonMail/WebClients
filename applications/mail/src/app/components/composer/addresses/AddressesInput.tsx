@@ -71,6 +71,10 @@ const AddressesInput = ({
         const value = input.value;
         const values = value.split(';');
 
+        if (value === ';') {
+            return;
+        }
+
         if (values.length > 1) {
             onChange([...recipients, ...values.slice(0, -1).map(inputToRecipient)]);
             setInputModel(values[values.length - 1]);
