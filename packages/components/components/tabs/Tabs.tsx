@@ -19,6 +19,10 @@ export const Tabs = ({ value, onChange, tabs, children }: Props) => {
 
     const { ref: containerRef, scale, translate } = useIndicator(tabList, value);
 
+    if (tabs?.length === 1) {
+        return tabs[0].content;
+    }
+
     return (
         <div className="tabs">
             <nav className="tabs-container">
