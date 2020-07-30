@@ -77,7 +77,7 @@ const AddressesEditor = ({
                     onChange={handleChange('ToList')}
                     inputFocusRef={inputFocusRef}
                     placeholder={c('Placeholder').t`Email address`}
-                    data-cy="to"
+                    data-test-id="composer:to"
                 />
                 {!expanded && (
                     <LinkButton
@@ -111,7 +111,7 @@ const AddressesEditor = ({
                             contacts={contacts}
                             contactGroups={contactGroups}
                             placeholder={c('Placeholder').t`Email address`}
-                            data-cy="cc"
+                            data-test-id="composer:cc"
                         />
                     </div>
                     <div className="flex flex-row w100">
@@ -134,7 +134,7 @@ const AddressesEditor = ({
                             contacts={contacts}
                             contactGroups={contactGroups}
                             placeholder={c('Placeholder').t`Email address`}
-                            data-cy="bcc"
+                            data-test-id="composer:bcc"
                         />
                     </div>
                 </>

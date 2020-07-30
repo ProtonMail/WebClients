@@ -71,7 +71,7 @@ const ComposerMeta = ({
                     disabled={disabled}
                     onChange={handleFromChange}
                     onFocus={addressesBlurRef.current}
-                    data-cy="from"
+                    data-test-id="composer:from"
                 ></Select>
             </div>
             <ComposerAddresses
@@ -93,7 +93,7 @@ const ComposerMeta = ({
                     disabled={disabled}
                     onChange={handleSubjectChange}
                     onFocus={addressesBlurRef.current}
-                    data-cy="subject"
+                    data-test-id="composer:subject"
                 />
             </div>
         </div>

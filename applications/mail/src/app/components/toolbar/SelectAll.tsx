@@ -61,23 +61,23 @@ const SelectAll = ({ labelID, loading, disabled, elements, selectedIDs, onCheck 
             <ToolbarDropdown disabled={disabled} loading={loading} title={c('Title').t`More selections`} content="">
                 {() => (
                     <DropdownMenu>
-                        <DropdownMenuButton className="alignleft" onClick={handleAll(true)} data-cy="selectall">
+                        <DropdownMenuButton className="alignleft" onClick={handleAll(true)} data-test-id="toolbar:selectall">
                             <Icon name="selectall" className="mr0-5" />
                             {c('Action').t`Select All`}
                         </DropdownMenuButton>
-                        <DropdownMenuButton className="alignleft" onClick={handleRead(true)} data-cy="allread">
+                        <DropdownMenuButton className="alignleft" onClick={handleRead(true)} data-test-id="toolbar:allread">
                             <Icon name="read" className="mr0-5" />
                             {c('Action').t`All Read`}
                         </DropdownMenuButton>
-                        <DropdownMenuButton className="alignleft" onClick={handleRead(false)} data-cy="allunread">
+                        <DropdownMenuButton className="alignleft" onClick={handleRead(false)} data-test-id="toolbar:allunread">
                             <Icon name="unread" className="mr0-5" />
                             {c('Action').t`All Unread`}
                         </DropdownMenuButton>
-                        <DropdownMenuButton className="alignleft" onClick={handleStarred(true)} data-cy="allstarred">
+                        <DropdownMenuButton className="alignleft" onClick={handleStarred(true)} data-test-id="toolbar:allstarred">
                             <Icon name="starfull" className="mr0-5" />
                             {c('Action').t`All Starred`}
                         </DropdownMenuButton>
-                        <DropdownMenuButton className="alignleft" onClick={handleStarred(false)} data-cy="allunstarred">
+                        <DropdownMenuButton className="alignleft" onClick={handleStarred(false)} data-test-id="toolbar:allunstarred">
                             <Icon name="star" className="mr0-5" />
                             {c('Action').t`All Unstarred`}
                         </DropdownMenuButton>

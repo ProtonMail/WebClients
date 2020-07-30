@@ -43,7 +43,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, elements, selectedIDs = [], 
             disabled={!selectedIDs.length}
             onClick={() => withLoading(handleMarkAs(READ))}
             className="notablet nomobile"
-            data-cy="read"
+            data-test-id="toolbar:read"
         >
             <Icon className="toolbar-icon mauto" name="read" />
             <span className="sr-only">{c('Action').t`Mark as read`}</span>
@@ -54,7 +54,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, elements, selectedIDs = [], 
             loading={loading}
             disabled={!selectedIDs.length}
             onClick={() => withLoading(handleMarkAs(UNREAD))}
-            data-cy="unread"
+            data-test-id="toolbar:unread"
         >
             <Icon className="toolbar-icon mauto" name="unread" />
             <span className="sr-only">{c('Action').t`Mark as unread`}</span>

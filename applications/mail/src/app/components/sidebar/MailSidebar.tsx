@@ -25,7 +25,7 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCo
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             primary={
-                <SidebarPrimaryButton onClick={handleCompose} data-cy="compose">
+                <SidebarPrimaryButton onClick={handleCompose} data-test-id="sidebar:compose">
                     {c('Action').t`Compose`}
                 </SidebarPrimaryButton>
             }

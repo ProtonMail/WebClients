@@ -44,7 +44,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elements }: Props) => {
                 loading={loading}
                 title={title}
                 onClick={handleClick}
-                data-cy="emptyfolder"
+                data-test-id="toolbar:emptyfolder"
             >
                 <Icon className="toolbar-icon mauto" name="empty-folder" />
             </ToolbarButton>
