@@ -1,7 +1,7 @@
 import React from 'react';
 import { classnames } from '../../helpers/component';
 
-export interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
 }
 
