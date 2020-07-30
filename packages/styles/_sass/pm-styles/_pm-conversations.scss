@@ -321,6 +321,9 @@ $conversation-icon-size: 3.2rem !default;
 			bottom: -#{$item-container-padding-top-bottom};
 		}
 	}
+	.item-weight {
+		min-width: 5em;
+	}
 }
 
 /* day checkboxes (Calendar) */
