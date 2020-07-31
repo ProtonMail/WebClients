@@ -8,7 +8,15 @@ import {
     UploadInfo,
     PreUploadData,
 } from '../../interfaces/transfer';
-import { isTransferProgress, isTransferPending, isTransferFailed, isTransferCancelError } from '../../utils/transfer';
+import {
+    isTransferProgress,
+    isTransferPending,
+    isTransferFailed,
+    isTransferCancelError,
+    isTransferPaused,
+} from '../../utils/transfer';
+
+type UploadStateUpdater = TransferState | ((upload: Upload) => TransferState);
 
 interface UploadProviderState {
     uploads: Upload[];
@@ -22,6 +30,8 @@ interface UploadProviderState {
     clearUploads: () => void;
     removeUpload: (id: string) => void;
     cancelUpload: (id: string) => void;
+    pauseUpload: (id: string) => void;
+    resumeUpload: (id: string) => void;
 }
 
 const MAX_ACTIVE_UPLOADS = 3;
@@ -69,15 +79,24 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         setUploads(uploadsRef.current);
     };
 
-    const updateUploadState = (id: string, state: TransferState, data: Partial<Upload> = {}) => {
+    const updateUploadState = (id: string, nextState: UploadStateUpdater, data: Partial<Upload> = {}) => {
         const currentUpload = uploadsRef.current.find((upload) => upload.id === id);
         if (currentUpload && !isTransferFailed(currentUpload)) {
+            const newState = typeof nextState === 'function' ? nextState(currentUpload) : nextState;
             uploadsRef.current = uploadsRef.current.map((upload) =>
-                upload.id === id ? { ...upload, ...data, state } : upload
+                upload.id === id
+                    ? {
+                          ...upload,
+                          ...data,
+                          resumeState: isTransferPaused(currentUpload) ? newState : currentUpload.state,
+                          state: newState,
+                      }
+                    : upload
             );
             setUploads(uploadsRef.current);
         }
     };
+
     useEffect(() => {
         const uploading = uploads.filter(isTransferProgress);
         const nextPending = uploads.find(isTransferPending);
@@ -160,6 +179,25 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         controls.current[id].cancel();
     };
 
+    const pauseUpload = async (id: string) => {
+        const upload = uploads.find((upload) => upload.id === id);
+
+        if (!upload) {
+            return;
+        }
+
+        if (isTransferProgress(upload)) {
+            controls.current[id].pause();
+        }
+
+        updateUploadState(id, TransferState.Paused);
+    };
+
+    const resumeUpload = (id: string) => {
+        controls.current[id].resume();
+        updateUploadState(id, ({ resumeState }) => resumeState || TransferState.Progress);
+    };
+
     const getUploadsProgresses = () => ({ ...progresses.current });
 
     const getUploadsImmediate = () => uploadsRef.current;
@@ -174,6 +212,8 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                 clearUploads,
                 removeUpload,
                 cancelUpload,
+                pauseUpload,
+                resumeUpload,
             }}
         >
             {children}

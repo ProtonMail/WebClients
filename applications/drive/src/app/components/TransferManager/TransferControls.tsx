@@ -13,7 +13,7 @@ import { Download, Upload } from '../../interfaces/transfer';
 function TransferControls<T extends TransferType>({ transfer, type }: TransferProps<T>) {
     const { cancelDownload, removeDownload, pauseDownload, resumeDownload } = useDownloadProvider();
     const { startFolderTransfer, startFileTransfer, uploadDriveFile } = useFiles();
-    const { removeUpload, cancelUpload } = useUploadProvider();
+    const { removeUpload, cancelUpload, pauseUpload, resumeUpload } = useUploadProvider();
     const [pauseInProgress, withPauseInProgress] = useLoading();
     const isInitializing = isTransferInitializing(transfer);
     const isFinished = isTransferFinished(transfer);
@@ -44,9 +44,15 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
 
     const togglePause = () => {
         if (isTransferPaused(transfer)) {
-            resumeDownload(transfer.id);
-        } else {
+            if (type === TransferType.Download) {
+                resumeDownload(transfer.id);
+            } else {
+                resumeUpload(transfer.id);
+            }
+        } else if (type === TransferType.Download) {
             withPauseInProgress(pauseDownload(transfer.id)).catch(console.error);
+        } else {
+            pauseUpload(transfer.id);
         }
     };
 
@@ -104,7 +110,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
         }
     };
 
-    const isPauseResumeAvailable = type === TransferType.Download && !isInitializing && !isFinished;
+    const isPauseResumeAvailable = !isInitializing && !isFinished;
     const isRestartAvailable = isFailed;
 
     return (
