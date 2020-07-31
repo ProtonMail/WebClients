@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
-import { AddFilterModal, useModals, PrimaryButton, Checkbox } from 'react-components';
+import {
+    AddFilterModal,
+    useModals,
+    PrimaryButton,
+    Checkbox,
+    useUser,
+    useFilters,
+    useNotifications
+} from 'react-components';
 import { c } from 'ttag';
 
 import { newFilter } from 'proton-shared/lib/filters/factory';
 import { computeTree } from 'proton-shared/lib/filters/sieve';
 import { identity } from 'proton-shared/lib/helpers/function';
+import { isPaid } from 'proton-shared/lib/user/helpers';
+import { Filter } from 'proton-shared/lib/filters/interfaces';
 
 import { Message } from '../../models/message';
 
@@ -50,9 +60,10 @@ const FILTER_TYPES: FilterType[] = [
 
 interface Props {
     message: Message;
+    onClose: () => void;
 }
 
-const CustomFilterDropdown = ({ message }: Props) => {
+const CustomFilterDropdown = ({ message, onClose }: Props) => {
     const [filtersState, setFiltersState] = useState<FiltersState>({
         [AVAILABLE_FILTERS.SUBJECT]: false,
         [AVAILABLE_FILTERS.SENDER]: false,
@@ -60,6 +71,9 @@ const CustomFilterDropdown = ({ message }: Props) => {
         [AVAILABLE_FILTERS.ATTACHMENTS]: false
     });
     const { createModal } = useModals();
+    const { createNotification } = useNotifications();
+    const [user] = useUser();
+    const [filters] = useFilters() as [Filter[], boolean, Error];
 
     const toggleFilterType = (filterType: AVAILABLE_FILTERS) => {
         setFiltersState({
@@ -104,6 +118,15 @@ const CustomFilterDropdown = ({ message }: Props) => {
     };
 
     const handleNext = () => {
+        if (!isPaid(user) && filters.length >= 1) {
+            createNotification({
+                text: c('Error').t`Too many active filters. Please upgrade to a paid plan to activate more filters`,
+                type: 'error'
+            });
+            onClose();
+            return;
+        }
+
         const filter = newFilter();
         const conditions = [];
         let filterType: AVAILABLE_FILTERS;

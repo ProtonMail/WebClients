@@ -251,7 +251,9 @@ const HeaderExpanded = ({
                             title={c('Action').t`Custom filter`}
                             loading={!messageLoaded}
                         >
-                            {() => <CustomFilterDropdown message={message.data as Message} />}
+                            {({ onClose }) => (
+                                <CustomFilterDropdown message={message.data as Message} onClose={onClose} />
+                            )}
                         </HeaderDropdown>
                         <HeaderDropdown
                             autoClose={false}
