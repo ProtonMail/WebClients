@@ -155,6 +155,20 @@
             background: lighten($red, 2%);
         }
     }
+    &.warning {
+        background-color: $yellow;
+        border-color: darken($yellow, 10%);
+        color: $white;
+        &:hover,
+        &:focus {
+            background-color: darken($yellow, 10%);
+            border-color: darken($yellow, 10%);
+        }
+        &[disabled],
+        &.disabled {
+            background: lighten($yellow, 2%);
+        }
+    }
     &[disabled],
     &.disabled {
         opacity: .5;

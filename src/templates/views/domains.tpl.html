@@ -93,7 +93,8 @@
                                     </button>
                                     <button type="button" class="progress pm_button" ng-disabled="domain.State === 0" ng-click="dkim(domain)" ng-class="{
                                         'success': domain.DKIM.State === 4,
-                                        'error': domain.DKIM.State === 3 || domain.DKIM.State === 6
+                                        'error': domain.DKIM.State === 3,
+                                        'warning': domain.DKIM.State === 6
                                     }">
                                         <i class="fa" ng-hide="(domain.DKIM.State === 0)" ng-class="{
                                             'fa-check': (domain.DKIM.State === 4),

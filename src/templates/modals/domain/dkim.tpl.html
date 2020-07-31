@@ -19,7 +19,14 @@
                     >Not set</span
                 >
                 <span
-                    ng-show="ctrl.domain.DKIM.State=== 3 || ctrl.domain.DKIM.State=== 6"
+                    ng-show="ctrl.domain.DKIM.State=== 6"
+                    class="pull-right pm_badge warning"
+                    translate
+                    translate-context="DKIM configuration status badge"
+                    >Warning</span
+                >
+                <span
+                    ng-show="ctrl.domain.DKIM.State=== 3"
                     class="pull-right pm_badge error"
                     translate
                     translate-context="DKIM configuration status badge"
