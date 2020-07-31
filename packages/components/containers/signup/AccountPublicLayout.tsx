@@ -61,7 +61,7 @@ const AccountPublicLayout = ({ children, title, aside, larger, left, center, rig
                                     <span className="flex-item-fluid">
                                         {locales ? (
                                             <PublicLanguageSelect
-                                                className="pm-field pm-field--linkSelect"
+                                                className="support-dropdown-button link"
                                                 locales={locales}
                                             />
                                         ) : null}
