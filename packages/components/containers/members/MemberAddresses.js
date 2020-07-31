@@ -7,7 +7,9 @@ import { SimpleDropdown, DropdownMenu } from 'react-components';
 const MemberAddresses = ({ member, addresses }) => {
     const list = addresses.map(({ ID, Email }) => (
         <div key={ID} className="w100 flex flex-nowrap pl1 pr1 pt0-5 pb0-5">
-            {Email}
+            <span className="ellipsis" title={Email}>
+                {Email}
+            </span>
         </div>
     ));
     const n = list.length;
