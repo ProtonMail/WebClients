@@ -15,6 +15,7 @@ import { computeTree } from 'proton-shared/lib/filters/sieve';
 import { identity } from 'proton-shared/lib/helpers/function';
 import { isPaid } from 'proton-shared/lib/user/helpers';
 import { Filter } from 'proton-shared/lib/filters/interfaces';
+import { FILTER_STATUS } from 'proton-shared/lib/constants';
 
 import { Message } from '../../models/message';
 
@@ -73,7 +74,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [user] = useUser();
-    const [filters] = useFilters() as [Filter[], boolean, Error];
+    const [filters = []] = useFilters() as [Filter[], boolean, Error];
 
     const toggleFilterType = (filterType: AVAILABLE_FILTERS) => {
         setFiltersState({
@@ -118,7 +119,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
     };
 
     const handleNext = () => {
-        if (!isPaid(user) && filters.length >= 1) {
+        if (!isPaid(user) && filters.filter((filter) => filter.Status === FILTER_STATUS.ENABLED).length > 0) {
             createNotification({
                 text: c('Error').t`Too many active filters. Please upgrade to a paid plan to activate more filters`,
                 type: 'error'
