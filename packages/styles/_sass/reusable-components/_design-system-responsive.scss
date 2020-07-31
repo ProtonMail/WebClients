@@ -110,7 +110,7 @@
 
   /* margins */
   $list-margins-mobile: m, mt, mr, mb, ml !default;
-  $list-margins-mobile-values: 0, 0.25, 0.5, 1, 2 !default; // specify 2.5 if needed
+  $list-margins-mobile-values: 0, 0.25, 0.5, 1, 2, 3.5 !default; // specify 2.5 if needed
 
   @include margin-generator($list-margins-mobile, $list-margins-mobile-values, "onmobile-");
 
