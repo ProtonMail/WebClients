@@ -105,3 +105,15 @@ export const disableTotp = () => ({
     url: 'settings/2fa/totp',
     method: 'put',
 });
+
+export const updateTheme = (Theme) => ({
+    url: 'settings/theme',
+    method: 'put',
+    data: { Theme },
+});
+
+export const updateType = (ThemeType) => ({
+    url: 'settings/themetype',
+    method: 'put',
+    data: { ThemeType },
+});
