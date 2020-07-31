@@ -19,21 +19,24 @@ const RequestNewCodeModal = ({ email, phone, onEdit, onResend, ...rest }: Props)
             title={c('Title').t`Request new verification code`}
             footer={
                 <>
-                    <ResetButton className="ontinymobile-flex-self-start">{c('Action').t`Cancel`}</ResetButton>
-                    <div className="flex ontinymobile-flex-column ontinymobile-ml1">
-                        <Button
-                            className="mr1 ontinymobile-mb1"
-                            onClick={() => {
-                                rest.onClose();
-                                onEdit();
-                            }}
-                        >{c('Action').t`Edit`}</Button>
-                        <PrimaryButton
-                            onClick={() => {
-                                rest.onClose();
-                                onResend();
-                            }}
-                        >{c('Action').t`Request new code`}</PrimaryButton>
+                    <div className="flex flex-spacebetween flex-nowrap ontinymobile-flex-wrap w100 ontinymobile-flex-column">
+                        <ResetButton className="onmobile-flex-self-end onmobile-mt3-5 ontinymobile-mb1">{c('Action')
+                            .t`Cancel`}</ResetButton>
+                        <div className="flex onmobile-flex-column onmobile-ml1 ontinymobile-ml0">
+                            <Button
+                                className="mr1 onmobile-mb1"
+                                onClick={() => {
+                                    rest.onClose();
+                                    onEdit();
+                                }}
+                            >{c('Action').t`Edit`}</Button>
+                            <PrimaryButton
+                                onClick={() => {
+                                    rest.onClose();
+                                    onResend();
+                                }}
+                            >{c('Action').t`Request new code`}</PrimaryButton>
+                        </div>
                     </div>
                 </>
             }
