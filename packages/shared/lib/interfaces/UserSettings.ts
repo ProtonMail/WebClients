@@ -34,4 +34,6 @@ export interface UserSettings {
     LogAuth: number;
     InvoiceText: number;
     Density: DENSITY;
+    Theme: string;
+    ThemeType: number;
 }
