@@ -114,8 +114,11 @@ $item-container-padding-left-right: em(12) !default;
 
 	.item-container,
 	.item-container-row {
-		padding: em(0) em(12);
 		height: 4.8rem;
+
+		.item-container-inner {
+			padding: em(0) em(12);
+		}
 	}
 
 	.item-firstline,
