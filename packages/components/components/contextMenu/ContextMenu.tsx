@@ -45,9 +45,10 @@ const ContextMenu = ({ anchorRef, children, isOpen, position, close, autoClose =
             noCaret
             autoCloseOutsideAnchor={false}
             originalPlacement="bottom-left"
-            offset={0}
+            offset={1}
             anchorRef={anchorRef}
             onClose={close}
+            onContextMenu={(e) => e.stopPropagation()}
         >
             {children}
         </Dropdown>

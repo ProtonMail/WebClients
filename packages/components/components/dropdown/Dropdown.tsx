@@ -17,6 +17,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
     className?: string;
     onClose?: () => void;
+    onContextMenu?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     originalPlacement?: string;
     isOpen?: boolean;
     noMaxSize?: boolean;
@@ -39,6 +40,7 @@ const Dropdown = ({
     originalPosition,
     offset = 20,
     onClose = noop,
+    onContextMenu = noop,
     isOpen = false,
     noMaxSize = false,
     noCaret = false,
@@ -154,6 +156,7 @@ const Dropdown = ({
                 className={popperClassName}
                 onClick={handleClickContent}
                 onAnimationEnd={handleAnimationEnd}
+                onContextMenu={onContextMenu}
                 {...rest}
             >
                 {/* Backdrop button, meant to override 'autoClose' option on mobile */}
