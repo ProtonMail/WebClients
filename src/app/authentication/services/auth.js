@@ -183,10 +183,10 @@ function authentication(
          */
         logout(redirect, callApi = true) {
             const uid = authenticationStore.getUID();
+            loggedOutSessions.addUID(uid);
+
             const process = () => {
                 this.clearData();
-                loggedOutSessions.addUID(uid);
-
                 if (redirect === true) {
                     $state.go('login');
                 }
