@@ -44,7 +44,7 @@ interface EncryptedBlock {
 export interface UploadCallbacks {
     transform: (buffer: Uint8Array) => Promise<{ encryptedData: Uint8Array; signature: string }>;
     requestUpload: (blockList: BlockList) => Promise<UploadLink[]>;
-    finalize: (blocklist: Map<number, BlockTokenInfo>, config?: { id: string; signal?: AbortSignal }) => Promise<void>;
+    finalize: (blocklist: Map<number, BlockTokenInfo>, config?: { id: string }) => Promise<void>;
     onProgress?: (bytes: number) => void;
     onError?: (error: Error) => void;
 }
@@ -266,7 +266,7 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
                     activeIndex = await fillUploadQueue(reader, uploadingBlocks, activeIndex);
                     await uploadBlocks(uploadingBlocks, blockTokens);
                 }
-                await finalize(blockTokens, { id, signal: abortController.signal });
+                await finalize(blockTokens, { id });
             } catch (e) {
                 if (paused) {
                     resetUploadProgress(uploadingBlocks);

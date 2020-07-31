@@ -26,14 +26,7 @@ import {
 } from '../../interfaces/file';
 import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
-import {
-    TransferMeta,
-    TransferState,
-    DownloadInfo,
-    TransferCancel,
-    PreUploadData,
-    UploadInfo,
-} from '../../interfaces/transfer';
+import { TransferMeta, TransferState, DownloadInfo, PreUploadData, UploadInfo } from '../../interfaces/transfer';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../../components/downloads/download';
 import { streamToBuffer } from '../../utils/stream';
@@ -295,28 +288,15 @@ function useFiles() {
                             },
                         ] = await Promise.all([setupPromise, sign(contentHashes)]);
 
-                        if (config?.signal?.aborted) {
-                            throw new TransferCancel(config.id);
-                        }
-
-                        const updateRevision = async () => {
-                            try {
-                                await debouncedRequest(
-                                    queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
-                                        State: FileRevisionState.Active,
-                                        BlockList,
-                                        ManifestSignature: signature,
-                                        SignatureAddress,
-                                    })
-                                );
-                                events.callAll(shareId).catch(console.error);
-                            } catch (e) {
-                                deleteLinks(shareId, [File.ID]).catch(console.error);
-                                throw e;
-                            }
-                        };
-
-                        updateRevision().catch(console.error);
+                        await debouncedRequest(
+                            queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
+                                State: FileRevisionState.Active,
+                                BlockList,
+                                ManifestSignature: signature,
+                                SignatureAddress,
+                            })
+                        );
+                        events.callAll(shareId).catch(console.error);
                     },
                     5
                 ),

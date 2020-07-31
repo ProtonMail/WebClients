@@ -143,6 +143,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
             const { id, uploadControls } = initUpload(preUploadData.file, {
                 ...callbacks,
                 finalize: async (...args) => {
+                    updateUploadState(id, TransferState.Finalizing);
                     await callbacks.finalize(...args);
                     resolve();
                 },
