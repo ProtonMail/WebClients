@@ -55,7 +55,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
         : c('Info').jt`You have ${strongText} stored in this folder`;
 
     return (
-        <div className="flex-item-fluid aligncenter p2 mw100">
+        <div className="mauto aligncenter p2 mw100">
             {checkeds === 0 && labelName && (
                 <h3 className="bold lh-standard ellipsis" title={labelName}>
                     {labelName}

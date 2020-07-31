@@ -49,7 +49,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const startingPrice = <strong key="starting-price">$4/month</strong>;
 
     return (
-        <div className="flex-item-fluid aligncenter p2 mw100">
+        <div className="mauto aligncenter p2 mw100">
             <h1>{user.DisplayName ? c('Title').t`Welcome, ${userName}!` : c('Title').t`Welcome!`}</h1>
             {Unread ? <p>{c('Info').jt`You have ${unreadsLabel} in your inbox.`}</p> : null}
             {user.hasPaidMail ? (
