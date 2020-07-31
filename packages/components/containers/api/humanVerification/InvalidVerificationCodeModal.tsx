@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { ConfirmModal, Button, PrimaryButton, Alert } from '../../../index';
+import { FormModal, ResetButton, Button, PrimaryButton, Alert } from '../../../index';
 
 interface Props {
     edit?: string;
@@ -17,27 +17,33 @@ const InvalidVerificationCodeModal = ({
     ...rest
 }: Props) => {
     return (
-        <ConfirmModal
+        <FormModal
             title={c('Title').t`Invalid verification code`}
-            confirm={
+            footer={
                 <>
-                    <Button
-                        className="mr1"
-                        onClick={() => {
-                            rest.onClose?.();
-                            onEdit();
-                        }}
-                    >
-                        {edit}
-                    </Button>
-                    <PrimaryButton
-                        onClick={() => {
-                            rest.onClose?.();
-                            onResend();
-                        }}
-                    >
-                        {request}
-                    </PrimaryButton>
+                    <div className="flex flex-spacebetween flex-nowrap ontinymobile-flex-wrap w100 ontinymobile-flex-column">
+                        <ResetButton className="onmobile-flex-self-end onmobile-mt3-5 ontinymobile-mb1">{c('Action')
+                            .t`Cancel`}</ResetButton>
+                        <div className="flex onmobile-flex-column onmobile-ml1 ontinymobile-ml0">
+                            <Button
+                                className="mr1 onmobile-mb1"
+                                onClick={() => {
+                                    rest.onClose?.();
+                                    onEdit();
+                                }}
+                            >
+                                {edit}
+                            </Button>
+                            <PrimaryButton
+                                onClick={() => {
+                                    rest.onClose?.();
+                                    onResend();
+                                }}
+                            >
+                                {request}
+                            </PrimaryButton>
+                        </div>
+                    </div>
                 </>
             }
             {...rest}
@@ -46,7 +52,7 @@ const InvalidVerificationCodeModal = ({
                 {c('Info')
                     .t`Would you like to receive a new verification code or use an alternative verification method?`}
             </Alert>
-        </ConfirmModal>
+        </FormModal>
     );
 };
 
