@@ -270,22 +270,33 @@ function useFiles() {
                 },
                 finalize: queuedFunction(
                     'upload_finalize',
-                    async (blockMetas, config) => {
+                    async (blockTokens, config) => {
                         const hashes: Uint8Array[] = [];
-                        const BlockList = blockMetas.map(({ Index, Token, Hash }) => {
-                            hashes.push(Hash);
-                            return {
+                        const BlockList: { Index: number; Token: string }[] = [];
+
+                        for (let Index = 1; Index <= blockTokens.size; Index++) {
+                            const info = blockTokens.get(Index);
+                            if (!info) {
+                                throw new Error(`Block Token not found for ${Index} in upload ${config?.id}`);
+                            }
+                            hashes.push(info.Hash);
+                            BlockList.push({
                                 Index,
-                                Token,
-                            };
-                        });
+                                Token: info.Token,
+                            });
+                        }
+
                         const contentHashes = mergeUint8Arrays(hashes);
-                        const { File, Name, ParentLinkID } = await setupPromise;
-                        const { signature, address } = await sign(contentHashes);
-                        const SignatureAddress = address.Email;
+                        const [
+                            { File },
+                            {
+                                signature,
+                                address: { Email: SignatureAddress },
+                            },
+                        ] = await Promise.all([setupPromise, sign(contentHashes)]);
 
                         if (config?.signal?.aborted) {
-                            throw new TransferCancel(`${ParentLinkID}: ${Name}`);
+                            throw new TransferCancel(config.id);
                         }
 
                         const updateRevision = async () => {

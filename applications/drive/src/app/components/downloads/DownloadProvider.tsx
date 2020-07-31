@@ -21,7 +21,7 @@ import {
 } from '../../utils/transfer';
 
 const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
-type TransferStateUpdater = TransferState | ((download: Download | PartialDownload) => TransferState);
+type DownloadStateUpdater = TransferState | ((download: Download | PartialDownload) => TransferState);
 type TransferStateUpdateInfo = { error?: Error; startDate?: Date; force?: boolean };
 
 interface DownloadProviderState {
@@ -72,7 +72,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
 
     const getUpdateDownloadStates = (
         ids: string[],
-        nextState: TransferStateUpdater,
+        nextState: DownloadStateUpdater,
         { error, force = false, startDate }: TransferStateUpdateInfo = {}
     ) => <T extends PartialDownload | Download>(downloads: T[]) =>
         downloads.map((download) => {
@@ -91,7 +91,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
 
     const updateDownloadState = (
         id: string | string[],
-        nextState: TransferStateUpdater,
+        nextState: DownloadStateUpdater,
         info?: TransferStateUpdateInfo
     ) => {
         const ids = Array.isArray(id) ? id : [id];
@@ -100,7 +100,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
 
     const updatePartialDownloadState = (
         id: string | string[],
-        nextState: TransferStateUpdater,
+        nextState: DownloadStateUpdater,
         info?: TransferStateUpdateInfo
     ) => {
         const ids = Array.isArray(id) ? id : [id];

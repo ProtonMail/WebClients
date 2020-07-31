@@ -46,6 +46,7 @@ export interface Upload {
     info?: UploadInfo;
     state: TransferState;
     startDate: Date;
+    resumeState?: TransferState;
     error?: Error;
 }
 
