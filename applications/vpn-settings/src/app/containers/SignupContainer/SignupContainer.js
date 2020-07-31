@@ -47,14 +47,13 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
         });
 
     const redirectToMobile = (from || historyState.from) === 'mobile';
+    const hasCookieOffer = checkCookie('offer', BESTDEAL_COOKIE) || checkCookie('offer', BRAVE_COOKIE);
     const availablePlans =
-        (checkCookie('offer', BESTDEAL_COOKIE) || checkCookie('offer', BRAVE_COOKIE)) && !redirectToMobile
-            ? BEST_DEAL_PLANS
-            : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
+        hasCookieOffer && !redirectToMobile ? BEST_DEAL_PLANS : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
 
     useEffect(() => {
-        // Always start at plans, or account if paid plan is preselected
-        if (preSelectedPlan && preSelectedPlan !== 'free') {
+        // Always start at plans, or account if plan is preselected
+        if (preSelectedPlan && from === 'pricing') {
             history.replace(`/signup/${SignupState.Account}`, {
                 coupon,
                 invite,
