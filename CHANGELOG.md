@@ -1,3 +1,10 @@
+# [3.16.32] - 2020-07-31
+
+## Fixed
+
+- Fixed an issue whereby users could not unsubscribe from forwarded message if the address is not found (catch-all)
+- Fixed outstanding bugs that may get users to receive an "invalid access token" upon logging out
+
 # [3.16.31] - 2020-07-27
 
 ## Updates
