@@ -92,7 +92,7 @@ $item-container-padding-left-right: em(12) !default;
 	}
 }
 
-.item-container-inner {
+.item-container .item-container-inner {
 	height: $item-container-height;
 }
 
