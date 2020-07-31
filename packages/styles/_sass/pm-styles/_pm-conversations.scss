@@ -40,21 +40,18 @@ $container-to-width: 3em !default;
 
 .items-column-list-inner,
 .ReactVirtualized__Grid__innerScrollContainer {
-	border-right: 1px solid var(--bordercolor-input, $pm-global-border);
+	border: solid var(--bordercolor-input, $pm-global-border);
+	border-width: 0 1px;
 	min-height: 100%;
 }
 
 .items-column-list-inner--noborder {
 	// fix for Contact and ReactVirtualized__Grid
-	border-right: 0;
+	border: 0;
 }
 
 .items-column-list--mobile {
 	width: 100%;
-}
-
-.isDarkMode .items-column-list-inner {
-	border-left: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
 .items-column-list,
@@ -74,9 +71,28 @@ $item-container-padding-left-right: em(12) !default;
 .item-container,
 .item-container-row {
 	@extend %appearing-container;
+	position: relative;
 	padding: $item-container-padding-top-bottom $item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 	background-color: var(--bgcolor-item-column-list, $pm-global-muted);
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		pointer-events: none;
+		border: 1px solid transparent;
+		transition: .15s easing(easeOutQuart);
+	}
+
+	&:hover::before {
+		border-color: $pm-primary-light;
+		box-shadow: 0 .125em .25em 0 var(--dropdown-box-shadow, $input-shadow-color);
+	}
 }
 
 .item-container {
