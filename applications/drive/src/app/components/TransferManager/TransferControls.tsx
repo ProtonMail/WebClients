@@ -2,7 +2,13 @@ import React from 'react';
 import { Icon, useLoading, usePreventLeave } from 'react-components';
 import { c } from 'ttag';
 import { useUploadProvider } from '../uploads/UploadProvider';
-import { isTransferInitializing, isTransferPaused, isTransferFinished, isTransferFailed } from '../../utils/transfer';
+import {
+    isTransferInitializing,
+    isTransferPaused,
+    isTransferFinished,
+    isTransferFailed,
+    isTransferFinalizing,
+} from '../../utils/transfer';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { LinkType } from '../../interfaces/link';
@@ -18,6 +24,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
     const isInitializing = isTransferInitializing(transfer);
     const isFinished = isTransferFinished(transfer);
     const isFailed = isTransferFailed(transfer);
+    const isFinalizing = isTransferFinalizing(transfer);
     const { preventLeave } = usePreventLeave();
 
     const pauseText = type === TransferType.Download ? c('Action').t`Pause download` : c('Action').t`Pause upload`;
@@ -110,7 +117,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
         }
     };
 
-    const isPauseResumeAvailable = !isInitializing && !isFinished;
+    const isPauseResumeAvailable = !isInitializing && !isFinished && !isFinalizing;
     const isRestartAvailable = isFailed;
 
     return (
@@ -138,6 +145,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
             )}
             <button
                 type="button"
+                disabled={isFinalizing}
                 onClick={handleClick}
                 className="pd-transfers-listItem-controls-button pm-button pm-button--for-icon flex flex-item-noshrink"
                 title={isFinished ? removeText : cancelText}
