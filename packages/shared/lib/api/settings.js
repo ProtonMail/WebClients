@@ -112,7 +112,7 @@ export const updateTheme = (Theme) => ({
     data: { Theme },
 });
 
-export const updateType = (ThemeType) => ({
+export const updateThemeType = (ThemeType) => ({
     url: 'settings/themetype',
     method: 'put',
     data: { ThemeType },
