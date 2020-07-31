@@ -46,8 +46,11 @@ function httpInterceptor($q, $injector, AppModel, networkUtils, loggedOutSession
         if (error.config && error.config.noNotify) {
             return;
         }
-        // Hide error from logged out sessions
-        if (error.config && loggedOutSessions.hasUID(error.config.headers['x-pm-uid'])) {
+        // When logging out, the default headers on the api get cleared. There could still be dangling API calls that are called after that.
+        // In this case the sent UID will be undefined.
+        const sentUID = error.config ? error.config.headers['x-pm-uid'] : undefined;
+        if (loggedOutSessions.hasUID(sentUID) || (error.status === 401 && sentUID === undefined)) {
+            error.noNotify = true;
             return;
         }
         // Set no notify for the network activity tracker to not display errors twice.

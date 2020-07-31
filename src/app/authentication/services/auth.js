@@ -183,7 +183,10 @@ function authentication(
          */
         logout(redirect, callApi = true) {
             const uid = authenticationStore.getUID();
-            loggedOutSessions.addUID(uid);
+            // Race condition when logging in
+            if (uid) {
+                loggedOutSessions.addUID(uid);
+            }
 
             const process = () => {
                 this.clearData();
