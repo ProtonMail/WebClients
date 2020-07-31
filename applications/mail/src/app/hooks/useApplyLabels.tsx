@@ -10,6 +10,8 @@ import { isMessage as testIsMessage } from '../helpers/elements';
 import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
 
+const { ALL_MAIL, ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, STARRED } = MAILBOX_LABEL_IDS;
+
 const EXPIRATION = 7500;
 
 export const useApplyLabels = () => {
@@ -131,16 +133,8 @@ export const useMoveToFolder = () => {
             const isMessage = testIsMessage(elements[0]);
             const action = isMessage ? labelMessages : labelConversations;
             const canUndo = isMessage
-                ? MAILBOX_LABEL_IDS.ALL_MAIL !== fromLabelID
-                : ![
-                      ...labelIDs,
-                      MAILBOX_LABEL_IDS.ALL_DRAFTS,
-                      MAILBOX_LABEL_IDS.DRAFTS,
-                      MAILBOX_LABEL_IDS.ALL_SENT,
-                      MAILBOX_LABEL_IDS.SENT,
-                      MAILBOX_LABEL_IDS.STARRED,
-                      MAILBOX_LABEL_IDS.ALL_MAIL
-                  ].includes(fromLabelID);
+                ? !([ALL_MAIL, ALL_DRAFTS, ALL_SENT] as string[]).includes(fromLabelID)
+                : ![...labelIDs, ALL_DRAFTS, DRAFTS, ALL_SENT, SENT, STARRED, ALL_MAIL].includes(fromLabelID);
             const elementIDs = elements.map((element) => element.ID);
 
             const rollback = optimisticApplyLabels(elements, { [folderID]: true }, true);
