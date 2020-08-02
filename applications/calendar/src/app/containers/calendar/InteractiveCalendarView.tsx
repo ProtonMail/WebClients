@@ -65,6 +65,7 @@ import {
     CalendarViewEvent,
     CalendarViewEventData,
     CalendarViewEventTemporaryEvent,
+    EventTargetAction,
     InteractiveRef,
     InteractiveState,
     OnSaveConfirmationArgs,
@@ -91,6 +92,7 @@ import getSaveEventActions from './eventActions/getSaveEventActions';
 import getDeleteEventActions from './eventActions/getDeleteEventActions';
 import upsertMultiActionsResponses from './eventStore/cache/upsertResponsesArray';
 import { getIsCalendarEvent } from './eventStore/cache/helper';
+import { getInitialTargetEventData } from './targetEventHelper';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {
@@ -116,6 +118,7 @@ interface Props extends SharedViewProps {
     timeGridViewRef: RefObject<TimeGridRef>;
     interactiveRef: RefObject<InteractiveRef>;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
+    eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
 }
 const InteractiveCalendarView = ({
     view,
@@ -151,6 +154,7 @@ const InteractiveCalendarView = ({
     containerRef,
     timeGridViewRef,
     calendarsEventsCacheRef,
+    eventTargetActionRef,
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -169,7 +173,20 @@ const InteractiveCalendarView = ({
         return Promise.all([getCalendarEventRaw(eventData), getCalendarEventPersonal(eventData)]);
     };
 
-    const [interactiveData, setInteractiveData] = useState<InteractiveState>();
+    const [interactiveData, setInteractiveData] = useState<InteractiveState | undefined>(() =>
+        getInitialTargetEventData(eventTargetActionRef, dateRange)
+    );
+    useEffect(() => {
+        const eventTargetAction = eventTargetActionRef.current;
+        if (!eventTargetAction) {
+            return;
+        }
+        eventTargetActionRef.current = undefined;
+        if (eventTargetAction.isAllDay || eventTargetAction.isAllPartDay) {
+            return;
+        }
+        timeGridViewRef.current?.scrollToTime(eventTargetAction.startInTzid);
+    }, []);
 
     const { temporaryEvent, targetEventData, targetMoreData } = interactiveData || {};
 

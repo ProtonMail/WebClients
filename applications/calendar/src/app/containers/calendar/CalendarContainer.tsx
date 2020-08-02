@@ -31,7 +31,7 @@ import {
     getWeekStartsOn,
 } from './getSettings';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
-import { InteractiveRef, TimeGridRef } from './interface';
+import { EventTargetAction, InteractiveRef, TimeGridRef } from './interface';
 import { CalendarsEventsCache } from './eventStore/interface';
 
 const { DAY, WEEK, MONTH } = VIEWS;
@@ -82,6 +82,7 @@ interface Props {
     history: H.History;
     location: H.Location;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
+    eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
 }
 const CalendarContainer = ({
     tzid,
@@ -97,6 +98,7 @@ const CalendarContainer = ({
     history,
     location,
     calendarsEventsCacheRef,
+    eventTargetActionRef,
 }: Props) => {
     const [disableCreate, setDisableCreate] = useState(false);
 
@@ -342,6 +344,7 @@ const CalendarContainer = ({
                 containerRef={containerRef}
                 timeGridViewRef={timeGridViewRef}
                 calendarsEventsCacheRef={calendarsEventsCacheRef}
+                eventTargetActionRef={eventTargetActionRef}
             />
         </CalendarContainerView>
     );

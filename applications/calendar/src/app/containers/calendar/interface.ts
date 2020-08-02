@@ -47,6 +47,7 @@ export type WeekStartsOn = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export interface TimeGridRef {
     scrollToNow: () => void;
+    scrollToTime: (date: Date) => void;
 }
 export interface InteractiveRef {
     createEvent: () => void;
@@ -92,3 +93,10 @@ export type OnDeleteConfirmationCb = (data: {
     type: DELETE_CONFIRMATION_TYPES;
     data?: RECURRING_TYPES[];
 }) => Promise<RECURRING_TYPES>;
+
+export interface EventTargetAction {
+    id: string;
+    isAllDay: boolean;
+    isAllPartDay: boolean;
+    startInTzid: Date;
+}

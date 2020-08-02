@@ -2,18 +2,15 @@ import { fromUnixTime } from 'date-fns';
 import { CalendarEventWithoutBlob } from 'proton-shared/lib/interfaces/calendar';
 import { VcalRrulePropertyValue } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
-import { convertUTCDateTimeToZone, fromUTCDate } from 'proton-shared/lib/date/timezone';
+import { fromUTCDate } from 'proton-shared/lib/date/timezone';
 import { fromRruleString } from 'proton-shared/lib/calendar/vcal';
 import { MetadataVcalVeventComponent } from '../interface';
 import { toExdate } from '../../recurrence/helper';
+import { utcTimestampToTimezone, getRecurrenceIdValueFromTimestamp } from '../../event/getEventHelper';
 
 const getComponentFromCalendarEventWithoutBlob = (eventData: CalendarEventWithoutBlob): MetadataVcalVeventComponent => {
     const { FullDay, StartTime, StartTimezone, EndTime, EndTimezone, RRule, RecurrenceID, Exdates } = eventData;
     const isAllDay = FullDay === 1;
-
-    const utcTimestampToTimezone = (unixTime: number, timezone: string) => {
-        return convertUTCDateTimeToZone(fromUTCDate(fromUnixTime(unixTime)), timezone);
-    };
 
     const getDtstampComponent = () => {
         return {
@@ -53,9 +50,8 @@ const getComponentFromCalendarEventWithoutBlob = (eventData: CalendarEventWithou
         if (!recurrenceId) {
             return {};
         }
-        const localStartDateTime = utcTimestampToTimezone(recurrenceId, StartTimezone);
         return {
-            'recurrence-id': toExdate(localStartDateTime, isAllDay, StartTimezone),
+            'recurrence-id': getRecurrenceIdValueFromTimestamp(recurrenceId, isAllDay, StartTimezone),
         };
     };
 

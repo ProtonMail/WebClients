@@ -151,22 +151,27 @@ const TimeGrid = ({
         setScrollTop(target.scrollTop);
     }, []);
 
+    const scrollToTime = useCallback((date: Date) => {
+        if (!scrollRef.current || !timeGridRef.current || !titleRef.current) {
+            return;
+        }
+        const timeRect = timeGridRef.current.getBoundingClientRect();
+        const timeTop = toUTCMinutes(date) / totalMinutes;
+        const topOffset = timeRect.height * timeTop;
+        const titleRect = titleRef.current.getBoundingClientRect();
+        const scrollRect = scrollRef.current.getBoundingClientRect();
+        scrollRef.current.scrollTop = topOffset - scrollRect.height / 2 + titleRect.height / 2;
+    }, []);
+
     useImperativeHandle(
         actionRef,
         () => ({
+            scrollToTime,
             scrollToNow: () => {
-                if (!scrollRef.current || !timeGridRef.current || !titleRef.current) {
-                    return;
-                }
-                // const nowTop = nowRef.current.offsetTop;
-                const timeRect = timeGridRef.current.getBoundingClientRect();
-                const nowTopOffset = timeRect.height * nowTop;
-                const titleRect = titleRef.current.getBoundingClientRect();
-                const scrollRect = scrollRef.current.getBoundingClientRect();
-                scrollRef.current.scrollTop = nowTopOffset - scrollRect.height / 2 + titleRect.height / 2;
+                return scrollToTime(now);
             },
         }),
-        [actionRef, nowTop]
+        [actionRef, now]
     );
 
     const handleMouseDownRef = useRef<(e: MouseEvent) => void>();

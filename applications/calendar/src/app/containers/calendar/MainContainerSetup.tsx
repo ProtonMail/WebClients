@@ -23,6 +23,8 @@ import { getDefaultTzid } from './getSettings';
 import SettingsContainer from '../settings/SettingsContainer';
 import CalendarContainer from './CalendarContainer';
 import AlarmContainer from '../alarms/AlarmContainer';
+import EventActionContainer from './EventActionContainer';
+import { EventTargetAction } from './interface';
 
 interface Props {
     calendars: Calendar[];
@@ -42,6 +44,8 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
 
     const calendarAlarmsCacheRef = useRef<CalendarsAlarmsCache>(getCalendarsAlarmsCache());
     useCalendarsAlarmsEventListeners(calendarAlarmsCacheRef);
+
+    const eventTargetActionRef = useRef<EventTargetAction>();
 
     const { activeCalendars, disabledCalendars, visibleCalendars } = useMemo(() => {
         return {
@@ -85,6 +89,19 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
                     }}
                 />
                 <Route
+                    path="/calendar/event"
+                    render={({ history }) => {
+                        return (
+                            <EventActionContainer
+                                tzid={tzid}
+                                history={history}
+                                calendars={calendars}
+                                eventTargetActionRef={eventTargetActionRef}
+                            />
+                        );
+                    }}
+                />
+                <Route
                     path="/calendar"
                     render={({ history, location }) => {
                         return (
@@ -102,6 +119,7 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
                                 calendarUserSettings={calendarUserSettings}
                                 history={history}
                                 location={location}
+                                eventTargetActionRef={eventTargetActionRef}
                             />
                         );
                     }}
