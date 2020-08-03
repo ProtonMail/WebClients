@@ -171,7 +171,7 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                     {list.map(({ ID = '', Name = '', Color = '' }) => (
                         <li
                             key={ID}
-                            className="dropDown-item w100 flex flex-nowrap flex-items-center pt0-5 pb0-5 pl1 pr1"
+                            className="dropDown-item dropDown-item-button cursor-pointer w100 flex flex-nowrap flex-items-center pt0-5 pb0-5 pl1 pr1"
                         >
                             <label
                                 htmlFor={labelCheckID(ID)}
