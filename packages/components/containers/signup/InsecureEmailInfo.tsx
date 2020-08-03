@@ -1,5 +1,5 @@
 import React from 'react';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { c } from 'ttag';
 
 import { INSECURE_DOMAINS } from './constants';

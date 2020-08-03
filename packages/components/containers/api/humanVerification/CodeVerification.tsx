@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { queryVerificationCode } from 'proton-shared/lib/api/user';
 import { isNumber } from 'proton-shared/lib/helpers/validators';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { c } from 'ttag';
 import {

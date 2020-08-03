@@ -1,5 +1,5 @@
 import { RECIPIENT_TYPES } from 'proton-shared/lib/constants';
-import { normalizeInternalEmail } from 'proton-shared/lib/helpers/string';
+import { normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { useCallback } from 'react';
 import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
 import getPublicKeysEmailHelper from 'proton-shared/lib/api/helpers/getPublicKeysEmailHelper';

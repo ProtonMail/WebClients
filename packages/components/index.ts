@@ -423,9 +423,11 @@ export { default as useGetEncryptionPreferences } from './hooks/useGetEncryption
 export {
     useCalendarBootstrap,
     useReadCalendarBootstrap,
-    useGetCalendarBootstrap
+    useGetCalendarBootstrap,
 } from './hooks/useGetCalendarBootstrap';
 export { useGetCalendarKeys } from './hooks/useGetCalendarKeys';
+export { useGetCalendarIdsAndKeys } from './hooks/useGetCalendarIdsAndKeys';
+export { default as useGetCalendarEventRaw } from './hooks/useGetCalendarEventRaw';
 export { default as useOrganizationKey } from './hooks/useOrganizationKey';
 export { default as useGetOrganizationKeyRaw } from './hooks/useGetOrganizationKeyRaw';
 export { default as useSortedList, useSortedListAsync, useMultiSortedList } from './hooks/useSortedList';

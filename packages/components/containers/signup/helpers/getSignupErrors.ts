@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { SignupModel } from '../interfaces';
 
 const getSignupErrors = (model: SignupModel, usernameError: string) => {
