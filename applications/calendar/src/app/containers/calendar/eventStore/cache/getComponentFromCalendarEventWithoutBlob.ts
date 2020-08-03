@@ -39,7 +39,7 @@ const getComponentFromCalendarEventWithoutBlob = (eventData: CalendarEventWithou
         if (!Rrule) {
             return {};
         }
-        const rruleValue: VcalRrulePropertyValue = fromRruleString(Rrule);
+        const rruleValue: VcalRrulePropertyValue | undefined = fromRruleString(Rrule);
         if (!rruleValue) {
             return {};
         }

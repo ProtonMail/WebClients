@@ -3,8 +3,8 @@ import { fromUTCDate } from 'proton-shared/lib/date/timezone';
 import { addDays } from 'proton-shared/lib/date-fns-utc';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { getUntilProperty } from 'proton-shared/lib/calendar/vcalConverter';
 
-import { getUntilProperty } from '../../../components/eventModal/eventForm/modelToFrequencyProperties';
 import { getSafeRruleCount } from './helper';
 
 const deleteFutureRecurrence = (

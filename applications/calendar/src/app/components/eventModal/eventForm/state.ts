@@ -1,3 +1,11 @@
+import {
+    DAILY_TYPE,
+    END_TYPE,
+    FREQUENCY,
+    MONTHLY_TYPE,
+    WEEKLY_TYPE,
+    YEARLY_TYPE,
+} from 'proton-shared/lib/calendar/constants';
 import { getRecurrenceId, getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { Address as tsAddress } from 'proton-shared/lib/interfaces';
@@ -9,24 +17,16 @@ import {
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
+import { getDateTimeState } from './time';
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
 import { propertiesToModel } from './propertiesToModel';
-import { getDateTimeState } from './time';
-import {
-    DAILY_TYPE,
-    DEFAULT_EVENT_DURATION,
-    END_TYPE,
-    FREQUENCY,
-    MONTHLY_TYPE,
-    WEEKLY_TYPE,
-    YEARLY_TYPE,
-} from '../../../constants';
+import { DEFAULT_EVENT_DURATION } from '../../../constants';
 import { DEFAULT_FULL_DAY_NOTIFICATIONS, DEFAULT_PART_DAY_NOTIFICATIONS } from '../../../settingsConstants';
 import { DEFAULT_FULL_DAY_NOTIFICATION, DEFAULT_PART_DAY_NOTIFICATION } from '../../../modelConstants';
 import { getDeviceNotifications } from './notificationModel';
 import { notificationsToModel } from '../../../helpers/notificationsToModel';
 import { propertiesToNotificationModel } from './propertiesToNotificationModel';
-import { DateTimeModel, EventModel, FrequencyModel } from '../../../interfaces/EventModel';
+import { DateTimeModel, FrequencyModel, EventModel } from '../../../interfaces/EventModel';
 import { stripAllTags } from '../../../helpers/sanitize';
 import getFrequencyModelChange from './getFrequencyModelChange';
 import { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';

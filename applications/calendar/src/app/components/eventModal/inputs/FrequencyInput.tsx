@@ -1,9 +1,8 @@
+import { FREQUENCY } from 'proton-shared/lib/calendar/constants';
 import { c } from 'ttag';
 import { Select } from 'react-components';
 import { Props as SelectProps } from 'react-components/components/select/Select';
 import React, { ChangeEvent } from 'react';
-
-import { FREQUENCY } from '../../../constants';
 
 const { ONCE, DAILY, WEEKLY, MONTHLY, YEARLY, CUSTOM } = FREQUENCY;
 

@@ -1,13 +1,14 @@
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React, { useMemo, useState } from 'react';
 import { c } from 'ttag';
 import { Icon, Info, Tabs } from 'react-components';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
+import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 
 import { sanitizeDescription } from '../../helpers/sanitize';
 import PopoverNotification from './PopoverNotification';
-import { getTimezonedFrequencyString } from '../../helpers/frequencyString';
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
+import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { EventModelReadView } from '../../interfaces/EventModel';
 import { sortNotifications } from '../../containers/calendar/sortNotifications';
 
@@ -23,7 +24,9 @@ interface Props {
 const PopoverEventContent = ({
     Calendar,
     isCalendarDisabled,
-    event: { start },
+    event: {
+        data: { eventReadResult },
+    },
     tzid,
     weekStartsOn,
     model,
@@ -38,14 +41,16 @@ const PopoverEventContent = ({
     }, [model.description]);
 
     const frequencyString = useMemo(() => {
-        return getTimezonedFrequencyString(model.frequencyModel, {
-            date: model.start.date,
-            startTzid: model.start.tzid,
+        const [eventComponent] = eventReadResult?.result || [];
+        if (!eventComponent) {
+            return;
+        }
+        return getTimezonedFrequencyString(eventComponent.rrule, eventComponent.dtstart, {
             currentTzid: tzid,
             weekStartsOn,
             locale: dateLocale,
         });
-    }, [model.frequencyModel, start]);
+    }, [eventReadResult, tzid]);
 
     const calendarString = useMemo(() => {
         if (isCalendarDisabled) {

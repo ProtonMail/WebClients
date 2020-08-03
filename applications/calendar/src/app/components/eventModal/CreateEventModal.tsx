@@ -1,3 +1,4 @@
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React from 'react';
 import { FormModal, PrimaryButton, Button } from 'react-components';
 import { c } from 'ttag';
@@ -8,7 +9,6 @@ import validateEventModel from './eventForm/validateEventModel';
 import EventForm from './EventForm';
 import { useForm, ACTION } from './hooks/useForm';
 import { EventModel } from '../../interfaces/EventModel';
-import { WeekStartsOn } from '../../containers/calendar/interface';
 
 interface Props {
     isNarrow: boolean;

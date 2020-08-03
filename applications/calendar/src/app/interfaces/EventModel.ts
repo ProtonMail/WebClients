@@ -1,4 +1,11 @@
-import { DAILY_TYPE, END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE, YEARLY_TYPE } from '../constants';
+import {
+    DAILY_TYPE,
+    END_TYPE,
+    FREQUENCY,
+    MONTHLY_TYPE,
+    WEEKLY_TYPE,
+    YEARLY_TYPE,
+} from 'proton-shared/lib/calendar/constants';
 import { NotificationModel } from './NotificationModel';
 
 export interface FrequencyModel {
@@ -25,18 +32,18 @@ export interface FrequencyModel {
     };
 }
 
+export interface DateTimeModel {
+    date: Date;
+    time: Date;
+    tzid: string;
+}
+
 // todo
 export interface AttendeeModel {
     name: string;
     email: string;
     permissions: any;
     rsvp: string;
-}
-
-export interface DateTimeModel {
-    date: Date;
-    time: Date;
-    tzid: string;
 }
 
 export interface CalendarModel {

@@ -1,7 +1,7 @@
 import { API_CODES } from 'proton-shared/lib/constants';
+import { SyncMultipleApiResponse, SyncMultipleApiResponses } from 'proton-shared/lib/interfaces/calendar';
 import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 import { getIsDeleteSyncOperation, SyncEventActionOperations } from '../../getSyncMultipleEventsPayload';
-import { SyncMultipleApiResponse, SyncMultipleApiResponses } from '../../../../interfaces/Import';
 import { CalendarsEventsCache } from '../interface';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
 

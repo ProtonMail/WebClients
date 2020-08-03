@@ -1,3 +1,4 @@
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React, { useMemo } from 'react';
 import { Button, Loader, useLoading, Alert, classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -13,7 +14,7 @@ import PopoverEventContent from './PopoverEventContent';
 import PopoverHeader from './PopoverHeader';
 import PopoverFooter from './PopoverFooter';
 import { getEventErrorMessage } from './error';
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent, WeekStartsOn } from '../../containers/calendar/interface';
+import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import getEventInformation from './getEventInformation';
 import { EnDash } from '../EnDash';

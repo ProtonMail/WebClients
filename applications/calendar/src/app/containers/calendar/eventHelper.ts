@@ -7,7 +7,7 @@ import {
 import { differenceInHours } from 'date-fns';
 import { max } from 'proton-shared/lib/date-fns-utc';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
-import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
+import { getTimeInUtc, getDateTimeState } from '../../components/eventModal/eventForm/time';
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 import { EventModel } from '../../interfaces/EventModel';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';

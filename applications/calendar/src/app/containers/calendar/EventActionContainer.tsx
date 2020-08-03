@@ -8,6 +8,7 @@ import { updateCalendar, getEvent } from 'proton-shared/lib/api/calendars';
 import { getDateOrDateTimeProperty, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { CalendarsModel } from 'proton-shared/lib/models';
+import { MAXIMUM_DATE, MINIMUM_DATE } from 'proton-shared/lib/calendar/constants';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { addMilliseconds, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
@@ -17,7 +18,6 @@ import parseMainEventData from './event/parseMainEventData';
 import { getRecurrenceIdValueFromTimestamp } from './event/getEventHelper';
 import { EventTargetAction } from './interface';
 import { getCalendarEventStoreRecord } from './eventStore/cache/upsertCalendarEventStoreRecord';
-import { MAXIMUM_DATE, MINIMUM_DATE } from '../../constants';
 
 interface Props {
     history: H.History;

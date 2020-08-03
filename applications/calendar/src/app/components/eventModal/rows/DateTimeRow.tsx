@@ -2,15 +2,15 @@ import React, { useState, useMemo } from 'react';
 import { c } from 'ttag';
 import { DateInput, TimeInput, LinkButton } from 'react-components';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from 'proton-shared/lib/date/timezone';
+import { MAXIMUM_DATE, MINIMUM_DATE } from 'proton-shared/lib/calendar/constants';
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 
-import { MAXIMUM_DATE, MINIMUM_DATE } from '../../../constants';
+import { getTimeInUtc, getDateTimeState, getDateTime } from '../eventForm/time';
 import { EventModel } from '../../../interfaces/EventModel';
-import { WeekStartsOn } from '../../../containers/calendar/interface';
 import useDateTimeFormHandlers from '../hooks/useDateTimeFormHandlers';
 import AllDayCheckbox from '../inputs/AllDayCheckbox';
 import { getAllDayCheck } from '../eventForm/stateActions';
 import TimezoneSelector from '../../TimezoneSelector';
-import { getDateTime, getDateTimeState, getTimeInUtc } from '../eventForm/time';
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 
 interface Props {

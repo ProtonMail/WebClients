@@ -1,4 +1,3 @@
-import { c } from 'ttag';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { EventPersonalMap } from '../interfaces/EventPersonalMap';
 
@@ -14,8 +13,4 @@ export const getComponentWithPersonalPart = ({ component, personalMap = {}, memb
         ...component,
         components: valarmComponents,
     };
-};
-
-export const getDisplayTitle = (title = '') => {
-    return title.trim() || c('Event title').t`(no title)`;
 };

@@ -1,3 +1,5 @@
+import { useGetAddressKeys, useGetCalendarKeys } from 'react-components';
+import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -9,8 +11,6 @@ import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { CachedKey } from 'proton-shared/lib/interfaces';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { useGetAddressKeys, useGetCalendarKeys } from 'react-components';
-import getCreationKeys from './getCreationKeys';
 
 export enum SyncOperationTypes {
     DELETE,

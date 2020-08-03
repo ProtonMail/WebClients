@@ -1,3 +1,4 @@
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React, { CSSProperties, Ref, useRef } from 'react';
 import { useCombinedRefs, Button, PrimaryButton, classnames } from 'react-components';
 import { c } from 'ttag';
@@ -7,7 +8,6 @@ import PopoverFooter from '../events/PopoverFooter';
 import { useForm } from './hooks/useForm';
 import MinimalEventForm from './MinimalEventForm';
 import { EventModel } from '../../interfaces/EventModel';
-import { WeekStartsOn } from '../../containers/calendar/interface';
 
 interface Props {
     isNarrow: boolean;

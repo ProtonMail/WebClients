@@ -1,5 +1,5 @@
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
-import { useApi } from 'react-components';
+import { useApi, useGetCalendarEventRaw } from 'react-components';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
@@ -8,7 +8,6 @@ import { c } from 'ttag';
 import upsertCalendarApiEvent from './cache/upsertCalendarApiEvent';
 import { getIsCalendarEvent } from './cache/helper';
 import useGetCalendarEventPersonal from './useGetCalendarEventPersonal';
-import useGetCalendarEventRaw from './useGetCalendarEventRaw';
 import { CalendarViewEvent } from '../interface';
 import {
     CalendarEventsCache,

@@ -1,3 +1,5 @@
+import { MAXIMUM_DATE, MINIMUM_DATE } from 'proton-shared/lib/calendar/constants';
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React, { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
 import {
     FullLoader,
@@ -20,9 +22,8 @@ import DateCursorButtons from '../../components/DateCursorButtons';
 import ViewSelector from '../../components/ViewSelector';
 import TimezoneSelector from '../../components/TimezoneSelector';
 
-import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '../../constants';
+import { VIEWS } from '../../constants';
 import getDateDiff from './getDateDiff';
-import { WeekStartsOn } from './interface';
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.

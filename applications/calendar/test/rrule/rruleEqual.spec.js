@@ -1,10 +1,10 @@
-import { FREQUENCY } from '../../src/app/constants';
+import { FREQUENCY } from 'proton-shared/lib/calendar/constants';
 import { getIsRruleEqual } from '../../src/app/containers/calendar/eventActions/rruleEqual';
 
 const getTest = (a, b, result) => ({
     a,
     b,
-    result
+    result,
 });
 
 describe('rrule equal', () => {
@@ -15,32 +15,32 @@ describe('rrule equal', () => {
         getTest(
             {
                 freq: FREQUENCY.MONTHLY,
-                byday: ['TU', 'MO']
+                byday: ['TU', 'MO'],
             },
             {
                 freq: FREQUENCY.MONTHLY,
-                byday: ['MO', 'TU']
+                byday: ['MO', 'TU'],
             },
             true
         ),
         getTest(
             {
                 freq: FREQUENCY.MONTHLY,
-                byday: ['MO']
+                byday: ['MO'],
             },
             {
                 freq: FREQUENCY.MONTHLY,
-                byday: 'MO'
+                byday: 'MO',
             },
             false
         ),
         getTest(
             {
                 freq: FREQUENCY.MONTHLY,
-                byday: ['TU', 'MO']
+                byday: ['TU', 'MO'],
             },
             {
-                freq: FREQUENCY.WEEKLY
+                freq: FREQUENCY.WEEKLY,
             },
             false
         ),
@@ -52,16 +52,16 @@ describe('rrule equal', () => {
                 until: {
                     year: 2020,
                     month: 1,
-                    day: 1
-                }
+                    day: 1,
+                },
             },
             {
                 freq: FREQUENCY.WEEKLY,
                 until: {
                     year: 2020,
                     month: 1,
-                    day: 2
-                }
+                    day: 2,
+                },
             },
             false
         ),
@@ -71,16 +71,16 @@ describe('rrule equal', () => {
                 until: {
                     year: 2020,
                     month: 1,
-                    day: 1
-                }
+                    day: 1,
+                },
             },
             {
                 freq: FREQUENCY.WEEKLY,
                 until: {
                     year: 2020,
                     month: 1,
-                    day: 1
-                }
+                    day: 1,
+                },
             },
             true
         ),
@@ -89,8 +89,8 @@ describe('rrule equal', () => {
                 until: {
                     year: 2020,
                     month: 1,
-                    day: 1
-                }
+                    day: 1,
+                },
             },
             {
                 until: {
@@ -99,8 +99,8 @@ describe('rrule equal', () => {
                     day: 1,
                     hours: 12,
                     minutes: 59,
-                    seconds: 59
-                }
+                    seconds: 59,
+                },
             },
             true
         ),
@@ -113,8 +113,8 @@ describe('rrule equal', () => {
                     day: 1,
                     hours: 12,
                     minutes: 59,
-                    seconds: 59
-                }
+                    seconds: 59,
+                },
             },
             false
         ),
@@ -126,8 +126,8 @@ describe('rrule equal', () => {
                     day: 1,
                     hours: 12,
                     minutes: 59,
-                    seconds: 59
-                }
+                    seconds: 59,
+                },
             },
             {},
             false
@@ -140,8 +140,8 @@ describe('rrule equal', () => {
                     day: 1,
                     hours: 12,
                     minutes: 59,
-                    seconds: 59
-                }
+                    seconds: 59,
+                },
             },
             {
                 until: {
@@ -150,13 +150,13 @@ describe('rrule equal', () => {
                     day: 2,
                     hours: 12,
                     minutes: 59,
-                    seconds: 59
-                }
+                    seconds: 59,
+                },
             },
             false
         ),
         getTest({ bymonth: [1, 3, 2] }, { bymonth: [3, 2, 1] }, true),
-        getTest({}, { bymonth: [1, 3, 2] }, false)
+        getTest({}, { bymonth: [1, 3, 2] }, false),
     ].forEach(({ a, b, result }, i) => {
         test(`is rrule equal for ${i}`, () => {
             expect(getIsRruleEqual({ value: a }, { value: b })).toEqual(result);

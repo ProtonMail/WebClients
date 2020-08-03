@@ -39,66 +39,13 @@ export const NOTIFICATION_UNITS_MAX = {
     [NOTIFICATION_UNITS.MINUTES]: 10000 - 1,
 };
 
-export enum FREQUENCY {
-    ONCE = 'ONCE',
-    DAILY = 'DAILY',
-    WEEKLY = 'WEEKLY',
-    MONTHLY = 'MONTHLY',
-    YEARLY = 'YEARLY',
-    CUSTOM = 'CUSTOM',
-}
-
-export const FREQUENCY_INTERVALS_MAX = {
-    [FREQUENCY.ONCE]: 1000 - 1,
-    [FREQUENCY.DAILY]: 1000 - 1,
-    [FREQUENCY.WEEKLY]: 5000 - 1,
-    [FREQUENCY.MONTHLY]: 1000 - 1,
-    [FREQUENCY.YEARLY]: 100 - 1,
-    [FREQUENCY.CUSTOM]: 1000 - 1,
-};
-
-export const FREQUENCY_COUNT_MAX = 50 - 1;
-
 export const MAX_CALENDARS_PER_USER = 10;
-
-export enum DAILY_TYPE {
-    ALL_DAYS = 0,
-}
-
-export enum WEEKLY_TYPE {
-    ON_DAYS = 0,
-}
-
-export enum MONTHLY_TYPE {
-    ON_MONTH_DAY = 0,
-    ON_NTH_DAY = 1,
-    ON_MINUS_NTH_DAY = -1,
-}
-
-export enum YEARLY_TYPE {
-    BY_MONTH_ON_MONTH_DAY = 0,
-}
-
-export enum END_TYPE {
-    NEVER = 'NEVER',
-    AFTER_N_TIMES = 'COUNT',
-    UNTIL = 'UNTIL',
-}
 
 export const DEFAULT_EVENT_DURATION = 30;
 
 export const COLORS = {
     BLACK: '#000',
     WHITE: '#FFF',
-};
-
-export const MAX_LENGTHS = {
-    UID: 191,
-    CALENDAR_NAME: 100,
-    CALENDAR_DESCRIPTION: 255,
-    TITLE: 255,
-    EVENT_DESCRIPTION: 3000,
-    LOCATION: 255,
 };
 
 export const MAX_DEFAULT_NOTIFICATIONS = 5;
@@ -119,16 +66,6 @@ export enum RECURRING_TYPES {
     FUTURE,
     SINGLE,
 }
-
-export const MINIMUM_DATE = new Date(1970, 0, 1);
-export const MINIMUM_DATE_UTC = new Date(
-    Date.UTC(MINIMUM_DATE.getFullYear(), MINIMUM_DATE.getMonth(), MINIMUM_DATE.getDate())
-);
-
-export const MAXIMUM_DATE = new Date(2037, 11, 31);
-export const MAXIMUM_DATE_UTC = new Date(
-    Date.UTC(MAXIMUM_DATE.getFullYear(), MAXIMUM_DATE.getMonth(), MAXIMUM_DATE.getDate())
-);
 
 export const MAX_IMPORT_EVENTS = 15000;
 export const MAX_IMPORT_EVENTS_STRING = "15'000";

@@ -32,7 +32,6 @@ interface Props {
 }
 const MainContainerSetup = ({ addresses, calendars }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
-
     const [calendarUserSettings = DEFAULT_USER_SETTINGS] = useCalendarUserSettings();
 
     useEffect(() => {

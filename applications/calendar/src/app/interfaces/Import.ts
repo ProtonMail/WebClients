@@ -1,5 +1,5 @@
 import { formatData } from 'proton-shared/lib/calendar/serialize';
-import { Calendar, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, SyncMultipleApiResponses } from 'proton-shared/lib/interfaces/calendar';
 import { VcalCalendarComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ImportEventError } from '../components/import/ImportEventError';
 import { ImportFileError } from '../components/import/ImportFileError';
@@ -32,20 +32,6 @@ export interface ImportCalendarModel {
     failure?: ImportFatalError | ImportFileError | Error;
     calendar: Calendar;
     loading: boolean;
-}
-
-export interface SyncMultipleApiResponses {
-    Index: number;
-    Response: {
-        Code: number;
-        Event?: CalendarEvent;
-        Error?: string;
-    };
-}
-
-export interface SyncMultipleApiResponse {
-    Code: number;
-    Responses: SyncMultipleApiResponses[];
 }
 
 export type VcalCalendarComponentOrError = VcalCalendarComponent | { error: Error };

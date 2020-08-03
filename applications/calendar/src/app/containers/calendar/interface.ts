@@ -1,8 +1,8 @@
-import { CalendarEvent, Calendar, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
-import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES, SAVE_CONFIRMATION_TYPES, VIEWS } from '../../constants';
-import { EventReadResult } from './eventStore/interface';
-import { EventModel } from '../../interfaces/EventModel';
+import { Calendar, CalendarEvent, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
 import { TYPE } from '../../components/calendar/interactions/constants';
+import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES, SAVE_CONFIRMATION_TYPES, VIEWS } from '../../constants';
+import { EventModel } from '../../interfaces/EventModel';
+import { EventReadResult } from './eventStore/interface';
 
 export interface CalendarViewEventDataRecurring {
     occurrenceNumber: number;
@@ -42,8 +42,6 @@ export interface SharedViewProps {
     events: CalendarViewEvent[];
     onClickDate: (date: Date) => void;
 }
-
-export type WeekStartsOn = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export interface TimeGridRef {
     scrollToNow: () => void;

@@ -1,3 +1,5 @@
+import { MAXIMUM_DATE, MINIMUM_DATE } from 'proton-shared/lib/calendar/constants';
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React from 'react';
 import { c } from 'ttag';
 import { Icon, DateInput, classnames, TimeInput } from 'react-components';
@@ -6,10 +8,8 @@ import { isSameDay } from 'date-fns';
 import AllDayCheckbox from './inputs/AllDayCheckbox';
 import { getAllDayCheck } from './eventForm/stateActions';
 import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
-import { WeekStartsOn } from '../../containers/calendar/interface';
 import useDateTimeFormHandlers from './hooks/useDateTimeFormHandlers';
 import createPropFactory from './eventForm/createPropFactory';
-import { MINIMUM_DATE, MAXIMUM_DATE } from '../../constants';
 import DescriptionInput from './inputs/DescriptionInput';
 import LocationInput from './inputs/LocationInput';
 import TitleInput from './inputs/TitleInput';

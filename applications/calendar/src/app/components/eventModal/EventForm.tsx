@@ -1,8 +1,9 @@
 import React from 'react';
 import { classnames, Input, TextArea } from 'react-components';
 import { c } from 'ttag';
-import { FREQUENCY, MAX_LENGTHS, MAX_NOTIFICATIONS } from '../../constants';
-import { WeekStartsOn } from '../../containers/calendar/interface';
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { FREQUENCY, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import { MAX_NOTIFICATIONS } from '../../constants';
 import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
 import { NotificationModel } from '../../interfaces/NotificationModel';
 import {

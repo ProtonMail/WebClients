@@ -1,11 +1,11 @@
+import { FREQUENCY } from 'proton-shared/lib/calendar/constants';
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React from 'react';
 
-import { FREQUENCY } from '../../../constants';
+import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
 import RepeatEveryRow from '../rows/RepeatEveryRow';
 import RepeatOnRow from '../rows/RepeatOnRow';
 import EndsRow from '../rows/EndsRow';
-import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
-import { WeekStartsOn } from '../../../containers/calendar/interface';
 
 interface Props {
     frequencyModel: FrequencyModel;

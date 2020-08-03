@@ -1,7 +1,7 @@
+import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import React, { ChangeEvent, useMemo } from 'react';
 import { Row, Label, Field, Select, Toggle, ColorPicker, Input, TextArea } from 'react-components';
 import { c } from 'ttag';
-import { MAX_LENGTHS } from '../../constants';
 import { CalendarErrors, CalendarModel } from '../../interfaces/CalendarModel';
 
 interface Props {

@@ -1,3 +1,4 @@
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { c } from 'ttag';
 import { Prompt } from 'react-router';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -18,9 +19,11 @@ import {
     useGetCalendarKeys,
     useModals,
     useNotifications,
+    useGetCalendarEventRaw,
     useBeforeUnload,
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
+import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { API_CODES } from 'proton-shared/lib/constants';
@@ -28,12 +31,18 @@ import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
-import { Calendar, CalendarBootstrap, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import {
+    Calendar,
+    CalendarBootstrap,
+    CalendarEvent,
+    SyncMultipleApiResponse,
+} from 'proton-shared/lib/interfaces/calendar';
 import { Address } from 'proton-shared/lib/interfaces';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
+import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
 
-import { getExistingEvent, getInitialModel } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
+import { getExistingEvent, getInitialModel } from '../../components/eventModal/eventForm/state';
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
 import { sortEvents, sortWithTemporaryEvent } from '../../components/calendar/sortLayout';
 
@@ -49,15 +58,8 @@ import { findUpwards } from '../../components/calendar/mouseHelpers/domHelpers';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
 import DeleteConfirmModal from './confirmationModals/DeleteConfirmModal';
 import DeleteRecurringConfirmModal from './confirmationModals/DeleteRecurringConfirmModal';
-import {
-    DELETE_CONFIRMATION_TYPES,
-    MAXIMUM_DATE_UTC,
-    MINIMUM_DATE_UTC,
-    RECURRING_TYPES,
-    SAVE_CONFIRMATION_TYPES,
-} from '../../constants';
+import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '../../constants';
 
-import getMemberAndAddress from '../../helpers/getMemberAndAddress';
 import EditRecurringConfirmModal from './confirmationModals/EditRecurringConfirmation';
 import { getHasDoneChanges } from '../../components/eventModal/eventForm/getHasEdited';
 import withOccurrenceEvent from './eventActions/occurrenceEvent';
@@ -72,9 +74,8 @@ import {
     SharedViewProps,
     TargetEventData,
     TimeGridRef,
-    WeekStartsOn,
 } from './interface';
-import { DateTimeModel, EventModel } from '../../interfaces/EventModel';
+import { EventModel, DateTimeModel } from '../../interfaces/EventModel';
 import { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
 import {
     isCreateDownAction,
@@ -84,10 +85,8 @@ import {
     MouseUpAction,
 } from '../../components/calendar/interactions/interface';
 import useGetCalendarEventPersonal from './eventStore/useGetCalendarEventPersonal';
-import useGetCalendarEventRaw from './eventStore/useGetCalendarEventRaw';
 import getComponentFromCalendarEvent from './eventStore/cache/getComponentFromCalendarEvent';
 import getSyncMultipleEventsPayload, { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
-import { SyncMultipleApiResponse } from '../../interfaces/Import';
 import getSaveEventActions from './eventActions/getSaveEventActions';
 import getDeleteEventActions from './eventActions/getDeleteEventActions';
 import upsertMultiActionsResponses from './eventStore/cache/upsertResponsesArray';

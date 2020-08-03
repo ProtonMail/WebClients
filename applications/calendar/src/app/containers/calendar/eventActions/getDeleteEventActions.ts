@@ -2,7 +2,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
-import getMemberAndAddress from '../../../helpers/getMemberAndAddress';
+import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
 import getEditEventData from '../event/getEditEventData';
 import getAllEventsByUID from '../getAllEventsByUID';
 import { getOriginalEvent } from './recurringHelper';

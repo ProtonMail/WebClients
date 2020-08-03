@@ -1,6 +1,6 @@
+import { END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE } from 'proton-shared/lib/calendar/constants';
 import modelToFrequencyProperties from '../../src/app/components/eventModal/eventForm/modelToFrequencyProperties';
 import { getInitialFrequencyModel } from '../../src/app/components/eventModal/eventForm/state';
-import { END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE } from '../../src/app/constants';
 
 const dummyStart = { date: new Date(2020, 0, 20), tzid: 'Europe/Athens' };
 const dummyFrequencyModel = getInitialFrequencyModel(dummyStart.date);
@@ -10,14 +10,14 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
         const frequencyModel = {
             ...dummyFrequencyModel,
             type: FREQUENCY.DAILY,
-            frequency: FREQUENCY.DAILY
+            frequency: FREQUENCY.DAILY,
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
-                    freq: 'DAILY'
-                }
-            }
+                    freq: 'DAILY',
+                },
+            },
         });
     });
 
@@ -30,8 +30,8 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
             ends: {
                 type: END_TYPE.UNTIL,
                 count: 1,
-                until: new Date(2020, 0, 30)
-            }
+                until: new Date(2020, 0, 30),
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
@@ -45,10 +45,10 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
                         hours: 21,
                         minutes: 59,
                         seconds: 59,
-                        isUTC: true
-                    }
-                }
-            }
+                        isUTC: true,
+                    },
+                },
+            },
         });
     });
 
@@ -60,17 +60,17 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
             interval: 2,
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
                     freq: 'DAILY',
                     interval: 2,
-                    count: 2
-                }
-            }
+                    count: 2,
+                },
+            },
         });
     });
 
@@ -85,17 +85,17 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
                     freq: 'DAILY',
                     interval: undefined,
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
     test('every two days, ends on 30th January 2020 in Pacific/Pago_Pago timezone', () => {
@@ -111,17 +111,17 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ start, frequencyModel })).toEqual({
             rrule: {
                 value: {
                     freq: 'DAILY',
                     interval: 2,
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
     test('every two days, all-day event, ends on 30th January 2020', () => {
@@ -136,17 +136,17 @@ describe('frequency model to frequency properties, daily recurring rule', () => 
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart, isAllDay: true })).toEqual({
             rrule: {
                 value: {
                     freq: 'DAILY',
                     interval: 2,
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
 });
@@ -156,14 +156,14 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
         const frequencyModel = {
             ...dummyFrequencyModel,
             type: FREQUENCY.WEEKLY,
-            frequency: FREQUENCY.WEEKLY
+            frequency: FREQUENCY.WEEKLY,
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
-                    freq: 'WEEKLY'
-                }
-            }
+                    freq: 'WEEKLY',
+                },
+            },
         });
     });
 
@@ -175,17 +175,17 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             interval: 2,
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
                     freq: 'WEEKLY',
                     interval: 2,
-                    count: 2
-                }
-            }
+                    count: 2,
+                },
+            },
         });
     });
 
@@ -199,22 +199,22 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             frequency: FREQUENCY.WEEKLY,
             weekly: {
                 type: WEEKLY_TYPE.ON_DAYS,
-                days: [1, 6]
+                days: [1, 6],
             },
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
                     freq: 'WEEKLY',
                     byday: ['MO', 'SA'],
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
     test('two days per week, ends on 30th January 2020 in Pacific/Pago_Pago timezone', () => {
@@ -228,22 +228,22 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             frequency: FREQUENCY.WEEKLY,
             weekly: {
                 type: WEEKLY_TYPE.ON_DAYS,
-                days: [1, 6]
+                days: [1, 6],
             },
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ start, frequencyModel })).toEqual({
             rrule: {
                 value: {
                     freq: 'WEEKLY',
                     byday: ['MO', 'SA'],
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
     test('two all-day events per week, ends on 30th January 2020', () => {
@@ -256,22 +256,22 @@ describe('frequency model to frequency properties, weekly recurring rule', () =>
             frequency: FREQUENCY.WEEKLY,
             weekly: {
                 type: WEEKLY_TYPE.ON_DAYS,
-                days: [6, 1]
+                days: [6, 1],
             },
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart, isAllDay: true })).toEqual({
             rrule: {
                 value: {
                     freq: 'WEEKLY',
                     byday: ['MO', 'SA'],
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
 });
@@ -281,14 +281,14 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
         const frequencyModel = {
             ...dummyFrequencyModel,
             type: FREQUENCY.MONTHLY,
-            frequency: FREQUENCY.MONTHLY
+            frequency: FREQUENCY.MONTHLY,
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
-                    freq: 'MONTHLY'
-                }
-            }
+                    freq: 'MONTHLY',
+                },
+            },
         });
     });
 
@@ -300,17 +300,17 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
             interval: 2,
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
                     freq: 'MONTHLY',
                     interval: 2,
-                    count: 2
-                }
-            }
+                    count: 2,
+                },
+            },
         });
     });
 
@@ -322,8 +322,8 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
             frequency: FREQUENCY.MONTHLY,
             interval: 3,
             monthly: {
-                type: MONTHLY_TYPE.ON_MINUS_NTH_DAY
-            }
+                type: MONTHLY_TYPE.ON_MINUS_NTH_DAY,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: lastWednesdayStart })).toEqual({
             rrule: {
@@ -331,9 +331,9 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
                     freq: 'MONTHLY',
                     interval: 3,
                     bysetpos: -1,
-                    byday: 'WE'
-                }
-            }
+                    byday: 'WE',
+                },
+            },
         });
     });
 
@@ -346,13 +346,13 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
             type: FREQUENCY.CUSTOM,
             frequency: FREQUENCY.MONTHLY,
             monthly: {
-                type: MONTHLY_TYPE.ON_NTH_DAY
+                type: MONTHLY_TYPE.ON_NTH_DAY,
             },
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
@@ -360,9 +360,9 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
                     freq: 'MONTHLY',
                     until: untilDateTime,
                     bysetpos: 3,
-                    byday: 'MO'
-                }
-            }
+                    byday: 'MO',
+                },
+            },
         });
     });
 
@@ -378,16 +378,16 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ start, frequencyModel })).toEqual({
             rrule: {
                 value: {
                     freq: 'MONTHLY',
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
 
@@ -402,13 +402,13 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
             frequency: FREQUENCY.MONTHLY,
             interval: 6,
             monthly: {
-                type: MONTHLY_TYPE.ON_NTH_DAY
+                type: MONTHLY_TYPE.ON_NTH_DAY,
             },
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: fourthThursdayStart, isAllDay: true })).toEqual({
             rrule: {
@@ -417,9 +417,9 @@ describe('frequency model to frequency properties, monthly recurring rule', () =
                     interval: 6,
                     bysetpos: 4,
                     byday: 'TH',
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
 });
@@ -429,14 +429,14 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
         const frequencyModel = {
             ...dummyFrequencyModel,
             type: FREQUENCY.YEARLY,
-            frequency: FREQUENCY.YEARLY
+            frequency: FREQUENCY.YEARLY,
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
-                    freq: 'YEARLY'
-                }
-            }
+                    freq: 'YEARLY',
+                },
+            },
         });
     });
 
@@ -448,17 +448,17 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
             interval: 2,
             ends: {
                 type: END_TYPE.AFTER_N_TIMES,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
                     freq: 'YEARLY',
                     interval: 2,
-                    count: 2
-                }
-            }
+                    count: 2,
+                },
+            },
         });
     });
 
@@ -472,17 +472,17 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, start: dummyStart })).toEqual({
             rrule: {
                 value: {
                     freq: 'YEARLY',
                     interval: undefined,
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
 
@@ -498,17 +498,17 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ start, frequencyModel })).toEqual({
             rrule: {
                 value: {
                     freq: 'YEARLY',
                     interval: 2,
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
 
@@ -523,17 +523,17 @@ describe('frequency model to frequency properties, yearly recurring rule', () =>
             ends: {
                 type: END_TYPE.UNTIL,
                 until,
-                count: 2
-            }
+                count: 2,
+            },
         };
         expect(modelToFrequencyProperties({ frequencyModel, isAllDay: true, start: dummyStart })).toEqual({
             rrule: {
                 value: {
                     freq: 'YEARLY',
                     interval: 2,
-                    until: untilDateTime
-                }
-            }
+                    until: untilDateTime,
+                },
+            },
         });
     });
 });

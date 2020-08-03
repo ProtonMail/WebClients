@@ -1,6 +1,6 @@
 import { VcalDateOrDateTimeProperty, VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getIsPropertyAllDay, getPropertyTzid } from 'proton-shared/lib/calendar/vcalHelper';
-import { getUntilProperty } from '../../../components/eventModal/eventForm/modelToFrequencyProperties';
+import { getUntilProperty } from 'proton-shared/lib/calendar/vcalConverter';
 
 export const withRruleUntil = (rrule: VcalRruleProperty, dtstart: VcalDateOrDateTimeProperty): VcalRruleProperty => {
     const until = rrule.value?.until;

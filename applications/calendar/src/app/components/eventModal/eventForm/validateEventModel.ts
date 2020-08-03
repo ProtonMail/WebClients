@@ -1,8 +1,9 @@
+import { END_TYPE, FREQUENCY } from 'proton-shared/lib/calendar/constants';
 import { c } from 'ttag';
 import { isBefore } from 'date-fns';
-import { getTimeInUtc } from './time';
-import { END_TYPE, FREQUENCY, MAX_NOTIFICATIONS } from '../../../constants';
+import { MAX_NOTIFICATIONS } from '../../../constants';
 import { EventModel, EventModelErrors } from '../../../interfaces/EventModel';
+import { getTimeInUtc } from './time';
 
 // returns array of ids exceeding MAX_NOTIFICATIONS
 export const getExcessiveNotificationsIndices = (fields: object[], limit = MAX_NOTIFICATIONS) =>

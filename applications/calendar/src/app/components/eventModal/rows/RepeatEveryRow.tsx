@@ -1,11 +1,10 @@
+import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from 'proton-shared/lib/calendar/constants';
 import React, { ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
 import { Select, IntegerInput, classnames } from 'react-components';
 
-import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from '../../../constants';
-
 import SelectMonthlyType from '../inputs/SelectMonthlyType';
-import { DateTimeModel, EventModelErrors, FrequencyModel } from '../../../interfaces/EventModel';
+import { DateTimeModel, FrequencyModel, EventModelErrors } from '../../../interfaces/EventModel';
 
 interface Props {
     frequencyModel: FrequencyModel;

@@ -1,7 +1,7 @@
+import { FREQUENCY } from 'proton-shared/lib/calendar/constants';
 import { VcalDays, VcalRruleProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { numericDayToDay } from 'proton-shared/lib/calendar/vcalConverter';
 import { omit } from 'proton-shared/lib/helpers/object';
-import { FREQUENCY } from '../../../constants';
 
 /**
  * WKST is significant when a WEEKLY "RRULE" has an interval greater than 1,

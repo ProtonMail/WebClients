@@ -1,22 +1,17 @@
 import { CreateCalendarEventSyncData, syncMultipleEvents } from 'proton-shared/lib/api/calendars';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
+import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { Api, CachedKey } from 'proton-shared/lib/interfaces';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { SyncMultipleApiResponses, SyncMultipleApiResponse } from 'proton-shared/lib/interfaces/calendar';
 import { API_CODES } from 'proton-shared/lib/constants';
 import upsertCalendarApiEvent from '../../containers/calendar/eventStore/cache/upsertCalendarApiEvent';
 import { CalendarEventsCache } from '../../containers/calendar/eventStore/interface';
-import getCreationKeys from '../../containers/calendar/getCreationKeys';
 import { splitErrors } from '../../helpers/import';
-import {
-    EncryptedEvent,
-    ImportCalendarModel,
-    StoredEncryptedEvent,
-    SyncMultipleApiResponse,
-    SyncMultipleApiResponses,
-} from '../../interfaces/Import';
-import { IMPORT_EVENT_TYPE, ImportEventError } from './ImportEventError';
+import { EncryptedEvent, ImportCalendarModel, StoredEncryptedEvent } from '../../interfaces/Import';
+import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from './ImportEventError';
 import { HOUR } from '../../constants';
 
 const { SINGLE_SUCCESS } = API_CODES;
@@ -36,7 +31,7 @@ const encryptEvent = async (
         });
         return { data, component: eventComponent };
     } catch (error) {
-        return new ImportEventError(IMPORT_EVENT_TYPE.ENCRYPTION_ERROR, uid, 'vevent');
+        return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ENCRYPTION_ERROR, uid, 'vevent');
     }
 };
 
@@ -77,7 +72,7 @@ const submitEvents = async (events: EncryptedEvent[], calendarID: string, member
         }
         const error = new Error(errorMessage);
         const uid = events[Index]?.component.uid.value;
-        return new ImportEventError(IMPORT_EVENT_TYPE.EXTERNAL_ERROR, 'vevent', uid, error);
+        return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR, 'vevent', uid, error);
     });
 };
 

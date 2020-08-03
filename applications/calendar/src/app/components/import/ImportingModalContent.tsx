@@ -1,16 +1,6 @@
 import React, { Dispatch, SetStateAction, useEffect } from 'react';
-import {
-    Alert,
-    DynamicProgress,
-    useApi,
-    useGetAddresses,
-    useGetAddressKeys,
-    useGetCalendarBootstrap,
-    useGetCalendarKeys,
-    useBeforeUnload,
-} from 'react-components';
+import { Alert, DynamicProgress, useApi, useBeforeUnload, useGetCalendarIdsAndKeys } from 'react-components';
 import { c } from 'ttag';
-import getMemberAndAddress, { getMemberAndAddressID } from '../../helpers/getMemberAndAddress';
 import { getSupportedEventsWithRecurrenceId, splitByRecurrenceId, splitErrors } from '../../helpers/import';
 import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel, StoredEncryptedEvent } from '../../interfaces/Import';
 
@@ -25,10 +15,7 @@ interface Props {
 }
 const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
-    const getCalendarBootstrap = useGetCalendarBootstrap();
-    const getAddresses = useGetAddresses();
-    const getCalendarKeys = useGetCalendarKeys();
-    const getAddressKeys = useGetAddressKeys();
+    const getIdsAndKeys = useGetCalendarIdsAndKeys();
 
     useBeforeUnload(c('Alert').t`By leaving now, some events may not be imported`);
 
@@ -44,16 +31,6 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 return;
             }
             setModel(set);
-        };
-
-        const getIdsAndKeys = async (calendarID: string) => {
-            const [{ Members }, Addresses] = await Promise.all([getCalendarBootstrap(calendarID), getAddresses()]);
-            const [memberID, addressID] = getMemberAndAddressID(getMemberAndAddress(Addresses, Members));
-            const [addressKeys, calendarKeys] = await Promise.all([
-                getAddressKeys(addressID),
-                getCalendarKeys(calendarID),
-            ]);
-            return { memberID, addressKeys, calendarKeys };
         };
 
         const handleImportProgress = (

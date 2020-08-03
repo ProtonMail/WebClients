@@ -1,6 +1,6 @@
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { CalendarUserSettings, SETTINGS_VIEW } from 'proton-shared/lib/interfaces/calendar';
 import { VIEWS } from '../../constants';
-import { WeekStartsOn } from './interface';
 
 export const getWeekStartsOn = (calendarUserSettings: CalendarUserSettings): WeekStartsOn => {
     const weekStart = calendarUserSettings.WeekStart;

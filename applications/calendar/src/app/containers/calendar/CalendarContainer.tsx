@@ -1,3 +1,4 @@
+import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
 import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef, MutableRefObject } from 'react';
 import { useAppTitle, useCalendarBootstrap, useModals } from 'react-components';
 import {
@@ -13,7 +14,7 @@ import * as H from 'history';
 import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
 import { Address } from 'proton-shared/lib/interfaces';
-import { VIEWS, MINIMUM_DATE_UTC, MAXIMUM_DATE_UTC } from '../../constants';
+import { VIEWS } from '../../constants';
 import useCalendarsEvents from './eventStore/useCalendarsEvents';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';

@@ -1,12 +1,12 @@
+import { WEEKLY_TYPE } from 'proton-shared/lib/calendar/constants';
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { dateLocale } from 'proton-shared/lib/i18n';
 
-import DayCheckbox from '../inputs/DayCheckbox';
 import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
-import { WEEKLY_TYPE } from '../../../constants';
-import { WeekStartsOn } from '../../../containers/calendar/interface';
+import DayCheckbox from '../inputs/DayCheckbox';
 
 const DAYS = Array.from({ length: 7 }, (a, i) => i);
 

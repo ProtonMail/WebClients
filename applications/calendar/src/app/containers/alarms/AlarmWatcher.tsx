@@ -1,6 +1,6 @@
 import { MutableRefObject, useEffect, useRef } from 'react';
 import { c } from 'ttag';
-import { useApi } from 'react-components';
+import { useApi, useGetCalendarEventRaw } from 'react-components';
 import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
 import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
@@ -10,7 +10,6 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { getNextEventTime, getAlarmMessage } from '../../helpers/alarms';
 
 import notificationIcon from '../../../assets/notification.gif';
-import useGetCalendarEventRaw from '../calendar/eventStore/useGetCalendarEventRaw';
 
 import { MINUTE } from '../../constants';
 import { CalendarsEventsCache } from '../calendar/eventStore/interface';

@@ -7,8 +7,8 @@ import {
     getIsRruleSupported,
     getIsStandardByday,
     getHasConsistentRrule,
-} from '../../src/app/helpers/rrule';
-import { FREQUENCY } from '../../src/app/constants';
+} from 'proton-shared/lib/calendar/integration/rrule';
+import { FREQUENCY } from 'proton-shared/lib/calendar/constants';
 
 describe('getIsStandardByday', () => {
     test('returns true for standard BYDAY strings', () => {

@@ -1,4 +1,9 @@
-import { getDateProperty, getDateTimeProperty, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import {
+    getDateProperty,
+    getDateTimeProperty,
+    getUntilProperty,
+    propertyToUTCDate,
+} from 'proton-shared/lib/calendar/vcalConverter';
 import { getIsAllDay, getPropertyTzid } from 'proton-shared/lib/calendar/vcalHelper';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import {
@@ -9,7 +14,6 @@ import {
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { DateTimeValue } from '../../../interfaces/DateTime';
-import { getUntilProperty } from '../../../components/eventModal/eventForm/modelToFrequencyProperties';
 
 export const toExdate = (dateObject: DateTimeValue, isAllDay: boolean, tzid = 'UTC'): VcalDateOrDateTimeProperty => {
     if (isAllDay) {

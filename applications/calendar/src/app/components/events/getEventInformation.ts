@@ -1,7 +1,7 @@
+import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { EventModelReadView } from '../../interfaces/EventModel';
 import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
-import { getDisplayTitle } from '../../helpers/event';
 
 const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventModelReadView) => {
     const { calendarData, eventReadResult } = calendarViewEvent.data;

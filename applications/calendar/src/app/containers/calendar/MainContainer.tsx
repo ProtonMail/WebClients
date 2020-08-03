@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useAddresses, useCalendars, useUser } from 'react-components';
 
 import { getSetupType, SETUP_TYPE } from '../setup/setupHelper';
@@ -12,7 +12,10 @@ const MainContainer = () => {
     const [calendars] = useCalendars();
     const [user] = useUser();
 
-    const [setupType, setSetupType] = useState(() => getSetupType(calendars));
+    const memoedCalendars = useMemo(() => calendars || [], [calendars]);
+    const memoedAddresses = useMemo(() => addresses || [], [addresses]);
+
+    const [setupType, setSetupType] = useState(() => getSetupType(memoedCalendars));
 
     if (user.isFree) {
         return <FreeContainer />;
@@ -23,10 +26,10 @@ const MainContainer = () => {
     }
 
     if (setupType === SETUP_TYPE.RESET) {
-        return <ResetContainer calendars={calendars} onDone={() => setSetupType(SETUP_TYPE.DONE)} />;
+        return <ResetContainer calendars={memoedCalendars} onDone={() => setSetupType(SETUP_TYPE.DONE)} />;
     }
 
-    return <MainContainerSetup addresses={addresses} calendars={calendars} />;
+    return <MainContainerSetup addresses={memoedAddresses} calendars={memoedCalendars} />;
 };
 
 export default MainContainer;

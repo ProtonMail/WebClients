@@ -6,8 +6,8 @@ import {
 } from 'proton-shared/lib/date/timezone';
 import { MILLISECONDS_IN_MINUTE, startOfDay } from 'proton-shared/lib/date-fns-utc';
 import { addDays, isValid } from 'date-fns';
-import { EventModel, DateTimeModel } from '../../../interfaces/EventModel';
-import { getTimeInUtc, getDateTimeState } from '../eventForm/time';
+import { DateTimeModel, EventModel } from '../../../interfaces/EventModel';
+import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 
 const DEFAULT_MIN_TIME = new Date(Date.UTC(2000, 0, 1, 0, 0));

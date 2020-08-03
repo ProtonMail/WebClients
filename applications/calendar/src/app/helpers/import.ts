@@ -1,10 +1,11 @@
 import { getEventByUID } from 'proton-shared/lib/api/calendars';
+import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { parseWithErrors } from 'proton-shared/lib/calendar/vcal';
 import {
     getDateProperty,
     getDateTimeProperty,
-    propertyToUTCDate,
     getDateTimePropertyInDifferentTimezone,
+    propertyToUTCDate,
 } from 'proton-shared/lib/calendar/vcalConverter';
 import {
     getHasDtStart,
@@ -31,30 +32,25 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import {
     VcalDateOrDateTimeProperty,
-    VcalDateTimeProperty,
     VcalFloatingDateTimeProperty,
-    VcalUidProperty,
     VcalValarmComponent,
-    VcalVcalendar,
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { c } from 'ttag';
+import {
+    getIsDateOutOfBounds,
+    getIsWellFormedDateOrDateTime,
+    getSupportedUID,
+} from 'proton-shared/lib/calendar/support';
+import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/integration/rrule';
 
-import { IMPORT_EVENT_TYPE, ImportEventError } from '../components/import/ImportEventError';
+import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../components/import/ImportEventError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportFileError';
 
-import {
-    MAX_CALENDARS_PER_USER,
-    MAX_IMPORT_EVENTS,
-    MAX_LENGTHS,
-    MAX_NOTIFICATIONS,
-    MAXIMUM_DATE_UTC,
-    MINIMUM_DATE_UTC,
-} from '../constants';
+import { MAX_CALENDARS_PER_USER, MAX_IMPORT_EVENTS, MAX_NOTIFICATIONS } from '../constants';
 import getComponentFromCalendarEvent from '../containers/calendar/eventStore/cache/getComponentFromCalendarEvent';
 import { EncryptedEvent, VcalCalendarComponentOrError } from '../interfaces/Import';
 import { getSupportedAlarm } from './alarms';
-import { getHasConsistentRrule, getSupportedRrule } from './rrule';
 
 const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
     return !!(component as { error: Error }).error;
@@ -67,7 +63,7 @@ export const parseIcs = async (ics: File) => {
         if (!icsAsString) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_EMPTY, filename);
         }
-        const parsedVcalendar = parseWithErrors(icsAsString) as VcalVcalendar;
+        const parsedVcalendar = parseWithErrors(icsAsString);
         if (parsedVcalendar.component !== 'vcalendar') {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
@@ -97,7 +93,7 @@ const getComponentIdentifier = (vcalComponent: VcalCalendarComponentOrError) => 
     if (getIsTimezoneComponent(vcalComponent)) {
         return vcalComponent.tzid.value || '';
     }
-    const uid = vcalComponent.uid?.value;
+    const uid = 'uid' in vcalComponent ? vcalComponent.uid?.value : undefined;
     if (uid) {
         return uid;
     }
@@ -115,13 +111,6 @@ const getComponentIdentifier = (vcalComponent: VcalCalendarComponentOrError) => 
     return '';
 };
 
-const getSupportedUID = (uid: VcalUidProperty) => {
-    // The API does not accept UIDs longer than 191 characters
-    const uidLength = uid.value.length;
-    const croppedUID = uid.value.substring(uidLength - MAX_LENGTHS.UID, uidLength);
-    return { value: croppedUID };
-};
-
 interface GetSupportedDateOrDateTimePropertyArgs {
     property: VcalDateOrDateTimeProperty | VcalFloatingDateTimeProperty;
     component: string;
@@ -130,7 +119,7 @@ interface GetSupportedDateOrDateTimePropertyArgs {
     calendarTzid?: string;
     isRecurring?: boolean;
 }
-const getSupportedDateOrDateTimeProperty = ({
+export const getSupportedDateOrDateTimeProperty = ({
     property,
     component,
     componentId,
@@ -155,17 +144,17 @@ const getSupportedDateOrDateTimeProperty = ({
     // A floating date-time property
     if (!partDayPropertyTzid) {
         if (!hasXWrTimezone) {
-            throw new ImportEventError(IMPORT_EVENT_TYPE.FLOATING_TIME, 'vevent', componentId);
+            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.FLOATING_TIME, 'vevent', componentId);
         }
         if (hasXWrTimezone && !calendarTzid) {
-            throw new ImportEventError(IMPORT_EVENT_TYPE.X_WR_TIMEZONE_UNSUPPORTED, 'vevent', componentId);
+            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.X_WR_TIMEZONE_UNSUPPORTED, 'vevent', componentId);
         }
         return getDateTimeProperty(partDayProperty.value, calendarTzid);
     }
 
     const supportedTzid = getSupportedTimezone(partDayPropertyTzid);
     if (!supportedTzid) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.TZID_UNSUPPORTED, component, componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TZID_UNSUPPORTED, component, componentId);
     }
     return getDateTimeProperty(partDayProperty.value, supportedTzid);
 };
@@ -188,30 +177,17 @@ const getLinkedDateTimeProperty = ({
         return getDateProperty(property.value);
     }
     if (getIsPropertyAllDay(property)) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.ALLDAY_INCONSISTENCY, component, componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ALLDAY_INCONSISTENCY, component, componentId);
     }
     const supportedTzid = getPropertyTzid(property);
     if (!supportedTzid || !tzid) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.FLOATING_TIME, component, componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.FLOATING_TIME, component, componentId);
     }
     if (tzid !== supportedTzid) {
         // the linked date-time property should have the same tzid as dtstart
         return getDateTimePropertyInDifferentTimezone(property, tzid, isAllDay);
     }
     return getDateTimeProperty(property.value, tzid);
-};
-
-const getIsWellFormedDateTime = (property: VcalDateTimeProperty) => {
-    return property.value.isUTC || !!property.parameters!.tzid;
-};
-
-const getIsWellFormedDateOrDateTime = (property: VcalDateOrDateTimeProperty) => {
-    return getIsPropertyAllDay(property) || getIsWellFormedDateTime(property);
-};
-
-const getIsDateOutOfBounds = (property: VcalDateOrDateTimeProperty) => {
-    const dateUTC: Date = propertyToUTCDate(property);
-    return +dateUTC < +MINIMUM_DATE_UTC || +dateUTC > +MAXIMUM_DATE_UTC;
 };
 
 const getSupportedAlarms = (valarms: VcalValarmComponent[], dtstart: VcalDateOrDateTimeProperty) => {
@@ -229,31 +205,31 @@ interface GetSupportedEventArgs {
 export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid }: GetSupportedEventArgs) => {
     const componentId = getComponentIdentifier(vcalComponent);
     if (getParsedComponentHasError(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.EXTERNAL_ERROR, '', componentId, vcalComponent.error);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR, '', componentId, vcalComponent.error);
     }
     if (getIsTodoComponent(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.TODO_FORMAT, 'vtodo', componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TODO_FORMAT, 'vtodo', componentId);
     }
     if (getIsJournalComponent(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.JOURNAL_FORMAT, 'vjournal', componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.JOURNAL_FORMAT, 'vjournal', componentId);
     }
     if (getIsFreebusyComponent(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.FREEBUSY_FORMAT, 'vfreebusy', componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.FREEBUSY_FORMAT, 'vfreebusy', componentId);
     }
     if (getIsTimezoneComponent(vcalComponent)) {
         if (!getSupportedTimezone(vcalComponent.tzid.value)) {
-            throw new ImportEventError(IMPORT_EVENT_TYPE.TIMEZONE_FORMAT, 'vtimezone', componentId);
+            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TIMEZONE_FORMAT, 'vtimezone', componentId);
         }
-        throw new ImportEventError(IMPORT_EVENT_TYPE.TIMEZONE_IGNORE, 'vtimezone', componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE, 'vtimezone', componentId);
     }
     if (!getIsEventComponent(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.WRONG_FORMAT, 'vunknown', componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.WRONG_FORMAT, 'vunknown', componentId);
     }
     if (!getHasUid(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.UID_MISSING, 'vevent', componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.UID_MISSING, 'vevent', componentId);
     }
     if (!getHasDtStart(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_TYPE.DTSTART_MISSING, 'vevent', componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_MISSING, 'vevent', componentId);
     }
     try {
         const vevent = withDtstamp(vcalComponent);
@@ -310,7 +286,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
         const isAllDayStart = getIsPropertyAllDay(validated.dtstart);
         const isAllDayEnd = dtend ? getIsPropertyAllDay(dtend) : undefined;
         if (isAllDayEnd !== undefined && +isAllDayStart ^ +isAllDayEnd) {
-            throw new ImportEventError(IMPORT_EVENT_TYPE.ALLDAY_INCONSISTENCY, 'vevent', componentId);
+            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ALLDAY_INCONSISTENCY, 'vevent', componentId);
         }
         validated.dtstart = getSupportedDateOrDateTimeProperty({
             property: dtstart,
@@ -321,14 +297,14 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
             isRecurring,
         });
         if (!getIsWellFormedDateOrDateTime(validated.dtstart)) {
-            throw new ImportEventError(IMPORT_EVENT_TYPE.DTSTART_MALFORMED, 'vevent', componentId);
+            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_MALFORMED, 'vevent', componentId);
         }
         if (getIsDateOutOfBounds(validated.dtstart)) {
-            throw new ImportEventError(IMPORT_EVENT_TYPE.DTSTART_OUT_OF_BOUNDS, 'vevent', componentId);
+            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_OUT_OF_BOUNDS, 'vevent', componentId);
         }
         if (exdate) {
             if (!rrule) {
-                throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_MALFORMED, 'vevent', componentId);
+                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_MALFORMED, 'vevent', componentId);
             }
             const supportedExdate = exdate.map((property) =>
                 getSupportedDateOrDateTimeProperty({
@@ -352,7 +328,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
         }
         if (recurrenceId) {
             if (rrule) {
-                throw new ImportEventError(IMPORT_EVENT_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', componentId);
+                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', componentId);
             }
             validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
                 property: recurrenceId,
@@ -373,10 +349,10 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
                 isRecurring,
             });
             if (!getIsWellFormedDateOrDateTime(supportedDtend)) {
-                throw new ImportEventError(IMPORT_EVENT_TYPE.DTEND_MALFORMED, 'vevent', componentId);
+                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_MALFORMED, 'vevent', componentId);
             }
             if (getIsDateOutOfBounds(supportedDtend)) {
-                throw new ImportEventError(IMPORT_EVENT_TYPE.DTEND_OUT_OF_BOUNDS, 'vevent', componentId);
+                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_OUT_OF_BOUNDS, 'vevent', componentId);
             }
             const startDateUTC = propertyToUTCDate(validated.dtstart);
             const endDateUTC = propertyToUTCDate(supportedDtend);
@@ -389,17 +365,17 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
                 validated.dtend = supportedDtend;
             }
         } else if (duration) {
-            throw new ImportEventError(IMPORT_EVENT_TYPE.VEVENT_DURATION, 'vevent', componentId);
+            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.VEVENT_DURATION, 'vevent', componentId);
         }
 
         if (rrule) {
             const supportedRrule = getSupportedRrule({ ...validated, rrule });
             if (!supportedRrule) {
-                throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_UNSUPPORTED, 'vevent', componentId);
+                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_UNSUPPORTED, 'vevent', componentId);
             }
             validated.rrule = supportedRrule;
             if (!getHasConsistentRrule(validated)) {
-                throw new ImportEventError(IMPORT_EVENT_TYPE.RRULE_MALFORMED, 'vevent', componentId);
+                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_MALFORMED, 'vevent', componentId);
             }
         }
 
@@ -415,7 +391,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
         if (e instanceof ImportEventError) {
             throw e;
         }
-        throw new ImportEventError(IMPORT_EVENT_TYPE.VALIDATION_ERROR, 'vevent', componentId);
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.VALIDATION_ERROR, 'vevent', componentId);
     }
 };
 
@@ -426,7 +402,7 @@ interface GetSupportedEventsArgs {
 }
 export const getSupportedEvents = ({ components, calscale, xWrTimezone }: GetSupportedEventsArgs) => {
     if (calscale && calscale.toLowerCase() !== 'gregorian') {
-        return [new ImportEventError(IMPORT_EVENT_TYPE.NON_GREGORIAN, 'vcalendar', '')];
+        return [new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NON_GREGORIAN, 'vcalendar', '')];
     }
     const hasXWrTimezone = !!xWrTimezone;
     const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone) : undefined;
@@ -435,7 +411,7 @@ export const getSupportedEvents = ({ components, calscale, xWrTimezone }: GetSup
             try {
                 return getSupportedEvent({ vcalComponent, calendarTzid, hasXWrTimezone });
             } catch (e) {
-                if (e instanceof ImportEventError && e.type === IMPORT_EVENT_TYPE.TIMEZONE_IGNORE) {
+                if (e instanceof ImportEventError && e.type === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
                     return;
                 }
                 return e;
@@ -535,11 +511,11 @@ export const getSupportedEventsWithRecurrenceId = async ({
     return eventsWithRecurrenceId.map((event) => {
         const uid = event.uid.value;
         if (!mapParentEvents[uid]) {
-            return new ImportEventError(IMPORT_EVENT_TYPE.PARENT_EVENT_MISSING, 'vevent', uid);
+            return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.PARENT_EVENT_MISSING, 'vevent', uid);
         }
         const parentEvent = mapParentEvents[uid] as VcalVeventComponent;
         if (!parentEvent.rrule) {
-            return new ImportEventError(IMPORT_EVENT_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', uid);
+            return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', uid);
         }
         const recurrenceId = event['recurrence-id'];
         try {
@@ -556,7 +532,7 @@ export const getSupportedEventsWithRecurrenceId = async ({
             if (e instanceof ImportEventError) {
                 return e;
             }
-            return new ImportEventError(IMPORT_EVENT_TYPE.VALIDATION_ERROR, 'vevent', uid);
+            return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.VALIDATION_ERROR, 'vevent', uid);
         }
     });
 };

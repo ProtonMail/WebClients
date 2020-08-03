@@ -1,8 +1,7 @@
+import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import React from 'react';
 import { TextArea } from 'react-components';
 import { c } from 'ttag';
-
-import { MAX_LENGTHS } from '../../../constants';
 
 export interface Props {
     id?: string;

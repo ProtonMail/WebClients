@@ -1,8 +1,9 @@
+import { MONTHLY_TYPE, WEEKLY_TYPE } from 'proton-shared/lib/calendar/constants';
+import { getNegativeSetpos, getPositiveSetpos } from 'proton-shared/lib/calendar/helper';
 import { replace } from 'proton-shared/lib/helpers/array';
 import { isBefore } from 'date-fns';
-import { MONTHLY_TYPE, WEEKLY_TYPE } from '../../../constants';
+
 import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
-import { getNegativeSetpos, getPositiveSetpos } from './modelToFrequencyProperties';
 
 const getFrequencyModelChange = (
     oldStart: DateTimeModel,

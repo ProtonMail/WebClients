@@ -1,4 +1,5 @@
 import { differenceInMinutes } from 'date-fns';
+import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import { getMillisecondsFromTriggerString } from 'proton-shared/lib/calendar/vcal';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from 'proton-shared/lib/date/timezone';
@@ -15,7 +16,6 @@ import {
 import { DAY, HOUR, MINUTE, NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN, WEEK } from '../constants';
 import { DateTimeValue } from '../interfaces/DateTime';
 import { NotificationModel } from '../interfaces/NotificationModel';
-import { getDisplayTitle } from './event';
 import getAlarmMessageText from './getAlarmMessageText';
 
 /**

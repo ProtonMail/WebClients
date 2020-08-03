@@ -1,5 +1,6 @@
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
 import { EventModelView } from '../../../interfaces/EventModel';
