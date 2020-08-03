@@ -1,3 +1,9 @@
+# [3.16.33] - 2020-08-03
+
+## Updates
+
+- Added a warning state for DKIM state to avoid confusion with the error state
+
 # [3.16.32] - 2020-07-31
 
 ## Fixed
