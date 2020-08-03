@@ -1,12 +1,12 @@
 import {
     encryptMessage,
+    encryptSessionKey,
+    generateSessionKey,
+    getPreferredAlgorithm,
+    OpenPGPKey,
+    SessionKey,
     signMessage,
     splitMessage,
-    getPreferredAlgorithm,
-    generateSessionKey,
-    encryptSessionKey,
-    SessionKey,
-    OpenPGPKey,
 } from 'pmcrypto';
 
 import { EncryptPartResult, SignPartResult } from './interface';

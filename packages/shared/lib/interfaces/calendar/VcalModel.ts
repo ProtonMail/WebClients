@@ -1,4 +1,4 @@
-import { ATTENDEE_PERMISSIONS } from '../../calendar/constants';
+import { ATTENDEE_PERMISSIONS, ICAL_EVENT_STATUS } from '../../calendar/constants';
 
 export enum VcalDays {
     SU,
@@ -136,16 +136,28 @@ export interface VcalStringWithParamsProperty {
     params?: { [key: string]: string };
 }
 
-export interface VcalAttendeePropertyParameters {
+export interface VcalOrganizerPropertyParameters {
+    cn?: string;
+    dir?: string;
+    language?: string;
+    'sent-by'?: string;
+}
+
+export interface VcalOrganizerProperty {
+    value: string;
+    parameters?: VcalOrganizerPropertyParameters;
+}
+
+export interface VcalStatusProperty {
+    value: ICAL_EVENT_STATUS;
+}
+
+export interface VcalAttendeePropertyParameters extends VcalOrganizerPropertyParameters {
     cutype?: string;
     member?: string;
     role?: string;
     partstat?: string;
-    cn?: string;
     rsvp?: string;
-    dir?: string;
-    language?: string;
-    'sent-by'?: string;
     'delegated-from'?: string;
     'delegated-to'?: string;
     'x-pm-permissions'?: ATTENDEE_PERMISSIONS;
@@ -155,6 +167,14 @@ export interface VcalAttendeePropertyParameters {
 export interface VcalAttendeeProperty {
     value: string;
     parameters?: VcalAttendeePropertyParameters;
+}
+
+export interface VcalAttendeePropertyWithPartstat extends VcalAttendeeProperty {
+    parameters: VcalAttendeePropertyParameters & Required<Pick<VcalAttendeePropertyParameters, 'partstat'>>;
+}
+
+export interface VcalAttendeePropertyWithRole extends VcalAttendeeProperty {
+    parameters: VcalAttendeePropertyParameters & Required<Pick<VcalAttendeePropertyParameters, 'role'>>;
 }
 
 export interface VcalVeventComponent {
@@ -167,7 +187,7 @@ export interface VcalVeventComponent {
     rrule?: VcalRruleProperty;
     'recurrence-id'?: VcalDateOrDateTimeProperty;
     exdate?: VcalDateOrDateTimeProperty[];
-    organizer?: VcalStringWithParamsProperty;
+    organizer?: VcalOrganizerProperty;
     attendee?: VcalAttendeeProperty[];
     description?: VcalStringProperty;
     summary?: VcalStringProperty;
@@ -177,7 +197,7 @@ export interface VcalVeventComponent {
     class?: VcalStringProperty;
     priority?: VcalStringProperty;
     sequence?: VcalNumberProperty;
-    status?: VcalStringProperty;
+    status?: VcalStatusProperty;
     created?: VcalDateTimeProperty;
     'last-modified'?: VcalDateTimeProperty;
     transp?: VcalStringProperty;
@@ -220,7 +240,8 @@ export type VcalCalendarComponent =
     | VcalVtodoComponent
     | VcalVjournalComponent
     | VcalVfreebusyComponent
-    | VcalVtimezoneComponent;
+    | VcalVtimezoneComponent
+    | VcalVcalendar;
 
 export interface VcalVcalendar {
     component: string;

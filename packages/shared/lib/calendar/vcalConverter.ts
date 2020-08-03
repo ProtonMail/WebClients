@@ -6,7 +6,7 @@ import {
     VcalDateProperty,
     VcalDateTimeProperty,
     VcalDaysKeys,
-    VcalDays,
+    VcalDays, VcalDateOrDateTimeValue
 } from '../interfaces/calendar/VcalModel';
 import { mod } from '../helpers/math';
 import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
@@ -107,3 +107,29 @@ export const getDateTimePropertyInDifferentTimezone = (
     const zonedDate = convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid);
     return getDateTimeProperty(zonedDate, tzid);
 };
+
+export interface UntilDateArgument {
+    year: number;
+    month: number;
+    day: number;
+}
+export const getUntilProperty = (
+    untilDateTime: UntilDateArgument,
+    isAllDay: boolean,
+    tzid = 'UTC'
+): VcalDateOrDateTimeValue => {
+    // According to the RFC, we should use UTC dates if and only if the event is not all-day.
+    if (isAllDay) {
+        // we should use a floating date in this case
+        return {
+            year: untilDateTime.year,
+            month: untilDateTime.month,
+            day: untilDateTime.day,
+        };
+    }
+    // Pick end of day in the event start date timezone
+    const zonedEndOfDay = { ...untilDateTime, hours: 23, minutes: 59, seconds: 59 };
+    const utcEndOfDay = convertZonedDateTimeToUTC(zonedEndOfDay, tzid);
+    return { ...utcEndOfDay, isUTC: true };
+};
+

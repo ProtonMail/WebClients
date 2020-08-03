@@ -53,3 +53,17 @@ export interface CalendarEventMetadata {
 export interface CalendarEvent extends CalendarEventSharedData, CalendarEventBlobData {}
 
 export interface CalendarEventWithoutBlob extends CalendarEventSharedData, CalendarEventMetadata {}
+
+export interface SyncMultipleApiResponses {
+    Index: number;
+    Response: {
+        Code: number;
+        Event?: CalendarEvent;
+        Error?: string;
+    };
+}
+
+export interface SyncMultipleApiResponse {
+    Code: number;
+    Responses: SyncMultipleApiResponses[];
+}

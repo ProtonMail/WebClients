@@ -18,6 +18,7 @@ export const SHARED_SIGNED_FIELDS = [
     'recurrence-id',
     'rrule',
     'exdate',
+    'organizer',
     'sequence',
 ] as const;
 export const SHARED_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'created', 'description', 'summary', 'location'] as const;
@@ -29,7 +30,7 @@ export const USER_SIGNED_FIELDS = ['uid', 'dtstamp'] as const;
 export const USER_ENCRYPTED_FIELDS = [] as const;
 
 export const ATTENDEES_SIGNED_FIELDS = [] as const;
-export const ATTENDEES_ENCRYPTED_FIELDS = ['uid', 'attendee', 'organizer'] as const;
+export const ATTENDEES_ENCRYPTED_FIELDS = ['uid', 'attendee'] as const;
 
 const REQUIRED_SET = new Set(['uid', 'dtstamp'] as const);
 
@@ -47,7 +48,7 @@ const TAKEN_KEYS = [
     ]),
 ] as const;
 
-export const withUid = (properties: VcalVeventComponent): VcalVeventComponent => {
+export const withUid = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {
     if (properties.uid) {
         return properties;
     }
@@ -57,7 +58,7 @@ export const withUid = (properties: VcalVeventComponent): VcalVeventComponent =>
     };
 };
 
-export const withDtstamp = (properties: VcalVeventComponent): VcalVeventComponent => {
+export const withDtstamp = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {
     if (properties.dtstamp) {
         return properties;
     }
@@ -67,7 +68,7 @@ export const withDtstamp = (properties: VcalVeventComponent): VcalVeventComponen
     };
 };
 
-export const withRequiredProperties = (properties: VcalVeventComponent): VcalVeventComponent => {
+export const withRequiredProperties = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {
     return withDtstamp(withUid(properties));
 };
 

@@ -1,9 +1,9 @@
 import { OpenPGPKey, serverTime } from 'pmcrypto';
 import { c } from 'ttag';
 import { KEY_FLAGS, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
+import { normalizeEmail } from '../helpers/email';
 import isTruthy from '../helpers/isTruthy';
 import { toBitMap } from '../helpers/object';
-import { normalizeEmail } from '../helpers/string';
 import { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
 
 const { TYPE_INTERNAL } = RECIPIENT_TYPES;

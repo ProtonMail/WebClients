@@ -1,8 +1,8 @@
 import { OpenPGPKey, signMessage } from 'pmcrypto';
 import { c } from 'ttag';
 import { CONTACT_CARD_TYPE } from '../constants';
+import { normalizeEmail } from '../helpers/email';
 import isTruthy from '../helpers/isTruthy';
-import { normalizeEmail } from '../helpers/string';
 import { generateProtonWebUID } from '../helpers/uid';
 import { ContactCard, ContactProperty } from '../interfaces/contacts';
 import { CRYPTO_PROCESSING_TYPES } from './constants';

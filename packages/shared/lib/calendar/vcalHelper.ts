@@ -1,4 +1,7 @@
 import {
+    VcalAttendeeProperty,
+    VcalAttendeePropertyWithPartstat,
+    VcalAttendeePropertyWithRole,
     VcalCalendarComponent,
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
@@ -84,4 +87,20 @@ export const getHasRecurrenceId = (
     vevent: VcalVeventComponent
 ): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'recurrence-id'>> => {
     return !!vevent['recurrence-id'];
+};
+
+export const getHasAttendee = (
+    vevent: VcalVeventComponent
+): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'attendee'>> => {
+    return !!vevent.attendee;
+};
+
+export const getAttendeeHasPartStat = (
+    attendee: VcalAttendeeProperty
+): attendee is VcalAttendeePropertyWithPartstat => {
+    return !!attendee.parameters?.partstat;
+};
+
+export const getAttendeeHasRole = (attendee: VcalAttendeeProperty): attendee is VcalAttendeePropertyWithRole => {
+    return !!attendee.parameters?.role;
 };

@@ -1,9 +1,20 @@
+/**
+ * This file needs to be improved in terms of typing. They were rushed due to time constraints.
+ */
 import ICAL from 'ical.js';
 
 import { PROPERTIES, UNIQUE_PROPERTIES } from './vcalDefinition';
 import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../constants';
+import {
+    VcalCalendarComponent,
+    VcalDateOrDateTimeValue,
+    VcalDateTimeValue,
+    VcalDateValue,
+    VcalDurationValue,
+    VcalRrulePropertyValue,
+} from '../interfaces/calendar/VcalModel';
 
-const getIcalDateValue = (value, tzid, isDate) => {
+const getIcalDateValue = (value: any, tzid: string | undefined, isDate: boolean) => {
     const icalTimezone = value.isUTC ? ICAL.Timezone.utcTimezone : ICAL.Timezone.localTimezone;
     const icalData = {
         year: value.year,
@@ -17,7 +28,7 @@ const getIcalDateValue = (value, tzid, isDate) => {
     return ICAL.Time.fromData(icalData, icalTimezone);
 };
 
-const getIcalPeriodValue = (value, tzid) => {
+const getIcalPeriodValue = (value: any, tzid: string | undefined) => {
     return ICAL.Period.fromData({
         // periods must be of date-time
         start: value.start ? getIcalDateValue(value.start, tzid, false) : undefined,
@@ -26,18 +37,18 @@ const getIcalPeriodValue = (value, tzid) => {
     });
 };
 
-const getIcalDurationValue = (value) => {
+const getIcalDurationValue = (value?: any) => {
     return ICAL.Duration.fromData(value);
 };
 
-const getIcalUntilValue = (value) => {
+const getIcalUntilValue = (value?: any) => {
     if (!value) {
         return;
     }
     return getIcalDateValue(value, '', typeof value.hours === 'undefined');
 };
 
-export const internalValueToIcalValue = (type, value, { tzid } = {}) => {
+export const internalValueToIcalValue = (type: string, value: any, { tzid }: { tzid?: string } = {}) => {
     if (Array.isArray(value)) {
         return value;
     }
@@ -63,7 +74,7 @@ export const internalValueToIcalValue = (type, value, { tzid } = {}) => {
     return value.toString();
 };
 
-const getInternalDateValue = (value) => {
+const getInternalDateValue = (value: any): VcalDateValue => {
     return {
         year: value.year,
         month: value.month,
@@ -71,7 +82,7 @@ const getInternalDateValue = (value) => {
     };
 };
 
-export const getInternalDateTimeValue = (value) => {
+export const getInternalDateTimeValue = (value: any): VcalDateTimeValue => {
     return {
         ...getInternalDateValue(value),
         hours: value.hour,
@@ -81,7 +92,7 @@ export const getInternalDateTimeValue = (value) => {
     };
 };
 
-const getInternalDurationValue = (value) => {
+const getInternalDurationValue = (value: any): VcalDurationValue => {
     return {
         weeks: value.weeks,
         days: value.days,
@@ -92,14 +103,14 @@ const getInternalDurationValue = (value) => {
     };
 };
 
-const getInternalUntil = (value) => {
+const getInternalUntil = (value?: any): VcalDateOrDateTimeValue | undefined => {
     if (!value) {
         return;
     }
     return value.icaltype === 'date' ? getInternalDateValue(value) : getInternalDateTimeValue(value);
 };
 
-const getInternalRecur = (value) => {
+const getInternalRecur = (value?: any): VcalRrulePropertyValue | undefined => {
     if (!value) {
         return;
     }
@@ -115,11 +126,8 @@ const getInternalRecur = (value) => {
 
 /**
  * Convert from ical.js format to an internal format
- * @param {string} type
- * @param {any} value
- * @return {string|Array|Object}
  */
-export const icalValueToInternalValue = (type, value) => {
+export const icalValueToInternalValue = (type: string, value: any) => {
     if (Array.isArray(value)) {
         return value;
     }
@@ -136,7 +144,7 @@ export const icalValueToInternalValue = (type, value) => {
         return getInternalDurationValue(value);
     }
     if (type === 'period') {
-        const result = {};
+        const result: any = {};
         if (value.start) {
             result.start = getInternalDateTimeValue(value.start);
         }
@@ -156,12 +164,8 @@ export const icalValueToInternalValue = (type, value) => {
 
 /**
  * Get an ical property.
- * @param {String} name
- * @param {any} value
- * @param {Object} [parameters]
- * @returns {ICAL.Property|ICAL.Property|*}
  */
-const getProperty = (name, { value, parameters }) => {
+const getProperty = (name: string, { value, parameters }: any) => {
     const property = new ICAL.Property(name);
 
     const { type: specificType, ...restParameters } = parameters || {};
@@ -185,12 +189,7 @@ const getProperty = (name, { value, parameters }) => {
     return property;
 };
 
-/**
- * @param {ICAL.Component} component
- * @param {Object} properties
- * @return {ICAL.Component}
- */
-const addInternalProperties = (component, properties) => {
+const addInternalProperties = (component: any, properties: any) => {
     Object.keys(properties).forEach((name) => {
         const jsonProperty = properties[name];
 
@@ -206,11 +205,7 @@ const addInternalProperties = (component, properties) => {
     return component;
 };
 
-/**
- * @param {Object} properties
- * @return {ICAL.Component}
- */
-const fromInternalComponent = (properties) => {
+const fromInternalComponent = (properties: any) => {
     const { component: name, components, ...restProperties } = properties;
 
     const component = addInternalProperties(new ICAL.Component(name), restProperties);
@@ -224,15 +219,11 @@ const fromInternalComponent = (properties) => {
     return component;
 };
 
-/**
- * @param {Object} component
- * @return {string}
- */
-export const serialize = (component) => {
+export const serialize = (component: any) => {
     return fromInternalComponent(component).toString();
 };
 
-const getParameters = (type, property) => {
+const getParameters = (type: string, property: any) => {
     const allParameters = property.toJSON() || [];
     const parameters = allParameters[1];
     const isDefaultType = type === property.getDefaultType();
@@ -248,15 +239,11 @@ const getParameters = (type, property) => {
     return result;
 };
 
-/**
- * @param {Array} properties
- * @return {Object}
- */
 const fromIcalProperties = (properties = []) => {
     if (properties.length === 0) {
         return;
     }
-    return properties.reduce((acc, property) => {
+    return properties.reduce<{ [key: string]: any }>((acc, property: any) => {
         const { name } = property;
 
         if (!name) {
@@ -264,7 +251,7 @@ const fromIcalProperties = (properties = []) => {
         }
 
         const { type } = property;
-        const values = property.getValues().map((value) => icalValueToInternalValue(type, value));
+        const values = property.getValues().map((value: any) => icalValueToInternalValue(type, value));
 
         const parameters = getParameters(type, property);
         const propertyAsObject = {
@@ -283,7 +270,7 @@ const fromIcalProperties = (properties = []) => {
 
         // Exdate can be both an array and multivalue, force it to only be an array
         if (name === 'exdate') {
-            const normalizedValues = values.map((value) => ({ ...propertyAsObject, value }));
+            const normalizedValues = values.map((value: any) => ({ ...propertyAsObject, value }));
 
             acc[name] = acc[name].concat(normalizedValues);
         } else {
@@ -294,11 +281,7 @@ const fromIcalProperties = (properties = []) => {
     }, {});
 };
 
-/**
- * @param {ICAL.Component} component
- * @returns {Object}
- */
-export const fromIcalComponent = (component) => {
+export const fromIcalComponent = (component: any) => {
     const components = component.getAllSubcomponents().map(fromIcalComponent);
     return {
         component: component.name,
@@ -307,8 +290,8 @@ export const fromIcalComponent = (component) => {
     };
 };
 
-export const fromIcalComponentWithErrors = (component) => {
-    const components = component.getAllSubcomponents().map((subcomponent) => {
+export const fromIcalComponentWithErrors = (component: any): VcalCalendarComponent => {
+    const components = component.getAllSubcomponents().map((subcomponent: any) => {
         try {
             return fromIcalComponent(subcomponent);
         } catch (error) {
@@ -319,19 +302,17 @@ export const fromIcalComponentWithErrors = (component) => {
         component: component.name,
         ...(components.length && { components }),
         ...fromIcalProperties(component ? component.getAllProperties() : undefined),
-    };
+    } as VcalCalendarComponent;
 };
 
 /**
  * Parse vCalendar String and return a component
- * @param {String} vcal
- * @returns {Object}
  */
-export const parse = (vcal = '') => {
+export const parse = (vcal = ''): VcalCalendarComponent => {
     if (!vcal) {
-        return {};
+        return {} as VcalCalendarComponent;
     }
-    return fromIcalComponent(new ICAL.Component(ICAL.parse(vcal)));
+    return fromIcalComponent(new ICAL.Component(ICAL.parse(vcal))) as VcalCalendarComponent;
 };
 
 /**
@@ -356,10 +337,10 @@ const reformatLineBreaks = (vcal = '') => {
 /**
  * Same as the parse function, but catching errors
  */
-export const parseWithErrors = (vcal = '', retry = true) => {
+export const parseWithErrors = (vcal = '', retry = true): VcalCalendarComponent => {
     try {
         if (!vcal) {
-            return {};
+            return {} as VcalCalendarComponent;
         }
         return fromIcalComponentWithErrors(new ICAL.Component(ICAL.parse(vcal)));
     } catch (e) {
@@ -378,21 +359,17 @@ export const fromRruleString = (rrule = '') => {
 
 /**
  * Parse a trigger string (e.g. '-PT15M') and return an object indicating its duration
- * @param {String} trigger
- * @return {{ isNegative: Boolean, hours: Number, seconds: Number, weeks: Number, minutes: Number, days: Number }}
  */
 export const fromTriggerString = (trigger = '') => {
     return getInternalDurationValue(ICAL.Duration.fromString(trigger));
 };
 
-export const toTriggerString = (value) => {
+export const toTriggerString = (value: VcalDurationValue) => {
     return getIcalDurationValue(value).toString();
 };
 
 /**
  * Transform a duration object into milliseconds
- * @param {{ isNegative: Boolean, hours: Number, seconds: Number, weeks: Number, minutes: Number, days: Number }}
- * @return {Number}
  */
 const durationToMilliseconds = ({
     isNegative = false,
@@ -409,8 +386,6 @@ const durationToMilliseconds = ({
 
 /**
  * Parse a trigger string (e.g. '-PT15M') and return its duration in milliseconds
- * @param trigger
- * @return {Number}
  */
 export const getMillisecondsFromTriggerString = (trigger = '') => {
     return durationToMilliseconds(fromTriggerString(trigger));

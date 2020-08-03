@@ -156,8 +156,9 @@ export const getEvent = (calendarID: string, eventID: string) => ({
     method: 'get',
 });
 
-interface GetEventByUIDArguments extends PaginationParams {
+export interface GetEventByUIDArguments extends Partial<PaginationParams> {
     UID: string;
+    RecurrenceID?: number;
 }
 export const getEventByUID = (params: GetEventByUIDArguments) => ({
     url: `${CALENDAR_V1}/events`,
@@ -253,7 +254,7 @@ export interface DeleteCalendarEventSyncData {
 }
 export interface UpdateCalendarEventSyncData {
     ID: string;
-    Event?: CreateCalendarEventData;
+    Event?: Omit<CreateCalendarEventData, 'SharedKeyPacket'>;
 }
 export interface CreateLinkedCalendarEventsSyncData {
     UID: string;

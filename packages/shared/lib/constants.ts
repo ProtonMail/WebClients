@@ -621,35 +621,6 @@ export enum DENSITY {
     COMPACT = 1,
 }
 
-export enum ICS_METHODS {
-    REQUEST = 'REQUEST',
-    REPLY = 'REPLY',
-    CANCEL = 'CANCEL',
-    DECLINECOUNTER = 'DECLINECOUNTER',
-    REFRESH = 'REFRESH',
-    COUNTER = 'COUNTER',
-}
-
-export enum ICS_EVENT_STATUS {
-    TENTATIVE = 'TENTATIVE',
-    CONFIRMED = 'CONFIRMED',
-    CANCELLED = 'CANCELLED',
-}
-
-export enum ICS_PARTICIPANT_ROLE {
-    REQUIRED = 'REQ-PARTICIPANT', // Indicates a participant whose participation is required
-    OPTIONAL = 'OPT-PARTICIPANT', // Indicates a participant whose participation is optional
-    NON = 'NON-PARTICIPANT', // Indicates a participant who is copied for information purposes only
-}
-
-export enum ICS_PARTICIPANT_STATUS {
-    NEEDS_ACTION = 'NEEDS-ACTION',
-    ACCEPTED = 'ACCEPTED',
-    DECLINED = 'DECLINED',
-    TENTATIVE = 'TENTATIVE',
-    DELEGATED = 'DELEGATED',
-}
-
 export enum SPAM_SCORE {
     PM_SPOOFED = 100,
     DMARC_FAILED = 101,

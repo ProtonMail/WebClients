@@ -8,6 +8,7 @@ import { unwrap } from './helper';
 import { toInternalAttendee } from './attendees';
 import { CalendarEventData, CalendarEvent, CalendarPersonalEventData } from '../interfaces/calendar';
 import { VcalAttendeeProperty, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
+import { getIsEventComponent } from './vcalHelper';
 
 export const readSessionKey = (KeyPacket: string, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
     return getDecryptedSessionKey(deserializeUint8Array(KeyPacket), privateKeys);
@@ -52,14 +53,22 @@ export const readCalendarEvent = async ({
         if (!event) {
             return acc;
         }
-        return { ...acc, ...(event && parse(unwrap(event))) };
+        const parsedComponent = parse(unwrap(event));
+        if (!getIsEventComponent(parsedComponent)) {
+            return acc;
+        }
+        return { ...acc, ...parsedComponent };
     }, {} as VcalVeventComponent);
 
     const veventAttendees = decryptedAttendeesEvents.reduce<VcalAttendeeProperty[]>((acc, event) => {
         if (!event) {
             return acc;
         }
-        return acc.concat(toInternalAttendee(parse(unwrap(event)), Attendees));
+        const parsedComponent = parse(unwrap(event));
+        if (!getIsEventComponent(parsedComponent)) {
+            return acc;
+        }
+        return acc.concat(toInternalAttendee(parsedComponent, Attendees));
     }, []);
 
     if (!veventAttendees.length) {

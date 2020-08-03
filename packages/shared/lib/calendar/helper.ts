@@ -1,5 +1,7 @@
 import getRandomValues from 'get-random-values';
 import { arrayToBinaryString } from 'pmcrypto';
+import { c } from 'ttag';
+import { getDaysInMonth } from '../date-fns-utc';
 import { encodeBase64URL } from '../helpers/string';
 
 /**
@@ -11,6 +13,10 @@ export const generateUID = () => {
     const base64String = encodeBase64URL(arrayToBinaryString(randomBytes));
     // and we encode them in base 64
     return `${base64String}@proton.me`;
+};
+
+export const getDisplayTitle = (title = '') => {
+    return title.trim() || c('Event title').t`(no title)`;
 };
 
 /**
@@ -35,4 +41,17 @@ export const unwrap = (res: string) => {
     }
     const endIdx = res.lastIndexOf('END:VCALENDAR');
     return res.slice(startIdx, endIdx).trim();
+};
+
+export const getPositiveSetpos = (date: Date) => {
+    const shiftedMonthDay = date.getDate() - 1;
+    return Math.floor(shiftedMonthDay / 7) + 1;
+};
+
+export const getNegativeSetpos = (date: Date) => {
+    const monthDay = date.getDate();
+    const daysInMonth = getDaysInMonth(date);
+
+    // return -1 if it's the last occurrence in the month
+    return Math.ceil((monthDay - daysInMonth) / 7) - 1;
 };

@@ -4,7 +4,7 @@ import { CRYPTO_PROCESSING_TYPES } from '../../contacts/constants';
 import { readSigned } from '../../contacts/decrypt';
 import { getKeyInfoFromProperties } from '../../contacts/keyProperties';
 import { parse } from '../../contacts/vcard';
-import { normalizeEmail } from '../../helpers/string';
+import { normalizeEmail } from '../../helpers/email';
 
 import { Api, PinnedKeysConfig } from '../../interfaces';
 import { Contact as tsContact, ContactEmail } from '../../interfaces/contacts';
