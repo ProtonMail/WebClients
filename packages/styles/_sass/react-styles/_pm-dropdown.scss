@@ -247,7 +247,8 @@
 		&-button,
 		&-link {
 			&:hover,
-			&:focus {
+			&:focus,
+			&:focus-within {
 				background-color: var(--bgcolor-input, $pm-global-light);
 				color: $pm-primary;
 			}
