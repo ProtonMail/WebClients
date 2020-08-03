@@ -66,7 +66,9 @@ const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
         >
             <Row>
                 <Label>{c('Label').t`Address`}</Label>
-                <Field className="pt0-5">{address.Email}</Field>
+                <div className="relative pt0-5 ellipsis mw100" title={address.Email}>
+                    {address.Email}
+                </div>
             </Row>
             <Row>
                 <Label>{c('Label').t`Display name`}</Label>

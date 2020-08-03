@@ -147,7 +147,12 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
                     {formattedAddresses.map((address) => (
                         <TableRow
                             key={address.ID}
-                            cells={[address.Email, <MissingKeysStatus key={0} {...address.status} />]}
+                            cells={[
+                                <span key={0} className="ellipsis bl pr1" title={address.Email}>
+                                    {address.Email}
+                                </span>,
+                                <MissingKeysStatus key={1} {...address.status} />,
+                            ]}
                         />
                     ))}
                 </TableBody>
