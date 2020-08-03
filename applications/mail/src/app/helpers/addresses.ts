@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-
+import { normalizeEmail } from 'proton-shared/lib/helpers/email';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
@@ -14,10 +14,13 @@ import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 
-/**
- * Transform value to be normalized (lowercase)
- */
-export const normalizeEmail = (email = '') => email.toLowerCase();
+export const removeDot = (email = '') => {
+    const [before, after] = email.split('@');
+    if (after) {
+        return `${before.replace(/\./g, '')}@${after}`;
+    }
+    return email;
+};
 
 /**
  * Remove plus alias part present in the email value
@@ -26,6 +29,10 @@ export const removeEmailAlias = (email = '') => {
     return normalizeEmail(email)
         .replace(/(\+[^@]*)@/, '@')
         .replace(/[._-](?=[^@]*@)/g, '');
+};
+
+export const cleanEmail = (email = '') => {
+    return removeDot(removeEmailAlias(email));
 };
 
 /**

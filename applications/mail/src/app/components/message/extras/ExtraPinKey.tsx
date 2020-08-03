@@ -1,6 +1,6 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
-import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/string';
+import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { ContactEmail, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import React, { useMemo } from 'react';

@@ -23,7 +23,7 @@ import {
     Input
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';

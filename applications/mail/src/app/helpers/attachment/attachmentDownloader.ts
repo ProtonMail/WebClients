@@ -8,7 +8,7 @@ import { Attachment } from '../../models/attachment';
 import { getAndVerify } from './attachmentLoader';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
-interface Download {
+export interface Download {
     attachment: Attachment;
     data: Uint8Array;
     isError?: boolean;

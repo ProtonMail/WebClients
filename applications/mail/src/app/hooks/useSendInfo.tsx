@@ -3,10 +3,10 @@ import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 
 import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { EncryptionPreferences, EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';

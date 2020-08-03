@@ -226,6 +226,7 @@ const HeaderExpanded = ({
                 onTrustSigningKey={onTrustSigningKey}
                 onTrustAttachedKey={onTrustAttachedKey}
                 onResignContact={onResignContact}
+                messageLoaded={messageLoaded}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
             />
@@ -327,6 +328,7 @@ const HeaderExpanded = ({
                     </ButtonGroup>
                 </Group>
             </div>
+            {/*{messageLoaded ? <HeaderAttachmentEvent message={message} /> : null}*/}
         </div>
     );
 };

@@ -1,10 +1,10 @@
+import { normalizeEmail } from 'proton-shared/lib/helpers/email';
 import React from 'react';
 import { Icon, Href, useContactEmails, useModals, LinkButton, Alert } from 'react-components';
 import { c } from 'ttag';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
 import ContactResignModal from '../../../components/message/modals/ContactResignModal';
-import { normalizeEmail } from '../../../helpers/addresses';
 import { MessageExtended } from '../../../models/message';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 
 const ExtraAskResign = ({ message, onResignContact }: Props) => {
     const { senderVerified, senderPinnedKeys } = message;
-    const { Address } = message.data?.Sender || {};
+    const { Address = '' } = message.data?.Sender || {};
     const { createModal } = useModals();
     const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
 

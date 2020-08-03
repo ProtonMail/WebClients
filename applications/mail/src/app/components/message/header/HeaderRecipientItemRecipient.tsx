@@ -20,10 +20,10 @@ import { Recipient } from 'proton-shared/lib/interfaces';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { getRecipientLabelDetailed } from '../../../helpers/addresses';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import { normalizeEmail } from '../../../helpers/addresses';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { OnCompose } from '../../../hooks/useCompose';
 import HeaderRecipientItemLayout from './HeaderRecipientItemLayout';
+import { getContactOfRecipient } from '../../../helpers/contacts';
 
 interface Props {
     recipient: Recipient;
@@ -49,7 +49,7 @@ const HeaderRecipientItemRecipient = ({
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
 
-    const contact = contacts?.find(({ Email }) => normalizeEmail(Email) === normalizeEmail(recipient.Address));
+    const contact = getContactOfRecipient(contacts, recipient.Address);
     const { ContactID } = contact || {};
 
     const handleCompose = (event: React.MouseEvent<HTMLButtonElement>) => {

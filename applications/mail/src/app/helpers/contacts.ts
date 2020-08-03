@@ -1,5 +1,5 @@
 import { ContactEmailCache, ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { normalizeEmail } from './addresses';
+import { normalizeEmail } from 'proton-shared/lib/helpers/email';
 
 export const findEmailInCache = (cache: ContactEmailCache, email: string): Partial<ContactEmail> =>
     [...cache.values()].find(({ Email }) => {

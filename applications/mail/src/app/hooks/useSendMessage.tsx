@@ -13,7 +13,7 @@ import {
     Alert,
     useNotifications
 } from 'react-components';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/string';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 
 import SendWithErrorsModal from '../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../helpers/message/cleanMessage';

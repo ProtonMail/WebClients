@@ -147,25 +147,6 @@ export const uniqID = () => {
         .slice(2, 12)}-${Date.now()}`;
 };
 
-/**
- * Generate a random string.
- * @param {Number} length
- * @return {string}
- */
-// export const getRandomString = (length) => {
-//     const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//     let i;
-//     let result = '';
-
-//     const values = getRandomValues(new Uint32Array(length));
-
-//     for (i = 0; i < length; i++) {
-//         result += charset[values[i] % charset.length];
-//     }
-
-//     return result;
-// };
-
 export const replaceLineBreaks = (content: string) => {
     return content.replace(/(?:\r\n|\r|\n)/g, '<br />');
 };

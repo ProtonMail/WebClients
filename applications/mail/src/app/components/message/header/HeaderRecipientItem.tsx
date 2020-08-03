@@ -2,14 +2,15 @@ import React from 'react';
 import { c } from 'ttag';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { Recipient } from 'proton-shared/lib/interfaces';
+import { Tooltip } from 'react-components';
 
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
+
 import { OnCompose } from '../../../hooks/useCompose';
 import HeaderRecipientItemLayout from './HeaderRecipientItemLayout';
 import HeaderRecipientItemGroup from './HeaderRecipientItemGroup';
 import HeaderRecipientItemRecipient from './HeaderRecipientItemRecipient';
-import { Tooltip } from 'react-components';
 
 interface Props {
     recipientOrGroup: RecipientOrGroup;

@@ -179,7 +179,7 @@ export interface MessageExtended {
     expiresIn?: number;
 
     /**
-     * Original "To" address
+     * Original "To" address of the referring message. Only added for drafts.
      */
     originalTo?: string;
 

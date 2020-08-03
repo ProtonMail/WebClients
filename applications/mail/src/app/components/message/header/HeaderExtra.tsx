@@ -6,6 +6,7 @@ import ExtraSpamScore from '../extras/ExtraSpamScore';
 import ExtraReadReceipt from '../extras/ExtraReadReceipt';
 import ExtraAutoReply from '../extras/ExtraAutoReply';
 import ExtraExpirationTime from '../extras/ExtraExpirationTime';
+import ExtraEvents from '../extras/ExtraEvents';
 import ExtraPinKey from '../extras/ExtraPinKey';
 import ExtraAskResign from '../extras/ExtraAskResign';
 import { MessageExtended } from '../../../models/message';
@@ -18,6 +19,7 @@ interface Props {
     onTrustSigningKey: (key: OpenPGPKey) => void;
     onTrustAttachedKey: (key: OpenPGPKey) => void;
     onResignContact: () => void;
+    messageLoaded: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
 }
@@ -25,6 +27,7 @@ interface Props {
 const HeaderExtra = ({
     message,
     sourceMode,
+    messageLoaded,
     onTrustSigningKey,
     onTrustAttachedKey,
     onResignContact,
@@ -48,6 +51,7 @@ const HeaderExtra = ({
             <ExtraAskResign message={message} onResignContact={onResignContact} />
             {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
             {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
+            {messageLoaded ? <ExtraEvents message={message} /> : null}
         </section>
     );
 };
