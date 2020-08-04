@@ -1,4 +1,5 @@
 import React, { useMemo, Fragment } from 'react';
+import { omit } from 'proton-shared/lib/helpers/object';
 import Breadcrumb from './Breadcrumb';
 import CollapsedBreadcrumbs from './CollapsedBreadcrumbs';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
@@ -44,17 +45,17 @@ const CollapsingBreadcrumbs = ({ breadcrumbs }: Props) => {
     return (
         <ul className="pd-collapsing-breadcrumbs">
             {groupedBreadcrumbs.map((group, i, arr) => {
-                const breadcrumb = group instanceof Array ? group[0] : group;
+                const { key, text, highlighted, ...breadcrumbProps } = group instanceof Array ? group[0] : group;
                 const isLast = i === arr.length - 1;
 
                 // Don't group single breadcrumbs, that would look stupid
                 return (
-                    <Fragment key={breadcrumb.key}>
+                    <Fragment key={key}>
                         {group instanceof Array && group.length > 1 ? (
                             <CollapsedBreadcrumbs breadcrumbs={group} />
                         ) : (
-                            <Breadcrumb noShrink={breadcrumb.noShrink} onClick={breadcrumb.onClick} active={isLast}>
-                                {breadcrumb.text}
+                            <Breadcrumb {...omit(breadcrumbProps, ['collapsedText'])} active={isLast || highlighted}>
+                                {text}
                             </Breadcrumb>
                         )}
                         {!isLast && (

@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
-import { generateUID } from '../../helpers/component';
+import { omit } from 'proton-shared/lib/helpers/object';
+import { generateUID, classnames } from '../../helpers/component';
 import { usePopperAnchor } from '../popper';
 import Breadcrumb from './Breadcrumb';
 import Dropdown from '../dropdown/Dropdown';
@@ -14,23 +15,32 @@ interface Props {
 function CollapsedBreadcrumb({ breadcrumbs }: Props) {
     const uid = useMemo(() => generateUID('dropdown'), []);
 
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLLIElement>();
+    const { anchorRef, isOpen, toggle, open, close } = usePopperAnchor<HTMLLIElement>();
 
     return (
         <>
-            <Breadcrumb ref={anchorRef} onClick={toggle}>
+            <Breadcrumb ref={anchorRef} onClick={toggle} onDragEnter={open}>
                 ...
             </Breadcrumb>
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
                     {breadcrumbs.map((breadcrumb) => {
-                        const collapsedText = breadcrumb.collapsedText ?? breadcrumb.text;
+                        const {
+                            key,
+                            text,
+                            highlighted,
+                            collapsedText = breadcrumb.text,
+                            ...breadcrumbProps
+                        } = breadcrumb;
                         return (
                             <DropdownMenuButton
-                                className="flex alignleft flex-nowrap"
-                                key={breadcrumb.key}
-                                onClick={breadcrumb.onClick}
-                                title={breadcrumb.text}
+                                {...omit(breadcrumbProps, ['noShrink'])}
+                                className={classnames([
+                                    'flex alignleft flex-nowrap no-pointer-events-children',
+                                    highlighted && 'strong',
+                                ])}
+                                title={text}
+                                key={key}
                             >
                                 {typeof collapsedText === 'string' ? (
                                     <span title={collapsedText} className="ellipsis">

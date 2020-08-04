@@ -1,15 +1,15 @@
 import React, { Ref } from 'react';
 import { classnames } from '../../helpers/component';
 
-interface Props extends React.LiHTMLAttributes<HTMLLIElement> {
+interface Props extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'onClick'> {
     children: string;
-    onClick?: () => void;
     active?: boolean;
     noShrink?: boolean;
+    onClick?: () => void;
 }
 
-const Breadcrumb = ({ children, onClick, active, noShrink, ...rest }: Props, ref: Ref<HTMLLIElement>) => {
-    const textClass = classnames(['pre p0-25 m0 ellipsis', active && 'strong']);
+const Breadcrumb = ({ children, onClick, active, noShrink, className, ...rest }: Props, ref: Ref<HTMLLIElement>) => {
+    const textClass = classnames(['pre p0-25 m0 ellipsis no-pointer-events-children', active && 'strong']);
     return (
         <li
             {...rest}
@@ -18,6 +18,7 @@ const Breadcrumb = ({ children, onClick, active, noShrink, ...rest }: Props, ref
                 'pd-collapsing-breadcrumb',
                 active && 'flex-item-fluid-auto',
                 noShrink && 'pd-collapsing-breadcrumb--noShrink',
+                className,
             ])}
         >
             {onClick ? (
