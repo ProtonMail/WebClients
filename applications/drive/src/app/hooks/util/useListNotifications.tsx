@@ -1,7 +1,7 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
 import { useNotifications, LinkButton } from 'react-components';
-import { LinkType } from '../../interfaces/link';
+import { LinkType, LinkMeta } from '../../interfaces/link';
 import { selectMessageForItemList } from '../../components/Drive/helpers';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
 
@@ -166,7 +166,7 @@ const useListNotifications = () => {
     };
 
     const createMoveLinksNotifications = (
-        toMove: FileBrowserItem[],
+        toMove: (FileBrowserItem | LinkMeta)[],
         {
             moved,
             failed,

@@ -23,6 +23,7 @@ import LocationCell from './LocationCell';
 import { DragMoveControls } from '../../hooks/drive/useDriveDragMove';
 import { selectMessageForItemList } from '../Drive/helpers';
 import RowContextMenu from './RowContextMenu';
+import { CUSTOM_DATA_FORMAT } from '../../constants';
 
 interface Props {
     item: FileBrowserItem;
@@ -52,7 +53,7 @@ const ItemRow = ({
     const { dragging, handleDragEnd, handleDragStart, DragMoveContent } = useDragMove({
         dragging: dragMoveControls?.dragging ?? false,
         setDragging: dragMoveControls?.setDragging ?? noop,
-        format: 'pd-custom',
+        format: CUSTOM_DATA_FORMAT,
         formatter: JSON.stringify,
     });
 
@@ -214,13 +215,13 @@ const ItemRow = ({
     return (
         <>
             {dragMoveControls && (
-                <DragMoveContent>
+                <DragMoveContent data={dragMoveItems}>
                     <DragMoveContainer>{moveText}</DragMoveContainer>
                 </DragMoveContent>
             )}
             <TableRow
                 cells={cells}
-                draggable={!!dragMoveControls}
+                draggable={dragMoveControls && !item.Disabled}
                 tabIndex={0}
                 role="button"
                 ref={anchorRef}

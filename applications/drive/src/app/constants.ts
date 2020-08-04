@@ -20,6 +20,8 @@ export const DOWNLOAD_TIMEOUT = 60000;
 export const EXPENSIVE_REQUEST_TIMEOUT = 60000;
 export const MAX_NAME_LENGTH = 255;
 
+export const CUSTOM_DATA_FORMAT = 'pd-custom';
+
 export enum LinkURLType {
     FOLDER = 'folder',
     FILE = 'file',

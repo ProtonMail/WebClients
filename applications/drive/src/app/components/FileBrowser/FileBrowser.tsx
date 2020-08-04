@@ -43,7 +43,7 @@ const FileBrowser = ({
     const [isContextMenuOpen, setIsOpen] = useState(false);
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const { isDesktop } = useActiveBreakpoint();
-    const getDragMoveControls = useDriveDragMove(shareId, selectedItems, clearSelections);
+    const { getDragMoveControls } = useDriveDragMove(shareId, selectedItems, clearSelections);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {

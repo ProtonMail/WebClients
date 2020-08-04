@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { CollapsingBreadcrumbs, Icon } from 'react-components';
+import { CollapsingBreadcrumbs, Icon, useNotifications } from 'react-components';
 import { BreadcrumbInfo } from 'react-components/components/collapsingBreadcrumbs/interfaces';
 import { DriveFolder } from './Drive/DriveFolderProvider';
 import useDrive from '../hooks/drive/useDrive';
 import { LinkType } from '../interfaces/link';
+import { useDriveDragMoveTarget } from '../hooks/drive/useDriveDragMove';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -13,6 +14,9 @@ interface Props {
 
 const DriveBreadcrumbs = ({ activeFolder, openLink }: Props) => {
     const { getLinkMeta } = useDrive();
+    const { createNotification } = useNotifications();
+    const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
+    const [dropTarget, setDropTarget] = useState<string>();
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([
         {
             key: 'default',
@@ -27,10 +31,13 @@ const DriveBreadcrumbs = ({ activeFolder, openLink }: Props) => {
             const isRoot = !meta.ParentLinkID;
             const text = isRoot ? c('Title').t`My files` : meta.Name;
 
+            const handleDrop = getHandleItemDrop(meta);
+
             const breadcrumb: BreadcrumbInfo = {
                 key: linkId,
                 text,
                 noShrink: isRoot,
+                highlighted: dropTarget === meta.LinkID,
                 collapsedText: (
                     <>
                         <Icon name="folder" className="mt0-25 mr0-5 mr0-25 flex-item-noshrink color-global-attention" />
@@ -40,6 +47,28 @@ const DriveBreadcrumbs = ({ activeFolder, openLink }: Props) => {
                     </>
                 ),
                 onClick: () => openLink(activeFolder.shareId, linkId, LinkType.FOLDER),
+                onDragLeave: () => {
+                    setDropTarget(undefined);
+                },
+                onDragOver: (e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    if (dropTarget !== linkId) {
+                        setDropTarget(linkId);
+                    }
+                },
+                onDrop: async (e) => {
+                    setDropTarget(undefined);
+                    try {
+                        await handleDrop(e);
+                    } catch (e) {
+                        createNotification({
+                            text: c('Notification').t`Failed to move, please try again`,
+                            type: 'error',
+                        });
+                        console.error(e);
+                    }
+                },
             };
 
             if (isRoot) {
@@ -64,7 +93,7 @@ const DriveBreadcrumbs = ({ activeFolder, openLink }: Props) => {
         return () => {
             canceled = true;
         };
-    }, [activeFolder.shareId, activeFolder.linkId]);
+    }, [activeFolder.shareId, activeFolder.linkId, dropTarget]);
 
     return <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} />;
 };
