@@ -259,6 +259,15 @@
 				border: none;
 			}
 		}
+		&--delete {
+			&,
+			&:hover,
+			&:focus {
+				 .dropDown-item-button {
+					color: $pm-global-warning;
+				}
+			}
+		}
 
 		& [aria-current='true'],
 		& &--isSelected { // Specificity -_-v
