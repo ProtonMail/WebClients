@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 
 interface DragMoveContentProps<T> {
     data?: T;
+    dragging?: boolean;
     children: ReactNode;
 }
 
@@ -38,7 +39,7 @@ function useDragMove({ dragging, setDragging, format = 'text/plain', formatter =
 
     const DragMoveContent = useMemo(
         () =>
-            function Component<T>({ children, data }: DragMoveContentProps<T>) {
+            function Component<T>({ children, data, dragging }: DragMoveContentProps<T>) {
                 transferData.current = data;
 
                 useEffect(() => () => (transferData.current = undefined), []);
@@ -48,7 +49,7 @@ function useDragMove({ dragging, setDragging, format = 'text/plain', formatter =
                 }
                 return null;
             },
-        [dragging]
+        []
     );
 
     return { dragging, handleDragEnd, handleDragStart, DragMoveContent };
