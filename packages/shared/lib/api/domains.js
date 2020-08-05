@@ -39,9 +39,3 @@ export const deleteDomain = (domainID) => ({
     url: `domains/${domainID}`,
     method: 'delete',
 });
-
-export const generateKey = (domainID, Algorithm) => ({
-    url: `domains/${domainID}/keys`,
-    method: 'post',
-    data: { Algorithm },
-});
