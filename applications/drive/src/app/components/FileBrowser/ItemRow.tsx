@@ -215,7 +215,7 @@ const ItemRow = ({
     return (
         <>
             {dragMoveControls && (
-                <DragMoveContent data={dragMoveItems}>
+                <DragMoveContent dragging={dragging} data={dragMoveItems}>
                     <DragMoveContainer>{moveText}</DragMoveContainer>
                 </DragMoveContent>
             )}
