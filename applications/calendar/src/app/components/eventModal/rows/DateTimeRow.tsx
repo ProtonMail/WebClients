@@ -23,6 +23,7 @@ interface Props {
 }
 
 const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endError, tzid }: Props) => {
+    const { start, end, frequencyModel, isAllDay } = model;
     const {
         handleChangeStartDate,
         handleChangeStartTime,
@@ -34,10 +35,10 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
     } = useDateTimeFormHandlers({ model, setModel });
     const [showTzSelector, setShowTzSelector] = useState(false);
     const handleChangeStart = (tzid: string) => {
-        const startUtcDate = getTimeInUtc(model.start, false);
+        const startUtcDate = getTimeInUtc(start, false);
         const newStartUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startUtcDate), tzid));
         const newStart = getDateTimeState(newStartUtcDate, tzid);
-        const newFrequencyModel = getFrequencyModelChange(model.start, newStart, model.frequencyModel);
+        const newFrequencyModel = getFrequencyModelChange(start, newStart, frequencyModel);
 
         setModel({
             ...model,
@@ -46,7 +47,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
         });
     };
     const handleChangeEnd = (tzid: string) => {
-        const endUtcDate = getTimeInUtc(model.end, false);
+        const endUtcDate = getTimeInUtc(end, false);
         const newEndUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(endUtcDate), tzid));
 
         setModel({
@@ -55,8 +56,8 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
         });
     };
 
-    const startDateTime = useMemo(() => getDateTime(model.start), [model.start]);
-    const endDateTime = useMemo(() => getDateTime(model.end), [model.end]);
+    const startDateTime = useMemo(() => getDateTime(start), [start]);
+    const endDateTime = useMemo(() => getDateTime(end), [end]);
     const isCalendarTzSelected = model.start.tzid !== tzid || model.end.tzid !== tzid;
     return (
         <div className="flex flex-column flex-wrap flex-items-start">
@@ -68,7 +69,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                                 id="startDate"
                                 className="pm-field w-unset"
                                 required
-                                value={model.start.date}
+                                value={start.date}
                                 onChange={handleChangeStartDate}
                                 displayWeekNumbers={displayWeekNumbers}
                                 weekStartsOn={weekStartsOn}
@@ -76,12 +77,12 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                                 max={MAXIMUM_DATE}
                             />
                         </div>
-                        {!model.isAllDay ? (
+                        {!isAllDay ? (
                             <div className="flex">
                                 <TimeInput
                                     id="startTime"
                                     className="ml0-5 w-unset"
-                                    value={model.start.time}
+                                    value={start.time}
                                     onChange={handleChangeStartTime}
                                 />
                             </div>
@@ -92,7 +93,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                                     className="pm-field ml0-5 w-unset"
                                     id="event-start-timezone-select"
                                     data-test-id="create-event-modal/start:time-zone-dropdown"
-                                    timezone={model.start.tzid}
+                                    timezone={start.tzid}
                                     onChange={handleChangeStart}
                                     date={startDateTime}
                                 />
@@ -105,7 +106,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                                 id="endDate"
                                 className="pm-field"
                                 required
-                                value={model.end.date}
+                                value={end.date}
                                 onChange={handleChangeEndDate}
                                 aria-invalid={!!endError}
                                 displayWeekNumbers={displayWeekNumbers}
@@ -115,12 +116,12 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                             />
                         </div>
 
-                        {!model.isAllDay ? (
+                        {!isAllDay ? (
                             <div className="flex">
                                 <TimeInput
                                     id="endTime"
                                     className="pm-field ml0-5"
-                                    value={model.end.time}
+                                    value={end.time}
                                     onChange={handleChangeEndTime}
                                     aria-invalid={!!endError}
                                     displayDuration={isDuration}
@@ -134,7 +135,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                                     className="pm-field ml0-5"
                                     id="event-end-timezone-select"
                                     data-test-id="create-event-modal/end:time-zone-dropdown"
-                                    timezone={model.end.tzid}
+                                    timezone={end.tzid}
                                     onChange={handleChangeEnd}
                                     date={endDateTime}
                                 />
@@ -142,25 +143,29 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         )}
                     </div>
                 </div>
-                <div>
-                    {!showTzSelector && model.start.tzid === tzid && (
-                        <LinkButton className="ml0-5" data-test-id="show-tz" onClick={() => setShowTzSelector(true)}>{c(
-                            'Action'
-                        ).t`Show time zones`}</LinkButton>
-                    )}
-                    {showTzSelector && model.start.tzid === tzid && model.end.tzid === tzid && (
-                        <LinkButton
-                            className="ml0-5"
-                            data-test-id="hide-tz"
-                            onClick={() => setShowTzSelector(false)}
-                        >{c('Action').t`Hide`}</LinkButton>
-                    )}
-                </div>
+                {!isAllDay ? (
+                    <div>
+                        {!showTzSelector && start.tzid === tzid && (
+                            <LinkButton
+                                className="ml0-5"
+                                data-test-id="show-tz"
+                                onClick={() => setShowTzSelector(true)}
+                            >{c('Action').t`Show time zones`}</LinkButton>
+                        )}
+                        {showTzSelector && start.tzid === tzid && end.tzid === tzid && (
+                            <LinkButton
+                                className="ml0-5"
+                                data-test-id="hide-tz"
+                                onClick={() => setShowTzSelector(false)}
+                            >{c('Action').t`Hide`}</LinkButton>
+                        )}
+                    </div>
+                ) : null}
             </div>
 
             <AllDayCheckbox
                 className="mt0-75"
-                checked={model.isAllDay}
+                checked={isAllDay}
                 onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
             />
         </div>
