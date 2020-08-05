@@ -59,7 +59,7 @@ const CreateEventModal = ({
             disabled={loadingAction}
             type="submit"
         >
-            {isCreateEvent ? c('Action').t`Create event` : c('Action').t`Save`}
+            {c('Action').t`Save`}
         </PrimaryButton>
     );
 
