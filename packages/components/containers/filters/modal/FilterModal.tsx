@@ -34,6 +34,7 @@ import {
     ConfirmModal,
     Alert,
     useModals,
+    Loader,
 } from '../../..';
 
 import HeaderFilterModal from './HeaderFilterModal';
@@ -44,24 +45,23 @@ import FilterConditionsForm from './FilterConditionsForm';
 import FilterPreview from './FilterPreview';
 
 import { DEFAULT_FOLDERS } from './FilterActionsFormFolderRow';
-import Loader from '../../../components/loader/Loader';
 
 interface Props {
     filter?: Filter;
     onClose?: () => void;
 }
 
-const checkNameErrors = (filters: Filter[], name: string, isEdit = false) => {
+const checkNameErrors = (filters: Filter[], name: string): string => {
     if (!name) {
         return c('Error').t`This field is required`;
     }
-    if (!isEdit && filters.find(({ Name }: Filter) => normalize(Name) === normalize(name))) {
+    if (filters.find(({ Name }: Filter) => normalize(Name) === normalize(name))) {
         return c('Error').t`Filter with this name already exists`;
     }
     return '';
 };
 
-const checkConditionsErrors = (conditions: Condition[]) => {
+const checkConditionsErrors = (conditions: Condition[]): string => {
     if (conditions.some((c) => !!c.error)) {
         return c('Error').t`Error in one of the conditions`;
     }
@@ -166,7 +166,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
 
     const errors = useMemo<Errors>(() => {
         return {
-            name: checkNameErrors(filters, name, isEdit),
+            name: filter?.Name !== name ? checkNameErrors(filters, name) : '',
             conditions: checkConditionsErrors(conditions),
             actions: checkActionsErrors(actions),
         };

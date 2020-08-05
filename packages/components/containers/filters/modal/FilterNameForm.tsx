@@ -12,13 +12,19 @@ interface Props {
     model: SimpleFilterModalModel | AdvancedSimpleFilterModalModel;
     errors: Errors;
     onChange: (newModel: SimpleFilterModalModel | AdvancedSimpleFilterModalModel) => void;
+    isSieveFilter?: boolean;
 }
 
-const FilterNameForm = ({ isNarrow, model, errors, onChange }: Props) => {
+const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChange }: Props) => {
     return (
         <>
-            <Alert>{c('Info')
-                .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action to be saved.`}</Alert>
+            <Alert>
+                {isSieveFilter
+                    ? c('Info')
+                          .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve input.`
+                    : c('Info')
+                          .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.`}
+            </Alert>
             <div className="flex flex-nowrap onmobile-flex-column align-items-center pt1 pb1">
                 <label htmlFor="name" className={classnames(['w20 pt0-5', isNarrow && 'mb1'])}>
                     {c('Label').t`Filter Name`}

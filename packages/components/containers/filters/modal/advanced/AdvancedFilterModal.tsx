@@ -9,10 +9,6 @@ import { templates as sieveTemplates } from 'proton-shared/lib/filters/sieve';
 
 import { noop } from 'proton-shared/lib/helpers/function';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
-import FilterNameForm from '../FilterNameForm';
-import HeaderAdvancedFilterModal from './HeaderAdvancedFilterModal';
-import FooterAdvancedFilterModal from './FooterAdvancedFilterModal';
-import SieveForm from './SieveForm';
 import {
     FormModal,
     useModals,
@@ -27,12 +23,38 @@ import {
     useApiWithoutResult,
     ConfirmModal,
     Alert,
-} from '../../../../index';
+} from '../../../..';
+
+import FilterNameForm from '../FilterNameForm';
+import HeaderAdvancedFilterModal from './HeaderAdvancedFilterModal';
+import FooterAdvancedFilterModal from './FooterAdvancedFilterModal';
+import SieveForm from './SieveForm';
 
 interface Props {
     filter: Filter;
     onClose: () => void;
 }
+
+const checkNameErrors = (name: string, filters: Filter[]): string => {
+    if (!name) {
+        return c('Error').t`This field is required`;
+    }
+    if (filters.find(({ Name }: Filter) => normalize(Name) === normalize(name))) {
+        return c('Error').t`Filter with this name already exist`;
+    }
+    return '';
+};
+
+const checkSieveErrors = (sieve: string, issuesLength: number): string => {
+    if (!sieve) {
+        return c('Error').t`This field is required`;
+    }
+
+    if (issuesLength) {
+        return c('Error').t`Invalid Sieve code`;
+    }
+    return '';
+};
 
 const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const api = useApi();
@@ -63,16 +85,8 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
 
     const errors = useMemo<ErrorsSieve>(() => {
         return {
-            name: !model.name
-                ? c('Error').t`This field is required`
-                : !isEdit && filters.find(({ Name }: Filter) => normalize(Name) === normalize(model.name))
-                ? c('Error').t`Filter with this name already exist`
-                : '',
-            sieve: model.sieve
-                ? model.issues.length
-                    ? c('Error').t`Invalid Sieve code`
-                    : ''
-                : c('Error').t`This field is required`,
+            name: model.name !== initialModel.name ? checkNameErrors(model.name, filters) : '',
+            sieve: checkSieveErrors(model.sieve, model.issues.length),
         };
     }, [model.name, model.sieve, model.issues]);
 
@@ -168,17 +182,18 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             {...rest}
         >
             <HeaderAdvancedFilterModal model={model} errors={errors} onChange={setModel} />
-            {model.step === StepSieve.NAME ? (
+            {model.step === StepSieve.NAME && (
                 <FilterNameForm
                     model={model}
                     onChange={(newModel) => setModel(newModel as AdvancedSimpleFilterModalModel)}
                     isNarrow={isNarrow}
                     errors={errors}
+                    isSieveFilter
                 />
-            ) : null}
-            {model.step === StepSieve.SIEVE ? (
+            )}
+            {model.step === StepSieve.SIEVE && (
                 <SieveForm model={model} onChange={setModel} errors={errors} mailSettings={mailSettings} />
-            ) : null}
+            )}
         </FormModal>
     );
 };

@@ -18,8 +18,10 @@ const SieveForm = ({ model, mailSettings, onChange }: Props) => {
     const theme = useMemo(() => (isDarkTheme(mailSettings.Theme) ? 'base16-dark' : ''), [mailSettings.Theme]);
     return (
         <>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/sieve-advanced-custom-filters/">{c('Info')
-                .t`Custom filters work on all new emails, including incoming emails as well as sent emails. To find out how to write Sieve filters.`}</Alert>
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/sieve-advanced-custom-filters/">
+                {c('Info')
+                    .t`Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.`}
+            </Alert>
             <SieveEditor
                 value={model.sieve}
                 issues={model.issues}
