@@ -54,7 +54,6 @@ const Notifications = ({
             {canAdd && (
                 <div>
                     <LinkButton
-                        className="capitalize add-notification"
                         data-test-id="add-notification"
                         onClick={() => onChange(addItem(notifications, { ...defaultNotification }))}
                     >{c('Action').t`Add notification`}</LinkButton>

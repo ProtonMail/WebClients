@@ -144,15 +144,13 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 </div>
                 <div>
                     {!showTzSelector && model.start.tzid === tzid && (
-                        <LinkButton
-                            className="capitalize no-wrap ml0-5"
-                            data-test-id="show-tz"
-                            onClick={() => setShowTzSelector(true)}
-                        >{c('Action').t`Show time zones`}</LinkButton>
+                        <LinkButton className="ml0-5" data-test-id="show-tz" onClick={() => setShowTzSelector(true)}>{c(
+                            'Action'
+                        ).t`Show time zones`}</LinkButton>
                     )}
                     {showTzSelector && model.start.tzid === tzid && model.end.tzid === tzid && (
                         <LinkButton
-                            className="capitalize no-wrap ml0-5"
+                            className="ml0-5"
                             data-test-id="hide-tz"
                             onClick={() => setShowTzSelector(false)}
                         >{c('Action').t`Hide`}</LinkButton>
