@@ -50,6 +50,11 @@
   box-shadow: 0 0 20px 0 $input-shadow-color;
 }
 
+.tiny-shadow-container {
+	box-shadow: 0 1px 3px 0 var(--bgcolor-main-area, $pm-global-border);
+	border: 1px solid var(--bordercolor-input, transparent);
+}
+
 .row--orderable {
   z-index: 666; /* In case the modal is open */
   background: var(--bgcolor-main-area, $white);
