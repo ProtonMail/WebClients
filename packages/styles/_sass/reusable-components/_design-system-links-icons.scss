@@ -30,6 +30,15 @@
   }
 }
 
+.button-showOnHover:focus,
+.button-showOnHover:hover {
+	.button-showOnHover-element {
+		visibility: visible;
+	}
+}
+
+
+
 /* links with icons, may use DATA-URI */
 
 /* external links */

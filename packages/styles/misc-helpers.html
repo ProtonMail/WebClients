@@ -51,6 +51,26 @@ section: fe-guidelines
 </div>
 
 
+<h2>Something that should appear on <code>hover</code> in a parent</h2>
+
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49">
+    <pre class=" language-markup"><code>&lt;button <strong>class="button-showOnHover"</strong>&gt;
+  hover me, pikaaaaa…
+  &lt;span <strong>class="nonvisible button-showOnHover-element"</strong>&gt;CHU&lt;/span&gt;
+</code></pre>
+  </div>
+  <div class="w49 flex-self-vcenter relative">
+    <button class="button-showOnHover increase-surface-click" type="button">
+		hover me, pikaaaaa…
+		<span class="nonvisible button-showOnHover-element">CHU</span>
+	</button>
+	<p>Careful when using this, might create issues with some tap devices like </p>
+  </div>
+</div>
+
+
 <h2>For media print</h2>
 
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
