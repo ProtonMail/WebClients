@@ -1,28 +1,35 @@
 import React from 'react';
+import { c } from 'ttag';
 
 import { usePreventLeave, useModals } from 'react-components';
 
 import useFiles from './useFiles';
 import useTrash from './useTrash';
+import useListNotifications from '../util/useListNotifications';
+import useConfirm from '../util/useConfirm';
+import FileSaver from '../../utils/FileSaver/FileSaver';
+import { getMetaForTransfer } from '../../utils/transfer';
+import { logSettledErrors } from '../../utils/async';
+import { LinkType } from '../../interfaces/link';
 import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
 import RenameModal from '../../components/RenameModal';
 import DetailsModal from '../../components/DetailsModal';
 import MoveToFolderModal from '../../components/MoveToFolderModal';
 import CreateFolderModal from '../../components/CreateFolderModal';
-import { LinkType } from '../../interfaces/link';
-import { getMetaForTransfer } from '../../utils/transfer';
-import { logSettledErrors } from '../../utils/async';
-import FileSaver from '../../utils/FileSaver/FileSaver';
-import useListNotifications from '../util/useListNotifications';
 
 function useToolbarActions() {
     const { folder } = useDriveActiveFolder();
     const { startFileTransfer, startFolderTransfer } = useFiles();
     const { preventLeave } = usePreventLeave();
     const { createModal } = useModals();
-    const { trashLinks, restoreLinks } = useTrash();
-    const { createRestoredLinksNotifications, createTrashLinksNotifications } = useListNotifications();
+    const { deleteLinks, restoreLinks, trashLinks } = useTrash();
+    const {
+        createDeleteLinksNotifications,
+        createRestoredLinksNotifications,
+        createTrashLinksNotifications,
+    } = useListNotifications();
+    const { openConfirmModal } = useConfirm();
 
     const download = async (itemsToDownload: FileBrowserItem[]) => {
         if (!folder) {
@@ -58,6 +65,24 @@ function useToolbarActions() {
 
     const openCreateFolder = async () => {
         createModal(<CreateFolderModal />);
+    };
+
+    const openDeletePermanently = async (shareId: string, itemsToDelete: FileBrowserItem[]) => {
+        if (!itemsToDelete.length) {
+            return;
+        }
+
+        const title = c('Title').t`Delete permanently`;
+        const confirm = c('Action').t`Delete permanently`;
+        const message = c('Info').t`permanently delete selected item(s) from Trash`;
+
+        openConfirmModal(title, confirm, message, async () => {
+            const deleted = await deleteLinks(
+                shareId,
+                itemsToDelete.map(({ LinkID }) => LinkID)
+            );
+            createDeleteLinksNotifications(itemsToDelete, deleted);
+        });
     };
 
     const openDetails = (item: FileBrowserItem) => {
@@ -115,14 +140,28 @@ function useToolbarActions() {
         openLink(folder.shareId, item.LinkID, item.Type);
     };
 
+    const restoreFromTrash = async (shareId: string, itemsToRestore: FileBrowserItem[]) => {
+        if (!itemsToRestore.length) {
+            return;
+        }
+
+        const result = await restoreLinks(
+            shareId,
+            itemsToRestore.map(({ LinkID }) => LinkID)
+        );
+        createRestoredLinksNotifications(itemsToRestore, result);
+    };
+
     return {
         download,
         openCreateFolder,
+        openDeletePermanently,
         openDetails,
         openMoveToTrash,
         openMoveToFolder,
         openRename,
         preview,
+        restoreFromTrash,
     };
 }
 

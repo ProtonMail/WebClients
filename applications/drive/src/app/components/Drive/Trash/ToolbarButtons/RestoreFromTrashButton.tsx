@@ -4,8 +4,7 @@ import { c } from 'ttag';
 import { ToolbarButton, useLoading } from 'react-components';
 
 import { useTrashContent } from '../TrashContentProvider';
-import useTrash from '../../../../hooks/drive/useTrash';
-import useListNotifications from '../../../../hooks/util/useListNotifications';
+import useToolbarActions from '../../../../hooks/drive/useToolbarActions';
 
 interface Props {
     shareId: string;
@@ -13,32 +12,17 @@ interface Props {
 }
 
 const RestoreFromTrashButton = ({ shareId, disabled }: Props) => {
-    const { restoreLinks } = useTrash();
     const [restoreLoading, withRestoreLoading] = useLoading();
-    const { createRestoredLinksNotifications } = useListNotifications();
+    const { restoreFromTrash } = useToolbarActions();
     const { fileBrowserControls } = useTrashContent();
-
     const { selectedItems } = fileBrowserControls;
-
-    const restoreFromTrash = async () => {
-        if (!selectedItems.length) {
-            return;
-        }
-
-        const toRestore = selectedItems;
-        const result = await restoreLinks(
-            shareId,
-            selectedItems.map(({ LinkID }) => LinkID)
-        );
-        createRestoredLinksNotifications(toRestore, result);
-    };
 
     return (
         <ToolbarButton
             disabled={disabled || restoreLoading}
             title={c('Action').t`Restore from Trash`}
             icon="repeat"
-            onClick={() => withRestoreLoading(restoreFromTrash())}
+            onClick={() => withRestoreLoading(restoreFromTrash(shareId, selectedItems))}
             data-testid="toolbar-restore"
         />
     );

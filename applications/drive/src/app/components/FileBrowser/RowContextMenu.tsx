@@ -8,11 +8,12 @@ import { ContextMenu, DropdownMenuButton, Icon, isPreviewAvailable } from 'react
 import { FileBrowserItem } from './interfaces';
 import { LinkType } from '../../interfaces/link';
 import { toLinkURLType } from '../Drive/helpers';
-import { useDriveContent } from '../Drive/DriveContentProvider';
 import useToolbarActions from '../../hooks/drive/useToolbarActions';
 
 interface Props extends RouteComponentProps {
     item: FileBrowserItem;
+    selectedItems: FileBrowserItem[];
+    shareId: string;
     anchorRef: React.RefObject<HTMLElement>;
     isOpen: boolean;
     position:
@@ -25,14 +26,20 @@ interface Props extends RouteComponentProps {
     close: () => void;
 }
 
-const RowContextMenu = ({ item, anchorRef, isOpen, position, open, close, history }: Props) => {
-    const { download, openDetails, openMoveToFolder, openMoveToTrash, openRename, preview } = useToolbarActions();
-    const { fileBrowserControls } = useDriveContent();
-    const { selectedItems } = fileBrowserControls;
+const RowContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, position, open, close, history }: Props) => {
+    const {
+        download,
+        openDeletePermanently,
+        openDetails,
+        openMoveToFolder,
+        openMoveToTrash,
+        openRename,
+        preview,
+        restoreFromTrash,
+    } = useToolbarActions();
 
-    const allItems = [item, ...selectedItems.filter((selectedItem) => selectedItem.LinkID !== item.LinkID)];
-    const isMultiSelect = allItems.length > 1;
-    const hasFoldersSelected = allItems.some((item) => item.Type === LinkType.FOLDER);
+    const isMultiSelect = selectedItems.length > 1;
+    const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
     const isPreviewHidden = isMultiSelect || hasFoldersSelected || !item.MIMEType || !isPreviewAvailable(item.MIMEType);
 
     // TODO: refactor after router version upgrade.
@@ -46,45 +53,70 @@ const RowContextMenu = ({ item, anchorRef, isOpen, position, open, close, histor
         }
     }, [position]);
 
-    const menuButtons = [
+    const driveMenuItems = [
         {
             hidden: isPreviewHidden,
             name: c('Action').t`Preview`,
             icon: 'read',
+            testId: 'context-menu-preview',
             action: () => preview(item, openLink),
         },
         {
             hidden: false,
             name: c('Action').t`Download`,
             icon: 'download',
-            action: () => download(allItems),
+            testId: 'context-menu-download',
+            action: () => download(selectedItems),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Rename`,
             icon: 'file-edit',
+            testId: 'context-menu-rename',
             action: () => openRename(item),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Details`,
             icon: 'info',
+            testId: 'context-menu-details',
             action: () => openDetails(item),
         },
         {
             hidden: false,
             name: c('Action').t`Move to Folder`,
             icon: 'arrow-cross',
-            action: () => openMoveToFolder(allItems),
+            testId: 'context-menu-move',
+            action: () => openMoveToFolder(selectedItems),
         },
         {
             hidden: false,
             name: c('Action').t`Move to Trash`,
             icon: 'trash',
-            action: () => openMoveToTrash(allItems),
+            testId: 'context-menu-trash',
+            action: () => openMoveToTrash(selectedItems),
         },
-    ]
-        .filter((button) => !button.hidden)
+    ];
+
+    const trashMenuItems = [
+        {
+            hidden: false,
+            name: c('Action').t`Restore from Trash`,
+            icon: 'repeat',
+            testId: 'context-menu-restore',
+            action: () => restoreFromTrash(shareId, selectedItems),
+        },
+        {
+            hidden: false,
+            name: c('Action').t`Delete permanently`,
+            icon: 'delete',
+            testId: 'context-menu-delete',
+            action: () => openDeletePermanently(shareId, selectedItems),
+        },
+    ];
+
+    const menuButtons = (item.Trashed ? trashMenuItems : driveMenuItems)
+        .filter((menuItem) => !menuItem.hidden)
         .map((button) => (
             <DropdownMenuButton
                 key={button.name}
@@ -95,12 +127,12 @@ const RowContextMenu = ({ item, anchorRef, isOpen, position, open, close, histor
                     button.action();
                     close();
                 }}
+                data-testid={button.testId}
             >
                 <Icon className="mt0-25 mr0-5" name={button.icon} />
                 {button.name}
             </DropdownMenuButton>
         ));
-
     return (
         <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
             {menuButtons}
