@@ -83,7 +83,7 @@ const ItemRow = ({
     const handleContextMenu = (e: React.MouseEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
 
-        if (item.Trashed || item.Disabled) {
+        if (item.Disabled) {
             return;
         }
         e.preventDefault();
@@ -249,9 +249,11 @@ const ItemRow = ({
                 }}
                 onMouseDown={() => document.getSelection()?.removeAllRanges()}
             />
-            {!item.Disabled && !item.Trashed && (
+            {!item.Disabled && (
                 <RowContextMenu
                     item={item}
+                    selectedItems={selectedItems}
+                    shareId={shareId}
                     isOpen={isOpen}
                     open={open}
                     close={close}
