@@ -5,6 +5,9 @@ interface Props extends React.ThHTMLAttributes<HTMLTableHeaderCellElement> {
     type?: 'body' | 'header' | 'footer';
 }
 
+/**
+ * TableCell with type 'header' is deprecated. Please use TableHeaderCell component for header cells.
+ */
 const TableCell = ({ children, type = 'body', ...rest }: Props) => {
     if (type === 'header' || type === 'footer') {
         return (

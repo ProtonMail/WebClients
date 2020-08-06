@@ -11,6 +11,7 @@ export { default as TableBody } from './components/table/TableBody';
 export { default as TableRow } from './components/table/TableRow';
 export { default as TableHeader } from './components/table/TableHeader';
 export { default as TableCell } from './components/table/TableCell';
+export { default as TableHeaderCell } from './components/table/TableHeaderCell';
 export { default as TableFooter } from './components/table/TableFooter';
 export { default as TableCellBusy } from './components/table/TableCellBusy';
 export { default as TableRowSticky } from './components/table/TableRowSticky';
