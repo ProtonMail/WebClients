@@ -135,7 +135,10 @@
         flex-basis: auto;
       }
       &.flex-autogrid {
-        margin: 0;
+		margin: 0;
+		&.mb1 {
+			margin-bottom: 1em;
+		}
       }
       & > .flex-autogrid-item {
         padding: 0;
