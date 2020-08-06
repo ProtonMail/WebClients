@@ -86,7 +86,7 @@ const ItemColumnLayout = ({
                     </span>
                 </div>
                 <div className="item-icons ml0-5 flex-item-noshrink">
-                    <ItemLabels max={4} labels={labels} element={element} />
+                    <ItemLabels labels={labels} element={element} />
                     <ItemAttachmentIcon element={element} className="ml0-5 flex-self-vcenter" />
                 </div>
             </div>

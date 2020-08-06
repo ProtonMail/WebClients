@@ -95,7 +95,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                         <Icon name="label" className="mauto" alt={c('Label').t`Labels:`} />
                     </span>
                     <span className="flex-self-vcenter mr0-5 ellipsis pm-badgeLabel-container--groupMayWrap">
-                        <ItemLabels max={4} isCollapsed={false} element={message.data} labels={labels} showUnlabel />
+                        <ItemLabels isCollapsed={false} element={message.data} labels={labels} showUnlabel />
                     </span>
                 </div>
             )}
