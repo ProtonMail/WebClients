@@ -16,7 +16,7 @@ const Panel = ({ model }) => {
                     <div className="mb2">{model.text}</div>
                     <div>
                         {model.action ? (
-                            <Link className="pm-button pm-button--primary" to={model.link}>
+                            <Link className="pm-button inbl pm-button--primary" to={model.link}>
                                 {model.action}
                             </Link>
                         ) : (
