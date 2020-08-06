@@ -79,13 +79,21 @@
 }
 
 
-@include respond-to($breakpoint-small) { 
+@include respond-to($breakpoint-small) {
 
   .notifications-container {
-    left: 1em;
-    right: 1em;
-    -webkit-transform: none;
-    transform: none;
-    text-align: center;
+	text-align: center;
   }
+}
+
+@include respond-to($breakpoint-tiny) {
+
+	.notifications-container,
+	[class*="notification-"] {
+	  -webkit-transform: none;
+      transform: none;
+	  left: 1em;
+	  right: 1em;
+	  width: calc(100% - 2em);
+	}
 }
