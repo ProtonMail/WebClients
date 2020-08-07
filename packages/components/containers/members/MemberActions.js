@@ -102,6 +102,7 @@ const MemberActions = ({ member, addresses = [], organization }) => {
         },
         canDelete && {
             text: c('Member action').t`Delete`,
+            actionType: 'delete',
             onClick: openDelete,
         },
         canMakeAdmin && {

@@ -68,6 +68,7 @@ function ActionsLabel({ label, onChange }) {
         },
         {
             text: c('Action').t`Delete`,
+            actionType: 'delete',
             onClick: handleRemove,
             'data-test-id': 'folders/labels:item-delete',
         },

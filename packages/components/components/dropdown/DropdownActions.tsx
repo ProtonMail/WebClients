@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Info, Button, Group, ButtonGroup } from '../../index';
 
 import DropdownMenu from './DropdownMenu';
-import DropdownMenuButton from './DropdownMenuButton';
+import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
 import { classnames } from '../../helpers/component';
 
@@ -22,7 +22,7 @@ const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
     );
 };
 
-interface DropdownActionProps {
+interface DropdownActionProps extends DropdownMenuButtonProps {
     key?: string;
     text: string | ReactNode;
     tooltip?: string;

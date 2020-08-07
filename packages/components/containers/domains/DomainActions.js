@@ -39,6 +39,7 @@ const DomainActions = ({ domain, domainAddresses }) => {
             },
         {
             text: c('Action').t`Delete`,
+            actionType: 'delete',
             onClick: () => {
                 createModal(
                     <ConfirmModal onConfirm={handleConfirmDelete} title={c('Title').t`Delete domain`}>

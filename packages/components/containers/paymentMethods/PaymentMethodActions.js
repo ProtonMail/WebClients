@@ -65,6 +65,7 @@ const PaymentMethodActions = ({ method, methods, index }) => {
             },
         {
             text: c('Action').t`Delete`,
+            actionType: 'delete',
             onClick: () => {
                 createModal(
                     <ConfirmModal onConfirm={deleteMethod} title={c('Confirmation title').t`Delete payment method`}>

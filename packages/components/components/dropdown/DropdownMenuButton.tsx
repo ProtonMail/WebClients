@@ -1,13 +1,15 @@
 import React from 'react';
 import { classnames } from '../../helpers/component';
 
-interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface Props
+    extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     loading?: boolean;
     isSelected?: boolean;
     /*
      * Used by DropdownMenu to add CSS classes to the parent li
      */
     liClassName?: string;
+    actionType?: 'delete';
 }
 
 const DropdownMenuButton = ({
@@ -17,6 +19,7 @@ const DropdownMenuButton = ({
     loading,
     children,
     liClassName, // eslint-disable-line no-unused-vars, @typescript-eslint/no-unused-vars
+    actionType, // eslint-disable-line no-unused-vars, @typescript-eslint/no-unused-vars
     ...rest
 }: Props) => {
     return (

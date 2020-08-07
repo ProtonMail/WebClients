@@ -58,10 +58,12 @@ const KeysActions = ({
             tooltip: c('Keys actions').t`Enable signature verification and encryption with this key`,
             onClick: () => onSetNotCompromised(ID),
         },
-        onDeleteKey && {
-            text: c('Keys actions').t`Delete`,
-            onClick: () => onDeleteKey(ID),
-        },
+        onDeleteKey &&
+            ({
+                text: c('Keys actions').t`Delete`,
+                actionType: 'delete',
+                onClick: () => onDeleteKey(ID),
+            } as const),
     ].filter(isTruthy);
 
     return <DropdownActions className="pm-button--small" loading={isLoading} list={list} />;

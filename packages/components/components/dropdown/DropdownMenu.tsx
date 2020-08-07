@@ -12,7 +12,14 @@ const DropdownMenu = ({ children, className = '', listRef }: Props) => {
         <ul className={classnames(['unstyled mt0 mb0', className])} ref={listRef}>
             {React.Children.toArray(children).map((child, i) => {
                 return React.isValidElement(child) ? (
-                    <li className={classnames(['dropDown-item', child.props.liClassName])} key={child.key || i}>
+                    <li
+                        className={classnames([
+                            'dropDown-item',
+                            child.props.actionType === 'delete' && 'dropDown-item--delete',
+                            child.props.liClassName,
+                        ])}
+                        key={child.key || i}
+                    >
                         {child}
                     </li>
                 ) : null;

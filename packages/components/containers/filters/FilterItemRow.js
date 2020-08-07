@@ -72,6 +72,7 @@ function FilterItemRow({ filter, ...rest }) {
         },
         {
             text: c('Action').t`Delete`,
+            actionType: 'delete',
             onClick: handleRemove,
         },
     ].filter(Boolean);
