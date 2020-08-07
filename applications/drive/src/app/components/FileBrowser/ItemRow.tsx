@@ -243,6 +243,7 @@ const ItemRow = ({
                 onDragOver={unlessDisabled(dragMoveControls?.handleDragOver)}
                 onDrop={unlessDisabled(dragMoveControls?.handleDrop)}
                 onDragLeave={unlessDisabled(dragMoveControls?.handleDragLeave)}
+                onDragEnter={unlessDisabled(dragMoveControls?.handleDragEnter)}
                 onDragEnd={(e) => {
                     e.currentTarget.blur();
                     handleDragEnd();
