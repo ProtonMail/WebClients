@@ -1,8 +1,9 @@
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { FileRevisionState } from './file';
 
 export enum LinkType {
     FOLDER = 1,
-    FILE = 2
+    FILE = 2,
 }
 interface FileProperties {
     ContentKeyPacket: string;
@@ -82,3 +83,5 @@ export interface MoveLink {
 }
 
 export type SortKeys = keyof Pick<DriveLink, 'Type' | 'ModifyTime' | 'Size'>;
+
+export type SortParams = { sortField: SortKeys; sortOrder: SORT_DIRECTION };
