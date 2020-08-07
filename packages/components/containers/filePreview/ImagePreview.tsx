@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import loadImage, { MetaData, Exif } from 'blueimp-load-image';
-import brokenImageSvg from 'design-system/assets/img/shared/broken-image.svg';
 import { c } from 'ttag';
 import ZoomControl from './ZoomControl';
-import { PrimaryButton } from '../../components/button';
 import useElementRect from '../../hooks/useElementRect';
+import UnsupportedPreview from './UnsupportedPreview';
 
 const calculateImagePosition = (scale: number, image?: HTMLImageElement | null, bounds?: DOMRect) => {
     if (!image || !bounds) {
@@ -117,14 +116,7 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
             <div ref={containerRef} className="pd-file-preview-container">
                 <div>
                     {error ? (
-                        <div className="centered-absolute aligncenter">
-                            <img className="mb0-5" src={brokenImageSvg} alt={c('Info').t`Corrupted file`} />
-                            <div className="p0-25">{c('Info').t`No preview available`}</div>
-                            {onSave && (
-                                <PrimaryButton onClick={onSave} className="mt2">{c('Action')
-                                    .t`Download`}</PrimaryButton>
-                            )}
-                        </div>
+                        <UnsupportedPreview onSave={onSave} type="image" />
                     ) : (
                         imageData.src && (
                             <img
