@@ -23,7 +23,16 @@ function Drive({ activeFolder, openLink }: Props) {
     const cache = useDriveCache();
     const { getLinkMeta } = useDrive();
     const { startFileTransfer } = useFiles();
-    const { loadNextPage, fileBrowserControls, loading, contents, complete, initialized } = useDriveContent();
+    const {
+        loadNextPage,
+        fileBrowserControls,
+        loading,
+        contents,
+        complete,
+        initialized,
+        sortParams,
+        setSorting,
+    } = useDriveContent();
     const { preventLeave } = usePreventLeave();
 
     const { linkId, shareId } = activeFolder;
@@ -80,6 +89,8 @@ function Drive({ activeFolder, openLink }: Props) {
             loading={loading}
             contents={contents}
             selectedItems={selectedItems}
+            sortParams={sortParams}
+            setSorting={setSorting}
             onItemClick={handleClick}
             onToggleItemSelected={toggleSelectItem}
             clearSelections={clearSelections}
