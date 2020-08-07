@@ -37,8 +37,9 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
                             },
                         {
                             text: c('Action').t`Delete`,
+                            actionType: 'delete',
                             onClick: () => onDelete(calendar),
-                        },
+                        } as const,
                     ].filter(isTruthy);
 
                     return (
