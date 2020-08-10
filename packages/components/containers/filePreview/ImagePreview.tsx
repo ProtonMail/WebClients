@@ -114,27 +114,25 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
     return (
         <>
             <div ref={containerRef} className="pd-file-preview-container">
-                <div>
-                    {error ? (
-                        <UnsupportedPreview onSave={onSave} type="image" />
-                    ) : (
-                        imageData.src && (
-                            <img
-                                ref={imageRef}
-                                onLoad={() => fitToContainer()}
-                                onError={handleBrokenImage}
-                                className="pd-file-preview-image"
-                                style={{
-                                    transform: `translate(${position.x}, ${position.y}) rotate(${imageData.rotation}deg)`,
-                                    height: imageRef.current ? imageRef.current.naturalHeight * scale : undefined,
-                                    width: imageRef.current ? imageRef.current.naturalWidth * scale : undefined,
-                                }}
-                                src={imageData.src}
-                                alt={c('Info').t`Preview`}
-                            />
-                        )
-                    )}
-                </div>
+                {error ? (
+                    <UnsupportedPreview onSave={onSave} type="image" />
+                ) : (
+                    imageData.src && (
+                        <img
+                            ref={imageRef}
+                            onLoad={() => fitToContainer()}
+                            onError={handleBrokenImage}
+                            className="pd-file-preview-image"
+                            style={{
+                                transform: `translate(${position.x}, ${position.y}) rotate(${imageData.rotation}deg)`,
+                                height: imageRef.current ? imageRef.current.naturalHeight * scale : undefined,
+                                width: imageRef.current ? imageRef.current.naturalWidth * scale : undefined,
+                            }}
+                            src={imageData.src}
+                            alt={c('Info').t`Preview`}
+                        />
+                    )
+                )}
             </div>
             {!error && (
                 <ZoomControl onReset={fitToContainer} scale={scale} onZoomIn={handleZoomIn} onZoomOut={handleZoomOut} />

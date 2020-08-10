@@ -28,7 +28,11 @@ const FilePreview = ({ contents, fileName, mimeType, loading, navigationControls
 
     const renderPreview = () => {
         if (!mimeType || !isPreviewAvailable(mimeType)) {
-            return <UnsupportedPreview onSave={onSave} />;
+            return (
+                <div className="pd-file-preview-container">
+                    <UnsupportedPreview onSave={onSave} />
+                </div>
+            );
         }
 
         if (!contents) {
