@@ -246,7 +246,7 @@ const HeaderExpanded = ({
                     <Group className="mr1 mb0-5">
                         <HeaderDropdown
                             autoClose={false}
-                            content={<Icon name="filter" />}
+                            content={<Icon name="filter" alt={c('Action').t`Custom filter`} />}
                             className="pm-button pm-group-button pm-button--for-icon"
                             dropDownClassName="customFilterDropdown"
                             title={c('Action').t`Custom filter`}
@@ -259,7 +259,7 @@ const HeaderExpanded = ({
                         <HeaderDropdown
                             autoClose={false}
                             noMaxSize={true}
-                            content={<Icon name="folder" />}
+                            content={<Icon name="folder" alt={c('Action').t`Move to`} />}
                             className="pm-button pm-group-button pm-button--for-icon"
                             dropDownClassName="moveDropdown"
                             title={c('Action').t`Move to`}
@@ -279,7 +279,7 @@ const HeaderExpanded = ({
                         <HeaderDropdown
                             autoClose={false}
                             noMaxSize={true}
-                            content={<Icon name="label" />}
+                            content={<Icon name="label" alt={c('Action').t`Label as`} />}
                             className="pm-button pm-group-button pm-button--for-icon"
                             dropDownClassName="labelDropdown"
                             title={c('Action').t`Label as`}
@@ -305,7 +305,7 @@ const HeaderExpanded = ({
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                     >
                         <Tooltip title={c('Title').t`Reply`} className="flex increase-surface-click">
-                            <Icon name="reply" size={20} />
+                            <Icon name="reply" size={20} alt={c('Title').t`Reply`} />
                         </Tooltip>
                     </ButtonGroup>
                     <ButtonGroup
@@ -314,7 +314,7 @@ const HeaderExpanded = ({
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                     >
                         <Tooltip title={c('Title').t`Reply all`} className="flex increase-surface-click">
-                            <Icon name="reply-all" size={20} />
+                            <Icon name="reply-all" size={20} alt={c('Title').t`Reply all`} />
                         </Tooltip>
                     </ButtonGroup>
                     <ButtonGroup
@@ -323,7 +323,7 @@ const HeaderExpanded = ({
                         onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                     >
                         <Tooltip title={c('Title').t`Forward`} className="flex increase-surface-click">
-                            <Icon name="forward" size={20} />
+                            <Icon name="forward" size={20} alt={c('Title').t`Forward`} />
                         </Tooltip>
                     </ButtonGroup>
                 </Group>

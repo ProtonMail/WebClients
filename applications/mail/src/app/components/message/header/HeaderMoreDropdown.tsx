@@ -126,7 +126,7 @@ const HeaderMoreDropdown = ({
         <Group className="mr1 mb0-5">
             <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon relative">
                 <Tooltip title={c('Title').t`Mark as unread`} className="flex increase-surface-click">
-                    <Icon name="unread" />
+                    <Icon name="unread" alt={c('Title').t`Mark as unread`} />
                 </Tooltip>
             </ButtonGroup>
             {isInTrash ? (
@@ -136,7 +136,7 @@ const HeaderMoreDropdown = ({
                     className="pm-button--for-icon relative"
                 >
                     <Tooltip title={c('Title').t`Move to inbox`} className="flex increase-surface-click">
-                        <Icon name="inbox" />
+                        <Icon name="inbox" alt={c('Title').t`Move to inbox`} />
                     </Tooltip>
                 </ButtonGroup>
             ) : (
@@ -146,7 +146,7 @@ const HeaderMoreDropdown = ({
                     className="pm-button--for-icon relative"
                 >
                     <Tooltip title={c('Title').t`Move to trash`} className="flex increase-surface-click">
-                        <Icon name="trash" />
+                        <Icon name="trash" alt={c('Title').t`Move to trash`} />
                     </Tooltip>
                 </ButtonGroup>
             )}
@@ -156,7 +156,7 @@ const HeaderMoreDropdown = ({
                 className="pm-button pm-button--for-icon pm-group-button"
                 autoClose={true}
                 title={c('Title').t`More`}
-                content={<Icon name="caret" className="caret-like" />}
+                content={<Icon name="caret" className="caret-like" alt={c('Title').t`More options`} />}
                 hasCaret={false}
             >
                 {({ onClose }) => {
