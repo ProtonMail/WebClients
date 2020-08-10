@@ -90,6 +90,7 @@ const HeaderRecipientItemGroup = ({
                     <button
                         ref={anchorRef}
                         onClick={toggle}
+                        aria-expanded={isOpen}
                         className="item-icon flex-item-noshrink rounded50 inline-flex stop-propagation mr0-5"
                     >
                         <span className="mauto item-abbr" aria-hidden="true">
