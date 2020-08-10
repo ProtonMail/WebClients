@@ -132,7 +132,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                         external={true}
                         icon="settings-singular"
                         title={c('Info').t`Manage your folders`}
-                        info={c('Link').t`Folders`}
+                        info={c('Link').t`Manage your folders`}
                     />
                 }
             />
@@ -148,7 +148,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                         external={true}
                         icon="settings-singular"
                         title={c('Info').t`Manage your labels`}
-                        info={c('Link').t`Labels`}
+                        info={c('Link').t`Manage your labels`}
                     />
                 }
             />
