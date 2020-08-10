@@ -9,6 +9,8 @@
 - added `semibold` helper
 - added `tiny-shadow-container` helper, made it dark mode friendly
 - added `button-showOnHover` and `.button-showOnHover-element` helper (to display something when hovering a parent)
+- added `flex-flex-children` helper
+- add “broken file” image
 
 
 ## Updated/fixes
@@ -19,6 +21,7 @@
 - fix `item-weight` display in row mode
 - fix - notifications display on mobile
 - fix autogrid margin behaviour on mobile
+- fix - delete action in dropdown should be red - added modifier for it
 
 
 # [1.8.4] - 2019-07-28
