@@ -175,7 +175,6 @@ const MailboxContainer = ({
         <>
             {showToolbar && (
                 <Toolbar
-                    location={location}
                     labelID={labelID}
                     elementID={elementID}
                     selectedIDs={selectedIDs}

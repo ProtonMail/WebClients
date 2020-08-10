@@ -8,7 +8,8 @@ import {
     useModals,
     useEventManager,
     useApi,
-    useLabels
+    useLabels,
+    useFolders
 } from 'react-components';
 import { emptyLabel as emptyLabelRequest } from 'proton-shared/lib/api/messages';
 
@@ -22,23 +23,31 @@ export const useEmptyLabel = () => {
     const api = useApi();
     const optimisticEmptyLabel = useOptimisticEmptyLabel();
     const [labels = []] = useLabels();
+    const [folders = []] = useFolders();
 
     const emptyLabel = useCallback(async (labelID: string) => {
         const isLabel = isCustomLabel(labelID, labels);
+        const label = labels.find((label) => label.ID === labelID) ||
+            folders.find((folder) => folder.ID === labelID) || { ID: labelID, Name: '' };
         await new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal
-                    title={isLabel ? c('Title').t`Empty label` : c('Title').t`Empty folder`}
-                    confirm={<ErrorButton type="submit" icon={null}>{c('Action').t`Empty`}</ErrorButton>}
+                    title={c('Title').t`Empty ${label.Name}`}
+                    confirm={<ErrorButton type="submit">{c('Action').t`Empty`}</ErrorButton>}
                     onConfirm={resolve}
                     onClose={reject}
                 >
-                    <Alert type="warning">
+                    <Alert type="info">
                         {isLabel
                             ? c('Info')
-                                  .t`This action will permanently delete your emails. Are you sure you want to empty this label?`
+                                  .t`Please note that if you empty this label, you will permanently delete all the emails with this label.`
                             : c('Info')
-                                  .t`This action will permanently delete your emails. Are you sure you want to empty this folder?`}
+                                  .t`Please note that if you empty this folder, you will permanently delete all the emails stored in it.`}
+                    </Alert>
+                    <Alert type="error">
+                        {isLabel
+                            ? c('Info').t`Are you sure you want to empty this label?`
+                            : c('Info').t`Are you sure you want to empty this folder?`}
                     </Alert>
                 </ConfirmModal>
             );

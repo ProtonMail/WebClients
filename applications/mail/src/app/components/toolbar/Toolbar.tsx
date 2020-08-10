@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
-import { Location } from 'history';
 import { Icon, useLabels, useFolders } from 'react-components';
 import { identity } from 'proton-shared/lib/helpers/function';
 import { MailSettings } from 'proton-shared/lib/interfaces';
@@ -25,7 +24,6 @@ import { Breakpoints } from '../../models/utils';
 import NavigationControls from './NavigationControls';
 
 interface Props {
-    location: Location;
     loading?: boolean;
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     labelID: string;
@@ -48,7 +46,6 @@ interface Props {
 }
 
 const Toolbar = ({
-    location,
     labelID = '',
     elementID,
     elements,
@@ -113,10 +110,9 @@ const Toolbar = ({
                 />
                 <DeleteButton
                     labelID={labelID}
-                    mailSettings={mailSettings}
+                    conversationMode={conversationMode}
                     breakpoints={breakpoints}
                     selectedIDs={selectedIDs}
-                    location={location}
                 />
                 <ToolbarSeparator />
                 <ToolbarDropdown
