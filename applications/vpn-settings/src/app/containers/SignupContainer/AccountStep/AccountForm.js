@@ -31,12 +31,12 @@ const AccountForm = ({ model, onSubmit }) => {
     const [confirmPassword, setConfirmPassword] = useState(model.password);
     const [email, setEmail] = useState(model.email);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [usernameError, setUsernameError] = useState();
+    const [asyncUsernameError, setAsyncUsernameError] = useState();
     const [loading, withLoading] = useLoading();
 
     const handleChangeUsername = ({ target }) => {
-        if (usernameError) {
-            setUsernameError(null);
+        if (asyncUsernameError) {
+            setAsyncUsernameError('');
         }
         setUsername(target.value);
     };
@@ -45,15 +45,25 @@ const AccountForm = ({ model, onSubmit }) => {
     const handleChangeConfirmPassword = ({ target }) => setConfirmPassword(target.value);
     const handleChangeEmail = ({ target }) => setEmail(target.value);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const emailError = !email
+        ? c('Signup error').t`This field is required`
+        : !validateEmailAddress(email)
+        ? c('Signup error').t`Email address invalid`
+        : '';
+
+    const usernameError = asyncUsernameError || (!username ? c('Signup error').t`This field is required` : '');
+
+    const passwordError = !password ? c('Signup error').t`This field is required` : '';
+    const confirmPasswordError = !confirmPassword
+        ? c('Signup error').t`This field is required`
+        : password !== confirmPassword
+        ? c('Error').t`Passwords do not match`
+        : '';
+
+    const handleSubmit = async () => {
         setIsSubmitted(true);
 
-        if (password !== confirmPassword) {
-            return;
-        }
-
-        if (!validateEmailAddress(email)) {
+        if (passwordError || confirmPasswordError || emailError || usernameError) {
             return;
         }
 
@@ -77,7 +87,7 @@ const AccountForm = ({ model, onSubmit }) => {
                 payload
             });
         } catch (e) {
-            setUsernameError(e.data ? e.data.Error : c('Error').t`Can't check username, try again later`);
+            setAsyncUsernameError(e.data ? e.data.Error : c('Error').t`Can't check username, try again later`);
         }
     };
 
@@ -106,7 +116,10 @@ const AccountForm = ({ model, onSubmit }) => {
             ) : null}
             <form
                 className={classnames(['flex-item-fluid-auto', challengeLoading && 'hidden'])}
-                onSubmit={(e) => withLoading(handleSubmit(e))}
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    withLoading(handleSubmit());
+                }}
                 autoComplete="off"
             >
                 <input value={username} name="login" id="login" className="hidden" />
@@ -122,12 +135,12 @@ const AccountForm = ({ model, onSubmit }) => {
                     <Field className="auto flex-item-fluid">
                         <Challenge challengeRef={challengeRefUsername} type="0" onLoaded={handleChallengeLoaded}>
                             <Input
-                                required
                                 error={usernameError}
                                 value={username}
                                 onChange={handleChangeUsername}
                                 name="username"
                                 id="username"
+                                isSubmitted={isSubmitted}
                                 autoFocus={true}
                                 placeholder={c('Placeholder').t`Username`}
                             />
@@ -148,21 +161,22 @@ const AccountForm = ({ model, onSubmit }) => {
                             <PasswordInput
                                 id="password"
                                 autoComplete="nope"
-                                required
                                 value={password}
                                 onChange={handleChangePassword}
                                 name="password"
+                                error={passwordError}
+                                isSubmitted={isSubmitted}
                                 placeholder={c('Placeholder').t`Password`}
                             />
                         </div>
                         <PasswordInput
                             id="passwordConfirmation"
                             autoComplete="nope"
-                            required
                             value={confirmPassword}
                             onChange={handleChangeConfirmPassword}
-                            error={password !== confirmPassword ? c('Error').t`Passwords do not match` : undefined}
+                            error={confirmPasswordError}
                             name="passwordConfirmation"
+                            isSubmitted={isSubmitted}
                             placeholder={c('Placeholder').t`Confirm password`}
                         />
                     </Field>
@@ -185,7 +199,12 @@ const AccountForm = ({ model, onSubmit }) => {
                                     value={email}
                                     onChange={handleChangeEmail}
                                     isSubmitted={isSubmitted}
-                                    error={isSubmitted && !email ? c('Error').t`This field is required` : ''}
+                                    error={emailError}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                            withLoading(handleSubmit());
+                                        }
+                                    }}
                                 />
                             </Challenge>
                         </div>
