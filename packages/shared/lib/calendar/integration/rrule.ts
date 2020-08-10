@@ -8,7 +8,7 @@ import {
     VcalDaysKeys,
     VcalRruleProperty,
     VcalRrulePropertyValue,
-    VcalVeventComponent
+    VcalVeventComponent,
 } from '../../interfaces/calendar/VcalModel';
 import { MAXIMUM_DATE, MAXIMUM_DATE_UTC, FREQUENCY, FREQUENCY_COUNT_MAX, FREQUENCY_INTERVALS_MAX } from '../constants';
 
@@ -41,13 +41,14 @@ export const SUPPORTED_RRULE_PROPERTIES = [
     'byday',
     'bymonthday',
     'bymonth',
-    'byyearday'
+    'byyearday',
 ];
 export const SUPPORTED_RRULE_PROPERTIES_DAILY: (keyof VcalRrulePropertyValue)[] = [
     'freq',
     'count',
     'interval',
-    'until'
+    'until',
+    'wkst',
 ];
 export const SUPPORTED_RRULE_PROPERTIES_WEEKLY: (keyof VcalRrulePropertyValue)[] = [
     'freq',
@@ -55,7 +56,7 @@ export const SUPPORTED_RRULE_PROPERTIES_WEEKLY: (keyof VcalRrulePropertyValue)[]
     'interval',
     'until',
     'wkst',
-    'byday'
+    'byday',
 ];
 export const SUPPORTED_RRULE_PROPERTIES_MONTHLY: (keyof VcalRrulePropertyValue)[] = [
     'freq',
@@ -65,7 +66,7 @@ export const SUPPORTED_RRULE_PROPERTIES_MONTHLY: (keyof VcalRrulePropertyValue)[
     'wkst',
     'bymonthday',
     'byday',
-    'bysetpos'
+    'bysetpos',
 ];
 export const SUPPORTED_RRULE_PROPERTIES_YEARLY: (keyof VcalRrulePropertyValue)[] = [
     'freq',
@@ -75,7 +76,7 @@ export const SUPPORTED_RRULE_PROPERTIES_YEARLY: (keyof VcalRrulePropertyValue)[]
     'wkst',
     'bymonthday',
     'bymonth',
-    'byyearday'
+    'byyearday',
 ];
 const ALLOWED_BYSETPOS = [-1, 1, 2, 3, 4];
 
@@ -218,7 +219,7 @@ export const getSupportedUntil = (until: VcalDateOrDateTimeValue, isAllDay: bool
         return {
             year: until.year,
             month: until.month,
-            day: until.day
+            day: until.day,
         };
     }
     const zonedUntilDateTime = getIsDateTimeValue(until)
