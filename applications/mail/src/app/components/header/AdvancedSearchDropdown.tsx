@@ -306,24 +306,31 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                         </div>
                     </div>
                     <div className="mb2 flex flex-nowrap onmobile-flex-column">
-                        <Label className="advancedSearch-label">{c('Label').t`Attachments`}</Label>
+                        <Label className="advancedSearch-label" id="advanced-search-attachments-label">{c('Label')
+                            .t`Attachments`}</Label>
                         <div className="flex-item-fluid pt0-25">
                             <Radio
                                 id="advanced-search-attachments-all"
                                 onChange={() => updateModel({ ...model, attachments: UNDEFINED })}
                                 checked={model.attachments === UNDEFINED}
+                                name="advanced-search-attachments"
+                                aria-describedby="advanced-search-attachments-label"
                                 className="mr1"
                             >{c('Attachment radio advanced search').t`All`}</Radio>
                             <Radio
                                 id="advanced-search-attachments-yes"
                                 onChange={() => updateModel({ ...model, attachments: WITH_ATTACHMENTS })}
                                 checked={model.attachments === WITH_ATTACHMENTS}
+                                name="advanced-search-attachments"
+                                aria-describedby="advanced-search-attachments-label"
                                 className="mr1"
                             >{c('Attachment radio advanced search').t`Yes`}</Radio>
                             <Radio
                                 id="advanced-search-attachments-no"
                                 onChange={() => updateModel({ ...model, attachments: NO_ATTACHMENTS })}
                                 checked={model.attachments === NO_ATTACHMENTS}
+                                name="advanced-search-attachments"
+                                aria-describedby="advanced-search-attachments-label"
                             >{c('Attachment radio advanced search').t`No`}</Radio>
                         </div>
                     </div>
