@@ -100,15 +100,17 @@ function useDrive() {
 
     const initDrive = async () => {
         const shareIds = await getUserShares();
+        let shareId = shareIds[0];
 
-        if (shareIds.length) {
+        if (shareId) {
             cache.set.emptyShares(shareIds);
-            return getShareMeta(shareIds[0]);
+        } else {
+            const { Share } = await createVolume();
+            createModal(<OnboardingModal />);
+            shareId = Share.ID;
         }
 
-        const { Share } = await createVolume();
-        createModal(<OnboardingModal />);
-        return getShareMeta(Share.ID);
+        return getShareMeta(shareId);
     };
 
     const getShareKeys = async (shareId: string) => {
@@ -224,7 +226,7 @@ function useDrive() {
         const { Links } = await debouncedRequest<LinkChildrenResult>(
             queryFolderChildren(shareId, linkId, { Page, PageSize, FoldersOnly })
         );
-        const { privateKey } = linkId ? await getLinkKeys(shareId, linkId) : await getShareKeys(shareId);
+        const { privateKey } = await getLinkKeys(shareId, linkId);
 
         const decryptedLinks = await Promise.all(Links.map((link) => decryptLink(link, privateKey)));
         cache.set.foldersOnlyLinkMetas(
@@ -257,7 +259,7 @@ function useDrive() {
         const { Links } = await debouncedRequest<LinkChildrenResult>(
             queryFolderChildren(shareId, linkId, { Page, PageSize, Sort, Desc })
         );
-        const { privateKey } = linkId ? await getLinkKeys(shareId, linkId) : await getShareKeys(shareId);
+        const { privateKey } = await getLinkKeys(shareId, linkId);
 
         const decryptedLinks = await Promise.all(Links.map((link) => decryptLink(link, privateKey)));
         cache.set.childLinkMetas(
