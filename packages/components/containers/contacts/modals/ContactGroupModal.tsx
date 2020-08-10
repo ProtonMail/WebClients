@@ -1,5 +1,5 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
-import { c } from 'ttag';
+import React, { useState, ChangeEvent } from 'react';
+import { c, msgid } from 'ttag';
 
 import { randomIntFromInterval, noop } from 'proton-shared/lib/helpers/function';
 import { diff, orderBy } from 'proton-shared/lib/helpers/array';
@@ -8,20 +8,25 @@ import { createContactGroup, updateLabel } from 'proton-shared/lib/api/labels';
 import { labelContactEmails, unLabelContactEmails } from 'proton-shared/lib/api/contacts';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts/Contact';
 
-import ContactGroupTable from '../../../components/contacts/ContactGroupTable';
-import useEventManager from '../../eventManager/useEventManager';
-import useApi from '../../api/useApi';
-import useNotifications from '../../notifications/useNotifications';
-import { useContactGroups } from '../../../hooks/useCategories';
-import Label from '../../../components/label/Label';
-import useContactEmails from '../../../hooks/useContactEmails';
-import Field from '../../../components/container/Field';
-import ColorPicker from '../../../components/input/ColorPicker';
-import Row from '../../../components/container/Row';
-import Select from '../../../components/select/Select';
-import Input from '../../../components/input/Input';
-import FormModal from '../../../components/modal/FormModal';
-import { PrimaryButton } from '../../../components/button';
+import {
+    Autocomplete,
+    FormModal,
+    Input,
+    Row,
+    Field,
+    Label,
+    ColorPicker,
+    ContactGroupTable,
+    useContactEmails,
+    useNotifications,
+    useContactGroups,
+    useApi,
+    useEventManager,
+    useAutocomplete,
+    Icon,
+} from '../../..';
+
+import './ContactGroupModal.scss';
 
 const mapIDs = (contactEmails: ContactEmail[]) => contactEmails.map(({ ID }) => ID);
 
@@ -31,6 +36,10 @@ interface Props {
 }
 
 const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) => {
+    const { changeInputValue, inputValue } = useAutocomplete({
+        multiple: false,
+    });
+
     const [loading, setLoading] = useState(false);
     const { call } = useEventManager();
     const api = useApi();
@@ -51,33 +60,29 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) =
                 ? contactGroup.Color
                 : LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
         contactEmails: contactGroupID ? existingContactEmails : [],
-        contactEmailID: '',
     });
     const contactEmailIDs = model.contactEmails.map(({ ID }: ContactEmail) => ID);
+
     const options = orderBy(contactEmails as ContactEmail[], 'Email')
         .filter(({ ID }: ContactEmail) => !contactEmailIDs.includes(ID))
         .map(({ ID, Email, Name }: ContactEmail) => ({
-            text: Email === Name ? `<${Email}>` : `${Name} <${Email}>`,
+            label: Email === Name ? `<${Email}>` : `${Name} <${Email}>`,
             value: ID,
         }));
 
     const handleChangeName = ({ target }: ChangeEvent<HTMLInputElement>) => setModel({ ...model, name: target.value });
     const handleChangeColor = (color: string) => setModel({ ...model, color });
-    const handleChangeEmail = ({ target }: ChangeEvent<HTMLSelectElement>) =>
-        setModel({ ...model, contactEmailID: target.value });
 
-    const handleAddEmail = () => {
-        const contactEmail = contactEmails.find(({ ID }: ContactEmail) => ID === model.contactEmailID);
-        const alreadyExist = model.contactEmails.find(({ ID }: ContactEmail) => ID === model.contactEmailID);
-
+    const handleAddEmail = (contactEmailID: string) => {
+        const contactEmail = contactEmails.find(({ ID }: ContactEmail) => ID === contactEmailID);
+        const alreadyExist = model.contactEmails.find(({ ID }: ContactEmail) => ID === contactEmailID);
         if (contactEmail && !alreadyExist) {
-            const copy = [...model.contactEmails];
-            copy.push(contactEmail);
-            setModel({ ...model, contactEmails: copy });
+            setModel((model) => ({ ...model, contactEmails: [contactEmail, ...model.contactEmails] }));
+            changeInputValue('');
         }
     };
 
-    const handleDeleteEmail = (contactEmailID: string) => () => {
+    const handleDeleteEmail = (contactEmailID: string) => {
         const index = model.contactEmails.findIndex(({ ID }: ContactEmail) => ID === contactEmailID);
 
         if (index > -1) {
@@ -118,14 +123,22 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) =
         }
     };
 
-    useEffect(() => {
-        if (options.length) {
-            setModel({
-                ...model,
-                contactEmailID: options[0].value,
-            });
-        }
-    }, [model.contactEmails.length]);
+    const renderAutoCompleteItem = ({ label }: { label: string }, input: string) => {
+        const trimmed = input.replace(/</gi, '&lt;');
+
+        const addMark = (s: string) => s.replace(new RegExp(trimmed, 'gi'), '<mark>$&</mark>');
+
+        let [name, email] = label.split('<');
+        name = name.trim();
+        email = email.replace('>', '');
+
+        const li = document.createElement('li');
+        li.setAttribute('role', 'option');
+        li.setAttribute('aria-selected', 'false');
+        li.innerHTML = name ? `${addMark(name)} &lt;${addMark(email)}&gt;` : `&lt;${addMark(email)}&gt;`;
+
+        return li;
+    };
 
     return (
         <FormModal
@@ -136,6 +149,10 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) =
             onClose={onClose}
             {...rest}
         >
+            <h4 className="mb1 flex flex-items-center">
+                <Icon className="mr0-5" name="info" />
+                <span>{c('Title').t`Group information`}</span>
+            </h4>
             <Row>
                 <Label htmlFor="contactGroupName">{c('Label for contact group name').t`Name`}</Label>
                 <Field>
@@ -147,33 +164,49 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) =
                     />
                 </Field>
             </Row>
-            <Row>
+            <Row className="border-bottom pb1 mb1">
                 <Label htmlFor="contactGroupColor">{c('Label for contact group color').t`Color`}</Label>
                 <Field>
                     <ColorPicker color={model.color} onChange={handleChangeColor} />
                 </Field>
             </Row>
+            <h4 className="mb1 flex flex-items-center">
+                <Icon className="mr0-5" name="contacts-groups" />
+                <span>{c('Title').t`Group members`}</span>
+            </h4>
             {options.length ? (
                 <Row>
                     <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
                     <Field>
-                        <Select
-                            id="contactGroupEmail"
-                            value={model.contactEmailID}
-                            options={options}
-                            onChange={handleChangeEmail}
-                        />
-                        {model.contactEmails.length ? null : (
-                            <div className="mt1">{c('Info').t`No contacts added yet`}</div>
-                        )}
+                        <Autocomplete
+                            inputValue={inputValue}
+                            onSelect={handleAddEmail}
+                            onInputValueChange={changeInputValue}
+                            placeholder={c('Placeholder').t`Start typing an email address`}
+                            list={options}
+                            fieldClassName="flex-items-center"
+                            className="contact-group-emails-autocomplete"
+                            item={renderAutoCompleteItem}
+                            minChars={1}
+                            maxItems={6}
+                            autoFirst
+                        >
+                            <Icon className="mr0-5" name="search" />
+                        </Autocomplete>
                     </Field>
-                    <div className="ml1">
-                        <PrimaryButton onClick={handleAddEmail}>{c('Action').t`Add`}</PrimaryButton>
-                    </div>
                 </Row>
             ) : null}
+
+            <ContactGroupTable contactEmails={model.contactEmails} onDelete={handleDeleteEmail} />
+
             {model.contactEmails.length ? (
-                <ContactGroupTable contactEmails={model.contactEmails} onDelete={handleDeleteEmail} />
+                <div className="aligncenter opacity-50">
+                    {c('Info').ngettext(
+                        msgid`1 Member`,
+                        `${model.contactEmails.length} Members`,
+                        model.contactEmails.length
+                    )}
+                </div>
             ) : null}
         </FormModal>
     );

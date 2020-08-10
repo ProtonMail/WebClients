@@ -1,0 +1,36 @@
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
+.contact-group-emails-autocomplete {
+	ul {
+		position: absolute;
+		left: 0;
+		top: calc(100% + 5px);
+		z-index: 10;
+		list-style: none;
+		box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
+		background: var(--bgcolor-input, $pm-input-background);
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		max-height: 20rem;
+		overflow-y: auto;
+	}
+
+	li {
+		cursor: pointer;
+		padding: 0.5em;
+
+		&[aria-selected='true'] {
+			background-color: rgba($pm-primary, 0.2);
+		}
+
+		&:hover {
+			background-color: var(--bordercolor-input, $autocomplete-bg-color-hover);
+		}
+	}
+
+	.visually-hidden {
+		position: absolute;
+		clip: rect(0, 0, 0, 0);
+	}
+}

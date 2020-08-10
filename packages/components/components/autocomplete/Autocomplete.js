@@ -20,6 +20,7 @@ const Autocomplete = ({
     onClose = noop,
     onHighlight = noop,
     minChars,
+    fieldClassName = '',
     ...rest
 }) => {
     const [awesomplete, setAwesomplete] = useState();
@@ -87,7 +88,7 @@ const Autocomplete = ({
     return (
         <div className={classnames(['autocomplete awesomplete w100', className])} onSubmit={handleSubmit}>
             <div className="autocomplete-container" ref={containerRef}>
-                <div className={classnames(['flex pm-field', inputStyleModifier])}>
+                <div className={classnames(['flex pm-field', inputStyleModifier, fieldClassName])}>
                     {childrenCount > 0 && <div className="flex">{children}</div>}
 
                     <input
@@ -128,6 +129,7 @@ Autocomplete.propTypes = {
     maxItems: PropTypes.number,
     filter: PropTypes.func,
     data: PropTypes.func,
+    fieldClassName: PropTypes.string,
 };
 
 export default Autocomplete;
