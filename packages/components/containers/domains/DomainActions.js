@@ -9,6 +9,7 @@ import {
     useApiWithoutResult,
     useNotifications,
     useEventManager,
+    ErrorButton,
 } from 'react-components';
 import { deleteDomain } from 'proton-shared/lib/api/domains';
 
@@ -42,8 +43,14 @@ const DomainActions = ({ domain, domainAddresses }) => {
             actionType: 'delete',
             onClick: () => {
                 createModal(
-                    <ConfirmModal onConfirm={handleConfirmDelete} title={c('Title').t`Delete domain`}>
-                        <Alert type="warning">{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
+                    <ConfirmModal
+                        title={c('Title').t`Delete ${domain.DomainName}`}
+                        onConfirm={handleConfirmDelete}
+                        confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    >
+                        <Alert type="info">{c('Info')
+                            .t`Please note that if you delete this domain, you will remove it from your account and all the addresses associated with it will be disabled.`}</Alert>
+                        <Alert type="error">{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
                     </ConfirmModal>
                 );
             },

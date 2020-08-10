@@ -13,6 +13,7 @@ import {
     useLoading,
     ConfirmModal,
     Alert,
+    ErrorButton,
 } from '../../index';
 
 import EditAddressModal from './EditAddressModal';
@@ -36,9 +37,15 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
     const confirmDelete = async () => {
         return new Promise((resolve, reject) => {
             createModal(
-                <ConfirmModal onConfirm={resolve} onClose={reject}>
-                    <Alert type="warning">{c('Warning')
-                        .t`By deleting this address, you will no longer be able to send or receive emails using this address. Are you sure you want to delete this address?`}</Alert>
+                <ConfirmModal
+                    title={c('Title').t`Delete ${address.Email}`}
+                    onConfirm={resolve}
+                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    onClose={reject}
+                >
+                    <Alert type="info">{c('Info')
+                        .t`Please note that if you delete this address, you will no longer be able to send or receive emails using this address.`}</Alert>
+                    <Alert type="error">{c('Info').t`Are you sure you want to delete this address?`}</Alert>
                 </ConfirmModal>
             );
         });

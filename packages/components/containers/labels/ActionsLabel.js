@@ -9,6 +9,7 @@ import {
     useModals,
     useEventManager,
     useNotifications,
+    ErrorButton,
 } from 'react-components';
 import { LABEL_TYPE } from 'proton-shared/lib/constants';
 import { deleteLabel } from 'proton-shared/lib/api/labels';
@@ -23,22 +24,28 @@ function ActionsLabel({ label, onChange }) {
 
     const I18N = {
         [LABEL_TYPE.MESSAGE_LABEL]: {
-            title: c('Title').t`Delete label`,
             content: c('Info')
-                .t`Are you sure you want to delete this label? Removing a label will not remove the messages with that label.`,
+                .t`Please note that emails tagged with this label will NOT be deleted. They can still be found in their respective folder. To permanently delete these emails, open your mailbox, navigate to the label, and select the CLEAR LABEL option from the tool bar.`,
+            confirm: c('Info').t`Are you sure you want to delete this label?`,
         },
         [LABEL_TYPE.MESSAGE_FOLDER]: {
-            title: c('Title').t`Delete folder`,
             content: c('Info')
-                .t`Are you sure you want to delete this folder? Messages in the folders aren’t deleted if the folder is deleted, they can still be found in all mail. If you want to delete all messages in a folder, move them to trash.`,
+                .t`Please note that emails stored in this folder will NOT be deleted. They can still be found in the All Mail folder. To permanently delete these emails, open your mailbox, navigate to the folder, and select the EMPTY FOLDER option from the tool bar.`,
+            confirm: c('Info').t`Are you sure you want to delete this folder?`,
         },
     };
 
-    const confirmDelete = async ({ Type }) => {
+    const confirmDelete = async ({ Type, Name }) => {
         return new Promise((resolve, reject) => {
             createModal(
-                <ConfirmModal onConfirm={resolve} onClose={reject} title={I18N[Type].title}>
-                    <Alert type="warning">{I18N[Type].content}</Alert>
+                <ConfirmModal
+                    title={c('Title').t`Delete ${Name}`}
+                    onConfirm={resolve}
+                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    onClose={reject}
+                >
+                    <Alert type="info">{I18N[Type].content}</Alert>
+                    <Alert type="error">{I18N[Type].confirm}</Alert>
                 </ConfirmModal>
             );
         });

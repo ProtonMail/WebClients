@@ -1,5 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { c } from 'ttag';
+import { authMember, removeMember, updateRole, privatizeMember } from 'proton-shared/lib/api/members';
+import { revokeSessions } from 'proton-shared/lib/api/memberSessions';
+import { MEMBER_PRIVATE, MEMBER_ROLE } from 'proton-shared/lib/constants';
+import memberLogin from 'proton-shared/lib/authentication/memberLogin';
+import { Member, Address, Organization } from 'proton-shared/lib/interfaces';
+import { noop } from 'proton-shared/lib/helpers/function';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import {
     ConfirmModal,
     useModals,
@@ -10,17 +17,18 @@ import {
     useAuthentication,
     useNotifications,
     useEventManager,
-} from 'react-components';
-import { c } from 'ttag';
-import { authMember, removeMember, updateRole, privatizeMember } from 'proton-shared/lib/api/members';
-import { revokeSessions } from 'proton-shared/lib/api/memberSessions';
-import { MEMBER_PRIVATE, MEMBER_ROLE } from 'proton-shared/lib/constants';
-import memberLogin from 'proton-shared/lib/authentication/memberLogin';
-
+    ErrorButton,
+} from '../../index';
 import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
 
-const MemberActions = ({ member, addresses = [], organization }) => {
+interface Props {
+    member: Member;
+    addresses: Address[];
+    organization: Organization;
+}
+
+const MemberActions = ({ member, addresses = [], organization }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const authentication = useAuthentication();
@@ -43,7 +51,7 @@ const MemberActions = ({ member, addresses = [], organization }) => {
         });
 
         const url = `${location.origin}/login/sub`;
-        await memberLogin({ UID, mailboxPassword: authentication.getPassword(), url });
+        await memberLogin({ UID, mailboxPassword: authentication.getPassword(), url } as any);
     };
 
     const makeAdmin = async () => {
@@ -81,16 +89,21 @@ const MemberActions = ({ member, addresses = [], organization }) => {
     const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE;
 
     const openEdit = () => {
-        createModal(<EditMemberModal member={member} />);
+        createModal(<EditMemberModal member={member} onClose={noop} />);
     };
 
     const openDelete = () => {
         createModal(
-            <ConfirmModal onConfirm={() => withLoading(handleConfirmDelete())}>
-                <Alert>
+            <ConfirmModal
+                title={c('Title').t`Delete ${member.Name}`}
+                onConfirm={() => withLoading(handleConfirmDelete())}
+                confirm={<ErrorButton type="submit" loading={loading}>{c('Action').t`Delete`}</ErrorButton>}
+            >
+                <Alert type="info">
                     {c('Info')
-                        .t`Are you sure you want to permanently delete this user? The inbox and all addresses associated with this user will be deleted.`}
+                        .t`Please note that if you delete this user, you will permanently delete its inbox and remove all addresses associated with it.`}
                 </Alert>
+                <Alert type="error">{c('Info').t`Are you sure you want to delete this user?`}</Alert>
             </ConfirmModal>
         );
     };
@@ -102,7 +115,7 @@ const MemberActions = ({ member, addresses = [], organization }) => {
         },
         canDelete && {
             text: c('Member action').t`Delete`,
-            actionType: 'delete',
+            actionType: 'delete' as 'delete',
             onClick: openDelete,
         },
         canMakeAdmin && {
@@ -125,15 +138,9 @@ const MemberActions = ({ member, addresses = [], organization }) => {
             text: c('Member action').t`Revoke sessions`,
             onClick: () => withLoading(revokeMemberSessions()),
         },
-    ].filter(Boolean);
+    ].filter(isTruthy);
 
     return <DropdownActions loading={loading} list={list} className="pm-button--small" />;
-};
-
-MemberActions.propTypes = {
-    member: PropTypes.object.isRequired,
-    addresses: PropTypes.array.isRequired,
-    organization: PropTypes.object.isRequired,
 };
 
 export default MemberActions;
