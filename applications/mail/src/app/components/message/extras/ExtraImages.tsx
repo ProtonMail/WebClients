@@ -24,8 +24,8 @@ const ExtraImages = ({
             <Icon name="insert-image" className="mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">
                 {type === 'remote'
-                    ? c('Action').t`This message contains remote content`
-                    : c('Action').t`This message contains embedded images`}
+                    ? c('Action').t`This message contains remote content.`
+                    : c('Action').t`This message contains embedded images.`}
             </span>
             <a onClick={onLoadImages} className="underline">
                 {c('Action').t`Load`}
