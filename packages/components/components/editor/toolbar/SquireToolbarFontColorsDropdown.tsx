@@ -43,7 +43,6 @@ const SquireToolbarFontColorsDropdown = ({ squireRef, editorReady }: Props) => {
             content={<Icon name="font-color" />}
             className="flex-item-noshrink"
             title={c('Action').t`Color`}
-            style={{ color: fontColor }}
         >
             <div className="flex flex-row flex-nowrap">
                 <div className="flex flex-column m0-5">
