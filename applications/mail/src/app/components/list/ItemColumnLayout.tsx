@@ -59,7 +59,7 @@ const ItemColumnLayout = ({
                     labelID={labelID}
                     className={classnames([unread && 'bold', 'item-senddate-col'])}
                 />
-                <span className="ml0-5 flex">
+                <span className="ml0-5 flex-flex-children">
                     <ItemStar element={element} />
                 </span>
             </div>
