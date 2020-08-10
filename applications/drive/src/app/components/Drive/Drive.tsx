@@ -24,7 +24,6 @@ function Drive({ activeFolder, openLink }: Props) {
         loading,
         contents,
         complete,
-        initialized,
         sortParams,
         setSorting,
     } = useDriveContent();
@@ -40,6 +39,7 @@ function Drive({ activeFolder, openLink }: Props) {
     } = fileBrowserControls;
 
     const folderName = cache.get.linkMeta(shareId, linkId)?.Name;
+    const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
 
     useEffect(() => {
         if (folderName === undefined) {
@@ -49,10 +49,10 @@ function Drive({ activeFolder, openLink }: Props) {
 
     const handleScrollEnd = useCallback(() => {
         // Only load on scroll after initial load from backend
-        if (initialized && !complete) {
+        if (isInitialized && !complete) {
             loadNextPage();
         }
-    }, [initialized, complete, loadNextPage]);
+    }, [complete, isInitialized, loadNextPage]);
 
     // On content change, check scroll end (does not rebind listeners)
     useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents]);

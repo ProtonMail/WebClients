@@ -24,7 +24,7 @@ interface ShareKeys {
 
 type SortedChildren = {
     [sortKey in SortKeys]: {
-        [direction in SORT_DIRECTION]: { list: string[]; complete: boolean };
+        [direction in SORT_DIRECTION]: { list: string[]; complete: boolean; initialized: boolean };
     };
 };
 
@@ -97,8 +97,8 @@ const useDriveCacheState = () => {
                           children: {
                               sorted: ['Type', 'ModifyTime', 'Size'].reduce((sorted, sortKey) => {
                                   sorted[sortKey as SortKeys] = {
-                                      ASC: { list: [], complete: isNew },
-                                      DESC: { list: [], complete: isNew },
+                                      ASC: { list: [], complete: isNew, initialized: isNew },
+                                      DESC: { list: [], complete: isNew, initialized: isNew },
                                   };
                                   return sorted;
                               }, {} as SortedChildren),
@@ -197,6 +197,7 @@ const useDriveCacheState = () => {
                 parent.children.sorted[sortField][sortOrder] = {
                     list: [...folder.list.filter((id) => !linkIds.includes(id)), ...linkIds],
                     complete: method === 'complete' || folder.complete,
+                    initialized: true,
                 };
             }
         }
@@ -340,6 +341,7 @@ const useDriveCacheState = () => {
 
         return undefined;
     };
+
     const getfoldersOnlyComplete = (shareId: string, linkId: string) => {
         const link = cacheRef.current[shareId].links[linkId];
 
@@ -358,6 +360,20 @@ const useDriveCacheState = () => {
     const getTrashMetas = (shareId: string) => {
         const links = getTrashLinks(shareId);
         return links.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
+    };
+
+    const getChildrenInitialized = (
+        shareId: string,
+        linkId: string,
+        { sortField, sortOrder } = DEFAULT_SORT_PARAMS
+    ) => {
+        const link = cacheRef.current[shareId].links[linkId];
+
+        if (link && isCachedFolderLink(link)) {
+            return link.children.sorted[sortField][sortOrder].initialized;
+        }
+
+        return undefined;
     };
 
     const getFoldersOnlyLinkMetas = (shareId: string, linkId: string) => {
@@ -456,6 +472,7 @@ const useDriveCacheState = () => {
             trashChildLinks: getTrashChildLinks,
             defaultShareMeta: getDefaultShareMeta,
             childrenComplete: getChildrenComplete,
+            childrenInitialized: getChildrenInitialized,
             childLinkMetas: getChildLinkMetas,
             childLinks: getChildLinks,
             listedChildLinks: getListedChildLinks,
