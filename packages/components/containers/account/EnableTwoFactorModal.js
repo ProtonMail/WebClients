@@ -24,7 +24,7 @@ import { setupTotp, TOTP_WRONG_ERROR } from 'proton-shared/lib/api/settings';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { TWO_FA_CONFIG, CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { TWO_FA_CONFIG, APPS } from 'proton-shared/lib/constants';
 
 const { PERIOD, DIGITS, ALGORITHM } = TWO_FA_CONFIG;
 
@@ -36,7 +36,7 @@ const STEPS = {
 };
 
 const EnableTwoFactorModal = (props) => {
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
     const [addresses] = useAddresses();
     const [user] = useUser();
     const api = useApi();
@@ -82,9 +82,8 @@ const EnableTwoFactorModal = (props) => {
         }
 
         if (step === STEPS.INFO) {
-            const { VPN } = CLIENT_TYPES;
             const twoFactorAuthLink =
-                CLIENT_TYPE === VPN
+                APP_NAME === APPS.PROTONVPN_SETTINGS
                     ? 'https://protonvpn.com/support/two-factor-authentication'
                     : 'https://protonmail.com/support/knowledge-base/two-factor-authentication';
 

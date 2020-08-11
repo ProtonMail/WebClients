@@ -6,9 +6,10 @@ import { getResetAddressesKeys } from 'proton-shared/lib/keys/resetKeys';
 import { srpAuth, srpVerify } from 'proton-shared/lib/srp';
 import { resetKeysRoute } from 'proton-shared/lib/api/keys';
 import { Address } from 'proton-shared/lib/interfaces';
-import { setCookies, auth } from 'proton-shared/lib/api/auth';
-import { getRandomString } from 'proton-shared/lib/helpers/string';
-import { useApi, useLoading, useNotifications, OnLoginArgs } from '../../index';
+import { auth } from 'proton-shared/lib/api/auth';
+import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { AuthResponse } from 'proton-shared/lib/authentication/interface';
+import { useApi, useLoading, useNotifications, OnLoginCallback } from '../../index';
 
 export enum STEPS {
     REQUEST_RESET_TOKEN,
@@ -19,7 +20,7 @@ export enum STEPS {
 }
 
 interface Props {
-    onLogin: (args: OnLoginArgs) => void;
+    onLogin: OnLoginCallback;
 }
 
 export interface State {
@@ -106,14 +107,13 @@ const useResetPassword = ({ onLogin }: Props) => {
             }),
         });
 
-        const { UID, EventID, AccessToken, RefreshToken } = await srpAuth({
+        const authResponse = await srpAuth<AuthResponse>({
             api,
             credentials: { username, password },
             config: auth({ Username: username }),
         });
-        await api(setCookies({ UID, AccessToken, RefreshToken, State: getRandomString(24) }));
-
-        onLogin({ UID, keyPassword: passphrase, EventID });
+        await persistSession({ ...authResponse, api, keyPassword: passphrase });
+        await onLogin({ ...authResponse, keyPassword: passphrase });
     };
 
     const getSetter = <T>(key: keyof State) => (value: T) =>

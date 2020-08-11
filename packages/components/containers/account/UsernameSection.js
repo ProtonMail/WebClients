@@ -1,15 +1,13 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Label, Row, Field, Href, Loader, useUser, useAddresses, useConfig } from 'react-components';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
-
-const { VPN } = CLIENT_TYPES;
+import { APPS } from 'proton-shared/lib/constants';
 
 const UsernameSection = () => {
     const [{ Name }] = useUser();
     const [addresses, loading] = useAddresses();
     const [{ Email } = {}] = addresses || [];
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
 
     return (
         <>
@@ -19,7 +17,7 @@ const UsernameSection = () => {
                     <strong>{Name}</strong>
                 </Field>
             </Row>
-            {CLIENT_TYPE === VPN ? (
+            {APP_NAME === APPS.PROTONVPN_SETTINGS ? (
                 loading ? (
                     <Loader />
                 ) : (

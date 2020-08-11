@@ -58,7 +58,8 @@ export { default as ButtonGroup } from './components/button/ButtonGroup';
 export { default as Group } from './components/button/Group';
 export { default as Info } from './components/link/Info';
 export { default as Href } from './components/link/Href';
-export { default as Link } from './components/link/Link';
+export { default as useAppLink } from './components/link/useAppLink';
+export { default as AppLink } from './components/link/AppLink';
 export { default as LearnMore } from './components/link/LearnMore';
 export { default as TopNavbarLink } from './components/link/TopNavbarLink';
 export { default as Time } from './components/time/Time';
@@ -442,19 +443,11 @@ export { useHandler, useEventListener, useSubscribeEventManager, useInterval } f
 export { default as useKeyPress } from './hooks/useKeyPress';
 export { default as usePreventLeave, PreventLeaveProvider } from './hooks/usePreventLeave';
 
-export { default as ErrorBoundary } from './containers/app/ErrorBoundary';
-export { default as ProtonApp } from './containers/app/ProtonApp';
-export { default as TopBanners } from './containers/app/TopBanners';
-export { default as PublicTopBanners } from './containers/app/PublicTopBanners';
-export { default as StandardPrivateApp } from './containers/app/StandardPrivateApp';
-export { default as StandardPublicApp } from './containers/app/StandardPublicApp';
-export { default as AppsDropdown } from './containers/app/AppsDropdown';
-export { default as TopNavbar } from './containers/app/TopNavbar';
-export { default as LoaderPage } from './containers/app/LoaderPage';
-
 export { default as SquireEditor } from './components/editor/SquireEditor';
 export { default as SimpleSquireEditor } from './components/editor/SimpleSquireEditor';
 
 export * from './helpers/component';
 
 export * from './components/layout';
+
+export * from './containers/app';

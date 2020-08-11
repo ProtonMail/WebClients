@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { buyCredit } from 'proton-shared/lib/api/payments';
 import {
+    APPS,
     DEFAULT_CURRENCY,
     DEFAULT_CREDITS_AMOUNT,
-    CLIENT_TYPES,
     MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
 } from 'proton-shared/lib/constants';
@@ -35,11 +35,9 @@ const getCurrenciesI18N = () => ({
     USD: c('Monetary unit').t`Dollar`,
 });
 
-const { VPN } = CLIENT_TYPES;
-
 const CreditsModal = (props) => {
     const api = useApi();
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -93,7 +91,7 @@ const CreditsModal = (props) => {
             <PaymentInfo method={method} />
             <Alert
                 learnMore={
-                    CLIENT_TYPE === VPN
+                    APP_NAME === APPS.PROTONVPN_SETTINGS
                         ? 'https://protonvpn.com/support/vpn-credit-proration/'
                         : 'https://protonmail.com/support/knowledge-base/credit-proration/'
                 }

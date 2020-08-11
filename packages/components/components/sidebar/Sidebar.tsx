@@ -1,14 +1,12 @@
 import React, { ReactNode } from 'react';
 
 import Hamburger from './Hamburger';
-import MainLogo from '../logo/MainLogo';
 import MobileAppsLinks from './MobileAppsLinks';
 
 interface Props {
-    url?: string;
+    logo?: React.ReactNode;
     expanded?: boolean;
     onToggleExpand?: () => void;
-    mainLogo?: ReactNode;
     primary?: ReactNode;
     isNarrow?: boolean;
     children?: ReactNode;
@@ -20,8 +18,7 @@ const Sidebar = ({
     expanded = false,
     onToggleExpand,
     hasAppLinks = true,
-    mainLogo,
-    url = '',
+    logo,
     primary,
     children,
     version,
@@ -30,7 +27,7 @@ const Sidebar = ({
         <div className="sidebar flex flex-nowrap flex-column noprint" data-expanded={expanded}>
             <div className="nodesktop notablet flex-item-noshrink">
                 <div className="flex flex-spacebetween flex-items-center pl1 pr1">
-                    {mainLogo || <MainLogo url={url} />}
+                    {logo}
                     <Hamburger expanded={expanded} onToggle={onToggleExpand} />
                 </div>
             </div>

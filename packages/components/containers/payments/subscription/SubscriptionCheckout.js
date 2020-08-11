@@ -5,7 +5,7 @@ import { CurrencySelector, CycleSelector, Price, useConfig, classnames, Info } f
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { orderBy } from 'proton-shared/lib/helpers/array';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { CLIENT_TYPES, PLAN_SERVICES, PLAN_TYPES, CYCLE, PLANS, ADDON_NAMES } from 'proton-shared/lib/constants';
+import { PLAN_SERVICES, PLAN_TYPES, CYCLE, PLANS, ADDON_NAMES, APPS } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { getSubTotal } from './helpers';
@@ -32,13 +32,15 @@ CheckoutRow.propTypes = {
 
 /** @type any */
 const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, setModel, checkResult, loading }) => {
+    const { APP_NAME } = useConfig();
+    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
+
     const plansMap = toMap(plans);
     const storageAddon = plans.find(({ Name }) => Name === ADDON_NAMES.SPACE);
     const addressAddon = plans.find(({ Name }) => Name === ADDON_NAMES.ADDRESS);
     const domainAddon = plans.find(({ Name }) => Name === ADDON_NAMES.DOMAIN);
     const memberAddon = plans.find(({ Name }) => Name === ADDON_NAMES.MEMBER);
     const vpnAddon = plans.find(({ Name }) => Name === ADDON_NAMES.VPN);
-    const { CLIENT_TYPE } = useConfig();
     const subTotal =
         getSubTotal({
             cycle: model.cycle,
@@ -207,7 +209,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                                             <span className="mr0-5">{c('Label').t`Proration`}</span>
                                             <Info
                                                 url={
-                                                    CLIENT_TYPE === CLIENT_TYPES.VPN
+                                                    isVPN
                                                         ? 'https://protonvpn.com/support/vpn-credit-proration/'
                                                         : 'https://protonmail.com/support/knowledge-base/credit-proration/'
                                                 }

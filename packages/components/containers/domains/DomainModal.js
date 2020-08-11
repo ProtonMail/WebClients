@@ -60,11 +60,6 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
     const api = useApi();
     const { step, next, goTo } = useStep();
 
-    const handleRedirect = (route) => {
-        onClose();
-        history.push(route);
-    };
-
     const renderDKIMIcon = () => {
         const {
             DKIM: { State },
@@ -239,7 +234,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
 
         if (step === STEPS.ADDRESSES) {
             return {
-                section: <AddressesSection onRedirect={handleRedirect} />,
+                section: <AddressesSection onClose={onClose} />,
                 submit: c('Action').t`Done`,
                 onSubmit: onClose,
             };

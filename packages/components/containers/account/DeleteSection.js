@@ -12,24 +12,22 @@ import {
     useAddresses,
     useConfig,
 } from 'react-components';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { APPS } from 'proton-shared/lib/constants';
 
 import DeleteAccountModal from './DeleteAccountModal';
-
-const { VPN } = CLIENT_TYPES;
 
 const DeleteSection = () => {
     const [{ isMember }] = useUser();
     const [addresses, loading] = useAddresses();
     const [{ isManagedByMozilla } = {}] = useSubscription();
     const { createModal } = useModals();
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
 
     if (loading) {
         return <Loader />;
     }
 
-    if (CLIENT_TYPE === VPN && addresses.length) {
+    if (APP_NAME === APPS.PROTONVPN_SETTINGS && addresses.length) {
         const loginLink = (
             <Href key="0" url="https://mail.protonmail.com/login">
                 mail.protonmail.com

@@ -1,9 +1,12 @@
 import { c } from 'ttag';
 import React from 'react';
-import { LinkButton, useLoading } from 'react-components';
-import PropTypes from 'prop-types';
+import { LinkButton, useLoading } from '../../index';
 
-const OfflineNotification = ({ onRetry }) => {
+interface Props {
+    onRetry: () => Promise<void>;
+    message?: string;
+}
+const OfflineNotification = ({ onRetry, message }: Props) => {
     const [loading, withLoading] = useLoading();
     const retryNow = (
         <LinkButton className="alignbaseline p0" disabled={loading} onClick={() => withLoading(onRetry())}>
@@ -12,13 +15,9 @@ const OfflineNotification = ({ onRetry }) => {
     );
     return (
         <>
-            {c('Error').t`Servers are unreachable.`} {retryNow}
+            {message || c('Error').t`Servers are unreachable.`} {retryNow}
         </>
     );
-};
-
-OfflineNotification.propTypes = {
-    onRetry: PropTypes.func,
 };
 
 export default OfflineNotification;

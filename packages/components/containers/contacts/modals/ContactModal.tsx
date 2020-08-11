@@ -119,7 +119,7 @@ const ContactModal = ({
 
             /* in the context of proton-contacts */
             if (history) {
-                history.push(`/contacts/${ID}`);
+                history.push(`/${ID}`);
             }
         }
         onClose();

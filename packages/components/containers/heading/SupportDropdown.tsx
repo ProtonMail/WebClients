@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { APPS } from 'proton-shared/lib/constants';
 import {
     Icon,
     Dropdown,
@@ -18,8 +18,6 @@ import {
 
 import SupportDropdownButton from './SupportDropdownButton';
 
-const { VPN } = CLIENT_TYPES;
-
 interface Props {
     className?: string;
     content?: string;
@@ -28,7 +26,7 @@ interface Props {
 
 const SupportDropdown = ({ className, content, hasButtonCaret = false }: Props) => {
     const { UID } = useAuthentication();
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
     const { createModal } = useModals();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -54,7 +52,7 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false }: Props) 
                     <DropdownMenuLink
                         className="flex flex-nowrap alignleft"
                         href={
-                            CLIENT_TYPE === VPN ? 'https://protonvpn.com/support/' : 'https://protonmail.com/support/'
+                            APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com/support/' : 'https://protonmail.com/support/'
                         }
                         // eslint-disable-next-line react/jsx-no-target-blank
                         target="_blank"

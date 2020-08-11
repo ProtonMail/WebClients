@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { Href, useUser, useConfig, useOnline } from '../../index';
+import { useUser, useConfig, useOnline } from '../../index';
 import TopBanner from './TopBanner';
+import AppLink from '../../components/link/AppLink';
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';
 
@@ -12,19 +14,28 @@ const TopBanners = () => {
     const onlineStatus = useOnline();
     const [backOnline, setBackOnline] = useState(false);
     const [user] = useUser();
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useState(
         getItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`) === 'true'
     );
-    const dashboardUrl = CLIENT_TYPE === CLIENT_TYPES.VPN ? '/payments#invoices' : '/settings/subscription#invoices';
-    // TODO Update links once we have proton-account
+
+    const paymentLinkProps = APP_NAME === APPS.PROTONVPN_SETTINGS ? {
+        to: '/payments#invoices',
+    } : {
+        to: '/subscription#invoices',
+        toApp: getAccountSettingsApp()
+    };
     const upgradeLink = (
-        <Href key="storage-link" className="color-currentColor" url={dashboardUrl} target="_self">{c('Link')
-            .t`Upgrade account`}</Href>
+        <AppLink
+            key="storage-link"
+            className="color-currentColor"
+            {...paymentLinkProps}
+        >
+            {c('Link').t`Upgrade account`}
+        </AppLink>
     );
     const payInvoiceLink = (
-        <Href key="pay-invoices" className="color-currentColor" url={dashboardUrl} target="_self">{c('Link')
-            .t`Pay invoice`}</Href>
+        <AppLink key="pay-invoices" className="color-currentColor" {...paymentLinkProps}>{c('Link').t`Pay invoice`}</AppLink>
     );
     const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
     const spaceDisplayed = isNaN(spacePercentage) ? 0 : Math.round(spacePercentage);

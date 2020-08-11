@@ -1,5 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
+import { APPS, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import {
     PrimaryButton,
     Alert,
@@ -11,16 +12,13 @@ import {
     useConfig,
     usePaymentMethods,
 } from 'react-components';
-import { CLIENT_TYPES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
 import EditCardModal from '../payments/EditCardModal';
 import PayPalModal from '../payments/PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
-const { VPN } = CLIENT_TYPES;
-
 const PaymentMethodsSection = () => {
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
     const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
     const [{ isManagedByMozilla } = {}, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
@@ -47,7 +45,7 @@ const PaymentMethodsSection = () => {
         <>
             <Alert
                 learnMore={
-                    CLIENT_TYPE === VPN
+                    APP_NAME === APPS.PROTONVPN_SETTINGS
                         ? 'https://protonvpn.com/support/payment-options/'
                         : 'https://protonmail.com/support/knowledge-base/payment'
                 }

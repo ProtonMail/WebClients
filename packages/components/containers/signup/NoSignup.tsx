@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Alert, Link } from '../..';
+import { Alert, AppLink } from '../..';
 
 const NoSignup = () => {
     return (
@@ -12,7 +12,7 @@ const NoSignup = () => {
                 ligula sagittis, at sollicitudin ante dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
                 elit.
             </Alert>
-            <Link to="TODO">{c('Link').t`Continue on website`}</Link>
+            <AppLink to="TODO">{c('Link').t`Continue on website`}</AppLink>
         </div>
     );
 };

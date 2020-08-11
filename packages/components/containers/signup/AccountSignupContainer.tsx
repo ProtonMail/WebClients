@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef, FunctionComponent } from 'react';
-import { History } from 'history';
+import * as History from 'history';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
 import { PAYMENT_METHOD_TYPES, TOKEN_TYPES } from 'proton-shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
@@ -10,6 +10,8 @@ import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { Address } from 'proton-shared/lib/interfaces';
 import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
 import { getResetAddressesKeys } from 'proton-shared/lib/keys/resetKeys';
+import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { useHistory } from 'react-router-dom';
 import {
     queryCheckUsernameAvailability,
     queryDirectSignupStatus,
@@ -25,8 +27,8 @@ import {
     usePayment,
     HumanVerificationForm,
     BackButton,
-    OnLoginArgs,
 } from '../../index';
+import { OnLoginCallback } from '../app/interface';
 import { Props as AccountPublicLayoutProps } from './AccountPublicLayout';
 import SignupAccountForm from './SignupAccountForm';
 import SignupRecoveryForm from './SignupRecoveryForm';
@@ -61,8 +63,7 @@ import handleCreateKeys from './helpers/handleCreateKeys';
 import OneAccountIllustration from '../illustration/OneAccountIllustration';
 
 interface Props {
-    history: History;
-    onLogin: (args: OnLoginArgs) => void;
+    onLogin: OnLoginCallback;
     Layout: FunctionComponent<AccountPublicLayoutProps>;
 }
 
@@ -92,7 +93,8 @@ const getSearchParams = (search: History.Search) => {
     return { currency, cycle, preSelectedPlan, service: service ? SERVICES[service] : undefined };
 };
 
-const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
+const AccountSignupContainer = ({ onLogin, Layout }: Props) => {
+    const history = useHistory();
     const { currency, cycle, preSelectedPlan, service } = useMemo(() => {
         return getSearchParams(history.location.search);
     }, [history.location.search]);
@@ -250,9 +252,9 @@ const AccountSignupContainer = ({ onLogin, history, Layout }: Props) => {
                 await handleCreateKeys({ api: authApi.api, salt, addressKeys: newAddressesKeys, password });
             }
 
-            await authApi.setCookies();
-            const { UID, EventID } = authApi.getAuthResponse();
-            onLogin({ UID, EventID, keyPassword });
+            const authResponse = authApi.getAuthResponse();
+            await persistSession({ ...authResponse, keyPassword, api });
+            await onLogin({ ...authResponse, keyPassword });
         } catch (error) {
             // TODO: If any of these requests fail we should probably handle it differently
             return setModelDiff({ step: oldStep });

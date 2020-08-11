@@ -1,12 +1,15 @@
 import React from 'react';
 
-import Button, { Props as ButtonProps } from '../button/Button';
+import AppLink, { Props as LinkProps } from '../link/AppLink';
 
-const SidebarBackButton = ({ children, ...rest }: ButtonProps) => {
+const SidebarBackButton = ({ children, ...rest }: LinkProps) => {
     return (
-        <Button className="pm-button--primaryborder-dark pm-button--large bold mt0-25 w100" {...rest}>
+        <AppLink
+            className="pm-button pm-button--primaryborder-dark pm-button--large inbl aligncenter bold mt0-25 w100"
+            {...rest}
+        >
             {children}
-        </Button>
+        </AppLink>
     );
 };
 

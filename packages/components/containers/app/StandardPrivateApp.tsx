@@ -7,6 +7,10 @@ import createEventManager from 'proton-shared/lib/eventManager/eventManager';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { destroyOpenPGP, loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { Model } from 'proton-shared/lib/interfaces/Model';
+import { UserSettings as tsUserSettings } from 'proton-shared/lib/interfaces';
+import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
+import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+
 import {
     EventManagerProvider,
     ModalsChildren,
@@ -15,6 +19,7 @@ import {
     ContactProvider,
     useApi,
     useCache,
+    useNotifications,
 } from '../../index';
 
 import EventModelListener from '../eventManager/EventModelListener';
@@ -26,7 +31,7 @@ import loadEventID from './loadEventID';
 import StandardLoadError from './StandardLoadError';
 
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
-    locales?: any;
+    locales?: TtagLocaleMap;
     onInit?: () => void;
     onLogout: () => void;
     fallback?: React.ReactNode;
@@ -51,16 +56,22 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const eventManagerRef = useRef<ReturnType<typeof createEventManager>>();
-    const api = useApi();
+    const normalApi = useApi();
+    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const cache = useCache();
+    const { createNotification } = useNotifications();
 
     useEffect(() => {
-        const eventManagerPromise = loadEventID(api, cache).then((eventID) => {
-            eventManagerRef.current = createEventManager({ api, eventID });
+        const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
+            eventManagerRef.current = createEventManager({ api: silentApi, eventID });
         });
 
-        const modelsPromise = loadModels(unique([UserSettingsModel, UserModel, ...preloadModels]), { api, cache })
-            .then(([userSettings]) => {
+        const modelsPromise = loadModels(unique([UserSettingsModel, UserModel, ...preloadModels]), {
+            api: silentApi,
+            cache,
+        })
+            .then((result: any) => {
+                const [userSettings] = result as [tsUserSettings];
                 return loadLocale({
                     ...getClosestMatches({ locale: userSettings.Locale, browserLocale: getBrowserLocale(), locales }),
                     locales,
@@ -73,9 +84,12 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                 setLoading(false);
             })
             .catch((e) => {
-                if (e.name === 'InactiveSession') {
+                if (getIs401Error(e)) {
                     return onLogout();
                 }
+                const errorMessage = getApiErrorMessage(e) || 'Unknown error';
+                createNotification({ type: 'error', text: errorMessage });
+                console.error(error);
                 setError(true);
             });
 

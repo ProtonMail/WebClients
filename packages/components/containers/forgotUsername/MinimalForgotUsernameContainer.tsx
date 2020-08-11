@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
-import * as H from 'history';
 import { requestUsername } from 'proton-shared/lib/api/reset';
 import { useApi, useNotifications, useLoading, EmailInput, PrimaryButton, Alert } from '../../index';
 
-interface Props {
-    history: H.History;
-}
-const MinimalForgotUsernameContainer = ({ history }: Props) => {
+const MinimalForgotUsernameContainer = () => {
     const api = useApi();
+    const history = useHistory();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const [email, setEmail] = useState('');
@@ -53,4 +50,4 @@ const MinimalForgotUsernameContainer = ({ history }: Props) => {
     );
 };
 
-export default withRouter(MinimalForgotUsernameContainer);
+export default MinimalForgotUsernameContainer;

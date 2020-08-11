@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { PrimaryButton, useConfig, Href } from 'react-components';
-import { CLIENT_TYPES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { APPS, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import mailLandscapeSvg from 'design-system/assets/img/pm-images/landscape.svg';
 import vpnLandscapeSvg from 'design-system/assets/img/pv-images/landscape.svg';
 import appStoreSvg from 'design-system/assets/img/shared/app-store.svg';
 import playStoreSvg from 'design-system/assets/img/shared/play-store.svg';
 
 const SubscriptionThanks = ({ method = '', onClose }) => {
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
+    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
     return (
         <>
@@ -21,14 +22,14 @@ const SubscriptionThanks = ({ method = '', onClose }) => {
             <p className="aligncenter mb2">{c('Info')
                 .t`Download your favorite app today and take privacy with you everywhere you go.`}</p>
             <div className="aligncenter mb2">
-                <img src={CLIENT_TYPE === CLIENT_TYPES.MAIL ? mailLandscapeSvg : vpnLandscapeSvg} alt="landscape" />
+                <img src={isVPN ? vpnLandscapeSvg : mailLandscapeSvg} alt="landscape" />
             </div>
             <div className="mb2 aligncenter">
                 <Href
                     url={
-                        CLIENT_TYPE === CLIENT_TYPES.MAIL
-                            ? 'https://play.google.com/store/apps/details?id=ch.protonmail.android'
-                            : 'https://play.google.com/store/apps/details?id=ch.protonvpn.android'
+                        isVPN
+                            ? 'https://play.google.com/store/apps/details?id=ch.protonvpn.android'
+                            : 'https://play.google.com/store/apps/details?id=ch.protonmail.android'
                     }
                     className="mr2"
                 >
@@ -36,9 +37,10 @@ const SubscriptionThanks = ({ method = '', onClose }) => {
                 </Href>
                 <Href
                     url={
-                        CLIENT_TYPE === CLIENT_TYPES.MAIL
-                            ? 'https://apps.apple.com/app/protonmail-encrypted-email/id979659905'
-                            : 'https://itunes.apple.com/us/app/protonvpn-fast-secure-vpn/id1437005085'
+                        isVPN
+                            ? 'https://itunes.apple.com/us/app/protonvpn-fast-secure-vpn/id1437005085'
+                            : 'https://apps.apple.com/app/protonmail-encrypted-email/id979659905'
+
                     }
                 >
                     <img width="150" src={appStoreSvg} alt="App Store" />

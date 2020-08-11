@@ -1,10 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { USER_ROLES, PLANS } from 'proton-shared/lib/constants';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
 import { formatPlans } from '../payments/subscription/helpers';
+import { AppLink } from '../../index';
 
 const { MEMBER_ROLE, ADMIN_ROLE } = USER_ROLES;
 
@@ -19,7 +20,7 @@ const Rows = ({ subscription, user }) => {
                     {user.hasPaidMail ? mailPlan.Name : c('Plan').t`Free`}
                 </div>
                 <div className="flex-autogrid-item alignright">
-                    <Link to="/settings/subscription">{c('Link').t`Manage`}</Link>
+                    <AppLink to="/subscription" toApp={getAccountSettingsApp()}>{c('Link').t`Manage`}</AppLink>
                 </div>
             </div>
             {mailPlan.Name === PLANS.VISIONARY ? null : (
@@ -29,7 +30,7 @@ const Rows = ({ subscription, user }) => {
                         {user.hasPaidVpn ? vpnPlan.Name : c('Plan').t`Free`}
                     </div>
                     <div className="flex-autogrid-item alignright">
-                        <Link to="/settings/subscription">{c('Link').t`Manage`}</Link>
+                        <AppLink to="/subscription" toApp={getAccountSettingsApp()}>{c('Link').t`Manage`}</AppLink>
                     </div>
                 </div>
             )}
@@ -64,7 +65,7 @@ const SummarySection = ({ subscription, user, userSettings }) => {
                         {userSettings.Email.Value || c('Status').t`Not set`}
                     </div>
                     <div className="flex-autogrid-item alignright">
-                        <Link to="/settings/account">{c('Link').t`Edit`}</Link>
+                        <AppLink to="/account" toApp={getAccountSettingsApp()}>{c('Link').t`Edit`}</AppLink>
                     </div>
                 </div>
                 <div className="flex-autogrid onmobile-flex-column w100 mb1">
@@ -73,7 +74,7 @@ const SummarySection = ({ subscription, user, userSettings }) => {
                         {userSettings['2FA'].Enabled ? c('Status').t`Enabled` : c('Status').t`Disabled`}
                     </div>
                     <div className="flex-autogrid-item alignright">
-                        <Link to="/settings/account">{c('Link').t`Edit`}</Link>
+                        <AppLink to="/account" toApp={getAccountSettingsApp()}>{c('Link').t`Edit`}</AppLink>
                     </div>
                 </div>
                 <Rows subscription={subscription} user={user} />

@@ -1,11 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
-
-import { redirectTo } from 'proton-shared/lib/helpers/browser';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import ConfirmModal from '../modal/Confirm';
 import Alert from '../alert/Alert';
+import useAppLink from '../link/useAppLink';
 
 interface Props {
     onConfirm?: () => void;
@@ -13,11 +13,12 @@ interface Props {
 }
 
 const UpgradeModal = ({ onConfirm = noop, onClose = noop, ...rest }: Props) => {
+    const goToApp = useAppLink();
     return (
         <ConfirmModal
             title={c('Title').t`Upgrade required`}
             onConfirm={() => {
-                redirectTo('/settings/subscription');
+                goToApp('/subscription', getAccountSettingsApp());
                 onConfirm();
             }}
             onClose={onClose}

@@ -1,37 +1,36 @@
 import React from 'react';
 
-import { APPS, FEATURE_FLAGS } from 'proton-shared/lib/constants';
+import { APPS, APPS_CONFIGURATION, FEATURE_FLAGS, isSSOMode } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import useConfig from '../../containers/config/useConfig';
 import MobileNavServices from './MobileNavServices';
 import MobileNavLink from './MobileNavLink';
 
-const { PROTONMAIL, PROTONCONTACTS, PROTONMAIL_SETTINGS, PROTONCALENDAR, PROTONDRIVE } = APPS;
+const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONDRIVE, PROTONACCOUNT } = APPS;
 
 const MobileAppsLinks = () => {
     const { APP_NAME } = useConfig();
 
     const apps = [
-        { appNames: [PROTONMAIL, PROTONMAIL_SETTINGS], to: '/inbox', icon: 'protonmail' },
-        { appNames: [PROTONCONTACTS], to: '/contacts', icon: 'protoncontacts' },
-        { appNames: [PROTONCALENDAR], to: '/calendar', icon: 'protoncalendar' },
-        FEATURE_FLAGS.includes('drive') && { appNames: [PROTONDRIVE], to: '/drive', icon: 'protondrive' },
-    ].filter(isTruthy);
+        PROTONMAIL,
+        PROTONCONTACTS,
+        PROTONCALENDAR,
+        FEATURE_FLAGS.includes('drive') && PROTONDRIVE,
+        isSSOMode && PROTONACCOUNT,
+    ]
+        .filter(isTruthy)
+        .map((app) => ({
+            toApp: app,
+            icon: APPS_CONFIGURATION[app].icon,
+            title: APPS_CONFIGURATION[app].name,
+        }));
 
     return (
         <MobileNavServices>
-            {apps.map(({ appNames, to, icon }, index) => {
-                const isCurrent = appNames.includes(APP_NAME);
-                return (
-                    <MobileNavLink
-                        key={index}
-                        to={to}
-                        icon={icon}
-                        external={appNames[0] !== APP_NAME}
-                        current={isCurrent}
-                    />
-                );
+            {apps.map(({ toApp, icon }, index) => {
+                const isCurrent = toApp === APP_NAME;
+                return <MobileNavLink key={index} to="/" toApp={toApp} icon={icon} current={isCurrent} />;
             })}
         </MobileNavServices>
     );

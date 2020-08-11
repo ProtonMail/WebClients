@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { APPS } from 'proton-shared/lib/constants';
 
 import { Title, Href, VpnLogo, MailLogo, FooterDetails, SupportDropdown, useConfig } from '../../index';
 import PublicHeader from './PublicHeader';
 import useAppTitle from '../../hooks/useAppTitle';
-
-const { VPN } = CLIENT_TYPES;
 
 interface Props {
     children?: React.ReactNode;
@@ -15,8 +13,8 @@ interface Props {
 }
 
 const SignInLayout = ({ children, title = '' }: Props) => {
-    const { CLIENT_TYPE } = useConfig();
-    const isVPN = CLIENT_TYPE === VPN;
+    const { APP_NAME } = useConfig();
+    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const domain = isVPN ? 'protonvpn.com' : 'protonmail.com';
     const staticURL = `https://${domain}`;
 

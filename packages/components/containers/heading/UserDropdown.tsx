@@ -1,33 +1,32 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { revoke } from 'proton-shared/lib/api/auth';
-import { APPS, CLIENT_TYPES, PLANS } from 'proton-shared/lib/constants';
+import { APPS, isSSOMode, PLANS, SSO_PATHS } from 'proton-shared/lib/constants';
 import { getPlanName } from 'proton-shared/lib/helpers/subscription';
+import { getAccountSettingsApp, getAppHref } from 'proton-shared/lib/apps/helper';
+import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
+import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import {
-    useUser,
-    useOrganization,
-    useAuthentication,
-    useModals,
-    usePopperAnchor,
-    useApi,
-    Icon,
-    Dropdown,
     DonateModal,
+    Dropdown,
     generateUID,
+    Icon,
     PrimaryButton,
+    useAuthentication,
     useConfig,
+    useModals,
+    useOrganization,
+    usePopperAnchor,
     useSubscription,
-    Link,
+    useUser,
 } from '../..';
 
 import UserDropdownButton from './UserDropdownButton';
+import AppLink from '../../components/link/AppLink';
 
-const { VPN } = CLIENT_TYPES;
 const { PROFESSIONAL, VISIONARY } = PLANS;
 
 const UserDropdown = ({ ...rest }) => {
-    const { APP_NAME, CLIENT_TYPE } = useConfig();
-    const api = useApi();
+    const { APP_NAME } = useConfig();
     const [user] = useUser();
     const { DisplayName, Email, Name } = user;
     const [{ Name: organizationName } = { Name: '' }] = useOrganization();
@@ -42,8 +41,15 @@ const UserDropdown = ({ ...rest }) => {
         createModal(<DonateModal />);
     };
 
+    const handleSwitchAccount = () => {
+        if (APP_NAME === APPS.PROTONACCOUNT) {
+            const href = getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT);
+            return document.location.assign(href);
+        }
+        return requestFork(APP_NAME, undefined, FORK_TYPE.SWITCH);
+    };
+
     const handleLogout = () => {
-        api(revoke()); // Kick off the revoke request, but don't care for the result.
         logout();
     };
 
@@ -75,16 +81,16 @@ const UserDropdown = ({ ...rest }) => {
                             </span>
                         ) : null}
                     </li>
-                    {CLIENT_TYPE === VPN || APP_NAME === APPS.PROTONACCOUNT ? null : (
+                    {APP_NAME === APPS.PROTONVPN_SETTINGS || APP_NAME === APPS.PROTONACCOUNT ? null : (
                         <li className="dropDown-item">
-                            <Link
-                                external={APP_NAME !== APPS.PROTONMAIL_SETTINGS}
+                            <AppLink
                                 className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
-                                to="/settings"
+                                to="/"
+                                toApp={getAccountSettingsApp()}
                             >
                                 <Icon className="mt0-25 mr0-5" name="settings-master" />
                                 {c('Action').t`Settings`}
-                            </Link>
+                            </AppLink>
                         </li>
                     )}
                     <li className="dropDown-item">
@@ -108,6 +114,18 @@ const UserDropdown = ({ ...rest }) => {
                             {c('Action').t`Support us`}
                         </button>
                     </li>
+                    {isSSOMode ? (
+                        <li className="dropDown-item">
+                            <button
+                                type="button"
+                                className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
+                                onClick={handleSwitchAccount}
+                            >
+                                <Icon className="mt0-25 mr0-5" name="organization-users" />
+                                {c('Action').t`Switch account`}
+                            </button>
+                        </li>
+                    ) : null}
                     <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex">
                         <PrimaryButton
                             className="w100 aligncenter navigationUser-logout"

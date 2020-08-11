@@ -1,47 +1,37 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS, FEATURE_FLAGS } from 'proton-shared/lib/constants';
+import { APPS, APPS_CONFIGURATION, FEATURE_FLAGS, isSSOMode } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { useUser } from '../../hooks/useUser';
-import useConfig from '../config/useConfig';
-import Link from '../../components/link/Link';
+import AppLink from '../../components/link/AppLink';
 import Icon from '../../components/icon/Icon';
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
 import Meter from '../../components/progress/Meter';
 
-const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONDRIVE } = APPS;
+const { PROTONACCOUNT, PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONDRIVE } = APPS;
 
 const AppsDropdown = () => {
     const [user] = useUser();
-    const { APP_NAME } = useConfig();
     const { UsedSpace, MaxSpace } = user;
     const spacePercentage = Math.round((UsedSpace * 100) / MaxSpace);
     const spaceHuman = `${humanSize(UsedSpace)} / ${humanSize(MaxSpace)}`;
 
     const apps = [
-        {
-            appNames: [PROTONMAIL],
-            icon: 'protonmail',
-            title: 'ProtonMail',
-            link: '/inbox',
-        },
-        { appNames: [PROTONCONTACTS], icon: 'protoncontacts', title: 'ProtonContacts', link: '/contacts' },
-        {
-            appNames: [PROTONCALENDAR],
-            icon: 'protoncalendar',
-            title: 'ProtonCalendar',
-            link: '/calendar',
-        },
-        FEATURE_FLAGS.includes('drive') && {
-            appNames: [PROTONDRIVE],
-            icon: 'protondrive',
-            title: 'ProtonDrive',
-            link: '/drive',
-        },
-    ].filter(isTruthy);
+        PROTONMAIL,
+        PROTONCONTACTS,
+        PROTONCALENDAR,
+        FEATURE_FLAGS.includes('drive') && PROTONDRIVE,
+        isSSOMode && PROTONACCOUNT,
+    ]
+        .filter(isTruthy)
+        .map((app) => ({
+            toApp: app,
+            icon: APPS_CONFIGURATION[app].icon,
+            title: APPS_CONFIGURATION[app].name,
+        }));
 
     return (
         <SimpleDropdown
@@ -53,27 +43,26 @@ const AppsDropdown = () => {
             title={c('Apps dropdown').t`Proton applications`}
         >
             <ul className="appsDropdown-list unstyled m0 scroll-if-needed">
-                {apps.map(({ appNames = [], icon, title, link }, index) => {
-                    const isCurrent = appNames.includes(APP_NAME);
+                {apps.map(({ toApp, icon, title }, index) => {
                     const key = `${index}`;
                     return (
                         <li className="dropDown-item appsDropdown-item" key={key}>
-                            <Link
-                                to={link}
+                            <AppLink
+                                to="/"
+                                toApp={toApp}
                                 className="appsDropdown-link big m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-items-center"
-                                external={!isCurrent}
                                 title={c('Apps dropdown').t`Go to ${title}`}
                             >
                                 <Icon name={icon} size={20} className="mr0-5" />
                                 <span>{title}</span>
-                            </Link>
+                            </AppLink>
                         </li>
                     );
                 })}
                 <li className="dropDown-item appsDropdown-item">
-                    <Link
-                        to="/settings/subscription"
-                        external
+                    <AppLink
+                        to="/subscription"
+                        toApp={getAccountSettingsApp()}
                         className="appsDropdown-link big m0 bl p1 pt0-75 pb0-25"
                         title={c('Apps dropdown').t`Add storage space`}
                     >
@@ -85,7 +74,7 @@ const AppsDropdown = () => {
                             <Meter className="is-thin bl mt0-25" value={spacePercentage} />
                             <div className="smaller m0 opacity-50">{spaceHuman}</div>
                         </div>
-                    </Link>
+                    </AppLink>
                 </li>
             </ul>
         </SimpleDropdown>

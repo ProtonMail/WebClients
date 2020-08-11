@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Alert } from 'react-components';
-import { Link } from 'react-router-dom';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
+import AppLink from '../../components/link/AppLink';
 
 const ProtonMailBridgeSection = ({ permission }) => {
     return (
@@ -10,8 +11,9 @@ const ProtonMailBridgeSection = ({ permission }) => {
             <Alert learnMore="https://protonmail.com/bridge/">{c('Info')
                 .t`ProtonMail supports IMAP/SMTP via the ProtonMail Bridge application. Thunderbird, Microsoft Outlook, and Apple Mail are officially supported on both Windows and MacOS.`}</Alert>
             {permission ? null : (
-                <Link to="/settings/subscription" className="pm-button pm-button--primary">{c('Action')
-                    .t`Upgrade`}</Link>
+                <AppLink to="/subscription" toApp={getAccountSettingsApp()} className="pm-button pm-button--primary">{c(
+                    'Action'
+                ).t`Upgrade`}</AppLink>
             )}
         </>
     );

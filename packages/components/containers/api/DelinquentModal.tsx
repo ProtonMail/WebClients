@@ -1,32 +1,38 @@
 import React from 'react';
 import { c } from 'ttag';
-import { History } from 'history';
-import { withRouter } from 'react-router-dom';
-import { APPS } from 'proton-shared/lib/constants';
-import { redirectTo } from 'proton-shared/lib/helpers/browser';
+import { useHistory } from 'react-router-dom';
+import { APPS, isSSOMode, isStandaloneMode } from 'proton-shared/lib/constants';
+import { replaceUrl } from 'proton-shared/lib/helpers/browser';
+import { getAccountSettingsApp, getAppHref } from 'proton-shared/lib/apps/helper';
 
 import { FormModal, useConfig, Alert } from '../../index';
 
 interface Props {
-    history: History;
     [key: string]: any;
 }
 
-const DelinquentModal = ({ history, ...rest }: Props) => {
+const DelinquentModal = ({ ...rest }: Props) => {
+    const history = useHistory();
     const { APP_NAME } = useConfig();
     const title = c('Delinquent modal title').t`Overdue invoice`;
 
     const handleSubmit = () => {
         if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
-            history.push('/payments#invoices');
-        } else if (APP_NAME === APPS.PROTONACCOUNT) {
-            history.push('/subscription#invoices');
-        } else if (APP_NAME === APPS.PROTONMAIL_SETTINGS) {
-            // TODO remove this if once general settings are in proton-account
-            history.push('/settings/subscription#invoices');
-        } else {
-            redirectTo('/settings/subscription#invoices'); // TODO replace this URL once general settings are in proton-account
+            return history.push('/payments#invoices');
         }
+        if (APP_NAME === APPS.PROTONACCOUNT) {
+            return history.push('/subscription#invoices');
+        }
+        if (APP_NAME === APPS.PROTONMAIL_SETTINGS) {
+            return history.push('/subscription#invoices');
+        }
+        if (isSSOMode) {
+            return replaceUrl(getAppHref('/subscription#invoices', getAccountSettingsApp()));
+        }
+        if (isStandaloneMode) {
+            return;
+        }
+        return replaceUrl(getAppHref('/subscription#invoices', getAccountSettingsApp()));
     };
 
     return (
@@ -45,4 +51,4 @@ const DelinquentModal = ({ history, ...rest }: Props) => {
     );
 };
 
-export default withRouter(DelinquentModal);
+export default DelinquentModal;

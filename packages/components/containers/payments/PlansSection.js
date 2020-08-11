@@ -21,7 +21,7 @@ import {
 } from 'react-components';
 
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
-import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, CLIENT_TYPES, PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, APPS } from 'proton-shared/lib/constants';
 import {
     getPlans,
     isBundleEligible,
@@ -38,7 +38,7 @@ import VpnSubscriptionTable from './subscription/VpnSubscriptionTable';
 
 const PlansSection = () => {
     const { call } = useEventManager();
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const [user] = useUser();
@@ -47,8 +47,9 @@ const PlansSection = () => {
     const [organization = {}, loadingOrganization] = useOrganization();
     const [plans = [], loadingPlans] = usePlans();
     const api = useApi();
+    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const { Name } =
-        getPlan(subscription, CLIENT_TYPE === CLIENT_TYPES.MAIL ? PLAN_SERVICES.MAIL : PLAN_SERVICES.VPN) || {};
+        getPlan(subscription, isVPN ? PLAN_SERVICES.VPN : PLAN_SERVICES.MAIL) || {};
 
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [cycle, setCycle] = useState(DEFAULT_CYCLE);
@@ -98,7 +99,7 @@ const PlansSection = () => {
             planIDs: getPlanIDs(subscription),
             plans,
             planID,
-            service: CLIENT_TYPE === CLIENT_TYPES.MAIL ? PLAN_SERVICES.MAIL : PLAN_SERVICES.VPN,
+            service: isVPN ? PLAN_SERVICES.VPN : PLAN_SERVICES.MAIL,
             organization,
         });
         const { Coupon } = await withLoading(
@@ -169,8 +170,8 @@ const PlansSection = () => {
                     <CurrencySelector currency={currency} onSelect={setCurrency} className="wauto" />
                 </div>
             </div>
-            {CLIENT_TYPE === CLIENT_TYPES.MAIL ? (
-                <MailSubscriptionTable
+            {isVPN ? (
+                <VpnSubscriptionTable
                     plans={plans}
                     planNameSelected={Name}
                     cycle={cycle}
@@ -179,7 +180,7 @@ const PlansSection = () => {
                     disabled={loading}
                 />
             ) : (
-                <VpnSubscriptionTable
+                <MailSubscriptionTable
                     plans={plans}
                     planNameSelected={Name}
                     cycle={cycle}

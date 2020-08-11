@@ -1,5 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
+import { APPS } from 'proton-shared/lib/constants';
+import { updateNotifyEmail, updateResetEmail } from 'proton-shared/lib/api/settings';
 import {
     AuthModal,
     Toggle,
@@ -16,13 +18,8 @@ import {
     useNotifications,
     useConfig,
 } from 'react-components';
-
-import { updateNotifyEmail, updateResetEmail } from 'proton-shared/lib/api/settings';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
 import RecoveryEmail from './RecoveryEmail';
 import EmailModal from './EmailModal';
-
-const { VPN } = CLIENT_TYPES;
 
 const EmailSection = () => {
     const { createModal } = useModals();
@@ -32,7 +29,7 @@ const EmailSection = () => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
 
     const handleRecoveryEmail = () => {
         createModal(<EmailModal email={email || '' /* can be null */} hasReset={!!Reset} hasNotify={!!Notify} />);
@@ -75,7 +72,7 @@ const EmailSection = () => {
                     />
                 </Field>
             </Row>
-            {CLIENT_TYPE === VPN ? null : (
+            {APP_NAME === APPS.PROTONVPN_SETTINGS ? null : (
                 <Row>
                     <Label htmlFor="dailyNotificationsToggle">
                         <span className="mr0-5">{c('Label').t`Daily email notifications`}</span>

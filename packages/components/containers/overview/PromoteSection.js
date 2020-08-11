@@ -1,11 +1,13 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import thanksForYourSupportSvg from 'design-system/assets/img/pm-images/love.svg';
 import contactYourAdminSvg from 'design-system/assets/img/pm-images/settings.svg';
 import upgradeToPaidPlanSvg from 'design-system/assets/img/pm-images/upgrade.svg';
 import get20PerscentDiscountSvg from 'design-system/assets/img/pm-images/percent.svg';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
+import { APPS } from 'proton-shared/lib/constants';
+import AppLink from '../../components/link/AppLink';
 
 const Panel = ({ model }) => {
     return (
@@ -15,10 +17,10 @@ const Panel = ({ model }) => {
                     <h4>{model.title}</h4>
                     <div className="mb2">{model.text}</div>
                     <div>
-                        {model.action ? (
-                            <Link className="pm-button inbl pm-button--primary" to={model.link}>
+                        {model.action && model.to ? (
+                            <AppLink className="pm-button inbl pm-button--primary" to={model.to} toApp={model.toApp}>
                                 {model.action}
-                            </Link>
+                            </AppLink>
                         ) : (
                             <div className="p1" />
                         )}
@@ -47,7 +49,8 @@ const PromoteSection = ({ user }) => {
         free: {
             title: c('Title').t`Upgrade to a paid plan`,
             text: c('Info').t`Get additional storage capacity and more addresses with ProtonMail Plus.`,
-            link: '/settings/subscription',
+            to: '/subscription',
+            toApp: getAccountSettingsApp(),
             image: upgradeToPaidPlanSvg,
             action: c('Action').t`Upgrade ProtonMail`,
         },
@@ -55,14 +58,16 @@ const PromoteSection = ({ user }) => {
             title: c('Title').t`Thanks for your support`,
             text: c('Info')
                 .t`Help us improve our service and get early access to new features by enrolling in our Beta programs.`,
-            link: '/settings/apps',
+            to: '/apps',
+            toApp: APPS.PROTONMAIL_SETTINGS,
             image: thanksForYourSupportSvg,
             action: c('Action').t`Join`,
         },
         payBundle: {
             title: c('Title').t`Get 20% discount`,
             text: c('Info').t`Pay for both ProtonMail and ProtonVPN and get 20% off your entire subscription.`,
-            link: '/settings/subscription',
+            to: '/subscription',
+            toApp: getAccountSettingsApp(),
             image: get20PerscentDiscountSvg,
             action: c('Action').t`Upgrade`,
         },

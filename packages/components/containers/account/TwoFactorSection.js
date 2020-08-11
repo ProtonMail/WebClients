@@ -1,13 +1,13 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Row, Label, Info, Field, Toggle, useConfig, useModals, useUserSettings } from 'react-components';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { APPS } from 'proton-shared/lib/constants';
 
 import EnableTwoFactorModal from './EnableTwoFactorModal';
 import DisableTwoFactorModal from './DisableTwoFactorModal';
 
 const TwoFactorSection = () => {
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
     const [{ '2FA': { Enabled } } = {}] = useUserSettings();
     const { createModal } = useModals();
 
@@ -18,9 +18,8 @@ const TwoFactorSection = () => {
         return createModal(<EnableTwoFactorModal />);
     };
 
-    const { VPN } = CLIENT_TYPES;
     const twoFactorAuthLink =
-        CLIENT_TYPE === VPN
+        APP_NAME === APPS.PROTONVPN_SETTINGS
             ? 'https://protonvpn.com/support/two-factor-authentication'
             : 'https://protonmail.com/support/knowledge-base/two-factor-authentication';
 

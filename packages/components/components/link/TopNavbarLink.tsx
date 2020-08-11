@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Icon } from '../../index';
-import Link, { Props as LinkProps } from './Link';
+import AppLink, { Props as LinkProps } from './AppLink';
 
 export interface Props extends LinkProps {
     text: string;
@@ -10,10 +10,10 @@ export interface Props extends LinkProps {
 
 const TopNavbarLink = ({ icon, text, ...rest }: Props) => {
     return (
-        <Link className="topnav-link" {...rest}>
+        <AppLink className="topnav-link" {...rest}>
             <Icon className="topnav-icon mr0-5 flex-item-centered-vert" name={icon} />
             <span className="navigation-title topnav-linkText">{text}</span>
-        </Link>
+        </AppLink>
     );
 };
 

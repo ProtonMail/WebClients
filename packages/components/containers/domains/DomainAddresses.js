@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 import { SimpleDropdown, DropdownMenu } from 'react-components';
+import { APPS } from 'proton-shared/lib/constants';
+import AppLink from '../../components/link/AppLink';
 
 const DomainAddresses = ({ domainAddresses }) => {
     const list = domainAddresses.map(({ ID, Email }) => (
@@ -25,7 +26,8 @@ const DomainAddresses = ({ domainAddresses }) => {
             <SimpleDropdown className="pm-button--link" content={contentDropDown}>
                 <DropdownMenu>{list}</DropdownMenu>
                 <div className="alignright p1">
-                    <Link className="pm-button" to="/settings/addresses">{c('Link').t`Manage`}</Link>
+                    <AppLink className="pm-button" to="/addresses" toApp={APPS.PROTONMAIL_SETTINGS}>{c('Link')
+                        .t`Manage`}</AppLink>
                 </div>
             </SimpleDropdown>
         </>

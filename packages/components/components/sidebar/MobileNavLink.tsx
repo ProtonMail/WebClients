@@ -1,17 +1,16 @@
 import React from 'react';
-import { Icon, Link } from '../../index';
+import AppLink, { Props as AppLinkProps } from '../link/AppLink';
+import Icon from '../icon/Icon';
 
-interface Props {
+interface Props extends AppLinkProps {
     icon: string;
-    to: string;
-    external: boolean;
     current: boolean;
 }
-const MobileNavLink = ({ icon = '', to = '', external = false, current = false }: Props) => {
+const MobileNavLink = ({ icon = '', current = false, ...rest }: Props) => {
     return (
-        <Link to={to} external={external} aria-current={current} className="flex aside-link">
+        <AppLink aria-current={current} className="flex aside-link" {...rest}>
             <Icon name={icon} className="aside-linkIcon mauto" />
-        </Link>
+        </AppLink>
     );
 };
 

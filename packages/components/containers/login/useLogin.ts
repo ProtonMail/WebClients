@@ -1,10 +1,9 @@
 import { useRef, useState } from 'react';
 import { AUTH_VERSION } from 'pm-srp';
-import { srpVerify } from 'proton-shared/lib/srp';
 import { c } from 'ttag';
+import { srpVerify } from 'proton-shared/lib/srp';
 import { upgradePassword } from 'proton-shared/lib/api/settings';
-import { auth2FA, getInfo, setCookies } from 'proton-shared/lib/api/auth';
-import { getRandomString } from 'proton-shared/lib/helpers/string';
+import { auth2FA, getInfo } from 'proton-shared/lib/api/auth';
 import { KeySalt as tsKeySalt, User as tsUser } from 'proton-shared/lib/interfaces';
 import { getUser } from 'proton-shared/lib/api/user';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
@@ -12,9 +11,9 @@ import { HTTP_ERROR_CODES } from 'proton-shared/lib/errors';
 import { AuthResponse, AuthVersion, InfoResponse } from 'proton-shared/lib/authentication/interface';
 import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallback';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
+import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { getAuthTypes, handleUnlockKey } from './helper';
-import { useApi } from '../../index';
-import { OnLoginArgs } from './interface';
+import { OnLoginCallback, useApi } from '../../index';
 
 export enum FORM {
     LOGIN,
@@ -24,7 +23,7 @@ export enum FORM {
 }
 
 export interface Props {
-    onLogin: (args: OnLoginArgs) => void;
+    onLogin: OnLoginCallback;
     ignoreUnlock?: boolean;
 }
 
@@ -77,7 +76,7 @@ const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
         const { authVersion, authResult, userSaltResult = [] } = cache;
 
         const [User] = userSaltResult;
-        const { UID, EventID, AccessToken, RefreshToken } = authResult;
+        const { UID, AccessToken } = authResult;
         const { password } = state;
 
         if (authVersion < AUTH_VERSION) {
@@ -88,9 +87,8 @@ const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
             });
         }
 
-        await api(setCookies({ UID, AccessToken, RefreshToken, State: getRandomString(24) }));
-
-        onLogin({ UID, User, keyPassword, EventID });
+        await persistSession({ ...authResult, api, keyPassword });
+        await onLogin({ ...authResult, User, keyPassword });
     };
 
     /**

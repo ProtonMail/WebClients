@@ -1,30 +1,27 @@
 import React, { useRef } from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { APPS } from 'proton-shared/lib/constants';
 
 import {
     Alert,
     ConfirmModal,
     GenericError,
     Href,
-    Label,
+    Label, OnLoginCallback,
     PasswordInput,
     PrimaryButton,
     useConfig,
-    useModals,
+    useModals
 } from '../../index';
 import useResetPassword, { STEPS } from './useResetPassword';
-import { OnLoginArgs } from '../login/interface';
 import ResetUsernameInput from './ResetUsernameInput';
 import ResetPasswordInput from './ResetPasswordInput';
 import ResetTokenInput from './ResetTokenInput';
 import ResetDangerInput from './ResetDangerInput';
 
-const { VPN } = CLIENT_TYPES;
-
 interface Props {
-    onLogin: (args: OnLoginArgs) => void;
+    onLogin: OnLoginCallback;
 }
 
 const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
@@ -44,9 +41,11 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
         setDanger,
     } = useResetPassword({ onLogin });
 
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
     const { createModal } = useModals();
     const hasModal = useRef<boolean>(false);
+
+    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
     const { step, username, email, password, confirmPassword, danger, token } = state;
 
@@ -77,7 +76,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
             >
                 <Alert
                     learnMore={
-                        CLIENT_TYPE === VPN
+                        isVPN
                             ? 'https://protonvpn.com/support/reset-protonvpn-account-password/'
                             : 'https://protonmail.com/support/knowledge-base/set-forgot-password-options/'
                     }
@@ -148,7 +147,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                 <div className="mb1">
                     <ResetDangerInput value={danger} setValue={setDanger} dangerWord={dangerWord} id="danger" />
                 </div>
-                {CLIENT_TYPE === VPN ? null : (
+                {isVPN ? null : (
                     <Alert learnMore="https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/">{c(
                         'Info'
                     ).t`If you remember your old password later, you can recover your existing messages.`}</Alert>

@@ -6,8 +6,8 @@ import {
     PLANS,
     CYCLE,
     ADDON_NAMES,
-    CLIENT_TYPES,
     PLAN_SERVICES,
+    APPS,
     FREE,
     PLAN_TYPES,
     MAX_VPN_ADDON,
@@ -123,7 +123,9 @@ const SubscriptionCustomization = ({
     expanded = false,
     loading = false,
 }) => {
-    const { CLIENT_TYPE } = useConfig();
+    const { APP_NAME } = useConfig();
+    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
+
     const plansMap = toMap(plans, 'Name');
     const plusPlan = plansMap[PLANS.PLUS];
     const visionaryPlan = plansMap[PLANS.VISIONARY];
@@ -507,7 +509,7 @@ const SubscriptionCustomization = ({
         return <Loader />;
     }
 
-    if (CLIENT_TYPE === CLIENT_TYPES.VPN) {
+    if (isVPN) {
         sections.reverse();
     }
 

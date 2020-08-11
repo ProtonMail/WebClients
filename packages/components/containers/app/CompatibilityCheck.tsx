@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
-import { Href, useConfig } from 'react-components';
-import PropTypes from 'prop-types';
 import unsupportedBrowserSettings from 'design-system/assets/img/shared/unsupported-browser-settings.svg';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { APPS } from 'proton-shared/lib/constants';
+import { Href, useConfig } from '../../index';
 
 const isGoodPrngAvailable = () => {
     if (window.crypto && window.crypto.getRandomValues) {
         return true;
     }
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     return typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function';
 };
 
 const hasCookies = () => {
     try {
-        return navigator.cookieEnabled === true;
+        return navigator.cookieEnabled;
     } catch (e) {
         // Safari throws SecurityError if storage is disabled
         return false;
@@ -51,8 +52,11 @@ const compats = [
 
 const compat = compats.every(({ valid }) => valid);
 
-const CompatibilityCheck = ({ children }) => {
-    const { CLIENT_TYPE } = useConfig();
+interface Props {
+    children: React.ReactNode;
+}
+const CompatibilityCheck = ({ children }: Props) => {
+    const { APP_NAME } = useConfig();
 
     useEffect(() => {
         if (!compat) {
@@ -61,7 +65,7 @@ const CompatibilityCheck = ({ children }) => {
     }, []);
 
     if (compat) {
-        return children;
+        return <>{children}</>;
     }
 
     const list = compats
@@ -74,8 +78,8 @@ const CompatibilityCheck = ({ children }) => {
             );
         });
 
-    const isProtonVPN = CLIENT_TYPE === CLIENT_TYPES.VPN;
-    const kbUrl = isProtonVPN
+    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const kbUrl = isVPN
         ? 'https://protonvpn.com/support/browsers-supported/'
         : 'https://protonmail.com/support/knowledge-base/browsers-supported/';
 
@@ -104,10 +108,6 @@ const CompatibilityCheck = ({ children }) => {
             <ul>{list}</ul>
         </div>
     );
-};
-
-CompatibilityCheck.propTypes = {
-    children: PropTypes.node,
 };
 
 export default CompatibilityCheck;

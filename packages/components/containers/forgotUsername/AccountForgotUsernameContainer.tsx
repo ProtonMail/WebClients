@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import { c } from 'ttag';
-import { History } from 'history';
 import { requestUsername } from 'proton-shared/lib/api/reset';
+import { useHistory } from 'react-router-dom';
 
 import { useApi, useNotifications, useLoading, EmailInput, PrimaryButton, Label } from '../../index';
 import { Props as AccountLayoutProps } from '../signup/AccountPublicLayout';
@@ -10,11 +10,11 @@ import SignupLabelInputRow from '../signup/SignupLabelInputRow';
 import SignupSubmitRow from '../signup/SignupSubmitRow';
 
 interface Props {
-    history: History;
     Layout: FunctionComponent<AccountLayoutProps>;
 }
 
-const AccountForgotUsernameContainer = ({ history, Layout }: Props) => {
+const AccountForgotUsernameContainer = ({ Layout }: Props) => {
+    const history = useHistory();
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();

@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { getBrowserLocale, getClosestMatches } from 'proton-shared/lib/i18n/helper';
 import loadLocale from 'proton-shared/lib/i18n/loadLocale';
+import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import GenericError from '../error/GenericError';
 import LoaderPage from './LoaderPage';
 import ModalsChildren from '../modals/Children';
 
 interface Props {
-    locales?: any;
+    locales?: TtagLocaleMap;
     openpgpConfig?: object;
     children: React.ReactNode;
 }
