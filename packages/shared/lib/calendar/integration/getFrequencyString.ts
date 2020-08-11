@@ -7,7 +7,7 @@ import { getPositiveSetpos } from '../helper';
 import {
     VcalDateOrDateTimeProperty,
     VcalRrulePropertyValue,
-    VcalRruleProperty
+    VcalRruleProperty,
 } from '../../interfaces/calendar/VcalModel';
 import { getEndType, getMonthType, getUntilDate, getWeeklyDays } from './rruleProperties';
 import { toUTCDate } from '../../date/timezone';
@@ -15,7 +15,7 @@ import { getIsRruleCustom, getIsRruleSupported } from './rrule';
 import { getPropertyTzid } from '../vcalHelper';
 
 interface RruleEnd {
-    type: END_TYPE,
+    type: END_TYPE;
     count?: number;
     until?: Date;
 }
@@ -155,7 +155,7 @@ export const getOnDayString = (date: Date, monthlyType: MONTHLY_TYPE) => {
 const getCustomDailyString = (
     rruleValue: VcalRrulePropertyValue,
     { type: endType, count = 1, until }: RruleEnd,
-    locale: Locale,
+    locale: Locale
 ) => {
     const { interval = 1 } = rruleValue;
 
@@ -178,7 +178,7 @@ const getCustomDailyString = (
     }
 
     if (endType === END_TYPE.UNTIL && until) {
-        const dateString = format(until, 'd MMM yyyy', { locale });
+        const dateString = format(until, 'PP', { locale });
         return c('Daily recurring event, frequency').ngettext(
             msgid`Daily, until ${dateString}`,
             `Every ${interval} days, until ${dateString}`,
@@ -414,7 +414,7 @@ const getCustomWeeklyString = (
               );
     }
     if (endType === END_TYPE.UNTIL && until) {
-        const dateString = format(until, 'd MMM yyyy', { locale });
+        const dateString = format(until, 'PP', { locale });
         if (days.length === 7) {
             return c('Weekly recurring event, frequency').ngettext(
                 msgid`Weekly on all days, until ${dateString}`,
@@ -512,7 +512,7 @@ const getCustomMonthlyString = (
               );
     }
     if (endType === END_TYPE.UNTIL && until) {
-        const dateString = format(until, 'd MMM yyyy', { locale });
+        const dateString = format(until, 'PP', { locale });
         return c('Monthly recurring event, frequency').ngettext(
             msgid`Monthly ${onDayString}, until ${dateString}`,
             `Every ${interval} months ${onDayString}, until ${dateString}`,
@@ -545,7 +545,7 @@ const getCustomYearlyString = (
     }
 
     if (endType === END_TYPE.UNTIL && until) {
-        const dateString = format(until, 'd MMM yyyy', { locale });
+        const dateString = format(until, 'PP', { locale });
         return c('Yearly recurring event, frequency').ngettext(
             msgid`Yearly, until ${dateString}`,
             `Every ${interval} years, until ${dateString}`,
@@ -568,7 +568,7 @@ export const getFrequencyString = (
     const end = {
         type: getEndType(count, until),
         count,
-        until: getUntilDate(until)
+        until: getUntilDate(until),
     };
 
     if (!isSupported) {
