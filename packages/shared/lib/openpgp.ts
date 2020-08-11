@@ -1,13 +1,14 @@
 import { hasModulesSupport, getOS } from './helpers/browser';
 import { initScript, initWorker, setOpenpgp } from './helpers/setupPmcrypto';
+import { OPENPGP } from './constants';
 
-let promise;
+let promise: undefined | Promise<void>;
 
-const dl = ({ filepath, integrity }) => {
+const dl = ({ filepath, integrity }: { filepath: string; integrity?: string }) => {
     const options = {
         integrity,
         credentials: 'include',
-    };
+    } as const;
     return fetch(filepath, options).then((response) => response.text());
 };
 
@@ -15,7 +16,6 @@ const dl = ({ filepath, integrity }) => {
  * There is a bug in iOS that prevents the openpgp worker from functioning properly.
  * It's on all browsers there because they use the webkit engine.
  * See https://github.com/ProtonMail/Angular/issues/8444
- * @returns {boolean}
  */
 const isUnsupportedWorker = () => {
     const { name, version } = getOS();
@@ -24,12 +24,9 @@ const isUnsupportedWorker = () => {
 
 /**
  * Initialize openpgp
- * @return {Promise}
  */
-export const init = async (openpgpConfig) => {
-    // PM_OPENPGP is set from webpack
-    // eslint-disable-next-line no-undef
-    const { main, compat, elliptic, worker } = PM_OPENPGP;
+export const init = async (openpgpConfig: any) => {
+    const { main, compat, elliptic, worker } = OPENPGP;
 
     // pre-fetch everything
     const isCompat = !hasModulesSupport();
@@ -42,7 +39,8 @@ export const init = async (openpgpConfig) => {
     const openpgpContents = await openpgpPromise;
     await initScript(openpgpContents);
 
-    setOpenpgp(window.openpgp, elliptic, openpgpConfig);
+    const { openpgp } = window as any;
+    setOpenpgp(openpgp, elliptic, openpgpConfig);
 
     // Compat browsers do not support the worker.
     if (isCompat || isUnsupportedWorker()) {
@@ -58,14 +56,17 @@ export const init = async (openpgpConfig) => {
 /**
  * Get the openpgp init promise singleton
  */
-export const loadOpenPGP = (openpgpConfig) => {
-    // eslint-disable-next-line no-return-assign
-    return promise || (promise = init(openpgpConfig));
+export const loadOpenPGP = (openpgpConfig?: any) => {
+    if (!promise) {
+        promise = init(openpgpConfig);
+    }
+    return promise;
 };
 
 export const destroyOpenPGP = () => {
     promise = undefined;
-    if (window.openpgp) {
-        return window.openpgp.destroyWorker();
+    const { openpgp } = window as any;
+    if (openpgp) {
+        return openpgp.destroyWorker();
     }
 };

@@ -180,3 +180,5 @@ export const findLongestMatchingIndex = (strings: string[] = [], substring = '')
 
     return i;
 };
+
+export const stripLeadingAndTrailingSlash = (str: string) => str.replace(/^\/+|\/+$/g, '');

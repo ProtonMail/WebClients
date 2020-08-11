@@ -47,8 +47,8 @@ const deserialize = (string: string) => {
 
 const serialize = (data: any) => JSON.stringify(data);
 
-const deserializeItem = (value: string) => {
-    if (!value) {
+const deserializeItem = (value: string | undefined) => {
+    if (value === undefined) {
         return;
     }
     try {
@@ -65,7 +65,7 @@ const serializeItem = (value: Uint8Array) => {
 const saveSessionStorage = (keys: string[] = [], data: any) => {
     keys.forEach((key) => {
         const value = data[key];
-        if (!value) {
+        if (value === undefined) {
             return;
         }
         window.sessionStorage.setItem(key, value);
@@ -80,52 +80,60 @@ const readSessionStorage = (keys: string[] = []) => {
     }, {});
 };
 
+const mergePart = (serializedA: string | undefined, serializedB: string | undefined) => {
+    const a = deserializeItem(serializedA);
+    const b = deserializeItem(serializedB);
+    if (a === undefined || b === undefined || a.length !== b.length) {
+        return;
+    }
+    const xored = new Uint8Array(b.length);
+    for (let j = 0; j < b.length; j++) {
+        xored[j] = b[j] ^ a[j];
+    }
+
+    // Strip off padding
+    let unpaddedLength = b.length;
+    while (unpaddedLength > 0 && xored[unpaddedLength - 1] === 0) {
+        unpaddedLength--;
+    }
+
+    return arrayToBinaryString(xored.slice(0, unpaddedLength));
+};
+
 export const mergeParts = (share1: any, share2: any) =>
     Object.keys(share1).reduce<{ [key: string]: string }>((acc, key) => {
-        const share1Value = deserializeItem(share1[key]);
-        const share2Value = deserializeItem(share2[key]);
-
-        if (!share1Value || !share2Value || share2Value.length !== share1Value.length) {
+        const value = mergePart(share1[key], share2[key]);
+        if (value === undefined) {
             return acc;
         }
-
-        const xored = new Uint8Array(share2Value.length);
-
-        for (let j = 0; j < share2Value.length; j++) {
-            xored[j] = share2Value[j] ^ share1Value[j];
-        }
-
-        // Strip off padding
-        let unpaddedLength = share2Value.length;
-        while (unpaddedLength > 0 && xored[unpaddedLength - 1] === 0) {
-            unpaddedLength--;
-        }
-
-        acc[key] = arrayToBinaryString(xored.slice(0, unpaddedLength));
+        acc[key] = value;
         return acc;
     }, {});
+
+const separatePart = (value: string) => {
+    const item = binaryStringToArray(value);
+    const paddedLength = Math.ceil(item.length / 256) * 256;
+
+    const share1 = getRandomValues(new Uint8Array(paddedLength));
+    const share2 = new Uint8Array(share1);
+
+    for (let i = 0; i < item.length; i++) {
+        share2[i] ^= item[i];
+    }
+
+    return [serializeItem(share1), serializeItem(share2)];
+};
 
 export const separateParts = (data: any) =>
     Object.keys(data).reduce<{ share1: { [key: string]: any }; share2: { [key: string]: any } }>(
         (acc, key) => {
             const value = data[key];
-            if (!value) {
+            if (value === undefined) {
                 return acc;
             }
-
-            const item = binaryStringToArray(value);
-            const paddedLength = Math.ceil(item.length / 256) * 256;
-
-            const share1 = getRandomValues(new Uint8Array(paddedLength));
-            const share2 = new Uint8Array(share1);
-
-            for (let i = 0; i < item.length; i++) {
-                share2[i] ^= item[i];
-            }
-
-            acc.share1[key] = serializeItem(share1);
-            acc.share2[key] = serializeItem(share2);
-
+            const [share1, share2] = separatePart(value);
+            acc.share1[key] = share1;
+            acc.share2[key] = share2;
             return acc;
         },
         { share1: {}, share2: {} }
@@ -153,4 +161,34 @@ export const load = (keys: string[]) => {
     const sessionData = readSessionStorage(keys);
 
     return mergeParts(nameStorage, sessionData);
+};
+
+const SESSION_STORAGE_KEY = 'proton:storage';
+export const save2 = (data: any) => {
+    if (!hasSessionStorage()) {
+        return;
+    }
+    const [share1, share2] = separatePart(JSON.stringify(data));
+    window.name = serialize(share1);
+    window.sessionStorage.setItem(SESSION_STORAGE_KEY, share2);
+};
+
+export const load2 = () => {
+    if (!hasSessionStorage()) {
+        return {};
+    }
+    try {
+        const share1 = deserialize(window.name);
+        const share2 = window.sessionStorage.getItem(SESSION_STORAGE_KEY) || '';
+        window.name = '';
+        window.sessionStorage.removeItem(SESSION_STORAGE_KEY);
+        const string = mergePart(share1, share2) || '';
+        const parsedValue = JSON.parse(string) || {};
+        if (parsedValue === Object(parsedValue)) {
+            return parsedValue;
+        }
+        return {};
+    } catch {
+        return {};
+    }
 };

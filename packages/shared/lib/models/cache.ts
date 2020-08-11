@@ -6,4 +6,4 @@ export const STATUS = {
     PENDING,
     RESOLVED,
     REJECTED,
-};
+} as const;

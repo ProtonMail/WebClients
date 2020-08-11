@@ -92,7 +92,8 @@ export const getActiveXObject = (name: string) => {
 export const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 export const hasAcrobatInstalled = () => !!(getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl'));
 export const hasPDFSupport = () => 'application/pdf' in navigator.mimeTypes || isIos() || hasAcrobatInstalled();
-export const redirectTo = (url = '') => document.location.replace(`${document.location.origin}${url}`);
+export const replaceUrl = (url = '') => document.location.replace(url);
+export const redirectTo = (url = '') => replaceUrl(`${document.location.origin}${url}`);
 
 /**
  * Detect browser requiring direct action

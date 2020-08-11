@@ -1,6 +1,6 @@
 interface ScriptInfo {
     path: string;
-    integrity: string;
+    integrity?: string;
 }
 
 interface Callback {
@@ -23,7 +23,7 @@ const loadScriptHelper = ({ path, integrity }: ScriptInfo, cb: Callback) => {
     document.head.appendChild(script);
 };
 
-export const loadScript = (path: string, integrity: string) => {
+export const loadScript = (path: string, integrity?: string) => {
     return new Promise<Event>((resolve, reject) => {
         loadScriptHelper({ path, integrity }, (event, error) => {
             if (error) {

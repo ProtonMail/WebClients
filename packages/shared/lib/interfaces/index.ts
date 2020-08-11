@@ -13,6 +13,7 @@ export * from './SignedKeyList';
 export * from './User';
 export * from './UserSettings';
 export * from './Subscription';
+export * from './config';
 
 export interface EncryptionConfig {
     curve?: string;

@@ -22,17 +22,87 @@ export const EMAIL_PLACEHOLDER = 'john.doe@domain.com';
 export const USERNAME_PLACEHOLDER = 'john.doe';
 export const PASSWORD_PLACEHOLDER = '*********';
 
-export enum APPS {
-    PROTONACCOUNT = 'proton-account',
-    PROTONMAIL = 'proton-mail',
-    PROTONMAIL_SETTINGS = 'proton-mail-settings',
-    PROTONCONTACTS = 'proton-contacts',
-    PROTONDRIVE = 'proton-drive',
-    PROTONCALENDAR = 'proton-calendar',
-    PROTONWALLET = 'proton-wallet',
-    PROTONVPN_SETTINGS = 'proton-vpn-settings',
-    PROTONADMIN = 'proton-admin',
-}
+export const APPS = {
+    PROTONACCOUNT: 'proton-account',
+    PROTONMAIL: 'proton-mail',
+    PROTONMAIL_SETTINGS: 'proton-mail-settings',
+    PROTONCONTACTS: 'proton-contacts',
+    PROTONDRIVE: 'proton-drive',
+    PROTONCALENDAR: 'proton-calendar',
+    PROTONVPN_SETTINGS: 'proton-vpn-settings',
+    PROTONADMIN: 'proton-admin',
+} as const;
+export const APPS_CONFIGURATION = {
+    [APPS.PROTONACCOUNT]: {
+        publicPath: '',
+        subdomain: 'account',
+        name: 'ProtonAccount',
+        clientID: 'Web',
+        icon: 'protonaccount',
+    },
+    [APPS.PROTONMAIL]: {
+        publicPath: '',
+        subdomain: 'mail',
+        name: 'ProtonMail',
+        // TODO clientID
+        clientID: 'Web',
+        icon: 'protonmail',
+    },
+    [APPS.PROTONMAIL_SETTINGS]: {
+        publicPath: '/settings',
+        subdomain: 'mail',
+        name: 'ProtonMailSettings',
+        clientID: 'WebMailSettings',
+        icon: 'protonmail',
+    },
+    [APPS.PROTONCONTACTS]: {
+        publicPath: '/contacts',
+        subdomain: 'contacts',
+        name: 'ProtonContacts',
+        clientID: 'WebContacts',
+        icon: 'protoncontacts',
+    },
+    [APPS.PROTONDRIVE]: {
+        publicPath: '/drive',
+        subdomain: 'drive',
+        name: 'ProtonDrive',
+        clientID: 'WebDrive',
+        icon: 'protondrive',
+    },
+    [APPS.PROTONCALENDAR]: {
+        publicPath: '/calendar',
+        subdomain: 'calendar',
+        name: 'ProtonCalendar',
+        clientID: 'WebCalendar',
+        icon: 'protoncalendar',
+    },
+    [APPS.PROTONVPN_SETTINGS]: {
+        publicPath: '',
+        subdomain: '',
+        name: 'ProtonVPN',
+        clientID: 'WebVPNSettings',
+        icon: 'protonvpn',
+    },
+    [APPS.PROTONADMIN]: {
+        publicPath: '',
+        subdomain: '',
+        name: '',
+        clientID: 'WebAdmin',
+        icon: '',
+    },
+} as const;
+export type APP_KEYS = keyof typeof APPS;
+export type APP_NAMES = typeof APPS[APP_KEYS];
+export const SSO_PATHS = {
+    AUTHORIZE: '/authorize',
+    FORK: '/fork',
+    SWITCH: '/switch',
+    LOGIN: '/login',
+    RESET_PASSWORD: '/reset-password',
+    FORGOT_USERNAME: '/forgot-username',
+    SIGNUP: '/signup',
+} as const;
+
 export enum API_CODES {
     GLOBAL_SUCCESS = 1001,
     SINGLE_SUCCESS = 1000,
@@ -50,6 +120,7 @@ export const MAIN_USER_KEY = 'USER_KEYS';
 export const SECURE_SESSION_STORAGE_KEY = 'SECURE';
 export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
 export const UID_KEY = 'proton:oauth:UID';
+export const LOCAL_ID_KEY = 'proton:localID';
 export const INTERVAL_EVENT_TIMER = 30 * 1000;
 export const MAX_SIZE_SCREENSHOT = 500 * 1000;
 
@@ -557,19 +628,24 @@ export enum INVITE_TYPES {
 }
 
 export enum CLIENT_IDS {
+    // Old apps
+    Web = 'Web',
+    Admin = 'Web Admin',
+    // New apps
     WebMail = 'Web Mail',
     WebMailSettings = 'Web Mail Settings',
     WebCalendar = 'Web Calendar',
     WebContacts = 'Web Contacts',
     WebVPNSettings = 'Web VPN Settings',
     WebDrive = 'Web Drive',
-    Admin = 'Web Admin',
+    WebAdmin = 'Web Admin',
 }
+export type CLIENT_ID_KEYS = keyof typeof CLIENT_IDS;
 
-export enum CLIENT_TYPES {
-    MAIL = 1,
-    VPN = 2,
-}
+export const CLIENT_TYPES = {
+    MAIL: 1,
+    VPN: 2,
+} as const;
 
 export enum TOKEN_TYPES {
     EMAIL = 'email',
@@ -651,6 +727,39 @@ export enum LINK_TYPES {
     PHONE = 'phone',
 }
 
-// This is a definition coming from webpack. Hide behind typeof for the test env.
 declare const WEBPACK_FEATURE_FLAGS: string;
+// This is a definition coming from webpack. Hide behind typeof for the test env.
 export const FEATURE_FLAGS = typeof WEBPACK_FEATURE_FLAGS === 'undefined' ? '' : WEBPACK_FEATURE_FLAGS;
+
+declare const WEBPACK_APP_MODE: string;
+export const APP_MODE = typeof WEBPACK_APP_MODE === 'undefined' ? '' : WEBPACK_APP_MODE;
+export const isSSOMode = APP_MODE === 'sso';
+export const isStandaloneMode = APP_MODE === 'standalone';
+
+declare const WEBPACK_PUBLIC_PATH: string;
+export const PUBLIC_PATH = typeof WEBPACK_PUBLIC_PATH === 'undefined' ? '' : WEBPACK_PUBLIC_PATH;
+
+interface OpenPGPFile {
+    filepath: string;
+    integrity?: string;
+}
+
+const DUMMY_FILE = {
+    filepath: '/',
+};
+
+declare const WEBPACK_OPENPGP: { main: OpenPGPFile; compat: OpenPGPFile; elliptic: OpenPGPFile; worker: OpenPGPFile };
+export const OPENPGP =
+    typeof WEBPACK_OPENPGP === 'undefined'
+        ? { main: DUMMY_FILE, compat: DUMMY_FILE, elliptic: DUMMY_FILE, worker: DUMMY_FILE }
+        : WEBPACK_OPENPGP;
+
+export const FORKABLE_APPS = new Set(
+    [
+        APPS.PROTONMAIL,
+        APPS.PROTONMAIL_SETTINGS,
+        APPS.PROTONCONTACTS,
+        FEATURE_FLAGS.includes('drive') && APPS.PROTONDRIVE,
+        APPS.PROTONCALENDAR,
+    ].filter(Boolean)
+);

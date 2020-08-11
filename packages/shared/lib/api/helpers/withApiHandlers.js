@@ -1,8 +1,9 @@
 import { setRefreshCookies } from '../auth';
-import { createOnceHandler, getError } from '../../apiHandlers';
+import { createOnceHandler } from '../../apiHandlers';
 import { RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX, OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY } from '../../constants';
 import { wait } from '../../helpers/promise';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
+import { getApiError } from './apiErrorHelper';
 
 export const InactiveSessionError = () => {
     const error = new Error('Inactive session');
@@ -116,6 +117,8 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
 
                 const { status, name } = e;
 
+                const { ignoreHandler, silence = [] } = options || {};
+
                 if (name === 'OfflineError') {
                     if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
                         return onError(e);
@@ -130,7 +133,9 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                     return perform(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX);
                 }
 
-                if (hasSession && status === HTTP_ERROR_CODES.UNAUTHORIZED) {
+                const ignoreUnauthorized =
+                    Array.isArray(ignoreHandler) && ignoreHandler.includes(HTTP_ERROR_CODES.UNAUTHORIZED);
+                if (status === HTTP_ERROR_CODES.UNAUTHORIZED && hasSession && !ignoreUnauthorized) {
                     return refreshHandler().then(
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
                         (error) => {
@@ -159,17 +164,12 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
                     );
                 }
 
-                const { code } = getError(e);
+                const { code } = getApiError(e);
 
-                if (code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {
-                    const { ignoreHandler, silence = [] } = options;
-                    if (
-                        Array.isArray(ignoreHandler) &&
-                        ignoreHandler.includes(API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED)
-                    ) {
-                        return onError(e);
-                    }
-
+                const ignoreHumanVerification =
+                    Array.isArray(ignoreHandler) &&
+                    ignoreHandler.includes(API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED);
+                if (code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED && !ignoreHumanVerification) {
                     const {
                         Details: { HumanVerificationToken: captchaToken, HumanVerificationMethods: methods = [] } = {},
                     } = e.data || {};

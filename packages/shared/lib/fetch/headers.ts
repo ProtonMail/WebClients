@@ -27,6 +27,8 @@ export const getAuthHeaders = (UID: string, AccessToken: string) => ({
 export const withAuthHeaders = (UID: string, AccessToken: string, config: any) =>
     mergeHeaders(config, getAuthHeaders(UID, AccessToken));
 
+export const withUIDHeaders = (UID: string, config: any) => mergeHeaders(config, getUIDHeaders(UID));
+
 export const getVerificationHeaders = (token?: string, tokenType?: HumanVerificationMethodType) => {
     if (!token || !tokenType) {
         return {};

@@ -29,6 +29,37 @@ export interface AuthResponse {
     '2FA': TwoFaResponse;
 }
 
+export interface PushForkResponse {
+    Selector: string;
+}
+
+export interface PullForkResponse {
+    Payload: string;
+    LocalID: number;
+    UID: string;
+    RefreshToken: string;
+    ExpiresIn: number;
+    TokenType: string;
+    UserID: string;
+}
+
+export interface RefreshSessionResponse {
+    AccessToken: string;
+    ExpiresIn: number;
+    TokenType: string;
+    Scope: string;
+    UID: string;
+    RefreshToken: string;
+}
+
+export interface LocalSessionResponse {
+    Username?: string;
+    DisplayName: string;
+    LocalID: number;
+    UserID: string;
+    PrimaryEmail?: string;
+}
+
 export type AuthVersion = 0 | 1 | 2 | 3 | 4;
 
 export interface InfoResponse {
@@ -46,4 +77,8 @@ export interface InfoAuthedResponse extends InfoResponse {
 export interface ModulusResponse {
     Modulus: string;
     ModulusID: string;
+}
+
+export interface LocalKeyResponse {
+    ClientKey: string;
 }
