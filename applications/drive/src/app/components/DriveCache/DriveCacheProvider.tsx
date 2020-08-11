@@ -22,9 +22,14 @@ interface ShareKeys {
     privateKey: OpenPGPKey;
 }
 
+interface SortedChildrenList {
+    list: string[];
+    complete: boolean;
+}
+
 type SortedChildren = {
     [sortKey in SortKeys]: {
-        [direction in SORT_DIRECTION]: { list: string[]; complete: boolean };
+        [direction in SORT_DIRECTION]: SortedChildrenList;
     };
 };
 
@@ -168,45 +173,6 @@ const useDriveCacheState = () => {
         }
 
         return undefined;
-    };
-
-    const setChildLinkMetas = (
-        metas: LinkMeta[],
-        shareId: string,
-        linkId: string,
-        method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create',
-        sortParams = DEFAULT_SORT_PARAMS
-    ) => {
-        const { links } = cacheRef.current[shareId];
-        const parent = links[linkId];
-
-        setLinkMeta(metas, shareId, { rerender: false, isNew: method === 'unlisted_create' });
-
-        if (isCachedFolderLink(parent)) {
-            const existing = getChildLinks(shareId, linkId, sortParams) || [];
-            const linkIds = metas.map(({ LinkID }) => LinkID);
-
-            if (['unlisted', 'unlisted_create'].includes(method)) {
-                parent.children.unlisted = [
-                    ...parent.children.unlisted,
-                    ...linkIds.filter((id) => !existing.includes(id)),
-                ];
-            } else {
-                const { sortField, sortOrder } = sortParams;
-                const folder = parent.children.sorted[sortField][sortOrder];
-                parent.children.sorted[sortField][sortOrder] = {
-                    list: [...folder.list.filter((id) => !linkIds.includes(id)), ...linkIds],
-                    complete: method === 'complete' || folder.complete,
-                };
-            }
-        }
-
-        cacheRef.current[shareId] = {
-            ...cacheRef.current[shareId],
-            links,
-        };
-
-        setRerender((old) => ++old);
     };
 
     const isTrashLocked = (shareId: string) => cacheRef.current[shareId].trash.locked;
@@ -388,6 +354,89 @@ const useDriveCacheState = () => {
                 trash: { complete: false, locked: false, list: [], unlisted: [] },
             };
         });
+        setRerender((old) => ++old);
+    };
+
+    /**
+     * Fills all sorted lists and folderOnly list with specified values, essentially copying them.
+     */
+    const fillAllLists = (shareId: string, parentLinkId: string, { list }: SortedChildrenList) => {
+        const { links } = cacheRef.current[shareId];
+        const parent = links[parentLinkId];
+
+        if (!isCachedFolderLink(parent)) {
+            return;
+        }
+
+        Object.keys(parent.children.sorted).forEach((key) => {
+            const sortedLists = parent.children.sorted[key as SortKeys];
+            const directions = Object.keys(sortedLists) as SORT_DIRECTION[];
+
+            directions.forEach((direction) => {
+                if (!sortedLists[direction].complete) {
+                    sortedLists[direction] = {
+                        complete: true,
+                        list: [...list],
+                    };
+                }
+            });
+        });
+
+        const foldersOnlyList =
+            list.filter((linkId) => {
+                const meta = getLinkMeta(shareId, linkId);
+                return meta && isFolderLinkMeta(meta);
+            }) ?? [];
+
+        parent.foldersOnly = {
+            complete: true,
+            list: foldersOnlyList,
+            unlisted: parent.foldersOnly.unlisted.filter((id) => !foldersOnlyList.includes(id)),
+        };
+    };
+
+    const setChildLinkMetas = (
+        metas: LinkMeta[],
+        shareId: string,
+        linkId: string,
+        method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create',
+        sortParams = DEFAULT_SORT_PARAMS
+    ) => {
+        const { links } = cacheRef.current[shareId];
+        const parent = links[linkId];
+
+        setLinkMeta(metas, shareId, { rerender: false, isNew: method === 'unlisted_create' });
+
+        if (isCachedFolderLink(parent)) {
+            const existing = getChildLinks(shareId, linkId, sortParams) || [];
+            const linkIds = metas.map(({ LinkID }) => LinkID);
+
+            if (['unlisted', 'unlisted_create'].includes(method)) {
+                parent.children.unlisted = [
+                    ...parent.children.unlisted,
+                    ...linkIds.filter((id) => !existing.includes(id)),
+                ];
+            } else {
+                const { sortField, sortOrder } = sortParams;
+                const folder = parent.children.sorted[sortField][sortOrder];
+                const complete = method === 'complete' || folder.complete;
+                parent.children.sorted[sortField][sortOrder] = {
+                    list: [...folder.list.filter((id) => !linkIds.includes(id)), ...linkIds],
+                    complete,
+                };
+
+                // If we got a complete list from somewhere, it will be the same for other orders too
+                if (complete) {
+                    fillAllLists(shareId, linkId, parent.children.sorted[sortField][sortOrder]);
+                }
+            }
+        }
+
+        cacheRef.current[shareId] = {
+            ...cacheRef.current[shareId],
+            links,
+        };
+
         setRerender((old) => ++old);
     };
 
