@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useCallback } from 'react';
-import { PrivateAppContainer, useToggle } from 'react-components';
+import { PrivateAppContainer, useToggle, MainLogo } from 'react-components';
 import { Route, Redirect, Switch, RouteComponentProps } from 'react-router-dom';
 import AppHeader from '../../components/layout/AppHeader';
 import AppSidebar from '../../components/layout/AppSidebar';
@@ -26,8 +26,10 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
         return shareId;
     }, [match.params.shareId]);
 
+    const logo = <MainLogo to="/" />;
     const header = (
         <AppHeader
+            logo={logo}
             floatingPrimary={<EmptyTrashButton floating shareId={shareId} />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
@@ -36,6 +38,7 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
 
     const sidebar = (
         <AppSidebar
+            logo={logo}
             primary={<EmptyTrashButton shareId={shareId} />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
@@ -48,8 +51,8 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
         <PrivateAppContainer header={header} sidebar={sidebar}>
             <AppErrorBoundary>
                 <Switch>
-                    <Route path="/drive/trash/:shareId?" exact component={renderContainerView} />
-                    <Redirect to="/drive/trash" />
+                    <Route path="/trash/:shareId?" exact component={renderContainerView} />
+                    <Redirect to="/trash" />
                 </Switch>
             </AppErrorBoundary>
         </PrivateAppContainer>

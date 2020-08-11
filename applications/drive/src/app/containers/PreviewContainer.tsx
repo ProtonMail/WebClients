@@ -83,13 +83,13 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
     const navigateToParent = useCallback(() => {
         if (meta?.ParentLinkID) {
-            history.push(`/drive/${shareId}/${LinkURLType.FOLDER}/${meta.ParentLinkID}`);
+            history.push(`/${shareId}/${LinkURLType.FOLDER}/${meta.ParentLinkID}`);
         }
     }, [meta?.ParentLinkID, shareId]);
 
     const navigateToLink = useCallback(
         ({ LinkID }: LinkMeta) => {
-            history.push(`/drive/${shareId}/${LinkURLType.FILE}/${LinkID}`);
+            history.push(`/${shareId}/${LinkURLType.FILE}/${LinkID}`);
         },
         [shareId]
     );

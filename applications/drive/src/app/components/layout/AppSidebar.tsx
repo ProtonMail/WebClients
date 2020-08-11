@@ -8,14 +8,14 @@ const getSidebarLinks = () => {
     return [
         {
             text: c('Link').t`My files`,
-            to: '/drive',
+            to: '/',
             isActive: (match: Match<any>, location: Location) =>
                 !!match && (match.isExact || !location.pathname.includes('trash')),
             icon: 'inbox',
         },
         {
             text: c('Link').t`Trash`,
-            to: '/drive/trash',
+            to: '/trash',
             icon: 'trash',
         },
     ];
@@ -40,18 +40,18 @@ interface Props {
     toggleHeaderExpanded: () => void;
     primary: React.ReactNode;
     links?: React.ReactNode;
-    base?: string;
+    logo: React.ReactNode;
 }
 
 const AppSidebar = ({
+    logo,
     primary,
     isHeaderExpanded,
     toggleHeaderExpanded,
-    base = '/drive',
     links = <DriveSidebarLinks />,
 }: Props) => (
     <Sidebar
-        url={base}
+        logo={logo}
         expanded={isHeaderExpanded}
         onToggleExpand={toggleHeaderExpanded}
         primary={primary}
