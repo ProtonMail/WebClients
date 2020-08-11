@@ -1,4 +1,3 @@
-import { uncapitalize } from 'proton-shared/lib/helpers/string';
 import React from 'react';
 import { classnames } from 'react-components';
 import { c, msgid } from 'ttag';
@@ -84,7 +83,7 @@ const ExtraEventDetails = ({ model, defaultCalendar }: Props) => {
     const properties = [
         { label: c('Label').t`Start time`, value: formatDateTime(dtstart, isAllDay, isSingleAllDay) },
         !isSingleAllDay && { label: c('Label').t`End time`, value: formatDateTime(dtend, isAllDay) },
-        !!frequencyString && { label: c('Label').t`Repeats`, value: uncapitalize(frequencyString) },
+        !!frequencyString && { label: c('Label').t`Repeats`, value: frequencyString },
         !!calendar && { label: c('Label').t`Calendar`, value: calendar },
         !!location && { label: c('Label').t`Location`, value: location },
         !isOrganizerMode && {
