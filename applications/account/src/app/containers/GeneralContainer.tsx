@@ -7,8 +7,8 @@ import {
     SearchSection,
     SettingsPropsShared,
 } from 'react-components';
+import locales from 'proton-shared/lib/i18n/locales';
 
-import locales from '../locales';
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getGeneralPage = () => {

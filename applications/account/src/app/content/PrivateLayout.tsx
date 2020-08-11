@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Route, Switch, withRouter, RouteComponentProps } from 'react-router-dom';
-import { Redirect } from 'react-router';
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import {
     Sidebar,
     SidebarNav,
@@ -12,6 +11,7 @@ import {
     useUser,
     PrivateHeader,
     PrivateAppContainer,
+    MainLogo,
 } from 'react-components';
 
 import { getPages } from '../pages';
@@ -22,8 +22,9 @@ import GeneralContainer from '../containers/GeneralContainer';
 import SecurityContainer from '../containers/SecurityContainer';
 import SidebarVersion from './SidebarVersion';
 
-const PrivateLayout = ({ location }: RouteComponentProps) => {
+const PrivateLayout = () => {
     const [user] = useUser();
+    const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
     const { isNarrow } = useActiveBreakpoint();
@@ -32,9 +33,11 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
         setExpand(false);
     }, [location.pathname, location.hash]);
 
+    const logo = <MainLogo to="/" />;
+
     const header = (
         <PrivateHeader
-            url="/"
+            logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
@@ -43,12 +46,12 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
     );
 
     const sidebar = (
-        <Sidebar url="/" expanded={expanded} onToggleExpand={onToggleExpand} version={<SidebarVersion />}>
+        <Sidebar logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} version={<SidebarVersion />}>
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
                         list={getPages(user)}
-                        pathname={window.location.pathname}
+                        pathname={location.pathname}
                         activeSection={activeSection}
                     />
                 </SidebarList>
@@ -96,4 +99,4 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
     );
 };
 
-export default withRouter(PrivateLayout);
+export default PrivateLayout;

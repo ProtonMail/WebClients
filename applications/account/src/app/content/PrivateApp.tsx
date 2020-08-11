@@ -1,5 +1,6 @@
 import React from 'react';
 import { StandardPrivateApp } from 'react-components';
+import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import {
     UserModel,
     MailSettingsModel,
@@ -15,7 +16,6 @@ import {
 } from 'proton-shared/lib/models';
 
 import PrivateLayout from './PrivateLayout';
-import locales from '../locales';
 
 const EVENT_MODELS = [
     UserModel,
@@ -35,9 +35,10 @@ const PRELOAD_MODELS = [UserSettingsModel, UserModel, MailSettingsModel];
 
 interface Props {
     onLogout: () => void;
+    locales: TtagLocaleMap;
 }
 
-const PrivateApp = ({ onLogout }: Props) => {
+const PrivateApp = ({ onLogout, locales }: Props) => {
     return (
         <StandardPrivateApp
             onLogout={onLogout}
