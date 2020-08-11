@@ -12,7 +12,8 @@ import {
     useActiveBreakpoint,
     SidebarList,
     SidebarNav,
-    SidebarListItemsWithSubsections
+    SidebarListItemsWithSubsections,
+    MainLogo
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { c } from 'ttag';
@@ -38,11 +39,11 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
         setExpand(false);
     }, [location.pathname, location.hash]);
 
-    const base = '/account';
+    const logo = <MainLogo to="/" />;
 
     const header = (
         <PrivateHeader
-            url={base}
+            logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
@@ -53,7 +54,7 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
 
     const sidebar = (
         <Sidebar
-            url={base}
+            logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             version={<AppVersion appName="ProtonVPN" />}

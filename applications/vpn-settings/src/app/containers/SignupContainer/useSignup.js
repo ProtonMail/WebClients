@@ -12,10 +12,10 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { queryCreateOldUser, queryDirectSignupStatus } from 'proton-shared/lib/api/user';
-import { auth, setCookies } from 'proton-shared/lib/api/auth';
+import { auth } from 'proton-shared/lib/api/auth';
 import { subscribe, setPaymentMethod, verifyPayment, checkSubscription } from 'proton-shared/lib/api/payments';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
-import { getRandomString } from 'proton-shared/lib/helpers/string';
+import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import {
     DEFAULT_CURRENCY,
     CYCLE,
@@ -236,11 +236,12 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
             })
         });
 
-        const { UID, EventID, AccessToken, RefreshToken } = await srpAuth({
+        const authResult = await srpAuth({
             api,
             credentials: { username, password },
             config: auth({ Username: username })
         });
+        const { UID, AccessToken } = authResult;
 
         // Add subscription
         // Amount = 0 means - paid before subscription
@@ -265,9 +266,8 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
             await api(withAuthHeaders(UID, AccessToken, setPaymentMethod(signupToken.paymentDetails.Payment)));
         }
 
-        // set cookies after login
-        await api(setCookies({ UID, AccessToken, RefreshToken, State: getRandomString(24) }));
-        onLogin({ UID, EventID });
+        await persistSession({ ...authResult, api });
+        await onLogin(authResult);
     };
 
     return {

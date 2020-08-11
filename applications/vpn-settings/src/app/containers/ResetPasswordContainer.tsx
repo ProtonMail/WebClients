@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import { MinimalResetPasswordContainer, SignInLayout, OnLoginArgs } from 'react-components';
+import { MinimalResetPasswordContainer, SignInLayout, OnLoginCallback } from 'react-components';
 
 interface Props {
-    onLogin: (args: OnLoginArgs) => void;
+    onLogin: OnLoginCallback;
 }
 
 const ResetPasswordContainer = ({ onLogin }: Props) => {

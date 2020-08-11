@@ -28,7 +28,7 @@ const BRAVE_COOKIE = '1397';
 const BESTDEAL_COOKIE = 'bestdeal';
 
 // TODO: Flexible urls and plans for reuse between project
-const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
+const SignupContainer = ({ match, history, onLogin }) => {
     const searchParams = new URLSearchParams(history.location.search);
     const from = searchParams.get('from');
     const couponCode = searchParams.get('coupon');
@@ -80,14 +80,11 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
             preSelectedPlan
         });
 
-    const handleLogin = (...args) => {
+    const handleLogin = (data) => {
         if (redirectToMobile) {
             return goToStep(SignupState.MobileRedirection);
         }
-
-        stopRedirect();
-        history.push('/downloads');
-        onLogin(...args);
+        return onLogin({ ...data, pathname: '/downloads' });
     };
 
     const {
@@ -262,7 +259,6 @@ const SignupContainer = ({ match, history, onLogin, stopRedirect }) => {
 };
 
 SignupContainer.propTypes = {
-    stopRedirect: PropTypes.func.isRequired,
     onLogin: PropTypes.func.isRequired,
     match: PropTypes.shape({
         params: PropTypes.shape({

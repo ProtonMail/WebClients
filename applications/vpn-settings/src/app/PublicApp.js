@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { StandardPublicApp } from 'react-components';
@@ -14,9 +14,6 @@ import SignupContainer from './containers/SignupContainer/SignupContainer';
 import locales from './locales';
 
 const PublicApp = ({ onLogin }) => {
-    const hasStopRedirect = useRef(false);
-    const stopRedirect = () => (hasStopRedirect.current = true);
-
     return (
         <StandardPublicApp locales={locales}>
             <PublicLayout>
@@ -31,34 +28,17 @@ const PublicApp = ({ onLogin }) => {
                     <Route
                         path="/signup/:step?"
                         render={({ history, match }) => (
-                            <SignupContainer
-                                stopRedirect={stopRedirect}
-                                history={history}
-                                match={match}
-                                onLogin={onLogin}
-                            />
+                            <SignupContainer history={history} match={match} onLogin={onLogin} />
                         )}
                     />
                     <Route
                         path="/login"
                         render={({ history, location }) => (
-                            <LoginContainer
-                                stopRedirect={stopRedirect}
-                                history={history}
-                                location={location}
-                                onLogin={onLogin}
-                            />
+                            <LoginContainer history={history} location={location} onLogin={onLogin} />
                         )}
                     />
                     <Route
                         render={({ location }) => {
-                            /**
-                             * Needed due to the race condition between onLogin and history.push
-                             * A state on the location is not possible because the location is not changed when logging out.
-                             */
-                            if (hasStopRedirect.current) {
-                                return null;
-                            }
                             return (
                                 <Redirect
                                     to={{

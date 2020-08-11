@@ -1,33 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, SignInLayout, OnLoginArgs } from 'react-components';
+import {
+    MinimalLoginContainer,
+    Href,
+    SimpleDropdown,
+    DropdownMenu,
+    SignInLayout,
+    OnLoginCallback
+} from 'react-components';
 import { isMember } from 'proton-shared/lib/user/helpers';
-import * as H from 'history';
 
 interface Props {
-    onLogin: (args: OnLoginArgs) => void;
-    history: H.History;
-    stopRedirect: () => void;
+    onLogin: OnLoginCallback;
 }
 
-const LoginContainer = ({ stopRedirect, history, onLogin }: Props) => {
+const LoginContainer = ({ onLogin }: Props) => {
     return (
         <SignInLayout title={c('Title').t`Log in`}>
             <h2>{c('Title').t`User log in`}</h2>
             <MinimalLoginContainer
-                onLogin={(...args) => {
-                    stopRedirect();
-
-                    const [{ User }] = args;
-
-                    if (User && isMember(User)) {
-                        history.push('/account');
-                    } else {
-                        history.push('/dashboard');
-                    }
-
-                    onLogin(...args);
+                onLogin={(data) => {
+                    const { User } = data;
+                    const pathname = User && isMember(User) ? '/account' : '/dashboard';
+                    return onLogin({ ...data, pathname });
                 }}
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
