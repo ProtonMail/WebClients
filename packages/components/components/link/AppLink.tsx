@@ -5,6 +5,7 @@ import { getAppHref, getAppHrefBundle } from 'proton-shared/lib/apps/helper';
 
 import Href, { Props as HrefProps } from './Href';
 import { useAuthentication, useConfig } from '../..';
+import Tooltip from '../tooltip/Tooltip';
 
 export interface Props extends HrefProps {
     to: string;
@@ -26,7 +27,11 @@ const AppLink = ({ to, toApp, children, ...rest }: Props) => {
             );
         }
         if (isStandaloneMode) {
-            return null;
+            return (
+                <Tooltip className={rest.className} title="Disabled in standalone mode">
+                    {children}
+                </Tooltip>
+            );
         }
         const href = getAppHrefBundle(to, toApp);
         return (
