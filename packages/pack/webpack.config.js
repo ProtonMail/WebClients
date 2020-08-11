@@ -81,6 +81,8 @@ function main({ port, publicPath, flow, appMode, featureFlags, writeSRI = true }
                 // Ensure that the correct package is used when symlinking
                 pmcrypto: path.resolve('./node_modules/pmcrypto'),
                 react: path.resolve('./node_modules/react'),
+                'react-router': path.resolve('./node_modules/react-router'),
+                'react-router-dom': path.resolve('./node_modules/react-router-dom'),
                 'react-dom': isProduction
                     ? path.resolve('./node_modules/react-dom')
                     : path.resolve('./node_modules/@hot-loader/react-dom'),

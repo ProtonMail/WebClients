@@ -107,8 +107,9 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
             : []),
 
         new webpack.DefinePlugin({
-            PM_OPENPGP: JSON.stringify(definition),
-            PL_IS_STANDALONE: appMode === 'standalone',
+            WEBPACK_OPENPGP: JSON.stringify(definition),
+            WEBPACK_APP_MODE: JSON.stringify(appMode),
+            WEBPACK_PUBLIC_PATH: JSON.stringify(publicPath),
             WEBPACK_FEATURE_FLAGS: JSON.stringify(featureFlags)
         }),
 
