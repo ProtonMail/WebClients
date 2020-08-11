@@ -81,8 +81,8 @@ const ExtraEventDetails = ({ model, defaultCalendar }: Props) => {
     const calendar = defaultCalendar?.Name;
 
     const properties = [
-        { label: c('Label').t`Start time`, value: formatDateTime(dtstart, isAllDay, isSingleAllDay) },
-        !isSingleAllDay && { label: c('Label').t`End time`, value: formatDateTime(dtend, isAllDay) },
+        { label: c('Label').t`Start time`, value: formatDateTime(dtstart, dateLocale, isAllDay, isSingleAllDay) },
+        !isSingleAllDay && { label: c('Label').t`End time`, value: formatDateTime(dtend, dateLocale, isAllDay) },
         !!frequencyString && { label: c('Label').t`Repeats`, value: frequencyString },
         !!calendar && { label: c('Label').t`Calendar`, value: calendar },
         !!location && { label: c('Label').t`Location`, value: location },
