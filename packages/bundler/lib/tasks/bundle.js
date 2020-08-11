@@ -63,6 +63,11 @@ function main({
             title: 'Build the application',
             async task(ctx = {}) {
                 const args = process.argv.slice(2);
+                if (buildMode === 'sso') {
+                    const output = await bash('npm', ['run', 'build:sso', '--', ...args]);
+                    ctx.outputBuild = output;
+                    return true;
+                }
                 if (buildMode === 'standalone') {
                     const output = await bash('npm', ['run', 'build:standalone', '--', ...args]);
                     ctx.outputBuild = output;
