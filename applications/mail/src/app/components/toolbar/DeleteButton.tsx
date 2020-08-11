@@ -39,7 +39,7 @@ const DeleteButton = ({ labelID = '', conversationMode, breakpoints, selectedIDs
 
     const displayDelete =
         labelIncludes(labelID, TRASH, SPAM, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT) &&
-        (!breakpoints.isNarrow || !labelIncludes(labelID, SENT, ALL_SENT));
+        (!breakpoints.isNarrow || !labelIncludes(labelID, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT));
 
     const handleDelete = async () => {
         const modalTitle = draft
