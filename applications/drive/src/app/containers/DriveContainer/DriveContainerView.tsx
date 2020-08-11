@@ -48,7 +48,7 @@ function DriveContainerView({
     }, [folder]);
 
     const navigateToLink = (shareId: string, linkId: string, type: LinkType) => {
-        history.push(`/drive/${shareId}/${toLinkURLType(type)}/${linkId}`);
+        history.push(`/${shareId}/${toLinkURLType(type)}/${linkId}`);
     };
 
     useAppTitle(c('Title').t`My files`, 'ProtonDrive');
