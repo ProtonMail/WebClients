@@ -67,7 +67,9 @@ const EventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, mode
                         id={FREQUENCY_INPUT_ID}
                         data-test-id="event-modal/frequency:select"
                         value={frequencyModel.type}
-                        onChange={(type) => setModel({ ...model, frequencyModel: { ...frequencyModel, type } })}
+                        onChange={(type) =>
+                            setModel({ ...model, frequencyModel: { ...frequencyModel, type }, hasTouchedRrule: true })
+                        }
                     />
                     {isCustomFrequencySet && (
                         <div className="flex flex-nowrap flex-item-fluid">
