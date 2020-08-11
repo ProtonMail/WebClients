@@ -1,5 +1,11 @@
 import React from 'react';
-import { CacheProvider, NotificationsProvider, ModalsProvider, useEventManager } from 'react-components';
+import {
+    CacheProvider,
+    NotificationsProvider,
+    ModalsProvider,
+    useEventManager,
+    PrivateAuthenticationStore
+} from 'react-components';
 import { render as originalRender, RenderResult, act } from '@testing-library/react';
 import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
 import ApiContext from 'react-components/containers/api/apiContext';
@@ -22,9 +28,11 @@ type ApiMock = {
 
 export const apiMocks: ApiMock = {};
 
-export const authentication = {
+export const authentication = ({
+    getUID: jest.fn(),
+    getLocalID: jest.fn(),
     getPassword: jest.fn()
-};
+} as unknown) as PrivateAuthenticationStore;
 
 export const api = jest.fn<Promise<any>, any>(async (args: any) => {
     if (apiMocks[args.url]) {

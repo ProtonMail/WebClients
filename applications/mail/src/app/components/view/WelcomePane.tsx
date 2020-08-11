@@ -1,8 +1,9 @@
 import React from 'react';
-import { useUser, useModals, InlineLinkButton, AuthenticatedBugModal, Href } from 'react-components';
+import { useUser, useModals, InlineLinkButton, AuthenticatedBugModal, AppLink } from 'react-components';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { capitalize } from 'proton-shared/lib/helpers/string';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
@@ -74,27 +75,33 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                             <p className="mt0 mb1 bold">{c('Info').t`5GB Storage`}</p>
                             <p className="mt0 mb1">{c('Info')
                                 .t`Get enough storage space to hold on your history of precious communications.`}</p>
-                            <Href url="/settings/subscription" href="_self" className="pm-button--primary mtauto">{c(
-                                'Action'
-                            ).t`Upgrade`}</Href>
+                            <AppLink
+                                to="/subscription"
+                                toApp={getAccountSettingsApp()}
+                                className="pm-button--primary mtauto"
+                            >{c('Action').t`Upgrade`}</AppLink>
                         </div>
                         <div className="bordered-container flex-item-fluid flex flex-column aligncenter p1 mr2">
                             <img className="mb1 hauto" src={mailSvg} alt={c('Alt').t`Mail`} />
                             <p className="mt0 mb1 bold">{c('Info').t`5 Email Addresses`}</p>
                             <p className="mt0 mb1">{c('Info')
                                 .t`Set up to 5 email addresses and use them as you deem fit.`}</p>
-                            <Href url="/settings/subscription" href="_self" className="pm-button--primary mtauto">{c(
-                                'Action'
-                            ).t`Upgrade`}</Href>
+                            <AppLink
+                                to="/subscription"
+                                toApp={getAccountSettingsApp()}
+                                className="pm-button--primary mtauto"
+                            >{c('Action').t`Upgrade`}</AppLink>
                         </div>
                         <div className="bordered-container flex-item-fluid flex flex-column aligncenter p1">
                             <img className="mb1 hauto" src={customSvg} alt={c('Alt').t`Customization`} />
                             <p className="mt0 mb1 bold">{c('Info').t`Customization`}</p>
                             <p className="mt0 mb1">{c('Info')
                                 .t`Folders, Labels, Auto-reply and more ways to tweak ProtonMail to match the way you work.`}</p>
-                            <Href url="/settings/subscription" href="_self" className="pm-button--primary mtauto">{c(
-                                'Action'
-                            ).t`Upgrade`}</Href>
+                            <AppLink
+                                to="/subscription"
+                                toApp={getAccountSettingsApp()}
+                                className="pm-button--primary mtauto"
+                            >{c('Action').t`Upgrade`}</AppLink>
                         </div>
                     </div>
                 </>

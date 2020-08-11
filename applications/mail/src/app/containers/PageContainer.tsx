@@ -15,10 +15,9 @@ import { OnCompose } from '../hooks/useCompose';
 interface Props extends RouteProps {
     breakpoints: Breakpoints;
     onCompose: OnCompose;
-    throughLogin: boolean;
 }
 
-const PageContainer = ({ match, location, history, breakpoints, onCompose, throughLogin }: Props) => {
+const PageContainer = ({ match, location, history, breakpoints, onCompose }: Props) => {
     const [mailSettings] = useMailSettings() as [MailSettings, boolean, Error];
     const [userSettings] = useUserSettings() as [UserSettings, boolean, Error];
     const [labels = []] = useLabels();
@@ -52,7 +51,6 @@ const PageContainer = ({ match, location, history, breakpoints, onCompose, throu
                     location={location}
                     history={history}
                     onCompose={onCompose}
-                    throughLogin={throughLogin}
                 />
             </ErrorBoundary>
         </PrivateLayout>

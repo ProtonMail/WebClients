@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { Location, History } from 'history';
-import { Searchbox, useLabels, useFolders, PrivateHeader, FloatingButton } from 'react-components';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import {
+    Searchbox,
+    useLabels,
+    useFolders,
+    PrivateHeader,
+    FloatingButton,
+    MainLogo,
+    SettingsButton
+} from 'react-components';
+import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 
 import AdvancedSearchDropdown from './AdvancedSearchDropdown';
 import { extractSearchParameters, getUrlPathname } from '../../helpers/mailboxUrl';
@@ -72,14 +80,14 @@ const MailHeader = ({
     const backUrl = getUrlPathname(location, labelID);
     const showBackButton = breakpoints.isNarrow && elementID;
     const labelName = getLabelName(labelID, labels, folders);
+    const logo = <MainLogo to="/inbox" />;
 
     return (
         <PrivateHeader
-            url="/inbox"
+            logo={logo}
             backUrl={showBackButton && backUrl ? backUrl : undefined}
             title={labelName}
-            settingsUrl="/settings/overview"
-            externalSettingsUrl={true}
+            settingsButton={<SettingsButton to="/" toApp={APPS.PROTONMAIL_SETTINGS} target="_self" />}
             searchBox={searchBox}
             searchDropdown={searchDropdown}
             expanded={!!expanded}

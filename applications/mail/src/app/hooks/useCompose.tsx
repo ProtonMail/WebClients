@@ -1,7 +1,16 @@
 import React from 'react';
 import { c } from 'ttag';
-import { useHandler, useNotifications, useModals, useUser, ConfirmModal, Alert, useAddresses } from 'react-components';
-import { redirectTo } from 'proton-shared/lib/helpers/browser';
+import {
+    useHandler,
+    useNotifications,
+    useModals,
+    useUser,
+    ConfirmModal,
+    Alert,
+    useAddresses,
+    useAppLink
+} from 'react-components';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
 import { MessageExtended, PartialMessageExtended } from '../models/message';
 import { MESSAGE_ACTIONS } from '../constants';
@@ -47,6 +56,7 @@ export const useCompose = (
     const { createModal } = useModals();
     const createDraft = useDraft();
     const cache = useMessageCache();
+    const goToApp = useAppLink();
 
     return useHandler(async (composeArgs: ComposeArgs) => {
         const activeAddresses = addresses.filter((address) => !isDirtyAddress(address));
@@ -74,8 +84,7 @@ export const useCompose = (
                     confirm={c('Action').t`Upgrade`}
                     cancel={c('Action').t`Close`}
                     onConfirm={() => {
-                        // TODO change link once we have ProtonAccount
-                        redirectTo('/settings/subscription');
+                        goToApp('/subscription', getAccountSettingsApp());
                     }}
                 >
                     <Alert

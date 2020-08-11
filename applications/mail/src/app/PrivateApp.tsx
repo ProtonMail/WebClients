@@ -2,7 +2,9 @@ import React from 'react';
 import { RouteChildrenProps } from 'react-router';
 import { Route } from 'react-router-dom';
 import { StandardPrivateApp, useActiveBreakpoint } from 'react-components';
+import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 
+import { Model } from 'proton-shared/lib/interfaces/Model';
 import {
     UserModel,
     MailSettingsModel,
@@ -17,22 +19,20 @@ import {
     ContactEmailsModel
 } from 'proton-shared/lib/models';
 
-import locales from './locales';
 import PageContainer from './containers/PageContainer';
 import ComposerContainer from './containers/ComposerContainer';
 import MessageProvider from './containers/MessageProvider';
 import ConversationProvider from './containers/ConversationProvider';
 import AttachmentProvider from './containers/AttachmentProvider';
-import { Model } from 'proton-shared/lib/interfaces/Model';
 
 export type RouteProps = RouteChildrenProps<{ labelID: string; elementID?: string }>;
 
 interface Props {
-    throughLogin: boolean;
     onLogout: () => void;
+    locales: TtagLocaleMap;
 }
 
-const PrivateApp = ({ throughLogin, onLogout }: Props) => {
+const PrivateApp = ({ onLogout, locales }: Props) => {
     const breakpoints = useActiveBreakpoint();
 
     return (
@@ -43,10 +43,10 @@ const PrivateApp = ({ throughLogin, onLogout }: Props) => {
             locales={locales}
             preloadModels={[
                 UserModel,
-                UserSettingsModel as Model<any>,
+                UserSettingsModel,
                 LabelsModel,
                 AddressesModel,
-                MailSettingsModel as Model<any>,
+                MailSettingsModel,
                 MessageCountsModel as Model<any>,
                 ConversationCountsModel as Model<any>
             ]}
@@ -55,11 +55,11 @@ const PrivateApp = ({ throughLogin, onLogout }: Props) => {
                 AddressesModel,
                 ConversationCountsModel as Model<any>,
                 MessageCountsModel as Model<any>,
-                MailSettingsModel as Model<any>,
-                UserSettingsModel as Model<any>,
+                MailSettingsModel,
+                UserSettingsModel,
                 LabelsModel,
                 SubscriptionModel,
-                OrganizationModel as Model<any>,
+                OrganizationModel,
                 ContactsModel,
                 ContactEmailsModel
             ]}
@@ -76,7 +76,6 @@ const PrivateApp = ({ throughLogin, onLogout }: Props) => {
                                             {...routeProps}
                                             breakpoints={breakpoints}
                                             onCompose={onCompose}
-                                            throughLogin={throughLogin}
                                         />
                                     )}
                                 />

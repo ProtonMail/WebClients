@@ -12,7 +12,7 @@ import {
     SimpleSidebarListItemHeader,
     SidebarListItemHeaderLink
 } from 'react-components';
-import { SHOW_MOVED, MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { SHOW_MOVED, MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 
 import { getCounterMap } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -128,8 +128,8 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 title={c('Link').t`Folders`}
                 right={
                     <SidebarListItemHeaderLink
-                        to="/settings/labels"
-                        external={true}
+                        to="/labels"
+                        toApp={APPS.PROTONMAIL_SETTINGS}
                         icon="settings-singular"
                         title={c('Info').t`Manage your folders`}
                         info={c('Link').t`Manage your folders`}
@@ -144,8 +144,8 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 title={c('Link').t`Labels`}
                 right={
                     <SidebarListItemHeaderLink
-                        to="/settings/labels"
-                        external={true}
+                        to="/labels"
+                        toApp={APPS.PROTONMAIL_SETTINGS}
                         icon="settings-singular"
                         title={c('Info').t`Manage your labels`}
                         info={c('Link').t`Manage your labels`}

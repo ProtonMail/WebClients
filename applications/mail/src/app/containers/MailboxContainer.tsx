@@ -45,7 +45,6 @@ interface Props {
     location: Location;
     history: History;
     onCompose: OnCompose;
-    throughLogin: boolean;
 }
 
 const MailboxContainer = ({
@@ -56,8 +55,7 @@ const MailboxContainer = ({
     elementID,
     location,
     history,
-    onCompose,
-    throughLogin
+    onCompose
 }: Props) => {
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
     const columnModeSetting = isColumnMode(mailSettings);
@@ -126,7 +124,7 @@ const MailboxContainer = ({
         return [];
     }, [checkedIDs, elementID]);
 
-    const welcomeFlag = useWelcomeFlag(throughLogin, [labelID, selectedIDs.length]);
+    const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
 
     const handleElement = (element: Element) => {
         history.push(setPathInUrl(location, labelID, element.ID));
