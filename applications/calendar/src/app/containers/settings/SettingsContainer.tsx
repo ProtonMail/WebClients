@@ -1,5 +1,4 @@
 import React, { MutableRefObject, useEffect, useState } from 'react';
-import * as H from 'history';
 import {
     useToggle,
     Sidebar,
@@ -15,8 +14,9 @@ import {
     SidebarListItemsWithSubsections,
     PrivateHeader,
     SidebarBackButton,
+    MainLogo,
 } from 'react-components';
-import { Redirect, Route, Switch } from 'react-router';
+import { useLocation, Redirect, Route, Switch } from 'react-router-dom';
 import { c } from 'ttag';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
 import { Address } from 'proton-shared/lib/interfaces';
@@ -40,7 +40,6 @@ const getDisabledCalendarContent = () => {
 };
 
 interface Props {
-    history: H.History;
     isNarrow: boolean;
     activeAddresses: Address[];
     calendars: Calendar[];
@@ -52,7 +51,6 @@ interface Props {
 }
 
 const SettingsContainer = ({
-    history,
     isNarrow,
     activeAddresses,
     calendars,
@@ -62,6 +60,7 @@ const SettingsContainer = ({
     calendarUserSettings,
     calendarsEventsCacheRef,
 }: Props) => {
+    const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
 
@@ -70,7 +69,7 @@ const SettingsContainer = ({
 
     useEffect(() => {
         setExpand(false);
-    }, [window.location.pathname]);
+    }, [location.pathname]);
 
     const canImport = hasActiveCalendars && defaultCalendar;
 
@@ -87,12 +86,11 @@ const SettingsContainer = ({
               }
             : undefined;
 
-    const base = '/calendar';
-    const goBack = () => history.push(base);
+    const logo = <MainLogo to="/" />;
 
     const header = (
         <PrivateHeader
-            url={base}
+            logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
@@ -102,17 +100,17 @@ const SettingsContainer = ({
 
     const sidebar = (
         <Sidebar
-            url={base}
+            logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            primary={<SidebarBackButton onClick={goBack}>{c('Action').t`Back to Calendar`}</SidebarBackButton>}
+            primary={<SidebarBackButton to="/">{c('Action').t`Back to Calendar`}</SidebarBackButton>}
             version={<CalendarSidebarVersion />}
         >
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
                         list={[getGeneralSettingsPage(), getCalendarSettingsPage()]}
-                        pathname={window.location.pathname}
+                        pathname={location.pathname}
                         activeSection={activeSection}
                     />
                     <SidebarListItem>
@@ -131,7 +129,7 @@ const SettingsContainer = ({
         <PrivateAppContainer header={header} sidebar={sidebar}>
             <Switch>
                 <Route
-                    path="/calendar/settings/calendars"
+                    path="/settings/calendars"
                     render={({ location }) => {
                         return (
                             <CalendarsPage
@@ -147,7 +145,7 @@ const SettingsContainer = ({
                     }}
                 />
                 <Route
-                    path="/calendar/settings/general"
+                    path="/settings/general"
                     render={({ location }) => {
                         return (
                             <GeneralPage
@@ -158,7 +156,7 @@ const SettingsContainer = ({
                         );
                     }}
                 />
-                <Redirect to="/calendar/settings/general" />
+                <Redirect to="/settings/general" />
             </Switch>
         </PrivateAppContainer>
     );

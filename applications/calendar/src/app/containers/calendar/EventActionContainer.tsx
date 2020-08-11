@@ -1,7 +1,7 @@
 import React, { MutableRefObject, useEffect } from 'react';
 import { LoaderPage, useNotifications, useApi, useCache } from 'react-components';
+import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
-import * as H from 'history';
 import { getUnixTime } from 'date-fns';
 import { Calendar, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { updateCalendar, getEvent } from 'proton-shared/lib/api/calendars';
@@ -20,13 +20,13 @@ import { EventTargetAction } from './interface';
 import { getCalendarEventStoreRecord } from './eventStore/cache/upsertCalendarEventStoreRecord';
 
 interface Props {
-    history: H.History;
     calendars: Calendar[];
     tzid: string;
     eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
 }
-const EventActionContainer = ({ tzid, history, calendars, eventTargetActionRef }: Props) => {
+const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) => {
     const { createNotification } = useNotifications();
+    const history = useHistory();
     const api = useApi();
     const cache = useCache();
 

@@ -37,7 +37,7 @@ export const getUrlDate = (urlYear: string, urlMonth: string, urlDay: string) =>
 };
 
 export const fromUrlParams = (pathname: string) => {
-    const [, , ...rest] = pathname.split('/');
+    const [, ...rest] = pathname.split('/');
     return {
         view: getUrlView(rest[0]),
         range: parseInt(rest[4], 10) || undefined,
@@ -59,5 +59,5 @@ export const toUrlParams = ({ date, defaultDate, view, defaultView, range }: ToU
             : [date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()];
     const viewParam = !dateParams && view === defaultView ? undefined : VIEW_URL_PARAMS_VIEWS_CONVERSION[view];
     const result = [viewParam, ...(dateParams || []), range];
-    return ['/calendar', ...result].filter(Boolean).join('/');
+    return `/${result.filter(Boolean).join('/')}`;
 };

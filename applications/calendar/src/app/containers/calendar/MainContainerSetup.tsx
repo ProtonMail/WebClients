@@ -69,61 +69,42 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
     return (
         <>
             <Switch>
-                <Route
-                    path="/calendar/settings"
-                    render={({ history }) => {
-                        return (
-                            <SettingsContainer
-                                history={history}
-                                isNarrow={isNarrow}
-                                activeAddresses={activeAddresses}
-                                calendars={calendars}
-                                activeCalendars={activeCalendars}
-                                disabledCalendars={disabledCalendars}
-                                defaultCalendar={defaultCalendar}
-                                calendarUserSettings={calendarUserSettings}
-                                calendarsEventsCacheRef={calendarsEventsCacheRef}
-                            />
-                        );
-                    }}
-                />
-                <Route
-                    path="/calendar/event"
-                    render={({ history }) => {
-                        return (
-                            <EventActionContainer
-                                tzid={tzid}
-                                history={history}
-                                calendars={calendars}
-                                eventTargetActionRef={eventTargetActionRef}
-                            />
-                        );
-                    }}
-                />
-                <Route
-                    path="/calendar"
-                    render={({ history, location }) => {
-                        return (
-                            <CalendarContainer
-                                tzid={tzid}
-                                setCustomTzid={setCustomTzid}
-                                isNarrow={isNarrow}
-                                addresses={addresses}
-                                activeAddresses={activeAddresses}
-                                visibleCalendars={visibleCalendars}
-                                activeCalendars={activeCalendars}
-                                disabledCalendars={disabledCalendars}
-                                defaultCalendar={defaultCalendar}
-                                calendarsEventsCacheRef={calendarsEventsCacheRef}
-                                calendarUserSettings={calendarUserSettings}
-                                history={history}
-                                location={location}
-                                eventTargetActionRef={eventTargetActionRef}
-                            />
-                        );
-                    }}
-                />
-                <Redirect to="/calendar" />
+                <Route path="/settings">
+                    <SettingsContainer
+                        isNarrow={isNarrow}
+                        activeAddresses={activeAddresses}
+                        calendars={calendars}
+                        activeCalendars={activeCalendars}
+                        disabledCalendars={disabledCalendars}
+                        defaultCalendar={defaultCalendar}
+                        calendarUserSettings={calendarUserSettings}
+                        calendarsEventsCacheRef={calendarsEventsCacheRef}
+                    />
+                </Route>
+                <Route path="/event">
+                    <EventActionContainer
+                        tzid={tzid}
+                        calendars={calendars}
+                        eventTargetActionRef={eventTargetActionRef}
+                    />
+                </Route>
+                <Route path="/">
+                    <CalendarContainer
+                        tzid={tzid}
+                        setCustomTzid={setCustomTzid}
+                        isNarrow={isNarrow}
+                        addresses={addresses}
+                        activeAddresses={activeAddresses}
+                        visibleCalendars={visibleCalendars}
+                        activeCalendars={activeCalendars}
+                        disabledCalendars={disabledCalendars}
+                        defaultCalendar={defaultCalendar}
+                        calendarsEventsCacheRef={calendarsEventsCacheRef}
+                        calendarUserSettings={calendarUserSettings}
+                        eventTargetActionRef={eventTargetActionRef}
+                    />
+                </Route>
+                <Redirect to="/" />
             </Switch>
             <AlarmContainer
                 calendars={visibleCalendars}

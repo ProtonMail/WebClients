@@ -12,9 +12,9 @@ import {
 import { loadModels } from 'proton-shared/lib/models/helper';
 import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 import { SETTINGS_TIME_FORMAT } from 'proton-shared/lib/interfaces/calendar';
+import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 
 import MainContainer from '../containers/calendar/MainContainer';
-import locales from '../locales';
 
 const EVENT_MODELS = [
     UserModel,
@@ -29,8 +29,9 @@ const PRELOAD_MODELS = [UserModel, UserSettingsModel, MailSettingsModel, Address
 
 interface Props {
     onLogout: () => void;
+    locales: TtagLocaleMap;
 }
-const PrivateApp = ({ onLogout }: Props) => {
+const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
     const cache = useCache();
 

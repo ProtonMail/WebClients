@@ -19,7 +19,7 @@ import CalendarSidebarVersion from './CalendarSidebarVersion';
 interface Props {
     expanded?: boolean;
     onToggleExpand: () => void;
-    url?: string;
+    logo?: ReactNode;
     activeCalendars: Calendar[];
     disabledCalendars: Calendar[];
     miniCalendar: ReactNode;
@@ -27,9 +27,9 @@ interface Props {
 }
 
 const CalendarSidebar = ({
+    logo,
     expanded = false,
     onToggleExpand,
-    url = '',
     activeCalendars = [],
     disabledCalendars = [],
     miniCalendar,
@@ -57,7 +57,7 @@ const CalendarSidebar = ({
 
     const headerButton = (
         <SidebarListItemHeaderLink
-            to="/calendar/settings/calendars"
+            to="/settings/calendars"
             title={c('Info').t`Manage your calendars`}
             icon="settings-singular"
             info={c('Link').t`Calendars`}
@@ -106,7 +106,7 @@ const CalendarSidebar = ({
 
     return (
         <Sidebar
-            url={url}
+            logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             primary={primaryAction}

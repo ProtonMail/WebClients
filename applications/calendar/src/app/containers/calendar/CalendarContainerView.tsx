@@ -10,6 +10,8 @@ import {
     PrivateMainArea,
     PrivateAppContainer,
     FloatingButton,
+    MainLogo,
+    SettingsButton,
 } from 'react-components';
 import { c } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
@@ -120,21 +122,22 @@ const CalendarContainerView = ({
         setExpand(false);
     }, [window.location.pathname]);
 
-    const base = '/calendar';
+    const logo = <MainLogo to="/" />;
     const header = (
         <PrivateHeader
-            url={base}
-            settingsUrl={`${base}/settings/general`}
+            logo={logo}
+            settingsButton={<SettingsButton to="/settings/general" />}
+            floatingButton={<FloatingButton onClick={onCreateEvent} icon="plus" />}
             title={c('Title').t`Calendar`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
-            floatingButton={<FloatingButton onClick={onCreateEvent} icon="plus" />}
         />
     );
 
     const sidebar = (
         <CalendarSidebar
+            logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent}

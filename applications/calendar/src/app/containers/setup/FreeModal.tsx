@@ -1,12 +1,13 @@
 import { c } from 'ttag';
-import { Alert, FormModal } from 'react-components';
+import { Alert, FormModal, useAppLink } from 'react-components';
 import React from 'react';
 import betaSvg from 'design-system/assets/img/pm-images/beta.svg';
-import { redirectTo } from 'proton-shared/lib/helpers/browser';
+import { APPS } from 'proton-shared/lib/constants';
 
 const FreeModal = (props: any) => {
+    const goToApp = useAppLink();
     const goBack = () => {
-        redirectTo('/inbox');
+        goToApp('/', APPS.PROTONMAIL);
     };
     return (
         <FormModal

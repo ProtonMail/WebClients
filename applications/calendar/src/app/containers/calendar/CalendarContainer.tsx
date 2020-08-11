@@ -1,5 +1,6 @@
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
 import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef, MutableRefObject } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useAppTitle, useCalendarBootstrap, useModals } from 'react-components';
 import {
     convertUTCDateTimeToZone,
@@ -10,7 +11,6 @@ import {
     formatTimezoneOffset,
     getTimezoneOffset,
 } from 'proton-shared/lib/date/timezone';
-import * as H from 'history';
 import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
 import { Address } from 'proton-shared/lib/interfaces';
@@ -80,8 +80,6 @@ interface Props {
     disabledCalendars: Calendar[];
     defaultCalendar?: Calendar;
     calendarUserSettings: CalendarUserSettings;
-    history: H.History;
-    location: H.Location;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
     eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
 }
@@ -96,11 +94,11 @@ const CalendarContainer = ({
     visibleCalendars,
     defaultCalendar,
     calendarUserSettings,
-    history,
-    location,
     calendarsEventsCacheRef,
     eventTargetActionRef,
 }: Props) => {
+    const history = useHistory();
+    const location = useLocation();
     const [disableCreate, setDisableCreate] = useState(false);
 
     const { createModal } = useModals();
