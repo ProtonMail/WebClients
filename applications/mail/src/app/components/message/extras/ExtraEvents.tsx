@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Loader, useApi, useCalendars, useContactEmails, useLoading } from 'react-components';
+import { useApi, useCalendars, useContactEmails, useLoading } from 'react-components';
 import { arrayToBinaryString } from 'pmcrypto';
 import { getDefaultCalendar, getProbablyActiveCalendars } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
@@ -79,7 +79,7 @@ const ExtraEvents = ({ message }: Props) => {
     }, [message.privateKeys]);
 
     if (loading || loadingContactEmails) {
-        return <Loader />;
+        return null;
     }
 
     return (
