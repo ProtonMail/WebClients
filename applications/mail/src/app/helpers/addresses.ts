@@ -119,8 +119,7 @@ export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: stri
 export const getRecipientLabelDetailed = (recipient?: Recipient, allContacts?: ContactEmail[]) => {
     const { Name, Address } = recipient || {};
     const contact = getContactOfRecipient(allContacts, Address);
-    const unknown = c('Contacts').t`Unknown`;
-    if (contact && contact.Name !== unknown) {
+    if (contact) {
         return contact.Name;
     }
     if (Name) {
