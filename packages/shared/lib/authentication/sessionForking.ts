@@ -21,11 +21,9 @@ import { FORK_TYPE } from './ForkInterface';
 import { resumeSession } from './persistedSessionHelper';
 
 interface ForkState {
-    sessionKey: string;
     url: string;
 }
 export const requestFork = (fromApp: APP_NAMES, localID?: number, type?: FORK_TYPE) => {
-    const sessionKey = encodeBase64URL(arrayToBinaryString(getRandomValues(new Uint8Array(32))));
     const state = encodeBase64URL(arrayToBinaryString(getRandomValues(new Uint8Array(32))));
 
     const searchParams = new URLSearchParams();
@@ -38,21 +36,15 @@ export const requestFork = (fromApp: APP_NAMES, localID?: number, type?: FORK_TY
         searchParams.append('t', type);
     }
 
-    const hashParams = new URLSearchParams();
-    hashParams.append('sk', sessionKey);
-
-    const forkStateData: ForkState = { sessionKey, url: window.location.href };
+    const forkStateData: ForkState = { url: window.location.href };
     sessionStorage.setItem(`f${state}`, JSON.stringify(forkStateData));
 
-    return replaceUrl(
-        getAppHref(`${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}#${hashParams.toString()}`, APPS.PROTONACCOUNT)
-    );
+    return replaceUrl(getAppHref(`${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, APPS.PROTONACCOUNT));
 };
 
 export interface ProduceForkParameters {
     state: string;
     app: APP_NAMES;
-    sessionKey: Uint8Array;
     type?: FORK_TYPE;
 }
 export interface ProduceForkParametersFull extends ProduceForkParameters {
@@ -65,14 +57,10 @@ export const getProduceForkParameters = (): Partial<ProduceForkParametersFull> =
     const localID = searchParams.get('u') || '';
     const type = searchParams.get('t') || '';
 
-    const hashParams = new URLSearchParams(window.location.hash.slice(1));
-    const sessionKey = hashParams.get('sk') || '';
-
     return {
         state: state.slice(0, 100),
         localID: getValidatedLocalID(localID),
         app: getValidatedApp(app),
-        sessionKey: getValidatedSessionKey(sessionKey),
         type: getValidatedForkType(type),
     };
 };
@@ -83,9 +71,10 @@ interface ProduceForkArguments {
     keyPassword?: string;
     app: APP_NAMES;
     state: string;
-    sessionKey: Uint8Array;
 }
-export const produceFork = async ({ api, UID, sessionKey, keyPassword, state, app }: ProduceForkArguments) => {
+export const produceFork = async ({ api, UID, keyPassword, state, app }: ProduceForkArguments) => {
+    const sessionKey = getRandomValues(new Uint8Array(32));
+    const serializedSessionKey = encodeBase64URL(arrayToBinaryString(sessionKey));
     const payload = keyPassword ? await getForkEncryptedBlob(getSessionKey(sessionKey), { keyPassword }) : undefined;
     const childClientID = APPS_CONFIGURATION[app].clientID;
     const { Selector } = await api<PushForkResponse>(
@@ -102,6 +91,7 @@ export const produceFork = async ({ api, UID, sessionKey, keyPassword, state, ap
     const toConsumeParams = new URLSearchParams();
     toConsumeParams.append('selector', Selector);
     toConsumeParams.append('state', state);
+    toConsumeParams.append('sk', serializedSessionKey);
 
     return replaceUrl(getAppHref(`${SSO_PATHS.FORK}#${toConsumeParams.toString()}`, app));
 };
@@ -111,10 +101,9 @@ const getForkStateData = (data?: string | null): ForkState | undefined => {
         return undefined;
     }
     try {
-        const { url, sessionKey } = JSON.parse(data);
+        const { url } = JSON.parse(data);
         return {
             url,
-            sessionKey,
         };
     } catch (e) {
         return undefined;
@@ -125,10 +114,12 @@ export const getConsumeForkParameters = () => {
     const hashParams = new URLSearchParams(window.location.hash.slice(1));
     const selector = hashParams.get('selector') || '';
     const state = hashParams.get('state') || '';
+    const sessionKey = hashParams.get('sk') || '';
 
     return {
         state: state.slice(0, 100),
         selector,
+        sessionKey: getValidatedSessionKey(sessionKey),
     };
 };
 
@@ -136,16 +127,16 @@ interface ConsumeForkArguments {
     api: Api;
     selector: string;
     state: string;
+    sessionKey: Uint8Array;
 }
-export const consumeFork = async ({ selector, api, state }: ConsumeForkArguments) => {
+export const consumeFork = async ({ selector, api, state, sessionKey }: ConsumeForkArguments) => {
     const stateData = getForkStateData(sessionStorage.getItem(`f${state}`));
     if (!stateData) {
         throw new InvalidForkConsumeError(`Missing state ${state}`);
     }
-    const { url, sessionKey: serializedSessionKey } = stateData;
-    const sessionKey = getValidatedSessionKey(serializedSessionKey);
-    if (!sessionKey || !url) {
-        throw new InvalidForkConsumeError('Missing session key or url');
+    const { url } = stateData;
+    if (!url) {
+        throw new InvalidForkConsumeError('Missing url');
     }
     const pathname = getStrippedPathnameFromURL(url);
     const { UID, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
