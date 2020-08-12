@@ -16,13 +16,15 @@ import readableTime from 'proton-shared/lib/helpers/readableTime';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { noop } from 'proton-shared/lib/helpers/function';
-
+import { isEquivalent, pick } from 'proton-shared/lib/helpers/object';
+import { shallowEqual } from 'proton-shared/lib/helpers/array';
 import { FileBrowserItem } from './interfaces';
 import { LinkType } from '../../interfaces/link';
 import LocationCell from './LocationCell';
 import { DragMoveControls } from '../../hooks/drive/useDriveDragMove';
 import { selectMessageForItemList } from '../Drive/helpers';
 import RowContextMenu from './RowContextMenu';
+import { CUSTOM_DATA_FORMAT } from '../../constants';
 
 interface Props {
     item: FileBrowserItem;
@@ -52,7 +54,7 @@ const ItemRow = ({
     const { dragging, handleDragEnd, handleDragStart, DragMoveContent } = useDragMove({
         dragging: dragMoveControls?.dragging ?? false,
         setDragging: dragMoveControls?.setDragging ?? noop,
-        format: 'pd-custom',
+        format: CUSTOM_DATA_FORMAT,
         formatter: JSON.stringify,
     });
 
@@ -82,7 +84,7 @@ const ItemRow = ({
     const handleContextMenu = (e: React.MouseEvent<HTMLTableRowElement>) => {
         e.stopPropagation();
 
-        if (item.Trashed || item.Disabled) {
+        if (item.Disabled) {
             return;
         }
         e.preventDefault();
@@ -156,7 +158,10 @@ const ItemRow = ({
             />
         </div>,
         <div key="filename" className="flex flex-items-center flex-nowrap">
-            <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} />
+            <FileIcon
+                mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
+                alt={`${isFolder ? c('Label').t`Folder` : `${c('Label').t`File`} - ${item.MIMEType}`} - ${item.Name}`}
+            />
             <span title={item.Name} className="ellipsis">
                 <span className="pre">{item.Name}</span>
             </span>
@@ -211,13 +216,13 @@ const ItemRow = ({
     return (
         <>
             {dragMoveControls && (
-                <DragMoveContent>
+                <DragMoveContent dragging={dragging} data={dragMoveItems}>
                     <DragMoveContainer>{moveText}</DragMoveContainer>
                 </DragMoveContent>
             )}
             <TableRow
                 cells={cells}
-                draggable={!!dragMoveControls}
+                draggable={dragMoveControls && !item.Disabled}
                 tabIndex={0}
                 role="button"
                 ref={anchorRef}
@@ -239,15 +244,18 @@ const ItemRow = ({
                 onDragOver={unlessDisabled(dragMoveControls?.handleDragOver)}
                 onDrop={unlessDisabled(dragMoveControls?.handleDrop)}
                 onDragLeave={unlessDisabled(dragMoveControls?.handleDragLeave)}
+                onDragEnter={unlessDisabled(dragMoveControls?.handleDragEnter)}
                 onDragEnd={(e) => {
                     e.currentTarget.blur();
                     handleDragEnd();
                 }}
                 onMouseDown={() => document.getSelection()?.removeAllRanges()}
             />
-            {!item.Disabled && !item.Trashed && (
+            {!item.Disabled && (
                 <RowContextMenu
                     item={item}
+                    selectedItems={selectedItems}
+                    shareId={shareId}
                     isOpen={isOpen}
                     open={open}
                     close={close}
@@ -259,4 +267,23 @@ const ItemRow = ({
     );
 };
 
-export default ItemRow;
+export default React.memo(ItemRow, (a, b) => {
+    if (isEquivalent(a, b)) {
+        return true;
+    }
+
+    const cheapPropsEqual = isEquivalent(
+        pick(a, ['shareId', 'showLocation', 'secondaryActionActive']),
+        pick(b, ['shareId', 'showLocation', 'secondaryActionActive'])
+    );
+
+    if (!cheapPropsEqual || !isEquivalent(a.item, b.item) || !shallowEqual(a.selectedItems, b.selectedItems)) {
+        return false;
+    }
+
+    const dragControlsEqual =
+        a.dragMoveControls?.dragging === b.dragMoveControls?.dragging &&
+        a.dragMoveControls?.isActiveDropTarget === b.dragMoveControls?.isActiveDropTarget;
+
+    return dragControlsEqual;
+});

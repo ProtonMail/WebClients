@@ -26,14 +26,7 @@ import {
 } from '../../interfaces/file';
 import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
-import {
-    TransferMeta,
-    TransferState,
-    DownloadInfo,
-    TransferCancel,
-    PreUploadData,
-    UploadInfo,
-} from '../../interfaces/transfer';
+import { TransferMeta, TransferState, DownloadInfo, PreUploadData, UploadInfo } from '../../interfaces/transfer';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../../components/downloads/download';
 import { streamToBuffer } from '../../utils/stream';
@@ -270,42 +263,40 @@ function useFiles() {
                 },
                 finalize: queuedFunction(
                     'upload_finalize',
-                    async (blockMetas, config) => {
+                    async (blockTokens, config) => {
                         const hashes: Uint8Array[] = [];
-                        const BlockList = blockMetas.map(({ Index, Token, Hash }) => {
-                            hashes.push(Hash);
-                            return {
-                                Index,
-                                Token,
-                            };
-                        });
-                        const contentHashes = mergeUint8Arrays(hashes);
-                        const { File, Name, ParentLinkID } = await setupPromise;
-                        const { signature, address } = await sign(contentHashes);
-                        const SignatureAddress = address.Email;
+                        const BlockList: { Index: number; Token: string }[] = [];
 
-                        if (config?.signal?.aborted) {
-                            throw new TransferCancel(`${ParentLinkID}: ${Name}`);
+                        for (let Index = 1; Index <= blockTokens.size; Index++) {
+                            const info = blockTokens.get(Index);
+                            if (!info) {
+                                throw new Error(`Block Token not found for ${Index} in upload ${config?.id}`);
+                            }
+                            hashes.push(info.Hash);
+                            BlockList.push({
+                                Index,
+                                Token: info.Token,
+                            });
                         }
 
-                        const updateRevision = async () => {
-                            try {
-                                await debouncedRequest(
-                                    queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
-                                        State: FileRevisionState.Active,
-                                        BlockList,
-                                        ManifestSignature: signature,
-                                        SignatureAddress,
-                                    })
-                                );
-                                events.callAll(shareId).catch(console.error);
-                            } catch (e) {
-                                deleteLinks(shareId, [File.ID]).catch(console.error);
-                                throw e;
-                            }
-                        };
+                        const contentHashes = mergeUint8Arrays(hashes);
+                        const [
+                            { File },
+                            {
+                                signature,
+                                address: { Email: SignatureAddress },
+                            },
+                        ] = await Promise.all([setupPromise, sign(contentHashes)]);
 
-                        updateRevision().catch(console.error);
+                        await debouncedRequest(
+                            queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
+                                State: FileRevisionState.Active,
+                                BlockList,
+                                ManifestSignature: signature,
+                                SignatureAddress,
+                            })
+                        );
+                        events.callAll(shareId).catch(console.error);
                     },
                     5
                 ),

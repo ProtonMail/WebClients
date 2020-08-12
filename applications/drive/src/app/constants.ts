@@ -1,6 +1,6 @@
 import { isMobile } from 'proton-shared/lib/helpers/browser';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import { SortKeys } from './interfaces/link';
+import { SortParams } from './interfaces/link';
 
 export const MB = 1024 * 1024;
 export const FOLDER_PAGE_SIZE = 150;
@@ -11,7 +11,7 @@ export const MAX_THREADS_PER_DOWNLOAD = 3;
 export const MAX_THREADS_PER_REQUEST = 5;
 export const DEFAULT_SORT_FIELD = 'ModifyTime';
 export const DEFAULT_SORT_ORDER = SORT_DIRECTION.ASC;
-export const DEFAULT_SORT_PARAMS: { sortField: SortKeys; sortOrder: SORT_DIRECTION } = {
+export const DEFAULT_SORT_PARAMS: SortParams = {
     sortField: DEFAULT_SORT_FIELD,
     sortOrder: DEFAULT_SORT_ORDER,
 };
@@ -19,6 +19,8 @@ export const UPLOAD_TIMEOUT = 60000;
 export const DOWNLOAD_TIMEOUT = 60000;
 export const EXPENSIVE_REQUEST_TIMEOUT = 60000;
 export const MAX_NAME_LENGTH = 255;
+
+export const CUSTOM_DATA_FORMAT = 'pd-custom';
 
 export enum LinkURLType {
     FOLDER = 'folder',

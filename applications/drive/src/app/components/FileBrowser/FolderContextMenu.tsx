@@ -36,16 +36,19 @@ const FolderContextMenu = ({ anchorRef, isOpen, position, open, close }: Props) 
         {
             name: c('Action').t`Upload File`,
             icon: 'file-upload',
+            testId: 'context-menu-upload-file',
             action: uploadFile,
         },
         {
             name: c('Action').t`Upload Folder`,
             icon: 'folder-upload',
+            testId: 'context-menu-upload-folder',
             action: uploadFolder,
         },
         {
-            name: c('Action').t`Create Folder`,
+            name: c('Action').t`Create New Folder`,
             icon: 'folder-new',
+            testId: 'context-menu-create-folder',
             action: openCreateFolder,
         },
     ].map((button) => (
@@ -54,6 +57,7 @@ const FolderContextMenu = ({ anchorRef, isOpen, position, open, close }: Props) 
             onContextMenu={(e) => e.stopPropagation()}
             className="flex flex-nowrap alignleft"
             onClick={button.action}
+            data-testid={button.testId}
         >
             <Icon className="mt0-25 mr0-5" name={button.icon} />
             {button.name}

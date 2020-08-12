@@ -4,6 +4,7 @@ export enum TransferState {
     Initializing = 'initializing',
     Pending = 'pending',
     Progress = 'progress',
+    Finalizing = 'finalizing',
     Done = 'done',
     Canceled = 'canceled',
     Error = 'error',
@@ -46,6 +47,7 @@ export interface Upload {
     info?: UploadInfo;
     state: TransferState;
     startDate: Date;
+    resumeState?: TransferState;
     error?: Error;
 }
 

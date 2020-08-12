@@ -16,7 +16,7 @@ const CreateNewFolderButton = ({ disabled }: Props) => {
         <ToolbarButton
             disabled={disabled}
             icon="folder-new"
-            title={c('Action').t`New Folder`}
+            title={c('Action').t`Create New Folder`}
             onClick={openCreateFolder}
             data-testid="toolbar-new-folder"
         />

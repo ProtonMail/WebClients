@@ -1,12 +1,21 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { c } from 'ttag';
 
-import { TableBody, Checkbox, TableRowBusy, useActiveBreakpoint, TableRowSticky, TableCell } from 'react-components';
+import {
+    TableBody,
+    Checkbox,
+    TableRowBusy,
+    useActiveBreakpoint,
+    TableRowSticky,
+    TableHeaderCell,
+} from 'react-components';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 import ItemRow from './ItemRow';
 import useDriveDragMove from '../../hooks/drive/useDriveDragMove';
 import { FileBrowserItem } from './interfaces';
 import FolderContextMenu from './FolderContextMenu';
+import { SortKeys, SortParams } from '../../interfaces/link';
 
 interface Props {
     loading?: boolean;
@@ -16,12 +25,14 @@ interface Props {
     contents: FileBrowserItem[];
     selectedItems: FileBrowserItem[];
     isTrash?: boolean;
+    sortParams?: SortParams;
     onToggleItemSelected: (item: string) => void;
     onItemClick?: (item: FileBrowserItem) => void;
     onShiftClick: (item: string) => void;
     selectItem: (item: string) => void;
     clearSelections: () => void;
     onToggleAllSelected: () => void;
+    setSorting?: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
 }
 
 const FileBrowser = ({
@@ -38,12 +49,14 @@ const FileBrowser = ({
     selectItem,
     clearSelections,
     onShiftClick,
+    sortParams,
+    setSorting,
 }: Props) => {
     const [secondaryActionActive, setSecondaryActionActive] = useState(false);
     const [isContextMenuOpen, setIsOpen] = useState(false);
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const { isDesktop } = useActiveBreakpoint();
-    const getDragMoveControls = useDriveDragMove(shareId, selectedItems, clearSelections);
+    const { getDragMoveControls } = useDriveDragMove(shareId, selectedItems, clearSelections);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -61,6 +74,24 @@ const FileBrowser = ({
             window.addEventListener('keyup', handleKeyDown);
         };
     }, [secondaryActionActive]);
+
+    const unlessIsTrash = (fn?: () => void) => (isTrash ? undefined : fn);
+
+    const handleSort = (key: SortKeys) => {
+        if (!sortParams || !setSorting) {
+            return;
+        }
+
+        const direction =
+            sortParams.sortField === key && sortParams.sortOrder === SORT_DIRECTION.DESC
+                ? SORT_DIRECTION.ASC
+                : SORT_DIRECTION.DESC;
+
+        setSorting(key, direction);
+    };
+
+    const getSortDirectionForKey = (key: SortKeys) =>
+        sortParams?.sortField === key ? sortParams.sortOrder : undefined;
 
     const openContextMenu = useCallback(() => {
         setIsOpen(true);
@@ -110,7 +141,7 @@ const FileBrowser = ({
                     <caption className="sr-only">{caption}</caption>
                     <thead onContextMenu={(e) => e.stopPropagation()}>
                         <TableRowSticky scrollAreaRef={scrollAreaRef}>
-                            <TableCell type="header" scope="col">
+                            <TableHeaderCell>
                                 <div
                                     role="presentation"
                                     key="select-all"
@@ -124,24 +155,35 @@ const FileBrowser = ({
                                         onChange={onToggleAllSelected}
                                     />
                                 </div>
-                            </TableCell>
-                            <TableCell type="header" scope="col">
+                            </TableHeaderCell>
+                            <TableHeaderCell>
                                 <div className="ellipsis">{c('TableHeader').t`Name`}</div>
-                            </TableCell>
+                            </TableHeaderCell>
                             {isTrash && (
-                                <TableCell type="header" scope="col" className="w25">{c('TableHeader')
-                                    .t`Location`}</TableCell>
+                                <TableHeaderCell className="w25">{c('TableHeader').t`Location`}</TableHeaderCell>
                             )}
-                            <TableCell type="header" scope="col" className={isDesktop ? 'w10' : 'w15'}>{c('TableHeader')
-                                .t`Type`}</TableCell>
+                            <TableHeaderCell
+                                direction={getSortDirectionForKey('Type')}
+                                onSort={unlessIsTrash(() => handleSort('Type'))}
+                                className={isDesktop ? 'w10' : 'w15'}
+                            >
+                                {c('TableHeader').t`Type`}
+                            </TableHeaderCell>
                             {isDesktop && (
-                                <TableCell type="header" scope="col" className="w20">
+                                <TableHeaderCell
+                                    direction={getSortDirectionForKey('ModifyTime')}
+                                    onSort={unlessIsTrash(() => handleSort('ModifyTime'))}
+                                >
                                     {modifiedHeader}
-                                </TableCell>
+                                </TableHeaderCell>
                             )}
-                            <TableCell type="header" scope="col" className={isDesktop ? 'w10' : 'w15'}>
+                            <TableHeaderCell
+                                direction={getSortDirectionForKey('Size')}
+                                onSort={unlessIsTrash(() => handleSort('Size'))}
+                                className={isDesktop ? 'w10' : 'w15'}
+                            >
                                 {c('TableHeader').t`Size`}
-                            </TableCell>
+                            </TableHeaderCell>
                         </TableRowSticky>
                     </thead>
                     <TableBody colSpan={colSpan}>

@@ -24,7 +24,7 @@ interface ShareKeys {
 
 type SortedChildren = {
     [sortKey in SortKeys]: {
-        [direction in SORT_DIRECTION]: { list: string[]; complete: boolean };
+        [direction in SORT_DIRECTION]: { list: string[]; complete: boolean; initialized: boolean };
     };
 };
 
@@ -61,6 +61,7 @@ interface DriveCacheState {
             list: string[];
             unlisted: string[];
             complete: boolean;
+            locked: boolean;
         };
         links: {
             [linkId: string]: CachedFolderLink | CachedFileLink;
@@ -96,8 +97,8 @@ const useDriveCacheState = () => {
                           children: {
                               sorted: ['Type', 'ModifyTime', 'Size'].reduce((sorted, sortKey) => {
                                   sorted[sortKey as SortKeys] = {
-                                      ASC: { list: [], complete: isNew },
-                                      DESC: { list: [], complete: isNew },
+                                      ASC: { list: [], complete: isNew, initialized: isNew },
+                                      DESC: { list: [], complete: isNew, initialized: isNew },
                                   };
                                   return sorted;
                               }, {} as SortedChildren),
@@ -196,6 +197,7 @@ const useDriveCacheState = () => {
                 parent.children.sorted[sortField][sortOrder] = {
                     list: [...folder.list.filter((id) => !linkIds.includes(id)), ...linkIds],
                     complete: method === 'complete' || folder.complete,
+                    initialized: true,
                 };
             }
         }
@@ -206,6 +208,36 @@ const useDriveCacheState = () => {
         };
 
         setRerender((old) => ++old);
+    };
+
+    const isTrashLocked = (shareId: string) => cacheRef.current[shareId].trash.locked;
+
+    const setLinksLocked = (locked: boolean, shareId: string, linkIds: string[]) => {
+        const { links } = cacheRef.current[shareId];
+        let changed = false;
+
+        linkIds.forEach((linkId) => {
+            if (!links[linkId]) {
+                return;
+            }
+
+            changed = true;
+            links[linkId].locked = locked;
+            cacheRef.current[shareId] = {
+                ...cacheRef.current[shareId],
+                links,
+            };
+        });
+
+        if (changed) {
+            setRerender((old) => ++old);
+        }
+    };
+
+    const setAllTrashedLocked = (locked: boolean, shareId: string) => {
+        const { list, unlisted } = cacheRef.current[shareId].trash;
+        cacheRef.current[shareId].trash.locked = true;
+        setLinksLocked(locked, shareId, [...list, ...unlisted]);
     };
 
     const setTrashLinkMetas = (metas: LinkMeta[], shareId: string, method: 'unlisted' | 'complete' | 'incremental') => {
@@ -223,6 +255,12 @@ const useDriveCacheState = () => {
             trash.list = [...trash.list, ...linkIds.filter((id) => !trash.list.includes(id))];
             trash.unlisted = trash.unlisted.filter((id) => !linkIds.includes(id));
             trash.complete = method === 'complete' || trash.complete;
+
+            // After emptying trash, new items will only come via unlisted
+            // All other items are due to be deleted anyway, so they should be locked
+            if (isTrashLocked(shareId)) {
+                setLinksLocked(true, shareId, [...trash.list, ...trash.unlisted]);
+            }
         }
 
         cacheRef.current[shareId] = {
@@ -282,28 +320,6 @@ const useDriveCacheState = () => {
         };
     };
 
-    const setLinksLocked = (locked: boolean, shareId: string, linkIds: string[]) => {
-        const { links } = cacheRef.current[shareId];
-        let changed = false;
-
-        linkIds.forEach((linkId) => {
-            if (!links[linkId]) {
-                return;
-            }
-
-            changed = true;
-            links[linkId].locked = locked;
-            cacheRef.current[shareId] = {
-                ...cacheRef.current[shareId],
-                links,
-            };
-        });
-
-        if (changed) {
-            setRerender((old) => ++old);
-        }
-    };
-
     const getShareIds = () => Object.keys(cacheRef.current);
     const getShareMeta = (shareId: string) => cacheRef.current[shareId].meta;
     const getShareKeys = (shareId: string) => cacheRef.current[shareId].keys;
@@ -325,6 +341,7 @@ const useDriveCacheState = () => {
 
         return undefined;
     };
+
     const getfoldersOnlyComplete = (shareId: string, linkId: string) => {
         const link = cacheRef.current[shareId].links[linkId];
 
@@ -343,6 +360,20 @@ const useDriveCacheState = () => {
     const getTrashMetas = (shareId: string) => {
         const links = getTrashLinks(shareId);
         return links.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
+    };
+
+    const getChildrenInitialized = (
+        shareId: string,
+        linkId: string,
+        { sortField, sortOrder } = DEFAULT_SORT_PARAMS
+    ) => {
+        const link = cacheRef.current[shareId].links[linkId];
+
+        if (link && isCachedFolderLink(link)) {
+            return link.children.sorted[sortField][sortOrder].initialized;
+        }
+
+        return undefined;
     };
 
     const getFoldersOnlyLinkMetas = (shareId: string, linkId: string) => {
@@ -370,7 +401,7 @@ const useDriveCacheState = () => {
         ids.forEach((id) => {
             cacheRef.current[id] = {
                 links: {},
-                trash: { complete: false, list: [], unlisted: [] },
+                trash: { complete: false, locked: false, list: [], unlisted: [] },
             };
         });
         setRerender((old) => ++old);
@@ -433,6 +464,7 @@ const useDriveCacheState = () => {
             shareKeys: setShareKeys,
             emptyShares: setEmptyShares,
             linksLocked: setLinksLocked,
+            allTrashedLocked: setAllTrashedLocked,
         },
         get: {
             trashMetas: getTrashMetas,
@@ -440,6 +472,7 @@ const useDriveCacheState = () => {
             trashChildLinks: getTrashChildLinks,
             defaultShareMeta: getDefaultShareMeta,
             childrenComplete: getChildrenComplete,
+            childrenInitialized: getChildrenInitialized,
             childLinkMetas: getChildLinkMetas,
             childLinks: getChildLinks,
             listedChildLinks: getListedChildLinks,
@@ -451,6 +484,7 @@ const useDriveCacheState = () => {
             shareMeta: getShareMeta,
             shareKeys: getShareKeys,
             shareIds: getShareIds,
+            isTrashLocked,
             isLinkLocked,
         },
         delete: {

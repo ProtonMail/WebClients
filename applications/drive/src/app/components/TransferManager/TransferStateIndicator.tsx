@@ -43,6 +43,10 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             text: c('Info').t`Canceled`,
             icon: 'off',
         },
+        [TransferState.Finalizing]: {
+            text: c('Info').t`Finalizing`,
+            icon: 'on',
+        },
     }[transfer.state];
 
     const errorText = transfer.error && getErrorText(transfer.error);

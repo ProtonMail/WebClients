@@ -11,34 +11,34 @@ export const queryCheckAvailableHashes = (
         timeout: EXPENSIVE_REQUEST_TIMEOUT,
         url: `drive/shares/${shareId}/links/${linkId}/checkAvailableHashes`,
         suppress: suppressErrors,
-        data
+        data,
     };
 };
 
 export const queryGetLink = (ShareID: string, LinkID: string) => ({
     method: 'get',
-    url: `drive/shares/${ShareID}/links/${LinkID}`
+    url: `drive/shares/${ShareID}/links/${LinkID}`,
 });
 
-export const queryTrashLinks = (ShareID: string, ParentLinkID: string, LinkIDs: string[], Force = 0) => ({
+export const queryTrashLinks = (ShareID: string, ParentLinkID: string, LinkIDs: string[]) => ({
     method: 'post',
-    url: `drive/shares/${ShareID}/folders/${ParentLinkID}/delete_multiple`,
-    data: { LinkIDs, Force }
+    url: `drive/shares/${ShareID}/folders/${ParentLinkID}/trash_multiple`,
+    data: { LinkIDs },
 });
 
 export const queryDeleteLinks = (ShareID: string, LinkIDs: string[]) => ({
     method: 'post',
     url: `drive/shares/${ShareID}/trash/delete_multiple`,
-    data: { LinkIDs }
+    data: { LinkIDs },
 });
 
 export const queryRestoreLinks = (ShareID: string, LinkIDs: string[]) => ({
     method: 'put',
     url: `drive/shares/${ShareID}/trash/restore_multiple`,
-    data: { LinkIDs }
+    data: { LinkIDs },
 });
 
 export const queryEmptyTrashOfShare = (ShareID: string) => ({
     method: 'delete',
-    url: `drive/shares/${ShareID}/trash`
+    url: `drive/shares/${ShareID}/trash`,
 });
