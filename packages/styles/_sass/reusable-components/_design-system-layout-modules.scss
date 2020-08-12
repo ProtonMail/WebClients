@@ -223,10 +223,15 @@ svg {
 
 /* to centered absolute */
 .centered-absolute {
-    position: absolute;
+	position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.centered-absolute-horizontal {
+	left: 50%;
+    transform: translate(-50%, 0%);
 }
 
 .covered-absolute {
@@ -241,6 +246,10 @@ svg {
 .top-right {
     top: 0;
     right: 0;
+}
+
+.bottom {
+	bottom: 0;
 }
 
 @if $rtl-option==true {
