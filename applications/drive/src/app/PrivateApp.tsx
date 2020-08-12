@@ -1,23 +1,18 @@
-import React, { useEffect } from 'react';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { StandardPrivateApp, ErrorBoundary, GenericError, LoaderPage } from 'react-components';
+import React from 'react';
+import { StandardPrivateApp, ErrorBoundary, GenericError, LoaderPage, useAppTitle } from 'react-components';
 import { UserModel, AddressesModel } from 'proton-shared/lib/models';
+import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { c } from 'ttag';
-import locales from './locales';
 import { openpgpConfig } from './openpgpConfig';
 import MainContainer from './containers/MainContainer';
 
-interface Props extends RouteComponentProps {
+interface Props {
     onLogout: () => void;
+    locales: TtagLocaleMap;
 }
 
-const PrivateApp = ({ onLogout, history }: Props) => {
-    useEffect(() => {
-        // Reset URL after logout
-        return () => {
-            history.push('/');
-        };
-    }, []);
+const PrivateApp = ({ onLogout, locales }: Props) => {
+    useAppTitle('', 'ProtonDrive');
 
     return (
         <StandardPrivateApp
@@ -36,4 +31,4 @@ const PrivateApp = ({ onLogout, history }: Props) => {
     );
 };
 
-export default withRouter(PrivateApp);
+export default PrivateApp;

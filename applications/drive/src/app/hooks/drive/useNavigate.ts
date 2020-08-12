@@ -7,7 +7,7 @@ function useNavigate() {
     const history = useHistory();
 
     const navigateToLink = (shareId: string, linkId: string, type: LinkType) => {
-        history.push(`/drive/${shareId}/${toLinkURLType(type)}/${linkId}`);
+        history.push(`/${shareId}/${toLinkURLType(type)}/${linkId}`);
     };
 
     return {

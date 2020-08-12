@@ -2,6 +2,8 @@
 import registerServiceWorker from 'service-worker-loader!./downloadSW';
 import { isSafari, isEdge, isEdgeChromium, isIos } from 'proton-shared/lib/helpers/browser';
 import { WritableStream } from 'web-streams-polyfill';
+import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
+import { PUBLIC_PATH } from 'proton-shared/lib/constants';
 
 /**
  * Safari and Edge don't support returning stream as a response.
@@ -28,7 +30,13 @@ async function wakeUpServiceWorker() {
     if (worker) {
         worker.postMessage({ action: 'ping' });
     } else {
-        const url = `${document.location.href.substr(0, document.location.href.indexOf('/'))}/drive/sw/ping`;
+        const url = [
+            document.location.href.substr(0, document.location.href.indexOf('/')),
+            stripLeadingAndTrailingSlash(PUBLIC_PATH),
+            'sw/ping',
+        ]
+            .filter(Boolean)
+            .join('/');
         const res = await fetch(url);
         const body = await res.text();
         if (!res.ok || body !== 'pong') {
@@ -48,7 +56,7 @@ export async function initDownloadSW() {
     if (isUnsupported()) {
         throw new Error('Saving file via download is unsupported by this browser');
     }
-    await registerServiceWorker({ scope: '/drive' });
+    await registerServiceWorker({ scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}` });
     serviceWorkerKeepAlive();
 }
 

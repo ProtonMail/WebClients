@@ -20,9 +20,9 @@ const MainContainer = () => {
                             <ModalsChildren />
                             <TransferManager />
                             <Switch>
-                                <Route path="/drive/trash" component={TrashContainer} />
-                                <Route path="/drive" component={DriveContainer} />
-                                <Redirect to="/drive" />
+                                <Route path="/trash" component={TrashContainer} />
+                                <Route path="/" component={DriveContainer} />
+                                <Redirect to="/" />
                             </Switch>
                         </DownloadProvider>
                     </UploadProvider>

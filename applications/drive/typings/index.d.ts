@@ -13,5 +13,3 @@ declare module 'service-worker-loader*' {
     export default register;
     export { ServiceWorkerNoSupportError, scriptUrl };
 }
-
-declare const PL_IS_STANDALONE: boolean;

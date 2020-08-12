@@ -44,7 +44,7 @@ const RowContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posit
 
     // TODO: refactor after router version upgrade.
     const openLink = (shareId: string, linkId: string, type: LinkType) => {
-        history.push(`/drive/${shareId}/${toLinkURLType(type)}/${linkId}`);
+        history.push(`/${shareId}/${toLinkURLType(type)}/${linkId}`);
     };
 
     useEffect(() => {

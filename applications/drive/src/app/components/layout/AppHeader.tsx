@@ -6,21 +6,21 @@ interface Props {
     isHeaderExpanded: boolean;
     toggleHeaderExpanded: () => void;
     floatingPrimary: React.ReactNode;
-    base?: string;
+    logo: React.ReactNode;
     title?: string;
 }
 
 const AppHeader = ({
+    logo,
     isHeaderExpanded,
     toggleHeaderExpanded,
     floatingPrimary,
-    base = 'drive',
     title = c('Title').t`Drive`,
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     return (
         <PrivateHeader
-            url={base}
+            logo={logo}
             title={title}
             expanded={isHeaderExpanded}
             onToggleExpand={toggleHeaderExpanded}
