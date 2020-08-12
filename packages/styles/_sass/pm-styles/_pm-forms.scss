@@ -426,6 +426,10 @@ $width: 5.5em !default;
   &.auto {
     width: auto;
   }
+  &--small {
+    font-size: 1.2rem;
+    line-height: 2;
+  }
 }
 
 // case for forms labelled only with icons (calendar popover, etc.)
