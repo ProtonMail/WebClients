@@ -12,6 +12,7 @@ import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import { Message } from '../../models/message';
 import ConversationHeader from './ConversationHeader';
+import { Breakpoints } from '../../models/utils';
 
 const { TRASH } = MAILBOX_LABEL_IDS;
 
@@ -23,6 +24,7 @@ interface Props {
     mailSettings: any;
     onBack: () => void;
     onCompose: OnCompose;
+    breakpoints: Breakpoints;
 }
 
 const ConversationView = ({
@@ -31,7 +33,8 @@ const ConversationView = ({
     conversationID: inputConversationID,
     mailSettings,
     onBack,
-    onCompose
+    onCompose,
+    breakpoints
 }: Props) => {
     const [labels = []] = useLabels();
     const {
@@ -78,6 +81,7 @@ const ConversationView = ({
                         conversationID={conversationID}
                         onBack={onBack}
                         onCompose={onCompose}
+                        breakpoints={breakpoints}
                     />
                 ))}
             </div>

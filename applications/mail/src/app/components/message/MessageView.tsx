@@ -24,6 +24,7 @@ import {
 } from '../../hooks/useMessageReadActions';
 import { isUnread } from '../../helpers/elements';
 import { OnCompose } from '../../hooks/useCompose';
+import { Breakpoints } from '../../models/utils';
 
 interface Props {
     labelID: string;
@@ -37,6 +38,7 @@ interface Props {
     conversationID?: string;
     onBack: () => void;
     onCompose: OnCompose;
+    breakpoints: Breakpoints;
 }
 
 const MessageView = ({
@@ -50,7 +52,8 @@ const MessageView = ({
     conversationIndex = 0,
     conversationID,
     onBack,
-    onCompose
+    onCompose,
+    breakpoints
 }: Props) => {
     const inputMessageIsDraft = !loading && isDraft(inputMessage);
 
@@ -183,6 +186,7 @@ const MessageView = ({
                         onBack={onBack}
                         onCompose={onCompose}
                         onSourceMode={setSourceMode}
+                        breakpoints={breakpoints}
                     />
                     <MessageBody
                         messageLoaded={messageLoaded}

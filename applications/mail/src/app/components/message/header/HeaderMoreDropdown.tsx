@@ -13,25 +13,30 @@ import {
     Alert,
     Group,
     ButtonGroup,
-    Tooltip
+    Tooltip,
+    useLabels
 } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { reportPhishing } from 'proton-shared/lib/api/reports';
 
-import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
+import { MessageExtended, MessageExtendedWithData, Message } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
 import { useAttachmentCache } from '../../../containers/AttachmentProvider';
 import { getDate } from '../../../helpers/elements';
 import { formatFileNameDate } from '../../../helpers/date';
 import MessagePrintModal from '../modals/MessagePrintModal';
 import { exportBlob } from '../../../helpers/message/messageExport';
-import HeaderDropdown from './HeaderDropdown';
+import HeaderDropdown, { DropdownRender } from './HeaderDropdown';
 import { useMoveToFolder } from '../../../hooks/useApplyLabels';
 import { getFolderName, getCurrentFolderID } from '../../../helpers/labels';
 import { useMarkAs, MARK_AS_STATUS } from '../../../hooks/useMarkAs';
 import { Element } from '../../../models/element';
+import { Breakpoints } from '../../../models/utils';
+import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
+import MoveDropdown from '../../dropdown/MoveDropdown';
+import LabelDropdown from '../../dropdown/LabelDropdown';
 
 const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
@@ -43,6 +48,7 @@ interface Props {
     onBack: () => void;
     onCollapse: () => void;
     onSourceMode: (sourceMode: boolean) => void;
+    breakpoints: Breakpoints;
 }
 
 const HeaderMoreDropdown = ({
@@ -52,7 +58,8 @@ const HeaderMoreDropdown = ({
     sourceMode,
     onBack,
     onCollapse,
-    onSourceMode
+    onSourceMode,
+    breakpoints
 }: Props) => {
     const api = useApi();
     const attachmentsCache = useAttachmentCache();
@@ -62,6 +69,7 @@ const HeaderMoreDropdown = ({
     const closeDropdown = useRef<() => void>();
     const moveToFolder = useMoveToFolder();
     const [folders = []] = useFolders();
+    const [labels = []] = useLabels();
     const markAs = useMarkAs();
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
@@ -122,6 +130,32 @@ const HeaderMoreDropdown = ({
     const isSpam = messageLabelIDs.includes(SPAM);
     const isInTrash = messageLabelIDs.includes(TRASH);
     const fromFolderID = getCurrentFolderID(messageLabelIDs, folders);
+    const isNarrow = breakpoints.isNarrow;
+    const additionalDropdowns: DropdownRender[] | undefined = isNarrow
+        ? [
+              ({ onClose }) => <CustomFilterDropdown message={message.data as Message} onClose={onClose} />,
+              ({ onClose, onLock }) => (
+                  <MoveDropdown
+                      labelID={fromFolderID}
+                      elements={[message.data as Message]}
+                      conversationMode={false}
+                      onClose={onClose}
+                      onLock={onLock}
+                      onBack={onBack}
+                  />
+              ),
+              ({ onClose, onLock }) => (
+                  <LabelDropdown
+                      labelID={labelID}
+                      labels={labels}
+                      elements={[message.data as Message]}
+                      onClose={onClose}
+                      onLock={onLock}
+                  />
+              )
+          ]
+        : undefined;
+
     return (
         <Group className="mr1 mb0-5">
             <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon relative">
@@ -158,11 +192,40 @@ const HeaderMoreDropdown = ({
                 title={c('Title').t`More`}
                 content={<Icon name="caret" className="caret-like" alt={c('Title').t`More options`} />}
                 hasCaret={false}
+                additionalDropdowns={additionalDropdowns}
             >
-                {({ onClose }) => {
+                {({ onClose, onOpenAdditionnal }) => {
                     closeDropdown.current = onClose;
                     return (
                         <DropdownMenu>
+                            {isNarrow && (
+                                <DropdownMenuButton
+                                    className="alignleft flex flex-nowrap"
+                                    onClick={() => onOpenAdditionnal(0)}
+                                >
+                                    <Icon name="filter" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                        .t`Custom filter...`}</span>
+                                </DropdownMenuButton>
+                            )}
+                            {isNarrow && (
+                                <DropdownMenuButton
+                                    className="alignleft flex flex-nowrap"
+                                    onClick={() => onOpenAdditionnal(1)}
+                                >
+                                    <Icon name="folder" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Move to...`}</span>
+                                </DropdownMenuButton>
+                            )}
+                            {isNarrow && (
+                                <DropdownMenuButton
+                                    className="alignleft flex flex-nowrap"
+                                    onClick={() => onOpenAdditionnal(2)}
+                                >
+                                    <Icon name="label" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Label as...`}</span>
+                                </DropdownMenuButton>
+                            )}
                             {isSpam ? (
                                 <DropdownMenuButton
                                     className="alignleft flex flex-nowrap"

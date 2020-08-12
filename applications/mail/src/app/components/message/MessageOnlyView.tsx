@@ -9,6 +9,7 @@ import { OnCompose } from '../../hooks/useCompose';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 import { useLoadMessage } from '../../hooks/useMessageReadActions';
 import ConversationHeader from '../conversation/ConversationHeader';
+import { Breakpoints } from '../../models/utils';
 
 interface Props {
     hidden: boolean;
@@ -17,9 +18,10 @@ interface Props {
     mailSettings: MailSettings;
     onBack: () => void;
     onCompose: OnCompose;
+    breakpoints: Breakpoints;
 }
 
-const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onCompose }: Props) => {
+const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onCompose, breakpoints }: Props) => {
     const [labels = []] = useLabels();
 
     const { message, addAction, loading, messageLoaded } = useMessage(messageID);
@@ -54,6 +56,7 @@ const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onC
                     mailSettings={mailSettings}
                     onBack={onBack}
                     onCompose={onCompose}
+                    breakpoints={breakpoints}
                 />
             </div>
         </>

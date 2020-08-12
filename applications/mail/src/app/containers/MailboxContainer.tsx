@@ -233,6 +233,7 @@ const MailboxContainer = ({
                                     conversationID={elementID as string}
                                     onBack={handleBack}
                                     onCompose={onCompose}
+                                    breakpoints={breakpoints}
                                 />
                             ) : (
                                 <MessageOnlyView
@@ -242,6 +243,7 @@ const MailboxContainer = ({
                                     messageID={elementID as string}
                                     onBack={handleBack}
                                     onCompose={onCompose}
+                                    breakpoints={breakpoints}
                                 />
                             ))}
                     </section>

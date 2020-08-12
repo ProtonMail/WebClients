@@ -38,6 +38,7 @@ import HeaderRecipientType from './HeaderRecipientType';
 import HeaderRecipientItem from './HeaderRecipientItem';
 import ItemAction from '../../list/ItemAction';
 import { OnCompose } from '../../../hooks/useCompose';
+import { Breakpoints } from '../../../models/utils';
 
 // Hacky override of the typing
 const ButtonGroup = OriginalButtonGroup as ({
@@ -69,6 +70,7 @@ interface Props {
     onBack: () => void;
     onCompose: OnCompose;
     onSourceMode: (sourceMode: boolean) => void;
+    breakpoints: Breakpoints;
 }
 
 const HeaderExpanded = ({
@@ -89,7 +91,8 @@ const HeaderExpanded = ({
     onCollapse,
     onBack,
     onCompose,
-    onSourceMode
+    onSourceMode,
+    breakpoints
 }: Props) => {
     const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [contactGroups = []] = useContactGroups();
@@ -123,6 +126,8 @@ const HeaderExpanded = ({
             isLoading={!messageLoaded}
         />
     );
+
+    const isNarrow = breakpoints.isNarrow;
 
     return (
         <div
@@ -241,61 +246,64 @@ const HeaderExpanded = ({
                         onBack={onBack}
                         onCollapse={onCollapse}
                         onSourceMode={onSourceMode}
+                        breakpoints={breakpoints}
                     />
 
-                    <Group className="mr1 mb0-5">
-                        <HeaderDropdown
-                            autoClose={false}
-                            content={<Icon name="filter" alt={c('Action').t`Custom filter`} />}
-                            className="pm-button pm-group-button pm-button--for-icon"
-                            dropDownClassName="customFilterDropdown"
-                            title={c('Action').t`Custom filter`}
-                            loading={!messageLoaded}
-                        >
-                            {({ onClose }) => (
-                                <CustomFilterDropdown message={message.data as Message} onClose={onClose} />
-                            )}
-                        </HeaderDropdown>
-                        <HeaderDropdown
-                            autoClose={false}
-                            noMaxSize={true}
-                            content={<Icon name="folder" alt={c('Action').t`Move to`} />}
-                            className="pm-button pm-group-button pm-button--for-icon"
-                            dropDownClassName="moveDropdown"
-                            title={c('Action').t`Move to`}
-                            loading={!messageLoaded}
-                        >
-                            {({ onClose, onLock }) => (
-                                <MoveDropdown
-                                    labelID={currentFolderID}
-                                    elements={elements}
-                                    conversationMode={conversationMode}
-                                    onClose={onClose}
-                                    onLock={onLock}
-                                    onBack={onBack}
-                                />
-                            )}
-                        </HeaderDropdown>
-                        <HeaderDropdown
-                            autoClose={false}
-                            noMaxSize={true}
-                            content={<Icon name="label" alt={c('Action').t`Label as`} />}
-                            className="pm-button pm-group-button pm-button--for-icon"
-                            dropDownClassName="labelDropdown"
-                            title={c('Action').t`Label as`}
-                            loading={!messageLoaded}
-                        >
-                            {({ onClose, onLock }) => (
-                                <LabelDropdown
-                                    labelID={labelID}
-                                    labels={labels}
-                                    elements={elements}
-                                    onClose={onClose}
-                                    onLock={onLock}
-                                />
-                            )}
-                        </HeaderDropdown>
-                    </Group>
+                    {!isNarrow && (
+                        <Group className="mr1 mb0-5">
+                            <HeaderDropdown
+                                autoClose={false}
+                                content={<Icon name="filter" alt={c('Action').t`Custom filter`} />}
+                                className="pm-button pm-group-button pm-button--for-icon"
+                                dropDownClassName="customFilterDropdown"
+                                title={c('Action').t`Custom filter`}
+                                loading={!messageLoaded}
+                            >
+                                {({ onClose }) => (
+                                    <CustomFilterDropdown message={message.data as Message} onClose={onClose} />
+                                )}
+                            </HeaderDropdown>
+                            <HeaderDropdown
+                                autoClose={false}
+                                noMaxSize={true}
+                                content={<Icon name="folder" alt={c('Action').t`Move to`} />}
+                                className="pm-button pm-group-button pm-button--for-icon"
+                                dropDownClassName="moveDropdown"
+                                title={c('Action').t`Move to`}
+                                loading={!messageLoaded}
+                            >
+                                {({ onClose, onLock }) => (
+                                    <MoveDropdown
+                                        labelID={currentFolderID}
+                                        elements={elements}
+                                        conversationMode={conversationMode}
+                                        onClose={onClose}
+                                        onLock={onLock}
+                                        onBack={onBack}
+                                    />
+                                )}
+                            </HeaderDropdown>
+                            <HeaderDropdown
+                                autoClose={false}
+                                noMaxSize={true}
+                                content={<Icon name="label" alt={c('Action').t`Label as`} />}
+                                className="pm-button pm-group-button pm-button--for-icon"
+                                dropDownClassName="labelDropdown"
+                                title={c('Action').t`Label as`}
+                                loading={!messageLoaded}
+                            >
+                                {({ onClose, onLock }) => (
+                                    <LabelDropdown
+                                        labelID={labelID}
+                                        labels={labels}
+                                        elements={elements}
+                                        onClose={onClose}
+                                        onLock={onLock}
+                                    />
+                                )}
+                            </HeaderDropdown>
+                        </Group>
+                    )}
                 </div>
 
                 <Group className="mb0-5">
