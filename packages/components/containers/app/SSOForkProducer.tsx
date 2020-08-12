@@ -27,15 +27,15 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
 
     useEffect(() => {
         const run = async () => {
-            const { app, state, localID, sessionKey, type } = getProduceForkParameters();
-            if (!app || !state || !sessionKey || sessionKey.length !== 32) {
+            const { app, state, localID, type } = getProduceForkParameters();
+            if (!app || !state) {
                 onInvalidFork();
                 return;
             }
             await loadOpenPGP();
             if (localID === undefined) {
                 const activeSessionsResult = await getActiveSessions(silentApi);
-                return onActiveSessions({ app, state, sessionKey, type }, activeSessionsResult);
+                return onActiveSessions({ app, state, type }, activeSessionsResult);
             }
             try {
                 // Resume session and produce the fork
@@ -44,14 +44,13 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
                     api: silentApi,
                     keyPassword: validatedSession.keyPassword,
                     UID: validatedSession.UID,
-                    sessionKey,
                     state,
                     app,
                 });
             } catch (e) {
                 if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                     const activeSessionsResult = await getActiveSessions(silentApi);
-                    onActiveSessions({ app, state, sessionKey, type }, activeSessionsResult);
+                    onActiveSessions({ app, state, type }, activeSessionsResult);
                     return;
                 }
                 throw e;

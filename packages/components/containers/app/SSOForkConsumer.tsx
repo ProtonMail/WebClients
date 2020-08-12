@@ -26,13 +26,13 @@ const SSOForkConsumer = ({ onLogin, onInvalidFork }: Props) => {
 
     useEffect(() => {
         const run = async () => {
-            const { state, selector } = getConsumeForkParameters();
-            if (!state || !selector) {
+            const { state, selector, sessionKey } = getConsumeForkParameters();
+            if (!state || !selector || !sessionKey) {
                 return onInvalidFork();
             }
             await loadOpenPGP();
             try {
-                const authResponse = await consumeFork({ selector, api: silentApi, state });
+                const authResponse = await consumeFork({ selector, api: silentApi, state, sessionKey });
                 if (authResponse.AccessToken) {
                     await persistSession({ api: silentApi, ...authResponse });
                 }
