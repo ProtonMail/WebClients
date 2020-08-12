@@ -105,11 +105,14 @@ const MessageView = ({
 
     // Manage the focus to the message
     useEffect(() => {
-        if (!hasBeenFocused && inputExpand && bodyLoaded && conversationIndex !== 0) {
-            elementRef.current && elementRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setHasBeenFocused(true);
+        if (!hasBeenFocused && inputExpand && messageLoaded && conversationIndex !== 0) {
+            // Let the browser render the content before scrolling
+            setTimeout(() => {
+                elementRef.current && elementRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+            setHasBeenFocused(bodyLoaded);
         }
-    }, [inputExpand, bodyLoaded, hasBeenFocused, conversationIndex]);
+    }, [inputExpand, messageLoaded, bodyLoaded, hasBeenFocused, conversationIndex]);
 
     // Mark as read a message already loaded (when user marked as unread)
     useEffect(() => {
@@ -126,6 +129,13 @@ const MessageView = ({
             setSourceMode(false);
         }
     }, [draft, message.data?.ID]);
+
+    // Expand the message if the conversation view ask for it
+    useEffect(() => {
+        if (inputExpand) {
+            setExpanded(inputExpand && !inputMessageIsDraft);
+        }
+    }, [inputExpand]);
 
     const handleTrustSigningPublicKey = async (key: OpenPGPKey) => {
         await addAction(() => trustSigningPublicKey(key));

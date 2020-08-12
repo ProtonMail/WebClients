@@ -116,7 +116,12 @@ export const useOptimisticMarkAs = () => {
                     const conversation = conversationResult.Conversation;
                     conversationCache.set(message.ConversationID, {
                         Conversation: applySingleMarkAsChangesOnConversation(conversation, labelID, changes),
-                        Messages: conversationResult.Messages
+                        Messages: conversationResult.Messages?.map((conversationMessage) => {
+                            if (conversationMessage.ID === message.ID) {
+                                return applyMarkAsChangesOnMessage(conversationMessage, changes);
+                            }
+                            return conversationMessage;
+                        })
                     });
                 }
 

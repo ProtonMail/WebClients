@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLabels, useToggle, classnames } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
@@ -13,6 +13,7 @@ import { usePlaceholders } from '../../hooks/usePlaceholders';
 import { Message } from '../../models/message';
 import ConversationHeader from './ConversationHeader';
 import { Breakpoints } from '../../models/utils';
+import UnreadMessages from './UnreadMessages';
 
 const { TRASH } = MAILBOX_LABEL_IDS;
 
@@ -31,6 +32,7 @@ const ConversationView = ({
     hidden,
     labelID,
     conversationID: inputConversationID,
+    messageID,
     mailSettings,
     onBack,
     onCompose,
@@ -56,7 +58,23 @@ const ConversationView = ({
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
 
-    const expand = findMessageToExpand(labelID, messagesToShow)?.ID;
+    const initExpand = () => {
+        if (messageID) {
+            return messageID;
+        }
+
+        return findMessageToExpand(labelID, messagesToShow)?.ID;
+    };
+
+    const [expand, setExpand] = useState(initExpand);
+
+    useEffect(() => {
+        setExpand(initExpand());
+    }, [conversationID, loadingMessages]);
+
+    const handleClickUnread = (messageID: string) => {
+        setExpand(messageID);
+    };
 
     return (
         <>
@@ -85,6 +103,11 @@ const ConversationView = ({
                     />
                 ))}
             </div>
+            <UnreadMessages
+                conversationID={conversationID}
+                messages={conversationResult?.Messages}
+                onClick={handleClickUnread}
+            />
         </>
     );
 };
