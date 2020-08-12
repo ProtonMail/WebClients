@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Badge } from '../../index';
+import Badge from '../../components/badge/Badge';
 
 interface Props {
     isDefault: boolean;
@@ -13,26 +13,31 @@ interface Props {
 
 const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKeys }: Props) => {
     const list = [
-        isDefault && {
-            text: c('Address status').t`Default`,
-            type: 'default',
-        },
-        isActive && {
-            text: c('Address status').t`Active`,
-            type: 'success',
-        },
-        isDisabled && {
-            text: c('Address status').t`Disabled`,
-            type: 'warning',
-        },
-        isOrphan && {
-            text: c('Address status').t`Orphan`,
-            type: 'origin',
-        },
-        isMissingKeys && {
-            text: c('Address status').t`Missing keys`,
-            type: 'warning',
-        },
+        isDefault &&
+            ({
+                text: c('Address status').t`Default`,
+                type: 'default',
+            } as const),
+        isActive &&
+            ({
+                text: c('Address status').t`Active`,
+                type: 'success',
+            } as const),
+        isDisabled &&
+            ({
+                text: c('Address status').t`Disabled`,
+                type: 'warning',
+            } as const),
+        isOrphan &&
+            ({
+                text: c('Address status').t`Orphan`,
+                type: 'origin',
+            } as const),
+        isMissingKeys &&
+            ({
+                text: c('Address status').t`Missing keys`,
+                type: 'warning',
+            } as const),
     ]
         .filter(isTruthy)
         .map(({ text, type }) => {

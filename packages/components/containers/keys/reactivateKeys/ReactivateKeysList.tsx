@@ -9,20 +9,11 @@ import KeysStatus from '../KeysStatus';
 import { Status, ReactivateKeys, ReactivateKey } from './interface';
 import { FileInputHandle } from '../../../components/input/FileInput';
 
-const getKeyStatusError = (error: any) => {
-    return {
-        tooltip: error?.message,
-        title: c('Key state badge').t`Error`,
-        type: 'error',
-    };
-};
-
 const getStatus = (status: Status, result: any) => {
     if (status === Status.ERROR) {
-        const { tooltip, type, title } = getKeyStatusError(result);
         return (
-            <Badge type={type} tooltip={tooltip}>
-                {title}
+            <Badge type="error" tooltip={result?.message}>
+                {c('Key state badge').t`Error`}
             </Badge>
         );
     }
