@@ -80,7 +80,7 @@ const HeaderRecipientItemRecipient = ({
             <ContactModal
                 properties={[
                     { field: 'email', value: recipient.Address || '' },
-                    { field: 'fn', value: recipient.Name || '' }
+                    { field: 'fn', value: recipient.Name || recipient.Address || '' }
                 ]}
             />
         );
