@@ -61,13 +61,13 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
     const isCalendarTzSelected = model.start.tzid !== tzid || model.end.tzid !== tzid;
     return (
         <div className="flex flex-column flex-wrap flex-items-start">
-            <div className="flex flex-nowrap w100">
+            <div className="flex flex-nowrap w100 onmobile-flex-column">
                 <div>
                     <div className="flex flex-nowrap mb0-5">
                         <div className="flex">
                             <DateInput
                                 id="startDate"
-                                className="pm-field w-unset"
+                                className="pm-field"
                                 required
                                 value={start.date}
                                 onChange={handleChangeStartDate}
@@ -81,7 +81,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                             <div className="flex">
                                 <TimeInput
                                     id="startTime"
-                                    className="ml0-5 w-unset"
+                                    className="ml0-5"
                                     value={start.time}
                                     onChange={handleChangeStartTime}
                                 />
@@ -90,7 +90,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         {(showTzSelector || isCalendarTzSelected) && (
                             <div className="flex">
                                 <TimezoneSelector
-                                    className="pm-field ml0-5 w-unset"
+                                    className="pm-field ml0-5"
                                     id="event-start-timezone-select"
                                     data-test-id="create-event-modal/start:time-zone-dropdown"
                                     timezone={start.tzid}

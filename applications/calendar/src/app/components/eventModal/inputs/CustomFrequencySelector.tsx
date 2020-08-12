@@ -26,7 +26,7 @@ const CustomFrequencySelector = ({
     isSubmitted,
 }: Props) => {
     return (
-        <div className="frequency-selector w100 flex flex-wrap">
+        <div className="w100 flex flex-wrap">
             <RepeatEveryRow
                 frequencyModel={frequencyModel}
                 start={start}

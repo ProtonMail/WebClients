@@ -42,10 +42,16 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted }
     };
 
     return (
-        <div className={classnames(['flex flex-column flex-items-start mb0-5 mr1', isWeekly && 'w45'])}>
-            <label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat every`}</label>
-            <div className="flex flex-nowrap mt0-5">
-                <div className="flex flex-item-fluid">
+        <div
+            className={classnames([
+                'flex flex-column flex-items-start mb0-5 mr1 onmobile-w100 onmobile-mr0',
+                isWeekly && 'w40',
+            ])}
+        >
+            <label className="pm-label--small" htmlFor="event-custom-frequency-select">{c('Label')
+                .t`Repeat every`}</label>
+            <div className="flex flex-nowrap mt0-5 onmobile-w100">
+                <div className="flex w6e">
                     <IntegerInput
                         data-test-id="event-modal/custom-frequency/interval:input"
                         min={1}
@@ -60,7 +66,7 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted }
                         isSubmitted={isSubmitted}
                     />
                 </div>
-                <div className="flex flex-item-grow-2">
+                <div className="flex flex-item-fluid">
                     <Select
                         className="ml0-5"
                         id="event-custom-frequency-select"
@@ -73,7 +79,7 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted }
                     />
                 </div>
                 {isMonthly && (
-                    <div className="flex">
+                    <div className="flex ml0-5 flex-item-fluid">
                         <SelectMonthlyType
                             id="event-custom-monthly-select"
                             value={frequencyModel.monthly.type}

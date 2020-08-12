@@ -42,7 +42,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
 
     return (
         <div className="flex flex-column flex-items-start w100">
-            <label htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
+            <label className="pm-label--small" htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
 
             <div className="calendar-recurringFrequencyEnd-grid mt0-5">
                 <div className="flex flex-nowrap flex-item-fluid calendar-recurringFrequencyEnd-grid-fullLine">
