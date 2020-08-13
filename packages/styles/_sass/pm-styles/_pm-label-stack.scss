@@ -1,0 +1,91 @@
+.label-stack {
+	--item-wide: 10em;
+	--item-narrow: 1.375em;
+	--item-scale: .7;
+	margin: -.125em;
+
+	&-item {
+		max-width: var(--item-wide);
+		padding: 0 .25em;
+		margin: .125em;
+		border-radius: 1em;
+		background-color: var(--color, currentColor);
+		line-height: 1.25;
+		transition: .25s .5s easing(easeOutQuart), box-shadow 0s;
+
+		&:hover,
+		&:focus-within {
+			transition-delay: 0s;
+		}
+
+		&-button,
+		&-delete {
+			color: white;
+			opacity: var(--button-opacity, 1);
+			transition: inherit;
+		}
+
+		&-button {
+			padding: 0 .25em .175em;
+		}
+
+		&-delete {
+			overflow: hidden;
+			margin-left: .25em;
+
+			&-icon {
+				display: block;
+			}
+		}
+	}
+
+	&-overflow-count {
+		padding-bottom: .175em;
+		background: none;
+		line-height: 1.25;
+	}
+
+	&:not(.is-stacked) {
+		.label-stack-item {
+			&:hover,
+			&:focus-within {
+				box-shadow: 0 0 em(5) 0 rgba(black, .2); // Same hover style than buttons
+			}
+		}
+	}
+
+	&.is-stacked {
+		margin: 0;
+		overflow: hidden;
+		flex-wrap: nowrap;
+
+		.label-stack-item {
+			margin: 0;
+			&:not(:first-child) {
+				--button-opacity: 0;
+				max-width: var(--item-narrow);
+				transform: scale(var(--item-scale));
+			}
+		}
+
+		@include respond-to($breakpoint-small, 'min') {
+			&:hover,
+			&:focus-within {
+				.label-stack-item {
+					&:first-child {
+						--button-opacity: 0;
+						max-width: var(--item-narrow);
+						transform: scale(var(--item-scale));
+					}
+
+					&:hover,
+					&:focus-within {
+						--button-opacity: 1;
+						max-width: var(--item-wide);
+						transform: scale(1);
+					}
+				}
+			}
+		}
+	}
+}
