@@ -21,7 +21,7 @@ const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChan
             <Alert>
                 {isSieveFilter
                     ? c('Info')
-                          .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve input.`
+                          .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.`
                     : c('Info')
                           .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.`}
             </Alert>

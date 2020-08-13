@@ -25,7 +25,7 @@ function ActionsLabel({ label, onChange }) {
     const I18N = {
         [LABEL_TYPE.MESSAGE_LABEL]: {
             content: c('Info')
-                .t`Please note that emails tagged with this label will NOT be deleted. They can still be found in their respective folder. To permanently delete these emails, open your mailbox, navigate to the label, and select the CLEAR LABEL option from the tool bar.`,
+                .t`Please note that emails tagged with this label will NOT be deleted. They can still be found in their respective folder. To permanently delete these emails, open your mailbox, navigate to the label, and select the EMPTY LABEL option from the tool bar.`,
             confirm: c('Info').t`Are you sure you want to delete this label?`,
         },
         [LABEL_TYPE.MESSAGE_FOLDER]: {
