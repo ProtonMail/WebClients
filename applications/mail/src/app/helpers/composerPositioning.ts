@@ -42,6 +42,7 @@ export const computeComposerStyle = (
 ): CSSProperties => {
     if (isNarrow) {
         return {
+            position: 'fixed',
             top: 0,
             right: 0,
             bottom: 0,
