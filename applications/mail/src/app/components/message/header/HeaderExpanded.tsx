@@ -203,13 +203,7 @@ const HeaderExpanded = ({
                 </div>
                 {messageLoaded && !showDetails && (
                     <div className="flex-item-noshrink flex flex-items-center onmobile-w100 message-header-expanded-label-container is-appearing-content">
-                        <ItemLabels
-                            max={4}
-                            element={message.data}
-                            labels={labels}
-                            showUnlabel
-                            className="onmobile-mt0-5"
-                        />
+                        <ItemLabels element={message.data} labels={labels} showUnlabel className="onmobile-mt0-5" />
                         <ItemAttachmentIcon element={message.data} className="onmobile-mt0-5 ml0-5" />
                     </div>
                 )}

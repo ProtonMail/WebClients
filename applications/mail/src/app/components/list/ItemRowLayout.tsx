@@ -70,12 +70,7 @@ const ItemRowLayout = ({
                     {Subject}
                 </span>
                 <span className="mlauto flex flex-item-noshrink">
-                    <ItemLabels
-                        max={4}
-                        labels={labels}
-                        element={element}
-                        className="flex-item-noshrink flex flex-nowrap"
-                    />
+                    <ItemLabels labels={labels} element={element} className="flex-item-noshrink flex flex-nowrap" />
                     <ItemAttachmentIcon element={element} className="ml0-5 flex-item-noshrink flex-self-vcenter" />
                 </span>
             </div>

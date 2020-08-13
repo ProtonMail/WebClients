@@ -48,7 +48,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
     const labelIDs = (getLabelIDs(message.data || {}) || []).filter((labelID) => isCustomLabel(labelID, labels));
 
     return (
-        <div className="message-detailed-header-extra border-top pt0-5 is-appearing-content">
+        <div className="message-detailed-header-extra border-top pt0-5 pb0-5 is-appearing-content">
             {icon && (
                 <div className="mb0-5 flex flex-nowrap">
                     <span className="container-to flex">
@@ -91,12 +91,10 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             )}
             {labelIDs.length > 0 && (
                 <div className="flex flex-nowrap">
-                    <span className="container-to flex pb0-25">
+                    <span className="container-to flex">
                         <Icon name="label" className="mauto" alt={c('Label').t`Labels:`} />
                     </span>
-                    <span className="flex-self-vcenter mr0-5 ellipsis pm-badgeLabel-container--groupMayWrap">
-                        <ItemLabels isCollapsed={false} element={message.data} labels={labels} showUnlabel />
-                    </span>
+                    <ItemLabels isCollapsed={false} element={message.data} labels={labels} showUnlabel />
                 </div>
             )}
         </div>

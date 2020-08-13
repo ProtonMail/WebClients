@@ -63,7 +63,7 @@ const ItemColumnLayout = ({
                     <ItemStar element={element} />
                 </span>
             </div>
-            <div className="flex flex-items-center item-secondline mw100">
+            <div className="flex flex-nowrap flex-items-center item-secondline mw100 no-scroll">
                 <div className="item-subject flex-item-fluid flex w0 pr1 flex-nowrap">
                     {!!element.ExpirationTime && (
                         <span className="flex-item-noshrink">
@@ -86,7 +86,7 @@ const ItemColumnLayout = ({
                     </span>
                 </div>
                 <div className="item-icons ml0-5 flex-item-noshrink">
-                    <ItemLabels labels={labels} element={element} />
+                    <ItemLabels labels={labels} element={element} maxNumber={5} />
                     <ItemAttachmentIcon element={element} className="ml0-5 flex-self-vcenter" />
                 </div>
             </div>
