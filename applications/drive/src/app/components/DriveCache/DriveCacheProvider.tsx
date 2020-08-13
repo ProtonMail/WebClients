@@ -393,6 +393,7 @@ const useDriveCacheState = () => {
                     sortedLists[direction] = {
                         complete: true,
                         list: [...list],
+                        initialized: true,
                     };
                 }
             });
