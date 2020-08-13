@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, useFolders } from 'react-components';
+import { Icon, useFolders, Tooltip } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { Message } from '../../models/message';
@@ -28,9 +28,11 @@ const ItemLocation = ({ message, mailSettings, shouldStack = false }: Props) => 
     return (
         <>
             {infos.map(({ icon, name, to }) => (
-                <span className="inline-flex flex-item-noshrink" key={to} title={name}>
-                    <Icon name={icon} alt={name} />
-                </span>
+                <Tooltip title={name} key={to}>
+                    <span className="inline-flex flex-item-noshrink">
+                        <Icon name={icon} alt={name} />
+                    </span>
+                </Tooltip>
             ))}
         </>
     );
