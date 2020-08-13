@@ -10,7 +10,7 @@ import { labelIncludes, isCustomLabel } from '../../helpers/labels';
 import { Element } from '../../models/element';
 import { useEmptyLabel } from '../../hooks/useEmptyLabel';
 
-const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED } = MAILBOX_LABEL_IDS;
+const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
@@ -34,7 +34,16 @@ const EmptyButton = ({ labelID = '', breakpoints, elements }: Props) => {
     const handleClick = () => withLoading(emptyLabel(labelID));
 
     const isLabel = isCustomLabel(labelID, labels);
-    const title = isLabel ? c('Action').t`Empty label` : c('Action').t`Empty folder`;
+    let title = '';
+    if (labelID === TRASH) {
+        title = c('Action').t`Empty trash`;
+    } else if (labelID === SPAM) {
+        title = c('Action').t`Empty spams`;
+    } else if (isLabel) {
+        title = c('Action').t`Empty label`;
+    } else {
+        title = c('Action').t`Empty folder`;
+    }
 
     return (
         <>

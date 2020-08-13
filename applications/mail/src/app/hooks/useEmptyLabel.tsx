@@ -14,7 +14,7 @@ import {
 import { emptyLabel as emptyLabelRequest } from 'proton-shared/lib/api/messages';
 
 import { useOptimisticEmptyLabel } from './optimistic/useOptimisticEmptyLabel';
-import { isCustomLabel } from '../helpers/labels';
+import { isCustomLabel, getLabelName } from '../helpers/labels';
 
 export const useEmptyLabel = () => {
     const { createNotification } = useNotifications();
@@ -27,12 +27,11 @@ export const useEmptyLabel = () => {
 
     const emptyLabel = useCallback(async (labelID: string) => {
         const isLabel = isCustomLabel(labelID, labels);
-        const label = labels.find((label) => label.ID === labelID) ||
-            folders.find((folder) => folder.ID === labelID) || { ID: labelID, Name: '' };
+        const labelName = getLabelName(labelID, labels, folders);
         await new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal
-                    title={c('Title').t`Empty ${label.Name}`}
+                    title={c('Title').t`Empty ${labelName}`}
                     confirm={<ErrorButton type="submit">{c('Action').t`Empty`}</ErrorButton>}
                     onConfirm={resolve}
                     onClose={reject}
