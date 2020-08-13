@@ -13,6 +13,8 @@
 - add “broken file” image
 - added `bottom` and `centered-absolute-horizontal` helpers
 - added `.pm-button--pill` modifier
+- documentation for responsive helpers, 2-columns list and sizing helpers
+- new label stack component
 
 
 ## Updated/fixes
@@ -24,6 +26,7 @@
 - fix - notifications display on mobile
 - fix autogrid margin behaviour on mobile
 - fix - delete action in dropdown should be red - added modifier for it
+- remove duplicate code
 
 
 # [1.8.4] - 2019-07-28

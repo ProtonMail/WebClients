@@ -62,11 +62,13 @@
         width: 100%;
         flex-basis: auto;
       }
-    }
+	}
+
     &w25         { width: 25%; }
     &w100        { width: 100%; }
     &mw100       { max-width: 100%; }
 	&wauto       { width: auto; }
+
 	@for $i from 2 through 3 {
 		&hideTd#{$i} {
 			td:nth-child(#{$i}) {
@@ -74,6 +76,13 @@
 			}
 		}
 	}
+
+	&list-1column {
+		-webkit-column-count: 1;
+		   -moz-column-count: 1;
+				column-count: 1;
+	}
+
   }
 
   /**
@@ -166,6 +175,9 @@
 	&flex-self-start {
 		align-self: start;
 	}
+	&flex-wrap {
+      flex-wrap: wrap;
+    }
 	&mw100 {
       max-width: 100%;
     }
@@ -181,9 +193,7 @@
 	&w100 {
       width: 100%;
     }
-    &flex-wrap {
-      flex-wrap: wrap;
-    }
+
     &static {
       position: static;
 	}
