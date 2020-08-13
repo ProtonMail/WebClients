@@ -21,12 +21,8 @@ import {
 } from '../../utils/transfer';
 
 const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
-<<<<<<< HEAD
 type DownloadStateUpdater = TransferState | ((download: Download | PartialDownload) => TransferState);
 type TransferStateUpdateInfo = { error?: Error; startDate?: Date; force?: boolean };
-=======
-type TransferStateUpdater = TransferState | ((download: Download | PartialDownload) => TransferState);
->>>>>>> Merge dev to master
 
 interface DownloadProviderState {
     downloads: Download[];
@@ -39,17 +35,12 @@ interface DownloadProviderState {
         filename: string,
         downloadInfo: DownloadInfo
     ) => {
-<<<<<<< HEAD
         addDownload(
             meta: TransferMeta,
             downloadInfo: DownloadInfo,
             { onProgress, ...rest }: DownloadCallbacks
         ): Promise<void>;
         startDownloads(): void;
-=======
-        addDownload(meta: TransferMeta, { onProgress, ...rest }: DownloadCallbacks): Promise<void>;
-        startDownloads(): Promise<void>;
->>>>>>> Merge dev to master
     };
     getDownloadsProgresses: () => TransferProgresses;
     clearDownloads: () => void;
@@ -81,46 +72,27 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
 
     const getUpdateDownloadStates = (
         ids: string[],
-<<<<<<< HEAD
         nextState: DownloadStateUpdater,
         { error, force = false, startDate }: TransferStateUpdateInfo = {}
-=======
-        nextState: TransferStateUpdater,
-        { error }: { error?: Error } = {}
->>>>>>> Merge dev to master
     ) => <T extends PartialDownload | Download>(downloads: T[]) =>
         downloads.map((download) => {
             const newState = typeof nextState === 'function' ? nextState(download) : nextState;
             return ids.includes(download.id) &&
-<<<<<<< HEAD
                 (force || (download.state !== newState && !isTransferFailed({ state: download.state })))
-=======
-                download.state !== newState &&
-                !isTransferFailed({ state: download.state })
->>>>>>> Merge dev to master
                 ? {
                       ...download,
                       state: newState,
                       resumeState: isTransferPaused(download) ? newState : download.state,
-<<<<<<< HEAD
                       startDate: download.startDate ?? startDate,
                       error,
-=======
-                      error
->>>>>>> Merge dev to master
                   }
                 : download;
         });
 
     const updateDownloadState = (
         id: string | string[],
-<<<<<<< HEAD
         nextState: DownloadStateUpdater,
         info?: TransferStateUpdateInfo
-=======
-        nextState: TransferStateUpdater,
-        info: { error?: Error } = {}
->>>>>>> Merge dev to master
     ) => {
         const ids = Array.isArray(id) ? id : [id];
         setDownloads(getUpdateDownloadStates(ids, nextState, info));
@@ -128,13 +100,8 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
 
     const updatePartialDownloadState = (
         id: string | string[],
-<<<<<<< HEAD
         nextState: DownloadStateUpdater,
         info?: TransferStateUpdateInfo
-=======
-        nextState: TransferStateUpdater,
-        info: { error?: Error } = {}
->>>>>>> Merge dev to master
     ) => {
         const ids = Array.isArray(id) ? id : [id];
         setPartialDownloads(getUpdateDownloadStates(ids, nextState, info));
@@ -212,16 +179,10 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                     updateState(id, TransferState.Done);
                 })
                 .catch((error: Error) => {
-<<<<<<< HEAD
                     if (isTransferCancelError(error)) {
                         updateState(id, TransferState.Canceled);
                     } else {
                         console.error(error);
-=======
-                    if (error.name === 'TransferCancel' || error.name === 'AbortError') {
-                        updateState(id, TransferState.Canceled);
-                    } else {
->>>>>>> Merge dev to master
                         console.error(`Download ${id} failed: ${error}`);
                         updateState(id, TransferState.Error, { error });
                     }
