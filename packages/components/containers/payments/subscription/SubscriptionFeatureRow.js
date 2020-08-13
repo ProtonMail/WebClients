@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, Info } from 'react-components';
+import { Icon, Info } from '../../../components';
 
 const SubscriptionFeatureRow = ({ icon, feature, info }) => {
     return (

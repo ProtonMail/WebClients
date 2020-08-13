@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import React from 'react';
-import { Badge, LoaderIcon } from '../../../index';
+import { Badge, LoaderIcon } from '../../../components';
 import { Status } from './interface';
 
 interface Props {

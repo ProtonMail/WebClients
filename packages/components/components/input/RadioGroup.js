@@ -1,6 +1,6 @@
 import React from 'react';
-import { Radio } from 'react-components';
 import PropTypes from 'prop-types';
+import Radio from './Radio';
 
 const RadioGroup = ({ name, options, onChange, value }) => {
     const handleChangePlatform = (optionValue) => () => onChange(optionValue);

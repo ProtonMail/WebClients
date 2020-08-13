@@ -3,7 +3,8 @@ import { c } from 'ttag';
 
 import { TYPES, COMPARATORS } from 'proton-shared/lib/filters/constants';
 import { Condition, FilterStatement, ConditionType, ConditionComparator } from 'proton-shared/lib/filters/interfaces';
-import { classnames, Input, Select, Radio, Tooltip, Icon, Button } from '../../..';
+import { Input, Select, Radio, Tooltip, Icon, Button } from '../../../components';
+import { classnames } from '../../../helpers';
 import { OptionProps } from '../../../components/select/Select';
 
 import './FilterConditionsFormRow.scss';

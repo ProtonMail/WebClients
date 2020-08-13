@@ -1,5 +1,5 @@
 import React from 'react';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 export interface Props extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;

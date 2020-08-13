@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, Input, Label, Row, Field, ColorPicker } from 'react-components';
 import { LABEL_TYPE, FEATURE_FLAGS } from 'proton-shared/lib/constants';
+import { Alert, Input, Label, Row, Field, ColorPicker } from '../../components';
 
 import ParentFolderSelector from './ParentFolderSelector';
 

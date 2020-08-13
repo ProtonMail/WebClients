@@ -1,18 +1,10 @@
 import React from 'react';
-import {
-    useUser,
-    useSubscription,
-    useModals,
-    usePlans,
-    PrimaryButton,
-    Loader,
-    useAddresses,
-    useOrganization,
-} from 'react-components';
 import { hasMailPlus, hasVpnBasic, switchPlan, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLANS } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { c } from 'ttag';
+import { PrimaryButton, Loader } from '../../../components';
+import { useUser, useSubscription, useModals, usePlans, useAddresses, useOrganization } from '../../../hooks';
 
 import NewSubscriptionModal from './NewSubscriptionModal';
 

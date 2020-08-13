@@ -11,24 +11,18 @@ import { UserSettings as tsUserSettings } from 'proton-shared/lib/interfaces';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
-import {
-    EventManagerProvider,
-    ModalsChildren,
-    ThemeInjector,
-    DensityInjector,
-    ContactProvider,
-    useApi,
-    useCache,
-    useNotifications,
-} from '../../index';
+import { useApi, useCache, useNotifications } from '../../hooks';
 
-import EventModelListener from '../eventManager/EventModelListener';
-import EventNotices from '../eventManager/EventNotices';
 import LoaderPage from './LoaderPage';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 
 import loadEventID from './loadEventID';
 import StandardLoadError from './StandardLoadError';
+import { EventManagerProvider, EventModelListener, EventNotices } from '../eventManager';
+import { ModalsChildren } from '../modals';
+import { ThemeInjector } from '../themes';
+import { DensityInjector } from '../layouts';
+import { ContactProvider } from '../contacts';
 
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;

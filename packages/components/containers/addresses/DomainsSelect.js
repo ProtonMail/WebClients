@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
-import { useApi, useLoading, useUser, useDomains, Select, usePremiumDomains } from 'react-components';
+import { Select } from '../../components';
+import { useApi, useLoading, useUser, useDomains, usePremiumDomains } from '../../hooks';
 
-import { fakeEvent } from '../../helpers/component';
+import { fakeEvent } from '../../helpers';
 
 const DomainsSelect = ({ member, onChange, className }) => {
     const api = useApi();

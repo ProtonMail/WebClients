@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { FormModal, PasswordTotpInputs, useUserSettings } from '../../index';
+import { FormModal } from '../../components';
+import { useUserSettings } from '../../hooks';
+import PasswordTotpInputs from './PasswordTotpInputs';
 
 interface Props {
     onClose?: () => void;

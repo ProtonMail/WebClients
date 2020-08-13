@@ -7,7 +7,7 @@ import upgradeToPaidPlanSvg from 'design-system/assets/img/pm-images/upgrade.svg
 import get20PerscentDiscountSvg from 'design-system/assets/img/pm-images/percent.svg';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { APPS } from 'proton-shared/lib/constants';
-import AppLink from '../../components/link/AppLink';
+import { AppLink } from '../../components';
 
 const Panel = ({ model }) => {
     return (

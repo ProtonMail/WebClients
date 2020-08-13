@@ -4,14 +4,11 @@ import { InvalidForkConsumeError } from 'proton-shared/lib/authentication/error'
 import { consumeFork, getConsumeForkParameters } from 'proton-shared/lib/authentication/sessionForking';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import {
-    LoaderPage,
-    ModalsChildren,
-    useApi,
-    useNotifications,
-    StandardLoadError,
-    ProtonLoginCallback,
-} from '../../index';
+import { useApi, useNotifications } from '../../hooks';
+import { ProtonLoginCallback } from './interface';
+import StandardLoadError from './StandardLoadError';
+import { ModalsChildren } from '../modals';
+import LoaderPage from './LoaderPage';
 
 interface Props {
     onLogin: ProtonLoginCallback;

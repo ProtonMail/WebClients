@@ -2,8 +2,7 @@ import React, { forwardRef, useRef, useEffect, useImperativeHandle, ChangeEvent 
 import { c } from 'ttag';
 import { parseKeyFiles } from 'proton-shared/lib/keys/keyImport';
 import { OpenPGPKey } from 'pmcrypto';
-import { FileInput } from '../../..';
-import { FileInputHandle } from '../../../components/input/FileInput';
+import FileInput, { FileInputHandle } from '../../../components/input/FileInput';
 
 interface Props {
     onFiles: (files: OpenPGPKey[]) => void;

@@ -8,7 +8,8 @@ import {
     ConditionComparator,
     SimpleFilterModalModel,
 } from 'proton-shared/lib/filters/interfaces';
-import { classnames, Radio, LinkButton } from '../../..';
+import { Radio, LinkButton } from '../../../components';
+import { classnames } from '../../../helpers';
 
 import FilterConditionsFormRow from './FilterConditionsFormRow';
 

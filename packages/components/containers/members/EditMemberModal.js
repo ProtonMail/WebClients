@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    FormModal,
-    Row,
-    Field,
-    Label,
-    Input,
-    useApi,
-    useNotifications,
-    useEventManager,
-    useOrganization,
-    useLoading,
-} from 'react-components';
 import { updateName, updateQuota, updateVPN } from 'proton-shared/lib/api/members';
 import { GIGA } from 'proton-shared/lib/constants';
+import { FormModal, Row, Field, Label, Input } from '../../components';
+import { useApi, useNotifications, useEventManager, useOrganization, useLoading } from '../../hooks';
 
 import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
 import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';

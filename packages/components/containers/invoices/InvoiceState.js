@@ -1,8 +1,8 @@
 import React from 'react';
-import { Badge } from 'react-components';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { INVOICE_STATE } from 'proton-shared/lib/constants';
+import { Badge } from '../../components';
 
 const TYPES = {
     [INVOICE_STATE.UNPAID]: 'error',

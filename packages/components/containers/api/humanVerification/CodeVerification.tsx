@@ -4,18 +4,8 @@ import { isNumber } from 'proton-shared/lib/helpers/validators';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { c } from 'ttag';
-import {
-    EmailInput,
-    Input,
-    IntlTelInput,
-    InlineLinkButton,
-    PrimaryButton,
-    Alert,
-    useApi,
-    useLoading,
-    useModals,
-    useNotifications,
-} from '../../../index';
+import { Alert, EmailInput, Input, IntlTelInput, InlineLinkButton, PrimaryButton } from '../../../components';
+import { useApi, useLoading, useModals, useNotifications } from '../../../hooks';
 
 import RequestNewCodeModal from './RequestNewCodeModal';
 import InvalidVerificationCodeModal from './InvalidVerificationCodeModal';

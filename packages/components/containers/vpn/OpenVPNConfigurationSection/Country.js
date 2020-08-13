@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { getCountryByAbbr, correctAbbr } from 'react-components/helpers/countries';
+import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
 
 const flags = require.context('design-system/assets/img/shared/flags/4x3', true, /.svg$/);
 const flagsMap = flags.keys().reduce((acc, key) => {

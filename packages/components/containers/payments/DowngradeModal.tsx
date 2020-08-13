@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { PLAN_SERVICES } from 'proton-shared/lib/constants';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { UserModel } from 'proton-shared/lib/interfaces';
-import { Alert, ConfirmModal } from '../..';
+import { ConfirmModal, Alert } from '../../components';
 
 interface Props {
     user: UserModel;

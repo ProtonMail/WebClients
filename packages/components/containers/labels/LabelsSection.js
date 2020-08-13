@@ -1,9 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Loader, Alert, PrimaryButton, useLabels, useEventManager, useModals, useApi } from 'react-components';
 import { arrayMove } from 'react-sortable-hoc';
 import { orderLabels } from 'proton-shared/lib/api/labels';
 
+import { Loader, Alert, PrimaryButton } from '../../components';
+import { useLabels, useEventManager, useModals, useApi } from '../../hooks';
 import LabelSortableList from './LabelSortableList';
 import EditLabelModal from './modals/Edit';
 

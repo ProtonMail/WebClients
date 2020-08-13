@@ -1,20 +1,17 @@
 import React from 'react';
 import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
-import {
-    AppsDropdown,
-    Hamburger,
-    SupportDropdown,
-    TopNavbar,
-    UpgradeButton,
-    UpgradeVPNButton,
-    useConfig,
-    useUser
-} from '../../index';
+import { Hamburger } from '../../components';
+import { useConfig, useUser } from '../../hooks';
+
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 import UserDropdown from './UserDropdown';
-import { TopNavbarItem } from '../app/TopNavbar';
 import TopNavbarLink from '../../components/link/TopNavbarLink';
+import { TopNavbarItem } from '../app/TopNavbar';
+import { AppsDropdown, TopNavbar } from '../app';
+import SupportDropdown from './SupportDropdown';
+import UpgradeButton from './UpgradeButton';
+import UpgradeVPNButton from './UpgradeVPNButton';
 
 interface Props extends HeaderProps {
     logo?: React.ReactNode;
@@ -86,11 +83,7 @@ const PrivateHeader = ({
                         <UpgradeVPNButton />
                     </TopNavbarItem>
                 )}
-                {!settingsButton ? null : (
-                    <TopNavbarItem>
-                        {settingsButton}
-                    </TopNavbarItem>
-                )}
+                {!settingsButton ? null : <TopNavbarItem>{settingsButton}</TopNavbarItem>}
                 <TopNavbarItem>
                     <SupportDropdown />
                 </TopNavbarItem>

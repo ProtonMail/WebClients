@@ -1,27 +1,13 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
-import {
-    Alert,
-    Href,
-    Icon,
-    Info,
-    useApiResult,
-    useApiWithoutResult,
-    Button,
-    Block,
-    useUser,
-    Tooltip,
-    useSortedList,
-    useUserVPN,
-    Radio,
-    RadioGroup,
-} from 'react-components';
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import { groupWith } from 'proton-shared/lib/helpers/array';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { getCountryByAbbr, correctAbbr } from 'react-components/helpers/countries';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { Link } from 'react-router-dom';
+import { Alert, Href, Icon, Info, Button, Block, Tooltip, Radio, RadioGroup } from '../../../components';
+import { useApiResult, useApiWithoutResult, useUser, useSortedList, useUserVPN } from '../../../hooks';
+import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
 import ServerConfigs from './ServerConfigs';
 import { isSecureCoreEnabled } from './utils';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';

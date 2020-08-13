@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Tab } from './index';
+import { Tab } from './index.d';
 
 const getWidth = (el: HTMLLIElement | HTMLUListElement) => {
     return el.getClientRects()[0].width;

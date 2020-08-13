@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Button } from 'react-components';
 import { format } from 'date-fns';
 import { getWeekStartsOn, getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { AutoReplyDuration } from 'proton-shared/lib/constants';
 import { sanitizeString } from 'proton-shared/lib/sanitize';
+import { Button } from '../../components';
 import { getDaysOfMonthOptions } from './utils';
 import InfoLine from './InfoLine';
 import { getMatchingValues, toModel } from './AutoReplyForm/useAutoReplyForm';

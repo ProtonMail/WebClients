@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Information, Paragraph } from 'react-components';
 import { Link } from 'react-router-dom';
+import Information from './Information';
+import Paragraph from '../paragraph/Paragraph';
 
 // list = [{ icon, text, to, link }]
 const RelatedSettingsSection = ({ list = [{}] }) => {

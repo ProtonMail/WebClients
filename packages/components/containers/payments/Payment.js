@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { classnames, Radio, Icon, Row, Alert, Price, Loader, useMethods } from 'react-components';
 import {
     PAYMENT_METHOD_TYPES,
     MIN_DONATION_AMOUNT,
@@ -10,6 +9,9 @@ import {
     CURRENCIES,
 } from 'proton-shared/lib/constants';
 
+import { Radio, Icon, Row, Alert, Price, Loader } from '../../components';
+import { classnames } from '../../helpers';
+import { useMethods } from '../paymentMethods';
 import Method from './Method';
 
 const Payment = ({

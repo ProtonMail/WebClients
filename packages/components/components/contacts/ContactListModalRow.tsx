@@ -3,7 +3,7 @@ import React, { CSSProperties, ChangeEvent } from 'react';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts/Contact';
 
 import ContactGroupLabels from './ContactGroupLabels';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import Checkbox from '../input/Checkbox';
 
 interface Props {

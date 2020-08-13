@@ -1,19 +1,9 @@
 import React from 'react';
-import {
-    Group,
-    Row,
-    Label,
-    Field,
-    Radio,
-    useEventManager,
-    useMailSettings,
-    useNotifications,
-    useApiWithoutResult,
-} from 'react-components';
 import { c } from 'ttag';
 import { updateMessageButtons } from 'proton-shared/lib/api/mailSettings';
 import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
-import { ButtonGroup } from '../../components/button';
+import { ButtonGroup, Group, Row, Label, Field, Radio } from '../../components';
+import { useEventManager, useMailSettings, useNotifications, useApiWithoutResult } from '../../hooks';
 
 const { READ_UNREAD, UNREAD_READ } = MESSAGE_BUTTONS;
 

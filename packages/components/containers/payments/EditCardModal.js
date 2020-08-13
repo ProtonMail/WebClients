@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { FormModal, useNotifications, useApi, useLoading, useModals, useEventManager } from 'react-components';
 import { setPaymentMethod } from 'proton-shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES, ADD_CARD_MODE } from 'proton-shared/lib/constants';
+import { FormModal } from '../../components';
+import { useNotifications, useApi, useLoading, useModals, useEventManager } from '../../hooks';
 
 import Card from './Card';
 import useCard from './useCard';

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeCard, Block } from 'react-components';
+import { Block } from '../../components';
+import ThemeCard from './ThemeCard';
 
 const ThemeCards = ({ themeIdentifier, onChange, onCustomization, loading, list }) => {
     return (

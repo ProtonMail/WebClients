@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Info } from '../../index';
+import { Info } from '../../components';
 import { YANDEX_DOMAINS, YAHOO_DOMAINS, AOL_DOMAINS, MAIL_RU_DOMAINS, GMAIL_DOMAINS } from './constants';
 
 interface Props {

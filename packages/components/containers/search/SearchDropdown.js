@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
 import {
     SearchInput,
     DropdownButton,
@@ -8,10 +9,9 @@ import {
     usePopperAnchor,
     PrimaryButton,
     ResetButton,
-} from 'react-components';
-import { c } from 'ttag';
+} from '../../components';
 
-import { generateUID } from '../../helpers/component';
+import { generateUID } from '../../helpers';
 
 const SearchDropdown = ({
     search: initialSearch = '',

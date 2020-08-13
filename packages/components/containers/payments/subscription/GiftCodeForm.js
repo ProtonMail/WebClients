@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PrimaryButton, Input } from 'react-components';
+import { PrimaryButton, Input } from '../../../components';
 
 const GiftCodeForm = ({ code, loading, disabled, onChange, onSubmit }) => {
     const handleEnter = (event) => {

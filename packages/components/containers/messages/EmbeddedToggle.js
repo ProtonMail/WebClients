@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Toggle, useApi, useEventManager, useToggle, useNotifications, useLoading } from 'react-components';
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import { updateShowImages } from 'proton-shared/lib/api/mailSettings';
 import { setBit, clearBit, hasBit } from 'proton-shared/lib/helpers/bitset';
 import { c } from 'ttag';
+import { Toggle } from '../../components';
+import { useApi, useEventManager, useToggle, useNotifications, useLoading } from '../../hooks';
 
 const { EMBEDDED } = SHOW_IMAGES;
 

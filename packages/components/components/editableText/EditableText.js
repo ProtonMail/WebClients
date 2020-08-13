@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import useToggle from '../toggle/useToggle';
+import useToggle from '../../hooks/useToggle';
 import Input from '../input/Input';
 import { Button } from '../button';
 

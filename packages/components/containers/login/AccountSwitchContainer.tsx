@@ -13,15 +13,9 @@ import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
 import { revoke } from 'proton-shared/lib/api/auth';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
-import {
-    useApi,
-    useLoading,
-    LinkButton,
-    OnLoginCallbackArguments,
-    Loader,
-    useNotifications,
-    LoaderIcon,
-} from '../../index';
+import { LinkButton, Loader, LoaderIcon } from '../../components';
+import { useApi, useLoading, useNotifications } from '../../hooks';
+import { OnLoginCallbackArguments } from '../app/interface';
 import { Props as AccountLayoutProps } from '../signup/AccountPublicLayout';
 
 interface Props {

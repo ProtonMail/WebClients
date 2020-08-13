@@ -5,20 +5,10 @@ import { Link } from 'react-router-dom';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
-import {
-    Table,
-    TableBody,
-    TableRow,
-    DropdownActions,
-    Tooltip,
-    TableCell,
-    useApiWithoutResult,
-    useNotifications,
-    useUser,
-    Icon,
-    classnames,
-} from 'react-components';
 import { c } from 'ttag';
+import { Table, TableBody, TableRow, DropdownActions, Tooltip, TableCell, Icon } from '../../../components';
+import { useApiWithoutResult, useNotifications, useUser } from '../../../hooks';
+import { classnames } from '../../../helpers';
 
 import LoadIndicator from './LoadIndicator';
 import Country from './Country';

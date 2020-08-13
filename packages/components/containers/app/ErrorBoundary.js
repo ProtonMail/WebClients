@@ -1,8 +1,8 @@
 import React from 'react';
-import { GenericError } from 'react-components';
 import { PropTypes } from 'prop-types';
 
 import { traceError } from 'proton-shared/lib/helpers/sentry';
+import GenericError from '../error/GenericError';
 
 // https://reactjs.org/docs/error-boundaries.html#introducing-error-boundaries
 class ErrorBoundary extends React.Component {

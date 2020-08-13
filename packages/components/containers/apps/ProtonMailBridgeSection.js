@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert } from 'react-components';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
-import AppLink from '../../components/link/AppLink';
+import { Alert, AppLink } from '../../components';
 
 const ProtonMailBridgeSection = ({ permission }) => {
     return (

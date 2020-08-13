@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Select } from 'react-components';
+import { Select } from '../../components';
 
 const PaymentMethodsSelect = ({ method, methods = [], onChange, loading }) => {
     const handleChange = ({ target }) => onChange(target.value);

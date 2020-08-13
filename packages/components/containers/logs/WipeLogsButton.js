@@ -1,7 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Button, ConfirmModal, Alert, useModals, ErrorButton } from 'react-components';
+import { Button, ConfirmModal, Alert, ErrorButton } from '../../components';
+import { useModals } from '../../hooks';
 
 const WipeLogsButton = ({ onWipe, className }) => {
     const { createModal } = useModals();

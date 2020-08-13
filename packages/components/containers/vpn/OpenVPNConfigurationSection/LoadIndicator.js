@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Tooltip, CircularProgress } from 'react-components';
 import { c } from 'ttag';
+import { Tooltip, CircularProgress } from '../../../components';
 
 const LoadIndicator = ({ server: { Load = 0 } }) => {
     // 1-49% load is GREEN color #5db039

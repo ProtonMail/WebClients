@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Toggle, useNotifications, useEventManager, useApi, useLoading } from 'react-components';
 import { updateAutoSaveContacts } from 'proton-shared/lib/api/mailSettings';
+import { useNotifications, useEventManager, useApi, useLoading } from '../../hooks';
+import { Toggle } from '../../components';
 
 const AutoSaveContactsToggle = ({ autoSaveContacts, ...rest }) => {
     const api = useApi();

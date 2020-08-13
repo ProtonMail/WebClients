@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import Icon from '../../components/icon/Icon';
 
 interface Props {

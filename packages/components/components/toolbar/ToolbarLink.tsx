@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, LinkProps } from 'react-router-dom';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import Icon, { Props as IconProps } from '../icon/Icon';
 
 interface Props<S> extends LinkProps<S> {

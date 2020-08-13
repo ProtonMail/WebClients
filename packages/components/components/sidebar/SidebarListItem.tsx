@@ -1,6 +1,6 @@
 import React, { ReactNode, LiHTMLAttributes } from 'react';
 
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 interface Props extends LiHTMLAttributes<HTMLLIElement> {
     className?: string;

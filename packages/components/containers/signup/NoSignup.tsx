@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Alert, AppLink } from '../..';
+import { Alert, AppLink } from '../../components';
 
 const NoSignup = () => {
     return (

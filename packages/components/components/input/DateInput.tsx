@@ -5,7 +5,7 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import Input, { Props as InputProps } from './Input';
 import { usePopperAnchor } from '../popper';
 import Dropdown from '../dropdown/Dropdown';
-import { generateUID } from '../../helpers/component';
+import { generateUID } from '../../helpers';
 import LocalizedMiniCalendar from '../miniCalendar/LocalizedMiniCalendar';
 
 const toFormatted = (value: Date, locale: Locale) => {

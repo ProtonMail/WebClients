@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, Price, Button, Loader, useConfig, useApi, useLoading } from 'react-components';
 import { createBitcoinPayment, createBitcoinDonation } from 'proton-shared/lib/api/payments';
 import { MIN_BITCOIN_AMOUNT, APPS, CURRENCIES } from 'proton-shared/lib/constants';
 
+import { Alert, Price, Button, Loader } from '../../components';
+import { useConfig, useApi, useLoading } from '../../hooks';
 import BitcoinQRCode from './BitcoinQRCode';
 import BitcoinDetails from './BitcoinDetails';
 

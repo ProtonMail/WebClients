@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useState } from 'react';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { c } from 'ttag';
-import { Alert, Row, Label, Field, PasswordInput, FormModal } from '../../..';
+import { Alert, Row, Label, Field, PasswordInput, FormModal } from '../../../components';
 
-import { generateUID } from '../../../helpers/component';
+import { generateUID } from '../../../helpers';
 
 interface Props {
     privateKey: OpenPGPKey;

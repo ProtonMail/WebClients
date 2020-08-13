@@ -1,18 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    Alert,
-    Toggle,
-    Field,
-    useMailSettings,
-    useToggle,
-    useNotifications,
-    useEventManager,
-    useApiWithoutResult,
-} from 'react-components';
 import { PM_SIGNATURE } from 'proton-shared/lib/constants';
 import { updatePMSignature } from 'proton-shared/lib/api/mailSettings';
+import { useMailSettings, useToggle, useNotifications, useEventManager, useApiWithoutResult } from '../../hooks';
+import { Alert, Toggle, Field } from '../../components';
 
 const PMSignatureField = ({ id }) => {
     const { call } = useEventManager();

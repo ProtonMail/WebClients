@@ -1,18 +1,9 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import {
-    Alert,
-    Field,
-    Label,
-    PasswordInput,
-    useNotifications,
-    useModals,
-    InlineLinkButton,
-    FormModal,
-    GenericError,
-    Loader,
-} from '../../../index';
+import { Alert, Field, Label, PasswordInput, InlineLinkButton, FormModal, Loader } from '../../../components';
+import { useNotifications, useModals } from '../../../hooks';
+import GenericError from '../../error/GenericError';
 
 import ReactivateKeysList from './ReactivateKeysList';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';

@@ -3,19 +3,9 @@ import { c } from 'ttag';
 import { updateBackupKey } from 'proton-shared/lib/api/organization';
 import { getBackupKeyData } from 'proton-shared/lib/keys/organizationKeys';
 import { OpenPGPKey } from 'pmcrypto';
-import {
-    useEventManager,
-    useLoading,
-    useModals,
-    useNotifications,
-    AuthModal,
-    FormModal,
-    Alert,
-    Row,
-    Label,
-    Field,
-    PasswordInput,
-} from '../../index';
+import { FormModal, Alert, Row, Label, Field, PasswordInput } from '../../components';
+import { useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
+import AuthModal from '../password/AuthModal';
 
 interface Props {
     onClose?: () => void;

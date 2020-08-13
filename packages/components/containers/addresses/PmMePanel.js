@@ -1,7 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
-import { Alert, Loader, useUser, useAddresses } from 'react-components';
+import { Alert, Loader } from '../../components';
+import { useUser, useAddresses } from '../../hooks';
 
 import PmMeButton from './PmMeButton';
 

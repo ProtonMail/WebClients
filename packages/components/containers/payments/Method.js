@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PAYMENT_METHOD_TYPES, CURRENCIES } from 'proton-shared/lib/constants';
-import { Alert, Loader } from 'react-components';
 import { c } from 'ttag';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import americanExpressSafekeySvgLight from 'design-system/assets/img/shared/bank-icons/american-express-safekey.svg';
@@ -12,6 +11,7 @@ import mastercardSecurecodeSvg from 'design-system/assets/img/shared/bank-icons/
 import verifiedByVisaSvgLight from 'design-system/assets/img/shared/bank-icons/verified-by-visa.svg';
 import verifiedByVisaSvgDark from 'design-system/assets/img/shared/bank-icons/verified-by-visa-dark.svg';
 
+import { Alert, Loader } from '../../components';
 import Card from './Card';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PayPalView from './PayPalView';

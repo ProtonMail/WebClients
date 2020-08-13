@@ -1,5 +1,6 @@
 import React, { Ref } from 'react';
-import { classnames, TopBanners } from '../../index';
+import TopBanners from '../../containers/app/TopBanners';
+import { classnames } from '../../helpers';
 
 interface Props {
     containerRef?: Ref<HTMLDivElement>;

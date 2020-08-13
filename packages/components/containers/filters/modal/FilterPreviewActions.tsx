@@ -5,7 +5,9 @@ import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { SimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
 import { toMap } from 'proton-shared/lib/helpers/object';
-import { classnames, Icon, LabelStack } from '../../..';
+
+import { Icon, LabelStack } from '../../../components';
+import { classnames } from '../../../helpers';
 
 import { DEFAULT_FOLDERS } from './FilterActionsFormFolderRow';
 

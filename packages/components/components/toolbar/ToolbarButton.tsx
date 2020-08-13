@@ -1,8 +1,8 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import Icon, { Props as IconProps } from '../icon/Icon';
-import { Tooltip } from '../..';
+import { Tooltip } from '../tooltip';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     icon: string | IconProps;

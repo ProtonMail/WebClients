@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import { srpAuth } from 'proton-shared/lib/srp';
-import { useApi } from '../../index';
+import { useApi } from '../../hooks';
 import AskAuthModal from './AskAuthModal';
 
 interface Props {

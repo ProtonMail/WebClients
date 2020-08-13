@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
+import { fromUnixTime } from 'date-fns';
+import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
+import { updateLogAuth } from 'proton-shared/lib/api/settings';
+import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import { ELEMENTS_PER_PAGE, LOGS_STATE, AUTH_LOG_EVENTS } from 'proton-shared/lib/constants';
 import {
     Button,
     ButtonGroup,
@@ -9,16 +14,8 @@ import {
     Block,
     Pagination,
     usePaginationAsync,
-    useUserSettings,
-    useApiResult,
-    useApiWithoutResult,
-    useModals,
-} from 'react-components';
-import { fromUnixTime } from 'date-fns';
-import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
-import { updateLogAuth } from 'proton-shared/lib/api/settings';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { ELEMENTS_PER_PAGE, LOGS_STATE, AUTH_LOG_EVENTS } from 'proton-shared/lib/constants';
+} from '../../components';
+import { useUserSettings, useApiResult, useApiWithoutResult, useModals } from '../../hooks';
 
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';

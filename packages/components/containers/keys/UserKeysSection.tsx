@@ -2,18 +2,8 @@ import React from 'react';
 import { c } from 'ttag';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 import getCachedKeyByID from 'proton-shared/lib/keys/getCachedKeyByID';
-import {
-    Alert,
-    Button,
-    Block,
-    Loader,
-    useUser,
-    useModals,
-    useUserKeys,
-    useEventManager,
-    useAuthentication,
-    useApi,
-} from '../../index';
+import { Alert, Button, Block, Loader } from '../../components';
+import { useUser, useModals, useUserKeys, useEventManager, useAuthentication, useApi } from '../../hooks';
 
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';

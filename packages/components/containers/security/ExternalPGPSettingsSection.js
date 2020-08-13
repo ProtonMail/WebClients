@@ -1,21 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    ConfirmModal,
-    Alert,
-    Row,
-    Field,
-    Label,
-    Info,
-    Toggle,
-    useMailSettings,
-    useEventManager,
-    useApi,
-    useLoading,
-    useNotifications,
-    useModals,
-} from 'react-components';
 import { updateAttachPublicKey, updatePGPScheme, updateSign } from 'proton-shared/lib/api/mailSettings';
+import { ConfirmModal, Alert, Row, Field, Label, Info, Toggle } from '../../components';
+import { useMailSettings, useEventManager, useApi, useLoading, useNotifications, useModals } from '../../hooks';
 
 import PGPSchemeSelect from './PGPSchemeSelect';
 

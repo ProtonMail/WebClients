@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 const Radio = ({ id, children, className = 'inline-flex', ...rest }) => {
     return (
@@ -18,7 +18,7 @@ const Radio = ({ id, children, className = 'inline-flex', ...rest }) => {
 Radio.propTypes = {
     id: PropTypes.string,
     className: PropTypes.string,
-    children: PropTypes.node
+    children: PropTypes.node,
 };
 
 export default Radio;

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { RadioCards } from 'react-components';
 import { VIEW_MODE } from 'proton-shared/lib/constants';
 import conversationGroupSvg from 'design-system/assets/img/pm-images/conversation-group.svg';
 import conversationSingleSvg from 'design-system/assets/img/pm-images/conversation-single.svg';
+import { RadioCards } from '../../components';
 
 const { GROUP, SINGLE } = VIEW_MODE;
 

@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-    classnames,
-    FormModal,
-    Loader,
-    Countdown,
-    Button,
-    CurrencySelector,
-    useLoading,
-    useApi,
-    Price,
-} from 'react-components';
 import { checkSubscription } from 'proton-shared/lib/api/payments';
 import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, BLACK_FRIDAY, SECOND } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { isAfter } from 'date-fns';
+import { FormModal, Loader, Countdown, Button, Price } from '../../../components';
+import { useLoading, useApi } from '../../../hooks';
+import { classnames } from '../../../helpers';
+import CurrencySelector from '../CurrencySelector';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 const EVERY_SECOND = SECOND;

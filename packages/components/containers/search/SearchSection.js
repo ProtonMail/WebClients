@@ -1,17 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    Row,
-    Label,
-    Info,
-    Toggle,
-    Field,
-    useMailSettings,
-    useEventManager,
-    useLoading,
-    useApi,
-} from 'react-components';
 import { updateAutoWildcardSearch } from 'proton-shared/lib/api/mailSettings';
+import { Row, Label, Info, Toggle, Field } from '../../components';
+import { useMailSettings, useEventManager, useLoading, useApi } from '../../hooks';
 
 const SearchSection = () => {
     const api = useApi();

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { OrderableTableRow, Icon } from 'react-components';
+import { OrderableTableRow, Icon } from '../../components';
 
 import ActionsLabel from './ActionsLabel';
 

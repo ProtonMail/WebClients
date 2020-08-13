@@ -1,5 +1,5 @@
 import React from 'react';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import LearnMore from '../link/LearnMore';
 
 const CLASSES = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { PrimaryButton, Field } from 'react-components';
 import PropTypes from 'prop-types';
+import { PrimaryButton, Field } from '../../components';
 
 const RecoveryEmail = ({ email, onClick }) => {
     return (

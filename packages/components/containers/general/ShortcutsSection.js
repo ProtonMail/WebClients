@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Row, Label, Field, useMailSettings, useModals, SmallButton, ShortcutsModal } from 'react-components';
+import { Row, Label, Field, SmallButton } from '../../components';
+import { useMailSettings, useModals } from '../../hooks';
 
+import ShortcutsModal from './ShortcutsModal';
 import ShortcutsToggle from './ShortcutsToggle';
 
 const ShortcutsSection = () => {

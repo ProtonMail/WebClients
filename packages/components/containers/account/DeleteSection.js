@@ -1,19 +1,10 @@
 import React from 'react';
-import { c } from 'ttag';
-import {
-    Href,
-    Alert,
-    MozillaInfoPanel,
-    ErrorButton,
-    useModals,
-    useUser,
-    useSubscription,
-    Loader,
-    useAddresses,
-    useConfig,
-} from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
+import { c } from 'ttag';
+import { Href, Alert, Loader, ErrorButton } from '../../components';
+import { useModals, useUser, useSubscription, useAddresses, useConfig } from '../../hooks';
 
+import MozillaInfoPanel from './MozillaInfoPanel';
 import DeleteAccountModal from './DeleteAccountModal';
 
 const DeleteSection = () => {

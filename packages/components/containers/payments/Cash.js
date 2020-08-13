@@ -1,15 +1,20 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, useConfig } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import envelopSvgLight from 'design-system/assets/img/shared/envelop.svg';
 import envelopSvgDark from 'design-system/assets/img/shared/envelop-dark.svg';
+import { Alert } from '../../components';
+import { useConfig } from '../../hooks';
 
 const Cash = () => {
     const { APP_NAME } = useConfig();
     const envelopSvg = getLightOrDark(envelopSvgLight, envelopSvgDark);
-    const email = <b key="email-contact">{APP_NAME === APPS.PROTONVPN_SETTINGS ? 'contact@protonvpn.com' : 'contact@protonmail.com'}</b>;
+    const email = (
+        <b key="email-contact">
+            {APP_NAME === APPS.PROTONVPN_SETTINGS ? 'contact@protonvpn.com' : 'contact@protonmail.com'}
+        </b>
+    );
 
     return (
         <div className="p1 bordered-container bg-global-highlight mb1">

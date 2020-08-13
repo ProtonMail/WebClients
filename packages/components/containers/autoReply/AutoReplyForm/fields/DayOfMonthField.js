@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row, Label, Field, Select } from 'react-components';
 import PropTypes from 'prop-types';
+import { Row, Label, Field, Select } from '../../../../components';
 
 import { getDaysOfMonthOptions } from '../../utils';
 

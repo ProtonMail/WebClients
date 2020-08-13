@@ -1,22 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { createToken } from 'proton-shared/lib/api/payments';
+
+import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
+
 import {
     Alert,
     Loader,
     SmallButton,
     Price,
-    useApi,
-    useLoading,
     PrimaryButton,
     LinkButton,
     DoNotWindowOpenAlertError,
-} from 'react-components';
-import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { createToken } from 'proton-shared/lib/api/payments';
+} from '../../components';
+import { useApi, useLoading } from '../../hooks';
 
-import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
-import { toParams, process } from './paymentTokenHelper';
+import { process } from './paymentTokenHelper';
+import { toParams } from './paymentTokenToParams';
 
 const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     const api = useApi();

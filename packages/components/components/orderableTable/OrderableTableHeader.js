@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { TableHeader } from '../table';
 import './OrderableTableHeader.scss';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 const OrderableTableHeader = ({ cells = [], className = '', children = null, ...rest }) => (
     <TableHeader

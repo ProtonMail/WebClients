@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon, { Props } from '../icon/Icon';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 const SidebarListItemContentIcon = ({ className, ...rest }: Props) => {
     return (

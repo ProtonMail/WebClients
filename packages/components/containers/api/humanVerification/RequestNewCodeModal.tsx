@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Alert, FormModal, PrimaryButton, Button, ResetButton } from '../../../index';
+import { Alert, FormModal, PrimaryButton, Button, ResetButton } from '../../../components';
 
 interface Props {
     email?: string;

@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { SimpleFilterModalModel, Step, Errors } from 'proton-shared/lib/filters/interfaces';
-import { Button, PrimaryButton } from '../../..';
+import { Button, PrimaryButton } from '../../../components';
 
 interface Props {
     model: SimpleFilterModalModel;

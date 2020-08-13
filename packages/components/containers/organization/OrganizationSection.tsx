@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Row, Loader, Field, Label, PrimaryButton, useModals, useOrganization } from '../../index';
+import { Alert, Row, Loader, Field, Label, PrimaryButton } from '../../components';
+import { useModals, useOrganization } from '../../hooks';
 
 import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
 import OrganizationNameModal from './OrganizationNameModal';

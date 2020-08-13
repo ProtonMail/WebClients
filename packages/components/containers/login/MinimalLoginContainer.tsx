@@ -2,7 +2,8 @@ import React, { FormEvent } from 'react';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
-import { useLoading, LinkButton, PrimaryButton, useNotifications, useModals, Label } from '../../index';
+import { useLoading, useNotifications, useModals } from '../../hooks';
+import { LinkButton, PrimaryButton, Label } from '../../components';
 
 import { getErrorText } from './helper';
 import AbuseModal from './AbuseModal';

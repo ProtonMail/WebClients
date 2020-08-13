@@ -18,16 +18,10 @@ import {
     queryVerificationCode,
     queryCheckVerificationCode,
 } from 'proton-shared/lib/api/user';
-import {
-    useApi,
-    useLoading,
-    useConfig,
-    usePlans,
-    useModals,
-    usePayment,
-    HumanVerificationForm,
-    BackButton,
-} from '../../index';
+import { useApi, useLoading, useConfig, usePlans, useModals } from '../../hooks';
+import BackButton from './BackButton';
+import HumanVerificationForm from '../api/humanVerification/HumanVerificationForm';
+import usePayment from '../payments/usePayment';
 import { OnLoginCallback } from '../app/interface';
 import { Props as AccountPublicLayoutProps } from './AccountPublicLayout';
 import SignupAccountForm from './SignupAccountForm';
@@ -50,7 +44,7 @@ import { DEFAULT_SIGNUP_MODEL, DEFAULT_CHECK_RESULT, SIGNUP_STEPS } from './cons
 import createHumanApi from './helpers/humanApi';
 import RequestNewCodeModal from '../api/humanVerification/RequestNewCodeModal';
 import SignupCreatingAccount from './SignupCreatingAccount';
-import { PaymentParameters, Payment } from '../payments/usePayment';
+import { PaymentParameters, Payment } from '../payments/interface';
 import { ChallengeResult } from '../../components/challenge/ChallengeFrame';
 import getSignupErrors from './helpers/getSignupErrors';
 import { hasPaidPlan } from './helpers/helper';

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { useApi, useLoading, useAuthentication } from 'react-components';
 import { BLACK_FRIDAY, PAYMENT_METHOD_TYPES, MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT } from 'proton-shared/lib/constants';
 import { isExpired } from 'proton-shared/lib/helpers/card';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
+
+import { useApi, useLoading, useAuthentication } from '../../hooks';
 
 const useMethods = ({ amount, coupon, type }) => {
     const api = useApi();

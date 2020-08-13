@@ -4,22 +4,14 @@ import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/
 import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Address, UserModel, Member } from 'proton-shared/lib/interfaces';
-import {
-    DropdownActions,
-    useApi,
-    useModals,
-    useNotifications,
-    useEventManager,
-    useLoading,
-    ConfirmModal,
-    Alert,
-    ErrorButton,
-} from '../../index';
+
+import { DropdownActions, Alert, ErrorButton, ConfirmModal } from '../../components';
+import { useModals, useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
 
 import EditAddressModal from './EditAddressModal';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 import { getPermissions } from './helper';
-import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
 
 interface Props {
     address: Address;

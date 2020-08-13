@@ -4,20 +4,10 @@ import { RouteComponentProps } from 'react-router-dom';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { UserModel, Address, Organization, Member } from 'proton-shared/lib/interfaces';
-import {
-    useMembers,
-    useMemberAddresses,
-    useModals,
-    AddressModal,
-    Alert,
-    Loader,
-    Table,
-    TableHeader,
-    TableBody,
-    TableRow,
-    useOrganizationKey,
-} from '../../index';
+import { Alert, Loader, Table, TableHeader, TableBody, TableRow } from '../../components';
+import { useMembers, useMemberAddresses, useModals, useOrganizationKey } from '../../hooks';
 
+import AddressModal from './AddressModal';
 import AddressesToolbar from './AddressesToolbar';
 import AddressStatus from './AddressStatus';
 import { getStatus } from './helper';

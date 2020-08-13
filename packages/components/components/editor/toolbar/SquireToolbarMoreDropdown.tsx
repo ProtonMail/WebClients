@@ -5,13 +5,12 @@ import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
 import Icon from '../../icon/Icon';
-import { classnames } from '../../../helpers/component';
+import { classnames } from '../../../helpers';
 
 import SquireToolbarDropdown from './SquireToolbarDropdown';
 import { SquireType } from '../squireConfig';
 import { setTextDirection } from '../squireActions';
-import { SquireEditorMetadata } from '../SquireEditor';
-import { ALIGNMENT } from './SquireToolbar';
+import { SquireEditorMetadata, ALIGNMENT } from '../interface';
 
 const getClassname = (status: boolean) => (status ? undefined : 'nonvisible');
 

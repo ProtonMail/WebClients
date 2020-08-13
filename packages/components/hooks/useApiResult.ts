@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from 'react';
 
 import useAsync from './useAsync';
-import useApi from '../containers/api/useApi';
+import useApi from './useApi';
 
 type QueryFunction = (...args: any[]) => { method: string; url: string };
 

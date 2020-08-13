@@ -1,7 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import { ACCOUNT_DELETION_REASONS } from 'proton-shared/lib/constants';
+import { deleteUser, unlockPasswordChanges } from 'proton-shared/lib/api/user';
+import { reportBug } from 'proton-shared/lib/api/reports';
+import { srpAuth } from 'proton-shared/lib/srp';
+import { wait } from 'proton-shared/lib/helpers/promise';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { collectInfo, getClient } from '../../helpers/report';
 import {
+    Checkbox,
     Row,
     Field,
     Label,
@@ -12,6 +20,9 @@ import {
     TwoFactorInput,
     FormModal,
     Alert,
+    ErrorButton,
+} from '../../components';
+import {
     useEventManager,
     useUser,
     useNotifications,
@@ -20,16 +31,7 @@ import {
     useLoading,
     useAuthentication,
     useConfig,
-    ErrorButton,
-} from 'react-components';
-import { ACCOUNT_DELETION_REASONS } from 'proton-shared/lib/constants';
-import { deleteUser, unlockPasswordChanges } from 'proton-shared/lib/api/user';
-import { reportBug } from 'proton-shared/lib/api/reports';
-import { srpAuth } from 'proton-shared/lib/srp';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { collectInfo, getClient } from '../../helpers/report';
-import Checkbox from '../../components/input/Checkbox';
+} from '../../hooks';
 
 const DeleteAccountModal = ({ onClose, ...rest }) => {
     const { createNotification } = useNotifications();

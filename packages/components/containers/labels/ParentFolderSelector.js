@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useFolders, Loader, Select } from 'react-components';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 import { ROOT_FOLDER } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import { Loader, Select } from '../../components';
+import { useFolders } from '../../hooks';
 
 // ROOT_FOLDER is transformed to a String when coming from target.value
 const formatValue = (value) => (value === `${ROOT_FOLDER}` ? ROOT_FOLDER : value);

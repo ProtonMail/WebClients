@@ -23,22 +23,22 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import ContactMIMETypeSelect from '../../../components/contacts/ContactMIMETypeSelect';
 import ContactPgpSettings from '../ContactPgpSettings';
-import useApi from '../../api/useApi';
-import useEventManager from '../../eventManager/useEventManager';
-import useLoading from '../../../hooks/useLoading';
-import useMailSettings from '../../../hooks/useMailSettings';
-import useNotifications from '../../notifications/useNotifications';
-import Icon from '../../../components/icon/Icon';
-import Alert from '../../../components/alert/Alert';
-import { ResetButton, PrimaryButton, LinkButton } from '../../../components/button';
-import Label from '../../../components/label/Label';
-import Field from '../../../components/container/Field';
-import Row from '../../../components/container/Row';
-import Info from '../../../components/link/Info';
-import DialogModal from '../../../components/modal/Dialog';
-import ContentModal from '../../../components/modal/Content';
-import InnerModal from '../../../components/modal/Inner';
-import FooterModal from '../../../components/modal/Footer';
+import { useApi, useEventManager, useNotifications, useLoading, useMailSettings } from '../../../hooks';
+import {
+    Icon,
+    Alert,
+    Label,
+    Field,
+    Row,
+    Info,
+    DialogModal,
+    ContentModal,
+    InnerModal,
+    FooterModal,
+    ResetButton,
+    PrimaryButton,
+    LinkButton,
+} from '../../../components';
 
 const { PGP_INLINE } = PGP_SCHEMES;
 const { INCLUDE, IGNORE } = CATEGORIES;

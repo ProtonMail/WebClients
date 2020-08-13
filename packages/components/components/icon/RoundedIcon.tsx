@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Icon from './Icon';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 const TYPES = {
     success: 'bg-global-success',

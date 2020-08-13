@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SimpleFormModal, Icon, PrimaryButton, LinkButton } from 'react-components';
 import upgradeSvg from 'design-system/assets/img/pm-images/upgrade.svg';
 import { c } from 'ttag';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 
+import { SimpleFormModal, Icon, PrimaryButton, LinkButton } from '../../../components';
 import PlanPrice from './PlanPrice';
 import FeaturesList from './FeaturesList';
 

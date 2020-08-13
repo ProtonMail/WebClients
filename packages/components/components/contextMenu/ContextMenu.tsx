@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { generateUID, Dropdown } from '../..';
+import { generateUID } from '../../helpers';
+import { Dropdown } from '../dropdown';
 import { CORNERS_ONLY_PLACEMENTS } from '../popper/utils';
 
 interface Props {

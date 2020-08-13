@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { requestUsername } from 'proton-shared/lib/api/reset';
 import { useHistory } from 'react-router-dom';
 
-import { useApi, useNotifications, useLoading, EmailInput, PrimaryButton, Label } from '../../index';
+import { EmailInput, PrimaryButton, Label } from '../../components';
+import { useApi, useNotifications, useLoading } from '../../hooks';
 import { Props as AccountLayoutProps } from '../signup/AccountPublicLayout';
 import BackButton from '../signup/BackButton';
 import SignupLabelInputRow from '../signup/SignupLabelInputRow';

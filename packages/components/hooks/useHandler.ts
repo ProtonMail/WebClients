@@ -1,7 +1,7 @@
 import { useRef, useEffect, RefObject, useMemo } from 'react';
 import { debounce } from 'proton-shared/lib/helpers/function';
 
-import useEventManager from '../containers/eventManager/useEventManager';
+import useEventManager from './useEventManager';
 
 export type Handler = (...args: any[]) => void;
 

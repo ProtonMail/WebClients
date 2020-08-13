@@ -1,7 +1,6 @@
 import React from 'react';
 
-import useModals from '../../containers/modals/useModals';
-import useConfig from '../../containers/config/useConfig';
+import { useModals, useConfig } from '../../hooks';
 import ChangelogModal from './ChangelogModal';
 
 interface Props {

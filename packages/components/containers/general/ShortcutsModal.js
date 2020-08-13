@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { isMac } from 'proton-shared/lib/helpers/browser';
-import { FormModal, Details, Summary, Legend } from 'react-components';
+import { FormModal, Details, Summary, Legend } from '../../components';
 
 const ShortcutsModal = (props) => {
     const IS_MAC = isMac();

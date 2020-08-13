@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Href } from '../../../index';
+import { Alert, Href } from '../../../components';
 
 const RequestInvite = () => {
     return (

@@ -6,14 +6,8 @@ import { allSucceded } from 'proton-shared/lib/api/helpers/response';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import useApi from '../../api/useApi';
-import useNotifications from '../../notifications/useNotifications';
-import useLoading from '../../../hooks/useLoading';
-import useEventManager from '../../eventManager/useEventManager';
-import ErrorButton from '../../../components/button/ErrorButton';
-import Alert from '../../../components/alert/Alert';
-import FormModal from '../../../components/modal/FormModal';
-import useContacts from '../../../hooks/useContacts';
+import { useContacts, useApi, useNotifications, useLoading, useEventManager } from '../../../hooks';
+import { ErrorButton, Alert, FormModal } from '../../../components';
 
 interface Props {
     contactIDs: string[];

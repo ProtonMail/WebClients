@@ -13,27 +13,19 @@ import {
     handleChangeOnePassword,
     getArmoredPrivateKeys,
 } from './changePasswordHelper';
+import { Alert, PasswordInput, TwoFactorInput, Row, Label, Field, Icon, FormModal, Loader } from '../../components';
+import { GenericError } from '../error';
 import {
-    Alert,
-    GenericError,
-    PasswordInput,
-    TwoFactorInput,
-    Row,
-    Label,
-    Field,
-    Icon,
-    FormModal,
-    Loader,
     useAuthentication,
     useEventManager,
+    useNotifications,
+    useApi,
     useUser,
     useUserSettings,
-    useNotifications,
     useGetUserKeys,
     useGetAddressesKeys,
     useGetOrganizationKeyRaw,
-    useApi,
-} from '../../index';
+} from '../../hooks';
 
 export enum MODES {
     CHANGE_ONE_PASSWORD_MODE = 1,

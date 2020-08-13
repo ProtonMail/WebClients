@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row, Label, Field, TimeInput } from 'react-components';
 import PropTypes from 'prop-types';
+import { Row, Label, Field, TimeInput } from '../../../../components';
 
 const TimeField = ({ id, label, value, onChange }) => {
     return (

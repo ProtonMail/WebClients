@@ -4,19 +4,8 @@ import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA } from 'proton-shar
 import { createMember, createMemberAddress } from 'proton-shared/lib/api/members';
 import { srpVerify } from 'proton-shared/lib/srp';
 import { Domain, Organization, Address } from 'proton-shared/lib/interfaces';
-import {
-    FormModal,
-    Row,
-    Field,
-    Label,
-    PasswordInput,
-    Input,
-    Checkbox,
-    Select,
-    useApi,
-    useNotifications,
-    useEventManager,
-} from '../../index';
+import { useApi, useNotifications, useEventManager } from '../../hooks';
+import { FormModal, Row, Field, Label, PasswordInput, Input, Checkbox, Select } from '../../components';
 
 import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
 import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';

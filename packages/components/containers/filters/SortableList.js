@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { OrderableTable, OrderableTableHeader, OrderableTableBody } from 'react-components';
+import { OrderableTable, OrderableTableHeader, OrderableTableBody } from '../../components';
 
 import FilterItemRow from './FilterItemRow';
 

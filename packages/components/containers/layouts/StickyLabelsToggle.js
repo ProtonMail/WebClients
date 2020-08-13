@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Toggle, useToggle } from 'react-components';
 import { STICKY_LABELS } from 'proton-shared/lib/constants';
+import { Toggle } from '../../components';
+import { useToggle } from '../../hooks';
 
 const { ON, OFF } = STICKY_LABELS;
 

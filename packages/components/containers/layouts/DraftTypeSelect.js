@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Select } from 'react-components';
 import { DRAFT_TYPE } from 'proton-shared/lib/constants';
+import { Select } from '../../components';
 
 const { NORMAL, PLAIN_TEXT } = DRAFT_TYPE;
 

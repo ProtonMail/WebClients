@@ -1,25 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    Input,
-    FormModal,
-    PrimaryButton,
-    Row,
-    Label,
-    Field,
-    Price,
-    PayPalButton,
-    useApiResult,
-    useModals,
-    useNotifications,
-    useApi,
-    useLoading,
-} from 'react-components';
 import { checkInvoice, payInvoice } from 'proton-shared/lib/api/payments';
 import { toPrice } from 'proton-shared/lib/helpers/string';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { Input, FormModal, PrimaryButton, Row, Label, Field, Price } from '../../components';
+import { useApiResult, useModals, useNotifications, useApi, useLoading } from '../../hooks';
 
+import PayPalButton from '../payments/PayPalButton';
 import Payment from '../payments/Payment';
 import usePayment from '../payments/usePayment';
 import { handlePaymentToken } from '../payments/paymentTokenHelper';

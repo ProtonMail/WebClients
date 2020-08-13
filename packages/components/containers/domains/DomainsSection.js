@@ -1,18 +1,8 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import {
-    useEventManager,
-    useOrganization,
-    useDomains,
-    Alert,
-    PrimaryButton,
-    Button,
-    Block,
-    useModals,
-    useLoading,
-    Loader,
-} from 'react-components';
 import { wait } from 'proton-shared/lib/helpers/promise';
+import { Alert, PrimaryButton, Button, Block, Loader } from '../../components';
+import { useEventManager, useOrganization, useDomains, useModals, useLoading } from '../../hooks';
 
 import DomainModal from './DomainModal';
 import DomainsTable from './DomainsTable';

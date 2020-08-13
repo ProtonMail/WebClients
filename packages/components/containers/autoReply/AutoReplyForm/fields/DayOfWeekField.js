@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
-import { Row, Label, Field, Select } from 'react-components';
 import PropTypes from 'prop-types';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { dateLocale } from 'proton-shared/lib/i18n';
+import { Row, Label, Field, Select } from '../../../../components';
 
 const DayOfWeekField = ({ id, label, value, onChange }) => {
     const handleChange = ({ target }) => onChange(+target.value);

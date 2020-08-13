@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Table, TableHeader, TableBody, TableRow, Href } from 'react-components';
+import { Table, TableHeader, TableBody, TableRow, Href } from '../../components';
 
 const ProtonMailAppsSection = () => {
     const clients = [

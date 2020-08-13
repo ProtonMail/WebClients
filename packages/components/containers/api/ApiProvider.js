@@ -15,8 +15,7 @@ import { c } from 'ttag';
 import { getApiError, getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
 import ApiContext from './apiContext';
-import useNotifications from '../notifications/useNotifications';
-import useModals from '../modals/useModals';
+import { useModals, useNotifications } from '../../hooks';
 import UnlockModal from '../login/UnlockModal';
 import DelinquentModal from './DelinquentModal';
 import HumanVerificationModal from './humanVerification/HumanVerificationModal';

@@ -20,8 +20,8 @@ import { addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
 import { convertModel } from 'proton-shared/lib/filters/utils';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { computeFromTree } from 'proton-shared/lib/filters/sieve';
+import { FormModal, ConfirmModal, Alert, Loader } from '../../../components';
 import {
-    FormModal,
     useLoading,
     useLabels,
     useFolders,
@@ -31,11 +31,8 @@ import {
     useFilters,
     useEventManager,
     useApiWithoutResult,
-    ConfirmModal,
-    Alert,
     useModals,
-    Loader,
-} from '../../..';
+} from '../../../hooks';
 
 import HeaderFilterModal from './HeaderFilterModal';
 import FooterFilterModal from './FooterFilterModal';

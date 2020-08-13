@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PrimaryButton, classnames } from 'react-components';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import { PrimaryButton } from '../../../components';
+import { classnames } from '../../../helpers';
 
 import { SUBSCRIPTION_STEPS } from './constants';
 import PayPalButton from '../PayPalButton';

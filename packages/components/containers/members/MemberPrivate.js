@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'react-components';
+import { Icon } from '../../components';
 
 const PRIVATE = {
     0: <Icon name="off" />,

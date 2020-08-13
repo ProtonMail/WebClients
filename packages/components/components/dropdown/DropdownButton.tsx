@@ -1,5 +1,5 @@
 import React from 'react';
-import { classnames } from '../../index';
+import { classnames } from '../../helpers';
 import DropdownCaret from './DropdownCaret';
 
 export interface Props

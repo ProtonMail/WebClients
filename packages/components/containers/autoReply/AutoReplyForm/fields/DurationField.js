@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Select, Label, Row, Field } from 'react-components';
 import { getDurationOptions } from '../../utils';
+import { Select, Label, Row, Field } from '../../../../components';
 
 const DurationField = ({ value, onChange }) => {
     const handleChange = ({ target }) => onChange(+target.value);

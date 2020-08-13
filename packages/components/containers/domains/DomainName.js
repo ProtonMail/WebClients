@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RoundedIcon } from 'react-components';
 import { DOMAIN_STATE } from 'proton-shared/lib/constants';
+import { RoundedIcon } from '../../components';
 
 const { DOMAIN_STATE_DEFAULT, DOMAIN_STATE_ACTIVE, DOMAIN_STATE_WARN } = DOMAIN_STATE;
 

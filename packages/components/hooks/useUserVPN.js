@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import { getClientVPNInfo } from 'proton-shared/lib/api/vpn';
-import { useApi, useCache } from 'react-components';
+import useApi from './useApi';
+import useCache from './useCache';
 
 const useUserVPN = () => {
     const api = useApi();

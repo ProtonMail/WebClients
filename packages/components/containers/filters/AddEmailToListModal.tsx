@@ -4,7 +4,8 @@ import { addIncomingDefault, updateIncomingDefault } from 'proton-shared/lib/api
 import { noop } from 'proton-shared/lib/helpers/function';
 import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
 import { IncomingDefault } from 'proton-shared/lib/interfaces/IncomingDefault';
-import { FormModal, useNotifications, useApi, useLoading, Radio, Row, Label, Field } from '../..';
+import { FormModal, Radio, Row, Label, Field } from '../../components';
+import { useNotifications, useApi, useLoading } from '../../hooks';
 
 import AddEmailToList from './spamlist/AddEmailToList';
 import AddDomainToList from './spamlist/AddDomainToList';

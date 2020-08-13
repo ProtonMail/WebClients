@@ -16,15 +16,9 @@ import {
 } from 'proton-shared/lib/interfaces/contacts/Contact';
 
 import ContactModalProperties from '../ContactModalProperties';
-import useApi from '../../api/useApi';
-import useLoading from '../../../hooks/useLoading';
-import { useUserKeys } from '../../../hooks/useUserKeys';
-import useNotifications from '../../notifications/useNotifications';
-import useEventManager from '../../eventManager/useEventManager';
-import Alert from '../../../components/alert/Alert';
-import FormModal from '../../../components/modal/FormModal';
-import { generateUID } from '../../../helpers/component';
-import PrimaryButton from '../../../components/button/PrimaryButton';
+import { useUserKeys, useApi, useNotifications, useLoading, useEventManager } from '../../../hooks';
+import { Alert, FormModal, PrimaryButton } from '../../../components';
+import { generateUID } from '../../../helpers';
 
 const DEFAULT_MODEL = [
     { field: 'fn', value: '' },

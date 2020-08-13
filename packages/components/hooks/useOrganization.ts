@@ -5,8 +5,8 @@ import { OrganizationModel } from 'proton-shared/lib/models/organizationModel';
 import { UserModel } from 'proton-shared/lib/models/userModel';
 
 import useCachedModelResult from './useCachedModelResult';
-import useApi from '../containers/api/useApi';
-import useCache from '../containers/cache/useCache';
+import useApi from './useApi';
+import useCache from './useCache';
 
 const useOrganization = (): [tsOrganizationModel, boolean, Error] => {
     const cache = useCache();

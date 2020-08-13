@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Props as ButtonProps } from '../button/Button';
 import PrimaryButton from '../button/PrimaryButton';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 const SidebarPrimaryButton = ({ children, className = '', ...rest }: ButtonProps) => {
     return (

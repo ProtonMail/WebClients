@@ -5,11 +5,9 @@ import { move } from 'proton-shared/lib/helpers/array';
 import { OTHER_INFORMATION_FIELDS } from 'proton-shared/lib/contacts/constants';
 import { ContactPropertyChange, ContactProperties } from 'proton-shared/lib/interfaces/contacts';
 
+import { Button, Icon, OrderableContainer, OrderableElement } from '../../components';
 import ContactModalRow from '../../components/contacts/ContactModalRow';
 import EncryptedIcon from '../../components/contacts/EncryptedIcon';
-import Icon from '../../components/icon/Icon';
-import { OrderableContainer, OrderableElement } from '../../components/orderable';
-import { Button } from '../../components/button';
 
 const ICONS: { [key: string]: string } = {
     fn: 'contact',

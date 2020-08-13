@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { generateUID, classnames } from '../../helpers/component';
+import { generateUID, classnames } from '../../helpers';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import useTooltipHandlers from './useTooltipHandlers';

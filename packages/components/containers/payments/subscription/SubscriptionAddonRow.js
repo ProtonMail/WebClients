@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Select, generateUID } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 import { identity } from 'proton-shared/lib/helpers/function';
 import { c } from 'ttag';
+import { Button, Select } from '../../../components';
+import { generateUID } from '../../../helpers';
 
 const SubscriptionAddonRow = ({
     label,

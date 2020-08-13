@@ -4,15 +4,9 @@ import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 
-import {
-    useLoading,
-    InlineLinkButton,
-    PrimaryButton,
-    AccountSupportDropdown,
-    useNotifications,
-    useModals,
-    Label,
-} from '../..';
+import { InlineLinkButton, PrimaryButton, Label } from '../../components';
+import { useLoading, useModals, useNotifications } from '../../hooks';
+import AccountSupportDropdown from '../heading/AccountSupportDropdown';
 import { getErrorText } from './helper';
 import AbuseModal from './AbuseModal';
 import { Props as AccountPublicLayoutProps } from '../signup/AccountPublicLayout';

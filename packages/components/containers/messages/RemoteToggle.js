@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Toggle, useEventManager, useToggle, useNotifications, useApi, useLoading } from 'react-components';
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import { updateShowImages } from 'proton-shared/lib/api/mailSettings';
 import { setBit, clearBit, hasBit } from 'proton-shared/lib/helpers/bitset';
 import { c } from 'ttag';
+import { useEventManager, useToggle, useNotifications, useApi, useLoading } from '../../hooks';
+import { Toggle } from '../../components';
 
 const { REMOTE } = SHOW_IMAGES;
 

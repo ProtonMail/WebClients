@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { getHost } from 'proton-shared/lib/helpers/url';
 import { createUrl } from 'proton-shared/lib/fetch/helpers';
 import { isURL } from 'proton-shared/lib/helpers/validators';
-import { useConfig } from '../../../index';
+import { useConfig } from '../../../hooks';
 
 interface Props {
     token: string;

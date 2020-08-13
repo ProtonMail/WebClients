@@ -1,5 +1,8 @@
 import React from 'react';
-import { classnames, Icon, Loader, Progress } from '../../index';
+import { classnames } from '../../helpers';
+import { Loader } from '../loader';
+import Icon from '../icon/Icon';
+import Progress from './Progress';
 
 interface Props {
     id: string;
@@ -22,7 +25,7 @@ const DynamicProgress = ({
 }: Props) => {
     const { icon, progressClassname = '' } = loading
         ? {
-              icon: <Loader />
+              icon: <Loader />,
           }
         : success
         ? {
@@ -31,7 +34,7 @@ const DynamicProgress = ({
                       <Icon name="on" color="white" size={24} />
                   </span>
               ),
-              progressClassname: 'progressbar--success'
+              progressClassname: 'progressbar--success',
           }
         : partialSuccess
         ? {
@@ -40,7 +43,7 @@ const DynamicProgress = ({
                       <Icon name="off" color="white" size={24} />
                   </span>
               ),
-              progressClassname: 'progressbar--warning'
+              progressClassname: 'progressbar--warning',
           }
         : {
               icon: (
@@ -48,7 +51,7 @@ const DynamicProgress = ({
                       <Icon name="off" color="white" size={24} />
                   </span>
               ),
-              progressClassname: 'progressbar--error'
+              progressClassname: 'progressbar--error',
           };
 
     return (

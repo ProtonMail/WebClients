@@ -3,13 +3,8 @@ import { c } from 'ttag';
 import { createAddress } from 'proton-shared/lib/api/addresses';
 import { ADDRESS_TYPE, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import { Member } from 'proton-shared/lib/interfaces';
+import { FormModal, Alert, Row, Field, Label, Input } from '../../components';
 import {
-    FormModal,
-    Alert,
-    Row,
-    Field,
-    Label,
-    Input,
     useLoading,
     useNotifications,
     useEventManager,
@@ -18,7 +13,7 @@ import {
     useAddresses,
     usePremiumDomains,
     useUser,
-} from '../../index';
+} from '../../hooks';
 
 import useAddressModal from './useAddressModal';
 import DomainsSelect from './DomainsSelect';

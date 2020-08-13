@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import { FormModal, useNotifications, useModals, Alert, GenericError } from '../../../index';
+import { FormModal, Alert } from '../../../components';
+import { useNotifications, useModals } from '../../../hooks';
+import GenericError from '../../error/GenericError';
 
 import ImportKeysList from './ImportKeysList';
 import SelectKeyFiles from '../shared/SelectKeyFiles';

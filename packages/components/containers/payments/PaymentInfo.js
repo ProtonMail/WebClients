@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { Alert } from 'react-components';
 import { c } from 'ttag';
+
+import { Alert } from '../../components';
 
 const PaymentInfo = ({ method }) => {
     if ([PAYMENT_METHOD_TYPES.BITCOIN, PAYMENT_METHOD_TYPES.CASH].includes(method)) {

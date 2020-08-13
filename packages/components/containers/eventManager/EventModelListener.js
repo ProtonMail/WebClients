@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ContactEmailsModel, ContactsModel, UserModel } from 'proton-shared/lib/models';
-import { useEventManager, useCache } from 'react-components';
 import { STATUS } from 'proton-shared/lib/models/cache';
 import { SubscriptionModel } from 'proton-shared/lib/models/subscriptionModel';
 import { OrganizationModel } from 'proton-shared/lib/models/organizationModel';
@@ -15,6 +14,7 @@ import { CACHE_KEY as ADDRESS_KEYS_CACHE } from '../../hooks/useGetAddressKeys';
 import { KEY as ADDRESSES_KEYS_CACHE } from '../../hooks/useAddressesKeys';
 import { KEY as CALENDAR_BOOTSTRAP_CACHE } from '../../hooks/useGetCalendarBootstrap';
 import { CACHE_KEY as CALENDAR_KEYS_CACHE } from '../../hooks/useGetCalendarKeys';
+import { useEventManager, useCache } from '../../hooks';
 
 const EventModelListener = ({ models }) => {
     const { subscribe } = useEventManager();

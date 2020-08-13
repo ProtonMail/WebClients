@@ -3,8 +3,8 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 import { APP_NAMES, isSSOMode, isStandaloneMode } from 'proton-shared/lib/constants';
 import { getAppHref, getAppHrefBundle } from 'proton-shared/lib/apps/helper';
 
+import { useConfig, useAuthentication } from '../../hooks';
 import Href, { Props as HrefProps } from './Href';
-import { useAuthentication, useConfig } from '../..';
 import Tooltip from '../tooltip/Tooltip';
 
 export interface Props extends HrefProps {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { generateUID, classnames } from '../../helpers/component';
+import { generateUID, classnames } from '../../helpers';
 import Icon from '../icon/Icon';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';

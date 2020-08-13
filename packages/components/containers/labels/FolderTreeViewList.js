@@ -1,20 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {
-    classnames,
-    Icon,
-    TreeViewContainer,
-    TreeViewItem,
-    useApi,
-    useLoading,
-    useEventManager,
-    useActiveBreakpoint,
-} from 'react-components';
 import { order, getParents } from 'proton-shared/lib/helpers/folder';
 import { orderFolders, updateLabel } from 'proton-shared/lib/api/labels';
 import { ROOT_FOLDER, FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
+import { Icon, TreeViewContainer, TreeViewItem } from '../../components';
+import { useApi, useLoading, useEventManager, useActiveBreakpoint } from '../../hooks';
+import { classnames } from '../../helpers';
 import ActionsLabel from './ActionsLabel';
 import ToggleNotify from './ToggleNotify';
 

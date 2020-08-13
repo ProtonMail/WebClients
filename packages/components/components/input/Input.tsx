@@ -1,7 +1,7 @@
 import React, { KeyboardEventHandler, Ref, useState } from 'react';
 import { c } from 'ttag';
 
-import { generateUID, classnames } from '../../helpers/component';
+import { generateUID, classnames } from '../../helpers';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 

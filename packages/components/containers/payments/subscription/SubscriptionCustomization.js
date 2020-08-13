@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Price, Loader, useConfig, useAddresses } from 'react-components';
 import { c, msgid } from 'ttag';
 import {
     PLANS,
@@ -22,6 +21,8 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { switchPlan } from 'proton-shared/lib/helpers/subscription';
 
+import { Alert, Price, Loader } from '../../../components';
+import { useConfig, useAddresses } from '../../../hooks';
 import SubscriptionPlan from './SubscriptionPlan';
 import SubscriptionAddonRow from './SubscriptionAddonRow';
 import SubscriptionFeatureRow from './SubscriptionFeatureRow';

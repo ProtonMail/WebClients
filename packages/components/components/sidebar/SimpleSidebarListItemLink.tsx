@@ -1,5 +1,8 @@
 import React from 'react';
-import { SidebarListItem, SidebarListItemContent, SidebarListItemContentIcon, SidebarListItemLink } from './index';
+import SidebarListItemContentIcon from './SidebarListItemContentIcon';
+import SidebarListItem from './SidebarListItem';
+import SidebarListItemContent from './SidebarListItemContent';
+import SidebarListItemLink from './SidebarListItemLink';
 import { Props as SidebarListItemProps } from './SidebarListItemLink';
 
 interface Props extends Pick<SidebarListItemProps, 'isActive'> {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIndicator } from './useIndicator';
-import { Tab } from './index';
+import { Tab } from './index.d';
 
 const toKey = (index: number, prefix = '') => `${prefix}${index}`;
 

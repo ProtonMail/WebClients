@@ -1,8 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 import { unlockPasswordChanges } from 'proton-shared/lib/api/user';
-import { PrimaryButton, AuthModal, useOrganization, useNotifications, useModals } from '../../index';
+import { PrimaryButton } from '../../components';
+import { useOrganization, useNotifications, useModals } from '../../hooks';
 
+import AuthModal from '../password/AuthModal';
 import SetupOrganizationModal from './SetupOrganizationModal';
 
 const ActivateOrganizationButton = () => {

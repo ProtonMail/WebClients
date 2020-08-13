@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Badge } from 'react-components';
 import { c } from 'ttag';
 import { CYCLE } from 'proton-shared/lib/constants';
+
+import { Badge } from '../../components';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 

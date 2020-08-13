@@ -1,8 +1,8 @@
 import { isBefore, isAfter, isSameDay, isSameMonth, isWithinInterval } from 'date-fns';
 import React, { useState, useRef } from 'react';
 
-import { classnames } from '../../helpers/component';
-import { DateTuple } from '.';
+import { classnames } from '../../helpers';
+import { DateTuple } from './index.d';
 
 const getTargetDate = (target: any, days: Date[]) => {
     const idx = parseInt(target?.dataset?.i || '', 10);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert } from 'react-components';
+import { Alert } from '../../components';
 
 const ProtonMailBetaSection = () => {
     return (

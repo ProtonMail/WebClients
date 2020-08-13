@@ -14,6 +14,8 @@ import {
     TableBody,
     TableRow,
     PrimaryButton,
+} from '../../components';
+import {
     useMembers,
     useOrganization,
     useMemberAddresses,
@@ -21,7 +23,7 @@ import {
     useNotifications,
     useModals,
     useOrganizationKey,
-} from '../../index';
+} from '../../hooks';
 
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';

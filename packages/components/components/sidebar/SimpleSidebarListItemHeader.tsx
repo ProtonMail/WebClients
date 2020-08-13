@@ -1,5 +1,6 @@
 import React from 'react';
-import { classnames, Icon } from '../../index';
+import Icon from '../icon/Icon';
+import { classnames } from '../../helpers';
 import SidebarListItem from './SidebarListItem';
 
 interface Props {

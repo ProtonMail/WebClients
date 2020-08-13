@@ -5,3 +5,6 @@ export { default as TableFooter } from './TableFooter';
 export { default as TableRow } from './TableRow';
 export { default as TableBody } from './TableBody';
 export { default as TableRowSticky } from './TableRowSticky';
+export { default as TableRowBusy } from './TableRowBusy';
+export { default as TableHeaderCell } from './TableHeaderCell';
+export { default as TableCellBusy } from './TableCellBusy';

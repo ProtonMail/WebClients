@@ -1,7 +1,8 @@
 import React, { Ref } from 'react';
 import { c } from 'ttag';
 
-import { classnames, Icon, DropdownCaret } from '../..';
+import { Icon, DropdownCaret } from '../../components';
+import { classnames } from '../../helpers';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     children?: React.ReactNode;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Badge, SmallButton } from 'react-components';
+import { Badge, SmallButton } from '../../components';
 
 const SessionAction = ({ session, onRevoke, currentUID }) => {
     if (currentUID === session.UID) {

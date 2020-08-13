@@ -1,7 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Label, Row, Field, Href, Loader, useUser, useAddresses, useConfig } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
+
+import { Label, Row, Field, Href, Loader } from '../../components';
+import { useUser, useAddresses, useConfig } from '../../hooks';
 
 const UsernameSection = () => {
     const [{ Name }] = useUser();

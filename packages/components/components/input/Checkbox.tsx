@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Icon from '../icon/Icon';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
     loading?: boolean;

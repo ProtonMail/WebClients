@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
-import { useOnline } from '../..';
+import { useOnline } from '../../hooks';
 import TopBanner from './TopBanner';
 
 const PublicTopBanners = () => {

@@ -1,21 +1,11 @@
 import React from 'react';
-import {
-    Row,
-    Field,
-    Label,
-    useModals,
-    useMailSettings,
-    Alert,
-    useLoading,
-    useApi,
-    useEventManager,
-} from 'react-components';
 import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
-
 import { c } from 'ttag';
+
+import { useModals, useMailSettings, useLoading, useApi, useEventManager } from '../../hooks';
+import { Toggle, Row, Field, Label, Alert } from '../../components';
 import AutoReplyModal from './AutoReplyModal';
 import AutoReplyTemplate from './AutoReplyTemplate';
-import Toggle from '../../components/toggle/Toggle';
 
 const AutoReplySection = () => {
     const { createModal } = useModals();

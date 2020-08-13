@@ -5,7 +5,8 @@ import { APPS, isSSOMode, isStandaloneMode } from 'proton-shared/lib/constants';
 import { replaceUrl } from 'proton-shared/lib/helpers/browser';
 import { getAccountSettingsApp, getAppHref } from 'proton-shared/lib/apps/helper';
 
-import { FormModal, useConfig, Alert } from '../../index';
+import { FormModal, Alert } from '../../components';
+import { useConfig } from '../../hooks';
 
 interface Props {
     [key: string]: any;

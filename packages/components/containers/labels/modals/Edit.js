@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { FormModal, useEventManager, useLoading, useApi, useNotifications } from 'react-components';
 import { LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { create as createLabel, updateLabel } from 'proton-shared/lib/api/labels';
 
+import { FormModal } from '../../../components';
+import { useEventManager, useLoading, useApi, useNotifications } from '../../../hooks';
 import NewLabelForm from '../NewLabelForm';
 
 /**

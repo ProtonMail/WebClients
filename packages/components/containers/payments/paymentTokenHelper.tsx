@@ -5,8 +5,9 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { c } from 'ttag';
 import { getHostname } from 'proton-shared/lib/helpers/url';
-import { PaymentVerificationModal } from '../../index';
-import { PaymentParameters } from './usePayment';
+import { Params } from './interface';
+import PaymentVerificationModal from './PaymentVerificationModal';
+import { toParams } from './paymentTokenToParams';
 
 const {
     STATUS_PENDING,
@@ -149,27 +150,6 @@ export const process = ({
         listenTab();
     });
 };
-
-/**
- * Prepare parameters to be sent to API
- */
-export const toParams = (params: Params, Token: string, type?: string) => {
-    return {
-        ...params,
-        type,
-        Payment: {
-            Type: TOKEN,
-            Details: {
-                Token,
-            },
-        },
-    };
-};
-
-interface Params extends PaymentParameters {
-    Amount: number;
-    Currency: string;
-}
 
 export const handlePaymentToken = async ({
     params,

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Input } from 'react-components';
 import { c } from 'ttag';
 import { isNumber } from 'proton-shared/lib/helpers/validators';
 
+import { Input } from '../../components';
 import CurrencySelector from './CurrencySelector';
 import AmountButton from './AmountButton';
 

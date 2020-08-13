@@ -1,23 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import {
-    FormModal,
-    Group,
-    ButtonGroup,
-    RoundedIcon,
-    Tooltip,
-    useLoading,
-    Icon,
-    useApi,
-    useStep,
-    useNotifications,
-    useDomains,
-    classnames,
-} from 'react-components';
 import { withRouter } from 'react-router-dom';
 import { addDomain, getDomain } from 'proton-shared/lib/api/domains';
 import { VERIFY_STATE, DOMAIN_STATE, SPF_STATE, MX_STATE, DMARC_STATE, DKIM_STATE } from 'proton-shared/lib/constants';
+import { FormModal, Group, ButtonGroup, RoundedIcon, Tooltip, Icon } from '../../components';
+import { useLoading, useApi, useStep, useNotifications, useDomains } from '../../hooks';
+import { classnames } from '../../helpers';
 
 import DomainSection from './DomainSection';
 import VerifySection from './VerifySection';

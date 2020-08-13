@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { LinkButton, useToggle, Price, Icon } from 'react-components';
 import { c } from 'ttag';
 import { CURRENCIES, CYCLE } from 'proton-shared/lib/constants';
+import { useToggle } from '../../../hooks';
+import { LinkButton, Price, Icon } from '../../../components';
 
 const SubscriptionPlan = ({
     canCustomize = false,

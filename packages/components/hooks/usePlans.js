@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 import { queryPlans } from 'proton-shared/lib/api/payments';
 
 import useCachedModelResult from './useCachedModelResult';
-import useApi from '../containers/api/useApi';
-import useCache from '../containers/cache/useCache';
+import useApi from './useApi';
+import useCache from './useCache';
 
 const KEY = 'plans';
 

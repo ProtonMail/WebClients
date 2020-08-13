@@ -17,14 +17,10 @@ import {
     Label,
     ColorPicker,
     ContactGroupTable,
-    useContactEmails,
-    useNotifications,
-    useContactGroups,
-    useApi,
-    useEventManager,
-    useAutocomplete,
     Icon,
-} from '../../..';
+    useAutocomplete,
+} from '../../../components';
+import { useContactEmails, useNotifications, useContactGroups, useApi, useEventManager } from '../../../hooks';
 
 import './ContactGroupModal.scss';
 

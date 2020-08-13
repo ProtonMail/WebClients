@@ -1,5 +1,5 @@
 import React from 'react';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import { NotificationType } from './interfaces';
 
 const TYPES_CLASS = {

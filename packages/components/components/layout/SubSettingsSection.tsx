@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { SubTitle } from '../../index';
+import SubTitle from '../title/SubTitle';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     id: string;

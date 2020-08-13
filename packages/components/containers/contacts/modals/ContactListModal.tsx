@@ -6,20 +6,15 @@ import { normalize } from 'proton-shared/lib/helpers/string';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
+import { Checkbox, SearchInput, PrimaryButton, FormModal } from '../../../components';
+import { useActiveBreakpoint, useContactEmails, useUserSettings } from '../../../hooks';
 import ContactList from '../ContactList';
 import ContactListModalRow from '../../../components/contacts/ContactListModalRow';
 import EmptyContacts from '../../../components/contacts/EmptyContacts';
 import EmptyResults from '../../../components/contacts/EmptyResults';
-import FormModal from '../../../components/modal/FormModal';
 
-import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
-import useContactEmails from '../../../hooks/useContactEmails';
-import useUserSettings from '../../../hooks/userSettingsModel';
 import { useContactGroups } from '../../../hooks/useCategories';
-import { PrimaryButton } from '../../../components/button';
-import { classnames } from '../../../helpers/component';
-import SearchInput from '../../../components/input/SearchInput';
-import Checkbox from '../../../components/input/Checkbox';
+import { classnames } from '../../../helpers';
 
 import './ContactListModal.scss';
 

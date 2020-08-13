@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 
-import { generateUID } from '../../../helpers/component';
+import { generateUID } from '../../../helpers';
 import { usePopperAnchor } from '../../popper';
 import Tooltip from '../../tooltip/Tooltip';
 import DropdownButton from '../../dropdown/DropdownButton';

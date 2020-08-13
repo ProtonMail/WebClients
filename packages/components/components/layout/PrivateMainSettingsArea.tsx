@@ -1,13 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {
-    SettingsTitle,
-    ErrorBoundary,
-    PrivateMainArea,
-    SubSettingsSection,
-    SubSectionConfig,
-    useAppTitle,
-} from '../../index';
-import { SettingsPropsShared } from './interface';
+import ErrorBoundary from '../../containers/app/ErrorBoundary';
+import useAppTitle from '../../hooks/useAppTitle';
+import SettingsTitle from '../container/SettingsTitle';
+import SubSettingsSection from './SubSettingsSection';
+import PrivateMainArea from './PrivateMainArea';
+import { SubSectionConfig, SettingsPropsShared } from './interface';
 import useActiveSection from './useActiveSection';
 
 interface Props extends SettingsPropsShared {

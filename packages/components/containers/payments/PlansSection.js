@@ -1,24 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import {
-    Alert,
-    CurrencySelector,
-    CycleSelector,
-    DowngradeModal,
-    LossLoyaltyModal,
-    MozillaInfoPanel,
-    useSubscription,
-    useOrganization,
-    Loader,
-    usePlans,
-    useApi,
-    useUser,
-    useModals,
-    useEventManager,
-    useNotifications,
-    useConfig,
-    useLoading,
-} from 'react-components';
 
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, APPS } from 'proton-shared/lib/constants';
@@ -32,9 +13,28 @@ import {
 } from 'proton-shared/lib/helpers/subscription';
 import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
 
+import { Alert, Loader } from '../../components';
+import {
+    useSubscription,
+    useOrganization,
+    usePlans,
+    useApi,
+    useUser,
+    useModals,
+    useEventManager,
+    useNotifications,
+    useConfig,
+    useLoading,
+} from '../../hooks';
+
 import NewSubscriptionModal from './subscription/NewSubscriptionModal';
 import MailSubscriptionTable from './subscription/MailSubscriptionTable';
 import VpnSubscriptionTable from './subscription/VpnSubscriptionTable';
+import CurrencySelector from './CurrencySelector';
+import CycleSelector from './CycleSelector';
+import DowngradeModal from './DowngradeModal';
+import LossLoyaltyModal from './LossLoyaltyModal';
+import MozillaInfoPanel from '../account/MozillaInfoPanel';
 
 const PlansSection = () => {
     const { call } = useEventManager();
@@ -48,8 +48,7 @@ const PlansSection = () => {
     const [plans = [], loadingPlans] = usePlans();
     const api = useApi();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const { Name } =
-        getPlan(subscription, isVPN ? PLAN_SERVICES.VPN : PLAN_SERVICES.MAIL) || {};
+    const { Name } = getPlan(subscription, isVPN ? PLAN_SERVICES.VPN : PLAN_SERVICES.MAIL) || {};
 
     const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
     const [cycle, setCycle] = useState(DEFAULT_CYCLE);

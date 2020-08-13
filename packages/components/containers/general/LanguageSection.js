@@ -1,11 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { updateLocale } from 'proton-shared/lib/api/settings';
+import loadLocale from 'proton-shared/lib/i18n/loadLocale';
+import { getBrowserLocale, getClosestMatches } from 'proton-shared/lib/i18n/helper';
 import {
-    Row,
-    Field,
-    Label,
-    Select,
     useApi,
     useConfig,
     useLoading,
@@ -13,10 +12,8 @@ import {
     useForceRefresh,
     useEventManager,
     useUserSettings,
-} from 'react-components';
-import { updateLocale } from 'proton-shared/lib/api/settings';
-import loadLocale from 'proton-shared/lib/i18n/loadLocale';
-import { getBrowserLocale, getClosestMatches } from 'proton-shared/lib/i18n/helper';
+} from '../../hooks';
+import { Row, Field, Label, Select } from '../../components';
 
 const LanguageSection = ({ locales = {} }) => {
     const api = useApi();

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Select } from 'react-components';
 import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
+import { Select } from '../../components';
 
 const { ON, OFF } = RIGHT_TO_LEFT;
 

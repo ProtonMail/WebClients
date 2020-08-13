@@ -1,5 +1,6 @@
 import React from 'react';
-import { Tooltip, classnames } from '../../index';
+import Tooltip from '../tooltip/Tooltip';
+import { classnames } from '../../helpers';
 
 const CLASSNAMES = {
     success: 'badgeLabel-success',

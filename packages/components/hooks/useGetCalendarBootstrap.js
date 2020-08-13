@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 import { getFullCalendar } from 'proton-shared/lib/api/calendars';
 import createCache from 'proton-shared/lib/helpers/cache';
 import { STATUS } from 'proton-shared/lib/models/cache';
-import useCache from '../containers/cache/useCache';
-import useApi from '../containers/api/useApi';
+import useCache from './useCache';
+import useApi from './useApi';
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 
 export const KEY = 'CALENDAR_BOOTSTRAP';

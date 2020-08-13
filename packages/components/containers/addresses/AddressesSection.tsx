@@ -1,6 +1,8 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Block, Loader, useOrganization, useUser } from '../../index';
+
+import { Block, Loader } from '../../components';
+import { useOrganization, useUser } from '../../hooks';
 
 import AddressesWithMembers from './AddressesWithMembers';
 import AddressesWithUser from './AddressesWithUser';

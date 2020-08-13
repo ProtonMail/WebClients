@@ -5,11 +5,8 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import { useUser } from '../../hooks/useUser';
-import AppLink from '../../components/link/AppLink';
-import Icon from '../../components/icon/Icon';
-import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
-import Meter from '../../components/progress/Meter';
+import { useUser } from '../../hooks';
+import { Meter, AppLink, Icon, SimpleDropdown } from '../../components';
 
 const { PROTONACCOUNT, PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONDRIVE } = APPS;
 

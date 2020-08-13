@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RadioCard, Block } from 'react-components';
+import Block from '../container/Block';
+import RadioCard from './RadioCard';
 
 const RadioCards = ({ list = [], id, ...rest }) => {
     return (

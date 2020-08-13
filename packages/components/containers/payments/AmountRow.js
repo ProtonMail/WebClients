@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Label, Field, PaymentSelector } from 'react-components';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import { Row, Label, Field } from '../../components';
+import PaymentSelector from './PaymentSelector';
 
 const AmountRow = ({ method, amount, onChangeAmount, currency, onChangeCurrency }) => {
     if (method === PAYMENT_METHOD_TYPES.CASH) {

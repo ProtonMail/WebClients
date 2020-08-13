@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE, CURRENCIES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
+import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
+import { clearPlanIDs, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
+
+import { Alert, FormModal } from '../../../components';
 import {
-    classnames,
-    LossLoyaltyModal,
-    Alert,
-    GenericError,
-    FormModal,
-    Payment,
     usePlans,
     useApi,
     useLoading,
     useVPNCountries,
     useEventManager,
-    usePayment,
     useUser,
     useNotifications,
     useOrganization,
     useSubscription,
     useModals,
-} from 'react-components';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE, CURRENCIES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
-import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
-import { clearPlanIDs, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
+} from '../../../hooks';
+
+import { classnames } from '../../../helpers';
+import LossLoyaltyModal from '../LossLoyaltyModal';
+import GenericError from '../../error/GenericError';
+import usePayment from '../usePayment';
+import Payment from '../Payment';
 
 import { SUBSCRIPTION_STEPS } from './constants';
 import NewSubscriptionSubmitButton from './NewSubscriptionSubmitButton';

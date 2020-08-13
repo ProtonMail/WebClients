@@ -1,9 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Checkbox, useUserSettings, useEventManager, useNotifications, useApi, useLoading } from 'react-components';
 import { NEWS } from 'proton-shared/lib/constants';
 import { updateNews } from 'proton-shared/lib/api/settings';
 import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
+
+import { Checkbox } from '../../components';
+import { useUserSettings, useEventManager, useNotifications, useApi, useLoading } from '../../hooks';
 
 const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA, BUSINESS } = NEWS;
 

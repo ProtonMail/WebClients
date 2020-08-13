@@ -1,21 +1,22 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
+import errorSvg from 'design-system/assets/img/pm-images/error.svg';
+import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
+
+import { useNotifications } from '../../hooks';
 import {
     FormModal,
     Alert,
     Loader,
     Button,
     ResetButton,
-    useNotifications,
     PrimaryButton,
     DoNotWindowOpenAlertError,
-} from 'react-components';
-import { c } from 'ttag';
-import errorSvg from 'design-system/assets/img/pm-images/error.svg';
-import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
+} from '../../components';
 
-import { toParams } from './paymentTokenHelper';
+import { toParams } from './paymentTokenToParams';
 import PaymentVerificationImage from './PaymentVerificationImage';
 
 const STEPS = {

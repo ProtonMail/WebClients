@@ -1,7 +1,7 @@
 import React, { ReactNode, FormEvent } from 'react';
 
 import { noop } from 'proton-shared/lib/helpers/function';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 interface Props {
     children: ReactNode;

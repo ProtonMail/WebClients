@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, Alert } from 'react-components';
+import { Icon, Alert } from '../../components';
 
 const MozillaInfoPanel = () => {
     return (

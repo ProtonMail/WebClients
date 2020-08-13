@@ -8,7 +8,8 @@ import {
     PAYMENT_METHOD_TYPES,
     MIN_DONATION_AMOUNT,
 } from 'proton-shared/lib/constants';
-import { FormModal, PrimaryButton, useNotifications, useApi, useLoading, useModals, useDebounceInput } from '../..';
+import { FormModal, PrimaryButton, useDebounceInput } from '../../components';
+import { useNotifications, useApi, useLoading, useModals } from '../../hooks';
 
 import './DonateModal.scss';
 import PaymentInfo from './PaymentInfo';

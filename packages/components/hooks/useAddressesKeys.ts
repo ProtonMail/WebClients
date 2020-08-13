@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { CachedKey } from 'proton-shared/lib/interfaces';
-import useCache from '../containers/cache/useCache';
+import useCache from './useCache';
 import { useGetAddresses } from './useAddresses';
 import useCachedModelResult from './useCachedModelResult';
 import { useGetAddressKeys } from './useGetAddressKeys';

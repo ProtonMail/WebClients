@@ -3,14 +3,14 @@ import React from 'react';
 import { APPS, PLAN_SERVICES } from 'proton-shared/lib/constants';
 import { getPlanName, hasLifetime } from 'proton-shared/lib/helpers/subscription';
 
-import { useSubscription, useConfig } from '../../index';
+import { useSubscription, useConfig } from '../../hooks';
 import AccountLogo from './AccountLogo';
 import CalendarLogo from './CalendarLogo';
 import ContactsLogo from './ContactsLogo';
 import DriveLogo from './DriveLogo';
 import MailLogo from './MailLogo';
 import VpnLogo from './VpnLogo';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import AppLink, { Props as AppLinkProps } from '../link/AppLink';
 
 const { MAIL, VPN } = PLAN_SERVICES;

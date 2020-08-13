@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { MailSubscriptionTable, CycleSelector, CurrencySelector } from '../../index';
+import { MailSubscriptionTable, CycleSelector, CurrencySelector } from '../payments';
 import { SignupModel, SignupPlan } from './interfaces';
 
 interface Props {

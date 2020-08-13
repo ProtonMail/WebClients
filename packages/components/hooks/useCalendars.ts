@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import { CalendarsModel } from 'proton-shared/lib/models/calendarsModel';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import useApi from '../containers/api/useApi';
-import useCache from '../containers/cache/useCache';
+import useApi from './useApi';
+import useCache from './useCache';
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 
 export const useGetCalendars = (): (() => Promise<Calendar[] | undefined>) => {

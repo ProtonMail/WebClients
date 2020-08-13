@@ -4,7 +4,8 @@ import { c } from 'ttag';
 import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
 import { AutoReplyDuration } from 'proton-shared/lib/constants';
 
-import { FormModal, useEventManager, useNotifications, useApi, useLoading, SimpleSquireEditor } from '../../index';
+import { useEventManager, useNotifications, useApi, useLoading } from '../../hooks';
+import { FormModal, SimpleSquireEditor } from '../../components';
 
 import useAutoReplyForm from './AutoReplyForm/useAutoReplyForm';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';

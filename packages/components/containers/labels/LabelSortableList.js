@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { OrderableTable, OrderableTableBody, OrderableTableHeader, Icon } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
+import { OrderableTable, OrderableTableBody, OrderableTableHeader, Icon } from '../../components';
 import LabelSortableItem from './LabelSortableItem';
 
 function LabelSortableList({ items, onEditLabel = noop, onRemoveLabel = noop, ...rest }) {

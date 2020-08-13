@@ -3,9 +3,11 @@ import { OpenPGPKey, encryptPrivateKey } from 'pmcrypto';
 import { KEY_FILE_EXTENSION } from 'proton-shared/lib/constants';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { c } from 'ttag';
-import { useModals, UnlockModal, Alert, Row, Field, Label, PasswordInput, FormModal } from '../../..';
 
-import { generateUID } from '../../../helpers/component';
+import { Alert, Row, Field, Label, PasswordInput, FormModal } from '../../../components';
+import { useModals } from '../../../hooks';
+import UnlockModal from '../../login/UnlockModal';
+import { generateUID } from '../../../helpers';
 
 const handleExport = async (name: string, privateKey: OpenPGPKey, password: string) => {
     const fingerprint = privateKey.getFingerprint();

@@ -13,7 +13,7 @@ import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { Button } from '../button';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 import EditorToolbar from './toolbar/SquireToolbar';
 import SquireIframe from './SquireIframe';
@@ -21,14 +21,7 @@ import { SquireType } from './squireConfig';
 import { setTextDirectionWithoutFocus, insertImage } from './squireActions';
 
 import './SquireEditor.scss';
-
-export interface SquireEditorMetadata {
-    supportImages: boolean;
-    supportPlainText: boolean;
-    isPlainText: boolean;
-    supportRightToLeft: boolean;
-    rightToLeft: RIGHT_TO_LEFT;
-}
+import { SquireEditorMetadata } from './interface';
 
 const defaultMetadata: SquireEditorMetadata = {
     supportImages: true,

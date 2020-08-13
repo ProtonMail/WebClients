@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { FullLoader } from 'react-components';
+import { FullLoader } from '../../../components';
 
 const SubscriptionUpgrade = () => {
     return (

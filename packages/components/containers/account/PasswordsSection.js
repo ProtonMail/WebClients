@@ -1,17 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    PrimaryButton,
-    Loader,
-    Toggle,
-    Info,
-    Label,
-    Row,
-    Field,
-    useAddresses,
-    useModals,
-    useUserSettings,
-} from 'react-components';
+
+import { PrimaryButton, Loader, Toggle, Info, Label, Row, Field } from '../../components';
+import { useModals, useAddresses, useUserSettings } from '../../hooks';
+
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 
 const PasswordsSection = () => {

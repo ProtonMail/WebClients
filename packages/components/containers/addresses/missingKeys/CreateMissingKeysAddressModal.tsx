@@ -3,28 +3,18 @@ import { c } from 'ttag';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
 import { decryptMemberToken } from 'proton-shared/lib/keys/memberToken';
 import { noop } from 'proton-shared/lib/helpers/function';
-
 import { decryptPrivateKey } from 'pmcrypto';
 import { Address, Member } from 'proton-shared/lib/interfaces';
+
+import { FormModal, Alert, Table, TableHeader, TableBody, TableRow } from '../../../components';
+import { useApi, useAuthentication, useEventManager, useLoading, useNotifications } from '../../../hooks';
+import { OrganizationKey } from '../../../hooks/useGetOrganizationKeyRaw';
+
 import SelectEncryption from '../../keys/addKey/SelectEncryption';
 import MissingKeysStatus from './MissingKeysStatus';
-import {
-    useApi,
-    useAuthentication,
-    useNotifications,
-    useEventManager,
-    useLoading,
-    FormModal,
-    Alert,
-    Table,
-    TableHeader,
-    TableBody,
-    TableRow,
-} from '../../../index';
 import { AddressWithStatus, Status } from './interface';
 import missingKeysSelfProcess from './missingKeysSelfProcess';
 import missingKeysMemberProcess from './missingKeysMemberProcess';
-import { OrganizationKey } from '../../../hooks/useGetOrganizationKeyRaw';
 
 enum STEPS {
     INIT = 0,

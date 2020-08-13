@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import {
-    FormModal,
-    Alert,
-    Label,
-    TextArea,
-    Block,
-    useApiWithoutResult,
-    useUserSettings,
-    useEventManager,
-    useNotifications,
-} from 'react-components';
 import { updateInvoiceText } from 'proton-shared/lib/api/settings';
+import { FormModal, Alert, Label, TextArea, Block } from '../../components';
+import { useApiWithoutResult, useUserSettings, useEventManager, useNotifications } from '../../hooks';
 
 const InvoiceTextModal = ({ onClose, ...rest }) => {
     const [{ InvoiceText }] = useUserSettings();

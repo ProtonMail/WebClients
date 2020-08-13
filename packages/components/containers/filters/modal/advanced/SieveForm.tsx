@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { isDarkTheme } from 'proton-shared/lib/themes/helpers';
 import { AdvancedSimpleFilterModalModel, ErrorsSieve } from 'proton-shared/lib/filters/interfaces';
 import { MailSettings } from 'proton-shared/lib/interfaces';
-import { Alert } from '../../../..';
+import { Alert } from '../../../../components';
 
 import SieveEditor from './SieveEditor';
 

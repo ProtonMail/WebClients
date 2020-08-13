@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { useEventManager, useNotifications, useUser } from 'react-components';
 import { arrayToHexString, binaryStringToArray, encodeUtf8, unsafeMD5 } from 'pmcrypto';
 import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
+import { useEventManager, useNotifications, useUser } from '../../hooks';
 
 const getID = async (text) => {
     const id = arrayToHexString(await unsafeMD5(binaryStringToArray(encodeUtf8(text))));

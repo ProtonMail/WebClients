@@ -13,22 +13,11 @@ import {
 } from 'proton-shared/lib/constants';
 import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
 import { unique } from 'proton-shared/lib/helpers/array';
-import {
-    Alert,
-    Price,
-    Loader,
-    MozillaInfoPanel,
-    LinkButton,
-    Time,
-    Info,
-    useUser,
-    useSubscription,
-    useOrganization,
-    useModals,
-    usePlans,
-} from 'react-components';
 import { getMonthlyBaseAmount, hasVisionary, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { Alert, Price, Loader, LinkButton, Time, Info } from '../../components';
+import { useUser, useSubscription, useOrganization, useModals, usePlans } from '../../hooks';
+import MozillaInfoPanel from '../account/MozillaInfoPanel';
 
 import { formatPlans } from './subscription/helpers';
 import DiscountBadge from './DiscountBadge';

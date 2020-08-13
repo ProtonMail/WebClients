@@ -3,12 +3,12 @@ import { addMonths, endOfMonth, startOfMonth } from 'date-fns';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { getDaysInMonth } from './helper';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import MonthDays from './MonthDays';
 import WeekDays from './WeekDays';
 import WeekNumbers from './WeekNumbers';
 import Icon from '../icon/Icon';
-import { DateTuple, WeekStartsOn } from '.';
+import { DateTuple, WeekStartsOn } from './index.d';
 
 export interface Props {
     hasCursors?: boolean;

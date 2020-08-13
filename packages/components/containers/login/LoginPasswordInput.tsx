@@ -1,6 +1,6 @@
 import React from 'react';
 import { PASSWORD_PLACEHOLDER } from 'proton-shared/lib/constants';
-import { PasswordInput } from '../../index';
+import { PasswordInput } from '../../components';
 
 interface Props {
     password: string;

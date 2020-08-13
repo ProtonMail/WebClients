@@ -13,16 +13,14 @@ import {
     ContactGroup,
 } from 'proton-shared/lib/interfaces/contacts/Contact';
 
-import { useNotifications } from '../..';
 import ContactGroupDropdown from '../../containers/contacts/ContactGroupDropdown';
 import ContactLabelProperty from './ContactLabelProperty';
 import ContactEmailSettingsModal from '../../containers/contacts/modals/ContactEmailSettingsModal';
-import { useUser } from '../../hooks/useUser';
+import { useModals, useUser, useNotifications } from '../../hooks';
 import RemoteImage from '../image/RemoteImage';
 import Tooltip from '../tooltip/Tooltip';
-import useModals from '../../containers/modals/useModals';
 import { Button, Copy } from '../button';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import Row from '../container/Row';
 import Icon from '../icon/Icon';
 

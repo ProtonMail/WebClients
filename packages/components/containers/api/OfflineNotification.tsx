@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 import React from 'react';
-import { LinkButton, useLoading } from '../../index';
+import { LinkButton } from '../../components';
+import { useLoading } from '../../hooks';
 
 interface Props {
     onRetry: () => Promise<void>;

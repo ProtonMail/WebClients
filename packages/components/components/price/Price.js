@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import humanPrice from 'proton-shared/lib/helpers/humanPrice';
 
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 const CURRENCIES = {
     USD: '$',

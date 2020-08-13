@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row, Label, Field, Href } from 'react-components';
 import { c } from 'ttag';
+import { Row, Label, Field, Href } from '../../../components';
 
 const ProtonVPNResourcesSection = () => {
     return (

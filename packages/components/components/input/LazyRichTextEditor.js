@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Loader } from 'react-components';
+import Loader from '../loader/Loader';
 
 // lazy load RichTextEditor component to avoid loading unnecessary css styles
 const LazyRichTextEditor = lazy(() => import('./RichTextEditor'));

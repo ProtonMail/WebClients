@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Icon } from 'react-components';
-import { classnames } from '../../helpers/component';
+import Icon from '../icon/Icon';
+import { classnames } from '../../helpers';
 
 const Header = ({
     children,

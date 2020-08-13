@@ -2,7 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { getThemeIdentifier, getTheme, toStyle, isDarkTheme } from 'proton-shared/lib/themes/helpers';
 import { DEFAULT_THEME } from 'proton-shared/lib/themes/themes';
 import { DARK_MODE_CLASS } from 'proton-shared/lib/constants';
-import { useMailSettings, useOrganization } from '../../index';
+import { useMailSettings, useOrganization } from '../../hooks';
 
 const getStyle = (userTheme: string, orgTheme: string) => {
     const themeIdentifier = getThemeIdentifier(userTheme);

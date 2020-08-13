@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Icon } from '../../index';
+import { Icon } from '../../components';
 
 const OneAccountIllustration = () => {
     return (

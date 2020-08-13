@@ -1,7 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Row, Label, Info, Field, Toggle, useConfig, useModals, useUserSettings } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
+
+import { Row, Label, Info, Field, Toggle } from '../../components';
+import { useConfig, useModals, useUserSettings } from '../../hooks';
 
 import EnableTwoFactorModal from './EnableTwoFactorModal';
 import DisableTwoFactorModal from './DisableTwoFactorModal';

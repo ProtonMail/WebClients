@@ -1,17 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import {
-    Alert,
-    DropdownActions,
-    ConfirmModal,
-    useModals,
-    useApiWithoutResult,
-    useNotifications,
-    useEventManager,
-    ErrorButton,
-} from 'react-components';
 import { deleteDomain } from 'proton-shared/lib/api/domains';
+import { Alert, DropdownActions, ConfirmModal, ErrorButton } from '../../components';
+import { useModals, useApiWithoutResult, useNotifications, useEventManager } from '../../hooks';
 
 import DomainModal from './DomainModal';
 import CatchAllModal from './CatchAllModal';

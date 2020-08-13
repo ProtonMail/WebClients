@@ -1,5 +1,5 @@
 import React, { ChangeEvent, forwardRef, useRef, useImperativeHandle } from 'react';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 export interface FileInputHandle {
     click: () => void;

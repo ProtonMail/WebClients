@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Label, Block, Input, Select, Info } from 'react-components';
+import { Label, Block, Input, Select, Info } from '../../components';
 
 import { getFullList } from '../../helpers/countries';
 import ExpInput from './ExpInput';

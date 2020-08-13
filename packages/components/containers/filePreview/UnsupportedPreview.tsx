@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import brokenImageSvg from 'design-system/assets/img/shared/broken-image.svg';
 import brokenFileSvg from 'design-system/assets/img/shared/broken-file.svg';
-import { PrimaryButton } from '../../components/button';
+import { PrimaryButton } from '../../components';
 
 interface Props {
     type?: 'file' | 'image';

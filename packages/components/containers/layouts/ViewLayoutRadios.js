@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { RadioCards } from 'react-components';
 import { VIEW_LAYOUT } from 'proton-shared/lib/constants';
 import inboxColumnSvg from 'design-system/assets/img/pm-images/inbox-column.svg';
 import inboxRowSvg from 'design-system/assets/img/pm-images/inbox-row.svg';
+import { RadioCards } from '../../components';
 
 const { COLUMN, ROW } = VIEW_LAYOUT;
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Price } from 'react-components';
-
 import { DEFAULT_CYCLE, DEFAULT_CURRENCY } from 'proton-shared/lib/constants';
+
+import { Price } from '../../../components';
 
 const PlanPrice = ({ quantity = 1, amount = 0, cycle = DEFAULT_CYCLE, currency = DEFAULT_CURRENCY, className }) => {
     return (

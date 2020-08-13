@@ -1,23 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    Alert,
-    LinkButton,
-    Href,
-    Loader,
-    MozillaInfoPanel,
-    Meter,
-    useModals,
-    useSubscription,
-    useOrganization,
-    useUser,
-    useAddresses,
-} from 'react-components';
 import { PLAN_NAMES } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { identity } from 'proton-shared/lib/helpers/function';
 import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
+import { Alert, LinkButton, Href, Loader, Meter } from '../../../components';
+import { useModals, useSubscription, useOrganization, useUser, useAddresses } from '../../../hooks';
+import MozillaInfoPanel from '../../account/MozillaInfoPanel';
 
 import { formatPlans } from './helpers';
 import UpsellSubscription from './UpsellSubscription';

@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    FormModal,
-    Row,
-    Label,
-    Field,
-    Input,
-    PasswordInput,
-    useLoading,
-    useNotifications,
-    useApi,
-} from 'react-components';
 import { updateVPNName, updateVPNPassword } from 'proton-shared/lib/api/vpn';
+import { FormModal, Row, Label, Field, Input, PasswordInput } from '../../../components';
+import { useLoading, useNotifications, useApi } from '../../../hooks';
 
 const OpenVPNCredentialsModal = ({ username = '', password = '', fetchUserVPN, ...rest }) => {
     const [loading, withLoading] = useLoading();

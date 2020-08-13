@@ -10,7 +10,7 @@ import './ContactSummary.scss';
 import Tooltip from '../tooltip/Tooltip';
 import { Button, LinkButton } from '../button';
 import Icon from '../icon/Icon';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 
 interface Props {

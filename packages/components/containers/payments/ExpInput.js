@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input } from 'react-components';
 import { isNumber } from 'proton-shared/lib/helpers/validators';
+
+import { Input } from '../../components';
 
 const isValidMonth = (m) => !m || (isNumber(m) && m.length <= 2);
 const isValidYear = (y) => !y || (isNumber(y) && y.length <= 4);

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { Alert, Button, Label, Select, Info, Row, Field, Loader, useAddresses, useModals } from 'react-components';
 import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from 'proton-shared/lib/constants';
+import { Alert, Button, Label, Select, Info, Row, Field, Loader } from '../../components';
+import { useAddresses, useModals } from '../../hooks';
 
 import EditAddressModal from './EditAddressModal';
 import PMSignatureField from './PMSignatureField';

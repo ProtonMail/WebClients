@@ -1,5 +1,8 @@
 import { Organization } from 'proton-shared/lib/interfaces';
-import { useGetOrganizationKeyRaw, usePromiseResult, useCache, useUser } from '../index';
+import useCache from './useCache';
+import { useUser } from './useUser';
+import { useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw';
+import usePromiseResult from './usePromiseResult';
 
 import { cachedPromise } from './helpers/cachedPromise';
 import { OrganizationKey } from './useGetOrganizationKeyRaw';

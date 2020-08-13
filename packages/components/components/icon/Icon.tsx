@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
     name: string;

@@ -6,7 +6,11 @@ import getPublicKeysEmailHelper from 'proton-shared/lib/api/helpers/getPublicKey
 import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
 import extractEncryptionPreferences from 'proton-shared/lib/mail/encryptionPreferences';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { useAddresses, useApi, useGetAddressKeys, useGetUserKeys, useMailSettings } from '../index';
+import { useAddresses } from './useAddresses';
+import useApi from './useApi';
+import { useGetAddressKeys } from './useGetAddressKeys';
+import useMailSettings from './useMailSettings';
+import { useGetUserKeys } from './useUserKeys';
 
 // Implement the logic in the document 'Encryption preferences for outgoing email'
 /**

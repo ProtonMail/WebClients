@@ -6,17 +6,16 @@ import {
     LinkButton,
     PrimaryButton,
     IntlTelInput,
-    useModals,
     ConfirmModal,
     Challenge,
     Label,
-    useLoading,
     FullLoader,
-} from '../../index';
+    InlineLinkButton,
+} from '../../components';
+import { useModals, useLoading } from '../../hooks';
 
 import { SignupModel, SignupErrors } from './interfaces';
 import { SIGNUP_STEPS } from './constants';
-import InlineLinkButton from '../../components/button/InlineLinkButton';
 import { ChallengeRef, ChallengeResult } from '../../components/challenge/ChallengeFrame';
 import SignupLabelInputRow from './SignupLabelInputRow';
 import SignupSubmitRow from './SignupSubmitRow';

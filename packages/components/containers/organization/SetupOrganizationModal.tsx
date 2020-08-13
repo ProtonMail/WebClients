@@ -7,15 +7,8 @@ import { updateOrganizationName, updateOrganizationKeys } from 'proton-shared/li
 import { updateVPN, updateQuota } from 'proton-shared/lib/api/members';
 
 import { generateOrganizationKeys } from 'proton-shared/lib/keys/organizationKeys';
+import { FormModal, Button, Row, Label, Input, PasswordInput, Alert, Select } from '../../components';
 import {
-    FormModal,
-    Button,
-    Row,
-    Label,
-    Input,
-    PasswordInput,
-    Alert,
-    Select,
     useUser,
     useOrganization,
     useApi,
@@ -24,7 +17,7 @@ import {
     useAuthentication,
     useLoading,
     useNotifications,
-} from '../../index';
+} from '../../hooks';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 

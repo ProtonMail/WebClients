@@ -9,21 +9,11 @@ import {
     MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
 } from 'proton-shared/lib/constants';
-import {
-    FormModal,
-    PrimaryButton,
-    Alert,
-    PaymentInfo,
-    AmountRow,
-    useNotifications,
-    useEventManager,
-    useConfig,
-    useModals,
-    useApi,
-    useLoading,
-    useDebounceInput,
-} from '../..';
+import { FormModal, PrimaryButton, Alert, useDebounceInput } from '../../components';
+import { useNotifications, useEventManager, useConfig, useModals, useApi, useLoading } from '../../hooks';
 
+import AmountRow from './AmountRow';
+import PaymentInfo from './PaymentInfo';
 import Payment from './Payment';
 import usePayment from './usePayment';
 import { handlePaymentToken } from './paymentTokenHelper';

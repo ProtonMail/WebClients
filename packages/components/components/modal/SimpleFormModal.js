@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DialogModal, ContentModal } from 'react-components';
+import DialogModal from './Dialog';
+import ContentModal from './Content';
 
 const SimpleFormModal = ({ modalTitleID = 'modalTitle', children, onSubmit, onClose, ...rest }) => {
     return (

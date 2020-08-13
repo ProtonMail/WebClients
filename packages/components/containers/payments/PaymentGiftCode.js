@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useToggle, Icon, LinkButton, Button } from 'react-components';
 import { c } from 'ttag';
+import { Icon, LinkButton, Button } from '../../components';
+import { useToggle } from '../../hooks';
 
 import GiftCodeForm from './subscription/GiftCodeForm';
 

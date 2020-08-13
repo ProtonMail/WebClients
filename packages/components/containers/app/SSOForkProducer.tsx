@@ -12,7 +12,10 @@ import {
 } from 'proton-shared/lib/authentication/sessionForking';
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
 import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { LoaderPage, ModalsChildren, StandardLoadError, useApi, useNotifications } from '../../index';
+import { useApi, useNotifications } from '../../hooks';
+import LoaderPage from './LoaderPage';
+import ModalsChildren from '../modals/Children';
+import StandardLoadError from './StandardLoadError';
 
 interface Props {
     onActiveSessions: (data: ProduceForkParameters, activeSessions: GetActiveSessionsResult) => void;

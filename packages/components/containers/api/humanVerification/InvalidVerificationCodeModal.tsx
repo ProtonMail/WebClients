@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { FormModal, ResetButton, Button, PrimaryButton, Alert } from '../../../index';
+import { FormModal, ResetButton, Button, PrimaryButton, Alert } from '../../../components';
 
 interface Props {
     edit?: string;

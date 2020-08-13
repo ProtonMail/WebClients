@@ -1,20 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
 import {
-    Alert,
-    Row,
-    Field,
-    Label,
-    Info,
-    Loader,
-    useNotifications,
-    useUserSettings,
-    useMailSettings,
-    useEventManager,
-    useLoading,
-    useApi,
-} from 'react-components';
-import {
     updateComposerMode,
     updateViewMode,
     updateViewLayout,
@@ -25,6 +11,8 @@ import {
 import { updateDensity } from 'proton-shared/lib/api/settings';
 import { VIEW_MODE, STICKY_LABELS, FEATURE_FLAGS } from 'proton-shared/lib/constants';
 
+import { Alert, Row, Field, Label, Info, Loader } from '../../components';
+import { useNotifications, useUserSettings, useMailSettings, useEventManager, useLoading, useApi } from '../../hooks';
 import DraftTypeSelect from './DraftTypeSelect';
 import TextDirectionSelect from './TextDirectionSelect';
 import ComposerModeRadios from './ComposerModeRadios';

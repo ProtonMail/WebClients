@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { EmailInput } from '../../index';
+import { EmailInput } from '../../components';
 
 interface Props {
     value: string;

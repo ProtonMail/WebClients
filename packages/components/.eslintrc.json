@@ -19,6 +19,12 @@
         "react": {
             "version": "detect"
         },
+        "import/extensions": [
+            ".js",
+            ".ts",
+            ".jsx",
+            ".tsx"
+        ],
         "import/resolver": {
             "node": {
                 "extensions": [".js", ".ts", ".tsx"]
@@ -38,7 +44,10 @@
         "import/namespace": 2,
         "import/no-extraneous-dependencies": "off",
         "import/no-named-as-default": "off",
+        "import/no-unresolved": ["error", { "commonjs": true, "caseSensitive": true }],
         "import/prefer-default-export": "off",
+        "import/no-cycle": ["error", { "maxDepth": "∞" }],
+        "import/no-self-import": "error",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/indent": "off",

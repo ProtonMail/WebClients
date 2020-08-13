@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Row, Label, Field, PasswordInput, TwoFactorInput } from 'react-components';
+import { Row, Label, Field, PasswordInput, TwoFactorInput } from '../../components';
 
 const PasswordTotpInputs = ({ password, setPassword, passwordError, totp, setTotp, totpError, showTotp }) => {
     return (

@@ -2,7 +2,8 @@ import React from 'react';
 import { c } from 'ttag';
 import { IncomingDefault } from 'proton-shared/lib/interfaces/IncomingDefault';
 import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
-import { Bordered, Loader, Alert, classnames, DropdownActions, PrimaryButton } from '../../..';
+import { Bordered, Loader, Alert, DropdownActions, PrimaryButton } from '../../../components';
+import { classnames } from '../../../helpers';
 
 import './SpamListItem.scss';
 

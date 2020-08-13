@@ -2,17 +2,10 @@ import React, { FunctionComponent, useRef } from 'react';
 import { c } from 'ttag';
 import { useHistory } from 'react-router-dom';
 
-import {
-    Alert,
-    ConfirmModal,
-    GenericError,
-    Href,
-    Label,
-    OnLoginCallback,
-    PasswordInput,
-    PrimaryButton,
-    useModals
-} from '../../index';
+import { useModals } from '../../hooks';
+import { Alert, ConfirmModal, Href, Label, PasswordInput, PrimaryButton } from '../../components';
+import { GenericError } from '../error';
+import { OnLoginCallback } from '../app';
 import useResetPassword, { STEPS } from './useResetPassword';
 import ResetUsernameInput from './ResetUsernameInput';
 import ResetPasswordInput from './ResetPasswordInput';

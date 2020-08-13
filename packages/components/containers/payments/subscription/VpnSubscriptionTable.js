@@ -1,5 +1,4 @@
 import React from 'react';
-import { SubscriptionTable, useVPNCountries, LinkButton, useModals } from 'react-components';
 import PropTypes from 'prop-types';
 import { PLAN_NAMES, PLANS, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
@@ -9,6 +8,10 @@ import plusPlanSvg from 'design-system/assets/img/pv-images/plans/vpnbasic-plan.
 import professionalPlanSvg from 'design-system/assets/img/pv-images/plans/vpnplus-plan.svg';
 import visionaryPlanSvg from 'design-system/assets/img/pv-images/plans/visionary-plan.svg';
 
+import { LinkButton } from '../../../components';
+import { useVPNCountries, useModals } from '../../../hooks';
+
+import SubscriptionTable from './SubscriptionTable';
 import SubscriptionPrices from './SubscriptionPrices';
 import SubscriptionFeaturesModal from './SubscriptionFeaturesModal';
 

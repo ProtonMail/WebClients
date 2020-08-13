@@ -9,12 +9,8 @@ import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
 import getCachedKeyByID from 'proton-shared/lib/keys/getCachedKeyByID';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { EncryptionConfig } from 'proton-shared/lib/interfaces';
+import { Alert, Block, Loader, PrimaryButton, Select } from '../../components';
 import {
-    Alert,
-    Block,
-    Loader,
-    PrimaryButton,
-    Select,
     useAddresses,
     useAddressesKeys,
     useApi,
@@ -23,7 +19,7 @@ import {
     useModals,
     useUser,
     useUserKeys,
-} from '../../index';
+} from '../../hooks';
 
 import { getAllKeysToReactivate, getKeysToReactivateCount } from './reactivateKeys/getAllKeysToReactive';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';

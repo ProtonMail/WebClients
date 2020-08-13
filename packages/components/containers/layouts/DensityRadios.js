@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { RadioCards } from 'react-components';
 import { DENSITY } from 'proton-shared/lib/constants';
 import comfortableDensitySvg from 'design-system/assets/img/pm-images/comfortable-density.svg';
 import compactDensitySvg from 'design-system/assets/img/pm-images/compact-density.svg';
+import { RadioCards } from '../../components';
 
 const { COMFORTABLE, COMPACT } = DENSITY;
 

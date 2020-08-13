@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react';
 import { range } from 'proton-shared/lib/helpers/array';
 import { GIGA } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { Select } from '../../index';
+import { Select } from '../../components';
 
 export const getStorageRange = (
     { UsedSpace: memberUsedSpace = 0 } = {},

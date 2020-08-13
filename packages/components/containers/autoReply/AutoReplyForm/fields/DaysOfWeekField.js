@@ -1,9 +1,9 @@
 import React from 'react';
-import { Label, Checkbox, Row, Field } from 'react-components';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { dateLocale } from 'proton-shared/lib/i18n';
+import { Label, Checkbox, Row, Field } from '../../../../components';
 
 const DaysOfWeekField = ({ value, onChange }) => {
     const handleChange = (weekday) => () =>

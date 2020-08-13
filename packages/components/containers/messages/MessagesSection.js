@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { Row, Field, Label, Info, useMailSettings } from 'react-components';
+
+import { Row, Field, Label, Info } from '../../components';
+import { useMailSettings } from '../../hooks';
 
 import RemoteToggle from './RemoteToggle';
 import EmbeddedToggle from './EmbeddedToggle';

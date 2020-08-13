@@ -1,11 +1,12 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
-import { Info, Button, Group, ButtonGroup } from '../../index';
+import { Info } from '../link';
+import { Button, Group, ButtonGroup } from '../button';
 
 import DropdownMenu from './DropdownMenu';
 import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
     if (!tooltip) {

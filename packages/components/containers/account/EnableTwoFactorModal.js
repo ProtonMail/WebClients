@@ -1,23 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    Alert,
-    Href,
-    InlineLinkButton,
-    Loader,
-    Block,
-    FormModal,
-    PasswordTotpInputs,
-    Button,
-    useConfig,
-    useNotifications,
-    useLoading,
-    useAddresses,
-    useUser,
-    useApi,
-    useEventManager,
-} from 'react-components';
 import QRCode from 'qrcode.react';
 import { generateSharedSecret, getUri } from 'proton-shared/lib/helpers/twofa';
 import { setupTotp, TOTP_WRONG_ERROR } from 'proton-shared/lib/api/settings';
@@ -25,6 +8,11 @@ import { srpAuth } from 'proton-shared/lib/srp';
 import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { TWO_FA_CONFIG, APPS } from 'proton-shared/lib/constants';
+
+import { Alert, Href, InlineLinkButton, Loader, Block, FormModal, Button } from '../../components';
+import { useConfig, useNotifications, useLoading, useAddresses, useUser, useApi, useEventManager } from '../../hooks';
+
+import PasswordTotpInputs from '../password/PasswordTotpInputs';
 
 const { PERIOD, DIGITS, ALGORITHM } = TWO_FA_CONFIG;
 

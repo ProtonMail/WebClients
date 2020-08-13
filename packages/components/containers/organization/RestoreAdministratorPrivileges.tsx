@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Block, LearnMore, PrimaryButton, useModals, useOrganization, useOrganizationKey } from '../../index';
+import { Alert, Block, LearnMore, PrimaryButton } from '../../components';
+import { useModals, useOrganization, useOrganizationKey } from '../../hooks';
 import { getOrganizationKeyInfo } from './helpers/organizationKeysHelper';
 
 import ReactivateOrganizationKeysModal, { MODES } from './ReactivateOrganizationKeysModal';

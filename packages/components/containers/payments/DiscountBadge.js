@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Badge } from 'react-components';
 import { COUPON_CODES, BLACK_FRIDAY } from 'proton-shared/lib/constants';
+
+import { Badge } from '../../components';
 
 const { BUNDLE, PMTEAM, BLACK_FRIDAY_2018 } = COUPON_CODES;
 

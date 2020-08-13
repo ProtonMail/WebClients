@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import { usePopper } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { ALL_PLACEMENTS, Position } from '../popper/utils';

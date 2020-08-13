@@ -1,7 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Loader, Alert, PrimaryButton, useFolders, useModals } from 'react-components';
 
+import { Loader, Alert, PrimaryButton } from '../../components';
+import { useFolders, useModals } from '../../hooks';
 import FolderTreeViewList from './FolderTreeViewList';
 import EditLabelModal from './modals/Edit';
 

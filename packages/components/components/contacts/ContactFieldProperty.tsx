@@ -4,8 +4,8 @@ import { parseISO, isValid } from 'date-fns';
 import { getAllFieldLabels } from 'proton-shared/lib/helpers/contacts';
 import { ContactPropertyChange } from 'proton-shared/lib/interfaces/contacts/Contact';
 
+import { useModals } from '../../hooks';
 import ContactImageModal from '../../containers/contacts/modals/ContactImageModal';
-import useModals from '../../containers/modals/useModals';
 import EmailInput from '../input/EmailInput';
 import TelInput from '../input/TelInput';
 import TextArea from '../input/TextArea';

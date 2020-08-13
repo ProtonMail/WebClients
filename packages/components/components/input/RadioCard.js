@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Radio } from 'react-components';
+import Radio from './Radio';
 
 const RadioCard = ({ value, checked, label, name, id, children, onChange, disabled, ...rest }) => {
     return (

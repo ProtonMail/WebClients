@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-    AuthModal,
-    FormModal,
-    ConfirmModal,
-    Alert,
-    Row,
-    Label,
-    EmailInput,
-    Field,
-    useLoading,
-    useModals,
-    useNotifications,
-    useEventManager,
-} from 'react-components';
 import { c } from 'ttag';
 import { updateEmail } from 'proton-shared/lib/api/settings';
+import { FormModal, ConfirmModal, Alert, Row, Label, EmailInput, Field } from '../../components';
+import { useLoading, useModals, useNotifications, useEventManager } from '../../hooks';
+import AuthModal from '../password/AuthModal';
 
 const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }) => {
     const [input, setInput] = useState(email);

@@ -4,10 +4,11 @@ import { c } from 'ttag';
 import { clearType, getType } from 'proton-shared/lib/contacts/property';
 import { ContactProperty, ContactPropertyChange } from 'proton-shared/lib/interfaces/contacts';
 
+import { useModals } from '../../hooks';
+
 import ContactFieldProperty from './ContactFieldProperty';
 import ContactModalLabel from './ContactModalLabel';
 import ContactImageModal from '../../containers/contacts/modals/ContactImageModal';
-import useModals from '../../containers/modals/useModals';
 import Icon from '../icon/Icon';
 import { OrderableHandle } from '../orderable';
 import DropdownActions from '../dropdown/DropdownActions';

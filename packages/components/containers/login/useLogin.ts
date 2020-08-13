@@ -12,8 +12,9 @@ import { AuthResponse, AuthVersion, InfoResponse } from 'proton-shared/lib/authe
 import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallback';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { useApi } from '../../hooks';
 import { getAuthTypes, handleUnlockKey } from './helper';
-import { OnLoginCallback, useApi } from '../../index';
+import { OnLoginCallback } from '../app/interface';
 
 export enum FORM {
     LOGIN,

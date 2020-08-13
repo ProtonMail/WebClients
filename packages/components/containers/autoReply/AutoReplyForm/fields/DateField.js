@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isValid } from 'date-fns';
-import { Row, Label, DateInput, Field } from 'react-components';
+import { Row, Label, DateInput, Field } from '../../../../components';
 
 const DateField = ({ id, label, value, onChange, min, max }) => {
     return (

@@ -7,18 +7,8 @@ import memberLogin from 'proton-shared/lib/authentication/memberLogin';
 import { Member, Address, Organization } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import {
-    ConfirmModal,
-    useModals,
-    Alert,
-    DropdownActions,
-    useLoading,
-    useApi,
-    useAuthentication,
-    useNotifications,
-    useEventManager,
-    ErrorButton,
-} from '../../index';
+import { ConfirmModal, Alert, DropdownActions, ErrorButton } from '../../components';
+import { useLoading, useModals, useApi, useAuthentication, useNotifications, useEventManager } from '../../hooks';
 import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
 

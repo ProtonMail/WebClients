@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Alert, ConfirmModal, ErrorButton, Paragraph } from 'react-components';
 import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
 import { PLANS } from 'proton-shared/lib/constants';
+
+import { Alert, ConfirmModal, ErrorButton, Paragraph } from '../../components';
 
 const hasPlan = (subscription = {}, planName) => (subscription.Plans || []).some(({ Name }) => Name === planName);
 

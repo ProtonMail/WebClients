@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PrimaryButton, Input } from 'react-components';
+import { PrimaryButton, Input } from '../../../components';
 
 const CouponForm = ({ onChange, model }) => {
     const [coupon, setCoupon] = useState(model.coupon);

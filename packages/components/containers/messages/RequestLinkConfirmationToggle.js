@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Toggle, useToggle, useEventManager, useNotifications, useApi, useLoading } from 'react-components';
 import { updateConfirmLink } from 'proton-shared/lib/api/mailSettings';
 import { c } from 'ttag';
+import { useToggle, useEventManager, useNotifications, useApi, useLoading } from '../../hooks';
+import { Toggle } from '../../components';
 
 const RequestLinkConfirmationToggle = ({ id, confirmLink }) => {
     const { createNotification } = useNotifications();

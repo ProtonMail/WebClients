@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input } from 'react-components';
 import { isValid } from 'proton-shared/lib/helpers/giftCode';
 import { c } from 'ttag';
 import { GIFT_CODE_LENGTH } from 'proton-shared/lib/constants';
+
+import { Input } from '../../components';
 
 const GiftCodeInput = ({ value, ...rest }) => {
     const error = isValid(value) ? undefined : c('Error').t`Invalid gift code`;

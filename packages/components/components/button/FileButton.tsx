@@ -1,5 +1,5 @@
 import React, { ChangeEvent, ReactNode } from 'react';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import Icon from '../icon/Icon';
 
 import './FileButton.scss';

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Badge } from 'react-components';
 import { isExpired } from 'proton-shared/lib/helpers/card';
+import { Badge } from '../../components';
 
 const PaymentMethodState = ({ method, index }) => {
     if (isExpired(method.Details)) {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import markdownit from 'markdown-it';
 
-import { FormModal } from '../../index';
+import { FormModal } from '../modal';
 
 const md = markdownit('default', {
     breaks: true,

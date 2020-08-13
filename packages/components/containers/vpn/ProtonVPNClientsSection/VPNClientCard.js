@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Bordered, Icon, Block, Href } from 'react-components';
 import { c } from 'ttag';
+import { Bordered, Icon, Block, Href } from '../../../components';
 
 const VPNClientCard = ({ title, link, icon }) => {
     return (

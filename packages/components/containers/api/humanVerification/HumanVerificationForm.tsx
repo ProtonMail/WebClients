@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
 
-import { Alert, LearnMore, Tabs } from '../../../index';
+import { Alert, LearnMore, Tabs } from '../../../components';
 import Captcha from './Captcha';
 import CodeVerification from './CodeVerification';
 import RequestInvite from './RequestInvite';

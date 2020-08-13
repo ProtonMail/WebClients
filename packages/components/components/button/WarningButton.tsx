@@ -1,6 +1,6 @@
 import React from 'react';
 import Button, { Props as ButtonProps } from './Button';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 const WarningButton = ({ children, className = '', ...rest }: ButtonProps) => {
     return (

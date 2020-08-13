@@ -1,9 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 import { APPS_CONFIGURATION } from 'proton-shared/lib/constants';
-import useConfig from '../config/useConfig';
-import FullLoader from '../../components/loader/FullLoader';
-import TextLoader from '../../components/loader/TextLoader';
+import { useConfig } from '../../hooks';
+import { FullLoader, TextLoader } from '../../components';
 
 interface Props {
     text?: string;

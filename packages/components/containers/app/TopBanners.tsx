@@ -4,7 +4,7 @@ import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { useUser, useConfig, useOnline } from '../../index';
+import { useUser, useOnline, useConfig } from '../../hooks';
 import TopBanner from './TopBanner';
 import AppLink from '../../components/link/AppLink';
 
@@ -19,23 +19,23 @@ const TopBanners = () => {
         getItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`) === 'true'
     );
 
-    const paymentLinkProps = APP_NAME === APPS.PROTONVPN_SETTINGS ? {
-        to: '/payments#invoices',
-    } : {
-        to: '/subscription#invoices',
-        toApp: getAccountSettingsApp()
-    };
+    const paymentLinkProps =
+        APP_NAME === APPS.PROTONVPN_SETTINGS
+            ? {
+                  to: '/payments#invoices',
+              }
+            : {
+                  to: '/subscription#invoices',
+                  toApp: getAccountSettingsApp(),
+              };
     const upgradeLink = (
-        <AppLink
-            key="storage-link"
-            className="color-currentColor"
-            {...paymentLinkProps}
-        >
+        <AppLink key="storage-link" className="color-currentColor" {...paymentLinkProps}>
             {c('Link').t`Upgrade account`}
         </AppLink>
     );
     const payInvoiceLink = (
-        <AppLink key="pay-invoices" className="color-currentColor" {...paymentLinkProps}>{c('Link').t`Pay invoice`}</AppLink>
+        <AppLink key="pay-invoices" className="color-currentColor" {...paymentLinkProps}>{c('Link')
+            .t`Pay invoice`}</AppLink>
     );
     const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
     const spaceDisplayed = isNaN(spacePercentage) ? 0 : Math.round(spacePercentage);

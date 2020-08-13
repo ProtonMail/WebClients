@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
-import { useCard, usePayPal } from '../../index';
+import usePayPal from './usePayPal';
+import useCard from './useCard';
 import toDetails from './toDetails';
+import { PaymentParameters } from './interface';
 
 const { CARD, BITCOIN, CASH, PAYPAL, PAYPAL_CREDIT } = PAYMENT_METHOD_TYPES;
 
@@ -10,30 +12,6 @@ interface Props {
     amount: number;
     currency: string;
     onPay: (data: PaymentParameters) => void;
-}
-
-interface TokenPaymentDetails {
-    Token: string;
-}
-
-interface CardPaymentDetails {
-    Name: string;
-    Number: string;
-    ExpMonth: string;
-    ExpYear: string;
-    CVC: string;
-    ZIP: string;
-    Country: string;
-}
-
-export interface Payment {
-    Type: PAYMENT_METHOD_TYPES;
-    Details: TokenPaymentDetails | CardPaymentDetails;
-}
-
-export interface PaymentParameters {
-    PaymentMethodID?: string;
-    Payment?: Payment;
 }
 
 const usePayment = ({ amount, currency, onPay }: Props) => {

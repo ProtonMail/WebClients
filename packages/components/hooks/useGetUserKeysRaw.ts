@@ -3,7 +3,7 @@ import { decryptPrivateKey } from 'pmcrypto';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Key as tsKey, CachedKey } from 'proton-shared/lib/interfaces';
 import { decryptMemberToken } from 'proton-shared/lib/keys/memberToken';
-import useAuthentication from '../containers/authentication/useAuthentication';
+import useAuthentication from './useAuthentication';
 import { useGetUser } from './useUser';
 
 export const useGetUserKeysRaw = (): (() => Promise<CachedKey[]>) => {

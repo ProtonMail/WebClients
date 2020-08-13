@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RadioCard } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { c } from 'ttag';
+import { RadioCard } from '../../components';
 
 const ThemeCard = ({
     label,

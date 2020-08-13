@@ -3,22 +3,16 @@ import { c } from 'ttag';
 import { Link } from 'react-router-dom';
 import { APPS } from 'proton-shared/lib/constants';
 
-import {
-    Alert,
-    ConfirmModal,
-    GenericError,
-    Href,
-    Label, OnLoginCallback,
-    PasswordInput,
-    PrimaryButton,
-    useConfig,
-    useModals
-} from '../../index';
+import { Alert, Href, Label, PasswordInput, ConfirmModal, PrimaryButton } from '../../components';
+import { GenericError } from '../error';
+
+import { useConfig, useModals } from '../../hooks';
 import useResetPassword, { STEPS } from './useResetPassword';
 import ResetUsernameInput from './ResetUsernameInput';
 import ResetPasswordInput from './ResetPasswordInput';
 import ResetTokenInput from './ResetTokenInput';
 import ResetDangerInput from './ResetDangerInput';
+import { OnLoginCallback } from '../app';
 
 interface Props {
     onLogin: OnLoginCallback;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Portal from '../portal/Portal';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 const CLASSES = {
     OVERLAY: 'pm-modalOverlay',

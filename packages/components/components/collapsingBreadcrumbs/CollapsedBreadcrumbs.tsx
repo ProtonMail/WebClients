@@ -1,6 +1,6 @@
 import React, { useMemo, useRef } from 'react';
 import { omit } from 'proton-shared/lib/helpers/object';
-import { generateUID, classnames } from '../../helpers/component';
+import { generateUID, classnames } from '../../helpers';
 import { usePopperAnchor } from '../popper';
 import Breadcrumb from './Breadcrumb';
 import Dropdown from '../dropdown/Dropdown';

@@ -5,7 +5,7 @@ import { USER_ROLES, PLANS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
 import { formatPlans } from '../payments/subscription/helpers';
-import { AppLink } from '../../index';
+import { AppLink } from '../../components';
 
 const { MEMBER_ROLE, ADMIN_ROLE } = USER_ROLES;
 

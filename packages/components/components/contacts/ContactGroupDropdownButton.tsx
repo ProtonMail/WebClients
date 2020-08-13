@@ -1,7 +1,7 @@
 import React, { RefObject, ReactNode } from 'react';
 
 import DropdownCaret from '../dropdown/DropdownCaret';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 interface Props {
     buttonRef: RefObject<any>;

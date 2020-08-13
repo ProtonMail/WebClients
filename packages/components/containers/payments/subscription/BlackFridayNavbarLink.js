@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useUser, useApi, useLoading, useBlackFriday, TopNavbarLink, usePlans, useModals } from 'react-components';
+import { useUser, useApi, useLoading, useBlackFriday, usePlans, useModals } from '../../../hooks';
+import { TopNavbarLink } from '../../../components';
 
 import { checkLastCancelledSubscription } from './helpers';
 import NewSubscriptionModal from './NewSubscriptionModal';

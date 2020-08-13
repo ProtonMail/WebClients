@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { noop } from 'proton-shared/lib/helpers/function';
 import Awesomplete from 'awesomplete';
 import './Autocomplete.scss';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 /** @type any */
 const Autocomplete = ({

@@ -9,7 +9,8 @@ import { Address } from 'proton-shared/lib/interfaces';
 import { auth } from 'proton-shared/lib/api/auth';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { AuthResponse } from 'proton-shared/lib/authentication/interface';
-import { useApi, useLoading, useNotifications, OnLoginCallback } from '../../index';
+import { useApi, useNotifications, useLoading } from '../../hooks';
+import { OnLoginCallback } from '../app';
 
 export enum STEPS {
     REQUEST_RESET_TOKEN,

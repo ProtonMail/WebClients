@@ -1,16 +1,5 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    useMailSettings,
-    useEventManager,
-    useApi,
-    useLoading,
-    Alert,
-    ThemeCards,
-    useModals,
-    useNotifications,
-    ConfirmModal,
-} from 'react-components';
 import { updateTheme } from 'proton-shared/lib/api/mailSettings';
 import {
     getThemeIdentifier,
@@ -19,6 +8,9 @@ import {
     stripThemeIdentifier,
 } from 'proton-shared/lib/themes/helpers';
 import { DEFAULT_THEME, CUSTOM_THEME, PROTON_THEMES } from 'proton-shared/lib/themes/themes';
+import { Alert, ConfirmModal } from '../../components';
+import { useMailSettings, useEventManager, useApi, useLoading, useModals, useNotifications } from '../../hooks';
+import ThemeCards from './ThemeCards';
 
 import CustomThemeModal from './CustomThemeModal';
 

@@ -1,6 +1,8 @@
-import { usePromiseResult, useCache, useApi } from 'react-components';
 import { queryDomainAddresses } from 'proton-shared/lib/api/domains';
 import { cachedPromise } from './helpers/cachedPromise';
+import usePromiseResult from './usePromiseResult';
+import useCache from './useCache';
+import useApi from './useApi';
 
 const useDomainsAddresses = (domains) => {
     const cache = useCache();

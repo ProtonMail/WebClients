@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
-import { generateUID } from '../../../helpers/component';
+import { generateUID } from '../../../helpers';
 import FormModal from '../../modal/FormModal';
 import { ResetButton, PrimaryButton } from '../../button';
 import Label from '../../label/Label';

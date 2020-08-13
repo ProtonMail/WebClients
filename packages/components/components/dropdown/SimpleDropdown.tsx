@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Dropdown from './Dropdown';
 import { usePopperAnchor } from '../popper';
 import DropdownButton, { Props as DropdownButtonProps } from './DropdownButton';
-import { generateUID } from '../../helpers/component';
+import { generateUID } from '../../helpers';
 
 interface Props extends DropdownButtonProps {
     hasCaret?: boolean;

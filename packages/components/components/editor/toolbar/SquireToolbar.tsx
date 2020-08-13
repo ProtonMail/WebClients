@@ -1,8 +1,7 @@
 import React, { MutableRefObject, useEffect, useState, ReactNode } from 'react';
 import { c } from 'ttag';
 
-import { useHandler } from '../../../hooks/useHandler';
-import useModals from '../../../containers/modals/useModals';
+import { useHandler, useModals } from '../../../hooks';
 import Icon from '../../icon/Icon';
 
 import InsertImageModal from '../modals/InsertImageModal';
@@ -28,14 +27,7 @@ import SquireToolbarFontSizeDropdown from './SquireToolbarFontSizeDropdown';
 import SquireToolbarFontColorsDropdown from './SquireToolbarFontColorsDropdown';
 import SquireToolbarAlignmentDropdown from './SquireToolbarAlignmentDropdown';
 import SquireToolbarMoreDropdown from './SquireToolbarMoreDropdown';
-import { SquireEditorMetadata } from '../SquireEditor';
-
-export enum ALIGNMENT {
-    Left = 'left',
-    Center = 'center',
-    Justify = 'justify',
-    Right = 'right',
-}
+import { ALIGNMENT, SquireEditorMetadata } from '../interface';
 
 interface Props {
     metadata: SquireEditorMetadata;

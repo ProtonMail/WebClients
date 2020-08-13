@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Select } from 'react-components';
 import { CYCLE, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
+
+import { Select } from '../../components';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 

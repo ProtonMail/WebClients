@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
+import { deleteSubscription } from 'proton-shared/lib/api/payments';
+import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
+import { Button } from '../../../components';
 import {
-    Button,
-    DowngradeModal,
-    LossLoyaltyModal,
     useApi,
     useUser,
     useNotifications,
@@ -12,10 +13,9 @@ import {
     useEventManager,
     useOrganization,
     useSubscription,
-} from 'react-components';
-import { c } from 'ttag';
-import { deleteSubscription } from 'proton-shared/lib/api/payments';
-import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
+} from '../../../hooks';
+import LossLoyaltyModal from '../LossLoyaltyModal';
+import DowngradeModal from '../DowngradeModal';
 
 const DOWNGRADING_ID = 'downgrading-notification';
 

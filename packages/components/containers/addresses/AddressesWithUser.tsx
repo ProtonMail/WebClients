@@ -3,21 +3,12 @@ import { c } from 'ttag';
 import { move } from 'proton-shared/lib/helpers/array';
 import { orderAddress } from 'proton-shared/lib/api/addresses';
 import { Address, UserModel } from 'proton-shared/lib/interfaces';
-import {
-    useApi,
-    useEventManager,
-    useAddresses,
-    Alert,
-    OrderableTable,
-    OrderableTableHeader,
-    OrderableTableBody,
-    OrderableTableRow,
-} from '../../index';
+import { Alert, OrderableTable, OrderableTableHeader, OrderableTableBody, OrderableTableRow } from '../../components';
+import { useApi, useEventManager, useAddresses, useNotifications } from '../../hooks';
 
 import AddressStatus from './AddressStatus';
 import AddressActions from './AddressActions';
 import { getStatus } from './helper';
-import useNotifications from '../notifications/useNotifications';
 
 interface Props {
     user: UserModel;

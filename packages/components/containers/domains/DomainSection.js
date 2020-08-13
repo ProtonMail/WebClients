@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Alert, Row, Label, Input, Field } from 'react-components';
+import { Alert, Row, Label, Input, Field } from '../../components';
 
 const DomainSection = ({ domain, onChange }) => {
     const [domainName, updateDomainName] = useState(domain.DomainName || '');

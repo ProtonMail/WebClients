@@ -8,7 +8,8 @@ import {
     ConditionType,
     ConditionComparator,
 } from 'proton-shared/lib/filters/interfaces';
-import { classnames, Icon } from '../../..';
+import { Icon } from '../../../components';
+import { classnames } from '../../../helpers';
 
 interface Props {
     isNarrow: boolean;

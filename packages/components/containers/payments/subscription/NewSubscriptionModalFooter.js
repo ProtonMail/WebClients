@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useAddresses, Button, Loader } from 'react-components';
 import { c } from 'ttag';
 import { CYCLE, COUPON_CODES, PLANS, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { clearPlanIDs } from 'proton-shared/lib/helpers/subscription';
@@ -10,6 +9,8 @@ import percentageSvg from 'design-system/assets/img/shared/percentage.svg';
 import clockSvg from 'design-system/assets/img/shared/clock.svg';
 import tickSvg from 'design-system/assets/img/shared/tick.svg';
 
+import { Button, Loader } from '../../../components';
+import { useAddresses } from '../../../hooks';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 const TickIcon = () => <img className="mr0-5 flex-item-noshrink" src={tickSvg} alt="checkmark" />;

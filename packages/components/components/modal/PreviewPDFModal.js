@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { FormModal } from 'react-components';
+import FormModal from './FormModal';
 
 const PreviewPDFModal = ({ url, title = c('Title').t`Preview`, filename, ...rest }) => {
     return (

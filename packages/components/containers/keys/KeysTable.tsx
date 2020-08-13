@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Copy, Table, TableCell, TableRow, TableBody } from '../../index';
+import { Table, TableCell, TableRow, TableBody } from '../../components/table';
+import Copy from '../../components/button/Copy';
 
 import KeysActions from './KeysActions';
 import KeysStatus from './KeysStatus';

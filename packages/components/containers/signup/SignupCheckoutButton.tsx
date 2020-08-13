@@ -2,8 +2,10 @@ import React from 'react';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
-import { PrimaryButton, PayPalButton, classnames } from '../../index';
+import { PrimaryButton } from '../../components';
+import { classnames } from '../../helpers';
 import { SubscriptionCheckResult, SignupPayPal } from './interfaces';
+import { PayPalButton } from '../payments';
 
 interface Props {
     className?: string;

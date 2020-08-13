@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { Block, Alert, Loader, useFilters, useApiWithoutResult, useEventManager } from 'react-components';
 import { arrayMove } from 'react-sortable-hoc';
 import { updateFilterOrder } from 'proton-shared/lib/api/filters';
 
+import { Block, Alert, Loader } from '../../components';
+import { useFilters, useApiWithoutResult, useEventManager } from '../../hooks';
 import FilterSortableList from './SortableList';
 import ActionsFilterToolbar from './ActionsFilterToolbar';
 

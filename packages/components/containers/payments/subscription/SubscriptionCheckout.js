@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
-import { CurrencySelector, CycleSelector, Price, useConfig, classnames, Info } from 'react-components';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { orderBy } from 'proton-shared/lib/helpers/array';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { PLAN_SERVICES, PLAN_TYPES, CYCLE, PLANS, ADDON_NAMES, APPS } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { Price, Info } from '../../../components';
+import { useConfig } from '../../../hooks';
+import { classnames } from '../../../helpers';
+import CycleSelector from '../CycleSelector';
+import CurrencySelector from '../CurrencySelector';
 
 import { getSubTotal } from './helpers';
 import CycleDiscountBadge from '../CycleDiscountBadge';

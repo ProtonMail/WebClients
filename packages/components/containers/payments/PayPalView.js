@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Alert, DoNotWindowOpenAlertError, Price, Loader } from 'react-components';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from 'proton-shared/lib/constants';
 import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
@@ -8,6 +7,7 @@ import paypalSvgLight from 'design-system/assets/img/shared/bank-icons/cc-paypal
 import paypalSvgDark from 'design-system/assets/img/shared/bank-icons/cc-paypal-dark.svg';
 import { c } from 'ttag';
 
+import { Alert, DoNotWindowOpenAlertError, Price, Loader } from '../../components';
 import PayPalButton from './PayPalButton';
 
 const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {

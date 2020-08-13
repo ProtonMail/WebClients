@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
+import { querySessions, revokeOtherSessions, revokeSession } from 'proton-shared/lib/api/auth';
+import { ELEMENTS_PER_PAGE } from 'proton-shared/lib/constants';
 import {
     Button,
     Table,
@@ -11,15 +13,9 @@ import {
     Alert,
     Block,
     ConfirmModal,
-    useApi,
-    useAuthentication,
-    useModals,
-    useLoading,
     usePagination,
-    useNotifications,
-} from 'react-components';
-import { querySessions, revokeOtherSessions, revokeSession } from 'proton-shared/lib/api/auth';
-import { ELEMENTS_PER_PAGE } from 'proton-shared/lib/constants';
+} from '../../components';
+import { useApi, useAuthentication, useModals, useLoading, useNotifications } from '../../hooks';
 
 import SessionAction from './SessionAction';
 

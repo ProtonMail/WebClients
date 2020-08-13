@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    FormModal,
-    Alert,
-    Row,
-    Field,
-    Label,
-    useApiWithoutResult,
-    useEventManager,
-    useNotifications,
-    useLoading,
-} from 'react-components';
 import { validateCredit, buyCredit } from 'proton-shared/lib/api/payments';
 import { isValid } from 'proton-shared/lib/helpers/giftCode';
+
+import { FormModal, Alert, Row, Field, Label } from '../../components';
+import { useApiWithoutResult, useEventManager, useNotifications, useLoading } from '../../hooks';
 
 import GiftCodeInput from './GiftCodeInput';
 

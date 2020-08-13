@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { getOrganizationKeys } from 'proton-shared/lib/api/organization';
-import { useAuthentication, useApi } from '../index';
+import useApi from './useApi';
+import useAuthentication from './useAuthentication';
 
 export interface OrganizationKey {
     Key: {

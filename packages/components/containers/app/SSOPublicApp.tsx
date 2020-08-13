@@ -5,9 +5,11 @@ import { resumeSession } from 'proton-shared/lib/authentication/persistedSession
 import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 
+import { useApi, useNotifications } from '../../hooks';
 import LoaderPage from './LoaderPage';
 import ModalsChildren from '../modals/Children';
-import { ProtonLoginCallback, StandardLoadError, useApi, useNotifications } from '../../index';
+import StandardLoadError from './StandardLoadError';
+import { ProtonLoginCallback } from './interface';
 
 interface Props {
     onLogin: ProtonLoginCallback;

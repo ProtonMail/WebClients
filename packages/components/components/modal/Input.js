@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { FormModal, Input, TextArea, Label, Row, Field } from 'react-components';
+import FormModal from './FormModal';
+import Input from '../input/Input';
+import TextArea from '../input/TextArea';
+import Label from '../label/Label';
+import Row from '../container/Row';
+import Field from '../container/Field';
 
-import { generateUID } from '../../helpers/component';
+import { generateUID } from '../../helpers';
 
 const InputField = ({ type, id, value, placeholder, onChange }) => {
     if (type === 'textarea') {

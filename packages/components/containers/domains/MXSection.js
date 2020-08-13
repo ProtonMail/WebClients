@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Label, Table, TableHeader, TableBody, TableRow } from 'react-components';
+import { Alert, Label, Table, TableHeader, TableBody, TableRow } from '../../components';
 
 const MXSection = () => {
     return (

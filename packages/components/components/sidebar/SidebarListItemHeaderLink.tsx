@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '../../index';
+import Icon from '../icon/Icon';
 import AppLink, { Props as LinkProps } from '../link/AppLink';
 
 interface Props extends LinkProps {

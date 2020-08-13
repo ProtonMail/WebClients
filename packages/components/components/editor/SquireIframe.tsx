@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect, forwardRef, Ref } from 'react';
 
 import { noop } from 'proton-shared/lib/helpers/function';
-import { useHandler } from '../../hooks/useHandler';
+import { useHandler } from '../../hooks';
 import { SquireType, getSquireRef, setSquireRef, initSquire } from './squireConfig';
 import { pasteFileHandler } from './squireActions';
-import { SquireEditorMetadata } from './SquireEditor';
+import { SquireEditorMetadata } from './interface';
 
 const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div>' || html === '<div><br></div>';
 

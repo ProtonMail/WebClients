@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'react-components';
+import Icon from '../icon/Icon';
 
 const Information = ({ icon = 'info', children }) => {
     return (

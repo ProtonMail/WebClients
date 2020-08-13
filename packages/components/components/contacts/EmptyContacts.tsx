@@ -1,12 +1,13 @@
 import React from 'react';
 import { c } from 'ttag';
 
+import noContactsImgLight from 'design-system/assets/img/shared/empty-address-book.svg';
+import noContactsImgDark from 'design-system/assets/img/shared/empty-address-book-dark.svg';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import noContactsImgLight from 'design-system/assets/img/shared/empty-address-book.svg';
-import noContactsImgDark from 'design-system/assets/img/shared/empty-address-book-dark.svg';
-import useModals from '../../containers/modals/useModals';
+import { useModals } from '../../hooks';
+
 import ContactModal from '../../containers/contacts/modals/ContactModal';
 import { PrimaryButton } from '../button';
 

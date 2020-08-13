@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { useUser } from '../../hooks/useUser';
-import { useAddresses } from '../../hooks/useAddresses';
+import { useAddresses, useUser } from '../../hooks';
 import BugModal from './BugModal';
 
 interface Props {

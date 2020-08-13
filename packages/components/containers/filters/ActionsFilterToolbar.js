@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Button, PrimaryButton, useModals } from 'react-components';
+import { Button, PrimaryButton } from '../../components';
+import { useModals } from '../../hooks';
 
 import FilterModal from './modal/FilterModal';
 import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Table, TableHeader, TableBody, TableRow } from 'react-components';
+import { Table, TableHeader, TableBody, TableRow } from '../../components';
 
 import DomainStatus from './DomainStatus';
 import DomainActions from './DomainActions';

@@ -1,6 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, useSubscription, useUser, MozillaInfoPanel } from 'react-components';
+
+import { useSubscription, useUser } from '../../hooks';
+import { Alert } from '../../components';
+
+import MozillaInfoPanel from './MozillaInfoPanel';
 import NewsCheckboxes from './NewsCheckboxes';
 
 const NewsSection = () => {

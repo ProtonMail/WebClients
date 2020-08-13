@@ -11,7 +11,7 @@ import { ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
 
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import { Table, TableBody, TableRow } from '../table';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import Badge from '../badge/Badge';
 import DropdownActions from '../dropdown/DropdownActions';
 import KeyWarningIcon from '../icon/KeyWarningIcon';

@@ -19,9 +19,9 @@ import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import { replaceUrl } from 'proton-shared/lib/helpers/browser';
 import { getAppHref } from 'proton-shared/lib/apps/helper';
 
+import { MimeIcons, Icons } from '../../components';
 import Signout from './Signout';
 import CompatibilityCheck from './CompatibilityCheck';
-import Icons from '../../components/icon/Icons';
 import ConfigProvider from '../config/Provider';
 import NotificationsProvider from '../notifications/Provider';
 import ModalsProvider from '../modals/Provider';
@@ -34,8 +34,8 @@ import RightToLeftProvider from '../rightToLeft/Provider';
 import { setTmpEventID } from './loadEventID';
 import clearKeyCache from './clearKeyCache';
 import useInstance from '../../hooks/useInstance';
-import { PreventLeaveProvider } from '../../hooks/usePreventLeave';
-import { MimeIcons, OnLoginCallbackArguments } from '../../index';
+import { PreventLeaveProvider } from '../../hooks';
+import { OnLoginCallbackArguments } from './interface';
 
 interface Props {
     config: ProtonConfig;

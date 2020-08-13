@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Icon, classnames } from '../../index';
+import { classnames } from '../../helpers';
+import Icon from '../../components/icon/Icon';
 
 interface Props {
     children: React.ReactNode;

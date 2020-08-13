@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, useNotifications } from 'react-components';
 import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import { Button } from '../../components';
+import { useNotifications } from '../../hooks';
 
 const PayPalButton = ({ amount, type, children, className, paypal }) => {
     const [retry, setRetry] = useState(false);

@@ -2,22 +2,13 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
-import {
-    Icon,
-    Dropdown,
-    useModals,
-    AuthenticatedBugModal,
-    useAuthentication,
-    usePopperAnchor,
-    generateUID,
-    useConfig,
-    BugModal,
-    DropdownMenu,
-    DropdownMenuButton,
-    DropdownMenuLink,
-} from '../..';
+import { Icon, Dropdown, usePopperAnchor, DropdownMenu, DropdownMenuButton, DropdownMenuLink } from '../../components';
+import { useModals, useAuthentication, useConfig } from '../../hooks';
+import BugModal from '../support/BugModal';
+import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 
 import AccountSupportDropdownButton from './AccountSupportDropdownButton';
+import { generateUID } from '../../helpers';
 
 interface Props {
     className?: string;
@@ -81,11 +72,7 @@ const AccountSupportDropdown = ({ className, children, noCaret = false }: Props)
                                 {c('Link').t`Common login problems`}
                             </DropdownMenuLink>
                             <DropdownMenuLink
-                                href={
-                                    isVPN
-                                        ? 'https://protonvpn.com/support/'
-                                        : 'https://protonmail.com/support/'
-                                }
+                                href={isVPN ? 'https://protonvpn.com/support/' : 'https://protonmail.com/support/'}
                                 target="_blank"
                                 className="flex flex-nowrap alignleft"
                             >
@@ -99,11 +86,7 @@ const AccountSupportDropdown = ({ className, children, noCaret = false }: Props)
                         <>
                             <DropdownMenuLink
                                 className="flex flex-nowrap alignleft"
-                                href={
-                                    isVPN
-                                        ? 'https://protonvpn.com/support/'
-                                        : 'https://protonmail.com/support/'
-                                }
+                                href={isVPN ? 'https://protonvpn.com/support/' : 'https://protonmail.com/support/'}
                                 target="_blank"
                             >
                                 <Icon className="mt0-25 mr0-5" name="what-is-this" />

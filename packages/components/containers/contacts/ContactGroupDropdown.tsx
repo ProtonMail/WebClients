@@ -6,15 +6,17 @@ import { labelContactEmails, unLabelContactEmails } from 'proton-shared/lib/api/
 import { ContactEmail, ContactGroup, Contact } from 'proton-shared/lib/interfaces/contacts/Contact';
 
 import ContactGroupDropdownButton from '../../components/contacts/ContactGroupDropdownButton';
-import useLoading from '../../hooks/useLoading';
 import { usePopperAnchor } from '../../components/popper';
-import useNotifications from '../notifications/useNotifications';
-import useEventManager from '../eventManager/useEventManager';
-import useApi from '../api/useApi';
-import useModals from '../modals/useModals';
-import useContacts from '../../hooks/useContacts';
-import { generateUID } from '../../helpers/component';
-import { useContactGroups } from '../../hooks/useCategories';
+import {
+    useLoading,
+    useContacts,
+    useApi,
+    useNotifications,
+    useEventManager,
+    useContactGroups,
+    useModals,
+} from '../../hooks';
+import { generateUID } from '../../helpers';
 import Dropdown from '../../components/dropdown/Dropdown';
 import Tooltip from '../../components/tooltip/Tooltip';
 import Icon from '../../components/icon/Icon';

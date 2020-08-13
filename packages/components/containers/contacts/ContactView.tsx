@@ -5,11 +5,10 @@ import { CachedKey } from 'proton-shared/lib/interfaces';
 import { CryptoProcessingError } from 'proton-shared/lib/contacts/decrypt';
 import { singleExport } from 'proton-shared/lib/contacts/export';
 
+import { useModals, useActiveBreakpoint } from '../../hooks';
 import ContactSummary from '../../components/contacts/ContactSummary';
 import ContactViewProperties from '../../components/contacts/ContactViewProperties';
-import useModals from '../modals/useModals';
-import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 import ContactViewErrors from './ContactViewErrors';
 import ContactModal from './modals/ContactModal';

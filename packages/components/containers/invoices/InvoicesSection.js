@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
+import { queryInvoices } from 'proton-shared/lib/api/payments';
+import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE } from 'proton-shared/lib/constants';
 import {
     Alert,
     Group,
@@ -7,20 +9,16 @@ import {
     Block,
     Button,
     Table,
-    MozillaInfoPanel,
     TableCell,
     TableBody,
     Pagination,
     usePaginationAsync,
     TableRow,
     Time,
-    useModals,
-    useSubscription,
-    useUser,
-} from 'react-components';
-import { queryInvoices } from 'proton-shared/lib/api/payments';
-import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE } from 'proton-shared/lib/constants';
+} from '../../components';
+import { useModals, useSubscription, useUser } from '../../hooks';
 
+import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import useApiResult from '../../hooks/useApiResult';
 import InvoiceAmount from './InvoiceAmount';
 import InvoiceType from './InvoiceType';

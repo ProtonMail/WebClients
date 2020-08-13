@@ -3,7 +3,9 @@ import { c } from 'ttag';
 
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Actions } from 'proton-shared/lib/filters/interfaces';
-import { Checkbox, Button, Tooltip, classnames, Icon, useModals, LabelStack } from '../../..';
+import { Checkbox, Button, Tooltip, Icon, LabelStack } from '../../../components';
+import { classnames } from '../../../helpers';
+import { useModals } from '../../../hooks';
 
 import EditLabelModal from '../../labels/modals/Edit';
 

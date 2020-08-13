@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { queryUnlock } from 'proton-shared/lib/api/user';
-import { useApi, FormModal, Row, Label, Field, PasswordInput } from '../../index';
+import { FormModal, Row, Label, Field, PasswordInput } from '../../components';
+import { useApi } from '../../hooks';
 
 interface Props {
     onSuccess?: () => void;

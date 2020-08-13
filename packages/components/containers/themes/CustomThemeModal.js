@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { FormModal, PrimaryButton, Label, Alert, TextArea } from 'react-components';
+import { FormModal, PrimaryButton, Label, Alert, TextArea } from '../../components';
 
 const CustomThemeModal = ({ onSave, theme: initialTheme = '', ...rest }) => {
     const [theme, setTheme] = useState(initialTheme);

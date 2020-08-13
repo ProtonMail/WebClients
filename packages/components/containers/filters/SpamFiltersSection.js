@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import {
-    Alert,
-    useApiResult,
-    useApiWithoutResult,
-    useApi,
-    useNotifications,
-    useModals,
-    SearchInput,
-} from 'react-components';
-import {
     getIncomingDefaults,
     updateIncomingDefault,
     deleteIncomingDefaults,
 } from 'proton-shared/lib/api/incomingDefaults';
 import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
+import { Alert, SearchInput } from '../../components';
+import { useApiResult, useApiWithoutResult, useApi, useNotifications, useModals } from '../../hooks';
 
 import useSpamList from '../../hooks/useSpamList';
 import SpamListItem from './spamlist/SpamListItem';

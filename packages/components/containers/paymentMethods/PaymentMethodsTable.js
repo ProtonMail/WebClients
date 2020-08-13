@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Table, TableHeader, TableBody, TableRow, Alert } from 'react-components';
 import PropTypes from 'prop-types';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { orderBy } from 'proton-shared/lib/helpers/array';
 
+import { Table, TableHeader, TableBody, TableRow, Alert } from '../../components';
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
 

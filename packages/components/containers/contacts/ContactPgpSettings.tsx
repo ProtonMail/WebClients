@@ -8,14 +8,9 @@ import { MailSettings, ContactPublicKeyModel } from 'proton-shared/lib/interface
 import { CONTACT_PGP_SCHEMES, MIME_TYPES_MORE } from 'proton-shared/lib/constants';
 import ContactSchemeSelect from '../../components/contacts/ContactSchemeSelect';
 import ContactKeysTable from '../../components/contacts/ContactKeysTable';
-import useNotifications from '../notifications/useNotifications';
-import Alert from '../../components/alert/Alert';
-import Row from '../../components/container/Row';
-import Label from '../../components/label/Label';
-import Info from '../../components/link/Info';
-import Field from '../../components/container/Field';
+import { useNotifications } from '../../hooks';
+import { Alert, Row, Label, Info, Field, Toggle } from '../../components';
 import SelectKeyFiles from '../keys/shared/SelectKeyFiles';
-import Toggle from '../../components/toggle/Toggle';
 
 interface Props {
     model: ContactPublicKeyModel;

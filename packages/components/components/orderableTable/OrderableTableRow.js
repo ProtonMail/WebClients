@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'react-components';
-
+import Icon from '../icon/Icon';
 import { TableRow } from '../table';
 import { OrderableElement, OrderableHandle } from '../orderable';
 

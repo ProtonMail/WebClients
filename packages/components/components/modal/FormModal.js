@@ -1,17 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    FooterModal,
-    DialogModal,
-    HeaderModal,
-    ContentModal,
-    InnerModal,
-    ResetButton,
-    PrimaryButton,
-    Icon
-} from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
+import FooterModal from './Footer';
+import DialogModal from './Dialog';
+import HeaderModal from './Header';
+import ContentModal from './Content';
+import InnerModal from './Inner';
+import { ResetButton, PrimaryButton } from '../button';
+import Icon from '../icon/Icon';
 
 /** @type any */
 const Modal = ({

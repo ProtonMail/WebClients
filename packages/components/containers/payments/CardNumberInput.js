@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, Icon } from 'react-components';
 import creditCardType from 'credit-card-type';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { isNumber } from 'proton-shared/lib/helpers/validators';
 
 const banks = require.context('design-system/assets/img/shared/bank-icons', true, /.svg$/);
+
+import { Input, Icon } from '../../components';
 
 const banksMap = banks.keys().reduce((acc, key) => {
     acc[key] = () => banks(key);

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Price } from 'react-components';
 import PropTypes from 'prop-types';
 import { INVOICE_STATE } from 'proton-shared/lib/constants';
+import { Price } from '../../components';
 
 const InvoiceAmount = ({ invoice }) => {
     const format = ({ State, AmountCharged = 0, AmountDue = 0 }) => {

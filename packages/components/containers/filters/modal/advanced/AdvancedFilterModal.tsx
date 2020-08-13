@@ -8,21 +8,19 @@ import { convertModel } from 'proton-shared/lib/filters/utils';
 import { templates as sieveTemplates } from 'proton-shared/lib/filters/sieve';
 
 import { noop } from 'proton-shared/lib/helpers/function';
+import { FormModal, ConfirmModal, Alert, useDebounceInput } from '../../../../components';
+
 import {
-    FormModal,
     useModals,
     useLoading,
     useApi,
     useFilters,
     useActiveBreakpoint,
     useMailSettings,
-    useDebounceInput,
     useNotifications,
     useEventManager,
     useApiWithoutResult,
-    ConfirmModal,
-    Alert,
-} from '../../../..';
+} from '../../../../hooks';
 
 import FilterNameForm from '../FilterNameForm';
 import HeaderAdvancedFilterModal from './HeaderAdvancedFilterModal';

@@ -11,9 +11,9 @@ import {
     InlineLinkButton,
     Label,
     Challenge,
-    useLoading,
     FullLoader,
-} from '../../index';
+} from '../../components';
+import { useLoading } from '../../hooks';
 
 import { SignupModel, SignupErrors, SERVICES } from './interfaces';
 import { SIGNUP_STEPS } from './constants';

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, classnames, LinkButton, Icon } from 'react-components';
 import { c } from 'ttag';
+import { Button, LinkButton, Icon } from '../../../components';
+import { classnames } from '../../../helpers';
 
 const SubscriptionTable = ({
     plans,

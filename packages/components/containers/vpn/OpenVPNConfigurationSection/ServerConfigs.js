@@ -1,7 +1,9 @@
 import React, { useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { groupWith, compare } from 'proton-shared/lib/helpers/array';
-import { Details, Summary, useUser, useUserVPN, classnames } from 'react-components';
+import { Details, Summary } from '../../../components';
+import { useUser, useUserVPN } from '../../../hooks';
+import { classnames } from '../../../helpers';
 import { isSecureCoreEnabled } from './utils';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import Country from './Country';

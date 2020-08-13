@@ -3,8 +3,8 @@ import { useCallback } from 'react';
 import { Api } from 'proton-shared/lib/interfaces';
 import { queryScopes } from 'proton-shared/lib/api/auth';
 
-import useApi from '../containers/api/useApi';
-import useCache from '../containers/cache/useCache';
+import useApi from './useApi';
+import useCache from './useCache';
 import useCachedModelResult from './useCachedModelResult';
 
 const KEY = 'userScopes';

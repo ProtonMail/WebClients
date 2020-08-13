@@ -1,7 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import FileIcon from '../../components/fileIcon/FileIcon';
-import Icon from '../../components/icon/Icon';
+import { Icon, FileIcon } from '../../components';
 
 interface Props {
     name?: string;

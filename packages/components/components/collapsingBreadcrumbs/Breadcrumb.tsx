@@ -1,5 +1,5 @@
 import React, { Ref } from 'react';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 interface Props extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'onClick'> {
     children: string;

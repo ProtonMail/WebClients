@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy, useNotifications } from 'react-components';
+import { useNotifications } from '../../hooks';
+import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy } from '../../components';
 
 const DMARCSection = () => {
     const none = <strong key="none">p=none</strong>;

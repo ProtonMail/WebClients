@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 interface Props {
     size?: number;

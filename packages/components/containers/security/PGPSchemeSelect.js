@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import { Select } from 'react-components';
+import { Select } from '../../components';
 
 const PGPSchemeSelect = ({ pgpScheme, ...rest }) => {
     const options = [

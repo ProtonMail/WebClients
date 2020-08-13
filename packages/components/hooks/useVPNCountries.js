@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useApi, useLoading } from 'react-components';
 import { queryVPNLogicalServerInfo } from 'proton-shared/lib/api/vpn';
+import useApi from './useApi';
+import useLoading from './useLoading';
 
 const useVPNCountries = () => {
     const api = useApi();

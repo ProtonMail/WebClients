@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { msgid, c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
-import { SimpleDropdown, DropdownMenu } from 'react-components';
-import { AppLink } from '../../index';
+import { AppLink, SimpleDropdown, DropdownMenu } from '../../components';
 
 const MemberAddresses = ({ member, addresses }) => {
     const list = addresses.map(({ ID, Email }) => (

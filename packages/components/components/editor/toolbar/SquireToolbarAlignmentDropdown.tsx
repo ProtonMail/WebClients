@@ -5,7 +5,7 @@ import SquireToolbarDropdown from './SquireToolbarDropdown';
 import Icon from '../../icon/Icon';
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
-import { ALIGNMENT } from './SquireToolbar';
+import { ALIGNMENT } from '../interface';
 
 interface Props {
     handleAlignment: (alignment: ALIGNMENT) => () => void;

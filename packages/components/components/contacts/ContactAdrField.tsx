@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { ADDRESS_COMPONENTS } from 'proton-shared/lib/contacts/constants';
 
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 import Input from '../input/Input';
 
 const { POST_BOX, EXTENDED, STREET, LOCALITY, REGION, POSTAL_CODE, COUNTRY } = ADDRESS_COMPONENTS;

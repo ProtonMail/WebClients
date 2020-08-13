@@ -4,7 +4,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { decryptCalendarKeys, decryptPassphrase, getAddressesMembersMap } from 'proton-shared/lib/keys/calendarKeys';
 import { Address } from 'proton-shared/lib/interfaces';
 import { MemberPassphrase } from 'proton-shared/lib/interfaces/calendar';
-import useCache from '../containers/cache/useCache';
+import useCache from './useCache';
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';

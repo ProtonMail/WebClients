@@ -1,18 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 import { APPS, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import {
-    PrimaryButton,
-    Alert,
-    Block,
-    Loader,
-    MozillaInfoPanel,
-    useModals,
-    useSubscription,
-    useConfig,
-    usePaymentMethods,
-} from 'react-components';
+import { useModals, useSubscription, useConfig, usePaymentMethods } from '../../hooks';
+import { PrimaryButton, Alert, Block, Loader } from '../../components';
 
+import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import EditCardModal from '../payments/EditCardModal';
 import PayPalModal from '../payments/PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';

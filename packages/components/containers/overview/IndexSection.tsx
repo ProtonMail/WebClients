@@ -1,6 +1,6 @@
 import React from 'react';
-import { usePermissions } from '../../index';
-import { classnames } from '../../helpers/component';
+import { usePermissions } from '../../hooks';
+import { classnames } from '../../helpers';
 
 import Sections from './Sections';
 import { SectionConfig } from '../../components/layout';

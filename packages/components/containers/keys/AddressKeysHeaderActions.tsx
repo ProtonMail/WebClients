@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Block, DropdownActions } from '../..';
+import { Block, DropdownActions } from '../../components';
 
 interface Props {
     onAddKey?: () => void;

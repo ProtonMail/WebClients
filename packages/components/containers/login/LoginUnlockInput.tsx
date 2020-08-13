@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import React from 'react';
-import { Input } from '../../index';
+import { Input } from '../../components';
 
 interface Props {
     password: string;

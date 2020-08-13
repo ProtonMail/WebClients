@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { FormModal } from 'react-components';
+import { FormModal } from '../../components';
 
 import AddressesTable from './AddressesTable';
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PrimaryButton, useConfig, Href } from 'react-components';
 import { APPS, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import mailLandscapeSvg from 'design-system/assets/img/pm-images/landscape.svg';
 import vpnLandscapeSvg from 'design-system/assets/img/pv-images/landscape.svg';
 import appStoreSvg from 'design-system/assets/img/shared/app-store.svg';
 import playStoreSvg from 'design-system/assets/img/shared/play-store.svg';
+import { PrimaryButton, Href } from '../../../components';
+import { useConfig } from '../../../hooks';
 
 const SubscriptionThanks = ({ method = '', onClose }) => {
     const { APP_NAME } = useConfig();
@@ -40,7 +41,6 @@ const SubscriptionThanks = ({ method = '', onClose }) => {
                         isVPN
                             ? 'https://itunes.apple.com/us/app/protonvpn-fast-secure-vpn/id1437005085'
                             : 'https://apps.apple.com/app/protonmail-encrypted-email/id979659905'
-
                     }
                 >
                     <img width="150" src={appStoreSvg} alt="App Store" />

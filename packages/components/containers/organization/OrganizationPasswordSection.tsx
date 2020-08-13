@@ -1,21 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 import { USER_ROLES } from 'proton-shared/lib/constants';
-import {
-    Alert,
-    Block,
-    Loader,
-    PrimaryButton,
-    Table,
-    TableBody,
-    TableHeader,
-    TableRow,
-    useMembers,
-    useModals,
-    useNotifications,
-    useOrganization,
-    useOrganizationKey,
-} from '../../index';
+import { Alert, Block, Loader, PrimaryButton, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { useMembers, useModals, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
 
 import ChangeOrganizationPasswordModal from './ChangeOrganizationPasswordModal';
 import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';

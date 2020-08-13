@@ -1,6 +1,6 @@
 import React, { MutableRefObject, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { useConfig } from '../../index';
+import { useConfig } from '../../hooks';
 import { getChallengeURL, handleEvent, normalizeSelectOptions } from './challengeHelper';
 
 const ERROR_TIMEOUT_MS = 10000;

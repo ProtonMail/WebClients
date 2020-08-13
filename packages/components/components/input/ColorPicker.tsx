@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { noop } from 'proton-shared/lib/helpers/function';
 import tinycolor from 'tinycolor2';
-import { Icon, Dropdown, DropdownButton, generateUID, usePopperAnchor, ColorSelector } from '../../index';
+import { Icon } from '../icon';
+import { Dropdown, DropdownButton } from '../dropdown';
+import { generateUID } from '../../helpers';
+import ColorSelector from '../color/ColorSelector';
+import { usePopperAnchor } from '../popper';
 
 interface Props {
     color: string;

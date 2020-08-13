@@ -3,7 +3,8 @@ import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { c } from 'ttag';
 import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
 
-import { FormModal, useLoading, useNotifications } from '../../../index';
+import { FormModal } from '../../../components';
+import { useLoading, useNotifications } from '../../../hooks';
 import './HumanVerificationModal.scss';
 import HumanVerificationForm from './HumanVerificationForm';
 

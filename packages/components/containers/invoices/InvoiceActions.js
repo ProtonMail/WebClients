@@ -2,10 +2,11 @@ import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { INVOICE_STATE } from 'proton-shared/lib/constants';
-import { DropdownActions, useApi, useModals, useNotifications, PreviewPDFModal } from 'react-components';
 import { getInvoice, getPaymentMethodStatus } from 'proton-shared/lib/api/payments';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 
+import { DropdownActions, PreviewPDFModal } from '../../components';
+import { useApi, useModals, useNotifications } from '../../hooks';
 import PayInvoiceModal from './PayInvoiceModal';
 
 const InvoiceActions = ({ invoice, fetchInvoices }) => {

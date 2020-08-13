@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Price } from 'react-components';
-import { classnames } from '../../helpers/component';
+import { Button, Price } from '../../components';
+import { classnames } from '../../helpers';
 
 const AmountButton = ({ value = 0, amount = 0, currency, onSelect, className = '' }) => {
     return (

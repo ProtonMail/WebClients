@@ -1,9 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Alert, Block } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
-import { AppLink } from '../../index';
+import { Alert, Block, AppLink } from '../../components';
 
 const AddressesSection = ({ onClose }) => {
     return (

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import { Badge, Button, LoaderIcon, Table, TableRow, TableHeader, TableBody } from '../../../index';
+import { Badge, Button, LoaderIcon, Table, TableRow, TableHeader, TableBody } from '../../../components';
 
 import SelectKeyFiles from '../shared/SelectKeyFiles';
 

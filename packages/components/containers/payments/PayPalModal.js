@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormModal, PayPal, useApi, Loader, useLoading, useNotifications, useEventManager } from 'react-components';
 import { c } from 'ttag';
 import { setPaymentMethod } from 'proton-shared/lib/api/payments';
+
+import { useApi, useLoading, useNotifications, useEventManager } from '../../hooks';
+import { FormModal, Loader } from '../../components';
+import PayPal from './PayPal';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';

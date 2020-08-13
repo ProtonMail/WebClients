@@ -1,6 +1,6 @@
 import React from 'react';
 import { EMAIL_PLACEHOLDER } from 'proton-shared/lib/constants';
-import { Input } from '../../index';
+import { Input } from '../../components';
 
 interface Props {
     username: string;

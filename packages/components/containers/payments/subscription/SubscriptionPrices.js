@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Price } from 'react-components';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import { Price } from '../../../components';
 
 const FREE_PLAN = {
     Pricing: {

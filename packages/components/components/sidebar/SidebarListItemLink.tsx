@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 export interface Props extends NavLinkProps {
     children: React.ReactNode;

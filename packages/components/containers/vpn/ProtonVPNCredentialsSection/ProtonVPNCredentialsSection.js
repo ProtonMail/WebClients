@@ -1,6 +1,8 @@
 import React from 'react';
-import { Row, Label, Field, Alert, Href, useUser } from 'react-components';
 import { c } from 'ttag';
+
+import { Row, Label, Field, Alert, Href } from '../../../components';
+import { useUser } from '../../../hooks';
 
 const ProtonVPNCredentialsSection = () => {
     const [user] = useUser();

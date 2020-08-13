@@ -1,22 +1,13 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
-import {
-    Icon,
-    Dropdown,
-    useModals,
-    AuthenticatedBugModal,
-    useAuthentication,
-    usePopperAnchor,
-    generateUID,
-    useConfig,
-    BugModal,
-    DropdownMenu,
-    DropdownMenuButton,
-    DropdownMenuLink,
-} from '../..';
+import { Icon, Dropdown, DropdownMenu, DropdownMenuButton, DropdownMenuLink, usePopperAnchor } from '../../components';
+import { useModals, useAuthentication, useConfig } from '../../hooks';
 
+import BugModal from '../support/BugModal';
+import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 import SupportDropdownButton from './SupportDropdownButton';
+import { generateUID } from '../../helpers';
 
 interface Props {
     className?: string;
@@ -52,7 +43,9 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false }: Props) 
                     <DropdownMenuLink
                         className="flex flex-nowrap alignleft"
                         href={
-                            APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com/support/' : 'https://protonmail.com/support/'
+                            APP_NAME === APPS.PROTONVPN_SETTINGS
+                                ? 'https://protonvpn.com/support/'
+                                : 'https://protonmail.com/support/'
                         }
                         // eslint-disable-next-line react/jsx-no-target-blank
                         target="_blank"

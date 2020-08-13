@@ -1,22 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    Alert,
-    Toggle,
-    DropdownActions,
-    ConfirmModal,
-    OrderableTableRow,
-    useApi,
-    useModals,
-    useEventManager,
-    useLoading,
-    useNotifications,
-    ErrorButton,
-} from 'react-components';
 import { isComplex } from 'proton-shared/lib/filters/utils';
 import { FILTER_STATUS } from 'proton-shared/lib/constants';
 import { toggleEnable, deleteFilter } from 'proton-shared/lib/api/filters';
+import { Alert, Toggle, DropdownActions, ConfirmModal, OrderableTableRow, ErrorButton } from '../../components';
+import { useApi, useModals, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 import FilterModal from './modal/FilterModal';
 import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';

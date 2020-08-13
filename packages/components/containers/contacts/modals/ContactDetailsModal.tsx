@@ -5,14 +5,10 @@ import { toMap } from 'proton-shared/lib/helpers/object';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import ContactContainer from '../ContactContainer';
+import { useContactEmails, useModals, useContactGroups, useAddresses, useUserKeys } from '../../../hooks';
 import useContactList from '../useContactList';
 import useContact from '../useContact';
 import useContactProperties from '../useContactProperties';
-import useModals from '../../modals/useModals';
-import useContactEmails from '../../../hooks/useContactEmails';
-import { useContactGroups } from '../../../hooks/useCategories';
-import { useAddresses } from '../../../hooks/useAddresses';
-import { useUserKeys } from '../../../hooks/useUserKeys';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';
 import FormModal from '../../../components/modal/FormModal';

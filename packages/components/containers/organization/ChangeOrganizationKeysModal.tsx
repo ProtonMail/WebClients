@@ -6,6 +6,7 @@ import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib
 import { generateOrganizationKeys, reEncryptOrganizationTokens } from 'proton-shared/lib/keys/organizationKeys';
 import { queryAddresses } from 'proton-shared/lib/api/members';
 import { Address, Member } from 'proton-shared/lib/interfaces';
+import { FormModal, Alert, Row, Label, Field, PasswordInput } from '../../components';
 import {
     useEventManager,
     useLoading,
@@ -14,14 +15,8 @@ import {
     useAuthentication,
     useStep,
     useApi,
-    AuthModal,
-    FormModal,
-    Alert,
-    Row,
-    Label,
-    Field,
-    PasswordInput,
-} from '../../index';
+} from '../../hooks';
+import AuthModal from '../password/AuthModal';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 

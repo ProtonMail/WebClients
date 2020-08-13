@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import unsupportedBrowserSettings from 'design-system/assets/img/shared/unsupported-browser-settings.svg';
 import { APPS } from 'proton-shared/lib/constants';
-import { Href, useConfig } from '../../index';
+import { Href } from '../../components';
+import { useConfig } from '../../hooks';
 
 const isGoodPrngAvailable = () => {
     if (window.crypto && window.crypto.getRandomValues) {

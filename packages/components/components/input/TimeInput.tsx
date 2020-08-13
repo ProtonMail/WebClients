@@ -8,7 +8,7 @@ import { withDecimalPrecision } from 'proton-shared/lib/helpers/math';
 import Input, { Props as InputProps } from './Input';
 import Dropdown from '../dropdown/Dropdown';
 import { usePopperAnchor } from '../popper';
-import { generateUID } from '../../helpers/component';
+import { generateUID } from '../../helpers';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 

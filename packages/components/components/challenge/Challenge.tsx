@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import ChallengeFrame, { Props as ChallengeProps } from './ChallengeFrame';
-import { Alert, Href, Loader } from '../../index';
-import { classnames } from '../../helpers/component';
+import { Alert } from '../alert';
+import { Href } from '../link';
+import { Loader } from '../loader';
+import { classnames } from '../../helpers';
 
 const Challenge = ({ children, style, onLoaded, bodyClassName, ...rest }: Omit<ChallengeProps, 'src'>) => {
     const [isLoading, setIsLoading] = useState(true);

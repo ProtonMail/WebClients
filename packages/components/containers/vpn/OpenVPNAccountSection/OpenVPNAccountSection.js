@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Alert, Row, Field, Label, Copy, PrimaryButton, useUserVPN, useModals } from 'react-components';
 import { c } from 'ttag';
 
+import { Button, Alert, Row, Field, Label, Copy, PrimaryButton } from '../../../components';
+import { useUserVPN, useModals } from '../../../hooks';
 import OpenVPNCredentialsModal from './OpenVPNCredentialsModal';
 
 const OpenVPNAccountSection = () => {

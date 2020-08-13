@@ -2,7 +2,8 @@ import React from 'react';
 import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 
-import { Alert, Payment, SubscriptionCheckout } from '../../index';
+import { Alert } from '../../components';
+import { SubscriptionCheckout, Payment } from '../payments';
 import { SignupModel, SignupPlan, SignupPayPal, SubscriptionCheckResult } from './interfaces';
 import SignupCheckoutButton from './SignupCheckoutButton';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { QRCode } from 'react-components';
+import { QRCode } from '../../components';
 
 const BitcoinQRCode = ({ amount, address, ...rest }) => {
     const url = `bitcoin:${address}?amount=${amount}`;

@@ -2,8 +2,6 @@ import React from 'react';
 import { c } from 'ttag';
 import { setupAddress } from 'proton-shared/lib/api/addresses';
 import {
-    UnlockModal,
-    PrimaryButton,
     useApi,
     useAddresses,
     useLoading,
@@ -13,7 +11,9 @@ import {
     useModals,
     useNotifications,
     usePremiumDomains,
-} from '../../index';
+} from '../../hooks';
+import { PrimaryButton } from '../../components';
+import UnlockModal from '../login/UnlockModal';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 
 const PmMeButton = () => {

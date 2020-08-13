@@ -1,8 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Table, TableHeader, TableBody, TableRow, Time, Alert, Icon } from 'react-components';
 import { LOGS_STATE, AUTH_LOG_EVENTS } from 'proton-shared/lib/constants';
+
+import { Table, TableHeader, TableBody, TableRow, Time, Alert, Icon } from '../../components';
 
 const { DISABLE, ADVANCED } = LOGS_STATE;
 const { LOGIN_FAILURE_PASSWORD, LOGIN_SUCCESS, LOGOUT, LOGIN_FAILURE_2FA, LOGIN_SUCCESS_AWAIT_2FA } = AUTH_LOG_EVENTS;

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
-import { StandardPublicApp, MinimalLoginContainer, OnLoginCallback } from '../../index';
+import StandardPublicApp from './StandardPublicApp';
+import MinimalLoginContainer from '../login/MinimalLoginContainer';
+import { OnLoginCallback } from './interface';
 
 interface Props {
     onLogin: OnLoginCallback;

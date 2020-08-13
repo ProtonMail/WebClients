@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
 import { AutoResponder } from 'proton-shared/lib/interfaces/AutoResponder';
-import useToggle from '../../components/toggle/useToggle';
-import useEventManager from '../eventManager/useEventManager';
-import useApiWithoutResult from '../../hooks/useApiWithoutResult';
-import Toggle from '../../components/toggle/Toggle';
+import { useToggle, useEventManager, useApiWithoutResult } from '../../hooks';
+import { Toggle } from '../../components';
 
 interface Props {
     autoresponder: AutoResponder;

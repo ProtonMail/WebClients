@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Table, TableHeader, TableBody, TableRow, Info } from 'react-components';
+import { Table, TableHeader, TableBody, TableRow, Info } from '../../components';
 
 import AddressStatus from './AddressStatus';
 import AddressCatchAll from './AddressCatchAll';

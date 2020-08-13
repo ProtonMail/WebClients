@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { c } from 'ttag';
 import GenericError from '../error/GenericError';
-import { InlineLinkButton } from '../../index';
+import { InlineLinkButton } from '../../components';
 
 const StandardLoadError = () => {
     useEffect(() => {

@@ -3,7 +3,7 @@ import React from 'react';
 import { APPS, APPS_CONFIGURATION, FEATURE_FLAGS, isSSOMode } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
-import useConfig from '../../containers/config/useConfig';
+import { useConfig } from '../../hooks';
 import MobileNavServices from './MobileNavServices';
 import MobileNavLink from './MobileNavLink';
 

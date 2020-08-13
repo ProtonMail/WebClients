@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormModal, useConfig } from 'react-components';
 import { c } from 'ttag';
 import { CYCLE, APPS, DEFAULT_CURRENCY } from 'proton-shared/lib/constants';
+import { FormModal } from '../../../components';
+import { useConfig } from '../../../hooks';
 
 import VpnFeaturesTable from './VpnFeaturesTable';
 import MailFeaturesTable from './MailFeaturesTable';
@@ -14,7 +15,11 @@ const SubscriptionFeaturesModal = ({ cycle = CYCLE.MONTHLY, currency = DEFAULT_C
 
     return (
         <FormModal title={title} footer={null} {...rest}>
-            {isVPN ? <VpnFeaturesTable cycle={cycle} currency={currency} /> : <MailFeaturesTable cycle={cycle} currency={currency} />}
+            {isVPN ? (
+                <VpnFeaturesTable cycle={cycle} currency={currency} />
+            ) : (
+                <MailFeaturesTable cycle={cycle} currency={currency} />
+            )}
         </FormModal>
     );
 };

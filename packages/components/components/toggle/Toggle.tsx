@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import Icon from '../icon/Icon';
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 const label = (key: string) => {
     const alt = key === 'on' ? c('Toggle button').t`On` : c('Toggle button').t`Off`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Copy } from 'react-components';
+import { Copy } from '../../components';
 
 const BitcoinDetails = ({ amount, address }) => {
     return (

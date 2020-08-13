@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Tooltip, Toggle, useApi, useLoading, useEventManager, useNotifications } from 'react-components';
 import { updateLabel } from 'proton-shared/lib/api/labels';
+import { Tooltip, Toggle } from '../../components';
+import { useApi, useLoading, useEventManager, useNotifications } from '../../hooks';
 
 const ToggleNotify = ({ label }) => {
     const api = useApi();

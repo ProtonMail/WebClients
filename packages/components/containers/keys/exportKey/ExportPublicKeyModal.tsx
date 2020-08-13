@@ -3,7 +3,7 @@ import { getKeys, OpenPGPKey } from 'pmcrypto';
 import { c } from 'ttag';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { KEY_FILE_EXTENSION } from 'proton-shared/lib/constants';
-import { Alert, FormModal } from '../../..';
+import { Alert, FormModal } from '../../../components';
 
 const handleExport = (name: string, publicKey: OpenPGPKey) => {
     const fingerprint = publicKey.getFingerprint();

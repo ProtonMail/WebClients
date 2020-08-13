@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Select, Group, ButtonGroup, classnames } from 'react-components';
 import { CURRENCIES, DEFAULT_CURRENCY } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import { Select, Group, ButtonGroup } from '../../components';
+import { classnames } from '../../helpers';
 
 const addSymbol = (currency) => {
     if (currency === 'EUR') {

@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
-import { SimpleDropdown, DropdownMenu } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
-import AppLink from '../../components/link/AppLink';
+import { AppLink, SimpleDropdown, DropdownMenu } from '../../components';
 
 const DomainAddresses = ({ domainAddresses }) => {
     const list = domainAddresses.map(({ ID, Email }) => (

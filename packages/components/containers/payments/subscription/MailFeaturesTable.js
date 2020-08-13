@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { usePlans, Loader } from 'react-components';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { PLANS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import { Loader } from '../../../components';
+import { usePlans } from '../../../hooks';
 
 import SubscriptionPrices from './SubscriptionPrices';
 

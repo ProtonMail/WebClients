@@ -1,8 +1,9 @@
 import React from 'react';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
-import { Icon, Input } from '../../index';
+import Input from '../input/Input';
+import { Icon } from '../icon';
 
-import { classnames } from '../../helpers/component';
+import { classnames } from '../../helpers';
 
 interface Props {
     selected: string;

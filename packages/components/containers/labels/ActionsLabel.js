@@ -1,19 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    Alert,
-    DropdownActions,
-    ConfirmModal,
-    useApi,
-    useModals,
-    useEventManager,
-    useNotifications,
-    ErrorButton,
-} from 'react-components';
 import { LABEL_TYPE } from 'proton-shared/lib/constants';
 import { deleteLabel } from 'proton-shared/lib/api/labels';
 
+import { Alert, DropdownActions, ConfirmModal, ErrorButton } from '../../components';
+import { useApi, useModals, useEventManager, useNotifications } from '../../hooks';
 import EditLabelModal from './modals/Edit';
 
 function ActionsLabel({ label, onChange }) {

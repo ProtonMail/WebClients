@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 
-import { Title, Href, VpnLogo, MailLogo, FooterDetails, SupportDropdown, useConfig } from '../../index';
+import { Title, Href, VpnLogo, MailLogo } from '../../components';
+import { useConfig, useAppTitle } from '../../hooks';
+
+import SupportDropdown from '../heading/SupportDropdown';
+import FooterDetails from './FooterDetails';
 import PublicHeader from './PublicHeader';
-import useAppTitle from '../../hooks/useAppTitle';
 
 interface Props {
     children?: React.ReactNode;

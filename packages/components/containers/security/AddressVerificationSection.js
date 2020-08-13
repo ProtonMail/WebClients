@@ -1,19 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
-import {
-    Alert,
-    Row,
-    Field,
-    Label,
-    Info,
-    Toggle,
-    useApi,
-    useLoading,
-    useMailSettings,
-    useEventManager,
-    useNotifications,
-} from 'react-components';
+import { Alert, Row, Field, Label, Info, Toggle } from '../../components';
+import { useApi, useLoading, useMailSettings, useEventManager, useNotifications } from '../../hooks';
 
 const AddressVerificationSection = () => {
     const { createNotification } = useNotifications();

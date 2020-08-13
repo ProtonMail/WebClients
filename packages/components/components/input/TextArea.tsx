@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, Ref, ChangeEvent } from 'react';
 
-import { generateUID, classnames } from '../../helpers/component';
+import { generateUID, classnames } from '../../helpers';
 import useAutoGrow from '../../hooks/useAutoGrow';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';

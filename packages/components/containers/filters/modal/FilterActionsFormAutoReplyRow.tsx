@@ -3,7 +3,9 @@ import { c } from 'ttag';
 
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Actions } from 'proton-shared/lib/filters/interfaces';
-import { classnames, Toggle, Tooltip, SimpleSquireEditor, useUser } from '../../..';
+import { Toggle, Tooltip, SimpleSquireEditor } from '../../../components';
+import { useUser } from '../../../hooks';
+import { classnames } from '../../../helpers';
 
 import { SquireEditorRef } from '../../../components/editor/SquireEditor';
 

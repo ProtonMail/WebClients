@@ -2,14 +2,8 @@ import React from 'react';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 import { updateNotifyEmail, updateResetEmail } from 'proton-shared/lib/api/settings';
+import { Toggle, Alert, Label, Row, Field, Info } from '../../components';
 import {
-    AuthModal,
-    Toggle,
-    Alert,
-    Label,
-    Row,
-    Field,
-    Info,
     useApi,
     useModals,
     useUserSettings,
@@ -17,7 +11,8 @@ import {
     useEventManager,
     useNotifications,
     useConfig,
-} from 'react-components';
+} from '../../hooks';
+import AuthModal from '../password/AuthModal';
 import RecoveryEmail from './RecoveryEmail';
 import EmailModal from './EmailModal';
 

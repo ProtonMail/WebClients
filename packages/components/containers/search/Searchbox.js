@@ -1,7 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { SearchInput, Icon, classnames } from 'react-components';
+import { SearchInput, Icon } from '../../components';
+import { classnames } from '../../helpers';
 
 const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = '', onSearch, onChange }) => {
     const handleSubmit = (event) => {

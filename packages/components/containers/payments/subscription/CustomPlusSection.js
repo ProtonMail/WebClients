@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Select } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 import { ADDON_NAMES, PLANS } from 'proton-shared/lib/constants';
 
+import { Select } from '../../../components';
 import PlanPrice from './PlanPrice';
 import { getTextOption, getPlan, getAddon } from './helpers';
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { Alert, Table, TableHeader, TableBody, TableRow, TableCell, Copy, useNotifications } from 'react-components';
 import { DKIM_STATE } from 'proton-shared/lib/constants';
+import { Alert, Table, TableHeader, TableBody, TableRow, TableCell, Copy } from '../../components';
+import { useNotifications } from '../../hooks';
 
 const DKIMSection = ({ domain }) => {
     const { createNotification } = useNotifications();
