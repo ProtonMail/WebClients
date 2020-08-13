@@ -26,10 +26,6 @@ p, ul, ol, dl, blockquote, pre, td, th {
     font: inherit;
     -webkit-appearance: none;
   }
-  // for Safari
-  input, select, textarea {
-	margin: 0;
-  }
   // -webkit-appearance: none makes vocalization failing
   input[type="checkbox"] {
 	-webkit-appearance: checkbox;
