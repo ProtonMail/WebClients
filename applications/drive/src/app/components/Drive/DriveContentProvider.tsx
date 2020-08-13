@@ -18,7 +18,6 @@ interface DriveContentProviderState {
         selectedItems: FileBrowserItem[];
     };
     loading: boolean;
-    initialized: boolean;
     complete?: boolean;
 }
 
@@ -33,7 +32,6 @@ const DriveContentProviderInner = ({
 }) => {
     const cache = useDriveCache();
     const { fetchNextFolderContents } = useDrive();
-    const [initialized, setInitialized] = useState(false);
     const [loading, setLoading] = useState(false);
     const [, setError] = useState();
 
@@ -42,6 +40,8 @@ const DriveContentProviderInner = ({
     );
     const contents = mapLinksToChildren(sortedList, (linkId) => cache.get.isLinkLocked(shareId, linkId));
     const complete = cache.get.childrenComplete(shareId, linkId, sortParams);
+    const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
+    const hasChildren = !!cache.get.listedChildLinks(shareId, linkId)?.length;
 
     const selectionControls = useSelection(
         contents.map((data) => ({
@@ -72,7 +72,6 @@ const DriveContentProviderInner = ({
             if (!signal?.aborted) {
                 contentLoading.current = false;
                 setLoading(false);
-                setInitialized(true);
             }
         } catch (e) {
             const children = cache.get.childLinks(shareId, linkId, sortParams);
@@ -102,7 +101,7 @@ const DriveContentProviderInner = ({
             setLoading(false);
         }
 
-        if (!initialized || !cache.get.listedChildLinks(shareId, linkId)?.length) {
+        if (!isInitialized || !hasChildren) {
             loadNextPage().catch(console.error);
         }
 
@@ -110,7 +109,7 @@ const DriveContentProviderInner = ({
             contentLoading.current = false;
             abortController.abort();
         };
-    }, [loadNextPage]);
+    }, [hasChildren, isInitialized, loadNextPage]);
 
     return (
         <DriveContentContext.Provider
@@ -122,7 +121,6 @@ const DriveContentProviderInner = ({
                 sortParams,
                 contents,
                 complete,
-                initialized,
             }}
         >
             {children}

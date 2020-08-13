@@ -16,7 +16,8 @@ import readableTime from 'proton-shared/lib/helpers/readableTime';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { noop } from 'proton-shared/lib/helpers/function';
-
+import { isEquivalent, pick } from 'proton-shared/lib/helpers/object';
+import { shallowEqual } from 'proton-shared/lib/helpers/array';
 import { FileBrowserItem } from './interfaces';
 import { LinkType } from '../../interfaces/link';
 import LocationCell from './LocationCell';
@@ -243,6 +244,7 @@ const ItemRow = ({
                 onDragOver={unlessDisabled(dragMoveControls?.handleDragOver)}
                 onDrop={unlessDisabled(dragMoveControls?.handleDrop)}
                 onDragLeave={unlessDisabled(dragMoveControls?.handleDragLeave)}
+                onDragEnter={unlessDisabled(dragMoveControls?.handleDragEnter)}
                 onDragEnd={(e) => {
                     e.currentTarget.blur();
                     handleDragEnd();
@@ -265,4 +267,23 @@ const ItemRow = ({
     );
 };
 
-export default ItemRow;
+export default React.memo(ItemRow, (a, b) => {
+    if (isEquivalent(a, b)) {
+        return true;
+    }
+
+    const cheapPropsEqual = isEquivalent(
+        pick(a, ['shareId', 'showLocation', 'secondaryActionActive']),
+        pick(b, ['shareId', 'showLocation', 'secondaryActionActive'])
+    );
+
+    if (!cheapPropsEqual || !isEquivalent(a.item, b.item) || !shallowEqual(a.selectedItems, b.selectedItems)) {
+        return false;
+    }
+
+    const dragControlsEqual =
+        a.dragMoveControls?.dragging === b.dragMoveControls?.dragging &&
+        a.dragMoveControls?.isActiveDropTarget === b.dragMoveControls?.isActiveDropTarget;
+
+    return dragControlsEqual;
+});

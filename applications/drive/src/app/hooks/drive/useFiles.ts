@@ -604,7 +604,7 @@ function useFiles() {
         };
 
         await downloadFolder(linkId);
-        startDownloads();
+        await startDownloads();
         await Promise.all(fileStreamPromises);
     };
 

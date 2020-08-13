@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { LinkType, LinkMeta } from '../../interfaces/link';
 import useDrive from './useDrive';
@@ -10,7 +10,8 @@ import { CUSTOM_DATA_FORMAT } from '../../constants';
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
     handleDrop: (e: React.DragEvent<HTMLTableRowElement>) => void;
-    handleDragLeave: (e: React.DragEvent<HTMLTableRowElement>) => void;
+    handleDragLeave: () => void;
+    handleDragEnter: (e: React.DragEvent<HTMLTableRowElement>) => void;
     dragging: boolean;
     setDragging: (value: boolean) => void;
     isActiveDropTarget: boolean;
@@ -26,11 +27,13 @@ export default function useDriveDragMove(
     const { createMoveLinksNotifications } = useListNotifications();
     const [allDragging, setAllDragging] = useState<FileBrowserItem[]>([]);
     const [activeDropTarget, setActiveDropTarget] = useState<FileBrowserItem>();
+    const dragEnterCounter = useRef(0);
 
     const getHandleItemDrop = <T extends FileBrowserItem | LinkMeta>(item: T) => async (e: React.DragEvent) => {
         const toMove: T[] = JSON.parse(e.dataTransfer.getData(CUSTOM_DATA_FORMAT));
         const toMoveIds = toMove.map(({ LinkID }) => LinkID);
         const parentFolderId = activeFolder?.linkId;
+        dragEnterCounter.current = 0;
 
         clearSelections();
         setActiveDropTarget(undefined);
@@ -56,22 +59,34 @@ export default function useDriveDragMove(
                 ? setAllDragging(selectedItems.some(({ LinkID }) => LinkID === item.LinkID) ? selectedItems : [item])
                 : setAllDragging([]);
 
+        const isActiveDropTarget = activeDropTarget?.LinkID === item.LinkID;
+        const availableTarget =
+            item.Type === LinkType.FOLDER && allDragging.every(({ LinkID }) => item.LinkID !== LinkID);
         const handleDrop = getHandleItemDrop(item);
 
-        const isActiveDropTarget = activeDropTarget?.LinkID === item.LinkID;
         const handleDragOver = (e: React.DragEvent<HTMLTableRowElement>) => {
-            if (item.Type === LinkType.FOLDER && allDragging.every(({ LinkID }) => item.LinkID !== LinkID)) {
+            if (availableTarget) {
                 e.dataTransfer.dropEffect = 'move';
                 e.preventDefault();
-                if (!isActiveDropTarget) {
+                if (dragEnterCounter.current === 1 && !isActiveDropTarget) {
                     setActiveDropTarget(item);
                 }
             }
         };
 
         const handleDragLeave = () => {
-            if (isActiveDropTarget) {
-                setActiveDropTarget(undefined);
+            if (availableTarget) {
+                dragEnterCounter.current -= 1;
+
+                if (dragEnterCounter.current <= 0 && isActiveDropTarget) {
+                    setActiveDropTarget(undefined);
+                }
+            }
+        };
+
+        const handleDragEnter = () => {
+            if (availableTarget) {
+                dragEnterCounter.current += 1;
             }
         };
 
@@ -79,6 +94,7 @@ export default function useDriveDragMove(
             handleDragOver,
             handleDrop,
             handleDragLeave,
+            handleDragEnter,
             dragging,
             setDragging,
             isActiveDropTarget,

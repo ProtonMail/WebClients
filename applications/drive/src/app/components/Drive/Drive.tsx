@@ -1,16 +1,12 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { usePreventLeave, isPreviewAvailable } from 'react-components';
-import useFiles from '../../hooks/drive/useFiles';
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
 import FileBrowser from '../FileBrowser/FileBrowser';
 import { DriveFolder } from './DriveFolderProvider';
-import FileSaver from '../../utils/FileSaver/FileSaver';
 import { useDriveContent } from './DriveContentProvider';
 import EmptyFolder from '../FileBrowser/EmptyFolder';
 import { LinkType } from '../../interfaces/link';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import useDrive from '../../hooks/drive/useDrive';
-import { getMetaForTransfer } from '../../utils/transfer';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 
 interface Props {
@@ -22,18 +18,15 @@ function Drive({ activeFolder, openLink }: Props) {
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const cache = useDriveCache();
     const { getLinkMeta } = useDrive();
-    const { startFileTransfer } = useFiles();
     const {
         loadNextPage,
         fileBrowserControls,
         loading,
         contents,
         complete,
-        initialized,
         sortParams,
         setSorting,
     } = useDriveContent();
-    const { preventLeave } = usePreventLeave();
 
     const { linkId, shareId } = activeFolder;
     const {
@@ -46,6 +39,7 @@ function Drive({ activeFolder, openLink }: Props) {
     } = fileBrowserControls;
 
     const folderName = cache.get.linkMeta(shareId, linkId)?.Name;
+    const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
 
     useEffect(() => {
         if (folderName === undefined) {
@@ -55,28 +49,17 @@ function Drive({ activeFolder, openLink }: Props) {
 
     const handleScrollEnd = useCallback(() => {
         // Only load on scroll after initial load from backend
-        if (initialized && !complete) {
+        if (isInitialized && !complete) {
             loadNextPage();
         }
-    }, [initialized, complete, loadNextPage]);
+    }, [complete, isInitialized, loadNextPage]);
 
     // On content change, check scroll end (does not rebind listeners)
     useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents]);
 
     const handleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
-
-        if (item.Type === LinkType.FOLDER) {
-            openLink(shareId, item.LinkID, item.Type);
-        } else if (item.Type === LinkType.FILE) {
-            if (item.MIMEType && isPreviewAvailable(item.MIMEType)) {
-                openLink(shareId, item.LinkID, item.Type);
-            } else {
-                const meta = getMetaForTransfer(item);
-                const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
-                preventLeave(FileSaver.saveAsFile(fileStream, meta)).catch(console.error);
-            }
-        }
+        openLink(shareId, item.LinkID, item.Type);
     };
 
     return complete && !contents.length && !loading ? (
