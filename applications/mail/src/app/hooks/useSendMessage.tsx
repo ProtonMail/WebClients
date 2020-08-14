@@ -209,10 +209,14 @@ export const useSendMessage = () => {
             // TODO: Implement retry system
             // const suppress = retry ? [API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED] : [];
             // try {
+
+            // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
+            const expiresIn = inputMessage.expiresIn;
+
             const { Sent } = await api(
                 sendMessage(message.data?.ID, {
                     Packages: packages,
-                    ExpiresIn: message.expiresIn === 0 ? undefined : message.expiresIn
+                    ExpiresIn: expiresIn === 0 ? undefined : expiresIn
                 } as any)
             );
             await call();
