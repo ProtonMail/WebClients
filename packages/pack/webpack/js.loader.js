@@ -66,9 +66,9 @@ module.exports = ({ isProduction }, flow) => {
                     '@babel/plugin-proposal-nullish-coalescing-operator',
                     '@babel/plugin-proposal-optional-chaining',
                     ['@babel/plugin-proposal-class-properties', { loose: true }],
-                    require('babel-plugin-lodash'),
+                    require.resolve('babel-plugin-lodash'),
                     '@babel/plugin-transform-runtime',
-                    ...(isProduction ? BABEL_PLUGINS_PRODUCTION : ['react-hot-loader/babel'])
+                    ...(isProduction ? BABEL_PLUGINS_PRODUCTION : [require.resolve('react-refresh/babel')])
                 ]
             }
         }

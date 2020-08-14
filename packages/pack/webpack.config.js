@@ -68,30 +68,25 @@ function main({ port, publicPath, flow, appMode, featureFlags, writeSRI = true }
         bail: isProduction,
         devtool: false,
         watchOptions: {
-            ignored: [
-                createRegex(excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES), excludeFiles(BABEL_EXCLUDE_FILES)),
-                'i18n/*.json',
-                /\*\.(gif|jpeg|jpg|ico|png)/
-            ]
+            ignored: [/node_modules/, 'i18n/*.json', /\*\.(gif|jpeg|jpg|ico|png)/]
         },
         resolve: {
-            symlinks: false,
             extensions: ['.js', '.tsx', '.ts'],
             alias: {
-                // Ensure that the correct package is used when symlinking
-                pmcrypto: path.resolve('./node_modules/pmcrypto'),
-                react: path.resolve('./node_modules/react'),
-                'react-router': path.resolve('./node_modules/react-router'),
-                'react-router-dom': path.resolve('./node_modules/react-router-dom'),
-                'react-dom': isProduction
-                    ? path.resolve('./node_modules/react-dom')
-                    : path.resolve('./node_modules/@hot-loader/react-dom'),
-                'design-system': path.resolve('./node_modules/design-system'),
-                'proton-shared': path.resolve('./node_modules/proton-shared'),
-                'react-components': path.resolve('./node_modules/react-components'),
-                // Else it will use the one from react-component, shared etc. if we use npm link
-                ttag: path.resolve('./node_modules/ttag'),
-                'date-fns': path.resolve('./node_modules/date-fns'),
+                ...[
+                    'react',
+                    'react-dom',
+                    'react-router',
+                    'react-router-dom',
+                    'react-refresh',
+                    'pmcrypto',
+                    'design-system',
+                    'react-components',
+                    'ttag',
+                    'date-fns',
+                    'proton-translations'
+                    // Ensure that the correct package is used when symlinking
+                ].reduce((acc, key) => ({ ...acc, [key]: path.resolve(`./node_modules/${key}`) }), {}),
                 // Custom alias as we're building for the web (mimemessage)
                 iconv: 'iconv-lite'
             }

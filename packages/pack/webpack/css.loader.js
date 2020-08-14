@@ -44,11 +44,17 @@ const getSassLoaders = (isProduction) => {
 
 module.exports = ({ isProduction }) => {
     const sassLoaders = getSassLoaders(isProduction);
+    const miniLoader = {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+            hmr: !isProduction
+        }
+    };
     return [
         {
             test: /\.css$/,
             use: [
-                MiniCssExtractPlugin.loader,
+                miniLoader,
                 {
                     loader: 'css-loader',
                     options: {
@@ -61,7 +67,7 @@ module.exports = ({ isProduction }) => {
         {
             test: /\.scss$/,
             exclude: DESIGN_SYSTEM_THEME,
-            use: ['css-hot-loader', MiniCssExtractPlugin.loader, ...sassLoaders],
+            use: [miniLoader, ...sassLoaders],
             sideEffects: true
         },
         {

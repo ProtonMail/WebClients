@@ -9,6 +9,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const SriPlugin = require('webpack-subresource-integrity');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const { getSource } = require('./helpers/source');
 const transformOpenpgpFiles = require('./helpers/openpgp');
@@ -72,7 +73,11 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
     return [
         ...(isProduction
             ? [new webpack.HashedModuleIdsPlugin()]
-            : [new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin()]),
+            : [
+                  new webpack.HotModuleReplacementPlugin(),
+                  new webpack.NamedModulesPlugin(),
+                  new ReactRefreshWebpackPlugin()
+              ]),
 
         new WriteWebpackPlugin(
             [main, compat, elliptic, worker].map(({ filepath, contents }) => ({
