@@ -13,6 +13,7 @@ import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { Address } from 'proton-shared/lib/interfaces';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
@@ -39,10 +40,11 @@ interface Props {
     calendars: Calendar[];
     defaultCalendar?: Calendar;
     contactEmails: ContactEmail[];
+    ownAddresses: Address[];
 }
-const ExtraEvent = ({ invitationOrError, message, calendars, defaultCalendar, contactEmails }: Props) => {
+const ExtraEvent = ({ invitationOrError, message, calendars, defaultCalendar, contactEmails, ownAddresses }: Props) => {
     const [model, setModel] = useState<InvitationModel>(() =>
-        getInitialInvitationModel(invitationOrError, message, contactEmails, defaultCalendar)
+        getInitialInvitationModel(invitationOrError, message, contactEmails, ownAddresses, defaultCalendar)
     );
     const [loading, withLoading] = useLoading(true);
     const [retryCount, setRetryCount] = useState<number>(0);
@@ -52,7 +54,7 @@ const ExtraEvent = ({ invitationOrError, message, calendars, defaultCalendar, co
 
     const handleRetry = () => {
         setRetryCount((count) => count + 1);
-        setModel(getInitialInvitationModel(invitationOrError, message, contactEmails, defaultCalendar));
+        setModel(getInitialInvitationModel(invitationOrError, message, contactEmails, ownAddresses, defaultCalendar));
         return;
     };
 
@@ -73,7 +75,8 @@ const ExtraEvent = ({ invitationOrError, message, calendars, defaultCalendar, co
                     getCalendarEventRaw,
                     calendars,
                     message,
-                    contactEmails
+                    contactEmails,
+                    ownAddresses
                 });
                 invitationApi = invitation;
                 calendar = calendarApi;
@@ -97,7 +100,8 @@ const ExtraEvent = ({ invitationOrError, message, calendars, defaultCalendar, co
                     addressKeys,
                     calendarKeys,
                     message,
-                    contactEmails
+                    contactEmails,
+                    ownAddresses
                 });
                 setModel({
                     ...model,

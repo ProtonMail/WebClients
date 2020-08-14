@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useApi, useCalendars, useContactEmails, useLoading } from 'react-components';
+import { useApi, useCalendars, useContactEmails, useAddresses, useLoading } from 'react-components';
 import { arrayToBinaryString } from 'pmcrypto';
 import { getDefaultCalendar, getProbablyActiveCalendars } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
@@ -33,6 +33,7 @@ const ExtraEvents = ({ message }: Props) => {
         boolean,
         Error
     ];
+    const [addresses = [], loadingAddresses] = useAddresses();
     const [invitations, setInvitations] = useState<(EventInvitationRaw | EventInvitationError)[]>([]);
     const [defaultCalendar, setDefaultCalendar] = useState<Calendar | undefined>();
     const api = useApi();
@@ -78,7 +79,7 @@ const ExtraEvents = ({ message }: Props) => {
         withLoading(run());
     }, [message.privateKeys]);
 
-    if (loading || loadingContactEmails) {
+    if (loading || loadingContactEmails || loadingAddresses) {
         return null;
     }
 
@@ -93,6 +94,7 @@ const ExtraEvents = ({ message }: Props) => {
                         calendars={calendars}
                         defaultCalendar={defaultCalendar}
                         contactEmails={contactEmails}
+                        ownAddresses={addresses}
                     />
                 );
             })}

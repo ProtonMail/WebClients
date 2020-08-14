@@ -38,12 +38,12 @@ import {
     getSupportedTimezone,
     getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
-import { parseMailtoURL } from 'proton-shared/lib/helpers/email';
+import { normalizeInternalEmail, parseMailtoURL } from 'proton-shared/lib/helpers/email';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { truncate } from 'proton-shared/lib/helpers/string';
-import { Api, CachedKey } from 'proton-shared/lib/interfaces';
+import { Address, Api, CachedKey } from 'proton-shared/lib/interfaces';
 import { Calendar, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import {
     VcalAttendeeProperty,
@@ -136,13 +136,20 @@ export const getSequence = (event: VcalVeventComponent) => {
 
 export const getParticipant = (
     participant: VcalAttendeeProperty | VcalOrganizerProperty,
-    contactEmails: ContactEmail[]
+    contactEmails: ContactEmail[],
+    ownAddresses: Address[]
 ): Participant => {
     const emailTo = getEmailTo(participant.value);
+    const selfAddress = ownAddresses.find(
+        ({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(emailTo)
+    );
     const contact = contactEmails.find(({ Email }) => cleanEmail(Email) === cleanEmail(emailTo));
+    const participantName = selfAddress
+        ? c('Participant name').t`You`
+        : contact?.Name || participant?.parameters?.cn || participant.value;
     const result: Participant = {
         vcalComponent: participant,
-        name: contact?.Name || participant?.parameters?.cn || participant.value,
+        name: participantName,
         email: emailTo
     };
     const { partstat, role } = (participant as VcalAttendeeProperty).parameters || {};
@@ -269,7 +276,8 @@ export const parseEventInvitation = (data: string): EventInvitationRaw | undefin
 export const processEventInvitation = (
     vevent: VcalVeventComponent,
     message: MessageExtended,
-    contactEmails: ContactEmail[]
+    contactEmails: ContactEmail[],
+    ownAddresses: Address[]
 ) => {
     const attendees = vevent.attendee;
     const organizer = vevent.organizer;
@@ -281,13 +289,13 @@ export const processEventInvitation = (
 
     const invitation: EventInvitation = { vevent };
     if (attendees) {
-        invitation.participants = attendees.map((attendee) => getParticipant(attendee, contactEmails));
+        invitation.participants = attendees.map((attendee) => getParticipant(attendee, contactEmails, ownAddresses));
     }
     if (organizer) {
-        invitation.organizer = getParticipant(organizer, contactEmails);
+        invitation.organizer = getParticipant(organizer, contactEmails, ownAddresses);
     }
     if (attendee) {
-        invitation.attendee = getParticipant(attendee, contactEmails);
+        invitation.attendee = getParticipant(attendee, contactEmails, ownAddresses);
     }
 
     return { isOrganizerMode, invitation };
@@ -297,13 +305,14 @@ export const getInitialInvitationModel = (
     invitationOrError: EventInvitationRaw | EventInvitationError,
     message: MessageExtended,
     contactEmails: ContactEmail[],
+    ownAddresses: Address[],
     calendar?: Calendar
 ) => {
     if (invitationOrError instanceof EventInvitationError) {
         return { method: 'unknown', isOrganizerMode: false, error: invitationOrError };
     }
     const { method, vevent } = invitationOrError;
-    const { isOrganizerMode, invitation } = processEventInvitation(vevent, message, contactEmails);
+    const { isOrganizerMode, invitation } = processEventInvitation(vevent, message, contactEmails, ownAddresses);
     return { method, isOrganizerMode, calendar, invitationIcs: invitation };
 };
 
@@ -541,6 +550,7 @@ type FetchEventInvitation = (args: {
     calendars: Calendar[];
     message: MessageExtended;
     contactEmails: ContactEmail[];
+    ownAddresses: Address[];
 }) => Promise<{
     invitation?: RequireSome<EventInvitation, 'eventID'>;
     parentInvitation?: RequireSome<EventInvitation, 'eventID'>;
@@ -552,7 +562,8 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     getCalendarEventRaw,
     calendars,
     message,
-    contactEmails
+    contactEmails,
+    ownAddresses
 }) => {
     const recurrenceID = veventComponent['recurrence-id'];
     const params: GetEventByUIDArguments[] = [{ UID: veventComponent.uid.value, Page: 0, PageSize: 1 }];
@@ -571,13 +582,18 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     }
     const [vevent, parentVevent] = vevents;
     const [{ ID: veventID, CalendarID }] = events;
-    const { invitation } = processEventInvitation(vevent, message, contactEmails);
+    const { invitation } = processEventInvitation(vevent, message, contactEmails, ownAddresses);
     const result: Unwrap<ReturnType<FetchEventInvitation>> = {
         invitation: { ...invitation, eventID: veventID },
         calendar: calendars.find(({ ID }) => ID === CalendarID) || undefined
     };
     if (parentVevent) {
-        const { invitation: parentInvitation } = processEventInvitation(parentVevent, message, contactEmails);
+        const { invitation: parentInvitation } = processEventInvitation(
+            parentVevent,
+            message,
+            contactEmails,
+            ownAddresses
+        );
         result.parentInvitation = { ...parentInvitation, eventID: veventID };
     }
     return result;
@@ -635,6 +651,7 @@ interface UpdateEventInvitationArgs
     calendarKeys: CachedKey[];
     message: MessageExtended;
     contactEmails: ContactEmail[];
+    ownAddresses: Address[];
 }
 export const updateEventInvitation = async ({
     method,
@@ -648,7 +665,8 @@ export const updateEventInvitation = async ({
     calendarKeys,
     api,
     message,
-    contactEmails
+    contactEmails,
+    ownAddresses
 }: UpdateEventInvitationArgs): Promise<undefined | RequireSome<EventInvitation, 'eventID'>> => {
     const eventIcs = invitationIcs.vevent;
     const attendeeIcs = invitationIcs.attendee?.vcalComponent;
@@ -710,7 +728,7 @@ export const updateEventInvitation = async ({
                     addressKeys,
                     calendarKeys
                 });
-                const { invitation } = processEventInvitation(eventIcs, message, contactEmails);
+                const { invitation } = processEventInvitation(eventIcs, message, contactEmails, ownAddresses);
                 return { ...invitation, eventID };
             } catch (error) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
