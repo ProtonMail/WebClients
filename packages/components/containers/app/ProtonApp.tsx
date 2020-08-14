@@ -54,6 +54,32 @@ const getIsSSOPath = (pathname: string) => {
     );
 };
 
+const getInitialState = (oldUID?: string, oldLocalID?: number): { UID?: string; localID?: number } | undefined => {
+    if (!isSSOMode) {
+        return {
+            UID: oldUID,
+            localID: undefined,
+        };
+    }
+    const pathname = window.location.pathname;
+    if (getIsSSOPath(pathname)) {
+        // Special routes which should never be logged in
+        return;
+    }
+    const localID = getLocalIDFromPathname(pathname);
+    if (localID === undefined || oldLocalID === undefined) {
+        return;
+    }
+    const oldPersistedSession = getPersistedSession(oldLocalID);
+    // Current session is active and actual
+    if (oldPersistedSession?.UID === oldUID && localID === oldLocalID) {
+        return {
+            UID: oldUID,
+            localID,
+        };
+    }
+};
+
 const ProtonApp = ({ config, children }: Props) => {
     const authentication = useInstance(() => {
         if (isSSOMode) {
@@ -67,33 +93,12 @@ const ProtonApp = ({ config, children }: Props) => {
         cacheRef.current = createCache<string, any>();
     }
     const [authData, setAuthData] = useState(() => {
-        const UID = authentication.getUID();
-        if (!isSSOMode) {
-            return {
-                UID,
-                localID: undefined,
-                basename: getBasename(),
-            };
-        }
-        const pathname = window.location.pathname;
-        if (getIsSSOPath(pathname)) {
-            // Special routes which should never be logged in
-            return;
-        }
-        const localID = getLocalIDFromPathname(pathname);
-        if (localID === undefined) {
-            return;
-        }
-        const oldLocalId = authentication.getLocalID();
-        const oldPersistedSession = getPersistedSession(oldLocalId);
-        // Current session is active and actual
-        if (oldPersistedSession?.UID === UID && localID === oldLocalId) {
-            return {
-                UID,
-                localID,
-                basename: getBasename(localID),
-            };
-        }
+        const state = getInitialState(authentication.getUID(), authentication.getLocalID());
+        const history = createHistory({ basename: getBasename(state?.localID) });
+        return {
+            ...state,
+            history,
+        };
     });
 
     const handleLogin = useCallback(
@@ -128,10 +133,13 @@ const ProtonApp = ({ config, children }: Props) => {
             const newPathname = `/${requestedPathname || oldPathname}`;
             pathnameRef.current = getIsSSOPath(newPathname) ? '/' : newPathname;
 
-            setAuthData({
+            const newState = {
                 UID: newUID,
                 localID: newLocalID,
-                basename: getBasename(newLocalID),
+            };
+            setAuthData({
+                ...newState,
+                history: createHistory({ basename: getBasename(newState.localID) }),
             });
         },
         []
@@ -160,11 +168,13 @@ const ProtonApp = ({ config, children }: Props) => {
         if (isSSOMode) {
             return replaceUrl(getAppHref('/login', APPS.PROTONACCOUNT));
         }
-        setAuthData(undefined);
+        setAuthData({
+            history: createHistory({ basename: getBasename() }),
+        });
         setIsFinalizeLogout(false);
     }, []);
 
-    const { UID, basename, localID } = authData || {};
+    const { UID, localID, history } = authData;
 
     const authenticationValue = useMemo(() => {
         if (!UID) {
@@ -178,10 +188,6 @@ const ProtonApp = ({ config, children }: Props) => {
             ...authentication,
             logout: handleLogout,
         };
-    }, [UID]);
-
-    const history = useMemo(() => {
-        return createHistory({ basename });
     }, [UID]);
 
     const [, setRerender] = useState<any>();
