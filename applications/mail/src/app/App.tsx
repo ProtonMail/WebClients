@@ -1,4 +1,3 @@
-import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import { ProtonApp, StandardSetup } from 'react-components';
 import sentry from 'proton-shared/lib/helpers/sentry';
@@ -19,4 +18,4 @@ const App = () => {
     );
 };
 
-export default hot(App);
+export default App;
