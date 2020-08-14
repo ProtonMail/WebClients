@@ -5,7 +5,7 @@ import createCache from 'proton-shared/lib/helpers/cache';
 import { Api } from 'proton-shared/lib/interfaces';
 import useDebouncedRequest from './useDebouncedRequest';
 
-jest.mock('react-components/containers/api/useApi');
+jest.mock('react-components/hooks/useApi');
 
 const mockUseApi = useApi as jest.MockedFunction<typeof useApi>;
 
