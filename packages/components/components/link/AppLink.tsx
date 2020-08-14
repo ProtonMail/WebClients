@@ -4,10 +4,9 @@ import { APP_NAMES, isSSOMode, isStandaloneMode } from 'proton-shared/lib/consta
 import { getAppHref, getAppHrefBundle } from 'proton-shared/lib/apps/helper';
 
 import { useConfig, useAuthentication } from '../../hooks';
-import Href, { Props as HrefProps } from './Href';
 import Tooltip from '../tooltip/Tooltip';
 
-export interface Props extends HrefProps {
+export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     to: string;
     toApp?: APP_NAMES;
 }
@@ -21,9 +20,11 @@ const AppLink = ({ to, toApp, children, ...rest }: Props) => {
             const localID = authentication.getLocalID?.();
             const href = getAppHref(to, toApp, localID);
             return (
-                <Href target="_blank" {...rest} href={href}>
+                // internal link, trusted
+                // eslint-disable-next-line react/jsx-no-target-blank
+                <a target="_blank" {...rest} href={href}>
                     {children}
-                </Href>
+                </a>
             );
         }
         if (isStandaloneMode) {
@@ -35,9 +36,9 @@ const AppLink = ({ to, toApp, children, ...rest }: Props) => {
         }
         const href = getAppHrefBundle(to, toApp);
         return (
-            <Href {...rest} href={href} target="_self">
+            <a target="_self" {...rest} href={href}>
                 {children}
-            </Href>
+            </a>
         );
     }
 
