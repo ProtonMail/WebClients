@@ -133,7 +133,8 @@ const MailboxContainer = ({
     const handleElement = (element: Element) => {
         if (isMessage(element) && isDraft(element)) {
             onCompose({ existingDraft: { localID: element.ID as string, data: element as Message } });
-        } else if (isConversationContentView && isMessage(element)) {
+        }
+        if (isConversationContentView && isMessage(element)) {
             history.push(setPathInUrl(location, labelID, (element as Message).ConversationID, element.ID));
         } else {
             history.push(setPathInUrl(location, labelID, element.ID));
