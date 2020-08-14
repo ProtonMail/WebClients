@@ -159,7 +159,6 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
             </div>
             <div className="m1 mb0">
                 <SearchInput
-                    autoFocus={true}
                     value={search}
                     onChange={updateSearch}
                     id={searchInputID}
@@ -168,7 +167,7 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
             </div>
             <div className="scroll-if-needed scroll-smooth-touch mt1 labelDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
-                    {list.map(({ ID = '', Name = '', Color = '' }) => (
+                    {list.map(({ ID = '', Name = '', Color = '' }, i) => (
                         <li
                             key={ID}
                             className="dropDown-item dropDown-item-button cursor-pointer w100 flex flex-nowrap flex-items-center pt0-5 pb0-5 pl1 pr1"
@@ -195,6 +194,7 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                                 checked={selectedLabelIDs[ID] === LabelState.On}
                                 indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
                                 onChange={handleCheck(ID)}
+                                autoFocus={i === 0}
                             />
                         </li>
                     ))}

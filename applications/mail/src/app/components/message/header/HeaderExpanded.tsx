@@ -250,7 +250,7 @@ const HeaderExpanded = ({
                                 content={<Icon name="filter" alt={c('Action').t`Custom filter`} />}
                                 className="pm-button pm-group-button pm-button--for-icon"
                                 dropDownClassName="customFilterDropdown"
-                                title={c('Action').t`Custom filter`}
+                                title={c('Action').t`Filter on`}
                                 loading={!messageLoaded}
                             >
                                 {({ onClose }) => (

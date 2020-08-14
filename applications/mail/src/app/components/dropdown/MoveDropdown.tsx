@@ -116,7 +116,6 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
             </div>
             <div className="m1 mb0">
                 <SearchInput
-                    autoFocus={true}
                     value={search}
                     onChange={updateSearch}
                     id={searchInputID}
@@ -125,7 +124,7 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
             </div>
             <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch mt1 moveDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
-                    {list.map((folder: FolderItem) => {
+                    {list.map((folder: FolderItem, i) => {
                         return (
                             <li key={folder.ID} className="dropDown-item">
                                 <button
@@ -134,6 +133,7 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
                                     disabled={loading}
                                     className="dropDown-item-button w100 flex flex-nowrap flex-items-center pl1 pr1 pt0-5 pb0-5"
                                     onClick={() => withLoading(handleMove(folder))}
+                                    autoFocus={i === 0}
                                 >
                                     <Icon name={folder.icon || 'folder'} className="flex-item-noshrink mr0-5" />
                                     <span className="ellipsis" title={folder.Name}>

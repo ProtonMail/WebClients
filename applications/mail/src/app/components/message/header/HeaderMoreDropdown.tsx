@@ -204,8 +204,7 @@ const HeaderMoreDropdown = ({
                                     onClick={() => onOpenAdditionnal(0)}
                                 >
                                     <Icon name="filter" className="mr0-5 mt0-25" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                        .t`Custom filter...`}</span>
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Filter on...`}</span>
                                 </DropdownMenuButton>
                             )}
                             {isNarrow && (
