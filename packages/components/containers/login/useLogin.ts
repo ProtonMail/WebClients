@@ -15,6 +15,7 @@ import { persistSession } from 'proton-shared/lib/authentication/persistedSessio
 import { useApi } from '../../hooks';
 import { getAuthTypes, handleUnlockKey } from './helper';
 import { OnLoginCallback } from '../app/interface';
+import handleSetupAddressKeys from './handleSetupAddressKeys';
 
 export enum FORM {
     LOGIN,
@@ -26,6 +27,7 @@ export enum FORM {
 export interface Props {
     onLogin: OnLoginCallback;
     ignoreUnlock?: boolean;
+    generateKeys?: boolean;
 }
 
 interface AuthCacheResult {
@@ -52,9 +54,10 @@ const INITIAL_STATE = {
     form: FORM.LOGIN,
 };
 
-const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
+const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
     const cacheRef = useRef<AuthCacheResult>();
-    const api = useApi();
+    const normalApi = useApi();
+    const silentApi = <T>(config: any) => normalApi<T>({ ...config, silence: true });
 
     const [state, setState] = useState<State>(INITIAL_STATE);
 
@@ -74,21 +77,22 @@ const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
             throw new Error('Invalid state');
         }
         cacheRef.current = undefined;
-        const { authVersion, authResult, userSaltResult = [] } = cache;
+        const { authVersion, authResult, userSaltResult } = cache;
 
-        const [User] = userSaltResult;
         const { UID, AccessToken } = authResult;
         const { password } = state;
 
         if (authVersion < AUTH_VERSION) {
             await srpVerify({
-                api,
+                api: silentApi,
                 credentials: { password },
                 config: withAuthHeaders(UID, AccessToken, upgradePassword()),
             });
         }
 
-        await persistSession({ ...authResult, api, keyPassword });
+        const User = userSaltResult ? userSaltResult[0] : undefined;
+
+        await persistSession({ ...authResult, api: silentApi, keyPassword });
         await onLogin({ ...authResult, User, keyPassword });
     };
 
@@ -146,16 +150,24 @@ const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
          * Typically happens for VPN users.
          */
         if (!cache.userSaltResult) {
+            const authApi = <T>(config: any) => silentApi<T>(withAuthHeaders(UID, AccessToken, config));
             cache.userSaltResult = await Promise.all([
-                api<{ User: tsUser }>(withAuthHeaders(UID, AccessToken, getUser())).then(({ User }) => User),
-                api<{ KeySalts: tsKeySalt[] }>(withAuthHeaders(UID, AccessToken, getKeySalts())).then(
-                    ({ KeySalts }) => KeySalts
-                ),
+                authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
+                authApi<{ KeySalts: tsKeySalt[] }>(getKeySalts()).then(({ KeySalts }) => KeySalts),
             ]);
         }
         const [User] = cache.userSaltResult;
 
         if (User.Keys.length === 0) {
+            if (generateKeys) {
+                const authApi = <T>(config: any) => silentApi<T>(withAuthHeaders(UID, AccessToken, config));
+                const keyPassword = await handleSetupAddressKeys({
+                    api: authApi,
+                    username: state.username,
+                    password: state.password,
+                });
+                return finalizeLogin(keyPassword);
+            }
             return finalizeLogin();
         }
 
@@ -180,7 +192,7 @@ const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
         const { UID, AccessToken } = authResult;
         const { totp } = state;
 
-        await api(withAuthHeaders(UID, AccessToken, auth2FA({ totp }))).catch((e) => {
+        await silentApi(withAuthHeaders(UID, AccessToken, auth2FA({ totp }))).catch((e) => {
             // In case of any other error than retry error, automatically cancel here to allow the user to retry.
             if (e.status !== HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
                 handleCancel();
@@ -198,9 +210,9 @@ const useLogin = ({ onLogin, ignoreUnlock }: Props) => {
     const handleLogin = async () => {
         try {
             const { username, password } = state;
-            const infoResult = await api<InfoResponse>(getInfo(username));
+            const infoResult = await silentApi<InfoResponse>(getInfo(username));
             const { authVersion, result: authResult } = await loginWithFallback({
-                api,
+                api: silentApi,
                 credentials: { username, password },
                 initialAuthInfo: infoResult,
             });

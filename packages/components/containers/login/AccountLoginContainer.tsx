@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
+import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
 import { InlineLinkButton, PrimaryButton, Label } from '../../components';
 import { useLoading, useModals, useNotifications } from '../../hooks';
 import AccountSupportDropdown from '../heading/AccountSupportDropdown';
-import { getErrorText } from './helper';
 import AbuseModal from './AbuseModal';
 import { Props as AccountPublicLayoutProps } from '../signup/AccountPublicLayout';
 import BackButton from '../signup/BackButton';
@@ -39,7 +39,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
         setKeyPassword,
         setTotp,
         setIsTotpRecovery,
-    } = useLogin({ onLogin, ignoreUnlock });
+    } = useLogin({ onLogin, ignoreUnlock, generateKeys: true });
 
     const [loading, withLoading] = useLoading();
 
@@ -52,8 +52,9 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
             withLoading(
                 handleLogin().catch((e) => {
                     if (e.data && e.data.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
-                        createModal(<AbuseModal />);
+                        return createModal(<AbuseModal />);
                     }
+                    createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
                 })
             );
         };
@@ -110,10 +111,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
 
             withLoading(
                 handleTotp().catch((e) => {
-                    // In case of any other error than retry error, automatically cancel here to allow the user to retry.
-                    if (e.name !== 'RetryTOTPError') {
-                        return handleCancel();
-                    }
+                    createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
                 })
             );
         };
@@ -168,11 +166,12 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
 
             withLoading(
                 handleUnlock(keyPassword).catch((e) => {
-                    // In case of any other error than password error, automatically cancel here to allow the user to retry.
-                    if (e.name !== 'PasswordError') {
-                        return handleCancel();
+                    if (e.name === 'PasswordError') {
+                        return createNotification({ type: 'error', text: e.message });
                     }
-                    createNotification({ type: 'error', text: getErrorText(e) });
+                    // In case of any other error than password error, automatically cancel here to allow the user to retry.
+                    createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
+                    handleCancel();
                 })
             );
         };

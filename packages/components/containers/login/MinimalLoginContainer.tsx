@@ -2,10 +2,10 @@ import React, { FormEvent } from 'react';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
+import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { useLoading, useNotifications, useModals } from '../../hooks';
 import { LinkButton, PrimaryButton, Label } from '../../components';
 
-import { getErrorText } from './helper';
 import AbuseModal from './AbuseModal';
 import useLogin, { FORM, Props as UseLoginProps } from './useLogin';
 import LoginPasswordInput from './LoginPasswordInput';
@@ -43,8 +43,9 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
             withLoading(
                 handleLogin().catch((e) => {
                     if (e.data && e.data.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
-                        createModal(<AbuseModal />);
+                        return createModal(<AbuseModal />);
                     }
+                    createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
                 })
             );
         };
@@ -77,7 +78,11 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
     if (form === FORM.TOTP) {
         const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
             event.preventDefault();
-            withLoading(handleTotp());
+            withLoading(
+                handleTotp().catch((e) => {
+                    createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
+                })
+            );
         };
         return (
             <form name="totpForm" onSubmit={handleSubmit}>
@@ -106,11 +111,12 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
 
             withLoading(
                 handleUnlock(keyPassword).catch((e) => {
-                    // In case of any other error than password error, automatically cancel here to allow the user to retry.
-                    if (e.name !== 'PasswordError') {
-                        return handleCancel();
+                    if (e.name === 'PasswordError') {
+                        return createNotification({ type: 'error', text: e.message });
                     }
-                    createNotification({ type: 'error', text: getErrorText(e) });
+                    // In case of any other error than password error, automatically cancel here to allow the user to retry.
+                    handleCancel();
+                    createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
                 })
             );
         };

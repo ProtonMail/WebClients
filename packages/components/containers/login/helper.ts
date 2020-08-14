@@ -15,13 +15,6 @@ export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode }: AuthResponse)
     };
 };
 
-export const getErrorText = (error: any) => {
-    if (error?.data?.Error) {
-        return error.data.Error;
-    }
-    return error.message;
-};
-
 export const handleUnlockKey = async (User: tsUser, KeySalts: tsKeySalt[], rawKeyPassword: string) => {
     const { KeySalt, PrivateKey } = getPrimaryKeyWithSalt(User.Keys, KeySalts);
 
