@@ -1,7 +1,8 @@
 import React, { MutableRefObject, useEffect, useState, useRef } from 'react';
 import { c } from 'ttag';
 import { SquireEditor, useHandler, useMailSettings, useAddresses } from 'react-components';
-import { SquireEditorRef, SquireEditorMetadata } from 'react-components/components/editor/SquireEditor';
+import { SquireEditorMetadata } from 'react-components/components/editor/interface';
+import { SquireEditorRef } from 'react-components/components/editor/SquireEditor';
 import { RIGHT_TO_LEFT, MIME_TYPES } from 'proton-shared/lib/constants';
 import { diff } from 'proton-shared/lib/helpers/array';
 

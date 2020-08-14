@@ -11,7 +11,7 @@ jest.mock('react-components/containers/paymentMethods/PaymentMethodDetails.js', 
 jest.mock('react-components/containers/vpn/OpenVPNConfigurationSection/Country.js', () => ({}));
 
 // Globally mocked react-components modules
-jest.mock('react-components/containers/eventManager/useEventManager.js', () => {
+jest.mock('react-components/hooks/useEventManager.js', () => {
     const subscribe = jest.fn();
     const call = jest.fn();
 
