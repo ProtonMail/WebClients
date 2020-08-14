@@ -1,7 +1,6 @@
 import React from 'react';
 import { Icon, classnames, Tooltip } from 'react-components';
 import { c } from 'ttag';
-import { getErrorText } from 'react-components/containers/login/helper';
 import { TransferState, Upload, Download } from '../../interfaces/transfer';
 import { isTransferPaused, isTransferProgress, isTransferDone, isTransferError } from '../../utils/transfer';
 import { TransferType } from './interfaces';
@@ -11,6 +10,13 @@ interface Props {
     type: string;
     speed: string;
 }
+
+const getErrorText = (error: any) => {
+    if (error?.data?.Error) {
+        return error.data.Error;
+    }
+    return error?.message;
+};
 
 const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
     const progressTitle = type === TransferType.Download ? c('Info').t`Downloading` : c('Info').t`Uploading`;
