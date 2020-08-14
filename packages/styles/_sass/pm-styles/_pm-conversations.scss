@@ -675,8 +675,9 @@ $conversation-icon-size: 3.2rem !default;
 	}
 }
 
+$message-attachment-icon-width: 2.6em !default;
 .message-attachmentIcon {
-	width: 2.6em;
+	width: $message-attachment-icon-width;
 
 	svg:not([class*="fill-"]) {
 		fill: var(--color-main-area, $black);
@@ -687,11 +688,13 @@ $conversation-icon-size: 3.2rem !default;
 .message-attachmentInfo {
 	border-left: 1px solid var(--bordercolor-input, $pm-global-border);
 	padding: .3em .7em;
+	max-width: calc(100% - #{$message-attachment-icon-width});
 }
 
 .message-attachmentSize {
 	font-size: 1.2rem;
 	opacity: .5;
+	top: .2rem; // compensate the size difference 14/12
 }
 
 .message-infobox {
