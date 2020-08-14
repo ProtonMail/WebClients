@@ -98,6 +98,12 @@ $item-container-padding-left-right: em(12) !default;
 .item-container {
 	height: $item-container-height;
 }
+// fix for Firefox multi-selection issue
+.item-checkbox-label > .item-checkbox {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
 
 .item-firstline,
 .item-secondline {
