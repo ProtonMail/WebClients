@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { PrivateMainArea } from 'react-components';
 import { History, Location } from 'history';
+import { VIEW_MODE } from 'proton-shared/lib/constants';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
@@ -42,6 +43,7 @@ interface Props {
     mailSettings: MailSettings;
     breakpoints: Breakpoints;
     elementID?: string;
+    messageID?: string;
     location: Location;
     history: History;
     onCompose: OnCompose;
@@ -53,6 +55,7 @@ const MailboxContainer = ({
     mailSettings,
     breakpoints,
     elementID,
+    messageID,
     location,
     history,
     onCompose
@@ -73,6 +76,7 @@ const MailboxContainer = ({
 
     const searchParams = getSearchParams(location.search);
     const conversationMode = isConversationMode(inputLabelID, mailSettings, location);
+    const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [
         searchParams.address,
         searchParams.from,
@@ -127,9 +131,12 @@ const MailboxContainer = ({
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
 
     const handleElement = (element: Element) => {
-        history.push(setPathInUrl(location, labelID, element.ID));
         if (isMessage(element) && isDraft(element)) {
             onCompose({ existingDraft: { localID: element.ID as string, data: element as Message } });
+        } else if (isConversationContentView && isMessage(element)) {
+            history.push(setPathInUrl(location, labelID, (element as Message).ConversationID, element.ID));
+        } else {
+            history.push(setPathInUrl(location, labelID, element.ID));
         }
         setCheckedElements({});
     };
@@ -225,10 +232,11 @@ const MailboxContainer = ({
                             />
                         )}
                         {showContentView &&
-                            (conversationMode ? (
+                            (isConversationContentView ? (
                                 <ConversationView
                                     hidden={showPlaceholder}
                                     labelID={labelID}
+                                    messageID={messageID}
                                     mailSettings={mailSettings}
                                     conversationID={elementID as string}
                                     onBack={handleBack}

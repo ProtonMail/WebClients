@@ -25,7 +25,7 @@ import MessageProvider from './containers/MessageProvider';
 import ConversationProvider from './containers/ConversationProvider';
 import AttachmentProvider from './containers/AttachmentProvider';
 
-export type RouteProps = RouteChildrenProps<{ labelID: string; elementID?: string }>;
+export type RouteProps = RouteChildrenProps<{ labelID: string; elementID?: string; messageID?: string }>;
 
 interface Props {
     onLogout: () => void;
@@ -70,7 +70,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                         <ComposerContainer breakpoints={breakpoints}>
                             {({ onCompose }) => (
                                 <Route
-                                    path="/:labelID?/:elementID?"
+                                    path="/:labelID?/:elementID?/:messageID?"
                                     render={(routeProps: RouteProps) => (
                                         <PageContainer
                                             {...routeProps}

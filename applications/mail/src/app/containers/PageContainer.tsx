@@ -23,7 +23,7 @@ const PageContainer = ({ match, location, history, breakpoints, onCompose }: Pro
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const labelIDs = [...labels, ...folders].map(({ ID }: Label) => ID);
-    const { elementID, labelID: currentLabelID = '' } = (match || {}).params || {};
+    const { elementID, labelID: currentLabelID = '', messageID } = (match || {}).params || {};
     const labelID = HUMAN_TO_LABEL_IDS[currentLabelID] || (labelIDs.includes(currentLabelID) && currentLabelID);
 
     useLinkHandler(onCompose);
@@ -48,6 +48,7 @@ const PageContainer = ({ match, location, history, breakpoints, onCompose }: Pro
                     mailSettings={mailSettings}
                     breakpoints={breakpoints}
                     elementID={elementID}
+                    messageID={messageID}
                     location={location}
                     history={history}
                     onCompose={onCompose}

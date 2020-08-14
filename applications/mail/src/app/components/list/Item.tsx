@@ -2,14 +2,14 @@ import React, { ChangeEvent, MouseEvent, DragEvent } from 'react';
 import { Location } from 'history';
 import { classnames, Checkbox } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
-import { MAILBOX_LABEL_IDS, DENSITY } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, DENSITY, VIEW_MODE } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import ItemCheckbox from './ItemCheckbox';
 import { getRecipients as getMessageRecipients, getSender } from '../../helpers/message/messages';
-import { getCurrentType, isUnread } from '../../helpers/elements';
+import { getCurrentType, isUnread, isMessage } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import { Element } from '../../models/element';
@@ -68,10 +68,14 @@ const Item = ({
     dragged,
     index
 }: Props) => {
-    const { ID = '' } = element;
     const displayRecipients = [SENT, ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS);
     const type = getCurrentType({ mailSettings, labelID, location });
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
+    const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
+    const isSelected =
+        isConversationContentView && isMessage(element)
+            ? elementID === (element as Message).ConversationID
+            : elementID === element.ID;
     const isConversation = type === ELEMENT_TYPES.CONVERSATION;
     const showIcon = labelsWithIcons.includes(labelID) || isCustomLabel(labelID, labels);
     const senders = isConversation ? getSenders(element) : [getSender(element as Message)];
@@ -127,7 +131,7 @@ const Item = ({
             className={classnames([
                 'flex flex-nowrap flex-items-center cursor-pointer',
                 columnLayout ? 'item-container' : 'item-container-row',
-                elementID === ID && 'item-is-selected',
+                isSelected && 'item-is-selected',
                 !unread && 'read',
                 dragged && 'item-dragging',
                 loading && 'item-is-loading'

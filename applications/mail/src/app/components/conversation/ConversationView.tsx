@@ -45,9 +45,8 @@ const ConversationView = ({
         pendingRequest,
         loadingConversation,
         loadingMessages
-    } = useConversation(inputConversationID);
+    } = useConversation(inputConversationID, messageID);
     const { state: filter, toggle: toggleFilter } = useToggle(true);
-
     useShouldMoveOut(true, conversationID, pendingRequest, onBack);
 
     const { Conversation: conversation = {}, Messages: inputMessages = [] } = conversationResult || {};
@@ -70,7 +69,7 @@ const ConversationView = ({
 
     useEffect(() => {
         setExpand(initExpand());
-    }, [conversationID, loadingMessages]);
+    }, [conversationID, messageID, loadingMessages]);
 
     const handleClickUnread = (messageID: string) => {
         setExpand(messageID);

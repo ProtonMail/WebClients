@@ -1,19 +1,19 @@
 import { isNumber } from 'proton-shared/lib/helpers/validators';
 import { getSearchParams, changeSearchParams } from 'proton-shared/lib/helpers/url';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { Sort, Filter, SearchParameters } from '../models/tools';
 import { Location } from 'history';
 import { getHumanLabelID } from './labels';
 
-export const getUrlPathname = (location: Location, labelID: string, elementID?: string) => {
-    const urlFragment = elementID === undefined ? '' : `/${elementID}`;
-    return `/${getHumanLabelID(labelID)}${urlFragment}`;
+export const getUrlPathname = (location: Location, labelID: string, elementID?: string, messageID?: string) => {
+    return [`/${getHumanLabelID(labelID)}`, elementID, messageID].filter(isTruthy).join('/');
 };
 
-export const setPathInUrl = (location: Location, labelID: string, elementID?: string): Location => {
+export const setPathInUrl = (location: Location, labelID: string, elementID?: string, messageID?: string): Location => {
     return {
         ...location,
-        pathname: getUrlPathname(location, labelID, elementID)
+        pathname: getUrlPathname(location, labelID, elementID, messageID)
     };
 };
 

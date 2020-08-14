@@ -22,10 +22,10 @@ interface ReturnValue {
 }
 
 interface UseConversation {
-    (conversationID: string): ReturnValue;
+    (conversationID: string, messageID?: string): ReturnValue;
 }
 
-export const useConversation: UseConversation = (inputConversationID) => {
+export const useConversation: UseConversation = (inputConversationID, messageID) => {
     const cache = useConversationCache();
     const [elementsCache] = useElementsCache();
     const api = useApi();
@@ -51,7 +51,7 @@ export const useConversation: UseConversation = (inputConversationID) => {
 
     useEffect(() => {
         const load = async () => {
-            const result = (await api(getConversation(inputConversationID))) as ConversationResult;
+            const result = (await api(getConversation(inputConversationID, messageID))) as ConversationResult;
             cache.set(inputConversationID, result);
         };
 
@@ -72,7 +72,7 @@ export const useConversation: UseConversation = (inputConversationID) => {
                 setConversation(cache.get(inputConversationID));
             }
         });
-    }, [inputConversationID, api, cache]);
+    }, [inputConversationID, messageID, api, cache]);
 
     const loadingConversation = !conversation?.Conversation;
     const loadingMessages = !conversation?.Messages;
