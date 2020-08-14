@@ -1,4 +1,3 @@
-import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import { ProtonApp, StandardSetup } from 'react-components';
 import locales from 'proton-shared/lib/i18n/locales';
@@ -19,4 +18,4 @@ const App = () => {
     );
 };
 
-export default hot(App);
+export default App;
