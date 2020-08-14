@@ -1,8 +1,8 @@
-import React from 'react';
+import { FREQUENCY, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import React, { HTMLAttributes } from 'react';
 import { classnames, Input, TextArea } from 'react-components';
 import { c } from 'ttag';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { FREQUENCY, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { MAX_NOTIFICATIONS } from '../../constants';
 import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
 import { NotificationModel } from '../../interfaces/NotificationModel';
@@ -21,6 +21,7 @@ import FrequencyInput from './inputs/FrequencyInput';
 import LocationInput from './inputs/LocationInput';
 import Notifications from './Notifications';
 import DateTimeRow from './rows/DateTimeRow';
+import MiniDateTimeRows from './rows/MiniDateTimeRows';
 
 interface Props {
     isSubmitted: boolean;
@@ -29,17 +30,57 @@ interface Props {
     errors: EventModelErrors;
     model: EventModel;
     setModel: (value: EventModel) => void;
-    tzid: string;
+    tzid?: string;
+    isMinimal?: boolean;
 }
 
-const EventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, model, setModel, tzid }: Props) => {
-    const { frequencyModel, start } = model;
+const EventForm = ({
+    isSubmitted,
+    displayWeekNumbers,
+    weekStartsOn,
+    errors,
+    model,
+    setModel,
+    tzid,
+    isMinimal,
+    ...props
+}: Props & HTMLAttributes<HTMLDivElement>) => {
+    const {
+        frequencyModel,
+        start,
+        isAllDay,
+        fullDayNotifications,
+        defaultFullDayNotification,
+        partDayNotifications,
+        defaultPartDayNotification,
+        calendars,
+        description,
+    } = model;
     const propsFor = createPropFactory({ model, setModel });
 
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
 
+    const dateRow = isMinimal ? (
+        <MiniDateTimeRows
+            model={model}
+            setModel={setModel}
+            endError={errors.end}
+            displayWeekNumbers={displayWeekNumbers}
+            weekStartsOn={weekStartsOn}
+        />
+    ) : (
+        <DateTimeRow
+            model={model}
+            setModel={setModel}
+            endError={errors.end}
+            displayWeekNumbers={displayWeekNumbers}
+            weekStartsOn={weekStartsOn}
+            tzid={tzid!}
+        />
+    );
+
     return (
-        <div className="mt2">
+        <div {...props}>
             <IconRow id={TITLE_INPUT_ID}>
                 <Input
                     id={TITLE_INPUT_ID}
@@ -50,89 +91,88 @@ const EventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, mode
                     onChange={({ target }) => propsFor('title').onChange(target.value)}
                 />
             </IconRow>
-            <IconRow icon="clock" title={c('Label').t`Time`}>
-                <DateTimeRow
-                    model={model}
-                    setModel={setModel}
-                    endError={errors.end}
-                    displayWeekNumbers={displayWeekNumbers}
-                    weekStartsOn={weekStartsOn}
-                    tzid={tzid}
-                />
-            </IconRow>
-            <IconRow icon="reload" title={c('Label').t`Frequency`} id={FREQUENCY_INPUT_ID}>
-                <div>
-                    <FrequencyInput
-                        className={classnames([isCustomFrequencySet && 'mb0-5'])}
-                        id={FREQUENCY_INPUT_ID}
-                        data-test-id="event-modal/frequency:select"
-                        value={frequencyModel.type}
-                        onChange={(type) =>
-                            setModel({ ...model, frequencyModel: { ...frequencyModel, type }, hasTouchedRrule: true })
-                        }
-                    />
-                    {isCustomFrequencySet && (
-                        <div className="flex flex-nowrap flex-item-fluid">
-                            <CustomFrequencySelector
-                                frequencyModel={frequencyModel}
-                                start={start}
-                                displayWeekNumbers={displayWeekNumbers}
-                                weekStartsOn={weekStartsOn}
-                                errors={errors}
-                                isSubmitted={isSubmitted}
-                                onChange={(frequencyModel) =>
-                                    setModel({ ...model, frequencyModel, hasTouchedRrule: true })
-                                }
-                            />
-                        </div>
-                    )}
-                </div>
-            </IconRow>
+            {dateRow}
+            {!isMinimal && (
+                <IconRow icon="reload" title={c('Label').t`Frequency`} id={FREQUENCY_INPUT_ID}>
+                    <div>
+                        <FrequencyInput
+                            className={classnames([isCustomFrequencySet && 'mb0-5'])}
+                            id={FREQUENCY_INPUT_ID}
+                            data-test-id="event-modal/frequency:select"
+                            value={frequencyModel.type}
+                            onChange={(type) =>
+                                setModel({
+                                    ...model,
+                                    frequencyModel: { ...frequencyModel, type },
+                                    hasTouchedRrule: true,
+                                })
+                            }
+                        />
+                        {isCustomFrequencySet && (
+                            <div className="flex flex-nowrap flex-item-fluid">
+                                <CustomFrequencySelector
+                                    frequencyModel={frequencyModel}
+                                    start={start}
+                                    displayWeekNumbers={displayWeekNumbers}
+                                    weekStartsOn={weekStartsOn}
+                                    errors={errors}
+                                    isSubmitted={isSubmitted}
+                                    onChange={(frequencyModel) =>
+                                        setModel({ ...model, frequencyModel, hasTouchedRrule: true })
+                                    }
+                                />
+                            </div>
+                        )}
+                    </div>
+                </IconRow>
+            )}
             <IconRow icon="address" title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
                 <LocationInput id={LOCATION_INPUT_ID} {...propsFor('location')} />
             </IconRow>
-            <IconRow icon="notifications-enabled" title={c('Label').t`Notifications`}>
-                {model.isAllDay ? (
-                    <Notifications
-                        {...{
-                            errors,
-                            canAdd: model.fullDayNotifications.length < MAX_NOTIFICATIONS,
-                            notifications: model.fullDayNotifications,
-                            defaultNotification: model.defaultFullDayNotification,
-                            onChange: (notifications: NotificationModel[]) => {
-                                setModel({
-                                    ...model,
-                                    fullDayNotifications: notifications,
-                                    hasTouchedNotifications: {
-                                        ...model.hasTouchedNotifications,
-                                        fullDay: true,
-                                    },
-                                });
-                            },
-                        }}
-                    />
-                ) : (
-                    <Notifications
-                        {...{
-                            errors,
-                            canAdd: model.partDayNotifications.length < MAX_NOTIFICATIONS,
-                            notifications: model.partDayNotifications,
-                            defaultNotification: model.defaultPartDayNotification,
-                            onChange: (notifications: NotificationModel[]) => {
-                                setModel({
-                                    ...model,
-                                    partDayNotifications: notifications,
-                                    hasTouchedNotifications: {
-                                        ...model.hasTouchedNotifications,
-                                        partDay: true,
-                                    },
-                                });
-                            },
-                        }}
-                    />
-                )}
-            </IconRow>
-            {model.calendars.length > 0 ? (
+            {!isMinimal && (
+                <IconRow icon="notifications-enabled" title={c('Label').t`Notifications`}>
+                    {isAllDay ? (
+                        <Notifications
+                            {...{
+                                errors,
+                                canAdd: fullDayNotifications.length < MAX_NOTIFICATIONS,
+                                notifications: fullDayNotifications,
+                                defaultNotification: defaultFullDayNotification,
+                                onChange: (notifications: NotificationModel[]) => {
+                                    setModel({
+                                        ...model,
+                                        fullDayNotifications: notifications,
+                                        hasTouchedNotifications: {
+                                            ...model.hasTouchedNotifications,
+                                            fullDay: true,
+                                        },
+                                    });
+                                },
+                            }}
+                        />
+                    ) : (
+                        <Notifications
+                            {...{
+                                errors,
+                                canAdd: partDayNotifications.length < MAX_NOTIFICATIONS,
+                                notifications: partDayNotifications,
+                                defaultNotification: defaultPartDayNotification,
+                                onChange: (notifications: NotificationModel[]) => {
+                                    setModel({
+                                        ...model,
+                                        partDayNotifications: notifications,
+                                        hasTouchedNotifications: {
+                                            ...model.hasTouchedNotifications,
+                                            partDay: true,
+                                        },
+                                    });
+                                },
+                            }}
+                        />
+                    )}
+                </IconRow>
+            )}
+            {calendars.length > 0 ? (
                 <IconRow
                     icon="calendar"
                     title={c('Label').t`Calendar`}
@@ -151,7 +191,7 @@ const EventForm = ({ isSubmitted, displayWeekNumbers, weekStartsOn, errors, mode
                     onChange={({ target }: React.ChangeEvent<HTMLTextAreaElement>) =>
                         propsFor('description').onChange(target.value)
                     }
-                    value={model.description}
+                    value={description}
                     maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
                 />
             </IconRow>

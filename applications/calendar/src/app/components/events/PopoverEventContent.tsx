@@ -100,7 +100,7 @@ const PopoverEventContent = ({
             ) : null}
             {htmlString ? (
                 <div className={wrapClassName}>
-                    <Icon name="note" className={iconClassName} />
+                    <Icon name="text-align-left" className={iconClassName} />
                     <div className="break mt0 mb0 pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
                 </div>
             ) : null}

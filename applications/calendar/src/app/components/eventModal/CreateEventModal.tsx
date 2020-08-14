@@ -88,6 +88,7 @@ const CreateEventModal = ({
             {...rest}
         >
             <EventForm
+                className="mt2"
                 displayWeekNumbers={displayWeekNumbers}
                 weekStartsOn={weekStartsOn}
                 isSubmitted={isSubmitted}

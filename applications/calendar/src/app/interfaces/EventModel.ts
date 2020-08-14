@@ -70,6 +70,7 @@ export interface EventModelView {
 }
 
 export interface EventModel extends EventModelView {
+    // these types will be used in the future, for now only event is used
     type: 'event' | 'alarm' | 'task';
     calendar: CalendarModel;
     calendars: CalendarsModel[];

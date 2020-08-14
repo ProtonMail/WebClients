@@ -1,13 +1,13 @@
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React, { CSSProperties, Ref, useRef } from 'react';
-import { useCombinedRefs, Button, PrimaryButton, classnames } from 'react-components';
+import { Button, classnames, PrimaryButton, useCombinedRefs } from 'react-components';
 import { c } from 'ttag';
-import validateEventModel from './eventForm/validateEventModel';
-import PopoverHeader from '../events/PopoverHeader';
-import PopoverFooter from '../events/PopoverFooter';
-import { useForm } from './hooks/useForm';
-import MinimalEventForm from './MinimalEventForm';
 import { EventModel } from '../../interfaces/EventModel';
+import PopoverFooter from '../events/PopoverFooter';
+import PopoverHeader from '../events/PopoverHeader';
+import EventForm from './EventForm';
+import validateEventModel from './eventForm/validateEventModel';
+import { useForm } from './hooks/useForm';
 
 interface Props {
     isNarrow: boolean;
@@ -61,14 +61,14 @@ const CreateEventPopover = ({
             ref={useCombinedRefs<HTMLFormElement>(formRef, popoverRef)}
         >
             <PopoverHeader onClose={onClose} />
-            <MinimalEventForm
-                isNarrow={isNarrow}
+            <EventForm
                 displayWeekNumbers={displayWeekNumbers}
                 weekStartsOn={weekStartsOn}
                 isSubmitted={isSubmitted}
                 errors={errors}
                 model={model}
                 setModel={setModel}
+                isMinimal
             />
             <PopoverFooter>
                 <Button data-test-id="create-event-popover:more-event-options" className="mr1" onClick={handleMore}>{c(
