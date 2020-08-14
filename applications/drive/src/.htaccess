@@ -39,9 +39,8 @@ ErrorDocument 403   /assets/errors/403.html
   AddOutputFilter INCLUDES;DEFLATE svg
 </IfModule>
 
-
 <Files "downloadSW.js">
-  Header set Service-Worker-Allowed "/drive"
+  Header set Service-Worker-Allowed "/"
   Header set Service-Worker "script"
 </Files>
 
