@@ -83,9 +83,11 @@ const MessageAttachment = ({ attachment, message }: Props) => {
                     <Icon name={icon} size={20} className={classNames} aria-busy={showLoader} />
                     {showInner && <Icon name="key" className="file-inner-icon mauto" />}
                 </span>
-                <span className="flex flex-items-center message-attachmentInfo">
+                <span className="flex flex-nowrap flex-items-center message-attachmentInfo">
                     <span className="ellipsis mw100">{attachment.Name}</span>
-                    <span className="message-attachmentSize mtauto mbauto ml0-5">{humanAttachmentSize}</span>
+                    <span className="message-attachmentSize relative flex-item-noshrink mtauto mbauto ml0-5">
+                        {humanAttachmentSize}
+                    </span>
                 </span>
             </a>
         </li>
