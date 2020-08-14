@@ -134,11 +134,7 @@ const FilterConditionsRow = ({
                 <span className="ellipsis nodecoration" title={token}>
                     {token}
                 </span>
-                <button
-                    type="button"
-                    className="flex pm-badgeLabel-button flex-item-noshrink ml0-5"
-                    onClick={() => onRemoveToken(i)}
-                >
+                <button type="button" className="flex flex-item-noshrink ml0-5" onClick={() => onRemoveToken(i)}>
                     <Icon name="off" size={11} />
                     <span className="sr-only">{c('Action').t`Remove this label`}</span>
                 </button>
@@ -193,16 +189,15 @@ const FilterConditionsRow = ({
             const typeLabel = TYPES.find((t) => t.value === type)?.label;
             const comparatorLabel = COMPARATORS.find((t) => t.value === comparator)?.label;
             const values = condition?.values?.map((v, i) => {
-                const value = <strong key={`${v}${i}`}>{v}</strong>;
                 return i > 0 ? (
-                    <>
+                    <React.Fragment key={`${v}${i}`}>
                         {` `}
                         {c('Label').t`or`}
                         {` `}
-                        {value}
-                    </>
+                        <strong>{v}</strong>
+                    </React.Fragment>
                 ) : (
-                    value
+                    <strong key={`${v}${i}`}>{v}</strong>
                 );
             });
             const titleValues = condition?.values?.map((v, i) => {

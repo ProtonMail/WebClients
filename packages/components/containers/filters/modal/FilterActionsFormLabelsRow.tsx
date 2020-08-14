@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Actions } from 'proton-shared/lib/filters/interfaces';
-import { Checkbox, Button, Tooltip, classnames, Icon, useModals } from '../../..';
+import { Checkbox, Button, Tooltip, classnames, Icon, useModals, LabelStack } from '../../..';
 
 import EditLabelModal from '../../labels/modals/Edit';
 
@@ -61,23 +61,26 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
         }
 
         return (
-            <div className="pm-badgeLabel-container">
+            <div>
                 {labelAs?.labels.map((labelName: string) => {
                     const label = labels?.find((l) => l.Name === labelName);
 
-                    return (
-                        <span
-                            key={labelName}
-                            className="ml0-5 mr0-5 mb0-5 badgeLabel flex flex-row flex-items-center ellipsis"
-                            role="listitem"
-                            style={{
-                                color: label?.Color,
-                            }}
-                            title={label?.Name}
-                        >
-                            <span className="pm-badgeLabel-link color-white ellipsis">{label?.Name}</span>
-                        </span>
-                    );
+                    return label ? (
+                        <React.Fragment key={labelName}>
+                            <span className="ml0-5 mr0-5 mb0-5">
+                                <LabelStack
+                                    labels={[
+                                        {
+                                            name: label.Name,
+                                            color: label.Color,
+                                            title: label.Name,
+                                        },
+                                    ]}
+                                    showDelete={false}
+                                />
+                            </span>
+                        </React.Fragment>
+                    ) : null;
                 })}
             </div>
         );
@@ -97,7 +100,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                         <div className="w100">
                             {labels.length ? (
                                 labels.map((label: Label) => (
-                                    <div className="mb0-5 inbl pm-badgeLabel-container ellipsis" key={label.Name}>
+                                    <div className="mb0-5 inbl ellipsis" key={label.Name}>
                                         <Checkbox
                                             className="mr1 flex-nowrap"
                                             checked={labelAs.labels.includes(label.Name)}
@@ -112,17 +115,17 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                             }}
                                             labelOnClick={(e) => e.stopPropagation()}
                                         >
-                                            <span
-                                                className="ml0-5 badgeLabel flex flex-row flex-items-center"
-                                                role="listitem"
-                                                style={{
-                                                    color: label.Color,
-                                                }}
-                                                title={label.Name}
-                                            >
-                                                <span className="pm-badgeLabel-link color-white ellipsis">
-                                                    {label.Name}
-                                                </span>
+                                            <span className="ml0-5">
+                                                <LabelStack
+                                                    labels={[
+                                                        {
+                                                            name: label.Name,
+                                                            color: label.Color,
+                                                            title: label.Name,
+                                                        },
+                                                    ]}
+                                                    showDelete={false}
+                                                />
                                             </span>
                                         </Checkbox>
                                     </div>

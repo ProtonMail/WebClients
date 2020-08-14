@@ -29,7 +29,7 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
                         : c('Label').t`without attachments`;
                 const attachment = isOpen ? (
                     <span
-                        key={label}
+                        key={`filter_preview_${label}`}
                         className="inline-flex flex-row flex-items-center condition-token mb0-5"
                         role="listitem"
                     >
@@ -38,7 +38,7 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
                         </span>
                     </span>
                 ) : (
-                    <strong key={label}>{label}</strong>
+                    <strong key={`open_filter_preview_${label}`}>{label}</strong>
                 );
 
                 return {
@@ -69,12 +69,12 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
                     <strong key={`${v}${i}`}>{v}</strong>
                 );
                 return i > 0 ? (
-                    <>
+                    <React.Fragment key={`preview_condition_${v}${i}`}>
                         {` `}
                         {c('Label').t`or`}
                         {` `}
                         {value}
-                    </>
+                    </React.Fragment>
                 ) : (
                     value
                 );

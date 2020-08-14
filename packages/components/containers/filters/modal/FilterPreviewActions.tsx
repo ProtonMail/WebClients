@@ -5,7 +5,7 @@ import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { SimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
 import { toMap } from 'proton-shared/lib/helpers/object';
-import { classnames, Icon } from '../../..';
+import { classnames, Icon, LabelStack } from '../../..';
 
 import { DEFAULT_FOLDERS } from './FilterActionsFormFolderRow';
 
@@ -40,16 +40,17 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                 <React.Fragment key={l}>
                     {i > 0 && c('Label').t` and `}
                     {isOpen ? (
-                        <span
-                            className="ml0-5 mr0-5 mb0-5 badgeLabel flex flex-row flex-items-center ellipsis"
-                            role="listitem"
-                            style={{
-                                color: labelsMap[l].Color,
-                            }}
-                        >
-                            <span className="pm-badgeLabel-link color-white ellipsis nodecoration" title={l}>
-                                {l}
-                            </span>
+                        <span className="mb0-5">
+                            <LabelStack
+                                labels={[
+                                    {
+                                        name: labelsMap[l].Name,
+                                        color: labelsMap[l].Color,
+                                        title: labelsMap[l].Name,
+                                    },
+                                ]}
+                                showDelete={false}
+                            />
                         </span>
                     ) : (
                         <strong>{l}</strong>
@@ -59,7 +60,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
 
             actionsRows.push({
                 element: (
-                    <span className="pm-badgeLabel-container">
+                    <span>
                         {LABELS_ACTION.labelAs}
                         {` `}
                         {labelsElements}

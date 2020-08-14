@@ -8,7 +8,6 @@ import { convertModel } from 'proton-shared/lib/filters/utils';
 import { templates as sieveTemplates } from 'proton-shared/lib/filters/sieve';
 
 import { noop } from 'proton-shared/lib/helpers/function';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import {
     FormModal,
     useModals,
@@ -65,7 +64,6 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const { createModal } = useModals();
-    const [modelChanged, setModelChanged] = useState(false);
 
     const isEdit = !!filter?.ID;
     const title = isEdit ? c('Title').t`Edit Sieve filter` : c('Title').t`Add Sieve filter`;
@@ -128,7 +126,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     };
 
     const handleClose = () => {
-        if (!modelChanged) {
+        if (model.name === initialModel.name && model.sieve === initialModel.sieve) {
             return onClose();
         }
 
@@ -154,15 +152,6 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             setModel({ ...model, issues: [] });
         }
     }, [sieve]);
-
-    useEffect(() => {
-        if (!isDeepEqual(model, initialModel)) {
-            setModelChanged(true);
-            return;
-        }
-
-        setModelChanged(false);
-    }, [model]);
 
     return (
         <FormModal

@@ -80,6 +80,29 @@ const checkActionsErrors = (actions: Actions) => {
     return '';
 };
 
+const modelHasChanged = (a: SimpleFilterModalModel, b: SimpleFilterModalModel): boolean => {
+    const cleanConditions = (c: Condition) => ({
+        type: c.type,
+        comparator: c.comparator,
+        values: c.values,
+    });
+
+    if (
+        a.name !== b.name ||
+        a.statement !== b.statement ||
+        !isDeepEqual(a.conditions.map(cleanConditions), b.conditions.map(cleanConditions)) ||
+        !isDeepEqual(a.actions.labelAs.labels, b.actions.labelAs.labels) ||
+        a.actions.moveTo.folder !== b.actions.moveTo.folder ||
+        a.actions.markAs.read !== b.actions.markAs.read ||
+        a.actions.markAs.starred !== b.actions.markAs.starred ||
+        (a.actions.autoReply && b.actions.autoReply && a.actions.autoReply !== b.actions.autoReply)
+    ) {
+        return true;
+    }
+
+    return false;
+};
+
 const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [filters = []] = useFilters();
@@ -91,7 +114,6 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const { createModal } = useModals();
     const [mailSettings] = useMailSettings();
     const isDark = useMemo(() => isDarkTheme(mailSettings.Theme), [mailSettings.Theme]);
-    const [modelChanged, setModelChanged] = useState(false);
 
     const initFilter = (filter?: Filter) => {
         const computedFilter = filter ? computeFromTree(filter) : {};
@@ -210,7 +232,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     };
 
     const handleClose = () => {
-        if (!modelChanged) {
+        if (!modelHasChanged(model, initFilter(filter))) {
             return onClose();
         }
 
@@ -258,15 +280,6 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             setModel(initFilter(filter));
         }
     }, [loadingFolders, loadingLabels]);
-
-    useEffect(() => {
-        if (!isDeepEqual(model, initFilter(filter))) {
-            setModelChanged(true);
-            return;
-        }
-
-        setModelChanged(false);
-    }, [model]);
 
     return (
         <FormModal
