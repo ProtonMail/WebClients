@@ -38,14 +38,20 @@ const LabelStack = ({ labels, showDelete = true, isStacked = false, maxNumber, c
                     style={{ '--color': label.color }}
                     key={label.name}
                 >
-                    <button
-                        type="button"
-                        className="label-stack-item-button ellipsis"
-                        onClick={label.onClick}
-                        title={label.title}
-                    >
-                        {label.name}
-                    </button>
+                    {label.onClick ? (
+                        <button
+                            type="button"
+                            className="label-stack-item-button ellipsis"
+                            onClick={label.onClick}
+                            title={label.title}
+                        >
+                            {label.name}
+                        </button>
+                    ) : (
+                        <span className="label-stack-item-button ellipsis" title={label.title}>
+                            {label.name}
+                        </span>
+                    )}
 
                     {showDelete && (
                         <button
