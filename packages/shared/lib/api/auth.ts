@@ -68,6 +68,13 @@ export const getLocalKey = () => ({
     method: 'get',
     url: 'auth/sessions/local/key',
 });
+export const setLocalKey = (Key: string) => ({
+    method: 'put',
+    url: 'auth/sessions/local/key',
+    data: {
+        Key,
+    },
+});
 export const pushForkSession = (data: {
     Payload?: string;
     ChildClientID: CLIENT_ID_KEYS;

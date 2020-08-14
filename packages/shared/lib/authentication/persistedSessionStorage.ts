@@ -1,10 +1,10 @@
+import { SessionKey } from 'pmcrypto';
 import { setItem, getItem, removeItem } from '../helpers/storage';
-import { deserializeUint8Array } from '../helpers/serialization';
 import isTruthy from '../helpers/isTruthy';
 import { PersistedSession, PersistedSessionBlob } from './SessionInterface';
 import { getValidatedLocalID } from './sessionForkValidation';
 import { InvalidPersistentSessionError } from './error';
-import { getDecryptedBlob, getEncryptedBlob, getSessionKey } from './sessionBlobCryptoHelper';
+import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
 
 const STORAGE_PREFIX = 'ps-';
 const getKey = (localID: number) => `${STORAGE_PREFIX}${localID}`;
@@ -62,10 +62,9 @@ export const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | un
 };
 
 export const getDecryptedPersistedSessionBlob = async (
-    ClientKey: string,
+    sessionKey: SessionKey,
     persistedSessionBlobString: string
 ): Promise<PersistedSessionBlob> => {
-    const sessionKey = getSessionKey(deserializeUint8Array(ClientKey));
     const blob = await getDecryptedBlob(sessionKey, persistedSessionBlobString).catch(() => {
         throw new InvalidPersistentSessionError('Failed to decrypt persisted blob');
     });
@@ -76,18 +75,14 @@ export const getDecryptedPersistedSessionBlob = async (
     return persistedSessionBlob;
 };
 
-export const getEncryptedPersistedSessionBlob = async (ClientKey: string, blob: PersistedSessionBlob) => {
-    const sessionKey = getSessionKey(deserializeUint8Array(ClientKey));
-    return getEncryptedBlob(sessionKey, JSON.stringify(blob));
-};
-
 export const setPersistedSessionWithBlob = async (
     localID: number,
-    data: { UID: string; clientKey: string; keyPassword: string }
+    sessionKey: SessionKey,
+    data: { UID: string; keyPassword: string }
 ) => {
     const persistedSession: PersistedSession = {
         UID: data.UID,
-        blob: await getEncryptedPersistedSessionBlob(data.clientKey, { keyPassword: data.keyPassword }),
+        blob: await getEncryptedBlob(sessionKey, JSON.stringify({ keyPassword: data.keyPassword })),
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));
 };

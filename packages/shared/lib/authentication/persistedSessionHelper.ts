@@ -1,5 +1,6 @@
+import getRandomValues from 'get-random-values';
 import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
-import { getLocalKey, getLocalSessions, setCookies } from '../api/auth';
+import { getLocalKey, getLocalSessions, setCookies, setLocalKey } from '../api/auth';
 import { getUser } from '../api/user';
 import { getIs401Error } from '../api/helpers/apiErrorHelper';
 import {
@@ -15,6 +16,8 @@ import { Api, User as tsUser } from '../interfaces';
 import { LocalKeyResponse, LocalSessionResponse } from './interface';
 import { InvalidPersistentSessionError } from './error';
 import { getRandomString } from '../helpers/string';
+import { getSessionKey } from './sessionBlobCryptoHelper';
+import { deserializeUint8Array, serializeUint8Array } from '../helpers/serialization';
 
 export type ResumedSessionResult = {
     UID: string;
@@ -42,7 +45,9 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
                 api<LocalKeyResponse>(withUIDHeaders(persistedUID, getLocalKey())),
                 api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())),
             ]);
-            const { keyPassword } = await getDecryptedPersistedSessionBlob(ClientKey, persistedSessionBlobString);
+            const rawSessionKey = deserializeUint8Array(ClientKey);
+            const sessionKey = getSessionKey(rawSessionKey);
+            const { keyPassword } = await getDecryptedPersistedSessionBlob(sessionKey, persistedSessionBlobString);
             return { UID: persistedUID, LocalID: localID, keyPassword, User };
         } catch (e) {
             if (getIs401Error(e)) {
@@ -84,8 +89,11 @@ export const persistSession = async ({
 }: PersistLoginArgs) => {
     if (isSSOMode) {
         if (keyPassword) {
-            const { ClientKey } = await api<LocalKeyResponse>(withAuthHeaders(UID, AccessToken, getLocalKey()));
-            await setPersistedSessionWithBlob(LocalID, { UID, clientKey: ClientKey, keyPassword });
+            const rawSessionKey = getRandomValues(new Uint8Array(32));
+            const sessionKey = getSessionKey(rawSessionKey);
+            const serializedSessionKey = serializeUint8Array(rawSessionKey);
+            await api<LocalKeyResponse>(withAuthHeaders(UID, AccessToken, setLocalKey(serializedSessionKey)));
+            await setPersistedSessionWithBlob(LocalID, sessionKey, { UID, keyPassword });
         } else {
             setPersistedSession(LocalID, { UID });
         }
