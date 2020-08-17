@@ -1,3 +1,8 @@
+import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
+import { Address } from 'proton-shared/lib/interfaces';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import React, { useEffect, useState } from 'react';
 import {
     Icon,
@@ -9,11 +14,6 @@ import {
     useLoading
 } from 'react-components';
 import { c } from 'ttag';
-import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
-import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { Address } from 'proton-shared/lib/interfaces';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
@@ -129,15 +129,24 @@ const ExtraEvent = ({ invitationOrError, message, calendars, defaultCalendar, co
 
     if (model.error) {
         const message = getErrorMessage(model.error.type);
+        const canTryAgain = [
+            EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR,
+            EVENT_INVITATION_ERROR_TYPE.FETCHING_ERROR,
+            EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR,
+            EVENT_INVITATION_ERROR_TYPE.CANCELLATION_ERROR
+        ].includes(model.error.type);
+
         return (
             <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
                 <Icon name="attention" className="flex-item-noshrink mtauto mbauto" />
                 <span className="pl0-5 pr0-5 flex-item-fluid">{message}</span>
-                <span className="flex-item-noshrink flex">
-                    <InlineLinkButton onClick={handleRetry} className="underline color-currentColor">
-                        {c('Action').t`Try again`}
-                    </InlineLinkButton>
-                </span>
+                {canTryAgain && (
+                    <span className="flex-item-noshrink flex">
+                        <InlineLinkButton onClick={handleRetry} className="underline color-currentColor">
+                            {c('Action').t`Try again`}
+                        </InlineLinkButton>
+                    </span>
+                )}
             </div>
         );
     }

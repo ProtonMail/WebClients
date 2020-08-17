@@ -524,7 +524,7 @@ export const getSupportedEventInvitation = ({ vevent, calscale, xWrTimezone, met
         }
 
         if (rrule) {
-            const supportedRrule = getSupportedRrule({ ...validated, rrule });
+            const supportedRrule = getSupportedRrule({ ...validated, rrule }, true);
             if (!supportedRrule) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
             }
