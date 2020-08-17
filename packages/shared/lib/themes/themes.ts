@@ -1,24 +1,10 @@
 // @ts-nocheck Disable import errors from ds
 import themeDarkSvg from 'design-system/assets/img/pm-images/theme-dark.svg';
-import themeLightSvg from 'design-system/assets/img/pm-images/theme-light.svg';
-import themeBlueSvg from 'design-system/assets/img/pm-images/theme-blue.svg';
 import themeTestSvg from 'design-system/assets/img/pm-images/theme-company.svg';
 import themeDarkmodeSvg from 'design-system/assets/img/pm-images/theme-darkmode.svg';
-import lightTheme from 'design-system/_sass/pm-styles/_pm-light-theme.scss';
-import blueTheme from 'design-system/_sass/pm-styles/_pm-blue-theme.scss';
 import darkMode from 'design-system/_sass/pm-styles/_pm-dark-theme.scss';
 
 import { c } from 'ttag';
-
-export const DEFAULT_THEME = {
-    getI18NLabel() {
-        return c('Theme').t`Default mode`;
-    },
-    identifier: '/* default-theme */',
-    src: themeDarkSvg,
-    theme: '',
-    customizable: false,
-} as const;
 
 export const CUSTOM_THEME = {
     getI18NLabel() {
@@ -29,32 +15,26 @@ export const CUSTOM_THEME = {
     customizable: true,
 } as const;
 
+export enum ThemeTypes {
+    Default = 0,
+    Dark = 1,
+}
+
 export const PROTON_THEMES = {
-    LIGHT: {
+    DEFAULT: {
         getI18NLabel() {
-            return c('Theme').t`Light`;
+            return c('Theme').t`Default mode`;
         },
-        identifier: '/* light-theme */',
-        src: themeLightSvg,
-        theme: lightTheme,
-        customizable: false,
-    },
-    BLUE: {
-        getI18NLabel() {
-            return c('Theme').t`Blue`;
-        },
-        identifier: '/* blue-theme */',
-        src: themeBlueSvg,
-        theme: blueTheme,
-        customizable: false,
+        identifier: ThemeTypes.Default,
+        src: themeDarkSvg,
+        theme: '',
     },
     DARK: {
         getI18NLabel() {
             return c('Theme').t`Dark mode`;
         },
-        identifier: '/* dark-mode */',
+        identifier: ThemeTypes.Dark,
         src: themeDarkmodeSvg,
         theme: darkMode,
-        customizable: false,
     },
 } as const;
