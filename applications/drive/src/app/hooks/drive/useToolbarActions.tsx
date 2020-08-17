@@ -74,7 +74,7 @@ function useToolbarActions() {
 
         const title = c('Title').t`Delete permanently`;
         const confirm = c('Action').t`Delete permanently`;
-        const message = c('Info').t`permanently delete selected item(s) from Trash`;
+        const message = c('Info').t`Are you sure you want to permanently delete selected item(s) from Trash?`;
 
         openConfirmModal(title, confirm, message, async () => {
             const deleted = await deleteLinks(

@@ -22,7 +22,7 @@ const EmptyTrashButton = ({ shareId, floating }: Props) => {
     const handleEmptyTrashClick = () => {
         const title = c('Title').t`Empty Trash`;
         const confirm = c('Action').t`Empty Trash`;
-        const message = c('Info').t`empty Trash and permanently delete all the items`;
+        const message = c('Info').t`Are you sure you want to empty Trash and permanently delete all the items?`;
 
         openConfirmModal(title, confirm, message, async () => {
             try {
