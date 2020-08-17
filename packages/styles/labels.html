@@ -1,0 +1,322 @@
+---
+layout: default
+lang: en
+pageId: labels
+title: Labels
+description: Labels used for labelling item, sush as in mails or contacts.
+keywords: labels
+section: components
+---
+
+<p>The <code>&lt;LabelStack /&gt;</code> component allow you to add a label list with embeded look and feel, with interactions, buttons for filtering or removing.</p>
+<p>Please use the <code>&lt;LabelStack /&gt;</code> component <b>even if you have one and only</b> label to display.</p>
+
+<h2>Options</h2>
+
+<ul>
+	<li>
+		<b><code>labels</code></b>: <i>[required]</i> the label list, <code>{ name: label.Name, color: label.Color, title: label.Name, onClick: handleClick(label), onDelete: handleDelete(label.ID)}</code>.
+	</li>
+	<li>
+		<b><code>showDelete</code></b>: <i>[optional]</i> display the remove button
+	</li>
+	<li>
+		<b><code>isStacked</code></b>: <i>[optional]</i> stack the label list
+	</li>
+	<li>
+		<b><code>maxNumber</code></b>: <i>[optional]</i> limit the number of labels displayed, and add a <code>+N</code> at the end if the list count is higher
+	</li>
+	<li>
+		<b><code>className</code></b>: <i>[optional]</i> add some classes to the default class list container
+	</li>
+</ul>
+
+<h2>Examples</h2>
+
+<table class="pm-simple-table noborder border-collapse">
+	<caption class="sr-only">Labels</caption>
+	<thead>
+		<tr>
+			<th scope="col">Example</th>
+			<th scope="col">Code</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="alignright">
+				<ul class="label-stack unstyled m0 inline-flex flew-row flex-items-center stop-propagation">
+					<li style="--color: cornflowerblue" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							lorem
+						</button>
+					</li>
+					<li style="--color: lightseagreen" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							ipsum
+						</button>
+					</li>
+					<li style="--color: teal" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							dolor
+						</button>
+					</li>
+					<li style="--color: orange" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							sit
+						</button>
+					</li>
+					</li>
+					<li style="--color: mediumvioletred" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							amet
+						</button>
+					</li>
+					<li style="--color: orchid" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							consectetur
+						</button>
+					</li>
+					<li style="--color: salmon" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							adipiscing
+						</button>
+					</li>
+					<li style="--color: limegreen" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							elit
+						</button>
+					</li>
+				</ul>
+			</td>
+			<td>
+				<pre class="language-markup"><code>
+&lt;LabelStack labels={labelList} /&gt;
+				</code></pre>
+			</td>
+		</tr>
+		<tr>
+			<td class="alignright">
+				<ul class="label-stack unstyled m0 inline-flex flew-row flex-items-center stop-propagation">
+					<li style="--color: cornflowerblue" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							lorem
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+					<li style="--color: lightseagreen" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							ipsum
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+					<li style="--color: teal" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							dolor
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+					<li style="--color: orange" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							sit
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+					</li>
+					<li style="--color: mediumvioletred" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							amet
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+					<li style="--color: orchid" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							consectetur
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+					<li style="--color: salmon" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							adipiscing
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+					<li style="--color: limegreen" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							elit
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+				</ul>
+			</td>
+			<td>
+				<pre class="language-markup"><code>
+&lt;LabelStack labels={labelList} showDelete={true} /&gt;
+				</code></pre>
+			</td>
+		</tr>
+		<tr>
+			<td class="alignright">
+				<ul class="label-stack unstyled m0 inline-flex flew-row flex-items-center stop-propagation is-stacked">
+					<li style="--color: cornflowerblue" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							lorem
+						</button>
+					</li>
+					<li style="--color: lightseagreen" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							ipsum
+						</button>
+					</li>
+					<li style="--color: teal" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							dolor
+						</button>
+					</li>
+					<li style="--color: orange" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							sit
+						</button>
+					</li>
+					</li>
+					<li style="--color: mediumvioletred" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							amet
+						</button>
+					</li>
+					<li style="--color: orchid" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							consectetur
+						</button>
+					</li>
+					<li style="--color: salmon" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							adipiscing
+						</button>
+					</li>
+					<li style="--color: limegreen" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							elit
+						</button>
+					</li>
+				</ul>
+			</td>
+			<td>
+				<pre class="language-markup"><code>
+&lt;LabelStack labels={labelList} isStacked={true} /&gt;
+				</code></pre>
+			</td>
+		</tr>
+		<tr>
+			<td class="alignright">
+				<ul class="label-stack unstyled m0 inline-flex flew-row flex-items-center stop-propagation is-stacked">
+					<li style="--color: cornflowerblue" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							lorem
+						</button>
+					</li>
+					<li style="--color: lightseagreen" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							ipsum
+						</button>
+					</li>
+					<li style="--color: teal" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							dolor
+						</button>
+					</li>
+					<li style="--color: orange" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							sit
+						</button>
+					</li>
+					</li>
+					<li style="--color: mediumvioletred" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							amet
+						</button>
+					</li>
+					<li className="label-stack-overflow-count flex">+3</li>
+				</ul>
+			</td>
+			<td>
+				<pre class="language-markup"><code>
+&lt;LabelStack labels={labelList} isStacked={true} maxNumber={5} /&gt;
+				</code></pre>
+			</td>
+		</tr>
+		<tr>
+			<td class="alignright">
+				<ul class="label-stack unstyled m0 inline-flex flew-row flex-items-center stop-propagation is-stacked">
+					<li style="--color: cornflowerblue" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							lorem
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+					<li style="--color: lightseagreen" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							ipsum
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+					<li style="--color: teal" class="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap">
+						<button title="Full label name in case of ellipsis" type="button" class="label-stack-item-button ellipsis">
+							dolor
+						</button>
+						<button type="button" class="label-stack-item-delete flex-item-noshrink" title="Remove label">
+							<svg class="label-stack-item-delete-icon icon-12p" viewBox="0 0 16 16" aria-hidden="true" role="img" focusable="false">
+								<use xlink:href="#shape-close"></use>
+							</svg>
+						</button>
+					</li>
+					<li className="label-stack-overflow-count flex">+5</li>
+				</ul>
+			</td>
+			<td>
+				<pre class="language-markup"><code>
+&lt;LabelStack labels={labelList} isStacked={true} showDelete={true} maxNumber={3} /&gt;
+				</code></pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
