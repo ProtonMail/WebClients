@@ -105,6 +105,7 @@ export const FREQUENCY_INTERVALS_MAX = {
     [FREQUENCY.OTHER]: 1,
 };
 export const FREQUENCY_COUNT_MAX = 50 - 1;
+export const FREQUENCY_COUNT_MAX_INVITATION = 500 - 1;
 
 export enum DAILY_TYPE {
     ALL_DAYS = 0,

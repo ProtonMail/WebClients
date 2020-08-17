@@ -10,7 +10,14 @@ import {
     VcalRrulePropertyValue,
     VcalVeventComponent,
 } from '../../interfaces/calendar/VcalModel';
-import { MAXIMUM_DATE, MAXIMUM_DATE_UTC, FREQUENCY, FREQUENCY_COUNT_MAX, FREQUENCY_INTERVALS_MAX } from '../constants';
+import {
+    MAXIMUM_DATE,
+    MAXIMUM_DATE_UTC,
+    FREQUENCY,
+    FREQUENCY_COUNT_MAX,
+    FREQUENCY_INTERVALS_MAX,
+    FREQUENCY_COUNT_MAX_INVITATION,
+} from '../constants';
 
 export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
     return /^(SU|MO|TU|WE|TH|FR|SA)$/.test(byday);
@@ -39,6 +46,22 @@ export const SUPPORTED_RRULE_PROPERTIES = [
     'wkst',
     'bysetpos',
     'byday',
+    'bymonthday',
+    'bymonth',
+    'byyearday',
+];
+export const SUPPORTED_RRULE_PROPERTIES_INVITATION = [
+    'freq',
+    'count',
+    'interval',
+    'until',
+    'wkst',
+    'bysetpos',
+    'bysecond',
+    'byminute',
+    'byhour',
+    'byday',
+    'byweekno',
     'bymonthday',
     'bymonth',
     'byyearday',
@@ -135,7 +158,7 @@ export const getIsRruleCustom = (rrule?: VcalRrulePropertyValue): boolean => {
     return false;
 };
 
-export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue) => {
+export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isInvitation = false) => {
     if (!rruleProperty) {
         return false;
     }
@@ -145,7 +168,7 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue) => {
     }
     const { freq, interval = 1, count, until, byday, bysetpos, bymonthday, bymonth, byyearday } = rruleProperty;
     if (count) {
-        if (count > FREQUENCY_COUNT_MAX) {
+        if (count > (isInvitation ? FREQUENCY_COUNT_MAX_INVITATION : FREQUENCY_COUNT_MAX)) {
             return false;
         }
     }
@@ -163,6 +186,9 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue) => {
         if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
             return false;
         }
+        if (isInvitation) {
+            return !rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_INVITATION.includes(property));
+        }
         if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(property))) {
             return false;
         }
@@ -172,6 +198,9 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue) => {
         if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
             return false;
         }
+        if (isInvitation) {
+            return !rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_INVITATION.includes(property));
+        }
         if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_WEEKLY.includes(property))) {
             return false;
         }
@@ -180,6 +209,9 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue) => {
     if (freq === 'MONTHLY') {
         if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
             return false;
+        }
+        if (isInvitation) {
+            return !rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_INVITATION.includes(property));
         }
         if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_MONTHLY.includes(property))) {
             return false;
@@ -200,6 +232,9 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue) => {
     if (freq === 'YEARLY') {
         if (interval > FREQUENCY_INTERVALS_MAX[freq]) {
             return false;
+        }
+        if (isInvitation) {
+            return !rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_INVITATION.includes(property));
         }
         if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_YEARLY.includes(property))) {
             return false;
@@ -232,7 +267,7 @@ export const getSupportedUntil = (until: VcalDateOrDateTimeValue, isAllDay: bool
     return { ...utcEndOfDay, isUTC: true };
 };
 
-export const getSupportedRrule = (vevent: VcalVeventComponent): VcalRruleProperty | undefined => {
+export const getSupportedRrule = (vevent: VcalVeventComponent, isInvitation = false): VcalRruleProperty | undefined => {
     if (!vevent.rrule?.value) {
         return;
     }
@@ -244,7 +279,7 @@ export const getSupportedRrule = (vevent: VcalVeventComponent): VcalRrulePropert
         const supportedUntil = getSupportedUntil(until, getIsPropertyAllDay(dtstart), getPropertyTzid(dtstart));
         supportedRrule.value.until = supportedUntil;
     }
-    if (!getIsRruleSupported(rrule.value)) {
+    if (!getIsRruleSupported(rrule.value, isInvitation)) {
         return;
     }
     return supportedRrule;
