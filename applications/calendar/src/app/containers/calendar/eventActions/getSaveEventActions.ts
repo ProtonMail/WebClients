@@ -104,7 +104,7 @@ const getSaveEventActions = async ({
         );
         const multiActions = getSaveSingleEventActions({
             newEditEventData: { ...newEditEventData, veventComponent: newVeventWithSequence },
-            oldEditEventData: { ...oldEditEventData },
+            oldEditEventData,
         });
         const successText = getSingleEventText(oldEditEventData, newEditEventData);
         return {

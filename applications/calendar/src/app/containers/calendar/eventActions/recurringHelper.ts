@@ -1,12 +1,15 @@
+import { addDays } from 'date-fns';
+import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
-import { toUTCDate } from 'proton-shared/lib/date/timezone';
+import { fromUTCDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { VcalDateOrDateTimeProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
+import { getIsAllDay, getPropertyTzid, getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
 
 import parseMainEventData from '../event/parseMainEventData';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
+import { toExdate } from '../recurrence/helper';
 
 export const getOriginalEvent = (recurrences: CalendarEvent[]) => {
     return recurrences.find((Event) => {
@@ -17,6 +20,25 @@ export const getOriginalEvent = (recurrences: CalendarEvent[]) => {
         return !getRecurrenceId(component);
     });
 };
+
+export const getCurrentEvent = (originalComponent: VcalVeventComponent, recurrence: CalendarEventRecurring) => {
+    const isAllDay = getIsAllDay(originalComponent);
+    const { localStart, localEnd } = recurrence;
+    const correctedLocalEnd = isAllDay ? addDays(localEnd, 1) : localEnd;
+    const recurrenceDtstart = toExdate(fromUTCDate(localStart), isAllDay, getPropertyTzid(originalComponent.dtstart));
+    const recurrenceDtend = toExdate(
+        fromUTCDate(correctedLocalEnd),
+        isAllDay,
+        getPropertyTzid(getDtendProperty(originalComponent))
+    );
+
+    return {
+        ...originalComponent,
+        dtstart: recurrenceDtstart,
+        dtend: recurrenceDtend,
+    };
+
+}
 
 export const getRecurrenceEvents = (recurrences: CalendarEvent[], originalEvent: CalendarEvent) => {
     return recurrences.filter((Event) => Event !== originalEvent);

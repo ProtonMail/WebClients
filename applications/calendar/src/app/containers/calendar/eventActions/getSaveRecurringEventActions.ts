@@ -10,7 +10,7 @@ import {
     getUpdateSyncOperation,
     SyncEventActionOperations,
 } from '../getSyncMultipleEventsPayload';
-import { getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
+import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
 import updateAllRecurrence from '../recurrence/updateAllRecurrence';
@@ -72,9 +72,14 @@ const getSaveRecurringEventActions = ({
             ];
         }
 
-        const newVeventWithSequence = withVeventSequence(newVeventComponent, oldVeventComponent, hasModifiedRrule);
+        const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventComponent, recurrence);
+        const newRecurrenceVeventComponent = createSingleRecurrence(
+            newVeventComponent,
+            originalVeventComponent,
+            recurrence.localStart
+        );
         const createOperation = getCreateSyncOperation(
-            createSingleRecurrence(newVeventWithSequence, originalVeventComponent, recurrence.localStart)
+            withVeventSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent, false)
         );
 
         return [

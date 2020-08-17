@@ -1,4 +1,4 @@
-import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import { getDtendProperty, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import { getIsPropertyAllDay } from 'proton-shared/lib/calendar/vcalHelper';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
@@ -22,15 +22,15 @@ export const withVeventSequence = (
     if (oldEvent.sequence?.value === undefined) {
         return { ...event, sequence: { value: 0 } };
     }
-    const { dtstart, dtend, rrule } = event;
-    const { dtstart: oldDtstart, dtend: oldDtend, rrule: oldRrule, sequence: oldSequence } = oldEvent;
+    const { dtstart, rrule } = event;
+    const { dtstart: oldDtstart, rrule: oldRrule, sequence: oldSequence } = oldEvent;
+    const [dtend, oldDtend] = [event, oldEvent].map(getDtendProperty);
     const [isAllDay, oldIsAllDay] = [dtstart, oldDtstart].map(getIsPropertyAllDay);
-    const isIsAllDayPreserved = isAllDay === oldIsAllDay;
+    const isAllDayPreserved = isAllDay === oldIsAllDay;
     const isStartPreserved = +propertyToUTCDate(dtstart) === +propertyToUTCDate(oldDtstart);
-    const isEndPreserved =
-        (!dtend && !oldDtend) || (dtend && oldDtend && +propertyToUTCDate(dtend) === +propertyToUTCDate(oldDtend));
+    const isEndPreserved = +propertyToUTCDate(dtend) === +propertyToUTCDate(oldDtend);
     const isRrulePreserved = hasModifiedRrule === undefined ? isDeepEqual(rrule, oldRrule) : !hasModifiedRrule;
-    if (isIsAllDayPreserved && isStartPreserved && isEndPreserved && isRrulePreserved) {
+    if (isAllDayPreserved && isStartPreserved && isEndPreserved && isRrulePreserved) {
         return event;
     }
     const oldSequenceValue = Math.max(0, oldSequence.value);
