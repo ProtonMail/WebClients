@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useEffect, useMemo } from 'react';
+import React, { useState, ChangeEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import {
     SearchInput,
@@ -59,13 +59,12 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
     const [search, updateSearch] = useState('');
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
     const [alsoArchive, updateAlsoArchive] = useState(false);
-    const [selectedLabelIDs, updateSelectedLabelIDs] = useState<SelectionState>({});
+
     const applyLabels = useApplyLabels();
     const moveToFolder = useMoveToFolder();
 
-    const initialState = useMemo(() => getInitialState(labels, elements), [elements, labels.length]);
-
-    useEffect(() => updateSelectedLabelIDs(initialState), [elements, labels.length]);
+    const initialState = useMemo(() => getInitialState(labels, elements), [elements, labels]);
+    const [selectedLabelIDs, setSelectedLabelIDs] = useState<SelectionState>(initialState);
 
     if (!elements || !elements.length) {
         return null;
@@ -109,7 +108,7 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
             return acc;
         }, {} as SelectionState);
 
-        updateSelectedLabelIDs({ ...selectedLabelIDs, ...update });
+        setSelectedLabelIDs({ ...selectedLabelIDs, ...update });
     };
 
     const handleCheck = (labelID: string) => ({ target, nativeEvent }: ChangeEvent<HTMLInputElement>) => {
