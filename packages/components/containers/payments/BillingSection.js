@@ -421,7 +421,7 @@ const BillingSection = ({ permission }) => {
                         </div>
                     </div>
                     <div className="flex-autogrid w100 mb1">
-                        <div className="flex-autogrid-item">{c('Label').t`Amount due`}</div>
+                        <div className="flex-autogrid-item">{c('Label').t`Billing amount`}</div>
                         <div className="flex-autogrid-item bold alignright">
                             <Price currency={Currency}>{Amount}</Price>
                         </div>
