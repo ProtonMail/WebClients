@@ -11,7 +11,7 @@ import mastercardSecurecodeSvg from 'design-system/assets/img/shared/bank-icons/
 import verifiedByVisaSvgLight from 'design-system/assets/img/shared/bank-icons/verified-by-visa.svg';
 import verifiedByVisaSvgDark from 'design-system/assets/img/shared/bank-icons/verified-by-visa-dark.svg';
 
-import { Alert, Loader } from '../../components';
+import { Loader } from '../../components';
 import Card from './Card';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PayPalView from './PayPalView';
@@ -25,7 +25,7 @@ const Alert3DS = () => {
     const discoverProtectBuySvg = getLightOrDark(discoverProtectBuySvgLight, discoverProtectBuySvgDark);
     const americanExpressSafekeySvg = getLightOrDark(americanExpressSafekeySvgLight, americanExpressSafekeySvgDark);
     return (
-        <Alert>
+        <p>
             <div className="mb0-5">{c('Info').t`We use 3-D Secure to protect your payments.`}</div>
             <div className="flex flex-nowrap flex-items-center">
                 <img width="60" alt="" className="mr1" src={verifiedByVisaSvg} />
@@ -33,7 +33,7 @@ const Alert3DS = () => {
                 <img width="60" alt="" className="mr1" src={discoverProtectBuySvg} />
                 <img width="60" alt="" className="mr1" src={americanExpressSafekeySvg} />
             </div>
-        </Alert>
+        </p>
     );
 };
 
