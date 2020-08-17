@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Alert, FormModal } from '../../../components';
+import { Alert, FormModal, ErrorButton } from '../../../components';
 import GenericError from '../../error/GenericError';
 
 enum STEPS {
@@ -9,6 +9,7 @@ enum STEPS {
     DELETE_KEY = 3,
     SUCCESS = 4,
     FAILURE = 5,
+    CONFIRM_DELETE = 6,
 }
 
 interface Props {
@@ -39,11 +40,17 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                 onSubmit: () => {
                     setStep(onExport ? STEPS.EXPORT_KEY : STEPS.DELETE_KEY);
                 },
+                submit: <ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>,
                 children: (
-                    <Alert>
-                        {c('Info')
-                            .t`This feature is intended for advanced users only! After deleting this key, you will not be able to decrypt any message that is encrypted with this key. It may lead to data loss. Are you sure you want to continue?`}
-                    </Alert>
+                    <>
+                        <Alert>
+                            {c('Info')
+                                .t`This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been with it. It may lead to data loss.`}
+                        </Alert>
+                        <Alert type="error">
+                            {c('Confirm').t`Are you sure you want to permanently delete this key?`}
+                        </Alert>
+                    </>
                 ),
             };
         }
@@ -55,14 +62,38 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                     setStep(STEPS.DELETE_KEY);
                 },
                 onClose: () => {
+                    setStep(STEPS.CONFIRM_DELETE);
+                },
+                close: c('Action').t`No`,
+                submit: c('Action').t`Export`,
+                children: (
+                    <>
+                        <Alert>
+                            {c('Alert')
+                                .t`Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.`}
+                        </Alert>
+                        <Alert>{c('Confirm').t`Do you want to export your key?`}</Alert>
+                    </>
+                ),
+            };
+        }
+
+        if (step === STEPS.CONFIRM_DELETE) {
+            return {
+                onSubmit: async () => {
                     setStep(STEPS.DELETE_KEY);
                 },
                 close: c('Action').t`No`,
+                submit: c('Action').t`Yes`,
                 children: (
-                    <Alert>
-                        {c('alert')
-                            .t`Deleting your keys is irreversible. To be able to access any message encrypted with this key, you might want to make a back up of this key for later use. Do you want to export this key?`}
-                    </Alert>
+                    <>
+                        <Alert type="error">
+                            {c('Alert').t`You will face a permanent data loss by not making a backup of your key.`}
+                        </Alert>
+                        <Alert type="error">
+                            {c('Confirm').t`Are you sure you want to delete this key without backing it up?`}
+                        </Alert>
+                    </>
                 ),
             };
         }
@@ -94,14 +125,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
     })();
 
     return (
-        <FormModal
-            title={c('Title').t`Delete key`}
-            submit={c('Action').t`Yes`}
-            onClose={onClose}
-            onSubmit={onClose}
-            {...stepProps}
-            {...rest}
-        >
+        <FormModal title={c('Title').t`Delete key`} onClose={onClose} onSubmit={onClose} {...stepProps} {...rest}>
             {children}
         </FormModal>
     );
