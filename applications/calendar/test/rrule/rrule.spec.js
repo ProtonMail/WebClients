@@ -177,7 +177,7 @@ describe('getIsRruleSupported', () => {
             const { rrule } = parse(vevent);
             return rrule.value;
         });
-        expect(rrules.map(getIsRruleSupported)).toEqual(vevents.map(() => true));
+        expect(rrules.map((rrule) => getIsRruleSupported(rrule))).toEqual(vevents.map(() => true));
     });
 
     test('should accept events with valid yearly recurring rules', () => {
@@ -190,7 +190,7 @@ describe('getIsRruleSupported', () => {
             const { rrule } = parse(vevent);
             return rrule.value;
         });
-        expect(rrules.map(getIsRruleSupported)).toEqual(vevents.map(() => true));
+        expect(rrules.map((rrule) => getIsRruleSupported(rrule))).toEqual(vevents.map(() => true));
     });
 
     test('should refuse events with invalid monthly recurring rules', () => {
@@ -208,7 +208,7 @@ describe('getIsRruleSupported', () => {
             const { rrule } = parse(vevent);
             return rrule.value;
         });
-        expect(rrules.map(getIsRruleSupported)).toEqual(vevents.map(() => false));
+        expect(rrules.map((rrule) => getIsRruleSupported(rrule))).toEqual(vevents.map(() => false));
     });
 
     test('should refuse events with invalid yearly recurring rules', () => {
@@ -220,7 +220,7 @@ describe('getIsRruleSupported', () => {
             const { rrule } = parse(vevent);
             return rrule.value;
         });
-        expect(rrules.map(getIsRruleSupported)).toEqual(vevents.map(() => false));
+        expect(rrules.map((rrule) => getIsRruleSupported(rrule))).toEqual(vevents.map(() => false));
     });
 });
 
