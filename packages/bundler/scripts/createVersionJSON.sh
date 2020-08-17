@@ -4,6 +4,7 @@ set -eo pipefail
 TAG='';
 BRANCH='';
 COMMIT='';
+BUILD_MODE='bundle';
 OUTPUT_FILE='build/assets/version.json';
 IS_DEBUG=false;
 
@@ -13,6 +14,7 @@ while [ ! $# -eq 0 ]; do
     --branch) BRANCH="$2"; ;;
     --commit) COMMIT="$2"; ;;
     --output) OUTPUT_FILE="$2"; ;;
+    --build-mode) BUILD_MODE="$2"; ;;
     --debug) IS_DEBUG=true; ;;
   esac
   shift
@@ -93,6 +95,7 @@ cat <<EOT
     "buildDate": "${buildDate}",
     "release": "${release}",
     "locales": "${locales}",
+    "buildMode": "${BUILD_MODE}",
     "dependencies": {
         "react-components": "${depReactComponents}",
         "proton-shared": "${depProtonShared}",
@@ -111,6 +114,8 @@ fi;
 printf '%-20s' "[TAG]" "$TAG";
 echo
 printf '%-20s' "[BRANCH]" "$BRANCH";
+echo
+printf '%-20s' "[BUILD_MODE]" "$BUILD_MODE";
 echo
 printf '%-20s' "[COMMIT]" "$COMMIT";
 echo

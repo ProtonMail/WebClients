@@ -74,7 +74,13 @@ function main({
                     return true;
                 }
                 if (buildMode === 'standalone-with-prefix-path') {
-                    const output = await bash('npm', ['run', 'build:standalone', '--', '$npm_package_config_publicPathFlag', ...args]);
+                    const output = await bash('npm', [
+                        'run',
+                        'build:standalone',
+                        '--',
+                        '$npm_package_config_publicPathFlag',
+                        ...args
+                    ]);
                     ctx.outputBuild = output;
                     return true;
                 }
@@ -105,6 +111,7 @@ function main({
                     `--commit ${originCommit}`,
                     `--branch ${originBranch}`,
                     `--output ${fileName}`,
+                    `--build-mode ${buildMode}`,
                     '--debug'
                 ];
 
