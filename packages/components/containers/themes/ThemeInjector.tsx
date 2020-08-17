@@ -1,32 +1,27 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import { getThemeIdentifier, getTheme, toStyle, isDarkTheme } from 'proton-shared/lib/themes/helpers';
-import { DEFAULT_THEME } from 'proton-shared/lib/themes/themes';
+import { PROTON_THEMES, ThemeTypes } from 'proton-shared/lib/themes/themes';
 import { DARK_MODE_CLASS } from 'proton-shared/lib/constants';
-import { useMailSettings, useOrganization } from '../../hooks';
 
-const getStyle = (userTheme: string, orgTheme: string) => {
-    const themeIdentifier = getThemeIdentifier(userTheme);
-    if (themeIdentifier === DEFAULT_THEME.identifier) {
-        return orgTheme;
+import { useUserSettings } from '../../hooks';
+
+const getStyle = (themeType: ThemeTypes) => {
+    if (themeType === ThemeTypes.Dark) {
+        return PROTON_THEMES.DARK.theme;
     }
-    const themeValue = getTheme(themeIdentifier);
-    if (themeValue) {
-        return toStyle([themeValue, orgTheme]);
-    }
-    return toStyle([userTheme, orgTheme]);
+    return '';
 };
 
 const ThemeInjector = () => {
-    const [{ Theme: userTheme = '' } = {}] = useMailSettings();
-    const [{ Theme: orgTheme = '' } = {}] = useOrganization();
-    const [style, setStyle] = useState(() => getStyle(userTheme, orgTheme));
+    const [userSettings] = useUserSettings();
+    const { ThemeType } = userSettings;
+    const [style, setStyle] = useState(() => getStyle(ThemeType));
 
     useEffect(() => {
-        setStyle(getStyle(userTheme, orgTheme));
-    }, [userTheme, orgTheme]);
+        setStyle(getStyle(ThemeType));
+    }, [ThemeType]);
 
     useLayoutEffect(() => {
-        if (isDarkTheme(userTheme)) {
+        if (ThemeType === ThemeTypes.Dark) {
             document.body.classList.add(DARK_MODE_CLASS);
         } else {
             document.body.classList.remove(DARK_MODE_CLASS);
@@ -34,7 +29,7 @@ const ThemeInjector = () => {
         return () => {
             document.body.classList.remove(DARK_MODE_CLASS);
         };
-    }, [userTheme]);
+    }, [ThemeType]);
 
     return <style>{style}</style>;
 };

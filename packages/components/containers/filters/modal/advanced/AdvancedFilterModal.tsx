@@ -16,10 +16,10 @@ import {
     useApi,
     useFilters,
     useActiveBreakpoint,
-    useMailSettings,
     useNotifications,
     useEventManager,
     useApiWithoutResult,
+    useUserSettings,
 } from '../../../../hooks';
 
 import FilterNameForm from '../FilterNameForm';
@@ -58,7 +58,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [loading, withLoading] = useLoading();
     const [filters = []] = useFilters();
-    const [mailSettings] = useMailSettings();
+    const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const { createModal } = useModals();
@@ -179,7 +179,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                 />
             )}
             {model.step === StepSieve.SIEVE && (
-                <SieveForm model={model} onChange={setModel} errors={errors} mailSettings={mailSettings} />
+                <SieveForm model={model} onChange={setModel} errors={errors} userSettings={userSettings} />
             )}
         </FormModal>
     );

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import { isDarkTheme } from 'proton-shared/lib/themes/helpers';
 import { AdvancedSimpleFilterModalModel, ErrorsSieve } from 'proton-shared/lib/filters/interfaces';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { UserSettings } from 'proton-shared/lib/interfaces';
 import { Alert } from '../../../../components';
 
 import SieveEditor from './SieveEditor';
@@ -11,11 +11,11 @@ interface Props {
     model: AdvancedSimpleFilterModalModel;
     onChange: (newModel: AdvancedSimpleFilterModalModel) => void;
     errors: ErrorsSieve;
-    mailSettings: MailSettings;
+    userSettings: UserSettings;
 }
 
-const SieveForm = ({ model, mailSettings, onChange }: Props) => {
-    const theme = useMemo(() => (isDarkTheme(mailSettings.Theme) ? 'base16-dark' : ''), [mailSettings.Theme]);
+const SieveForm = ({ model, userSettings, onChange }: Props) => {
+    const theme = useMemo(() => (isDarkTheme() ? 'base16-dark' : ''), [userSettings.Theme]);
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/sieve-advanced-custom-filters/">

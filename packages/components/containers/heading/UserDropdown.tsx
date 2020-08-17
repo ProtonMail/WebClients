@@ -1,34 +1,45 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { APPS, isSSOMode, PLANS, SSO_PATHS } from 'proton-shared/lib/constants';
-import { getPlanName } from 'proton-shared/lib/helpers/subscription';
+import { APPS, isSSOMode, SSO_PATHS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp, getAppHref } from 'proton-shared/lib/apps/helper';
 import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
-import { useAuthentication, useConfig, useModals, useOrganization, useSubscription, useUser } from '../../hooks';
-import { usePopperAnchor, Dropdown, Icon, PrimaryButton } from '../../components';
+import { updateThemeType } from 'proton-shared/lib/api/settings';
+import { ThemeTypes } from 'proton-shared/lib/themes/themes';
 
-import UserDropdownButton from './UserDropdownButton';
-import AppLink from '../../components/link/AppLink';
+import {
+    useAuthentication,
+    useConfig,
+    useModals,
+    useUser,
+    useLoading,
+    useApi,
+    useEventManager,
+    useUserSettings,
+} from '../../hooks';
+import { usePopperAnchor, Dropdown, Icon, Toggle, PrimaryButton, AppLink } from '../../components';
 import { generateUID } from '../../helpers';
+import { ToggleState } from '../../components/toggle/Toggle';
+import UserDropdownButton from './UserDropdownButton';
 import { DonateModal } from '../payments';
-
-const { PROFESSIONAL, VISIONARY } = PLANS;
 
 const UserDropdown = ({ ...rest }) => {
     const { APP_NAME } = useConfig();
+    const api = useApi();
+    const { call } = useEventManager();
     const [user] = useUser();
-    const { DisplayName, Email, Name } = user;
-    const [{ Name: organizationName } = { Name: '' }] = useOrganization();
-    const [subscription] = useSubscription();
+    const [userSettings] = useUserSettings();
     const { logout } = useAuthentication();
     const { createModal } = useModals();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const planName = getPlanName(subscription) as PLANS;
+    const [themeType, setThemeType] = useState(userSettings.ThemeType || ThemeTypes.Default);
+    const [loading, withLoading] = useLoading();
+    const displayName = user.DisplayName || user.Name;
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
+        close();
     };
 
     const handleSwitchAccount = () => {
@@ -41,6 +52,14 @@ const UserDropdown = ({ ...rest }) => {
 
     const handleLogout = () => {
         logout();
+        close();
+    };
+
+    const handleThemeToggle = async () => {
+        const newThemeType = themeType === ThemeTypes.Default ? ThemeTypes.Dark : ThemeTypes.Default;
+        await api(updateThemeType(newThemeType));
+        await call();
+        setThemeType(newThemeType);
     };
 
     return (
@@ -52,38 +71,46 @@ const UserDropdown = ({ ...rest }) => {
                 isOpen={isOpen}
                 noMaxSize
                 anchorRef={anchorRef}
+                autoClose={false}
                 onClose={close}
                 originalPlacement="bottom-right"
             >
                 <ul className="unstyled mt0 mb0">
-                    <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
-                        <strong title={DisplayName || Name} className="ellipsis mw100 capitalize">
-                            {DisplayName || Name}
-                        </strong>
-                        {Email ? (
-                            <span title={Email} className="ellipsis mw100">
-                                {Email}
-                            </span>
-                        ) : null}
-                        {[PROFESSIONAL, VISIONARY].includes(planName) && organizationName ? (
-                            <span title={organizationName} className="ellipsis mw100">
-                                {organizationName}
-                            </span>
-                        ) : null}
-                    </li>
-                    {APP_NAME === APPS.PROTONVPN_SETTINGS || APP_NAME === APPS.PROTONACCOUNT ? null : (
+                    {!isSSOMode && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
+                        <>
+                            <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
+                                <div className="bold ellipsis mw100 capitalize" title={displayName}>
+                                    {displayName}
+                                </div>
+                                <div className="ellipsis mw100" title={user.Email}>
+                                    {user.Email}
+                                </div>
+                            </li>
+                            <li className="dropDown-item">
+                                <AppLink
+                                    className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
+                                    to="/"
+                                    toApp={APPS.PROTONMAIL_SETTINGS}
+                                >
+                                    <Icon className="mt0-25 mr0-5" name="settings-master" />
+                                    {c('Action').t`Settings`}
+                                </AppLink>
+                            </li>
+                        </>
+                    ) : null}
+                    {APP_NAME === APPS.PROTONVPN_SETTINGS || APP_NAME === APPS.PROTONACCOUNT || !isSSOMode ? null : (
                         <li className="dropDown-item">
                             <AppLink
                                 className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
                                 to="/"
                                 toApp={getAccountSettingsApp()}
                             >
-                                <Icon className="mt0-25 mr0-5" name="settings-master" />
-                                {c('Action').t`Settings`}
+                                <Icon className="mt0-25 mr0-5" name="account" />
+                                {c('Action').t`Account settings`}
                             </AppLink>
                         </li>
                     )}
-                    <li className="dropDown-item">
+                    <li>
                         <a
                             className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
                             href="https://shop.protonmail.com"
@@ -105,16 +132,45 @@ const UserDropdown = ({ ...rest }) => {
                         </button>
                     </li>
                     {isSSOMode ? (
-                        <li className="dropDown-item">
-                            <button
-                                type="button"
-                                className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
-                                onClick={handleSwitchAccount}
-                            >
-                                <Icon className="mt0-25 mr0-5" name="organization-users" />
-                                {c('Action').t`Switch account`}
-                            </button>
-                        </li>
+                        <>
+                            <li className="dropDown-item">
+                                <button
+                                    type="button"
+                                    className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
+                                    onClick={handleSwitchAccount}
+                                >
+                                    <Icon className="mt0-25 mr0-5" name="organization-users" />
+                                    {c('Action').t`Switch account`}
+                                </button>
+                            </li>
+                            <li className="dropDown-item">
+                                <div className="pl1 pr1 pt0-5 pb0-5 w100 flex flex-nowrap flex-spacebetween flex-items-center">
+                                    <label htmlFor="theme-toggle" className="mr1">{c('Action').t`Display mode`}</label>
+                                    <Toggle
+                                        id="theme-toggle"
+                                        className="pm-toggle-label--theme-toggle"
+                                        checked={themeType === ThemeTypes.Dark}
+                                        loading={loading}
+                                        onChange={() => withLoading(handleThemeToggle())}
+                                        label={(key: ToggleState) => {
+                                            const alt =
+                                                key === ToggleState.on
+                                                    ? c('Toggle button').t`Normal`
+                                                    : c('Toggle button').t`Dark`;
+                                            return (
+                                                <span className="pm-toggle-label-text">
+                                                    <Icon
+                                                        name={key === ToggleState.on ? 'crescent-moon' : 'half-moon'}
+                                                        alt={alt}
+                                                        className="pm-toggle-label-img"
+                                                    />
+                                                </span>
+                                            );
+                                        }}
+                                    />
+                                </div>
+                            </li>
+                        </>
                     ) : null}
                     <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex">
                         <PrimaryButton

@@ -4,17 +4,13 @@ import { c } from 'ttag';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
 
-const label = (key: string) => {
-    const alt = key === 'on' ? c('Toggle button').t`On` : c('Toggle button').t`Off`;
-    return (
-        <span className="pm-toggle-label-text">
-            <Icon name={key} alt={alt} className="pm-toggle-label-img" />
-        </span>
-    );
-};
-
+export enum ToggleState {
+    on = 'on',
+    off = 'off',
+}
 export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     loading?: boolean;
+    label?: (key: ToggleState) => void;
 }
 
 const Toggle = ({
@@ -24,6 +20,14 @@ const Toggle = ({
     loading = false,
     onChange,
     disabled,
+    label = (key: ToggleState) => {
+        const alt = key === ToggleState.on ? c('Toggle button').t`On` : c('Toggle button').t`Off`;
+        return (
+            <span className="pm-toggle-label-text">
+                <Icon name={key} alt={alt} className="pm-toggle-label-img" />
+            </span>
+        );
+    },
     ...rest
 }: Props) => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -44,8 +48,8 @@ const Toggle = ({
                 {...rest}
             />
             <label htmlFor={id} className={classnames(['pm-toggle-label', className])}>
-                {label('off')}
-                {label('on')}
+                {label(ToggleState.off)}
+                {label(ToggleState.on)}
             </label>
         </>
     );

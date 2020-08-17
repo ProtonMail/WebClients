@@ -25,13 +25,13 @@ import {
     useLoading,
     useLabels,
     useFolders,
-    useMailSettings,
     useActiveBreakpoint,
     useNotifications,
     useFilters,
     useEventManager,
     useApiWithoutResult,
     useModals,
+    useUserSettings,
 } from '../../../hooks';
 
 import HeaderFilterModal from './HeaderFilterModal';
@@ -109,8 +109,8 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
-    const [mailSettings] = useMailSettings();
-    const isDark = useMemo(() => isDarkTheme(mailSettings.Theme), [mailSettings.Theme]);
+    const [userSettings] = useUserSettings();
+    const isDark = useMemo(() => isDarkTheme(), [userSettings.Theme]);
 
     const initFilter = (filter?: Filter) => {
         const computedFilter = filter ? computeFromTree(filter) : {};
