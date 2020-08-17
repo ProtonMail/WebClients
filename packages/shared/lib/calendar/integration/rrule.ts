@@ -163,7 +163,10 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
         return false;
     }
     const rruleProperties = Object.keys(rruleProperty) as (keyof VcalRrulePropertyValue)[];
-    if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES.includes(property))) {
+    const hasUnsupportedProperties = isInvitation
+        ? rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_INVITATION.includes(property))
+        : rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES.includes(property));
+    if (hasUnsupportedProperties) {
         return false;
     }
     const { freq, interval = 1, count, until, byday, bysetpos, bymonthday, bymonth, byyearday } = rruleProperty;
