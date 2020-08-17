@@ -80,6 +80,8 @@ const MessageView = ({
     const draft = !loading && isDraft(message.data);
     const sent = isSent(message.data);
     const unread = isUnread(message.data, labelID);
+    // It can be attachments but not yet loaded
+    const showFooter = hasAttachments(message.data) && Array.isArray(message.data?.Attachments);
 
     const messageViewIcons = useMemo<MessageViewIcons>(() => {
         if (sent) {
@@ -204,7 +206,7 @@ const MessageView = ({
                         sourceMode={sourceMode}
                         message={message}
                     />
-                    {hasAttachments(message.data) ? <MessageFooter message={message} /> : null}
+                    {showFooter ? <MessageFooter message={message} /> : null}
                 </>
             ) : (
                 <HeaderCollapsed
