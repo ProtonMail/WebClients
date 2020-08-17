@@ -296,6 +296,7 @@ $width: 5.5em !default;
   border-radius: 2rem;
   padding: 2px;
   position: relative;
+  transition: border-color .15s ease-out;
   &::before {
     content: '';
     position: absolute;
@@ -341,6 +342,9 @@ $width: 5.5em !default;
   width: 1.6rem;
   height: 1.6rem;
   fill: var(--bordercolor-input, $black);
+  .pm-toggle-label--theme-toggle & {
+    fill: black;
+  }
 }
 
 // checked state
@@ -358,6 +362,15 @@ $width: 5.5em !default;
       transform: translateX( #{$width/2} ) translateX(-2px);
       // transform: translateX( calc( 2.5rem - 2px) ); does NOT work in IE11
       border-color: $pm-primary-dark;
+    }
+  }
+  &:checked + .pm-toggle-label--theme-toggle { // Theme toggle inside user dropdown
+    & > .pm-toggle-label-text:last-child .pm-toggle-label-img {
+      fill: #fce988;
+    }
+    &::before {
+      background: rgba(black, .75);
+      border-color: rgba(white, .25);
     }
   }
   &:focus + .pm-toggle-label {
