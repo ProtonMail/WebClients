@@ -18,7 +18,6 @@ import IconRow from './IconRow';
 import CalendarSelect from './inputs/CalendarSelect';
 import CustomFrequencySelector from './inputs/CustomFrequencySelector';
 import FrequencyInput from './inputs/FrequencyInput';
-import LocationInput from './inputs/LocationInput';
 import Notifications from './Notifications';
 import DateTimeRow from './rows/DateTimeRow';
 import MiniDateTimeRows from './rows/MiniDateTimeRows';
@@ -54,7 +53,6 @@ const EventForm = ({
         partDayNotifications,
         defaultPartDayNotification,
         calendars,
-        description,
     } = model;
     const propsFor = createPropFactory({ model, setModel });
 
@@ -87,8 +85,7 @@ const EventForm = ({
                     placeholder={c('Placeholder').t`Add title`}
                     autoFocus
                     maxLength={MAX_LENGTHS.TITLE}
-                    value={propsFor('title').value}
-                    onChange={({ target }) => propsFor('title').onChange(target.value)}
+                    {...propsFor('title', true)}
                 />
             </IconRow>
             {dateRow}
@@ -127,7 +124,12 @@ const EventForm = ({
                 </IconRow>
             )}
             <IconRow icon="address" title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
-                <LocationInput id={LOCATION_INPUT_ID} {...propsFor('location')} />
+                <Input
+                    id={LOCATION_INPUT_ID}
+                    placeholder={c('Placeholder').t`Add location`}
+                    maxLength={MAX_LENGTHS.LOCATION}
+                    {...propsFor('location', true)}
+                />
             </IconRow>
             {!isMinimal && (
                 <IconRow icon="notifications-enabled" title={c('Label').t`Notifications`}>
@@ -188,11 +190,8 @@ const EventForm = ({
                     minRows={2}
                     autoGrow
                     placeholder={c('Placeholder').t`Add description`}
-                    onChange={({ target }: React.ChangeEvent<HTMLTextAreaElement>) =>
-                        propsFor('description').onChange(target.value)
-                    }
-                    value={description}
                     maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
+                    {...propsFor('description', true)}
                 />
             </IconRow>
         </div>
