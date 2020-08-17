@@ -9,7 +9,7 @@ const useConfirm = () => {
     const openConfirmModal = (title: string, confirm: string, message: string, onConfirm: () => any) => {
         const content = (
             <>
-                {c('Info').t`Are you sure you want to ${message}?`}
+                {message}
                 <br />
                 {c('Info').t`You cannot undo this action.`}
             </>
