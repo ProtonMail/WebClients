@@ -1,42 +1,26 @@
 import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES, MAX_DOMAIN_PLUS_ADDON } from '../constants';
 import { toMap, omit } from './object';
 import { hasBit } from './bitset';
+import { Subscription, Plan, PlanIDs, MaxKeys, Organization } from '../interfaces';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL } = PLAN_SERVICES;
 const { PLUS, VPNPLUS, VPNBASIC, VISIONARY, PROFESSIONAL } = PLANS;
 const { VPN, SPACE, MEMBER, ADDRESS, DOMAIN } = ADDON_NAMES;
 
-/**
- * Get plan from current subscription
- * @param {Array} subscription.Plans
- * @param {Integer} service
- * @returns {Object} plan
- */
-export const getPlan = ({ Plans = [] } = {}, service = MAIL) => {
-    return Plans.find(({ Services, Type }) => Type === PLAN && Services & service) || {};
+export const getPlan = ({ Plans = [] }: Subscription, service: PLAN_SERVICES = MAIL) => {
+    return Plans.find(({ Services, Type }) => Type === PLAN && Services & service);
 };
 
-export const getPlans = ({ Plans = [] } = {}) => Plans.filter(({ Type }) => Type === PLAN);
-export const getAddons = ({ Plans = [] } = {}) => Plans.filter(({ Type }) => Type === ADDON);
+export const getPlans = ({ Plans = [] }: Subscription) => Plans.filter(({ Type }) => Type === PLAN);
+export const getAddons = ({ Plans = [] }: Subscription) => Plans.filter(({ Type }) => Type === ADDON);
 
-/**
- *
- * @param {Object} subscription
- * @param {Integer} service
- * @returns {String} plan name
- */
-export const getPlanName = (subscription = {}, service = MAIL) => {
-    const { Name = '' } = getPlan(subscription, service);
-    return Name;
+export const getPlanName = (subscription: Subscription, service: PLAN_SERVICES = MAIL) => {
+    const plan = getPlan(subscription, service);
+    return plan?.Name;
 };
 
-/**
- * Check if a subscription is eligible to BUNDLE coupon
- * @param {Object} subscription
- * @returns {Boolean} is eligible to BUNDLE
- */
-export const isBundleEligible = (subscription = {}) => {
+export const isBundleEligible = (subscription: Subscription) => {
     const { Plans = [], CouponCode = '' } = subscription;
 
     if (CouponCode) {
@@ -53,60 +37,53 @@ export const isBundleEligible = (subscription = {}) => {
         return false;
     }
 
-    const [{ Name = '' }] = plans;
+    const [{ Name }] = plans;
 
-    return [PLUS, VPNPLUS].includes(Name);
+    return [PLUS, VPNPLUS].includes(Name as PLANS);
 };
 
-export const hasLifetime = (subscription = {}) => {
+export const hasLifetime = (subscription: Subscription) => {
     const { CouponCode = '' } = subscription;
     return CouponCode === 'LIFETIME';
 };
 
-/**
- * Check if the current subscription has visionary plan
- * @param {Object} subscription
- * @returns {Boolean}
- */
-export const hasVisionary = (subscription = {}) => {
+export const hasVisionary = (subscription: Subscription) => {
     const { Plans = [] } = subscription;
     return Plans.some(({ Name }) => Name === VISIONARY);
 };
 
-export const hasMailPlus = (subscription = {}) => {
+export const hasMailPlus = (subscription: Subscription) => {
     const { Plans = [] } = subscription;
     return Plans.some(({ Name }) => Name === PLUS);
 };
 
-export const hasVpnBasic = (subscription = {}) => {
+export const hasVpnBasic = (subscription: Subscription) => {
     const { Plans = [] } = subscription;
     return Plans.some(({ Name }) => Name === VPNBASIC);
 };
 
-/**
- *
- * @param {String} name plan or addon name
- * @param {Array} plans coming for Plans API
- * @param {Object} subscription
- * @returns {Number} price
- */
-export const getMonthlyBaseAmount = (name = '', plans = [], subscription = {}) => {
+export const getMonthlyBaseAmount = (name: PLANS, plans: Plan[], subscription: Subscription) => {
     const base = plans.find(({ Name }) => Name === name);
+    if (!base) {
+        return 0;
+    }
     return subscription.Plans.filter(({ Name }) => Name === name).reduce((acc) => acc + base.Pricing[CYCLE.MONTHLY], 0);
 };
 
-/**
- * Calculate total from planIDs configuration
- * @param {Array<Object>} params.plans
- * @param {Object} params.planIDs
- * @param {Number} params.cycle
- * @param {Number} params.service
- * @returns {Number} total
- */
-export const getTotal = ({ plans = [], planIDs = {}, cycle = CYCLE.MONTHLY, service }) => {
+export const getTotal = ({
+    plans = [],
+    planIDs = {},
+    cycle = CYCLE.MONTHLY,
+    service,
+}: {
+    service: PLAN_SERVICES;
+    cycle?: CYCLE;
+    plans?: Plan[];
+    planIDs?: PlanIDs;
+}) => {
     const plansMap = toMap(plans);
     return Object.entries(planIDs).reduce((acc, [planID = '', quantity = 0]) => {
-        const { Pricing = {}, Services } = plansMap[planID];
+        const { Pricing, Services } = plansMap[planID];
 
         if (Number.isInteger(service) && !hasBit(Services, service)) {
             return acc;
@@ -116,16 +93,9 @@ export const getTotal = ({ plans = [], planIDs = {}, cycle = CYCLE.MONTHLY, serv
     }, 0);
 };
 
-/**
- * Remove all plans concerned by a service
- * @param {Object} planIDs
- * @param {Array} plans
- * @param {Integer} service
- * @returns {Object} new planIDs
- */
-export const removeService = (planIDs = {}, plans = [], service = PLAN_SERVICES.MAIL) => {
+export const removeService = (planIDs: PlanIDs, plans: Plan[], service: PLAN_SERVICES = PLAN_SERVICES.MAIL) => {
     const plansMap = toMap(plans);
-    return Object.entries(planIDs).reduce((acc, [planID = '', quantity = 0]) => {
+    return Object.entries(planIDs).reduce<PlanIDs>((acc, [planID = '', quantity = 0]) => {
         const { Services } = plansMap[planID];
 
         if (!hasBit(Services, service)) {
@@ -136,24 +106,35 @@ export const removeService = (planIDs = {}, plans = [], service = PLAN_SERVICES.
     }, {});
 };
 
-const getAddonQuantity = (plan = {}, used = 0, key = '', addon = {}) => {
+const getAddonQuantity = (plan: Plan | undefined, used = 0, key: MaxKeys, addon: Plan) => {
+    if (!plan) {
+        return 0;
+    }
+
     if (used <= plan[key]) {
+        return 0;
+    }
+
+    if (!addon) {
         return 0;
     }
 
     return Math.ceil((used - plan[key]) / addon[key]);
 };
 
-/**
- * Generate new configuration from plan selected
- * @param {Object} planIDs current configuration
- * @param {Array} plans coming from the API
- * @param {String} planID to switch to
- * @param {Integer} service to remove
- * @param {Object} organization current
- * @returns {Object} new planIDs
- */
-export const switchPlan = ({ planIDs, plans, planID, service, organization }) => {
+export const switchPlan = ({
+    planIDs,
+    plans,
+    planID,
+    service,
+    organization,
+}: {
+    planIDs: PlanIDs;
+    plans: Plan[];
+    planID: string;
+    service: PLAN_SERVICES;
+    organization: Organization;
+}) => {
     // Handle FREE VPN and FREE Mail
     if (typeof planID === 'undefined') {
         return removeService(planIDs, plans, service);
@@ -168,7 +149,7 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
     const { UsedDomains = 0, UsedAddresses = 0, UsedSpace = 0, UsedVPN = 0, UsedMembers = 0 } = organization;
     const selectedPlan = plans.find(({ ID }) => ID === planID);
 
-    const transferDomains = (from, to) => {
+    const transferDomains = (from: PLANS, to: PLANS) => {
         const domains = planIDs[plansMap[DOMAIN].ID]
             ? plansMap[from].MaxDomains - plansMap[to].MaxDomains + planIDs[plansMap[DOMAIN].ID]
             : 0;
@@ -244,17 +225,17 @@ export const switchPlan = ({ planIDs, plans, planID, service, organization }) =>
     return {};
 };
 
-export const getPlanIDs = (subscription = {}) => {
+export const getPlanIDs = (subscription: Subscription) => {
     const { Plans = [] } = subscription;
-    return Plans.reduce((acc, { ID, Quantity }) => {
+    return Plans.reduce<PlanIDs>((acc, { ID, Quantity }) => {
         acc[ID] = acc[ID] || 0;
         acc[ID] += Quantity;
         return acc;
     }, {});
 };
 
-export const clearPlanIDs = (planIDs = {}) => {
-    return Object.entries(planIDs).reduce((acc, [planID, quantity = 0]) => {
+export const clearPlanIDs = (planIDs: PlanIDs) => {
+    return Object.entries(planIDs).reduce<PlanIDs>((acc, [planID, quantity = 0]) => {
         if (quantity <= 0) {
             return acc;
         }

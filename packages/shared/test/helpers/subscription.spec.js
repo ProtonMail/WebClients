@@ -9,7 +9,7 @@ const MOCK_PLANS = [
         MaxDomains: 1,
         MaxAddresses: 5,
         MaxSpace: 5368709120,
-        MaxMembers: 1
+        MaxMembers: 1,
     },
     {
         Name: PLANS.PROFESSIONAL,
@@ -18,7 +18,7 @@ const MOCK_PLANS = [
         MaxDomains: 2,
         MaxAddresses: 10,
         MaxSpace: 5368709120,
-        MaxMembers: 1
+        MaxMembers: 1,
     },
     {
         Name: PLANS.VISIONARY,
@@ -28,7 +28,7 @@ const MOCK_PLANS = [
         MaxAddresses: 50,
         MaxSpace: 21474836480,
         MaxMembers: 6,
-        MaxVPN: 10
+        MaxVPN: 10,
     },
     { Name: PLANS.VPNBASIC, ID: PLANS.VPNBASIC, Services: PLAN_SERVICES.VPN, MaxVPN: 2 },
     { Name: PLANS.VPNPLUS, ID: PLANS.VPNPLUS, Services: PLAN_SERVICES.VPN, MaxVPN: 5 },
@@ -40,30 +40,25 @@ const MOCK_PLANS = [
         Services: PLAN_SERVICES.MAIL,
         MaxMembers: 1,
         MaxSpace: 5368709120,
-        MaxAddresses: 5
+        MaxAddresses: 5,
     },
     { Name: ADDON_NAMES.SPACE, ID: ADDON_NAMES.SPACE, Services: PLAN_SERVICES.MAIL, MaxSpace: 1073741824 },
-    { Name: ADDON_NAMES.VPN, ID: ADDON_NAMES.VPN, Services: PLAN_SERVICES.VPN, MaxVPN: 1 }
+    { Name: ADDON_NAMES.VPN, ID: ADDON_NAMES.VPN, Services: PLAN_SERVICES.VPN, MaxVPN: 1 },
 ];
 
 describe('getPlanIDs', () => {
-    it('should handle an empty parameter and return an empty Array', () => {
-        expect(getPlanIDs()).toBeDefined();
-        expect(getPlanIDs()).toEqual({});
-    });
-
     it('should extract plans properly', () => {
         expect(
             getPlanIDs({
                 Plans: [
                     { ID: 'a', Quantity: 1 },
                     { ID: 'a', Quantity: 1 },
-                    { ID: 'b', Quantity: 3 }
-                ]
+                    { ID: 'b', Quantity: 3 },
+                ],
             })
         ).toEqual({
             a: 2,
-            b: 3
+            b: 3,
         });
     });
 });
@@ -88,7 +83,6 @@ describe('hasLifetime', () => {
     });
 
     it('should not have LIFETIME', () => {
-        expect(hasLifetime()).toBe(false);
         expect(hasLifetime({ CouponCode: 'PANDA' })).toBe(false);
     });
 });
@@ -98,11 +92,11 @@ describe('clearPlanIDs', () => {
         const planIDs = {
             [PLANS.PROFESSIONAL]: 1,
             [PLANS.VPNPLUS]: 0,
-            [ADDON_NAMES.VPN]: 3
+            [ADDON_NAMES.VPN]: 3,
         };
         expect(clearPlanIDs(planIDs)).toEqual({
             [PLANS.PROFESSIONAL]: 1,
-            [ADDON_NAMES.VPN]: 3
+            [ADDON_NAMES.VPN]: 3,
         });
     });
 });
@@ -114,7 +108,7 @@ describe('switchPlan', () => {
         const service = PLAN_SERVICES.MAIL;
         const organization = {};
         expect(clearPlanIDs(switchPlan({ planIDs, plans: MOCK_PLANS, planID, service, organization }))).toEqual({
-            [PLANS.PROFESSIONAL]: 1
+            [PLANS.PROFESSIONAL]: 1,
         });
     });
 
@@ -123,11 +117,11 @@ describe('switchPlan', () => {
         const planID = PLANS.PROFESSIONAL;
         const service = PLAN_SERVICES.MAIL;
         const organization = {
-            UsedDomains: 4
+            UsedDomains: 4,
         };
         expect(clearPlanIDs(switchPlan({ planIDs, plans: MOCK_PLANS, planID, service, organization }))).toEqual({
             [PLANS.PROFESSIONAL]: 1,
-            [ADDON_NAMES.DOMAIN]: 2
+            [ADDON_NAMES.DOMAIN]: 2,
         });
     });
 
@@ -136,11 +130,11 @@ describe('switchPlan', () => {
         const planID = PLANS.PROFESSIONAL;
         const service = PLAN_SERVICES.MAIL;
         const organization = {
-            UsedAddresses: 11
+            UsedAddresses: 11,
         };
         expect(clearPlanIDs(switchPlan({ planIDs, plans: MOCK_PLANS, planID, service, organization }))).toEqual({
             [PLANS.PROFESSIONAL]: 1,
-            [ADDON_NAMES.MEMBER]: 1
+            [ADDON_NAMES.MEMBER]: 1,
         });
     });
 });
