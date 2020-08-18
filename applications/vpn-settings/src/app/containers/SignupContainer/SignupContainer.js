@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, SupportDropdown } from 'react-components';
 import AccountStep from './AccountStep/AccountStep';
@@ -38,6 +38,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
     const historyState = history.location.state || {};
     const preSelectedPlan = searchParams.get('plan') || historyState.preSelectedPlan;
     const invite = historyState.invite;
+    const redirectToMobileRef = useRef((from || historyState.from) === 'mobile');
     const coupon =
         historyState.coupon ||
         (couponCode && {
@@ -46,10 +47,9 @@ const SignupContainer = ({ match, history, onLogin }) => {
             cycle: billingCycle
         });
 
-    const redirectToMobile = (from || historyState.from) === 'mobile';
     const hasCookieOffer = checkCookie('offer', BESTDEAL_COOKIE) || checkCookie('offer', BRAVE_COOKIE);
     const availablePlans =
-        hasCookieOffer && !redirectToMobile ? BEST_DEAL_PLANS : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
+        hasCookieOffer && !redirectToMobileRef.current ? BEST_DEAL_PLANS : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
 
     useEffect(() => {
         // Always start at plans, or account if plan is preselected
@@ -81,7 +81,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
         });
 
     const handleLogin = (data) => {
-        if (redirectToMobile) {
+        if (redirectToMobileRef.current) {
             return goToStep(SignupState.MobileRedirection);
         }
         return onLogin({ ...data, pathname: '/downloads' });
