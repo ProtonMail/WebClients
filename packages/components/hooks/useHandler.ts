@@ -1,5 +1,5 @@
 import { useRef, useEffect, RefObject, useMemo } from 'react';
-import { debounce } from 'proton-shared/lib/helpers/function';
+import { debounce, throttle } from 'proton-shared/lib/helpers/function';
 
 import useEventManager from './useEventManager';
 
@@ -13,7 +13,10 @@ export interface Abortable {
  * Create a stable reference of handler
  * But will always run the updated version of the handler in argument
  */
-export const useHandler = <T extends Handler>(handler: T, options: { debounce?: number } = {}): T & Abortable => {
+export const useHandler = <T extends Handler>(
+    handler: T,
+    options: { debounce?: number; throttle?: number } = {}
+): T & Abortable => {
     const handlerRef = useRef(handler);
 
     useEffect(() => {
@@ -25,6 +28,10 @@ export const useHandler = <T extends Handler>(handler: T, options: { debounce?: 
 
         if (options.debounce && options.debounce > 0) {
             return debounce(handler, options.debounce);
+        }
+
+        if (options.throttle && options.throttle > 0) {
+            return throttle(handler, options.throttle);
         }
 
         return handler;
