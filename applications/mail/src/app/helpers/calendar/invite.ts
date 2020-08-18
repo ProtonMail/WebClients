@@ -70,7 +70,7 @@ const ICAL_MIME_TYPE = 'text/calendar';
 export interface Participant {
     vcalComponent: VcalAttendeeProperty | VcalOrganizerProperty;
     name: string;
-    email: string;
+    emailAddress: string;
     partstat?: string;
     role?: string;
 }
@@ -137,20 +137,21 @@ export const getSequence = (event: VcalVeventComponent) => {
 export const getParticipant = (
     participant: VcalAttendeeProperty | VcalOrganizerProperty,
     contactEmails: ContactEmail[],
-    ownAddresses: Address[]
+    ownAddresses: Address[],
+    emailTo: string
 ): Participant => {
-    const emailTo = getEmailTo(participant.value);
-    const selfAddress = ownAddresses.find(
-        ({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(emailTo)
-    );
-    const contact = contactEmails.find(({ Email }) => cleanEmail(Email) === cleanEmail(emailTo));
-    const participantName = selfAddress
+    const emailAddress = getEmailTo(participant.value);
+    const normalizedEmailAddress = normalizeInternalEmail(emailAddress);
+    const isYou = normalizeInternalEmail(emailTo) === normalizedEmailAddress;
+    const selfAddress = ownAddresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizedEmailAddress);
+    const contact = contactEmails.find(({ Email }) => cleanEmail(Email) === cleanEmail(emailAddress));
+    const participantName = isYou
         ? c('Participant name').t`You`
-        : contact?.Name || participant?.parameters?.cn || participant.value;
+        : selfAddress?.DisplayName || contact?.Name || participant?.parameters?.cn || participant.value;
     const result: Participant = {
         vcalComponent: participant,
         name: participantName,
-        email: emailTo
+        emailAddress
     };
     const { partstat, role } = (participant as VcalAttendeeProperty).parameters || {};
     if (partstat) {
@@ -288,14 +289,17 @@ export const processEventInvitation = (
         : findAttendee(originalTo, attendees);
 
     const invitation: EventInvitation = { vevent };
+
     if (attendees) {
-        invitation.participants = attendees.map((attendee) => getParticipant(attendee, contactEmails, ownAddresses));
+        invitation.participants = attendees.map((attendee) =>
+            getParticipant(attendee, contactEmails, ownAddresses, originalTo)
+        );
     }
     if (organizer) {
-        invitation.organizer = getParticipant(organizer, contactEmails, ownAddresses);
+        invitation.organizer = getParticipant(organizer, contactEmails, ownAddresses, originalTo);
     }
     if (attendee) {
-        invitation.attendee = getParticipant(attendee, contactEmails, ownAddresses);
+        invitation.attendee = getParticipant(attendee, contactEmails, ownAddresses, originalTo);
     }
 
     return { isOrganizerMode, invitation };

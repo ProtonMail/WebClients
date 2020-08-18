@@ -21,22 +21,22 @@ const formatParticipant = (participant: Participant | undefined) => {
         return null;
     }
 
-    const { name, email } = participant;
-    if (email) {
+    const { name, emailAddress } = participant;
+    if (emailAddress) {
         if (name) {
             return (
                 <div className="ellipsis">
                     <span className="mr0-5">{name}</span>
-                    <a key={email} href={buildMailTo(email)}>
-                        ({email})
+                    <a key={emailAddress} href={buildMailTo(emailAddress)}>
+                        ({emailAddress})
                     </a>
                 </div>
             );
         }
         return (
             <div className="ellipsis">
-                <a key={email} href={buildMailTo(email)}>
-                    {email}
+                <a key={emailAddress} href={buildMailTo(emailAddress)}>
+                    {emailAddress}
                 </a>
             </div>
         );
@@ -52,7 +52,7 @@ const formatParticipants = (participants: Participant[] = []) => {
     return (
         <ul className="mt0 mb0 unstyled">
             {participants.map((participant) => {
-                return <li key={participant.email}>{formatParticipant(participant)}</li>;
+                return <li key={participant.emailAddress}>{formatParticipant(participant)}</li>;
             })}
         </ul>
     );
