@@ -10,7 +10,7 @@
 
 .calendar-secondary-timezone-cell {
 	border-right: $calendar-grid-border;
-	background-color: var(--bgcolor-subnav, $pm-global-light);
+	background-color: var(--bgcolor-context-bar, $pm-global-light);
 
 	&--header {
 		border-top: $calendar-grid-border;
