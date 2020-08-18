@@ -16,6 +16,23 @@ interface TransferListEntry<T extends TransferType> {
 
 const PROGRESS_UPDATE_INTERVAL = 500;
 const SPEED_SNAPSHOTS = 10; // How many snapshots should the speed be average of
+
+enum TRANSFER_GROUP {
+    ACTIVE,
+    DONE,
+    QUEUED,
+}
+const STATE_TO_GROUP_MAP = {
+    [TransferState.Initializing]: TRANSFER_GROUP.QUEUED,
+    [TransferState.Pending]: TRANSFER_GROUP.QUEUED,
+    [TransferState.Progress]: TRANSFER_GROUP.ACTIVE,
+    [TransferState.Finalizing]: TRANSFER_GROUP.ACTIVE,
+    [TransferState.Done]: TRANSFER_GROUP.DONE,
+    [TransferState.Canceled]: TRANSFER_GROUP.DONE,
+    [TransferState.Error]: TRANSFER_GROUP.DONE,
+    [TransferState.Paused]: TRANSFER_GROUP.DONE,
+};
+
 export const MAX_VISIBLE_TRANSFERS = 5;
 
 function TransferManager() {
@@ -113,14 +130,16 @@ function TransferManager() {
     const uploadEntries = uploads.map(getUploadListEntry);
 
     const sortedEntries = [...downloadEntries, ...uploadEntries].sort(
-        (a, b) => b.transfer.startDate.getTime() - a.transfer.startDate.getTime()
+        (a, b) =>
+            STATE_TO_GROUP_MAP[a.transfer.state] - STATE_TO_GROUP_MAP[b.transfer.state] ||
+            b.transfer.startDate.getTime() - a.transfer.startDate.getTime()
     );
 
-    const rowRenderer: ListRowRenderer = ({ index, style, parent }) => {
+    const rowRenderer: ListRowRenderer = ({ key, index, style, parent }) => {
         const { transfer, type } = sortedEntries[index];
         return (
             // Row index 0 because rows are equal in size, we only need to calculate first one (in case of font scaling)
-            <CellMeasurer key={transfer.id} cache={cellMeasurerCache.current} parent={parent} rowIndex={0}>
+            <CellMeasurer key={key} cache={cellMeasurerCache.current} parent={parent} rowIndex={0}>
                 <Transfer
                     style={style}
                     transfer={transfer}
