@@ -35,6 +35,6 @@ export const PROTON_THEMES = {
         },
         identifier: ThemeTypes.Dark,
         src: themeDarkmodeSvg,
-        theme: darkMode,
+        theme: darkMode.toString(),
     },
 } as const;
