@@ -10,6 +10,8 @@ export enum IMPORT_ERROR_TYPE {
     FILE_TOO_BIG,
     FILE_CORRUPTED,
     INVALID_CALENDAR,
+    INVALID_VERSION,
+    INVALID_METHOD,
     NO_EVENTS,
     TOO_MANY_EVENTS,
 }
@@ -32,6 +34,12 @@ const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
     }
     if (errorType === IMPORT_ERROR_TYPE.INVALID_CALENDAR) {
         return c('Error importing calendar').t`Your file ${formattedFilename} is not a calendar.`;
+    }
+    if (errorType === IMPORT_ERROR_TYPE.INVALID_VERSION) {
+        return c('Error importing calendar').t`ProtonCalendar only supports importing calendars with iCal version 2.0.`;
+    }
+    if (errorType === IMPORT_ERROR_TYPE.INVALID_METHOD) {
+        return c('Error importing calendar').t`Your file ${formattedFilename} is an invitation and cannot be imported`;
     }
     if (errorType === IMPORT_ERROR_TYPE.NO_EVENTS) {
         return c('Error importing calendar').t`Your file ${formattedFilename} has no events to be imported.`;

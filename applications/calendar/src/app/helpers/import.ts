@@ -11,6 +11,7 @@ import {
     getHasDtStart,
     getHasRecurrenceId,
     getHasUid,
+    getIsCalendar,
     getIsEventComponent,
     getIsFreebusyComponent,
     getIsJournalComponent,
@@ -64,10 +65,16 @@ export const parseIcs = async (ics: File) => {
             throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_EMPTY, filename);
         }
         const parsedVcalendar = parseWithErrors(icsAsString);
-        if (parsedVcalendar.component !== 'vcalendar') {
+        if (!getIsCalendar(parsedVcalendar)) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
-        const { components, calscale, 'x-wr-timezone': xWrTimezone } = parsedVcalendar;
+        const { method, version, components, calscale, 'x-wr-timezone': xWrTimezone } = parsedVcalendar;
+        if (version?.value !== '2.0') {
+            throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_VERSION, filename);
+        }
+        if (method && method.value.toLowerCase() !== 'publish') {
+            throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_METHOD, filename);
+        }
         if (!components?.length) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.NO_EVENTS, filename);
         }
