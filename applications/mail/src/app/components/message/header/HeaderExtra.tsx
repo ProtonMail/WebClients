@@ -1,5 +1,6 @@
 import { OpenPGPKey } from 'pmcrypto';
 import React from 'react';
+import { isReceived } from '../../../helpers/message/messages';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
@@ -34,6 +35,7 @@ const HeaderExtra = ({
     onLoadRemoteImages,
     onLoadEmbeddedImages
 }: Props) => {
+    const received = isReceived(message.data);
     return (
         <section className="message-header-extra mt0-5 border-top pt0-5">
             <ExtraExpirationTime message={message} />
@@ -51,7 +53,7 @@ const HeaderExtra = ({
             <ExtraAskResign message={message} onResignContact={onResignContact} />
             {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
             {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
-            {messageLoaded ? <ExtraEvents message={message} /> : null}
+            {messageLoaded && received ? <ExtraEvents message={message} /> : null}
         </section>
     );
 };

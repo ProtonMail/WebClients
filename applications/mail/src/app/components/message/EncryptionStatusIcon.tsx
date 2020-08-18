@@ -4,9 +4,6 @@ import { getSendIconHref, getStatusIconName } from '../../helpers/message/icon';
 import { StatusIcon } from '../../models/crypto';
 
 interface Props extends Partial<StatusIcon> {
-    isComposing?: boolean;
-    isReceived?: boolean;
-    isSent?: boolean;
     loading?: boolean;
     useTooltip?: boolean;
 }
