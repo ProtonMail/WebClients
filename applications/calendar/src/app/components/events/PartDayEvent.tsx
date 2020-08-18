@@ -2,7 +2,7 @@ import React, { CSSProperties, Ref, useMemo } from 'react';
 import { classnames, Icon } from 'react-components';
 
 import useReadEvent from './useReadEvent';
-import { getConstrastingColor } from '../../helpers/color';
+import { getEventStyle } from '../../helpers/color';
 import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import getEventInformation from './getEventInformation';
@@ -17,19 +17,14 @@ interface Props {
     tzid: string;
 }
 const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, eventRef, tzid }: Props) => {
-    const { start, end, data: targetEventData, isAllDay } = event;
+    const { start, end, data: targetEventData } = event;
     const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
 
     const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
 
     const eventStyle = useMemo(() => {
-        const background = calendarColor;
-        return {
-            ...style,
-            '--background': background,
-            '--foreground': getConstrastingColor(background),
-        };
-    }, [calendarColor, style, isAllDay, isSelected]);
+        return getEventStyle(calendarColor, style);
+    }, [calendarColor, style]);
 
     const titleString = (() => {
         if (eventReadError) {
@@ -89,9 +84,9 @@ const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, event
             style={eventStyle}
             className={classnames([
                 'calendar-eventcell no-scroll pl0-5 pr0-5',
-                !isEventReadLoading && 'calendar-eventcell--isLoaded',
-                isBeforeNow && 'calendar-eventcell--isBefore',
-                isSelected && 'calendar-eventcell--isSelected',
+                !isEventReadLoading && 'isLoaded',
+                !isEventReadLoading && isBeforeNow && 'isPast',
+                isSelected && 'isSelected',
             ])}
             ref={eventRef}
             title={expandableTitleString}

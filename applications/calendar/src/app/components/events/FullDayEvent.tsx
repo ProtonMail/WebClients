@@ -2,7 +2,7 @@ import React, { CSSProperties, Ref, useMemo } from 'react';
 import { Icon, classnames } from 'react-components';
 
 import useReadEvent from './useReadEvent';
-import { getConstrastingColor } from '../../helpers/color';
+import { getEventStyle } from '../../helpers/color';
 import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import getEventInformation from './getEventInformation';
@@ -39,12 +39,8 @@ const FullDayEvent = ({
     const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
 
     const eventStyle = useMemo(() => {
-        const background = calendarColor;
-        return {
-            '--background': background,
-            '--foreground': getConstrastingColor(background),
-        };
-    }, [calendarColor, isAllDay, isSelected]);
+        return getEventStyle(calendarColor);
+    }, [calendarColor]);
 
     const startTimeString = useMemo(() => {
         if (start && (!isAllDay || isAllPartDay)) {
@@ -78,7 +74,7 @@ const FullDayEvent = ({
     const content = (
         <div className="flex flex-nowrap flex-item-fluid flex-items-center">
             {!isAllDay ? (
-                <Icon className="mr0-25 flex-item-noshrink calendar-dayeventcell-circle" size={12} name="circle" />
+                <Icon className="mr0-5 flex-item-noshrink calendar-dayeventcell-circle" size={12} name="circle" />
             ) : null}
 
             {isOutsideStart ? <Icon name="caret" size={12} className="flex-item-noshrink rotateZ-90" /> : null}
@@ -96,12 +92,7 @@ const FullDayEvent = ({
     return (
         <div
             style={style}
-            className={classnames([
-                className,
-                isBeforeNow && 'calendar-dayeventcell--isBefore',
-                isOutsideStart && 'calendar-dayeventcell--isOutsideStart',
-                isOutsideEnd && 'calendar-dayeventcell--isOutsideEnd',
-            ])}
+            className={classnames([className, isOutsideStart && 'isOutsideStart', isOutsideEnd && 'isOutsideEnd'])}
             data-ignore-create="1"
         >
             <div
@@ -111,9 +102,10 @@ const FullDayEvent = ({
                 tabIndex={0}
                 className={classnames([
                     'calendar-dayeventcell-inner alignleft flex',
-                    !isAllDay && 'calendar-dayeventcell-inner--isNotAllDay',
-                    !isEventReadLoading && 'calendar-dayeventcell-inner--isLoaded',
-                    isSelected && 'calendar-dayeventcell-inner--isSelected',
+                    !isAllDay && 'isNotAllDay',
+                    !isEventReadLoading && 'isLoaded',
+                    !isEventReadLoading && isBeforeNow && 'isPast',
+                    isSelected && 'isSelected',
                 ])}
                 style={eventStyle}
                 ref={eventRef}
