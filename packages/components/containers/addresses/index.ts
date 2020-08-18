@@ -6,4 +6,7 @@ export { default as EditAddressModal } from './EditAddressModal';
 export { default as AddressModal } from './AddressModal';
 export { default as AddressesSection } from './AddressesSection';
 export { default as PmMeSection } from './PmMeSection';
+export { default as ProtonFooterSection } from './ProtonFooterSection';
 export { default as IdentitySection } from './IdentitySection';
+export { default as AddressesWithUser } from './AddressesWithUser';
+export { default as AddressesWithMembers } from './AddressesWithMembers';

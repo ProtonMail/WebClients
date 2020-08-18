@@ -1,27 +1,27 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, Row, Loader, Field, Label, PrimaryButton } from '../../components';
-import { useModals, useOrganization } from '../../hooks';
+import { Organization } from 'proton-shared/lib/interfaces';
 
+import { Alert, Row, Field, Label, PrimaryButton } from '../../components';
+import { useModals } from '../../hooks';
 import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
 import OrganizationNameModal from './OrganizationNameModal';
 import ActivateOrganizationButton from './ActivateOrganizationButton';
 
-const OrganizationSection = () => {
-    const [organization, loadingOrganization] = useOrganization();
+interface Props {
+    organization?: Organization;
+}
+
+const OrganizationSection = ({ organization }: Props) => {
     const { createModal } = useModals();
+    const { Name = '', HasKeys } = organization || {};
 
-    if (loadingOrganization) {
-        return <Loader />;
-    }
-    const { Name } = organization;
-
-    if (!organization.HasKeys) {
+    if (!HasKeys) {
         return (
             <>
                 <Alert learnMore="https://protonmail.com/support/knowledge-base/business/">{c('Info')
                     .t`Create and manage sub-accounts and assign them email addresses on your custom domain.`}</Alert>
-                <ActivateOrganizationButton />
+                <ActivateOrganizationButton organization={organization} />
             </>
         );
     }

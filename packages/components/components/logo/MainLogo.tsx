@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { APPS, PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { APP_NAMES, APPS, PLAN_SERVICES } from 'proton-shared/lib/constants';
 import { getPlanName, hasLifetime } from 'proton-shared/lib/helpers/subscription';
+import { Subscription } from 'proton-shared/lib/interfaces';
 
 import { useSubscription, useConfig } from '../../hooks';
 import AccountLogo from './AccountLogo';
@@ -24,15 +25,23 @@ const {
     PROTONVPN_SETTINGS,
 } = APPS;
 
+const getLogoText = (subscription: Subscription, APP_NAME: APP_NAMES) => {
+    if (APP_NAME === PROTONCALENDAR) {
+        return 'beta';
+    }
+    if (subscription) {
+        if (hasLifetime(subscription)) {
+            return 'Lifetime';
+        }
+        return getPlanName(subscription, APP_NAME === PROTONVPN_SETTINGS ? VPN : MAIL);
+    }
+};
+
 const MainLogo = ({ className = '', ...rest }: AppLinkProps) => {
     const { APP_NAME } = useConfig();
     const [subscription] = useSubscription();
     const classNames = classnames(['logo-link flex nodecoration', className]);
-    const planName = hasLifetime(subscription)
-        ? 'Lifetime'
-        : APP_NAME === PROTONCALENDAR
-        ? 'beta'
-        : getPlanName(subscription, APP_NAME === PROTONVPN_SETTINGS ? VPN : MAIL);
+    const planName = getLogoText(subscription, APP_NAME);
 
     const logo = (() => {
         if (APP_NAME === PROTONMAIL || APP_NAME === PROTONMAIL_SETTINGS) {

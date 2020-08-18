@@ -1,21 +1,27 @@
 import React from 'react';
+
+import { Icon } from '../../components';
 import { usePermissions } from '../../hooks';
 import { classnames } from '../../helpers';
 
 import Sections from './Sections';
 import { SectionConfig } from '../../components/layout';
 
-const IndexSection = ({ pages }: { pages: SectionConfig[] }) => {
+const IndexSection = ({ pages, limit = 4 }: { pages: SectionConfig[]; limit?: number }) => {
     const permissions = usePermissions();
     return (
-        <div className="settings-grid-container">
-            {pages.map(({ text, to, subsections = [], permissions: pagePermissions }) => {
+        <div className="overview-grid">
+            {pages.map(({ icon, text, to, subsections = [], permissions: pagePermissions }) => {
                 return (
-                    <div
+                    <section
                         key={to}
-                        className={classnames(['setting-grid', subsections.length > 4 && 'setting-grid--tall'])}
+                        className={classnames([
+                            'overview-grid-item bordered-container bg-white-dm tiny-shadow-container p2',
+                            subsections.length > limit && 'overview-grid-item--tall',
+                        ])}
                     >
-                        <h2 className="h6 mb0-5">
+                        <h2 className="h6 mb1">
+                            <Icon name={icon} className="mr0-5" />
                             <strong>{text}</strong>
                         </h2>
                         <Sections
@@ -25,7 +31,7 @@ const IndexSection = ({ pages }: { pages: SectionConfig[] }) => {
                             permissions={permissions}
                             pagePermissions={pagePermissions}
                         />
-                    </div>
+                    </section>
                 );
             })}
         </div>

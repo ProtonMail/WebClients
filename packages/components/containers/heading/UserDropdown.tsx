@@ -79,12 +79,12 @@ const UserDropdown = ({ ...rest }) => {
                     {!isSSOMode && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                         <>
                             <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
-                                <div className="bold ellipsis mw100 capitalize" title={displayName}>
+                                <div className="bold ellipsis mw100" title={displayName}>
                                     {displayName}
                                 </div>
-                                <div className="ellipsis mw100" title={user.Email}>
+                                {user.Email ? <div className="ellipsis mw100" title={user.Email}>
                                     {user.Email}
-                                </div>
+                                </div> : null}
                             </li>
                             <li className="dropDown-item">
                                 <AppLink

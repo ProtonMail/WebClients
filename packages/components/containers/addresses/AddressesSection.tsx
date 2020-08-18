@@ -10,7 +10,6 @@ import AddressesWithUser from './AddressesWithUser';
 const AddressesSection = () => {
     const [user] = useUser();
     const [organization, loadingOrganization] = useOrganization();
-
     const { UsedAddresses, MaxAddresses } = organization || {};
 
     if (loadingOrganization) {

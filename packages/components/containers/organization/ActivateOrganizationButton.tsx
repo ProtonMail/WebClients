@@ -1,19 +1,23 @@
 import React from 'react';
 import { c } from 'ttag';
 import { unlockPasswordChanges } from 'proton-shared/lib/api/user';
+import { Organization } from 'proton-shared/lib/interfaces';
 import { PrimaryButton } from '../../components';
-import { useOrganization, useNotifications, useModals } from '../../hooks';
+import { useNotifications, useModals } from '../../hooks';
 
 import AuthModal from '../password/AuthModal';
 import SetupOrganizationModal from './SetupOrganizationModal';
 
-const ActivateOrganizationButton = () => {
-    const [{ MaxMembers }] = useOrganization();
+interface Props {
+    organization?: Organization;
+}
+
+const ActivateOrganizationButton = ({ organization }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
 
     const handleClick = async () => {
-        if (MaxMembers === 1) {
+        if (organization?.MaxMembers === 1) {
             return createNotification({
                 type: 'error',
                 text: c('Error')

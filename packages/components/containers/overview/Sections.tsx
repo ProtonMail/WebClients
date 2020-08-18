@@ -20,7 +20,7 @@ const Sections = ({ to, subsections = [], text, permissions = [], pagePermission
                     .filter(({ hide }) => !hide)
                     .map(({ text, id, permissions: sectionPermissions }) => {
                         return (
-                            <li key={id}>
+                            <li key={id} className="mt0-5 mb0-5">
                                 <LinkItem
                                     to={`${to}#${id}`}
                                     text={text}

@@ -5,7 +5,6 @@ import { Alert, Button, Label, Select, Info, Row, Field, Loader } from '../../co
 import { useAddresses, useModals } from '../../hooks';
 
 import EditAddressModal from './EditAddressModal';
-import PMSignatureField from './PMSignatureField';
 
 const IdentitySection = () => {
     const [addresses, loading] = useAddresses();
@@ -71,10 +70,6 @@ const IdentitySection = () => {
                 <span className="ml1 onmobile-ml0 onmobile-mt0-5">
                     <Button className="pm-button--primary" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
                 </span>
-            </Row>
-            <Row>
-                <Label htmlFor="pmSignatureToggle">{c('Label').t`ProtonMail signature`}</Label>
-                <PMSignatureField id="pmSignatureToggle" />
             </Row>
         </>
     );
