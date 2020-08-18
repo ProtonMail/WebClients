@@ -1,4 +1,92 @@
 /*
+  Appearance factorization
+*/
+
+.calendar-dayeventcell,
+.calendar-eventcell {
+	--opacity: 1;
+}
+
+.calendar-dayeventcell-inner,
+.calendar-eventcell {
+	border: solid rgba(black, .2);
+	border-width: 1px 1px 1px 5px;
+	border-radius: $global-border-radius;
+	background-color: rgba(lighten($pm-global-altgrey, 30%), .5);
+	color: $black;
+	font-weight: 500;
+	cursor: pointer;
+	opacity: var(--opacity);
+	transition: all .1s ease-out, opacity .5s ease-out, background-color .15s ease-in-out;
+	animation: loadingEvent 1s easing(easeInQuint) infinite alternate;
+
+	& > * {
+		transition: opacity .1s ease-out;
+	}
+
+	&.isLoaded {
+		border-color: var(--color-alt);
+		background-color: var(--color-main);
+		color: var(--foreground);
+		animation: none;
+	}
+
+	&.isDeclined,
+	&.isCancelled {
+		border-color: var(--color-alt);
+		background: var(--bgcolor-highlight, $pm-global-muted);
+		color: inherit;
+		text-decoration: line-through;
+	}
+	&.isDeclined,
+	&.isCancelled {
+		& > * {
+			opacity: .5;
+		}
+	}
+
+	&.isUnanswered {
+		border-color: var(--color-alpha);
+		border-left-color: var(--color-alt);
+		background-color: var(--bgcolor-main-area, #{$white});
+		background-image: linear-gradient(105deg, transparent 38%, var(--color-alpha) 42%, var(--color-alpha) 48%, transparent 52%, transparent 88%, var(--color-alpha) 92%, var(--color-alpha) 100%);
+		background-size: 5.18px 19.32px;
+		color: currentColor;
+	}
+
+	&.isPast {
+		border-color: rgba(black, .1);
+		border-left-color: var(--color-alt);
+		background: var(--bgcolor-highlight, $pm-global-muted);
+		color: inherit;
+
+		&:not(.isSelected) > * {
+			opacity: .5;
+		}
+	}
+
+	&.isSelected {
+		z-index: 6;
+		border-color: rgba(black, .4);
+		box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .25);
+
+		&.isPast {
+			border-left-color: var(--color-alt);
+		}
+	}
+}
+
+@keyframes loadingEvent {
+	from {
+		opacity: var(--opacity);
+	}
+	to {
+		opacity: calc(var(--opacity) - .4);
+	}
+}
+
+
+/*
   Full day event
 */
 
@@ -12,17 +100,14 @@
 		position: relative;
 		min-height: 100%;
 		padding: 0 .5em;
-		background-color: $calendar-event-loading-color;
-		border: $calendar-event-border;
-		border-radius: $calendar-event-border-radius;
-		color: $black;
-		cursor: pointer;
 
-		&--isNotAllDay#{&},
-		&--isNotAllDay#{&}--isLoaded {
-			background: none;
+		&.isNotAllDay {
 			border: none;
-			color: inherit;
+
+			&:not(.isUnanswered) {
+				background: none;
+				color: inherit;
+			}
 
 			&:hover,
 			&:focus {
@@ -31,21 +116,21 @@
 		}
 	}
 
-	&--isOutsideStart &-inner {
+	&.isOutsideStart &-inner {
 		padding-left: 0;
 	}
 
-	&--isOutsideEnd,
-	&--isOutsideEnd &-inner {
+	&.isOutsideEnd,
+	&.isOutsideEnd &-inner {
 		padding-right: 0;
 	}
 
 	&-circle {
-		color: $calendar-event-loading-color;
+		color: rgba(lighten($pm-global-altgrey, 30%), .5);
 	}
-
-	&-inner--isLoaded &-circle {
-		color: var(--background);
+	&-inner.isLoaded &-circle {
+		margin-top: .125em;
+		color: var(--color-main);
 	}
 }
 
@@ -57,59 +142,11 @@
 .calendar-eventcell {
 	position: absolute;
 	z-index: 5;
-	border: $calendar-event-border;
-	border-radius: $calendar-event-border-radius;
-	background: $calendar-event-loading-color;
-	color: $black;
-	cursor: pointer;
 
 	@include respond-to($breakpoint-small) {
 		&-title,
 		&-timestring {
 			font-size: 1.2rem;
 		}
-	}
-}
-
-
-/*
-  Appearance factorization
-*/
-
-.calendar-dayeventcell,
-.calendar-eventcell {
-	--opacity: 1;
-
-	&--isBefore {
-		--opacity: .6;
-	}
-}
-
-.calendar-dayeventcell-inner,
-.calendar-eventcell {
-	opacity: var(--opacity);
-	transition: all 50ms ease-out, opacity .5s ease-out, background-color .15s ease-in-out;
-	animation: loadingEvent 1s easing(easeInQuint) infinite alternate;
-
-	&--isLoaded {
-		background-color: var(--background);
-		color: var(--foreground);
-		animation: none;
-	}
-
-	&--isSelected {
-		z-index: 6;
-		border-color: $calendar-event-selected-border-color;
-		box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .25);
-		filter: brightness(105%);
-	}
-}
-
-@keyframes loadingEvent {
-	from {
-		opacity: var(--opacity);
-	}
-	to {
-		opacity: calc(var(--opacity) - .4);
 	}
 }
