@@ -7,6 +7,7 @@ import {
     VcalDateOrDateTimeValue,
     VcalDateProperty,
     VcalDateTimeValue,
+    VcalVcalendar,
     VcalVeventComponent,
     VcalVfreebusyComponent,
     VcalVjournalComponent,
@@ -39,6 +40,10 @@ export const getRecurrenceId = ({ 'recurrence-id': recurrenceId }: Pick<VcalVeve
 
 export const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is VcalDateTimeValue => {
     return (value as VcalDateTimeValue).hours !== undefined;
+};
+
+export const getIsCalendar = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVcalendar => {
+    return vcalComponent.component.toLowerCase() === 'vcalendar';
 };
 
 export const getIsEventComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVeventComponent => {
