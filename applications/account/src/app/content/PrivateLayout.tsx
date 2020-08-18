@@ -12,6 +12,7 @@ import {
     PrivateHeader,
     PrivateAppContainer,
     MainLogo,
+    useOrganization,
 } from 'react-components';
 
 import { getPages } from '../pages';
@@ -20,11 +21,13 @@ import SubscriptionContainer from '../containers/SubscriptionContainer';
 import AccountContainer from '../containers/AccountContainer';
 import GeneralContainer from '../containers/GeneralContainer';
 import SecurityContainer from '../containers/SecurityContainer';
+import OverviewContainer from '../containers/OverviewContainer';
 import SidebarVersion from './SidebarVersion';
 
 const PrivateLayout = () => {
     const [user] = useUser();
     const location = useLocation();
+    const [organization] = useOrganization();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
     const { isNarrow } = useActiveBreakpoint();
@@ -50,7 +53,7 @@ const PrivateLayout = () => {
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
-                        list={getPages(user)}
+                        list={getPages(user, organization)}
                         pathname={location.pathname}
                         activeSection={activeSection}
                     />
@@ -62,7 +65,12 @@ const PrivateLayout = () => {
     return (
         <PrivateAppContainer header={header} sidebar={sidebar}>
             <Switch>
-                <Route path="/" exact render={() => 'Overview'} />
+                <Route
+                    path="/overview"
+                    render={() => (
+                        <OverviewContainer />
+                    )}
+                />
                 <Route
                     path="/account"
                     render={({ location }) => (
@@ -93,7 +101,7 @@ const PrivateLayout = () => {
                         <SecurityContainer location={location} setActiveSection={setActiveSection} />
                     )}
                 />
-                <Redirect to="/" />
+                <Redirect to="/overview" />
             </Switch>
         </PrivateAppContainer>
     );

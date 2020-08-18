@@ -1,12 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    LanguageSection,
-    MessagesSection,
-    ShortcutsSection,
-    SearchSection,
-    SettingsPropsShared,
-} from 'react-components';
+import { LanguageSection, SettingsPropsShared, ThemesSection } from 'react-components';
 import locales from 'proton-shared/lib/i18n/locales';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
@@ -22,16 +16,8 @@ export const getGeneralPage = () => {
                 id: 'language',
             },
             {
-                text: c('Title').t`Messages`,
-                id: 'messages',
-            },
-            {
-                text: c('Title').t`Search`,
-                id: 'search',
-            },
-            {
-                text: c('Title').t`Shortcuts`,
-                id: 'shortcuts',
+                text: c('Title').t`Theme`,
+                id: 'theme',
             },
         ],
     };
@@ -45,9 +31,7 @@ const GeneralContainer = ({ location, setActiveSection }: SettingsPropsShared) =
             setActiveSection={setActiveSection}
         >
             <LanguageSection locales={locales} />
-            <MessagesSection />
-            <SearchSection />
-            <ShortcutsSection />
+            <ThemesSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
