@@ -126,7 +126,7 @@ const CalendarContainerView = ({
     const header = (
         <PrivateHeader
             logo={logo}
-            settingsButton={<SettingsButton to="/settings/general" />}
+            settingsButton={<SettingsButton to="/settings/overview" />}
             floatingButton={<FloatingButton onClick={onCreateEvent} icon="plus" />}
             title={c('Title').t`Calendar`}
             expanded={expanded}

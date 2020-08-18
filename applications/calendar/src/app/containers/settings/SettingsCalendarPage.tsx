@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 import { PrivateMainSettingsArea, SettingsPropsShared } from 'react-components';
 import { Address } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { c } from 'ttag';
 
+import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 import CalendarsSection from './section/CalendarsSection';
+import ImportSection from './section/ImportSection';
 
 export const getCalendarSettingsPage = () => {
     return {
@@ -16,6 +18,10 @@ export const getCalendarSettingsPage = () => {
                 text: c('Title').t`Calendars`,
                 id: 'calendars',
             },
+            {
+                text: c('Title').t`Import`,
+                id: 'import',
+            },
         ],
     };
 };
@@ -26,8 +32,10 @@ interface Props extends SettingsPropsShared {
     disabledCalendars: Calendar[];
     activeCalendars: Calendar[];
     defaultCalendar?: Calendar;
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
 }
 const SettingsCalendarPage = ({
+    calendarsEventsCacheRef,
     activeAddresses,
     calendars,
     disabledCalendars,
@@ -51,6 +59,11 @@ const SettingsCalendarPage = ({
                 activeCalendars={activeCalendars}
                 disabledCalendars={disabledCalendars}
                 defaultCalendar={defaultCalendar}
+            />
+            <ImportSection
+                activeCalendars={activeCalendars}
+                defaultCalendar={defaultCalendar}
+                calendarsEventsCacheRef={calendarsEventsCacheRef}
             />
         </PrivateMainSettingsArea>
     );
