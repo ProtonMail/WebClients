@@ -35,6 +35,9 @@
 .bg-pm-blue-light {
   background-color: $pm-blue-light;
 }
+.bg-pm-blue-gradient {
+	background-image: $pm-blue-gradient;
+}
 
 .bg-global-highlight {
   background-color: var(--bgcolor-highlight, $pm-global-light);

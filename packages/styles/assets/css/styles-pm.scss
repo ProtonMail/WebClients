@@ -90,7 +90,7 @@ $rtl-option: true;
 @import "pm-styles/pm-aside";
 @import "pm-styles/pm-toolbar";
 @import "pm-styles/pm-navigation";
-@import "pm-styles/pm-subnav";
+@import "pm-styles/pm-context-bar";
 
 @import "pm-styles/pm-choose-account";
 
@@ -103,7 +103,7 @@ $rtl-option: true;
 // DO NOT USE THIS ONE, ONLY FOR DESIGN SYSTEM WEBSITE
 @import "design-system-website/exceptions";
 
-@import "pm-styles/pm-settings-home";
+@import "pm-styles/pm-overview-grid";
 
 @import "reusable-components/design-system-responsive";
 // DO NOT USE THIS ONE ON DESIGN SYSTEM WEBSITE, BUT FOR ALL APPS

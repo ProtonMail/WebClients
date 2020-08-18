@@ -303,7 +303,7 @@ $width: 5.5em !default;
     width: calc( #{$width/2} - 2px);
     transition: transform .25s ease, background-color .25s ease, border-color .25s linear;
     border-radius: 2rem;
-    background: var(--bgcolor-subnav, $pm-global-muted);
+    background: var(--bgcolor-context-bar, $pm-global-muted);
     top: 2px;
     left: 0;
     bottom: 2px;

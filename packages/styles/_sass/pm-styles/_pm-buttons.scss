@@ -396,5 +396,17 @@
   color: currentColor;
 }
 .pm-button--pill {
-	border-radius: 2em;
+  border-radius: 2em;
+}
+.pm-button--transparent {
+  /* When using currentColor, you need to set the color you want on a container */
+  border: 1px solid currentColor;
+  color: currentColor;
+  &:focus,
+  &:hover,
+  &:not(div):active,
+  &:active {
+    background-color: rgba(black, .2);
+    color: currentColor;
+  }
 }

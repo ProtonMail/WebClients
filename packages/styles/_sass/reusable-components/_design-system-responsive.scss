@@ -17,6 +17,17 @@
 /**
  * medium/tablet breakpoint
  */
+@include respond-to($breakpoint-medium, 'min') {
+	.ondesktop {
+		&-h100 {
+			height: 100%;
+		}
+	}
+}
+
+/**
+ * medium/tablet breakpoint
+ */
 @include respond-to($breakpoint-medium) {
 
   /**

@@ -25,6 +25,11 @@ $sticky-title-height: 10rem !default;
   margin-left: auto;
   margin-right: auto;
 }
+
+.container-section-sticky.pt0 { // 😓
+  padding-top: 0;
+}
+
 .container-section-sticky--fullwidth {
   max-width: none;
 }
