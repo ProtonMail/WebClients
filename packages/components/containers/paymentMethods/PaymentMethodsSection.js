@@ -42,7 +42,7 @@ const PaymentMethodsSection = () => {
                         : 'https://protonmail.com/support/knowledge-base/payment'
                 }
             >{c('Info for payment methods')
-                .t`If you wish to pay by credit card, you can add your card below. Learn about other payment options.`}</Alert>
+                .t`If you wish to have your subscription renewed automatically, you can add your credit card or PayPal account to the list of saved payment methods. Other payment methods are also available.`}</Alert>
             <Block>
                 <PrimaryButton className="mr1" onClick={handleCard}>{c('Action')
                     .t`Add credit / debit card`}</PrimaryButton>

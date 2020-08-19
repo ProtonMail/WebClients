@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { deletePaymentMethod, orderPaymentMethods } from 'proton-shared/lib/api/payments';
 import { isExpired } from 'proton-shared/lib/helpers/card';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { DropdownActions, ConfirmModal, Alert } from '../../components';
+import { DropdownActions, ConfirmModal, Alert, ErrorButton } from '../../components';
 import { useModals, useApi, useNotifications, useEventManager } from '../../hooks';
 import EditCardModal from '../payments/EditCardModal';
 
@@ -61,8 +61,14 @@ const PaymentMethodActions = ({ method, methods, index }) => {
             actionType: 'delete',
             onClick: () => {
                 createModal(
-                    <ConfirmModal onConfirm={deleteMethod} title={c('Confirmation title').t`Delete payment method`}>
-                        <Alert type="warning">{c('Confirmation message to delete payment method')
+                    <ConfirmModal
+                        onConfirm={deleteMethod}
+                        title={c('Confirmation title').t`Delete payment method`}
+                        confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    >
+                        <Alert>{c('Info when deleting payment method')
+                            .t`To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.`}</Alert>
+                        <Alert type="error">{c('Confirmation message to delete payment method')
                             .t`Are you sure you want to delete this payment method?`}</Alert>
                     </ConfirmModal>
                 );
