@@ -7,7 +7,7 @@ export interface OnLoginCallbackArguments {
     keyPassword?: string;
     User?: tsUser;
     LocalID?: number;
-    pathname?: string;
+    path?: string;
 }
 export type ProtonLoginCallback = (data: OnLoginCallbackArguments) => void;
 export type OnLoginCallback = (data: OnLoginCallbackArguments) => Promise<void>;

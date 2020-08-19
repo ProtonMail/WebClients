@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS, UNPAID_STATE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
@@ -59,6 +59,35 @@ const TopBanners = () => {
         }
     }, [onlineStatus]);
 
+    const getDelinquentBanner = () => {
+        if (!user.Delinquent) {
+            return;
+        }
+        if (user.canPay) {
+            if (user.Delinquent === UNPAID_STATE.NO_RECEIVE) {
+                return (
+                    <TopBanner className="bg-global-warning">
+                        {c('Info')
+                            .jt`Your account has at least one overdue invoice. Your access has been restricted. ${payInvoiceLink}`}
+                    </TopBanner>
+                );
+            }
+            return (
+                <TopBanner className="bg-global-warning">
+                    {c('Info')
+                        .jt`Your account has at least one overdue invoice. Your access will soon get restricted. ${payInvoiceLink}`}
+                </TopBanner>
+            );
+        }
+        if (user.isMember) {
+            return (
+                <TopBanner className="bg-global-warning">
+                    {c('Info').t`Account access restricted due to unpaid invoices. Please contact your administrator.`}
+                </TopBanner>
+            );
+        }
+    };
+
     return (
         <>
             {spaceDisplayed >= 100 ? (
@@ -69,14 +98,7 @@ const TopBanners = () => {
                 <TopBanner className="bg-global-attention" onClose={() => setIgnoreStorageLimit(true)}>{c('Info')
                     .jt`You reached ${spaceDisplayed}% of your storage capacity. Free up some space or add more storage space. ${upgradeLink}`}</TopBanner>
             ) : null}
-            {user.isDelinquent && user.canPay ? (
-                <TopBanner className="bg-global-warning">{c('Info')
-                    .jt`Your account has at least one overdue invoice. Your access will soon get restricted. ${payInvoiceLink}`}</TopBanner>
-            ) : null}
-            {user.isDelinquent && user.isMember ? (
-                <TopBanner className="bg-global-warning">{c('Info')
-                    .t`Account access restricted due to unpaid invoices. Please contact your administrator.`}</TopBanner>
-            ) : null}
+            {getDelinquentBanner()}
             {onlineStatus ? null : (
                 <TopBanner className="bg-global-warning">{c('Info')
                     .t`Internet connection lost. Please check your device's connectivity.`}</TopBanner>

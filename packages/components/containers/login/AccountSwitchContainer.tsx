@@ -68,11 +68,7 @@ const AccountSwitchContainer = ({ Layout, toAppNameKey, onLogin, activeSessions 
             setLoadingMap((old) => ({ ...old, [localID]: true }));
             await wait(1000);
             const validatedSession = await resumeSession(silentApi, localID);
-            await onLogin({
-                LocalID: localID,
-                keyPassword: validatedSession.keyPassword,
-                UID: validatedSession.UID,
-            });
+            await onLogin(validatedSession);
         } catch (e) {
             if (e instanceof InvalidPersistentSessionError) {
                 setLocalActiveSessions((list) => {
@@ -86,7 +82,7 @@ const AccountSwitchContainer = ({ Layout, toAppNameKey, onLogin, activeSessions 
             }
             const errorMessage = getApiErrorMessage(e) || 'Unknown error';
             createNotification({ type: 'error', text: errorMessage });
-            console.error(error);
+            console.error(e);
         } finally {
             setLoadingMap((old) => ({ ...old, [localID]: true }));
         }

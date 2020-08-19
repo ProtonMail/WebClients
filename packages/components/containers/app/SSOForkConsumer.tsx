@@ -45,7 +45,7 @@ const SSOForkConsumer = ({ onLogin, onInvalidFork }: Props) => {
         run().catch((e) => {
             const errorMessage = getApiErrorMessage(e) || 'Unknown error';
             createNotification({ type: 'error', text: errorMessage });
-            console.error(error);
+            console.error(e);
             setError(e);
         });
     }, []);

@@ -83,7 +83,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                 }
                 const errorMessage = getApiErrorMessage(e) || 'Unknown error';
                 createNotification({ type: 'error', text: errorMessage });
-                console.error(error);
+                console.error(e);
                 setError(true);
             });
 
