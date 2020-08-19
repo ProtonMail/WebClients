@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { c } from 'ttag';
 
@@ -40,6 +40,8 @@ const getInfo = (domain: string) => {
 };
 
 const InsecureEmailInfo = ({ email }: Props) => {
+    const [expanded, setExpanded] = useState(false);
+
     if (!validateEmailAddress(email)) {
         return null;
     }
@@ -48,13 +50,17 @@ const InsecureEmailInfo = ({ email }: Props) => {
 
     if (INSECURE_DOMAINS.includes(domain)) {
         return (
-            <details className="no-details-marker mb1 bg-global-attention color-white pl1 pr1 pb0-5 pt0-5">
-                <summary className="p0 flex flex-spacebetween flex-nowrap flex-items-center">
+            <div className="mb1 bg-global-attention color-white pt0-5 pb0-5 pl1 pr1 rounded">
+                <button
+                    type="button"
+                    onClick={() => setExpanded(!expanded)}
+                    className="w100 p0 flex flex-spacebetween flex-nowrap flex-items-center"
+                >
                     <span>{c('Title').t`This address might compromise your privacy.`}</span>
-                    <Icon name="caret" />
-                </summary>
-                <div className="pt0-5">{getInfo(domain)}</div>
-            </details>
+                    <Icon name="caret" className={expanded ? 'rotateX-180' : ''} />
+                </button>
+                {expanded ? <div className="pt0-5">{getInfo(domain)}</div> : null}
+            </div>
         );
     }
 
