@@ -5,7 +5,7 @@ import ForceRefreshContext from 'react-components/containers/forceRefresh/contex
 import { OnLoginCallbackArguments, ProtonLoginCallback } from 'react-components/containers/app/interface';
 import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
 import { produceFork, ProduceForkParameters } from 'proton-shared/lib/authentication/sessionForking';
-import { SSO_PATHS, UNPAID_STATE } from 'proton-shared/lib/constants';
+import { SSO_PATHS, UNPAID_STATE, APPS_CONFIGURATION, APPS } from 'proton-shared/lib/constants';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import {
@@ -99,6 +99,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         return false;
     };
 
+    const toApp = forkState?.app || APP_NAME;
+    // Not displaying the to app for account
+    const toAppName = toApp === APPS.PROTONACCOUNT ? '' : APPS_CONFIGURATION[toApp].name;
+
     return (
         <Switch>
             <Route path={SSO_PATHS.AUTHORIZE}>
@@ -111,13 +115,17 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                             <Route path={SSO_PATHS.SWITCH}>
                                 <AccountSwitchContainer
                                     activeSessions={activeSessions}
-                                    toAppNameKey={forkState?.app || APP_NAME}
+                                    toAppName={toAppName}
                                     onLogin={handleLogin}
                                     Layout={AccountPublicLayoutWrapper}
                                 />
                             </Route>
                             <Route path={SSO_PATHS.SIGNUP}>
-                                <AccountSignupContainer onLogin={handleLogin} Layout={AccountPublicLayoutWrapper} />
+                                <AccountSignupContainer
+                                    toAppName={toAppName}
+                                    onLogin={handleLogin}
+                                    Layout={AccountPublicLayoutWrapper}
+                                />
                             </Route>
                             <Route path={SSO_PATHS.RESET_PASSWORD}>
                                 <AccountResetPasswordContainer
@@ -129,7 +137,11 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                 <AccountForgotUsernameContainer Layout={AccountPublicLayoutWrapper} />
                             </Route>
                             <Route path={SSO_PATHS.LOGIN}>
-                                <AccountLoginContainer onLogin={handleLogin} Layout={AccountPublicLayoutWrapper} />
+                                <AccountLoginContainer
+                                    toAppName={toAppName}
+                                    onLogin={handleLogin}
+                                    Layout={AccountPublicLayoutWrapper}
+                                />
                             </Route>
                             <Redirect to={SSO_PATHS.LOGIN} />
                         </Switch>
