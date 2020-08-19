@@ -46,18 +46,20 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toAppNam
 
     const { form, username, password, isTotpRecovery, totp, keyPassword } = state;
 
+    const catchHandler = (e: any) => {
+        if (e.data?.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
+            return createModal(<AbuseModal />);
+        }
+        if (e.name === 'TOTPError' || e.name === 'PasswordError') {
+            return createNotification({ type: 'error', text: e.message });
+        }
+        createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
+    };
+
     if (state.form === FORM.LOGIN) {
         const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault();
-
-            withLoading(
-                handleLogin().catch((e) => {
-                    if (e.data && e.data.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
-                        return createModal(<AbuseModal />);
-                    }
-                    createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
-                })
-            );
+            withLoading(handleLogin().catch(catchHandler));
         };
 
         const signupLink = (
@@ -114,12 +116,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toAppNam
     if (form === FORM.TOTP) {
         const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault();
-
-            withLoading(
-                handleTotp().catch((e) => {
-                    createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
-                })
-            );
+            withLoading(handleTotp().catch(catchHandler));
         };
 
         const totpForm = (
@@ -169,17 +166,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toAppNam
     if (form === FORM.UNLOCK) {
         const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault();
-
-            withLoading(
-                handleUnlock(keyPassword).catch((e) => {
-                    if (e.name === 'PasswordError') {
-                        return createNotification({ type: 'error', text: e.message });
-                    }
-                    // In case of any other error than password error, automatically cancel here to allow the user to retry.
-                    createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
-                    handleCancel();
-                })
-            );
+            withLoading(handleUnlock().catch(catchHandler));
         };
 
         const unlockInput = (

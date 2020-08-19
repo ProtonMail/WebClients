@@ -111,12 +111,12 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
 
         const result = await handleUnlockKey(User, KeySalts, password).catch(() => undefined);
         if (!result) {
-            const error = new Error(c('Error').t`Wrong mailbox password`);
+            const error = new Error(c('Error').t`Incorrect mailbox password. Please try again`);
             error.name = 'PasswordError';
             throw error;
         }
 
-        return finalizeLogin(result.keyPassword);
+        await finalizeLogin(result.keyPassword);
     };
 
     const next = async (previousForm: FORM) => {
@@ -145,10 +145,6 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
             return finalizeLogin();
         }
 
-        /**
-         * Handle the case for users who are in 2-password mode but have no keys setup.
-         * Typically happens for VPN users.
-         */
         if (!cache.userSaltResult) {
             const authApi = <T>(config: any) => silentApi<T>(withAuthHeaders(UID, AccessToken, config));
             cache.userSaltResult = await Promise.all([
@@ -182,7 +178,7 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
      * Step 2. Handle TOTP.
      * Unless there is another auth type active, the flow will continue until it's logged in.
      */
-    const handleTotp = async () => {
+    const handleTotp = async (totp: string) => {
         const cache = cacheRef.current;
         if (!cache || !cache.authResult) {
             throw new Error('Missing cache');
@@ -190,44 +186,37 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
 
         const { authResult } = cache;
         const { UID, AccessToken } = authResult;
-        const { totp } = state;
 
         await silentApi(withAuthHeaders(UID, AccessToken, auth2FA({ totp }))).catch((e) => {
-            // In case of any other error than retry error, automatically cancel here to allow the user to retry.
-            if (e.status !== HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
-                handleCancel();
+            if (e.status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
+                const error = new Error(e.data?.Error || c('Error').t`Incorrect login credentials. Please try again`);
+                error.name = 'TOTPError';
+                throw error;
             }
             throw e;
         });
 
-        return next(FORM.TOTP);
+        await next(FORM.TOTP);
     };
 
     /**
      * Step 1. Handle the initial auth.
      * Unless there is an auth type active, the flow will continue until it's logged in.
      */
-    const handleLogin = async () => {
-        try {
-            const { username, password } = state;
-            const infoResult = await silentApi<InfoResponse>(getInfo(username));
-            const { authVersion, result: authResult } = await loginWithFallback({
-                api: silentApi,
-                credentials: { username, password },
-                initialAuthInfo: infoResult,
-            });
+    const handleLogin = async (username: string, password: string) => {
+        const infoResult = await silentApi<InfoResponse>(getInfo(username));
+        const { authVersion, result: authResult } = await loginWithFallback({
+            api: silentApi,
+            credentials: { username, password },
+            initialAuthInfo: infoResult,
+        });
 
-            cacheRef.current = {
-                authResult,
-                authVersion,
-            };
+        cacheRef.current = {
+            authResult,
+            authVersion,
+        };
 
-            await next(FORM.LOGIN);
-        } catch (e) {
-            cacheRef.current = undefined;
-
-            throw e;
-        }
+        await next(FORM.LOGIN);
     };
 
     const getSetter = <T>(key: keyof State) => (value: T) => setState({ ...state, [key]: value });
@@ -241,9 +230,32 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
     return {
         state,
         setState,
-        handleLogin,
-        handleTotp,
-        handleUnlock,
+        handleLogin: () => {
+            const { username, password } = state;
+            return handleLogin(username, password).catch((e) => {
+                cacheRef.current = undefined;
+                throw e;
+            });
+        },
+        handleTotp: () => {
+            const { totp } = state;
+            return handleTotp(totp).catch((e) => {
+                // If TOTP Error, can try another totp entry, otherwise cancel to restart the login procedure
+                if (e.name !== 'TOTPError') {
+                    handleCancel();
+                }
+                throw e;
+            });
+        },
+        handleUnlock: () => {
+            const { keyPassword } = state;
+            return handleUnlock(keyPassword).catch((e) => {
+                if (e.name !== 'PasswordError') {
+                    handleCancel();
+                }
+                throw e;
+            });
+        },
         handleCancel,
         setUsername,
         setPassword,
