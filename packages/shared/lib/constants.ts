@@ -177,6 +177,13 @@ export enum INVOICE_STATE {
     WRITEOFF = 4,
 }
 
+export enum UNPAID_STATE {
+    AVAILABLE = 1,
+    OVERDUE,
+    DELINQUENT,
+    NO_RECEIVE,
+}
+
 export const BASE_SIZE = 1024;
 export const GIGA = BASE_SIZE ** 3;
 
