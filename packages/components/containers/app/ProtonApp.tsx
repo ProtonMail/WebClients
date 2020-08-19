@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef, useMemo, useEffect } from 'react';
 import { Router } from 'react-router';
-import { createBrowserHistory as createHistory } from 'history';
+import { History, createBrowserHistory as createHistory } from 'history';
 import createAuthentication from 'proton-shared/lib/authentication/createAuthenticationStore';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
 import { formatUser, UserModel } from 'proton-shared/lib/models/userModel';
@@ -80,6 +80,13 @@ const getInitialState = (oldUID?: string, oldLocalID?: number): { UID?: string; 
     }
 };
 
+interface AuthState {
+    UID?: string;
+    localID?: number;
+    history: History;
+    isLoggingOut?: boolean;
+}
+
 const ProtonApp = ({ config, children }: Props) => {
     const authentication = useInstance(() => {
         if (isSSOMode) {
@@ -92,7 +99,7 @@ const ProtonApp = ({ config, children }: Props) => {
     if (!cacheRef.current) {
         cacheRef.current = createCache<string, any>();
     }
-    const [authData, setAuthData] = useState(() => {
+    const [authData, setAuthData] = useState<AuthState>(() => {
         const state = getInitialState(authentication.getUID(), authentication.getLocalID());
         const history = createHistory({ basename: getBasename(state?.localID) });
         return {
@@ -133,22 +140,20 @@ const ProtonApp = ({ config, children }: Props) => {
             const newPathname = `/${requestedPathname || oldPathname}`;
             pathnameRef.current = getIsSSOPath(newPathname) ? '/' : newPathname;
 
-            const newState = {
+            setAuthData({
                 UID: newUID,
                 localID: newLocalID,
-            };
-            setAuthData({
-                ...newState,
-                history: createHistory({ basename: getBasename(newState.localID) }),
+                history: createHistory({ basename: getBasename(newLocalID) }),
             });
         },
         []
     );
 
-    const [isFinalizeLogout, setIsFinalizeLogout] = useState(false);
-
     const handleLogout = useCallback(() => {
-        setIsFinalizeLogout(true);
+        setAuthData((authData) => ({
+            ...authData,
+            isLoggingOut: true,
+        }));
     }, []);
 
     const handleFinalizeLogout = useCallback(() => {
@@ -171,10 +176,9 @@ const ProtonApp = ({ config, children }: Props) => {
         setAuthData({
             history: createHistory({ basename: getBasename() }),
         });
-        setIsFinalizeLogout(false);
     }, []);
 
-    const { UID, localID, history } = authData;
+    const { UID, localID, history, isLoggingOut } = authData;
 
     const authenticationValue = useMemo(() => {
         if (!UID) {
@@ -203,7 +207,7 @@ const ProtonApp = ({ config, children }: Props) => {
     }, [pathnameRef.current, history]);
 
     const render = () => {
-        if (isFinalizeLogout) {
+        if (isLoggingOut) {
             return <Signout onDone={handleFinalizeLogout} />;
         }
         if (pathnameRef.current) {
