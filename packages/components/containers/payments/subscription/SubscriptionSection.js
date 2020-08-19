@@ -15,6 +15,7 @@ import NewSubscriptionModal from './NewSubscriptionModal';
 import UnsubscribeButton from './UnsubscribeButton';
 
 const AddonRow = ({ label, used, max, format = identity }) => {
+    const percentage = Math.round((used * 100) / max);
     return (
         <div className="flex-autogrid onmobile-flex-column w100 mb1">
             <div className="flex-autogrid-item pl1">{label}</div>
@@ -24,7 +25,7 @@ const AddonRow = ({ label, used, max, format = identity }) => {
                 </strong>
             </div>
             <div className="flex-autogrid-item">
-                {Number.isInteger((used * 100) / max) ? <Meter value={(used * 100) / max} /> : null}
+                {Number.isInteger(percentage) ? <Meter value={percentage} /> : null}
             </div>
         </div>
     );
