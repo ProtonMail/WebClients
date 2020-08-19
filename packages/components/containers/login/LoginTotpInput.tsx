@@ -17,7 +17,7 @@ const LoginTotpInput = ({ totp, setTotp, id }: Props) => {
             id={id}
             required
             value={totp}
-            className="w100 mb1"
+            className="w100"
             placeholder="123456"
             onChange={({ target: { value } }) => setTotp(value)}
             data-cy-login="TOTP"
