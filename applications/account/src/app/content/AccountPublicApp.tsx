@@ -75,7 +75,7 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
         run().catch((e) => {
             const errorMessage = getApiErrorMessage(e) || 'Unknown error';
             createNotification({ type: 'error', text: errorMessage });
-            console.error(error);
+            console.error(e);
             setError(true);
         });
     }, []);

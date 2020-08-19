@@ -5,7 +5,7 @@ import ForceRefreshContext from 'react-components/containers/forceRefresh/contex
 import { OnLoginCallbackArguments, ProtonLoginCallback } from 'react-components/containers/app/interface';
 import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
 import { produceFork, ProduceForkParameters } from 'proton-shared/lib/authentication/sessionForking';
-import { SSO_PATHS } from 'proton-shared/lib/constants';
+import { SSO_PATHS, UNPAID_STATE } from 'proton-shared/lib/constants';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import {
@@ -38,8 +38,18 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const ignoreAutoRef = useRef(false);
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
+        const { keyPassword, UID, User } = args;
+        if (!User) {
+            throw new Error('User expected');
+        }
+        // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
+        if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
+            return onLogin({
+                ...args,
+                path: '/subscription#invoices',
+            });
+        }
         if (forkState) {
-            const { keyPassword, UID } = args;
             await produceFork({ api, UID, keyPassword, ...forkState });
             return;
         }
@@ -72,7 +82,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     const handleActiveSessions = ({ session, sessions }: GetActiveSessionsResult) => {
         // Ignore the automatic login behavior when the initial load was from a fork request, or switch route
-        if (ignoreAutoRef.current || location.pathname.startsWith(SSO_PATHS.SWITCH)) {
+        if (ignoreAutoRef.current || location.pathname === SSO_PATHS.SWITCH) {
             setActiveSessions(sessions);
             return false;
         }
