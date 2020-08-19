@@ -76,7 +76,9 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
             : [
                   new webpack.HotModuleReplacementPlugin(),
                   new webpack.NamedModulesPlugin(),
-                  new ReactRefreshWebpackPlugin()
+                  new ReactRefreshWebpackPlugin({
+                      overlay: false
+                  })
               ]),
 
         new WriteWebpackPlugin(
