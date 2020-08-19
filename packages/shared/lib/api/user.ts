@@ -25,6 +25,7 @@ export const queryCreateOldUser = (data: {
 export const queryCreateUser = (data: {
     Username: string;
     Email: string;
+    Phone: string;
     Type: 1 | 2; // 1 = mail, 2 = VPN
     Referrer?: string;
     Payload?: {
