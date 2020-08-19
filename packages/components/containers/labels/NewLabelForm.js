@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { LABEL_TYPE, FEATURE_FLAGS } from 'proton-shared/lib/constants';
-import { Alert, Input, Label, Row, Field, ColorPicker } from '../../components';
+import { Alert, Input, Label, Row, Field, ColorPicker, Toggle, Info } from '../../components';
 
 import ParentFolderSelector from './ParentFolderSelector';
 
-function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID }) {
+function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID, onChangeNotify }) {
     return (
         <div className="center flex-item-fluid">
             <Row>
@@ -53,6 +53,22 @@ function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID }) 
                             />
                         </Field>
                     </Row>
+                    <Row>
+                        <Label htmlFor="notification">
+                            <span className="mr0-5">{c('Label').t`Notification`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Turn this feature on to receive messages desktop/mobile notifications when messages are automatically added to this folder using custom filters`}
+                            />
+                        </Label>
+                        <Field>
+                            <Toggle
+                                id="notification"
+                                checked={label.Notify === 1}
+                                onChange={({ target }) => onChangeNotify(+target.checked)}
+                            />
+                        </Field>
+                    </Row>
                 </>
             ) : null}
         </div>
@@ -64,6 +80,7 @@ NewLabelForm.propTypes = {
     onChangeName: PropTypes.func.isRequired,
     onChangeColor: PropTypes.func.isRequired,
     onChangeParentID: PropTypes.func,
+    onChangeNotify: PropTypes.func,
 };
 
 export default NewLabelForm;

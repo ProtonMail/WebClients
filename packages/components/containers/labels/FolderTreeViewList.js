@@ -22,7 +22,7 @@ const Header = ({ isNarrow }) => {
                 {isNarrow ? null : <Icon name="arrow-cross" className="mr1" />}
                 {c('Header').t`Name`}
             </span>
-            <span className="bold uppercase w10e">{c('Header').t`Notification`}</span>
+            <span className="bold uppercase w10e nomobile">{c('Header').t`Notification`}</span>
             <span className="bold uppercase w10e alignright">{c('Header').t`Actions`}</span>
         </div>
     );
@@ -146,7 +146,7 @@ const FolderTreeViewList = ({ items = [] }) => {
                                             {item.Name}
                                         </span>
                                     </div>
-                                    <div className="treeview-toggle w10e">
+                                    <div className="treeview-toggle w10e nomobile">
                                         <ToggleNotify label={item} />
                                     </div>
                                     <div className="treeview-actions w10e flex flex-column flex-items-end">

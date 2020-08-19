@@ -40,6 +40,7 @@ function EditLabelModal({ label = null, mode = 'create', onEdit, onClose, onAdd,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
             ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
+            Notify: type === 'folder' ? 1 : 0,
         }
     );
 
@@ -88,6 +89,13 @@ function EditLabelModal({ label = null, mode = 'create', onEdit, onClose, onAdd,
         });
     };
 
+    const handleChangeNotify = (Notify) => {
+        setModel({
+            ...model,
+            Notify,
+        });
+    };
+
     return (
         <FormModal
             submit={c('Action').t`Save`}
@@ -102,6 +110,7 @@ function EditLabelModal({ label = null, mode = 'create', onEdit, onClose, onAdd,
                 onChangeName={handleChangeName}
                 onChangeColor={handleChangeColor}
                 onChangeParentID={handleChangeParentID}
+                onChangeNotify={handleChangeNotify}
             />
         </FormModal>
     );
