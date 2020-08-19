@@ -142,6 +142,7 @@ const HeaderMoreDropdown = ({
                       onClose={onClose}
                       onLock={onLock}
                       onBack={onBack}
+                      breakpoints={breakpoints}
                   />
               ),
               ({ onClose, onLock }) => (
@@ -151,6 +152,7 @@ const HeaderMoreDropdown = ({
                       elements={[message.data as Message]}
                       onClose={onClose}
                       onLock={onLock}
+                      breakpoints={breakpoints}
                   />
               )
           ]

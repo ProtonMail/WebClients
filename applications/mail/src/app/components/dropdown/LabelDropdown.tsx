@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, useMemo } from 'react';
 import { c } from 'ttag';
+import { FocusScope } from '@react-aria/focus';
 import {
     SearchInput,
     Icon,
@@ -22,6 +23,7 @@ import { Element } from '../../models/element';
 import { hasLabel } from '../../helpers/elements';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { getStandardFolders } from '../../helpers/labels';
+import { Breakpoints } from '../../models/utils';
 
 import './LabelDropdown.scss';
 
@@ -49,9 +51,10 @@ interface Props {
     labelID: string;
     onClose: () => void;
     onLock: (lock: boolean) => void;
+    breakpoints: Breakpoints;
 }
 
-const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Props) => {
+const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock, breakpoints }: Props) => {
     const labelIDs = labels.map(({ ID }) => ID);
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();
@@ -145,14 +148,17 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
     const archiveCheckID = `${uid}-archive`;
     const labelCheckID = (ID: string) => `${uid}-${ID}`;
     const applyDisabled = isDeepEqual(initialState, selectedLabelIDs);
+    const autoFocusSearch = !breakpoints.isNarrow;
 
     return (
-        <>
+        <FocusScope contain restoreFocus autoFocus>
             <div className="flex flex-spacebetween flex-items-center m1 mb0">
-                <label htmlFor={searchInputID} className="bold">{c('Label').t`Label as`}</label>
+                <span className="bold" tabIndex={-2}>
+                    {c('Label').t`Label as`}
+                </span>
                 <Tooltip title={c('Title').t`Create label`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
-                        <Icon name="label" className="flex-item-noshrink mr0-25" />+
+                        <Icon name="label" className="flex-item-noshrink mr0-25" />
                     </PrimaryButton>
                 </Tooltip>
             </div>
@@ -162,11 +168,12 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                     onChange={updateSearch}
                     id={searchInputID}
                     placeholder={c('Placeholder').t`Filter labels`}
+                    autoFocus={autoFocusSearch}
                 />
             </div>
             <div className="scroll-if-needed scroll-smooth-touch mt1 labelDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
-                    {list.map(({ ID = '', Name = '', Color = '' }, i) => (
+                    {list.map(({ ID = '', Name = '', Color = '' }) => (
                         <li
                             key={ID}
                             className="dropDown-item dropDown-item-button cursor-pointer w100 flex flex-nowrap flex-items-center pt0-5 pb0-5 pl1 pr1"
@@ -193,7 +200,6 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                                 checked={selectedLabelIDs[ID] === LabelState.On}
                                 indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
                                 onChange={handleCheck(ID)}
-                                autoFocus={i === 0}
                             />
                         </li>
                     ))}
@@ -224,7 +230,7 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                     {c('Action').t`Apply`}
                 </PrimaryButton>
             </div>
-        </>
+        </FocusScope>
     );
 };
 
