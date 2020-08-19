@@ -23,9 +23,10 @@ import SignupSubmitRow from '../signup/SignupSubmitRow';
 
 interface Props extends UseLoginProps {
     Layout: FunctionComponent<AccountPublicLayoutProps>;
+    toAppName?: string;
 }
 
-const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props) => {
+const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toAppName }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const {
@@ -80,7 +81,12 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout }: Props)
         );
 
         return (
-            <Layout title={c('Title').t`Sign in`} aside={<OneAccountIllustration />} right={null}>
+            <Layout
+                title={c('Title').t`Sign in`}
+                subtitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
+                aside={<OneAccountIllustration />}
+                right={null}
+            >
                 <form name="loginForm" className="signup-form" onSubmit={handleSubmit}>
                     {usernameInput}
                     {passwordInput}

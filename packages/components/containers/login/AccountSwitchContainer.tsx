@@ -7,7 +7,6 @@ import { getPersistedSession, removePersistedSession } from 'proton-shared/lib/a
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
 import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
 import { getInitial } from 'proton-shared/lib/helpers/string';
-import { APP_NAMES, APPS_CONFIGURATION } from 'proton-shared/lib/constants';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
 import { revoke } from 'proton-shared/lib/api/auth';
@@ -21,11 +20,11 @@ import { Props as AccountLayoutProps } from '../signup/AccountPublicLayout';
 interface Props {
     Layout: FunctionComponent<AccountLayoutProps>;
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
-    toAppNameKey: APP_NAMES;
+    toAppName?: string;
     activeSessions?: LocalSessionResponse[];
 }
 
-const AccountSwitchContainer = ({ Layout, toAppNameKey, onLogin, activeSessions }: Props) => {
+const AccountSwitchContainer = ({ Layout, toAppName, onLogin, activeSessions }: Props) => {
     const history = useHistory();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -35,8 +34,6 @@ const AccountSwitchContainer = ({ Layout, toAppNameKey, onLogin, activeSessions 
     const [loadingMap, setLoadingMap] = useState<{ [key: number]: boolean }>({});
     const [error, setError] = useState(false);
     const { createNotification } = useNotifications();
-
-    const toAppName = APPS_CONFIGURATION[toAppNameKey].name;
 
     useEffect(() => {
         if (!activeSessions) {
@@ -132,12 +129,12 @@ const AccountSwitchContainer = ({ Layout, toAppNameKey, onLogin, activeSessions 
     return (
         <Layout
             title={c('Title').t`Choose an account`}
+            subtitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
             right={
                 <LinkButton className="nodecoration" onClick={handleSignOutAll}>{c('Action')
                     .t`Sign out all accounts`}</LinkButton>
             }
         >
-            <p>{c('Info').t`To continue to ${toAppName}`}</p>
             <div className="tiny-shadow-container button-account-container">
                 {inner()}
                 <div className="relative p1">

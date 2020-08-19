@@ -107,46 +107,38 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
             );
 
             return (
-                <>
-                    <p>{c('Info')
-                        .t`We will send you a recovery link to this email address if you forget your password or get locked out of your account.`}</p>
-                    <SignupLabelInputRow
-                        label={<Label htmlFor="recovery-email">{c('Label').t`Recovery email`}</Label>}
-                        input={challenge}
-                    />
-                </>
+                <SignupLabelInputRow
+                    label={<Label htmlFor="recovery-email">{c('Label').t`Recovery email`}</Label>}
+                    input={challenge}
+                />
             );
         }
 
         if (model.step === RECOVERY_PHONE) {
             return (
-                <>
-                    <p>{c('Info')
-                        .t`We will send a code to this phone number if you forget your password or get locked out of your account.`}</p>
-                    <SignupLabelInputRow
-                        label={<Label htmlFor="recovery-phone">{c('Label').t`Recovery phone`}</Label>}
-                        input={
-                            <>
-                                <div className="mb0-5">
-                                    <IntlTelInput
-                                        id="recovery-phone"
-                                        name="recovery-phone"
-                                        containerClassName="w100"
-                                        inputClassName="w100"
-                                        autoFocus
-                                        onPhoneNumberChange={handleChangePhone}
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <InlineLinkButton
-                                        onClick={() => onChange({ ...model, recoveryPhone: '', step: RECOVERY_EMAIL })}
-                                    >{c('Action').t`Add an email address instead`}</InlineLinkButton>
-                                </div>
-                            </>
-                        }
-                    />
-                </>
+                <SignupLabelInputRow
+                    label={<Label htmlFor="recovery-phone">{c('Label').t`Recovery phone`}</Label>}
+                    input={
+                        <>
+                            <div className="mb0-5">
+                                <IntlTelInput
+                                    id="recovery-phone"
+                                    name="recovery-phone"
+                                    containerClassName="w100"
+                                    inputClassName="w100"
+                                    autoFocus
+                                    onPhoneNumberChange={handleChangePhone}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <InlineLinkButton
+                                    onClick={() => onChange({ ...model, recoveryPhone: '', step: RECOVERY_EMAIL })}
+                                >{c('Action').t`Add an email address instead`}</InlineLinkButton>
+                            </div>
+                        </>
+                    }
+                />
             );
         }
     })();

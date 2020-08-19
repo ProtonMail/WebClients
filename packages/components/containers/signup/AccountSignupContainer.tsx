@@ -1,24 +1,23 @@
-import React, { useState, useEffect, useMemo, useRef, FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect, useMemo, useRef, useState } from 'react';
 import * as History from 'history';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
 import { PAYMENT_METHOD_TYPES, TOKEN_TYPES } from 'proton-shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { c } from 'ttag';
-import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
+import { Address, HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
-import { Address } from 'proton-shared/lib/interfaces';
 import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
 import { getResetAddressesKeys } from 'proton-shared/lib/keys/resetKeys';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { useHistory } from 'react-router-dom';
 import {
     queryCheckUsernameAvailability,
+    queryCheckVerificationCode,
     queryDirectSignupStatus,
     queryVerificationCode,
-    queryCheckVerificationCode,
 } from 'proton-shared/lib/api/user';
-import { useApi, useLoading, useConfig, usePlans, useModals } from '../../hooks';
+import { useApi, useConfig, useLoading, useModals, usePlans } from '../../hooks';
 import BackButton from './BackButton';
 import HumanVerificationForm from '../api/humanVerification/HumanVerificationForm';
 import usePayment from '../payments/usePayment';
@@ -40,11 +39,11 @@ import {
     SignupPlan,
     SubscriptionCheckResult,
 } from './interfaces';
-import { DEFAULT_SIGNUP_MODEL, DEFAULT_CHECK_RESULT, SIGNUP_STEPS } from './constants';
+import { DEFAULT_CHECK_RESULT, DEFAULT_SIGNUP_MODEL, SIGNUP_STEPS } from './constants';
 import createHumanApi from './helpers/humanApi';
 import RequestNewCodeModal from '../api/humanVerification/RequestNewCodeModal';
 import SignupCreatingAccount from './SignupCreatingAccount';
-import { PaymentParameters, Payment } from '../payments/interface';
+import { Payment, PaymentParameters } from '../payments/interface';
 import { ChallengeResult } from '../../components/challenge/ChallengeFrame';
 import getSignupErrors from './helpers/getSignupErrors';
 import { hasPaidPlan } from './helpers/helper';
@@ -59,6 +58,7 @@ import OneAccountIllustration from '../illustration/OneAccountIllustration';
 interface Props {
     onLogin: OnLoginCallback;
     Layout: FunctionComponent<AccountPublicLayoutProps>;
+    toAppName?: string;
 }
 
 const {
@@ -87,7 +87,7 @@ const getSearchParams = (search: History.Search) => {
     return { currency, cycle, preSelectedPlan, service: service ? SERVICES[service] : undefined };
 };
 
-const AccountSignupContainer = ({ onLogin, Layout }: Props) => {
+const AccountSignupContainer = ({ toAppName, onLogin, Layout }: Props) => {
     const history = useHistory();
     const { currency, cycle, preSelectedPlan, service } = useMemo(() => {
         return getSearchParams(history.location.search);
@@ -357,14 +357,19 @@ const AccountSignupContainer = ({ onLogin, Layout }: Props) => {
 
         const handleSubmit = step === ACCOUNT_CREATION_EMAIL ? handleSubmitEmail : handleSubmitUsername;
 
+        const forkOrQueryApp = toAppName || service;
+
         return (
-            <Layout title={c('Title').t`Create your Proton Account`} aside={<OneAccountIllustration />}>
+            <Layout
+                title={c('Title').t`Create your Proton Account`}
+                subtitle={forkOrQueryApp ? c('Info').t`to continue to ${forkOrQueryApp}` : undefined}
+                aside={<OneAccountIllustration />}
+            >
                 <SignupAccountForm
                     history={history}
                     model={model}
                     errors={errors}
                     onChange={setModel}
-                    service={service}
                     onSubmit={(payload) => {
                         setChallengePayload(payload);
                         withLoading(handleSubmit());
@@ -393,9 +398,19 @@ const AccountSignupContainer = ({ onLogin, Layout }: Props) => {
             setModelDiff({ step: ACCOUNT_CREATION_USERNAME });
         };
 
+        const subtitle =
+            step === RECOVERY_EMAIL
+                ? c('Info')
+                      .t`We will send you a recovery link to this email address if you forget your password or get locked out of your account.`
+                : step === RECOVERY_PHONE
+                ? c('Info')
+                      .t`We will send a code to this phone number if you forget your password or get locked out of your account.`
+                : '';
+
         return (
             <Layout
                 title={c('Title').t`Add a recovery email (highly recommended)`}
+                subtitle={subtitle}
                 left={<BackButton onClick={handleBack} />}
             >
                 <SignupRecoveryForm

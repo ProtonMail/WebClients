@@ -15,7 +15,7 @@ import {
 } from '../../components';
 import { useLoading } from '../../hooks';
 
-import { SignupModel, SignupErrors, SERVICES } from './interfaces';
+import { SignupModel, SignupErrors } from './interfaces';
 import { SIGNUP_STEPS } from './constants';
 import InsecureEmailInfo from './InsecureEmailInfo';
 import { ChallengeRef, ChallengeResult } from '../../components/challenge/ChallengeFrame';
@@ -29,12 +29,11 @@ interface Props {
     onSubmit: (payload: ChallengeResult) => void;
     errors: SignupErrors;
     loading: boolean;
-    service?: SERVICES;
 }
 
 const { ACCOUNT_CREATION_USERNAME, ACCOUNT_CREATION_EMAIL } = SIGNUP_STEPS;
 
-const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, service }: Props) => {
+const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading }: Props) => {
     const challengeRefLogin = useRef<ChallengeRef>();
     const [loadingChallenge, withLoadingChallenge] = useLoading();
     const [challengeLoading, setChallengeLoading] = useState(true);
@@ -174,7 +173,6 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, service
                 }}
                 autoComplete="off"
             >
-                {service ? <div className="mb1">{c('Info').t`to continue to ${service}`}</div> : null}
                 {inner}
                 <div className="flex flex-nowrap mb2">
                     <SignupLabelInputRow

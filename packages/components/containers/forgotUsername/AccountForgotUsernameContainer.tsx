@@ -35,7 +35,12 @@ const AccountForgotUsernameContainer = ({ Layout }: Props) => {
     };
 
     return (
-        <Layout title={c('Title').t`Find email or username`} left={<BackButton onClick={handleBack} />}>
+        <Layout
+            title={c('Title').t`Find email or username`}
+            subtitle={c('Info')
+                .t`Enter your recovery email address or recovery phone number and we will send you your username or email address.`}
+            left={<BackButton onClick={handleBack} />}
+        >
             <form
                 className="signup-form"
                 onSubmit={(e) => {
@@ -43,8 +48,6 @@ const AccountForgotUsernameContainer = ({ Layout }: Props) => {
                     withLoading(handleSubmit());
                 }}
             >
-                <p>{c('Info')
-                    .t`Enter your recovery email address or recovery phone number and we will send you your username or email address.`}</p>
                 <SignupLabelInputRow
                     label={<Label htmlFor="email">{c('Label').t`Recovery email`}</Label>}
                     input={

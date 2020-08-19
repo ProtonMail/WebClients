@@ -14,6 +14,7 @@ import './AccountPublicLayout.scss';
 export interface Props {
     children: ReactNode;
     title: string;
+    subtitle?: string;
     aside?: ReactNode;
     right?: ReactNode;
     left?: ReactNode;
@@ -22,7 +23,7 @@ export interface Props {
     locales?: TtagLocaleMap;
 }
 
-const AccountPublicLayout = ({ children, title, aside, larger, left, center, right, locales }: Props) => {
+const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, center, right, locales }: Props) => {
     const { APP_VERSION } = useConfig();
     const termsLink = (
         <Href
@@ -58,7 +59,12 @@ const AccountPublicLayout = ({ children, title, aside, larger, left, center, rig
                                     <span className="flex-item-fluid flex alignright" />
                                 </header>
                                 <div className="mb2 flex-item-fluid">
-                                    {title ? <h1 className="h4 bold mb1 mt0">{title}</h1> : null}
+                                    {title ? (
+                                        <h1 className={classnames(['h4 bold mt0', subtitle ? 'mb0-25' : 'mb1'])}>
+                                            {title}
+                                        </h1>
+                                    ) : null}
+                                    {subtitle ? <div className="mb1">{subtitle}</div> : null}
                                     {children}
                                 </div>
                                 <footer className="flex flex-items-center flex-nowrap">
