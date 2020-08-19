@@ -4,15 +4,13 @@ import { c } from 'ttag';
 import { ToolbarButton } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
-import { LinkType } from '../../../interfaces/link';
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 
 interface Props {
     disabled?: boolean;
-    openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
-const PreviewButton = ({ disabled, openLink }: Props) => {
+const PreviewButton = ({ disabled }: Props) => {
     const { preview } = useToolbarActions();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
@@ -24,7 +22,7 @@ const PreviewButton = ({ disabled, openLink }: Props) => {
             icon="read"
             onClick={() => {
                 if (selectedItems.length) {
-                    preview(selectedItems[0], openLink);
+                    preview(selectedItems[0]);
                 }
             }}
             data-testid="toolbar-preview"

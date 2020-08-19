@@ -5,6 +5,7 @@ import { usePreventLeave, useModals } from 'react-components';
 
 import useFiles from './useFiles';
 import useTrash from './useTrash';
+import useNavigate from './useNavigate';
 import useListNotifications from '../util/useListNotifications';
 import useConfirm from '../util/useConfirm';
 import FileSaver from '../../utils/FileSaver/FileSaver';
@@ -19,6 +20,7 @@ import MoveToFolderModal from '../../components/MoveToFolderModal';
 import CreateFolderModal from '../../components/CreateFolderModal';
 
 function useToolbarActions() {
+    const { navigateToLink } = useNavigate();
     const { folder } = useDriveActiveFolder();
     const { startFileTransfer, startFolderTransfer } = useFiles();
     const { preventLeave } = usePreventLeave();
@@ -132,12 +134,12 @@ function useToolbarActions() {
         createModal(<RenameModal activeFolder={folder} item={item} />);
     };
 
-    const preview = (item: FileBrowserItem, openLink: (shareId: string, linkId: string, type: LinkType) => void) => {
+    const preview = (item: FileBrowserItem) => {
         if (!folder) {
             return;
         }
 
-        openLink(folder.shareId, item.LinkID, item.Type);
+        navigateToLink(folder.shareId, item.LinkID, item.Type);
     };
 
     const restoreFromTrash = async (shareId: string, itemsToRestore: FileBrowserItem[]) => {

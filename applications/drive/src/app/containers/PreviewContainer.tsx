@@ -1,20 +1,23 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+
 import { useLoading, usePreventLeave, isPreviewAvailable, FilePreview } from 'react-components';
+
 import useFiles from '../hooks/drive/useFiles';
 import useDrive from '../hooks/drive/useDrive';
+import useDriveSorting from '../hooks/drive/useDriveSorting';
+import useNavigate from '../hooks/drive/useNavigate';
 import FileSaver from '../utils/FileSaver/FileSaver';
-import { LinkURLType } from '../constants';
-import { LinkMeta } from '../interfaces/link';
+import { isTransferCancelError, getMetaForTransfer } from '../utils/transfer';
+import FilePreviewNavigation from '../components/FilePreviewNavigation';
 import { DownloadControls } from '../components/downloads/download';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
-import useDriveSorting from '../hooks/drive/useDriveSorting';
-import { isTransferCancelError, getMetaForTransfer } from '../utils/transfer';
-import FilePreviewNavigation from '../components/FilePreviewNavigation';
+import { LinkMeta, LinkType } from '../interfaces/link';
 
-const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
+const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
+    const { navigateToLink } = useNavigate();
     const cache = useDriveCache();
     const downloadControls = useRef<DownloadControls>();
     const { setFolder } = useDriveActiveFolder();
@@ -83,13 +86,13 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
 
     const navigateToParent = useCallback(() => {
         if (meta?.ParentLinkID) {
-            history.push(`/${shareId}/${LinkURLType.FOLDER}/${meta.ParentLinkID}`);
+            navigateToLink(shareId, meta.ParentLinkID, LinkType.FOLDER);
         }
     }, [meta?.ParentLinkID, shareId]);
 
-    const navigateToLink = useCallback(
+    const onOpen = useCallback(
         ({ LinkID }: LinkMeta) => {
-            history.push(`/${shareId}/${LinkURLType.FILE}/${LinkID}`);
+            navigateToLink(shareId, LinkID, LinkType.FILE);
         },
         [shareId]
     );
@@ -120,7 +123,7 @@ const PreviewContainer = ({ match, history }: RouteComponentProps<{ shareId: str
                     <FilePreviewNavigation
                         availableLinks={linksAvailableForPreview}
                         openLinkId={meta.LinkID}
-                        onOpen={navigateToLink}
+                        onOpen={onOpen}
                     />
                 )
             }

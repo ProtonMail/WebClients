@@ -1,21 +1,18 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { RouteComponentProps } from 'react-router';
-import { Toolbar, PrivateMainArea, useAppTitle } from 'react-components';
 import { c } from 'ttag';
-import Drive from '../../components/Drive/Drive';
+
+import { Toolbar, PrivateMainArea, useAppTitle } from 'react-components';
+
 import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
+import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
+import Drive from '../../components/Drive/Drive';
 import DriveContentProvider from '../../components/Drive/DriveContentProvider';
 import DriveToolbar from '../../components/Drive/DriveToolbar';
-import { LinkType } from '../../interfaces/link';
-import { LinkURLType } from '../../constants';
 import DriveBreadcrumbs from '../../components/DriveBreadcrumbs';
-import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import { toLinkURLType } from '../../components/Drive/helpers';
+import { LinkURLType } from '../../constants';
 
-function DriveContainerView({
-    match,
-    history,
-}: RouteComponentProps<{ shareId?: string; type?: LinkURLType; linkId?: string }>) {
+function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; type?: LinkURLType; linkId?: string }>) {
     const cache = useDriveCache();
     const [, setError] = useState();
     const { setFolder } = useDriveActiveFolder();
@@ -47,20 +44,16 @@ function DriveContainerView({
         }
     }, [folder]);
 
-    const navigateToLink = (shareId: string, linkId: string, type: LinkType) => {
-        history.push(`/${shareId}/${toLinkURLType(type)}/${linkId}`);
-    };
-
     useAppTitle(c('Title').t`My files`, 'ProtonDrive');
 
     return (
         <DriveContentProvider folder={folder}>
-            {folder ? <DriveToolbar activeFolder={folder} openLink={navigateToLink} /> : <Toolbar />}
+            {folder ? <DriveToolbar activeFolder={folder} /> : <Toolbar />}
             <PrivateMainArea hasToolbar className="flex-noMinChildren flex-column flex-nowrap">
                 <div className="mw100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
-                    {folder && <DriveBreadcrumbs activeFolder={folder} openLink={navigateToLink} />}
+                    {folder && <DriveBreadcrumbs activeFolder={folder} />}
                 </div>
-                {folder && <Drive activeFolder={folder} openLink={navigateToLink} />}
+                {folder && <Drive activeFolder={folder} />}
             </PrivateMainArea>
         </DriveContentProvider>
     );

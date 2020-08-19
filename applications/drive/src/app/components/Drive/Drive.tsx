@@ -1,23 +1,24 @@
 import React, { useCallback, useEffect, useRef } from 'react';
+
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
+import useNavigate from '../../hooks/drive/useNavigate';
+import useDrive from '../../hooks/drive/useDrive';
 import FileBrowser from '../FileBrowser/FileBrowser';
+import EmptyFolder from '../FileBrowser/EmptyFolder';
+import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder } from './DriveFolderProvider';
 import { useDriveContent } from './DriveContentProvider';
-import EmptyFolder from '../FileBrowser/EmptyFolder';
-import { LinkType } from '../../interfaces/link';
-import { useDriveCache } from '../DriveCache/DriveCacheProvider';
-import useDrive from '../../hooks/drive/useDrive';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 
 interface Props {
     activeFolder: DriveFolder;
-    openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
-function Drive({ activeFolder, openLink }: Props) {
+function Drive({ activeFolder }: Props) {
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const cache = useDriveCache();
     const { getLinkMeta } = useDrive();
+    const { navigateToLink } = useNavigate();
     const {
         loadNextPage,
         fileBrowserControls,
@@ -59,7 +60,7 @@ function Drive({ activeFolder, openLink }: Props) {
 
     const handleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
-        openLink(shareId, item.LinkID, item.Type);
+        navigateToLink(shareId, item.LinkID, item.Type);
     };
 
     return complete && !contents.length && !loading ? (
