@@ -3,19 +3,20 @@ import { c } from 'ttag';
 
 import { ToolbarButton } from 'react-components';
 
+import useNavigate from '../../../hooks/drive/useNavigate';
 import { LinkType } from '../../../interfaces/link';
 
 interface Props {
     shareId: string;
     parentLinkId?: string;
     disabled?: boolean;
-    openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
-const BackButton = ({ shareId, parentLinkId, disabled, openLink }: Props) => {
+const BackButton = ({ shareId, parentLinkId, disabled }: Props) => {
+    const { navigateToLink } = useNavigate();
     const handleBackClick = () => {
         if (parentLinkId) {
-            openLink(shareId, parentLinkId, LinkType.FOLDER);
+            navigateToLink(shareId, parentLinkId, LinkType.FOLDER);
         }
     };
 

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import {
     ErrorBoundary,
     GenericError,
@@ -8,15 +10,16 @@ import {
     AccessDeniedError,
     PrivateMainArea,
 } from 'react-components';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { ApiError } from 'proton-shared/lib/fetch/ApiError';
+
 import { useDriveActiveFolder } from './Drive/DriveFolderProvider';
 
-interface Props extends RouteComponentProps {
+interface Props {
     children: React.ReactNode;
 }
 
-const AppErrorBoundary = ({ children, location }: Props) => {
+const AppErrorBoundary = ({ children }: Props) => {
+    const location = useLocation();
     const { setFolder } = useDriveActiveFolder();
     const [state, setState] = useState<{ id: string; error?: Error }>({
         id: generateUID('error-boundary'),
@@ -65,4 +68,4 @@ const AppErrorBoundary = ({ children, location }: Props) => {
     );
 };
 
-export default withRouter(AppErrorBoundary);
+export default AppErrorBoundary;

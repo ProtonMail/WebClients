@@ -23,10 +23,9 @@ import UploadFolderButton from './ToolbarButtons/UploadFolderButton';
 
 interface Props {
     activeFolder: DriveFolder;
-    openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
-const DriveToolbar = ({ activeFolder, openLink }: Props) => {
+const DriveToolbar = ({ activeFolder }: Props) => {
     const { fileBrowserControls } = useDriveContent();
     const { getLinkMeta } = useDrive();
     const cache = useDriveCache();
@@ -68,7 +67,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
         return (
             <>
-                <PreviewButton disabled={isPreviewDisabled} openLink={openLink} />
+                <PreviewButton disabled={isPreviewDisabled} />
                 <DownloadButton />
                 <RenameButton disabled={isMultiSelect} />
                 <DetailsButton disabled={isMultiSelect} />
@@ -83,7 +82,7 @@ const DriveToolbar = ({ activeFolder, openLink }: Props) => {
 
     return (
         <Toolbar>
-            <BackButton shareId={shareId} parentLinkId={ParentLinkID} disabled={!ParentLinkID} openLink={openLink} />
+            <BackButton shareId={shareId} parentLinkId={ParentLinkID} disabled={!ParentLinkID} />
 
             <ToolbarSeparator />
 

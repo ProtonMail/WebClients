@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react';
-import { withRouter } from 'react-router';
-import { RouteComponentProps } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import { ContextMenu, DropdownMenuButton, Icon, isPreviewAvailable } from 'react-components';
 
 import { FileBrowserItem } from './interfaces';
 import { LinkType } from '../../interfaces/link';
-import { toLinkURLType } from '../Drive/helpers';
 import useToolbarActions from '../../hooks/drive/useToolbarActions';
 
-interface Props extends RouteComponentProps {
+interface Props {
     item: FileBrowserItem;
     selectedItems: FileBrowserItem[];
     shareId: string;
@@ -26,7 +24,7 @@ interface Props extends RouteComponentProps {
     close: () => void;
 }
 
-const RowContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, position, open, close, history }: Props) => {
+const RowContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, position, open, close }: Props) => {
     const {
         download,
         openDeletePermanently,
@@ -42,11 +40,6 @@ const RowContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posit
     const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
     const isPreviewHidden = isMultiSelect || hasFoldersSelected || !item.MIMEType || !isPreviewAvailable(item.MIMEType);
 
-    // TODO: refactor after router version upgrade.
-    const openLink = (shareId: string, linkId: string, type: LinkType) => {
-        history.push(`/${shareId}/${toLinkURLType(type)}/${linkId}`);
-    };
-
     useEffect(() => {
         if (position) {
             open();
@@ -59,7 +52,7 @@ const RowContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posit
             name: c('Action').t`Preview`,
             icon: 'read',
             testId: 'context-menu-preview',
-            action: () => preview(item, openLink),
+            action: () => preview(item),
         },
         {
             hidden: false,
@@ -140,4 +133,4 @@ const RowContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posit
     );
 };
 
-export default withRouter(RowContextMenu);
+export default RowContextMenu;

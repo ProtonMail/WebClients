@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
+
 import { CollapsingBreadcrumbs, Icon, useNotifications } from 'react-components';
 import { BreadcrumbInfo } from 'react-components/components/collapsingBreadcrumbs/interfaces';
+
 import { DriveFolder } from './Drive/DriveFolderProvider';
-import useDrive from '../hooks/drive/useDrive';
 import { LinkType } from '../interfaces/link';
+import useDrive from '../hooks/drive/useDrive';
+import useNavigate from '../hooks/drive/useNavigate';
 import { useDriveDragMoveTarget } from '../hooks/drive/useDriveDragMove';
 
 interface Props {
     activeFolder: DriveFolder;
-    openLink: (shareId: string, linkId: string, type: LinkType) => void;
 }
 
-const DriveBreadcrumbs = ({ activeFolder, openLink }: Props) => {
+const DriveBreadcrumbs = ({ activeFolder }: Props) => {
+    const { navigateToLink } = useNavigate();
     const { getLinkMeta } = useDrive();
     const { createNotification } = useNotifications();
     const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
@@ -46,7 +49,7 @@ const DriveBreadcrumbs = ({ activeFolder, openLink }: Props) => {
                         </span>
                     </>
                 ),
-                onClick: () => openLink(activeFolder.shareId, linkId, LinkType.FOLDER),
+                onClick: () => navigateToLink(activeFolder.shareId, linkId, LinkType.FOLDER),
                 onDragLeave: () => {
                     setDropTarget(undefined);
                 },
