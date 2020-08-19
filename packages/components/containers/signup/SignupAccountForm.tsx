@@ -110,39 +110,41 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, service
 
         if (model.step === ACCOUNT_CREATION_EMAIL) {
             const challenge = (
-                <Challenge
-                    bodyClassName="signLayout-container"
-                    challengeRef={challengeRefLogin}
-                    type={0}
-                    onLoad={handleChallengeLoaded}
-                >
+                <>
                     <div className="mb0-5 flex-item-fluid">
-                        <EmailInput
-                            id="login"
-                            name="login"
-                            autoFocus
-                            autoComplete="off"
-                            autoCapitalize="off"
-                            autoCorrect="off"
-                            value={model.email}
-                            onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                onChange({ ...model, email: target.value })
-                            }
-                            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-                                if (e.key === 'Enter') {
-                                    withLoadingChallenge(handleSubmit());
+                        <Challenge
+                            bodyClassName="signLayout-container"
+                            challengeRef={challengeRefLogin}
+                            type={0}
+                            onLoad={handleChallengeLoaded}
+                        >
+                            <EmailInput
+                                id="login"
+                                name="login"
+                                autoFocus
+                                autoComplete="off"
+                                autoCapitalize="off"
+                                autoCorrect="off"
+                                value={model.email}
+                                onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                                    onChange({ ...model, email: target.value })
                                 }
-                            }}
-                            error={errors.email}
-                            required
-                        />
+                                onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                                    if (e.key === 'Enter') {
+                                        withLoadingChallenge(handleSubmit());
+                                    }
+                                }}
+                                error={errors.email}
+                                required
+                            />
+                        </Challenge>
                     </div>
                     <InsecureEmailInfo email={model.email} />
                     <InlineLinkButton
                         id="proton-email-button"
                         onClick={() => onChange({ ...model, email: '', step: ACCOUNT_CREATION_USERNAME })}
                     >{c('Action').t`Create a secure ProtonMail address instead`}</InlineLinkButton>
-                </Challenge>
+                </>
             );
             return (
                 <SignupLabelInputRow

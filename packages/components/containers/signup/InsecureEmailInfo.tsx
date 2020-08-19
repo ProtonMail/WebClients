@@ -19,7 +19,7 @@ const InsecureEmailInfo = ({ email }: Props) => {
     if (INSECURE_DOMAINS.includes(domain)) {
         return (
             <div className="mb1 flex flex-nowrap flex-items-center">
-                <span className="mr1">{c('Title').t`This email may be insecure`}</span>
+                <span className="mr0-5">{c('Title').t`This email may be insecure`}</span>
                 <InsecureEmailIcon email={email} />
             </div>
         );
