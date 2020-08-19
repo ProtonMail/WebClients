@@ -47,6 +47,16 @@ ul, ol { padding-left: 2em; }
   list-style-type: none;
 }
 
+details.no-details-marker {
+	& > summary {
+		list-style: none;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+	}
+}
+
 @if $rtl-option == true {
   /* RTL */
   [dir="rtl"] ul,
