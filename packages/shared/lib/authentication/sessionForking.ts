@@ -12,7 +12,6 @@ import {
 import { getSessionKey } from './sessionBlobCryptoHelper';
 import { getForkDecryptedBlob, getForkEncryptedBlob } from './sessionForkBlob';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from './error';
-import { getStrippedPathnameFromURL } from './pathnameHelper';
 import { PullForkResponse, PushForkResponse, RefreshSessionResponse } from './interface';
 import { pushForkSession, pullForkSession, setRefreshCookies } from '../api/auth';
 import { Api } from '../interfaces';
@@ -138,7 +137,9 @@ export const consumeFork = async ({ selector, api, state, sessionKey }: ConsumeF
     if (!url) {
         throw new InvalidForkConsumeError('Missing url');
     }
-    const pathname = getStrippedPathnameFromURL(url);
+    const { pathname, search, hash } = new URL(url);
+    const path = `${pathname}${search}${hash}`;
+
     const { UID, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
 
     try {
@@ -146,7 +147,7 @@ export const consumeFork = async ({ selector, api, state, sessionKey }: ConsumeF
         const validatedSession = await resumeSession(api, LocalID);
         return {
             ...validatedSession,
-            pathname,
+            path,
         };
     } catch (e) {
         // If existing session is invalid. Fall through to continue using the new fork.
@@ -176,6 +177,6 @@ export const consumeFork = async ({ selector, api, state, sessionKey }: ConsumeF
         keyPassword,
         AccessToken: newAccessToken,
         RefreshToken: newRefreshToken,
-        pathname,
+        path,
     };
 };

@@ -23,7 +23,7 @@ export type ResumedSessionResult = {
     UID: string;
     LocalID: number;
     keyPassword?: string;
-    User?: tsUser;
+    User: tsUser;
 };
 export const resumeSession = async (api: Api, localID: number): Promise<ResumedSessionResult> => {
     const persistedSession = getPersistedSession(localID);
