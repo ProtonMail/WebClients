@@ -84,7 +84,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
         if (redirectToMobileRef.current) {
             return goToStep(SignupState.MobileRedirection);
         }
-        return onLogin({ ...data, pathname: '/downloads' });
+        return onLogin({ ...data, path: '/downloads' });
     };
 
     const {

@@ -22,8 +22,8 @@ const LoginContainer = ({ onLogin }: Props) => {
             <MinimalLoginContainer
                 onLogin={(data) => {
                     const { User } = data;
-                    const pathname = User && isMember(User) ? '/account' : '/dashboard';
-                    return onLogin({ ...data, pathname });
+                    const path = User && isMember(User) ? '/account' : '/dashboard';
+                    return onLogin({ ...data, path });
                 }}
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
