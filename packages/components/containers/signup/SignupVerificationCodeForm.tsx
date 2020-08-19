@@ -21,7 +21,6 @@ const SignupVerificationCodeForm = ({ model, onChange, onSubmit, onResend, error
     const destinationBold = <strong key="destination">{model.email}</strong>;
     return (
         <form name="humanForm" onSubmit={onSubmit}>
-            <div className="strong mb1">{c('Title').t`Human verification`}</div>
             <Alert>{c('Info').t`For security reasons, please verify that your are not a robot.`}</Alert>
             <SignupLabelInputRow
                 label={
