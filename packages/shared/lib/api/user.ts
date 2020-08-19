@@ -22,29 +22,17 @@ export const queryCreateOldUser = (data: {
     data,
 });
 
-export const queryCreateUser = (
-    data:
-        | {
-              Username: string;
-              Email: string;
-              Type: 1 | 2; // 1 = mail, 2 = VPN
-              Referrer?: string;
-              Payload?: {
-                  [key: string]: string;
-              };
-              Salt?: string;
-          }
-        | {
-              Username: string;
-              Phone: string;
-              Type: 1 | 2; // 1 = mail, 2 = VPN
-              Referrer?: string;
-              Payload?: {
-                  [key: string]: string;
-              };
-              Salt?: string;
-          }
-) => ({
+export const queryCreateUser = (data: {
+    Username: string;
+    Email?: string;
+    Phone?: string;
+    Type: 1 | 2; // 1 = mail, 2 = VPN
+    Referrer?: string;
+    Payload?: {
+        [key: string]: string;
+    };
+    Salt?: string;
+}) => ({
     url: 'v4/users',
     method: 'post',
     data,
