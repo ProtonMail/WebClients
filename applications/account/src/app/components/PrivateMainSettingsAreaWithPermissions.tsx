@@ -5,10 +5,12 @@ import {
     SettingsPropsShared,
     PrivateMainSettingsArea,
     SectionConfig,
+    AppLink,
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { c } from 'ttag';
 import upgradeSvgLight from 'design-system/assets/img/shared/no-organization.svg';
 import upgradeSvgDark from 'design-system/assets/img/shared/no-organization-dark.svg';
@@ -50,11 +52,15 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
             return (
                 <div id="page-error" className="aligncenter">
                     <img src={upgradeSvg} alt={c('Title').t`Upgrade`} className="mb2" />
-                    <h3 className="bold">{c('Title').t`You don't have an organization yet`}</h3>
                     <Paragraph>
                         {c('Info')
-                            .t`Go to Subscription and upgrade to a paid plan to view these settings. Select a plan with multi-user support to manage users.`}
+                            .t`Upgrade to a paid plan to access premium features and increase your storage space.`}
                     </Paragraph>
+                    <AppLink
+                        to="/subscription"
+                        toApp={getAccountSettingsApp()}
+                        className="pm-button--primary pm-button--large mtauto"
+                    >{c('Action').t`Upgrade now`}</AppLink>
                 </div>
             );
         }
