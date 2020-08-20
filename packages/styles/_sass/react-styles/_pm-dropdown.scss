@@ -1,4 +1,8 @@
 .dropDown {
+	--min-width : 10em;
+	--max-width : 20em;
+	--max-height: 20em;
+
 	--dropdown-border-color: var(--bordercolor-input, transparent);
 	--dropdown-bg-color: var(--bgcolor-main-area, #{$white});
 
@@ -183,9 +187,9 @@
 			}
 
 			&:not(#{&}--noMaxSize) {
-				min-width: 10em;
-				max-width: 20em;
-				max-height: 20em;
+				min-width: var(--min-width);
+				max-width: var(--max-width);
+				max-height: var(--max-height);
 			}
 		}
 

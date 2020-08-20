@@ -1,5 +1,9 @@
 .appsDropdown {
-	&-container.dropDown {
+	&.dropDown {
+		--min-width: 13em;
+		--max-width: 15.5em; // Be carefull to not exceed the nav bar
+		--max-height: 25em;
+
 		--dropdown-border-color: #{$pm-tertiary-grey};
 		--dropdown-bg-color: #{$pm-secondary-grey};
 
@@ -34,15 +38,8 @@
 		}
 	}
 
-	&-list {
-		@include respond-to($breakpoint-small, 'min') {
-			min-width: 14em;
-			max-height: 20em;
-		}
-
-		.meterbar {
-			--bgcolor-spacebar: black;
-		}
+	.meterbar {
+		--bgcolor-spacebar: black;
 	}
 
 	&-item.dropDown-item {
