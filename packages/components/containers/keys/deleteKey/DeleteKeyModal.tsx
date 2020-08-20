@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Alert, FormModal, ErrorButton } from '../../../components';
+import { Alert, FormModal, ErrorButton, Button } from '../../../components';
 import GenericError from '../../error/GenericError';
 
 enum STEPS {
@@ -61,10 +61,8 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                     await onExport?.();
                     setStep(STEPS.DELETE_KEY);
                 },
-                onClose: () => {
-                    setStep(STEPS.CONFIRM_DELETE);
-                },
-                close: c('Action').t`No`,
+                title: c('Action').t`Export key`,
+                close: <Button onClick={() => setStep(STEPS.CONFIRM_DELETE)}>{c('Action').t`No`}</Button>,
                 submit: c('Action').t`Export`,
                 children: (
                     <>
@@ -83,8 +81,9 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                 onSubmit: async () => {
                     setStep(STEPS.DELETE_KEY);
                 },
-                close: c('Action').t`No`,
-                submit: c('Action').t`Yes`,
+                title: c('Action').t`Warning`,
+                close: <Button onClick={() => setStep(STEPS.EXPORT_KEY)}>{c('Action').t`No`}</Button>,
+                submit: <ErrorButton type="submit">{c('Action').t`Yes`}</ErrorButton>,
                 children: (
                     <>
                         <Alert type="error">
