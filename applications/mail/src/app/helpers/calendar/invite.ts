@@ -148,7 +148,7 @@ export const getParticipant = (
     const contact = contactEmails.find(({ Email }) => cleanEmail(Email) === cleanEmail(emailAddress));
     const participantName = isYou
         ? c('Participant name').t`You`
-        : selfAddress?.DisplayName || contact?.Name || participant?.parameters?.cn || participant.value;
+        : selfAddress?.DisplayName || contact?.Name || participant?.parameters?.cn || emailAddress;
     const result: Participant = {
         vcalComponent: participant,
         name: participantName,
