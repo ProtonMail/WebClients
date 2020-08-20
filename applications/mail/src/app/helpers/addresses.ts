@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { normalizeEmail } from 'proton-shared/lib/helpers/email';
+import { getEmailParts, normalizeEmail } from 'proton-shared/lib/helpers/email';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
@@ -15,9 +15,9 @@ import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 
 export const removeDot = (email = '') => {
-    const [before, after] = email.split('@');
-    if (after) {
-        return `${before.replace(/\./g, '')}@${after}`;
+    const [localPart, domain] = getEmailParts(email);
+    if (domain) {
+        return `${localPart.replace(/\./g, '')}@${domain}`;
     }
     return email;
 };

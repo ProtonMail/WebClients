@@ -1,4 +1,5 @@
 import mimemessage from 'mimemessage';
+import { getEmailParts } from 'proton-shared/lib/helpers/email';
 
 import { ucFirst, toUnsignedString } from '../string';
 import { Attachment } from '../../models/attachment';
@@ -79,7 +80,7 @@ export const getAttachementName = (Headers: { [key: string]: string } = {}) => {
  */
 export const generateCid = (input: string, email: string) => {
     const hashValue = toUnsignedString(hash(input), 4);
-    const domain = email.split('@')[1];
+    const [, domain] = getEmailParts(email);
     return `${hashValue}@${domain}`;
 };
 

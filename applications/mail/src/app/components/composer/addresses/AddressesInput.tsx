@@ -4,6 +4,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { ContactGroup, ContactEmail, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { MAJOR_DOMAINS } from 'proton-shared/lib/constants';
+import { getEmailParts } from 'proton-shared/lib/helpers/email';
 
 import AddressesRecipientItem from './AddressesRecipientItem';
 import {
@@ -47,10 +48,7 @@ const AddressesInput = ({
     const recipientsOrGroups = recipientsToRecipientOrGroup(recipients, contactGroups);
 
     const majorDomains = useMemo(() => {
-        if (!inputModel.includes('@')) {
-            return [];
-        }
-        const [localPart = ''] = inputModel.split('@');
+        const [localPart] = getEmailParts(inputModel);
         if (!localPart) {
             return [];
         }
