@@ -9,7 +9,7 @@ import {
     Icon,
     DropdownMenuButton,
     ToolbarButton,
-    DropdownCaret
+    DropdownCaret,
 } from 'react-components';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
@@ -31,38 +31,38 @@ const SortDropdown = () => {
             name: c('Action').t`Modified Date: New to Old`,
             icon: 'sort-new-old',
             sortField: 'ModifyTime',
-            sortOrder: SORT_DIRECTION.DESC
+            sortOrder: SORT_DIRECTION.DESC,
         },
         {
             name: c('Action').t`Modified Date: Old to New`,
             icon: 'sort-old-new',
             sortField: 'ModifyTime',
-            sortOrder: SORT_DIRECTION.ASC
+            sortOrder: SORT_DIRECTION.ASC,
         },
         {
             name: c('Action').t`Type: A to Z`,
             icon: 'arrow-down',
-            sortField: 'Type',
-            sortOrder: SORT_DIRECTION.ASC
+            sortField: 'MIMEType',
+            sortOrder: SORT_DIRECTION.ASC,
         },
         {
             name: c('Action').t`Type: Z to A`,
             icon: 'arrow-up',
-            sortField: 'Type',
-            sortOrder: SORT_DIRECTION.DESC
+            sortField: 'MIMEType',
+            sortOrder: SORT_DIRECTION.DESC,
         },
         {
             name: c('Action').t`Size: Small to Large`,
             icon: 'sort-small-large',
             sortField: 'Size',
-            sortOrder: SORT_DIRECTION.ASC
+            sortOrder: SORT_DIRECTION.ASC,
         },
         {
             name: c('Action').t`Size: Large to Small`,
             icon: 'sort-large-small',
             sortField: 'Size',
-            sortOrder: SORT_DIRECTION.DESC
-        }
+            sortOrder: SORT_DIRECTION.DESC,
+        },
     ];
 
     const toolbarButtonIcon =

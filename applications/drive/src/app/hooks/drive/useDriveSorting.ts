@@ -9,7 +9,7 @@ const SORT_CACHE_KEY = 'sortParams';
 const NAME_SORT = {
     key: 'Name' as SortKeys,
     direction: SORT_DIRECTION.ASC,
-    compare: (a: LinkMeta['Name'], b: LinkMeta['Name']) => a.localeCompare(b)
+    compare: (a: LinkMeta['Name'], b: LinkMeta['Name']) => a.localeCompare(b),
 };
 
 function useDriveSorting(getList: (sortParams: SortParams) => LinkMeta[]) {
@@ -22,9 +22,9 @@ function useDriveSorting(getList: (sortParams: SortParams) => LinkMeta[]) {
         const configs: {
             [key in SortKeys]: SortConfig<LinkMeta>[];
         } = {
-            Type: [{ key: 'Type', direction }, { key: 'MIMEType', direction }, NAME_SORT],
+            MIMEType: [{ key: 'MIMEType', direction }, { key: 'Type', direction }, NAME_SORT],
             ModifyTime: [{ key: 'ModifyTime', direction }, NAME_SORT],
-            Size: [{ key: 'Type', direction }, { key: 'Size', direction }, NAME_SORT]
+            Size: [{ key: 'Type', direction }, { key: 'Size', direction }, NAME_SORT],
         };
         return configs[sortField];
     };
@@ -43,7 +43,7 @@ function useDriveSorting(getList: (sortParams: SortParams) => LinkMeta[]) {
     return {
         sortParams,
         sortedList,
-        setSorting
+        setSorting,
     };
 }
 

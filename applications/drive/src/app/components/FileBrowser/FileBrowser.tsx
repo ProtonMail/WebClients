@@ -163,9 +163,9 @@ const FileBrowser = ({
                                 <TableHeaderCell className="w25">{c('TableHeader').t`Location`}</TableHeaderCell>
                             )}
                             <TableHeaderCell
-                                direction={getSortDirectionForKey('Type')}
-                                onSort={unlessIsTrash(() => handleSort('Type'))}
-                                className={isDesktop ? 'w10' : 'w15'}
+                                direction={getSortDirectionForKey('MIMEType')}
+                                onSort={unlessIsTrash(() => handleSort('MIMEType'))}
+                                className={isDesktop ? 'w20' : 'w25'}
                             >
                                 {c('TableHeader').t`Type`}
                             </TableHeaderCell>
