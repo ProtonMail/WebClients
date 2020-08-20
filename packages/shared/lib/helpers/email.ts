@@ -48,7 +48,7 @@ export const validateDomain = (domain: string) => {
 export const getEmailParts = (email: string): string[] => {
     const endIdx = email.lastIndexOf('@');
     if (endIdx === -1) {
-        return [email, ''];
+        return [email];
     }
     return [email.slice(0, endIdx), email.slice(endIdx + 1)];
 };
@@ -59,6 +59,9 @@ export const getEmailParts = (email: string): string[] => {
  */
 export const validateEmailAddress = (email: string) => {
     const [localPart, domain] = getEmailParts(email);
+    if (!domain) {
+        return false;
+    }
     return validateLocalPart(localPart) && validateDomain(domain);
 };
 
