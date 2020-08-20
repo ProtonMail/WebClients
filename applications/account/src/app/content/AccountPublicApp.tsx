@@ -38,9 +38,9 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
         const browserLocale = getBrowserLocale();
 
         const runGetSessions = async () => {
+            await loadOpenPGP();
             const [activeSessionsResult] = await Promise.all([
                 getActiveSessions(silentApi),
-                loadOpenPGP(),
                 loadLocale({
                     ...getClosestMatches({ locale: browserLocale, browserLocale, locales }),
                     locales,
