@@ -1,8 +1,9 @@
 import React from 'react';
 import { match as Match } from 'react-router-dom';
 import { Location } from 'history';
-import { Sidebar, AppVersion, SidebarNav, SidebarList, SimpleSidebarListItemLink } from 'react-components';
 import { c } from 'ttag';
+
+import { Sidebar, AppVersion, SidebarNav, SidebarList, SimpleSidebarListItemLink, Icon } from 'react-components';
 
 const getSidebarLinks = () => {
     return [
@@ -21,9 +22,17 @@ const getSidebarLinks = () => {
     ];
 };
 
-const DriveSidebarVersion = () => {
-    return <AppVersion appName="ProtonDrive" />;
+const DriveSidebarDescription = () => {
+    return (
+        <div className="aligncenter opacity-50 mr4 ml4">
+            <Icon name="lock-check" size={20} />
+            <div className="small m0">{c('Label').t`Encrypted with Zero Access by Proton`}</div>
+            <hr className="opacity-30 m0-25" />
+        </div>
+    );
 };
+
+const DriveSidebarVersion = () => <AppVersion appName="ProtonDrive" />;
 
 const DriveSidebarLinks = () => (
     <>
@@ -55,7 +64,12 @@ const AppSidebar = ({
         expanded={isHeaderExpanded}
         onToggleExpand={toggleHeaderExpanded}
         primary={primary}
-        version={<DriveSidebarVersion />}
+        version={
+            <>
+                <DriveSidebarDescription />
+                <DriveSidebarVersion />
+            </>
+        }
     >
         <SidebarNav>
             <SidebarList>{links}</SidebarList>
