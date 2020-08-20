@@ -82,6 +82,6 @@ export interface MoveLink {
     SignatureAddress: string;
 }
 
-export type SortKeys = keyof Pick<DriveLink, 'Type' | 'ModifyTime' | 'Size'>;
+export type SortKeys = keyof Pick<DriveLink, 'MIMEType' | 'ModifyTime' | 'Size'>;
 
 export type SortParams = { sortField: SortKeys; sortOrder: SORT_DIRECTION };
