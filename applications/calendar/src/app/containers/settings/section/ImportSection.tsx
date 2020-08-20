@@ -29,7 +29,7 @@ const ImportSection = ({ activeCalendars, defaultCalendar, calendarsEventsCacheR
     return (
         <>
             {canImport ? null : (
-                <Alert type="warning">{c('Info').t`You need to have an active calendar importing your events.`}</Alert>
+                <Alert type="warning">{c('Info').t`You need to have an active calendar to import your events.`}</Alert>
             )}
             <Alert learnMore="https://protonmail.com/support/knowledge-base/import-calendar-to-protoncalendar/">{c(
                 'Info'
