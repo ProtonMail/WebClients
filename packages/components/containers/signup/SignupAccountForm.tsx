@@ -60,44 +60,46 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading }: Props
     const inner = (() => {
         if (model.step === ACCOUNT_CREATION_USERNAME) {
             const challenge = (
-                <Challenge
-                    bodyClassName="signLayout-container"
-                    challengeRef={challengeRefLogin}
-                    type={0}
-                    onLoaded={handleChallengeLoaded}
-                >
-                    <div className="flex flex-nowrap flex-items-center flex-item-fluid relative mb0-5">
-                        <div className="flex-item-fluid">
-                            <Input
-                                id="login"
-                                name="login"
-                                autoFocus
-                                autoComplete="off"
-                                autoCapitalize="off"
-                                autoCorrect="off"
-                                value={model.username}
-                                onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                    onChange({ ...model, username: target.value })
-                                }
-                                onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-                                    if (e.key === 'Enter') {
-                                        // formRef.submit does not trigger handler
-                                        withLoadingChallenge(handleSubmit());
+                <>
+                    <Challenge
+                        bodyClassName="signLayout-container"
+                        challengeRef={challengeRefLogin}
+                        type={0}
+                        onLoaded={handleChallengeLoaded}
+                    >
+                        <div className="flex flex-nowrap flex-items-center flex-item-fluid relative mb0-5">
+                            <div className="flex-item-fluid">
+                                <Input
+                                    id="login"
+                                    name="login"
+                                    autoFocus
+                                    autoComplete="off"
+                                    autoCapitalize="off"
+                                    autoCorrect="off"
+                                    value={model.username}
+                                    onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                                        onChange({ ...model, username: target.value })
                                     }
-                                }}
-                                error={errors.username}
-                                placeholder={USERNAME_PLACEHOLDER}
-                                className="pm-field--username"
-                                required
-                            />
+                                    onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                                        if (e.key === 'Enter') {
+                                            // formRef.submit does not trigger handler
+                                            withLoadingChallenge(handleSubmit());
+                                        }
+                                    }}
+                                    error={errors.username}
+                                    placeholder={USERNAME_PLACEHOLDER}
+                                    className="pm-field--username"
+                                    required
+                                />
+                            </div>
+                            <span className="pt0-75 right-icon absolute">@{availableDomain}</span>
                         </div>
-                        <span className="pt0-75 right-icon absolute">@{availableDomain}</span>
-                    </div>
+                    </Challenge>
                     <InlineLinkButton
                         id="existing-email-button"
                         onClick={() => onChange({ ...model, username: '', step: ACCOUNT_CREATION_EMAIL })}
                     >{c('Action').t`Use your current email address instead`}</InlineLinkButton>
-                </Challenge>
+                </>
             );
             return (
                 <SignupLabelInputRow
