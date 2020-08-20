@@ -29,10 +29,7 @@ export const validateDomain = (domain: string) => {
     if (/\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\]/.test(domain)) {
         return true;
     }
-    const dnsLabels = domain
-        .toLowerCase()
-        .split('.')
-        .filter(isTruthy);
+    const dnsLabels = domain.toLowerCase().split('.').filter(isTruthy);
     if (dnsLabels.length < 2) {
         return false;
     }
@@ -48,7 +45,7 @@ export const validateDomain = (domain: string) => {
 /**
  * Split an email into local part plus domain.
  */
-const getEmailParts = (email: string): string[] => {
+export const getEmailParts = (email: string): string[] => {
     const endIdx = email.lastIndexOf('@');
     if (endIdx === -1) {
         return [email, ''];
