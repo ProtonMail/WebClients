@@ -44,14 +44,15 @@ export const unwrap = (res: string) => {
 };
 
 export const getPositiveSetpos = (date: Date) => {
-    const shiftedMonthDay = date.getDate() - 1;
-    return Math.floor(shiftedMonthDay / 7) + 1;
+    const dayOfMonth = date.getUTCDate();
+    const shiftedDayOfMonth = dayOfMonth - 1;
+    return Math.floor(shiftedDayOfMonth / 7) + 1;
 };
 
 export const getNegativeSetpos = (date: Date) => {
-    const monthDay = date.getDate();
+    const dayOfMonth = date.getUTCDate();
     const daysInMonth = getDaysInMonth(date);
 
     // return -1 if it's the last occurrence in the month
-    return Math.ceil((monthDay - daysInMonth) / 7) - 1;
+    return Math.ceil((dayOfMonth - daysInMonth) / 7) - 1;
 };

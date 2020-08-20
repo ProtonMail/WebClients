@@ -81,34 +81,30 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
     const getWeeklyRrule = (rrule) => getRrule({ ...rrule, freq: FREQUENCY.WEEKLY });
 
     it('should get a standard weekly recurring event', () => {
-        const rrule = getWeeklyRrule({
-            byday: ['TU'],
-        });
-        expect(getTimezonedFrequencyString(rrule, dummyStart, options)).toEqual('Weekly on Tuesday');
+        const rrule = getWeeklyRrule();
+        expect(getTimezonedFrequencyString(rrule, dummyStart, options)).toEqual('Weekly on Monday');
     });
 
     it('should get a standard weekly recurring event, on a different timezone', () => {
-        const rrule = getWeeklyRrule({
-            byday: ['TU'],
-        });
+        const rrule = getWeeklyRrule();
         expect(getTimezonedFrequencyString(rrule, dummyStart, otherTzOptions)).toEqual(
-            'Weekly on Tuesday (Europe/Athens)'
+            'Weekly on Monday (Europe/Athens)'
         );
     });
 
     it('should get a custom weekly recurring event that is actually standard', () => {
         const rrule = getWeeklyRrule({
-            byday: ['TU'],
+            byday: ['MO'],
         });
-        expect(getTimezonedFrequencyString(rrule, dummyStart, options)).toEqual('Weekly on Tuesday');
+        expect(getTimezonedFrequencyString(rrule, dummyStart, options)).toEqual('Weekly on Monday');
     });
 
     it('should get a custom weekly recurring event happening every 2 weeks', () => {
         const rrule = getWeeklyRrule({
             interval: 2,
-            byday: ['TU'],
+            byday: ['MO'],
         });
-        expect(getTimezonedFrequencyString(rrule, dummyStart, options)).toEqual('Every 2 weeks on Tuesday');
+        expect(getTimezonedFrequencyString(rrule, dummyStart, options)).toEqual('Every 2 weeks on Monday');
     });
 
     it('should get a custom weekly recurring event happening every 2 weeks, on Monday and Tuesday, lasting 1 time', () => {
@@ -171,14 +167,14 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
         );
     });
 
-    it('should get a custom weekly recurring event happening weekly on Tuesday, on a different timezone', () => {
+    it('should get a custom weekly recurring event happening weekly on Monday, on a different timezone', () => {
         const rrule = getWeeklyRrule({
             interval: 1,
-            byday: ['TU'],
+            byday: ['MO'],
             until: dummyUntil,
         });
         expect(getTimezonedFrequencyString(rrule, dummyStart, { ...options, currentTzid: 'Pacific/Tahiti ' })).toEqual(
-            'Weekly on Tuesday, until Feb 20, 2020 (Europe/Athens)'
+            'Weekly on Monday, until Feb 20, 2020 (Europe/Athens)'
         );
     });
 

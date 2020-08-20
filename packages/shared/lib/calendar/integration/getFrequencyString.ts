@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
+import { unique } from '../../helpers/array';
 import { mod } from '../../helpers/math';
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../constants';
 import { getPositiveSetpos } from '../helper';
@@ -10,9 +11,9 @@ import {
     VcalRruleProperty,
 } from '../../interfaces/calendar/VcalModel';
 import { getEndType, getMonthType, getUntilDate, getWeeklyDays } from './rruleProperties';
-import { toUTCDate } from '../../date/timezone';
 import { getIsRruleCustom, getIsRruleSupported } from './rrule';
 import { getPropertyTzid } from '../vcalHelper';
+import { toUTCDate } from '../../date/timezone';
 
 interface RruleEnd {
     type: END_TYPE;
@@ -28,8 +29,8 @@ interface GetTimezonedFrequencyStringOptions {
 // we need to expand all possible cases so there will be quite a bit of duplicated code
 
 export const getOnDayString = (date: Date, monthlyType: MONTHLY_TYPE) => {
-    const monthday = date.getDate();
-    const day = date.getDay();
+    const dayOfMonth = date.getUTCDate();
+    const day = date.getUTCDay();
 
     if (monthlyType === MONTHLY_TYPE.ON_NTH_DAY) {
         const setPos = getPositiveSetpos(date);
@@ -149,7 +150,7 @@ export const getOnDayString = (date: Date, monthlyType: MONTHLY_TYPE) => {
             return c('Monthly recurring event, repeats on').t`on the last Saturday`;
         }
     }
-    return c('Monthly recurring event, repeats on').t`on day ${monthday}`;
+    return c('Monthly recurring event, repeats on').t`on day ${dayOfMonth}`;
 };
 
 const getCustomDailyString = (
@@ -215,11 +216,13 @@ const getCustomWeeklyString = (
     { interval = 1, byday }: VcalRrulePropertyValue,
     { type: endType, count = 1, until }: RruleEnd,
     weekStartsOn: WeekStartsOn,
+    startDate: Date,
     locale: Locale
 ) => {
     const days = getWeeklyDays(byday);
+    const safeDays = unique([...days, startDate.getUTCDay()]);
     // sort weekly days depending on the day the week starts
-    const sortedWeekDays = days.slice().sort((a: number, b: number) => {
+    const sortedWeekDays = safeDays.slice().sort((a: number, b: number) => {
         // shift days. Get a positive modulus
         const A = mod(a - weekStartsOn, +7);
         const B = mod(b - weekStartsOn, 7);
@@ -563,8 +566,8 @@ export const getFrequencyString = (
 
     const isCustom = getIsRruleCustom(rruleValue);
     const isSupported = getIsRruleSupported(rruleValue);
-    const localStart = toUTCDate(dtstart.value);
-    const startDay = localStart.getUTCDay();
+    const startFakeUtcDate = toUTCDate(dtstart.value);
+    const startDay = startFakeUtcDate.getUTCDay();
     const end = {
         type: getEndType(count, until),
         count,
@@ -583,12 +586,12 @@ export const getFrequencyString = (
             return getCustomDailyString(rruleValue, end, locale);
         }
         if (freq === FREQUENCY.WEEKLY) {
-            return getCustomWeeklyString(rruleValue, end, weekStartsOn, locale);
+            return getCustomWeeklyString(rruleValue, end, weekStartsOn, startFakeUtcDate, locale);
         }
         if (freq === FREQUENCY.MONTHLY) {
             const { byday, bysetpos } = rruleValue;
             const monthType = getMonthType(byday, bysetpos);
-            return getCustomMonthlyString(rruleValue, end, monthType, localStart, locale);
+            return getCustomMonthlyString(rruleValue, end, monthType, startFakeUtcDate, locale);
         }
         if (freq === FREQUENCY.YEARLY) {
             return getCustomYearlyString(rruleValue, end, locale);
@@ -623,7 +626,7 @@ export const getFrequencyString = (
     if (freq === FREQUENCY.MONTHLY) {
         const { byday, bysetpos } = rruleValue;
         const monthType = getMonthType(byday, bysetpos);
-        const onDayString = getOnDayString(localStart, monthType);
+        const onDayString = getOnDayString(startFakeUtcDate, monthType);
         return c('Info').t`Monthly ${onDayString}`;
     }
     if (freq === FREQUENCY.YEARLY) {
