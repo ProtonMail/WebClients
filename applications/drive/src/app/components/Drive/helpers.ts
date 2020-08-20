@@ -1,6 +1,8 @@
+import { c } from 'ttag';
+
 import { LinkType, LinkMeta } from '../../interfaces/link';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
-import { LinkURLType } from '../../constants';
+import { LinkURLType, MIMETYPE_DESCRIPTION_MAP } from '../../constants';
 
 export const selectMessageForItemList = (
     types: LinkType[],
@@ -45,4 +47,24 @@ export const toLinkURLType = (type: LinkType) => {
     }
 
     return linkType;
+};
+
+export const getMimeTypeDescription = (mimeType: string) => {
+    if (MIMETYPE_DESCRIPTION_MAP[mimeType]) {
+        return MIMETYPE_DESCRIPTION_MAP[mimeType];
+    }
+    if (mimeType.startsWith('audio/')) {
+        return c('Label').t`Audio file`;
+    }
+    if (mimeType.startsWith('video/')) {
+        return c('Label').t`Video file`;
+    }
+    if (mimeType.startsWith('text/')) {
+        return c('Label').t`Text`;
+    }
+    if (mimeType.startsWith('image/')) {
+        return c('Label').t`Image`;
+    }
+
+    return c('Label').t`Unknown file`;
 };
