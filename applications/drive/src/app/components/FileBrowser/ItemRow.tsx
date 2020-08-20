@@ -22,9 +22,9 @@ import { FileBrowserItem } from './interfaces';
 import { LinkType } from '../../interfaces/link';
 import LocationCell from './LocationCell';
 import { DragMoveControls } from '../../hooks/drive/useDriveDragMove';
-import { selectMessageForItemList } from '../Drive/helpers';
+import { selectMessageForItemList, getMimeTypeDescription } from '../Drive/helpers';
 import RowContextMenu from './RowContextMenu';
-import { CUSTOM_DATA_FORMAT, MIMETYPE_DESCRIPTION_MAP } from '../../constants';
+import { CUSTOM_DATA_FORMAT } from '../../constants';
 
 interface Props {
     item: FileBrowserItem;
@@ -66,9 +66,7 @@ const ItemRow = ({
     const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.Disabled ? undefined : fn);
 
     const isFolder = item.Type === LinkType.FOLDER;
-    const itemType = isFolder
-        ? c('Label').t`Folder`
-        : MIMETYPE_DESCRIPTION_MAP[item.MIMEType] || c('Label').t`Unknown file`;
+    const itemType = isFolder ? c('Label').t`Folder` : getMimeTypeDescription(item.MIMEType);
     const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
 
     const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
