@@ -1,9 +1,10 @@
 import { MONTHLY_TYPE } from 'proton-shared/lib/calendar/constants';
-import { getNegativeSetpos, getPositiveSetpos } from 'proton-shared/lib/calendar/helper';
 import React, { ChangeEvent, useMemo } from 'react';
 import { Select } from 'react-components';
 import { capitalize } from 'proton-shared/lib/helpers/string';
 import { getOnDayString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
+import { getNegativeSetpos, getPositiveSetpos } from 'proton-shared/lib/calendar/helper';
+import { toUTCDate, fromLocalDate } from 'proton-shared/lib/date/timezone';
 
 // Filter out strings since TS creates an inverse mapping
 const MONTHLY_TYPE_VALUES = Object.values(MONTHLY_TYPE).filter((type): type is number => typeof type === 'number');
@@ -16,26 +17,29 @@ interface Props {
 }
 
 const SelectMonthlyType = ({ id, value, date, onChange }: Props) => {
-    const allOptions = useMemo(() => {
-        return MONTHLY_TYPE_VALUES.map((type) => {
-            const onDayString = getOnDayString(date, type);
+    const options = useMemo(() => {
+        const startFakeUtcDate = toUTCDate(fromLocalDate(date));
+
+        const allOptions = MONTHLY_TYPE_VALUES.map((type) => {
+            const onDayString = getOnDayString(startFakeUtcDate, type);
             return { text: capitalize(onDayString), value: type };
         });
-    }, [date]);
 
-    const isLastDay = getNegativeSetpos(date) === -1;
-    const isFifthDay = getPositiveSetpos(date) === 5;
-    const options = allOptions.filter(({ value }) => {
-        if (value === MONTHLY_TYPE.ON_NTH_DAY && isFifthDay) {
-            // we don't offer "on the fifth day" possibility
-            return false;
-        }
-        if (value === MONTHLY_TYPE.ON_MINUS_NTH_DAY && !isLastDay) {
-            // only display "last day" option when we are in the last day of the month
-            return false;
-        }
-        return true;
-    });
+        const isLastDay = getNegativeSetpos(startFakeUtcDate) === -1;
+        const isFifthDay = getPositiveSetpos(startFakeUtcDate) === 5;
+
+        return allOptions.filter(({ value }) => {
+            if (value === MONTHLY_TYPE.ON_NTH_DAY && isFifthDay) {
+                // we don't offer "on the fifth day" possibility
+                return false;
+            }
+            if (value === MONTHLY_TYPE.ON_MINUS_NTH_DAY && !isLastDay) {
+                // only display "last day" option when we are in the last day of the month
+                return false;
+            }
+            return true;
+        });
+    }, [date]);
 
     return (
         <Select

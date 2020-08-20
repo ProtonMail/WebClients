@@ -1,7 +1,7 @@
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from 'proton-shared/lib/calendar/constants';
 import { getNegativeSetpos, getPositiveSetpos } from 'proton-shared/lib/calendar/helper';
 import { getUntilProperty, numericDayToDay } from 'proton-shared/lib/calendar/vcalConverter';
-import { fromLocalDate } from 'proton-shared/lib/date/timezone';
+import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { EventModel } from '../../../interfaces/EventModel';
@@ -43,13 +43,14 @@ const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay }: EventMo
             }
         }
         if (frequency === FREQUENCY.MONTHLY) {
+            const startFakeUtcDate = toUTCDate(fromLocalDate(startDate));
             if (monthly.type === MONTHLY_TYPE.ON_NTH_DAY) {
-                rrule.value.byday = numericDayToDay(startDate.getDay());
-                rrule.value.bysetpos = getPositiveSetpos(startDate);
+                rrule.value.byday = numericDayToDay(startFakeUtcDate.getUTCDay());
+                rrule.value.bysetpos = getPositiveSetpos(startFakeUtcDate);
             }
             if (monthly.type === MONTHLY_TYPE.ON_MINUS_NTH_DAY) {
-                rrule.value.byday = numericDayToDay(startDate.getDay());
-                rrule.value.bysetpos = getNegativeSetpos(startDate);
+                rrule.value.byday = numericDayToDay(startFakeUtcDate.getUTCDay());
+                rrule.value.bysetpos = getNegativeSetpos(startFakeUtcDate);
             }
         }
         if (frequency === FREQUENCY.YEARLY) {
