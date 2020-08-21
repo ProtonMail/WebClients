@@ -128,7 +128,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toAppNam
 
         const recoveryForm = (
             <SignupLabelInputRow
-                label={<Label htmlFor="twoFa">{c('Label').t`Two-factor code`}</Label>}
+                label={<Label htmlFor="twoFa">{c('Label').t`Recovery code`}</Label>}
                 input={<LoginRecoveryCodeInput code={totp} setCode={loading ? noop : setTotp} id="recoveryCode" />}
             />
         );
