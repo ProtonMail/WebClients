@@ -4,6 +4,7 @@ export enum EVENT_INVITATION_ERROR_TYPE {
     MISSING_ATTENDEE,
     INVITATION_INVALID,
     INVITATION_UNSUPPORTED,
+    PARSING_ERROR,
     DECRYPTION_ERROR,
     FETCHING_ERROR,
     UPDATING_ERROR,
@@ -20,6 +21,9 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, external
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED) {
         return c('Event invitation error').t`Unsupported invitation`;
+    }
+    if (errorType === EVENT_INVITATION_ERROR_TYPE.PARSING_ERROR) {
+        return c('Event invitation error').t`Attached invitation could not be parsed`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR) {
         return c('Event invitation error').t`Attached invitation could not be decrypted`;

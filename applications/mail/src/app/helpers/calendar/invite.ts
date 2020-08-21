@@ -25,6 +25,7 @@ import {
     getAttendeeHasPartStat,
     getHasDtStart,
     getHasUid,
+    getIsCalendar,
     getIsEventComponent,
     getIsPropertyAllDay,
     getPropertyTzid
@@ -260,17 +261,24 @@ export const parseEventInvitation = (data: string): EventInvitationRaw | undefin
             return;
         }
         const parsedVcalendar = parseWithErrors(data) as VcalVcalendar;
-        if (parsedVcalendar.component !== 'vcalendar') {
+        if (!getIsCalendar(parsedVcalendar)) {
             return;
         }
-        const { components = [], calscale, 'x-wr-timezone': xWrTimezone, method } = parsedVcalendar;
+        const { components = [], version, calscale, 'x-wr-timezone': xWrTimezone, method } = parsedVcalendar;
+        if (!method?.value || method.value.toLowerCase() === 'publish') {
+            // Ignore the ics. We don't know if it's an invitation
+            return;
+        }
+        if ((calscale && calscale.value.toLowerCase() !== 'gregorian') || version?.value !== '2.0') {
+            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
+        }
         const event = components.find(getIsEventComponent) as VcalVeventComponent;
         if (!getIsEventInvitationValid(event) || !method?.value) {
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
         }
         return { vevent: event, calscale: calscale?.value, method: method.value, xWrTimezone: xWrTimezone?.value };
     } catch (e) {
-        return;
+        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
     }
 };
 
@@ -476,6 +484,9 @@ export const getSupportedEventInvitation = ({ vevent, calscale, xWrTimezone, met
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
         }
         if (exdate) {
+            if (!rrule) {
+                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
+            }
             const supportedExdate = exdate.map((property) =>
                 getSupportedDateOrDateTimeProperty({
                     property,
@@ -493,6 +504,9 @@ export const getSupportedEventInvitation = ({ vevent, calscale, xWrTimezone, met
             );
         }
         if (recurrenceId) {
+            if (rrule) {
+                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
+            }
             validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
                 property: recurrenceId,
                 hasXWrTimezone,
