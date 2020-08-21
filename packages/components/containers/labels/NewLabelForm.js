@@ -9,10 +9,10 @@ import ParentFolderSelector from './ParentFolderSelector';
 function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID, onChangeNotify }) {
     return (
         <div className="center flex-item-fluid">
-            {!label.ID && label.Type === LABEL_TYPE.MESSAGE_FOLDER && FEATURE_FLAGS.includes('sub-folder') ? null : (
+            {!label.ID && label.Type === LABEL_TYPE.MESSAGE_FOLDER && FEATURE_FLAGS.includes('sub-folder') ? (
                 <Alert>{c('Info')
                     .t`Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.`}</Alert>
-            )}
+            ) : null}
             <Row>
                 <Label htmlFor="accountName">
                     {label.Type === LABEL_TYPE.MESSAGE_FOLDER
