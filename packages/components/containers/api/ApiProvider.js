@@ -21,6 +21,8 @@ import DelinquentModal from './DelinquentModal';
 import HumanVerificationModal from './humanVerification/HumanVerificationModal';
 import OfflineNotification from './OfflineNotification';
 
+const OFFLINE_DELAY = 5000; // how time the offline growler need to stay
+
 const getSilenced = ({ silence } = {}, code) => {
     if (Array.isArray(silence)) {
         return silence.includes(code);
@@ -96,7 +98,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                             }}
                         />
                     ),
-                    expiration: -1,
+                    expiration: OFFLINE_DELAY,
                     disableAutoClose: true,
                 });
                 offlineRef.current = { id };
