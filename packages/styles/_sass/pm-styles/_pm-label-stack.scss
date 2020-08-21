@@ -39,12 +39,6 @@
 		}
 	}
 
-	&-overflow-count {
-		padding-bottom: .175em;
-		background: none;
-		line-height: 1.25;
-	}
-
 	&:not(.is-stacked) {
 		.label-stack-item {
 			&:hover,
@@ -57,6 +51,7 @@
 	&.is-stacked {
 		margin: 0;
 		overflow: hidden;
+		align-items: baseline;
 		flex-wrap: nowrap;
 
 		.label-stack-item {
