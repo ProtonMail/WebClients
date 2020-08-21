@@ -76,7 +76,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                         <div>
                             <AppLink
                                 className="pm-button--transparent inbl increase-surface-click"
-                                to="/"
+                                to="/subscription"
                                 toApp={getAccountSettingsApp()}
                             >
                                 {c('Action').t`Upgrade`}
@@ -93,7 +93,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                         <div>
                             <AppLink
                                 className="pm-button--transparent inbl increase-surface-click"
-                                to="/"
+                                to="/subscription"
                                 toApp={getAccountSettingsApp()}
                             >
                                 {c('Action').t`Upgrade`}
