@@ -6,7 +6,6 @@
 
 	&-item {
 		max-width: var(--item-wide);
-		padding: 0 .25em;
 		margin: .125em;
 		border-radius: 1em;
 		background-color: var(--color, currentColor);
@@ -21,20 +20,28 @@
 		&-button,
 		&-delete {
 			color: white;
-			opacity: var(--button-opacity, 1);
-			transition: inherit;
+
+			&,
+			& > * {
+				transition: inherit;
+			}
 		}
 
 		&-button {
-			padding: 0 .25em .175em;
+			padding: 0 .5em .175em;
+
+			&-text {
+				opacity: var(--button-opacity, 1);
+			}
 		}
 
 		&-delete {
 			overflow: hidden;
-			margin-left: .25em;
+			margin-right: .5em;
 
 			&-icon {
 				display: block;
+				opacity: var(--button-opacity, 1);
 			}
 		}
 	}
@@ -65,19 +72,26 @@
 			}
 		}
 
+		@include respond-to($breakpoint-small, 'max') {
+			.label-stack-item-delete {
+				display: none;
+			}
+		}
+
 		@include respond-to($breakpoint-small, 'min') {
 			&:hover,
 			&:focus-within {
 				.label-stack-item {
-					&:first-child {
+					// Avoid gitch effect on first-child
+					&:first-child:not(:hover):not(:focus-within) {
 						--button-opacity: 0;
 						max-width: var(--item-narrow);
 						margin: 0;
 						transform: scale(var(--item-scale));
 					}
 
-					&:hover,
-					&:focus-within {
+					&:not(:first-child):hover,
+					&:not(:first-child):focus-within {
 						--button-opacity: 1;
 						max-width: var(--item-wide);
 						margin: 0 1px;
