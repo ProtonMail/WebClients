@@ -6,7 +6,7 @@ import Paragraph from '../paragraph/Paragraph';
 interface BlockListItem {
     icon: string;
     text: string;
-    to: string;
+    to?: string;
     link: string | React.ReactElement;
 }
 
@@ -20,7 +20,7 @@ const RelatedSettingsSection = ({ list = [] }: Props) => {
     }
     return (
         <div className="flex flex-spacebetween ontablet-flex-column">
-            {list.map(({ icon, text, to, link }: BlockListItem, index) => (
+            {list.map(({ icon, text, to = '/', link }: BlockListItem, index) => (
                 <div key={index.toString()} className="w45 flex ontablet-mb1">
                     <Information icon={icon}>
                         <Paragraph>{text}</Paragraph>
