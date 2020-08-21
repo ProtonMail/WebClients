@@ -1,10 +1,9 @@
 import { KEY_FLAG } from '../constants';
-import { Address, KeyAction } from '../interfaces';
+import { Address, CachedKey, Key } from '../interfaces';
 
-const { SIGNED, ENCRYPTED_AND_SIGNED } = KEY_FLAG;
-
-export const getKeyFlagsAddress = ({ Receive }: Address, addressKeysList: KeyAction[]) => {
-    return !Receive && addressKeysList.length > 0 ? SIGNED : ENCRYPTED_AND_SIGNED;
+export const getDefaultKeyFlagsAddress = ({ Receive }: Address, addressKeysList: Key[] | CachedKey[]) => {
+    // If the address has keys, and the address can not receive, the new key can only be used to verify signatures
+    return !Receive && addressKeysList.length > 0 ? KEY_FLAG.VERIFY : KEY_FLAG.ENCRYPT + KEY_FLAG.VERIFY;
 };
 
-export const getKeyFlagsUser = () => ENCRYPTED_AND_SIGNED;
+export const getDefaultKeyFlagsUser = () => KEY_FLAG.ENCRYPT + KEY_FLAG.VERIFY;

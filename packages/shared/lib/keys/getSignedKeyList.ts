@@ -1,5 +1,5 @@
-import { OpenPGPKey, signMessage } from 'pmcrypto';
-import { SignedKeyList, KeyAction } from '../interfaces';
+import { getSHA256Fingerprints, OpenPGPKey, signMessage } from 'pmcrypto';
+import { SignedKeyList } from '../interfaces';
 
 export const getSignature = async (data: string, signingKey: OpenPGPKey) => {
     const { signature } = await signMessage({
@@ -11,23 +11,24 @@ export const getSignature = async (data: string, signingKey: OpenPGPKey) => {
     return `${signature}`;
 };
 
-const transformKeysOutput = (keys: KeyAction[]) => {
-    return keys.map(({ primary, flags, fingerprint }) => {
-        return {
-            Primary: primary,
-            Flags: flags,
-            Fingerprint: fingerprint,
-        };
-    });
-};
-
 /**
  * Generate the signed key list data
  * @param keys - The list of keys
  * @param signingKey - The primary key of the list
  */
-const getSignedKeyList = async (keys: KeyAction[], signingKey: OpenPGPKey): Promise<SignedKeyList> => {
-    const data = JSON.stringify(transformKeysOutput(keys));
+const getSignedKeyList = async (
+    keys: { privateKey: OpenPGPKey; primary: number; flags: number }[],
+    signingKey: OpenPGPKey
+): Promise<SignedKeyList> => {
+    const transformedKeys = await Promise.all(
+        keys.map(async ({ privateKey, flags, primary }) => ({
+            Primary: primary,
+            Flags: flags,
+            Fingerprint: privateKey.getFingerprint(),
+            SHA256Fingerprints: await getSHA256Fingerprints(privateKey),
+        }))
+    );
+    const data = JSON.stringify(transformedKeys);
     return {
         Data: data,
         Signature: await getSignature(data, signingKey),

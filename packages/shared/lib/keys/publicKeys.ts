@@ -1,13 +1,13 @@
 import { OpenPGPKey, serverTime } from 'pmcrypto';
 import { c } from 'ttag';
-import { KEY_FLAGS, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
+import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
 import { normalizeEmail } from '../helpers/email';
 import isTruthy from '../helpers/isTruthy';
 import { toBitMap } from '../helpers/object';
 import { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
+import { hasBit } from '../helpers/bitset';
 
 const { TYPE_INTERNAL } = RECIPIENT_TYPES;
-const { ENABLE_ENCRYPTION } = KEY_FLAGS;
 
 /**
  * Check if some API key data belongs to an internal user
@@ -18,7 +18,7 @@ export const getIsInternalUser = ({ RecipientType }: ApiKeysConfig): boolean => 
  * Test if no key is enabled
  */
 export const isDisabledUser = (config: ApiKeysConfig): boolean =>
-    getIsInternalUser(config) && !config.Keys.some(({ Flags }) => Flags & ENABLE_ENCRYPTION);
+    getIsInternalUser(config) && !config.Keys.some(({ Flags }) => hasBit(Flags, KEY_FLAG.ENCRYPT));
 
 export const getEmailMismatchWarning = (publicKey: OpenPGPKey, emailAddress: string, isInternal: boolean): string[] => {
     const normalizedEmail = normalizeEmail(emailAddress, isInternal);
@@ -120,7 +120,7 @@ export const getKeyVerificationOnlyStatus = (publicKey: OpenPGPKey, config: ApiK
     if (index === -1) {
         return undefined;
     }
-    return !(config.Keys[index].Flags & KEY_FLAGS.ENABLE_ENCRYPTION);
+    return !hasBit(config.Keys[index].Flags, KEY_FLAG.ENCRYPT);
 };
 
 /**

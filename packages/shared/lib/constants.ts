@@ -310,12 +310,6 @@ export enum RECIPIENT_TYPES {
     TYPE_NO_RECEIVE = 3,
 }
 
-export enum KEY_FLAGS {
-    DISABLED = 0,
-    ENABLE_VERIFICATION = 1,
-    ENABLE_ENCRYPTION = 2,
-}
-
 export enum SHOW_IMAGES {
     NONE = 0,
     REMOTE = 1,
@@ -528,10 +522,10 @@ export const ENCRYPTION_CONFIGS = {
 };
 
 export enum KEY_FLAG {
-    ENCRYPTED_AND_SIGNED = 3,
-    ENCRYPTED = 2,
-    SIGNED = 1,
-    CLEAR_TEXT = 0,
+    // Key can be used to encrypt
+    ENCRYPT = 2,
+    // Key can be used to verify signatures
+    VERIFY = 1,
 }
 
 export enum USER_STATUS {

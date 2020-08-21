@@ -4,7 +4,7 @@ export * from './CachedKey';
 export * from './Domain';
 export * from './Key';
 export * from './EncryptionPreferences';
-export * from './KeyAction';
+export * from './ActionableKey';
 export * from './KeySalt';
 export * from './MailSettings';
 export * from './Member';
