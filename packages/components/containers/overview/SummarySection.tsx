@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { UserModel, UserSettings, Organization, Subscription, Plan } from 'proton-shared/lib/interfaces';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { getPlan } from 'proton-shared/lib/helpers/subscription';
-import { PLAN_SERVICES, APPS, PLANS, FEATURE_FLAGS } from 'proton-shared/lib/constants';
+import { PLAN_SERVICES, APPS, PLANS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
 import { AppLink, Icon } from '../../components';
@@ -134,13 +134,6 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                             <AppLink to="/settings/overview" toApp={APPS.PROTONCONTACTS}>{c('Link')
                                 .t`ProtonContacts settings`}</AppLink>
                         </li>
-                        {FEATURE_FLAGS.includes('drive') ? (
-                            <li>
-                                <Icon name="protondrive" className="mr0-5" />
-                                <AppLink to="/settings/overview" toApp={APPS.PROTONDRIVE}>{c('Link')
-                                    .t`ProtonDrive settings`}</AppLink>
-                            </li>
-                        ) : null}
                     </ul>
                 </div>
             ) : null}
