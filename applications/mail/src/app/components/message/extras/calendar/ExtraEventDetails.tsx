@@ -16,7 +16,7 @@ import {
 } from '../../../../helpers/calendar/invite';
 import { RequireSome } from '../../../../models/utils';
 
-const formatParticipant = (participant: Participant | undefined) => {
+const formatParticipant = (participant: Participant | undefined, isLast = true) => {
     if (!participant) {
         return null;
     }
@@ -25,20 +25,22 @@ const formatParticipant = (participant: Participant | undefined) => {
     if (emailAddress) {
         if (name) {
             return (
-                <div className="ellipsis">
-                    <span className="mr0-5">{name}</span>
-                    <a key={emailAddress} href={buildMailTo(emailAddress)}>
-                        ({emailAddress})
+                <>
+                    <span title={name}>{`${name} `}</span>(
+                    <a key={emailAddress} href={buildMailTo(emailAddress)} title={emailAddress}>
+                        {emailAddress}
                     </a>
-                </div>
+                    ){!isLast && ', '}
+                </>
             );
         }
         return (
-            <div className="ellipsis">
-                <a key={emailAddress} href={buildMailTo(emailAddress)}>
+            <>
+                <a key={emailAddress} href={buildMailTo(emailAddress)} title={emailAddress}>
                     {emailAddress}
                 </a>
-            </div>
+                {!isLast && ', '}
+            </>
         );
     }
     return <div className="ellipsis">{name}</div>;
@@ -50,11 +52,11 @@ const formatParticipants = (participants: Participant[] = []) => {
     }
 
     return (
-        <ul className="mt0 mb0 unstyled">
-            {participants.map((participant) => {
-                return <li key={participant.emailAddress}>{formatParticipant(participant)}</li>;
+        <div className="break">
+            {participants.map((participant, i) => {
+                return formatParticipant(participant, i === participants.length - 1);
             })}
-        </ul>
+        </div>
     );
 };
 
@@ -91,7 +93,7 @@ const ExtraEventDetails = ({ model, defaultCalendar }: Props) => {
             value: formatParticipant(organizer)
         },
         totalParticipants && {
-            label: c('Label').ngettext(msgid`Participant`, `Participants`, totalParticipants),
+            label: c('Label').ngettext(msgid`Participant`, `Participants (${totalParticipants})`, totalParticipants),
             value: formatParticipants(participants)
         }
     ].filter(isTruthy);
