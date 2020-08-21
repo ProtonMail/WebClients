@@ -47,6 +47,7 @@ export const MIMETYPE_DESCRIPTION_MAP: { [key: string]: string } = {
     'application/java-archive': 'Java Archive (JAR)',
     'image/jpeg': 'JPEG images',
     'text/javascript': 'JavaScript',
+    'application/javascript': 'JavaScript',
     'application/json': 'JSON format',
     'application/ld+json': 'JSON-LD format',
     'audio/midi': 'Musical Instrument Digital Interface (MIDI)',
