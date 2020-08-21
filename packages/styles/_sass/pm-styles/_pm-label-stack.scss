@@ -82,6 +82,7 @@
 					&:focus-within {
 						--button-opacity: 1;
 						max-width: var(--item-wide);
+						margin: 0 1px;
 						transform: scale(1);
 					}
 				}
