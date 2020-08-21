@@ -81,7 +81,7 @@ const AccountSwitchContainer = ({ Layout, toAppName, onLogin, activeSessions }: 
             createNotification({ type: 'error', text: errorMessage });
             console.error(e);
         } finally {
-            setLoadingMap((old) => ({ ...old, [localID]: true }));
+            setLoadingMap((old) => ({ ...old, [localID]: false }));
         }
     };
 
