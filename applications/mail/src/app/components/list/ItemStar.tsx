@@ -38,7 +38,7 @@ const ItemStar = ({ element = {} }: Props) => {
             <button
                 type="button"
                 className={classnames([
-                    'starbutton relative item-star inline-flex stop-propagation',
+                    'starbutton relative item-star flex stop-propagation',
                     isStarred && 'starbutton--is-starred'
                 ])}
                 onClick={handleClick}

@@ -29,7 +29,7 @@ const ItemLocation = ({ message, mailSettings, shouldStack = false }: Props) => 
         <>
             {infos.map(({ icon, name, to }) => (
                 <Tooltip title={name} key={to}>
-                    <span className="inline-flex flex-item-noshrink">
+                    <span className="flex flex-item-noshrink">
                         <Icon name={icon} alt={name} />
                     </span>
                 </Tooltip>

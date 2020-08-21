@@ -211,6 +211,7 @@ const MessageView = ({
             ) : (
                 <HeaderCollapsed
                     labelID={labelID}
+                    labels={labels}
                     message={message}
                     messageViewIcons={messageViewIcons}
                     messageLoaded={messageLoaded}

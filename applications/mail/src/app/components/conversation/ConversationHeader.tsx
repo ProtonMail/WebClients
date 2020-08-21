@@ -52,7 +52,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
                 </div>
             </div>
             <div className="flex flex-nowrap">
-                <div className="flex-item-fluid flex flex-items-center pr1">
+                <div className="flex flex-items-center flex-nowrap">
                     <span className="message-conversation-summary-stat mr1 flex flex-items-center flex-item-noshrink">
                         {!loading && (
                             <span className="flex flex-items-center is-appearing-content">
@@ -81,7 +81,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
                     </span>
                 </div>
                 {!loading && (
-                    <div className="is-appearing-content flex-item-noshrink">
+                    <div className="flex-item-fluid alignright no-scroll is-appearing-content">
                         <ItemLabels labels={labels} element={element} showUnlabel />
                     </div>
                 )}

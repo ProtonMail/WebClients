@@ -2,10 +2,12 @@ import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames, useContactEmails } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import { isDraft, hasAttachments } from '../../../helpers/message/messages';
+import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageViewIcons } from '../../../helpers/message/icon';
@@ -17,6 +19,7 @@ import { OnCompose } from '../../../hooks/useCompose';
 
 interface Props {
     labelID: string;
+    labels?: Label[];
     message: MessageExtended;
     messageViewIcons?: MessageViewIcons;
     messageLoaded: boolean;
@@ -30,6 +33,7 @@ interface Props {
 
 const HeaderCollapsed = ({
     labelID,
+    labels,
     message,
     messageViewIcons,
     messageLoaded,
@@ -73,16 +77,30 @@ const HeaderCollapsed = ({
                 />
                 {messageLoaded && (
                     <>
-                        <ItemExpiration element={message.data} className="ml0-5 is-appearing-content" />
-                        <ItemAction element={message.data} className="ml0-5 is-appearing-content" />
+                        <ItemExpiration
+                            element={message.data}
+                            className="flex flex-item-noshrink ml0-25 is-appearing-content"
+                        />
+                        <ItemAction
+                            element={message.data}
+                            className="flex flex-item-noshrink ml0-25 is-appearing-content"
+                        />
                     </>
                 )}
             </div>
             <div className="flex flex-items-center flex-item-noshrink">
                 {messageLoaded ? (
                     <>
+                        <ItemLabels
+                            className="nomobile"
+                            element={message.data}
+                            labels={labels}
+                            showUnlabel
+                            maxNumber={5}
+                        />
+
                         {isDraftMessage && (
-                            <span className="badgeLabel-success is-appearing-content">{c('Info').t`Draft`}</span>
+                            <span className="badgeLabel-success ml0-5 is-appearing-content">{c('Info').t`Draft`}</span>
                         )}
 
                         {!!hasAttachments(message.data) && (
