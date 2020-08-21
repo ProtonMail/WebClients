@@ -45,11 +45,11 @@ const LabelStack = ({ labels, showDelete = true, isStacked = false, maxNumber, c
                             onClick={label.onClick}
                             title={label.title}
                         >
-                            {label.name}
+                            <span className="label-stack-item-button-text">{label.name}</span>
                         </button>
                     ) : (
                         <span className="label-stack-item-button ellipsis" title={label.title}>
-                            {label.name}
+                            <span className="label-stack-item-button-text">{label.name}</span>
                         </span>
                     )}
 
