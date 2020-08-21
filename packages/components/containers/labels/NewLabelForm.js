@@ -60,7 +60,7 @@ function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID, on
                             <span className="mr0-5">{c('Label').t`Notification`}</span>
                             <Info
                                 title={c('Info')
-                                    .t`Turn this feature on to receive messages desktop/mobile notifications when messages are automatically added to this folder using custom filters`}
+                                    .t`You can turn on notifications to get alerts when new email messages arrive in this folder.`}
                             />
                         </Label>
                         <Field>
