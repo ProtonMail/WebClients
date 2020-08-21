@@ -28,6 +28,23 @@ export const setupKeys = (data: { PrimaryKey: string; KeySalt: string; AddressKe
     data,
 });
 
+export const activateKeyRoute = ({
+    ID,
+    PrivateKey,
+    SignedKeyList,
+}: {
+    ID: string;
+    PrivateKey: string;
+    SignedKeyList: SignedKeyList;
+}) => ({
+    url: `keys/${ID}/activate`,
+    method: 'put',
+    data: {
+        PrivateKey,
+        SignedKeyList,
+    },
+});
+
 /**
  * @param ID
  * @param PrivateKey
