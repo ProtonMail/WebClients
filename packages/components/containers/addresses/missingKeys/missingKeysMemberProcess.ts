@@ -41,7 +41,8 @@ export default ({
                     api,
                     Member: member,
                     Address: address,
-                    keys: [], // Assume no keys exists for this address since we are in this modal.
+                    parsedKeys: [], // Assume no keys exist for this address since we are in this modal.
+                    actionableKeys: [],
                     signingKey: privateKey,
                     privateKey,
                     ...rest,

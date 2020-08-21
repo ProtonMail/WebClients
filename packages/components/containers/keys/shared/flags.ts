@@ -1,20 +1,19 @@
 import { KEY_FLAG } from 'proton-shared/lib/constants';
+import { clearBit, setBit } from 'proton-shared/lib/helpers/bitset';
 import { FlagAction } from './interface';
 
-const { SIGNED, ENCRYPTED_AND_SIGNED, CLEAR_TEXT } = KEY_FLAG;
-
-export const getNewKeyFlags = (action: FlagAction) => {
+export const getNewKeyFlags = (Flags = 0, action: FlagAction) => {
     if (action === FlagAction.MARK_OBSOLETE) {
-        return SIGNED;
+        return clearBit(Flags, KEY_FLAG.ENCRYPT);
     }
     if (action === FlagAction.MARK_NOT_OBSOLETE) {
-        return ENCRYPTED_AND_SIGNED;
+        return setBit(Flags, KEY_FLAG.ENCRYPT);
     }
     if (action === FlagAction.MARK_COMPROMISED) {
-        return CLEAR_TEXT;
+        return clearBit(Flags, KEY_FLAG.VERIFY + KEY_FLAG.ENCRYPT);
     }
     if (action === FlagAction.MARK_NOT_COMPROMISED) {
-        return SIGNED;
+        return setBit(Flags, KEY_FLAG.VERIFY);
     }
     throw new Error('Unknown action');
 };

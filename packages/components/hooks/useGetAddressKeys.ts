@@ -30,7 +30,6 @@ export const useGetAddressKeysRaw = (): ((id: string) => Promise<CachedKey[]>) =
                 return [];
             }
 
-            const { Keys } = Address;
             const mailboxPassword = authentication.getPassword();
 
             const organizationKey = OrganizationPrivateKey
@@ -64,6 +63,11 @@ export const useGetAddressKeysRaw = (): ((id: string) => Promise<CachedKey[]>) =
                     };
                 }
             };
+
+            const { Keys } = Address;
+            if (!Keys.length) {
+                return [];
+            }
 
             const [primaryKey, ...restKeys] = Keys;
             const primaryKeyResult = await process(primaryKey);

@@ -30,7 +30,7 @@ const KeysStatus = ({ isPrimary, isDecrypted, isCompromised, isObsolete, isAddre
                 title: c('Key state badge').t`Compromised`,
                 type: 'warning',
             } as const),
-        isObsolete &&
+        isObsolete && !isCompromised &&
             ({
                 tooltip: c('Tooltip').t`This key cannot be used for encryption`,
                 title: c('Key state badge').t`Obsolete`,

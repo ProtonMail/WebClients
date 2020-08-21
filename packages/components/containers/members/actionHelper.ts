@@ -1,17 +1,24 @@
 import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { addKeyAction } from 'proton-shared/lib/keys/keysAction';
 import { generateMemberToken, encryptMemberToken } from 'proton-shared/lib/keys/memberToken';
-import { getKeyFlagsAddress } from 'proton-shared/lib/keys/keyFlags';
+import { getDefaultKeyFlagsAddress } from 'proton-shared/lib/keys/keyFlags';
 import { createMemberKeyRoute, setupMemberKeyRoute } from 'proton-shared/lib/api/memberKeys';
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
 import { srpVerify } from 'proton-shared/lib/srp';
 import { generateAddressKey, generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
-import { EncryptionConfig, Address, KeyAction, Api } from 'proton-shared/lib/interfaces';
+import {
+    EncryptionConfig,
+    Address as tsAddress,
+    ActionableKey,
+    Api,
+    CachedKey,
+    Member as tsMember,
+} from 'proton-shared/lib/interfaces';
 
 interface SetupMemberKeyArguments {
     api: Api;
-    Member: any;
-    Address: Address;
+    Member: tsMember;
+    Address: tsAddress;
     password: string;
     organizationKey: OpenPGPKey;
     encryptionConfig: EncryptionConfig;
@@ -38,9 +45,10 @@ export const setupMemberKey = async ({
 
     const updatedKeys = addKeyAction({
         ID: 'temp',
-        flags: getKeyFlagsAddress(Address, []),
-        keys: [],
-        fingerprint: privateKey.getFingerprint(),
+        flags: getDefaultKeyFlagsAddress(Address, []),
+        privateKey,
+        parsedKeys: [],
+        actionableKeys: [],
     });
 
     const newKey = updatedKeys.find(({ ID }) => ID === 'temp');
@@ -82,9 +90,10 @@ export const setupMemberKey = async ({
 
 interface CreateMemberAddressKeysArguments {
     api: Api;
-    Address: Address;
-    Member: any;
-    keys: KeyAction[];
+    Address: tsAddress;
+    Member: tsMember;
+    parsedKeys: CachedKey[];
+    actionableKeys: ActionableKey[];
     privateKey: OpenPGPKey;
     signingKey: OpenPGPKey;
     privateKeyArmored: string;
@@ -96,7 +105,8 @@ export const createMemberAddressKeys = async ({
     api,
     Address,
     Member,
-    keys,
+    parsedKeys,
+    actionableKeys,
     privateKey,
     signingKey,
     privateKeyArmored,
@@ -105,10 +115,11 @@ export const createMemberAddressKeys = async ({
     organizationToken,
 }: CreateMemberAddressKeysArguments) => {
     const newKeys = addKeyAction({
-        keys,
+        parsedKeys,
+        actionableKeys,
         ID: 'temp',
-        flags: getKeyFlagsAddress(Address, keys),
-        fingerprint: privateKey.getFingerprint(),
+        flags: getDefaultKeyFlagsAddress(Address, parsedKeys),
+        privateKey,
     });
 
     const newKey = newKeys.find(({ ID }) => ID === 'temp');

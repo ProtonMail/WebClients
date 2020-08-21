@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
-import getKeysActionList from 'proton-shared/lib/keys/getKeysActionList';
+import getActionableKeysList from 'proton-shared/lib/keys/getActionableKeysList';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 import { KeySalt, CachedKey, Api } from 'proton-shared/lib/interfaces';
+import getParsedKeys from 'proton-shared/lib/keys/getParsedKeys';
 
 import { ReactivateKeys, SetKeysToReactivate, Status } from './interface';
 import { updateKey } from './state';
@@ -40,7 +41,8 @@ export default async ({
         if (!primaryPrivateKey) {
             throw new Error(c('Error').t`Primary private key not decrypted`);
         }
-        let updatedKeyList = await getKeysActionList(completeKeyList);
+        let updatedKeyList = await getActionableKeysList(completeKeyList);
+        const parsedKeys = await getParsedKeys(completeKeyList);
 
         for (const inactiveKey of keys) {
             const { ID, uploadedPrivateKey } = inactiveKey;
@@ -52,7 +54,7 @@ export default async ({
             if (!PrivateKey) {
                 throw new Error(c('Error').t`Key not found`);
             }
-            if (oldPrivateKey && oldPrivateKey.isDecrypted()) {
+            if (oldPrivateKey?.isDecrypted()) {
                 throw new Error(c('Error').t`Key is already decrypted`);
             }
 
@@ -63,13 +65,14 @@ export default async ({
                         newPassword,
                         PrivateKey,
                         uploadedPrivateKey,
-                        keyList: updatedKeyList,
+                        parsedKeys,
                         email: Address?.Email,
                     });
                     updatedKeyList = await reactivatePrivateKey({
                         api,
                         ID,
-                        keyList: updatedKeyList,
+                        parsedKeys,
+                        actionableKeys: updatedKeyList,
                         encryptedPrivateKeyArmored,
                         privateKey,
                         signingKey: primaryPrivateKey,
@@ -89,7 +92,8 @@ export default async ({
                     updatedKeyList = await reactivatePrivateKey({
                         api,
                         ID,
-                        keyList: updatedKeyList,
+                        parsedKeys,
+                        actionableKeys: updatedKeyList,
                         encryptedPrivateKeyArmored,
                         privateKey,
                         signingKey: primaryPrivateKey,

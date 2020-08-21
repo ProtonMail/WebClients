@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { removeKeyAction, setFlagsKeyAction, setPrimaryKeyAction } from 'proton-shared/lib/keys/keysAction';
-import getKeysActionList from 'proton-shared/lib/keys/getKeysActionList';
+import getActionableKeysList from 'proton-shared/lib/keys/getActionableKeysList';
 import { generateAddressKey } from 'proton-shared/lib/keys/keys';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
 import { removeKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from 'proton-shared/lib/api/keys';
@@ -9,6 +9,8 @@ import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
 import getCachedKeyByID from 'proton-shared/lib/keys/getCachedKeyByID';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { EncryptionConfig } from 'proton-shared/lib/interfaces';
+import getParsedKeys from 'proton-shared/lib/keys/getParsedKeys';
+
 import { Alert, Block, Loader, PrimaryButton, Select } from '../../components';
 import {
     useAddresses,
@@ -94,7 +96,7 @@ const AddressKeysSection = () => {
 
         const process = async () => {
             const updatedKeys = setPrimaryKeyAction({
-                keys: await getKeysActionList(addressKeys),
+                actionableKeys: await getActionableKeysList(addressKeys),
                 ID,
             });
             await api(
@@ -119,15 +121,15 @@ const AddressKeysSection = () => {
         if (!addressKey || isLoadingKey) {
             return;
         }
-        const { privateKey: primaryPrivateKey } = getPrimaryKey(addressKeys) || {};
-        if (!primaryPrivateKey) {
+        const { privateKey: primaryPrivateKey, Key } = getPrimaryKey(addressKeys) || {};
+        if (!primaryPrivateKey || !Key) {
             return;
         }
 
         const process = async () => {
-            const newKeyFlags = getNewKeyFlags(flagAction);
+            const newKeyFlags = getNewKeyFlags(addressKey.Key.Flags, flagAction);
             const updatedKeys = setFlagsKeyAction({
-                keys: await getKeysActionList(addressKeys),
+                actionableKeys: await getActionableKeysList(addressKeys),
                 ID,
                 flags: newKeyFlags,
             });
@@ -170,7 +172,7 @@ const AddressKeysSection = () => {
 
         const onDelete = async (): Promise<void> => {
             const updatedKeys = removeKeyAction({
-                keys: await getKeysActionList(addressKeys),
+                actionableKeys: await getActionableKeysList(addressKeys),
                 ID,
             });
             const signedKeyList = await getSignedKeyList(updatedKeys, primaryPrivateKey);
@@ -218,17 +220,17 @@ const AddressKeysSection = () => {
                 passphrase: authentication.getPassword(),
                 encryptionConfig,
             });
-            const fingerprint = privateKey.getFingerprint();
             await createKeyHelper({
                 api,
                 privateKeyArmored,
-                fingerprint,
+                privateKey,
                 Address,
-                keys: await getKeysActionList(addressKeys),
+                parsedKeys: await getParsedKeys(addressKeys),
+                actionableKeys: await getActionableKeysList(addressKeys),
                 signingKey: primaryPrivateKey,
             });
             await call();
-            return fingerprint;
+            return privateKey.getFingerprint();
         };
 
         const existingAlgorithms = addressKeysDisplay.map(({ algorithmInfo }) => algorithmInfo).filter(isTruthy);
@@ -250,8 +252,8 @@ const AddressKeysSection = () => {
                 setKeysToImport,
                 api,
                 password: authentication.getPassword(),
-                keys: await getKeysActionList(addressKeys),
-                addressKeys,
+                actionableKeys: await getActionableKeysList(addressKeys),
+                parsedKeys: await getParsedKeys(addressKeys),
                 signingKey: primaryPrivateKey,
                 Address,
             });

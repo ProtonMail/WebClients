@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import { Address, CachedKey, KeyAction, Api } from 'proton-shared/lib/interfaces';
-import { findKeyByFingerprint } from 'proton-shared/lib/keys/keysAction';
+import { Address as tsAddress, CachedKey, ActionableKey, Api } from 'proton-shared/lib/interfaces';
 import { reformatAddressKey } from 'proton-shared/lib/keys/keys';
 import { SetKeys, ImportKey, Status } from './interface';
 import createKeyHelper from '../addKey/createKeyHelper';
@@ -13,31 +12,28 @@ interface Arguments {
     signingKey: OpenPGPKey;
     keysToImport: ImportKey[];
     setKeysToImport: SetKeys;
-    addressKeys: CachedKey[];
     password: string;
-    keys: KeyAction[];
-    Address: Address;
+    parsedKeys: CachedKey[];
+    actionableKeys: ActionableKey[];
+    Address: tsAddress;
 }
 export default async ({
     api,
     keysToImport,
-    addressKeys,
     signingKey,
     password,
-    keys,
+    parsedKeys,
+    actionableKeys,
     setKeysToImport,
     Address,
 }: Arguments) => {
-    let updatedAddressKeys = keys;
+    let updatedAddressKeys = actionableKeys;
 
     for (const key of keysToImport) {
         try {
             const { privateKey: uploadedPrivateKey, fingerprint } = key;
 
-            const maybeOldKeyContainer = findKeyByFingerprint(updatedAddressKeys, fingerprint);
-            const maybeOldKey = maybeOldKeyContainer
-                ? addressKeys.find(({ Key: { ID } }) => ID === maybeOldKeyContainer.ID)
-                : undefined;
+            const maybeOldKey = parsedKeys.find(({ privateKey }) => privateKey?.getFingerprint() === fingerprint);
 
             if (maybeOldKey) {
                 const {
@@ -45,7 +41,7 @@ export default async ({
                     privateKey: oldPrivateKey,
                 } = maybeOldKey;
 
-                if (oldPrivateKey && oldPrivateKey.isDecrypted()) {
+                if (oldPrivateKey?.isDecrypted()) {
                     throw new Error(c('Error').t`Key is already decrypted`);
                 }
 
@@ -54,13 +50,14 @@ export default async ({
                     newPassword: password,
                     PrivateKey,
                     uploadedPrivateKey,
-                    keyList: updatedAddressKeys,
+                    parsedKeys,
                     email: Address?.Email,
                 });
                 updatedAddressKeys = await reactivatePrivateKey({
                     api,
                     ID,
-                    keyList: updatedAddressKeys,
+                    parsedKeys,
+                    actionableKeys: updatedAddressKeys,
                     encryptedPrivateKeyArmored,
                     privateKey,
                     signingKey,
@@ -76,9 +73,10 @@ export default async ({
                 updatedAddressKeys = await createKeyHelper({
                     api,
                     privateKeyArmored,
-                    fingerprint: reformattedPrivateKey.getFingerprint(),
+                    privateKey: reformattedPrivateKey,
                     Address,
-                    keys: updatedAddressKeys,
+                    actionableKeys: updatedAddressKeys,
+                    parsedKeys,
                     signingKey,
                 });
             }

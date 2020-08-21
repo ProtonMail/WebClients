@@ -1,18 +1,18 @@
 import { c } from 'ttag';
 import { decryptPrivateKey, encryptPrivateKey, getKeys, OpenPGPKey } from 'pmcrypto';
 import { reformatAddressKey, decryptPrivateKeyWithSalt } from 'proton-shared/lib/keys/keys';
-import { KeySalt, KeyAction, Api, Address } from 'proton-shared/lib/interfaces';
-import { reactivateKeyAction, findKeyByFingerprint } from 'proton-shared/lib/keys/keysAction';
-import { getKeyFlagsAddress, getKeyFlagsUser } from 'proton-shared/lib/keys/keyFlags';
+import { KeySalt, ActionableKey, Api, Address, CachedKey } from 'proton-shared/lib/interfaces';
+import { reactivateKeyAction } from 'proton-shared/lib/keys/keysAction';
+import { getDefaultKeyFlagsAddress, getDefaultKeyFlagsUser } from 'proton-shared/lib/keys/keyFlags';
 import { reactivateKeyRoute } from 'proton-shared/lib/api/keys';
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
-
 import { noop } from 'proton-shared/lib/helpers/function';
 
 interface ReactivatePrivateKeyArguments {
     api: Api;
     ID: string;
-    keyList: KeyAction[];
+    parsedKeys: CachedKey[];
+    actionableKeys: ActionableKey[];
     signingKey: OpenPGPKey;
     privateKey: OpenPGPKey;
     encryptedPrivateKeyArmored: string;
@@ -21,7 +21,8 @@ interface ReactivatePrivateKeyArguments {
 export const reactivatePrivateKey = async ({
     api,
     ID,
-    keyList,
+    parsedKeys,
+    actionableKeys,
     privateKey,
     signingKey,
     encryptedPrivateKeyArmored,
@@ -29,9 +30,10 @@ export const reactivatePrivateKey = async ({
 }: ReactivatePrivateKeyArguments) => {
     const result = reactivateKeyAction({
         ID,
-        keys: keyList,
-        fingerprint: privateKey.getFingerprint(),
-        flags: Address ? getKeyFlagsAddress(Address, keyList) : getKeyFlagsUser(),
+        parsedKeys,
+        actionableKeys,
+        privateKey,
+        flags: Address ? getDefaultKeyFlagsAddress(Address, parsedKeys) : getDefaultKeyFlagsUser(),
     });
 
     await api(
@@ -57,7 +59,7 @@ interface ReactivateByUploadArguments {
     ID: string;
     PrivateKey: string;
     uploadedPrivateKey: OpenPGPKey;
-    keyList: KeyAction[];
+    parsedKeys: CachedKey[];
     newPassword: string;
     email?: string;
 }
@@ -66,20 +68,20 @@ export const reactivateByUpload = async ({
     newPassword,
     PrivateKey,
     uploadedPrivateKey,
-    keyList,
+    parsedKeys,
     email,
 }: ReactivateByUploadArguments) => {
-    const fingerprint = uploadedPrivateKey.getFingerprint();
-    const oldKeyContainer = findKeyByFingerprint(keyList, fingerprint);
+    const uploadedFingerprint = uploadedPrivateKey.getFingerprint();
+    const oldKeyContainer = parsedKeys.find(({ privateKey }) => privateKey?.getFingerprint() === uploadedFingerprint);
 
     if (!oldKeyContainer) {
         throw new Error(c('Error').t`Key does not exist`);
     }
-    if (oldKeyContainer.ID !== ID) {
+    if (oldKeyContainer.Key.ID !== ID) {
         throw new Error(c('Error').t`Key ID mismatch`);
     }
 
-    // When reactivating a key by uploading it, get the email from the old armored private key to ensure it's correct for the contact keys
+    // When reactivating a key by uploading it, get the email from the old armored private key to ensure it's correct for the user keys
     const oldUserId = (await getOldUserID(PrivateKey).catch(noop)) || email;
 
     const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
