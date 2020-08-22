@@ -6,6 +6,7 @@ export { default as HeaderModal } from './Header';
 export { default as FormModal } from './FormModal';
 export { default as OverlayModal } from './Overlay';
 export { default as ConfirmModal } from './Confirm';
+export { default as DeleteModal } from './DeleteModal';
 export { default as SimpleFormModal } from './SimpleFormModal';
 export { default as PreviewPDFModal } from './PreviewPDFModal';
 export { default as FooterModal } from './Footer';
