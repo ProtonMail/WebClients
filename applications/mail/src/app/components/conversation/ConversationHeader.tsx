@@ -82,7 +82,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
                 </div>
                 {!loading && (
                     <div className="flex-item-fluid alignright no-scroll is-appearing-content">
-                        <ItemLabels labels={labels} element={element} showUnlabel />
+                        <ItemLabels labels={labels} element={element} showUnlabel maxNumber={5} />
                     </div>
                 )}
             </div>
