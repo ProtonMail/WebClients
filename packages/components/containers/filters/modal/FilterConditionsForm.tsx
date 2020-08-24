@@ -9,7 +9,7 @@ import {
     SimpleFilterModalModel,
 } from 'proton-shared/lib/filters/interfaces';
 import { Radio, LinkButton } from '../../../components';
-import { classnames } from '../../../helpers';
+import { classnames, generateUID } from '../../../helpers';
 
 import FilterConditionsFormRow from './FilterConditionsFormRow';
 
@@ -17,6 +17,7 @@ const conditionTemplate = {
     type: ConditionType.SELECT,
     comparator: ConditionComparator.CONTAINS,
     isOpen: true,
+    id: generateUID('condition'),
 };
 
 interface Props {
@@ -96,7 +97,7 @@ const FilterConditionsForm = ({ isNarrow, model, isDark, onChange }: Props) => {
             </div>
             {conditions.map((condition, i) => (
                 <FilterConditionsFormRow
-                    key={`Condition_${i}`}
+                    key={condition.id}
                     isNarrow={isNarrow}
                     condition={condition}
                     conditionIndex={i}

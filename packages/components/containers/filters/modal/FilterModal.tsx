@@ -42,6 +42,7 @@ import FilterConditionsForm from './FilterConditionsForm';
 import FilterPreview from './FilterPreview';
 
 import { DEFAULT_FOLDERS } from './FilterActionsFormFolderRow';
+import { generateUID } from '../../../helpers';
 
 interface Props {
     filter?: Filter;
@@ -156,6 +157,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                     comparator: cond.Comparator.value,
                     values: cond.Values,
                     isOpen: true,
+                    id: generateUID('condition'),
                 })) || [],
             actions: {
                 labelAs: {
