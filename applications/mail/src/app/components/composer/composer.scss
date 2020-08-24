@@ -363,6 +363,9 @@
     width: 90%;
     height: 90%;
     max-height: 90%;
+    @include respond-to($breakpoint-small) {
+        height: auto;
+    }
 }
 
 /*
