@@ -226,7 +226,7 @@ const CalendarContainer = ({
         return getTitleDateString(view, range, utcDateRange, utcDate);
     }, [view, range, utcDate, utcDateRange]);
 
-    useAppTitle(calendarTitle, 'ProtonCalendar');
+    useAppTitle(calendarTitle);
 
     const [calendarsEvents, loadingEvents] = useCalendarsEvents(
         visibleCalendars,

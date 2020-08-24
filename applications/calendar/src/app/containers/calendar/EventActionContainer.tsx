@@ -177,7 +177,7 @@ const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) 
         run();
     }, []);
 
-    return <LoaderPage text={c('Info').t`Loading ProtonCalendar`} />;
+    return <LoaderPage />;
 };
 
 export default EventActionContainer;

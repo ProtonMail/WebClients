@@ -1,6 +1,5 @@
 import React from 'react';
 import { StandardPrivateApp, ErrorBoundary, LoaderPage, useApi, useCache, useAppTitle } from 'react-components';
-import { c } from 'ttag';
 import {
     UserModel,
     UserSettingsModel,
@@ -35,7 +34,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
     const cache = useCache();
 
-    useAppTitle('', 'ProtonCalendar');
+    useAppTitle('');
 
     return (
         <StandardPrivateApp
@@ -51,7 +50,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             }}
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENT_MODELS}
-            fallback={<LoaderPage text={c('Info').t`Loading ProtonCalendar`} />}
+            fallback={<LoaderPage />}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
         >

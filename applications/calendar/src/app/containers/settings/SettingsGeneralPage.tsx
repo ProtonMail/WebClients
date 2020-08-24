@@ -44,7 +44,6 @@ const SettingsGeneralPage = ({ setActiveSection, calendarUserSettings, location 
         <PrivateMainSettingsArea
             title={text}
             location={location}
-            appName="ProtonCalendar"
             setActiveSection={setActiveSection}
             subsections={subsections}
         >

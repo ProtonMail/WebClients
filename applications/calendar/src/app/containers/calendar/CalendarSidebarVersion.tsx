@@ -3,7 +3,7 @@ import { AppVersion } from 'react-components';
 import changelog from '../../../../CHANGELOG.md';
 
 const CalendarSidebarVersion = () => {
-    return <AppVersion appName="ProtonCalendar" changelog={changelog} />;
+    return <AppVersion changelog={changelog} />;
 };
 
 export default CalendarSidebarVersion;

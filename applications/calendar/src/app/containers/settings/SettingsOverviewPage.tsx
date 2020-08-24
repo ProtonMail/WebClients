@@ -14,7 +14,7 @@ export const getOverviewSettingsPage = () => {
 };
 
 const SettingsOverviewPage = () => {
-    useAppTitle(c('Title').t`Overview`, 'ProtonCalendar');
+    useAppTitle(c('Title').t`Overview`);
     return (
         <PrivateMainArea className="flex">
             <OverviewLayout
