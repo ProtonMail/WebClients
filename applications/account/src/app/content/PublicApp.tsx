@@ -5,7 +5,7 @@ import ForceRefreshContext from 'react-components/containers/forceRefresh/contex
 import { OnLoginCallbackArguments, ProtonLoginCallback } from 'react-components/containers/app/interface';
 import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
 import { produceFork, ProduceForkParameters } from 'proton-shared/lib/authentication/sessionForking';
-import { SSO_PATHS, UNPAID_STATE, APPS_CONFIGURATION, APPS } from 'proton-shared/lib/constants';
+import { SSO_PATHS, UNPAID_STATE } from 'proton-shared/lib/constants';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import {
@@ -97,8 +97,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     };
 
     const toApp = forkState?.app || APP_NAME;
-    // Not displaying the to app for account
-    const toAppName = toApp === APPS.PROTONACCOUNT ? '' : APPS_CONFIGURATION[toApp].name;
 
     return (
         <Switch>
@@ -112,14 +110,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                             <Route path={SSO_PATHS.SWITCH}>
                                 <AccountSwitchContainer
                                     activeSessions={activeSessions}
-                                    toAppName={toAppName}
+                                    toApp={toApp}
                                     onLogin={handleLogin}
                                     Layout={AccountPublicLayoutWrapper}
                                 />
                             </Route>
                             <Route path={SSO_PATHS.SIGNUP}>
                                 <AccountSignupContainer
-                                    toAppName={toAppName}
+                                    toApp={toApp}
                                     onLogin={handleLogin}
                                     Layout={AccountPublicLayoutWrapper}
                                 />
@@ -135,7 +133,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                             </Route>
                             <Route path={SSO_PATHS.LOGIN}>
                                 <AccountLoginContainer
-                                    toAppName={toAppName}
+                                    toApp={toApp}
                                     onLogin={handleLogin}
                                     Layout={AccountPublicLayoutWrapper}
                                 />
