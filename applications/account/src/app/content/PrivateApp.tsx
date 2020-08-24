@@ -31,7 +31,7 @@ const EVENT_MODELS = [
     PaymentMethodsModel,
 ];
 
-const PRELOAD_MODELS = [UserSettingsModel, UserModel, MailSettingsModel];
+const PRELOAD_MODELS = [UserSettingsModel, UserModel];
 
 interface Props {
     onLogout: () => void;
