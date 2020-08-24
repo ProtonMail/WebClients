@@ -3,12 +3,12 @@ import { MoveLink } from '../interfaces/link';
 
 export const queryUserShares = () => ({
     method: 'get',
-    url: 'drive/shares'
+    url: 'drive/shares',
 });
 
 export const queryShareMeta = (shareID: string) => ({
     method: `get`,
-    url: `drive/shares/${shareID}`
+    url: `drive/shares/${shareID}`,
 });
 
 export const queryRenameLink = (
@@ -18,7 +18,7 @@ export const queryRenameLink = (
 ) => ({
     method: `put`,
     url: `drive/shares/${shareID}/links/${linkID}/rename`,
-    data
+    data,
 });
 
 export const queryTrashList = (
@@ -27,22 +27,22 @@ export const queryTrashList = (
 ) => ({
     method: 'get',
     url: `drive/shares/${shareID}/trash`,
-    params: { Page, PageSize }
+    params: { Page, PageSize },
 });
 
 export const queryMoveLink = (shareID: string, linkID: string, data: MoveLink) => ({
     method: 'put',
     url: `drive/shares/${shareID}/links/${linkID}/move`,
-    data
+    data,
 });
 
 export const queryEvents = (shareID: string, eventID: string) => ({
     timeout: EXPENSIVE_REQUEST_TIMEOUT,
     url: `drive/shares/${shareID}/events/${eventID}`,
-    method: 'get'
+    method: 'get',
 });
 
 export const queryLatestEvents = (shareID: string) => ({
     url: `drive/shares/${shareID}/events/latest`,
-    method: 'get'
+    method: 'get',
 });
