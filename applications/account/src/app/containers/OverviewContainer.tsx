@@ -9,7 +9,7 @@ const OverviewContainer = () => {
     const [user] = useUser();
     const [organization] = useOrganization();
     const pages = getPages(user, organization).filter(({ to }) => to !== '/overview');
-    useAppTitle(c('Title').t`Overview`, 'ProtonAccount');
+    useAppTitle(c('Title').t`Overview`);
 
     return (
         <PrivateMainArea className="flex">
