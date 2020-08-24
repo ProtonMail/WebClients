@@ -149,7 +149,7 @@ const HeaderExpanded = ({
                     )}
                     <ItemAction element={message.data} className="mtauto mbauto" />
                 </span>
-                <div className="flex flex-items-center flex-item-noshrink onmobile-flex-self-start">
+                <div className="flex flex-items-center flex-item-noshrink">
                     {messageLoaded && !showDetails && (
                         <>
                             <span className="ml0-5 inline-flex is-appearing-content">
@@ -193,7 +193,7 @@ const HeaderExpanded = ({
                             <button
                                 type="button"
                                 onClick={toggleDetails}
-                                className="message-show-hide-link pm-button--link alignbaseline is-appearing-content"
+                                className="message-show-hide-link pm-button--link alignleft alignbaseline is-appearing-content"
                                 disabled={!messageLoaded}
                             >
                                 {showDetails ? c('Action').t`Hide details` : c('Action').t`Show details`}

@@ -83,6 +83,7 @@ const HeaderRecipientItem = ({
                 </Tooltip>
             }
             label={c('Label').t`Undisclosed Recipients`}
+            title={c('Label').t`Undisclosed Recipients`}
         />
     );
 };

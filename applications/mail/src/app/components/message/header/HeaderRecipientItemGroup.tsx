@@ -48,7 +48,7 @@ const HeaderRecipientItemGroup = ({
     const initial = getInitial(group.group?.Name);
 
     let addresses = group.recipients.map((recipient) => recipient.Address).join(', ');
-    const addressesTitle = addresses;
+    const allAddresses = addresses;
     if (group.recipients.length > 2) {
         const firstAddress = group.recipients[0].Address;
         const count = group.recipients.length - 1;
@@ -122,7 +122,7 @@ const HeaderRecipientItemGroup = ({
             label={label}
             showAddress={showAddress}
             address={addresses}
-            addressesTitle={addressesTitle}
+            title={`${label} ${allAddresses}`}
         />
     );
 };

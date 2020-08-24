@@ -138,11 +138,11 @@ const HeaderRecipientItemRecipient = ({
             label={label}
             showAddress={showAddress}
             address={<>&lt;{recipient.Address}&gt;</>}
-            addressesTitle={recipient.Address}
+            title={`${label} <${recipient.Address}>`}
             icon={
                 showLockIcon &&
                 icon && (
-                    <span className="flex pl0-25 pr0-25 flex-item-noshrink">
+                    <span className="flex pl0-25 pr0-25 flex-item-noshrink message-recipient-item-lockIcon">
                         <EncryptionStatusIcon {...icon} />
                     </span>
                 )
