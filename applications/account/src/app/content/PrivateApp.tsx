@@ -45,6 +45,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             locales={locales}
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENT_MODELS}
+            hasPrivateMemberKeyGeneration
+            hasReadableMemberKeyActivation
         >
             <PrivateLayout />
         </StandardPrivateApp>
