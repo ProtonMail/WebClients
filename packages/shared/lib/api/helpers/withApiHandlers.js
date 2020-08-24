@@ -1,8 +1,9 @@
-import { setRefreshCookies } from '../auth';
-import { createOnceHandler } from '../../apiHandlers';
 import { RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX, OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY } from '../../constants';
+import { createOnceHandler } from '../../apiHandlers';
 import { wait } from '../../helpers/promise';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
+import { withUIDHeaders } from '../../fetch/headers';
+import { setRefreshCookies } from '../auth';
 import { getApiError } from './apiErrorHelper';
 
 export const InactiveSessionError = () => {
@@ -49,53 +50,64 @@ const retryHandler = (e) => {
 };
 
 /**
+ * Handle refresh token. Happens when the access token has expired.
+ * Multiple calls can fail, so this ensures the refresh route is called once.
+ * Needs to re-handle errors here for that reason.
+ */
+const refresh = (call, UID, attempts, maxAttempts) => {
+    return call(withUIDHeaders(UID, setRefreshCookies())).catch((e) => {
+        if (attempts >= maxAttempts) {
+            throw e;
+        }
+
+        const { status, name } = e;
+
+        if (name === 'OfflineError') {
+            if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
+                throw e;
+            }
+            return wait(OFFLINE_RETRY_DELAY).then(() => refresh(call, UID, attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX));
+        }
+
+        if (name === 'TimeoutError') {
+            if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
+                throw e;
+            }
+            return refresh(call, UID, attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX);
+        }
+
+        if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+            return retryHandler(e).then(() => refresh(call, UID, attempts + 1, RETRY_ATTEMPTS_MAX));
+        }
+
+        throw e;
+    });
+};
+
+/**
  * Attach a catch handler to every API call to handle 401, 403, and other errors.
  * @param {function} call
- * @param {boolean} hasSession
+ * @param {string} UID
  * @param {function} onUnlock
  * @param {function} onError
  * @param {function} onVerification
  * @return {function}
  */
-export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
+export default ({ call, UID, onUnlock, onError, onVerification }) => {
     let loggedOut = false;
 
-    /**
-     * Handle refresh token. Happens when the access token has expired.
-     * Multiple calls can fail, so this ensures the refresh route is called once.
-     * Needs to re-handle errors here for that reason.
-     */
-    const refresh = (attempts, maxAttempts) =>
-        call(setRefreshCookies()).catch((e) => {
-            if (attempts >= maxAttempts) {
-                throw e;
-            }
-
-            const { status, name } = e;
-
-            if (name === 'OfflineError') {
-                if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
-                    throw e;
-                }
-                return wait(OFFLINE_RETRY_DELAY).then(() => refresh(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX));
-            }
-
-            if (name === 'TimeoutError') {
-                if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
-                    throw e;
-                }
-                return refresh(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX);
-            }
-
-            if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
-                return retryHandler(e).then(() => refresh(attempts + 1, RETRY_ATTEMPTS_MAX));
-            }
-
-            throw e;
-        });
-    const refreshHandler = createOnceHandler(() => {
-        return refresh(1, RETRY_ATTEMPTS_MAX);
-    });
+    const refreshHandlers = {};
+    const refreshHandler = (UID) => {
+        if (!refreshHandlers[UID]) {
+            refreshHandlers[UID] = createOnceHandler(() => {
+                return refresh(call, UID, 1, RETRY_ATTEMPTS_MAX).then((result) => {
+                    // Add an artificial delay to ensure cookies are properly updated to avoid race conditions
+                    return wait(50).then(() => result);
+                });
+            });
+        }
+        return refreshHandlers[UID]();
+    };
     const unlockHandler = createOnceHandler(onUnlock);
 
     return (options) => {
@@ -117,7 +129,7 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
 
                 const { status, name } = e;
 
-                const { ignoreHandler, silence = [] } = options || {};
+                const { ignoreHandler, silence = [], headers } = options || {};
 
                 if (name === 'OfflineError') {
                     if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
@@ -135,8 +147,15 @@ export default ({ call, hasSession, onUnlock, onError, onVerification }) => {
 
                 const ignoreUnauthorized =
                     Array.isArray(ignoreHandler) && ignoreHandler.includes(HTTP_ERROR_CODES.UNAUTHORIZED);
-                if (status === HTTP_ERROR_CODES.UNAUTHORIZED && hasSession && !ignoreUnauthorized) {
-                    return refreshHandler().then(
+                const requestUID = (headers && headers['x-pm-uid']) || UID;
+                // Sending a request with a UID but without an authorization header is when the public app makes
+                // authenticated requests (mostly for persisted sessions), and ignoring "login" or "signup" requests.
+                if (
+                    status === HTTP_ERROR_CODES.UNAUTHORIZED &&
+                    !ignoreUnauthorized &&
+                    (UID || (requestUID && !(headers && !!headers.Authorization)))
+                ) {
+                    return refreshHandler(requestUID).then(
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
                         (error) => {
                             // Any 4xx and the session is no longer valid, 429 is already handled in the refreshHandler
