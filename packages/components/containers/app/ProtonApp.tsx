@@ -177,7 +177,7 @@ const ProtonApp = ({ config, children }: Props) => {
         pathRef.current = '/';
 
         if (isSSOMode) {
-            return replaceUrl(getAppHref('/login', APPS.PROTONACCOUNT));
+            return replaceUrl(getAppHref('/switch?flow=logout', APPS.PROTONACCOUNT));
         }
         setAuthData({
             history: createHistory({ basename: getBasename() }),
