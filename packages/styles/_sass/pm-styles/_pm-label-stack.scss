@@ -10,12 +10,7 @@
 		border-radius: 1em;
 		background-color: var(--color, currentColor);
 		line-height: 1.25;
-		transition: .25s .5s easing(easeOutQuart), box-shadow 0s;
-
-		&:hover,
-		&:focus-within {
-			transition-delay: 0s;
-		}
+		transition: .25s easing(easeOutQuart), box-shadow 0s;
 
 		&-button,
 		&-delete {
@@ -62,12 +57,11 @@
 		flex-wrap: nowrap;
 
 		.label-stack-item {
-			margin: 0 1px;
+			margin: 0;
 
 			&:not(:first-child) {
 				--button-opacity: 0;
 				max-width: var(--item-narrow);
-				margin: 0;
 				transform: scale(var(--item-scale));
 			}
 		}
@@ -86,7 +80,6 @@
 					&:first-child:not(:hover):not(:focus-within) {
 						--button-opacity: 0;
 						max-width: var(--item-narrow);
-						margin: 0;
 						transform: scale(var(--item-scale));
 					}
 
@@ -94,7 +87,6 @@
 					&:not(:first-child):focus-within {
 						--button-opacity: 1;
 						max-width: var(--item-wide);
-						margin: 0 1px;
 						transform: scale(1);
 					}
 				}
