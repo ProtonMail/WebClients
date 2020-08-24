@@ -152,7 +152,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
 
         const callWithApiHandlers = withApiHandlers({
             call,
-            hasSession: !!UID,
+            UID,
             onError: handleError,
             onUnlock: handleUnlock,
             onVerification: handleVerification,
