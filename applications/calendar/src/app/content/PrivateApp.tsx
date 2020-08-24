@@ -52,6 +52,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENT_MODELS}
             fallback={<LoaderPage text={c('Info').t`Loading ProtonCalendar`} />}
+            hasPrivateMemberKeyGeneration
+            hasReadableMemberKeyActivation
         >
             <ErrorBoundary>
                 <MainContainer />
