@@ -32,7 +32,7 @@ const DriveSidebarDescription = () => {
     );
 };
 
-const DriveSidebarVersion = () => <AppVersion appName="ProtonDrive" />;
+const DriveSidebarVersion = () => <AppVersion />;
 
 const DriveSidebarLinks = () => (
     <>

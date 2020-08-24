@@ -44,7 +44,7 @@ function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; t
         }
     }, [folder]);
 
-    useAppTitle(c('Title').t`My files`, 'ProtonDrive');
+    useAppTitle(c('Title').t`My files`);
 
     return (
         <DriveContentProvider folder={folder}>

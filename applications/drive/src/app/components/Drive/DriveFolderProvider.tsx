@@ -1,5 +1,4 @@
 import React, { useState, createContext, useEffect, useContext } from 'react';
-import { c } from 'ttag';
 import { useLoading, LoaderPage } from 'react-components';
 import useDrive from '../../hooks/drive/useDrive';
 
@@ -34,7 +33,7 @@ const DriveFolderProvider = ({ children }: Props) => {
     }, []);
 
     if (loading) {
-        return <LoaderPage text={c('Info').t`Loading ProtonDrive`} />;
+        return <LoaderPage />;
     }
 
     return <DriveFolderContext.Provider value={{ folder, setFolder }}>{children}</DriveFolderContext.Provider>;

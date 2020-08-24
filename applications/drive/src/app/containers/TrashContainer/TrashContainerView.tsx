@@ -10,7 +10,7 @@ interface Props {
 }
 
 const TrashContainerView = ({ shareId }: Props) => {
-    useAppTitle(c('Title').t`Trash`, 'ProtonDrive');
+    useAppTitle(c('Title').t`Trash`);
 
     return (
         <TrashContentProvider shareId={shareId}>
