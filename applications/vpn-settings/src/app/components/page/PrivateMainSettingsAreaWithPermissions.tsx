@@ -57,7 +57,6 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
     return (
         <PrivateMainSettingsArea
             title={text}
-            appName="ProtonVPN"
             location={location}
             setActiveSection={setActiveSection}
             subsections={noPermissionChild ? [] : subsections}

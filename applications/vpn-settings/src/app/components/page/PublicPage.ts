@@ -7,7 +7,7 @@ type Props = {
 };
 
 const PublicPage = ({ children, title }: Props) => {
-    useAppTitle(title, 'ProtonVPN');
+    useAppTitle(title);
     return children;
 };
 

@@ -53,12 +53,7 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
     );
 
     const sidebar = (
-        <Sidebar
-            logo={logo}
-            expanded={expanded}
-            onToggleExpand={onToggleExpand}
-            version={<AppVersion appName="ProtonVPN" />}
-        >
+        <Sidebar logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} version={<AppVersion />}>
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
