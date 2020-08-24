@@ -127,7 +127,7 @@ const ContactViewProperty = ({
                         {!isOwnAddress && (
                             <Button onClick={handleSettings} className="ml0-5 pm-button--for-icon">
                                 <Tooltip title={c('Title').t`Email settings`}>
-                                    <Icon name="settings-singular" />
+                                    <Icon name="settings-singular" alt={c('Action').t`Email settings`} />
                                 </Tooltip>
                             </Button>
                         )}
@@ -137,7 +137,7 @@ const ContactViewProperty = ({
                                 contactEmails={[contactEmail]}
                             >
                                 <Tooltip title={c('Title').t`Contact group`}>
-                                    <Icon name="contacts-groups" />
+                                    <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
                                 </Tooltip>
                             </ContactGroupDropdown>
                         ) : (
@@ -146,7 +146,7 @@ const ContactViewProperty = ({
                                 className="ml0-5 pm-button--for-icon"
                             >
                                 <Tooltip title={c('Title').t`Contact group`}>
-                                    <Icon name="contacts-groups" />
+                                    <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
                                 </Tooltip>
                             </Button>
                         )}
