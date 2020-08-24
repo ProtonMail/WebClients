@@ -4,6 +4,8 @@ import { InvalidForkConsumeError } from 'proton-shared/lib/authentication/error'
 import { consumeFork, getConsumeForkParameters } from 'proton-shared/lib/authentication/sessionForking';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { traceError } from 'proton-shared/lib/helpers/sentry';
+
 import { useApi, useNotifications } from '../../hooks';
 import { ProtonLoginCallback } from './interface';
 import StandardLoadError from './StandardLoadError';
@@ -45,6 +47,7 @@ const SSOForkConsumer = ({ onLogin, onInvalidFork }: Props) => {
         run().catch((e) => {
             const errorMessage = getApiErrorMessage(e) || 'Unknown error';
             createNotification({ type: 'error', text: errorMessage });
+            traceError(e);
             console.error(e);
             setError(e);
         });

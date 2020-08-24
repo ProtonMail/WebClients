@@ -23,11 +23,17 @@ export const useGetUserKeysRaw = (): (() => Promise<CachedKey[]>) => {
             ? await decryptPrivateKey(OrganizationPrivateKey, mailboxPassword).catch(noop)
             : undefined;
 
+        const getKeyPasssword = ({ Token }: tsKey) => {
+            if (Token && organizationKey) {
+                return decryptMemberToken(Token, organizationKey);
+            }
+            return mailboxPassword;
+        };
+
         const process = async (Key: tsKey) => {
             try {
-                const { PrivateKey, Token } = Key;
-                const keyPassword =
-                    Token && organizationKey ? await decryptMemberToken(Token, organizationKey) : mailboxPassword;
+                const { PrivateKey } = Key;
+                const keyPassword = await getKeyPasssword(Key);
                 const privateKey = await decryptPrivateKey(PrivateKey, keyPassword);
                 return {
                     Key,

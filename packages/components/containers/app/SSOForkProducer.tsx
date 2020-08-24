@@ -12,6 +12,8 @@ import {
 } from 'proton-shared/lib/authentication/sessionForking';
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
 import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { traceError } from 'proton-shared/lib/helpers/sentry';
+
 import { useApi, useNotifications } from '../../hooks';
 import LoaderPage from './LoaderPage';
 import ModalsChildren from '../modals/Children';
@@ -62,6 +64,7 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
         run().catch((e) => {
             const errorMessage = getApiErrorMessage(e) || 'Unknown error';
             createNotification({ type: 'error', text: errorMessage });
+            traceError(e);
             console.error(e);
             setError(e);
         });
