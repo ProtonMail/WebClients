@@ -63,6 +63,7 @@ export interface Condition {
     values?: string[];
     error?: string;
     isOpen: boolean;
+    id: string;
 }
 
 export interface SimpleFilterModalModel {
