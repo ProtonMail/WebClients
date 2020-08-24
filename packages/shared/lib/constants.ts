@@ -96,7 +96,7 @@ export type APP_KEYS = keyof typeof APPS;
 export type APP_NAMES = typeof APPS[APP_KEYS];
 export const SSO_PATHS = {
     AUTHORIZE: '/authorize',
-    FORK: '/fork',
+    FORK: '/login',
     SWITCH: '/switch',
     LOGIN: '/login',
     RESET_PASSWORD: '/reset-password',
