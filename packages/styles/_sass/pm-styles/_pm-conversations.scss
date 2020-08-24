@@ -615,6 +615,20 @@ $conversation-icon-size: 3.2rem !default;
 			margin-top: .25em;
 		}
 	}
+
+	// display of email default none except when details
+	.message-recipient-item-address,
+	.message-recipient-item-label {
+		display: block;
+		@extend .ellipsis;
+	}
+	.message-recipient-item-lockIcon {
+		align-self: flex-end;
+		margin-bottom: .25em;
+	}
+
+
+
 }
 
 .message-detailed-header-extra {
