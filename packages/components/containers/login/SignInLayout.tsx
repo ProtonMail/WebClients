@@ -21,7 +21,7 @@ const SignInLayout = ({ children, title = '' }: Props) => {
     const domain = isVPN ? 'protonvpn.com' : 'protonmail.com';
     const staticURL = `https://${domain}`;
 
-    useAppTitle(title, isVPN ? 'ProtonVPN' : 'ProtonMail');
+    useAppTitle(title);
 
     return (
         <div className="pt1 pb1 pl2 pr2">

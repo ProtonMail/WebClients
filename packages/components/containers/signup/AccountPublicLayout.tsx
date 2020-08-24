@@ -38,7 +38,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
         ).t`Privacy policy`}</Href>
     );
 
-    useAppTitle(title, 'Proton');
+    useAppTitle(title);
 
     return (
         <div className="scroll-if-needed h100v">

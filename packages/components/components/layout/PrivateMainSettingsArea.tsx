@@ -9,16 +9,15 @@ import useActiveSection from './useActiveSection';
 
 interface Props extends SettingsPropsShared {
     title: string;
-    appName: string;
     children: React.ReactNode;
     subsections: SubSectionConfig[];
 }
 
-const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, appName, subsections }: Props) => {
+const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, subsections }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const [scrollTop, setScrollTop] = useState<number>(0);
 
-    useAppTitle(title, appName);
+    useAppTitle(title);
 
     useEffect(() => {
         if (mainAreaRef.current) {
