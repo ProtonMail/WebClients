@@ -10,35 +10,27 @@
 		border-radius: 1em;
 		background-color: var(--color, currentColor);
 		line-height: 1.25;
-		transition: .25s easing(easeOutQuart), box-shadow 0s;
 
 		&-button,
 		&-delete {
 			color: white;
-
-			&,
-			& > * {
-				transition: inherit;
-			}
 		}
 
 		&-button {
 			padding: 0 .5em .175em;
-
-			&-text {
-				opacity: var(--button-opacity, 1);
-			}
 		}
 
 		&-delete {
-			overflow: hidden;
 			margin-right: .5em;
 
 			&-icon {
 				display: block;
-				opacity: var(--button-opacity, 1);
 			}
 		}
+	}
+
+	&-overflow-count {
+		cursor: help;
 	}
 
 	&:not(.is-stacked) {
@@ -57,12 +49,38 @@
 		flex-wrap: nowrap;
 
 		.label-stack-item {
+			overflow: hidden;
 			margin: 0;
+			transition: transform .1s .2s easing(easeOutQuart),
+			            max-width .2s 0s easing(easeOutQuart);
+
+			&:hover,
+			&:focus-within,
+			&:first-child {
+				transition-delay: 0s, .075s;
+			}
 
 			&:not(:first-child) {
 				--button-opacity: 0;
 				max-width: var(--item-narrow);
 				transform: scale(var(--item-scale));
+			}
+
+			&-button-text,
+			&-delete-icon {
+				transition: opacity .2s .1s easing(easeOutQuart);
+			}
+
+			&-button-text {
+				opacity: var(--button-opacity, 1);
+			}
+
+			&-delete {
+				overflow: hidden;
+
+				&-icon {
+					opacity: var(--button-opacity, 1);
+				}
 			}
 		}
 
@@ -81,6 +99,7 @@
 						--button-opacity: 0;
 						max-width: var(--item-narrow);
 						transform: scale(var(--item-scale));
+						transition-delay: .2s, 0s;
 					}
 
 					&:not(:first-child):hover,
