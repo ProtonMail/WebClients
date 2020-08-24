@@ -36,7 +36,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONACCOUNT]: {
         publicPath: '',
         subdomain: 'account',
-        name: 'ProtonAccount',
+        name: 'Proton Account',
         clientID: 'Web',
         icon: 'protonaccount',
     },
