@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useMemo, useRef, useState } from 'react';
 import * as History from 'history';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
-import { PAYMENT_METHOD_TYPES, TOKEN_TYPES } from 'proton-shared/lib/constants';
+import { APP_NAMES, APPS, PAYMENT_METHOD_TYPES, TOKEN_TYPES } from 'proton-shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { c } from 'ttag';
@@ -46,7 +46,7 @@ import SignupCreatingAccount from './SignupCreatingAccount';
 import { Payment, PaymentParameters } from '../payments/interface';
 import { ChallengeResult } from '../../components/challenge/ChallengeFrame';
 import getSignupErrors from './helpers/getSignupErrors';
-import { hasPaidPlan } from './helpers/helper';
+import { getToAppName, hasPaidPlan } from './helpers/helper';
 import { handlePaymentToken } from '../payments/paymentTokenHelper';
 import handleCreateUser from './helpers/handleCreateUser';
 import handleCreateExternalUser from './helpers/handleCreateExternalUser';
@@ -58,7 +58,7 @@ import OneAccountIllustration from '../illustration/OneAccountIllustration';
 interface Props {
     onLogin: OnLoginCallback;
     Layout: FunctionComponent<AccountPublicLayoutProps>;
-    toAppName?: string;
+    toApp?: APP_NAMES;
 }
 
 const {
@@ -87,7 +87,14 @@ const getSearchParams = (search: History.Search) => {
     return { currency, cycle, preSelectedPlan, service: service ? SERVICES[service] : undefined };
 };
 
-const AccountSignupContainer = ({ toAppName, onLogin, Layout }: Props) => {
+const EXTERNAL_SIGNUP_DISABLED: APP_NAMES[] = [
+    APPS.PROTONMAIL,
+    APPS.PROTONMAIL_SETTINGS,
+    APPS.PROTONCONTACTS,
+    APPS.PROTONCALENDAR,
+];
+
+const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
     const history = useHistory();
     const { currency, cycle, preSelectedPlan, service } = useMemo(() => {
         return getSearchParams(history.location.search);
@@ -357,12 +364,14 @@ const AccountSignupContainer = ({ toAppName, onLogin, Layout }: Props) => {
 
         const handleSubmit = step === ACCOUNT_CREATION_EMAIL ? handleSubmitEmail : handleSubmitUsername;
 
-        const forkOrQueryApp = toAppName || service;
+        const forkOrQueryApp = toApp || service;
+        const toAppName = getToAppName(forkOrQueryApp);
+        const disableExternalSignup = forkOrQueryApp && EXTERNAL_SIGNUP_DISABLED.includes(forkOrQueryApp);
 
         return (
             <Layout
                 title={c('Title').t`Create your Proton Account`}
-                subtitle={forkOrQueryApp ? c('Info').t`to continue to ${forkOrQueryApp}` : undefined}
+                subtitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
                 aside={<OneAccountIllustration />}
             >
                 <SignupAccountForm
@@ -375,6 +384,7 @@ const AccountSignupContainer = ({ toAppName, onLogin, Layout }: Props) => {
                         withLoading(handleSubmit());
                     }}
                     loading={loading}
+                    hasExternalSignup={!disableExternalSignup}
                 />
             </Layout>
         );

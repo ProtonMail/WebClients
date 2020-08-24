@@ -1,13 +1,14 @@
 import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
+import { APPS } from 'proton-shared/lib/constants';
 import { SIGNUP_STEPS } from './constants';
 
-export enum SERVICES {
-    mail = 'ProtonMail',
-    calendar = 'ProtonCalendar',
-    contacts = 'ProtonContacts',
-    drive = 'ProtonDrive',
-    vpn = 'ProtonVPN',
-}
+export const SERVICES = {
+    mail: APPS.PROTONMAIL,
+    calendar: APPS.PROTONCALENDAR,
+    contacts: APPS.PROTONCONTACTS,
+    drive: APPS.PROTONDRIVE,
+    vpn: APPS.PROTONVPN_SETTINGS,
+};
 export type SERVICES_KEYS = keyof typeof SERVICES;
 
 export interface PlanIDs {

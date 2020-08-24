@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { APP_NAMES } from 'proton-shared/lib/constants';
 
 import { InlineLinkButton, PrimaryButton, Label } from '../../components';
 import { useLoading, useModals, useNotifications } from '../../hooks';
@@ -20,13 +21,14 @@ import LoginRecoveryCodeInput from './LoginRecoveryCodeInput';
 import LoginUnlockInput from './LoginUnlockInput';
 import SignupLabelInputRow from '../signup/SignupLabelInputRow';
 import SignupSubmitRow from '../signup/SignupSubmitRow';
+import { getToAppName } from '../signup/helpers/helper';
 
 interface Props extends UseLoginProps {
     Layout: FunctionComponent<AccountPublicLayoutProps>;
-    toAppName?: string;
+    toApp?: APP_NAMES;
 }
 
-const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toAppName }: Props) => {
+const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const {
@@ -81,6 +83,8 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toAppNam
                 }
             />
         );
+
+        const toAppName = getToAppName(toApp);
 
         return (
             <Layout

@@ -28,12 +28,13 @@ interface Props {
     onChange: (model: SignupModel) => void;
     onSubmit: (payload: ChallengeResult) => void;
     errors: SignupErrors;
+    hasExternalSignup?: boolean;
     loading: boolean;
 }
 
 const { ACCOUNT_CREATION_USERNAME, ACCOUNT_CREATION_EMAIL } = SIGNUP_STEPS;
 
-const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading }: Props) => {
+const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExternalSignup }: Props) => {
     const challengeRefLogin = useRef<ChallengeRef>();
     const [loadingChallenge, withLoadingChallenge] = useLoading();
     const [challengeLoading, setChallengeLoading] = useState(true);
@@ -95,10 +96,12 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading }: Props
                             <span className="pt0-75 right-icon absolute">@{availableDomain}</span>
                         </div>
                     </Challenge>
-                    <InlineLinkButton
-                        id="existing-email-button"
-                        onClick={() => onChange({ ...model, username: '', step: ACCOUNT_CREATION_EMAIL })}
-                    >{c('Action').t`Use your current email address instead`}</InlineLinkButton>
+                    {hasExternalSignup ? (
+                        <InlineLinkButton
+                            id="existing-email-button"
+                            onClick={() => onChange({ ...model, username: '', step: ACCOUNT_CREATION_EMAIL })}
+                        >{c('Action').t`Use your current email address instead`}</InlineLinkButton>
+                    ) : null}
                 </>
             );
             return (

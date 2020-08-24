@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { useHistory } from 'react-router-dom';
+import { APP_NAMES } from 'proton-shared/lib/constants';
 
 import { resumeSession, getActiveSessions } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSession, removePersistedSession } from 'proton-shared/lib/authentication/persistedSessionStorage';
@@ -16,15 +17,16 @@ import { LinkButton, Loader, LoaderIcon } from '../../components';
 import { useApi, useLoading, useNotifications } from '../../hooks';
 import { OnLoginCallbackArguments } from '../app/interface';
 import { Props as AccountLayoutProps } from '../signup/AccountPublicLayout';
+import { getToAppName } from '../signup/helpers/helper';
 
 interface Props {
     Layout: FunctionComponent<AccountLayoutProps>;
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
-    toAppName?: string;
+    toApp?: APP_NAMES;
     activeSessions?: LocalSessionResponse[];
 }
 
-const AccountSwitchContainer = ({ Layout, toAppName, onLogin, activeSessions }: Props) => {
+const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Props) => {
     const history = useHistory();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -125,6 +127,8 @@ const AccountSwitchContainer = ({ Layout, toAppName, onLogin, activeSessions }: 
             );
         });
     };
+
+    const toAppName = getToAppName(toApp);
 
     return (
         <Layout
