@@ -63,6 +63,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 ContactsModel,
                 ContactEmailsModel
             ]}
+            hasPrivateMemberKeyGeneration
+            hasReadableMemberKeyActivation
         >
             <MessageProvider>
                 <ConversationProvider>
