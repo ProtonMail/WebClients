@@ -2,8 +2,18 @@
  * Choose account SSO
  */
 
+
+
 .button-account-container {
 	border: 1px solid var(--bordercolor-input, $pm-global-muted); // inconsistent with borders...
+	max-height: 50vh;
+	@include respond-to($breakpoint-small) {
+		max-height: none;
+	}
+}
+
+.button-account-container-inner {
+	border-right: 1px solid var(--bordercolor-input, $pm-global-muted); // inconsistent with borders...
 }
 
 .button-account {
@@ -11,6 +21,7 @@
     &-login {
 		transition: opacity .35s easing(easeInOut), visibility 0s;
 		opacity: 0;
+		width: 0;
 		transition-delay: 0s, .35s;
 	}
 
@@ -21,6 +32,7 @@
 
 		.button-account-login {
 			opacity: 1;
+			width: auto;
 			transition-delay: 0s;
 		}
 
