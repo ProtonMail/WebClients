@@ -117,3 +117,21 @@ export const updateThemeType = (ThemeType) => ({
     method: 'put',
     data: { ThemeType },
 });
+
+export const updateWeekStart = (WeekStart) => ({
+    url: 'settings/weekstart',
+    method: 'put',
+    data: { WeekStart },
+});
+
+export const updateDateFormat = (DateFormat) => ({
+    url: 'settings/dateformat',
+    method: 'put',
+    data: { DateFormat },
+});
+
+export const updateTimeFormat = (TimeFormat) => ({
+    url: 'settings/timeformat',
+    method: 'put',
+    data: { TimeFormat },
+});
