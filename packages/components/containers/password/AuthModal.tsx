@@ -4,13 +4,13 @@ import { srpAuth } from 'proton-shared/lib/srp';
 import { useApi } from '../../hooks';
 import AskAuthModal from './AskAuthModal';
 
-interface Props {
+interface Props<T> {
     onClose?: () => void;
     onError?: (error: Error) => void;
-    onSuccess: (data: { password: string; totp: string; result: any }) => void;
+    onSuccess: (data: { password: string; totp: string; result: T }) => void;
     config: any;
 }
-const AuthModal = ({ onClose, onError, onSuccess, config, ...rest }: Props) => {
+const AuthModal = <T,>({ onClose, onError, onSuccess, config, ...rest }: Props<T>) => {
     const api = useApi();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
@@ -19,7 +19,7 @@ const AuthModal = ({ onClose, onError, onSuccess, config, ...rest }: Props) => {
         try {
             setLoading(true);
 
-            const result = await srpAuth({
+            const result = await srpAuth<T>({
                 api,
                 credentials: { password, totp },
                 config,

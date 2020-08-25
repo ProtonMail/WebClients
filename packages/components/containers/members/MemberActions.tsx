@@ -2,13 +2,19 @@ import React from 'react';
 import { c } from 'ttag';
 import { authMember, removeMember, updateRole, privatizeMember } from 'proton-shared/lib/api/members';
 import { revokeSessions } from 'proton-shared/lib/api/memberSessions';
-import { MEMBER_PRIVATE, MEMBER_ROLE } from 'proton-shared/lib/constants';
+import { isSSOMode, isStandaloneMode, MEMBER_PRIVATE, MEMBER_ROLE, APPS } from 'proton-shared/lib/constants';
 import memberLogin from 'proton-shared/lib/authentication/memberLogin';
 import { Member, Address, Organization } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { persistSessionWithPassword } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { getAppHref } from 'proton-shared/lib/apps/helper';
+import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
+import { MemberAuthResponse } from 'proton-shared/lib/authentication/interface';
+
 import { ConfirmModal, Alert, DropdownActions, ErrorButton } from '../../components';
 import { useLoading, useModals, useApi, useAuthentication, useNotifications, useEventManager } from '../../hooks';
+
 import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
 
@@ -34,12 +40,33 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
 
     const login = async () => {
         const apiConfig = authMember(member.ID);
-        const {
-            result: { UID },
-        } = await new Promise((resolve, reject) => {
-            createModal(<AuthModal onClose={reject} onSuccess={resolve} config={apiConfig} />);
+        const { UID, LocalID } = await new Promise((resolve, reject) => {
+            createModal(
+                <AuthModal<MemberAuthResponse>
+                    onClose={reject}
+                    onSuccess={({ result }) => resolve(result)}
+                    config={apiConfig}
+                />
+            );
         });
 
+        if (isSSOMode) {
+            await persistSessionWithPassword({
+                api: <T,>(config: any) => api<T>(withUIDHeaders(UID, config)),
+                keyPassword: authentication.getPassword(),
+                LocalID,
+                UID,
+                isMember: true,
+            });
+            window.open(getAppHref('/overview', APPS.PROTONACCOUNT, LocalID));
+            return;
+        }
+
+        if (isStandaloneMode) {
+            return;
+        }
+
+        // Legacy mode
         const url = `${location.origin}/login/sub`;
         await memberLogin({ UID, mailboxPassword: authentication.getPassword(), url } as any);
     };
