@@ -87,39 +87,48 @@ const API_TARGETS = {
     ...ENV_CONFIG.api
 };
 
-const SECURE_URL = ENV_CONFIG.secure;
-
 /**
  * Yargs creates an array if you gives many flags
  * Ensure to take only the last one
  * @param  {String|Array} api
- * @return {String}
+ * @return {Object}
  */
 const getApi = (api) => {
-    if (!Array.isArray(api)) {
-        return api || 'proxy';
+    const parse = (api) => {
+        if (!Array.isArray(api)) {
+            return api || 'proxy';
+        }
+
+        const { length, [length - 1]: latest } = api.filter(Boolean);
+        return latest || 'proxy';
+    };
+
+    const value = parse(api);
+
+    // We can do --api=https://mail.protonmail.com/api and it's only for dev, so we can stop here
+    if (value.includes('/api')) {
+        return { value, url: value };
     }
 
-    const { length, [length - 1]: latest } = api.filter(Boolean);
-    return latest || 'proxy';
+    // Because we can "extend" via + -> --api dev+proxy = dev env but with /api as API url
+    const urlList = value.split('+');
+    const url = urlList.reduce((apiUrl, apiKey) => API_TARGETS[apiKey] || apiUrl, API_TARGETS.prod);
+
+    return { value, url, first: urlList[0] };
 };
 
 function main({ api = 'dev' }) {
-    const apiKeys = getApi(api).split('+');
-    const apiUrl = apiKeys.reduce((apiUrl, apiKey) => API_TARGETS[apiKey] || apiUrl, API_TARGETS.prod);
-    const secureUrl = apiKeys.reduce((apiUrl, apiKey) => SECURE_URL[apiKey] || apiUrl, SECURE_URL.prod);
-
+    const { url: apiUrl, first: firstApi } = getApi(api);
     const json = {
         clientId: ENV_CONFIG.app.clientId || 'WebMail',
         appName: ENV_CONFIG.app.appName || ENV_CONFIG.pkg.name || 'protonmail',
         version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || '3.16.20',
         locales: LOCALES,
-        secureUrl,
         apiUrl
     };
 
-    const firstApi = apiKeys[0]; // api config merging for sentry NOT allowed
-    const { COMMIT_RELEASE = '', SENTRY_DSN = '' } = prepareSentry(ENV_CONFIG, firstApi);
+    // When we give to --api an url it means -> dev mode so osef of sentry
+    const { COMMIT_RELEASE = '', SENTRY_DSN = '' } = firstApi ? prepareSentry(ENV_CONFIG, firstApi) : {};
 
     json.sentry = {
         release: COMMIT_RELEASE,
@@ -133,7 +142,6 @@ function main({ api = 'dev' }) {
     export const APP_VERSION = '${json.version}';
     export const APP_NAME = '${json.appName}';
     export const API_URL = '${apiUrl}';
-    export const SECURE_URL = '${secureUrl}';
     export const LOCALES = ${JSON.stringify(LOCALES)};
     export const API_VERSION = '3';
     export const DATE_VERSION = '${new Date().toGMTString()}';
