@@ -13,12 +13,12 @@ import { classnames, generateUID } from '../../../helpers';
 
 import FilterConditionsFormRow from './FilterConditionsFormRow';
 
-const conditionTemplate = {
+const generateNewCondition = () => ({
     type: ConditionType.SELECT,
     comparator: ConditionComparator.CONTAINS,
     isOpen: true,
     id: generateUID('condition'),
-};
+});
 
 interface Props {
     isNarrow: boolean;
@@ -29,12 +29,12 @@ interface Props {
 
 const FilterConditionsForm = ({ isNarrow, model, isDark, onChange }: Props) => {
     const [conditions, setConditions] = useState<Condition[]>(
-        model.conditions.length ? model.conditions : [conditionTemplate]
+        model.conditions.length ? model.conditions : [generateNewCondition()]
     );
 
     const onAddCondition = () => {
         setConditions((conditions: Condition[]) => {
-            return [...conditions, { ...conditionTemplate }];
+            return [...conditions, { ...generateNewCondition() }];
         });
     };
 
