@@ -160,7 +160,10 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
                         (error) => {
                             // Any 4xx and the session is no longer valid, 429 is already handled in the refreshHandler
                             if ((error.status >= 400 && error.status <= 499) || error.name === 'RetryAfterError') {
-                                loggedOut = true;
+                                // Disable any further requests on this session if it was created with a UID
+                                if (UID) {
+                                    loggedOut = true;
+                                }
                                 return onError(InactiveSessionError());
                             }
                             return onError(error);
