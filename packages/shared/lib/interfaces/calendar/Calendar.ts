@@ -32,8 +32,9 @@ export enum SETTINGS_DATE_FORMAT {
 }
 
 export enum SETTINGS_TIME_FORMAT {
-    H24 = 0,
-    H12 = 1,
+    LOCALE_DEFAULT = 0,
+    H24 = 1,
+    H12 = 2,
 }
 
 export interface CalendarUserSettings {
