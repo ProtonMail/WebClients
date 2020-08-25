@@ -118,6 +118,26 @@ function useFiles() {
         5
     );
 
+    const uploadEmptyFolder = (
+        shareId: string,
+        ParentLinkID: string,
+        folderName: string,
+        { checkNameAvailability = true }: { checkNameAvailability?: boolean } = {}
+    ) => {
+        const lowercaseName = folderName.toLowerCase();
+
+        return queuedFunction(`upload_empty_folder:${lowercaseName}`, async () => {
+            let adjustedFolderName = folderName;
+
+            if (checkNameAvailability) {
+                const checkResult = await findAvailableName(shareId, ParentLinkID, adjustedFolderName);
+
+                adjustedFolderName = checkResult.filename;
+            }
+            return createNewFolder(shareId, ParentLinkID, adjustedFolderName);
+        })();
+    };
+
     const uploadDriveFile = async (
         shareId: string,
         parentLinkID: string | Promise<string>,
@@ -388,26 +408,19 @@ function useFiles() {
                                 const path = parent ? folders.join('/') : folder;
 
                                 if (!folderPromises.get(path)) {
-                                    let promise: Promise<any>;
                                     const parentFolderPromise = folderPromises.get(parent);
 
-                                    if (parentFolderPromise) {
-                                        // Wait for parent folders to be created first
-                                        promise = parentFolderPromise.then(({ Folder: { ID } }) =>
-                                            createNewFolder(shareId, ID, folder)
-                                        );
-                                    } else {
-                                        // If root folder in a tree, it's name must be checked, all other folders are new ones
-                                        promise = parent
-                                            ? createNewFolder(shareId, ParentLinkID, folder)
-                                            : findAvailableName(
-                                                  shareId,
-                                                  ParentLinkID,
-                                                  folder
-                                              ).then(({ filename: adjustedName }) =>
-                                                  createNewFolder(shareId, ParentLinkID, adjustedName)
-                                              );
-                                    }
+                                    // Wait for parent folders to be created first
+                                    const promise = parentFolderPromise
+                                        ? parentFolderPromise.then(({ Folder }) =>
+                                              uploadEmptyFolder(shareId, Folder.ID, folder, {
+                                                  checkNameAvailability: false,
+                                              })
+                                          )
+                                        : // If root folder in a tree, it's name must be checked, all other folders are new ones
+                                          uploadEmptyFolder(shareId, ParentLinkID, folder, {
+                                              checkNameAvailability: !parent,
+                                          });
 
                                     // Fetch events to get keys required for encryption in the new folder
                                     folderPromises.set(
