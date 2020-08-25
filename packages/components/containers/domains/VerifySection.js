@@ -7,11 +7,12 @@ import { useNotifications } from '../../hooks';
 const VerifySection = ({ domain }) => {
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`Verify code copied to clipboard!` });
+    const domainName = domain.Name;
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
                 {c('Info for domain modal')
-                    .t`For security reasons, we need to verify that you are the owner of $domain. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.`}
+                    .t`For security reasons, we need to verify that you are the owner of ${domainName}. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>
             <Alert type="warning">
                 {c('Warning for domain modal')
