@@ -5,4 +5,5 @@ export interface PersistedSessionBlob {
 export interface PersistedSession {
     UID: string;
     blob?: string;
+    isMember?: boolean;
 }

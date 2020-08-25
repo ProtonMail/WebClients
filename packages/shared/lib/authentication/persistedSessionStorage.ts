@@ -78,10 +78,11 @@ export const getDecryptedPersistedSessionBlob = async (
 export const setPersistedSessionWithBlob = async (
     localID: number,
     sessionKey: SessionKey,
-    data: { UID: string; keyPassword: string }
+    data: { UID: string; keyPassword: string; isMember?: boolean }
 ) => {
     const persistedSession: PersistedSession = {
         UID: data.UID,
+        isMember: data.isMember,
         blob: await getEncryptedBlob(sessionKey, JSON.stringify({ keyPassword: data.keyPassword })),
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));

@@ -71,6 +71,27 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
     }
 };
 
+interface PersistSessionWithPasswordArgs {
+    api: Api;
+    keyPassword: string;
+    UID: string;
+    LocalID: number;
+    isMember?: boolean;
+}
+export const persistSessionWithPassword = async ({
+    api,
+    keyPassword,
+    UID,
+    LocalID,
+    isMember,
+}: PersistSessionWithPasswordArgs) => {
+    const rawSessionKey = getRandomValues(new Uint8Array(32));
+    const sessionKey = getSessionKey(rawSessionKey);
+    const serializedSessionKey = serializeUint8Array(rawSessionKey);
+    await api<LocalKeyResponse>(setLocalKey(serializedSessionKey));
+    await setPersistedSessionWithBlob(LocalID, sessionKey, { UID, keyPassword, isMember });
+};
+
 interface PersistLoginArgs {
     api: Api;
     keyPassword?: string;
@@ -87,18 +108,17 @@ export const persistSession = async ({
     AccessToken,
     RefreshToken,
 }: PersistLoginArgs) => {
+    const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
+
     if (isSSOMode) {
         if (keyPassword) {
-            const rawSessionKey = getRandomValues(new Uint8Array(32));
-            const sessionKey = getSessionKey(rawSessionKey);
-            const serializedSessionKey = serializeUint8Array(rawSessionKey);
-            await api<LocalKeyResponse>(withAuthHeaders(UID, AccessToken, setLocalKey(serializedSessionKey)));
-            await setPersistedSessionWithBlob(LocalID, sessionKey, { UID, keyPassword });
+            await persistSessionWithPassword({ api: authApi, UID, LocalID, keyPassword });
         } else {
             setPersistedSession(LocalID, { UID });
         }
     }
-    await api(withAuthHeaders(UID, AccessToken, setCookies({ UID, RefreshToken, State: getRandomString(24) })));
+
+    await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24) }));
 };
 
 export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionResponse[] };

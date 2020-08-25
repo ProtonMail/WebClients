@@ -82,3 +82,8 @@ export interface ModulusResponse {
 export interface LocalKeyResponse {
     ClientKey: string;
 }
+
+export interface MemberAuthResponse {
+    UID: string;
+    LocalID: number;
+}
