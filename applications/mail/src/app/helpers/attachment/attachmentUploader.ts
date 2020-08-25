@@ -98,11 +98,12 @@ const uploadFile = (
     const ContentID = inline ? cid || generateCid(generateProtonWebUID(), message.data?.Sender?.Address || '') : '';
 
     const publicKeys = message.publicKeys && message.publicKeys.length > 0 ? [message.publicKeys[0]] : [];
+    const privateKeys = message.privateKeys && message.privateKeys.length > 0 ? [message.privateKeys[0]] : [];
 
     let packets: Packets;
 
     const getParams = async () => {
-        packets = await encryptFile(file, inline, publicKeys, message.privateKeys || []);
+        packets = await encryptFile(file, inline, publicKeys, privateKeys);
 
         return uploadAttachment({
             Filename: packets.Filename || filename,

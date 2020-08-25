@@ -6,6 +6,8 @@ import {
     DecryptResultPmcrypto,
     decryptSessionKey,
     getMessage,
+    getSignature,
+    OpenPGPKey,
     SessionKey,
     VERIFICATION_STATUS
 } from 'pmcrypto';
@@ -22,14 +24,18 @@ import { MessageExtended } from '../../models/message';
 
 export const decrypt = async (
     encryptedBinaryBuffer: ArrayBuffer,
-    sessionKey: SessionKey
-): Promise<DecryptResultPmcrypto> => {
+    sessionKey: SessionKey,
+    signature?: string,
+    publicKeys?: OpenPGPKey | OpenPGPKey[]
+): Promise<DecryptResultPmcrypto & { data: Uint8Array | ReadableStream<Uint8Array> }> => {
     const encryptedBinary = new Uint8Array(encryptedBinaryBuffer);
 
     try {
         return decryptMessage({
             message: await getMessage(encryptedBinary),
             sessionKeys: [sessionKey],
+            signature: signature ? await getSignature(signature) : undefined,
+            publicKeys,
             format: 'binary'
         });
     } catch (err) {
@@ -79,7 +85,9 @@ export const getDecryptedAttachment = async (
     const encryptedBinary = await getRequest(attachment, api);
     try {
         const sessionKey = await getSessionKey(attachment, message);
-        return await decrypt(encryptedBinary, sessionKey);
+        // verify attachment signature only when sender is verified
+        const publicKeys = message.senderVerified ? message.senderPinnedKeys : undefined;
+        return await decrypt(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
     } catch (error) {
         const blob = concatArrays([
             binaryStringToArray(decodeBase64(attachment.KeyPackets) || ''),
@@ -110,13 +118,10 @@ export const getAndVerify = async (
         };
     }
 
-    if (cache.has(attachmentID)) {
+    if (!reverify && cache.has(attachmentID)) {
         attachmentdata = cache.get(attachmentID) as DecryptResultPmcrypto;
     } else {
         attachmentdata = await getDecryptedAttachment(attachment, message, api);
-        if (reverify) {
-            // await verify(attachment, newAttachment, message, signatures, signatureCache));
-        }
     }
 
     cache.set(attachmentID, attachmentdata);

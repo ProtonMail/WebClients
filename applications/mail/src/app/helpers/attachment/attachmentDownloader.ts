@@ -2,16 +2,18 @@ import JSZip from 'jszip';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { Api } from 'proton-shared/lib/interfaces';
-
-import { MessageExtended, Message, MessageExtendedWithData } from '../../models/message';
-import { Attachment } from '../../models/attachment';
-import { getAndVerify } from './attachmentLoader';
+import { VERIFICATION_STATUS } from '../../constants';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
+import { Attachment } from '../../models/attachment';
+
+import { Message, MessageExtended, MessageExtendedWithData } from '../../models/message';
+import { getAndVerify } from './attachmentLoader';
 
 export interface Download {
     attachment: Attachment;
     data: Uint8Array;
     isError?: boolean;
+    verified: VERIFICATION_STATUS;
 }
 
 /**
@@ -24,10 +26,12 @@ export const formatDownload = async (
     api: Api
 ): Promise<Download> => {
     try {
-        const { data } = await getAndVerify(attachment, message, false, cache, api);
+        const reverify = !!(message.senderVerified && message.senderPinnedKeys?.length);
+        const { data, verified } = await getAndVerify(attachment, message, reverify, cache, api);
         return {
             attachment,
-            data: data as Uint8Array
+            data: data as Uint8Array,
+            verified
         };
     } catch (error) {
         // If the decryption fails we download the encrypted version
@@ -39,7 +43,8 @@ export const formatDownload = async (
                     ID: attachment.ID
                 },
                 data: error.binary,
-                isError: true
+                isError: true,
+                verified: VERIFICATION_STATUS.NOT_VERIFIED
             };
         }
         throw error;

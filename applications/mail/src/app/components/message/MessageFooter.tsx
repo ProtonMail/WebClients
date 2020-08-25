@@ -79,7 +79,12 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
                 </span>
                 {showActions && numAttachments > 0 && (
                     <div>
-                        <button type="button" onClick={handleDownloadAll} className="link strong mr0-5">
+                        <button
+                            type="button"
+                            onClick={handleDownloadAll}
+                            className="link strong mr0-5"
+                            disabled={!message.initialized}
+                        >
                             {c('Download attachments').t`Download all`}
                         </button>
                         {(showInstant || showLoader) && (

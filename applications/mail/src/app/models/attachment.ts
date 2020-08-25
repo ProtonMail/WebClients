@@ -8,7 +8,7 @@ export interface Attachment {
     data?: any;
     Headers?: { [key: string]: string };
     Encrypted?: number;
-    Signature?: any;
+    Signature?: string;
 }
 
 export interface AttachmentMime {

@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { Icon, classnames } from 'react-components';
-
-import { MessageExtended } from '../../models/message';
-import { Attachment } from '../../models/attachment';
+import React, { useState } from 'react';
+import { classnames, Icon } from 'react-components';
+import { c } from 'ttag';
+import { VERIFICATION_STATUS } from '../../constants';
 import { isEmbeddedLocal } from '../../helpers/embedded/embeddeds';
 import { useDownload } from '../../hooks/useDownload';
+import { Attachment } from '../../models/attachment';
+
+import { MessageExtended } from '../../models/message';
 
 // Reference: Angular/src/templates/attachments/attachmentElement.tpl.html
 
@@ -35,6 +37,18 @@ const getInnerFileIconType = ({ MIMEType = '' }: Attachment) => {
     return INNER_MAP_CLASSNAME[key || ''] || '';
 };
 
+const getSenderVerificationString = (verified: VERIFICATION_STATUS) => {
+    if (verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+        const str = c('Attachment signature verification').t`Sender verification failed`;
+        return ` - ${str}`;
+    }
+    if (verified === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        const str = c('Attachment signature verification').t`Sender verification passed`;
+        return ` - ${str}`;
+    }
+    return '';
+};
+
 interface Props {
     attachment: Attachment;
     message: MessageExtended;
@@ -42,7 +56,7 @@ interface Props {
 
 const MessageAttachment = ({ attachment, message }: Props) => {
     const [showLoader, setShowLoader] = useState(false);
-    const [showInstant, setShowInstant] = useState(false);
+    const [attachmentVerified, setAttachmentVerified] = useState(VERIFICATION_STATUS.NOT_VERIFIED);
     const download = useDownload();
 
     const humanAttachmentSize = humanSize(attachment.Size);
@@ -60,28 +74,31 @@ const MessageAttachment = ({ attachment, message }: Props) => {
     const clickHandler = async () => {
         setShowLoader(true);
         try {
-            await download(message, attachment);
+            const verified = await download(message, attachment);
+            setAttachmentVerified(verified);
         } catch {
             // Notification is handled by the hook
         } finally {
             setShowLoader(false);
-            setShowInstant(true);
         }
     };
 
-    const icon = showLoader ? '' : showInstant ? 'download' : outerIcon;
-    const showInner = !single && !showLoader && !showInstant;
+    const icon = showLoader ? '' : outerIcon;
+    const title = `${attachment.Name} (${humanAttachmentSize})` + getSenderVerificationString(attachmentVerified);
+
+    if (!message.initialized) {
+        return null;
+    }
 
     return (
         <li className="mr0-5 mt0-5">
             <a
                 className="message-attachment inline-flex flex-nowrap mw100 pm-button listAttachments-item relative no-pointer-events-children"
-                title={`${attachment.Name} ${humanAttachmentSize}`}
+                title={title}
                 onClick={clickHandler}
             >
                 <span className="flex flex-item-noshrink message-attachmentIcon relative flex p0-5">
                     <Icon name={icon} size={20} className={classNames} aria-busy={showLoader} />
-                    {showInner && <Icon name="key" className="file-inner-icon mauto" />}
                 </span>
                 <span className="flex flex-nowrap flex-items-center message-attachmentInfo">
                     <span className="ellipsis mw100">{attachment.Name}</span>

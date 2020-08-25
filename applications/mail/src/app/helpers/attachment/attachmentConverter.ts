@@ -55,7 +55,6 @@ const convertSingle = (
         Name: parsedAttachment.generatedFileName,
         KeyPackets: null, // already decrypted;
         MIMEType: parsedAttachment.contentType,
-        Signature: null,
         Size: parsedAttachment.length,
         Encrypted: ENCRYPTED_STATUS.PGP_MIME
     };
