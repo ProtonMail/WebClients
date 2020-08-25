@@ -36,4 +36,7 @@ export interface UserSettings {
     Density: DENSITY;
     Theme: string;
     ThemeType: number;
+    WeekStart: number;
+    DateFormat: number;
+    TimeFormat: number;
 }
