@@ -20,6 +20,7 @@ import { c } from 'ttag';
 
 import { getPages } from '../../pages';
 import DashboardContainer from '../../containers/DashboardContainer';
+import GeneralContainer from '../../containers/GeneralContainer';
 import AccountContainer from '../../containers/AccountContainer';
 import DownloadsContainer from '../../containers/DownloadsContainer';
 import PaymentsContainer from '../../containers/PaymentsContainer';
@@ -74,6 +75,13 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
                     exact
                     render={({ location }) => (
                         <DashboardContainer location={location} setActiveSection={setActiveSection} />
+                    )}
+                />
+                <Route
+                    path="/general"
+                    exact
+                    render={({ location }) => (
+                        <GeneralContainer location={location} setActiveSection={setActiveSection} />
                     )}
                 />
                 <Route
