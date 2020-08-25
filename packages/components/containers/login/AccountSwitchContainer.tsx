@@ -112,16 +112,20 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
                     onClick={() => handleClickSession(LocalID)}
                 >
                     <span className="dropDown-logout-initials rounded p0-25 inline-flex bg-global-grey color-white">
-                        <span className="dropDown-logout-text center semibold">{initials}</span>
+                        <span className="dropDown-logout-text center semibold" aria-hidden="true">
+                            {initials}
+                        </span>
                     </span>
                     <span className="flex-item-fluid flex flex-column pl1 pr1">
-                        <span className="semibold">{nameToDisplay}</span>
-                        <span className="">{PrimaryEmail}</span>
-                    </span>
-                    <span className="flex-item-noshrink">
-                        <span className="nonvisible button-showOnHover-element button-account-login semibold small m0">
-                            {loadingMap[LocalID] ? <LoaderIcon /> : c('Action').t`Login`}
+                        <span className="semibold ellipsis inbl mw100" title={nameToDisplay}>
+                            {nameToDisplay}
                         </span>
+                        <span className="ellipsis inbl mw100" title={PrimaryEmail}>
+                            {PrimaryEmail}
+                        </span>
+                    </span>
+                    <span className="nonvisible bl no-scroll button-showOnHover-element button-account-login semibold small m0">
+                        {loadingMap[LocalID] ? <LoaderIcon /> : c('Action').t`Login`}
                     </span>
                 </button>
             );
@@ -139,12 +143,15 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
                     .t`Sign out all accounts`}</LinkButton>
             }
         >
-            <div className="tiny-shadow-container button-account-container">
-                {inner()}
-                <div className="relative p1">
-                    <LinkButton className="semibold nodecoration increase-surface-click" onClick={handleAddAccount}>{c(
-                        'Action'
-                    ).t`Add account`}</LinkButton>
+            <div className="tiny-shadow-container button-account-container scroll-if-needed">
+                <div className="button-account-container-inner">
+                    {inner()}
+                    <div className="relative p1">
+                        <LinkButton
+                            className="semibold nodecoration increase-surface-click"
+                            onClick={handleAddAccount}
+                        >{c('Action').t`Add account`}</LinkButton>
+                    </div>
                 </div>
             </div>
         </Layout>
