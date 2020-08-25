@@ -40,15 +40,17 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
     const vpnPlan = getPlan(subscription, PLAN_SERVICES.VPN);
     const mailPlan = getPlan(subscription, PLAN_SERVICES.MAIL);
 
-    const getPlanTitle = ({ Title, Name }: Plan, service: string) => {
-        if (Name === PLANS.VISIONARY) {
+    const getPlanTitle = (plan: Plan | undefined, service: string) => {
+        if (!plan) {
+            return `${service} Free`;
+        }
+        if (plan.Name === PLANS.VISIONARY) {
             // For visionary plan, Title equals "Visionary"
             return `${service} Visionary`;
         }
-        if (Title) {
-            return Title;
+        if (plan.Title) {
+            return plan.Title;
         }
-        return `${service} Free`;
     };
 
     const languageText = LOCALES[Locale];
@@ -68,18 +70,14 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 <div className="mb1">
                     <strong className="bl mb0-5">{c('Title').t`Plans`}</strong>
                     <ul className="unstyled mt0 mb0">
-                        {vpnPlan ? (
-                            <li>
-                                <Icon name="protonvpn" className="mr0-5" />
-                                {getPlanTitle(vpnPlan, 'ProtonVPN')}
-                            </li>
-                        ) : null}
-                        {mailPlan ? (
-                            <li>
-                                <Icon name="protonmail" className="mr0-5" />
-                                {getPlanTitle(mailPlan, 'ProtonMail')}
-                            </li>
-                        ) : null}
+                        <li>
+                            <Icon name="protonvpn" className="mr0-5" />
+                            {getPlanTitle(vpnPlan, 'ProtonVPN')}
+                        </li>
+                        <li>
+                            <Icon name="protonmail" className="mr0-5" />
+                            {getPlanTitle(mailPlan, 'ProtonMail')}
+                        </li>
                     </ul>
                 </div>
             ) : null}
@@ -94,7 +92,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                     </ul>
                 </div>
             ) : null}
-            {isAdmin && APP_NAME !== APPS.PROTONACCOUNT ? (
+            {isAdmin ? (
                 <div className="mb1">
                     <strong className="bl mb0-5">{c('Title').t`Your organization`}</strong>
                     <ul className="unstyled mt0 mb0">
