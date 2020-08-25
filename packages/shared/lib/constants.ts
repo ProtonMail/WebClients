@@ -249,6 +249,7 @@ export enum ADDRESS_TYPE {
     TYPE_ALIAS = 2,
     TYPE_CUSTOM_DOMAIN = 3,
     TYPE_PREMIUM = 4,
+    TYPE_EXTERNAL = 5,
 }
 
 export enum RECEIVE_ADDRESS {
