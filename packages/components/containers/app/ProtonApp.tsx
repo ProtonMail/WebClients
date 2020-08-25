@@ -156,10 +156,16 @@ const ProtonApp = ({ config, children }: Props) => {
     );
 
     const handleLogout = useCallback(() => {
-        setAuthData((authData) => ({
-            ...authData,
-            isLoggingOut: true,
-        }));
+        setAuthData((authData) => {
+            // Nothing to logout
+            if (!authData.UID) {
+                return authData;
+            }
+            return {
+                ...authData,
+                isLoggingOut: true,
+            };
+        });
     }, []);
 
     const handleFinalizeLogout = useCallback(() => {
