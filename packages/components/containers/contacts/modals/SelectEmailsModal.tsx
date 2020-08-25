@@ -57,7 +57,13 @@ const SelectEmailsModal = ({ contacts, onSubmit, onClose, ...rest }: Props) => {
     };
 
     return (
-        <FormModal submit={c('Action').t`Apply`} title={c('Title').t`Add to group`} onSubmit={handleSubmit} {...rest}>
+        <FormModal
+            submit={c('Action').t`Apply`}
+            title={c('Title').t`Add to group`}
+            onSubmit={handleSubmit}
+            onClose={onClose}
+            {...rest}
+        >
             <Alert>{c('Info').t`Please select which email address or addresses to add to this group.`}</Alert>
             {model
                 .filter(({ contactEmails = [] }) => contactEmails.length > 1) // Only display contact with multiple emails

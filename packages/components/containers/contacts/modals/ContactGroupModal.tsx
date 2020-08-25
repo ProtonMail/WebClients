@@ -28,10 +28,11 @@ const mapIDs = (contactEmails: ContactEmail[]) => contactEmails.map(({ ID }) => 
 
 interface Props {
     contactGroupID?: string;
+    selectedContactEmails: ContactEmail[];
     onClose?: () => void;
 }
 
-const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) => {
+const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmails = [], ...rest }: Props) => {
     const { changeInputValue, inputValue } = useAutocomplete({
         multiple: false,
     });
@@ -55,7 +56,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, ...rest }: Props) =
             contactGroupID && contactGroup
                 ? contactGroup.Color
                 : LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
-        contactEmails: contactGroupID ? existingContactEmails : [],
+        contactEmails: contactGroupID ? existingContactEmails : selectedContactEmails,
     });
     const contactEmailIDs = model.contactEmails.map(({ ID }: ContactEmail) => ID);
 

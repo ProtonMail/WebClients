@@ -102,7 +102,7 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
     const [uid] = useState(generateUID('contactGroupDropdown'));
 
     const handleAdd = () => {
-        createModal(<ContactGroupModal />);
+        createModal(<ContactGroupModal selectedContactEmails={contactEmails} />);
         close();
     };
     const handleCheck = (contactGroupID: string) => ({ target }: ChangeEvent<HTMLInputElement>) =>
