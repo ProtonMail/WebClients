@@ -117,3 +117,16 @@ export const parseMailtoURL = (mailtoURL: string) => {
         .flat();
     return { to: [...addressTos, ...headerTos] };
 };
+
+export const buildMailTo = (email = '') => `mailto:${email}`;
+
+export const getEmailTo = (str: string): string => {
+    try {
+        const {
+            to: [emailTo],
+        } = parseMailtoURL(str);
+        return emailTo;
+    } catch (e) {
+        return str;
+    }
+};
