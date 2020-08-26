@@ -4,13 +4,12 @@ import {
     Paragraph,
     SettingsPropsShared,
     PrivateMainSettingsArea,
-    SectionConfig,
-    AppLink
+    SectionConfig
 } from 'react-components';
+import { c } from 'ttag';
+import { Link } from 'react-router-dom';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
-import { c } from 'ttag';
 import upgradeSvgLight from 'design-system/assets/img/shared/no-organization.svg';
 import upgradeSvgDark from 'design-system/assets/img/shared/no-organization-dark.svg';
 
@@ -33,11 +32,7 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
                         {c('Info')
                             .t`Upgrade to a paid plan to access premium features and increase your storage space.`}
                     </Paragraph>
-                    <AppLink
-                        to="/subscription"
-                        toApp={getAccountSettingsApp()}
-                        className="pm-button--primary pm-button--large mtauto"
-                    >{c('Action').t`Upgrade now`}</AppLink>
+                    <Link to="/dashboard">{c('Link').t`Upgrade now`}</Link>
                 </div>
             );
         }
