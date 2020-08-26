@@ -8,7 +8,6 @@ import HeaderModal from './Header';
 import ContentModal from './Content';
 import InnerModal from './Inner';
 import { ResetButton, PrimaryButton } from '../button';
-import Icon from '../icon/Icon';
 
 /** @type any */
 const Modal = ({
@@ -23,6 +22,7 @@ const Modal = ({
     footer,
     hasSubmit = true,
     hasClose = true,
+    displayTitle = true,
     noValidate = false,
     autoFocusClose = true,
     // Destructure these options so they are not passed to the DOM.
@@ -86,15 +86,9 @@ function DemoModal({ onAdd, ...rest }) {
 
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
-            {title ? (
-                <HeaderModal hasClose={hasClose} modalTitleID={modalTitleID} onClose={onClose}>
-                    {title}
-                </HeaderModal>
-            ) : (
-                <button type="button" className="pm-modalClose" onClick={onClose}>
-                    <Icon className="pm-modalClose-icon" name="close" />
-                </button>
-            )}
+            <HeaderModal hasClose={hasClose} displayTitle={displayTitle} modalTitleID={modalTitleID} onClose={onClose}>
+                {title}
+            </HeaderModal>
             <ContentModal
                 onSubmit={rest.isClosing || loading ? noop : onSubmit}
                 onReset={onClose}
