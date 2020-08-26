@@ -13,7 +13,8 @@ import {
 } from 'proton-shared/lib/date/timezone';
 import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, UserSettings } from 'proton-shared/lib/interfaces';
+import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
 import { VIEWS } from '../../constants';
 import useCalendarsEvents from './eventStore/useCalendarsEvents';
 import CalendarContainerView from './CalendarContainerView';
@@ -29,7 +30,6 @@ import {
     getDisplayWeekNumbers,
     getSecondaryTimezone,
     getDefaultTzid,
-    getWeekStartsOn,
 } from './getSettings';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
 import { EventTargetAction, InteractiveRef, TimeGridRef } from './interface';
@@ -79,6 +79,7 @@ interface Props {
     activeCalendars: Calendar[];
     disabledCalendars: Calendar[];
     defaultCalendar?: Calendar;
+    userSettings: UserSettings;
     calendarUserSettings: CalendarUserSettings;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
     eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
@@ -93,6 +94,7 @@ const CalendarContainer = ({
     disabledCalendars,
     visibleCalendars,
     defaultCalendar,
+    userSettings,
     calendarUserSettings,
     calendarsEventsCacheRef,
     eventTargetActionRef,
@@ -185,7 +187,7 @@ const CalendarContainer = ({
     const view = isNarrow ? WEEK : SUPPORTED_VIEWS.includes(requestedView) ? requestedView : WEEK;
 
     const range = isNarrow ? undefined : getRange(view, customRange);
-    const weekStartsOn = getWeekStartsOn(calendarUserSettings);
+    const weekStartsOn = getWeekStartsOn(userSettings);
     const displayWeekNumbers = getDisplayWeekNumbers(calendarUserSettings);
     const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarUserSettings);
     const secondaryTzid = getSecondaryTimezone(calendarUserSettings);

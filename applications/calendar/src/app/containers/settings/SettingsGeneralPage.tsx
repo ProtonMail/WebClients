@@ -14,7 +14,7 @@ export const getGeneralSettingsPage = () => {
         text: c('Link').t`General`,
         subsections: [
             {
-                text: c('Title').t`Region & time zone`,
+                text: c('Title').t`Time zone`,
                 id: 'time',
             },
             {

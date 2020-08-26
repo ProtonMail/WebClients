@@ -1,21 +1,13 @@
-import {
-    SETTINGS_DATE_FORMAT,
-    SETTINGS_NOTIFICATION_TYPE,
-    SETTINGS_TIME_FORMAT,
-    SETTINGS_VIEW,
-    SETTINGS_WEEK_START,
-} from 'proton-shared/lib/interfaces/calendar';
+import { SETTINGS_NOTIFICATION_TYPE, SETTINGS_VIEW, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
 
-export const DEFAULT_USER_SETTINGS = {
-    WeekStart: SETTINGS_WEEK_START.MONDAY,
+export const DEFAULT_CALENDAR_USER_SETTINGS: CalendarUserSettings = {
     WeekLength: 7,
     DisplayWeekNumber: 0,
-    DateFormat: SETTINGS_DATE_FORMAT.YYYYMMDD,
-    TimeFormat: SETTINGS_TIME_FORMAT.H24,
+    DefaultCalendarID: null,
     AutoDetectPrimaryTimezone: 0,
     PrimaryTimezone: 'Europe/Zurich',
     DisplaySecondaryTimezone: 0,
-    SecondaryTimezone: null,
+    SecondaryTimezone: undefined,
     ViewPreference: SETTINGS_VIEW.WEEK,
 };
 

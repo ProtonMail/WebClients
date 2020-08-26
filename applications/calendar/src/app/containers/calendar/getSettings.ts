@@ -1,11 +1,5 @@
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { CalendarUserSettings, SETTINGS_VIEW } from 'proton-shared/lib/interfaces/calendar';
 import { VIEWS } from '../../constants';
-
-export const getWeekStartsOn = (calendarUserSettings: CalendarUserSettings): WeekStartsOn => {
-    const weekStart = calendarUserSettings.WeekStart;
-    return (weekStart % 7) as WeekStartsOn;
-};
 
 export const getAutoDetectPrimaryTimezone = (calendarUserSettings: CalendarUserSettings) => {
     return !!calendarUserSettings.AutoDetectPrimaryTimezone;

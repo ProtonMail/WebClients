@@ -5,7 +5,6 @@ import {
     useLoading,
     useEventManager,
     useApi,
-    useCache,
     useModals,
     useGetAddresses,
     useGetAddressKeys,
@@ -18,12 +17,9 @@ import { createCalendar, updateCalendarUserSettings } from 'proton-shared/lib/ap
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
-import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-import { Calendar, SETTINGS_TIME_FORMAT } from 'proton-shared/lib/interfaces/calendar';
-import { loadModels } from 'proton-shared/lib/models/helper';
-import { CalendarUserSettingsModel } from 'proton-shared/lib/models';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { DEFAULT_CALENDAR } from '../../constants';
 import CalendarModal from '../settings/CalendarModal';
 import CalendarCreating from './CalendarCreating';
@@ -41,7 +37,6 @@ const WelcomeModal = ({ onClose, ...rest }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const cache = useCache();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const api = useApi();
@@ -80,15 +75,11 @@ const WelcomeModal = ({ onClose, ...rest }: Props) => {
             })
         );
 
-        // Improve guessing
-        const defaultTimeFormat = SETTINGS_TIME_FORMAT.H24;
-
         await Promise.all([
             api(
                 updateCalendarUserSettings({
                     PrimaryTimezone: getTimezone(),
                     AutoDetectPrimaryTimezone: 1,
-                    TimeFormat: defaultTimeFormat,
                 })
             ),
             setupCalendarKey({
@@ -98,10 +89,6 @@ const WelcomeModal = ({ onClose, ...rest }: Props) => {
                 getAddressKeys,
             }),
         ]);
-
-        // After a calendar has been created, it's possible to load the user settings model
-        const [{ TimeFormat }] = await loadModels([CalendarUserSettingsModel], { api, cache });
-        updateLongLocale({ displayAMPM: TimeFormat === SETTINGS_TIME_FORMAT.H12 });
 
         await call();
 

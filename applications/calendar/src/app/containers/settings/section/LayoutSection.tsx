@@ -9,24 +9,24 @@ import {
     useLoading,
     useEventManager,
     useNotifications,
+    AppLink,
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
 import { CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
+import { APPS } from 'proton-shared/lib/constants';
 
-import WeekStartSelector from '../WeekStartSelector';
 import ViewPreferenceSelector from '../ViewPreferenceSelector';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;
 }
-const LayoutSection = ({ calendarUserSettings: { WeekStart, ViewPreference, DisplayWeekNumber } }: Props) => {
+const LayoutSection = ({ calendarUserSettings: { ViewPreference, DisplayWeekNumber } }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
     const [loadingView, withLoadingView] = useLoading();
-    const [loadingWeekStart, withLoadingWeekStart] = useLoading();
     const [loadingWeekNumberDisplay, withLoadingWeekNumberDisplay] = useLoading();
 
     const handleChange = async (data: Partial<CalendarUserSettings>) => {
@@ -57,12 +57,8 @@ const LayoutSection = ({ calendarUserSettings: { WeekStart, ViewPreference, Disp
             <Row>
                 <Label htmlFor="week-start-select">{c('Label').t`Week start`}</Label>
                 <Field>
-                    <WeekStartSelector
-                        id="week-start-select"
-                        day={WeekStart}
-                        loading={loadingWeekStart}
-                        onChangeDay={(WeekStart) => withLoadingWeekStart(handleChange({ WeekStart }))}
-                    />
+                    <AppLink to="/settings" toApp={APPS.PROTONACCOUNT}>{c('Label')
+                        .t`Modify in account settings`}</AppLink>
                 </Field>
             </Row>
             <Row>

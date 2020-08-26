@@ -1,9 +1,8 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
-import { useActiveBreakpoint, useCalendarUserSettings } from 'react-components';
-import { Calendar, SETTINGS_TIME_FORMAT } from 'proton-shared/lib/interfaces/calendar';
+import { useActiveBreakpoint, useUserSettings, useCalendarUserSettings } from 'react-components';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { Address } from 'proton-shared/lib/interfaces';
-import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
 import {
     getDefaultCalendar,
     getIsCalendarDisabled,
@@ -12,7 +11,7 @@ import {
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 
-import { DEFAULT_USER_SETTINGS } from '../../settingsConstants';
+import { DEFAULT_CALENDAR_USER_SETTINGS } from '../../settingsConstants';
 import { CalendarsEventsCache } from './eventStore/interface';
 import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
 import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
@@ -32,11 +31,8 @@ interface Props {
 }
 const MainContainerSetup = ({ addresses, calendars }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
-    const [calendarUserSettings = DEFAULT_USER_SETTINGS] = useCalendarUserSettings();
-
-    useEffect(() => {
-        updateLongLocale({ displayAMPM: calendarUserSettings.TimeFormat === SETTINGS_TIME_FORMAT.H12 });
-    }, [calendarUserSettings.TimeFormat]);
+    const [userSettings] = useUserSettings();
+    const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
 
     const calendarsEventsCacheRef = useRef<CalendarsEventsCache>(getCalendarsEventCache());
     useCalendarsEventsEventListener(calendarsEventsCacheRef);
@@ -101,6 +97,7 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
                         defaultCalendar={defaultCalendar}
                         calendarsEventsCacheRef={calendarsEventsCacheRef}
                         calendarUserSettings={calendarUserSettings}
+                        userSettings={userSettings}
                         eventTargetActionRef={eventTargetActionRef}
                     />
                 </Route>
