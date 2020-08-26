@@ -130,3 +130,41 @@ export const getEmailTo = (str: string): string => {
         return str;
     }
 };
+
+export const removeDot = (email = '') => {
+    const [localPart, domain] = getEmailParts(email);
+    if (domain) {
+        return `${localPart.replace(/\./g, '')}@${domain}`;
+    }
+    return email;
+};
+
+/**
+ * Remove plus alias part present in the email value
+ */
+export const removeEmailAlias = (email = '') => {
+    return normalizeEmail(email)
+        .replace(/(\+[^@]*)@/, '@')
+        .replace(/[._-](?=[^@]*@)/g, '');
+};
+
+export const cleanEmail = (email = '') => {
+    return removeDot(removeEmailAlias(email));
+};
+
+/**
+ * Add plus alias part for an email
+ */
+export const addPlusAlias = (email = '', plus = '') => {
+    const atIndex = email.indexOf('@');
+    const plusIndex = email.indexOf('+');
+
+    if (atIndex === -1 || plusIndex > -1) {
+        return email;
+    }
+
+    const name = email.substring(0, atIndex);
+    const domain = email.substring(atIndex, email.length);
+
+    return `${name}+${plus}${domain}`;
+};
