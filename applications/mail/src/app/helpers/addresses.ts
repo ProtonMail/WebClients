@@ -1,56 +1,18 @@
-import { c } from 'ttag';
-import { getEmailParts, normalizeEmail } from 'proton-shared/lib/helpers/email';
+import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
+import { unique } from 'proton-shared/lib/helpers/array';
+import { addPlusAlias, removeEmailAlias } from 'proton-shared/lib/helpers/email';
+import { Address, Key } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { c } from 'ttag';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
-import { Message } from '../models/message';
-import { getContactsOfGroup, getContactOfRecipient } from './contacts';
-import { Address, Key } from 'proton-shared/lib/interfaces';
-import { unique } from 'proton-shared/lib/helpers/array';
-import { isMessage } from './elements';
-import { Element } from '../models/element';
 import { Conversation } from '../models/conversation';
-import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
+import { Element } from '../models/element';
+import { Message } from '../models/message';
+import { getContactOfRecipient, getContactsOfGroup } from './contacts';
+import { isMessage } from './elements';
 
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
-
-export const removeDot = (email = '') => {
-    const [localPart, domain] = getEmailParts(email);
-    if (domain) {
-        return `${localPart.replace(/\./g, '')}@${domain}`;
-    }
-    return email;
-};
-
-/**
- * Remove plus alias part present in the email value
- */
-export const removeEmailAlias = (email = '') => {
-    return normalizeEmail(email)
-        .replace(/(\+[^@]*)@/, '@')
-        .replace(/[._-](?=[^@]*@)/g, '');
-};
-
-export const cleanEmail = (email = '') => {
-    return removeDot(removeEmailAlias(email));
-};
-
-/**
- * Add plus alias part for an email
- */
-export const addPlusAlias = (email = '', plus = '') => {
-    const atIndex = email.indexOf('@');
-    const plusIndex = email.indexOf('+');
-
-    if (atIndex === -1 || plusIndex > -1) {
-        return email;
-    }
-
-    const name = email.substring(0, atIndex);
-    const domain = email.substring(atIndex, email.length);
-
-    return `${name}+${plus}${domain}`;
-};
 
 /**
  * Get address from email

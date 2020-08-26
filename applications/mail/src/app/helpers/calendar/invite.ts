@@ -39,7 +39,7 @@ import {
     getSupportedTimezone,
     getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
-import { getEmailTo, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { cleanEmail, getEmailTo, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
@@ -60,7 +60,6 @@ import { c } from 'ttag';
 import { Attachment } from '../../models/attachment';
 import { MessageExtended } from '../../models/message';
 import { RequireSome, Unwrap } from '../../models/utils';
-import { cleanEmail } from '../addresses';
 import { getOriginalTo } from '../message/messages';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 

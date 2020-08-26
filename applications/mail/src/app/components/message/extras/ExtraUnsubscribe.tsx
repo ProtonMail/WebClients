@@ -15,7 +15,7 @@ import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { openNewTab } from 'proton-shared/lib/helpers/browser';
 import performRequest from 'proton-shared/lib/fetch/fetch';
-import { normalizeEmail } from 'proton-shared/lib/helpers/email';
+import { normalizeEmail, removeEmailAlias } from 'proton-shared/lib/helpers/email';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
 import { getListUnsubscribe, getListUnsubscribePost, getOriginalTo } from '../../../helpers/message/messages';
@@ -23,7 +23,7 @@ import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from
 import { useMessage } from '../../../hooks/useMessage';
 import { useSendMessage, useSendVerifications } from '../../../hooks/useSendMessage';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
-import { removeEmailAlias, findSender } from '../../../helpers/addresses';
+import { findSender } from '../../../helpers/addresses';
 
 interface Props {
     message: MessageExtended;
