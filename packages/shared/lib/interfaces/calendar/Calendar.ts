@@ -20,15 +20,17 @@ export enum SETTINGS_VIEW {
 }
 
 export enum SETTINGS_WEEK_START {
+    LOCALE_DEFAULT = 0,
     MONDAY = 1,
     SATURDAY = 6,
     SUNDAY = 7,
 }
 
 export enum SETTINGS_DATE_FORMAT {
-    DDMMYYYY = 0,
-    MMDDYYYY = 1,
-    YYYYMMDD = 2,
+    LOCALE_DEFAULT = 0,
+    DDMMYYYY = 1,
+    MMDDYYYY = 2,
+    YYYYMMDD = 3,
 }
 
 export enum SETTINGS_TIME_FORMAT {

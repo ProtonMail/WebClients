@@ -47,3 +47,8 @@ export const loadDateFnTimeFormat = ({
         },
     };
 };
+
+/*
+ * Detect if user's machine is using military time format (24h not 12h am/pm)
+ */
+export const isMilitaryTime = () => !new Date().toLocaleTimeString().match(/am|pm/i);
