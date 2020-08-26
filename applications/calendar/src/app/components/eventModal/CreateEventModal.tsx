@@ -79,7 +79,6 @@ const CreateEventModal = ({
 
     return (
         <FormModal
-            className="eventpopover--simple"
             loading={loadingAction}
             onSubmit={loadingAction ? noop : handleSubmit}
             submit={submit}
