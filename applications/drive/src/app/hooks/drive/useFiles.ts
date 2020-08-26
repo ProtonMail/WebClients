@@ -1,4 +1,4 @@
-import { useApi, useEventManager, useUser, useNotifications, usePreventLeave } from 'react-components';
+import { useApi, useEventManager, useNotifications, usePreventLeave, useGetUser } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import { decryptMessage, encryptMessage } from 'pmcrypto';
 import { c } from 'ttag';
@@ -16,7 +16,6 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { serializeUint8Array } from 'proton-shared/lib/helpers/serialization';
-
 import {
     DriveFileRevisionResult,
     CreateFileResult,
@@ -48,6 +47,7 @@ const HASH_CHECK_AMOUNT = 10;
 function useFiles() {
     const api = useApi();
     const { deleteLinks } = useTrash();
+    const getUser = useGetUser();
     const cache = useDriveCache();
     const debouncedRequest = useDebouncedRequest();
     const queuedFunction = useQueuedFunction();
@@ -56,7 +56,6 @@ function useFiles() {
     const { getLinkMeta, getLinkKeys, events, fetchAllFolderPages, createNewFolder } = useDrive();
     const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
     const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses } = useUploadProvider();
-    const [{ MaxSpace, UsedSpace }] = useUser();
     const { preventLeave } = usePreventLeave();
     const { call } = useEventManager();
 
@@ -314,9 +313,12 @@ function useFiles() {
             const progresses = getUploadsProgresses();
             return uploads.reduce((sum, upload) => {
                 const uploadedChunksSize = progresses[upload.id] - (progresses[upload.id] % FILE_CHUNK_SIZE);
-                return [TransferState.Initializing, TransferState.Pending, TransferState.Progress].includes(
-                    upload.state
-                ) && upload.meta.size
+                return [
+                    TransferState.Initializing,
+                    TransferState.Pending,
+                    TransferState.Progress,
+                    TransferState.Paused,
+                ].includes(upload.state) && upload.meta.size
                     ? sum + upload.meta.size - uploadedChunksSize
                     : sum;
             }, 0);
@@ -330,6 +332,8 @@ function useFiles() {
 
         const remaining = calculateRemainingUploadBytes();
         await call();
+
+        const { MaxSpace, UsedSpace } = await getUser();
         const result = MaxSpace > UsedSpace + remaining + totalFileListSize;
         return { result, total: totalFileListSize };
     };
