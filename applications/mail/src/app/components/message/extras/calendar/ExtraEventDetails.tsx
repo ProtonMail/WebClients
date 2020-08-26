@@ -1,3 +1,4 @@
+import { buildMailTo } from 'proton-shared/lib/helpers/email';
 import React from 'react';
 import { classnames } from 'react-components';
 import { c, msgid } from 'ttag';
@@ -7,13 +8,7 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Calendar, SETTINGS_WEEK_START } from 'proton-shared/lib/interfaces/calendar';
-import {
-    buildMailTo,
-    formatDateTime,
-    getAllDayInfo,
-    InvitationModel,
-    Participant
-} from '../../../../helpers/calendar/invite';
+import { formatDateTime, getAllDayInfo, InvitationModel, Participant } from '../../../../helpers/calendar/invite';
 import { RequireSome } from '../../../../models/utils';
 
 const formatParticipant = (participant: Participant | undefined, isLast = true) => {

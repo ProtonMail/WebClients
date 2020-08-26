@@ -1,4 +1,4 @@
-import { getUnixTime, format } from 'date-fns';
+import { format, getUnixTime } from 'date-fns';
 import {
     getEventByUID,
     GetEventByUIDArguments,
@@ -39,13 +39,13 @@ import {
     getSupportedTimezone,
     getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
-import { normalizeInternalEmail, parseMailtoURL } from 'proton-shared/lib/helpers/email';
+import { getEmailTo, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { Address, Api, CachedKey } from 'proton-shared/lib/interfaces';
-import { Calendar, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, CalendarEvent, SyncMultipleApiResponse } from 'proton-shared/lib/interfaces/calendar';
 import {
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
@@ -57,7 +57,6 @@ import {
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { c } from 'ttag';
-import { SyncMultipleApiResponse } from 'proton-shared/lib/interfaces/calendar';
 import { Attachment } from '../../models/attachment';
 import { MessageExtended } from '../../models/message';
 import { RequireSome, Unwrap } from '../../models/utils';
@@ -116,19 +115,6 @@ export const filterAttachmentsForEvents = (attachments: Attachment[]): Attachmen
         ({ Name = '', MIMEType = '' }) =>
             ICAL_EXTENSIONS.includes(splitExtension(Name)[1]) && MIMEType === ICAL_MIME_TYPE
     );
-
-export const buildMailTo = (email = '') => `mailto:${email}`;
-
-export const getEmailTo = (str: string): string => {
-    try {
-        const {
-            to: [emailTo]
-        } = parseMailtoURL(str);
-        return emailTo;
-    } catch (e) {
-        return str;
-    }
-};
 
 export const getSequence = (event: VcalVeventComponent) => {
     const sequence = +(event.sequence?.value || 0);
