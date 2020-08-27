@@ -79,6 +79,8 @@ const CreateEventModal = ({
 
     return (
         <FormModal
+            displayTitle={false}
+            title={c('Title').t`Create event`}
             loading={loadingAction}
             onSubmit={loadingAction ? noop : handleSubmit}
             submit={submit}
@@ -87,7 +89,6 @@ const CreateEventModal = ({
             {...rest}
         >
             <EventForm
-                className="mt2"
                 displayWeekNumbers={displayWeekNumbers}
                 weekStartsOn={weekStartsOn}
                 isSubmitted={isSubmitted}
