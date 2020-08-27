@@ -1,5 +1,8 @@
 import React, { useRef, useState, ChangeEvent, FormEvent } from 'react';
 import { c } from 'ttag';
+import { validateEmail } from 'proton-shared/lib/api/core/validate';
+import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+
 import {
     Alert,
     EmailInput,
@@ -12,8 +15,7 @@ import {
     FullLoader,
     InlineLinkButton,
 } from '../../components';
-import { useModals, useLoading } from '../../hooks';
-
+import { useModals, useLoading, useApi } from '../../hooks';
 import { SignupModel, SignupErrors } from './interfaces';
 import { SIGNUP_STEPS } from './constants';
 import { ChallengeRef, ChallengeResult } from '../../components/challenge/ChallengeFrame';
@@ -32,12 +34,14 @@ interface Props {
 const { RECOVERY_EMAIL, RECOVERY_PHONE } = SIGNUP_STEPS;
 
 const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading }: Props) => {
+    const api = useApi();
     const formRef = useRef<HTMLFormElement>(null);
     const [challengeLoading, setChallengeLoading] = useState(true);
     const { createModal } = useModals();
     const challengeRefRecovery = useRef<ChallengeRef>();
     const [loadingChallenge, withLoadingChallenge] = useLoading();
     const disableSubmit = model.step === RECOVERY_EMAIL ? !!errors.recoveryEmail : !!errors.recoveryPhone;
+    const [recoveryEmailError, setRecoveryEmailError] = useState('');
 
     const handleChangePhone = (status: any, value: any, countryData: any, number: string) => {
         onChange({ ...model, recoveryPhone: number });
@@ -63,6 +67,13 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
         e.preventDefault();
         if (model.step === RECOVERY_EMAIL) {
             const payload = await challengeRefRecovery.current?.getChallenge();
+            try {
+                await api(validateEmail(model.recoveryEmail));
+                setRecoveryEmailError('');
+            } catch (error) {
+                setRecoveryEmailError(getApiErrorMessage(error));
+                throw error;
+            }
             return onSubmit(payload);
         }
         onSubmit();
@@ -85,12 +96,14 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
                             name="recovery-email"
                             autoFocus
                             autoComplete="on"
+                            error={recoveryEmailError}
                             autoCapitalize="off"
                             autoCorrect="off"
                             value={model.recoveryEmail}
-                            onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                onChange({ ...model, recoveryEmail: target.value })
-                            }
+                            onChange={({ target }: ChangeEvent<HTMLInputElement>) => {
+                                onChange({ ...model, recoveryEmail: target.value });
+                                setRecoveryEmailError('');
+                            }}
                             onKeyDown={({ keyCode }: React.KeyboardEvent<HTMLInputElement>) =>
                                 keyCode === 13 && formRef.current?.submit()
                             }
