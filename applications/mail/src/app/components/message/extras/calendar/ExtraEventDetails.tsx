@@ -1,13 +1,14 @@
-import { buildMailTo } from 'proton-shared/lib/helpers/email';
 import React from 'react';
 import { classnames } from 'react-components';
 import { c, msgid } from 'ttag';
+import { buildMailTo } from 'proton-shared/lib/helpers/email';
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Calendar, SETTINGS_WEEK_START } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { SETTINGS_WEEK_START } from 'proton-shared/lib/interfaces';
 import { formatDateTime, getAllDayInfo, InvitationModel, Participant } from '../../../../helpers/calendar/invite';
 import { RequireSome } from '../../../../models/utils';
 
