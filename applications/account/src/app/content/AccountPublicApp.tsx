@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
-import { getBrowserLocale, getClosestMatches } from 'proton-shared/lib/i18n/helper';
-import loadLocale from 'proton-shared/lib/i18n/loadLocale';
+import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
+import { loadLocale, loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import {
     GenericError,
@@ -35,17 +35,15 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
     const { createNotification } = useNotifications();
 
     useEffect(() => {
-        const browserLocale = getBrowserLocale();
-
         const runGetSessions = async () => {
-            await loadOpenPGP();
-            const [activeSessionsResult] = await Promise.all([
-                getActiveSessions(silentApi),
-                loadLocale({
-                    ...getClosestMatches({ locale: browserLocale, browserLocale, locales }),
-                    locales,
-                }),
+            const browserLocale = getBrowserLocale();
+            const localeCode = getClosestLocaleCode(browserLocale, locales);
+            await Promise.all([
+                loadOpenPGP(),
+                loadLocale(localeCode, locales),
+                loadDateLocale(localeCode, browserLocale),
             ]);
+            const [activeSessionsResult] = await Promise.all([getActiveSessions(silentApi)]);
             if (!onActiveSessions(activeSessionsResult)) {
                 setLoading(false);
             }
