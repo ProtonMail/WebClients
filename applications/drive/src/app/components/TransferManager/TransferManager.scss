@@ -72,11 +72,11 @@
         height: 5em; // To avoid height blinking on status changing
 
         @include respond-to($breakpoint-small, 'max') {
-            grid-template-columns: 4fr minmax(5em, 2fr) 1.5em minmax(5em, 1fr);
+            grid-template-columns: 4fr minmax(5em, 2fr) 2.5em minmax(4.5em, 1fr);
         }
 
         @include respond-to($breakpoint-small, 'min') {
-            grid-template-columns: 4fr 2.5fr minmax(6em, 2fr) minmax(5em, 1fr);
+            grid-template-columns: 4fr 2.5fr minmax(6em, 2fr) minmax(4.5em, 1fr);
         }
 
         &:not(:last-child) {
