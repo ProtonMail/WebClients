@@ -5,7 +5,7 @@
 - added `ellipsis-two-lines` helper
 - hover effect for conversation row
 - added `empty-folder`, `proton-account` icon
-- added SSO login styles
+- added SSO login styles + multi-account support
 - added `semibold` helper
 - added `tiny-shadow-container` helper, made it dark mode friendly
 - added `button-showOnHover` and `.button-showOnHover-element` helper (to display something when hovering a parent)
@@ -14,7 +14,9 @@
 - added `bottom` and `centered-absolute-horizontal` helpers
 - added `.pm-button--pill` modifier
 - documentation for responsive helpers, 2-columns list and sizing helpers
-- new label stack component
+- new label stack component/rework transitions
+- new overview page design  🎉
+- new event styles for Calendar
 
 
 ## Updated/fixes
@@ -30,6 +32,8 @@
 - fix - firefox multi-selection of emails
 - fix - attachment icon display
 - update - documentation for label stack component
+- update conversation display
+- update appsDropdown sizing way and values
 
 
 # [1.8.4] - 2019-07-28
