@@ -25,6 +25,7 @@ import {
     useGetUserKeys,
     useGetAddressesKeys,
     useGetOrganizationKeyRaw,
+    useBeforeUnload,
 } from '../../hooks';
 
 export enum MODES {
@@ -97,6 +98,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const [loading, setLoading] = useState<boolean>(false);
     const [errors, setErrors] = useState<Errors>(DEFAULT_ERRORS);
     const [isSecondPhase, setSecondPhase] = useState<boolean>(false);
+
+    useBeforeUnload(loading ? c('Info').t`By leaving now, changes may not be saved` : '');
 
     const setPartialError = (object: Partial<Errors>) => setErrors((oldState) => ({ ...oldState, ...object }));
     const setPartialInput = (object: Partial<Inputs>) => setInputs((oldState) => ({ ...oldState, ...object }));
@@ -482,6 +485,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
             submit={c('Action').t`Save`}
             loading={loading || isLoading}
             onClose={onClose}
+            hasClose={false}
             {...modalProps}
             {...rest}
         >
