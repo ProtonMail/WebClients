@@ -57,7 +57,7 @@ const LayoutSection = ({ calendarUserSettings: { ViewPreference, DisplayWeekNumb
             <Row>
                 <Label htmlFor="week-start-select">{c('Label').t`Week start`}</Label>
                 <Field>
-                    <AppLink to="/settings" toApp={APPS.PROTONACCOUNT}>{c('Label')
+                    <AppLink to="/general#week-start" toApp={APPS.PROTONACCOUNT}>{c('Label')
                         .t`Modify in account settings`}</AppLink>
                 </Field>
             </Row>
