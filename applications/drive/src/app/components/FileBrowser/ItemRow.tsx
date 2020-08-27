@@ -32,11 +32,12 @@ interface Props {
     selectedItems: FileBrowserItem[];
     onToggleSelect: (item: string) => void;
     selectItem: (item: string) => void;
-    onShiftClick: (item: string) => void;
+    onShiftClick?: (item: string) => void;
     onClick?: (item: FileBrowserItem) => void;
     showLocation?: boolean;
     secondaryActionActive?: boolean;
     dragMoveControls?: DragMoveControls;
+    isPreview?: boolean;
 }
 
 const ItemRow = ({
@@ -50,6 +51,7 @@ const ItemRow = ({
     selectItem,
     secondaryActionActive,
     dragMoveControls,
+    isPreview,
 }: Props) => {
     const { dragging, handleDragEnd, handleDragStart, DragMoveContent } = useDragMove({
         dragging: dragMoveControls?.dragging ?? false,
@@ -73,7 +75,7 @@ const ItemRow = ({
         e.stopPropagation();
 
         if (e.shiftKey) {
-            onShiftClick(item.LinkID);
+            onShiftClick?.(item.LinkID);
         } else if (e.ctrlKey || e.metaKey) {
             onToggleSelect(item.LinkID);
         } else {
@@ -134,7 +136,7 @@ const ItemRow = ({
                 e.stopPropagation();
                 // Wrapper handles shift key, because FF has issues: https://bugzilla.mozilla.org/show_bug.cgi?id=559506
                 if (e.shiftKey) {
-                    onShiftClick(item.LinkID);
+                    onShiftClick?.(item.LinkID);
                 }
             }}
             onTouchStart={(e) => e.stopPropagation()}
@@ -253,7 +255,7 @@ const ItemRow = ({
                 }}
                 onMouseDown={() => document.getSelection()?.removeAllRanges()}
             />
-            {!item.Disabled && (
+            {!isPreview && !item.Disabled && (
                 <RowContextMenu
                     item={item}
                     selectedItems={selectedItems}
