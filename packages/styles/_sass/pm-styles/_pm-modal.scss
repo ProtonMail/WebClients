@@ -228,6 +228,13 @@ $pm-label-shorter-width: 10em !default;
   }
 }
 
+
+// modal with title visually hidden
+.pm-modalHeader--no-title {
+	padding-top: 2rem;
+}
+
+
 // single button on right
 .pm-modalFooter [class*="pm-button"]:only-child {
   margin-left: auto;
