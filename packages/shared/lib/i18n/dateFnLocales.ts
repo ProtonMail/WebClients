@@ -11,3 +11,4 @@ export default dateFnLocales.keys().reduce((acc: DateFnsLocaleMap, key: string) 
 
 export { default as enUSLocale } from 'date-fns/locale/en-US';
 export { default as enGBLocale } from 'date-fns/locale/en-GB';
+export { default as faIRLocale } from 'date-fns/locale/fa-IR';

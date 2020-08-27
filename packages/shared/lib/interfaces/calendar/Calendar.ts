@@ -19,33 +19,10 @@ export enum SETTINGS_VIEW {
     PLANNING = 4,
 }
 
-export enum SETTINGS_WEEK_START {
-    LOCALE_DEFAULT = 0,
-    MONDAY = 1,
-    SATURDAY = 6,
-    SUNDAY = 7,
-}
-
-export enum SETTINGS_DATE_FORMAT {
-    LOCALE_DEFAULT = 0,
-    DDMMYYYY = 1,
-    MMDDYYYY = 2,
-    YYYYMMDD = 3,
-}
-
-export enum SETTINGS_TIME_FORMAT {
-    LOCALE_DEFAULT = 0,
-    H24 = 1,
-    H12 = 2,
-}
-
 export interface CalendarUserSettings {
     DefaultCalendarID: string | null;
-    WeekStart: SETTINGS_WEEK_START;
     WeekLength: number;
     DisplayWeekNumber: number;
-    DateFormat: SETTINGS_DATE_FORMAT;
-    TimeFormat: SETTINGS_TIME_FORMAT;
     AutoDetectPrimaryTimezone: number;
     PrimaryTimezone?: string;
     DisplaySecondaryTimezone: number;

@@ -1,54 +1,91 @@
 import { Locale } from 'date-fns';
-import { enGBLocale, enUSLocale } from './dateFnLocales';
-import { DateFnsLocaleMap } from '../interfaces/Locale';
+import { enGBLocale, enUSLocale, faIRLocale } from './dateFnLocales';
+import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT, SETTINGS_WEEK_START } from '../interfaces';
 
-interface Config {
-    locale: string;
-    longLocale: string;
-    locales: DateFnsLocaleMap;
-}
-
-export const loadDateFnLocale = async ({ locale, longLocale, locales }: Config) => {
-    const [appDateFnLocale, longDateFnLocale] = await Promise.all([locales[locale](), locales[longLocale]()]);
-
-    /**
+export const getDateFnLocaleWithLongFormat = (a: Locale, b: Locale): Locale => {
+    /*
      * By default we use the same date-time locale as the user has selected in the app in order
      * to get the correct translations for days, months, year, etc. However, we override
      * the long date and time format to get 12 or 24 hour time and the correct date format depending
-     * on what is selected in the browser since there is no settings for this in the mail application.
+     * on what is selected in the browser for the "system settings" option.
      */
     return {
-        ...appDateFnLocale,
-        formatLong: longDateFnLocale.formatLong,
+        ...a,
+        formatLong: b.formatLong,
     };
 };
 
-/*
- * Allow to override the long date format.
- * Primarily intended for the calendar application, where a user can override AMPM time.
- */
-export const loadDateFnTimeFormat = ({
-    dateLocale,
-    displayAMPM = false,
-}: {
-    dateLocale: Locale;
-    displayAMPM?: boolean;
-}) => {
-    const isAMPMLocale = dateLocale.formatLong?.time().includes('a');
+export interface Options {
+    TimeFormat: SETTINGS_TIME_FORMAT;
+    DateFormat: SETTINGS_DATE_FORMAT;
+    WeekStart: SETTINGS_WEEK_START;
+}
+
+export const getIsLocaleAMPM = (locale: Locale) => locale.formatLong?.time().includes('a');
+
+export const getDateFnLocaleWithDateFormat = (locale: Locale, dateFormat: SETTINGS_DATE_FORMAT): Locale => {
+    const date = (dateFormat === SETTINGS_DATE_FORMAT.DDMMYYYY
+        ? enGBLocale
+        : dateFormat === SETTINGS_DATE_FORMAT.MMDDYYYY
+        ? enUSLocale
+        : faIRLocale
+    ).formatLong?.date;
+
+    return {
+        ...locale,
+        formatLong: {
+            ...locale.formatLong,
+            // @ts-ignore
+            date,
+        },
+    };
+};
+
+export const getDateFnLocaleWithTimeFormat = (dateLocale: Locale, displayAMPM = false): Locale => {
+    const isAMPMLocale = getIsLocaleAMPM(dateLocale);
     if ((displayAMPM && isAMPMLocale) || (!displayAMPM && !isAMPMLocale)) {
         return dateLocale;
     }
+
+    const time = (displayAMPM ? enUSLocale : enGBLocale).formatLong?.time;
 
     return {
         ...dateLocale,
         formatLong: {
             ...dateLocale.formatLong,
-            time: (displayAMPM ? enUSLocale : enGBLocale).formatLong?.time,
+            // @ts-ignore
+            time,
         },
     };
 };
 
-/*
- * Detect if user's machine is using military time format (24h not 12h am/pm)
- */
-export const isMilitaryTime = () => !new Date().toLocaleTimeString().match(/am|pm/i);
+export const getDateFnLocaleWithSettings = (
+    locale: Locale,
+    {
+        TimeFormat = SETTINGS_TIME_FORMAT.LOCALE_DEFAULT,
+        DateFormat = SETTINGS_DATE_FORMAT.LOCALE_DEFAULT,
+        WeekStart = SETTINGS_WEEK_START.LOCALE_DEFAULT,
+    }: Partial<Options> = {}
+) => {
+    let copy: Locale = {
+        ...locale,
+    };
+
+    if (TimeFormat !== SETTINGS_TIME_FORMAT.LOCALE_DEFAULT) {
+        const displayAMPM = TimeFormat === SETTINGS_TIME_FORMAT.H12;
+        copy = getDateFnLocaleWithTimeFormat(locale, displayAMPM);
+    }
+
+    if (DateFormat !== SETTINGS_DATE_FORMAT.LOCALE_DEFAULT) {
+        copy = getDateFnLocaleWithDateFormat(copy, DateFormat);
+    }
+
+    if (WeekStart !== SETTINGS_WEEK_START.LOCALE_DEFAULT && WeekStart >= 1 && WeekStart <= 7) {
+        copy.options = {
+            ...copy.options,
+            weekStartsOn: (WeekStart % 7) as any,
+        };
+    }
+
+    return copy;
+};
