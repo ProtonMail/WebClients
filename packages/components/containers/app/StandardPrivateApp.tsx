@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { UserModel, UserSettingsModel } from 'proton-shared/lib/models';
 import { unique } from 'proton-shared/lib/helpers/array';
-import loadLocale from 'proton-shared/lib/i18n/loadLocale';
-import { getClosestMatches, getBrowserLocale } from 'proton-shared/lib/i18n/helper';
+import { loadDateLocale, loadLocale } from 'proton-shared/lib/i18n/loadLocale';
 import createEventManager from 'proton-shared/lib/eventManager/eventManager';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { destroyOpenPGP, loadOpenPGP } from 'proton-shared/lib/openpgp';
@@ -11,9 +10,7 @@ import { UserSettings as tsUserSettings } from 'proton-shared/lib/interfaces';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { traceError } from 'proton-shared/lib/helpers/sentry';
-import updateLongLocale from 'proton-shared/lib/i18n/updateLongLocale';
-import { SETTINGS_TIME_FORMAT } from 'proton-shared/lib/interfaces/calendar';
-import { isMilitaryTime } from 'proton-shared/lib/i18n/dateFnLocale';
+import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
 
 import { useApi, useCache, useNotifications } from '../../hooks';
 
@@ -73,23 +70,17 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         const modelsPromise = loadModels(unique([UserSettingsModel, UserModel, ...preloadModels]), {
             api: silentApi,
             cache,
-        })
-            .then(async (result: any) => {
-                const [{ Locale, TimeFormat }] = result as [tsUserSettings];
-                await loadLocale({
-                    ...getClosestMatches({ locale: Locale, browserLocale: getBrowserLocale(), locales }),
-                    locales,
-                });
-                updateLongLocale({
-                    displayAMPM:
-                        TimeFormat === SETTINGS_TIME_FORMAT.LOCALE_DEFAULT
-                            ? !isMilitaryTime()
-                            : TimeFormat === SETTINGS_TIME_FORMAT.H12,
-                });
-            })
-            .then(() => onInit?.()); // onInit has to happen after locales have been loaded to allow applications to override it
+        }).then(async (result: any) => {
+            const [userSettings] = result as [tsUserSettings];
+            const browserLocale = getBrowserLocale();
+            const localeCode = getClosestLocaleCode(userSettings.Locale, locales);
+            return Promise.all([
+                loadLocale(localeCode, locales),
+                loadDateLocale(localeCode, browserLocale, userSettings),
+            ]);
+        });
 
-        Promise.all([eventManagerPromise, modelsPromise, loadOpenPGP(openpgpConfig)])
+        Promise.all([eventManagerPromise, modelsPromise, onInit?.(), loadOpenPGP(openpgpConfig)])
             .then(() => {
                 setLoading(false);
             })

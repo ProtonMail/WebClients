@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
 import { updateLocale } from 'proton-shared/lib/api/settings';
-import loadLocale from 'proton-shared/lib/i18n/loadLocale';
-import { getBrowserLocale, getClosestMatches } from 'proton-shared/lib/i18n/helper';
+import { loadLocale, loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
+import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
+import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import {
     useApi,
     useConfig,
@@ -15,11 +15,15 @@ import {
 } from '../../hooks';
 import { Row, Field, Label, Select } from '../../components';
 
-const LanguageSection = ({ locales = {} }) => {
+interface Props {
+    locales: TtagLocaleMap;
+}
+
+const LanguageSection = ({ locales = {} }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { LOCALES = {} } = useConfig();
-    const [{ Locale }] = useUserSettings();
+    const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const forceRefresh = useForceRefresh();
@@ -29,17 +33,14 @@ const LanguageSection = ({ locales = {} }) => {
         value,
     }));
 
-    const handleChange = async ({ target }) => {
+    const handleChange = async ({ target }: ChangeEvent<HTMLSelectElement>) => {
         const newLocale = target.value;
         await api(updateLocale(newLocale));
-        await loadLocale({
-            ...getClosestMatches({
-                locale: newLocale,
-                browserLocale: getBrowserLocale(),
-                locales,
-            }),
-            locales,
-        });
+        const localeCode = getClosestLocaleCode(newLocale, locales);
+        await Promise.all([
+            loadLocale(localeCode, locales),
+            loadDateLocale(localeCode, getBrowserLocale(), userSettings),
+        ]);
         await call();
         createNotification({ text: c('Success').t`Locale updated` });
         forceRefresh();
@@ -51,7 +52,7 @@ const LanguageSection = ({ locales = {} }) => {
             <Field>
                 <Select
                     disabled={loading}
-                    value={Locale}
+                    value={userSettings?.Locale}
                     id="languageSelect"
                     options={options}
                     onChange={(e) => {
@@ -61,10 +62,6 @@ const LanguageSection = ({ locales = {} }) => {
             </Field>
         </Row>
     );
-};
-
-LanguageSection.propTypes = {
-    locales: PropTypes.object.isRequired,
 };
 
 export default LanguageSection;
