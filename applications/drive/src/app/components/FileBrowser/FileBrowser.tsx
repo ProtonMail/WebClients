@@ -12,7 +12,7 @@ import {
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 
 import ItemRow from './ItemRow';
-import useDriveDragMove from '../../hooks/drive/useDriveDragMove';
+import { DragMoveControls } from '../../hooks/drive/useDriveDragMove';
 import { FileBrowserItem } from './interfaces';
 import FolderContextMenu from './FolderContextMenu';
 import { SortKeys, SortParams } from '../../interfaces/link';
@@ -25,14 +25,16 @@ interface Props {
     contents: FileBrowserItem[];
     selectedItems: FileBrowserItem[];
     isTrash?: boolean;
+    isPreview?: boolean;
     sortParams?: SortParams;
     onToggleItemSelected: (item: string) => void;
     onItemClick?: (item: FileBrowserItem) => void;
-    onShiftClick: (item: string) => void;
+    onShiftClick?: (item: string) => void;
     selectItem: (item: string) => void;
     clearSelections: () => void;
     onToggleAllSelected: () => void;
     setSorting?: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
+    getDragMoveControls?: (item: FileBrowserItem) => DragMoveControls;
 }
 
 const FileBrowser = ({
@@ -43,6 +45,7 @@ const FileBrowser = ({
     scrollAreaRef,
     selectedItems,
     isTrash = false,
+    isPreview = false,
     onToggleItemSelected,
     onToggleAllSelected,
     onItemClick,
@@ -51,12 +54,12 @@ const FileBrowser = ({
     onShiftClick,
     sortParams,
     setSorting,
+    getDragMoveControls,
 }: Props) => {
     const [secondaryActionActive, setSecondaryActionActive] = useState(false);
     const [isContextMenuOpen, setIsOpen] = useState(false);
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const { isDesktop } = useActiveBreakpoint();
-    const { getDragMoveControls } = useDriveDragMove(shareId, selectedItems, clearSelections);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -199,13 +202,14 @@ const FileBrowser = ({
                                 showLocation={isTrash}
                                 selectItem={selectItem}
                                 secondaryActionActive={secondaryActionActive}
-                                dragMoveControls={isTrash ? undefined : getDragMoveControls(item)}
+                                dragMoveControls={getDragMoveControls?.(item)}
+                                isPreview={isPreview}
                             />
                         ))}
                         {loading && <TableRowBusy colSpan={colSpan} />}
                     </TableBody>
                 </table>
-                {!isTrash && (
+                {!isPreview && !isTrash && (
                     <FolderContextMenu
                         isOpen={isContextMenuOpen}
                         open={openContextMenu}

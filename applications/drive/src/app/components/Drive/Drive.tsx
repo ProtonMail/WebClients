@@ -9,6 +9,7 @@ import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder } from './DriveFolderProvider';
 import { useDriveContent } from './DriveContentProvider';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
+import useDriveDragMove from '../../hooks/drive/useDriveDragMove';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -41,6 +42,7 @@ function Drive({ activeFolder }: Props) {
 
     const folderName = cache.get.linkMeta(shareId, linkId)?.Name;
     const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
+    const { getDragMoveControls } = useDriveDragMove(shareId, selectedItems, clearSelections);
 
     useEffect(() => {
         if (folderName === undefined) {
@@ -81,6 +83,7 @@ function Drive({ activeFolder }: Props) {
             onToggleAllSelected={toggleAllSelected}
             onShiftClick={toggleRange}
             selectItem={selectItem}
+            getDragMoveControls={getDragMoveControls}
         />
     );
 }
