@@ -175,6 +175,7 @@
 .composer-addresses-item {
     background-color: var(--bgcolor-item-column-list, $pm-global-light);
     text-shadow: none;
+
     + .composer-addresses-input-container {
         margin-left: 0;
         margin-top: calc(0.25em + 1px);
@@ -188,18 +189,6 @@
 
     .composer-addresses-item-label {
         border-right-color: currentColor;
-    }
-}
-
-.composer-addresses-item-label,
-.composer-addresses-item-icon {
-    border-right: 1px solid var(--bordercolor-input, $pm-global-border);
-}
-
-.composer-addresses-item-remove {
-    &.pm-button {
-        padding: 0 0.5em;
-        border: none;
     }
 }
 
@@ -385,4 +374,15 @@
     @include respond-to($breakpoint-small) {
         min-width: 0;
     }
+}
+
+.composer-addresses-item-dragged {
+    position: absolute;
+    cursor: move;
+}
+
+.composer-addresses-item-drag-placeholder {
+    width: var(--width, 5em);
+    border-radius: $global-border-radius;
+    border: 1px dashed currentColor;
 }

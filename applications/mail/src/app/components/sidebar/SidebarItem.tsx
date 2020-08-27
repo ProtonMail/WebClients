@@ -77,7 +77,7 @@ const SidebarItem = ({
     };
 
     const handleDrop = async (event: DragEvent) => {
-        dragProps.onDrop();
+        dragProps.onDrop(event);
 
         // Manual trigger of the dragend event on the drag element because native event is not reliable
         const dragElement = document.getElementById(event.dataTransfer.getData(DRAG_ELEMENT_ID_KEY));

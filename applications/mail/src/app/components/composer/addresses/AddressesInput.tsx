@@ -1,4 +1,13 @@
-import React, { useState, useEffect, useMemo, ChangeEvent, MutableRefObject, useRef, MouseEvent } from 'react';
+import React, {
+    useState,
+    useEffect,
+    useMemo,
+    ChangeEvent,
+    MutableRefObject,
+    useRef,
+    MouseEvent,
+    Fragment
+} from 'react';
 import { Input, classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { ContactGroup, ContactEmail, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
@@ -12,12 +21,14 @@ import {
     contactToRecipient,
     majorToRecipient,
     recipientsWithoutGroup,
-    recipientsToRecipientOrGroup
+    recipientsToRecipientOrGroup,
+    getRecipientOrGroupKey
 } from '../../../helpers/addresses';
 import AddressesAutocomplete from './AddressesAutocomplete';
 import AddressesGroupItem from './AddressesGroupItem';
 import { RecipientGroup } from '../../../models/address';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { useAddressesInputDrag } from '../../../hooks/useAddressesInputDrag';
 
 interface Props {
     id: string;
@@ -44,8 +55,14 @@ const AddressesInput = ({
     ...rest
 }: Props) => {
     const [inputModel, setInputModel] = useState('');
+
     const inputRef = useRef<HTMLInputElement>(null);
-    const recipientsOrGroups = recipientsToRecipientOrGroup(recipients, contactGroups);
+
+    const [recipientsOrGroups, setRecipientsOrGroups] = useState(() =>
+        recipientsToRecipientOrGroup(recipients, contactGroups)
+    );
+
+    useEffect(() => setRecipientsOrGroups(recipientsToRecipientOrGroup(recipients, contactGroups)), [recipients]);
 
     const majorDomains = useMemo(() => {
         const [localPart] = getEmailParts(inputModel);
@@ -143,6 +160,21 @@ const AddressesInput = ({
         setInputModel('');
     };
 
+    const {
+        draggedRecipient,
+        placeholderPosition,
+        placeholderSize,
+        containerDragHandlers,
+        itemDragHandlers
+    } = useAddressesInputDrag(recipientsOrGroups, setRecipientsOrGroups, onChange);
+
+    const dragPlaceholder = (
+        <div
+            className="composer-addresses-item-drag-placeholder mt0-25 mb0-25 mr0-5 mw100 no-pointer-events"
+            style={{ width: `${placeholderSize?.width}px`, height: `${placeholderSize?.height}px` }}
+        />
+    );
+
     return (
         <AddressesAutocomplete
             inputRef={inputRef}
@@ -160,29 +192,37 @@ const AddressesInput = ({
                     !expanded && 'composer-addresses-container-closed'
                 ])}
                 onClick={handleClick}
+                {...containerDragHandlers}
             >
-                {recipientsOrGroups.map((recipientsOrGroup) =>
-                    recipientsOrGroup.recipient ? (
-                        <AddressesRecipientItem
-                            key={recipientsOrGroup.recipient.Address}
-                            recipient={
-                                recipientsOrGroup.recipient as Required<Pick<Recipient, 'Address' | 'ContactID'>>
-                            }
-                            messageSendInfo={messageSendInfo}
-                            onChange={handleRecipientChange(recipientsOrGroup.recipient)}
-                            onRemove={handleRecipientRemove(recipientsOrGroup.recipient)}
-                        />
-                    ) : (
-                        <AddressesGroupItem
-                            key={recipientsOrGroup.group?.group?.ID}
-                            recipientGroup={recipientsOrGroup.group as RecipientGroup}
-                            messageSendInfo={messageSendInfo}
-                            contacts={contacts}
-                            onChange={handleGroupChange(recipientsOrGroup.group)}
-                            onRemove={handleGroupRemove(recipientsOrGroup.group)}
-                        />
-                    )
-                )}
+                {recipientsOrGroups.map((recipientOrGroup, index) => (
+                    <Fragment key={getRecipientOrGroupKey(recipientOrGroup)}>
+                        {index === placeholderPosition && dragPlaceholder}
+                        {recipientOrGroup.recipient ? (
+                            <AddressesRecipientItem
+                                recipient={
+                                    recipientOrGroup.recipient as Required<Pick<Recipient, 'Address' | 'ContactID'>>
+                                }
+                                messageSendInfo={messageSendInfo}
+                                contacts={contacts}
+                                onChange={handleRecipientChange(recipientOrGroup.recipient)}
+                                onRemove={handleRecipientRemove(recipientOrGroup.recipient)}
+                                dragged={draggedRecipient === recipientOrGroup}
+                                {...itemDragHandlers(recipientOrGroup)}
+                            />
+                        ) : (
+                            <AddressesGroupItem
+                                recipientGroup={recipientOrGroup.group as RecipientGroup}
+                                messageSendInfo={messageSendInfo}
+                                contacts={contacts}
+                                onChange={handleGroupChange(recipientOrGroup.group)}
+                                onRemove={handleGroupRemove(recipientOrGroup.group)}
+                                dragged={draggedRecipient === recipientOrGroup}
+                                {...itemDragHandlers(recipientOrGroup)}
+                            />
+                        )}
+                    </Fragment>
+                ))}
+                {placeholderPosition === recipientsOrGroups.length && dragPlaceholder}
                 <div className="flex-item-fluid flex flex-items-center composer-addresses-input-container">
                     <Input
                         id={id}

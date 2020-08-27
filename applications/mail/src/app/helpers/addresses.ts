@@ -146,6 +146,21 @@ export const recipientsToRecipientOrGroup = (recipients: Recipient[], groups: Co
         return acc;
     }, []);
 
+export const recipientOrGroupToRecipients = (recipientsOrGroups: RecipientOrGroup[]) =>
+    recipientsOrGroups
+        .map((recipientOrGroup) =>
+            recipientOrGroup.recipient
+                ? recipientOrGroup.recipient
+                : (recipientOrGroup.group?.recipients as Recipient[])
+        )
+        .flat();
+
+export const getRecipientOrGroupKey = (recipientOrGroup: RecipientOrGroup) =>
+    recipientOrGroup.recipient ? recipientOrGroup.recipient.Address : recipientOrGroup.group?.group?.ID;
+
+export const matchRecipientOrGroup = (rog1: RecipientOrGroup, rog2: RecipientOrGroup) =>
+    getRecipientOrGroupKey(rog1) === getRecipientOrGroupKey(rog2);
+
 /**
  * Detect if the email address is a valid plus alias and returns the address model appropriate
  */

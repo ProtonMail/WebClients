@@ -36,6 +36,8 @@ import { useHasScroll } from '../../hooks/useHasScroll';
 import { reloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
 import { OnCompose } from '../../hooks/useCompose';
+import { useDragOver } from '../../hooks/useDragOver';
+import { DRAG_ADDRESS_KEY } from '../../constants';
 
 enum ComposerInnerModal {
     None,
@@ -152,6 +154,10 @@ const Composer = ({
     // onClose handler can be called in a async handler
     // Input onClose ref can change in the meantime
     const onClose = useHandler(inputOnClose);
+
+    const [, dragHandlers] = useDragOver((event) => event.dataTransfer.types.includes(DRAG_ADDRESS_KEY), 'move', {
+        onDragEnter: onFocus
+    });
 
     // Manage existing draft initialization
     useEffect(() => {
@@ -390,6 +396,7 @@ const Composer = ({
             style={style}
             onFocus={onFocus}
             onClick={handleClick}
+            {...dragHandlers}
         >
             <ComposerTitleBar
                 message={modelMessage}

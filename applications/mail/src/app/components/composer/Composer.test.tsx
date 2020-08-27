@@ -1,5 +1,5 @@
 import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { MailSettings, Recipient } from 'proton-shared/lib/interfaces';
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
 
@@ -29,7 +29,6 @@ const props = {
 
 describe('Composer', () => {
     afterEach(() => clearAll());
-
     it('should not show embedded modal when plaintext mode', async () => {
         const message = {
             localID: ID,
@@ -37,23 +36,17 @@ describe('Composer', () => {
             data: {
                 ID,
                 MIMEType: 'text/plain' as MIME_TYPES,
-                Subject: ''
+                Subject: '',
+                ToList: [] as Recipient[]
             }
         } as MessageExtended;
-
         messageCache.set(ID, message);
-
         const { getByTestId, findByText, queryByText } = await render(<Composer {...props} messageID={ID} />);
-
         const inputAttachment = getByTestId('composer-attachments-button') as HTMLInputElement;
-
         fireEvent.change(inputAttachment, { target: { files: [png] } });
-
         await tick();
-
         const embeddedModal = queryByText('0 image detected');
         expect(embeddedModal).toBe(null);
-
         findByText('1 file attached');
     });
 });

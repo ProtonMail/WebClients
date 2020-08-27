@@ -52,7 +52,7 @@ const HeaderRecipientItemRecipient = ({
     const contact = getContactOfRecipient(contacts, recipient.Address);
     const { ContactID } = contact || {};
 
-    const handleCompose = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleCompose = (event: MouseEvent) => {
         event.stopPropagation();
         onCompose({
             action: MESSAGE_ACTIONS.NEW,
@@ -61,15 +61,15 @@ const HeaderRecipientItemRecipient = ({
         close();
     };
 
-    const handleCopy = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleCopy = (event: MouseEvent) => {
         event.stopPropagation();
         textToClipboard(recipient.Address);
         createNotification({ text: c('Info').t`Copied to clipboard` });
         close();
     };
 
-    const handleClickContact = (e: MouseEvent<HTMLButtonElement>) => {
-        e.stopPropagation();
+    const handleClickContact = (event: MouseEvent) => {
+        event.stopPropagation();
 
         if (ContactID) {
             createModal(<ContactDetailsModal contactID={ContactID} />);
