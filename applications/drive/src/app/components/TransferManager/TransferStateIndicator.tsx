@@ -2,7 +2,13 @@ import React from 'react';
 import { Icon, classnames, Tooltip } from 'react-components';
 import { c } from 'ttag';
 import { TransferState, Upload, Download } from '../../interfaces/transfer';
-import { isTransferPaused, isTransferProgress, isTransferDone, isTransferError } from '../../utils/transfer';
+import {
+    isTransferPaused,
+    isTransferProgress,
+    isTransferDone,
+    isTransferError,
+    isTransferCanceled,
+} from '../../utils/transfer';
 import { TransferType } from './interfaces';
 
 interface Props {
@@ -19,7 +25,11 @@ const getErrorText = (error: any) => {
 };
 
 const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
-    const progressTitle = type === TransferType.Download ? c('Info').t`Downloading` : c('Info').t`Uploading`;
+    const shouldShowDirection =
+        isTransferProgress(transfer) ||
+        isTransferPaused(transfer) ||
+        isTransferCanceled(transfer) ||
+        isTransferDone(transfer);
 
     const statusInfo = {
         [TransferState.Initializing]: {
@@ -55,29 +65,29 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         },
     }[transfer.state];
 
+    const progressTitle = type === TransferType.Download ? c('Info').t`Downloading` : c('Info').t`Uploading`;
+    const transferTitle = isTransferProgress(transfer) ? progressTitle : statusInfo.text;
     const errorText = transfer.error && getErrorText(transfer.error);
 
     return (
         <div
             className={classnames([
-                'ellipsis flex flex-items-center',
+                'ellipsis flex-noMinChildren flex-items-center flex-nowrap',
                 isTransferPaused(transfer) && 'color-global-info',
                 isTransferDone(transfer) && 'color-global-success',
                 isTransferError(transfer) && 'color-global-warning',
             ])}
             id={transfer.id}
-            title={isTransferProgress(transfer) ? progressTitle : statusInfo.text}
+            title={transferTitle}
         >
+            {/* Mobile icon */}
             {statusInfo.icon && !isTransferProgress(transfer) && (
-                <Tooltip title={errorText} originalPlacement="top">
-                    <Icon
-                        name={errorText ? 'info' : statusInfo.icon}
-                        className="flex-item-noshrink mr0-25 nodesktop notablet"
-                        alt={statusInfo.text}
-                    />
+                <Tooltip title={errorText} originalPlacement="top" className="flex-item-noshrink nodesktop notablet">
+                    <Icon name={errorText ? 'info' : statusInfo.icon} alt={statusInfo.text} />
                 </Tooltip>
             )}
 
+            {/* Desktop text */}
             <span className="nomobile flex flex-items-center">
                 {errorText && (
                     <Tooltip title={errorText} originalPlacement="top" className="flex mr0-5">
@@ -87,13 +97,21 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
                 {statusInfo.text}
             </span>
 
-            <span className="sr-only" aria-atomic="true" aria-live="assertive">
-                {transfer.meta.filename} {isTransferProgress(transfer) ? progressTitle : statusInfo.text}
-            </span>
-
-            {statusInfo.icon && isTransferProgress(transfer) && (
-                <Icon name={statusInfo.icon} className="flex-item-noshrink ml0-5 notablet" />
+            {shouldShowDirection && (
+                <Icon
+                    name={type === TransferType.Download ? 'download' : 'upload'}
+                    className={classnames([
+                        'flex-item-noshrink ml0-5',
+                        isTransferDone(transfer) && 'notablet nodesktop',
+                    ])}
+                    alt={progressTitle}
+                />
             )}
+
+            {/* Hidden Info for screen readers */}
+            <span className="sr-only" aria-atomic="true" aria-live="assertive">
+                {transfer.meta.filename} {transferTitle}
+            </span>
         </div>
     );
 };
