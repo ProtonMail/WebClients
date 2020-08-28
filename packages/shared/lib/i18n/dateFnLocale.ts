@@ -2,6 +2,9 @@ import { Locale } from 'date-fns';
 import { enGBLocale, enUSLocale, faIRLocale } from './dateFnLocales';
 import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT, SETTINGS_WEEK_START } from '../interfaces';
 
+// Support for changing the date format is not great. Hide it for now.
+export const IS_DATE_FORMAT_ENABLED = false;
+
 export const getDateFnLocaleWithLongFormat = (a: Locale, b: Locale): Locale => {
     /*
      * By default we use the same date-time locale as the user has selected in the app in order
@@ -76,7 +79,7 @@ export const getDateFnLocaleWithSettings = (
         copy = getDateFnLocaleWithTimeFormat(locale, displayAMPM);
     }
 
-    if (DateFormat !== SETTINGS_DATE_FORMAT.LOCALE_DEFAULT) {
+    if (IS_DATE_FORMAT_ENABLED && DateFormat !== SETTINGS_DATE_FORMAT.LOCALE_DEFAULT) {
         copy = getDateFnLocaleWithDateFormat(copy, DateFormat);
     }
 
