@@ -1,8 +1,9 @@
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, UserSettings } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
 import React, { useEffect, useState } from 'react';
 import {
     Icon,
@@ -41,8 +42,17 @@ interface Props {
     defaultCalendar?: Calendar;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
+    userSettings: UserSettings;
 }
-const ExtraEvent = ({ invitationOrError, message, calendars, defaultCalendar, contactEmails, ownAddresses }: Props) => {
+const ExtraEvent = ({
+    invitationOrError,
+    message,
+    calendars,
+    defaultCalendar,
+    contactEmails,
+    ownAddresses,
+    userSettings
+}: Props) => {
     const [model, setModel] = useState<InvitationModel>(() =>
         getInitialInvitationModel(invitationOrError, message, contactEmails, ownAddresses, defaultCalendar)
     );
@@ -166,7 +176,11 @@ const ExtraEvent = ({ invitationOrError, message, calendars, defaultCalendar, co
             <ExtraEventSummary model={model} />
             {/*<ExtraEventButtons model={model} />*/}
             <div className="border-bottom mb0-5"></div>
-            <ExtraEventDetails model={model} defaultCalendar={defaultCalendar} />
+            <ExtraEventDetails
+                model={model}
+                defaultCalendar={defaultCalendar}
+                weekStartsOn={getWeekStartsOn(userSettings)}
+            />
         </div>
     );
 };

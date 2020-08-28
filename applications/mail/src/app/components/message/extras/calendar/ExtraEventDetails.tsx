@@ -8,7 +8,8 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { SETTINGS_WEEK_START } from 'proton-shared/lib/interfaces';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
+
 import { formatDateTime, getAllDayInfo, InvitationModel, Participant } from '../../../../helpers/calendar/invite';
 import { RequireSome } from '../../../../models/utils';
 
@@ -59,8 +60,9 @@ const formatParticipants = (participants: Participant[] = []) => {
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
     defaultCalendar?: Calendar;
+    weekStartsOn: WeekStartsOn;
 }
-const ExtraEventDetails = ({ model, defaultCalendar }: Props) => {
+const ExtraEventDetails = ({ model, defaultCalendar, weekStartsOn }: Props) => {
     const { method, isOrganizerMode, invitationIcs, invitationApi } = model;
     const { vevent, organizer, participants } =
         method === ICAL_METHOD.DECLINECOUNTER && invitationApi ? invitationApi : invitationIcs;
@@ -72,7 +74,7 @@ const ExtraEventDetails = ({ model, defaultCalendar }: Props) => {
     const totalParticipants = participants?.length;
     const frequencyString = rrule
         ? getFrequencyString(rrule.value, dtstart, {
-              weekStartsOn: SETTINGS_WEEK_START.MONDAY,
+              weekStartsOn,
               locale: dateLocale
           })
         : undefined;
