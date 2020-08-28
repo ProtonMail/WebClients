@@ -435,7 +435,7 @@ const BillingSection = ({ permission }) => {
                             </div>
                         </div>
                         <div className="flex-autogrid-item nomobile">
-                            <LinkButton className="p0" onClick={handleOpenCreditsModal}>{c('Action')
+                            <LinkButton className="p0 alignleft" onClick={handleOpenCreditsModal}>{c('Action')
                                 .t`Add credits`}</LinkButton>
                         </div>
                         <div className="flex-autogrid-item bold alignright">{Credit / 100}</div>
@@ -448,7 +448,7 @@ const BillingSection = ({ permission }) => {
                                     .t`If you purchased a gift code or received one from our support team, you can enter it here.`}
                             />
                             <div className="hidden automobile">
-                                <LinkButton className="p0" onClick={handleOpenGiftCodeModal}>{c('Action')
+                                <LinkButton className="p0 alignleft" onClick={handleOpenGiftCodeModal}>{c('Action')
                                     .t`Use gift code`}</LinkButton>
                             </div>
                         </div>
