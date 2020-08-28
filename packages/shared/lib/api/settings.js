@@ -5,6 +5,12 @@ export const getSettings = () => ({
     method: 'get',
 });
 
+export const updateUsername = (data) => ({
+    url: 'settings/username',
+    method: 'put',
+    data,
+});
+
 export const updatePassword = (data) => ({
     url: 'settings/password',
     method: 'put',

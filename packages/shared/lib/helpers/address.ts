@@ -1,4 +1,4 @@
-import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from '../constants';
+import { ADDRESS_STATUS, ADDRESS_TYPE, RECEIVE_ADDRESS, SEND_ADDRESS } from '../constants';
 import { Address } from '../interfaces';
 
 export const getActiveAddresses = (addresses: Address[]): Address[] => {
@@ -13,4 +13,8 @@ export const getActiveAddresses = (addresses: Address[]): Address[] => {
 
 export const hasAddresses = (addresses: Address[] | undefined): boolean => {
     return Array.isArray(addresses) && addresses.length > 0;
+};
+
+export const getHasOnlyExternalAddresses = (addresses: Address[]) => {
+    return addresses.every(({ Type }) => Type === ADDRESS_TYPE.TYPE_EXTERNAL);
 };

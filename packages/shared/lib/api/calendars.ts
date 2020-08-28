@@ -1,11 +1,7 @@
+import { PaginationParams } from './interface';
 import { Calendar, CalendarEventData, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
 
 const CALENDAR_V1 = 'calendar/v1';
-
-interface PaginationParams {
-    Page: number;
-    PageSize: number;
-}
 
 export const queryCalendars = (params?: PaginationParams) => ({
     url: `${CALENDAR_V1}`,
