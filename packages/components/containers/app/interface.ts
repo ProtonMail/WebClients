@@ -3,9 +3,9 @@ import { AuthenticationStore } from 'proton-shared/lib/authentication/createAuth
 
 export interface OnLoginCallbackArguments {
     UID: string;
+    User: tsUser;
     EventID?: string;
     keyPassword?: string;
-    User?: tsUser;
     LocalID?: number;
     path?: string;
 }

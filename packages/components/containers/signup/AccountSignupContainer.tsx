@@ -10,13 +10,14 @@ import {
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { c } from 'ttag';
-import { Address, HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
+import { Address, HumanVerificationMethodType, User as tsUser } from 'proton-shared/lib/interfaces';
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
 import { getResetAddressesKeys } from 'proton-shared/lib/keys/resetKeys';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { useHistory } from 'react-router-dom';
 import {
+    getUser,
     queryCheckUsernameAvailability,
     queryCheckVerificationCode,
     queryDirectSignupStatus,
@@ -252,8 +253,9 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
             }
 
             const authResponse = authApi.getAuthResponse();
-            await persistSession({ ...authResponse, keyPassword, api });
-            await onLogin({ ...authResponse, keyPassword });
+            const User = await authApi.api<{ User: tsUser }>(getUser()).then(({ User }) => User);
+            await persistSession({ ...authResponse, User, keyPassword, api });
+            await onLogin({ ...authResponse, User, keyPassword });
         } catch (error) {
             // TODO: If any of these requests fail we should probably handle it differently
             return setModelDiff({ step: oldStep });

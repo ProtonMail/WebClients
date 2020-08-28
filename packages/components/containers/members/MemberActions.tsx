@@ -4,12 +4,17 @@ import { authMember, removeMember, updateRole, privatizeMember } from 'proton-sh
 import { revokeSessions } from 'proton-shared/lib/api/memberSessions';
 import { isSSOMode, isStandaloneMode, MEMBER_PRIVATE, MEMBER_ROLE, APPS } from 'proton-shared/lib/constants';
 import memberLogin from 'proton-shared/lib/authentication/memberLogin';
-import { Member, Address, Organization } from 'proton-shared/lib/interfaces';
+import { Member, Address, User as tsUser, Organization } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { persistSessionWithPassword } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { revoke } from 'proton-shared/lib/api/auth';
+import {
+    maybeResumeSessionByUser,
+    persistSessionWithPassword,
+} from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { getAppHref } from 'proton-shared/lib/apps/helper';
 import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
+import { getUser } from 'proton-shared/lib/api/user';
 import { MemberAuthResponse } from 'proton-shared/lib/authentication/interface';
 
 import { ConfirmModal, Alert, DropdownActions, ErrorButton } from '../../components';
@@ -51,14 +56,29 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
         });
 
         if (isSSOMode) {
+            const memberApi = <T,>(config: any) => api<T>(withUIDHeaders(UID, config));
+            const User = await memberApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+
+            const done = (localID: number) => {
+                window.open(getAppHref('/overview', APPS.PROTONACCOUNT, localID));
+            };
+
+            const validatedSession = await maybeResumeSessionByUser(api, User);
+            if (validatedSession) {
+                memberApi(revoke()).catch(noop);
+                done(validatedSession.LocalID);
+                return;
+            }
+
             await persistSessionWithPassword({
-                api: <T,>(config: any) => api<T>(withUIDHeaders(UID, config)),
+                api: memberApi,
                 keyPassword: authentication.getPassword(),
+                User,
                 LocalID,
                 UID,
                 isMember: true,
             });
-            window.open(getAppHref('/overview', APPS.PROTONACCOUNT, LocalID));
+            done(LocalID);
             return;
         }
 

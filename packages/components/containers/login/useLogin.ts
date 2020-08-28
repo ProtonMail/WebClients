@@ -3,7 +3,7 @@ import { AUTH_VERSION } from 'pm-srp';
 import { c } from 'ttag';
 import { srpVerify } from 'proton-shared/lib/srp';
 import { upgradePassword } from 'proton-shared/lib/api/settings';
-import { auth2FA, getInfo } from 'proton-shared/lib/api/auth';
+import { auth2FA, getInfo, revoke } from 'proton-shared/lib/api/auth';
 import { Api, KeySalt as tsKeySalt, User as tsUser } from 'proton-shared/lib/interfaces';
 import { getUser } from 'proton-shared/lib/api/user';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
@@ -11,7 +11,8 @@ import { HTTP_ERROR_CODES } from 'proton-shared/lib/errors';
 import { AuthResponse, AuthVersion, InfoResponse } from 'proton-shared/lib/authentication/interface';
 import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallback';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
-import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { noop } from 'proton-shared/lib/helpers/function';
+import { persistSession, maybeResumeSessionByUser } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { getAuthTypes, handleUnlockKey } from './helper';
 import { OnLoginCallback } from '../app/interface';
 import handleSetupAddressKeys from './handleSetupAddressKeys';
@@ -80,17 +81,26 @@ const useLogin = ({ api, onLogin, ignoreUnlock, generateKeys = false }: Props) =
         const { UID, AccessToken } = authResult;
         const { password } = state;
 
+        const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
         if (authVersion < AUTH_VERSION) {
             await srpVerify({
                 api,
                 credentials: { password },
-                config: withAuthHeaders(UID, AccessToken, upgradePassword()),
+                config: authApi(upgradePassword()),
             });
         }
 
-        const User = userSaltResult ? userSaltResult[0] : undefined;
+        const User = userSaltResult
+            ? userSaltResult[0]
+            : await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
 
-        await persistSession({ ...authResult, api, keyPassword });
+        const validatedSession = await maybeResumeSessionByUser(api, User);
+        if (validatedSession) {
+            authApi(revoke()).catch(noop);
+            return await onLogin(validatedSession);
+        }
+
+        await persistSession({ ...authResult, User, keyPassword, api });
         await onLogin({ ...authResult, User, keyPassword });
     };
 
