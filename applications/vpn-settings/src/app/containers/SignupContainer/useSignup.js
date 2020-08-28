@@ -11,7 +11,7 @@ import {
     useNotifications
 } from 'react-components';
 import { c } from 'ttag';
-import { queryCreateOldUser, queryDirectSignupStatus } from 'proton-shared/lib/api/user';
+import { getUser, queryCreateOldUser, queryDirectSignupStatus } from 'proton-shared/lib/api/user';
 import { auth } from 'proton-shared/lib/api/auth';
 import { subscribe, setPaymentMethod, verifyPayment, checkSubscription } from 'proton-shared/lib/api/payments';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
@@ -266,8 +266,9 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
             await api(withAuthHeaders(UID, AccessToken, setPaymentMethod(signupToken.paymentDetails.Payment)));
         }
 
-        await persistSession({ ...authResult, api });
-        await onLogin(authResult);
+        const { User } = await api(withAuthHeaders(UID, AccessToken, getUser()));
+        await persistSession({ ...authResult, User, api });
+        await onLogin({ ...authResult, User });
     };
 
     return {
