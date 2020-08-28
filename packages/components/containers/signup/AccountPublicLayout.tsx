@@ -2,11 +2,12 @@ import React, { ReactNode } from 'react';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { c } from 'ttag';
 
-import { Href } from '../../components/link';
-import { useAppTitle } from '../../hooks';
-import { useConfig } from '../../hooks';
-import { PublicTopBanners } from '../app';
+import { useAppTitle, useConfig } from '../../hooks';
 import { classnames } from '../../helpers';
+
+import PublicTopBanners from '../app/PublicTopBanners';
+import { Href } from '../../components';
+
 import PublicLanguageSelect from './PublicLanguageSelect';
 
 import './AccountPublicLayout.scss';

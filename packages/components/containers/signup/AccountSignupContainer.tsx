@@ -1,7 +1,12 @@
 import React, { FunctionComponent, useEffect, useMemo, useRef, useState } from 'react';
 import * as History from 'history';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
-import { APP_NAMES, APPS, PAYMENT_METHOD_TYPES, TOKEN_TYPES } from 'proton-shared/lib/constants';
+import {
+    APP_NAMES,
+    PAYMENT_METHOD_TYPES,
+    REQUIRES_INTERNAL_EMAIL_ADDRESS,
+    TOKEN_TYPES,
+} from 'proton-shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { c } from 'ttag';
@@ -86,13 +91,6 @@ const getSearchParams = (search: History.Search) => {
     const service = searchParams.get('service') as SERVICES_KEYS | undefined;
     return { currency, cycle, preSelectedPlan, service: service ? SERVICES[service] : undefined };
 };
-
-const EXTERNAL_SIGNUP_DISABLED: APP_NAMES[] = [
-    APPS.PROTONMAIL,
-    APPS.PROTONMAIL_SETTINGS,
-    APPS.PROTONCONTACTS,
-    APPS.PROTONCALENDAR,
-];
 
 const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
     const history = useHistory();
@@ -366,7 +364,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
 
         const forkOrQueryApp = toApp || service;
         const toAppName = getToAppName(forkOrQueryApp);
-        const disableExternalSignup = forkOrQueryApp && EXTERNAL_SIGNUP_DISABLED.includes(forkOrQueryApp);
+        const disableExternalSignup = forkOrQueryApp && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(forkOrQueryApp);
 
         return (
             <Layout

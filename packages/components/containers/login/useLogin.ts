@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { srpVerify } from 'proton-shared/lib/srp';
 import { upgradePassword } from 'proton-shared/lib/api/settings';
 import { auth2FA, getInfo } from 'proton-shared/lib/api/auth';
-import { KeySalt as tsKeySalt, User as tsUser } from 'proton-shared/lib/interfaces';
+import { Api, KeySalt as tsKeySalt, User as tsUser } from 'proton-shared/lib/interfaces';
 import { getUser } from 'proton-shared/lib/api/user';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
 import { HTTP_ERROR_CODES } from 'proton-shared/lib/errors';
@@ -12,7 +12,6 @@ import { AuthResponse, AuthVersion, InfoResponse } from 'proton-shared/lib/authe
 import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallback';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
-import { useApi } from '../../hooks';
 import { getAuthTypes, handleUnlockKey } from './helper';
 import { OnLoginCallback } from '../app/interface';
 import handleSetupAddressKeys from './handleSetupAddressKeys';
@@ -25,6 +24,7 @@ export enum FORM {
 }
 
 export interface Props {
+    api: Api;
     onLogin: OnLoginCallback;
     ignoreUnlock?: boolean;
     generateKeys?: boolean;
@@ -54,10 +54,8 @@ const INITIAL_STATE = {
     form: FORM.LOGIN,
 };
 
-const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
+const useLogin = ({ api, onLogin, ignoreUnlock, generateKeys = false }: Props) => {
     const cacheRef = useRef<AuthCacheResult>();
-    const normalApi = useApi();
-    const silentApi = <T>(config: any) => normalApi<T>({ ...config, silence: true });
 
     const [state, setState] = useState<State>(INITIAL_STATE);
 
@@ -84,7 +82,7 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
 
         if (authVersion < AUTH_VERSION) {
             await srpVerify({
-                api: silentApi,
+                api,
                 credentials: { password },
                 config: withAuthHeaders(UID, AccessToken, upgradePassword()),
             });
@@ -92,7 +90,7 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
 
         const User = userSaltResult ? userSaltResult[0] : undefined;
 
-        await persistSession({ ...authResult, api: silentApi, keyPassword });
+        await persistSession({ ...authResult, api, keyPassword });
         await onLogin({ ...authResult, User, keyPassword });
     };
 
@@ -146,7 +144,7 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
         }
 
         if (!cache.userSaltResult) {
-            const authApi = <T>(config: any) => silentApi<T>(withAuthHeaders(UID, AccessToken, config));
+            const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
             cache.userSaltResult = await Promise.all([
                 authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
                 authApi<{ KeySalts: tsKeySalt[] }>(getKeySalts()).then(({ KeySalts }) => KeySalts),
@@ -156,7 +154,7 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
 
         if (User.Keys.length === 0) {
             if (generateKeys) {
-                const authApi = <T>(config: any) => silentApi<T>(withAuthHeaders(UID, AccessToken, config));
+                const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
                 const keyPassword = await handleSetupAddressKeys({
                     api: authApi,
                     username: state.username,
@@ -187,7 +185,7 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
         const { authResult } = cache;
         const { UID, AccessToken } = authResult;
 
-        await silentApi(withAuthHeaders(UID, AccessToken, auth2FA({ totp }))).catch((e) => {
+        await api(withAuthHeaders(UID, AccessToken, auth2FA({ totp }))).catch((e) => {
             if (e.status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
                 const error = new Error(e.data?.Error || c('Error').t`Incorrect login credentials. Please try again`);
                 error.name = 'TOTPError';
@@ -204,9 +202,9 @@ const useLogin = ({ onLogin, ignoreUnlock, generateKeys = false }: Props) => {
      * Unless there is an auth type active, the flow will continue until it's logged in.
      */
     const handleLogin = async (username: string, password: string) => {
-        const infoResult = await silentApi<InfoResponse>(getInfo(username));
+        const infoResult = await api<InfoResponse>(getInfo(username));
         const { authVersion, result: authResult } = await loginWithFallback({
-            api: silentApi,
+            api,
             credentials: { username, password },
             initialAuthInfo: infoResult,
         });

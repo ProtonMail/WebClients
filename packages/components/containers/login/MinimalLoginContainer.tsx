@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { useLoading, useNotifications, useModals } from '../../hooks';
+import { useLoading, useNotifications, useModals, useApi } from '../../hooks';
 import { LinkButton, PrimaryButton, Label } from '../../components';
 
 import AbuseModal from './AbuseModal';
@@ -13,13 +13,17 @@ import LoginUsernameInput from './LoginUsernameInput';
 import LoginTotpInput from './LoginTotpInput';
 import LoginUnlockInput from './LoginUnlockInput';
 
-interface Props extends UseLoginProps {
+interface Props extends Omit<UseLoginProps, 'api'> {
     needHelp?: React.ReactNode;
 }
 
 const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
+
+    const normalApi = useApi();
+    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+
     const {
         state,
         handleLogin,
@@ -30,7 +34,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
         setPassword,
         setKeyPassword,
         setTotp,
-    } = useLogin({ onLogin, ignoreUnlock });
+    } = useLogin({ onLogin, ignoreUnlock, api: silentApi });
 
     const [loading, withLoading] = useLoading();
 

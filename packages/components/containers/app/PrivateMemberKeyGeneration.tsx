@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, UserModel as tsUserModel } from 'proton-shared/lib/interfaces';
 import {
     ADDRESS_STATUS,
     DEFAULT_ENCRYPTION_CONFIG,
@@ -8,13 +8,16 @@ import {
 } from 'proton-shared/lib/constants';
 import { generateAddressKey } from 'proton-shared/lib/keys/keys';
 import { traceError } from 'proton-shared/lib/helpers/sentry';
+import { noop } from 'proton-shared/lib/helpers/function';
 
-import { useApi, useAuthentication, useGetUser, useGetAddresses, useEventManager } from '../../hooks';
+import { useApi, useAuthentication, useEventManager } from '../../hooks';
 import createKeyHelper from '../keys/addKey/createKeyHelper';
 
-const PrivateMemberKeyGeneration = () => {
-    const getUser = useGetUser();
-    const getAddresses = useGetAddresses();
+interface Props {
+    user?: tsUserModel;
+    addresses?: Address[];
+}
+const PrivateMemberKeyGeneration = ({ addresses, user }: Props) => {
     const authentication = useAuthentication();
     const { call } = useEventManager();
     const normalApi = useApi();
@@ -22,12 +25,13 @@ const PrivateMemberKeyGeneration = () => {
 
     useEffect(() => {
         const run = async () => {
-            const user = await getUser();
+            if (!user || !addresses) {
+                return;
+            }
             // If signed in as subuser, or not a private user
             if (user.OrganizationPrivateKey || user.Private !== MEMBER_PRIVATE.UNREADABLE) {
                 return;
             }
-            const addresses = await getAddresses();
             // Any enabled address without keys
             const addressesWithKeysToGenerate = addresses.filter(({ Status, Keys = [] }) => {
                 return Status === ADDRESS_STATUS.STATUS_ENABLED && !Keys.length;
@@ -63,10 +67,8 @@ const PrivateMemberKeyGeneration = () => {
             await Promise.all(addressesWithKeysToGenerate.map(generateAddressKeys)).catch(traceError);
             await call();
         };
-        run().catch(() => {
-            return undefined;
-        });
-    }, []);
+        run().catch(noop);
+    }, [addresses, user]);
 
     return <>{null}</>;
 };

@@ -1,17 +1,20 @@
 import React, { useEffect } from 'react';
 import { encryptPrivateKey } from 'pmcrypto';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, UserModel as tsUserModel } from 'proton-shared/lib/interfaces';
 import getActionableKeysList from 'proton-shared/lib/keys/getActionableKeysList';
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
 import { activateKeyRoute } from 'proton-shared/lib/api/keys';
 import { traceError } from 'proton-shared/lib/helpers/sentry';
+import { noop } from 'proton-shared/lib/helpers/function';
 import { MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 
-import { useApi, useAuthentication, useGetUser, useGetAddresses, useGetAddressKeys } from '../../hooks';
+import { useApi, useAuthentication, useGetAddressKeys } from '../../hooks';
 
-const ReadableMemberKeyActivation = () => {
-    const getUser = useGetUser();
-    const getAddresses = useGetAddresses();
+interface Props {
+    user?: tsUserModel;
+    addresses?: Address[];
+}
+const ReadableMemberKeyActivation = ({ addresses, user }: Props) => {
     const getAddressKeys = useGetAddressKeys();
     const authentication = useAuthentication();
     const normalApi = useApi();
@@ -19,12 +22,13 @@ const ReadableMemberKeyActivation = () => {
 
     useEffect(() => {
         const run = async () => {
-            const user = await getUser();
+            if (!user || !addresses) {
+                return;
+            }
             // If signed in as subuser, or not a readable member
             if (user.OrganizationPrivateKey || user.Private !== MEMBER_PRIVATE.READABLE) {
                 return;
             }
-            const addresses = await getAddresses();
             const addressesWithKeysToActivate = addresses.filter(({ Keys = [] }) => {
                 return Keys.some(({ Activation }) => !!Activation);
             });
@@ -67,10 +71,8 @@ const ReadableMemberKeyActivation = () => {
 
             return Promise.all(addressesWithKeysToActivate.map(activateAddressKeys)).catch(traceError);
         };
-        run().catch(() => {
-            return undefined;
-        });
-    }, []);
+        run().catch(noop);
+    }, [addresses, user]);
 
     return <>{null}</>;
 };

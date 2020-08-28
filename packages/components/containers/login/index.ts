@@ -3,6 +3,7 @@ export { default as MinimalForgotUsernameContainer } from '../forgotUsername/Min
 export { default as AccountForgotUsernameContainer } from '../forgotUsername/AccountForgotUsernameContainer';
 export { default as MinimalLoginContainer } from './MinimalLoginContainer';
 export { default as AccountLoginContainer } from './AccountLoginContainer';
+export { default as AccountGenerateInternalAddressContainer } from './AccountGenerateInternalAddressContainer';
 export { default as FooterDetails } from './FooterDetails';
 export { default as AccountSwitchContainer } from './AccountSwitchContainer';
 
