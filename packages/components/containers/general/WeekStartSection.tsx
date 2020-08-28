@@ -52,7 +52,9 @@ const WeekStartSection = () => {
                             text: c('Option').t`Use system settings (${defaultDay})`,
                             value: SETTINGS_WEEK_START.LOCALE_DEFAULT,
                         },
-                        ...days,
+                        days[0],
+                        days[1],
+                        days[6],
                     ]}
                 />
             </Field>
