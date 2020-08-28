@@ -3,6 +3,7 @@ export interface PersistedSessionBlob {
 }
 
 export interface PersistedSession {
+    UserID: string;
     UID: string;
     blob?: string;
     isMember?: boolean;

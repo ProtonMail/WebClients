@@ -18,6 +18,7 @@ import { InvalidPersistentSessionError } from './error';
 import { getRandomString } from '../helpers/string';
 import { getSessionKey } from './sessionBlobCryptoHelper';
 import { deserializeUint8Array, serializeUint8Array } from '../helpers/serialization';
+import { InactiveSessionError } from '../api/helpers/withApiHandlers';
 
 export type ResumedSessionResult = {
     UID: string;
@@ -25,12 +26,13 @@ export type ResumedSessionResult = {
     keyPassword?: string;
     User: tsUser;
 };
-export const resumeSession = async (api: Api, localID: number): Promise<ResumedSessionResult> => {
+export const resumeSession = async (api: Api, localID: number, User?: tsUser): Promise<ResumedSessionResult> => {
     const persistedSession = getPersistedSession(localID);
     const persistedUID = persistedSession?.UID;
+    const persistedUserID = persistedSession?.UserID;
 
     // Persistent session is invalid, redirect to re-fork this session
-    if (!persistedSession || !persistedUID) {
+    if (!persistedSession || !persistedUID || !persistedUserID) {
         removePersistedSession(localID);
         throw new InvalidPersistentSessionError('Missing persisted session or UID');
     }
@@ -41,14 +43,17 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
     // User with password
     if (persistedSessionBlobString) {
         try {
-            const [{ ClientKey }, { User }] = await Promise.all([
-                api<LocalKeyResponse>(withUIDHeaders(persistedUID, getLocalKey())),
-                api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())),
+            const [ClientKey, persistedUser] = await Promise.all([
+                api<LocalKeyResponse>(withUIDHeaders(persistedUID, getLocalKey())).then(({ ClientKey }) => ClientKey),
+                User || api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())).then(({ User }) => User),
             ]);
             const rawSessionKey = deserializeUint8Array(ClientKey);
             const sessionKey = getSessionKey(rawSessionKey);
             const { keyPassword } = await getDecryptedPersistedSessionBlob(sessionKey, persistedSessionBlobString);
-            return { UID: persistedUID, LocalID: localID, keyPassword, User };
+            if (persistedUserID !== persistedUser.ID) {
+                throw InactiveSessionError();
+            }
+            return { UID: persistedUID, LocalID: localID, keyPassword, User: persistedUser };
         } catch (e) {
             if (getIs401Error(e)) {
                 removePersistedSession(localID);
@@ -61,6 +66,9 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
     try {
         // User without password
         const { User } = await api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser()));
+        if (persistedUserID !== User.ID) {
+            throw InactiveSessionError();
+        }
         return { UID: persistedUID, LocalID: localID, User };
     } catch (e) {
         if (getIs401Error(e)) {
@@ -74,6 +82,7 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
 interface PersistSessionWithPasswordArgs {
     api: Api;
     keyPassword: string;
+    User: tsUser;
     UID: string;
     LocalID: number;
     isMember?: boolean;
@@ -81,6 +90,7 @@ interface PersistSessionWithPasswordArgs {
 export const persistSessionWithPassword = async ({
     api,
     keyPassword,
+    User,
     UID,
     LocalID,
     isMember,
@@ -89,11 +99,12 @@ export const persistSessionWithPassword = async ({
     const sessionKey = getSessionKey(rawSessionKey);
     const serializedSessionKey = serializeUint8Array(rawSessionKey);
     await api<LocalKeyResponse>(setLocalKey(serializedSessionKey));
-    await setPersistedSessionWithBlob(LocalID, sessionKey, { UID, keyPassword, isMember });
+    await setPersistedSessionWithBlob(LocalID, sessionKey, { UID, UserID: User.ID, keyPassword, isMember });
 };
 
 interface PersistLoginArgs {
     api: Api;
+    User: tsUser;
     keyPassword?: string;
     AccessToken: string;
     RefreshToken: string;
@@ -103,6 +114,7 @@ interface PersistLoginArgs {
 export const persistSession = async ({
     api,
     keyPassword,
+    User,
     UID,
     LocalID,
     AccessToken,
@@ -112,13 +124,17 @@ export const persistSession = async ({
 
     if (isSSOMode) {
         if (keyPassword) {
-            await persistSessionWithPassword({ api: authApi, UID, LocalID, keyPassword });
+            await persistSessionWithPassword({ api: authApi, UID, User, LocalID, keyPassword });
         } else {
-            setPersistedSession(LocalID, { UID });
+            setPersistedSession(LocalID, { UID, UserID: User.ID });
         }
     }
 
     await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24) }));
+};
+
+export const getActiveSessionByUserID = (UserID: string) => {
+    return getPersistedSessions().find((persistedSession) => persistedSession.UserID === UserID);
 };
 
 export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionResponse[] };
@@ -151,4 +167,18 @@ export const getActiveSessions = async (api: Api): Promise<GetActiveSessionsResu
         session: undefined,
         sessions: [],
     };
+};
+
+export const maybeResumeSessionByUser = async (api: Api, User: tsUser) => {
+    const maybePersistedSession = getActiveSessionByUserID(User.ID);
+    if (!maybePersistedSession) {
+        return;
+    }
+    try {
+        return await resumeSession(api, maybePersistedSession.localID, User);
+    } catch (e) {
+        if (!(e instanceof InvalidPersistentSessionError)) {
+            throw e;
+        }
+    }
 };

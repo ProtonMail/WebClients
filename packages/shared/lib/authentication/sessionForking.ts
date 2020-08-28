@@ -14,10 +14,11 @@ import { getForkDecryptedBlob, getForkEncryptedBlob } from './sessionForkBlob';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from './error';
 import { PullForkResponse, PushForkResponse, RefreshSessionResponse } from './interface';
 import { pushForkSession, pullForkSession, setRefreshCookies } from '../api/auth';
-import { Api } from '../interfaces';
-import { withUIDHeaders } from '../fetch/headers';
+import { Api, User as tsUser } from '../interfaces';
+import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { FORK_TYPE } from './ForkInterface';
-import { resumeSession } from './persistedSessionHelper';
+import { persistSession, resumeSession } from './persistedSessionHelper';
+import { getUser } from '../api/user';
 
 interface ForkState {
     url: string;
@@ -171,12 +172,21 @@ export const consumeFork = async ({ selector, api, state, sessionKey }: ConsumeF
         withUIDHeaders(UID, setRefreshCookies({ RefreshToken }))
     );
 
-    return {
+    const User = await api<{ User: tsUser }>(withAuthHeaders(UID, newAccessToken, getUser())).then(({ User }) => User);
+
+    const result = {
+        User,
         UID,
         LocalID,
         keyPassword,
         AccessToken: newAccessToken,
         RefreshToken: newRefreshToken,
+    };
+
+    await persistSession({ api, ...result });
+
+    return {
+        ...result,
         path,
     };
 };

@@ -21,6 +21,7 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
     try {
         const parsedValue = JSON.parse(itemValue);
         return {
+            UserID: parsedValue.UserID || '',
             UID: parsedValue.UID || '',
             blob: parsedValue.blob || '',
         };
@@ -78,9 +79,10 @@ export const getDecryptedPersistedSessionBlob = async (
 export const setPersistedSessionWithBlob = async (
     localID: number,
     sessionKey: SessionKey,
-    data: { UID: string; keyPassword: string; isMember?: boolean }
+    data: { UserID: string; UID: string; keyPassword: string; isMember?: boolean }
 ) => {
     const persistedSession: PersistedSession = {
+        UserID: data.UserID,
         UID: data.UID,
         isMember: data.isMember,
         blob: await getEncryptedBlob(sessionKey, JSON.stringify({ keyPassword: data.keyPassword })),
@@ -88,8 +90,9 @@ export const setPersistedSessionWithBlob = async (
     setItem(getKey(localID), JSON.stringify(persistedSession));
 };
 
-export const setPersistedSession = (localID: number, data: { UID: string }) => {
+export const setPersistedSession = (localID: number, data: { UID: string; UserID: string }) => {
     const persistedSession: PersistedSession = {
+        UserID: data.UserID,
         UID: data.UID,
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));
