@@ -40,7 +40,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const handleLogin = async (args: OnLoginCallbackArguments) => {
         const { keyPassword, UID, User } = args;
         // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
-        if (User && User.Delinquent >= UNPAID_STATE.DELINQUENT) {
+        if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
                 ...args,
                 path: '/subscription#invoices',
