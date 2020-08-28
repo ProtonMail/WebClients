@@ -573,9 +573,10 @@ $conversation-icon-size: 3.2rem !default;
 	}
 
 	@include respond-to($breakpoint-small) {
-
+		.message-show-hide-link-container,
 		.message-header-expanded-label-container {
 			padding-left: $container-to-width;
+			order: 10;
 		}
 	}
 }
