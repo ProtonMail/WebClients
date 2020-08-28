@@ -8,7 +8,9 @@ import {
     DateFormatSection,
     WeekStartSection,
 } from 'react-components';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import locales from 'proton-shared/lib/i18n/locales';
+import { IS_DATE_FORMAT_ENABLED } from 'proton-shared/lib/i18n/dateFnLocale';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
@@ -30,15 +32,17 @@ export const getGeneralPage = () => {
                 text: c('Title').t`Time format`,
                 id: 'time-format',
             },
-            {
-                text: c('Title').t`Date format`,
-                id: 'date-format',
-            },
+            IS_DATE_FORMAT_ENABLED
+                ? {
+                      text: c('Title').t`Date format`,
+                      id: 'date-format',
+                  }
+                : undefined,
             {
                 text: c('Title').t`Week start`,
                 id: 'week-start',
             },
-        ],
+        ].filter(isTruthy),
     };
 };
 
@@ -52,7 +56,7 @@ const GeneralContainer = ({ location, setActiveSection }: SettingsPropsShared) =
             <LanguageSection locales={locales} />
             <ThemesSection />
             <TimeFormatSection />
-            <DateFormatSection />
+            {IS_DATE_FORMAT_ENABLED ? <DateFormatSection /> : null}
             <WeekStartSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
