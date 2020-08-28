@@ -1,11 +1,11 @@
 import React, { useState, useMemo, useEffect, MutableRefObject, useRef, ReactNode } from 'react';
 import Awesomplete from 'awesomplete';
+import { useEventListener } from 'react-components';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { ContactEmail, ContactGroup, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
 
 import { contactToInput } from '../../../helpers/addresses';
-import { ContactEmail, ContactGroup, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
-import { useEventListener } from '../../../hooks/useHandler';
 
 interface Props {
     inputRef: MutableRefObject<HTMLInputElement | null>;

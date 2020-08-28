@@ -4,7 +4,8 @@ import {
     useToggle,
     useNotifications,
     useMailSettings,
-    useGetEncryptionPreferences
+    useGetEncryptionPreferences,
+    useHandler
 } from 'react-components';
 import { c } from 'ttag';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
@@ -21,7 +22,6 @@ import { getRecipients, mergeMessages } from '../../helpers/message/messages';
 import { setContent } from '../../helpers/message/messageContent';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
-import { useHandler } from '../../hooks/useHandler';
 import { useMessage } from '../../hooks/useMessage';
 import { useInitializeMessage } from '../../hooks/useMessageReadActions';
 import { useSaveDraft, useDeleteDraft } from '../../hooks/useMessageWriteActions';
@@ -38,6 +38,7 @@ import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
 import { OnCompose } from '../../hooks/useCompose';
 import { useDragOver } from '../../hooks/useDragOver';
 import { DRAG_ADDRESS_KEY } from '../../constants';
+import { usePromiseFromState } from '../../hooks/usePromiseFromState';
 
 enum ComposerInnerModal {
     None,
@@ -293,6 +294,7 @@ const Composer = ({
     const {
         pendingFiles,
         pendingUploads,
+        uploadInProgress,
         handleAddAttachmentsStart,
         handleAddEmbeddedImages,
         handleAddAttachmentsUpload,
@@ -300,6 +302,8 @@ const Composer = ({
         handleRemoveAttachment,
         handleRemoveUpload
     } = useAttachments(modelMessage, handleChange, handleSaveNow, editorActionsRef);
+
+    const promiseUploadInProgress = usePromiseFromState(!uploadInProgress);
 
     const handlePassword = () => {
         setInnerModal(ComposerInnerModal.Password);
@@ -322,8 +326,7 @@ const Composer = ({
         }
     };
 
-    const handleSend = async () => {
-        setSending(true);
+    const handleSendAfterUploads = useHandler(async () => {
         let verificationResults;
         try {
             verificationResults = await sendVerifications(modelMessage as MessageExtendedWithData);
@@ -331,25 +334,37 @@ const Composer = ({
             setSending(false);
             return;
         }
-        try {
-            const { cleanMessage, mapSendPrefs, hasChanged } = verificationResults;
-            const alreadySaved = !!cleanMessage.data.ID && !pendingSave && !hasChanged;
-            autoSave.abort?.();
-            await sendWithUndo(
-                () => addAction(() => sendMessage(cleanMessage, mapSendPrefs, alreadySaved)),
-                onCompose,
-                syncedMessage
-            );
-            onClose();
-        } catch (error) {
-            createNotification({
-                text: c('Error').t`Error while sending the message. Message is not sent`,
-                type: 'error'
-            });
-            console.error('Error while sending the message.', error);
-            setSending(false);
-        }
-    };
+
+        const { cleanMessage, mapSendPrefs, hasChanged } = verificationResults;
+        const alreadySaved = !!cleanMessage.data.ID && !pendingSave && !hasChanged;
+        autoSave.abort?.();
+        await sendWithUndo(
+            () =>
+                addAction(async () => {
+                    try {
+                        await sendMessage(cleanMessage, mapSendPrefs, alreadySaved);
+                    } catch (error) {
+                        createNotification({
+                            text: c('Error').t`Error while sending the message. Message is not sent`,
+                            type: 'error'
+                        });
+                        console.error('Error while sending the message.', error);
+                        setSending(false);
+                        throw error;
+                    }
+                }),
+            onCompose,
+            syncedMessage
+        );
+        onClose();
+    });
+
+    const handleSend = useHandler(async () => {
+        setSending(true);
+        await promiseUploadInProgress.current;
+        await handleSendAfterUploads();
+    });
+
     const handleDelete = async () => {
         setClosing(true);
         autoSave.abort?.();

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { useMailSettings, useModals, useNotifications } from 'react-components';
+import { useMailSettings, useModals, useNotifications, useHandler } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isIE11, isEdge } from 'proton-shared/lib/helpers/browser';
 
-import { useHandler } from './useHandler';
 import { MESSAGE_ACTIONS } from '../constants';
 import { mailtoParser, isExternal, isSubDomain, getHostname } from '../helpers/url';
 import { PROTON_DOMAINS } from '../constants';

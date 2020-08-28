@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import { useApi, useNotifications, useAuthentication } from 'react-components';
+import { useState, useMemo } from 'react';
+import { useApi, useNotifications, useAuthentication, useHandler } from 'react-components';
 import { c } from 'ttag';
 
 import { Upload } from '../helpers/upload';
 import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../helpers/attachment/attachmentUploader';
-import { useHandler } from './useHandler';
 import { getAttachments, isPlainText } from '../helpers/message/messages';
 import {
     readCID,
@@ -42,9 +41,14 @@ export const useAttachments = (
     // Pending uploads
     const [pendingUploads, setPendingUploads] = useState<PendingUpload[]>();
 
+    const uploadInProgress = useMemo(() => {
+        return (pendingUploads?.length || 0) > 0;
+    }, [pendingUploads]);
+
     const removePendingUpload = (pendingUpload: PendingUpload) => {
-        const newPendingUploads = pendingUploads?.filter((aPendingUpload) => aPendingUpload !== pendingUpload);
-        setPendingUploads(newPendingUploads);
+        setPendingUploads((pendingUploads) =>
+            pendingUploads?.filter((aPendingUpload) => aPendingUpload !== pendingUpload)
+        );
     };
 
     const ensureMessageIsCreated = async () => {
@@ -176,6 +180,7 @@ export const useAttachments = (
     return {
         pendingFiles,
         pendingUploads,
+        uploadInProgress,
         handleAddAttachmentsStart,
         handleAddEmbeddedImages,
         handleAddAttachmentsUpload,

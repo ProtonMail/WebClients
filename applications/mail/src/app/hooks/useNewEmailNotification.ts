@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 import { Location, History } from 'history';
-import { useFolders, useMailSettings } from 'react-components';
+import { useFolders, useMailSettings, useSubscribeEventManager } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
 import { c } from 'ttag';
 
-import { useSubscribeEventManager } from './useHandler';
 import { Event } from '../models/event';
 import { isImported } from '../helpers/message/messages';
 import { isConversationMode } from '../helpers/mailSettings';

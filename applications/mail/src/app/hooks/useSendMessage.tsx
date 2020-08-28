@@ -247,32 +247,42 @@ export const useSendWithUndo = () => {
     return useCallback(
         async (actualSend: () => Promise<void>, onCompose: OnCompose, syncedMessage: MessageExtended) => {
             window.addEventListener('beforeunload', onBeforeUnload);
-            const timeoutID = setTimeout(async () => {
-                createNotification({ text: c('Info').t`Message sent` });
-                await actualSend();
-                window.removeEventListener('beforeunload', onBeforeUnload);
-            }, UNDO_SEND_DELAY);
+            let timeoutID: number;
+            const timeoutPromise = new Promise<void>((resolve) => {
+                timeoutID = setTimeout(resolve, UNDO_SEND_DELAY);
+            });
+            const handleUndo = () => {
+                // Cancel send action
+                clearTimeout(timeoutID);
+                // Re-open the message
+                onCompose({
+                    existingDraft: {
+                        localID: syncedMessage.localID,
+                        data: syncedMessage.data
+                    }
+                });
+            };
             createNotification({
                 text: (
                     <>
                         <span className="mr1">{c('Success').t`Sending message...`}</span>
-                        <UndoButton
-                            onUndo={() => {
-                                // Cancel send action
-                                clearTimeout(timeoutID);
-                                // Re-open the message
-                                onCompose({
-                                    existingDraft: {
-                                        localID: syncedMessage.localID,
-                                        data: syncedMessage.data
-                                    }
-                                });
-                            }}
-                        />
+                        <UndoButton onUndo={handleUndo} />
                     </>
                 ),
                 expiration: UNDO_SEND_DELAY
             });
+            const send = async () => {
+                try {
+                    await timeoutPromise;
+                    await actualSend();
+                    createNotification({ text: c('Info').t`Message sent` });
+                } catch {
+                    handleUndo();
+                } finally {
+                    window.removeEventListener('beforeunload', onBeforeUnload);
+                }
+            };
+            send();
         },
         []
     );

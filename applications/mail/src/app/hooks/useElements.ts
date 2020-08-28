@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { useApi, useCache, useConversationCounts, useMessageCounts } from 'react-components';
+import { useApi, useCache, useConversationCounts, useMessageCounts, useSubscribeEventManager } from 'react-components';
 import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
 import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
@@ -26,7 +26,6 @@ import {
     MessageEvent,
     LabelIDsChanges
 } from '../models/event';
-import { useSubscribeEventManager } from './useHandler';
 import { useExpirationCheck } from './useExpiration';
 import { ElementsCache, ElementsCacheParams, useElementsCache } from './useElementsCache';
 
