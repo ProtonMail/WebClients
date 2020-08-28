@@ -3,8 +3,8 @@ import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { getResetAddressesKeys } from 'proton-shared/lib/keys/resetKeys';
-import handleCreateAddress from '../signup/helpers/handleCreateAddress';
-import handleCreateKeys from '../signup/helpers/handleCreateKeys';
+import handleSetupAddress from '../signup/helpers/handleSetupAddress';
+import handleSetupKeys from '../signup/helpers/handleSetupKeys';
 
 interface Args {
     password: string;
@@ -20,11 +20,11 @@ const handleSetupAddressKeys = async ({ username, password, api }: Args) => {
     const addressesToUse =
         availableAddresses?.length > 0
             ? availableAddresses
-            : await handleCreateAddress({ api, domains: availableDomains, username });
+            : await handleSetupAddress({ api, domains: availableDomains, username });
 
     const { salt, passphrase } = await generateKeySaltAndPassphrase(password);
     const newAddressesKeys = await getResetAddressesKeys({ addresses: addressesToUse, passphrase });
-    await handleCreateKeys({ api, salt, addressKeys: newAddressesKeys, password });
+    await handleSetupKeys({ api, salt, addressKeys: newAddressesKeys, password });
 
     return passphrase;
 };

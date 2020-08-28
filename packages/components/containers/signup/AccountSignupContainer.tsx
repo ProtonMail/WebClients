@@ -56,8 +56,8 @@ import { handlePaymentToken } from '../payments/paymentTokenHelper';
 import handleCreateUser from './helpers/handleCreateUser';
 import handleCreateExternalUser from './helpers/handleCreateExternalUser';
 import createAuthApi from './helpers/authApi';
-import handleCreateAddress from './helpers/handleCreateAddress';
-import handleCreateKeys from './helpers/handleCreateKeys';
+import handleSetupAddress from './helpers/handleSetupAddress';
+import handleSetupKeys from './helpers/handleSetupKeys';
 import OneAccountIllustration from '../illustration/OneAccountIllustration';
 
 interface Props {
@@ -240,7 +240,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
             }
 
             const addresses = username
-                ? await handleCreateAddress({ api: authApi.api, domains, username })
+                ? await handleSetupAddress({ api: authApi.api, domains, username })
                 : await authApi.api<{ Addresses: Address[] }>(queryAddresses()).then(({ Addresses }) => Addresses);
 
             let keyPassword;
@@ -248,7 +248,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
                 const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
                 keyPassword = passphrase;
                 const newAddressesKeys = await getResetAddressesKeys({ addresses, passphrase });
-                await handleCreateKeys({ api: authApi.api, salt, addressKeys: newAddressesKeys, password });
+                await handleSetupKeys({ api: authApi.api, salt, addressKeys: newAddressesKeys, password });
             }
 
             const authResponse = authApi.getAuthResponse();

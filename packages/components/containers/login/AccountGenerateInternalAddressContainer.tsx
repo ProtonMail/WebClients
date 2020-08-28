@@ -12,7 +12,6 @@ import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
 import { updateUsername } from 'proton-shared/lib/api/settings';
 import { generateAddressKey } from 'proton-shared/lib/keys/keys';
 import { Api } from 'proton-shared/lib/interfaces';
-import { setupAddress } from 'proton-shared/lib/api/addresses';
 
 import { Input, Label, PrimaryButton } from '../../components';
 import { useLoading, useNotifications } from '../../hooks';
@@ -23,6 +22,7 @@ import { getToAppName } from '../signup/helpers/helper';
 import createKeyHelper from '../keys/addKey/createKeyHelper';
 import SignupLabelInputRow from '../signup/SignupLabelInputRow';
 import SignupSubmitRow from '../signup/SignupSubmitRow';
+import handleSetupAddress from '../signup/helpers/handleSetupAddress';
 
 interface Props {
     Layout: FunctionComponent<AccountPublicLayoutProps>;
@@ -58,15 +58,7 @@ const AccountGenerateInternalAddressContainer = ({
         await api(updateUsername({ Username: username }));
 
         const { Domains: domains } = await api(queryAvailableDomains());
-        if (!domains.length) {
-            throw new Error('No domains');
-        }
-        const { Address } = await api(
-            setupAddress({
-                Domain: domains[0],
-                DisplayName: username,
-            })
-        );
+        const [Address] = await handleSetupAddress({ api, domains, username });
 
         const { privateKey, privateKeyArmored } = await generateAddressKey({
             email: Address.Email,

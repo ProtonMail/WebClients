@@ -7,7 +7,7 @@ interface Args {
     domains: string[];
 }
 
-const handleCreateAddress = async ({ api, username, domains }: Args) => {
+const handleSetupAddress = async ({ api, username, domains }: Args) => {
     const [domain = ''] = domains;
     if (!domain) {
         throw new Error('Missing domain');
@@ -22,4 +22,4 @@ const handleCreateAddress = async ({ api, username, domains }: Args) => {
     return [Address];
 };
 
-export default handleCreateAddress;
+export default handleSetupAddress;

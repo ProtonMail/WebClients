@@ -8,7 +8,7 @@ interface Args {
     addressKeys: AddressKey[];
     password: string;
 }
-const handleCreateKeys = async ({ api, salt, addressKeys, password }: Args) => {
+const handleSetupKeys = async ({ api, salt, addressKeys, password }: Args) => {
     if (!addressKeys.length) {
         throw new Error('An address is required to setup keys');
     }
@@ -25,4 +25,4 @@ const handleCreateKeys = async ({ api, salt, addressKeys, password }: Args) => {
     });
 };
 
-export default handleCreateKeys;
+export default handleSetupKeys;
