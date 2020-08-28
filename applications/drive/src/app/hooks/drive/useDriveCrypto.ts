@@ -1,12 +1,17 @@
 import { useGetAddresses, useGetAddressKeys, useNotifications } from 'react-components';
 import { c } from 'ttag';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
-import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 import { sign as signMessage } from 'proton-shared/lib/keys/driveKeys';
 import { Address } from 'proton-shared/lib/interfaces/Address';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { OpenPGPKey } from 'pmcrypto';
 import { useCallback } from 'react';
+import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
+
+// Special case for drive to allow users with just an external address
+export const getActiveAddresses = (addresses: Address[]): Address[] => {
+    return addresses.filter(({ Status }) => Status === ADDRESS_STATUS.STATUS_ENABLED);
+};
 
 function useDriveCrypto() {
     const { createNotification } = useNotifications();
