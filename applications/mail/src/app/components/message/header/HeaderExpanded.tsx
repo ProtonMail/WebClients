@@ -170,7 +170,7 @@ const HeaderExpanded = ({
                     !showDetails && 'mt0-5'
                 ])}
             >
-                <div className="flex-item-fluid flex flex-nowrap pr1 message-header-recipients">
+                <div className="flex-item-fluid flex flex-nowrap onmobile-flex-wrap pr1 message-header-recipients">
                     {showDetails ? (
                         <HeaderRecipientsDetails
                             message={message.data}
@@ -188,7 +188,7 @@ const HeaderExpanded = ({
                             isLoading={!messageLoaded}
                         />
                     )}
-                    <span className="message-show-hide-link-container flex-item-noshrink">
+                    <span className="message-show-hide-link-container onmobile-w100 flex-item-noshrink">
                         {messageLoaded && (
                             <button
                                 type="button"
@@ -202,16 +202,20 @@ const HeaderExpanded = ({
                     </span>
                 </div>
                 {messageLoaded && !showDetails && (
-                    <div className="flex-item-noshrink flex flex-items-center onmobile-w100 message-header-expanded-label-container is-appearing-content">
-                        <ItemLabels
-                            element={message.data}
-                            labels={labels}
-                            showUnlabel
-                            maxNumber={5}
-                            className="onmobile-mt0-5"
-                        />
-                        <ItemAttachmentIcon element={message.data} className="onmobile-mt0-5 ml0-5" />
-                    </div>
+                    <>
+                        <div className="flex-item-noshrink flex flex-items-center onmobile-w100 onmobile-pt0-25 onmobile-pb0-25 message-header-expanded-label-container is-appearing-content">
+                            <ItemLabels
+                                element={message.data}
+                                labels={labels}
+                                showUnlabel
+                                maxNumber={5}
+                                className="onmobile-pt0-25"
+                            />
+                        </div>
+                        <div className="flex-item-noshrink mauto flex onmobile-mt0-25">
+                            <ItemAttachmentIcon element={message.data} className="ml0-5" />
+                        </div>
+                    </>
                 )}
             </div>
 
