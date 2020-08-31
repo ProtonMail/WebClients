@@ -105,13 +105,19 @@ $tooltip-bg-color: var(--bgcolor-tooltip, $black) !default;
 }
 
 
-.tooltip--warning,
-.tooltip--success {
-	color: $white;
-}
+// colored versions
 .tooltip--success {
 	--bgcolor-tooltip: #{$pm-global-success};
 }
 .tooltip--warning {
 	--bgcolor-tooltip: #{$pm-global-warning};
 }
+.tooltip--attention {
+	--bgcolor-tooltip: #{$pm-global-attention};
+}
+
+// contrasts
+.tooltip--attention {
+	color: $black;
+}
+
