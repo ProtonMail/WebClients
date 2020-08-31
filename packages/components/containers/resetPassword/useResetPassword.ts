@@ -10,6 +10,7 @@ import { auth } from 'proton-shared/lib/api/auth';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { AuthResponse } from 'proton-shared/lib/authentication/interface';
 import { getUser } from 'proton-shared/lib/api/user';
+import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
 
 import { useApi, useNotifications, useLoading } from '../../hooks';
 import { OnLoginCallback } from '../app';
@@ -115,7 +116,9 @@ const useResetPassword = ({ onLogin }: Props) => {
             credentials: { username, password },
             config: auth({ Username: username }),
         });
-        const User = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
+        const User = await api<{ User: tsUser }>(
+            withAuthHeaders(authResponse.UID, authResponse.AccessToken, getUser())
+        ).then(({ User }) => User);
         await persistSession({ ...authResponse, User, keyPassword: passphrase, api });
         await onLogin({ ...authResponse, User, keyPassword: passphrase });
     };
