@@ -12,6 +12,7 @@ import { wait } from 'proton-shared/lib/helpers/promise';
 import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
 import { revoke } from 'proton-shared/lib/api/auth';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 import { LinkButton, Loader, LoaderIcon } from '../../components';
 import { useApi, useLoading, useNotifications } from '../../hooks';
@@ -52,7 +53,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
             const persistedSession = getPersistedSession(LocalID);
             removePersistedSession(LocalID);
             if (persistedSession && persistedSession.UID) {
-                return silentApi(withUIDHeaders(persistedSession.UID, revoke()));
+                return silentApi(withUIDHeaders(persistedSession.UID, revoke())).catch(noop);
             }
         });
         history.push('/login');
