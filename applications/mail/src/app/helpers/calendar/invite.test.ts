@@ -2,6 +2,7 @@ import { getIsRruleSupported } from 'proton-shared/lib/calendar/integration/rrul
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { RequireSome } from '../../models/utils';
+import { EventInvitationRaw, getSupportedEventInvitation, parseEventInvitation } from './invite';
 
 describe('getIsRruleSupported for invitations', () => {
     test('should accept events with daily recurring rules valid for invitations', () => {
@@ -52,5 +53,52 @@ describe('getIsRruleSupported for invitations', () => {
             return parsedVevent.rrule.value;
         });
         expect(rrules.map((rrule) => getIsRruleSupported(rrule, true))).toEqual(vevents.map(() => false));
+    });
+});
+
+describe('getSupportedEventInvitation', () => {
+    test('should refuse invitations with inconsistent custom yearly recurrence rules', () => {
+        const invitation = `BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+VERSION:2.0
+METHOD:REQUEST
+PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
+BEGIN:VTIMEZONE
+TZID:Europe/Vilnius
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0200
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+DTSTART:20030330T030000
+TZNAME:EEST
+TZOFFSETTO:+0300
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0300
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+DTSTART:20031026T040000
+TZNAME:EET
+TZOFFSETTO:+0200
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
+ S-ACTION;RSVP=TRUE:mailto:testme@pm.me
+ATTENDEE;CN="testKrt";CUTYPE=INDIVIDUAL;EMAIL="aGmailOne@gmail.co
+ m";PARTSTAT=ACCEPTED;ROLE=CHAIR:mailto:aGmailOne@gmail.com
+DTEND;TZID=Europe/Vilnius:20200915T100000
+TRANSP:OPAQUE
+ORGANIZER;CN="testKrt":mailto:aGmailOne@gmail.com
+UID:BA3017ED-889A-4BCB-B9CB-11CE30586021
+DTSTAMP:20200821T081914Z
+SEQUENCE:1
+SUMMARY:Yearly custom 2
+DTSTART;TZID=Europe/Vilnius:20200915T090000
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+CREATED:20200821T081842Z
+RRULE:FREQ=YEARLY;INTERVAL=1;BYMONTH=9;BYDAY=1TU
+END:VEVENT
+END:VCALENDAR`;
+        const parsedInvitation = parseEventInvitation(invitation) as EventInvitationRaw;
+        expect(() => getSupportedEventInvitation(parsedInvitation)).toThrowError('Invalid invitation');
     });
 });
