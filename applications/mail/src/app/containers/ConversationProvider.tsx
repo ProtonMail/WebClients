@@ -12,6 +12,7 @@ import { ConversationResult } from '../hooks/useConversation';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { useExpirationCheck } from '../hooks/useExpiration';
 import { Conversation } from '../models/conversation';
+import { Message } from '../models/message';
 
 export type ConversationCache = Cache<string, ConversationResult>;
 
@@ -35,39 +36,62 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
     };
 
     return ({ Conversations = [], Messages = [] }: Event) => {
-        for (const { ID, Action, Message } of Messages) {
-            if (!Message || !Message.ConversationID) {
-                continue;
+        const { toCreate, toUpdate, toDelete } = Messages.reduce<{
+            toCreate: Message[];
+            toUpdate: Message[];
+            toDelete: { [ID: string]: boolean };
+        }>(
+            ({ toCreate, toUpdate, toDelete }, { ID, Action, Message }) => {
+                const data = Message && cache.get(Message.ConversationID);
+
+                if (Action === EVENT_ACTIONS.CREATE && data) {
+                    toCreate.push(Message);
+                } else if ((Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) && data) {
+                    toUpdate.push({ ID, ...(Message as Omit<Message, 'ID'>) });
+                } else if (Action === EVENT_ACTIONS.DELETE) {
+                    toDelete[ID] = true;
+                }
+
+                return { toCreate, toUpdate, toDelete };
+            },
+            { toCreate: [], toUpdate: [], toDelete: {} }
+        );
+
+        [...toCreate, ...toUpdate].forEach((messageEvent) => {
+            const conversationResult = cache.get(messageEvent.ConversationID) as ConversationResult;
+            const messages = conversationResult.Messages || [];
+            const isUpdate = messages.some((message) => message.ID === messageEvent.ID);
+            let updatedMessages: Message[];
+
+            if (isUpdate) {
+                updatedMessages = messages.map((message) => {
+                    if (message.ID === messageEvent.ID) {
+                        return parseLabelIDsInEvent(message, messageEvent);
+                    } else {
+                        return message;
+                    }
+                });
+            } else {
+                updatedMessages = [...messages, messageEvent];
             }
 
-            const data = cache.get(Message.ConversationID);
+            cache.set(messageEvent.ConversationID, {
+                Conversation: conversationResult.Conversation,
+                Messages: updatedMessages
+            });
+        });
 
-            // Ignore updates for non-fetched conversations
-            if (!data || !data.Messages) {
-                continue;
-            }
+        if (Object.keys(toDelete).length > 0) {
+            cache.forEach((conversationResult) => {
+                const updatedMessages = conversationResult.Messages?.filter(({ ID }) => !toDelete[ID]);
 
-            const messages = data.Messages || [];
-            const index = messages.findIndex((currentMessage) => currentMessage.ID === ID);
-
-            // Ignore updates for not found message
-            if (index === -1) {
-                continue;
-            }
-            if (Action === EVENT_ACTIONS.DELETE) {
-                messages.splice(index, 1);
-            }
-            if (Action === EVENT_ACTIONS.CREATE) {
-                messages.push(Message);
-            }
-            if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                messages[index] = {
-                    ...messages[index],
-                    ...parseLabelIDsInEvent(messages[index], Message)
-                };
-            }
-
-            cache.set(Message.ConversationID, { Conversation: data?.Conversation || {}, Messages: messages });
+                if (conversationResult.Messages?.length !== updatedMessages?.length) {
+                    cache.set(conversationResult.Conversation.ID as string, {
+                        Conversation: conversationResult.Conversation,
+                        Messages: updatedMessages
+                    });
+                }
+            });
         }
 
         for (const { ID, Action, Conversation } of Conversations) {

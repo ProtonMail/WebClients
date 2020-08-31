@@ -298,32 +298,28 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
             const count = Counts.find((count) => count.LabelID === labelID);
 
-            const { toDelete, toUpdate, toCreate } = Elements.reduce(
-                (acc, event) => {
+            const { toCreate, toUpdate, toDelete } = Elements.reduce<{
+                toCreate: (Element & LabelIDsChanges)[];
+                toUpdate: (Element & LabelIDsChanges)[];
+                toDelete: string[];
+            }>(
+                ({ toCreate, toUpdate, toDelete }, event) => {
                     const { ID, Action } = event;
                     const Element = conversationMode
                         ? (event as ConversationEvent).Conversation
                         : (event as MessageEvent).Message;
 
-                    switch (Action) {
-                        case EVENT_ACTIONS.DELETE:
-                            acc.toDelete.push(ID);
-                            break;
-                        case EVENT_ACTIONS.UPDATE_DRAFT:
-                        case EVENT_ACTIONS.UPDATE_FLAGS:
-                            acc.toUpdate.push({ ID, ...Element });
-                            break;
-                        case EVENT_ACTIONS.CREATE:
-                            acc.toCreate.push(Element);
-                            break;
+                    if (Action === EVENT_ACTIONS.CREATE) {
+                        toCreate.push(Element);
+                    } else if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+                        toUpdate.push({ ID, ...Element });
+                    } else if (Action === EVENT_ACTIONS.DELETE) {
+                        toDelete.push(ID);
                     }
-                    return acc;
+
+                    return { toCreate, toUpdate, toDelete };
                 },
-                {
-                    toDelete: [] as string[],
-                    toUpdate: [] as (Element & LabelIDsChanges)[],
-                    toCreate: [] as (Element & LabelIDsChanges)[]
-                }
+                { toCreate: [], toUpdate: [], toDelete: [] }
             );
 
             const toUpdateCompleted = await Promise.all(

@@ -157,11 +157,17 @@ export const hasAttachments = (element: Element) =>
 /**
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
  */
-export const parseLabelIDsInEvent = (element: Element, changes: Element & LabelIDsChanges): Element => {
-    const LabelIDs = unique(
-        diff(element.LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || [])
-    );
-    return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
+export const parseLabelIDsInEvent = <T extends Element>(element: T, changes: T & LabelIDsChanges): T => {
+    if (isMessage(element)) {
+        const LabelIDs = unique(
+            diff(element.LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || [])
+        );
+        return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
+    } else {
+        // Conversation don't use LabelIDs even if these properties are still present in update events
+        // The conversation.Labels object is fully updated each time so we can safely ignore them
+        return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']) };
+    }
 };
 
 export const isSearch = (searchParams: SearchParameters) =>
