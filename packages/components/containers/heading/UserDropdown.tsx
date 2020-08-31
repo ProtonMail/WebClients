@@ -55,7 +55,7 @@ const UserDropdown = ({ ...rest }) => {
     };
 
     const handleThemeToggle = async () => {
-        const newThemeType = userSettings.ThemeType === ThemeTypes.Default ? ThemeTypes.Dark : ThemeTypes.Default;
+        const newThemeType = userSettings.ThemeType === ThemeTypes.Dark ? ThemeTypes.Default : ThemeTypes.Dark;
         await api(updateThemeType(newThemeType));
         await call();
     };
