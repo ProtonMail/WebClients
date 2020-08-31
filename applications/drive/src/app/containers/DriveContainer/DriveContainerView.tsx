@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
 
@@ -13,6 +13,10 @@ import DriveBreadcrumbs from '../../components/DriveBreadcrumbs';
 import { LinkURLType } from '../../constants';
 
 function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; type?: LinkURLType; linkId?: string }>) {
+    const lastFolderRef = useRef<{
+        shareId: string;
+        linkId: string;
+    }>();
     const cache = useDriveCache();
     const [, setError] = useState();
     const { setFolder } = useDriveActiveFolder();
@@ -35,8 +39,13 @@ function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; t
             });
         } else if (type === LinkURLType.FOLDER) {
             return { shareId, linkId };
+        } else {
+            return lastFolderRef.current;
         }
     }, [match.params]);
+
+    // In case we open preview, folder doesn't need to change
+    lastFolderRef.current = folder;
 
     useEffect(() => {
         if (folder) {
