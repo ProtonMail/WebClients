@@ -33,7 +33,6 @@ const UserDropdown = ({ ...rest }) => {
     const { createModal } = useModals();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [themeType, setThemeType] = useState(userSettings.ThemeType || ThemeTypes.Default);
     const [loading, withLoading] = useLoading();
     const displayName = user.DisplayName || user.Name;
 
@@ -56,10 +55,9 @@ const UserDropdown = ({ ...rest }) => {
     };
 
     const handleThemeToggle = async () => {
-        const newThemeType = themeType === ThemeTypes.Default ? ThemeTypes.Dark : ThemeTypes.Default;
+        const newThemeType = userSettings.ThemeType === ThemeTypes.Default ? ThemeTypes.Dark : ThemeTypes.Default;
         await api(updateThemeType(newThemeType));
         await call();
-        setThemeType(newThemeType);
     };
 
     return (
@@ -82,9 +80,11 @@ const UserDropdown = ({ ...rest }) => {
                                 <div className="bold ellipsis mw100" title={displayName}>
                                     {displayName}
                                 </div>
-                                {user.Email ? <div className="ellipsis mw100" title={user.Email}>
-                                    {user.Email}
-                                </div> : null}
+                                {user.Email ? (
+                                    <div className="ellipsis mw100" title={user.Email}>
+                                        {user.Email}
+                                    </div>
+                                ) : null}
                             </li>
                             <li className="dropDown-item">
                                 <AppLink
@@ -132,46 +132,44 @@ const UserDropdown = ({ ...rest }) => {
                         </button>
                     </li>
                     {isSSOMode ? (
-                        <>
-                            <li className="dropDown-item">
-                                <button
-                                    type="button"
-                                    className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
-                                    onClick={handleSwitchAccount}
-                                >
-                                    <Icon className="mt0-25 mr0-5" name="organization-users" />
-                                    {c('Action').t`Switch account`}
-                                </button>
-                            </li>
-                            <li className="dropDown-item">
-                                <div className="pl1 pr1 pt0-5 pb0-5 w100 flex flex-nowrap flex-spacebetween flex-items-center">
-                                    <label htmlFor="theme-toggle" className="mr1">{c('Action').t`Display mode`}</label>
-                                    <Toggle
-                                        id="theme-toggle"
-                                        className="pm-toggle-label--theme-toggle"
-                                        checked={themeType === ThemeTypes.Dark}
-                                        loading={loading}
-                                        onChange={() => withLoading(handleThemeToggle())}
-                                        label={(key: ToggleState) => {
-                                            const alt =
-                                                key === ToggleState.on
-                                                    ? c('Toggle button').t`Normal`
-                                                    : c('Toggle button').t`Dark`;
-                                            return (
-                                                <span className="pm-toggle-label-text">
-                                                    <Icon
-                                                        name={key === ToggleState.on ? 'crescent-moon' : 'half-moon'}
-                                                        alt={alt}
-                                                        className="pm-toggle-label-img"
-                                                    />
-                                                </span>
-                                            );
-                                        }}
-                                    />
-                                </div>
-                            </li>
-                        </>
+                        <li className="dropDown-item">
+                            <button
+                                type="button"
+                                className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
+                                onClick={handleSwitchAccount}
+                            >
+                                <Icon className="mt0-25 mr0-5" name="organization-users" />
+                                {c('Action').t`Switch account`}
+                            </button>
+                        </li>
                     ) : null}
+                    <li className="dropDown-item">
+                        <div className="pl1 pr1 pt0-5 pb0-5 w100 flex flex-nowrap flex-spacebetween flex-items-center">
+                            <label htmlFor="theme-toggle" className="mr1">{c('Action').t`Display mode`}</label>
+                            <Toggle
+                                id="theme-toggle"
+                                className="pm-toggle-label--theme-toggle"
+                                checked={userSettings.ThemeType === ThemeTypes.Dark}
+                                loading={loading}
+                                onChange={() => withLoading(handleThemeToggle())}
+                                label={(key: ToggleState) => {
+                                    const alt =
+                                        key === ToggleState.on
+                                            ? c('Toggle button').t`Normal`
+                                            : c('Toggle button').t`Dark`;
+                                    return (
+                                        <span className="pm-toggle-label-text">
+                                            <Icon
+                                                name={key === ToggleState.on ? 'crescent-moon' : 'half-moon'}
+                                                alt={alt}
+                                                className="pm-toggle-label-img"
+                                            />
+                                        </span>
+                                    );
+                                }}
+                            />
+                        </div>
+                    </li>
                     <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex">
                         <PrimaryButton
                             className="w100 aligncenter navigationUser-logout"
