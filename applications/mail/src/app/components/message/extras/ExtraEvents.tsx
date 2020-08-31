@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useApi, useCalendars, useContactEmails, useAddresses, useLoading, useUserSettings } from 'react-components';
-import { arrayToBinaryString } from 'pmcrypto';
+import { arrayToBinaryString, decodeUtf8 } from 'pmcrypto';
 import { getDefaultCalendar, getProbablyActiveCalendars } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
@@ -60,7 +60,9 @@ const ExtraEvents = ({ message }: Props) => {
                             if (download.isError) {
                                 return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
                             }
-                            const parsedInvitation = parseEventInvitation(arrayToBinaryString(download.data));
+                            const parsedInvitation = parseEventInvitation(
+                                decodeUtf8(arrayToBinaryString(download.data))
+                            );
                             if (!parsedInvitation) {
                                 return;
                             }

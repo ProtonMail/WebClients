@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 import { encryptMessage, splitMessage, OpenPGPKey } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { readFileAsBuffer } from 'proton-shared/lib/helpers/file';
 
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { getAttachments } from '../message/messages';
-import { readFileAsBuffer } from '../file';
 import { uploadAttachment } from '../../api/attachments';
 import { Attachment } from '../../models/attachment';
 import { generateCid, isEmbeddable } from '../embedded/embeddeds';
