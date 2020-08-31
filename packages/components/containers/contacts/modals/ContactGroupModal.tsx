@@ -19,6 +19,7 @@ import {
     ContactGroupTable,
     Icon,
     useAutocomplete,
+    useAutocompleteRecipient,
 } from '../../../components';
 import { useContactEmails, useNotifications, useContactGroups, useApi, useEventManager } from '../../../hooks';
 
@@ -43,6 +44,8 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
     const { createNotification } = useNotifications();
     const [contactGroups = []] = useContactGroups();
     const [contactEmails] = useContactEmails();
+
+    const recipientItem = useAutocompleteRecipient();
 
     const contactGroup = contactGroupID && contactGroups.find(({ ID }) => ID === contactGroupID);
     const existingContactEmails =
@@ -120,23 +123,6 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
         }
     };
 
-    const renderAutoCompleteItem = ({ label }: { label: string }, input: string) => {
-        const trimmed = input.replace(/</gi, '&lt;');
-
-        const addMark = (s: string) => s.replace(new RegExp(trimmed, 'gi'), '<mark>$&</mark>');
-
-        let [name, email] = label.split('<');
-        name = name.trim();
-        email = email.replace('>', '');
-
-        const li = document.createElement('li');
-        li.setAttribute('role', 'option');
-        li.setAttribute('aria-selected', 'false');
-        li.innerHTML = name ? `${addMark(name)} &lt;${addMark(email)}&gt;` : `&lt;${addMark(email)}&gt;`;
-
-        return li;
-    };
-
     return (
         <FormModal
             onSubmit={handleSubmit}
@@ -183,7 +169,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
                             list={options}
                             fieldClassName="flex-items-center"
                             className="contact-group-emails-autocomplete"
-                            item={renderAutoCompleteItem}
+                            item={recipientItem}
                             minChars={1}
                             maxItems={6}
                             autoFirst
