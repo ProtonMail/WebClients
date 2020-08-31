@@ -102,11 +102,14 @@ const HeaderExpanded = ({
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
 
     const handleClick = (event: MouseEvent) => {
-        if ((event.target as HTMLElement).closest('.stop-propagation') || window.getSelection()?.toString().length) {
+        if (
+            (event.target as HTMLElement).closest('.stop-propagation') ||
+            window.getSelection()?.toString().length ||
+            document.querySelector('.dropDown')
+        ) {
             event.stopPropagation();
             return;
         }
-
         onCollapse();
     };
 
