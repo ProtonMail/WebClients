@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, MutableRefObject, useRef, ReactNode } from 'react';
 import Awesomplete from 'awesomplete';
-import { useEventListener } from 'react-components';
+import { useEventListener, useAutocompleteRecipient } from 'react-components';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
@@ -33,6 +33,8 @@ const AddressesAutocomplete = ({
     const contactEmailsMap = useMemo(() => toMap(contacts, 'Email'), [contacts]);
     const recipientAddressesMap = useMemo(() => toMap(currentValue, 'Address'), [currentValue]);
     const recipientGroupsMap = useMemo(() => toMap(currentValue, 'Group'), [currentValue]);
+
+    const recipientItem = useAutocompleteRecipient();
 
     useEffect(() => {
         const awesompleteInstance = new Awesomplete(
@@ -79,22 +81,7 @@ const AddressesAutocomplete = ({
 
             awesomplete.list = [...contactList, ...groupList, ...majorList];
 
-            (awesomplete as any).item = ({ label }: { label: string }, input: string) => {
-                const trimmed = input.replace(/</gi, '&lt;');
-
-                const addMark = (s: string | undefined) => s?.replace(new RegExp(trimmed, 'gi'), '<mark>$&</mark>');
-
-                let [name, email] = label.split('<') as [string, string | undefined];
-                name = name.trim();
-                email = email?.replace('>', '');
-
-                const li = document.createElement('li');
-                li.setAttribute('role', 'option');
-                li.setAttribute('aria-selected', 'false');
-                li.innerHTML = email ? `${addMark(name)} &lt;${addMark(email)}&gt;` : `${addMark(name)}`;
-
-                return li;
-            };
+            (awesomplete as any).item = recipientItem;
         }
     }, [awesomplete, contacts, contactGroups, majorDomains, currentValue]);
 
