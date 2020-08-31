@@ -98,10 +98,21 @@ const extractStringItems = (str: string) => {
 };
 
 /**
- * Extract "to address" and headers from a mailto URL https://tools.ietf.org/html/rfc6068
- * TODO: extract headers. Only "to address" extracted atm
+ * Try to decode an URI string with the native decodeURI function.
+ * Return the original string if decoding fails
  */
-export const parseMailtoURL = (mailtoURL: string) => {
+const decodeURISafe = (str: string) => {
+    try {
+        return decodeURI(str);
+    } catch (e) {
+        return str;
+    }
+};
+
+/**
+ * Extract "to address" and headers from a mailto URL https://tools.ietf.org/html/rfc6068
+ */
+export const parseMailtoURL = (mailtoURL: string, decode = true) => {
     const mailtoString = 'mailto:';
     const toString = 'to=';
     if (!mailtoURL.toLowerCase().startsWith(mailtoString)) {
@@ -109,22 +120,23 @@ export const parseMailtoURL = (mailtoURL: string) => {
     }
     const url = mailtoURL.substring(mailtoString.length);
     const [tos, hfields = ''] = url.split('?');
-    const addressTos = extractStringItems(tos);
+    const addressTos = extractStringItems(tos).map((to) => (decode ? decodeURISafe(to) : to));
     const headers = hfields.split('&').filter(isTruthy);
     const headerTos = headers
         .filter((header) => header.toLowerCase().startsWith('to='))
         .map((headerTo) => extractStringItems(headerTo.substring(toString.length)))
-        .flat();
+        .flat()
+        .map((to) => (decode ? decodeURISafe(to) : to));
     return { to: [...addressTos, ...headerTos] };
 };
 
 export const buildMailTo = (email = '') => `mailto:${email}`;
 
-export const getEmailTo = (str: string): string => {
+export const getEmailTo = (str: string, decode?: boolean): string => {
     try {
         const {
             to: [emailTo],
-        } = parseMailtoURL(str);
+        } = parseMailtoURL(str, decode);
         return emailTo;
     } catch (e) {
         return str;

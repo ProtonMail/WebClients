@@ -3,7 +3,7 @@ import {
     normalizeInternalEmail,
     parseMailtoURL,
     validateEmailAddress,
-    validateDomain
+    validateDomain,
 } from '../../lib/helpers/email';
 
 describe('email', () => {
@@ -18,7 +18,7 @@ describe('email', () => {
                 '_dnslink.ipfs.io',
                 'n.mk',
                 'a-1234567890-1234567890-1234567890-1234567890-1234567890-1234-z.eu.us',
-                'external.asd1230-123.asd_internal.asd.gm-_ail.com'
+                'external.asd1230-123.asd_internal.asd.gm-_ail.com',
             ];
             const results = domains.map((domain) => validateDomain(domain));
             const expected = domains.map(() => true);
@@ -41,7 +41,7 @@ describe('email', () => {
                 'test@[192.168.1.1]',
                 'test(rare)@[192.168.12.23]',
                 '(comment)"te@ st"(rare)@[192.168.12.23]',
-                "weird!#$%&'*+-/=?^_`{|}~123@pa-ta-Ton32.com.edu.org"
+                "weird!#$%&'*+-/=?^_`{|}~123@pa-ta-Ton32.com.edu.org",
             ];
             expect(emails.map((email) => validateEmailAddress(email)).filter(Boolean).length).toBe(emails.length);
         });
@@ -60,7 +60,7 @@ describe('email', () => {
                 'test@domain-.com',
                 'test@test@domain.com',
                 'français@baguette.fr',
-                'ezpaña@espain.es'
+                'ezpaña@espain.es',
             ];
             expect(emails.map((email) => validateEmailAddress(email)).filter(Boolean).length).toBe(0);
         });
@@ -80,14 +80,14 @@ describe('email', () => {
                 'TeS.--TinG@PM.ME',
                 'ABC;;@pm.me',
                 'mo____.-..reTes--_---ting@pm.me',
-                'bad@email@this.is'
+                'bad@email@this.is',
             ];
             const normalized = [
                 'testing@pm.me',
                 'testing@PM.ME',
                 'abc;;@pm.me',
                 'moretesting@pm.me',
-                'bad@email@this.is'
+                'bad@email@this.is',
             ];
             expect(emails.map((email) => normalizeEmail(email, true))).toEqual(normalized);
             expect(emails.map(normalizeInternalEmail)).toEqual(normalized);
@@ -98,19 +98,21 @@ describe('email', () => {
         it('should extract all "to emails" from the mailtoURL', () => {
             const mailtoURLs = [
                 'mailTo:addr1@an.example',
+                'mailTo:gr%C3%B3in@dwarf.com',
                 'mailto:infobot@example.com?body=send%20current-issue',
                 'mailto:?to=addr1@an.example,addr2@an.example',
                 'mailto:list@example.org?In-Reply-To=%3C3469A91.D10AF4C@example.com%3E',
-                'mailto:addr1@an.example,addr2@an.example?to=addr3@an.example,addr4@an.example'
+                'mailto:addr1@an.example,addr2@an.example?to=addr3@an.example,addr4@an.example',
             ];
             const expected = [
                 ['addr1@an.example'],
+                ['gróin@dwarf.com'],
                 ['infobot@example.com'],
                 ['addr1@an.example', 'addr2@an.example'],
                 ['list@example.org'],
-                ['addr1@an.example', 'addr2@an.example', 'addr3@an.example', 'addr4@an.example']
+                ['addr1@an.example', 'addr2@an.example', 'addr3@an.example', 'addr4@an.example'],
             ];
-            expect(mailtoURLs.map(parseMailtoURL)).toEqual(expected.map((to) => ({ to })));
+            expect(mailtoURLs.map((to) => parseMailtoURL(to))).toEqual(expected.map((to) => ({ to })));
         });
     });
 });
