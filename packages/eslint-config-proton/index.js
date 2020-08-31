@@ -55,6 +55,7 @@ module.exports = {
       },
     ],
     "consistent-return": "off",
+    "curly": ["error", "all"],
     "import/default": 2,
     "import/export": 2,
     "import/named": 2,
