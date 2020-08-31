@@ -72,7 +72,9 @@ const EventPopover = ({
         const timeEnd = formatTime(end);
 
         if (isAllDay && !isAllPartDay) {
-            if (dateStart === dateEnd) return dateStart;
+            if (dateStart === dateEnd) {
+                return dateStart;
+            }
             return (
                 <>
                     {dateStart}
