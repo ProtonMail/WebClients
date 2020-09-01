@@ -4,15 +4,38 @@ import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import useTooltipHandlers from './useTooltipHandlers';
 
+enum TooltipType {
+    INFO = 'info',
+    ERROR = 'error',
+    WARNING = 'warning',
+}
+
 interface Props {
     children: React.ReactNode;
     title?: string;
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
     scrollContainerClass?: string;
     className?: string;
+    type?: TooltipType;
 }
 
-const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerClass = 'main', className }: Props) => {
+const getTooltipTypeClass = (type: TooltipType) => {
+    if (type === TooltipType.ERROR) {
+        return 'tooltip--warning';
+    }
+    if (type === TooltipType.WARNING) {
+        return 'tooltip--attention';
+    }
+};
+
+const Tooltip = ({
+    children,
+    title,
+    originalPlacement = 'top',
+    scrollContainerClass = 'main',
+    className,
+    type = TooltipType.INFO,
+}: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
     const { isRTL } = useRightToLeft();
@@ -41,7 +64,7 @@ const Tooltip = ({ children, title, originalPlacement = 'top', scrollContainerCl
                 id={uid}
                 isOpen={!!title && isOpen}
                 style={position}
-                className={classnames(['tooltip', `tooltip--${placement}`])}
+                className={classnames(['tooltip', `tooltip--${placement}`, getTooltipTypeClass(type)])}
             >
                 {title}
             </Popper>
