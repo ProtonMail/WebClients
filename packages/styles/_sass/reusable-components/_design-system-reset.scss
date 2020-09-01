@@ -110,6 +110,7 @@ pre, code, kbd, samp {
 mark {
 	@if ( $use-color-reset-mark == true ) {
 		background-color: unset;
+		color: currentColor;
 	}
 	font-weight: bold;
 }
