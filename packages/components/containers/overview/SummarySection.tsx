@@ -36,7 +36,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
     const abbreviation = Locale.slice(-2);
     const { Email, DisplayName, Name, canPay, isAdmin } = user;
     const { UsedMembers = 0, UsedDomains = 0, MaxMembers = 0, MaxDomains = 0 } = organization;
-    const initials = getInitial(DisplayName || Name || undefined);
+    const initials = getInitial(DisplayName || Name || Email || '');
     const vpnPlan = getPlan(subscription, PLAN_SERVICES.VPN);
     const mailPlan = getPlan(subscription, PLAN_SERVICES.MAIL);
 

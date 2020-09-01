@@ -34,7 +34,7 @@ const UserDropdown = ({ ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [loading, withLoading] = useLoading();
-    const displayName = user.DisplayName || user.Name; // displayName can be falsy for external account
+    const nameToDisplay = user.DisplayName || user.Name; // nameToDisplay can be falsy for external account
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
@@ -76,10 +76,10 @@ const UserDropdown = ({ ...rest }) => {
                 <ul className="unstyled mt0 mb0">
                     {!isSSOMode && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                         <>
-                            {displayName ? (
+                            {nameToDisplay ? (
                                 <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
-                                    <div className="bold ellipsis mw100" title={displayName}>
-                                        {displayName}
+                                    <div className="bold ellipsis mw100" title={nameToDisplay}>
+                                        {nameToDisplay}
                                     </div>
                                     {user.Email ? (
                                         <div className="ellipsis mw100" title={user.Email}>
