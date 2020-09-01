@@ -181,7 +181,17 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
         setModelDiff({ step: CREATING_ACCOUNT });
 
         let actualPayment = payment;
-        const { step: oldStep, username, password, email, recoveryEmail, domains, currency, cycle } = model;
+        const {
+            step: oldStep,
+            username,
+            password,
+            email,
+            recoveryEmail,
+            recoveryPhone,
+            domains,
+            currency,
+            cycle,
+        } = model;
 
         if (isBuyingPaidPlan && method === PAYMENT_METHOD_TYPES.CARD) {
             try {
@@ -204,7 +214,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
                 password,
             };
             if (isInternalSignup) {
-                await handleCreateUser({ ...sharedCreationProps, username, recoveryEmail });
+                await handleCreateUser({ ...sharedCreationProps, username, recoveryEmail, recoveryPhone });
             } else {
                 await handleCreateExternalUser({ ...sharedCreationProps, email });
             }

@@ -9,7 +9,7 @@ import { GenericError } from '../error';
 import { useConfig, useModals } from '../../hooks';
 import useResetPassword, { STEPS } from './useResetPassword';
 import ResetUsernameInput from './ResetUsernameInput';
-import ResetPasswordInput from './ResetPasswordInput';
+import ResetPasswordEmailInput from './ResetPasswordEmailInput';
 import ResetTokenInput from './ResetTokenInput';
 import ResetDangerInput from './ResetDangerInput';
 import { OnLoginCallback } from '../app';
@@ -85,7 +85,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                     {c('Label').t`Email`}
                 </Label>
                 <div className="mb1">
-                    <ResetPasswordInput id="email" value={email} setValue={setEmail} />
+                    <ResetPasswordEmailInput id="email" value={email} setValue={setEmail} />
                 </div>
                 <div className="flex flex-nowrap flex-spacebetween mb1">
                     <Link to="/login">{c('Link').t`Back to login`}</Link>

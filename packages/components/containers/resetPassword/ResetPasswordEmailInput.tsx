@@ -7,12 +7,13 @@ interface Props {
     setValue: (email: string) => void;
     id: string;
 }
-const ResetPasswordInput = ({ value, setValue, id }: Props) => {
+const ResetPasswordEmailInput = ({ value, setValue, id }: Props) => {
     return (
         <EmailInput
             name="email"
             autoCapitalize="off"
             autoCorrect="off"
+            autoFocus={true}
             id={id}
             placeholder={c('Placeholder').t`Recovery email`}
             value={value}
@@ -22,4 +23,4 @@ const ResetPasswordInput = ({ value, setValue, id }: Props) => {
     );
 };
 
-export default ResetPasswordInput;
+export default ResetPasswordEmailInput;

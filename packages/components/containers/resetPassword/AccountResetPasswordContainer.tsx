@@ -1,20 +1,25 @@
-import React, { FunctionComponent, useRef } from 'react';
+import React, { FunctionComponent, useState, useRef } from 'react';
 import { c } from 'ttag';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { useModals } from '../../hooks';
-import { Alert, ConfirmModal, Href, Label, PasswordInput, PrimaryButton } from '../../components';
+import { Alert, ConfirmModal, Label, PasswordInput, PrimaryButton } from '../../components';
 import { GenericError } from '../error';
 import { OnLoginCallback } from '../app';
 import useResetPassword, { STEPS } from './useResetPassword';
 import ResetUsernameInput from './ResetUsernameInput';
-import ResetPasswordInput from './ResetPasswordInput';
+import ResetPasswordEmailInput from './ResetPasswordEmailInput';
+import ResetPasswordPhoneInput from './ResetPasswordPhoneInput';
 import ResetTokenInput from './ResetTokenInput';
-import ResetDangerInput from './ResetDangerInput';
 import { Props as AccountPublicLayoutProps } from '../signup/AccountPublicLayout';
 import BackButton from '../signup/BackButton';
 import SignupLabelInputRow from '../signup/SignupLabelInputRow';
 import SignupSubmitRow from '../signup/SignupSubmitRow';
+import Tabs from '../../components/tabs/Tabs';
+import Href from '../../components/link/Href';
+import InlineLinkButton from '../../components/button/InlineLinkButton';
+import RequestNewCodeModal from '../api/humanVerification/RequestNewCodeModal';
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -26,42 +31,194 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
     const {
         loading,
         state,
-        dangerWord,
+        handleRequestRecoveryMethods,
         handleRequest,
         handleValidateResetToken,
-        handleDanger,
         handleNewPassword,
+        gotoStep,
         setUsername,
         setEmail,
+        setPhone,
         setPassword,
         setConfirmPassword,
         setToken,
-        setDanger,
-    } = useResetPassword({ onLogin });
-
+    } = useResetPassword({ onLogin, initalStep: STEPS.REQUEST_RECOVERY_METHODS });
     const { createModal } = useModals();
     const hasModal = useRef<boolean>(false);
+    const [tabIndex, setTabIndex] = useState(0);
 
-    const { step, username, email, password, confirmPassword, danger, token } = state;
+    const { step, username, email, phone, password, confirmPassword, token, methods, error } = state;
 
-    const handleBack = () => {
-        history.push('/login');
-    };
+    let handleBack = () => history.push('/login');
+
+    if (step === STEPS.REQUEST_RECOVERY_METHODS) {
+        return (
+            <Layout
+                title={c('Title').t`Enter Proton Account`}
+                subtitle={c('Info').t`Enter the Proton Account that you would like to reset the password for.`}
+                left={<BackButton onClick={handleBack} />}
+            >
+                <form
+                    className="signup-form"
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        handleRequestRecoveryMethods();
+                    }}
+                >
+                    <SignupLabelInputRow
+                        label={<Label htmlFor="username">{c('Label').t`Email or username`}</Label>}
+                        input={
+                            <ResetUsernameInput
+                                id="username"
+                                value={username}
+                                setValue={setUsername}
+                                placeholder={c('Label').t`Email or username`}
+                            />
+                        }
+                    />
+                    <SignupSubmitRow>
+                        <PrimaryButton
+                            className="pm-button--large flex-item-noshrink onmobile-w100"
+                            disabled={!username}
+                            loading={loading}
+                            type="submit"
+                        >{c('Action').t`Next`}</PrimaryButton>
+                    </SignupSubmitRow>
+                </form>
+            </Layout>
+        );
+    }
+
+    if (step === STEPS.NO_RECOVERY_METHODS) {
+        return (
+            <Layout
+                title={c('Title').t`No recovery method`}
+                subtitle={c('Info').t`Unfortunately there is no recovery method saved for this account.`}
+                left={<BackButton onClick={handleBack} />}
+            >
+                <form className="signup-form">
+                    <SignupSubmitRow>
+                        <Href
+                            className="mr2 nodecoration onmobile-aligncenter onmobile-p1 onmobile-mr0"
+                            url="https://protonmail.com/support-form"
+                            target="_self"
+                        >{c('Action').t`Contact support`}</Href>
+                        <Link
+                            to="/login"
+                            className="pm-button--primary pm-button--large flex-item-noshrink onmobile-w100 onmobile-aligncenter"
+                        >{c('Action').t`Return to login`}</Link>
+                    </SignupSubmitRow>
+                </form>
+            </Layout>
+        );
+    }
 
     if (step === STEPS.REQUEST_RESET_TOKEN) {
+        handleBack = () => gotoStep(STEPS.REQUEST_RECOVERY_METHODS);
+        const tabs = [
+            (methods?.includes('email') || methods?.includes('login')) && {
+                title: c('Recovery method').t`Email`,
+                method: 'email',
+                content: (
+                    <SignupLabelInputRow
+                        label={<Label htmlFor="email">{c('Label').t`Recovery email`}</Label>}
+                        input={<ResetPasswordEmailInput value={email} setValue={setEmail} id="email" />}
+                    />
+                ),
+            },
+            methods?.includes('sms') && {
+                title: c('Recovery method').t`Phone number`,
+                method: 'sms',
+                content: (
+                    <SignupLabelInputRow
+                        label={<Label htmlFor="phone">{c('Label').t`Recovery phone`}</Label>}
+                        input={<ResetPasswordPhoneInput value={phone} setValue={setPhone} id="phone" />}
+                    />
+                ),
+            },
+        ].filter(isTruthy);
+        const recoveryTitle =
+            tabs[tabIndex].method === 'email'
+                ? c('Title').t`Enter recovery email`
+                : c('Title').t`Enter recovery phone number`;
+        const recoveryMethodText =
+            tabs[tabIndex].method === 'email' ? c('Recovery method').t`email` : c('Recovery method').t`phone number`;
+        const handleChangeIndex = (newIndex: number) => {
+            if (tabs[tabIndex].method === 'email') {
+                setEmail('');
+            }
+            if (tabs[tabIndex].method === 'sms') {
+                setPhone('');
+            }
+            setTabIndex(newIndex);
+        };
+        return (
+            <Layout
+                title={recoveryTitle}
+                subtitle={c('Info').t`We will send a password reset code to your recovery ${recoveryMethodText}.`}
+                left={<BackButton onClick={handleBack} />}
+            >
+                <form
+                    className="signup-form"
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        handleRequest();
+                    }}
+                >
+                    {tabs.length === 1 ? (
+                        tabs[0].content
+                    ) : (
+                        <Tabs tabs={tabs} value={tabIndex} onChange={handleChangeIndex} />
+                    )}
+                    <SignupSubmitRow>
+                        <InlineLinkButton className="mr1" onClick={() => gotoStep(STEPS.VALIDATE_RESET_TOKEN)}>{c(
+                            'Action'
+                        ).t`I already have a code`}</InlineLinkButton>
+                        <PrimaryButton
+                            className="pm-button--large onmobile-w100"
+                            disabled={!email && !phone}
+                            loading={loading}
+                            type="submit"
+                        >{c('Action').t`Reset password`}</PrimaryButton>
+                    </SignupSubmitRow>
+                </form>
+            </Layout>
+        );
+    }
+
+    if (step === STEPS.VALIDATE_RESET_TOKEN) {
+        const subTitle = email
+            ? c('Info')
+                  .t`Enter the recovery code that was sent to ${email}. If you don’t find the email in your inbox, pleas check your spam folder.`
+            : c('Info').t`Enter the verification code that was sent to your phone number: ${phone}.`;
+        handleBack = () =>
+            gotoStep(methods?.includes('login') ? STEPS.REQUEST_RECOVERY_METHODS : STEPS.REQUEST_RESET_TOKEN);
         const handleSubmit = async () => {
             await new Promise((resolve, reject) => {
                 createModal(
-                    <ConfirmModal title={c('Title').t`Confirm reset password`} onConfirm={resolve} onClose={reject}>
-                        <Alert type="warning">{c('Info')
-                            .t`Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?`}</Alert>
+                    <ConfirmModal
+                        title={c('Title').t`Confirm reset password`}
+                        confirm={c('Action').t`Confirm password reset`}
+                        onConfirm={resolve}
+                        onClose={reject}
+                    >
+                        <Alert type="warning">
+                            <p className="mt0">{c('Info')
+                                .t`Resetting your password means that you will no longer be able to read your encrypted data unless you know your old password.`}</p>
+                            <p className="mt0 mb0">{c('Info')
+                                .t`If you know your password and would like to change it, please log into your account first and change your password after logging in.`}</p>
+                        </Alert>
                     </ConfirmModal>
                 );
             });
-            return handleRequest();
+            await handleValidateResetToken(STEPS.NEW_PASSWORD);
         };
         return (
-            <Layout title={c('Title').t`Reset password`} left={<BackButton onClick={handleBack} />}>
+            <Layout
+                title={c('Title').t`Enter recovery code`}
+                subtitle={subTitle}
+                left={<BackButton onClick={handleBack} />}
+            >
                 <form
                     className="signup-form"
                     onSubmit={(e) => {
@@ -76,44 +233,24 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
                     }}
                 >
                     <SignupLabelInputRow
-                        label={<Label htmlFor="username">{c('Label').t`Username`}</Label>}
-                        input={<ResetUsernameInput id="username" value={username} setValue={setUsername} />}
-                    />
-                    <SignupLabelInputRow
-                        label={<Label htmlFor="email">{c('Label').t`Recovery email`}</Label>}
-                        input={<ResetPasswordInput id="email" value={email} setValue={setEmail} />}
-                    />
-                    <SignupSubmitRow>
-                        <PrimaryButton
-                            className="pm-button--large flex-item-noshrink onmobile-w100"
-                            disabled={!username || !email}
-                            loading={loading}
-                            type="submit"
-                        >{c('Action').t`Get a new password`}</PrimaryButton>
-                    </SignupSubmitRow>
-                </form>
-            </Layout>
-        );
-    }
-
-    if (step === STEPS.VALIDATE_RESET_TOKEN) {
-        return (
-            <Layout title={c('Title').t`Reset password`} left={<BackButton onClick={handleBack} />}>
-                <form
-                    className="signup-form"
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        handleValidateResetToken();
-                    }}
-                >
-                    <Alert>{c('Info')
-                        .t`We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.`}</Alert>
-                    <Alert type="warning">{c('Info')
-                        .t`IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.`}</Alert>
-                    <SignupLabelInputRow
-                        label={<Label htmlFor="reset-token">{c('Label').t`Reset code`}</Label>}
+                        label={<Label htmlFor="reset-token">{c('Label').t`Recovery code`}</Label>}
                         input={<ResetTokenInput id="reset-token" value={token} setValue={setToken} />}
                     />
+                    {email || phone ? (
+                        <InlineLinkButton
+                            disabled={loading}
+                            onClick={() =>
+                                createModal(
+                                    <RequestNewCodeModal
+                                        onEdit={handleBack}
+                                        onResend={handleRequest}
+                                        email={email}
+                                        phone={phone}
+                                    />
+                                )
+                            }
+                        >{c('Action').t`Did not receive a code?`}</InlineLinkButton>
+                    ) : null}
                     <SignupSubmitRow>
                         <PrimaryButton
                             className="pm-button--large onmobile-w100"
@@ -127,41 +264,8 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
         );
     }
 
-    if (step === STEPS.DANGER_VERIFICATION) {
-        const hereLink = <Href key="0" url="https://mail.protonmail.com/login">{c('Link').t`here`}</Href>;
-        return (
-            <Layout title={c('Title').t`Reset password`} left={<BackButton onClick={handleBack} />}>
-                <form
-                    className="signup-form"
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        handleDanger();
-                    }}
-                >
-                    <Alert
-                        type="warning"
-                        learnMore="https://protonmail.com/support/knowledge-base/updating-your-login-password/"
-                    >{c('Info')
-                        .jt`Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${hereLink}.`}</Alert>
-                    <Alert type="warning">{c('Info').t`ALL YOUR DATA WILL BE LOST!`}</Alert>
-                    <SignupLabelInputRow
-                        label={<Label htmlFor="danger">{c('Label').t`Confirm reset`}</Label>}
-                        input={
-                            <ResetDangerInput id="danger" value={danger} setValue={setDanger} dangerWord={dangerWord} />
-                        }
-                    />
-                    <Alert learnMore="https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/">{c(
-                        'Info'
-                    ).t`If you remember your old password later, you can recover your existing messages.`}</Alert>
-                    <SignupSubmitRow>
-                        <PrimaryButton type="submit">{c('Action').t`Reset my password`}</PrimaryButton>
-                    </SignupSubmitRow>
-                </form>
-            </Layout>
-        );
-    }
-
     if (step === STEPS.NEW_PASSWORD) {
+        handleBack = () => gotoStep(STEPS.VALIDATE_RESET_TOKEN);
         return (
             <Layout title={c('Title').t`Reset password`} left={<BackButton onClick={handleBack} />}>
                 <form
@@ -170,41 +274,44 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
                         handleNewPassword();
                     }}
                 >
-                    <Alert type="warning">{c('Info').t`Keep this password safe, it cannot be recovered.`}</Alert>
-                    <SignupLabelInputRow
-                        label={<Label htmlFor="new-password">{c('Label').t`New password`}</Label>}
-                        input={
-                            <PasswordInput
-                                id="new-password"
-                                autoFocus
-                                value={password}
-                                placeholder={c('Placeholder').t`Choose a new password`}
-                                onChange={({ target }) => setPassword(target.value)}
-                                required
-                            />
-                        }
-                    />
-                    <SignupLabelInputRow
-                        label={<Label htmlFor="confirm-password">{c('Label').t`Confirm password`}</Label>}
-                        input={
-                            <PasswordInput
-                                id="confirm-password"
-                                value={confirmPassword}
-                                placeholder={c('Password').t`Confirm new password`}
-                                onChange={({ target }) => setConfirmPassword(target.value)}
-                                error={password !== confirmPassword ? c('Error').t`Passwords do not match` : undefined}
-                                required
-                            />
-                        }
-                    />
-                    <Alert type="warning">{c('Info')
-                        .t`Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.`}</Alert>
+                    <div className="flex flex-nowrap">
+                        <SignupLabelInputRow
+                            className="mr0-5"
+                            label={<Label htmlFor="new-password">{c('Label').t`Password`}</Label>}
+                            input={
+                                <PasswordInput
+                                    id="new-password"
+                                    autoFocus
+                                    value={password}
+                                    placeholder={c('Placeholder').t`Choose a new password`}
+                                    onChange={({ target }) => setPassword(target.value)}
+                                    required
+                                />
+                            }
+                        />
+                        <SignupLabelInputRow
+                            className="ml0-5"
+                            label={<Label htmlFor="confirm-password">{c('Label').t`Confirm`}</Label>}
+                            input={
+                                <PasswordInput
+                                    id="confirm-password"
+                                    value={confirmPassword}
+                                    placeholder={c('Password').t`Confirm new password`}
+                                    onChange={({ target }) => setConfirmPassword(target.value)}
+                                    error={
+                                        password !== confirmPassword ? c('Error').t`Passwords do not match` : undefined
+                                    }
+                                    required
+                                />
+                            }
+                        />
+                    </div>
                     <SignupSubmitRow>
                         <PrimaryButton
                             disabled={!password || password !== confirmPassword}
                             loading={loading}
                             type="submit"
-                        >{c('Action').t`Submit`}</PrimaryButton>
+                        >{c('Action').t`Change password`}</PrimaryButton>
                     </SignupSubmitRow>
                 </form>
             </Layout>
@@ -212,6 +319,25 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
     }
 
     if (step === STEPS.ERROR) {
+        if (error) {
+            handleBack = () => gotoStep(STEPS.REQUEST_RECOVERY_METHODS);
+            return (
+                <Layout title={c('Title').t`Error`} left={<BackButton onClick={handleBack} />}>
+                    <Alert type="error">{error}</Alert>
+                    <SignupSubmitRow>
+                        <Href
+                            className="mr2 nodecoration onmobile-aligncenter onmobile-p1 onmobile-mr0"
+                            url="https://protonmail.com/support-form"
+                            target="_self"
+                        >{c('Action').t`Contact support`}</Href>
+                        <Link
+                            to="/login"
+                            className="pm-button--primary pm-button--large flex-item-noshrink onmobile-w100 onmobile-aligncenter"
+                        >{c('Action').t`Return to login`}</Link>
+                    </SignupSubmitRow>
+                </Layout>
+            );
+        }
         return <GenericError />;
     }
 

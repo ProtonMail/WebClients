@@ -11,9 +11,18 @@ interface CreateUserArgs {
     username: string;
     password: string;
     recoveryEmail: string;
+    recoveryPhone: string;
 }
 
-const handleCreateUser = async ({ api, username, password, recoveryEmail, clientType, payload }: CreateUserArgs) => {
+const handleCreateUser = async ({
+    api,
+    username,
+    password,
+    recoveryEmail,
+    recoveryPhone,
+    clientType,
+    payload,
+}: CreateUserArgs) => {
     if (!username) {
         throw new Error('Missing username');
     }
@@ -25,6 +34,7 @@ const handleCreateUser = async ({ api, username, password, recoveryEmail, client
                 ...queryCreateUser({
                     Type: clientType,
                     Email: recoveryEmail,
+                    Phone: recoveryPhone,
                     Username: username,
                     Payload: payload,
                 }),
