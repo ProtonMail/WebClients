@@ -72,7 +72,7 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
         });
     };
 
-    const loading = !Object.prototype.hasOwnProperty.call(message, 'actionStatus') || !!message?.actionStatus;
+    const loading = !Object.prototype.hasOwnProperty.call(message, 'actionStatus') || !!message?.actionInProgress;
     const messageLoaded = !!message.data?.Subject;
     const bodyLoaded = !!message.initialized;
 

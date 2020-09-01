@@ -1,6 +1,5 @@
 import React, { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
 import { useInstance, useEventManager } from 'react-components';
-import { c } from 'ttag';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 
@@ -32,20 +31,6 @@ export const updateMessageCache = (
 ): MessageExtended => {
     const existingMessage = messageCache.get(localID);
     const newMessage = mergeMessages(existingMessage, data);
-    messageCache.set(localID, newMessage);
-    return newMessage;
-};
-
-/**
- * Common helper to only update status
- */
-export const updateMessageStatus = (
-    messageCache: MessageCache,
-    localID: string,
-    newStatus: string
-): MessageExtended => {
-    const existingMessage = messageCache.get(localID) as MessageExtended;
-    const newMessage = { ...existingMessage, actionStatus: newStatus };
     messageCache.set(localID, newMessage);
     return newMessage;
 };
@@ -99,11 +84,10 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
 const messageCacheListener = (cache: MessageCache) => async (changedMessageID: string) => {
     let message = cache.get(changedMessageID);
 
-    if (message && message.actionStatus === undefined && (message.actionQueue?.length || 0) > 0) {
-        const actionStatus = c('Info').t`Processing`;
+    if (message && !message.actionInProgress && (message.actionQueue?.length || 0) > 0) {
         const [action, ...rest] = message.actionQueue || [];
 
-        cache.set(changedMessageID, { ...message, actionStatus, actionQueue: rest });
+        cache.set(changedMessageID, { ...message, actionInProgress: true, actionQueue: rest });
 
         try {
             await action();
@@ -116,7 +100,7 @@ const messageCacheListener = (cache: MessageCache) => async (changedMessageID: s
 
         // In case of deletion, message is not in the cache anymore
         if (message) {
-            cache.set(changedMessageID, { ...message, actionStatus: undefined });
+            cache.set(changedMessageID, { ...message, actionInProgress: false });
         }
     }
 };

@@ -118,10 +118,10 @@ const MessageView = ({
 
     // Mark as read a message already loaded (when user marked as unread)
     useEffect(() => {
-        if (expanded && unread && bodyLoaded && !message.actionStatus) {
+        if (expanded && unread && bodyLoaded && !message.actionInProgress) {
             markAs([message.data as Element], labelID, MARK_AS_STATUS.READ);
         }
-    }, [expanded, unread, bodyLoaded, message.actionStatus]);
+    }, [expanded, unread, bodyLoaded, message.actionInProgress]);
 
     // Re-initialize context if message is changed without disposing the component
     useEffect(() => {

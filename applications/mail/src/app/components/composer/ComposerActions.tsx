@@ -29,7 +29,6 @@ interface Props {
     opening: boolean;
     sending: boolean;
     syncInProgress: boolean;
-    syncStatus: string;
     onAddAttachments: (files: File[]) => void;
     onPassword: () => void;
     onExpiration: () => void;
@@ -47,7 +46,6 @@ const ComposerActions = ({
     opening,
     sending,
     syncInProgress,
-    syncStatus,
     onAddAttachments,
     onPassword,
     onExpiration,
@@ -100,7 +98,7 @@ const ComposerActions = ({
 
     let buttonSendLabel = c('Action').t`Send`;
     if (sending) {
-        buttonSendLabel = syncStatus;
+        buttonSendLabel = c('Action').t`Sending`;
     }
 
     return (

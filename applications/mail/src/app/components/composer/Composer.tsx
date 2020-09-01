@@ -139,8 +139,7 @@ const Composer = ({
     const deleteDraft = useDeleteDraft(syncedMessage);
 
     // Computed composer status
-    const syncInProgress = syncedMessage.actionStatus !== undefined;
-    const syncStatus = syncedMessage.actionStatus || '';
+    const syncInProgress = !!syncedMessage.actionInProgress;
     const contentLocked = opening || sending || closing;
     const actionBarLocked = opening || manualSaving || sending || closing;
 
@@ -208,7 +207,7 @@ const Composer = ({
         if (editorReady && !syncInProgress && !attachmentToCreate) {
             setOpening(false);
         }
-    }, [editorReady, syncInProgress, syncedMessage.data, syncedMessage.actionStatus]);
+    }, [editorReady, syncInProgress, syncedMessage.data]);
 
     // Automatic maximize if height too small
     useEffect(() => {
@@ -489,7 +488,6 @@ const Composer = ({
                         opening={opening}
                         sending={sending}
                         syncInProgress={syncInProgress}
-                        syncStatus={syncStatus}
                         onAddAttachments={handleAddAttachmentsStart}
                         onExpiration={handleExpiration}
                         onPassword={handlePassword}

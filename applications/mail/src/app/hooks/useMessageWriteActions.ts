@@ -5,7 +5,7 @@ import { deleteMessages } from 'proton-shared/lib/api/messages';
 import { MessageExtended, Message, MessageExtendedWithData } from '../models/message';
 import { useMessageKeys } from './useMessageKeys';
 import { mergeMessages } from '../helpers/message/messages';
-import { useMessageCache, updateMessageCache, updateMessageStatus, MessageCache } from '../containers/MessageProvider';
+import { useMessageCache, updateMessageCache } from '../containers/MessageProvider';
 import { createMessage, updateMessage } from '../helpers/message/messageExport';
 import { createEquivalentEmbeddeds } from '../helpers/embedded/embeddeds';
 
@@ -19,9 +19,6 @@ export const mergeSavedMessage = (messageSaved: Message, messageReturned: Messag
     ConversationID: messageReturned.ConversationID
 });
 
-const getUpdateStatus = (messageCache: MessageCache, localID: string) => (status: string) =>
-    updateMessageStatus(messageCache, localID, status);
-
 const useCreateDraft = () => {
     const api = useApi();
     const messageCache = useMessageCache();
@@ -30,11 +27,7 @@ const useCreateDraft = () => {
 
     return useCallback(async (message: MessageExtendedWithData) => {
         const messageKeys = await getMessageKeys(message);
-        const newMessage = await createMessage(
-            { ...message, ...messageKeys },
-            api,
-            getUpdateStatus(messageCache, message.localID)
-        );
+        const newMessage = await createMessage({ ...message, ...messageKeys }, api);
 
         updateMessageCache(messageCache, message.localID, {
             data: { ...mergeSavedMessage(message.data, newMessage), Attachments: newMessage.Attachments },
@@ -58,12 +51,7 @@ const useUpdateDraft = () => {
         const senderHasChanged = messageFromCache.data?.Sender.Address !== message.data?.Sender.Address;
         const messageKeys = await getMessageKeys(message, senderHasChanged);
         const messageToSave = mergeMessages(messageFromCache, { ...message, ...messageKeys });
-        const newMessage = await updateMessage(
-            messageToSave,
-            senderHasChanged,
-            api,
-            getUpdateStatus(messageCache, message.localID)
-        );
+        const newMessage = await updateMessage(messageToSave, senderHasChanged, api);
         updateMessageCache(messageCache, message.localID, {
             ...messageKeys,
             data: mergeSavedMessage(message.data, newMessage),

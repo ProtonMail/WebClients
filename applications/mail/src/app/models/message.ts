@@ -78,9 +78,12 @@ export interface MessageExtended {
     actionQueue?: MessageAction[];
 
     /**
-     * Current (i18n) label to describe what's hapenning on the message
+     * Whether or not an action is being processed on the message
+     *
+     * True: yes
+     * False / undefined: no
      */
-    actionStatus?: string;
+    actionInProgress?: boolean;
 
     /**
      * Message object from the server

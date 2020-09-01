@@ -1,6 +1,5 @@
 import { encryptSessionKey, encryptMessage, OpenPGPKey, encodeBase64, arrayToBinaryString } from 'pmcrypto';
 import { enums } from 'openpgp';
-import { c } from 'ttag';
 import { createDraft, updateDraft } from 'proton-shared/lib/api/messages';
 import { Api } from 'proton-shared/lib/interfaces';
 
@@ -72,15 +71,9 @@ const encryptAttachmentKeyPackets = async (message: MessageExtended, passwords =
     return packets;
 };
 
-export const createMessage = async (
-    message: MessageExtended,
-    api: Api,
-    updateStatus: (status: string) => void
-): Promise<Message> => {
-    updateStatus(c('Info').t`Encrypting`);
+export const createMessage = async (message: MessageExtended, api: Api): Promise<Message> => {
     const { encrypted: Body } = await prepareAndEncryptBody(message);
     const AttachmentKeyPackets = await encryptAttachmentKeyPackets(message);
-    updateStatus(c('Info').t`Saving`);
     const { Message: updatedMessage } = await api(
         createDraft({
             Action: message.action !== MESSAGE_ACTIONS.NEW ? message.action : undefined,
@@ -96,13 +89,10 @@ export const createMessage = async (
 export const updateMessage = async (
     message: MessageExtended,
     senderHasChanged: boolean,
-    api: Api,
-    updateStatus: (status: string) => void
+    api: Api
 ): Promise<Message> => {
-    updateStatus(c('Info').t`Encrypting`);
     const { encrypted: Body } = await prepareAndEncryptBody(message);
     const AttachmentKeyPackets = senderHasChanged ? await encryptAttachmentKeyPackets(message) : undefined;
-    updateStatus(c('Info').t`Saving`);
     const { Message: updatedMessage } = await api(
         updateDraft(message.data?.ID, { ...message.data, Body }, AttachmentKeyPackets)
     );

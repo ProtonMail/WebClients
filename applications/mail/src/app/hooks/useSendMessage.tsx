@@ -219,9 +219,10 @@ export const useSendMessage = () => {
                     ExpiresIn: expiresIn === 0 ? undefined : expiresIn
                 } as any)
             );
-            await call();
 
             updateMessageCache(messageCache, localID, { data: Sent });
+
+            call();
 
             // } catch (e) {
             //     if (retry && e.data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED) {

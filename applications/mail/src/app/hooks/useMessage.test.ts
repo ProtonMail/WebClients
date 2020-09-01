@@ -50,13 +50,13 @@ describe('useMessage', () => {
             const hook = setup(ID);
             hook.result.current.addAction(action);
 
-            expect(hook.result.current.message?.actionStatus).not.toBeUndefined();
+            expect(hook.result.current.message?.actionInProgress).toBe(true);
             expect(hook.result.current.message?.actionQueue?.length).toBe(0);
 
             resolve();
             await tick();
 
-            expect(hook.result.current.message?.actionStatus).toBeUndefined();
+            expect(hook.result.current.message?.actionInProgress).toBe(false);
         });
     });
 
