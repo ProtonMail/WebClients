@@ -21,6 +21,7 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     },
     'application/xliff+xml': { name: 'file-xliff' },
     'application/xml': { name: 'file-xml' },
+    'application/pgp-keys': { name: 'keys' },
 };
 
 const getIconName = (mimeType: string) => {
@@ -28,6 +29,9 @@ const getIconName = (mimeType: string) => {
 
     if (isSupportedImage(mimeType)) {
         name = 'file-image';
+    } else if (mimeType === 'text/xml') {
+        // Exception for XML to use it's own icon and not fallback as text
+        name = 'file-xml';
     } else if (isSupportedText(mimeType)) {
         name = 'file-txt';
     } else if (isVideo(mimeType)) {
