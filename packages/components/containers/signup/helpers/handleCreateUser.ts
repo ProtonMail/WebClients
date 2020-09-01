@@ -33,8 +33,8 @@ const handleCreateUser = async ({
             config: {
                 ...queryCreateUser({
                     Type: clientType,
-                    Email: recoveryEmail,
-                    Phone: recoveryPhone,
+                    ...(recoveryEmail ? { Email: recoveryEmail } : {}),
+                    ...(recoveryPhone ? { Phone: recoveryPhone } : {}),
                     Username: username,
                     Payload: payload,
                 }),
