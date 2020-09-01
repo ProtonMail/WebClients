@@ -16,15 +16,14 @@ import { splitMail, combineHeaders } from '../mail';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { parseInDiv } from '../../helpers/dom';
 
-const prepareExport = (message: MessageExtended) => {
+export const prepareExport = (message: MessageExtended) => {
     if (!message.document) {
         return;
     }
 
     const document = message.document.cloneNode(true) as Element;
-
-    find(message, document);
-    mutateHTMLCid(message.embeddeds, document);
+    const embeddeds = find(message, document);
+    mutateHTMLCid(embeddeds, document);
 
     return document;
 };

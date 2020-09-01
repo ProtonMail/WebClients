@@ -7,7 +7,8 @@ import { MessageExtended } from '../../models/message';
 import { constructMime } from './sendMimeBuilder';
 import { addReceived } from '../message/messages';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { getContent, getPlainText } from '../message/messageContent';
+import { getPlainText, getDocumentContent } from '../message/messageContent';
+import { prepareExport } from '../message/messageExport';
 
 // Reference: Angular/src/app/composer/services/encryptMessage.js
 // Reference: Angular/src/app/composer/services/generateTopPackages.js
@@ -58,7 +59,7 @@ const generateHTMLPackage = async (message: MessageExtended): Promise<Package> =
     Addresses: {},
     MIMEType: DEFAULT,
     // We NEVER upconvert, if the user wants html: plaintext is actually fine as well
-    Body: getContent(message)
+    Body: getDocumentContent(prepareExport(message))
 });
 
 /**

@@ -10,6 +10,7 @@ import { get } from '../attachment/attachmentLoader';
 import { readCID } from '../embedded/embeddeds';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { getPlainText, getDocumentContent } from '../message/messageContent';
+import { prepareExport } from '../message/messageExport';
 
 // Reference: Angular/src/app/composer/services/mimeMessageBuilder.js
 
@@ -166,7 +167,8 @@ export const constructMime = async (
     downconvert = true
 ) => {
     const plaintext = getPlainText(message, downconvert);
-    const html = message.data?.MIMEType !== MIME_TYPES.PLAINTEXT ? getDocumentContent(message.document) : undefined;
+    const html =
+        message.data?.MIMEType !== MIME_TYPES.PLAINTEXT ? getDocumentContent(prepareExport(message)) : undefined;
     const attachments = await fetchMimeDependencies(message, cache, api);
     const embeddeds = message.embeddeds || new Map();
 
