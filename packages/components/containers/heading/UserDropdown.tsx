@@ -34,7 +34,7 @@ const UserDropdown = ({ ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [loading, withLoading] = useLoading();
-    const displayName = user.DisplayName || user.Name;
+    const displayName = user.DisplayName || user.Name; // displayName can be falsy for external account
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
@@ -76,16 +76,24 @@ const UserDropdown = ({ ...rest }) => {
                 <ul className="unstyled mt0 mb0">
                     {!isSSOMode && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                         <>
-                            <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
-                                <div className="bold ellipsis mw100" title={displayName}>
-                                    {displayName}
-                                </div>
-                                {user.Email ? (
-                                    <div className="ellipsis mw100" title={user.Email}>
+                            {displayName ? (
+                                <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
+                                    <div className="bold ellipsis mw100" title={displayName}>
+                                        {displayName}
+                                    </div>
+                                    {user.Email ? (
+                                        <div className="ellipsis mw100" title={user.Email}>
+                                            {user.Email}
+                                        </div>
+                                    ) : null}
+                                </li>
+                            ) : (
+                                <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
+                                    <div className="bold ellipsis mw100" title={user.Email}>
                                         {user.Email}
                                     </div>
-                                ) : null}
-                            </li>
+                                </li>
+                            )}
                             <li className="dropDown-item">
                                 <AppLink
                                     className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"

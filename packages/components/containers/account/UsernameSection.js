@@ -2,42 +2,58 @@ import React from 'react';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 
-import { Label, Row, Field, Href, Loader } from '../../components';
-import { useUser, useAddresses, useConfig } from '../../hooks';
+import { Label, Row, Field, Href } from '../../components';
+import { useUser, useConfig } from '../../hooks';
 
 const UsernameSection = () => {
-    const [{ Name }] = useUser();
-    const [addresses, loading] = useAddresses();
-    const [{ Email } = {}] = addresses || [];
     const { APP_NAME } = useConfig();
+    const [{ Name, Email }] = useUser();
+
+    if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
+        return (
+            <>
+                {Name ? (
+                    <Row>
+                        <Label>{c('Label').t`Name`}</Label>
+                        <Field className="pt0-5">
+                            <strong>{Name}</strong>
+                        </Field>
+                    </Row>
+                ) : null}
+                <Row>
+                    <Label>{c('Label').t`ProtonMail address`}</Label>
+                    <Field className="pt0-5">
+                        {Email ? (
+                            <strong>{Email}</strong>
+                        ) : (
+                            <Href
+                                url="https://mail.protonmail.com/login"
+                                title={c('Info').t`Log in to ProtonMail to activate your address`}
+                            >{c('Link').t`Not activated`}</Href>
+                        )}
+                    </Field>
+                </Row>
+            </>
+        );
+    }
 
     return (
         <>
-            <Row>
-                <Label>{c('Label').t`Name`}</Label>
-                <Field className="pt0-5">
-                    <strong>{Name}</strong>
-                </Field>
-            </Row>
-            {APP_NAME === APPS.PROTONVPN_SETTINGS ? (
-                loading ? (
-                    <Loader />
-                ) : (
-                    <Row>
-                        <Label>{c('Label').t`ProtonMail address`}</Label>
-                        <Field className="pt0-5">
-                            {addresses.length ? (
-                                <strong>{Email}</strong>
-                            ) : (
-                                <Href
-                                    url="https://mail.protonmail.com/login"
-                                    title={c('Info').t`Log in to ProtonMail to activate your address`}
-                                >{c('Link').t`Not activated`}</Href>
-                            )}
-                        </Field>
-                    </Row>
-                )
-            ) : null}
+            {Name ? (
+                <Row>
+                    <Label>{c('Label').t`Name`}</Label>
+                    <Field className="pt0-5">
+                        <strong>{Name}</strong>
+                    </Field>
+                </Row>
+            ) : (
+                <Row>
+                    <Label>{c('Label').t`Email`}</Label>
+                    <Field className="pt0-5">
+                        <strong>{Email}</strong>
+                    </Field>
+                </Row>
+            )}
         </>
     );
 };
