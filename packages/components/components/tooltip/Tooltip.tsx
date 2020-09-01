@@ -4,11 +4,7 @@ import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import useTooltipHandlers from './useTooltipHandlers';
 
-enum TooltipType {
-    INFO = 'info',
-    ERROR = 'error',
-    WARNING = 'warning',
-}
+type TooltipType = 'info' | 'error' | 'warning';
 
 interface Props {
     children: React.ReactNode;
@@ -20,10 +16,10 @@ interface Props {
 }
 
 const getTooltipTypeClass = (type: TooltipType) => {
-    if (type === TooltipType.ERROR) {
+    if (type === 'error') {
         return 'tooltip--warning';
     }
-    if (type === TooltipType.WARNING) {
+    if (type === 'warning') {
         return 'tooltip--attention';
     }
 };
@@ -34,7 +30,7 @@ const Tooltip = ({
     originalPlacement = 'top',
     scrollContainerClass = 'main',
     className,
-    type = TooltipType.INFO,
+    type = 'info',
 }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
