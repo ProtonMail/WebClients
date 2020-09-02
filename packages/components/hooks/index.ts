@@ -52,6 +52,7 @@ export { default as useDragMove } from './useDragMove';
 export { default as useStep } from './useStep';
 export { default as useOnline } from './useOnline';
 export { default as useLoading } from './useLoading';
+export { default as useLoadingMap } from './useLoadingMap';
 export { default as useApi } from './useApi';
 export { default as useModals } from './useModals';
 export { default as useEventManager } from './useEventManager';
