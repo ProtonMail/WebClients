@@ -11,6 +11,10 @@ button[aria-busy="true"] {
     background-repeat: no-repeat;
 }
 
+.pm-button--small[aria-busy="true"] {
+	background-position: calc(100% - 2px) 50%;
+}
+
 tr[aria-busy="true"] {
   background-image: none;
 
