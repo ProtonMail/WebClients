@@ -5,13 +5,10 @@ import { PersistedSession, PersistedSessionBlob } from './SessionInterface';
 import { getValidatedLocalID } from './sessionForkValidation';
 import { InvalidPersistentSessionError } from './error';
 import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
+import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 
 const STORAGE_PREFIX = 'ps-';
 const getKey = (localID: number) => `${STORAGE_PREFIX}${localID}`;
-
-export const removePersistedSession = (localID: number) => {
-    removeItem(getKey(localID));
-};
 
 export const getPersistedSession = (localID: number): PersistedSession | undefined => {
     const itemValue = getItem(getKey(localID));
@@ -28,6 +25,14 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
     } catch (e) {
         return undefined;
     }
+};
+
+export const removePersistedSession = (localID: number) => {
+    const oldSession = getPersistedSession(localID);
+    if (oldSession?.UID) {
+        removeLastRefreshDate(oldSession.UID);
+    }
+    removeItem(getKey(localID));
 };
 
 export const getPersistedSessions = () => {

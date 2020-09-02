@@ -1,3 +1,5 @@
+import { create as createMutex } from 'mutex-browser';
+
 import { RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX, OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY } from '../../constants';
 import { createOnceHandler } from '../../apiHandlers';
 import { wait } from '../../helpers/promise';
@@ -5,6 +7,9 @@ import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import { withUIDHeaders } from '../../fetch/headers';
 import { setRefreshCookies } from '../auth';
 import { getApiError } from './apiErrorHelper';
+import { noop, randomIntFromInterval } from '../../helpers/function';
+import { getDateHeader } from '../../fetch/helpers';
+import { getLastRefreshDate, setLastRefreshDate } from './refreshStorage';
 
 export const InactiveSessionError = () => {
     const error = new Error('Inactive session');
@@ -97,16 +102,47 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
     let loggedOut = false;
 
     const refreshHandlers = {};
-    const refreshHandler = (UID) => {
+    const refreshHandler = (UID, responseDate) => {
         if (!refreshHandlers[UID]) {
-            refreshHandlers[UID] = createOnceHandler(() => {
-                return refresh(call, UID, 1, RETRY_ATTEMPTS_MAX).then((result) => {
-                    // Add an artificial delay to ensure cookies are properly updated to avoid race conditions
-                    return wait(50).then(() => result);
-                });
+            const mutex = createMutex({ expiry: 15000 });
+
+            const getMutexLock = async (UID) => {
+                try {
+                    await mutex.lock(UID);
+                    return () => {
+                        return mutex.unlock(UID).catch(noop);
+                    };
+                } catch (e) {
+                    // If getting the mutex fails, fall back to a random wait
+                    await wait(randomIntFromInterval(100, 2000));
+                    return () => {
+                        return Promise.resolve();
+                    };
+                }
+            };
+
+            /**
+             * Refreshing the session needs to handle multiple race conditions.
+             * 1) Race conditions within the context (tab). Solved by the once handler.
+             * 2) Race conditions within multiple contexts (tabs). Solved by the shared mutex.
+             */
+            refreshHandlers[UID] = createOnceHandler(async (responseDate = new Date()) => {
+                const unlockMutex = await getMutexLock(UID);
+                try {
+                    const lastRefreshDate = getLastRefreshDate(UID);
+                    if (lastRefreshDate === undefined || responseDate > lastRefreshDate) {
+                        const result = await refresh(call, UID, 1, RETRY_ATTEMPTS_MAX);
+                        setLastRefreshDate(UID, getDateHeader(result.headers) || new Date());
+                        // Add an artificial delay to ensure cookies are properly updated to avoid race conditions
+                        await wait(50);
+                    }
+                } finally {
+                    await unlockMutex();
+                }
             });
         }
-        return refreshHandlers[UID]();
+
+        return refreshHandlers[UID](responseDate);
     };
     const unlockHandler = createOnceHandler(onUnlock);
 
@@ -127,7 +163,7 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
                     return onError(e);
                 }
 
-                const { status, name } = e;
+                const { status, name, response } = e;
 
                 const { ignoreHandler, silence = [], headers } = options || {};
 
@@ -155,7 +191,7 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
                     !ignoreUnauthorized &&
                     (UID || (requestUID && !(headers && !!headers.Authorization)))
                 ) {
-                    return refreshHandler(requestUID).then(
+                    return refreshHandler(requestUID, getDateHeader(response && response.headers)).then(
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
                         (error) => {
                             // Any 4xx and the session is no longer valid, 429 is already handled in the refreshHandler

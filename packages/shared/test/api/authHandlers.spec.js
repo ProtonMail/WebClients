@@ -1,6 +1,6 @@
 import withApiHandlers, { CancelUnlockError, InactiveSessionError } from '../../lib/api/helpers/withApiHandlers';
 
-const getApiError = ({ message, response, data, status }) => {
+const getApiError = ({ message, response = { headers: { get: () => '' } }, data, status }) => {
     const error = new Error(message);
     error.status = status;
     error.data = data;
@@ -8,14 +8,25 @@ const getApiError = ({ message, response, data, status }) => {
     return error;
 };
 
+const getApiResult = (result) => {
+    return {
+        headers: {
+            get: () => '',
+        },
+        status: 200,
+        json: () => result,
+    };
+};
+
 describe('auth handlers', () => {
     it('should unlock', async () => {
         const call = jasmine
             .createSpy('call')
-            .and.returnValues(Promise.reject(getApiError({ status: 403 })), Promise.resolve('123'));
+            .and.returnValues(Promise.reject(getApiError({ status: 403 })), Promise.resolve(getApiResult('123')));
         const handleUnlock = jasmine.createSpy('unlock').and.returnValues(Promise.resolve());
         const api = withApiHandlers({ call, onUnlock: handleUnlock });
-        expect(await api({})).toBe('123');
+        const result = await api({}).then((r) => r.json());
+        expect(result).toBe('123');
         expect(handleUnlock).toHaveBeenCalledTimes(1);
         expect(call).toHaveBeenCalledTimes(2);
     });
@@ -37,15 +48,13 @@ describe('auth handlers', () => {
     it('should retry 429 status', async () => {
         const call = jasmine
             .createSpy('call')
-            .and.returnValues(
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })),
-                Promise.resolve('123')
-            );
+            .and.returnValues(Promise.reject(getApiError({ status: 429 })), Promise.resolve(getApiResult('123')));
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
         const api = withApiHandlers({ call, onError: handleError });
-        expect(await api({})).toBe('123');
+        const result = await api({}).then((r) => r.json());
+        expect(result).toBe('123');
         expect(call).toHaveBeenCalledTimes(2);
         expect(handleError).toHaveBeenCalledTimes(0);
     });
@@ -54,11 +63,11 @@ describe('auth handlers', () => {
         const call = jasmine
             .createSpy('call')
             .and.returnValues(
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })),
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })),
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })),
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })),
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } }))
+                Promise.reject(getApiError({ status: 429 })),
+                Promise.reject(getApiError({ status: 429 })),
+                Promise.reject(getApiError({ status: 429 })),
+                Promise.reject(getApiError({ status: 429 })),
+                Promise.reject(getApiError({ status: 429 }))
             );
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
@@ -103,7 +112,9 @@ describe('auth handlers', () => {
             if (args.url === 'auth/refresh') {
                 refreshed = true;
                 refreshCalls++;
-                return;
+                return {
+                    headers: { get: () => '1' },
+                };
             }
             if (!refreshed) {
                 throw getApiError({ status: 401 });
@@ -113,7 +124,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withApiHandlers({ call, UID: '123', onError: handleError });
+        const api = withApiHandlers({ call, UID: '124', onError: handleError });
         const result = await Promise.all([api(123), api(231), api(321)]);
         expect(result).toEqual([123, 231, 321]);
         expect(call).toHaveBeenCalledTimes(7);
@@ -153,7 +164,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withApiHandlers({ call, UID: '123', onError: handleError });
+        const api = withApiHandlers({ call, UID: '125', onError: handleError });
         const error = await api(123).catch((e) => e);
         expect(error.status).toBe(500);
         expect(call).toHaveBeenCalledTimes(2);
@@ -170,18 +181,18 @@ describe('auth handlers', () => {
             .createSpy('call')
             .and.returnValues(
                 Promise.reject(getApiError({ status: 401 })),
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })),
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })),
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })),
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })),
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })),
-                Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } }))
+                Promise.reject(getApiError({ status: 429 })),
+                Promise.reject(getApiError({ status: 429 })),
+                Promise.reject(getApiError({ status: 429 })),
+                Promise.reject(getApiError({ status: 429 })),
+                Promise.reject(getApiError({ status: 429 })),
+                Promise.reject(getApiError({ status: 429 }))
             );
 
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withApiHandlers({ call, UID: '123', onError: handleError });
+        const api = withApiHandlers({ call, UID: '126', onError: handleError });
         await expectAsync(api(123)).toBeRejectedWith(InactiveSessionError());
         expect(call).toHaveBeenCalledTimes(6);
     });
@@ -189,17 +200,17 @@ describe('auth handlers', () => {
     it('should refresh once and handle 429', async () => {
         const call = jasmine.createSpy('call').and.returnValues(
             Promise.reject(getApiError({ status: 401 })), // need refresh
-            Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })), // retry
-            Promise.reject(getApiError({ status: 429, response: { headers: { get: () => '1' } } })), // retry
-            Promise.resolve(), // refresh ok
-            Promise.resolve('123') // actual result
+            Promise.reject(getApiError({ status: 429 })), // retry
+            Promise.reject(getApiError({ status: 429 })), // retry
+            Promise.resolve(getApiResult('')), // refresh ok
+            Promise.resolve(getApiResult('123')) // actual result
         );
 
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withApiHandlers({ call, UID: '123', onError: handleError });
-        const result = await api(123);
+        const api = withApiHandlers({ call, UID: 'abc', onError: handleError });
+        const result = await api(123).then((result) => result.json());
         expect(call).toHaveBeenCalledTimes(5);
         expect(result).toBe('123');
     });
@@ -211,7 +222,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const api = withApiHandlers({ call, UID: '123', onError: handleError });
+        const api = withApiHandlers({ call, UID: '128', onError: handleError });
         await expectAsync(api()).toBeRejectedWith(InactiveSessionError());
         expect(call).toHaveBeenCalledTimes(2);
         await expectAsync(api()).toBeRejectedWith(InactiveSessionError());
