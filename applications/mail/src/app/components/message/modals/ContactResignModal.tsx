@@ -1,3 +1,4 @@
+import { LoadingMap } from 'proton-shared/lib/interfaces/utils';
 import React, { useState, useEffect } from 'react';
 import {
     Alert,
@@ -17,7 +18,6 @@ import { updateContact } from 'proton-shared/lib/api/contacts';
 import { getContact } from 'proton-shared/lib/api/contacts';
 import { ContactEmail, ContactCard } from 'proton-shared/lib/interfaces/contacts';
 import { c } from 'ttag';
-import { MapLoading } from '../../../models/utils';
 
 interface Props {
     title: string;
@@ -42,11 +42,11 @@ const ContactResignModal = ({
 }: Props) => {
     const getUserKeys = useGetUserKeys();
     const { createNotification } = useNotifications();
-    const [mapContactFingerprintsByEmail, setMapContactFingerprintsByEmail] = useState<{
+    const [contactFingerprintsByEmailMap, setContactFingerprintsByEmailMap] = useState<{
         [key: string]: string[] | undefined;
     }>({});
-    const [mapContactCards, setMapContactCards] = useState<{ [key: string]: ContactCard[] | undefined }>({});
-    const [mapLoading, setMapLoading] = useState<MapLoading>(
+    const [contactCardsMap, setContactCardsMap] = useState<{ [key: string]: ContactCard[] | undefined }>({});
+    const [loadingMap, setLoadingMap] = useState<LoadingMap>(
         contacts.reduce<{ [key: string]: boolean }>((acc, { contactID }) => {
             acc[contactID] = true;
             return acc;
@@ -58,7 +58,7 @@ const ContactResignModal = ({
     const api = useApi();
 
     useEffect(() => {
-        const getMapContactFingerprintsByEmail = async (contactID: string) => {
+        const getContactFingerprintsByEmailMap = async (contactID: string) => {
             const {
                 Contact: { Cards, ContactEmails }
             } = await api(getContact(contactID));
@@ -75,15 +75,15 @@ const ContactResignModal = ({
                 })
             );
 
-            setMapContactFingerprintsByEmail((fingerprintsByEmailMap) => ({
+            setContactFingerprintsByEmailMap((fingerprintsByEmailMap) => ({
                 ...fingerprintsByEmailMap,
                 ...fingerprintsByEmail
             }));
-            setMapContactCards((map) => ({ ...map, [contactID]: Cards }));
-            setMapLoading((map) => ({ ...map, [contactID]: false }));
+            setContactCardsMap((map) => ({ ...map, [contactID]: Cards }));
+            setLoadingMap((map) => ({ ...map, [contactID]: false }));
         };
 
-        Promise.all(contacts.map(({ contactID }) => getMapContactFingerprintsByEmail(contactID)));
+        Promise.all(contacts.map(({ contactID }) => getContactFingerprintsByEmailMap(contactID)));
     }, []);
 
     const handleSubmit = async () => {
@@ -92,8 +92,8 @@ const ContactResignModal = ({
             const resignedCardsMap: { [key: string]: ContactCard[] } = {};
             await Promise.all(
                 contacts.map(async ({ contactID }) => {
-                    const contactCards = mapContactCards[contactID];
-                    if (!contactCards || mapLoading[contactID]) {
+                    const contactCards = contactCardsMap[contactID];
+                    if (!contactCards || loadingMap[contactID]) {
                         return;
                     }
                     const resignedCards = await resignCards({
@@ -122,7 +122,7 @@ const ContactResignModal = ({
     };
 
     const renderEmailRow = (email: string) => {
-        const fingerprints = mapContactFingerprintsByEmail[email];
+        const fingerprints = contactFingerprintsByEmailMap[email];
 
         if (!fingerprints) {
             return null;
@@ -144,8 +144,8 @@ const ContactResignModal = ({
         );
     };
 
-    const loadingContacts = Object.values(mapLoading).some((loading) => loading === true);
-    const emailsWithKeys = Object.values(mapContactFingerprintsByEmail);
+    const loadingContacts = Object.values(loadingMap).some((loading) => loading === true);
+    const emailsWithKeys = Object.values(contactFingerprintsByEmailMap);
     const renderSubmit = (
         <PrimaryButton disabled={loadingContacts} loading={loadingResign} type="submit">
             {submit}
@@ -161,7 +161,7 @@ const ContactResignModal = ({
                 <Loader />
             ) : (
                 <div>
-                    <ul>{Object.keys(mapContactFingerprintsByEmail).map(renderEmailRow)}</ul>
+                    <ul>{Object.keys(contactFingerprintsByEmailMap).map(renderEmailRow)}</ul>
                 </div>
             )}
         </>

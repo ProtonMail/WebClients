@@ -21,5 +21,3 @@ export interface WindowSize {
     height: number;
     width: number;
 }
-
-export type MapLoading = { [key: string]: boolean | undefined };
