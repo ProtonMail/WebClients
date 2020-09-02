@@ -411,7 +411,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
         };
 
         const handleSkip = () => {
-            setModelDiff({ step: PLANS });
+            setModelDiff({ step: PLANS, recoveryEmail: '', recoveryPhone: '' });
         };
 
         const handleBack = () => {
