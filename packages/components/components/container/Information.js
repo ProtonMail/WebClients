@@ -4,7 +4,7 @@ import Icon from '../icon/Icon';
 
 const Information = ({ icon = 'info', children }) => {
     return (
-        <div className="information-panel bordered-container relative flex flex-column">
+        <div className="information-panel w100 bordered-container relative flex flex-column">
             <div className="information-panel-image flex bg-global-highlight">
                 <Icon name={icon} className="mauto" />
             </div>
