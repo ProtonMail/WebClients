@@ -1,6 +1,6 @@
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import React, { useState } from 'react';
-import { classnames, Icon } from 'react-components';
+import { classnames, FileIcon } from 'react-components';
 import { c } from 'ttag';
 import { VERIFICATION_STATUS } from '../../constants';
 import { isEmbeddedLocal } from '../../helpers/embedded/embeddeds';
@@ -10,32 +10,6 @@ import { Attachment } from '../../models/attachment';
 import { MessageExtended } from '../../models/message';
 
 // Reference: Angular/src/templates/attachments/attachmentElement.tpl.html
-
-const OUTER_MAP_CLASSNAME: { [key: string]: string } = {
-    zip: 'file-rar-zip',
-    mp3: 'file-video',
-    javascript: 'file-unknown',
-    vcard: 'file-unknown',
-    xls: 'file-xls',
-    mov: 'file-video',
-    pdf: 'file-pdf',
-    power: 'file-ppt',
-    word: 'file-doc'
-};
-
-const INNER_MAP_CLASSNAME: { [key: string]: string } = {
-    'pgp-keys': 'fa-key'
-};
-
-const getFileIconType = ({ MIMEType = '' }: Attachment) => {
-    const key = Object.keys(OUTER_MAP_CLASSNAME).find((key) => MIMEType.includes(key));
-    return OUTER_MAP_CLASSNAME[key || ''] || '';
-};
-
-const getInnerFileIconType = ({ MIMEType = '' }: Attachment) => {
-    const key = Object.keys(INNER_MAP_CLASSNAME).find((key) => MIMEType.includes(key));
-    return INNER_MAP_CLASSNAME[key || ''] || '';
-};
 
 const getSenderVerificationString = (verified: VERIFICATION_STATUS) => {
     if (verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
@@ -61,14 +35,11 @@ const MessageAttachment = ({ attachment, message }: Props) => {
 
     const humanAttachmentSize = humanSize(attachment.Size);
 
-    const outerIcon = getFileIconType(attachment) || 'file-image';
-    const single = !getInnerFileIconType(attachment);
     const isEmbedded = isEmbeddedLocal(attachment);
 
     const classNames = classnames([
         'listAttachments-icon listAttachments-signature-icon mauto file-outer-icon',
-        single && 'single',
-        isEmbedded && 'is-embedded'
+        isEmbedded && 'is-embedded' // unsused at this point
     ]);
 
     const clickHandler = async () => {
@@ -83,7 +54,6 @@ const MessageAttachment = ({ attachment, message }: Props) => {
         }
     };
 
-    const icon = showLoader ? '' : outerIcon;
     const title = `${attachment.Name} (${humanAttachmentSize})` + getSenderVerificationString(attachmentVerified);
 
     if (!message.initialized) {
@@ -98,7 +68,12 @@ const MessageAttachment = ({ attachment, message }: Props) => {
                 onClick={clickHandler}
             >
                 <span className="flex flex-item-noshrink message-attachmentIcon relative flex p0-5">
-                    <Icon name={icon} size={20} className={classNames} aria-busy={showLoader} />
+                    <FileIcon
+                        mimeType={attachment.MIMEType || ''}
+                        size={20}
+                        className={classNames}
+                        aria-busy={showLoader}
+                    />
                 </span>
                 <span className="flex flex-nowrap flex-items-center message-attachmentInfo">
                     <span className="ellipsis mw100">{attachment.Name}</span>
