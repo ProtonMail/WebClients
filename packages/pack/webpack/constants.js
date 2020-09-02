@@ -16,6 +16,9 @@ const BABEL_INCLUDE_NODE_MODULES = [
     'pmcrypto',
     'proton-pack',
     'proton-shared',
+    'mutex-browser',
+    'interval-tree',
+    'get-random-values',
     'sieve.js',
     'pm-srp',
     'react-components'
