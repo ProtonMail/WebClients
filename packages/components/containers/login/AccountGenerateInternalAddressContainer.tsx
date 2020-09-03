@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FunctionComponent, useState } from 'react';
+import React, { ChangeEvent, FunctionComponent, useState, useEffect } from 'react';
 import { c } from 'ttag';
 import {
     APP_NAMES,
@@ -47,18 +47,24 @@ const AccountGenerateInternalAddressContainer = ({
     const [username, setUsername] = useState('');
     const [usernameError, setUsernameError] = useState('');
     const [loading, withLoading] = useLoading();
+    const [loadingAvailableDomains, withLoadingAvailableDomains] = useLoading();
     const { createNotification } = useNotifications();
+    const [availableDomains, setAvailableDomains] = useState([]);
 
     const handleCreateAddressAndKey = async () => {
         if (!keyPassword) {
             throw new Error('Password required to generate keys');
         }
 
+        if (!availableDomains.length) {
+            const error = c('Error').t`Domain not available, try again later`;
+            throw new Error(error);
+        }
+
         await api(queryCheckUsernameAvailability(username));
         await api(updateUsername({ Username: username }));
 
-        const { Domains: domains } = await api(queryAvailableDomains());
-        const [Address] = await handleSetupAddress({ api, domains, username });
+        const [Address] = await handleSetupAddress({ api, domains: availableDomains, username });
 
         const { privateKey, privateKeyArmored } = await generateAddressKey({
             email: Address.Email,
@@ -88,6 +94,15 @@ const AccountGenerateInternalAddressContainer = ({
         }
     };
 
+    const fetchAvailableDomains = async () => {
+        const { Domains = [] } = await api(queryAvailableDomains());
+        setAvailableDomains(Domains);
+    };
+
+    useEffect(() => {
+        withLoadingAvailableDomains(fetchAvailableDomains());
+    }, []);
+
     return (
         <Layout
             title={c('Title').t`Create a ProtonMail address`}
@@ -106,27 +121,40 @@ const AccountGenerateInternalAddressContainer = ({
                 <SignupLabelInputRow
                     label={<Label htmlFor="login">{c('Label').t`Username`}</Label>}
                     input={
-                        <Input
-                            id="username"
-                            name="username"
-                            autoFocus
-                            autoComplete="off"
-                            autoCapitalize="off"
-                            autoCorrect="off"
-                            value={username}
-                            onChange={({ target }: ChangeEvent<HTMLInputElement>) => {
-                                setUsername(target.value);
-                                setUsernameError('');
-                            }}
-                            error={usernameError}
-                            placeholder={USERNAME_PLACEHOLDER}
-                            className="pm-field--username"
-                            required
-                        />
+                        <div className="flex flex-nowrap flex-items-center flex-item-fluid relative mb0-5">
+                            <div className="flex-item-fluid">
+                                <Input
+                                    id="username"
+                                    name="username"
+                                    autoFocus
+                                    autoComplete="off"
+                                    autoCapitalize="off"
+                                    autoCorrect="off"
+                                    value={username}
+                                    onChange={({ target }: ChangeEvent<HTMLInputElement>) => {
+                                        setUsername(target.value);
+                                        setUsernameError('');
+                                    }}
+                                    error={usernameError}
+                                    placeholder={USERNAME_PLACEHOLDER}
+                                    className="pm-field--username"
+                                    required
+                                />
+                            </div>
+                            {availableDomains.length ? (
+                                <span className="pt0-75 right-icon absolute">@{availableDomains[0]}</span>
+                            ) : null}
+                        </div>
                     }
                 />
                 <SignupSubmitRow>
-                    <PrimaryButton type="submit" className="pm-button--large" loading={loading} data-cy-login="submit">
+                    <PrimaryButton
+                        type="submit"
+                        className="pm-button--large"
+                        disabled={loadingAvailableDomains}
+                        loading={loading}
+                        data-cy-login="submit"
+                    >
                         {c('Action').t`Next`}
                     </PrimaryButton>
                 </SignupSubmitRow>
