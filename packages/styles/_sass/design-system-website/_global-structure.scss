@@ -145,8 +145,8 @@ $height-for-mobile: 8em !default;
 }
 .main-area--noHeader {
   @extend .main-area;
-  height: calc(100vh);
-  max-height: calc(100vh);
+  //height: 100vh; // create a crazy bug on Safari on VPN
+  max-height: 100vh;
 }
 .main-area--withToolbar--noHeader {
   @extend .main-area--withToolbar;
