@@ -5,7 +5,7 @@ import {
     TwoFactorSection,
     NewsSection,
     DeleteSection,
-    EmailSection,
+    RecoveryMethodsSection,
     OpenVPNAccountSection,
     SettingsPropsShared
 } from 'react-components';
@@ -62,7 +62,7 @@ const AccountContainer = ({ setActiveSection, location }: SettingsPropsShared) =
             <PasswordsSection />
             <TwoFactorSection />
             <OpenVPNAccountSection />
-            <EmailSection />
+            <RecoveryMethodsSection />
             <NewsSection />
             <DeleteSection />
         </PrivateMainSettingsAreaWithPermissions>
