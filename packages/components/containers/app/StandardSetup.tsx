@@ -50,7 +50,11 @@ const StandardSetup = ({ locales, PrivateApp }: Props) => {
         return (
             <Switch>
                 <Route path={SSO_PATHS.FORK}>
-                    <SSOForkConsumer onInvalidFork={handleInvalidFork} onLogin={login} />
+                    <SSOForkConsumer
+                        onEmptyFork={handleInactiveSession}
+                        onInvalidFork={handleInvalidFork}
+                        onLogin={login}
+                    />
                 </Route>
                 <Route path="*">
                     <SSOPublicApp onLogin={login} onInactiveSession={handleInactiveSession} />

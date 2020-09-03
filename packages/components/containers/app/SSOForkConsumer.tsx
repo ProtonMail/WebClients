@@ -13,10 +13,11 @@ import LoaderPage from './LoaderPage';
 
 interface Props {
     onLogin: ProtonLoginCallback;
+    onEmptyFork: () => void;
     onInvalidFork: () => void;
 }
 
-const SSOForkConsumer = ({ onLogin, onInvalidFork }: Props) => {
+const SSOForkConsumer = ({ onLogin, onEmptyFork, onInvalidFork }: Props) => {
     const [error, setError] = useState<Error | undefined>();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -25,6 +26,9 @@ const SSOForkConsumer = ({ onLogin, onInvalidFork }: Props) => {
     useEffect(() => {
         const run = async () => {
             const { state, selector, sessionKey } = getConsumeForkParameters();
+            if (!state && !selector && !sessionKey) {
+                return onEmptyFork();
+            }
             if (!state || !selector || !sessionKey) {
                 return onInvalidFork();
             }
