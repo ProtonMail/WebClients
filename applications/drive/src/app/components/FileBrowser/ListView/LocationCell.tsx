@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import useDrive from '../../hooks/drive/useDrive';
-import { FileBrowserItem } from './interfaces';
+import useDrive from '../../../hooks/drive/useDrive';
+import { FileBrowserItem } from '../interfaces';
 
 interface Props {
     shareId: string;

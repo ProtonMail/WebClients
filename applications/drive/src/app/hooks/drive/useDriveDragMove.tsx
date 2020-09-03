@@ -3,19 +3,9 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { LinkType, LinkMeta } from '../../interfaces/link';
 import useDrive from './useDrive';
 import useListNotifications from '../util/useListNotifications';
-import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
+import { FileBrowserItem, DragMoveControls } from '../../components/FileBrowser/interfaces';
 import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
 import { CUSTOM_DATA_FORMAT } from '../../constants';
-
-export interface DragMoveControls {
-    handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
-    handleDrop: (e: React.DragEvent<HTMLTableRowElement>) => void;
-    handleDragLeave: () => void;
-    handleDragEnter: (e: React.DragEvent<HTMLTableRowElement>) => void;
-    dragging: boolean;
-    setDragging: (value: boolean) => void;
-    isActiveDropTarget: boolean;
-}
 
 export default function useDriveDragMove(
     shareId: string,

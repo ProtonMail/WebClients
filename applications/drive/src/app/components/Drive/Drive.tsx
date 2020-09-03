@@ -3,19 +3,21 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
 import useNavigate from '../../hooks/drive/useNavigate';
 import useDrive from '../../hooks/drive/useDrive';
-import FileBrowser from '../FileBrowser/FileBrowser';
 import EmptyFolder from '../FileBrowser/EmptyFolder';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder } from './DriveFolderProvider';
 import { useDriveContent } from './DriveContentProvider';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 import useDriveDragMove from '../../hooks/drive/useDriveDragMove';
+import FileBrowser from '../FileBrowser/FileBrowser';
+import { useFileBrowserLayout } from '../FileBrowser/FileBrowserLayoutProvider';
 
 interface Props {
     activeFolder: DriveFolder;
 }
 
 function Drive({ activeFolder }: Props) {
+    const { view } = useFileBrowserLayout('drive');
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const cache = useDriveCache();
     const { getLinkMeta } = useDrive();
@@ -55,10 +57,10 @@ function Drive({ activeFolder }: Props) {
         if (isInitialized && !complete) {
             loadNextPage();
         }
-    }, [complete, isInitialized, loadNextPage]);
+    }, [complete, isInitialized, loadNextPage, view]);
 
     // On content change, check scroll end (does not rebind listeners)
-    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents]);
+    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents, view]);
 
     const handleClick = async (item: FileBrowserItem) => {
         document.getSelection()?.removeAllRanges();
@@ -69,6 +71,7 @@ function Drive({ activeFolder }: Props) {
         <EmptyFolder />
     ) : (
         <FileBrowser
+            view={view}
             scrollAreaRef={scrollAreaRef}
             caption={folderName}
             shareId={shareId}

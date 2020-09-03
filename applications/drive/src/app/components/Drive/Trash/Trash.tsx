@@ -1,16 +1,17 @@
 import React, { useCallback, useRef } from 'react';
 import { c } from 'ttag';
-
-import FileBrowser from '../../FileBrowser/FileBrowser';
 import EmptyTrash from '../../FileBrowser/EmptyTrash';
 import useOnScrollEnd from '../../../hooks/util/useOnScrollEnd';
 import { useTrashContent } from './TrashContentProvider';
+import FileBrowser from '../../FileBrowser/FileBrowser';
+import { useFileBrowserLayout } from '../../FileBrowser/FileBrowserLayoutProvider';
 
 interface Props {
     shareId: string;
 }
 
 function Trash({ shareId }: Props) {
+    const { view } = useFileBrowserLayout('trash');
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls } = useTrashContent();
 
@@ -28,16 +29,17 @@ function Trash({ shareId }: Props) {
         if (initialized && !complete) {
             loadNextPage();
         }
-    }, [initialized, complete, loadNextPage]);
+    }, [initialized, complete, loadNextPage, view]);
 
     // On content change, check scroll end (does not rebind listeners)
-    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents]);
+    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents, view]);
 
     return complete && !contents.length && !loading ? (
         <EmptyTrash />
     ) : (
         <FileBrowser
             isTrash
+            view={view}
             scrollAreaRef={scrollAreaRef}
             caption={c('Title').t`Trash`}
             shareId={shareId}

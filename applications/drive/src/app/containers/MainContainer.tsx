@@ -12,6 +12,7 @@ import TrashContainer from './TrashContainer/TrashContainer';
 import DriveContainer from './DriveContainer/DriveContainer';
 import TransferManager from '../components/TransferManager/TransferManager';
 import NoAccessContainer from './NoAccessContainer/NoAccessContainer';
+import FileBrowerLayoutProvider from '../components/FileBrowser/FileBrowserLayoutProvider';
 
 const MainContainer = () => {
     const [subscription]: [Subscription, any, any] = useSubscription();
@@ -33,11 +34,13 @@ const MainContainer = () => {
                         <DownloadProvider>
                             <ModalsChildren />
                             <TransferManager />
-                            <Switch>
-                                <Route path="/trash" component={TrashContainer} />
-                                <Route path="/" component={DriveContainer} />
-                                <Redirect to="/" />
-                            </Switch>
+                            <FileBrowerLayoutProvider>
+                                <Switch>
+                                    <Route path="/trash" component={TrashContainer} />
+                                    <Route path="/" component={DriveContainer} />
+                                    <Redirect to="/" />
+                                </Switch>
+                            </FileBrowerLayoutProvider>
                         </DownloadProvider>
                     </UploadProvider>
                 </DriveFolderProvider>
