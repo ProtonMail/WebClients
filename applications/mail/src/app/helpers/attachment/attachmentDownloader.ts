@@ -31,7 +31,8 @@ export const formatDownload = async (
         return {
             attachment,
             data: data as Uint8Array,
-            verified
+            // Only care about signature verification for verified senders with pinned keys
+            verified: reverify ? verified : VERIFICATION_STATUS.NOT_VERIFIED
         };
     } catch (error) {
         // If the decryption fails we download the encrypted version
