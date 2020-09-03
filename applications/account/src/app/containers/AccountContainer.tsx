@@ -10,8 +10,11 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { UserModel } from 'proton-shared/lib/interfaces';
+import { PERMISSIONS } from 'proton-shared/lib/constants';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
+
+const { UPGRADER } = PERMISSIONS;
 
 export const getAccountPage = (user: UserModel) => {
     return {
@@ -38,10 +41,12 @@ export const getAccountPage = (user: UserModel) => {
             {
                 text: c('Title').t`Email subscriptions`,
                 id: 'news',
+                permissions: [UPGRADER],
             },
             {
                 text: c('Title').t`Delete account`,
                 id: 'delete',
+                permissions: [UPGRADER],
             },
         ],
     };
