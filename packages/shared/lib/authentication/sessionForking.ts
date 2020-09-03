@@ -119,7 +119,7 @@ export const getConsumeForkParameters = () => {
     return {
         state: state.slice(0, 100),
         selector,
-        sessionKey: getValidatedSessionKey(sessionKey),
+        sessionKey: sessionKey.length ? getValidatedSessionKey(sessionKey) : undefined,
     };
 };
 
