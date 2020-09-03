@@ -38,6 +38,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
     const challengeRefLogin = useRef<ChallengeRef>();
     const [loadingChallenge, withLoadingChallenge] = useLoading();
     const [challengeLoading, setChallengeLoading] = useState(true);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const [availableDomain = ''] = model.domains;
     const loginLink = <Link key="loginLink" className="nodecoration" to="/login">{c('Link').t`Sign in`}</Link>;
@@ -52,6 +53,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
         if (disableSubmit) {
             return;
         }
+        setIsSubmitted(true);
         const payload = await challengeRefLogin.current?.getChallenge();
         onSubmit(payload);
     };
@@ -78,6 +80,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                                     autoCapitalize="off"
                                     autoCorrect="off"
                                     value={model.username}
+                                    isSubmitted={isSubmitted}
                                     onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
                                         onChange({ ...model, username: target.value })
                                     }
@@ -130,6 +133,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                                 autoCapitalize="off"
                                 autoCorrect="off"
                                 value={model.email}
+                                isSubmitted={isSubmitted}
                                 onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
                                     onChange({ ...model, email: target.value })
                                 }

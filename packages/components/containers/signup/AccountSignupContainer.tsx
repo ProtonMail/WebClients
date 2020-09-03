@@ -14,6 +14,7 @@ import { Address, HumanVerificationMethodType, User as tsUser } from 'proton-sha
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
 import { getResetAddressesKeys } from 'proton-shared/lib/keys/resetKeys';
+import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { useHistory } from 'react-router-dom';
 import {
@@ -368,7 +369,8 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
                 });
                 setModelDiff({ step: RECOVERY_EMAIL });
             } catch (error) {
-                setUsernameError(error.data ? error.data.Error : c('Error').t`Can't check username, try again later`);
+                const errorText = getApiErrorMessage(error) || c('Error').t`Can't check username, try again later`;
+                setUsernameError(errorText);
             }
         };
 
