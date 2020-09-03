@@ -1,0 +1,32 @@
+RewriteEngine On
+DirectorySlash Off
+RewriteCond %{HTTPS} !=on
+
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^settings.* /settings/index.html [NC,L]
+RewriteRule . /index.html [NC,L]
+
+ErrorDocument 403 /assets/errors/403.html
+
+<Files ~ "(index.html|version.json)">
+    FileETag None
+    Header unset ETag
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</Files>
+
+<IfModule mod_mime.c>
+  AddType application/font-woff2 .woff2
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddCharset utf-8 .webmanifest
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilter INCLUDES;DEFLATE svg
+</IfModule>
