@@ -33,7 +33,8 @@ const AppAccountPublicLayoutWrapper = ({ children, ...rest }: AccountProps) => {
 
 const InternalEmailAddressGeneration = ({ children, externalEmailAddress }: Props) => {
     const { APP_NAME } = useConfig();
-    const api = useApi();
+    const normalApi = useApi();
+    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const goToApp = useAppLink();
     const authentication = useAuthentication();
 
@@ -59,7 +60,7 @@ const InternalEmailAddressGeneration = ({ children, externalEmailAddress }: Prop
             externalEmailAddress={emailAddress}
             onDone={handleDone}
             onBack={handleBack}
-            api={api}
+            api={silentApi}
             toApp={APP_NAME}
             keyPassword={authentication.getPassword()}
         />

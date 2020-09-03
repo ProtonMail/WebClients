@@ -61,7 +61,13 @@ const AccountGenerateInternalAddressContainer = ({
             throw new Error(error);
         }
 
-        await api(queryCheckUsernameAvailability(username));
+        try {
+            await api(queryCheckUsernameAvailability(username));
+        } catch (e) {
+            const errorText = getApiErrorMessage(e) || c('Error').t`Can't check username, try again later`;
+            setUsernameError(errorText);
+            throw e;
+        }
         await api(updateUsername({ Username: username }));
 
         const [Address] = await handleSetupAddress({ api, domains: availableDomains, username });
@@ -88,8 +94,7 @@ const AccountGenerateInternalAddressContainer = ({
             await handleCreateAddressAndKey();
             await onDone();
         } catch (error) {
-            const errorText = getApiErrorMessage(error) || c('Error').t`Can't check username, try again later`;
-            setUsernameError(errorText);
+            const errorText = getApiErrorMessage(error) || c('Error').t`Unknown error`;
             createNotification({ type: 'error', text: errorText });
         }
     };
