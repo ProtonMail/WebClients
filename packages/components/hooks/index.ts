@@ -32,7 +32,7 @@ export { useGetPublicKeys } from './useGetPublicKeys';
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
 export { useCalendarBootstrap, useReadCalendarBootstrap, useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 export { useGetCalendarKeys } from './useGetCalendarKeys';
-export { useGetCalendarIdsAndKeys } from './useGetCalendarIdsAndKeys';
+export { useGetCalendarInfo } from './useGetCalendarInfo';
 export { default as useGetCalendarEventRaw } from './useGetCalendarEventRaw';
 export { default as useOrganizationKey } from './useOrganizationKey';
 export { default as useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw';

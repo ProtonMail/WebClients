@@ -5,7 +5,7 @@ import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 import { useGetCalendarKeys } from './useGetCalendarKeys';
 
-export const useGetCalendarIdsAndKeys = () => {
+export const useGetCalendarInfo = () => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
     const getCalendarKeys = useGetCalendarKeys();
@@ -13,13 +13,16 @@ export const useGetCalendarIdsAndKeys = () => {
 
     return useCallback(
         async (calendarID: string) => {
-            const [{ Members }, Addresses] = await Promise.all([getCalendarBootstrap(calendarID), getAddresses()]);
+            const [{ Members, CalendarSettings: calendarSettings }, Addresses] = await Promise.all([
+                getCalendarBootstrap(calendarID),
+                getAddresses(),
+            ]);
             const [memberID, addressID] = getMemberAndAddressID(getMemberAndAddress(Addresses, Members));
             const [addressKeys, calendarKeys] = await Promise.all([
                 getAddressKeys(addressID),
                 getCalendarKeys(calendarID),
             ]);
-            return { memberID, addressKeys, calendarKeys };
+            return { memberID, addressKeys, calendarKeys, calendarSettings };
         },
         [getCalendarBootstrap, getAddresses, getCalendarKeys, getAddressKeys]
     );
