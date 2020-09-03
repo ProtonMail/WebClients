@@ -33,7 +33,7 @@ const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) 
     useEffect(() => {
         const run = async () => {
             const params = new URLSearchParams(window.location.search);
-            const action = params.get('action');
+            const action = params.get('Action');
 
             if (action === 'VIEW') {
                 const handleLinkError = () => {
@@ -50,7 +50,7 @@ const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) 
 
                 const handleGotoRange = async (date: Date) => {
                     history.replace(
-                        `/calendar/week/${[date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()].join('/')}`
+                        `/week/${[date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()].join('/')}`
                     );
                 };
 
