@@ -6,6 +6,9 @@ import { getInfo, PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { TWO_FA_FLAGS } from 'proton-shared/lib/constants';
+import { persistSessionWithPassword } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from 'proton-shared/lib/helpers/crossTab';
+import { isSSOMode } from 'proton-shared/lib/constants';
 import {
     handleUnlock,
     handleChangeMailboxPassword,
@@ -51,6 +54,7 @@ interface Errors {
     loginError: string;
     confirmPasswordError: string;
     fatalError: boolean;
+    persistError?: boolean;
 }
 
 const DEFAULT_ERRORS = {
@@ -74,21 +78,6 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const { isSubUser, isAdmin } = User;
     const [adminAuthTwoFA, setAdminAuthTwoFA] = useState<TwoFaResponse>();
 
-    useEffect(() => {
-        if (!isSubUser) {
-            return;
-        }
-        (async () => {
-            const infoResult = await api<InfoAuthedResponse>(getInfo());
-            /**
-             * There is a special case for admins logged into non-private users. User settings returns two factor
-             * information for the non-private user, and not for the admin to which the session actually belongs.
-             * So we query auth info to get the information about the admin.
-             */
-            setAdminAuthTwoFA(infoResult['2FA']);
-        })();
-    }, []);
-
     const [inputs, setInputs] = useState<Inputs>({
         oldPassword: '',
         newPassword: '',
@@ -104,6 +93,26 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const setPartialError = (object: Partial<Errors>) => setErrors((oldState) => ({ ...oldState, ...object }));
     const setPartialInput = (object: Partial<Inputs>) => setInputs((oldState) => ({ ...oldState, ...object }));
     const resetErrors = () => setErrors(DEFAULT_ERRORS);
+
+    useEffect(() => {
+        if (!isSubUser) {
+            return;
+        }
+        const run = async () => {
+            try {
+                /**
+                 * There is a special case for admins logged into non-private users. User settings returns two factor
+                 * information for the non-private user, and not for the admin to which the session actually belongs.
+                 * So we query auth info to get the information about the admin.
+                 */
+                const infoResult = await api<InfoAuthedResponse>(getInfo());
+                setAdminAuthTwoFA(infoResult['2FA']);
+            } catch (e) {
+                setPartialError({ fatalError: true });
+            }
+        };
+        run();
+    }, []);
 
     const validateConfirmPassword = () => {
         if (inputs.confirmPassword !== inputs.newPassword) {
@@ -132,6 +141,31 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
 
     const notifySuccess = () => {
         createNotification({ text: c('Success').t`Password updated` });
+    };
+
+    const mutatePassword = async (keyPassword: string) => {
+        const localID = authentication.getLocalID?.();
+        if (!isSSOMode || localID === undefined) {
+            authentication.setPassword(keyPassword);
+            return;
+        }
+        try {
+            authentication.setPassword(keyPassword);
+            await persistSessionWithPassword({
+                api,
+                keyPassword,
+                User,
+                isMember: User.isMember,
+                UID: authentication.getUID(),
+                LocalID: localID,
+            });
+            sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
+        } catch (e) {
+            sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: false });
+            // If persisting the password fails for some reason.
+            setPartialError({ fatalError: true, persistError: true });
+            throw e;
+        }
     };
 
     const { labels, extraAlert, ...modalProps } = (() => {
@@ -234,7 +268,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                             keyPassword,
                         });
                         await handleChangeMailboxPassword({ api, keySalt, armoredOrganizationKey, armoredKeys });
-                        authentication.setPassword(keyPassword);
+                        await mutatePassword(keyPassword);
                         await api(lockSensitiveSettings());
                         await call();
 
@@ -303,7 +337,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         totp: inputs.totp,
                     });
                 }
-                authentication.setPassword(keyPassword);
+                await mutatePassword(keyPassword);
                 await api(lockSensitiveSettings());
                 await call();
 
@@ -465,13 +499,20 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     );
 
     if (errors.fatalError) {
+        const handleFatalErrorClose = () => {
+            if (errors.persistError) {
+                // If there was an error with persisting the session, we have no choice but to logout
+                authentication.logout();
+            }
+            onClose?.();
+        };
         return (
             <FormModal
                 close={c('Action').t`Close`}
                 submit={c('Action').t`Ok`}
-                onClose={onClose}
+                onClose={handleFatalErrorClose}
                 {...modalProps}
-                onSubmit={onClose}
+                onSubmit={handleFatalErrorClose}
                 {...rest}
             >
                 <GenericError />

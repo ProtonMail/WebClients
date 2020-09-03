@@ -155,19 +155,6 @@ const ProtonApp = ({ config, children }: Props) => {
         []
     );
 
-    const handleLogout = useCallback(() => {
-        setAuthData((authData) => {
-            // Nothing to logout
-            if (!authData.UID) {
-                return authData;
-            }
-            return {
-                ...authData,
-                isLoggingOut: true,
-            };
-        });
-    }, []);
-
     const handleFinalizeLogout = useCallback(() => {
         authentication.setUID(undefined);
         authentication.setPassword(undefined);
@@ -187,6 +174,23 @@ const ProtonApp = ({ config, children }: Props) => {
         }
         setAuthData({
             history: createHistory({ basename: getBasename() }),
+        });
+    }, []);
+
+    const handleLogout = useCallback((type?: 'soft') => {
+        setAuthData((authData) => {
+            // Nothing to logout
+            if (!authData.UID) {
+                return authData;
+            }
+            if (type === 'soft') {
+                handleFinalizeLogout();
+                return authData;
+            }
+            return {
+                ...authData,
+                isLoggingOut: true,
+            };
         });
     }, []);
 

@@ -15,7 +15,7 @@ export type OnLoginCallback = (data: OnLoginCallbackArguments) => Promise<void>;
 export interface PrivateAuthenticationStore extends AuthenticationStore {
     UID: string;
     localID?: number;
-    logout: () => void;
+    logout: (type?: 'soft') => void;
 }
 
 export interface PublicAuthenticationStore {

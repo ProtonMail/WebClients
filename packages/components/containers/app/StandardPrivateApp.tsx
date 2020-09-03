@@ -28,6 +28,7 @@ import LoaderPage from './LoaderPage';
 import StandardLoadError from './StandardLoadError';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import InternalEmailAddressGeneration from './InternalEmailAddressGeneration';
+import StorageListener from './StorageListener';
 
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;
@@ -148,6 +149,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                         hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
                         hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
                     />
+                    <StorageListener />
                     <ForceRefreshProvider>{children}</ForceRefreshProvider>
                 </InternalEmailAddressGeneration>
             </ContactProvider>
