@@ -20,16 +20,17 @@ const SPEED_SNAPSHOTS = 10; // How many snapshots should the speed be average of
 enum TRANSFER_GROUP {
     ACTIVE,
     DONE,
+    QUEUED,
 }
 const STATE_TO_GROUP_MAP = {
-    [TransferState.Initializing]: TRANSFER_GROUP.ACTIVE,
-    [TransferState.Pending]: TRANSFER_GROUP.ACTIVE,
     [TransferState.Progress]: TRANSFER_GROUP.ACTIVE,
     [TransferState.Finalizing]: TRANSFER_GROUP.ACTIVE,
     [TransferState.Paused]: TRANSFER_GROUP.ACTIVE,
+    [TransferState.Canceled]: TRANSFER_GROUP.ACTIVE,
     [TransferState.Done]: TRANSFER_GROUP.DONE,
-    [TransferState.Canceled]: TRANSFER_GROUP.DONE,
     [TransferState.Error]: TRANSFER_GROUP.DONE,
+    [TransferState.Initializing]: TRANSFER_GROUP.QUEUED,
+    [TransferState.Pending]: TRANSFER_GROUP.QUEUED,
 };
 
 export const MAX_VISIBLE_TRANSFERS = 5;
