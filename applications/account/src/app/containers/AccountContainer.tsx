@@ -9,17 +9,18 @@ import {
     SettingsPropsShared,
 } from 'react-components';
 import { c } from 'ttag';
+import { UserModel } from 'proton-shared/lib/interfaces';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
-export const getAccountPage = () => {
+export const getAccountPage = (user: UserModel) => {
     return {
         text: c('Title').t`Account`,
         to: '/account',
         icon: 'account',
         subsections: [
             {
-                text: c('Title').t`Username`,
+                text: user.Name ? c('Title').t`Username` : c('Title').t`Address`,
                 id: 'username',
             },
             {
@@ -46,11 +47,15 @@ export const getAccountPage = () => {
     };
 };
 
-const AccountContainer = ({ location, setActiveSection }: SettingsPropsShared) => {
+interface Props extends SettingsPropsShared {
+    user: UserModel;
+}
+
+const AccountContainer = ({ location, setActiveSection, user }: Props) => {
     return (
         <PrivateMainSettingsAreaWithPermissions
             location={location}
-            config={getAccountPage()}
+            config={getAccountPage(user)}
             setActiveSection={setActiveSection}
         >
             <UsernameSection />

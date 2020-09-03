@@ -18,7 +18,7 @@ export const getOverviewPage = () => {
 
 export const getPages = (user: UserModel, organization: Organization): SectionConfig[] => [
     getOverviewPage(),
-    getAccountPage(),
+    getAccountPage(user),
     getSubscriptionPage(user),
     getGeneralPage(),
     getSecurityPage(),

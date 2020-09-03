@@ -65,16 +65,11 @@ const PrivateLayout = () => {
     return (
         <PrivateAppContainer header={header} sidebar={sidebar}>
             <Switch>
-                <Route
-                    path="/overview"
-                    render={() => (
-                        <OverviewContainer />
-                    )}
-                />
+                <Route path="/overview" render={() => <OverviewContainer />} />
                 <Route
                     path="/account"
                     render={({ location }) => (
-                        <AccountContainer location={location} setActiveSection={setActiveSection} />
+                        <AccountContainer location={location} setActiveSection={setActiveSection} user={user} />
                     )}
                 />
                 <Route
