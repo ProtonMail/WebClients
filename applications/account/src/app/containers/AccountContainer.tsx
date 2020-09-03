@@ -4,7 +4,7 @@ import {
     PasswordsSection,
     NewsSection,
     DeleteSection,
-    EmailSection,
+    RecoveryMethodsSection,
     TwoFactorSection,
     SettingsPropsShared,
 } from 'react-components';
@@ -61,7 +61,7 @@ const AccountContainer = ({ location, setActiveSection, user }: Props) => {
             <UsernameSection />
             <PasswordsSection />
             <TwoFactorSection />
-            <EmailSection />
+            <RecoveryMethodsSection />
             <NewsSection />
             <DeleteSection />
         </PrivateMainSettingsAreaWithPermissions>
