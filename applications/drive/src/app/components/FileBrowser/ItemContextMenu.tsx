@@ -24,7 +24,7 @@ interface Props {
     close: () => void;
 }
 
-const RowContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, position, open, close }: Props) => {
+const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, position, open, close }: Props) => {
     const {
         download,
         openDeletePermanently,
@@ -133,4 +133,4 @@ const RowContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posit
     );
 };
 
-export default RowContextMenu;
+export default ItemContextMenu;

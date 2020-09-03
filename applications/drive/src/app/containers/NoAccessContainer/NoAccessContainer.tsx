@@ -13,7 +13,7 @@ import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import AppSidebar from '../../components/layout/AppSidebar';
 import AppHeader from '../../components/layout/AppHeader';
-import FileBrowser from '../../components/FileBrowser/FileBrowser';
+import ListView from '../../components/FileBrowser/ListView/ListView';
 import { LinkType } from '../../interfaces/link';
 import NoAccessModal from './NoAccessModal';
 
@@ -63,7 +63,7 @@ const NoAccessContainer = () => {
                         ]}
                     />
                 </div>
-                <FileBrowser
+                <ListView
                     isPreview
                     scrollAreaRef={scrollAreaRef}
                     caption={dummyFolderTitle}

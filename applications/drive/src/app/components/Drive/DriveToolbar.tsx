@@ -20,6 +20,7 @@ import {
     CreateNewFolderButton,
 } from './ToolbarButtons';
 import UploadFolderButton from './ToolbarButtons/UploadFolderButton';
+import LayoutDropdown from './ToolbarButtons/LayoutDropdown';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -88,6 +89,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
 
             {renderSelectionActions()}
             <span className="mlauto flex">
+                <LayoutDropdown layoutId="drive" />
                 <SortDropdown />
             </span>
         </Toolbar>

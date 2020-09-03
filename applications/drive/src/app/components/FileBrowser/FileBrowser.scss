@@ -1,10 +1,25 @@
 .pd-fb-table {
     td,
     th {
-        &:first-of-type { // Checkbox cell
+        &:first-of-type {
+            // Checkbox cell
             position: relative; // Because of .increase-surface-click
-            padding-left: 1em; padding-right: 1em;
+            padding-left: 1em;
+            padding-right: 1em;
             width: calc(1.6rem + 2em);
         }
     }
+}
+
+.pd-fb-grid-item {
+    background-color: var(--bgcolor-input, $pm-input-background);
+
+    &:hover,
+    &:focus {
+        @extend .bg-global-highlight;
+    }
+}
+
+.pd-fb-grid-item.pd-fb-grid-item--highlight {
+    @extend .bg-global-highlight;
 }
