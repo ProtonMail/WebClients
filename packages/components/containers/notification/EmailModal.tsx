@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { updateEmail } from 'proton-shared/lib/api/settings';
+
 import { FormModal, ConfirmModal, Alert, Row, Label, EmailInput, Field } from '../../components';
 import { useLoading, useModals, useNotifications, useEventManager } from '../../hooks';
 import AuthModal from '../password/AuthModal';
 
-const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }) => {
+interface Props {
+    email: string;
+    hasReset: boolean;
+    hasNotify: boolean;
+    onClose?: () => void;
+}
+
+const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }: Props) => {
     const [input, setInput] = useState(email);
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
 
-    const handleChange = ({ target }) => setInput(target.value);
+    const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => setInput(target.value);
 
     const handleSubmit = async () => {
         if (!input && (hasReset || hasNotify)) {
@@ -48,7 +55,7 @@ const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }) => {
 
         await call();
         createNotification({ text: c('Success').t`Email updated` });
-        onClose();
+        onClose?.();
     };
 
     return (
@@ -67,13 +74,6 @@ const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }) => {
             </Row>
         </FormModal>
     );
-};
-
-EmailModal.propTypes = {
-    email: PropTypes.string,
-    hasReset: PropTypes.bool,
-    hasNotify: PropTypes.bool,
-    onClose: PropTypes.func,
 };
 
 export default EmailModal;
