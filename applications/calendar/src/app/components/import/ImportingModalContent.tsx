@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction, useEffect } from 'react';
-import { Alert, DynamicProgress, useApi, useBeforeUnload, useGetCalendarIdsAndKeys } from 'react-components';
+import { Alert, DynamicProgress, useApi, useBeforeUnload, useGetCalendarInfo } from 'react-components';
 import { c } from 'ttag';
 import { getSupportedEventsWithRecurrenceId, splitByRecurrenceId, splitErrors } from '../../helpers/import';
 import { EncryptedEvent, IMPORT_STEPS, ImportCalendarModel, StoredEncryptedEvent } from '../../interfaces/Import';
@@ -15,7 +15,7 @@ interface Props {
 }
 const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
-    const getIdsAndKeys = useGetCalendarIdsAndKeys();
+    const getIdsAndKeys = useGetCalendarInfo();
 
     useBeforeUnload(c('Alert').t`By leaving now, some events may not be imported`);
 
