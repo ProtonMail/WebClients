@@ -27,8 +27,12 @@ $default-height-fields: 4.1rem;
 		border-color: $pm-primary;
 	}
 	.right-icon,
+	.right-text,
 	select.pm-field {
 		height: $default-height-fields;
+	}
+	.right-text-inner {
+		padding-bottom: 0.1rem;
 	}
 
 	.signup-container {

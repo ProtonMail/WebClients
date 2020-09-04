@@ -96,7 +96,9 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                                     required
                                 />
                             </div>
-                            <span className="pt0-75 right-icon absolute">@{availableDomain}</span>
+                            <span className="flex right-text absolute">
+                                <span className="right-text-inner">@{availableDomain}</span>
+                            </span>
                         </div>
                     </Challenge>
                     {hasExternalSignup ? (
