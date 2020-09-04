@@ -1,32 +1,32 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { Alert, PrimaryButton, Button, Block, Loader } from '../../components';
-import { useEventManager, useOrganization, useDomains, useModals, useLoading } from '../../hooks';
+import { DomainsModel } from 'proton-shared/lib/models';
+import { loadModels } from 'proton-shared/lib/models/helper';
 
+import { Alert, PrimaryButton, Button, Block, Loader } from '../../components';
+import { useApi, useCache, useOrganization, useDomains, useModals, useLoading } from '../../hooks';
 import DomainModal from './DomainModal';
 import DomainsTable from './DomainsTable';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import useDomainsAddresses from '../../hooks/useDomainsAddresses';
 
 const DomainsSection = () => {
+    const api = useApi();
+    const cache = useCache();
     const [domains, loadingDomains] = useDomains();
     const [domainsAddressesMap, loadingDomainsAddressesMap] = useDomainsAddresses(domains);
     const [organization, loadingOrganization] = useOrganization();
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
-    const { call } = useEventManager();
 
-    if (loadingOrganization) {
+    if (loadingDomains || loadingDomainsAddressesMap || loadingOrganization) {
         return <Loader />;
     }
 
     const { UsedDomains, MaxDomains } = organization;
 
     const handleRefresh = async () => {
-        // To not spam the event manager.
-        await wait(200);
-        await call();
+        await loadModels([DomainsModel], { api, cache, useCache: false });
     };
 
     return (
@@ -40,17 +40,10 @@ const DomainsSection = () => {
                 <PrimaryButton onClick={() => createModal(<DomainModal />)} className="mr1">
                     {c('Action').t`Add domain`}
                 </PrimaryButton>
-                <Button disabled={loadingDomains} loading={loading} onClick={() => withLoading(handleRefresh())}>{c(
-                    'Action'
-                ).t`Refresh status`}</Button>
+                <Button loading={loading} onClick={() => withLoading(handleRefresh())}>{c('Action')
+                    .t`Refresh status`}</Button>
             </Block>
-            {!loadingDomains && !loadingDomainsAddressesMap && !domains.length ? null : (
-                <DomainsTable
-                    domains={domains}
-                    domainsAddressesMap={domainsAddressesMap}
-                    loading={loadingDomains || loadingDomainsAddressesMap}
-                />
-            )}
+            {!domains.length ? null : <DomainsTable domains={domains} domainsAddressesMap={domainsAddressesMap} />}
             <Block className="opacity-50">
                 {UsedDomains} / {MaxDomains} {c('Info').ngettext(msgid`domain used`, `domains used`, UsedDomains)}
             </Block>
