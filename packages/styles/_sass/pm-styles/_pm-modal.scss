@@ -144,9 +144,10 @@ $modal-smaller-width: 28em !default;
 
 .pm-modalClose {
   position: absolute;
-  @extend .flex;
   right: .5rem;
   top: .5rem;
+  @extend .flex;
+  overflow: hidden;
   background: transparent;
   border-radius: 1em;
   border: 0;
