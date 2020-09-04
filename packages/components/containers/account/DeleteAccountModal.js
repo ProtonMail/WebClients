@@ -63,18 +63,18 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
 
     const handleChange = (key) => ({ target }) => setModel({ ...model, [key]: target.value });
     const reasons = [
-        { label: c('Option').t`Select a reason`, value: '', disabled: true },
-        { label: c('Option').t`I use a different Proton account`, value: ACCOUNT_DELETION_REASONS.DIFFERENT_ACCOUNT },
-        isAdmin && { label: c('Option').t`It's too expensive`, value: ACCOUNT_DELETION_REASONS.TOO_EXPENSIVE },
+        { text: c('Option').t`Select a reason`, value: '', disabled: true },
+        { text: c('Option').t`I use a different Proton account`, value: ACCOUNT_DELETION_REASONS.DIFFERENT_ACCOUNT },
+        isAdmin && { text: c('Option').t`It's too expensive`, value: ACCOUNT_DELETION_REASONS.TOO_EXPENSIVE },
         {
-            label: c('Option').t`It's missing a key feature that I need`,
+            text: c('Option').t`It's missing a key feature that I need`,
             value: ACCOUNT_DELETION_REASONS.MISSING_FEATURE,
         },
         {
-            label: c('Option').t`I found another service that I like better`,
+            text: c('Option').t`I found another service that I like better`,
             value: ACCOUNT_DELETION_REASONS.USE_OTHER_SERVICE,
         },
-        { label: c('Option').t`My reason isn't listed`, value: ACCOUNT_DELETION_REASONS.OTHER },
+        { text: c('Option').t`My reason isn't listed`, value: ACCOUNT_DELETION_REASONS.OTHER },
     ].filter(isTruthy);
 
     const handleSubmit = async () => {
