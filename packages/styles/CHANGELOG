@@ -18,8 +18,8 @@
 - new overview page design  🎉
 - new event styles for Calendar
 - tiny reset for `mark` tag
-- Add 'TOR' icon
-- Update 'P2P' icon
+- Add “TOR” icon
+- Update “P2P” icon
 
 
 ## Updated/fixes
@@ -40,6 +40,8 @@
 - updated tooltip fragment to allow creating colored tooltips easily
 - fixed `pm-button--small` loading state
 - fix Safari 💩 and crazy behaviour on `main-area--noHeader`
+- remove italic for placeholders text in fields
+- fixed fields with text positionned above (@protonmail.com)
 
 
 # [1.8.4] - 2019-07-28
