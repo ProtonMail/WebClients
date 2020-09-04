@@ -5,15 +5,15 @@ import { replaceUrl } from '../helpers/browser';
 import { getAppHref } from '../apps/helper';
 import {
     getValidatedApp,
+    getValidatedForkType,
     getValidatedLocalID,
     getValidatedSessionKey,
-    getValidatedForkType,
 } from './sessionForkValidation';
 import { getSessionKey } from './sessionBlobCryptoHelper';
 import { getForkDecryptedBlob, getForkEncryptedBlob } from './sessionForkBlob';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from './error';
 import { PullForkResponse, PushForkResponse, RefreshSessionResponse } from './interface';
-import { pushForkSession, pullForkSession, setRefreshCookies } from '../api/auth';
+import { pullForkSession, pushForkSession, setRefreshCookies } from '../api/auth';
 import { Api, User as tsUser } from '../interfaces';
 import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { FORK_TYPE } from './ForkInterface';
@@ -36,7 +36,8 @@ export const requestFork = (fromApp: APP_NAMES, localID?: number, type?: FORK_TY
         searchParams.append('t', type);
     }
 
-    const forkStateData: ForkState = { url: window.location.href };
+    const url = type === FORK_TYPE.SWITCH ? getAppHref('/', fromApp) : window.location.href;
+    const forkStateData: ForkState = { url };
     sessionStorage.setItem(`f${state}`, JSON.stringify(forkStateData));
 
     return replaceUrl(getAppHref(`${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, APPS.PROTONACCOUNT));
