@@ -2,7 +2,7 @@
 .placeholder,
 ::placeholder {
   color: var(--color-input, rgba($pm-global-grey, .65));
-  font-style: italic;
+  font-style: normal;
   opacity: .6;
 }
 
@@ -56,7 +56,6 @@ $field-container: 26rem !default;
   }
   &[disabled] {
     color: rgba( $pm-global-grey, .3 );
-    font-style: italic;
   }
   &.w100 {
     width: 100%;
