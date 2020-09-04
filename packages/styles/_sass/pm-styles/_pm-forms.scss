@@ -481,8 +481,9 @@ $pm-label-icon-width: 2.4em !default;
 }
 
 /* @protonmail.com field */
-.pm-field--username {
-	padding-right: 9em;
+.pm-field--username,
+.signLayout-container .pm-field--username.pm-field--username {
+	padding-right: var(--padding-right-field-above, 9em);
 }
 
 

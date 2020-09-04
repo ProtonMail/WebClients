@@ -265,20 +265,34 @@ svg {
     }
 }
 
-.right-icon {
+.right-icon,
+.right-text {
     top: 0;
     right: .5em;
-    height: $default-height-fields; // height of field
+	height: $default-height-fields; // height of field
+	align-content: center;
+}
+.right-text {
+	right: 1em;
+}
+.right-text-inner {
+	padding-bottom: .2rem;
 }
 
 @if $rtl-option==true {
     [dir="rtl"] {
-        .right-icon {
+        .right-icon,
+		.right-text {
             left: .5em;
             right: auto;
-        }
+		}
+		.right-text {
+			left: 1em;
+		}
     }
 }
+
+
 
 .fixed {
     position: fixed;
