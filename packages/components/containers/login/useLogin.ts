@@ -84,9 +84,9 @@ const useLogin = ({ api, onLogin, ignoreUnlock, generateKeys = false }: Props) =
         const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
         if (authVersion < AUTH_VERSION) {
             await srpVerify({
-                api,
+                api: authApi,
                 credentials: { password },
-                config: authApi(upgradePassword()),
+                config: upgradePassword(),
             });
         }
 
