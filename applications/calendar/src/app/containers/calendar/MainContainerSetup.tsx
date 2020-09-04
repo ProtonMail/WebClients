@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import { useActiveBreakpoint, useUserSettings, useCalendarUserSettings } from 'react-components';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, User } from 'proton-shared/lib/interfaces';
 import {
     getDefaultCalendar,
     getIsCalendarDisabled,
@@ -28,8 +28,9 @@ import { EventTargetAction } from './interface';
 interface Props {
     calendars: Calendar[];
     addresses: Address[];
+    user: User;
 }
-const MainContainerSetup = ({ addresses, calendars }: Props) => {
+const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
@@ -89,6 +90,7 @@ const MainContainerSetup = ({ addresses, calendars }: Props) => {
                         tzid={tzid}
                         setCustomTzid={setCustomTzid}
                         isNarrow={isNarrow}
+                        user={user}
                         addresses={addresses}
                         activeAddresses={activeAddresses}
                         visibleCalendars={visibleCalendars}

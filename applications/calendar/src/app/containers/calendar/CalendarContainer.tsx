@@ -13,14 +13,18 @@ import {
 } from 'proton-shared/lib/date/timezone';
 import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
-import { Address, UserSettings } from 'proton-shared/lib/interfaces';
+import { Address, UserSettings, User } from 'proton-shared/lib/interfaces';
 import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
 import { VIEWS } from '../../constants';
 import useCalendarsEvents from './eventStore/useCalendarsEvents';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
-import { canAskTimezoneSuggestion, saveLastTimezoneSuggestion } from '../../helpers/timezoneSuggestion';
+import {
+    canAskTimezoneSuggestion,
+    getTimezoneSuggestionKey,
+    saveLastTimezoneSuggestion,
+} from '../../helpers/timezoneSuggestion';
 import getDateRange from './getDateRange';
 import getTitleDateString from './getTitleDateString';
 import {
@@ -73,6 +77,7 @@ interface Props {
     tzid: string;
     setCustomTzid: (tzid: string) => void;
     isNarrow: boolean;
+    user: User;
     addresses: Address[];
     activeAddresses: Address[];
     visibleCalendars: Calendar[];
@@ -88,6 +93,7 @@ const CalendarContainer = ({
     tzid,
     setCustomTzid,
     isNarrow,
+    user,
     addresses,
     activeAddresses,
     activeCalendars,
@@ -148,12 +154,16 @@ const CalendarContainer = ({
         if (!hasAutoDetectPrimaryTimezone) {
             return;
         }
-        const localTzid = getTimezone();
-        const savedTzid = getDefaultTzid(calendarUserSettings, localTzid);
-        if (savedTzid !== localTzid && canAskTimezoneSuggestion()) {
-            saveLastTimezoneSuggestion();
-            createModal(<AskUpdateTimezoneModal localTzid={localTzid} />);
-        }
+        const run = async () => {
+            const localTzid = getTimezone();
+            const savedTzid = getDefaultTzid(calendarUserSettings, localTzid);
+            const key = await getTimezoneSuggestionKey(user.ID);
+            if (savedTzid !== localTzid && canAskTimezoneSuggestion(key)) {
+                saveLastTimezoneSuggestion(key);
+                createModal(<AskUpdateTimezoneModal localTzid={localTzid} />);
+            }
+        };
+        run();
     }, []);
 
     const utcNowDateInTimezone = useMemo(() => {

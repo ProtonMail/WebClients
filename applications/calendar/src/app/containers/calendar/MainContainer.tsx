@@ -29,7 +29,7 @@ const MainContainer = () => {
         return <ResetContainer calendars={memoedCalendars} onDone={() => setSetupType(SETUP_TYPE.DONE)} />;
     }
 
-    return <MainContainerSetup addresses={memoedAddresses} calendars={memoedCalendars} />;
+    return <MainContainerSetup user={user} addresses={memoedAddresses} calendars={memoedCalendars} />;
 };
 
 const WrappedMainContainer = () => {
