@@ -1,8 +1,8 @@
 import { getIsRruleSupported } from 'proton-shared/lib/calendar/integration/rrule';
 import { parse } from 'proton-shared/lib/calendar/vcal';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalVcalendar, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { RequireSome } from '../../models/utils';
-import { EventInvitationRaw, getSupportedEventInvitation, parseEventInvitation } from './invite';
+import { getSupportedEventInvitation, parseEventInvitation } from './invite';
 
 describe('getIsRruleSupported for invitations', () => {
     test('should accept events with daily recurring rules valid for invitations', () => {
@@ -98,7 +98,7 @@ CREATED:20200821T081842Z
 RRULE:FREQ=YEARLY;INTERVAL=1;BYMONTH=9;BYDAY=1TU
 END:VEVENT
 END:VCALENDAR`;
-        const parsedInvitation = parseEventInvitation(invitation) as EventInvitationRaw;
+        const parsedInvitation = parseEventInvitation(invitation) as VcalVcalendar;
         expect(() => getSupportedEventInvitation(parsedInvitation)).toThrowError('Invalid invitation');
     });
 });

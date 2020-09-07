@@ -27,7 +27,7 @@ interface Packets {
     FileSize: number;
     Inline: boolean;
     signature?: Uint8Array;
-    Preview: Uint8Array;
+    Preview: Uint8Array | string;
     keys: Uint8Array;
     data: Uint8Array;
 }
@@ -37,8 +37,8 @@ export interface UploadResult {
     packets: Packets;
 }
 
-const encrypt = async (
-    data: Uint8Array,
+export const encryptAttachment = async (
+    data: Uint8Array | string,
     { name, type, size }: File = {} as File,
     inline: boolean,
     publicKeys: OpenPGPKey[],
@@ -76,7 +76,7 @@ const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], p
     }
     try {
         const result = await readFileAsBuffer(file);
-        return encrypt(new Uint8Array(result), file, inline, pubKeys, privKey);
+        return encryptAttachment(new Uint8Array(result), file, inline, pubKeys, privKey);
     } catch (e) {
         throw new Error(c('Error').t`Failed to encrypt attachment. Please try again.`);
     }

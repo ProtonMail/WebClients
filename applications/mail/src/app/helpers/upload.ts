@@ -32,7 +32,7 @@ export const defaultHeaders: HTTPHeaders = {
 
 export interface Upload<T> {
     /**
-     * Open reference to the actual XHR, but other fields should be more practicle
+     * Open reference to the actual XHR, but other fields should be more practical
      */
     xhr: XMLHttpRequest;
 

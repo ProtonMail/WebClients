@@ -1,6 +1,6 @@
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { Address, UserSettings } from 'proton-shared/lib/interfaces';
+import { Address, ProtonConfig, UserSettings } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
@@ -11,7 +11,7 @@ import {
     Loader,
     useApi,
     useGetCalendarEventRaw,
-    useGetCalendarIdsAndKeys,
+    useGetCalendarInfo,
     useLoading
 } from 'react-components';
 import { c } from 'ttag';
@@ -21,27 +21,28 @@ import {
     getErrorMessage
 } from '../../../../helpers/calendar/EventInvitationError';
 import {
-    EventInvitationRaw,
-    fetchEventInvitation,
+    EventInvitation,
     getHasInvitation,
     getInitialInvitationModel,
     getInvitationHasEventID,
-    InvitationModel,
-    updateEventInvitation
+    InvitationModel
 } from '../../../../helpers/calendar/invite';
+import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
 
 import { MessageExtended } from '../../../../models/message';
-// import ExtraEventButtons from './ExtraEventButtons';
+import { RequireSome } from '../../../../models/utils';
+import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';
 import ExtraEventSummary from './ExtraEventSummary';
 
 interface Props {
     message: MessageExtended;
-    invitationOrError: EventInvitationRaw | EventInvitationError;
+    invitationOrError: RequireSome<EventInvitation, 'method'> | EventInvitationError;
     calendars: Calendar[];
     defaultCalendar?: Calendar;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
+    config: ProtonConfig;
     userSettings: UserSettings;
 }
 const ExtraEvent = ({
@@ -51,6 +52,7 @@ const ExtraEvent = ({
     defaultCalendar,
     contactEmails,
     ownAddresses,
+    config,
     userSettings
 }: Props) => {
     const [model, setModel] = useState<InvitationModel>(() =>
@@ -60,7 +62,7 @@ const ExtraEvent = ({
     const [retryCount, setRetryCount] = useState<number>(0);
     const api = useApi();
     const getCalendarEventRaw = useGetCalendarEventRaw();
-    const getIdsAndKeys = useGetCalendarIdsAndKeys();
+    const getCalendarInfo = useGetCalendarInfo();
 
     const handleRetry = () => {
         setRetryCount((count) => count + 1);
@@ -68,7 +70,8 @@ const ExtraEvent = ({
         return;
     };
 
-    const { method, isOrganizerMode, invitationIcs } = model;
+    const { isOrganizerMode, invitationIcs } = model;
+    const method = model.invitationIcs?.method;
     const title = getDisplayTitle(invitationIcs?.vevent.summary?.value);
 
     useEffect(() => {
@@ -77,7 +80,7 @@ const ExtraEvent = ({
                 return;
             }
             let invitationApi;
-            let calendar;
+            let calendarData;
             try {
                 const { invitation, calendar: calendarApi } = await fetchEventInvitation({
                     veventComponent: invitationIcs.vevent,
@@ -89,39 +92,38 @@ const ExtraEvent = ({
                     ownAddresses
                 });
                 invitationApi = invitation;
-                calendar = calendarApi;
+                const calendar = calendarApi || defaultCalendar;
+                if (calendar) {
+                    calendarData = { calendar, ...(await getCalendarInfo(calendar.ID)) };
+                    setModel({ ...model, calendarData });
+                }
             } catch (error) {
                 // if fetching fails, proceed as if there was no event in the database
                 return;
             }
-            if (!getInvitationHasEventID(invitationApi) || !calendar) {
+            if (!getInvitationHasEventID(invitationApi) || !calendarData) {
                 return;
             }
-            const { memberID, addressKeys, calendarKeys } = await getIdsAndKeys(calendar.ID);
             try {
                 const updatedInvitationApi = await updateEventInvitation({
-                    method,
                     isOrganizerMode,
                     invitationIcs,
                     invitationApi,
                     api,
-                    calendar,
-                    memberID,
-                    addressKeys,
-                    calendarKeys,
+                    calendarData,
                     message,
                     contactEmails,
                     ownAddresses
                 });
                 setModel({
                     ...model,
-                    invitationApi: updatedInvitationApi ? updatedInvitationApi : invitationApi
+                    invitationApi: updatedInvitationApi ? updatedInvitationApi : invitationApi,
+                    calendarData
                 });
             } catch (e) {
                 setModel({
                     ...model,
                     invitationApi,
-                    calendar,
                     error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR)
                 });
             }
@@ -174,8 +176,13 @@ const ExtraEvent = ({
                 </strong>
             </header>
             <ExtraEventSummary model={model} />
-            {/*<ExtraEventButtons model={model} />*/}
-            <div className="border-bottom mb0-5"></div>
+            <ExtraEventButtons
+                model={model}
+                setModel={setModel}
+                message={message}
+                config={config}
+                userSettings={userSettings}
+            />
             <ExtraEventDetails
                 model={model}
                 defaultCalendar={defaultCalendar}

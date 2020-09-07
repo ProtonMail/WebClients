@@ -98,7 +98,7 @@ export const isContentLocation = ({ Headers = {} }: Attachment = {}) =>
 /**
  * Create a Blob and its URL for an attachment
  */
-export const createBlob = (attachment: Attachment, data: Uint8Array) => {
+export const createBlob = (attachment: Attachment, data: Uint8Array | string) => {
     const blob = new Blob([data], { type: attachment.MIMEType });
     return urlCreator().createObjectURL(blob);
 };

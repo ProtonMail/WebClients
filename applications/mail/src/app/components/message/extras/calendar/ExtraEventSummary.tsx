@@ -10,7 +10,11 @@ const { NEEDS_ACTION, ACCEPTED, TENTATIVE, DECLINED } = ICAL_ATTENDEE_STATUS;
 const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
 
 const getOrganizerSummary = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
-    const { invitationIcs, invitationApi, method } = model;
+    const {
+        invitationIcs,
+        invitationIcs: { method },
+        invitationApi
+    } = model;
     if (!invitationApi) {
         return null;
     }
@@ -165,9 +169,13 @@ const getOrganizerSummary = (model: RequireSome<InvitationModel, 'invitationIcs'
 };
 
 const getAttendeeSummary = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
-    const { invitationIcs, invitationApi, method } = model;
+    const {
+        invitationIcs,
+        invitationIcs: { method },
+        invitationApi
+    } = model;
     const { vevent: eventIcs, attendee: attendeeIcs } = invitationIcs;
-    const eventApi = invitationApi?.vevent;
+    const { vevent: eventApi, attendee: attendeeApi } = invitationApi || {};
 
     if (method === DECLINECOUNTER && attendeeIcs) {
         return (
@@ -189,10 +197,11 @@ const getAttendeeSummary = (model: RequireSome<InvitationModel, 'invitationIcs'>
                 </p>
             );
         }
-        if (!attendeeIcs?.partstat || !attendeeIcs.role) {
+        const { partstat, role } = attendeeApi || attendeeIcs || {};
+        if (!partstat || !role) {
             return null;
         }
-        const { partstat, role } = attendeeIcs;
+
         if (partstat === NEEDS_ACTION) {
             if (role === REQUIRED) {
                 return (
@@ -277,6 +286,9 @@ interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
 }
 const ExtraEventSummary = ({ model }: Props) => {
+    if (model.hideSummary) {
+        return null;
+    }
     return model.isOrganizerMode ? getOrganizerSummary(model) : getAttendeeSummary(model);
 };
 

@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useApi, useCalendars, useContactEmails, useAddresses, useLoading, useUserSettings } from 'react-components';
+import {
+    useApi,
+    useCalendars,
+    useContactEmails,
+    useAddresses,
+    useLoading,
+    useConfig,
+    useUserSettings
+} from 'react-components';
 import { arrayToBinaryString, decodeUtf8 } from 'pmcrypto';
 import { getDefaultCalendar, getProbablyActiveCalendars } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
@@ -10,7 +18,7 @@ import { useAttachmentCache } from '../../../containers/AttachmentProvider';
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../../../helpers/calendar/EventInvitationError';
 import {
-    EventInvitationRaw,
+    EventInvitation,
     filterAttachmentsForEvents,
     getSupportedEventInvitation,
     parseEventInvitation
@@ -19,6 +27,7 @@ import {
 import { getAttachments } from '../../../helpers/message/messages';
 import { Attachment } from '../../../models/attachment';
 import { MessageExtended } from '../../../models/message';
+import { RequireSome } from '../../../models/utils';
 import ExtraEvent from './calendar/ExtraEvent';
 
 interface Props {
@@ -26,7 +35,6 @@ interface Props {
 }
 const ExtraEvents = ({ message }: Props) => {
     const cache = useAttachmentCache();
-    const [loading, withLoading] = useLoading();
     const [calendars = []] = useCalendars();
     const [contactEmails = [], loadingContactEmails] = useContactEmails() as [
         ContactEmail[] | undefined,
@@ -34,8 +42,12 @@ const ExtraEvents = ({ message }: Props) => {
         Error
     ];
     const [addresses = [], loadingAddresses] = useAddresses();
+    const config = useConfig();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [invitations, setInvitations] = useState<(EventInvitationRaw | EventInvitationError)[]>([]);
+    const [loading, withLoading] = useLoading();
+    const [invitations, setInvitations] = useState<(RequireSome<EventInvitation, 'method'> | EventInvitationError)[]>(
+        []
+    );
     const [defaultCalendar, setDefaultCalendar] = useState<Calendar | undefined>();
     const api = useApi();
 
@@ -82,7 +94,7 @@ const ExtraEvents = ({ message }: Props) => {
         withLoading(run());
     }, [message.privateKeys]);
 
-    if (loading || loadingContactEmails || loadingAddresses || loadingUserSettings) {
+    if (loading || loadingContactEmails || loadingAddresses || loadingUserSettings || !config) {
         return null;
     }
 
@@ -98,6 +110,7 @@ const ExtraEvents = ({ message }: Props) => {
                         defaultCalendar={defaultCalendar}
                         contactEmails={contactEmails}
                         ownAddresses={addresses}
+                        config={config}
                         userSettings={userSettings}
                     />
                 );

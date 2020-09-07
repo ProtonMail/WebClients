@@ -19,7 +19,7 @@ export const mergeSavedMessage = (messageSaved: Message, messageReturned: Messag
     ConversationID: messageReturned.ConversationID
 });
 
-const useCreateDraft = () => {
+export const useCreateDraft = () => {
     const api = useApi();
     const messageCache = useMessageCache();
     const { call } = useEventManager();

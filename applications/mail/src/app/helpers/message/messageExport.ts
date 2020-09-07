@@ -47,7 +47,7 @@ export const prepareAndEncryptBody = async (message: MessageExtended) => {
     return { document, content, encrypted };
 };
 
-const encryptAttachmentKeyPackets = async (message: MessageExtended, passwords = []) => {
+export const encryptAttachmentKeyPackets = async (message: MessageExtended, passwords = []) => {
     const packets: { [key: string]: string } = {};
     const Attachments = getAttachments(message.data);
 

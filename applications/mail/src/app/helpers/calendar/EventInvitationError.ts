@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 export enum EVENT_INVITATION_ERROR_TYPE {
-    MISSING_ATTENDEE,
     INVITATION_INVALID,
     INVITATION_UNSUPPORTED,
     PARSING_ERROR,
@@ -9,13 +8,11 @@ export enum EVENT_INVITATION_ERROR_TYPE {
     FETCHING_ERROR,
     UPDATING_ERROR,
     CANCELLATION_ERROR,
+    UNEXPECTED_ERROR,
     EXTERNAL_ERROR
 }
 
 export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, externalError?: Error) => {
-    if (errorType === EVENT_INVITATION_ERROR_TYPE.MISSING_ATTENDEE) {
-        return c('Event invitation error').t`Missing attendee`;
-    }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID) {
         return c('Event invitation error').t`Invalid invitation`;
     }
@@ -36,6 +33,9 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, external
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.CANCELLATION_ERROR) {
         return c('Event invitation error').t`We could not cancel the event in your calendar`;
+    }
+    if (errorType === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR) {
+        return c('Event invitation error').t`Unexpected error`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.EXTERNAL_ERROR) {
         return externalError?.message || '';

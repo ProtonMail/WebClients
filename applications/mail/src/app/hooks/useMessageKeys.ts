@@ -17,8 +17,8 @@ export const useMessageKeys: UseMessageKeys = () => {
     const getAddressKeys = useGetAddressKeys();
 
     return useCallback(
-        async (message: MessageExtendedWithData) => {
-            const { publicKeys, privateKeys } = splitKeys(await getAddressKeys(message.data.AddressID || ''));
+        async (message?: MessageExtendedWithData) => {
+            const { publicKeys, privateKeys } = splitKeys(await getAddressKeys(message?.data.AddressID || ''));
             return { publicKeys, privateKeys };
         },
         [getAddressKeys]
