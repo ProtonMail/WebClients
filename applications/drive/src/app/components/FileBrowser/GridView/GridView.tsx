@@ -9,8 +9,8 @@ import useFileBrowserView from '../useFileBrowserView';
 
 const itemWidth = 216;
 const itemHeight = 196;
-const itemWidthForMobile = itemWidth - 54;
-const itemHeightForMobile = itemHeight - 49;
+const itemWidthForMobile = itemWidth - 21;
+const itemHeightForMobile = itemHeight - 19;
 
 type Props = Omit<
     FileBrowserProps,
@@ -99,7 +99,7 @@ function GridView({
             <AutoSizer>
                 {({ width, height }) => {
                     const itemsPerRow = Math.floor(width / cellWidth);
-                    const rowCount = Math.ceil(totalItems / cellHeight);
+                    const rowCount = Math.ceil(totalItems / itemsPerRow);
 
                     const itemData = {
                         contents,
