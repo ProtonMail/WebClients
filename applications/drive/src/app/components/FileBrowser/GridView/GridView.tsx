@@ -1,6 +1,6 @@
 import React from 'react';
-import { FixedSizeGrid } from 'react-window';
-import { AutoSizer } from 'react-virtualized';
+import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
+import AutoSizer from 'react-virtualized-auto-sizer';
 import { classnames, Loader } from 'react-components';
 import { FileBrowserItem, FileBrowserProps } from '../interfaces';
 import ItemCell, { Props as ItemCellProps } from './ItemCell';
@@ -15,23 +15,24 @@ type Props = Omit<
     'view' | 'onToggleAllSelected' | 'isPreview' | 'caption' | 'setSorting' | 'sortParams'
 >;
 
+type ItemCellData = {
+    loading?: boolean;
+    itemsPerRow: number;
+    rowCount: number;
+    contents: FileBrowserItem[];
+    getItemProps: (item: FileBrowserItem) => Omit<ItemCellProps, 'style'>;
+};
+
+type GridItemCellProps = Omit<GridChildComponentProps, 'data'> & {
+    data: ItemCellData;
+};
+
 const GridItemCell = ({
     columnIndex,
     rowIndex,
     style,
     data: { contents, rowCount, itemsPerRow, getItemProps, loading },
-}: {
-    columnIndex: number;
-    rowIndex: number;
-    style: React.CSSProperties;
-    data: {
-        loading?: boolean;
-        itemsPerRow: number;
-        rowCount: number;
-        contents: FileBrowserItem[];
-        getItemProps: (item: FileBrowserItem) => Omit<ItemCellProps, 'style'>;
-    };
-}) => {
+}: GridItemCellProps) => {
     const currentIndex = columnIndex + rowIndex * itemsPerRow;
     const item = contents[currentIndex];
     const emptyOrLoadingCell =
@@ -136,10 +137,7 @@ function GridView({
                                 }: {
                                     columnIndex: number;
                                     rowIndex: number;
-                                    data: {
-                                        contents: FileBrowserItem[];
-                                        itemsPerRow: number;
-                                    };
+                                    data: ItemCellData;
                                 }) => {
                                     const item = contents[columnIndex + rowIndex * itemsPerRow];
                                     return item?.LinkID ?? `${columnIndex}-${rowIndex}`;
