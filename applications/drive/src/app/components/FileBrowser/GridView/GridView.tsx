@@ -9,8 +9,8 @@ import useFileBrowserView from '../useFileBrowserView';
 
 const itemWidth = 216;
 const itemHeight = 196;
-const itemWidthForMobile = itemWidth - 21;
-const itemHeightForMobile = itemHeight - 19;
+const itemWidthForMobile = 195;
+const itemHeightForMobile = 177;
 
 type Props = Omit<
     FileBrowserProps,
