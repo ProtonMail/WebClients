@@ -9,7 +9,7 @@ import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import { SyncMultipleApiResponse } from 'proton-shared/lib/interfaces/calendar';
 import { useApi, useNotifications } from 'react-components';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../helpers/calendar/EventInvitationError';
-import { EventInvitation, InvitationModel } from '../helpers/calendar/invite';
+import { EventInvitation, getSupportedAttendee, InvitationModel } from '../helpers/calendar/invite';
 import { addAlarms, createReplyIcs } from '../helpers/calendar/inviteReply';
 import { formatSubject, RE_PREFIX } from '../helpers/message/messageDraft';
 import { MessageExtended } from '../models/message';
@@ -72,10 +72,11 @@ const useWidgetButtons = ({ model, message, config, onUnexpectedError, onSuccess
         }
         try {
             const { index: attendeeIndex, vcalComponent } = attendee;
+            const supportedAttendee = getSupportedAttendee(vcalComponent);
             const vcalAttendeeToSave = {
-                ...vcalComponent,
+                ...supportedAttendee,
                 parameters: {
-                    ...vcalComponent.parameters,
+                    ...supportedAttendee.parameters,
                     partstat
                 }
             };

@@ -1,5 +1,5 @@
 import { format, getUnixTime } from 'date-fns';
-import { ICAL_EXTENSIONS, ICAL_MIME_TYPE, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_ROLE, ICAL_EXTENSIONS, ICAL_MIME_TYPE, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/integration/rrule';
 import {
     getIsDateOutOfBounds,
@@ -31,7 +31,7 @@ import {
     getSupportedTimezone,
     getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
-import { cleanEmail, getEmailTo, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { buildMailTo, cleanEmail, getEmailTo, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { Address, CachedKey } from 'proton-shared/lib/interfaces';
@@ -414,6 +414,27 @@ const getLinkedDateTimeProperty = ({
         return getDateTimePropertyInDifferentTimezone(property, tzid, isAllDay);
     }
     return getDateTimeProperty(property.value, tzid);
+};
+
+export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
+    const { value, parameters: { cn, role, partstat, rsvp } = {} } = attendee;
+    const emailAddress = getEmailTo(value);
+    const supportedAttendee: RequireSome<VcalAttendeeProperty, 'parameters'> = {
+        value: buildMailTo(emailAddress),
+        parameters: {
+            cn: cn ?? emailAddress
+        }
+    };
+    if (role === ICAL_ATTENDEE_ROLE.REQUIRED || role === ICAL_ATTENDEE_ROLE.OPTIONAL) {
+        supportedAttendee.parameters.role = role;
+    }
+    if (rsvp === 'true') {
+        supportedAttendee.parameters.rsvp = rsvp;
+    }
+    if (partstat) {
+        supportedAttendee.parameters.partstat = partstat;
+    }
+    return supportedAttendee;
 };
 
 export const getSupportedEventInvitation = (
