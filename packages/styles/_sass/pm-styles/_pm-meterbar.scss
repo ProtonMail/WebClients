@@ -27,7 +27,7 @@
 	@include meterbar-size;
 
 	width: 100%;
-	background: var(--bgcolor-spacebar, $pm-global-muted);
+	background: var(--bgcolor-meterbar, $pm-global-muted);
 
 	//-webkit-appearance: none; // Can't. Well, because Chrome.
 	// -moz-appearance: none;

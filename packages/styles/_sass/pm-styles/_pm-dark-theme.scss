@@ -199,5 +199,6 @@ summary {
   --bgcolor-input: #{$pm-global-altgrey};
   --bgcolor-highlight: #{$pm-global-altgrey};
   --color-input: #{$white};
-  --dropdown-box-shadow: rgba(black, .75);
+  --dropdown-box-shadow: #{rgba(black, .75)};
+  --bgcolor-meterbar: #{rgba(black, .375)};
 }
