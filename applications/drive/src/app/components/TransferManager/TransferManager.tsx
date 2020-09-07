@@ -1,6 +1,7 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useToggle, classnames } from 'react-components';
-import { AutoSizer, List, ListRowRenderer, CellMeasurer, CellMeasurerCache } from 'react-virtualized';
+import { FixedSizeList, ListChildComponentProps } from 'react-window';
+import AutoSizer from 'react-virtualized-auto-sizer';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import Header from './Header';
@@ -16,6 +17,7 @@ interface TransferListEntry<T extends TransferType> {
 
 const PROGRESS_UPDATE_INTERVAL = 500;
 const SPEED_SNAPSHOTS = 10; // How many snapshots should the speed be average of
+const ROW_HEIGHT_PX = 70;
 
 enum TRANSFER_GROUP {
     ACTIVE,
@@ -35,13 +37,36 @@ const STATE_TO_GROUP_MAP = {
 
 export const MAX_VISIBLE_TRANSFERS = 5;
 
+type ListItemData = {
+    sortedEntries: (TransferListEntry<TransferType.Download> | TransferListEntry<TransferType.Upload>)[];
+    latestStats: TransfersStats;
+    calculateAverageSpeed: (id: string) => number;
+};
+
+type ListItemRowProps = Omit<ListChildComponentProps, 'data'> & { data: ListItemData };
+
+const ListItemRow = ({ style, index, data }: ListItemRowProps) => {
+    const { calculateAverageSpeed, latestStats, sortedEntries } = data;
+    const { transfer, type } = sortedEntries[index];
+
+    return (
+        <Transfer
+            style={style}
+            transfer={transfer}
+            type={type}
+            stats={{
+                progress: latestStats.stats[transfer.id]?.progress ?? 0,
+                speed: calculateAverageSpeed(transfer.id),
+            }}
+        />
+    );
+};
+
 function TransferManager() {
-    const cellMeasurerCache = useRef(new CellMeasurerCache({ fixedWidth: true, defaultHeight: 70 }));
     const { state: minimized, toggle: toggleMinimized } = useToggle();
     const { downloads, getDownloadsProgresses, clearDownloads } = useDownloadProvider();
     const { uploads, getUploadsProgresses, clearUploads } = useUploadProvider();
     const [statsHistory, setStatsHistory] = React.useState<TransfersStats[]>([]);
-    const listRef = useRef<List>(null);
 
     const getTransfer = useCallback(
         (id: string) => downloads.find((download) => download.id === id) || uploads.find((upload) => upload.id === id),
@@ -135,26 +160,6 @@ function TransferManager() {
             b.transfer.startDate.getTime() - a.transfer.startDate.getTime()
     );
 
-    const rowRenderer: ListRowRenderer = ({ index, style, parent }) => {
-        const { transfer, type } = sortedEntries[index];
-        return (
-            // Row index 0 because rows are equal in size, we only need to calculate first one (in case of font scaling)
-            <CellMeasurer key={transfer.id} cache={cellMeasurerCache.current} parent={parent} rowIndex={0}>
-                <Transfer
-                    style={style}
-                    transfer={transfer}
-                    type={type}
-                    stats={{
-                        progress: latestStats.stats[transfer.id]?.progress ?? 0,
-                        speed: calculateAverageSpeed(transfer.id),
-                    }}
-                />
-            </CellMeasurer>
-        );
-    };
-
-    const estimatedRowHeight = cellMeasurerCache.current.rowHeight({ index: 0 });
-
     return (
         <div className={classnames(['pd-transfers', minimized && 'pd-transfers--minimized'])}>
             <Header
@@ -169,16 +174,23 @@ function TransferManager() {
             <div className="pd-transfers-list">
                 <AutoSizer disableHeight>
                     {({ width }) => (
-                        <List
+                        <FixedSizeList
                             className="no-outline"
-                            ref={listRef}
-                            rowRenderer={rowRenderer}
-                            rowCount={sortedEntries.length}
-                            rowHeight={cellMeasurerCache.current.rowHeight}
-                            height={estimatedRowHeight * Math.min(MAX_VISIBLE_TRANSFERS, sortedEntries.length)}
-                            estimatedRowSize={estimatedRowHeight}
+                            itemData={{
+                                sortedEntries,
+                                latestStats,
+                                calculateAverageSpeed,
+                            }}
+                            itemCount={sortedEntries.length}
+                            itemSize={ROW_HEIGHT_PX}
+                            height={ROW_HEIGHT_PX * Math.min(MAX_VISIBLE_TRANSFERS, sortedEntries.length)}
                             width={width}
-                        />
+                            itemKey={(index, { sortedEntries }: ListItemData) =>
+                                sortedEntries[index].transfer?.id ?? index
+                            }
+                        >
+                            {ListItemRow}
+                        </FixedSizeList>
                     )}
                 </AutoSizer>
             </div>
