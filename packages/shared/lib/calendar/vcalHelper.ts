@@ -1,5 +1,5 @@
 import { APPS_CONFIGURATION } from '../constants';
-import { ProtonConfig, UserSettings } from '../interfaces';
+import { ProtonConfig } from '../interfaces';
 import {
     VcalAttendeeProperty,
     VcalAttendeePropertyWithPartstat,
@@ -122,10 +122,9 @@ export const getAttendeeHasRole = (attendee: VcalAttendeeProperty): attendee is 
     return !!attendee.parameters?.role;
 };
 
-export const getProdId = (config: ProtonConfig, userSettings: UserSettings) => {
+export const getProdId = (config: ProtonConfig) => {
     const { APP_NAME, APP_VERSION: appVersion } = config;
     const appName = APPS_CONFIGURATION[APP_NAME].name;
-    const { Locale } = userSettings;
 
-    return `-//Proton Technologies//${appName} ${appVersion}//${Locale}`;
+    return `-//Proton Technologies//${appName} ${appVersion}//EN`;
 };
