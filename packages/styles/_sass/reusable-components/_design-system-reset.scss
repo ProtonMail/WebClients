@@ -120,6 +120,7 @@ mark {
 a,
 .link {
   color: $color-links;
+  text-decoration: underline;
   cursor: pointer;
 
   &:focus,
