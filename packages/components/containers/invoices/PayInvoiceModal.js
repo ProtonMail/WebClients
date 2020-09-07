@@ -5,7 +5,7 @@ import { checkInvoice, payInvoice } from 'proton-shared/lib/api/payments';
 import { toPrice } from 'proton-shared/lib/helpers/string';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { Input, FormModal, PrimaryButton, Row, Label, Field, Price } from '../../components';
-import { useApiResult, useModals, useNotifications, useApi, useLoading } from '../../hooks';
+import { useApiResult, useModals, useNotifications, useApi, useLoading, useEventManager } from '../../hooks';
 
 import PayPalButton from '../payments/PayPalButton';
 import Payment from '../payments/Payment';
@@ -16,6 +16,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
+    const { call } = useEventManager();
     const api = useApi();
     const { result = {}, loading: loadingCheck } = useApiResult(() => checkInvoice(invoice.ID), []);
     const { AmountDue, Amount, Currency, Credit } = result;
@@ -27,7 +28,10 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
             createModal,
         });
         await api(payInvoice(invoice.ID, requestBody));
-        fetchInvoices();
+        await Promise.all([
+            call(), // Update user.Delinquent to hide TopBanner
+            fetchInvoices(),
+        ]);
         rest.onClose();
         createNotification({ text: c('Success').t`Invoice paid` });
     };
