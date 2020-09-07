@@ -10,11 +10,9 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { UserModel } from 'proton-shared/lib/interfaces';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
-
-const { UPGRADER } = PERMISSIONS;
 
 export const getAccountPage = (user: UserModel) => {
     return {
@@ -38,17 +36,15 @@ export const getAccountPage = (user: UserModel) => {
                 text: c('Title').t`Recovery & notification`,
                 id: 'email',
             },
-            {
+            user.canPay && {
                 text: c('Title').t`Email subscriptions`,
                 id: 'news',
-                permissions: [UPGRADER],
             },
-            {
+            user.canPay && {
                 text: c('Title').t`Delete account`,
                 id: 'delete',
-                permissions: [UPGRADER],
             },
-        ],
+        ].filter(isTruthy),
     };
 };
 
