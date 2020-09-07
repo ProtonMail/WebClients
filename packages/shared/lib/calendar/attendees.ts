@@ -10,7 +10,7 @@ const generateAttendeeToken = () => {
     return serializeUint8Array(value);
 };
 
-const convertPartstat = (partstat?: string) => {
+const toApiPartstat = (partstat?: string) => {
     if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
         return ATTENDEE_STATUS_API.TENTATIVE;
     }
@@ -21,6 +21,19 @@ const convertPartstat = (partstat?: string) => {
         return ATTENDEE_STATUS_API.DECLINED;
     }
     return ATTENDEE_STATUS_API.NEEDS_ACTION;
+};
+
+const toIcsPartstat = (partstat?: ATTENDEE_STATUS_API) => {
+    if (partstat === ATTENDEE_STATUS_API.TENTATIVE) {
+        return ICAL_ATTENDEE_STATUS.TENTATIVE;
+    }
+    if (partstat === ATTENDEE_STATUS_API.ACCEPTED) {
+        return ICAL_ATTENDEE_STATUS.ACCEPTED;
+    }
+    if (partstat === ATTENDEE_STATUS_API.DECLINED) {
+        return ICAL_ATTENDEE_STATUS.DECLINED;
+    }
+    return ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
 };
 
 /**
@@ -48,7 +61,7 @@ export const fromInternalAttendee = ({
         clear: {
             permissions: oldPermissions,
             token,
-            status: convertPartstat(partstat),
+            status: toApiPartstat(partstat),
         },
     };
 };
@@ -66,10 +79,12 @@ export const toInternalAttendee = (
         if (!token || !extra) {
             return attendee;
         }
+        const partstat = toIcsPartstat(extra.Status);
         return {
             ...attendee,
             parameters: {
                 ...attendee.parameters,
+                partstat,
                 'x-pm-permissions': extra.Permissions,
             },
         };

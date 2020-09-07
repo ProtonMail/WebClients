@@ -130,3 +130,6 @@ export enum END_TYPE {
     AFTER_N_TIMES = 'COUNT',
     UNTIL = 'UNTIL',
 }
+
+export const ICAL_EXTENSIONS = ['ics', 'ical', 'ifb', 'icalendar'];
+export const ICAL_MIME_TYPE = 'text/calendar';

@@ -1,3 +1,5 @@
+import { APPS_CONFIGURATION } from '../constants';
+import { ProtonConfig, UserSettings } from '../interfaces';
 import {
     VcalAttendeeProperty,
     VcalAttendeePropertyWithPartstat,
@@ -13,6 +15,7 @@ import {
     VcalVjournalComponent,
     VcalVtimezoneComponent,
     VcalVtodoComponent,
+    VcalXOrIanaComponent,
 } from '../interfaces/calendar/VcalModel';
 
 export const getIsPropertyAllDay = (property: VcalDateOrDateTimeProperty): property is VcalDateProperty => {
@@ -70,6 +73,15 @@ export const getIsTimezoneComponent = (
     return vcalComponent.component.toLowerCase() === 'vtimezone';
 };
 
+export const getIsAlarmComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVtimezoneComponent => {
+    return vcalComponent.component.toLowerCase() === 'valarm';
+};
+
+export const getIsXOrIanaComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalXOrIanaComponent => {
+    const name = vcalComponent.component.toLowerCase();
+    return !['vcalendar', 'vevent', 'vtodo', 'vjournal', 'vfreebusy', 'vtimezone'].includes(name);
+};
+
 export const getHasUid = (
     vevent: VcalVeventComponent
 ): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'uid'>> => {
@@ -108,4 +120,12 @@ export const getAttendeeHasPartStat = (
 
 export const getAttendeeHasRole = (attendee: VcalAttendeeProperty): attendee is VcalAttendeePropertyWithRole => {
     return !!attendee.parameters?.role;
+};
+
+export const getProdId = (config: ProtonConfig, userSettings: UserSettings) => {
+    const { APP_NAME, APP_VERSION: appVersion } = config;
+    const appName = APPS_CONFIGURATION[APP_NAME].name;
+    const { Locale } = userSettings;
+
+    return `-//Proton Technologies//${appName} ${appVersion}//${Locale}`;
 };

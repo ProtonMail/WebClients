@@ -35,6 +35,7 @@ const veventComponent = {
                 cutype: 'INDIVIDUAL',
                 role: 'REQ-PARTICIPANT',
                 rsvp: 'TRUE',
+                partstat: 'NEEDS-ACTION',
                 'x-pm-token': 'abc',
                 'x-pm-permissions': 1,
                 cn: 'james@bond.co.uk',
@@ -46,6 +47,7 @@ const veventComponent = {
                 cutype: 'INDIVIDUAL',
                 role: 'REQ-PARTICIPANT',
                 rsvp: 'TRUE',
+                partstat: 'TENTATIVE',
                 'x-pm-token': 'bcd',
                 'x-pm-permissions': 1,
                 cn: 'Dr No.',
@@ -56,6 +58,7 @@ const veventComponent = {
             parameters: {
                 cutype: 'INDIVIDUAL',
                 role: 'NON-PARTICIPANT',
+                partstat: 'ACCEPTED',
                 rsvp: 'FALSE',
                 cn: 'Miss Moneypenny',
                 'x-pm-token': 'cde',
@@ -139,8 +142,8 @@ describe('calendar encryption', () => {
             ],
             Attendees: [
                 { Token: 'abc', Permissions: 1, Status: ATTENDEE_STATUS_API.NEEDS_ACTION },
-                { Token: 'bcd', Permissions: 1, Status: ATTENDEE_STATUS_API.NEEDS_ACTION },
-                { Token: 'cde', Permissions: 2, Status: ATTENDEE_STATUS_API.NEEDS_ACTION },
+                { Token: 'bcd', Permissions: 1, Status: ATTENDEE_STATUS_API.TENTATIVE },
+                { Token: 'cde', Permissions: 2, Status: ATTENDEE_STATUS_API.ACCEPTED },
             ],
         });
     });

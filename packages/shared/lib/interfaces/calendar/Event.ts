@@ -1,3 +1,5 @@
+import { ATTENDEE_STATUS_API } from '../../calendar/constants';
+
 export type CalendarEventDataType = 1 | 2 | 3;
 
 export interface CalendarEventData {
@@ -16,6 +18,7 @@ export interface CalendarPersonalEventData extends CalendarEventData {
 export interface Attendee {
     Token: string;
     Permissions: number;
+    Status: ATTENDEE_STATUS_API;
 }
 
 export interface CalendarEventBlobData {

@@ -99,22 +99,6 @@ export interface VcalUidProperty {
     value: string;
 }
 
-export interface VcalValarmComponent {
-    component: 'valarm';
-    action: {
-        value: string;
-    };
-    trigger: VcalTriggerProperty;
-    duration?: {
-        value: VcalDurationValue;
-    };
-    repeat?: VcalStringProperty;
-    description?: VcalStringProperty;
-    summary?: VcalStringProperty;
-    attendee?: VcalAttendeeProperty[];
-    attach?: VcalStringProperty;
-}
-
 export interface VcalStringProperty {
     value: string;
 }
@@ -129,6 +113,22 @@ export interface VcalStringArrayProperty {
 
 export interface VcalNumberArrayProperty {
     value: number[];
+}
+
+interface VcalDurationProperty {
+    value: VcalDurationValue;
+}
+
+export interface VcalValarmComponent {
+    component: 'valarm';
+    action: VcalStringProperty;
+    trigger: VcalTriggerProperty;
+    duration?: VcalDurationProperty;
+    repeat?: VcalStringProperty;
+    description?: VcalStringProperty;
+    summary?: VcalStringProperty;
+    attendee?: VcalAttendeeProperty[];
+    attach?: VcalStringProperty;
 }
 
 export interface VcalStringWithParamsProperty {
@@ -235,12 +235,17 @@ export interface VcalVtimezoneComponent {
     tzid: VcalStringProperty;
 }
 
+export interface VcalXOrIanaComponent {
+    component: string;
+}
+
 export type VcalCalendarComponent =
     | VcalVeventComponent
     | VcalVtodoComponent
     | VcalVjournalComponent
     | VcalVfreebusyComponent
     | VcalVtimezoneComponent
+    | VcalXOrIanaComponent
     | VcalVcalendar;
 
 export interface VcalVcalendar {
