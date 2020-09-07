@@ -1,11 +1,12 @@
-import React, { useState, DragEvent, ReactNode } from 'react';
+import React, { DragEvent, ReactNode } from 'react';
 import {
     classnames,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemContentIcon,
     useEventManager,
-    SidebarListItemLink
+    SidebarListItemLink,
+    useLoading
 } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
@@ -47,7 +48,7 @@ const SidebarItem = ({
     const { call } = useEventManager();
     const [elementsCache] = useElementsCache();
 
-    const [refreshing, setRefreshing] = useState(false);
+    const [refreshing, withRefreshing] = useLoading(false);
 
     const [dragOver, dragProps] = useDragOver(
         (event: DragEvent) =>
@@ -68,11 +69,9 @@ const SidebarItem = ({
     const active = labelID === currentLabelID;
     const ariaCurrent = active ? 'page' : undefined;
 
-    const handleClick = async () => {
-        if (link === location.pathname && !refreshing) {
-            setRefreshing(true);
-            await Promise.all([call(), wait(1000)]);
-            setRefreshing(false);
+    const handleClick = () => {
+        if (location.pathname.endsWith(link) && !refreshing) {
+            withRefreshing(Promise.all([call(), wait(1000)]));
         }
     };
 
