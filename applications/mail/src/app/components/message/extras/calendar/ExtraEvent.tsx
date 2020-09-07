@@ -176,13 +176,7 @@ const ExtraEvent = ({
                 </strong>
             </header>
             <ExtraEventSummary model={model} />
-            <ExtraEventButtons
-                model={model}
-                setModel={setModel}
-                message={message}
-                config={config}
-                userSettings={userSettings}
-            />
+            <ExtraEventButtons model={model} setModel={setModel} message={message} config={config} />
             <ExtraEventDetails
                 model={model}
                 defaultCalendar={defaultCalendar}

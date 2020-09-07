@@ -5,7 +5,7 @@ import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { API_CODES, HOUR } from 'proton-shared/lib/constants';
 import { wait } from 'proton-shared/lib/helpers/promise';
-import { ProtonConfig, UserSettings } from 'proton-shared/lib/interfaces';
+import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import { SyncMultipleApiResponse } from 'proton-shared/lib/interfaces/calendar';
 import { useApi, useNotifications } from 'react-components';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../helpers/calendar/EventInvitationError';
@@ -20,11 +20,10 @@ interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
     message: MessageExtended;
     config: ProtonConfig;
-    userSettings: UserSettings;
     onUnexpectedError: () => void;
     onSuccess: (invitationApi: RequireSome<EventInvitation, 'eventID'>) => void;
 }
-const useWidgetButtons = ({ model, message, config, userSettings, onUnexpectedError, onSuccess }: Props) => {
+const useWidgetButtons = ({ model, message, config, onUnexpectedError, onSuccess }: Props) => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const sendIcs = useSendIcs();
@@ -51,7 +50,7 @@ const useWidgetButtons = ({ model, message, config, userSettings, onUnexpectedEr
             return;
         }
         try {
-            const prodId = getProdId(config, userSettings);
+            const prodId = getProdId(config);
             const ics = createReplyIcs({
                 invitation: invitationIcs,
                 partstat,

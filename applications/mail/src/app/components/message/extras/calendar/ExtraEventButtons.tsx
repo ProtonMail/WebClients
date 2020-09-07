@@ -1,6 +1,6 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { APPS } from 'proton-shared/lib/constants';
-import { ProtonConfig, UserSettings } from 'proton-shared/lib/interfaces';
+import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import { LoadingMap } from 'proton-shared/lib/interfaces/utils';
 import React, { useMemo, Dispatch, SetStateAction } from 'react';
 import { AppLink, classnames, SmallButton, useNotifications, useLoadingMap } from 'react-components';
@@ -105,9 +105,8 @@ interface Props {
     setModel: Dispatch<SetStateAction<InvitationModel>>;
     message: MessageExtended;
     config: ProtonConfig;
-    userSettings: UserSettings;
 }
-const ExtraEventButtons = ({ model, setModel, message, config, userSettings }: Props) => {
+const ExtraEventButtons = ({ model, setModel, message, config }: Props) => {
     const { createNotification } = useNotifications();
     const [loadingMap, withLoadingMap] = useLoadingMap();
 
@@ -129,7 +128,6 @@ const ExtraEventButtons = ({ model, setModel, message, config, userSettings }: P
         model,
         message,
         config,
-        userSettings,
         onUnexpectedError: throwUnexpectedError,
         onSuccess: handleInvitationSent
     });
