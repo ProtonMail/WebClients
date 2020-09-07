@@ -425,14 +425,15 @@ export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
             cn: cn ?? emailAddress
         }
     };
-    if (role === ICAL_ATTENDEE_ROLE.REQUIRED || role === ICAL_ATTENDEE_ROLE.OPTIONAL) {
-        supportedAttendee.parameters.role = role;
+    const roleUpperCased = role?.toUpperCase();
+    if (roleUpperCased === ICAL_ATTENDEE_ROLE.REQUIRED || roleUpperCased === ICAL_ATTENDEE_ROLE.OPTIONAL) {
+        supportedAttendee.parameters.role = roleUpperCased;
     }
-    if (rsvp === 'true') {
-        supportedAttendee.parameters.rsvp = rsvp;
+    if (rsvp?.toUpperCase() === 'TRUE') {
+        supportedAttendee.parameters.rsvp = rsvp.toUpperCase();
     }
     if (partstat) {
-        supportedAttendee.parameters.partstat = partstat;
+        supportedAttendee.parameters.partstat = partstat.toUpperCase();
     }
     return supportedAttendee;
 };
@@ -489,7 +490,7 @@ export const getSupportedEventInvitation = (
         }
 
         if (attendee) {
-            validated.attendee = [...attendee];
+            validated.attendee = attendee.map((vcalAttendee) => getSupportedAttendee(vcalAttendee));
         }
 
         if (trimmedSummaryValue) {
