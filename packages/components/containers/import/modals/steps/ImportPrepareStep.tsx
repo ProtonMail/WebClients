@@ -74,7 +74,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
 
     const showFoldersNameError = useMemo(() => {
         return payload.Mapping.some((m) => {
-            const splitted = m.Destinations.FolderName.split(PATH_SPLIT_REGEX);
+            const splitted = m.Destinations.FolderPath.split(PATH_SPLIT_REGEX);
             return m.checked && splitted[splitted.length - 1].length >= 100;
         });
     }, [payload.Mapping]);
@@ -156,7 +156,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
         const Mapping = providerFolders.map((folder) => ({
             Source: folder.Source,
             Destinations: {
-                FolderName: folder.DestinationFolder || getDestinationFolderPath(folder.Source, folder.Separator),
+                FolderPath: folder.DestinationFolder || getDestinationFolderPath(folder.Source, folder.Separator),
             },
             checked: true,
         }));

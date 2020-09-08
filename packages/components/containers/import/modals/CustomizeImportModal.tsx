@@ -55,7 +55,7 @@ const CustomizeImportModal = ({
 
     const hasFoldersTooLongError = useMemo(() => {
         return customizedPayload.Mapping.some((m) => {
-            const splitted = m.Destinations.FolderName.split(PATH_SPLIT_REGEX);
+            const splitted = m.Destinations.FolderPath.split(PATH_SPLIT_REGEX);
             return m.checked && splitted[splitted.length - 1].length >= 100;
         });
     }, [customizedPayload.Mapping]);

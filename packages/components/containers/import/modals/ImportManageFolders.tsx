@@ -90,7 +90,7 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
         providerFolders.reduce<FolderNamesMap>((acc, folder) => {
             const found = payload.Mapping.find((m) => m.Source === folder.Source);
             acc[folder.Source] = getNameValue(
-                found?.Destinations.FolderName || folder.DestinationFolder || folder.Source
+                found?.Destinations.FolderPath || folder.DestinationFolder || folder.Source
             );
             return acc;
         }, {})
@@ -167,7 +167,7 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
                 acc.push({
                     Source: folder.Source,
                     Destinations: {
-                        FolderName: forgeNewPath(folder),
+                        FolderPath: forgeNewPath(folder),
                     },
                     checked: true,
                 });

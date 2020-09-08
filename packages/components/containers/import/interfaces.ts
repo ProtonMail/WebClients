@@ -62,7 +62,7 @@ export interface ImportModalModel {
 export interface FolderMapping {
     Source: string;
     Destinations: {
-        FolderName: string;
+        FolderPath: string;
     };
     checked: boolean;
 }
