@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { Sidebar, SidebarPrimaryButton, SidebarNav } from 'react-components';
+import { Sidebar, SidebarPrimaryButton, SidebarNav, MainLogo } from 'react-components';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import MailSidebarList from './MailSidebarList';
@@ -29,6 +29,7 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCo
                     {c('Action').t`Compose`}
                 </SidebarPrimaryButton>
             }
+            logo={<MainLogo to="/inbox" />}
             version={<SidebarVersion />}
         >
             <SidebarNav>
