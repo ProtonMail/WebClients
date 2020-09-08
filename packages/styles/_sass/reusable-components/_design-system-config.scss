@@ -140,6 +140,7 @@ $use-ie-calc-font-fallback: false !default;
 $use-old-ie-fallbacks  : true !default;
 $use-height-auto-img   : true !default;
 $use-height-auto-td    : true !default;
+$use-height-auto-table : true !default;
 
 // default config for webpack, can be overriden by "global config" in styles-pm.scss
 $path-images           : '../../assets/img/shared/' !default;

@@ -8,7 +8,6 @@
     max-width: 100%;
 }
 
-table,
 blockquote,
 code,
 pre,
@@ -40,6 +39,16 @@ svg {
 }
 @else {
     img {
+        @extend %reset-responsive-max-width-only;
+    }
+}
+@if $use-height-auto-table==true {
+    table {
+        @extend %reset-responsive-height-max-width;
+    }
+}
+@else {
+    table {
         @extend %reset-responsive-max-width-only;
     }
 }

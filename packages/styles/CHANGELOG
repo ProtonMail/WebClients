@@ -22,6 +22,7 @@
 - update “P2P” icon
 - fix meterBar component background color in dark mode
 - fix links default underline style
+- fix - `table` reset for Mail - added a Sass variable to trigger it or not (Mail is the special case, newsletter compatibility ftw)
 
 
 ## Updated/fixes
