@@ -24,7 +24,7 @@ export const order = ({ LabelIDs, ParentID, Type }: LabelOrderArgument) => ({
 interface PartialCreateLabelArgument {
     Name: string;
     Color: string;
-    ParentID?: string;
+    ParentID?: string | number;
     Notify?: number;
     Expanded?: number;
     Sticky?: number;
@@ -47,7 +47,7 @@ export const updateLabel = (
         ParentID,
         Sticky,
         Expanded,
-    }: { Name: string; Color: string; Notify?: number; ParentID?: string; Sticky?: number; Expanded?: number }
+    }: { Name: string; Color: string; Notify?: number; ParentID?: string | number; Sticky?: number; Expanded?: number }
 ) => ({
     method: 'put',
     url: `v4/labels/${labelID}`,
@@ -57,6 +57,12 @@ export const updateLabel = (
 export const deleteLabel = (labelID: string) => ({
     method: 'delete',
     url: `v4/labels/${labelID}`,
+});
+
+export const checkLabelAvailability = (params: { Name: string; Type: LABEL_TYPE; ParentID?: string | number }) => ({
+    method: 'get',
+    url: 'v4/labels/available',
+    params,
 });
 
 export const getLabels = () => get(MESSAGE_LABEL);
