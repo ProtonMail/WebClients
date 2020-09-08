@@ -36,7 +36,8 @@ const SelectRecurringType = ({ types, type, setType, 'data-test-id': dataTestId 
                         <Radio
                             className="flex-nowrap"
                             data-test-id={dataTestId}
-                            id={id}
+                            id={`recurringTypeChoice${id}`}
+                            name="recurringType"
                             checked={value === type}
                             onChange={() => setType(value)}
                         >
