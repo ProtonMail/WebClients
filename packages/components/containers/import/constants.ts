@@ -17,4 +17,4 @@ export const timeUnitLabels = {
 export const INVALID_CREDENTIALS_ERROR_LABEL = 'Invalid credentials';
 export const IMAP_CONNECTION_ERROR_LABEL = 'Cannot establish connection with IMAP server';
 
-export const PATH_SPLIT_REGEX = new RegExp(/(?<!\\\\)\//);
+export const PATH_SPLIT_REGEX = new RegExp(/(?<!\\)\//);
