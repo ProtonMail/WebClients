@@ -8,6 +8,27 @@ import Composer from './Composer';
 import { MessageExtended } from '../../models/message';
 import { Breakpoints } from '../../models/utils';
 
+// Prevent the actual encrypt and upload attachment
+jest.mock('../../helpers/attachment/attachmentUploader', () => {
+    return {
+        ATTACHMENT_ACTION: {
+            ATTACHMENT: 'attachment',
+            INLINE: 'inline'
+        },
+        upload: () => [
+            {
+                resultPromise: new Promise(() => {
+                    // empty
+                }),
+                addProgressListener: () => {
+                    // empty
+                }
+            }
+        ],
+        isSizeExceeded: () => false
+    };
+});
+
 const ID = 'ID';
 
 const png = new File([], 'file.png', { type: 'image/png' });
