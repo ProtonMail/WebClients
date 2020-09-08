@@ -1,4 +1,5 @@
 import { OpenPGPKey } from 'pmcrypto';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import React from 'react';
 import { isReceived } from '../../../helpers/message/messages';
 import ExtraImages from '../extras/ExtraImages';
@@ -36,6 +37,7 @@ const HeaderExtra = ({
     onLoadEmbeddedImages
 }: Props) => {
     const received = isReceived(message.data);
+    const showWidget = FEATURE_FLAGS.includes('calendar-event-widget');
     return (
         <section className="message-header-extra mt0-5 border-top pt0-5">
             <ExtraExpirationTime message={message} />
@@ -53,7 +55,7 @@ const HeaderExtra = ({
             <ExtraAskResign message={message} onResignContact={onResignContact} />
             {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
             {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
-            {messageLoaded && received ? <ExtraEvents message={message} /> : null}
+            {messageLoaded && received && showWidget ? <ExtraEvents message={message} /> : null}
         </section>
     );
 };
