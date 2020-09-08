@@ -1,7 +1,7 @@
 import React from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import { classnames, Loader, useActiveBreakpoint } from 'react-components';
+import { classnames, Loader } from 'react-components';
 import { FileBrowserItem, FileBrowserProps } from '../interfaces';
 import ItemCell, { Props as ItemCellProps } from './ItemCell';
 import FolderContextMenu from '../FolderContextMenu';
@@ -9,8 +9,28 @@ import useFileBrowserView from '../useFileBrowserView';
 
 const itemWidth = 216;
 const itemHeight = 196;
-const itemWidthForMobile = 195;
-const itemHeightForMobile = 177;
+
+const calculateCellDimensions = (areaWidth: number) => {
+    const rowItemCount = Math.floor(areaWidth / itemWidth);
+    const expandedItemWidth = areaWidth / rowItemCount;
+    const squishedItemWidth = areaWidth / (rowItemCount + 1);
+    const oversizing = expandedItemWidth - itemWidth;
+    const oversquishing = itemWidth - squishedItemWidth;
+    const ratio = itemHeight / itemWidth;
+
+    // If expanded width is less imperfect than squished width
+    if (oversizing <= oversquishing) {
+        return {
+            cellWidth: expandedItemWidth,
+            cellHeight: expandedItemWidth * ratio,
+        };
+    }
+
+    return {
+        cellWidth: squishedItemWidth,
+        cellHeight: squishedItemWidth * ratio,
+    };
+};
 
 type Props = Omit<
     FileBrowserProps,
@@ -85,9 +105,6 @@ function GridView({
     } = useFileBrowserView({
         clearSelections,
     });
-    const { isTinyMobile } = useActiveBreakpoint();
-    const cellWidth = isTinyMobile ? itemWidthForMobile : itemWidth;
-    const cellHeight = isTinyMobile ? itemHeightForMobile : itemHeight;
 
     return (
         <div
@@ -98,6 +115,8 @@ function GridView({
         >
             <AutoSizer>
                 {({ width, height }) => {
+                    const { cellHeight, cellWidth } = calculateCellDimensions(width);
+
                     const itemsPerRow = Math.floor(width / cellWidth);
                     const rowCount = Math.ceil(totalItems / itemsPerRow);
 
@@ -122,6 +141,7 @@ function GridView({
                     return (
                         <>
                             <FixedSizeGrid
+                                style={{ overflowX: 'hidden' }}
                                 itemData={itemData}
                                 columnWidth={cellWidth}
                                 rowHeight={cellHeight}
