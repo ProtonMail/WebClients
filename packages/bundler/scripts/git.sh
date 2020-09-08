@@ -16,6 +16,7 @@ function getTag {
   # Get tag from the ci if ther is one as it seems git describe does not work
   if [ -n "$CI_COMMIT_TAG" ]; then
     echo "$CI_COMMIT_TAG";
+    return 0;
   fi
 
   git describe --tags --abbrev=0 2> /dev/null
