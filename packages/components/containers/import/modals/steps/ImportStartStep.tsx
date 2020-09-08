@@ -3,7 +3,11 @@ import { c } from 'ttag';
 
 import { Alert, Row, Label, Field, PasswordInput, EmailInput, Input } from '../../../../components';
 
-import { INVALID_CREDENTIALS_ERROR_LABEL, IMAP_CONNECTION_ERROR_LABEL } from '../../constants';
+import {
+    INVALID_CREDENTIALS_ERROR_LABEL,
+    IMAP_AUTHENTICATION_ERROR_LABEL,
+    IMAP_CONNECTION_ERROR_LABEL,
+} from '../../constants';
 import { ImportModalModel, IMPORT_ERROR } from '../../interfaces';
 
 interface Props {
@@ -22,11 +26,13 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
         }
     }, [email]);
 
+    const authError = [INVALID_CREDENTIALS_ERROR_LABEL, IMAP_AUTHENTICATION_ERROR_LABEL].includes(errorLabel);
+
     return (
         <>
             {[IMPORT_ERROR.AUTH_IMAP, IMPORT_ERROR.AUTH_CREDENTIALS].includes(errorCode) ? (
                 <Alert type="error" learnMore="https://protonmail.com/support/knowledge-base/">
-                    {errorLabel === INVALID_CREDENTIALS_ERROR_LABEL && (
+                    {authError && (
                         <>
                             <div className="mb1">
                                 {c('Error')
@@ -73,7 +79,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                         autoFocus
                         required
                         isSubmitted={!!errorLabel}
-                        error={errorLabel === INVALID_CREDENTIALS_ERROR_LABEL ? errorLabel : undefined}
+                        error={authError ? errorLabel : undefined}
                         errorZoneClassName="hidden"
                     />
                 </Field>
@@ -94,7 +100,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                             autoFocus
                             required
                             isSubmitted={!!errorLabel}
-                            error={errorLabel === INVALID_CREDENTIALS_ERROR_LABEL ? errorLabel : undefined}
+                            error={authError ? errorLabel : undefined}
                             errorZoneClassName="hidden"
                         />
                     </Field>
