@@ -23,7 +23,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
     const [userSettings] = useUserSettings();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
-    const { isFree } = user;
+    const { hasPaidMail } = user;
 
     useEffect(() => {
         if (mainAreaRef.current) {
@@ -84,7 +84,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                         </div>
                     </div>
                 ) : null}
-                {isFree ? (
+                {hasPaidMail ? null : (
                     <div className="bg-pm-blue-gradient color-white rounded aligncenter p1 mt2 relative">
                         <p className="mt0 mb1">
                             {c('Info')
@@ -100,7 +100,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                             </AppLink>
                         </div>
                     </div>
-                ) : null}
+                )}
             </aside>
         </div>
     );
