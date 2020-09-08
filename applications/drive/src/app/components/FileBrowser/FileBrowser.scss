@@ -20,6 +20,10 @@
     }
 }
 
+.isDarkMode .pd-fb-grid-item {
+    @extend .bg-global-grey;
+}
+
 .pd-fb-grid-item.pd-fb-grid-item--highlight {
     @extend .bg-global-highlight;
 }
