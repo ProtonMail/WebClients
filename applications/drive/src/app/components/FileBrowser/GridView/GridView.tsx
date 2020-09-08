@@ -1,7 +1,7 @@
 import React from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import { classnames, Loader } from 'react-components';
+import { classnames, Loader, useActiveBreakpoint } from 'react-components';
 import { FileBrowserItem, FileBrowserProps } from '../interfaces';
 import ItemCell, { Props as ItemCellProps } from './ItemCell';
 import FolderContextMenu from '../FolderContextMenu';
@@ -9,6 +9,8 @@ import useFileBrowserView from '../useFileBrowserView';
 
 const itemWidth = 216;
 const itemHeight = 196;
+const itemWidthForMobile = 195;
+const itemHeightForMobile = 177;
 
 type Props = Omit<
     FileBrowserProps,
@@ -83,6 +85,9 @@ function GridView({
     } = useFileBrowserView({
         clearSelections,
     });
+    const { isTinyMobile } = useActiveBreakpoint();
+    const cellWidth = isTinyMobile ? itemWidthForMobile : itemWidth;
+    const cellHeight = isTinyMobile ? itemHeightForMobile : itemHeight;
 
     return (
         <div
@@ -93,7 +98,7 @@ function GridView({
         >
             <AutoSizer>
                 {({ width, height }) => {
-                    const itemsPerRow = Math.floor(width / itemWidth);
+                    const itemsPerRow = Math.floor(width / cellWidth);
                     const rowCount = Math.ceil(totalItems / itemsPerRow);
 
                     const itemData = {
@@ -118,8 +123,8 @@ function GridView({
                         <>
                             <FixedSizeGrid
                                 itemData={itemData}
-                                columnWidth={itemWidth}
-                                rowHeight={itemHeight}
+                                columnWidth={cellWidth}
+                                rowHeight={cellHeight}
                                 height={height}
                                 width={width}
                                 columnCount={itemsPerRow}
