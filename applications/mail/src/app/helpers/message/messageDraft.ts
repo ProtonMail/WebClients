@@ -171,7 +171,9 @@ const generateBlockquote = (
     const name = referenceMessage?.data?.Sender?.Name;
     const address = `&lt;${referenceMessage?.data?.Sender?.Address}&gt;`;
     const previously = c('Message').t`On ${date}, ${name} ${address} wrote:`;
-    const previousContent = isPlainText(referenceMessage.data)
+    const previousContent = referenceMessage.errors?.decryption
+        ? referenceMessage.data?.Body
+        : isPlainText(referenceMessage.data)
         ? plainTextToHTML(referenceMessage as MessageExtended, mailSettings, addresses)
         : getDocumentContent(referenceMessage.document);
 
