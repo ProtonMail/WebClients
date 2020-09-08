@@ -1,10 +1,12 @@
 import React, { useRef, useState, useEffect, forwardRef, Ref } from 'react';
-
+import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { useHandler } from '../../hooks';
+
+import { useHandler, useNotifications } from '../../hooks';
 import { SquireType, getSquireRef, setSquireRef, initSquire } from './squireConfig';
 import { pasteFileHandler } from './squireActions';
 import { SquireEditorMetadata } from './interface';
+import { LinkButton } from '../button';
 
 const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div>' || html === '<div><br></div>';
 
@@ -25,6 +27,8 @@ interface Props {
  */
 const SquireIframe = forwardRef(
     ({ placeholder, metadata, onReady, onFocus, onInput, onAddImages, ...rest }: Props, ref: Ref<SquireType>) => {
+        const { createNotification } = useNotifications();
+
         const [iframeReady, setIframeReady] = useState(false);
         const [squireReady, setSquireReady] = useState(false);
         const [isEmpty, setIsEmpty] = useState(false);
@@ -46,10 +50,30 @@ const SquireIframe = forwardRef(
 
         useEffect(() => {
             const init = async (iframeDoc: Document) => {
-                const squire = await initSquire(iframeDoc);
-                setSquireRef(ref, squire);
-                setSquireReady(true);
-                onReady();
+                try {
+                    const squire = await initSquire(iframeDoc);
+                    setSquireRef(ref, squire);
+                    setSquireReady(true);
+                    onReady();
+                } catch (error) {
+                    createNotification({
+                        type: 'error',
+                        text: (
+                            <>
+                                {c('Error').t`The composer failed to load.` + ' '}
+                                <LinkButton
+                                    className="alignbaseline nodecoration bold pm-button--currentColor"
+                                    onClick={() => {
+                                        window.location.reload();
+                                    }}
+                                >
+                                    {c('Error').t`Please refresh the page.`}
+                                </LinkButton>
+                            </>
+                        ),
+                        expiration: 20000,
+                    });
+                }
             };
 
             if (iframeReady && !squireReady) {
