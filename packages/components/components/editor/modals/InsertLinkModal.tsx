@@ -11,21 +11,9 @@ import Label from '../../label/Label';
 import Field from '../../container/Field';
 import Input from '../../input/Input';
 import Href from '../../link/Href';
-import Radio from '../../input/Radio';
+import { Select } from '../../select';
 
 import { LinkData } from '../squireConfig';
-
-const LABEL_DETAILS = {
-    [LINK_TYPES.WEB]: c('Info').t`To what URL should this link go?`,
-    [LINK_TYPES.EMAIL]: c('Info').t`To what email address should this link?`,
-    [LINK_TYPES.PHONE]: c('Info').t`To what phone number should this link?`,
-};
-
-const PLACEHOLDERS = {
-    [LINK_TYPES.WEB]: c('Placeholder').t`Add a web address`,
-    [LINK_TYPES.EMAIL]: c('Placeholder').t`Add an email address`,
-    [LINK_TYPES.PHONE]: c('Placeholder').t`Add a phone address`,
-};
 
 const getActualUrl = (url: string, type: LINK_TYPES) =>
     type === LINK_TYPES.WEB ? url : type === LINK_TYPES.EMAIL ? `mailto:${url}` : `tel:${url}`;
@@ -40,6 +28,31 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, ...rest }: Props) => {
     const [url, setUrl] = useState(inputLink.link);
     const [label, setLabel] = useState(inputLink.title);
     const [type, setType] = useState(linkToType(inputLink.link) || LINK_TYPES.WEB);
+
+    const typesOptions = [
+        { value: LINK_TYPES.WEB, text: c('Info').t`Web URL` },
+        { value: LINK_TYPES.EMAIL, text: c('Info').t`Email address` },
+        { value: LINK_TYPES.PHONE, text: c('Info').t`Phone number` },
+    ];
+
+    const i18n = {
+        [LINK_TYPES.WEB]: {
+            label: c('Info').t`URL link`,
+            placeholder: c('Placeholder').t`Link`,
+        },
+        [LINK_TYPES.EMAIL]: {
+            label: c('Info').t`Email address`,
+            placeholder: c('Placeholder').t`Email address`,
+        },
+        [LINK_TYPES.PHONE]: {
+            label: c('Info').t`Phone number`,
+            placeholder: c('Placeholder').t`Phone number`,
+        },
+    };
+
+    const handleTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        setType(event.target.value as LINK_TYPES);
+    };
 
     const handleUrlChange = (event: ChangeEvent<HTMLInputElement>) => {
         setUrl(event.target.value);
@@ -66,21 +79,31 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, ...rest }: Props) => {
             onClose={onClose}
             {...rest}
         >
-            <Alert>
-                {c('Info')
-                    .t`In the first box, put the link/email/phone number the text should go to. In the second box, put the text you want to appear.`}
-            </Alert>
+            <Alert>{c('Info').t`Please select the type of link you want to insert and fill in all the fields.`}</Alert>
+            <Row>
+                <Label htmlFor="link-modal-type" className="flex flex-column">
+                    {c('Info').t`Link type`}
+                </Label>
+                <Field>
+                    <Select
+                        id="link-modal-type"
+                        value={type}
+                        onChange={handleTypeChange}
+                        options={typesOptions}
+                        required
+                    />
+                </Field>
+            </Row>
             <Row>
                 <Label htmlFor="link-modal-url" className="flex flex-column">
-                    <span>{c('Info').t`URL link`}</span>
-                    <span>{LABEL_DETAILS[type]}</span>
+                    {i18n[type].label}
                 </Label>
                 <Field>
                     <Input
                         id="link-modal-url"
                         value={url}
                         onChange={handleUrlChange}
-                        placeholder={PLACEHOLDERS[type]}
+                        placeholder={i18n[type].placeholder}
                         required
                     />
                 </Field>
@@ -94,44 +117,20 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, ...rest }: Props) => {
                         id="link-modal-label"
                         value={label}
                         onChange={(event: ChangeEvent<HTMLInputElement>) => setLabel(event.target.value)}
-                        placeholder={c('Placeholder').t`Link label`}
+                        placeholder={c('Placeholder').t`Text`}
                         required
                     />
                 </Field>
             </Row>
-            {url && label && (
-                <Row>
-                    <span className="mr1">{`${c('Info').t`Test link:`} `}</span>
-                    <Href url={getActualUrl(url, type)}>{label}</Href>
-                </Row>
-            )}
-            <Row className="flex-justify-center mt2">
-                <Radio
-                    id="link-modal-type-link"
-                    name="link-modal-type"
-                    className="mr1"
-                    checked={type === LINK_TYPES.WEB}
-                    onChange={() => setType(LINK_TYPES.WEB)}
-                >
-                    {c('Info').t`Web address`}
-                </Radio>
-                <Radio
-                    id="link-modal-type-mail"
-                    name="link-modal-type"
-                    className="mr1"
-                    checked={type === LINK_TYPES.EMAIL}
-                    onChange={() => setType(LINK_TYPES.EMAIL)}
-                >
-                    {c('Info').t`Email address`}
-                </Radio>
-                <Radio
-                    id="link-modal-type-phone"
-                    name="link-modal-type"
-                    checked={type === LINK_TYPES.PHONE}
-                    onChange={() => setType(LINK_TYPES.PHONE)}
-                >
-                    {c('Info').t`Phone address`}
-                </Radio>
+            <Row>
+                <Label>{c('Info').t`Test link`}</Label>
+                <Field className="pt0-5">
+                    {url && label ? (
+                        <Href url={getActualUrl(url, type)}>{label}</Href>
+                    ) : (
+                        <span className="placeholder">{c('Info').t`Fill in the url and text to test your link`}</span>
+                    )}
+                </Field>
             </Row>
         </FormModal>
     );
