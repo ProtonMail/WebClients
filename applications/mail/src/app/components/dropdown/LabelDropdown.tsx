@@ -126,18 +126,20 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
         applyCheck(labelIDs, target.checked);
     };
 
-    const handleAddNewLabel = (label?: Label) => {
+    const handleAddNewLabel = (label?: Partial<Label>) => {
         applyCheck([label?.ID || ''], true);
     };
 
     const handleCreate = () => {
         onLock(true);
-        const newLabel: Partial<Label> = {
+        const newLabel: Pick<Label, 'Name' | 'Color' | 'Type'> = {
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             Type: LABEL_TYPE.MESSAGE_LABEL
         };
-        createModal(<LabelModal label={newLabel} onAdd={handleAddNewLabel} onClose={() => onLock(false)} />);
+        createModal(
+            <LabelModal label={newLabel} onAdd={(label) => handleAddNewLabel(label)} onClose={() => onLock(false)} />
+        );
     };
 
     // The dropdown is several times in the view, native html ids has to be different each time

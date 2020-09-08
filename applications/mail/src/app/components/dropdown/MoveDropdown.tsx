@@ -92,7 +92,7 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
 
     const handleCreate = () => {
         onLock(true);
-        const newLabel: Partial<Folder> = {
+        const newLabel: Pick<Folder, 'Name' | 'Color' | 'ParentID' | 'Type'> = {
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             ParentID: ROOT_FOLDER,

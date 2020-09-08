@@ -17,7 +17,8 @@ const EmptyFolders = () => {
     const { createModal } = useModals();
 
     const handleClick = () => {
-        const newLabel: Partial<Folder> = {
+        const newLabel: Pick<Folder, 'Name' | 'Color' | 'ParentID' | 'Type'> = {
+            Name: '',
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             ParentID: ROOT_FOLDER,
             Type: LABEL_TYPE.MESSAGE_FOLDER

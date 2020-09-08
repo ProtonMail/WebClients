@@ -18,7 +18,8 @@ const EmptyLabels = () => {
     const { createModal } = useModals();
 
     const handleClick = () => {
-        const newLabel: Partial<Label> = {
+        const newLabel: Pick<Label, 'Name' | 'Color' | 'Type'> = {
+            Name: '',
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             Type: LABEL_TYPE.MESSAGE_LABEL
         };
