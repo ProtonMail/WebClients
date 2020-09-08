@@ -27,6 +27,10 @@
     a *:not(img) {
         pointer-events: none;
     }
+
+    * {
+        line-height: normal;
+    }
 }
 
 .bodyDecrypted.plain {
@@ -87,5 +91,5 @@
         3. set at least a min width or it's possible it won't be shown
     */
     max-width: 100%;
-    min-width: 1em;
+    min-width: 38px;
 }
