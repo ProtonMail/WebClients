@@ -7,7 +7,7 @@ import { Button, Select, Tooltip, Icon } from '../../../components';
 import { useModals } from '../../../hooks';
 import { classnames } from '../../../helpers';
 
-import EditLabelModal from '../../labels/modals/Edit';
+import EditLabelModal from '../../labels/modals/EditLabelModal';
 
 export const DEFAULT_FOLDERS: SelectOption[] = [
     {

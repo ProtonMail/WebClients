@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Loader, Alert, PrimaryButton } from '../../components';
 import { useFolders, useModals } from '../../hooks';
 import FolderTreeViewList from './FolderTreeViewList';
-import EditLabelModal from './modals/Edit';
+import EditLabelModal from './modals/EditLabelModal';
 
 function LabelsSection() {
     const [folders, loadingFolders] = useFolders();

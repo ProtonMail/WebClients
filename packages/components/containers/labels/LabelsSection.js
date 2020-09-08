@@ -6,7 +6,7 @@ import { orderLabels } from 'proton-shared/lib/api/labels';
 import { Loader, Alert, PrimaryButton } from '../../components';
 import { useLabels, useEventManager, useModals, useApi } from '../../hooks';
 import LabelSortableList from './LabelSortableList';
-import EditLabelModal from './modals/Edit';
+import EditLabelModal from './modals/EditLabelModal';
 
 function LabelsSection() {
     const [labels, loadingLabels] = useLabels();

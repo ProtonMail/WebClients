@@ -4,8 +4,6 @@ import { generateUID, classnames } from '../../helpers';
 import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';
 
-const DEFAULT_GROUP = 'GROUP';
-
 export interface OptionProps
     extends React.DetailedHTMLProps<React.OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement> {
     value: string | number;
@@ -14,12 +12,40 @@ export interface OptionProps
     disabled?: boolean;
 }
 
-const buildOptions = (options: OptionProps[] = []) => {
+const buildOptions = (options: OptionProps[] = [], keyPrefix = 'option') => {
     return options.map(({ text, ...rest }, index) => (
-        <option key={index.toString()} {...rest}>
+        <option key={`${keyPrefix}_${index}`} {...rest}>
             {text}
         </option>
     ));
+};
+
+const buildGroupedOptions = (options: OptionProps[] = []) => {
+    const orphanOptions = options.filter((o: OptionProps) => !o.group);
+
+    return (
+        <>
+            {buildOptions(orphanOptions)}
+            {Object.entries(
+                options.reduce<{ [key: string]: OptionProps[] }>((acc, option) => {
+                    if (!option.group) {
+                        return acc;
+                    }
+
+                    const { group } = option;
+                    acc[group] = acc[group] || [];
+                    acc[group].push(option);
+                    return acc;
+                }, {})
+            ).map(([group, options], index) => {
+                return (
+                    <optgroup key={`optionGroup_${index}`} label={group}>
+                        {buildOptions(options, `optionGroup_${index}`)}
+                    </optgroup>
+                );
+            })}
+        </>
+    );
 };
 
 export interface Props
@@ -62,22 +88,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>(
                     {...rest}
                     {...handlers}
                 >
-                    {hasGroup
-                        ? Object.entries(
-                              options.reduce<{ [key: string]: OptionProps[] }>((acc, option) => {
-                                  const { group = DEFAULT_GROUP } = option;
-                                  acc[group] = acc[group] || [];
-                                  acc[group].push(option);
-                                  return acc;
-                              }, {})
-                          ).map(([group, options], index) => {
-                              return (
-                                  <optgroup key={index.toString()} label={group}>
-                                      {buildOptions(options)}
-                                  </optgroup>
-                              );
-                          })
-                        : buildOptions(options)}
+                    {hasGroup ? buildGroupedOptions(options) : buildOptions(options)}
                 </select>
                 <ErrorZone id={uid}>{hasError ? error : ''}</ErrorZone>
             </>

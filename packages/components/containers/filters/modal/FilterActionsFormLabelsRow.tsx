@@ -7,7 +7,7 @@ import { Checkbox, Button, Tooltip, Icon, LabelStack } from '../../../components
 import { classnames } from '../../../helpers';
 import { useModals } from '../../../hooks';
 
-import EditLabelModal from '../../labels/modals/Edit';
+import EditLabelModal from '../../labels/modals/EditLabelModal';
 
 interface Props {
     labels: Label[];

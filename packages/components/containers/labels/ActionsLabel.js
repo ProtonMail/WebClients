@@ -6,7 +6,7 @@ import { deleteLabel } from 'proton-shared/lib/api/labels';
 
 import { Alert, DropdownActions, ConfirmModal, ErrorButton } from '../../components';
 import { useApi, useModals, useEventManager, useNotifications } from '../../hooks';
-import EditLabelModal from './modals/Edit';
+import EditLabelModal from './modals/EditLabelModal';
 
 function ActionsLabel({ label, onChange }) {
     const api = useApi();
