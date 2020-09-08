@@ -37,12 +37,14 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
                             {isMethodAllowed(VERIFICATION_METHOD.EMAIL) ? (
                                 <Radio
                                     className="mr1"
+                                    name="verificationMethod"
                                     checked={method === VERIFICATION_METHOD.EMAIL}
                                     onChange={handleSelectMethod(VERIFICATION_METHOD.EMAIL)}
                                 >{c('Option').t`Email address`}</Radio>
                             ) : null}
                             {isMethodAllowed(VERIFICATION_METHOD.SMS) && (
                                 <Radio
+                                    name="verificationMethod"
                                     checked={method === VERIFICATION_METHOD.SMS}
                                     onChange={handleSelectMethod(VERIFICATION_METHOD.SMS)}
                                 >{c('Option').t`SMS`}</Radio>
