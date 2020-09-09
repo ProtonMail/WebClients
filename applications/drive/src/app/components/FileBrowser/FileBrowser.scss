@@ -1,13 +1,11 @@
-.pd-fb-table {
-    td.pd-fb-list-item,
-    th {
-        &:first-of-type {
-            // Checkbox cell
-            position: relative; // Because of .increase-surface-click
-            padding-left: 1em;
-            padding-right: 1em;
-            width: calc(1.6rem + 2em);
-        }
+.pd-fb-list-item td,
+.pd-fb-table th {
+    &:first-of-type {
+        // Checkbox cell
+        position: relative; // Because of .increase-surface-click
+        padding-left: 1em;
+        padding-right: 1em;
+        width: calc(1.6rem + 2em);
     }
 }
 

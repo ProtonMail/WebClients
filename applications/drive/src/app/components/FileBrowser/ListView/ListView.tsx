@@ -1,8 +1,8 @@
-import React from 'react';
-import { TableBody, useActiveBreakpoint, Table, classnames } from 'react-components';
+import React, { useRef } from 'react';
+import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect } from 'react-components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
-import AutoSizer from 'react-virtualized-auto-sizer';
 import { c } from 'ttag';
+import { buffer } from 'proton-shared/lib/helpers/function';
 import ItemRow from './ItemRow';
 import { FileBrowserProps, FileBrowserItem, DragMoveControls } from '../interfaces';
 import FolderContextMenu from '../FolderContextMenu';
@@ -112,6 +112,9 @@ const ListView = ({
     setSorting,
     getDragMoveControls,
 }: Props) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const rect = useElementRect(containerRef, buffer);
+
     const {
         secondaryActionActive,
         isContextMenuOpen,
@@ -137,7 +140,7 @@ const ListView = ({
                 }
                 clearSelections();
             }}
-            className="flex-noMinChildren flex-column flex-item-fluid"
+            className="flex flex-column flex-item-fluid"
         >
             <div>
                 <Table caption={c('Info').t`${caption} heading`} className="pd-fb-table m0">
@@ -153,47 +156,45 @@ const ListView = ({
                 </Table>
             </div>
 
-            <div className="flex-noMinChildren flex-column flex-item-fluid">
-                <AutoSizer>
-                    {({ width, height }) => (
-                        <FixedSizeList
-                            itemCount={itemCount}
-                            itemSize={40}
-                            itemData={{
-                                isDesktop,
-                                itemCount,
-                                loading,
-                                contents,
-                                shareId,
-                                selectedItems,
-                                onToggleItemSelected,
-                                onShiftClick,
-                                onItemClick,
-                                isPreview,
-                                isTrash,
-                                selectItem,
-                                secondaryActionActive,
-                                getDragMoveControls,
-                            }}
-                            onScroll={() => {
-                                if (isContextMenuOpen) {
-                                    closeContextMenu();
-                                }
-                            }}
-                            width={width}
-                            height={height}
-                            outerRef={scrollAreaRef}
-                            innerElementType={TableBodyRenderer}
-                            itemKey={(index, data: ListItemData) =>
-                                loading && index === itemCount - 1
-                                    ? 'loader'
-                                    : `${data.shareId}/${data.contents[index].LinkID}`
+            <div className="flex-noMinChildren flex-column flex-item-fluid w100 no-scroll" ref={containerRef}>
+                {rect && (
+                    <FixedSizeList
+                        itemCount={itemCount}
+                        itemSize={40}
+                        itemData={{
+                            isDesktop,
+                            itemCount,
+                            loading,
+                            contents,
+                            shareId,
+                            selectedItems,
+                            onToggleItemSelected,
+                            onShiftClick,
+                            onItemClick,
+                            isPreview,
+                            isTrash,
+                            selectItem,
+                            secondaryActionActive,
+                            getDragMoveControls,
+                        }}
+                        onScroll={() => {
+                            if (isContextMenuOpen) {
+                                closeContextMenu();
                             }
-                        >
-                            {ListItemRow}
-                        </FixedSizeList>
-                    )}
-                </AutoSizer>
+                        }}
+                        width={rect.width}
+                        height={rect.height}
+                        outerRef={scrollAreaRef}
+                        innerElementType={TableBodyRenderer}
+                        itemKey={(index, data: ListItemData) =>
+                            loading && index === itemCount - 1
+                                ? 'loader'
+                                : `${data.shareId}/${data.contents[index].LinkID}`
+                        }
+                    >
+                        {ListItemRow}
+                    </FixedSizeList>
+                )}
             </div>
             {!isPreview && !isTrash && (
                 <FolderContextMenu
