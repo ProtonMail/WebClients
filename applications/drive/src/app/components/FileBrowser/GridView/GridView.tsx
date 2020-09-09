@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
-import AutoSizer from 'react-virtualized-auto-sizer';
-import { classnames, Loader } from 'react-components';
+import { classnames, Loader, useElementRect } from 'react-components';
+import { buffer } from 'proton-shared/lib/helpers/function';
 import { FileBrowserItem, FileBrowserProps } from '../interfaces';
 import ItemCell, { Props as ItemCellProps } from './ItemCell';
 import FolderContextMenu from '../FolderContextMenu';
@@ -94,6 +94,8 @@ function GridView({
     clearSelections,
     scrollAreaRef,
 }: Props) {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const rect = useElementRect(containerRef, buffer);
     const totalItems = contents.length + (loading ? 1 : 0);
     const {
         secondaryActionActive,
@@ -106,74 +108,71 @@ function GridView({
         clearSelections,
     });
 
+    const width = rect?.width ?? 0;
+
+    const { cellHeight, cellWidth } = calculateCellDimensions(width);
+
+    const itemsPerRow = Math.floor(width / cellWidth);
+    const rowCount = Math.ceil(totalItems / itemsPerRow);
+
+    const itemData = {
+        contents,
+        rowCount,
+        itemsPerRow,
+        loading,
+        getItemProps: (item: FileBrowserItem): Omit<ItemCellProps, 'style'> => ({
+            item,
+            shareId,
+            selectedItems,
+            onToggleSelect: onToggleItemSelected,
+            onShiftClick,
+            onClick: onItemClick,
+            selectItem,
+            secondaryActionActive,
+            dragMoveControls: getDragMoveControls?.(item),
+        }),
+    };
+
     return (
         <div
+            ref={containerRef}
             role="presentation"
-            className="flex-noMinChildren flex-item-fluid flex-column"
+            className="flex-noMinChildren flex-item-fluid flex-column no-scroll"
             onContextMenu={handleContextMenu}
             onClick={clearSelections}
         >
-            <AutoSizer>
-                {({ width, height }) => {
-                    const { cellHeight, cellWidth } = calculateCellDimensions(width);
-
-                    const itemsPerRow = Math.floor(width / cellWidth);
-                    const rowCount = Math.ceil(totalItems / itemsPerRow);
-
-                    const itemData = {
-                        contents,
-                        rowCount,
-                        itemsPerRow,
-                        loading,
-                        getItemProps: (item: FileBrowserItem): Omit<ItemCellProps, 'style'> => ({
-                            item,
-                            shareId,
-                            selectedItems,
-                            onToggleSelect: onToggleItemSelected,
-                            onShiftClick,
-                            onClick: onItemClick,
-                            selectItem,
-                            secondaryActionActive,
-                            dragMoveControls: getDragMoveControls?.(item),
-                        }),
-                    };
-
-                    return (
-                        <>
-                            <FixedSizeGrid
-                                style={{ overflowX: 'hidden' }}
-                                itemData={itemData}
-                                columnWidth={cellWidth}
-                                rowHeight={cellHeight}
-                                height={height}
-                                width={width}
-                                columnCount={itemsPerRow}
-                                rowCount={rowCount}
-                                outerRef={scrollAreaRef}
-                                onScroll={() => {
-                                    if (isContextMenuOpen) {
-                                        closeContextMenu();
-                                    }
-                                }}
-                                itemKey={({
-                                    columnIndex,
-                                    rowIndex,
-                                    data: { contents, itemsPerRow },
-                                }: {
-                                    columnIndex: number;
-                                    rowIndex: number;
-                                    data: ItemCellData;
-                                }) => {
-                                    const item = contents[columnIndex + rowIndex * itemsPerRow];
-                                    return item?.LinkID ?? `${columnIndex}-${rowIndex}`;
-                                }}
-                            >
-                                {GridItemCell}
-                            </FixedSizeGrid>
-                        </>
-                    );
-                }}
-            </AutoSizer>
+            {rect && (
+                <FixedSizeGrid
+                    style={{ overflowX: 'hidden' }}
+                    itemData={itemData}
+                    columnWidth={cellWidth}
+                    rowHeight={cellHeight}
+                    height={rect.height}
+                    width={rect.width}
+                    columnCount={itemsPerRow}
+                    rowCount={rowCount}
+                    outerRef={scrollAreaRef}
+                    onScroll={() => {
+                        if (isContextMenuOpen) {
+                            closeContextMenu();
+                        }
+                    }}
+                    itemKey={({
+                        columnIndex,
+                        rowIndex,
+                        data: { contents, itemsPerRow },
+                    }: {
+                        columnIndex: number;
+                        rowIndex: number;
+                        data: ItemCellData;
+                    }) => {
+                        const item = contents[columnIndex + rowIndex * itemsPerRow];
+                        return item?.LinkID ?? `${columnIndex}-${rowIndex}`;
+                    }}
+                >
+                    {GridItemCell}
+                </FixedSizeGrid>
+            )}
 
             {!isTrash && (
                 <FolderContextMenu
