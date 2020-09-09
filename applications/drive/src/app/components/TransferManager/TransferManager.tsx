@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect } from 'react';
-import { useToggle, classnames } from 'react-components';
+import React, { useCallback, useEffect, useRef } from 'react';
+import { useToggle, classnames, useElementRect } from 'react-components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
-import AutoSizer from 'react-virtualized-auto-sizer';
+import { buffer } from 'proton-shared/lib/helpers/function';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import Header from './Header';
@@ -63,6 +63,8 @@ const ListItemRow = ({ style, index, data }: ListItemRowProps) => {
 };
 
 function TransferManager() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const rect = useElementRect(containerRef, buffer);
     const { state: minimized, toggle: toggleMinimized } = useToggle();
     const { downloads, getDownloadsProgresses, clearDownloads } = useDownloadProvider();
     const { uploads, getUploadsProgresses, clearUploads } = useUploadProvider();
@@ -171,28 +173,24 @@ function TransferManager() {
                 onClose={handleCloseClick}
             />
 
-            <div className="pd-transfers-list">
-                <AutoSizer disableHeight>
-                    {({ width }) => (
-                        <FixedSizeList
-                            className="no-outline"
-                            itemData={{
-                                sortedEntries,
-                                latestStats,
-                                calculateAverageSpeed,
-                            }}
-                            itemCount={sortedEntries.length}
-                            itemSize={ROW_HEIGHT_PX}
-                            height={ROW_HEIGHT_PX * Math.min(MAX_VISIBLE_TRANSFERS, sortedEntries.length)}
-                            width={width}
-                            itemKey={(index, { sortedEntries }: ListItemData) =>
-                                sortedEntries[index].transfer?.id ?? index
-                            }
-                        >
-                            {ListItemRow}
-                        </FixedSizeList>
-                    )}
-                </AutoSizer>
+            <div className="pd-transfers-list" ref={containerRef}>
+                {rect && (
+                    <FixedSizeList
+                        className="no-outline"
+                        itemData={{
+                            sortedEntries,
+                            latestStats,
+                            calculateAverageSpeed,
+                        }}
+                        itemCount={sortedEntries.length}
+                        itemSize={ROW_HEIGHT_PX}
+                        height={ROW_HEIGHT_PX * Math.min(MAX_VISIBLE_TRANSFERS, sortedEntries.length)}
+                        width={rect.width}
+                        itemKey={(index, { sortedEntries }: ListItemData) => sortedEntries[index].transfer?.id ?? index}
+                    >
+                        {ListItemRow}
+                    </FixedSizeList>
+                )}
             </div>
         </div>
     );
