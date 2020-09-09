@@ -75,24 +75,8 @@
 
             <div ng-if="!ctrl.isBlackFriday">
                 <p>
-                    <a href="#" ng-if="!ctrl.displayCoupon" ng-click="ctrl.displayCoupon = true" translate translate-context="Action" translate-comment="payment modal add coupon button">Add coupon</a>
                     <gift-code-btn ng-if="!ctrl.displayGift" ng-click="ctrl.displayGift = true"></gift-code-btn>
                 </p>
-
-                <div ng-if="ctrl.displayCoupon">
-                    <label translate-context="Context" translate>Coupon</label>
-                    <div class="pm_grid flex flex-row">
-                        <div class="col-2-3">
-                            <div class="input-icon">
-                                <i class="fa fa-tag"></i>
-                                <input type="text" ng-model="ctrl.coupon" placeholder-translate-context="Payment form input label" placeholder-translate="Coupon" required>
-                            </div>
-                        </div>
-                        <div class="col-1-3">
-                            <button type="button" data-action="coupon" class="pm_button primary" translate-context="Action" translate>Apply</button>
-                        </div>
-                    </div>
-                </div>
 
                 <div ng-if="ctrl.displayGift">
                     <label translate-context="Context" translate>Gift code</label>

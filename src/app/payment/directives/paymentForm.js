@@ -68,13 +68,23 @@ function paymentForm(
                 ctrl.submit();
             };
 
+            const getCodes = () => {
+                // Use the value of whatever we are applying, otherwise the latest valid value confirmed by the API.
+                const codes = [ctrl.gift || MODEL.gift, ctrl.coupon || MODEL.coupon].filter(Boolean);
+
+                if (!codes.length) {
+                    return;
+                }
+
+                return codes;
+            };
+
             const getParameters = () => {
                 const parameters = {
                     Amount: ctrl.valid.AmountDue,
                     Cycle: ctrl.valid.Cycle,
                     Currency: ctrl.valid.Currency,
-                    CouponCode: MODEL.coupon,
-                    GiftCode: MODEL.gift,
+                    Codes: getCodes(),
                     PlanIDs: ctrl.planIDs
                 };
 
@@ -125,25 +135,23 @@ function paymentForm(
                 networkActivityTracker.track(promise);
             };
 
-            function getAddParameters(thing) {
+            function getAddParameters() {
+                const Codes = getCodes();
                 const parameters = {
                     Currency: params.valid.Currency,
                     Cycle: params.valid.Cycle,
-                    PlanIDs: params.planIDs
+                    PlanIDs: params.planIDs,
+                    Codes
                 };
-
-                // Use the value of whatever we are applying, otherwise the latest valid value confirmed by the API.
-                parameters.CouponCode = thing === 'coupon' ? ctrl.coupon : MODEL.coupon;
-                parameters.GiftCode = thing === 'gift' ? ctrl.gift : MODEL.gift;
 
                 return parameters;
             }
 
-            const apply = (thing = 'coupon') => {
-                const parameters = getAddParameters(thing);
+            const apply = () => {
+                const parameters = getAddParameters();
 
                 return paymentModel
-                    .add(parameters, thing)
+                    .add(parameters)
                     .then((data) => (ctrl.valid = data))
                     .then(() => {
                         dispatch('payment.change', ctrl.valid);
@@ -151,8 +159,8 @@ function paymentForm(
                         const CouponCode = ctrl.valid.Coupon && ctrl.valid.Coupon.Code;
 
                         // Update latest valid values.
-                        MODEL.gift = parameters.GiftCode;
-                        MODEL.coupon = CouponCode;
+                        MODEL.gift = ctrl.gift || MODEL.gift;
+                        MODEL.coupon = ctrl.coupon || MODEL.coupon;
 
                         const { list, selected } = paymentUtils.generateMethods({
                             choice: ctrl.method.value,
