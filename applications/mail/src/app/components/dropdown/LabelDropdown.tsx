@@ -1,5 +1,6 @@
-import React, { useState, ChangeEvent, useMemo } from 'react';
+import React, { useState, ChangeEvent, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
+import { FocusScope } from '@react-aria/focus';
 import {
     SearchInput,
     Icon,
@@ -22,6 +23,7 @@ import { Element } from '../../models/element';
 import { hasLabel } from '../../helpers/elements';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { getStandardFolders } from '../../helpers/labels';
+import { Breakpoints } from '../../models/utils';
 
 import './LabelDropdown.scss';
 
@@ -49,14 +51,16 @@ interface Props {
     labelID: string;
     onClose: () => void;
     onLock: (lock: boolean) => void;
+    breakpoints: Breakpoints;
 }
 
-const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Props) => {
+const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock, breakpoints }: Props) => {
     const labelIDs = labels.map(({ ID }) => ID);
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
     const [search, updateSearch] = useState('');
+    const [containFocus, setContainFocus] = useState(true);
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
     const [alsoArchive, updateAlsoArchive] = useState(false);
 
@@ -65,6 +69,8 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
 
     const initialState = useMemo(() => getInitialState(labels, elements), [elements, labels]);
     const [selectedLabelIDs, setSelectedLabelIDs] = useState<SelectionState>(initialState);
+
+    useEffect(() => onLock(!containFocus), [containFocus]);
 
     if (!elements || !elements.length) {
         return null;
@@ -131,14 +137,18 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
     };
 
     const handleCreate = () => {
-        onLock(true);
+        setContainFocus(false);
         const newLabel: Pick<Label, 'Name' | 'Color' | 'Type'> = {
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             Type: LABEL_TYPE.MESSAGE_LABEL
         };
         createModal(
-            <LabelModal label={newLabel} onAdd={(label) => handleAddNewLabel(label)} onClose={() => onLock(false)} />
+            <LabelModal
+                label={newLabel}
+                onAdd={(label) => handleAddNewLabel(label)}
+                onClose={() => setContainFocus(false)}
+            />
         );
     };
 
@@ -147,11 +157,14 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
     const archiveCheckID = `${uid}-archive`;
     const labelCheckID = (ID: string) => `${uid}-${ID}`;
     const applyDisabled = isDeepEqual(initialState, selectedLabelIDs);
+    const autoFocusSearch = !breakpoints.isNarrow;
 
     return (
-        <>
+        <FocusScope contain={containFocus} restoreFocus autoFocus>
             <div className="flex flex-spacebetween flex-items-center m1 mb0">
-                <label htmlFor={searchInputID} className="bold">{c('Label').t`Label as`}</label>
+                <span className="bold" tabIndex={-2}>
+                    {c('Label').t`Label as`}
+                </span>
                 <Tooltip title={c('Title').t`Create label`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
                         <Icon name="label" className="flex-item-noshrink mr0-25" />+
@@ -164,11 +177,12 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                     onChange={updateSearch}
                     id={searchInputID}
                     placeholder={c('Placeholder').t`Filter labels`}
+                    autoFocus={autoFocusSearch}
                 />
             </div>
             <div className="scroll-if-needed scroll-smooth-touch mt1 labelDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
-                    {list.map(({ ID = '', Name = '', Color = '' }, i) => (
+                    {list.map(({ ID = '', Name = '', Color = '' }) => (
                         <li
                             key={ID}
                             className="dropDown-item dropDown-item-button relative cursor-pointer w100 flex flex-nowrap flex-items-center pt0-5 pb0-5 pl1 pr1"
@@ -195,7 +209,6 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                                 checked={selectedLabelIDs[ID] === LabelState.On}
                                 indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
                                 onChange={handleCheck(ID)}
-                                autoFocus={i === 0}
                             />
                         </li>
                     ))}
@@ -226,7 +239,7 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock }: Prop
                     {c('Action').t`Apply`}
                 </PrimaryButton>
             </div>
-        </>
+        </FocusScope>
     );
 };
 

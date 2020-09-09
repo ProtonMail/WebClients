@@ -126,6 +126,7 @@ const Toolbar = ({
                             onClose={onClose}
                             onLock={onLock}
                             onBack={onBack}
+                            breakpoints={breakpoints}
                         />
                     )}
                 </ToolbarDropdown>
@@ -145,6 +146,7 @@ const Toolbar = ({
                             elements={selectedElements}
                             onClose={onClose}
                             onLock={onLock}
+                            breakpoints={breakpoints}
                         />
                     )}
                 </ToolbarDropdown>

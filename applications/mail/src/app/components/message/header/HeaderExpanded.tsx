@@ -287,6 +287,7 @@ const HeaderExpanded = ({
                                         onClose={onClose}
                                         onLock={onLock}
                                         onBack={onBack}
+                                        breakpoints={breakpoints}
                                     />
                                 )}
                             </HeaderDropdown>
@@ -306,6 +307,7 @@ const HeaderExpanded = ({
                                         elements={elements}
                                         onClose={onClose}
                                         onLock={onLock}
+                                        breakpoints={breakpoints}
                                     />
                                 )}
                             </HeaderDropdown>

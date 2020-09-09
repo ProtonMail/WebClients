@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
+import { FocusScope } from '@react-aria/focus';
 import {
     LabelModal,
     SearchInput,
@@ -21,6 +22,7 @@ import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folde
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { Element } from '../../models/element';
+import { Breakpoints } from '../../models/utils';
 
 import './MoveDropdown.scss';
 
@@ -50,17 +52,21 @@ interface Props {
     onClose: () => void;
     onLock: (lock: boolean) => void;
     onBack: () => void;
+    breakpoints: Breakpoints;
 }
 
-const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, onBack }: Props) => {
+const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, onBack, breakpoints }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
 
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
     const [folders = []] = useFolders();
     const [search, updateSearch] = useState('');
+    const [containFocus, setContainFocus] = useState(true);
     const normSearch = normalize(search);
     const moveToFolder = useMoveToFolder();
+
+    useEffect(() => onLock(!containFocus), [containFocus]);
 
     const treeview = buildTreeview(folders);
 
@@ -91,23 +97,26 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
     };
 
     const handleCreate = () => {
-        onLock(true);
+        setContainFocus(false);
         const newLabel: Pick<Folder, 'Name' | 'Color' | 'ParentID' | 'Type'> = {
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             ParentID: ROOT_FOLDER,
             Type: LABEL_TYPE.MESSAGE_FOLDER
         };
-        createModal(<LabelModal label={newLabel} onClose={() => onLock(false)} />);
+        createModal(<LabelModal label={newLabel} onClose={() => setContainFocus(true)} />);
     };
 
     // The dropdown is several times in the view, native html ids has to be different each time
     const searchInputID = `${uid}-search`;
+    const autoFocusSearch = !breakpoints.isNarrow;
 
     return (
-        <>
+        <FocusScope contain={containFocus} restoreFocus autoFocus>
             <div className="flex flex-spacebetween flex-items-center m1 mb0">
-                <label htmlFor={searchInputID} className="bold">{c('Label').t`Move to`}</label>
+                <span className="bold" tabIndex={-2}>
+                    {c('Label').t`Move to`}
+                </span>
                 <Tooltip title={c('Title').t`Create folder`}>
                     <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
                         <Icon name="folder" className="flex-item-noshrink mr0-25" />+
@@ -120,11 +129,12 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
                     onChange={updateSearch}
                     id={searchInputID}
                     placeholder={c('Placeholder').t`Filter folders`}
+                    autoFocus={autoFocusSearch}
                 />
             </div>
             <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch mt1 moveDropdown-list-container">
                 <ul className="unstyled mt0 mb0">
-                    {list.map((folder: FolderItem, i) => {
+                    {list.map((folder: FolderItem) => {
                         return (
                             <li key={folder.ID} className="dropDown-item">
                                 <button
@@ -133,7 +143,6 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
                                     disabled={loading}
                                     className="dropDown-item-button w100 flex flex-nowrap flex-items-center pl1 pr1 pt0-5 pb0-5"
                                     onClick={() => withLoading(handleMove(folder))}
-                                    autoFocus={i === 0}
                                 >
                                     <Icon name={folder.icon || 'folder'} className="flex-item-noshrink mr0-5" />
                                     <span className="ellipsis" title={folder.Name}>
@@ -150,7 +159,7 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
                     )}
                 </ul>
             </div>
-        </>
+        </FocusScope>
     );
 };
 
