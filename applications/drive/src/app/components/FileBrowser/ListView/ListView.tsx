@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect } from 'react-components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
-import { c } from 'ttag';
 import { buffer } from 'proton-shared/lib/helpers/function';
 import ItemRow from './ItemRow';
 import { FileBrowserProps, FileBrowserItem, DragMoveControls } from '../interfaces';
@@ -143,7 +142,7 @@ const ListView = ({
             className="flex flex-column flex-item-fluid"
         >
             <div>
-                <Table caption={c('Info').t`${caption} heading`} className="pd-fb-table m0">
+                <Table caption={caption} className="pd-fb-table m0">
                     <ListHeader
                         contents={contents}
                         onToggleAllSelected={onToggleAllSelected}
