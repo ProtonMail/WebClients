@@ -14,9 +14,7 @@ import {
     FolderPathsMap,
 } from '../interfaces';
 
-import { PATH_SPLIT_REGEX } from '../constants';
-
-import { escapeSlashes, unescapeSlashes } from '../helpers';
+import { escapeSlashes, unescapeSlashes, splitEscaped } from '../helpers';
 
 const FOLDER_ICONS = {
     [DestinationFolder.INBOX]: 'inbox',
@@ -232,7 +230,7 @@ const ImportManageFoldersRow = ({
     };
 
     const getSourceDisplayName = () => {
-        const split = Source.split(Separator === '/' ? PATH_SPLIT_REGEX : Separator);
+        const split = splitEscaped(Source, Separator);
 
         let parentName = '';
 

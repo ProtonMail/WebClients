@@ -15,9 +15,7 @@ import {
     FolderPathsMap,
 } from '../interfaces';
 
-import { PATH_SPLIT_REGEX } from '../constants';
-
-import { escapeSlashes } from '../helpers';
+import { escapeSlashes, splitEscaped } from '../helpers';
 
 import { Alert } from '../../../components';
 
@@ -35,7 +33,7 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
     const { providerFolders } = modalModel;
 
     const getLevel = (name: string, separator: string) => {
-        const split = name.split(separator === '/' ? PATH_SPLIT_REGEX : separator);
+        const split = splitEscaped(name, separator);
         let level = 0;
         while (split.length) {
             split.pop();
@@ -77,7 +75,7 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
     };
 
     const getNameValue = (destinationPath: string) => {
-        const [firstLevel, secondLevel, ...restOfTheTree] = destinationPath.split(PATH_SPLIT_REGEX);
+        const [firstLevel, secondLevel, ...restOfTheTree] = splitEscaped(destinationPath);
 
         // for level 3 or more
         if (restOfTheTree.length) {
@@ -129,13 +127,11 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
         }, {});
     }, [checkedFoldersMap]);
 
-    const getDescendants = (children: string[], maxLevel?: number, separatorSymbol?: string | RegExp) => {
-        const separator = separatorSymbol === '/' ? PATH_SPLIT_REGEX : separatorSymbol;
-
+    const getDescendants = (children: string[]) => {
         const grandChildren: string[] = children.reduce<string[]>((acc, childName) => {
             const children = folderRelationshipsMap[childName];
 
-            return [...acc, ...getDescendants(children, maxLevel, separator)];
+            return [...acc, ...getDescendants(children)];
         }, []);
 
         return [...children, ...grandChildren];

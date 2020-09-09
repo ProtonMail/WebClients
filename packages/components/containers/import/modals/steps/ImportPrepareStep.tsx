@@ -11,8 +11,8 @@ import { useFolders, useUser, useModals } from '../../../../hooks';
 import { Icon, LabelStack, Button, Alert, Loader, Tooltip, InlineLinkButton } from '../../../../components';
 
 import { ImportModalModel, MailImportFolder } from '../../interfaces';
-import { timeUnitLabels, TIME_UNIT, PATH_SPLIT_REGEX } from '../../constants';
-import { escapeSlashes } from '../../helpers';
+import { timeUnitLabels, TIME_UNIT } from '../../constants';
+import { escapeSlashes, splitEscaped } from '../../helpers';
 
 import CustomizeImportModal from '../CustomizeImportModal';
 
@@ -74,7 +74,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
 
     const showFoldersNameError = useMemo(() => {
         return payload.Mapping.some((m) => {
-            const splitted = m.Destinations.FolderPath.split(PATH_SPLIT_REGEX);
+            const splitted = splitEscaped(m.Destinations.FolderPath);
             return m.checked && splitted[splitted.length - 1].length >= 100;
         });
     }, [payload.Mapping]);
@@ -110,7 +110,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
     }, [showFoldersNumError, showFoldersNameError]);
 
     const getParentSource = (folderPath: string, separator: string) => {
-        const split = folderPath.split(separator === '/' ? PATH_SPLIT_REGEX : separator);
+        const split = splitEscaped(folderPath, separator);
 
         let parentName = '';
 
