@@ -128,7 +128,7 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, ...rest }: Props) => {
                     {url && label ? (
                         <Href url={getActualUrl(url, type)}>{label}</Href>
                     ) : (
-                        <span className="placeholder">{c('Info').t`Fill in the url and text to test your link`}</span>
+                        <span className="placeholder">{c('Info').t`Fill in the URL and text to test your link`}</span>
                     )}
                 </Field>
             </Row>
