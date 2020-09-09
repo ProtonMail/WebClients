@@ -85,8 +85,8 @@ const ItemRow = ({
                 ])}
                 {...itemHandlers}
             >
-                <TableCell className="m0">
-                    <div role="presentation" className="flex" {...checkboxWrapperHandlers}>
+                <TableCell className="m0 flex">
+                    <div role="presentation" className="flex flex-items-center" {...checkboxWrapperHandlers}>
                         <Checkbox
                             disabled={item.Disabled}
                             className="increase-surface-click"
