@@ -62,16 +62,20 @@ const ListHeader = ({
                 <TableHeaderCell>
                     <div className="ellipsis">{c('TableHeader').t`Name`}</div>
                 </TableHeaderCell>
-                {isTrash && <TableHeaderCell className="w25">{c('TableHeader').t`Location`}</TableHeaderCell>}
+                {isTrash && (
+                    <TableHeaderCell className={isDesktop ? 'w20' : 'w25'}>{c('TableHeader')
+                        .t`Location`}</TableHeaderCell>
+                )}
                 <TableHeaderCell
                     direction={getSortDirectionForKey('MIMEType')}
                     onSort={unlessIsTrash(() => handleSort('MIMEType'))}
-                    className={isDesktop ? 'w20' : 'w25'}
+                    className="w20"
                 >
                     {c('TableHeader').t`Type`}
                 </TableHeaderCell>
                 {isDesktop && (
                     <TableHeaderCell
+                        className="w25"
                         direction={getSortDirectionForKey('ModifyTime')}
                         onSort={unlessIsTrash(() => handleSort('ModifyTime'))}
                     >

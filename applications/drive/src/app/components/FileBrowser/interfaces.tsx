@@ -25,6 +25,7 @@ export interface FileBrowserItem {
 }
 
 export interface ItemProps {
+    style?: React.CSSProperties;
     item: FileBrowserItem;
     shareId: string;
     selectedItems: FileBrowserItem[];
