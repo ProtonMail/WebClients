@@ -16,19 +16,16 @@ import { deleteConversations } from 'proton-shared/lib/api/conversations';
 import { c, msgid } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
-import { Breakpoints } from '../../models/utils';
-import { labelIncludes } from '../../helpers/labels';
 
-const { TRASH, SPAM, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
+const { DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
     conversationMode: boolean;
-    breakpoints: Breakpoints;
     selectedIDs: string[];
 }
 
-const DeleteButton = ({ labelID = '', conversationMode, breakpoints, selectedIDs = [] }: Props) => {
+const DeleteButton = ({ labelID = '', conversationMode, selectedIDs = [] }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
@@ -36,10 +33,6 @@ const DeleteButton = ({ labelID = '', conversationMode, breakpoints, selectedIDs
     const [loading, withLoading] = useLoading();
     const count = selectedIDs.length;
     const draft = labelID === DRAFTS || labelID == ALL_DRAFTS;
-
-    const displayDelete =
-        labelIncludes(labelID, TRASH, SPAM, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT) &&
-        (!breakpoints.isNarrow || !labelIncludes(labelID, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT));
 
     const handleDelete = async () => {
         const modalTitle = draft
@@ -91,10 +84,6 @@ const DeleteButton = ({ labelID = '', conversationMode, breakpoints, selectedIDs
 
         createNotification({ text: notificationText });
     };
-
-    if (!displayDelete) {
-        return null;
-    }
 
     return (
         <ToolbarButton

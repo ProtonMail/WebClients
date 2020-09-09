@@ -9,7 +9,6 @@ import ReadUnreadButtons from './ReadUnreadButtons';
 import ToolbarDropdown from './ToolbarDropdown';
 import LayoutDropdown from './LayoutDropdown';
 import MoveButtons from './MoveButtons';
-import DeleteButton from './DeleteButton';
 import EmptyButton from './EmptyButton';
 import SortDropdown from './SortDropdown';
 import FilterDropdown from './FilterDropdown';
@@ -107,12 +106,7 @@ const Toolbar = ({
                     breakpoints={breakpoints}
                     selectedIDs={selectedIDs}
                     onBack={onBack}
-                />
-                <DeleteButton
-                    labelID={labelID}
                     conversationMode={conversationMode}
-                    breakpoints={breakpoints}
-                    selectedIDs={selectedIDs}
                 />
                 <ToolbarSeparator />
                 <ToolbarDropdown
