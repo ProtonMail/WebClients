@@ -12,6 +12,8 @@ import {
     ResetButton,
     LinkButton,
     useModals,
+    useActiveBreakpoint,
+    Button,
 } from 'react-components';
 
 import FolderTree, { FolderTreeItem } from './FolderTree/FolderTree';
@@ -41,6 +43,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
     const [initiallyExpandedFolders, setInitiallyExpandedFolders] = useState<string[]>([]);
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const [hasNoChildren, setHasNoChildren] = useState(false);
+    const { isNarrow } = useActiveBreakpoint();
 
     const { shareId, linkId } = activeFolder;
 
@@ -181,12 +184,21 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
         footer: (
             <FooterModal>
                 <div className="flex flex-spacebetween w100 flex-nowrap">
-                    <LinkButton
-                        disabled={loading || !selectedFolder}
-                        onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
-                    >
-                        {c('Action').t`Create New Folder`}
-                    </LinkButton>
+                    {isNarrow ? (
+                        <Button
+                            icon="folder-new"
+                            disabled={loading || !selectedFolder}
+                            onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
+                            title={c('Action').t`Create New Folder`}
+                        />
+                    ) : (
+                        <LinkButton
+                            disabled={loading || !selectedFolder}
+                            onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
+                        >
+                            {c('Action').t`Create New Folder`}
+                        </LinkButton>
+                    )}
                     <div>
                         <ResetButton disabled={loading} autoFocus>
                             {c('Action').t`Close`}
