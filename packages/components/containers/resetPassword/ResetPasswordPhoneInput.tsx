@@ -12,7 +12,7 @@ const ResetPasswordPhoneInput = ({ value, setValue, id }: Props) => {
             name="phone"
             id={id}
             autoFocus={true}
-            value={value}
+            defaultValue={value}
             containerClassName="w100"
             inputClassName="w100"
             dropdownContainer="body"
