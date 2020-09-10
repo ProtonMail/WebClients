@@ -180,6 +180,7 @@ function useFileBrowserItem<T extends HTMLElement>({
             onDragOver: unlessDisabled(dragMoveControls?.handleDragOver),
             onDragStart: handleDragStart,
             onTouchCancel: handleTouchCancel,
+            onTouchMove: handleTouchCancel,
             onTouchStart: handleTouchStart,
             onTouchEnd: handleTouchEnd,
             onDragEnd: handleDragEnd,
