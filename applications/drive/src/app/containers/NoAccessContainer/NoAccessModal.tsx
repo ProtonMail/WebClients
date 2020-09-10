@@ -20,6 +20,7 @@ const NoAccessModal = (props: any) => {
             {...props}
             onSubmit={goBack}
             onClose={goBack}
+            small
         >
             <div className="aligncenter">
                 <img
@@ -29,11 +30,10 @@ const NoAccessModal = (props: any) => {
                 />
 
                 <p>{c('Info')
-                    .t`ProtonDrive is currently in Beta and is only available to Visionary users of ProtonMail.`}</p>
+                    .t`ProtonDrive is currently in Beta and is only available to the invited users of ProtonMail.`}</p>
             </div>
 
-            <Alert>{c('Info')
-                .t`If you would like to participate in our Beta program today, consider upgrading to Visionary plan. ProtonDrive will be available to all users upon launch.`}</Alert>
+            <Alert>{c('Info').t`ProtonDrive will be available to all users upon launch.`}</Alert>
         </FormModal>
     );
 };
