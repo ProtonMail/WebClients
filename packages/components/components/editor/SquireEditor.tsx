@@ -153,14 +153,16 @@ const SquireEditor = forwardRef(
                 ])}
             >
                 {metadata.isPlainText ? (
-                    <textarea
-                        className="w100 h100 flex-item-fluid pt1 pb1 pl0-5 pr0-5"
-                        ref={textareaRef}
-                        onFocus={onFocus}
-                        onChange={handlePlainTextChange}
-                        placeholder={placeholder}
-                        data-test-id="composer:body"
-                    />
+                    <div className="w100 h100 flex-item-fluid relative">
+                        <textarea
+                            className="covered-absolute w100 h100 pt1 pb1 pl0-5 pr0-5"
+                            ref={textareaRef}
+                            onFocus={onFocus}
+                            onChange={handlePlainTextChange}
+                            placeholder={placeholder}
+                            data-test-id="composer:body"
+                        />
+                    </div>
                 ) : (
                     <>
                         {showEllipseButton && ( // Ellispsis button is placed before because the flex flow is reversed
