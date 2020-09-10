@@ -41,15 +41,19 @@ const ServerDown = () => (
     </span>
 );
 
-const P2P = () => (
-    <span className="ml0-5">
-        <Tooltip title={c('Info').t`P2P`}>p2p</Tooltip>
+export const P2PIcon = () => (
+    <span className="ml0-5 mr0-5">
+        <Tooltip title={c('Info').t`p2p`}>
+            <Icon name="p2p" size={18} className="rounded bg-global-border p0-25" />
+        </Tooltip>
     </span>
 );
 
-const Tor = () => (
-    <span className="ml0-5">
-        <Tooltip title={c('Info').t`Tor`}>tor</Tooltip>
+export const TorIcon = () => (
+    <span className="ml0-5 mr0-5">
+        <Tooltip title={c('Info').t`Tor`}>
+            <Icon name="tor" size={18} className="rounded bg-global-border p0-25" />
+        </Tooltip>
     </span>
 );
 
@@ -116,8 +120,8 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                 <LoadIndicator server={server} />
                                 {server.Tier === 2 && <PlusBadge />}
                                 {server.Servers.every(({ Status }) => !Status) && <ServerDown />}
-                                {isP2PEnabled(server.Features) && <P2P />}
-                                {isTorEnabled(server.Features) && <Tor />}
+                                {isP2PEnabled(server.Features) && <P2PIcon />}
+                                {isTorEnabled(server.Features) && <TorIcon />}
                             </div>,
                             isUpgradeRequired(server) ? (
                                 <Tooltip

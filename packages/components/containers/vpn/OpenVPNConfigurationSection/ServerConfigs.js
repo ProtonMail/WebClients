@@ -9,6 +9,8 @@ import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import Country from './Country';
 import ServerNumber from './ServerNumber';
 import CityNumber from './CityNumber';
+import { isP2PEnabled, isTorEnabled } from './utils';
+import { P2PIcon, TorIcon } from './ConfigsTable';
 
 const getServerNum = (server) => Number(server.Name.replace('-TOR', '').split('#')[1]);
 const getServerRegion = (server) => server.Name.split('#')[0];
@@ -53,7 +55,7 @@ const ServerConfigs = ({ servers, category, ...rest }) => {
                         <Summary>
                             <div className="ml0-5 flex flex-nowrap flex-items-center">
                                 <div className={classnames([category === CATEGORY.SERVER ? 'w33' : ''])}>
-                                    <Country server={group[0]} />
+                                    <Country server={server} />
                                 </div>
                                 {category === CATEGORY.SERVER ? (
                                     <div className="w33">
@@ -61,8 +63,12 @@ const ServerConfigs = ({ servers, category, ...rest }) => {
                                     </div>
                                 ) : null}
                                 {category === CATEGORY.SERVER ? (
-                                    <div className="w33">
+                                    <div className="w33 flex flex-spacebetween">
                                         <CityNumber group={group} />
+                                        <div className={classnames([category === CATEGORY.SERVER ? 'flex' : ''])}>
+                                            {group.some(({ Features }) => isP2PEnabled(Features)) ? <P2PIcon /> : null}
+                                            {group.some(({ Features }) => isTorEnabled(Features)) ? <TorIcon /> : null}
+                                        </div>
                                     </div>
                                 ) : null}
                             </div>
