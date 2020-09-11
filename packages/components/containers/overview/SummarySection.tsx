@@ -117,17 +117,17 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 <div className="mb1">
                     <strong className="bl mb0-5">{c('Title').t`Application settings`}</strong>
                     <ul className="unstyled mt0 mb0">
-                        <li>
+                        <li className="flex flex-items-center">
                             <Icon name="protonmail" className="mr0-5" />
                             <AppLink to="/overview" toApp={APPS.PROTONMAIL_SETTINGS}>{c('Link')
                                 .t`ProtonMail settings`}</AppLink>
                         </li>
-                        <li>
+                        <li className="flex flex-items-center">
                             <Icon name="protoncalendar" className="mr0-5" />
                             <AppLink to="/settings/overview" toApp={APPS.PROTONCALENDAR}>{c('Link')
                                 .t`ProtonCalendar settings`}</AppLink>
                         </li>
-                        <li>
+                        <li className="flex flex-items-center">
                             <Icon name="protoncontacts" className="mr0-5" />
                             <AppLink to="/settings/overview" toApp={APPS.PROTONCONTACTS}>{c('Link')
                                 .t`ProtonContacts settings`}</AppLink>
