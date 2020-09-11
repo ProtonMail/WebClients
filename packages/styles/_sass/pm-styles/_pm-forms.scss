@@ -40,6 +40,9 @@ $field-container: 26rem !default;
   border-radius: $global-border-radius;
   color: var(--color-input, $pm-global-grey);
   outline: 0;
+  &:not(textarea) {
+  	height: $default-height-fields;
+  }
   &:focus,
   &.focus,
   &:focus-within {
@@ -94,7 +97,6 @@ select.pm-field {
   background: var(--bgcolor-input, $pm-input-background) url("#{$path-images}sprite-for-css-only.svg#css-caret") calc(100% - 6px) 50% no-repeat;
   background-size: 1.5rem;
   padding-left: 1em;
-  height: $default-height-fields;
   padding-right: 20px;
   text-overflow: ellipsis;
   &::-ms-expand {
@@ -140,7 +142,9 @@ select.pm-field {
 }
 
 
-
+textarea {
+	min-height: $default-height-fields; // Equals pm-field inputs height
+}
 
 /* firefox bug */
 textarea[required].pm-field.field-pristine:invalid {

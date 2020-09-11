@@ -243,8 +243,7 @@ $item-container-padding-left-right: em(12) !default;
 
 $conversation-icon-size: 3.2rem !default;
 
-.item-icon,
-.day-icon {
+.item-icon {
 	width: $conversation-icon-size;
 	height: $conversation-icon-size;
 	font-size: 1.2rem;
@@ -348,27 +347,6 @@ $conversation-icon-size: 3.2rem !default;
 	}
 	.item-weight {
 		min-width: 5em;
-	}
-}
-
-/* day checkboxes (Calendar) */
-.day-checkbox {
-	&:hover+.day-icon {
-		color: $pm-primary;
-	}
-
-	// checked state
-	&:checked+.day-icon {
-		background-color: $pm-primary;
-		border-color: $pm-primary;
-		color: $white;
-
-		&>.item-icon-fakecheck {
-			display: flex;
-
-			animation: conversationIconIn ease .15s;
-		}
-
 	}
 }
 
