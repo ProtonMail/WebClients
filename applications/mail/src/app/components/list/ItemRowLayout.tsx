@@ -64,7 +64,10 @@ const ItemRowLayout = ({
                     </span>
                 )}
                 {isConversation && (
-                    <NumMessages className={classnames(['mr0-25', unread && 'bold'])} conversation={element} />
+                    <NumMessages
+                        className={classnames(['mr0-25 flex-item-noshrink', unread && 'bold'])}
+                        conversation={element}
+                    />
                 )}
                 <span className={classnames(['inbl mw100 ellipsis pr1', unread && 'bold'])} title={Subject}>
                     {Subject}
