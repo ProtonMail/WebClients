@@ -1,8 +1,8 @@
 import { END_TYPE, FREQUENCY_COUNT_MAX, MAXIMUM_DATE } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
-import { Radio, DateInput, IntegerInput } from 'react-components';
+import { DateInput, IntegerInput, Select } from 'react-components';
 import { isValid } from 'date-fns';
 
 import { DateTimeModel, FrequencyModel, EventModelErrors } from '../../../interfaces/EventModel';
@@ -40,79 +40,81 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
 
     const safeCountPlural = frequencyModel.ends.count || 1; // Can get undefined through the input
 
-    return (
-        <div className="flex flex-column flex-items-start w100">
-            <label className="pm-label--small" htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
+    const options = [
+        {
+            value: NEVER,
+            text: c('Custom frequency option').t`Never`,
+        },
+        {
+            value: UNTIL,
+            text: c('Custom frequency option').t`On date…`,
+        },
+        {
+            value: AFTER_N_TIMES,
+            text: c('Custom frequency option').t`After repeating…`,
+        },
+    ];
 
-            <div className="calendar-recurringFrequencyEnd-grid mt0-5">
-                <div className="flex flex-nowrap flex-item-fluid calendar-recurringFrequencyEnd-grid-fullLine">
-                    <span className="flex flex-item-noshrink">
-                        <Radio
-                            id="event-ends-radio-never"
-                            checked={frequencyModel.ends.type === NEVER}
-                            onChange={() => handleChangeEndType(NEVER)}
-                        >
-                            {c('Custom frequency option').t`Never`}
-                        </Radio>
-                    </span>
+    return (
+        <div className="flex-item-fluid">
+            <label htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
+
+            <div className="flex flex-nowrap flex-item-fluid ontinymobile-flex-column">
+                <div className="flex-item-fluid mt0-5">
+                    <Select
+                        value={frequencyModel.ends.type}
+                        options={options}
+                        onChange={({ target }: ChangeEvent<HTMLSelectElement>) => {
+                            const newValue = target.value as END_TYPE;
+                            handleChangeEndType?.(newValue);
+                        }}
+                        title={c('Title').t`Select when this event will stop happening`}
+                    />
                 </div>
 
-                <span className="flex flex-item-noshrink">
-                    <Radio
-                        id="event-ends-radio-until"
-                        className="mr1 flex-nowrap mtauto mbauto"
-                        checked={frequencyModel.ends.type === UNTIL}
-                        onChange={() => handleChangeEndType(UNTIL)}
-                    >
-                        {c('Custom frequency option').t`On`}
-                    </Radio>
-                </span>
-                <span>
-                    <DateInput
-                        id={UNTIL_ID}
-                        value={frequencyModel.ends.until}
-                        min={start.date}
-                        defaultDate={start.date}
-                        onChange={handleChangeEndUntil}
-                        onFocus={() => handleChangeEndType(UNTIL)}
-                        displayWeekNumbers={displayWeekNumbers}
-                        weekStartsOn={weekStartsOn}
-                        aria-invalid={isSubmitted && !!errors.until}
-                        isSubmitted={isSubmitted}
-                        max={MAXIMUM_DATE}
-                    />
-                </span>
-                <span />
+                {frequencyModel.ends.type === UNTIL && (
+                    <div className="flex-item-fluid mt0-5 ml0-5 ontinymobile-ml0">
+                        <DateInput
+                            id={UNTIL_ID}
+                            value={frequencyModel.ends.until}
+                            min={start.date}
+                            defaultDate={start.date}
+                            onChange={handleChangeEndUntil}
+                            onFocus={() => handleChangeEndType(UNTIL)}
+                            displayWeekNumbers={displayWeekNumbers}
+                            weekStartsOn={weekStartsOn}
+                            aria-invalid={isSubmitted && !!errors.until}
+                            isSubmitted={isSubmitted}
+                            max={MAXIMUM_DATE}
+                            title={c('Title').t`Select event's last date`}
+                        />
+                    </div>
+                )}
 
-                <span className="flex flex-item-noshrink">
-                    <Radio
-                        id="event-ends-radio-count"
-                        className="mr1 flex-nowrap mtauto mbauto"
-                        checked={frequencyModel.ends.type === AFTER_N_TIMES}
-                        onChange={() => handleChangeEndType(AFTER_N_TIMES)}
-                    >
-                        {c('Custom frequency option').t`After`}
-                    </Radio>
-                </span>
-                <span>
-                    <IntegerInput
-                        id={COUNT_ID}
-                        value={frequencyModel.ends.count}
-                        min={1}
-                        onChange={handleChangeEndCount}
-                        onFocus={() => handleChangeEndType(AFTER_N_TIMES)}
-                        onBlur={() => {
-                            if (!frequencyModel.ends.count) {
-                                handleChangeEndCount(1);
-                            }
-                        }}
-                        aria-invalid={isSubmitted && !!errors.count}
-                        isSubmitted={isSubmitted}
-                    />
-                </span>
-                <span className="mtauto mbauto">
-                    {c('Custom frequency option').ngettext(msgid`Occurrence`, `Occurrences`, safeCountPlural)}
-                </span>
+                {frequencyModel.ends.type === AFTER_N_TIMES && (
+                    <div className="flex flex-nowrap flex-items-center flex-item-fluid mt0-5 ml0-5 ontinymobile-ml0">
+                        <div className="flex-item-fluid mw5e">
+                            <IntegerInput
+                                id={COUNT_ID}
+                                value={frequencyModel.ends.count}
+                                min={1}
+                                onChange={handleChangeEndCount}
+                                onFocus={() => handleChangeEndType(AFTER_N_TIMES)}
+                                onBlur={() => {
+                                    if (!frequencyModel.ends.count) {
+                                        handleChangeEndCount(1);
+                                    }
+                                }}
+                                aria-invalid={isSubmitted && !!errors.count}
+                                isSubmitted={isSubmitted}
+                                title={c('Title').t`Choose how many times this event will repeat`}
+                            />
+                        </div>
+                        <div className="flex-item-flex-item-noshrink ml0-5">
+                            {c('Custom frequency option').ngettext(msgid`time`, `times`, safeCountPlural)}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

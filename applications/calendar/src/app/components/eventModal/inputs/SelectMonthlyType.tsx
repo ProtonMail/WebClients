@@ -13,10 +13,12 @@ interface Props {
     id?: string;
     value: MONTHLY_TYPE;
     date: Date;
+    className?: string;
+    title?: string;
     onChange: (value: MONTHLY_TYPE) => void;
 }
 
-const SelectMonthlyType = ({ id, value, date, onChange }: Props) => {
+const SelectMonthlyType = ({ id, value, date, className, title, onChange }: Props) => {
     const options = useMemo(() => {
         const startFakeUtcDate = toUTCDate(fromLocalDate(date));
 
@@ -43,7 +45,8 @@ const SelectMonthlyType = ({ id, value, date, onChange }: Props) => {
 
     return (
         <Select
-            className="flex-item-fluid"
+            className={className}
+            title={title}
             id={id}
             value={value}
             options={options}

@@ -1,14 +1,17 @@
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from 'proton-shared/lib/calendar/constants';
 import React, { ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
-import { Select, IntegerInput, classnames } from 'react-components';
+import { Select, IntegerInput } from 'react-components';
 
+import RepeatOnRow from './RepeatOnRow';
 import SelectMonthlyType from '../inputs/SelectMonthlyType';
 import { DateTimeModel, FrequencyModel, EventModelErrors } from '../../../interfaces/EventModel';
 
 interface Props {
     frequencyModel: FrequencyModel;
     start: DateTimeModel;
+    weekStartsOn: WeekStartsOn;
     onChange: (value: FrequencyModel) => void;
     errors: EventModelErrors;
     isSubmitted: boolean;
@@ -18,7 +21,7 @@ const getMaxFrequencyInterval = (frequency: FREQUENCY) => {
     return FREQUENCY_INTERVALS_MAX[frequency];
 };
 
-const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted }: Props) => {
+const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors, isSubmitted }: Props) => {
     const isMonthly = frequencyModel.frequency === FREQUENCY.MONTHLY;
     const isWeekly = frequencyModel.frequency === FREQUENCY.WEEKLY;
     const safeIntervalPlural = frequencyModel.interval || 1; // Can get undefined through the input
@@ -42,53 +45,62 @@ const RepeatEveryRow = ({ frequencyModel, start, onChange, errors, isSubmitted }
     };
 
     return (
-        <div
-            className={classnames([
-                'flex flex-column flex-items-start mb0-5 mr1 onmobile-w100 onmobile-mr0',
-                isWeekly && 'w40',
-            ])}
-        >
-            <label className="pm-label--small" htmlFor="event-custom-frequency-select">{c('Label')
-                .t`Repeat every`}</label>
-            <div className="flex flex-nowrap mt0-5 onmobile-w100">
-                <div className="flex w6e">
-                    <IntegerInput
-                        data-test-id="event-modal/custom-frequency/interval:input"
-                        min={1}
-                        value={frequencyModel.interval}
-                        onChange={handleChangeInterval}
-                        onBlur={() => {
-                            if (!frequencyModel.interval) {
-                                handleChangeInterval(1);
-                            }
-                        }}
-                        aria-invalid={isSubmitted && !!errors.interval}
-                        isSubmitted={isSubmitted}
-                    />
-                </div>
-                <div className="flex flex-item-fluid">
-                    <Select
-                        className="ml0-5"
-                        id="event-custom-frequency-select"
-                        data-test-id="event-modal/custom-frequency/interval:frequency"
-                        value={frequencyModel.frequency}
-                        options={intervalOptions}
-                        onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
-                            handleChangeFrequency(target.value as FREQUENCY)
-                        }
-                    />
-                </div>
-                {isMonthly && (
-                    <div className="flex ml0-5 flex-item-fluid">
-                        <SelectMonthlyType
-                            id="event-custom-monthly-select"
-                            value={frequencyModel.monthly.type}
-                            date={start.date}
-                            onChange={(type) => onChange({ ...frequencyModel, monthly: { type } })}
-                        />
+        <div className="flex onmobile-flex-column">
+            <div className="flex-item-fluid">
+                <label htmlFor="event-custom-frequency-number">{c('Label').t`Repeat every`}</label>
+                <div className="flex onmobile-flex-column mt0-5 mb0-5">
+                    <div className="flex flex-nowrap flex-item-fluid">
+                        <span className="flex-item-fluid">
+                            <IntegerInput
+                                id="event-custom-frequency-number"
+                                data-test-id="event-modal/custom-frequency/interval:input"
+                                min={1}
+                                value={frequencyModel.interval}
+                                onChange={handleChangeInterval}
+                                onBlur={() => {
+                                    if (!frequencyModel.interval) {
+                                        handleChangeInterval(1);
+                                    }
+                                }}
+                                aria-invalid={isSubmitted && !!errors.interval}
+                                isSubmitted={isSubmitted}
+                                title={c('Title').t`Choose how often this even repeats`}
+                            />
+                        </span>
+                        <span className="flex-item-fluid ml0-5">
+                            <Select
+                                id="event-custom-frequency-select"
+                                data-test-id="event-modal/custom-frequency/interval:frequency"
+                                value={frequencyModel.frequency}
+                                options={intervalOptions}
+                                onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
+                                    handleChangeFrequency(target.value as FREQUENCY)
+                                }
+                                title={c('Title').t`Select event frequency interval`}
+                            />
+                        </span>
                     </div>
-                )}
+                    {isMonthly && (
+                        <div className="flex-item-fluid ml0-5 onmobile-ml0 onmobile-mt0-5">
+                            <SelectMonthlyType
+                                id="event-custom-monthly-select"
+                                value={frequencyModel.monthly.type}
+                                date={start.date}
+                                onChange={(type) => onChange({ ...frequencyModel, monthly: { type } })}
+                                title={c('Title').t`Select a day in the month`}
+                            />
+                        </div>
+                    )}
+                </div>
             </div>
+            {isWeekly && (
+                <RepeatOnRow
+                    frequencyModel={frequencyModel}
+                    start={start}
+                    weekStartsOn={weekStartsOn}
+                    onChange={onChange}
+                />
+            )}
         </div>
     );
 };

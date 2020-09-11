@@ -3,6 +3,7 @@ import { classnames, IntegerInput, Select, TimeInput } from 'react-components';
 import { c } from 'ttag';
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
 
+import { NOTIFICATION_INPUT_ID } from '../const';
 import { NOTIFICATION_UNITS_MAX } from '../../../constants';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
 import {
@@ -14,7 +15,7 @@ import {
     getWeeksBefore,
 } from './notificationOptions';
 
-const { EMAIL, DEVICE } = SETTINGS_NOTIFICATION_TYPE;
+const { EMAIL, DEVICE /* BOTH */ } = SETTINGS_NOTIFICATION_TYPE;
 
 interface Props {
     className?: string;
@@ -55,36 +56,12 @@ const NotificationInput = ({
     const errorProps = typeof error === 'string' ? { 'aria-invalid': true } : {};
 
     return (
-        <div
-            className={classnames([
-                'flex flex-nowrap flex-items-center flex-item-fluid',
-                className,
-                isAllDay && 'onmobile-flex-column',
-            ])}
-        >
-            <span
-                className={classnames([
-                    'flex flex-nowrap flex-items-center flex-item-fluid',
-                    isAllDay && 'onmobile-mb0-5',
-                ])}
-            >
-                {hasType ? (
-                    <Select
-                        className="mr1"
-                        value={type}
-                        options={[
-                            { text: c('Notification type').t`Notification`, value: DEVICE },
-                            { text: c('Notification type').t`Email`, value: EMAIL },
-                        ]}
-                        onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
-                            onChange({ ...notification, type: +target.value })
-                        }
-                        {...errorProps}
-                    />
-                ) : null}
-                {hasValueInput ? (
-                    <span className="relative w6e mr1 flex-item-noshrink">
+        <div className={classnames(['flex flex-nowrap flex-item-fluid onmobile-flex-column', className])}>
+            <span className="flex flex-nowrap flex-item-fluid">
+                {hasValueInput && (
+                    <span className="flex-item-fluid mr0-5">
                         <IntegerInput
+                            id={NOTIFICATION_INPUT_ID}
                             data-test-id="notification-time-input"
                             step={1}
                             min={0}
@@ -101,13 +78,14 @@ const NotificationInput = ({
                                     onChange({ ...notification, value: 1 });
                                 }
                             }}
+                            title={c('Title').t`Choose a number`}
                             {...errorProps}
                         />
                     </span>
-                ) : null}
+                )}
                 <Select
                     data-test-id="notification-time-dropdown"
-                    className={classnames([isAllDay && 'mr1 onmobile-mr0'])}
+                    className="flex-item-fluid flex-item-grow-2"
                     value={optionsValue}
                     options={textOptions}
                     onChange={({ target }: ChangeEvent<HTMLSelectElement>) => {
@@ -121,21 +99,49 @@ const NotificationInput = ({
                             ...option,
                         });
                     }}
+                    title={c('Title').t`Select when you want this notification to be sent`}
                     {...errorProps}
                 />
             </span>
-            {isAllDay && at ? (
-                <span className="flex flex-nowrap flex-items-center w30">
-                    <span className="flex-item-noshrink">{c('Notification time input').t`at`}</span>
-                    <TimeInput
-                        data-test-id="notification-time-at"
-                        className="ml1"
-                        value={at}
-                        onChange={(at) => onChange({ ...notification, at })}
-                        {...errorProps}
-                    />
+            {((isAllDay && at) || hasType) && (
+                <span className="flex ontinymobile-flex-column flex-nowrap flex-item-fluid">
+                    {isAllDay && at && (
+                        <span className="flex flex-nowrap flex-item-fluid flex-items-center onmobile-mt0-5">
+                            <span className="flex-item-noshrink ml0-5 onmobile-ml0 mr0-5">{c('Notification time input')
+                                .t`at`}</span>
+                            <TimeInput
+                                data-test-id="notification-time-at"
+                                value={at}
+                                onChange={(at) => onChange({ ...notification, at })}
+                                title={c('Title').t`Select the time to send this notification`}
+                                {...errorProps}
+                            />
+                        </span>
+                    )}
+                    {hasType && (
+                        <span
+                            className={classnames([
+                                'flex flex-nowrap flex-item-fluid onmobile-mt0-5 ml0-5',
+                                isAllDay && at ? 'ontinymobile-ml0' : 'onmobile-ml0',
+                            ])}
+                        >
+                            <Select
+                                value={type}
+                                options={[
+                                    { text: c('Notification type').t`via notification`, value: DEVICE },
+                                    { text: c('Notification type').t`by email`, value: EMAIL },
+                                    // { text: c('Notification type').t`both notification and email`, value: BOTH },
+                                ]}
+                                onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
+                                    onChange({ ...notification, type: +target.value })
+                                }
+                                title={c('Title').t`Select the way to send this notification`}
+                                {...errorProps}
+                            />
+                        </span>
+                    )}
                 </span>
-            ) : null}
+            )}
         </div>
     );
 };

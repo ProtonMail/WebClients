@@ -1,0 +1,30 @@
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
+.day-icon.pm-button {
+    width: 2.5em;
+    padding: em(6); // Same as inputs
+
+}
+
+.day-checkbox {
+    &:focus + .day-icon {
+        // Same as buttons
+        box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+    }
+
+    &:checked + .day-icon {
+        // Need !important because current dark mode management. Remove those as soon as possible.
+        background-color: $pm-primary !important;
+        border-color: $pm-primary !important;
+    }
+
+    &:checked:not(:active) + .day-icon {
+        // Need !important because current dark mode management. Remove those as soon as possible.
+        color: $white !important;
+    }
+
+    &:active + .day-icon {
+        // Need !important because current dark mode management. Remove those as soon as possible.
+        border-color: $pm-global-border !important;
+    }
+}

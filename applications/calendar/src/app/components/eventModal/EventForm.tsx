@@ -11,6 +11,7 @@ import {
     DESCRIPTION_INPUT_ID,
     FREQUENCY_INPUT_ID,
     LOCATION_INPUT_ID,
+    NOTIFICATION_INPUT_ID,
     TITLE_INPUT_ID,
 } from './const';
 import createPropFactory from './eventForm/createPropFactory';
@@ -58,81 +59,84 @@ const EventForm = ({
 
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
 
-    const dateRow = isMinimal ? (
-        <MiniDateTimeRows
-            model={model}
-            setModel={setModel}
-            endError={errors.end}
-            displayWeekNumbers={displayWeekNumbers}
-            weekStartsOn={weekStartsOn}
-        />
-    ) : (
-        <DateTimeRow
-            model={model}
-            setModel={setModel}
-            endError={errors.end}
-            displayWeekNumbers={displayWeekNumbers}
-            weekStartsOn={weekStartsOn}
-            tzid={tzid!}
-        />
-    );
-
     return (
-        <div {...props}>
-            <IconRow id={TITLE_INPUT_ID}>
+        <div className="mt0-5" {...props}>
+            <IconRow id={TITLE_INPUT_ID} title={c('Label').t`Event title`}>
                 <Input
                     id={TITLE_INPUT_ID}
-                    placeholder={c('Placeholder').t`Add title`}
+                    placeholder={c('Placeholder').t`E.g., Get a coffee with Sarah`}
+                    title={c('Title').t`Add event title`}
                     autoFocus
                     maxLength={MAX_LENGTHS.TITLE}
                     {...propsFor('title', true)}
                 />
             </IconRow>
-            {dateRow}
+
+            {isMinimal ? (
+                <MiniDateTimeRows
+                    model={model}
+                    setModel={setModel}
+                    endError={errors.end}
+                    displayWeekNumbers={displayWeekNumbers}
+                    weekStartsOn={weekStartsOn}
+                />
+            ) : (
+                <DateTimeRow
+                    model={model}
+                    setModel={setModel}
+                    endError={errors.end}
+                    displayWeekNumbers={displayWeekNumbers}
+                    weekStartsOn={weekStartsOn}
+                    tzid={tzid!}
+                />
+            )}
+
             {!isMinimal && (
-                <IconRow icon="reload" title={c('Label').t`Frequency`} id={FREQUENCY_INPUT_ID}>
-                    <div>
-                        <FrequencyInput
-                            className={classnames([isCustomFrequencySet && 'mb0-5'])}
-                            id={FREQUENCY_INPUT_ID}
-                            data-test-id="event-modal/frequency:select"
-                            value={frequencyModel.type}
-                            onChange={(type) =>
-                                setModel({
-                                    ...model,
-                                    frequencyModel: { ...frequencyModel, type },
-                                    hasTouchedRrule: true,
-                                })
-                            }
+                <IconRow icon="reload" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
+                    <FrequencyInput
+                        className={classnames([isCustomFrequencySet && 'mb0-5'])}
+                        id={FREQUENCY_INPUT_ID}
+                        data-test-id="event-modal/frequency:select"
+                        value={frequencyModel.type}
+                        onChange={(type) =>
+                            setModel({
+                                ...model,
+                                frequencyModel: { ...frequencyModel, type },
+                                hasTouchedRrule: true,
+                            })
+                        }
+                        title={c('Title').t`Select event frequency`}
+                    />
+                    {isCustomFrequencySet && (
+                        <CustomFrequencySelector
+                            frequencyModel={frequencyModel}
+                            start={start}
+                            displayWeekNumbers={displayWeekNumbers}
+                            weekStartsOn={weekStartsOn}
+                            errors={errors}
+                            isSubmitted={isSubmitted}
+                            onChange={(frequencyModel) => setModel({ ...model, frequencyModel, hasTouchedRrule: true })}
                         />
-                        {isCustomFrequencySet && (
-                            <div className="flex flex-nowrap flex-item-fluid">
-                                <CustomFrequencySelector
-                                    frequencyModel={frequencyModel}
-                                    start={start}
-                                    displayWeekNumbers={displayWeekNumbers}
-                                    weekStartsOn={weekStartsOn}
-                                    errors={errors}
-                                    isSubmitted={isSubmitted}
-                                    onChange={(frequencyModel) =>
-                                        setModel({ ...model, frequencyModel, hasTouchedRrule: true })
-                                    }
-                                />
-                            </div>
-                        )}
-                    </div>
+                    )}
                 </IconRow>
             )}
-            <IconRow icon="address" title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
+
+            <IconRow icon="address" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
                 <Input
                     id={LOCATION_INPUT_ID}
-                    placeholder={c('Placeholder').t`Add location`}
+                    placeholder={c('Placeholder').t`E.g., Corner Cafe`}
                     maxLength={MAX_LENGTHS.LOCATION}
+                    title={c('Title').t`Add event location`}
                     {...propsFor('location', true)}
                 />
             </IconRow>
+
             {!isMinimal && (
-                <IconRow icon="notifications-enabled" title={c('Label').t`Notifications`}>
+                <IconRow
+                    id={NOTIFICATION_INPUT_ID}
+                    icon="notifications-enabled"
+                    title={c('Label').t`Event notifications`}
+                >
                     {isAllDay ? (
                         <Notifications
                             {...{
@@ -174,23 +178,31 @@ const EventForm = ({
                     )}
                 </IconRow>
             )}
-            {calendars.length > 0 ? (
+
+            {calendars.length > 0 && (
                 <IconRow
                     icon="calendar"
-                    title={c('Label').t`Calendar`}
+                    title={c('Label').t`Your calendars`}
                     id={CALENDAR_INPUT_ID}
                     className="flex-item-fluid relative"
                 >
-                    <CalendarSelect withIcon={false} id={CALENDAR_INPUT_ID} {...{ model, setModel }} />
+                    <CalendarSelect
+                        withIcon={false}
+                        id={CALENDAR_INPUT_ID}
+                        title={c('Title').t`Select which calendar to add this event to`}
+                        {...{ model, setModel }}
+                    />
                 </IconRow>
-            ) : null}
-            <IconRow icon="text-align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
+            )}
+
+            <IconRow icon="text-align-left" title={c('Label').t`Event description`} id={DESCRIPTION_INPUT_ID}>
                 <TextArea
                     id={DESCRIPTION_INPUT_ID}
                     minRows={2}
                     autoGrow
-                    placeholder={c('Placeholder').t`Add description`}
+                    placeholder={c('Placeholder').t`E.g., Don’t forget paperwork`}
                     maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
+                    title={c('Title').t`Add more information related to this event`}
                     {...propsFor('description', true)}
                 />
             </IconRow>

@@ -10,9 +10,13 @@ interface Props {
     id?: string;
 }
 const IconRow = ({ children, icon, iconColor, className, title, id }: Props) => (
-    <div className="flex flex-nowrap item mb1 pm-form--iconLabels">
-        <Label htmlFor={id} title={title}>
-            {icon && <Icon name={icon} alt={title} color={iconColor} />}
+    <div className="flex flex-nowrap flex-items-start mb1 pm-form--iconLabels">
+        <Label className="pb0-5" htmlFor={id} title={title}>
+            {icon ? (
+                <Icon name={icon} alt={title} color={iconColor} />
+            ) : (
+                <>&nbsp;{title && <span className="sr-only">{title}</span>}</>
+            )}
         </Label>
         <div className={className || 'flex-item-fluid'}>{children}</div>
     </div>

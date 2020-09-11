@@ -28,12 +28,11 @@ const Notifications = ({
     errors,
 }: Props) => {
     return (
-        <div>
+        <>
             {notifications.map((notification, index) => {
                 return (
-                    <div className="mb1 flex flex-nowrap">
+                    <div className="mb1 flex flex-nowrap flex-items-center">
                         <NotificationInput
-                            className="mr1"
                             hasWhen={hasWhen}
                             hasType={hasType}
                             notification={notification}
@@ -42,25 +41,27 @@ const Notifications = ({
                         />
                         <LinkButton
                             data-test-id="delete-notification"
-                            className="flex-item-noshrink ml0-5 pm-button--currentColor"
-                            title={c('Action').t`Remove notification`}
+                            className="w2e flex flex-item-noshrink ml0-5"
+                            title={c('Action').t`Remove this notification`}
                             onClick={() => onChange(removeItem(notifications, index))}
                         >
-                            <Icon name="close" />
+                            <Icon name="trash" className="mauto" />
                         </LinkButton>
                     </div>
                 );
             })}
             {canAdd && (
-                <div>
-                    <LinkButton
-                        data-test-id="add-notification"
-                        onClick={() => onChange(addItem(notifications, { ...defaultNotification }))}
-                    >{c('Action').t`Add notification`}</LinkButton>
-                </div>
+                <LinkButton
+                    className="p0"
+                    data-test-id="add-notification"
+                    title={c('Title').t`Add another notification to remind you this event`}
+                    onClick={() => onChange(addItem(notifications, { ...defaultNotification }))}
+                >
+                    {c('Action').t`Add notification`}
+                </LinkButton>
             )}
-            <ErrorZone id={NOTIFICATION_ID}>{errors?.notifications?.text || ''}</ErrorZone>
-        </div>
+            {errors?.notifications?.text && <ErrorZone id={NOTIFICATION_ID}>{errors.notifications.text}</ErrorZone>}
+        </>
     );
 };
 

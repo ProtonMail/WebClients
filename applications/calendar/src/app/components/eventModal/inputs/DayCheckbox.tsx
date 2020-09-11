@@ -1,4 +1,5 @@
 import React from 'react';
+import './DayCheckbox.scss';
 
 interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     id: string;
@@ -8,10 +9,10 @@ interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLIn
 
 const DayCheckbox = ({ id, dayAbbreviation, dayLong, ...rest }: Props) => {
     return (
-        <label htmlFor={id} className="mr1 inline-flex">
+        <label htmlFor={id} className="mt0-5 inline-flex relative" title={dayLong}>
             <input id={id} type="checkbox" className="day-checkbox sr-only" {...rest} />
-            <span className="day-icon flex-item-noshrink rounded50 inline-flex">
-                <span className="mauto item-abbr" aria-hidden="true">
+            <span className="pm-button day-icon flex-item-noshrink rounded50 flex">
+                <span className="mauto" aria-hidden="true">
                     {dayAbbreviation}
                 </span>
                 <span className="sr-only">{dayLong}</span>

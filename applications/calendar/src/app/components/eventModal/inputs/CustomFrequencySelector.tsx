@@ -1,10 +1,8 @@
-import { FREQUENCY } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React from 'react';
 
 import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
 import RepeatEveryRow from '../rows/RepeatEveryRow';
-import RepeatOnRow from '../rows/RepeatOnRow';
 import EndsRow from '../rows/EndsRow';
 
 interface Props {
@@ -26,22 +24,15 @@ const CustomFrequencySelector = ({
     isSubmitted,
 }: Props) => {
     return (
-        <div className="w100 flex flex-wrap">
+        <>
             <RepeatEveryRow
                 frequencyModel={frequencyModel}
                 start={start}
+                weekStartsOn={weekStartsOn}
                 onChange={onChange}
                 errors={errors}
                 isSubmitted={isSubmitted}
             />
-            {frequencyModel.frequency === FREQUENCY.WEEKLY && (
-                <RepeatOnRow
-                    frequencyModel={frequencyModel}
-                    start={start}
-                    weekStartsOn={weekStartsOn}
-                    onChange={onChange}
-                />
-            )}
             <EndsRow
                 frequencyModel={frequencyModel}
                 start={start}
@@ -51,7 +42,7 @@ const CustomFrequencySelector = ({
                 isSubmitted={isSubmitted}
                 onChange={onChange}
             />
-        </div>
+        </>
     );
 };
 

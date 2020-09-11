@@ -36,24 +36,23 @@ const RepeatOnRow = ({ frequencyModel, start, weekStartsOn, onChange }: Props) =
     };
 
     return (
-        <div className="flex flex-column flex-items-start mb0-5">
-            <label className="pm-label--small" htmlFor="event-custom-frequency-select">{c('Label').t`Repeat on`}</label>
-            <div className="flex flex-nowrap mt0-5">
+        <div className="flex-item-fluid ml0-5 mb0-5 onmobile-ml0">
+            <label htmlFor="event-custom-frequency-select">{c('Label').t`Repeat on`}</label>
+            <div className="flex flex-spacebetween">
                 {DAYS.map((dayIndex) => {
                     const day = (dayIndex + weekStartsOn) % 7;
                     const dayLong = weekdaysLong[day];
                     const dayAbbreviation = weekdaysAbbreviations[day];
                     const checked = frequencyModel.weekly.days.includes(day);
                     return (
-                        <span key={day.toString()}>
-                            <DayCheckbox
-                                id={dayLong}
-                                checked={checked}
-                                dayAbbreviation={dayAbbreviation}
-                                dayLong={dayLong}
-                                onChange={() => handleToggleDay(day)}
-                            />
-                        </span>
+                        <DayCheckbox
+                            key={day.toString()}
+                            id={dayLong}
+                            checked={checked}
+                            dayAbbreviation={dayAbbreviation}
+                            dayLong={dayLong}
+                            onChange={() => handleToggleDay(day)}
+                        />
                     );
                 })}
             </div>
