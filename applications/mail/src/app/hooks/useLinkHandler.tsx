@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
+import psl from 'psl';
 import { useMailSettings, useModals, useNotifications, useHandler } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isIE11, isEdge } from 'proton-shared/lib/helpers/browser';
@@ -9,6 +10,7 @@ import { mailtoParser, isExternal, isSubDomain, getHostname } from '../helpers/u
 import { PROTON_DOMAINS } from '../constants';
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
 import { OnCompose } from './useCompose';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
 
@@ -133,6 +135,7 @@ export const useLinkHandler = (onCompose: OnCompose) => {
 
         const askForConfirmation = mailSettings?.ConfirmLink === undefined ? 1 : mailSettings?.ConfirmLink;
         const hostname = getHostname(src.raw);
+        const currentDomain = psl.get(window.location.hostname);
 
         /*
          * If the modal is already active --- do nothing
@@ -146,7 +149,9 @@ export const useLinkHandler = (onCompose: OnCompose) => {
         if (
             askForConfirmation &&
             isExternal(src.raw) &&
-            !PROTON_DOMAINS.some((domain) => isSubDomain(hostname, domain))
+            ![...PROTON_DOMAINS, currentDomain]
+                .filter(isTruthy) // currentDomain can be null
+                .some((domain) => isSubDomain(hostname, domain))
         ) {
             event.preventDefault();
             event.stopPropagation(); // Required for Safari
