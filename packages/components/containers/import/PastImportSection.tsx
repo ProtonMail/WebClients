@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
@@ -60,7 +60,7 @@ const DeleteButton = ({ ID, callback }: DeleteButtonProps) => {
             );
         });
         await api(deleteMailImportReport(ID));
-        await callback();
+        callback();
         createNotification({ text: c('Success').t`Import record deleted` });
     };
 
@@ -75,7 +75,7 @@ const DeleteButton = ({ ID, callback }: DeleteButtonProps) => {
     );
 };
 
-const PastImportsSection = () => {
+const PastImportsSection = forwardRef((_props, ref) => {
     const api = useApi();
     const [imports, setImports] = useState<ImportMailReport[]>([]);
     const [loading, withLoading] = useLoading();
@@ -84,6 +84,10 @@ const PastImportsSection = () => {
         const { Imports = [] } = await api(queryMailImportHistory());
         setImports(Imports);
     };
+
+    useImperativeHandle(ref, () => ({
+        fetch,
+    }));
 
     useEffect(() => {
         withLoading(fetch());
@@ -139,6 +143,6 @@ const PastImportsSection = () => {
             </Table>
         </>
     );
-};
+});
 
 export default PastImportsSection;

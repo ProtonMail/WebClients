@@ -7,6 +7,8 @@ import {
     createJobImport,
     getMailImportFolders,
     getMailImport,
+    updateMailImport,
+    resumeMailImport,
 } from 'proton-shared/lib/api/mailImport';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
@@ -24,7 +26,7 @@ import {
 import ImportMailWizard from '../../../components/import/ImportMailWizard';
 
 import { TIME_UNIT, IMAP_CONNECTION_ERROR_LABEL } from '../constants';
-import { Step, ImportModalModel, IMPORT_ERROR, MailImportFolder, FolderMapping } from '../interfaces';
+import { Step, ImportModalModel, IMPORT_ERROR, MailImportFolder, FolderMapping, ImportMail } from '../interfaces';
 
 import ImportStartStep from './steps/ImportStartStep';
 import ImportPrepareStep from './steps/ImportPrepareStep';
@@ -49,6 +51,7 @@ const DEFAULT_MODAL_MODEL: ImportModalModel = {
 };
 
 interface Props {
+    currentImport?: ImportMail;
     onClose?: () => void;
     onImportComplete: () => void;
 }
@@ -74,13 +77,20 @@ const destinationFoldersFirst = (a: MailImportFolder, b: MailImportFolder) => {
     return 0;
 };
 
-const ImportMailModal = ({ onImportComplete, onClose = noop, ...rest }: Props) => {
+const ImportMailModal = ({ onImportComplete, onClose = noop, currentImport, ...rest }: Props) => {
+    const isReconnectMode = !!currentImport;
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
     const [addresses, loadingAddresses] = useAddresses();
     const [address] = addresses || [];
     const [showPassword, setShowPassword] = useState(false);
-    const [modalModel, setModalModel] = useState<ImportModalModel>(DEFAULT_MODAL_MODEL);
+    const [modalModel, setModalModel] = useState<ImportModalModel>({
+        ...DEFAULT_MODAL_MODEL,
+        importID: currentImport?.ID || '',
+        email: currentImport?.Email || '',
+        imap: currentImport?.ImapHost || '',
+        port: currentImport?.ImapPort || '',
+    });
     const api = useApi();
 
     const needAppPassword = useMemo(() => {
@@ -92,7 +102,7 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, ...rest }: Props) =
     const title = useMemo(() => {
         switch (modalModel.step) {
             case Step.START:
-                return c('Title').t`Start a new import`;
+                return isReconnectMode ? c('Title').t`Reconnect your account` : c('Title').t`Start a new import`;
             case Step.PREPARE:
                 return c('Title').t`Start import process`;
             case Step.STARTED:
@@ -237,11 +247,30 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, ...rest }: Props) =
         onImportComplete();
     };
 
+    const resumeImport = async () => {
+        await api(
+            updateMailImport(modalModel.importID, {
+                Email: modalModel.email,
+                Code: modalModel.password,
+                ImapHost: modalModel.imap,
+                ImapPort: parseInt(modalModel.port),
+                Sasl: 'PLAIN',
+            })
+        );
+        await api(resumeMailImport(modalModel.importID));
+        onImportComplete();
+        onClose();
+    };
+
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         switch (modalModel.step) {
             case Step.START:
+                if (isReconnectMode) {
+                    withLoading(resumeImport());
+                    return;
+                }
                 withLoading(submitAuthentication(modalModel.needIMAPDetails));
                 break;
             case Step.PREPARE:
@@ -272,7 +301,7 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, ...rest }: Props) =
             case Step.START:
                 return (
                     <PrimaryButton type="submit" disabled={disabledStartStep} loading={loading}>
-                        {c('Action').t`Next`}
+                        {isReconnectMode ? c('Action').t`Reconnect` : c('Action').t`Next`}
                     </PrimaryButton>
                 );
             case Step.PREPARE:
@@ -314,6 +343,7 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, ...rest }: Props) =
                     updateModalModel={(newModel: ImportModalModel) => setModalModel(newModel)}
                     needAppPassword={needAppPassword}
                     showPassword={showPassword}
+                    reconnectMode={isReconnectMode}
                 />
             )}
             {modalModel.step === Step.PREPARE && (

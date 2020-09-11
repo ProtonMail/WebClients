@@ -90,6 +90,11 @@ export enum ImportMailStatus {
     CANCELED = 5,
 }
 
+export enum ImportMailError {
+    ERROR_CODE_IMAP_CONNECTION = 1,
+    ERROR_CODE_QUOTA_LIMIT = 2,
+}
+
 export interface ImportMail {
     ID: string;
     CreateTime: number;
@@ -99,6 +104,9 @@ export interface ImportMail {
     FilterStartDate: string;
     FilterEndDate: string;
     Mapping: ImportedFolder[];
+    ErrorCode?: ImportMailError;
+    ImapHost?: string;
+    ImapPort?: string;
 }
 
 export enum ImportMailReportStatus {

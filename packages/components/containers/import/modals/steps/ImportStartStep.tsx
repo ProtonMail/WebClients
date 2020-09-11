@@ -15,9 +15,10 @@ interface Props {
     updateModalModel: (newModel: ImportModalModel) => void;
     needAppPassword: boolean;
     showPassword: boolean;
+    reconnectMode: boolean;
 }
 
-const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPassword }: Props) => {
+const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPassword, reconnectMode }: Props) => {
     const { email, password, needIMAPDetails, imap, port, errorCode, errorLabel } = modalModel;
 
     useEffect(() => {
@@ -30,9 +31,9 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
 
     return (
         <>
-            {[IMPORT_ERROR.AUTH_IMAP, IMPORT_ERROR.AUTH_CREDENTIALS].includes(errorCode) ? (
+            {reconnectMode || [IMPORT_ERROR.AUTH_IMAP, IMPORT_ERROR.AUTH_CREDENTIALS].includes(errorCode) ? (
                 <Alert type="error" learnMore="https://protonmail.com/support/knowledge-base/">
-                    {authError && (
+                    {(authError || reconnectMode) && (
                         <>
                             <div className="mb1">
                                 {c('Error')

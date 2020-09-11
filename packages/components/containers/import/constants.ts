@@ -17,5 +17,3 @@ export const timeUnitLabels = {
 export const INVALID_CREDENTIALS_ERROR_LABEL = 'Invalid credentials';
 export const IMAP_CONNECTION_ERROR_LABEL = 'Cannot establish connection with IMAP server';
 export const IMAP_AUTHENTICATION_ERROR_LABEL = 'Authentication failed with IMAP server';
-
-export const SEPARATOR_SPLIT_DUMMY = `##**${Date.now()}**##`;
