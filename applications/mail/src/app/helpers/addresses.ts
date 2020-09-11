@@ -81,7 +81,8 @@ export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: stri
 export const getRecipientLabelDetailed = (recipient?: Recipient, allContacts?: ContactEmail[]) => {
     const { Name, Address } = recipient || {};
     const contact = getContactOfRecipient(allContacts, Address);
-    if (contact) {
+
+    if (contact?.Name?.trim()) {
         return contact.Name;
     }
     if (Name) {
@@ -93,7 +94,8 @@ export const getRecipientLabelDetailed = (recipient?: Recipient, allContacts?: C
 export const getRecipientLabel = (recipient?: Recipient, allContacts?: ContactEmail[]) => {
     const { Name, Address } = recipient || {};
     const contact = getContactOfRecipient(allContacts, Address);
-    if (contact) {
+
+    if (contact?.Name?.trim()) {
         return contact.Name;
     }
     if (!Name || Name === Address) {
