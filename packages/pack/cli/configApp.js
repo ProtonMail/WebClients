@@ -2,6 +2,7 @@ const path = require('path');
 const dedent = require('dedent');
 const argv = require('minimist')(process.argv.slice(2));
 
+const { sync } = require('./helpers/cli');
 const { warn, error } = require('./helpers/log');
 const prepareSentry = require('./helpers/sentry');
 
@@ -21,6 +22,19 @@ const readJSON = (file) => {
         if (/SyntaxError/.test(e.stack)) {
             error(e);
         }
+    }
+};
+
+/**
+ * Get the hash of the current commit we build against
+ * @return {String} fill hash of the commit
+ */
+const getBuildCommit = () => {
+    try {
+        const { stdout = '' } = sync('git rev-parse HEAD');
+        return stdout.trim();
+    } catch (e) {
+        return '';
     }
 };
 
@@ -127,11 +141,13 @@ function main({ api = 'dev' }) {
         apiUrl
     };
 
+    const COMMIT_RELEASE = getBuildCommit();
+
     // When we give to --api an url it means -> dev mode so osef of sentry
-    const { COMMIT_RELEASE = '', SENTRY_DSN = '' } = firstApi ? prepareSentry(ENV_CONFIG, firstApi) : {};
+    const SENTRY_DSN = firstApi ? prepareSentry(ENV_CONFIG, firstApi) : '';
 
     json.sentry = {
-        release: COMMIT_RELEASE,
+        release: firstApi ? COMMIT_RELEASE : '',
         dsn: SENTRY_DSN
     };
 

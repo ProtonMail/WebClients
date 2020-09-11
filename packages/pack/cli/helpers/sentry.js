@@ -1,14 +1,3 @@
-const { sync } = require('./cli');
-
-const getBuildCommit = () => {
-    try {
-        const { stdout = '' } = sync('git rev-parse HEAD');
-        return stdout.trim();
-    } catch (e) {
-        return '';
-    }
-};
-
 /**
  * Generate the DSN
  * Compat mode if you still use an old env
@@ -33,10 +22,10 @@ const getSentryDSN = ({ prod = '' }) => {
  */
 function getSentryConfig({ sentry = {} }, api) {
     if (api === 'blue' || (process.env.NODE_ENV !== 'production' && api !== 'proxy')) {
-        return {};
+        return '';
     }
 
-    return { SENTRY_DSN: getSentryDSN(sentry), COMMIT_RELEASE: getBuildCommit() };
+    return getSentryDSN(sentry);
 }
 
 module.exports = getSentryConfig;
