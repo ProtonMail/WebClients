@@ -13,4 +13,5 @@ export interface ProtonConfig {
     CHANGELOG_PATH: string;
     COMMIT_RELEASE: string;
     SENTRY_DSN: string;
+    VERSION_PATH: string;
 }
