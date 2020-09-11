@@ -87,9 +87,12 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
                         {...handlers}
                     />
                 )}
-                <ErrorZone className={errorZoneClassName} id={uid}>
-                    {hasError ? errorZone : ''}
-                </ErrorZone>
+
+                {hasError && (
+                    <ErrorZone className={errorZoneClassName} id={uid}>
+                        {errorZone}
+                    </ErrorZone>
+                )}
             </>
         );
     }

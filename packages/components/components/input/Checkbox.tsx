@@ -14,6 +14,7 @@ export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 const Checkbox = ({
     id,
     className,
+    title,
     loading,
     disabled,
     checked,
@@ -41,6 +42,7 @@ const Checkbox = ({
                 !className?.includes('increase-surface-click') && 'relative',
                 className,
             ])}
+            title={title}
             onClick={labelOnClick}
         >
             <input

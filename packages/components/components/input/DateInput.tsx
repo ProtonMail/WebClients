@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { format, parse, addDays } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
-
+import { c } from 'ttag';
 import Input, { Props as InputProps } from './Input';
 import { usePopperAnchor } from '../popper';
 import Dropdown from '../dropdown/Dropdown';
@@ -147,7 +147,9 @@ const DateInput = ({
                 onKeyDown={handleKeyDown}
                 value={showTemporary ? temporaryInput : currentInput}
                 onChange={handleInputChange}
-                placeholder={placeholder !== undefined ? placeholder : placeholderInLocale}
+                placeholder={
+                    placeholder !== undefined ? placeholder : `${c('Placeholder').t`E.g., `}${placeholderInLocale}`
+                }
                 autoFocus={autoFocus}
                 {...rest}
             />

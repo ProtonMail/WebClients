@@ -60,7 +60,7 @@ const TextArea = ({
                 {...rest}
                 {...handlers}
             />
-            <ErrorZone id={uid}>{hasError ? error : ''}</ErrorZone>
+            {hasError && <ErrorZone id={uid}>{error}</ErrorZone>}
         </>
     );
 };
