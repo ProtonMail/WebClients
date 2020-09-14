@@ -1,4 +1,5 @@
 import {
+    ICAL_ATTENDEE_ROLE,
     DAILY_TYPE,
     END_TYPE,
     FREQUENCY,
@@ -38,12 +39,11 @@ export interface DateTimeModel {
     tzid: string;
 }
 
-// todo
 export interface AttendeeModel {
-    name: string;
     email: string;
-    permissions: any;
-    rsvp: string;
+    rsvp: 'TRUE' | 'FALSE';
+    role: ICAL_ATTENDEE_ROLE;
+    token?: string;
 }
 
 export interface CalendarModel {
@@ -66,6 +66,8 @@ export interface EventModelView {
     sequence?: number;
     start: DateTimeModel;
     end: DateTimeModel;
+    attendees: AttendeeModel[];
+    organizer?: string;
     rest?: any;
 }
 
@@ -78,8 +80,7 @@ export interface EventModel extends EventModelView {
         memberID: string;
         addressID: string;
     };
-    // attendees: AttendeeModel[];
-    attendees?: any;
+    attendees: AttendeeModel[];
     isAllDay: boolean;
     defaultPartDayNotification: NotificationModel;
     defaultFullDayNotification: NotificationModel;

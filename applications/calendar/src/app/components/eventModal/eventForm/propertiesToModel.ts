@@ -1,9 +1,10 @@
-import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
+import { getDtendProperty, extractEmailAddress } from 'proton-shared/lib/calendar/vcalConverter';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { ICAL_ATTENDEE_ROLE } from 'proton-shared/lib/calendar/constants';
+import { AttendeeModel, EventModelView } from '../../../interfaces/EventModel';
 
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
-import { EventModelView } from '../../../interfaces/EventModel';
 
 const DEFAULT_TIME = {
     value: { year: 1970, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true },
@@ -18,11 +19,13 @@ export const propertiesToModel = (component: VcalVeventComponent, isAllDay: bool
         summary,
         dtstart = DEFAULT_TIME,
         rrule,
-        // attendee,
+        attendee,
+        organizer,
         ...rest
     } = component;
 
     const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(component), isAllDay, tzid);
+    const organizerCn = organizer?.parameters?.cn;
 
     return {
         uid: uid ? uid.value : undefined,
@@ -30,20 +33,25 @@ export const propertiesToModel = (component: VcalVeventComponent, isAllDay: bool
         title: summary?.value ?? '',
         location: location?.value ?? '',
         description: description?.value ?? '',
-        /*
         attendees: attendee
-            ? attendee.map(
-                  ({ value, parameters: { cn = '', rsvp = 'FALSE', ['x-pm-permissions']: permissions } = {} }) => ({
+            ? attendee.map((attendee) => {
+                  const { cn = '', rsvp, role } = attendee?.parameters || {};
+                  const email = extractEmailAddress(attendee);
+                  if (email === undefined) {
+                      throw new Error('Malformed attendee');
+                  }
+                  return {
+                      email,
+                      rsvp: rsvp ? ('TRUE' as const) : ('FALSE' as const),
                       name: cn || '',
-                      email: value,
-                      permissions,
-                      rsvp: rsvp !== 'FALSE'
-                  })
-              )
+                      role: (role as ICAL_ATTENDEE_ROLE) || ICAL_ATTENDEE_ROLE.REQUIRED,
+                      token: attendee?.parameters?.['x-pm-token'],
+                  } as AttendeeModel;
+              })
             : [],
-         */
         start,
         end,
         rest,
+        ...(organizerCn && { organizer: organizerCn }),
     };
 };

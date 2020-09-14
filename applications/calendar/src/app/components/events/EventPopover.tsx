@@ -51,7 +51,7 @@ const EventPopover = ({
 
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
 
-    const model = useReadEvent(eventReadResult?.result, tzid);
+    const model = useReadEvent(eventReadResult?.result, tzid, eventData?.Author);
     const { eventReadError, isEventReadLoading, eventTitleSafe } = getEventInformation(targetEvent, model);
 
     const handleDelete = () => {

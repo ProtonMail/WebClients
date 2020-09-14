@@ -309,7 +309,6 @@ const InteractiveCalendarView = ({
         const veventComponentParentPartial = veventComponent['recurrence-id']
             ? getVeventComponentParent(veventComponent.uid.value, eventData.CalendarID)
             : undefined;
-
         const createResult = getInitialModel({
             initialDate,
             CalendarSettings,

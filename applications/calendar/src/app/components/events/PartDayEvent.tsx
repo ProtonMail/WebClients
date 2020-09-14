@@ -18,7 +18,7 @@ interface Props {
 }
 const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, eventRef, tzid }: Props) => {
     const { start, end, data: targetEventData } = event;
-    const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
+    const model = useReadEvent(targetEventData.eventReadResult?.result, tzid, event.data.eventData?.Author);
 
     const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
 

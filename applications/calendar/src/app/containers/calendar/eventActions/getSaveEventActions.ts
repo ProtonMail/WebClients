@@ -6,6 +6,7 @@ import { Address, Api } from 'proton-shared/lib/interfaces';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
+import { withPmAttendees } from 'proton-shared/lib/calendar/attendees';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import getEditEventData from '../event/getEditEventData';
@@ -52,7 +53,10 @@ const getSaveEventActions = async ({
 
     // All updates will remove any existing exdates since they would be more complicated to normalize
     const modelVeventComponent = modelToVeventComponent(tmpData) as VcalVeventComponent;
-    const newVeventComponent = withVeventRruleWkst(omit(modelVeventComponent, ['exdate']), weekStartsOn);
+    const newVeventComponent = await withPmAttendees(
+        withVeventRruleWkst(omit(modelVeventComponent, ['exdate']), weekStartsOn),
+        api
+    );
 
     const newEditEventData = {
         veventComponent: newVeventComponent,

@@ -1,6 +1,11 @@
 import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper';
-import { getDateProperty, getDateTimeProperty, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import {
+    getDateProperty,
+    getDateTimeProperty,
+    propertyToUTCDate,
+    buildVcalAttendee,
+} from 'proton-shared/lib/calendar/vcalConverter';
 import { addDays } from 'date-fns';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { omit } from 'proton-shared/lib/helpers/object';
@@ -50,6 +55,7 @@ export const modelToGeneralProperties = ({
     location,
     description,
     attendees,
+    organizer,
     rest,
 }: Partial<EventModel>): Omit<VcalVeventComponent, 'dtstart' | 'dtend'> => {
     const properties = omit(rest, ['dtstart', 'dtend']);
@@ -71,22 +77,15 @@ export const modelToGeneralProperties = ({
     }
 
     if (Array.isArray(attendees) && attendees.length) {
-        /*
-        properties.organizer = {
-            value: organizer.email,
-            parameters: {
-                cn: organizer.name
-            }
-        };
-         */
-        properties.attendee = attendees.map(({ name, email, permissions, rsvp }) => ({
+        properties.organizer = organizer && buildVcalAttendee(organizer);
+        properties.attendee = attendees.map(({ email, rsvp, role, token }) => ({
             value: email,
             parameters: {
                 // cutype: 'INDIVIDUAL',
-                cn: name,
-                // role: rsvp ? 'REQ-PARTICIPANT' : 'NON-PARTICIPANT',
-                rsvp: rsvp ? 'TRUE' : 'FALSE',
-                'x-pm-permissions': permissions,
+                cn: email,
+                role,
+                rsvp,
+                'x-pm-token': token,
             },
         }));
     }

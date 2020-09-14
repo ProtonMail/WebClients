@@ -20,7 +20,11 @@ const DEFAULT_VEVENT: VcalVeventComponent = {
         value: { year: 1970, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true },
     },
 };
-const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string): EventModelReadView => {
+const useReadEvent = (
+    value: DecryptedEventTupleResult | undefined,
+    tzid: string,
+    organizer?: string
+): EventModelReadView => {
     return useMemo(() => {
         const [veventComponent = DEFAULT_VEVENT, alarmMap = {}]: [VcalVeventComponent, EventPersonalMap] = value || [
             DEFAULT_VEVENT,
@@ -28,6 +32,7 @@ const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string
         ];
         const isAllDay = getIsAllDay(veventComponent);
         const model = propertiesToModel(veventComponent, isAllDay, tzid);
+        model.organizer = model.organizer || organizer;
         const notifications = Object.keys(alarmMap)
             .map((key) => {
                 return propertiesToNotificationModel(alarmMap[key], isAllDay);

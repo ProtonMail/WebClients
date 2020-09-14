@@ -1,6 +1,7 @@
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
+import React, { HTMLAttributes } from 'react';
 import { FREQUENCY, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import React, { HTMLAttributes } from 'react';
 import { classnames, Input, TextArea } from 'react-components';
 import { c } from 'ttag';
 import { MAX_NOTIFICATIONS } from '../../constants';
@@ -12,13 +13,15 @@ import {
     FREQUENCY_INPUT_ID,
     LOCATION_INPUT_ID,
     NOTIFICATION_INPUT_ID,
+    PARTICIPANTS_INPUT_ID,
     TITLE_INPUT_ID,
 } from './const';
-import createPropFactory from './eventForm/createPropFactory';
+import createHandlers from './eventForm/createPropFactory';
 import IconRow from './IconRow';
 import CalendarSelect from './inputs/CalendarSelect';
 import CustomFrequencySelector from './inputs/CustomFrequencySelector';
 import FrequencyInput from './inputs/FrequencyInput';
+import ParticipantsInput from './inputs/ParticipantsInput';
 import Notifications from './Notifications';
 import DateTimeRow from './rows/DateTimeRow';
 import MiniDateTimeRows from './rows/MiniDateTimeRows';
@@ -55,9 +58,28 @@ const EventForm = ({
         defaultPartDayNotification,
         calendars,
     } = model;
-    const propsFor = createPropFactory({ model, setModel });
 
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
+    const showParticipants = FEATURE_FLAGS.includes('calendar-invitations');
+
+    const dateRow = isMinimal ? (
+        <MiniDateTimeRows
+            model={model}
+            setModel={setModel}
+            endError={errors.end}
+            displayWeekNumbers={displayWeekNumbers}
+            weekStartsOn={weekStartsOn}
+        />
+    ) : (
+        <DateTimeRow
+            model={model}
+            setModel={setModel}
+            endError={errors.end}
+            displayWeekNumbers={displayWeekNumbers}
+            weekStartsOn={weekStartsOn}
+            tzid={tzid!}
+        />
+    );
 
     return (
         <div className="mt0-5" {...props}>
@@ -68,29 +90,10 @@ const EventForm = ({
                     title={c('Title').t`Add event title`}
                     autoFocus
                     maxLength={MAX_LENGTHS.TITLE}
-                    {...propsFor('title', true)}
+                    {...createHandlers({ model, setModel, field: 'title' }).native}
                 />
             </IconRow>
-
-            {isMinimal ? (
-                <MiniDateTimeRows
-                    model={model}
-                    setModel={setModel}
-                    endError={errors.end}
-                    displayWeekNumbers={displayWeekNumbers}
-                    weekStartsOn={weekStartsOn}
-                />
-            ) : (
-                <DateTimeRow
-                    model={model}
-                    setModel={setModel}
-                    endError={errors.end}
-                    displayWeekNumbers={displayWeekNumbers}
-                    weekStartsOn={weekStartsOn}
-                    tzid={tzid!}
-                />
-            )}
-
+            {dateRow}
             {!isMinimal && (
                 <IconRow icon="reload" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
                     <FrequencyInput
@@ -120,17 +123,24 @@ const EventForm = ({
                     )}
                 </IconRow>
             )}
-
-            <IconRow icon="address" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
+            {!isMinimal && showParticipants && (
+                <IconRow icon="contacts-groups" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
+                    <ParticipantsInput
+                        placeholder={c('Placeholder').t`Add participants`}
+                        id={PARTICIPANTS_INPUT_ID}
+                        {...createHandlers({ model, setModel, field: 'attendees' }).model}
+                    />
+                </IconRow>
+            )}
+            <IconRow icon="address" title={c('Label').t`Event Location`} id={LOCATION_INPUT_ID}>
                 <Input
                     id={LOCATION_INPUT_ID}
                     placeholder={c('Placeholder').t`E.g., Corner Cafe`}
                     maxLength={MAX_LENGTHS.LOCATION}
                     title={c('Title').t`Add event location`}
-                    {...propsFor('location', true)}
+                    {...createHandlers({ model, setModel, field: 'location' }).native}
                 />
             </IconRow>
-
             {!isMinimal && (
                 <IconRow
                     id={NOTIFICATION_INPUT_ID}
@@ -178,8 +188,7 @@ const EventForm = ({
                     )}
                 </IconRow>
             )}
-
-            {calendars.length > 0 && (
+            {calendars.length > 0 ? (
                 <IconRow
                     icon="calendar"
                     title={c('Label').t`Your calendars`}
@@ -193,9 +202,8 @@ const EventForm = ({
                         {...{ model, setModel }}
                     />
                 </IconRow>
-            )}
-
-            <IconRow icon="text-align-left" title={c('Label').t`Event description`} id={DESCRIPTION_INPUT_ID}>
+            ) : null}
+            <IconRow icon="text-align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
                 <TextArea
                     id={DESCRIPTION_INPUT_ID}
                     minRows={2}
@@ -203,7 +211,7 @@ const EventForm = ({
                     placeholder={c('Placeholder').t`E.g., Don’t forget paperwork`}
                     maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
                     title={c('Title').t`Add more information related to this event`}
-                    {...propsFor('description', true)}
+                    {...createHandlers({ model, setModel, field: 'description' }).native}
                 />
             </IconRow>
         </div>
