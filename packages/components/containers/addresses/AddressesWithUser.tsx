@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { move } from 'proton-shared/lib/helpers/array';
 import { orderAddress } from 'proton-shared/lib/api/addresses';
 import { Address, UserModel } from 'proton-shared/lib/interfaces';
+import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
 import { Alert, OrderableTable, OrderableTableHeader, OrderableTableBody, OrderableTableRow } from '../../components';
 import { useApi, useEventManager, useAddresses, useNotifications } from '../../hooks';
 
@@ -13,15 +14,18 @@ import { getStatus } from './helper';
 interface Props {
     user: UserModel;
 }
+
+const formatAddresses = (addresses: Address[]) => addresses.filter(({ Type }) => Type !== ADDRESS_TYPE.TYPE_EXTERNAL);
+
 const AddressesUser = ({ user }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
-    const [list, setAddresses] = useState<Address[]>(addresses);
+    const [list, setAddresses] = useState<Address[]>(formatAddresses(addresses));
 
     useEffect(() => {
-        setAddresses(addresses);
+        setAddresses(formatAddresses(addresses));
     }, [addresses]);
 
     const handleSortEnd = useCallback(
@@ -35,7 +39,7 @@ const AddressesUser = ({ user }: Props) => {
                         type: 'error',
                         text: c('Notification').t`A disabled address cannot be primary`,
                     });
-                    setAddresses(addresses);
+                    setAddresses(formatAddresses(addresses));
                     return;
                 }
 
@@ -43,7 +47,7 @@ const AddressesUser = ({ user }: Props) => {
                 await api(orderAddress(newList.map(({ ID }) => ID)));
                 call();
             } catch (e) {
-                setAddresses(addresses);
+                setAddresses(formatAddresses(addresses));
             }
         },
         [list, addresses]
