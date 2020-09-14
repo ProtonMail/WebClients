@@ -10,7 +10,7 @@ import { useFolders } from 'react-components';
 
 const { ALL_MAIL } = MAILBOX_LABEL_IDS;
 
-const chacheEntryToElement = (cacheEntry: MessageExtended | ConversationResult | undefined) =>
+const cacheEntryToElement = (cacheEntry: MessageExtended | ConversationResult | undefined) =>
     (cacheEntry as ConversationResult)?.Conversation || (cacheEntry as MessageExtended)?.data || {};
 
 const cacheEntryIsFailedLoading = (
@@ -59,13 +59,13 @@ export const useShouldMoveOut = (
             }
 
             // Move out of moved away message
-            const previousElement = chacheEntryToElement(previousVersionRef.current);
-            const currentElement = chacheEntryToElement(cacheEntry);
+            const previousElement = cacheEntryToElement(previousVersionRef.current);
+            const currentElement = cacheEntryToElement(cacheEntry);
             const hadLabels = hasLabel(previousElement, ALL_MAIL);
             const previousFolderID = getCurrentFolderID(previousElement, folders);
             const currentFolderID = getCurrentFolderID(currentElement, folders);
 
-            if (hadLabels && previousFolderID !== currentFolderID) {
+            if (hadLabels && previousFolderID !== '' && previousFolderID !== currentFolderID) {
                 onBack();
                 return;
             }
