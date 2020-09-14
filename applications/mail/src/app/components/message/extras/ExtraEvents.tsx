@@ -44,16 +44,18 @@ const ExtraEvents = ({ message }: Props) => {
     const [addresses = [], loadingAddresses] = useAddresses();
     const config = useConfig();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [loading, withLoading] = useLoading();
+    const [loadingWidget, withLoadingWidget] = useLoading();
     const [invitations, setInvitations] = useState<(RequireSome<EventInvitation, 'method'> | EventInvitationError)[]>(
         []
     );
     const [defaultCalendar, setDefaultCalendar] = useState<Calendar | undefined>();
     const api = useApi();
+    const loadingConfigs =
+        loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || !config;
 
     useEffect(() => {
         const run = async () => {
-            if (!message.privateKeys) {
+            if (!message.privateKeys || loadingConfigs) {
                 return;
             }
             if (calendars?.length) {
@@ -91,10 +93,10 @@ const ExtraEvents = ({ message }: Props) => {
             setInvitations(invitations);
         };
 
-        withLoading(run());
-    }, [message.privateKeys]);
+        withLoadingWidget(run());
+    }, [message.privateKeys, loadingConfigs]);
 
-    if (loading || loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || !config) {
+    if (loadingConfigs || loadingWidget) {
         return null;
     }
 
