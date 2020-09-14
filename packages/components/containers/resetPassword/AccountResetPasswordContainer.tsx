@@ -189,7 +189,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
     if (step === STEPS.VALIDATE_RESET_TOKEN) {
         const subTitle = email
             ? c('Info')
-                  .t`Enter the recovery code that was sent to ${email}. If you don’t find the email in your inbox, pleas check your spam folder.`
+                  .t`Enter the recovery code that was sent to ${email}. If you don’t find the email in your inbox, please check your spam folder.`
             : c('Info').t`Enter the verification code that was sent to your phone number: ${phone}.`;
         handleBack = () =>
             gotoStep(methods?.includes('login') ? STEPS.REQUEST_RECOVERY_METHODS : STEPS.REQUEST_RESET_TOKEN);
