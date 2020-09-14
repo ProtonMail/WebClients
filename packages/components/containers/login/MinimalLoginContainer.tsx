@@ -57,13 +57,23 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
         };
         return (
             <form name="loginForm" onSubmit={handleSubmit}>
-                <Label className="sr-only" htmlFor="login">{c('Label').t`Email or Username`}</Label>
+                <Label htmlFor="login">{c('Label').t`Username or ProtonMail address`}</Label>
                 <div className="mb1">
-                    <LoginUsernameInput id="login" username={username} setUsername={loading ? noop : setUsername} />
+                    <LoginUsernameInput
+                        id="login"
+                        title={c('Title').t`Enter your username or ProtonMail email address`}
+                        username={username}
+                        setUsername={loading ? noop : setUsername}
+                    />
                 </div>
-                <Label className="sr-only" htmlFor="password">{c('Label').t`Password`}</Label>
+                <Label htmlFor="password">{c('Label').t`Password`}</Label>
                 <div className="mb1">
-                    <LoginPasswordInput password={password} setPassword={loading ? noop : setPassword} id="password" />
+                    <LoginPasswordInput
+                        password={password}
+                        setPassword={loading ? noop : setPassword}
+                        id="password"
+                        title={c('Title').t`Enter your password`}
+                    />
                 </div>
                 <div className="flex flex-spacebetween">
                     {needHelp}

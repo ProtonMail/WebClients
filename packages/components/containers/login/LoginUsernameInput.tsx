@@ -6,8 +6,9 @@ interface Props {
     username: string;
     setUsername: (username: string) => void;
     id: string;
+    title?: string;
 }
-const LoginUsernameInput = ({ username, setUsername, id }: Props) => {
+const LoginUsernameInput = ({ username, setUsername, id, title }: Props) => {
     return (
         <Input
             type="text"
@@ -15,6 +16,7 @@ const LoginUsernameInput = ({ username, setUsername, id }: Props) => {
             autoFocus
             autoCapitalize="off"
             autoCorrect="off"
+            title={title}
             id={id}
             required
             value={username}
