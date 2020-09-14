@@ -46,6 +46,11 @@ export enum ICAL_EVENT_STATUS {
     CANCELLED = 'CANCELLED',
 }
 
+export enum ICAL_ATTENDEE_RSVP {
+    TRUE = 'TRUE',
+    FALSE = 'FALSE',
+}
+
 export enum ICAL_ATTENDEE_ROLE {
     REQUIRED = 'REQ-PARTICIPANT', // Indicates a participant whose participation is required
     OPTIONAL = 'OPT-PARTICIPANT', // Indicates a participant whose participation is optional
