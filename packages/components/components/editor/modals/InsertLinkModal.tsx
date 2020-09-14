@@ -39,14 +39,17 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, ...rest }: Props) => {
         [LINK_TYPES.WEB]: {
             label: c('Info').t`URL link`,
             placeholder: c('Placeholder').t`Link`,
+            'test-placeholder': c('Placeholder').t`Fill in the URL link and text to test your link`,
         },
         [LINK_TYPES.EMAIL]: {
             label: c('Info').t`Email address`,
             placeholder: c('Placeholder').t`Email address`,
+            'test-placeholder': c('Placeholder').t`Fill in the email address and text to test your link`,
         },
         [LINK_TYPES.PHONE]: {
             label: c('Info').t`Phone number`,
             placeholder: c('Placeholder').t`Phone number`,
+            'test-placeholder': c('Placeholder').t`Fill in the phone number and text to test your link`,
         },
     };
 
@@ -128,7 +131,7 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, ...rest }: Props) => {
                     {url && label ? (
                         <Href url={getActualUrl(url, type)}>{label}</Href>
                     ) : (
-                        <span className="placeholder">{c('Info').t`Fill in the URL and text to test your link`}</span>
+                        <span className="placeholder">{i18n[type]['test-placeholder']}</span>
                     )}
                 </Field>
             </Row>
