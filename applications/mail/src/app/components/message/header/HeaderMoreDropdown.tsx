@@ -233,7 +233,7 @@ const HeaderMoreDropdown = ({
                                     onClick={handleMove(INBOX, SPAM)}
                                 >
                                     <Icon name="nospam" className="mr0-5 mt0-25" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Not a spam`}</span>
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Not spam`}</span>
                                 </DropdownMenuButton>
                             ) : (
                                 <DropdownMenuButton
