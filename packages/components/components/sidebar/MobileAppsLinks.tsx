@@ -3,6 +3,7 @@ import React from 'react';
 import { APPS, APPS_CONFIGURATION, FEATURE_FLAGS, isSSOMode } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
+import { Href, Icon } from '../../components';
 import { useConfig } from '../../hooks';
 import MobileNavServices from './MobileNavServices';
 import MobileNavLink from './MobileNavLink';
@@ -32,6 +33,9 @@ const MobileAppsLinks = () => {
                 const isCurrent = toApp === APP_NAME;
                 return <MobileNavLink key={index} to="/" toApp={toApp} icon={icon} current={isCurrent} />;
             })}
+            <Href url="https://account.protonvpn.com/login" className="flex aside-link">
+                <Icon name="protonvpn" className="aside-linkIcon mauto" />
+            </Href>
         </MobileNavServices>
     );
 };

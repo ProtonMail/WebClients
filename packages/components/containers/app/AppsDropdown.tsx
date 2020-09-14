@@ -6,7 +6,7 @@ import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { useUser } from '../../hooks';
-import { Meter, AppLink, Icon, SimpleDropdown } from '../../components';
+import { Meter, AppLink, Icon, SimpleDropdown, Href } from '../../components';
 
 const { PROTONACCOUNT, PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONDRIVE } = APPS;
 
@@ -56,6 +56,16 @@ const AppsDropdown = () => {
                         </li>
                     );
                 })}
+                <li className="dropDown-item appsDropdown-item">
+                    <Href
+                        url="https://account.protonvpn.com/login"
+                        className="appsDropdown-link big m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-items-center"
+                        title={c('Apps dropdown').t`Go to ProtonVPN`}
+                    >
+                        <Icon name="protonvpn" size={20} className="mr0-5" />
+                        <span>ProtonVPN</span>
+                    </Href>
+                </li>
                 <li className="dropDown-item appsDropdown-item">
                     <AppLink
                         to="/subscription"
