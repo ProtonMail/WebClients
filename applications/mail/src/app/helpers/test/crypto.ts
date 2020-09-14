@@ -1,12 +1,23 @@
 import * as openpgp from 'openpgp';
 import * as pmcrypto from 'pmcrypto';
 import { generateKey } from 'openpgp';
-import { getKeys, OpenPGPKey } from 'pmcrypto';
+import {
+    getMessage,
+    getKeys,
+    OpenPGPKey,
+    getPreferredAlgorithm,
+    generateSessionKey as realGenerateSessionKey,
+    encryptSessionKey as realEncryptSessionKey,
+    decryptSessionKey as realDecryptSessionKey,
+    splitMessage,
+    SessionKey
+} from 'pmcrypto';
 
 import { KEY_FLAG, RECIPIENT_TYPES } from 'proton-shared/lib/constants';
 
-import { addressKeysCache, resolvedRequest } from './cache';
+import { addressKeysCache, resolvedRequest, cache } from './cache';
 import { addApiMock } from './api';
+import { base64ToArray } from '../base64';
 
 const { ENCRYPT, VERIFY } = KEY_FLAG;
 const { TYPE_INTERNAL, TYPE_EXTERNAL } = RECIPIENT_TYPES;
@@ -73,9 +84,33 @@ export const generateKeys = async (name: string, email: string): Promise<Generat
     };
 };
 
+export const addKeysToUserKeysCache = (key: GeneratedKey) => {
+    cache.set('USER_KEYS', resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }]));
+};
+
 export const addKeysToAddressKeysCache = (addressID: string, key: GeneratedKey) => {
     addressKeysCache.set(
         addressID,
         resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }])
     );
+};
+
+export const encryptSessionKey = async ({ data, algorithm }: SessionKey, publicKey: OpenPGPKey) => {
+    const { message } = await realEncryptSessionKey({ data, algorithm, publicKeys: [publicKey] });
+    const { asymmetric } = await splitMessage(message);
+    return asymmetric[0];
+};
+
+export const generateSessionKey = async (publicKey: OpenPGPKey) => {
+    const algorithm = await getPreferredAlgorithm([publicKey]);
+    const data = await realGenerateSessionKey(algorithm);
+    return { data, algorithm } as SessionKey;
+};
+
+export const decryptSessionKey = async (keyPacket: string, privateKeys: OpenPGPKey[]) => {
+    const sessionKeyMessage = await getMessage(base64ToArray(keyPacket));
+    return (await realDecryptSessionKey({
+        message: sessionKeyMessage,
+        privateKeys: privateKeys
+    })) as SessionKey;
 };

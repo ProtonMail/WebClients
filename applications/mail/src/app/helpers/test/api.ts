@@ -1,20 +1,20 @@
 import { noop } from 'proton-shared/lib/helpers/function';
 
-type ApiMock = {
-    [url: string]: (...arg: any[]) => any;
-};
+type ApiMockHandler = (...arg: any[]) => any;
+
+type ApiMock = { [url: string]: ApiMockHandler };
 
 export const apiMocks: ApiMock = {};
 
 export const api = jest.fn<Promise<any>, any>(async (args: any) => {
     if (apiMocks[args.url]) {
-        return apiMocks[args.url](args);
+        return await apiMocks[args.url](args);
     }
-    // console.log('api', args);
+    console.log('api', args, apiMocks);
     return {};
 });
 
-export const addApiMock = (url: string, handler: (...arg: any[]) => any) => {
+export const addApiMock = (url: string, handler: ApiMockHandler) => {
     apiMocks[url] = handler;
 };
 

@@ -1,3 +1,4 @@
+import { DecryptResultPmcrypto } from 'pmcrypto';
 import createCache from 'proton-shared/lib/helpers/cache';
 import { STATUS } from 'proton-shared/lib/models/cache';
 import { CachedKey } from 'proton-shared/lib/interfaces';
@@ -17,6 +18,7 @@ export const getInstance = () => {
 export const cache = createCache();
 export const messageCache = createCache<string, MessageExtended>();
 export const conversationCache = createCache<string, ConversationResult>();
+export const attachmentsCache = createCache<string, DecryptResultPmcrypto>();
 export const addressKeysCache = createCache<string, { status: number; value: Partial<CachedKey>[] }>();
 
 export const resolvedRequest = (value: any) => ({ status: STATUS.RESOLVED, value });

@@ -8,8 +8,9 @@ import { wait } from 'proton-shared/lib/helpers/promise';
 import AuthenticationProvider from 'react-components/containers/authentication/Provider';
 import MessageProvider from '../../containers/MessageProvider';
 import ConversationProvider from '../../containers/ConversationProvider';
-import { minimalCache, cache, messageCache, conversationCache } from './cache';
+import { minimalCache, cache, messageCache, conversationCache, attachmentsCache } from './cache';
 import { api } from './api';
+import AttachmentProvider from '../../containers/AttachmentProvider';
 
 export const authentication = ({
     getUID: jest.fn(),
@@ -29,7 +30,9 @@ const TestProvider = ({ children }: Props) => {
                     <AuthenticationProvider store={authentication}>
                         <CacheProvider cache={cache}>
                             <MessageProvider cache={messageCache}>
-                                <ConversationProvider cache={conversationCache}>{children}</ConversationProvider>
+                                <ConversationProvider cache={conversationCache}>
+                                    <AttachmentProvider cache={attachmentsCache}>{children}</AttachmentProvider>
+                                </ConversationProvider>
                             </MessageProvider>
                         </CacheProvider>
                     </AuthenticationProvider>
@@ -52,7 +55,7 @@ export const render = async (component: JSX.Element): Promise<RenderResult> => {
     return result;
 };
 
-export const renderHook = (callback: (props: any) => any) => {
-    minimalCache();
+export const renderHook = (callback: (props: any) => any, useMinimalCache = true) => {
+    useMinimalCache && minimalCache();
     return originalRenderHook<any, any>(callback, { wrapper: TestProvider as any });
 };

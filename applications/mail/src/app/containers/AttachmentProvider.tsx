@@ -23,15 +23,22 @@ const AttachmentContext = createContext<AttachmentsCache>(null as any);
  */
 export const useAttachmentCache = () => useContext(AttachmentContext);
 
+interface Props {
+    children?: ReactNode;
+    cache?: AttachmentsCache; // Only for testing purposes
+}
+
 /**
  * Provider for the attachments cache and embedded content
  */
-const AttachmentProvider = ({ children }: { children?: ReactNode }) => {
-    const cache: AttachmentsCache = useInstance(() => {
+const AttachmentProvider = ({ children, cache: testCache }: Props) => {
+    const realCache: AttachmentsCache = useInstance(() => {
         return createCache(
             createLRU<string, DecryptResultPmcrypto>({ max: 50 })
         );
     });
+
+    const cache = testCache || realCache;
 
     return <AttachmentContext.Provider value={cache}>{children}</AttachmentContext.Provider>;
 };
