@@ -2,8 +2,10 @@ import { APPS_CONFIGURATION } from '../constants';
 import { ProtonConfig } from '../interfaces';
 import {
     VcalAttendeeProperty,
+    VcalAttendeePropertyWithCn,
     VcalAttendeePropertyWithPartstat,
     VcalAttendeePropertyWithRole,
+    VcalAttendeePropertyWithToken,
     VcalCalendarComponent,
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
@@ -110,6 +112,26 @@ export const getHasAttendee = (
     vevent: VcalVeventComponent
 ): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'attendee'>> => {
     return !!vevent.attendee;
+};
+
+export const getAttendeeHasCn = (attendee: VcalAttendeeProperty): attendee is VcalAttendeePropertyWithCn => {
+    return !!attendee.parameters?.cn;
+};
+
+export const getAttendeesHaveCn = (
+    vcalAttendee: VcalAttendeeProperty[]
+): vcalAttendee is VcalAttendeePropertyWithCn[] => {
+    return !vcalAttendee.some((vcalAttendee) => !getAttendeeHasCn(vcalAttendee));
+};
+
+export const getAttendeeHasToken = (attendee: VcalAttendeeProperty): attendee is VcalAttendeePropertyWithToken => {
+    return !!attendee.parameters?.['x-pm-token'];
+};
+
+export const getAttendeesHaveToken = (
+    vcalAttendee: VcalAttendeeProperty[]
+): vcalAttendee is VcalAttendeePropertyWithToken[] => {
+    return !vcalAttendee.some((vcalAttendee) => !getAttendeeHasToken(vcalAttendee));
 };
 
 export const getAttendeeHasPartStat = (

@@ -250,7 +250,7 @@ export interface DeleteCalendarEventSyncData {
 }
 export interface UpdateCalendarEventSyncData {
     ID: string;
-    Event?: Omit<CreateCalendarEventData, 'SharedKeyPacket'>;
+    Event?: Omit<CreateCalendarEventData, 'SharedKeyPacket' | 'CalendarKeyPacket'>;
 }
 export interface CreateLinkedCalendarEventsSyncData {
     UID: string;

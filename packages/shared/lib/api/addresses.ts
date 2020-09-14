@@ -41,6 +41,13 @@ export const getAddress = (addressID: string) => ({
     method: 'get',
 });
 
+export const getCanonicalAddresses = (Emails: string[]) => ({
+    // params doesn't work correctly so
+    url: `addresses/canonical?${Emails.map((email) => `Emails[]=${email}`).join('&')}`,
+    method: 'get',
+    // params: { Emails },
+});
+
 export const updateAddress = (
     addressID: string,
     { DisplayName, Signature }: { DisplayName?: string; Signature?: string }

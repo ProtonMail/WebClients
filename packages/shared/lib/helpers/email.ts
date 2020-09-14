@@ -3,6 +3,8 @@
  * see also https://en.wikipedia.org/wiki/Email_address#Local-part
  */
 import isTruthy from './isTruthy';
+import { MAJOR_DOMAINS } from '../constants';
+import { Recipient } from '../interfaces';
 
 export const validateLocalPart = (localPart: string) => {
     const match = localPart.match(/(^\(.+?\))?([^()]*)(\(.+?\)$)?/);
@@ -59,7 +61,7 @@ export const getEmailParts = (email: string): string[] => {
  */
 export const validateEmailAddress = (email: string) => {
     const [localPart, domain] = getEmailParts(email);
-    if (!domain) {
+    if (!localPart || !domain) {
         return false;
     }
     return validateLocalPart(localPart) && validateDomain(domain);
@@ -82,7 +84,7 @@ export const normalizeInternalEmail = (email: string) => {
  * See documentation at https://confluence.protontech.ch/display/MAILFE/Email+normalization for more information
  */
 export const normalizeExternalEmail = (email: string) => {
-    return email.toLowerCase();
+    return email.toLowerCase().trim();
 };
 
 /**
@@ -179,4 +181,15 @@ export const addPlusAlias = (email = '', plus = '') => {
     const domain = email.substring(atIndex, email.length);
 
     return `${name}+${plus}${domain}`;
+};
+
+export const majorDomainsMatcher = (inputValue: string) => {
+    const [localPart, domainPart] = getEmailParts(inputValue);
+    if (!localPart || typeof domainPart !== 'string') {
+        return [];
+    }
+    return MAJOR_DOMAINS.map((domain) => {
+        const email = `${localPart}@${domain}`;
+        return { Address: email, Name: email } as Recipient;
+    });
 };

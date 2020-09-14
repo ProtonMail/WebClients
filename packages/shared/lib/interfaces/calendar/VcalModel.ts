@@ -153,6 +153,7 @@ export interface VcalStatusProperty {
 }
 
 export interface VcalAttendeePropertyParameters extends VcalOrganizerPropertyParameters {
+    cn?: string;
     cutype?: string;
     member?: string;
     role?: string;
@@ -169,6 +170,10 @@ export interface VcalAttendeeProperty {
     parameters?: VcalAttendeePropertyParameters;
 }
 
+export interface VcalAttendeePropertyWithCn extends VcalAttendeeProperty {
+    parameters: VcalAttendeePropertyParameters & Required<Pick<VcalAttendeePropertyParameters, 'cn'>>;
+}
+
 export interface VcalAttendeePropertyWithPartstat extends VcalAttendeeProperty {
     parameters: VcalAttendeePropertyParameters & Required<Pick<VcalAttendeePropertyParameters, 'partstat'>>;
 }
@@ -176,6 +181,12 @@ export interface VcalAttendeePropertyWithPartstat extends VcalAttendeeProperty {
 export interface VcalAttendeePropertyWithRole extends VcalAttendeeProperty {
     parameters: VcalAttendeePropertyParameters & Required<Pick<VcalAttendeePropertyParameters, 'role'>>;
 }
+
+export interface VcalAttendeePropertyWithToken extends VcalAttendeeProperty {
+    parameters: VcalAttendeePropertyParameters & Required<Pick<VcalAttendeePropertyParameters, 'x-pm-token'>>;
+}
+
+export type VcalPmAttendee = VcalAttendeePropertyWithCn & VcalAttendeePropertyWithToken;
 
 export interface VcalVeventComponent {
     component: 'vevent';

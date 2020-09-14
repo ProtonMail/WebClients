@@ -70,3 +70,16 @@ export interface SyncMultipleApiResponse {
     Code: number;
     Responses: SyncMultipleApiResponses[];
 }
+
+export interface GetCanonicalAddressesResponses {
+    Email: string;
+    Response: {
+        Code: number;
+        CanonicalEmail: string;
+    };
+}
+
+export interface GetCanonicalAddressesResponse {
+    Code: number;
+    Responses: GetCanonicalAddressesResponses[];
+}

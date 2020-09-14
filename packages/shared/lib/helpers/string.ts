@@ -21,7 +21,13 @@ export const getRandomString = (length: number) => {
     return result;
 };
 
-export const normalize = (value = '') => value.toLowerCase().trim();
+export const normalize = (value = '', removeDiacritics = false) => {
+    let normalized = value.toLowerCase().trim();
+    if (removeDiacritics) {
+        normalized = normalized.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+    return normalized;
+};
 
 export const replaceLineBreak = (content = '') => content.replace(/(?:\r\n|\r|\n)/g, '<br />');
 

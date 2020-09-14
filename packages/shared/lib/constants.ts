@@ -725,10 +725,10 @@ export const MAJOR_DOMAINS = [
     'protonmail.ch',
     'pm.me',
     'gmail.com',
-    'hotmail.com',
     'live.com',
-    'yahoo.com',
     'outlook.com',
+    'hotmail.com',
+    'yahoo.com',
 ];
 
 export enum LINK_TYPES {

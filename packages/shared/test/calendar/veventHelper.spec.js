@@ -39,11 +39,11 @@ DESCRIPTION:bca
 SUMMARY:dcf
 LOCATION:asd
 END:VEVENT
-END:VCALENDAR`)
+END:VCALENDAR`),
             },
             calendarPart: { [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
             personalPart: { [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
-            attendeesPart: { [CLEAR]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined }
+            attendeesPart: { [CLEAR]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
         });
     });
 
@@ -87,7 +87,7 @@ DESCRIPTION:bca
 SUMMARY:dcf
 LOCATION:asd
 END:VEVENT
-END:VCALENDAR`)
+END:VCALENDAR`),
             },
             calendarPart: {
                 [SIGNED]: toCRLF(`BEGIN:VCALENDAR
@@ -104,7 +104,7 @@ BEGIN:VEVENT
 UID:abc
 COMMENT:my comment
 END:VEVENT
-END:VCALENDAR`)
+END:VCALENDAR`),
             },
             personalPart: {
                 [SIGNED]: toCRLF(`BEGIN:VCALENDAR
@@ -119,9 +119,9 @@ DESCRIPTION:asd
 END:VALARM
 END:VEVENT
 END:VCALENDAR`),
-                [ENCRYPTED_AND_SIGNED]: undefined
+                [ENCRYPTED_AND_SIGNED]: undefined,
             },
-            attendeesPart: { [CLEAR]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined }
+            attendeesPart: { [CLEAR]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
         });
     });
 });

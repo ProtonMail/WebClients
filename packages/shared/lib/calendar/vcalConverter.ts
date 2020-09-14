@@ -6,10 +6,12 @@ import {
     VcalDateProperty,
     VcalDateTimeProperty,
     VcalDaysKeys,
-    VcalDays, VcalDateOrDateTimeValue
+    VcalDays,
+    VcalDateOrDateTimeValue,
 } from '../interfaces/calendar/VcalModel';
 import { mod } from '../helpers/math';
 import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
+import { getEmailTo, buildMailTo } from '../helpers/email';
 
 export const dateToProperty = ({
     year = 1,
@@ -133,3 +135,16 @@ export const getUntilProperty = (
     return { ...utcEndOfDay, isUTC: true };
 };
 
+export const extractEmailAddress = ({ value, parameters }: { value?: string; parameters?: { cn?: string } }) => {
+    const email = value || parameters?.cn;
+    return email && getEmailTo(email);
+};
+
+export const buildVcalAttendee = (email: string) => {
+    return {
+        value: buildMailTo(email),
+        parameters: {
+            cn: email,
+        },
+    };
+};

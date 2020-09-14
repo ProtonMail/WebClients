@@ -93,20 +93,25 @@ export const getUserPart = (veventProperties: VcalVeventComponent) => {
     };
 };
 
-export const getAttendeesPart = (veventProperties: VcalVeventComponent) => {
-    const formattedAttendees = Array.isArray(veventProperties.attendee)
-        ? veventProperties.attendee.reduce<{ [CLEAR]: AttendeeClearPartResult[]; attendee: AttendeePart[] }>(
-              (acc, attendee) => {
-                  const { clear, attendee: newAttendee } = fromInternalAttendee(attendee);
-                  acc[CLEAR].push(clear);
-                  acc.attendee.push(newAttendee);
-                  return acc;
-              },
-              { [CLEAR]: [], attendee: [] }
-          )
-        : undefined;
+export const getAttendeesPart = (
+    veventProperties: VcalVeventComponent
+): {
+    [CLEAR]: AttendeeClearPartResult[];
+    [ENCRYPTED_AND_SIGNED]: Partial<VcalVeventComponent>;
+} => {
+    const formattedAttendees: { [CLEAR]: AttendeeClearPartResult[]; attendee: AttendeePart[] } = {
+        [CLEAR]: [],
+        attendee: [],
+    };
+    if (Array.isArray(veventProperties.attendee)) {
+        for (const attendee of veventProperties.attendee) {
+            const { clear, attendee: newAttendee } = fromInternalAttendee(attendee);
+            formattedAttendees[CLEAR].push(clear);
+            formattedAttendees.attendee.push(newAttendee);
+        }
+    }
 
-    if (!formattedAttendees) {
+    if (!formattedAttendees.attendee.length) {
         return {
             [ENCRYPTED_AND_SIGNED]: {},
             [CLEAR]: [],
