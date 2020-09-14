@@ -35,7 +35,7 @@ interface Props {
 }
 const ExtraEvents = ({ message }: Props) => {
     const cache = useAttachmentCache();
-    const [calendars = []] = useCalendars();
+    const [calendars = [], loadingCalendars] = useCalendars();
     const [contactEmails = [], loadingContactEmails] = useContactEmails() as [
         ContactEmail[] | undefined,
         boolean,
@@ -94,7 +94,7 @@ const ExtraEvents = ({ message }: Props) => {
         withLoading(run());
     }, [message.privateKeys]);
 
-    if (loading || loadingContactEmails || loadingAddresses || loadingUserSettings || !config) {
+    if (loading || loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || !config) {
         return null;
     }
 

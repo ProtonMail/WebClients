@@ -160,6 +160,8 @@ export const getParticipant = (
     if (selfAddress) {
         result.addressID = selfAddress.ID;
         result.displayName = selfAddress.DisplayName;
+        // Use Proton form of the email address (important for sending email)
+        result.emailAddress = selfAddress.Email;
     }
     if (index !== undefined) {
         result.index = index;
