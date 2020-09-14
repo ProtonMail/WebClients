@@ -1,4 +1,5 @@
 import { CreateCalendarEventSyncData, syncMultipleEvents } from 'proton-shared/lib/api/calendars';
+import { withPmAttendees } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
@@ -21,7 +22,7 @@ interface Props {
     message: MessageExtended;
     config: ProtonConfig;
     onUnexpectedError: () => void;
-    onSuccess: (invitationApi: RequireSome<EventInvitation, 'eventID'>) => void;
+    onSuccess: (invitationApi: RequireSome<EventInvitation, 'calendarEvent'>) => void;
 }
 const useWidgetButtons = ({ model, message, config, onUnexpectedError, onSuccess }: Props) => {
     const { createNotification } = useNotifications();
@@ -69,6 +70,7 @@ const useWidgetButtons = ({ model, message, config, onUnexpectedError, onSuccess
                 return;
             }
             createNotification({ type: 'error', text: 'Answering invitation has failed. Try again' });
+            return;
         }
         try {
             const { index: attendeeIndex, vcalComponent } = attendee;
@@ -88,8 +90,9 @@ const useWidgetButtons = ({ model, message, config, onUnexpectedError, onSuccess
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR);
             }
             veventToSave.attendee[attendeeIndex] = vcalAttendeeToSave;
+            const veventToSaveWithPmAttendees = await withPmAttendees(veventToSave, api);
             const data = await createCalendarEvent({
-                eventComponent: veventToSave,
+                eventComponent: veventToSaveWithPmAttendees,
                 isSwitchCalendar: false,
                 ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys }))
             });
@@ -105,12 +108,12 @@ const useWidgetButtons = ({ model, message, config, onUnexpectedError, onSuccess
                 timeout: HOUR,
                 silence: true
             });
-            if (Code !== API_CODES.SINGLE_SUCCESS || !Event?.ID) {
+            if (Code !== API_CODES.SINGLE_SUCCESS || !Event) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR);
             }
             const invitationToSave = {
                 vevent: veventToSave,
-                eventID: Event.ID,
+                calendarEvent: Event,
                 attendee: {
                     ...attendee,
                     vcalComponent: vcalAttendeeToSave,
@@ -123,7 +126,7 @@ const useWidgetButtons = ({ model, message, config, onUnexpectedError, onSuccess
                 onUnexpectedError();
                 return;
             }
-            createNotification({ type: 'error', text: 'Sending email has failed. Try again' });
+            createNotification({ type: 'error', text: 'Creating calendar event has failed. Try again' });
         }
     };
 

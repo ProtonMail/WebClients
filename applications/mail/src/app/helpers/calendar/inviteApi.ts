@@ -37,8 +37,8 @@ type FetchEventInvitation = (args: {
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
 }) => Promise<{
-    invitation?: RequireSome<EventInvitation, 'eventID'>;
-    parentInvitation?: RequireSome<EventInvitation, 'eventID'>;
+    invitation?: RequireSome<EventInvitation, 'calendarEvent'>;
+    parentInvitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendar?: Calendar;
 }>;
 export const fetchEventInvitation: FetchEventInvitation = async ({
@@ -53,24 +53,23 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     const recurrenceID = veventComponent['recurrence-id'];
     const params: GetEventByUIDArguments[] = [{ UID: veventComponent.uid.value, Page: 0, PageSize: 1 }];
     if (recurrenceID) {
+        // we want to retrieve the single edit plus the parent in this case
         const timestamp = getUnixTime(propertyToUTCDate(recurrenceID));
         params.unshift({ UID: veventComponent.uid.value, Page: 0, PageSize: 1, RecurrenceID: timestamp });
     }
     const response = await Promise.all(params.map((args) => api<{ Events: CalendarEvent[] }>(getEventByUID(args))));
-    const events = response.map(({ Events: [event] = [] }) => event).filter(isTruthy);
-    if (!events.length) {
-        return {};
-    }
-    const vevents = await Promise.all(events.map((event) => getCalendarEventRaw(event)));
+    // keep only the first event the API found (typically the one from the default calendar)
+    const calendarEvents = response.map(({ Events: [event] = [] }) => event).filter(isTruthy);
+    const vevents = await Promise.all(calendarEvents.map((event) => getCalendarEventRaw(event)));
     if (!vevents.length) {
         return {};
     }
+    const [calendarEvent, calendarParentEvent] = calendarEvents;
     const [vevent, parentVevent] = vevents;
-    const [{ ID: veventID, CalendarID }] = events;
     const { invitation } = processEventInvitation({ vevent }, message, contactEmails, ownAddresses);
     const result: Unwrap<ReturnType<FetchEventInvitation>> = {
-        invitation: { ...invitation, eventID: veventID },
-        calendar: calendars.find(({ ID }) => ID === CalendarID) || undefined
+        invitation: { ...invitation, calendarEvent },
+        calendar: calendars.find(({ ID }) => ID === calendarEvent.CalendarID) || undefined
     };
     if (parentVevent) {
         const { invitation: parentInvitation } = processEventInvitation(
@@ -79,19 +78,18 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
             contactEmails,
             ownAddresses
         );
-        result.parentInvitation = { ...parentInvitation, eventID: veventID };
+        result.parentInvitation = { ...parentInvitation, calendarEvent: calendarParentEvent };
     }
     return result;
 };
 
 interface UpdateEventArgs {
-    eventID: string;
+    calendarEvent: CalendarEvent;
     vevent: VcalVeventComponent;
     api: Api;
     calendarData: Required<CalendarWidgetData>;
 }
-
-const updateEventApi = async ({ eventID, vevent, api, calendarData }: UpdateEventArgs) => {
+const updateEventApi = async ({ calendarEvent, vevent, api, calendarData }: UpdateEventArgs) => {
     const {
         calendar: { ID: calendarID },
         memberID,
@@ -101,12 +99,12 @@ const updateEventApi = async ({ eventID, vevent, api, calendarData }: UpdateEven
     const data = await createCalendarEvent({
         eventComponent: vevent,
         isSwitchCalendar: false,
-        ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys }))
+        ...(await getCreationKeys({ Event: calendarEvent, addressKeys, newCalendarKeys: calendarKeys }))
     });
     const Events: UpdateCalendarEventSyncData[] = [
         {
-            ID: eventID,
-            Event: { Permissions: 3, ...omit(data, ['SharedKeyPacket']) }
+            ID: calendarEvent.ID,
+            Event: { Permissions: 3, ...omit(data, ['SharedKeyPacket', 'CalendarKeyPacket']) }
         }
     ];
     const {
@@ -142,9 +140,9 @@ export const updateEventInvitation = async ({
     message,
     contactEmails,
     ownAddresses
-}: UpdateEventInvitationArgs): Promise<undefined | RequireSome<EventInvitation, 'eventID'>> => {
+}: UpdateEventInvitationArgs): Promise<undefined | RequireSome<EventInvitation, 'calendarEvent'>> => {
     const { method, vevent: veventIcs } = invitationIcs;
-    const { eventID, vevent: veventApi } = invitationApi;
+    const { calendarEvent, vevent: veventApi } = invitationApi;
     const attendeeIcs = invitationIcs.attendee?.vcalComponent;
     const attendeeApi = invitationApi.attendee?.vcalComponent;
     const recurrenceIdIcs = veventIcs['recurrence-id'];
@@ -194,7 +192,7 @@ export const updateEventInvitation = async ({
             // update the api event by the ics one
             try {
                 await updateEventApi({
-                    eventID,
+                    calendarEvent,
                     vevent: veventIcs,
                     calendarData,
                     api
@@ -205,7 +203,7 @@ export const updateEventInvitation = async ({
                     contactEmails,
                     ownAddresses
                 );
-                return { ...invitation, eventID };
+                return { ...invitation, calendarEvent };
             } catch (error) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
             }
@@ -233,7 +231,7 @@ export const updateEventInvitation = async ({
         if (cancel) {
             try {
                 await updateEventApi({
-                    eventID,
+                    calendarEvent,
                     vevent: { ...veventApi, status: { value: ICAL_EVENT_STATUS.CANCELLED } },
                     calendarData,
                     api

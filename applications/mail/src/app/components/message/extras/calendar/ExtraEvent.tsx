@@ -177,11 +177,7 @@ const ExtraEvent = ({
             </header>
             <ExtraEventSummary model={model} />
             <ExtraEventButtons model={model} setModel={setModel} message={message} config={config} />
-            <ExtraEventDetails
-                model={model}
-                defaultCalendar={defaultCalendar}
-                weekStartsOn={getWeekStartsOn(userSettings)}
-            />
+            <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />
         </div>
     );
 };

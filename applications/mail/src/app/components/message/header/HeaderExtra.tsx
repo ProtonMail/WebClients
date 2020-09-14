@@ -37,7 +37,7 @@ const HeaderExtra = ({
     onLoadEmbeddedImages
 }: Props) => {
     const received = isReceived(message.data);
-    const showWidget = FEATURE_FLAGS.includes('calendar-event-widget');
+    const showWidget = FEATURE_FLAGS.includes('calendar-invitations');
     return (
         <section className="message-header-extra mt0-5 border-top pt0-5">
             <ExtraExpirationTime message={message} />

@@ -1,4 +1,5 @@
-import { format, getUnixTime } from 'date-fns';
+import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
+import { getUnixTime } from 'date-fns';
 import { ICAL_ATTENDEE_ROLE, ICAL_EXTENSIONS, ICAL_MIME_TYPE, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/integration/rrule';
 import {
@@ -35,7 +36,7 @@ import { buildMailTo, cleanEmail, getEmailTo, normalizeInternalEmail } from 'pro
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { Address, CachedKey } from 'proton-shared/lib/interfaces';
-import { Calendar, CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, CalendarEvent, CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
 import {
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
@@ -69,7 +70,7 @@ export interface Participant {
 export interface EventInvitation {
     originalVcalInvitation?: VcalVcalendar;
     vevent: VcalVeventComponent;
-    eventID?: string;
+    calendarEvent?: CalendarEvent;
     method?: string;
     vtimezone?: VcalVtimezoneComponent;
     xOrIanaComponents?: VcalXOrIanaComponent[];
@@ -90,8 +91,8 @@ export interface InvitationModel {
     isOrganizerMode: boolean;
     calendarData?: CalendarWidgetData;
     invitationIcs?: RequireSome<EventInvitation, 'method'>;
-    invitationApi?: RequireSome<EventInvitation, 'eventID'>;
-    parentInvitationApi?: RequireSome<EventInvitation, 'eventID'>;
+    invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
+    parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     error?: EventInvitationError;
     hideSummary?: boolean;
 }
@@ -102,8 +103,8 @@ export const getHasInvitation = (model: InvitationModel): model is RequireSome<I
 
 export const getInvitationHasEventID = (
     invitation?: EventInvitation
-): invitation is RequireSome<EventInvitation, 'eventID'> => {
-    return invitation?.eventID !== undefined;
+): invitation is RequireSome<EventInvitation, 'calendarEvent'> => {
+    return invitation?.calendarEvent?.ID !== undefined;
 };
 
 export const filterAttachmentsForEvents = (attachments: Attachment[]): Attachment[] =>
@@ -217,7 +218,7 @@ export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) 
 export const getCalendarEventLink = (model: InvitationModel) => {
     const { calendarData, invitationApi } = model;
     const calendarID = calendarData?.calendar.ID;
-    const eventID = invitationApi?.eventID;
+    const eventID = invitationApi?.calendarEvent.ID;
     const recurrenceIDProperty = invitationApi?.vevent['recurrence-id'];
     const recurrenceID = recurrenceIDProperty ? getUnixTime(propertyToUTCDate(recurrenceIDProperty)) : undefined;
     if (!calendarID || !eventID) {
@@ -254,7 +255,7 @@ export const formatDateTime = (
 ) => {
     if (isAllDay) {
         const utcDate = propertyToUTCDate(property);
-        const formattedDate = format(utcDate, 'PP', { locale });
+        const formattedDate = formatUTC(utcDate, 'PP', { locale });
         if (isSingleAllDay) {
             return c('Invitation details (all-day event)').t`${formattedDate} (all day)`;
         }
@@ -265,7 +266,7 @@ export const formatDateTime = (
     const fakeUTCDate = propertyToUTCDate(fakeUTCDateProperty);
     const date = propertyToUTCDate(property);
     const utcOffset = getTimezoneOffset(date, dateTimeProperty.parameters?.tzid || 'UTC').offset;
-    return `${format(fakeUTCDate, 'PPp', { locale })} (GMT${formatTimezoneOffset(utcOffset)})`;
+    return `${formatUTC(fakeUTCDate, 'PPp', { locale })} (GMT${formatTimezoneOffset(utcOffset)})`;
 };
 
 const getIsEventInvitationValid = (event: VcalVeventComponent | undefined): event is VcalVeventComponent => {

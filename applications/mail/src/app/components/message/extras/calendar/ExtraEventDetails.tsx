@@ -6,7 +6,6 @@ import { getFrequencyString } from 'proton-shared/lib/calendar/integration/getFr
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { formatDateTime, getAllDayInfo, InvitationModel } from '../../../../helpers/calendar/invite';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import { RequireSome } from '../../../../models/utils';
@@ -14,12 +13,12 @@ import ExtraEventParticipants from './ExtraEventParticipants';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
-    defaultCalendar?: Calendar;
     weekStartsOn: WeekStartsOn;
 }
-const ExtraEventDetails = ({ model, defaultCalendar, weekStartsOn }: Props) => {
+const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     const {
         isOrganizerMode,
+        calendarData,
         invitationIcs,
         invitationIcs: { method },
         invitationApi
@@ -38,7 +37,7 @@ const ExtraEventDetails = ({ model, defaultCalendar, weekStartsOn }: Props) => {
               locale: dateLocale
           })
         : undefined;
-    const calendar = defaultCalendar?.Name;
+    const calendar = calendarData?.calendar?.Name;
 
     const properties: { label: string; value: string | React.ReactNode; key: string }[] = [
         {

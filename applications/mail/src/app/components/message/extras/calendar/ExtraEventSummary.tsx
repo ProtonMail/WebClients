@@ -231,7 +231,7 @@ const getAttendeeSummary = (model: RequireSome<InvitationModel, 'invitationIcs'>
                 return (
                     <p className="mt0 mb0-5">
                         {c('Calendar invite info').jt`Your attendance to this meeting is optional.
-                        You already accepted this meeting time.`}
+                        You already accepted this meeting invite.`}
                     </p>
                 );
             }
@@ -246,13 +246,10 @@ const getAttendeeSummary = (model: RequireSome<InvitationModel, 'invitationIcs'>
                 );
             }
             if (role === OPTIONAL) {
-                const boldOptional = (
-                    <strong key="optional">{c('Calendar invite info (part of sentence)').t`optional`}</strong>
-                );
                 return (
                     <p className="mt0 mb0-5">
-                        {c('Calendar invite info').jt`Your attendance to this meeting is ${boldOptional}.
-                        You already tentatively accepted this meeting time.`}
+                        {c('Calendar invite info').jt`Your attendance to this meeting is optional.
+                        You already tentatively accepted this meeting invite.`}
                     </p>
                 );
             }
@@ -270,7 +267,7 @@ const getAttendeeSummary = (model: RequireSome<InvitationModel, 'invitationIcs'>
                 return (
                     <p className="mt0 mb0-5">
                         {c('Calendar invite info').jt`Your attendance to this meeting is optional.
-                        You already declined this meeting time.`}
+                        You already declined this meeting invite.`}
                     </p>
                 );
             }

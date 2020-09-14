@@ -116,7 +116,7 @@ const ExtraEventButtons = ({ model, setModel, message, config }: Props) => {
             error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR)
         });
     };
-    const handleInvitationSent = (invitationApi: RequireSome<EventInvitation, 'eventID'>) => {
+    const handleInvitationSent = (invitationApi: RequireSome<EventInvitation, 'calendarEvent'>) => {
         setModel({
             ...model,
             invitationApi,
