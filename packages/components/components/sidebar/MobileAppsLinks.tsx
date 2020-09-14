@@ -3,9 +3,10 @@ import React from 'react';
 import { APPS, APPS_CONFIGURATION, FEATURE_FLAGS, isSSOMode } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
-import { Href, Icon } from '../../components';
 import { useConfig } from '../../hooks';
 import MobileNavServices from './MobileNavServices';
+import Href from '../link/Href';
+import Icon from '../icon/Icon';
 import MobileNavLink from './MobileNavLink';
 
 const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONDRIVE, PROTONACCOUNT } = APPS;
