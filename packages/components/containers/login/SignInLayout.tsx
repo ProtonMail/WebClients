@@ -56,7 +56,7 @@ const SignInLayout = ({ children, title = '' }: Props) => {
                         {children}
                     </div>
                     <p className="aligncenter flex-item-noshrink">
-                        <Link className="bold nodecoration primary-link" to="/signup">{c('Link')
+                        <Link className="bold" to="/signup">{c('Link')
                             .t`Don't have an account yet? Sign up for free!`}</Link>
                     </p>
                 </div>
