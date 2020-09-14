@@ -89,7 +89,12 @@
     /*  1. do not handle responsivess if there is a width attribute / inline width style
         2. do not set auto height as long as it's not need to handle our embedded images (no height attribute)
         3. set at least a min width or it's possible it won't be shown
+        4. remove min-width when image loaded - for tiny images
     */
     max-width: 100%;
     min-width: 38px;
+    &[src] {
+        min-width: 0;
+    }
 }
+
