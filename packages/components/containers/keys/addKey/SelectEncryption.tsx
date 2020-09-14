@@ -35,7 +35,12 @@ const SelectEncryption = ({ encryptionType, setEncryptionType }: Props) => {
                 const id = i.toString();
                 return (
                     <Row key={i}>
-                        <Radio id={id} checked={value === encryptionType} onChange={() => setEncryptionType(value)}>
+                        <Radio
+                            id={`encryptionChoice${id}`}
+                            name="encryptionType"
+                            checked={value === encryptionType}
+                            onChange={() => setEncryptionType(value)}
+                        >
                             <span className="flex-item-fluid">{label}</span>
                         </Radio>
                     </Row>

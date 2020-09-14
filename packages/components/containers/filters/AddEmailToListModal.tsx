@@ -75,10 +75,18 @@ function AddEmailToListModal({ type, incomingDefault, onAdd = noop, onClose, ...
                         checked={mode === EMAIL_MODE}
                         onChange={() => setMode(EMAIL_MODE)}
                         className="mr1"
-                    >{c('Label').t`Email`}</Radio>
-                    <Radio id="domain-mode" checked={mode === DOMAIN_MODE} onChange={() => setMode(DOMAIN_MODE)}>{c(
-                        'Label'
-                    ).t`Domain`}</Radio>
+                        name="filterMode"
+                    >
+                        {c('Label').t`Email`}
+                    </Radio>
+                    <Radio
+                        id="domain-mode"
+                        checked={mode === DOMAIN_MODE}
+                        onChange={() => setMode(DOMAIN_MODE)}
+                        name="filterMode"
+                    >
+                        {c('Label').t`Domain`}
+                    </Radio>
                 </Field>
             </Row>
             {mode === EMAIL_MODE ? <AddEmailToList email={email} onChange={setEmail} /> : null}

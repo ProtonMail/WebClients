@@ -106,6 +106,7 @@ const FilterConditionsRow = ({
             <div className="mt1 flex">
                 <Radio
                     id={`condition-${conditionIndex}-with-attachment`}
+                    name={`attachment-condition-${conditionIndex}`}
                     className="flex flex-nowrap pm-radio--onTop mr1"
                     checked={withAttachment}
                     onChange={toggleAttachment}
@@ -114,6 +115,7 @@ const FilterConditionsRow = ({
                 </Radio>
                 <Radio
                     id={`condition-${conditionIndex}-without-attachment`}
+                    name={`attachment-condition-${conditionIndex}`}
                     className="flex flex-nowrap pm-radio--onTop"
                     checked={!withAttachment}
                     onChange={toggleAttachment}
