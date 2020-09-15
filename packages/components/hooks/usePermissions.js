@@ -3,7 +3,7 @@ import { useUser } from './useUser';
 import useOrganization from './useOrganization';
 
 const { MEMBER_ROLE, ADMIN_ROLE, FREE_ROLE } = USER_ROLES;
-const { MEMBER, ADMIN, FREE, MULTI_USERS, PAID, PAID_MAIL, PAID_VPN, UPGRADER } = PERMISSIONS;
+const { MEMBER, ADMIN, FREE, MULTI_USERS, PAID, PAID_MAIL, PAID_VPN, UPGRADER, NOT_SUB_USER } = PERMISSIONS;
 
 const ROLES = {
     [MEMBER_ROLE]: MEMBER,
@@ -13,13 +13,17 @@ const ROLES = {
 
 const usePermissions = () => {
     const permissions = [];
-    const [{ Role, isPaid, hasPaidMail, hasPaidVpn, canPay }] = useUser();
+    const [{ Role, isPaid, hasPaidMail, hasPaidVpn, canPay, isSubUser }] = useUser();
     const [{ MaxMembers = 0 } = {}] = useOrganization();
 
     permissions.push(ROLES[Role]);
 
     if (canPay) {
         permissions.push(UPGRADER);
+    }
+
+    if (!isSubUser) {
+        permissions.push(NOT_SUB_USER);
     }
 
     if (MaxMembers > 1) {
