@@ -43,7 +43,7 @@ const NewVersionTopBanner = () => {
     );
 
     return (
-        <TopBanner className="bg-global-attention">
+        <TopBanner className="bg-pm-blue">
             {c('Message display when a new app version is available')
                 .jt`A new version of ${appName} is available. ${reloadButton}.`}
         </TopBanner>
