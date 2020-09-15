@@ -209,7 +209,7 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
 
                 if (status === HTTP_ERROR_CODES.UNLOCK) {
                     const { Details: { MissingScopes: missingScopes = [] } = {} } = e.data || {};
-                    return unlockHandler(missingScopes).then(
+                    return unlockHandler(missingScopes, e).then(
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
                         (unlockError) => onError(unlockError)
                     );
