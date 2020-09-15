@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { APPS_CONFIGURATION } from 'proton-shared/lib/constants';
 import { traceError } from 'proton-shared/lib/helpers/sentry';
 
+import { InlineLinkButton } from '../../components';
 import { useConfig } from '../../hooks';
 import TopBanner from './TopBanner';
 
@@ -37,8 +38,8 @@ const NewVersionTopBanner = () => {
     const appName = APPS_CONFIGURATION[APP_NAME].name;
     const reloadTab = () => window.location.reload();
     const reloadButton = (
-        <button type="button" role="button" className="link color-currentColor" onClick={() => reloadTab()}>{c('Action')
-            .t`Refresh the page`}</button>
+        <InlineLinkButton className="color-currentColor" onClick={() => reloadTab()}>{c('Action')
+            .t`Refresh the page`}</InlineLinkButton>
     );
 
     return (
