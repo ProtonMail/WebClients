@@ -78,8 +78,7 @@ const Composer = ({
     windowSize,
     breakpoints,
     onFocus,
-    onClose: inputOnClose,
-    onCompose
+    onClose: inputOnClose
 }: Props) => {
     const [mailSettings] = useMailSettings() as [MailSettings, boolean, Error];
     const { createNotification } = useNotifications();
@@ -337,23 +336,20 @@ const Composer = ({
         const { cleanMessage, mapSendPrefs, hasChanged } = verificationResults;
         const alreadySaved = !!cleanMessage.data.ID && !pendingSave && !hasChanged;
         autoSave.abort?.();
-        await sendWithUndo(
-            () =>
-                addAction(async () => {
-                    try {
-                        await sendMessage(cleanMessage, mapSendPrefs, alreadySaved);
-                    } catch (error) {
-                        createNotification({
-                            text: c('Error').t`Error while sending the message. Message is not sent`,
-                            type: 'error'
-                        });
-                        console.error('Error while sending the message.', error);
-                        setSending(false);
-                        throw error;
-                    }
-                }),
-            onCompose,
-            syncedMessage
+        await sendWithUndo(() =>
+            addAction(async () => {
+                try {
+                    await sendMessage(cleanMessage, mapSendPrefs, alreadySaved);
+                } catch (error) {
+                    createNotification({
+                        text: c('Error').t`Error while sending the message. Message is not sent`,
+                        type: 'error'
+                    });
+                    console.error('Error while sending the message.', error);
+                    setSending(false);
+                    throw error;
+                }
+            })
         );
         onClose();
     });

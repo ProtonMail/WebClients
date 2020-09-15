@@ -524,7 +524,7 @@ describe('icon', () => {
             });
         });
 
-        it('should fall back to a black lock when the email was not sent encrypted to some recipient', () => {
+        it('should fall back to a blue lock when the email was not sent encrypted to some recipient', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication':
                     'test%40pm.me=pgp-pm;test2%40pm.me=pgp-inline;test3%40pm.me=pgp-eo;test4%40pm.me=none',
@@ -534,31 +534,31 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-global-grey-dm',
+                colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Stored with zero-access encryption'
             });
         });
 
-        it('should fall back to a black lock when some headers are missing', () => {
+        it('should fall back to a blue lock when some headers are missing', () => {
             const headers = {
                 'X-Pm-Content-Encryption': 'end-to-end'
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-global-grey-dm',
+                colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Stored with zero-access encryption'
             });
         });
 
-        it('should fall back to a black lock when there are no headers', () => {
+        it('should fall back to a blue lock when there are no headers', () => {
             const headers = {};
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-global-grey-dm',
+                colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Stored with zero-access encryption'
