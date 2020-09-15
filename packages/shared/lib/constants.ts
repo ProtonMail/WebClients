@@ -507,6 +507,7 @@ export enum PERMISSIONS {
     PAID = 'paid',
     PAID_MAIL = 'paid-mail',
     PAID_VPN = 'paid-vpn',
+    NOT_SUB_USER = 'not-sub-user',
 }
 
 export enum MESSAGE_BUTTONS {
