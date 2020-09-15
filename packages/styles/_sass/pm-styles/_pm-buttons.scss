@@ -26,6 +26,7 @@
   border-color: $pm-global-border;
   background: $white;
   color: $pm-global-grey;
+  transition: .15s easing(easeOutQuart), background-position 0s;
 
   &:hover,
   &:focus,
