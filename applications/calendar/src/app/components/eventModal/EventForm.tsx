@@ -1,3 +1,4 @@
+import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import React, { HTMLAttributes } from 'react';
 import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { FREQUENCY, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
@@ -95,9 +96,9 @@ const EventForm = ({
         </IconRow>
     ) : (
         <div className="flex flex-nowrap item pm-form--iconLabels">
-            <Label htmlFor={TITLE_INPUT_ID} title={title} />
+            <Label htmlFor={TITLE_INPUT_ID} title={c('Label').t`Event title`} />
             <div id={TITLE_INPUT_ID} className="flex-item-fluid biggest">
-                {title}
+                {getDisplayTitle(title)}
             </div>
         </div>
     );
