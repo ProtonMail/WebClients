@@ -18,7 +18,7 @@ import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import SendWithErrorsModal from '../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../helpers/message/cleanMessage';
 import { MapSendPreferences } from '../models/crypto';
-import { MessageExtendedWithData, MessageExtended } from '../models/message';
+import { MessageExtendedWithData } from '../models/message';
 import { getRecipientsAddresses, isAttachPublicKey } from '../helpers/message/messages';
 import getSendPreferences from '../helpers/message/getSendPreferences';
 import { generateTopPackages } from '../helpers/send/sendTopPackages';
@@ -31,9 +31,6 @@ import { Attachment } from '../models/attachment';
 import SendWithWarningsModal from '../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
 import { useSaveDraft } from './useMessageWriteActions';
-import UndoButton from '../components/notifications/UndoButton';
-import { UNDO_SEND_DELAY } from '../constants';
-import { OnCompose } from './useCompose';
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();
@@ -241,50 +238,11 @@ export const useSendMessage = () => {
 export const useSendWithUndo = () => {
     const { createNotification } = useNotifications();
 
-    const onBeforeUnload = () => {
-        return c('Info').t`The message you are sending will not be sent if you leave the page.`;
-    };
-
-    return useCallback(
-        async (actualSend: () => Promise<void>, onCompose: OnCompose, syncedMessage: MessageExtended) => {
-            window.addEventListener('beforeunload', onBeforeUnload);
-            let timeoutID: number;
-            const timeoutPromise = new Promise<void>((resolve) => {
-                timeoutID = setTimeout(resolve, UNDO_SEND_DELAY);
-            });
-            const handleUndo = () => {
-                // Cancel send action
-                clearTimeout(timeoutID);
-                // Re-open the message
-                onCompose({
-                    existingDraft: {
-                        localID: syncedMessage.localID,
-                        data: syncedMessage.data
-                    }
-                });
-            };
-            createNotification({
-                text: (
-                    <>
-                        <span className="mr1">{c('Success').t`Sending message...`}</span>
-                        <UndoButton onUndo={handleUndo} />
-                    </>
-                ),
-                expiration: UNDO_SEND_DELAY
-            });
-            const send = async () => {
-                try {
-                    await timeoutPromise;
-                    await actualSend();
-                    createNotification({ text: c('Info').t`Message sent` });
-                } catch {
-                    handleUndo();
-                } finally {
-                    window.removeEventListener('beforeunload', onBeforeUnload);
-                }
-            };
-            send();
-        },
-        []
-    );
+    return useCallback(async (actualSend: () => Promise<void>) => {
+        const send = async () => {
+            await actualSend();
+            createNotification({ text: c('Info').t`Message sent` });
+        };
+        send();
+    }, []);
 };
