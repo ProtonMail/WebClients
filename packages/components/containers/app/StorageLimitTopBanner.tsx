@@ -14,7 +14,7 @@ const StorageLimitTopBanner = () => {
     const [user] = useUser();
     const { APP_NAME } = useConfig();
     const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
-    const spaceDisplayed = isNaN(spacePercentage) ? 0 : Math.round(spacePercentage);
+    const spaceDisplayed = isNaN(spacePercentage) ? 0 : Math.floor(spacePercentage);
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useState(
         getItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`) === 'true'
     );
