@@ -1,10 +1,9 @@
-import { Alert, Icon } from 'react-components';
+import { Alert } from 'react-components';
 import { c } from 'ttag';
 import React from 'react';
 import calendarSvg from 'design-system/assets/img/pm-images/calendar.svg';
 
 const CalendarReady = () => {
-    const supportIcon = <Icon key="support-icon" name="report-bug" className="alignsub" />;
     return (
         <>
             <Alert>{c('Info')
@@ -13,7 +12,7 @@ const CalendarReady = () => {
                 <img src={calendarSvg} alt="" />
             </div>
             <Alert>{c('Info')
-                .jt`If you encounter a problem, you can reach our support team by clicking on Profile/${supportIcon} Report bug button.`}</Alert>
+                .jt`For any question or feedback, you can contact us from the Help dropdown located in the calendar header by clicking on Report bug.`}</Alert>
         </>
     );
 };
