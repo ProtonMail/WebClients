@@ -21,6 +21,22 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
     };
 
     const list = [
+        invoice.State === INVOICE_STATE.UNPAID && {
+            text: c('Action').t`Pay`,
+            async onClick() {
+                const { Stripe, Paymentwall } = await api(getPaymentMethodStatus());
+                const canPay = Stripe || Paymentwall;
+
+                if (!canPay) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`Payments are currently not available, please try again later`,
+                    });
+                }
+
+                createModal(<PayInvoiceModal invoice={invoice} fetchInvoices={fetchInvoices} />);
+            },
+        },
         {
             text: c('Action').t`View`,
             async onClick() {
@@ -40,22 +56,6 @@ const InvoiceActions = ({ invoice, fetchInvoices }) => {
             async onClick() {
                 const blob = await get();
                 downloadFile(blob, filename);
-            },
-        },
-        invoice.State === INVOICE_STATE.UNPAID && {
-            text: c('Action').t`Pay`,
-            async onClick() {
-                const { Stripe, Paymentwall } = await api(getPaymentMethodStatus());
-                const canPay = Stripe || Paymentwall;
-
-                if (!canPay) {
-                    createNotification({
-                        type: 'error',
-                        text: c('Error').t`Payments are currently not available, please try again later`,
-                    });
-                }
-
-                createModal(<PayInvoiceModal invoice={invoice} fetchInvoices={fetchInvoices} />);
             },
         },
     ].filter(Boolean);
