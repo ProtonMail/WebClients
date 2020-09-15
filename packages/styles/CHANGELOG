@@ -4,7 +4,7 @@
 
 - added `ellipsis-two-lines` helper
 - hover effect for conversation row
-- added `empty-folder`, `proton-account` icon
+- added `empty-folder`, `proton-account`, `contact-full` icons
 - added SSO login styles + multi-account support
 - added `semibold` helper
 - added `tiny-shadow-container` helper, made it dark mode friendly
@@ -23,6 +23,7 @@
 - fix meterBar component background color in dark mode
 - fix links default underline style
 - fix - `table` reset for Mail - added a Sass variable to trigger it or not (Mail is the special case, newsletter compatibility ftw)
+- improve buttons loading state
 
 
 ## Updated/fixes
@@ -46,6 +47,7 @@
 - remove italic for placeholders text in fields
 - fixed fields with text positionned above (@protonmail.com)
 - fix Safari bug on modal footers
+- fix several regressions: overflow on some fields (`field-icon-container`), composer, etc.
 
 
 # [1.8.4] - 2019-07-28
