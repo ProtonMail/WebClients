@@ -38,14 +38,14 @@ const StorageLimitTopBanner = () => {
             {c('Link').t`Upgrade account`}
         </AppLink>
     );
-    if (spaceDisplayed >= 100) {
+    if (spacePercentage >= 100) {
         return (
             <TopBanner className="bg-global-warning">{c('Info')
                 .jt`You reached 100% of your storage capacity. You cannot send or receive new emails. Free up some space or add more storage space. ${upgradeLink}`}</TopBanner>
         );
     }
 
-    if (!ignoreStorageLimit && spaceDisplayed >= 90 && spaceDisplayed < 100) {
+    if (!ignoreStorageLimit && spacePercentage >= 90 && spacePercentage < 100) {
         return (
             <TopBanner className="bg-global-attention" onClose={() => setIgnoreStorageLimit(true)}>{c('Info')
                 .jt`You reached ${spaceDisplayed}% of your storage capacity. Free up some space or add more storage space. ${upgradeLink}`}</TopBanner>
