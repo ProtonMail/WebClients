@@ -5,6 +5,7 @@ const argv = require('minimist')(process.argv.slice(2));
 const { sync } = require('./helpers/cli');
 const { warn, error } = require('./helpers/log');
 const prepareSentry = require('./helpers/sentry');
+const { getPublicPath } = require('../webpack/helpers/source');
 
 const isSilent = argv._.includes('help') || argv._.includes('init') || argv._.includes('print-config');
 
@@ -151,6 +152,8 @@ function main({ api = 'dev' }) {
         dsn: SENTRY_DSN
     };
 
+    const PUBLIC_APP_PATH = getPublicPath(argv);
+
     const config = dedent`
     export const CLIENT_ID = '${json.clientId}';
     export const CLIENT_TYPE = ${ENV_CONFIG.app.clientType || 1};
@@ -161,8 +164,8 @@ function main({ api = 'dev' }) {
     export const LOCALES = ${JSON.stringify(LOCALES)};
     export const API_VERSION = '3';
     export const DATE_VERSION = '${new Date().toGMTString()}';
-    export const CHANGELOG_PATH = 'assets/changelog.tpl.html';
-    export const VERSION_PATH = 'assets/version.json';
+    export const CHANGELOG_PATH = '${PUBLIC_APP_PATH}assets/changelog.tpl.html';
+    export const VERSION_PATH = '${PUBLIC_APP_PATH}assets/version.json';
     export const COMMIT_RELEASE = '${COMMIT_RELEASE}';
     export const SENTRY_DSN = '${SENTRY_DSN}';
     `;

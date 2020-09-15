@@ -51,6 +51,7 @@ async function main() {
     const APP_MODE = getAppMode();
     const FEATURE_FLAGS = getFeatureFlags();
     const WRITE_SRI = argv.sri;
+    const publicPath = getPublicPath(argv);
 
     // For any task BUT init we need to create a custom config for the app
     if (!is('init') && !is('help') && !is('print-config')) {
@@ -66,7 +67,6 @@ async function main() {
 
     if (is('compile') || is('extract-i18n')) {
         const compile = require('../cli/compile');
-        const publicPath = getPublicPath(argv);
         const CONFIG = configBuilder({
             publicPath,
             appMode: APP_MODE,
@@ -81,7 +81,6 @@ async function main() {
     if (is('dev-server')) {
         const server = require('../cli/server');
         const port = await findPort(getPort(argv));
-        const publicPath = getPublicPath(argv);
 
         const log = (ip = 'localhost') => chalk.yellow(`http://${ip}:${port}${publicPath}`);
         console.log(dedent`
