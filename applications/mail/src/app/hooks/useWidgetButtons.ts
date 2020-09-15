@@ -104,7 +104,7 @@ const useWidgetButtons = ({ model, message, config, onUnexpectedError, onSuccess
                     }
                 ]
             } = await api<SyncMultipleApiResponse>({
-                ...syncMultipleEvents(calendar.ID, { MemberID: memberID, Events }),
+                ...syncMultipleEvents(calendar.ID, { MemberID: memberID, Events, IsInvite: 1 }),
                 timeout: HOUR,
                 silence: true
             });
