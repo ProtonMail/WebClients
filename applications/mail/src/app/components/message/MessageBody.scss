@@ -28,6 +28,11 @@
         pointer-events: none;
     }
 
+    // fix for some embedded images bugs
+    img {
+        max-width: none;
+    }
+
     * {
         line-height: normal;
     }
