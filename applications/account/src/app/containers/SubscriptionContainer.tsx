@@ -15,14 +15,14 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
-const { UPGRADER } = PERMISSIONS;
+const { UPGRADER, NOT_SUB_USER } = PERMISSIONS;
 
 export const getSubscriptionPage = (user: UserModel) => {
     return {
         text: c('Title').t`Subscription`,
         to: '/subscription',
         icon: 'dashboard',
-        permissions: [UPGRADER],
+        permissions: [UPGRADER, NOT_SUB_USER],
         subsections: [
             !user.hasPaidMail && {
                 text: c('Title').t`Plans`,
