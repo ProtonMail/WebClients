@@ -7,6 +7,23 @@ import { ContactEmail, ContactGroup, ContactOrGroup } from 'proton-shared/lib/in
 
 import { contactToInput } from '../../../helpers/addresses';
 
+const compareFunction = (
+    item1: { label: string; value: string; score?: number },
+    item2: { label: string; value: string; score?: number }
+) => {
+    if (item1.score !== item2.score) {
+        return (item2.score || 0) - (item1.score || 0);
+    }
+
+    if (item1.label > item2.label) {
+        return 1;
+    } else if (item1.label < item2.label) {
+        return -1;
+    }
+
+    return 0;
+};
+
 interface Props {
     inputRef: MutableRefObject<HTMLInputElement | null>;
     contacts: ContactEmail[];
@@ -33,20 +50,55 @@ const AddressesAutocomplete = ({
     const contactEmailsMap = useMemo(() => toMap(contacts, 'Email'), [contacts]);
     const recipientAddressesMap = useMemo(() => toMap(currentValue, 'Address'), [currentValue]);
     const recipientGroupsMap = useMemo(() => toMap(currentValue, 'Group'), [currentValue]);
-
+    const contactList = useMemo(
+        () =>
+            contacts
+                .filter((contact) => !recipientAddressesMap[contact.Email])
+                .map((contact) => ({
+                    label: contactToInput(contact),
+                    value: `Contact:${contact.ID}`,
+                    score: ((contact as any).LastUsedTime as number | undefined) || 0
+                }))
+                .sort(compareFunction),
+        [recipientAddressesMap, contacts]
+    );
+    const groupList = useMemo(
+        () =>
+            contactGroups
+                .filter((group) => !recipientGroupsMap[group.Path])
+                .map((group) => ({
+                    label: group.Name,
+                    value: `Group:${group.ID}`
+                }))
+                .sort(compareFunction),
+        [recipientGroupsMap, contactGroups]
+    );
+    const majorList = useMemo(
+        () =>
+            majorDomains
+                .filter((email) => !recipientAddressesMap[email] && !contactEmailsMap[email])
+                .map((email) => ({
+                    label: email,
+                    value: `Major:${email}`
+                }))
+                .sort(compareFunction),
+        [majorDomains, recipientAddressesMap, contactEmailsMap]
+    );
     const recipientItem = useAutocompleteRecipient();
 
+    // Init Awesomplete
     useEffect(() => {
         const awesompleteInstance = new Awesomplete(
             inputRef.current as HTMLElement,
             {
                 container: () => containerRef.current as HTMLElement,
                 minChars: 1,
-                maxItems: Infinity,
+                maxItems: 20,
                 autoFirst: true,
                 sort: false
             } as Awesomplete.Options
         );
+        (awesompleteInstance as any).item = recipientItem;
         setAwesomplete(awesompleteInstance);
 
         if (autoComplete) {
@@ -56,34 +108,12 @@ const AddressesAutocomplete = ({
         return () => awesompleteInstance.destroy();
     }, []);
 
+    // Update list
     useEffect(() => {
         if (awesomplete) {
-            const contactList = contacts
-                .filter((contact) => !recipientAddressesMap[contact.Email])
-                .map((contact) => ({
-                    label: contactToInput(contact),
-                    value: `Contact:${contact.ID}`
-                }));
-
-            const groupList = contactGroups
-                .filter((group) => !recipientGroupsMap[group.Path])
-                .map((group) => ({
-                    label: group.Name,
-                    value: `Group:${group.ID}`
-                }));
-
-            const majorList = majorDomains
-                .filter((email) => !recipientAddressesMap[email] && !contactEmailsMap[email])
-                .map((email) => ({
-                    label: email,
-                    value: `Major:${email}`
-                }));
-
             awesomplete.list = [...contactList, ...groupList, ...majorList];
-
-            (awesomplete as any).item = recipientItem;
         }
-    }, [awesomplete, contacts, contactGroups, majorDomains, currentValue]);
+    }, [awesomplete, contactList, groupList, majorList]);
 
     useEffect(() => {
         if (awesomplete) {
