@@ -106,6 +106,7 @@
 
     &.pm-field {
         padding: 0.25em 0.5em;
+        height: auto;
     }
 
     &.composer-addresses-container-closed {
@@ -124,6 +125,7 @@
         padding: 0;
         min-width: 10rem;
         background: inherit;
+        height: auto;
 
         &:focus {
             box-shadow: none;
