@@ -26,7 +26,7 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCo
             onToggleExpand={onToggleExpand}
             primary={
                 <SidebarPrimaryButton onClick={handleCompose} data-test-id="sidebar:compose">
-                    {c('Action').t`Compose`}
+                    {c('Action').t`New message`}
                 </SidebarPrimaryButton>
             }
             logo={<MainLogo to="/inbox" />}
