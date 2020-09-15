@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { getIsInvitation } from '../../helpers/invitations';
 import { propertiesToModel } from '../eventModal/eventForm/propertiesToModel';
 import { propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToNotificationModel';
 import { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
@@ -23,7 +24,7 @@ const DEFAULT_VEVENT: VcalVeventComponent = {
 const useReadEvent = (
     value: DecryptedEventTupleResult | undefined,
     tzid: string,
-    organizer?: string
+    author?: string
 ): EventModelReadView => {
     return useMemo(() => {
         const [veventComponent = DEFAULT_VEVENT, alarmMap = {}]: [VcalVeventComponent, EventPersonalMap] = value || [
@@ -32,7 +33,6 @@ const useReadEvent = (
         ];
         const isAllDay = getIsAllDay(veventComponent);
         const model = propertiesToModel(veventComponent, isAllDay, tzid);
-        model.organizer = model.organizer || organizer;
         const notifications = Object.keys(alarmMap)
             .map((key) => {
                 return propertiesToNotificationModel(alarmMap[key], isAllDay);
@@ -42,6 +42,7 @@ const useReadEvent = (
         return {
             ...model,
             isAllDay,
+            isInvitation: getIsInvitation(model, author),
             notifications,
         };
     }, [value, tzid]);

@@ -1,8 +1,8 @@
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import React, { HTMLAttributes } from 'react';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { FREQUENCY, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { classnames, Input, TextArea } from 'react-components';
+import { classnames, Input, Label, TextArea } from 'react-components';
 import { c } from 'ttag';
 import { MAX_NOTIFICATIONS } from '../../constants';
 import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
@@ -52,6 +52,8 @@ const EventForm = ({
         frequencyModel,
         start,
         isAllDay,
+        isInvitation,
+        title,
         fullDayNotifications,
         defaultFullDayNotification,
         partDayNotifications,
@@ -80,21 +82,31 @@ const EventForm = ({
             tzid={tzid!}
         />
     );
+    const titleRow = !isInvitation ? (
+        <IconRow id={TITLE_INPUT_ID} title={c('Label').t`Event title`}>
+            <Input
+                id={TITLE_INPUT_ID}
+                placeholder={c('Placeholder').t`E.g., Get a coffee with Sarah`}
+                title={c('Title').t`Add event title`}
+                autoFocus
+                maxLength={MAX_LENGTHS.TITLE}
+                {...createHandlers({ model, setModel, field: 'title' }).native}
+            />
+        </IconRow>
+    ) : (
+        <div className="flex flex-nowrap item pm-form--iconLabels">
+            <Label htmlFor={TITLE_INPUT_ID} title={title} />
+            <div id={TITLE_INPUT_ID} className="flex-item-fluid biggest">
+                {title}
+            </div>
+        </div>
+    );
 
     return (
         <div className="mt0-5" {...props}>
-            <IconRow id={TITLE_INPUT_ID} title={c('Label').t`Event title`}>
-                <Input
-                    id={TITLE_INPUT_ID}
-                    placeholder={c('Placeholder').t`E.g., Get a coffee with Sarah`}
-                    title={c('Title').t`Add event title`}
-                    autoFocus
-                    maxLength={MAX_LENGTHS.TITLE}
-                    {...createHandlers({ model, setModel, field: 'title' }).native}
-                />
-            </IconRow>
-            {dateRow}
-            {!isMinimal && (
+            {titleRow}
+            {!isInvitation && dateRow}
+            {!isMinimal && !isInvitation && (
                 <IconRow icon="reload" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
                     <FrequencyInput
                         className={classnames([isCustomFrequencySet && 'mb0-5'])}
@@ -123,7 +135,7 @@ const EventForm = ({
                     )}
                 </IconRow>
             )}
-            {!isMinimal && showParticipants && (
+            {!isMinimal && !isInvitation && showParticipants && (
                 <IconRow icon="contacts-groups" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
                     <ParticipantsInput
                         placeholder={c('Placeholder').t`Add participants`}
@@ -132,15 +144,17 @@ const EventForm = ({
                     />
                 </IconRow>
             )}
-            <IconRow icon="address" title={c('Label').t`Event Location`} id={LOCATION_INPUT_ID}>
-                <Input
-                    id={LOCATION_INPUT_ID}
-                    placeholder={c('Placeholder').t`E.g., Corner Cafe`}
-                    maxLength={MAX_LENGTHS.LOCATION}
-                    title={c('Title').t`Add event location`}
-                    {...createHandlers({ model, setModel, field: 'location' }).native}
-                />
-            </IconRow>
+            {!isInvitation && (
+                <IconRow icon="address" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
+                    <Input
+                        id={LOCATION_INPUT_ID}
+                        placeholder={c('Placeholder').t`E.g., Corner Cafe`}
+                        maxLength={MAX_LENGTHS.LOCATION}
+                        title={c('Title').t`Add event location`}
+                        {...createHandlers({ model, setModel, field: 'location' }).native}
+                    />
+                </IconRow>
+            )}
             {!isMinimal && (
                 <IconRow
                     id={NOTIFICATION_INPUT_ID}
@@ -203,17 +217,19 @@ const EventForm = ({
                     />
                 </IconRow>
             ) : null}
-            <IconRow icon="text-align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
-                <TextArea
-                    id={DESCRIPTION_INPUT_ID}
-                    minRows={2}
-                    autoGrow
-                    placeholder={c('Placeholder').t`E.g., Don’t forget paperwork`}
-                    maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
-                    title={c('Title').t`Add more information related to this event`}
-                    {...createHandlers({ model, setModel, field: 'description' }).native}
-                />
-            </IconRow>
+            {!isInvitation && (
+                <IconRow icon="text-align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
+                    <TextArea
+                        id={DESCRIPTION_INPUT_ID}
+                        minRows={2}
+                        autoGrow
+                        placeholder={c('Placeholder').t`E.g., Don’t forget paperwork`}
+                        maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
+                        title={c('Title').t`Add more information related to this event`}
+                        {...createHandlers({ model, setModel, field: 'description' }).native}
+                    />
+                </IconRow>
+            )}
         </div>
     );
 };

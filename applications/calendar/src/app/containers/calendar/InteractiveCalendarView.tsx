@@ -1,4 +1,5 @@
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { getHasAttendee } from 'proton-shared/lib/calendar/vcalHelper';
 import { c } from 'ttag';
 import { Prompt } from 'react-router';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -329,6 +330,7 @@ const InteractiveCalendarView = ({
             veventValarmComponent: personalMap[Member.ID],
             veventComponentParentPartial,
             tzid,
+            author: eventData.Author,
         });
         return {
             ...createResult,
@@ -348,7 +350,9 @@ const InteractiveCalendarView = ({
             const targetCalendar = (event && event.data && event.data.calendarData) || undefined;
 
             const isAllowedToTouchEvent = true;
-            let isAllowedToMoveEvent = getIsCalendarProbablyActive(targetCalendar);
+            const vevent = event.data.eventReadResult?.result?.[0];
+            const hasAttendees = !!vevent && getHasAttendee(vevent);
+            let isAllowedToMoveEvent = getIsCalendarProbablyActive(targetCalendar) && !hasAttendees;
 
             if (!isAllowedToTouchEvent) {
                 return;

@@ -16,6 +16,7 @@ import {
     SETTINGS_NOTIFICATION_TYPE,
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { getIsInvitation } from '../../../helpers/invitations';
 
 import { getDateTimeState } from './time';
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
@@ -148,6 +149,7 @@ export const getInitialModel = ({
     const notificationModel = getNotificationModels(CalendarSettings);
     const memberModel = getInitialMemberModel(Addresses, Members, Member, Address);
     const calendarsModel = getCalendarsModel(Calendar, Calendars);
+    const memberEmail = Member.Email;
 
     return {
         type: 'event',
@@ -158,7 +160,8 @@ export const getInitialModel = ({
         initialDate,
         initialTzid: tzid,
         isAllDay,
-        organizer: Member.Email,
+        organizer: { email: memberEmail, cn: memberEmail },
+        isInvitation: false,
         defaultEventDuration,
         frequencyModel,
         hasTouchedRrule: false,
@@ -188,6 +191,7 @@ interface GetExistingEventArguments {
     veventValarmComponent?: VcalVeventComponent;
     veventComponentParentPartial?: SharedVcalVeventComponent;
     tzid: string;
+    author: string;
 }
 
 export const getExistingEvent = ({
@@ -195,6 +199,7 @@ export const getExistingEvent = ({
     veventValarmComponent,
     veventComponentParentPartial,
     tzid,
+    author,
 }: GetExistingEventArguments): Partial<EventModel> => {
     const isAllDay = getIsAllDay(veventComponent);
     const recurrenceId = getRecurrenceId(veventComponent);
@@ -216,6 +221,7 @@ export const getExistingEvent = ({
         ...newModel,
         description: strippedDescription,
         isAllDay,
+        isInvitation: getIsInvitation(newModel, author),
         ...parentMerge,
         ...(isAllDay
             ? {

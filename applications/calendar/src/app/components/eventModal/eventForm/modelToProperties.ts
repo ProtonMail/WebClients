@@ -1,10 +1,10 @@
 import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper';
 import {
+    buildVcalOrganizer,
     getDateProperty,
     getDateTimeProperty,
     propertyToUTCDate,
-    buildVcalAttendee,
 } from 'proton-shared/lib/calendar/vcalConverter';
 import { addDays } from 'date-fns';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
@@ -54,8 +54,6 @@ export const modelToGeneralProperties = ({
     title,
     location,
     description,
-    attendees,
-    organizer,
     rest,
 }: Partial<EventModel>): Omit<VcalVeventComponent, 'dtstart' | 'dtend'> => {
     const properties = omit(rest, ['dtstart', 'dtend']);
@@ -76,21 +74,27 @@ export const modelToGeneralProperties = ({
         properties.description = { value: description.slice(0, MAX_LENGTHS.EVENT_DESCRIPTION) };
     }
 
-    if (Array.isArray(attendees) && attendees.length) {
-        properties.organizer = organizer && buildVcalAttendee(organizer);
-        properties.attendee = attendees.map(({ email, rsvp, role, token }) => ({
+    return properties;
+};
+
+const modelToAttendeeProperties = ({ attendees, organizer }: EventModel) => {
+    if (!Array.isArray(attendees) || !attendees.length || !organizer?.email) {
+        return {};
+    }
+    return {
+        organizer: buildVcalOrganizer(organizer.email),
+        attendee: attendees.map(({ email, rsvp, role, token, partstat }) => ({
             value: email,
             parameters: {
                 // cutype: 'INDIVIDUAL',
                 cn: email,
                 role,
                 rsvp,
+                partstat,
                 'x-pm-token': token,
             },
-        }));
-    }
-
-    return properties;
+        })),
+    };
 };
 
 const modelToValarmComponents = ({ isAllDay, fullDayNotifications, partDayNotifications }: EventModel) => {
@@ -101,6 +105,7 @@ const modelToValarmComponents = ({ isAllDay, fullDayNotifications, partDayNotifi
 export const modelToVeventComponent = (model: EventModel) => {
     const dateProperties = modelToDateProperties(model);
     const frequencyProperties = modelToFrequencyProperties(model);
+    const attendeeProperties = modelToAttendeeProperties(model);
     const generalProperties = modelToGeneralProperties(model);
     const valarmComponents = modelToValarmComponents(model);
 
@@ -110,6 +115,7 @@ export const modelToVeventComponent = (model: EventModel) => {
         ...generalProperties,
         ...frequencyProperties,
         ...dateProperties,
+        ...attendeeProperties,
         component: 'vevent',
         components,
     });

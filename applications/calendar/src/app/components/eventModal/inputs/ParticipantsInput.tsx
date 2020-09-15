@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import { ICAL_ATTENDEE_ROLE } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { contactToRecipient } from 'proton-shared/lib/helpers/address';
-import { majorDomainsMatcher, validateEmailAddress, normalizeExternalEmail } from 'proton-shared/lib/helpers/email';
+import { majorDomainsMatcher, normalizeExternalEmail, validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { Recipient } from 'proton-shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import React, { ChangeEvent, ComponentProps, memo, useCallback, useMemo, useState } from 'react';
@@ -20,10 +20,13 @@ import { c, msgid } from 'ttag';
 import { AttendeeModel } from '../../../interfaces/EventModel';
 
 const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
+
 const emailToAttendee = (email: string): AttendeeModel => ({
     email,
+    cn: email,
     role: REQUIRED,
-    rsvp: 'TRUE',
+    partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+    rsvp: ICAL_ATTENDEE_RSVP.TRUE,
 });
 
 interface Props {

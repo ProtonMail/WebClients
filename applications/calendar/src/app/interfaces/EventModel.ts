@@ -6,6 +6,8 @@ import {
     MONTHLY_TYPE,
     WEEKLY_TYPE,
     YEARLY_TYPE,
+    ICAL_ATTENDEE_STATUS,
+    ICAL_ATTENDEE_RSVP,
 } from 'proton-shared/lib/calendar/constants';
 import { NotificationModel } from './NotificationModel';
 
@@ -39,10 +41,17 @@ export interface DateTimeModel {
     tzid: string;
 }
 
+export interface OrganizerModel {
+    email: string;
+    cn: string;
+}
+
 export interface AttendeeModel {
     email: string;
-    rsvp: 'TRUE' | 'FALSE';
+    cn: string;
+    rsvp: ICAL_ATTENDEE_RSVP;
     role: ICAL_ATTENDEE_ROLE;
+    partstat: ICAL_ATTENDEE_STATUS;
     token?: string;
 }
 
@@ -67,7 +76,7 @@ export interface EventModelView {
     start: DateTimeModel;
     end: DateTimeModel;
     attendees: AttendeeModel[];
-    organizer?: string;
+    organizer: OrganizerModel;
     rest?: any;
 }
 
@@ -80,8 +89,8 @@ export interface EventModel extends EventModelView {
         memberID: string;
         addressID: string;
     };
-    attendees: AttendeeModel[];
     isAllDay: boolean;
+    isInvitation: boolean;
     defaultPartDayNotification: NotificationModel;
     defaultFullDayNotification: NotificationModel;
     fullDayNotifications: NotificationModel[];
