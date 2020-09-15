@@ -15,7 +15,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
-const { UPGRADER, PAID } = PERMISSIONS;
+const { UPGRADER } = PERMISSIONS;
 
 export const getSubscriptionPage = (user: UserModel) => {
     return {
@@ -31,12 +31,12 @@ export const getSubscriptionPage = (user: UserModel) => {
             {
                 text: c('Title').t`Subscription`,
                 id: 'subscription',
-                permissions: [PAID],
+                permissions: [UPGRADER],
             },
             {
                 text: c('Title').t`Billing details`,
                 id: 'billing',
-                permissions: [PAID],
+                permissions: [UPGRADER],
             },
             {
                 text: c('Title').t`Payment methods`,
