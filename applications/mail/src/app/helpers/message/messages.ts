@@ -77,112 +77,32 @@ export const getRecipients = (message?: Message) => {
     const { ToList = [], CCList = [], BCCList = [] } = message || {};
     return [...ToList, ...CCList, ...BCCList];
 };
-// export const getRecipientsLabels = (message: Message = {}) => getRecipients(message).map(getRecipientLabel);
+
 export const getRecipientsAddresses = (message: Message) =>
     getRecipients(message)
         .map(({ Address }) => Address || '')
         .filter(identity);
 
 /**
- * Extract and normalize recipients
- * @param {Object} message
- * @return {Array<String>}
- */
-// export const normalizeRecipients = (message = {}) => {
-//     return getRecipients(message).map(({ Address }) => normalizeEmail(Address));
-// };
-
-/**
- * Decrypt simple message body with password
- * @param {String} message.Body
- * @param {String} password
- * @return {String} body
- */
-// export async function decrypt({ Body = '' } = {}, password) {
-//     const message = await getMessage(Body);
-//     const { data: body } = await decryptMessage({
-//         message,
-//         passwords: [password]
-//     });
-//     return body;
-// }
-
-/**
- * Get the label ids to add for a message that has moved.
- *
- * Types definition
- *   - 1: a draft
- * if you move it to trash and back to inbox, it will go to draft instead
- *   - 2: is sent
- *  if you move it to trash and back, it will go back to sent
- *   - 3: is inbox and sent (a message sent to yourself)
- * if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
- *
- * @param {Message} message
- * @param {String} labelID label id to which it is moved
- * @returns {Array}
- */
-// export const getLabelIDsMoved = (message, labelID) => {
-//     const toInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
-
-//     if (toInbox) {
-//         // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
-//         if (message.isDraft()) {
-//             return [MAILBOX_IDENTIFIERS.allDrafts, MAILBOX_IDENTIFIERS.drafts];
-//         }
-
-//         // If you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
-//         if (message.isSentAndReceived()) {
-//             return [MAILBOX_IDENTIFIERS.inbox, MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent];
-//         }
-
-//         // This message is sent, if you move it to trash and back, it will go back to sent
-//         if (message.isSent()) {
-//             return [MAILBOX_IDENTIFIERS.allSent, MAILBOX_IDENTIFIERS.sent];
-//         }
-//     }
-
-//     return [labelID];
-// };
-
-/**
  * Get date from message
  */
 export const getDate = ({ Time = 0 }: Message) => new Date(Time * 1000);
 
-/**
- * Check if these all messages shared the same sender (by email address)
- * @param {Array<message>} messages
- * @return {Boolean}
- */
-// export const sameSender = (messages = []) => {
-//     if (!messages.length) {
-//         return false;
-//     }
-
-//     const [{ Sender: firstSender } = {}] = messages;
-//     const firstAddress = normalizeEmail(firstSender.Address);
-
-//     return (
-//         messages.length ===
-//         messages.filter(({ Sender = {} }) => {
-//             return normalizeEmail(Sender.Address) === firstAddress;
-//         }).length
-//     );
-// };
-
 export const getParsedHeaders = (message: Partial<Message> | undefined, parameter: string) => {
     const { ParsedHeaders = {} } = message || {};
-
-    if (parameter) {
-        return ParsedHeaders[parameter];
-    }
-
-    return ParsedHeaders;
+    return ParsedHeaders[parameter];
+};
+export const getParsedHeadersFirstValue = (message: Partial<Message> | undefined, parameter: string) => {
+    const value = getParsedHeaders(message, parameter);
+    return Array.isArray(value) ? value[0] : value;
+};
+export const getParsedHeadersAsArray = (message: Partial<Message> | undefined, parameter: string) => {
+    const value = getParsedHeaders(message, parameter);
+    return value === undefined ? undefined : Array.isArray(value) ? value : [value];
 };
 
 export const getOriginalTo = (message?: Partial<Message>) => {
-    return getParsedHeaders(message, 'X-Original-To') || '';
+    return getParsedHeadersFirstValue(message, 'X-Original-To') || '';
 };
 
 export const requireReadReceipt = (message?: Message) => {
@@ -195,13 +115,8 @@ export const requireReadReceipt = (message?: Message) => {
     return true;
 };
 
-export const getListUnsubscribe = (message?: Message) => {
-    return getParsedHeaders(message, 'List-Unsubscribe') || '';
-};
-
-export const getListUnsubscribePost = (message?: Message) => {
-    return getParsedHeaders(message, 'List-Unsubscribe-Post') || '';
-};
+export const getListUnsubscribe = (message?: Message) => getParsedHeadersAsArray(message, 'List-Unsubscribe');
+export const getListUnsubscribePost = (message?: Message) => getParsedHeadersAsArray(message, 'List-Unsubscribe-Post');
 
 export const getAttachments = (message?: Message) => message?.Attachments || [];
 export const hasAttachments = (message?: Message) => !!(message?.NumAttachments && message?.NumAttachments > 0);
@@ -238,8 +153,10 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
     // These headers are not always available. But we should check them to support
     // outlook / mail autoresponses.
     return (
-        AUTOREPLY_HEADERS.some((h) => h in ParsedHeaders) ||
-        autoReplyHeaderValues.some(([k, v]) => k in ParsedHeaders && ParsedHeaders[k].toLowerCase() === v)
+        AUTOREPLY_HEADERS.some((header) => header in ParsedHeaders) ||
+        autoReplyHeaderValues.some(([header, searchedValue]) =>
+            getParsedHeadersAsArray({ ParsedHeaders }, header)?.some((foundValue) => foundValue === searchedValue)
+        )
     );
 };
 

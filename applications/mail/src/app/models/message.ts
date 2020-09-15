@@ -33,7 +33,7 @@ export interface Message {
     Body: any;
     MIMEType: MIME_TYPES;
     Header: string;
-    ParsedHeaders: { [key: string]: any };
+    ParsedHeaders: { [key: string]: string | string[] | undefined };
     ReplyTo: Recipient;
     ReplyTos: Recipient[];
     Attachments: Attachment[];

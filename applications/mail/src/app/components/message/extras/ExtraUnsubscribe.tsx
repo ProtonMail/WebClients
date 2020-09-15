@@ -15,7 +15,7 @@ import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { openNewTab } from 'proton-shared/lib/helpers/browser';
 import performRequest from 'proton-shared/lib/fetch/fetch';
-import { normalizeEmail, removeEmailAlias } from 'proton-shared/lib/helpers/email';
+import { removeEmailAlias } from 'proton-shared/lib/helpers/email';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
 import { getListUnsubscribe, getListUnsubscribePost, getOriginalTo } from '../../../helpers/message/messages';
@@ -43,12 +43,14 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const [loading, withLoading] = useLoading();
     const toAddress = getOriginalTo(message.data);
     const { Address: senderAddress, Name: senderName } = message.data?.Sender || {};
-    const list = getListUnsubscribe(message.data);
-    const oneClick = getListUnsubscribePost(message.data) === UNSUBSCRIBE_ONE_CLICK;
-    const matches = (list.match(UNSUBSCRIBE_REGEX) || []).map((m: string) => m.replace('<', '').replace('>', ''));
-    const address = addresses.find(({ Email }) => normalizeEmail(Email) === removeEmailAlias(toAddress));
+    const lists = getListUnsubscribe(message.data);
+    const oneClick = getListUnsubscribePost(message.data)?.some((value) => value === UNSUBSCRIBE_ONE_CLICK) || false;
+    const matches = (lists?.map((list) => list.match(UNSUBSCRIBE_REGEX) || []) || [])
+        .flat()
+        .map((match) => match.replace('<', '').replace('>', ''));
+    const address = addresses.find(({ Email }) => removeEmailAlias(Email) === removeEmailAlias(toAddress));
 
-    if (message.unsubscribed || !list || !address) {
+    if (message.unsubscribed || !lists || !address) {
         return null;
     }
 

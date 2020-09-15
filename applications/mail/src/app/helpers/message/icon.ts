@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { VERIFICATION_STATUS } from '../../constants';
 import { MapStatusIcons, SendPreferences, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
 import { MessageExtended } from '../../models/message';
-import { inSigningPeriod } from './messages';
+import { getParsedHeadersFirstValue, inSigningPeriod } from './messages';
 
 // The logic for determining the status icons can be found here:
 // https://confluence.protontech.ch/display/MAILFE/Encryption+status+for+outgoing+and+incoming+email
@@ -262,9 +262,11 @@ export const getSentStatusIconInfo = (message: MessageExtended): MessageViewIcon
     if (!message.data?.ParsedHeaders) {
         return { mapStatusIcon: {} };
     }
-    const mapAuthentication = getMapEmailHeaders(message.data.ParsedHeaders['X-Pm-Recipient-Authentication']);
-    const mapEncryption = getMapEmailHeaders(message.data.ParsedHeaders['X-Pm-Recipient-Encryption']);
-    const contentEncryption = message.data.ParsedHeaders['X-Pm-Content-Encryption'];
+    const mapAuthentication = getMapEmailHeaders(
+        getParsedHeadersFirstValue(message.data, 'X-Pm-Recipient-Authentication')
+    );
+    const mapEncryption = getMapEmailHeaders(getParsedHeadersFirstValue(message.data, 'X-Pm-Recipient-Encryption'));
+    const contentEncryption = getParsedHeadersFirstValue(message.data, 'X-Pm-Content-Encryption') as X_PM_HEADERS;
     const globalIcon = getSentStatusIcon({ mapAuthentication, mapEncryption, contentEncryption });
     const mapStatusIcon = Object.keys(mapAuthentication).reduce<MapStatusIcons>((acc, emailAddress) => {
         acc[emailAddress] = getSentStatusIcon({ mapAuthentication, mapEncryption, contentEncryption, emailAddress });
