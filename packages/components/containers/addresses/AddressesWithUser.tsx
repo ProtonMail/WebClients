@@ -15,7 +15,12 @@ interface Props {
     user: UserModel;
 }
 
-const formatAddresses = (addresses: Address[]) => addresses.filter(({ Type }) => Type !== ADDRESS_TYPE.TYPE_EXTERNAL);
+const formatAddresses = (addresses?: Address[]) => {
+    if (Array.isArray(addresses)) {
+        return addresses.filter(({ Type }) => Type !== ADDRESS_TYPE.TYPE_EXTERNAL);
+    }
+    return [];
+};
 
 const AddressesUser = ({ user }: Props) => {
     const api = useApi();
