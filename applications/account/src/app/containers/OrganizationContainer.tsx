@@ -15,7 +15,7 @@ import { Organization } from 'proton-shared/lib/interfaces';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
-const { ADMIN } = PERMISSIONS;
+const { ADMIN, MULTI_USERS } = PERMISSIONS;
 
 export const getOrganizationPage = (organization: Organization) => {
     return {
@@ -30,14 +30,17 @@ export const getOrganizationPage = (organization: Organization) => {
                         ? c('Title').t`Organization`
                         : c('Title').t`Multi-user support`,
                 id: 'name',
+                permissions: [MULTI_USERS],
             },
             {
                 text: c('Title').t`Password & key`,
                 id: 'password',
+                permissions: [MULTI_USERS],
             },
             {
                 text: c('Title').t`Users`,
                 id: 'members',
+                permissions: [MULTI_USERS],
             },
             {
                 text: c('Title').t`Custom domains`,
