@@ -179,7 +179,7 @@ export const getSentStatusIcon = ({
             };
         }
         return {
-            colorClassName: 'color-global-grey-dm',
+            colorClassName: 'color-pm-blue',
             isEncrypted: true,
             fill: PLAIN,
             text: c('Sent email icon').t`Stored with zero-access encryption`
