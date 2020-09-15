@@ -38,7 +38,7 @@ const NewVersionTopBanner = () => {
     const appName = APPS_CONFIGURATION[APP_NAME].name;
     const reloadTab = () => window.location.reload();
     const reloadButton = (
-        <InlineLinkButton className="color-currentColor" onClick={() => reloadTab()}>{c('Action')
+        <InlineLinkButton key="reload-button" className="color-currentColor" onClick={() => reloadTab()}>{c('Action')
             .t`Refresh the page`}</InlineLinkButton>
     );
 
