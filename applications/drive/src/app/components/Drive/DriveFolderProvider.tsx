@@ -25,11 +25,11 @@ const DriveFolderProvider = ({ children }: Props) => {
     const [folder, setFolder] = useState<DriveFolder>();
 
     useEffect(() => {
-        withLoading(initDrive()).catch((error) =>
+        withLoading(initDrive()).catch((error) => {
             setFolder(() => {
                 throw error;
-            })
-        );
+            });
+        });
     }, []);
 
     if (loading) {

@@ -1,8 +1,6 @@
 import React from 'react';
-import { ModalsChildren, useSubscription } from 'react-components';
+import { ModalsChildren } from 'react-components';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { Subscription } from 'proton-shared/lib/interfaces';
-import { hasVisionary } from 'proton-shared/lib/helpers/subscription';
 import DriveEventManagerProvider from '../components/DriveEventManager/DriveEventManagerProvider';
 import DriveCacheProvider from '../components/DriveCache/DriveCacheProvider';
 import DriveFolderProvider from '../components/Drive/DriveFolderProvider';
@@ -11,21 +9,9 @@ import { DownloadProvider } from '../components/downloads/DownloadProvider';
 import TrashContainer from './TrashContainer/TrashContainer';
 import DriveContainer from './DriveContainer/DriveContainer';
 import TransferManager from '../components/TransferManager/TransferManager';
-import NoAccessContainer from './NoAccessContainer/NoAccessContainer';
 import FileBrowerLayoutProvider from '../components/FileBrowser/FileBrowserLayoutProvider';
 
 const MainContainer = () => {
-    const [subscription]: [Subscription, any, any] = useSubscription();
-
-    if (!subscription || !hasVisionary(subscription)) {
-        return (
-            <>
-                <ModalsChildren />
-                <NoAccessContainer />
-            </>
-        );
-    }
-
     return (
         <DriveEventManagerProvider>
             <DriveCacheProvider>

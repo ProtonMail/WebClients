@@ -8,6 +8,7 @@ import {
     PrivateMainArea,
     CollapsingBreadcrumbs,
     useModals,
+    ModalsChildren,
 } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -49,56 +50,59 @@ const NoAccessContainer = () => {
     );
 
     return (
-        <PrivateAppContainer isBlurred header={header} sidebar={sidebar}>
-            <PrivateMainArea hasToolbar className="flex-noMinChildren flex-column flex-nowrap">
-                <div className="mw100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
-                    <CollapsingBreadcrumbs
-                        breadcrumbs={[
+        <>
+            <ModalsChildren />
+            <PrivateAppContainer isBlurred header={header} sidebar={sidebar}>
+                <PrivateMainArea hasToolbar className="flex-noMinChildren flex-column flex-nowrap">
+                    <div className="mw100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
+                        <CollapsingBreadcrumbs
+                            breadcrumbs={[
+                                {
+                                    key: 'my-files',
+                                    text: c('Title').t`My files`,
+                                    noShrink: true,
+                                    highlighted: true,
+                                },
+                            ]}
+                        />
+                    </div>
+                    <ListView
+                        isPreview
+                        scrollAreaRef={scrollAreaRef}
+                        caption={dummyFolderTitle}
+                        shareId="dummy-share"
+                        loading={false}
+                        contents={[
                             {
-                                key: 'my-files',
-                                text: c('Title').t`My files`,
-                                noShrink: true,
-                                highlighted: true,
+                                LinkID: 'dummy-link-1',
+                                ParentLinkID: '',
+                                MIMEType: 'text/plain',
+                                Name: 'Private files',
+                                ModifyTime: Date.now() / 1000,
+                                Trashed: null,
+                                Size: 1024 * 1024,
+                                Type: LinkType.FOLDER,
+                            },
+                            {
+                                LinkID: 'dummy-link-2',
+                                ParentLinkID: '',
+                                MIMEType: 'text/plain',
+                                Name: 'Welcome to ProtonDrive.txt',
+                                ModifyTime: Date.now() / 1000,
+                                Trashed: null,
+                                Size: 1024 * 1024,
+                                Type: LinkType.FILE,
                             },
                         ]}
+                        selectedItems={[]}
+                        onToggleItemSelected={noop}
+                        clearSelections={noop}
+                        onToggleAllSelected={noop}
+                        selectItem={noop}
                     />
-                </div>
-                <ListView
-                    isPreview
-                    scrollAreaRef={scrollAreaRef}
-                    caption={dummyFolderTitle}
-                    shareId="dummy-share"
-                    loading={false}
-                    contents={[
-                        {
-                            LinkID: 'dummy-link-1',
-                            ParentLinkID: '',
-                            MIMEType: 'text/plain',
-                            Name: 'Private files',
-                            ModifyTime: Date.now() / 1000,
-                            Trashed: null,
-                            Size: 1024 * 1024,
-                            Type: LinkType.FOLDER,
-                        },
-                        {
-                            LinkID: 'dummy-link-2',
-                            ParentLinkID: '',
-                            MIMEType: 'text/plain',
-                            Name: 'Welcome to ProtonDrive.txt',
-                            ModifyTime: Date.now() / 1000,
-                            Trashed: null,
-                            Size: 1024 * 1024,
-                            Type: LinkType.FILE,
-                        },
-                    ]}
-                    selectedItems={[]}
-                    onToggleItemSelected={noop}
-                    clearSelections={noop}
-                    onToggleAllSelected={noop}
-                    selectItem={noop}
-                />
-            </PrivateMainArea>
-        </PrivateAppContainer>
+                </PrivateMainArea>
+            </PrivateAppContainer>
+        </>
     );
 };
 

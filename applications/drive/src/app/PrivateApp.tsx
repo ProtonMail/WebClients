@@ -1,18 +1,11 @@
 import React from 'react';
-import {
-    StandardPrivateApp,
-    ErrorBoundary,
-    GenericError,
-    LoaderPage,
-    useAppTitle,
-    useApi,
-    useCache,
-} from 'react-components';
+import { StandardPrivateApp, LoaderPage, useAppTitle, useApi, useCache } from 'react-components';
 import { UserModel, UserSettingsModel, AddressesModel, SubscriptionModel } from 'proton-shared/lib/models';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { openpgpConfig } from './openpgpConfig';
 import MainContainer from './containers/MainContainer';
+import DriveErrorBoundary from './components/DriveErrorBoundary';
 
 interface Props {
     onLogout: () => void;
@@ -41,9 +34,9 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             }}
             noModals
         >
-            <ErrorBoundary component={<GenericError className="pt2 h100v" />}>
+            <DriveErrorBoundary>
                 <MainContainer />
-            </ErrorBoundary>
+            </DriveErrorBoundary>
         </StandardPrivateApp>
     );
 };

@@ -19,3 +19,7 @@ export interface CreatedDriveVolumeResult {
         };
     };
 }
+
+export enum InitStatusCodes {
+    NoAccess = 2011,
+}
