@@ -62,9 +62,10 @@ const MessageAttachment = ({ attachment, message }: Props) => {
 
     return (
         <li className="mr0-5 mt0-5">
-            <a
+            <button
                 className="message-attachment inline-flex flex-nowrap mw100 pm-button listAttachments-item relative no-pointer-events-children"
                 title={title}
+                type="button"
                 onClick={clickHandler}
             >
                 <span className="flex flex-item-noshrink message-attachmentIcon relative flex p0-5">
@@ -81,7 +82,7 @@ const MessageAttachment = ({ attachment, message }: Props) => {
                         {humanAttachmentSize}
                     </span>
                 </span>
-            </a>
+            </button>
         </li>
     );
 };
