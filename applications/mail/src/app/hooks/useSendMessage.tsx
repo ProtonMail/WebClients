@@ -217,7 +217,7 @@ export const useSendMessage = () => {
                 } as any)
             );
 
-            updateMessageCache(messageCache, localID, { data: Sent });
+            updateMessageCache(messageCache, localID, { data: Sent, initialized: undefined });
 
             call();
 
