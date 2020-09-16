@@ -260,6 +260,7 @@ export interface CreateLinkedCalendarEventsSyncData {
 interface SyncMultipleEventsData {
     MemberID: string;
     IsImport?: 0 | 1;
+    IsInvite?: 0 | 1;
     Events: (
         | CreateCalendarEventSyncData
         | CreateLinkedCalendarEventsSyncData
