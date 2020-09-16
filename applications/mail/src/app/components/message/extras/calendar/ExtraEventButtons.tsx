@@ -1,11 +1,26 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { APPS } from 'proton-shared/lib/constants';
+import { noop } from 'proton-shared/lib/helpers/function';
+import { omit } from 'proton-shared/lib/helpers/object';
 import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import { LoadingMap } from 'proton-shared/lib/interfaces/utils';
-import React, { useMemo, Dispatch, SetStateAction } from 'react';
-import { AppLink, classnames, SmallButton, useLoadingMap } from 'react-components';
+import React, { Dispatch, SetStateAction, useMemo } from 'react';
+import {
+    AppLink,
+    classnames,
+    Icon,
+    InlineLinkButton,
+    Loader,
+    SmallButton,
+    useLoading,
+    useLoadingMap,
+} from 'react-components';
 import { c } from 'ttag';
-import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../../../../helpers/calendar/EventInvitationError';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+    getErrorMessage
+} from '../../../../helpers/calendar/EventInvitationError';
 import {
     EVENT_TIME_STATUS,
     EventInvitation,
@@ -21,6 +36,7 @@ interface WidgetActions {
     onAccept: () => void;
     onTentative: () => void;
     onDecline: () => void;
+    onRetryCreateEvent: (partstat: ICAL_ATTENDEE_STATUS) => void;
 }
 
 const getOrganizerButtons = (model: RequireSome<InvitationModel, 'invitationIcs'>, { onAccept }: WidgetActions) => {
@@ -51,14 +67,16 @@ const getOrganizerButtons = (model: RequireSome<InvitationModel, 'invitationIcs'
 const getAttendeeButtons = (
     model: RequireSome<InvitationModel, 'invitationIcs'>,
     loadingMap: LoadingMap,
-    { onAccept, onTentative, onDecline }: WidgetActions
+    loadingRetry: boolean,
+    { onAccept, onTentative, onDecline, onRetryCreateEvent }: WidgetActions
 ) => {
     const {
         invitationIcs,
         invitationIcs: { method },
         invitationApi,
         calendarData,
-        timeStatus
+        timeStatus,
+        error
     } = model;
     const partstat = (invitationApi?.attendee || invitationIcs.attendee)?.partstat;
     const loadingAccept = loadingMap['accept'];
@@ -71,6 +89,28 @@ const getAttendeeButtons = (
 
     if (timeStatus !== EVENT_TIME_STATUS.FUTURE) {
         return null;
+    }
+
+    if (error?.type === EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR) {
+        const { partstat } = error;
+        const message = getErrorMessage(error.type);
+        const handleRetry = partstat ? () => onRetryCreateEvent(partstat) : noop;
+
+        if (loadingRetry) {
+            return <Loader className="center flex mt1 mb1 " />;
+        }
+
+        return (
+            <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
+                <Icon name="attention" className="flex-item-noshrink mtauto mbauto" />
+                <span className="pl0-5 pr0-5 flex-item-fluid">{message}</span>
+                <span className="flex-item-noshrink flex">
+                    <InlineLinkButton onClick={handleRetry} className="underline color-currentColor">
+                        {c('Action').t`Try again`}
+                    </InlineLinkButton>
+                </span>
+            </div>
+        );
     }
 
     if (method === ICAL_METHOD.REQUEST && partstat) {
@@ -114,6 +154,7 @@ interface Props {
 }
 const ExtraEventButtons = ({ model, setModel, message, config }: Props) => {
     const [loadingMap, withLoadingMap] = useLoadingMap();
+    const [loadingRetry, withLoadingRetry] = useLoading();
 
     const throwUnexpectedError = () => {
         setModel({
@@ -121,9 +162,15 @@ const ExtraEventButtons = ({ model, setModel, message, config }: Props) => {
             error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR)
         });
     };
-    const handleInvitationSent = (invitationApi: RequireSome<EventInvitation, 'calendarEvent'>) => {
+    const handleCreateEventError = (partstat: ICAL_ATTENDEE_STATUS) => {
         setModel({
             ...model,
+            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR, { partstat })
+        });
+    };
+    const handleSuccess = (invitationApi: RequireSome<EventInvitation, 'calendarEvent'>) => {
+        setModel({
+            ...omit(model, ['error']),
             invitationApi,
             hideSummary: true
         });
@@ -134,24 +181,29 @@ const ExtraEventButtons = ({ model, setModel, message, config }: Props) => {
             timeStatus
         });
     };
-    const { accept, acceptTentatively, decline } = useWidgetButtons({
+
+    const { accept, acceptTentatively, decline, retryCreateEvent } = useWidgetButtons({
         model,
         message,
         config,
         onUnexpectedError: throwUnexpectedError,
-        onSuccess: handleInvitationSent,
+        onSuccess: handleSuccess,
+        onCreateEventError: handleCreateEventError,
         onPastEvent: handlePastEvent
     });
     const actions = {
         onAccept: async () => withLoadingMap({ accept: accept() }),
         onTentative: async () => withLoadingMap({ tentative: acceptTentatively() }),
-        onDecline: async () => withLoadingMap({ decline: decline() })
+        onDecline: async () => withLoadingMap({ decline: decline() }),
+        onRetryCreateEvent: async (partstat: ICAL_ATTENDEE_STATUS) => withLoadingRetry(retryCreateEvent(partstat))
     };
 
     const { isOrganizerMode, invitationApi } = model;
 
     const buttons = useMemo(() => {
-        return isOrganizerMode ? getOrganizerButtons(model, actions) : getAttendeeButtons(model, loadingMap, actions);
+        return isOrganizerMode
+            ? getOrganizerButtons(model, actions)
+            : getAttendeeButtons(model, loadingMap, loadingRetry, actions);
     }, [model, loadingMap, actions]);
     const displayBorderBottom = !!(buttons || invitationApi);
     const link = useMemo(() => getCalendarEventLink(model), [model]);

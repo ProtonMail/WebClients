@@ -142,7 +142,7 @@ const ExtraEvent = ({
         );
     }
 
-    if (model.error) {
+    if (model.error && model.error.type !== EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR) {
         const message = getErrorMessage(model.error.type);
         const canTryAgain = [
             EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR,

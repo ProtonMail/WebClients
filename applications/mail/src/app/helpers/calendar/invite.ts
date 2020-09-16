@@ -115,6 +115,12 @@ export const getInvitationHasEventID = (
     return invitation?.calendarEvent?.ID !== undefined;
 };
 
+export const getParticipantHasAddressID = (
+    participant: Participant
+): participant is RequireSome<Participant, 'addressID'> => {
+    return !!participant.addressID;
+};
+
 export const filterAttachmentsForEvents = (attachments: Attachment[]): Attachment[] =>
     attachments.filter(
         ({ Name = '', MIMEType = '' }) =>
@@ -645,6 +651,6 @@ export const getSupportedEventInvitation = (
         if (error instanceof EventInvitationError) {
             throw error;
         }
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, error);
+        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { externalError: error });
     }
 };
