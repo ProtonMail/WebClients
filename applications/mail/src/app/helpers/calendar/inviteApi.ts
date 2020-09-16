@@ -5,6 +5,7 @@ import {
     syncMultipleEvents,
     UpdateCalendarEventSyncData
 } from 'proton-shared/lib/api/calendars';
+import { withPmAttendees } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_EVENT_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
@@ -96,8 +97,9 @@ const updateEventApi = async ({ calendarEvent, vevent, api, calendarData }: Upda
         addressKeys,
         calendarKeys
     } = calendarData;
+    const veventWithPmAttendees = await withPmAttendees(vevent, api);
     const data = await createCalendarEvent({
-        eventComponent: vevent,
+        eventComponent: veventWithPmAttendees,
         isSwitchCalendar: false,
         ...(await getCreationKeys({ Event: calendarEvent, addressKeys, newCalendarKeys: calendarKeys }))
     });
