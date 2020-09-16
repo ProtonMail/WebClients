@@ -171,9 +171,6 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
                         <Tabs tabs={tabs} value={tabIndex} onChange={handleChangeIndex} />
                     )}
                     <SignupSubmitRow>
-                        <InlineLinkButton className="mr1" onClick={() => gotoStep(STEPS.VALIDATE_RESET_TOKEN)}>{c(
-                            'Action'
-                        ).t`I already have a code`}</InlineLinkButton>
                         <PrimaryButton
                             className="pm-button--large onmobile-w100"
                             disabled={!email && !phone}
