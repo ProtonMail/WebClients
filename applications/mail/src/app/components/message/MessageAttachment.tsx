@@ -79,7 +79,7 @@ const MessageAttachment = ({ attachment, message }: Props) => {
                 <span className="flex flex-nowrap flex-items-center message-attachmentInfo">
                     <span className="ellipsis mw100">{attachment.Name}</span>
                     <span className="message-attachmentSize relative flex-item-noshrink mtauto mbauto ml0-5">
-                        {humanAttachmentSize}
+                        ({humanAttachmentSize})
                     </span>
                 </span>
             </button>
