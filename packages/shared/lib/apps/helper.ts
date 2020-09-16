@@ -12,8 +12,7 @@ export const getAppHref = (to: string, toApp: APP_NAMES, localID?: number) => {
 
     const publicPath = toApp === APPS.PROTONMAIL_SETTINGS ? targetPublicPath : '';
 
-    return [
-        `${protocol}//`,
+    const path = [
         targetDomain,
         stripLeadingAndTrailingSlash(publicPath),
         getLocalIDPath(localID),
@@ -21,6 +20,8 @@ export const getAppHref = (to: string, toApp: APP_NAMES, localID?: number) => {
     ]
         .filter(isTruthy)
         .join('/');
+
+    return `${protocol}//${path}`;
 };
 
 export const getAppHrefBundle = (to: string, toApp: APP_NAMES) => {
