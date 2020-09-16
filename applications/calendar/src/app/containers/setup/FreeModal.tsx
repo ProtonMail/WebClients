@@ -12,7 +12,7 @@ const FreeModal = (props: any) => {
     const goUpgrade = () => {
         goToApp('/subscription', APPS.PROTONACCOUNT);
     };
-    const upgradeLink = (
+    const upgradingLink = (
         // using button here breaks text formatting
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a role="button" onClick={goUpgrade} tabIndex={0} href="#">{c('Info').t`upgrading to a paid plan`}</a>
@@ -34,7 +34,7 @@ const FreeModal = (props: any) => {
                     .t`ProtonCalendar is currently in Beta and is only available to paid users of ProtonMail.`}</p>
             </div>
             <Alert>{c('Info')
-                .jt`If you only would like to participate in our Beta program today, consider ${upgradeLink}. ProtonCalendar will be available to free users upon launch.`}</Alert>
+                .jt`If you would like to participate in our Beta program, consider ${upgradingLink}. ProtonCalendar will be available to free users upon launch.`}</Alert>
         </FormModal>
     );
 };
