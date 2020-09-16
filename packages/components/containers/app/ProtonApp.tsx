@@ -18,6 +18,8 @@ import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
 import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import { replaceUrl } from 'proton-shared/lib/helpers/browser';
 import { getAppHref } from 'proton-shared/lib/apps/helper';
+import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
+import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 
 import { MimeIcons, Icons } from '../../components';
 import Signout from './Signout';
@@ -170,7 +172,11 @@ const ProtonApp = ({ config, children }: Props) => {
         pathRef.current = '/';
 
         if (isSSOMode) {
-            return replaceUrl(getAppHref('/switch?flow=logout', APPS.PROTONACCOUNT));
+            const { APP_NAME } = config;
+            if (APP_NAME === APPS.PROTONACCOUNT) {
+                return replaceUrl(getAppHref('/switch?flow=logout', APPS.PROTONACCOUNT));
+            }
+            return requestFork(APP_NAME, undefined, FORK_TYPE.SWITCH);
         }
         setAuthData({
             history: createHistory({ basename: getBasename() }),
