@@ -133,6 +133,15 @@
     }
 }
 
+/*
+  everything inside addresses should be inline in order to
+  make "ellipsis" properly work, so fixed the alignment of
+  image this way
+*/
+.composer-addresses-addressIcon {
+    top: -0.2rem;
+}
+
 .composer-addresses-autocomplete {
     ul {
         position: absolute;

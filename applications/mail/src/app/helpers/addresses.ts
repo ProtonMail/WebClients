@@ -99,12 +99,7 @@ export const getRecipientLabel = (recipient?: Recipient, allContacts?: ContactEm
         return contact.Name;
     }
     if (!Name || Name === Address) {
-        const index = Address?.indexOf('@') || -1;
-        if (index === -1) {
-            return Address;
-        } else {
-            return Address?.substring(0, index);
-        }
+        return Address;
     }
     if (Name) {
         return Name;

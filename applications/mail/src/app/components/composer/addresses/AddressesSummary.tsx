@@ -29,11 +29,14 @@ const AddressesSummary = ({
     toggleExpanded,
     onFocus
 }: Props) => {
+    const title = recipientsToRecipientOrGroup(getRecipients(data), contactGroups)
+        .map((recipientOrGroup) => getRecipientOrGroupLabel(recipientOrGroup, contacts))
+        .join(', ');
     return (
         <div className="flex flex-row flex-nowrap flex-items-center m0-5 pl0-5 pr0-5" onClick={onFocus}>
             <Label className="composer-meta-label pr0-5 pt0 bold">{c('Title').t`To`}</Label>
             <div className="pm-field flex composer-addresses-fakefield flex-row flex-item-fluid w100 relative">
-                <span className="ellipsis composer-addresses-fakefield-inner">
+                <span className="ellipsis composer-addresses-fakefield-inner" title={title}>
                     {getRecipients(data).length === 0 ? (
                         <span className="placeholder">{c('Placeholder').t`Email address`}</span>
                     ) : null}
@@ -71,13 +74,15 @@ const AddressesSummary = ({
                                         <span
                                             key={i}
                                             className={classnames([
-                                                'inline-flex mr0-5 aligntop',
+                                                'mr0-5 aligntop',
                                                 cannotSend && 'color-global-warning'
                                             ])}
                                         >
-                                            <span className="inline-flex flex-nowrap">
-                                                {icon && <EncryptionStatusIcon {...icon} />}
-                                                <span className="inline-flex mw100 ellipsis">
+                                            <span>
+                                                <span className="composer-addresses-addressIcon relative">
+                                                    {icon && <EncryptionStatusIcon {...icon} />}
+                                                </span>
+                                                <span className="mw100 ellipsis">
                                                     {getRecipientOrGroupLabel(recipientOrGroup, contacts)}
                                                 </span>
                                             </span>
