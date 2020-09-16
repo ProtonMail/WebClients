@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { Icon, classnames } from 'react-components';
+import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { Attachment } from '../../../models/attachment';
 import { PendingUpload } from '../../../hooks/useAttachments';
 
 interface Props {
     name: string;
+    size?: number;
     progression?: number;
     onRemove: () => void;
 }
 
-const AttachmentItem = ({ name, progression = 0, onRemove }: Props) => {
+const AttachmentItem = ({ name, size = 0, progression = 0, onRemove }: Props) => {
     const [removed, setRemoved] = useState(false);
 
     const blue = '#657ee4';
@@ -19,6 +21,8 @@ const AttachmentItem = ({ name, progression = 0, onRemove }: Props) => {
     const progressionHappening = progression !== 0;
     const backgroundImage =
         progression === 0 ? 'none' : `linear-gradient(to right, ${blue} 0%,  ${blue} ${value}%, transparent ${value}%)`;
+    const humanAttachmentSize = progressionHappening === false ? `(${humanSize(size)})` : ``;
+    const title = `${name} ${humanAttachmentSize}`;
 
     const handleRemove = () => {
         setRemoved(true);
@@ -37,8 +41,12 @@ const AttachmentItem = ({ name, progression = 0, onRemove }: Props) => {
                 <span className="p0-5 border-right flex flex-item-noshrink composer-attachments-item-typeIcon">
                     <Icon name="attach" size={12} className="mauto" />
                 </span>
-                <span className="flex-item-fluid mtauto mbauto ellipsis pl0-5 pr0-5" title={name}>
-                    {name}
+                <span
+                    className="flex-item-fluid mtauto mbauto flex flex-items-center flex-nowrap pl0-5 pr0-5"
+                    title={title}
+                >
+                    <span className="ellipsis pr0-25">{name}</span>
+                    <span className="message-attachmentSize flex-item-noshrink">{humanAttachmentSize}</span>
                 </span>
                 <button
                     type="button"
@@ -48,7 +56,9 @@ const AttachmentItem = ({ name, progression = 0, onRemove }: Props) => {
                     disabled={removed}
                 >
                     <Icon name="off" size={12} />
-                    <span className="sr-only">{c('Action').t`Remove`}</span>
+                    <span className="sr-only">
+                        {c('Action').t`Remove`} {name}
+                    </span>
                 </button>
             </div>
         </div>
@@ -61,7 +71,7 @@ interface PropsNormal {
 }
 
 export const AttachmentItemNormal = ({ attachment, onRemove }: PropsNormal) => (
-    <AttachmentItem name={attachment.Name || ''} onRemove={onRemove} />
+    <AttachmentItem name={attachment.Name || ''} size={attachment.Size} onRemove={onRemove} />
 );
 
 interface PropsPending {
