@@ -124,7 +124,8 @@ const updateEventApi = async ({ calendarEvent, vevent, api, calendarData }: Upda
     }
 };
 
-interface UpdateEventInvitationArgs extends RequireSome<InvitationModel, 'invitationIcs' | 'invitationApi'> {
+interface UpdateEventInvitationArgs
+    extends Omit<RequireSome<InvitationModel, 'invitationIcs' | 'invitationApi'>, 'timeStatus'> {
     calendarData: Required<CalendarWidgetData>;
     api: Api;
     message: MessageExtended;

@@ -12,6 +12,7 @@ import {
     getDateProperty,
     getDateTimeProperty,
     getDateTimePropertyInDifferentTimezone,
+    getDtendProperty,
     propertyToUTCDate
 } from 'proton-shared/lib/calendar/vcalConverter';
 import {
@@ -56,6 +57,12 @@ import { RequireSome } from '../../models/utils';
 import { getOriginalTo } from '../message/messages';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 
+export enum EVENT_TIME_STATUS {
+    PAST,
+    HAPPENING,
+    FUTURE
+}
+
 export interface Participant {
     vcalComponent: VcalAttendeeProperty | VcalOrganizerProperty;
     name: string;
@@ -89,12 +96,13 @@ export interface CalendarWidgetData {
 
 export interface InvitationModel {
     isOrganizerMode: boolean;
+    timeStatus: EVENT_TIME_STATUS;
+    hideSummary?: boolean;
     calendarData?: CalendarWidgetData;
     invitationIcs?: RequireSome<EventInvitation, 'method'>;
     invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     error?: EventInvitationError;
-    hideSummary?: boolean;
 }
 
 export const getHasInvitation = (model: InvitationModel): model is RequireSome<InvitationModel, 'invitationIcs'> => {
@@ -217,6 +225,21 @@ export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) 
     return cleanEmail(organizerEmail) === cleanEmail(emailTo);
 };
 
+/**
+ * Determines if a event has already passed with respect to a UNIX timestamp
+ */
+export const getEventTimeStatus = (vevent: VcalVeventComponent, now: number) => {
+    const startTimestamp = getUnixTime(propertyToUTCDate(vevent.dtstart));
+    const endTimestamp = getUnixTime(propertyToUTCDate(getDtendProperty(vevent)));
+    if (now >= endTimestamp) {
+        return EVENT_TIME_STATUS.PAST;
+    }
+    if (now >= startTimestamp) {
+        return EVENT_TIME_STATUS.HAPPENING;
+    }
+    return EVENT_TIME_STATUS.FUTURE;
+};
+
 export const getCalendarEventLink = (model: InvitationModel) => {
     const { calendarData, invitationApi } = model;
     const calendarID = calendarData?.calendar.ID;
@@ -298,8 +321,9 @@ export const processEventInvitation = <T>(
     message: MessageExtended,
     contactEmails: ContactEmail[],
     ownAddresses: Address[]
-): { isOrganizerMode: boolean; invitation: EventInvitation & T } => {
+): { isOrganizerMode: boolean; timeStatus: EVENT_TIME_STATUS; invitation: EventInvitation & T } => {
     const { vevent } = invitation;
+    const timeStatus = getEventTimeStatus(vevent, Date.now());
     const attendees = vevent.attendee;
     const organizer = vevent.organizer;
     const originalTo = getOriginalTo(message.data);
@@ -322,7 +346,7 @@ export const processEventInvitation = <T>(
         processed.attendee = getParticipant(attendee, contactEmails, ownAddresses, originalTo, index);
     }
 
-    return { isOrganizerMode, invitation: processed };
+    return { isOrganizerMode, timeStatus, invitation: processed };
 };
 
 export const getInitialInvitationModel = (
@@ -333,15 +357,15 @@ export const getInitialInvitationModel = (
     calendar?: Calendar
 ) => {
     if (invitationOrError instanceof EventInvitationError) {
-        return { isOrganizerMode: false, error: invitationOrError };
+        return { isOrganizerMode: false, timeStatus: EVENT_TIME_STATUS.FUTURE, error: invitationOrError };
     }
-    const { isOrganizerMode, invitation } = processEventInvitation(
+    const { isOrganizerMode, timeStatus, invitation } = processEventInvitation(
         invitationOrError,
         message,
         contactEmails,
         ownAddresses
     );
-    const result: InvitationModel = { isOrganizerMode, invitationIcs: invitation };
+    const result: InvitationModel = { isOrganizerMode, timeStatus, invitationIcs: invitation };
     if (calendar) {
         result.calendarData = { calendar };
     }
@@ -606,7 +630,12 @@ export const getSupportedEventInvitation = (
             }
         }
 
-        return { method: method.value, vevent: validated, vtimezone, originalVcalInvitation: vcalInvitation };
+        return {
+            method: method.value,
+            vevent: validated,
+            vtimezone,
+            originalVcalInvitation: vcalInvitation
+        };
     } catch (error) {
         if (error instanceof EventInvitationError) {
             throw error;

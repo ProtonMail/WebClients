@@ -3,10 +3,11 @@ import { APPS } from 'proton-shared/lib/constants';
 import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import { LoadingMap } from 'proton-shared/lib/interfaces/utils';
 import React, { useMemo, Dispatch, SetStateAction } from 'react';
-import { AppLink, classnames, SmallButton, useNotifications, useLoadingMap } from 'react-components';
+import { AppLink, classnames, SmallButton, useLoadingMap } from 'react-components';
 import { c } from 'ttag';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../../../../helpers/calendar/EventInvitationError';
 import {
+    EVENT_TIME_STATUS,
     EventInvitation,
     getCalendarEventLink,
     getSequence,
@@ -56,7 +57,8 @@ const getAttendeeButtons = (
         invitationIcs,
         invitationIcs: { method },
         invitationApi,
-        calendarData
+        calendarData,
+        timeStatus
     } = model;
     const partstat = (invitationApi?.attendee || invitationIcs.attendee)?.partstat;
     const loadingAccept = loadingMap['accept'];
@@ -65,6 +67,10 @@ const getAttendeeButtons = (
 
     if (!calendarData?.calendar) {
         return 'Create a calendar to get widget buttons :-P';
+    }
+
+    if (timeStatus !== EVENT_TIME_STATUS.FUTURE) {
+        return null;
     }
 
     if (method === ICAL_METHOD.REQUEST && partstat) {
@@ -107,7 +113,6 @@ interface Props {
     config: ProtonConfig;
 }
 const ExtraEventButtons = ({ model, setModel, message, config }: Props) => {
-    const { createNotification } = useNotifications();
     const [loadingMap, withLoadingMap] = useLoadingMap();
 
     const throwUnexpectedError = () => {
@@ -122,14 +127,20 @@ const ExtraEventButtons = ({ model, setModel, message, config }: Props) => {
             invitationApi,
             hideSummary: true
         });
-        createNotification({ type: 'success', text: c('Info').t`Answer sent` });
+    };
+    const handlePastEvent = (timeStatus: EVENT_TIME_STATUS) => {
+        setModel({
+            ...model,
+            timeStatus
+        });
     };
     const { accept, acceptTentatively, decline } = useWidgetButtons({
         model,
         message,
         config,
         onUnexpectedError: throwUnexpectedError,
-        onSuccess: handleInvitationSent
+        onSuccess: handleInvitationSent,
+        onPastEvent: handlePastEvent
     });
     const actions = {
         onAccept: async () => withLoadingMap({ accept: accept() }),

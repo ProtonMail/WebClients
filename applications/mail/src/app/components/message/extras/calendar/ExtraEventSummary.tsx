@@ -1,8 +1,8 @@
+import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import React from 'react';
 import { Icon } from 'react-components';
 import { c, msgid } from 'ttag';
-import { ICAL_METHOD, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { getSequence, InvitationModel } from '../../../../helpers/calendar/invite';
+import { EVENT_TIME_STATUS, getSequence, InvitationModel } from '../../../../helpers/calendar/invite';
 import { RequireSome } from '../../../../models/utils';
 
 const { REQUEST, REPLY, CANCEL, COUNTER, DECLINECOUNTER } = ICAL_METHOD;
@@ -172,10 +172,27 @@ const getAttendeeSummary = (model: RequireSome<InvitationModel, 'invitationIcs'>
     const {
         invitationIcs,
         invitationIcs: { method },
-        invitationApi
+        invitationApi,
+        timeStatus
     } = model;
     const { vevent: eventIcs, attendee: attendeeIcs } = invitationIcs;
     const { vevent: eventApi, attendee: attendeeApi } = invitationApi || {};
+
+    if (timeStatus === EVENT_TIME_STATUS.PAST) {
+        return (
+            <div>
+                <p className="mt0 mb0-5">{c('Calendar invite info').jt`This event has already happened.`}</p>
+            </div>
+        );
+    }
+
+    if (timeStatus === EVENT_TIME_STATUS.HAPPENING) {
+        return (
+            <div>
+                <p className="mt0 mb0-5">{c('Calendar invite info').jt`This event is currently happening.`}</p>
+            </div>
+        );
+    }
 
     if (method === DECLINECOUNTER && attendeeIcs) {
         return (

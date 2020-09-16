@@ -22,6 +22,7 @@ import {
 } from '../../../../helpers/calendar/EventInvitationError';
 import {
     EventInvitation,
+    getEventTimeStatus,
     getHasInvitation,
     getInitialInvitationModel,
     getInvitationHasEventID,
@@ -115,10 +116,12 @@ const ExtraEvent = ({
                     contactEmails,
                     ownAddresses
                 });
+                const newInvitationApi = updatedInvitationApi ? updatedInvitationApi : invitationApi;
                 setModel({
                     ...model,
-                    invitationApi: updatedInvitationApi ? updatedInvitationApi : invitationApi,
-                    calendarData
+                    invitationApi: newInvitationApi,
+                    calendarData,
+                    timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now())
                 });
             } catch (e) {
                 setModel({
