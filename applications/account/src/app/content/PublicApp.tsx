@@ -78,9 +78,16 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     };
 
     const handleActiveSessions = ({ session, sessions }: GetActiveSessionsResult) => {
-        // Ignore the automatic login behavior when the initial load was from a fork request, or switch route
-        if (ignoreAutoRef.current || location.pathname === SSO_PATHS.SWITCH) {
+        // Ignore the automatic login behavior when the initial load was from a fork request
+        if (ignoreAutoRef.current) {
             setActiveSessions(sessions);
+            return false;
+        }
+        if (location.pathname === SSO_PATHS.SWITCH) {
+            setActiveSessions(sessions);
+            if (!sessions.length) {
+                history.replace('/login');
+            }
             return false;
         }
         if (!sessions.length) {
