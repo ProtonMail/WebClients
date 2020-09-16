@@ -32,8 +32,8 @@ export const getDisplayKey = ({
     const isPrimary = Primary === 1;
 
     // Flags undefined for user keys
-    const canEncrypt = Flags === undefined ? true : hasBit(Flags, KEY_FLAG.ENCRYPT);
-    const canSign = Flags === undefined ? true : hasBit(Flags, KEY_FLAG.VERIFY);
+    const canEncrypt = Flags === undefined ? true : hasBit(Flags, KEY_FLAG.FLAG_NOT_OBSOLETE);
+    const canSign = Flags === undefined ? true : hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED);
 
     const canEncryptAndSign = canEncrypt && canSign;
     const isObsolete = isDecrypted && !isAddressDisabled && !canEncrypt;

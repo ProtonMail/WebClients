@@ -3,7 +3,7 @@ import { decryptPrivateKey, encryptPrivateKey, getKeys, OpenPGPKey } from 'pmcry
 import { reformatAddressKey, decryptPrivateKeyWithSalt } from 'proton-shared/lib/keys/keys';
 import { KeySalt, ActionableKey, Api, Address, CachedKey } from 'proton-shared/lib/interfaces';
 import { reactivateKeyAction } from 'proton-shared/lib/keys/keysAction';
-import { getDefaultKeyFlagsAddress, getDefaultKeyFlagsUser } from 'proton-shared/lib/keys/keyFlags';
+import { getDefaultKeyFlags } from 'proton-shared/lib/keys/keyFlags';
 import { reactivateKeyRoute } from 'proton-shared/lib/api/keys';
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -33,7 +33,7 @@ export const reactivatePrivateKey = async ({
         parsedKeys,
         actionableKeys,
         privateKey,
-        flags: Address ? getDefaultKeyFlagsAddress(Address, parsedKeys) : getDefaultKeyFlagsUser(),
+        flags: getDefaultKeyFlags(),
     });
 
     await api(

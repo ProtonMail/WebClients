@@ -4,16 +4,16 @@ import { FlagAction } from './interface';
 
 export const getNewKeyFlags = (Flags = 0, action: FlagAction) => {
     if (action === FlagAction.MARK_OBSOLETE) {
-        return clearBit(Flags, KEY_FLAG.ENCRYPT);
+        return clearBit(Flags, KEY_FLAG.FLAG_NOT_OBSOLETE);
     }
     if (action === FlagAction.MARK_NOT_OBSOLETE) {
-        return setBit(Flags, KEY_FLAG.ENCRYPT);
+        return setBit(Flags, KEY_FLAG.FLAG_NOT_OBSOLETE);
     }
     if (action === FlagAction.MARK_COMPROMISED) {
-        return clearBit(Flags, KEY_FLAG.VERIFY + KEY_FLAG.ENCRYPT);
+        return clearBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED + KEY_FLAG.FLAG_NOT_OBSOLETE);
     }
     if (action === FlagAction.MARK_NOT_COMPROMISED) {
-        return setBit(Flags, KEY_FLAG.VERIFY);
+        return setBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED);
     }
     throw new Error('Unknown action');
 };

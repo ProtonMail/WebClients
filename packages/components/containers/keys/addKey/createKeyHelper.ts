@@ -1,6 +1,6 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { addKeyAction } from 'proton-shared/lib/keys/keysAction';
-import { getDefaultKeyFlagsAddress } from 'proton-shared/lib/keys/keyFlags';
+import { getDefaultKeyFlags } from 'proton-shared/lib/keys/keyFlags';
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
 import { createAddressKeyRoute } from 'proton-shared/lib/api/keys';
 import { Address, ActionableKey, Api, CachedKey } from 'proton-shared/lib/interfaces';
@@ -25,7 +25,7 @@ export default async ({
 }: CreateKeyArguments) => {
     const updatedKeys = addKeyAction({
         ID: 'temp',
-        flags: getDefaultKeyFlagsAddress(Address, parsedKeys),
+        flags: getDefaultKeyFlags(),
         parsedKeys,
         actionableKeys,
         privateKey,

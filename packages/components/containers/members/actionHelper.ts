@@ -1,7 +1,7 @@
 import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { addKeyAction } from 'proton-shared/lib/keys/keysAction';
 import { generateMemberToken, encryptMemberToken } from 'proton-shared/lib/keys/memberToken';
-import { getDefaultKeyFlagsAddress } from 'proton-shared/lib/keys/keyFlags';
+import { getDefaultKeyFlags } from 'proton-shared/lib/keys/keyFlags';
 import { createMemberKeyRoute, setupMemberKeyRoute } from 'proton-shared/lib/api/memberKeys';
 import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
 import { srpVerify } from 'proton-shared/lib/srp';
@@ -45,7 +45,7 @@ export const setupMemberKey = async ({
 
     const updatedKeys = addKeyAction({
         ID: 'temp',
-        flags: getDefaultKeyFlagsAddress(Address, []),
+        flags: getDefaultKeyFlags(),
         privateKey,
         parsedKeys: [],
         actionableKeys: [],
@@ -118,7 +118,7 @@ export const createMemberAddressKeys = async ({
         parsedKeys,
         actionableKeys,
         ID: 'temp',
-        flags: getDefaultKeyFlagsAddress(Address, parsedKeys),
+        flags: getDefaultKeyFlags(),
         privateKey,
     });
 
