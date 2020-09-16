@@ -228,6 +228,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                         <Input
                             id="search-keyword"
                             value={model.keyword}
+                            autoFocus={true}
                             onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
                         />
                     </div>
