@@ -27,13 +27,13 @@ const NoAccessContainer = () => {
     }, []);
 
     const logo = <MainLogo to="/" />;
-    const dummyUploadButton = <SidebarPrimaryButton>{c('Action').t`Upload`}</SidebarPrimaryButton>;
+    const dummyUploadButton = <SidebarPrimaryButton>{c('Action').t`New upload`}</SidebarPrimaryButton>;
     const dummyFolderTitle = c('Title').t`My files`;
 
     const header = (
         <AppHeader
             logo={logo}
-            floatingPrimary={<FloatingButton title={c('Action').t`Upload`} icon="plus" />}
+            floatingPrimary={<FloatingButton title={c('Action').t`New upload`} icon="plus" />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />

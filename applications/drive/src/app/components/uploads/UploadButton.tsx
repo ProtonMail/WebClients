@@ -21,12 +21,12 @@ const UploadButton = ({ floating }: Props) => {
                 <FloatingButton
                     disabled={!folder?.shareId}
                     onClick={handleClick}
-                    title={c('Action').t`Upload`}
+                    title={c('Action').t`New upload`}
                     icon="plus"
                 />
             ) : (
                 <SidebarPrimaryButton disabled={!folder?.shareId} onClick={handleClick}>{c('Action')
-                    .t`Upload`}</SidebarPrimaryButton>
+                    .t`New upload`}</SidebarPrimaryButton>
             )}
         </>
     );
