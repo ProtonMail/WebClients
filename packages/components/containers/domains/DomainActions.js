@@ -22,7 +22,7 @@ const DomainActions = ({ domain, domainAddresses }) => {
 
     const list = [
         {
-            text: c('Action').t`Edit`,
+            text: c('Action').t`Review`,
             onClick: () => createModal(<DomainModal domain={domain} domainAddresses={domainAddresses} />),
         },
         Array.isArray(domainAddresses) &&
