@@ -389,6 +389,46 @@ describe('useSendMessage', () => {
             expect(decryptResult.data).toBe(content);
         });
 
+        it('no downgrade even for default plaintext', async () => {
+            const content = 'test';
+
+            const message = prepareMessage({
+                document: createDocument(content),
+                data: { MIMEType: MIME_TYPES.DEFAULT }
+            });
+
+            minimalCache();
+            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.PLAINTEXT } as MailSettings);
+            addApiKeys(true, toKeys);
+
+            const { sendVerifications, sendMessage } = setup(false);
+
+            const { cleanMessage, mapSendPrefs } = await sendVerifications(message);
+
+            const sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
+            addApiMock(`mail/v4/messages/${message.data.ID}`, sendSpy);
+
+            await sendMessage(cleanMessage, mapSendPrefs, true);
+
+            const sendRequest = (sendSpy.mock.calls[0] as any[])[0];
+
+            expect(sendRequest.method).toBe('post');
+            expect(sendRequest.data.ExpirationTime).toBeUndefined();
+            expect(sendRequest.data.ExpiresIn).toBeUndefined();
+
+            const packages = sendRequest.data.Packages;
+            const pack = packages['text/html'];
+            const address = pack.Addresses[toAddress];
+
+            const sessionKey = await decryptSessionKey(address.BodyKeyPacket, toKeys.privateKeys);
+
+            expect(sessionKey).toBeDefined();
+
+            const decryptResult = await decryptMessageLegacy(pack, toKeys.privateKeys, sessionKey);
+
+            expect(decryptResult.data).toBe(content);
+        });
+
         it('multipart/mixed pgp external', async () => {
             const content = 'test';
             const document = window.document.createElement('div');

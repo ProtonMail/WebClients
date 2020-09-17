@@ -31,7 +31,7 @@ export const getPGPSchemeAndMimeType = (
         sign,
         scheme,
         isInternal,
-        mimeType
+        mimeType: prefMimeType
     }: Pick<EncryptionPreferences, 'encrypt' | 'sign' | 'scheme' | 'mimeType' | 'isInternal'>,
     message?: Message
 ): { pgpScheme: PACKAGE_TYPE; mimeType: MIME_TYPES } => {
@@ -39,13 +39,15 @@ export const getPGPSchemeAndMimeType = (
     const pgpScheme = getPGPScheme({ encrypt, sign, scheme, isInternal }, message);
 
     if (sign && [SEND_PGP_INLINE, SEND_PGP_MIME].includes(pgpScheme)) {
-        const mimeType = pgpScheme === SEND_PGP_INLINE ? MIME_TYPES.PLAINTEXT : MIME_TYPES.MIME;
-        return { pgpScheme, mimeType };
+        const enforcedMimeType = pgpScheme === SEND_PGP_INLINE ? MIME_TYPES.PLAINTEXT : MIME_TYPES.MIME;
+        return { pgpScheme, mimeType: enforcedMimeType };
     }
+
     // If sending EO, respect the MIME type of the composer, since it will be what the API returns when retrieving the message.
     // If plain text is selected in the composer and the message is not signed, send in plain text
     if (pgpScheme === SEND_EO || messageMimeType === MIME_TYPES.PLAINTEXT) {
-        return { pgpScheme, mimeType: messageMimeType || mimeType };
+        return { pgpScheme, mimeType: messageMimeType || prefMimeType };
     }
-    return { pgpScheme, mimeType };
+
+    return { pgpScheme, mimeType: prefMimeType || messageMimeType };
 };
