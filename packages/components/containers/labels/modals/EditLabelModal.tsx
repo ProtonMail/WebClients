@@ -6,6 +6,7 @@ import { randomIntFromInterval, noop } from 'proton-shared/lib/helpers/function'
 import { create as createLabel, updateLabel, checkLabelAvailability } from 'proton-shared/lib/api/labels';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { Label } from 'proton-shared/lib/interfaces/Label';
+import { omit } from 'proton-shared/lib/helpers/object';
 
 import { FormModal } from '../../../components';
 import { useEventManager, useLoading, useApi, useNotifications } from '../../../hooks';
@@ -27,6 +28,13 @@ interface Props {
     onClose?: () => void;
 }
 
+const prepareLabel = (label: ModalModel) => {
+    if (label.ParentID === ROOT_FOLDER) {
+        return omit(label, ['ParentID']);
+    }
+    return label;
+};
+
 const EditLabelModal = ({
     label,
     mode = 'create',
@@ -47,13 +55,13 @@ const EditLabelModal = ({
             Name: '',
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
-            ParentID: type === 'folder' ? `${ROOT_FOLDER}` : undefined,
+            ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
             Notify: type === 'folder' ? 1 : 0,
         }
     );
 
     const create = async (label: ModalModel) => {
-        const { Label } = await api(createLabel(label));
+        const { Label } = await api(createLabel(prepareLabel(label)));
         await call();
         createNotification({
             text: c('label/folder notification').t`${Label.Name} created`,
@@ -64,7 +72,7 @@ const EditLabelModal = ({
 
     const update = async (label: ModalModel) => {
         if (label.ID) {
-            const { Label } = await api(updateLabel(label.ID, label));
+            const { Label } = await api(updateLabel(label.ID, prepareLabel(label)));
             await call();
             createNotification({
                 text: c('Filter notification').t`${Label.Name} updated`,
