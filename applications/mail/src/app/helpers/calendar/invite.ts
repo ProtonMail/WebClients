@@ -229,12 +229,13 @@ export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) 
  * Determines if a event has already passed with respect to a UNIX timestamp
  */
 export const getEventTimeStatus = (vevent: VcalVeventComponent, now: number) => {
+    const nowTimestamp = getUnixTime(now);
     const startTimestamp = getUnixTime(propertyToUTCDate(vevent.dtstart));
     const endTimestamp = getUnixTime(propertyToUTCDate(getDtendProperty(vevent)));
-    if (now >= endTimestamp) {
+    if (nowTimestamp >= endTimestamp) {
         return EVENT_TIME_STATUS.PAST;
     }
-    if (now >= startTimestamp) {
+    if (nowTimestamp >= startTimestamp) {
         return EVENT_TIME_STATUS.HAPPENING;
     }
     return EVENT_TIME_STATUS.FUTURE;
