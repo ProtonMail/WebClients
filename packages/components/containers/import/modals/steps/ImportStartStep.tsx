@@ -79,6 +79,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                         }
                         autoFocus
                         required
+                        disabled={reconnectMode}
                         isSubmitted={!!errorLabel}
                         error={authError ? errorLabel : undefined}
                         errorZoneClassName="hidden"
