@@ -3,7 +3,7 @@ import React, { HTMLAttributes } from 'react';
 import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { FREQUENCY, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { classnames, Input, Label, TextArea } from 'react-components';
+import { classnames, Input, TextArea } from 'react-components';
 import { c } from 'ttag';
 import { MAX_NOTIFICATIONS } from '../../constants';
 import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
@@ -96,8 +96,8 @@ const EventForm = ({
         </IconRow>
     ) : (
         <div className="flex flex-nowrap item pm-form--iconLabels">
-            <Label htmlFor={TITLE_INPUT_ID} title={c('Label').t`Event title`} />
-            <div id={TITLE_INPUT_ID} className="flex-item-fluid biggest">
+            <span title={c('Label').t`Event title`} />
+            <div id={TITLE_INPUT_ID} className="flex-item-fluid biggest mt0 mb1 ellipsis">
                 {getDisplayTitle(title)}
             </div>
         </div>
