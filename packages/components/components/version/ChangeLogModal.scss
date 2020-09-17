@@ -1,0 +1,14 @@
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
+.pm-modalContentInner-changelog {
+	h1 {
+		@include flow-hr($size-h2);
+	}
+	h2 {
+		@include flow-hr($size-h4);
+		margin-bottom: 0.5em;
+	}
+	ul {
+		margin-top: 0.5em;
+	}
+}

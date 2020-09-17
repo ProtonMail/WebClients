@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import markdownit from 'markdown-it';
 
 import { FormModal } from '../modal';
+import './ChangeLogModal.scss';
 
 const md = markdownit('default', {
     breaks: true,
@@ -22,7 +23,7 @@ const ChangelogModal = ({ changelog = '', ...rest }: Props) => {
 
     return (
         <FormModal title={c('Title').t`Release notes`} close={c('Action').t`Close`} submit={null} {...rest}>
-            <div dangerouslySetInnerHTML={html} />
+            <div className="pm-modalContentInner-changelog" dangerouslySetInnerHTML={html} />
         </FormModal>
     );
 };
