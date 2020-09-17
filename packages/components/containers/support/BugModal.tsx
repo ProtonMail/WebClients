@@ -23,6 +23,7 @@ import {
     Select,
 } from '../../components';
 import { useApi, useLoading, useConfig, useNotifications, useToggle } from '../../hooks';
+import { OptionProps } from '../../components/select/Select';
 
 interface Props {
     username?: string;
@@ -37,17 +38,29 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
     const { CLIENT_ID, APP_VERSION, CLIENT_TYPE, APP_NAME } = useConfig();
 
     const mailTitles = [
-        { value: 'Login problem', text: c('Bug category').t`Login problem` },
-        { value: 'Sign up problem', text: c('Bug category').t`Sign up problem` },
-        { value: 'Bridge problem', text: c('Bug category').t`Bridge problem` },
-        { value: 'Import / export problem', text: c('Bug category').t`Import / export problem` },
-        { value: 'Custom domains problem', text: c('Bug category').t`Custom domains problem` },
-        { value: 'Payments problem', text: c('Bug category').t`Payments problem` },
-        { value: 'Connection problem', text: c('Bug category').t`Connection problem` },
-        { value: 'Slow speed problem', text: c('Bug category').t`Slow speed problem` },
-        { value: 'VPN problem', text: c('Bug category').t`VPN problem` },
-        { value: 'Feature request', text: c('Bug category').t`Feature request` },
-        { value: 'Other', text: c('Bug category').t`Other` },
+        { value: 'Sign in problem', text: c('Bug category').t`Sign in problem`, group: c('Group').t`Account` },
+        { value: 'Sign up problem', text: c('Bug category').t`Sign up problem`, group: c('Group').t`Account` },
+        { value: 'Payments problem', text: c('Bug category').t`Payments problem`, group: c('Group').t`Account` },
+        {
+            value: 'Custom domain problems',
+            text: c('Bug category').t`Custom domain problems`,
+            group: c('Group').t`Account`,
+        },
+        { value: 'Bridge problems', text: c('Bug category').t`Bridge problems`, group: c('Group').t`Apps` },
+        {
+            value: 'Import / export problems',
+            text: c('Bug category').t`Import / export problems`,
+            group: c('Group').t`Apps`,
+        },
+        { value: 'Connection problem', text: c('Bug category').t`Connection problem`, group: c('Group').t`Network` },
+        { value: 'Slow speed problem', text: c('Bug category').t`Slow speed problem`, group: c('Group').t`Network` },
+        { value: 'Calendar problems', text: c('Bug category').t`Calendar problems`, group: c('Group').t`Services` },
+        { value: 'Contacts problems', text: c('Bug category').t`Contacts problems`, group: c('Group').t`Services` },
+        { value: 'Drive problems', text: c('Bug category').t`Drive problems`, group: c('Group').t`Services` },
+        { value: 'Mail problems', text: c('Bug category').t`Mail problems`, group: c('Group').t`Services` },
+        { value: 'VPN problems', text: c('Bug category').t`VPN problems`, group: c('Group').t`Services` },
+        { value: 'Feature request', text: c('Bug category').t`Feature request`, group: c('Group').t`Other category` },
+        { value: 'Other', text: c('Bug category').t`Other`, group: c('Group').t`Other category` },
     ];
 
     const vpnTitles = [
@@ -77,9 +90,9 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();
     const [{ Email = '' } = {}] = addresses;
-    const options = titles.reduce(
-        (acc, { text, value }) => {
-            acc.push({ text, value, disabled: false });
+    const options = titles.reduce<OptionProps[]>(
+        (acc, { text, value, group }: { text: string; value: string; group?: string }) => {
+            acc.push({ text, value, group });
             return acc;
         },
         [{ text: c('Action to select a title for the bug report modal').t`Select`, value: '', disabled: true }]
