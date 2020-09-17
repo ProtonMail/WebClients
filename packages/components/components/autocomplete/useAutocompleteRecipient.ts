@@ -16,6 +16,7 @@ const useAutocompleteRecipient = () => {
         li.setAttribute('role', 'option');
         li.setAttribute('aria-selected', 'false');
         li.innerHTML = email ? `${addMark(name)} &lt;${addMark(email)}&gt;` : `${addMark(name)}`;
+        li.title = email ? `${name} <${email}>` : `${name}`;
 
         return li;
     }, []);
