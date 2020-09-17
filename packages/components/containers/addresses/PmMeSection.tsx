@@ -8,7 +8,7 @@ interface Props {
 }
 
 const PmMeSection = ({ user }: Props) => {
-    if (!user.canPay) {
+    if (!user.canPay || user.isSubUser) {
         return null;
     }
 
