@@ -1,5 +1,5 @@
 import React, { Ref } from 'react';
-import TopBanners from '../../containers/app/TopBanners';
+import TopBanners from './TopBanners';
 import { classnames } from '../../helpers';
 
 interface Props {
