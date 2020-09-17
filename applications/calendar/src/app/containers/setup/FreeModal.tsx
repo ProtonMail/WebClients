@@ -1,21 +1,18 @@
 import { c } from 'ttag';
-import { Alert, FormModal, useAppLink } from 'react-components';
+import { Alert, AppLink, FormModal, useAppLink } from 'react-components';
 import React from 'react';
 import betaSvg from 'design-system/assets/img/pm-images/beta.svg';
 import { APPS } from 'proton-shared/lib/constants';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
 const FreeModal = (props: any) => {
     const goToApp = useAppLink();
     const goBack = () => {
         goToApp('/', APPS.PROTONMAIL);
     };
-    const goUpgrade = () => {
-        goToApp('/subscription', APPS.PROTONACCOUNT);
-    };
     const upgradingLink = (
-        // using button here breaks text formatting
-        // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a role="button" onClick={goUpgrade} tabIndex={0} href="#">{c('Info').t`upgrading to a paid plan`}</a>
+        <AppLink target="_self" to="/subscription" toApp={getAccountSettingsApp()}>{c('Info')
+            .t`upgrading to a paid plan`}</AppLink>
     );
     return (
         <FormModal
