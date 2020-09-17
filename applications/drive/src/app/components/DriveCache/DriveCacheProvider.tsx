@@ -2,7 +2,7 @@ import React, { createContext, useContext, useRef, useState } from 'react';
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta, SortKeys } from '../../interfaces/link';
+import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta, SortKeys, SortParams } from '../../interfaces/link';
 import { ShareMeta } from '../../interfaces/share';
 import { DEFAULT_SORT_PARAMS } from '../../constants';
 
@@ -18,8 +18,68 @@ interface FolderLinkKeys {
 
 export type LinkKeys = FileLinkKeys | FolderLinkKeys;
 
-interface ShareKeys {
+export interface ShareKeys {
     privateKey: OpenPGPKey;
+}
+
+export interface DriveCacheProvider {
+    set: {
+        trashLinkMetas: (metas: LinkMeta[], shareId: string, method: 'unlisted' | 'complete' | 'incremental') => void;
+        childLinkMetas: (
+            metas: LinkMeta[],
+            shareId: string,
+            linkId: string,
+            method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create',
+            sortParams?: SortParams
+        ) => void;
+        foldersOnlyLinkMetas: (
+            metas: LinkMeta[],
+            shareId: string,
+            linkId: string,
+            method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create'
+        ) => void;
+        linkMeta: (
+            metas: FileLinkMeta | FolderLinkMeta | LinkMeta[],
+            shareId: string,
+            {
+                isNew,
+                rerender,
+            }: {
+                isNew?: boolean;
+                rerender?: boolean;
+            }
+        ) => void;
+        linkKeys: (keys: FileLinkKeys | FolderLinkKeys, shareId: string, linkId: string) => void;
+        shareMeta: (meta: ShareMeta) => void;
+        shareKeys: (keys: ShareKeys, shareID: string) => void;
+        emptyShares: (ids: string[]) => void;
+        linksLocked: (locked: boolean, shareId: string, linkIds: string[]) => void;
+        allTrashedLocked: (locked: boolean, shareId: string) => void;
+    };
+    get: {
+        trashMetas: (shareId: string) => LinkMeta[];
+        trashComplete: (shareId: string) => boolean;
+        trashChildLinks: (shareId: string) => string[];
+        defaultShareMeta: () => ShareMeta | undefined;
+        childrenComplete: (shareId: string, linkId: string, sortParams?: SortParams) => boolean | undefined;
+        childrenInitialized: (shareId: string, linkId: string, sortParams?: SortParams) => boolean | undefined;
+        childLinkMetas: (shareId: string, linkId: string, sortParams?: SortParams) => LinkMeta[] | undefined;
+        childLinks: (shareId: string, linkId: string, sortParams?: SortParams) => string[] | undefined;
+        listedChildLinks: (shareId: string, linkId: string, sortParams?: SortParams) => string[] | undefined;
+        foldersOnlyLinkMetas: (shareId: string, linkId: string) => LinkMeta[] | undefined;
+        listedFoldersOnlyLinks: (shareId: string, linkId: string) => string[] | undefined;
+        foldersOnlyComplete: (shareId: string, linkId: string) => boolean | undefined;
+        linkMeta: (shareId: string, linkId: string) => FileLinkMeta | FolderLinkMeta | undefined;
+        linkKeys: (shareId: string, linkId: string) => FolderLinkKeys | FileLinkKeys | undefined;
+        shareMeta: (shareId: string) => ShareMeta | undefined;
+        shareKeys: (shareId: string) => ShareKeys | undefined;
+        shareIds: () => string[];
+        isTrashLocked: (shareId: string) => boolean;
+        isLinkLocked: (shareId: string, linkId: string) => boolean;
+    };
+    delete: {
+        links: (shareId: string, linkIds: string[], softDelete?: boolean, rerender?: boolean) => void;
+    };
 }
 
 interface SortedChildrenList {
