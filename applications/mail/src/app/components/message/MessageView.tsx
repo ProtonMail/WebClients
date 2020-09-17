@@ -110,7 +110,8 @@ const MessageView = ({
         if (!hasBeenFocused && inputExpand && messageLoaded && conversationIndex !== 0) {
             // Let the browser render the content before scrolling
             setTimeout(() => {
-                elementRef.current && elementRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                elementRef.current &&
+                    elementRef.current.scrollIntoView({ behavior: bodyLoaded ? 'smooth' : 'auto', block: 'start' });
             });
             setHasBeenFocused(bodyLoaded);
         }
