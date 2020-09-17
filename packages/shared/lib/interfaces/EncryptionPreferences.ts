@@ -1,13 +1,6 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { Address } from './Address';
-import {
-    CONTACT_MIME_TYPES,
-    CONTACT_PGP_SCHEMES,
-    DRAFT_MIME_TYPES,
-    MIME_TYPES,
-    PGP_SCHEMES,
-    RECIPIENT_TYPES,
-} from '../constants';
+import { CONTACT_MIME_TYPES, CONTACT_PGP_SCHEMES, MIME_TYPES, PGP_SCHEMES, RECIPIENT_TYPES } from '../constants';
 import { MailSettings } from './MailSettings';
 import { Key } from './Key';
 
@@ -78,7 +71,7 @@ export interface PublicKeyModel {
     publicKeys: { apiKeys: OpenPGPKey[]; pinnedKeys: OpenPGPKey[] };
     encrypt: boolean;
     sign: boolean;
-    mimeType: DRAFT_MIME_TYPES;
+    mimeType: CONTACT_MIME_TYPES;
     scheme: PGP_SCHEMES;
     trustedFingerprints: Set<string>;
     expiredFingerprints: Set<string>;

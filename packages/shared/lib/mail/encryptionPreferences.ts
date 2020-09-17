@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
-import { DRAFT_MIME_TYPES, PGP_SCHEMES } from '../constants';
+import { CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';
 import { ContactPublicKeyModel, MailSettings, PublicKeyModel, SelfSend } from '../interfaces';
 import { getEmailMismatchWarning, getIsValidForSending } from '../keys/publicKeys';
 
@@ -25,7 +25,7 @@ export interface EncryptionPreferences {
     encrypt: boolean;
     sign: boolean;
     scheme: PGP_SCHEMES;
-    mimeType: DRAFT_MIME_TYPES;
+    mimeType: CONTACT_MIME_TYPES;
     sendKey?: OpenPGPKey;
     isSendKeyPinned?: boolean;
     apiKeys: OpenPGPKey[];
