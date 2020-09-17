@@ -1,6 +1,4 @@
-import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import createCache from 'proton-shared/lib/helpers/cache';
-import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { MessageExtended, Message } from '../../models/message';
 import { transformEmbedded } from './transformEmbedded';
@@ -31,8 +29,8 @@ describe('transformEmbedded', () => {
     describe('show', () => {
         // Reference: Angular/test/specs/message/services/transformEmbedded.spec.js
 
-        const setup = async (message: Partial<MessageExtended> = {}, mailSettings: Partial<MailSettings> = {}) => {
-            await transformEmbedded({ localID, ...message }, attachmentsCache, api, mailSettings as MailSettings);
+        const setup = async (message: Partial<MessageExtended> = {}) => {
+            await transformEmbedded({ localID, ...message }, attachmentsCache, api);
             return prepareImagesMock.mock.calls[0][1] as boolean;
         };
 
@@ -41,22 +39,12 @@ describe('transformEmbedded', () => {
         });
 
         it('should load embedded images when showEmbeddedImages = true', async () => {
-            const show = await setup({ data, showEmbeddedImages: true }, { ShowImages: SHOW_IMAGES.NONE });
+            const show = await setup({ data, showEmbeddedImages: true });
             expect(show).toBe(true);
         });
 
-        it('should load embedded images when showEmbedded = false and mailSettings = true', async () => {
-            const show = await setup({ data, showEmbeddedImages: false }, { ShowImages: SHOW_IMAGES.EMBEDDED });
-            expect(show).toBe(true);
-        });
-
-        it('should not load embedded images when showEmbedded = false and showImages = false', async () => {
-            const show = await setup({ data, showEmbeddedImages: false }, { ShowImages: SHOW_IMAGES.NONE });
-            expect(show).toBe(false);
-        });
-
-        it('should not load embedded images when showEmbedded = false and showImages = false', async () => {
-            const show = await setup({ data, showEmbeddedImages: false }, { ShowImages: SHOW_IMAGES.NONE });
+        it('should not load embedded images when showEmbedded = false', async () => {
+            const show = await setup({ data, showEmbeddedImages: false });
             expect(show).toBe(false);
         });
     });

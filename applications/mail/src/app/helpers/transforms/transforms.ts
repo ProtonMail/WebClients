@@ -28,12 +28,7 @@ export const prepareMailDocument = async (
 
     transformLinks(document);
 
-    const { showEmbeddedImages, embeddeds } = await transformEmbedded(
-        { ...message, document },
-        attachmentsCache,
-        api,
-        mailSettings
-    );
+    const { showEmbeddedImages, embeddeds } = await transformEmbedded({ ...message, document }, attachmentsCache, api);
 
     transformWelcome(document);
 

@@ -11,20 +11,16 @@ import HeaderExpanded from './header/HeaderExpanded';
 import MessageFooter from './MessageFooter';
 import { Message } from '../../models/message';
 import { Element } from '../../models/element';
-import { useMessage } from '../../hooks/useMessage';
+import { useMessage } from '../../hooks/message/useMessage';
 import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
-import {
-    useInitializeMessage,
-    useLoadMessage,
-    useLoadRemoteImages,
-    useLoadEmbeddedImages,
-    useTrustSigningPublicKey,
-    useResignContact,
-    useTrustAttachedPublicKey
-} from '../../hooks/useMessageReadActions';
 import { isUnread } from '../../helpers/elements';
 import { OnCompose } from '../../hooks/useCompose';
 import { Breakpoints } from '../../models/utils';
+import { useLoadMessage } from '../../hooks/message/useLoadMessage';
+import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
+import { useTrustAttachedPublicKey, useTrustSigningPublicKey } from '../../hooks/message/useTrustPublicKey';
+import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/useLoadImages';
+import { useResignContact } from '../../hooks/message/useResignContact';
 
 interface Props {
     labelID: string;

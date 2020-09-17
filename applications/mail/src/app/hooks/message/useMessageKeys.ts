@@ -3,7 +3,7 @@ import { OpenPGPKey } from 'pmcrypto';
 import { useGetAddressKeys } from 'react-components';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 
-import { MessageExtendedWithData } from '../models/message';
+import { MessageExtendedWithData } from '../../models/message';
 
 type UseMessageKeys = () => (
     message: MessageExtendedWithData,

@@ -1,9 +1,9 @@
 import { useEffect, useState, useMemo } from 'react';
 
-import { MessageExtended, MessageAction, Message } from '../models/message';
-import { useMessageCache, getLocalID } from '../containers/MessageProvider';
-import { useElementsCache } from './useElementsCache';
-import { useConversationCache } from '../containers/ConversationProvider';
+import { MessageExtended, MessageAction, Message } from '../../models/message';
+import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
+import { useElementsCache } from '../useElementsCache';
+import { useConversationCache } from '../../containers/ConversationProvider';
 
 interface ReturnValue {
     message: MessageExtended;

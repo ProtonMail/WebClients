@@ -20,7 +20,7 @@ import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
 import { getListUnsubscribe, getListUnsubscribePost, getOriginalTo } from '../../../helpers/message/messages';
 import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from '../../../models/message';
-import { useMessage } from '../../../hooks/useMessage';
+import { useMessage } from '../../../hooks/message/useMessage';
 import { useSendMessage, useSendVerifications } from '../../../hooks/useSendMessage';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
 import { findSender } from '../../../helpers/addresses';

@@ -2,12 +2,12 @@ import { useCallback } from 'react';
 import { useApi, useEventManager } from 'react-components';
 import { deleteMessages } from 'proton-shared/lib/api/messages';
 
-import { MessageExtended, Message, MessageExtendedWithData } from '../models/message';
+import { MessageExtended, Message, MessageExtendedWithData } from '../../models/message';
 import { useMessageKeys } from './useMessageKeys';
-import { mergeMessages } from '../helpers/message/messages';
-import { useMessageCache, updateMessageCache } from '../containers/MessageProvider';
-import { createMessage, updateMessage } from '../helpers/message/messageExport';
-import { createEquivalentEmbeddeds } from '../helpers/embedded/embeddeds';
+import { mergeMessages } from '../../helpers/message/messages';
+import { useMessageCache, updateMessageCache } from '../../containers/MessageProvider';
+import { createMessage, updateMessage } from '../../helpers/message/messageExport';
+import { createEquivalentEmbeddeds } from '../../helpers/embedded/embeddeds';
 
 /**
  * Only takes technical stuff from the updated message

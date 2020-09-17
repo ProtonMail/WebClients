@@ -3,8 +3,8 @@ import { Icon, InlineLinkButton } from 'react-components';
 import { c } from 'ttag';
 
 import { MessageExtended, MessageErrors } from '../../../models/message';
-import { useMessage } from '../../../hooks/useMessage';
-import { useReloadMessage } from '../../../hooks/useMessageReadActions';
+import { useMessage } from '../../../hooks/message/useMessage';
+import { useReloadMessage } from '../../../hooks/message/useLoadMessage';
 
 const getTranslations = (key: keyof MessageErrors) => {
     switch (key) {

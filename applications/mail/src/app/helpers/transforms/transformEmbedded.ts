@@ -1,4 +1,4 @@
-import { Api, MailSettings } from 'proton-shared/lib/interfaces';
+import { Api } from 'proton-shared/lib/interfaces';
 
 import { find } from '../embedded/embeddedFinder';
 import { mutateHTMLBlob, decrypt, prepareImages } from '../embedded/embeddedParser';
@@ -6,15 +6,9 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { isDraft } from '../message/messages';
 import { MessageExtended } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { hasShowEmbedded } from '../settings';
 
-export const transformEmbedded = async (
-    message: MessageExtended,
-    attachmentsCache: AttachmentsCache,
-    api: Api,
-    mailSettings: MailSettings
-) => {
-    const show = message.showEmbeddedImages === true || hasShowEmbedded(mailSettings) || isDraft(message.data);
+export const transformEmbedded = async (message: MessageExtended, attachmentsCache: AttachmentsCache, api: Api) => {
+    const show = message.showEmbeddedImages === true || isDraft(message.data);
     const isReplyForward =
         message.action === MESSAGE_ACTIONS.REPLY ||
         message.action === MESSAGE_ACTIONS.REPLY_ALL ||

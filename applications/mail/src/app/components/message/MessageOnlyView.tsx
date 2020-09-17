@@ -3,11 +3,11 @@ import { useLabels, classnames } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import MessageView from '../message/MessageView';
-import { useMessage } from '../../hooks/useMessage';
+import { useMessage } from '../../hooks/message/useMessage';
 import { Message } from '../../models/message';
 import { OnCompose } from '../../hooks/useCompose';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
-import { useLoadMessage } from '../../hooks/useMessageReadActions';
+import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import ConversationHeader from '../conversation/ConversationHeader';
 import { Breakpoints } from '../../models/utils';
 

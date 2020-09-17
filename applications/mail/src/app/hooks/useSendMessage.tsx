@@ -30,7 +30,7 @@ import { attachPublicKey } from '../helpers/message/messageAttachPublicKey';
 import { Attachment } from '../models/attachment';
 import SendWithWarningsModal from '../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
-import { useSaveDraft } from './useMessageWriteActions';
+import { useSaveDraft } from './message/useSaveDraft';
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();

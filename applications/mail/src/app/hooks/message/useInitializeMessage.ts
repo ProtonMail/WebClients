@@ -1,44 +1,26 @@
-import { arrayToBinaryString, getKeys, OpenPGPKey, getMatchingKey } from 'pmcrypto';
+import { arrayToBinaryString, getKeys, getMatchingKey } from 'pmcrypto';
 import { useCallback } from 'react';
 import { useApi, useGetEncryptionPreferences, useMailSettings } from 'react-components';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { getMessage } from 'proton-shared/lib/api/messages';
 
-import { LARGE_KEY_SIZE, VERIFICATION_STATUS } from '../constants';
-import { get } from '../helpers/attachment/attachmentLoader';
-import { MessageExtended, Message, MessageErrors } from '../models/message';
-import { Element } from '../models/element';
-import { loadMessage } from '../helpers/message/messageRead';
+import { LARGE_KEY_SIZE, VERIFICATION_STATUS } from '../../constants';
+import { get } from '../../helpers/attachment/attachmentLoader';
+import { MessageExtended, Message, MessageErrors } from '../../models/message';
+import { Element } from '../../models/element';
+import { loadMessage } from '../../helpers/message/messageRead';
 import { useMessageKeys } from './useMessageKeys';
-import { decryptMessage } from '../helpers/message/messageDecrypt';
-import { useAttachmentCache } from '../containers/AttachmentProvider';
-import { updateMessageCache, useMessageCache } from '../containers/MessageProvider';
-import { transformEmbedded } from '../helpers/transforms/transformEmbedded';
-import { transformRemote } from '../helpers/transforms/transformRemote';
-import { prepareMailDocument } from '../helpers/transforms/transforms';
-import { isApiError } from '../helpers/errors';
-import { useBase64Cache } from './useBase64Cache';
-import { isPlainText } from '../helpers/message/messages';
-import { useMarkAs, MARK_AS_STATUS } from './useMarkAs';
-import { isUnreadMessage } from '../helpers/elements';
-
-export const useLoadMessage = (inputMessage: Message) => {
-    const api = useApi();
-    const messageCache = useMessageCache();
-
-    return useCallback(async () => {
-        const localID = inputMessage.ID || '';
-
-        const messageFromCache = updateMessageCache(messageCache, localID, { data: inputMessage });
-
-        // If the Body is already there, no need to send a request
-        if (!messageFromCache.data?.Body) {
-            const { Message: message } = await api(getMessage(messageFromCache.data?.ID));
-            updateMessageCache(messageCache, localID, { data: message as Message });
-        }
-    }, [inputMessage]);
-};
+import { decryptMessage } from '../../helpers/message/messageDecrypt';
+import { useAttachmentCache } from '../../containers/AttachmentProvider';
+import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
+import { prepareMailDocument } from '../../helpers/transforms/transforms';
+import { isApiError } from '../../helpers/errors';
+import { useBase64Cache } from '../useBase64Cache';
+import { isPlainText } from '../../helpers/message/messages';
+import { useMarkAs, MARK_AS_STATUS } from './../useMarkAs';
+import { isUnreadMessage } from '../../helpers/elements';
+import { hasShowEmbedded } from '../../helpers/settings';
+import { useLoadEmbeddedImages } from './useLoadImages';
 
 export const useInitializeMessage = (localID: string, labelID?: string) => {
     const api = useApi();
@@ -49,6 +31,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
     const getEncryptionPreferences = useGetEncryptionPreferences();
+    const loadEmbeddedImages = useLoadEmbeddedImages(localID);
 
     return useCallback(async () => {
         // Cache entry will be (at least) initialized by the queue system
@@ -171,113 +154,19 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 verificationStatus,
                 verificationErrors: decryption?.verificationErrors,
                 decryptedSubject: decryption?.decryptedSubject,
-                showEmbeddedImages: preparation?.showEmbeddedImages,
+                // Anticipate showEmbedded flag while triggering the load just after
+                showEmbeddedImages: preparation?.showEmbeddedImages || hasShowEmbedded(mailSettings),
                 showRemoteImages: preparation?.showRemoteImages,
                 embeddeds: preparation?.embeddeds,
                 errors,
                 initialized: true
             });
         }
-    }, [localID]);
-};
 
-export const useTrustSigningPublicKey = (localID: string) => {
-    const messageCache = useMessageCache();
-
-    return useCallback(
-        async (key: OpenPGPKey) => {
-            const pinnedKeys = messageCache.get(localID)?.senderPinnedKeys || [];
-            updateMessageCache(messageCache, localID, {
-                verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
-                senderPinnedKeys: [key, ...pinnedKeys],
-                senderVerified: true
-            });
-        },
-        [localID]
-    );
-};
-
-// if the attached public key signs the message, use the hook above
-export const useTrustAttachedPublicKey = (localID: string) => {
-    const messageCache = useMessageCache();
-
-    return useCallback(
-        async (key: OpenPGPKey) => {
-            const pinnedKeys = messageCache.get(localID)?.senderPinnedKeys || [];
-            updateMessageCache(messageCache, localID, {
-                senderPinnedKeys: [key, ...pinnedKeys],
-                senderVerified: true
-            });
-        },
-        [localID]
-    );
-};
-
-export const useResignContact = (localID: string) => {
-    const getEncryptionPreferences = useGetEncryptionPreferences();
-    const messageCache = useMessageCache();
-    const api = useApi();
-
-    return useCallback(async () => {
-        const messageFromCache = messageCache.get(localID) as MessageExtended;
-        const message = await loadMessage(messageFromCache, api);
-        const address = message.data.Sender?.Address;
-        if (!address) {
-            return;
+        if (hasShowEmbedded(mailSettings)) {
+            // Load embedded images as a second step not synchronized with the initialization
+            // To prevent slowing the message body when there is heavy embedded attachments
+            loadEmbeddedImages();
         }
-        const { isContactSignatureVerified } = await getEncryptionPreferences(address);
-        updateMessageCache(messageCache, localID, {
-            senderVerified: isContactSignatureVerified
-        });
-    }, [localID]);
-};
-
-export const useLoadRemoteImages = (localID: string) => {
-    const messageCache = useMessageCache();
-    const [mailSettings] = useMailSettings();
-
-    return useCallback(async () => {
-        const message = messageCache.get(localID) as MessageExtended;
-
-        transformRemote({ ...message, showRemoteImages: true }, mailSettings);
-
-        updateMessageCache(messageCache, localID, {
-            document: message.document,
-            showRemoteImages: true
-        });
-    }, [localID]);
-};
-
-export const useLoadEmbeddedImages = (localID: string) => {
-    const api = useApi();
-    const messageCache = useMessageCache();
-    const [mailSettings] = useMailSettings();
-    const attachmentsCache = useAttachmentCache();
-
-    return useCallback(async () => {
-        const message = messageCache.get(localID) as MessageExtended;
-
-        const { embeddeds } = await transformEmbedded(
-            { ...message, showEmbeddedImages: true },
-            attachmentsCache,
-            api,
-            mailSettings
-        );
-
-        updateMessageCache(messageCache, localID, {
-            document: message.document,
-            embeddeds,
-            showEmbeddedImages: true
-        });
-    }, [localID]);
-};
-
-export const useReloadMessage = (localID: string) => {
-    const messageCache = useMessageCache();
-    const initializeMessage = useInitializeMessage(localID);
-
-    return useCallback(async () => {
-        messageCache.set(localID, { localID });
-        await initializeMessage();
     }, [localID]);
 };

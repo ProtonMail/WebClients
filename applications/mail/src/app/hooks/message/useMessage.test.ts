@@ -1,8 +1,8 @@
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { useMessage } from './useMessage';
-import { renderHook, clearAll, messageCache, tick } from '../helpers/test/helper';
-import { MessageExtended, Message } from '../models/message';
+import { renderHook, clearAll, messageCache, tick } from '../../helpers/test/helper';
+import { MessageExtended, Message } from '../../models/message';
 
 describe('useMessage', () => {
     let consoleError: any;
