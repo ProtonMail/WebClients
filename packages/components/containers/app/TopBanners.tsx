@@ -4,6 +4,7 @@ import NewVersionTopBanner from './NewVersionTopBanner';
 import DelinquentTopBanner from './DelinquentTopBanner';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
+import SubUserTopBanner from './SubUserTopBanner';
 
 const TopBanners = () => {
     return (
@@ -12,6 +13,7 @@ const TopBanners = () => {
             <OnlineTopBanner />
             <StorageLimitTopBanner />
             <NewVersionTopBanner />
+            <SubUserTopBanner />
         </>
     );
 };
