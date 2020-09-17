@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { ToolbarSeparator, Toolbar, isPreviewAvailable } from 'react-components';
+import { ToolbarSeparator, Toolbar, isPreviewAvailable, useActiveBreakpoint } from 'react-components';
 
 import { getDevice } from 'proton-shared/lib/helpers/browser';
 import useDrive from '../../hooks/drive/useDrive';
@@ -21,6 +21,7 @@ import {
 } from './ToolbarButtons';
 import UploadFolderButton from './ToolbarButtons/UploadFolderButton';
 import LayoutDropdown from './ToolbarButtons/LayoutDropdown';
+import ActionsDropdown from './ToolbarButtons/ActionsDropdown';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -31,6 +32,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
     const { getLinkMeta } = useDrive();
     const cache = useDriveCache();
     const isDesktop = !getDevice()?.type;
+    const { isNarrow } = useActiveBreakpoint();
 
     const { linkId, shareId } = activeFolder;
 
@@ -44,7 +46,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
     }, [shareId, linkId, ParentLinkID]);
 
     const renderSelectionActions = () => {
-        if (!selectedItems.length) {
+        if (!selectedItems.length && !isNarrow) {
             return (
                 <>
                     <CreateNewFolderButton />
@@ -63,20 +65,25 @@ const DriveToolbar = ({ activeFolder }: Props) => {
         const isPreviewDisabled =
             isMultiSelect ||
             hasFoldersSelected ||
-            !selectedItems[0].MIMEType ||
+            !selectedItems[0]?.MIMEType ||
             !isPreviewAvailable(selectedItems[0].MIMEType);
 
         return (
             <>
                 <PreviewButton disabled={isPreviewDisabled} />
-                <DownloadButton />
-                <RenameButton disabled={isMultiSelect} />
-                <DetailsButton disabled={isMultiSelect} />
-
+                <DownloadButton disabled={!selectedItems.length} />
                 <ToolbarSeparator />
-
-                <MoveToTrashButton />
-                <MoveToFolderButton />
+                {isNarrow ? (
+                    <ActionsDropdown />
+                ) : (
+                    <>
+                        <RenameButton disabled={isMultiSelect} />
+                        <DetailsButton disabled={isMultiSelect} />
+                        <ToolbarSeparator />
+                        <MoveToTrashButton />
+                        <MoveToFolderButton />
+                    </>
+                )}
             </>
         );
     };
@@ -88,7 +95,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
             <ToolbarSeparator />
 
             {renderSelectionActions()}
-            <span className="mlauto flex">
+            <span className="mlauto flex flex-nowrap">
                 <LayoutDropdown layoutId="drive" />
                 <SortDropdown />
             </span>

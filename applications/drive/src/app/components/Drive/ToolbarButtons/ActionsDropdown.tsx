@@ -1,0 +1,98 @@
+import React, { useState } from 'react';
+import { c } from 'ttag';
+
+import {
+    generateUID,
+    usePopperAnchor,
+    Dropdown,
+    DropdownMenu,
+    Icon,
+    DropdownMenuButton,
+    ToolbarButton,
+} from 'react-components';
+
+import { useDriveContent } from '../DriveContentProvider';
+import useToolbarActions from '../../../hooks/drive/useToolbarActions';
+
+const ActionsDropdown = () => {
+    const [uid] = useState(generateUID('actions-dropdown'));
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { openDetails, openMoveToFolder, openMoveToTrash, openRename } = useToolbarActions();
+    const { fileBrowserControls } = useDriveContent();
+    const { selectedItems } = fileBrowserControls;
+
+    const isMultiSelect = selectedItems.length > 1;
+
+    const toolbarButtonIcon = { name: 'caret', rotate: isOpen ? 180 : 0 };
+
+    const menuItems = [
+        {
+            hidden: isMultiSelect,
+            name: c('Action').t`Rename`,
+            icon: 'file-edit',
+            testId: 'context-menu-rename',
+            action: () => openRename(selectedItems[0]),
+        },
+        {
+            hidden: isMultiSelect,
+            name: c('Action').t`Details`,
+            icon: 'info',
+            testId: 'context-menu-details',
+            action: () => openDetails(selectedItems[0]),
+        },
+        {
+            hidden: false,
+            name: c('Action').t`Move to Folder`,
+            icon: 'arrow-cross',
+            testId: 'context-menu-move',
+            action: () => openMoveToFolder(selectedItems),
+        },
+        {
+            hidden: false,
+            name: c('Action').t`Move to Trash`,
+            icon: 'trash',
+            testId: 'context-menu-trash',
+            action: () => openMoveToTrash(selectedItems),
+        },
+    ];
+
+    const dropdownMenuButtons = menuItems
+        .filter((menuItem) => !menuItem.hidden)
+        .map((item) => (
+            <DropdownMenuButton
+                key={item.name}
+                hidden={item.hidden}
+                onContextMenu={(e) => e.stopPropagation()}
+                className="flex flex-nowrap alignleft"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    item.action();
+                    close();
+                }}
+                data-testid={item.testId}
+            >
+                <Icon className="mt0-25 mr0-5" name={item.icon} />
+                {item.name}
+            </DropdownMenuButton>
+        ));
+
+    return (
+        <>
+            <ToolbarButton
+                disabled={!selectedItems.length}
+                aria-describedby={uid}
+                ref={anchorRef}
+                aria-expanded={isOpen}
+                onClick={toggle}
+                icon={toolbarButtonIcon}
+                data-testid="actions-dropdown"
+                title={c('Title').t`Show Actions`}
+            />
+            <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom">
+                <DropdownMenu>{dropdownMenuButtons}</DropdownMenu>
+            </Dropdown>
+        </>
+    );
+};
+
+export default ActionsDropdown;
