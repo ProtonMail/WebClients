@@ -229,6 +229,10 @@ export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) 
  * Determines if a event has already passed with respect to a UNIX timestamp
  */
 export const getEventTimeStatus = (vevent: VcalVeventComponent, now: number) => {
+    if (vevent.rrule?.value) {
+        // ignore recurring events that only repeat a finite number of times for the moment
+        return EVENT_TIME_STATUS.FUTURE;
+    }
     const nowTimestamp = getUnixTime(now);
     const startTimestamp = getUnixTime(propertyToUTCDate(vevent.dtstart));
     const endTimestamp = getUnixTime(propertyToUTCDate(getDtendProperty(vevent)));
