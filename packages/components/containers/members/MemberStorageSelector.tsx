@@ -5,12 +5,12 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { Select } from '../../components';
 
 export const getStorageRange = (
-    { UsedSpace: memberUsedSpace = 0 } = {},
-    { MaxSpace: organizationMaxSpace = 0, UsedSpace: organizationUsedSpace = 0 }
+    { UsedSpace: memberUsedSpace = 0, MaxSpace: memberMaxSpace = 0 } = {},
+    { UsedSpace: organizationUsedSpace = 0, MaxSpace: organizationMaxSpace = 0 }
 ) => {
     return [
         Math.ceil(memberUsedSpace / GIGA) * GIGA,
-        Math.ceil((organizationMaxSpace - organizationUsedSpace + memberUsedSpace) / GIGA) * GIGA,
+        Math.ceil((organizationMaxSpace - organizationUsedSpace + memberMaxSpace) / GIGA) * GIGA,
     ];
 };
 
