@@ -1,8 +1,7 @@
 import { c } from 'ttag';
-
 import { LinkType, LinkMeta } from '../../interfaces/link';
-import { FileBrowserItem } from '../FileBrowser/interfaces';
 import { LinkURLType, fileDescriptions } from '../../constants';
+import { FileBrowserItem } from '../FileBrowser/interfaces';
 
 export const selectMessageForItemList = (
     types: LinkType[],

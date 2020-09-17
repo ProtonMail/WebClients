@@ -1,23 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 
-import {
-    Row,
-    Label,
-    Field,
-    Time,
-    useUser,
-    DialogModal,
-    HeaderModal,
-    InnerModal,
-    FooterModal,
-    PrimaryButton,
-} from 'react-components';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { Row, Label, Field, DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton } from 'react-components';
 import { LinkType } from '../interfaces/link';
 import { DriveFolder } from './Drive/DriveFolderProvider';
-import useDrive from '../hooks/drive/useDrive';
 import { FileBrowserItem } from './FileBrowser/interfaces';
+import UserNameCell from './FileBrowser/ListView/Cells/UserNameCell';
+import LocationCell from './FileBrowser/ListView/Cells/LocationCell';
+import DescriptiveTypeCell from './FileBrowser/ListView/Cells/DescriptiveTypeCell';
+import ModifyTimeCell from './FileBrowser/ListView/Cells/ModifyTimeCell';
+import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
+import NameCell from './FileBrowser/ListView/Cells/NameCell';
+import MIMETypeCell from './FileBrowser/ListView/Cells/MIMETypeCell';
 
 interface Props {
     item: FileBrowserItem;
@@ -25,79 +19,26 @@ interface Props {
     onClose?: () => void;
 }
 
+interface RowProps {
+    label: string;
+    children: ReactNode;
+}
+
+const DetailsRow = ({ label, children }: RowProps) => {
+    return (
+        <Row>
+            <Label style={{ cursor: 'default' }}>{label}</Label>
+            <Field>
+                <b>{children}</b>
+            </Field>
+        </Row>
+    );
+};
+
 const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
-    const [{ Name }] = useUser();
-    const { getLinkMeta } = useDrive();
-    const [location, setLocation] = useState('');
-
-    useEffect(() => {
-        const getLocationItems = async (linkId: string): Promise<string[]> => {
-            const { ParentLinkID, Name } = await getLinkMeta(activeFolder.shareId, linkId);
-
-            if (!ParentLinkID) {
-                return [c('Title').t`My files`];
-            }
-
-            const previous = await getLocationItems(ParentLinkID);
-
-            return [...previous, Name];
-        };
-
-        let canceled = false;
-
-        getLocationItems(activeFolder.linkId)
-            .then((items) => {
-                if (!canceled) {
-                    setLocation(`/${items.join('/')}`);
-                }
-            })
-            .catch(console.error);
-
-        return () => {
-            canceled = true;
-        };
-    }, [activeFolder.shareId, activeFolder.linkId]);
-
     const modalTitleID = 'details-modal';
-    const isFolder = item.Type === LinkType.FOLDER;
-    const folderFields = ['Name', 'Uploaded by', 'Location', 'ModifyTime'];
-    const fileFields = [...folderFields, 'Extension', 'Size'];
-    const fieldsToRender = isFolder ? folderFields : fileFields;
-    const title = isFolder ? c('Title').t`Folder Details` : c('Title').t`File Details`;
-
-    const extractFieldValue = (field: string, item: FileBrowserItem) => {
-        switch (field) {
-            case 'Name':
-                return <span title={item.Name}>{item.Name}</span>;
-            case 'Uploaded by':
-                return <span title={Name}>{Name}</span>;
-            case 'Location':
-                return <span title={location}>{location}</span>;
-            case 'ModifyTime':
-                return (
-                    <Time key="dateModified" format="PPp">
-                        {item.ModifyTime}
-                    </Time>
-                );
-            case 'Extension':
-                return <span title={item.MIMEType}>{item.MIMEType}</span>;
-            case 'Size':
-                return humanSize(item.Size);
-            default:
-        }
-    };
-
-    const rows = fieldsToRender.map((field) => {
-        const fieldValue = extractFieldValue(field, item);
-        return (
-            <Row key={field}>
-                <Label style={{ cursor: 'default' }}>{field}</Label>
-                <Field className="ellipsis">
-                    <b>{fieldValue}</b>
-                </Field>
-            </Row>
-        );
-    });
+    const isFile = item.Type === LinkType.FILE;
+    const title = isFile ? c('Title').t`File Details` : c('Title').t`Folder Details`;
 
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
@@ -105,7 +46,33 @@ const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
                 {title}
             </HeaderModal>
             <div className="pm-modalContent">
-                <InnerModal>{rows}</InnerModal>
+                <InnerModal>
+                    <DetailsRow label={c('Title').t`Name`}>
+                        <NameCell name={item.Name} />
+                    </DetailsRow>
+                    <DetailsRow label={c('Title').t`Uploaded by`}>
+                        <UserNameCell />
+                    </DetailsRow>
+                    <DetailsRow label={c('Title').t`Location`}>
+                        <LocationCell shareId={activeFolder.shareId} parentLinkId={item.ParentLinkID} />
+                    </DetailsRow>
+                    <DetailsRow label={c('Title').t`Modified`}>
+                        <ModifyTimeCell modifyTime={item.ModifyTime} />
+                    </DetailsRow>
+                    {isFile && (
+                        <>
+                            <DetailsRow label={c('Title').t`Type`}>
+                                <DescriptiveTypeCell mimeType={item.MIMEType} linkType={item.Type} />
+                            </DetailsRow>
+                            <DetailsRow label={c('Title').t`MIME type`}>
+                                <MIMETypeCell mimeType={item.MIMEType} />
+                            </DetailsRow>
+                            <DetailsRow label={c('Title').t`Size`}>
+                                <SizeCell size={item.Size} />
+                            </DetailsRow>
+                        </>
+                    )}
+                </InnerModal>
                 <FooterModal>
                     <PrimaryButton onClick={onClose} autoFocus>
                         {c('Action').t`Close`}

@@ -1,27 +1,25 @@
 import React from 'react';
-import { c } from 'ttag';
 
 import {
     TableRow,
     Checkbox,
-    Time,
     useActiveBreakpoint,
     classnames,
     DragMoveContainer,
     FileIcon,
     TableCell,
 } from 'react-components';
-import readableTime from 'proton-shared/lib/helpers/readableTime';
-import { dateLocale } from 'proton-shared/lib/i18n';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { isEquivalent, pick } from 'proton-shared/lib/helpers/object';
 import { shallowEqual } from 'proton-shared/lib/helpers/array';
 import { ItemProps } from '../interfaces';
 import { LinkType } from '../../../interfaces/link';
-import LocationCell from './LocationCell';
-import { getMimeTypeDescription } from '../../Drive/helpers';
 import ItemContextMenu from '../ItemContextMenu';
 import useFileBrowserItem from '../useFileBrowserItem';
+import LocationCell from './Cells/LocationCell';
+import DescriptiveTypeCell from './Cells/DescriptiveTypeCell';
+import ModifyTimeCell from './Cells/ModifyTimeCell';
+import SizeCell from './Cells/SizeCell';
+import NameCell from './Cells/NameCell';
 
 const ItemRow = ({
     item,
@@ -61,7 +59,6 @@ const ItemRow = ({
     });
 
     const { isDesktop } = useActiveBreakpoint();
-    const itemType = isFolder ? c('Label').t`Folder` : getMimeTypeDescription(item.MIMEType);
 
     return (
         <>
@@ -98,44 +95,27 @@ const ItemRow = ({
 
                 <TableCell className="m0 flex flex-items-center flex-nowrap flex-item-fluid">
                     <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
-                    <span title={item.Name} className="ellipsis">
-                        <span className="pre">{item.Name}</span>
-                    </span>
+                    <NameCell name={item.Name} />
                 </TableCell>
 
                 {showLocation && (
                     <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])}>
-                        <LocationCell shareId={shareId} item={item} />
+                        <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} />
                     </TableCell>
                 )}
 
                 <TableCell className="m0 w20">
-                    <div title={itemType} className="ellipsis">
-                        {itemType}
-                    </div>
+                    <DescriptiveTypeCell mimeType={item.MIMEType} linkType={item.Type} />
                 </TableCell>
 
                 {isDesktop && (
                     <TableCell className="m0 w25">
-                        <div
-                            className="ellipsis"
-                            title={readableTime(item.Trashed ?? item.ModifyTime, 'PPp', { locale: dateLocale })}
-                        >
-                            <Time key="dateModified" format="PPp">
-                                {item.Trashed ?? item.ModifyTime}
-                            </Time>
-                        </div>
+                        <ModifyTimeCell modifyTime={item.ModifyTime} />
                     </TableCell>
                 )}
 
                 <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])}>
-                    {isFolder ? (
-                        '-'
-                    ) : (
-                        <div className="ellipsis" title={humanSize(item.Size)}>
-                            {humanSize(item.Size)}
-                        </div>
-                    )}
+                    {isFolder ? '-' : <SizeCell size={item.Size} />}
                 </TableCell>
             </TableRow>
             {!isPreview && !item.Disabled && (

@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import useDrive from '../../../hooks/drive/useDrive';
-import { FileBrowserItem } from '../interfaces';
+import useDrive from '../../../../hooks/drive/useDrive';
 
 interface Props {
     shareId: string;
-    item: FileBrowserItem;
+    parentLinkId: string;
 }
 
-const LocationCell = ({ item, shareId }: Props) => {
+const LocationCell = ({ shareId, parentLinkId }: Props) => {
     const [location, setLocation] = useState<string>();
     const { getLinkMeta } = useDrive();
 
@@ -23,17 +22,15 @@ const LocationCell = ({ item, shareId }: Props) => {
             return [...previous, Name];
         };
 
-        getLocationItems(shareId, item.ParentLinkID)
+        getLocationItems(shareId, parentLinkId)
             .then((items: string[]) => `/${items.join('/')}`)
             .then(setLocation)
             .catch(console.error);
     }, []);
 
     return (
-        <div key="location" className="ellipsis">
-            <span className="pre" title={location}>
-                {location}
-            </span>
+        <div key="location" title={location} className="ellipsis">
+            <span className="pre">{location}</span>
         </div>
     );
 };
