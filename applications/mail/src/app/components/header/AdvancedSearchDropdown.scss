@@ -1,7 +1,14 @@
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+
 .advancedSearch {
     max-width: 30em;
-
+    @include respond-to(1200, 'min') {
+        max-width: calc(100vw * #{$conversations-column-width/100%} - 1em);
+    }
     &-label.pm-label {
         width: 11em;
+    }
+    .composer-addresses-container.composer-addresses-container-closed {
+        padding-right: 0;
     }
 }

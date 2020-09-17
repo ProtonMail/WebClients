@@ -157,11 +157,15 @@
 
         max-height: 20rem;
         overflow-y: auto;
+        overflow-x: hidden;
     }
 
     li {
         cursor: pointer;
-        padding: 0.5em;
+        padding: .5em;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        overflow: hidden;
 
         &[aria-selected='true'] {
             background-color: rgba($pm-primary, 0.2);
