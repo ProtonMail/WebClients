@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { c } from 'ttag';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
 import { loadLocale, loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
@@ -10,7 +9,6 @@ import {
     useApi,
     ProtonLoginCallback,
     useNotifications,
-    useDocumentTitle,
     StandardLoadError,
 } from 'react-components';
 import {
@@ -36,8 +34,6 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { createNotification } = useNotifications();
-
-    useDocumentTitle(c('Info').t`Loading`);
 
     useEffect(() => {
         const runGetSessions = async () => {
