@@ -24,7 +24,7 @@ const AppAccountPublicLayoutWrapper = ({ children, ...rest }: AccountProps) => {
         <AccountPublicLayout
             center={<ProtonLogo />}
             right={
-                <AccountSupportDropdown noCaret className="link">
+                <AccountSupportDropdown noCaret className="link nodecoration">
                     {c('Action').t`Need help?`}
                 </AccountSupportDropdown>
             }
