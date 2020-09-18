@@ -1,7 +1,6 @@
 import React, { Ref } from 'react';
 import { UserModel } from 'proton-shared/lib/interfaces';
 import { getInitial } from 'proton-shared/lib/helpers/string';
-import { DropdownCaret } from '../../components';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     user: UserModel;
@@ -25,20 +24,19 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }: Props) => {
             className="flex flex-items-center flex-nowrap p0-5 dropDown-logout-button"
         >
             {nameToDisplay ? (
-                <span className="alignright flex flex-column mr0-5 lh130 nomobile">
+                <span className="alignright flex flex-column mr0-75 lh130 nomobile">
                     <span className="inbl mw100 ellipsis dropDown-logout-displayName">{nameToDisplay}</span>
                     {Email ? (
                         <span className="inbl mw100 ellipsis m0 opacity-30 dropDown-logout-email">{Email}</span>
                     ) : null}
                 </span>
             ) : (
-                <span className="alignright flex flex-column mr0-5 lh130 nomobile">
+                <span className="alignright flex flex-column mr0-75 lh130 nomobile">
                     <span className="inbl mw100 ellipsis dropDown-logout-displayName">{Email}</span>
                 </span>
             )}
-            <span className="mtauto mbauto bordered rounded p0-25 inbl dropDown-logout-initials relative flex flex-item-noshrink">
+            <span className="mtauto mbauto semibold rounded p0-25 inbl dropDown-logout-initials relative flex flex-item-noshrink">
                 <span className="dropDown-logout-text center">{initials}</span>
-                <DropdownCaret isOpen={isOpen} className="icon-12p expand-caret mauto" />
             </span>
         </button>
     );

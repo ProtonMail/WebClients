@@ -20,6 +20,7 @@ const Toggle = ({
     loading = false,
     onChange,
     disabled,
+    title,
     label = (key: ToggleState) => {
         const alt = key === ToggleState.on ? c('Toggle button').t`On` : c('Toggle button').t`Off`;
         return (
@@ -47,7 +48,7 @@ const Toggle = ({
                 aria-busy={loading}
                 {...rest}
             />
-            <label htmlFor={id} className={classnames(['pm-toggle-label', className])}>
+            <label htmlFor={id} className={classnames(['pm-toggle-label', className])} title={title}>
                 {label(ToggleState.off)}
                 {label(ToggleState.on)}
             </label>

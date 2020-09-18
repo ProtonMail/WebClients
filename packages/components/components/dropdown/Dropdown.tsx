@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, CSSProperties } from 'react';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { classnames } from '../../helpers';
@@ -16,6 +16,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     anchorRef: React.RefObject<HTMLElement>;
     children: React.ReactNode;
     className?: string;
+    style?: CSSProperties;
     onClose?: () => void;
     onContextMenu?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     originalPlacement?: string;
@@ -35,6 +36,7 @@ const Dropdown = ({
     anchorRef,
     children,
     className,
+    style,
     originalPlacement = 'bottom',
     availablePlacements = ALL_PLACEMENTS,
     originalPosition,
@@ -115,6 +117,7 @@ const Dropdown = ({
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
     const popperClassName = classnames([
         'dropDown',
+        noMaxSize && 'dropDown--noMaxSize',
         `dropDown--${placement}`,
         isClosing && `is-dropdownOut`,
         noCaret && 'dropDown--noCaret',
@@ -151,7 +154,7 @@ const Dropdown = ({
         <Portal>
             <div
                 ref={setPopperEl}
-                style={{ ...varPosition, ...varSize }}
+                style={{ ...style, ...varPosition, ...varSize }}
                 role="dialog"
                 className={popperClassName}
                 onClick={handleClickContent}
@@ -163,11 +166,7 @@ const Dropdown = ({
                 <button type="button" className="dropDown-backdrop" title={c('Action').t`Close`} onClick={onClose}>
                     <span className="sr-only">{c('Action').t`Close`}</span>
                 </button>
-                <div
-                    ref={contentRef}
-                    className={classnames(['dropDown-content', noMaxSize && 'dropDown-content--noMaxSize'])}
-                    {...contentProps}
-                >
+                <div ref={contentRef} className={classnames(['dropDown-content'])} {...contentProps}>
                     {children}
                 </div>
             </div>

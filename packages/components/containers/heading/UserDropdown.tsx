@@ -6,6 +6,7 @@ import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { updateThemeType } from 'proton-shared/lib/api/settings';
 import { ThemeTypes } from 'proton-shared/lib/themes/themes';
+import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import {
     useAuthentication,
@@ -16,8 +17,9 @@ import {
     useApi,
     useEventManager,
     useUserSettings,
+    useOrganization,
 } from '../../hooks';
-import { usePopperAnchor, Dropdown, Icon, Toggle, PrimaryButton, AppLink } from '../../components';
+import { usePopperAnchor, Dropdown, Icon, Toggle, PrimaryButton, AppLink, Meter } from '../../components';
 import { generateUID } from '../../helpers';
 import { ToggleState } from '../../components/toggle/Toggle';
 import UserDropdownButton from './UserDropdownButton';
@@ -27,14 +29,17 @@ const UserDropdown = ({ ...rest }) => {
     const { APP_NAME } = useConfig();
     const api = useApi();
     const { call } = useEventManager();
+    const [organization] = useOrganization();
+    const { Name: organizationName } = organization || {};
     const [user] = useUser();
     const [userSettings] = useUserSettings();
+    const { UsedSpace, MaxSpace } = user;
+    const spacePercentage = Math.round((UsedSpace * 100) / MaxSpace);
     const { logout } = useAuthentication();
     const { createModal } = useModals();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [loading, withLoading] = useLoading();
-    const nameToDisplay = user.DisplayName || user.Name; // nameToDisplay can be falsy for external account
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
@@ -66,6 +71,7 @@ const UserDropdown = ({ ...rest }) => {
             <Dropdown
                 id={uid}
                 className="userDropdown"
+                style={{ '--min-width': '20em' }}
                 isOpen={isOpen}
                 noMaxSize
                 anchorRef={anchorRef}
@@ -73,51 +79,55 @@ const UserDropdown = ({ ...rest }) => {
                 onClose={close}
                 originalPlacement="bottom-right"
             >
-                <ul className="unstyled mt0 mb0">
-                    {!isSSOMode && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
+                <ul className="unstyled mt1 mb1">
+                    {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
                         <>
-                            {nameToDisplay ? (
-                                <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
-                                    <div className="bold ellipsis mw100" title={nameToDisplay}>
-                                        {nameToDisplay}
-                                    </div>
-                                    {user.Email ? (
-                                        <div className="ellipsis mw100" title={user.Email}>
-                                            {user.Email}
-                                        </div>
-                                    ) : null}
-                                </li>
-                            ) : (
-                                <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex flex-column">
-                                    <div className="bold ellipsis mw100" title={user.Email}>
-                                        {user.Email}
-                                    </div>
-                                </li>
-                            )}
-                            <li className="dropDown-item">
+                            <li className="pl1 pr1">
+                                {organizationName ? (
+                                    <>
+                                        <div className="opacity-50 small m0">{c('Label').t`Organization`}</div>
+                                        <div className="mb1">{organizationName}</div>
+                                    </>
+                                ) : null}
+                                <div className="opacity-50 small m0">{c('Label').t`Storage space`}</div>
+                                <div className="flex flex-items-baseline flex-nowrap flex-spacebetween">
+                                    <span>
+                                        <span className="semibold">{humanSize(UsedSpace)} </span>
+                                        /&nbsp;{humanSize(MaxSpace)}
+                                    </span>
+                                    <AppLink
+                                        to="/subscription"
+                                        toApp={getAccountSettingsApp()}
+                                        className="small link m0 ml0-5"
+                                        title={c('Apps dropdown').t`Add storage space`}
+                                    >
+                                        {c('Action').t`Add storage`}
+                                    </AppLink>
+                                </div>
+                                <Meter className="is-thin bl mt0-5 mb1" value={spacePercentage} />
                                 <AppLink
-                                    className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
                                     to="/"
-                                    toApp={APPS.PROTONMAIL_SETTINGS}
+                                    className="bl w100 mt1-5 mb1-5 aligncenter pm-button pm-button--primaryborder"
+                                    toApp={getAccountSettingsApp()}
                                 >
-                                    <Icon className="mt0-25 mr0-5" name="settings-master" />
-                                    {c('Action').t`Settings`}
+                                    {c('Action').t`Manage account`}
                                 </AppLink>
                             </li>
+                            <li className="dropDown-item-hr mt0-5 mb0-5" aria-hidden="false"></li>
                         </>
                     ) : null}
-                    {APP_NAME === APPS.PROTONVPN_SETTINGS || APP_NAME === APPS.PROTONACCOUNT || !isSSOMode ? null : (
-                        <li className="dropDown-item">
-                            <AppLink
-                                className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
-                                to="/"
-                                toApp={getAccountSettingsApp()}
+                    {isSSOMode ? (
+                        <li>
+                            <button
+                                type="button"
+                                className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
+                                onClick={handleSwitchAccount}
                             >
-                                <Icon className="mt0-25 mr0-5" name="account" />
-                                {c('Action').t`Account settings`}
-                            </AppLink>
+                                <Icon className="mt0-25 mr0-5" name="organization-users" />
+                                {c('Action').t`Switch account`}
+                            </button>
                         </li>
-                    )}
+                    ) : null}
                     <li>
                         <a
                             className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
@@ -129,7 +139,7 @@ const UserDropdown = ({ ...rest }) => {
                             {c('Action').t`Proton shop`}
                         </a>
                     </li>
-                    <li className="dropDown-item">
+                    <li>
                         <button
                             type="button"
                             className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
@@ -139,24 +149,14 @@ const UserDropdown = ({ ...rest }) => {
                             {c('Action').t`Support us`}
                         </button>
                     </li>
-                    {isSSOMode ? (
-                        <li className="dropDown-item">
-                            <button
-                                type="button"
-                                className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
-                                onClick={handleSwitchAccount}
-                            >
-                                <Icon className="mt0-25 mr0-5" name="organization-users" />
-                                {c('Action').t`Switch account`}
-                            </button>
-                        </li>
-                    ) : null}
-                    <li className="dropDown-item">
+                    <li className="dropDown-item-hr mt0-5" aria-hidden="false"></li>
+                    <li>
                         <div className="pl1 pr1 pt0-5 pb0-5 w100 flex flex-nowrap flex-spacebetween flex-items-center">
                             <label htmlFor="theme-toggle" className="mr1">{c('Action').t`Display mode`}</label>
                             <Toggle
                                 id="theme-toggle"
                                 className="pm-toggle-label--theme-toggle"
+                                title={c('Title').t`Toggle display mode`}
                                 checked={userSettings.ThemeType === ThemeTypes.Dark}
                                 loading={loading}
                                 onChange={() => withLoading(handleThemeToggle())}
@@ -178,13 +178,14 @@ const UserDropdown = ({ ...rest }) => {
                             />
                         </div>
                     </li>
-                    <li className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex">
+                    <li className="dropDown-item-hr mb0-5" aria-hidden="false"></li>
+                    <li className="pt0-5 pb0-5 pl1 pr1 flex">
                         <PrimaryButton
                             className="w100 aligncenter navigationUser-logout"
                             onClick={handleLogout}
                             data-cy-header-user-dropdown="logout"
                         >
-                            {c('Action').t`Logout`}
+                            {c('Action').t`Sign out`}
                         </PrimaryButton>
                     </li>
                 </ul>

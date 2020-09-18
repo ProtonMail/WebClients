@@ -59,7 +59,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
     return (
         <div className="bordered-container bg-white-dm tiny-shadow-container p2">
             <div className="mb2 aligncenter">
-                <span className="dropDown-logout-initials rounded p0-25 mb0-5 inline-flex bg-global-grey color-white">
+                <span className="dropDown-logout-initials rounded semibold p0-25 mb0-5 inline-flex bg-global-grey color-white">
                     <span className="dropDown-logout-text center">{initials}</span>
                 </span>
                 <h3 className="mb0-5">{DisplayName || Name}</h3>
