@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { c } from 'ttag';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
 import { loadLocale, loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import {
-    GenericError,
     LoaderPage,
     ModalsChildren,
     useApi,
     ProtonLoginCallback,
     useNotifications,
+    useDocumentTitle,
+    StandardLoadError,
 } from 'react-components';
 import {
     getActiveSessions,
@@ -19,6 +21,7 @@ import {
 import { getLocalIDFromPathname } from 'proton-shared/lib/authentication/pathnameHelper';
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
 import { getIs401Error, getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { traceError } from 'proton-shared/lib/helpers/sentry';
 
 interface Props {
     locales?: TtagLocaleMap;
@@ -33,6 +36,8 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { createNotification } = useNotifications();
+
+    useDocumentTitle(c('Info').t`Loading`);
 
     useEffect(() => {
         const runGetSessions = async () => {
@@ -73,13 +78,13 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
         run().catch((e) => {
             const errorMessage = getApiErrorMessage(e) || 'Unknown error';
             createNotification({ type: 'error', text: errorMessage });
-            console.error(e);
+            traceError(e);
             setError(true);
         });
     }, []);
 
     if (error) {
-        return <GenericError />;
+        return <StandardLoadError />;
     }
 
     if (loading) {
