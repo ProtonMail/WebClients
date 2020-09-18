@@ -1,5 +1,4 @@
 # [4.0.0-beta.0] - 2020-09-29
-​
 ## Added
 - Sign in once to access all Proton services (ProtonMail, ProtonCalendar, and ProtonDrive) 
 - Open Proton apps in a new tab or window without signing back in 
