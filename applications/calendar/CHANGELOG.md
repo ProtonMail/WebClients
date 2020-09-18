@@ -3,6 +3,8 @@
 ## Updated
 - Update the header and navigation menu
 
+___
+
 # [4.0.0-beta.6] - 2020-07-09
 
 ## Updated
