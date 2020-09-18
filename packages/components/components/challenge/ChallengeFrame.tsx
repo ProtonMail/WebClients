@@ -66,7 +66,8 @@ const ChallengeFrame = ({
 
         let challengeResolve: (data: { [key: string]: string }) => void;
 
-        const assetsTotal = scriptSrcs.length + styleSrcs.length;
+        // The + 1 is for the style sanity check
+        const assetsTotal = scriptSrcs.length + styleSrcs.length + 1;
         let assetsLoaded = 0;
 
         const handleInitDone = () => {
@@ -91,6 +92,36 @@ const ChallengeFrame = ({
             // Otherwise it's a CSS error and a hard failure
             handleError();
         };
+
+        /**
+         * This check is for catching when a new deployment has happened. Since missing assets fallback
+         * to serving index.html, it tries to verify that the actual content is css.
+         * So it tries to fetch the CSS again (which should be cached in the browser) and checks the content-type
+         * and else the first character.
+         */
+        const handleStylesSanityCheck = () => {
+            Promise.all(
+                styleSrcs.map(async (styleSrc) => {
+                    const response = await fetch(styleSrc);
+                    const contentType = response.headers.get('content-type');
+                    if (contentType?.startsWith('text/css')) {
+                        return;
+                    }
+                    const data = (await response.text()).trimStart();
+                    if (data.startsWith('<')) {
+                        throw new Error('Invalid data');
+                    }
+                })
+            )
+                .then(() => {
+                    handleAssetLoaded();
+                })
+                .catch(() => {
+                    handleAssetError(styleSrcs[0]);
+                });
+        };
+
+        handleStylesSanityCheck();
 
         const cb = (event: MessageEvent) => {
             const contentWindow = iframeRef.current?.contentWindow;
