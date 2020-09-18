@@ -21,6 +21,7 @@ export { useLabels, useFolders, useContactGroups } from './useCategories';
 export { default as useFilters } from './useFilters';
 export { default as usePaymentMethods } from './usePaymentMethods';
 export { default as useAppTitle } from './useAppTitle';
+export { default as useDocumentTitle } from './useDocumentTitle';
 export { default as useOrganization } from './useOrganization';
 export { default as useSubscription } from './useSubscription';
 export { default as useUserSettings } from './userSettingsModel';

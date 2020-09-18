@@ -2,8 +2,11 @@ import React, { useEffect } from 'react';
 import { c } from 'ttag';
 import GenericError from '../error/GenericError';
 import { InlineLinkButton } from '../../components';
+import { useDocumentTitle } from '../../hooks';
 
 const StandardLoadError = () => {
+    useDocumentTitle(c('Error message').t`Oops, something went wrong`);
+
     useEffect(() => {
         const wasOffline = !navigator.onLine;
 

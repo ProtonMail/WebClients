@@ -14,6 +14,7 @@ interface Props {
 
 const GenericError = ({ className, children }: Props) => {
     const errorImg = getLightOrDark(errorImgLight, errorImgDark);
+
     return (
         <IllustrationPlaceholder
             className={className}
