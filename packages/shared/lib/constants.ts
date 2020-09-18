@@ -494,6 +494,7 @@ export enum COUPON_CODES {
     BUNDLE = 'BUNDLE',
     PMTEAM = 'PMTEAM',
     BLACK_FRIDAY_2018 = 'TWO4ONE2018',
+    LIFETIME = 'LIFETIME',
 }
 
 export const GIFT_CODE_LENGTH = 16;
