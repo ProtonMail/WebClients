@@ -90,7 +90,7 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
                     type={1}
                     onLoaded={handleChallengeLoaded}
                 >
-                    <div className="mb0-5">
+                    <div>
                         <EmailInput
                             id="recovery-email"
                             name="recovery-email"
@@ -112,6 +112,7 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
                     </div>
                     <div>
                         <InlineLinkButton
+                            className="mt0-25 nodecoration"
                             id="recovery-phone-button"
                             onClick={() => onChange({ ...model, recoveryEmail: '', step: RECOVERY_PHONE })}
                         >{c('Action').t`Add a recovery phone number instead`}</InlineLinkButton>
@@ -133,7 +134,7 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
                     label={<Label htmlFor="recovery-phone">{c('Label').t`Recovery phone`}</Label>}
                     input={
                         <>
-                            <div className="mb0-5">
+                            <div>
                                 <IntlTelInput
                                     id="recovery-phone"
                                     name="recovery-phone"
@@ -146,6 +147,7 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
                             </div>
                             <div>
                                 <InlineLinkButton
+                                    className="nodecoration mt0-25"
                                     onClick={() => onChange({ ...model, recoveryPhone: '', step: RECOVERY_EMAIL })}
                                 >{c('Action').t`Add an email address instead`}</InlineLinkButton>
                             </div>

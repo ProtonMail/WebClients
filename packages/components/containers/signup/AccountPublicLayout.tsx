@@ -49,17 +49,17 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                     <div className="flex flex-column flex-nowrap flex-item-noshrink onmobile-flex-item-fluid-auto">
                         <div
                             className={classnames([
-                                'center bg-white-dm color-global-grey-dm mt2 mb2 onmobile-mt0 onmobile-mb0  onmobile-pb1 w100 mw100 bordered-container flex-item-noshrink flex flex-nowrap signup-container',
-                                larger ? '' : aside ? 'mw50e' : 'mw40e',
+                                'center bg-white-dm color-global-grey-dm mt2 mb2 onmobile-mt0 onmobile-mb0 onmobile-pb1 w100 mw100 bordered-container flex-item-noshrink flex flex-nowrap signup-container',
+                                larger ? '' : 'mw50e',
                             ])}
                         >
-                            <main className="p2 onmobile-p1 flex-item-fluid">
+                            <main className="p2 onmobile-p1 flex-item-fluid signLayout-main flex-noMinChildren flex-column flex-nowrap">
                                 <header className="flex flex-items-center flex-nowrap mb2">
                                     <span className="flex-item-fluid flex">{left}</span>
                                     <span className="aligncenter flex w70p">{center}</span>
                                     <span className="flex-item-fluid flex alignright" />
                                 </header>
-                                <div className="mb2 flex-item-fluid">
+                                <div className="mb2 flex-item-fluid signLayout-main-content">
                                     {title ? (
                                         <h1 className={classnames(['h4 bold mt0', subtitle ? 'mb0-25' : 'mb1'])}>
                                             {title}
@@ -72,7 +72,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                                     <span className="flex-item-fluid">
                                         {locales ? (
                                             <PublicLanguageSelect
-                                                className="support-dropdown-button link"
+                                                className="support-dropdown-button link nodecoration"
                                                 locales={locales}
                                             />
                                         ) : null}
@@ -81,7 +81,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                                 </footer>
                             </main>
                             {aside ? (
-                                <aside className="nomobile bg-global-highlight w33 p2 flex flex-items-center flex-justify-center small m0">
+                                <aside className="nomobile bg-global-highlight w33 p2 flex flex-items-center flex-justify-center small m0 signLayout-aside">
                                     {aside}
                                 </aside>
                             ) : null}

@@ -18,6 +18,10 @@ $default-height-fields: 4.1rem;
 		font-size: 1.2rem;
 		padding-bottom: 0.2em;
 	}
+	.pm-field:not(textarea),
+	.pm-field-icon-container:not(textarea) {
+		height: auto;
+	}
 	.pm-field {
 		padding: em(10) em(16); // design want 42px height (actually 42 to avoid .5px)
 	}
@@ -37,6 +41,7 @@ $default-height-fields: 4.1rem;
 
 	.signup-container {
 		transition: max-width 0.15s easing(easeIn);
+		min-height: 70vh;
 
 		.payment-left {
 			width: 15em;
@@ -65,9 +70,6 @@ $default-height-fields: 4.1rem;
 }
 
 /* label size */
-// .signup-form {
-// 	--label-width: 10em;
-// }
 .payment-container {
 	--label-width: #{$pm-label-width};
 }
@@ -90,14 +92,6 @@ $default-height-fields: 4.1rem;
 
 // Hide icons (caret, support1) in <SupportDropdown>
 .signLayout-container {
-	// .support-dropdown-button {
-	//     .navigation-title {
-	//         margin-right: 0;
-	//     }
-	//     svg {
-	//         display: none;
-	//     }
-	// }
 	.subscriptionTable-customize-button {
 		display: none;
 	}

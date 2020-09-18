@@ -103,6 +103,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                     </Challenge>
                     {hasExternalSignup ? (
                         <InlineLinkButton
+                            className="nodecoration mt0-25"
                             id="existing-email-button"
                             onClick={() => onChange({ ...model, username: '', step: ACCOUNT_CREATION_EMAIL })}
                         >{c('Action').t`Use your current email address instead`}</InlineLinkButton>
@@ -120,7 +121,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
         if (model.step === ACCOUNT_CREATION_EMAIL) {
             const challenge = (
                 <>
-                    <div className="mb0-5 flex-item-fluid">
+                    <div className="flex-item-fluid">
                         <Challenge
                             bodyClassName="signLayout-container"
                             challengeRef={challengeRefLogin}
@@ -152,6 +153,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                     <InsecureEmailInfo email={model.email} />
                     <InlineLinkButton
                         id="proton-email-button"
+                        className="nodecoration mt0-25"
                         onClick={() => onChange({ ...model, email: '', step: ACCOUNT_CREATION_USERNAME })}
                     >{c('Action').t`Create a secure ProtonMail address instead`}</InlineLinkButton>
                 </>
@@ -185,7 +187,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                 autoComplete="off"
             >
                 {inner}
-                <div className="flex flex-nowrap mb2">
+                <div className="flex flex-nowrap onmobile-flex-column mb2">
                     <SignupLabelInputRow
                         className="mr0-5"
                         label={<Label htmlFor="password">{c('Signup label').t`Password`}</Label>}
@@ -206,7 +208,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                         }
                     />
                     <SignupLabelInputRow
-                        className="ml0-5"
+                        className="ml0-5 onmobile-ml0"
                         label={<Label htmlFor="password-repeat">{c('Signup label').t`Confirm`}</Label>}
                         input={
                             <PasswordInput
