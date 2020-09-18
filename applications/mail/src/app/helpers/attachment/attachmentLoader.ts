@@ -54,13 +54,13 @@ export const getRequest = ({ ID = '' }: Attachment = {}, api: Api): Promise<Arra
     return api(getAttachment(ID));
 };
 
-export const getSessionKey = async (attachment: Attachment, message: MessageExtended): Promise<SessionKey> => {
+export const getSessionKey = async (attachment: Attachment, privateKeys: OpenPGPKey[]): Promise<SessionKey> => {
     // if (attachment.sessionKey) {
     //     return attachment;
     // }
 
     const keyPackets = binaryStringToArray(decodeBase64(attachment.KeyPackets) || '');
-    const options = { message: await getMessage(keyPackets), privateKeys: message.privateKeys as any };
+    const options = { message: await getMessage(keyPackets), privateKeys };
 
     // if (isOutside()) {
     //     options.passwords = [eoStore.getPassword()];
@@ -84,7 +84,7 @@ export const getDecryptedAttachment = async (
 ): Promise<DecryptResultPmcrypto> => {
     const encryptedBinary = await getRequest(attachment, api);
     try {
-        const sessionKey = await getSessionKey(attachment, message);
+        const sessionKey = await getSessionKey(attachment, message.privateKeys || []);
         // verify attachment signature only when sender is verified
         const publicKeys = message.senderVerified ? message.senderPinnedKeys : undefined;
         return await decrypt(encryptedBinary, sessionKey, attachment.Signature, publicKeys);

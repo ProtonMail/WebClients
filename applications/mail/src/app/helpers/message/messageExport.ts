@@ -14,6 +14,7 @@ import { constructMime } from '../send/sendMimeBuilder';
 import { splitMail, combineHeaders } from '../mail';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { parseInDiv } from '../../helpers/dom';
+import { Attachment } from '../../models/attachment';
 
 export const prepareExport = (message: MessageExtended) => {
     if (!message.document) {
@@ -47,25 +48,27 @@ export const prepareAndEncryptBody = async (message: MessageExtended) => {
     return { document, content, encrypted };
 };
 
-export const encryptAttachmentKeyPackets = async (message: MessageExtended, passwords = []) => {
+export const encryptAttachmentKeyPackets = async (
+    attachments: Attachment[],
+    previousAddressPrivateKeys: OpenPGPKey[] = [],
+    newAddressPublicKeys: OpenPGPKey[] = []
+) => {
     const packets: { [key: string]: string } = {};
-    const Attachments = getAttachments(message.data);
 
     await Promise.all(
-        Attachments.filter(({ ID = '' }) => ID.indexOf('PGPAttachment')).map(async (attachment) => {
-            const sessionKey = await getSessionKey(attachment, message);
-
-            const result = await encryptSessionKey({
-                data: sessionKey.data,
-                algorithm: sessionKey.algorithm,
-                publicKeys: message.publicKeys,
-                passwords
-            });
-
-            packets[attachment.ID || ''] = encodeBase64(
-                arrayToBinaryString(result.message.packets.write() as Uint8Array)
-            );
-        })
+        attachments
+            .filter(({ ID = '' }) => ID.indexOf('PGPAttachment'))
+            .map(async (attachment) => {
+                const sessionKey = await getSessionKey(attachment, previousAddressPrivateKeys);
+                const result = await encryptSessionKey({
+                    data: sessionKey.data,
+                    algorithm: sessionKey.algorithm,
+                    publicKeys: newAddressPublicKeys
+                });
+                packets[attachment.ID || ''] = encodeBase64(
+                    arrayToBinaryString(result.message.packets.write() as Uint8Array)
+                );
+            })
     );
 
     return packets;
@@ -73,7 +76,11 @@ export const encryptAttachmentKeyPackets = async (message: MessageExtended, pass
 
 export const createMessage = async (message: MessageExtended, api: Api): Promise<Message> => {
     const { encrypted: Body } = await prepareAndEncryptBody(message);
-    const AttachmentKeyPackets = await encryptAttachmentKeyPackets(message);
+    const AttachmentKeyPackets = await encryptAttachmentKeyPackets(
+        getAttachments(message.data),
+        message.privateKeys,
+        message.publicKeys
+    );
     const { Message: updatedMessage } = await api(
         createDraft({
             Action: message.action !== MESSAGE_ACTIONS.NEW ? message.action : undefined,
@@ -86,13 +93,27 @@ export const createMessage = async (message: MessageExtended, api: Api): Promise
     return updatedMessage;
 };
 
+/**
+ * Update an already existing message by encrypting it then send the API request to the API
+ * @param message The message to update containing the right keys related to the address
+ * @param senderHasChanged Things are different if the sender has changed since the last version
+ * @param previousAddressPrivateKeys Only needed if senderHasChanged to decrypt attachments sessionKeys and re-encrypt with the new address key
+ * @param api Api handler to use
+ */
 export const updateMessage = async (
     message: MessageExtended,
     senderHasChanged: boolean,
+    previousAddressPrivateKeys: OpenPGPKey[],
     api: Api
 ): Promise<Message> => {
     const { encrypted: Body } = await prepareAndEncryptBody(message);
-    const AttachmentKeyPackets = senderHasChanged ? await encryptAttachmentKeyPackets(message) : undefined;
+    const AttachmentKeyPackets = senderHasChanged
+        ? await encryptAttachmentKeyPackets(
+              getAttachments(message.data),
+              previousAddressPrivateKeys,
+              message.publicKeys
+          )
+        : undefined;
     const { Message: updatedMessage } = await api(
         updateDraft(message.data?.ID, { ...message.data, Body }, AttachmentKeyPackets)
     );

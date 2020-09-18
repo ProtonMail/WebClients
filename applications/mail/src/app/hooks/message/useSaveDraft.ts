@@ -28,7 +28,6 @@ export const useCreateDraft = () => {
     return useCallback(async (message: MessageExtendedWithData) => {
         const messageKeys = await getMessageKeys(message);
         const newMessage = await createMessage({ ...message, ...messageKeys }, api);
-
         updateMessageCache(messageCache, message.localID, {
             data: { ...mergeSavedMessage(message.data, newMessage), Attachments: newMessage.Attachments },
             ...messageKeys,
@@ -49,11 +48,12 @@ const useUpdateDraft = () => {
     return useCallback(async (message: MessageExtendedWithData) => {
         const messageFromCache = messageCache.get(message.localID) as MessageExtended;
         const senderHasChanged = messageFromCache.data?.Sender.Address !== message.data?.Sender.Address;
-        const messageKeys = await getMessageKeys(message, senderHasChanged);
-        const messageToSave = mergeMessages(messageFromCache, { ...message, ...messageKeys });
-        const newMessage = await updateMessage(messageToSave, senderHasChanged, api);
+        const newMessageKeys = await getMessageKeys(message);
+        const previousMessageKeys = await getMessageKeys(messageFromCache as MessageExtendedWithData);
+        const messageToSave = mergeMessages(messageFromCache, { ...message, ...newMessageKeys });
+        const newMessage = await updateMessage(messageToSave, senderHasChanged, previousMessageKeys.privateKeys, api);
         updateMessageCache(messageCache, message.localID, {
-            ...messageKeys,
+            ...newMessageKeys,
             data: mergeSavedMessage(message.data, newMessage),
             document: message.document,
             plainText: message.plainText

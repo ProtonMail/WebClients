@@ -6,8 +6,7 @@ import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { MessageExtendedWithData } from '../../models/message';
 
 type UseMessageKeys = () => (
-    message: MessageExtendedWithData,
-    forceRefresh?: boolean
+    message: MessageExtendedWithData
 ) => Promise<{ publicKeys: OpenPGPKey[]; privateKeys: OpenPGPKey[] }>;
 
 /**
