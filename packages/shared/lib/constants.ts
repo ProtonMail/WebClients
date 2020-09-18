@@ -42,7 +42,7 @@ export const APPS_CONFIGURATION = {
     },
     [APPS.PROTONMAIL]: {
         publicPath: '',
-        subdomain: 'mail',
+        subdomain: 'beta',
         name: 'ProtonMail',
         // TODO clientID
         clientID: 'Web',
@@ -50,7 +50,7 @@ export const APPS_CONFIGURATION = {
     },
     [APPS.PROTONMAIL_SETTINGS]: {
         publicPath: '/settings',
-        subdomain: 'mail',
+        subdomain: 'beta',
         name: 'ProtonMail',
         // TODO clientID
         clientID: 'Web',
