@@ -28,6 +28,18 @@ const SortDropdown = () => {
         sortOrder: SORT_DIRECTION;
     }[] = [
         {
+            name: c('Action').t`Name: A to Z`,
+            icon: 'arrow-down',
+            sortField: 'Name',
+            sortOrder: SORT_DIRECTION.ASC,
+        },
+        {
+            name: c('Action').t`Name: Z to A`,
+            icon: 'arrow-up',
+            sortField: 'Name',
+            sortOrder: SORT_DIRECTION.DESC,
+        },
+        {
             name: c('Action').t`Modified Date: New to Old`,
             icon: 'sort-new-old',
             sortField: 'ModifyTime',

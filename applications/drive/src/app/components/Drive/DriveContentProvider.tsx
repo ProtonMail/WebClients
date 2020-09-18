@@ -31,7 +31,7 @@ const DriveContentProviderInner = ({
     activeFolder: DriveFolder;
 }) => {
     const cache = useDriveCache();
-    const { fetchNextFolderContents } = useDrive();
+    const { fetchNextFolderContents, fetchAllFolderPagesWithLoader } = useDrive();
     const [loading, setLoading] = useState(false);
     const [, setError] = useState();
 
@@ -68,7 +68,11 @@ const DriveContentProviderInner = ({
         const signal = abortSignal.current;
 
         try {
-            await fetchNextFolderContents(shareId, linkId, sortParams);
+            if (sortParams.sortField === 'Name') {
+                await fetchAllFolderPagesWithLoader(shareId, linkId);
+            } else {
+                await fetchNextFolderContents(shareId, linkId, sortParams);
+            }
             if (!signal?.aborted) {
                 contentLoading.current = false;
                 setLoading(false);

@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
+import { useGlobalLoader } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { c } from 'ttag';
 import { LinkType, LinkMeta } from '../../interfaces/link';
 import useDrive from './useDrive';
 import useListNotifications from '../util/useListNotifications';
@@ -13,6 +15,7 @@ export default function useDriveDragMove(
     clearSelections: () => void
 ) {
     const { moveLinks } = useDrive();
+    const withGlobalLoader = useGlobalLoader({ text: c('Info').t`Moving files` });
     const { folder: activeFolder } = useDriveActiveFolder();
     const { createMoveLinksNotifications } = useListNotifications();
     const [allDragging, setAllDragging] = useState<FileBrowserItem[]>([]);
@@ -28,14 +31,14 @@ export default function useDriveDragMove(
         clearSelections();
         setActiveDropTarget(undefined);
 
-        const moveResult = await moveLinks(shareId, item.LinkID, toMoveIds);
+        const moveResult = await withGlobalLoader(moveLinks(shareId, item.LinkID, toMoveIds));
 
         const undoAction = async () => {
             if (!parentFolderId) {
                 return;
             }
             const toMoveBackIds = moveResult.moved.map(({ LinkID }) => LinkID);
-            const moveBackResult = await moveLinks(shareId, parentFolderId, toMoveBackIds);
+            const moveBackResult = await withGlobalLoader(moveLinks(shareId, parentFolderId, toMoveBackIds));
             createMoveLinksNotifications(toMove, moveBackResult);
         };
 

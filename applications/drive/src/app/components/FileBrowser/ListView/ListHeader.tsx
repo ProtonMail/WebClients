@@ -59,8 +59,11 @@ const ListHeader = ({
                         />
                     </div>
                 </TableHeaderCell>
-                <TableHeaderCell>
-                    <div className="ellipsis">{c('TableHeader').t`Name`}</div>
+                <TableHeaderCell
+                    onSort={unlessIsTrash(() => handleSort('Name'))}
+                    direction={getSortDirectionForKey('Name')}
+                >
+                    {c('TableHeader').t`Name`}
                 </TableHeaderCell>
                 {isTrash && (
                     <TableHeaderCell className={isDesktop ? 'w20' : 'w25'}>{c('TableHeader')
