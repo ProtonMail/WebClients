@@ -15,7 +15,7 @@ const LoaderPage = ({ text, loaderClassName = 'color-global-light' }: Props) => 
     const appName = APPS_CONFIGURATION[APP_NAME].name;
     const textToDisplay = text || c('Info').t`Loading ${appName}`;
 
-    useDocumentTitle(textToDisplay);
+    useDocumentTitle(appName);
 
     return (
         <div className="centered-absolute aligncenter">

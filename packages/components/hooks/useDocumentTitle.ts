@@ -6,9 +6,7 @@ const useDocumentTitle = (title?: string) => {
         if (title === undefined) {
             return;
         }
-        requestAnimationFrame(() => {
-            document.title = title;
-        });
+        document.title = title;
     }, [title]);
 };
 
