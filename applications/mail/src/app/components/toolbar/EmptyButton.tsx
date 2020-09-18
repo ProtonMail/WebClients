@@ -38,7 +38,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elements }: Props) => {
     if (labelID === TRASH) {
         title = c('Action').t`Empty trash`;
     } else if (labelID === SPAM) {
-        title = c('Action').t`Empty spams`;
+        title = c('Action').t`Empty spam`;
     } else if (isLabel) {
         title = c('Action').t`Empty label`;
     } else {
