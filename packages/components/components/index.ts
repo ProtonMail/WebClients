@@ -46,5 +46,6 @@ export * from './treeview';
 export * from './text';
 export * from './toggle';
 export * from './tabs';
+export * from './globalLoader';
 
 export * from './contacts';

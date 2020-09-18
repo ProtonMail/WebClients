@@ -38,6 +38,7 @@ import clearKeyCache from './clearKeyCache';
 import useInstance from '../../hooks/useInstance';
 import { PreventLeaveProvider } from '../../hooks';
 import { OnLoginCallbackArguments } from './interface';
+import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
 
 interface Props {
     config: ProtonConfig;
@@ -251,7 +252,12 @@ const ProtonApp = ({ config, children }: Props) => {
                                     <ModalsProvider>
                                         <ApiProvider UID={UID} config={config} onLogout={handleLogout}>
                                             <AuthenticationProvider store={authenticationValue}>
-                                                <CacheProvider cache={cacheRef.current}>{render()}</CacheProvider>
+                                                <CacheProvider cache={cacheRef.current}>
+                                                    <GlobalLoaderProvider>
+                                                        <GlobalLoader />
+                                                        {render()}
+                                                    </GlobalLoaderProvider>
+                                                </CacheProvider>
                                             </AuthenticationProvider>
                                         </ApiProvider>
                                     </ModalsProvider>
