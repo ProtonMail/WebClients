@@ -9,3 +9,4 @@
     - Switch between multiple accounts
     - Manage account-level settings 
     - Switch to dark mode
+Read our blog post on [Proton Account beta release](http://protonmail.com/blog/sso-beta).
