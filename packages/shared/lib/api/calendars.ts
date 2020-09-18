@@ -257,7 +257,7 @@ export interface CreateLinkedCalendarEventsSyncData {
     SharedEventID: string;
     Event: CreateCalendarEventData;
 }
-interface SyncMultipleEventsData {
+export interface SyncMultipleEventsData {
     MemberID: string;
     IsImport?: 0 | 1;
     IsInvite?: 0 | 1;

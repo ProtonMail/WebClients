@@ -93,13 +93,17 @@ export const toInternalAttendee = (
     });
 };
 
+export const getAttendeeEmail = (attendee: VcalAttendeeProperty) => {
+    return getEmailTo(attendee.value);
+};
+
 export const withPmAttendees = async (vevent: VcalVeventComponent, api: Api): Promise<VcalVeventComponent> => {
     const { uid, attendee: vcalAttendee } = vevent;
     if (!vcalAttendee?.length) {
         return { ...vevent };
     }
     const attendeesWithEmail = vcalAttendee.map((attendee) => {
-        const emailAddress = getEmailTo(attendee.value);
+        const emailAddress = getAttendeeEmail(attendee);
         return {
             attendee,
             emailAddress,
