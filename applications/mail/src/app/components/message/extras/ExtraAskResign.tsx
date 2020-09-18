@@ -1,6 +1,6 @@
 import { normalizeEmail } from 'proton-shared/lib/helpers/email';
 import React from 'react';
-import { Icon, Href, useContactEmails, useModals, LinkButton, Alert } from 'react-components';
+import { Icon, Href, useContactEmails, useModals, Alert } from 'react-components';
 import { c } from 'ttag';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
@@ -59,7 +59,7 @@ const ExtraAskResign = ({ message, onResignContact }: Props) => {
                     {c('Info').t`Learn more`}
                 </Href>
             </span>
-            <LinkButton className="underline" onClick={handleClick}>{c('Action').t`Verify`}</LinkButton>
+            <button type="button" className="underline link" onClick={handleClick}>{c('Action').t`Verify`}</button>
         </div>
     );
 };
