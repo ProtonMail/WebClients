@@ -161,7 +161,7 @@ const useDriveCacheState = () => {
                     ? {
                           meta,
                           children: {
-                              sorted: ['MIMEType', 'ModifyTime', 'Size'].reduce((sorted, sortKey) => {
+                              sorted: ['MIMEType', 'ModifyTime', 'Size', 'Name'].reduce((sorted, sortKey) => {
                                   sorted[sortKey as SortKeys] = {
                                       ASC: { list: [], complete: isNew, initialized: isNew },
                                       DESC: { list: [], complete: isNew, initialized: isNew },
@@ -506,6 +506,15 @@ const useDriveCacheState = () => {
                 // If we got a complete list from somewhere, it will be the same for other orders too
                 if (complete) {
                     fillAllLists(shareId, linkId, parent.children.sorted[sortField][sortOrder]);
+                }
+
+                // Name doesn't have it's own BE sorting, so we reuse default
+                if (sortParams === DEFAULT_SORT_PARAMS) {
+                    const nameSort = parent.children.sorted.Name;
+                    const defaultSortContents = parent.children.sorted[sortField][sortOrder];
+                    // If default sort contents are incomplete, contents for Name sort will need to be fetched
+                    parent.children.sorted.Name.ASC = { ...defaultSortContents, initialized: nameSort.ASC.complete };
+                    parent.children.sorted.Name.DESC = { ...defaultSortContents, initialized: nameSort.ASC.complete };
                 }
             }
         }

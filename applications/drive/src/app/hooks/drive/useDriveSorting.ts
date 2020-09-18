@@ -6,11 +6,11 @@ import { LinkMeta, SortKeys } from '../../interfaces/link';
 
 type SortParams = typeof DEFAULT_SORT_PARAMS;
 const SORT_CACHE_KEY = 'sortParams';
-const NAME_SORT = {
+const getNameSortConfig = (direction = SORT_DIRECTION.ASC) => ({
     key: 'Name' as SortKeys,
-    direction: SORT_DIRECTION.ASC,
+    direction,
     compare: (a: LinkMeta['Name'], b: LinkMeta['Name']) => a.localeCompare(b),
-};
+});
 
 function useDriveSorting(getList: (sortParams: SortParams) => LinkMeta[]) {
     const cache = useCache();
@@ -22,9 +22,10 @@ function useDriveSorting(getList: (sortParams: SortParams) => LinkMeta[]) {
         const configs: {
             [key in SortKeys]: SortConfig<LinkMeta>[];
         } = {
-            MIMEType: [{ key: 'MIMEType', direction }, { key: 'Type', direction }, NAME_SORT],
-            ModifyTime: [{ key: 'ModifyTime', direction }, NAME_SORT],
-            Size: [{ key: 'Type', direction }, { key: 'Size', direction }, NAME_SORT],
+            Name: [{ key: 'Type', direction: SORT_DIRECTION.ASC }, getNameSortConfig(direction)],
+            MIMEType: [{ key: 'MIMEType', direction }, { key: 'Type', direction }, getNameSortConfig()],
+            ModifyTime: [{ key: 'ModifyTime', direction }, getNameSortConfig()],
+            Size: [{ key: 'Type', direction }, { key: 'Size', direction }, getNameSortConfig()],
         };
         return configs[sortField];
     };

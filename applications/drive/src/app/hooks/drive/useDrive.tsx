@@ -1,6 +1,7 @@
 import React from 'react';
 import { OpenPGPKey } from 'pmcrypto';
-import { useModals, usePreventLeave } from 'react-components';
+import { useModals, usePreventLeave, useGlobalLoader } from 'react-components';
+import { c } from 'ttag';
 import useDriveCrypto from './useDriveCrypto';
 import { LinkMeta, LinkType } from '../../interfaces/link';
 import { useDriveCache, LinkKeys } from '../../components/DriveCache/DriveCacheProvider';
@@ -31,6 +32,7 @@ function useDrive() {
     const cache = useDriveCache();
     const queuedFunction = useQueuedFunction();
     const { createModal } = useModals();
+    const withGlobalLoader = useGlobalLoader({ text: c('Info').t`Loading folder contents` });
     const { getPrimaryAddressKey, getVerificationKeys } = useDriveCrypto();
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
@@ -119,6 +121,26 @@ function useDrive() {
         await fetchAllFolderPagesAsync(debouncedRequest, getVerificationKeys, cache, events.subscribe, shareId, linkId);
     };
 
+    const fetchAllFolderPagesWithLoader = async (shareId: string, linkId: string) => {
+        if (cache.get.childrenComplete(shareId, linkId)) {
+            return;
+        }
+
+        if (cache.get.childrenInitialized(shareId, linkId)) {
+            await withGlobalLoader(
+                (async () => {
+                    await fetchNextFolderContents(shareId, linkId);
+                    await fetchAllFolderPages(shareId, linkId);
+                })()
+            );
+        } else {
+            await Promise.resolve().then(async () => {
+                await fetchNextFolderContents(shareId, linkId);
+                await fetchAllFolderPagesWithLoader(shareId, linkId);
+            });
+        }
+    };
+
     const renameLink = async (
         shareId: string,
         linkId: string,
@@ -199,6 +221,7 @@ function useDrive() {
         renameLink,
         createNewFolder,
         fetchAllFolderPages,
+        fetchAllFolderPagesWithLoader,
         moveLink,
         moveLinks,
         events,
