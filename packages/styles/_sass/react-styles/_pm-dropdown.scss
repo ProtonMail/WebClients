@@ -1,10 +1,12 @@
 .dropDown {
-	--min-width : 10em;
-	--max-width : 20em;
-	--max-height: 20em;
-
 	--dropdown-border-color: var(--bordercolor-input, transparent);
 	--dropdown-bg-color: var(--bgcolor-main-area, #{$white});
+
+	&:not(#{&}--noMaxSize) {
+		--min-width : 10em;
+		--max-width : 20em;
+		--max-height: 20em;
+	}
 
 	position: fixed;
 	z-index: 666;
@@ -181,16 +183,9 @@
 
 		@include respond-to($breakpoint-small, 'min') {
 			width: calc(var(--width) * 1px);
-
-			&#{&}--noMaxSize {
-				min-width: 1.5em;
-			}
-
-			&:not(#{&}--noMaxSize) {
-				min-width: var(--min-width);
-				max-width: var(--max-width);
-				max-height: var(--max-height);
-			}
+			min-width: var(--min-width, 1.5em);
+			max-width: var(--max-width, unset);
+			max-height: var(--max-height, unset);
 		}
 
 		&::before,
@@ -287,10 +282,15 @@
 	}
 
 	/* Border between items */
-	&-item + &-item {
+	&-item + &-item,
+	&-item-hr {
 		border-top: 1px solid var(--bordercolor-input, $pm-global-border);
 	}
 
+	&-item-hr {
+		height: 0;
+		box-sizing: content-box;
+	}
 
 	/* Arrow for wide screens */
 	@include respond-to($breakpoint-small, 'min') {
