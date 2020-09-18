@@ -16,6 +16,7 @@ while [ ! $# -eq 0 ]; do
     --output) OUTPUT_FILE="$2"; ;;
     --build-mode) BUILD_MODE="$2"; ;;
     --debug) IS_DEBUG=true; ;;
+    --verbose) IS_DEBUG=true; ;;
   esac
   shift
 done;
@@ -71,7 +72,7 @@ function getRelease {
 }
 function getLocales {
     if [ -d "node_modules/proton-translations" ]; then
-        cat node_modules/proton-translations/.version;
+        cat node_modules/proton-translations/.version || echo;
     fi
 }
 
@@ -82,6 +83,7 @@ function toJSON {
     local buildDate="$(date -u '+%FT%TZ')";
     local release="$(getRelease)";
     local locales="$(getLocales)";
+    local depProtonTranslations="$(getVersionDep 'proton-translations')";
     local depReactComponents="$(getVersionDep 'react-components')";
     local depProtonShared="$(getVersionDep 'proton-shared')";
     local depPmcrypto="$(getVersionDep 'pmcrypto')";
@@ -94,9 +96,10 @@ cat <<EOT
     "branch": "${branch}",
     "buildDate": "${buildDate}",
     "release": "${release}",
-    "locales": "${locales}",
     "buildMode": "${BUILD_MODE}",
+    "locales": "${locales}",
     "dependencies": {
+        "proton-translations": "${depProtonTranslations}",
         "react-components": "${depReactComponents}",
         "proton-shared": "${depProtonShared}",
         "design-system": "${depDesignSystem}",
