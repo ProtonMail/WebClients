@@ -28,8 +28,9 @@ const DomainsSelect = ({ member, onChange, className }) => {
         }, []);
 
     const queryDomains = async () => {
-        const premium = member.Self && user.hasPaidMail ? premiumDomains : [];
-        const available = member.Self ? await api(queryAvailableDomains()).then(({ Domains }) => Domains) : [];
+        const premium = member.Self && member.Subscriber && user.hasPaidMail ? premiumDomains : [];
+        const available =
+            member.Self && member.Subscriber ? await api(queryAvailableDomains()).then(({ Domains }) => Domains) : [];
         const domainNames = [].concat(premium, available, formatDomains(domains));
 
         setOptions(domainNames.map((text) => ({ text, value: text })));
