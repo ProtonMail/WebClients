@@ -1,3 +1,4 @@
+import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { Recipient } from 'proton-shared/lib/interfaces';
 import { useRef, useCallback } from 'react';
 import {
@@ -65,7 +66,8 @@ export const useSendIcs = () => {
                     Sender: from,
                     ToList: to,
                     CCList: [],
-                    BCCList: []
+                    BCCList: [],
+                    MIMEType: MIME_TYPES.PLAINTEXT
                 }
             };
             const message = inputMessage as MessageExtendedWithData;
@@ -97,7 +99,7 @@ export const useSendIcs = () => {
             await Promise.all(
                 emails.map(async (email) => {
                     const encryptionPreferences = await getEncryptionPreferences(email);
-                    const sendPreferences = getSendPreferences(encryptionPreferences);
+                    const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
                     mapSendPrefs[email] = sendPreferences;
                 })
             );
