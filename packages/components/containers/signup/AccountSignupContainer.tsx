@@ -1,12 +1,7 @@
 import React, { FunctionComponent, useEffect, useMemo, useRef, useState } from 'react';
 import * as History from 'history';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
-import {
-    APP_NAMES,
-    PAYMENT_METHOD_TYPES,
-    REQUIRES_INTERNAL_EMAIL_ADDRESS,
-    TOKEN_TYPES,
-} from 'proton-shared/lib/constants';
+import { APP_NAMES, PAYMENT_METHOD_TYPES, TOKEN_TYPES } from 'proton-shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { c } from 'ttag';
@@ -378,7 +373,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
 
         const forkOrQueryApp = toApp || service;
         const toAppName = getToAppName(forkOrQueryApp);
-        const disableExternalSignup = forkOrQueryApp && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(forkOrQueryApp);
+        const disableExternalSignup = true;
 
         return (
             <Layout
