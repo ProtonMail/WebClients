@@ -38,17 +38,11 @@
 		}
 	}
 
-	.meterbar {
-		--bgcolor-meterbar: black;
-	}
-
+	/* No border for now
 	&-item.dropDown-item {
 		--bordercolor-input: #{$pm-tertiary-grey};
-
-		& + &:not(:last-child) {
-			border: none;
-		}
 	}
+	*/
 
 	&-link {
 		&,
