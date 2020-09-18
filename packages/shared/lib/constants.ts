@@ -767,11 +767,7 @@ export const OPENPGP =
         : WEBPACK_OPENPGP;
 
 export const FORKABLE_APPS = new Set(
-    [
-        APPS.PROTONMAIL,
-        APPS.PROTONMAIL_SETTINGS,
-        APPS.PROTONCONTACTS,
-        FEATURE_FLAGS.includes('drive') && APPS.PROTONDRIVE,
-        APPS.PROTONCALENDAR,
-    ].filter(Boolean)
+    [APPS.PROTONMAIL, APPS.PROTONMAIL_SETTINGS, APPS.PROTONCONTACTS, APPS.PROTONDRIVE, APPS.PROTONCALENDAR].filter(
+        Boolean
+    )
 );
