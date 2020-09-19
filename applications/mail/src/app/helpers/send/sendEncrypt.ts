@@ -234,7 +234,7 @@ const getAttachmentKeys = async (message: MessageExtended): Promise<AttachmentKe
     Promise.all(
         getAttachments(message.data).map(async (attachment) => ({
             Attachment: attachment,
-            SessionKey: await getSessionKey(attachment, message)
+            SessionKey: await getSessionKey(attachment, message.privateKeys || [])
         }))
     );
 
