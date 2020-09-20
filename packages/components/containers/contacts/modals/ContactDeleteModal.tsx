@@ -28,13 +28,13 @@ const DeleteModal = ({ contactIDs = [], deleteAll, onDelete, onClose = noop, ...
     const handleDelete = async () => {
         if (deleteAll) {
             await api(clearContacts());
-            onDelete && onDelete();
+            onDelete?.();
             await call();
             onClose();
             return createNotification({ text: c('Success').t`Contacts deleted` });
         }
         const apiSuccess = allSucceded(await api(deleteContacts(contactIDs)));
-        onDelete && onDelete();
+        onDelete?.();
         await call();
         onClose();
         if (!apiSuccess) {

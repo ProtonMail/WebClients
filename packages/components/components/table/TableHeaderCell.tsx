@@ -2,7 +2,7 @@ import React from 'react';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { Icon } from '../icon';
 
-interface Props extends React.ThHTMLAttributes<HTMLTableHeaderCellElement> {
+interface Props extends React.ThHTMLAttributes<HTMLTableCellElement> {
     children: React.ReactNode;
     direction?: SORT_DIRECTION;
     onSort?: () => void;

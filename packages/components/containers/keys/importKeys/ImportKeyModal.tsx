@@ -64,14 +64,14 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
 
         if (first.privateKey.isDecrypted()) {
             first.privateKey
-                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-ignore - validate does not exist in the openpgp typings, todo
                 .validate()
                 .then(() => {
                     handleAddKey(first.privateKey, first.fingerprint);
                 })
                 .catch((e: Error) => {
-                    return createNotification({
+                    createNotification({
                         type: 'error',
                         text: e.message,
                     });

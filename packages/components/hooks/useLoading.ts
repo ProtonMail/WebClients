@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 
-type WithLoading = <T>(promise: Promise<T | void>) => Promise<T | void>;
+type WithLoading = <T>(promise: undefined | Promise<T | void>) => Promise<T | void>;
 
 const useLoading = (initialState = false): [boolean, WithLoading] => {
     const [loading, setLoading] = useState(initialState);
@@ -27,14 +27,18 @@ const useLoading = (initialState = false): [boolean, WithLoading] => {
                 if (counterRef.current !== counterNext) {
                     return;
                 }
-                !unmountedRef.current && setLoading(false);
+                if (!unmountedRef.current) {
+                    setLoading(false);
+                }
                 return result;
             })
             .catch((e) => {
                 if (counterRef.current !== counterNext) {
                     return;
                 }
-                !unmountedRef.current && setLoading(false);
+                if (!unmountedRef.current) {
+                    setLoading(false);
+                }
                 throw e;
             });
     }, []);

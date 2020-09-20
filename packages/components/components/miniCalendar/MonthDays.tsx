@@ -93,6 +93,8 @@ const MonthDays = ({
         );
     };
 
+    const handleFocus = () => {};
+
     const handleClick = ({ target }: React.MouseEvent<HTMLUListElement>) => {
         const value = getTargetDate(target, days);
         if (value) {
@@ -109,6 +111,7 @@ const MonthDays = ({
             onClick={handleClick}
             onMouseDown={handleMouseDown}
             onMouseOver={handleMouseOver}
+            onFocus={handleFocus}
         >
             {days.map((dayDate, i) => {
                 const isBeforeMin = min ? isBefore(dayDate, min) : false;

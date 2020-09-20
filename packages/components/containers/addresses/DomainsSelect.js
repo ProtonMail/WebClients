@@ -23,7 +23,9 @@ const DomainsSelect = ({ member, onChange, className }) => {
 
     const formatDomains = (domains = []) =>
         domains.reduce((acc, { State, DomainName }) => {
-            State && acc.push(DomainName);
+            if (State) {
+                acc.push(DomainName);
+            }
             return acc;
         }, []);
 
@@ -57,9 +59,6 @@ const DomainsSelect = ({ member, onChange, className }) => {
 DomainsSelect.propTypes = {
     member: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
-    user: PropTypes.object,
-    domains: PropTypes.object,
-    fetchDomains: PropTypes.func,
     className: PropTypes.string,
 };
 

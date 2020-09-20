@@ -78,6 +78,8 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
                 type = 'warning';
                 icon = <Icon size={24} className="mr0-5" name="attention-plain" />;
                 break;
+            default:
+                break;
         }
         return (
             <Tooltip title={title}>
@@ -232,8 +234,10 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
 
     useEffect(() => {
         if (!loadingDomains) {
-            const d = domains.find(({ ID }) => ID === domainModel.ID);
-            d && setDomain({ ...d });
+            const maybeDomain = domains.find(({ ID }) => ID === domainModel.ID);
+            if (maybeDomain) {
+                setDomain({ ...maybeDomain });
+            }
         }
     }, [domains]);
 

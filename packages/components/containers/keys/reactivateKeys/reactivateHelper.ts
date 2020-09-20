@@ -49,7 +49,7 @@ export const reactivatePrivateKey = async ({
 
 const getOldUserID = async (PrivateKey: string) => {
     const [oldPrivateKey] = await getKeys(PrivateKey);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - openpgp typings are incorrect, todo
     const { email } = oldPrivateKey.users[0].userId;
     return email;

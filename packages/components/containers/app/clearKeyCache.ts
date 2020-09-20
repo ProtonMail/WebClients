@@ -4,7 +4,7 @@ import { KEY as ADDRESSES_KEYS_CACHE } from '../../hooks/useAddressesKeys';
 
 const clearCachedKeys = (cachedKeys: CachedKey[] = []) => {
     cachedKeys.forEach((cachedKey) => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         cachedKey?.privateKey?.clearPrivateParams();
     });

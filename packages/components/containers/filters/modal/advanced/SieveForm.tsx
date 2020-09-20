@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import { isDarkTheme } from 'proton-shared/lib/themes/helpers';
-import { AdvancedSimpleFilterModalModel, ErrorsSieve } from 'proton-shared/lib/filters/interfaces';
+import { AdvancedSimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
 import { UserSettings } from 'proton-shared/lib/interfaces';
 import { Alert } from '../../../../components';
 
@@ -10,7 +10,6 @@ import SieveEditor from './SieveEditor';
 interface Props {
     model: AdvancedSimpleFilterModalModel;
     onChange: (newModel: AdvancedSimpleFilterModalModel) => void;
-    errors: ErrorsSieve;
     userSettings: UserSettings;
 }
 

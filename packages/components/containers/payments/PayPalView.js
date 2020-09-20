@@ -88,7 +88,6 @@ PayPalView.propTypes = {
     type: PropTypes.oneOf(['signup', 'subscription', 'invoice', 'donation', 'credit', 'update', 'human-verification']),
     amount: PropTypes.number.isRequired,
     currency: PropTypes.string.isRequired,
-    onPay: PropTypes.func,
     paypal: PropTypes.object.isRequired,
     paypalCredit: PropTypes.object.isRequired,
 };

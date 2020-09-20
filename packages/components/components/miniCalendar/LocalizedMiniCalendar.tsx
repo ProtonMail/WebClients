@@ -8,7 +8,7 @@ import MiniCalendar, { Props as MiniCalProps } from './MiniCalendar';
 
 export type Props = MiniCalProps;
 
-const LocalizedMiniCalendar = (props: Props) => {
+const LocalizedMiniCalendar = ({ weekStartsOn, ...rest }: Props) => {
     const weekdaysLong = useMemo(() => {
         return getFormattedWeekdays('cccc', { locale: dateLocale });
     }, [dateLocale]);
@@ -35,9 +35,9 @@ const LocalizedMiniCalendar = (props: Props) => {
             weekdaysLong={weekdaysLong}
             weekdaysShort={weekdaysShort}
             months={months}
-            weekStartsOn={props.weekStartsOn || getWeekStartsOn(dateLocale)}
+            weekStartsOn={weekStartsOn || getWeekStartsOn(dateLocale)}
             formatDay={formatDay}
-            {...props}
+            {...rest}
         />
     );
 };

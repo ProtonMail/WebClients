@@ -5,10 +5,10 @@ import { InfoAuthedResponse, TwoFaResponse } from 'proton-shared/lib/authenticat
 import { getInfo, PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { TWO_FA_FLAGS } from 'proton-shared/lib/constants';
+import { TWO_FA_FLAGS, isSSOMode } from 'proton-shared/lib/constants';
 import { persistSessionWithPassword } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from 'proton-shared/lib/helpers/crossTab';
-import { isSSOMode } from 'proton-shared/lib/constants';
+
 import {
     handleUnlock,
     handleChangeMailboxPassword,

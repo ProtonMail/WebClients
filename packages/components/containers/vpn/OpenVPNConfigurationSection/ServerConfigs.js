@@ -4,13 +4,11 @@ import { groupWith, compare } from 'proton-shared/lib/helpers/array';
 import { Details, Summary } from '../../../components';
 import { useUser, useUserVPN } from '../../../hooks';
 import { classnames } from '../../../helpers';
-import { isSecureCoreEnabled } from './utils';
-import ConfigsTable, { CATEGORY } from './ConfigsTable';
+import { isSecureCoreEnabled, isP2PEnabled, isTorEnabled } from './utils';
+import ConfigsTable, { CATEGORY, P2PIcon, TorIcon } from './ConfigsTable';
 import Country from './Country';
 import ServerNumber from './ServerNumber';
 import CityNumber from './CityNumber';
-import { isP2PEnabled, isTorEnabled } from './utils';
-import { P2PIcon, TorIcon } from './ConfigsTable';
 
 const getServerNum = (server) => Number(server.Name.replace('-TOR', '').split('#')[1]);
 const getServerRegion = (server) => server.Name.split('#')[0];

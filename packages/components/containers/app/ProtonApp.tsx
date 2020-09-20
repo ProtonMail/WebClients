@@ -27,8 +27,6 @@ import CompatibilityCheck from './CompatibilityCheck';
 import ConfigProvider from '../config/Provider';
 import NotificationsProvider from '../notifications/Provider';
 import ModalsProvider from '../modals/Provider';
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
 import ApiProvider from '../api/ApiProvider';
 import CacheProvider from '../cache/Provider';
 import AuthenticationProvider from '../authentication/Provider';
@@ -73,7 +71,7 @@ const getInitialState = (oldUID?: string, oldLocalID?: number): { UID?: string; 
             localID: undefined,
         };
     }
-    const pathname = window.location.pathname;
+    const { pathname } = window.location;
     if (getIsSSOPath(pathname)) {
         // Special routes which should never be logged in
         return;
@@ -136,11 +134,12 @@ const ProtonApp = ({ config, children }: Props) => {
             const cache = createCache<string, any>();
 
             // If the user was received from the login call, pre-set it directly.
-            User &&
+            if (User) {
                 cache.set(UserModel.key, {
                     value: formatUser(User),
                     status: STATUS.RESOLVED,
                 });
+            }
 
             if (EventID !== undefined) {
                 setTmpEventID(cache, EventID);

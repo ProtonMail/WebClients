@@ -9,7 +9,7 @@ import StandardLoadError from './StandardLoadError';
 
 interface Props {
     locales?: TtagLocaleMap;
-    openpgpConfig?: object;
+    openpgpConfig?: any;
     children: React.ReactNode;
 }
 

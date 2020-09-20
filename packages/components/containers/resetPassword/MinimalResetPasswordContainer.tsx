@@ -64,8 +64,12 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                     }
                     hasModal.current = true;
                     handleSubmit()
-                        .then(() => (hasModal.current = false))
-                        .catch(() => (hasModal.current = false));
+                        .then(() => {
+                            hasModal.current = false;
+                        })
+                        .catch(() => {
+                            hasModal.current = false;
+                        });
                 }}
             >
                 <Alert

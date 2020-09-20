@@ -9,7 +9,7 @@ const GlobalLoader = () => {
         return null;
     }
 
-    const text = task.options.text;
+    const { text } = task.options;
 
     return (
         <div

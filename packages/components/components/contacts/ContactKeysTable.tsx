@@ -185,7 +185,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                     const trustedKey = model.publicKeys.apiKeys.find(
                                         (key) => key.getFingerprint() === fingerprint
                                     );
-                                    trustedKey &&
+                                    if (trustedKey) {
                                         setModel({
                                             ...model,
                                             publicKeys: {
@@ -194,6 +194,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                             },
                                             trustedFingerprints,
                                         });
+                                    }
                                 },
                             });
                         }

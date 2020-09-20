@@ -201,5 +201,5 @@ export const adjustPosition = (
 
 export const computedSize = (stylePixels: string, boundsSize: number) => {
     const computedStyleSize = Number(stylePixels.replace('px', ''));
-    return isNaN(computedStyleSize) ? boundsSize : computedStyleSize;
+    return Number.isNaN(computedStyleSize) ? boundsSize : computedStyleSize;
 };

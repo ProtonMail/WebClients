@@ -1,3 +1,4 @@
+import React from 'react';
 import { Address } from 'proton-shared/lib/interfaces/Address';
 
 export enum Status {

@@ -1,9 +1,7 @@
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import Alert from '../../../components/alert/Alert';
-import { modelShape } from './autoReplyShapes';
 
 const AutoReplyFormPermanent = () => {
     return (
@@ -13,9 +11,6 @@ const AutoReplyFormPermanent = () => {
     );
 };
 
-AutoReplyFormPermanent.propTypes = {
-    model: modelShape,
-    updateModel: PropTypes.func,
-};
+AutoReplyFormPermanent.propTypes = {};
 
 export default AutoReplyFormPermanent;

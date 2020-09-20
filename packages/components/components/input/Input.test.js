@@ -16,7 +16,7 @@ describe('Input component', () => {
     });
 
     it('should display an error', () => {
-        const { container } = render(<Input value={value} error={error} isSubmitted={true} />);
+        const { container } = render(<Input value={value} error={error} isSubmitted />);
         const inputNode = container.querySelector('input');
         const errorZoneNode = container.querySelector('.error-zone');
         const uid = inputNode.getAttribute('aria-describedby');

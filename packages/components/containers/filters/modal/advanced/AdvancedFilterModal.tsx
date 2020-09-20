@@ -179,7 +179,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                 />
             )}
             {model.step === StepSieve.SIEVE && (
-                <SieveForm model={model} onChange={setModel} errors={errors} userSettings={userSettings} />
+                <SieveForm model={model} onChange={setModel} userSettings={userSettings} />
             )}
         </FormModal>
     );

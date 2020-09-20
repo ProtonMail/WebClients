@@ -27,12 +27,12 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
         }
 
         const handleModalExit = () => {
-            content.props.onExit && content.props.onExit();
+            content.props.onExit?.();
             removeModal(id);
         };
 
         const handleModalClose = () => {
-            content.props.onClose && content.props.onClose();
+            content.props.onClose?.();
             hideModal(id);
         };
 
@@ -63,7 +63,6 @@ ModalsContainer.propTypes = {
     modals: PropTypes.arrayOf(PropTypes.object).isRequired,
     removeModal: PropTypes.func.isRequired,
     hideModal: PropTypes.func.isRequired,
-    location: PropTypes.object,
 };
 
 export default ModalsContainer;

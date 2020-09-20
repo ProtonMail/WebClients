@@ -1,11 +1,10 @@
 import { Organization } from 'proton-shared/lib/interfaces';
 import useCache from './useCache';
 import { useUser } from './useUser';
-import { useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw';
+import { useGetOrganizationKeyRaw, OrganizationKey } from './useGetOrganizationKeyRaw';
 import usePromiseResult from './usePromiseResult';
 
 import { cachedPromise } from './helpers/cachedPromise';
-import { OrganizationKey } from './useGetOrganizationKeyRaw';
 
 const useOrganizationKey = (organization: Organization): [OrganizationKey | undefined, boolean, Error] => {
     const cache = useCache();

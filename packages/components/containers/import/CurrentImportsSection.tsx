@@ -94,7 +94,11 @@ const RowActions = ({ currentImport, fetchCurrentImports, fetchPastImports }: Ro
         list.push({
             text: isAuthError ? c('Action').t`Reconnect` : c('Action').t`Resume`,
             onClick: () => {
-                isAuthError ? withLoadingActions(handleReconnect()) : withLoadingActions(handleResume(ID));
+                if (isAuthError) {
+                    withLoadingActions(handleReconnect());
+                } else {
+                    withLoadingActions(handleResume(ID));
+                }
             },
         });
     }
@@ -232,7 +236,7 @@ const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
                                 );
                             }
 
-                            const percentageValue = isNaN(percentage) ? 0 : Math.round(percentage);
+                            const percentageValue = Number.isNaN(percentage) ? 0 : Math.round(percentage);
 
                             return <Badge>{c('Import status').t`${percentageValue}% imported`}</Badge>;
                         };

@@ -30,12 +30,16 @@ const useSpamList = () => {
         const filter = getFilterSearch(searchQuery);
 
         if (type === 'blackList') {
-            updateRawList && setBlackList(data);
+            if (updateRawList) {
+                setBlackList(data);
+            }
             const list = !refreshSearch ? data : data.filter(filter);
             return filterBlackList(list);
         }
 
-        updateRawList && setWhiteList(data);
+        if (updateRawList) {
+            setWhiteList(data);
+        }
         const list = !refreshSearch ? data : data.filter(filter);
         return filterWhiteList(list);
     };

@@ -17,9 +17,9 @@ interface Card {
     zip: string;
 }
 
-type keyCard = 'fullname' | 'month' | 'year' | 'number' | 'cvc' | 'zip';
+type KeyCard = 'fullname' | 'month' | 'year' | 'number' | 'cvc' | 'zip';
 
-const check = (card: Card, key: keyCard): string | undefined => {
+const check = (card: Card, key: KeyCard): string | undefined => {
     const value = card[key];
     switch (key) {
         case 'fullname':
@@ -70,7 +70,7 @@ export const getErrors = (
     zip?: string;
 } => {
     return ['fullname', 'number', 'month', 'year', 'cvc', 'zip', 'country'].reduce((acc, key) => {
-        const error = check(card, key as keyCard);
+        const error = check(card, key as KeyCard);
         if (error) {
             acc[key] = error;
         }

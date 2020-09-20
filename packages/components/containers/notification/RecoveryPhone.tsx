@@ -12,7 +12,7 @@ const RecoveryPhone = ({ phone, onClick }: Props) => {
     return (
         <>
             <Field>
-                <div className="ellipsis" title={phone ? phone : ''}>
+                <div className="ellipsis" title={phone || ''}>
                     {phone || c('Info').t`Not set`}
                 </div>
             </Field>

@@ -100,7 +100,7 @@ const EditLabelModal = ({
                 withLoading(checkIsAvailable(model));
                 return;
             default:
-                return;
+                return undefined;
         }
     };
 

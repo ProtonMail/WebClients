@@ -42,7 +42,9 @@ const Info = ({
 
     const handleClick = (event: React.MouseEvent) => {
         event.preventDefault();
-        url && window.open(url);
+        if (url) {
+            window.open(url);
+        }
     };
 
     const tooltipHandlers = useTooltipHandlers(open, close, isOpen);

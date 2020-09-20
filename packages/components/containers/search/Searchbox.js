@@ -7,13 +7,13 @@ import { classnames } from '../../helpers';
 const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = '', onSearch, onChange }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
-        onSearch && onSearch(value);
+        onSearch?.(value);
     };
 
     const handleReset = (event) => {
         event.preventDefault();
         onChange('');
-        onSearch && onSearch('');
+        onSearch?.('');
     };
 
     return (

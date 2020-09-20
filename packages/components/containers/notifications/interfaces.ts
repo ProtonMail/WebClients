@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type NotificationType = 'error' | 'warning' | 'info' | 'success';
 
 export interface NotificationOptions {

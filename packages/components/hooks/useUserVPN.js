@@ -13,9 +13,13 @@ const useUserVPN = () => {
         try {
             const result = await api(getClientVPNInfo());
             cache.set('vpn', result);
-            mountedRef.current && setState({ result, loading: false });
+            if (mountedRef.current) {
+                setState({ result, loading: false });
+            }
         } catch (e) {
-            mountedRef.current && setState({ error: e, loading: false });
+            if (mountedRef.current) {
+                setState({ error: e, loading: false });
+            }
         }
     }, []);
 

@@ -173,7 +173,6 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
 
 ConfigsTable.propTypes = {
     isUpgradeRequired: PropTypes.func.isRequired,
-    isGroupedByCountry: PropTypes.bool,
     category: PropTypes.oneOf([CATEGORY.SECURE_CORE, CATEGORY.COUNTRY, CATEGORY.SERVER]),
     platform: PropTypes.string,
     protocol: PropTypes.string,

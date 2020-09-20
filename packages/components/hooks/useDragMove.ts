@@ -42,7 +42,11 @@ function useDragMove({ dragging, setDragging, format = 'text/plain', formatter =
             function Component<T>({ children, data, dragging }: DragMoveContentProps<T>) {
                 transferData.current = data;
 
-                useEffect(() => () => (transferData.current = undefined), []);
+                useEffect(() => {
+                    return () => {
+                        transferData.current = undefined;
+                    };
+                }, []);
 
                 if (dragging && container.current) {
                     return createPortal(children, container.current);

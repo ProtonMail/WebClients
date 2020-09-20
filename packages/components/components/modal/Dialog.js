@@ -28,10 +28,10 @@ const Dialog = ({
 }) => {
     const handleAnimationEnd = ({ animationName }) => {
         if (animationName === CLASSES.MODAL_OUT && isClosing) {
-            onExit && onExit();
+            onExit?.();
         }
         if (animationName === CLASSES.MODAL_IN && !isClosing) {
-            onEnter && onEnter();
+            onEnter?.();
         }
     };
 
@@ -41,7 +41,6 @@ const Dialog = ({
                 <dialog
                     aria-labelledby={modalTitleID}
                     aria-modal="true"
-                    role="dialog"
                     open
                     className={classnames([
                         CLASSES.MODAL,

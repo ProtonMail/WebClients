@@ -13,7 +13,7 @@ export const setTmpEventID = (cache: Cache<string, any>, eventID: string) => {
 };
 
 const loadEventID = async (api: Api, cache: Cache<string, any>) => {
-    return getTmpEventID(cache) || (await api<{ EventID: string }>(getLatestID()).then(({ EventID }) => EventID));
+    return getTmpEventID(cache) || api<{ EventID: string }>(getLatestID()).then(({ EventID }) => EventID);
 };
 
 export default loadEventID;

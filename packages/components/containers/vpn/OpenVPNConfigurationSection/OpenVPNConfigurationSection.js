@@ -71,9 +71,12 @@ const OpenVPNConfigurationSection = () => {
         const load = activeServers.reduce((acc, { Load }) => acc + Load, 0) / activeServers.length;
         return {
             ...first,
-            Load: isNaN(load) ? 0 : Math.round(load),
+            Load: Number.isNaN(load) ? 0 : Math.round(load),
             Domain: `${first.EntryCountry.toLowerCase()}.protonvpn.com`, // Forging domain
-            Servers: groups.reduce((acc, { Servers = [] }) => (acc.push(...Servers), acc), []),
+            Servers: groups.reduce((acc, { Servers = [] }) => {
+                acc.push(...Servers);
+                return acc;
+            }, []),
         };
     });
     const freeServers = allServers.filter(({ Tier }) => Tier === 0).map((server) => ({ ...server, open: true }));

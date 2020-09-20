@@ -58,8 +58,12 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                 }
                 const fingerprint = publicKey.getFingerprint();
                 const { isExpired, isRevoked } = await getKeyEncryptStatus(publicKey);
-                isExpired && expiredFingerprints.add(fingerprint);
-                isRevoked && revokedFingerprints.add(fingerprint);
+                if (isExpired) {
+                    expiredFingerprints.add(fingerprint);
+                }
+                if (isRevoked) {
+                    revokedFingerprints.add(fingerprint);
+                }
                 if (!trustedFingerprints.has(fingerprint)) {
                     trustedFingerprints.add(fingerprint);
                     pinnedKeys.push(publicKey);

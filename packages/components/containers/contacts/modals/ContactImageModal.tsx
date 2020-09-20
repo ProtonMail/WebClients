@@ -31,7 +31,9 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, onClose, ...rest }:
         const file = e.target.files ? e.target.files[0] : null;
         const reader = new FileReader();
 
-        if (!file) return;
+        if (!file) {
+            return;
+        }
 
         reader.onloadend = async () => {
             try {

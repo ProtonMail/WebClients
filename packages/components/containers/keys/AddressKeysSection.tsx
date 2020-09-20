@@ -343,7 +343,9 @@ const AddressKeysSection = () => {
                 <Block>
                     <PrimaryButton
                         onClick={() => {
-                            !isLoadingKey && handleReactivateKeys(allInactiveKeys);
+                            if (!isLoadingKey) {
+                                handleReactivateKeys(allInactiveKeys);
+                            }
                         }}
                     >
                         {c('Action').t`Reactivate keys`}

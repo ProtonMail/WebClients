@@ -8,21 +8,12 @@ interface Props {
     expanded?: boolean;
     onToggleExpand?: () => void;
     primary?: ReactNode;
-    isNarrow?: boolean;
     children?: ReactNode;
     version?: ReactNode;
     hasAppLinks?: boolean;
 }
 
-const Sidebar = ({
-    expanded = false,
-    onToggleExpand,
-    hasAppLinks = true,
-    logo,
-    primary,
-    children,
-    version,
-}: Props) => {
+const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, primary, children, version }: Props) => {
     return (
         <div className="sidebar flex flex-nowrap flex-column noprint" data-expanded={expanded}>
             <div className="nodesktop notablet flex-item-noshrink">

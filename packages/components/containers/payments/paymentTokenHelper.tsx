@@ -113,6 +113,7 @@ export const process = ({
                     }
                     throw new Error(c('Error').t`Tab closed`);
                 } catch (error) {
+                    // eslint-disable-next-line prefer-promise-reject-errors
                     return reject({ ...error, tryAgain: true });
                 }
             }
@@ -127,7 +128,7 @@ export const process = ({
             }
 
             reset();
-            tab && tab.close();
+            tab?.close();
 
             const { cancel } = event.data;
 
@@ -140,7 +141,7 @@ export const process = ({
 
         const abort = () => {
             reset();
-            tab && tab.close();
+            tab?.close();
             reject(new Error(c('Error').t`Process aborted`));
         };
 

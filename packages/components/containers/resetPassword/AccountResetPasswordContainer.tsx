@@ -225,8 +225,12 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
                         }
                         hasModal.current = true;
                         handleSubmit()
-                            .then(() => (hasModal.current = false))
-                            .catch(() => (hasModal.current = false));
+                            .then(() => {
+                                hasModal.current = false;
+                            })
+                            .catch(() => {
+                                hasModal.current = false;
+                            });
                     }}
                 >
                     <SignupLabelInputRow

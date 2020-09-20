@@ -217,6 +217,7 @@ const rightToLeftToString = (rtl: RIGHT_TO_LEFT) => {
     switch (rtl) {
         case RIGHT_TO_LEFT.ON:
             return 'rtl';
+        default:
         case RIGHT_TO_LEFT.OFF:
             return 'ltr';
     }

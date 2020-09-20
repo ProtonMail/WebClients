@@ -110,13 +110,17 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
 
             if (e.name === 'TimeoutError') {
                 const isSilenced = getSilenced(e.config, code);
-                !isSilenced && createNotification({ type: 'error', text: errorMessage });
+                if (!isSilenced) {
+                    createNotification({ type: 'error', text: errorMessage });
+                }
                 throw e;
             }
 
             if (errorMessage) {
                 const isSilenced = getSilenced(e.config, code);
-                !isSilenced && createNotification({ type: 'error', text: errorMessage });
+                if (!isSilenced) {
+                    createNotification({ type: 'error', text: errorMessage });
+                }
             }
 
             throw e;

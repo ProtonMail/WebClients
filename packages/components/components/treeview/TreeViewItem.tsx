@@ -41,7 +41,7 @@ const TreeView = ({
             return;
         }
 
-        onToggle && onToggle();
+        onToggle?.();
     };
 
     return (

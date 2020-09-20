@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface Props extends React.ThHTMLAttributes<HTMLTableHeaderCellElement> {
+interface Props extends React.ThHTMLAttributes<HTMLTableCellElement> {
     children: React.ReactNode;
     type?: 'body' | 'header' | 'footer';
 }

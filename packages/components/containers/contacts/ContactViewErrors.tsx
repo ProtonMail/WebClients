@@ -13,7 +13,9 @@ interface Props {
 }
 
 const ContactViewErrors = ({ errors }: Props) => {
-    if (!errors) return null;
+    if (!errors) {
+        return null;
+    }
 
     const errorTypes = errors.map(({ type }) => type);
 

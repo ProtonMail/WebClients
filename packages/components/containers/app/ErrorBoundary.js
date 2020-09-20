@@ -16,16 +16,18 @@ class ErrorBoundary extends React.Component {
     }
 
     componentDidCatch(error, info) {
-        this.props.onError && this.props.onError(error, info);
+        const { props } = this;
+        props.onError?.(error, info);
         traceError(error);
         console.error(error);
     }
 
     render() {
-        if (!this.state.hasError) {
-            return this.props.children;
+        const { state, props } = this;
+        if (!state.hasError) {
+            return props.children;
         }
-        return this.props.component || <GenericError className="pt2" />;
+        return props.component || <GenericError className="pt2" />;
     }
 }
 

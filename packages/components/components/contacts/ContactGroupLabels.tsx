@@ -20,7 +20,7 @@ const ContactGroupLabels = ({ contactGroups }: Props) => {
             : acc;
     }, []);
 
-    return <LabelStack labels={labels} isStacked={true} showDelete={false} />;
+    return <LabelStack labels={labels} isStacked showDelete={false} />;
 };
 
 export default ContactGroupLabels;

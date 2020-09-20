@@ -64,7 +64,7 @@ const PhoneModal = ({ phone, hasReset, onClose, ...rest }: Props) => {
                         inputClassName="w100"
                         onPhoneNumberChange={handleChange}
                         defaultValue={input}
-                        autoFocus={true}
+                        autoFocus
                         dropdownContainer="body"
                         required
                     />

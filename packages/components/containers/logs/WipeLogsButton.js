@@ -9,7 +9,6 @@ const WipeLogsButton = ({ onWipe, className }) => {
 
     const handleConfirm = () => {
         onWipe();
-        close();
     };
 
     const handleOpenModal = () => {

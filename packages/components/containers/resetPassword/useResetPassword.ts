@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { requestLoginResetToken, validateResetToken } from 'proton-shared/lib/api/reset';
-import { getRecoveryMethods } from 'proton-shared/lib/api/user';
+import { getRecoveryMethods, getUser } from 'proton-shared/lib/api/user';
 import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
 import { getResetAddressesKeys } from 'proton-shared/lib/keys/resetKeys';
 import { srpAuth, srpVerify } from 'proton-shared/lib/srp';
@@ -10,7 +10,7 @@ import { Address, User as tsUser } from 'proton-shared/lib/interfaces';
 import { auth } from 'proton-shared/lib/api/auth';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { AuthResponse } from 'proton-shared/lib/authentication/interface';
-import { getUser } from 'proton-shared/lib/api/user';
+
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 

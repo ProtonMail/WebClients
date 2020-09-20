@@ -60,7 +60,7 @@ const SquireIframe = forwardRef(
                         type: 'error',
                         text: (
                             <>
-                                {c('Error').t`The composer failed to load.` + ' '}
+                                {`${c('Error').t`The composer failed to load.`} `}
                                 <LinkButton
                                     className="alignbaseline nodecoration bold pm-button--currentColor"
                                     onClick={() => {
@@ -126,7 +126,7 @@ const SquireIframe = forwardRef(
                 {placeholder && isEmpty && (
                     <div className="absolute ml1 no-pointer-events placeholder">{placeholder}</div>
                 )}
-                <iframe ref={iframeRef} frameBorder="0" className="w100 h100 squireIframe" {...rest} />
+                <iframe title="Editor" ref={iframeRef} frameBorder="0" className="w100 h100 squireIframe" {...rest} />
             </div>
         );
     }

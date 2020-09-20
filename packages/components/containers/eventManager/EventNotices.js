@@ -43,7 +43,9 @@ const EventNotices = () => {
             if (!Array.isArray(Notices)) {
                 return;
             }
-            Notices.forEach(handleNotice);
+            Notices.forEach((text) => {
+                handleNotice(text);
+            });
         });
     }, []);
 

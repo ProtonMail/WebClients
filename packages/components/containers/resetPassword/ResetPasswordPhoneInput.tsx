@@ -11,7 +11,7 @@ const ResetPasswordPhoneInput = ({ value, setValue, id }: Props) => {
         <IntlTelInput
             name="phone"
             id={id}
-            autoFocus={true}
+            autoFocus
             defaultValue={value}
             containerClassName="w100"
             inputClassName="w100"

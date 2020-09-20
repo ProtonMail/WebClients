@@ -24,15 +24,7 @@ const ContactGroupDropdownButton = ({
     ...rest
 }: Props) => {
     return (
-        <button
-            type="button"
-            role="button"
-            ref={buttonRef}
-            className={className}
-            disabled={disabled}
-            onClick={onClick}
-            {...rest}
-        >
+        <button type="button" ref={buttonRef} className={className} disabled={disabled} onClick={onClick} {...rest}>
             {children}
             <DropdownCaret
                 isOpen={isOpen}

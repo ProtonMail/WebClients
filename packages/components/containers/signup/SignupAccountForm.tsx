@@ -1,7 +1,6 @@
 import React, { useRef, useState, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { History } from 'history';
 import { USERNAME_PLACEHOLDER } from 'proton-shared/lib/constants';
 import {
     Input,
@@ -23,7 +22,6 @@ import SignupSubmitRow from './SignupSubmitRow';
 import SignupLabelInputRow from './SignupLabelInputRow';
 
 interface Props {
-    history: History;
     model: SignupModel;
     onChange: (model: SignupModel) => void;
     onSubmit: (payload: ChallengeResult) => void;

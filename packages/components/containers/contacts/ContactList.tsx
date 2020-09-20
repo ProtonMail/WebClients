@@ -28,7 +28,7 @@ const ContactsList = ({
     return (
         <div ref={containerRef} className={className} style={{ height: 300 }}>
             <AutoSizer>
-                {({ height, width }: { height: number; width: number }) => (
+                {({ height, width }) => (
                     <List
                         className="contact-list no-outline"
                         ref={listRef}

@@ -18,6 +18,7 @@ const reducer = (state, action) => {
                 loading: false,
                 result: action.payload,
             };
+        default:
         case 'error':
             return {
                 result: undefined,

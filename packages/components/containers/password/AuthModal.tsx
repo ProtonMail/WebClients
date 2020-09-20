@@ -32,7 +32,7 @@ const AuthModal = <T,>({ onClose, onError, onSuccess, config, ...rest }: Props<T
             if (Code === PASSWORD_WRONG_ERROR) {
                 setError(Error);
             }
-            onError && onError(error);
+            onError?.(error);
             onClose?.();
         }
     };

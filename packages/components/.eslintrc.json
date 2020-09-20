@@ -1,64 +1,23 @@
 {
+    "extends": ["proton-lint"],
     "parser": "@typescript-eslint/parser",
-    "plugins": ["react", "react-hooks", "@typescript-eslint", "import"],
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
     "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "jest": true,
-        "node": true
+        "jasmine": true
     },
-    "settings": {
-        "react": {
-            "version": "detect"
-        },
-        "import/extensions": [
-            ".js",
-            ".ts",
-            ".jsx",
-            ".tsx"
-        ],
-        "import/resolver": {
-            "node": {
-                "extensions": [".js", ".ts", ".tsx"]
-            }
-        }
+    "parserOptions": {
+        "project": "./tsconfig.json"
     },
-    "globals": {
-        "FEATURE_FLAGS": true
-    },
-    "extends": ["plugin:@typescript-eslint/recommended", "eslint:recommended", "plugin:react/recommended"],
     "rules": {
-        "consistent-return": "off",
-        "import/default": 2,
-        "import/export": 2,
-        "import/named": 2,
-        "import/order": [2, { "groups": [["builtin", "external", "internal"]] }],
-        "import/namespace": 2,
-        "import/no-extraneous-dependencies": "off",
-        "import/no-named-as-default": "off",
-        "import/no-unresolved": ["error", { "commonjs": true, "caseSensitive": true }],
-        "import/prefer-default-export": "off",
-        "import/no-cycle": ["error", { "maxDepth": "∞" }],
-        "import/no-self-import": "error",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/indent": "off",
-        "react/display-name": "off",
-        "react/prop-types": "warn",
-        "react-hooks/rules-of-hooks": "error",
-        "no-console": [
-            "error",
-            {
-                "allow": ["warn", "error"]
-            }
-        ]
+        "react/button-has-type": ["warn"],
+        "react/forbid-prop-types": ["warn"],
+        "react/no-array-index-key": ["warn"],
+        "jsx-a11y/no-static-element-interactions":  ["warn"],
+        "jsx-a11y/click-events-have-key-events":  ["warn"],
+        "jsx-a11y/anchor-is-valid":  ["warn"],
+        "jsx-a11y/label-has-associated-control":  ["warn"],
+        "jsx-a11y/no-noninteractive-tabindex":  ["warn"],
+        "jsx-a11y/no-noninteractive-element-interactions":  ["warn"],
+        "jsx-a11y/no-noninteractive-element-to-interactive-role":  ["warn"],
+        "jsx-a11y/alt-text": ["warn"]
     }
 }

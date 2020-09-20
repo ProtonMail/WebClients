@@ -113,7 +113,7 @@ const UserDropdown = ({ ...rest }) => {
                                     {c('Action').t`Manage account`}
                                 </AppLink>
                             </li>
-                            <li className="dropDown-item-hr mt0-5 mb0-5" aria-hidden="false"></li>
+                            <li className="dropDown-item-hr mt0-5 mb0-5" aria-hidden="false" />
                         </>
                     ) : null}
                     {isSSOMode ? (
@@ -149,7 +149,7 @@ const UserDropdown = ({ ...rest }) => {
                             {c('Action').t`Support us`}
                         </button>
                     </li>
-                    <li className="dropDown-item-hr mt0-5" aria-hidden="false"></li>
+                    <li className="dropDown-item-hr mt0-5" aria-hidden="false" />
                     <li>
                         <div className="pl1 pr1 pt0-5 pb0-5 w100 flex flex-nowrap flex-spacebetween flex-items-center">
                             <label htmlFor="theme-toggle" className="mr1">{c('Action').t`Display mode`}</label>
@@ -178,7 +178,7 @@ const UserDropdown = ({ ...rest }) => {
                             />
                         </div>
                     </li>
-                    <li className="dropDown-item-hr mb0-5" aria-hidden="false"></li>
+                    <li className="dropDown-item-hr mb0-5" aria-hidden="false" />
                     <li className="pt0-5 pb0-5 pl1 pr1 flex">
                         <PrimaryButton
                             className="w100 aligncenter navigationUser-logout"

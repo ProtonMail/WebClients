@@ -50,7 +50,7 @@ function ActionsLabel({ label, onChange }) {
         createNotification({
             text: c('Success notification').t`${label.Name} removed`,
         });
-        onChange && onChange('remove', label);
+        onChange?.('remove', label);
     };
 
     const handleEdit = () => {

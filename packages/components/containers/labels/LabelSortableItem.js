@@ -9,8 +9,11 @@ function LabelItem({ label, onEditLabel = noop, onRemoveLabel = noop, ...rest })
     const { Name, Color } = label;
 
     const handleChange = (type, label) => {
-        type === 'update' && onEditLabel(label);
-        type === 'remove' && onRemoveLabel(label);
+        if (type === 'update') {
+            onEditLabel(label);
+        } else if (type === 'remove') {
+            onRemoveLabel(label);
+        }
     };
 
     return (

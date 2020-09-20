@@ -13,12 +13,13 @@ const EditorReactiveImage = ({ src: inputSrc, onLoading, onSuccess, onError }: P
     const [valid, setValid] = useState(false);
 
     const handleChangeDebounced = useCallback(
-        debounce(async (inputSrc: string | undefined) => {
-            if (inputSrc !== undefined) {
-                setSrc(inputSrc);
-                setValid(false);
-                onLoading();
+        debounce((inputSrc: string | undefined) => {
+            if (inputSrc === undefined) {
+                return;
             }
+            setSrc(inputSrc);
+            setValid(false);
+            onLoading();
         }, 500),
         []
     );
@@ -44,7 +45,7 @@ const EditorReactiveImage = ({ src: inputSrc, onLoading, onSuccess, onError }: P
         };
     }, []);
 
-    return <img src={src} ref={ref} style={{ display: valid ? 'block' : 'none' }} />;
+    return <img alt="Editor" src={src} ref={ref} style={{ display: valid ? 'block' : 'none' }} />;
 };
 
 export default EditorReactiveImage;

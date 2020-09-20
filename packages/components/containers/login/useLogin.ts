@@ -97,7 +97,8 @@ const useLogin = ({ api, onLogin, ignoreUnlock, generateKeys = false }: Props) =
         const validatedSession = await maybeResumeSessionByUser(api, User);
         if (validatedSession) {
             authApi(revoke()).catch(noop);
-            return await onLogin(validatedSession);
+            const result = await onLogin(validatedSession);
+            return result;
         }
 
         await persistSession({ ...authResult, User, keyPassword, api });

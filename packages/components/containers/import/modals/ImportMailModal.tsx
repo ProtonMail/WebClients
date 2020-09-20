@@ -208,7 +208,7 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, currentImport, ...r
                     createMailImport({
                         Email: modalModel.email,
                         ImapHost: modalModel.imap,
-                        ImapPort: parseInt(modalModel.port),
+                        ImapPort: parseInt(modalModel.port, 10),
                         Sasl: 'PLAIN',
                         Code: modalModel.password,
                     })
@@ -253,7 +253,7 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, currentImport, ...r
                 Email: modalModel.email,
                 Code: modalModel.password,
                 ImapHost: modalModel.imap,
-                ImapPort: parseInt(modalModel.port),
+                ImapPort: parseInt(modalModel.port, 10),
                 Sasl: 'PLAIN',
             })
         );

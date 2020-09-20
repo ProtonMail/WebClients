@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo, useRef, ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
-import { addMinutes, startOfDay, format, parse } from 'date-fns';
+import { Locale, addMinutes, startOfDay, format, parse } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { findLongestMatchingIndex } from 'proton-shared/lib/helpers/string';
 import { withDecimalPrecision } from 'proton-shared/lib/helpers/math';
@@ -81,7 +81,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
         try {
             const newDate = fromFormatted(temporaryInput, dateLocale);
             const newDateTime = +newDate;
-            if (!isNaN(newDateTime)) {
+            if (!Number.isNaN(newDateTime)) {
                 handleSelectDate(newDate);
             }
             // eslint-disable-next-line no-empty

@@ -44,6 +44,7 @@ const Captcha = ({ token, onSubmit }: Props) => {
 
     return (
         <iframe
+            title="Captcha"
             ref={iframeRef}
             className="w100"
             src={src}

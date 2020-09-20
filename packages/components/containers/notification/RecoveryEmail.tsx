@@ -12,7 +12,7 @@ const RecoveryEmail = ({ email, onClick }: Props) => {
     return (
         <>
             <Field>
-                <div className="ellipsis" title={email ? email : ''}>
+                <div className="ellipsis" title={email || ''}>
                     {email || c('Info').t`Not set`}
                 </div>
             </Field>

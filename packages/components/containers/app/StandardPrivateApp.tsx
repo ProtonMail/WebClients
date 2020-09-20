@@ -35,7 +35,7 @@ interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     onInit?: () => void;
     onLogout: () => void;
     fallback?: React.ReactNode;
-    openpgpConfig?: object;
+    openpgpConfig?: any;
     preloadModels?: M[];
     eventModels?: EvtM[];
     noModals?: boolean;

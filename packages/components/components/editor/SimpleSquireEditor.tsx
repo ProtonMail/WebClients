@@ -30,9 +30,12 @@ const SimpleSquireEditor = forwardRef(
         const { isNarrow } = useActiveBreakpoint();
 
         const handleAddImages = (files: File[]) => {
-            files.forEach(async (file) => {
+            const run = async (file: File) => {
                 const base64str = await toBase64(file);
                 (ref as MutableRefObject<SquireEditorRef>).current?.insertImage(base64str);
+            };
+            files.forEach((file) => {
+                run(file);
             });
         };
 

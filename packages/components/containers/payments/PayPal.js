@@ -30,7 +30,7 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
     const paypalCreditRef = useRef({});
 
     const handleCancel = () => {
-        abortRef.current && abortRef.current.abort();
+        abortRef.current?.abort();
     };
 
     const handleClick = async ({ type, Token, ReturnHost, ApprovalURL }) => {

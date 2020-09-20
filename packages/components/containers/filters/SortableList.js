@@ -10,7 +10,9 @@ const FilterSortableList = ({ items, ...rest }) => (
         <caption className="sr-only">{c('Settings/filters').t`Filters`}</caption>
         <OrderableTableHeader>
             <tr>
-                <th scope="col" className="w5" />
+                <th scope="col" className="w5">
+                    <span className="sr-only">{c('Settings/filters - table').t`Order`}</span>
+                </th>
                 <th scope="col">{c('Settings/filters - table').t`Name`}</th>
                 <th scope="col" className="w8e nomobile">
                     {c('Settings/filters - table').t`Status`}

@@ -17,6 +17,8 @@ const reducer = (state: Task[], action: Action) => {
             return [...state, action.payload];
         case 'resolvePendingTask':
             return state.filter((task) => task !== action.payload);
+        default:
+            return state;
     }
 };
 

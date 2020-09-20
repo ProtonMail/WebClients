@@ -146,7 +146,9 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
         const children = folderRelationshipsMap[source];
         const descendants = children ? getDescendants(children) : [];
 
-        descendants.forEach((folderName) => (newCheckedFoldersMap[folderName] = checked));
+        descendants.forEach((folderName) => {
+            newCheckedFoldersMap[folderName] = checked;
+        });
 
         setCheckedFoldersMap(newCheckedFoldersMap);
     };

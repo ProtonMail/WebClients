@@ -134,7 +134,6 @@ Payment.propTypes = {
     amount: PropTypes.number.isRequired,
     coupon: PropTypes.string,
     currency: PropTypes.oneOf(CURRENCIES),
-    parameters: PropTypes.object,
     card: PropTypes.object,
     onCard: PropTypes.func,
     method: PropTypes.string,

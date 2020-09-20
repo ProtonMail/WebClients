@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
+import { RefObject, useLayoutEffect, useState } from 'react';
 import { debounce } from 'proton-shared/lib/helpers/function';
 
 // Can't loop over DOMRect keys with getOwnPropertyNames.
@@ -27,7 +27,7 @@ const getElementRect = (target?: HTMLElement | null) => {
 
 type RateLimiter = <A extends any[]>(func: (...args: A) => void, wait: number) => (...args: A) => void;
 
-const useElementRect = <E extends HTMLElement>(ref: React.RefObject<E>, rateLimiter: RateLimiter = debounce) => {
+const useElementRect = <E extends HTMLElement>(ref: RefObject<E>, rateLimiter: RateLimiter = debounce) => {
     const [elementRect, setElementRect] = useState(() => getElementRect(ref.current));
 
     useLayoutEffect(() => {

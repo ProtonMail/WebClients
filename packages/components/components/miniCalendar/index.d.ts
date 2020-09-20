@@ -1,5 +1,3 @@
-import { startOfWeek } from 'date-fns';
-
-export type WeekStartsOn = Pick<Parameters<typeof startOfWeek>[1] & {}, 'weekStartsOn'>['weekStartsOn'];
+export type WeekStartsOn = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export type DateTuple = [Date, Date];

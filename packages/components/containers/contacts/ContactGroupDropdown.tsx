@@ -152,7 +152,9 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
     };
 
     useEffect(() => {
-        isOpen && setModel(getModel(contactGroups, contactEmails));
+        if (isOpen) {
+            setModel(getModel(contactGroups, contactEmails));
+        }
     }, [contactGroups, contactEmails, isOpen]);
 
     const filteredContactGroups = useMemo(() => {

@@ -61,14 +61,14 @@ const PaymentVerificationModal = ({
     const timeoutRef = useRef();
 
     const handleCancel = () => {
-        abortRef.current && abortRef.current.abort();
+        abortRef.current?.abort();
         rest.onClose();
     };
 
     const handleSubmit = async ({ abort, promise }) => {
         try {
             setStep(STEPS.REDIRECTING);
-            timeoutRef.current = setTimeout(() => {
+            timeoutRef.current = window.setTimeout(() => {
                 setStep(STEPS.REDIRECTED);
             }, PROCESSING_DELAY);
             abortRef.current = abort;
@@ -76,7 +76,7 @@ const PaymentVerificationModal = ({
             onSubmit(toParams(params, token, type));
             rest.onClose();
         } catch (error) {
-            clearTimeout(timeoutRef.current);
+            window.clearTimeout(timeoutRef.current);
             setStep(STEPS.FAIL);
             // if not coming from API error
             if (error.message && !error.config) {

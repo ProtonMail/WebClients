@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { format, parse, addDays } from 'date-fns';
+import { format, parse, addDays, Locale } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { c } from 'ttag';
+
 import Input, { Props as InputProps } from './Input';
 import { usePopperAnchor } from '../popper';
 import Dropdown from '../dropdown/Dropdown';
@@ -71,7 +72,7 @@ const DateInput = ({
             if (newDate < min || newDate > max) {
                 return;
             }
-            if (isNaN(+newDate)) {
+            if (Number.isNaN(+newDate)) {
                 return;
             }
             return newDate;
@@ -94,7 +95,7 @@ const DateInput = ({
     };
 
     const handleFocusInput = (event: React.FocusEvent<HTMLInputElement>) => {
-        onFocus && onFocus(event);
+        onFocus?.(event);
         open();
 
         setShowTemporary(true);
@@ -102,7 +103,7 @@ const DateInput = ({
     };
 
     const handleBlurInput = (event: React.FocusEvent<HTMLInputElement>) => {
-        onBlur && onBlur(event);
+        onBlur?.(event);
         parseAndTriggerChange();
         close();
 
@@ -111,7 +112,7 @@ const DateInput = ({
     };
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        onKeyDown && onKeyDown(event);
+        onKeyDown?.(event);
         if (event.key === 'Enter') {
             parseAndTriggerChange();
             event.preventDefault();

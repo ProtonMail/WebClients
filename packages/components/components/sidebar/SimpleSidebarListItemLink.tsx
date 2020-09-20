@@ -2,8 +2,7 @@ import React from 'react';
 import SidebarListItemContentIcon from './SidebarListItemContentIcon';
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
-import SidebarListItemLink from './SidebarListItemLink';
-import { Props as SidebarListItemProps } from './SidebarListItemLink';
+import SidebarListItemLink, { Props as SidebarListItemProps } from './SidebarListItemLink';
 
 interface Props extends Pick<SidebarListItemProps, 'isActive'> {
     to: string;

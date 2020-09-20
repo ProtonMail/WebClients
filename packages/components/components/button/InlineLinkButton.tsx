@@ -5,12 +5,7 @@ type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const InlineLinkButton = ({ children, className = '', ...rest }: Props) => {
     return (
-        <button
-            type="button"
-            role="button"
-            className={classnames(['link alignbaseline alignleft', className])}
-            {...rest}
-        >
+        <button type="button" className={classnames(['link alignbaseline alignleft', className])} {...rest}>
             {children}
         </button>
     );

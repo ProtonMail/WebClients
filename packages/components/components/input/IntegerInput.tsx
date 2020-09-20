@@ -27,7 +27,7 @@ const IntegerInput = ({ value, onChange, max, min, step, ...rest }: Props) => {
             step={stepStr}
             min={minStr}
             max={maxStr}
-            value={value === null || isNaN(intValue) ? '' : intValue}
+            value={value === null || Number.isNaN(intValue) ? '' : intValue}
             onInput={({ target, target: { value: newValue, validity } }: ChangeEvent<HTMLInputElement>) => {
                 const isClear = validity.valid;
                 // Prevent broken input on certain browsers since it allows to enter other characters than integer numbers
@@ -37,7 +37,11 @@ const IntegerInput = ({ value, onChange, max, min, step, ...rest }: Props) => {
                     return onChange(emptyOrOldValue);
                 }
                 const newIntValue = parseInt(newValue, 10);
-                if (isNaN(newIntValue) || (minStr && newIntValue < +minStr) || (maxStr && newIntValue > +maxStr)) {
+                if (
+                    Number.isNaN(newIntValue) ||
+                    (minStr && newIntValue < +minStr) ||
+                    (maxStr && newIntValue > +maxStr)
+                ) {
                     target.value = `${intValue}`;
                     return;
                 }

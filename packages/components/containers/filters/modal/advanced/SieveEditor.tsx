@@ -60,7 +60,9 @@ const SieveEditor = ({ value, issues = [], onChange, theme }: Props) => {
             value={value}
             options={options}
             onBeforeChange={onChange}
-            editorDidMount={(editor) => (editorRef.current = editor)}
+            editorDidMount={(editor) => {
+                editorRef.current = editor;
+            }}
         />
     );
 };

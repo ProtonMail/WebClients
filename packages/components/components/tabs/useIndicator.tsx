@@ -49,7 +49,9 @@ export const useIndicator = (tabs: Tab[], currentTabIndex: number) => {
                     acc.offset += width + margin;
                 }
                 // for current tab, set indicator width equal to tab width
-                if (index === currentTabIndex) acc.width = width;
+                if (index === currentTabIndex) {
+                    acc.width = width;
+                }
                 return acc;
             },
             { offset: 0, width: 0 }

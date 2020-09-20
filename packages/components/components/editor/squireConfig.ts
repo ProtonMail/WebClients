@@ -119,11 +119,13 @@ export interface LinkData {
 }
 
 export const getSquireRef = (ref: Ref<SquireType>) => (ref as RefObject<SquireType>).current as SquireType;
-export const setSquireRef = (ref: Ref<SquireType>, squire: any) =>
-    (((ref as any) as MutableRefObject<any>).current = squire);
+export const setSquireRef = (ref: Ref<SquireType>, squire: any) => {
+    ((ref as any) as MutableRefObject<any>).current = squire;
+};
 
 export const SQUIRE_CONFIG = {
     sanitizeToDOMFragment(html: string, isPaste: boolean, self: any) {
+        // eslint-disable-next-line no-underscore-dangle
         const doc = self._doc as Document;
         // Use proton's instance of DOMPurify to allow proton-src attributes to be displayed in squire.
         const frag = html ? content(html) : null;
