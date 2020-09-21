@@ -35,7 +35,7 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, external
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR) {
         return c('Event invitation error')
-            .t`Your answer has been sent but we could not create the event in your calendar`;
+            .t`Your answer was sent, but the event could not be added to your calendar`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.CANCELLATION_ERROR) {
         return c('Event invitation error').t`We could not cancel the event in your calendar`;
