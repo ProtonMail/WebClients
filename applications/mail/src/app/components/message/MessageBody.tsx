@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { classnames, Button, EllipsisLoader } from 'react-components';
+import { classnames, Button, EllipsisLoader, Tooltip } from 'react-components';
 import { c } from 'ttag';
 
 import { isPlainText } from '../../helpers/message/messages';
@@ -17,10 +17,10 @@ interface Props {
 
     /**
      * Needed for print message
-     * true: (default) show button and collapse blockquote (if one founded)
-     * false: don't show button, show full content
+     * true: don't show button, show full content
+     * false: (default) show button and collapse blockquote (if one founded)
      */
-    showBlockquote?: boolean;
+    forceBlockquote?: boolean;
 }
 
 const MessageBody = ({
@@ -28,7 +28,7 @@ const MessageBody = ({
     bodyLoaded,
     sourceMode: inputSourceMode,
     message,
-    showBlockquote = true
+    forceBlockquote = false
 }: Props) => {
     const plain = isPlainText(message.data);
 
@@ -45,8 +45,8 @@ const MessageBody = ({
     const loadingMode = !messageLoaded;
     const contentMode = !encryptedMode && !sourceMode && bodyLoaded;
     const isBlockquote = blockquote !== '';
-    const showButton = showBlockquote && isBlockquote && !expanded;
-    const __html = showBlockquote && !expanded ? content : content + blockquote;
+    const showButton = !forceBlockquote && isBlockquote;
+    const showBlockquote = forceBlockquote || expanded;
 
     return (
         <div
@@ -67,11 +67,24 @@ const MessageBody = ({
             )}
             {contentMode && (
                 <>
-                    <div dangerouslySetInnerHTML={{ __html }} />
-                    {showButton && (
-                        <Button className="pm-button--small m0-5" onClick={() => setExpanded(true)}>
-                            ...
-                        </Button>
+                    <div dangerouslySetInnerHTML={{ __html: content }} />
+                    {isBlockquote && (
+                        <>
+                            {showButton && (
+                                <Tooltip
+                                    title={
+                                        expanded
+                                            ? c('Info').t`Hide original message`
+                                            : c('Info').t`Show original message`
+                                    }
+                                >
+                                    <Button className="pm-button--small m0-5" onClick={() => setExpanded(!expanded)}>
+                                        ...
+                                    </Button>
+                                </Tooltip>
+                            )}
+                            {showBlockquote && <div dangerouslySetInnerHTML={{ __html: blockquote }} />}
+                        </>
                     )}
                 </>
             )}

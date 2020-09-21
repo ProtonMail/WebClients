@@ -70,7 +70,7 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
                     bodyLoaded={true}
                     sourceMode={false}
                     message={message}
-                    showBlockquote={false}
+                    forceBlockquote={true}
                 />
                 {hasAttachments(message.data) ? <MessageFooter message={message} showActions={false} /> : null}
             </div>
