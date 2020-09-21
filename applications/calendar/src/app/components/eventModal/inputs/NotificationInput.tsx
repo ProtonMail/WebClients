@@ -78,7 +78,7 @@ const NotificationInput = ({
                                     onChange({ ...notification, value: 1 });
                                 }
                             }}
-                            title={c('Title').t`Choose a number`}
+                            title={c('Title (number of minutes/hours/days/weeks)').t`Choose a number`}
                             {...errorProps}
                         />
                     </span>

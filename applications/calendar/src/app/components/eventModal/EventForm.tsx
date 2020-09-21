@@ -87,7 +87,7 @@ const EventForm = ({
         <IconRow id={TITLE_INPUT_ID} title={c('Label').t`Event title`}>
             <Input
                 id={TITLE_INPUT_ID}
-                placeholder={c('Placeholder').t`E.g., Get a coffee with Sarah`}
+                placeholder={c('Placeholder').t`Add title`}
                 title={c('Title').t`Add event title`}
                 autoFocus
                 maxLength={MAX_LENGTHS.TITLE}
@@ -149,7 +149,7 @@ const EventForm = ({
                 <IconRow icon="address" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
                     <Input
                         id={LOCATION_INPUT_ID}
-                        placeholder={c('Placeholder').t`E.g., Corner Cafe`}
+                        placeholder={c('Placeholder').t`Add location`}
                         maxLength={MAX_LENGTHS.LOCATION}
                         title={c('Title').t`Add event location`}
                         {...createHandlers({ model, setModel, field: 'location' }).native}
@@ -224,7 +224,7 @@ const EventForm = ({
                         id={DESCRIPTION_INPUT_ID}
                         minRows={2}
                         autoGrow
-                        placeholder={c('Placeholder').t`E.g., Don’t forget paperwork`}
+                        placeholder={c('Placeholder').t`Add description`}
                         maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
                         title={c('Title').t`Add more information related to this event`}
                         {...createHandlers({ model, setModel, field: 'description' }).native}

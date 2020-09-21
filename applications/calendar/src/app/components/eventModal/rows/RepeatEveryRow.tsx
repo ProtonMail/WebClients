@@ -64,7 +64,7 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
                                 }}
                                 aria-invalid={isSubmitted && !!errors.interval}
                                 isSubmitted={isSubmitted}
-                                title={c('Title').t`Choose how often this even repeats`}
+                                title={c('Title').t`Choose how often this event repeats`}
                             />
                         </span>
                         <span className="flex-item-fluid ml0-5">

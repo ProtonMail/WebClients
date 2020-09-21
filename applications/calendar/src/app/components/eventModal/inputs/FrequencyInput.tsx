@@ -13,7 +13,7 @@ interface Props extends Omit<SelectProps, 'onChange' | 'options'> {
 
 const FrequencyInput = ({ value, onChange, ...rest }: Props) => {
     const frequencies = [
-        { text: c('Option').t`Do not repeat`, value: ONCE },
+        { text: c('Option').t`Does not repeat`, value: ONCE },
         { text: c('Option').t`Every day`, value: DAILY },
         { text: c('Option').t`Every week`, value: WEEKLY },
         { text: c('Option').t`Every month`, value: MONTHLY },

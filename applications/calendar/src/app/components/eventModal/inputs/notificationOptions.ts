@@ -17,7 +17,7 @@ export const getSameDay = () => ({
 });
 
 export const getSameTime = () => ({
-    text: c('Notification when').t`at the same time`,
+    text: c('Notification when').t`at time of event`,
     value: 0,
     unit: NOTIFICATION_UNITS.MINUTES,
     when: NOTIFICATION_WHEN.AFTER,

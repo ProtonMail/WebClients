@@ -54,7 +54,7 @@ const Notifications = ({
                 <LinkButton
                     className="p0"
                     data-test-id="add-notification"
-                    title={c('Title').t`Add another notification to remind you this event`}
+                    title={c('Title').t`Add another notification to remind you of this event`}
                     onClick={() => onChange(addItem(notifications, { ...defaultNotification }))}
                 >
                     {c('Action').t`Add notification`}

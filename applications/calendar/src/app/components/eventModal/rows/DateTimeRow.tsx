@@ -97,7 +97,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                             timezone={start.tzid}
                             onChange={handleChangeStart}
                             date={startDateTime}
-                            title={c('Title').t`Select the time zone for the event starting time`}
+                            title={c('Title').t`Select the time zone for the event start time`}
                         />
                     )}
                 </div>
@@ -140,7 +140,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                             timezone={end.tzid}
                             onChange={handleChangeEnd}
                             date={endDateTime}
-                            title={c('Title').t`Select the time zone for the event ending time`}
+                            title={c('Title').t`Select the time zone for the event end time`}
                         />
                     )}
                 </div>
@@ -164,7 +164,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                                 className="p0"
                                 data-test-id="show-tz"
                                 onClick={() => setShowTzSelector(true)}
-                                title={c('Title').t`Show time zones for event starting and ending times`}
+                                title={c('Title').t`Show time zones for event start and end times`}
                             >
                                 {c('Action').t`Show time zones`}
                             </LinkButton>
