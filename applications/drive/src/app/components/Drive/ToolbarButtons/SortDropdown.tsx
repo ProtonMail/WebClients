@@ -104,7 +104,14 @@ const SortDropdown = () => {
             >
                 <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" />
             </ToolbarButton>
-            <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom">
+            <Dropdown
+                id={uid}
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+                originalPlacement="bottom"
+                className="dropDown--noMaxSize"
+            >
                 <DropdownMenu>{dropdownMenuButtons}</DropdownMenu>
             </Dropdown>
         </>
