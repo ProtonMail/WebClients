@@ -1,5 +1,5 @@
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { Calendar, CalendarAlarm } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, CalendarAlarm, CalendarEventWithoutBlob } from 'proton-shared/lib/interfaces/calendar';
 
 export interface CalendarAlarmEventManagerDelete {
     ID: string;
@@ -34,5 +34,24 @@ export interface CalendarEventManagerCreate {
     Action: EVENT_ACTIONS.CREATE;
     Calendar: Calendar;
 }
+
+export interface CalendarEventsEventManagerDelete {
+    ID: string;
+    Action: EVENT_ACTIONS.DELETE;
+}
+export interface CalendarEventsEventManagerUpdate {
+    ID: string;
+    Action: EVENT_ACTIONS.UPDATE;
+    Event: CalendarEventWithoutBlob;
+}
+export interface CalendarEventsEventManagerCreate {
+    ID: string;
+    Action: EVENT_ACTIONS.CREATE;
+    Event: CalendarEventWithoutBlob;
+}
+export type CalendarEventsEventManager =
+    | CalendarEventsEventManagerDelete
+    | CalendarEventsEventManagerUpdate
+    | CalendarEventsEventManagerCreate;
 
 export type CalendarEventManager = CalendarEventManagerCreate | CalendarEventManagerUpdate | CalendarEventManagerDelete;
