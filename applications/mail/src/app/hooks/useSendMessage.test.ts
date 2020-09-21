@@ -306,7 +306,7 @@ describe('useSendMessage', () => {
     });
 
     describe('send html', () => {
-        it.only('text/html clear', async () => {
+        it('text/html clear', async () => {
             const content = 'test';
 
             const message = prepareMessage({
