@@ -11,15 +11,13 @@ export interface ShareEvent {
     Link: LinkMeta;
 }
 
-type ShareEventManager = EventManager<{ Events: ShareEvent[] }, Promise<void>>;
-
 interface EventManagersByShares {
-    [shareId: string]: ShareEventManager;
+    [shareId: string]: EventManager;
 }
 
 interface EventManagerProviderState {
-    getShareEventManager: (shareId: string) => ShareEventManager;
-    createShareEventManager: (shareId: string) => Promise<ShareEventManager>;
+    getShareEventManager: (shareId: string) => EventManager;
+    createShareEventManager: (shareId: string) => Promise<EventManager>;
 }
 
 const EventManagerContext = createContext<EventManagerProviderState | null>(null);
