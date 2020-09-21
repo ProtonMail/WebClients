@@ -1,20 +1,14 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS, APPS_CONFIGURATION, FEATURE_FLAGS, isSSOMode } from 'proton-shared/lib/constants';
+import { APPS, APPS_CONFIGURATION, FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { AppLink, Icon, SimpleDropdown, Href } from '../../components';
 
-const { PROTONACCOUNT, PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONDRIVE } = APPS;
+const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONDRIVE } = APPS;
 
 const AppsDropdown = () => {
-    const apps = [
-        PROTONMAIL,
-        PROTONCONTACTS,
-        PROTONCALENDAR,
-        FEATURE_FLAGS.includes('drive') && PROTONDRIVE,
-        isSSOMode && PROTONACCOUNT,
-    ]
+    const apps = [PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, FEATURE_FLAGS.includes('drive') && PROTONDRIVE]
         .filter(isTruthy)
         .map((app) => ({
             toApp: app,
