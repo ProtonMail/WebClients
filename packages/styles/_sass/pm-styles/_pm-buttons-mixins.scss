@@ -40,7 +40,7 @@
   }
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
   }
   &[disabled],
   &.is-disabled {
@@ -64,13 +64,13 @@
   &.is-hover,
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
-    background: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     border-color: $pm-primary-light;
     color: $pm-primary-dark;
   }
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
   }
   &[disabled],
   &.is-disabled {
@@ -95,7 +95,7 @@
   }
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
   }
   &[disabled],
   &.is-disabled {
