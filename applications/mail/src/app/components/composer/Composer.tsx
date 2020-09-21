@@ -140,7 +140,7 @@ const Composer = ({
     // Computed composer status
     const syncInProgress = !!syncedMessage.actionInProgress;
     const contentLocked = opening || sending || closing;
-    const actionBarLocked = opening || manualSaving || sending || closing;
+    const actionBarLocked = opening || sending || closing;
 
     // Manage focus from the container yet keeping logic in each component
     const addressesBlurRef = useRef<() => void>(noop);
@@ -357,6 +357,7 @@ const Composer = ({
     const handleSend = useHandler(async () => {
         setSending(true);
         await promiseUploadInProgress.current;
+        // Split handlers to have the updated version of the message
         await handleSendAfterUploads();
     });
 
@@ -382,6 +383,7 @@ const Composer = ({
     const handleClose = async () => {
         setClosing(true);
         try {
+            await promiseUploadInProgress.current;
             if (pendingSave) {
                 await handleManualSave();
             }
@@ -483,6 +485,7 @@ const Composer = ({
                         lock={actionBarLocked}
                         opening={opening}
                         sending={sending}
+                        manualSaving={manualSaving}
                         syncInProgress={syncInProgress}
                         onAddAttachments={handleAddAttachmentsStart}
                         onExpiration={handleExpiration}

@@ -28,6 +28,7 @@ interface Props {
     lock: boolean;
     opening: boolean;
     sending: boolean;
+    manualSaving: boolean;
     syncInProgress: boolean;
     onAddAttachments: (files: File[]) => void;
     onPassword: () => void;
@@ -45,6 +46,7 @@ const ComposerActions = ({
     lock,
     opening,
     sending,
+    manualSaving,
     syncInProgress,
     onAddAttachments,
     onPassword,
@@ -73,6 +75,7 @@ const ComposerActions = ({
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && message.data?.Password;
     const isExpiration = !!message.expiresIn;
     const hasRecipients = getRecipients(message.data).length > 0;
+    const sendDisabled = !hasRecipients || lock;
 
     let dateMessage: string | string[] = '';
     if (opening) {
@@ -157,7 +160,7 @@ const ComposerActions = ({
                     <Button
                         className="inline-flex flex-items-center pm-button--for-icon"
                         icon="save"
-                        disabled={lock}
+                        disabled={lock || manualSaving}
                         onClick={() => onSave()}
                     >
                         <span className="sr-only">{c('Action').t`Save`}</span>
@@ -165,7 +168,7 @@ const ComposerActions = ({
                 </Tooltip>
                 <Button
                     className="pm-button--primary composer-send-button"
-                    disabled={!hasRecipients}
+                    disabled={sendDisabled}
                     loading={sending}
                     onClick={onSend}
                 >
