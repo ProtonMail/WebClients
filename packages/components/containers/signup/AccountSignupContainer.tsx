@@ -607,6 +607,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
             return handleFinalizeSignup();
         };
         const handleBack = () => {
+            humanApi.clearToken();
             setModelDiff({ step: PLANS });
         };
         return (
