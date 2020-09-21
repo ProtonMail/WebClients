@@ -3,7 +3,7 @@ import { useEffect, useCallback } from 'react';
 import useAsync from './useAsync';
 import useApi from './useApi';
 
-type QueryFunction = (...args: any[]) => { method: string; url: string };
+export type QueryFunction = (...args: any[]) => { method: string; url: string };
 
 interface Result<R, U extends any[]> {
     result: R | undefined;

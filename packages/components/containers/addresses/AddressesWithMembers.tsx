@@ -87,10 +87,10 @@ const AddressesWithMembers = ({ match, user, organization }: Props) => {
                     />
                     <TableBody
                         colSpan={showUsername ? 4 : 3}
-                        loading={selectedMembers.some(({ ID }) => !Array.isArray(memberAddressesMap[ID]))}
+                        loading={selectedMembers.some(({ ID }) => !Array.isArray(memberAddressesMap?.[ID]))}
                     >
                         {selectedMembers.flatMap((member) =>
-                            (memberAddressesMap[member.ID] || []).map((address: Address, i: number) => (
+                            (memberAddressesMap?.[member.ID] || []).map((address: Address, i: number) => (
                                 <TableRow
                                     key={address.ID}
                                     cells={[

@@ -193,8 +193,8 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         };
     }, [name, actions, conditions]);
 
-    const reqCreate = useApiWithoutResult(addTreeFilter);
-    const reqUpdate = useApiWithoutResult(updateFilter);
+    const reqCreate = useApiWithoutResult<{ Filter: Filter }>(addTreeFilter);
+    const reqUpdate = useApiWithoutResult<{ Filter: Filter }>(updateFilter);
 
     const createFilter = async (filter: Filter) => {
         try {
