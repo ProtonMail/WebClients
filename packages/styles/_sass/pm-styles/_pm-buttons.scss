@@ -11,6 +11,7 @@
   border-style: solid;
   border-width: 1px;
   text-decoration: none;
+  transition: .15s easing(easeOutQuint), background-position 0s;
   & > button { // this is for drop down buttons
     color: inherit;
   }
@@ -24,9 +25,9 @@
 
 .pm-button {
   border-color: $pm-global-border;
-  background: $white;
+  background-color: $white;
   color: $pm-global-grey;
-  transition: .15s easing(easeOutQuart), background-position 0s;
+
 
   &:hover,
   &:focus,
@@ -38,7 +39,7 @@
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     //background-color: $pm-global-border;
-    background: radial-gradient(closest-side, $white, $pm-global-border 90%);
+    background-image: radial-gradient(closest-side, transparent, rgba(black, .1));
     box-shadow: none;
   }
   &[disabled],
@@ -80,11 +81,11 @@
   &.is-hover {
     color: $white;
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
-    background: $pm-primary-dark;
+    background-color: $pm-primary-dark;
   }
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
-    background: $pm-primary-dark;
+    background-color: $pm-primary-dark;
     text-shadow: 1px 1px 10px rgba( $white, .3 ),-1px -1px 10px rgba( $white, .3 );
     box-shadow: none;
   }
@@ -115,7 +116,7 @@
   &.is-active {
     border-color: $pm-primary-dark;
     color: $pm-primary-dark;
-    background: radial-gradient(closest-side, $white, $pm-global-border 90%);
+    background-image: radial-gradient(closest-side, transparent, rgba(black, .1));
     box-shadow: none;
   }
   &[disabled],
@@ -141,11 +142,11 @@
   &.is-hover {
     color: $white;
     box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
-    background: $pv-green-dark;
+    background-color: $pv-green-dark;
   }
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
-    background: $pv-green-dark;
+    background-color: $pv-green-dark;
     text-shadow: 1px 1px 10px rgba( $white, .3 ),-1px -1px 10px rgba( $white, .3 );
     box-shadow: none;
   }
@@ -176,7 +177,7 @@
   &.is-active {
     border-color: $pv-green-dark;
     color: $pv-green-dark;
-    background: radial-gradient(closest-side, $white, $pm-global-border 90%);
+    background-image: radial-gradient(closest-side, transparent, rgba(black, .1));
     box-shadow: none;
   }
   &[disabled],
