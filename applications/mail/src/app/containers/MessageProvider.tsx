@@ -114,7 +114,7 @@ interface Props {
  * Provider for the message cache and listen to event manager for updates
  */
 const MessageProvider = ({ children, cache: testCache }: Props) => {
-    const { subscribe } = useEventManager<Event>();
+    const { subscribe } = useEventManager();
 
     const realCache: MessageCache = useInstance(() => {
         return createCache();

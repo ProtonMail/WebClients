@@ -54,7 +54,7 @@ export interface Upload<T> {
 
 export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<RequestParams>): Upload<T> => {
     const xhr = new XMLHttpRequest();
-    const { notify, subscribe } = createListeners();
+    const { notify, subscribe } = createListeners<[ProgressEvent], void>();
     const authHeaders = getUIDHeaders(uid) as HTTPHeaders;
 
     const asyncResolution = async () => {
