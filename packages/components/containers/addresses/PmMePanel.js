@@ -22,7 +22,7 @@ const PmMePanel = () => {
                 return (
                     <>
                         <Alert learnMore="https://protonmail.com/support/knowledge-base/pm-me-addresses/">{c('Info')
-                            .t`ProtonMail supports @pm.me email addresses (short for ProtonMail me or Private Message me). Once activate, you can send and receive emails using your @pm.me address and create additional @pm.me addresses by navigating to the addresses section.`}</Alert>
+                            .t`ProtonMail supports @pm.me email addresses (short for ProtonMail me or Private Message me). Once activated, you can send and receive emails using your @pm.me address and create additional @pm.me addresses by navigating to the addresses section.`}</Alert>
                         <PmMeButton />
                     </>
                 );
