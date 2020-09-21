@@ -8,7 +8,7 @@ import plusPlanSvg from 'design-system/assets/img/pv-images/plans/vpnbasic-plan.
 import professionalPlanSvg from 'design-system/assets/img/pv-images/plans/vpnplus-plan.svg';
 import visionaryPlanSvg from 'design-system/assets/img/pv-images/plans/visionary-plan.svg';
 
-import { LinkButton } from '../../../components';
+import { LinkButton, Info } from '../../../components';
 import { useVPNCountries, useModals } from '../../../hooks';
 
 import SubscriptionTable from './SubscriptionTable';
@@ -53,23 +53,55 @@ const VpnSubscriptionTable = ({
                 {
                     icon: 'close',
                     content: (
-                        <del className="opacity-50" key="filesharing">{c('Feature')
-                            .t`Filesharing/bitorrent support`}</del>
+                        <del className="mr0-5" key="filesharing">
+                            <span className="opacity-50 mr0-5">
+                                {c('Plan feature').t`P2P filesharing/BitTorrent support`}
+                            </span>
+                            <Info
+                                title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                                url="https://protonvpn.com/support/p2p-vpn-redirection/"
+                            />
+                        </del>
                     ),
-                },
-                {
-                    icon: 'close',
-                    content: <del className="opacity-50" key="secure">{c('Feature').t`Secure Core and Tor VPN`}</del>,
                 },
                 {
                     icon: 'close',
                     content: (
-                        <del className="opacity-50" key="advanced">{c('Feature').t`Advanced privacy features`}</del>
+                        <del className="mr0-5" key="secure">
+                            <span className="opacity-50 mr0-5"> {c('Plan feature').t`Secure Core VPN`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
+                                url="https://protonvpn.com/support/secure-core-vpn/"
+                            />
+                        </del>
                     ),
                 },
                 {
                     icon: 'close',
-                    content: <del className="opacity-50" key="access">{c('Feature').t`Access blocked content`}</del>,
+                    content: (
+                        <del className="mr0-5" key="advanced">
+                            <span className="opacity-50 mr0-5"> {c('Plan feature').t`Tor over VPN`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Route your Internet traffic through the Tor network with a single click.`}
+                                url="https://protonvpn.com/support/tor-vpn/"
+                            />
+                        </del>
+                    ),
+                },
+                {
+                    icon: 'close',
+                    content: (
+                        <del className="mr0-5" key="access">
+                            <span className="opacity-50 mr0-5"> {c('Plan feature').t`Access blocked content`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                                url="https://protonvpn.com/support/streaming-guide/"
+                            />
+                        </del>
+                    ),
                 },
             ],
         },
@@ -85,20 +117,56 @@ const VpnSubscriptionTable = ({
                 { icon: 'arrow-right', content: c('Feature').t`Servers in ${vpnCountries.basic.length} countries` },
                 { icon: 'arrow-right', content: c('Feature').t`High speed` },
                 { icon: 'arrow-right', content: c('Feature').t`No logs/No ads` },
-                { icon: 'arrow-right', content: c('Feature').t`Filesharing/bitorrent support` },
                 {
-                    icon: 'close',
-                    content: <del className="opacity-50" key="secure">{c('Feature').t`Secure Core and Tor VPN`}</del>,
-                },
-                {
-                    icon: 'close',
+                    icon: 'arrow-right',
                     content: (
-                        <del className="opacity-50" key="advanced">{c('Feature').t`Advanced privacy features`}</del>
+                        <span className="mr0-5">
+                            <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
+                            <Info
+                                title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                                url="https://protonvpn.com/support/p2p-vpn-redirection/"
+                            />
+                        </span>
                     ),
                 },
                 {
                     icon: 'close',
-                    content: <del className="opacity-50" key="access">{c('Feature').t`Access blocked content`}</del>,
+                    content: (
+                        <del className="mr0-5" key="secure">
+                            <span className="opacity-50 mr0-5"> {c('Plan feature').t`Secure Core VPN`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
+                                url="https://protonvpn.com/support/secure-core-vpn/"
+                            />
+                        </del>
+                    ),
+                },
+                {
+                    icon: 'close',
+                    content: (
+                        <del className="mr0-5" key="advanced">
+                            <span className="opacity-50 mr0-5"> {c('Plan feature').t`Tor over VPN`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Route your Internet traffic through the Tor network with a single click.`}
+                                url="https://protonvpn.com/support/tor-vpn/"
+                            />
+                        </del>
+                    ),
+                },
+                {
+                    icon: 'close',
+                    content: (
+                        <del className="mr0-5" key="access">
+                            <span className="opacity-50 mr0-5"> {c('Plan feature').t`Access blocked content`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                                url="https://protonvpn.com/support/streaming-guide/"
+                            />
+                        </del>
+                    ),
                 },
             ],
         },
@@ -114,10 +182,57 @@ const VpnSubscriptionTable = ({
                 { icon: 'arrow-right', content: c('Feature').t`Servers in ${vpnCountries.all.length} countries` },
                 { icon: 'arrow-right', content: c('Feature').t`Highest speed (10 Gbps)` },
                 { icon: 'arrow-right', content: c('Feature').t`No logs/No ads` },
-                { icon: 'arrow-right', content: c('Feature').t`Filesharing/bitorrent support` },
-                { icon: 'arrow-right', content: c('Feature').t`Secure Core and Tor VPN` },
-                { icon: 'arrow-right', content: c('Feature').t`Advanced privacy features` },
-                { icon: 'arrow-right', content: c('Feature').t`Access blocked content` },
+                {
+                    icon: 'arrow-right',
+                    content: (
+                        <span className="mr0-5">
+                            <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
+                            <Info
+                                title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                                url="https://protonvpn.com/support/p2p-vpn-redirection/"
+                            />
+                        </span>
+                    ),
+                },
+                {
+                    icon: 'arrow-right',
+                    content: (
+                        <span className="mr0-5">
+                            <span className="mr0-5">{c('Plan feature').t`Secure Core VPN`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
+                                url="https://protonvpn.com/support/secure-core-vpn/"
+                            />
+                        </span>
+                    ),
+                },
+                {
+                    icon: 'arrow-right',
+                    content: (
+                        <span className="mr0-5">
+                            <span className="mr0-5">{c('Plan feature').t`Tor over VPN`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Route your Internet traffic through the Tor network with a single click.`}
+                                url="https://protonvpn.com/support/tor-vpn/"
+                            />
+                        </span>
+                    ),
+                },
+                {
+                    icon: 'arrow-right',
+                    content: (
+                        <span className="mr0-5">
+                            <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                                url="https://protonvpn.com/support/streaming-guide/"
+                            />
+                        </span>
+                    ),
+                },
             ],
         },
         visionaryPlan && {
@@ -130,7 +245,21 @@ const VpnSubscriptionTable = ({
             features: [
                 { icon: 'arrow-right', content: c('Feature').t`All Plus plan features` },
                 { icon: 'arrow-right', content: c('Feature').t`10 simultaneous VPN connections` },
-                { icon: 'arrow-right', content: c('Feature').t`ProtonMail Visionary account` },
+                {
+                    icon: 'arrow-right',
+                    content: (
+                        <>
+                            <span className="mr0-5">
+                                <span className="mr0-5">{c('Plan Feature').t`ProtonMail Visionary account`}</span>
+                                <Info
+                                    title={c('Info')
+                                        .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`}
+                                    url="https://protonmail.com"
+                                />
+                            </span>
+                        </>
+                    ),
+                },
             ],
         },
     ];
