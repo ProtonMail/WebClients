@@ -110,7 +110,7 @@ function useEvents() {
                 cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted');
             });
 
-            return Promise.allSettled([
+            await Promise.allSettled([
                 trashPromise,
                 Promise.allSettled(createPromises).then(logSettledErrors),
                 Promise.allSettled(updatePromises).then(logSettledErrors),
