@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, createContext, ReactNode, useContext } from 'react';
 import { useApi } from 'react-components';
-import eventManager from 'proton-shared/lib/eventManager/eventManager';
+import eventManager, { EventManager } from 'proton-shared/lib/eventManager/eventManager';
 
 import { queryEvents, queryLatestEvents } from '../../api/share';
 import { LinkMeta } from '../../interfaces/link';
@@ -11,13 +11,15 @@ export interface ShareEvent {
     Link: LinkMeta;
 }
 
+type ShareEventManager = EventManager<{ Events: ShareEvent[] }, Promise<void>>;
+
 interface EventManagersByShares {
-    [shareId: string]: ReturnType<typeof eventManager>;
+    [shareId: string]: ShareEventManager;
 }
 
 interface EventManagerProviderState {
-    getShareEventManager: (shareId: string) => ReturnType<typeof eventManager>;
-    createShareEventManager: (shareId: string) => Promise<ReturnType<typeof eventManager>>;
+    getShareEventManager: (shareId: string) => ShareEventManager;
+    createShareEventManager: (shareId: string) => Promise<ShareEventManager>;
 }
 
 const EventManagerContext = createContext<EventManagerProviderState | null>(null);
