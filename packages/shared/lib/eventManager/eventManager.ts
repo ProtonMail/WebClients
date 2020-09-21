@@ -1,7 +1,7 @@
 import { INTERVAL_EVENT_TIMER } from '../constants';
 import { getEvents } from '../api/events';
 import { onceWithQueue } from '../helpers/onceWithQueue';
-import createListeners from '../helpers/listeners';
+import createListeners, { Listener } from '../helpers/listeners';
 import { Api } from '../interfaces';
 
 const FIBONACCI = [1, 1, 2, 3, 5, 8];
@@ -22,16 +22,26 @@ interface EventManagerConfig {
     query?: (eventID: string) => object;
 }
 
+export interface EventManager<EventModel, ListenerResult = void> {
+    setEventID: (eventID: string) => void;
+    getEventID: () => string | undefined;
+    start: () => void;
+    stop: () => void;
+    call: () => Promise<void>;
+    reset: () => void;
+    subscribe: (listener: Listener<[EventResponse & EventModel], ListenerResult>) => () => void;
+}
+
 /**
  * Create the event manager process.
  */
-export default ({
+const eventManager = <EventModel, ListenerResult>({
     api,
     eventID: initialEventID,
     interval = INTERVAL_EVENT_TIMER,
     query = getEvents,
-}: EventManagerConfig) => {
-    const listeners = createListeners();
+}: EventManagerConfig): EventManager<EventModel, ListenerResult> => {
+    const listeners = createListeners<[EventResponse & EventModel], ListenerResult>();
 
     if (!initialEventID) {
         throw new Error('eventID must be provided.');
@@ -131,7 +141,7 @@ export default ({
                     throw new Error('EventID undefined');
                 }
 
-                const result = await api<EventResponse>({
+                const result = await api<EventResponse & EventModel>({
                     ...query(eventID),
                     signal: abortController.signal,
                     silence: true,
@@ -151,7 +161,7 @@ export default ({
             delete STATE.abortController;
             start();
         } catch (error) {
-            listeners.notify({ error });
+            listeners.notify({ error } as any);
             delete STATE.abortController;
             increaseRetryIndex();
             start();
@@ -169,3 +179,5 @@ export default ({
         subscribe: listeners.subscribe,
     };
 };
+
+export default eventManager;

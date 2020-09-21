@@ -1,4 +1,5 @@
 import { Key } from './Key';
+import { USER_ROLES } from '../constants';
 
 export interface User {
     ID: string;
@@ -8,7 +9,7 @@ export interface User {
     Credit: number;
     MaxSpace: number;
     MaxUpload: number;
-    Role: number;
+    Role: USER_ROLES;
     Private: number;
     Subscribed: number;
     Services: number;

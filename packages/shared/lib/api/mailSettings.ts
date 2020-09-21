@@ -41,7 +41,7 @@ export const updateSignature = (Signature: string) => ({
     data: { Signature },
 });
 
-export const updatePMSignature = (PMSignature: string) => ({
+export const updatePMSignature = (PMSignature: number) => ({
     url: 'mail/v4/settings/pmsignature',
     method: 'put',
     data: { PMSignature },

@@ -1,9 +1,5 @@
-const PENDING = 1;
-const RESOLVED = 2;
-const REJECTED = 3;
-
-export const STATUS = {
-    PENDING,
-    RESOLVED,
-    REJECTED,
-} as const;
+export enum STATUS {
+    PENDING = 1,
+    RESOLVED = 2,
+    REJECTED = 3,
+}
