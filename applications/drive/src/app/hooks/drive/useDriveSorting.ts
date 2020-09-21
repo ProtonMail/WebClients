@@ -1,7 +1,7 @@
 import { useCache, useMultiSortedList } from 'react-components';
 import { SortConfig } from 'react-components/hooks/useSortedList';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import { DEFAULT_SORT_PARAMS, DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../../constants';
+import { DEFAULT_SORT_PARAMS } from '../../constants';
 import { LinkMeta, SortKeys } from '../../interfaces/link';
 
 type SortParams = typeof DEFAULT_SORT_PARAMS;
@@ -33,7 +33,7 @@ function useDriveSorting(getList: (sortParams: SortParams) => LinkMeta[]) {
     const sortParams: SortParams = cache.get(SORT_CACHE_KEY);
     const { sortedList, setConfigs } = useMultiSortedList(
         getList(sortParams),
-        getConfig(DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER)
+        getConfig(sortParams.sortField, sortParams.sortOrder)
     );
 
     const setSorting = (sortField: SortKeys, sortOrder: SORT_DIRECTION) => {
