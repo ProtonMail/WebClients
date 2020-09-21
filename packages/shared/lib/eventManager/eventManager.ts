@@ -22,26 +22,28 @@ interface EventManagerConfig {
     query?: (eventID: string) => object;
 }
 
-export interface EventManager<EventModel, ListenerResult = void> {
+export type SubscribeFn = <A extends any[], R = void>(listener: Listener<A, R>) => () => void;
+
+export interface EventManager {
     setEventID: (eventID: string) => void;
     getEventID: () => string | undefined;
     start: () => void;
     stop: () => void;
     call: () => Promise<void>;
     reset: () => void;
-    subscribe: (listener: Listener<[EventResponse & EventModel], ListenerResult>) => () => void;
+    subscribe: SubscribeFn;
 }
 
 /**
  * Create the event manager process.
  */
-const eventManager = <EventModel, ListenerResult>({
+const eventManager = ({
     api,
     eventID: initialEventID,
     interval = INTERVAL_EVENT_TIMER,
     query = getEvents,
-}: EventManagerConfig): EventManager<EventModel, ListenerResult> => {
-    const listeners = createListeners<[EventResponse & EventModel], ListenerResult>();
+}: EventManagerConfig): EventManager => {
+    const listeners = createListeners<[EventResponse]>();
 
     if (!initialEventID) {
         throw new Error('eventID must be provided.');
@@ -141,7 +143,7 @@ const eventManager = <EventModel, ListenerResult>({
                     throw new Error('EventID undefined');
                 }
 
-                const result = await api<EventResponse & EventModel>({
+                const result = await api<EventResponse>({
                     ...query(eventID),
                     signal: abortController.signal,
                     silence: true,
@@ -176,7 +178,7 @@ const eventManager = <EventModel, ListenerResult>({
         stop,
         call,
         reset,
-        subscribe: listeners.subscribe,
+        subscribe: listeners.subscribe as SubscribeFn,
     };
 };
 

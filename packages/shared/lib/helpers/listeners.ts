@@ -6,7 +6,7 @@ export interface Listeners<A extends any[], R> {
     clear: () => void;
 }
 
-const createListeners = <A extends any[], R>(): Listeners<A, R> => {
+const createListeners = <A extends any[], R = void>(): Listeners<A, R> => {
     let listeners: Listener<A, R>[] = [];
 
     const notify = (...args: A) => {
