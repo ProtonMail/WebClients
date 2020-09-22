@@ -275,9 +275,9 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
                         handleNewPassword();
                     }}
                 >
-                    <div className="flex flex-nowrap">
+                    <div className="flex flex-nowrap onmobile-flex-column mb1">
                         <SignupLabelInputRow
-                            className="mr0-5"
+                            className="mr0-5 flex-item-fluid onmobile-mr0"
                             label={<Label htmlFor="new-password">{c('Label').t`Password`}</Label>}
                             input={
                                 <PasswordInput
@@ -291,7 +291,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
                             }
                         />
                         <SignupLabelInputRow
-                            className="ml0-5"
+                            className="ml0-5 flex-item-fluid onmobile-ml0"
                             label={<Label htmlFor="confirm-password">{c('Label').t`Confirm`}</Label>}
                             input={
                                 <PasswordInput
