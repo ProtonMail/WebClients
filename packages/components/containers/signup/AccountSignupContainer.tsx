@@ -611,10 +611,15 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
             setModelDiff({ step: PLANS });
         };
         return (
-            <Layout title={c('Title').t`Are you human?`} left={<BackButton onClick={handleBack} />}>
+            <Layout
+                title={c('Title').t`Are you human?`}
+                subtitle={c('Info').t`To fight spam and abuse, please verify you are human.`}
+                left={<BackButton onClick={handleBack} />}
+            >
                 <HumanVerificationForm
                     token={model.humanVerificationToken}
                     methods={model.humanVerificationMethods}
+                    mode="signup"
                     onSubmit={handleSubmit}
                 />
             </Layout>

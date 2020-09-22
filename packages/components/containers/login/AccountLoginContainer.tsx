@@ -134,7 +134,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }:
         };
 
         const signupLink = (
-            <Link key="signupLink" className="nodecoration" to="/signup">{c('Link').t`Create an account`}</Link>
+            <Link key="signupLink" to="/signup">{c('Link').t`Create an account`}</Link>
         );
 
         const usernameInput = (

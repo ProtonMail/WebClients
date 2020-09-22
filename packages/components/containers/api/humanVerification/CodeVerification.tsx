@@ -4,8 +4,9 @@ import { isNumber } from 'proton-shared/lib/helpers/validators';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { c } from 'ttag';
-import { Alert, EmailInput, Input, IntlTelInput, InlineLinkButton, PrimaryButton } from '../../../components';
+import { EmailInput, Input, IntlTelInput, InlineLinkButton, PrimaryButton, Label } from '../../../components';
 import { useApi, useLoading, useModals, useNotifications } from '../../../hooks';
+import { classnames } from '../../../helpers';
 
 import RequestNewCodeModal from './RequestNewCodeModal';
 import InvalidVerificationCodeModal from './InvalidVerificationCodeModal';
@@ -23,9 +24,10 @@ const METHODS = {
 interface Props {
     email?: string;
     method: 'email' | 'sms';
+    mode: 'signup' | undefined;
     onSubmit: (token: string) => void;
 }
-const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props) => {
+const CodeVerification = ({ email: defaultEmail = '', mode, method, onSubmit }: Props) => {
     const isEmailMethod = method === METHODS.EMAIL;
     const isSmsMethod = method === METHODS.SMS;
     const inputCodeRef = useRef<HTMLInputElement>(null);
@@ -84,7 +86,8 @@ const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props)
         };
         return (
             <>
-                <label htmlFor="email" className="bl mb0-5">{c('Label').t`Email address`}</label>
+                <Label htmlFor="email" className={classnames(['bl', mode !== 'signup' && 'mb0-5'])}>{c('Label')
+                    .t`Email address`}</Label>
                 <div className="mb1">
                     <EmailInput
                         id="email"
@@ -101,7 +104,7 @@ const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props)
                         required
                     />
                 </div>
-                <div className="alignright">
+                <div className="alignright mt2">
                     <PrimaryButton
                         disabled={!email || !validateEmailAddress(email)}
                         loading={loadingCode}
@@ -116,7 +119,8 @@ const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props)
         const handleChangePhone = (status: any, value: any, countryData: any, number: string) => setPhone(number);
         return (
             <>
-                <label htmlFor="phone" className="bl mb0-5">{c('Label').t`Phone number`}</label>
+                <Label htmlFor="phone" className={classnames(['bl', mode !== 'signup' && 'mb0-5'])}>{c('Label')
+                    .t`Phone number`}</Label>
                 <div className="mb1">
                     <IntlTelInput
                         id="phone"
@@ -129,7 +133,7 @@ const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props)
                         required
                     />
                 </div>
-                <div className="alignright">
+                <div className="alignright mt2">
                     <PrimaryButton
                         disabled={!phone}
                         loading={loadingCode}
@@ -152,15 +156,16 @@ const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props)
         return (
             <>
                 {(isEmailMethod ? email : phone) ? (
-                    <Alert>
+                    <div className="mt0-5 mb0-5">
                         <div>{c('Info').jt`Enter the verification code that was sent to ${destinationText}.`}</div>
                         {isEmailMethod ? (
                             <div>{c('Info')
                                 .t`If you don't find the email in your inbox, please check your spam folder.`}</div>
                         ) : null}
-                    </Alert>
+                    </div>
                 ) : null}
-                <label htmlFor="code" className="bl mb0-5">{c('Label').t`Verification code`}</label>
+                <Label htmlFor="code" className={classnames(['bl', mode !== 'signup' && 'mb0-5'])}>{c('Label')
+                    .t`Verification code`}</Label>
                 <div className="mb0-5">
                     <Input
                         id="code"
@@ -194,7 +199,7 @@ const CodeVerification = ({ email: defaultEmail = '', method, onSubmit }: Props)
                         }
                     >{c('Action').t`Did not receive the code?`}</InlineLinkButton>
                 </div>
-                <div className="alignright">
+                <div className="alignright mt2">
                     <InlineLinkButton onClick={editDestination} className="mr1">{c('Action')
                         .t`Change verification`}</InlineLinkButton>
                     <PrimaryButton

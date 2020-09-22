@@ -39,7 +39,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const [availableDomain = ''] = model.domains;
-    const loginLink = <Link key="loginLink" className="nodecoration" to="/login">{c('Link').t`Sign in`}</Link>;
+    const loginLink = <Link key="loginLink" to="/login">{c('Link').t`Sign in`}</Link>;
     const disableSubmit = !!(
         (model.step === ACCOUNT_CREATION_USERNAME && errors.username) ||
         (model.step === ACCOUNT_CREATION_EMAIL && errors.email) ||

@@ -29,12 +29,12 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
     const termsLink = (
         <Href
             key="terms"
-            className="signup-footer-link nodecoration"
+            className="signup-footer-link"
             href="https://protonmail.com/terms-and-conditions"
         >{c('Link').t`Terms`}</Href>
     );
     const privacyLink = (
-        <Href key="privacy" className="signup-footer-link nodecoration" href="https://protonmail.com/privacy-policy">{c(
+        <Href key="privacy" className="signup-footer-link" href="https://protonmail.com/privacy-policy">{c(
             'Link'
         ).t`Privacy policy`}</Href>
     );
@@ -53,7 +53,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                                 larger ? '' : 'mw50e',
                             ])}
                         >
-                            <main className="p2 onmobile-p1 flex-item-fluid signLayout-main flex-noMinChildren flex-column flex-nowrap">
+                            <main className="onmobile-p1 flex-item-fluid signLayout-main flex-noMinChildren flex-column flex-nowrap">
                                 <header className="flex flex-items-center flex-nowrap mb2">
                                     <span className="flex-item-fluid flex">{left}</span>
                                     <span className="aligncenter flex w70p">{center}</span>
@@ -72,7 +72,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                                     <span className="flex-item-fluid">
                                         {locales ? (
                                             <PublicLanguageSelect
-                                                className="support-dropdown-button link nodecoration"
+                                                className="support-dropdown-button link"
                                                 locales={locales}
                                             />
                                         ) : null}

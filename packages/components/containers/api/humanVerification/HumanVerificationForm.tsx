@@ -11,10 +11,11 @@ import RequestInvite from './RequestInvite';
 interface Props {
     onSubmit: (token: string, tokenType: HumanVerificationMethodType) => void;
     token: string;
+    mode?: 'signup' | undefined;
     methods: HumanVerificationMethodType[];
 }
 
-const HumanVerificationForm = ({ methods, token, onSubmit }: Props) => {
+const HumanVerificationForm = ({ methods, mode, token, onSubmit }: Props) => {
     const tabs = [
         methods.includes('captcha') && {
             method: 'captcha',
@@ -24,12 +25,12 @@ const HumanVerificationForm = ({ methods, token, onSubmit }: Props) => {
         methods.includes('email') && {
             method: 'email',
             title: c('Human verification method').t`Email`,
-            content: <CodeVerification onSubmit={(token) => onSubmit(token, 'email')} method="email" />,
+            content: <CodeVerification mode={mode} onSubmit={(token) => onSubmit(token, 'email')} method="email" />,
         },
         methods.includes('sms') && {
             method: 'sms',
             title: c('Human verification method').t`SMS`,
-            content: <CodeVerification onSubmit={(token) => onSubmit(token, 'sms')} method="sms" />,
+            content: <CodeVerification mode={mode} onSubmit={(token) => onSubmit(token, 'sms')} method="sms" />,
         },
         methods.includes('invite') && {
             method: 'invite',
@@ -52,9 +53,12 @@ const HumanVerificationForm = ({ methods, token, onSubmit }: Props) => {
                         .t`Your email or phone number will only be used for this one-time verification.`}</span>
                     <LearnMore url="https://protonmail.com/support/knowledge-base/human-verification/" />
                 </p>
-            ) : (
-                <p>{c('Info').t`To fight spam and abuse, please verify you are human.`}</p>
-            )}
+            ) :
+                 mode !== 'signup' ? (
+                    <p>{c('Info').t`To fight spam and abuse, please verify you are human.`}</p>
+                )
+                : null
+            }
             <Tabs tabs={tabs} value={index} onChange={setIndex} />
         </>
     );
