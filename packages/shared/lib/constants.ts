@@ -534,9 +534,9 @@ export const ENCRYPTION_CONFIGS = {
 
 export enum KEY_FLAG {
     // Key can be used to encrypt
-    ENCRYPT = 2,
+    FLAG_NOT_OBSOLETE = 2,
     // Key can be used to verify signatures
-    VERIFY = 1,
+    FLAG_NOT_COMPROMISED = 1,
 }
 
 export enum USER_STATUS {

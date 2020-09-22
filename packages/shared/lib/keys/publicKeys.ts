@@ -18,7 +18,7 @@ export const getIsInternalUser = ({ RecipientType }: ApiKeysConfig): boolean => 
  * Test if no key is enabled
  */
 export const isDisabledUser = (config: ApiKeysConfig): boolean =>
-    getIsInternalUser(config) && !config.Keys.some(({ Flags }) => hasBit(Flags, KEY_FLAG.ENCRYPT));
+    getIsInternalUser(config) && !config.Keys.some(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_OBSOLETE));
 
 export const getEmailMismatchWarning = (publicKey: OpenPGPKey, emailAddress: string, isInternal: boolean): string[] => {
     const normalizedEmail = normalizeEmail(emailAddress, isInternal);
@@ -120,7 +120,7 @@ export const getKeyVerificationOnlyStatus = (publicKey: OpenPGPKey, config: ApiK
     if (index === -1) {
         return undefined;
     }
-    return !hasBit(config.Keys[index].Flags, KEY_FLAG.ENCRYPT);
+    return !hasBit(config.Keys[index].Flags, KEY_FLAG.FLAG_NOT_OBSOLETE);
 };
 
 /**
