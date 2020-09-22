@@ -27,7 +27,7 @@ const CONFIG: { [key: string]: any } = {
         ADD_TAGS: ['proton-src', 'base', 'proton-svg'],
         ADD_ATTR: ['target', 'proton-src'],
         FORBID_TAGS: ['style', 'input', 'form'],
-        FORBID_ATTR: ['srcset'],
+        FORBID_ATTR: ['srcset', 'for'],
     },
     // When we display a message we need to be global and return more informations
     raw: { WHOLE_DOCUMENT: true, RETURN_DOM: true },
