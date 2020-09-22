@@ -30,7 +30,12 @@ export const useMarkAs = () => {
         const rollback = optimisticMarkAs(elements, labelID, { status });
         const request = async () => {
             try {
-                await api(action(elements.map((element) => element.ID)));
+                await api(
+                    action(
+                        elements.map((element) => element.ID),
+                        labelID
+                    )
+                );
             } catch (error) {
                 rollback();
                 throw error;
