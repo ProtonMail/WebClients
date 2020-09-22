@@ -16,14 +16,14 @@ import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 
 // These imports must go to proton-shared
-import { CreatedDriveVolumeResult } from '../../interfaces/volume';
+import { CreatedDriveVolumeResult, DriveVolume } from '../../interfaces/volume';
 import { UserShareResult, ShareMeta } from '../../interfaces/share';
 import { LinkMeta, isFolderLinkMeta, LinkMetaResult, LinkChildrenResult, LinkType } from '../../interfaces/link';
 import { queryCreateDriveVolume } from '../../api/volume';
 import { queryUserShares, queryShareMeta, queryRenameLink, queryMoveLink } from '../../api/share';
 import { queryGetLink } from '../../api/link';
 import { queryFolderChildren, queryCreateFolder } from '../../api/folder';
-import { LinkKeys, DriveCacheProvider } from '../../components/DriveCache/DriveCacheProvider';
+import { LinkKeys, DriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { validateLinkName, ValidationError } from '../validation';
 import { FOLDER_PAGE_SIZE, DEFAULT_SORT_PARAMS, MAX_THREADS_PER_REQUEST } from '../../constants';
 import { PrimaryAddressKey, VerificationKeys } from './driveCrypto';
@@ -37,8 +37,8 @@ export interface FetchLinkConfig {
 
 export const createVolumeAsync = async (
     api: Api,
-    getPrimaryAddressKey: () => Promise<PrimaryAddressKey>,
-    cache: DriveCacheProvider
+    cache: DriveCache,
+    getPrimaryAddressKey: () => Promise<PrimaryAddressKey>
 ) => {
     const { address, privateKey } = await getPrimaryAddressKey();
     const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
@@ -59,7 +59,7 @@ export const createVolumeAsync = async (
     return Volume;
 };
 
-export const getUserSharesAsync = async (api: Api, cache: DriveCacheProvider) => {
+export const getUserSharesAsync = async (api: Api, cache: DriveCache) => {
     const shares = cache.get.shareIds();
 
     if (shares.length) {
@@ -73,7 +73,7 @@ export const getUserSharesAsync = async (api: Api, cache: DriveCacheProvider) =>
 
 export const getShareMetaAsync = async (
     api: Api,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string
 ) => {
@@ -91,30 +91,30 @@ export const getShareMetaAsync = async (
 };
 
 export const initDriveAsync = async (
-    api: Api,
-    getPrimaryAddressKey: () => Promise<PrimaryAddressKey>,
-    createOnboardingModal: () => void,
-    subscribeToEvents: (shareId: string) => Promise<void>,
-    cache: DriveCacheProvider
+    cache: DriveCache,
+    createVolume: () => Promise<DriveVolume>,
+    getUserShares: () => Promise<string[]>,
+    getShareMeta: (shareId: string) => Promise<ShareMeta>,
+    createOnboardingModal: () => void
 ) => {
-    const shareIds = await getUserSharesAsync(api, cache);
+    const shareIds = await getUserShares();
     let shareId = shareIds[0];
 
     if (shareId) {
         cache.set.emptyShares(shareIds);
     } else {
-        const { Share } = await createVolumeAsync(api, getPrimaryAddressKey, cache);
+        const { Share } = await createVolume();
         createOnboardingModal();
         shareId = Share.ID;
     }
 
-    return getShareMetaAsync(api, cache, subscribeToEvents, shareId);
+    return getShareMeta(shareId);
 };
 
 export const getShareKeysAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string
 ) => {
@@ -152,7 +152,7 @@ export const decryptLinkAsync = async (meta: LinkMeta, privateKey: OpenPGPKey): 
 export const decryptLinkPassphraseAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string,
     meta: LinkMeta,
@@ -185,7 +185,7 @@ export const decryptLinkPassphraseAsync = async (
 export const getLinkKeysAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string,
     linkId: string,
@@ -236,7 +236,7 @@ export const getLinkKeysAsync = async (
 export const getLinkMetaAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string,
     linkId: string,
@@ -265,7 +265,7 @@ export const getLinkMetaAsync = async (
 const fetchNextFoldersOnlyContentsAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string,
     linkId: string
@@ -293,7 +293,7 @@ const fetchNextFoldersOnlyContentsAsync = async (
 export const getFoldersOnlyMetasAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string,
     linkId: string,
@@ -312,7 +312,7 @@ export const getFoldersOnlyMetasAsync = async (
 export const fetchNextFolderContentsAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string,
     linkId: string,
@@ -343,7 +343,7 @@ export const fetchNextFolderContentsAsync = async (
 export const fetchAllFolderPagesAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string,
     linkId: string
@@ -357,7 +357,7 @@ export const fetchAllFolderPagesAsync = async (
 export const renameLinkAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string,
     linkId: string,
@@ -408,7 +408,7 @@ export const createNewFolderAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
     getPrimaryAddressKey: () => Promise<PrimaryAddressKey>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     shareId: string,
     ParentLinkID: string,
@@ -460,7 +460,7 @@ export const moveLinkAsync = async (
     api: Api,
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
     getPrimaryAddressKey: () => Promise<PrimaryAddressKey>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     eventsCall: (shareId: string) => Promise<void>,
     shareId: string,
@@ -517,7 +517,7 @@ export const moveLinksAsync = async (
     getVerificationKeys: (email: string) => Promise<VerificationKeys>,
     getPrimaryAddressKey: () => Promise<PrimaryAddressKey>,
     preventLeave: <T>(task: Promise<T>) => Promise<T>,
-    cache: DriveCacheProvider,
+    cache: DriveCache,
     subscribeToEvents: (shareId: string) => Promise<void>,
     eventsCall: (shareId: string) => Promise<void>,
     shareId: string,
