@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { noop } from 'proton-shared/lib/helpers/function';
 import ErrorBoundary from '../../containers/app/ErrorBoundary';
 import useAppTitle from '../../hooks/useAppTitle';
 import SettingsTitle from '../container/SettingsTitle';
@@ -6,6 +7,8 @@ import SubSettingsSection from './SubSettingsSection';
 import PrivateMainArea from './PrivateMainArea';
 import { SubSectionConfig, SettingsPropsShared } from './interface';
 import useActiveSection from './useActiveSection';
+
+import createScrollIntoView from '../../helpers/createScrollIntoView';
 
 interface Props extends SettingsPropsShared {
     title: string;
@@ -16,6 +19,7 @@ interface Props extends SettingsPropsShared {
 const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, subsections }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const [scrollTop, setScrollTop] = useState<number>(0);
+    const useIntersectionSection = useRef(false);
 
     useAppTitle(title);
 
@@ -31,22 +35,63 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, 
 
     useEffect(() => {
         const { hash } = location;
+
         if (!hash) {
+            useIntersectionSection.current = true;
             return;
         }
 
-        // Need a delay to let the navigation end
-        const handle = setTimeout(() => {
-            const el = mainAreaRef.current?.querySelector(hash);
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }, 100);
+        if (!mainAreaRef.current) {
+            return;
+        }
+        const mainArea = mainAreaRef.current;
+        const el = mainArea.querySelector(hash);
+        if (!el) {
+            return;
+        }
 
-        return () => clearTimeout(handle);
-    }, [location.hash]);
+        useIntersectionSection.current = false;
+        setActiveSection(hash.slice(1));
 
-    const observer = useActiveSection(setActiveSection);
+        const abortScroll = createScrollIntoView(el, mainArea, true);
+        let removeListeners: () => void;
+
+        const abort = () => {
+            useIntersectionSection.current = true;
+            abortScroll();
+            removeListeners?.();
+        };
+
+        const options = {
+            passive: true,
+            capture: true,
+        };
+
+        // Abort on any user interaction such as scrolling, touching, or keyboard interaction
+        window.addEventListener('wheel', abort, options);
+        window.addEventListener('keydown', abort, options);
+        window.addEventListener('mousedown', abort, options);
+        window.addEventListener('touchstart', abort, options);
+        // Automatically abort after some time where it's assumed to have successfully scrolled into place.
+        const timeoutId = window.setTimeout(abort, 15000);
+
+        removeListeners = () => {
+            window.removeEventListener('wheel', abort, options);
+            window.removeEventListener('keydown', abort, options);
+            window.removeEventListener('mousedown', abort, options);
+            window.removeEventListener('touchstart', abort, options);
+            window.clearTimeout(timeoutId);
+        };
+
+        return () => {
+            abort();
+        };
+        // Listen to location instead of location.hash since it's possible to click the same #section multiple times and end up with a new entry in history
+    }, [location]);
+
+    // Don't always use the observer section observed value since it can not go to sections that are at the bottom or too small.
+    // In those cases it can be overridden by clicking on a specific section
+    const observer = useActiveSection(useIntersectionSection.current ? setActiveSection : noop);
 
     const wrappedSections = React.Children.toArray(children)
         .filter(React.isValidElement)
