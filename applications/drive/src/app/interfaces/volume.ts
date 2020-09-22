@@ -10,14 +10,16 @@ export interface CreateDriveVolume {
     FolderHashKey: string;
 }
 
-export interface CreatedDriveVolumeResult {
-    Volume: {
+export interface DriveVolume {
+    ID: string;
+    Share: {
         ID: string;
-        Share: {
-            ID: string;
-            LinkID: string;
-        };
+        LinkID: string;
     };
+}
+
+export interface CreatedDriveVolumeResult {
+    Volume: DriveVolume;
 }
 
 export enum InitStatusCodes {

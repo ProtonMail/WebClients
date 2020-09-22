@@ -26,6 +26,8 @@ import {
     createNewFolderAsync,
     moveLinkAsync,
     moveLinksAsync,
+    createVolumeAsync,
+    getUserSharesAsync,
 } from '../../utils/drive/drive';
 
 function useDrive() {
@@ -43,17 +45,17 @@ function useDrive() {
         return shareMeta;
     };
 
+    const createVolume = async () => {
+        return createVolumeAsync(debouncedRequest, cache, getPrimaryAddressKey);
+    };
+
+    const getUserShares = async () => {
+        return getUserSharesAsync(debouncedRequest, cache);
+    };
+
     const initDrive = async () => {
         const createOnboardingModal = () => createModal(<OnboardingModal />);
-        const shareMeta = await initDriveAsync(
-            debouncedRequest,
-            getPrimaryAddressKey,
-            createOnboardingModal,
-            events.subscribe,
-            cache
-        );
-
-        return shareMeta;
+        return initDriveAsync(cache, createVolume, getUserShares, getShareMeta, createOnboardingModal);
     };
 
     const getShareKeys = async (shareId: string) => {

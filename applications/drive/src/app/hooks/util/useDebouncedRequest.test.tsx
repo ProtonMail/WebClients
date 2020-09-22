@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 import { useApi, CacheProvider } from 'react-components';
@@ -16,11 +17,10 @@ describe('useDebouncedRequest', () => {
 
     beforeEach(() => {
         const cache = createCache();
-        const Wrapper = ({ children }: { children?: React.ReactNode }) => (
-            <CacheProvider cache={cache}>{children as any}</CacheProvider>
-        );
         const { result } = renderHook(() => useDebouncedRequest(), {
-            wrapper: Wrapper,
+            wrapper: ({ children }: { children?: React.ReactNode }) => (
+                <CacheProvider cache={cache}>{children}</CacheProvider>
+            ),
         });
         debouncedRequest = result.current;
         mockApi.mockClear();
