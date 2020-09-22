@@ -100,6 +100,7 @@ const UserDropdown = ({ ...rest }) => {
                                         toApp={getAccountSettingsApp()}
                                         className="small link m0 ml0-5"
                                         title={c('Apps dropdown').t`Add storage space`}
+                                        onClick={() => close()}
                                     >
                                         {c('Action').t`Add storage`}
                                     </AppLink>
@@ -109,6 +110,7 @@ const UserDropdown = ({ ...rest }) => {
                                     to="/"
                                     className="bl w100 mt1-5 mb1-5 aligncenter pm-button pm-button--primaryborder"
                                     toApp={getAccountSettingsApp()}
+                                    onClick={() => close()}
                                 >
                                     {c('Action').t`Manage account`}
                                 </AppLink>
@@ -134,6 +136,7 @@ const UserDropdown = ({ ...rest }) => {
                             href="https://shop.protonmail.com"
                             // eslint-disable-next-line react/jsx-no-target-blank
                             target="_blank"
+                            onClick={() => close()}
                         >
                             <Icon className="mt0-25 mr0-5" name="shop" />
                             {c('Action').t`Proton shop`}
