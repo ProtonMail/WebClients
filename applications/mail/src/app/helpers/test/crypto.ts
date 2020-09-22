@@ -19,7 +19,6 @@ import { addressKeysCache, resolvedRequest, cache } from './cache';
 import { addApiMock } from './api';
 import { base64ToArray } from '../base64';
 
-const { ENCRYPT, VERIFY } = KEY_FLAG;
 const { TYPE_INTERNAL, TYPE_EXTERNAL } = RECIPIENT_TYPES;
 
 const init = (pmcrypto as any).init as (openpgp: any) => void;
@@ -49,7 +48,12 @@ const addApiKeysMock = () => {
             const key = apiKeys.get(email) as ApiKey;
             return {
                 RecipientType: key.isInternal ? TYPE_INTERNAL : TYPE_EXTERNAL,
-                Keys: [{ Flags: ENCRYPT | VERIFY, PublicKey: key.key.publicKeyArmored }]
+                Keys: [
+                    {
+                        Flags: KEY_FLAG.FLAG_NOT_OBSOLETE | KEY_FLAG.FLAG_NOT_COMPROMISED,
+                        PublicKey: key.key.publicKeyArmored
+                    }
+                ]
             };
         }
         return {};
