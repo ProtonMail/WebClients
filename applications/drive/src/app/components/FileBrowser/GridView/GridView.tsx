@@ -143,7 +143,7 @@ function GridView({
         >
             {rect && (
                 <FixedSizeGrid
-                    style={{ overflowX: 'hidden' }}
+                    style={{ overflowX: 'hidden', paddingBottom: '1.5em' }}
                     itemData={itemData}
                     columnWidth={cellWidth}
                     rowHeight={cellHeight}
