@@ -90,7 +90,7 @@ const SessionsSection = () => {
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/">{c('Info')
-                .t`Unless you explicitly sign out or change your password, sessions can last for up to 6 months. Sessions expire after 2 weeks of inactivity.`}</Alert>
+                .t`Unless you explicitly sign out or change your password, sessions remain active and only expire after 30 days of inactivity.`}</Alert>
             <Block className="flex flex-spacebetween">
                 <div>
                     <Button onClick={handleOpenModal}>{c('Action').t`Revoke all other sessions`}</Button>
