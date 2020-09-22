@@ -95,7 +95,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                                 />
                             </div>
                             <span className="flex right-text absolute">
-                                <span className="right-text-inner">@{availableDomain}</span>
+                                <span className="right-text-inner mauto">@{availableDomain}</span>
                             </span>
                         </div>
                     </Challenge>

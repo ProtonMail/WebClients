@@ -23,7 +23,6 @@ $default-height-fields: 4.1rem;
 		}
 	}
 
-	.pm-field:not(textarea),
 	.pm-field-icon-container:not(textarea) {
 		height: auto;
 	}
@@ -37,11 +36,12 @@ $default-height-fields: 4.1rem;
 	}
 	.right-icon,
 	.right-text,
-	select.pm-field {
+	select.pm-field,
+	.pm-field:not(textarea) {
 		height: $default-height-fields;
 	}
 	.right-text-inner {
-		padding-bottom: 0.1rem;
+		padding-bottom: 0;
 	}
 
 	.signup-container {
@@ -49,10 +49,9 @@ $default-height-fields: 4.1rem;
 		min-height: 35em;
 
 		// fix for plans, same as in subscription flow
-		&:not(.mw50e){
+		&:not(.mw50e) {
 			max-width: 150rem;
 		}
-
 
 		.payment-left {
 			width: 15em;
@@ -83,7 +82,6 @@ $default-height-fields: 4.1rem;
 .signLayout-main {
 	padding: em(24) em(48);
 }
-
 
 /* label size */
 .payment-container {

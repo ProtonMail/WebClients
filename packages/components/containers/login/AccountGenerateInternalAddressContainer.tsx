@@ -148,7 +148,7 @@ const AccountGenerateInternalAddressContainer = ({
                             </div>
                             {availableDomains.length ? (
                                 <span className="flex right-text absolute">
-                                    <span className="right-text-inner">@{availableDomains[0]}</span>
+                                    <span className="right-text-inner mauto">@{availableDomains[0]}</span>
                                 </span>
                             ) : null}
                         </div>
