@@ -492,7 +492,7 @@ export const PLAN_NAMES = {
 
 export enum COUPON_CODES {
     BUNDLE = 'BUNDLE',
-    PMTEAM = 'PMTEAM',
+    PROTONTEAM = 'PROTONTEAM',
     BLACK_FRIDAY_2018 = 'TWO4ONE2018',
     LIFETIME = 'LIFETIME',
 }
