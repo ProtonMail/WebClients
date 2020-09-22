@@ -5,7 +5,7 @@ import { COUPON_CODES, BLACK_FRIDAY } from 'proton-shared/lib/constants';
 
 import { Badge } from '../../components';
 
-const { BUNDLE, PMTEAM, BLACK_FRIDAY_2018 } = COUPON_CODES;
+const { BUNDLE, PROTONTEAM, BLACK_FRIDAY_2018 } = COUPON_CODES;
 
 const DiscountBadge = ({ code }) => {
     if (code === BUNDLE) {
@@ -32,7 +32,7 @@ const DiscountBadge = ({ code }) => {
         );
     }
 
-    if (code === PMTEAM) {
+    if (code === PROTONTEAM) {
         return <Badge type="success">-100%</Badge>;
     }
 

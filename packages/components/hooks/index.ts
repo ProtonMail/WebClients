@@ -1,6 +1,7 @@
 export { default as useBeforeUnload } from './useBeforeUnload';
 export { useUser, useGetUser } from './useUser';
 export { default as useUserVPN } from './useUserVPN';
+export { default as useApps } from './useApps';
 export { default as useBlackFriday } from './useBlackFriday';
 export { default as useCachedModelResult } from './useCachedModelResult';
 export { default as usePromiseResult } from './usePromiseResult';
