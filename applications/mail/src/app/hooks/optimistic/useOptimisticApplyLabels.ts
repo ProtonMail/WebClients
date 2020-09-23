@@ -1,3 +1,4 @@
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { useHandler, useFolders } from 'react-components';
 
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
@@ -5,7 +6,6 @@ import { useElementsCache } from '../useElementsCache';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { Message } from '../../models/message';
-import { RequireSome } from '../../models/utils';
 import { useConversationCache } from '../../containers/ConversationProvider';
 import { isMessage, getCurrentFolderID, hasLabel } from '../../helpers/elements';
 import { LabelChanges, applyLabelChangesOnMessage, applyLabelChangesOnConversation } from '../../helpers/labels';

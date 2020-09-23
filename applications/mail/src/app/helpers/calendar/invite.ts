@@ -1,6 +1,6 @@
-import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { getUnixTime } from 'date-fns';
-import { ICAL_ATTENDEE_ROLE, ICAL_EXTENSIONS, ICAL_MIME_TYPE, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import { getAttendeeEmail, getSupportedAttendee } from 'proton-shared/lib/calendar/attendees';
+import { ICAL_EXTENSIONS, ICAL_MIME_TYPE, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/integration/rrule';
 import {
     getIsDateOutOfBounds,
@@ -9,6 +9,7 @@ import {
 } from 'proton-shared/lib/calendar/support';
 import { parseWithErrors } from 'proton-shared/lib/calendar/vcal';
 import {
+    dateTimeToProperty,
     getDateProperty,
     getDateTimeProperty,
     getDateTimePropertyInDifferentTimezone,
@@ -25,15 +26,17 @@ import {
     getIsXOrIanaComponent,
     getPropertyTzid
 } from 'proton-shared/lib/calendar/vcalHelper';
-import { withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
-import { addDays, isNextDay } from 'proton-shared/lib/date-fns-utc';
+import { SECOND } from 'proton-shared/lib/constants';
+import { addDays, format as formatUTC, isNextDay } from 'proton-shared/lib/date-fns-utc';
 import {
     convertUTCDateTimeToZone,
     formatTimezoneOffset,
+    fromUTCDate,
     getSupportedTimezone,
     getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
-import { buildMailTo, cleanEmail, getEmailTo, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { unique } from 'proton-shared/lib/helpers/array';
+import { cleanEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { Address, CachedKey } from 'proton-shared/lib/interfaces';
@@ -50,10 +53,10 @@ import {
     VcalXOrIanaComponent
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { c } from 'ttag';
 import { Attachment } from '../../models/attachment';
-import { MessageExtended } from '../../models/message';
-import { RequireSome } from '../../models/utils';
+import { Message, MessageExtended } from '../../models/message';
 import { getOriginalTo } from '../message/messages';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 
@@ -71,7 +74,6 @@ export interface Participant {
     role?: string;
     addressID?: string;
     displayName?: string;
-    index?: number;
 }
 
 export interface EventInvitation {
@@ -97,10 +99,11 @@ export interface CalendarWidgetData {
 export interface InvitationModel {
     isOrganizerMode: boolean;
     timeStatus: EVENT_TIME_STATUS;
+    isUpdated?: boolean;
     hideSummary?: boolean;
     calendarData?: CalendarWidgetData;
     invitationIcs?: RequireSome<EventInvitation, 'method'>;
-    invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
+    invitationApi?: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
     parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     error?: EventInvitationError;
 }
@@ -110,9 +113,15 @@ export const getHasInvitation = (model: InvitationModel): model is RequireSome<I
 };
 
 export const getInvitationHasEventID = (
-    invitation?: EventInvitation
+    invitation: EventInvitation
 ): invitation is RequireSome<EventInvitation, 'calendarEvent'> => {
-    return invitation?.calendarEvent?.ID !== undefined;
+    return invitation.calendarEvent?.ID !== undefined;
+};
+
+export const getInvitationHasAttendee = (
+    invitation: EventInvitation
+): invitation is RequireSome<EventInvitation, 'attendee'> => {
+    return invitation.attendee !== undefined;
 };
 
 export const getParticipantHasAddressID = (
@@ -126,6 +135,17 @@ export const filterAttachmentsForEvents = (attachments: Attachment[]): Attachmen
         ({ Name = '', MIMEType = '' }) =>
             ICAL_EXTENSIONS.includes(splitExtension(Name)[1]) && MIMEType === ICAL_MIME_TYPE
     );
+
+const withMessageDtstamp = <T>(properties: VcalVeventComponent & T, { Time }: Message): VcalVeventComponent & T => {
+    if (properties.dtstamp) {
+        return properties;
+    }
+    // use the received time of the mail as dtstamp
+    return {
+        ...properties,
+        dtstamp: dateTimeToProperty(fromUTCDate(new Date(Time * SECOND)), true)
+    };
+};
 
 export const getSequence = (event: VcalVeventComponent) => {
     const sequence = +(event.sequence?.value || 0);
@@ -148,10 +168,9 @@ export const getParticipant = (
     participant: VcalAttendeeProperty | VcalOrganizerProperty,
     contactEmails: ContactEmail[],
     ownAddresses: Address[],
-    emailTo: string,
-    index?: number
+    emailTo: string
 ): Participant => {
-    const emailAddress = getEmailTo(participant.value);
+    const emailAddress = getAttendeeEmail(participant);
     const normalizedEmailAddress = normalizeInternalEmail(emailAddress);
     const isYou = normalizeInternalEmail(emailTo) === normalizedEmailAddress;
     const selfAddress = ownAddresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizedEmailAddress);
@@ -177,14 +196,11 @@ export const getParticipant = (
         // Use Proton form of the email address (important for sending email)
         result.emailAddress = selfAddress.Email;
     }
-    if (index !== undefined) {
-        result.index = index;
-    }
     return result;
 };
 
 export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = []) => {
-    const index = attendees.findIndex((attendee) => cleanEmail(getEmailTo(attendee.value)) === cleanEmail(email));
+    const index = attendees.findIndex((attendee) => cleanEmail(getAttendeeEmail(attendee)) === cleanEmail(email));
     const attendee = index !== -1 ? attendees[index] : undefined;
     return { index, attendee };
 };
@@ -227,16 +243,32 @@ export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) 
     if (!event.organizer) {
         return false;
     }
-    const organizerEmail = getEmailTo(event.organizer.value);
+    const organizerEmail = getAttendeeEmail(event.organizer);
     return cleanEmail(organizerEmail) === cleanEmail(emailTo);
 };
 
+export const getIsInvitationOutdated = (veventIcs: VcalVeventComponent, veventApi?: VcalVeventComponent) => {
+    if (!veventApi) {
+        return false;
+    }
+    const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
+    const timestampDiff =
+        getUnixTime(propertyToUTCDate(veventIcs.dtstamp)) - getUnixTime(propertyToUTCDate(veventApi.dtstamp));
+    if (timestampDiff < 0) {
+        return true;
+    }
+    if (timestampDiff > 0) {
+        return false;
+    }
+    return sequenceDiff < 0;
+};
+
 /**
- * Determines if a event has already passed with respect to a UNIX timestamp
+ * Determines if a event has already passed with respect to a timestamp in milliseconds
  */
 export const getEventTimeStatus = (vevent: VcalVeventComponent, now: number) => {
     if (vevent.rrule?.value) {
-        // ignore recurring events that only repeat a finite number of times for the moment
+        // ignore complexity of recurring events for the moment
         return EVENT_TIME_STATUS.FUTURE;
     }
     const nowTimestamp = getUnixTime(now);
@@ -339,7 +371,7 @@ export const processEventInvitation = <T>(
     const organizer = vevent.organizer;
     const originalTo = getOriginalTo(message.data);
     const isOrganizerMode = getIsOrganizerMode(vevent, originalTo);
-    const { index, attendee } = isOrganizerMode
+    const { attendee } = isOrganizerMode
         ? findAttendee(message.data?.SenderAddress || '', attendees)
         : findAttendee(originalTo, attendees);
 
@@ -354,7 +386,7 @@ export const processEventInvitation = <T>(
         processed.organizer = getParticipant(organizer, contactEmails, ownAddresses, originalTo);
     }
     if (attendee) {
-        processed.attendee = getParticipant(attendee, contactEmails, ownAddresses, originalTo, index);
+        processed.attendee = getParticipant(attendee, contactEmails, ownAddresses, originalTo);
     }
 
     return { isOrganizerMode, timeStatus, invitation: processed };
@@ -454,30 +486,9 @@ const getLinkedDateTimeProperty = ({
     return getDateTimeProperty(property.value, tzid);
 };
 
-export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
-    const { value, parameters: { cn, role, partstat, rsvp } = {} } = attendee;
-    const emailAddress = getEmailTo(value);
-    const supportedAttendee: RequireSome<VcalAttendeeProperty, 'parameters'> = {
-        value: buildMailTo(emailAddress),
-        parameters: {
-            cn: cn ?? emailAddress
-        }
-    };
-    const roleUpperCased = role?.toUpperCase();
-    if (roleUpperCased === ICAL_ATTENDEE_ROLE.REQUIRED || roleUpperCased === ICAL_ATTENDEE_ROLE.OPTIONAL) {
-        supportedAttendee.parameters.role = roleUpperCased;
-    }
-    if (rsvp?.toUpperCase() === 'TRUE') {
-        supportedAttendee.parameters.rsvp = rsvp.toUpperCase();
-    }
-    if (partstat) {
-        supportedAttendee.parameters.partstat = partstat.toUpperCase();
-    }
-    return supportedAttendee;
-};
-
 export const getSupportedEventInvitation = (
-    vcalInvitation: VcalVcalendar
+    vcalInvitation: VcalVcalendar,
+    message: Message
 ): RequireSome<EventInvitation, 'method'> | undefined => {
     const { version, calscale, 'x-wr-timezone': xWrTimezone, method } = vcalInvitation;
     if (!method?.value || method.value.toLowerCase() === 'publish') {
@@ -493,7 +504,7 @@ export const getSupportedEventInvitation = (
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
     }
     try {
-        const event = withDtstamp(vevent);
+        const event = withMessageDtstamp(vevent, message);
         const {
             component,
             uid,
@@ -528,6 +539,12 @@ export const getSupportedEventInvitation = (
         }
 
         if (attendee) {
+            const attendeeEmails = attendee.map((att) => getAttendeeEmail(att));
+            if (unique(attendeeEmails).length !== attendeeEmails.length) {
+                // Do not accept invitations with repeated emails as they will cause problems.
+                // Usually external providers don't allow this to happen
+                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
+            }
             validated.attendee = attendee.map((vcalAttendee) => getSupportedAttendee(vcalAttendee));
         }
 

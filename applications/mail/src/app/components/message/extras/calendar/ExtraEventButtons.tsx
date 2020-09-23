@@ -3,7 +3,7 @@ import { APPS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { ProtonConfig } from 'proton-shared/lib/interfaces';
-import { LoadingMap } from 'proton-shared/lib/interfaces/utils';
+import { LoadingMap, RequireSome } from 'proton-shared/lib/interfaces/utils';
 import React, { Dispatch, SetStateAction, useMemo } from 'react';
 import {
     AppLink,
@@ -13,7 +13,7 @@ import {
     Loader,
     SmallButton,
     useLoading,
-    useLoadingMap,
+    useLoadingMap
 } from 'react-components';
 import { c } from 'ttag';
 import {
@@ -25,12 +25,12 @@ import {
     EVENT_TIME_STATUS,
     EventInvitation,
     getCalendarEventLink,
+    getIsInvitationOutdated,
     getSequence,
     InvitationModel
 } from '../../../../helpers/calendar/invite';
 import useWidgetButtons from '../../../../hooks/useWidgetButtons';
 import { MessageExtended } from '../../../../models/message';
-import { RequireSome } from '../../../../models/utils';
 
 interface WidgetActions {
     onAccept: () => void;
@@ -72,8 +72,9 @@ const getAttendeeButtons = (
 ) => {
     const {
         invitationIcs,
-        invitationIcs: { method },
+        invitationIcs: { method, vevent: veventIcs },
         invitationApi,
+        invitationApi: { vevent: veventApi } = {},
         calendarData,
         timeStatus,
         error
@@ -87,7 +88,8 @@ const getAttendeeButtons = (
         return 'Create a calendar to get widget buttons :-P';
     }
 
-    if (timeStatus !== EVENT_TIME_STATUS.FUTURE) {
+    const isOutdated = getIsInvitationOutdated(veventIcs, veventApi);
+    if (timeStatus === EVENT_TIME_STATUS.PAST || isOutdated) {
         return null;
     }
 
@@ -168,7 +170,7 @@ const ExtraEventButtons = ({ model, setModel, message, config }: Props) => {
             error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR, { partstat })
         });
     };
-    const handleSuccess = (invitationApi: RequireSome<EventInvitation, 'calendarEvent'>) => {
+    const handleSuccess = (invitationApi: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>) => {
         setModel({
             ...omit(model, ['error']),
             invitationApi,

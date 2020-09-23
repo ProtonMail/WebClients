@@ -1,5 +1,6 @@
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { Recipient } from 'proton-shared/lib/interfaces';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { useRef, useCallback } from 'react';
 import {
     generateUID,
@@ -23,7 +24,6 @@ import { generateTopPackages } from '../helpers/send/sendTopPackages';
 import { RequestParams } from '../helpers/upload';
 import { MapSendPreferences } from '../models/crypto';
 import { MessageExtendedWithData, PartialMessageExtended } from '../models/message';
-import { RequireSome } from '../models/utils';
 
 interface Params {
     ics: string;

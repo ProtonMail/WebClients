@@ -1,16 +1,22 @@
 import { getUnixTime } from 'date-fns';
 import {
+    CreateCalendarEventSyncData,
     getEventByUID,
     GetEventByUIDArguments,
     syncMultipleEvents,
     UpdateCalendarEventSyncData
 } from 'proton-shared/lib/api/calendars';
-import { withPmAttendees } from 'proton-shared/lib/calendar/attendees';
+import { getAttendeeEmail, modifyAttendeesPartstat, withPmAttendees } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_EVENT_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
-import { getAttendeeHasPartStat } from 'proton-shared/lib/calendar/vcalHelper';
+import {
+    getAttendeeHasPartStat,
+    getAttendeePartstat,
+    getEventStatus,
+    getHasRecurrenceId
+} from 'proton-shared/lib/calendar/vcalHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
@@ -18,16 +24,21 @@ import { Address, Api } from 'proton-shared/lib/interfaces';
 import { Calendar, CalendarEvent, SyncMultipleApiResponse } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
 import { MessageExtended } from '../../models/message';
-import { RequireSome, Unwrap } from '../../models/utils';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import {
     CalendarWidgetData,
     EventInvitation,
     getHasModifiedAttendees,
+    getInvitationHasAttendee,
+    getIsInvitationOutdated,
+    getSequence,
     InvitationModel,
     processEventInvitation
 } from './invite';
+
+const { CONFIRMED, CANCELLED } = ICAL_EVENT_STATUS;
 
 type FetchEventInvitation = (args: {
     veventComponent: VcalVeventComponent;
@@ -63,6 +74,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     const calendarEvents = response.map(({ Events: [event] = [] }) => event).filter(isTruthy);
     const vevents = await Promise.all(calendarEvents.map((event) => getCalendarEventRaw(event)));
     if (!vevents.length) {
+        // nothing to do if no event was fetched by uid
         return {};
     }
     const [calendarEvent, calendarParentEvent] = calendarEvents;
@@ -89,8 +101,15 @@ interface UpdateEventArgs {
     vevent: VcalVeventComponent;
     api: Api;
     calendarData: Required<CalendarWidgetData>;
+    createSingleEdit?: boolean;
 }
-const updateEventApi = async ({ calendarEvent, vevent, api, calendarData }: UpdateEventArgs) => {
+const updateEventApi = async ({
+    calendarEvent,
+    vevent,
+    api,
+    calendarData,
+    createSingleEdit = false
+}: UpdateEventArgs) => {
     const {
         calendar: { ID: calendarID },
         memberID,
@@ -98,17 +117,20 @@ const updateEventApi = async ({ calendarEvent, vevent, api, calendarData }: Upda
         calendarKeys
     } = calendarData;
     const veventWithPmAttendees = await withPmAttendees(vevent, api);
+    const creationKeys = await getCreationKeys({
+        Event: createSingleEdit ? undefined : calendarEvent,
+        addressKeys,
+        newCalendarKeys: calendarKeys
+    });
     const data = await createCalendarEvent({
         eventComponent: veventWithPmAttendees,
         isSwitchCalendar: false,
-        ...(await getCreationKeys({ Event: calendarEvent, addressKeys, newCalendarKeys: calendarKeys }))
+        ...creationKeys
     });
-    const Events: UpdateCalendarEventSyncData[] = [
-        {
-            ID: calendarEvent.ID,
-            Event: { Permissions: 3, ...omit(data, ['SharedKeyPacket', 'CalendarKeyPacket']) }
-        }
-    ];
+    const Event = { Permissions: 3, ...data };
+    const Events: (CreateCalendarEventSyncData | UpdateCalendarEventSyncData)[] = createSingleEdit
+        ? [{ Event, Overwrite: 1 }]
+        : [{ Event, ID: calendarEvent.ID }];
     const {
         Responses: [
             {
@@ -143,11 +165,14 @@ export const updateEventInvitation = async ({
     message,
     contactEmails,
     ownAddresses
-}: UpdateEventInvitationArgs): Promise<undefined | RequireSome<EventInvitation, 'calendarEvent'>> => {
+}: UpdateEventInvitationArgs): Promise<undefined | RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>> => {
     const { method, vevent: veventIcs } = invitationIcs;
-    const { calendarEvent, vevent: veventApi } = invitationApi;
+    const {
+        calendarEvent,
+        vevent: veventApi,
+        attendee: { vcalComponent: attendeeApi }
+    } = invitationApi;
     const attendeeIcs = invitationIcs.attendee?.vcalComponent;
-    const attendeeApi = invitationApi.attendee?.vcalComponent;
     const recurrenceIdIcs = veventIcs['recurrence-id'];
 
     if (isOrganizerMode) {
@@ -161,9 +186,6 @@ export const updateEventInvitation = async ({
             if (!attendeeIcs) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
             }
-            if (!attendeeApi) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
-            }
             if (!getAttendeeHasPartStat(attendeeIcs) || !getAttendeeHasPartStat(attendeeApi)) {
                 throw new Error('Participation status of attendees required');
             }
@@ -174,38 +196,53 @@ export const updateEventInvitation = async ({
             }
         }
     }
+    // attendee mode
+    const isOutdated = getIsInvitationOutdated(veventIcs, veventApi);
+
     if (method === ICAL_METHOD.REQUEST) {
-        const sequenceApi = +(veventApi?.sequence?.value || 0);
-        const sequenceIcs = +(veventIcs.sequence?.value || 0);
-        const sequenceDiff = sequenceIcs - sequenceApi;
         if (!veventApi) {
             // TODO: check for SharedEventID and create new event accordingly
             return;
         }
-        if (sequenceDiff < 0) {
-            return;
-        }
+        const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
         const hasUpdatedTitle = veventIcs.summary?.value !== veventApi.summary?.value;
         const hasUpdatedDescription = veventIcs.description?.value !== veventApi.description?.value;
         const hasUpdatedLocation = veventIcs.location?.value !== veventApi.location?.value;
         const hasUpdatedAttendees = getHasModifiedAttendees(veventIcs.attendee, veventApi.attendee);
         const isUpdated =
-            sequenceDiff > 0 || hasUpdatedTitle || hasUpdatedDescription || hasUpdatedLocation || hasUpdatedAttendees;
+            !isOutdated &&
+            (sequenceDiff > 0 || hasUpdatedTitle || hasUpdatedDescription || hasUpdatedLocation || hasUpdatedAttendees);
         if (isUpdated) {
-            // update the api event by the ics one
+            // update the api event by the ics one keeping the old reply
+            const createSingleEdit = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(veventApi);
             try {
+                if (!veventIcs.attendee || !getAttendeeHasPartStat(attendeeApi)) {
+                    throw new Error('Missing attendee parameters');
+                }
+                const attendeeApiEmail = getAttendeeEmail(attendeeApi);
+                const map = { [attendeeApiEmail]: getAttendeePartstat(attendeeApi.parameters.partstat) };
+                const updatedAttendes = modifyAttendeesPartstat(veventIcs.attendee, map);
+                const updatedVevent: VcalVeventComponent = {
+                    ...veventIcs,
+                    attendee: updatedAttendes,
+                    status: { value: CONFIRMED }
+                };
                 await updateEventApi({
                     calendarEvent,
-                    vevent: veventIcs,
+                    vevent: updatedVevent,
                     calendarData,
+                    createSingleEdit,
                     api
                 });
                 const { invitation } = processEventInvitation(
-                    { vevent: veventIcs },
+                    { vevent: updatedVevent },
                     message,
                     contactEmails,
                     ownAddresses
                 );
+                if (!getInvitationHasAttendee(invitation)) {
+                    throw new Error('Missing attendee after update');
+                }
                 return { ...invitation, calendarEvent };
             } catch (error) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
@@ -216,7 +253,7 @@ export const updateEventInvitation = async ({
     if (method === ICAL_METHOD.CANCEL) {
         let cancel = false;
         if (veventApi) {
-            if (veventApi.status?.value === ICAL_EVENT_STATUS.CANCELLED) {
+            if (getEventStatus(veventApi) === CANCELLED) {
                 return;
             }
             cancel = true;
@@ -231,12 +268,23 @@ export const updateEventInvitation = async ({
             cancel = !isCancelled;
         }
         // cancel API event if needed
-        if (cancel) {
+        if (cancel && !isOutdated) {
+            const createSingleEdit = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(veventApi);
             try {
+                const updatedVevent = createSingleEdit
+                    ? {
+                          ...omit(veventIcs, ['rrule']),
+                          status: { value: CANCELLED }
+                      }
+                    : {
+                          ...veventApi,
+                          status: { value: CANCELLED }
+                      };
                 await updateEventApi({
                     calendarEvent,
-                    vevent: { ...veventApi, status: { value: ICAL_EVENT_STATUS.CANCELLED } },
+                    vevent: updatedVevent,
                     calendarData,
+                    createSingleEdit,
                     api
                 });
             } catch (error) {

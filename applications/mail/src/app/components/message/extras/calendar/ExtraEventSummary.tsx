@@ -1,9 +1,14 @@
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import React from 'react';
 import { Icon } from 'react-components';
 import { c, msgid } from 'ttag';
-import { EVENT_TIME_STATUS, getSequence, InvitationModel } from '../../../../helpers/calendar/invite';
-import { RequireSome } from '../../../../models/utils';
+import {
+    EVENT_TIME_STATUS,
+    getIsInvitationOutdated,
+    getSequence,
+    InvitationModel
+} from '../../../../helpers/calendar/invite';
 
 const { REQUEST, REPLY, CANCEL, COUNTER, DECLINECOUNTER } = ICAL_METHOD;
 const { NEEDS_ACTION, ACCEPTED, TENTATIVE, DECLINED } = ICAL_ATTENDEE_STATUS;
@@ -61,9 +66,8 @@ const getOrganizerSummary = (model: RequireSome<InvitationModel, 'invitationIcs'
         if (!eventApi || !eventIcs['recurrence-id']) {
             return (
                 <div>
-                    <p className="mt0 mb0-5">{c('Calendar invite info').jt`This event could not be found.`}</p>
-                    <p className="mt0 mb0-5">{c('Calendar invite info')
-                        .jt`It might have been cancelled or updated.`}</p>
+                    <p className="mt0 mb0-5">{c('Calendar invite info').t`This event could not be found.`}</p>
+                    <p className="mt0 mb0-5">{c('Calendar invite info').t`It might have been cancelled or updated.`}</p>
                 </div>
             );
         }
@@ -79,7 +83,7 @@ const getOrganizerSummary = (model: RequireSome<InvitationModel, 'invitationIcs'
                 return (
                     <p className="mt0-5 mb0-5">
                         {icon}
-                        {c('Calendar invite info').t`${participantName} accepted your invitation.`}
+                        {c('Calendar invite info').jt`${participantName} accepted your invitation.`}
                     </p>
                 );
             }
@@ -92,7 +96,7 @@ const getOrganizerSummary = (model: RequireSome<InvitationModel, 'invitationIcs'
                 return (
                     <p className="mt0-5 mb0-5">
                         {icon}
-                        {c('Calendar invite info').t`${participantName} declined your invitation.`}
+                        {c('Calendar invite info').jt`${participantName} declined your invitation.`}
                     </p>
                 );
             }
@@ -105,7 +109,7 @@ const getOrganizerSummary = (model: RequireSome<InvitationModel, 'invitationIcs'
                 return (
                     <p className="mt0-5 mb0-5">
                         {icon}
-                        {c('Calendar invite info').t`${participantName} tentatively accepted your invitation.`}
+                        {c('Calendar invite info').jt`${participantName} tentatively accepted your invitation.`}
                     </p>
                 );
             }
@@ -126,7 +130,7 @@ const getOrganizerSummary = (model: RequireSome<InvitationModel, 'invitationIcs'
                     {eventUpdated}
                     <p className="mt0-5 mb0-5">
                         {icon}
-                        {c('Calendar invite info').t`${participantName} had previously accepted your invitation.`}
+                        {c('Calendar invite info').jt`${participantName} had previously accepted your invitation.`}
                     </p>
                 </>
             );
@@ -142,7 +146,7 @@ const getOrganizerSummary = (model: RequireSome<InvitationModel, 'invitationIcs'
                     {eventUpdated}
                     <p className="mt0-5 mb0-5">
                         {icon}
-                        {c('Calendar invite info').t`${participantName} had previously declined your invitation.`}
+                        {c('Calendar invite info').jt`${participantName} had previously declined your invitation.`}
                     </p>
                 </>
             );
@@ -159,7 +163,7 @@ const getOrganizerSummary = (model: RequireSome<InvitationModel, 'invitationIcs'
                     <p className="mt0-5 mb0-5">
                         {icon}
                         {c('Calendar invite info')
-                            .t`${participantName} had previously tentatively accepted your invitation.`}
+                            .jt`${participantName} had previously tentatively accepted your invitation.`}
                     </p>
                 </>
             );
@@ -173,24 +177,18 @@ const getAttendeeSummary = (model: RequireSome<InvitationModel, 'invitationIcs'>
         invitationIcs,
         invitationIcs: { method },
         invitationApi,
-        timeStatus
+        timeStatus,
+        isUpdated
     } = model;
-    const { vevent: eventIcs, attendee: attendeeIcs } = invitationIcs;
-    const { vevent: eventApi, attendee: attendeeApi } = invitationApi || {};
+    const { vevent: veventIcs, attendee: attendeeIcs } = invitationIcs;
+    const { vevent: veventApi, attendee: attendeeApi } = invitationApi || {};
+    const isOutdated = getIsInvitationOutdated(veventIcs, veventApi);
 
-    if (timeStatus === EVENT_TIME_STATUS.PAST) {
+    if (isOutdated) {
         return (
-            <div>
-                <p className="mt0 mb0-5">{c('Calendar invite info').jt`This event has already happened.`}</p>
-            </div>
-        );
-    }
-
-    if (timeStatus === EVENT_TIME_STATUS.HAPPENING) {
-        return (
-            <div>
-                <p className="mt0 mb0-5">{c('Calendar invite info').jt`This event is currently happening.`}</p>
-            </div>
+            <p className="mt0 mb0-5">
+                {c('Calendar invite info').t`This invitation is out of date. This event has been updated.`}
+            </p>
         );
     }
 
@@ -198,20 +196,34 @@ const getAttendeeSummary = (model: RequireSome<InvitationModel, 'invitationIcs'>
         return (
             <div>
                 <p className="mt0 mb0-5">
-                    {c('Calendar invite info').jt`Your new time proposal has been declined by the organizer.`}
+                    {c('Calendar invite info').t`Your new time proposal has been declined by the organizer.`}
                 </p>
                 <p className="mt0 mb0-5">
-                    {c('Calendar invite info').jt`The event will take place as initially scheduled.`}
+                    {c('Calendar invite info').t`The event will take place as initially scheduled.`}
                 </p>
             </div>
         );
     }
     if (method === REQUEST) {
-        if (eventApi && getSequence(eventIcs) - getSequence(eventApi) < 0) {
+        if (timeStatus === EVENT_TIME_STATUS.PAST) {
+            const text = isUpdated
+                ? c('Calendar invite info').t`This event has been updated. The event has already happened.`
+                : c('Calendar invite info').t`This event has already happened.`;
             return (
-                <p className="mt0 mb0-5">
-                    {c('Calendar invite info').jt`This invitation is out of date. This event has been updated.`}
-                </p>
+                <div>
+                    <p className="mt0 mb0-5">{text}</p>
+                </div>
+            );
+        }
+
+        if (timeStatus === EVENT_TIME_STATUS.HAPPENING) {
+            const text = isUpdated
+                ? c('Calendar invite info').t`This event has been updated. The event is currently happening.`
+                : c('Calendar invite info').t`This event is currently happening.`;
+            return (
+                <div>
+                    <p className="mt0 mb0-5">{text}</p>
+                </div>
             );
         }
         const { partstat, role } = attendeeApi || attendeeIcs || {};
@@ -223,75 +235,96 @@ const getAttendeeSummary = (model: RequireSome<InvitationModel, 'invitationIcs'>
             if (role === REQUIRED) {
                 return (
                     <p className="mt0 mb0-5">
-                        {c('Calendar invite info').jt`Your attendance to this meeting is required.`}
+                        {c('Calendar invite info').t`Your attendance to this meeting is required.`}
                     </p>
                 );
             }
             if (role === OPTIONAL) {
                 return (
                     <p className="mt0 mb0-5">
-                        {c('Calendar invite info').jt`Your attendance to this meeting is optional.`}
+                        {c('Calendar invite info').t`Your attendance to this meeting is optional.`}
                     </p>
                 );
             }
         }
+        const hasBeenUpdatedText = isUpdated ? (
+            <p className="mt0 mb0-5">{c('Calendar invite info').t`This event has been updated.`}</p>
+        ) : null;
         if (partstat === ACCEPTED) {
             if (role === REQUIRED) {
                 return (
-                    <p className="mt0 mb0-5">
-                        {c('Calendar invite info').jt`Your attendance to this meeting is required.
-                        You already accepted this meeting invite.`}
-                    </p>
+                    <>
+                        {hasBeenUpdatedText}
+                        <p className="mt0 mb0-5">
+                            {c('Calendar invite info').t`Your attendance to this meeting is required.
+                            You already accepted this meeting invite.`}
+                        </p>
+                    </>
                 );
             }
             if (role === OPTIONAL) {
                 return (
-                    <p className="mt0 mb0-5">
-                        {c('Calendar invite info').jt`Your attendance to this meeting is optional.
+                    <>
+                        {hasBeenUpdatedText}
+                        <p className="mt0 mb0-5">
+                            {c('Calendar invite info').t`Your attendance to this meeting is optional.
                         You already accepted this meeting invite.`}
-                    </p>
+                        </p>
+                    </>
                 );
             }
         }
         if (partstat === TENTATIVE) {
             if (role === REQUIRED) {
                 return (
-                    <p className="mt0 mb0-5">
-                        {c('Calendar invite info').jt`Your attendance to this meeting is required.
-                        You already tentatively accepted this meeting invite.`}
-                    </p>
+                    <>
+                        {hasBeenUpdatedText}
+                        <p className="mt0 mb0-5">
+                            {c('Calendar invite info').t`Your attendance to this meeting is required.
+                            You already tentatively accepted this meeting invite.`}
+                        </p>
+                    </>
                 );
             }
             if (role === OPTIONAL) {
                 return (
-                    <p className="mt0 mb0-5">
-                        {c('Calendar invite info').jt`Your attendance to this meeting is optional.
-                        You already tentatively accepted this meeting invite.`}
-                    </p>
+                    <>
+                        {hasBeenUpdatedText}
+                        <p className="mt0 mb0-5">
+                            {c('Calendar invite info').t`Your attendance to this meeting is optional.
+                            You already tentatively accepted this meeting invite.`}
+                        </p>
+                    </>
                 );
             }
         }
         if (partstat === DECLINED) {
             if (role === REQUIRED) {
                 return (
-                    <p className="mt0 mb0-5">
-                        {c('Calendar invite info').jt`Your attendance to this meeting is required.
-                        You already declined this meeting invite.`}
-                    </p>
+                    <>
+                        {hasBeenUpdatedText}
+                        <p className="mt0 mb0-5">
+                            {c('Calendar invite info').t`Your attendance to this meeting is required.
+                            You already declined this meeting invite.`}
+                        </p>
+                    </>
                 );
             }
             if (role === OPTIONAL) {
                 return (
-                    <p className="mt0 mb0-5">
-                        {c('Calendar invite info').jt`Your attendance to this meeting is optional.
-                        You already declined this meeting invite.`}
-                    </p>
+                    <>
+                        {hasBeenUpdatedText}
+                        <p className="mt0 mb0-5">
+                            {c('Calendar invite info').t`Your attendance to this meeting is optional.
+                            You already declined this meeting invite.`}
+                        </p>
+                    </>
                 );
             }
         }
     }
     if (method === CANCEL) {
-        return <p className="mt0 mb0-5">{c('Calendar invite info').jt`This event has been cancelled.`}</p>;
+        return <p className="mt0 mb0-5">{c('Calendar invite info').t`This event has been cancelled.`}</p>;
     }
     return null;
 };

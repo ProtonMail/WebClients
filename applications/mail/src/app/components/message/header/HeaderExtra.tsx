@@ -11,7 +11,7 @@ import ExtraExpirationTime from '../extras/ExtraExpirationTime';
 import ExtraEvents from '../extras/ExtraEvents';
 import ExtraPinKey from '../extras/ExtraPinKey';
 import ExtraAskResign from '../extras/ExtraAskResign';
-import { MessageExtended } from '../../../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import ExtraErrors from '../extras/ExtraErrors';
 import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 
@@ -36,7 +36,7 @@ const HeaderExtra = ({
     onLoadRemoteImages,
     onLoadEmbeddedImages
 }: Props) => {
-    const received = isReceived(message.data);
+    const received = message.data && isReceived(message.data);
     const showWidget = FEATURE_FLAGS.includes('calendar-invitations');
     return (
         <section className="message-header-extra mt0-5 border-top pt0-5">
@@ -55,7 +55,9 @@ const HeaderExtra = ({
             <ExtraAskResign message={message} onResignContact={onResignContact} />
             {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
             {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
-            {messageLoaded && received && showWidget ? <ExtraEvents message={message} /> : null}
+            {messageLoaded && received && showWidget ? (
+                <ExtraEvents message={message as MessageExtendedWithData} />
+            ) : null}
         </section>
     );
 };

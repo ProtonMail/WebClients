@@ -1,3 +1,4 @@
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { c } from 'ttag';
 import { useCallback } from 'react';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
@@ -12,14 +13,13 @@ import { EVENT_TIME_STATUS, EventInvitation, getEventTimeStatus, InvitationModel
 import { createReplyIcs } from '../helpers/calendar/inviteReply';
 import { formatSubject, RE_PREFIX } from '../helpers/message/messageDraft';
 import { MessageExtended } from '../models/message';
-import { RequireSome } from '../models/utils';
 import useSendIcs from './useSendIcs';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
     message: MessageExtended;
     config: ProtonConfig;
-    onSuccess: (invitationApi: RequireSome<EventInvitation, 'calendarEvent'>) => void;
+    onSuccess: (invitationApi: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>) => void;
     onCreateEventError: (partstat: ICAL_ATTENDEE_STATUS) => void;
     onPastEvent: (timeStatus: EVENT_TIME_STATUS) => void;
     onUnexpectedError: () => void;
@@ -47,6 +47,10 @@ const useWidgetButtons = ({
     const sendEmail = useCallback(
         (attendee: RequireSome<Participant, 'addressID'>, organizer: Participant) => {
             return async (partstat: ICAL_ATTENDEE_STATUS) => {
+                if (!getParticipantHasAddressID(attendee) || !organizer) {
+                    onUnexpectedError();
+                    return;
+                }
                 try {
                     const prodId = getProdId(config);
                     const ics = createReplyIcs({
@@ -61,6 +65,7 @@ const useWidgetButtons = ({
                         to: [{ Address: organizer.emailAddress, Name: organizer.name }],
                         subject: formatSubject(message.data?.Subject, RE_PREFIX)
                     });
+                    createNotification({ type: 'success', text: c('Reply to calendar invitation').t`Answer sent` });
                 } catch (error) {
                     if (
                         error instanceof EventInvitationError &&
@@ -69,7 +74,10 @@ const useWidgetButtons = ({
                         onUnexpectedError();
                         return;
                     }
-                    createNotification({ type: 'error', text: 'Answering invitation has failed. Try again' });
+                    createNotification({
+                        type: 'error',
+                        text: c('Reply to calendar invitation').t`Answering invitation failed`
+                    });
                     return;
                 }
             };
@@ -86,6 +94,10 @@ const useWidgetButtons = ({
                         model,
                         api
                     });
+                    createNotification({
+                        type: 'success',
+                        text: c('Reply to calendar invitation').t`Calendar event created`
+                    });
                     const invitationToSave = {
                         vevent: savedVevent,
                         calendarEvent: createdEvent,
@@ -98,6 +110,10 @@ const useWidgetButtons = ({
                     };
                     onSuccess(invitationToSave);
                 } catch (error) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Reply to calendar invitation').t`Creating calendar event failed`
+                    });
                     if (
                         error instanceof EventInvitationError &&
                         error.type === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR
@@ -120,7 +136,7 @@ const useWidgetButtons = ({
                 return;
             }
             const timeStatus = getEventTimeStatus(invitationIcs.vevent, Date.now());
-            if (timeStatus !== EVENT_TIME_STATUS.FUTURE) {
+            if (timeStatus === EVENT_TIME_STATUS.PAST) {
                 onPastEvent(timeStatus);
                 createNotification({ type: 'error', text: c('Info').t`Cannot answer past event` });
                 return;

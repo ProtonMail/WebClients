@@ -1,3 +1,4 @@
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import React from 'react';
 import { classnames } from 'react-components';
 import { c, msgid } from 'ttag';
@@ -8,7 +9,6 @@ import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { formatDateTime, getAllDayInfo, InvitationModel } from '../../../../helpers/calendar/invite';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
-import { RequireSome } from '../../../../models/utils';
 import ExtraEventParticipants from './ExtraEventParticipants';
 
 interface Props {

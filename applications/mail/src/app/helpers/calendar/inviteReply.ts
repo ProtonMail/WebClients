@@ -19,9 +19,9 @@ import {
     VcalVcalendar,
     VcalVeventComponent
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { RequireSome } from '../../models/utils';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
-import { EventInvitation, extractVevent, getSupportedAttendee, InvitationModel } from './invite';
+import { EventInvitation, extractVevent, findAttendee, InvitationModel } from './invite';
 
 export const addAlarms = (vevent: VcalVeventComponent, calendarSettings: CalendarSettings) => {
     const { components } = vevent;
@@ -99,20 +99,24 @@ export const createCalendarEventFromInvitation = async ({
     if (!attendee?.addressID || !calendar || !memberID || !addressKeys || !calendarKeys || !calendarSettings) {
         throw new Error('Missing data for creating calendar event from invitation');
     }
-    const supportedAttendee = getSupportedAttendee(attendee.vcalComponent);
+    // save attendee answer
+    const vcalAttendee = attendee.vcalComponent;
     const vcalAttendeeToSave = {
-        ...supportedAttendee,
+        ...vcalAttendee,
         parameters: {
-            ...supportedAttendee.parameters,
+            ...vcalAttendee.parameters,
             partstat
         }
     };
+    // add alarms to event if necessary
     const veventToSave = partstat === ICAL_ATTENDEE_STATUS.DECLINED ? vevent : addAlarms(vevent, calendarSettings);
-    if (!veventToSave.attendee || attendee.index === undefined || attendee.index === -1) {
+    const { index: attendeeIndex } = findAttendee(attendee.emailAddress, veventToSave.attendee);
+    if (!veventToSave.attendee || attendeeIndex === undefined || attendeeIndex === -1) {
         throw new Error('Missing data for creating calendar event from invitation');
     }
-    veventToSave.attendee[attendee.index] = vcalAttendeeToSave;
+    veventToSave.attendee[attendeeIndex] = vcalAttendeeToSave;
     const veventToSaveWithPmAttendees = await withPmAttendees(veventToSave, api);
+    // create calendar event
     const data = await createCalendarEvent({
         eventComponent: veventToSaveWithPmAttendees,
         isSwitchCalendar: false,

@@ -3,6 +3,7 @@ import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import { Address, ProtonConfig, UserSettings } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
 import React, { useEffect, useState } from 'react';
 import {
@@ -25,13 +26,13 @@ import {
     getEventTimeStatus,
     getHasInvitation,
     getInitialInvitationModel,
+    getInvitationHasAttendee,
     getInvitationHasEventID,
     InvitationModel
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
 
 import { MessageExtended } from '../../../../models/message';
-import { RequireSome } from '../../../../models/utils';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';
 import ExtraEventSummary from './ExtraEventSummary';
@@ -81,9 +82,11 @@ const ExtraEvent = ({
                 return;
             }
             let invitationApi;
+            let parentInvitationApi;
             let calendarData;
             try {
-                const { invitation, calendar: calendarApi } = await fetchEventInvitation({
+                // check if an event with the same uid exists in the calendar already
+                const { invitation, parentInvitation, calendar: calendarApi } = await fetchEventInvitation({
                     veventComponent: invitationIcs.vevent,
                     api,
                     getCalendarEventRaw,
@@ -93,6 +96,9 @@ const ExtraEvent = ({
                     ownAddresses
                 });
                 invitationApi = invitation;
+                if (parentInvitation) {
+                    parentInvitationApi = parentInvitation;
+                }
                 const calendar = calendarApi || defaultCalendar;
                 if (calendar) {
                     calendarData = { calendar, ...(await getCalendarInfo(calendar.ID)) };
@@ -102,9 +108,16 @@ const ExtraEvent = ({
                 // if fetching fails, proceed as if there was no event in the database
                 return;
             }
-            if (!getInvitationHasEventID(invitationApi) || !calendarData) {
+            if (
+                !invitationApi ||
+                !getInvitationHasEventID(invitationApi) ||
+                !getInvitationHasAttendee(invitationApi) ||
+                !calendarData
+            ) {
+                // treat as a new invitation
                 return;
             }
+            // otherwise update the invitation if outdated
             try {
                 const updatedInvitationApi = await updateEventInvitation({
                     isOrganizerMode,
@@ -120,13 +133,16 @@ const ExtraEvent = ({
                 setModel({
                     ...model,
                     invitationApi: newInvitationApi,
+                    parentInvitationApi,
                     calendarData,
-                    timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now())
+                    timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now()),
+                    isUpdated: updatedInvitationApi ? true : false
                 });
             } catch (e) {
                 setModel({
                     ...model,
                     invitationApi,
+                    parentInvitationApi,
                     error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR)
                 });
             }

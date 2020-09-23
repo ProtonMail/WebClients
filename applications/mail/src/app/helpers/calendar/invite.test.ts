@@ -1,7 +1,8 @@
 import { getIsRruleSupported } from 'proton-shared/lib/calendar/integration/rrule';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { VcalVcalendar, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { RequireSome } from '../../models/utils';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { Message } from '../../models/message';
 import { getSupportedEventInvitation, parseEventInvitation } from './invite';
 
 describe('getIsRruleSupported for invitations', () => {
@@ -99,6 +100,7 @@ RRULE:FREQ=YEARLY;INTERVAL=1;BYMONTH=9;BYDAY=1TU
 END:VEVENT
 END:VCALENDAR`;
         const parsedInvitation = parseEventInvitation(invitation) as VcalVcalendar;
-        expect(() => getSupportedEventInvitation(parsedInvitation)).toThrowError('Invalid invitation');
+        const message = { Time: Math.round(Date.now() / 1000) } as Message;
+        expect(() => getSupportedEventInvitation(parsedInvitation, message)).toThrowError('Invalid invitation');
     });
 });

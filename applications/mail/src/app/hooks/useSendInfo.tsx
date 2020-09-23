@@ -1,3 +1,4 @@
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
@@ -20,7 +21,6 @@ import { getRecipientsAddresses } from '../helpers/message/messages';
 
 import { MapSendInfo } from '../models/crypto';
 import { MessageExtended } from '../models/message';
-import { RequireSome } from '../models/utils';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = EncryptionPreferencesFailureTypes;
 

@@ -1,3 +1,4 @@
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import React, { useEffect, useRef, DragEvent, KeyboardEvent, RefObject, useState, MouseEvent } from 'react';
 import {
     classnames,
@@ -25,7 +26,6 @@ import { useDragOver } from '../../../hooks/useDragOver';
 import { getContactOfRecipient } from '../../../helpers/contacts';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import { RequireSome } from '../../../models/utils';
 
 interface Props {
     recipient: RequireSome<Recipient, 'Address' | 'ContactID'>;

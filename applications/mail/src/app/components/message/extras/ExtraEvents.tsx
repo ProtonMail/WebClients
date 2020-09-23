@@ -1,3 +1,4 @@
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import React, { useEffect, useState } from 'react';
 import {
     useApi,
@@ -26,12 +27,11 @@ import {
 
 import { getAttachments } from '../../../helpers/message/messages';
 import { Attachment } from '../../../models/attachment';
-import { MessageExtended } from '../../../models/message';
-import { RequireSome } from '../../../models/utils';
+import { MessageExtendedWithData } from '../../../models/message';
 import ExtraEvent from './calendar/ExtraEvent';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageExtendedWithData;
 }
 const ExtraEvents = ({ message }: Props) => {
     const cache = useAttachmentCache();
@@ -80,7 +80,7 @@ const ExtraEvents = ({ message }: Props) => {
                             if (!parsedInvitation) {
                                 return;
                             }
-                            return getSupportedEventInvitation(parsedInvitation);
+                            return getSupportedEventInvitation(parsedInvitation, message.data);
                         } catch (error) {
                             if (error instanceof EventInvitationError) {
                                 return error;
