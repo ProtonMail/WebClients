@@ -16,7 +16,7 @@ export const getNormalizedLocale = (locale = '') => {
  * Get the closest matching locale from an object of locales.
  */
 export const getClosestLocaleMatch = (locale = '', locales = {}) => {
-    const localeKeys = Object.keys(locales).sort();
+    const localeKeys = [DEFAULT_LOCALE, ...Object.keys(locales)].sort();
     const normalizedLocale = getNormalizedLocale(locale);
 
     // First by language and country code.
