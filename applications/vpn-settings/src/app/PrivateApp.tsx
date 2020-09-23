@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StandardPrivateApp } from 'react-components';
 import {
     UserModel,
@@ -11,10 +10,15 @@ import {
     PaymentMethodsModel
 } from 'proton-shared/lib/models';
 
-import PrivateLayout from './components/layout/PrivateLayout';
 import locales from './locales';
 
-const PrivateApp = ({ onLogout }) => {
+const getAppContainer = () => import('./MainContainer');
+
+interface Props {
+    onLogout: () => void;
+    locales: TtagLocaleMap;
+}
+const PrivateApp = ({ onLogout }: Props) => {
     return (
         <StandardPrivateApp
             onLogout={onLogout}
@@ -29,14 +33,9 @@ const PrivateApp = ({ onLogout }) => {
                 PaymentMethodsModel,
                 OrganizationModel
             ]}
-        >
-            <PrivateLayout />
-        </StandardPrivateApp>
+            app={getAppContainer}
+        />
     );
-};
-
-PrivateApp.propTypes = {
-    onLogout: PropTypes.func.isRequired
 };
 
 export default PrivateApp;

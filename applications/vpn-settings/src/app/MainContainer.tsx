@@ -18,14 +18,14 @@ import {
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { c } from 'ttag';
 
-import { getPages } from '../../pages';
-import DashboardContainer from '../../containers/DashboardContainer';
-import GeneralContainer from '../../containers/GeneralContainer';
-import AccountContainer from '../../containers/AccountContainer';
-import DownloadsContainer from '../../containers/DownloadsContainer';
-import PaymentsContainer from '../../containers/PaymentsContainer';
+import { getPages } from './pages';
+import DashboardContainer from './containers/DashboardContainer';
+import GeneralContainer from './containers/GeneralContainer';
+import AccountContainer from './containers/AccountContainer';
+import DownloadsContainer from './containers/DownloadsContainer';
+import PaymentsContainer from './containers/PaymentsContainer';
 
-const PrivateLayout = ({ location }: RouteComponentProps) => {
+const MainContainer = ({ location }: RouteComponentProps) => {
     const [user] = useUser();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const userPermissions = usePermissions();
@@ -111,4 +111,4 @@ const PrivateLayout = ({ location }: RouteComponentProps) => {
     );
 };
 
-export default withRouter(PrivateLayout);
+export default withRouter(MainContainer);
