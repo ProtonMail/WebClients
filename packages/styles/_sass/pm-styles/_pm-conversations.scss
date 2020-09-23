@@ -719,10 +719,15 @@ $message-attachment-icon-width: 2.6em !default;
 	border-radius: 50%;
 	padding: .5em;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-}
+	transition: bottom .5s easing(easeOutQuart);
 
-.compose-fab--inBackground {
-	z-index: 0;
+	&--is-higher {
+		bottom: 4em;
+	}
+
+	&--inBackground {
+		z-index: 0;
+	}
 }
 
 
