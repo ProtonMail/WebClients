@@ -1,5 +1,4 @@
 import React from 'react';
-import { PASSWORD_PLACEHOLDER } from 'proton-shared/lib/constants';
 import { PasswordInput } from '../../components';
 
 interface Props {
@@ -17,7 +16,6 @@ const LoginPasswordInput = ({ password, setPassword, id, title }: Props) => {
             title={title}
             required
             value={password}
-            placeholder={PASSWORD_PLACEHOLDER}
             onChange={({ target: { value } }) => setPassword(value)}
             data-cy-login="password"
         />

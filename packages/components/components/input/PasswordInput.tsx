@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { PASSWORD_PLACEHOLDER } from 'proton-shared/lib/constants';
 
 import Icon from '../icon/Icon';
 import Input, { Props } from './Input';
@@ -26,7 +25,6 @@ const PasswordInput = ({ disabled = false, ...rest }: Props) => {
                     <Icon className="mauto" name={type === 'password' ? 'read' : 'unread'} />
                 </button>
             }
-            placeholder={PASSWORD_PLACEHOLDER}
             {...rest}
         />
     );
