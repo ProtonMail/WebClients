@@ -20,7 +20,6 @@ export const MAX_SPACE_ADDON = 16;
 export const DOMAIN_PLACEHOLDER = 'domain.com';
 export const EMAIL_PLACEHOLDER = 'john.doe@domain.com';
 export const USERNAME_PLACEHOLDER = 'john.doe';
-export const PASSWORD_PLACEHOLDER = '*********';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
