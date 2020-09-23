@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { loadDateLocale, loadLocale } from 'proton-shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
-import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
+import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from 'proton-shared/lib/i18n/helper';
+import { useHistory } from 'react-router-dom';
+
 import ModalsChildren from '../modals/Children';
 import LoaderPage from './LoaderPage';
 import StandardLoadError from './StandardLoadError';
@@ -16,11 +18,15 @@ interface Props {
 const StandardPublicApp = ({ locales = {}, openpgpConfig, children }: Props) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const history = useHistory();
 
     useEffect(() => {
         const run = () => {
+            const searchParams = new URLSearchParams(history.location.search);
+            const language = searchParams.get('language');
             const browserLocale = getBrowserLocale();
-            const localeCode = getClosestLocaleCode(browserLocale, locales);
+            const localeCode =
+                getClosestLocaleMatch(language || '', locales) || getClosestLocaleCode(browserLocale, locales);
             return Promise.all([
                 loadOpenPGP(openpgpConfig),
                 loadLocale(localeCode, locales),
