@@ -196,7 +196,7 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock, breakp
                                     name="circle"
                                     size={12}
                                     color={Color}
-                                    className="flex-item-noshrink ml0-25 mr0-5"
+                                    className="flex-item-noshrink relative ml0-25 mr0-5"
                                     onClick={handleClickIcon(ID)}
                                 />
                                 <span className="ellipsis">
