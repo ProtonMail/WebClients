@@ -15,8 +15,6 @@ import {
     PaymentMethodsModel,
 } from 'proton-shared/lib/models';
 
-import PrivateLayout from './PrivateLayout';
-
 const EVENT_MODELS = [
     UserModel,
     MailSettingsModel,
@@ -33,6 +31,8 @@ const EVENT_MODELS = [
 
 const PRELOAD_MODELS = [UserSettingsModel, UserModel];
 
+const getAppContainer = () => import('./MainContainer');
+
 interface Props {
     onLogout: () => void;
     locales: TtagLocaleMap;
@@ -47,9 +47,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             eventModels={EVENT_MODELS}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
-        >
-            <PrivateLayout />
-        </StandardPrivateApp>
+            app={getAppContainer}
+        />
     );
 };
 

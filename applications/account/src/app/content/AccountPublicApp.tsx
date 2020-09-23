@@ -51,7 +51,6 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
         };
 
         const runResumeSession = async (localID: number) => {
-            await loadOpenPGP();
             try {
                 const result = await resumeSession(silentApi, localID);
                 return onLogin(result);

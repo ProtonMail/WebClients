@@ -6,7 +6,6 @@ import { OnLoginCallbackArguments, ProtonLoginCallback } from 'react-components/
 import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
 import { produceFork, ProduceForkParameters } from 'proton-shared/lib/authentication/sessionForking';
 import { SSO_PATHS, UNPAID_STATE } from 'proton-shared/lib/constants';
-import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import {
     AccountForgotUsernameContainer,
@@ -53,17 +52,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         return onLogin(args);
     };
 
-    const handleActiveSessionsFork = (
-        newForkState: ProduceForkParameters,
-        { session, sessions }: GetActiveSessionsResult
-    ) => {
-        const isSwitchType = newForkState.type === FORK_TYPE.SWITCH;
-
-        if (session && sessions.length === 1 && !isSwitchType) {
-            const { UID, keyPassword } = session;
-            return produceFork({ api, UID, keyPassword, ...newForkState });
-        }
-
+    const handleActiveSessionsFork = (newForkState: ProduceForkParameters, { sessions }: GetActiveSessionsResult) => {
         ignoreAutoRef.current = true;
 
         setForkState(newForkState);

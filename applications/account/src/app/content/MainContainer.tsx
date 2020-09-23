@@ -24,7 +24,7 @@ import SecurityContainer from '../containers/SecurityContainer';
 import OverviewContainer from '../containers/OverviewContainer';
 import SidebarVersion from './SidebarVersion';
 
-const PrivateLayout = () => {
+const MainContainer = () => {
     const [user] = useUser();
     const location = useLocation();
     const [organization] = useOrganization();
@@ -102,4 +102,4 @@ const PrivateLayout = () => {
     );
 };
 
-export default PrivateLayout;
+export default MainContainer;
