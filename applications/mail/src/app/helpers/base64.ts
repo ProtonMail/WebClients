@@ -1,6 +1,5 @@
-import { encodeBase64, decodeBase64 } from 'pmcrypto';
-import { arrayToBinaryString, binaryStringToArray } from 'proton-shared/lib/helpers/string';
+import { uint8ArrayToBase64String, base64StringToUint8Array } from 'proton-shared/lib/helpers/encoding';
 
-export const arrayToBase64 = (data: Uint8Array): string => encodeBase64(arrayToBinaryString(data)) || '';
+export const arrayToBase64 = (data: Uint8Array): string => uint8ArrayToBase64String(data) || '';
 
-export const base64ToArray = (data: string): Uint8Array => binaryStringToArray(decodeBase64(data) || '');
+export const base64ToArray = (data: string): Uint8Array => base64StringToUint8Array(data);

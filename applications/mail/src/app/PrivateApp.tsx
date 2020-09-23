@@ -1,9 +1,7 @@
 import React from 'react';
 import { RouteChildrenProps } from 'react-router';
-import { Route } from 'react-router-dom';
-import { StandardPrivateApp, useActiveBreakpoint } from 'react-components';
+import { StandardPrivateApp } from 'react-components';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
-
 import { Model } from 'proton-shared/lib/interfaces/Model';
 import {
     UserModel,
@@ -19,12 +17,6 @@ import {
     ContactEmailsModel
 } from 'proton-shared/lib/models';
 
-import PageContainer from './containers/PageContainer';
-import ComposerContainer from './containers/ComposerContainer';
-import MessageProvider from './containers/MessageProvider';
-import ConversationProvider from './containers/ConversationProvider';
-import AttachmentProvider from './containers/AttachmentProvider';
-
 export type RouteProps = RouteChildrenProps<{ labelID: string; elementID?: string; messageID?: string }>;
 
 interface Props {
@@ -32,9 +24,9 @@ interface Props {
     locales: TtagLocaleMap;
 }
 
-const PrivateApp = ({ onLogout, locales }: Props) => {
-    const breakpoints = useActiveBreakpoint();
+const getAppContainer = () => import('./MainContainer');
 
+const PrivateApp = ({ onLogout, locales }: Props) => {
     return (
         <StandardPrivateApp
             fallback={false}
@@ -65,28 +57,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             ]}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
-        >
-            <MessageProvider>
-                <ConversationProvider>
-                    <AttachmentProvider>
-                        <ComposerContainer breakpoints={breakpoints}>
-                            {({ onCompose }) => (
-                                <Route
-                                    path="/:labelID?/:elementID?/:messageID?"
-                                    render={(routeProps: RouteProps) => (
-                                        <PageContainer
-                                            {...routeProps}
-                                            breakpoints={breakpoints}
-                                            onCompose={onCompose}
-                                        />
-                                    )}
-                                />
-                            )}
-                        </ComposerContainer>
-                    </AttachmentProvider>
-                </ConversationProvider>
-            </MessageProvider>
-        </StandardPrivateApp>
+            app={getAppContainer}
+        />
     );
 };
 
