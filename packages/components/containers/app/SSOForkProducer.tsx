@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 import {
     getActiveSessions,
     GetActiveSessionsResult,
@@ -13,6 +12,7 @@ import {
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
 import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { traceError } from 'proton-shared/lib/helpers/sentry';
+import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 
 import { useApi, useNotifications } from '../../hooks';
 import LoaderPage from './LoaderPage';
@@ -37,11 +37,31 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
                 onInvalidFork();
                 return;
             }
-            await loadOpenPGP();
+
+            const handleActiveSessions = async (activeSessionsResult: GetActiveSessionsResult) => {
+                const { session, sessions } = activeSessionsResult;
+
+                if (session && sessions.length === 1 && type !== FORK_TYPE.SWITCH) {
+                    const { UID, keyPassword } = session;
+                    await produceFork({
+                        api: silentApi,
+                        UID,
+                        keyPassword,
+                        state,
+                        app,
+                    });
+                    return;
+                }
+
+                onActiveSessions({ state, app, type }, activeSessionsResult);
+            };
+
             if (localID === undefined) {
                 const activeSessionsResult = await getActiveSessions(silentApi);
-                return onActiveSessions({ app, state, type }, activeSessionsResult);
+                await handleActiveSessions(activeSessionsResult);
+                return;
             }
+
             try {
                 // Resume session and produce the fork
                 const validatedSession = await resumeSession(silentApi, localID);
@@ -55,7 +75,7 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
             } catch (e) {
                 if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                     const activeSessionsResult = await getActiveSessions(silentApi);
-                    onActiveSessions({ app, state, type }, activeSessionsResult);
+                    await handleActiveSessions(activeSessionsResult);
                     return;
                 }
                 throw e;

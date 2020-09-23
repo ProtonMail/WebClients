@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, FunctionComponent } from 'react';
 import { AddressesModel, UserModel, UserSettingsModel } from 'proton-shared/lib/models';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { loadDateLocale, loadLocale } from 'proton-shared/lib/i18n/loadLocale';
@@ -41,7 +41,7 @@ interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     noModals?: boolean;
     hasPrivateMemberKeyGeneration?: boolean;
     hasReadableMemberKeyActivation?: boolean;
-    children: React.ReactNode;
+    app: () => Promise<{ default: FunctionComponent }>;
 }
 
 const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
@@ -55,7 +55,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     noModals = false,
     hasPrivateMemberKeyGeneration = false,
     hasReadableMemberKeyActivation = false,
-    children,
+    app: appFactory,
 }: Props<T, M, E, EvtM>) => {
     const { APP_NAME } = useConfig();
     const [loading, setLoading] = useState(true);
@@ -66,6 +66,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     const cache = useCache();
     const { createNotification } = useNotifications();
     const onceRef = useRef<{ externalEmailAddress: Address } | undefined>();
+    const appRef = useRef<FunctionComponent | null>(null);
 
     useEffect(() => {
         const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
@@ -103,7 +104,18 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             ]);
         });
 
-        Promise.all([eventManagerPromise, modelsPromise, addressesPromise, onInit?.(), loadOpenPGP(openpgpConfig)])
+        const appPromise = appFactory().then((result) => {
+            appRef.current = result.default;
+        });
+
+        Promise.all([
+            eventManagerPromise,
+            modelsPromise,
+            addressesPromise,
+            onInit?.(),
+            loadOpenPGP(openpgpConfig),
+            appPromise,
+        ])
             .then(() => {
                 setLoading(false);
             })
@@ -127,7 +139,9 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         return <StandardLoadError />;
     }
 
-    if (loading || !eventManagerRef.current) {
+    const LoadedApp = appRef.current;
+
+    if (loading || !eventManagerRef.current || LoadedApp === null) {
         return (
             <>
                 <ModalsChildren />
@@ -150,7 +164,9 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                         hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
                     />
                     <StorageListener />
-                    <ForceRefreshProvider>{children}</ForceRefreshProvider>
+                    <ForceRefreshProvider>
+                        <LoadedApp />
+                    </ForceRefreshProvider>
                 </InternalEmailAddressGeneration>
             </ContactProvider>
         </EventManagerProvider>

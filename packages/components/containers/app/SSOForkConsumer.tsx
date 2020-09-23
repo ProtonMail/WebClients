@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { InvalidForkConsumeError } from 'proton-shared/lib/authentication/error';
 import { consumeFork, getConsumeForkParameters } from 'proton-shared/lib/authentication/sessionForking';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
@@ -25,17 +24,17 @@ const SSOForkConsumer = ({ onLogin, onEmptyFork, onInvalidFork }: Props) => {
 
     useEffect(() => {
         const run = async () => {
-            const { state, selector, sessionKey } = getConsumeForkParameters();
-            if (!state && !selector && !sessionKey) {
+            const { state, selector, key } = getConsumeForkParameters();
+            if (!state && !selector && !key) {
                 return onEmptyFork();
             }
-            if (!state || !selector || !sessionKey) {
+            if (!state || !selector || !key) {
                 return onInvalidFork();
             }
-            await loadOpenPGP();
             try {
-                const authResponse = await consumeFork({ selector, api: silentApi, state, sessionKey });
-                return onLogin(authResponse);
+                const result = await consumeFork({ selector, api: silentApi, state, key });
+                onLogin(result);
+                return;
             } catch (e) {
                 if (e instanceof InvalidForkConsumeError) {
                     return onInvalidFork();

@@ -3,7 +3,6 @@ import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/
 import { getLocalIDFromPathname } from 'proton-shared/lib/authentication/pathnameHelper';
 import { resumeSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { traceError } from 'proton-shared/lib/helpers/sentry';
 
 import { useApi, useNotifications } from '../../hooks';
@@ -28,10 +27,10 @@ const SSOPublicApp = ({ onLogin, onInactiveSession }: Props) => {
             if (localID === undefined) {
                 return onInactiveSession(undefined);
             }
-            await loadOpenPGP();
             try {
                 const result = await resumeSession(silentApi, localID);
-                return onLogin(result);
+                onLogin(result);
+                return;
             } catch (e) {
                 if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
                     return onInactiveSession(localID);
