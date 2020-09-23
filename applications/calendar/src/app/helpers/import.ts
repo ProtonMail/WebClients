@@ -1,5 +1,5 @@
 import { getEventByUID } from 'proton-shared/lib/api/calendars';
-import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import { MAX_CALENDARS_PER_USER, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { parseWithErrors } from 'proton-shared/lib/calendar/vcal';
 import {
     getDateProperty,
@@ -48,7 +48,7 @@ import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/cale
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../components/import/ImportEventError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportFileError';
 
-import { MAX_CALENDARS_PER_USER, MAX_IMPORT_EVENTS, MAX_NOTIFICATIONS } from '../constants';
+import { MAX_IMPORT_EVENTS, MAX_NOTIFICATIONS } from '../constants';
 import getComponentFromCalendarEvent from '../containers/calendar/eventStore/cache/getComponentFromCalendarEvent';
 import { EncryptedEvent, VcalCalendarComponentOrError } from '../interfaces/Import';
 import { getSupportedAlarm } from './alarms';

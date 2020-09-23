@@ -1,3 +1,4 @@
+import { MAX_CALENDARS_PER_USER } from 'proton-shared/lib/calendar/constants';
 import React, { useState } from 'react';
 import {
     useApi,
@@ -16,7 +17,6 @@ import { Address } from 'proton-shared/lib/interfaces';
 
 import CalendarsTable from './CalendarsTable';
 import CalendarModal from '../CalendarModal';
-import { MAX_CALENDARS_PER_USER } from '../../../constants';
 
 interface Props {
     activeAddresses: Address[];

@@ -39,8 +39,6 @@ export const NOTIFICATION_UNITS_MAX = {
     [NOTIFICATION_UNITS.MINUTES]: 10000 - 1,
 };
 
-export const MAX_CALENDARS_PER_USER = 10;
-
 export const DEFAULT_EVENT_DURATION = 30;
 
 export const COLORS = {
