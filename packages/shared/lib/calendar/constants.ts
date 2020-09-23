@@ -73,6 +73,8 @@ export enum ATTENDEE_STATUS_API {
     DECLINED,
 }
 
+export const MAX_CALENDARS_PER_USER = 10;
+
 export const MAX_LENGTHS = {
     UID: 191,
     CALENDAR_NAME: 100,
