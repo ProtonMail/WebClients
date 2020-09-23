@@ -10,7 +10,7 @@ export const getStorageRange = (
 ) => {
     return [
         Math.ceil(memberUsedSpace / GIGA) * GIGA,
-        Math.ceil((organizationMaxSpace - organizationAssignedSpace + memberMaxSpace) / GIGA) * GIGA,
+        Math.floor((organizationMaxSpace - organizationAssignedSpace + memberMaxSpace) / GIGA) * GIGA,
     ];
 };
 
