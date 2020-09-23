@@ -28,7 +28,7 @@ const SignInLayout = ({ children, title = '' }: Props) => {
             <PublicHeader
                 left={
                     <>
-                        <span className="opacity-50">{c('Label').t`Back to:`}</span>{' '}
+                        <span className="opacity-50 mr1">{c('Label').t`Back to:`}</span>
                         <Href url={staticURL} className="inbl color-white nodecoration hover-same-color" target="_self">
                             {domain}
                         </Href>
@@ -42,8 +42,8 @@ const SignInLayout = ({ children, title = '' }: Props) => {
                 right={
                     <>
                         <div className="flex flex-justify-end">
-                            <SupportDropdown className="pm-button--primaryborder-dark" />
-                            <Link className="ml1 notablet pm-button--primary" to="/signup">{c('Link')
+                            <SupportDropdown className="pm-button--primaryborder-dark inline-flex flex-items-center" />
+                            <Link className="ml1 nomobile notablet pm-button--primary" to="/signup">{c('Link')
                                 .t`Sign up for free`}</Link>
                         </div>
                     </>
@@ -54,13 +54,15 @@ const SignInLayout = ({ children, title = '' }: Props) => {
                 <div className="flex flex-column flex-nowrap flex-item-noshrink">
                     <div className="center bg-white color-global-grey mt2 mw40e w100 p2 bordered-container flex-item-noshrink">
                         {children}
+                        <div className="w100 flex flex-justify-center flex-items-center flex-column mt1">
+                            <span className="flex-item-noshrink">
+                                <p className="bold">{c('Link').t`Don't have an account yet? Sign up for free!`}</p>
+                            </span>
+                            <Link className="ml1 pm-button--primary" to="/signup">{c('Link').t`Sign up for free`}</Link>
+                        </div>
                     </div>
-                    <p className="aligncenter flex-item-noshrink">
-                        <Link className="bold" to="/signup">{c('Link')
-                            .t`Don't have an account yet? Sign up for free!`}</Link>
-                    </p>
                 </div>
-                <footer className="opacity-50 mtauto flex-item-noshrink aligncenter pb1">
+                <footer className="opacity-50 flex-item-noshrink aligncenter pb1 mt1">
                     <FooterDetails link={<a href={staticURL}>{isVPN ? 'ProtonVPN.com' : 'ProtonMail.com'}</a>} />
                 </footer>
             </div>
