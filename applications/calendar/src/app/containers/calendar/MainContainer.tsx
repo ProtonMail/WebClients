@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { useAddresses, useCalendars, useUser } from 'react-components';
+import { ErrorBoundary, useAddresses, useCalendars, useUser } from 'react-components';
 
 import { getSetupType, SETUP_TYPE } from '../setup/setupHelper';
 import FreeContainer from '../setup/FreeContainer';
@@ -32,4 +32,12 @@ const MainContainer = () => {
     return <MainContainerSetup addresses={memoedAddresses} calendars={memoedCalendars} />;
 };
 
-export default MainContainer;
+const WrappedMainContainer = () => {
+    return (
+        <ErrorBoundary>
+            <MainContainer />
+        </ErrorBoundary>
+    );
+};
+
+export default WrappedMainContainer;

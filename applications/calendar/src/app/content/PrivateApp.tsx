@@ -1,5 +1,5 @@
 import React from 'react';
-import { StandardPrivateApp, ErrorBoundary, LoaderPage, useApi, useCache, useAppTitle } from 'react-components';
+import { StandardPrivateApp, LoaderPage, useApi, useCache, useAppTitle } from 'react-components';
 import {
     UserModel,
     UserSettingsModel,
@@ -11,8 +11,6 @@ import {
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 
-import MainContainer from '../containers/calendar/MainContainer';
-
 const EVENT_MODELS = [
     UserModel,
     UserSettingsModel,
@@ -23,6 +21,8 @@ const EVENT_MODELS = [
 ];
 
 const PRELOAD_MODELS = [UserModel, UserSettingsModel, AddressesModel];
+
+const getAppContainer = () => import('../containers/calendar/MainContainer');
 
 interface Props {
     onLogout: () => void;
@@ -49,11 +49,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             fallback={<LoaderPage />}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
-        >
-            <ErrorBoundary>
-                <MainContainer />
-            </ErrorBoundary>
-        </StandardPrivateApp>
+            app={getAppContainer}
+        />
     );
 };
 
