@@ -9,8 +9,7 @@ import {
     AddressesModel,
     PaymentMethodsModel
 } from 'proton-shared/lib/models';
-
-import locales from './locales';
+import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 
 const getAppContainer = () => import('./MainContainer');
 
@@ -18,7 +17,7 @@ interface Props {
     onLogout: () => void;
     locales: TtagLocaleMap;
 }
-const PrivateApp = ({ onLogout }: Props) => {
+const PrivateApp = ({ onLogout, locales }: Props) => {
     return (
         <StandardPrivateApp
             onLogout={onLogout}

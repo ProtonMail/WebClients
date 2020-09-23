@@ -11,9 +11,7 @@ import RedeemContainer from './containers/RedeemContainer';
 import PreInviteContainer from './containers/PreInviteContainer';
 import SignupContainer from './containers/SignupContainer/SignupContainer';
 
-import locales from './locales';
-
-const PublicApp = ({ onLogin }) => {
+const PublicApp = ({ onLogin, locales }) => {
     return (
         <StandardPublicApp locales={locales}>
             <PublicLayout>

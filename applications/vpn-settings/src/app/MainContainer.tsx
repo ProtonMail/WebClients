@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Route } from 'react-router';
-import { withRouter, Redirect, Switch, RouteComponentProps } from 'react-router-dom';
+import { useLocation, Redirect, Switch } from 'react-router-dom';
 import {
     Sidebar,
     useToggle,
@@ -25,11 +25,12 @@ import AccountContainer from './containers/AccountContainer';
 import DownloadsContainer from './containers/DownloadsContainer';
 import PaymentsContainer from './containers/PaymentsContainer';
 
-const MainContainer = ({ location }: RouteComponentProps) => {
+const MainContainer = () => {
     const [user] = useUser();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const userPermissions = usePermissions();
     const { isNarrow } = useActiveBreakpoint();
+    const location = useLocation();
 
     const [activeSection, setActiveSection] = useState('');
     const filteredPages = getPages(user).filter(({ permissions: pagePermissions = [] }) =>
@@ -111,4 +112,4 @@ const MainContainer = ({ location }: RouteComponentProps) => {
     );
 };
 
-export default withRouter(MainContainer);
+export default MainContainer;

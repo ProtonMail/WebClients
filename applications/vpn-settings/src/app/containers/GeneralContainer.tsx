@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 import { LanguageSection, ThemesSection, SettingsPropsShared } from 'react-components';
+import locales from 'proton-shared/lib/i18n/locales';
 
-import locales from '../locales';
 import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';
 
 export const getGeneralPage = () => {
@@ -20,8 +20,7 @@ export const getGeneralPage = () => {
                 id: 'themes'
             }
         ]
-
-    }
+    };
 };
 
 const GeneralContainer = ({ setActiveSection, location }: SettingsPropsShared) => {
