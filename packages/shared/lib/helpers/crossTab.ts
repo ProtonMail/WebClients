@@ -1,7 +1,7 @@
 import getRandomValues from 'get-random-values';
 
 import { removeItem, setItem } from './storage';
-import { serializeUint8Array } from './serialization';
+import { uint8ArrayToBase64String } from './encoding';
 
 export const PASSWORD_CHANGE_MESSAGE_TYPE = 'password-change';
 
@@ -10,7 +10,7 @@ const CROSS_TAB_EVENT_KEY = 'cte';
 let id: string | undefined;
 
 const generateId = () => {
-    return serializeUint8Array(getRandomValues(new Uint8Array(6)));
+    return uint8ArrayToBase64String(getRandomValues(new Uint8Array(6)));
 };
 
 export const sendMessageToTabs = (type: string, data: any) => {

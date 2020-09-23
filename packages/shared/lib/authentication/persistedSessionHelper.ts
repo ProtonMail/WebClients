@@ -16,9 +16,9 @@ import { Api, User as tsUser } from '../interfaces';
 import { LocalKeyResponse, LocalSessionResponse } from './interface';
 import { InvalidPersistentSessionError } from './error';
 import { getRandomString } from '../helpers/string';
-import { getSessionKey } from './sessionBlobCryptoHelper';
-import { deserializeUint8Array, serializeUint8Array } from '../helpers/serialization';
 import { InactiveSessionError } from '../api/helpers/withApiHandlers';
+import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
+import { getKey } from './cryptoHelper';
 
 export type ResumedSessionResult = {
     UID: string;
@@ -47,8 +47,8 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
                 api<LocalKeyResponse>(withUIDHeaders(persistedUID, getLocalKey())).then(({ ClientKey }) => ClientKey),
                 User || api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())).then(({ User }) => User),
             ]);
-            const rawSessionKey = deserializeUint8Array(ClientKey);
-            const sessionKey = getSessionKey(rawSessionKey);
+            const rawSessionKey = base64StringToUint8Array(ClientKey);
+            const sessionKey = await getKey(rawSessionKey);
             const { keyPassword } = await getDecryptedPersistedSessionBlob(sessionKey, persistedSessionBlobString);
             if (persistedUserID !== persistedUser.ID) {
                 throw InactiveSessionError();
@@ -96,10 +96,10 @@ export const persistSessionWithPassword = async ({
     isMember,
 }: PersistSessionWithPasswordArgs) => {
     const rawSessionKey = getRandomValues(new Uint8Array(32));
-    const sessionKey = getSessionKey(rawSessionKey);
-    const serializedSessionKey = serializeUint8Array(rawSessionKey);
+    const key = await getKey(rawSessionKey);
+    const serializedSessionKey = uint8ArrayToBase64String(rawSessionKey);
     await api<LocalKeyResponse>(setLocalKey(serializedSessionKey));
-    await setPersistedSessionWithBlob(LocalID, sessionKey, { UID, UserID: User.ID, keyPassword, isMember });
+    await setPersistedSessionWithBlob(LocalID, key, { UID, UserID: User.ID, keyPassword, isMember });
 };
 
 interface PersistLoginArgs {

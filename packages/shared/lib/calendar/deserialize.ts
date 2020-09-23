@@ -1,6 +1,5 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 
-import { deserializeUint8Array } from '../helpers/serialization';
 import { SimpleMap } from '../interfaces/utils';
 import { decryptAndVerifyCalendarEvent, getDecryptedSessionKey, verifySignedCard } from './decrypt';
 import { parse } from './vcal';
@@ -9,9 +8,10 @@ import { toInternalAttendee } from './attendees';
 import { CalendarEventData, CalendarEvent, CalendarPersonalEventData } from '../interfaces/calendar';
 import { VcalAttendeeProperty, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
 import { getIsEventComponent } from './vcalHelper';
+import { base64StringToUint8Array } from '../helpers/encoding';
 
 export const readSessionKey = (KeyPacket: string, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
-    return getDecryptedSessionKey(deserializeUint8Array(KeyPacket), privateKeys);
+    return getDecryptedSessionKey(base64StringToUint8Array(KeyPacket), privateKeys);
 };
 
 /**
@@ -22,8 +22,10 @@ export const readSessionKeys = (
     privateKeys: OpenPGPKey | OpenPGPKey[]
 ) => {
     return Promise.all([
-        getDecryptedSessionKey(deserializeUint8Array(SharedKeyPacket), privateKeys),
-        CalendarKeyPacket ? getDecryptedSessionKey(deserializeUint8Array(CalendarKeyPacket), privateKeys) : undefined,
+        getDecryptedSessionKey(base64StringToUint8Array(SharedKeyPacket), privateKeys),
+        CalendarKeyPacket
+            ? getDecryptedSessionKey(base64StringToUint8Array(CalendarKeyPacket), privateKeys)
+            : undefined,
     ]);
 };
 

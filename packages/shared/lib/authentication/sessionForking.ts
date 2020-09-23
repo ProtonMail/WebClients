@@ -1,15 +1,14 @@
 import getRandomValues from 'get-random-values';
 import { APP_NAMES, APPS, APPS_CONFIGURATION, SSO_PATHS } from '../constants';
-import { arrayToBinaryString, encodeBase64URL } from '../helpers/string';
+import { uint8ArrayToString, encodeBase64URL } from '../helpers/encoding';
 import { replaceUrl } from '../helpers/browser';
 import { getAppHref } from '../apps/helper';
 import {
     getValidatedApp,
     getValidatedForkType,
     getValidatedLocalID,
-    getValidatedSessionKey,
+    getValidatedRawKey,
 } from './sessionForkValidation';
-import { getSessionKey } from './sessionBlobCryptoHelper';
 import { getForkDecryptedBlob, getForkEncryptedBlob } from './sessionForkBlob';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from './error';
 import { PullForkResponse, PushForkResponse, RefreshSessionResponse } from './interface';
@@ -19,12 +18,13 @@ import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { FORK_TYPE } from './ForkInterface';
 import { persistSession, resumeSession } from './persistedSessionHelper';
 import { getUser } from '../api/user';
+import { getKey } from './cryptoHelper';
 
 interface ForkState {
     url: string;
 }
 export const requestFork = (fromApp: APP_NAMES, localID?: number, type?: FORK_TYPE) => {
-    const state = encodeBase64URL(arrayToBinaryString(getRandomValues(new Uint8Array(32))));
+    const state = encodeBase64URL(uint8ArrayToString(getRandomValues(new Uint8Array(32))));
 
     const searchParams = new URLSearchParams();
     searchParams.append('app', fromApp);
@@ -74,9 +74,9 @@ interface ProduceForkArguments {
     state: string;
 }
 export const produceFork = async ({ api, UID, keyPassword, state, app }: ProduceForkArguments) => {
-    const sessionKey = getRandomValues(new Uint8Array(32));
-    const serializedSessionKey = encodeBase64URL(arrayToBinaryString(sessionKey));
-    const payload = keyPassword ? await getForkEncryptedBlob(getSessionKey(sessionKey), { keyPassword }) : undefined;
+    const rawKey = getRandomValues(new Uint8Array(32));
+    const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
+    const payload = keyPassword ? await getForkEncryptedBlob(await getKey(rawKey), { keyPassword }) : undefined;
     const childClientID = APPS_CONFIGURATION[app].clientID;
     const { Selector } = await api<PushForkResponse>(
         withUIDHeaders(
@@ -92,7 +92,7 @@ export const produceFork = async ({ api, UID, keyPassword, state, app }: Produce
     const toConsumeParams = new URLSearchParams();
     toConsumeParams.append('selector', Selector);
     toConsumeParams.append('state', state);
-    toConsumeParams.append('sk', serializedSessionKey);
+    toConsumeParams.append('sk', base64StringKey);
 
     return replaceUrl(getAppHref(`${SSO_PATHS.FORK}#${toConsumeParams.toString()}`, app));
 };
@@ -115,12 +115,12 @@ export const getConsumeForkParameters = () => {
     const hashParams = new URLSearchParams(window.location.hash.slice(1));
     const selector = hashParams.get('selector') || '';
     const state = hashParams.get('state') || '';
-    const sessionKey = hashParams.get('sk') || '';
+    const base64StringKey = hashParams.get('sk') || '';
 
     return {
         state: state.slice(0, 100),
         selector,
-        sessionKey: sessionKey.length ? getValidatedSessionKey(sessionKey) : undefined,
+        key: base64StringKey.length ? getValidatedRawKey(base64StringKey) : undefined,
     };
 };
 
@@ -128,9 +128,9 @@ interface ConsumeForkArguments {
     api: Api;
     selector: string;
     state: string;
-    sessionKey: Uint8Array;
+    key: Uint8Array;
 }
-export const consumeFork = async ({ selector, api, state, sessionKey }: ConsumeForkArguments) => {
+export const consumeFork = async ({ selector, api, state, key }: ConsumeForkArguments) => {
     const stateData = getForkStateData(sessionStorage.getItem(`f${state}`));
     if (!stateData) {
         throw new InvalidForkConsumeError(`Missing state ${state}`);
@@ -162,7 +162,7 @@ export const consumeFork = async ({ selector, api, state, sessionKey }: ConsumeF
 
     if (Payload) {
         try {
-            const data = await getForkDecryptedBlob(getSessionKey(sessionKey), Payload);
+            const data = await getForkDecryptedBlob(await getKey(key), Payload);
             keyPassword = data?.keyPassword;
         } catch (e) {
             throw new InvalidForkConsumeError('Failed to decrypt payload');

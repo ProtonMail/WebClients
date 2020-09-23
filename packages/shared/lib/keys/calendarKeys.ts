@@ -15,13 +15,13 @@ import { c } from 'ttag';
 
 import { ENCRYPTION_TYPES, ENCRYPTION_CONFIGS } from '../constants';
 import { normalize } from '../helpers/string';
-import { serializeUint8Array } from '../helpers/serialization';
+import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { Address, EncryptionConfig } from '../interfaces';
 import { Key as tsKey, Member } from '../interfaces/calendar';
 
 export const generatePassphrase = () => {
     const value = getRandomValues(new Uint8Array(32));
-    return serializeUint8Array(value) as string;
+    return uint8ArrayToBase64String(value);
 };
 
 /**
@@ -66,10 +66,10 @@ export const encryptPassphrase = async ({
 
     return {
         keyPackets: memberPublicKeysList.reduce((acc, [memberID], index) => {
-            acc[memberID] = serializeUint8Array(asymmetric[index]);
+            acc[memberID] = uint8ArrayToBase64String(asymmetric[index]);
             return acc;
         }, Object.create(null)),
-        dataPacket: serializeUint8Array(encrypted[0]),
+        dataPacket: uint8ArrayToBase64String(encrypted[0]),
         signature,
     };
 };

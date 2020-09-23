@@ -1,7 +1,7 @@
 import getRandomValues from 'get-random-values';
 
 // Not using openpgp to allow using this without having to depend on openpgp being loaded
-import { binaryStringToArray, arrayToBinaryString } from './string';
+import { uint8ArrayToString, stringToUint8Array } from './encoding';
 import { hasStorage as hasSessionStorage } from './sessionStorage';
 
 /**
@@ -52,14 +52,14 @@ const deserializeItem = (value: string | undefined) => {
         return;
     }
     try {
-        return binaryStringToArray(atob(value));
+        return stringToUint8Array(atob(value));
     } catch (e) {
         return undefined;
     }
 };
 
 const serializeItem = (value: Uint8Array) => {
-    return btoa(arrayToBinaryString(value));
+    return btoa(uint8ArrayToString(value));
 };
 
 const saveSessionStorage = (keys: string[] = [], data: any) => {
@@ -97,7 +97,7 @@ const mergePart = (serializedA: string | undefined, serializedB: string | undefi
         unpaddedLength--;
     }
 
-    return arrayToBinaryString(xored.slice(0, unpaddedLength));
+    return uint8ArrayToString(xored.slice(0, unpaddedLength));
 };
 
 export const mergeParts = (share1: any, share2: any) =>
@@ -111,7 +111,7 @@ export const mergeParts = (share1: any, share2: any) =>
     }, {});
 
 const separatePart = (value: string) => {
-    const item = binaryStringToArray(value);
+    const item = stringToUint8Array(value);
     const paddedLength = Math.ceil(item.length / 256) * 256;
 
     const share1 = getRandomValues(new Uint8Array(paddedLength));

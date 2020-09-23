@@ -1,4 +1,4 @@
-import { encodeBase64URL } from '../../helpers/string';
+import { encodeBase64URL } from '../../helpers/encoding';
 import { getItem, setItem, removeItem } from '../../helpers/storage';
 
 const getKey = (UID: string) => {

@@ -1,8 +1,7 @@
 import getRandomValues from 'get-random-values';
-import { arrayToBinaryString } from 'pmcrypto';
 import { c } from 'ttag';
 import { getDaysInMonth } from '../date-fns-utc';
-import { encodeBase64URL } from '../helpers/string';
+import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
 
 /**
  * Generates a calendar UID of the form 'proton-calendar-uuid'
@@ -10,7 +9,7 @@ import { encodeBase64URL } from '../helpers/string';
 export const generateUID = () => {
     // by convention we generate 21 bytes of random data
     const randomBytes = getRandomValues(new Uint8Array(21));
-    const base64String = encodeBase64URL(arrayToBinaryString(randomBytes));
+    const base64String = encodeBase64URL(uint8ArrayToString(randomBytes));
     // and we encode them in base 64
     return `${base64String}@proton.me`;
 };

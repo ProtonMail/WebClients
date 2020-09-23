@@ -1,5 +1,5 @@
 import { APP_NAMES, FORKABLE_APPS } from '../constants';
-import { binaryStringToArray, decodeBase64URL } from '../helpers/string';
+import { stringToUint8Array, decodeBase64URL } from '../helpers/encoding';
 import { FORK_TYPE } from './ForkInterface';
 
 export const getValidatedApp = (app = ''): APP_NAMES | undefined => {
@@ -18,9 +18,9 @@ export const getValidatedLocalID = (localID = '') => {
     }
 };
 
-export const getValidatedSessionKey = (str: string) => {
+export const getValidatedRawKey = (str: string) => {
     try {
-        return binaryStringToArray(decodeBase64URL(str));
+        return stringToUint8Array(decodeBase64URL(str));
     } catch (e) {
         return undefined;
     }

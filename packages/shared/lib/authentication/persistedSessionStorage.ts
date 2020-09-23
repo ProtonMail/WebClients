@@ -1,4 +1,3 @@
-import { SessionKey } from 'pmcrypto';
 import { setItem, getItem, removeItem } from '../helpers/storage';
 import isTruthy from '../helpers/isTruthy';
 import { PersistedSession, PersistedSessionBlob } from './SessionInterface';
@@ -68,7 +67,7 @@ export const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | un
 };
 
 export const getDecryptedPersistedSessionBlob = async (
-    sessionKey: SessionKey,
+    sessionKey: CryptoKey,
     persistedSessionBlobString: string
 ): Promise<PersistedSessionBlob> => {
     const blob = await getDecryptedBlob(sessionKey, persistedSessionBlobString).catch(() => {
@@ -83,14 +82,14 @@ export const getDecryptedPersistedSessionBlob = async (
 
 export const setPersistedSessionWithBlob = async (
     localID: number,
-    sessionKey: SessionKey,
+    key: CryptoKey,
     data: { UserID: string; UID: string; keyPassword: string; isMember?: boolean }
 ) => {
     const persistedSession: PersistedSession = {
         UserID: data.UserID,
         UID: data.UID,
         isMember: data.isMember,
-        blob: await getEncryptedBlob(sessionKey, JSON.stringify({ keyPassword: data.keyPassword })),
+        blob: await getEncryptedBlob(key, JSON.stringify({ keyPassword: data.keyPassword })),
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));
 };

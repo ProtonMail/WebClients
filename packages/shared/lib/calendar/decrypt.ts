@@ -10,7 +10,7 @@ import {
     verifyMessage,
 } from 'pmcrypto';
 
-import { deserializeUint8Array } from '../helpers/serialization';
+import { base64StringToUint8Array } from '../helpers/encoding';
 import { SimpleMap } from '../interfaces/utils';
 import { CALENDAR_CARD_TYPE } from './constants';
 import { CalendarEventData } from '../interfaces/calendar';
@@ -81,6 +81,6 @@ export const decryptAndVerifyCalendarEvent = (
         return verifySignedCard(Data, Signature, publicKeys);
     }
     if (Type === CALENDAR_CARD_TYPE.ENCRYPTED_AND_SIGNED) {
-        return decryptCard(deserializeUint8Array(Data), Signature, publicKeys, sessionKey);
+        return decryptCard(base64StringToUint8Array(Data), Signature, publicKeys, sessionKey);
     }
 };

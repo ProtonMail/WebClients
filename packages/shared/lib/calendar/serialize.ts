@@ -1,5 +1,5 @@
 import { OpenPGPKey, OpenPGPSignature, SessionKey } from 'pmcrypto';
-import { serializeUint8Array } from '../helpers/serialization';
+import { uint8ArrayToBase64String } from '../helpers/encoding';
 
 import { getVeventParts } from './veventHelper';
 import { createSessionKey, encryptPart, getEncryptedSessionKey, signPart } from './encrypt';
@@ -40,7 +40,7 @@ export const formatData = ({
     attendeesClearPart,
 }: FormatDataArguments) => {
     return {
-        SharedKeyPacket: sharedSessionKey ? serializeUint8Array(sharedSessionKey) : undefined,
+        SharedKeyPacket: sharedSessionKey ? uint8ArrayToBase64String(sharedSessionKey) : undefined,
         SharedEventContent: [
             // Shared part should always exists
             {
@@ -50,12 +50,12 @@ export const formatData = ({
             },
             {
                 Type: ENCRYPTED_AND_SIGNED,
-                Data: serializeUint8Array(sharedEncryptedPart.dataPacket),
+                Data: uint8ArrayToBase64String(sharedEncryptedPart.dataPacket),
                 Signature: getArmoredSignatureString(sharedEncryptedPart.signature),
             },
         ],
         CalendarKeyPacket:
-            calendarEncryptedPart && calendarSessionKey ? serializeUint8Array(calendarSessionKey) : undefined,
+            calendarEncryptedPart && calendarSessionKey ? uint8ArrayToBase64String(calendarSessionKey) : undefined,
         CalendarEventContent:
             calendarSignedPart || calendarEncryptedPart
                 ? [
@@ -67,7 +67,7 @@ export const formatData = ({
                       },
                       calendarEncryptedPart && {
                           Type: ENCRYPTED_AND_SIGNED,
-                          Data: serializeUint8Array(calendarEncryptedPart.dataPacket),
+                          Data: uint8ArrayToBase64String(calendarEncryptedPart.dataPacket),
                           Signature: getArmoredSignatureString(calendarEncryptedPart.signature),
                       },
                   ].filter(isTruthy)
@@ -84,7 +84,7 @@ export const formatData = ({
             ? [
                   {
                       Type: ENCRYPTED_AND_SIGNED,
-                      Data: serializeUint8Array(attendeesEncryptedPart.dataPacket),
+                      Data: uint8ArrayToBase64String(attendeesEncryptedPart.dataPacket),
                       Signature: getArmoredSignatureString(attendeesEncryptedPart.signature),
                   },
               ]

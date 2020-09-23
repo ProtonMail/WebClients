@@ -15,7 +15,7 @@ import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
 import { generatePassphrase } from './calendarKeys';
 import { createSessionKey, getEncryptedSessionKey } from '../calendar/encrypt';
-import { serializeUint8Array } from '../helpers/serialization';
+import { uint8ArrayToBase64String } from '../helpers/encoding';
 
 const toPolyfillReadable = createReadableStreamWrapper(PolyfillReadableStream);
 
@@ -138,7 +138,7 @@ export const generateContentKeys = async (nodeKey: OpenPGPKey) => {
     const publicKey = nodeKey.toPublic();
     const sessionKey = await createSessionKey(publicKey);
     const contentKeys = await getEncryptedSessionKey(sessionKey, publicKey);
-    const ContentKeyPacket = serializeUint8Array(contentKeys);
+    const ContentKeyPacket = uint8ArrayToBase64String(contentKeys);
     return { sessionKey, ContentKeyPacket };
 };
 

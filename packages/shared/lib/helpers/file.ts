@@ -1,5 +1,4 @@
-import { arrayToBinaryString } from 'pmcrypto';
-import { deserializeUint8Array } from './serialization';
+import { uint8ArrayToString, base64StringToUint8Array } from './encoding';
 
 /**
  * Convert file to encoded base 64 string
@@ -65,7 +64,7 @@ export const readFileAsString = (file: File, encoding?: string) => {
 export const readFileAsBinaryString = async (file: File) => {
     const arrayBuffer = await readFileAsBuffer(file);
     // eslint-disable-next-line new-cap
-    return arrayToBinaryString(new Uint8Array(arrayBuffer));
+    return uint8ArrayToString(new Uint8Array(arrayBuffer));
 };
 
 /**
@@ -103,7 +102,7 @@ export const readDataUrl = (url = '') => {
         throw new Error(error);
     }
 
-    return deserializeUint8Array(base64);
+    return base64StringToUint8Array(base64);
 };
 
 /**

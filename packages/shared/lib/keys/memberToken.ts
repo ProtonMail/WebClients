@@ -1,7 +1,7 @@
 import { decryptMessage, encryptMessage, getMessage, OpenPGPKey, VERIFICATION_STATUS } from 'pmcrypto';
 import getRandomValues from 'get-random-values';
 
-import { serializeUint8Array } from '../helpers/serialization';
+import { uint8ArrayToBase64String } from '../helpers/encoding';
 
 /**
  * Decrypts a member token with the organization private key
@@ -27,7 +27,7 @@ export const decryptMemberToken = async (token: string, privateKey: OpenPGPKey) 
  */
 export const generateMemberToken = () => {
     const value = getRandomValues(new Uint8Array(128));
-    return serializeUint8Array(value) as string;
+    return uint8ArrayToBase64String(value);
 };
 
 /**
