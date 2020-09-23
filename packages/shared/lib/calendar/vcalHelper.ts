@@ -19,7 +19,7 @@ import {
     VcalVtodoComponent,
     VcalXOrIanaComponent,
 } from '../interfaces/calendar/VcalModel';
-import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from './constants';
+import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from './constants';
 
 export const getIsPropertyAllDay = (property: VcalDateOrDateTimeProperty): property is VcalDateProperty => {
     return property.parameters?.type === 'date' ?? false;
@@ -150,6 +150,13 @@ export const getProdId = (config: ProtonConfig) => {
     const appName = APPS_CONFIGURATION[APP_NAME].name;
 
     return `-//Proton Technologies//${appName} ${appVersion}//EN`;
+};
+
+export const getEventStatus = ({ status }: VcalVeventComponent) => {
+    if (Object.values(ICAL_EVENT_STATUS).some((icalStatus) => icalStatus === status?.value)) {
+        return status?.value as ICAL_EVENT_STATUS;
+    }
+    return ICAL_EVENT_STATUS.CONFIRMED;
 };
 
 export const getAttendeePartstat = (partstat: string) => {

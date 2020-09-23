@@ -1,10 +1,11 @@
-import { binaryStringToArray, unsafeSHA1, arrayToHexString } from 'pmcrypto';
+import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
 import { getCanonicalEmailMap } from '../api/helpers/canonicalEmailMap';
-import { getEmailTo } from '../helpers/email';
-import { Attendee } from '../interfaces/calendar';
-import { VcalAttendeeProperty, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
-import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_STATUS, ATTENDEE_PERMISSIONS } from './constants';
+import { buildMailTo, getEmailTo } from '../helpers/email';
 import { Api } from '../interfaces';
+import { Attendee } from '../interfaces/calendar';
+import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
+import { RequireSome, SimpleMap } from '../interfaces/utils';
+import { ATTENDEE_PERMISSIONS, ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from './constants';
 
 export const generateAttendeeToken = async (normalizedEmail: string, uid: string) => {
     const uidEmail = `${uid}${normalizedEmail}`;
@@ -93,8 +94,58 @@ export const toInternalAttendee = (
     });
 };
 
-export const getAttendeeEmail = (attendee: VcalAttendeeProperty) => {
+export const getAttendeeEmail = (attendee: VcalAttendeeProperty | VcalOrganizerProperty) => {
     return getEmailTo(attendee.value);
+};
+
+export const modifyAttendeesPartstat = (
+    attendees: VcalAttendeeProperty[],
+    partstatMap: SimpleMap<ICAL_ATTENDEE_STATUS>
+) => {
+    const emailsToModify = Object.keys(partstatMap);
+    return attendees.map((attendee) => {
+        const email = getAttendeeEmail(attendee);
+        if (!emailsToModify.includes(email)) {
+            return attendee;
+        }
+        return {
+            ...attendee,
+            parameters: {
+                ...attendee.parameters,
+                partstat: partstatMap[email],
+            },
+        };
+    });
+};
+
+export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
+    const {
+        parameters: { cn, role, partstat, rsvp, 'x-pm-token': token, 'x-pm-permissions': permissions } = {},
+    } = attendee;
+    const emailAddress = getAttendeeEmail(attendee);
+    const supportedAttendee: RequireSome<VcalAttendeeProperty, 'parameters'> = {
+        value: buildMailTo(emailAddress),
+        parameters: {
+            cn: cn ?? emailAddress,
+        },
+    };
+    const roleUpperCased = role?.toUpperCase();
+    if (roleUpperCased === ICAL_ATTENDEE_ROLE.REQUIRED || roleUpperCased === ICAL_ATTENDEE_ROLE.OPTIONAL) {
+        supportedAttendee.parameters.role = roleUpperCased;
+    }
+    if (rsvp?.toUpperCase() === 'TRUE') {
+        supportedAttendee.parameters.rsvp = rsvp.toUpperCase();
+    }
+    if (partstat) {
+        supportedAttendee.parameters.partstat = partstat.toUpperCase();
+    }
+    if (token) {
+        supportedAttendee.parameters['x-pm-token'] = token;
+    }
+    if (permissions !== undefined) {
+        supportedAttendee.parameters['x-pm-permissions'] = permissions;
+    }
+    return supportedAttendee;
 };
 
 export const withPmAttendees = async (vevent: VcalVeventComponent, api: Api): Promise<VcalVeventComponent> => {
@@ -115,16 +166,10 @@ export const withPmAttendees = async (vevent: VcalVeventComponent, api: Api): Pr
     const canonicalEmailMap = await getCanonicalEmailMap(emailsWithoutToken, api);
 
     const pmAttendees = await Promise.all(
-        attendeesWithEmail.map(async ({ attendee: { parameters, ...rest }, emailAddress }) => {
-            const attendeeWithCn = {
-                ...rest,
-                parameters: {
-                    ...parameters,
-                    cn: parameters?.cn || emailAddress,
-                },
-            };
-            if (parameters?.['x-pm-token']) {
-                return attendeeWithCn;
+        attendeesWithEmail.map(async ({ attendee, emailAddress }) => {
+            const supportedAttendee = getSupportedAttendee(attendee);
+            if (supportedAttendee.parameters?.['x-pm-token']) {
+                return supportedAttendee;
             }
             const canonicalEmail = canonicalEmailMap[emailAddress];
             if (!canonicalEmail) {
@@ -132,9 +177,9 @@ export const withPmAttendees = async (vevent: VcalVeventComponent, api: Api): Pr
             }
             const token = await generateAttendeeToken(canonicalEmail, uid.value);
             return {
-                ...attendeeWithCn,
+                ...supportedAttendee,
                 parameters: {
-                    ...attendeeWithCn.parameters,
+                    ...supportedAttendee.parameters,
                     'x-pm-token': token,
                 },
             };
