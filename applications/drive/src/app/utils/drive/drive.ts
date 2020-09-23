@@ -12,7 +12,7 @@ import {
 } from 'proton-shared/lib/keys/driveKeys';
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import { deserializeUint8Array } from 'proton-shared/lib/helpers/serialization';
+import { base64StringToUint8Array } from 'proton-shared/lib/helpers/encoding';
 import { getDecryptedSessionKey } from 'proton-shared/lib/calendar/decrypt';
 
 // These imports must go to proton-shared
@@ -222,7 +222,7 @@ export const getLinkKeysAsync = async (
         return keys;
     }
 
-    const blockKeys = deserializeUint8Array(meta.FileProperties.ContentKeyPacket);
+    const blockKeys = base64StringToUint8Array(meta.FileProperties.ContentKeyPacket);
     const sessionKeys = await getDecryptedSessionKey(blockKeys, privateKey);
 
     const keys = {

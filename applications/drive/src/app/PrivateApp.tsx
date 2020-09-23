@@ -4,14 +4,13 @@ import { UserModel, UserSettingsModel, AddressesModel, SubscriptionModel } from 
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { openpgpConfig } from './openpgpConfig';
-import MainContainer from './containers/MainContainer';
-import DriveErrorBoundary from './components/DriveErrorBoundary';
+
+const getAppContainer = () => import('./containers/MainContainer');
 
 interface Props {
     onLogout: () => void;
     locales: TtagLocaleMap;
 }
-
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
     const cache = useCache();
@@ -33,11 +32,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 }
             }}
             noModals
-        >
-            <DriveErrorBoundary>
-                <MainContainer />
-            </DriveErrorBoundary>
-        </StandardPrivateApp>
+            app={getAppContainer}
+        />
     );
 };
 

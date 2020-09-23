@@ -15,7 +15,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { serializeUint8Array } from 'proton-shared/lib/helpers/serialization';
+import { uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
 import {
     DriveFileRevisionResult,
     CreateFileResult,
@@ -266,7 +266,7 @@ function useFiles() {
                     const { File, addressKeyInfo } = await setupPromise;
 
                     const BlockList = await Promise.all(
-                        Blocks.map(({ Hash, ...block }) => ({ ...block, Hash: serializeUint8Array(Hash) }))
+                        Blocks.map(({ Hash, ...block }) => ({ ...block, Hash: uint8ArrayToBase64String(Hash) }))
                     );
 
                     const { UploadLinks } = await debouncedRequest<RequestUploadResult>(
