@@ -6,8 +6,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { LARGE_KEY_SIZE, VERIFICATION_STATUS } from '../../constants';
 import { get } from '../../helpers/attachment/attachmentLoader';
-import { MessageExtended, Message, MessageErrors } from '../../models/message';
-import { Element } from '../../models/element';
+import { MessageExtended, Message, MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useMessageKeys } from './useMessageKeys';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
@@ -34,6 +33,10 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     const loadEmbeddedImages = useLoadEmbeddedImages(localID);
 
     return useCallback(async () => {
+        // Message can change during the whole initilization sequence
+        // To have the most up to date version, best is to get back to the cache version each time
+        const getData = () => (messageCache.get(localID) as MessageExtendedWithData).data;
+
         // Cache entry will be (at least) initialized by the queue system
         const messageFromCache = messageCache.get(localID) as MessageExtended;
 
@@ -46,23 +49,23 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
         const errors: MessageErrors = {};
 
-        let message,
-            encryptionPreferences,
+        let encryptionPreferences,
             userKeys,
             decryption,
             signingPublicKey,
             attachedPublicKeys,
             verificationStatus,
             preparation,
-            data;
+            dataChanges;
 
         try {
-            message = await loadMessage(messageFromCache, api);
+            // Ensure the message data is loaded
+            const message = await loadMessage(messageFromCache, api);
+            updateMessageCache(messageCache, localID, { data: message.data });
 
-            // Message data will be modified, don't refer to message.data anymore below!
-            data = { ...message.data } as Message;
+            dataChanges = {} as Partial<Message>;
 
-            encryptionPreferences = await getEncryptionPreferences(data.Sender.Address as string);
+            encryptionPreferences = await getEncryptionPreferences(getData().Sender.Address as string);
             userKeys = await getMessageKeys(message);
             const messageWithKeys = {
                 ...message,
@@ -73,17 +76,17 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             // To verify the signature of the message, we can only use pinned keys
             // API keys could always be forged by the server to verify the signature
             decryption = await decryptMessage(
-                data,
+                getData(),
                 encryptionPreferences.pinnedKeys,
                 userKeys.privateKeys,
                 attachmentsCache
             );
             if (decryption.mimetype) {
-                data = { ...data, MIMEType: decryption.mimetype };
+                dataChanges = { ...dataChanges, MIMEType: decryption.mimetype };
             }
             const mimeAttachments = decryption.Attachments || [];
-            const allAttachments = [...data.Attachments, ...mimeAttachments];
-            data = { ...data, Attachments: allAttachments, NumAttachments: allAttachments.length };
+            const allAttachments = [...getData().Attachments, ...mimeAttachments];
+            dataChanges = { ...dataChanges, Attachments: allAttachments, NumAttachments: allAttachments.length };
             const keyAttachments =
                 allAttachments.filter(
                     ({ Name, Size }) => splitExtension(Name)[1] === 'asc' && (Size || 0) < LARGE_KEY_SIZE
@@ -119,12 +122,12 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                     : undefined;
             verificationStatus = decryption.verified;
 
-            if (isUnreadMessage(data)) {
-                await markAs([data as Element], labelID, MARK_AS_STATUS.READ);
-                data = { ...data, Unread: 0 };
+            if (isUnreadMessage(getData())) {
+                await markAs([getData()], labelID, MARK_AS_STATUS.READ);
+                dataChanges = { ...dataChanges, Unread: 0 };
             }
 
-            preparation = isPlainText(data)
+            preparation = isPlainText(getData())
                 ? ({ plainText: decryption.decryptedBody } as any)
                 : await prepareMailDocument(
                       { ...messageWithKeys, decryptedBody: decryption.decryptedBody },
@@ -141,7 +144,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             }
         } finally {
             updateMessageCache(messageCache, localID, {
-                data,
+                data: dataChanges,
                 document: preparation?.document,
                 plainText: preparation?.plainText,
                 senderPinnedKeys: encryptionPreferences?.pinnedKeys,
