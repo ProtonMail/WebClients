@@ -6,8 +6,7 @@ import { queryMailImportHistory, deleteMailImportReport } from 'proton-shared/li
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { useApi, useLoading, useNotifications, useModals } from '../../hooks';
-import { Button, Loader, Alert, Table, TableHeader, TableBody, TableRow, Badge, ErrorButton } from '../../components';
-
+import { Button, Loader, Alert, Table, TableCell, TableBody, TableRow, Badge, ErrorButton } from '../../components';
 import { ConfirmModal } from '../../components/modal';
 
 import { ImportMailReport, ImportMailReportStatus } from './interfaces';
@@ -19,13 +18,13 @@ interface ImportStatusProps {
 const ImportStatus = ({ status }: ImportStatusProps) => {
     switch (status) {
         case ImportMailReportStatus.PAUSED:
-            return <Badge type="warning">{c('Import status').t`Paused`}</Badge>;
+            return <Badge type="warning" className="m0">{c('Import status').t`Paused`}</Badge>;
         case ImportMailReportStatus.CANCELED:
-            return <Badge type="error">{c('Import status').t`Canceled`}</Badge>;
+            return <Badge type="error" className="m0">{c('Import status').t`Canceled`}</Badge>;
         case ImportMailReportStatus.DONE:
-            return <Badge type="success">{c('Import status').t`Completed`}</Badge>;
+            return <Badge type="success" className="m0">{c('Import status').t`Completed`}</Badge>;
         case ImportMailReportStatus.FAILED:
-            return <Badge type="error">{c('Import status').t`Failed`}</Badge>;
+            return <Badge type="error" className="m0">{c('Import status').t`Failed`}</Badge>;
         default:
             return null;
     }
@@ -109,29 +108,44 @@ const PastImportsSection = forwardRef((_props, ref) => {
         return <Alert>{c('Info').t`No previous imports`}</Alert>;
     }
 
+    const headerCells = [
+        { node: c('Title header').t`Import` },
+        { node: c('Title header').t`Status`, className: 'onmobile-w33 onmobile-aligncenter' },
+        { node: c('Title header').t`Date`, className: 'nomobile' },
+        { node: c('Title header').t`Size`, className: 'nomobile' },
+        { node: c('Title header').t`Actions`, className: 'nomobile' },
+    ].map(({ node, className = '' }, i) => {
+        return (
+            <TableCell key={i.toString()} className={className} type="header">
+                {node}
+            </TableCell>
+        );
+    });
+
     return (
         <>
             <Alert>{c('Info').t`Check records of already processed imports`}</Alert>
-            <Table>
-                <TableHeader
-                    cells={[
-                        c('Title header').t`Import`,
-                        c('Title header').t`Status`,
-                        c('Title header').t`Date`,
-                        c('Title header').t`Size`,
-                        c('Title header').t`Actions`,
-                    ]}
-                />
+            <Table className="onmobile-hideTd3 onmobile-hideTd4 onmobile-hideTd5">
+                <thead>
+                    <tr>{headerCells}</tr>
+                </thead>
                 <TableBody>
                     {imports.map(({ State, Email, ID, TotalSize, EndTime }, index) => {
                         return (
                             <TableRow
                                 key={index}
                                 cells={[
-                                    <div key="email" className="w100 ellipsis">
-                                        {Email}
+                                    <>
+                                        <div key="email" className="w100 ellipsis">
+                                            {Email}
+                                        </div>
+                                        <time key="importDate" className="nodesktop notablet">
+                                            {format(EndTime * 1000, 'PPp')}
+                                        </time>
+                                    </>,
+                                    <div className="onmobile-aligncenter">
+                                        <ImportStatus key="status" status={State} />
                                     </div>,
-                                    <ImportStatus key="status" status={State} />,
                                     <time key="importDate">{format(EndTime * 1000, 'PPp')}</time>,
                                     humanSize(TotalSize),
                                     <DeleteButton key="button" ID={ID} callback={fetch} />,
