@@ -10,7 +10,6 @@ import { isDraft, hasAttachments } from '../../../helpers/message/messages';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
-import { MessageViewIcons } from '../../../helpers/message/icon';
 import { MessageExtended } from '../../../models/message';
 import HeaderRecipientItem from './HeaderRecipientItem';
 import ItemExpiration from '../../list/ItemExpiration';
@@ -21,7 +20,6 @@ interface Props {
     labelID: string;
     labels?: Label[];
     message: MessageExtended;
-    messageViewIcons?: MessageViewIcons;
     messageLoaded: boolean;
     mailSettings: MailSettings;
     isSentMessage: boolean;
@@ -35,7 +33,6 @@ const HeaderCollapsed = ({
     labelID,
     labels,
     message,
-    messageViewIcons,
     messageLoaded,
     mailSettings,
     isSentMessage,
@@ -69,7 +66,6 @@ const HeaderCollapsed = ({
             <div className="flex flex-item-fluid flex-nowrap flex-items-center pr0-5">
                 <HeaderRecipientItem
                     recipientOrGroup={{ recipient: message.data?.Sender }}
-                    globalIcon={messageViewIcons?.globalIcon}
                     showAddress={false}
                     onCompose={onCompose}
                     contacts={contacts}

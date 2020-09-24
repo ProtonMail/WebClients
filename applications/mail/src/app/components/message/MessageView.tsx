@@ -210,7 +210,6 @@ const MessageView = ({
                     labelID={labelID}
                     labels={labels}
                     message={message}
-                    messageViewIcons={messageViewIcons}
                     messageLoaded={messageLoaded}
                     mailSettings={mailSettings}
                     isSentMessage={sent}
