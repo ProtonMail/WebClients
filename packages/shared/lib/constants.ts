@@ -43,16 +43,15 @@ export const APPS_CONFIGURATION = {
         publicPath: '',
         subdomain: 'beta',
         name: 'ProtonMail',
-        // TODO clientID
-        clientID: 'Web',
+        clientID: 'WebMail',
         icon: 'protonmail',
     },
     [APPS.PROTONMAIL_SETTINGS]: {
         publicPath: '/settings',
         subdomain: 'beta',
         name: 'ProtonMail',
-        // TODO clientID
-        clientID: 'Web',
+        // Needs to be the same ClientID as mail since they are deployed as an embedded app
+        clientID: 'WebMail',
         icon: 'protonmail',
     },
     [APPS.PROTONCONTACTS]: {

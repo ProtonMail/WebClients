@@ -33,3 +33,7 @@ export const getAppHrefBundle = (to: string, toApp: APP_NAMES) => {
 };
 
 export const getAccountSettingsApp = () => (isSSOMode ? APPS.PROTONACCOUNT : APPS.PROTONMAIL_SETTINGS);
+
+export const getClientID = (appName: APP_NAMES) => {
+    return APPS_CONFIGURATION[appName].clientID;
+};
