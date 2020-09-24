@@ -5,7 +5,7 @@ import { useApi, useLoading } from 'react-components';
 import { Conversation } from '../models/conversation';
 import { Message } from '../models/message';
 import { useConversationCache } from '../containers/ConversationProvider';
-import { useElementsCache } from './useElementsCache';
+import { useGetElementsFromIDs } from './useElementsCache';
 
 export interface ConversationResult {
     Conversation: Conversation;
@@ -27,7 +27,7 @@ interface UseConversation {
 
 export const useConversation: UseConversation = (inputConversationID, messageID) => {
     const cache = useConversationCache();
-    const [elementsCache] = useElementsCache();
+    const getElementsFromIDs = useGetElementsFromIDs();
     const api = useApi();
 
     const [conversationID, setConversationID] = useState(inputConversationID);
@@ -38,7 +38,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
             return cache.get(inputConversationID) as ConversationResult;
         }
 
-        const conversationFromElementsCache = elementsCache.elements[inputConversationID] as Conversation;
+        const [conversationFromElementsCache] = getElementsFromIDs([inputConversationID]) as Conversation[];
 
         if (conversationFromElementsCache) {
             return { Conversation: conversationFromElementsCache, Messages: undefined };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { useLabels, useToggle, classnames } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
@@ -111,4 +111,4 @@ const ConversationView = ({
     );
 };
 
-export default ConversationView;
+export default memo(ConversationView);

@@ -7,7 +7,6 @@ import ToolbarButton from './ToolbarButton';
 import ToolbarSeparator from './ToolbarSeparator';
 import { Breakpoints } from '../../models/utils';
 import { labelIncludes, isCustomLabel } from '../../helpers/labels';
-import { Element } from '../../models/element';
 import { useEmptyLabel } from '../../hooks/useEmptyLabel';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, TRASH, SPAM } = MAILBOX_LABEL_IDS;
@@ -15,10 +14,10 @@ const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, T
 interface Props {
     labelID: string;
     breakpoints: Breakpoints;
-    elements: Element[];
+    elementIDs: string[];
 }
 
-const EmptyButton = ({ labelID = '', breakpoints, elements }: Props) => {
+const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
     const [loading, withLoading] = useLoading();
     const [labels = []] = useLabels();
     const emptyLabel = useEmptyLabel();
@@ -49,7 +48,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elements }: Props) => {
         <>
             <ToolbarSeparator />
             <ToolbarButton
-                disabled={!elements.length}
+                disabled={!elementIDs.length}
                 loading={loading}
                 title={title}
                 onClick={handleClick}

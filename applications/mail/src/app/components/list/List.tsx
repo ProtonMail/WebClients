@@ -1,6 +1,5 @@
-import React, { useState, useEffect, ChangeEvent, DragEvent, useRef } from 'react';
+import React, { useState, useEffect, ChangeEvent, DragEvent, useRef, useCallback, memo } from 'react';
 import { c, msgid } from 'ttag';
-import { Location } from 'history';
 import { useLabels, useContactEmails, useContactGroups, classnames, useHandler, generateUID } from 'react-components';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { DENSITY } from 'proton-shared/lib/constants';
@@ -15,6 +14,9 @@ import { usePlaceholders } from '../../hooks/usePlaceholders';
 
 import './Drag.scss';
 
+const defaultCheckedIDs: string[] = [];
+const defaultElements: Element[] = [];
+
 interface Props {
     labelID: string;
     loading: boolean;
@@ -26,8 +28,8 @@ interface Props {
     elements?: Element[];
     checkedIDs?: string[];
     onCheck: (ID: string[], checked: boolean, replace: boolean) => void;
-    onClick: (element: Element) => void;
-    location: Location;
+    onClick: (elementID: string | undefined) => void;
+    conversationMode: boolean;
     isSearch: boolean;
 }
 
@@ -39,11 +41,11 @@ const List = ({
     userSettings,
     mailSettings,
     columnLayout,
-    elements: inputElements = [],
-    checkedIDs = [],
+    elements: inputElements = defaultElements,
+    checkedIDs = defaultCheckedIDs,
     onCheck,
     onClick,
-    location,
+    conversationMode,
     isSearch
 }: Props) => {
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
@@ -77,7 +79,7 @@ const List = ({
         }
     }, [loading]);
 
-    const handleCheck = (elementID: string) => (event: ChangeEvent) => {
+    const handleCheck = useHandler((event: ChangeEvent, elementID: string) => {
         const target = event.target as HTMLInputElement;
         const { shiftKey } = event.nativeEvent as any;
         const elementIDs = [elementID];
@@ -92,7 +94,7 @@ const List = ({
 
         setLastChecked(elementID);
         onCheck(elementIDs, target.checked, false);
-    };
+    });
 
     const clearDragElement = useHandler(() => {
         if (dragElement) {
@@ -124,41 +126,44 @@ const List = ({
         }
     });
 
-    const handleDragStart = (element: Element) => (event: DragEvent) => {
-        const elementID = element.ID || '';
-        const dragInSelection = checkedIDs.includes(elementID);
-        const selection = dragInSelection ? checkedIDs : [elementID];
+    const handleDragStart = useCallback(
+        (event: DragEvent, element: Element) => {
+            const elementID = element.ID || '';
+            const dragInSelection = checkedIDs.includes(elementID);
+            const selection = dragInSelection ? checkedIDs : [elementID];
 
-        setDraggedIDs(selection);
-        setSavedCheck(checkedIDs);
+            setDraggedIDs(selection);
+            setSavedCheck(checkedIDs);
 
-        if (!dragInSelection) {
-            onCheck([], true, true);
-        }
+            if (!dragInSelection) {
+                onCheck([], true, true);
+            }
 
-        const isMessage = testIsMessage(element);
-        const dragElement = document.createElement('div');
-        dragElement.innerHTML = isMessage
-            ? c('Success').ngettext(
-                  msgid`Move ${selection.length} message`,
-                  `Move ${selection.length} messages`,
-                  selection.length
-              )
-            : c('Success').ngettext(
-                  msgid`Move ${selection.length} conversation`,
-                  `Move ${selection.length} conversations`,
-                  selection.length
-              );
-        dragElement.className = 'drag-element p1 bordered-container rounded';
-        dragElement.id = generateUID(DRAG_ELEMENT_ID_KEY);
-        // Wiring the dragend event on the drag element because the one from drag start is not reliable
-        dragElement.addEventListener('dragend', (event) => handleDragSucceed(event.dataTransfer?.dropEffect));
-        document.body.appendChild(dragElement);
-        event.dataTransfer.setDragImage(dragElement, 0, 0);
-        event.dataTransfer.setData(DRAG_ELEMENT_KEY, JSON.stringify(selection));
-        event.dataTransfer.setData(DRAG_ELEMENT_ID_KEY, dragElement.id);
-        setDragElement(dragElement);
-    };
+            const isMessage = testIsMessage(element);
+            const dragElement = document.createElement('div');
+            dragElement.innerHTML = isMessage
+                ? c('Success').ngettext(
+                      msgid`Move ${selection.length} message`,
+                      `Move ${selection.length} messages`,
+                      selection.length
+                  )
+                : c('Success').ngettext(
+                      msgid`Move ${selection.length} conversation`,
+                      `Move ${selection.length} conversations`,
+                      selection.length
+                  );
+            dragElement.className = 'drag-element p1 bordered-container rounded';
+            dragElement.id = generateUID(DRAG_ELEMENT_ID_KEY);
+            // Wiring the dragend event on the drag element because the one from drag start is not reliable
+            dragElement.addEventListener('dragend', (event) => handleDragSucceed(event.dataTransfer?.dropEffect));
+            document.body.appendChild(dragElement);
+            event.dataTransfer.setDragImage(dragElement, 0, 0);
+            event.dataTransfer.setData(DRAG_ELEMENT_KEY, JSON.stringify(selection));
+            event.dataTransfer.setData(DRAG_ELEMENT_ID_KEY, dragElement.id);
+            setDragElement(dragElement);
+        },
+        [checkedIDs, onCheck]
+    );
 
     return (
         <div
@@ -175,7 +180,7 @@ const List = ({
                     elements.map((element, index) => (
                         <Item
                             key={element.ID}
-                            location={location}
+                            conversationMode={conversationMode}
                             labels={labels}
                             labelID={labelID}
                             loading={loading}
@@ -185,11 +190,11 @@ const List = ({
                             checked={checkedIDs.includes(element.ID || '')}
                             contacts={contacts}
                             contactGroups={contactGroups}
-                            onCheck={handleCheck(element.ID || '')}
+                            onCheck={handleCheck}
                             onClick={onClick}
                             userSettings={userSettings}
                             mailSettings={mailSettings}
-                            onDragStart={handleDragStart(element)}
+                            onDragStart={handleDragStart}
                             onDragCanceled={handleDragCanceled}
                             dragged={draggedIDs.includes(element.ID || '')}
                             index={index}
@@ -201,4 +206,4 @@ const List = ({
     );
 };
 
-export default List;
+export default memo(List);

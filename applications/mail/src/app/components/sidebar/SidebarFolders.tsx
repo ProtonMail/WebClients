@@ -1,17 +1,17 @@
-import React, { useState, useEffect, ReactNode, MouseEvent } from 'react';
+import React, { useState, useEffect, ReactNode, MouseEvent, useMemo, useCallback, memo } from 'react';
 
 import { useFolders } from 'react-components';
 import { buildTreeview } from 'proton-shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 import { setItem, getItem } from 'proton-shared/lib/helpers/storage';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
 import SidebarFolder from './SidebarFolder';
 import EmptyFolders from './EmptyFolders';
+import { UnreadCounts } from './MailSidebarList';
 
 interface Props {
     currentLabelID: string;
-    counterMap: { [labelID: string]: LabelCount | undefined };
+    counterMap: UnreadCounts;
 }
 
 const formatFolderID = (folderID: string): string => `folder_expanded_state_${folderID}`;
@@ -19,6 +19,7 @@ const formatFolderID = (folderID: string): string => `folder_expanded_state_${fo
 const SidebarFolders = ({ currentLabelID, counterMap }: Props) => {
     const [folders, loadingFolders] = useFolders();
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
+    const treeview = useMemo(() => buildTreeview(foldersUI) as FolderWithSubFolders[], [foldersUI]);
 
     useEffect(() => {
         if (Array.isArray(folders)) {
@@ -31,30 +32,31 @@ const SidebarFolders = ({ currentLabelID, counterMap }: Props) => {
         }
     }, [loadingFolders, folders]);
 
-    const treeview = buildTreeview(foldersUI) as FolderWithSubFolders[];
+    const handleToggleFolder = useCallback(
+        (event: MouseEvent, folder: Folder) => {
+            event.stopPropagation();
+            event.preventDefault();
 
-    const handleToggleFolder = (folder: Folder) => (event: MouseEvent) => {
-        event.stopPropagation();
-        event.preventDefault();
+            const newExpanded = getItem(formatFolderID(folder.ID)) === '0' ? 1 : 0;
 
-        const newExpanded = getItem(formatFolderID(folder.ID)) === '0' ? 1 : 0;
+            // Update view
+            setFoldersUI(
+                foldersUI.map((folderItem: Folder) => {
+                    if (folderItem.ID === folder.ID) {
+                        return {
+                            ...folderItem,
+                            Expanded: newExpanded
+                        };
+                    }
+                    return folderItem;
+                })
+            );
 
-        // Update view
-        setFoldersUI(
-            foldersUI.map((folderItem: Folder) => {
-                if (folderItem.ID === folder.ID) {
-                    return {
-                        ...folderItem,
-                        Expanded: newExpanded
-                    };
-                }
-                return folderItem;
-            })
-        );
-
-        // Save expanded state locally
-        setItem(formatFolderID(folder.ID), '' + newExpanded);
-    };
+            // Save expanded state locally
+            setItem(formatFolderID(folder.ID), '' + newExpanded);
+        },
+        [foldersUI]
+    );
 
     const treeviewReducer = (acc: ReactNode[], folder: FolderWithSubFolders, level = 0): Array<any> => {
         acc.push(
@@ -63,8 +65,8 @@ const SidebarFolders = ({ currentLabelID, counterMap }: Props) => {
                 currentLabelID={currentLabelID}
                 folder={folder}
                 level={level}
-                onToggle={handleToggleFolder(folder)}
-                count={counterMap[folder.ID]}
+                onToggle={handleToggleFolder}
+                unreadCount={counterMap[folder.ID]}
             />
         );
 
@@ -82,4 +84,4 @@ const SidebarFolders = ({ currentLabelID, counterMap }: Props) => {
     );
 };
 
-export default SidebarFolders;
+export default memo(SidebarFolders);

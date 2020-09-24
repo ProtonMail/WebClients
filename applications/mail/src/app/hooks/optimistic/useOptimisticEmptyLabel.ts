@@ -2,7 +2,7 @@ import { useHandler, useCache } from 'react-components';
 import { MessageCountsModel, ConversationCountsModel } from 'proton-shared/lib/models';
 
 import { useMessageCache } from '../../containers/MessageProvider';
-import { useElementsCache } from '../useElementsCache';
+import { useGetElementsCache, useSetElementsCache } from '../useElementsCache';
 import { MessageExtended } from '../../models/message';
 import { useConversationCache } from '../../containers/ConversationProvider';
 import { hasLabel } from '../../helpers/elements';
@@ -31,7 +31,8 @@ const replaceCounter = (counters: Counter[], counter: Counter) =>
 
 export const useOptimisticEmptyLabel = () => {
     const globalCache = useCache();
-    const [elementsCache, setElementsCache] = useElementsCache();
+    const getElementsCache = useGetElementsCache();
+    const setElementsCache = useSetElementsCache();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
 
@@ -70,9 +71,9 @@ export const useOptimisticEmptyLabel = () => {
         });
 
         // Elements cache
-        const rollbackElements = elementsCache;
+        const rollbackElements = getElementsCache();
         setElementsCache({
-            ...elementsCache,
+            ...rollbackElements,
             elements: {},
             page: {
                 limit: PAGE_SIZE,

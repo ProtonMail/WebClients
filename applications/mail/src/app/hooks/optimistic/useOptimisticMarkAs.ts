@@ -2,7 +2,7 @@ import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { useHandler } from 'react-components';
 
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
-import { useElementsCache } from '../useElementsCache';
+import { useGetElementsCache, useSetElementsCache } from '../useElementsCache';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { Message } from '../../models/message';
@@ -85,11 +85,13 @@ const applySingleMarkAsChangesOnConversation = (
 };
 
 export const useOptimisticMarkAs = () => {
-    const [elementsCache, setElementsCache] = useElementsCache();
+    const getElementsCache = useGetElementsCache();
+    const setElementsCache = useSetElementsCache();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
 
     const optimisticMarkAs = useHandler((elements: Element[], labelID: string, changes: MarkAsChanges) => {
+        const elementsCache = getElementsCache();
         const rollbackChanges = [] as { element: Element; changes: MarkAsChanges }[];
         const updatedElements = {} as { [elementID: string]: Element };
 

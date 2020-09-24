@@ -21,8 +21,8 @@ import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folde
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
-import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
+import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
 
 import './MoveDropdown.scss';
 
@@ -46,7 +46,7 @@ const folderReducer = (acc: FolderItem[], folder: FolderWithSubFolders, level = 
 };
 
 interface Props {
-    elements: Element[];
+    selectedIDs: string[];
     labelID: string;
     conversationMode: boolean;
     onClose: () => void;
@@ -55,7 +55,7 @@ interface Props {
     breakpoints: Breakpoints;
 }
 
-const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, onBack, breakpoints }: Props) => {
+const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock, onBack, breakpoints }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
 
     const [loading, withLoading] = useLoading();
@@ -64,6 +64,7 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
     const [search, updateSearch] = useState('');
     const [containFocus, setContainFocus] = useState(true);
     const normSearch = normalize(search);
+    const getElementsFromIDs = useGetElementsFromIDs();
     const moveToFolder = useMoveToFolder();
 
     useEffect(() => onLock(!containFocus), [containFocus]);
@@ -87,6 +88,7 @@ const MoveDropdown = ({ elements, labelID, conversationMode, onClose, onLock, on
         });
 
     const handleMove = async (folder?: Folder) => {
+        const elements = getElementsFromIDs(selectedIDs);
         const isMessage = testIsMessage(elements[0]);
         await moveToFolder(elements, folder?.ID || '', folder?.Name || '', labelID);
         onClose();

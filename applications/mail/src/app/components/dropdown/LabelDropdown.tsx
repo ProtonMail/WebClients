@@ -24,6 +24,7 @@ import { hasLabel } from '../../helpers/elements';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { getStandardFolders } from '../../helpers/labels';
 import { Breakpoints } from '../../models/utils';
+import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
 
 import './LabelDropdown.scss';
 
@@ -46,7 +47,7 @@ const getInitialState = (labels: Label[] = [], elements: Element[] = []) => {
 };
 
 interface Props {
-    elements: Element[];
+    selectedIDs: string[];
     labels?: Label[];
     labelID: string;
     onClose: () => void;
@@ -54,7 +55,7 @@ interface Props {
     breakpoints: Breakpoints;
 }
 
-const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock, breakpoints }: Props) => {
+const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, breakpoints }: Props) => {
     const labelIDs = labels.map(({ ID }) => ID);
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();
@@ -63,16 +64,16 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock, breakp
     const [containFocus, setContainFocus] = useState(true);
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
     const [alsoArchive, updateAlsoArchive] = useState(false);
-
+    const getElementsFromIDs = useGetElementsFromIDs();
     const applyLabels = useApplyLabels();
     const moveToFolder = useMoveToFolder();
 
-    const initialState = useMemo(() => getInitialState(labels, elements), [elements, labels]);
+    const initialState = useMemo(() => getInitialState(labels, getElementsFromIDs(selectedIDs)), [selectedIDs, labels]);
     const [selectedLabelIDs, setSelectedLabelIDs] = useState<SelectionState>(initialState);
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
-    if (!elements || !elements.length) {
+    if (!selectedIDs || !selectedIDs.length) {
         return null;
     }
 
@@ -86,6 +87,7 @@ const LabelDropdown = ({ elements, labelID, labels = [], onClose, onLock, breakp
     });
 
     const handleApply = async (selection = selectedLabelIDs) => {
+        const elements = getElementsFromIDs(selectedIDs);
         const initialState = getInitialState(labels, elements);
         const changes = Object.keys(selection).reduce((acc, LabelID) => {
             if (selection[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {

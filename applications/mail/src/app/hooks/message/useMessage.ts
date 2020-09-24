@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo } from 'react';
 
 import { MessageExtended, MessageAction, Message } from '../../models/message';
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
-import { useElementsCache } from '../useElementsCache';
+import { useGetElementsFromIDs } from '../useElementsCache';
 import { useConversationCache } from '../../containers/ConversationProvider';
 
 interface ReturnValue {
@@ -19,7 +19,7 @@ interface UseMessage {
 
 export const useMessage: UseMessage = (inputLocalID: string, conversationID = '') => {
     const cache = useMessageCache();
-    const [elementsCache] = useElementsCache();
+    const getElementsFromIDs = useGetElementsFromIDs();
     const conversationCache = useConversationCache();
 
     const localID = useMemo(() => getLocalID(cache, inputLocalID), [inputLocalID]);
@@ -29,7 +29,7 @@ export const useMessage: UseMessage = (inputLocalID: string, conversationID = ''
             return cache.get(localID) as MessageExtended;
         }
 
-        const messageFromElementsCache = elementsCache.elements[localID] as Message;
+        const [messageFromElementsCache] = getElementsFromIDs([localID]) as Message[];
         const conversationFromCache = conversationCache.get(conversationID);
         const messageFromConversationCache = conversationFromCache?.Messages?.find((Message) => Message.ID === localID);
         const messageFromCache = messageFromElementsCache || messageFromConversationCache;

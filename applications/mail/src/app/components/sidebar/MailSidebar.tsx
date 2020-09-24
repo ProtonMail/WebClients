@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, memo } from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
 import { Sidebar, SidebarPrimaryButton, SidebarNav, MainLogo } from 'react-components';
@@ -17,9 +17,10 @@ interface Props {
 }
 
 const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCompose }: Props) => {
-    const handleCompose = () => {
+    const handleCompose = useCallback(() => {
         onCompose({ action: MESSAGE_ACTIONS.NEW });
-    };
+    }, [onCompose]);
+
     return (
         <Sidebar
             expanded={expanded}
@@ -39,4 +40,4 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCo
     );
 };
 
-export default MailSidebar;
+export default memo(MailSidebar);

@@ -4,9 +4,8 @@ import { Icon, useLoading } from 'react-components';
 import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
-
-import { Element } from '../../models/element';
 import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
+import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 
@@ -15,24 +14,21 @@ interface Props {
     mailSettings: any;
     selectedIDs: string[];
     onBack: () => void;
-    elements: Element[];
 }
 
-const ReadUnreadButtons = ({ labelID, mailSettings, elements, selectedIDs = [], onBack }: Props) => {
+const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props) => {
     const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings;
     const [loading, withLoading] = useLoading();
     const markAs = useMarkAs();
+    const getElementsFromIDs = useGetElementsFromIDs();
 
     const handleMarkAs = async (status: MARK_AS_STATUS) => {
         const isUnread = status === UNREAD;
-
-        const selectedElements = selectedIDs.map((ID: string) => {
-            return elements.find((e: Element) => e.ID === ID) as Element;
-        });
+        const elements = getElementsFromIDs(selectedIDs);
         if (isUnread) {
             onBack();
         }
-        await markAs(selectedElements, labelID, status);
+        await markAs(elements, labelID, status);
     };
 
     const buttons = [

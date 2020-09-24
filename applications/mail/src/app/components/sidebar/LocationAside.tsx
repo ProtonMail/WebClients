@@ -1,16 +1,15 @@
 import React from 'react';
 import { Icon, classnames } from 'react-components';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
 import './RefreshRotation.scss';
 
 interface Props {
-    count?: LabelCount;
+    unreadCount?: number;
     active?: boolean;
     refreshing?: boolean;
 }
 
-const LocationAside = ({ count, active = false, refreshing = false }: Props) => {
+const LocationAside = ({ unreadCount, active = false, refreshing = false }: Props) => {
     return (
         <>
             {active && (
@@ -19,8 +18,8 @@ const LocationAside = ({ count, active = false, refreshing = false }: Props) => 
                     name="reload"
                 />
             )}
-            {count?.Unread ? (
-                <span className="navigation__counterItem flex-item-noshrink rounded">{count.Unread}</span>
+            {unreadCount ? (
+                <span className="navigation__counterItem flex-item-noshrink rounded">{unreadCount}</span>
             ) : null}
         </>
     );

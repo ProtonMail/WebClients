@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
 import {
@@ -19,6 +19,9 @@ import { isConversationMode } from '../../helpers/mailSettings';
 import SidebarItem from './SidebarItem';
 import SidebarFolders from './SidebarFolders';
 import SidebarLabels from './SidebarLabels';
+import { useDeepMemo } from '../../hooks/useDeepMemo';
+
+export type UnreadCounts = { [labelID: string]: number | undefined };
 
 interface Props {
     labelID: string;
@@ -26,8 +29,8 @@ interface Props {
 }
 
 const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
-    const [conversationCounts = [], actualLoadingConversationCounts] = useConversationCounts();
-    const [messageCounts = [], actualLoadingMessageCounts] = useMessageCounts();
+    const [conversationCounts, actualLoadingConversationCounts] = useConversationCounts();
+    const [messageCounts, actualLoadingMessageCounts] = useMessageCounts();
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [displayFolders, toggleFolders] = useState(true);
     const [displayLabels, toggleLabels] = useState(true);
@@ -42,12 +45,18 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
 
     const isConversation = isConversationMode(currentLabelID, mailSettings, location);
 
-    const counterMap = useMemo(() => {
+    const counterMap = useDeepMemo(() => {
         if (!mailSettings || !labels || !folders || !conversationCounts || !messageCounts) {
             return {};
         }
 
-        return getCounterMap(labels.concat(folders), conversationCounts, messageCounts, mailSettings, location);
+        const all = [...labels, ...folders];
+        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings, location);
+        const unreadCounterMap = Object.entries(labelCounterMap).reduce<UnreadCounts>((acc, [id, labelCount]) => {
+            acc[id] = labelCount?.Unread;
+            return acc;
+        }, {});
+        return unreadCounterMap;
     }, [mailSettings, labels, folders, conversationCounts, messageCounts]);
 
     if (loadingMailSettings || loadingLabels || loadingFolders || loadingConversationCounts || loadingMessageCounts) {
@@ -58,7 +67,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
         currentLabelID,
         labelID,
         isConversation,
-        count: counterMap[labelID]
+        unreadCount: counterMap[labelID]
     });
 
     return (

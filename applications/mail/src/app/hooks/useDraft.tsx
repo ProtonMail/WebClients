@@ -1,33 +1,28 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    useCache,
-    useMailSettings,
-    useAddresses,
-    generateUID,
-    useUser,
-    useModals,
-    ConfirmModal,
-    Alert
-} from 'react-components';
+import { useCache, useMailSettings, useAddresses, generateUID, useModals, ConfirmModal, Alert } from 'react-components';
+import { UserModel } from 'proton-shared/lib/models';
+import { isPaid } from 'proton-shared/lib/user/helpers';
 
 import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
 import { MESSAGE_ACTIONS } from '../constants';
 import { useEffect, useCallback } from 'react';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../models/message';
 import { useMessageCache } from '../containers/MessageProvider';
-import { isPaid } from 'proton-shared/lib/user/helpers';
 import { findSender } from '../helpers/addresses';
 
 const CACHE_KEY = 'Draft';
 
 export const useDraftVerifications = () => {
-    const [user] = useUser();
+    const cache = useCache();
     const [addresses = []] = useAddresses();
     const { createModal } = useModals();
 
     return useCallback(
         async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageExtended) => {
+            // Avoid useUser for performance issues
+            const user = cache.get(UserModel.key).value;
+
             if (!isPaid(user) && findSender(addresses, referenceMessage?.data)?.Email.endsWith('@pm.me')) {
                 const email = findSender(addresses, referenceMessage?.data, true)?.Email;
                 await new Promise((resolve) => {
@@ -46,7 +41,7 @@ export const useDraftVerifications = () => {
                 });
             }
         },
-        [user, addresses]
+        [addresses]
     );
 };
 

@@ -4,7 +4,6 @@ import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import ItemStar from './ItemStar';
-import { ELEMENT_TYPES } from '../../constants';
 import ItemLabels from './ItemLabels';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
 import ItemLocation from './ItemLocation';
@@ -20,7 +19,7 @@ interface Props {
     labels?: Label[];
     element: Element;
     mailSettings: any;
-    type: string;
+    conversationMode: boolean;
     showIcon: boolean;
     senders: string;
     addresses: string;
@@ -34,7 +33,7 @@ const ItemRowLayout = ({
     labels,
     element,
     mailSettings = {},
-    type,
+    conversationMode,
     showIcon,
     senders,
     addresses,
@@ -43,7 +42,6 @@ const ItemRowLayout = ({
     loading
 }: Props) => {
     const { Subject, Size } = element;
-    const isConversation = type === ELEMENT_TYPES.CONVERSATION;
     const size = humanSize(Size);
 
     return (
@@ -63,7 +61,7 @@ const ItemRowLayout = ({
                         <ItemLocation message={element as Message} mailSettings={mailSettings} />
                     </span>
                 )}
-                {isConversation && (
+                {conversationMode && (
                     <NumMessages
                         className={classnames(['mr0-25 flex-item-noshrink', unread && 'bold'])}
                         conversation={element}

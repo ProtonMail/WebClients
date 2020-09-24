@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Location, History } from 'history';
+import { History } from 'history';
 import { useFolders, useMailSettings, useSubscribeEventManager } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
@@ -11,7 +11,7 @@ import { isConversationMode } from '../helpers/mailSettings';
 import { setPathInUrl } from '../helpers/mailboxUrl';
 import notificationIcon from '../assets/notification.gif';
 
-const useNewEmailNotification = (history: History, location: Location) => {
+const useNewEmailNotification = (history: History) => {
     const [mailSettings] = useMailSettings();
     const [folders = []] = useFolders();
     const notifier = [
@@ -38,11 +38,11 @@ const useNewEmailNotification = (history: History, location: Location) => {
                 onClick() {
                     window.focus();
 
-                    if (isConversationMode(labelID, mailSettings, location)) {
-                        return history.push(setPathInUrl(location, labelID, ConversationID));
+                    if (isConversationMode(labelID, mailSettings, history.location)) {
+                        return history.push(setPathInUrl(history.location, labelID, ConversationID));
                     }
 
-                    history.push(setPathInUrl(location, labelID, ID));
+                    history.push(setPathInUrl(history.location, labelID, ID));
                 }
             });
         });

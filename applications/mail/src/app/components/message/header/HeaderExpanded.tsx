@@ -98,7 +98,7 @@ const HeaderExpanded = ({
     const [contactGroups = []] = useContactGroups();
     const [folders = []] = useFolders();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
-    const elements = [message.data || {}];
+    const selectedIDs = [message.data?.ID || ''];
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
 
     const handleClick = (event: MouseEvent) => {
@@ -282,7 +282,7 @@ const HeaderExpanded = ({
                                 {({ onClose, onLock }) => (
                                     <MoveDropdown
                                         labelID={currentFolderID}
-                                        elements={elements}
+                                        selectedIDs={selectedIDs}
                                         conversationMode={conversationMode}
                                         onClose={onClose}
                                         onLock={onLock}
@@ -304,7 +304,7 @@ const HeaderExpanded = ({
                                     <LabelDropdown
                                         labelID={labelID}
                                         labels={labels}
-                                        elements={elements}
+                                        selectedIDs={selectedIDs}
                                         onClose={onClose}
                                         onLock={onLock}
                                         breakpoints={breakpoints}

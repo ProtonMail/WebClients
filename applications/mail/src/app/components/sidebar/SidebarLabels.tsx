@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { useLabels } from 'react-components';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
 import SidebarItem from './SidebarItem';
 import EmptyLabels from './EmptyLabels';
+import { UnreadCounts } from './MailSidebarList';
 
 interface Props {
     currentLabelID: string;
-    counterMap: { [labelID: string]: LabelCount | undefined };
+    counterMap: UnreadCounts;
 }
 
 const SidebarLabels = ({ currentLabelID, counterMap }: Props) => {
@@ -27,7 +27,7 @@ const SidebarLabels = ({ currentLabelID, counterMap }: Props) => {
                         text={label.Name}
                         color={label.Color}
                         isFolder={false}
-                        count={counterMap[label.ID]}
+                        unreadCount={counterMap[label.ID]}
                     />
                 ))
             ) : (
@@ -37,4 +37,4 @@ const SidebarLabels = ({ currentLabelID, counterMap }: Props) => {
     );
 };
 
-export default SidebarLabels;
+export default memo(SidebarLabels);

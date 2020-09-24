@@ -16,7 +16,6 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
-
 import AttachmentsButton from './attachments/AttachmentsButton';
 import { hasFlag, getAttachments, getRecipients } from '../../helpers/message/messages';
 import { MESSAGE_FLAGS } from '../../constants';

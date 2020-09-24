@@ -2,9 +2,9 @@ import React from 'react';
 import { c } from 'ttag';
 import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import ItemStar from './ItemStar';
-import { ELEMENT_TYPES } from '../../constants';
 import ItemLabels from './ItemLabels';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
 import ItemLocation from './ItemLocation';
@@ -19,8 +19,8 @@ interface Props {
     labelID: string;
     labels?: Label[];
     element: Element;
-    mailSettings: any;
-    type: string;
+    mailSettings: MailSettings;
+    conversationMode: boolean;
     showIcon: boolean;
     senders: string;
     addresses: string;
@@ -33,8 +33,8 @@ const ItemColumnLayout = ({
     labelID,
     labels,
     element,
-    mailSettings = {},
-    type,
+    mailSettings,
+    conversationMode,
     showIcon,
     senders,
     addresses,
@@ -43,7 +43,6 @@ const ItemColumnLayout = ({
     loading
 }: Props) => {
     const { Subject } = element;
-    const isConversation = type === ELEMENT_TYPES.CONVERSATION;
 
     return (
         <div className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender">
@@ -75,7 +74,7 @@ const ItemColumnLayout = ({
                             <ItemLocation message={element as Message} mailSettings={mailSettings} />
                         </span>
                     )}
-                    {isConversation && (
+                    {conversationMode && (
                         <NumMessages
                             className={classnames(['mr0-25 flex-item-noshrink', unread && 'bold'])}
                             conversation={element}

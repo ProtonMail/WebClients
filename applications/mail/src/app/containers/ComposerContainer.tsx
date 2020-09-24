@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect } from 'react';
+import React, { ReactNode, useState, useEffect, memo } from 'react';
 import { useAddresses, useWindowSize, useHandler, useBeforeUnload } from 'react-components';
 import { c } from 'ttag';
 
@@ -84,4 +84,4 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     );
 };
 
-export default ComposerContainer;
+export default memo(ComposerContainer);

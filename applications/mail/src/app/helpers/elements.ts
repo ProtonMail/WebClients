@@ -143,12 +143,12 @@ export const getCounterMap = (
     const conversationCountersMap = toMap(conversationCounters, 'LabelID') as { [labelID: string]: LabelCount };
     const messageCountersMap = toMap(messageCounters, 'LabelID') as { [labelID: string]: LabelCount };
 
-    return labelIDs.reduce((acc, labelID) => {
+    return labelIDs.reduce<{ [labelID: string]: LabelCount | undefined }>((acc, labelID) => {
         const conversationMode = isConversationMode(labelID, mailSettings, location);
         const countersMap = conversationMode ? conversationCountersMap : messageCountersMap;
         acc[labelID] = countersMap[labelID];
         return acc;
-    }, {} as { [labelID: string]: LabelCount | undefined });
+    }, {});
 };
 
 export const hasAttachments = (element: Element) =>

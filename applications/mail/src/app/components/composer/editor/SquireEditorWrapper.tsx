@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useState, useRef } from 'react';
+import React, { MutableRefObject, useEffect, useState, useRef, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
 import { SquireEditor, useHandler, useMailSettings, useAddresses } from 'react-components';
 import { SquireEditorMetadata } from 'react-components/components/editor/interface';
@@ -80,13 +80,16 @@ const SquireEditorWrapper = ({
     const isPlainText = testIsPlainText(message.data);
     const rightToLeft = message.data?.RightToLeft ? RIGHT_TO_LEFT.ON : RIGHT_TO_LEFT.OFF;
 
-    const metadata: SquireEditorMetadata = {
-        supportPlainText: true,
-        isPlainText,
-        supportRightToLeft: true,
-        rightToLeft,
-        supportImages: true
-    };
+    const metadata: SquireEditorMetadata = useMemo(
+        () => ({
+            supportPlainText: true,
+            isPlainText,
+            supportRightToLeft: true,
+            rightToLeft,
+            supportImages: true
+        }),
+        [isPlainText, rightToLeft]
+    );
 
     // Detect document ready
     useEffect(() => {
@@ -161,21 +164,24 @@ const SquireEditorWrapper = ({
     );
 
     // Handle input considering blockquote
-    const handleInput = (content: string) => {
-        // Squire (but not plaintext) trigger an input event when the initial content is inserted
-        if (skipNextInputRef.current && !isPlainText) {
-            skipNextInputRef.current = false;
-            return;
-        }
+    const handleInput = useCallback(
+        (content: string) => {
+            // Squire (but not plaintext) trigger an input event when the initial content is inserted
+            if (skipNextInputRef.current && !isPlainText) {
+                skipNextInputRef.current = false;
+                return;
+            }
 
-        checkImageDeletion();
+            checkImageDeletion();
 
-        if (!blockquoteExpanded) {
-            onChangeContent(content + blockquoteSaved);
-        } else {
-            onChangeContent(content);
-        }
-    };
+            if (!blockquoteExpanded) {
+                onChangeContent(content + blockquoteSaved);
+            } else {
+                onChangeContent(content);
+            }
+        },
+        [onChangeContent]
+    );
 
     const switchToPlainText = () => {
         const MIMEType = MIME_TYPES.PLAINTEXT;
@@ -189,18 +195,22 @@ const SquireEditorWrapper = ({
         const document = setDocumentContent(message.document, content);
         onChange({ document, data: { MIMEType } });
     };
-    const handleChangeMetadata = (change: Partial<SquireEditorMetadata>) => {
-        if (change.isPlainText !== undefined) {
-            if (change.isPlainText) {
-                switchToPlainText();
-            } else {
-                switchToHTML();
+
+    const handleChangeMetadata = useCallback(
+        (change: Partial<SquireEditorMetadata>) => {
+            if (change.isPlainText !== undefined) {
+                if (change.isPlainText) {
+                    switchToPlainText();
+                } else {
+                    switchToHTML();
+                }
             }
-        }
-        if (change.rightToLeft !== undefined) {
-            onChange({ data: { RightToLeft: change.rightToLeft } });
-        }
-    };
+            if (change.rightToLeft !== undefined) {
+                onChange({ data: { RightToLeft: change.rightToLeft } });
+            }
+        },
+        [onChange, message, mailSettings, addresses]
+    );
 
     // Editors actions ref to add and remove embedded image
     const handleInsertEmbedded = useHandler(async (embeddeds: EmbeddedMap) => {
@@ -230,7 +240,8 @@ const SquireEditorWrapper = ({
         };
     }, [blockquoteExpanded, blockquoteSaved]);
 
-    const toolbarMoreDropdownExtension = <EditorToolbarExtension message={message} onChangeFlag={onChangeFlag} />;
+    const handleEllipseClick = useCallback(() => setBlockquoteExpanded(true), []);
+    const handleSquireReady = useCallback(() => setEditorReady(true), []);
 
     return (
         <SquireEditor
@@ -243,12 +254,12 @@ const SquireEditorWrapper = ({
             onChangeMetadata={handleChangeMetadata}
             onFocus={onFocus}
             showEllipseButton={!blockquoteExpanded}
-            onEllipseClick={() => setBlockquoteExpanded(true)}
-            onReady={() => setEditorReady(true)}
+            onEllipseClick={handleEllipseClick}
+            onReady={handleSquireReady}
             onAddImages={onAddAttachments}
-            toolbarMoreDropdownExtension={toolbarMoreDropdownExtension}
+            toolbarMoreDropdownExtension={<EditorToolbarExtension message={message} onChangeFlag={onChangeFlag} />}
         />
     );
 };
 
-export default SquireEditorWrapper;
+export default memo(SquireEditorWrapper);

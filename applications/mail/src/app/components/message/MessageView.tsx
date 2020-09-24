@@ -1,5 +1,5 @@
 import { OpenPGPKey } from 'pmcrypto';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState, memo } from 'react';
 import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
@@ -224,4 +224,4 @@ const MessageView = ({
     );
 };
 
-export default MessageView;
+export default memo(MessageView);

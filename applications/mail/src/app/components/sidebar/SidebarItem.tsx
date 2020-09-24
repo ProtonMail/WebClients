@@ -1,4 +1,4 @@
-import React, { DragEvent, ReactNode } from 'react';
+import React, { DragEvent, ReactNode, memo } from 'react';
 import {
     classnames,
     SidebarListItem,
@@ -6,17 +6,17 @@ import {
     SidebarListItemContentIcon,
     useEventManager,
     SidebarListItemLink,
-    useLoading
+    useLoading,
+    useCache
 } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { wait } from 'proton-shared/lib/helpers/promise';
 
 import LocationAside from './LocationAside';
 import { LABEL_IDS_TO_HUMAN, DRAG_ELEMENT_KEY, DRAG_ELEMENT_ID_KEY } from '../../constants';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { useDragOver } from '../../hooks/useDragOver';
-import { useElementsCache } from '../../hooks/useElementsCache';
+import { ELEMENTS_CACHE_KEY } from '../../hooks/useElementsCache';
 
 const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
 
@@ -31,7 +31,7 @@ interface Props {
     text: string;
     content?: ReactNode;
     color?: string;
-    count?: LabelCount;
+    unreadCount?: number;
 }
 
 const SidebarItem = ({
@@ -43,10 +43,10 @@ const SidebarItem = ({
     content = text,
     color,
     isFolder,
-    count
+    unreadCount
 }: Props) => {
     const { call } = useEventManager();
-    const [elementsCache] = useElementsCache();
+    const cache = useCache();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
@@ -76,6 +76,9 @@ const SidebarItem = ({
     };
 
     const handleDrop = async (event: DragEvent) => {
+        // Avoid useElementsCache for perf issues
+        const elementsCache = cache.get(ELEMENTS_CACHE_KEY);
+
         dragProps.onDrop(event);
 
         // Manual trigger of the dragend event on the drag element because native event is not reliable
@@ -106,7 +109,7 @@ const SidebarItem = ({
             >
                 <SidebarListItemContent
                     left={icon ? <SidebarListItemContentIcon name={icon} color={color} size={iconSize} /> : undefined}
-                    right={<LocationAside count={count} active={active} refreshing={refreshing} />}
+                    right={<LocationAside unreadCount={unreadCount} active={active} refreshing={refreshing} />}
                 >
                     {content}
                 </SidebarListItemContent>
@@ -115,4 +118,4 @@ const SidebarItem = ({
     );
 };
 
-export default SidebarItem;
+export default memo(SidebarItem);

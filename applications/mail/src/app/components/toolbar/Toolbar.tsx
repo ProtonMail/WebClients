@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import React, { memo } from 'react';
 import { c } from 'ttag';
 import { Icon, useLabels, useFolders } from 'react-components';
-import { identity } from 'proton-shared/lib/helpers/function';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import ToolbarSeparator from './ToolbarSeparator';
@@ -18,17 +17,18 @@ import LabelDropdown from '../dropdown/LabelDropdown';
 import BackButton from './BackButton';
 import PagingControls from './PagingControls';
 import { Page, Sort, Filter } from '../../models/tools';
-import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
 import NavigationControls from './NavigationControls';
+
+const defaultSelectedIDs: string[] = [];
 
 interface Props {
     loading?: boolean;
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     labelID: string;
     elementID?: string;
-    elements: Element[];
     selectedIDs: string[];
+    elementIDs: string[];
     mailSettings: MailSettings;
     columnMode: boolean;
     conversationMode: boolean;
@@ -40,20 +40,20 @@ interface Props {
     filter: Filter;
     onFilter: (filter: Filter) => void;
     onBack: () => void;
-    onElement: (element: Element) => void;
+    onElement: (elementID: string | undefined) => void;
     onNavigate: (labelID: string) => void;
 }
 
 const Toolbar = ({
     labelID = '',
     elementID,
-    elements,
     onCheck,
     mailSettings,
     columnMode,
     conversationMode,
     breakpoints,
-    selectedIDs = [],
+    selectedIDs = defaultSelectedIDs,
+    elementIDs,
     loading = false,
     onSort,
     sort,
@@ -67,13 +67,6 @@ const Toolbar = ({
 }: Props) => {
     const [labels] = useLabels();
     const [folders] = useFolders();
-    const selectedElements = useMemo(
-        () =>
-            selectedIDs
-                .map((elementID) => elements.find((element) => element.ID === elementID) as Element)
-                .filter(identity),
-        [elements, selectedIDs]
-    );
     const listInView = columnMode || !elementID;
 
     return (
@@ -82,7 +75,7 @@ const Toolbar = ({
                 {listInView ? (
                     <SelectAll
                         labelID={labelID}
-                        elements={elements}
+                        elementIDs={elementIDs}
                         selectedIDs={selectedIDs}
                         onCheck={onCheck}
                         loading={loading}
@@ -96,7 +89,6 @@ const Toolbar = ({
                     selectedIDs={selectedIDs}
                     onBack={onBack}
                     labelID={labelID}
-                    elements={elements}
                 />
                 <ToolbarSeparator />
                 <MoveButtons
@@ -112,7 +104,7 @@ const Toolbar = ({
                 <ToolbarDropdown
                     autoClose={false}
                     noMaxSize={true}
-                    disabled={!selectedElements || !selectedElements.length}
+                    disabled={!selectedIDs || !selectedIDs.length}
                     content={<Icon className="toolbar-icon" name="folder" />}
                     dropDownClassName="moveDropdown"
                     title={c('Title').t`Move to`}
@@ -121,7 +113,7 @@ const Toolbar = ({
                     {({ onClose, onLock }) => (
                         <MoveDropdown
                             labelID={labelID}
-                            elements={selectedElements}
+                            selectedIDs={selectedIDs}
                             conversationMode={conversationMode}
                             onClose={onClose}
                             onLock={onLock}
@@ -133,7 +125,7 @@ const Toolbar = ({
                 <ToolbarDropdown
                     autoClose={false}
                     noMaxSize={true}
-                    disabled={!selectedElements || !selectedElements.length}
+                    disabled={!selectedIDs || !selectedIDs.length}
                     content={<Icon className="toolbar-icon" name="label" />}
                     dropDownClassName="labelDropdown"
                     title={c('Title').t`Label as`}
@@ -143,14 +135,14 @@ const Toolbar = ({
                         <LabelDropdown
                             labelID={labelID}
                             labels={labels}
-                            elements={selectedElements}
+                            selectedIDs={selectedIDs}
                             onClose={onClose}
                             onLock={onLock}
                             breakpoints={breakpoints}
                         />
                     )}
                 </ToolbarDropdown>
-                <EmptyButton labelID={labelID} breakpoints={breakpoints} elements={elements} />
+                <EmptyButton labelID={labelID} breakpoints={breakpoints} elementIDs={elementIDs} />
             </div>
             <div className="flex">
                 {breakpoints.isDesktop && (
@@ -183,7 +175,7 @@ const Toolbar = ({
                         loading={loading}
                         conversationMode={conversationMode}
                         elementID={elementID}
-                        elements={elements}
+                        elementIDs={elementIDs}
                         onElement={onElement}
                     />
                 )}
@@ -192,4 +184,4 @@ const Toolbar = ({
     );
 };
 
-export default Toolbar;
+export default memo(Toolbar);

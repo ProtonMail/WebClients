@@ -9,7 +9,7 @@ import ToolbarButton from './ToolbarButton';
 import { Breakpoints } from '../../models/utils';
 import { getFolderName, isCustomFolder, isCustomLabel } from '../../helpers/labels';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
-import { useElementsCache } from '../../hooks/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
 import DeleteButton from './DeleteButton';
 
 const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED, ALL_MAIL } = MAILBOX_LABEL_IDS;
@@ -36,12 +36,12 @@ const MoveButtons = ({
     const [loading, withLoading] = useLoading();
     const moveToFolder = useMoveToFolder();
     const labelIDs = labels.map(({ ID }) => ID);
-    const [elementsCache] = useElementsCache();
+    const getElementsFromIDs = useGetElementsFromIDs();
 
     const handleMove = async (LabelID: string) => {
         const folderName = getFolderName(LabelID, folders);
         const fromLabelID = labelIDs.includes(labelID) ? INBOX : labelID;
-        const elements = selectedIDs.map((elementID) => elementsCache.elements[elementID]);
+        const elements = getElementsFromIDs(selectedIDs);
         await moveToFolder(elements, LabelID, folderName, fromLabelID);
         onBack();
     };

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { useApi, useNotifications, useAuthentication, useHandler } from 'react-components';
 import { c } from 'ttag';
 
@@ -128,7 +128,7 @@ export const useAttachments = (
     /**
      * Entry point for upload, will check and ask for attachment action if possible
      */
-    const handleAddAttachmentsStart = async (files: File[]) => {
+    const handleAddAttachmentsStart = useHandler(async (files: File[]) => {
         const embeddable = files.every((file) => isEmbeddable(file.type));
         const plainText = isPlainText(message.data);
 
@@ -141,33 +141,36 @@ export const useAttachments = (
         } else {
             handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
         }
-    };
+    });
 
     const handleCancelAddAttachment = () => setPendingFiles(undefined);
 
     /**
      * Remove an existing attachment, deal with potential embedded image
      */
-    const handleRemoveAttachment = (attachment: Attachment) => async () => {
-        await api(removeAttachment(attachment.ID || '', message.data?.ID || ''));
+    const handleRemoveAttachment = useCallback(
+        (attachment: Attachment) => async () => {
+            await api(removeAttachment(attachment.ID || '', message.data?.ID || ''));
 
-        onChange((message: MessageExtended) => {
-            const Attachments = message.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID) || [];
+            onChange((message: MessageExtended) => {
+                const Attachments = message.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID) || [];
 
-            const cid = readCID(attachment);
-            const embeddeds = cloneEmbedddedMap(message.embeddeds);
+                const cid = readCID(attachment);
+                const embeddeds = cloneEmbedddedMap(message.embeddeds);
 
-            if (embeddeds.has(cid)) {
-                embeddeds.delete(cid);
+                if (embeddeds.has(cid)) {
+                    embeddeds.delete(cid);
 
-                setTimeout(() => {
-                    editorActionsRef.current?.removeEmbedded([attachment]);
-                });
-            }
+                    setTimeout(() => {
+                        editorActionsRef.current?.removeEmbedded([attachment]);
+                    });
+                }
 
-            return { embeddeds, data: { Attachments } };
-        });
-    };
+                return { embeddeds, data: { Attachments } };
+            });
+        },
+        [onChange]
+    );
 
     /**
      * Cancel pending upload

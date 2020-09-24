@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { c } from 'ttag';
 import { Location, History } from 'history';
 import {
@@ -100,4 +100,4 @@ const MailHeader = ({
     );
 };
 
-export default MailHeader;
+export default memo(MailHeader);

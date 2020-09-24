@@ -127,6 +127,7 @@ const HeaderMoreDropdown = ({
     };
 
     const messageLabelIDs = message.data?.LabelIDs || [];
+    const selectedIDs = [message.data?.ID || ''];
     const isSpam = messageLabelIDs.includes(SPAM);
     const isInTrash = messageLabelIDs.includes(TRASH);
     const fromFolderID = getCurrentFolderID(messageLabelIDs, folders);
@@ -137,7 +138,7 @@ const HeaderMoreDropdown = ({
               ({ onClose, onLock }) => (
                   <MoveDropdown
                       labelID={fromFolderID}
-                      elements={[message.data as Message]}
+                      selectedIDs={selectedIDs}
                       conversationMode={false}
                       onClose={onClose}
                       onLock={onLock}
@@ -149,7 +150,7 @@ const HeaderMoreDropdown = ({
                   <LabelDropdown
                       labelID={labelID}
                       labels={labels}
-                      elements={[message.data as Message]}
+                      selectedIDs={selectedIDs}
                       onClose={onClose}
                       onLock={onLock}
                       breakpoints={breakpoints}

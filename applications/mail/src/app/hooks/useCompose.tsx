@@ -4,11 +4,11 @@ import {
     useHandler,
     useNotifications,
     useModals,
-    useUser,
     ConfirmModal,
     Alert,
     useAddresses,
-    useAppLink
+    useAppLink,
+    useGetUser
 } from 'react-components';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
@@ -50,15 +50,18 @@ export const useCompose = (
     focusComposer: (messageID: string) => void,
     maxActiveComposer: number
 ) => {
-    const [user] = useUser();
+    // Avoid useUser for performance issues
+    const getUser = useGetUser();
     const [addresses = []] = useAddresses();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const createDraft = useDraft();
-    const cache = useMessageCache();
+    const messageCache = useMessageCache();
     const goToApp = useAppLink();
 
     return useHandler(async (composeArgs: ComposeArgs) => {
+        const user = await getUser();
+
         const activeAddresses = addresses.filter((address) => !isDirtyAddress(address));
 
         if (activeAddresses.length === 0) {
@@ -109,7 +112,7 @@ export const useCompose = (
 
         if (composeExisting) {
             const { existingDraft } = composeExisting;
-            const localID = getLocalID(cache, existingDraft.localID);
+            const localID = getLocalID(messageCache, existingDraft.localID);
 
             const existingMessageID = openComposers.find((id) => id === localID);
             if (existingMessageID) {

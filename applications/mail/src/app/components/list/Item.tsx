@@ -1,5 +1,4 @@
-import React, { ChangeEvent, MouseEvent, DragEvent } from 'react';
-import { Location } from 'history';
+import React, { ChangeEvent, MouseEvent, DragEvent, memo } from 'react';
 import { classnames, Checkbox } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { MAILBOX_LABEL_IDS, DENSITY, VIEW_MODE } from 'proton-shared/lib/constants';
@@ -9,11 +8,10 @@ import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import ItemCheckbox from './ItemCheckbox';
 import { getRecipients as getMessageRecipients, getSender } from '../../helpers/message/messages';
-import { getCurrentType, isUnread, isMessage } from '../../helpers/elements';
+import { isUnread, isMessage } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import { Element } from '../../models/element';
-import { ELEMENT_TYPES } from '../../constants';
 import { getSenders, getRecipients as getConversationRecipients } from '../../helpers/conversation';
 import {
     recipientsToRecipientOrGroup,
@@ -28,7 +26,7 @@ const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_
 const labelsWithIcons = [ALL_MAIL, STARRED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS] as string[];
 
 interface Props {
-    location: Location;
+    conversationMode: boolean;
     labels?: Label[];
     labelID: string;
     loading: boolean;
@@ -40,16 +38,16 @@ interface Props {
     checked?: boolean;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
-    onCheck: (event: ChangeEvent) => void;
-    onClick: (element: Element) => void;
-    onDragStart: (event: DragEvent) => void;
+    onCheck: (event: ChangeEvent, elementID: string) => void;
+    onClick: (elementID: string | undefined) => void;
+    onDragStart: (event: DragEvent, element: Element) => void;
     onDragCanceled: () => void;
     dragged: boolean;
     index: number;
 }
 
 const Item = ({
-    location,
+    conversationMode,
     labelID,
     labels,
     loading,
@@ -69,17 +67,15 @@ const Item = ({
     index
 }: Props) => {
     const displayRecipients = [SENT, ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS);
-    const type = getCurrentType({ mailSettings, labelID, location });
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
         isConversationContentView && isMessage(element)
             ? elementID === (element as Message).ConversationID
             : elementID === element.ID;
-    const isConversation = type === ELEMENT_TYPES.CONVERSATION;
     const showIcon = labelsWithIcons.includes(labelID) || isCustomLabel(labelID, labels);
-    const senders = isConversation ? getSenders(element) : [getSender(element as Message)];
-    const recipients = isConversation ? getConversationRecipients(element) : getMessageRecipients(element as Message);
+    const senders = conversationMode ? getSenders(element) : [getSender(element as Message)];
+    const recipients = conversationMode ? getConversationRecipients(element) : getMessageRecipients(element as Message);
     const sendersLabels = senders.map((sender) => getRecipientLabelDetailed(sender, contacts));
     const sendersAddresses = senders.map((sender) => sender?.Address);
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
@@ -101,7 +97,7 @@ const Item = ({
             event.stopPropagation();
             return;
         }
-        onClick(element);
+        onClick(element.ID);
     };
 
     const handleDragEnd = (event: DragEvent) => {
@@ -110,13 +106,17 @@ const Item = ({
         }
     };
 
+    const handleCheck = (event: ChangeEvent) => {
+        onCheck(event, element.ID || '');
+    };
+
     const itemCheckboxType = isCompactView ? (
-        <Checkbox className="item-icon-compact mr0-75 stop-propagation" checked={checked} onChange={onCheck} />
+        <Checkbox className="item-icon-compact mr0-75 stop-propagation" checked={checked} onChange={handleCheck} />
     ) : (
         <ItemCheckbox
             className={classnames(['item-checkbox-label ml0-1', columnLayout ? 'mr0-6' : 'mr0-5'])}
             checked={checked}
-            onChange={onCheck}
+            onChange={handleCheck}
         >
             {getInitial(displayRecipients ? recipientsLabels[0] : sendersLabels[0])}
         </ItemCheckbox>
@@ -126,7 +126,7 @@ const Item = ({
         <div
             onClick={handleClick}
             draggable
-            onDragStart={onDragStart}
+            onDragStart={(event) => onDragStart(event, element)}
             onDragEnd={handleDragEnd}
             className={classnames([
                 'flex flex-nowrap flex-items-center cursor-pointer',
@@ -144,7 +144,7 @@ const Item = ({
                 labels={labels}
                 element={element}
                 mailSettings={mailSettings}
-                type={type}
+                conversationMode={conversationMode}
                 showIcon={showIcon}
                 senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
                 addresses={(displayRecipients ? recipientsAddresses : sendersAddresses).join(', ')}
@@ -156,4 +156,4 @@ const Item = ({
     );
 };
 
-export default Item;
+export default memo(Item);

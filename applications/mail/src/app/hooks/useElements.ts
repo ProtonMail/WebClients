@@ -27,7 +27,8 @@ import {
     LabelIDsChanges
 } from '../models/event';
 import { useExpirationCheck } from './useExpiration';
-import { ElementsCache, ElementsCacheParams, useElementsCache } from './useElementsCache';
+import { ElementsCache, ElementsCacheParams, useElementsCache, useSetElementsCache } from './useElementsCache';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 interface Options {
     conversationMode: boolean;
@@ -74,7 +75,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const [messageCounts = []] = useMessageCounts() as [LabelCount[], boolean, Error];
     const counts = conversationMode ? conversationCounts : messageCounts;
 
-    const [cache, setCache] = useElementsCache(
+    const cache = useElementsCache(
         emptyCache(page, labelID, counts, {
             labelID,
             sort,
@@ -82,6 +83,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             ...search
         })
     );
+    const setCache = useSetElementsCache();
 
     // Warning: this hook relies mainly on a localCache, not the globalCache
     // This import is needed only for a specific use case (message expiration)
@@ -289,6 +291,10 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
             const Counts: ElementCountEvent[] = conversationMode ? ConversationCounts : MessageCounts;
 
+            if (!Elements.length && !Counts.length) {
+                return;
+            }
+
             if (!isLiveCache()) {
                 if (Elements.length) {
                     setCache((cache) => ({ ...cache, invalidated: true }));
@@ -322,18 +328,20 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 { toCreate: [], toUpdate: [], toDelete: [] }
             );
 
-            const toUpdateCompleted = await Promise.all(
-                toUpdate.map(async (element) => {
-                    const elementID = element.ID || '';
-                    const existingElement = cache.elements[elementID];
+            const toUpdateCompleted = (
+                await Promise.all(
+                    toUpdate.map(async (element) => {
+                        const elementID = element.ID || '';
+                        const existingElement = cache.elements[elementID];
 
-                    if (existingElement) {
-                        element = parseLabelIDsInEvent(existingElement, element);
-                    }
+                        if (existingElement) {
+                            element = parseLabelIDsInEvent(existingElement, element);
+                        }
 
-                    return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
-                })
-            );
+                        return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
+                    })
+                )
+            ).filter(isTruthy);
 
             setCache((cache) => {
                 const newReplacements: { [ID: string]: Element } = {};

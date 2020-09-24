@@ -2,7 +2,7 @@ import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { useHandler, useFolders } from 'react-components';
 
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
-import { useElementsCache } from '../useElementsCache';
+import { useGetElementsCache, useSetElementsCache } from '../useElementsCache';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { Message } from '../../models/message';
@@ -26,12 +26,14 @@ const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) =>
 };
 
 export const useOptimisticApplyLabels = () => {
-    const [elementsCache, setElementsCache] = useElementsCache();
+    const getElementsCache = useGetElementsCache();
+    const setElementsCache = useSetElementsCache();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
     const [folders = []] = useFolders();
 
     const optimisticApplyLabels = useHandler((elements: Element[], inputChanges: LabelChanges, isMove = false) => {
+        const elementsCache = getElementsCache();
         const rollbackChanges = [] as { element: Element; changes: LabelChanges }[];
         const updatedElements = {} as { [elementID: string]: Element };
 

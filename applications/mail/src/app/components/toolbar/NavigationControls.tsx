@@ -4,21 +4,19 @@ import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
 
-import { Element } from '../../models/element';
-
 interface Props {
     loading: boolean;
     conversationMode: boolean;
     elementID?: string;
-    elements: Element[];
-    onElement: (element: Element) => void;
+    elementIDs: string[];
+    onElement: (elementID: string | undefined) => void;
 }
 
-const NavigationControls = ({ loading, conversationMode, elementID, elements, onElement }: Props) => {
-    const index = elements.findIndex((element) => element.ID === elementID);
+const NavigationControls = ({ loading, conversationMode, elementID, elementIDs, onElement }: Props) => {
+    const index = elementIDs.findIndex((id) => id === elementID);
 
-    const handleNext = () => onElement(elements[index + 1]);
-    const handlePrevious = () => onElement(elements[index - 1]);
+    const handleNext = () => onElement(elementIDs[index + 1]);
+    const handlePrevious = () => onElement(elementIDs[index - 1]);
 
     return (
         <>
@@ -36,7 +34,7 @@ const NavigationControls = ({ loading, conversationMode, elementID, elements, on
             </ToolbarButton>
             <ToolbarButton
                 loading={loading}
-                disabled={index >= elements.length - 1}
+                disabled={index >= elementIDs.length - 1}
                 title={conversationMode ? c('Title').t`Next conversation` : c('Title').t`Next message`}
                 onClick={handleNext}
                 className="notablet nomobile"

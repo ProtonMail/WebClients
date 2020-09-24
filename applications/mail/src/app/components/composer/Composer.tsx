@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
     classnames,
     useToggle,
@@ -244,7 +244,7 @@ const Composer = ({
 
     const [pendingSave, autoSave] = useDebouncedHandler(actualSave, 2000);
 
-    const handleChange: MessageChange = (update, shouldReloadSendInfo) => {
+    const handleChange: MessageChange = useHandler((update, shouldReloadSendInfo) => {
         setModelMessage((modelMessage) => {
             const messageChanges = update instanceof Function ? update(modelMessage) : update;
             const newModelMessage = mergeMessages(modelMessage, messageChanges);
@@ -254,9 +254,9 @@ const Composer = ({
             autoSave(newModelMessage);
             return newModelMessage;
         });
-    };
+    });
 
-    const handleChangeContent = (content: string, refreshEditor = false) => {
+    const handleChangeContent = useHandler((content: string, refreshEditor = false) => {
         setModelMessage((modelMessage) => {
             setContent(modelMessage, content);
             const newModelMessage = { ...modelMessage };
@@ -266,9 +266,9 @@ const Composer = ({
             }
             return newModelMessage;
         });
-    };
+    });
 
-    const handleChangeFlag = (changes: Map<number, boolean>, shouldReloadSendInfo = false) => {
+    const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo = false) => {
         handleChange((message) => {
             let Flags = message.data?.Flags || 0;
             changes.forEach((isAdd, flag) => {
@@ -277,7 +277,7 @@ const Composer = ({
             });
             return { data: { Flags } };
         }, shouldReloadSendInfo);
-    };
+    });
 
     /**
      * Ensure the draft is saved before continue
@@ -391,10 +391,11 @@ const Composer = ({
             onClose();
         }
     };
-    const handleContentFocus = () => {
+    const handleEditorReady = useCallback(() => setEditorReady(true), []);
+    const handleContentFocus = useCallback(() => {
         addressesBlurRef.current();
-        onFocus(); // Events on the main div will not fire because/ the editor is in an iframe
-    };
+        onFocus(); // Events on the main div will not fire because the editor is in an iframe
+    }, []);
 
     const style = computeComposerStyle(index, count, focus, minimized, maximized, breakpoints.isNarrow, windowSize);
 
@@ -461,7 +462,7 @@ const Composer = ({
                             messageSendInfo={messageSendInfo}
                             disabled={contentLocked}
                             breakpoints={breakpoints}
-                            onEditorReady={() => setEditorReady(true)}
+                            onEditorReady={handleEditorReady}
                             onChange={handleChange}
                             onChangeContent={handleChangeContent}
                             onChangeFlag={handleChangeFlag}

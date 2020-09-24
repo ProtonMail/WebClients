@@ -1,11 +1,10 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { PrivateMainArea } from 'react-components';
+import React, { useState, useMemo, useEffect, useCallback, memo } from 'react';
+import { PrivateMainArea, useHandler } from 'react-components';
 import { History, Location } from 'history';
 import { VIEW_MODE } from 'proton-shared/lib/constants';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
-import { Element } from '../models/element';
 import { Sort, Filter, Page, SearchParameters } from '../models/tools';
 import { useMailboxPageTitle } from '../hooks/useMailboxPageTitle';
 import { useElements } from '../hooks/useElements';
@@ -34,6 +33,8 @@ import { OnCompose } from '../hooks/useCompose';
 import { useWelcomeFlag } from '../hooks/useWelcomeFlag';
 import useNewEmailNotification from '../hooks/useNewEmailNotification';
 import { pageCount } from '../helpers/paging';
+import { useDeepMemo } from '../hooks/useDeepMemo';
+import { useGetElementsFromIDs } from '../hooks/useElementsCache';
 
 import './MailboxContainer.scss';
 
@@ -60,6 +61,8 @@ const MailboxContainer = ({
     history,
     onCompose
 }: Props) => {
+    const getElementsFromIDs = useGetElementsFromIDs();
+
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
     const columnModeSetting = isColumnMode(mailSettings);
     const columnMode = columnModeSetting && !forceRowMode;
@@ -92,7 +95,7 @@ const MailboxContainer = ({
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
 
     const [checkedElements, setCheckedElements] = useState<{ [ID: string]: boolean }>({});
-    useNewEmailNotification(history, location);
+    useNewEmailNotification(history);
     const { labelID, elements, loading, expectedLength, total } = useElements({
         conversationMode,
         labelID: inputLabelID,
@@ -108,7 +111,7 @@ const MailboxContainer = ({
 
     useMailboxPageTitle(labelID, location);
 
-    const checkedIDs = useMemo(() => {
+    const checkedIDs = useDeepMemo(() => {
         return Object.entries(checkedElements).reduce((acc, [elementID, isChecked]) => {
             if (!isChecked) {
                 return acc;
@@ -118,7 +121,7 @@ const MailboxContainer = ({
         }, [] as string[]);
     }, [checkedElements]);
 
-    const selectedIDs = useMemo(() => {
+    const selectedIDs = useDeepMemo(() => {
         if (checkedIDs.length) {
             return checkedIDs;
         }
@@ -128,24 +131,36 @@ const MailboxContainer = ({
         return [];
     }, [checkedIDs, elementID]);
 
+    const elementIDs = useDeepMemo(() => {
+        return elements.map((element) => element.ID || '');
+    }, [elements]);
+
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
 
-    const handleElement = (element: Element) => {
-        if (isMessage(element) && isDraft(element)) {
-            onCompose({ existingDraft: { localID: element.ID as string, data: element as Message } });
-        }
-        if (isConversationContentView && isMessage(element)) {
-            history.push(setPathInUrl(location, labelID, (element as Message).ConversationID, element.ID));
-        } else {
-            history.push(setPathInUrl(location, labelID, element.ID));
-        }
-        setCheckedElements({});
-    };
-    const handleBack = () => history.push(setPathInUrl(location, labelID));
-    const handlePage = (pageNumber: number) => history.push(setPageInUrl(location, pageNumber));
-    const handleSort = (sort: Sort) => history.push(setSortInUrl(location, sort));
-    const handleFilter = (filter: Filter) => history.push(setFilterInUrl(location, filter));
-    const handleNavigate = (labelID: string) => history.push(`/${labelID}`);
+    const handleElement = useCallback(
+        (elementID: string | undefined) => {
+            // Using the getter to prevent having elements in dependency of the callback
+            const [element] = getElementsFromIDs([elementID || '']);
+            if (isMessage(element) && isDraft(element)) {
+                onCompose({ existingDraft: { localID: element.ID as string, data: element as Message } });
+            }
+            if (isConversationContentView && isMessage(element)) {
+                history.push(setPathInUrl(history.location, labelID, (element as Message).ConversationID, element.ID));
+            } else {
+                history.push(setPathInUrl(history.location, labelID, element.ID));
+            }
+            setCheckedElements({});
+        },
+        [onCompose, isConversationContentView, labelID]
+    );
+    const handleBack = useCallback(() => history.push(setPathInUrl(history.location, labelID)), [labelID]);
+    const handlePage = useCallback(
+        (pageNumber: number) => history.push(setPageInUrl(history.location, pageNumber)),
+        []
+    );
+    const handleSort = useCallback((sort: Sort) => history.push(setSortInUrl(history.location, sort)), []);
+    const handleFilter = useCallback((filter: Filter) => history.push(setFilterInUrl(history.location, filter)), []);
+    const handleNavigate = useCallback((labelID: string) => history.push(`/${labelID}`), []);
 
     // Move to the previous page if the current one becomes empty
     useEffect(() => {
@@ -158,15 +173,16 @@ const MailboxContainer = ({
      * Put *IDs* to *checked* state
      * Uncheck others if *replace* is true
      */
-    const handleCheck = (IDs: string[], checked: boolean, replace: boolean) =>
+    const handleCheck = useHandler((IDs: string[], checked: boolean, replace: boolean) => {
         setCheckedElements(
             elements.reduce((acc, { ID = '' }) => {
-                const wasChecked = checkedElements[ID];
+                const wasChecked = checkedIDs.includes(ID);
                 const toCheck = IDs.includes(ID);
                 acc[ID] = toCheck ? checked : replace ? !checked : wasChecked;
                 return acc;
             }, {} as { [ID: string]: boolean })
         );
+    });
 
     const handleUncheckAll = () => handleCheck([], true, true);
 
@@ -184,7 +200,7 @@ const MailboxContainer = ({
                     labelID={labelID}
                     elementID={elementID}
                     selectedIDs={selectedIDs}
-                    elements={elements}
+                    elementIDs={elementIDs}
                     mailSettings={mailSettings}
                     columnMode={columnMode}
                     conversationMode={conversationMode}
@@ -204,7 +220,7 @@ const MailboxContainer = ({
             <PrivateMainArea className="flex" hasToolbar={showToolbar} hasRowMode={!showContentPanel}>
                 {showList && (
                     <List
-                        location={location}
+                        conversationMode={conversationMode}
                         labelID={labelID}
                         loading={loading}
                         expectedLength={expectedLength}
@@ -262,4 +278,4 @@ const MailboxContainer = ({
     );
 };
 
-export default MailboxContainer;
+export default memo(MailboxContainer);

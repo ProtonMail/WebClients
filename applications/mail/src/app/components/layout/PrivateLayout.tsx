@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode, useCallback } from 'react';
 import { PrivateAppContainer } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
@@ -23,11 +23,11 @@ interface Props {
 const PrivateLayout = ({ children, location, history, breakpoints, labelID, elementID, onCompose }: Props) => {
     const [expanded, setExpand] = useState(false);
 
-    const handleSearch = (keyword = '', labelID = MAILBOX_LABEL_IDS.ALL_MAIL as string) => {
+    const handleSearch = useCallback((keyword = '', labelID = MAILBOX_LABEL_IDS.ALL_MAIL as string) => {
         history.push(setKeywordInUrl({ ...location, pathname: `/${getHumanLabelID(labelID)}` }, keyword));
-    };
+    }, []);
 
-    const handleToggleExpand = () => setExpand(!expanded);
+    const handleToggleExpand = useCallback(() => setExpand((expanded) => !expanded), []);
 
     useEffect(() => {
         setExpand(false);
