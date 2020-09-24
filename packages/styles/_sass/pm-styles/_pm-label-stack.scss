@@ -4,6 +4,10 @@
 	--item-scale: .7;
 	margin: -.125em;
 
+	&.mw100 {
+		--item-wide: 100%;
+	}
+
 	&-item {
 		max-width: var(--item-wide);
 		margin: .125em;
