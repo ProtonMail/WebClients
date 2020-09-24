@@ -17,8 +17,8 @@ export const MAX_DOMAIN_PLUS_ADDON = 10;
 export const MAX_ADDRESS_ADDON = 10;
 export const MAX_SPACE_ADDON = 16;
 
-export const DOMAIN_PLACEHOLDER = 'domain.com';
-export const EMAIL_PLACEHOLDER = 'john.doe@domain.com';
+export const DOMAIN_PLACEHOLDER = 'example.com';
+export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
 export const USERNAME_PLACEHOLDER = 'john.doe';
 
 export const APPS = {
