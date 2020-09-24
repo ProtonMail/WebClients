@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { APPS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { getClientID } from 'proton-shared/lib/apps/helper';
 
 import AttachScreenshot from './AttachScreenshot';
 import { collectInfo, getClient } from '../../helpers/report';
@@ -35,7 +36,7 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
     const api = useApi();
     const location = useLocation();
     const [loading, withLoading] = useLoading();
-    const { CLIENT_ID, APP_VERSION, CLIENT_TYPE, APP_NAME } = useConfig();
+    const { APP_VERSION, CLIENT_TYPE, APP_NAME } = useConfig();
 
     const mailTitles = [
         { value: 'Sign in problem', text: c('Bug category').t`Sign in problem`, group: c('Group').t`Account` },
@@ -86,7 +87,8 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
     const clearCacheLink = isVpn
         ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
         : 'https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/';
-    const Client = getClient(CLIENT_ID);
+    const ClientID = getClientID(APP_NAME);
+    const Client = getClient(ClientID);
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();
     const [{ Email = '' } = {}] = addresses;

@@ -13,6 +13,7 @@ import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { updateServerTime } from 'pmcrypto';
 import { c } from 'ttag';
 import { getApiError, getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { getClientID } from 'proton-shared/lib/apps/helper';
 
 import ApiContext from './apiContext';
 import { useModals, useNotifications } from '../../hooks';
@@ -156,6 +157,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
 
         const call = configureApi({
             ...config,
+            CLIENT_ID: getClientID(config.APP_NAME),
             xhr,
             UID,
         });
