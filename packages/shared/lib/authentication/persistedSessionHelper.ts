@@ -47,9 +47,9 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
                 api<LocalKeyResponse>(withUIDHeaders(persistedUID, getLocalKey())).then(({ ClientKey }) => ClientKey),
                 User || api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())).then(({ User }) => User),
             ]);
-            const rawSessionKey = base64StringToUint8Array(ClientKey);
-            const sessionKey = await getKey(rawSessionKey);
-            const { keyPassword } = await getDecryptedPersistedSessionBlob(sessionKey, persistedSessionBlobString);
+            const rawKey = base64StringToUint8Array(ClientKey);
+            const key = await getKey(rawKey);
+            const { keyPassword } = await getDecryptedPersistedSessionBlob(key, persistedSessionBlobString);
             if (persistedUserID !== persistedUser.ID) {
                 throw InactiveSessionError();
             }
@@ -95,10 +95,10 @@ export const persistSessionWithPassword = async ({
     LocalID,
     isMember,
 }: PersistSessionWithPasswordArgs) => {
-    const rawSessionKey = getRandomValues(new Uint8Array(32));
-    const key = await getKey(rawSessionKey);
-    const serializedSessionKey = uint8ArrayToBase64String(rawSessionKey);
-    await api<LocalKeyResponse>(setLocalKey(serializedSessionKey));
+    const rawKey = getRandomValues(new Uint8Array(32));
+    const key = await getKey(rawKey);
+    const base64StringKey = uint8ArrayToBase64String(rawKey);
+    await api<LocalKeyResponse>(setLocalKey(base64StringKey));
     await setPersistedSessionWithBlob(LocalID, key, { UID, UserID: User.ID, keyPassword, isMember });
 };
 
