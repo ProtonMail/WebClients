@@ -156,7 +156,8 @@ const SquireEditorWrapper = ({
 
     // Handle input considering blockquote
     const handleInput = (content: string) => {
-        if (skipNextInputRef.current) {
+        // Squire (but not plaintext) trigger an input event when the initial content is inserted
+        if (skipNextInputRef.current && !isPlainText) {
             skipNextInputRef.current = false;
             return;
         }
