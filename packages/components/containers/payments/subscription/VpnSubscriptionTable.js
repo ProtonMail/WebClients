@@ -97,7 +97,7 @@ const VpnSubscriptionTable = ({
                             <span className="opacity-50 mr0-5"> {c('Plan feature').t`Access blocked content`}</span>
                             <Info
                                 title={c('Info')
-                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.`}
                                 url="https://protonvpn.com/support/streaming-guide/"
                             />
                         </del>
@@ -162,7 +162,7 @@ const VpnSubscriptionTable = ({
                             <span className="opacity-50 mr0-5"> {c('Plan feature').t`Access blocked content`}</span>
                             <Info
                                 title={c('Info')
-                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.`}
                                 url="https://protonvpn.com/support/streaming-guide/"
                             />
                         </del>
@@ -227,7 +227,7 @@ const VpnSubscriptionTable = ({
                             <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
                             <Info
                                 title={c('Info')
-                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.`}
                                 url="https://protonvpn.com/support/streaming-guide/"
                             />
                         </span>
