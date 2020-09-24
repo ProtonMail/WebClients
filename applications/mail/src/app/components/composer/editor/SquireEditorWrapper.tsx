@@ -136,7 +136,7 @@ const SquireEditorWrapper = ({
     // Insert the blockquote in the editor
     // In an effect and not an handler to have blockquoteExpanded value updated on the handleInput
     useEffect(() => {
-        if (blockquoteExpanded && blockquoteSaved !== '' && squireEditorRef.current) {
+        if (blockquoteExpanded && blockquoteSaved?.length && squireEditorRef.current) {
             const content = squireEditorRef.current.value;
             squireEditorRef.current.value = content + blockquoteSaved;
         }
