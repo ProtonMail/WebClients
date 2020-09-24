@@ -24,7 +24,7 @@
 - fix links default underline style
 - fix - `table` reset for Mail - added a Sass variable to trigger it or not (Mail is the special case, newsletter compatibility ftw)
 - improve buttons loading state
-- add helper in LabelStack to remove max width
+- add helper in `LabelStack` to remove max width
 
 
 ## Updated/fixes
@@ -54,6 +54,7 @@
 - Drive - move the fab a little higher when the transfer manager is there
 - added new type of media-query to `respond-to` mixin
 - cursor pointer on select fields
+- add `onmobile-w33` helper and fixed `onmobile-aligncenter` for some `th`
 
 
 # [1.8.4] - 2019-07-28

@@ -27,6 +27,11 @@
 		&.alignright {
 			@extend .alignright;
 		}
+		@include respond-to($breakpoint-small) {
+			&.onmobile-aligncenter {
+				@extend .onmobile-aligncenter;
+			}
+		}
 	}
 
 	// no style for this case
