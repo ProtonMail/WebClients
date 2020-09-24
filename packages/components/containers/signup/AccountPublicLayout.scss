@@ -53,6 +53,14 @@ $default-height-fields: 4.1rem;
 			max-width: 150rem;
 		}
 
+		@include respond-to($breakpoint-medium-landscape, 'min') {
+			@include respond-to(800, 'min-height') {
+				&.mw50e {
+					margin-top: 10em;
+				}
+			}
+		}
+
 		.payment-left {
 			width: 15em;
 		}
