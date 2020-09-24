@@ -1,7 +1,8 @@
-import { APP_VERSION, API_VERSION, API_URL, CLIENT_ID } from '../config';
+import { APP_VERSION, API_VERSION, API_URL, APP_NAME } from '../config';
 import { serializeData } from 'proton-shared/lib/fetch/helpers';
 import { getUIDHeaders } from 'proton-shared/lib/fetch/headers';
 import createListeners from 'proton-shared/lib/helpers/listeners';
+import { getClientID } from 'proton-shared/lib/apps/helper';
 
 export type HTTPHeaders = { [key: string]: string };
 
@@ -22,6 +23,8 @@ export interface RequestParams {
     input: HTTP_INPUTS;
     data: { [key: string]: Blob | string | undefined };
 }
+
+const CLIENT_ID = getClientID(APP_NAME);
 
 export const defaultHeaders: HTTPHeaders = {
     'X-Requested-With': 'XMLHttpRequest',
