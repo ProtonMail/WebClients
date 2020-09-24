@@ -26,10 +26,7 @@ describe('toText', () => {
     <div><br></div>
     <div class="protonmail_signature_block-proton">Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.<br></div>
 </div>`;
-        const result = `
-
-
-\u200Bjeanne mange\xa0une boule de glace\xa0à la vanille.
+        const result = `jeanne mange\xa0une boule de glace\xa0à la vanille.
 
 -   Une vache
 -   Un ane
@@ -37,9 +34,7 @@ describe('toText', () => {
 
 A table
 
-Sent with ProtonMail Secure Email.\u200B
-
-`;
+Sent with ProtonMail Secure Email.`;
 
         expect(toText(input)).toEqual(result);
     });
@@ -58,18 +53,13 @@ Sent with ProtonMail Secure Email.\u200B
     <div class="protonmail_signature_block-proton">Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.<br></div>
 </div>`;
 
-        const result = `
-
-
-\u200B: http://anothercoffee.net
+        const result = `: http://anothercoffee.net
 : Drupal to WordPress migration specialists
 :
 : Another Cup of Coffee Limited
 : Registered in England and Wales number 05992203
 
-Sent with ProtonMail Secure Email.\u200B
-
-`;
+Sent with ProtonMail Secure Email.`;
 
         expect(toText(input)).toEqual(result);
     });
@@ -85,15 +75,10 @@ Sent with ProtonMail Secure Email.\u200B
 </div>
         `;
 
-        const result = `
-
-
-\u200B---
+        const result = `---
 This is a test account
 
-swiip.test@protonmail.com\u200B
-
-`;
+swiip.test@protonmail.com`;
 
         expect(toText(input)).toBe(result);
     });
