@@ -6,20 +6,13 @@ import { identity } from 'proton-shared/lib/helpers/function';
  * Transform HTML to text
  * Append lines before the content if it starts with a Signature
  */
-export const toText = (html: string, appendLines = true, convertImages = false) => {
+export const toText = (html: string, convertImages = false) => {
     const turndownService = new TurndownService({
         bulletListMarker: '-',
         strongDelimiter: '' as any,
         emDelimiter: '' as any,
         hr: ''
     });
-
-    const protonSignature = {
-        filter: (node: HTMLElement) => node.classList.contains('protonmail_signature_block'),
-        replacement(content: string) {
-            return `\u200B${content.trim()}\u200B`;
-        }
-    };
 
     const replaceBreakLine = {
         filter: 'br',
@@ -71,8 +64,7 @@ export const toText = (html: string, appendLines = true, convertImages = false) 
         () => turndownService.addRule('replaceAnchor', replaceAnchor),
         () => turndownService.addRule('replaceDiv', replaceDiv),
         () => turndownService.addRule('replaceImg', replaceImg),
-        () => turndownService.addRule('replaceBreakLine', replaceBreakLine),
-        () => turndownService.addRule('protonSignature', protonSignature)
+        () => turndownService.addRule('replaceBreakLine', replaceBreakLine)
     ]);
 
     /**
@@ -83,11 +75,6 @@ export const toText = (html: string, appendLines = true, convertImages = false) 
     turndownService.escape = identity;
 
     const output = turndownService.turndown(html);
-
-    // It's the signature, we need some space
-    if (output.startsWith('\u200B') && appendLines) {
-        return `\n\n\n${output}\n\n`;
-    }
 
     return output;
 };

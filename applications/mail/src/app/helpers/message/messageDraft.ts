@@ -223,7 +223,7 @@ export const createNewDraft = (
 
     const plain = isPlainText({ MIMEType });
     const document = plain ? undefined : parseInDiv(content);
-    const plainText = plain ? exportPlainText(content) : undefined;
+    const plainText = plain ? '\n\n' + exportPlainText(content) : undefined;
 
     return {
         localID: generateUID(DRAFT_ID_PREFIX),

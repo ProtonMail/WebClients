@@ -58,7 +58,7 @@ export const exportPlainText = (content: string) => {
      * The replace removes any characters that are produced by the copying process (like zero width characters)
      * See: http://www.berklix.org/help/majordomo/#quoted we want to avoid sending unnecessary quoted printable encodings
      */
-    return toText(content, true, true).replace(/\u200B/g, '');
+    return toText(content, true).replace(/\u200B/g, '');
 };
 
 /**

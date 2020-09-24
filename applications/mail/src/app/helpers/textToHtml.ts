@@ -89,7 +89,7 @@ const escapeBackslash = (text = '') => text.replace(/\\/g, '\\\\');
  */
 const replaceSignature = (input: string, signature: string, mailSettings: MailSettings) => {
     const signatureTemplate = templateBuilder(signature, mailSettings, false, true);
-    const signatureText = toText(signatureTemplate, false)
+    const signatureText = toText(signatureTemplate)
         .replace(/\u200B/g, '')
         .trim();
     return input.replace(signatureText, SIGNATURE_PLACEHOLDER);
