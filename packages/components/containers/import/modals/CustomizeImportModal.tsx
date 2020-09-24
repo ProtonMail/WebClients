@@ -182,7 +182,7 @@ const CustomizeImportModal = ({
         >
             <Alert>
                 {c('Info')
-                    .t`Choose a label for the messages imported in your ProtonMail account, a time range for this import, and the folders you would like to import.`}
+                    .t`Create a label for the imported messages, a time range for this import, and the folders you would like to import.`}
             </Alert>
 
             <div className="mb1 pt1 border-bottom flex-items-center">
@@ -193,7 +193,7 @@ const CustomizeImportModal = ({
                             <Icon name="info" className="ml0-5" />
                         </Tooltip>
                     </FormLabel>
-                    <Field className="flex flex-items-center flex-nowrap">
+                    <Field className="auto flex flex-items-center flex-nowrap">
                         {customizedPayload.ImportLabel && customizedPayload.ImportLabel.Name && (
                             <LabelStack
                                 labels={[
@@ -204,6 +204,7 @@ const CustomizeImportModal = ({
                                     },
                                 ]}
                                 showDelete={false}
+                                className="mw100"
                             />
                         )}
                         <Button className="flex-item-noshrink ml1" onClick={handleEditLabel}>

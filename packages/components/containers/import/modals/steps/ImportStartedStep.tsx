@@ -3,6 +3,8 @@ import { c } from 'ttag';
 
 import { Address } from 'proton-shared/lib/interfaces';
 
+import importStartedSvg from 'design-system/assets/img/shared/import-started.svg';
+
 import { ImportModalModel } from '../../interfaces';
 
 interface Props {
@@ -12,6 +14,7 @@ interface Props {
 
 const ImportStartedStep = ({ modalModel, address }: Props) => (
     <div className="aligncenter">
+        <img src={importStartedSvg} alt="" className="mw80" />
         <h3>{c('Info').t`Your import has started!`}</h3>
         <div className="mt1">{c('Info').t`Your messages are being imported from`}</div>
         <div className="mt1">
@@ -26,4 +29,5 @@ const ImportStartedStep = ({ modalModel, address }: Props) => (
         <div className="mt1">{c('Info').t`You can continue using Proton services as usual.`}</div>
     </div>
 );
+
 export default ImportStartedStep;

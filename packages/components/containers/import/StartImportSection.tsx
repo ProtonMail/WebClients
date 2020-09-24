@@ -23,9 +23,6 @@ const StartImportSection = ({ fetchCurrentImports }: Props) => {
                 <br />
                 {c('Info')
                     .t`Simply connect to your previous account, decide what you would like to import, and you're done.`}
-                <br />
-                {c('Info')
-                    .t`To use the assistant, Proton needs permission to contact your external email provider and export your data.`}
             </Alert>
             <PrimaryButton className="mt0-5" onClick={handleClick}>{c('Action').t`Start import`}</PrimaryButton>
         </>

@@ -299,10 +299,9 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                     )}
                 </div>
 
-                <div className="mb1 ml1 flex flex-items-center">
-                    <Icon className="mr0-5" name="label" />
-                    {c('Info').t`Label all imported messages as`}
-
+                <div className="mb1 ml1 flex flex-items-center flex-nowrap">
+                    <Icon className="flex-item-noshrink mr0-5" name="label" />
+                    <span className="flex-item-noshrink">{c('Info').t`Label all imported messages as`}</span>
                     {payload.ImportLabel && payload.ImportLabel.Name && (
                         <span className="ml0-5">
                             <LabelStack
@@ -314,6 +313,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                                     },
                                 ]}
                                 showDelete={false}
+                                className="mw100"
                             />
                         </span>
                     )}

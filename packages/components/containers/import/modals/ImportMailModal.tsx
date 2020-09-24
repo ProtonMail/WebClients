@@ -112,14 +112,10 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, currentImport, ...r
         }
     }, [modalModel.step]);
 
-    const wizardSteps = [
-        c('Wizard step').t`Authenticate`,
-        c('Wizard step').t`Plan import`,
-        c('Wizard step').t`Confirm`,
-    ];
+    const wizardSteps = [c('Wizard step').t`Authenticate`, c('Wizard step').t`Plan import`, c('Wizard step').t`Import`];
 
     const handleCancel = () => {
-        if (!modalModel.email) {
+        if (!modalModel.email || modalModel.step === Step.STARTED) {
             onClose();
             return;
         }
