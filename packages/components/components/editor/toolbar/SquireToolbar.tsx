@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useState, ReactNode } from 'react';
+import React, { MutableRefObject, useEffect, useState, ReactNode, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
 
 import { useHandler, useModals } from '../../../hooks';
@@ -62,39 +62,82 @@ const SquireToolbar = ({
 
     useEffect(() => listenToCursor(squireRef.current, handleCursorDebounced), [editorReady]);
 
-    const handleBold = forceRefresh(() => toggleBold(squireRef.current));
-    const handleItalic = forceRefresh(() => toggleItalic(squireRef.current));
-    const handleUnderline = forceRefresh(() => toggleUnderline(squireRef.current));
+    const handleBold = useCallback(
+        forceRefresh(() => toggleBold(squireRef.current)),
+        []
+    );
+    const handleItalic = useCallback(
+        forceRefresh(() => toggleItalic(squireRef.current)),
+        []
+    );
+    const handleUnderline = useCallback(
+        forceRefresh(() => toggleUnderline(squireRef.current)),
+        []
+    );
 
-    const handleAlignment = (alignment: ALIGNMENT) =>
-        forceRefresh(() => {
-            squireRef.current.setTextAlignment(alignment);
-        });
+    const handleAlignment = useCallback(
+        (alignment: ALIGNMENT) =>
+            forceRefresh(() => {
+                squireRef.current.setTextAlignment(alignment);
+            }),
+        []
+    );
 
-    const handleOrderedList = forceRefresh(() => toggleOrderedList(squireRef.current));
-    const handleUnorderedList = forceRefresh(() => toggleUnorderedList(squireRef.current));
-    const handleBlockquote = forceRefresh(() => toggleBlockquote(squireRef.current));
+    const handleOrderedList = useCallback(
+        forceRefresh(() => toggleOrderedList(squireRef.current)),
+        []
+    );
 
-    const handleAddLink = (link: LinkData) => {
+    const handleUnorderedList = useCallback(
+        forceRefresh(() => toggleUnorderedList(squireRef.current)),
+        []
+    );
+    const handleBlockquote = useCallback(
+        forceRefresh(() => toggleBlockquote(squireRef.current)),
+        []
+    );
+
+    const handleAddLink = useCallback((link: LinkData) => {
         makeLink(squireRef.current, link);
-    };
+    }, []);
 
-    const handleAddImageUrl = (url: string) => {
+    const handleAddImageUrl = useCallback((url: string) => {
         insertImage(squireRef.current, url);
-    };
+    }, []);
 
-    const handleLink = () => {
+    const handleLink = useCallback(() => {
         const link = getLinkAtCursor(squireRef.current);
         createModal(<InsertLinkModal inputLink={link} onSubmit={handleAddLink} />);
-    };
+    }, []);
 
-    const handleImage = () => {
+    const handleImage = useCallback(() => {
         createModal(<InsertImageModal onAddUrl={handleAddImageUrl} onAddImages={onAddImages} />);
-    };
+    }, []);
 
-    const handleClearFormatting = () => {
+    const handleClearFormatting = useCallback(() => {
         squireRef.current.removeAllFormatting();
-    };
+    }, []);
+
+    const squireActions = useMemo(
+        () => ({
+            handleAlignment,
+            handleUnorderedList,
+            handleOrderedList,
+            handleBlockquote,
+            handleLink,
+            handleClearFormatting,
+            handleImage,
+        }),
+        [
+            handleAlignment,
+            handleUnorderedList,
+            handleOrderedList,
+            handleBlockquote,
+            handleLink,
+            handleClearFormatting,
+            handleImage,
+        ]
+    );
 
     return (
         <div className="editor-toolbar flex flex-nowrap">
@@ -203,15 +246,7 @@ const SquireToolbar = ({
                     onChangeMetadata={onChangeMetadata}
                     isNarrow={isNarrow}
                     squireInfos={squireInfos}
-                    squireActions={{
-                        handleAlignment,
-                        handleUnorderedList,
-                        handleOrderedList,
-                        handleBlockquote,
-                        handleLink,
-                        handleClearFormatting,
-                        handleImage,
-                    }}
+                    squireActions={squireActions}
                 >
                     {moreDropdownExtension}
                 </SquireToolbarMoreDropdown>
@@ -220,4 +255,4 @@ const SquireToolbar = ({
     );
 };
 
-export default SquireToolbar;
+export default memo(SquireToolbar);

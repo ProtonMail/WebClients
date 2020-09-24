@@ -24,7 +24,6 @@ const SidebarListItemsWithSubsections = ({ list, pathname, activeSection }: Prop
                             <SubSidebarListItemLink
                                 to={`${to}#${id}`}
                                 aria-current={id === activeSection ? 'true' : undefined}
-                                isActive={() => activeSection === id}
                             >
                                 <SidebarListItemContent>{text}</SidebarListItemContent>
                             </SubSidebarListItemLink>

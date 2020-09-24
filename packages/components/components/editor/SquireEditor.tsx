@@ -8,6 +8,8 @@ import React, {
     forwardRef,
     Ref,
     ReactNode,
+    useMemo,
+    memo,
 } from 'react';
 import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -85,7 +87,9 @@ const SquireEditor = forwardRef(
         const squireRef = useRef<SquireType>(null) as MutableRefObject<SquireType>;
         const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-        const metadata: SquireEditorMetadata = { ...defaultMetadata, ...inputMetadata };
+        const metadata: SquireEditorMetadata = useMemo(() => ({ ...defaultMetadata, ...inputMetadata }), [
+            inputMetadata,
+        ]);
 
         useEffect(() => {
             const mutableRef = ref as MutableRefObject<SquireEditorRef>;
@@ -198,4 +202,4 @@ const SquireEditor = forwardRef(
     }
 );
 
-export default SquireEditor;
+export default memo(SquireEditor);
