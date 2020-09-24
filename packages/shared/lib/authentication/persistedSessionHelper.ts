@@ -59,6 +59,10 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
                 removePersistedSession(localID);
                 throw new InvalidPersistentSessionError('Session invalid');
             }
+            if (e instanceof InvalidPersistentSessionError) {
+                removePersistedSession(localID);
+                throw e;
+            }
             throw e;
         }
     }
