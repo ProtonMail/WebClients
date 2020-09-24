@@ -105,13 +105,14 @@ const SquireEditorWrapper = ({
             content = getContent(message);
         } else {
             const [contentBeforeBlockquote, blockquote] = locateBlockquote(message.document);
-            // Means it's the first content initialization
+
             if (blockquoteSaved === undefined) {
+                // Means it's the first content initialization
                 content = contentBeforeBlockquote;
                 setBlockquoteSaved(blockquote);
                 setBlockquoteExpanded(blockquote === '');
             } else {
-                content = blockquoteExpanded ? contentBeforeBlockquote : contentBeforeBlockquote + blockquote;
+                content = blockquoteExpanded ? contentBeforeBlockquote + blockquote : contentBeforeBlockquote;
             }
         }
 
