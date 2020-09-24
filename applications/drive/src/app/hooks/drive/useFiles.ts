@@ -214,6 +214,7 @@ function useFiles() {
                     Name,
                     MIMEType,
                     sessionKey,
+                    privateKey,
                     addressKeyInfo,
                     ParentLinkID,
                 };
@@ -246,20 +247,28 @@ function useFiles() {
             })),
             {
                 transform: async (data) => {
-                    const { sessionKey } = await setupPromise;
-                    const { privateKey } = await getPrimaryAddressKey();
+                    const [
+                        { sessionKey, privateKey: nodePrivateKey },
+                        { privateKey: addressPrivateKey },
+                    ] = await Promise.all([setupPromise, getPrimaryAddressKey()]);
 
                     const { message, signature } = await encryptMessage({
                         data,
                         sessionKey,
-                        privateKeys: privateKey,
+                        privateKeys: addressPrivateKey,
                         armor: false,
                         detached: true,
                     });
 
+                    const { data: encryptedSignature } = await encryptMessage({
+                        data: signature.packets.write(),
+                        publicKeys: nodePrivateKey.toPublic(),
+                        armor: true,
+                    });
+
                     return {
                         encryptedData: message.packets.write(),
-                        signature: signature.armor(),
+                        signature: encryptedSignature,
                     };
                 },
                 requestUpload: async (Blocks) => {
