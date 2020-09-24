@@ -25,7 +25,7 @@ import EditorToolbarExtension from './EditorToolbarExtension';
 import { findCIDsInContent } from '../../../helpers/embedded/embeddedFinder';
 
 interface ExternalEditorActions {
-    setContent: (content: string) => void;
+    setContent: (message: MessageExtended) => void;
     insertEmbedded: (embeddeds: EmbeddedMap) => void;
     removeEmbedded: (attachments: Attachment[]) => void;
 }
@@ -69,7 +69,7 @@ const SquireEditorWrapper = ({
     const [editorReady, setEditorReady] = useState(false);
     const [documentReady, setDocumentReady] = useState(false);
     const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
-    const [blockquoteSaved, setBlockquoteSaved] = useState('');
+    const [blockquoteSaved, setBlockquoteSaved] = useState<string>();
     const skipNextInputRef = useRef(false); // Had trouble by using a state here
 
     // Keep track of the containing CIDs to detect deletion
@@ -98,7 +98,23 @@ const SquireEditorWrapper = ({
         }
     }, [isPlainText, message.plainText, message.document?.innerHTML]);
 
-    const handleSetContent = (content: string) => {
+    const handleSetContent = (message: MessageExtended) => {
+        let content;
+
+        if (isPlainText) {
+            content = getContent(message);
+        } else {
+            const [contentBeforeBlockquote, blockquote] = locateBlockquote(message.document);
+            // Means it's the first content initialization
+            if (blockquoteSaved === undefined) {
+                content = contentBeforeBlockquote;
+                setBlockquoteSaved(blockquote);
+                setBlockquoteExpanded(blockquote === '');
+            } else {
+                content = blockquoteExpanded ? contentBeforeBlockquote : contentBeforeBlockquote + blockquote;
+            }
+        }
+
         skipNextInputRef.current = true;
         if (squireEditorRef.current) {
             squireEditorRef.current.value = content;
@@ -112,18 +128,7 @@ const SquireEditorWrapper = ({
             onReady();
         }
         if (documentReady && (isPlainText || editorReady)) {
-            let content;
-
-            if (isPlainText) {
-                content = getContent(message);
-            } else {
-                const [contentBeforeBlockquote, blockquote] = locateBlockquote(message.document);
-                content = contentBeforeBlockquote;
-                setBlockquoteSaved(blockquote);
-                setBlockquoteExpanded(blockquote === '');
-            }
-
-            handleSetContent(content);
+            handleSetContent(message);
             onReady();
         }
     }, [editorReady, documentReady, isPlainText]);
@@ -222,7 +227,7 @@ const SquireEditorWrapper = ({
         contentFocusRef.current = () => {
             squireEditorRef.current?.focus();
         };
-    }, []);
+    }, [blockquoteExpanded, blockquoteSaved]);
 
     const toolbarMoreDropdownExtension = <EditorToolbarExtension message={message} onChangeFlag={onChangeFlag} />;
 

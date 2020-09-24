@@ -261,11 +261,11 @@ const Composer = ({
             setContent(modelMessage, content);
             const newModelMessage = { ...modelMessage };
             autoSave(newModelMessage);
+            if (refreshEditor) {
+                editorActionsRef.current?.setContent(newModelMessage);
+            }
             return newModelMessage;
         });
-        if (refreshEditor) {
-            editorActionsRef.current?.setContent(content);
-        }
     };
 
     const handleChangeFlag = (changes: Map<number, boolean>, shouldReloadSendInfo = false) => {
