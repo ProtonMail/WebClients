@@ -4,7 +4,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import useSubscription from './useSubscription';
 
 const { PROTONMAIL, PROTONCONTACTS, PROTONCALENDAR, PROTONDRIVE } = APPS;
-const { PROTONTEAM, LIFETIME } = COUPON_CODES;
+const { PROTONTEAM, LIFETIME, VISIONARYFOREVER } = COUPON_CODES;
 
 const useApps = () => {
     const [subscription] = useSubscription();
@@ -13,7 +13,7 @@ const useApps = () => {
         PROTONMAIL,
         PROTONCONTACTS,
         PROTONCALENDAR,
-        [PROTONTEAM, LIFETIME].includes(coupon as COUPON_CODES) && PROTONDRIVE,
+        [PROTONTEAM, LIFETIME, VISIONARYFOREVER].includes(coupon as COUPON_CODES) && PROTONDRIVE,
     ].filter(isTruthy);
 };
 
