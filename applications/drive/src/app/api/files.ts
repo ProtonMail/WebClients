@@ -20,7 +20,7 @@ export const queryFileRevision = (shareId: string, linkId: string, revisionId: n
 };
 
 export const queryRequestUpload = (data: {
-    BlockList: { Hash: string; Signature: string; Size: number; Index: number }[];
+    BlockList: { Hash: string; EncSignature: string; Size: number; Index: number }[];
     AddressID: string;
     ShareID: string;
     LinkID: string;

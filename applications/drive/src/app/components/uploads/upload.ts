@@ -14,7 +14,7 @@ const MAX_CHUNKS_READ = 10;
 const MAX_THREADS_PER_UPLOAD = 3;
 
 type BlockList = {
-    Signature: string;
+    EncSignature: string;
     Hash: Uint8Array;
     Size: number;
     Index: number;
@@ -161,7 +161,7 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
                 }
                 const { encryptedData, signature } = await block.chunk;
                 return {
-                    Signature: signature,
+                    EncSignature: signature,
                     Hash: (await generateContentHash(encryptedData)).BlockHash,
                     Size: encryptedData.byteLength,
                     Index: index,
