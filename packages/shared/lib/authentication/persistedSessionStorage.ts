@@ -67,10 +67,10 @@ export const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | un
 };
 
 export const getDecryptedPersistedSessionBlob = async (
-    sessionKey: CryptoKey,
+    key: CryptoKey,
     persistedSessionBlobString: string
 ): Promise<PersistedSessionBlob> => {
-    const blob = await getDecryptedBlob(sessionKey, persistedSessionBlobString).catch(() => {
+    const blob = await getDecryptedBlob(key, persistedSessionBlobString).catch(() => {
         throw new InvalidPersistentSessionError('Failed to decrypt persisted blob');
     });
     const persistedSessionBlob = getPersistedSessionBlob(blob);
