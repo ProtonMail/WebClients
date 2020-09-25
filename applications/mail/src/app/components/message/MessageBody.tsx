@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { classnames, Button, EllipsisLoader, Tooltip } from 'react-components';
+import { classnames, Button, Tooltip } from 'react-components';
 import { c } from 'ttag';
 
 import { isPlainText } from '../../helpers/message/messages';
@@ -58,12 +58,13 @@ const MessageBody = ({
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}
             {sourceMode && <pre>{message.decryptedBody}</pre>}
-            {loadingMode && <div className="message-content-loading-placeholder"></div>}
-            {decryptingMode && (
-                <div>
-                    {c('Message').t`Decrypting content`}
-                    <EllipsisLoader />
-                </div>
+            {(loadingMode || decryptingMode) && (
+                <>
+                    <div className="message-content-loading-placeholder mw15e"></div>
+                    <div className="message-content-loading-placeholder mw40e"></div>
+                    <div className="message-content-loading-placeholder mw50e"></div>
+                    <div className="message-content-loading-placeholder mw8e"></div>
+                </>
             )}
             {contentMode && (
                 <>

@@ -33,9 +33,18 @@ const HeaderRecipientItemLayout = ({
                     className="flex-item-fluid message-recipient-item-label-address ellipsis mw100 inbl"
                     title={title}
                 >
-                    <span className="message-recipient-item-label inline">{label}</span>
+                    <span className={classnames(['message-recipient-item-label', isLoading && 'inbl'])}>{label}</span>
                     {` ` /** I need a real space in source here, as everything is inline, no margin/padding to have correct ellipsis applied :-| **/}
-                    {showAddress && <span className="message-recipient-item-address inline opacity-50">{address}</span>}
+                    {showAddress && (
+                        <span
+                            className={classnames([
+                                'message-recipient-item-address opacity-50',
+                                isLoading && 'inbl'
+                            ])}
+                        >
+                            {address}
+                        </span>
+                    )}
                 </span>
                 {icon}
             </span>
