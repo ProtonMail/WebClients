@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { clearType, getType } from 'proton-shared/lib/contacts/property';
 import { ContactProperty, ContactPropertyChange } from 'proton-shared/lib/interfaces/contacts';
+import { classnames } from '../../helpers';
 
 import { useModals } from '../../hooks';
 
@@ -65,7 +66,7 @@ const ContactModalRow = forwardRef<HTMLInputElement, Props>(
                 {isOrderable ? (
                     <OrderableHandle key="icon">
                         <div className="cursor-row-resize mr0-5 flex flex-item-noshrink mb1">
-                            <Icon name="text-justify" className="mtauto mbauto" />
+                            <Icon name="text-justify" className="mt0-75 onmobile-mt2" />
                         </div>
                     </OrderableHandle>
                 ) : (
@@ -73,13 +74,18 @@ const ContactModalRow = forwardRef<HTMLInputElement, Props>(
                         <Icon name="text-justify nonvisible" />
                     </div>
                 )}
-                <div className="flex flex-nowrap flex-items-center onmobile-flex-column w95">
+                <div className="flex flex-nowrap onmobile-flex-column w95 flex-items-start">
                     {field && !(isNarrow && field === 'fn') && (
-                        <span className="w30 contact-modal-select flex flex-nowrap flex-items-center mb1 onmobile-mb0-5 onmobile-flex-self-start">
+                        <span
+                            className={classnames([
+                                'w30 contact-modal-select flex flex-nowrap mb1 flex-items-start onmobile-mb0-5 onmobile-flex-self-start',
+                                field === 'fn' && 'pt0-5',
+                            ])}
+                        >
                             <ContactModalLabel field={field} type={type} uid={property.uid} onChange={onChange} />
                         </span>
                     )}
-                    <div className="flex flex-nowrap flex-items-center flex-item-noshrink">
+                    <div className="flex flex-nowrap flex-items-start flex-item-noshrink">
                         <span className="flex-item-fluid mb1">
                             <div className="pr1 w100 onmobile-pr0-5">
                                 <ContactFieldProperty
