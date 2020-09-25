@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, DragEvent } from 'react';
 import {
     classnames,
     useToggle,
@@ -36,7 +36,6 @@ import { useHasScroll } from '../../hooks/useHasScroll';
 import { reloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
 import { OnCompose } from '../../hooks/useCompose';
-import { useDragOver } from '../../hooks/useDragOver';
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import { usePromiseFromState } from '../../hooks/usePromiseFromState';
 
@@ -153,9 +152,11 @@ const Composer = ({
     // Input onClose ref can change in the meantime
     const onClose = useHandler(inputOnClose);
 
-    const [, dragHandlers] = useDragOver((event) => event.dataTransfer.types.includes(DRAG_ADDRESS_KEY), 'move', {
-        onDragEnter: onFocus
-    });
+    const handleDragEnter = (event: DragEvent) => {
+        if (event.dataTransfer?.types.includes(DRAG_ADDRESS_KEY)) {
+            onFocus();
+        }
+    };
 
     // Manage existing draft initialization
     useEffect(() => {
@@ -408,7 +409,7 @@ const Composer = ({
             style={style}
             onFocus={onFocus}
             onClick={handleClick}
-            {...dragHandlers}
+            onDragEnter={handleDragEnter}
         >
             <ComposerTitleBar
                 message={modelMessage}

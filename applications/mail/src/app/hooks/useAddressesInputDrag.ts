@@ -1,11 +1,29 @@
-import { useState, DragEvent, RefObject, Dispatch, SetStateAction } from 'react';
-import { useHandler } from 'react-components';
+import { useState, DragEvent, RefObject, Dispatch, SetStateAction, useEffect } from 'react';
+import { generateUID, useCache, useHandler } from 'react-components';
 import { Recipient } from 'proton-shared/lib/interfaces';
 
 import { RecipientOrGroup } from '../models/address';
-import { DRAG_ADDRESS_KEY, DRAG_ADDRESS_SIZE_KEY } from '../constants';
+import { DRAG_ADDRESS_KEY } from '../constants';
 import { matchRecipientOrGroup, recipientOrGroupToRecipients } from '../helpers/addresses';
 import { useDragOver } from './useDragOver';
+
+export const ADDRESS_DRAG_CACHE_KEY = 'ADDRESS_DRAG';
+
+interface DragInfo {
+    inputID: string;
+    recipient: RecipientOrGroup;
+    size: { width: number; height: number };
+}
+
+enum DragStatus {
+    Success = 'success',
+    None = 'none'
+}
+
+interface DragCacheEntry {
+    dragInfo?: DragInfo;
+    dragStatus?: DragStatus;
+}
 
 interface UseAddressesInputDrag {
     (
@@ -33,17 +51,25 @@ interface UseAddressesInputDrag {
 }
 
 export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups, setRecipientsOrGroups, onChange) => {
+    const cache = useCache();
+
+    const [uid] = useState(generateUID('drag-address'));
     const [draggedRecipient, setDraggedRecipient] = useState<RecipientOrGroup>();
     const [placeholderPosition, setPlaceholderPosition] = useState<number>();
     const [placeholderSize, setPlaceholderSize] = useState<{ width: number; height: number }>();
 
-    const handleContainerDrop = (event: DragEvent) => {
-        const draggedRecipient = JSON.parse(event.dataTransfer.getData(DRAG_ADDRESS_KEY)) as RecipientOrGroup;
+    const getCache = () => cache.get(ADDRESS_DRAG_CACHE_KEY) as DragCacheEntry | undefined;
+    const setCache = (entry: DragCacheEntry) => cache.set(ADDRESS_DRAG_CACHE_KEY, entry);
+
+    const handleContainerDrop = () => {
+        const dragInfo = getCache()?.dragInfo as DragInfo;
+        const draggedRecipient = dragInfo.recipient;
         const newRecipients = recipientsOrGroups.filter(
             (recipientOrGroup) => !matchRecipientOrGroup(recipientOrGroup, draggedRecipient)
         );
         newRecipients.splice(placeholderPosition as number, 0, draggedRecipient);
 
+        setCache({ dragStatus: DragStatus.Success });
         setRecipientsOrGroups(newRecipients);
         onChange(recipientOrGroupToRecipients(newRecipients));
         setDraggedRecipient(undefined);
@@ -54,10 +80,13 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
         setPlaceholderPosition(undefined);
     };
 
-    const handleContainerDragEnter = (event: DragEvent) => {
-        const size = JSON.parse(event.dataTransfer.getData(DRAG_ADDRESS_SIZE_KEY)) as { width: number; height: number };
+    const handleContainerDragEnter = () => {
+        const dragInfo = getCache()?.dragInfo as DragInfo;
+
         setPlaceholderPosition(0);
-        setPlaceholderSize(size);
+        setPlaceholderSize(dragInfo.size);
+
+        setCache({ dragInfo: { ...dragInfo, inputID: uid } });
     };
 
     const [, containerDragHandlers] = useDragOver(
@@ -71,7 +100,7 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
     );
 
     const handleItemDragStart = (recipient: RecipientOrGroup) => (event: DragEvent) => {
-        event.dataTransfer.setData(DRAG_ADDRESS_KEY, JSON.stringify(recipient));
+        event.dataTransfer.setData(DRAG_ADDRESS_KEY, 'true');
         setDraggedRecipient(recipient);
         setPlaceholderPosition(recipientsOrGroups.findIndex((recipientOrGroup) => recipientOrGroup === recipient));
 
@@ -88,15 +117,12 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
         const position = target.getBoundingClientRect();
         const size = { width: position.width, height: position.height };
         setPlaceholderSize(size);
-        event.dataTransfer.setData(DRAG_ADDRESS_SIZE_KEY, JSON.stringify(size));
+
+        setCache({ dragInfo: { inputID: uid, recipient, size } });
     };
 
-    const handleItemDragEnd = (event: DragEvent) => {
-        if (
-            event.dataTransfer.dropEffect === 'move' &&
-            draggedRecipient !== undefined &&
-            placeholderPosition === undefined
-        ) {
+    const handleItemDragEndParsed = (dragStatus: DragStatus) => {
+        if (dragStatus === DragStatus.Success && draggedRecipient !== undefined && placeholderPosition === undefined) {
             const newRecipients = recipientsOrGroups.filter(
                 (recipientOrGroup) => !matchRecipientOrGroup(recipientOrGroup, draggedRecipient as RecipientOrGroup)
             );
@@ -105,6 +131,12 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
         }
         setDraggedRecipient(undefined);
         setPlaceholderPosition(undefined);
+    };
+
+    const handleItemDragEnd = (event: DragEvent) => {
+        const dragStatus = event.dataTransfer.dropEffect === 'move' ? DragStatus.Success : DragStatus.None;
+        handleItemDragEndParsed(dragStatus);
+        setCache({ dragStatus });
     };
 
     const handleItemDragOverThrottled = useHandler(
@@ -131,6 +163,20 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
     const handleItemDragOver = (recipient: RecipientOrGroup) => (ref: RefObject<HTMLDivElement>) => (
         event: DragEvent
     ) => handleItemDragOverThrottled(recipient, ref, event);
+
+    const cacheListener = useHandler((changedKey) => {
+        if (changedKey === ADDRESS_DRAG_CACHE_KEY && placeholderPosition !== undefined) {
+            const cacheEntry = getCache();
+            if (cacheEntry?.dragInfo && cacheEntry.dragInfo.inputID !== uid) {
+                handleContainerDragLeave();
+            }
+            if (cacheEntry?.dragStatus) {
+                handleItemDragEndParsed(cacheEntry.dragStatus);
+            }
+        }
+    });
+
+    useEffect(() => cache.subscribe(cacheListener), [cache]);
 
     return {
         draggedRecipient,
