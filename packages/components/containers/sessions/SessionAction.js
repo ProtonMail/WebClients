@@ -8,6 +8,10 @@ const SessionAction = ({ session, onRevoke, currentUID }) => {
         return <Badge>{c('Badge for user sessions table').t`Current session`}</Badge>;
     }
 
+    if (!onRevoke) {
+        return null;
+    }
+
     return <SmallButton onClick={onRevoke}>{c('Action for user session').t`Revoke`}</SmallButton>;
 };
 

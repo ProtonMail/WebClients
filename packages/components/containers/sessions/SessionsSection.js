@@ -121,7 +121,9 @@ const SessionsSection = () => {
                                         key={2}
                                         session={session}
                                         currentUID={currentUID}
-                                        onRevoke={() => withLoading(handleRevoke(session.UID))}
+                                        onRevoke={
+                                            session.Revocable ? () => withLoading(handleRevoke(session.UID)) : undefined
+                                        }
                                     />,
                                 ]}
                             />
