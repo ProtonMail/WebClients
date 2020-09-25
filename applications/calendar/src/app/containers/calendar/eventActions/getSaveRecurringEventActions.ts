@@ -75,10 +75,17 @@ const getSaveRecurringEventActions = ({
                 originalVeventWithSequence.sequence.value,
                 oldVeventComponent?.sequence?.value || 0
             );
-            const oldVeventWithSequence = {
+            const oldVeventWithSafeSequence = {
                 ...oldVeventComponent,
                 sequence: { value: safeOldSequenceValue },
             };
+            const oldVeventWithSequence = oldVeventComponent.sequence
+                ? oldVeventWithSafeSequence
+                : withVeventSequence(
+                      oldVeventComponent,
+                      getCurrentEvent(originalVeventWithSequence, recurrence),
+                      false
+                  );
             const newVeventWithSequence = withVeventSequence(newVeventComponent, oldVeventWithSequence, false);
             const updateOperation = getUpdateSyncOperation(updateSingleRecurrence(newVeventWithSequence), oldEvent);
 

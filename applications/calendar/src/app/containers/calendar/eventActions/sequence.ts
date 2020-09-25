@@ -31,10 +31,10 @@ export const withVeventSequence = (
     const isStartPreserved = +propertyToUTCDate(dtstart) === +propertyToUTCDate(oldDtstart);
     const isEndPreserved = +propertyToUTCDate(dtend) === +propertyToUTCDate(oldDtend);
     const isRrulePreserved = hasModifiedRrule === undefined ? isDeepEqual(rrule, oldRrule) : !hasModifiedRrule;
-    if (isAllDayPreserved && isStartPreserved && isEndPreserved && isRrulePreserved) {
-        return newSequence ? { ...event } : { ...event, sequence: { value: 0 } };
-    }
     const oldSequenceValue = Math.max(0, oldSequence.value);
+    if (isAllDayPreserved && isStartPreserved && isEndPreserved && isRrulePreserved) {
+        return newSequence ? { ...event } : { ...event, sequence: { value: oldSequenceValue } };
+    }
     return {
         ...event,
         sequence: { value: oldSequenceValue + 1 },
