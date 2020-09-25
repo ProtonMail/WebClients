@@ -1,35 +1,27 @@
-import React, { Fragment, MouseEvent } from 'react';
+import React, { memo, Fragment, MouseEvent } from 'react';
 import { c } from 'ttag';
 import { Label, LinkButton, classnames } from 'react-components';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
-import { STATUS_ICONS_FILLS } from '../../../models/crypto';
-import { MessageExtended } from '../../../models/message';
+import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
+import { Message } from '../../../models/message';
 import { recipientTypes } from '../../../models/address';
 import { getRecipients } from '../../../helpers/message/messages';
 import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {
-    message: MessageExtended;
-    messageSendInfo?: MessageSendInfo;
+    message: Message | undefined;
+    mapSendInfo?: MapSendInfo;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
     onFocus: () => void;
     toggleExpanded: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const AddressesSummary = ({
-    message: { data },
-    messageSendInfo,
-    contacts,
-    contactGroups,
-    toggleExpanded,
-    onFocus
-}: Props) => {
-    const title = recipientsToRecipientOrGroup(getRecipients(data), contactGroups)
+const AddressesSummary = ({ message, mapSendInfo, contacts, contactGroups, toggleExpanded, onFocus }: Props) => {
+    const title = recipientsToRecipientOrGroup(getRecipients(message), contactGroups)
         .map((recipientOrGroup) => getRecipientOrGroupLabel(recipientOrGroup, contacts))
         .join(', ');
     return (
@@ -37,11 +29,11 @@ const AddressesSummary = ({
             <Label className="composer-meta-label pr0-5 pt0 bold">{c('Title').t`To`}</Label>
             <div className="pm-field flex composer-addresses-fakefield flex-row flex-item-fluid w100 relative">
                 <span className="ellipsis composer-addresses-fakefield-inner" title={title}>
-                    {getRecipients(data).length === 0 ? (
+                    {getRecipients(message).length === 0 ? (
                         <span className="placeholder">{c('Placeholder').t`Email address`}</span>
                     ) : null}
                     {recipientTypes.map((type) => {
-                        const recipients: Recipient[] = data?.[type] || [];
+                        const recipients: Recipient[] = message?.[type] || [];
                         if (recipients.length === 0) {
                             return null;
                         }
@@ -63,7 +55,7 @@ const AddressesSummary = ({
                                 )}
                                 {recipientOrGroups.map((recipientOrGroup, i) => {
                                     const Address = recipientOrGroup.recipient?.Address;
-                                    const sendInfo = Address ? messageSendInfo?.mapSendInfo[Address] : undefined;
+                                    const sendInfo = Address ? mapSendInfo?.[Address] : undefined;
                                     const valid = sendInfo
                                         ? (sendInfo?.emailValidation && !sendInfo?.emailAddressWarnings?.length) ||
                                           false
@@ -106,4 +98,4 @@ const AddressesSummary = ({
     );
 };
 
-export default AddressesSummary;
+export default memo(AddressesSummary);

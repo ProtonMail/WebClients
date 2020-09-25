@@ -1,5 +1,5 @@
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 
@@ -34,7 +34,11 @@ export const useMessageSendInfo = (message: MessageExtended) => {
     // Map of send preferences and send icons for each recipient
     const [mapSendInfo, setMapSendInfo] = useState<MapSendInfo>({});
 
-    const messageSendInfo: MessageSendInfo = { message, mapSendInfo, setMapSendInfo };
+    // Use memo is ok there but not really effective as any message change will update the ref
+    const messageSendInfo: MessageSendInfo = useMemo(() => ({ message, mapSendInfo, setMapSendInfo }), [
+        message,
+        mapSendInfo
+    ]);
 
     return messageSendInfo;
 };

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { DropdownMenuButton, Icon, classnames } from 'react-components';
 import { c } from 'ttag';
 
-import { MessageExtended } from '../../../models/message';
+import { Message } from '../../../models/message';
 import {
     isSign as testIsSign,
     isAttachPublicKey as testIsAttachPublicKey,
@@ -16,14 +16,14 @@ const { FLAG_SIGN, FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
 const getClassname = (status: boolean) => (status ? undefined : 'nonvisible');
 
 interface Props {
-    message: MessageExtended;
+    message: Message | undefined;
     onChangeFlag: MessageChangeFlag;
 }
 
 const EditorToolbarExtension = ({ message, onChangeFlag }: Props) => {
-    const isSign = testIsSign(message.data);
-    const isAttachPublicKey = testIsAttachPublicKey(message.data);
-    const isReceiptRequest = testIsRequestReadReceipt(message.data);
+    const isSign = testIsSign(message);
+    const isAttachPublicKey = testIsAttachPublicKey(message);
+    const isReceiptRequest = testIsRequestReadReceipt(message);
 
     const handleToggleSign = () => {
         const changes = new Map<number, boolean>([[MESSAGE_FLAGS.FLAG_SIGN, !isSign]]);
@@ -58,4 +58,4 @@ const EditorToolbarExtension = ({ message, onChangeFlag }: Props) => {
     );
 };
 
-export default EditorToolbarExtension;
+export default memo(EditorToolbarExtension);

@@ -150,6 +150,11 @@ const SquireEditorWrapper = ({
     // Angular/src/app/squire/services/removeInlineWatcher.js
     const checkImageDeletion = useHandler(
         () => {
+            // Composer is being closed, too late for that check to run
+            // Even if it's possible that we miss to remove an attachment in the last minute
+            if (disabled) {
+                return;
+            }
             const newCIDs = findCIDsInContent(squireEditorRef.current?.value || '');
             const removedCIDs = diff(cids, newCIDs);
             removedCIDs.forEach((cid) => {
@@ -166,13 +171,15 @@ const SquireEditorWrapper = ({
     // Handle input considering blockquote
     const handleInput = useCallback(
         (content: string) => {
-            // Squire (but not plaintext) trigger an input event when the initial content is inserted
-            if (skipNextInputRef.current && !isPlainText) {
-                skipNextInputRef.current = false;
-                return;
-            }
+            if (!isPlainText) {
+                // Squire (but not plaintext) trigger an input event when the initial content is inserted
+                if (skipNextInputRef.current) {
+                    skipNextInputRef.current = false;
+                    return;
+                }
 
-            checkImageDeletion();
+                checkImageDeletion();
+            }
 
             if (!blockquoteExpanded) {
                 onChangeContent(content + blockquoteSaved);
@@ -257,7 +264,7 @@ const SquireEditorWrapper = ({
             onEllipseClick={handleEllipseClick}
             onReady={handleSquireReady}
             onAddImages={onAddAttachments}
-            toolbarMoreDropdownExtension={<EditorToolbarExtension message={message} onChangeFlag={onChangeFlag} />}
+            toolbarMoreDropdownExtension={<EditorToolbarExtension message={message.data} onChangeFlag={onChangeFlag} />}
         />
     );
 };

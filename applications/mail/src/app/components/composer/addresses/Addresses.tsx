@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef, MouseEvent } from 'react';
+import React, { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
 import { useToggle, useContactEmails, useContactGroups } from 'react-components';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -37,11 +37,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         };
     }, []);
 
-    if (loadingContacts || loadingContactGroups) {
-        return null;
-    }
-
-    const handleFocus = () => {
+    const handleFocus = useCallback(() => {
         if (disabled) {
             return false;
         }
@@ -49,13 +45,17 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         setEditor(true);
         setExpanded(false);
         setTimeout(() => addressesFocusRef.current());
-    };
+    }, [disabled]);
 
-    const handleToggleExpanded = (e: MouseEvent<HTMLButtonElement>) => {
+    const handleToggleExpanded = useCallback((e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         setEditor(true);
         setExpanded(true);
-    };
+    }, []);
+
+    if (loadingContacts || loadingContactGroups) {
+        return null;
+    }
 
     return editor ? (
         <AddressesEditor
@@ -70,8 +70,8 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         />
     ) : (
         <AddressesSummary
-            message={message}
-            messageSendInfo={messageSendInfo}
+            message={message.data}
+            mapSendInfo={messageSendInfo.mapSendInfo}
             contacts={contacts}
             contactGroups={contactGroups}
             onFocus={handleFocus}

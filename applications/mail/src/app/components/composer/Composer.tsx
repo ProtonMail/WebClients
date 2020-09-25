@@ -139,8 +139,7 @@ const Composer = ({
 
     // Computed composer status
     const syncInProgress = !!syncedMessage.actionInProgress;
-    const contentLocked = opening || sending || closing;
-    const actionBarLocked = opening || sending || closing;
+    const lock = opening || sending || closing;
 
     // Manage focus from the container yet keeping logic in each component
     const addressesBlurRef = useRef<() => void>(noop);
@@ -460,7 +459,7 @@ const Composer = ({
                         <ComposerContent
                             message={modelMessage}
                             messageSendInfo={messageSendInfo}
-                            disabled={contentLocked}
+                            disabled={lock}
                             breakpoints={breakpoints}
                             onEditorReady={handleEditorReady}
                             onChange={handleChange}
@@ -483,7 +482,7 @@ const Composer = ({
                         className={hasVertialScroll ? 'composer-actions--has-scroll' : undefined}
                         message={modelMessage}
                         date={getDate(syncedMessage.data, '')}
-                        lock={actionBarLocked}
+                        lock={lock}
                         opening={opening}
                         sending={sending}
                         manualSaving={manualSaving}
