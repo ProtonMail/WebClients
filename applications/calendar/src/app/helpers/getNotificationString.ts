@@ -8,7 +8,7 @@ const getNotificationString = (notification: NotificationModel, formatTime: (dat
 
     if (!isAllDay || !at) {
         if (value === 0) {
-            return c('Notifications').t`At the same time`;
+            return c('Notifications').t`At time of event`;
         }
 
         if (when === NOTIFICATION_WHEN.BEFORE) {
