@@ -180,7 +180,7 @@ const SquireEditorWrapper = ({
                 onChangeContent(content);
             }
         },
-        [onChangeContent]
+        [onChangeContent, isPlainText]
     );
 
     const switchToPlainText = () => {
