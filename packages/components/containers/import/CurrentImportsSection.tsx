@@ -9,9 +9,9 @@ import {
     Loader,
     Alert,
     Table,
-    TableHeader,
     TableBody,
     TableRow,
+    TableCell,
     DropdownActions,
     Badge,
     ConfirmModal,
@@ -174,6 +174,19 @@ const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
         return State === ImportMailStatus.PAUSED && ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION;
     });
 
+    const headerCells = [
+        { node: c('Title header').t`Import` },
+        { node: c('Title header').t`Progress`, className: 'onmobile-w33 onmobile-aligncenter' },
+        { node: c('Title header').t`Started`, className: 'nomobile' },
+        { node: c('Title header').t`Actions`, className: 'nomobile' },
+    ].map(({ node, className = '' }, i) => {
+        return (
+            <TableCell key={i.toString()} className={className} type="header">
+                {node}
+            </TableCell>
+        );
+    });
+
     return (
         <>
             {!hasAuthPausedImports && <Alert>{c('Info').t`Check the status of your imports in progress`}</Alert>}
@@ -192,15 +205,10 @@ const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
                         .t`Proton paused an import because it lost the connection with your other email provider. Please reconnect.`}
                 </Alert>
             )}
-            <Table>
-                <TableHeader
-                    cells={[
-                        c('Title header').t`Import`,
-                        c('Title header').t`Progress`,
-                        c('Title header').t`Started`,
-                        c('Title header').t`Actions`,
-                    ]}
-                />
+            <Table className="onmobile-hideTd3 onmobile-hideTd4">
+                <thead>
+                    <tr>{headerCells}</tr>
+                </thead>
                 <TableBody>
                     {imports.map((currentImport, index) => {
                         const { Email, State, ErrorCode, CreateTime, Mapping = [] } = currentImport;
@@ -219,7 +227,7 @@ const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
 
                             if (State === ImportMailStatus.PAUSED) {
                                 return (
-                                    <>
+                                    <div className="onmobile-aligncenter">
                                         <Badge type="warning">{c('Import status').t`${percentageValue}% paused`}</Badge>
 
                                         {ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION && (
@@ -232,20 +240,29 @@ const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
                                                 <Icon name="attention-plain" />
                                             </Tooltip>
                                         )}
-                                    </>
+                                    </div>
                                 );
                             }
 
-                            return <Badge>{c('Import status').t`${percentageValue}% imported`}</Badge>;
+                            return (
+                                <div className="onmobile-aligncenter">
+                                    <Badge className="m0">{c('Import status').t`${percentageValue}% imported`}</Badge>
+                                </div>
+                            );
                         };
 
                         return (
                             <TableRow
                                 key={index}
                                 cells={[
-                                    <div key="email" className="w100 ellipsis">
-                                        {Email}
-                                    </div>,
+                                    <>
+                                        <div key="email" className="w100 ellipsis">
+                                            {Email}
+                                        </div>
+                                        <time key="importDate" className="nodesktop notablet">
+                                            {format(CreateTime * 1000, 'PPp')}
+                                        </time>
+                                    </>,
                                     badgeRenderer(),
                                     <time key="importDate">{format(CreateTime * 1000, 'PPp')}</time>,
                                     <RowActions
