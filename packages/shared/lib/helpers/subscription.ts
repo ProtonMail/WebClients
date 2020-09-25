@@ -57,6 +57,11 @@ export const hasMailPlus = (subscription: Subscription) => {
     return Plans.some(({ Name }) => Name === PLUS);
 };
 
+export const hasMailProfessional = (subscription: Subscription) => {
+    const { Plans = [] } = subscription;
+    return Plans.some(({ Name }) => Name === PROFESSIONAL);
+};
+
 export const hasVpnBasic = (subscription: Subscription) => {
     const { Plans = [] } = subscription;
     return Plans.some(({ Name }) => Name === VPNBASIC);
