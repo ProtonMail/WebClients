@@ -642,7 +642,6 @@ $conversation-icon-size: 3.2rem !default;
 			@extend %item-loading-pseudo;
 			@extend %placeholder-loading;
 			width: 100%;
-			max-width: 20em;
 		}
 	}
 }
