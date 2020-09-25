@@ -1,12 +1,12 @@
 import React from 'react';
 import { clearAll, render } from '../../../helpers/test/helper';
 import AddressesSummary from './AddressesSummary';
-import { MessageExtended } from '../../../models/message';
+import { Message } from '../../../models/message';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getRecipientLabel } from '../../../helpers/addresses';
 import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
-const message = {} as MessageExtended;
+const message = {} as Message;
 const props = { message, contacts: [], contactGroups: [], onFocus: noop, toggleExpanded: noop };
 const recipient = { Name: 'RecipientName', Address: 'Address' };
 const recipientLabel = getRecipientLabel(recipient) || '';
@@ -18,7 +18,7 @@ describe('AddressesSummary', () => {
     afterEach(() => clearAll());
 
     it('should render a recipient', async () => {
-        const message = ({ localID: 'localID', data: { ToList: [recipient] } } as any) as MessageExtended;
+        const message = { ToList: [recipient] } as Message;
 
         const { getByText } = await render(<AddressesSummary {...props} message={message} />);
 
@@ -26,7 +26,7 @@ describe('AddressesSummary', () => {
     });
 
     it('should render a group', async () => {
-        const message = ({ localID: 'localID', data: { ToList: [recipientGroup] } } as any) as MessageExtended;
+        const message = { ToList: [recipientGroup] } as Message;
 
         const { getByText } = await render(
             <AddressesSummary {...props} message={message} contactGroups={contactGroups} />
@@ -36,10 +36,7 @@ describe('AddressesSummary', () => {
     });
 
     it('should render a recipient and a group', async () => {
-        const message = ({
-            localID: 'localID',
-            data: { ToList: [recipient, recipientGroup] }
-        } as any) as MessageExtended;
+        const message = { ToList: [recipient, recipientGroup] } as Message;
 
         const { getByText } = await render(
             <AddressesSummary {...props} message={message} contactGroups={contactGroups} />
