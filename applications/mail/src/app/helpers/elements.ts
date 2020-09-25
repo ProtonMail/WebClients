@@ -85,16 +85,16 @@ export const isUnread = (element: Element | undefined, labelID: string | undefin
         return (element as Message).Unread !== 0;
     } else {
         const conversation = element as Conversation;
-
-        if (conversation.NumUnread !== undefined) {
-            return conversation.NumUnread !== 0;
-        }
         const labelUnread = conversation.Labels?.find((label) => label.ID === labelID)?.ContextNumUnread;
+
         if (labelUnread !== undefined) {
             return labelUnread !== 0;
         }
         if (conversation.ContextNumUnread !== undefined && conversation.ContextNumUnread !== 0) {
             return conversation.ContextNumUnread !== 0;
+        }
+        if (conversation.NumUnread !== undefined) {
+            return conversation.NumUnread !== 0;
         }
     }
 
