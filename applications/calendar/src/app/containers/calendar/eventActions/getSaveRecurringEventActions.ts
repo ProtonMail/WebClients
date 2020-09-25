@@ -59,20 +59,40 @@ const getSaveRecurringEventActions = ({
     }
 
     if (type === RECURRING_TYPES.SINGLE) {
+        // we need to add the sequence to the old event as well, otherwise the API will complain
+        const originalSequence = originalVeventComponent.sequence;
+        const originalVeventWithSequence = {
+            ...originalVeventComponent,
+            sequence: { value: originalSequence ? originalSequence.value : 0 },
+        };
+        const maybeUpdateParentOperations = !originalSequence
+            ? [getUpdateSyncOperation(originalVeventWithSequence, originalEvent)]
+            : [];
         if (isSingleEdit) {
-            const newVeventWithSequence = withVeventSequence(newVeventComponent, oldVeventComponent, false);
+            // the sequence of the child must not be smaller than that of the parent
+            // we could see such scenarios on production in chains where the parent was updated, but not all of its children
+            const safeOldSequenceValue = Math.max(
+                originalVeventWithSequence.sequence.value,
+                oldVeventComponent?.sequence?.value || 0
+            );
+            const oldVeventWithSequence = {
+                ...oldVeventComponent,
+                sequence: { value: safeOldSequenceValue },
+            };
+            const newVeventWithSequence = withVeventSequence(newVeventComponent, oldVeventWithSequence, false);
             const updateOperation = getUpdateSyncOperation(updateSingleRecurrence(newVeventWithSequence), oldEvent);
+
             return [
                 {
                     calendarID: originalCalendarID,
                     addressID: originalAddressID,
                     memberID: originalMemberID,
-                    operations: [updateOperation],
+                    operations: [...maybeUpdateParentOperations, updateOperation],
                 },
             ];
         }
 
-        const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventComponent, recurrence);
+        const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventWithSequence, recurrence);
         const newRecurrenceVeventComponent = createSingleRecurrence(
             newVeventComponent,
             originalVeventComponent,
@@ -87,7 +107,7 @@ const getSaveRecurringEventActions = ({
                 calendarID: originalCalendarID,
                 addressID: originalAddressID,
                 memberID: originalMemberID,
-                operations: [createOperation],
+                operations: [...maybeUpdateParentOperations, createOperation],
             },
         ];
     }

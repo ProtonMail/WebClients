@@ -24,6 +24,7 @@ export const withVeventSequence = (
     }
     const { dtstart, rrule } = event;
     const { dtstart: oldDtstart, rrule: oldRrule, sequence: oldSequence } = oldEvent;
+    const { sequence: newSequence } = event;
     const [dtend, oldDtend] = [event, oldEvent].map(getDtendProperty);
     const [isAllDay, oldIsAllDay] = [dtstart, oldDtstart].map(getIsPropertyAllDay);
     const isAllDayPreserved = isAllDay === oldIsAllDay;
@@ -31,7 +32,7 @@ export const withVeventSequence = (
     const isEndPreserved = +propertyToUTCDate(dtend) === +propertyToUTCDate(oldDtend);
     const isRrulePreserved = hasModifiedRrule === undefined ? isDeepEqual(rrule, oldRrule) : !hasModifiedRrule;
     if (isAllDayPreserved && isStartPreserved && isEndPreserved && isRrulePreserved) {
-        return event;
+        return newSequence ? { ...event } : { ...event, sequence: { value: 0 } };
     }
     const oldSequenceValue = Math.max(0, oldSequence.value);
     return {
