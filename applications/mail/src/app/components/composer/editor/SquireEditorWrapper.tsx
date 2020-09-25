@@ -238,7 +238,7 @@ const SquireEditorWrapper = ({
         contentFocusRef.current = () => {
             squireEditorRef.current?.focus();
         };
-    }, [blockquoteExpanded, blockquoteSaved]);
+    }, [blockquoteExpanded, blockquoteSaved, isPlainText]);
 
     const handleEllipseClick = useCallback(() => setBlockquoteExpanded(true), []);
     const handleSquireReady = useCallback(() => setEditorReady(true), []);
