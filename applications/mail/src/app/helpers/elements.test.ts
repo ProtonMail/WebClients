@@ -132,12 +132,12 @@ describe('elements', () => {
             expect(isUnread(conversation, '')).toBe(false);
         });
 
-        it('should take the right label ContextNumUnread of a conversation', () => {
+        it('should take the value whem all are present for a conversation', () => {
             const LabelID = 'LabelID';
             const conversation = {
                 ContextNumUnread: 1,
-                NumUnread: 0,
-                Labels: [{ ID: LabelID, ContextNumUnread: 1 } as ConversationLabel]
+                NumUnread: 1,
+                Labels: [{ ID: LabelID, ContextNumUnread: 0 } as ConversationLabel]
             };
             expect(isUnread(conversation, LabelID)).toBe(false);
         });
