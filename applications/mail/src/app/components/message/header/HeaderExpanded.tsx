@@ -162,6 +162,11 @@ const HeaderExpanded = ({
                         </>
                     )}
                     {!messageLoaded && <span className="message-header-metas ml0-5 inline-flex"></span>}
+                    {showDetails && (
+                        <span className="ml0-5 inline-flex is-appearing-content">
+                            <ItemLocation message={message.data} mailSettings={mailSettings} />
+                        </span>
+                    )}
                     <span className="message-header-star ml0-5 inline-flex">
                         <ItemStar element={message.data} />
                     </span>
@@ -228,7 +233,6 @@ const HeaderExpanded = ({
                     message={message}
                     messageViewIcons={messageViewIcons}
                     labels={labels}
-                    mailSettings={mailSettings}
                 />
             )}
 

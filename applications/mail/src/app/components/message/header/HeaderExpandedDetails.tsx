@@ -1,16 +1,13 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Icon, useFolders } from 'react-components';
+import { Icon } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
-import ItemLocation from '../../list/ItemLocation';
-import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
-import { isCustomLabel, getCurrentFolders } from '../../../helpers/labels';
+import { isCustomLabel } from '../../../helpers/labels';
 import { getNumAttachmentByType } from '../../../helpers/message/messages';
 import { getSize, getLabelIDs } from '../../../helpers/elements';
 import { MessageViewIcons } from '../../../helpers/message/icon';
@@ -18,19 +15,11 @@ import { MessageViewIcons } from '../../../helpers/message/icon';
 interface Props {
     labelID: string;
     labels?: Label[];
-    mailSettings: MailSettings;
     message: MessageExtended;
     messageViewIcons: MessageViewIcons;
 }
 
-const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mailSettings }: Props) => {
-    const [customFolders = []] = useFolders();
-
-    const icon = messageViewIcons.globalIcon;
-
-    const folders = getCurrentFolders(message.data, customFolders, mailSettings);
-    const locationText = folders.map((folder) => folder.name).join(', ');
-
+const HeaderExpandedDetails = ({ labelID, labels, message }: Props) => {
     const sizeText = humanSize(getSize(message.data || {}));
 
     const [numPureAttachments, numEmbedded] = getNumAttachmentByType(message);
@@ -43,20 +32,11 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
         attachmentsTexts.push(
             c('Info').ngettext(msgid`${numEmbedded} embedded image`, `${numEmbedded} embedded images`, numEmbedded)
         );
-    const attachmentsText = attachmentsTexts.join(', ');
 
     const labelIDs = (getLabelIDs(message.data || {}) || []).filter((labelID) => isCustomLabel(labelID, labels));
 
     return (
         <div className="message-detailed-header-extra border-top pt0-5 pb0-5 is-appearing-content">
-            {icon && (
-                <div className="mb0-5 flex flex-nowrap">
-                    <span className="container-to flex">
-                        <Icon name="info" className="mauto" alt={c('Label').t`Encryption:`} />
-                    </span>
-                    <span className="flex-self-vcenter mr0-5 ellipsis">{icon.text}</span>
-                </div>
-            )}
             <div className="mb0-5 flex flex-nowrap">
                 <span className="container-to flex">
                     <Icon name="calendar" className="mauto" alt={c('Label').t`Date:`} />
@@ -67,28 +47,10 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             </div>
             <div className="mb0-5 flex flex-nowrap">
                 <span className="container-to flex">
-                    <span className="mauto flex">
-                        <ItemLocation message={message.data} mailSettings={mailSettings} shouldStack />
-                    </span>
-                </span>
-                <span className="flex-self-vcenter mr0-5 ellipsis">{locationText}</span>
-            </div>
-            <div className="mb0-5 flex flex-nowrap">
-                <span className="container-to flex">
                     <Icon name="user-storage" className="mauto" alt={c('Label').t`Size:`} />
                 </span>
                 <span className="flex-self-vcenter mr0-5 ellipsis">{sizeText}</span>
             </div>
-            {attachmentsText && (
-                <div className="mb0-5 flex flex-nowrap">
-                    <span className="container-to flex">
-                        <span className="mauto flex">
-                            <ItemAttachmentIcon element={message.data} />
-                        </span>
-                    </span>
-                    <span className="flex-self-vcenter mr0-5 ellipsis">{attachmentsText}</span>
-                </div>
-            )}
             {labelIDs.length > 0 && (
                 <div className="flex flex-nowrap">
                     <span className="container-to flex">

@@ -35,9 +35,7 @@ const HeaderRecipientItemLayout = ({
                 >
                     <span className="message-recipient-item-label inline">{label}</span>
                     {` ` /** I need a real space in source here, as everything is inline, no margin/padding to have correct ellipsis applied :-| **/}
-                    {showAddress && (
-                        <span className="message-recipient-item-address inline opacity-50 nomobile">{address}</span>
-                    )}
+                    {showAddress && <span className="message-recipient-item-address inline opacity-50">{address}</span>}
                 </span>
                 {icon}
             </span>
