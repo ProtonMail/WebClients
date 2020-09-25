@@ -425,7 +425,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
 
         return (
             <Layout
-                title={c('Title').t`Add a recovery email (highly recommended)`}
+                title={c('Title').t`Add a recovery method (highly recommended)`}
                 subtitle={subtitle}
                 left={<BackButton onClick={handleBack} />}
             >

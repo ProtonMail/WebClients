@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Alert, FormModal, PrimaryButton, Button, ResetButton } from '../../../components';
+import { FormModal, PrimaryButton, Button, ResetButton } from '../../../components';
 
 interface Props {
     email?: string;
@@ -43,12 +43,12 @@ const RequestNewCodeModal = ({ email, phone, onEdit, onResend, ...rest }: Props)
             {...rest}
         >
             {email ? (
-                <Alert>{c('Info')
-                    .jt`Click "Request new code" to have a new verification code sent to ${strongEmail}. If this email address is incorrect, click "Edit" to correct it.`}</Alert>
+                <p>{c('Info')
+                    .jt`Click "Request new code" to have a new verification code sent to ${strongEmail}. If this email address is incorrect, click "Edit" to correct it.`}</p>
             ) : null}
             {phone ? (
-                <Alert>{c('Info')
-                    .jt`Click "Request new code" to have a new verification code sent to ${strongPhone}. If this phone number is incorrect, click "Edit" to correct it.`}</Alert>
+                <p>{c('Info')
+                    .jt`Click "Request new code" to have a new verification code sent to ${strongPhone}. If this phone number is incorrect, click "Edit" to correct it.`}</p>
             ) : null}
         </FormModal>
     );

@@ -199,12 +199,12 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
                         onConfirm={resolve}
                         onClose={reject}
                     >
-                        <Alert type="warning">
+                        <div>
                             <p className="mt0">{c('Info')
                                 .t`Resetting your password means that you will no longer be able to read your encrypted data unless you know your old password.`}</p>
                             <p className="mt0 mb0">{c('Info')
                                 .t`If you know your password and would like to change it, please log into your account first and change your password after logging in.`}</p>
-                        </Alert>
+                        </div>
                     </ConfirmModal>
                 );
             });
@@ -309,6 +309,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
                     </div>
                     <SignupSubmitRow>
                         <PrimaryButton
+                            className="pm-button--large onmobile-w100"
                             disabled={!password || password !== confirmPassword}
                             loading={loading}
                             type="submit"
