@@ -12,7 +12,7 @@ We are currently working with our community to localize ProtonMail from English 
 
 
 
->**⚠ If you use Windows plz follow this document before anything else [how to prepare Windows](https://github.com/ProtonMail/proton-shared/wiki/setup-windows)**
+>**⚠ If you use Windows, please follow this document first: [how to prepare Windows](https://github.com/ProtonMail/proton-shared/wiki/setup-windows)**
 
 
 
@@ -21,20 +21,20 @@ We are currently working with our community to localize ProtonMail from English 
 - `npm install`
 - `npm start`
 
-> To run the app without babel `npm run start:raw`
+> To run the app without Babel, use `npm run start:raw`
 
-### dependencies
+### Dependencies
   - Node.js >= v12 (LTS)
   - npm 6
   - git
 
 ### Error with Mac
 
-You need to install a few dep in order to be able to deploy
+You need to install `libpng` in order to be able to deploy the web client:
 ```sh
 brew install libpng
 ```
-> or `brew upgrade libpng` if you already have the lib
+> If you already have the library installed, upgrade it with `brew upgrade libpng`
 
 ### For Windows
 
@@ -43,11 +43,11 @@ If you use Windows, you will need to have bash on your computer in order to exec
 - deploy
 - etc.
 
-1. Install bash then check the path of bash ex: `C:\\Program Files\\git\\bin\\bash.exe"`
-2. `npm config set script-shell "C:\\Program Files\\git\\bin\\bash.exe"`
+1. Install bash, then check the path of it (example: `C:\\Program Files\\git\\bin\\bash.exe"`)
+2. Run `npm config set script-shell "C:\\Program Files\\git\\bin\\bash.exe"`
 3. :popcorn:
 
-[More informations](https://stackoverflow.com/questions/23243353/how-to-set-shell-for-npm-run-scripts-in-windows)
+[More information](https://stackoverflow.com/questions/23243353/how-to-set-shell-for-npm-run-scripts-in-windows)
 
 #### If you have docker, and prefer to not install node (or anything else) locally
 
@@ -63,7 +63,7 @@ We are still in Beta and will have a more refined build process, installation in
 We are very open to bug reports via Issues as well as Pull Requests.
 
 
-### CI build - no minify
+### CI build - no minification
 
 `npm run build`
 
@@ -88,7 +88,7 @@ cf [Component Generator](https://github.com/ProtonMail/componentGenerator)
 ## Deploy
 
 1. Create a new version + tag => `npm version (patch|minor|major)`.
-2. Deploy via npm `npm run deploy -- --api=X --branch=Y`.
+2. Deploy via npm: `npm run deploy -- --api=X --branch=Y`.
     - `X` is the API version available in `API_TARGETS` in the `env/config.js` file
     - `Y` can be `deploy-dev`, `deploy-beta`, `deploy-prod-a` or `deploy-prod-b`.
 
