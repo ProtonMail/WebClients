@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { c } from 'ttag';
 import { APPS, isSSOMode, SSO_PATHS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp, getAppHref } from 'proton-shared/lib/apps/helper';
@@ -7,6 +7,7 @@ import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { updateThemeType } from 'proton-shared/lib/api/settings';
 import { ThemeTypes } from 'proton-shared/lib/themes/themes';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/subscription';
 
 import {
     useAuthentication,
@@ -18,6 +19,7 @@ import {
     useEventManager,
     useUserSettings,
     useOrganization,
+    useSubscription,
 } from '../../hooks';
 import { usePopperAnchor, Dropdown, Icon, Toggle, PrimaryButton, AppLink, Meter } from '../../components';
 import { generateUID } from '../../helpers';
@@ -30,6 +32,7 @@ const UserDropdown = ({ ...rest }) => {
     const api = useApi();
     const { call } = useEventManager();
     const [organization] = useOrganization();
+    const [subscription] = useSubscription();
     const { Name: organizationName } = organization || {};
     const [user] = useUser();
     const [userSettings] = useUserSettings();
@@ -40,6 +43,15 @@ const UserDropdown = ({ ...rest }) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [loading, withLoading] = useLoading();
+    const canAddStorage = useMemo(() => {
+        if (!subscription) {
+            return true;
+        }
+        if (hasVisionary(subscription) || hasMailProfessional(subscription)) {
+            return false;
+        }
+        return true;
+    }, [subscription]);
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
@@ -95,15 +107,17 @@ const UserDropdown = ({ ...rest }) => {
                                         <span className="semibold">{humanSize(UsedSpace)} </span>
                                         /&nbsp;{humanSize(MaxSpace)}
                                     </span>
-                                    <AppLink
-                                        to="/subscription"
-                                        toApp={getAccountSettingsApp()}
-                                        className="small link m0 ml0-5"
-                                        title={c('Apps dropdown').t`Add storage space`}
-                                        onClick={() => close()}
-                                    >
-                                        {c('Action').t`Add storage`}
-                                    </AppLink>
+                                    {canAddStorage ? (
+                                        <AppLink
+                                            to="/subscription"
+                                            toApp={getAccountSettingsApp()}
+                                            className="small link m0 ml0-5"
+                                            title={c('Apps dropdown').t`Add storage space`}
+                                            onClick={() => close()}
+                                        >
+                                            {c('Action').t`Add storage`}
+                                        </AppLink>
+                                    ) : null}
                                 </div>
                                 <Meter className="is-thin bl mt0-5 mb1" value={spacePercentage} />
                                 <AppLink
