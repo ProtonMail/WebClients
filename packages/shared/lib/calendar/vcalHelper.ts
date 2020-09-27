@@ -159,14 +159,14 @@ export const getEventStatus = ({ status }: VcalVeventComponent) => {
     return ICAL_EVENT_STATUS.CONFIRMED;
 };
 
-export const getAttendeePartstat = (partstat: string) => {
+export const getAttendeePartstat = ({ parameters: { partstat } = {} }: Partial<VcalAttendeeProperty>) => {
     if (Object.values(ICAL_ATTENDEE_STATUS).some((icalPartstat) => icalPartstat === partstat)) {
         return partstat as ICAL_ATTENDEE_STATUS;
     }
     return ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
 };
 
-export const getAttendeeRole = (role: string) => {
+export const getAttendeeRole = ({ parameters: { role } = {} }: Partial<VcalAttendeeProperty>) => {
     if (Object.values(ICAL_ATTENDEE_ROLE).some((icalRole) => icalRole === role)) {
         return role as ICAL_ATTENDEE_ROLE;
     }
