@@ -24,7 +24,7 @@ const SSOForkConsumer = ({ onLogin, onEmptyFork, onInvalidFork }: Props) => {
 
     useEffect(() => {
         const run = async () => {
-            const { state, selector, key } = getConsumeForkParameters();
+            const { state, selector, key, type } = getConsumeForkParameters();
             if (!state && !selector && !key) {
                 return onEmptyFork();
             }
@@ -32,7 +32,7 @@ const SSOForkConsumer = ({ onLogin, onEmptyFork, onInvalidFork }: Props) => {
                 return onInvalidFork();
             }
             try {
-                const result = await consumeFork({ selector, api: silentApi, state, key });
+                const result = await consumeFork({ selector, api: silentApi, state, key, type });
                 onLogin(result);
                 return;
             } catch (e) {

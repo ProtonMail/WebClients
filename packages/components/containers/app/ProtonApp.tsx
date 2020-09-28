@@ -33,10 +33,10 @@ import AuthenticationProvider from '../authentication/Provider';
 import RightToLeftProvider from '../rightToLeft/Provider';
 import { setTmpEventID } from './loadEventID';
 import clearKeyCache from './clearKeyCache';
-import useInstance from '../../hooks/useInstance';
-import { PreventLeaveProvider } from '../../hooks';
 import { OnLoginCallbackArguments } from './interface';
+import { useInstance, PreventLeaveProvider } from '../../hooks';
 import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
+import { WELCOME_FLAG_KEY } from '../../hooks/useWelcomeFlags';
 
 interface Props {
     config: ProtonConfig;
@@ -119,7 +119,7 @@ const ProtonApp = ({ config, children }: Props) => {
     });
 
     const handleLogin = useCallback(
-        ({ UID: newUID, EventID, keyPassword, User, LocalID: newLocalID, path }: OnLoginCallbackArguments) => {
+        ({ UID: newUID, EventID, keyPassword, User, LocalID: newLocalID, path, flow }: OnLoginCallbackArguments) => {
             authentication.setUID(newUID);
             authentication.setPassword(keyPassword);
             if (newLocalID !== undefined) {
@@ -140,6 +140,8 @@ const ProtonApp = ({ config, children }: Props) => {
                     status: STATUS.RESOLVED,
                 });
             }
+
+            cache.set(WELCOME_FLAG_KEY, flow);
 
             if (EventID !== undefined) {
                 setTmpEventID(cache, EventID);

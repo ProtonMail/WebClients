@@ -23,7 +23,7 @@ import OneAccountIllustration from '../illustration/OneAccountIllustration';
 import SignupLabelInputRow from '../signup/SignupLabelInputRow';
 import SignupSubmitRow from '../signup/SignupSubmitRow';
 import { getToAppName } from '../signup/helpers/helper';
-import { OnLoginCallbackArguments } from '../app';
+import { LoginFlows, OnLoginCallbackArguments } from '../app';
 import useLogin, { Props as UseLoginProps, FORM } from './useLogin';
 import LoginUsernameInput from './LoginUsernameInput';
 import LoginPasswordInput from './LoginPasswordInput';
@@ -48,6 +48,16 @@ interface Props extends Omit<UseLoginProps, 'api'> {
 const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
+    const [loginFlow] = useState<LoginFlows>(() => {
+        const params = new URLSearchParams(window.location.search);
+        const welcomeParam = params.get('welcome');
+        if (welcomeParam === '1') {
+            return 'welcome';
+        }
+        if (welcomeParam === '2') {
+            return 'welcome-full';
+        }
+    });
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -58,6 +68,11 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }:
         const { UID, LocalID, keyPassword } = args;
         const uidApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
 
+        const argsWithWelcome = {
+            ...args,
+            flow: loginFlow,
+        };
+
         if (toApp && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(toApp)) {
             // Since the address route is slow, and in order to make the external check more efficient, query for a smaller number of addresses
             // A user signed up with an external address should only have 1 address
@@ -66,7 +81,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }:
                 return setGenerateInternalAddress({
                     externalEmailAddress: Addresses[0],
                     keyPassword,
-                    onDone: () => onLogin(args),
+                    onDone: () => onLogin(argsWithWelcome),
                     revoke: () => {
                         // Since the session gets persisted, it has to be logged out if cancelling.
                         uidApi(revoke()).catch(noop);
@@ -79,7 +94,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }:
             }
         }
 
-        return onLogin(args);
+        return onLogin(argsWithWelcome);
     };
 
     const {
@@ -133,9 +148,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }:
             withLoading(handleLogin().catch(catchHandler));
         };
 
-        const signupLink = (
-            <Link key="signupLink" to="/signup">{c('Link').t`Create an account`}</Link>
-        );
+        const signupLink = <Link key="signupLink" to="/signup">{c('Link').t`Create an account`}</Link>;
 
         const usernameInput = (
             <SignupLabelInputRow

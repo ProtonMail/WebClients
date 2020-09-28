@@ -40,3 +40,4 @@ export * from './invoices';
 export * from './cache';
 export * from './rightToLeft';
 export * from './import';
+export * from './onboarding';

@@ -3,7 +3,7 @@ import { classnames } from '../../helpers';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     className?: string;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     hasToolbar?: boolean;
     hasRowMode?: boolean;
 }

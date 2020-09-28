@@ -25,7 +25,7 @@ const StandardLoadError = () => {
     }, []);
 
     const refresh = (
-        <InlineLinkButton className="primary-link" onClick={() => window.location.reload()}>{c('Action')
+        <InlineLinkButton key="1" className="primary-link" onClick={() => window.location.reload()}>{c('Action')
             .t`refresh the page`}</InlineLinkButton>
     );
 

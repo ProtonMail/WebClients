@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { hasMailPlus } from 'proton-shared/lib/helpers/subscription';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { AppLink, SettingsTitle, Loader, SectionConfig } from '../../components';
+import { AppLink, SettingsTitle, SectionConfig } from '../../components';
 import { useUser, useSubscription, useOrganization, useUserSettings } from '../../hooks';
 
 import SummarySection from './SummarySection';
@@ -21,8 +21,8 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
     const [scrollTop, setScrollTop] = useState<number>(0);
     const [user] = useUser();
     const [userSettings] = useUserSettings();
-    const [organization, loadingOrganization] = useOrganization();
-    const [subscription, loadingSubscription] = useSubscription();
+    const [organization] = useOrganization();
+    const [subscription] = useSubscription();
     const { hasPaidMail } = user;
 
     useEffect(() => {
@@ -34,10 +34,6 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
     const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
         setScrollTop(e.currentTarget.scrollTop);
     };
-
-    if (loadingOrganization || loadingSubscription) {
-        return <Loader />;
-    }
 
     return (
         <div className="flex flex-item-fluid ondesktop-h100 ontablet-flex-column flex-nowrap">

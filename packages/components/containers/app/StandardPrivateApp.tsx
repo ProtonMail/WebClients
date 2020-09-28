@@ -6,12 +6,12 @@ import createEventManager from 'proton-shared/lib/eventManager/eventManager';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { destroyOpenPGP, loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { Model } from 'proton-shared/lib/interfaces/Model';
-import { Address, UserSettings as tsUserSettings } from 'proton-shared/lib/interfaces';
+import { Address, User as tsUser, UserSettings as tsUserSettings } from 'proton-shared/lib/interfaces';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { traceError } from 'proton-shared/lib/helpers/sentry';
 import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
-import { REQUIRES_INTERNAL_EMAIL_ADDRESS } from 'proton-shared/lib/constants';
+import { REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT, UNPAID_STATE } from 'proton-shared/lib/constants';
 import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
 
 import { useApi, useCache, useConfig, useNotifications } from '../../hooks';
@@ -29,6 +29,7 @@ import StandardLoadError from './StandardLoadError';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import InternalEmailAddressGeneration from './InternalEmailAddressGeneration';
 import StorageListener from './StorageListener';
+import DelinquentContainer from './DelinquentContainer';
 
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;
@@ -67,6 +68,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     const { createNotification } = useNotifications();
     const onceRef = useRef<{ externalEmailAddress: Address } | undefined>();
     const appRef = useRef<FunctionComponent | null>(null);
+    const hasDelinquentBlockRef = useRef(false);
 
     useEffect(() => {
         const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
@@ -95,7 +97,12 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         const filteredModels = addressesPromise ? models.filter((model) => model !== AddressesModel) : models;
 
         const modelsPromise = loadModels(filteredModels, loadModelsArgs).then((result: any) => {
-            const [userSettings] = result as [tsUserSettings];
+            const [userSettings, user] = result as [tsUserSettings, tsUser];
+
+            const hasNonDelinquentRequirement = REQUIRES_NONDELINQUENT.includes(APP_NAME);
+            const hasNonDelinquentScope = user.Delinquent < UNPAID_STATE.DELINQUENT;
+            hasDelinquentBlockRef.current = hasNonDelinquentRequirement && !hasNonDelinquentScope;
+
             const browserLocale = getBrowserLocale();
             const localeCode = getClosestLocaleCode(userSettings.Locale, locales);
             return Promise.all([
@@ -148,6 +155,10 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                 {fallback || <LoaderPage />}
             </>
         );
+    }
+
+    if (hasDelinquentBlockRef.current) {
+        return <DelinquentContainer />;
     }
 
     return (

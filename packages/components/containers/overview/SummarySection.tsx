@@ -6,7 +6,7 @@ import { getPlan } from 'proton-shared/lib/helpers/subscription';
 import { PLAN_SERVICES, APPS, PLANS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { AppLink, Icon } from '../../components';
+import { AppLink, Icon, Loader } from '../../components';
 import { useConfig } from '../../hooks';
 
 const flags = require.context('design-system/assets/img/shared/flags/4x3', true, /.svg$/);
@@ -26,8 +26,8 @@ const getFlagSvg = (abbreviation: string) => {
 interface Props {
     user: UserModel;
     userSettings: UserSettings;
-    organization: Organization;
-    subscription: Subscription;
+    organization?: Partial<Organization>;
+    subscription?: Subscription;
 }
 
 const SummarySection = ({ user, userSettings, organization, subscription }: Props) => {
@@ -35,10 +35,10 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
     const { Locale } = userSettings;
     const abbreviation = Locale.slice(-2);
     const { Email, DisplayName, Name, canPay, isAdmin } = user;
-    const { UsedMembers = 0, UsedDomains = 0, MaxMembers = 0, MaxDomains = 0 } = organization;
+    const { UsedMembers = 0, UsedDomains = 0, MaxMembers = 0, MaxDomains = 0 } = organization || {};
     const initials = getInitial(DisplayName || Name || Email || '');
-    const vpnPlan = getPlan(subscription, PLAN_SERVICES.VPN);
-    const mailPlan = getPlan(subscription, PLAN_SERVICES.MAIL);
+    const vpnPlan = subscription ? getPlan(subscription, PLAN_SERVICES.VPN) : undefined;
+    const mailPlan = subscription ? getPlan(subscription, PLAN_SERVICES.MAIL) : undefined;
 
     const getPlanTitle = (plan: Plan | undefined, service: string) => {
         if (!plan) {
@@ -63,22 +63,24 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                     <span className="dropDown-logout-text center">{initials}</span>
                 </span>
                 <h3 className="mb0-5">{DisplayName || Name}</h3>
-                {organization.Name ? <p className="mt0 mb0-5">{organization.Name}</p> : null}
+                {organization?.Name ? <p className="mt0 mb0-5">{organization.Name}</p> : null}
                 <p className="mt0 mb0">{Email}</p>
             </div>
             {canPay ? (
                 <div className="mb1">
                     <strong className="bl mb0-5">{c('Title').t`Plans`}</strong>
-                    <ul className="unstyled mt0 mb0">
-                        <li>
-                            <Icon name="protonvpn" className="mr0-5" />
-                            {getPlanTitle(vpnPlan, 'ProtonVPN')}
-                        </li>
-                        <li>
-                            <Icon name="protonmail" className="mr0-5" />
-                            {getPlanTitle(mailPlan, 'ProtonMail')}
-                        </li>
-                    </ul>
+                    {!subscription ? <Loader/> :
+                        <ul className="unstyled mt0 mb0">
+                            <li>
+                                <Icon name="protonvpn" className="mr0-5"/>
+                                {getPlanTitle(vpnPlan, 'ProtonVPN')}
+                            </li>
+                            <li>
+                                <Icon name="protonmail" className="mr0-5"/>
+                                {getPlanTitle(mailPlan, 'ProtonMail')}
+                            </li>
+                        </ul>
+                    }
                 </div>
             ) : null}
             {languageText && flagSvg ? (
@@ -95,22 +97,24 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
             {isAdmin ? (
                 <div className="mb1">
                     <strong className="bl mb0-5">{c('Title').t`Your organization`}</strong>
-                    <ul className="unstyled mt0 mb0">
-                        <li>
-                            {c('Organization attribute').ngettext(
-                                msgid`${UsedMembers}/${MaxMembers} active user`,
-                                `${UsedMembers}/${MaxMembers} active users`,
-                                MaxMembers
-                            )}
-                        </li>
-                        <li>
-                            {c('Organization attribute').ngettext(
-                                msgid`${UsedDomains}/${MaxDomains} custom domain`,
-                                `${UsedDomains}/${MaxDomains} custom domains`,
-                                MaxDomains
-                            )}
-                        </li>
-                    </ul>
+                    {!organization ? <Loader/> :
+                        <ul className="unstyled mt0 mb0">
+                            <li>
+                                {c('Organization attribute').ngettext(
+                                    msgid`${UsedMembers}/${MaxMembers} active user`,
+                                    `${UsedMembers}/${MaxMembers} active users`,
+                                    MaxMembers
+                                )}
+                            </li>
+                            <li>
+                                {c('Organization attribute').ngettext(
+                                    msgid`${UsedDomains}/${MaxDomains} custom domain`,
+                                    `${UsedDomains}/${MaxDomains} custom domains`,
+                                    MaxDomains
+                                )}
+                            </li>
+                        </ul>
+                    }
                 </div>
             ) : null}
             {APP_NAME === APPS.PROTONACCOUNT ? (
