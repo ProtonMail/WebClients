@@ -64,23 +64,27 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 </span>
                 <h3 className="mb0-5">{DisplayName || Name}</h3>
                 {organization?.Name ? <p className="mt0 mb0-5">{organization.Name}</p> : null}
-                <p className="mt0 mb0">{Email}</p>
+                <p className="mt0 mb0 ellipsis" title={Email}>
+                    {Email}
+                </p>
             </div>
             {canPay ? (
                 <div className="mb1">
                     <strong className="bl mb0-5">{c('Title').t`Plans`}</strong>
-                    {!subscription ? <Loader/> :
+                    {!subscription ? (
+                        <Loader />
+                    ) : (
                         <ul className="unstyled mt0 mb0">
                             <li>
-                                <Icon name="protonvpn" className="mr0-5"/>
+                                <Icon name="protonvpn" className="mr0-5" />
                                 {getPlanTitle(vpnPlan, 'ProtonVPN')}
                             </li>
                             <li>
-                                <Icon name="protonmail" className="mr0-5"/>
+                                <Icon name="protonmail" className="mr0-5" />
                                 {getPlanTitle(mailPlan, 'ProtonMail')}
                             </li>
                         </ul>
-                    }
+                    )}
                 </div>
             ) : null}
             {languageText && flagSvg ? (
@@ -97,7 +101,9 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
             {isAdmin ? (
                 <div className="mb1">
                     <strong className="bl mb0-5">{c('Title').t`Your organization`}</strong>
-                    {!organization ? <Loader/> :
+                    {!organization ? (
+                        <Loader />
+                    ) : (
                         <ul className="unstyled mt0 mb0">
                             <li>
                                 {c('Organization attribute').ngettext(
@@ -114,7 +120,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                                 )}
                             </li>
                         </ul>
-                    }
+                    )}
                 </div>
             ) : null}
             {APP_NAME === APPS.PROTONACCOUNT ? (
