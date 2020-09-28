@@ -60,9 +60,9 @@ const MessageBody = ({
             {sourceMode && <pre>{message.decryptedBody}</pre>}
             {(loadingMode || decryptingMode) && (
                 <>
-                    <div className="message-content-loading-placeholder mw15e"></div>
-                    <div className="message-content-loading-placeholder mw40e"></div>
-                    <div className="message-content-loading-placeholder mw50e"></div>
+                    <div className="message-content-loading-placeholder mb0-25 mw15e"></div>
+                    <div className="message-content-loading-placeholder mb0-25 mw40e"></div>
+                    <div className="message-content-loading-placeholder mb0-25 mw50e"></div>
                     <div className="message-content-loading-placeholder mw8e"></div>
                 </>
             )}
