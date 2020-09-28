@@ -25,7 +25,7 @@ const MailOnboardingModal = (props: any) => {
                             .t`You can now start sending emails to anyone. We built ${appName} to be both secure and easy to use. Be sure to install our mobile apps and try out tools such as Bridge, which adds Proton encryption to any desktop email app.`}
                         img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
                         text={c('Onboarding ProtonMail')
-                            .t`If you like, we can help you import emails from your existing accounts. You can use our free import assistant by going to your Settings, or download our Import-Export app, which is available with paid plans.`}
+                            .t`If you like, we can help you import emails from your existing accounts. You can use our Import-Export app, which is available with paid plans.`}
                     />
                 </OnboardingStep>
             )}
