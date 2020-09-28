@@ -66,7 +66,10 @@ export const getUserSharesAsync = async (api: Api, cache: DriveCache) => {
         return shares;
     }
 
-    const { Shares } = await api<UserShareResult>(queryUserShares());
+    const { Shares } = await api<UserShareResult>({
+        ...queryUserShares(),
+        silence: true,
+    });
 
     return Shares.map(({ ShareID }) => ShareID);
 };
@@ -94,8 +97,7 @@ export const initDriveAsync = async (
     cache: DriveCache,
     createVolume: () => Promise<DriveVolume>,
     getUserShares: () => Promise<string[]>,
-    getShareMeta: (shareId: string) => Promise<ShareMeta>,
-    createOnboardingModal: () => void
+    getShareMeta: (shareId: string) => Promise<ShareMeta>
 ) => {
     const shareIds = await getUserShares();
     let shareId = shareIds[0];
@@ -104,7 +106,6 @@ export const initDriveAsync = async (
         cache.set.emptyShares(shareIds);
     } else {
         const { Share } = await createVolume();
-        createOnboardingModal();
         shareId = Share.ID;
     }
 

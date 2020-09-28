@@ -1,12 +1,10 @@
-import React from 'react';
 import { OpenPGPKey } from 'pmcrypto';
-import { useModals, usePreventLeave, useGlobalLoader } from 'react-components';
+import { usePreventLeave, useGlobalLoader } from 'react-components';
 import { c } from 'ttag';
 import useDriveCrypto from './useDriveCrypto';
 import { LinkMeta, LinkType } from '../../interfaces/link';
 import { useDriveCache, LinkKeys } from '../../components/DriveCache/DriveCacheProvider';
 import { DEFAULT_SORT_PARAMS } from '../../constants';
-import OnboardingModal from '../../components/OnboardingModal/OnboardingModal';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import useQueuedFunction from '../util/useQueuedFunction';
 import useEvents from './useEvents';
@@ -33,7 +31,6 @@ import {
 function useDrive() {
     const cache = useDriveCache();
     const queuedFunction = useQueuedFunction();
-    const { createModal } = useModals();
     const withGlobalLoader = useGlobalLoader({ text: c('Info').t`Loading folder contents` });
     const { getPrimaryAddressKey, getVerificationKeys } = useDriveCrypto();
     const debouncedRequest = useDebouncedRequest();
@@ -54,8 +51,7 @@ function useDrive() {
     };
 
     const initDrive = async () => {
-        const createOnboardingModal = () => createModal(<OnboardingModal />);
-        return initDriveAsync(cache, createVolume, getUserShares, getShareMeta, createOnboardingModal);
+        return initDriveAsync(cache, createVolume, getUserShares, getShareMeta);
     };
 
     const getShareKeys = async (shareId: string) => {
