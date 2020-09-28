@@ -24,7 +24,7 @@ describe('drive utils', () => {
 
     describe('initDrive', () => {
         it('should create a volume and render onboarding modal when there are no shares', async () => {
-            expect.assertions(2);
+            expect.assertions(1);
 
             const createVolumeMock = jest.fn().mockResolvedValue({
                 Share: {
@@ -39,26 +39,17 @@ describe('drive utils', () => {
                     } as { [id: string]: any })[shareId]
                 )
             );
-            const createOnboardingModalMock = jest.fn();
             const getUserSharesMock = jest.fn().mockResolvedValue([]);
 
-            const result = await initDriveAsync(
-                driveCache,
-                createVolumeMock,
-                getUserSharesMock,
-                getShareMetaMock,
-                createOnboardingModalMock
-            );
+            const result = await initDriveAsync(driveCache, createVolumeMock, getUserSharesMock, getShareMetaMock);
 
             expect(result).toBe('test-share-mock');
-            expect(createOnboardingModalMock).toBeCalledTimes(1);
         });
 
         it('should return default share and initialize other shares in cache', async () => {
             expect.assertions(2);
 
             const createVolumeMock = jest.fn();
-            const createOnboardingModalMock = jest.fn();
             const getUserSharesMock = jest.fn().mockResolvedValue(['share-1', 'share-2']);
             const getShareMetaMock = jest.fn((shareId: string) =>
                 Promise.resolve(
@@ -72,13 +63,7 @@ describe('drive utils', () => {
             let result: ShareMeta | null = null;
 
             await act(async () => {
-                result = await initDriveAsync(
-                    driveCache,
-                    createVolumeMock,
-                    getUserSharesMock,
-                    getShareMetaMock,
-                    createOnboardingModalMock
-                );
+                result = await initDriveAsync(driveCache, createVolumeMock, getUserSharesMock, getShareMetaMock);
             });
 
             expect(result).toBe('test-share-mock-1');
