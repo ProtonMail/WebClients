@@ -11,8 +11,10 @@ import { OnCompose } from '../../../hooks/useCompose';
 import HeaderRecipientItemLayout from './HeaderRecipientItemLayout';
 import HeaderRecipientItemGroup from './HeaderRecipientItemGroup';
 import HeaderRecipientItemRecipient from './HeaderRecipientItemRecipient';
+import { MessageExtended } from '../../../models/message';
 
 interface Props {
+    message: MessageExtended;
     recipientOrGroup: RecipientOrGroup;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
@@ -24,6 +26,7 @@ interface Props {
 }
 
 const HeaderRecipientItem = ({
+    message,
     recipientOrGroup,
     mapStatusIcons,
     globalIcon,
@@ -41,6 +44,7 @@ const HeaderRecipientItem = ({
                     <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded50 bl mr0-5"></span>
                 }
                 showAddress={showAddress}
+                message={message}
             />
         );
     }
@@ -54,6 +58,7 @@ const HeaderRecipientItem = ({
                 contacts={contacts}
                 showAddress={showAddress}
                 onCompose={onCompose}
+                message={message}
             />
         );
     }
@@ -68,6 +73,7 @@ const HeaderRecipientItem = ({
                 showLockIcon={showLockIcon}
                 contacts={contacts}
                 onCompose={onCompose}
+                message={message}
             />
         );
     }
@@ -84,6 +90,7 @@ const HeaderRecipientItem = ({
             }
             label={c('Label').t`Undisclosed Recipients`}
             title={c('Label').t`Undisclosed Recipients`}
+            message={message}
         />
     );
 };

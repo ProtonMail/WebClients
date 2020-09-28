@@ -1,17 +1,22 @@
 import React, { ReactNode } from 'react';
 import { classnames } from 'react-components';
+import { MessageExtended } from '../../../models/message';
+import ItemAction from '../../list/ItemAction';
 
 interface Props {
+    message: MessageExtended;
     button?: ReactNode;
     label?: ReactNode;
     showAddress?: boolean;
     address?: ReactNode;
     title?: string;
     icon?: ReactNode;
+    iconAction?: ReactNode;
     isLoading?: boolean;
 }
 
 const HeaderRecipientItemLayout = ({
+    message,
     button,
     label,
     showAddress = true,
@@ -37,16 +42,18 @@ const HeaderRecipientItemLayout = ({
                     {` ` /** I need a real space in source here, as everything is inline, no margin/padding to have correct ellipsis applied :-| **/}
                     {showAddress && (
                         <span
-                            className={classnames([
-                                'message-recipient-item-address opacity-50',
-                                isLoading && 'inbl'
-                            ])}
+                            className={classnames(['message-recipient-item-address opacity-50', isLoading && 'inbl'])}
                         >
                             {address}
                         </span>
                     )}
                 </span>
                 {icon}
+                {isLoading ? null : (
+                    <span className="ml0-5">
+                        <ItemAction element={message.data} className="mtauto mbauto" />
+                    </span>
+                )}
             </span>
         </span>
     );

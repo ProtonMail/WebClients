@@ -13,7 +13,6 @@ import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
 import HeaderRecipientItem from './HeaderRecipientItem';
 import ItemExpiration from '../../list/ItemExpiration';
-import ItemAction from '../../list/ItemAction';
 import { OnCompose } from '../../../hooks/useCompose';
 
 interface Props {
@@ -70,14 +69,11 @@ const HeaderCollapsed = ({
                     onCompose={onCompose}
                     contacts={contacts}
                     isLoading={!messageLoaded}
+                    message={message}
                 />
                 {messageLoaded && (
                     <>
                         <ItemExpiration
-                            element={message.data}
-                            className="flex flex-item-noshrink ml0-25 is-appearing-content"
-                        />
-                        <ItemAction
                             element={message.data}
                             className="flex flex-item-noshrink ml0-25 is-appearing-content"
                         />

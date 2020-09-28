@@ -55,7 +55,7 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
                         <span className="opacity-50">&lt;{sender?.Address}&gt;</span>
                     </HeaderRecipientType>
                     <HeaderRecipientsDetails
-                        message={message.data}
+                        message={message}
                         contacts={contacts}
                         contactGroups={contactGroups}
                         onCompose={noop}

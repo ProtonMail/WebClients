@@ -24,9 +24,9 @@ const ItemAction = ({ element = {}, className }: Props) => {
 
     return (
         <div className={className}>
-            {!!message.IsReplied && <Icon name="reply" alt={c('Alt').t`Is replied`} />}
-            {!!message.IsRepliedAll && <Icon name="reply-all" alt={c('Alt').t`Is replied to all`} />}
-            {!!message.IsForwarded && <Icon name="reply" className="mirror" alt={c('Alt').t`Is transfered`} />}
+            {!!message.IsReplied && <Icon name="reply" alt={c('Alt').t`Replied to`} />}
+            {!!message.IsRepliedAll && <Icon name="reply-all" alt={c('Alt').t`Replied to all`} />}
+            {!!message.IsForwarded && <Icon name="reply" className="mirror" alt={c('Alt').t`Forwarded`} />}
         </div>
     );
 };

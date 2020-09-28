@@ -24,8 +24,10 @@ import { MESSAGE_ACTIONS } from '../../../constants';
 import { OnCompose } from '../../../hooks/useCompose';
 import HeaderRecipientItemLayout from './HeaderRecipientItemLayout';
 import { getContactOfRecipient } from '../../../helpers/contacts';
+import { MessageExtended } from '../../../models/message';
 
 interface Props {
+    message: MessageExtended;
     recipient: Recipient;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
@@ -36,6 +38,7 @@ interface Props {
 }
 
 const HeaderRecipientItemRecipient = ({
+    message,
     recipient,
     mapStatusIcons,
     globalIcon,
@@ -147,6 +150,7 @@ const HeaderRecipientItemRecipient = ({
                     </span>
                 )
             }
+            message={message}
         />
     );
 };

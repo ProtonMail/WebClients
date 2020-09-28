@@ -36,7 +36,6 @@ import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderExpandedDetails from './HeaderExpandedDetails';
 import HeaderRecipientType from './HeaderRecipientType';
 import HeaderRecipientItem from './HeaderRecipientItem';
-import ItemAction from '../../list/ItemAction';
 import { OnCompose } from '../../../hooks/useCompose';
 import { Breakpoints } from '../../../models/utils';
 
@@ -123,6 +122,7 @@ const HeaderExpanded = ({
     const from = (
         <HeaderRecipientItem
             recipientOrGroup={{ recipient: message.data?.Sender }}
+            message={message}
             globalIcon={messageViewIcons.globalIcon}
             contacts={contacts}
             onCompose={onCompose}
@@ -150,7 +150,6 @@ const HeaderExpanded = ({
                     ) : (
                         <div className="flex-item-fluid flex flex-nowrap pr0-5">{from}</div>
                     )}
-                    <ItemAction element={message.data} className="mtauto mbauto" />
                 </span>
                 <div className="flex flex-items-center flex-item-noshrink">
                     {messageLoaded && !showDetails && (
@@ -181,7 +180,7 @@ const HeaderExpanded = ({
                 <div className="flex-item-fluid flex flex-nowrap onmobile-flex-wrap pr1 message-header-recipients">
                     {showDetails ? (
                         <HeaderRecipientsDetails
-                            message={message.data}
+                            message={message}
                             mapStatusIcons={messageViewIcons.mapStatusIcon}
                             contacts={contacts}
                             contactGroups={contactGroups}

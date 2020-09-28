@@ -14,7 +14,7 @@ const HeaderRecipientType = ({
     return (
         <span className={className}>
             <span className="container-to is-appearing-content">{label}</span>
-            <span className="flex-self-vcenter mr1">{children}</span>
+            <span className="flex-self-vcenter mr0-5">{children}</span>
         </span>
     );
 };

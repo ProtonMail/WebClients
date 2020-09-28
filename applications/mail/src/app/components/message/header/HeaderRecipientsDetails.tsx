@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
-import { Message } from '../../../models/message';
+import { MessageExtended } from '../../../models/message';
 import { MapStatusIcons } from '../../../models/crypto';
 import { recipientsToRecipientOrGroup } from '../../../helpers/addresses';
 import HeaderRecipientType from './HeaderRecipientType';
@@ -11,7 +11,7 @@ import HeaderRecipientItem from './HeaderRecipientItem';
 import { OnCompose } from '../../../hooks/useCompose';
 
 interface Props {
-    message?: Message;
+    message: MessageExtended;
     mapStatusIcons?: MapStatusIcons;
     contacts: ContactEmail[];
     contactGroups: ContactGroup[];
@@ -20,6 +20,7 @@ interface Props {
 }
 
 interface ListProps {
+    message: MessageExtended;
     list: Recipient[];
     mapStatusIcons?: MapStatusIcons;
     contacts: ContactEmail[];
@@ -28,7 +29,15 @@ interface ListProps {
     isLoading: boolean;
 }
 
-const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompose, isLoading }: ListProps) => {
+const RecipientsList = ({
+    message,
+    list,
+    mapStatusIcons,
+    contacts,
+    contactGroups,
+    onCompose,
+    isLoading
+}: ListProps) => {
     const recipientsOrGroup = recipientsToRecipientOrGroup(list, contactGroups);
 
     return (
@@ -41,6 +50,7 @@ const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompo
                     contacts={contacts}
                     onCompose={onCompose}
                     isLoading={isLoading}
+                    message={message}
                 />
             ))}
         </>
@@ -48,7 +58,7 @@ const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompo
 };
 
 const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGroups, onCompose, isLoading }: Props) => {
-    const { ToList = [], CCList = [], BCCList = [] } = message || {};
+    const { ToList = [], CCList = [], BCCList = [] } = message?.data || {};
 
     const undisclosedRecipients = ToList.length + CCList.length + BCCList.length === 0;
 
@@ -63,6 +73,7 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contactGroups={contactGroups}
                         onCompose={onCompose}
                         isLoading={isLoading}
+                        message={message}
                     />
                 </HeaderRecipientType>
             )}
@@ -75,6 +86,7 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contactGroups={contactGroups}
                         onCompose={onCompose}
                         isLoading={isLoading}
+                        message={message}
                     />
                 </HeaderRecipientType>
             )}
@@ -87,6 +99,7 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contactGroups={contactGroups}
                         onCompose={onCompose}
                         isLoading={isLoading}
+                        message={message}
                     />
                 </HeaderRecipientType>
             )}
@@ -97,6 +110,7 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contacts={contacts}
                         onCompose={onCompose}
                         isLoading={isLoading}
+                        message={message}
                     />
                 </HeaderRecipientType>
             )}

@@ -22,8 +22,10 @@ import { MESSAGE_ACTIONS } from '../../../constants';
 import { OnCompose } from '../../../hooks/useCompose';
 import HeaderGroupModal from './HeaderGroupModal';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import { MessageExtended } from '../../../models/message';
 
 interface Props {
+    message: MessageExtended;
     group: RecipientGroup;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
@@ -33,6 +35,7 @@ interface Props {
 }
 
 const HeaderRecipientItemGroup = ({
+    message,
     group,
     mapStatusIcons,
     globalIcon,
@@ -123,6 +126,7 @@ const HeaderRecipientItemGroup = ({
             showAddress={showAddress}
             address={addresses}
             title={`${label} ${allAddresses}`}
+            message={message}
         />
     );
 };
