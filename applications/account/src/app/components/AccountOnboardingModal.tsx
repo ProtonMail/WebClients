@@ -10,8 +10,8 @@ import {
 } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 
-import onboardingWelcome from 'design-system/assets/img/onboarding/onboarding-protonmail.svg';
-import onboardingWelcomeDark from 'design-system/assets/img/onboarding/onboarding-protonmail-dark.svg';
+import onboardingWelcome from 'design-system/assets/img/onboarding/onboarding-protonmail-subdomain.svg';
+import onboardingWelcomeDark from 'design-system/assets/img/onboarding/onboarding-protonmail-subdomain-dark.svg';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
 const AccountOnboardingModal = (props: any) => {
