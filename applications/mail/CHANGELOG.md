@@ -1,4 +1,4 @@
-# [4.1.0 - beta 1] - 2020-09-30
+# [4.1.0] - 2020-09-30
 ## New features
 - Support for sub-folders
 - Support for compact and comfortable lists
