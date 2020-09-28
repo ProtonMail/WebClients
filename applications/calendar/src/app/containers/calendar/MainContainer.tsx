@@ -1,9 +1,10 @@
+import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
 import React, { useMemo, useState } from 'react';
-import { ErrorBoundary, useAddresses, useCalendars, useUser } from 'react-components';
+import { ErrorBoundary, useAddresses, useCalendars, useUser, useWelcomeFlags } from 'react-components';
 
-import { getSetupType, SETUP_TYPE } from '../setup/setupHelper';
-import FreeContainer from '../setup/FreeContainer';
-import WelcomeContainer from '../setup/WelcomeContainer';
+import CalendarFreeContainer from '../setup/CalendarFreeContainer';
+import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
+import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import ResetContainer from '../setup/ResetContainer';
 import MainContainerSetup from './MainContainerSetup';
 
@@ -15,18 +16,42 @@ const MainContainer = () => {
     const memoedCalendars = useMemo(() => calendars || [], [calendars]);
     const memoedAddresses = useMemo(() => addresses || [], [addresses]);
 
-    const [setupType, setSetupType] = useState(() => getSetupType(memoedCalendars));
+    const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
+
+    const [hasCalendarToGenerate, setHasCalendarToGenerate] = useState(() => {
+        return memoedCalendars.length === 0;
+    });
+
+    const [calendarsToReset, setCalendarsToReset] = useState(() => {
+        return memoedCalendars.filter(({ Flags }) => {
+            return (Flags & (CALENDAR_FLAGS.RESET_NEEDED | CALENDAR_FLAGS.UPDATE_PASSPHRASE)) > 0;
+        });
+    });
+
+    const [calendarsToSetup, setCalendarsToSetup] = useState(() => {
+        return memoedCalendars.filter(({ Flags }) => {
+            return (Flags & CALENDAR_FLAGS.INCOMPLETE_SETUP) > 0;
+        });
+    });
 
     if (user.isFree) {
-        return <FreeContainer />;
+        return <CalendarFreeContainer />;
     }
 
-    if (setupType === SETUP_TYPE.WELCOME) {
-        return <WelcomeContainer onDone={() => setSetupType(SETUP_TYPE.DONE)} />;
+    if (hasCalendarToGenerate) {
+        return <CalendarSetupContainer onDone={() => setHasCalendarToGenerate(false)} />;
     }
 
-    if (setupType === SETUP_TYPE.RESET) {
-        return <ResetContainer calendars={memoedCalendars} onDone={() => setSetupType(SETUP_TYPE.DONE)} />;
+    if (calendarsToSetup.length) {
+        return <CalendarSetupContainer calendars={calendarsToSetup} onDone={() => setCalendarsToSetup([])} />;
+    }
+
+    if (welcomeFlags.isWelcomeFlow) {
+        return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} />;
+    }
+
+    if (calendarsToReset.length) {
+        return <ResetContainer calendars={calendarsToReset} onDone={() => setCalendarsToReset([])} />;
     }
 
     return <MainContainerSetup user={user} addresses={memoedAddresses} calendars={memoedCalendars} />;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import {
     FormModal,
@@ -16,20 +16,16 @@ import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { process } from './reset/resetHelper';
-import CalendarCreating from './CalendarCreating';
-import CalendarReady from './CalendarReady';
 import CalendarResetSection from './CalendarResetSection';
 import CalendarReactivateSection from './CalendarReactivateSection';
 
 enum STEPS {
     LOADING,
     RESET_CALENDARS,
-    SETUP_CALENDARS,
     REACTIVATE_CALENDARS,
 }
 
 interface FilteredCalendars {
-    calendarsToSetup: Calendar[];
     calendarsToReset: Calendar[];
     calendarsToReactivate: Calendar[];
 }
@@ -46,13 +42,11 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
 
-    const [{ calendarsToSetup, calendarsToReset, calendarsToReactivate }] = useState(() => {
-        return calendars.reduce(
+    const [{ calendarsToReset, calendarsToReactivate }] = useState(() => {
+        return calendars.reduce<FilteredCalendars>(
             (acc, calendar) => {
                 const { Flags } = calendar;
-                if (hasBit(Flags, CALENDAR_FLAGS.INCOMPLETE_SETUP)) {
-                    acc.calendarsToSetup.push(calendar);
-                } else if (hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED)) {
+                if (hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED)) {
                     acc.calendarsToReset.push(calendar);
                 } else if (hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE)) {
                     acc.calendarsToReactivate.push(calendar);
@@ -60,10 +54,9 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
                 return acc;
             },
             {
-                calendarsToSetup: [],
                 calendarsToReset: [],
                 calendarsToReactivate: [],
-            } as FilteredCalendars
+            }
         );
     });
 
@@ -74,13 +67,10 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
         if (calendarsToReactivate.length > 0) {
             return STEPS.REACTIVATE_CALENDARS;
         }
-        if (calendarsToSetup.length > 0) {
-            return STEPS.SETUP_CALENDARS;
-        }
         throw new Error('Unexpected state');
     });
 
-    const [isLoading, withLoading] = useLoading(step === STEPS.SETUP_CALENDARS);
+    const [isLoading, withLoading] = useLoading(false);
     const [error, setError] = useState(false);
 
     const handleProcess = () => {
@@ -92,20 +82,10 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
                 getAddressKeys,
                 getAddresses,
                 calendarsToReset,
-                calendarsToSetup,
                 calendarsToReactivate,
             })
         );
     };
-
-    useEffect(() => {
-        if (step === STEPS.SETUP_CALENDARS) {
-            handleProcess().catch((e) => {
-                console.log(e);
-                setError(true);
-            });
-        }
-    }, []);
 
     const { section, ...modalProps } = (() => {
         if (error) {
@@ -162,15 +142,6 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
                             setError(true);
                         });
                 },
-            };
-        }
-
-        if (step === STEPS.SETUP_CALENDARS) {
-            return {
-                loading: isLoading,
-                title: isLoading ? c('Title').t`Preparing your calendar` : c('Title').t`Welcome to ProtonCalendar`,
-                section: isLoading ? <CalendarCreating /> : <CalendarReady />,
-                onSubmit: isLoading ? noop : onClose,
             };
         }
 

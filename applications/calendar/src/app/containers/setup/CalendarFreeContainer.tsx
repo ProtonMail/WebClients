@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useModals } from 'react-components';
 import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurred';
-import FreeModal from './FreeModal';
+import CalendarOnboardingModalFree from '../../components/onboarding/CalendarOnboardingModalFree';
 
-const FreeContainer = () => {
+const CalendarFreeContainer = (props: any) => {
     const { createModal, hideModal } = useModals();
 
     useEffect(() => {
-        const id = createModal(<FreeModal />);
+        const id = createModal(<CalendarOnboardingModalFree {...props} />);
         return () => {
             hideModal(id);
         };
@@ -16,4 +16,4 @@ const FreeContainer = () => {
     return <CalendarContainerViewBlurred />;
 };
 
-export default FreeContainer;
+export default CalendarFreeContainer;

@@ -4,7 +4,6 @@ import { CalendarsModel } from 'proton-shared/lib/models';
 import { Api } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { useGetAddresses, useGetAddressKeys } from 'react-components';
-import { setupCalendarKeys } from './setupCalendarKeys';
 import { resetCalendarKeys } from './resetCalendarKeys';
 import { reactivateCalendarsKeys } from './reactivateCalendarKeys';
 
@@ -16,7 +15,6 @@ interface ProcessArguments {
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
     calendarsToReset: Calendar[];
     calendarsToReactivate: Calendar[];
-    calendarsToSetup: Calendar[];
 }
 
 export const process = async ({
@@ -27,20 +25,10 @@ export const process = async ({
     getAddressKeys,
     calendarsToReset,
     calendarsToReactivate,
-    calendarsToSetup,
 }: ProcessArguments) => {
     const addresses = await getAddresses();
     if (!addresses.length) {
         throw new Error(c('Error').t`Please create an address first.`);
-    }
-
-    if (calendarsToSetup.length > 0) {
-        await setupCalendarKeys({
-            api,
-            calendars: calendarsToSetup,
-            getAddressKeys,
-            addresses,
-        });
     }
 
     if (calendarsToReset.length > 0) {

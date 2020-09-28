@@ -39,7 +39,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             onLogout={onLogout}
             locales={locales}
             onInit={async () => {
-                const [calendars] = await loadModels([CalendarsModel], { api, cache });
+                const [calendars] = await loadModels([CalendarsModel, AddressesModel], { api, cache });
                 if (calendars?.length) {
                     await loadModels([CalendarUserSettingsModel], { api, cache });
                 }
