@@ -48,7 +48,7 @@ const UsernameSection = () => {
                 </Row>
             ) : (
                 <Row>
-                    <Label>{c('Label').t`Email`}</Label>
+                    <Label>{c('Label').t`Email address`}</Label>
                     <Field className="pt0-5">
                         <strong>{Email}</strong>
                     </Field>
