@@ -2,8 +2,9 @@ import React from 'react';
 import { match as Match } from 'react-router-dom';
 import { Location } from 'history';
 import { c } from 'ttag';
-
 import { Sidebar, AppVersion, SidebarNav, SidebarList, SimpleSidebarListItemLink, Icon } from 'react-components';
+
+import changelog from '../../../../CHANGELOG.md';
 
 const getSidebarLinks = () => {
     return [
@@ -32,7 +33,7 @@ const DriveSidebarDescription = () => {
     );
 };
 
-const DriveSidebarVersion = () => <AppVersion />;
+const DriveSidebarVersion = () => <AppVersion changelog={changelog} />;
 
 const DriveSidebarLinks = () => (
     <>
