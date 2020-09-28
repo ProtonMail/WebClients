@@ -598,8 +598,11 @@ $conversation-icon-size: 3.2rem !default;
 	// display of email default none except when details
 	.message-recipient-item-address,
 	.message-recipient-item-label {
-		display: block;
 		@extend .ellipsis;
+
+		@include respond-to($breakpoint-small) {
+			display: block;
+		}
 	}
 	.message-recipient-item-lockIcon {
 		align-self: flex-end;
