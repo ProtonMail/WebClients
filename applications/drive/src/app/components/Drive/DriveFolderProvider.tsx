@@ -1,6 +1,4 @@
-import React, { useState, createContext, useEffect, useContext } from 'react';
-import { useLoading, LoaderPage } from 'react-components';
-import useDrive from '../../hooks/drive/useDrive';
+import React, { useState, createContext, useContext } from 'react';
 
 export type DriveFolder = { shareId: string; linkId: string };
 
@@ -20,22 +18,7 @@ interface Props {
  * Stores open folder shareId and linkID for easy access.
  */
 const DriveFolderProvider = ({ children }: Props) => {
-    const [loading, withLoading] = useLoading(true);
-    const { initDrive } = useDrive();
     const [folder, setFolder] = useState<DriveFolder>();
-
-    useEffect(() => {
-        withLoading(initDrive()).catch((error) => {
-            setFolder(() => {
-                throw error;
-            });
-        });
-    }, []);
-
-    if (loading) {
-        return <LoaderPage />;
-    }
-
     return <DriveFolderContext.Provider value={{ folder, setFolder }}>{children}</DriveFolderContext.Provider>;
 };
 
