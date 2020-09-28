@@ -67,7 +67,7 @@ const AddressesUser = ({ user }: Props) => {
     }
 
     return (
-        <OrderableTable onSortEnd={handleSortEnd}>
+        <OrderableTable onSortEnd={handleSortEnd} className="pm-simple-table--has-actions">
             <OrderableTableHeader
                 cells={[
                     c('Header for addresses table').t`Address`,
