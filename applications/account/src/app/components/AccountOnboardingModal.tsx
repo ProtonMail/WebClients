@@ -1,13 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { getAppName } from 'proton-shared/lib/apps/helper';
-import {
-    OnboardingContent,
-    OnboardingModal,
-    OnboardingStep,
-    OnboardingStepRenderCallback,
-    useAppLink,
-} from 'react-components';
+import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 
 import onboardingWelcome from 'design-system/assets/img/onboarding/onboarding-protonmail-subdomain.svg';
@@ -15,24 +9,16 @@ import onboardingWelcomeDark from 'design-system/assets/img/onboarding/onboardin
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
 const AccountOnboardingModal = (props: any) => {
-    const goToApp = useAppLink();
-
     const appName = getAppName(APPS.PROTONACCOUNT);
-    const mailAppName = getAppName(APPS.PROTONMAIL);
-
-    const handleSubmit = () => {
-        goToApp('/', APPS.PROTONMAIL);
-    };
 
     return (
         <OnboardingModal {...props}>
             {({ onClose }: OnboardingStepRenderCallback) => (
                 <OnboardingStep
                     title={c('Onboarding ProtonAccount').t`Welcome to ${appName}`}
-                    submit={c('Onboarding ProtonAccount').t`Start using ${mailAppName}`}
-                    onSubmit={handleSubmit}
-                    close={c('Onboarding ProtonAccount').t`Got it`}
-                    onClose={onClose}
+                    submit={c('Onboarding ProtonAccount').t`Start using ${appName}`}
+                    onSubmit={onClose}
+                    close={null}
                 >
                     <OnboardingContent
                         description={c('Onboarding ProtonAccount')
