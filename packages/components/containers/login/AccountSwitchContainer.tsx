@@ -139,19 +139,14 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
         <Layout
             title={c('Title').t`Choose an account`}
             subtitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
-            right={
-                <LinkButton className="nodecoration" onClick={handleSignOutAll}>{c('Action')
-                    .t`Sign out all accounts`}</LinkButton>
-            }
+            right={<LinkButton onClick={handleSignOutAll}>{c('Action').t`Sign out all accounts`}</LinkButton>}
         >
             <div className="tiny-shadow-container button-account-container scroll-if-needed">
                 <div className="button-account-container-inner">
                     {inner()}
                     <div className="relative p1">
-                        <LinkButton
-                            className="semibold nodecoration increase-surface-click"
-                            onClick={handleAddAccount}
-                        >{c('Action').t`Add account`}</LinkButton>
+                        <LinkButton className="semibold increase-surface-click" onClick={handleAddAccount}>{c('Action')
+                            .t`Add account`}</LinkButton>
                     </div>
                 </div>
             </div>
