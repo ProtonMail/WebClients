@@ -21,7 +21,7 @@ export const getAccountPage = (user: UserModel) => {
         icon: 'account',
         subsections: [
             {
-                text: user.Name ? c('Title').t`Username` : c('Title').t`Address`,
+                text: user.Name ? c('Title').t`Username` : c('Title').t`Email`,
                 id: 'username',
             },
             {
