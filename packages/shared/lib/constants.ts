@@ -651,6 +651,7 @@ export enum CLIENT_IDS {
     Web = 'Web',
     Admin = 'Web Admin',
     // New apps
+    WebAccount = 'Web Account',
     WebMail = 'Web Mail',
     WebMailSettings = 'Web Mail Settings',
     WebCalendar = 'Web Calendar',
