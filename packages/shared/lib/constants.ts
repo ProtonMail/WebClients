@@ -36,7 +36,7 @@ export const APPS_CONFIGURATION = {
         publicPath: '',
         subdomain: 'account',
         name: 'Proton Account',
-        clientID: 'Web',
+        clientID: 'WebAccount',
         icon: 'protonaccount',
     },
     [APPS.PROTONMAIL]: {
