@@ -25,7 +25,7 @@ interface Props {
 
 const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) => {
     const [user] = useUser();
-    const [displayName, setDisplayName] = useState(user.Name);
+    const [displayName, setDisplayName] = useState(user.Name || '');
     const [loadingDisplayName, withLoading] = useLoading();
     const getAddresses = useGetAddresses();
     const api = useApi();
@@ -39,7 +39,7 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
     };
 
     useEffect(() => {
-        if (!welcomeFlags?.hasDisplayNameStep && setWelcomeFlags) {
+        if (!welcomeFlags?.hasDisplayNameStep) {
             handleUpdateWelcomeFlags();
         }
     }, []);
