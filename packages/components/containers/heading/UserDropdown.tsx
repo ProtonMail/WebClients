@@ -36,7 +36,7 @@ const UserDropdown = ({ ...rest }) => {
     const { Name: organizationName } = organization || {};
     const [user] = useUser();
     const [userSettings] = useUserSettings();
-    const { UsedSpace, MaxSpace } = user;
+    const { UsedSpace, MaxSpace, isMember } = user;
     const spacePercentage = Math.round((UsedSpace * 100) / MaxSpace);
     const { logout } = useAuthentication();
     const { createModal } = useModals();
@@ -47,11 +47,14 @@ const UserDropdown = ({ ...rest }) => {
         if (!subscription) {
             return true;
         }
+        if (isMember) {
+            return false;
+        }
         if (hasVisionary(subscription) || hasMailProfessional(subscription)) {
             return false;
         }
         return true;
-    }, [subscription]);
+    }, [subscription, user]);
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
