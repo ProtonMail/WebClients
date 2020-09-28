@@ -18,9 +18,19 @@ interface Props {
     labelID: string;
     elementID: string | undefined;
     onCompose: OnCompose;
+    isBlurred?: boolean;
 }
 
-const PrivateLayout = ({ children, location, history, breakpoints, labelID, elementID, onCompose }: Props) => {
+const PrivateLayout = ({
+    children,
+    location,
+    history,
+    breakpoints,
+    labelID,
+    elementID,
+    onCompose,
+    isBlurred
+}: Props) => {
     const [expanded, setExpand] = useState(false);
 
     const handleSearch = useCallback((keyword = '', labelID = MAILBOX_LABEL_IDS.ALL_MAIL as string) => {
@@ -58,7 +68,7 @@ const PrivateLayout = ({ children, location, history, breakpoints, labelID, elem
     );
 
     return (
-        <PrivateAppContainer header={header} sidebar={sidebar}>
+        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred}>
             {children}
         </PrivateAppContainer>
     );

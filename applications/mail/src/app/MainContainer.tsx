@@ -7,7 +7,6 @@ import AttachmentProvider from './containers/AttachmentProvider';
 import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
 import React from 'react';
-import { RouteProps } from './PrivateApp';
 
 const MainContainer = () => {
     const breakpoints = useActiveBreakpoint();
@@ -19,9 +18,7 @@ const MainContainer = () => {
                         {({ onCompose }) => (
                             <Route
                                 path="/:labelID?/:elementID?/:messageID?"
-                                render={(routeProps: RouteProps) => (
-                                    <PageContainer {...routeProps} breakpoints={breakpoints} onCompose={onCompose} />
-                                )}
+                                render={() => <PageContainer breakpoints={breakpoints} onCompose={onCompose} />}
                             />
                         )}
                     </ComposerContainer>

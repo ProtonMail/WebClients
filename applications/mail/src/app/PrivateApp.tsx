@@ -1,5 +1,4 @@
 import React from 'react';
-import { RouteChildrenProps } from 'react-router';
 import { StandardPrivateApp } from 'react-components';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { Model } from 'proton-shared/lib/interfaces/Model';
@@ -16,8 +15,6 @@ import {
     ContactsModel,
     ContactEmailsModel
 } from 'proton-shared/lib/models';
-
-export type RouteProps = RouteChildrenProps<{ labelID: string; elementID?: string; messageID?: string }>;
 
 interface Props {
     onLogout: () => void;

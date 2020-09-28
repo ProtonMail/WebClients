@@ -1,25 +1,37 @@
-import React, { memo } from 'react';
-import { Redirect } from 'react-router-dom';
-import { ErrorBoundary, useMailSettings, useUserSettings, useLabels, useFolders } from 'react-components';
+import React, { memo, useEffect } from 'react';
+import { Redirect, useRouteMatch, useHistory, useLocation } from 'react-router-dom';
+import {
+    ErrorBoundary,
+    useMailSettings,
+    useUserSettings,
+    useLabels,
+    useFolders,
+    useWelcomeFlags,
+    useModals
+} from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
 import MailboxContainer from './MailboxContainer';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
-import { RouteProps } from '../PrivateApp';
 import { Breakpoints } from '../models/utils';
 import { useLinkHandler } from '../hooks/useLinkHandler';
 import { OnCompose } from '../hooks/useCompose';
 import { useDeepMemo } from '../hooks/useDeepMemo';
+import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
 
-interface Props extends Omit<RouteProps, 'match'> {
+type RouteProps = { labelID: string; elementID?: string; messageID?: string };
+
+interface Props {
     params: { currentLabelID: string; elementID?: string; messageID?: string };
     breakpoints: Breakpoints;
     onCompose: OnCompose;
 }
 
-const PageContainer = ({ params, location, history, breakpoints, onCompose }: Props) => {
+const PageContainer = ({ params, breakpoints, onCompose }: Props) => {
+    const location = useLocation();
+    const history = useHistory();
     const [mailSettings] = useMailSettings() as [MailSettings, boolean, Error];
     const [userSettings] = useUserSettings() as [UserSettings, boolean, Error];
     const [labels = []] = useLabels();
@@ -27,6 +39,14 @@ const PageContainer = ({ params, location, history, breakpoints, onCompose }: Pr
     const labelIDs = [...labels, ...folders].map(({ ID }: Label) => ID);
     const { elementID, currentLabelID, messageID } = params;
     const labelID = HUMAN_TO_LABEL_IDS[currentLabelID] || (labelIDs.includes(currentLabelID) && currentLabelID);
+
+    const { createModal } = useModals();
+    const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
+    useEffect(() => {
+        if (welcomeFlags.isWelcomeFlow) {
+            createModal(<MailOnboardingModal onClose={setWelcomeFlagsDone} />);
+        }
+    }, []);
 
     useLinkHandler(onCompose);
 
@@ -36,6 +56,7 @@ const PageContainer = ({ params, location, history, breakpoints, onCompose }: Pr
 
     return (
         <PrivateLayout
+            isBlurred={welcomeFlags.isWelcomeFlow}
             labelID={labelID}
             elementID={elementID}
             location={location}
@@ -62,12 +83,13 @@ const PageContainer = ({ params, location, history, breakpoints, onCompose }: Pr
 
 const MemoPageContainer = memo(PageContainer);
 
-interface PageParamsParserProps extends RouteProps {
+interface PageParamsParserProps {
     breakpoints: Breakpoints;
     onCompose: OnCompose;
 }
 
-const PageParamsParser = ({ match, ...props }: PageParamsParserProps) => {
+const PageParamsParser = (props: PageParamsParserProps) => {
+    const match = useRouteMatch<RouteProps>();
     const params = useDeepMemo(() => {
         const { elementID, labelID: currentLabelID = '', messageID } = (match || {}).params || {};
         return { elementID, currentLabelID, messageID };
