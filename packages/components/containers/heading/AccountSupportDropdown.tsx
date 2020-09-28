@@ -69,7 +69,7 @@ const AccountSupportDropdown = ({ className, children, noCaret = false }: Props)
                                 target="_blank"
                                 className="flex flex-nowrap alignleft"
                             >
-                                {c('Link').t`Common login problems`}
+                                {c('Link').t`Common sign in problems`}
                             </DropdownMenuLink>
                             <DropdownMenuLink
                                 href={isVPN ? 'https://protonvpn.com/support/' : 'https://protonmail.com/support/'}

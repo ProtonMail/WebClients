@@ -126,7 +126,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
                         </span>
                     </span>
                     <span className="nonvisible bl no-scroll button-showOnHover-element button-account-login semibold small m0">
-                        {loadingMap[LocalID] ? <LoaderIcon /> : c('Action').t`Login`}
+                        {loadingMap[LocalID] ? <LoaderIcon /> : c('Action').t`Sign in`}
                     </span>
                 </button>
             );

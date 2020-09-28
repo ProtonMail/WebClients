@@ -65,7 +65,7 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
     ];
 
     const vpnTitles = [
-        { value: 'Login problem', text: c('Bug category').t`Login problem` },
+        { value: 'Login problem', text: c('Bug category').t`Sign in problem` },
         { value: 'Signup problem', text: c('Bug category').t`Signup problem` },
         { value: 'Payments problem', text: c('Bug category').t`Payments problem` },
         { value: 'Installation problem', text: c('Bug category').t`Installation problem` },

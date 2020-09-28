@@ -24,11 +24,11 @@ const { DISABLE, BASIC, ADVANCED } = LOGS_STATE;
 const { LOGIN_FAILURE_PASSWORD, LOGIN_SUCCESS, LOGOUT, LOGIN_FAILURE_2FA, LOGIN_SUCCESS_AWAIT_2FA } = AUTH_LOG_EVENTS;
 
 const getEventsI18N = () => ({
-    [LOGIN_FAILURE_PASSWORD]: c('Log event').t`Login failure (password)`,
-    [LOGIN_SUCCESS]: c('Log event').t`Login success`,
-    [LOGOUT]: c('Log event').t`Logout`,
-    [LOGIN_FAILURE_2FA]: c('Log event').t`Login failure (2FA)`,
-    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Login failure (2FA)`,
+    [LOGIN_FAILURE_PASSWORD]: c('Log event').t`Sign in failure (password)`,
+    [LOGIN_SUCCESS]: c('Log event').t`Sign in success`,
+    [LOGOUT]: c('Log event').t`Sign out`,
+    [LOGIN_FAILURE_2FA]: c('Log event').t`Sign in failure (2FA)`,
+    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Sign in success (2FA)`,
 });
 
 const LogsSection = () => {

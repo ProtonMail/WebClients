@@ -165,7 +165,7 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
             onClick: () => withLoading(revokeAdmin()),
         },
         canLogin && {
-            text: c('Member action').t`Login`,
+            text: c('Member action').t`Sign in`,
             onClick: login,
         },
         canMakePrivate && {
