@@ -1,3 +1,15 @@
+# [4.0.0-beta.8] - 2020-09-29
+
+## Added
+- Add sequence to events
+## Updated
+- Update design of event creation form
+- Update import (overwrite events on import; restrict importing certain unsupported events; ability to import files with non-standard line-break formatting)
+## Fixed
+- Bug hiding timezones in event modal
+
+___
+
 # [4.0.0-beta.7] - 2020-07-27
 
 ## Updated
