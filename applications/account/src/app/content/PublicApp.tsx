@@ -6,6 +6,7 @@ import { OnLoginCallbackArguments, ProtonLoginCallback } from 'react-components/
 import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
 import { produceFork, ProduceForkParameters } from 'proton-shared/lib/authentication/sessionForking';
 import { SSO_PATHS, UNPAID_STATE } from 'proton-shared/lib/constants';
+import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import {
     AccountForgotUsernameContainer,
@@ -46,7 +47,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             });
         }
         if (forkState) {
-            await produceFork({ api, UID, keyPassword, ...forkState });
+            const type = args.flow === 'signup' ? FORK_TYPE.SIGNUP : undefined;
+            await produceFork({ api, UID, keyPassword, ...forkState, type });
             return;
         }
         return onLogin(args);

@@ -13,6 +13,8 @@ import {
     PrivateAppContainer,
     MainLogo,
     useOrganization,
+    useModals,
+    useWelcomeFlags,
 } from 'react-components';
 
 import { getPages } from '../pages';
@@ -23,6 +25,7 @@ import GeneralContainer from '../containers/GeneralContainer';
 import SecurityContainer from '../containers/SecurityContainer';
 import OverviewContainer from '../containers/OverviewContainer';
 import SidebarVersion from './SidebarVersion';
+import AccountOnboardingModal from '../components/AccountOnboardingModal';
 
 const MainContainer = () => {
     const [user] = useUser();
@@ -31,10 +34,18 @@ const MainContainer = () => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
     const { isNarrow } = useActiveBreakpoint();
+    const [welcomeFlags, setWelcomeFlagDone] = useWelcomeFlags();
+    const { createModal } = useModals();
 
     useEffect(() => {
         setExpand(false);
     }, [location.pathname, location.hash]);
+
+    useEffect(() => {
+        if (welcomeFlags.isWelcomeFlow) {
+            createModal(<AccountOnboardingModal onClose={setWelcomeFlagDone} />);
+        }
+    }, []);
 
     const logo = <MainLogo to="/" />;
 
@@ -63,7 +74,7 @@ const MainContainer = () => {
     );
 
     return (
-        <PrivateAppContainer header={header} sidebar={sidebar}>
+        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={welcomeFlags.isWelcomeFlow}>
             <Switch>
                 <Route path="/overview" render={() => <OverviewContainer />} />
                 <Route
