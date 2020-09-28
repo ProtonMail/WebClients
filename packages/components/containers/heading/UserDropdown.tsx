@@ -36,7 +36,7 @@ const UserDropdown = ({ ...rest }) => {
     const { Name: organizationName } = organization || {};
     const [user] = useUser();
     const [userSettings] = useUserSettings();
-    const { UsedSpace, MaxSpace, isMember } = user;
+    const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
     const spacePercentage = Math.round((UsedSpace * 100) / MaxSpace);
     const { logout } = useAuthentication();
     const { createModal } = useModals();
@@ -45,7 +45,10 @@ const UserDropdown = ({ ...rest }) => {
     const [loading, withLoading] = useLoading();
     const canAddStorage = useMemo(() => {
         if (!subscription) {
-            return true;
+            return false;
+        }
+        if (isSubUser) {
+            return false;
         }
         if (isMember) {
             return false;
