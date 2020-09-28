@@ -5,7 +5,7 @@ import { updateWelcomeFlags } from 'proton-shared/lib/api/settings';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { FormModal } from '../../components';
-import { useApi, useEventManager, useGetAddresses, useLoading, useWelcomeFlags } from '../../hooks';
+import { useApi, useEventManager, useGetAddresses, useLoading, useUser, useWelcomeFlags } from '../../hooks';
 
 import { OnboardingStepProps, OnboardingStepRenderCallback } from './interface';
 import OnboardingSetDisplayName from './OnboardingSetDisplayName';
@@ -24,15 +24,13 @@ interface Props {
 }
 
 const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) => {
-    const [displayName, setDisplayName] = useState('');
+    const [user] = useUser();
+    const [displayName, setDisplayName] = useState(user.Name);
     const [loadingDisplayName, withLoading] = useLoading();
     const getAddresses = useGetAddresses();
     const api = useApi();
     const { call } = useEventManager();
-    const [isSubmitted, setIsSubmitted] = useState(false);
     const [welcomeFlags] = useWelcomeFlags();
-
-    const displayNameError = !displayName ? c('Signup error').t`This field is required` : '';
 
     const handleUpdateWelcomeFlags = async () => {
         if (setWelcomeFlags) {
@@ -48,10 +46,6 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
 
     const setDisplayNameStep = ({ onNext }: OnboardingStepRenderCallback) => {
         const handleNext = async () => {
-            setIsSubmitted(true);
-            if (displayNameError) {
-                return;
-            }
             const addresses = await getAddresses();
             const firstAddress = addresses[0];
             // Should never happen.
@@ -73,12 +67,7 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
                 close={null}
                 onSubmit={() => withLoading(handleNext())}
             >
-                <OnboardingSetDisplayName
-                    isSubmitted={isSubmitted}
-                    displayNameError={displayNameError}
-                    displayName={displayName}
-                    setDisplayName={setDisplayName}
-                />
+                <OnboardingSetDisplayName displayName={displayName} setDisplayName={setDisplayName} />
             </OnboardingStep>
         );
     };
