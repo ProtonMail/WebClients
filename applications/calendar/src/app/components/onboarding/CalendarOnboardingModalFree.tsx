@@ -37,7 +37,7 @@ const CalendarOnboardingModalFree = (props: any) => {
                             .t`${appName} is currently in beta and only available to paid users of ${mailAppName}.`}
                         img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
                         text={c('Onboarding ProtonCalendar')
-                            .t`To start keeping your plans private now, consider upgrading to a paid plan. ${appName} will be available to Free plan users when it launches.`}
+                            .t`To access ${appName} Beta program today, consider upgrading to a paid plan. ${appName} will be available to Free plan users upon launch.`}
                     />
                 </OnboardingStep>
             )}
