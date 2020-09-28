@@ -37,3 +37,6 @@ export const getAccountSettingsApp = () => (isSSOMode ? APPS.PROTONACCOUNT : APP
 export const getClientID = (appName: APP_NAMES) => {
     return APPS_CONFIGURATION[appName].clientID;
 };
+export const getAppName = (appName: APP_NAMES) => {
+    return APPS_CONFIGURATION[appName].name;
+};

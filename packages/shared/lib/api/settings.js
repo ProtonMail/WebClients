@@ -141,3 +141,8 @@ export const updateTimeFormat = (TimeFormat) => ({
     method: 'put',
     data: { TimeFormat },
 });
+
+export const updateWelcomeFlags = () => ({
+    url: 'settings/welcome',
+    method: 'put',
+});

@@ -1,6 +1,6 @@
 import getRandomValues from 'get-random-values';
 import { APP_NAMES, APPS, APPS_CONFIGURATION, SSO_PATHS } from '../constants';
-import { uint8ArrayToString, encodeBase64URL } from '../helpers/encoding';
+import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
 import { replaceUrl } from '../helpers/browser';
 import { getAppHref } from '../apps/helper';
 import {
@@ -72,8 +72,9 @@ interface ProduceForkArguments {
     keyPassword?: string;
     app: APP_NAMES;
     state: string;
+    type?: FORK_TYPE;
 }
-export const produceFork = async ({ api, UID, keyPassword, state, app }: ProduceForkArguments) => {
+export const produceFork = async ({ api, UID, keyPassword, state, app, type }: ProduceForkArguments) => {
     const rawKey = getRandomValues(new Uint8Array(32));
     const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
     const payload = keyPassword ? await getForkEncryptedBlob(await getKey(rawKey), { keyPassword }) : undefined;
@@ -93,6 +94,9 @@ export const produceFork = async ({ api, UID, keyPassword, state, app }: Produce
     toConsumeParams.append('selector', Selector);
     toConsumeParams.append('state', state);
     toConsumeParams.append('sk', base64StringKey);
+    if (type !== undefined) {
+        toConsumeParams.append('t', type);
+    }
 
     return replaceUrl(getAppHref(`${SSO_PATHS.FORK}#${toConsumeParams.toString()}`, app));
 };
@@ -116,11 +120,13 @@ export const getConsumeForkParameters = () => {
     const selector = hashParams.get('selector') || '';
     const state = hashParams.get('state') || '';
     const base64StringKey = hashParams.get('sk') || '';
+    const type = hashParams.get('t') || '';
 
     return {
         state: state.slice(0, 100),
         selector,
         key: base64StringKey.length ? getValidatedRawKey(base64StringKey) : undefined,
+        type: getValidatedForkType(type),
     };
 };
 
@@ -129,8 +135,9 @@ interface ConsumeForkArguments {
     selector: string;
     state: string;
     key: Uint8Array;
+    type?: FORK_TYPE;
 }
-export const consumeFork = async ({ selector, api, state, key }: ConsumeForkArguments) => {
+export const consumeFork = async ({ selector, api, state, key, type }: ConsumeForkArguments) => {
     const stateData = getForkStateData(sessionStorage.getItem(`f${state}`));
     if (!stateData) {
         throw new InvalidForkConsumeError(`Missing state ${state}`);
@@ -144,13 +151,16 @@ export const consumeFork = async ({ selector, api, state, key }: ConsumeForkArgu
 
     const { UID, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
 
+    const flow = type === FORK_TYPE.SIGNUP ? 'signup' : undefined;
+
     try {
         // Resume and use old session if it exists
         const validatedSession = await resumeSession(api, LocalID);
         return {
             ...validatedSession,
             path,
-        };
+            flow,
+        } as const;
     } catch (e) {
         // If existing session is invalid. Fall through to continue using the new fork.
         if (!(e instanceof InvalidPersistentSessionError)) {
@@ -189,5 +199,6 @@ export const consumeFork = async ({ selector, api, state, key }: ConsumeForkArgu
     return {
         ...result,
         path,
-    };
+        flow,
+    } as const;
 };
