@@ -22,7 +22,7 @@ const SubscriptionTable = ({
                     return (
                         <div key={title} className="flex-autogrid-item flex" data-plan-name={name}>
                             <div
-                                className="bordered-container subscriptionTable-plan onmobile-mb2 pt2 pb2 pl0-75 pr0-75 flex flex-column relative w100"
+                                className="bordered-container subscriptionTable-plan onmobile-mb2 pt2 pb2 pl0-75 pr0-75 flex-noMinChildren flex-column relative w100"
                                 data-current-plan={index === currentPlanIndex}
                                 data-most-popular={index === mostPopularIndex}
                             >
@@ -43,7 +43,7 @@ const SubscriptionTable = ({
                                         <img src={imageSrc} alt={title} />
                                     </div>
                                 </header>
-                                <p className="subscriptionTable-description aligncenter mt0 mb1 bold">{description}</p>
+                                <p className="aligncenter mt0 mb1 bold min-h5e">{description}</p>
                                 <ul className="unstyled small mb2 flex-item-fluid-auto">
                                     {features.map(({ icon, content }, index) => {
                                         return (
