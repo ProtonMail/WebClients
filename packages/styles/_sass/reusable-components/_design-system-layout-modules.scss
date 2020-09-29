@@ -483,7 +483,7 @@ $list-min-width-em: 1.4, 3, 5, 14, 35 !default;
 }
 
 
-$list-min-height-em: 16 !default;
+$list-min-height-em: 5, 16 !default;
 
 @each $min-height in $list-min-height-em {
     .min-h#{$min-height}e {
