@@ -243,6 +243,6 @@ export const useSendWithUndo = () => {
             await actualSend();
             createNotification({ text: c('Info').t`Message sent` });
         };
-        send();
+        return send();
     }, []);
 };
