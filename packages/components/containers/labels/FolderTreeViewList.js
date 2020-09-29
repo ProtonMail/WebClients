@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { order, getParents } from 'proton-shared/lib/helpers/folder';
 import { orderFolders, updateLabel } from 'proton-shared/lib/api/labels';
-import { ROOT_FOLDER, FEATURE_FLAGS } from 'proton-shared/lib/constants';
+import { ROOT_FOLDER } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import { Icon, TreeViewContainer, TreeViewItem } from '../../components';
@@ -110,7 +110,7 @@ const FolderTreeViewList = ({ items = [] }) => {
                                     setPosition(BEFORE);
                                 } else if (pointer > quarter * 3) {
                                     setPosition(AFTER);
-                                } else if (FEATURE_FLAGS.includes('sub-folder')) {
+                                } else {
                                     setPosition(INSIDE);
                                 }
                             }}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { LABEL_TYPE, FEATURE_FLAGS } from 'proton-shared/lib/constants';
+import { LABEL_TYPE } from 'proton-shared/lib/constants';
 import { Alert, Input, Label, Row, Field, ColorPicker, Toggle, Info } from '../../components';
 
 import ParentFolderSelector from './ParentFolderSelector';
@@ -9,7 +9,7 @@ import ParentFolderSelector from './ParentFolderSelector';
 function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID, onChangeNotify }) {
     return (
         <div className="center flex-item-fluid">
-            {!label.ID && label.Type === LABEL_TYPE.MESSAGE_FOLDER && FEATURE_FLAGS.includes('sub-folder') ? (
+            {!label.ID && label.Type === LABEL_TYPE.MESSAGE_FOLDER ? (
                 <Alert>{c('Info')
                     .t`Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.`}</Alert>
             ) : null}
@@ -42,7 +42,7 @@ function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID, on
                     </Field>
                 </Row>
             ) : null}
-            {label.Type === LABEL_TYPE.MESSAGE_FOLDER && FEATURE_FLAGS.includes('sub-folder') ? (
+            {label.Type === LABEL_TYPE.MESSAGE_FOLDER ? (
                 <>
                     <Row>
                         <Label htmlFor="parentID">{c('Label').t`Folder location`}</Label>
