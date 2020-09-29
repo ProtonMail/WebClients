@@ -105,7 +105,7 @@ const Payment = ({
                         );
                     })}
                 </div>
-                <div className="pm-field-container payment-right">
+                <div className="w60 payment-right mr1">
                     <div className="mw37e onmobile-mw100">
                         <Method
                             loading={loading}

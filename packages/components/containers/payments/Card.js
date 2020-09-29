@@ -38,8 +38,8 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                     required
                 />
             </Block>
-            <div className="flex-autogrid">
-                <div className="flex-autogrid-item ">
+            <div className="payment-side-fields mb1">
+                <div>
                     <Label className="mb0-5 bl" htmlFor="exp">{c('Label').t`Expiry date`}</Label>
                     <ExpInput
                         id="exp"
@@ -54,9 +54,9 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                         required
                     />
                 </div>
-                <div className="flex-autogrid-item">
-                    <Label className="mb0-5 bl" htmlFor="cvc">
-                        <span className="mr0-5">{c('Label').t`Security code`}</span>
+                <div>
+                    <Label className="mb0-5 bl flex flex-items-center" htmlFor="cvc">
+                        <span className="mr0-25">{c('Label').t`Security code`}</span>
                         <Info
                             title={c('Info')
                                 .t`For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.`}
@@ -75,8 +75,8 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                     />
                 </div>
             </div>
-            <div className="flex-autogrid">
-                <div className="flex-autogrid-item">
+            <div className="payment-side-fields mb1">
+                <div>
                     <Label className="mb0-5 bl" htmlFor="country">{c('Label').t`Country`}</Label>
                     <Select
                         id="country"
@@ -88,7 +88,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                         title={c('Label').t`Select your country`}
                     />
                 </div>
-                <div className="flex-autogrid-item">
+                <div>
                     <Label className="mb0-5 bl" htmlFor="postalcode">
                         {card.country === 'US' ? c('Label').t`ZIP` : c('Label').t`Postal code`}
                     </Label>
