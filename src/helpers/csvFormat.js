@@ -22,7 +22,7 @@ const PROPERTIES = {
     impp: ['impp'],
     lang: ['language'],
     logo: ['logo'],
-    member: ['membmer', 'group membership'],
+    member: ['member', 'group membership'],
     nickname: ['nickname', 'display name', 'screen name'],
     note: ['notes', 'note'],
     org: ['company', 'organization', 'department'],
