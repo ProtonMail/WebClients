@@ -1,27 +1,6 @@
-/* eslint-disable react/display-name */
-import React from 'react';
-import { act, renderHook } from '@testing-library/react-hooks';
-import createCache from 'proton-shared/lib/helpers/cache';
-import { CacheProvider } from 'react-components';
-import DriveCacheProvider, { DriveCache, useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { initDriveAsync } from './drive';
-import { ShareMeta } from '../../interfaces/share';
 
 describe('drive utils', () => {
-    let driveCache: DriveCache;
-
-    beforeEach(() => {
-        const cache = createCache();
-        const { result } = renderHook(() => useDriveCache(), {
-            wrapper: ({ children }) => (
-                <DriveCacheProvider>
-                    <CacheProvider cache={cache}>{children}</CacheProvider>
-                </DriveCacheProvider>
-            ),
-        });
-        driveCache = result.current;
-    });
-
     describe('initDrive', () => {
         it('should create a volume and render onboarding modal when there are no shares', async () => {
             expect.assertions(1);
@@ -41,16 +20,16 @@ describe('drive utils', () => {
             );
             const getUserSharesMock = jest.fn().mockResolvedValue([]);
 
-            const result = await initDriveAsync(driveCache, createVolumeMock, getUserSharesMock, getShareMetaMock);
+            const result = await initDriveAsync(createVolumeMock, getUserSharesMock, getShareMetaMock);
 
             expect(result).toBe('test-share-mock');
         });
 
         it('should return default share and initialize other shares in cache', async () => {
-            expect.assertions(2);
+            expect.assertions(1);
 
             const createVolumeMock = jest.fn();
-            const getUserSharesMock = jest.fn().mockResolvedValue(['share-1', 'share-2']);
+            const getUserSharesMock = jest.fn().mockResolvedValue([['share-1', 'share-2'], 'share-2']);
             const getShareMetaMock = jest.fn((shareId: string) =>
                 Promise.resolve(
                     ({
@@ -60,14 +39,9 @@ describe('drive utils', () => {
                 )
             );
 
-            let result: ShareMeta | null = null;
+            const result = await initDriveAsync(createVolumeMock, getUserSharesMock, getShareMetaMock);
 
-            await act(async () => {
-                result = await initDriveAsync(driveCache, createVolumeMock, getUserSharesMock, getShareMetaMock);
-            });
-
-            expect(result).toBe('test-share-mock-1');
-            expect(driveCache.get.shareIds()).toEqual(['share-1', 'share-2']);
+            expect(result).toBe('test-share-mock-2');
         });
     });
 });

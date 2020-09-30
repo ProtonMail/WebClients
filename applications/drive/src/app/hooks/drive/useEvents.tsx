@@ -2,11 +2,17 @@ import { useEventManager } from 'react-components';
 
 import useDriveCrypto from './useDriveCrypto';
 import useDebouncedRequest from '../util/useDebouncedRequest';
-import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
+import { LinkKeys, useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { useDriveEventManager, ShareEvent } from '../../components/DriveEventManager/DriveEventManagerProvider';
 import { LinkMeta } from '../../interfaces/link';
 import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
-import { getLinkKeysAsync, getShareKeysAsync, decryptLinkAsync } from '../../utils/drive/drive';
+import {
+    getLinkKeysAsync,
+    getShareKeysAsync,
+    decryptLinkAsync,
+    getLinkMetaAsync,
+    decryptLinkPassphraseAsync,
+} from '../../utils/drive/drive';
 import { EVENT_TYPES } from '../../constants';
 
 const { CREATE, DELETE, UPDATE_METADATA } = EVENT_TYPES;
@@ -15,11 +21,63 @@ function useEvents() {
     const cache = useDriveCache();
     const { call } = useEventManager();
     const { getShareEventManager, createShareEventManager } = useDriveEventManager();
-    const { getVerificationKeys } = useDriveCrypto();
+    const { getVerificationKeys, decryptSharePassphrase } = useDriveCrypto();
     const debouncedRequest = useDebouncedRequest();
 
     const events = {
         handleEvents: (shareId: string) => async ({ Events = [] }: { Events: ShareEvent[] }) => {
+            const getShareKeys = async (shareId: string) => {
+                const keys = await getShareKeysAsync(
+                    debouncedRequest,
+                    cache,
+                    shareId,
+                    decryptSharePassphrase,
+                    (shareId: string) => {
+                        const eventManager = getShareEventManager(shareId);
+                        eventManager.subscribe(events.handleEvents(shareId));
+                        return Promise.resolve();
+                    }
+                );
+                return keys;
+            };
+
+            const getLinkKeys = async (shareId: string, linkId: string): Promise<LinkKeys> => {
+                const keys = await getLinkKeysAsync(
+                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                    decryptLinkPassphrase,
+                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                    getLinkMeta,
+                    cache,
+                    shareId,
+                    linkId
+                );
+                return keys;
+            };
+
+            const getLinkMeta = async (shareId: string, linkId: string): Promise<LinkMeta> => {
+                const meta = await getLinkMetaAsync(
+                    debouncedRequest,
+                    getLinkKeys,
+                    getShareKeys,
+                    cache,
+                    shareId,
+                    linkId
+                );
+                return meta;
+            };
+
+            const decryptLinkPassphrase = (shareId: string, linkMeta: LinkMeta) => {
+                return decryptLinkPassphraseAsync(shareId, getLinkKeys, getShareKeys, getVerificationKeys, linkMeta);
+            };
+
+            const decryptLink = async (meta: LinkMeta) => {
+                const { privateKey } = meta.ParentLinkID
+                    ? await getLinkKeys(shareId, meta.ParentLinkID)
+                    : await getShareKeys(shareId);
+
+                return decryptLinkAsync(meta, privateKey);
+            };
+
             const isTrashedRestoredOrMoved = ({ LinkID, ParentLinkID, Trashed }: LinkMeta) => {
                 const existing = cache.get.linkMeta(shareId, LinkID);
                 return existing && (existing.Trashed !== Trashed || existing.ParentLinkID !== ParentLinkID);
@@ -36,30 +94,7 @@ function useEvents() {
                         actions.softDelete.push(Link.LinkID);
                     }
 
-                    const decryptedLinkPromise = (async () => {
-                        const { privateKey } = Link.ParentLinkID
-                            ? await getLinkKeysAsync(
-                                  debouncedRequest,
-                                  getVerificationKeys,
-                                  cache,
-                                  events.subscribe,
-                                  shareId,
-                                  Link.ParentLinkID
-                              )
-                            : await getShareKeysAsync(
-                                  debouncedRequest,
-                                  getVerificationKeys,
-                                  cache,
-                                  (shareId: string) => {
-                                      const eventManager = getShareEventManager(shareId);
-                                      eventManager.subscribe(events.handleEvents(shareId));
-                                      return Promise.resolve();
-                                  },
-                                  shareId
-                              );
-
-                        return decryptLinkAsync(Link, privateKey);
-                    })();
+                    const decryptedLinkPromise = decryptLink(Link);
 
                     if (EventType === CREATE) {
                         actions.create[Link.ParentLinkID] = [

@@ -22,17 +22,20 @@ export const mapLinksToChildren = (
     decryptedLinks: LinkMeta[],
     isDisabled: (linkId: string) => boolean
 ): FileBrowserItem[] => {
-    return decryptedLinks.map(({ LinkID, Type, Name, ModifyTime, Size, MIMEType, ParentLinkID, Trashed }) => ({
-        Name,
-        LinkID,
-        Type,
-        ModifyTime,
-        Size,
-        MIMEType,
-        ParentLinkID,
-        Trashed,
-        Disabled: isDisabled(LinkID),
-    }));
+    return decryptedLinks.map(
+        ({ LinkID, Type, Name, ModifyTime, Size, MIMEType, ParentLinkID, Trashed, ShareIDs, Shared }) => ({
+            Name,
+            LinkID,
+            Type,
+            ModifyTime,
+            Size,
+            MIMEType,
+            ParentLinkID,
+            Trashed,
+            Disabled: isDisabled(LinkID),
+            SharedURLShareID: Shared ? ShareIDs[0] : undefined,
+        })
+    );
 };
 
 export const toLinkURLType = (type: LinkType) => {
