@@ -86,6 +86,22 @@ $default-height-fields: 4.1rem;
 			}
 		}
 	}
+
+	// special case for signup :-\
+	.payment-side-fields {
+		@include respond-to(768) {
+			grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+		}
+		@include respond-to(720) {
+			grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+		}
+		@include respond-to($breakpoint-small) {
+			grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+		}
+		@include respond-to($breakpoint-tiny) {
+			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		}
+	}
 }
 .payment-side-fields {
 	display: grid;
