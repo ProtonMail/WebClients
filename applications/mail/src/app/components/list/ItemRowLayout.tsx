@@ -76,7 +76,7 @@ const ItemRowLayout = ({
                 </span>
             </div>
             <span className="item-weight mtauto mbauto mr1 ml1 alignright">{!loading && size}</span>
-            <span className="item-senddate-row mauto w10e alignright">
+            <span className="item-senddate-row mauto w11e alignright">
                 <ItemDate element={element} labelID={labelID} className={unread ? 'bold' : undefined} />
             </span>
         </div>
