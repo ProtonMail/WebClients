@@ -35,7 +35,7 @@
 $container-to-width: 3em !default;
 
 .items-column-list {
-	width: calc((100% + var(--width-sidebar, #{$width-sidebar})) * #{$conversations-column-width/1%/100});
+	width: var(--width-conversation-column, calc((100% + var(--width-sidebar, #{$width-sidebar})) * #{$conversations-column-width/1%/100}));
 }
 
 .items-column-list-inner,
