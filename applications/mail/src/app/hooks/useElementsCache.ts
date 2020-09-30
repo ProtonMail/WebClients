@@ -3,7 +3,7 @@ import { useCache } from 'react-components';
 import { Element } from '../models/element';
 import { Page, Filter, Sort } from '../models/tools';
 import { SetStateAction, useCallback, useEffect, useState } from 'react';
-import { useMessageCache } from '../containers/MessageProvider';
+import { useMessageCache, getLocalID } from '../containers/MessageProvider';
 import { useConversationCache } from '../containers/ConversationProvider';
 
 export const ELEMENTS_CACHE_KEY = 'Elements';
@@ -91,10 +91,15 @@ export const useGetElementsFromIDs = () => {
     return useCallback(
         (elementIDs: string[]) => {
             const elementsCache = getElementsCache();
-            return elementIDs.map(
-                (ID: string) =>
-                    elementsCache.elements[ID] || messageCache.get(ID)?.data || conversationCache.get(ID)?.Conversation
-            );
+            return elementIDs.map((ID: string) => {
+                if (elementsCache.elements[ID]) {
+                    return elementsCache.elements[ID];
+                }
+
+                const localID = getLocalID(messageCache, ID);
+
+                return messageCache.get(localID)?.data || conversationCache.get(ID)?.Conversation;
+            });
         },
         [getElementsCache]
     );
