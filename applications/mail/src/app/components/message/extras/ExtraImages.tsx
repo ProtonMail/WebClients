@@ -1,6 +1,8 @@
 import React from 'react';
-import { Icon } from 'react-components';
+import { Icon, useMailSettings } from 'react-components';
 import { c } from 'ttag';
+
+import { hasShowEmbedded, hasShowRemote } from '../../../helpers/settings';
 import { MessageExtended } from '../../../models/message';
 
 interface Props {
@@ -14,8 +16,21 @@ const ExtraImages = ({
     type,
     onLoadImages
 }: Props) => {
-    // Flags will not be setted if there is no images
-    if ((type === 'remote' && showRemoteImages !== false) || (type === 'embedded' && showEmbeddedImages !== false)) {
+    const [mailSettings] = useMailSettings();
+
+    if (type === 'embedded' && hasShowEmbedded(mailSettings)) {
+        return null;
+    }
+
+    if (type === 'embedded' && showEmbeddedImages !== false) {
+        return null;
+    }
+
+    if (type === 'remote' && hasShowRemote(mailSettings)) {
+        return null;
+    }
+
+    if (type === 'remote' && showRemoteImages !== false) {
         return null;
     }
 
