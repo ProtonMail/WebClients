@@ -125,6 +125,7 @@ const CodeVerification = ({ email: defaultEmail = '', mode, method, onSubmit }: 
                 <div className="mb1">
                     <IntlTelInput
                         id="phone"
+                        defaultValue={phone}
                         autoFocus
                         containerClassName="w100"
                         inputClassName="w100"
