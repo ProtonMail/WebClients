@@ -2,35 +2,66 @@
 
 ## New
 
-- added `ellipsis-two-lines` helper
-- hover effect for conversation row
-- added `empty-folder`, `proton-account`, `contact-full` icons
+-
+-
+
+## Updated/fixes
+
+-
+-
+
+
+
+# [1.8.5] - 2019-09-30
+
+## New
+
+### Brand new 🎉
+
+- new label stack component/rework transitions
+- add helper in `LabelStack` to remove max width
+- new overview page design  🎉
+- new event styles for Calendar
 - added SSO login styles + multi-account support
+
+### New helpers
+
+- added `ellipsis-two-lines` helper
 - added `semibold` helper
 - added `tiny-shadow-container` helper, made it dark mode friendly
 - added `button-showOnHover` and `.button-showOnHover-element` helper (to display something when hovering a parent)
 - added `flex-flex-children` helper
-- add “broken file” image
 - added `bottom` and `centered-absolute-horizontal` helpers
-- added `.pm-button--pill` modifier
-- documentation for responsive helpers, 2-columns list and sizing helpers
-- new label stack component/rework transitions
-- new overview page design  🎉
-- new event styles for Calendar
-- tiny reset for `mark` tag
-- add “TOR” icon
-- update “P2P” icon
-- fix meterBar component background color in dark mode
-- fix links default underline style
-- fix - `table` reset for Mail - added a Sass variable to trigger it or not (Mail is the special case, newsletter compatibility ftw)
-- improve buttons loading state
-- add helper in `LabelStack` to remove max width
 - added `min-h5e`, `w11e` helper
 
+### New fixes/reset
 
-## Updated/fixes
+- tiny reset for `mark` tag
+- fix meterBar component background color in dark mode
+- fix links default underline style
+- improve buttons loading state
+- hover effect for conversation row
+- added `.pm-button--pill` modifier
+- fix - `table` reset for Mail - added a Sass variable to trigger it or not (Mail is the special case, newsletter compatibility ftw)
+- remove italic for placeholders text in fields
+
+### Misc
+
+- documentation for responsive helpers, 2-columns list and sizing helpers
+- add “broken file” image
+- add “TOR”, “P2P”, `empty-folder`, `proton-account`, `contact-full` icons
+
+
+## Updated/bugfixes
+
+### Safari 🤪
 
 - fix Safari dumb and 💩 behaviour (scrolling caused by `sr-only` 🤪 🤪 🤪 )
+- fix Safari 💩 and crazy behaviour on `main-area--noHeader`
+- fix Safari bug on modal footers
+
+### Others
+
 - fix - cursor on scroll track in Chrome with textarea
 - revamped a bit `pm-field--linkSelect` stuff
 - fix `item-weight` display in row mode
@@ -45,10 +76,7 @@
 - update appsDropdown sizing way and values
 - updated tooltip fragment to allow creating colored tooltips easily
 - fixed `pm-button--small` loading state
-- fix Safari 💩 and crazy behaviour on `main-area--noHeader`
-- remove italic for placeholders text in fields
 - fixed fields with text positionned above (@protonmail.com)
-- fix Safari bug on modal footers
 - fix several regressions: overflow on some fields (`field-icon-container`), composer, etc.
 - fix display of attachment size
 - improve button backgrounds management to avoid conflicts between states
