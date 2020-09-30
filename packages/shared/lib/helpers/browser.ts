@@ -37,6 +37,7 @@ export const isMac = () => ua.os.name === 'Mac OS';
 export const hasTouch = typeof document === 'undefined' ? false : 'ontouchstart' in document.documentElement;
 export const hasCookie = () => navigator.cookieEnabled;
 export const getBrowser = () => ua.browser;
+export const getMajorVersion = () => (ua.browser.version ? parseInt(ua.browser.version.split('.')[0], 10) : undefined);
 export const getDevice = () => ua.device;
 export const isMobile = () => {
     const { type } = getDevice();
@@ -91,7 +92,15 @@ export const getActiveXObject = (name: string) => {
 
 export const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 export const hasAcrobatInstalled = () => !!(getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl'));
-export const hasPDFSupport = () => 'application/pdf' in navigator.mimeTypes || isIos() || hasAcrobatInstalled();
+export const hasPDFSupport = () => {
+    const version = getMajorVersion();
+    return (
+        'application/pdf' in navigator.mimeTypes ||
+        (isFirefox() && version && version >= 19) ||
+        isIos() ||
+        hasAcrobatInstalled()
+    );
+};
 export const replaceUrl = (url = '') => document.location.replace(url);
 export const redirectTo = (url = '') => replaceUrl(`${document.location.origin}${url}`);
 
