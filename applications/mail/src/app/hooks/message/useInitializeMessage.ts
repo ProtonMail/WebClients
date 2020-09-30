@@ -158,7 +158,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 verificationErrors: decryption?.verificationErrors,
                 decryptedSubject: decryption?.decryptedSubject,
                 // Anticipate showEmbedded flag while triggering the load just after
-                showEmbeddedImages: preparation?.showEmbeddedImages || hasShowEmbedded(mailSettings) ? true : undefined,
+                showEmbeddedImages: preparation?.showEmbeddedImages,
                 showRemoteImages: preparation?.showRemoteImages,
                 embeddeds: preparation?.embeddeds,
                 errors,
