@@ -1,10 +1,35 @@
 const os = require('os');
 
-const { isWebClientLegacy } = require('../config');
+const { isWebClientLegacy, getPackage } = require('../config');
 const { bash, script } = require('../helpers/cli');
 const { debug, info } = require('../helpers/log')('proton-bundler');
 
 const SOURCE_FILE_INDEX = "find dist -maxdepth 1 -type f -name 'index*.js'";
+
+/**
+ * When we deploy the APP we can deploy it from a cache bundle from staging with the previous version
+ * as once we say staging is ok we tag, we need to bind the tag inside as we do for the sentry config
+ * And we need to refresh the SRI config
+ *
+ * Here we get the commit we deployed from develop, and the version
+ *  -> we take it from the commit of the previous commit as we're running on tag pipeline, so inside
+ *     the current package.json we have the new version
+ *
+ * @param  {Boolean} isNewConfig Is it the new config we need to bind or not
+ * @return {Object} {commit: <String>, version}: <String>}
+ */
+const getConfigDeployGit = async (isNewConfig) => {
+    if (!isNewConfig) {
+        const { stdout: commit } = await bash('git rev-parse origin/develop');
+        const { stdout: pkg } = await bash('git show HEAD~1:package.json');
+        const { version } = JSON.parse(pkg);
+        return { commit, version };
+    }
+
+    const { stdout: commit } = await bash('git rev-parse HEAD');
+    const { version } = getPackage();
+    return { commit, version };
+};
 
 /**
  * Get the configuration for a deployement
@@ -65,8 +90,12 @@ async function getNewConfig(api, flags = process.argv.slice(3), isCurrent = fals
 
     // we don't use npx as for the CI we cached it so it's faster
     const { stdout = '' } = await bash('./node_modules/proton-pack/bin/protonPack print-config', flags);
-    debug(stdout, 'stdout config app');
-    return JSON.parse(stdout);
+    const deployConfig = await getConfigDeployGit(!isCurrent);
+    debug({ stdout, deployConfig }, 'stdout config app');
+    return {
+        ...JSON.parse(stdout),
+        deployConfig
+    };
 }
 
 function sed(rule, files) {
@@ -80,22 +109,28 @@ function sed(rule, files) {
 async function writeNewConfig(api) {
     const {
         sentry: { dsn: currentSentryDSN },
-        secureUrl: currentSecureURL
+        secureUrl: currentSecureURL,
+        deployConfig: { commit: currentCommitDeploy, version: currentVersionDeploy } = {} // no config for angular
     } = await getNewConfig(api, ['--api proxy'], true);
     const {
         apiUrl,
         sentry: { dsn: newSentryDSN },
-        secureUrl: newSecureURL
+        secureUrl: newSecureURL,
+        deployConfig: { commit: newCommitDeploy, version: newVersionDeploy } = {} // no config for angular
     } = await getNewConfig(api);
 
     debug({
         current: {
             currentSentryDSN,
-            currentSecureURL
+            currentSecureURL,
+            currentCommitDeploy,
+            currentVersionDeploy
         },
         newConfig: {
             newSentryDSN,
-            newSecureURL
+            newSecureURL,
+            newCommitDeploy,
+            newVersionDeploy
         }
     });
 
@@ -108,6 +143,15 @@ async function writeNewConfig(api) {
 
         await sed(`s#secure:"${currentSecureURL}"#secure:"${newSecureURL}"#;`, SOURCE_FILE_INDEX);
         return info('replace secureURL config inside the main index');
+    }
+
+    // We don't have this use case for angular as we do not have this cache system
+    if (!isWebClientLegacy()) {
+        await sed(`s#="${currentCommitDeploy}"#="${newCommitDeploy}"#;`, SOURCE_FILE_INDEX);
+        info(`replace current deployed commit by ${newCommitDeploy} inside the main index`);
+
+        await sed(`s#="${currentVersionDeploy}"#="${newVersionDeploy}"#;`, SOURCE_FILE_INDEX);
+        info(`replace current deployed version by the one from the new tag ${newVersionDeploy} the main index`);
     }
 
     await sed(`s#="/api"#="${apiUrl}"#;`, SOURCE_FILE_INDEX);
