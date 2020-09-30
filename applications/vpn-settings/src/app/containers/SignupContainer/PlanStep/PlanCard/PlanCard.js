@@ -39,7 +39,12 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
             <div className="flex-item-fluid-auto pt1 pb1 flex-noMinChildren flex-column">
                 <PlanPrice plan={plan} cycle={cycle} currency={currency} />
                 {plan.description && (
-                    <strong className={classnames(['min-h5e border-top mt1 pt1 mb1 big', isActive && 'color-primary'])}>
+                    <strong
+                        className={classnames([
+                            'min-h5e border-top mt1 pt1 mb1 big break',
+                            isActive && 'color-primary'
+                        ])}
+                    >
                         {plan.description}
                     </strong>
                 )}

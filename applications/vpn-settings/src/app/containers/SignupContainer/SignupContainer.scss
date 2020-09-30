@@ -1,0 +1,7 @@
+@import '~design-system/_sass/reusable-components/design-system-config';
+
+@include respond-to($breakpoint-medium) {
+    .container-plans-signup {
+        --label-width: 45%;
+    }
+}

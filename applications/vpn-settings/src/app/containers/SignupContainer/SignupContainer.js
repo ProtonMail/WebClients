@@ -15,6 +15,7 @@ import useVerification from './VerificationStep/useVerification';
 import { checkCookie } from 'proton-shared/lib/helpers/cookies';
 import MobileRedirectionStep from './MobileRedirectionStep/MobileRedirectionStep';
 import PublicPage from '../../components/page/PublicPage';
+import './SignupContainer.scss';
 
 const SignupState = {
     Plan: 'plan',
