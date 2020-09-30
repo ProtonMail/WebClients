@@ -426,7 +426,7 @@ $list-width-rem: 33 !default; // say 33
 }
 
 /* here you may add em widths */
-$list-width-em: 6, 8, 10, 2, 14, 16 !default;
+$list-width-em: 2, 6, 8, 10, 11, 14, 16 !default;
 // ex .w16e { width: 16em; }
 
 @each $width in $list-width-em {
