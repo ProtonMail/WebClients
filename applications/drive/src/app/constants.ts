@@ -20,6 +20,9 @@ export const DOWNLOAD_TIMEOUT = 60000;
 export const EXPENSIVE_REQUEST_TIMEOUT = 60000;
 export const MAX_NAME_LENGTH = 255;
 
+export const DEFAULT_SHARE_EXPIRATION_DAYS = 90;
+export const DEFAULT_SHARE_MAX_ACCESSES = 10000;
+
 export const CUSTOM_DATA_FORMAT = 'pd-custom';
 
 export enum LinkURLType {

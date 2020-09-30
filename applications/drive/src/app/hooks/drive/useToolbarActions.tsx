@@ -18,6 +18,7 @@ import RenameModal from '../../components/RenameModal';
 import DetailsModal from '../../components/DetailsModal';
 import MoveToFolderModal from '../../components/MoveToFolderModal';
 import CreateFolderModal from '../../components/CreateFolderModal';
+import SharingModal from '../../components/SharingModal/SharingModal';
 
 function useToolbarActions() {
     const { navigateToLink } = useNavigate();
@@ -154,6 +155,10 @@ function useToolbarActions() {
         createRestoredLinksNotifications(itemsToRestore, result);
     };
 
+    const openLinkSharing = (shareId: string, itemToShare: FileBrowserItem) => {
+        createModal(<SharingModal shareId={shareId} item={itemToShare} />);
+    };
+
     return {
         download,
         openCreateFolder,
@@ -164,6 +169,7 @@ function useToolbarActions() {
         openRename,
         preview,
         restoreFromTrash,
+        openLinkSharing,
     };
 }
 

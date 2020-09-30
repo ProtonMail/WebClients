@@ -1,9 +1,17 @@
 import { FOLDER_PAGE_SIZE, EXPENSIVE_REQUEST_TIMEOUT } from '../constants';
 import { MoveLink } from '../interfaces/link';
+import { CreateDriveShare } from '../interfaces/share';
+
+export const queryCreateShare = (volumeID: string, data: CreateDriveShare) => ({
+    method: 'post',
+    url: `drive/volumes/${volumeID}/shares`,
+    data,
+});
 
 export const queryUserShares = () => ({
     method: 'get',
     url: 'drive/shares',
+    silence: true,
 });
 
 export const queryShareMeta = (shareID: string) => ({

@@ -34,6 +34,7 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
         openRename,
         preview,
         restoreFromTrash,
+        openLinkSharing,
     } = useToolbarActions();
 
     const isMultiSelect = selectedItems.length > 1;
@@ -81,6 +82,13 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
             icon: 'arrow-cross',
             testId: 'context-menu-move',
             action: () => openMoveToFolder(selectedItems),
+        },
+        {
+            hidden: isMultiSelect || hasFoldersSelected,
+            name: c('Action').t`Get Secure Link`,
+            icon: 'link',
+            testId: 'context-menu-share',
+            action: () => openLinkSharing(shareId, item),
         },
         {
             hidden: false,

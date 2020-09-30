@@ -26,20 +26,27 @@ import {
     moveLinksAsync,
     createVolumeAsync,
     getUserSharesAsync,
+    decryptLinkPassphraseAsync,
+    fetchNextFoldersOnlyContentsAsync,
+    createShareAsync,
+    getShareMetaShortAsync,
 } from '../../utils/drive/drive';
 
 function useDrive() {
     const cache = useDriveCache();
     const queuedFunction = useQueuedFunction();
     const withGlobalLoader = useGlobalLoader({ text: c('Info').t`Loading folder contents` });
-    const { getPrimaryAddressKey, getVerificationKeys } = useDriveCrypto();
+    const { getPrimaryAddressKey, getVerificationKeys, decryptSharePassphrase } = useDriveCrypto();
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
     const { events } = useEvents();
 
     const getShareMeta = async (shareId: string) => {
-        const shareMeta = await getShareMetaAsync(debouncedRequest, cache, events.subscribe, shareId);
-        return shareMeta;
+        return getShareMetaAsync(debouncedRequest, cache, events.subscribe, shareId);
+    };
+
+    const getShareMetaShort = async (shareId: string) => {
+        return getShareMetaShortAsync(shareId, cache, getShareMeta);
     };
 
     const createVolume = async () => {
@@ -51,11 +58,17 @@ function useDrive() {
     };
 
     const initDrive = async () => {
-        return initDriveAsync(cache, createVolume, getUserShares, getShareMeta);
+        return initDriveAsync(createVolume, getUserShares, getShareMeta);
     };
 
     const getShareKeys = async (shareId: string) => {
-        const keys = await getShareKeysAsync(debouncedRequest, getVerificationKeys, cache, events.subscribe, shareId);
+        const keys = await getShareKeysAsync(
+            debouncedRequest,
+            cache,
+            shareId,
+            decryptSharePassphrase,
+            events.subscribe
+        );
         return keys;
     };
 
@@ -66,10 +79,11 @@ function useDrive() {
 
     const getLinkKeys = async (shareId: string, linkId: string, config: FetchLinkConfig = {}): Promise<LinkKeys> => {
         const keys = await getLinkKeysAsync(
-            debouncedRequest,
-            getVerificationKeys,
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            decryptLinkPassphrase,
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            getLinkMeta,
             cache,
-            events.subscribe,
             shareId,
             linkId,
             config
@@ -80,9 +94,9 @@ function useDrive() {
     const getLinkMeta = async (shareId: string, linkId: string, config: FetchLinkConfig = {}): Promise<LinkMeta> => {
         const meta = await getLinkMetaAsync(
             debouncedRequest,
-            getVerificationKeys,
+            getLinkKeys,
+            getShareKeys,
             cache,
-            events.subscribe,
             shareId,
             linkId,
             config
@@ -90,12 +104,18 @@ function useDrive() {
         return meta;
     };
 
+    const decryptLinkPassphrase = (shareId: string, linkMeta: LinkMeta, config?: FetchLinkConfig) => {
+        return decryptLinkPassphraseAsync(shareId, getLinkKeys, getShareKeys, getVerificationKeys, linkMeta, config);
+    };
+
+    const fetchNextFoldersOnlyContents = (shareId: string, linkId: string) => {
+        return fetchNextFoldersOnlyContentsAsync(debouncedRequest, getLinkKeys, cache, shareId, linkId);
+    };
+
     const getFoldersOnlyMetas = async (shareId: string, linkId: string, fetchNextPage = false) => {
         const linkMetas = await getFoldersOnlyMetasAsync(
-            debouncedRequest,
-            getVerificationKeys,
+            fetchNextFoldersOnlyContents,
             cache,
-            events.subscribe,
             shareId,
             linkId,
             fetchNextPage
@@ -104,19 +124,11 @@ function useDrive() {
     };
 
     const fetchNextFolderContents = async (shareId: string, linkId: string, sortParams = DEFAULT_SORT_PARAMS) => {
-        await fetchNextFolderContentsAsync(
-            debouncedRequest,
-            getVerificationKeys,
-            cache,
-            events.subscribe,
-            shareId,
-            linkId,
-            sortParams
-        );
+        await fetchNextFolderContentsAsync(debouncedRequest, getLinkKeys, cache, shareId, linkId, sortParams);
     };
 
     const fetchAllFolderPages = async (shareId: string, linkId: string) => {
-        await fetchAllFolderPagesAsync(debouncedRequest, getVerificationKeys, cache, events.subscribe, shareId, linkId);
+        await fetchAllFolderPagesAsync(fetchNextFolderContents, cache, shareId, linkId);
     };
 
     const fetchAllFolderPagesWithLoader = async (shareId: string, linkId: string) => {
@@ -146,17 +158,7 @@ function useDrive() {
         newName: string,
         type: LinkType
     ) => {
-        await renameLinkAsync(
-            debouncedRequest,
-            getVerificationKeys,
-            cache,
-            events.subscribe,
-            shareId,
-            linkId,
-            parentLinkID,
-            newName,
-            type
-        );
+        await renameLinkAsync(debouncedRequest, getLinkKeys, shareId, linkId, parentLinkID, newName, type);
     };
 
     const createNewFolder = queuedFunction(
@@ -164,10 +166,8 @@ function useDrive() {
         async (shareId: string, ParentLinkID: string, name: string) => {
             return createNewFolderAsync(
                 debouncedRequest,
-                getVerificationKeys,
+                getLinkKeys,
                 getPrimaryAddressKey,
-                cache,
-                events.subscribe,
                 shareId,
                 ParentLinkID,
                 name
@@ -179,11 +179,11 @@ function useDrive() {
     const moveLink = async (shareId: string, ParentLinkID: string, linkId: string) => {
         const result = await moveLinkAsync(
             debouncedRequest,
-            getVerificationKeys,
             getPrimaryAddressKey,
-            cache,
-            events.subscribe,
             events.call,
+            getLinkMeta,
+            getLinkKeys,
+            decryptLinkPassphrase,
             shareId,
             ParentLinkID,
             linkId
@@ -193,18 +193,30 @@ function useDrive() {
 
     const moveLinks = async (shareId: string, parentFolderId: string, linkIds: string[]) => {
         const results = await moveLinksAsync(
-            debouncedRequest,
-            getVerificationKeys,
-            getPrimaryAddressKey,
+            moveLink,
             preventLeave,
             cache,
-            events.subscribe,
             events.call,
             shareId,
             parentFolderId,
             linkIds
         );
         return results;
+    };
+
+    const createShare = (shareId: string, volumeId: string, linkId: string) => {
+        return createShareAsync(
+            debouncedRequest,
+            cache,
+            shareId,
+            volumeId,
+            linkId,
+            'New Share',
+            LinkType.FILE,
+            getPrimaryAddressKey,
+            getLinkMeta,
+            getLinkKeys
+        );
     };
 
     return {
@@ -216,10 +228,13 @@ function useDrive() {
         fetchNextFolderContents,
         getShareKeys,
         getShareMeta,
+        getShareMetaShort,
         renameLink,
         createNewFolder,
         fetchAllFolderPages,
         fetchAllFolderPagesWithLoader,
+        decryptLinkPassphrase,
+        createShare,
         moveLink,
         moveLinks,
         events,
