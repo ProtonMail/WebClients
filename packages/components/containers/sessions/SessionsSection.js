@@ -28,6 +28,7 @@ const getClientsI18N = () => ({
     Bridge: c('Badge').t`ProtonMail Bridge`,
     iOS: c('Badge').t`ProtonMail for iOS`,
     Android: c('Badge').t`ProtonMail for Android`,
+    WebAccount: c('Badge').t`Proton Account for web`,
     WebMail: c('Badge').t`ProtonMail for web`,
     WebMailSettings: c('Badge').t`ProtonMail settings for web`,
     WebContacts: c('Badge').t`ProtonContacts for web`,
