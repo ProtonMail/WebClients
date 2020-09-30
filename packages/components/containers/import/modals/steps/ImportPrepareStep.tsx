@@ -36,11 +36,6 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
     }, [providerFolders]);
     const providerFoldersNumLocalized = providerFoldersNum.toLocaleString();
 
-    const providerMessageNum = useMemo(() => providerFolders.reduce((acc, { Total }) => acc + Total, 0), [
-        providerFolders,
-    ]);
-    const providerMessageNumLocalized = providerMessageNum.toLocaleString();
-
     const selectedFolders = useMemo(
         () =>
             payload.Mapping.filter((m) => m.checked).map(
@@ -50,12 +45,6 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
         [payload.Mapping, providerFolders]
     );
     const selectedFoldersCountLocalized = selectedFolders.length.toLocaleString();
-
-    const selectedFoldersMessageCount = useMemo(() => selectedFolders.reduce((acc, { Total = 0 }) => acc + Total, 0), [
-        payload.Mapping,
-        providerFolders,
-    ]);
-    const selectedFoldersMessageCountLocalized = selectedFoldersMessageCount.toLocaleString();
 
     const selectedPeriodLowerCased = timeUnitLabels[selectedPeriod].toLowerCase();
 
@@ -232,28 +221,6 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                     <Icon className="mr0-5" name="mailbox" />
                     {c('Info').t`Import mailbox`}
                 </div>
-
-                <div className="mb1 ml1 flex flex-items-center">
-                    <Icon className="mr0-5" name="all-emails" />
-                    {c('Info').ngettext(
-                        msgid`${providerMessageNum} message found`,
-                        `${providerMessageNumLocalized} messages found`,
-                        providerMessageNum
-                    )}
-                </div>
-
-                {selectedFoldersMessageCount !== providerMessageNum && (
-                    <div className="mb1 ml2 flex flex-items-center">
-                        <Icon className="mr0-5" name="all-emails" />
-                        <strong>
-                            {c('Info').ngettext(
-                                msgid`${selectedFoldersMessageCount} message selected`,
-                                `${selectedFoldersMessageCountLocalized} messages selected`,
-                                selectedFoldersMessageCount
-                            )}
-                        </strong>
-                    </div>
-                )}
 
                 <div className="mb1 ml1 flex flex-items-center">
                     <Icon className="mr0-5" name="parent-folder" />
