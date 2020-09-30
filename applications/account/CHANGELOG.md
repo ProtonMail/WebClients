@@ -1,3 +1,11 @@
+# [4.1.1] - 2020-09-30
+
+## Fixes
+
+- Minor UI/UX bug fixes following the deployment of SSO
+
+---
+
 # [4.1.0] - 2020-09-29
 
 ## Added
