@@ -15,6 +15,7 @@ import {
     Loader,
     TextLoader,
     PrimaryButton,
+    useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
 import useDrive from '../../hooks/drive/useDrive';
@@ -33,11 +34,12 @@ interface Props {
 function SharingModal({ modalTitleID = 'onboardingModal', onClose, item, shareId, ...rest }: Props) {
     const [password, setPassword] = useState(() => getRandomString(10));
     const [token, setToken] = useState<string>();
-    const [includePassword, setIncludePassword] = useState(false);
+    const [includePassword, setIncludePassword] = useState(true);
     const [error, setError] = useState(false);
     const [loading, withLoading] = useLoading(true);
     const { getShareMetaShort } = useDrive();
     const { createSharedLink, getSharedURLs } = useSharing();
+    const { createNotification } = useNotifications();
 
     const getToken = useCallback(async () => {
         const { Token } = item.SharedURLShareID
@@ -60,10 +62,12 @@ function SharingModal({ modalTitleID = 'onboardingModal', onClose, item, shareId
 
     const handleClickCopyURL = () => {
         textToClipboard(includePassword ? `${SHARING_BASE_URL}/${token}#${password}` : `${SHARING_BASE_URL}/${token}`);
+        createNotification({ text: c('Success').t`Secure link was copied to the clipboard` });
     };
 
     const handleClickCopyPassword = () => {
         textToClipboard(password);
+        createNotification({ text: c('Success').t`Password was copied to the clipboard` });
     };
 
     const handleChangeIncludePassword = () => {

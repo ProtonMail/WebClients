@@ -22,6 +22,7 @@ import {
 import UploadFolderButton from './ToolbarButtons/UploadFolderButton';
 import LayoutDropdown from './ToolbarButtons/LayoutDropdown';
 import ActionsDropdown from './ToolbarButtons/ActionsDropdown';
+import GetSecureLinkButton from './ToolbarButtons/GetSecureLinkButton';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -74,7 +75,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
                 <DownloadButton disabled={!selectedItems.length} />
                 <ToolbarSeparator />
                 {isNarrow ? (
-                    <ActionsDropdown />
+                    <ActionsDropdown shareId={shareId} />
                 ) : (
                     <>
                         <RenameButton disabled={isMultiSelect} />
@@ -82,6 +83,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
                         <ToolbarSeparator />
                         <MoveToTrashButton />
                         <MoveToFolderButton />
+                        <GetSecureLinkButton shareId={shareId} disabled={isMultiSelect || hasFoldersSelected} />
                     </>
                 )}
             </>
