@@ -123,7 +123,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                 to: to.length ? formatRecipients(to) : UNDEFINED,
                 begin: begin ? String(getUnixTime(begin)) : UNDEFINED,
                 end: end ? String(getUnixTime(end)) : UNDEFINED,
-                attachments: attachments ? String(attachments) : UNDEFINED,
+                attachments: typeof attachments === 'number' ? String(attachments) : UNDEFINED,
                 wildcard: wildcard ? String(wildcard) : UNDEFINED
             })
         );
