@@ -15,6 +15,7 @@ import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-share
 
 // These imports must go to proton-shared
 import { getEncryptedSessionKey } from 'proton-shared/lib/calendar/encrypt';
+import { chunk } from 'proton-shared/lib/helpers/array';
 import { CreatedDriveVolumeResult, DriveVolume } from '../../interfaces/volume';
 import { UserShareResult, ShareMeta, ShareMetaShort, ShareFlags } from '../../interfaces/share';
 import {
@@ -27,11 +28,11 @@ import {
 } from '../../interfaces/link';
 import { queryCreateDriveVolume } from '../../api/volume';
 import { queryUserShares, queryShareMeta, queryRenameLink, queryMoveLink, queryCreateShare } from '../../api/share';
-import { queryGetLink } from '../../api/link';
+import { queryDeleteChildrenLinks, queryGetLink } from '../../api/link';
 import { queryFolderChildren, queryCreateFolder } from '../../api/folder';
 import { LinkKeys, DriveCache, ShareKeys } from '../../components/DriveCache/DriveCacheProvider';
 import { validateLinkName, ValidationError } from '../validation';
-import { FOLDER_PAGE_SIZE, DEFAULT_SORT_PARAMS, MAX_THREADS_PER_REQUEST } from '../../constants';
+import { FOLDER_PAGE_SIZE, DEFAULT_SORT_PARAMS, MAX_THREADS_PER_REQUEST, BATCH_REQUEST_SIZE } from '../../constants';
 import { decryptPassphrase, getDecryptedSessionKey, PrimaryAddressKey, VerificationKeys } from './driveCrypto';
 import runInQueue from '../runInQueue';
 
@@ -631,4 +632,30 @@ export const moveLinksAsync = async (
     } finally {
         cache.set.linksLocked(false, shareId, linkIds);
     }
+};
+
+export const deleteChildrenLinksAsync = async (
+    shareId: string,
+    parentLinkId: string,
+    linkIds: string[],
+    api: Api,
+    cache: DriveCache,
+    eventsCall: (shareId: string) => Promise<any>,
+    preventLeave: <T>(task: Promise<T>) => Promise<T>
+) => {
+    cache.set.linksLocked(true, shareId, linkIds);
+    const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
+
+    const deleteQueue = batches.map((batch, i) => () =>
+        api(queryDeleteChildrenLinks(shareId, parentLinkId, batch))
+            .then(() => batch)
+            .catch((error): string[] => {
+                console.error(`Failed to delete #${i} batch of links: `, error);
+                return [];
+            })
+    );
+
+    const deletedBatches = await preventLeave(runInQueue(deleteQueue, MAX_THREADS_PER_REQUEST));
+    await eventsCall(shareId);
+    return ([] as string[]).concat(...deletedBatches);
 };

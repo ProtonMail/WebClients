@@ -26,7 +26,7 @@ function useToolbarActions() {
     const { startFileTransfer, startFolderTransfer } = useFiles();
     const { preventLeave } = usePreventLeave();
     const { createModal } = useModals();
-    const { deleteLinks, restoreLinks, trashLinks } = useTrash();
+    const { deleteTrashedLinks, restoreLinks, trashLinks } = useTrash();
     const {
         createDeleteLinksNotifications,
         createRestoredLinksNotifications,
@@ -77,10 +77,10 @@ function useToolbarActions() {
 
         const title = c('Title').t`Delete permanently`;
         const confirm = c('Action').t`Delete permanently`;
-        const message = c('Info').t`Are you sure you want to permanently delete selected item(s) from Trash?`;
+        const message = c('Info').t`Are you sure you want to permanently delete selected item(s) from trash?`;
 
         openConfirmModal(title, confirm, message, async () => {
-            const deleted = await deleteLinks(
+            const deleted = await deleteTrashedLinks(
                 shareId,
                 itemsToDelete.map(({ LinkID }) => LinkID)
             );
