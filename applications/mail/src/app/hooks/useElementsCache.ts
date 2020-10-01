@@ -1,8 +1,9 @@
+import { SetStateAction, useCallback, useEffect, useState } from 'react';
 import { useCache } from 'react-components';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { Element } from '../models/element';
 import { Page, Filter, Sort } from '../models/tools';
-import { SetStateAction, useCallback, useEffect, useState } from 'react';
 import { useMessageCache, getLocalID } from '../containers/MessageProvider';
 import { useConversationCache } from '../containers/ConversationProvider';
 
@@ -91,15 +92,17 @@ export const useGetElementsFromIDs = () => {
     return useCallback(
         (elementIDs: string[]) => {
             const elementsCache = getElementsCache();
-            return elementIDs.map((ID: string) => {
-                if (elementsCache.elements[ID]) {
-                    return elementsCache.elements[ID];
-                }
+            return elementIDs
+                .map((ID: string) => {
+                    if (elementsCache.elements[ID]) {
+                        return elementsCache.elements[ID];
+                    }
 
-                const localID = getLocalID(messageCache, ID);
+                    const localID = getLocalID(messageCache, ID);
 
-                return messageCache.get(localID)?.data || conversationCache.get(ID)?.Conversation;
-            });
+                    return messageCache.get(localID)?.data || conversationCache.get(ID)?.Conversation;
+                })
+                .filter(isTruthy);
         },
         [getElementsCache]
     );
