@@ -69,7 +69,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                 <>
                     <p>{c('Info')
                         .jt`Upgrade to a paid plan starting from ${startingPrice} only and get additional storage capacity and more addresses with ProtonMail Plus.`}</p>
-                    <div className="flex flex-nowrap mw50e center mt2">
+                    <div className="boxes-placeholder-container flex flex-nowrap mw50e center mt2">
                         <div className="bordered-container flex-item-fluid flex flex-column aligncenter p1 mr2">
                             <img className="mb1 hauto" src={storageSvg} alt={c('Alt').t`Storage`} />
                             <p className="mt0 mb1 bold">{c('Info').t`5GB Storage`}</p>
