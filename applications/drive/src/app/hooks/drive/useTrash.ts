@@ -1,6 +1,6 @@
 import { usePreventLeave } from 'react-components';
 import { chunk } from 'proton-shared/lib/helpers/array';
-import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteLinks } from '../../api/link';
+import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteTrashedLinks } from '../../api/link';
 import { LinkMeta, FolderLinkMeta } from '../../interfaces/link';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { FOLDER_PAGE_SIZE, BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '../../constants';
@@ -113,12 +113,12 @@ function useTrash() {
         }
     };
 
-    const deleteLinks = async (shareId: string, linkIds: string[]) => {
+    const deleteTrashedLinks = async (shareId: string, linkIds: string[]) => {
         cache.set.linksLocked(true, shareId, linkIds);
         const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
 
         const deleteQueue = batches.map((batch, i) => () =>
-            debouncedRequest(queryDeleteLinks(shareId, batch))
+            debouncedRequest(queryDeleteTrashedLinks(shareId, batch))
                 .then(() => batch)
                 .catch((error): string[] => {
                     console.error(`Failed to delete #${i} batch of links: `, error);
@@ -140,7 +140,7 @@ function useTrash() {
         fetchNextPage,
         trashLinks,
         restoreLinks,
-        deleteLinks,
+        deleteTrashedLinks,
         emptyTrash,
     };
 }

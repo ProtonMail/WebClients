@@ -30,6 +30,7 @@ import {
     fetchNextFoldersOnlyContentsAsync,
     createShareAsync,
     getShareMetaShortAsync,
+    deleteChildrenLinksAsync,
 } from '../../utils/drive/drive';
 
 function useDrive() {
@@ -219,6 +220,18 @@ function useDrive() {
         );
     };
 
+    const deleteChildrenLinks = async (shareId: string, parentLinkId: string, linkIds: string[]) => {
+        return deleteChildrenLinksAsync(
+            shareId,
+            parentLinkId,
+            linkIds,
+            debouncedRequest,
+            cache,
+            events.callAll,
+            preventLeave
+        );
+    };
+
     return {
         initDrive,
         decryptLink,
@@ -237,6 +250,7 @@ function useDrive() {
         createShare,
         moveLink,
         moveLinks,
+        deleteChildrenLinks,
         events,
     };
 }

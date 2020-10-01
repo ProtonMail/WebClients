@@ -40,13 +40,12 @@ import useQueuedFunction from '../util/useQueuedFunction';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { isFile } from '../../utils/file';
 import { getMetaForTransfer } from '../../utils/transfer';
-import useTrash from './useTrash';
 
 const HASH_CHECK_AMOUNT = 10;
 
 function useFiles() {
     const api = useApi();
-    const { deleteLinks } = useTrash();
+    const { deleteChildrenLinks } = useDrive();
     const getUser = useGetUser();
     const cache = useDriveCache();
     const debouncedRequest = useDebouncedRequest();
@@ -329,8 +328,8 @@ function useFiles() {
                     5
                 ),
                 onError: async () => {
-                    const { File } = await setupPromise;
-                    await deleteLinks(shareId, [File.ID]);
+                    const { File, ParentLinkID } = await setupPromise;
+                    await deleteChildrenLinks(shareId, ParentLinkID, [File.ID]);
                 },
             }
         );

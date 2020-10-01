@@ -26,9 +26,15 @@ export const queryTrashLinks = (ShareID: string, ParentLinkID: string, LinkIDs: 
     data: { LinkIDs },
 });
 
-export const queryDeleteLinks = (ShareID: string, LinkIDs: string[]) => ({
+export const queryDeleteTrashedLinks = (ShareID: string, LinkIDs: string[]) => ({
     method: 'post',
     url: `drive/shares/${ShareID}/trash/delete_multiple`,
+    data: { LinkIDs },
+});
+
+export const queryDeleteChildrenLinks = (ShareID: string, ParentLinkID: string, LinkIDs: string[]) => ({
+    method: 'post',
+    url: `drive/shares/${ShareID}/folders/${ParentLinkID}/delete_multiple`,
     data: { LinkIDs },
 });
 
