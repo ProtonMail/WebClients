@@ -13,14 +13,20 @@ import {
 
 import { useDriveContent } from '../DriveContentProvider';
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
+import { LinkType } from '../../../interfaces/link';
 
-const ActionsDropdown = () => {
+interface Props {
+    shareId: string;
+}
+
+const ActionsDropdown = ({ shareId }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { openDetails, openMoveToFolder, openMoveToTrash, openRename } = useToolbarActions();
+    const { openDetails, openMoveToFolder, openMoveToTrash, openRename, openLinkSharing } = useToolbarActions();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
 
+    const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
     const isMultiSelect = selectedItems.length > 1;
 
     const toolbarButtonIcon = { name: 'caret', rotate: isOpen ? 180 : 0 };
@@ -46,6 +52,13 @@ const ActionsDropdown = () => {
             icon: 'arrow-cross',
             testId: 'context-menu-move',
             action: () => openMoveToFolder(selectedItems),
+        },
+        {
+            hidden: isMultiSelect || hasFoldersSelected,
+            name: c('Action').t`Get secure link`,
+            icon: 'link',
+            testId: 'context-menu-share',
+            action: () => openLinkSharing(shareId, selectedItems[0]),
         },
         {
             hidden: false,
