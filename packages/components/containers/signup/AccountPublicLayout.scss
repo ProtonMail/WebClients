@@ -118,6 +118,20 @@ $default-height-fields: 4.1rem;
 		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 	}
 }
+.payment-side-fields {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+	grid-gap: 1em;
+	@include respond-to(768) {
+		grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+	}
+	@include respond-to($breakpoint-small) {
+		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+	}
+	@include respond-to($breakpoint-tiny) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+}
 
 .signLayout-main {
 	padding: em(24) em(48);
