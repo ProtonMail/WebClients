@@ -43,7 +43,6 @@ function Drive({ activeFolder }: Props) {
     } = fileBrowserControls;
 
     const folderName = cache.get.linkMeta(shareId, linkId)?.Name;
-    const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
     const { getDragMoveControls } = useDriveDragMove(shareId, selectedItems, clearSelections);
 
     useEffect(() => {
@@ -53,11 +52,12 @@ function Drive({ activeFolder }: Props) {
     }, [shareId, linkId, folderName]);
 
     const handleScrollEnd = useCallback(() => {
+        const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
         // Only load on scroll after initial load from backend
         if (isInitialized && !complete) {
             loadNextPage();
         }
-    }, [complete, isInitialized, loadNextPage, view]);
+    }, [complete, loadNextPage, view, shareId, linkId, sortParams]);
 
     // On content change, check scroll end (does not rebind listeners)
     useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents, view]);
