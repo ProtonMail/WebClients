@@ -86,12 +86,30 @@ $default-height-fields: 4.1rem;
 			}
 		}
 	}
+	// special case for Signup in Proton-Account :-\
+	// this overrides only what's needed just below this
+	.payment-side-fields {
+		@include respond-to(768) {
+			grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+		}
+		@include respond-to(720) {
+			grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+		}
+		@include respond-to($breakpoint-small) {
+			grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+		}
+		@include respond-to($breakpoint-tiny) {
+			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		}
+	}
 }
-// special case for signup :-\
+
+// case for VPN signup
 .payment-side-fields {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 	grid-gap: 1em;
+	align-items: end;
 	@include respond-to(768) {
 		grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
 	}
