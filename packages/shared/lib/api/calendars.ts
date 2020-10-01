@@ -171,6 +171,7 @@ export interface CreateCalendarEventBlobData {
 }
 export interface CreateCalendarEventData extends CreateCalendarEventBlobData {
     Permissions: number;
+    IsOrganizer?: 0 | 1;
 }
 export interface CreateSingleCalendarEventData extends CreateCalendarEventData {
     MemberID: string;
@@ -260,7 +261,6 @@ export interface CreateLinkedCalendarEventsSyncData {
 export interface SyncMultipleEventsData {
     MemberID: string;
     IsImport?: 0 | 1;
-    IsInvite?: 0 | 1;
     Events: (
         | CreateCalendarEventSyncData
         | CreateLinkedCalendarEventsSyncData

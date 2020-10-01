@@ -38,6 +38,7 @@ export interface CalendarEventSharedData {
     CreateTime: number;
     ModifyTime: number;
     Permissions: number;
+    IsOrganizer: 1 | 0;
     Author: string;
 }
 
