@@ -434,7 +434,9 @@ export const createCalendarEventFromInvitation = async ({
         isSwitchCalendar: false,
         ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys }))
     });
-    const Events: CreateCalendarEventSyncData[] = [{ Overwrite: 1, Event: { Permissions: 3, ...data } }];
+    const Events: CreateCalendarEventSyncData[] = [
+        { Overwrite: 1, Event: { Permissions: 3, IsOrganizer: 0, ...data } }
+    ];
     const {
         Responses: [
             {
@@ -442,7 +444,7 @@ export const createCalendarEventFromInvitation = async ({
             }
         ]
     } = await api<SyncMultipleApiResponse>({
-        ...syncMultipleEvents(calendar.ID, { MemberID: memberID, Events, IsInvite: 1 }),
+        ...syncMultipleEvents(calendar.ID, { MemberID: memberID, Events }),
         silence: true
     });
     if (Code !== API_CODES.SINGLE_SUCCESS || !Event) {
