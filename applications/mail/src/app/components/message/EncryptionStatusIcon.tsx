@@ -23,6 +23,7 @@ const EncryptionStatusIcon = ({ colorClassName, isEncrypted, fill, text, loading
                 size={16}
                 name={iconName}
                 className={colorClassName}
+                alt={text || ''}
             />
         </Href>
     );
