@@ -36,7 +36,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message }: Props) => {
     const labelIDs = (getLabelIDs(message.data || {}) || []).filter((labelID) => isCustomLabel(labelID, labels));
 
     return (
-        <div className="message-detailed-header-extra border-top pt0-5 pb0-5 is-appearing-content">
+        <div className="message-detailed-header-extra border-top pt0-5 is-appearing-content">
             <div className="mb0-5 flex flex-nowrap">
                 <span className="container-to flex">
                     <Icon name="calendar" className="mauto" alt={c('Label').t`Date:`} />
