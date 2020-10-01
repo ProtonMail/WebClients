@@ -55,7 +55,9 @@ const ExtraEvents = ({ message }: Props) => {
         loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || !config;
 
     useEffect(() => {
-        if (!message.privateKeys || loadingConfigs) {
+        const attachments = getAttachments(message.data);
+        const eventAttachments = filterAttachmentsForEvents(attachments);
+        if (!eventAttachments.length || !message.privateKeys || loadingConfigs) {
             return;
         }
         const run = async () => {
@@ -65,8 +67,6 @@ const ExtraEvents = ({ message }: Props) => {
                 const defaultCalendar = getDefaultCalendar(activeCalendars, DefaultCalendarID);
                 setDefaultCalendar(defaultCalendar);
             }
-            const attachments = getAttachments(message.data);
-            const eventAttachments = filterAttachmentsForEvents(attachments);
             const invitations = (
                 await Promise.all(
                     eventAttachments.map(async (attachment: Attachment) => {
@@ -95,7 +95,7 @@ const ExtraEvents = ({ message }: Props) => {
         };
 
         withLoadingWidget(run());
-    }, [message.privateKeys, loadingConfigs]);
+    }, [message.data, message.privateKeys, loadingConfigs]);
 
     if (loadingConfigs || loadingWidget) {
         return null;
