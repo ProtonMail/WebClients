@@ -109,7 +109,6 @@ $default-height-fields: 4.1rem;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 	grid-gap: 1em;
-	align-items: end;
 	@include respond-to(768) {
 		grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
 	}
