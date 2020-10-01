@@ -40,8 +40,6 @@ const DriveContentProviderInner = ({
     );
     const contents = mapLinksToChildren(sortedList, (linkId) => cache.get.isLinkLocked(shareId, linkId));
     const complete = cache.get.childrenComplete(shareId, linkId, sortParams);
-    const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
-    const hasChildren = !!cache.get.listedChildLinks(shareId, linkId)?.length;
 
     const selectionControls = useSelection(
         contents.map((data) => ({
@@ -93,27 +91,28 @@ const DriveContentProviderInner = ({
                 setLoading(false);
             }
         }
-    }, [shareId, linkId, sortParams]);
+    }, [shareId, linkId, sortParams, sortParams]);
 
     useEffect(() => {
-        const abortController = new AbortController();
-
-        abortSignal.current = abortController.signal;
-        fileBrowserControls.clearSelections();
-
-        if (loading) {
-            setLoading(false);
-        }
+        const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
+        const hasChildren = !!cache.get.listedChildLinks(shareId, linkId)?.length;
 
         if (!isInitialized || !hasChildren) {
-            loadNextPage().catch(console.error);
-        }
+            const abortController = new AbortController();
 
-        return () => {
-            contentLoading.current = false;
-            abortController.abort();
-        };
-    }, [hasChildren, isInitialized, loadNextPage]);
+            abortSignal.current = abortController.signal;
+            fileBrowserControls.clearSelections();
+
+            if (loading) {
+                setLoading(false);
+            }
+            loadNextPage().catch(console.error);
+            return () => {
+                contentLoading.current = false;
+                abortController.abort();
+            };
+        }
+    }, [loadNextPage, shareId, linkId, sortParams]);
 
     return (
         <DriveContentContext.Provider
