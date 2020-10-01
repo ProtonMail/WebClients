@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
 
-import { Toolbar, PrivateMainArea, useAppTitle } from 'react-components';
+import { Toolbar, PrivateMainArea, useAppTitle, useNotifications } from 'react-components';
 
 import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
@@ -11,6 +11,7 @@ import DriveContentProvider from '../../components/Drive/DriveContentProvider';
 import DriveToolbar from '../../components/Drive/DriveToolbar';
 import DriveBreadcrumbs from '../../components/DriveBreadcrumbs';
 import { LinkURLType } from '../../constants';
+import useNavigate from '../../hooks/drive/useNavigate';
 
 function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; type?: LinkURLType; linkId?: string }>) {
     const lastFolderRef = useRef<{
@@ -20,6 +21,8 @@ function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; t
     const cache = useDriveCache();
     const [, setError] = useState();
     const { setFolder } = useDriveActiveFolder();
+    const { createNotification } = useNotifications();
+    const { navigateToRoot } = useNavigate();
 
     const folder = useMemo(() => {
         const { shareId, type, linkId } = match.params;
@@ -34,9 +37,9 @@ function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; t
                 throw new Error('Drive is not initilized, cache has been cleared unexpectedly');
             });
         } else if (!shareId || !type || !linkId) {
-            setError(() => {
-                throw new Error('Missing parameters, should be none or shareId/type/linkId');
-            });
+            console.error('Missing parameters, should be none or shareId/type/linkId');
+            createNotification({ type: 'error', text: c('Error').t`Invalid link URL, redirecting to root folder` });
+            navigateToRoot();
         } else if (type === LinkURLType.FOLDER) {
             return { shareId, linkId };
         } else {
@@ -50,6 +53,8 @@ function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; t
     useEffect(() => {
         if (folder) {
             setFolder(folder);
+        } else {
+            navigateToRoot();
         }
     }, [folder]);
 
