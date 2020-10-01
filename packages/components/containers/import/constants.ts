@@ -8,7 +8,7 @@ export enum TIME_UNIT {
 }
 
 export const timeUnitLabels = {
-    [TIME_UNIT.BIG_BANG]: c('Label').t`Email account creation`,
+    [TIME_UNIT.BIG_BANG]: c('Label').t`Account creation date`,
     [TIME_UNIT.LAST_YEAR]: c('Label').t`12 months ago`,
     [TIME_UNIT.LAST_3_MONTHS]: c('Label').t`3 months ago`,
     [TIME_UNIT.LAST_MONTH]: c('Label').t`1 month ago`,

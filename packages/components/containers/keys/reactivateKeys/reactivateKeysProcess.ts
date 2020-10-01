@@ -33,7 +33,7 @@ export default async ({
 
     for (const { Address, keys } of keysToReactivate) {
         if (Address && !addressesKeysMap) {
-            throw new Error(c('Error').t`Addresses keys map required`);
+            throw new Error('Addresses keys map required');
         }
         const completeKeyList = Address && addressesKeysMap ? addressesKeysMap[Address.ID] : userKeysList;
 
