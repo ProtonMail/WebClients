@@ -49,13 +49,18 @@ function SpamFiltersSection() {
     }, [black.IncomingDefaults]);
 
     const handleSearchChange = async (Keyword) => {
-        search(Keyword);
+        if (!Keyword) {
+            return search();
+        }
+
         setLoader({ white: true, black: true });
         try {
-            const { IncomingDefaults = [] } = await reqSearch.request({ Keyword, PageSize: 100 });
-            search(Keyword, IncomingDefaults);
-            setLoader({ white: false, black: false });
-        } catch (e) {
+            const [whiteResult, blackResult] = await Promise.all([
+                reqSearch.request({ Keyword, Location: WHITELIST_LOCATION, PageSize: 100 }),
+                reqSearch.request({ Keyword, Location: BLACKLIST_LOCATION, PageSize: 100 }),
+            ]);
+            search(Keyword, [...whiteResult.IncomingDefaults, ...blackResult.IncomingDefaults]);
+        } finally {
             setLoader({ white: false, black: false });
         }
     };
