@@ -184,7 +184,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 }
             };
             // Wait 30 seconds to check if the iframe is properly loaded
-            setTimeout(checkIframeLoaded, 30 * 1000);
+            const timeoutID = setTimeout(checkIframeLoaded, 30 * 1000);
             /**
              * Fire in the hole, iframe is loaded, give it the form config.
              */
@@ -228,6 +228,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             iframe.contentWindow.addEventListener('message', console.log);
 
             scope.$on('$destroy', () => {
+                clearTimeout(timeoutID);
                 iframe.removeEventListener('load', onLoad);
             });
         }
