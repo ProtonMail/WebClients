@@ -38,11 +38,6 @@ import { useInstance, PreventLeaveProvider } from '../../hooks';
 import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
 import { WELCOME_FLAG_KEY } from '../../hooks/useWelcomeFlags';
 
-interface Props {
-    config: ProtonConfig;
-    children: React.ReactNode;
-}
-
 const getIsSSOPath = (pathname: string) => {
     const strippedPathname = `/${stripLeadingAndTrailingSlash(pathname)}`;
     return Object.values(SSO_PATHS).some((path) => strippedPathname.startsWith(path));
@@ -97,7 +92,13 @@ interface AuthState {
     isLoggingOut?: boolean;
 }
 
-const ProtonApp = ({ config, children }: Props) => {
+interface Props {
+    config: ProtonConfig;
+    children: React.ReactNode;
+    hasInitialAuth?: boolean;
+}
+
+const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
     const authentication = useInstance(() => {
         if (isSSOMode) {
             return createAuthentication(createSecureSessionStorage2());
@@ -110,7 +111,10 @@ const ProtonApp = ({ config, children }: Props) => {
         cacheRef.current = createCache<string, any>();
     }
     const [authData, setAuthData] = useState<AuthState>(() => {
-        const state = getInitialState(authentication.getUID(), authentication.getLocalID());
+        const state =
+            hasInitialAuth === false
+                ? undefined
+                : getInitialState(authentication.getUID(), authentication.getLocalID());
         const history = createHistory({ basename: getBasename(state?.localID) });
         return {
             ...state,
