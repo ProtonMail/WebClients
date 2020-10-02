@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
 
-import { Toolbar, PrivateMainArea, useAppTitle, useNotifications } from 'react-components';
+import { Toolbar, PrivateMainArea, useAppTitle } from 'react-components';
 
 import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
@@ -21,7 +21,6 @@ function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; t
     const cache = useDriveCache();
     const [, setError] = useState();
     const { setFolder } = useDriveActiveFolder();
-    const { createNotification } = useNotifications();
     const { navigateToRoot } = useNavigate();
 
     const folder = useMemo(() => {
@@ -38,25 +37,25 @@ function DriveContainerView({ match }: RouteComponentProps<{ shareId?: string; t
             });
         } else if (!shareId || !type || !linkId) {
             console.error('Missing parameters, should be none or shareId/type/linkId');
-            createNotification({ type: 'error', text: c('Error').t`Invalid link URL, redirecting to root folder` });
             navigateToRoot();
         } else if (type === LinkURLType.FOLDER) {
             return { shareId, linkId };
-        } else {
-            return lastFolderRef.current;
         }
+        return lastFolderRef.current;
     }, [match.params]);
 
     // In case we open preview, folder doesn't need to change
     lastFolderRef.current = folder;
 
     useEffect(() => {
+        const { type } = match.params;
+
         if (folder) {
             setFolder(folder);
-        } else {
+        } else if (type !== LinkURLType.FILE) {
             navigateToRoot();
         }
-    }, [folder]);
+    }, [folder, match.params]);
 
     useAppTitle(c('Title').t`My files`);
 
