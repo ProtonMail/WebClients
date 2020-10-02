@@ -173,16 +173,23 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
         link(scope, el, { mode }) {
             const { dispatcher } = dispatchers(['signup']);
             const wizard = iframeVerifWizard('signupUserForm');
+            let loaded = false;
 
             const name = mode || 'top';
-
             el[0].querySelector('.signupIframe-iframe').innerHTML = createIframe(name);
             const iframe = el[0].querySelector('iframe');
-
+            const checkIframeLoaded = () => {
+                if (!loaded) {
+                    el[0].classList.add('signupIframe-error');
+                }
+            };
+            // Wait 30 seconds to check if the iframe is properly loaded
+            setTimeout(checkIframeLoaded, 30 * 1000);
             /**
              * Fire in the hole, iframe is loaded, give it the form config.
              */
             const onLoad = () => {
+                loaded = true;
                 dispatcher.signup('iframe.loaded');
                 iframe.contentWindow.postMessage(
                     {
