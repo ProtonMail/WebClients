@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
 import {
@@ -8,6 +8,8 @@ import {
     useFolders,
     useConversationCounts,
     useMessageCounts,
+    useLocalState,
+    useUser,
     SidebarList,
     SimpleSidebarListItemHeader,
     SidebarListItemHeaderLink
@@ -29,11 +31,12 @@ interface Props {
 }
 
 const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
+    const [user] = useUser();
     const [conversationCounts, actualLoadingConversationCounts] = useConversationCounts();
     const [messageCounts, actualLoadingMessageCounts] = useMessageCounts();
     const [mailSettings, loadingMailSettings] = useMailSettings();
-    const [displayFolders, toggleFolders] = useState(true);
-    const [displayLabels, toggleLabels] = useState(true);
+    const [displayFolders, toggleFolders] = useLocalState(true, `${user.ID}-display-folders`);
+    const [displayLabels, toggleLabels] = useLocalState(true, `${user.ID}-display-labels`);
     const [labels, loadingLabels] = useLabels();
     const [folders, loadingFolders] = useFolders();
 
