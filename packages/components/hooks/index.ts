@@ -75,3 +75,4 @@ export { default as useWelcomeFlags } from './useWelcomeFlags';
 export * from './useWelcomeFlags';
 export { useImporters, useImportHistory } from './useImporters';
 export { default as useTraceUpdate } from './useTraceUpdate';
+export { default as useLoginType } from './useLoginType';

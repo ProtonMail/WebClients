@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
-import { authMember, removeMember, updateRole, privatizeMember } from 'proton-shared/lib/api/members';
+import { authMember, privatizeMember, removeMember, updateRole } from 'proton-shared/lib/api/members';
 import { revokeSessions } from 'proton-shared/lib/api/memberSessions';
-import { isSSOMode, isStandaloneMode, MEMBER_PRIVATE, MEMBER_ROLE, APPS } from 'proton-shared/lib/constants';
+import { APPS, isSSOMode, isStandaloneMode, MEMBER_PRIVATE, MEMBER_ROLE } from 'proton-shared/lib/constants';
 import memberLogin from 'proton-shared/lib/authentication/memberLogin';
-import { Member, Address, User as tsUser, Organization } from 'proton-shared/lib/interfaces';
+import { Address, Member, Organization, User as tsUser } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { revoke } from 'proton-shared/lib/api/auth';
@@ -16,9 +16,18 @@ import { getAppHref } from 'proton-shared/lib/apps/helper';
 import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
 import { getUser } from 'proton-shared/lib/api/user';
 import { MemberAuthResponse } from 'proton-shared/lib/authentication/interface';
+import { LoginTypes } from 'proton-shared/lib/authentication/LoginInterface';
 
-import { ConfirmModal, Alert, DropdownActions, ErrorButton } from '../../components';
-import { useLoading, useModals, useApi, useAuthentication, useNotifications, useEventManager } from '../../hooks';
+import { Alert, ConfirmModal, DropdownActions, ErrorButton } from '../../components';
+import {
+    useApi,
+    useAuthentication,
+    useEventManager,
+    useLoading,
+    useLoginType,
+    useModals,
+    useNotifications,
+} from '../../hooks';
 
 import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
@@ -36,6 +45,7 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
+    const loginType = useLoginType();
 
     const handleConfirmDelete = async () => {
         await api(removeMember(member.ID));
@@ -60,7 +70,12 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
             const User = await memberApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
 
             const done = (localID: number) => {
-                window.open(getAppHref('/overview', APPS.PROTONACCOUNT, localID));
+                const url = getAppHref('/overview', APPS.PROTONACCOUNT, localID);
+                if (loginType === LoginTypes.TRANSIENT || loginType === LoginTypes.PERSISTENT_WORKAROUND) {
+                    document.location.assign(url);
+                } else {
+                    window.open(url);
+                }
             };
 
             const validatedSession = await maybeResumeSessionByUser(api, User);
