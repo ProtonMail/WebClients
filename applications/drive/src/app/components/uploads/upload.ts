@@ -5,6 +5,7 @@ import { createApiError } from 'proton-shared/lib/fetch/ApiError';
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
 import { TransferCancel, UploadInfo } from '../../interfaces/transfer';
+import { isTransferCancelError } from '../../utils/transfer';
 import runInQueue from '../../utils/runInQueue';
 import { FILE_CHUNK_SIZE } from '../../constants';
 import { waitUntil } from '../../utils/async';
@@ -304,7 +305,10 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
     const uploadControls: UploadControls = {
         start: () =>
             start().catch((err) => {
-                onError?.(err);
+                // Cancel throws the error itself to make it instant
+                if (!isTransferCancelError(err)) {
+                    onError?.(err);
+                }
                 throw err;
             }),
         cancel,
