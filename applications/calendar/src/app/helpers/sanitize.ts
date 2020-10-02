@@ -25,3 +25,11 @@ export const stripAllTags = (source: string) => {
     document.body.removeChild(div);
     return result;
 };
+
+// for ms teams invites that contain links like <https://example.com/>
+export const buildMSTeamsLinks = (input: string) => {
+    return input.replace(
+        /(<((http:|https:|mailto:)\S*)>)/gm,
+        (fullMatch, match1, match2) => `&lt;<a href=${match2}>${match2}</a>&gt;;`
+    );
+};

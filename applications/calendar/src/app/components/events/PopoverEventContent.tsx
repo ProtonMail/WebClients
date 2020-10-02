@@ -6,7 +6,7 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 
-import { sanitizeDescription } from '../../helpers/sanitize';
+import { sanitizeDescription, buildMSTeamsLinks } from '../../helpers/sanitize';
 import PopoverNotification from './PopoverNotification';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { EventModelReadView } from '../../interfaces/EventModel';
@@ -37,7 +37,8 @@ const PopoverEventContent = ({
 
     const trimmedLocation = model.location.trim();
     const htmlString = useMemo(() => {
-        return sanitizeDescription(model.description.trim());
+        const description = buildMSTeamsLinks(model.description.trim());
+        return sanitizeDescription(description);
     }, [model.description]);
 
     const frequencyString = useMemo(() => {
