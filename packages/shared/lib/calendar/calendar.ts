@@ -20,7 +20,7 @@ export const getProbablyActiveCalendars = (calendars: Calendar[] = []) => {
     return calendars.filter(getIsCalendarProbablyActive);
 };
 
-export const getDefaultCalendar = (calendars: Calendar[] = [], defaultCalendarID = '') => {
+export const getDefaultCalendar = (calendars: Calendar[] = [], defaultCalendarID: string | null = '') => {
     if (!calendars.length) {
         return;
     }
