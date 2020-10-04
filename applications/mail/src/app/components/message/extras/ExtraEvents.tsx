@@ -7,14 +7,14 @@ import {
     useAddresses,
     useLoading,
     useConfig,
-    useUserSettings
+    useUserSettings,
+    useGetCalendarUserSettings
 } from 'react-components';
 import { arrayToBinaryString, decodeUtf8 } from 'pmcrypto';
 import { getDefaultCalendar, getProbablyActiveCalendars } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { getCalendarUserSettingsModel } from 'proton-shared/lib/models/calendarSettingsModel';
 import { useAttachmentCache } from '../../../containers/AttachmentProvider';
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../../../helpers/calendar/EventInvitationError';
@@ -44,6 +44,7 @@ const ExtraEvents = ({ message }: Props) => {
     const [addresses = [], loadingAddresses] = useAddresses();
     const config = useConfig();
     const [userSettings, loadingUserSettings] = useUserSettings();
+    const getCalendarUserSettings = useGetCalendarUserSettings();
     const [loadingWidget, withLoadingWidget] = useLoading();
     const [invitations, setInvitations] = useState<(RequireSome<EventInvitation, 'method'> | EventInvitationError)[]>(
         []
@@ -54,12 +55,12 @@ const ExtraEvents = ({ message }: Props) => {
         loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || !config;
 
     useEffect(() => {
+        if (!message.privateKeys || loadingConfigs) {
+            return;
+        }
         const run = async () => {
-            if (!message.privateKeys || loadingConfigs) {
-                return;
-            }
             if (calendars?.length) {
-                const { DefaultCalendarID } = await getCalendarUserSettingsModel(api);
+                const { DefaultCalendarID } = await getCalendarUserSettings();
                 const activeCalendars = getProbablyActiveCalendars(calendars);
                 const defaultCalendar = getDefaultCalendar(activeCalendars, DefaultCalendarID);
                 setDefaultCalendar(defaultCalendar);
