@@ -1,14 +1,13 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import { withRouter } from 'react-router';
 import { RouteComponentProps } from 'react-router-dom';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { UserModel, Address, Organization, Member } from 'proton-shared/lib/interfaces';
-import { Alert, Loader, Table, TableHeader, TableBody, TableRow } from '../../components';
-import { useMembers, useMemberAddresses, useModals, useOrganizationKey } from '../../hooks';
+import { Alert, Loader, Table, TableHeader, TableBody, TableRow, Block, Select, PrimaryButton } from '../../components';
+import { useMembers, useMemberAddresses, useModals, useOrganizationKey, useNotifications } from '../../hooks';
 
 import AddressModal from './AddressModal';
-import AddressesToolbar from './AddressesToolbar';
 import AddressStatus from './AddressStatus';
 import { getStatus } from './helper';
 import AddressActions from './AddressActions';
@@ -24,6 +23,7 @@ const AddressesWithMembers = ({ match, user, organization }: Props) => {
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [memberIndex, setMemberIndex] = useState(-1);
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const { createNotification } = useNotifications();
 
     useEffect(() => {
         if (memberIndex === -1 && Array.isArray(members)) {
@@ -46,15 +46,12 @@ const AddressesWithMembers = ({ match, user, organization }: Props) => {
     }, [members, memberIndex]);
 
     if (loadingMembers || memberIndex === -1 || (loadingMemberAddresses && !memberAddressesMap)) {
-        return (
-            <>
-                <Loader />
-            </>
-        );
+        return <Loader />;
     }
 
     const handleAddAddress = (member: Member) => {
         if (member.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey) {
+            createNotification({ type: 'error', text: c('Error').t`The organization key must be activated first.` });
             throw new Error('Organization key is not decrypted');
         }
         createModal(<AddressModal member={member} organizationKey={organizationKey} />);
@@ -63,16 +60,38 @@ const AddressesWithMembers = ({ match, user, organization }: Props) => {
     const showUsername = memberIndex === ALL_MEMBERS_ID;
     const selectedSelf = memberIndex === members.findIndex(({ Self }) => Self);
 
+    const memberOptions = [
+        {
+            text: c('Option').t`All users`,
+            value: ALL_MEMBERS_ID,
+        },
+        ...members.map(({ Name }, i) => ({
+            text: Name,
+            value: i,
+        })),
+    ];
+
     return (
         <>
             <Alert>{c('Info')
                 .t`Premium plans let you add multiple email addresses to your account. All the emails associated with them will appear in the same mailbox. If you are the admin of a Professional or Visionary plan, you can manage email addresses for each user in your organization. The email address at the top of the list will automatically be selected as the default email address.`}</Alert>
-            <AddressesToolbar
-                members={members}
-                onChangeMemberIndex={setMemberIndex}
-                onAddAddress={handleAddAddress}
-                memberIndex={memberIndex}
-            />
+            {memberOptions.length > 2 ? (
+                <Block>
+                    <Select
+                        id="memberSelect"
+                        value={memberIndex}
+                        options={memberOptions}
+                        onChange={({ target: { value } }: ChangeEvent<HTMLSelectElement>) => setMemberIndex(+value)}
+                    />
+                </Block>
+            ) : null}
+            {memberIndex === ALL_MEMBERS_ID ? null : (
+                <Block>
+                    <PrimaryButton onClick={() => handleAddAddress(members[memberIndex])}>
+                        {c('Action').t`Add address`}
+                    </PrimaryButton>
+                </Block>
+            )}
             {selectedSelf ? (
                 <AddressesWithUser user={user} />
             ) : (
