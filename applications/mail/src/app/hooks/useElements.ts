@@ -330,16 +330,18 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
             const toUpdateCompleted = (
                 await Promise.all(
-                    toUpdate.map(async (element) => {
-                        const elementID = element.ID || '';
-                        const existingElement = cache.elements[elementID];
+                    toUpdate
+                        .filter(({ ID = '' }) => !toDelete.includes(ID)) // No need to get deleted element
+                        .map(async (element) => {
+                            const elementID = element.ID || '';
+                            const existingElement = cache.elements[elementID];
 
-                        if (existingElement) {
-                            element = parseLabelIDsInEvent(existingElement, element);
-                        }
+                            if (existingElement) {
+                                element = parseLabelIDsInEvent(existingElement, element);
+                            }
 
-                        return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
-                    })
+                            return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
+                        })
                 )
             ).filter(isTruthy);
 
