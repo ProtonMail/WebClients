@@ -9,14 +9,12 @@ import { CalendarEvent, CalendarEventData } from 'proton-shared/lib/interfaces/c
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
-import { useGetPublicKeys } from './useGetPublicKeys';
 import { useGetCalendarKeys } from './useGetCalendarKeys';
 import useGetEncryptionPreferences from './useGetEncryptionPreferences';
 
 const useGetCalendarEventRaw = () => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getCalendarKeys = useGetCalendarKeys();
-    const getPublicKeys = useGetPublicKeys();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const getEncryptionPreferences = useGetEncryptionPreferences();
@@ -82,7 +80,7 @@ const useGetCalendarEventRaw = () => {
                 calendarSessionKey,
             });
         },
-        [getAddresses, getAddressKeys, getCalendarBootstrap, getCalendarKeys, getPublicKeys]
+        [getAddresses, getAddressKeys, getCalendarBootstrap, getCalendarKeys]
     );
 };
 

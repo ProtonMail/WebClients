@@ -17,6 +17,7 @@ const getRecordPending = (promise) => {
         status: STATUS.PENDING,
         value: undefined,
         promise,
+        timestamp: Date.now(),
     };
 };
 
@@ -26,12 +27,14 @@ const getRecordThen = (promise) => {
             return {
                 status: STATUS.RESOLVED,
                 value,
+                timestamp: Date.now(),
             };
         })
         .catch((error) => {
             return {
                 status: STATUS.REJECTED,
                 value: error,
+                timestamp: Date.now(),
             };
         });
 };
@@ -56,9 +59,13 @@ const update = (cache, key, promise) => {
     return record;
 };
 
-export const getPromiseValue = (cache, key, miss) => {
+export const getPromiseValue = (cache, key, miss, lifetime = Number.MAX_SAFE_INTEGER) => {
     const oldRecord = cache.get(key);
-    if (!oldRecord || oldRecord.status === STATUS.REJECTED) {
+    if (
+        !oldRecord ||
+        oldRecord.status === STATUS.REJECTED ||
+        (oldRecord.status === STATUS.RESOLVED && Date.now() - oldRecord.timestamp > lifetime)
+    ) {
         const record = update(cache, key, miss(key));
         return record.promise;
     }
