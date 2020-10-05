@@ -3,7 +3,7 @@ import { normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { useCallback } from 'react';
 import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
-import extractEncryptionPreferences from 'proton-shared/lib/mail/encryptionPreferences';
+import extractEncryptionPreferences, { EncryptionPreferences } from 'proton-shared/lib/mail/encryptionPreferences';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import useApi from './useApi';
 import { useGetAddresses } from './useAddresses';
@@ -65,8 +65,8 @@ const useGetEncryptionPreferences = () => {
         [api, getAddressKeys, getAddresses, getPublicKeys, mailSettings]
     );
 
-    return useCallback(
-        (email, lifetime = DEFAULT_LIFETIME) => {
+    return useCallback<(email: string, lifetime?: number) => Promise<EncryptionPreferences>>(
+        (email: string, lifetime = DEFAULT_LIFETIME) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
             }
