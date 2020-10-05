@@ -9,28 +9,28 @@ const iconContainerClassName = 'inline-flex rounded50 p0-25 mr1 ml0-25 partstatI
 const iconClassName = 'mauto color-global-light';
 
 const IconYes = ({ participantName }: { participantName: string }) => (
-    <Tooltip title={c('Calendar invite info').t`${participantName} accepted your invitation`}>
+    <Tooltip title={c('Calendar invite info').t`${participantName} accepted the invitation`}>
         <span className={`${iconContainerClassName} bg-global-success`}>
             <Icon name="on" className={iconClassName} size={8} />
         </span>
     </Tooltip>
 );
 const IconMaybe = ({ participantName }: { participantName: string }) => (
-    <Tooltip title={c('Calendar invite info').t`${participantName} tentatively accepted your invitation`}>
+    <Tooltip title={c('Calendar invite info').t`${participantName} tentatively accepted the invitation`}>
         <span className={`${iconContainerClassName} bg-global-attention`}>
             <Icon name="question-nocircle" className={iconClassName} size={8} />
         </span>
     </Tooltip>
 );
 const IconNo = ({ participantName }: { participantName: string }) => (
-    <Tooltip title={c('Calendar invite info').t`${participantName} declined your invitation`}>
+    <Tooltip title={c('Calendar invite info').t`${participantName} declined the invitation`}>
         <span className={`${iconContainerClassName} bg-global-warning`}>
             <Icon name="off" className={iconClassName} size={8} />
         </span>
     </Tooltip>
 );
 const IconNeedsAction = ({ participantName }: { participantName: string }) => (
-    <Tooltip title={c('Calendar invite info').t`${participantName} hasn't answered your invitation yet`}>
+    <Tooltip title={c('Calendar invite info').t`${participantName} hasn't answered the invitation yet`}>
         <span className={`${iconContainerClassName} needsAction`}>
             <Icon name="" size={8} />
         </span>
