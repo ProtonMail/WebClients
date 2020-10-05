@@ -1,4 +1,5 @@
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
+import { getEventStatus } from 'proton-shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { EventModelView } from '../../../interfaces/EventModel';
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';
@@ -35,6 +36,7 @@ export const propertiesToModel = (component: VcalVeventComponent, isAllDay: bool
         description: description?.value ?? '',
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
+        status: getEventStatus(component),
         start,
         end,
         rest,

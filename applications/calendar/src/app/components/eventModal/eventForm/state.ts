@@ -2,11 +2,12 @@ import {
     DAILY_TYPE,
     END_TYPE,
     FREQUENCY,
+    ICAL_EVENT_STATUS,
     MONTHLY_TYPE,
     WEEKLY_TYPE,
     YEARLY_TYPE,
 } from 'proton-shared/lib/calendar/constants';
-import { getRecurrenceId, getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
+import { getIsAllDay, getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { Address as tsAddress } from 'proton-shared/lib/interfaces';
 import {
@@ -16,21 +17,21 @@ import {
     SETTINGS_NOTIFICATION_TYPE,
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { DEFAULT_EVENT_DURATION } from '../../../constants';
+import { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
 import { getIsInvitation } from '../../../helpers/invitations';
+import { notificationsToModel } from '../../../helpers/notificationsToModel';
+import { stripAllTags } from '../../../helpers/sanitize';
+import { DateTimeModel, EventModel, FrequencyModel } from '../../../interfaces/EventModel';
+import { DEFAULT_FULL_DAY_NOTIFICATION, DEFAULT_PART_DAY_NOTIFICATION } from '../../../modelConstants';
+import { DEFAULT_FULL_DAY_NOTIFICATIONS, DEFAULT_PART_DAY_NOTIFICATIONS } from '../../../settingsConstants';
+import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
+import getFrequencyModelChange from './getFrequencyModelChange';
+import { getDeviceNotifications } from './notificationModel';
+import { propertiesToModel } from './propertiesToModel';
+import { propertiesToNotificationModel } from './propertiesToNotificationModel';
 
 import { getDateTimeState } from './time';
-import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
-import { propertiesToModel } from './propertiesToModel';
-import { DEFAULT_EVENT_DURATION } from '../../../constants';
-import { DEFAULT_FULL_DAY_NOTIFICATIONS, DEFAULT_PART_DAY_NOTIFICATIONS } from '../../../settingsConstants';
-import { DEFAULT_FULL_DAY_NOTIFICATION, DEFAULT_PART_DAY_NOTIFICATION } from '../../../modelConstants';
-import { getDeviceNotifications } from './notificationModel';
-import { notificationsToModel } from '../../../helpers/notificationsToModel';
-import { propertiesToNotificationModel } from './propertiesToNotificationModel';
-import { DateTimeModel, FrequencyModel, EventModel } from '../../../interfaces/EventModel';
-import { stripAllTags } from '../../../helpers/sanitize';
-import getFrequencyModelChange from './getFrequencyModelChange';
-import { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
 
 export const getNotificationModels = ({
     DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
@@ -162,6 +163,7 @@ export const getInitialModel = ({
         isAllDay,
         organizer: { email: memberEmail, cn: memberEmail },
         isInvitation: false,
+        status: ICAL_EVENT_STATUS.CONFIRMED,
         defaultEventDuration,
         frequencyModel,
         hasTouchedRrule: false,

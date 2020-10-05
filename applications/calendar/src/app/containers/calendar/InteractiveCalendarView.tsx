@@ -1,5 +1,6 @@
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { getHasAttendee } from 'proton-shared/lib/calendar/vcalHelper';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { c } from 'ttag';
 import { Prompt } from 'react-router';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -22,8 +23,10 @@ import {
     useNotifications,
     useGetCalendarEventRaw,
     useBeforeUnload,
+    useContactEmails,
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
+import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { dateLocale } from 'proton-shared/lib/i18n';
@@ -39,6 +42,7 @@ import {
     SyncMultipleApiResponse,
 } from 'proton-shared/lib/interfaces/calendar';
 import { Address } from 'proton-shared/lib/interfaces';
+import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
 
@@ -85,7 +89,6 @@ import {
     MouseDownAction,
     MouseUpAction,
 } from '../../components/calendar/interactions/interface';
-import useGetCalendarEventPersonal from './eventStore/useGetCalendarEventPersonal';
 import getComponentFromCalendarEvent from './eventStore/cache/getComponentFromCalendarEvent';
 import getSyncMultipleEventsPayload, { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
 import getSaveEventActions from './eventActions/getSaveEventActions';
@@ -162,6 +165,16 @@ const InteractiveCalendarView = ({
     const { createNotification } = useNotifications();
 
     const [eventModalID, setEventModalID] = useState();
+
+    const contacts = (useContactEmails()[0] as ContactEmail[]) || [];
+    const contactEmailMap = useMemo(() => {
+        return contacts.reduce<SimpleMap<ContactEmail>>((acc, item) => {
+            if (!acc[item.Email]) {
+                acc[item.Email] = item;
+            }
+            return acc;
+        }, {});
+    }, [contacts]);
 
     const readCalendarBootstrap = useReadCalendarBootstrap();
     const getCalendarKeys = useGetCalendarKeys();
@@ -894,6 +907,7 @@ const InteractiveCalendarView = ({
                             event={targetEvent}
                             tzid={tzid}
                             weekStartsOn={weekStartsOn}
+                            contactEmailMap={contactEmailMap}
                             formatTime={formatTime}
                             onDelete={() => {
                                 return (

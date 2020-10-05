@@ -20,13 +20,15 @@ import { c, msgid } from 'ttag';
 import { AttendeeModel } from '../../../interfaces/EventModel';
 
 const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
+const { TRUE } = ICAL_ATTENDEE_RSVP;
+const { NEEDS_ACTION } = ICAL_ATTENDEE_STATUS;
 
 const emailToAttendee = (email: string): AttendeeModel => ({
     email,
     cn: email,
     role: REQUIRED,
-    partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
-    rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+    partstat: NEEDS_ACTION,
+    rsvp: TRUE,
 });
 
 interface Props {

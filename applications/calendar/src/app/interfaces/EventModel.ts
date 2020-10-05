@@ -8,6 +8,7 @@ import {
     YEARLY_TYPE,
     ICAL_ATTENDEE_STATUS,
     ICAL_ATTENDEE_RSVP,
+    ICAL_EVENT_STATUS,
 } from 'proton-shared/lib/calendar/constants';
 import { NotificationModel } from './NotificationModel';
 
@@ -77,6 +78,8 @@ export interface EventModelView {
     end: DateTimeModel;
     attendees: AttendeeModel[];
     organizer: OrganizerModel;
+    status: ICAL_EVENT_STATUS;
+    isInvitation?: boolean;
     rest?: any;
 }
 
@@ -90,7 +93,6 @@ export interface EventModel extends EventModelView {
         addressID: string;
     };
     isAllDay: boolean;
-    isInvitation: boolean;
     defaultPartDayNotification: NotificationModel;
     defaultFullDayNotification: NotificationModel;
     fullDayNotifications: NotificationModel[];

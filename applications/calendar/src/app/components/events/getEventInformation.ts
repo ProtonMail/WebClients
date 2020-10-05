@@ -1,7 +1,8 @@
+import { FREQUENCY, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
+import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { EventModelReadView } from '../../interfaces/EventModel';
-import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
 
 const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventModelReadView) => {
     const { calendarData, eventReadResult } = calendarViewEvent.data;
@@ -14,6 +15,9 @@ const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventM
 
     const calendarColor = tmpData?.calendar.color || calendarData.Color;
     const eventTitleSafe = getDisplayTitle(tmpData?.title || model.title);
+    const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
+    const isRecurring = model.frequencyModel.type !== FREQUENCY.ONCE;
+    const isSingleEdit = !!eventReadResult?.result?.[0]['recurrence-id'];
 
     return {
         isTemporaryEvent,
@@ -22,6 +26,9 @@ const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventM
         calendarColor,
         eventReadError,
         eventTitleSafe,
+        isCancelled,
+        isRecurring,
+        isSingleEdit,
     };
 };
 

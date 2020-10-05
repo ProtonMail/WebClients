@@ -1,4 +1,4 @@
-import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import { ICAL_EVENT_STATUS, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { withRequiredProperties } from 'proton-shared/lib/calendar/veventHelper';
 import {
     buildVcalOrganizer,
@@ -54,6 +54,7 @@ export const modelToGeneralProperties = ({
     title,
     location,
     description,
+    status,
     rest,
 }: Partial<EventModel>): Omit<VcalVeventComponent, 'dtstart' | 'dtend'> => {
     const properties = omit(rest, ['dtstart', 'dtend']);
@@ -73,8 +74,18 @@ export const modelToGeneralProperties = ({
     if (description) {
         properties.description = { value: description.slice(0, MAX_LENGTHS.EVENT_DESCRIPTION) };
     }
+    properties.status = { value: status || ICAL_EVENT_STATUS.CONFIRMED };
 
     return properties;
+};
+
+const modelToOrganizerProperties = ({ organizer }: EventModel) => {
+    if (!organizer?.email) {
+        return {};
+    }
+    return {
+        organizer: buildVcalOrganizer(organizer.email),
+    };
 };
 
 const modelToAttendeeProperties = ({ attendees, organizer }: EventModel) => {
@@ -82,7 +93,6 @@ const modelToAttendeeProperties = ({ attendees, organizer }: EventModel) => {
         return {};
     }
     return {
-        organizer: buildVcalOrganizer(organizer.email),
         attendee: attendees.map(({ email, rsvp, role, token, partstat }) => ({
             value: email,
             parameters: {
@@ -105,6 +115,7 @@ const modelToValarmComponents = ({ isAllDay, fullDayNotifications, partDayNotifi
 export const modelToVeventComponent = (model: EventModel) => {
     const dateProperties = modelToDateProperties(model);
     const frequencyProperties = modelToFrequencyProperties(model);
+    const organizerProperties = modelToOrganizerProperties(model);
     const attendeeProperties = modelToAttendeeProperties(model);
     const generalProperties = modelToGeneralProperties(model);
     const valarmComponents = modelToValarmComponents(model);
@@ -115,6 +126,7 @@ export const modelToVeventComponent = (model: EventModel) => {
         ...generalProperties,
         ...frequencyProperties,
         ...dateProperties,
+        ...organizerProperties,
         ...attendeeProperties,
         component: 'vevent',
         components,

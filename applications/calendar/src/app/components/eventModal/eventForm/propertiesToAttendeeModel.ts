@@ -9,7 +9,6 @@ export const propertiesToAttendeeModel = (attendee?: VcalAttendeeProperty[]): At
         return [];
     }
     return attendee.map((attendee) => {
-        const { cn = '', role = '', partstat = '' } = attendee?.parameters || {};
         const email = extractEmailAddress(attendee);
         if (email === undefined) {
             throw new Error('Malformed attendee');
@@ -17,9 +16,9 @@ export const propertiesToAttendeeModel = (attendee?: VcalAttendeeProperty[]): At
         const result: AttendeeModel = {
             email,
             rsvp: ICAL_ATTENDEE_RSVP.TRUE,
-            cn,
-            partstat: getAttendeePartstat(partstat),
-            role: getAttendeeRole(role),
+            cn: attendee.parameters?.cn || email,
+            partstat: getAttendeePartstat(attendee),
+            role: getAttendeeRole(attendee),
             token: attendee?.parameters?.['x-pm-token'],
         };
         return result;

@@ -1,23 +1,25 @@
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import React, { useMemo } from 'react';
-import { Button, Loader, useLoading, Alert, classnames } from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
-import { c } from 'ttag';
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
+import { noop } from 'proton-shared/lib/helpers/function';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import useReadEvent from './useReadEvent';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import React, { useMemo } from 'react';
+import { Alert, Badge, Button, classnames, Loader, useLoading } from 'react-components';
+import { c } from 'ttag';
+import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
+import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import { EnDash } from '../EnDash';
+import { getEventErrorMessage } from './error';
+import getEventInformation from './getEventInformation';
 
 import PopoverEventContent from './PopoverEventContent';
-import PopoverHeader from './PopoverHeader';
 import PopoverFooter from './PopoverFooter';
-import { getEventErrorMessage } from './error';
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
-import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
-import getEventInformation from './getEventInformation';
-import { EnDash } from '../EnDash';
+import PopoverHeader from './PopoverHeader';
+import useReadEvent from './useReadEvent';
 
 interface Props {
     formatTime: (date: Date) => string;
@@ -30,6 +32,7 @@ interface Props {
     tzid: string;
     weekStartsOn: WeekStartsOn;
     isNarrow: boolean;
+    contactEmailMap: SimpleMap<ContactEmail>;
 }
 const EventPopover = ({
     formatTime,
@@ -43,6 +46,7 @@ const EventPopover = ({
     tzid,
     weekStartsOn,
     isNarrow,
+    contactEmailMap,
 }: Props) => {
     const [loadingAction, withLoadingAction] = useLoading();
 
@@ -52,7 +56,15 @@ const EventPopover = ({
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
 
     const model = useReadEvent(eventReadResult?.result, tzid, eventData?.Author);
-    const { eventReadError, isEventReadLoading, eventTitleSafe } = getEventInformation(targetEvent, model);
+    const {
+        eventReadError,
+        isEventReadLoading,
+        eventTitleSafe,
+        isCancelled,
+        isRecurring,
+        isSingleEdit,
+    } = getEventInformation(targetEvent, model);
+    const allowEdit = !model.isInvitation || !(isRecurring || isSingleEdit);
 
     const handleDelete = () => {
         if (eventData && getIsCalendarEvent(eventData)) {
@@ -111,6 +123,11 @@ const EventPopover = ({
             {c('Action').t`Delete`}
         </Button>
     );
+    const editButton = (
+        <Button data-test-id="event-popover:edit" onClick={handleEdit} disabled={loadingAction || isCalendarDisabled}>
+            {c('Action').t`Edit`}
+        </Button>
+    );
 
     const mergedClassName = classnames([
         'eventpopover pt2 pl1-5 pr1-5 pb1 flex flex-column flex-nowrap',
@@ -145,6 +162,11 @@ const EventPopover = ({
                 <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut mb0-5" title={eventTitleSafe}>
                     {eventTitleSafe}
                 </h1>
+                {isCancelled && (
+                    <Badge type="error" tooltip={c('Calendar invite info').t`This event has been cancelled`}>
+                        {c('Title').t`CANCELLED`}
+                    </Badge>
+                )}
             </PopoverHeader>
             <div className="scroll-if-needed mb1">
                 <PopoverEventContent
@@ -155,17 +177,12 @@ const EventPopover = ({
                     weekStartsOn={weekStartsOn}
                     model={model}
                     formatTime={formatTime}
+                    contactEmailMap={contactEmailMap}
                 />
             </div>
             <PopoverFooter className="flex-item-noshrink">
                 {deleteButton}
-                <Button
-                    data-test-id="event-popover:edit"
-                    onClick={handleEdit}
-                    disabled={loadingAction || isCalendarDisabled}
-                >
-                    {c('Action').t`Edit`}
-                </Button>
+                {allowEdit && editButton}
             </PopoverFooter>
         </div>
     );
