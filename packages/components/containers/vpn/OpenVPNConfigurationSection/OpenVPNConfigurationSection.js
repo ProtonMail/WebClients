@@ -175,7 +175,7 @@ const OpenVPNConfigurationSection = () => {
                     .t`What is the difference between UDP and TCP protocols?`}</Href>
             </div>
 
-            <h3 className="mt2">{c('Title').t`3. Select connection and download`}</h3>
+            <h3 className="mt2">{c('Title').t`3. Select config file and download`}</h3>
             <div className="flex onmobile-flex-column mb1-5">
                 <RadioGroup
                     name="category"
