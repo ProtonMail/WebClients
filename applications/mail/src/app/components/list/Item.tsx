@@ -66,7 +66,7 @@ const Item = ({
     dragged,
     index
 }: Props) => {
-    const displayRecipients = [SENT, ALL_SENT].includes(labelID as MAILBOX_LABEL_IDS);
+    const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
