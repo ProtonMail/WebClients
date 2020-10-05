@@ -14,6 +14,12 @@
 		padding: 0;
 		max-height: 20rem;
 		overflow-y: auto;
+
+		mark,
+		li:hover mark,
+		li[aria-selected='true'] mark {
+			background: rgba($pm-blue-light, 0.4);
+		}
 	}
 
 	li {
