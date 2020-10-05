@@ -1,21 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
+import Title from './Title';
+
+interface Props extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {
+    modalTitleID: string;
+    children: React.ReactNode;
+    onClose?: () => void;
+    displayTitle?: boolean;
+    hasClose?: boolean;
+    closeTextVisible?: boolean;
+    closeTextModal?: string;
+}
 
 const Header = ({
     children,
     modalTitleID,
-    className = '',
-    closeTextModal = '',
-    closeTextVisible = false,
+    className,
+    closeTextModal,
+    closeTextVisible,
     hasClose = true,
     displayTitle = true,
     onClose,
     ...rest
-}) => {
-    const closeText = closeTextModal === '' ? c('Action').t`Close modal` : closeTextModal;
+}: Props) => {
+    const closeText = !closeTextModal ? c('Action').t`Close modal` : closeTextModal;
     return (
         <header
             className={classnames(['pm-modalHeader', !displayTitle && 'pm-modalHeader--no-title', className])}
@@ -27,21 +37,15 @@ const Header = ({
                     <Icon className="pm-modalClose-icon" name="close" />
                 </button>
             ) : null}
-            <h1 id={modalTitleID} className={classnames(['pm-modalTitle', !displayTitle && 'sr-only'])}>
-                {children}
-            </h1>
+            {typeof children === 'string' ? (
+                <Title id={modalTitleID} className={!displayTitle ? 'sr-only' : undefined}>
+                    {children}
+                </Title>
+            ) : (
+                children
+            )}
         </header>
     );
-};
-
-Header.propTypes = {
-    children: PropTypes.node.isRequired,
-    closeTextModal: PropTypes.string,
-    hasClose: PropTypes.bool,
-    onClose: PropTypes.func,
-    className: PropTypes.string,
-    closeTextIsHidden: PropTypes.bool,
-    modalTitleID: PropTypes.string.isRequired,
 };
 
 export default Header;
