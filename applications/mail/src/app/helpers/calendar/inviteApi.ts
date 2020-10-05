@@ -6,8 +6,9 @@ import {
     syncMultipleEvents,
     UpdateCalendarEventSyncData
 } from 'proton-shared/lib/api/calendars';
-import { getAttendeeEmail, modifyAttendeesPartstat, withPmAttendees } from 'proton-shared/lib/calendar/attendees';
-import { ICAL_EVENT_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { modifyAttendeesPartstat, withPmAttendees } from 'proton-shared/lib/calendar/attendees';
+import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
+import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
@@ -15,8 +16,10 @@ import {
     getAttendeeHasPartStat,
     getAttendeePartstat,
     getEventStatus,
+    getHasAttendee,
     getHasRecurrenceId
 } from 'proton-shared/lib/calendar/vcalHelper';
+import { withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
@@ -24,40 +27,73 @@ import { Address, Api } from 'proton-shared/lib/interfaces';
 import { Calendar, CalendarEvent, SyncMultipleApiResponse } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
+import { RequireSome, SimpleMap, Unwrap } from 'proton-shared/lib/interfaces/utils';
 import { MessageExtended } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import {
     CalendarWidgetData,
     EventInvitation,
+    findAttendee,
     getHasModifiedAttendees,
     getInvitationHasAttendee,
+    getInvitedEventWithAlarms,
     getIsInvitationOutdated,
     getSequence,
     InvitationModel,
-    processEventInvitation
+    processEventInvitation,
+    UPDATE_ACTION
 } from './invite';
 
-const { CONFIRMED, CANCELLED } = ICAL_EVENT_STATUS;
+const { CANCELLED } = ICAL_EVENT_STATUS;
+const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, CANCEL } = UPDATE_ACTION;
+
+interface GetVeventWithAlarmsArgs {
+    calendarEvent: CalendarEvent;
+    memberID?: string;
+    getCalendarEventRaw: (event: CalendarEvent) => Promise<VcalVeventComponent>;
+    getCalendarEventPersonal: (event: CalendarEvent) => Promise<SimpleMap<VcalVeventComponent>>;
+}
+const getVeventWithAlarms = async ({
+    calendarEvent,
+    memberID,
+    getCalendarEventRaw,
+    getCalendarEventPersonal
+}: GetVeventWithAlarmsArgs) => {
+    const [vevent, eventPersonalMap] = await Promise.all([
+        getCalendarEventRaw(calendarEvent),
+        getCalendarEventPersonal(calendarEvent)
+    ]);
+    const valarms = memberID ? eventPersonalMap[memberID] : {};
+    return {
+        ...valarms,
+        ...vevent
+    };
+};
 
 type FetchEventInvitation = (args: {
     veventComponent: VcalVeventComponent;
     api: Api;
+    getCalendarInfo: (ID: string) => Promise<Omit<CalendarWidgetData, 'calendar' | 'isCalendarDisabled'>>;
     getCalendarEventRaw: (event: CalendarEvent) => Promise<VcalVeventComponent>;
+    getCalendarEventPersonal: (event: CalendarEvent) => Promise<SimpleMap<VcalVeventComponent>>;
     calendars: Calendar[];
+    defaultCalendar?: Calendar;
     message: MessageExtended;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
 }) => Promise<{
     invitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitation?: RequireSome<EventInvitation, 'calendarEvent'>;
-    calendar?: Calendar;
+    calendarData?: CalendarWidgetData;
 }>;
 export const fetchEventInvitation: FetchEventInvitation = async ({
     veventComponent,
     api,
+    getCalendarInfo,
     getCalendarEventRaw,
+    getCalendarEventPersonal,
     calendars,
+    defaultCalendar,
     message,
     contactEmails,
     ownAddresses
@@ -72,18 +108,34 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     const response = await Promise.all(params.map((args) => api<{ Events: CalendarEvent[] }>(getEventByUID(args))));
     // keep only the first event the API found (typically the one from the default calendar)
     const calendarEvents = response.map(({ Events: [event] = [] }) => event).filter(isTruthy);
-    const vevents = await Promise.all(calendarEvents.map((event) => getCalendarEventRaw(event)));
-    if (!vevents.length) {
-        // nothing to do if no event was fetched by uid
+    const [calendarEvent, calendarParentEvent] = calendarEvents;
+    const calendar =
+        calendars.find(({ ID }) => ID === (calendarEvent || calendarParentEvent)?.CalendarID) || defaultCalendar;
+    if (!calendar) {
         return {};
     }
-    const [calendarEvent, calendarParentEvent] = calendarEvents;
-    const [vevent, parentVevent] = vevents;
-    const { invitation } = processEventInvitation({ vevent }, message, contactEmails, ownAddresses);
-    const result: Unwrap<ReturnType<FetchEventInvitation>> = {
-        invitation: { ...invitation, calendarEvent },
-        calendar: calendars.find(({ ID }) => ID === calendarEvent.CalendarID) || undefined
+    const calendarData = {
+        calendar,
+        isCalendarDisabled: getIsCalendarDisabled(calendar),
+        ...(await getCalendarInfo(calendar.ID))
     };
+    if (!calendarEvents.length) {
+        return { calendarData };
+    }
+    const vevents = await Promise.all(
+        calendarEvents.map((event) =>
+            getVeventWithAlarms({
+                calendarEvent: event,
+                memberID: calendarData.memberID,
+                getCalendarEventRaw,
+                getCalendarEventPersonal
+            })
+        )
+    );
+    const [vevent, parentVevent] = vevents;
+    const result: Unwrap<ReturnType<FetchEventInvitation>> = { calendarData };
+    const { invitation } = processEventInvitation({ vevent }, message, contactEmails, ownAddresses);
+    result.invitation = { ...invitation, calendarEvent: calendarEvent };
     if (parentVevent) {
         const { invitation: parentInvitation } = processEventInvitation(
             { vevent: parentVevent },
@@ -127,37 +179,48 @@ const updateEventApi = async ({
         isSwitchCalendar: false,
         ...creationKeys
     });
-    const Event = { Permissions: 3, ...data };
     const Events: (CreateCalendarEventSyncData | UpdateCalendarEventSyncData)[] = createSingleEdit
-        ? [{ Event, Overwrite: 1 }]
-        : [{ Event, ID: calendarEvent.ID }];
+        ? [{ Event: { Permissions: 3, ...data }, Overwrite: 1 }]
+        : [{ Event: { Permissions: 3, ...data }, ID: calendarEvent.ID }];
     const {
         Responses: [
             {
-                Response: { Code }
+                Response: { Code, Event }
             }
         ]
     } = await api<SyncMultipleApiResponse>({
         ...syncMultipleEvents(calendarID, { MemberID: memberID, Events }),
         silence: true
     });
-    if (Code !== API_CODES.SINGLE_SUCCESS) {
+    if (Code !== API_CODES.SINGLE_SUCCESS || !Event) {
         throw new Error('Update unsuccessful');
     }
+    return Event;
 };
 
 interface UpdateEventInvitationArgs
-    extends Omit<RequireSome<InvitationModel, 'invitationIcs' | 'invitationApi'>, 'timeStatus'> {
+    extends Omit<
+        RequireSome<InvitationModel, 'invitationIcs' | 'invitationApi'>,
+        'timeStatus' | 'canCreateCalendar' | 'hasNoCalendars'
+    > {
+    isOrganizerMode: boolean;
+    isAddressDisabled: boolean;
+    isOutdated?: boolean;
+    updateAction?: UPDATE_ACTION;
+    hideSummary?: boolean;
+    invitationIcs: RequireSome<EventInvitation, 'method'>;
+    invitationApi: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
+    parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendarData: Required<CalendarWidgetData>;
     api: Api;
     message: MessageExtended;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
 }
-
 export const updateEventInvitation = async ({
     isOrganizerMode,
     calendarData,
+    isAddressDisabled,
     invitationIcs,
     invitationApi,
     parentInvitationApi,
@@ -165,102 +228,111 @@ export const updateEventInvitation = async ({
     message,
     contactEmails,
     ownAddresses
-}: UpdateEventInvitationArgs): Promise<undefined | RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>> => {
-    const { method, vevent: veventIcs } = invitationIcs;
+}: UpdateEventInvitationArgs): Promise<{
+    action: UPDATE_ACTION;
+    invitation?: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
+}> => {
+    const { method, vevent: veventIcs, attendee: attendeeIcs } = invitationIcs;
     const {
         calendarEvent,
         vevent: veventApi,
-        attendee: { vcalComponent: attendeeApi }
+        attendee: { vcalComponent: vcalAttendeeApi }
     } = invitationApi;
-    const attendeeIcs = invitationIcs.attendee?.vcalComponent;
+    const vcalAttendeeIcs = attendeeIcs?.vcalComponent;
     const recurrenceIdIcs = veventIcs['recurrence-id'];
 
     if (isOrganizerMode) {
+        // TODO
         if (method === ICAL_METHOD.REPLY) {
             if (!veventApi) {
                 if (!recurrenceIdIcs) {
-                    return;
+                    return { action: NONE };
                 }
                 // TODO: create single edit
             }
-            if (!attendeeIcs) {
+            if (!vcalAttendeeIcs) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
             }
-            if (!getAttendeeHasPartStat(attendeeIcs) || !getAttendeeHasPartStat(attendeeApi)) {
+            if (!getAttendeeHasPartStat(vcalAttendeeIcs) || !getAttendeeHasPartStat(vcalAttendeeApi)) {
                 throw new Error('Participation status of attendees required');
             }
-            const partStatIcs = attendeeIcs.parameters.partstat;
-            const partStatApi = attendeeApi.parameters.partstat;
+            const partStatIcs = vcalAttendeeIcs.parameters.partstat;
+            const partStatApi = vcalAttendeeApi.parameters.partstat;
             if (partStatApi !== partStatIcs) {
                 // TODO: update eventApi with partstatIcs
             }
         }
     }
     // attendee mode
-    const isOutdated = getIsInvitationOutdated(veventIcs, veventApi);
+    if (isAddressDisabled || calendarData.isCalendarDisabled || getIsInvitationOutdated(veventIcs, veventApi)) {
+        // do not update
+        return { action: NONE };
+    }
 
     if (method === ICAL_METHOD.REQUEST) {
         if (!veventApi) {
             // TODO: check for SharedEventID and create new event accordingly
-            return;
+            return { action: NONE };
         }
         const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
         const hasUpdatedTitle = veventIcs.summary?.value !== veventApi.summary?.value;
         const hasUpdatedDescription = veventIcs.description?.value !== veventApi.description?.value;
         const hasUpdatedLocation = veventIcs.location?.value !== veventApi.location?.value;
         const hasUpdatedAttendees = getHasModifiedAttendees(veventIcs.attendee, veventApi.attendee);
-        const isUpdated =
-            !isOutdated &&
-            (sequenceDiff > 0 || hasUpdatedTitle || hasUpdatedDescription || hasUpdatedLocation || hasUpdatedAttendees);
-        if (isUpdated) {
-            // update the api event by the ics one keeping the old reply
+        const isReinvited = getEventStatus(veventApi) === CANCELLED;
+        const hasBreakingChange = sequenceDiff > 0;
+        const hasNonBreakingChange =
+            hasUpdatedTitle || hasUpdatedDescription || hasUpdatedLocation || hasUpdatedAttendees;
+        const action = hasBreakingChange || isReinvited ? RESET_PARTSTAT : hasNonBreakingChange ? KEEP_PARTSTAT : NONE;
+        if ([KEEP_PARTSTAT, RESET_PARTSTAT].includes(action)) {
+            // update the api event by the ics one with the appropriate answer
             const createSingleEdit = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(veventApi);
             try {
-                if (!veventIcs.attendee || !getAttendeeHasPartStat(attendeeApi)) {
+                if (!vcalAttendeeIcs) {
                     throw new Error('Missing attendee parameters');
                 }
-                const attendeeApiEmail = getAttendeeEmail(attendeeApi);
-                const map = { [attendeeApiEmail]: getAttendeePartstat(attendeeApi.parameters.partstat) };
-                const updatedAttendes = modifyAttendeesPartstat(veventIcs.attendee, map);
-                const updatedVevent: VcalVeventComponent = {
-                    ...veventIcs,
-                    attendee: updatedAttendes,
-                    status: { value: CONFIRMED }
-                };
-                await updateEventApi({
+                const updatedVevent = withDtstamp(
+                    getInvitedEventWithAlarms(
+                        veventIcs,
+                        getAttendeePartstat(vcalAttendeeIcs),
+                        calendarData.calendarSettings,
+                        getAttendeePartstat(vcalAttendeeApi)
+                    )
+                );
+                const updatedCalendarEvent = await updateEventApi({
                     calendarEvent,
                     vevent: updatedVevent,
                     calendarData,
                     createSingleEdit,
                     api
                 });
-                const { invitation } = processEventInvitation(
-                    { vevent: updatedVevent },
+                const { invitation: updatedInvitation } = processEventInvitation(
+                    { vevent: updatedVevent, calendarEvent: updatedCalendarEvent },
                     message,
                     contactEmails,
                     ownAddresses
                 );
-                if (!getInvitationHasAttendee(invitation)) {
+                if (!getInvitationHasAttendee(updatedInvitation)) {
                     throw new Error('Missing attendee after update');
                 }
-                return { ...invitation, calendarEvent };
+                return { action, invitation: { ...updatedInvitation, calendarEvent: updatedCalendarEvent } };
             } catch (error) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
             }
         }
-        return;
+        return { action };
     }
     if (method === ICAL_METHOD.CANCEL) {
         let cancel = false;
         if (veventApi) {
             if (getEventStatus(veventApi) === CANCELLED) {
-                return;
+                return { action: NONE };
             }
             cancel = true;
         } else {
             const parentExdates = parentInvitationApi?.vevent.exdate;
             if (!recurrenceIdIcs || !parentExdates) {
-                return;
+                return { action: NONE };
             }
             const isCancelled = parentExdates.find((exdate) => {
                 return +propertyToUTCDate(exdate) === +propertyToUTCDate(recurrenceIdIcs);
@@ -268,16 +340,18 @@ export const updateEventInvitation = async ({
             cancel = !isCancelled;
         }
         // cancel API event if needed
-        if (cancel && !isOutdated) {
+        if (cancel) {
             const createSingleEdit = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(veventApi);
             try {
                 const updatedVevent = createSingleEdit
                     ? {
+                          //TODO properly
                           ...omit(veventIcs, ['rrule']),
                           status: { value: CANCELLED }
                       }
                     : {
                           ...veventApi,
+                          dtstamp: veventIcs.dtstamp,
                           status: { value: CANCELLED }
                       };
                 await updateEventApi({
@@ -287,10 +361,162 @@ export const updateEventInvitation = async ({
                     createSingleEdit,
                     api
                 });
+                const { invitation: updatedInvitation } = processEventInvitation(
+                    { vevent: updatedVevent },
+                    message,
+                    contactEmails,
+                    ownAddresses
+                );
+                if (!getInvitationHasAttendee(updatedInvitation)) {
+                    throw new Error('Missing attendee after update');
+                }
+                return { action: CANCEL, invitation: { ...updatedInvitation, calendarEvent } };
             } catch (error) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.CANCELLATION_ERROR);
             }
         }
+        return { action: RESET_PARTSTAT };
     }
-    return;
+    return { action: NONE };
+};
+export const createCalendarEventFromInvitation = async ({
+    partstat,
+    model,
+    api
+}: {
+    partstat: ICAL_ATTENDEE_STATUS;
+    model: RequireSome<InvitationModel, 'invitationIcs'>;
+    api: Api;
+}) => {
+    const {
+        invitationIcs: { vevent, attendee },
+        calendarData: { calendar, memberID, addressKeys, calendarKeys, calendarSettings } = {}
+    } = model;
+    if (!attendee?.addressID || !calendar || !memberID || !addressKeys || !calendarKeys || !calendarSettings) {
+        throw new Error('Missing data for creating calendar event from invitation');
+    }
+    // save attendee answer
+    const vcalAttendee = attendee.vcalComponent;
+    const vcalAttendeeToSave = {
+        ...vcalAttendee,
+        parameters: {
+            ...vcalAttendee.parameters,
+            partstat
+        }
+    };
+    // add alarms to event if necessary
+    const veventToSave = getInvitedEventWithAlarms(vevent, partstat, calendarSettings);
+    const { index: attendeeIndex } = findAttendee(attendee.emailAddress, veventToSave.attendee);
+    if (!veventToSave.attendee || attendeeIndex === undefined || attendeeIndex === -1) {
+        throw new Error('Missing data for creating calendar event from invitation');
+    }
+    veventToSave.attendee[attendeeIndex] = vcalAttendeeToSave;
+    const veventToSaveWithPmAttendees = await withPmAttendees(veventToSave, api);
+    // create calendar event
+    const data = await createCalendarEvent({
+        eventComponent: veventToSaveWithPmAttendees,
+        isSwitchCalendar: false,
+        ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys }))
+    });
+    const Events: CreateCalendarEventSyncData[] = [{ Overwrite: 1, Event: { Permissions: 3, ...data } }];
+    const {
+        Responses: [
+            {
+                Response: { Code, Event }
+            }
+        ]
+    } = await api<SyncMultipleApiResponse>({
+        ...syncMultipleEvents(calendar.ID, { MemberID: memberID, Events, IsInvite: 1 }),
+        silence: true
+    });
+    if (Code !== API_CODES.SINGLE_SUCCESS || !Event) {
+        throw new Error('Creating calendar event from invitation failed');
+    }
+    return {
+        createdEvent: Event,
+        savedVevent: veventToSaveWithPmAttendees,
+        savedVcalAttendee: vcalAttendeeToSave
+    };
+};
+
+export const updateCalendarEventFromInvitation = async ({
+    partstat,
+    model,
+    api
+}: {
+    partstat: ICAL_ATTENDEE_STATUS;
+    model: RequireSome<InvitationModel, 'invitationIcs'>;
+    api: Api;
+}) => {
+    const {
+        updateAction,
+        invitationIcs,
+        invitationApi,
+        calendarData: { calendar, memberID, addressKeys, calendarKeys, calendarSettings } = {}
+    } = model;
+    if (
+        !invitationApi ||
+        !getHasAttendee(invitationApi.vevent) ||
+        !getHasAttendee(invitationIcs.vevent) ||
+        !calendar ||
+        !memberID ||
+        !addressKeys ||
+        !calendarKeys ||
+        !calendarSettings
+    ) {
+        throw new Error('Missing data for updating calendar event from invitation');
+    }
+    const { vevent: veventIcs } = invitationIcs;
+    const {
+        vevent: veventApi,
+        calendarEvent,
+        attendee: { vcalComponent: vcalAttendee, emailAddress }
+    } = invitationApi;
+    const updatedVevent =
+        updateAction !== UPDATE_ACTION.RESET_PARTSTAT
+            ? {
+                  ...veventApi,
+                  attendee: modifyAttendeesPartstat(veventApi.attendee, { [emailAddress]: partstat })
+              }
+            : {
+                  ...veventIcs,
+                  attendee: modifyAttendeesPartstat(veventIcs.attendee, { [emailAddress]: partstat })
+              };
+    // add alarms to event if necessary
+    const veventToSave = getInvitedEventWithAlarms(updatedVevent, partstat, calendarSettings);
+    const veventWithPmAttendees = await withPmAttendees(veventToSave, api);
+    const vcalAttendeeToSave = {
+        ...vcalAttendee,
+        parameters: { ...vcalAttendee.parameters, partstat }
+    };
+    // update calendar event
+    const creationKeys = await getCreationKeys({
+        Event: calendarEvent,
+        addressKeys,
+        newCalendarKeys: calendarKeys
+    });
+    const data = await createCalendarEvent({
+        eventComponent: veventWithPmAttendees,
+        isSwitchCalendar: false,
+        ...creationKeys
+    });
+    const Events: UpdateCalendarEventSyncData[] = [{ Event: { Permissions: 3, ...data }, ID: calendarEvent.ID }];
+    const {
+        Responses: [
+            {
+                Response: { Code, Event }
+            }
+        ]
+    } = await api<SyncMultipleApiResponse>({
+        ...syncMultipleEvents(calendar.ID, { MemberID: memberID, Events }),
+        silence: true
+    });
+    if (Code !== API_CODES.SINGLE_SUCCESS || !Event) {
+        throw new Error('Updating calendar event from invitation failed');
+    }
+    return {
+        updatedEvent: Event,
+        savedVevent: veventToSave,
+        savedVcalAttendee: vcalAttendeeToSave
+    };
 };

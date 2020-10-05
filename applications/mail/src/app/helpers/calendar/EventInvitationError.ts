@@ -9,6 +9,7 @@ export enum EVENT_INVITATION_ERROR_TYPE {
     FETCHING_ERROR,
     UPDATING_ERROR,
     EVENT_CREATION_ERROR,
+    EVENT_UPDATE_ERROR,
     CANCELLATION_ERROR,
     UNEXPECTED_ERROR,
     EXTERNAL_ERROR
@@ -34,8 +35,10 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, external
         return c('Event invitation error').t`We could not update the event in your calendar`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR) {
-        return c('Event invitation error')
-            .t`Your answer was sent, but the event could not be added to your calendar`;
+        return c('Event invitation error').t`Your answer was sent, but the event could not be added to your calendar`;
+    }
+    if (errorType === EVENT_INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR) {
+        return c('Event invitation error').t`Your answer was sent, but the event could not be updated in your calendar`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.CANCELLATION_ERROR) {
         return c('Event invitation error').t`We could not cancel the event in your calendar`;

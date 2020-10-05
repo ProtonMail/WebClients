@@ -16,6 +16,7 @@ import {
     useLoading
 } from 'react-components';
 import { c } from 'ttag';
+import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
@@ -24,11 +25,14 @@ import {
 import {
     EventInvitation,
     getEventTimeStatus,
+    getHasFullCalendarData,
     getHasInvitation,
     getInitialInvitationModel,
     getInvitationHasAttendee,
     getInvitationHasEventID,
-    InvitationModel
+    getIsInvitationOutdated,
+    InvitationModel,
+    UPDATE_ACTION
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
 
@@ -36,11 +40,22 @@ import { MessageExtended } from '../../../../models/message';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';
 import ExtraEventSummary from './ExtraEventSummary';
+import ExtraEventWarning from './ExtraEventWarning';
+
+const {
+    DECRYPTION_ERROR,
+    FETCHING_ERROR,
+    UPDATING_ERROR,
+    CANCELLATION_ERROR,
+    EVENT_CREATION_ERROR,
+    EVENT_UPDATE_ERROR
+} = EVENT_INVITATION_ERROR_TYPE;
 
 interface Props {
     message: MessageExtended;
     invitationOrError: RequireSome<EventInvitation, 'method'> | EventInvitationError;
     calendars: Calendar[];
+    canCreateCalendar: boolean;
     defaultCalendar?: Calendar;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
@@ -52,31 +67,52 @@ const ExtraEvent = ({
     message,
     calendars,
     defaultCalendar,
+    canCreateCalendar,
     contactEmails,
     ownAddresses,
     config,
     userSettings
 }: Props) => {
     const [model, setModel] = useState<InvitationModel>(() =>
-        getInitialInvitationModel(invitationOrError, message, contactEmails, ownAddresses, defaultCalendar)
+        getInitialInvitationModel({
+            invitationOrError,
+            message,
+            contactEmails,
+            ownAddresses,
+            calendar: defaultCalendar,
+            hasNoCalendars: calendars.length === 0,
+            canCreateCalendar
+        })
     );
     const [loading, withLoading] = useLoading(true);
     const [retryCount, setRetryCount] = useState<number>(0);
     const api = useApi();
-    const getCalendarEventRaw = useGetCalendarEventRaw();
     const getCalendarInfo = useGetCalendarInfo();
+    const getCalendarEventRaw = useGetCalendarEventRaw();
+    const getCalendarEventPersonal = useGetCalendarEventPersonal();
 
     const handleRetry = () => {
         setRetryCount((count) => count + 1);
-        setModel(getInitialInvitationModel(invitationOrError, message, contactEmails, ownAddresses, defaultCalendar));
+        setModel(
+            getInitialInvitationModel({
+                invitationOrError,
+                message,
+                contactEmails,
+                ownAddresses,
+                calendar: defaultCalendar,
+                hasNoCalendars: calendars.length === 0,
+                canCreateCalendar
+            })
+        );
         return;
     };
 
-    const { isOrganizerMode, invitationIcs } = model;
+    const { isOrganizerMode, invitationIcs, isAddressDisabled } = model;
     const method = model.invitationIcs?.method;
     const title = getDisplayTitle(invitationIcs?.vevent.summary?.value);
 
     useEffect(() => {
+        let unmounted = false;
         const run = async () => {
             if (!invitationIcs?.vevent) {
                 return;
@@ -86,24 +122,25 @@ const ExtraEvent = ({
             let calendarData;
             try {
                 // check if an event with the same uid exists in the calendar already
-                const { invitation, parentInvitation, calendar: calendarApi } = await fetchEventInvitation({
+                const { invitation, parentInvitation, calendarData: calData } = await fetchEventInvitation({
                     veventComponent: invitationIcs.vevent,
                     api,
+                    getCalendarInfo,
                     getCalendarEventRaw,
+                    getCalendarEventPersonal,
                     calendars,
+                    defaultCalendar,
                     message,
                     contactEmails,
                     ownAddresses
                 });
                 invitationApi = invitation;
+                calendarData = calData;
+                const isOutdated = getIsInvitationOutdated(invitationIcs.vevent, invitationApi?.vevent);
                 if (parentInvitation) {
                     parentInvitationApi = parentInvitation;
                 }
-                const calendar = calendarApi || defaultCalendar;
-                if (calendar) {
-                    calendarData = { calendar, ...(await getCalendarInfo(calendar.ID)) };
-                    setModel({ ...model, calendarData });
-                }
+                !unmounted && setModel({ ...model, isOutdated, calendarData });
             } catch (error) {
                 // if fetching fails, proceed as if there was no event in the database
                 return;
@@ -112,42 +149,55 @@ const ExtraEvent = ({
                 !invitationApi ||
                 !getInvitationHasEventID(invitationApi) ||
                 !getInvitationHasAttendee(invitationApi) ||
-                !calendarData
+                !getHasFullCalendarData(calendarData) ||
+                unmounted
             ) {
                 // treat as a new invitation
                 return;
             }
             // otherwise update the invitation if outdated
             try {
-                const updatedInvitationApi = await updateEventInvitation({
+                const { action: updateAction, invitation: updatedInvitationApi } = await updateEventInvitation({
                     isOrganizerMode,
                     invitationIcs,
                     invitationApi,
                     api,
                     calendarData,
+                    isAddressDisabled,
                     message,
                     contactEmails,
                     ownAddresses
                 });
                 const newInvitationApi = updatedInvitationApi ? updatedInvitationApi : invitationApi;
-                setModel({
-                    ...model,
-                    invitationApi: newInvitationApi,
-                    parentInvitationApi,
-                    calendarData,
-                    timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now()),
-                    isUpdated: updatedInvitationApi ? true : false
-                });
+                const isOutdated =
+                    updateAction !== UPDATE_ACTION.NONE
+                        ? false
+                        : getIsInvitationOutdated(invitationIcs.vevent, newInvitationApi.vevent);
+                !unmounted &&
+                    setModel({
+                        ...model,
+                        invitationApi: newInvitationApi,
+                        parentInvitationApi,
+                        calendarData,
+                        timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now()),
+                        isOutdated,
+                        updateAction
+                    });
             } catch (e) {
-                setModel({
-                    ...model,
-                    invitationApi,
-                    parentInvitationApi,
-                    error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR)
-                });
+                !unmounted &&
+                    setModel({
+                        ...model,
+                        invitationApi,
+                        parentInvitationApi,
+                        error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR)
+                    });
             }
         };
         withLoading(run());
+
+        return () => {
+            unmounted = true;
+        };
     }, [retryCount]);
 
     if (loading) {
@@ -158,14 +208,11 @@ const ExtraEvent = ({
         );
     }
 
-    if (model.error && model.error.type !== EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR) {
+    if (model.error && ![EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR].includes(model.error.type)) {
         const message = getErrorMessage(model.error.type);
-        const canTryAgain = [
-            EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR,
-            EVENT_INVITATION_ERROR_TYPE.FETCHING_ERROR,
-            EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR,
-            EVENT_INVITATION_ERROR_TYPE.CANCELLATION_ERROR
-        ].includes(model.error.type);
+        const canTryAgain = [DECRYPTION_ERROR, FETCHING_ERROR, UPDATING_ERROR, CANCELLATION_ERROR].includes(
+            model.error.type
+        );
 
         return (
             <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
@@ -195,6 +242,7 @@ const ExtraEvent = ({
                 </strong>
             </header>
             <ExtraEventSummary model={model} />
+            <ExtraEventWarning model={model} />
             <ExtraEventButtons model={model} setModel={setModel} message={message} config={config} />
             <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />
         </div>

@@ -8,10 +8,15 @@ import {
     useLoading,
     useConfig,
     useUserSettings,
-    useGetCalendarUserSettings
+    useGetCalendarUserSettings,
 } from 'react-components';
 import { arrayToBinaryString, decodeUtf8 } from 'pmcrypto';
-import { getDefaultCalendar, getProbablyActiveCalendars } from 'proton-shared/lib/calendar/calendar';
+import {
+    getCanCreateCalendar,
+    getDefaultCalendar,
+    getIsCalendarDisabled,
+    getProbablyActiveCalendars
+} from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -50,6 +55,7 @@ const ExtraEvents = ({ message }: Props) => {
         []
     );
     const [defaultCalendar, setDefaultCalendar] = useState<Calendar | undefined>();
+    const [canCreateCalendar, setCanCreateCalendar] = useState<boolean>(true);
     const api = useApi();
     const loadingConfigs =
         loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || !config;
@@ -60,13 +66,22 @@ const ExtraEvents = ({ message }: Props) => {
         if (!eventAttachments.length || !message.privateKeys || loadingConfigs) {
             return;
         }
+        let unmounted = false;
         const run = async () => {
-            if (calendars?.length) {
+            const activeCalendars = getProbablyActiveCalendars(calendars);
+            if (calendars.length) {
                 const { DefaultCalendarID } = await getCalendarUserSettings();
-                const activeCalendars = getProbablyActiveCalendars(calendars);
-                const defaultCalendar = getDefaultCalendar(activeCalendars, DefaultCalendarID);
-                setDefaultCalendar(defaultCalendar);
+                if (unmounted) {
+                    return;
+                }
+                setDefaultCalendar(getDefaultCalendar(activeCalendars, DefaultCalendarID));
             }
+
+            const disabledCalendars = calendars.filter((calendar) => getIsCalendarDisabled(calendar));
+            if (unmounted) {
+                return;
+            }
+            setCanCreateCalendar(getCanCreateCalendar(activeCalendars, disabledCalendars));
             const invitations = (
                 await Promise.all(
                     eventAttachments.map(async (attachment: Attachment) => {
@@ -91,10 +106,17 @@ const ExtraEvents = ({ message }: Props) => {
                     })
                 )
             ).filter(isTruthy);
+            if (unmounted) {
+                return;
+            }
             setInvitations(invitations);
         };
 
         withLoadingWidget(run());
+
+        return () => {
+            unmounted = true;
+        };
     }, [message.data, message.privateKeys, loadingConfigs]);
 
     if (loadingConfigs || loadingWidget) {
@@ -111,6 +133,7 @@ const ExtraEvents = ({ message }: Props) => {
                         message={message}
                         calendars={calendars}
                         defaultCalendar={defaultCalendar}
+                        canCreateCalendar={canCreateCalendar}
                         contactEmails={contactEmails}
                         ownAddresses={addresses}
                         config={config}

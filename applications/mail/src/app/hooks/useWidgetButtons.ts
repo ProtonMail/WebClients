@@ -1,19 +1,41 @@
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { c } from 'ttag';
-import { useCallback } from 'react';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
+import { pick } from 'proton-shared/lib/helpers/object';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { ProtonConfig } from 'proton-shared/lib/interfaces';
+import {
+    VcalDateOrDateTimeProperty,
+    VcalNumberProperty,
+    VcalUidProperty
+} from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { useCallback } from 'react';
 import { useApi, useNotifications } from 'react-components';
+import { c } from 'ttag';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../helpers/calendar/EventInvitationError';
-import { getParticipantHasAddressID, Participant } from '../helpers/calendar/invite';
-import { createCalendarEventFromInvitation } from '../helpers/calendar/inviteReply';
-import { EVENT_TIME_STATUS, EventInvitation, getEventTimeStatus, InvitationModel } from '../helpers/calendar/invite';
+import {
+    EVENT_TIME_STATUS,
+    EventInvitation,
+    getParticipantHasAddressID,
+    InvitationModel,
+    Participant,
+    UPDATE_ACTION
+} from '../helpers/calendar/invite';
+import { createCalendarEventFromInvitation, updateCalendarEventFromInvitation } from '../helpers/calendar/inviteApi';
 import { createReplyIcs } from '../helpers/calendar/inviteReply';
 import { formatSubject, RE_PREFIX } from '../helpers/message/messageDraft';
 import { MessageExtended } from '../models/message';
 import useSendIcs from './useSendIcs';
+
+const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT } = UPDATE_ACTION;
+
+export interface WidgetActions {
+    onAccept: () => void;
+    onTentative: () => void;
+    onDecline: () => void;
+    onRetryCreateEvent: (partstat: ICAL_ATTENDEE_STATUS) => void;
+    onRetryUpdateEvent: (partstat: ICAL_ATTENDEE_STATUS) => void;
+}
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
@@ -21,7 +43,7 @@ interface Props {
     config: ProtonConfig;
     onSuccess: (invitationApi: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>) => void;
     onCreateEventError: (partstat: ICAL_ATTENDEE_STATUS) => void;
-    onPastEvent: (timeStatus: EVENT_TIME_STATUS) => void;
+    onUpdateEventError: (partstat: ICAL_ATTENDEE_STATUS) => void;
     onUnexpectedError: () => void;
 }
 const useWidgetButtons = ({
@@ -31,7 +53,7 @@ const useWidgetButtons = ({
     onUnexpectedError,
     onSuccess,
     onCreateEventError,
-    onPastEvent
+    onUpdateEventError
 }: Props) => {
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -39,24 +61,46 @@ const useWidgetButtons = ({
     const {
         isOrganizerMode,
         invitationIcs,
-        invitationIcs: { attendee, organizer },
-        invitationApi,
-        calendarData: { calendar } = {}
+        invitationIcs: { attendee, organizer, vevent: veventIcs },
+        calendarData: { calendar } = {},
+        updateAction
     } = model;
 
-    const sendEmail = useCallback(
-        (attendee: RequireSome<Participant, 'addressID'>, organizer: Participant) => {
-            return async (partstat: ICAL_ATTENDEE_STATUS) => {
+    const sendReplyEmail = useCallback(
+        ({
+            attendee,
+            organizer,
+            sequence,
+            uid,
+            dtstart,
+            dtend,
+            'recurrence-id': recurrenceId
+        }: {
+            attendee: RequireSome<Participant, 'addressID'>;
+            organizer: Participant;
+            uid: VcalUidProperty;
+            dtstart: VcalDateOrDateTimeProperty;
+            dtend?: VcalDateOrDateTimeProperty;
+            sequence?: VcalNumberProperty;
+            'recurrence-id'?: VcalDateOrDateTimeProperty;
+        }) => {
+            return async (partstat: ICAL_ATTENDEE_STATUS): Promise<boolean> => {
                 if (!getParticipantHasAddressID(attendee) || !organizer) {
                     onUnexpectedError();
-                    return;
+                    return false;
                 }
                 try {
                     const prodId = getProdId(config);
                     const ics = createReplyIcs({
-                        invitation: invitationIcs,
+                        prodId,
+                        uid,
+                        dtstart,
+                        dtend,
+                        attendee,
                         partstat,
-                        prodId
+                        organizer,
+                        sequence,
+                        'recurrence-id': recurrenceId
                     });
                     await sendIcs({
                         ics,
@@ -65,20 +109,24 @@ const useWidgetButtons = ({
                         to: [{ Address: organizer.emailAddress, Name: organizer.name }],
                         subject: formatSubject(message.data?.Subject, RE_PREFIX)
                     });
-                    createNotification({ type: 'success', text: c('Reply to calendar invitation').t`Answer sent` });
+                    createNotification({
+                        type: 'success',
+                        text: c('Reply to calendar invitation').t`Answer sent`
+                    });
+                    return true;
                 } catch (error) {
                     if (
                         error instanceof EventInvitationError &&
                         error.type === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR
                     ) {
                         onUnexpectedError();
-                        return;
+                        return false;
                     }
                     createNotification({
                         type: 'error',
                         text: c('Reply to calendar invitation').t`Answering invitation failed`
                     });
-                    return;
+                    return false;
                 }
             };
         },
@@ -128,6 +176,49 @@ const useWidgetButtons = ({
         [model, api]
     );
 
+    const updateCalendarEvent = useCallback(
+        (attendee: Participant) => {
+            return async (partstat: ICAL_ATTENDEE_STATUS) => {
+                try {
+                    const { updatedEvent, savedVevent, savedVcalAttendee } = await updateCalendarEventFromInvitation({
+                        partstat,
+                        model,
+                        api
+                    });
+                    createNotification({
+                        type: 'success',
+                        text: c('Reply to calendar invitation').t`Calendar event updated`
+                    });
+                    const invitationToSave = {
+                        vevent: savedVevent,
+                        calendarEvent: updatedEvent,
+                        attendee: {
+                            ...attendee,
+                            vcalComponent: savedVcalAttendee,
+                            partstat
+                        },
+                        timeStatus: EVENT_TIME_STATUS.FUTURE
+                    };
+                    onSuccess(invitationToSave);
+                } catch (error) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Reply to calendar invitation').t`Updating calendar event failed`
+                    });
+                    if (
+                        error instanceof EventInvitationError &&
+                        error.type === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR
+                    ) {
+                        onUnexpectedError();
+                        return;
+                    }
+                    onUpdateEventError(partstat);
+                }
+            };
+        },
+        [model, api]
+    );
+
     const answerInvitation = useCallback(
         async (partstat: ICAL_ATTENDEE_STATUS) => {
             // Send the corresponding email
@@ -135,23 +226,32 @@ const useWidgetButtons = ({
                 onUnexpectedError();
                 return;
             }
-            const timeStatus = getEventTimeStatus(invitationIcs.vevent, Date.now());
-            if (timeStatus === EVENT_TIME_STATUS.PAST) {
-                onPastEvent(timeStatus);
-                createNotification({ type: 'error', text: c('Info').t`Cannot answer past event` });
+            const sent = await sendReplyEmail({
+                attendee,
+                organizer,
+                ...pick(veventIcs, ['uid', 'sequence', 'recurrence-id', 'dtstart', 'dtend'])
+            })(partstat);
+            if (!sent) {
                 return;
             }
-            await sendEmail(attendee, organizer)(partstat);
-            await createCalendarEvent(attendee)(partstat);
+            if (updateAction === undefined) {
+                await createCalendarEvent(attendee)(partstat);
+                return;
+            }
+            if ([NONE, KEEP_PARTSTAT, RESET_PARTSTAT].includes(updateAction)) {
+                await updateCalendarEvent(attendee)(partstat);
+                return;
+            }
         },
-        [sendEmail, sendIcs]
+        [sendReplyEmail, sendIcs, updateAction]
     );
 
     const dummyButtons = {
         accept: () => wait(0),
         acceptTentatively: () => wait(0),
         decline: () => wait(0),
-        retryCreateEvent: () => wait(0)
+        retryCreateEvent: () => wait(0),
+        retryUpdateEvent: () => wait(0)
     };
 
     if (!attendee) {
@@ -159,14 +259,13 @@ const useWidgetButtons = ({
     }
 
     if (!isOrganizerMode) {
-        if (!invitationApi) {
-            return {
-                accept: () => answerInvitation(ICAL_ATTENDEE_STATUS.ACCEPTED),
-                acceptTentatively: () => answerInvitation(ICAL_ATTENDEE_STATUS.TENTATIVE),
-                decline: () => answerInvitation(ICAL_ATTENDEE_STATUS.DECLINED),
-                retryCreateEvent: createCalendarEvent(attendee)
-            };
-        }
+        return {
+            accept: () => answerInvitation(ICAL_ATTENDEE_STATUS.ACCEPTED),
+            acceptTentatively: () => answerInvitation(ICAL_ATTENDEE_STATUS.TENTATIVE),
+            decline: () => answerInvitation(ICAL_ATTENDEE_STATUS.DECLINED),
+            retryCreateEvent: createCalendarEvent(attendee),
+            retryUpdateEvent: updateCalendarEvent(attendee)
+        };
     }
 
     return dummyButtons;
