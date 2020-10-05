@@ -180,6 +180,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             const iframe = el[0].querySelector('iframe');
             const checkIframeLoaded = () => {
                 if (!loaded) {
+                    el[0].classList.add('signupIframe-loaded');
                     el[0].classList.add('signupIframe-error');
                 }
             };
