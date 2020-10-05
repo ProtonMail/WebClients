@@ -182,6 +182,7 @@ const MessageView = ({
                         message={message}
                         messageViewIcons={messageViewIcons}
                         messageLoaded={messageLoaded}
+                        bodyLoaded={bodyLoaded}
                         isSentMessage={sent}
                         sourceMode={sourceMode}
                         onTrustSigningKey={handleTrustSigningPublicKey}

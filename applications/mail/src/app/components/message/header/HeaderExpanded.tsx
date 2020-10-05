@@ -59,6 +59,7 @@ interface Props {
     messageViewIcons: MessageViewIcons;
     isSentMessage: boolean;
     messageLoaded: boolean;
+    bodyLoaded: boolean;
     sourceMode: boolean;
     onTrustSigningKey: (key: OpenPGPKey) => void;
     onTrustAttachedKey: (key: OpenPGPKey) => void;
@@ -80,6 +81,7 @@ const HeaderExpanded = ({
     messageViewIcons,
     isSentMessage,
     messageLoaded,
+    bodyLoaded,
     sourceMode,
     onTrustSigningKey,
     onTrustAttachedKey,
@@ -320,7 +322,7 @@ const HeaderExpanded = ({
 
                 <Group className="mb0-5">
                     <ButtonGroup
-                        disabled={!messageLoaded}
+                        disabled={!messageLoaded || !bodyLoaded}
                         className="pm-button--for-icon pm-button--primary flex flex-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                     >
@@ -329,7 +331,7 @@ const HeaderExpanded = ({
                         </Tooltip>
                     </ButtonGroup>
                     <ButtonGroup
-                        disabled={!messageLoaded}
+                        disabled={!messageLoaded || !bodyLoaded}
                         className="pm-button--for-icon pm-button--primary flex flex-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                     >
@@ -338,7 +340,7 @@ const HeaderExpanded = ({
                         </Tooltip>
                     </ButtonGroup>
                     <ButtonGroup
-                        disabled={!messageLoaded}
+                        disabled={!messageLoaded || !bodyLoaded}
                         className=" pm-button--for-icon pm-button--primary flex flex-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                     >
