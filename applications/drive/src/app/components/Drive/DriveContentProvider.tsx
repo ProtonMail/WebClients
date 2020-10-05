@@ -97,15 +97,16 @@ const DriveContentProviderInner = ({
         const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
         const hasChildren = !!cache.get.listedChildLinks(shareId, linkId)?.length;
 
+        const abortController = new AbortController();
+
+        abortSignal.current = abortController.signal;
+        fileBrowserControls.clearSelections();
+
+        if (loading) {
+            setLoading(false);
+        }
+
         if (!isInitialized || !hasChildren) {
-            const abortController = new AbortController();
-
-            abortSignal.current = abortController.signal;
-            fileBrowserControls.clearSelections();
-
-            if (loading) {
-                setLoading(false);
-            }
             loadNextPage().catch(console.error);
             return () => {
                 contentLoading.current = false;
