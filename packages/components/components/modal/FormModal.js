@@ -24,7 +24,7 @@ const Modal = ({
     hasClose = true,
     displayTitle = true,
     noValidate = false,
-    autoFocusClose = true,
+    autoFocusClose = false,
     // Destructure these options so they are not passed to the DOM.
     // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
     disableCloseOnLocation,
@@ -34,7 +34,9 @@ const Modal = ({
 }) => {
     // Because we will forget
     if (!['isClosing', 'isBehind', 'onExit'].every((key) => rest.hasOwnProperty.call(rest, key))) {
-        console.warn(`You must pass props to <FormModal ...rest>,
+        // eslint-disable-next-line no-console
+        console.warn(`
+You must pass props to <FormModal ...rest>,
 These props contains mandatory keys from the hook.
 Ex: onClose
 
@@ -62,7 +64,7 @@ function DemoModal({ onAdd, ...rest }) {
 
         const nodeSubmit =
             typeof submit === 'string' ? (
-                <PrimaryButton loading={loading} type="submit">
+                <PrimaryButton loading={loading} type="submit" autoFocus={!autoFocusClose}>
                     {submit}
                 </PrimaryButton>
             ) : (

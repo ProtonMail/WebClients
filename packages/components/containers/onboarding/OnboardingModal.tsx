@@ -99,7 +99,7 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
     }
 
     return (
-        <FormModal {...rest} hasClose={false} autoFocusClose={false} {...childStep.props}>
+        <FormModal {...rest} hasClose={false} autoFocusClose {...childStep.props}>
             {childStep}
         </FormModal>
     );
