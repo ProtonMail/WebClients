@@ -59,6 +59,8 @@ export const useApplyLabels = () => {
 
             let notificationText = c('Success').t`Labels applied.`;
 
+            const elementsCount = elementIDs.length;
+
             if (changesKeys.length === 1) {
                 const labelName = labels.filter((l) => l.ID === changesKeys[0])[0]?.Name;
 
@@ -66,38 +68,38 @@ export const useApplyLabels = () => {
                     notificationText = isMessage
                         ? c('Success').ngettext(
                               msgid`Message marked as Starred.`,
-                              `${elementIDs.length} messages marked as Starred.`,
-                              elementIDs.length
+                              `${elementsCount} messages marked as Starred.`,
+                              elementsCount
                           )
                         : c('Success').ngettext(
                               msgid`Conversation marked as Starred.`,
-                              `${elementIDs.length} conversations marked as Starred.`,
-                              elementIDs.length
+                              `${elementsCount} conversations marked as Starred.`,
+                              elementsCount
                           );
                 } else {
                     if (!Object.values(changes)[0]) {
                         notificationText = isMessage
                             ? c('Success').ngettext(
                                   msgid`Message removed from ${labelName}.`,
-                                  `${elementIDs.length} messages removed from ${labelName}.`,
-                                  elementIDs.length
+                                  `${elementsCount} messages removed from ${labelName}.`,
+                                  elementsCount
                               )
                             : c('Success').ngettext(
                                   msgid`Conversation removed from ${labelName}.`,
-                                  `${elementIDs.length} conversations removed from ${labelName}.`,
-                                  elementIDs.length
+                                  `${elementsCount} conversations removed from ${labelName}.`,
+                                  elementsCount
                               );
                     } else {
                         notificationText = isMessage
                             ? c('Success').ngettext(
                                   msgid`Message added to ${labelName}.`,
-                                  `${elementIDs.length} messages added to ${labelName}.`,
-                                  elementIDs.length
+                                  `${elementsCount} messages added to ${labelName}.`,
+                                  elementsCount
                               )
                             : c('Success').ngettext(
                                   msgid`Conversation added to ${labelName}.`,
-                                  `${elementIDs.length} conversations added to ${labelName}.`,
-                                  elementIDs.length
+                                  `${elementsCount} conversations added to ${labelName}.`,
+                                  elementsCount
                               );
                     }
                 }
@@ -157,16 +159,18 @@ export const useMoveToFolder = () => {
             // No await ==> optimistic
             handleDo();
 
+            const elementsCount = elementIDs.length;
+
             const notificationText = isMessage
                 ? c('Success').ngettext(
                       msgid`Message moved to ${folderName}.`,
-                      `${elementIDs.length} messages moved to ${folderName}.`,
-                      elementIDs.length
+                      `${elementsCount} messages moved to ${folderName}.`,
+                      elementsCount
                   )
                 : c('Success').ngettext(
                       msgid`Conversation moved to ${folderName}.`,
-                      `${elementIDs.length} conversations moved to ${folderName}.`,
-                      elementIDs.length
+                      `${elementsCount} conversations moved to ${folderName}.`,
+                      elementsCount
                   );
 
             if (!silent) {

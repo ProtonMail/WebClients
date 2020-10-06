@@ -141,16 +141,17 @@ const List = ({
 
             const isMessage = testIsMessage(element);
             const dragElement = document.createElement('div');
+            const selectionCount = selection.length;
             dragElement.innerHTML = isMessage
                 ? c('Success').ngettext(
-                      msgid`Move ${selection.length} message`,
-                      `Move ${selection.length} messages`,
-                      selection.length
+                      msgid`Move ${selectionCount} message`,
+                      `Move ${selectionCount} messages`,
+                      selectionCount
                   )
                 : c('Success').ngettext(
-                      msgid`Move ${selection.length} conversation`,
-                      `Move ${selection.length} conversations`,
-                      selection.length
+                      msgid`Move ${selectionCount} conversation`,
+                      `Move ${selectionCount} conversations`,
+                      selectionCount
                   );
             dragElement.className = 'drag-element p1 bordered-container rounded';
             dragElement.id = generateUID(DRAG_ELEMENT_ID_KEY);

@@ -34,28 +34,31 @@ const AttachmentsList = ({ message, pendingUploads = emptyUploads, onRemoveAttac
     const embeddedAttachments = [...(message.embeddeds?.values() || [])].map(({ attachment }) => attachment);
     const pureAttachments = diff(attachments, embeddedAttachments);
 
+    const pureAttachmentsCount = pureAttachments.length;
+    const embeddedAttachmentsCount = embeddedAttachments.length;
+
     return (
         <div className="composer-attachments-list bg-global-highlight flex flex-column relative w100 flex-nowrap">
             <button type="button" className="flex flex-row flex-spacebetween w100 p0-5" onClick={toggleExpanded}>
                 <div className="flex flex-items-center">
                     {size !== 0 && <strong className="mr0-5">{sizeLabel}</strong>}
-                    {pureAttachments.length > 0 && (
+                    {pureAttachmentsCount > 0 && (
                         <span className="mr0-5">
                             <Icon name="attach" className="mr0-25" />
                             {c('Info').ngettext(
-                                msgid`${pureAttachments.length} file attached`,
-                                `${pureAttachments.length} files attached`,
-                                pureAttachments.length
+                                msgid`${pureAttachmentsCount} file attached`,
+                                `${pureAttachmentsCount} files attached`,
+                                pureAttachmentsCount
                             )}
                         </span>
                     )}
-                    {embeddedAttachments.length > 0 && (
+                    {embeddedAttachmentsCount > 0 && (
                         <span className="mr0-5 inline-flex flex-items-center">
                             <Icon name="file-image" className="mr0-25" />
                             {c('Info').ngettext(
-                                msgid`${embeddedAttachments.length} embedded image`,
-                                `${embeddedAttachments.length} embedded images`,
-                                embeddedAttachments.length
+                                msgid`${embeddedAttachmentsCount} embedded image`,
+                                `${embeddedAttachmentsCount} embedded images`,
+                                embeddedAttachmentsCount
                             )}
                         </span>
                     )}
