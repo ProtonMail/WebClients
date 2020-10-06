@@ -15,4 +15,4 @@ export { CalendarsModel } from './calendarsModel';
 export { CalendarUserSettingsModel } from './calendarSettingsModel';
 export { ConversationCountsModel } from './conversationCountsModel';
 export { MessageCountsModel } from './messageCountsModel';
-export { ImportersModel, ImportHistoryModel } from './importersModel';
+export { ImportersModel, ImportHistoriesModel } from './importersModel';
