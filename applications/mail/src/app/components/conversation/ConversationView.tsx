@@ -28,6 +28,8 @@ interface Props {
     breakpoints: Breakpoints;
 }
 
+const DEFAULT_FILTER_VALUE = true;
+
 const ConversationView = ({
     hidden,
     labelID,
@@ -46,7 +48,7 @@ const ConversationView = ({
         loadingConversation,
         loadingMessages
     } = useConversation(inputConversationID, messageID);
-    const { state: filter, toggle: toggleFilter } = useToggle(true);
+    const { state: filter, toggle: toggleFilter, set: setFilter } = useToggle(DEFAULT_FILTER_VALUE);
     useShouldMoveOut(true, conversationID, pendingRequest, onBack);
 
     const { Conversation: conversation = {}, Messages: inputMessages = [] } = conversationResult || {};
@@ -70,6 +72,10 @@ const ConversationView = ({
     useEffect(() => {
         setExpand(initExpand());
     }, [conversationID, messageID, loadingMessages]);
+
+    useEffect(() => {
+        setFilter(DEFAULT_FILTER_VALUE);
+    }, [inputConversationID]);
 
     const handleClickUnread = (messageID: string) => {
         setExpand(messageID);
