@@ -13,7 +13,7 @@ import {
 import { noop } from 'proton-shared/lib/helpers/function';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 
-import { useLoading, useAddresses, useModals, useApi } from '../../../hooks';
+import { useLoading, useAddresses, useModals, useApi, useEventManager } from '../../../hooks';
 import {
     ConfirmModal,
     FormModal,
@@ -26,7 +26,7 @@ import {
 import ImportMailWizard from '../../../components/import/ImportMailWizard';
 
 import { TIME_UNIT, IMAP_CONNECTION_ERROR_LABEL } from '../constants';
-import { Step, ImportModalModel, IMPORT_ERROR, MailImportFolder, FolderMapping, ImportMail } from '../interfaces';
+import { Step, ImportModalModel, IMPORT_ERROR, MailImportFolder, FolderMapping, Importer } from '../interfaces';
 
 import ImportStartStep from './steps/ImportStartStep';
 import ImportPrepareStep from './steps/ImportPrepareStep';
@@ -51,9 +51,8 @@ const DEFAULT_MODAL_MODEL: ImportModalModel = {
 };
 
 interface Props {
-    currentImport?: ImportMail;
+    currentImport?: Importer;
     onClose?: () => void;
-    onImportComplete: () => void;
 }
 
 const dateToTimestamp = (date: Date) => Math.floor(date.getTime() / 1000);
@@ -77,7 +76,7 @@ const destinationFoldersFirst = (a: MailImportFolder, b: MailImportFolder) => {
     return 0;
 };
 
-const ImportMailModal = ({ onImportComplete, onClose = noop, currentImport, ...rest }: Props) => {
+const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
     const isReconnectMode = !!currentImport;
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
@@ -92,6 +91,7 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, currentImport, ...r
         port: currentImport?.ImapPort || '',
     });
     const api = useApi();
+    const { call } = useEventManager();
 
     const needAppPassword = useMemo(() => {
         const IMAPsWithAppPasswords = ['imap.gmail.com', 'imap.mail.yahoo.com', 'imap.yandex.com', 'imap.fastmail.com'];
@@ -209,6 +209,8 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, currentImport, ...r
                         Code: modalModel.password,
                     })
                 );
+                await call();
+
                 const { Folders = [] } = await api(getMailImportFolders(Importer.ID, { Code: modalModel.password }));
                 moveToPrepareStep(Importer.ID, Folders);
             } catch (error) {
@@ -235,12 +237,12 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, currentImport, ...r
                 Mapping: modalModel.payload.Mapping.filter((m: FolderMapping) => m.checked),
             })
         );
+        await call();
 
         setModalModel({
             ...modalModel,
             step: Step.STARTED,
         });
-        onImportComplete();
     };
 
     const resumeImport = async () => {
@@ -254,7 +256,7 @@ const ImportMailModal = ({ onImportComplete, onClose = noop, currentImport, ...r
             })
         );
         await api(resumeMailImport(modalModel.importID));
-        onImportComplete();
+        await call();
         onClose();
     };
 

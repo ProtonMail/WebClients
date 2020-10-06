@@ -1,15 +1,16 @@
-import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
+import React from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { queryMailImportHistory, deleteMailImportReport } from 'proton-shared/lib/api/mailImport';
+import { deleteMailImportReport } from 'proton-shared/lib/api/mailImport';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import { useApi, useLoading, useNotifications, useModals } from '../../hooks';
+import { useApi, useLoading, useEventManager, useNotifications, useModals, useImportHistory } from '../../hooks';
 import { Button, Loader, Alert, Table, TableCell, TableBody, TableRow, Badge, ErrorButton } from '../../components';
+
 import { ConfirmModal } from '../../components/modal';
 
-import { ImportMailReport, ImportMailReportStatus } from './interfaces';
+import { ImportMailReportStatus } from './interfaces';
 
 interface ImportStatusProps {
     status: ImportMailReportStatus;
@@ -32,11 +33,11 @@ const ImportStatus = ({ status }: ImportStatusProps) => {
 
 interface DeleteButtonProps {
     ID: string;
-    callback: () => void;
 }
 
-const DeleteButton = ({ ID, callback }: DeleteButtonProps) => {
+const DeleteButton = ({ ID }: DeleteButtonProps) => {
     const api = useApi();
+    const { call } = useEventManager();
     const { createModal } = useModals();
 
     const [loadingActions, withLoadingActions] = useLoading();
@@ -59,7 +60,7 @@ const DeleteButton = ({ ID, callback }: DeleteButtonProps) => {
             );
         });
         await api(deleteMailImportReport(ID));
-        callback();
+        await call();
         createNotification({ text: c('Success').t`Import record deleted` });
     };
 
@@ -74,31 +75,8 @@ const DeleteButton = ({ ID, callback }: DeleteButtonProps) => {
     );
 };
 
-const PastImportsSection = forwardRef((_props, ref) => {
-    const api = useApi();
-    const [imports, setImports] = useState<ImportMailReport[]>([]);
-    const [loading, withLoading] = useLoading();
-
-    const fetch = async () => {
-        const { Imports = [] } = await api(queryMailImportHistory());
-        setImports(Imports);
-    };
-
-    useImperativeHandle(ref, () => ({
-        fetch,
-    }));
-
-    useEffect(() => {
-        withLoading(fetch());
-
-        const intervalID = setInterval(() => {
-            fetch();
-        }, 10 * 1000);
-
-        return () => {
-            clearTimeout(intervalID);
-        };
-    }, []);
+const PastImportsSection = () => {
+    const [imports, loading] = useImportHistory();
 
     if (loading) {
         return <Loader />;
@@ -148,7 +126,7 @@ const PastImportsSection = forwardRef((_props, ref) => {
                                     </div>,
                                     <time key="importDate">{format(EndTime * 1000, 'PPp')}</time>,
                                     humanSize(TotalSize),
-                                    <DeleteButton key="button" ID={ID} callback={fetch} />,
+                                    <DeleteButton key="button" ID={ID} />,
                                 ]}
                             />
                         );
@@ -157,6 +135,6 @@ const PastImportsSection = forwardRef((_props, ref) => {
             </Table>
         </>
     );
-});
+};
 
 export default PastImportsSection;

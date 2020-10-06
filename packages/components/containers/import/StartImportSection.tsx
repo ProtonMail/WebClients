@@ -6,14 +6,10 @@ import { PrimaryButton, Alert } from '../../components';
 
 import ImportMailModal from './modals/ImportMailModal';
 
-interface Props {
-    fetchCurrentImports: () => void;
-}
-
-const StartImportSection = ({ fetchCurrentImports }: Props) => {
+const StartImportSection = () => {
     const { createModal } = useModals();
 
-    const handleClick = () => createModal(<ImportMailModal onImportComplete={fetchCurrentImports} />);
+    const handleClick = () => createModal(<ImportMailModal />);
 
     return (
         <>

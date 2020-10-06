@@ -1,10 +1,10 @@
-import React, { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
+import React, { useMemo } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { queryMailImport, resumeMailImport, cancelMailImport } from 'proton-shared/lib/api/mailImport';
+import { resumeMailImport, cancelMailImport } from 'proton-shared/lib/api/mailImport';
 
-import { useApi, useLoading, useNotifications, useModals } from '../../hooks';
+import { useApi, useLoading, useNotifications, useEventManager, useModals, useImporters } from '../../hooks';
 import {
     Loader,
     Alert,
@@ -20,27 +20,18 @@ import {
     ErrorButton,
 } from '../../components';
 
-import { ImportMail, ImportMailStatus, ImportMailError } from './interfaces';
+import { Importer, ImportMailStatus, ImportMailError } from './interfaces';
 import ImportMailModal from './modals/ImportMailModal';
 
-interface ImportsFromServer {
-    Active: ImportMail;
-    Email: string;
-    ID: string;
-    ImapHost: string;
-    ImapPort: number;
-    Sasl: string;
-}
-
 interface RowActionsProps {
-    currentImport: ImportMail;
-    fetchCurrentImports: () => void;
-    fetchPastImports: () => void;
+    currentImport: Importer;
 }
 
-const RowActions = ({ currentImport, fetchCurrentImports, fetchPastImports }: RowActionsProps) => {
-    const { ID, State, ErrorCode } = currentImport;
+const RowActions = ({ currentImport }: RowActionsProps) => {
+    const { ID, Active } = currentImport;
+    const { State, ErrorCode } = Active || {};
     const api = useApi();
+    const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
@@ -48,13 +39,12 @@ const RowActions = ({ currentImport, fetchCurrentImports, fetchPastImports }: Ro
 
     const handleResume = async (importID: string) => {
         await api(resumeMailImport(importID));
-        fetchCurrentImports();
+        await call();
         createNotification({ text: c('Success').t`Import resumed` });
     };
 
     const handleReconnect = async () => {
-        await createModal(<ImportMailModal currentImport={currentImport} onImportComplete={fetchCurrentImports} />);
-        fetchCurrentImports();
+        await createModal(<ImportMailModal currentImport={currentImport} />);
     };
 
     const handleCancel = async (importID: string) => {
@@ -63,27 +53,19 @@ const RowActions = ({ currentImport, fetchCurrentImports, fetchPastImports }: Ro
                 <ConfirmModal
                     onConfirm={resolve}
                     onClose={reject}
-                    title={
-                        ErrorCode
-                            ? c('Confirm modal title').t`Import is incomplete!`
-                            : c('Confirm modal title').t`Import is not finished. Cancel anyway?`
-                    }
-                    cancel={ErrorCode ? c('Action').t`Continue import` : c('Action').t`Back to import`}
+                    title={c('Confirm modal title').t`Import is incomplete!`}
+                    cancel={c('Action').t`Continue import`}
                     confirm={<ErrorButton type="submit">{c('Action').t`Cancel import`}</ErrorButton>}
                 >
                     <Alert type="error">
-                        {ErrorCode
-                            ? c('Warning')
-                                  .t`If you quit, you will not be able to resume this import. All progress has been saved in your Proton account. Quit anyway?`
-                            : c('Warning')
-                                  .t`To finish importing, you will have to start over. All progress so far was saved in your Proton account.`}
+                        {c('Warning')
+                            .t`If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?`}
                     </Alert>
                 </ConfirmModal>
             );
         });
         await api(cancelMailImport(importID));
-        fetchPastImports();
-        fetchCurrentImports();
+        await call();
         createNotification({ text: c('Success').t`Import canceled` });
     };
 
@@ -105,72 +87,44 @@ const RowActions = ({ currentImport, fetchCurrentImports, fetchPastImports }: Ro
         });
     }
 
-    if (State !== ImportMailStatus.CANCELED) {
-        list.push({
-            text: c('Action').t`Cancel`,
-            onClick: () => {
-                withLoadingPrimaryAction(handleCancel(ID));
-            },
-            loading: loadingPrimaryAction,
-        });
-    }
+    list.push({
+        text: c('Action').t`Cancel`,
+        onClick: () => {
+            withLoadingPrimaryAction(handleCancel(ID));
+        },
+        loading: loadingPrimaryAction,
+        disabled: State === ImportMailStatus.CANCELED,
+    });
 
     return <DropdownActions key="actions" className="pm-button--small" list={list} />;
 };
 
-interface Props {
-    fetchPastImports: () => void;
-}
+const CurrentImportsSection = () => {
+    const [imports = [], importsLoading] = useImporters();
 
-const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
-    const api = useApi();
-    const [imports, setImports] = useState<ImportMail[]>([]);
-    const [loading, withLoading] = useLoading();
+    const importsToDisplay = useMemo(() => imports.filter(({ Active }) => Active), [imports]);
 
-    const fetch = async () => {
-        const data: { Importers: ImportsFromServer[] } = await api(queryMailImport());
-        const imports = data.Importers || [];
-        setImports(
-            imports
-                .filter((i) => i.Active)
-                .map((i) => ({
-                    ...i.Active,
-                    ID: i.ID,
-                    Email: i.Email,
-                    ImapHost: i.ImapHost,
-                    ImapPort: `${i.ImapPort}`,
-                }))
-        );
-    };
-
-    useImperativeHandle(ref, () => ({
-        fetch,
-    }));
-
-    useEffect(() => {
-        withLoading(fetch());
-
-        const intervalID = setInterval(() => {
-            fetch();
-        }, 10 * 1000);
-
-        return () => {
-            clearTimeout(intervalID);
-        };
-    }, []);
-
-    if (loading) {
+    if (importsLoading) {
         return <Loader />;
     }
 
-    if (!imports.length) {
+    if (!importsToDisplay.length) {
         return <Alert>{c('Info').t`No imports in progress`}</Alert>;
     }
 
-    const hasStoragePausedImports = imports.some(({ State, ErrorCode }: ImportMail) => {
+    const hasStoragePausedImports = importsToDisplay.some(({ Active }) => {
+        if (!Active) {
+            return false;
+        }
+        const { State, ErrorCode } = Active;
         return State === ImportMailStatus.PAUSED && ErrorCode === ImportMailError.ERROR_CODE_QUOTA_LIMIT;
     });
-    const hasAuthPausedImports = imports.some(({ State, ErrorCode }: ImportMail) => {
+
+    const hasAuthPausedImports = importsToDisplay.some(({ Active }) => {
+        if (!Active) {
+            return false;
+        }
+        const { State, ErrorCode } = Active;
         return State === ImportMailStatus.PAUSED && ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION;
     });
 
@@ -210,8 +164,10 @@ const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
                     <tr>{headerCells}</tr>
                 </thead>
                 <TableBody>
-                    {imports.map((currentImport, index) => {
-                        const { Email, State, ErrorCode, CreateTime, Mapping = [] } = currentImport;
+                    {importsToDisplay.map((currentImport, index) => {
+                        const { Email, Active } = currentImport;
+                        const { State, ErrorCode, CreateTime = Date.now(), Mapping = [] } = Active || {};
+
                         const { total, processed } = Mapping.reduce(
                             (acc, { Total = 0, Processed = 0 }) => {
                                 acc.total += Total;
@@ -225,9 +181,11 @@ const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
                             const percentage = (processed * 100) / total;
                             const percentageValue = Number.isNaN(percentage) ? 0 : Math.round(percentage);
 
+                            let badge = <Badge>{c('Import status').t`${percentageValue}% imported`}</Badge>;
+
                             if (State === ImportMailStatus.PAUSED) {
-                                return (
-                                    <div className="onmobile-aligncenter">
+                                badge = (
+                                    <>
                                         <Badge type="warning">{c('Import status').t`${percentageValue}% paused`}</Badge>
 
                                         {ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION && (
@@ -240,15 +198,19 @@ const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
                                                 <Icon name="attention-plain" />
                                             </Tooltip>
                                         )}
-                                    </div>
+                                    </>
                                 );
                             }
 
-                            return (
-                                <div className="onmobile-aligncenter">
-                                    <Badge className="m0">{c('Import status').t`${percentageValue}% imported`}</Badge>
-                                </div>
-                            );
+                            if (State === ImportMailStatus.QUEUED) {
+                                badge = <Badge type="origin">{c('Import status').t`Queued`}</Badge>;
+                            }
+
+                            if (State === ImportMailStatus.CANCELED) {
+                                badge = <Badge type="error">{c('Import status').t`Canceling`}</Badge>;
+                            }
+
+                            return <div className="onmobile-aligncenter">{badge}</div>;
                         };
 
                         return (
@@ -265,12 +227,7 @@ const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
                                     </>,
                                     badgeRenderer(),
                                     <time key="importDate">{format(CreateTime * 1000, 'PPp')}</time>,
-                                    <RowActions
-                                        key="actions"
-                                        currentImport={currentImport}
-                                        fetchCurrentImports={fetch}
-                                        fetchPastImports={fetchPastImports}
-                                    />,
+                                    <RowActions key="actions" currentImport={currentImport} />,
                                 ]}
                             />
                         );
@@ -279,6 +236,6 @@ const CurrentImportsSection = forwardRef(({ fetchPastImports }: Props, ref) => {
             </Table>
         </>
     );
-});
+};
 
 export default CurrentImportsSection;
