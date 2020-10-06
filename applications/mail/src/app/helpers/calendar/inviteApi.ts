@@ -122,30 +122,34 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     if (!calendarEvents.length) {
         return { calendarData };
     }
-    const vevents = await Promise.all(
-        calendarEvents.map((event) =>
-            getVeventWithAlarms({
-                calendarEvent: event,
-                memberID: calendarData.memberID,
-                getCalendarEventRaw,
-                getCalendarEventPersonal
-            })
-        )
-    );
-    const [vevent, parentVevent] = vevents;
-    const result: Unwrap<ReturnType<FetchEventInvitation>> = { calendarData };
-    const { invitation } = processEventInvitation({ vevent }, message, contactEmails, ownAddresses);
-    result.invitation = { ...invitation, calendarEvent: calendarEvent };
-    if (parentVevent) {
-        const { invitation: parentInvitation } = processEventInvitation(
-            { vevent: parentVevent },
-            message,
-            contactEmails,
-            ownAddresses
+    try {
+        const vevents = await Promise.all(
+            calendarEvents.map((event) =>
+                getVeventWithAlarms({
+                    calendarEvent: event,
+                    memberID: calendarData.memberID,
+                    getCalendarEventRaw,
+                    getCalendarEventPersonal
+                })
+            )
         );
-        result.parentInvitation = { ...parentInvitation, calendarEvent: calendarParentEvent };
+        const [vevent, parentVevent] = vevents;
+        const result: Unwrap<ReturnType<FetchEventInvitation>> = { calendarData };
+        const { invitation } = processEventInvitation({ vevent }, message, contactEmails, ownAddresses);
+        result.invitation = { ...invitation, calendarEvent: calendarEvent };
+        if (parentVevent) {
+            const { invitation: parentInvitation } = processEventInvitation(
+                { vevent: parentVevent },
+                message,
+                contactEmails,
+                ownAddresses
+            );
+            result.parentInvitation = { ...parentInvitation, calendarEvent: calendarParentEvent };
+        }
+        return result;
+    } catch (e) {
+        return { calendarData };
     }
-    return result;
 };
 
 interface UpdateEventArgs {
