@@ -10,9 +10,14 @@ import './app.scss';
 
 sentry(config);
 
+const enhancedConfig = {
+    APP_VERSION_DISPLAY: '4.0.0-beta.8',
+    ...config,
+};
+
 const App = () => {
     return (
-        <ProtonApp config={config}>
+        <ProtonApp config={enhancedConfig}>
             <StandardSetup PrivateApp={PrivateApp} locales={locales} />
         </ProtonApp>
     );
