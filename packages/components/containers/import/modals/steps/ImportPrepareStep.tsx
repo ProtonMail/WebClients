@@ -10,8 +10,8 @@ import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { useFolders, useUser, useModals } from '../../../../hooks';
 import { Icon, LabelStack, Button, Alert, Loader, Tooltip, InlineLinkButton } from '../../../../components';
 
-import { ImportModalModel, MailImportFolder } from '../../interfaces';
-import { timeUnitLabels, TIME_UNIT } from '../../constants';
+import { ImportModalModel, MailImportFolder, TIME_UNIT } from '../../interfaces';
+import { timeUnitLabels } from '../../constants';
 import { escapeSlashes, splitEscaped } from '../../helpers';
 
 import CustomizeImportModal from '../CustomizeImportModal';
@@ -44,6 +44,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
             ),
         [payload.Mapping, providerFolders]
     );
+
     const selectedFoldersCountLocalized = selectedFolders.length.toLocaleString();
 
     const selectedPeriodLowerCased = timeUnitLabels[selectedPeriod].toLowerCase();
@@ -179,15 +180,16 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
 
     return (
         <>
-            {showSizeWarning && (
-                <Alert type="warning" className="mt1 mb1" learnMore="https://protonmail.com/support/knowledge-base/">
-                    {c('Warning')
-                        .t`This import may exceed the storage capacity currently available in your Proton account.`}
-                    <br />
-                    {c('Warning')
-                        .t`Proton will transfer as much data as possible, starting with your most recent messages.`}
-                </Alert>
-            )}
+            <Alert type={showSizeWarning ? 'warning' : 'info'} className="mt1 mb1">
+                {showSizeWarning && (
+                    <div className="mb1">
+                        {c('Warning')
+                            .t`This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.`}
+                    </div>
+                )}
+                {c('Warning')
+                    .t`Proton will transfer as much data as possible, starting with your most recent messages.`}
+            </Alert>
 
             {showFoldersNumError && (
                 <Alert type="error" className="mt1 mb1">

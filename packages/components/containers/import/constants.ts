@@ -1,17 +1,16 @@
 import { c } from 'ttag';
-
-export enum TIME_UNIT {
-    BIG_BANG = 'big_bang',
-    LAST_YEAR = 'last_year',
-    LAST_3_MONTHS = 'last_3_months',
-    LAST_MONTH = 'last_month',
-}
+import { TIME_UNIT } from './interfaces';
 
 export const timeUnitLabels = {
     [TIME_UNIT.BIG_BANG]: c('Label').t`Account creation date`,
     [TIME_UNIT.LAST_YEAR]: c('Label').t`12 months ago`,
     [TIME_UNIT.LAST_3_MONTHS]: c('Label').t`3 months ago`,
     [TIME_UNIT.LAST_MONTH]: c('Label').t`1 month ago`,
+};
+
+export const IMAPS = {
+    GMAIL: 'imap.gmail.com',
+    YAHOO: 'imap.mail.yahoo.com',
 };
 
 export const INVALID_CREDENTIALS_ERROR_LABEL = 'Invalid credentials';

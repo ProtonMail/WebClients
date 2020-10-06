@@ -26,8 +26,8 @@ import {
     Label as FormLabel,
 } from '../../../components';
 
-import { ImportModalModel, ImportPayloadModel } from '../interfaces';
-import { TIME_UNIT, timeUnitLabels } from '../constants';
+import { ImportModalModel, ImportPayloadModel, TIME_UNIT } from '../interfaces';
+import { timeUnitLabels } from '../constants';
 import ImportManageFolders from './ImportManageFolders';
 import { splitEscaped } from '../helpers';
 

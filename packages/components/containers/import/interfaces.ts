@@ -1,7 +1,5 @@
 import { LABEL_TYPE } from 'proton-shared/lib/constants';
 
-import { TIME_UNIT } from './constants';
-
 export enum DestinationFolder {
     INBOX = 'Inbox',
     ALL_DRAFTS = 'All Drafts',
@@ -41,6 +39,7 @@ export enum Step {
     START,
     PREPARE,
     STARTED,
+    INSTRUCTIONS,
 }
 
 export interface ImportModalModel {
@@ -148,4 +147,22 @@ export interface FolderNamesMap {
 
 export interface FolderPathsMap {
     [key: string]: string;
+}
+
+export enum TIME_UNIT {
+    BIG_BANG = 'big_bang',
+    LAST_YEAR = 'last_year',
+    LAST_3_MONTHS = 'last_3_months',
+    LAST_MONTH = 'last_month',
+}
+
+export enum PROVIDER_INSTRUCTIONS {
+    GMAIL = 'gmail',
+    YAHOO = 'yahoo',
+}
+
+export enum GMAIL_INSTRUCTIONS {
+    IMAP = 1,
+    LABELS = 2,
+    TWO_STEPS = 3,
 }

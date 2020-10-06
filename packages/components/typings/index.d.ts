@@ -1,5 +1,7 @@
 declare module '*.svg';
 
+declare module '*.jpg';
+
 declare module '*.md';
 
 // TODO: Import from proton-shared
