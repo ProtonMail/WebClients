@@ -27,3 +27,17 @@ export const querySharedURLs = (shareId: string) => {
         url: `drive/shares/${shareId}/urls`,
     };
 };
+
+export const queryInitSRPHandshake = (token: string) => {
+    return {
+        method: 'get',
+        url: `drive/urls/${token}/info`,
+    };
+};
+
+export const queryGetURLPayload = (token: string) => {
+    return {
+        method: 'post',
+        url: `drive/urls/${token}/file`,
+    };
+};
