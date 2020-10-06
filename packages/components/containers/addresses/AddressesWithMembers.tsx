@@ -1,6 +1,5 @@
 import React, { ChangeEvent, useEffect, useMemo, useState } from 'react';
-import { withRouter } from 'react-router';
-import { RouteComponentProps } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { UserModel, Address, Organization, Member } from 'proton-shared/lib/interfaces';
@@ -13,11 +12,13 @@ import { getStatus } from './helper';
 import AddressActions from './AddressActions';
 import AddressesWithUser from './AddressesWithUser';
 
-interface Props extends RouteComponentProps<{ memberID: string }> {
+interface Props {
     user: UserModel;
     organization: Organization;
+    isOnlySelf?: boolean;
 }
-const AddressesWithMembers = ({ match, user, organization }: Props) => {
+const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
+    const match = useRouteMatch<{ memberID: string }>();
     const { createModal } = useModals();
     const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
@@ -27,7 +28,7 @@ const AddressesWithMembers = ({ match, user, organization }: Props) => {
 
     useEffect(() => {
         if (memberIndex === -1 && Array.isArray(members)) {
-            if (match.params.memberID) {
+            if (match.params.memberID && !isOnlySelf) {
                 setMemberIndex(members.findIndex(({ ID }) => ID === match.params.memberID));
             } else {
                 setMemberIndex(members.findIndex(({ Self }) => Self));
@@ -75,7 +76,7 @@ const AddressesWithMembers = ({ match, user, organization }: Props) => {
         <>
             <Alert>{c('Info')
                 .t`Premium plans let you add multiple email addresses to your account. All the emails associated with them will appear in the same mailbox. If you are the admin of a Professional or Visionary plan, you can manage email addresses for each user in your organization. The email address at the top of the list will automatically be selected as the default email address.`}</Alert>
-            {memberOptions.length > 2 ? (
+            {!isOnlySelf && memberOptions.length > 2 ? (
                 <Block>
                     <Select
                         id="memberSelect"
@@ -136,4 +137,4 @@ const AddressesWithMembers = ({ match, user, organization }: Props) => {
     );
 };
 
-export default withRouter(AddressesWithMembers);
+export default AddressesWithMembers;

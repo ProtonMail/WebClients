@@ -7,7 +7,11 @@ import { useOrganization, useUser } from '../../hooks';
 import AddressesWithMembers from './AddressesWithMembers';
 import AddressesWithUser from './AddressesWithUser';
 
-const AddressesSection = () => {
+interface Props {
+    isOnlySelf?: boolean;
+}
+
+const AddressesSection = ({ isOnlySelf }: Props) => {
     const [user] = useUser();
     const [organization, loadingOrganization] = useOrganization();
     const { UsedAddresses, MaxAddresses } = organization || {};
@@ -19,7 +23,7 @@ const AddressesSection = () => {
     return (
         <>
             {user.isAdmin ? (
-                <AddressesWithMembers user={user} organization={organization} />
+                <AddressesWithMembers isOnlySelf={isOnlySelf} user={user} organization={organization} />
             ) : (
                 <AddressesWithUser user={user} />
             )}
