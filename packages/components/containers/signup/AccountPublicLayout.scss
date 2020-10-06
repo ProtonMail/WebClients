@@ -110,7 +110,7 @@ $default-height-fields: 4.1rem;
 	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 	grid-gap: 1em;
 	@include respond-to(768) {
-		grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
 	}
 	@include respond-to($breakpoint-small) {
 		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
@@ -125,8 +125,14 @@ $default-height-fields: 4.1rem;
 }
 
 /* label size */
-.payment-container {
+.payment-container,
+.payment-right {
 	--label-width: #{$pm-label-width};
+}
+@include respond-to($breakpoint-medium) {
+	.payment-container {
+		--label-width: 45%;
+	}
 }
 
 /* display for currency/plans */

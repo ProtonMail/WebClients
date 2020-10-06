@@ -80,7 +80,7 @@ const Payment = ({
     return (
         <>
             <Row className="payment-container">
-                <div className="pm-label payment-left">
+                <div className="pm-label payment-left mr1 onmobile-mr0">
                     <label className="mb0-5 bl">{c('Label').t`Select a method`}</label>
                     {options.map(({ text, value, disabled, icon }) => {
                         return (
@@ -100,12 +100,12 @@ const Payment = ({
                                     onChange={() => onMethod(value)}
                                 />
                                 <Icon className="mr0-5" name={icon} />
-                                <span>{text}</span>
+                                <span className="cut">{text}</span>
                             </label>
                         );
                     })}
                 </div>
-                <div className="w60 payment-right mr1">
+                <div className="payment-right mr1">
                     <div className="mw37e onmobile-mw100">
                         <Method
                             loading={loading}
