@@ -121,7 +121,7 @@ const getApi = (api) => {
     const value = parse(api);
 
     // We can do --api=https://mail.protonmail.com/api and it's only for dev, so we can stop here
-    if (value.includes('/api')) {
+    if (value.includes('https') || value.includes('/api')) {
         return { value, url: value };
     }
 
