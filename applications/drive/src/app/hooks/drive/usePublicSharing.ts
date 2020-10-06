@@ -1,0 +1,113 @@
+import { ReadableStream } from 'web-streams-polyfill';
+import { decryptMessage, decryptPrivateKey, getMessage, OpenPGPKey, SessionKey } from 'pmcrypto';
+import { computeKeyPassword } from 'pm-srp';
+import { useApi } from 'react-components';
+import { srpAuth } from 'proton-shared/lib/srp';
+import { base64StringToUint8Array } from 'proton-shared/lib/helpers/encoding';
+import { decryptUnsigned, getStreamMessage } from 'proton-shared/lib/keys/driveKeys';
+
+import { queryInitSRPHandshake, queryGetURLPayload } from '../../api/shares';
+import { getDecryptedSessionKey } from '../../utils/drive/driveCrypto';
+import { InitHandshake, SharedLinkPayload } from '../../interfaces/sharing';
+import { DriveFileBlock } from '../../interfaces/file';
+import { TransferMeta } from '../../interfaces/transfer';
+import { StreamTransformer } from '../../components/downloads/download';
+import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
+
+function usePublicSharing() {
+    const api = useApi();
+    const { addToDownloadQueue } = useDownloadProvider();
+
+    const getSharedLinkPayload = async (token: string, password: string) => {
+        const initHandshake = async (token: string) => {
+            return api<InitHandshake>(queryInitSRPHandshake(token));
+        };
+
+        const { Modulus, ServerEphemeral, UrlPasswordSalt, SRPSession, Version } = await initHandshake(token);
+        const { Payload } = await srpAuth<{ Code: number; Payload: SharedLinkPayload }>({
+            api,
+            credentials: { password },
+            info: {
+                Modulus,
+                ServerEphemeral,
+                Version,
+                Salt: UrlPasswordSalt,
+                SRPSession,
+            },
+            config: queryGetURLPayload(token),
+        });
+
+        const Blocks: DriveFileBlock[] = Payload.Blocks.map((URL: string, Index: number) => {
+            return {
+                Index: Index + 1,
+                URL,
+            };
+        });
+
+        const [passphraseAsMessage, computedPassword] = await Promise.all([
+            getMessage(Payload.SharePassphrase),
+            computeKeyPassword(password, Payload.SharePasswordSalt),
+        ]);
+        const sharePassphrase = await decryptMessage({
+            message: passphraseAsMessage,
+            passwords: [computedPassword],
+        });
+        const shareKey = await decryptPrivateKey(Payload.ShareKey, sharePassphrase.data);
+        const [Name, NodePassphrase] = await Promise.all([
+            decryptUnsigned({ armoredMessage: Payload.Name, privateKey: shareKey }),
+            decryptUnsigned({ armoredMessage: Payload.NodePassphrase, privateKey: shareKey }),
+        ]);
+        const NodeKey = await decryptPrivateKey(Payload.NodeKey, NodePassphrase);
+        const blockKeys = base64StringToUint8Array(Payload.ContentKeyPacket);
+        const SessionKey = await getDecryptedSessionKey({ data: blockKeys, privateKeys: NodeKey });
+
+        return {
+            Name,
+            MIMEType: Payload.MIMEType,
+            Size: Payload.Size,
+            ExpirationTime: Payload.ExpirationTime,
+            Blocks,
+            NodeKey,
+            SessionKey,
+        };
+    };
+
+    const decryptSharedBlockStream = (sessionKey: SessionKey, privateKey: OpenPGPKey): StreamTransformer => async (
+        stream: ReadableStream<Uint8Array>
+    ) => {
+        // TODO: implement root hash validation when file updates are implemented
+
+        const { data } = await decryptMessage({
+            message: await getStreamMessage(stream),
+            sessionKeys: sessionKey,
+            publicKeys: privateKey.toPublic(),
+            streaming: 'web',
+            format: 'binary',
+        });
+
+        return data as ReadableStream<Uint8Array>;
+    };
+
+    const startSharedFileTransfer = (
+        blocks: DriveFileBlock[],
+        sessionKey: SessionKey,
+        privateKey: OpenPGPKey,
+        meta: TransferMeta
+    ) => {
+        return addToDownloadQueue(
+            meta,
+            { ShareID: 'SharedFile', LinkID: 'SharedFile' },
+            {
+                transformBlockStream: decryptSharedBlockStream(sessionKey, privateKey),
+                onStart: async () => blocks,
+            }
+        );
+    };
+
+    return {
+        getSharedLinkPayload,
+        startSharedFileTransfer,
+    };
+}
+
+export default usePublicSharing;

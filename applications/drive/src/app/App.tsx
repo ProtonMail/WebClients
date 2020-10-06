@@ -1,19 +1,45 @@
-import React from 'react';
-import { ProtonApp, StandardSetup } from 'react-components';
+import React, { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import { ProtonApp, StandardPublicApp, StandardSetup, ModalsChildren } from 'react-components';
 import locales from 'proton-shared/lib/i18n/locales';
 import sentry from 'proton-shared/lib/helpers/sentry';
 
 import * as config from './config';
 import PrivateApp from './PrivateApp';
+import DownloadSharedContainer from './containers/DownloadSharedContainer';
+import { DownloadProvider } from './components/downloads/DownloadProvider';
 
 import './app.scss';
+
+const PublicDriveLinkContainer = () => {
+    return (
+        <DownloadProvider>
+            <ModalsChildren />
+            <DownloadSharedContainer />
+        </DownloadProvider>
+    );
+};
 
 sentry(config);
 
 const App = () => {
+    const [hasInitialAuth] = useState(() => {
+        return window.location.pathname.startsWith('/urls');
+    });
+
     return (
-        <ProtonApp config={config}>
-            <StandardSetup PrivateApp={PrivateApp} locales={locales} />
+        <ProtonApp config={config} hasInitialAuth={hasInitialAuth}>
+            <Switch>
+                <Route path="/urls">
+                    <StandardPublicApp locales={locales}>
+                        <PublicDriveLinkContainer />
+                    </StandardPublicApp>
+                </Route>
+                <Route path="*">
+                    <StandardSetup PrivateApp={PrivateApp} locales={locales} />
+                </Route>
+            </Switch>
         </ProtonApp>
     );
 };

@@ -8,7 +8,7 @@ import { FileBrowserItem } from './FileBrowser/interfaces';
 import UserNameCell from './FileBrowser/ListView/Cells/UserNameCell';
 import LocationCell from './FileBrowser/ListView/Cells/LocationCell';
 import DescriptiveTypeCell from './FileBrowser/ListView/Cells/DescriptiveTypeCell';
-import ModifyTimeCell from './FileBrowser/ListView/Cells/ModifyTimeCell';
+import TimeCell from './FileBrowser/ListView/Cells/TimeCell';
 import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
 import NameCell from './FileBrowser/ListView/Cells/NameCell';
 import MIMETypeCell from './FileBrowser/ListView/Cells/MIMETypeCell';
@@ -57,7 +57,7 @@ const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
                         <LocationCell shareId={activeFolder.shareId} parentLinkId={item.ParentLinkID} />
                     </DetailsRow>
                     <DetailsRow label={c('Title').t`Modified`}>
-                        <ModifyTimeCell modifyTime={item.ModifyTime} />
+                        <TimeCell time={item.ModifyTime} />
                     </DetailsRow>
                     {isFile && (
                         <>

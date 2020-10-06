@@ -4,12 +4,12 @@ import { dateLocale } from 'proton-shared/lib/i18n';
 import { Time } from 'react-components';
 
 interface Props {
-    modifyTime: number;
+    time: number;
 }
 
-const ModifyTimeCell = ({ modifyTime }: Props) => {
+const TimeCell = ({ time: modifyTime }: Props) => {
     return (
-        <div className="ellipsis" title={readableTime(modifyTime, 'PPp', { locale: dateLocale })}>
+        <div className="ellipsis" title={readableTime(modifyTime, 'PP', { locale: dateLocale })}>
             <span className="pre">
                 <Time key="dateModified" format="PPp">
                     {modifyTime}
@@ -19,4 +19,4 @@ const ModifyTimeCell = ({ modifyTime }: Props) => {
     );
 };
 
-export default ModifyTimeCell;
+export default TimeCell;

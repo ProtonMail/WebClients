@@ -1,3 +1,7 @@
+import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import { AuthVersion } from 'proton-shared/lib/authentication/interface';
+import { DriveFileBlock } from './file';
+
 export interface ShareURL {
     CreatorEmail: string;
     ExpirationTime: number;
@@ -28,4 +32,37 @@ export interface SharedURL {
     Flags: number;
     Password: string;
     SharePassphraseKeyPacket: string;
+}
+
+export interface InitHandshake {
+    Code: number;
+    Modulus: string;
+    ServerEphemeral: string;
+    UrlPasswordSalt: string;
+    SRPSession: string;
+    Version: AuthVersion;
+}
+
+export interface SharedLinkInfo {
+    Name: string;
+    Size: number;
+    MIMEType: string;
+    ExpirationTime: number;
+    NodeKey: OpenPGPKey;
+    SessionKey: SessionKey;
+    Blocks: DriveFileBlock[];
+}
+
+export interface SharedLinkPayload {
+    Name: string;
+    MIMEType: string;
+    ExpirationTime: number;
+    Size: number;
+    ContentKeyPacket: string;
+    NodeKey: string;
+    NodePassphrase: string;
+    ShareKey: string;
+    SharePassphrase: string;
+    SharePasswordSalt: string;
+    Blocks: string[];
 }

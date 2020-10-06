@@ -17,7 +17,7 @@ import ItemContextMenu from '../ItemContextMenu';
 import useFileBrowserItem from '../useFileBrowserItem';
 import LocationCell from './Cells/LocationCell';
 import DescriptiveTypeCell from './Cells/DescriptiveTypeCell';
-import ModifyTimeCell from './Cells/ModifyTimeCell';
+import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
 
@@ -110,7 +110,7 @@ const ItemRow = ({
 
                 {isDesktop && (
                     <TableCell className="m0 w25">
-                        <ModifyTimeCell modifyTime={item.ModifyTime} />
+                        <TimeCell time={item.ModifyTime} />
                     </TableCell>
                 )}
 
