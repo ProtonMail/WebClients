@@ -183,9 +183,13 @@ const PopoverEventContent = ({
                 <>
                     {[...attendees[ACCEPTED], ...attendees[TENTATIVE], ...attendees[DECLINED], ...attendees.other].map(
                         ({ icon, text, title }) => (
-                            <div className="mb0-25 ellipsis">
-                                {icon}
-                                <Tooltip title={title}>{text}</Tooltip>
+                            <div className="mb0-25 flex flex-nowrap">
+                                <span className="flex-item-noshrink">{icon}</span>
+                                <span className="flex-item-fluid">
+                                    <Tooltip className="mw100 inbl ellipsis" title={title}>
+                                        {text}
+                                    </Tooltip>
+                                </span>
                             </div>
                         )
                     )}
