@@ -187,7 +187,7 @@ const SquireEditorWrapper = ({
                 onChangeContent(content);
             }
         },
-        [onChangeContent, isPlainText]
+        [onChangeContent, isPlainText, blockquoteExpanded]
     );
 
     const switchToPlainText = () => {
