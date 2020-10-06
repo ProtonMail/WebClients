@@ -121,15 +121,7 @@ const ImportManageFoldersRow = ({
             return false;
         }
 
-        let parentPath = getParent(folder.Source);
-        const pathParts = [inputValue];
-
-        while (parentPath) {
-            pathParts.unshift(folderNamesMap[parentPath]);
-            parentPath = getParent(parentPath);
-        }
-
-        const newPath = pathParts.join('/');
+        const newPath = folderPathsMap[folder.Source];
 
         return Object.entries(folderPathsMap).some(([source, path]) => {
             return source !== Source && path === newPath && checkedFoldersMap[source];
@@ -154,7 +146,6 @@ const ImportManageFoldersRow = ({
     const handleSave = (e: React.MouseEvent | React.KeyboardEvent) => {
         e.stopPropagation();
         setEditMode(false);
-        onRename(Source, inputValue);
         initialValue.current = inputValue;
     };
 
@@ -163,10 +154,16 @@ const ImportManageFoldersRow = ({
         e.stopPropagation();
     };
 
+    const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = target;
+        setInputValue(value);
+        onRename(Source, value);
+    };
+
     const handleCancel = (e: React.MouseEvent) => {
         preventDefaultAndStopPropagation(e);
-
         setEditMode(false);
+        onRename(Source, initialValue.current);
         setInputValue(initialValue.current);
     };
 
@@ -214,7 +211,7 @@ const ImportManageFoldersRow = ({
                 isSubmitted
                 ref={inputRef}
                 value={inputValue}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value)}
+                onChange={handleChange}
                 onPressEnter={(e: React.KeyboardEvent) => {
                     e.preventDefault();
                     if (emptyValueError || nameTooLongError) {
@@ -322,7 +319,7 @@ const ImportManageFoldersRow = ({
                                                 'flex-item-fluid-auto ellipsis',
                                                 (nameTooLongError || mergeWarning) && 'bold',
                                             ])}
-                                            title={destinationName}
+                                            title={unescapeSlashes(destinationName)}
                                         >
                                             {unescapeSlashes(destinationName)}
                                         </span>
