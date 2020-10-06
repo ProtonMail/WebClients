@@ -5,6 +5,7 @@ export interface ProtonConfig {
     CLIENT_TYPE: typeof CLIENT_TYPES[keyof typeof CLIENT_TYPES];
     CLIENT_SECRET: string;
     APP_VERSION: string;
+    APP_VERSION_DISPLAY?: string;
     APP_NAME: APP_NAMES;
     API_URL: string;
     LOCALES: { [key: string]: string };
