@@ -28,6 +28,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
 
     const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
     const isMultiSelect = selectedItems.length > 1;
+    const hasSharedLink = selectedItems[0]?.SharedURLShareID;
 
     const toolbarButtonIcon = { name: 'caret', rotate: isOpen ? 180 : 0 };
 
@@ -55,7 +56,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
         },
         {
             hidden: isMultiSelect || hasFoldersSelected,
-            name: c('Action').t`Get secure link`,
+            name: hasSharedLink ? c('Action').t`Manage secure link` : c('Action').t`Get secure link`,
             icon: 'link',
             testId: 'context-menu-share',
             action: () => openLinkSharing(shareId, selectedItems[0]),

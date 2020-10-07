@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 import { useNotifications, FloatingButton, SidebarPrimaryButton } from 'react-components';
-import useDrive from '../../../hooks/drive/useDrive';
 import useTrash from '../../../hooks/drive/useTrash';
 import useConfirm from '../../../hooks/util/useConfirm';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
+import useEvents from '../../../hooks/drive/useEvents';
 
 interface Props {
     shareId: string;
@@ -13,7 +13,7 @@ interface Props {
 
 const EmptyTrashButton = ({ shareId, floating }: Props) => {
     const cache = useDriveCache();
-    const { events } = useDrive();
+    const events = useEvents();
     const { emptyTrash } = useTrash();
     const { openConfirmModal } = useConfirm();
     const { createNotification } = useNotifications();

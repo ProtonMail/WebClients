@@ -1,28 +1,15 @@
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import { getRandomString } from 'proton-shared/lib/helpers/string';
-import React, { useEffect, useState, useCallback } from 'react';
-import {
-    DialogModal,
-    HeaderModal,
-    InnerModal,
-    FooterModal,
-    Button,
-    Alert,
-    Row,
-    Label,
-    Checkbox,
-    useLoading,
-    Loader,
-    TextLoader,
-    PrimaryButton,
-    useNotifications,
-} from 'react-components';
-import { c } from 'ttag';
+import React, { useEffect, useState } from 'react';
+import { DialogModal, useNotifications } from 'react-components';
 import useDrive from '../../hooks/drive/useDrive';
+import useEvents from '../../hooks/drive/useEvents';
 import useSharing from '../../hooks/drive/useSharing';
+import { SharedURLSessionKeyPayload, ShareURL } from '../../interfaces/sharing';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
-
-const SHARING_BASE_URL = 'https://drive.proton.me/urls';
+import EditPasswordState from './EditPasswordState';
+import ErrorState from './ErrorState';
+import GeneratedLinkState from './GeneratedLinkState';
+import LoadingState from './LoadingState';
 
 interface Props {
     onClose?: () => void;
@@ -31,113 +18,132 @@ interface Props {
     shareId: string;
 }
 
-function SharingModal({ modalTitleID = 'onboardingModal', onClose, item, shareId, ...rest }: Props) {
-    const [password, setPassword] = useState(() => getRandomString(10));
-    const [token, setToken] = useState<string>();
+enum SharingModalState {
+    Loading,
+    GeneratedLink,
+    EditPassword,
+}
+
+function SharingModal({ modalTitleID = 'onboardingModal', onClose, shareId, item, ...rest }: Props) {
+    const [modalState, setModalState] = useState(SharingModalState.Loading);
     const [includePassword, setIncludePassword] = useState(true);
+    const [shareUrlInfo, setShareUrlInfo] = useState<{ ShareURL: ShareURL; keyInfo: SharedURLSessionKeyPayload }>();
+    const [savingPassword, setSavingPassword] = useState(false);
     const [error, setError] = useState(false);
-    const [loading, withLoading] = useLoading(true);
     const { getShareMetaShort } = useDrive();
-    const { createSharedLink, getSharedURLs } = useSharing();
+    const { createSharedLink, getSharedURLs, decryptSharedURL, updateSharedLinkPassword } = useSharing();
+    const events = useEvents();
     const { createNotification } = useNotifications();
 
-    const getToken = useCallback(async () => {
-        const { Token } = item.SharedURLShareID
-            ? await getSharedURLs(item.SharedURLShareID).then(([ShareURL]) => {
-                  setPassword(ShareURL.Password);
-                  return ShareURL;
-              })
-            : await getShareMetaShort(shareId)
-                  .then(({ VolumeID }) => createSharedLink(shareId, VolumeID, item.LinkID, password))
-                  .then(({ ShareURL }) => ShareURL);
-        setToken(Token);
-    }, [shareId, item.LinkID, item.SharedURLShareID, password]);
-
     useEffect(() => {
-        withLoading(getToken()).catch((err) => {
-            console.error(err);
-            setError(true);
-        });
-    }, [getToken]);
+        const getToken = async () => {
+            const shareUrlInfo = item.SharedURLShareID
+                ? await getSharedURLs(item.SharedURLShareID).then(async ([sharedUrl]) => {
+                      return decryptSharedURL(sharedUrl);
+                  })
+                : await getShareMetaShort(shareId).then(async ({ VolumeID }) => {
+                      const result = await createSharedLink(shareId, VolumeID, item.LinkID, getRandomString(10));
+                      await events.call(shareId);
+                      return result;
+                  });
+            setShareUrlInfo(shareUrlInfo);
+        };
 
-    const handleClickCopyURL = () => {
-        textToClipboard(includePassword ? `${SHARING_BASE_URL}/${token}#${password}` : `${SHARING_BASE_URL}/${token}`);
-        createNotification({ text: c('Success').t`Secure link was copied to the clipboard` });
+        getToken()
+            .catch((err) => {
+                console.error(err);
+                setError(true);
+            })
+            .finally(() => {
+                setModalState(SharingModalState.GeneratedLink);
+            });
+    }, [shareId, item.LinkID, item.SharedURLShareID]);
+
+    const handleSavePassword = async (password: string) => {
+        if (!shareUrlInfo) {
+            return;
+        }
+
+        const updatePassword = async () => {
+            const res = await updateSharedLinkPassword(
+                shareUrlInfo.ShareURL.ShareID,
+                shareUrlInfo.ShareURL.Token,
+                password,
+                shareUrlInfo.keyInfo
+            );
+            await events.call(shareId);
+            return res;
+        };
+
+        try {
+            setSavingPassword(true);
+            const updatedFields = await updatePassword();
+            setShareUrlInfo({
+                ...shareUrlInfo,
+                ShareURL: {
+                    ...shareUrlInfo.ShareURL,
+                    ...updatedFields,
+                },
+            });
+            setIncludePassword(false);
+            setModalState(SharingModalState.GeneratedLink);
+        } catch (e) {
+            if (e.name === 'ValidationError') {
+                createNotification({ text: e.message, type: 'error' });
+            }
+            throw e;
+        } finally {
+            setSavingPassword(false);
+        }
     };
 
-    const handleClickCopyPassword = () => {
-        textToClipboard(password);
-        createNotification({ text: c('Success').t`Password was copied to the clipboard` });
-    };
-
-    const handleChangeIncludePassword = () => {
+    const handleToggleIncludePassword = () => {
         setIncludePassword((includePassword) => !includePassword);
     };
 
-    const boldNameText = <b>{item.Name}</b>;
+    const loading = modalState === SharingModalState.Loading;
+
+    const renderModalState = () => {
+        if (loading) {
+            return <LoadingState generated={!!item.SharedURLShareID} />;
+        }
+
+        if (error || !shareUrlInfo || !item) {
+            return <ErrorState modalTitleID={modalTitleID} onClose={onClose} />;
+        }
+
+        if (modalState === SharingModalState.GeneratedLink) {
+            return (
+                <GeneratedLinkState
+                    modalTitleID={modalTitleID}
+                    includePassword={includePassword}
+                    itemName={item.Name}
+                    onClose={onClose}
+                    onEditPasswordClick={() => setModalState(SharingModalState.EditPassword)}
+                    onIncludePasswordToggle={handleToggleIncludePassword}
+                    password={shareUrlInfo.ShareURL.Password}
+                    token={shareUrlInfo.ShareURL.Token}
+                />
+            );
+        }
+
+        if (modalState === SharingModalState.EditPassword) {
+            return (
+                <EditPasswordState
+                    modalTitleID={modalTitleID}
+                    initialPassword={shareUrlInfo.ShareURL.Password}
+                    onBack={() => setModalState(SharingModalState.GeneratedLink)}
+                    onClose={onClose}
+                    onSave={handleSavePassword}
+                    saving={savingPassword}
+                />
+            );
+        }
+    };
 
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
-            <HeaderModal modalTitleID={modalTitleID} onClose={onClose} hasClose={!loading}>
-                {!loading && c('Title').t`Get secure link`}
-            </HeaderModal>
-            <div className="pm-modalContent">
-                <InnerModal>
-                    {error && (
-                        <Alert type="error">{c('Info').t`Failed to generate a secure link. Try again later.`}</Alert>
-                    )}
-                    {loading ? (
-                        <div className="flex flex-column flex-items-center">
-                            <Loader size="medium" className="mt1 mb1" />
-                            <TextLoader className="m0">{c('Info').t`Generating secure link`}</TextLoader>
-                        </div>
-                    ) : (
-                        !error && (
-                            <>
-                                <Alert>{c('Info').jt`Secure link of "${boldNameText}" has been generated.`}</Alert>
-
-                                <Row>
-                                    <div className="flex flex-item-fluid">
-                                        <div className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis">
-                                            {SHARING_BASE_URL}/{token}
-                                            {includePassword && <span className="accented">#{password}</span>}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <PrimaryButton onClick={handleClickCopyURL} className="min-w5e ml0-5">{c(
-                                            'Action'
-                                        ).t`Copy`}</PrimaryButton>
-                                    </div>
-                                </Row>
-
-                                <Alert>
-                                    {c('Info').t`A secure password has been generated for you.`}
-                                    <br />
-                                    {c('Info').t`Use it in order to decrypt a file after downloading it.`}
-                                </Alert>
-                                <Row>
-                                    <Label htmlFor="edit-password">
-                                        <span className="mr0-5">{c('Label').t`Password protection`}</span>
-                                    </Label>
-                                    <div className="flex flex-column flex-item-fluid">
-                                        <div className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 pm-field--accented ellipsis">
-                                            {password}
-                                        </div>
-                                        <Checkbox checked={includePassword} onChange={handleChangeIncludePassword}>{c(
-                                            'Label'
-                                        ).t`Include password in the link`}</Checkbox>
-                                    </div>
-                                    <div>
-                                        <Button onClick={handleClickCopyPassword} className="min-w5e ml0-5">{c('Action')
-                                            .t`Copy`}</Button>
-                                    </div>
-                                </Row>
-                            </>
-                        )
-                    )}
-                </InnerModal>
-                <FooterModal>{!loading && <Button onClick={onClose}>{c('Action').t`Done`}</Button>}</FooterModal>
-            </div>
+            {renderModalState()}
         </DialogModal>
     );
 }

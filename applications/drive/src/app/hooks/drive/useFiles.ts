@@ -40,6 +40,7 @@ import useQueuedFunction from '../util/useQueuedFunction';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { isFile } from '../../utils/file';
 import { getMetaForTransfer } from '../../utils/transfer';
+import useEvents from './useEvents';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -52,7 +53,8 @@ function useFiles() {
     const queuedFunction = useQueuedFunction();
     const { createNotification } = useNotifications();
     const { getPrimaryAddressKey, sign } = useDriveCrypto();
-    const { getLinkMeta, getLinkKeys, events, fetchAllFolderPages, createNewFolder } = useDrive();
+    const { getLinkMeta, getLinkKeys, fetchAllFolderPages, createNewFolder } = useDrive();
+    const events = useEvents();
     const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
     const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses } = useUploadProvider();
     const { preventLeave } = usePreventLeave();

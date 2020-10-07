@@ -9,13 +9,14 @@ import { queryTrashList } from '../../api/share';
 import runInQueue from '../../utils/runInQueue';
 import useDrive from './useDrive';
 import useDebouncedRequest from '../util/useDebouncedRequest';
+import useEvents from './useEvents';
 
 function useTrash() {
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
     const cache = useDriveCache();
     const { getLinkKeys, decryptLink, getShareKeys } = useDrive();
-    const { events } = useDrive();
+    const events = useEvents();
 
     const fetchTrash = async (shareId: string, Page: number, PageSize: number) => {
         const { Links, Parents } = await debouncedRequest<{
