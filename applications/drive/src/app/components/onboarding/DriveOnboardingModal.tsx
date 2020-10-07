@@ -26,16 +26,16 @@ const DriveOnboardingModal = (props: any) => {
         <OnboardingModal {...props}>
             {({ onClose }: OnboardingStepRenderCallback) => (
                 <OnboardingStep
-                    title={c('Onboarding ProtonDrive').t`Welcome to ${appName} early access`}
-                    submit={c('Onboarding ProtonDrive').t`Start using ${appName} beta`}
+                    title={c('Onboarding ProtonDrive Title').t`Welcome to ${appName} early access`}
+                    submit={c('Onboarding ProtonDrive Action').t`Start using ${appName} beta`}
                     onSubmit={onClose}
                     close={null}
                 >
                     <OnboardingContent
-                        description={c('Onboarding ProtonDrive')
+                        description={c('Onboarding ProtonDrive Info')
                             .t`Your support powers our mission to ensure privacy for all. As a way of saying thanks, you now have early access to our new encrypted cloud storage service.`}
                         img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
-                        text={c('Onboarding ProtonDrive')
+                        text={c('Onboarding ProtonDrive Info')
                             .jt`${appName} currently lets you upload and manage your files, secure your data with end-to-end encryption, and access your account from any device through your web browser. ${learnMoreLink}`}
                     />
                 </OnboardingStep>
