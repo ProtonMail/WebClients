@@ -33,7 +33,7 @@ const CalendarOnboardingModal = (props: any) => {
                                 .t`ProtonCalendar keeps your plans secure with end-to-end encryption, so we can’t see what you’re doing.`}
                             img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
                             text={c('Onboarding ProtonCalendar')
-                                .t`We recommend importing your events from your existing calendar. Our import assistant is quick and easy, and works with any other provider.`}
+                                .t`We recommend importing your events from your existing calendar. Our import tool is quick and easy, and works with any other provider.`}
                         />
                     </OnboardingStep>
                 );
