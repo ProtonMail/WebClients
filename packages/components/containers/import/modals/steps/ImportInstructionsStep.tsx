@@ -60,7 +60,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                         className="border-currentColor"
                         src={gmailAppPasswordImg}
                         alt={c('Import instructions image alternative text')
-                            .t`How to create an app password in Gmail setings`}
+                            .t`How to create an app password in Gmail settings`}
                     />
                 </>
             ),
@@ -92,7 +92,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                             className="border-currentColor"
                             src={gmailImapImg}
                             alt={c('Import instructions image alternative text')
-                                .t`How to enable IMAP Forwarding in Gmail setings`}
+                                .t`How to enable IMAP Forwarding in Gmail settings`}
                         />
                     </>
                 );
@@ -107,7 +107,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                             className="border-currentColor"
                             src={gmailImapFolderImg}
                             alt={c('Import instructions image alternative text')
-                                .t`How to show folders in IMAP in Gmail setings`}
+                                .t`How to show folders in IMAP in Gmail settings`}
                         />
                     </>
                 );
@@ -197,7 +197,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                     className="border-currentColor"
                     src={yahooAppPasswordImg}
                     alt={c('Import instructions image alternative text')
-                        .t`How to create an app password in Gmail setings`}
+                        .t`How to create an app password in Gmail settings`}
                 />
             </>
         );
