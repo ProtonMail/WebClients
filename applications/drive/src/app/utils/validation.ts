@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { MAX_NAME_LENGTH } from '../constants';
+import { MAX_NAME_LENGTH, MIN_SHARED_URL_PASSWORD_LENGTH } from '../constants';
 
 // eslint-disable-next-line no-control-regex
 const RESERVED_CHARACTERS = /[<>:"\\/|?*]|[\x00-\x1F]/;
@@ -98,3 +98,20 @@ export const validateLinkNameField = composeValidators([
 ]);
 
 export const formatLinkName = (str: string) => str.trim();
+
+const validatePasswordLength = (length: number) => (str: string) => {
+    return str.length < length
+        ? c('Validation Error').t`Password must be at least ${length} characters long`
+        : undefined;
+};
+
+const validatePasswordStrength = (str: string) => {
+    return !/[A-Z]/.test(str) && !/[1-9]/.test(str)
+        ? c('Validation Error').t`Password must include a capital letter or a number`
+        : undefined;
+};
+
+export const validateSharedURLPassword = composeValidators([
+    validatePasswordLength(MIN_SHARED_URL_PASSWORD_LENGTH),
+    validatePasswordStrength,
+]);

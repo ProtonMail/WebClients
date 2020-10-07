@@ -5,6 +5,7 @@ import { validateLinkNameField, formatLinkName } from '../utils/validation';
 import useDrive from '../hooks/drive/useDrive';
 import { useDriveActiveFolder, DriveFolder } from './Drive/DriveFolderProvider';
 import { MAX_NAME_LENGTH } from '../constants';
+import useEvents from '../hooks/drive/useEvents';
 
 interface Props {
     onClose?: () => void;
@@ -16,7 +17,8 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
     const { createNotification } = useNotifications();
 
     const { folder: activeFolder } = useDriveActiveFolder();
-    const { createNewFolder, events } = useDrive();
+    const { createNewFolder } = useDrive();
+    const events = useEvents();
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
 

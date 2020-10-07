@@ -8,6 +8,7 @@ import useDrive from '../hooks/drive/useDrive';
 import { DriveFolder } from './Drive/DriveFolderProvider';
 import { MAX_NAME_LENGTH } from '../constants';
 import { FileBrowserItem } from './FileBrowser/interfaces';
+import useEvents from '../hooks/drive/useEvents';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -17,7 +18,8 @@ interface Props {
 
 const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
     const { createNotification } = useNotifications();
-    const { renameLink, events } = useDrive();
+    const { renameLink } = useDrive();
+    const events = useEvents();
     const [name, setName] = useState(item.Name);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);

@@ -40,7 +40,7 @@ function useDrive() {
     const { getPrimaryAddressKey, getVerificationKeys, decryptSharePassphrase } = useDriveCrypto();
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
-    const { events } = useEvents();
+    const events = useEvents();
 
     const getShareMeta = async (shareId: string) => {
         return getShareMetaAsync(debouncedRequest, cache, events.subscribe, shareId);
@@ -251,7 +251,6 @@ function useDrive() {
         moveLink,
         moveLinks,
         deleteChildrenLinks,
-        events,
     };
 }
 

@@ -16,10 +16,12 @@ const GetSecureLinkButton = ({ shareId, disabled }: Props) => {
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
 
+    const hasSharedLink = selectedItems[0]?.SharedURLShareID;
+
     return (
         <ToolbarButton
             disabled={disabled}
-            title={c('Action').t`Get secure link`}
+            title={hasSharedLink ? c('Action').t`Manage secure link` : c('Action').t`Get secure link`}
             icon="link"
             onClick={() => openLinkSharing(shareId, selectedItems[0])}
             data-testid="toolbar-share"

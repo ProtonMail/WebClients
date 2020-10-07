@@ -2,6 +2,33 @@ import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { AuthVersion } from 'proton-shared/lib/authentication/interface';
 import { DriveFileBlock } from './file';
 
+export interface CreateSharedURL {
+    ExpirationTime: number;
+    MaxAccesses: number;
+    CreatorEmail: string;
+    UrlPasswordSalt: string;
+    SharePasswordSalt: string;
+    SRPVerifier: string;
+    SRPModulusID: string;
+    SharePassphraseKeyPacket: string;
+    Password: string;
+    Permissions: number; // Only read (4) in first iteration
+    Flags: number; // Unused in first iteration
+}
+
+export interface UpdateSharedURL {
+    ExpirationTime: number;
+    MaxAccesses: number;
+    UrlPasswordSalt: string;
+    SharePasswordSalt: string;
+    SRPVerifier: string;
+    SRPModulusID: string;
+    SharePassphraseKeyPacket: string;
+    Password: string;
+    Permissions: number; // Only read (4) in first iteration
+    Flags: number; // Unused in first iteration
+}
+
 export interface ShareURL {
     CreatorEmail: string;
     ExpirationTime: number;
@@ -65,4 +92,9 @@ export interface SharedLinkPayload {
     SharePassphrase: string;
     SharePasswordSalt: string;
     Blocks: string[];
+}
+
+export interface SharedURLSessionKeyPayload {
+    sharePasswordSalt: string;
+    shareSessionKey: SessionKey;
 }
