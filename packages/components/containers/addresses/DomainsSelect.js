@@ -33,17 +33,19 @@ const DomainsSelect = ({ member, onChange, className }) => {
         const premium = member.Self && member.Subscriber && user.hasPaidMail ? premiumDomains : [];
         const available =
             member.Self && member.Subscriber ? await api(queryAvailableDomains()).then(({ Domains }) => Domains) : [];
-        const domainNames = [].concat(premium, available, formatDomains(domains));
+        const domainNames = [].concat(available, formatDomains(domains), premium);
 
-        setOptions(domainNames.map((text) => ({ text, value: text })));
+        setOptions(domainNames.map((text) => ({ text: `@${text}`, value: text })));
         setDomain(domainNames[0]);
 
         onChange(fakeEvent(domainNames[0]));
     };
 
     useEffect(() => {
-        withLoading(queryDomains());
-    }, [domains]);
+        if (!loadingDomains && !loadingPremiumDomains) {
+            withLoading(queryDomains());
+        }
+    }, [domains, premiumDomains]);
 
     return (
         <Select
