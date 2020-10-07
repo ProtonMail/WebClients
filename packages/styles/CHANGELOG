@@ -4,11 +4,13 @@
 
 - added `--width-conversation-column` CSS custom property
 - added Gmail and Yahoo logos
+- added some images for Import
 
 ## Updated/fixes
 
 - fixed overflow for `select`s in Safari 🤪
 - fixed padding around `.appsDropdown-button` to make it square
+- events participants in the calendar event popover
 - fixed text cut off in navigation
 - fix for Firefox strange behaviour around `input checkboxes`
 
