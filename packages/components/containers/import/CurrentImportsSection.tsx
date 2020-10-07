@@ -109,7 +109,7 @@ const CurrentImportsSection = () => {
     }
 
     if (!importsToDisplay.length) {
-        return <Alert>{c('Info').t`No imports in progress`}</Alert>;
+        return <Alert>{c('Info').t`No imports in progress.`}</Alert>;
     }
 
     const hasStoragePausedImports = importsToDisplay.some(({ Active }) => {

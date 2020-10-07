@@ -83,7 +83,7 @@ const PastImportsSection = () => {
     }
 
     if (!imports.length) {
-        return <Alert>{c('Info').t`No previous imports`}</Alert>;
+        return <Alert>{c('Info').t`No past imports.`}</Alert>;
     }
 
     const headerCells = [

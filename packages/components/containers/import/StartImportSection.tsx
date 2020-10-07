@@ -15,7 +15,7 @@ const StartImportSection = () => {
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/">
                 {c('Info')
-                    .t`Transfer your data safely to Proton. Import assistant connects to your external email provider and lets you select the messages and folders you want to import.`}
+                    .t`Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.`}
             </Alert>
             <PrimaryButton className="mt0-5" onClick={handleClick}>{c('Action').t`Start import`}</PrimaryButton>
         </>
