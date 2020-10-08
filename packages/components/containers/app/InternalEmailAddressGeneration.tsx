@@ -13,6 +13,8 @@ import { AccountSupportDropdown } from '../heading';
 import AccountPublicLayout, { Props as AccountProps } from '../signup/AccountPublicLayout';
 import AccountGenerateInternalAddressContainer from '../login/AccountGenerateInternalAddressContainer';
 import StandardLoadError from './StandardLoadError';
+import BackButton from '../signup/BackButton';
+import { getToAppName } from '../signup/helpers/helper';
 
 interface Props {
     children: React.ReactNode;
@@ -51,8 +53,6 @@ const InternalEmailAddressGeneration = ({ children, externalEmailAddress }: Prop
         return <>{children}</>;
     }
 
-    const emailAddress = externalEmailAddress.Email || '';
-
     const handleBack = () => {
         return goToApp('/', APPS.PROTONACCOUNT);
     };
@@ -71,16 +71,22 @@ const InternalEmailAddressGeneration = ({ children, externalEmailAddress }: Prop
         return <StandardLoadError />;
     }
 
+    const externalEmailAddressValue = externalEmailAddress.Email || '';
+    const toAppName = getToAppName(APP_NAME);
+
     return (
-        <AccountGenerateInternalAddressContainer
-            Layout={AppAccountPublicLayoutWrapper}
-            externalEmailAddress={emailAddress}
-            onDone={handleDone}
-            onBack={handleBack}
-            api={silentApi}
-            toApp={APP_NAME}
-            keyPassword={authentication.getPassword()}
-        />
+        <AppAccountPublicLayoutWrapper
+            title={c('Title').t`Create a ProtonMail address`}
+            subtitle={c('Info')
+                .t`Your Proton Account is associated with ${externalEmailAddressValue}. To use ${toAppName}, please create an address.`}
+            left={<BackButton onClick={handleBack} />}
+        >
+            <AccountGenerateInternalAddressContainer
+                onDone={handleDone}
+                api={silentApi}
+                keyPassword={authentication.getPassword()}
+            />
+        </AppAccountPublicLayoutWrapper>
     );
 };
 

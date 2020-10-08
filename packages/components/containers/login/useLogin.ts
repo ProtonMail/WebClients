@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { AUTH_VERSION } from 'pm-srp';
 import { c } from 'ttag';
 import { srpVerify } from 'proton-shared/lib/srp';
@@ -8,57 +8,40 @@ import { Api, KeySalt as tsKeySalt, User as tsUser } from 'proton-shared/lib/int
 import { getUser } from 'proton-shared/lib/api/user';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
 import { HTTP_ERROR_CODES } from 'proton-shared/lib/errors';
-import { AuthResponse, AuthVersion, InfoResponse } from 'proton-shared/lib/authentication/interface';
+import { InfoResponse } from 'proton-shared/lib/authentication/interface';
 import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallback';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { persistSession, maybeResumeSessionByUser } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { maybeResumeSessionByUser, persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { MEMBER_PRIVATE, USER_ROLES } from 'proton-shared/lib/constants';
+
 import { getAuthTypes, handleUnlockKey } from './helper';
-import { OnLoginCallback } from '../app/interface';
 import handleSetupAddressKeys from './handleSetupAddressKeys';
+import { AuthCacheResult, FORM, LoginModel } from './interface';
+import { OnLoginCallback } from '../app';
+import { getLoginErrors, getLoginSetters } from './useLoginHelpers';
 
-export enum FORM {
-    LOGIN,
-    TOTP,
-    U2F,
-    UNLOCK,
-}
-
-export interface Props {
-    api: Api;
-    onLogin: OnLoginCallback;
-    ignoreUnlock?: boolean;
-    generateKeys?: boolean;
-}
-
-interface AuthCacheResult {
-    authVersion?: AuthVersion;
-    authResult?: AuthResponse;
-    userSaltResult?: [tsUser, tsKeySalt[]];
-}
-
-interface State {
-    username: string;
-    password: string;
-    totp: string;
-    isTotpRecovery: boolean;
-    keyPassword: string;
-    form: FORM;
-}
-
-const INITIAL_STATE = {
+const INITIAL_STATE: LoginModel = {
     username: '',
     password: '',
     totp: '',
     isTotpRecovery: false,
     keyPassword: '',
+    newPassword: '',
+    confirmNewPassword: '',
     form: FORM.LOGIN,
 };
 
-const useLogin = ({ api, onLogin, ignoreUnlock, generateKeys = false }: Props) => {
-    const cacheRef = useRef<AuthCacheResult>();
+export interface Props {
+    api: Api;
+    onLogin: OnLoginCallback;
+    ignoreUnlock?: boolean;
+    hasGenerateKeys?: boolean;
+}
 
-    const [state, setState] = useState<State>(INITIAL_STATE);
+const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props) => {
+    const cacheRef = useRef<AuthCacheResult>();
+    const [state, setState] = useState<LoginModel>(INITIAL_STATE);
 
     const handleCancel = () => {
         cacheRef.current = undefined;
@@ -128,6 +111,25 @@ const useLogin = ({ api, onLogin, ignoreUnlock, generateKeys = false }: Props) =
         await finalizeLogin(result.keyPassword);
     };
 
+    /**
+     * Setup keys and address for users that have not setup.
+     */
+    const handleSetupPassword = async (newPassword: string) => {
+        const cache = cacheRef.current;
+        if (!cache || cache.authResult === undefined) {
+            throw new Error('Invalid state');
+        }
+        const { authResult } = cache;
+        const { UID, AccessToken } = authResult;
+        const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
+        const keyPassword = await handleSetupAddressKeys({
+            api: authApi,
+            username: state.username,
+            password: newPassword,
+        });
+        await finalizeLogin(keyPassword);
+    };
+
     const next = async (previousForm: FORM) => {
         const cache = cacheRef.current;
         if (!cache || cache.authResult === undefined) {
@@ -138,7 +140,7 @@ const useLogin = ({ api, onLogin, ignoreUnlock, generateKeys = false }: Props) =
         const { hasTotp, hasU2F, hasUnlock } = getAuthTypes(authResult);
 
         const gotoForm = (form: FORM) => {
-            return setState((state: State) => ({ ...state, form }));
+            return setState((state: LoginModel) => ({ ...state, form }));
         };
 
         if (previousForm === FORM.LOGIN && hasTotp) {
@@ -164,14 +166,11 @@ const useLogin = ({ api, onLogin, ignoreUnlock, generateKeys = false }: Props) =
         const [User] = cache.userSaltResult;
 
         if (User.Keys.length === 0) {
-            if (generateKeys) {
-                const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
-                const keyPassword = await handleSetupAddressKeys({
-                    api: authApi,
-                    username: state.username,
-                    password: state.password,
-                });
-                return finalizeLogin(keyPassword);
+            if (hasGenerateKeys) {
+                if (User.Role === USER_ROLES.MEMBER_ROLE && User.Private === MEMBER_PRIVATE.UNREADABLE) {
+                    return gotoForm(FORM.NEW_PASSWORD);
+                }
+                return handleSetupPassword(state.password);
             }
             return finalizeLogin();
         }
@@ -228,16 +227,18 @@ const useLogin = ({ api, onLogin, ignoreUnlock, generateKeys = false }: Props) =
         await next(FORM.LOGIN);
     };
 
-    const getSetter = <T>(key: keyof State) => (value: T) => setState({ ...state, [key]: value });
+    const setters = useMemo(() => {
+        return getLoginSetters(setState);
+    }, [setState]);
 
-    const setUsername = getSetter<string>('username');
-    const setPassword = getSetter<string>('password');
-    const setTotp = getSetter<string>('totp');
-    const setKeyPassword = getSetter<string>('keyPassword');
-    const setIsTotpRecovery = getSetter<boolean>('isTotpRecovery');
+    const errors = useMemo(() => {
+        return getLoginErrors(state);
+    }, [state]);
 
     return {
         state,
+        errors,
+        setters,
         setState,
         handleLogin: () => {
             const { username, password } = state;
@@ -265,12 +266,11 @@ const useLogin = ({ api, onLogin, ignoreUnlock, generateKeys = false }: Props) =
                 throw e;
             });
         },
+        handleSetNewPassword: () => {
+            const { newPassword } = state;
+            return handleSetupPassword(newPassword);
+        },
         handleCancel,
-        setUsername,
-        setPassword,
-        setKeyPassword,
-        setTotp,
-        setIsTotpRecovery,
     };
 };
 

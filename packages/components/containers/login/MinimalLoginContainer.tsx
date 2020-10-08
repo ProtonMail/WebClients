@@ -7,11 +7,12 @@ import { useLoading, useNotifications, useModals, useApi } from '../../hooks';
 import { LinkButton, PrimaryButton, Label } from '../../components';
 
 import AbuseModal from './AbuseModal';
-import useLogin, { FORM, Props as UseLoginProps } from './useLogin';
+import useLogin, { Props as UseLoginProps } from './useLogin';
 import LoginPasswordInput from './LoginPasswordInput';
 import LoginUsernameInput from './LoginUsernameInput';
 import LoginTotpInput from './LoginTotpInput';
 import LoginUnlockInput from './LoginUnlockInput';
+import { FORM } from './interface';
 
 interface Props extends Omit<UseLoginProps, 'api'> {
     needHelp?: React.ReactNode;
@@ -24,17 +25,11 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
 
-    const {
-        state,
-        handleLogin,
-        handleTotp,
-        handleUnlock,
-        handleCancel,
-        setUsername,
-        setPassword,
-        setKeyPassword,
-        setTotp,
-    } = useLogin({ onLogin, ignoreUnlock, api: silentApi });
+    const { state, setters, handleLogin, handleTotp, handleUnlock, handleCancel } = useLogin({
+        onLogin,
+        ignoreUnlock,
+        api: silentApi,
+    });
 
     const [loading, withLoading] = useLoading();
 
@@ -63,14 +58,14 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
                         id="login"
                         title={c('Title').t`Enter your username or ProtonMail email address`}
                         username={username}
-                        setUsername={loading ? noop : setUsername}
+                        setUsername={loading ? noop : setters.username}
                     />
                 </div>
                 <Label htmlFor="password">{c('Label').t`Password`}</Label>
                 <div className="mb1">
                     <LoginPasswordInput
                         password={password}
-                        setPassword={loading ? noop : setPassword}
+                        setPassword={loading ? noop : setters.password}
                         id="password"
                         title={c('Title').t`Enter your password`}
                     />
@@ -100,7 +95,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
             <form name="totpForm" onSubmit={handleSubmit}>
                 <Label htmlFor="twoFa">{c('Label').t`Two-factor code`}</Label>
                 <div className="mb1">
-                    <LoginTotpInput totp={totp} setTotp={loading ? noop : setTotp} id="twoFa" />
+                    <LoginTotpInput totp={totp} setTotp={loading ? noop : setters.totp} id="twoFa" />
                 </div>
                 <div className="flex flex-spacebetween">
                     {cancelButton}
@@ -128,7 +123,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
                 <div className="mb1">
                     <LoginUnlockInput
                         password={keyPassword}
-                        setPassword={loading ? noop : setKeyPassword}
+                        setPassword={loading ? noop : setters.keyPassword}
                         id="password"
                     />
                 </div>
@@ -144,6 +139,10 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
 
     if (form === FORM.U2F) {
         return <>U2F not implemented</>;
+    }
+
+    if (form === FORM.NEW_PASSWORD) {
+        return <>Setting new password not implemented</>;
     }
 
     throw new Error('Unsupported form');
