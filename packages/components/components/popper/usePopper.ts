@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { getScrollParent } from 'proton-shared/lib/helpers/dom';
+
 import { adjustPosition, computedSize, ALL_PLACEMENTS, Position } from './utils';
 
 const getPosition = (
@@ -43,7 +45,6 @@ interface Props {
     availablePlacements?: string[];
     originalPosition?: Position;
     offset?: number;
-    scrollContainerClass?: string;
 }
 
 const usePopper = ({
@@ -54,7 +55,6 @@ const usePopper = ({
     availablePlacements = ALL_PLACEMENTS,
     originalPosition,
     offset = 10,
-    scrollContainerClass = '',
 }: Props) => {
     const initialPosition = { top: -1000, left: -1000 };
     const [placement, setPlacement] = useState(originalPlacement);
@@ -86,8 +86,7 @@ const usePopper = ({
 
         updatePosition();
 
-        const contentArea =
-            (scrollContainerClass && document.getElementsByClassName(scrollContainerClass)[0]) || document.body;
+        const contentArea = getScrollParent(anchorEl);
 
         contentArea.addEventListener('scroll', updatePosition);
         window.addEventListener('resize', updatePosition);

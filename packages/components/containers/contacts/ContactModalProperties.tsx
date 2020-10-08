@@ -77,10 +77,7 @@ const ContactModalProperties = forwardRef<HTMLInputElement, Props>(
                     <Icon className="mr0-5 flex-item-noshrink" name={iconName} />
                     <span className="mr0-5">{title}</span>
                     {field && !['fn', 'email'].includes(field) && (
-                        <EncryptedIcon
-                            scrollContainerClass="pm-modalContentInner"
-                            className="flex flex-item-centered-vert flex-item-noshrink"
-                        />
+                        <EncryptedIcon className="flex flex-item-centered-vert flex-item-noshrink" />
                     )}
                 </h3>
                 {onOrderChange ? (

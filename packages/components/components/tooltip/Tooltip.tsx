@@ -10,7 +10,6 @@ interface Props {
     children: React.ReactNode;
     title?: string;
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
-    scrollContainerClass?: string;
     className?: string;
     type?: TooltipType;
 }
@@ -24,14 +23,7 @@ const getTooltipTypeClass = (type: TooltipType) => {
     }
 };
 
-const Tooltip = ({
-    children,
-    title,
-    originalPlacement = 'top',
-    scrollContainerClass = 'main',
-    className,
-    type = 'info',
-}: Props) => {
+const Tooltip = ({ children, title, originalPlacement = 'top', className, type = 'info' }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
     const { isRTL } = useRightToLeft();
@@ -46,7 +38,6 @@ const Tooltip = ({
         anchorEl: anchorRef.current,
         isOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
-        scrollContainerClass,
     });
     const tooltipHandlers = useTooltipHandlers(open, close, isOpen);
 

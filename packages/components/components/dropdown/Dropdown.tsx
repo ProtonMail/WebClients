@@ -66,7 +66,6 @@ const Dropdown = ({
         availablePlacements,
         originalPosition,
         offset,
-        scrollContainerClass: 'main',
     });
 
     const handleClickContent = () => {

@@ -11,14 +11,12 @@ interface Props {
     url?: string;
     title?: string;
     buttonClass?: string;
-    scrollContainerClass?: string;
     className?: string;
 }
 const Info = ({
     url,
     title = undefined,
     originalPlacement = 'top',
-    scrollContainerClass = 'main',
     buttonClass = 'inline-flex color-currentColor',
     className = '',
     ...rest
@@ -37,7 +35,6 @@ const Info = ({
         anchorEl: anchorRef?.current,
         isOpen,
         originalPlacement: isRTL ? rtlAdjustedPlacement : originalPlacement,
-        scrollContainerClass,
     });
 
     const handleClick = (event: React.MouseEvent) => {
