@@ -48,7 +48,11 @@ function GeneratedLinkState({
         createNotification({ text: c('Success').t`Password was copied to the clipboard` });
     };
 
-    const boldNameText = <b key="name">{itemName}</b>;
+    const boldNameText = (
+        <b key="name" className="break">
+            {itemName}
+        </b>
+    );
 
     return (
         <>
@@ -66,9 +70,11 @@ function GeneratedLinkState({
                                 {includePassword && <span className="accented">#{password}</span>}
                             </div>
                         </div>
-                        <div>
-                            <PrimaryButton onClick={handleClickCopyURL} className="min-w5e ml0-5">{c('Action')
-                                .t`Copy`}</PrimaryButton>
+                        <div className="flex flex-justify-end ml0-5 onmobile-ml0">
+                            <div>
+                                <PrimaryButton onClick={handleClickCopyURL} className="min-w5e">{c('Action')
+                                    .t`Copy`}</PrimaryButton>
+                            </div>
                         </div>
                     </Row>
 
@@ -85,16 +91,18 @@ function GeneratedLinkState({
                             <div className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 pm-field--accented ellipsis">
                                 {password}
                             </div>
-                            <Checkbox checked={includePassword} onChange={onIncludePasswordToggle}>{c('Label')
-                                .t`Include password in the link`}</Checkbox>
+                            <Checkbox className="mb0-5" checked={includePassword} onChange={onIncludePasswordToggle}>{c(
+                                'Label'
+                            ).t`Include password in the link`}</Checkbox>
                         </div>
-                        <div>
-                            <Button onClick={onEditPasswordClick} className="min-w5e ml0-5">{c('Action')
-                                .t`Edit`}</Button>
-                        </div>
-                        <div>
-                            <Button onClick={handleCopyPasswordClick} className="min-w5e ml0-5">{c('Action')
-                                .t`Copy`}</Button>
+                        <div className="flex flex-justify-end ml0-5 onmobile-ml0">
+                            <div>
+                                <Button onClick={onEditPasswordClick} className="min-w5e">{c('Action').t`Edit`}</Button>
+                            </div>
+                            <div>
+                                <Button onClick={handleCopyPasswordClick} className="min-w5e ml0-5">{c('Action')
+                                    .t`Copy`}</Button>
+                            </div>
                         </div>
                     </Row>
                 </InnerModal>
