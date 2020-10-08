@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import OverlayModal from '../../components/modal/Overlay';
+import ModalErrorBoundary from '../app/ModalErrorBoundary';
 
 const ModalsContainer = ({ modals, removeModal, hideModal }) => {
     const [containerIsClosing, setContainerIsClosing] = useState(false);
@@ -36,7 +37,7 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
             hideModal(id);
         };
 
-        return React.cloneElement(content, {
+        const props = {
             onClose: handleModalClose,
             onExit: handleModalExit,
             isFirst,
@@ -44,7 +45,9 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
             isBehind,
             isClosing,
             key: id,
-        });
+        };
+
+        return <ModalErrorBoundary {...props}>{React.cloneElement(content, props)}</ModalErrorBoundary>;
     });
 
     const handleContainerAnimationEnd = () => {
