@@ -28,6 +28,7 @@ interface DriveLink {
     ParentLinkID: string;
     Type: LinkType;
     Name: string;
+    EncryptedName: string;
     Size: number;
     MIMEType: string;
     Hash: string;
@@ -43,6 +44,8 @@ interface DriveLink {
     Permissions: number;
     FileProperties: FileProperties | null;
     FolderProperties: FolderProperties | null;
+    Shared: number;
+    ShareIDs: string[];
 }
 
 export interface FileLinkMeta extends DriveLink {

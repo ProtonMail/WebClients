@@ -1,10 +1,19 @@
 import { c } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
+import {
+    OpenPGPKey,
+    VERIFICATION_STATUS,
+    decryptMessage,
+    getMessage,
+    decryptSessionKey,
+    getSignature,
+    OpenPGPMessage,
+} from 'pmcrypto';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { Address } from 'proton-shared/lib/interfaces/Address';
 import { CachedKey } from 'proton-shared/lib/interfaces';
 import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
+import { ShareMeta } from '../../interfaces/share';
 
 export interface PrimaryAddressKey {
     privateKey: OpenPGPKey;
@@ -17,35 +26,88 @@ export interface VerificationKeys {
     publicKeys: OpenPGPKey[];
 }
 
+export const getDecryptedSessionKey = async ({
+    data,
+    privateKeys,
+}: {
+    data: string | OpenPGPMessage | Uint8Array;
+    privateKeys: OpenPGPKey | OpenPGPKey[];
+}) => {
+    const message = await getMessage(data);
+    const sessionKey = await decryptSessionKey({ message, privateKeys });
+
+    if (!sessionKey) {
+        throw new Error('Could not decrypt session key');
+    }
+
+    return sessionKey;
+};
+
+export const decryptPassphrase = async ({
+    armoredPassphrase,
+    armoredSignature,
+    privateKeys,
+    publicKeys,
+}: {
+    armoredPassphrase: string;
+    armoredSignature: string;
+    privateKeys: OpenPGPKey[];
+    publicKeys: OpenPGPKey[];
+}) => {
+    const [message, sessionKey] = await Promise.all([
+        getMessage(armoredPassphrase),
+        getDecryptedSessionKey({ data: armoredPassphrase, privateKeys }),
+    ]);
+
+    const { data: decryptedPassphrase, verified } = await decryptMessage({
+        message,
+        signature: await getSignature(armoredSignature),
+        sessionKeys: sessionKey,
+        publicKeys,
+    });
+
+    if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        const error = new Error(c('Error').t`Signature verification failed`);
+        error.name = 'SignatureError';
+        throw error;
+    }
+
+    return { decryptedPassphrase: decryptedPassphrase as string, sessionKey };
+};
+
 // Special case for drive to allow users with just an external address
 export const getActiveAddresses = (addresses: Address[]): Address[] => {
     return addresses.filter(({ Status }) => Status === ADDRESS_STATUS.STATUS_ENABLED);
 };
 
-export const getPrimaryAddressKey = async (
-    getAddresses: () => Promise<Address[]>,
-    getAddressKeys: (id: string) => Promise<CachedKey[]>,
-    createNotification: any
-) => {
+export const getPrimaryAddressAsync = async (getAddresses: () => Promise<Address[]>) => {
     const addresses = await getAddresses();
     const [activeAddress] = getActiveAddresses(addresses);
 
     if (!activeAddress) {
-        createNotification({ text: c('Error').t`No valid address found`, type: 'error' });
         throw new Error('User has no active address');
     }
 
-    const { privateKey, publicKey } = getPrimaryKey(await getAddressKeys(activeAddress.ID)) || {};
+    return activeAddress;
+};
+
+export const getPrimaryAddressKeyAsync = async (
+    getPrimaryAddress: () => Promise<Address>,
+    getAddressKeys: (id: string) => Promise<CachedKey[]>
+) => {
+    const activeAddress = await getPrimaryAddress();
+    const addressKeys = await getAddressKeys(activeAddress.ID);
+    const { privateKey, publicKey } = getPrimaryKey(addressKeys) || {};
 
     if (!privateKey || !privateKey.isDecrypted()) {
         // Should never happen
         throw new Error('Primary private key is not decrypted');
     }
 
-    return { privateKey, publicKey, address: activeAddress };
+    return { privateKey, publicKey: publicKey || privateKey.toPublic(), address: activeAddress };
 };
 
-export const getVerificationKeys = async (
+export const getVerificationKeysAsync = async (
     getAddresses: () => Promise<Address[]>,
     getAddressKeys: (id: string) => Promise<CachedKey[]>,
     email: string
@@ -57,4 +119,17 @@ export const getVerificationKeys = async (
         throw new Error('Adress was not found.');
     }
     return splitKeys(await getAddressKeys(ownAddress.ID));
+};
+
+export const decryptSharePassphraseAsync = async (
+    meta: ShareMeta,
+    getVerificationKeys: (email: string) => Promise<VerificationKeys>
+) => {
+    const { privateKeys, publicKeys } = await getVerificationKeys(meta.Creator);
+    return decryptPassphrase({
+        armoredPassphrase: meta.Passphrase,
+        armoredSignature: meta.PassphraseSignature,
+        privateKeys,
+        publicKeys,
+    });
 };

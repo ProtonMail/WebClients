@@ -34,10 +34,12 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
         openRename,
         preview,
         restoreFromTrash,
+        openLinkSharing,
     } = useToolbarActions();
 
     const isMultiSelect = selectedItems.length > 1;
     const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
+    const hasSharedLink = selectedItems[0]?.SharedURLShareID;
     const isPreviewHidden = isMultiSelect || hasFoldersSelected || !item.MIMEType || !isPreviewAvailable(item.MIMEType);
 
     useEffect(() => {
@@ -81,6 +83,13 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
             icon: 'arrow-cross',
             testId: 'context-menu-move',
             action: () => openMoveToFolder(selectedItems),
+        },
+        {
+            hidden: isMultiSelect || hasFoldersSelected,
+            name: hasSharedLink ? c('Action').t`Manage secure link` : c('Action').t`Get secure link`,
+            icon: 'link',
+            testId: 'context-menu-share',
+            action: () => openLinkSharing(shareId, item),
         },
         {
             hidden: false,

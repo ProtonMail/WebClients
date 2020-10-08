@@ -35,7 +35,7 @@ interface Props {
 const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Props) => {
     const { createModal } = useModals();
     const cache = useDriveCache();
-    const { getShareMeta, getLinkMeta, getFoldersOnlyMetas, moveLinks } = useDrive();
+    const { getShareMetaShort, getLinkMeta, getFoldersOnlyMetas, moveLinks } = useDrive();
     const { createMoveLinksNotifications } = useListNotifications();
     const [loading, withLoading] = useLoading();
     const [initializing, withInitialize] = useLoading(true);
@@ -78,7 +78,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
 
     useEffect(() => {
         const initializeData = async () => {
-            const { LinkID } = await getShareMeta(shareId);
+            const { LinkID } = await getShareMetaShort(shareId);
             const meta = await getLinkMeta(shareId, LinkID);
             const children = await fetchChildrenData(LinkID);
             const rootFolder = { linkId: meta.LinkID, name: 'My Files', children };

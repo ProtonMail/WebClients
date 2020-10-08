@@ -2,18 +2,20 @@ import React, { createContext, useContext, useRef, useState } from 'react';
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta, SortKeys } from '../../interfaces/link';
-import { ShareMeta } from '../../interfaces/share';
+import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta, SortKeys, LinkType } from '../../interfaces/link';
+import { ShareFlags, ShareMeta, ShareMetaShort } from '../../interfaces/share';
 import { DEFAULT_SORT_PARAMS } from '../../constants';
 
 interface FileLinkKeys {
     privateKey: OpenPGPKey;
     sessionKeys?: SessionKey;
+    passphraseSessionKey: SessionKey;
 }
 
 interface FolderLinkKeys {
     privateKey: OpenPGPKey;
     hashKey: string;
+    passphraseSessionKey: SessionKey;
 }
 
 export type LinkKeys = FileLinkKeys | FolderLinkKeys;
@@ -61,9 +63,9 @@ const isCachedFolderLink = (link: CachedFileLink | CachedFolderLink): link is Ca
 
 interface DriveCacheState {
     [shareId: string]: {
-        meta?: ShareMeta;
+        meta?: ShareMeta | ShareMetaShort;
         keys?: ShareKeys;
-        trash: {
+        trash?: {
             list: string[];
             unlisted: string[];
             complete: boolean;
@@ -77,6 +79,7 @@ interface DriveCacheState {
 
 const useDriveCacheState = () => {
     const cacheRef = useRef<DriveCacheState>({});
+    const [defaultShare, setDefaultShare] = useState<string>();
     const [, setRerender] = useState(0);
 
     const setLinkMeta = (
@@ -139,6 +142,9 @@ const useDriveCacheState = () => {
 
     const getTrashLinks = (shareId: string) => {
         const { trash } = cacheRef.current[shareId];
+        if (!trash) {
+            throw new Error('Trying to use trash on a file share');
+        }
         return [...trash.list, ...trash.unlisted];
     };
 
@@ -153,7 +159,11 @@ const useDriveCacheState = () => {
     };
 
     const getTrashChildLinks = (shareId: string) => {
-        return cacheRef.current[shareId].trash.list;
+        const { trash } = cacheRef.current[shareId];
+        if (!trash) {
+            throw new Error('Trying to use trash on a file share');
+        }
+        return trash.list;
     };
 
     const getFoldersOnlyLinks = (shareId: string, linkId: string) => {
@@ -176,7 +186,13 @@ const useDriveCacheState = () => {
         return undefined;
     };
 
-    const isTrashLocked = (shareId: string) => cacheRef.current[shareId].trash.locked;
+    const isTrashLocked = (shareId: string) => {
+        const { trash } = cacheRef.current[shareId];
+        if (!trash) {
+            throw new Error('Trying to use trash on a file share');
+        }
+        return trash.locked;
+    };
 
     const setLinksLocked = (locked: boolean, shareId: string, linkIds: string[]) => {
         const { links } = cacheRef.current[shareId];
@@ -201,12 +217,22 @@ const useDriveCacheState = () => {
     };
 
     const setAllTrashedLocked = (locked: boolean, shareId: string) => {
-        const { list, unlisted } = cacheRef.current[shareId].trash;
-        cacheRef.current[shareId].trash.locked = true;
+        const { trash } = cacheRef.current[shareId];
+
+        if (!trash) {
+            throw new Error('Trying to use trash on a file share');
+        }
+
+        const { list, unlisted } = trash;
+        trash.locked = true;
         setLinksLocked(locked, shareId, [...list, ...unlisted]);
     };
 
     const setTrashLinkMetas = (metas: LinkMeta[], shareId: string, method: 'unlisted' | 'complete' | 'incremental') => {
+        if (!metas.length) {
+            return;
+        }
+
         const { links } = cacheRef.current[shareId];
         const { trash } = cacheRef.current[shareId];
 
@@ -214,6 +240,10 @@ const useDriveCacheState = () => {
 
         const existing = getTrashLinks(shareId);
         const linkIds = metas.map(({ LinkID }) => LinkID);
+
+        if (!trash) {
+            throw new Error('Trying to use trash on a file share');
+        }
 
         if (method === 'unlisted') {
             trash.unlisted = [...trash.unlisted, ...linkIds.filter((id) => !existing.includes(id))];
@@ -290,14 +320,19 @@ const useDriveCacheState = () => {
     const getShareMeta = (shareId: string) => cacheRef.current[shareId].meta;
     const getShareKeys = (shareId: string) => cacheRef.current[shareId].keys;
     const getDefaultShareMeta = () => {
-        // Currently there is at most one share, so it's default one
-        return Object.values(cacheRef.current)[0]?.meta;
+        return defaultShare ? cacheRef.current[defaultShare].meta : undefined;
     };
     const getLinkMeta = (shareId: string, linkId: string): LinkMeta | undefined =>
         cacheRef.current[shareId].links[linkId]?.meta;
     const getLinkKeys = (shareId: string, linkId: string) => cacheRef.current[shareId].links[linkId]?.keys;
     const isLinkLocked = (shareId: string, linkId: string) => !!cacheRef.current[shareId].links[linkId]?.locked;
-    const getTrashComplete = (shareId: string) => cacheRef.current[shareId].trash.complete;
+    const getTrashComplete = (shareId: string) => {
+        const { trash } = cacheRef.current[shareId];
+        if (!trash) {
+            throw new Error('Trying to use trash on a file share');
+        }
+        return trash.complete;
+    };
     const getChildrenComplete = (shareId: string, linkId: string, { sortField, sortOrder } = DEFAULT_SORT_PARAMS) => {
         const link = cacheRef.current[shareId].links[linkId];
 
@@ -363,12 +398,24 @@ const useDriveCacheState = () => {
         setRerender((old) => ++old);
     };
 
-    const setEmptyShares = (ids: string[]) => {
-        ids.forEach((id) => {
-            cacheRef.current[id] = {
+    const setEmptyShares = (shares: ({ ShareID: string; LinkType: LinkType } | ShareMetaShort)[]) => {
+        shares.forEach((share) => {
+            cacheRef.current[share.ShareID] = {
                 links: {},
-                trash: { complete: false, locked: false, list: [], unlisted: [] },
             };
+
+            if ('VolumeID' in share) {
+                cacheRef.current[share.ShareID].meta = share;
+            }
+
+            if ('Flags' in share && share.Flags & ShareFlags.PrimaryShare) {
+                cacheRef.current[share.ShareID].trash = {
+                    complete: false,
+                    locked: false,
+                    list: [],
+                    unlisted: [],
+                };
+            }
         });
         setRerender((old) => ++old);
     };
@@ -493,8 +540,10 @@ const useDriveCacheState = () => {
                     parent.foldersOnly.unlisted = parent.foldersOnly.unlisted.filter((id) => meta.LinkID !== id);
                 }
 
-                trash.list = trash.list.filter((id) => meta.LinkID !== id);
-                trash.unlisted = trash.unlisted.filter((id) => meta.LinkID !== id);
+                if (trash) {
+                    trash.list = trash.list.filter((id) => meta.LinkID !== id);
+                    trash.unlisted = trash.unlisted.filter((id) => meta.LinkID !== id);
+                }
 
                 if (!softDelete) {
                     const { links } = cacheRef.current[shareId];
@@ -550,6 +599,8 @@ const useDriveCacheState = () => {
         delete: {
             links: deleteLinks,
         },
+        setDefaultShare,
+        defaultShare,
     };
 };
 

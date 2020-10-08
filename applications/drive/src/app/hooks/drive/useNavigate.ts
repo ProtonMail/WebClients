@@ -10,8 +10,13 @@ function useNavigate() {
         history.push(`/${shareId}/${toLinkURLType(type)}/${linkId}`);
     };
 
+    const navigateToRoot = () => {
+        history.push(`/`);
+    };
+
     return {
         navigateToLink,
+        navigateToRoot,
     };
 }
 

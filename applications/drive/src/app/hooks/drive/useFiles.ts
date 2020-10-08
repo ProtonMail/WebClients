@@ -40,20 +40,21 @@ import useQueuedFunction from '../util/useQueuedFunction';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { isFile } from '../../utils/file';
 import { getMetaForTransfer } from '../../utils/transfer';
-import useTrash from './useTrash';
+import useEvents from './useEvents';
 
 const HASH_CHECK_AMOUNT = 10;
 
 function useFiles() {
     const api = useApi();
-    const { deleteLinks } = useTrash();
+    const { deleteChildrenLinks } = useDrive();
     const getUser = useGetUser();
     const cache = useDriveCache();
     const debouncedRequest = useDebouncedRequest();
     const queuedFunction = useQueuedFunction();
     const { createNotification } = useNotifications();
     const { getPrimaryAddressKey, sign } = useDriveCrypto();
-    const { getLinkMeta, getLinkKeys, events, fetchAllFolderPages, createNewFolder } = useDrive();
+    const { getLinkMeta, getLinkKeys, fetchAllFolderPages, createNewFolder } = useDrive();
+    const events = useEvents();
     const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
     const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses } = useUploadProvider();
     const { preventLeave } = usePreventLeave();
@@ -329,8 +330,8 @@ function useFiles() {
                     5
                 ),
                 onError: async () => {
-                    const { File } = await setupPromise;
-                    await deleteLinks(shareId, [File.ID]);
+                    const { File, ParentLinkID } = await setupPromise;
+                    await deleteChildrenLinks(shareId, ParentLinkID, [File.ID]);
                 },
             }
         );

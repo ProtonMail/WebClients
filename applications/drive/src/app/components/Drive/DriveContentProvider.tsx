@@ -40,8 +40,6 @@ const DriveContentProviderInner = ({
     );
     const contents = mapLinksToChildren(sortedList, (linkId) => cache.get.isLinkLocked(shareId, linkId));
     const complete = cache.get.childrenComplete(shareId, linkId, sortParams);
-    const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
-    const hasChildren = !!cache.get.listedChildLinks(shareId, linkId)?.length;
 
     const selectionControls = useSelection(
         contents.map((data) => ({
@@ -93,9 +91,12 @@ const DriveContentProviderInner = ({
                 setLoading(false);
             }
         }
-    }, [shareId, linkId, sortParams]);
+    }, [shareId, linkId, sortParams, sortParams]);
 
     useEffect(() => {
+        const isInitialized = cache.get.childrenInitialized(shareId, linkId, sortParams);
+        const hasChildren = !!cache.get.listedChildLinks(shareId, linkId)?.length;
+
         const abortController = new AbortController();
 
         abortSignal.current = abortController.signal;
@@ -107,13 +108,12 @@ const DriveContentProviderInner = ({
 
         if (!isInitialized || !hasChildren) {
             loadNextPage().catch(console.error);
+            return () => {
+                contentLoading.current = false;
+                abortController.abort();
+            };
         }
-
-        return () => {
-            contentLoading.current = false;
-            abortController.abort();
-        };
-    }, [hasChildren, isInitialized, loadNextPage]);
+    }, [loadNextPage, shareId, linkId, sortParams]);
 
     return (
         <DriveContentContext.Provider

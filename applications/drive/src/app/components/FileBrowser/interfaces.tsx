@@ -22,6 +22,7 @@ export interface FileBrowserItem {
     ParentLinkID: string;
     Location?: string;
     Disabled?: boolean;
+    SharedURLShareID?: string;
 }
 
 export interface ItemProps {
