@@ -1,9 +1,21 @@
 import React, { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
-import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
+import { APPS, ALL_MEMBERS_ID, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { c } from 'ttag';
 import { UserModel, Address, Organization, Member } from 'proton-shared/lib/interfaces';
-import { Alert, Loader, Table, TableHeader, TableBody, TableRow, Block, Select, PrimaryButton } from '../../components';
+import {
+    Alert,
+    Loader,
+    Table,
+    TableHeader,
+    TableBody,
+    TableRow,
+    Block,
+    Select,
+    PrimaryButton,
+    AppLink,
+} from '../../components';
 import { useMembers, useMemberAddresses, useModals, useOrganizationKey, useNotifications } from '../../hooks';
 
 import AddressModal from './AddressModal';
@@ -12,13 +24,24 @@ import { getStatus } from './helper';
 import AddressActions from './AddressActions';
 import AddressesWithUser from './AddressesWithUser';
 
+const getMemberIndex = (members: Member[] = [], memberID?: string, isOnlySelf?: boolean) => {
+    const newMemberIndex =
+        memberID && !isOnlySelf
+            ? members.findIndex(({ ID }) => ID === memberID)
+            : members.findIndex(({ Self }) => Self);
+    if (newMemberIndex === -1 && members.length) {
+        return 0;
+    }
+    return newMemberIndex;
+};
+
 interface Props {
     user: UserModel;
     organization: Organization;
     isOnlySelf?: boolean;
 }
 const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
-    const match = useRouteMatch<{ memberID: string }>();
+    const match = useRouteMatch<{ memberID?: string }>();
     const { createModal } = useModals();
     const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
@@ -28,13 +51,15 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
 
     useEffect(() => {
         if (memberIndex === -1 && Array.isArray(members)) {
-            if (match.params.memberID && !isOnlySelf) {
-                setMemberIndex(members.findIndex(({ ID }) => ID === match.params.memberID));
-            } else {
-                setMemberIndex(members.findIndex(({ Self }) => Self));
-            }
+            setMemberIndex(getMemberIndex(members, match.params.memberID, isOnlySelf));
         }
     }, [members]);
+
+    useEffect(() => {
+        if (memberIndex !== -1 && Array.isArray(members)) {
+            setMemberIndex(getMemberIndex(members, match.params.memberID, isOnlySelf));
+        }
+    }, [match.params.memberID]);
 
     const selectedMembers = useMemo(() => {
         if (memberIndex === ALL_MEMBERS_ID) {
@@ -45,6 +70,14 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
         }
         return [];
     }, [members, memberIndex]);
+
+    const hasUsernameDisplay = memberIndex === ALL_MEMBERS_ID;
+    const isSelfSelected = useMemo(() => {
+        if (!members) {
+            return false;
+        }
+        return memberIndex === members.findIndex(({ Self }) => Self);
+    }, [memberIndex, members]);
 
     if (loadingMembers || memberIndex === -1 || (loadingMemberAddresses && !memberAddressesMap)) {
         return <Loader />;
@@ -58,19 +91,26 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
         createModal(<AddressModal member={member} organizationKey={organizationKey} />);
     };
 
-    const showUsername = memberIndex === ALL_MEMBERS_ID;
-    const selectedSelf = memberIndex === members.findIndex(({ Self }) => Self);
-
     const memberOptions = [
         {
             text: c('Option').t`All users`,
             value: ALL_MEMBERS_ID,
         },
-        ...members.map(({ Name }, i) => ({
+        ...(members || []).map(({ Name }, i) => ({
             text: Name,
             value: i,
         })),
     ];
+
+    const currentMember = Array.isArray(members) && memberIndex !== -1 ? members[memberIndex] : undefined;
+
+    const mustActivateOrganizationKey =
+        currentMember?.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey;
+
+    const activateLink = (
+        <AppLink to="/organization#password" toApp={APPS.PROTONACCOUNT} target="_self">{c('Action')
+            .t`activate`}</AppLink>
+    );
 
     return (
         <>
@@ -86,27 +126,34 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
                     />
                 </Block>
             ) : null}
-            {memberIndex === ALL_MEMBERS_ID ? null : (
+            {!currentMember || memberIndex === ALL_MEMBERS_ID ? null : (
                 <Block>
-                    <PrimaryButton onClick={() => handleAddAddress(members[memberIndex])}>
-                        {c('Action').t`Add address`}
-                    </PrimaryButton>
+                    {mustActivateOrganizationKey ? (
+                        <Alert type="warning">
+                            {c('Warning')
+                                .jt`You must ${activateLink} organization keys before adding an email address to a non-private member.`}
+                        </Alert>
+                    ) : (
+                        <PrimaryButton onClick={() => handleAddAddress(currentMember)}>
+                            {c('Action').t`Add address`}
+                        </PrimaryButton>
+                    )}
                 </Block>
             )}
-            {selectedSelf ? (
+            {isSelfSelected ? (
                 <AddressesWithUser user={user} />
             ) : (
                 <Table className="pm-simple-table--has-actions">
                     <TableHeader
                         cells={[
                             c('Header for addresses table').t`Address`,
-                            showUsername ? c('Header for addresses table').t`Username` : null,
+                            hasUsernameDisplay ? c('Header for addresses table').t`Username` : null,
                             c('Header for addresses table').t`Status`,
                             c('Header for addresses table').t`Actions`,
                         ].filter(Boolean)}
                     />
                     <TableBody
-                        colSpan={showUsername ? 4 : 3}
+                        colSpan={hasUsernameDisplay ? 4 : 3}
                         loading={selectedMembers.some(({ ID }) => !Array.isArray(memberAddressesMap?.[ID]))}
                     >
                         {selectedMembers.flatMap((member) =>
@@ -117,7 +164,7 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
                                         <div className="ellipsis" title={address.Email}>
                                             {address.Email}
                                         </div>,
-                                        showUsername && member.Name,
+                                        hasUsernameDisplay && member.Name,
                                         <AddressStatus key={1} {...getStatus(address, i)} />,
                                         <AddressActions
                                             key={2}
@@ -126,7 +173,7 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
                                             user={user}
                                             organizationKey={loadingOrganizationKey ? undefined : organizationKey}
                                         />,
-                                    ].filter(Boolean)}
+                                    ].filter(isTruthy)}
                                 />
                             ))
                         )}

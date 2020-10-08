@@ -27,8 +27,8 @@ const MemberAddresses = ({ member, addresses }) => {
                 <div className="dropDown-item pt0-5 pb0-5 pl1 pr1 flex">
                     <AppLink
                         className="pm-button w100 aligncenter"
-                        to={`/addresses/${member.ID}`}
-                        toApp={APPS.PROTONMAIL_SETTINGS}
+                        to={`/organization/${member.ID}#addresses`}
+                        toApp={APPS.PROTONACCOUNT}
                     >{c('Link').t`Manage`}</AppLink>
                 </div>
                 <DropdownMenu>{list}</DropdownMenu>
