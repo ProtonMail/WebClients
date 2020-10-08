@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { APP_NAMES, isSSOMode, isStandaloneMode } from 'proton-shared/lib/constants';
+import { APPS, APP_NAMES, isSSOMode, isStandaloneMode } from 'proton-shared/lib/constants';
 import { getAppHref, getAppHrefBundle } from 'proton-shared/lib/apps/helper';
 import { LoginTypes } from 'proton-shared/lib/authentication/LoginInterface';
 
@@ -28,10 +28,14 @@ const AppLink = ({ to, toApp, children, ...rest }: Props) => {
                       target: '_self',
                   }
                 : {};
+            const isSameApp =
+                (APP_NAME === APPS.PROTONMAIL && toApp === APPS.PROTONMAIL_SETTINGS) ||
+                (APP_NAME === APPS.PROTONMAIL_SETTINGS && toApp === APPS.PROTONMAIL);
+            const target = isSameApp ? '_self' : '_blank';
             return (
                 // internal link, trusted
                 // eslint-disable-next-line react/jsx-no-target-blank
-                <a target="_blank" {...rest} {...overrides} href={href}>
+                <a target={target} {...rest} {...overrides} href={href}>
                     {children}
                 </a>
             );
