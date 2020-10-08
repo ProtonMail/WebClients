@@ -84,7 +84,7 @@ const MainContainer = () => {
                     )}
                 />
                 <Route
-                    path="/organization"
+                    path="/organization/:memberID?"
                     render={({ location }) => (
                         <OrganizationContainer location={location} setActiveSection={setActiveSection} />
                     )}
