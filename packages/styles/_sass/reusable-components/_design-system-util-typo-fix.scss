@@ -213,6 +213,10 @@ b, strong, .strong, .bold {
   outline: 0;
 }
 
+.strike {
+	text-decoration: line-through;
+}
+
 .pre-wrap {
 	white-space: pre-wrap;
 }
