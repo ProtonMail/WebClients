@@ -27,7 +27,9 @@ const OrganizationNameModal = ({ onClose, organizationName, ...rest }: Props) =>
             label={c('Label').t`Organization name`}
             placeholder={c('Placeholder').t`Choose a name`}
             onSubmit={(name: string) => withLoading(handleSubmit(name))}
+            submit={c('Action').t`Save`}
             onClose={onClose}
+            small={false}
             {...rest}
         />
     );

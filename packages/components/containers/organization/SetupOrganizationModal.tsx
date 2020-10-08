@@ -65,12 +65,12 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
     const { title, onSubmit, section } = (() => {
         if (step === STEPS.NAME) {
             return {
-                title: c('Title').t`Name your organization`,
+                title: c('Title').t`Set organization name`,
                 section: (
                     <Row>
                         <Label>{c('Label').t`Organization name`}</Label>
                         <Input
-                            placeholder={c('Placeholder').t`Pick a name`}
+                            placeholder={c('Placeholder').t`Choose a name`}
                             value={model.name}
                             onChange={handleChange('name')}
                             required
