@@ -4,51 +4,91 @@ import { unlockPasswordChanges } from 'proton-shared/lib/api/user';
 import { updatePassword } from 'proton-shared/lib/api/settings';
 import { updatePrivateKeyRoute } from 'proton-shared/lib/api/keys';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { CachedKey, Api } from 'proton-shared/lib/interfaces';
+import { CachedKey, Api, Address } from 'proton-shared/lib/interfaces';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { reformatAddressKey } from 'proton-shared/lib/keys/keys';
 
-/**
- * Encrypt a private key with a new password if it's decrypted.
- */
-const getEncryptedArmoredKey = ({ Key: { ID }, privateKey }: CachedKey, newKeyPassword: string) => {
+const getEncryptedArmoredUserKey = async ({ Key: { ID }, privateKey }: CachedKey, newKeyPassword: string) => {
     if (!privateKey || !privateKey.isDecrypted()) {
         return;
     }
-    return encryptPrivateKey(privateKey, newKeyPassword)
-        .then((armoredPrivateKey) => {
-            return { ID, PrivateKey: armoredPrivateKey };
-        })
-        .catch(noop);
+    const privateKeyArmored = await encryptPrivateKey(privateKey, newKeyPassword);
+    return {
+        ID,
+        PrivateKey: privateKeyArmored,
+    };
+};
+
+const getEncryptedArmoredAddressKey = async (
+    { Key: { ID }, privateKey }: CachedKey,
+    email: string,
+    newKeyPassword: string
+) => {
+    if (!privateKey || !privateKey.isDecrypted()) {
+        return;
+    }
+
+    const userIds = privateKey.users;
+    const primaryUserId = userIds?.[0]?.userId?.userid;
+
+    if (userIds?.length !== 1 || !`${primaryUserId}`.endsWith(`<${email}>`)) {
+        const { privateKeyArmored } = await reformatAddressKey({ email, passphrase: newKeyPassword, privateKey });
+        return {
+            ID,
+            PrivateKey: privateKeyArmored,
+        };
+    }
+
+    const privateKeyArmored = await encryptPrivateKey(privateKey, newKeyPassword);
+    return {
+        ID,
+        PrivateKey: privateKeyArmored,
+    };
 };
 
 /**
  * Encrypt the organization key with a new password if it exists.
  */
-const getEncryptedArmoredOrganizationKey = (organizationKey: OpenPGPKey | undefined, newKeyPassword: string) => {
+const getEncryptedArmoredOrganizationKey = async (organizationKey: OpenPGPKey | undefined, newKeyPassword: string) => {
     if (!organizationKey || !organizationKey.isDecrypted()) {
         return;
     }
-    return encryptPrivateKey(organizationKey, newKeyPassword).catch(noop);
+    return encryptPrivateKey(organizationKey, newKeyPassword);
 };
 
 /**
  * Get all private keys encrypted with a new password.
  */
 interface GetArmoredPrivateKeysArguments {
+    addresses: Address[];
     userKeysList: CachedKey[];
     addressesKeysMap: { [key: string]: CachedKey[] };
     organizationKey?: OpenPGPKey;
     keyPassword: string;
 }
+
 export const getArmoredPrivateKeys = async ({
+    addresses,
     userKeysList,
     addressesKeysMap,
     organizationKey,
     keyPassword,
 }: GetArmoredPrivateKeysArguments) => {
-    const userKeysPromises = userKeysList.map((key) => getEncryptedArmoredKey(key, keyPassword));
-    const userKeysAndAddressesKeysPromises = Object.keys(addressesKeysMap).reduce((acc, addressKey) => {
-        return acc.concat(addressesKeysMap[addressKey].map((key) => getEncryptedArmoredKey(key, keyPassword)));
+    const userKeysPromises = userKeysList.map((key) => {
+        return getEncryptedArmoredUserKey(key, keyPassword).catch(noop);
+    });
+
+    const userKeysAndAddressesKeysPromises = Object.keys(addressesKeysMap).reduce((acc, addressID) => {
+        return acc.concat(
+            addressesKeysMap[addressID].map((key) => {
+                const address = addresses.find(({ ID }) => addressID === ID);
+                // Should never happen
+                if (!address) {
+                    throw new Error('Address not found');
+                }
+                return getEncryptedArmoredAddressKey(key, address.Email, keyPassword).catch(noop);
+            })
+        );
     }, userKeysPromises);
 
     const armoredKeys = (await Promise.all(userKeysAndAddressesKeysPromises)).filter(isTruthy);
@@ -60,9 +100,11 @@ export const getArmoredPrivateKeys = async ({
         throw decryptedError;
     }
 
+    const armoredOrganizationKey = await getEncryptedArmoredOrganizationKey(organizationKey, keyPassword).catch(noop);
+
     return {
         armoredKeys,
-        armoredOrganizationKey: await getEncryptedArmoredOrganizationKey(organizationKey, keyPassword),
+        armoredOrganizationKey,
     };
 };
 
@@ -72,6 +114,7 @@ interface ChangeMailboxPasswordArguments {
     keySalt: string;
     armoredOrganizationKey?: string;
 }
+
 export const handleChangeMailboxPassword = ({
     api,
     armoredKeys,
@@ -91,6 +134,7 @@ interface ChangeOnePasswordArguments extends ChangeMailboxPasswordArguments {
     newPassword: string;
     totp?: string;
 }
+
 export const handleChangeOnePassword = ({
     api,
     armoredKeys,

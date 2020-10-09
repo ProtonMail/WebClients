@@ -29,6 +29,7 @@ import {
     useGetAddressesKeys,
     useGetOrganizationKeyRaw,
     useBeforeUnload,
+    useGetAddresses,
 } from '../../hooks';
 
 export enum MODES {
@@ -71,6 +72,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const getOrganizationKey = useGetOrganizationKeyRaw();
     const getUserKeys = useGetUserKeys();
     const getAddressesKeys = useGetAddressesKeys();
+    const getAddresses = useGetAddresses();
 
     const [User] = useUser();
     const [{ '2FA': userAuth2FA }, loadingUserSettings] = useUserSettings();
@@ -248,7 +250,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         // Stop the event manager to prevent race conditions
                         stop();
 
-                        const [userKeysList, addressesKeysMap, organizationKey] = await Promise.all([
+                        const [addresses, userKeysList, addressesKeysMap, organizationKey] = await Promise.all([
+                            getAddresses(),
                             getUserKeys(),
                             getAddressesKeys(),
                             isAdmin ? getOrganizationKey() : undefined,
@@ -263,6 +266,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         );
                         const { armoredOrganizationKey, armoredKeys } = await getArmoredPrivateKeys({
                             userKeysList,
+                            addresses,
                             addressesKeysMap,
                             organizationKey: organizationKey?.privateKey,
                             keyPassword,
@@ -288,7 +292,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
             try {
                 stop();
 
-                const [userKeysList, addressesKeysMap, organizationKey] = await Promise.all([
+                const [addresses, userKeysList, addressesKeysMap, organizationKey] = await Promise.all([
+                    getAddresses(),
                     getUserKeys(),
                     getAddressesKeys(),
                     isAdmin ? getOrganizationKey() : undefined,
@@ -314,6 +319,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 );
                 const { armoredOrganizationKey, armoredKeys } = await getArmoredPrivateKeys({
                     userKeysList,
+                    addresses,
                     addressesKeysMap,
                     organizationKey: organizationKey?.privateKey,
                     keyPassword,
