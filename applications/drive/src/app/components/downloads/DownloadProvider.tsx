@@ -110,7 +110,9 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
     const getDownloadsProgresses = () => ({ ...progresses.current });
 
     const clearDownloads = () => {
-        // TODO: cancel pending downloads when implementing reject
+        downloads.forEach(({ id }) => {
+            controls.current[id].cancel();
+        });
         setDownloads([]);
     };
 

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, Tooltip, classnames } from 'react-components';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { Transfer, Download, Upload } from '../../interfaces/transfer';
 import {
     isTransferActive,
@@ -159,6 +160,9 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
     const minMaxTitle = minimized ? c('Action').t`Maximize transfers` : c('Action').t`Minimize transfers`;
     const closeTitle = c('Action').t`Close transfers`;
 
+    const includeLatestFeatures = FEATURE_FLAGS.includes('transfers-bulk-cancel');
+    const closeDisabled = !includeLatestFeatures && !allTransfersFinished;
+
     return (
         <div className="pd-transfers-heading flex flex-items-center flex-nowrap pl0-5 pr0-5 color-global-light">
             <div
@@ -189,12 +193,12 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
                 title={closeTitle}
                 className={classnames([
                     'pd-transfers-headingTooltip flex-item-noshrink flex',
-                    !allTransfersFinished && 'pd-transfers-headingTooltip--isDisabled',
+                    closeDisabled && 'pd-transfers-headingTooltip--isDisabled',
                 ])}
             >
                 <button
                     type="button"
-                    disabled={!allTransfersFinished}
+                    disabled={closeDisabled}
                     className="pd-transfers-headingButton flex p0-5"
                     onClick={onClose}
                 >
