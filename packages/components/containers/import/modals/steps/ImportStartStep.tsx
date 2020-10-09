@@ -81,28 +81,18 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                 }
 
                 if (isIMAPError) {
-                    message = (
-                        <>
-                            <div className="mb1">
-                                {c('Import error')
-                                    .t`Proton can't connect to your Gmail account. Please make sure that:`}
-                            </div>
-                            <ul className="m0 pb1">
-                                <li>{c('Import error').t`IMAP access is enabled in Gmail`}</li>
-                                <li>{c('Import error').t`the mail server address and port number are correct`}</li>
-                            </ul>
-                        </>
-                    );
+                    message = c('Import error')
+                        .t`Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.`;
                 }
 
                 if (isAuthError) {
                     message = (
                         <>
                             <div className="mb1">{c('Import error')
-                                .t`Proton can't connect to your Gmail account.`}</div>
+                                .t`Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.`}</div>
                             <div className="mb1">
                                 {c('Import error')
-                                    .jt`If ${bold2StepsDisabled} in Gmail (default settings), please make sure that:`}
+                                    .jt`If ${bold2StepsDisabled} (default Gmail settings), please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`your email address and password are correct`}</li>
@@ -111,7 +101,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                             </ul>
                             <div className="mb1">
                                 {c('Import error')
-                                    .jt`If ${bold2StepsEnabled} in Gmail, please make sure that your email address and app password are correct. Do ${boldNot} use your regular password.`}
+                                    .jt`If ${bold2StepsEnabled}, please make sure that your email address and app password are correct. Do ${boldNot} use your regular password.`}
                             </div>
                             <div className="mb1">
                                 {c('Import error')
@@ -141,26 +131,23 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                 }
 
                 if (isIMAPError) {
-                    message = (
-                        <>
-                            <div className="mb1">
-                                {c('Import error')
-                                    .t`Proton can't connect to your Yahoo Mail account. Please make sure that:`}
-                            </div>
-                            <ul className="m0 pb1">
-                                <li>{c('Import error').t`IMAP access is enabled in Yahoo Mail`}</li>
-                                <li>{c('Import error').t`the mail server address and port number are correct`}</li>
-                            </ul>
-                        </>
-                    );
+                    message = c('Import error')
+                        .t`Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.`;
                 }
 
                 if (isAuthError) {
                     message = (
-                        <div className="mb1">
-                            {c('Import error')
-                                .jt`Proton can't connect to your Yahoo Mail account. Please make sure that your email address and app password are correct. Do ${boldNot} use your regular password.`}
-                        </div>
+                        <>
+                            <div className="mb1">
+                                {c('Import error')
+                                    .t`Proton can't connect to your external account. Please make sure that:`}
+                            </div>
+                            <ul className="m0 pb1">
+                                <li>{c('Import error')
+                                    .jt`your email address and app password are correct. Do ${boldNot} use your regular password.`}</li>
+                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account`}</li>
+                            </ul>
+                        </>
                     );
                 }
 
@@ -186,6 +173,11 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                 }
 
                 if (isIMAPError) {
+                    message = c('Import error')
+                        .t`Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.`;
+                }
+
+                if (isAuthError) {
                     message = (
                         <>
                             <div className="mb1">
@@ -199,31 +191,18 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                         </>
                     );
                 }
-
-                if (isAuthError) {
-                    message = (
-                        <>
-                            <div className="mb1">
-                                {c('Import error')
-                                    .t`Proton can't connect to your external account. Please make sure that your email address and password are correct.`}
-                            </div>
-                            <div className="mb1">
-                                {c('Import error').t`Use your app password instead of your regular password if:`}
-                            </div>
-                            <ul className="m0 pb1">
-                                <li>{c('Import error')
-                                    .t`2-step verification is enabled in your external email account`}</li>
-                                <li>{c('Import error')
-                                    .t`your email account requires an app password to export your data`}</li>
-                            </ul>
-                        </>
-                    );
-                }
                 break;
         }
 
         return (
-            <Alert type="error" learnMore="https://protonmail.com/support/knowledge-base/">
+            <Alert
+                type="error"
+                learnMore={
+                    isReconnect
+                        ? 'https://protonmail.com/support/knowledge-base/import-assistant/#reconnection-errors'
+                        : 'https://protonmail.com/support/knowledge-base/import-assistant/#common-questions-and-import-errors/'
+                }
+            >
                 {message}
             </Alert>
         );
@@ -237,7 +216,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                 <>
                     <Alert>{c('Info').t`Enter the credentials of the email account you want to import from.`}</Alert>
                     {showPassword && (
-                        <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/">
+                        <Alert type="warning" learnMore="https://protonmail.com/privacy-policy/">
                             {c('Warning')
                                 .t`By sharing your login credentials, you are giving Proton permission to fetch data from your external email provider. We will delete your login information once the import is complete.`}
                         </Alert>

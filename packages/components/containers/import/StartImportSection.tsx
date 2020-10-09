@@ -13,7 +13,7 @@ const StartImportSection = () => {
 
     return (
         <>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/">
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/import-assistant/">
                 {c('Info')
                     .t`Transfer your data safely to Proton. Import Assistant connects to your external email provider and imports your selected messages and folders.`}
             </Alert>

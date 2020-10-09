@@ -203,7 +203,7 @@ const CurrentImportsSection = () => {
                             }
 
                             if (State === ImportMailStatus.QUEUED) {
-                                badge = <Badge type="origin">{c('Import status').t`Queued`}</Badge>;
+                                badge = <Badge>{c('Import status').t`Started`}</Badge>;
                             }
 
                             if (State === ImportMailStatus.CANCELED) {

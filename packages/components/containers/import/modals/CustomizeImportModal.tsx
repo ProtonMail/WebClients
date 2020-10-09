@@ -174,10 +174,7 @@ const CustomizeImportModal = ({
             close={<Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>}
             onSubmit={handleSubmit}
             onClose={handleCancel}
-            style={{
-                maxWidth: '84rem',
-                width: '100%',
-            }}
+            className="customize-import-modal"
             {...rest}
         >
             <Alert>
