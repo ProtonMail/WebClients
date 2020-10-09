@@ -1,14 +1,16 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useMemo } from 'react';
 import { useToggle, classnames, useElementRect } from 'react-components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { buffer } from 'proton-shared/lib/helpers/function';
+import { c } from 'ttag';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import Header from './Header';
 import Transfer from './Transfer';
 import { TransferState, Download, Upload } from '../../interfaces/transfer';
-import { isTransferProgress } from '../../utils/transfer';
+import { isTransferFinished, isTransferProgress } from '../../utils/transfer';
 import { TransfersStats, TransferType, TransferStats } from './interfaces';
+import useConfirm from '../../hooks/util/useConfirm';
 
 interface TransferListEntry<T extends TransferType> {
     transfer: T extends TransferType.Download ? Download : Upload;
@@ -69,6 +71,7 @@ function TransferManager() {
     const { downloads, getDownloadsProgresses, clearDownloads } = useDownloadProvider();
     const { uploads, getUploadsProgresses, clearUploads } = useUploadProvider();
     const [statsHistory, setStatsHistory] = React.useState<TransfersStats[]>([]);
+    const { openConfirmModal } = useConfirm();
 
     const getTransfer = useCallback(
         (id: string) => downloads.find((download) => download.id === id) || uploads.find((upload) => upload.id === id),
@@ -119,13 +122,52 @@ function TransferManager() {
 
     const latestStats = statsHistory[0];
 
+    const getListEntry = <T extends TransferType>(type: T) => (
+        transfer: T extends TransferType.Download ? Download : Upload
+    ): TransferListEntry<T> => ({
+        transfer,
+        type,
+    });
+
+    const getDownloadListEntry = getListEntry(TransferType.Download);
+    const getUploadListEntry = getListEntry(TransferType.Upload);
+
+    const downloadEntries = useMemo(() => downloads.map(getDownloadListEntry), [downloads]);
+    const uploadEntries = useMemo(() => uploads.map(getUploadListEntry), [uploads]);
+
+    const sortedEntries = useMemo(
+        () =>
+            [...downloadEntries, ...uploadEntries].sort(
+                (a, b) =>
+                    STATE_TO_GROUP_MAP[a.transfer.state] - STATE_TO_GROUP_MAP[b.transfer.state] ||
+                    b.transfer.startDate.getTime() - a.transfer.startDate.getTime()
+            ),
+        [downloadEntries, uploadEntries]
+    );
+
+    const transfers = useMemo(() => [...downloads, ...uploads], [downloads, uploads]);
+    const allTransfersFinished = useMemo(() => transfers.every(isTransferFinished), [transfers]);
+
     if (!latestStats || downloads.length + uploads.length === 0) {
         return null;
     }
 
-    const handleCloseClick = () => {
+    const clearAllTransfers = () => {
         clearDownloads();
         clearUploads();
+    };
+
+    const handleCloseClick = () => {
+        if (allTransfersFinished) {
+            clearAllTransfers();
+        } else {
+            openConfirmModal(
+                c('Title').t`Cancel all active transfers`,
+                c('Action').t`Confirm`,
+                c('Info').t`Closing transfer manager will cancel all active transfers, are you sure?`,
+                clearAllTransfers
+            );
+        }
     };
 
     const calculateAverageSpeed = (id: string) => {
@@ -142,25 +184,6 @@ function TransferManager() {
 
         return sum / statsHistory.length;
     };
-
-    const getListEntry = <T extends TransferType>(type: T) => (
-        transfer: T extends TransferType.Download ? Download : Upload
-    ): TransferListEntry<T> => ({
-        transfer,
-        type,
-    });
-
-    const getDownloadListEntry = getListEntry(TransferType.Download);
-    const getUploadListEntry = getListEntry(TransferType.Upload);
-
-    const downloadEntries = downloads.map(getDownloadListEntry);
-    const uploadEntries = uploads.map(getUploadListEntry);
-
-    const sortedEntries = [...downloadEntries, ...uploadEntries].sort(
-        (a, b) =>
-            STATE_TO_GROUP_MAP[a.transfer.state] - STATE_TO_GROUP_MAP[b.transfer.state] ||
-            b.transfer.startDate.getTime() - a.transfer.startDate.getTime()
-    );
 
     return (
         <div className={classnames(['pd-transfers', minimized && 'pd-transfers--minimized'])}>
