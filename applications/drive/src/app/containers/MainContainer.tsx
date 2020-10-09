@@ -29,7 +29,7 @@ const InitContainer = () => {
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
 
     useEffect(() => {
-        const initPromise = initDrive().catch((error) => {
+        withLoading(initDrive()).catch((error) => {
             if (
                 error?.data?.Code === InitStatusCodes.NoAccess ||
                 error?.data?.Details?.MissingScopes?.includes('drive')
@@ -40,8 +40,6 @@ const InitContainer = () => {
                 throw error;
             });
         });
-
-        withLoading(initPromise);
     }, []);
 
     if (loading) {

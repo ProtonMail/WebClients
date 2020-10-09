@@ -54,3 +54,8 @@ export const queryLatestEvents = (shareID: string) => ({
     url: `drive/shares/${shareID}/events/latest`,
     method: 'get',
 });
+
+export const queryDeleteShare = (shareID: string) => ({
+    url: `drive/shares/${shareID}`,
+    method: 'delete',
+});

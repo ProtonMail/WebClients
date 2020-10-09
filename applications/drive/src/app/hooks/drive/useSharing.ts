@@ -6,7 +6,12 @@ import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-share
 import { getUnixTime } from 'date-fns';
 import { useApi } from 'react-components';
 import { decryptUnsigned, encryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
-import { queryCreateSharedLink, querySharedURLs, queryUpdateSharedLink } from '../../api/sharing';
+import {
+    queryCreateSharedLink,
+    querySharedLinks,
+    queryUpdateSharedLink,
+    queryDeleteSharedLink,
+} from '../../api/sharing';
 import useDrive from './useDrive';
 import useDriveCrypto from './useDriveCrypto';
 import { DEFAULT_SHARE_EXPIRATION_DAYS, DEFAULT_SHARE_MAX_ACCESSES } from '../../constants';
@@ -163,7 +168,7 @@ function useSharing() {
     };
 
     const getSharedURLs = async (sharedURLShareId: string) => {
-        const { ShareURLs } = await debouncedRequest<{ ShareURLs: ShareURL[] }>(querySharedURLs(sharedURLShareId));
+        const { ShareURLs } = await debouncedRequest<{ ShareURLs: ShareURL[] }>(querySharedLinks(sharedURLShareId));
         return ShareURLs;
     };
 
@@ -171,7 +176,7 @@ function useSharing() {
         return decryptSessionKey({ message: await getMessage(keyPacket), passwords: [password] });
     };
 
-    const decryptSharedURL = async ({ Password, SharePassphraseKeyPacket, SharePasswordSalt, ...rest }: ShareURL) => {
+    const decryptSharedLink = async ({ Password, SharePassphraseKeyPacket, SharePasswordSalt, ...rest }: ShareURL) => {
         const { privateKey } = await getPrimaryAddressKey();
         const decryptedPassword = await decryptUnsigned({
             armoredMessage: Password,
@@ -202,11 +207,16 @@ function useSharing() {
         };
     };
 
+    const deleteSharedLink = (sharedURLShareId: string, token: string) => {
+        return api(queryDeleteSharedLink(sharedURLShareId, token));
+    };
+
     return {
         updateSharedLinkPassword,
-        decryptSharedURL,
+        decryptSharedLink,
         createSharedLink,
         getSharedURLs,
+        deleteSharedLink,
     };
 }
 

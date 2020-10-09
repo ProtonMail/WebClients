@@ -28,7 +28,14 @@ import {
     SortParams,
 } from '../../interfaces/link';
 import { queryCreateDriveVolume } from '../../api/volume';
-import { queryUserShares, queryShareMeta, queryRenameLink, queryMoveLink, queryCreateShare } from '../../api/share';
+import {
+    queryUserShares,
+    queryShareMeta,
+    queryRenameLink,
+    queryMoveLink,
+    queryCreateShare,
+    queryDeleteShare,
+} from '../../api/share';
 import { queryDeleteChildrenLinks, queryGetLink } from '../../api/link';
 import { queryFolderChildren, queryCreateFolder } from '../../api/folder';
 import { LinkKeys, DriveCache, ShareKeys } from '../../components/DriveCache/DriveCacheProvider';
@@ -673,4 +680,8 @@ export const deleteChildrenLinksAsync = async (
     const deletedBatches = await preventLeave(runInQueue(deleteQueue, MAX_THREADS_PER_REQUEST));
     await eventsCall(shareId);
     return ([] as string[]).concat(...deletedBatches);
+};
+
+export const deleteShareAsync = async (api: Api, shareId: string) => {
+    return api(queryDeleteShare(shareId));
 };
