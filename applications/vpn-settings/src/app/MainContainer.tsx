@@ -6,7 +6,6 @@ import {
     useToggle,
     usePermissions,
     useUser,
-    AppVersion,
     PrivateAppContainer,
     PrivateHeader,
     useActiveBreakpoint,
@@ -24,6 +23,7 @@ import GeneralContainer from './containers/GeneralContainer';
 import AccountContainer from './containers/AccountContainer';
 import DownloadsContainer from './containers/DownloadsContainer';
 import PaymentsContainer from './containers/PaymentsContainer';
+import VpnSidebarVersion from './containers/VpnSidebarVersion';
 
 const MainContainer = () => {
     const [user] = useUser();
@@ -55,7 +55,7 @@ const MainContainer = () => {
     );
 
     const sidebar = (
-        <Sidebar logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} version={<AppVersion />}>
+        <Sidebar logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} version={<VpnSidebarVersion />}>
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
