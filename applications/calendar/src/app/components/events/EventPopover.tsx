@@ -1,14 +1,30 @@
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
+import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { wait } from 'proton-shared/lib/helpers/promise';
 import { dateLocale } from 'proton-shared/lib/i18n';
+import { Address } from 'proton-shared/lib/interfaces';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import React, { useMemo } from 'react';
-import { Alert, Badge, Button, classnames, Loader, useLoading } from 'react-components';
+import {
+    Alert,
+    Badge,
+    Button,
+    classnames,
+    Dropdown,
+    DropdownButton,
+    DropdownMenuButton,
+    Loader,
+    Tooltip,
+    useLoading,
+    usePopperAnchor,
+} from 'react-components';
+import InviteButtons from 'react-components/components/calendar/InviteButtons';
 import { c } from 'ttag';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
@@ -21,10 +37,13 @@ import PopoverFooter from './PopoverFooter';
 import PopoverHeader from './PopoverHeader';
 import useReadEvent from './useReadEvent';
 
+const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
+
 interface Props {
     formatTime: (date: Date) => string;
     onEdit: (event: CalendarEvent) => void;
-    onDelete: (event: CalendarEvent) => Promise<void>;
+    onChangePartstat: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
+    onDelete: (event: CalendarEvent, sendCancellationNotice?: boolean) => Promise<void>;
     onClose: () => void;
     style: any;
     popoverRef: any;
@@ -33,10 +52,12 @@ interface Props {
     weekStartsOn: WeekStartsOn;
     isNarrow: boolean;
     contactEmailMap: SimpleMap<ContactEmail>;
+    addresses: Address[];
 }
 const EventPopover = ({
     formatTime,
     onEdit,
+    onChangePartstat,
     onDelete,
     onClose,
     style,
@@ -47,6 +68,7 @@ const EventPopover = ({
     weekStartsOn,
     isNarrow,
     contactEmailMap,
+    addresses,
 }: Props) => {
     const [loadingAction, withLoadingAction] = useLoading();
 
@@ -61,14 +83,19 @@ const EventPopover = ({
         isEventReadLoading,
         eventTitleSafe,
         isCancelled,
-        isRecurring,
-        isSingleEdit,
-    } = getEventInformation(targetEvent, model);
-    const allowEdit = !model.isInvitation || !(isRecurring || isSingleEdit);
+        userPartstat,
+        isAddressDisabled,
+    } = getEventInformation(targetEvent, model, addresses);
 
     const handleDelete = () => {
         if (eventData && getIsCalendarEvent(eventData)) {
-            withLoadingAction(onDelete(eventData)).catch(noop);
+            const sendCancellationNotice =
+                !eventReadError &&
+                !isAddressDisabled &&
+                !isCalendarDisabled &&
+                !isCancelled &&
+                [ACCEPTED, TENTATIVE].includes(userPartstat);
+            withLoadingAction(onDelete(eventData, sendCancellationNotice)).catch(noop);
         }
     };
 
@@ -113,6 +140,16 @@ const EventPopover = ({
         );
     }, [start, end, isAllDay]);
 
+    const editButton = (
+        <Button
+            data-test-id="event-popover:edit"
+            onClick={handleEdit}
+            disabled={loadingAction || isCalendarDisabled}
+            className="mr1"
+        >
+            {c('Action').t`Edit`}
+        </Button>
+    );
     const deleteButton = (
         <Button
             data-test-id="event-popover:delete"
@@ -123,11 +160,59 @@ const EventPopover = ({
             {c('Action').t`Delete`}
         </Button>
     );
-    const editButton = (
-        <Button data-test-id="event-popover:edit" onClick={handleEdit} disabled={loadingAction || isCalendarDisabled}>
-            {c('Action').t`Edit`}
-        </Button>
+
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const emptyContent = '';
+    const moreOptions = (
+        <div>
+            <Tooltip title={c('Title').t`More options`} className="flex flex-item-noshrink">
+                <DropdownButton
+                    title={c('Title').t`More options`}
+                    buttonRef={anchorRef}
+                    isOpen={isOpen}
+                    onClick={toggle}
+                    hasCaret
+                    caretClassName=""
+                    className="flex-item-noshrink toolbar-button toolbar-button--dropdown"
+                >
+                    {emptyContent}
+                </DropdownButton>
+            </Tooltip>
+            <Dropdown
+                id="popover-more-options"
+                originalPlacement="bottom"
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+                className="toolbar-dropdown"
+            >
+                <DropdownMenuButton
+                    data-test-id="event-popover:edit"
+                    className="alignleft"
+                    onClick={handleEdit}
+                    disabled={loadingAction || isCalendarDisabled}
+                >
+                    {c('Action').t`Edit`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                    data-test-id="event-popover:delete"
+                    className="alignleft"
+                    onClick={loadingAction ? noop : handleDelete}
+                    loading={loadingAction}
+                >
+                    {c('Action').t`Delete`}
+                </DropdownMenuButton>
+            </Dropdown>
+        </div>
     );
+
+    const actions = {
+        accept: () => onChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
+        acceptTentatively: () => onChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
+        decline: () => onChangePartstat(ICAL_ATTENDEE_STATUS.DECLINED),
+        retryCreateEvent: () => wait(0),
+        retryUpdateEvent: () => wait(0),
+    };
 
     const mergedClassName = classnames([
         'eventpopover pt2 pl1-5 pr1-5 pb1 flex flex-column flex-nowrap',
@@ -181,8 +266,22 @@ const EventPopover = ({
                 />
             </div>
             <PopoverFooter className="flex-item-noshrink">
-                {deleteButton}
-                {allowEdit && editButton}
+                {isCancelled || !model.isInvitation ? (
+                    <>
+                        {deleteButton}
+                        {editButton}
+                    </>
+                ) : (
+                    <>
+                        <InviteButtons
+                            className="mr1"
+                            actions={actions}
+                            partstat={userPartstat}
+                            disabled={isCalendarDisabled || isAddressDisabled}
+                        />
+                        {moreOptions}
+                    </>
+                )}
             </PopoverFooter>
         </div>
     );

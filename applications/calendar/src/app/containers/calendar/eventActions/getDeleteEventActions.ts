@@ -23,6 +23,7 @@ interface Arguments {
     api: Api;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
     getEventDecrypted: GetDecryptedEventCb;
+    sendCancellationNotice: boolean;
 }
 
 const getDeleteEventActions = async ({
@@ -34,6 +35,7 @@ const getDeleteEventActions = async ({
     api,
     getEventDecrypted,
     getCalendarBootstrap,
+    sendCancellationNotice,
 }: Arguments) => {
     const calendarBootstrap = getCalendarBootstrap(oldCalendarData.ID);
     if (!calendarBootstrap) {
@@ -51,7 +53,11 @@ const getDeleteEventActions = async ({
 
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
     if (!eventRecurrence && !oldEditEventData.recurrenceID) {
-        await onDeleteConfirmation({ type: DELETE_CONFIRMATION_TYPES.SINGLE });
+        await onDeleteConfirmation({
+            type: DELETE_CONFIRMATION_TYPES.SINGLE,
+            sendCancellationNotice,
+            veventComponent: oldEditEventData.veventComponent,
+        });
         const deleteOperation = getDeleteSyncOperation(oldEventData);
         const multiActions: SyncEventActionOperations[] = [
             {
@@ -61,7 +67,7 @@ const getDeleteEventActions = async ({
                 operations: [deleteOperation],
             },
         ];
-        const successText = getEventDeletedText();
+        const successText = getEventDeletedText(sendCancellationNotice);
         return {
             actions: multiActions,
             texts: {
@@ -107,7 +113,7 @@ const getDeleteEventActions = async ({
         originalEditEventData,
         oldEditEventData,
     });
-    const successText = getRecurringEventDeletedText(deleteType);
+    const successText = getRecurringEventDeletedText(deleteType, sendCancellationNotice);
     return {
         actions: [multiActions],
         texts: {

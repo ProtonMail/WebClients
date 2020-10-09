@@ -1,4 +1,5 @@
 import { Calendar, CalendarEvent, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { TYPE } from '../../components/calendar/interactions/constants';
 import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES, SAVE_CONFIRMATION_TYPES, VIEWS } from '../../constants';
 import { EventModel } from '../../interfaces/EventModel';
@@ -90,6 +91,8 @@ export type OnSaveConfirmationCb = (data: OnSaveConfirmationArgs) => Promise<REC
 export type OnDeleteConfirmationCb = (data: {
     type: DELETE_CONFIRMATION_TYPES;
     data?: RECURRING_TYPES[];
+    sendCancellationNotice?: boolean;
+    veventComponent?: VcalVeventComponent;
 }) => Promise<RECURRING_TYPES>;
 
 export interface EventTargetAction {

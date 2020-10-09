@@ -12,8 +12,8 @@ export const getEventUpdatedText = () => {
     return c('Success').t`Event updated`;
 };
 
-export const getEventDeletedText = () => {
-    return c('Success').t`Event deleted`;
+export const getEventDeletedText = (sendCancellationNotice: boolean = false) => {
+    return sendCancellationNotice ? c('Success').t`Answer sent and event deleted` : c('Success').t`Event deleted`;
 };
 
 export const getRecurringEventCreatedText = () => {
@@ -30,14 +30,18 @@ export const getRecurringEventUpdatedText = (saveType: RECURRING_TYPES) => {
     return c('Success').t`All events updated`;
 };
 
-export const getRecurringEventDeletedText = (deleteType: RECURRING_TYPES) => {
+export const getRecurringEventDeletedText = (deleteType: RECURRING_TYPES, sendCancellationNotice: boolean = false) => {
     if (deleteType === RECURRING_TYPES.SINGLE) {
-        return getEventDeletedText();
+        return getEventDeletedText(sendCancellationNotice);
     }
     if (deleteType === RECURRING_TYPES.FUTURE) {
-        return c('Success').t`Future events deleted`;
+        return sendCancellationNotice
+            ? c('Success').t`Answer sent and future events deleted`
+            : c('Success').t`Future events deleted`;
     }
-    return c('Success').t`All events deleted`;
+    return sendCancellationNotice
+        ? c('Success').t`Answer sent and all events deleted`
+        : c('Success').t`All events deleted`;
 };
 
 export const getSingleEventText = (oldEventData: EventOldData | undefined, newEventData: EventNewData) => {

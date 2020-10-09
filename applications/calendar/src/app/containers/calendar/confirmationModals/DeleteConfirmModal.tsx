@@ -1,17 +1,39 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, ConfirmModal, ErrorButton, ResetButton } from 'react-components';
+import { Alert, ErrorButton, FormModal, ResetButton, useLoading } from 'react-components';
 
-const DeleteConfirmModal = (props: any) => {
+interface Props {
+    onClose: () => void;
+    onConfirm: () => void;
+    onDecline?: () => Promise<void>;
+    decline: boolean;
+}
+const DeleteConfirmModal = ({ decline = false, onClose, onConfirm, onDecline, ...rest }: Props) => {
+    const [loading, withLoading] = useLoading();
+    const handleConfirm = async () => {
+        if (decline) {
+            await onDecline?.();
+        }
+        onConfirm();
+        onClose();
+    };
     return (
-        <ConfirmModal
-            confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+        <FormModal
             title={c('Info').t`Delete event`}
-            close={<ResetButton autoFocus>{c('Action').t`Cancel`}</ResetButton>}
-            {...props}
+            small
+            submit={<ErrorButton type="submit" loading={loading}>{c('Action').t`Delete`}</ErrorButton>}
+            close={<ResetButton autoFocus disabled={loading}>{c('Action').t`Cancel`}</ResetButton>}
+            onSubmit={() => withLoading(handleConfirm())}
+            onClose={onClose}
+            {...rest}
         >
-            <Alert type="error">{c('Info').t`Would you like to delete this event?`}</Alert>
-        </ConfirmModal>
+            <Alert type="error">
+                {decline
+                    ? c('Info')
+                          .t`The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?`
+                    : c('Info').t`Would you like to delete this event?`}
+            </Alert>
+        </FormModal>
     );
 };
 

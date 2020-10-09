@@ -1,6 +1,12 @@
+import { getAttendeeEmail } from 'proton-shared/lib/calendar/attendees';
+import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
+import { createReplyIcs, findUserAttendee } from 'proton-shared/lib/calendar/integration/invite';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { getHasAttendee } from 'proton-shared/lib/calendar/vcalHelper';
+import { getHasAttendee, getProdId } from 'proton-shared/lib/calendar/vcalHelper';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { formatSubject, RE_PREFIX } from 'proton-shared/lib/mail/messages';
+import useSendIcs from 'react-components/hooks/useSendIcs';
 import { c } from 'ttag';
 import { Prompt } from 'react-router';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -24,6 +30,7 @@ import {
     useGetCalendarEventRaw,
     useBeforeUnload,
     useContactEmails,
+    useConfig,
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
@@ -34,7 +41,7 @@ import { API_CODES } from 'proton-shared/lib/constants';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { omit } from 'proton-shared/lib/helpers/object';
+import { omit, pick } from 'proton-shared/lib/helpers/object';
 import {
     Calendar,
     CalendarBootstrap,
@@ -44,7 +51,8 @@ import {
 import { Address } from 'proton-shared/lib/interfaces';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
-import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
+import { modelToVeventComponent } from '../../components/eventModal/eventForm/modelToProperties';
 
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import { getExistingEvent, getInitialModel } from '../../components/eventModal/eventForm/state';
@@ -56,6 +64,7 @@ import Popover, { PopoverRenderData } from '../../components/calendar/Popover';
 import CreateEventPopover from '../../components/eventModal/CreateEventPopover';
 import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
+import { modifyEventModelPartstat } from '../../helpers/attendees';
 
 import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getUpdatedDateTime } from './eventHelper';
 import CalendarView from './CalendarView';
@@ -163,6 +172,9 @@ const InteractiveCalendarView = ({
     const { call } = useEventManager();
     const { createModal, getModal, hideModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
+    const sendIcs = useSendIcs();
+    const config = useConfig();
+    const prodId = useMemo(() => getProdId(config), [config]);
 
     const [eventModalID, setEventModalID] = useState();
 
@@ -298,12 +310,11 @@ const InteractiveCalendarView = ({
         return getComponentFromCalendarEvent(parentEvent);
     };
 
-    const getUpdateModel = ({
-        calendarData,
-        eventData,
-        eventReadResult,
-        eventRecurrence,
-    }: CalendarViewEventData): EventModel | undefined => {
+    const getUpdateModel = (
+        { calendarData, eventData, eventReadResult, eventRecurrence }: CalendarViewEventData,
+        partstat?: ICAL_ATTENDEE_STATUS,
+        addresses?: Address[]
+    ): EventModel | undefined => {
         if (
             !eventData ||
             !eventReadResult ||
@@ -345,6 +356,12 @@ const InteractiveCalendarView = ({
             tzid,
             author: eventData.Author,
         });
+        if (partstat && addresses) {
+            return {
+                ...createResult,
+                ...modifyEventModelPartstat(eventResult, partstat, addresses, CalendarSettings),
+            };
+        }
         return {
             ...createResult,
             ...eventResult,
@@ -582,6 +599,37 @@ const InteractiveCalendarView = ({
         });
     };
 
+    const handleSendReplyIcs = useCallback(
+        async (partstat: ICAL_ATTENDEE_STATUS, vevent?: VcalVeventComponent) => {
+            if (!vevent) {
+                throw new Error('Cannot build reply ics without the event component');
+            }
+            const { userAttendee, userAddress } = findUserAttendee(vevent.attendee, addresses);
+            const { organizer } = vevent;
+            if (!userAttendee || !userAddress || !organizer) {
+                throw new Error('Missing invitation data');
+            }
+            const organizerEmail = getAttendeeEmail(organizer);
+            const ics = createReplyIcs({
+                prodId,
+                vevent: pick(vevent, ['uid', 'dtstart', 'dtend', 'sequence', 'recurrence-id', 'organizer']),
+                emailTo: userAttendee.value,
+                partstat,
+            });
+            await sendIcs({
+                ics,
+                addressID: userAddress.ID,
+                from: {
+                    Address: userAddress.Email,
+                    Name: userAddress.DisplayName || userAddress.Email,
+                },
+                to: [{ Address: organizerEmail, Name: organizer.parameters?.cn || organizerEmail }],
+                subject: formatSubject(`Invitation: ${getDisplayTitle(vevent.summary?.value)}`, RE_PREFIX),
+            });
+        },
+        [addresses]
+    );
+
     const handleSaveConfirmation = ({ type, data }: OnSaveConfirmationArgs): Promise<RECURRING_TYPES> => {
         return new Promise((resolve, reject) => {
             if (type === SAVE_CONFIRMATION_TYPES.RECURRING && data) {
@@ -603,13 +651,24 @@ const InteractiveCalendarView = ({
     const handleDeleteConfirmation = ({
         type,
         data,
+        sendCancellationNotice = false,
+        veventComponent,
     }: {
         type: DELETE_CONFIRMATION_TYPES;
         data?: RECURRING_TYPES[];
+        sendCancellationNotice?: boolean;
+        veventComponent?: VcalVeventComponent;
     }): Promise<RECURRING_TYPES> => {
         return new Promise((resolve, reject) => {
             if (type === DELETE_CONFIRMATION_TYPES.SINGLE) {
-                return createModal(<DeleteConfirmModal onClose={reject} onConfirm={resolve} />);
+                return createModal(
+                    <DeleteConfirmModal
+                        onClose={reject}
+                        onConfirm={resolve}
+                        onDecline={() => handleSendReplyIcs(ICAL_ATTENDEE_STATUS.DECLINED, veventComponent)}
+                        decline={sendCancellationNotice}
+                    />
+                );
             }
             if (type === DELETE_CONFIRMATION_TYPES.RECURRING && data) {
                 return createModal(<DeleteRecurringConfirmModal types={data} onClose={reject} onConfirm={resolve} />);
@@ -736,7 +795,7 @@ const InteractiveCalendarView = ({
         }
     };
 
-    const handleDeleteEvent = async (targetEvent: CalendarViewEvent) => {
+    const handleDeleteEvent = async (targetEvent: CalendarViewEvent, sendCancellationNotice: boolean = false) => {
         try {
             const syncActions = await getDeleteEventActions({
                 targetEvent,
@@ -745,6 +804,7 @@ const InteractiveCalendarView = ({
                 api,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
+                sendCancellationNotice,
             });
             await handleSyncActions(syncActions);
         } catch (e) {
@@ -909,9 +969,10 @@ const InteractiveCalendarView = ({
                             weekStartsOn={weekStartsOn}
                             contactEmailMap={contactEmailMap}
                             formatTime={formatTime}
-                            onDelete={() => {
+                            addresses={addresses}
+                            onDelete={(calendarEvent, sendCancellationNotice) => {
                                 return (
-                                    handleDeleteEvent(targetEvent)
+                                    handleDeleteEvent(targetEvent, sendCancellationNotice)
                                         // Also close the more popover to avoid this event showing there
                                         .then(closeAllPopovers)
                                         .catch(noop)
@@ -931,6 +992,23 @@ const InteractiveCalendarView = ({
                                     tzid
                                 );
                                 return handleEditEvent(newTemporaryEvent);
+                            }}
+                            onChangePartstat={async (partstat: ICAL_ATTENDEE_STATUS) => {
+                                if (!targetEvent) {
+                                    return;
+                                }
+                                const newTemporaryModel = getUpdateModel(targetEvent.data, partstat, addresses);
+                                if (!newTemporaryModel) {
+                                    return;
+                                }
+                                await handleSendReplyIcs(partstat, modelToVeventComponent(newTemporaryModel));
+
+                                const newTemporaryEvent = getTemporaryEvent(
+                                    getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid),
+                                    newTemporaryModel,
+                                    tzid
+                                );
+                                return handleSaveEvent(newTemporaryEvent);
                             }}
                             onClose={handleCloseEventPopover}
                         />
