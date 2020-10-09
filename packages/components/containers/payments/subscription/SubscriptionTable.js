@@ -17,7 +17,7 @@ const SubscriptionTable = ({
 }) => {
     return (
         <div className="mt2 subscriptionTable">
-            <div className="flex-autogrid onmobile-flex-column">
+            <div className="flex-autogrid ontablet-flex-column">
                 {plans.map(({ name, title, price, imageSrc, description, features = [], canCustomize }, index) => {
                     return (
                         <div key={title} className="flex-autogrid-item flex" data-plan-name={name}>
