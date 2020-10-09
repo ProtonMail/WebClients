@@ -43,7 +43,7 @@ interface Props {
     formatTime: (date: Date) => string;
     onEdit: (event: CalendarEvent) => void;
     onChangePartstat: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
-    onDelete: (event: CalendarEvent, sendCancellationNotice?: boolean) => Promise<void>;
+    onDelete: (event: CalendarEvent, isInvitation?: boolean, sendCancellationNotice?: boolean) => Promise<void>;
     onClose: () => void;
     style: any;
     popoverRef: any;
@@ -95,7 +95,7 @@ const EventPopover = ({
                 !isCalendarDisabled &&
                 !isCancelled &&
                 [ACCEPTED, TENTATIVE].includes(userPartstat);
-            withLoadingAction(onDelete(eventData, sendCancellationNotice)).catch(noop);
+            withLoadingAction(onDelete(eventData, model.isInvitation, sendCancellationNotice)).catch(noop);
         }
     };
 

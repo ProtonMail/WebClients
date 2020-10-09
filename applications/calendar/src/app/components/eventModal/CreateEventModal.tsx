@@ -1,8 +1,11 @@
+import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { Address } from 'proton-shared/lib/interfaces';
 import React from 'react';
 import { FormModal, PrimaryButton, Button } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { findUserAttendeeModel } from '../../helpers/attendees';
 
 import validateEventModel from './eventForm/validateEventModel';
 
@@ -16,8 +19,9 @@ interface Props {
     weekStartsOn: WeekStartsOn;
     isCreateEvent: boolean;
     model: EventModel;
+    addresses: Address[];
     onSave: (value: EventModel) => Promise<void>;
-    onDelete: () => Promise<void>;
+    onDelete: (sendCancellationNotice?: boolean) => Promise<void>;
     onClose: () => void;
     setModel: (value: EventModel) => void;
     tzid: string;
@@ -28,6 +32,7 @@ const CreateEventModal = ({
     displayWeekNumbers,
     weekStartsOn,
     isCreateEvent,
+    addresses,
     model,
     setModel,
     onSave,
@@ -44,6 +49,14 @@ const CreateEventModal = ({
         onSave,
         onDelete,
     });
+    const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
+    const { userAttendee, userAddress } = findUserAttendeeModel(model.attendees, addresses);
+    const isAddressDisabled = userAddress ? userAddress.Status === 0 : true;
+    const userPartstat = userAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
+    const sendCancellationNotice =
+        !isAddressDisabled &&
+        !isCancelled &&
+        [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
 
     // Can't use default close button in FormModal because button type reset resets selects
     const closeButton = (
@@ -63,12 +76,13 @@ const CreateEventModal = ({
         </PrimaryButton>
     );
 
+    const handleDeleteWithNotice = () => handleDelete(sendCancellationNotice);
     const submit = isCreateEvent ? (
         submitButton
     ) : (
         <div>
             <Button
-                onClick={loadingAction ? noop : handleDelete}
+                onClick={loadingAction ? noop : handleDeleteWithNotice}
                 loading={loadingAction && lastAction === ACTION.DELETE}
                 disabled={loadingAction}
                 className="mr1"

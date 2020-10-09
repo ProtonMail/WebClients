@@ -795,7 +795,7 @@ const InteractiveCalendarView = ({
         }
     };
 
-    const handleDeleteEvent = async (targetEvent: CalendarViewEvent, sendCancellationNotice: boolean = false) => {
+    const handleDeleteEvent = async (targetEvent: CalendarViewEvent, sendCancellationNotice = false) => {
         try {
             const syncActions = await getDeleteEventActions({
                 targetEvent,
@@ -1064,11 +1064,11 @@ const InteractiveCalendarView = ({
                             .then(() => hideModal(eventModalID))
                             .catch(noop);
                     }}
-                    onDelete={() => {
+                    onDelete={(sendCancellationNotice) => {
                         if (!temporaryEvent?.data?.eventData || !temporaryEvent.tmpOriginalTarget) {
                             return;
                         }
-                        return handleDeleteEvent(temporaryEvent.tmpOriginalTarget)
+                        return handleDeleteEvent(temporaryEvent.tmpOriginalTarget, sendCancellationNotice)
                             .then(() => hideModal(eventModalID))
                             .catch(noop);
                     }}
@@ -1083,6 +1083,7 @@ const InteractiveCalendarView = ({
                         closeAllPopovers();
                     }}
                     isCreateEvent={isCreatingEvent}
+                    addresses={addresses}
                     {...getModal(eventModalID)}
                 />
             ) : null}

@@ -12,7 +12,7 @@ export const getEventUpdatedText = () => {
     return c('Success').t`Event updated`;
 };
 
-export const getEventDeletedText = (sendCancellationNotice: boolean = false) => {
+export const getEventDeletedText = (sendCancellationNotice = false) => {
     return sendCancellationNotice ? c('Success').t`Answer sent and event deleted` : c('Success').t`Event deleted`;
 };
 
@@ -30,7 +30,7 @@ export const getRecurringEventUpdatedText = (saveType: RECURRING_TYPES) => {
     return c('Success').t`All events updated`;
 };
 
-export const getRecurringEventDeletedText = (deleteType: RECURRING_TYPES, sendCancellationNotice: boolean = false) => {
+export const getRecurringEventDeletedText = (deleteType: RECURRING_TYPES, sendCancellationNotice = false) => {
     if (deleteType === RECURRING_TYPES.SINGLE) {
         return getEventDeletedText(sendCancellationNotice);
     }

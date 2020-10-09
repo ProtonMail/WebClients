@@ -37,7 +37,7 @@ interface Arguments {
     model: EventModel;
     errors: EventModelErrors;
     onSave: (value: EventModel) => Promise<void>;
-    onDelete?: () => Promise<void>;
+    onDelete?: (sendCancellationNotice?: boolean) => Promise<void>;
 }
 
 export const useForm = ({ containerEl, model, errors, onSave, onDelete }: Arguments) => {
@@ -54,12 +54,12 @@ export const useForm = ({ containerEl, model, errors, onSave, onDelete }: Argume
         void withLoadingAction(onSave(model));
     };
 
-    const handleDelete = () => {
+    const handleDelete = (sendCancellationNotice?: boolean) => {
         setLastAction(ACTION.DELETE);
         if (!onDelete) {
             return;
         }
-        void withLoadingAction(onDelete());
+        void withLoadingAction(onDelete(sendCancellationNotice));
     };
 
     return {
