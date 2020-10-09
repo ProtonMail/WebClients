@@ -47,7 +47,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
     }, [shareId, linkId, ParentLinkID]);
 
     const renderSelectionActions = () => {
-        if (!selectedItems.length && !isNarrow) {
+        if (!selectedItems.length) {
             return (
                 <>
                     <CreateNewFolderButton />
