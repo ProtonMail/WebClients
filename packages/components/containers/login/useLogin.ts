@@ -18,7 +18,7 @@ import { MEMBER_PRIVATE, USER_ROLES } from 'proton-shared/lib/constants';
 import { getAuthTypes, handleUnlockKey } from './helper';
 import handleSetupAddressKeys from './handleSetupAddressKeys';
 import { AuthCacheResult, FORM, LoginModel } from './interface';
-import { OnLoginCallback } from '../app';
+import { OnLoginCallback } from '../app/interface';
 import { getLoginErrors, getLoginSetters } from './useLoginHelpers';
 
 const INITIAL_STATE: LoginModel = {

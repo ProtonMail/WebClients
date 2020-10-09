@@ -6,30 +6,49 @@ import { adjustPosition, computedSize, ALL_PLACEMENTS, Position } from './utils'
 const getPosition = (
     anchorEl: HTMLElement,
     popperEl: HTMLElement,
+    contentAreaEl: HTMLElement,
     originalPlacement: string,
     availablePlacements: string[],
     offset: number,
     originalPosition?: Position
 ) => {
-    const wrapperBounds = anchorEl.getBoundingClientRect();
-    const tooltipBounds = popperEl.getBoundingClientRect();
+    const anchorRect = anchorEl.getBoundingClientRect();
+    const tooltipRect = popperEl.getBoundingClientRect();
+    const contentRect = contentAreaEl.getBoundingClientRect();
 
     const wrapperStyles = window.getComputedStyle(anchorEl);
     const tooltipStyles = window.getComputedStyle(popperEl);
 
+    const normalizedAnchorRect = {
+        top: anchorRect.top,
+        left: anchorRect.left,
+        width: computedSize(wrapperStyles.width, anchorRect.width),
+        height: computedSize(wrapperStyles.height, anchorRect.height),
+    };
+
+    const normalizedTooltipRect = {
+        top: tooltipRect.top,
+        left: tooltipRect.left,
+        width: computedSize(tooltipStyles.width, tooltipRect.width),
+        height: computedSize(tooltipStyles.height, tooltipRect.height),
+    };
+
+    const isOutOfBoundsBottom = normalizedAnchorRect.top + normalizedAnchorRect.height - contentRect.top < 0;
+    const isOutOfBoundsTop = normalizedAnchorRect.top - (contentRect.top + contentRect.height) > 0;
+
+    if (isOutOfBoundsBottom || isOutOfBoundsTop) {
+        return {
+            position: {
+                top: -9999,
+                left: -9999,
+            },
+            placement: 'hidden',
+        };
+    }
+
     return adjustPosition(
-        {
-            top: wrapperBounds.top,
-            left: wrapperBounds.left,
-            width: computedSize(wrapperStyles.width, wrapperBounds.width),
-            height: computedSize(wrapperStyles.height, wrapperBounds.height),
-        },
-        {
-            top: tooltipBounds.top,
-            left: tooltipBounds.left,
-            width: computedSize(tooltipStyles.width, tooltipBounds.width),
-            height: computedSize(tooltipStyles.height, tooltipBounds.height),
-        },
+        normalizedAnchorRect,
+        normalizedTooltipRect,
         originalPlacement,
         offset,
         originalPosition,
@@ -65,11 +84,14 @@ const usePopper = ({
             return;
         }
 
+        const contentArea = getScrollParent(anchorEl);
+
         const updatePosition = () => {
             if (anchorEl && popperEl) {
                 const { placement: adjustedPlacement, position: adjustedPosition } = getPosition(
                     anchorEl,
                     popperEl,
+                    contentArea,
                     originalPlacement,
                     availablePlacements,
                     offset,
@@ -85,8 +107,6 @@ const usePopper = ({
         };
 
         updatePosition();
-
-        const contentArea = getScrollParent(anchorEl);
 
         contentArea.addEventListener('scroll', updatePosition);
         window.addEventListener('resize', updatePosition);
