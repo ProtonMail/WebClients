@@ -4,13 +4,11 @@ import { SmallButton } from 'react-components';
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { getSequence, InvitationModel } from '../../../../helpers/calendar/invite';
-import { WidgetActions } from '../../../../hooks/useWidgetButtons';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
-    actions: WidgetActions;
 }
-const ExtraEventOrganizerButtons = ({ model, actions: { onAccept } }: Props) => {
+const ExtraEventOrganizerButtons = ({ model }: Props) => {
     const {
         invitationIcs,
         invitationIcs: { method },
@@ -26,7 +24,7 @@ const ExtraEventOrganizerButtons = ({ model, actions: { onAccept } }: Props) => 
 
     if (method === ICAL_METHOD.COUNTER) {
         if (sequenceDiff === 0) {
-            return <SmallButton onClick={onAccept}>{c('Action').t`Accept`}</SmallButton>;
+            return <SmallButton>{c('Action').t`Accept`}</SmallButton>;
         }
         if (sequenceDiff < 0) {
             return <SmallButton disabled={true}>{c('Action').t`Accept`}</SmallButton>;

@@ -1,4 +1,4 @@
-import { Message } from './message';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { Conversation } from './conversation';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 

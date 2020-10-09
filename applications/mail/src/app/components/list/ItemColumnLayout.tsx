@@ -1,3 +1,4 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React from 'react';
 import { c } from 'ttag';
 import { classnames } from 'react-components';
@@ -11,7 +12,6 @@ import ItemLocation from './ItemLocation';
 import ItemDate from './ItemDate';
 import NumMessages from '../conversation/NumMessages';
 import { Element } from '../../models/element';
-import { Message } from '../../models/message';
 import ItemExpiration from './ItemExpiration';
 import ItemAction from './ItemAction';
 

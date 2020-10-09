@@ -1,5 +1,5 @@
-import { getSender, getRecipients } from './messages';
-import { Message } from '../../models/message';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { getRecipients, getSender } from 'proton-shared/lib/mail/messages';
 
 describe('message', () => {
     describe('getSender', () => {

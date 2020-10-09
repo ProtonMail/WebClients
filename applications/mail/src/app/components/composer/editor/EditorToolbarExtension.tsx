@@ -1,14 +1,14 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
+import {
+    isAttachPublicKey as testIsAttachPublicKey,
+    isRequestReadReceipt as testIsRequestReadReceipt,
+    isSign as testIsSign
+} from 'proton-shared/lib/mail/messages';
 import React, { memo } from 'react';
 import { DropdownMenuButton, Icon, classnames } from 'react-components';
 import { c } from 'ttag';
 
-import { Message } from '../../../models/message';
-import {
-    isSign as testIsSign,
-    isAttachPublicKey as testIsAttachPublicKey,
-    isRequestReadReceipt as testIsRequestReadReceipt
-} from '../../../helpers/message/messages';
-import { MESSAGE_FLAGS } from '../../../constants';
 import { MessageChangeFlag } from '../Composer';
 
 const { FLAG_SIGN, FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;

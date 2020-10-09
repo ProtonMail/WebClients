@@ -1,8 +1,8 @@
 import React from 'react';
 import { Icon, Href } from 'react-components';
 import { c } from 'ttag';
+import { isAutoReply } from 'proton-shared/lib/mail/messages';
 
-import { isAutoReply } from '../../../helpers/message/messages';
 import { MessageExtended } from '../../../models/message';
 
 interface Props {

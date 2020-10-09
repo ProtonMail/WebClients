@@ -1,11 +1,11 @@
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import React, { useState } from 'react';
 import { classnames, FileIcon } from 'react-components';
 import { c } from 'ttag';
-import { VERIFICATION_STATUS } from '../../constants';
 import { isEmbeddedLocal } from '../../helpers/embedded/embeddeds';
 import { useDownload } from '../../hooks/useDownload';
-import { Attachment } from '../../models/attachment';
 
 import { MessageExtended } from '../../models/message';
 

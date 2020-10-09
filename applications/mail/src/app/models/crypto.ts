@@ -1,23 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
-import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import { EncryptionPreferencesFailure } from 'proton-shared/lib/mail/encryptionPreferences';
-
-export interface SendPreferences {
-    encrypt: boolean;
-    sign: boolean;
-    pgpScheme: PACKAGE_TYPE;
-    mimeType: MIME_TYPES;
-    publicKeys?: OpenPGPKey[];
-    isPublicKeyPinned?: boolean;
-    hasApiKeys: boolean;
-    hasPinnedKeys: boolean;
-    warnings?: string[];
-    failure?: EncryptionPreferencesFailure;
-}
-
-export interface MapSendPreferences {
-    [email: string]: SendPreferences;
-}
+import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
 
 export enum STATUS_ICONS_FILLS {
     PLAIN = 0,

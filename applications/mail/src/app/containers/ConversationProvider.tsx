@@ -1,3 +1,4 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { useEffect, createContext, ReactNode, useContext } from 'react';
 import { useInstance, useEventManager, useApi } from 'react-components';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
@@ -12,7 +13,6 @@ import { ConversationResult } from '../hooks/useConversation';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { useExpirationCheck } from '../hooks/useExpiration';
 import { Conversation } from '../models/conversation';
-import { Message } from '../models/message';
 
 export type ConversationCache = Cache<string, ConversationResult>;
 

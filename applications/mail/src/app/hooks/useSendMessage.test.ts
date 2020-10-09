@@ -1,6 +1,7 @@
 import { DecryptResultPmcrypto } from 'pmcrypto';
 import { MIME_TYPES, PGP_SIGN } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 
 import { useSendVerifications, useSendMessage } from './useSendMessage';
 import {
@@ -22,7 +23,7 @@ import {
     createDocument,
     attachmentsCache
 } from '../helpers/test/helper';
-import { MessageExtendedWithData, Message, PartialMessageExtended } from '../models/message';
+import { MessageExtendedWithData, PartialMessageExtended } from '../models/message';
 import { mergeMessages } from '../helpers/message/messages';
 import { addApiContact } from '../helpers/test/contact';
 import { decryptSessionKey } from '../helpers/test/crypto';

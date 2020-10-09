@@ -1,10 +1,12 @@
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { getAttachments, isPlainText } from 'proton-shared/lib/mail/messages';
 import { useState, useMemo, useCallback } from 'react';
 import { useApi, useNotifications, useAuthentication, useHandler } from 'react-components';
 import { c } from 'ttag';
+import { removeAttachment } from 'proton-shared/lib/api/attachments';
 
 import { Upload } from '../helpers/upload';
 import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../helpers/attachment/attachmentUploader';
-import { getAttachments, isPlainText } from '../helpers/message/messages';
 import {
     readCID,
     isEmbeddable,
@@ -13,8 +15,6 @@ import {
     cloneEmbedddedMap
 } from '../helpers/embedded/embeddeds';
 import { MessageExtended, MessageExtendedWithData } from '../models/message';
-import { Attachment } from '../models/attachment';
-import { removeAttachment } from '../api/attachments';
 import { EditorActionsRef } from '../components/composer/editor/SquireEditorWrapper';
 import { MessageChange } from '../components/composer/Composer';
 import { useMessageCache } from '../containers/MessageProvider';

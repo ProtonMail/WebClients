@@ -1,3 +1,4 @@
+import { getSender, hasAttachments } from 'proton-shared/lib/mail/messages';
 import React, { useEffect } from 'react';
 import { FormModal, useContactEmails, useContactGroups } from 'react-components';
 import { c } from 'ttag';
@@ -9,7 +10,6 @@ import MessageBody from '../MessageBody';
 import HeaderRecipientsDetails from '../header/HeaderRecipientsDetails';
 import ItemDate from '../../list/ItemDate';
 import MessageFooter from '../MessageFooter';
-import { hasAttachments, getSender } from '../../../helpers/message/messages';
 import { getRecipientLabelDetailed } from '../../../helpers/addresses';
 import HeaderRecipientType from '../header/HeaderRecipientType';
 

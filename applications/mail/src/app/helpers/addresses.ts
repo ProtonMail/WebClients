@@ -4,11 +4,11 @@ import { addPlusAlias, removeEmailAlias } from 'proton-shared/lib/helpers/email'
 import { Address, Key } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
-import { Message } from '../models/message';
 import { getContactOfRecipient, getContactsOfGroup } from './contacts';
 import { isMessage } from './elements';
 

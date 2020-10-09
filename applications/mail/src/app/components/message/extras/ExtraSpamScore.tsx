@@ -1,10 +1,10 @@
+import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 import React from 'react';
 import { Icon, Href } from 'react-components';
 import { c } from 'ttag';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
 import { MessageExtended } from '../../../models/message';
-import { MESSAGE_FLAGS } from '../../../constants';
 
 interface Props {
     message: MessageExtended;

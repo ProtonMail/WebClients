@@ -1,3 +1,5 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { isDraft } from 'proton-shared/lib/mail/messages';
 import React, { useState, useMemo, useEffect, useCallback, memo } from 'react';
 import { PrivateMainArea, useHandler } from 'react-components';
 import { History, Location } from 'history';
@@ -26,8 +28,6 @@ import PlaceholderView from '../components/view/PlaceholderView';
 import MessageOnlyView from '../components/message/MessageOnlyView';
 import { PAGE_SIZE } from '../constants';
 import { isMessage, isSearch as testIsSearch } from '../helpers/elements';
-import { isDraft } from '../helpers/message/messages';
-import { Message } from '../models/message';
 import { Breakpoints } from '../models/utils';
 import { OnCompose } from '../hooks/useCompose';
 import { useWelcomeFlag } from '../hooks/useWelcomeFlag';

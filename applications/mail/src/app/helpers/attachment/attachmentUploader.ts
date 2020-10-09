@@ -1,16 +1,17 @@
-import { c } from 'ttag';
-import { encryptMessage, splitMessage, OpenPGPKey } from 'pmcrypto';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { OpenPGPKey } from 'pmcrypto';
+import { uploadAttachment } from 'proton-shared/lib/api/attachments';
 import { readFileAsBuffer } from 'proton-shared/lib/helpers/file';
+import { generateProtonWebUID } from 'proton-shared/lib/helpers/uid';
+import { Packets } from 'proton-shared/lib/interfaces/mail/crypto';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { getAttachments } from 'proton-shared/lib/mail/messages';
+import { encryptAttachment } from 'proton-shared/lib/mail/send/attachments';
+import { c } from 'ttag';
+import { ATTACHMENT_MAX_SIZE } from '../../constants';
 
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
-import { getAttachments } from '../message/messages';
-import { uploadAttachment } from '../../api/attachments';
-import { Attachment } from '../../models/attachment';
 import { generateCid, isEmbeddable } from '../embedded/embeddeds';
-import { generateProtonWebUID } from 'proton-shared/lib/helpers/uid';
-import { Upload, upload as uploadHelper, RequestParams } from '../upload';
-import { ATTACHMENT_MAX_SIZE } from '../../constants';
+import { RequestParams, upload as uploadHelper, Upload } from '../upload';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
 
@@ -21,51 +22,10 @@ export enum ATTACHMENT_ACTION {
     INLINE = 'inline'
 }
 
-interface Packets {
-    Filename: string;
-    MIMEType: MIME_TYPES;
-    FileSize: number;
-    Inline: boolean;
-    signature?: Uint8Array;
-    Preview: Uint8Array | string;
-    keys: Uint8Array;
-    data: Uint8Array;
-}
-
 export interface UploadResult {
     attachment: Attachment;
     packets: Packets;
 }
-
-export const encryptAttachment = async (
-    data: Uint8Array | string,
-    { name, type, size }: File = {} as File,
-    inline: boolean,
-    publicKeys: OpenPGPKey[],
-    privateKeys: OpenPGPKey[]
-): Promise<Packets> => {
-    const { message, signature } = await encryptMessage({
-        // filename: name,
-        armor: false,
-        detached: true,
-        data,
-        publicKeys,
-        privateKeys
-    });
-
-    const { asymmetric, encrypted } = await splitMessage(message);
-
-    return {
-        Filename: name,
-        MIMEType: type as MIME_TYPES,
-        FileSize: size,
-        Inline: inline,
-        signature: signature ? (signature.packets.write() as Uint8Array) : undefined,
-        Preview: data,
-        keys: asymmetric[0],
-        data: encrypted[0]
-    };
-};
 
 /**
  * Read the file locally, and encrypt it. return the encrypted file.

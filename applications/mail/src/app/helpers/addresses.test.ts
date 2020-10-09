@@ -1,10 +1,10 @@
 import { range } from 'proton-shared/lib/helpers/array';
 import { Address } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 
 import { findSender, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from './addresses';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { Message } from '../models/message';
 
 const recipient1: Recipient = { Address: 'address1' };
 const recipient2: Recipient = { Name: 'recipient2', Address: 'address2' };

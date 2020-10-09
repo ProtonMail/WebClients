@@ -1,6 +1,6 @@
 import { OpenPGPKey } from 'pmcrypto';
+import { isReceived } from 'proton-shared/lib/mail/messages';
 import React from 'react';
-import { isReceived } from '../../../helpers/message/messages';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import ExtraSpamScore from '../extras/ExtraSpamScore';

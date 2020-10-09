@@ -1,15 +1,15 @@
 import { OpenPGPKey } from 'pmcrypto';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { hasAttachments, isDraft, isSent } from 'proton-shared/lib/mail/messages';
 import React, { useEffect, useMemo, useRef, useState, memo } from 'react';
 import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
-import { hasAttachments, isDraft, isSent } from '../../helpers/message/messages';
 import { getSentStatusIconInfo, getReceivedStatusIcon, MessageViewIcons } from '../../helpers/message/icon';
 import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
 import HeaderExpanded from './header/HeaderExpanded';
 import MessageFooter from './MessageFooter';
-import { Message } from '../../models/message';
 import { Element } from '../../models/element';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';

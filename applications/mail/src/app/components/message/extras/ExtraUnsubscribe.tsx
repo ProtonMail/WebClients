@@ -1,3 +1,4 @@
+import { getListUnsubscribe, getListUnsubscribePost, getOriginalTo } from 'proton-shared/lib/mail/messages';
 import React from 'react';
 import {
     Icon,
@@ -18,7 +19,6 @@ import performRequest from 'proton-shared/lib/fetch/fetch';
 import { removeEmailAlias } from 'proton-shared/lib/helpers/email';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
 
-import { getListUnsubscribe, getListUnsubscribePost, getOriginalTo } from '../../../helpers/message/messages';
 import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from '../../../models/message';
 import { useMessage } from '../../../hooks/message/useMessage';
 import { useSendMessage, useSendVerifications } from '../../../hooks/useSendMessage';

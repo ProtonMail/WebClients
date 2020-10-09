@@ -1,5 +1,5 @@
-import { isAuto, isImported, inSigningPeriod } from '../helpers/message/messages';
-import { VERIFICATION_STATUS } from '../constants';
+import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { inSigningPeriod, isAuto, isImported } from 'proton-shared/lib/mail/messages';
 
 const { SIGNED_AND_INVALID, SIGNED_AND_VALID, NOT_SIGNED } = VERIFICATION_STATUS;
 

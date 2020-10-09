@@ -1,8 +1,8 @@
 import { DecryptResultPmcrypto, VERIFICATION_STATUS } from 'pmcrypto';
+import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { ENCRYPTED_STATUS } from '../../constants';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { Attachment, AttachmentMime } from '../../models/attachment';
-import { Message } from '../../models/message';
+import { AttachmentMime } from '../../models/attachment';
 
 // This prefix is really useful to distinguish 'real' attachments from pgp attachments.
 const ID_PREFIX = 'PGPAttachment';

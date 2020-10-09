@@ -1,7 +1,7 @@
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
-import { Address, ProtonConfig, UserSettings } from 'proton-shared/lib/interfaces';
+import { Address, UserSettings } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
@@ -60,7 +60,6 @@ interface Props {
     defaultCalendar?: Calendar;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
-    config: ProtonConfig;
     userSettings: UserSettings;
 }
 const ExtraEvent = ({
@@ -71,7 +70,6 @@ const ExtraEvent = ({
     canCreateCalendar,
     contactEmails,
     ownAddresses,
-    config,
     userSettings
 }: Props) => {
     const [model, setModel] = useState<InvitationModel>(() =>
@@ -247,9 +245,7 @@ const ExtraEvent = ({
             {!interactiveWidget && <div className="pt0-5 mt0-5 mb0-5 border-top" />}
             {interactiveWidget && <ExtraEventSummary model={model} />}
             {interactiveWidget && <ExtraEventWarning model={model} />}
-            {interactiveWidget && (
-                <ExtraEventButtons model={model} setModel={setModel} message={message} config={config} />
-            )}
+            {interactiveWidget && <ExtraEventButtons model={model} setModel={setModel} message={message} />}
             <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />
         </div>
     );

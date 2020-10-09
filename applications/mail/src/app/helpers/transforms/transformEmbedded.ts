@@ -1,9 +1,9 @@
 import { Api } from 'proton-shared/lib/interfaces';
+import { isDraft } from 'proton-shared/lib/mail/messages';
 
 import { find } from '../embedded/embeddedFinder';
 import { mutateHTMLBlob, decrypt, prepareImages } from '../embedded/embeddedParser';
 import { MESSAGE_ACTIONS } from '../../constants';
-import { isDraft } from '../message/messages';
 import { MessageExtended } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 

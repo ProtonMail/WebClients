@@ -1,4 +1,5 @@
 import { OpenPGPKey } from 'pmcrypto';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
 import {
@@ -30,7 +31,7 @@ import HeaderExtra from './HeaderExtra';
 import HeaderRecipientsSimple from './HeaderRecipientsSimple';
 import HeaderRecipientsDetails from './HeaderRecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
-import { MessageExtended, Message } from '../../../models/message';
+import { MessageExtended } from '../../../models/message';
 import HeaderDropdown from './HeaderDropdown';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderExpandedDetails from './HeaderExpandedDetails';

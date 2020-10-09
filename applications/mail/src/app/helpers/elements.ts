@@ -5,13 +5,13 @@ import { Label, LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { diff, unique } from 'proton-shared/lib/helpers/array';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { hasAttachments as messageHasAttachments } from 'proton-shared/lib/mail/messages';
 
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
 import { Sort, SearchParameters, Filter } from '../models/tools';
-import { Message } from '../models/message';
 import { isConversationMode } from './mailSettings';
-import { hasAttachments as messageHasAttachments } from './message/messages';
 import { hasAttachments as conversationHasAttachments } from './conversation';
 
 import { LabelIDsChanges } from '../models/event';

@@ -1,8 +1,8 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React from 'react';
 import { Icon, useFolders, Tooltip } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
-import { Message } from '../../models/message';
 import { getCurrentFolders } from '../../helpers/labels';
 
 interface Props {

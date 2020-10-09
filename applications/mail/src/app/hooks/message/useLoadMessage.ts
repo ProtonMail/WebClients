@@ -1,8 +1,8 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { useCallback } from 'react';
 import { useApi } from 'react-components';
 import { getMessage } from 'proton-shared/lib/api/messages';
 
-import { Message } from '../../models/message';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { useInitializeMessage } from './useInitializeMessage';
 

@@ -1,15 +1,15 @@
 import { c } from 'ttag';
 
 import {
-    isSentEncrypted,
-    isAuto,
-    isSent,
-    isDraft,
-    isInternalEncrypted,
-    isExternalEncrypted,
     inSigningPeriod,
-    isImported
-} from '../helpers/message/messages';
+    isAuto,
+    isDraft,
+    isExternalEncrypted,
+    isImported,
+    isInternalEncrypted,
+    isSent,
+    isSentEncrypted
+} from 'proton-shared/lib/mail/messages';
 
 const I18N = {
     pm: [

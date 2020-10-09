@@ -1,8 +1,8 @@
+import { isPlainText } from 'proton-shared/lib/mail/messages';
 import React, { useMemo, useState } from 'react';
 import { classnames, Button, Tooltip } from 'react-components';
 import { c } from 'ttag';
 
-import { isPlainText } from '../../helpers/message/messages';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { MessageExtended } from '../../models/message';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';

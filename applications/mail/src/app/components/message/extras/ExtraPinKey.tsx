@@ -3,6 +3,8 @@ import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
 import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { ContactEmail, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
+import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { isInternal } from 'proton-shared/lib/mail/messages';
 import React, { useMemo } from 'react';
 import {
     Button,
@@ -21,8 +23,6 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 
-import { VERIFICATION_STATUS } from '../../../constants';
-import { isInternal } from '../../../helpers/message/messages';
 import { MessageExtended } from '../../../models/message';
 
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';

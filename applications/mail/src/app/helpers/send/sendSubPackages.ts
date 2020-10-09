@@ -1,18 +1,16 @@
 import { arrayToBinaryString, encodeBase64, encryptMessage, generateSessionKey } from 'pmcrypto';
-import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
+import { AES256, MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 import { Api } from 'proton-shared/lib/interfaces';
+import { Package, Packages, SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { getAttachments, isEO } from 'proton-shared/lib/mail/messages';
 import { srpGetVerify } from 'proton-shared/lib/srp';
-import { AES256 } from '../../constants';
-import { MapSendPreferences, SendPreferences } from '../../models/crypto';
 
-import { Package, Packages } from './sendTopPackages';
-import { Message, MessageExtendedWithData } from '../../models/message';
-import { getAttachments, isEO } from '../message/messages';
+import { MessageExtendedWithData } from '../../models/message';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
-const { SEND_PM, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME, SEND_EO } = PACKAGE_TYPE;
-
-export const SEND_MIME = 32; // TODO update proton-shared constant
+const { SEND_PM, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME, SEND_EO, SEND_CLEAR_MIME } = PACKAGE_TYPE;
 
 /**
  * Package for a ProtonMail user.
@@ -64,7 +62,7 @@ const sendPGPMime = async ({ encrypt, sign, publicKeys }: Pick<SendPreferences, 
 
     // PGP/MIME signature only
     return {
-        Type: SEND_MIME,
+        Type: SEND_CLEAR_MIME,
         Signature: +sign
     };
 };
@@ -104,7 +102,7 @@ export const attachSubPackages = async (
     packages: Packages,
     message: MessageExtendedWithData,
     emails: string[],
-    mapSendPrefs: MapSendPreferences,
+    mapSendPrefs: SimpleMap<SendPreferences>,
     api: Api
 ): Promise<Packages> => {
     const bindPackageSet = async (promise: Promise<Package>, email: string, type: MIME_TYPES) => {
@@ -123,7 +121,11 @@ export const attachSubPackages = async (
     };
 
     const promises = emails.map((email: string) => {
-        const { encrypt, sign, pgpScheme, mimeType, publicKeys } = mapSendPrefs[email];
+        const sendPrefs = mapSendPrefs[email];
+        if (!sendPrefs) {
+            throw new Error('Missing send preferences');
+        }
+        const { encrypt, sign, pgpScheme, mimeType, publicKeys } = sendPrefs;
         const packageType = mimeType === 'text/html' ? DEFAULT : PLAINTEXT;
 
         switch (pgpScheme) {

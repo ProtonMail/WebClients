@@ -1,9 +1,10 @@
+import { attachmentsSize, getAttachments } from 'proton-shared/lib/mail/messages';
 import React, { useState } from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, classnames } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import { attachmentsSize, getAttachments, getNumAttachmentByType } from '../../helpers/message/messages';
+import { getNumAttachmentByType } from '../../helpers/message/messages';
 import MessageAttachment from './MessageAttachment';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useDownloadAll } from '../../hooks/useDownload';

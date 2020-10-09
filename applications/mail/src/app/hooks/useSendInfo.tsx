@@ -1,4 +1,5 @@
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { getRecipientsAddresses } from 'proton-shared/lib/mail/messages';
 import React, { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
@@ -15,9 +16,8 @@ import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { Alert, useGetEncryptionPreferences, useModals } from 'react-components';
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
-import getSendPreferences from '../helpers/message/getSendPreferences';
+import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
 import { getSendStatusIcon } from '../helpers/message/icon';
-import { getRecipientsAddresses } from '../helpers/message/messages';
 
 import { MapSendInfo } from '../models/crypto';
 import { MessageExtended } from '../models/message';

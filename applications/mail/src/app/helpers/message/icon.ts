@@ -1,9 +1,10 @@
 import { PACKAGE_TYPE } from 'proton-shared/lib/constants';
+import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
+import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { getParsedHeadersFirstValue, inSigningPeriod } from 'proton-shared/lib/mail/messages';
 import { c, msgid } from 'ttag';
-import { VERIFICATION_STATUS } from '../../constants';
-import { MapStatusIcons, SendPreferences, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
+import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
 import { MessageExtended } from '../../models/message';
-import { getParsedHeadersFirstValue, inSigningPeriod } from './messages';
 
 // The logic for determining the status icons can be found here:
 // https://confluence.protontech.ch/display/MAILFE/Encryption+status+for+outgoing+and+incoming+email

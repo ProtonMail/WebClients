@@ -1,6 +1,6 @@
 import { OpenPGPKey } from 'pmcrypto';
+import { SIGNATURE_START, VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
-import { SIGNATURE_START, VERIFICATION_STATUS } from '../../constants';
 import { STATUS_ICONS_FILLS } from '../../models/crypto';
 import { MessageExtended } from '../../models/message';
 import { getReceivedStatusIcon, getSendStatusIcon, getSentStatusIconInfo } from './icon';

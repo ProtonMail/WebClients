@@ -1,12 +1,12 @@
 import { decryptMIMEMessage, decryptMessageLegacy, OpenPGPKey, OpenPGPSignature } from 'pmcrypto';
+import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { getDate, getSender, isMIME } from 'proton-shared/lib/mail/messages';
 import { c } from 'ttag';
 
-import { Message, MessageErrors } from '../../models/message';
+import { MessageErrors } from '../../models/message';
 import { convert } from '../attachment/attachmentConverter';
-import { VERIFICATION_STATUS } from '../../constants';
-import { getDate, getSender, isMIME } from './messages';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { Attachment } from '../../models/attachment';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 
 const { NOT_VERIFIED } = VERIFICATION_STATUS;

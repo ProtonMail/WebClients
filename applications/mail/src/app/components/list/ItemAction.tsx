@@ -1,10 +1,10 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React from 'react';
 import { Icon } from 'react-components';
 import { c } from 'ttag';
 
 import { Element } from '../../models/element';
 import { isMessage } from '../../helpers/elements';
-import { Message } from '../../models/message';
 
 interface Props {
     element?: Element;

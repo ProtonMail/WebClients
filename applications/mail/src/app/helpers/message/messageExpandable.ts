@@ -1,8 +1,8 @@
-import { Message } from '../../models/message';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { isDraft, isSentAutoReply } from 'proton-shared/lib/mail/messages';
 import { isCustomLabelOrFolder } from '../labels';
 import { hasLabel } from '../elements';
-import { isDraft, isSentAutoReply } from './messages';
 import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
 
 // Reference: Angular/src/app/message/services/findExpandableMessage.js

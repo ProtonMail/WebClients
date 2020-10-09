@@ -1,3 +1,4 @@
+import { hasAttachments, isDraft } from 'proton-shared/lib/mail/messages';
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames, useContactEmails } from 'react-components';
@@ -6,7 +7,6 @@ import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
-import { isDraft, hasAttachments } from '../../../helpers/message/messages';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';

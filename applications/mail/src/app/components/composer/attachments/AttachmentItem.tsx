@@ -1,9 +1,9 @@
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { Icon, classnames } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import { Attachment } from '../../../models/attachment';
 import { PendingUpload } from '../../../hooks/useAttachments';
 
 interface Props {

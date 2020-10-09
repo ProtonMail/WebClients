@@ -1,16 +1,16 @@
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { Api } from 'proton-shared/lib/interfaces';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { isDraft } from 'proton-shared/lib/mail/messages';
 
 import { MessageExtended, EmbeddedMap } from '../../models/message';
 import { escapeSrc, unescapeSrc, wrap } from '../dom';
 import { ENCRYPTED_STATUS } from '../../constants';
 import { getAttachment, findEmbedded } from './embeddedFinder';
 import { get } from '../attachment/attachmentLoader';
-import { Attachment } from '../../models/attachment';
 import { createBlob, readCID } from './embeddeds';
 import { isInlineEmbedded, isEmbedded } from '../image';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { isDraft } from '../message/messages';
 
 const EMBEDDED_CLASSNAME = 'proton-embedded';
 

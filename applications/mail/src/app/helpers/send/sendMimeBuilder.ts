@@ -2,10 +2,10 @@ import mimemessage from 'mimemessage';
 import { arrayToBinaryString, DecryptResultPmcrypto } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { Api } from 'proton-shared/lib/interfaces';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { getAttachments } from 'proton-shared/lib/mail/messages';
 
 import { MessageExtended, EmbeddedMap } from '../../models/message';
-import { getAttachments } from '../message/messages';
-import { Attachment } from '../../models/attachment';
 import { get } from '../attachment/attachmentLoader';
 import { readCID } from '../embedded/embeddeds';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';

@@ -1,3 +1,4 @@
+import { DRAFT_ID_PREFIX } from 'proton-shared/lib/mail/messages';
 import React, { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
 import { useInstance, useEventManager } from 'react-components';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
@@ -7,7 +8,6 @@ import { Event } from '../models/event';
 import { MessageExtended, PartialMessageExtended } from '../models/message';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { mergeMessages } from '../helpers/message/messages';
-import { DRAFT_ID_PREFIX } from '../helpers/message/messageDraft';
 
 export type MessageCache = Cache<string, MessageExtended>;
 

@@ -1,8 +1,8 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { getRecipients } from 'proton-shared/lib/mail/messages';
 import React from 'react';
 import { c } from 'ttag';
 
-import { Message } from '../../../models/message';
-import { getRecipients } from '../../../helpers/message/messages';
 import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 

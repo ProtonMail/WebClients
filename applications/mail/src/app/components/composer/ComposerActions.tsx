@@ -1,3 +1,5 @@
+import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
+import { getAttachments, getRecipients, hasFlag } from 'proton-shared/lib/mail/messages';
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
@@ -17,8 +19,6 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
 import AttachmentsButton from './attachments/AttachmentsButton';
-import { hasFlag, getAttachments, getRecipients } from '../../helpers/message/messages';
-import { MESSAGE_FLAGS } from '../../constants';
 
 interface Props {
     className?: string;

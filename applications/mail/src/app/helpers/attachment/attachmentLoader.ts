@@ -4,18 +4,18 @@ import {
     decodeBase64,
     decryptMessage,
     DecryptResultPmcrypto,
-    decryptSessionKey,
     getMessage,
     getSignature,
     OpenPGPKey,
     SessionKey,
     VERIFICATION_STATUS
 } from 'pmcrypto';
+import { getAttachment } from 'proton-shared/lib/api/attachments';
 import { Api } from 'proton-shared/lib/interfaces';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
 
-import { getAttachment } from '../../api/attachments';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { Attachment } from '../../models/attachment';
 import { MessageExtended } from '../../models/message';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
@@ -52,29 +52,6 @@ export const getRequest = ({ ID = '' }: Attachment = {}, api: Api): Promise<Arra
     // }
 
     return api(getAttachment(ID));
-};
-
-export const getSessionKey = async (attachment: Attachment, privateKeys: OpenPGPKey[]): Promise<SessionKey> => {
-    // if (attachment.sessionKey) {
-    //     return attachment;
-    // }
-
-    const keyPackets = binaryStringToArray(decodeBase64(attachment.KeyPackets) || '');
-    const options = { message: await getMessage(keyPackets), privateKeys };
-
-    // if (isOutside()) {
-    //     options.passwords = [eoStore.getPassword()];
-    // } else {
-    //     options.privateKeys = keysModel.getPrivateKeys(message.AddressID);
-    // }
-
-    const sessionKey = await decryptSessionKey(options);
-
-    if (sessionKey === undefined) {
-        throw new Error('Error while decrypting session keys');
-    }
-
-    return sessionKey;
 };
 
 export const getDecryptedAttachment = async (

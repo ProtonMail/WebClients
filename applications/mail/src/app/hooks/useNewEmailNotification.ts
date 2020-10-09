@@ -1,3 +1,4 @@
+import { isImported } from 'proton-shared/lib/mail/messages';
 import { useEffect } from 'react';
 import { History } from 'history';
 import { useFolders, useMailSettings, useSubscribeEventManager } from 'react-components';
@@ -6,7 +7,6 @@ import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNot
 import { c } from 'ttag';
 
 import { Event } from '../models/event';
-import { isImported } from '../helpers/message/messages';
 import { isConversationMode } from '../helpers/mailSettings';
 import { setPathInUrl } from '../helpers/mailboxUrl';
 import notificationIcon from '../assets/notification.gif';

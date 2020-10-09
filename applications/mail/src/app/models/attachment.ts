@@ -1,16 +1,3 @@
-export interface Attachment {
-    ID?: string;
-    Name?: string;
-    Size?: number;
-    Preview?: any;
-    KeyPackets?: any;
-    MIMEType?: string;
-    data?: any;
-    Headers?: { [key: string]: string };
-    Encrypted?: number;
-    Signature?: string;
-}
-
 export interface AttachmentMime {
     checksum?: string;
     content: Uint8Array;

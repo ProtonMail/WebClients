@@ -1,3 +1,7 @@
+import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { getRecipientsAddresses, isAttachPublicKey } from 'proton-shared/lib/mail/messages';
 import React, { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 import { unique } from 'proton-shared/lib/helpers/array';
@@ -14,20 +18,17 @@ import {
     useNotifications
 } from 'react-components';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
+import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
 
 import SendWithErrorsModal from '../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../helpers/message/cleanMessage';
-import { MapSendPreferences } from '../models/crypto';
 import { MessageExtendedWithData } from '../models/message';
-import { getRecipientsAddresses, isAttachPublicKey } from '../helpers/message/messages';
-import getSendPreferences from '../helpers/message/getSendPreferences';
 import { generateTopPackages } from '../helpers/send/sendTopPackages';
 import { attachSubPackages } from '../helpers/send/sendSubPackages';
 import { encryptPackages } from '../helpers/send/sendEncrypt';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../containers/MessageProvider';
 import { attachPublicKey } from '../helpers/message/messageAttachPublicKey';
-import { Attachment } from '../models/attachment';
 import SendWithWarningsModal from '../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
 import { useSaveDraft } from './message/useSaveDraft';
@@ -39,7 +40,7 @@ export const useSendVerifications = () => {
 
     return useCallback(async (message: MessageExtendedWithData): Promise<{
         cleanMessage: MessageExtendedWithData;
-        mapSendPrefs: MapSendPreferences;
+        mapSendPrefs: SimpleMap<SendPreferences>;
         hasChanged: boolean;
     }> => {
         // Empty subject
@@ -81,7 +82,7 @@ export const useSendVerifications = () => {
         }
 
         const emailWarnings: { [email: string]: string[] } = {};
-        const mapSendPrefs: MapSendPreferences = {};
+        const mapSendPrefs: SimpleMap<SendPreferences> = {};
         const sendErrors: { [email: string]: Error } = {};
         const expiresNotEncrypted: string[] = [];
 
@@ -169,7 +170,11 @@ export const useSendMessage = () => {
     const saveDraft = useSaveDraft();
 
     return useCallback(
-        async (inputMessage: MessageExtendedWithData, mapSendPrefs: MapSendPreferences, alreadySaved = false) => {
+        async (
+            inputMessage: MessageExtendedWithData,
+            mapSendPrefs: SimpleMap<SendPreferences>,
+            alreadySaved = false
+        ) => {
             const localID = inputMessage.localID;
 
             if (!alreadySaved) {

@@ -1,3 +1,5 @@
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { attachmentsSize, getAttachments } from 'proton-shared/lib/mail/messages';
 import React, { useEffect } from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, useToggle } from 'react-components';
@@ -5,8 +7,6 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { diff } from 'proton-shared/lib/helpers/array';
 
 import { MessageExtended } from '../../../models/message';
-import { attachmentsSize, getAttachments } from '../../../helpers/message/messages';
-import { Attachment } from '../../../models/attachment';
 import { PendingUpload } from '../../../hooks/useAttachments';
 import { AttachmentItemNormal, AttachmentItemPending } from './AttachmentItem';
 

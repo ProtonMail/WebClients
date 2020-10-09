@@ -11,19 +11,17 @@ import {
 import { enums } from 'openpgp';
 
 import { identity } from 'proton-shared/lib/helpers/function';
+import { Package, Packages } from 'proton-shared/lib/interfaces/mail/crypto';
+import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { CachedKey } from 'proton-shared/lib/interfaces';
+import { getAttachments } from 'proton-shared/lib/mail/messages';
+import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
 
-import { MessageExtended, Message } from '../../models/message';
-import { Packages, Package } from './sendTopPackages';
-import { getAttachments } from '../message/messages';
-import { getSessionKey } from '../attachment/attachmentLoader';
+import { MessageExtended } from '../../models/message';
 import { arrayToBase64 } from '../base64';
-import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import { AES256 } from '../../constants';
-import { SEND_MIME } from './sendSubPackages';
-import { Attachment } from '../../models/attachment';
+import { AES256, MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 
 // Reference: Angular/src/app/composer/services/encryptPackages.js
 
@@ -32,7 +30,7 @@ interface AttachmentKeys {
     SessionKey: SessionKey;
 }
 
-const { SEND_CLEAR, SEND_EO } = PACKAGE_TYPE;
+const { SEND_CLEAR, SEND_EO, SEND_CLEAR_MIME } = PACKAGE_TYPE;
 
 const packToBase64 = ({ data, algorithm: Algorithm = AES256 }: SessionKey) => {
     return { Key: arrayToBase64(data), Algorithm };
@@ -209,7 +207,7 @@ const encryptBody = async (pack: Package, ownKeys: CachedKey[], message: Message
         })
     );
 
-    if ((pack.Type || 0) & (SEND_CLEAR | SEND_MIME)) {
+    if ((pack.Type || 0) & (SEND_CLEAR | SEND_CLEAR_MIME)) {
         // eslint-disable-next-line require-atomic-updates
         pack.BodyKey = packToBase64(sessionKey);
     }

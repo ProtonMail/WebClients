@@ -1,10 +1,11 @@
 import createCache from 'proton-shared/lib/helpers/cache';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 
-import { MessageExtended, Message } from '../../models/message';
+import { MessageExtended } from '../../models/message';
 import { transformEmbedded } from './transformEmbedded';
 import { prepareImages } from '../embedded/embeddedParser';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { MESSAGE_FLAGS } from '../../constants';
 import { api } from '../test/helper';
 
 const prepareImagesMock = prepareImages as jest.Mock;

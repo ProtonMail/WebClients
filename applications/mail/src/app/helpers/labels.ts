@@ -1,3 +1,4 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
@@ -7,7 +8,6 @@ import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { LABEL_IDS_TO_HUMAN, LABEL_IDS_TO_I18N } from '../constants';
-import { Message } from '../models/message';
 import { getLabelIDs } from './elements';
 import { ConversationLabel, Conversation } from '../models/conversation';
 

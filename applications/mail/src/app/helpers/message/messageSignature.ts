@@ -1,5 +1,6 @@
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { PM_SIGNATURE } from 'proton-shared/lib/constants';
+import { isPlainText } from 'proton-shared/lib/mail/messages';
 import { message } from 'proton-shared/lib/sanitize';
 
 import { MESSAGE_ACTIONS } from '../../constants';
@@ -7,7 +8,6 @@ import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';
 import { parseInDiv, isHTMLEmpty } from '../dom';
 import { MessageExtended } from '../../models/message';
-import { isPlainText } from './messages';
 import { getPlainTextContent, exportPlainText } from './messageContent';
 import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
 

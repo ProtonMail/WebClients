@@ -1,8 +1,8 @@
 import mimemessage from 'mimemessage';
 import { getEmailParts } from 'proton-shared/lib/helpers/email';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 
 import { ucFirst, toUnsignedString } from '../string';
-import { Attachment } from '../../models/attachment';
 import { transformEscape } from '../transforms/transformEscape';
 import { hash } from '../string';
 import { EmbeddedInfo, EmbeddedMap } from '../../models/message';

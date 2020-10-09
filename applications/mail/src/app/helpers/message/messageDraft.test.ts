@@ -1,7 +1,9 @@
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
-import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
+import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
+import { formatSubject, FW_PREFIX, RE_PREFIX } from 'proton-shared/lib/mail/messages';
+import { MESSAGE_ACTIONS } from '../../constants';
 
-import { formatSubject, handleActions, RE_PREFIX, FW_PREFIX, createNewDraft } from './messageDraft';
+import { handleActions, createNewDraft } from './messageDraft';
 import { MessageExtendedWithData } from '../../models/message';
 
 const ID = 'ID';

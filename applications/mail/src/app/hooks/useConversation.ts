@@ -1,9 +1,9 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { useEffect, useState } from 'react';
 import { getConversation } from 'proton-shared/lib/api/conversations';
 import { useApi, useLoading } from 'react-components';
 
 import { Conversation } from '../models/conversation';
-import { Message } from '../models/message';
 import { useConversationCache } from '../containers/ConversationProvider';
 import { useGetElementsFromIDs } from './useElementsCache';
 

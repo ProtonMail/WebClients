@@ -2,19 +2,19 @@ import { encryptSessionKey, encryptMessage, OpenPGPKey, encodeBase64, arrayToBin
 import { enums } from 'openpgp';
 import { createDraft, updateDraft } from 'proton-shared/lib/api/messages';
 import { Api } from 'proton-shared/lib/interfaces';
+import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { getAttachments, isPlainText } from 'proton-shared/lib/mail/messages';
+import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageExtended, Message } from '../../models/message';
+import { MessageExtended } from '../../models/message';
 import { mutateHTMLCid } from '../embedded/embeddedParser';
 import { find } from '../embedded/embeddedFinder';
-import { isPlainText, getAttachments } from './messages';
 import { getDocumentContent, getPlainTextContent } from './messageContent';
-import { getSessionKey } from '../attachment/attachmentLoader';
 import { constructMime } from '../send/sendMimeBuilder';
 import { splitMail, combineHeaders } from '../mail';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { parseInDiv } from '../../helpers/dom';
-import { Attachment } from '../../models/attachment';
 
 export const prepareExport = (message: MessageExtended) => {
     if (!message.document) {

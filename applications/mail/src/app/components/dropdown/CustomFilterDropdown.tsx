@@ -1,3 +1,4 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { useState } from 'react';
 import {
     AddFilterModal,
@@ -17,8 +18,6 @@ import { identity } from 'proton-shared/lib/helpers/function';
 import { isPaid } from 'proton-shared/lib/user/helpers';
 import { Filter } from 'proton-shared/lib/filters/interfaces';
 import { FILTER_STATUS } from 'proton-shared/lib/constants';
-
-import { Message } from '../../models/message';
 
 enum AVAILABLE_FILTERS {
     SUBJECT = 'subject',

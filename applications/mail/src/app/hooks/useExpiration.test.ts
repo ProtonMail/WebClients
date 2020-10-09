@@ -1,6 +1,6 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { renderHook, clearAll } from '../helpers/test/helper';
 import { useExpiration } from './useExpiration';
-import { Message } from '../models/message';
 
 describe('useExpiration', () => {
     const seconds = 50;

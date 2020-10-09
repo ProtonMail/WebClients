@@ -1,8 +1,8 @@
 import { getIsRruleSupported } from 'proton-shared/lib/calendar/integration/rrule';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { VcalVcalendar, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { Message } from '../../models/message';
 import { getSupportedEventInvitation, parseEventInvitation } from './invite';
 
 describe('getIsRruleSupported for invitations', () => {

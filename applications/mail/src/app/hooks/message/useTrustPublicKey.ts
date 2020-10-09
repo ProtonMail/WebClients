@@ -1,7 +1,7 @@
 import { OpenPGPKey } from 'pmcrypto';
+import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { useCallback } from 'react';
 
-import { VERIFICATION_STATUS } from '../../constants';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 
 export const useTrustSigningPublicKey = (localID: string) => {

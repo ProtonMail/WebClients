@@ -1,8 +1,9 @@
 import { noop } from 'proton-shared/lib/helpers/function';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 
 import { useMessage } from './useMessage';
 import { renderHook, clearAll, messageCache, tick } from '../../helpers/test/helper';
-import { MessageExtended, Message } from '../../models/message';
+import { MessageExtended } from '../../models/message';
 
 describe('useMessage', () => {
     let consoleError: any;

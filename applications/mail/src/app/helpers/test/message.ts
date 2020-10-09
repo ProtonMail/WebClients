@@ -1,8 +1,8 @@
 import { decryptMessageLegacy as realDecryptMessageLegacy, decryptMIMEMessage, SessionKey } from 'pmcrypto';
 import { OpenPGPKey } from 'pmcrypto';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 
 import { base64ToArray, arrayToBase64 } from '../base64';
-import { Attachment } from '../../models/attachment';
 import { generateSessionKey, encryptSessionKey } from './crypto';
 
 export const createDocument = (content: string): Element => {

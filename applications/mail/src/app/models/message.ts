@@ -1,48 +1,8 @@
 import { OpenPGPKey } from 'pmcrypto';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-
-import { Attachment } from './attachment';
-import { MESSAGE_ACTIONS, VERIFICATION_STATUS } from '../constants';
-
-export interface Message {
-    ID: string;
-    Order: number;
-    ConversationID: string;
-    Subject: string;
-    Unread: number;
-    Sender: Recipient;
-    SenderAddress: string;
-    SenderName: string;
-    Flags: number;
-    Type: number;
-    IsEncrypted: number;
-    IsReplied: number;
-    IsRepliedAll: number;
-    IsForwarded: number;
-    ToList: Recipient[];
-    CCList: Recipient[];
-    BCCList: Recipient[];
-    Time: number;
-    Size: number;
-    NumAttachments: number;
-    ExpirationTime?: number;
-    AddressID: string;
-    ExternalID: string;
-    Body: any;
-    MIMEType: MIME_TYPES;
-    Header: string;
-    ParsedHeaders: { [key: string]: string | string[] | undefined };
-    ReplyTo: Recipient;
-    ReplyTos: Recipient[];
-    Attachments: Attachment[];
-    LabelIDs: string[];
-
-    Password?: string;
-    PasswordHint?: string;
-    RightToLeft?: number;
-}
+import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { MESSAGE_ACTIONS } from '../constants';
 
 export interface MessageAction<T = void> {
     (): Promise<T>;

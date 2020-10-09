@@ -1,3 +1,5 @@
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { isPlainText as testIsPlainText } from 'proton-shared/lib/mail/messages';
 import React, { MutableRefObject, useEffect, useState, useRef, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
 import { SquireEditor, useHandler, useMailSettings, useAddresses } from 'react-components';
@@ -10,14 +12,12 @@ import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { MessageExtended, EmbeddedMap } from '../../../models/message';
 import { Breakpoints } from '../../../models/utils';
 import { MessageChange } from '../Composer';
-import { Attachment } from '../../../models/attachment';
 import {
     getContent,
     exportPlainText,
     plainTextToHTML,
     setDocumentContent
 } from '../../../helpers/message/messageContent';
-import { isPlainText as testIsPlainText } from '../../../helpers/message/messages';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import { removeEmbeddedHTML } from '../../../helpers/embedded/embeddedParser';
 import { createEmbeddedMap } from '../../../helpers/embedded/embeddeds';

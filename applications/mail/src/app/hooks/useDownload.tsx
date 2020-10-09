@@ -1,7 +1,8 @@
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import React, { useCallback } from 'react';
 import { Alert, ConfirmModal, useApi, useModals } from 'react-components';
 import { c, msgid } from 'ttag';
-import { VERIFICATION_STATUS } from '../constants';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
 import {
     Download,
@@ -11,7 +12,6 @@ import {
     generateDownloadAll
 } from '../helpers/attachment/attachmentDownloader';
 
-import { Attachment } from '../models/attachment';
 import { MessageExtended, MessageExtendedWithData } from '../models/message';
 
 const useShowConfirmModal = () => {

@@ -1,3 +1,5 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { getRecipients } from 'proton-shared/lib/mail/messages';
 import React, { memo, Fragment, MouseEvent } from 'react';
 import { c } from 'ttag';
 import { Label, LinkButton, classnames } from 'react-components';
@@ -5,9 +7,7 @@ import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
-import { Message } from '../../../models/message';
 import { recipientTypes } from '../../../models/address';
-import { getRecipients } from '../../../helpers/message/messages';
 import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 

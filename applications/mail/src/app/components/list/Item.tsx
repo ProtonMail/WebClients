@@ -1,3 +1,5 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { getRecipients as getMessageRecipients, getSender } from 'proton-shared/lib/mail/messages';
 import React, { ChangeEvent, MouseEvent, DragEvent, memo } from 'react';
 import { classnames, Checkbox } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
@@ -7,7 +9,6 @@ import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contact
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import ItemCheckbox from './ItemCheckbox';
-import { getRecipients as getMessageRecipients, getSender } from '../../helpers/message/messages';
 import { isUnread, isMessage } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
@@ -19,7 +20,6 @@ import {
     getRecipientOrGroupLabelDetailed
 } from '../../helpers/addresses';
 import { isCustomLabel } from '../../helpers/labels';
-import { Message } from '../../models/message';
 
 const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 

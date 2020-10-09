@@ -1,5 +1,5 @@
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { Message } from '../../models/message';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 
 /**
  * Remove duplicate recipients from a recipient list

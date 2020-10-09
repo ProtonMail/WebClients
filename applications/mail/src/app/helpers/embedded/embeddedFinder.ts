@@ -1,7 +1,7 @@
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { getAttachments } from 'proton-shared/lib/mail/messages';
 import { MessageExtended, EmbeddedMap } from '../../models/message';
 import { REGEXP_CID_START, readCID, createEmbeddedMap } from './embeddeds';
-import { Attachment } from '../../models/attachment';
-import { getAttachments } from '../message/messages';
 
 export const getAttachment = (cids?: EmbeddedMap, src = '') => {
     const cid = src.replace(REGEXP_CID_START, '');

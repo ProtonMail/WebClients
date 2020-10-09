@@ -1,3 +1,4 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { useState, useEffect, memo } from 'react';
 import { useLabels, useToggle, classnames } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
@@ -10,7 +11,6 @@ import { hasLabel } from '../../helpers/elements';
 import { OnCompose } from '../../hooks/useCompose';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
-import { Message } from '../../models/message';
 import ConversationHeader from './ConversationHeader';
 import { Breakpoints } from '../../models/utils';
 import UnreadMessages from './UnreadMessages';

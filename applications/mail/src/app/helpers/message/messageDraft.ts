@@ -1,39 +1,37 @@
 import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { c } from 'ttag';
-import { setBit } from 'proton-shared/lib/helpers/bitset';
 import { unique } from 'proton-shared/lib/helpers/array';
+import { setBit } from 'proton-shared/lib/helpers/bitset';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
+import {
+    DRAFT_ID_PREFIX,
+    formatSubject,
+    FW_PREFIX,
+    getOriginalTo,
+    isPlainText,
+    isSent,
+    isSentAndReceived,
+    ORIGINAL_MESSAGE,
+    RE_PREFIX
+} from 'proton-shared/lib/mail/messages';
 import { generateUID } from 'react-components';
+import { c } from 'ttag';
+import { MESSAGE_ACTIONS } from '../../constants';
 
-import { EmbeddedMap, MessageExtendedWithData, PartialMessageExtended, MessageExtended } from '../../models/message';
-import { MESSAGE_ACTIONS, MESSAGE_FLAGS } from '../../constants';
+import { EmbeddedMap, MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { findSender } from '../addresses';
-import { Attachment } from '../../models/attachment';
-import { insertSignature } from './messageSignature';
 import { formatFullDate } from '../date';
-import { getDate } from '../elements';
-import { isSent, isSentAndReceived, getOriginalTo, isPlainText } from './messages';
-import { exportPlainText, plainTextToHTML, getDocumentContent } from './messageContent';
 import { parseInDiv } from '../dom';
+import { getDate } from '../elements';
 import { createEmbeddedMap } from '../embedded/embeddeds';
+import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
+import { insertSignature } from './messageSignature';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
 export const CLASSNAME_BLOCKQUOTE = 'protonmail_quote';
-export const DRAFT_ID_PREFIX = 'draft';
-export const ORIGINAL_MESSAGE = `‐‐‐‐‐‐‐ Original Message ‐‐‐‐‐‐‐`;
-export const RE_PREFIX = c('Message').t`Re:`;
-export const FW_PREFIX = c('Message').t`Fw:`;
-
-/**
- * Format the subject to add the prefix only when the subject
- * doesn't start with it
- */
-export const formatSubject = (subject = '', prefix = '') => {
-    const hasPrefix = new RegExp(`^${prefix}`, 'i');
-    return hasPrefix.test(subject) ? subject : `${prefix} ${subject}`;
-};
 
 /**
  * Copy embeddeds images from the reference message

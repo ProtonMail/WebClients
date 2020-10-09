@@ -1,12 +1,15 @@
 import { arrayToBinaryString, getKeys, getMatchingKey } from 'pmcrypto';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { isPlainText } from 'proton-shared/lib/mail/messages';
 import { useCallback } from 'react';
 import { useApi, useGetEncryptionPreferences, useMailSettings } from 'react-components';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
-import { LARGE_KEY_SIZE, VERIFICATION_STATUS } from '../../constants';
+import { LARGE_KEY_SIZE } from '../../constants';
 import { get } from '../../helpers/attachment/attachmentLoader';
-import { MessageExtended, Message, MessageErrors, MessageExtendedWithData } from '../../models/message';
+import { MessageExtended, MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useMessageKeys } from './useMessageKeys';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
@@ -15,7 +18,6 @@ import { updateMessageCache, useMessageCache } from '../../containers/MessagePro
 import { prepareMailDocument } from '../../helpers/transforms/transforms';
 import { isApiError } from '../../helpers/errors';
 import { useBase64Cache } from '../useBase64Cache';
-import { isPlainText } from '../../helpers/message/messages';
 import { useMarkAs, MARK_AS_STATUS } from './../useMarkAs';
 import { isUnreadMessage } from '../../helpers/elements';
 import { hasShowEmbedded } from '../../helpers/settings';

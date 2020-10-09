@@ -1,21 +1,15 @@
 import { getUnixTime } from 'date-fns';
 import { getAttendeeEmail, getSupportedAttendee } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
-import {
-    ICAL_ATTENDEE_ROLE,
-    ICAL_ATTENDEE_STATUS,
-    ICAL_EXTENSIONS,
-    ICAL_METHOD,
-    ICAL_MIME_TYPE,
-    MAX_LENGTHS
-} from 'proton-shared/lib/calendar/constants';
+import { ICAL_EXTENSIONS, ICAL_METHOD, ICAL_MIME_TYPE, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import { findAttendee, getParticipant } from 'proton-shared/lib/calendar/integration/invite';
 import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/integration/rrule';
 import {
     getIsDateOutOfBounds,
     getIsWellFormedDateOrDateTime,
     getSupportedUID
 } from 'proton-shared/lib/calendar/support';
-import { fromTriggerString, parseWithErrors } from 'proton-shared/lib/calendar/vcal';
+import { parseWithErrors } from 'proton-shared/lib/calendar/vcal';
 import {
     dateTimeToProperty,
     getDateProperty,
@@ -25,12 +19,8 @@ import {
     propertyToUTCDate
 } from 'proton-shared/lib/calendar/vcalConverter';
 import {
-    getAttendeePartstat,
-    getAttendeeRole,
     getHasDtStart,
     getHasUid,
-    getIsAlarmComponent,
-    getIsAllDay,
     getIsCalendar,
     getIsEventComponent,
     getIsPropertyAllDay,
@@ -50,49 +40,31 @@ import {
 import { unique } from 'proton-shared/lib/helpers/array';
 import { cleanEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
-import { omit } from 'proton-shared/lib/helpers/object';
 import { truncate } from 'proton-shared/lib/helpers/string';
-import { Address, CachedKey } from 'proton-shared/lib/interfaces';
-import {
-    Calendar,
-    CalendarEvent,
-    CalendarSettings,
-    SETTINGS_NOTIFICATION_TYPE
-} from 'proton-shared/lib/interfaces/calendar';
+import { Address } from 'proton-shared/lib/interfaces';
+import { Calendar, CalendarEvent, CalendarWidgetData, Participant } from 'proton-shared/lib/interfaces/calendar';
 import {
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
     VcalFloatingDateTimeProperty,
-    VcalOrganizerProperty,
-    VcalValarmComponent,
     VcalVcalendar,
     VcalVeventComponent,
     VcalVtimezoneComponent,
     VcalXOrIanaComponent
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { getOriginalTo } from 'proton-shared/lib/mail/messages';
 import { c } from 'ttag';
-import { Attachment } from '../../models/attachment';
-import { Message, MessageExtended } from '../../models/message';
-import { getOriginalTo } from '../message/messages';
+import { MessageExtended } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 
 export enum EVENT_TIME_STATUS {
     PAST,
     HAPPENING,
     FUTURE
-}
-
-export interface Participant {
-    vcalComponent: VcalAttendeeProperty | VcalOrganizerProperty;
-    name: string;
-    emailAddress: string;
-    partstat?: ICAL_ATTENDEE_STATUS;
-    role?: ICAL_ATTENDEE_ROLE;
-    addressID?: string;
-    displayName?: string;
 }
 
 export interface EventInvitation {
@@ -105,15 +77,6 @@ export interface EventInvitation {
     organizer?: Participant;
     attendee?: Participant;
     participants?: Participant[];
-}
-
-export interface CalendarWidgetData {
-    calendar: Calendar;
-    isCalendarDisabled: boolean;
-    memberID?: string;
-    addressKeys?: CachedKey[];
-    calendarKeys?: CachedKey[];
-    calendarSettings?: CalendarSettings;
 }
 
 export enum UPDATE_ACTION {
@@ -156,12 +119,6 @@ export const getInvitationHasAttendee = (
     return invitation.attendee !== undefined;
 };
 
-export const getParticipantHasAddressID = (
-    participant: Participant
-): participant is RequireSome<Participant, 'addressID'> => {
-    return !!participant.addressID;
-};
-
 export const getHasFullCalendarData = (data?: CalendarWidgetData): data is Required<CalendarWidgetData> => {
     const { memberID, addressKeys, calendarKeys, calendarSettings } = data || {};
     return !!(memberID && addressKeys && calendarKeys && calendarSettings);
@@ -199,47 +156,6 @@ export const extractVTimezone = (vcal?: VcalVcalendar): VcalVtimezoneComponent |
 
 export const extractXOrIanaComponents = (vcal?: VcalVcalendar): VcalXOrIanaComponent[] | undefined => {
     return vcal?.components?.filter(getIsXOrIanaComponent);
-};
-
-export const getParticipant = (
-    participant: VcalAttendeeProperty | VcalOrganizerProperty,
-    contactEmails: ContactEmail[],
-    ownAddresses: Address[],
-    emailTo: string
-): Participant => {
-    const emailAddress = getAttendeeEmail(participant);
-    const normalizedEmailAddress = normalizeInternalEmail(emailAddress);
-    const isYou = normalizeInternalEmail(emailTo) === normalizedEmailAddress;
-    const selfAddress = ownAddresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizedEmailAddress);
-    const contact = contactEmails.find(({ Email }) => cleanEmail(Email) === cleanEmail(emailAddress));
-    const participantName = isYou
-        ? c('Participant name').t`You`
-        : selfAddress?.DisplayName || contact?.Name || participant?.parameters?.cn || emailAddress;
-    const result: Participant = {
-        vcalComponent: participant,
-        name: participantName,
-        emailAddress
-    };
-    const { partstat, role } = (participant as VcalAttendeeProperty).parameters || {};
-    if (partstat) {
-        result.partstat = getAttendeePartstat(participant);
-    }
-    if (role) {
-        result.role = getAttendeeRole(participant);
-    }
-    if (selfAddress) {
-        result.addressID = selfAddress.ID;
-        result.displayName = selfAddress.DisplayName;
-        // Use Proton form of the email address (important for sending email)
-        result.emailAddress = selfAddress.Email;
-    }
-    return result;
-};
-
-export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = []) => {
-    const index = attendees.findIndex((attendee) => cleanEmail(getAttendeeEmail(attendee)) === cleanEmail(email));
-    const attendee = index !== -1 ? attendees[index] : undefined;
-    return { index, attendee };
 };
 
 const getIsEquivalentAttendee = (newAttendee: VcalAttendeeProperty, oldAttendee: VcalAttendeeProperty) => {
@@ -792,47 +708,4 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
         return false;
     }
     return method === ICAL_METHOD.CANCEL || !!isOutdated || isAddressDisabled || !!calendarData?.isCalendarDisabled;
-};
-
-export const getInvitedEventWithAlarms = (
-    vevent: VcalVeventComponent,
-    partstat: ICAL_ATTENDEE_STATUS,
-    calendarSettings: CalendarSettings,
-    oldPartstat?: ICAL_ATTENDEE_STATUS
-) => {
-    const { components } = vevent;
-    const otherComponents = components?.filter((component) => !getIsAlarmComponent(component));
-
-    if ([ICAL_ATTENDEE_STATUS.DECLINED, ICAL_ATTENDEE_STATUS.NEEDS_ACTION].includes(partstat)) {
-        // remove all alarms in this case
-        if (otherComponents?.length) {
-            return {
-                ...vevent,
-                components: otherComponents
-            };
-        }
-        return omit(vevent, ['components']);
-    }
-    if (oldPartstat && [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(oldPartstat)) {
-        // Leave alarms as they are
-        return { ...vevent };
-    }
-
-    // otherwise add calendar alarms
-    const isAllDay = getIsAllDay(vevent);
-    const notifications = isAllDay
-        ? calendarSettings.DefaultFullDayNotifications
-        : calendarSettings.DefaultPartDayNotifications;
-    const valarmComponents = notifications
-        .filter(({ Type }) => Type === SETTINGS_NOTIFICATION_TYPE.DEVICE)
-        .map<VcalValarmComponent>(({ Trigger }) => ({
-            component: 'valarm',
-            action: { value: 'DISPLAY' },
-            trigger: { value: fromTriggerString(Trigger) }
-        }));
-
-    return {
-        ...vevent,
-        components: components ? components.concat(valarmComponents) : valarmComponents
-    };
 };

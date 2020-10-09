@@ -1,6 +1,6 @@
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { isDraft } from 'proton-shared/lib/mail/messages';
 
-import { isDraft } from '../message/messages';
 import { MessageExtended } from '../../models/message';
 import { getContent, setContent } from '../message/messageContent';
 import { hasShowRemote } from '../settings';

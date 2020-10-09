@@ -1,40 +1,20 @@
 import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Api } from 'proton-shared/lib/interfaces';
-import { OpenPGPKey } from 'pmcrypto';
-import { MapSendPreferences } from '../../models/crypto';
+import { Package, Packages, PackageStatus, SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
+import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { addReceived } from 'proton-shared/lib/mail/messages';
+import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 import { MessageExtended } from '../../models/message';
-import { constructMime } from './sendMimeBuilder';
-import { addReceived } from '../message/messages';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { getPlainText, getDocumentContent } from '../message/messageContent';
+import { getDocumentContent, getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
+import { constructMime } from './sendMimeBuilder';
 
 // Reference: Angular/src/app/composer/services/encryptMessage.js
 // Reference: Angular/src/app/composer/services/generateTopPackages.js
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
-
-type PackageStatus = {
-    [key in MIME_TYPES]?: boolean;
-};
-
-export type Packages = {
-    [key in MIME_TYPES]?: Package;
-};
-
-export interface Package {
-    Flags?: number;
-    Addresses?: { [email: string]: Package };
-    MIMEType?: MIME_TYPES;
-    Body?: string;
-    BodyKey?: any;
-    BodyKeyPacket?: string;
-    Type?: PACKAGE_TYPE;
-    PublicKey?: OpenPGPKey;
-    AttachmentKeys?: { [AttachmentID: string]: { Key: string; Algorithm: string } };
-    AttachmentKeyPackets?: { [AttachmentID: string]: string };
-}
 
 /**
  * Generates the mime top-level packages, which include all attachments in the body.
@@ -69,25 +49,27 @@ const generateHTMLPackage = async (message: MessageExtended): Promise<Package> =
  */
 export const generateTopPackages = async (
     message: MessageExtended,
-    mapSendPrefs: MapSendPreferences,
+    mapSendPrefs: SimpleMap<SendPreferences>,
     cache: AttachmentsCache,
     api: Api
 ): Promise<Packages> => {
-    const packagesStatus: PackageStatus = Object.values(mapSendPrefs).reduce(
-        (packages, { encrypt, sign, pgpScheme, mimeType }) => ({
-            [PLAINTEXT]: packages[PLAINTEXT] || mimeType === MIME_TYPES.PLAINTEXT,
-            [DEFAULT]:
-                packages[DEFAULT] ||
-                mimeType === DEFAULT ||
-                (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && !encrypt && !sign),
-            [MIME]: packages[MIME] || (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && (encrypt || sign))
-        }),
-        {
-            [PLAINTEXT]: false,
-            [DEFAULT]: false,
-            [MIME]: false
-        } as PackageStatus
-    );
+    const packagesStatus: PackageStatus = Object.values(mapSendPrefs)
+        .filter(isTruthy)
+        .reduce(
+            (packages, { encrypt, sign, pgpScheme, mimeType }) => ({
+                [PLAINTEXT]: packages[PLAINTEXT] || mimeType === MIME_TYPES.PLAINTEXT,
+                [DEFAULT]:
+                    packages[DEFAULT] ||
+                    mimeType === DEFAULT ||
+                    (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && !encrypt && !sign),
+                [MIME]: packages[MIME] || (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && (encrypt || sign))
+            }),
+            {
+                [PLAINTEXT]: false,
+                [DEFAULT]: false,
+                [MIME]: false
+            } as PackageStatus
+        );
 
     const demandedPackages = Object.values(MIME_TYPES).filter((k) => packagesStatus[k]);
 

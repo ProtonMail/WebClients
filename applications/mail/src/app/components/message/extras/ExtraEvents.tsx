@@ -1,4 +1,6 @@
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { getAttachments } from 'proton-shared/lib/mail/messages';
 import React, { useEffect, useState } from 'react';
 import {
     useApi,
@@ -6,9 +8,8 @@ import {
     useContactEmails,
     useAddresses,
     useLoading,
-    useConfig,
     useUserSettings,
-    useGetCalendarUserSettings,
+    useGetCalendarUserSettings
 } from 'react-components';
 import { arrayToBinaryString, decodeUtf8 } from 'pmcrypto';
 import {
@@ -30,8 +31,6 @@ import {
     parseEventInvitation
 } from '../../../helpers/calendar/invite';
 
-import { getAttachments } from '../../../helpers/message/messages';
-import { Attachment } from '../../../models/attachment';
 import { MessageExtendedWithData } from '../../../models/message';
 import ExtraEvent from './calendar/ExtraEvent';
 
@@ -47,7 +46,6 @@ const ExtraEvents = ({ message }: Props) => {
         Error
     ];
     const [addresses = [], loadingAddresses] = useAddresses();
-    const config = useConfig();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const [loadingWidget, withLoadingWidget] = useLoading();
@@ -57,8 +55,7 @@ const ExtraEvents = ({ message }: Props) => {
     const [defaultCalendar, setDefaultCalendar] = useState<Calendar | undefined>();
     const [canCreateCalendar, setCanCreateCalendar] = useState<boolean>(true);
     const api = useApi();
-    const loadingConfigs =
-        loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || !config;
+    const loadingConfigs = loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings;
 
     useEffect(() => {
         const attachments = getAttachments(message.data);
@@ -136,7 +133,6 @@ const ExtraEvents = ({ message }: Props) => {
                         canCreateCalendar={canCreateCalendar}
                         contactEmails={contactEmails}
                         ownAddresses={addresses}
-                        config={config}
                         userSettings={userSettings}
                     />
                 );

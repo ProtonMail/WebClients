@@ -1,9 +1,8 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React from 'react';
 import { FormModal } from 'react-components';
 import { c } from 'ttag';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-
-import { Message } from '../../../models/message';
 
 interface Props {
     message?: Message;

@@ -1,9 +1,9 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { keyInfo } from 'pmcrypto/lib/pmcrypto';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { upload, ATTACHMENT_ACTION } from '../attachment/attachmentUploader';
-import { Attachment } from '../../models/attachment';
 
 // TS Hack waiting for keyInfo to be completely typed
 type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;

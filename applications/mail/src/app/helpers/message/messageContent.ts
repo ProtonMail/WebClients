@@ -1,6 +1,6 @@
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { isPlainText } from 'proton-shared/lib/mail/messages';
 
-import { isPlainText } from './messages';
 import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { toText } from '../parserHtml';
 import { findSender } from '../addresses';

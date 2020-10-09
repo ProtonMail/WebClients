@@ -1,6 +1,5 @@
+import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { prepareImages, mutateHTMLBlob, mutateHTMLCid } from './embeddedParser';
-import { Message } from '../../models/message';
-import { Attachment } from '../../models/attachment';
 import { parseInDiv } from '../dom';
 import { createEmbeddedMap } from './embeddeds';
 

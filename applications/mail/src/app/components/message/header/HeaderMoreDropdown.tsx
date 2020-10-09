@@ -1,3 +1,4 @@
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { useRef } from 'react';
 import { c } from 'ttag';
 import {
@@ -21,7 +22,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { reportPhishing } from 'proton-shared/lib/api/reports';
 
-import { MessageExtended, MessageExtendedWithData, Message } from '../../../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
 import { useAttachmentCache } from '../../../containers/AttachmentProvider';
 import { getDate } from '../../../helpers/elements';
