@@ -8,7 +8,7 @@ import {
     useHandler
 } from 'react-components';
 import { c } from 'ttag';
-import { Address, MailSettings } from 'proton-shared/lib/interfaces';
+import { Address } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 import { COMPOSER_MODE } from 'proton-shared/lib/constants';
@@ -79,7 +79,7 @@ const Composer = ({
     onFocus,
     onClose: inputOnClose
 }: Props) => {
-    const [mailSettings] = useMailSettings() as [MailSettings, boolean, Error];
+    const [mailSettings] = useMailSettings();
     const { createNotification } = useNotifications();
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -90,7 +90,7 @@ const Composer = ({
 
     // Maximized status of the composer
     const { state: maximized, toggle: toggleMaximized } = useToggle(
-        mailSettings.ComposerMode === COMPOSER_MODE.MAXIMIZED
+        mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
 
     // Indicates that the composer is in its initial opening

@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { Label, Select, Input, generateUID, useMailSettings } from 'react-components';
+import { Label, Select, Input, generateUID } from 'react-components';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 
 import ComposerAddresses from './addresses/Addresses';
@@ -13,7 +13,7 @@ import { changeSignature } from '../../helpers/message/messageSignature';
 interface Props {
     message: MessageExtended;
     addresses: Address[];
-    mailSettings: MailSettings;
+    mailSettings?: Partial<MailSettings>;
     messageSendInfo: MessageSendInfo;
     disabled: boolean;
     onChange: MessageChange;
@@ -25,6 +25,7 @@ interface Props {
 const ComposerMeta = ({
     message,
     addresses,
+    mailSettings,
     messageSendInfo,
     disabled,
     onChange,
@@ -33,7 +34,6 @@ const ComposerMeta = ({
     addressesFocusRef
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
-    const [mailSettings] = useMailSettings();
 
     const addressesOptions = getFromAdresses(addresses, message.originalTo).map((address) => ({
         text: address.Email,

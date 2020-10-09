@@ -38,13 +38,13 @@ enum PROMPT_KEY_PINNING_TYPE {
 
 interface Params {
     message: MessageExtended;
-    mailSettings: MailSettings;
+    mailSettings?: Partial<MailSettings>;
     addresses: Address[];
     senderAddress: string;
 }
 const getPromptKeyPinningType = ({
     message,
-    mailSettings,
+    mailSettings = {},
     addresses,
     senderAddress
 }: Params): PROMPT_KEY_PINNING_TYPE | undefined => {

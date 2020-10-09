@@ -72,7 +72,7 @@ function prepareInjection(html: Element) {
     return attributes;
 }
 
-export const transformRemote = (message: MessageExtended, mailSettings: MailSettings) => {
+export const transformRemote = (message: MessageExtended, mailSettings?: Partial<MailSettings>) => {
     const regex = new RegExp(REGEXP_FIXER, 'g');
     const showImages =
         message.showRemoteImages ||

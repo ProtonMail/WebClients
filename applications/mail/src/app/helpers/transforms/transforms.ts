@@ -18,7 +18,7 @@ export const prepareMailDocument = async (
     base64Cache: Base64Cache,
     attachmentsCache: AttachmentsCache,
     api: Api,
-    mailSettings: MailSettings
+    mailSettings?: Partial<MailSettings>
 ) => {
     const body = inlineCss(sanitize(message.decryptedBody || ''));
 

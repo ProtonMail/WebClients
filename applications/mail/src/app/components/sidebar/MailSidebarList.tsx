@@ -44,7 +44,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
     const loadingConversationCounts = actualLoadingConversationCounts && conversationCounts.length === 0;
     const loadingMessageCounts = actualLoadingMessageCounts && messageCounts.length === 0;
 
-    const { ShowMoved } = mailSettings || {};
+    const { ShowMoved } = mailSettings || { ShowMoved: 0 };
 
     const isConversation = isConversationMode(currentLabelID, mailSettings, location);
 

@@ -80,7 +80,11 @@ export const getPlainText = (message: MessageExtended, downconvert: boolean) => 
 /**
  * Convert the body of a message in plain text to an HTML version
  */
-export const plainTextToHTML = (message: MessageExtended, mailSettings: MailSettings, addresses: Address[]) => {
+export const plainTextToHTML = (
+    message: MessageExtended,
+    mailSettings: Partial<MailSettings> = {},
+    addresses: Address[]
+) => {
     const sender = findSender(addresses, message.data);
     const content = getContent(message);
 
