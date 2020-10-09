@@ -292,6 +292,7 @@ export enum PACKAGE_TYPE {
     SEND_CLEAR = 4,
     SEND_PGP_INLINE = 8,
     SEND_PGP_MIME = 16,
+    SEND_CLEAR_MIME = 32,
 }
 
 export enum PGP_SCHEMES {
@@ -779,3 +780,5 @@ export const FORKABLE_APPS = new Set(
         Boolean
     )
 );
+
+export const AES256 = 'aes256';

@@ -4,3 +4,4 @@ export * from './Alarm';
 export * from './Member';
 export * from './Key';
 export * from './Passphrase';
+export * from './Invite';
