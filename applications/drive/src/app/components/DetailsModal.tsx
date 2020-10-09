@@ -28,7 +28,7 @@ const DetailsRow = ({ label, children }: RowProps) => {
     return (
         <Row>
             <Label style={{ cursor: 'default' }}>{label}</Label>
-            <Field>
+            <Field className="pt0-5">
                 <b>{children}</b>
             </Field>
         </Row>
