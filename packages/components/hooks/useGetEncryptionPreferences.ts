@@ -8,7 +8,7 @@ import { splitKeys } from 'proton-shared/lib/keys/keys';
 import useApi from './useApi';
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
-import useMailSettings from './useMailSettings';
+import { useGetMailSettings } from './useMailSettings';
 import { useGetUserKeys } from './useUserKeys';
 import useGetPublicKeys from './useGetPublicKeys';
 import { getPromiseValue } from './useCachedModelResult';
@@ -31,11 +31,11 @@ const useGetEncryptionPreferences = () => {
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
     const getPublicKeys = useGetPublicKeys();
-    const [mailSettings] = useMailSettings();
+    const getMailSettings = useGetMailSettings();
 
     const getEncryptionPreferences = useCallback(
         async (emailAddress: string, lifetime?: number) => {
-            const addresses = await getAddresses();
+            const [addresses, mailSettings] = await Promise.all([getAddresses(), getMailSettings()]);
             const selfAddress = addresses.find(
                 ({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(emailAddress)
             );
@@ -62,7 +62,7 @@ const useGetEncryptionPreferences = () => {
             });
             return extractEncryptionPreferences(publicKeyModel, mailSettings, selfSend);
         },
-        [api, getAddressKeys, getAddresses, getPublicKeys, mailSettings]
+        [api, getAddressKeys, getAddresses, getPublicKeys, getMailSettings]
     );
 
     return useCallback<(email: string, lifetime?: number) => Promise<EncryptionPreferences>>(

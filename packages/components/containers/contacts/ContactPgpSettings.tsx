@@ -15,7 +15,7 @@ import SelectKeyFiles from '../keys/shared/SelectKeyFiles';
 interface Props {
     model: ContactPublicKeyModel;
     setModel: Dispatch<SetStateAction<ContactPublicKeyModel>>;
-    mailSettings: MailSettings;
+    mailSettings?: MailSettings;
 }
 
 const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {

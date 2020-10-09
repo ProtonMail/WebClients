@@ -9,8 +9,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import { CONTACT_IMG_SIZE } from 'proton-shared/lib/contacts/constants';
 
-import useLoading from '../../hooks/useLoading';
-import useMailSettings from '../../hooks/useMailSettings';
+import { useLoading, useMailSettings } from '../../hooks';
 import Loader from '../loader/Loader';
 import { Button } from '../button';
 
@@ -30,7 +29,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     const isBase64 = isBase64Image(photo);
     const [showAnyway, setShowAnyway] = useState(false);
     const [image, setImage] = useState<ImageModel>({ src: photo });
-    const [{ ShowImages }, loadingMailSettings] = useMailSettings();
+    const [{ ShowImages } = { ShowImages: SHOW_IMAGES.NONE }, loadingMailSettings] = useMailSettings();
     const [loadingResize, withLoadingResize] = useLoading(true);
     const loading = loadingMailSettings || loadingResize;
     const shouldShow =

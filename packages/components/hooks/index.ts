@@ -15,7 +15,7 @@ export { default as useWindowSize } from './useWindowSize';
 export { default as useElementRect } from './useElementRect';
 export { default as useContacts } from './useContacts';
 export { default as useContactEmails } from './useContactEmails';
-export { default as useMailSettings } from './useMailSettings';
+export * from './useMailSettings';
 export * from './useCalendarUserSettings';
 export { default as useMembers } from './useMembers';
 export { useLabels, useFolders, useContactGroups } from './useCategories';

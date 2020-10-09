@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import useMailSettings from './useMailSettings';
+import { useMailSettings } from './useMailSettings';
 
 const useHotKeys = (callback: () => void) => {
-    const [{ Hotkeys }] = useMailSettings();
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
 
     useEffect(() => {
         if (Hotkeys) {

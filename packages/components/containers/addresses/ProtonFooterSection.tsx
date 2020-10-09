@@ -7,7 +7,7 @@ import PMSignatureField from './PMSignatureField';
 
 const ProtonFooterSection = () => {
     const [mailSettings] = useMailSettings();
-    const isMandatory = mailSettings.PMSignature === 2;
+    const isMandatory = mailSettings?.PMSignature === 2;
     return (
         <>
             {isMandatory ? (

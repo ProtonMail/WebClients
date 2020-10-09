@@ -13,13 +13,12 @@ const { PGP_MIME, PGP_INLINE } = PGP_SCHEMES;
 
 interface Props {
     value: string;
-    mailSettings: MailSettings;
+    mailSettings?: MailSettings;
     onChange: (value: CONTACT_PGP_SCHEMES) => void;
 }
 
 const ContactSchemeSelect = ({ value, mailSettings, onChange }: Props) => {
-    const { PGPScheme } = mailSettings;
-    const defaultValueText = PGPScheme === PACKAGE_TYPE.SEND_PGP_INLINE ? INLINE : MIME;
+    const defaultValueText = mailSettings?.PGPScheme === PACKAGE_TYPE.SEND_PGP_INLINE ? INLINE : MIME;
 
     const options = [
         {

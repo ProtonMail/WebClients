@@ -7,16 +7,16 @@ import ShortcutsModal from './ShortcutsModal';
 import ShortcutsToggle from './ShortcutsToggle';
 
 const ShortcutsSection = () => {
-    const [mailSettings] = useMailSettings();
-    const [hotkeys, setHotkeys] = useState(mailSettings.Hotkeys);
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [hotkeys, setHotkeys] = useState(Hotkeys);
     const { createModal } = useModals();
 
     // Handle updates from the Event Manager.
     useEffect(() => {
-        setHotkeys(mailSettings.Hotkeys);
-    }, [mailSettings.Hotkeys]);
+        setHotkeys(Hotkeys);
+    }, [Hotkeys]);
 
-    const handleChange = (newValue) => setHotkeys(newValue);
+    const handleChange = (newValue: number) => setHotkeys(newValue);
 
     const handleOpenModal = () => createModal(<ShortcutsModal />);
 

@@ -7,7 +7,7 @@ import { useMailSettings, useEventManager, useLoading, useApi } from '../../hook
 const SearchSection = () => {
     const api = useApi();
     const { call } = useEventManager();
-    const [{ AutoWildcardSearch }] = useMailSettings();
+    const [{ AutoWildcardSearch } = {}] = useMailSettings();
     const [loading, withLoading] = useLoading();
     return (
         <>

@@ -9,10 +9,10 @@ import { Toggle, Field } from '../../components';
 
 interface Props {
     id: string;
-    mailSettings: MailSettings;
+    mailSettings?: Partial<MailSettings>;
 }
 
-const PMSignatureField = ({ id, mailSettings }: Props) => {
+const PMSignatureField = ({ id, mailSettings = {} }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { request, loading } = useApiWithoutResult(updatePMSignature);

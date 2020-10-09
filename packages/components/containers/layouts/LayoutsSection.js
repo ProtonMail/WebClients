@@ -25,7 +25,7 @@ const { GROUP } = VIEW_MODE;
 
 const LayoutsSection = () => {
     const [
-        { ComposerMode, ViewMode, ViewLayout, StickyLabels, DraftMIMEType, RightToLeft },
+        { ComposerMode, ViewMode, ViewLayout, StickyLabels, DraftMIMEType, RightToLeft } = {},
         loadingMailSettings,
     ] = useMailSettings();
     const [{ Density }, loadingUserSettings] = useUserSettings();
