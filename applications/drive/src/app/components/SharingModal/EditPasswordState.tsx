@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import {
     Alert,
     BackButtonModal,
-    Button,
     Field,
     FooterModal,
     HeaderModal,
     InnerModal,
     Input,
     Label,
+    PrimaryButton,
     Row,
     TitleModal,
 } from 'react-components';
@@ -60,7 +60,7 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
                 <InnerModal>
                     <Alert>{c('Info').t`In order to download the file please type a new password below.`}</Alert>
 
-                    <Row className="p1 pl2">
+                    <Row>
                         <Label htmlFor="shared-url-password">{c('Label').t`New password`}</Label>
                         <Field>
                             <Input
@@ -76,7 +76,8 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
                     </Row>
                 </InnerModal>
                 <FooterModal>
-                    <Button disabled={isSaveDisabled} type="submit" loading={saving}>{c('Action').t`Done`}</Button>
+                    <PrimaryButton disabled={isSaveDisabled} type="submit" loading={saving}>{c('Action')
+                        .t`Save`}</PrimaryButton>
                 </FooterModal>
             </form>
         </>
