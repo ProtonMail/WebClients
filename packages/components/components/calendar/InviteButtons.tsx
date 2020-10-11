@@ -1,7 +1,7 @@
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { move } from 'proton-shared/lib/helpers/array';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { InviteActions } from 'proton-shared/lib/interfaces/calendar';
+import { PartstatActions } from 'proton-shared/lib/interfaces/calendar';
 import { c } from 'ttag';
 import React from 'react';
 import { useLoadingMap } from '../../hooks';
@@ -9,7 +9,7 @@ import { SmallButton } from '../button';
 import { DropdownActions } from '../dropdown';
 
 interface Props {
-    actions: InviteActions;
+    actions: PartstatActions;
     partstat?: ICAL_ATTENDEE_STATUS;
     disabled?: boolean;
     className?: string;

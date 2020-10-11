@@ -5,7 +5,7 @@ import { wait } from 'proton-shared/lib/helpers/promise';
 import {
     CalendarEvent,
     CalendarWidgetData,
-    InviteActions,
+    PartstatActions,
     Participant,
     SavedInviteData,
 } from 'proton-shared/lib/interfaces/calendar';
@@ -54,7 +54,7 @@ const useInviteButtons = ({
     onUpdateEventError,
     onUnexpectedError,
     disabled = false,
-}: Args): InviteActions => {
+}: Args): PartstatActions => {
     const api = useApi();
     const sendIcs = useSendIcs();
     const config = useConfig();
