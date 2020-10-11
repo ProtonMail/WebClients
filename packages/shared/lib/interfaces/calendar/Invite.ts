@@ -4,7 +4,7 @@ import { Calendar, CalendarSettings } from './Calendar';
 import { CalendarEvent } from './Event';
 import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from './VcalModel';
 
-export interface InviteActions {
+export interface PartstatActions {
     accept: () => Promise<void>;
     acceptTentatively: () => Promise<void>;
     decline: () => Promise<void>;
