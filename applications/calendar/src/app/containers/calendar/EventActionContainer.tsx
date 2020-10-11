@@ -15,9 +15,10 @@ import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getIsPropertyAllDay, getPropertyTzid } from 'proton-shared/lib/calendar/vcalHelper';
 import parseMainEventData from './event/parseMainEventData';
-import { getRecurrenceIdValueFromTimestamp } from './event/getEventHelper';
+import { getRecurrenceIdDate, getRecurrenceIdValueFromTimestamp } from './event/getEventHelper';
 import { EventTargetAction } from './interface';
 import { getCalendarEventStoreRecord } from './eventStore/cache/upsertCalendarEventStoreRecord';
+import getAllEventsByUID from './getAllEventsByUID';
 
 interface Props {
     calendars: Calendar[];
@@ -142,6 +143,8 @@ const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) 
                         return handleLinkError();
                     }
 
+                    const eventsByUID = await getAllEventsByUID(api, parsedEvent.uid.value, calendarID);
+
                     const { dtstart } = parsedEvent;
                     const localRecurrenceID = toUTCDate(
                         getRecurrenceIdValueFromTimestamp(
@@ -151,13 +154,37 @@ const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) 
                         ).value
                     );
 
+                    const isTargetOccurrenceEdited = eventsByUID.some((recurrence) => {
+                        const parsedEvent = parseMainEventData(recurrence);
+                        if (!parsedEvent) {
+                            return false;
+                        }
+                        const recurrenceID = getRecurrenceIdDate(parsedEvent);
+                        if (!recurrenceID) {
+                            return false;
+                        }
+                        // Here a date-time comparison could be used instead, but since the recurrence id parameter can be easily tweaked to change
+                        // e.g. the seconds and since a recurring granularity less than daily is not allowed, just compare the day
+                        return isSameDay(localRecurrenceID, recurrenceID);
+                    });
+
                     const maxStart = addMilliseconds(localRecurrenceID, 1);
-                    const occurrences = getOccurrences({ component: parsedEvent, maxCount: 10000000, maxStart });
-                    if (!occurrences.length) {
-                        return handleLinkError();
+                    const untilTargetOccurrences = getOccurrences({
+                        component: parsedEvent,
+                        maxCount: 10000000,
+                        maxStart,
+                    });
+                    if (!untilTargetOccurrences.length || isTargetOccurrenceEdited) {
+                        // Target occurrence could not be found, fall back to the first generated occurrence
+                        const initialOccurrences = getOccurrences({ component: parsedEvent, maxCount: 1 });
+                        if (!initialOccurrences.length) {
+                            return handleLinkError();
+                        }
+                        const [firstOccurrence] = initialOccurrences;
+                        return handleGotoOccurrence(result.Event, parsedEvent, firstOccurrence);
                     }
-                    const [firstOccurrence] = occurrences;
-                    const targetOccurrence = occurrences[occurrences.length - 1];
+                    const [firstOccurrence] = untilTargetOccurrences;
+                    const targetOccurrence = untilTargetOccurrences[untilTargetOccurrences.length - 1];
                     // Target recurrence could not be expanded to
                     if (!isSameDay(localRecurrenceID, targetOccurrence.localStart)) {
                         return handleGotoOccurrence(result.Event, parsedEvent, firstOccurrence);
