@@ -6,7 +6,7 @@ import { OrderableTable, OrderableTableHeader, OrderableTableBody } from '../../
 import FilterItemRow from './FilterItemRow';
 
 const FilterSortableList = ({ items, ...rest }) => (
-    <OrderableTable className="noborder border-collapse mt1" {...rest}>
+    <OrderableTable className="noborder border-collapse mt1 pm-simple-table--has-actions" {...rest}>
         <caption className="sr-only">{c('Settings/filters').t`Filters`}</caption>
         <OrderableTableHeader>
             <tr>

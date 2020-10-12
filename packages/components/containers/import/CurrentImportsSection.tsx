@@ -159,7 +159,7 @@ const CurrentImportsSection = () => {
                         .t`Proton paused an import because it lost the connection with your other email provider. Please reconnect.`}
                 </Alert>
             )}
-            <Table className="onmobile-hideTd3 onmobile-hideTd4">
+            <Table className="onmobile-hideTd3 onmobile-hideTd4 pm-simple-table--has-actions">
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>

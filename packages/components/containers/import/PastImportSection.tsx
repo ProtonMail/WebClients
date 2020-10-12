@@ -103,7 +103,7 @@ const PastImportsSection = () => {
     return (
         <>
             <Alert>{c('Info').t`Check records of already processed imports`}</Alert>
-            <Table className="onmobile-hideTd3 onmobile-hideTd4 onmobile-hideTd5">
+            <Table className="onmobile-hideTd3 onmobile-hideTd4 onmobile-hideTd5 pm-simple-table--has-actions">
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
