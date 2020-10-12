@@ -1,4 +1,4 @@
-# [4.1.2] - 2020-10-07
+# [4.0.0-beta.24] - 2020-10-07
 ## New features
 - Added a widget in the email header to display an event's summary when an invitation (ICS file) is attached to a message
 ## Fixes
@@ -8,11 +8,11 @@
 - Show the recipients' information instead of the sender's information when viewing the drafts folder
 - Remember the collapsed state of folders and labels section in the menu
 ---
-# [4.1.1] - 2020-09-30
+# [4.0.0-beta.23] - 2020-09-30
 ## Fixes
 - Minor UI/UX bug fixes following the deployment of the new Protonmail app
 ---
-# [4.1.0] - 2020-09-30
+# [4.0.0-beta.22] - 2020-09-30
 ## New features
 - Support for sub-folders
 - Support for compact and comfortable lists

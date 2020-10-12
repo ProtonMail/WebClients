@@ -8,11 +8,16 @@ import PrivateApp from './PrivateApp';
 
 import './app.scss';
 
-sentry(config);
+const enhancedConfig = {
+    APP_VERSION_DISPLAY: '4.0.0-beta.24',
+    ...config
+};
+
+sentry(enhancedConfig);
 
 const App = () => {
     return (
-        <ProtonApp config={config}>
+        <ProtonApp config={enhancedConfig}>
             <StandardSetup PrivateApp={PrivateApp} locales={locales} />
         </ProtonApp>
     );
