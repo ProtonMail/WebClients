@@ -96,7 +96,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
             const fp = <code key="0">{newKeyFingerprint}</code>;
             return {
                 submit: c('Action').t`Done`,
-                children: <Alert>{c('Info').jt`Key with fingerprint ${fp} successfully created`}</Alert>,
+                children: <Alert>{c('Info').jt`Key with fingerprint ${fp} successfully created.`}</Alert>,
             };
         }
 

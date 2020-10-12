@@ -109,7 +109,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
             const fp = <code key="0">{fingerprint}</code>;
             return {
                 submit: c('Action').t`Done`,
-                children: <Alert>{c('Info').jt`Key with fingerprint ${fp} deleted`}</Alert>,
+                children: <Alert>{c('Info').jt`Key with fingerprint ${fp} has been deleted.`}</Alert>,
             };
         }
 
