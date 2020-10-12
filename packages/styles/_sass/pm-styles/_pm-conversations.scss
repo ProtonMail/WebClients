@@ -68,6 +68,9 @@ $item-container-height: 6.4rem !default;
 $item-container-padding-top-bottom: em(8.5) !default;
 $item-container-padding-left-right: em(12) !default;
 
+$item-container-height-compact-mode: 4.8rem !default;
+$item-container-row-height-compact-mode: 4rem !default;
+
 .item-container,
 .item-container-row {
 	@extend %appearing-container;
@@ -123,16 +126,20 @@ $item-container-padding-left-right: em(12) !default;
 
 	.item-container,
 	.item-container-row {
-		height: 4.8rem;
+		height: $item-container-height-compact-mode;
 
 		.item-container-inner {
 			padding: em(0) em(12);
 		}
 	}
 	.item-container-row {
-		height: 4rem;
+		height: $item-container-row-height-compact-mode;
 	}
-
+	.item-icon-compact {
+		&::after {
+			height: $item-container-row-height-compact-mode;
+		}
+	}
 	.item-firstline,
 	.item-secondline {
 		margin: 0;
@@ -263,6 +270,14 @@ $conversation-icon-size: 3.2rem !default;
 
 	&:hover {
 		background: var(--bordercolor-input, $pm-global-light);
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		left: -#{em(12)};
+		right: -#{em(12)};
+		top: -#{($item-container-height-compact-mode - $conversation-icon-size)/2};
+        height: $item-container-height-compact-mode;
 	}
 }
 
