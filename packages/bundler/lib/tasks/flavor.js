@@ -20,10 +20,14 @@ const SOURCE_FILE_INDEX = "find dist -maxdepth 1 -type f -name 'index*.js'";
  */
 const getConfigDeployGit = async (isNewConfig) => {
     if (!isNewConfig) {
+        // Ensure we have them inside the history
+        await bash('git fetch origin master && git fetch origin develop');
         const { stdout: commit } = await bash('git rev-parse origin/develop');
-        const { stdout: pkg } = await bash('git show HEAD~1:package.json');
-        const { version } = JSON.parse(pkg);
-        return { commit, version };
+        const { stdout: pkgMaster } = await bash('git show HEAD~1:package.json');
+        const { stdout: pkgDevelop } = await bash('git show origin/develop:package.json');
+        const { version } = JSON.parse(pkgMaster);
+        const { version: versionDevelop } = JSON.parse(pkgDevelop);
+        return { commit, version, versionDevelop };
     }
 
     const { stdout: commit } = await bash('git rev-parse HEAD');
@@ -110,7 +114,11 @@ async function writeNewConfig(api) {
     const {
         sentry: { dsn: currentSentryDSN },
         secureUrl: currentSecureURL,
-        deployConfig: { commit: currentCommitDeploy, version: currentVersionDeploy } = {} // no config for angular
+        deployConfig: {
+            commit: currentCommitDeploy,
+            version: currentVersionDeploy,
+            versionDevelop: currentVersionDeployFromDevelop
+        } = {} // no config for angular
     } = await getNewConfig(api, ['--api proxy'], true);
     const {
         apiUrl,
@@ -124,7 +132,8 @@ async function writeNewConfig(api) {
             currentSentryDSN,
             currentSecureURL,
             currentCommitDeploy,
-            currentVersionDeploy
+            currentVersionDeploy,
+            currentVersionDeployFromDevelop
         },
         newConfig: {
             newSentryDSN,
@@ -150,8 +159,17 @@ async function writeNewConfig(api) {
         await sed(`s#="${currentCommitDeploy}"#="${newCommitDeploy}"#;`, SOURCE_FILE_INDEX);
         info(`replace current deployed commit by ${newCommitDeploy} inside the main index`);
 
+        // First we try to replace the version from master
         await sed(`s#="${currentVersionDeploy}"#="${newVersionDeploy}"#;`, SOURCE_FILE_INDEX);
-        info(`replace current deployed version by the one from the new tag ${newVersionDeploy} the main index`);
+        info(
+            `replace current deployed version ${currentVersionDeploy} by the one from the new tag ${newVersionDeploy} the main index`
+        );
+
+        // We try to replace the one from develop if we work on the bundle from develop we ship
+        await sed(`s#="${currentVersionDeployFromDevelop}"#="${newVersionDeploy}"#;`, SOURCE_FILE_INDEX);
+        info(
+            `replace current deployed version ${currentVersionDeployFromDevelop} by the one from the new tag ${newVersionDeploy} the main index`
+        );
     }
 
     await sed(`s#="/api"#="${apiUrl}"#;`, SOURCE_FILE_INDEX);
