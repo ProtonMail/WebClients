@@ -124,7 +124,9 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                 begin: begin ? String(getUnixTime(begin)) : UNDEFINED,
                 end: end ? String(getUnixTime(end)) : UNDEFINED,
                 attachments: typeof attachments === 'number' ? String(attachments) : UNDEFINED,
-                wildcard: wildcard ? String(wildcard) : UNDEFINED
+                wildcard: wildcard ? String(wildcard) : UNDEFINED,
+                filter: UNDEFINED, // Make sure to reset filter parameter when performing an advanced search
+                sort: UNDEFINED // Make sure to reset sort parameter when performing an advanced search
             })
         );
 
