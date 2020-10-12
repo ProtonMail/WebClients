@@ -229,10 +229,6 @@ const useDriveCacheState = () => {
     };
 
     const setTrashLinkMetas = (metas: LinkMeta[], shareId: string, method: 'unlisted' | 'complete' | 'incremental') => {
-        if (!metas.length) {
-            return;
-        }
-
         const { links } = cacheRef.current[shareId];
         const { trash } = cacheRef.current[shareId];
 
