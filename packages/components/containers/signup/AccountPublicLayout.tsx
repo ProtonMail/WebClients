@@ -3,7 +3,7 @@ import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { c } from 'ttag';
 
 import { useAppTitle, useConfig } from '../../hooks';
-import { classnames } from '../../helpers';
+import { classnames, getAppVersion } from '../../helpers';
 
 import PublicTopBanners from '../app/PublicTopBanners';
 import { Href } from '../../components';
@@ -25,21 +25,19 @@ export interface Props {
 }
 
 const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, center, right, locales }: Props) => {
-    const { APP_VERSION } = useConfig();
+    const { APP_VERSION, APP_VERSION_DISPLAY } = useConfig();
     const termsLink = (
-        <Href
-            key="terms"
-            className="signup-footer-link"
-            href="https://protonmail.com/terms-and-conditions"
-        >{c('Link').t`Terms`}</Href>
+        <Href key="terms" className="signup-footer-link" href="https://protonmail.com/terms-and-conditions">{c('Link')
+            .t`Terms`}</Href>
     );
     const privacyLink = (
-        <Href key="privacy" className="signup-footer-link" href="https://protonmail.com/privacy-policy">{c(
-            'Link'
-        ).t`Privacy policy`}</Href>
+        <Href key="privacy" className="signup-footer-link" href="https://protonmail.com/privacy-policy">{c('Link')
+            .t`Privacy policy`}</Href>
     );
 
     useAppTitle(title);
+
+    const appVersion = getAppVersion(APP_VERSION_DISPLAY || APP_VERSION);
 
     return (
         <div className="scroll-if-needed h100v">
@@ -101,7 +99,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                     <span className="opacity-50 pl0-75 pr0-75 nomobile" aria-hidden="true">
                         |
                     </span>
-                    <span className="opacity-50 automobile">{c('Info').jt`Version ${APP_VERSION}`}</span>
+                    <span className="opacity-50 automobile">{c('Info').jt`Version ${appVersion}`}</span>
                 </footer>
             </div>
         </div>

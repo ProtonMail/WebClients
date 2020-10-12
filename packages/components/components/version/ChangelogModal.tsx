@@ -4,6 +4,7 @@ import markdownit from 'markdown-it';
 
 import { FormModal } from '../modal';
 import './ChangeLogModal.scss';
+import { getAppVersion } from '../../helpers';
 
 const md = markdownit('default', {
     breaks: true,
@@ -16,8 +17,11 @@ interface Props {
 
 const ChangelogModal = ({ changelog = '', ...rest }: Props) => {
     const [html] = useState(() => {
+        const modifiedChangelog = changelog.replace(/\[(\d+\.\d+\.\d+[^\]]*)]/g, (match, capture) => {
+            return `[${getAppVersion(capture)}]`;
+        });
         return {
-            __html: md.render(changelog),
+            __html: md.render(modifiedChangelog),
         };
     });
 
