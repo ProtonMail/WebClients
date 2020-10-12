@@ -44,7 +44,6 @@ import { truncate } from 'proton-shared/lib/helpers/string';
 import { Address } from 'proton-shared/lib/interfaces';
 import { Calendar, CalendarEvent, CalendarWidgetData, Participant } from 'proton-shared/lib/interfaces/calendar';
 import {
-    VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
     VcalFloatingDateTimeProperty,
@@ -156,40 +155,6 @@ export const extractVTimezone = (vcal?: VcalVcalendar): VcalVtimezoneComponent |
 
 export const extractXOrIanaComponents = (vcal?: VcalVcalendar): VcalXOrIanaComponent[] | undefined => {
     return vcal?.components?.filter(getIsXOrIanaComponent);
-};
-
-const getIsEquivalentAttendee = (newAttendee: VcalAttendeeProperty, oldAttendee: VcalAttendeeProperty) => {
-    if (newAttendee.value !== oldAttendee.value) {
-        return false;
-    }
-    if (newAttendee.parameters?.partstat !== oldAttendee.parameters?.partstat) {
-        return false;
-    }
-    if (newAttendee.parameters?.role !== oldAttendee.parameters?.role) {
-        return false;
-    }
-    return true;
-};
-
-export const getHasModifiedAttendees = (
-    newAttendees?: VcalAttendeeProperty[],
-    oldAttendees?: VcalAttendeeProperty[]
-) => {
-    if (!newAttendees) {
-        return !!oldAttendees;
-    }
-    if (!oldAttendees || oldAttendees.length !== newAttendees.length) {
-        return true;
-    }
-    const modifiedAttendees = [...oldAttendees];
-    newAttendees.forEach((attendee) => {
-        const index = modifiedAttendees.findIndex((oldAttendee) => getIsEquivalentAttendee(oldAttendee, attendee));
-        if (index === -1) {
-            return true;
-        }
-        modifiedAttendees.splice(index, 1);
-    });
-    return false;
 };
 
 export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) => {

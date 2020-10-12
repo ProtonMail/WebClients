@@ -12,7 +12,12 @@ import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from 'proton-sha
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { findAttendee, getInvitedEventWithAlarms } from 'proton-shared/lib/calendar/integration/invite';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
-import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
+import {
+    getHasModifiedAttendees,
+    getHasModifiedDateTimes,
+    getHasModifiedRrule,
+    propertyToUTCDate
+} from 'proton-shared/lib/calendar/vcalConverter';
 import {
     getAttendeeHasPartStat,
     getAttendeePartstat,
@@ -39,7 +44,6 @@ import { MessageExtended } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import {
     EventInvitation,
-    getHasModifiedAttendees,
     getInvitationHasAttendee,
     getIsInvitationOutdated,
     getSequence,
@@ -283,14 +287,21 @@ export const updateEventInvitation = async ({
             return { action: NONE };
         }
         const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
+        const hasUpdatedDateTimes = getHasModifiedDateTimes(veventIcs, veventApi);
         const hasUpdatedTitle = veventIcs.summary?.value !== veventApi.summary?.value;
         const hasUpdatedDescription = veventIcs.description?.value !== veventApi.description?.value;
         const hasUpdatedLocation = veventIcs.location?.value !== veventApi.location?.value;
-        const hasUpdatedAttendees = getHasModifiedAttendees(veventIcs.attendee, veventApi.attendee);
+        const hasUpdatedRrule = getHasModifiedRrule(veventIcs, veventApi);
+        const hasUpdatedAttendees = getHasModifiedAttendees(veventIcs, veventApi);
         const isReinvited = getEventStatus(veventApi) === CANCELLED;
         const hasBreakingChange = sequenceDiff > 0;
         const hasNonBreakingChange =
-            hasUpdatedTitle || hasUpdatedDescription || hasUpdatedLocation || hasUpdatedAttendees;
+            hasUpdatedDateTimes ||
+            hasUpdatedTitle ||
+            hasUpdatedDescription ||
+            hasUpdatedLocation ||
+            hasUpdatedRrule ||
+            hasUpdatedAttendees;
         const action = hasBreakingChange || isReinvited ? RESET_PARTSTAT : hasNonBreakingChange ? KEEP_PARTSTAT : NONE;
         if ([KEEP_PARTSTAT, RESET_PARTSTAT].includes(action)) {
             // update the api event by the ics one with the appropriate answer
