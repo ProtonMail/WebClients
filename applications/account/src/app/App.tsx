@@ -7,11 +7,16 @@ import Setup from './Setup';
 
 import './app.scss';
 
-sentry(config);
+const enhancedConfig = {
+    APP_VERSION_DISPLAY: '4.0.0-beta.2',
+    ...config,
+};
+
+sentry(enhancedConfig);
 
 const App = () => {
     return (
-        <ProtonApp config={config}>
+        <ProtonApp config={enhancedConfig}>
             <Setup />
         </ProtonApp>
     );
