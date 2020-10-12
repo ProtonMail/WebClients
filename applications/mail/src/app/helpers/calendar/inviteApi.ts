@@ -6,24 +6,25 @@ import {
     syncMultipleEvents,
     UpdateCalendarEventSyncData
 } from 'proton-shared/lib/api/calendars';
-import { withPmAttendees } from 'proton-shared/lib/calendar/attendees';
+import { getAttendeeEmail, modifyAttendeesPartstat, withPmAttendees } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
-import { getInvitedEventWithAlarms } from 'proton-shared/lib/calendar/integration/invite';
+import { findAttendee, getInvitedEventWithAlarms } from 'proton-shared/lib/calendar/integration/invite';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
 import {
     getAttendeeHasPartStat,
     getAttendeePartstat,
     getEventStatus,
+    getHasAttendee,
     getHasRecurrenceId,
     getIsAlarmComponent
 } from 'proton-shared/lib/calendar/vcalHelper';
 import { withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { omit } from 'proton-shared/lib/helpers/object';
+import { omit, pick } from 'proton-shared/lib/helpers/object';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import {
     Calendar,
@@ -31,7 +32,7 @@ import {
     CalendarWidgetData,
     SyncMultipleApiResponse
 } from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalAttendeeProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { RequireSome, SimpleMap, Unwrap } from 'proton-shared/lib/interfaces/utils';
 import { MessageExtended } from '../../models/message';
@@ -392,4 +393,140 @@ export const updateEventInvitation = async ({
         return { action: RESET_PARTSTAT };
     }
     return { action: NONE };
+};
+
+export const createCalendarEventFromInvitation = async ({
+    vevent,
+    vcalAttendee,
+    partstat,
+    api,
+    calendarData
+}: {
+    vevent: VcalVeventComponent;
+    vcalAttendee: VcalAttendeeProperty;
+    partstat: ICAL_ATTENDEE_STATUS;
+    calendarData?: CalendarWidgetData;
+    api: Api;
+}) => {
+    const { calendar, memberID, addressKeys, calendarKeys, calendarSettings } = calendarData || {};
+    if (!calendar || !memberID || !addressKeys || !calendarKeys || !calendarSettings) {
+        throw new Error('Missing data for creating calendar event from invitation');
+    }
+    // save attendee answer
+    const vcalAttendeeToSave = {
+        ...vcalAttendee,
+        parameters: {
+            ...vcalAttendee.parameters,
+            partstat
+        }
+    };
+    // add alarms to event if necessary
+    const veventToSave = getInvitedEventWithAlarms(vevent, partstat, calendarSettings);
+    const { index: attendeeIndex } = findAttendee(getAttendeeEmail(vcalAttendee), veventToSave.attendee);
+    if (!veventToSave.attendee || attendeeIndex === undefined || attendeeIndex === -1) {
+        throw new Error('Missing data for creating calendar event from invitation');
+    }
+    veventToSave.attendee[attendeeIndex] = vcalAttendeeToSave;
+    const veventToSaveWithPmAttendees = await withPmAttendees(veventToSave, api);
+    // create calendar event
+    const data = await createCalendarEvent({
+        eventComponent: veventToSaveWithPmAttendees,
+        isSwitchCalendar: false,
+        ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys }))
+    });
+    const Events: CreateCalendarEventSyncData[] = [{ Overwrite: 1, Event: { Permissions: 3, ...data } }];
+    const {
+        Responses: [
+            {
+                Response: { Code, Event }
+            }
+        ]
+    } = await api<SyncMultipleApiResponse>({
+        ...syncMultipleEvents(calendar.ID, { MemberID: memberID, Events, IsInvite: 1 }),
+        silence: true
+    });
+    if (Code !== API_CODES.SINGLE_SUCCESS || !Event) {
+        throw new Error('Creating calendar event from invitation failed');
+    }
+    return {
+        savedEvent: Event,
+        savedVevent: veventToSaveWithPmAttendees,
+        savedVcalAttendee: vcalAttendeeToSave
+    };
+};
+
+export const updateCalendarEventFromInvitation = async ({
+    veventApi,
+    calendarEvent,
+    veventIcs,
+    vcalAttendee,
+    partstat,
+    oldPartstat,
+    api,
+    calendarData
+}: {
+    veventApi: VcalVeventComponent;
+    calendarEvent: CalendarEvent;
+    veventIcs?: VcalVeventComponent;
+    vcalAttendee: VcalAttendeeProperty;
+    partstat: ICAL_ATTENDEE_STATUS;
+    oldPartstat?: ICAL_ATTENDEE_STATUS;
+    calendarData?: CalendarWidgetData;
+    api: Api;
+}) => {
+    const { calendar, memberID, addressKeys, calendarKeys, calendarSettings } = calendarData || {};
+    if (
+        !getHasAttendee(veventApi) ||
+        (veventIcs && !getHasAttendee(veventIcs)) ||
+        !calendar ||
+        !memberID ||
+        !addressKeys ||
+        !calendarKeys ||
+        !calendarSettings
+    ) {
+        throw new Error('Missing data for updating calendar event from invitation');
+    }
+    const emailAddress = getAttendeeEmail(vcalAttendee);
+    const veventToUpdate = veventIcs ? { ...veventIcs, ...pick(veventApi, ['components']) } : { ...veventApi };
+    const updatedVevent = {
+        ...veventToUpdate,
+        attendee: modifyAttendeesPartstat(veventToUpdate.attendee, { [emailAddress]: partstat })
+    };
+    // add alarms to event if necessary
+    const veventToSave = getInvitedEventWithAlarms(updatedVevent, partstat, calendarSettings, oldPartstat);
+    const veventWithPmAttendees = await withPmAttendees(veventToSave, api);
+    const vcalAttendeeToSave = {
+        ...vcalAttendee,
+        parameters: { ...vcalAttendee.parameters, partstat }
+    };
+    // update calendar event
+    const creationKeys = await getCreationKeys({
+        Event: calendarEvent,
+        addressKeys,
+        newCalendarKeys: calendarKeys
+    });
+    const data = await createCalendarEvent({
+        eventComponent: veventWithPmAttendees,
+        isSwitchCalendar: false,
+        ...creationKeys
+    });
+    const Events: UpdateCalendarEventSyncData[] = [{ Event: { Permissions: 3, ...data }, ID: calendarEvent.ID }];
+    const {
+        Responses: [
+            {
+                Response: { Code, Event }
+            }
+        ]
+    } = await api<SyncMultipleApiResponse>({
+        ...syncMultipleEvents(calendar.ID, { MemberID: memberID, Events }),
+        silence: true
+    });
+    if (Code !== API_CODES.SINGLE_SUCCESS || !Event) {
+        throw new Error('Updating calendar event from invitation failed');
+    }
+    return {
+        savedEvent: Event,
+        savedVevent: veventToSave,
+        savedVcalAttendee: vcalAttendeeToSave
+    };
 };
