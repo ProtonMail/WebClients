@@ -70,6 +70,7 @@ const AttachmentsList = ({ message, pendingUploads = emptyUploads, onRemoveAttac
                     {attachments.map((attachment) => (
                         <AttachmentItemNormal
                             key={attachment.ID}
+                            message={message}
                             attachment={attachment}
                             onRemove={onRemoveAttachment(attachment)}
                         />

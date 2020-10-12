@@ -5,15 +5,18 @@ import { Icon, classnames } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { PendingUpload } from '../../../hooks/useAttachments';
+import { useDownload } from '../../../hooks/useDownload';
+import { MessageExtended } from '../../../models/message';
 
 interface Props {
     name: string;
     size?: number;
     progression?: number;
+    onDownload?: () => void;
     onRemove: () => void;
 }
 
-const AttachmentItem = ({ name, size = 0, progression = 0, onRemove }: Props) => {
+const AttachmentItem = ({ name, size = 0, progression = 0, onDownload, onRemove }: Props) => {
     const [removed, setRemoved] = useState(false);
 
     const blue = '#657ee4';
@@ -38,16 +41,20 @@ const AttachmentItem = ({ name, size = 0, progression = 0, onRemove }: Props) =>
                     progressionHappening && 'composer-attachments-item--uploadInProgress'
                 ])}
             >
-                <span className="p0-5 border-right flex flex-item-noshrink composer-attachments-item-typeIcon">
+                <button
+                    className="p0-5 border-right flex flex-item-noshrink composer-attachments-item-typeIcon"
+                    onClick={onDownload}
+                >
                     <Icon name="attach" size={12} className="mauto" />
-                </span>
-                <span
+                </button>
+                <button
                     className="flex-item-fluid mtauto mbauto flex flex-items-center flex-nowrap pl0-5 pr0-5"
                     title={title}
+                    onClick={onDownload}
                 >
                     <span className="ellipsis pr0-25">{name}</span>
                     <span className="message-attachmentSize flex-item-noshrink">{humanAttachmentSize}</span>
-                </span>
+                </button>
                 <button
                     type="button"
                     className="inline-flex p0-5 no-pointer-events-children h100 flex-item-noshrink border-left composer-attachments-item-deleteButton"
@@ -66,13 +73,27 @@ const AttachmentItem = ({ name, size = 0, progression = 0, onRemove }: Props) =>
 };
 
 interface PropsNormal {
+    message: MessageExtended;
     attachment: Attachment;
     onRemove: () => void;
 }
 
-export const AttachmentItemNormal = ({ attachment, onRemove }: PropsNormal) => (
-    <AttachmentItem name={attachment.Name || ''} size={attachment.Size} onRemove={onRemove} />
-);
+export const AttachmentItemNormal = ({ message, attachment, onRemove }: PropsNormal) => {
+    const download = useDownload();
+
+    const handleDownload = () => {
+        download(message, attachment);
+    };
+
+    return (
+        <AttachmentItem
+            name={attachment.Name || ''}
+            size={attachment.Size}
+            onDownload={handleDownload}
+            onRemove={onRemove}
+        />
+    );
+};
 
 interface PropsPending {
     pendingUpload: PendingUpload;
