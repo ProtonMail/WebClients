@@ -129,6 +129,9 @@ $item-container-padding-left-right: em(12) !default;
 			padding: em(0) em(12);
 		}
 	}
+	.item-container-row {
+		height: 4rem;
+	}
 
 	.item-firstline,
 	.item-secondline {
