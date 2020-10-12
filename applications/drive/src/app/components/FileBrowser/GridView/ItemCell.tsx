@@ -1,5 +1,6 @@
 import React from 'react';
-import { FileIcon, Checkbox, classnames, DragMoveContainer } from 'react-components';
+import { FileIcon, Checkbox, classnames, DragMoveContainer, Icon, Tooltip } from 'react-components';
+import { c } from 'ttag';
 import { LinkType } from '../../../interfaces/link';
 import { ItemProps } from '../interfaces';
 import ItemContextMenu from '../ItemContextMenu';
@@ -76,7 +77,7 @@ function ItemCell({
                 ])}
                 {...itemHandlers}
             >
-                <div className="flex">
+                <div className="flex flex-items-center">
                     <div
                         role="presentation"
                         className="pl0-5 pt0-5 pb0-5 pr0-25 flex relative"
@@ -89,6 +90,12 @@ function ItemCell({
                             {...checkboxHandlers}
                         />
                     </div>
+
+                    {item.SharedURLShareID && (
+                        <Tooltip title={c('Tooltip').t`Shared`} className="flex">
+                            <Icon className="color-primary" name="link" />
+                        </Tooltip>
+                    )}
                 </div>
                 <div className="p0-5 flex flex-item-fluid flex-column">
                     <div className="flex flex-item-fluid flex-justify-center flex-items-center">
