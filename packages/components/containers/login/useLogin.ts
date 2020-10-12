@@ -53,13 +53,13 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
      * 1) The admin panel
      * 2) Users who have no keys but are in 2-password mode
      */
-    const finalizeLogin = async (keyPassword?: string) => {
+    const finalizeLogin = async (keyPassword?: string, maybeUser?: tsUser) => {
         const cache = cacheRef.current;
         if (!cache || cache.authResult === undefined || cache.authVersion === undefined) {
             throw new Error('Invalid state');
         }
         cacheRef.current = undefined;
-        const { authVersion, authResult, userSaltResult } = cache;
+        const { authVersion, authResult } = cache;
 
         const { UID, AccessToken } = authResult;
         const { password } = state;
@@ -73,9 +73,7 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
             });
         }
 
-        const User = userSaltResult
-            ? userSaltResult[0]
-            : await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+        const User: tsUser = maybeUser || (await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User));
 
         const validatedSession = await maybeResumeSessionByUser(api, User);
         if (validatedSession) {
@@ -108,7 +106,7 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
             throw error;
         }
 
-        await finalizeLogin(result.keyPassword);
+        await finalizeLogin(result.keyPassword, User);
     };
 
     /**
@@ -127,7 +125,8 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
             username: state.username,
             password: newPassword,
         });
-        await finalizeLogin(keyPassword);
+        // Undefined user to force refresh to get keys that were just setup
+        await finalizeLogin(keyPassword, undefined);
     };
 
     const next = async (previousForm: FORM) => {
@@ -172,7 +171,7 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
                 }
                 return handleSetupPassword(state.password);
             }
-            return finalizeLogin();
+            return finalizeLogin(undefined, User);
         }
 
         if (hasUnlock) {
