@@ -21,7 +21,12 @@ const PublicDriveLinkContainer = () => {
     );
 };
 
-sentry(config);
+const enhancedConfig = {
+    APP_VERSION_DISPLAY: '4.0.0-beta.1',
+    ...config,
+};
+
+sentry(enhancedConfig);
 
 const App = () => {
     const [hasInitialAuth] = useState(() => {
@@ -29,7 +34,7 @@ const App = () => {
     });
 
     return (
-        <ProtonApp config={config} hasInitialAuth={hasInitialAuth}>
+        <ProtonApp config={enhancedConfig} hasInitialAuth={hasInitialAuth}>
             <Switch>
                 <Route path="/urls">
                     <StandardPublicApp locales={locales}>
