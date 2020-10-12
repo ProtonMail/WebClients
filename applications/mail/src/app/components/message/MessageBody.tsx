@@ -8,6 +8,7 @@ import { MessageExtended } from '../../models/message';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 
 import './MessageBody.scss';
+import { htmlEntities } from '../../helpers/string';
 
 interface Props {
     messageLoaded: boolean;
@@ -35,7 +36,7 @@ const MessageBody = ({
     const [expanded, setExpanded] = useState(false);
 
     const [content, blockquote] = useMemo(
-        () => (plain ? [message.plainText as string, ''] : locateBlockquote(message.document)),
+        () => (plain ? [htmlEntities(message.plainText as string), ''] : locateBlockquote(message.document)),
         [message.document?.innerHTML, message.plainText, plain]
     );
 
