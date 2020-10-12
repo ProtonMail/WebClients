@@ -82,7 +82,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                     <strong className="bl mb0-5">{c('Title').t`Default language`}</strong>
                     <ul className="unstyled mt0 mb0">
                         <li className="flex flex-nowrap flex-items-center">
-                            <Icon name="domains" className="mr0-5" />
+                            <Icon name="globe" className="mr0-5" />
                             {languageText}
                         </li>
                     </ul>
