@@ -9,20 +9,6 @@ import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { AppLink, Icon, Loader } from '../../components';
 import { useConfig } from '../../hooks';
 
-const flags = require.context('design-system/assets/img/shared/flags/4x3', true, /.svg$/);
-const flagsMap = flags.keys().reduce<{ [key: string]: () => { default: any } }>((acc, key) => {
-    acc[key] = () => flags(key);
-    return acc;
-}, {});
-
-const getFlagSvg = (abbreviation: string) => {
-    const key = `./${abbreviation.toLowerCase()}.svg`;
-    if (!flagsMap[key]) {
-        return;
-    }
-    return flagsMap[key]().default;
-};
-
 interface Props {
     user: UserModel;
     userSettings: UserSettings;
@@ -33,7 +19,6 @@ interface Props {
 const SummarySection = ({ user, userSettings, organization, subscription }: Props) => {
     const { APP_NAME, LOCALES = {} } = useConfig();
     const { Locale } = userSettings;
-    const abbreviation = Locale.slice(-2);
     const { Email, DisplayName, Name, canPay, isAdmin } = user;
     const { UsedMembers = 0, UsedDomains = 0, MaxMembers = 0, MaxDomains = 0 } = organization || {};
     const initials = getInitial(DisplayName || Name || Email || '');
@@ -54,7 +39,6 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
     };
 
     const languageText = LOCALES[Locale];
-    const flagSvg = getFlagSvg(abbreviation);
 
     return (
         <div className="bordered-container bg-white-dm tiny-shadow-container p2">
@@ -93,12 +77,12 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                     )}
                 </div>
             ) : null}
-            {languageText && flagSvg ? (
+            {languageText ? (
                 <div className="mb1">
                     <strong className="bl mb0-5">{c('Title').t`Default language`}</strong>
                     <ul className="unstyled mt0 mb0">
                         <li className="flex flex-nowrap flex-items-center">
-                            <img width={20} className="mr0-5" src={flagSvg} alt={languageText} />
+                            <Icon name="domains" className="mr0-5" />
                             {languageText}
                         </li>
                     </ul>
