@@ -19,6 +19,7 @@ interface Props {
     password: string;
     token: string;
     includePassword: boolean;
+    customPassword: boolean;
     modalTitleID: string;
     onClose?: () => void;
     onEditPasswordClick: () => void;
@@ -31,6 +32,7 @@ function GeneratedLinkState({
     itemName,
     password,
     token,
+    customPassword,
     includePassword,
     onEditPasswordClick,
     onIncludePasswordToggle,
@@ -81,7 +83,7 @@ function GeneratedLinkState({
                     <Alert>
                         {c('Info').t`A secure password has been generated for you.`}
                         <br />
-                        {c('Info').t`Use it in order to decrypt a file after downloading it.`}
+                        {c('Info').t`Use it to download a file.`}
                     </Alert>
                     <Row>
                         <Label htmlFor="edit-password">
@@ -91,9 +93,12 @@ function GeneratedLinkState({
                             <div className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 pm-field--accented ellipsis">
                                 {password}
                             </div>
-                            <Checkbox className="mb0-5" checked={includePassword} onChange={onIncludePasswordToggle}>{c(
-                                'Label'
-                            ).t`Include password in the link`}</Checkbox>
+                            <Checkbox
+                                className="mb0-5"
+                                disabled={customPassword}
+                                checked={includePassword}
+                                onChange={onIncludePasswordToggle}
+                            >{c('Label').t`Include password in the link`}</Checkbox>
                         </div>
                         <div className="flex flex-justify-end ml0-5 onmobile-ml0">
                             <div>

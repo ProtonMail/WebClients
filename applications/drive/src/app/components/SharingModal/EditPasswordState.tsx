@@ -58,7 +58,7 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
                 }}
             >
                 <InnerModal>
-                    <Alert>{c('Info').t`In order to download the file please type a new password below.`}</Alert>
+                    <Alert>{c('Info').t`Type a new password below.`}</Alert>
 
                     <Row>
                         <Label htmlFor="shared-url-password">{c('Label').t`New password`}</Label>
@@ -77,7 +77,7 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
                 </InnerModal>
                 <FooterModal>
                     <PrimaryButton disabled={isSaveDisabled} type="submit" loading={saving}>{c('Action')
-                        .t`Save`}</PrimaryButton>
+                        .t`Update`}</PrimaryButton>
                 </FooterModal>
             </form>
         </>

@@ -98,3 +98,7 @@ export interface SharedURLSessionKeyPayload {
     sharePasswordSalt: string;
     shareSessionKey: SessionKey;
 }
+
+export enum SharedURLFlags {
+    CustomPassword = 1,
+}

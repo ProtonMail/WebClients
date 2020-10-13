@@ -4,7 +4,7 @@ import { DialogModal, useNotifications } from 'react-components';
 import useDrive from '../../hooks/drive/useDrive';
 import useEvents from '../../hooks/drive/useEvents';
 import useSharing from '../../hooks/drive/useSharing';
-import { SharedURLSessionKeyPayload, ShareURL } from '../../interfaces/sharing';
+import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL } from '../../interfaces/sharing';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 import EditPasswordState from './EditPasswordState';
 import ErrorState from './ErrorState';
@@ -26,7 +26,7 @@ enum SharingModalState {
 
 function SharingModal({ modalTitleID = 'onboardingModal', onClose, shareId, item, ...rest }: Props) {
     const [modalState, setModalState] = useState(SharingModalState.Loading);
-    const [includePassword, setIncludePassword] = useState(true);
+    const [includePassword, setIncludePassword] = useState(false);
     const [shareUrlInfo, setShareUrlInfo] = useState<{ ShareURL: ShareURL; keyInfo: SharedURLSessionKeyPayload }>();
     const [savingPassword, setSavingPassword] = useState(false);
     const [error, setError] = useState(false);
@@ -46,6 +46,7 @@ function SharingModal({ modalTitleID = 'onboardingModal', onClose, shareId, item
                       await events.call(shareId);
                       return result;
                   });
+            setIncludePassword(!(shareUrlInfo.ShareURL.Flags & SharedURLFlags.CustomPassword));
             setShareUrlInfo(shareUrlInfo);
         };
 
@@ -117,6 +118,7 @@ function SharingModal({ modalTitleID = 'onboardingModal', onClose, shareId, item
                 <GeneratedLinkState
                     modalTitleID={modalTitleID}
                     includePassword={includePassword}
+                    customPassword={!!(shareUrlInfo.ShareURL.Flags & SharedURLFlags.CustomPassword)}
                     itemName={item.Name}
                     onClose={onClose}
                     onEditPasswordClick={() => setModalState(SharingModalState.EditPassword)}
