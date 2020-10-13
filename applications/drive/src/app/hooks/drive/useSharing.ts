@@ -10,7 +10,7 @@ import { queryCreateSharedLink, querySharedURLs, queryUpdateSharedLink } from '.
 import useDrive from './useDrive';
 import useDriveCrypto from './useDriveCrypto';
 import { DEFAULT_SHARE_EXPIRATION_DAYS, DEFAULT_SHARE_MAX_ACCESSES } from '../../constants';
-import { SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
+import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import { validateSharedURLPassword, ValidationError } from '../../utils/validation';
 
@@ -147,21 +147,14 @@ function useSharing() {
         ]);
 
         const fieldsToUpdate: Partial<UpdateSharedURL> = {
+            Flags: SharedURLFlags.CustomPassword,
             Password,
             SharePassphraseKeyPacket,
             SRPVerifier,
             SRPModulusID,
             UrlPasswordSalt,
         };
-        await api(
-            queryUpdateSharedLink(shareId, token, {
-                Password,
-                SharePassphraseKeyPacket,
-                SRPVerifier,
-                SRPModulusID,
-                UrlPasswordSalt,
-            })
-        );
+        await api(queryUpdateSharedLink(shareId, token, fieldsToUpdate));
 
         return {
             ...fieldsToUpdate,
