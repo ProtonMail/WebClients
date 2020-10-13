@@ -1,3 +1,4 @@
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { useMemo } from 'react';
 import { getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
@@ -26,6 +27,7 @@ const useReadEvent = (
     tzid: string,
     author?: string
 ): EventModelReadView => {
+    const invitationsEnabled = FEATURE_FLAGS.includes('calendar-invitations');
     return useMemo(() => {
         const [veventComponent = DEFAULT_VEVENT, alarmMap = {}]: [VcalVeventComponent, EventPersonalMap] = value || [
             DEFAULT_VEVENT,
@@ -42,7 +44,7 @@ const useReadEvent = (
         return {
             ...model,
             isAllDay,
-            isInvitation: getIsInvitation(model, author),
+            isInvitation: invitationsEnabled ? getIsInvitation(model, author) : false,
             notifications,
         };
     }, [value, tzid]);
