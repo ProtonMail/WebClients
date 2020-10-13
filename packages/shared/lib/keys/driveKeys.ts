@@ -8,6 +8,7 @@ import {
     arrayToHexString,
     SHA256,
     OpenPGPKey,
+    SessionKey,
 } from 'pmcrypto';
 import { openpgp } from 'pmcrypto/lib/openpgp';
 import { ReadableStream as PolyfillReadableStream } from 'web-streams-polyfill';
@@ -107,7 +108,8 @@ export const generateNodeHashKey = async (publicKey: OpenPGPKey) => {
 export const encryptPassphrase = async (
     parentKey: OpenPGPKey,
     addressKey: OpenPGPKey = parentKey,
-    rawPassphrase = generatePassphrase()
+    rawPassphrase = generatePassphrase(),
+    passphraseSessionKey?: SessionKey
 ) => {
     const { data: NodePassphrase, signature: NodePassphraseSignature, sessionKey } = await encryptMessage({
         data: rawPassphrase,
@@ -115,6 +117,7 @@ export const encryptPassphrase = async (
         publicKeys: parentKey.toPublic(),
         detached: true,
         returnSessionKey: true,
+        ...(passphraseSessionKey && { sessionKey: passphraseSessionKey }),
     });
 
     return { NodePassphrase, NodePassphraseSignature, sessionKey };
