@@ -100,7 +100,7 @@ const ItemRow = ({
                     <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
                     <NameCell name={item.Name} />
                     {item.SharedURLShareID && (
-                        <Tooltip title={c('Tooltip').t`Shared`} className="ml1">
+                        <Tooltip title={c('Tooltip').t`Shared`} className="ml1 flex flex-item-noshrink">
                             <Icon className="color-primary" name="link" />
                         </Tooltip>
                     )}

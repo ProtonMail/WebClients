@@ -92,7 +92,7 @@ function ItemCell({
                     </div>
 
                     {item.SharedURLShareID && (
-                        <Tooltip title={c('Tooltip').t`Shared`} className="flex">
+                        <Tooltip title={c('Tooltip').t`Shared`} className="flex flex-item-noshrink">
                             <Icon className="color-primary" name="link" />
                         </Tooltip>
                     )}
