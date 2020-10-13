@@ -194,7 +194,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }:
 
         return (
             <Layout
-                title={c('Title').t`Set password`}
+                title={c('Title').t`Set new password`}
                 subtitle={c('Info')
                     .t`This will replace your temporary password. You will use it to access your Proton account in the future.`}
                 left={<BackButton onClick={handleCancel} />}
