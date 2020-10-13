@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import {
     generateUID,
     usePopperAnchor,
@@ -20,6 +21,7 @@ interface Props {
 }
 
 const ActionsDropdown = ({ shareId }: Props) => {
+    const includeDriveSharing = FEATURE_FLAGS.includes('drive-sharing');
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { openDetails, openMoveToFolder, openMoveToTrash, openRename, openLinkSharing } = useToolbarActions();
@@ -55,7 +57,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
             action: () => openMoveToFolder(selectedItems),
         },
         {
-            hidden: isMultiSelect || hasFoldersSelected,
+            hidden: !includeDriveSharing || isMultiSelect || hasFoldersSelected,
             name: hasSharedLink ? c('Action').t`Manage secure link` : c('Action').t`Get secure link`,
             icon: 'link',
             testId: 'context-menu-share',

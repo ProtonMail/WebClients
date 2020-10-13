@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
+import { getDevice } from 'proton-shared/lib/helpers/browser';
 import { ToolbarSeparator, Toolbar, isPreviewAvailable, useActiveBreakpoint } from 'react-components';
 
-import { getDevice } from 'proton-shared/lib/helpers/browser';
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveContent } from './DriveContentProvider';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
@@ -29,6 +30,7 @@ interface Props {
 }
 
 const DriveToolbar = ({ activeFolder }: Props) => {
+    const includeDriveSharing = FEATURE_FLAGS.includes('drive-sharing');
     const { fileBrowserControls } = useDriveContent();
     const { getLinkMeta } = useDrive();
     const cache = useDriveCache();
@@ -83,7 +85,9 @@ const DriveToolbar = ({ activeFolder }: Props) => {
                         <ToolbarSeparator />
                         <MoveToTrashButton />
                         <MoveToFolderButton />
-                        <GetSecureLinkButton shareId={shareId} disabled={isMultiSelect || hasFoldersSelected} />
+                        {includeDriveSharing && (
+                            <GetSecureLinkButton shareId={shareId} disabled={isMultiSelect || hasFoldersSelected} />
+                        )}
                     </>
                 )}
             </>
