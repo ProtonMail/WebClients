@@ -91,7 +91,6 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
                 User,
                 LocalID,
                 UID,
-                isMember: true,
             });
             done(LocalID);
             return;

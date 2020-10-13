@@ -161,7 +161,6 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 api,
                 keyPassword,
                 User,
-                isMember: User.isMember,
                 UID: authentication.getUID(),
                 LocalID: localID,
             });
