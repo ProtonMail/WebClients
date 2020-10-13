@@ -146,6 +146,10 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     };
 
     const mutatePassword = async (keyPassword: string) => {
+        // Don't mutate the password when signed in as sub-user
+        if (isSubUser) {
+            return;
+        }
         const localID = authentication.getLocalID?.();
         if (!isSSOMode || localID === undefined) {
             authentication.setPassword(keyPassword);
