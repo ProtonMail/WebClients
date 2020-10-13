@@ -1,4 +1,5 @@
-import { decryptPrivateKey, OpenPGPKey, SessionKey } from 'pmcrypto';
+import { decryptPrivateKey, OpenPGPKey, SessionKey, encryptMessage } from 'pmcrypto';
+
 import { lookup } from 'mime-types';
 import { Api } from 'proton-shared/lib/interfaces';
 import {
@@ -6,9 +7,9 @@ import {
     generateLookupHash,
     encryptUnsigned,
     generateNodeKeys,
-    encryptPassphrase,
     generateDriveBootstrap,
     generateNodeHashKey,
+    encryptPassphrase,
 } from 'proton-shared/lib/keys/driveKeys';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
@@ -447,6 +448,7 @@ export const fetchAllFolderPagesAsync = async (
 export const renameLinkAsync = async (
     api: Api,
     getLinkKeys: (shareId: string, linkId: string, config?: FetchLinkConfig) => Promise<LinkKeys>,
+    getLinkMeta: (shareId: string, linkId: string, config?: FetchLinkConfig) => Promise<LinkMeta>,
     shareId: string,
     linkId: string,
     parentLinkID: string,
@@ -468,11 +470,17 @@ export const renameLinkAsync = async (
         throw new Error('Missing hash key on folder link');
     }
 
-    const [Hash, encryptedName] = await Promise.all([
+    const meta = await getLinkMeta(shareId, linkId);
+    const sessionKey = await getDecryptedSessionKey({
+        data: meta.EncryptedName,
+        privateKeys: parentKeys.privateKey,
+    });
+
+    const [Hash, { data: encryptedName }] = await Promise.all([
         generateLookupHash(lowerCaseName, parentKeys.hashKey),
-        encryptUnsigned({
-            message: newName,
-            publicKey: parentKeys.privateKey.toPublic(),
+        encryptMessage({
+            data: newName,
+            sessionKey,
         }),
     ]);
 
@@ -567,14 +575,21 @@ export const moveLinkAsync = async (
 
     const lowerCaseName = meta.Name.toLowerCase();
 
-    const [Hash, { NodePassphrase, NodePassphraseSignature }, encryptedName] = await Promise.all([
+    const currentParent = await getLinkKeys(shareId, meta.ParentLinkID);
+    const sessionKeyName = await getDecryptedSessionKey({
+        data: meta.EncryptedName,
+        privateKeys: currentParent.privateKey,
+    });
+
+    const [Hash, { NodePassphrase, NodePassphraseSignature }, { data: encryptedName }] = await Promise.all([
         generateLookupHash(lowerCaseName, parentKeys.hashKey),
-        decryptLinkPassphrase(shareId, meta).then(({ decryptedPassphrase }) =>
-            encryptPassphrase(parentKeys.privateKey, addressKey, decryptedPassphrase)
+        decryptLinkPassphrase(shareId, meta).then(({ decryptedPassphrase, sessionKey }) =>
+            encryptPassphrase(parentKeys.privateKey, addressKey, decryptedPassphrase, sessionKey)
         ),
-        encryptUnsigned({
-            message: meta.Name,
-            publicKey: parentKeys.privateKey.toPublic(),
+        encryptMessage({
+            data: meta.Name,
+            sessionKey: sessionKeyName,
+            publicKeys: [parentKeys.privateKey.toPublic()],
         }),
     ]);
 

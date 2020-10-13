@@ -159,7 +159,7 @@ function useDrive() {
         newName: string,
         type: LinkType
     ) => {
-        await renameLinkAsync(debouncedRequest, getLinkKeys, shareId, linkId, parentLinkID, newName, type);
+        await renameLinkAsync(debouncedRequest, getLinkKeys, getLinkMeta, shareId, linkId, parentLinkID, newName, type);
     };
 
     const createNewFolder = queuedFunction(

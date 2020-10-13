@@ -24,6 +24,7 @@ function usePublicSharing() {
         };
 
         const { Modulus, ServerEphemeral, UrlPasswordSalt, SRPSession, Version } = await initHandshake(token);
+
         const { Payload } = await srpAuth<{ Code: number; Payload: SharedLinkPayload }>({
             api,
             credentials: { password },
@@ -52,6 +53,7 @@ function usePublicSharing() {
             message: passphraseAsMessage,
             passwords: [computedPassword],
         });
+
         const shareKey = await decryptPrivateKey(Payload.ShareKey, sharePassphrase.data);
         const [Name, NodePassphrase] = await Promise.all([
             decryptUnsigned({ armoredMessage: Payload.Name, privateKey: shareKey }),
