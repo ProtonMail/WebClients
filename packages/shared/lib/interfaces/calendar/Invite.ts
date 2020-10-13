@@ -15,6 +15,7 @@ export interface PartstatActions {
 export interface CalendarWidgetData {
     calendar: Calendar;
     isCalendarDisabled: boolean;
+    calendarNeedsUserAction: boolean;
     memberID?: string;
     addressKeys?: CachedKey[];
     calendarKeys?: CachedKey[];
