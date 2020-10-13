@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-
 import { c } from 'ttag';
 
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { ContextMenu, DropdownMenuButton, Icon, isPreviewAvailable } from 'react-components';
 
 import { FileBrowserItem } from './interfaces';
@@ -37,6 +37,7 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
         openLinkSharing,
     } = useToolbarActions();
 
+    const includeDriveSharing = FEATURE_FLAGS.includes('drive-sharing');
     const isMultiSelect = selectedItems.length > 1;
     const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
     const hasSharedLink = selectedItems[0]?.SharedURLShareID;
@@ -85,7 +86,7 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
             action: () => openMoveToFolder(selectedItems),
         },
         {
-            hidden: isMultiSelect || hasFoldersSelected,
+            hidden: !includeDriveSharing || isMultiSelect || hasFoldersSelected,
             name: hasSharedLink ? c('Action').t`Manage secure link` : c('Action').t`Get secure link`,
             icon: 'link',
             testId: 'context-menu-share',

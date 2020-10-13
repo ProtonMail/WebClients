@@ -11,6 +11,7 @@ import {
     Tooltip,
     Icon,
 } from 'react-components';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { isEquivalent, pick } from 'proton-shared/lib/helpers/object';
 import { shallowEqual } from 'proton-shared/lib/helpers/array';
 import { c } from 'ttag';
@@ -62,6 +63,7 @@ const ItemRow = ({
     });
 
     const { isDesktop } = useActiveBreakpoint();
+    const includeDriveSharing = FEATURE_FLAGS.includes('drive-sharing');
 
     return (
         <>
@@ -99,7 +101,7 @@ const ItemRow = ({
                 <TableCell className="m0 flex flex-items-center flex-nowrap flex-item-fluid">
                     <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
                     <NameCell name={item.Name} />
-                    {item.SharedURLShareID && (
+                    {includeDriveSharing && item.SharedURLShareID && (
                         <Tooltip title={c('Tooltip').t`Shared`} className="ml1 flex flex-item-noshrink">
                             <Icon className="color-primary" name="link" />
                         </Tooltip>

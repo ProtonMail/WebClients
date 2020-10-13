@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { ProtonApp, StandardPublicApp, StandardSetup, ModalsChildren } from 'react-components';
 import locales from 'proton-shared/lib/i18n/locales';
 import sentry from 'proton-shared/lib/helpers/sentry';
@@ -29,6 +30,7 @@ const enhancedConfig = {
 sentry(enhancedConfig);
 
 const App = () => {
+    const includeDriveSharing = FEATURE_FLAGS.includes('drive-sharing');
     const [hasInitialAuth] = useState(() => {
         return window.location.pathname.startsWith('/urls');
     });
@@ -36,11 +38,13 @@ const App = () => {
     return (
         <ProtonApp config={enhancedConfig} hasInitialAuth={hasInitialAuth}>
             <Switch>
-                <Route path="/urls">
-                    <StandardPublicApp locales={locales}>
-                        <PublicDriveLinkContainer />
-                    </StandardPublicApp>
-                </Route>
+                {includeDriveSharing && (
+                    <Route path="/urls">
+                        <StandardPublicApp locales={locales}>
+                            <PublicDriveLinkContainer />
+                        </StandardPublicApp>
+                    </Route>
+                )}
                 <Route path="*">
                     <StandardSetup PrivateApp={PrivateApp} locales={locales} />
                 </Route>
