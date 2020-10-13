@@ -89,21 +89,25 @@ interface PersistSessionWithPasswordArgs {
     User: tsUser;
     UID: string;
     LocalID: number;
-    isMember?: boolean;
 }
+
 export const persistSessionWithPassword = async ({
     api,
     keyPassword,
     User,
     UID,
     LocalID,
-    isMember,
 }: PersistSessionWithPasswordArgs) => {
     const rawKey = getRandomValues(new Uint8Array(32));
     const key = await getKey(rawKey);
     const base64StringKey = uint8ArrayToBase64String(rawKey);
     await api<LocalKeyResponse>(setLocalKey(base64StringKey));
-    await setPersistedSessionWithBlob(LocalID, key, { UID, UserID: User.ID, keyPassword, isMember });
+    await setPersistedSessionWithBlob(LocalID, key, {
+        UID,
+        UserID: User.ID,
+        keyPassword,
+        isSubUser: !!User.OrganizationPrivateKey,
+    });
 };
 
 interface PersistLoginArgs {
@@ -115,6 +119,7 @@ interface PersistLoginArgs {
     UID: string;
     LocalID: number;
 }
+
 export const persistSession = async ({
     api,
     keyPassword,
@@ -137,8 +142,12 @@ export const persistSession = async ({
     await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24) }));
 };
 
-export const getActiveSessionByUserID = (UserID: string) => {
-    return getPersistedSessions().find((persistedSession) => persistedSession.UserID === UserID);
+export const getActiveSessionByUserID = (UserID: string, isSubUser: boolean) => {
+    return getPersistedSessions().find((persistedSession) => {
+        const isSameUserID = persistedSession.UserID === UserID;
+        const isSameSubUser = persistedSession.isSubUser === isSubUser;
+        return isSameUserID && isSameSubUser;
+    });
 };
 
 export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionResponse[] };
@@ -173,8 +182,12 @@ export const getActiveSessions = async (api: Api): Promise<GetActiveSessionsResu
     };
 };
 
-export const maybeResumeSessionByUser = async (api: Api, User: tsUser) => {
-    const maybePersistedSession = getActiveSessionByUserID(User.ID);
+export const maybeResumeSessionByUser = async (
+    api: Api,
+    User: tsUser,
+    isSubUser: boolean = !!User.OrganizationPrivateKey
+) => {
+    const maybePersistedSession = getActiveSessionByUserID(User.ID, isSubUser);
     if (!maybePersistedSession) {
         return;
     }
