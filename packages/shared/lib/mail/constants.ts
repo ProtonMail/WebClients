@@ -16,8 +16,8 @@ export const MESSAGE_FLAGS = {
     FLAG_PUBLIC_KEY: 131072, // whether to attach the public key
     FLAG_SIGN: 262144, // whether to sign the message
     FLAG_HAM_MANUAL: 27, // The message is in spam and the user moves it to a new location that is not spam or trash (e.g. inbox or archive).
-    FLAG_PHISHING_AUTO: 1 << 30, // Incoming mail is marked as phishing by anti-spam filters.
-    FLAG_DMARC_FAIL: 1 << 26, // Incoming mail failed dmarc authentication.
+    FLAG_PHISHING_AUTO: 30, // Incoming mail is marked as phishing by anti-spam filters.
+    FLAG_DMARC_FAIL: 26, // Incoming mail failed dmarc authentication.
 };
 
 export enum VERIFICATION_STATUS {
