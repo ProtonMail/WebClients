@@ -24,7 +24,7 @@ enum SharingModalState {
     EditPassword,
 }
 
-function SharingModal({ modalTitleID = 'onboardingModal', onClose, shareId, item, ...rest }: Props) {
+function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, ...rest }: Props) {
     const [modalState, setModalState] = useState(SharingModalState.Loading);
     const [includePassword, setIncludePassword] = useState(false);
     const [shareUrlInfo, setShareUrlInfo] = useState<{ ShareURL: ShareURL; keyInfo: SharedURLSessionKeyPayload }>();
