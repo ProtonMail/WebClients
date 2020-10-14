@@ -132,11 +132,11 @@ export const createCalendarEvent = async ({
 }: CreateCalendarEventArguments) => {
     const { sharedPart, calendarPart, personalPart, attendeesPart } = getParts(eventComponent);
 
-    // If there is no encrypted calendar part, a calendar session key does not need to be created.
-    const shouldCreateCalendarKey = !!calendarPart[ENCRYPTED_AND_SIGNED];
+    // If there is no encrypted calendar part, a calendar session key is not needed.
+    const shouldHaveCalendarKey = !!calendarPart[ENCRYPTED_AND_SIGNED];
 
     const [calendarSessionKey, sharedSessionKey] = await Promise.all([
-        shouldCreateCalendarKey ? oldCalendarSessionKey || createSessionKey(publicKey) : undefined,
+        shouldHaveCalendarKey ? oldCalendarSessionKey || createSessionKey(publicKey) : undefined,
         oldSharedSessionKey || createSessionKey(publicKey),
     ]);
 
@@ -150,11 +150,12 @@ export const createCalendarEvent = async ({
         personalSignedPart,
         attendeesEncryptedPart,
     ] = await Promise.all([
-        // If there was no old calendar session key, and we created one, encrypt it to be sent to the API.
-        !oldCalendarSessionKey && calendarSessionKey
+        // If we're updating an event (but not switching calendar), no need to encrypt again the session keys
+        oldCalendarSessionKey && !isSwitchCalendar
+            ? undefined
+            : calendarSessionKey
             ? getEncryptedSessionKey(calendarSessionKey, privateKey)
             : undefined,
-        // If we're updating an event (but not switching calendar), no need to encrypt again the session key.
         oldSharedSessionKey && !isSwitchCalendar ? undefined : getEncryptedSessionKey(sharedSessionKey, privateKey),
         signPart(sharedPart[SIGNED], signingKey),
         encryptPart(sharedPart[ENCRYPTED_AND_SIGNED], signingKey, sharedSessionKey),
