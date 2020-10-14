@@ -1,19 +1,21 @@
 import { addDays } from '../date-fns-utc';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
+import { buildMailTo, getEmailTo } from '../helpers/email';
+import isDeepEqual from '../helpers/isDeepEqual';
+import { mod } from '../helpers/math';
 import { DateTime } from '../interfaces/calendar/Date';
 import {
+    VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
+    VcalDateOrDateTimeValue,
     VcalDateProperty,
     VcalDateTimeProperty,
-    VcalDaysKeys,
     VcalDays,
-    VcalDateOrDateTimeValue,
-    VcalAttendeeProperty,
+    VcalDaysKeys,
     VcalOrganizerProperty,
+    VcalVeventComponent,
 } from '../interfaces/calendar/VcalModel';
-import { mod } from '../helpers/math';
 import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
-import { getEmailTo, buildMailTo } from '../helpers/email';
 
 export const dateToProperty = ({
     year = 1,
@@ -158,4 +160,58 @@ export const buildVcalAttendee = (email: string) => {
             cn: email,
         },
     };
+};
+
+export const getHasModifiedDateTimes = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
+    const { dtstart: newDtstart } = newVevent;
+    const { dtstart: oldDtstart } = oldVevent;
+    const isStartPreserved = +propertyToUTCDate(newDtstart) === +propertyToUTCDate(oldDtstart);
+    const isEndPreserved =
+        +propertyToUTCDate(getDtendProperty(newVevent)) === +propertyToUTCDate(getDtendProperty(oldVevent));
+    return !isStartPreserved || !isEndPreserved;
+};
+
+export const getHasModifiedRrule = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
+    const { rrule: newRrule } = newVevent;
+    const { rrule: oldRrule } = oldVevent;
+    if (!oldRrule) {
+        return !!newRrule;
+    }
+    if (!newRrule) {
+        return true;
+    }
+    return !isDeepEqual(newRrule, oldRrule);
+};
+
+const getIsEquivalentAttendee = (newAttendee: VcalAttendeeProperty, oldAttendee: VcalAttendeeProperty) => {
+    if (newAttendee.value !== oldAttendee.value) {
+        return false;
+    }
+    if (newAttendee.parameters?.partstat !== oldAttendee.parameters?.partstat) {
+        return false;
+    }
+    if (newAttendee.parameters?.role !== oldAttendee.parameters?.role) {
+        return false;
+    }
+    return true;
+};
+
+export const getHasModifiedAttendees = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
+    const { attendee: newAttendees } = newVevent;
+    const { attendee: oldAttendees } = oldVevent;
+    if (!newAttendees) {
+        return !!oldAttendees;
+    }
+    if (!oldAttendees || oldAttendees.length !== newAttendees.length) {
+        return true;
+    }
+    const modifiedAttendees = [...oldAttendees];
+    newAttendees.forEach((attendee) => {
+        const index = modifiedAttendees.findIndex((oldAttendee) => getIsEquivalentAttendee(oldAttendee, attendee));
+        if (index === -1) {
+            return true;
+        }
+        modifiedAttendees.splice(index, 1);
+    });
+    return false;
 };

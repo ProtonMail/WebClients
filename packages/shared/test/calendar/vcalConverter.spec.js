@@ -2,7 +2,8 @@ import {
     dateTimeToProperty,
     dayToNumericDay,
     numericDayToDay,
-    getDateTimePropertyInDifferentTimezone
+    getDateTimePropertyInDifferentTimezone,
+    getHasModifiedDateTimes,
 } from '../../lib/calendar/vcalConverter';
 
 describe('dateTimeToProperty', () => {
@@ -13,7 +14,7 @@ describe('dateTimeToProperty', () => {
                 month: 10,
                 day: 1,
                 hours: 1,
-                minutes: 13
+                minutes: 13,
             },
             false,
             'Etc/UTC'
@@ -21,8 +22,8 @@ describe('dateTimeToProperty', () => {
         expect(property).toEqual({
             value: { year: 2019, month: 10, day: 1, hours: 1, minutes: 13, seconds: 0, isUTC: false },
             parameters: {
-                tzid: 'Etc/UTC'
-            }
+                tzid: 'Etc/UTC',
+            },
         });
     });
 
@@ -33,12 +34,12 @@ describe('dateTimeToProperty', () => {
                 month: 10,
                 day: 1,
                 hours: 1,
-                minutes: 13
+                minutes: 13,
             },
             true
         );
         expect(property).toEqual({
-            value: { year: 2019, month: 10, day: 1, hours: 1, minutes: 13, seconds: 0, isUTC: true }
+            value: { year: 2019, month: 10, day: 1, hours: 1, minutes: 13, seconds: 0, isUTC: true },
         });
     });
 });
@@ -72,7 +73,7 @@ describe('getDateTimePropertyInDifferentTimezone', () => {
     it('should not modify all-day properties', () => {
         const property = {
             value: { year: 2020, month: 4, day: 23 },
-            parameters: { type: 'date' }
+            parameters: { type: 'date' },
         };
         expect(getDateTimePropertyInDifferentTimezone(property, tzid)).toEqual(property);
         expect(getDateTimePropertyInDifferentTimezone(property, tzid, true)).toEqual(property);
@@ -80,11 +81,11 @@ describe('getDateTimePropertyInDifferentTimezone', () => {
 
     it('should change the timezone of UTC dates', () => {
         const property = {
-            value: { year: 2020, month: 4, day: 23, hours: 12, minutes: 30, seconds: 0, isUTC: true }
+            value: { year: 2020, month: 4, day: 23, hours: 12, minutes: 30, seconds: 0, isUTC: true },
         };
         const expected = {
             value: { year: 2020, month: 4, day: 23, hours: 2, minutes: 30, seconds: 0, isUTC: false },
-            parameters: { tzid }
+            parameters: { tzid },
         };
         expect(getDateTimePropertyInDifferentTimezone(property, tzid)).toEqual(expected);
     });
@@ -92,11 +93,11 @@ describe('getDateTimePropertyInDifferentTimezone', () => {
     it('should change the timezone of timezoned dates', () => {
         const property = {
             value: { year: 2020, month: 4, day: 23, hours: 12, minutes: 30, seconds: 0, isUTC: false },
-            parameters: { tzid: 'Europe/Zurich' }
+            parameters: { tzid: 'Europe/Zurich' },
         };
         const expected = {
             value: { year: 2020, month: 4, day: 23, hours: 0, minutes: 30, seconds: 0, isUTC: false },
-            parameters: { tzid }
+            parameters: { tzid },
         };
         expect(getDateTimePropertyInDifferentTimezone(property, tzid)).toEqual(expected);
     });
@@ -104,11 +105,145 @@ describe('getDateTimePropertyInDifferentTimezone', () => {
     it('should return simplified form of UTC dates', () => {
         const property = {
             value: { year: 2020, month: 4, day: 23, hours: 12, minutes: 30, seconds: 0, isUTC: false },
-            parameters: { tzid: 'Europe/Zurich' }
+            parameters: { tzid: 'Europe/Zurich' },
         };
         const expected = {
-            value: { year: 2020, month: 4, day: 23, hours: 10, minutes: 30, seconds: 0, isUTC: true }
+            value: { year: 2020, month: 4, day: 23, hours: 10, minutes: 30, seconds: 0, isUTC: true },
         };
         expect(getDateTimePropertyInDifferentTimezone(property, 'UTC')).toEqual(expected);
+    });
+});
+
+describe('getHasModifiedDateTimes', () => {
+    it('should detect same times as equal for part-day events', () => {
+        const vevent1 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 23, hours: 12, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            dtend: {
+                value: { year: 2020, month: 4, day: 23, hours: 12, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+        };
+        const vevent2 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 23, hours: 11, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/London' },
+            },
+        };
+        expect(getHasModifiedDateTimes(vevent1, vevent2)).toEqual(false);
+    });
+
+    it('should detect same times as equal for all-day events', () => {
+        const vevent1 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 23 },
+                parameters: { type: 'date' },
+            },
+            dtend: {
+                value: { year: 2020, month: 4, day: 24 },
+                parameters: { type: 'date' },
+            },
+        };
+        const vevent2 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 23 },
+                parameters: { type: 'date' },
+            },
+        };
+        expect(getHasModifiedDateTimes(vevent1, vevent2)).toEqual(false);
+    });
+
+    it('should detect different start times as different for part-day events', () => {
+        const vevent1 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 23, hours: 12, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            dtend: {
+                value: { year: 2020, month: 4, day: 23, hours: 13, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+        };
+        const vevent2 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 23, hours: 12, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/London' },
+            },
+            dtend: {
+                value: { year: 2020, month: 4, day: 23, hours: 13, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+        };
+        expect(getHasModifiedDateTimes(vevent1, vevent2)).toEqual(true);
+    });
+
+    it('should detect different end times as different for all-day events', () => {
+        const vevent1 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 23, hours: 12, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            dtend: {
+                value: { year: 2020, month: 4, day: 23, hours: 12, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+        };
+        const vevent2 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 23, hours: 11, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/London' },
+            },
+            dtend: {
+                value: { year: 2020, month: 4, day: 23, hours: 13, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+        };
+        expect(getHasModifiedDateTimes(vevent1, vevent2)).toEqual(true);
+    });
+
+    it('should detect different start times as different for all-day events', () => {
+        const vevent1 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 21 },
+                parameters: { type: 'date' },
+            },
+            dtend: {
+                value: { year: 2020, month: 4, day: 24 },
+                parameters: { type: 'date' },
+            },
+        };
+        const vevent2 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 22 },
+                parameters: { type: 'date' },
+            },
+            dtend: {
+                value: { year: 2020, month: 4, day: 24 },
+                parameters: { type: 'date' },
+            },
+        };
+        expect(getHasModifiedDateTimes(vevent1, vevent2)).toEqual(true);
+    });
+
+    it('should detect different end times as different for all-day events', () => {
+        const vevent1 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 21 },
+                parameters: { type: 'date' },
+            },
+        };
+        const vevent2 = {
+            dtstart: {
+                value: { year: 2020, month: 4, day: 21 },
+                parameters: { type: 'date' },
+            },
+            dtend: {
+                value: { year: 2020, month: 4, day: 24 },
+                parameters: { type: 'date' },
+            },
+        };
+        expect(getHasModifiedDateTimes(vevent1, vevent2)).toEqual(true);
     });
 });
