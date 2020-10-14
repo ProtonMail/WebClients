@@ -13,6 +13,7 @@ const FIELDS_TO_KEEP = [
     'ModifyTime',
     'Author',
     'Permissions',
+    'IsOrganizer',
 
     'CalendarKeyPacket',
     'CalendarEvents',

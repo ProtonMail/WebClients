@@ -18,6 +18,7 @@ export const getCalendarEventStoreRecord = (
     const unsafeEnd = propertyToUTCDate(getDtendProperty(eventComponent));
 
     const isAllDay = getIsAllDay(eventComponent);
+    const isOrganizer = !!eventData.IsOrganizer;
 
     const modifiedEnd = isAllDay
         ? addDays(unsafeEnd, -1) // All day event range is non-inclusive
@@ -32,6 +33,7 @@ export const getCalendarEventStoreRecord = (
 
         isAllDay,
         isAllPartDay,
+        isOrganizer,
 
         eventComponent,
         eventData,

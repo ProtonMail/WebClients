@@ -1,3 +1,4 @@
+import { pick } from 'proton-shared/lib/helpers/object';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
 import { useApi, useGetCalendarEventRaw } from 'react-components';
@@ -64,7 +65,11 @@ const useCalendarsEventsReader = (
         };
 
         const getDecryptedEvent = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
-            return Promise.all([getCalendarEventRaw(eventData), getCalendarEventPersonal(eventData)]);
+            return Promise.all([
+                getCalendarEventRaw(eventData),
+                getCalendarEventPersonal(eventData),
+                pick(eventData, ['Permissions', 'IsOrganizer']),
+            ]);
         };
 
         // Single edits are not always tied to the parent. Ensure that the parent exists in the cache before viewing it.

@@ -1,12 +1,9 @@
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { useMemo } from 'react';
 import { getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { getIsInvitation } from '../../helpers/invitations';
 import { propertiesToModel } from '../eventModal/eventForm/propertiesToModel';
 import { propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToNotificationModel';
 import { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
-import { EventPersonalMap } from '../../interfaces/EventPersonalMap';
 import { EventModelReadView } from '../../interfaces/EventModel';
 
 const DEFAULT_VEVENT: VcalVeventComponent = {
@@ -22,19 +19,16 @@ const DEFAULT_VEVENT: VcalVeventComponent = {
         value: { year: 1970, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true },
     },
 };
-const useReadEvent = (
-    value: DecryptedEventTupleResult | undefined,
-    tzid: string,
-    author?: string
-): EventModelReadView => {
-    const invitationsEnabled = FEATURE_FLAGS.includes('calendar-invitations');
+const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string): EventModelReadView => {
     return useMemo(() => {
-        const [veventComponent = DEFAULT_VEVENT, alarmMap = {}]: [VcalVeventComponent, EventPersonalMap] = value || [
+        const [veventComponent = DEFAULT_VEVENT, alarmMap = {}, { IsOrganizer }]: DecryptedEventTupleResult = value || [
             DEFAULT_VEVENT,
             {},
+            { Permissions: 3, IsOrganizer: 1 },
         ];
         const isAllDay = getIsAllDay(veventComponent);
-        const model = propertiesToModel(veventComponent, isAllDay, tzid);
+        const isOrganizer = !!IsOrganizer;
+        const model = propertiesToModel(veventComponent, isAllDay, isOrganizer, tzid);
         const notifications = Object.keys(alarmMap)
             .map((key) => {
                 return propertiesToNotificationModel(alarmMap[key], isAllDay);
@@ -44,7 +38,6 @@ const useReadEvent = (
         return {
             ...model,
             isAllDay,
-            isInvitation: invitationsEnabled ? getIsInvitation(model, author) : false,
             notifications,
         };
     }, [value, tzid]);

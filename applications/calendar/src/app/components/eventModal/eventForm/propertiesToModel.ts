@@ -13,7 +13,12 @@ const DEFAULT_TIME = {
     parameters: { tzid: 'UTC' },
 };
 
-export const propertiesToModel = (component: VcalVeventComponent, isAllDay: boolean, tzid: string): EventModelView => {
+export const propertiesToModel = (
+    component: VcalVeventComponent,
+    isAllDay: boolean,
+    isOrganizer: boolean,
+    tzid: string
+): EventModelView => {
     const {
         uid,
         location,
@@ -36,6 +41,7 @@ export const propertiesToModel = (component: VcalVeventComponent, isAllDay: bool
         description: description?.value ?? '',
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
+        isOrganizer,
         status: getEventStatus(component),
         start,
         end,

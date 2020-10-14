@@ -28,7 +28,7 @@ export const getEventStatusTraits = ({
 }) => {
     const cleanUserEmails = addresses.map(({ Email }) => cleanEmail(Email));
     const eventStatus = model.status;
-    if (model.isInvitation && eventStatus === ICAL_EVENT_STATUS.CONFIRMED) {
+    if (!model.isOrganizer && eventStatus === ICAL_EVENT_STATUS.CONFIRMED) {
         const userAttendee = model.attendees.find((attendee) => cleanUserEmails.includes(cleanEmail(attendee.email)));
         if (userAttendee) {
             const { partstat } = userAttendee;

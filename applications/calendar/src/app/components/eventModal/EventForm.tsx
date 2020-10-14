@@ -53,7 +53,7 @@ const EventForm = ({
         frequencyModel,
         start,
         isAllDay,
-        isInvitation,
+        isOrganizer,
         title,
         fullDayNotifications,
         defaultFullDayNotification,
@@ -83,7 +83,7 @@ const EventForm = ({
             tzid={tzid!}
         />
     );
-    const titleRow = !isInvitation ? (
+    const titleRow = isOrganizer ? (
         <IconRow id={TITLE_INPUT_ID} title={c('Label').t`Event title`}>
             <Input
                 id={TITLE_INPUT_ID}
@@ -106,8 +106,8 @@ const EventForm = ({
     return (
         <div className="mt0-5" {...props}>
             {titleRow}
-            {!isInvitation && dateRow}
-            {!isMinimal && !isInvitation && (
+            {isOrganizer && dateRow}
+            {!isMinimal && isOrganizer && (
                 <IconRow icon="reload" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
                     <FrequencyInput
                         className={classnames([isCustomFrequencySet && 'mb0-5'])}
@@ -136,7 +136,7 @@ const EventForm = ({
                     )}
                 </IconRow>
             )}
-            {!isMinimal && !isInvitation && showParticipants && (
+            {!isMinimal && isOrganizer && showParticipants && (
                 <IconRow icon="contacts-groups" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
                     <ParticipantsInput
                         placeholder={c('Placeholder').t`Add participants`}
@@ -145,7 +145,7 @@ const EventForm = ({
                     />
                 </IconRow>
             )}
-            {!isInvitation && (
+            {isOrganizer && (
                 <IconRow icon="address" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
                     <Input
                         id={LOCATION_INPUT_ID}
@@ -218,7 +218,7 @@ const EventForm = ({
                     />
                 </IconRow>
             ) : null}
-            {!isInvitation && (
+            {isOrganizer && (
                 <IconRow icon="text-align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
                     <TextArea
                         id={DESCRIPTION_INPUT_ID}

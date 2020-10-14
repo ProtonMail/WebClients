@@ -195,7 +195,11 @@ const InteractiveCalendarView = ({
     const getCalendarEventRaw = useGetCalendarEventRaw();
 
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
-        return Promise.all([getCalendarEventRaw(eventData), getCalendarEventPersonal(eventData)]);
+        return Promise.all([
+            getCalendarEventRaw(eventData),
+            getCalendarEventPersonal(eventData),
+            pick(eventData, ['Permissions', 'IsOrganizer']),
+        ]);
     };
 
     const [interactiveData, setInteractiveData] = useState<InteractiveState | undefined>(() =>
@@ -354,7 +358,7 @@ const InteractiveCalendarView = ({
             veventValarmComponent: personalMap[Member.ID],
             veventComponentParentPartial,
             tzid,
-            author: eventData.Author,
+            isOrganizer: !!eventData.IsOrganizer,
         });
         if (partstat && addresses) {
             return {

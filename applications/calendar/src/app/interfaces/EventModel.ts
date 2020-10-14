@@ -78,8 +78,8 @@ export interface EventModelView {
     end: DateTimeModel;
     attendees: AttendeeModel[];
     organizer: OrganizerModel;
+    isOrganizer: boolean;
     status: ICAL_EVENT_STATUS;
-    isInvitation?: boolean;
     rest?: any;
 }
 
@@ -93,6 +93,7 @@ export interface EventModel extends EventModelView {
         addressID: string;
     };
     isAllDay: boolean;
+    isOrganizer: boolean;
     defaultPartDayNotification: NotificationModel;
     defaultFullDayNotification: NotificationModel;
     fullDayNotifications: NotificationModel[];

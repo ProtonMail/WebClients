@@ -77,7 +77,7 @@ const EventPopover = ({
 
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
 
-    const model = useReadEvent(eventReadResult?.result, tzid, eventData?.Author);
+    const model = useReadEvent(eventReadResult?.result, tzid);
     const {
         eventReadError,
         isEventReadLoading,
@@ -95,7 +95,7 @@ const EventPopover = ({
                 !isCalendarDisabled &&
                 !isCancelled &&
                 [ACCEPTED, TENTATIVE].includes(userPartstat);
-            withLoadingAction(onDelete(eventData, model.isInvitation, sendCancellationNotice)).catch(noop);
+            withLoadingAction(onDelete(eventData, !model.isOrganizer, sendCancellationNotice)).catch(noop);
         }
     };
 
@@ -266,7 +266,7 @@ const EventPopover = ({
                 />
             </div>
             <PopoverFooter className="flex-item-noshrink">
-                {isCancelled || !model.isInvitation ? (
+                {isCancelled || model.isOrganizer ? (
                     <>
                         {deleteButton}
                         {editButton}

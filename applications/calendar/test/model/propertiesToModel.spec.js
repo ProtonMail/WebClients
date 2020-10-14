@@ -13,13 +13,13 @@ END:VEVENT`;
             start: {
                 date: new Date(2019, 6, 19),
                 time: new Date(2000, 0, 1, 12),
-                tzid: 'America/New_York'
+                tzid: 'America/New_York',
             },
             end: {
                 date: new Date(2019, 6, 19),
                 time: new Date(2000, 0, 1, 18, 30),
-                tzid: 'Europe/Zurich'
-            }
+                tzid: 'Europe/Zurich',
+            },
         });
     });
 
@@ -32,13 +32,13 @@ END:VEVENT`;
             start: {
                 date: new Date(2019, 6, 19),
                 time: new Date(2000, 0, 1, 12),
-                tzid: 'Europe/Zurich'
+                tzid: 'Europe/Zurich',
             },
             end: {
                 date: new Date(2019, 6, 19),
                 time: new Date(2000, 0, 1, 11),
-                tzid: 'Europe/Zurich'
-            }
+                tzid: 'Europe/Zurich',
+            },
         });
     });
 
@@ -47,17 +47,17 @@ END:VEVENT`;
 DTSTART;VALUE=DATE:20190719
 DTEND;VALUE=DATE:20190718
 END:VEVENT`;
-        expect(propertiesToModel(parse(VEVENT), true, 'Europe/Zurich')).toMatchObject({
+        expect(propertiesToModel(parse(VEVENT), true, true, 'Europe/Zurich')).toMatchObject({
             start: {
                 date: new Date(2019, 6, 19),
                 time: new Date(2000, 0, 1, 0),
-                tzid: 'Europe/Zurich'
+                tzid: 'Europe/Zurich',
             },
             end: {
                 date: new Date(2019, 6, 17),
                 time: new Date(2000, 0, 1, 0),
-                tzid: 'Europe/Zurich'
-            }
+                tzid: 'Europe/Zurich',
+            },
         });
     });
 });

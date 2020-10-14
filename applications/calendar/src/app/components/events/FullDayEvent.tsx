@@ -36,7 +36,7 @@ const FullDayEvent = ({
 }: Props) => {
     const { start, data: targetEventData, isAllDay, isAllPartDay } = event;
 
-    const model = useReadEvent(targetEventData.eventReadResult?.result, tzid, targetEventData.eventData?.Author);
+    const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
     const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
 
     const [addresses] = useAddresses();

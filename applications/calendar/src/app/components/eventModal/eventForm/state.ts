@@ -19,7 +19,6 @@ import {
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { DEFAULT_EVENT_DURATION } from '../../../constants';
 import { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
-import { getIsInvitation } from '../../../helpers/invitations';
 import { notificationsToModel } from '../../../helpers/notificationsToModel';
 import { stripAllTags } from '../../../helpers/sanitize';
 import { DateTimeModel, EventModel, FrequencyModel } from '../../../interfaces/EventModel';
@@ -161,8 +160,8 @@ export const getInitialModel = ({
         initialDate,
         initialTzid: tzid,
         isAllDay,
+        isOrganizer: true,
         organizer: { email: memberEmail, cn: memberEmail },
-        isInvitation: false,
         status: ICAL_EVENT_STATUS.CONFIRMED,
         defaultEventDuration,
         frequencyModel,
@@ -178,10 +177,11 @@ export const getInitialModel = ({
 const getParentMerge = (
     veventComponentParentPartial: SharedVcalVeventComponent,
     recurrenceStart: DateTimeModel,
+    isOrganizer: boolean,
     tzid: string
 ) => {
     const isAllDay = getIsAllDay(veventComponentParentPartial);
-    const parentModel = propertiesToModel(veventComponentParentPartial, isAllDay, tzid);
+    const parentModel = propertiesToModel(veventComponentParentPartial, isAllDay, isOrganizer, tzid);
     const { frequencyModel, start } = parentModel;
     return {
         frequencyModel: getFrequencyModelChange(start, recurrenceStart, frequencyModel),
@@ -192,21 +192,21 @@ interface GetExistingEventArguments {
     veventComponent: VcalVeventComponent;
     veventValarmComponent?: VcalVeventComponent;
     veventComponentParentPartial?: SharedVcalVeventComponent;
+    isOrganizer: boolean;
     tzid: string;
-    author: string;
 }
 
 export const getExistingEvent = ({
     veventComponent,
     veventValarmComponent,
     veventComponentParentPartial,
+    isOrganizer,
     tzid,
-    author,
 }: GetExistingEventArguments): Partial<EventModel> => {
     const isAllDay = getIsAllDay(veventComponent);
     const recurrenceId = getRecurrenceId(veventComponent);
 
-    const newModel = propertiesToModel(veventComponent, isAllDay, tzid);
+    const newModel = propertiesToModel(veventComponent, isAllDay, isOrganizer, tzid);
     const strippedDescription = stripAllTags(newModel.description);
 
     // Email notifications are not supported atm.
@@ -216,14 +216,13 @@ export const getExistingEvent = ({
 
     const parentMerge =
         veventComponentParentPartial && recurrenceId
-            ? getParentMerge(veventComponentParentPartial, newModel.start, tzid)
+            ? getParentMerge(veventComponentParentPartial, newModel.start, newModel.isOrganizer, tzid)
             : {};
 
     return {
         ...newModel,
         description: strippedDescription,
         isAllDay,
-        isInvitation: getIsInvitation(newModel, author),
         ...parentMerge,
         ...(isAllDay
             ? {

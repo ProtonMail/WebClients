@@ -4,6 +4,7 @@ import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalM
 import { OccurrenceIterationCache } from 'proton-shared/lib/calendar/recurring';
 import { SHARED_SIGNED_FIELDS } from 'proton-shared/lib/calendar/veventHelper';
 import { pick } from 'proton-shared/lib/helpers/object';
+import { EventInternalProperties } from '../../../interfaces/EventInternalProperties';
 import { EventPersonalMap } from '../../../interfaces/EventPersonalMap';
 
 export type IntervalTree = ReturnType<typeof createIntervalTree>;
@@ -15,7 +16,7 @@ export interface RecurringCache {
 }
 
 export type DecryptedEventPersonalMap = EventPersonalMap;
-export type DecryptedEventTupleResult = [VcalVeventComponent, DecryptedEventPersonalMap];
+export type DecryptedEventTupleResult = [VcalVeventComponent, DecryptedEventPersonalMap, EventInternalProperties];
 export type EventReadResult = {
     result?: DecryptedEventTupleResult;
     error?: Error;
@@ -35,6 +36,7 @@ export interface CalendarEventStoreRecord {
 
     isAllDay: boolean;
     isAllPartDay: boolean;
+    isOrganizer: boolean;
 
     eventData?: CalendarEvent | CalendarEventSharedData;
     eventComponent: SharedVcalVeventComponent | MetadataVcalVeventComponent;
