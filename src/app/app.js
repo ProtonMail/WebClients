@@ -77,7 +77,7 @@ function main(CONFIG) {
                 window.addEventListener('orientationchange', tools.mobileResponsive);
                 tools.mobileResponsive();
 
-                AppModel.set('showWelcome', true);
+                AppModel.set('showWelcome', false);
 
                 // SVG Polyfill for IE11 @todo lazy load
                 svg4everybody();
