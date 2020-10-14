@@ -203,7 +203,7 @@ const updateEventApi = async ({
         ...creationKeys
     });
     const Events: (CreateCalendarEventSyncData | UpdateCalendarEventSyncData)[] = createSingleEdit
-        ? [{ Event: { Permissions: 3, ...data }, Overwrite: 1 }]
+        ? [{ Event: { Permissions: 3, IsOrganizer: 0, ...data }, Overwrite: 1 }]
         : [{ Event: { Permissions: 3, ...data }, ID: calendarEvent.ID }];
     const {
         Responses: [
