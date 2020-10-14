@@ -60,7 +60,11 @@ const ExtraEvents = ({ message }: Props) => {
     useEffect(() => {
         const attachments = getAttachments(message.data);
         const eventAttachments = filterAttachmentsForEvents(attachments);
-        if (!eventAttachments.length || !message.privateKeys || loadingConfigs) {
+        if (!eventAttachments.length) {
+            setInvitations([]);
+            return;
+        }
+        if (!message.privateKeys || loadingConfigs) {
             return;
         }
         let unmounted = false;
