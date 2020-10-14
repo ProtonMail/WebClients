@@ -8,7 +8,12 @@ import {
 } from 'proton-shared/lib/api/calendars';
 import { getAttendeeEmail, modifyAttendeesPartstat, withPmAttendees } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
-import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import {
+    CALENDAR_FLAGS,
+    ICAL_ATTENDEE_STATUS,
+    ICAL_EVENT_STATUS,
+    ICAL_METHOD
+} from 'proton-shared/lib/calendar/constants';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { findAttendee, getInvitedEventWithAlarms } from 'proton-shared/lib/calendar/integration/invite';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
@@ -28,6 +33,7 @@ import {
 } from 'proton-shared/lib/calendar/vcalHelper';
 import { withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit, pick } from 'proton-shared/lib/helpers/object';
 import { Address, Api } from 'proton-shared/lib/interfaces';
@@ -81,7 +87,9 @@ const getVeventWithAlarms = async ({
 type FetchEventInvitation = (args: {
     veventComponent: VcalVeventComponent;
     api: Api;
-    getCalendarInfo: (ID: string) => Promise<Omit<CalendarWidgetData, 'calendar' | 'isCalendarDisabled'>>;
+    getCalendarInfo: (
+        ID: string
+    ) => Promise<Omit<CalendarWidgetData, 'calendar' | 'isCalendarDisabled' | 'calendarNeedsUserAction'>>;
     getCalendarEventRaw: (event: CalendarEvent) => Promise<VcalVeventComponent>;
     getCalendarEventPersonal: (event: CalendarEvent) => Promise<SimpleMap<VcalVeventComponent>>;
     calendars: Calendar[];
@@ -125,6 +133,9 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     const calendarData = {
         calendar,
         isCalendarDisabled: getIsCalendarDisabled(calendar),
+        calendarNeedsUserAction:
+            hasBit(calendar.Flags, CALENDAR_FLAGS.RESET_NEEDED) ||
+            hasBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE),
         ...(await getCalendarInfo(calendar.ID))
     };
     if (!calendarEvents.length) {

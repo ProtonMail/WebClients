@@ -130,7 +130,11 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         });
     };
 
-    const buttonsDisabled = !calendarData?.calendar || calendarData.isCalendarDisabled || isAddressDisabled;
+    const buttonsDisabled =
+        !calendarData?.calendar ||
+        calendarData.isCalendarDisabled ||
+        isAddressDisabled ||
+        calendarData.calendarNeedsUserAction;
     const actions = useInviteButtons({
         veventIcs: invitationIcs.vevent,
         veventApi: invitationApi?.vevent,

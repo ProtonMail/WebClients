@@ -1,7 +1,13 @@
 import { getUnixTime } from 'date-fns';
 import { getAttendeeEmail, getSupportedAttendee } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
-import { ICAL_EXTENSIONS, ICAL_METHOD, ICAL_MIME_TYPE, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import {
+    CALENDAR_FLAGS,
+    ICAL_EXTENSIONS,
+    ICAL_METHOD,
+    ICAL_MIME_TYPE,
+    MAX_LENGTHS
+} from 'proton-shared/lib/calendar/constants';
 import { findAttendee, getParticipant } from 'proton-shared/lib/calendar/integration/invite';
 import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/integration/rrule';
 import {
@@ -38,6 +44,7 @@ import {
     getTimezoneOffset
 } from 'proton-shared/lib/date/timezone';
 import { unique } from 'proton-shared/lib/helpers/array';
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { cleanEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { truncate } from 'proton-shared/lib/helpers/string';
@@ -344,7 +351,10 @@ export const getInitialInvitationModel = ({
     if (calendar) {
         result.calendarData = {
             calendar,
-            isCalendarDisabled: getIsCalendarDisabled(calendar)
+            isCalendarDisabled: getIsCalendarDisabled(calendar),
+            calendarNeedsUserAction:
+                hasBit(calendar.Flags, CALENDAR_FLAGS.RESET_NEEDED) ||
+                hasBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE)
         };
     }
     return result;
@@ -626,6 +636,20 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
     }
 
     const canBeAnswered = method === ICAL_METHOD.REQUEST && timeStatus !== EVENT_TIME_STATUS.PAST && !isOutdated;
+
+    // the calendar needs a user action to be active
+    if (calendarData?.calendarNeedsUserAction) {
+        if (method === ICAL_METHOD.CANCEL) {
+            return {
+                to: '',
+                text: c('Link').t`You need to activate your calendar keys to see the updated invitation`
+            };
+        }
+        return {
+            to: '',
+            text: c('Link').t`You need to activate your calendar keys to answer this invitation`
+        };
+    }
 
     // the invitation is unanswered
     if (!invitationApi) {

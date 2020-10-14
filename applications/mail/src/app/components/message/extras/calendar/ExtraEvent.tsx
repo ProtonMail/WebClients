@@ -149,6 +149,7 @@ const ExtraEvent = ({
                 !getInvitationHasEventID(invitationApi) ||
                 !getInvitationHasAttendee(invitationApi) ||
                 !getHasFullCalendarData(calendarData) ||
+                calendarData.calendarNeedsUserAction ||
                 unmounted
             ) {
                 // treat as a new invitation
