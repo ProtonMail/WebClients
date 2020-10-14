@@ -88,6 +88,7 @@ export default async ({
                         PrivateKey,
                         oldPassword,
                         newPassword,
+                        email: Address?.Email,
                     });
                     updatedKeyList = await reactivatePrivateKey({
                         api,

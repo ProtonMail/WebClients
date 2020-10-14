@@ -1,6 +1,11 @@
 import { c } from 'ttag';
-import { decryptPrivateKey, encryptPrivateKey, getKeys, OpenPGPKey } from 'pmcrypto';
-import { reformatAddressKey, decryptPrivateKeyWithSalt } from 'proton-shared/lib/keys/keys';
+import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import {
+    reformatAddressKey,
+    decryptPrivateKeyWithSalt,
+    getEncryptedArmoredAddressKey,
+    getOldUserIDEmail,
+} from 'proton-shared/lib/keys/keys';
 import { KeySalt, ActionableKey, Api, Address, CachedKey } from 'proton-shared/lib/interfaces';
 import { reactivateKeyAction } from 'proton-shared/lib/keys/keysAction';
 import { getDefaultKeyFlags } from 'proton-shared/lib/keys/keyFlags';
@@ -47,14 +52,6 @@ export const reactivatePrivateKey = async ({
     return result;
 };
 
-const getOldUserID = async (PrivateKey: string) => {
-    const [oldPrivateKey] = await getKeys(PrivateKey);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore - openpgp typings are incorrect, todo
-    const { email } = oldPrivateKey.users[0].userId;
-    return email;
-};
-
 interface ReactivateByUploadArguments {
     ID: string;
     PrivateKey: string;
@@ -81,11 +78,10 @@ export const reactivateByUpload = async ({
         throw new Error(c('Error').t`Key ID mismatch`);
     }
 
-    // When reactivating a key by uploading it, get the email from the old armored private key to ensure it's correct for the user keys
-    const oldUserId = (await getOldUserID(PrivateKey).catch(noop)) || email;
+    const emailToUse = email || (await getOldUserIDEmail(PrivateKey).catch(noop)) || '';
 
     const { privateKey: reformattedPrivateKey, privateKeyArmored } = await reformatAddressKey({
-        email: oldUserId,
+        email: emailToUse,
         passphrase: newPassword,
         privateKey: uploadedPrivateKey,
     });
@@ -102,6 +98,7 @@ interface ReactivateByPasswordArguments {
     PrivateKey: string;
     oldPassword: string;
     newPassword: string;
+    email?: string;
 }
 export const reactivateByPassword = async ({
     ID,
@@ -109,6 +106,7 @@ export const reactivateByPassword = async ({
     PrivateKey,
     oldPassword,
     newPassword,
+    email,
 }: ReactivateByPasswordArguments) => {
     const { KeySalt } = keySalts.find(({ ID: keySaltID }) => ID === keySaltID) || {};
 
@@ -122,7 +120,12 @@ export const reactivateByPassword = async ({
         throw new Error(c('Error').t`Incorrect password`);
     }
 
-    const encryptedPrivateKeyArmored = await encryptPrivateKey(oldPrivateKey, newPassword);
+    const emailToUse = email || (await getOldUserIDEmail(PrivateKey).catch(noop)) || '';
+
+    const encryptedPrivateKeyArmored = await getEncryptedArmoredAddressKey(oldPrivateKey, emailToUse, newPassword);
+    if (!encryptedPrivateKeyArmored) {
+        throw new Error(c('Error').t`Key not decrypted`);
+    }
     const privateKey = await decryptPrivateKey(encryptedPrivateKeyArmored, newPassword);
 
     return {

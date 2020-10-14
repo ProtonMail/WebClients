@@ -6,39 +6,12 @@ import { updatePrivateKeyRoute } from 'proton-shared/lib/api/keys';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { CachedKey, Api, Address } from 'proton-shared/lib/interfaces';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { reformatAddressKey } from 'proton-shared/lib/keys/keys';
+import { getEncryptedArmoredAddressKey } from 'proton-shared/lib/keys/keys';
 
 const getEncryptedArmoredUserKey = async ({ Key: { ID }, privateKey }: CachedKey, newKeyPassword: string) => {
     if (!privateKey || !privateKey.isDecrypted()) {
         return;
     }
-    const privateKeyArmored = await encryptPrivateKey(privateKey, newKeyPassword);
-    return {
-        ID,
-        PrivateKey: privateKeyArmored,
-    };
-};
-
-const getEncryptedArmoredAddressKey = async (
-    { Key: { ID }, privateKey }: CachedKey,
-    email: string,
-    newKeyPassword: string
-) => {
-    if (!privateKey || !privateKey.isDecrypted()) {
-        return;
-    }
-
-    const userIds = privateKey.users;
-    const primaryUserId = userIds?.[0]?.userId?.userid;
-
-    if (userIds?.length !== 1 || !`${primaryUserId}`.endsWith(`<${email}>`)) {
-        const { privateKeyArmored } = await reformatAddressKey({ email, passphrase: newKeyPassword, privateKey });
-        return {
-            ID,
-            PrivateKey: privateKeyArmored,
-        };
-    }
-
     const privateKeyArmored = await encryptPrivateKey(privateKey, newKeyPassword);
     return {
         ID,
@@ -80,13 +53,22 @@ export const getArmoredPrivateKeys = async ({
 
     const userKeysAndAddressesKeysPromises = Object.keys(addressesKeysMap).reduce((acc, addressID) => {
         return acc.concat(
-            addressesKeysMap[addressID].map((key) => {
+            addressesKeysMap[addressID].map(async ({ Key: { ID }, privateKey }) => {
                 const address = addresses.find(({ ID }) => addressID === ID);
                 // Should never happen
                 if (!address) {
                     throw new Error('Address not found');
                 }
-                return getEncryptedArmoredAddressKey(key, address.Email, keyPassword).catch(noop);
+                const PrivateKey = await getEncryptedArmoredAddressKey(privateKey, address.Email, keyPassword).catch(
+                    noop
+                );
+                if (!PrivateKey) {
+                    return;
+                }
+                return {
+                    ID,
+                    PrivateKey,
+                };
             })
         );
     }, userKeysPromises);
