@@ -1,10 +1,12 @@
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { useCallback } from 'react';
 import { getPersonalPartMap, readPersonalPart } from 'proton-shared/lib/calendar/deserialize';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { getAddressesMembersMap } from 'proton-shared/lib/keys/calendarKeys';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import {
+    CalendarEvent,
+    DecryptedPersonalVeventMapResult,
+    DecryptedVeventResult,
+} from 'proton-shared/lib/interfaces/calendar';
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
@@ -24,7 +26,7 @@ const useGetCalendarEventPersonal = () => {
             const addressesMembersMap = getAddressesMembersMap(Members, Addresses);
             const personalPartMap = getPersonalPartMap(Event);
             const personalPartMapKeys = Object.keys(personalPartMap);
-            const result: VcalVeventComponent[] = await Promise.all(
+            const result: DecryptedVeventResult[] = await Promise.all(
                 personalPartMapKeys.map(async (memberID) => {
                     const { ID: addressID } = addressesMembersMap[memberID] || {};
                     if (!addressID) {
@@ -36,7 +38,7 @@ const useGetCalendarEventPersonal = () => {
                 })
             );
 
-            return personalPartMapKeys.reduce<SimpleMap<VcalVeventComponent>>((acc, memberID, i) => {
+            return personalPartMapKeys.reduce<DecryptedPersonalVeventMapResult>((acc, memberID, i) => {
                 acc[memberID] = result[i];
                 return acc;
             }, {});

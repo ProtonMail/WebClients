@@ -1,6 +1,8 @@
 import { OpenPGPKey } from 'pmcrypto';
+import { CALENDAR_CARD_TYPE } from 'proton-shared/lib/calendar/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { normalizeEmail } from 'proton-shared/lib/helpers/email';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { useCallback } from 'react';
 import { readCalendarEvent, readSessionKeys } from 'proton-shared/lib/calendar/deserialize';
@@ -11,6 +13,8 @@ import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 import { useGetCalendarKeys } from './useGetCalendarKeys';
 import useGetEncryptionPreferences from './useGetEncryptionPreferences';
+
+const { SIGNED, ENCRYPTED_AND_SIGNED } = CALENDAR_CARD_TYPE;
 
 const useGetCalendarEventRaw = () => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
@@ -24,9 +28,15 @@ const useGetCalendarEventRaw = () => {
             const getAuthorPublicKeysMap = async () => {
                 const publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]> = {};
                 const authors = unique(
-                    [...Event.SharedEvents, ...Event.CalendarEvents, ...Event.PersonalEvent].map(({ Author }) =>
-                        normalizeEmail(Author)
-                    )
+                    [...Event.SharedEvents, ...Event.CalendarEvents]
+                        .map(({ Author, Type }) => {
+                            if (![SIGNED, ENCRYPTED_AND_SIGNED].includes(Type)) {
+                                // no need to fetch keys in this case
+                                return;
+                            }
+                            return normalizeEmail(Author);
+                        })
+                        .filter(isTruthy)
                 );
                 const addresses = await getAddresses();
                 const normalizedAddresses = addresses.map((address) => ({
