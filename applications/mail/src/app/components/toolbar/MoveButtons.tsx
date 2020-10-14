@@ -78,13 +78,13 @@ const MoveButtons = ({
         <ToolbarButton
             key="spam"
             loading={loading}
-            title={c('Action').t`Move to spam`}
+            title={c('Action').t`Move to Spam and add sender to blacklist`}
             onClick={() => withLoading(handleMove(SPAM))}
             disabled={!selectedIDs.length}
             data-test-id="toolbar:movetospam"
         >
             <Icon className="toolbar-icon mauto" name="spam" />
-            <span className="sr-only">{c('Action').t`Move to spam`}</span>
+            <span className="sr-only">{c('Action').t`Move to Spam and add sender to blacklist`}</span>
         </ToolbarButton>
     );
 
