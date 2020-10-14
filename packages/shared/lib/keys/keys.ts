@@ -1,12 +1,14 @@
 import {
     decryptMessage,
     decryptPrivateKey,
+    encryptPrivateKey,
     generateKey,
     getMessage,
     getSignature,
     OpenPGPKey,
     reformatKey,
     VERIFICATION_STATUS,
+    getKeys,
 } from 'pmcrypto';
 import { c } from 'ttag';
 import { computeKeyPassword, generateKeySalt } from 'pm-srp';
@@ -171,4 +173,32 @@ export const decryptPrivateKeyWithSalt = async ({
 }) => {
     const keyPassword = keySalt ? await computeKeyPassword(password, keySalt) : password;
     return decryptPrivateKey(PrivateKey, keyPassword);
+};
+
+export const getOldUserIDEmail = async (PrivateKey: string): Promise<string> => {
+    const [oldPrivateKey] = await getKeys(PrivateKey);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore - openpgp typings are incorrect, todo
+    const { email } = oldPrivateKey.users[0].userId;
+    return email;
+};
+
+export const getEncryptedArmoredAddressKey = async (
+    privateKey: OpenPGPKey | undefined,
+    email: string,
+    newKeyPassword: string
+) => {
+    if (!privateKey?.isDecrypted?.()) {
+        return;
+    }
+
+    const userIds = privateKey.users;
+    const primaryUserId = userIds?.[0]?.userId?.userid;
+
+    if (userIds?.length !== 1 || !`${primaryUserId}`.endsWith(`<${email}>`)) {
+        const { privateKeyArmored } = await reformatAddressKey({ email, passphrase: newKeyPassword, privateKey });
+        return privateKeyArmored;
+    }
+
+    return encryptPrivateKey(privateKey, newKeyPassword);
 };
