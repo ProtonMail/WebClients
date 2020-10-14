@@ -67,15 +67,19 @@ function GeneratedLinkState({
 
                     <Row>
                         <div className="flex flex-item-fluid">
-                            <div className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis">
+                            <div
+                                className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis"
+                                data-testid="sharing-modal-url"
+                            >
                                 {baseUrl}/{token}
                                 {includePassword && <span className="accented">#{password}</span>}
                             </div>
                         </div>
                         <div className="flex flex-justify-end ml0-5 onmobile-ml0">
                             <div>
-                                <PrimaryButton onClick={handleClickCopyURL} className="min-w5e">{c('Action')
-                                    .t`Copy`}</PrimaryButton>
+                                <PrimaryButton id="copy-url-button" onClick={handleClickCopyURL} className="min-w5e">{c(
+                                    'Action'
+                                ).t`Copy`}</PrimaryButton>
                             </div>
                         </div>
                     </Row>
@@ -86,11 +90,14 @@ function GeneratedLinkState({
                         {c('Info').t`Use it to download a file.`}
                     </Alert>
                     <Row>
-                        <Label htmlFor="edit-password">
+                        <Label htmlFor="edit-password-button">
                             <span className="mr0-5">{c('Label').t`Password protection`}</span>
                         </Label>
                         <div className="flex flex-column flex-item-fluid">
-                            <div className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 pm-field--accented ellipsis">
+                            <div
+                                className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 pm-field--accented ellipsis"
+                                data-testid="sharing-modal-password"
+                            >
                                 {password}
                             </div>
                             <Checkbox
@@ -98,15 +105,21 @@ function GeneratedLinkState({
                                 disabled={customPassword}
                                 checked={includePassword}
                                 onChange={onIncludePasswordToggle}
+                                data-testid="sharing-modal-includePassword"
                             >{c('Label').t`Include password in the link`}</Checkbox>
                         </div>
                         <div className="flex flex-justify-end ml0-5 onmobile-ml0">
                             <div>
-                                <Button onClick={onEditPasswordClick} className="min-w5e">{c('Action').t`Edit`}</Button>
+                                <Button id="edit-password-button" onClick={onEditPasswordClick} className="min-w5e">{c(
+                                    'Action'
+                                ).t`Edit`}</Button>
                             </div>
                             <div>
-                                <Button onClick={handleCopyPasswordClick} className="min-w5e ml0-5">{c('Action')
-                                    .t`Copy`}</Button>
+                                <Button
+                                    id="copy-password-button"
+                                    onClick={handleCopyPasswordClick}
+                                    className="min-w5e ml0-5"
+                                >{c('Action').t`Copy`}</Button>
                             </div>
                         </div>
                     </Row>
