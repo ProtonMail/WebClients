@@ -6,6 +6,7 @@ import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 import {
     sort as sortElements,
@@ -184,7 +185,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const queryElement = async (elementID: string): Promise<Element> => {
         const query = conversationMode ? getConversation : getMessage;
-        const result: any = await api(query(elementID));
+        const result: any = await api({ ...query(elementID), silence: true });
         return conversationMode ? result.Conversation : result.Message;
     };
 
@@ -340,7 +341,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                                 element = parseLabelIDsInEvent(existingElement, element);
                             }
 
-                            return existingElement ? { ...existingElement, ...element } : queryElement(elementID);
+                            return existingElement
+                                ? { ...existingElement, ...element }
+                                : queryElement(elementID).catch(noop);
                         })
                 )
             ).filter(isTruthy);
