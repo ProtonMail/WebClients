@@ -106,7 +106,7 @@ const validatePasswordLength = (length: number) => (str: string) => {
 };
 
 const validatePasswordStrength = (str: string) => {
-    return !/[A-Z]/.test(str) && !/[a-z]/.test(str) && !/[1-9]/.test(str)
+    return !/[A-Z]/.test(str) || !/[a-z]/.test(str) || !/[1-9]/.test(str)
         ? c('Validation Error').t`Password must include a mix of lower-case, upper-case letters and numbers`
         : undefined;
 };
