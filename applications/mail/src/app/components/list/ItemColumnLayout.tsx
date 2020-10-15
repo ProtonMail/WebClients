@@ -47,11 +47,11 @@ const ItemColumnLayout = ({
     return (
         <div className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender">
             <div className="flex flex-items-center item-firstline">
-                <div className="item-senders flex-item-fluid flex pr1">
+                <div className="item-senders flex-item-fluid flex flex-nowrap pr1">
                     <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])} title={addresses}>
                         {!loading && displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
                     </span>
-                    <ItemAction element={element} className="ml0-5 mtauto mbauto" />
+                    <ItemAction element={element} className="ml0-5 flex-item-noshrink mtauto mbauto" />
                 </div>
                 <ItemDate
                     element={element}
