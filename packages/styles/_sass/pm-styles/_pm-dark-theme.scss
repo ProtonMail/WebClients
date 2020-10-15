@@ -183,6 +183,11 @@ summary {
 .fill-currentColor { fill: currentColor; } // to avoid some issues
 
 
+.qr-code {
+	border: 1px solid $white;
+}
+
+
 // global
 :root {
   --bgcolor-item-column-list: #{$pm-global-grey};
