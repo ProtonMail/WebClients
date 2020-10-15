@@ -114,7 +114,7 @@ const EnableTwoFactorModal = (props) => {
                                 .jt`Scan this code with your two-factor authentication device to set up your account. ${switchButton}.`}
                         </Alert>
                         <div className="aligncenter">
-                            <QRCode value={uri} size={200} includeMargin={false} renderAs="svg" />
+                            <QRCode className="qr-code" value={uri} size={200} includeMargin={false} renderAs="svg" />
                         </div>
                     </>
                 ),

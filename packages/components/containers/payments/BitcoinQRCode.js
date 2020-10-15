@@ -4,7 +4,7 @@ import { QRCode } from '../../components';
 
 const BitcoinQRCode = ({ amount, address, ...rest }) => {
     const url = `bitcoin:${address}?amount=${amount}`;
-    return <QRCode url={url} {...rest} />;
+    return <QRCode className="qr-code" url={url} {...rest} />;
 };
 
 BitcoinQRCode.propTypes = {
