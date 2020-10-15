@@ -52,7 +52,9 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
                 className="pm-modalContent"
                 onSubmit={(e) => {
                     e.preventDefault();
-                    if (!isSaveDisabled) {
+                    if (initialPassword === password) {
+                        onBack();
+                    } else if (!isSaveDisabled) {
                         onSave(password);
                     }
                 }}
