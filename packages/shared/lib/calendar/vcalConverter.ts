@@ -144,11 +144,11 @@ export const extractEmailAddress = ({ value, parameters }: VcalAttendeeProperty 
     return email && getEmailTo(email);
 };
 
-export const buildVcalOrganizer = (email: string) => {
+export const buildVcalOrganizer = (email: string, cn?: string) => {
     return {
         value: buildMailTo(email),
         parameters: {
-            cn: email,
+            cn: cn || email,
         },
     };
 };
