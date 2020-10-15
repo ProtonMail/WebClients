@@ -13,7 +13,6 @@ export interface Conversation {
     ContextNumUnread?: number;
     ContextNumMessages?: number;
     Labels?: ConversationLabel[];
-    LabelIDs?: string[];
     Order?: number;
     NumAttachments?: number;
     ContextNumAttachments?: number;

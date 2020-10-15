@@ -105,7 +105,7 @@ export const isUnreadMessage = (message: Message) => isUnread(message, undefined
 
 export const getLabelIDs = (element?: Element) =>
     isMessage(element)
-        ? element?.LabelIDs || []
+        ? (element as Message | undefined)?.LabelIDs || []
         : (element as Conversation | undefined)?.Labels?.map(({ ID }) => ID || '') || [];
 
 export const hasLabel = (element: Element, labelID?: string) => {
@@ -160,7 +160,7 @@ export const hasAttachments = (element: Element) =>
 export const parseLabelIDsInEvent = <T extends Element>(element: T, changes: T & LabelIDsChanges): T => {
     if (isMessage(element)) {
         const LabelIDs = unique(
-            diff(element.LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || [])
+            diff((element as Message).LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || [])
         );
         return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
     } else {

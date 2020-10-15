@@ -8,7 +8,12 @@ import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { useConversationCache } from '../../containers/ConversationProvider';
 import { isMessage, getCurrentFolderID, hasLabel } from '../../helpers/elements';
-import { LabelChanges, applyLabelChangesOnMessage, applyLabelChangesOnConversation } from '../../helpers/labels';
+import {
+    LabelChanges,
+    applyLabelChangesOnMessage,
+    applyLabelChangesOnConversation,
+    applyLabelChangesOnOneMessageOfAConversation
+} from '../../helpers/labels';
 
 const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) => {
     const rollbackChange = {} as LabelChanges;
@@ -69,11 +74,17 @@ export const useOptimisticApplyLabels = () => {
 
                 // Update in conversation cache
                 const conversationResult = conversationCache.get(message.ConversationID);
-                if (conversationResult && conversationResult.Conversation.NumMessages === 1) {
+                if (conversationResult) {
                     const conversation = conversationResult.Conversation;
                     conversationCache.set(message.ConversationID, {
-                        Conversation: applyLabelChangesOnConversation(conversation, changes),
-                        Messages: conversationResult.Messages
+                        Conversation: applyLabelChangesOnOneMessageOfAConversation(conversation, changes),
+                        Messages: conversationResult.Messages?.map((messageFromConversation) => {
+                            if (messageFromConversation.ID === message.ID) {
+                                return applyLabelChangesOnMessage(messageFromConversation, changes);
+                            } else {
+                                return messageFromConversation;
+                            }
+                        })
                     });
                 }
 
@@ -85,8 +96,8 @@ export const useOptimisticApplyLabels = () => {
 
                 // Update in elements cache if conversation mode
                 const conversationElement = elementsCache.elements[message.ConversationID] as Conversation | undefined;
-                if (conversationElement && conversationElement.ID && conversationElement.NumMessages === 1) {
-                    updatedElements[conversationElement.ID] = applyLabelChangesOnConversation(
+                if (conversationElement && conversationElement.ID) {
+                    updatedElements[conversationElement.ID] = applyLabelChangesOnOneMessageOfAConversation(
                         conversationElement,
                         changes
                     );
