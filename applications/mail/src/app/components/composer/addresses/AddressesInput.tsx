@@ -86,9 +86,9 @@ const AddressesInput = ({
     const handleInputChange = (event: ChangeEvent) => {
         const input = event.target as HTMLInputElement;
         const { value } = input;
-        const values = value.split(';');
+        const values = value.split(/[,;]/).map((value) => value.trim());
 
-        if (value === ';') {
+        if (value === ';' || value === ',') {
             return;
         }
 
