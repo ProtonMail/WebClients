@@ -7,32 +7,53 @@ const { debug, info } = require('../helpers/log')('proton-bundler');
 const SOURCE_FILE_INDEX = "find dist -maxdepth 1 -type f -name 'index*.js'";
 
 /**
+ * Fetch master and develop if we do not already have them
+ */
+const fetchBranches = async () => {
+    for (const branch of ['master', 'develop']) {
+        const { stdout = '' } = await bash(`git show-ref refs/heads/${branch} || echo`);
+        if (!stdout) {
+            info(`fetch branch ${branch} as we did not have its ref`);
+            await bash(`git fetch origin ${branch}`);
+        }
+    }
+};
+
+/**
+ * Get the develop package,json, the one we used to deploy
+ */
+const getPKGDevelopDeployed = async () => {
+    const { stdout: hashApp = '' } = await bash('cat .env.bundle | grep HASH');
+    const [, smallHash = 'origin/develop'] = hashApp.split('=');
+    const { stdout: pkgDevelop } = await bash(`git show ${smallHash}:package.json`);
+    return JSON.parse(pkgDevelop);
+};
+
+/**
  * When we deploy the APP we can deploy it from a cache bundle from staging with the previous version
  * as once we say staging is ok we tag, we need to bind the tag inside as we do for the sentry config
  * And we need to refresh the SRI config
  *
- * Here we get the commit we deployed from develop, and the version
+ * Here we get the version
  *  -> we take it from the commit of the previous commit as we're running on tag pipeline, so inside
  *     the current package.json we have the new version
  *
  * @param  {Boolean} isNewConfig Is it the new config we need to bind or not
- * @return {Object} {commit: <String>, version}: <String>}
+ * @return {Object} {version}: <String>}
  */
 const getConfigDeployGit = async (isNewConfig) => {
     if (!isNewConfig) {
-        // Ensure we have them inside the history
-        await bash('git fetch origin master && git fetch origin develop');
-        const { stdout: commit } = await bash('git rev-parse origin/develop');
+        await fetchBranches();
+        // Get vesion from the commit BEFORE the tag
         const { stdout: pkgMaster } = await bash('git show HEAD~1:package.json');
-        const { stdout: pkgDevelop } = await bash('git show origin/develop:package.json');
         const { version } = JSON.parse(pkgMaster);
-        const { version: versionDevelop } = JSON.parse(pkgDevelop);
-        return { commit, version, versionDevelop };
+        // Get version from what we deployed on develop
+        const { version: versionDevelop } = await getPKGDevelopDeployed();
+        return { version, versionDevelop };
     }
 
-    const { stdout: commit } = await bash('git rev-parse HEAD');
     const { version } = getPackage();
-    return { commit, version };
+    return { version };
 };
 
 /**
@@ -114,31 +135,25 @@ async function writeNewConfig(api) {
     const {
         sentry: { dsn: currentSentryDSN },
         secureUrl: currentSecureURL,
-        deployConfig: {
-            commit: currentCommitDeploy,
-            version: currentVersionDeploy,
-            versionDevelop: currentVersionDeployFromDevelop
-        } = {} // no config for angular
+        deployConfig: { version: currentVersionDeploy, versionDevelop: currentVersionDeployFromDevelop } = {} // no config for angular
     } = await getNewConfig(api, ['--api proxy'], true);
     const {
         apiUrl,
         sentry: { dsn: newSentryDSN },
         secureUrl: newSecureURL,
-        deployConfig: { commit: newCommitDeploy, version: newVersionDeploy } = {} // no config for angular
+        deployConfig: { version: newVersionDeploy } = {} // no config for angular
     } = await getNewConfig(api);
 
     debug({
         current: {
             currentSentryDSN,
             currentSecureURL,
-            currentCommitDeploy,
             currentVersionDeploy,
             currentVersionDeployFromDevelop
         },
         newConfig: {
             newSentryDSN,
             newSecureURL,
-            newCommitDeploy,
             newVersionDeploy
         }
     });
@@ -156,9 +171,6 @@ async function writeNewConfig(api) {
 
     // We don't have this use case for angular as we do not have this cache system
     if (!isWebClientLegacy()) {
-        await sed(`s#="${currentCommitDeploy}"#="${newCommitDeploy}"#;`, SOURCE_FILE_INDEX);
-        info(`replace current deployed commit by ${newCommitDeploy} inside the main index`);
-
         // First we try to replace the version from master
         await sed(`s#="${currentVersionDeploy}"#="${newVersionDeploy}"#;`, SOURCE_FILE_INDEX);
         info(
