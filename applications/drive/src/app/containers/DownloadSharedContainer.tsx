@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useCallback } from 'react';
+import { c } from 'ttag';
+
 import { useLocation } from 'react-router-dom';
-import { useModals, useLoading, LoaderPage } from 'react-components';
+import { useModals, useLoading, LoaderPage, Icon } from 'react-components';
 
 import DownloadSharedModal from '../components/DownloadSharedModal';
 import usePublicSharing from '../hooks/drive/usePublicSharing';
@@ -8,7 +10,7 @@ import FileSaver from '../utils/FileSaver/FileSaver';
 
 const DownloadSharedContainer = () => {
     const { createModal } = useModals();
-    const [loading, withLoading] = useLoading();
+    const [loading, withLoading] = useLoading(true);
     const { getSharedLinkPayload, startSharedFileTransfer } = usePublicSharing();
     const { hash, pathname } = useLocation();
 
@@ -46,7 +48,14 @@ const DownloadSharedContainer = () => {
         return <LoaderPage />;
     }
 
-    return null;
+    return (
+        <div className="color-global-light absolute bottom centered-absolute-horizontal">
+            <div className="aligncenter opacity-50 mb2">
+                <Icon name="lock-check" size={20} />
+                <div className="small m0">{c('Label').t`Zero-Access Encryption by Proton`}</div>
+            </div>
+        </div>
+    );
 };
 
 export default DownloadSharedContainer;

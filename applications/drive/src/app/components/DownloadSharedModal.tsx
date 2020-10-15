@@ -46,12 +46,12 @@ function DownloadSharedModal({ name, size, expirationTime, downloadFile, onClose
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
             <HeaderModal modalTitleID={modalTitleID} hasClose={false} onClose={noop}>
-                <div className="flex flex-column flex-items-center">
-                    <span className="flex aligncenter">
-                        <Icon name="protonmail" className="mr0-5 mauto" size={24} />
-                        Proton
+                <h3 className="flex flex-column flex-items-center">
+                    <span className="flex flex-items-center">
+                        <Icon name="protondrive" className="mr0-25" size={20} />
+                        <b>ProtonDrive</b>
                     </span>
-                </div>
+                </h3>
             </HeaderModal>
             <div className="pm-modalContent">
                 <InnerModal>
