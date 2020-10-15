@@ -1,4 +1,4 @@
 include:
   - project: 'deploy-app/fe-scripts'
     ref: master
-    file: '/jobs/private-angular.gitlab-ci.yml'
+    file: '/jobs/angular/v3.gitlab-ci.yml'
