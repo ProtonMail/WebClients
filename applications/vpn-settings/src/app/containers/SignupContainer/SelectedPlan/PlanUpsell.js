@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PLAN } from '../plans';
 import { PrimaryButton, Price } from 'react-components';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+import { PLAN } from '../plans';
 
 const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycle, onUpgrade }) => {
     const { planName, upsell } = selectedPlan;
@@ -76,7 +76,7 @@ PlanUpsell.propTypes = {
     currency: PropTypes.oneOf(CURRENCIES).isRequired,
     onExtendCycle: PropTypes.func.isRequired,
     onUpgrade: PropTypes.func.isRequired,
-    getPlanByName: PropTypes.func.isRequired
+    getPlanByName: PropTypes.func.isRequired,
 };
 
 export default PlanUpsell;

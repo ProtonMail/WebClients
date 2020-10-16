@@ -12,7 +12,7 @@ const VerificationMethodSelector = ({ allowedMethods, method, onSelect, ...rest 
 VerificationMethodSelector.propTypes = {
     allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired,
     method: PropTypes.string,
-    onSelect: PropTypes.func.isRequired
+    onSelect: PropTypes.func.isRequired,
 };
 
 export default VerificationMethodSelector;

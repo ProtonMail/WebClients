@@ -12,7 +12,7 @@ import {
     SidebarList,
     SidebarNav,
     SidebarListItemsWithSubsections,
-    MainLogo
+    MainLogo,
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { c } from 'ttag';

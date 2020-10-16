@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNotifications } from 'react-components';
+import { c } from 'ttag';
 import VerificationMethodForm from './VerificationMethodForm/VerificationMethodForm';
 import VerificationCodeForm from './VerificationCodeForm/VerificationCodeForm';
-import { c } from 'ttag';
 
 const VerificationForm = ({ defaultEmail, allowedMethods, onRequestCode, onSubmit }) => {
     const { createNotification } = useNotifications();
@@ -50,7 +50,7 @@ VerificationForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onRequestCode: PropTypes.func.isRequired,
     defaultEmail: PropTypes.string.isRequired,
-    allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired
+    allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default VerificationForm;

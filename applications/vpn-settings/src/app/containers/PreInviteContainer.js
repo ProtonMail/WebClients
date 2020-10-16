@@ -30,7 +30,7 @@ const PreInviteContainer = ({ history, match }) => {
 
                 history.push({
                     pathname: '/signup',
-                    state: { invite: { selector, token } }
+                    state: { invite: { selector, token } },
                 });
             })
             .catch(() => {
@@ -47,7 +47,7 @@ const PreInviteContainer = ({ history, match }) => {
 
 PreInviteContainer.propTypes = {
     history: PropTypes.object.isRequired,
-    match: PropTypes.object.isRequired
+    match: PropTypes.object.isRequired,
 };
 
 export default PreInviteContainer;

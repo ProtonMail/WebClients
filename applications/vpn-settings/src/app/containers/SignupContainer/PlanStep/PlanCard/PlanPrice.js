@@ -55,9 +55,9 @@ PlanPrice.propTypes = {
             totalMonthly: PropTypes.number,
             monthly: PropTypes.number,
             total: PropTypes.number,
-            saved: PropTypes.number
-        }).isRequired
-    }).isRequired
+            saved: PropTypes.number,
+        }).isRequired,
+    }).isRequired,
 };
 
 export default PlanPrice;

@@ -8,7 +8,7 @@ import {
     SimpleDropdown,
     DropdownMenu,
     SignInLayout,
-    OnLoginCallback
+    OnLoginCallback,
 } from 'react-components';
 import { isMember } from 'proton-shared/lib/user/helpers';
 

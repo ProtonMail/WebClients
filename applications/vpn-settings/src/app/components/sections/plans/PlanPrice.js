@@ -17,7 +17,7 @@ const MonthlyPrice = ({ plan, cycle, currency }) => {
 MonthlyPrice.propTypes = {
     plan: PropTypes.object,
     cycle: PropTypes.number,
-    currency: PropTypes.string
+    currency: PropTypes.string,
 };
 
 const BilledPrice = ({ plan, cycle, currency }) => {
@@ -31,7 +31,7 @@ const BilledPrice = ({ plan, cycle, currency }) => {
 BilledPrice.propTypes = {
     plan: PropTypes.object,
     cycle: PropTypes.number,
-    currency: PropTypes.string
+    currency: PropTypes.string,
 };
 
 const PlanPrice = ({ cycle = DEFAULT_CYCLE, currency = DEFAULT_CURRENCY, planName, plans }) => {
@@ -57,7 +57,7 @@ PlanPrice.propTypes = {
     plans: PropTypes.array,
     planName: PropTypes.string,
     cycle: PropTypes.number,
-    currency: PropTypes.string
+    currency: PropTypes.string,
 };
 
 export default PlanPrice;

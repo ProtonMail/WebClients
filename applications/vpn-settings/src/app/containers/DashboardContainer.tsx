@@ -9,7 +9,7 @@ import {
     NewSubscriptionModal,
     usePlans,
     useSubscription,
-    useOrganization
+    useOrganization,
 } from 'react-components';
 import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES } from 'proton-shared/lib/constants';
 import { UserModel } from 'proton-shared/lib/interfaces';
@@ -30,19 +30,19 @@ export const getDashboardPage = (user: UserModel) => {
         subsections: [
             !user.hasPaidVpn && {
                 text: c('Title').t`Plans`,
-                id: 'plans'
+                id: 'plans',
             },
             {
                 text: c('Title').t`Subscription`,
                 id: 'subscription',
-                permissions: [PAID]
+                permissions: [PAID],
             },
             {
                 text: c('Title').t`Billing`,
                 id: 'billing',
-                permissions: [PAID]
-            }
-        ].filter(isTruthy)
+                permissions: [PAID],
+            },
+        ].filter(isTruthy),
     };
 };
 
@@ -64,7 +64,7 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
                 plans,
                 planID: ID,
                 service: PLAN_SERVICES.VPN,
-                organization
+                organization,
             });
             createModal(<NewSubscriptionModal planIDs={planIDs} currency={Currency} cycle={Cycle} />);
         }

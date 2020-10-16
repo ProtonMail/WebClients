@@ -36,7 +36,7 @@ const PublicApp = ({ onLogin, locales }) => {
                                 <Redirect
                                     to={{
                                         pathname: '/login',
-                                        state: { from: location }
+                                        state: { from: location },
                                     }}
                                 />
                             );
@@ -49,7 +49,7 @@ const PublicApp = ({ onLogin, locales }) => {
 };
 
 PublicApp.propTypes = {
-    onLogin: PropTypes.func.isRequired
+    onLogin: PropTypes.func.isRequired,
 };
 
 export default PublicApp;

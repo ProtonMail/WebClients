@@ -30,7 +30,7 @@ const PlanDetails = ({ selectedPlan, cycle, currency }) => {
 PlanDetails.propTypes = {
     selectedPlan: PropTypes.object.isRequired,
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]).isRequired,
-    currency: PropTypes.oneOf(CURRENCIES).isRequired
+    currency: PropTypes.oneOf(CURRENCIES).isRequired,
 };
 
 export default PlanDetails;

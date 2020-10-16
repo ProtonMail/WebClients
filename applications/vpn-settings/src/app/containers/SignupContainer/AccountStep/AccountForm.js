@@ -14,7 +14,7 @@ import {
     Href,
     useLoading,
     Info,
-    Challenge
+    Challenge,
 } from 'react-components';
 import { c } from 'ttag';
 import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
@@ -71,20 +71,20 @@ const AccountForm = ({ model, onSubmit }) => {
             await api(queryCheckUsernameAvailability(username));
             const [usernamePayload, emailPayload] = await Promise.all([
                 challengeRefUsername.current?.getChallenge(),
-                challengeRefEmail.current?.getChallenge()
+                challengeRefEmail.current?.getChallenge(),
             ]);
             const payload =
                 usernamePayload && emailPayload
                     ? {
                           ...usernamePayload,
-                          ...emailPayload
+                          ...emailPayload,
                       }
                     : {};
             await onSubmit({
                 username,
                 password,
                 email,
-                payload
+                payload,
             });
         } catch (e) {
             setAsyncUsernameError(e.data ? e.data.Error : c('Error').t`Can't check username, try again later`);
@@ -141,7 +141,7 @@ const AccountForm = ({ model, onSubmit }) => {
                                 name="username"
                                 id="username"
                                 isSubmitted={isSubmitted}
-                                autoFocus={true}
+                                autoFocus
                                 placeholder={c('Placeholder').t`Username`}
                             />
                         </Challenge>
@@ -223,7 +223,7 @@ const AccountForm = ({ model, onSubmit }) => {
 
 AccountForm.propTypes = {
     model: PropTypes.object.isRequired,
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
 };
 
 export default AccountForm;

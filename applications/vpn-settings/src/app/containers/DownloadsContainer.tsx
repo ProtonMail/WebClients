@@ -12,13 +12,13 @@ export const getDownloadsPage = () => {
         subsections: [
             {
                 text: c('Title').t`ProtonVPN clients`,
-                id: 'protonvpn-clients'
+                id: 'protonvpn-clients',
             },
             {
                 text: c('Title').t`OpenVPN configuration files`,
-                id: 'openvpn-configuration-files'
-            }
-        ]
+                id: 'openvpn-configuration-files',
+            },
+        ],
     };
 };
 

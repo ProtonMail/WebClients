@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Alert, SubTitle } from 'react-components';
-import VerificationForm from './VerificationForm/VerificationForm';
 import { c } from 'ttag';
 
+import VerificationForm from './VerificationForm/VerificationForm';
 import LoginPanel from '../LoginPanel';
 
 const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, children }) => {
@@ -40,12 +40,12 @@ const VerificationStep = ({ onVerify, requestCode, allowedMethods, model, childr
 
 VerificationStep.propTypes = {
     model: PropTypes.shape({
-        email: PropTypes.string
+        email: PropTypes.string,
     }).isRequired,
     allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired,
     onVerify: PropTypes.func.isRequired,
     requestCode: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
 
 export default VerificationStep;

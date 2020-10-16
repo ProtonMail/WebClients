@@ -4,7 +4,7 @@ import {
     Paragraph,
     SettingsPropsShared,
     PrivateMainSettingsArea,
-    SectionConfig
+    SectionConfig,
 } from 'react-components';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
@@ -43,9 +43,8 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
         .map((child, index) => {
             const { permissions: sectionPermissions } = subsections[index];
             return React.cloneElement(child, {
-                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
                 // @ts-ignore
-                permission: hasPermission(userPermissions, sectionPermissions)
+                permission: hasPermission(userPermissions, sectionPermissions),
             });
         });
 

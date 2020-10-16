@@ -9,7 +9,7 @@ import {
     Info,
     Loader,
     useVPNCountries,
-    useToggle
+    useToggle,
 } from 'react-components';
 import { c } from 'ttag';
 import { PLANS, PLAN_SERVICES, DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE } from 'proton-shared/lib/constants';
@@ -23,7 +23,7 @@ const PLAN_NUMBERS = {
     [FREE]: 1,
     [VPNBASIC]: 2,
     [VPNPLUS]: 3,
-    [VISIONARY]: 4
+    [VISIONARY]: 4,
 };
 
 const PlansTable = ({
@@ -35,7 +35,7 @@ const PlansTable = ({
     currency = DEFAULT_CURRENCY,
     updateCurrency,
     subscription = {},
-    expand = false
+    expand = false,
 }) => {
     const { state, toggle } = useToggle(expand);
     const mySubscriptionText = c('Title').t`My subscription`;
@@ -404,7 +404,7 @@ PlansTable.propTypes = {
     cycle: PropTypes.number,
     updateCurrency: PropTypes.func,
     updateCycle: PropTypes.func,
-    subscription: PropTypes.object
+    subscription: PropTypes.object,
 };
 
 export default PlansTable;

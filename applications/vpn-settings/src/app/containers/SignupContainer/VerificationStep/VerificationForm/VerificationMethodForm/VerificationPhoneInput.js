@@ -34,7 +34,7 @@ const VerificationPhoneInput = ({ onSendClick, loading }) => {
 
 VerificationPhoneInput.propTypes = {
     onSendClick: PropTypes.func.isRequired,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
 };
 
 export default VerificationPhoneInput;

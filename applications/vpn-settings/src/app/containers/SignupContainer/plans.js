@@ -12,7 +12,7 @@ export const PLAN = {
     BUNDLE_PLUS: 'plus_vpnplus',
     VISIONARY: PLANS.VISIONARY,
     BASIC: PLANS.VPNBASIC,
-    PLUS: PLANS.VPNPLUS
+    PLUS: PLANS.VPNPLUS,
 };
 
 export const PLAN_NAMES = {
@@ -20,11 +20,11 @@ export const PLAN_NAMES = {
     [PLAN.FREE]: 'Free',
     [PLAN.VISIONARY]: 'Visionary',
     [PLAN.BASIC]: 'Basic',
-    [PLAN.PLUS]: 'Plus'
+    [PLAN.PLUS]: 'Plus',
 };
 
 export const PLAN_BUNDLES = {
-    [PLAN.BUNDLE_PLUS]: [PLANS.PLUS, PLANS.VPNPLUS]
+    [PLAN.BUNDLE_PLUS]: [PLANS.PLUS, PLANS.VPNPLUS],
 };
 
 export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
@@ -33,15 +33,15 @@ export const BEST_DEAL_PLANS = [PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 const getPlanFeatures = (plan, maxConnections, countries) =>
     ({
         [PLAN.FREE]: {
-            image: <img width={13} src={freePlanSvg} alt={`${PLAN_NAMES[PLAN.FREE]} plan image`} />,
+            image: <img width={13} src={freePlanSvg} alt={`${PLAN_NAMES[PLAN.FREE]} plan`} />,
             description: c('Plan Description').t`Privacy and security for everyone`,
             upsell: {
                 planName: PLAN.BASIC,
                 features: [
                     c('Plan Feature').t`High speed 1 Gbps VPN servers`,
                     c('Plan Feature').t`Access to ${countries.basic.length} countries`,
-                    c('Plan Feature').t`Filesharing/P2P support`
-                ]
+                    c('Plan Feature').t`Filesharing/P2P support`,
+                ],
             },
             features: [
                 c('Plan Feature').ngettext(
@@ -81,19 +81,19 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                             .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
                         url="https://protonvpn.com/support/streaming-guide/"
                     />
-                </>
-            ]
+                </>,
+            ],
         },
         [PLAN.BASIC]: {
-            image: <img width={60} src={basicPlanSvg} alt={`${PLAN_NAMES[PLAN.BASIC]} plan image`} />,
+            image: <img width={60} src={basicPlanSvg} alt={`${PLAN_NAMES[PLAN.BASIC]} plan`} />,
             description: c('Plan Description').t`Basic privacy features`,
             upsell: {
                 planName: PLAN.PLUS,
                 features: [
                     c('Plan Feature').t`Highest speed servers (10 Gbps)`,
                     c('Plan Feature').t`Access blocked content`,
-                    c('Plan Feature').t`All advanced security features`
-                ]
+                    c('Plan Feature').t`All advanced security features`,
+                ],
             },
             features: [
                 c('Plan Feature').ngettext(
@@ -133,11 +133,11 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                             .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
                         url="https://protonvpn.com/support/streaming-guide/"
                     />
-                </>
-            ]
+                </>,
+            ],
         },
         [PLAN.PLUS]: {
-            image: <img width={60} src={plusPlanSvg} alt={`${PLAN_NAMES[PLAN.PLUS]} plan image`} />,
+            image: <img width={60} src={plusPlanSvg} alt={`${PLAN_NAMES[PLAN.PLUS]} plan`} />,
             isBest: true,
             description: c('Plan Description').t`Advanced security features`,
             features: [
@@ -178,11 +178,11 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                             .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
                         url="https://protonvpn.com/support/streaming-guide/"
                     />
-                </>
-            ]
+                </>,
+            ],
         },
         [PLAN.VISIONARY]: {
-            image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan image`} />,
+            image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan`} />,
             description: c('Plan Description').t`The complete privacy suite`,
             features: [
                 c('Plan feature').t`All Plus plan features`,
@@ -198,11 +198,11 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                             .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`}
                         url="https://protonmail.com"
                     />
-                </>
-            ]
+                </>,
+            ],
         },
         [PLAN.BUNDLE_PLUS]: {
-            image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan image`} />,
+            image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan`} />,
             description: c('Plan Description').t`Bundle plan`,
             features: [
                 c('Plan Feature').ngettext(
@@ -250,9 +250,9 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                             .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`}
                         url="https://protonmail.com"
                     />
-                </>
-            ]
-        }
+                </>,
+            ],
+        },
     }[plan]);
 
 // To use coupon, AmountDue from coupon must be merged into plan.
@@ -281,6 +281,6 @@ export const getPlan = (planName, cycle, plans = [], countries = []) => {
         price,
         couponDiscount:
             plan && typeof plan.AmountDue !== 'undefined' ? Math.abs(price.monthly * cycle - plan.AmountDue) : 0,
-        couponDescription: plan && plan.CouponDescription
+        couponDescription: plan && plan.CouponDescription,
     };
 };

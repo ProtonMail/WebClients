@@ -20,7 +20,7 @@ const MobileRedirectionStep = ({ model }) => {
 };
 
 MobileRedirectionStep.propTypes = {
-    model: PropTypes.object.isRequired
+    model: PropTypes.object.isRequired,
 };
 
 export default MobileRedirectionStep;

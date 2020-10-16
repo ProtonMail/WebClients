@@ -51,11 +51,11 @@ ResendCodeModal.propTypes = {
     modalTitleID: PropTypes.string,
     destination: PropTypes.shape({
         Phone: PropTypes.string,
-        Address: PropTypes.string
+        Address: PropTypes.string,
     }).isRequired,
     onResend: PropTypes.func.isRequired,
     onClose: PropTypes.func,
-    onBack: PropTypes.func
+    onBack: PropTypes.func,
 };
 
 export default ResendCodeModal;

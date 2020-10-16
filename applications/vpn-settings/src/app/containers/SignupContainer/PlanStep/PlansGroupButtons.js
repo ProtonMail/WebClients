@@ -29,8 +29,8 @@ PlansGroupButtons.propTypes = {
     model: PropTypes.shape({
         planName: PropTypes.string.isRequired,
         cycle: PropTypes.oneOf([MONTHLY, TWO_YEARS, YEARLY]).isRequired,
-        currency: PropTypes.oneOf(CURRENCIES).isRequired
-    }).isRequired
+        currency: PropTypes.oneOf(CURRENCIES).isRequired,
+    }).isRequired,
 };
 
 export default PlansGroupButtons;

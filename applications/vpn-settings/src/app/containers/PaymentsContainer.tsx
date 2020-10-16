@@ -16,13 +16,13 @@ export const getPaymentsPage = () => {
         subsections: [
             {
                 text: c('Title').t`Payment methods`,
-                id: 'payment-methods'
+                id: 'payment-methods',
             },
             {
                 text: c('Title').t`Invoices`,
-                id: 'invoices'
-            }
-        ]
+                id: 'invoices',
+            },
+        ],
     };
 };
 const PaymentsContainer = ({ setActiveSection, location }: SettingsPropsShared) => {

@@ -12,13 +12,14 @@ const OSIcon = ({ os }) => {
         ios: iosSvg,
         linux: linuxSvg,
         android: androidSvg,
-        macos: macosSvg
+        macos: macosSvg,
     };
+    // eslint-disable-next-line jsx-a11y/alt-text
     return <img src={src[os]} width={20} className="ml0-25" />;
 };
 
 OSIcon.propTypes = {
-    os: PropTypes.string
+    os: PropTypes.string,
 };
 
 export default OSIcon;

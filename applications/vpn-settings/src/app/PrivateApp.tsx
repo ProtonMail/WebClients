@@ -7,7 +7,7 @@ import {
     SubscriptionModel,
     OrganizationModel,
     AddressesModel,
-    PaymentMethodsModel
+    PaymentMethodsModel,
 } from 'proton-shared/lib/models';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 
@@ -30,7 +30,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 UserSettingsModel,
                 SubscriptionModel,
                 PaymentMethodsModel,
-                OrganizationModel
+                OrganizationModel,
             ]}
             app={getAppContainer}
         />

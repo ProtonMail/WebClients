@@ -8,7 +8,7 @@ import {
     useApiResult,
     useModals,
     useVPNCountries,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
 import { getUser, queryCreateOldUser, queryDirectSignupStatus } from 'proton-shared/lib/api/user';
@@ -22,7 +22,7 @@ import {
     PLAN_TYPES,
     TOKEN_TYPES,
     CURRENCIES,
-    PAYMENT_METHOD_TYPES
+    PAYMENT_METHOD_TYPES,
 } from 'proton-shared/lib/constants';
 import { getPlan, PLAN, VPN_PLANS, PLAN_BUNDLES } from './plans';
 
@@ -41,7 +41,7 @@ const getSignupAvailability = (isDirectSignupEnabled, allowedMethods = []) => {
         email,
         free,
         sms,
-        paid
+        paid,
     };
 };
 
@@ -74,7 +74,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
     const initialCurrency = firstIn(CURRENCIES, [
         initialModel.currency,
         plans && plans[0] && plans[0].Currency,
-        DEFAULT_CURRENCY
+        DEFAULT_CURRENCY,
     ]);
 
     const [model, setModel] = useState({
@@ -83,7 +83,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
         currency: initialCurrency,
         email: initialModel.email || '',
         username: initialModel.username || '',
-        password: initialModel.password || ''
+        password: initialModel.password || '',
     });
 
     const getPlanByName = (planName, cycle = model.cycle) =>
@@ -97,14 +97,14 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
                     CouponCode: coupon.code,
                     Currency: model.currency,
                     Cycle: model.cycle,
-                    PlanIDs: toPlanMap(plans)
+                    PlanIDs: toPlanMap(plans),
                 })
             );
             const sum = (a = 0, b = 0) => a + b;
             const plan = !bundleName
                 ? plans[0]
                 : {
-                      //Constructs artificial plan for bundles
+                      // Constructs artificial plan for bundles
                       Name: bundleName,
                       Type: PLAN_TYPES.PLAN,
                       MaxVPN: Math.max(...plans.map(({ MaxVPN }) => MaxVPN)),
@@ -113,17 +113,17 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
                               ...pricing,
                               [CYCLE.MONTHLY]: sum(plan.Pricing[CYCLE.MONTHLY], pricing[CYCLE.MONTHLY]),
                               [CYCLE.YEARLY]: sum(plan.Pricing[CYCLE.YEARLY], pricing[CYCLE.YEARLY]),
-                              [CYCLE.TWO_YEARS]: sum(plan.Pricing[CYCLE.TWO_YEARS], pricing[CYCLE.TWO_YEARS])
+                              [CYCLE.TWO_YEARS]: sum(plan.Pricing[CYCLE.TWO_YEARS], pricing[CYCLE.TWO_YEARS]),
                           }),
                           {}
-                      )
+                      ),
                   };
             return Coupon
                 ? {
                       ...plan,
                       AmountDue,
                       CouponDiscount,
-                      CouponDescription: Coupon.Description
+                      CouponDescription: Coupon.Description,
                   }
                 : plan;
         };
@@ -137,7 +137,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
 
             const bundlePlans =
                 bundle && plans.filter(({ Name, Type }) => Type === PLAN_TYPES.PLAN && bundle.includes(Name));
-            const bundlePlan = bundle && getPlansWithCoupon(bundlePlans, model.planName);
+            const bundlePlan = bundle ? getPlansWithCoupon(bundlePlans, model.planName) : undefined;
 
             const plansWithCoupons = await Promise.all(
                 bundlePlan ? [...bundlePlans, bundlePlan] : plansInfo.map(getPlanWithCoupon)
@@ -187,17 +187,17 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
                 params: {
                     Amount: selectedPlan.price.total,
                     Currency: model.currency,
-                    ...paymentParameters
+                    ...paymentParameters,
                 },
                 api,
-                createModal
+                createModal,
             });
 
             const { VerifyCode } = await api(
                 verifyPayment({
                     Amount: amount,
                     Currency: model.currency,
-                    Payment
+                    Payment,
                 })
             );
 
@@ -210,9 +210,11 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
     const getToken = ({ coupon, invite, verificationToken, paymentDetails }) => {
         if (invite) {
             return { Token: `${invite.selector}:${invite.token}`, TokenType: TOKEN_TYPES.INVITE };
-        } else if (paymentDetails) {
+        }
+        if (paymentDetails) {
             return { Token: paymentDetails.VerifyCode, TokenType: TOKEN_TYPES.PAYMENT };
-        } else if (coupon) {
+        }
+        if (coupon) {
             return { Token: coupon.code, TokenType: TOKEN_TYPES.COUPON };
         }
         return verificationToken;
@@ -232,14 +234,14 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
                 Type: CLIENT_TYPE,
                 Email: email,
                 Username: username,
-                Payload: payload
-            })
+                Payload: payload,
+            }),
         });
 
         const authResult = await srpAuth({
             api,
             credentials: { username, password },
-            config: auth({ Username: username })
+            config: auth({ Username: username }),
         });
         const { UID, AccessToken } = authResult;
 
@@ -253,7 +255,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
                 Amount: 0,
                 Currency: currency,
                 Cycle: cycle,
-                CouponCode: signupToken.coupon ? signupToken.coupon.code : undefined
+                CouponCode: signupToken.coupon ? signupToken.coupon.code : undefined,
             };
             await api(withAuthHeaders(UID, AccessToken, subscribe(subscription)));
         }
@@ -282,7 +284,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
 
         makePayment,
         setModel,
-        signup
+        signup,
     };
 };
 

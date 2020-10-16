@@ -12,5 +12,5 @@ export const getPages = (user: UserModel): SectionConfig[] => [
     getGeneralPage(),
     getAccountPage(),
     getDownloadsPage(),
-    getPaymentsPage()
+    getPaymentsPage(),
 ];

@@ -23,7 +23,7 @@ const PublicHeader = ({ action }) => (
 );
 
 PublicHeader.propTypes = {
-    action: PropTypes.node
+    action: PropTypes.node,
 };
 
 export default PublicHeader;

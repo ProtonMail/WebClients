@@ -2,9 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Title } from 'react-components';
-import RedeemCouponForm from '../components/sections/redeem/RedeemCouponForm';
-import PublicHeader from '../components/layout/PublicHeader';
-import PublicPage from '../components/page/PublicPage';
 
 import GadgetImage from 'design-system/assets/img/pv-images/redeem/gadgets.png';
 import SwissBasedIcon from 'design-system/assets/img/pv-images/redeem/swiss_based.svg';
@@ -13,6 +10,9 @@ import NoLogsIcon from 'design-system/assets/img/pv-images/redeem/no_logs.svg';
 import KillSwitchIcon from 'design-system/assets/img/pv-images/redeem/kill_switch.svg';
 import DNSIcon from 'design-system/assets/img/pv-images/redeem/dns.svg';
 import EncryptionIcon from 'design-system/assets/img/pv-images/redeem/encryption.svg';
+import PublicPage from '../components/page/PublicPage';
+import PublicHeader from '../components/layout/PublicHeader';
+import RedeemCouponForm from '../components/sections/redeem/RedeemCouponForm';
 
 const RedeemContainer = ({ history }) => (
     <PublicPage title={c('Title').t`Redeem coupon`}>
@@ -43,42 +43,42 @@ const RedeemContainer = ({ history }) => (
                         alt: c('Image alt').t`Swiss based`,
                         title: c('Title').t`Swiss Based`,
                         about: c('About')
-                            .t`Protect your data with Swiss privacy laws, some of the strongest in the world`
+                            .t`Protect your data with Swiss privacy laws, some of the strongest in the world`,
                     },
                     {
                         icon: SecureCoreIcon,
                         alt: c('Image alt').t`Secure core servers`,
                         title: c('Title').t`Secure Core Servers`,
                         about: c('About')
-                            .t`Defend yourself against advanced network-based attacks by routing your traffic through hardened servers`
+                            .t`Defend yourself against advanced network-based attacks by routing your traffic through hardened servers`,
                     },
                     {
                         icon: NoLogsIcon,
                         alt: c('Image alt').t`No logs`,
                         title: c('Title').t`No Logs`,
                         about: c('About')
-                            .t`Keep your browsing history private - we do not keep any records of our users' online activity`
+                            .t`Keep your browsing history private - we do not keep any records of our users' online activity`,
                     },
                     {
                         icon: KillSwitchIcon,
                         alt: c('Image alt').t`Kill switch to prevent IP exposure`,
                         title: c('Title').t`Kill Switch`,
-                        about: c('About').t`Keep your data secure even if you are disconnected from your VPN server`
+                        about: c('About').t`Keep your data secure even if you are disconnected from your VPN server`,
                     },
                     {
                         icon: DNSIcon,
                         alt: c('Image alt').t`DNS leak prevention`,
                         title: c('Title').t`DNS leak prevention`,
                         about: c('About')
-                            .t`Prevent your DNS requests from revealing your browsing history by encrypting all your DNS queries`
+                            .t`Prevent your DNS requests from revealing your browsing history by encrypting all your DNS queries`,
                     },
                     {
                         icon: EncryptionIcon,
                         alt: c('Image alt').t`Strong encryption`,
                         title: c('Title').t`Strong encryption`,
                         about: c('About')
-                            .t`Defend your Internet connection with AES-256, the highest strength encryption.`
-                    }
+                            .t`Defend your Internet connection with AES-256, the highest strength encryption.`,
+                    },
                 ].map(({ icon, alt, title, about }) => (
                     <figure key={title} className="shadow-container w30 mb2 bg-white color-global-altgrey p1">
                         <img src={icon} alt={alt} className="redeem-promo-img center mt1 mb1" />
@@ -94,7 +94,7 @@ const RedeemContainer = ({ history }) => (
 );
 
 RedeemContainer.propTypes = {
-    history: PropTypes.object
+    history: PropTypes.object,
 };
 
 export default RedeemContainer;

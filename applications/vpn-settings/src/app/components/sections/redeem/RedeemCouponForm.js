@@ -27,14 +27,14 @@ const RedeemCouponForm = ({ history }) => {
 
         history.push({
             pathname: '/signup',
-            state: { coupon: { code: couponCode, cycle: Cycle, plan: Name } }
+            state: { coupon: { code: couponCode, cycle: Cycle, plan: Name } },
         });
     };
 
     return (
         <form className="redeem-form w100 col flex flex-column pb2" onSubmit={(e) => withLoading(handleSubmit(e))}>
             <Input
-                autoFocus={true}
+                autoFocus
                 className="redeem-coupon-code-input"
                 placeholder={c('Placeholder').t`Enter coupon code`}
                 value={couponCode}
@@ -53,7 +53,7 @@ const RedeemCouponForm = ({ history }) => {
 };
 
 RedeemCouponForm.propTypes = {
-    history: PropTypes.object
+    history: PropTypes.object,
 };
 
 export default RedeemCouponForm;

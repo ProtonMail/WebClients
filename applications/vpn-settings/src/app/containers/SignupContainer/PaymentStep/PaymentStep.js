@@ -9,7 +9,7 @@ import {
     Row,
     useLoading,
     SubTitle,
-    PayPalButton
+    PayPalButton,
 } from 'react-components';
 import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
@@ -23,7 +23,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
         currency: model.currency,
         onPay(params) {
             withLoading(onPay(model, params));
-        }
+        },
     });
 
     return (
@@ -54,7 +54,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                                         withLoading(
                                             onPay(model, {
                                                 ...parameters,
-                                                type: PAYMENT_METHOD_TYPES.CARD
+                                                type: PAYMENT_METHOD_TYPES.CARD,
                                             })
                                         )
                                     }
@@ -81,10 +81,10 @@ PaymentStep.propTypes = {
     paymentAmount: PropTypes.number.isRequired,
     model: PropTypes.shape({
         cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]).isRequired,
-        currency: PropTypes.oneOf(CURRENCIES).isRequired
+        currency: PropTypes.oneOf(CURRENCIES).isRequired,
     }),
     onPay: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
 
 export default PaymentStep;

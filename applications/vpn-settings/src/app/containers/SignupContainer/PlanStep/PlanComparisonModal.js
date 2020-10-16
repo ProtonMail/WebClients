@@ -21,7 +21,7 @@ const PlanComparisonModal = ({ modalTitleID = 'modalTitle', onClose, defaultCycl
             <div className="pm-modalContent">
                 <InnerModal>
                     <PlansTable
-                        expand={true}
+                        expand
                         loading={loadingPlans}
                         currency={currency}
                         cycle={cycle}
@@ -38,7 +38,7 @@ const PlanComparisonModal = ({ modalTitleID = 'modalTitle', onClose, defaultCycl
 PlanComparisonModal.propTypes = {
     ...DialogModal.propTypes,
     cycle: PropTypes.oneOf([MONTHLY, TWO_YEARS, YEARLY]).isRequired,
-    currency: PropTypes.oneOf(CURRENCIES).isRequired
+    currency: PropTypes.oneOf(CURRENCIES).isRequired,
 };
 
 export default PlanComparisonModal;

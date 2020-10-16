@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, SupportDropdown } from 'react-components';
+import { c } from 'ttag';
+import { CYCLE } from 'proton-shared/lib/constants';
+import { checkCookie } from 'proton-shared/lib/helpers/cookies';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
 import useSignup from './useSignup';
-import { c } from 'ttag';
 import VerificationStep from './VerificationStep/VerificationStep';
 import PaymentStep from './PaymentStep/PaymentStep';
 import { PLAN, VPN_PLANS, BEST_DEAL_PLANS, PLAN_BUNDLES } from './plans';
-import { CYCLE } from 'proton-shared/lib/constants';
 import PlanDetails from './SelectedPlan/PlanDetails';
 import PlanUpsell from './SelectedPlan/PlanUpsell';
 import useVerification from './VerificationStep/useVerification';
-import { checkCookie } from 'proton-shared/lib/helpers/cookies';
 import MobileRedirectionStep from './MobileRedirectionStep/MobileRedirectionStep';
 import PublicPage from '../../components/page/PublicPage';
 import './SignupContainer.scss';
@@ -22,7 +22,7 @@ const SignupState = {
     Account: 'account',
     Verification: 'verification',
     Payment: 'payment',
-    MobileRedirection: 'mobile-redirection'
+    MobileRedirection: 'mobile-redirection',
 };
 
 const BRAVE_COOKIE = '1397';
@@ -38,14 +38,14 @@ const SignupContainer = ({ match, history, onLogin }) => {
 
     const historyState = history.location.state || {};
     const preSelectedPlan = searchParams.get('plan') || historyState.preSelectedPlan;
-    const invite = historyState.invite;
+    const { invite } = historyState;
     const redirectToMobileRef = useRef((from || historyState.from) === 'mobile');
     const coupon =
         historyState.coupon ||
         (couponCode && {
             code: couponCode,
             plan: preSelectedPlan,
-            cycle: billingCycle
+            cycle: billingCycle,
         });
 
     const hasCookieOffer = checkCookie('offer', BESTDEAL_COOKIE) || checkCookie('offer', BRAVE_COOKIE);
@@ -58,14 +58,14 @@ const SignupContainer = ({ match, history, onLogin }) => {
             history.replace(`/signup/${SignupState.Account}`, {
                 coupon,
                 invite,
-                preSelectedPlan
+                preSelectedPlan,
             });
         } else {
             history.replace('/signup', {
                 coupon,
                 invite,
                 from,
-                preSelectedPlan
+                preSelectedPlan,
             });
         }
     }, []);
@@ -78,7 +78,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
         history.push(`/signup/${step}`, {
             coupon,
             invite,
-            preSelectedPlan
+            preSelectedPlan,
         });
 
     const handleLogin = (data) => {
@@ -98,21 +98,23 @@ const SignupContainer = ({ match, history, onLogin }) => {
         getPlanByName,
         isLoading,
         appliedCoupon,
-        appliedInvite
+        appliedInvite,
     } = useSignup(
         handleLogin,
         { coupon, invite, availablePlans },
         {
             planName: preSelectedPlan,
             cycle: billingCycle,
-            currency
+            currency,
         }
     );
     const { verify, requestCode } = useVerification();
 
     const handleSelectPlan = (model, next = false) => {
         setModel(model);
-        next && goToStep(SignupState.Account);
+        if (next) {
+            goToStep(SignupState.Account);
+        }
     };
 
     const handleCreateAccount = async (model) => {
@@ -140,7 +142,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
                 invite: appliedInvite,
                 coupon: appliedCoupon,
                 paymentDetails,
-                paymentMethodType: paymentParameters.type
+                paymentMethodType: paymentParameters.type,
             })
         );
         setModel(model);
@@ -263,8 +265,8 @@ SignupContainer.propTypes = {
     onLogin: PropTypes.func.isRequired,
     match: PropTypes.shape({
         params: PropTypes.shape({
-            step: PropTypes.string
-        })
+            step: PropTypes.string,
+        }),
     }).isRequired,
     history: PropTypes.shape({
         push: PropTypes.func.isRequired,
@@ -275,14 +277,14 @@ SignupContainer.propTypes = {
             state: PropTypes.oneOfType([
                 PropTypes.shape({
                     selector: PropTypes.string.isRequired,
-                    token: PropTypes.string.isRequired
+                    token: PropTypes.string.isRequired,
                 }),
                 PropTypes.shape({
-                    Coupon: PropTypes.shape({ Code: PropTypes.string })
-                })
-            ])
-        }).isRequired
-    }).isRequired
+                    Coupon: PropTypes.shape({ Code: PropTypes.string }),
+                }),
+            ]),
+        }).isRequired,
+    }).isRequired,
 };
 
 export default SignupContainer;

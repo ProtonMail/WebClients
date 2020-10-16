@@ -9,7 +9,7 @@ import {
     InlineLinkButton,
     useLoading,
     Alert,
-    useModals
+    useModals,
 } from 'react-components';
 import { c } from 'ttag';
 import ResendCodeModal from './ResendCodeModal';
@@ -50,7 +50,7 @@ const VerificationCodeForm = ({ onSubmit, onResend, onBack, destination }) => {
                             value={code}
                             onChange={handleChangeCode}
                             placeholder="123456"
-                            autoFocus={true}
+                            autoFocus
                             required
                         />
                         <div className="mb1">
@@ -78,8 +78,8 @@ VerificationCodeForm.propTypes = {
     onBack: PropTypes.func.isRequired,
     destination: PropTypes.shape({
         Phone: PropTypes.string,
-        Address: PropTypes.string
-    })
+        Address: PropTypes.string,
+    }),
 };
 
 export default VerificationCodeForm;

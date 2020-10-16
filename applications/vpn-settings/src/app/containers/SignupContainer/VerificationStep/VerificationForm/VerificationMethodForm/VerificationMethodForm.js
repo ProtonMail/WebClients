@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Row, useLoading, Radio, Label, Field } from 'react-components';
 import { c } from 'ttag';
+import { TOKEN_TYPES } from 'proton-shared/lib/constants';
 import VerificationEmailInput from './VerificationEmailInput';
 import VerificationPhoneInput from './VerificationPhoneInput';
-import { TOKEN_TYPES } from 'proton-shared/lib/constants';
 
 const VERIFICATION_METHOD = {
     EMAIL: TOKEN_TYPES.EMAIL,
-    SMS: TOKEN_TYPES.SMS
+    SMS: TOKEN_TYPES.SMS,
 };
 
 const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
@@ -72,7 +72,7 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
 VerificationMethodForm.propTypes = {
     defaultEmail: PropTypes.string.isRequired,
     allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
 };
 
 export default VerificationMethodForm;

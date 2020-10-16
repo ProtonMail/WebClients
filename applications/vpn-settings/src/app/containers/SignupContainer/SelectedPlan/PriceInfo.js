@@ -12,18 +12,18 @@ const PriceInfo = ({ plan, cycle, currency }) => {
     const billingCycleI18n = {
         [CYCLE.MONTHLY]: {
             label: c('Label').t`1 month`,
-            total: c('Label').t`Total price`
+            total: c('Label').t`Total price`,
         },
         [CYCLE.YEARLY]: {
             label: c('Label').t`12 months`,
             discount: c('Label').t`Annual discount (${discountPercentage}%)`,
-            total: c('Label').t`Total price (annually)`
+            total: c('Label').t`Total price (annually)`,
         },
         [CYCLE.TWO_YEARS]: {
             label: c('Label').t`24 months`,
             discount: c('Label').t`Two-year discount (${discountPercentage}%)`,
-            total: c('Label').t`Total price (two-year)`
-        }
+            total: c('Label').t`Total price (two-year)`,
+        },
     }[cycle];
 
     return (
@@ -57,7 +57,7 @@ const PriceInfo = ({ plan, cycle, currency }) => {
 PriceInfo.propTypes = {
     plan: PropTypes.object.isRequired,
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]).isRequired,
-    currency: PropTypes.oneOf(CURRENCIES).isRequired
+    currency: PropTypes.oneOf(CURRENCIES).isRequired,
 };
 
 export default PriceInfo;

@@ -13,13 +13,13 @@ export const getGeneralPage = () => {
         subsections: [
             {
                 text: c('Title').t`Language`,
-                id: 'language'
+                id: 'language',
             },
             {
                 text: c('Title').t`Themes`,
-                id: 'themes'
-            }
-        ]
+                id: 'themes',
+            },
+        ],
     };
 };
 

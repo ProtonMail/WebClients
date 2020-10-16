@@ -27,7 +27,7 @@ const VerificationEmailInput = ({ defaultEmail = '', onSendClick, loading }) => 
 VerificationEmailInput.propTypes = {
     onSendClick: PropTypes.func.isRequired,
     defaultEmail: PropTypes.string,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
 };
 
 export default VerificationEmailInput;

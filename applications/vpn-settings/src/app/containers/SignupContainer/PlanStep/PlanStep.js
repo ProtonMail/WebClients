@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Field, CurrencySelector, CycleSelector, SubTitle, useModals, LinkButton } from 'react-components';
-import PlanCard from './PlanCard/PlanCard';
 import { CURRENCIES, CYCLE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import PlanCard from './PlanCard/PlanCard';
 import PlanComparisonModal from './PlanComparisonModal';
 import OSIcon from './OSIcon';
 import PlansGroupButtons from './PlansGroupButtons';
@@ -41,7 +41,7 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
                             options={[
                                 { text: c('Billing cycle option').t`Monthly`, value: MONTHLY },
                                 { text: c('Billing cycle option').t`Annually SAVE 20%`, value: YEARLY },
-                                { text: c('Billing cycle option').t`Two years SAVE 33%`, value: TWO_YEARS }
+                                { text: c('Billing cycle option').t`Two years SAVE 33%`, value: TWO_YEARS },
                             ]}
                         />
                     </Field>
@@ -89,17 +89,17 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
 
 PlanStep.propTypes = {
     signupAvailability: PropTypes.shape({
-        paid: PropTypes.bool
+        paid: PropTypes.bool,
     }).isRequired,
     plans: PropTypes.arrayOf(PropTypes.object).isRequired,
     model: PropTypes.shape({
         planName: PropTypes.string.isRequired,
         cycle: PropTypes.oneOf([MONTHLY, TWO_YEARS, YEARLY]).isRequired,
-        currency: PropTypes.oneOf(CURRENCIES).isRequired
+        currency: PropTypes.oneOf(CURRENCIES).isRequired,
     }).isRequired,
     onSelectPlan: PropTypes.func.isRequired,
     onChangeCycle: PropTypes.func.isRequired,
-    onChangeCurrency: PropTypes.func.isRequired
+    onChangeCurrency: PropTypes.func.isRequired,
 };
 
 export default PlanStep;

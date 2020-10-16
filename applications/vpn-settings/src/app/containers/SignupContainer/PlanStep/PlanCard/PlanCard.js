@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { classnames, Button, Tooltip, Badge } from 'react-components';
 import { c } from 'ttag';
-import PlanPrice from './PlanPrice';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+import PlanPrice from './PlanPrice';
 
 const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => {
     const button = (
@@ -13,7 +13,7 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
             className={classnames([
                 'w100 mtauto',
                 !isActive && 'pm-button--primaryborder',
-                isActive && 'pm-button--primary'
+                isActive && 'pm-button--primary',
             ])}
         >
             {c('Plan Action').t`Get ${plan.title}`}
@@ -24,7 +24,7 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
         <div
             className={classnames([
                 'plan-card flex-item-fluid flex flex-column relative',
-                isActive ? 'plan-card--active' : 'nomobile'
+                isActive ? 'plan-card--active' : 'nomobile',
             ])}
         >
             <div className="mb1 plan-card-image flex flex-items-end nomobile">{plan.image}</div>
@@ -42,7 +42,7 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
                     <strong
                         className={classnames([
                             'min-h5e border-top mt1 pt1 mb1 big break',
-                            isActive && 'color-primary'
+                            isActive && 'color-primary',
                         ])}
                     >
                         {plan.description}
@@ -74,12 +74,12 @@ PlanCard.propTypes = {
         description: PropTypes.string,
         features: PropTypes.arrayOf(PropTypes.node),
         highlights: PropTypes.arrayOf(PropTypes.string),
-        isBest: PropTypes.bool
+        isBest: PropTypes.bool,
     }).isRequired,
     cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]).isRequired,
     currency: PropTypes.oneOf(CURRENCIES).isRequired,
     onSelect: PropTypes.func.isRequired,
-    isDisabled: PropTypes.bool
+    isDisabled: PropTypes.bool,
 };
 
 export default PlanCard;
