@@ -207,6 +207,7 @@ export const getContactPublicKeyModel = async ({
         pgpAddressDisabled: isDisabledUser(apiKeysConfig),
         isContact,
         isContactSignatureVerified,
+        emailAddressWarnings: apiKeysConfig.Warnings,
         emailAddressErrors: apiKeysConfig.Errors,
     };
 };

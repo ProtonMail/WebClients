@@ -23,6 +23,7 @@ export interface ApiKeysConfig {
     RecipientType?: RECIPIENT_TYPES;
     MIMEType?: MIME_TYPES;
     SignedKeyList?: any[];
+    Warnings?: string[];
     Errors?: string[];
 }
 
