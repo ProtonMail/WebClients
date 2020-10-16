@@ -29,12 +29,7 @@ const PublicApp = ({ onLogin, locales }) => {
                             <SignupContainer history={history} match={match} onLogin={onLogin} />
                         )}
                     />
-                    <Route
-                        path="/login"
-                        render={({ history, location }) => (
-                            <LoginContainer history={history} location={location} onLogin={onLogin} />
-                        )}
-                    />
+                    <Route path="/login" render={() => <LoginContainer onLogin={onLogin} />} />
                     <Route
                         render={({ location }) => {
                             return (

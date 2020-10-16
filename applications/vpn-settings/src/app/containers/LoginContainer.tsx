@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import * as H from 'history';
 import { c } from 'ttag';
 import {
     MinimalLoginContainer,
@@ -16,14 +17,18 @@ interface Props {
 }
 
 const LoginContainer = ({ onLogin }: Props) => {
+    const location = useLocation<{ from?: H.Location }>();
     return (
         <SignInLayout title={c('Title').t`Log in`}>
             <h2>{c('Title').t`User log in`}</h2>
             <MinimalLoginContainer
                 onLogin={(data) => {
                     const { User } = data;
+                    const previousLocation = location.state?.from;
+                    const previousSearch = previousLocation?.search || '';
                     const path = User && isMember(User) ? '/account' : '/dashboard';
-                    return onLogin({ ...data, path });
+                    const pathWithSearch = `${path}${previousSearch}`;
+                    return onLogin({ ...data, path: pathWithSearch });
                 }}
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="pm-button--link">
