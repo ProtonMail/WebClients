@@ -121,10 +121,9 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                                     .t`Proton can't connect to your Yahoo Mail account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account.`}</li>
+                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account`}</li>
                                 <li>{c('Import error')
-                                    .jt`your app password is correct. Do ${boldNot} use your regular password.
-                                `}</li>
+                                    .jt`your app password is correct. Do ${boldNot} use your regular password`}</li>
                             </ul>
                         </>
                     );
@@ -144,7 +143,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                             </div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error')
-                                    .jt`your email address and app password are correct. Do ${boldNot} use your regular password.`}</li>
+                                    .jt`your email address and app password are correct. Do ${boldNot} use your regular password`}</li>
                                 <li>{c('Import error').t`IMAP access is enabled in your Yahoo account`}</li>
                             </ul>
                         </>
@@ -186,7 +185,16 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                             </div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`IMAP access is enabled in your external account`}</li>
-                                <li>{c('Import error').t`the mail server address and port number are correct`}</li>
+                                <li>{c('Import error').t`your email address and password are correct`}</li>
+                            </ul>
+                            <div className="mb1">
+                                {c('Import error').t`Use your app password instead of your regular password if:`}
+                            </div>
+                            <ul className="m0 pb1">
+                                <li>{c('Import error')
+                                    .t`2-step verification is enabled in your external email account`}</li>
+                                <li>{c('Import error')
+                                    .t`your email account requires an app password to export your data`}</li>
                             </ul>
                         </>
                     );
