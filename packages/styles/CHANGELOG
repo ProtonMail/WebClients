@@ -8,6 +8,7 @@
 - added new typographic helper `strike`
 - added new icons `shape-globe`, `caret-double-left`
 - added `onmobile-list-1column` helpers and made `list-2columns` more flexible (accepts any child type now)
+- added `borderColor-primary` helper
 
 ## Updated/fixes
 
@@ -20,6 +21,7 @@
 - fix hover over area around item in compact mode
 - added white border to qr codes for dark mode
 - fixed warning badge - contrast color issue
+- added `pm-button--primaryborderEvenInDarkMode`: a `pm-button--primaryborder` that stays the same even on Dark mode
 
 
 # [1.8.5] - 2019-09-30

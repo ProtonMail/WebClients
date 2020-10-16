@@ -46,6 +46,10 @@
   border: 1px solid currentColor;
 }
 
+.borderColor-primary {
+	border-color: $pm-primary;
+}
+
 .shadow-container {
   box-shadow: 0 0 20px 0 $input-shadow-color;
 }
