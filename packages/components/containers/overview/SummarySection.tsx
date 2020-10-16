@@ -46,7 +46,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 <span className="dropDown-logout-initials rounded semibold p0-25 mb0-5 inline-flex bg-global-grey color-white">
                     <span className="dropDown-logout-text center">{initials}</span>
                 </span>
-                <h3 className="mb0-5 ellipsis" title={DisplayName || Name}>
+                <h3 className="mb0-5 lh-standard ellipsis" title={DisplayName || Name}>
                     {DisplayName || Name}
                 </h3>
                 {organization?.Name ? (
