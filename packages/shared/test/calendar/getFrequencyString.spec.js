@@ -135,6 +135,19 @@ describe('getTimezonedFrequencyString should produce the expected string for wee
         expect(getTimezonedFrequencyString(rrule, dummyStart, options)).toEqual('Every 3 weeks on all days, 5 times');
     });
 
+    it('should get a weekly rrule with an until date in a different timezone', () => {
+        const tzid = 'America/Kentucky/Louisville';
+        const rrule = getWeeklyRrule({
+            interval: 1,
+            byday: ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'],
+            until: getUntilProperty({ year: 2020, month: 10, day: 17 }, false, tzid),
+        });
+        const start = getDateTimeProperty({ year: 2020, month: 1, day: 20 }, tzid);
+        expect(getTimezonedFrequencyString(rrule, start, options)).toEqual(
+            'Weekly on all days, until Oct 17, 2020 (America/Kentucky/Louisville)'
+        );
+    });
+
     it('should get a custom weekly recurring event happening every three weeks, on all days of the week, until 20th February 2020', () => {
         const rrule = getWeeklyRrule({
             interval: 3,

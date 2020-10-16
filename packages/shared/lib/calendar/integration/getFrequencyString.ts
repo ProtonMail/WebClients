@@ -1,5 +1,5 @@
-import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
+import { format } from '../../date-fns-utc';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
 import { unique } from '../../helpers/array';
 import { mod } from '../../helpers/math';
@@ -571,7 +571,7 @@ export const getFrequencyString = (
     const end = {
         type: getEndType(count, until),
         count,
-        until: getUntilDate(until),
+        until: getUntilDate(until, getPropertyTzid(dtstart)),
     };
 
     if (!isSupported) {
