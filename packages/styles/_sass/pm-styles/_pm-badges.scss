@@ -52,6 +52,7 @@ $border-width: 2px !default;
 .badgeLabel-warning {
   @extend .bg-global-attention;
   border-color: $pm-global-attention;
+  color: $black;
 }
 
 .badgeLabel-error {
