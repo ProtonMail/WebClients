@@ -49,39 +49,39 @@ export const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is Vca
 };
 
 export const getIsCalendar = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVcalendar => {
-    return vcalComponent.component.toLowerCase() === 'vcalendar';
+    return vcalComponent?.component?.toLowerCase() === 'vcalendar';
 };
 
 export const getIsEventComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVeventComponent => {
-    return vcalComponent.component.toLowerCase() === 'vevent';
+    return vcalComponent?.component?.toLowerCase() === 'vevent';
 };
 
 export const getIsTodoComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVtodoComponent => {
-    return vcalComponent.component.toLowerCase() === 'vtodo';
+    return vcalComponent?.component?.toLowerCase() === 'vtodo';
 };
 
 export const getIsJournalComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVjournalComponent => {
-    return vcalComponent.component.toLowerCase() === 'vjournal';
+    return vcalComponent?.component?.toLowerCase() === 'vjournal';
 };
 
 export const getIsFreebusyComponent = (
     vcalComponent: VcalCalendarComponent
 ): vcalComponent is VcalVfreebusyComponent => {
-    return vcalComponent.component.toLowerCase() === 'vfreebusy';
+    return vcalComponent?.component?.toLowerCase() === 'vfreebusy';
 };
 
 export const getIsTimezoneComponent = (
     vcalComponent: VcalCalendarComponent
 ): vcalComponent is VcalVtimezoneComponent => {
-    return vcalComponent.component.toLowerCase() === 'vtimezone';
+    return vcalComponent?.component?.toLowerCase() === 'vtimezone';
 };
 
 export const getIsAlarmComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVtimezoneComponent => {
-    return vcalComponent.component.toLowerCase() === 'valarm';
+    return vcalComponent?.component?.toLowerCase() === 'valarm';
 };
 
 export const getIsXOrIanaComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalXOrIanaComponent => {
-    const name = vcalComponent.component.toLowerCase();
+    const name = vcalComponent?.component?.toLowerCase();
     return !['vcalendar', 'vevent', 'vtodo', 'vjournal', 'vfreebusy', 'vtimezone'].includes(name);
 };
 

@@ -293,9 +293,9 @@ export const fromIcalComponent = (component: any) => {
 export const fromIcalComponentWithErrors = (component: any): VcalCalendarComponent => {
     const components = component.getAllSubcomponents().map((subcomponent: any) => {
         try {
-            return fromIcalComponent(subcomponent);
+            return fromIcalComponentWithErrors(subcomponent);
         } catch (error) {
-            return { error, component: subcomponent };
+            return { error, icalComponent: subcomponent };
         }
     });
     return {
