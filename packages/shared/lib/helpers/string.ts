@@ -6,8 +6,10 @@ enum CURRENCIES {
     CHF = 'CHF',
 }
 
-export const getRandomString = (length: number) => {
-    const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+export const getRandomString = (
+    length: number,
+    charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+) => {
     let i;
     let result = '';
 
