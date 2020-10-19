@@ -1,9 +1,10 @@
+import { enUS } from 'date-fns/locale';
 import { getIsRruleSupported } from 'proton-shared/lib/calendar/integration/rrule';
 import { parse } from 'proton-shared/lib/calendar/vcal';
-import { VcalVcalendar, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalDateProperty, VcalVcalendar, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { getSupportedEventInvitation, parseEventInvitation } from './invite';
+import { formatEndDateTime, formatStartDateTime, getSupportedEventInvitation, parseEventInvitation } from './invite';
 
 describe('getIsRruleSupported for invitations', () => {
     test('should accept events with daily recurring rules valid for invitations', () => {
@@ -102,5 +103,33 @@ END:VCALENDAR`;
         const parsedInvitation = parseEventInvitation(invitation) as VcalVcalendar;
         const message = { Time: Math.round(Date.now() / 1000) } as Message;
         expect(() => getSupportedEventInvitation(parsedInvitation, message)).toThrowError('Invalid invitation');
+    });
+});
+
+describe('formatStartDateTime', () => {
+    test('should format all-day times as expected for single-day events', () => {
+        const dtstart: VcalDateProperty = {
+            parameters: { type: 'date' },
+            value: { year: 2020, month: 10, day: 13 }
+        };
+        expect(formatStartDateTime(dtstart, enUS, true, true)).toEqual('Oct 13, 2020 (all day)');
+    });
+
+    test('should format all-day times as expected for multiple-day events', () => {
+        const dtstart: VcalDateProperty = {
+            parameters: { type: 'date' },
+            value: { year: 2020, month: 10, day: 13 }
+        };
+        expect(formatStartDateTime(dtstart, enUS, true, false)).toEqual('Oct 13, 2020');
+    });
+});
+
+describe('formatEndDateTime', () => {
+    test('should format all-day times as expected for multiple-day events', () => {
+        const dtend: VcalDateProperty = {
+            parameters: { type: 'date' },
+            value: { year: 2020, month: 10, day: 13 }
+        };
+        expect(formatEndDateTime(dtend, enUS, true)).toEqual('Oct 12, 2020');
     });
 });

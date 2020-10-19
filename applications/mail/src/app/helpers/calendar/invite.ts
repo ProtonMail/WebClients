@@ -1,4 +1,4 @@
-import { getUnixTime } from 'date-fns';
+import { getUnixTime, format } from 'date-fns';
 import { getAttendeeEmail, getSupportedAttendee } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import {
@@ -36,13 +36,7 @@ import {
 } from 'proton-shared/lib/calendar/vcalHelper';
 import { SECOND } from 'proton-shared/lib/constants';
 import { addDays, format as formatUTC, isNextDay } from 'proton-shared/lib/date-fns-utc';
-import {
-    convertUTCDateTimeToZone,
-    formatTimezoneOffset,
-    fromUTCDate,
-    getSupportedTimezone,
-    getTimezoneOffset
-} from 'proton-shared/lib/date/timezone';
+import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from 'proton-shared/lib/date/timezone';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { cleanEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
@@ -217,10 +211,11 @@ export const getAllDayInfo = (dtstart: VcalDateOrDateTimeProperty, dtend?: VcalD
     }
     const fakeUTCStart = propertyToUTCDate(dtstart);
     const fakeUTCEnd = propertyToUTCDate(dtend);
-    return { isAllDay: true, isSingleAllDay: isNextDay(fakeUTCStart, fakeUTCEnd) };
+    // account for non-RFC-compliant all-day events with DTSTART = DTEND
+    return { isAllDay: true, isSingleAllDay: isNextDay(fakeUTCStart, fakeUTCEnd) || +fakeUTCStart === +fakeUTCEnd };
 };
 
-export const formatDateTime = (
+export const formatStartDateTime = (
     property: VcalDateOrDateTimeProperty,
     locale: Locale,
     isAllDay: boolean,
@@ -235,11 +230,17 @@ export const formatDateTime = (
         return formattedDate;
     }
     const dateTimeProperty = property as VcalDateTimeProperty;
-    const fakeUTCDateProperty = { value: { ...dateTimeProperty.value, isUTC: true } };
-    const fakeUTCDate = propertyToUTCDate(fakeUTCDateProperty);
-    const date = propertyToUTCDate(property);
-    const utcOffset = getTimezoneOffset(date, dateTimeProperty.parameters?.tzid || 'UTC').offset;
-    return `${formatUTC(fakeUTCDate, 'PPp', { locale })} (GMT${formatTimezoneOffset(utcOffset)})`;
+    return format(propertyToUTCDate(dateTimeProperty), 'PPp', { locale });
+};
+
+export const formatEndDateTime = (property: VcalDateOrDateTimeProperty, locale: Locale, isAllDay: boolean) => {
+    if (isAllDay) {
+        const utcDate = propertyToUTCDate(property);
+        const formattedDate = formatUTC(addDays(utcDate, -1), 'PP', { locale });
+        return formattedDate;
+    }
+    const dateTimeProperty = property as VcalDateTimeProperty;
+    return format(propertyToUTCDate(dateTimeProperty), 'PPp', { locale });
 };
 
 const getIsEventInvitationValid = (event: VcalVeventComponent | undefined): event is VcalVeventComponent => {

@@ -7,7 +7,12 @@ import { getFrequencyString } from 'proton-shared/lib/calendar/integration/getFr
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { formatDateTime, getAllDayInfo, InvitationModel } from '../../../../helpers/calendar/invite';
+import {
+    formatEndDateTime,
+    formatStartDateTime,
+    getAllDayInfo,
+    InvitationModel
+} from '../../../../helpers/calendar/invite';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import ExtraEventParticipants from './ExtraEventParticipants';
 
@@ -42,12 +47,12 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     const properties: { label: string; value: string | React.ReactNode; key: string }[] = [
         {
             label: c('Label').t`Start time`,
-            value: formatDateTime(dtstart, dateLocale, isAllDay, isSingleAllDay),
+            value: formatStartDateTime(dtstart, dateLocale, isAllDay, isSingleAllDay),
             key: 'startTime'
         },
         !isSingleAllDay && {
             label: c('Label').t`End time`,
-            value: formatDateTime(dtend, dateLocale, isAllDay),
+            value: formatEndDateTime(dtend, dateLocale, isAllDay),
             key: 'endTime'
         },
         !!frequencyString && { label: c('Label').t`Repeats`, value: frequencyString, key: 'frequency' },
