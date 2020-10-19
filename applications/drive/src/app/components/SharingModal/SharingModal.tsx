@@ -10,6 +10,7 @@ import EditPasswordState from './EditPasswordState';
 import ErrorState from './ErrorState';
 import GeneratedLinkState from './GeneratedLinkState';
 import LoadingState from './LoadingState';
+import { validateSharedURLPassword } from '../../utils/validation';
 
 interface Props {
     onClose?: () => void;
@@ -36,13 +37,24 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
     const { createNotification } = useNotifications();
 
     useEffect(() => {
+        const generatePassword = (): string => {
+            const password = getRandomString(12);
+
+            // If password is invalid, retry, chance is like 0.87 to get a valid password by random
+            if (validateSharedURLPassword(password)) {
+                return generatePassword();
+            }
+
+            return password;
+        };
+
         const getToken = async () => {
             const shareUrlInfo = item.SharedURLShareID
                 ? await getSharedURLs(item.SharedURLShareID).then(async ([sharedUrl]) => {
                       return decryptSharedURL(sharedUrl);
                   })
                 : await getShareMetaShort(shareId).then(async ({ VolumeID }) => {
-                      const result = await createSharedLink(shareId, VolumeID, item.LinkID, getRandomString(10));
+                      const result = await createSharedLink(shareId, VolumeID, item.LinkID, generatePassword());
                       await events.call(shareId);
                       return result;
                   });
