@@ -8,7 +8,7 @@ import { decryptUnsigned, getStreamMessage } from 'proton-shared/lib/keys/driveK
 
 import { queryInitSRPHandshake, queryGetURLPayload } from '../../api/sharing';
 import { getDecryptedSessionKey } from '../../utils/drive/driveCrypto';
-import { InitHandshake, SharedLinkPayload } from '../../interfaces/sharing';
+import { InitHandshake, SharedLinkPayload, SharedLinkInfo } from '../../interfaces/sharing';
 import { DriveFileBlock } from '../../interfaces/file';
 import { TransferMeta } from '../../interfaces/transfer';
 import { StreamTransformer } from '../../components/downloads/download';
@@ -18,7 +18,7 @@ function usePublicSharing() {
     const api = useApi();
     const { addToDownloadQueue } = useDownloadProvider();
 
-    const getSharedLinkPayload = async (token: string, password: string) => {
+    const getSharedLinkPayload = async (token: string, password: string): Promise<SharedLinkInfo> => {
         const initHandshake = async (token: string) => {
             return api<InitHandshake>(queryInitSRPHandshake(token));
         };
