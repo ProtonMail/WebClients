@@ -31,6 +31,7 @@ function DownloadSharedForm({ name, size, expirationTime, downloadFile, classNam
 
     return (
         <Bordered
+            style={{ minHeight: '30em' }}
             className={classnames(['bg-white-dm color-global-grey-dm flex-items-center flex w100 mw40e', className])}
         >
             {error ? (
