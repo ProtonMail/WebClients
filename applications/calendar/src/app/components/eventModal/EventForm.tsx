@@ -61,6 +61,7 @@ const EventForm = ({
         defaultPartDayNotification,
         calendars,
     } = model;
+    const isSingleEdit = !!model.rest?.['recurrence-id'];
 
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
     const showParticipants = FEATURE_FLAGS.includes('calendar-invitations');
@@ -214,6 +215,7 @@ const EventForm = ({
                         withIcon={false}
                         id={CALENDAR_INPUT_ID}
                         title={c('Title').t`Select which calendar to add this event to`}
+                        disabled={!isOrganizer && isSingleEdit}
                         {...{ model, setModel }}
                     />
                 </IconRow>

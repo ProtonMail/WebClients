@@ -2,6 +2,7 @@ import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { cleanEmail } from 'proton-shared/lib/helpers/email';
 import { Address } from 'proton-shared/lib/interfaces';
 import { CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
+import { getDeviceNotifications } from '../components/eventModal/eventForm/notificationModel';
 import { AttendeeModel, EventModel } from '../interfaces/EventModel';
 import { notificationsToModel } from './notificationsToModel';
 
@@ -42,8 +43,8 @@ export const modifyEventModelPartstat = (
     const { DefaultPartDayNotifications, DefaultFullDayNotifications } = calendarSettings;
     return {
         ...modelWithPartstat,
-        partDayNotifications: notificationsToModel(DefaultPartDayNotifications, false),
-        fullDayNotifications: notificationsToModel(DefaultFullDayNotifications, true),
+        partDayNotifications: getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false)),
+        fullDayNotifications: getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true)),
     };
 };
 

@@ -84,7 +84,7 @@ const modelToOrganizerProperties = ({ organizer }: EventModel) => {
         return {};
     }
     return {
-        organizer: buildVcalOrganizer(organizer.email),
+        organizer: buildVcalOrganizer(organizer.email, organizer.cn),
     };
 };
 

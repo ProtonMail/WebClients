@@ -52,6 +52,12 @@ const PopoverEventContent = ({
     const { Name: calendarName, Color } = Calendar;
     const numberOfParticipants = model.attendees.length;
 
+    const isInvitation = !model.isOrganizer;
+    const { organizer } = model;
+    const organizerContact = organizer.email && contactEmailMap[organizer.email];
+    const organizerName = organizerContact ? organizerContact.Name : organizer.cn;
+    const organizerTitle = organizerContact ? `${organizerContact.Name} <${organizerContact.Email}>` : organizer.cn;
+    const organizerString = c('Event info').t`Organized by:`;
     const trimmedLocation = model.location.trim();
     const htmlString = useMemo(() => {
         const description = buildMSTeamsLinks(model.description.trim());
@@ -108,6 +114,17 @@ const PopoverEventContent = ({
                 <div className={wrapClassName}>
                     <Icon name="address" className={iconClassName} />
                     <span className="break">{trimmedLocation}</span>
+                </div>
+            ) : null}
+            {isInvitation ? (
+                <div className={wrapClassName}>
+                    <Icon name="contact" className={iconClassName} />
+                    <span className="mr0-5r">{organizerString}</span>
+                    <span className="flex-item-fluid">
+                        <Tooltip className="mw100 inbl ellipsis" title={organizerTitle}>
+                            {organizerName}
+                        </Tooltip>
+                    </span>
                 </div>
             ) : null}
             {calendarString ? (

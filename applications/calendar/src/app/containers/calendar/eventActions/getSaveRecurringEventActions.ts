@@ -26,6 +26,7 @@ interface SaveRecurringArguments {
     recurrence: CalendarEventRecurring;
     updateAllPossibilities: UpdateAllPossibilities;
     hasModifiedRrule: boolean;
+    isInvitation: boolean;
 }
 
 const getSaveRecurringEventActions = ({
@@ -48,6 +49,7 @@ const getSaveRecurringEventActions = ({
     recurrence,
     updateAllPossibilities,
     hasModifiedRrule,
+    isInvitation,
 }: SaveRecurringArguments): SyncEventActionOperations[] => {
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
 
@@ -194,7 +196,7 @@ const getSaveRecurringEventActions = ({
                 calendarID: newCalendarID,
                 addressID: newAddressID,
                 memberID: newMemberID,
-                operations: [...deleteOperations, updateOperation],
+                operations: isInvitation ? [updateOperation] : [...deleteOperations, updateOperation],
             },
         ];
     }

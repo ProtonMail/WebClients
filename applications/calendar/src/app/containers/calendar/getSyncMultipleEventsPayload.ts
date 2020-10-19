@@ -175,9 +175,11 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     isSwitchCalendar,
                     ...(await getCreationKeys({ Event, addressKeys, newCalendarKeys, oldCalendarKeys })),
                 });
+                const isOrganizerData = { IsOrganizer: operation.data.Event.IsOrganizer };
 
                 const dataComplete = {
                     ...permissionData,
+                    ...isOrganizerData,
                     ...data,
                 };
 

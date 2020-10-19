@@ -21,7 +21,7 @@ interface Props {
     model: EventModel;
     addresses: Address[];
     onSave: (value: EventModel) => Promise<void>;
-    onDelete: (sendCancellationNotice?: boolean) => Promise<void>;
+    onDelete: (isInvitation?: boolean, sendCancellationNotice?: boolean) => Promise<void>;
     onClose: () => void;
     setModel: (value: EventModel) => void;
     tzid: string;
@@ -76,7 +76,7 @@ const CreateEventModal = ({
         </PrimaryButton>
     );
 
-    const handleDeleteWithNotice = () => handleDelete(sendCancellationNotice);
+    const handleDeleteWithNotice = () => handleDelete(!model.isOrganizer, sendCancellationNotice);
     const submit = isCreateEvent ? (
         submitButton
     ) : (

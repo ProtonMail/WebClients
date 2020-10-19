@@ -2,6 +2,7 @@ import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '../../../constants';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventOldData } from '../../../interfaces/EventData';
+import { InviteActions } from './inviteActions';
 import { getExdatesAfter, getHasFutureOption, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { OnSaveConfirmationCb } from '../interface';
 
@@ -9,26 +10,36 @@ interface Arguments {
     originalEditEventData: EventOldData;
     oldEditEventData: EventOldData;
     canOnlySaveAll: boolean;
+    canOnlySaveThis: boolean;
     onSaveConfirmation: OnSaveConfirmationCb;
     recurrence: CalendarEventRecurring;
     recurrences: CalendarEvent[];
     hasModifiedRrule: boolean;
+    hasModifiedCalendar: boolean;
+    isInvitation: boolean;
+    inviteActions: InviteActions;
 }
 
 const getRecurringSaveType = async ({
     originalEditEventData,
     oldEditEventData,
     canOnlySaveAll,
+    canOnlySaveThis,
     onSaveConfirmation,
     recurrences,
     recurrence,
     hasModifiedRrule,
+    hasModifiedCalendar,
+    isInvitation,
+    inviteActions,
 }: Arguments) => {
     const isFutureAllowed = getHasFutureOption(originalEditEventData.mainVeventComponent, recurrence);
     let saveTypes;
 
     if (canOnlySaveAll) {
         saveTypes = [RECURRING_TYPES.ALL];
+    } else if (canOnlySaveThis) {
+        saveTypes = [RECURRING_TYPES.SINGLE];
     } else if (isFutureAllowed) {
         saveTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.FUTURE, RECURRING_TYPES.ALL];
     } else {
@@ -57,7 +68,10 @@ const getRecurringSaveType = async ({
             hasSingleModifications,
             hasSingleModificationsAfter,
             hasRruleModification: hasModifiedRrule,
+            hasCalendarModification: hasModifiedCalendar,
         },
+        inviteActions,
+        isInvitation,
     });
 };
 

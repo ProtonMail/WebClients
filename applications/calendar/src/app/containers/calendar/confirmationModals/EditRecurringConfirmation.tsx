@@ -1,7 +1,8 @@
-import { c } from 'ttag';
-import { Alert, ConfirmModal } from 'react-components';
 import React, { useState } from 'react';
+import { Alert, ConfirmModal, FormModal } from 'react-components';
+import { c } from 'ttag';
 import { RECURRING_TYPES } from '../../../constants';
+import { INVITE_ACTION_TYPES, InviteActions } from '../eventActions/inviteActions';
 import SelectRecurringType from './SelectRecurringType';
 
 interface Props {
@@ -9,17 +10,26 @@ interface Props {
     hasSingleModifications: boolean;
     hasSingleModificationsAfter: boolean;
     hasRruleModification: boolean;
+    hasCalendarModification: boolean;
+    isInvitation: boolean;
+    inviteActions: InviteActions;
     onConfirm: (type: RECURRING_TYPES) => void;
     onClose: () => void;
 }
 
-const getAlertText = (types: RECURRING_TYPES[]) => {
+const getAlertText = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
+    const isChangingPartstat = inviteActions.type === INVITE_ACTION_TYPES.CHANGE_PARTSTAT;
     if (types.length === 1) {
         if (types[0] === RECURRING_TYPES.SINGLE) {
-            return c('Info').t`Would you like to update this event?`;
+            return isChangingPartstat
+                ? c('Info')
+                      .t`This event has been updated by the organizer. Would you like to change your answer only for this event in the series?`
+                : c('Info').t`Would you like to update this event?`;
         }
         if (types[0] === RECURRING_TYPES.ALL) {
-            return c('Info').t`Would you like to update all the events in the series?`;
+            return isChangingPartstat
+                ? c('Info').t`Would you like to change your answer for all the events in the series?`
+                : c('Info').t`Would you like to update all the events in the series?`;
         }
     }
     return c('Info').t`Which event would you like to update?`;
@@ -38,19 +48,39 @@ const EditRecurringConfirmModal = ({
     hasSingleModifications,
     hasSingleModificationsAfter,
     hasRruleModification,
+    hasCalendarModification,
+    isInvitation,
+    inviteActions,
     onConfirm,
     ...rest
 }: Props) => {
     const [type, setType] = useState(types[0]);
 
-    const alertText = getAlertText(types);
-    const showRecurringWarning =
+    const alertText = getAlertText(types, inviteActions);
+    const hasPreviousModifications =
         (type === RECURRING_TYPES.ALL && hasSingleModifications) ||
         (type === RECURRING_TYPES.FUTURE && hasSingleModificationsAfter);
+    const showRecurringWarning = !isInvitation && hasPreviousModifications;
     const recurringWarningText = showRecurringWarning ? getRecurringWarningText() : '';
 
-    const showRruleWarning = type === RECURRING_TYPES.SINGLE && hasRruleModification;
+    const showRruleWarning = !isInvitation && type === RECURRING_TYPES.SINGLE && hasRruleModification;
     const rruleWarningText = showRruleWarning ? getRruleWarningText() : '';
+
+    if (isInvitation && hasCalendarModification && hasPreviousModifications) {
+        const alertText = c('Info').t`The organizer has updated some of the events in this series.
+        Changing the calendar is not supported yet for this type of recurring events.`;
+        return (
+            <FormModal
+                small
+                hasSubmit={false}
+                title={c('Info').t`Update recurring event`}
+                close={c('Action').t`Cancel`}
+                {...rest}
+            >
+                <Alert type="warning">{alertText}</Alert>
+            </FormModal>
+        );
+    }
 
     return (
         <ConfirmModal

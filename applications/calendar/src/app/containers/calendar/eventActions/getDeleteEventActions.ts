@@ -23,6 +23,7 @@ interface Arguments {
     api: Api;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
     getEventDecrypted: GetDecryptedEventCb;
+    isInvitation: boolean;
     sendCancellationNotice: boolean;
 }
 
@@ -35,6 +36,7 @@ const getDeleteEventActions = async ({
     api,
     getEventDecrypted,
     getCalendarBootstrap,
+    isInvitation,
     sendCancellationNotice,
 }: Arguments) => {
     const calendarBootstrap = getCalendarBootstrap(oldCalendarData.ID);
@@ -52,9 +54,11 @@ const getDeleteEventActions = async ({
     });
 
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
-    if (!eventRecurrence && !oldEditEventData.recurrenceID) {
+    const isSingleEdit = !eventRecurrence && !!oldEditEventData.recurrenceID;
+    if (!eventRecurrence && !isSingleEdit) {
         await onDeleteConfirmation({
             type: DELETE_CONFIRMATION_TYPES.SINGLE,
+            isInvitation,
             sendCancellationNotice,
             veventComponent: oldEditEventData.veventComponent,
         });
@@ -102,9 +106,14 @@ const getDeleteEventActions = async ({
             !originalEditEventData.veventComponent ||
             !oldEditEventData.veventComponent ||
             getIsCalendarDisabled(oldCalendarData) ||
-            actualEventRecurrence.isSingleOccurrence,
+            actualEventRecurrence.isSingleOccurrence ||
+            (isInvitation && !isSingleEdit),
+        canOnlyDeleteThis: isInvitation && isSingleEdit,
         onDeleteConfirmation,
         recurrence: actualEventRecurrence,
+        isInvitation,
+        veventComponent: isSingleEdit ? oldEditEventData.veventComponent : originalEditEventData.veventComponent,
+        sendCancellationNotice,
     });
     const multiActions = getDeleteRecurringEventActions({
         type: deleteType,

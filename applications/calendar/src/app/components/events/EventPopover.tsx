@@ -18,7 +18,6 @@ import {
     classnames,
     Dropdown,
     DropdownButton,
-    DropdownMenuButton,
     Loader,
     Tooltip,
     useLoading,
@@ -184,24 +183,25 @@ const EventPopover = ({
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
+                autoClose={false}
                 className="toolbar-dropdown"
             >
-                <DropdownMenuButton
+                <Button
                     data-test-id="event-popover:edit"
-                    className="alignleft"
-                    onClick={handleEdit}
                     disabled={loadingAction || isCalendarDisabled}
+                    className="dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5 alignleft"
+                    onClick={handleEdit}
                 >
                     {c('Action').t`Edit`}
-                </DropdownMenuButton>
-                <DropdownMenuButton
+                </Button>
+                <Button
                     data-test-id="event-popover:delete"
-                    className="alignleft"
+                    className="dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5 alignleft"
                     onClick={loadingAction ? noop : handleDelete}
                     loading={loadingAction}
                 >
                     {c('Action').t`Delete`}
-                </DropdownMenuButton>
+                </Button>
             </Dropdown>
         </div>
     );

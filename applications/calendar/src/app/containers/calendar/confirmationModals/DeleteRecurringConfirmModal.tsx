@@ -1,39 +1,68 @@
 import { c } from 'ttag';
-import { Alert, ConfirmModal, ErrorButton, ResetButton } from 'react-components';
+import { Alert, ErrorButton, FormModal, ResetButton, useLoading } from 'react-components';
 import React, { useState } from 'react';
 import SelectRecurringType from './SelectRecurringType';
 import { RECURRING_TYPES } from '../../../constants';
 
 interface Props {
     types: RECURRING_TYPES[];
+    isInvitation: boolean;
+    decline?: boolean;
     onConfirm: (type: RECURRING_TYPES) => void;
     onClose: () => void;
+    onDecline?: () => Promise<void>;
 }
 
-const getAlertText = (types: RECURRING_TYPES[]) => {
+const getAlertText = (types: RECURRING_TYPES[], isInvitation = false, decline = false) => {
     if (types.length === 1) {
         if (types[0] === RECURRING_TYPES.SINGLE) {
-            return c('Info').t`Would you like to delete this event?`;
+            return decline
+                ? c('Info')
+                      .t`This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?`
+                : isInvitation
+                ? c('Info').t`This event has been updated by the organizer. Would you like to delete this event?`
+                : c('Info').t`Would you like to delete this event?`;
         }
         if (types[0] === RECURRING_TYPES.ALL) {
-            return c('Info').t`Would you like to delete all the events in the series?`;
+            return decline
+                ? c('Info')
+                      .t`The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in the series?`
+                : c('Info').t`Would you like to delete all the events in the series?`;
         }
     }
     return c('Info').t`Which event would you like to delete?`;
 };
 
-const DeleteRecurringConfirmModal = ({ types, onConfirm, ...rest }: Props) => {
+const DeleteRecurringConfirmModal = ({
+    types,
+    isInvitation,
+    decline = false,
+    onConfirm,
+    onClose,
+    onDecline,
+    ...rest
+}: Props) => {
+    const [loading, withLoading] = useLoading();
     const [type, setType] = useState(types[0]);
+    const handleConfirm = async () => {
+        if (decline) {
+            await onDecline?.();
+        }
+        onConfirm(type);
+        onClose();
+    };
 
     return (
-        <ConfirmModal
-            confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+        <FormModal
             title={c('Info').t`Delete recurring event`}
-            cancel={<ResetButton autoFocus>{c('Action').t`Cancel`}</ResetButton>}
+            small
+            submit={<ErrorButton type="submit" loading={loading}>{c('Action').t`Delete`}</ErrorButton>}
+            close={<ResetButton autoFocus>{c('Action').t`Cancel`}</ResetButton>}
+            onSubmit={() => withLoading(handleConfirm())}
+            onClose={onClose}
             {...rest}
-            onConfirm={() => onConfirm(type)}
         >
-            <Alert type="error">{getAlertText(types)}</Alert>
+            <Alert type="error">{getAlertText(types, isInvitation, decline)}</Alert>
             {types.length > 1 ? (
                 <SelectRecurringType
                     types={types}
@@ -42,7 +71,7 @@ const DeleteRecurringConfirmModal = ({ types, onConfirm, ...rest }: Props) => {
                     data-test-id="delete-recurring-popover:delete-option-radio"
                 />
             ) : null}
-        </ConfirmModal>
+        </FormModal>
     );
 };
 

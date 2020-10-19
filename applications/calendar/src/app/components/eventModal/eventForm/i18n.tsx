@@ -1,14 +1,18 @@
-import { c } from 'ttag';
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
+import { c } from 'ttag';
 
 import { RECURRING_TYPES } from '../../../constants';
+import { INVITE_ACTION_TYPES, InviteActions } from '../../../containers/calendar/eventActions/inviteActions';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 
 export const getEventCreatedText = () => {
     return c('Success').t`Event created`;
 };
 
-export const getEventUpdatedText = () => {
+export const getEventUpdatedText = (inviteActions?: InviteActions) => {
+    if (inviteActions?.type === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
+        return c('Success').t`Participation status updated`;
+    }
     return c('Success').t`Event updated`;
 };
 
@@ -20,14 +24,16 @@ export const getRecurringEventCreatedText = () => {
     return c('Success').t`Events created`;
 };
 
-export const getRecurringEventUpdatedText = (saveType: RECURRING_TYPES) => {
+export const getRecurringEventUpdatedText = (saveType: RECURRING_TYPES, inviteActions?: InviteActions) => {
     if (saveType === RECURRING_TYPES.SINGLE) {
-        return getEventUpdatedText();
+        return getEventUpdatedText(inviteActions);
     }
     if (saveType === RECURRING_TYPES.FUTURE) {
         return c('Success').t`Future events updated`;
     }
-    return c('Success').t`All events updated`;
+    return inviteActions?.type === INVITE_ACTION_TYPES.CHANGE_PARTSTAT
+        ? c('Success').t`Participation status updated for all events`
+        : c('Success').t`All events updated`;
 };
 
 export const getRecurringEventDeletedText = (deleteType: RECURRING_TYPES, sendCancellationNotice = false) => {
@@ -44,7 +50,11 @@ export const getRecurringEventDeletedText = (deleteType: RECURRING_TYPES, sendCa
         : c('Success').t`All events deleted`;
 };
 
-export const getSingleEventText = (oldEventData: EventOldData | undefined, newEventData: EventNewData) => {
+export const getSingleEventText = (
+    oldEventData: EventOldData | undefined,
+    newEventData: EventNewData,
+    inviteActions: InviteActions
+) => {
     const isCreate = !oldEventData?.eventData;
     const isRecurring = newEventData.veventComponent.rrule;
 
@@ -61,5 +71,5 @@ export const getSingleEventText = (oldEventData: EventOldData | undefined, newEv
     if (isCreate) {
         return getEventCreatedText();
     }
-    return getEventUpdatedText();
+    return getEventUpdatedText(inviteActions);
 };
