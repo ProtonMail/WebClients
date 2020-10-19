@@ -1,4 +1,12 @@
-import { decryptMIMEMessage, decryptMessageLegacy, OpenPGPKey, OpenPGPSignature } from 'pmcrypto';
+import {
+    decryptMIMEMessage,
+    decryptMessageLegacy,
+    OpenPGPKey,
+    OpenPGPSignature,
+    verifyMessage as pmcryptoVerifyMessage,
+    createCleartextMessage,
+    DecryptResultPmcrypto
+} from 'pmcrypto';
 import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { getDate, getSender, isMIME } from 'proton-shared/lib/mail/messages';
@@ -11,23 +19,18 @@ import { MIME_TYPES } from 'proton-shared/lib/constants';
 
 const { NOT_VERIFIED } = VERIFICATION_STATUS;
 
-const decryptMimeMessage = async (
-    message: Message,
-    publicKeys: OpenPGPKey[],
-    privateKeys: OpenPGPKey[],
-    attachmentsCache: AttachmentsCache
-) => {
+const decryptMimeMessage = async (message: Message, privateKeys: OpenPGPKey[], attachmentsCache: AttachmentsCache) => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
 
-    let result;
+    let result: ReturnType<typeof decryptMIMEMessage>;
 
     try {
+        // Don't listen to TS, this await is needed
         result = await decryptMIMEMessage({
             message: message?.Body,
             messageDate: getDate(message),
-            privateKeys: privateKeys,
-            publicKeys: publicKeys,
+            privateKeys,
             headerFilename,
             sender
         });
@@ -55,28 +58,25 @@ const decryptMimeMessage = async (
     return {
         decryptedBody,
         Attachments,
-        verified,
         decryptedSubject,
-        verificationErrors: errors,
         signature,
-        mimetype: mimetype as MIME_TYPES
+        mimetype: mimetype as MIME_TYPES,
+        errors: { decryption: errors }
     };
 };
 
-const decryptLegacyMessage = async (message: Message, publicKeys: OpenPGPKey[], privateKeys: OpenPGPKey[]) => {
-    let result: any;
+const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[]) => {
+    let result: DecryptResultPmcrypto;
 
     try {
         result = await decryptMessageLegacy({
             message: message?.Body,
             messageDate: getDate(message),
-            privateKeys: privateKeys,
-            publicKeys: publicKeys
+            privateKeys: privateKeys
         });
     } catch (error) {
         return {
             decryptedBody: '',
-            verified: NOT_VERIFIED,
             errors: {
                 decryption: error
             }
@@ -85,32 +85,58 @@ const decryptLegacyMessage = async (message: Message, publicKeys: OpenPGPKey[], 
 
     const {
         data,
-        verified = NOT_VERIFIED,
-        signatures: [signature],
-        errors
+        signatures: [signature]
     } = result;
 
-    return { decryptedBody: data, verified, signature, verificationErrors: errors };
+    return { decryptedBody: data, signature };
 };
 
+/**
+ * Decrypt a message body of any kind: plaintext/html multipart/simple
+ * Willingly not dealing with public keys and signature verification
+ * It will be done separately when public keys will be ready
+ */
 export const decryptMessage = async (
     message: Message,
-    publicKeys: OpenPGPKey[],
     privateKeys: OpenPGPKey[],
     attachmentsCache: AttachmentsCache
 ): Promise<{
     decryptedBody: string;
     Attachments?: Attachment[];
-    verified: VERIFICATION_STATUS;
     decryptedSubject?: string;
     signature?: OpenPGPSignature;
     errors?: MessageErrors;
-    verificationErrors?: Error[];
     mimetype?: MIME_TYPES;
 }> => {
     if (isMIME(message)) {
-        return decryptMimeMessage(message, publicKeys, privateKeys, attachmentsCache);
+        return decryptMimeMessage(message, privateKeys, attachmentsCache);
     } else {
-        return decryptLegacyMessage(message, publicKeys, privateKeys);
+        return decryptLegacyMessage(message, privateKeys);
     }
+};
+
+export const verifyMessage = async (
+    message: Message,
+    publicKeys: OpenPGPKey[]
+): Promise<{
+    verified: VERIFICATION_STATUS;
+    signature?: OpenPGPSignature;
+    verificationErrors?: Error[];
+}> => {
+    let result;
+
+    try {
+        result = await pmcryptoVerifyMessage({
+            message: createCleartextMessage(message?.Body),
+            date: getDate(message),
+            publicKeys: publicKeys
+        });
+    } catch (error) {
+        return {
+            verified: NOT_VERIFIED,
+            verificationErrors: [error]
+        };
+    }
+
+    return result;
 };

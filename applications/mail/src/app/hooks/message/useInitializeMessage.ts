@@ -1,14 +1,8 @@
-import { arrayToBinaryString, getKeys, getMatchingKey } from 'pmcrypto';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { isPlainText } from 'proton-shared/lib/mail/messages';
 import { useCallback } from 'react';
-import { useApi, useGetEncryptionPreferences, useMailSettings } from 'react-components';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { useApi, useMailSettings } from 'react-components';
 
-import { LARGE_KEY_SIZE } from '../../constants';
-import { get } from '../../helpers/attachment/attachmentLoader';
 import { MessageExtended, MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useMessageKeys } from './useMessageKeys';
@@ -22,6 +16,7 @@ import { useMarkAs, MARK_AS_STATUS } from './../useMarkAs';
 import { isUnreadMessage } from '../../helpers/elements';
 import { hasShowEmbedded } from '../../helpers/settings';
 import { useLoadEmbeddedImages } from './useLoadImages';
+import { useVerifyMessage } from './useVerifyMessage';
 
 export const useInitializeMessage = (localID: string, labelID?: string) => {
     const api = useApi();
@@ -31,8 +26,8 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     const attachmentsCache = useAttachmentCache();
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
-    const getEncryptionPreferences = useGetEncryptionPreferences();
     const loadEmbeddedImages = useLoadEmbeddedImages(localID);
+    const verifyMessage = useVerifyMessage(localID);
 
     return useCallback(async () => {
         // Message can change during the whole initilization sequence
@@ -51,14 +46,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
         const errors: MessageErrors = {};
 
-        let encryptionPreferences,
-            userKeys,
-            decryption,
-            signingPublicKey,
-            attachedPublicKeys,
-            verificationStatus,
-            preparation,
-            dataChanges;
+        let userKeys, decryption, preparation, dataChanges;
 
         try {
             // Ensure the message data is loaded
@@ -67,65 +55,31 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
             dataChanges = {} as Partial<Message>;
 
-            encryptionPreferences = await getEncryptionPreferences(getData().Sender.Address as string);
             userKeys = await getMessageKeys(message);
             const messageWithKeys = {
                 ...message,
-                publicKeys: encryptionPreferences.pinnedKeys,
+                publicKeys: [], // Signature verification are done later for performance
                 privateKeys: userKeys.privateKeys
             };
 
-            // To verify the signature of the message, we can only use pinned keys
-            // API keys could always be forged by the server to verify the signature
-            decryption = await decryptMessage(
-                getData(),
-                encryptionPreferences.pinnedKeys,
-                userKeys.privateKeys,
-                attachmentsCache
-            );
+            decryption = await decryptMessage(getData(), userKeys.privateKeys, attachmentsCache);
+
             if (decryption.mimetype) {
                 dataChanges = { ...dataChanges, MIMEType: decryption.mimetype };
             }
             const mimeAttachments = decryption.Attachments || [];
             const allAttachments = [...getData().Attachments, ...mimeAttachments];
             dataChanges = { ...dataChanges, Attachments: allAttachments, NumAttachments: allAttachments.length };
-            const keyAttachments =
-                allAttachments.filter(
-                    ({ Name, Size }) => splitExtension(Name)[1] === 'asc' && (Size || 0) < LARGE_KEY_SIZE
-                ) || [];
-            attachedPublicKeys = (
-                await Promise.all(
-                    keyAttachments.map(async (attachment) => {
-                        try {
-                            const { data } = await get(attachment, messageWithKeys, attachmentsCache, api);
-                            const [key] = await getKeys(arrayToBinaryString(data));
-                            return key;
-                        } catch (e) {
-                            return;
-                        }
-                    })
-                )
-            ).filter(isTruthy);
-
-            const allSenderPublicKeys = [
-                ...encryptionPreferences.pinnedKeys,
-                ...encryptionPreferences.apiKeys,
-                ...attachedPublicKeys
-            ];
 
             if (decryption.errors) {
                 Object.assign(errors, decryption.errors);
             }
 
-            const signed = decryption.verified !== VERIFICATION_STATUS.NOT_SIGNED;
-            signingPublicKey =
-                signed && decryption.signature
-                    ? await getMatchingKey(decryption.signature, allSenderPublicKeys)
-                    : undefined;
-            verificationStatus = decryption.verified;
+            // Trigger all public key and signature verification but we are not waiting for it
+            verifyMessage();
 
             if (isUnreadMessage(getData())) {
-                await markAs([getData()], labelID, MARK_AS_STATUS.READ);
+                markAs([getData()], labelID, MARK_AS_STATUS.READ);
                 dataChanges = { ...dataChanges, Unread: 0 };
             }
 
@@ -149,15 +103,9 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 data: dataChanges,
                 document: preparation?.document,
                 plainText: preparation?.plainText,
-                senderPinnedKeys: encryptionPreferences?.pinnedKeys,
-                signingPublicKey,
-                attachedPublicKeys,
-                senderVerified: encryptionPreferences?.isContactSignatureVerified,
                 publicKeys: userKeys?.publicKeys,
                 privateKeys: userKeys?.privateKeys,
                 decryptedBody: decryption?.decryptedBody,
-                verificationStatus,
-                verificationErrors: decryption?.verificationErrors,
                 decryptedSubject: decryption?.decryptedSubject,
                 // Anticipate showEmbedded flag while triggering the load just after
                 showEmbeddedImages: preparation?.showEmbeddedImages,

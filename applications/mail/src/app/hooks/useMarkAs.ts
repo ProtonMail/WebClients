@@ -18,7 +18,7 @@ export const useMarkAs = () => {
     const { call } = useEventManager();
     const optimisticMarkAs = useOptimisticMarkAs();
 
-    const markAs = useCallback(async (elements: Element[], labelID = '', status: MARK_AS_STATUS) => {
+    const markAs = useCallback((elements: Element[], labelID = '', status: MARK_AS_STATUS) => {
         if (!elements.length) {
             return;
         }
