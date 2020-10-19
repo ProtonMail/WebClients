@@ -37,10 +37,15 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     const location = vevent.location?.value;
     const totalParticipants = participants?.length;
     const frequencyString = rrule
-        ? getFrequencyString(rrule.value, dtstart, {
-              weekStartsOn,
-              locale: dateLocale
-          })
+        ? getFrequencyString(
+              rrule.value,
+              dtstart,
+              {
+                  weekStartsOn,
+                  locale: dateLocale
+              },
+              true
+          )
         : undefined;
     const calendar = calendarData?.calendar?.Name;
 
