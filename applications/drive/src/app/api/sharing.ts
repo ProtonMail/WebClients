@@ -7,7 +7,7 @@ export const queryInitSRPHandshake = (token: string) => {
     };
 };
 
-export const queryGetURLPayload = (token: string) => {
+export const queryGetSharedLinkPayload = (token: string) => {
     return {
         method: 'post',
         url: `drive/urls/${token}/file`,
@@ -22,7 +22,7 @@ export const queryCreateSharedLink = (shareId: string, data: CreateSharedURL) =>
     };
 };
 
-export const querySharedURLs = (shareId: string) => {
+export const querySharedLinks = (shareId: string) => {
     return {
         method: 'get',
         url: `drive/shares/${shareId}/urls`,
@@ -34,5 +34,12 @@ export const queryUpdateSharedLink = (shareId: string, token: string, data: Part
         method: 'put',
         url: `drive/shares/${shareId}/urls/${token}`,
         data,
+    };
+};
+
+export const queryDeleteSharedLink = (shareId: string, token: string) => {
+    return {
+        method: 'delete',
+        url: `drive/shares/${shareId}/urls/${token}`,
     };
 };

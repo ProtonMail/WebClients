@@ -21,8 +21,10 @@ interface Props {
     includePassword: boolean;
     customPassword: boolean;
     modalTitleID: string;
+    deleting?: boolean;
     onClose?: () => void;
     onEditPasswordClick: () => void;
+    onDeleteLinkClick: () => void;
     onIncludePasswordToggle: () => void;
 }
 
@@ -33,8 +35,10 @@ function GeneratedLinkState({
     password,
     token,
     customPassword,
+    deleting,
     includePassword,
     onEditPasswordClick,
+    onDeleteLinkClick,
     onIncludePasswordToggle,
 }: Props) {
     const { createNotification } = useNotifications();
@@ -125,7 +129,11 @@ function GeneratedLinkState({
                     </Row>
                 </InnerModal>
                 <FooterModal>
-                    <Button onClick={onClose}>{c('Action').t`Done`}</Button>
+                    <div className="flex flex-spacebetween w100 flex-nowrap">
+                        <Button loading={deleting} onClick={onDeleteLinkClick}>{c('Action')
+                            .t`Delete secure link`}</Button>
+                        <Button onClick={onClose}>{c('Action').t`Done`}</Button>
+                    </div>
                 </FooterModal>
             </div>
         </>

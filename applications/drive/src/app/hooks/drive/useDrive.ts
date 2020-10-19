@@ -1,5 +1,5 @@
 import { OpenPGPKey } from 'pmcrypto';
-import { usePreventLeave, useGlobalLoader } from 'react-components';
+import { usePreventLeave, useGlobalLoader, useApi } from 'react-components';
 import { c } from 'ttag';
 import useDriveCrypto from './useDriveCrypto';
 import { LinkMeta, LinkType } from '../../interfaces/link';
@@ -31,9 +31,11 @@ import {
     createShareAsync,
     getShareMetaShortAsync,
     deleteChildrenLinksAsync,
+    deleteShareAsync,
 } from '../../utils/drive/drive';
 
 function useDrive() {
+    const api = useApi();
     const cache = useDriveCache();
     const queuedFunction = useQueuedFunction();
     const withGlobalLoader = useGlobalLoader({ text: c('Info').t`Loading folder contents` });
@@ -232,6 +234,10 @@ function useDrive() {
         );
     };
 
+    const deleteShare = async (shareId: string) => {
+        return deleteShareAsync(api, shareId);
+    };
+
     return {
         initDrive,
         decryptLink,
@@ -248,6 +254,7 @@ function useDrive() {
         fetchAllFolderPagesWithLoader,
         decryptLinkPassphrase,
         createShare,
+        deleteShare,
         moveLink,
         moveLinks,
         deleteChildrenLinks,
