@@ -175,7 +175,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                                 className="p0"
                                 data-test-id="hide-tz"
                                 onClick={() => setShowTzSelector(false)}
-                                title={c('Title').t`Hide time zones for the event start and end times`}
+                                title={c('Title').t`Hide time zones for event start and end times`}
                             >
                                 {c('Action').t`Hide time zones`}
                             </LinkButton>
