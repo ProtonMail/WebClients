@@ -43,6 +43,16 @@ export const encryptUnsigned = async ({ message, publicKey }: UnsignedEncryption
     return encryptedToken as string;
 };
 
+export const encryptName = async (name: string, parentPublicKey: OpenPGPKey, addressPrivateKey: OpenPGPKey) => {
+    const { data: Name } = await encryptMessage({
+        data: name,
+        publicKeys: parentPublicKey,
+        privateKeys: addressPrivateKey,
+    });
+
+    return Name;
+};
+
 export const getStreamMessage = (stream: ReadableStream<Uint8Array> | PolyfillReadableStream<Uint8Array>) => {
     return openpgp.message.read(toPolyfillReadable(stream) as ReadableStream<Uint8Array>);
 };
@@ -161,10 +171,7 @@ export const generateDriveBootstrap = async (addressPrivateKey: OpenPGPKey) => {
         NodePassphraseSignature: FolderPassphraseSignature,
     } = await generateNodeKeys(sharePrivateKey, addressPrivateKey);
 
-    const FolderName = await encryptUnsigned({
-        message: 'root',
-        publicKey: sharePrivateKey.toPublic(),
-    });
+    const FolderName = await encryptName('root', sharePrivateKey.toPublic(), addressPrivateKey);
 
     return {
         bootstrap: {
