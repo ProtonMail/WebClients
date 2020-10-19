@@ -6,7 +6,7 @@ import { lookup } from 'mime-types';
 import {
     generateNodeKeys,
     generateContentKeys,
-    encryptUnsigned,
+    encryptName,
     generateLookupHash,
     getStreamMessage,
 } from 'proton-shared/lib/keys/driveKeys';
@@ -188,10 +188,7 @@ function useFiles() {
                     ? await generateNameHash()
                     : await findAvailableName(shareId, ParentLinkID, file.name);
 
-                const Name = await encryptUnsigned({
-                    message: filename,
-                    publicKey: parentKeys.privateKey.toPublic(),
-                });
+                const Name = await encryptName(filename, parentKeys.privateKey.toPublic(), addressKeyInfo.privateKey);
 
                 const MIMEType = lookup(filename) || 'application/octet-stream';
 
