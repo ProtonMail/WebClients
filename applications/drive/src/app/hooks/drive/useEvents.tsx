@@ -53,21 +53,29 @@ function useEvents() {
             return keys;
         };
 
-        const getLinkMeta = async (shareId: string, linkId: string): Promise<LinkMeta> => {
-            const meta = await getLinkMetaAsync(debouncedRequest, getLinkKeys, getShareKeys, cache, shareId, linkId);
-            return meta;
-        };
-
-        const decryptLinkPassphrase = (shareId: string, linkMeta: LinkMeta) => {
-            return decryptLinkPassphraseAsync(shareId, getLinkKeys, getShareKeys, getVerificationKeys, linkMeta);
-        };
-
         const decryptLink = async (meta: LinkMeta) => {
             const { privateKey } = meta.ParentLinkID
                 ? await getLinkKeys(shareId, meta.ParentLinkID)
                 : await getShareKeys(shareId);
 
             return decryptLinkAsync(meta, privateKey);
+        };
+
+        const getLinkMeta = async (shareId: string, linkId: string): Promise<LinkMeta> => {
+            const meta = await getLinkMetaAsync(
+                debouncedRequest,
+                getLinkKeys,
+                getShareKeys,
+                decryptLink,
+                cache,
+                shareId,
+                linkId
+            );
+            return meta;
+        };
+
+        const decryptLinkPassphrase = (shareId: string, linkMeta: LinkMeta) => {
+            return decryptLinkPassphraseAsync(shareId, getLinkKeys, getShareKeys, getVerificationKeys, linkMeta);
         };
 
         const isTrashedRestoredOrMoved = ({ LinkID, ParentLinkID, Trashed }: LinkMeta) => {

@@ -5,11 +5,11 @@ import { Api } from 'proton-shared/lib/interfaces';
 import {
     decryptUnsigned,
     generateLookupHash,
-    encryptUnsigned,
     generateNodeKeys,
     generateDriveBootstrap,
     generateNodeHashKey,
     encryptPassphrase,
+    encryptName,
 } from 'proton-shared/lib/keys/driveKeys';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
@@ -341,6 +341,7 @@ export const getLinkMetaAsync = async (
     api: Api,
     getLinkKeys: (shareId: string, linkId: string, config?: FetchLinkConfig) => Promise<LinkKeys>,
     getShareKeys: (shareId: string) => Promise<ShareKeys>,
+    decryptLink: (meta: LinkMeta, privateKey: OpenPGPKey) => Promise<LinkMeta>,
     cache: DriveCache,
     shareId: string,
     linkId: string,
@@ -360,7 +361,7 @@ export const getLinkMetaAsync = async (
         ? await getLinkKeys(shareId, Link.ParentLinkID, config)
         : await getShareKeys(shareId);
 
-    const meta = await decryptLinkAsync(Link, privateKey);
+    const meta = await decryptLink(Link, privateKey);
     cache.set.linkMeta(meta, shareId, { rerender: !config.preventRerenders });
 
     return meta;
@@ -369,6 +370,7 @@ export const getLinkMetaAsync = async (
 export const fetchNextFoldersOnlyContentsAsync = async (
     api: Api,
     getLinkKeys: (shareId: string, linkId: string, config?: FetchLinkConfig) => Promise<LinkKeys>,
+    decryptLink: (meta: LinkMeta, privateKey: OpenPGPKey) => Promise<LinkMeta>,
     cache: DriveCache,
     shareId: string,
     linkId: string
@@ -384,7 +386,7 @@ export const fetchNextFoldersOnlyContentsAsync = async (
     );
     const { privateKey } = await getLinkKeys(shareId, linkId);
 
-    const decryptedLinks = await Promise.all(Links.map((link) => decryptLinkAsync(link, privateKey)));
+    const decryptedLinks = await Promise.all(Links.map((link) => decryptLink(link, privateKey)));
     cache.set.foldersOnlyLinkMetas(
         decryptedLinks,
         shareId,
@@ -413,6 +415,7 @@ export const getFoldersOnlyMetasAsync = async (
 export const fetchNextFolderContentsAsync = async (
     api: Api,
     getLinkKeys: (shareId: string, linkId: string, config?: FetchLinkConfig) => Promise<LinkKeys>,
+    decryptLink: (meta: LinkMeta, privateKey: OpenPGPKey) => Promise<LinkMeta>,
     cache: DriveCache,
     shareId: string,
     linkId: string,
@@ -430,7 +433,7 @@ export const fetchNextFolderContentsAsync = async (
     );
     const { privateKey } = await getLinkKeys(shareId, linkId);
 
-    const decryptedLinks = await Promise.all(Links.map((link) => decryptLinkAsync(link, privateKey)));
+    const decryptedLinks = await Promise.all(Links.map((link) => decryptLink(link, privateKey)));
     cache.set.childLinkMetas(
         decryptedLinks,
         shareId,
@@ -456,6 +459,7 @@ export const renameLinkAsync = async (
     api: Api,
     getLinkKeys: (shareId: string, linkId: string, config?: FetchLinkConfig) => Promise<LinkKeys>,
     getLinkMeta: (shareId: string, linkId: string, config?: FetchLinkConfig) => Promise<LinkMeta>,
+    getPrimaryAddressKey: () => Promise<PrimaryAddressKey>,
     shareId: string,
     linkId: string,
     parentLinkID: string,
@@ -478,16 +482,20 @@ export const renameLinkAsync = async (
     }
 
     const meta = await getLinkMeta(shareId, linkId);
-    const sessionKey = await getDecryptedSessionKey({
-        data: meta.EncryptedName,
-        privateKeys: parentKeys.privateKey,
-    });
+    const [sessionKey, { address, privateKey: addressKey }] = await Promise.all([
+        getDecryptedSessionKey({
+            data: meta.EncryptedName,
+            privateKeys: parentKeys.privateKey,
+        }),
+        getPrimaryAddressKey(),
+    ]);
 
     const [Hash, { data: encryptedName }] = await Promise.all([
         generateLookupHash(lowerCaseName, parentKeys.hashKey),
         encryptMessage({
             data: newName,
             sessionKey,
+            privateKeys: addressKey,
         }),
     ]);
 
@@ -496,6 +504,7 @@ export const renameLinkAsync = async (
             Name: encryptedName,
             MIMEType,
             Hash,
+            SignatureAddress: address.Email,
         })
     );
 };
@@ -528,10 +537,7 @@ export const createNewFolderAsync = async (
     const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] = await Promise.all([
         generateLookupHash(lowerCaseName, parentKeys.hashKey),
         generateNodeKeys(parentKeys.privateKey, addressKey),
-        encryptUnsigned({
-            message: name,
-            publicKey: parentKeys.privateKey.toPublic(),
-        }),
+        encryptName(name, parentKeys.privateKey.toPublic(), addressKey),
     ]);
 
     const { NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
@@ -596,7 +602,8 @@ export const moveLinkAsync = async (
         encryptMessage({
             data: meta.Name,
             sessionKey: sessionKeyName,
-            publicKeys: [parentKeys.privateKey.toPublic()],
+            publicKeys: parentKeys.privateKey.toPublic(),
+            privateKeys: addressKey,
         }),
     ]);
 

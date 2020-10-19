@@ -99,6 +99,7 @@ function useDrive() {
             debouncedRequest,
             getLinkKeys,
             getShareKeys,
+            decryptLink,
             cache,
             shareId,
             linkId,
@@ -112,7 +113,7 @@ function useDrive() {
     };
 
     const fetchNextFoldersOnlyContents = (shareId: string, linkId: string) => {
-        return fetchNextFoldersOnlyContentsAsync(debouncedRequest, getLinkKeys, cache, shareId, linkId);
+        return fetchNextFoldersOnlyContentsAsync(debouncedRequest, getLinkKeys, decryptLink, cache, shareId, linkId);
     };
 
     const getFoldersOnlyMetas = async (shareId: string, linkId: string, fetchNextPage = false) => {
@@ -127,7 +128,15 @@ function useDrive() {
     };
 
     const fetchNextFolderContents = async (shareId: string, linkId: string, sortParams = DEFAULT_SORT_PARAMS) => {
-        await fetchNextFolderContentsAsync(debouncedRequest, getLinkKeys, cache, shareId, linkId, sortParams);
+        await fetchNextFolderContentsAsync(
+            debouncedRequest,
+            getLinkKeys,
+            decryptLink,
+            cache,
+            shareId,
+            linkId,
+            sortParams
+        );
     };
 
     const fetchAllFolderPages = async (shareId: string, linkId: string) => {
@@ -161,7 +170,17 @@ function useDrive() {
         newName: string,
         type: LinkType
     ) => {
-        await renameLinkAsync(debouncedRequest, getLinkKeys, getLinkMeta, shareId, linkId, parentLinkID, newName, type);
+        await renameLinkAsync(
+            debouncedRequest,
+            getLinkKeys,
+            getLinkMeta,
+            getPrimaryAddressKey,
+            shareId,
+            linkId,
+            parentLinkID,
+            newName,
+            type
+        );
     };
 
     const createNewFolder = queuedFunction(
