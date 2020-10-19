@@ -256,7 +256,7 @@ END:VCALENDAR`);
                 parameters: { tzid: 'Europe/Zurich' },
             },
             sequence: {
-                value: 0
+                value: 0,
             },
             categories: [
                 {
@@ -269,8 +269,12 @@ END:VCALENDAR`);
         });
     });
 
-    it('should parse vevent with bad line breaks', () => {
-        const result = parseWithErrors(`BEGIN:VEVENT
+    it('should parse vevent with bad enclosing and bad line breaks', () => {
+        const result = parseWithErrors(`BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VEVENT
 DTSTAMP:20190719T130854Z
 UID:7E018059-2165-4170-B32F-6936E88E61E5
 DTSTART;TZID=America/New_York:20190719T120000
@@ -291,32 +295,40 @@ place
 END:VEVENT`);
 
         expect(result).toEqual({
-            component: 'vevent',
-            uid: {
-                value: '7E018059-2165-4170-B32F-6936E88E61E5',
-            },
-            dtstamp: {
-                value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 8, seconds: 54, isUTC: true },
-            },
-            dtstart: {
-                value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
-                parameters: { tzid: 'America/New_York' },
-            },
-            dtend: {
-                value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: false },
-                parameters: { tzid: 'Europe/Zurich' },
-            },
-            categories: [
+            component: 'vcalendar',
+            method: { value: 'REQUEST' },
+            version: { value: '2.0' },
+            prodid: { value: 'Microsoft Exchange Server 2010' },
+            components: [
                 {
-                    value: ['ANNIVERSARY', 'PERSONAL', 'SPECIAL OCCASION'],
+                    component: 'vevent',
+                    uid: {
+                        value: '7E018059-2165-4170-B32F-6936E88E61E5',
+                    },
+                    dtstamp: {
+                        value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 8, seconds: 54, isUTC: true },
+                    },
+                    dtstart: {
+                        value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'America/New_York' },
+                    },
+                    dtend: {
+                        value: { year: 2019, month: 7, day: 19, hours: 13, minutes: 0, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Zurich' },
+                    },
+                    categories: [
+                        {
+                            value: ['ANNIVERSARY', 'PERSONAL', 'SPECIAL OCCASION'],
+                        },
+                    ],
+                    summary: {
+                        value: 'Our Blissful Anniversary\n\n---\n\nWonderful!',
+                    },
+                    location: {
+                        value: 'A\n\nsecret\n\n\n...\nplace',
+                    },
                 },
             ],
-            summary: {
-                value: 'Our Blissful Anniversary\n\n---\n\nWonderful!',
-            },
-            location: {
-                value: 'A\n\nsecret\n\n\n...\nplace',
-            },
         });
     });
 
