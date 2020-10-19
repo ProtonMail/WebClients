@@ -7,7 +7,7 @@ const ImportExportSection = () => {
     const clients = [
         {
             icon: 'apple',
-            platform: 'Mac OSX',
+            platform: 'MacOS',
             fileType: '.dmg',
             link: 'https://protonmail.com/import-export',
         },

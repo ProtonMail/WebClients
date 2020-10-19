@@ -6,7 +6,7 @@ const ProtonMailBridgeSection = () => {
     const bridgeClients = [
         {
             icon: 'apple',
-            platform: 'Mac OSX',
+            platform: 'MacOS',
             fileType: c('OS compatibility').t`.dmg (10.12 or later)`,
             link: 'https://protonmail.com/bridge/install',
         },
