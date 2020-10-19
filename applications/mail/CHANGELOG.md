@@ -1,3 +1,16 @@
+# [4.0.0-beta.26] - 2020-10-21
+
+## Improvement
+
+-   Performance improvements when loading the list of conversations
+-   Performance improvements when starring a conversation
+-   Performance improvements when marking a message as read/unread
+
+## Fixes
+
+-   In some cases, after opening en email that contains a meeting invitation, the widget will continue to appear when opening other emails
+-   When receiving a plain text message with the < character in the body of the message, the end of the message would get stripped out
+
 # [4.0.0-beta.25] - 2020-10-14
 
 ## Improvement
