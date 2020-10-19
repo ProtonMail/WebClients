@@ -1,17 +1,24 @@
 import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import React from 'react';
-import { Icon, Href } from 'react-components';
+import { Icon, Href, InlineLinkButton, ConfirmModal, Alert, useModals, useLoading } from 'react-components';
 import { c } from 'ttag';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
 import { MessageExtended } from '../../../models/message';
+import { useMoveToFolder } from '../../../hooks/useApplyLabels';
+import { LABEL_IDS_TO_I18N } from '../../../constants';
 
 interface Props {
     message: MessageExtended;
+    labelID: string;
 }
 
-const ExtraSpamScore = ({ message }: Props) => {
-    const { Flags } = message.data || {};
+const ExtraSpamScore = ({ message, labelID }: Props) => {
+    const { createModal } = useModals();
+    const [loading, withLoading] = useLoading();
+    const moveToFolder = useMoveToFolder();
+    const { Flags, LabelIDs = [] } = message.data || {};
 
     if (hasBit(Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL)) {
         return (
@@ -31,19 +38,50 @@ const ExtraSpamScore = ({ message }: Props) => {
         );
     }
 
-    if (hasBit(Flags, MESSAGE_FLAGS.FLAG_PHISHING_AUTO)) {
+    if (
+        hasBit(Flags, MESSAGE_FLAGS.FLAG_PHISHING_AUTO) &&
+        (!hasBit(Flags, MESSAGE_FLAGS.FLAG_HAM_MANUAL) || LabelIDs.includes(MAILBOX_LABEL_IDS.SPAM))
+    ) {
+        const markAsLegitimate = async () => {
+            await new Promise((resolve, reject) => {
+                createModal(
+                    <ConfirmModal
+                        title={c('Title').t`Mark email as legitimate`}
+                        confirm={c('Action').t`Mark legitimate`}
+                        onClose={reject}
+                        onConfirm={resolve}
+                    >
+                        <Alert>{c('Info')
+                            .t`We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?`}</Alert>
+                    </ConfirmModal>
+                );
+            });
+            await moveToFolder(
+                [message.data || {}],
+                MAILBOX_LABEL_IDS.INBOX,
+                LABEL_IDS_TO_I18N[MAILBOX_LABEL_IDS.INBOX],
+                labelID
+            );
+        };
         return (
             <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
                 <Icon name="spam" className="flex-item-noshrink mtauto mbauto" />
-                <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info')
-                    .t`This message may be a phishing attempt. Please check the sender and contents to make sure they are legitimate.`}</span>
-                <span className="flex-item-noshrink flex">
+                <span className="pl0-5 pr0-5 flex-item-fluid">
+                    {c('Info')
+                        .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
                     <Href
-                        className="mr1 pl0-5 pr0-5 color-white"
+                        className="pl0-5 pr0-5 color-white"
                         url="https://protonmail.com/blog/prevent-phishing-attacks/"
                     >
                         {c('Info').t`Learn more`}
                     </Href>
+                </span>
+                <span className="flex-item-noshrink flex">
+                    <InlineLinkButton
+                        className="color-currentColor"
+                        onClick={() => withLoading(markAsLegitimate())}
+                        disabled={loading}
+                    >{c('Action').t`Mark legitimate`}</InlineLinkButton>
                 </span>
             </div>
         );

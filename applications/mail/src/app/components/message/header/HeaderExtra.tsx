@@ -23,9 +23,11 @@ interface Props {
     messageLoaded: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
+    labelID: string;
 }
 
 const HeaderExtra = ({
+    labelID,
     message,
     sourceMode,
     messageLoaded,
@@ -40,7 +42,7 @@ const HeaderExtra = ({
         <section className="message-header-extra mt0-5 border-top pt0-5">
             <ExtraExpirationTime message={message} />
             <ExtraDecryptedSubject message={message} />
-            <ExtraSpamScore message={message} />
+            <ExtraSpamScore message={message} labelID={labelID} />
             <ExtraErrors message={message} />
             <ExtraUnsubscribe message={message} />
             <ExtraReadReceipt message={message} />

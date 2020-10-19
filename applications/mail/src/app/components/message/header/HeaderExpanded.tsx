@@ -239,6 +239,7 @@ const HeaderExpanded = ({
             )}
 
             <HeaderExtra
+                labelID={labelID}
                 message={message}
                 sourceMode={sourceMode}
                 onTrustSigningKey={onTrustSigningKey}
