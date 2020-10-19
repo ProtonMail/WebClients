@@ -40,11 +40,11 @@ const applyMarkAsChangesOnWholeConversation = (
 
     const updatedNumUnread = status === MARK_AS_STATUS.UNREAD ? NumUnread + 1 : 0;
     const updatedContextNumUnread = status === MARK_AS_STATUS.UNREAD ? ContextNumUnread + 1 : 0;
-    const updatedLabels = Labels.map((l) =>
-        l.ID === labelID
-            ? l
+    const updatedLabels = Labels.map((label) =>
+        label.ID === labelID
+            ? label
             : {
-                  ...l,
+                  ...label,
                   ContextNumUnread: updatedContextNumUnread
               }
     );
@@ -69,11 +69,11 @@ const applySingleMarkAsChangesOnConversation = (
         status === MARK_AS_STATUS.UNREAD ? ContextNumUnread + 1 : Math.max(ContextNumUnread - 1, 0);
     const updatedLabels = Labels.map((l) =>
         l.ID === labelID
-            ? l
-            : {
+            ? {
                   ...l,
                   ContextNumUnread: updatedContextNumUnread
               }
+            : l
     );
 
     return {
