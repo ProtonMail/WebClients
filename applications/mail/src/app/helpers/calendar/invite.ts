@@ -597,7 +597,9 @@ export const getSupportedEventInvitation = (
         }
 
         if (rrule) {
-            const supportedRrule = getSupportedRrule({ ...validated, rrule }, true);
+            const invitationTzid = vtimezone?.tzid.value;
+            const guessTzid = invitationTzid ? getSupportedTimezone(invitationTzid) : undefined;
+            const supportedRrule = getSupportedRrule({ ...validated, rrule }, true, guessTzid);
             if (!supportedRrule) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
             }
