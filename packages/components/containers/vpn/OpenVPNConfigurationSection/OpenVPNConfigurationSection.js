@@ -128,7 +128,7 @@ const OpenVPNConfigurationSection = () => {
                     {
                         value: PLATFORM.MACOS,
                         link: 'https://protonvpn.com/support/mac-vpn-setup/',
-                        label: c('Option').t`MacOS`,
+                        label: c('Option').t`macOS`,
                     },
                     {
                         value: PLATFORM.LINUX,

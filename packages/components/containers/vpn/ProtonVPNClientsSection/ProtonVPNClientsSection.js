@@ -16,7 +16,7 @@ const ProtonVPNClientsSection = () => {
                 link="https://itunes.apple.com/us/app/protonvpn-fast-secure-vpn/id1437005085"
             />
             <VPNClientCard title={c('VPNClient').t`Windows`} icon="windows" link="https://protonvpn.com/download/" />
-            <VPNClientCard title={c('VPNClient').t`MacOS`} icon="apple" link="https://protonvpn.com/download/" />
+            <VPNClientCard title={c('VPNClient').t`macOS`} icon="apple" link="https://protonvpn.com/download/" />
             <VPNClientCard
                 title={c('VPNClient').t`GNU/Linux`}
                 icon="linux"

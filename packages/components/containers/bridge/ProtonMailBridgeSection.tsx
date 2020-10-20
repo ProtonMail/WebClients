@@ -6,7 +6,7 @@ const ProtonMailBridgeSection = () => {
     const bridgeClients = [
         {
             icon: 'apple',
-            platform: 'MacOS',
+            platform: 'macOS',
             fileType: c('OS compatibility').t`.dmg (10.12 or later)`,
             link: 'https://protonmail.com/bridge/install',
         },
@@ -43,7 +43,7 @@ const ProtonMailBridgeSection = () => {
     return (
         <>
             <Alert learnMore="https://protonmail.com/bridge/">{c('Info')
-                .t`ProtonMail supports IMAP/SMTP via the ProtonMail Bridge application. Thunderbird, Microsoft Outlook, and Apple Mail are officially supported on both Windows and MacOS.`}</Alert>
+                .t`ProtonMail supports IMAP/SMTP via the ProtonMail Bridge application. Thunderbird, Microsoft Outlook, and Apple Mail are officially supported on both Windows and macOS.`}</Alert>
             <Table className="pm-simple-table--has-actions">
                 <TableHeader
                     cells={[
