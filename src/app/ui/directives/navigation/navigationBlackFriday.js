@@ -1,26 +1,26 @@
 import { getEventName } from '../../../blackFriday/helpers/blackFridayHelper';
 
 /* @ngInject */
-function navigationBlackFriday($stateParams, blackFridayModalOpener, $cookies, dispatchers, blackFridayModel) {
+function navigationBlackFriday(blackFridayModalOpener, $cookies, dispatchers, blackFridayModel, authentication) {
     const COOKIE_NAME = 'protonmail-BF-autoload-modal';
     const IS_BLACK_FRIDAY_CLASS = 'navigationBlackFriday-is-black-friday';
 
     /*
          Cookie is not bulletproof
       */
-    const isFirstTime = () => {
+    const alreadySeen = (name) => {
         try {
-            const value = $cookies.get(COOKIE_NAME) || localStorage.getItem(COOKIE_NAME);
+            const value = $cookies.get(`${COOKIE_NAME}-${name}`) || localStorage.getItem(`${COOKIE_NAME}-${name}`);
             return value && value === 'true';
         } catch (e) {
             // ( ･_･)ﾉ  ⌒●~*
         }
     };
 
-    const setAlreadySeen = () => {
+    const setAlreadySeen = (name) => {
         try {
-            $cookies.put(COOKIE_NAME, 'true');
-            localStorage.setItem(COOKIE_NAME, 'true');
+            $cookies.put(`${COOKIE_NAME}-${name}`, 'true');
+            localStorage.setItem(`${COOKIE_NAME}-${name}`, 'true');
         } catch (e) {
             // ( ･_･)ﾉ  ⌒●~*
         }
@@ -40,7 +40,7 @@ function navigationBlackFriday($stateParams, blackFridayModalOpener, $cookies, d
             };
 
             const update = () => {
-                element[0].classList[blackFridayModel.isDealPeriod(true) ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);
+                element[0].classList[blackFridayModel.isBlackFridayPeriod() ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);
             };
 
             const id = setInterval(refresh, 60000);
@@ -58,12 +58,17 @@ function navigationBlackFriday($stateParams, blackFridayModalOpener, $cookies, d
                 if (type === 'run') {
                     update();
                     // Open only once then you need to click button
-                    if (!isFirstTime() && blackFridayModel.isDealPeriod()) {
+                    if (!alreadySeen(authentication.user.ID) && blackFridayModel.isBlackFridayPeriod()) {
                         blackFridayModalOpener();
-                        setAlreadySeen();
+                        setAlreadySeen(authentication.user.ID);
                     }
                 }
             });
+
+            if (!alreadySeen(authentication.user.ID) && blackFridayModel.isProductPayerPeriod()) {
+                blackFridayModalOpener();
+                setAlreadySeen(authentication.user.ID);
+            }
 
             element.on('click', blackFridayModalOpener);
 

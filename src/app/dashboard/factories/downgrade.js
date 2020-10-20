@@ -1,7 +1,6 @@
-import { hasBit } from '../../../helpers/bitHelper';
-
 /* @ngInject */
 function downgrade(
+    $filter,
     authentication,
     confirmModal,
     eventManager,
@@ -13,9 +12,8 @@ function downgrade(
     subscriptionModel,
     organizationModel
 ) {
+    const humanSize = $filter('humanSize');
     const FREE_PLAN = { Type: 1, Name: 'free' };
-    const LOYAL = 1;
-    const COVID = 2;
     const I18N = translator(() => ({
         downgradeTitle: gettextCatalog.getString('Confirm downgrade', null, 'Title'),
         downgradeMessage: gettextCatalog.getString(
@@ -26,7 +24,7 @@ function downgrade(
         successMessage: gettextCatalog.getString('You have successfully unsubscribed', null, 'Downgrade account'),
         bonusTitle: gettextCatalog.getString('Confirm loss of Proton bonuses', null, 'Title'),
         bonusConfirmText: gettextCatalog.getString('Remove bonuses', null, 'button'),
-        bonusMessage(organization, subscription) {
+        bonusMessage(organization) {
             const message = gettextCatalog.getString(
                 'As an early Proton user, your account has extra features.',
                 null,
@@ -38,23 +36,18 @@ function downgrade(
                 'Info'
             );
             const items = [
-                isLoyal(organization) &&
-                    authentication.hasPaidMail() &&
-                    gettextCatalog.getString('+5GB bonus storage', null, 'Info'),
-                hasCovid(organization) &&
-                    hasPlan(subscription, 'plus') &&
-                    gettextCatalog.getString('+5GB bonus storage', null, 'Info'),
-                hasCovid(organization) &&
-                    hasPlan(subscription, 'professional') &&
-                    gettextCatalog.getString('+5GB bonus storage per user', null, 'Info'),
-                hasCovid(organization) &&
-                    hasPlan(subscription, 'visionary') &&
-                    gettextCatalog.getString('+10GB bonus storage', null, 'Info'),
-                isLoyal(organization) &&
-                    authentication.hasPaidVpn() &&
+                hasBonuses(organization) &&
+                    organization.BonusSpace &&
                     gettextCatalog.getString(
-                        '+2 connections for ProtonVPN (allows you to connect more devices to VPN)',
-                        null,
+                        '+{{space}} bonus storage',
+                        { space: humanSize(organization.BonusSpace) },
+                        'Info'
+                    ),
+                hasBonuses(organization) &&
+                    organization.BonusVPN &&
+                    gettextCatalog.getString(
+                        '+{{vpn}} connections for ProtonVPN (allows you to connect more devices to VPN)',
+                        { vpn: organization.BonusVPN },
                         'Info'
                     )
             ]
@@ -76,16 +69,8 @@ function downgrade(
             .then(() => subscriptionModel.set(FREE_PLAN));
     }
 
-    function isLoyal(organization = {}) {
-        return hasBit(organization.Flags, LOYAL);
-    }
-
-    function hasCovid(organization = {}) {
-        return hasBit(organization.Flags, COVID);
-    }
-
-    function hasPlan(subscription = {}, planName = '') {
-        return (subscription.Plans || []).some(({ Name }) => Name === planName);
+    function hasBonuses(organization = {}) {
+        return !!organization.Flags;
     }
 
     async function check() {
@@ -107,16 +92,15 @@ function downgrade(
         });
 
         const organization = organizationModel.get();
-        const subscription = subscriptionModel.get();
 
-        if (isLoyal(organization) || hasCovid(organization)) {
+        if (hasBonuses(organization)) {
             await new Promise((resolve, reject) => {
                 // defer modal as there is an issue with the $digest. It won't show the modal
                 const id = setTimeout(() => {
                     confirmModal.activate({
                         params: {
                             title: I18N.bonusTitle,
-                            message: I18N.bonusMessage(organization, subscription),
+                            message: I18N.bonusMessage(organization),
                             confirmText: I18N.bonusConfirmText,
                             confirmClass: 'error',
                             customAlert: true,

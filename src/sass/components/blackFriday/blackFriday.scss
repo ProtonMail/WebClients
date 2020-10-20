@@ -7,10 +7,20 @@ $offer-header-background: #f5f5f5;
 $offer-content-background: #3e3e3e;
 $offer-header-size: 50px;
 
+$border-radius-boxes: .5em;
+$offer-bubble: #8A89C9;
+$offer-bubble-most-popular: #E45726;
+$most-popular-color: #8A89C9;
+$proton-drive-access: #65A861;
+
+$price-info-text-size: 1.5em;
+
 .blackFridayModal .modal-dialog {
     border-color: $background;
     width: 58rem;
     margin-left: calc(-58rem/2);
+    border: 0;
+    background: transparent;
 }
 
 .blackFridayModal  .modal-dialog .close {
@@ -35,7 +45,7 @@ $offer-header-size: 50px;
     right: 0;
     bottom: 0;
 
-    background: url(assets('/bf/blackfriday-background.svg')) center no-repeat;
+    background: url(assets('/bf/world.svg')) center no-repeat;
 }
 
 /* --force-douce */
@@ -43,8 +53,9 @@ $offer-header-size: 50px;
     position: relative;
     padding: 4rem 0 0;
     text-align: center;
-    margin-bottom: 5em;
+    margin-bottom: 3em;
     font-size: 1.2rem;
+    color: $white;
 
     h1, h2 {
         color: $white;
@@ -65,12 +76,12 @@ $offer-header-size: 50px;
 
 .blackFriday-content {
     position: relative;
-    padding: 0 3rem;
+    padding: 1em 3rem 0;
 }
 
 .blackFridayCountdown-container {
-    min-height: 27px;
-    font-size: 1.3em;
+    //min-height: 3em;
+    font-size: .9em;
     color: $white;
     font-weight: bold
 }
@@ -108,72 +119,73 @@ $offer-header-size: 50px;
     align-items: center;
     background-color: $white;
     border: .3em solid transparent;
-    border-radius: .5rem;
-    flex: 0 0 calc(33% - .5rem);
+    border-radius: .5em;
+    flex: 0 0 calc(33% - 1rem);
     text-align: center;
-    font-weight: bold;
 }
 
 
-.blackFridayOffer-container:nth-of-type(1) {
-    .be-headerOffer-titles span { display: none }
-}
-.blackFridayOffer-container:nth-of-type(2) {
-
-    .blackFridayOffer-price-info {
-        color: $primary;
-    }
-
-}
-
-.blackFridayOffer-container:hover {
-    border-color: $primary
-}
 
 
 .blackFridayOffer-header {
     font-size: 1.2em;
-    height: $offer-header-size;
     display: flex;
     justify-content: center;
     flex-direction: column;
     position: relative;
+    width: 100%;
+    padding: 2.5em .5em .5em;
+    border-radius: $border-radius-boxes $border-radius-boxes 0 0;
+    color: $black;
+    font-weight: bold;
+}
+
+.blackFridayOffer-header-mostpopular {
+    position: absolute;
+    bottom: 100%;
+    left: -0.3em;
+    right: -0.3em;
+    padding: 1em .5em .5em;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: $most-popular-color;
+    border-radius: $border-radius-boxes $border-radius-boxes 0 0;
+    color: $white;
 }
 
 .bf-bubble-percent {
     color: $white;
     text-transform: uppercase;
     position: absolute;
-    top: calc(-50% - 1.7em);
-    left: 0;
-    right: 0;
-    display: flex
+    top: -1.3em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 9;
+    font-weight: bold;
 }
 
 .bf-bubble-percentTxt {
-    border-radius: 100%;
-    background: lighten($bug, 5%);
-    font-size: 1em;
-    padding: 1em 1.1em;
-    margin: auto
+    border-radius: 1em;
+    background: $offer-bubble;
+    font-size: .95rem;
+    padding: .4em 1em;
+    margin: auto;
+    white-space: nowrap;
 }
 
-.be-headerOffer-titles {
-    min-height: 100px;
-    padding-top: 3rem;
-    color: $primary;
-}
 
 .be-headerOffer-titles {
     font-size: 1.2rem;
+    min-height: 4rem;
 
     h5 {
         font-size: 1em;
-        padding-bottom: .2em;
     }
 
     span {
-        font-size: .8em
+        font-size: .75em;
+        text-transform: uppercase;
     }
 }
 
@@ -183,9 +195,16 @@ $offer-header-size: 50px;
     flex-direction: column;
     align-items: center;
     flex: 1;
-    padding: 2rem 1rem;
+    padding: 1rem;
     width: 100%;
     color: #2f333e
+}
+
+.blackFridayOffer-content-main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .blackFridayOffers-container[data-offer-n="2"] {
@@ -214,23 +233,35 @@ $offer-header-size: 50px;
 }
 
 .blackFridayOffer-price-container {
-    margin: 1rem 0;
+    margin: 0 0 1rem ;
 
 }
 
 .blackFridayOffer-price-info {
-    font-size: 2.4em;
-    margin-bottom: 5px;
+    font-size: $price-info-text-size;
+    font-weight: bold;
 }
 
 .bf-main-price {
-    font-size: 1.8em
+    font-size: 2.4em
 }
 
 
 .blackFridayOffer-price-regular, .blackFridayOffer-price-billing {
-    font-size: 0.8em;
+    font-size: 1em;
     color: $secondary-text-color;
+    line-height: 1.5;
+    margin-top: .5em;
+}
+.blackFridayOffer-price-billing-period {
+    display: block;
+    font-size: 14px; // f***
+    font-weight: normal;
+}
+
+.blackFridayOffer-price-regular,
+.blackFridayOffer-price-billing-period {
+    font-weight: normal;
 }
 
 .blackFridayOffer-price-savings {
@@ -242,9 +273,51 @@ $offer-header-size: 50px;
 
 .blackFridayOffer-buy {
     position: relative;
-    width: 90%;
+    //width: 90%;
+    font-size: 1em;
+    padding: 1em;
     margin-top: auto;
     margin-bottom: 2em;
+    height: auto;
+    line-height: normal;
+    border-radius: $border-radius-boxes;
+    &.secondary {
+        color: $primary;
+        border-color: $primary;
+        border-width: 2px;
+        &:focus,
+        &:hover,
+        &:active {
+            background-color: darken($primary, 5);
+            color: $white;
+        }
+    }
+}
+
+.blackFridayOffer-services {
+    margin-top: 0;
+    list-style-type: none;
+    padding-left: 0;
+    width: 100%;
+    > li {
+        margin-bottom: .5em;
+    }
+    .blackFridayOffer-services-protonDrive {
+        color: $proton-drive-access;
+        position: relative;
+    }
+    .blackFridayOffer-services-protonDrive-productName {
+        display: block;
+        font-weight: bold;
+    }
+    .blackFridayOffer-services-protonDrive-free {
+        background-color: $proton-drive-access;
+        color: $white;
+        display: inline-block;
+        padding: .1em .5em;
+        border-radius: .5em;
+        font-weight: bold;
+    }
 }
 
 .blackFriday-footer {
@@ -263,8 +336,8 @@ $offer-header-size: 50px;
 }
 
 .bf-billedas {
-    font-weight: normal;
-    color: darken($gray-light, 20%);
+    font-weight: bold;
+    //color: darken($gray-light, 20%);
 }
 
 .blackFriday-container .currencySelector-container {
@@ -275,6 +348,7 @@ $offer-header-size: 50px;
         background: transparent;
         border-color: $offer-content-border;
         color: $white;
+        padding: 0 3em;
     }
     .currencySelector-button:first-of-type {
         border-radius: .5rem 0 0 .5rem
@@ -291,20 +365,33 @@ $offer-header-size: 50px;
     &[data-currency="CHF"] [value="CHF"],
     &[data-currency="USD"] [value="USD"],
     &[data-currency="EUR"] [value="EUR"] {
-        background: $primary !important;
+        background: #6C687D !important;
     }
 }
 
-@media (max-width: 700px) {
-    .blackFridayOffers-container {
-        padding: 0 20px;
+
+// Modifier stuff for most popular
+.blackFridayOffer-container--most-popular {
+
+    border-color: $most-popular-color;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    .blackFridayOffer-header-mostpopular {
+        border: .3em solid $most-popular-color;
+        font-weight: bold;
+    }
+
+    .bf-bubble-percentTxt {
+        background: $offer-bubble-most-popular;
     }
 }
 
-@media (max-width: 580px) {
+
+@media (max-width: 760px) {
 
     .blackFriday-container {
-        padding: 1rem
+        padding: 5%;
     }
 
     .blackFridayOffers-container {
@@ -317,9 +404,26 @@ $offer-header-size: 50px;
         width: 100%
     }
 
-    .blackFridayOffer-container + .blackFridayOffer-container {
-        margin-top: 3rem;
+    .blackFridayOffer-container {
+        margin-top: 1em;
+        margin-bottom: 3em;
+
+        &--most-popular {
+            order: -1;
+        }
+
+        &:first-of-type {
+            order: 10;
+        }
     }
+
+    .be-headerOffer-titles {
+        min-height: 0;
+    }
+
+    // .blackFridayOffer-container + .blackFridayOffer-container {
+    //     margin-top: 3rem;
+    // }
 
     .blackFriday-content {
         padding: 0
@@ -349,7 +453,7 @@ $offer-header-size: 50px;
     }
 }
 
-@media (max-width: 915px) and (min-width: 800px) {
+@media (max-width: 1200px) {
     .navigation > li { flex: 0 0 90px; }
     .blackFridayModal .modal-dialog {
         border-color: $background;
@@ -357,6 +461,13 @@ $offer-header-size: 50px;
         margin-left: calc(-100vw/2);
     }
 
+}
+
+@media (max-width: 990px) {
+    .navigation > li { flex: 0 0 80px; }
+    .navigation-link.navigation-link {
+        width: auto;
+    }
 }
 
 @media (max-width: 800px) and (min-width: 600px) {

@@ -1,13 +1,26 @@
 import { TIME, BLACK_FRIDAY } from '../../constants';
+import { isBlackFriday, isBlackFridayExtension, isCyberMonday } from '../helpers/blackFridayHelper';
 
 /* @ngInject */
 function blackFridayCountdown(translator, gettextCatalog) {
     const I18N = translator(() => ({
         days(n) {
-            return gettextCatalog.getPlural(n, '{{$count}} day', '{{$count}} days', {}, 'X days before the end');
+            return gettextCatalog.getPlural(
+                n,
+                '{{$count}} day',
+                '{{$count}} days',
+                {},
+                'blackfriday X days before the end'
+            );
         },
         hours(n) {
-            return gettextCatalog.getPlural(n, '{{$count}} hour', '{{$count}} hours', {}, 'X hours before the end');
+            return gettextCatalog.getPlural(
+                n,
+                '{{$count}} hour',
+                '{{$count}} hours',
+                {},
+                'blackfriday X hours before the end'
+            );
         },
         minutes(n) {
             return gettextCatalog.getPlural(
@@ -15,7 +28,7 @@ function blackFridayCountdown(translator, gettextCatalog) {
                 '{{$count}} minute',
                 '{{$count}} minutes',
                 {},
-                'X minutes before the end'
+                'blackfriday X minutes before the end'
             );
         },
         seconds(n) {
@@ -24,10 +37,10 @@ function blackFridayCountdown(translator, gettextCatalog) {
                 '{{$count}} second',
                 '{{$count}} seconds',
                 {},
-                'X seconds before the end'
+                'blackfriday X seconds before the end'
             );
         },
-        expired: gettextCatalog.getString('Expired', null, 'Info')
+        expired: gettextCatalog.getString('Expired', null, 'blackfriday Info')
     }));
 
     const render = (today, ts) => {
@@ -51,24 +64,21 @@ function blackFridayCountdown(translator, gettextCatalog) {
         templateUrl: require('../../../templates/blackFriday/blackFridayCountdown.tpl.html'),
         scope: {},
         link(scope, el) {
-            const today = moment(new Date());
-            const config = {
-                halfDone: false,
-                timestamp: +BLACK_FRIDAY.BETWEEN.END_HALF,
-                timestampEnd: +BLACK_FRIDAY.BETWEEN.END
-            };
             const refresh = () => {
-                if (!config.halfDone) {
-                    config.timestamp -= TIME.SECOND;
-                    const output = render(today, config.timestamp);
-                    config.halfDone = output === I18N.expired;
-                    !config.halfDone && (el[0].textContent = output);
+                const today = moment(new Date());
+                if (isBlackFriday()) {
+                    el[0].textContent = render(today, BLACK_FRIDAY.BETWEEN.CYBER_START);
+                    return;
                 }
-
-                if (config.halfDone) {
-                    config.timestampEnd -= TIME.SECOND;
-                    el[0].textContent = render(today, config.timestampEnd);
+                if (isCyberMonday()) {
+                    el[0].textContent = render(today, BLACK_FRIDAY.BETWEEN.CYBER_END);
+                    return;
                 }
+                if (isBlackFridayExtension()) {
+                    el[0].textContent = render(today, BLACK_FRIDAY.BETWEEN.END);
+                    return;
+                }
+                el[0].textContent = I18N.expired;
             };
 
             refresh();

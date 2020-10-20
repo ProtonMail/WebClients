@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS_TYPE, BLACK_FRIDAY } from '../../constants';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS_TYPE, BUNDLE_COUPON_CODE, BLACK_FRIDAY } from '../../constants';
 
 const PAID_TYPES = {
     plus: ['plus'],
@@ -127,16 +127,13 @@ function subscriptionModel(dispatchers, Payment) {
         return CouponCode === coupon;
     };
 
-    const isPlusForBF2019 = () => {
-        const isPlus = hasPaid('plus');
-        const hasCoupon = withCoupon(BLACK_FRIDAY.COUPON_CODE);
+    const isProductPayer = () => {
+        const { CouponCode = '' } = CACHE.subscription || {};
+        const noPro = !hasPaid('professional');
+        const isPaying = hasPaid('plus') || hasPaid('vpnplus') || hasPaid('vpnbasic');
+        const noBundle = ![BUNDLE_COUPON_CODE, BLACK_FRIDAY.COUPON_CODE].includes(CouponCode);
 
-        const { Plans = [] } = CACHE.subscription || {};
-        const isBF2018 = withCoupon('TWO4ONE2018');
-        const total = Plans.filter(({ Type }) => Type === PLANS_TYPE.PLAN).length;
-
-        // Plus account, only plus plan and no coupon bf2019/bf2018 active
-        return isPlus && total === 1 && !hasCoupon && !isBF2018;
+        return isPaying && noPro && noBundle;
     };
 
     const getAddons = () => {
@@ -151,7 +148,7 @@ function subscriptionModel(dispatchers, Payment) {
     });
 
     return {
-        isPlusForBF2019,
+        isProductPayer,
         getAddons,
         withCoupon,
         set,

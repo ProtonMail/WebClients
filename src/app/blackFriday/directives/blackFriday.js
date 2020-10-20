@@ -1,5 +1,5 @@
-import { BLACK_FRIDAY, CYBER_MONDAY, PLANS_TYPE } from '../../constants';
-import { isBlackFriday } from '../helpers/blackFridayHelper';
+import { BLACK_FRIDAY, PLANS_TYPE } from '../../constants';
+import { isBlackFriday, isCyberMonday } from '../helpers/blackFridayHelper';
 import { getAfterCouponDiscount } from '../../../helpers/paymentHelper';
 
 /* @ngInject */
@@ -14,50 +14,53 @@ function blackFriday(
     gettextCatalog
 ) {
     const TEXTS = {
-        2: 'Two-year deal',
         billing(price, cycle) {
             if (cycle === 12) {
-                return gettextCatalog.getString('Billed as {{price}} for 1 year', { price }, 'Info');
+                return gettextCatalog.getString('Billed as {{price}} for 1 year', { price }, 'blackfriday Info');
             }
-            return gettextCatalog.getString('Billed as {{price}} for 2 years', { price }, 'Info');
+            return gettextCatalog.getString('Billed as {{price}} for 2 years', { price }, 'blackfriday Info');
         },
-        afterBilling(price, cycle, index) {
-            if (cycle === 12) {
+        afterBilling(price, cycle, plans) {
+            if (cycle === 12 && plans.length === 1) {
                 return gettextCatalog.getString(
-                    'Renews after 1 year at a discounted annual price of {{price}} per year (20% discount)',
+                    'Renews after 1 year at a discounted annual price of {{price}} per year (20% discount).',
                     { price },
-                    'Info'
+                    'blackfriday Info'
                 );
             }
-            const discount = index === 1 ? 33 : 47;
+            if (cycle === 24) {
+                return gettextCatalog.getString(
+                    'Renews after 2 years at a discounted 2-year and bundle price of {{price}} every 2 years (47% discount).',
+                    { price },
+                    'blackfriday Info'
+                );
+            }
             return gettextCatalog.getString(
-                'Renews after 2 years at a discounted 2-year price of {{price}} every 2 years ({{discount}}% discount)',
-                { price, discount },
-                'Info'
+                'Renews after 1 year at a discounted annual and bundle price of {{price}} every year (36% discount).',
+                { price },
+                'blackfriday Info'
             );
         },
-        perMonth: gettextCatalog.getString('/mo', null, 'price'),
-        buy: gettextCatalog.getString('Get the deal', null, 'Action'),
-        savings(price) {
-            return gettextCatalog.getString('Save {{price}}', { price }, 'Info');
-        },
+        perMonth: gettextCatalog.getString('per month', null, 'blackfriday price'),
+        buy: gettextCatalog.getString('Get limited-time deal', null, 'blackfriday Action'),
+        upgrade: gettextCatalog.getString('Upgrade', null, 'blackfriday Action'),
         offer(plans, cycle) {
-            if (cycle === 12) {
+            if (cycle === 12 && plans.length === 1) {
                 return {
-                    type: '1 year deal',
+                    type: gettextCatalog.getString('for 1 year', null, 'blackfriday Info'),
                     title: plans[0].Title
                 };
             }
 
-            if (plans.length === 1) {
+            if (cycle === 24) {
                 return {
-                    type: '2 Year deal',
-                    title: plans[0].Title
+                    type: gettextCatalog.getString('for 2 years', null, 'blackfriday Info'),
+                    title: plans.map(({ Title }) => Title).join(' + ')
                 };
             }
 
             return {
-                type: '2 Years Bundle',
+                type: gettextCatalog.getString('for 1 year', null, 'blackfriday Info'),
                 title: plans.map(({ Title }) => Title).join(' + ')
             };
         }
@@ -67,41 +70,33 @@ function blackFriday(
     const currencyFilter = (amount, cycle, currency) => $filter('currency')(amount / 100 / cycle, currency, true);
 
     const getClickData = (plans, payment) => {
-        if (subscriptionModel.isPlusForBF2019()) {
+        if (subscriptionModel.isProductPayer()) {
             return { payment, plans: plans.concat(subscriptionModel.getAddons()) };
         }
 
         return { payment, plans };
     };
 
-    const getOffer = ({ offer, config: { planList, Cycle } }, index) => {
+    const getOffer = ({ offer, config: { planList, Cycle, mostPopular } }) => {
         // Plans are all Cycle 1
-        const priceRegular = planList.reduce((acc, { Amount, Cycle }) => acc + (Cycle === 1 ? Amount * 12 : Amount), 0);
-
+        const priceRegular = planList.reduce((acc, { Pricing }) => acc + Pricing[1], 0);
         const priceOffer = getAfterCouponDiscount(offer);
         const price = {
             monthly: currencyFilter(priceOffer, offer.Cycle, offer.Currency),
-            monthlyRegular: currencyFilter(priceRegular, 12, offer.Currency),
+            monthlyRegular: currencyFilter(priceRegular, 1, offer.Currency),
             total: currencyFilter(priceOffer, 1, offer.Currency),
-            totalRegular: currencyFilter(priceRegular, 1, offer.Currency)
+            totalRegular: currencyFilter(priceRegular * offer.Cycle, 1, offer.Currency)
         };
-        const delta = offer.Cycle === 12 ? 1 : 2;
-        const val = priceRegular * delta;
-        const percentage = percentageFilter((val - priceOffer) / val);
-        const afterBillValue = planList.length === 2 ? 19040 : offer.Amount;
-        let savingsPrice = !index ? priceRegular - priceOffer : ((24 * priceRegular) / 12 / 100) * percentage;
-
-        if (subscriptionModel.isPlusForBF2019()) {
-            savingsPrice = val - priceOffer;
-        }
+        const percentage = percentageFilter(priceOffer, priceRegular * offer.Cycle);
+        const afterBillValue = planList.reduce((acc, { Pricing }) => acc + Pricing[Cycle], 0);
 
         return {
             offer,
+            mostPopular,
             price,
             percentage,
-
-            savings: TEXTS.savings(currencyFilter(savingsPrice, 1, offer.Currency)),
-            afterBilling: TEXTS.afterBilling(currencyFilter(afterBillValue, 1, offer.Currency), offer.Cycle, index),
+            driveIncluded: planList.length === 2,
+            afterBilling: TEXTS.afterBilling(currencyFilter(afterBillValue, 1, offer.Currency), offer.Cycle, planList),
             clickData: getClickData(planList, offer),
             header: TEXTS.offer(planList, Cycle),
             billingTxt: TEXTS.billing(price.total, offer.Cycle)
@@ -156,7 +151,7 @@ function blackFriday(
                 const plans = await networkActivityTracker.track(promise);
 
                 // we re-check again for plus as you might have addons
-                if (subscriptionModel.isPlusForBF2019()) {
+                if (subscriptionModel.isProductPayer()) {
                     const { Currency, Cycle } = payment;
                     const valid = await PaymentCache.valid({
                         Currency,
@@ -208,18 +203,38 @@ function blackFriday(
                 loading: true,
                 currency: subscriptionModel.currency(),
                 perMonth: TEXTS.perMonth,
-                buy: TEXTS.buy,
-                end: isBlackFriday() ? BLACK_FRIDAY.BETWEEN.END : CYBER_MONDAY.BETWEEN.END
+                buy: subscriptionModel.isProductPayer() ? TEXTS.upgrade : TEXTS.buy,
+                isBlackFriday: isBlackFriday(),
+                isCyberMonday: isCyberMonday(),
+                // eslint-disable-next-line no-nested-ternary
+                end: isBlackFriday()
+                    ? BLACK_FRIDAY.BETWEEN.CYBER_START
+                    : isCyberMonday()
+                    ? BLACK_FRIDAY.BETWEEN.CYBER_END
+                    : BLACK_FRIDAY.BETWEEN.END,
+                isProductPayer: subscriptionModel.isProductPayer()
             };
 
             scope.getPrice = ({ price: { monthly: priceMonthly = '' } = {} } = {}) => {
+                // USD
                 if (priceMonthly.startsWith('$')) {
-                    const [currency, main, ...rest] = priceMonthly.split('');
-                    return `${currency}<span class="bf-main-price">${main}</span>${rest.join('')}${TEXTS.perMonth}`;
+                    const [main, ...rest] = priceMonthly.substring(1).split('.');
+                    return `$ <span class="bf-main-price">${main}</span>${rest.length ? '.' : ''}${rest.join(
+                        ''
+                    )}<span class="blackFridayOffer-price-billing-period">${TEXTS.perMonth}</span>`;
                 }
-                const [main, ...rest] = priceMonthly.split('');
-
-                return `<span class="bf-main-price">${main}</span>${rest.join('')}${TEXTS.perMonth}`;
+                const [main, ...rest] = priceMonthly.split('.');
+                // 12.33 CHF
+                if (rest.length) {
+                    return `<span class="bf-main-price">${main}</span>.${rest.join(
+                        ''
+                    )}<span class="blackFridayOffer-price-billing-period">${TEXTS.perMonth}</span>`;
+                }
+                // 12 CHF
+                const [price, ...currency] = main.split(' ');
+                return `<span class="bf-main-price">${price}</span> ${currency.join(
+                    ''
+                )}<span class="blackFridayOffer-price-billing-period">${TEXTS.perMonth}</span>`;
             };
 
             networkActivityTracker.track(

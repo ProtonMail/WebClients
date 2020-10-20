@@ -463,28 +463,29 @@ export const VERSION_INFO = {
 
 export const SIGNUP_PLANS = ['plus', 'visionary', 'plus_vpnplus'];
 
-const BLACK_FRIDAY_YEAR = 2019;
+export const BLACK_FRIDAY_YEAR = 2020;
 
 export const BUNDLE_COUPON_CODE = 'BUNDLE';
 
 export const BLACK_FRIDAY = {
     PLANS: ['plus', 'plus_vpnplus'],
     YEAR: BLACK_FRIDAY_YEAR,
-    COUPON_CODE: 'BF2019',
+    COUPON_CODE: 'BF2020',
     CYCLE: CYCLE.TWO_YEARS,
     CYCLES: [CYCLE.TWO_YEARS, CYCLE.YEARLY],
     BETWEEN: {
-        START: new Date(`November 26, ${BLACK_FRIDAY_YEAR} 06:00:00`),
-        END_HALF: new Date(1575100800 * 1000), // Nov 30 8AM UTC
-        END: new Date(1575878400 * 1000) // Dec 9th 8:00 UTC
+        START: new Date(Date.UTC(BLACK_FRIDAY_YEAR, 10, 16, 6)),
+        CYBER_START: new Date(Date.UTC(BLACK_FRIDAY_YEAR, 10, 30, 6)),
+        CYBER_END: new Date(Date.UTC(BLACK_FRIDAY_YEAR, 11, 1, 6)),
+        END: new Date(Date.UTC(BLACK_FRIDAY_YEAR, 11, 15, 6))
     },
     INTERVAL: 10 * 60 * 1000
 };
 
-export const CYBER_MONDAY = {
+export const PRODUCT_PAYER = {
     BETWEEN: {
-        START: `${BLACK_FRIDAY_YEAR}-11-26`,
-        END: `${BLACK_FRIDAY_YEAR}-12-01`
+        START: new Date(Date.UTC(BLACK_FRIDAY_YEAR, 9, 28, 6)),
+        END: new Date(Date.UTC(BLACK_FRIDAY_YEAR, 11, 15, 6))
     }
 };
 

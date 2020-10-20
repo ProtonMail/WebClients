@@ -1,10 +1,29 @@
-import { BLACK_FRIDAY } from '../../constants';
+import { BLACK_FRIDAY, PRODUCT_PAYER } from '../../constants';
 
-export const isBlackFriday = () =>
-    moment().isBetween(BLACK_FRIDAY.BETWEEN.START, moment(BLACK_FRIDAY.BETWEEN.END).utc());
+export const isBlackFriday = () => moment().isBetween(BLACK_FRIDAY.BETWEEN.START, BLACK_FRIDAY.BETWEEN.CYBER_START);
 
-export const isCyberMonday = () => false;
+export const isCyberMonday = () => moment().isBetween(BLACK_FRIDAY.BETWEEN.CYBER_START, BLACK_FRIDAY.BETWEEN.CYBER_END);
 
-export const isDealEvent = () => isBlackFriday() || isCyberMonday();
+export const isBlackFridayExtension = () =>
+    moment().isBetween(BLACK_FRIDAY.BETWEEN.CYBER_END, BLACK_FRIDAY.BETWEEN.END);
 
-export const getEventName = () => 'Black Friday';
+export const isDealEvent = () => moment().isBetween(BLACK_FRIDAY.BETWEEN.START, BLACK_FRIDAY.BETWEEN.END);
+
+export const getEventName = () => {
+    if (!isDealEvent()) {
+        return '';
+    }
+    if (isBlackFriday()) {
+        return 'Black Friday';
+    }
+
+    if (isCyberMonday()) {
+        return 'Cyber Monday';
+    }
+
+    if (isBlackFridayExtension()) {
+        return 'Black Friday Extension';
+    }
+};
+
+export const isProductPayerPeriod = () => moment().isBetween(PRODUCT_PAYER.BETWEEN.START, PRODUCT_PAYER.BETWEEN.END);

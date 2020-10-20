@@ -1,6 +1,8 @@
+import { BLACK_FRIDAY_YEAR } from '../../constants';
+
 /* @ngInject */
 function blackFridayHandler(Payment, blackFridayModel, dispatchers) {
-    const OCTOBER_01 = +new Date('2019-10-01') / 1000; // Unix TS
+    const OCTOBER_01 = +new Date(`${BLACK_FRIDAY_YEAR}-10-01`) / 1000; // Unix TS
 
     const isAbleToSeeBF = (latest = 0) => {
         // New user
@@ -15,6 +17,7 @@ function blackFridayHandler(Payment, blackFridayModel, dispatchers) {
     async function init() {
         const { dispatcher } = dispatchers(['blackFriday']);
         const { LastSubscriptionEnd } = await Payment.latestSubscription();
+
         if (isAbleToSeeBF(LastSubscriptionEnd)) {
             blackFridayModel.allow();
             dispatcher.blackFriday('run');

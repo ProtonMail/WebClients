@@ -19,3 +19,9 @@
     border-radius: 50%;
     animation: pusate 2s infinite alternate;
 }
+
+.appConfigBody-is-mobile {
+    .navigationBlackFriday-button {
+        margin-top: 5px;
+    }
+}

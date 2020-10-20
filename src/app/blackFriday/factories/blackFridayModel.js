@@ -2,11 +2,11 @@ import blackFridayOffers from '../helpers/blackFridayOffers';
 import { BLACK_FRIDAY } from '../../constants';
 import { getPlansMap } from '../../../helpers/paymentHelper';
 import { setItem } from '../../../helpers/storageHelper';
-import { isDealEvent } from '../helpers/blackFridayHelper';
+import { isDealEvent, isProductPayerPeriod as productPayerPeriod } from '../helpers/blackFridayHelper';
 
 /* @ngInject */
 function blackFridayModel(authentication, subscriptionModel, paymentModel, PaymentCache, userType) {
-    let allowed = false;
+    let allowed = true;
     // Needed as function because the authentiation.user.ID can change.
     const getKey = () => `protonmail_black_friday_${authentication.user.ID}_${BLACK_FRIDAY.YEAR}`;
 
@@ -21,9 +21,12 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
      *     - Must be between START-END
      * @return {Boolean}
      */
-    const isDealPeriod = () => {
-        const isAvailable = userType().isFree && allowed && isDealEvent();
-        return isAvailable || (subscriptionModel.isPlusForBF2019() && isDealEvent());
+    const isBlackFridayPeriod = () => {
+        return allowed && isDealEvent() && userType().isFree;
+    };
+
+    const isProductPayerPeriod = () => {
+        return productPayerPeriod() && subscriptionModel.isProductPayer();
     };
 
     /**
@@ -36,9 +39,9 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
     const getOffers = async (currency) => {
         const Plans = await PaymentCache.plans();
         const plansMap = getPlansMap(Plans);
-        const isPlus = subscriptionModel.isPlusForBF2019();
+        const isPayer = subscriptionModel.isProductPayer();
 
-        const offers = blackFridayOffers(currency, isPlus).map(({ plans, ...offer }) => {
+        const offers = blackFridayOffers(currency, isPayer).map(({ plans, ...offer }) => {
             const { PlanIDs, planList } = plans.reduce(
                 (acc, name) => {
                     acc.PlanIDs.push(plansMap[name].ID);
@@ -69,7 +72,7 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
         allowed = true;
     }
 
-    return { isDealPeriod, loadPayments, getOffers, saveClose, allow };
+    return { isBlackFridayPeriod, isProductPayerPeriod, loadPayments, getOffers, saveClose, allow };
 }
 
 export default blackFridayModel;
