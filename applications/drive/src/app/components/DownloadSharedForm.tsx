@@ -31,15 +31,17 @@ function DownloadSharedForm({ name, size, expirationTime, downloadFile, classNam
 
     return (
         <Bordered
-            style={{ minHeight: '30em' }}
-            className={classnames(['bg-white-dm color-global-grey-dm flex-items-center flex w100 mw40e', className])}
+            className={classnames([
+                'bg-white-dm color-global-grey-dm flex flex-items-center flex-item-noshrink w100 mw40e',
+                className,
+            ])}
         >
             {error ? (
                 <Alert type="error">{c('Info').t`Failed to initiate link download. Try again later.`}</Alert>
             ) : (
-                <div className="flex flex-column flex-items-center aligncenter p2 w100">
+                <div className="flex flex-column flex-nowrap flex-items-center aligncenter p2 w100">
                     <h3>
-                        <span className="flex flex-items-center">
+                        <span className="flex flex-nowrap flex-items-center">
                             <Icon name="protondrive" className="mr0-25" size={20} />
                             <b>ProtonDrive</b>
                         </span>

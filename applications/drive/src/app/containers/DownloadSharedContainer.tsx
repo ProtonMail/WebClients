@@ -48,7 +48,7 @@ const DownloadSharedContainer = () => {
     return (
         <>
             {linkInfo && (
-                <div className="flex flex-column flex-nowrap flex-items-center scroll-if-needed h100v">
+                <div className="flex flex-column flex-nowrap flex-item-noshrink flex-items-center scroll-if-needed h100v">
                     <DownloadSharedForm
                         className="mtauto mbauto"
                         name={linkInfo.Name}
