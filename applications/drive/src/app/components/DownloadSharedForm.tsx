@@ -46,7 +46,7 @@ function DownloadSharedForm({ name, size, expirationTime, downloadFile, classNam
                             <b>ProtonDrive</b>
                         </span>
                     </h3>
-                    <h3 className="bold mt2 mb0-25">{c('Title').t`Your file is ready to be download`}</h3>
+                    <h3 className="bold mt2 mb0-25">{c('Title').t`Your file is ready to be downloaded`}</h3>
                     <p className="m0">
                         {expiresOnMessage}
                         <span className="ml0-25 no-wrap">{expirationDate}</span>
