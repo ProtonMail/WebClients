@@ -7,7 +7,7 @@ import { useUser } from './useUser';
 const COOKIE_NAME = 'is-paid-user';
 
 const usePaidCookie = () => {
-    const [{ isPaid }] = useUser();
+    const [user] = useUser();
 
     useEffect(() => {
         const secondLevelDomain = getSecondLevelDomain();
@@ -15,10 +15,10 @@ const usePaidCookie = () => {
         const today = new Date();
         const lastDayOfTheYear = new Date(today.getFullYear(), 11, 31, 23, 59, 59);
 
-        if (isPaid && !checkCookie(COOKIE_NAME, 'true')) {
+        if (user.isPaid && !checkCookie(COOKIE_NAME, 'true')) {
             setCookie(COOKIE_NAME, 'true', lastDayOfTheYear.toUTCString(), cookieDomain);
         }
-    }, []);
+    }, [user]);
 };
 
 export default usePaidCookie;
