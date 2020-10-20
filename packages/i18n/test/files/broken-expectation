@@ -25,3 +25,51 @@
 
 
 Found 11 error(s) inside 3 file(s)
+{
+  "msgid": "Contact group apply",
+  "comments": {
+    "reference": "node_modules/react-components/containers/contacts/ContactGroupDropdown.tsx:149"
+  },
+  "msgid_plural": "Contact groups apply",
+  "msgstr": [
+    "",
+    ""
+  ]
+}
+{
+  "msgid": "Contact signature not verified",
+  "comments": {
+    "reference": "node_modules/proton-shared/lib/contacts/decrypt.ts:80"
+  },
+  "msgstr": [
+    ""
+  ]
+}
+[error] 2 translations without context !
+[proton-i18n] ✔ All translations have a context, good job !
+{
+  "msgid": "1 Member",
+  "msgctxt": "Info",
+  "comments": {
+    "reference": "node_modules/react-components/containers/contacts/modals/ContactGroupModal.tsx:187"
+  },
+  "msgid_plural": "${ model.contactEmails.length } Members",
+  "msgstr": [
+    "",
+    ""
+  ]
+}
+{
+  "msgid": "Delete ${ name }",
+  "msgctxt": "Title",
+  "comments": {
+    "reference": "node_modules/react-components/containers/contacts/modals/ContactDeleteModal.tsx:51",
+    "flag": "javascript-format"
+  },
+  "msgid_plural": "Delete ${ count } contacts",
+  "msgstr": [
+    "",
+    ""
+  ]
+}
+[error] 2 translations without matching variables !
