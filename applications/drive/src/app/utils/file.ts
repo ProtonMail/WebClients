@@ -1,6 +1,6 @@
 import { MB } from '../constants';
 
-export const isFile = async (item: any) => {
+export const isFile = async (item: File) => {
     if (item.type !== '' || item.size > MB) {
         return true;
     }
