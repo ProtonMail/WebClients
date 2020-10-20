@@ -67,6 +67,11 @@ export const hasVpnBasic = (subscription: Subscription) => {
     return Plans.some(({ Name }) => Name === VPNBASIC);
 };
 
+export const hasVpnPlus = (subscription: Subscription) => {
+    const { Plans = [] } = subscription;
+    return Plans.some(({ Name }) => Name === VPNPLUS);
+};
+
 export const getMonthlyBaseAmount = (name: PLANS, plans: Plan[], subscription: Subscription) => {
     const base = plans.find(({ Name }) => Name === name);
     if (!base) {

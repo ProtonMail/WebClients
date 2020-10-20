@@ -18,6 +18,7 @@ export interface User {
     DisplayName: string;
     OrganizationPrivateKey?: string;
     Keys: Key[];
+    DriveEarlyAccess: number;
 }
 
 export interface UserModel extends User {

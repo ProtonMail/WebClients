@@ -115,3 +115,8 @@ export const stripLinkPrefix = (input = '') => {
     }
     return input.replace(prefix, '');
 };
+
+export const getSecondLevelDomain = () => {
+    const { hostname } = window.location;
+    return hostname.substr(hostname.indexOf('.') + 1);
+};

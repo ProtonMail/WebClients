@@ -9,3 +9,7 @@ export const isLoyal = (organization: Partial<Organization> = {}) => {
 export const hasCovid = (organization: Partial<Organization> = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.COVID);
 };
+
+export const hasBonuses = (organization: Partial<Organization> = {}) => {
+    return !!organization.Flags;
+};

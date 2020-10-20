@@ -20,4 +20,12 @@ export interface Organization {
     UsedMembers: number;
     UsedVPN: number;
     HasKeys: number;
+    CreateTime: number;
+    LoyaltyCounter: number;
+    LoyaltyIncrementTime: number;
+    BonusDomains: number;
+    BonusAddresses: number;
+    BonusSpace: number;
+    BonusMembers: number;
+    BonusVPN: number;
 }

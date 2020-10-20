@@ -1,6 +1,7 @@
 import { CYCLE, PLAN_TYPES, PLANS, ADDON_NAMES } from '../constants';
 
-type Currency = 'EUR' | 'CHF' | 'USD';
+export type Currency = 'EUR' | 'CHF' | 'USD';
+export type Cycle = 1 | 12 | 24;
 
 export interface Pricing {
     [CYCLE.MONTHLY]: number;
@@ -45,3 +46,19 @@ export interface Subscription {
 export type PlanIDs = {
     [planID: string]: number;
 };
+
+export interface SubscriptionCheckResponse {
+    Amount: number;
+    AmountDue: number;
+    Proration?: number;
+    CouponDiscount?: number;
+    Coupon: null | {
+        Code: string;
+        Description: string;
+    };
+    UnusedCredit?: number;
+    Credit?: number;
+    Currency: Currency;
+    Cycle: Cycle;
+    Gift?: number;
+}
