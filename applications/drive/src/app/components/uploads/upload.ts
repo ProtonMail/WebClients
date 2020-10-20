@@ -234,7 +234,7 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
                     abortController.signal
                 );
             } catch (e) {
-                if (numRetries < 3) {
+                if (!isTransferCancelError(e) && numRetries < 3) {
                     console.error(`Failed block #${index} upload for ${id}. Retry num: ${numRetries}`);
                     blockUploaders.push(getBlockUploader(block, numRetries + 1));
                 } else {
