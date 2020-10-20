@@ -56,7 +56,7 @@ const DownloadSharedContainer = () => {
                         expirationTime={linkInfo.ExpirationTime}
                         downloadFile={downloadFile}
                     />
-                    <div className="color-global-light flex flex-items-end onmobile-pt1">
+                    <div className="color-global-light flex flex-item-noshrink flex-items-end onmobile-pt1">
                         <div className="aligncenter opacity-50 mb2">
                             <Icon name="lock-check" size={20} />
                             <div className="small m0">{c('Label').t`Zero-Access Encryption by Proton`}</div>
