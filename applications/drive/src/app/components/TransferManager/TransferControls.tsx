@@ -34,7 +34,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
         type === TransferType.Download ? c('Action').t`Restart download` : c('Action').t`Restart upload`;
     const removeText = c('Action').t`Remove from this list`;
 
-    const handleClick = () => {
+    const handleCancelClick = () => {
         if (type === TransferType.Download) {
             if (isFinished) {
                 return removeDownload(transfer.id);
@@ -146,7 +146,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
             <button
                 type="button"
                 disabled={isFinalizing}
-                onClick={handleClick}
+                onClick={handleCancelClick}
                 className="pd-transfers-listItem-controls-button pm-button pm-button--for-icon flex flex-item-noshrink"
                 title={isFinished ? removeText : cancelText}
             >
