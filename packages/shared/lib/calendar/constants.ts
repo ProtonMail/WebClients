@@ -67,10 +67,10 @@ export enum ICAL_ATTENDEE_STATUS {
 }
 
 export enum ATTENDEE_STATUS_API {
-    NEEDS_ACTION,
-    TENTATIVE,
-    ACCEPTED,
-    DECLINED,
+    NEEDS_ACTION = 0,
+    TENTATIVE = 1,
+    DECLINED = 2,
+    ACCEPTED = 3,
 }
 
 export const MAX_CALENDARS_PER_USER = 10;
