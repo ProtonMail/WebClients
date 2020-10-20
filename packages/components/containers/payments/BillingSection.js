@@ -1,24 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
-import {
-    PLAN_NAMES,
-    CYCLE,
-    LOYAL_BONUS_STORAGE,
-    LOYAL_BONUS_CONNECTION,
-    COVID_PLUS_BONUS_STORAGE,
-    PLANS,
-    COVID_PROFESSIONAL_BONUS_STORAGE,
-    COVID_VISIONARY_BONUS_STORAGE,
-} from 'proton-shared/lib/constants';
-import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
+import { PLAN_NAMES, CYCLE } from 'proton-shared/lib/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { getMonthlyBaseAmount, hasVisionary, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+
 import { Alert, Price, Loader, LinkButton, Time, Info } from '../../components';
 import { useUser, useSubscription, useOrganization, useModals, usePlans } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
-
 import { formatPlans } from './subscription/helpers';
 import DiscountBadge from './DiscountBadge';
 import GiftCodeModal from './GiftCodeModal';
@@ -34,12 +24,6 @@ const getCyclesI18N = () => ({
     [YEARLY]: c('Billing cycle').t`Yearly`,
     [TWO_YEARS]: c('Billing cycle').t`2-year`,
 });
-
-const COVID_STORAGE = {
-    [PLANS.PLUS]: COVID_PLUS_BONUS_STORAGE,
-    [PLANS.PROFESSIONAL]: COVID_PROFESSIONAL_BONUS_STORAGE,
-    [PLANS.VISIONARY]: COVID_VISIONARY_BONUS_STORAGE,
-};
 
 const BillingSection = ({ permission }) => {
     const i18n = getCyclesI18N();
@@ -106,8 +90,8 @@ const BillingSection = ({ permission }) => {
         return acc + getMonthlyBaseAmount(planName, plans, subscription);
     }, 0);
     const discount = Amount / Cycle - subTotal;
-    const loyal = isLoyal(organization);
-    const covid = hasCovid(organization);
+    const spaceBonus = organization?.BonusSpace;
+    const vpnBonus = organization?.BonusVPN;
 
     return (
         <>
@@ -209,32 +193,13 @@ const BillingSection = ({ permission }) => {
                                 </div>
                             </div>
                         ) : null}
-                        {loyal ? (
+                        {spaceBonus ? (
                             <div className="flex-autogrid w100 mb1">
                                 <div className="flex-autogrid-item">
                                     {c('Label').t`Bonus storage`}
-                                    <div className="hidden automobile bold">+{humanSize(LOYAL_BONUS_STORAGE)}</div>
+                                    <div className="hidden automobile bold">+{humanSize(spaceBonus)}</div>
                                 </div>
-                                <div className="flex-autogrid-item bold nomobile">
-                                    +{humanSize(LOYAL_BONUS_STORAGE)}
-                                </div>
-                                <div className="flex-autogrid-item bold alignright">
-                                    <PlanPrice amount={0} currency={Currency} cycle={MONTHLY} />
-                                </div>
-                            </div>
-                        ) : null}
-                        {covid && mailPlan ? (
-                            <div className="flex-autogrid w100 mb1">
-                                <div className="flex-autogrid-item">
-                                    {c('Label').t`Bonus storage`}
-                                    <div className="hidden automobile bold">
-                                        +{humanSize(COVID_STORAGE[mailPlan.Name])}
-                                    </div>
-                                </div>
-                                <div className="flex-autogrid-item bold nomobile">
-                                    +{humanSize(COVID_STORAGE[mailPlan.Name])}{' '}
-                                    {mailPlan.Name === PLANS.PROFESSIONAL ? c('Unit').t`per user` : ''}
-                                </div>
+                                <div className="flex-autogrid-item bold nomobile">+{humanSize(spaceBonus)}</div>
                                 <div className="flex-autogrid-item bold alignright">
                                     <PlanPrice amount={0} currency={Currency} cycle={MONTHLY} />
                                 </div>
@@ -320,25 +285,25 @@ const BillingSection = ({ permission }) => {
                                 </div>
                             </div>
                         ) : null}
-                        {loyal ? (
+                        {vpnBonus ? (
                             <div className="flex-autogrid w100 mb1">
                                 <div className="flex-autogrid-item">
                                     {c('Label').t`Bonus connections`}
                                     <div className="hidden automobile bold">
                                         +
                                         {c('Addon unit for subscription').ngettext(
-                                            msgid`${LOYAL_BONUS_CONNECTION} connection`,
-                                            `${LOYAL_BONUS_CONNECTION} connections`,
-                                            LOYAL_BONUS_CONNECTION
+                                            msgid`${vpnBonus} connection`,
+                                            `${vpnBonus} connections`,
+                                            vpnBonus
                                         )}
                                     </div>
                                 </div>
                                 <div className="flex-autogrid-item bold nomobile">
                                     +
                                     {c('Addon unit for subscription').ngettext(
-                                        msgid`${LOYAL_BONUS_CONNECTION} connection`,
-                                        `${LOYAL_BONUS_CONNECTION} connections`,
-                                        LOYAL_BONUS_CONNECTION
+                                        msgid`${vpnBonus} connection`,
+                                        `${vpnBonus} connections`,
+                                        vpnBonus
                                     )}
                                 </div>
                                 <div className="flex-autogrid-item bold alignright">

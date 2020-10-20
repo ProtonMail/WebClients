@@ -11,7 +11,7 @@ import {
     getPlanIDs,
     clearPlanIDs,
 } from 'proton-shared/lib/helpers/subscription';
-import { isLoyal, hasCovid } from 'proton-shared/lib/helpers/organization';
+import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 
 import { Alert, Loader } from '../../components';
 import {
@@ -71,17 +71,9 @@ const PlansSection = () => {
         await new Promise((resolve, reject) => {
             createModal(<DowngradeModal user={user} onConfirm={resolve} onClose={reject} />);
         });
-        if (isLoyal(organization) || hasCovid(organization)) {
+        if (hasBonuses(organization)) {
             await new Promise((resolve, reject) => {
-                createModal(
-                    <LossLoyaltyModal
-                        subscription={subscription}
-                        organization={organization}
-                        user={user}
-                        onConfirm={resolve}
-                        onClose={reject}
-                    />
-                );
+                createModal(<LossLoyaltyModal organization={organization} onConfirm={resolve} onClose={reject} />);
             });
         }
         return handleUnsubscribe();

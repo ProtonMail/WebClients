@@ -1,10 +1,11 @@
 import React from 'react';
 import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
-import { Hamburger } from '../../components';
-import { useConfig, useUser } from '../../hooks';
 
+import { Hamburger } from '../../components';
+import { useConfig, useUser, usePlans, useSubscription, usePaidCookie } from '../../hooks';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
+
 import UserDropdown from './UserDropdown';
 import TopNavbarLink from '../../components/link/TopNavbarLink';
 import { TopNavbarItem } from '../app/TopNavbar';
@@ -12,6 +13,8 @@ import { AppsDropdown, TopNavbar } from '../app';
 import SupportDropdown from './SupportDropdown';
 import UpgradeButton from './UpgradeButton';
 import UpgradeVPNButton from './UpgradeVPNButton';
+import BlackFridayButton from './BlackFridayButton';
+import useBlackFriday from './useBlackFriday';
 
 interface Props extends HeaderProps {
     logo?: React.ReactNode;
@@ -40,7 +43,11 @@ const PrivateHeader = ({
     title,
 }: Props) => {
     const [{ hasPaidMail, hasPaidVpn }] = useUser();
+    const [plans = []] = usePlans();
+    const [subscription] = useSubscription();
     const { APP_NAME } = useConfig();
+    const showBlackFridayButton = useBlackFriday();
+    usePaidCookie();
 
     if (backUrl) {
         return (
@@ -73,6 +80,11 @@ const PrivateHeader = ({
             {isNarrow ? null : searchBox}
             <TopNavbar>
                 {isNarrow && searchDropdown ? <TopNavbarItem>{searchDropdown}</TopNavbarItem> : null}
+                {showBlackFridayButton ? (
+                    <TopNavbarItem>
+                        <BlackFridayButton plans={plans} subscription={subscription} />
+                    </TopNavbarItem>
+                ) : null}
                 {hasPaidMail || isNarrow || isVPN ? null : (
                     <TopNavbarItem>
                         <UpgradeButton />

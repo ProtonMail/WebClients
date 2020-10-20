@@ -1,28 +1,164 @@
-.blackfriday-plan:hover {
-	border-color: $pm-primary;
+@import '~design-system/_sass/reusable-components/_design-system-config.scss';
+@import '~design-system/_sass/pm-styles/_pm-buttons-mixins.scss';
+
+$amount-size: 48;
+$price-size: 21;
+$modal-background: #1c1736;
+
+// overrides for dark/light mode => same design
+.blackfriday-mail-modal.pm-modal {
+	background: $modal-background;
+
+	width: 80rem;
+	max-width: 80rem;
+
+	.pm-modalContentInner,
+	.pm-modalTitle,
+	.pm-modalHeader {
+		color: $white;
+	}
+	.pm-modalContentInner {
+		background: $modal-background url(#{$path-images}world.svg) 50% 50%;
+	}
+	.scrollshadow-static {
+		background: $modal-background;
+	}
+	.scrollshadow-sticky {
+		&--top {
+			background-image: radial-gradient(farthest-side at 50% 0, #{$pm-tertiary-grey}, transparent);
+		}
+		&--bottom {
+			bottom: 0;
+			background-image: radial-gradient(farthest-side at 50% 100%, #{$pm-tertiary-grey}, transparent);
+		}
+	}
+
+	.pm-modalHeader {
+		padding-bottom: 0.5em;
+	}
+	.pm-modalTitle {
+		text-align: center;
+		padding-right: 0;
+	}
+	.blackfriday-plan {
+		background: $white;
+		color: $pm-global-grey;
+	}
+
+	// currency
+	.pm-group-buttons {
+		.pm-button {
+			background: transparent !important; // I said I'm God.
+			color: $white;
+			border-color: $pm-tertiary-grey;
+			&.is-active {
+				border-bottom: 1px solid $white !important; // I said I'm God.
+			}
+		}
+	}
+
+	@include respond-to($breakpoint-medium) {
+		width: 98%;
+		max-width: 98%;
+	}
+	@include respond-to(750, 'height') {
+		max-height: 90%;
+	}
+	@include respond-to($breakpoint-small) {
+		max-height: 98%;
+	}
 }
 
-.blackfriday-monthly-price .currency,
-.blackfriday-monthly-price .suffix {
-	font-size: small;
+// then regular styles
+.blackfriday-mostPopular {
+	border-radius: $global-border-radius $global-border-radius 0 0;
+	left: 0;
+	right: 0;
+	bottom: 100%;
 }
 
 .blackfriday-percentage {
-	height: 4em;
-	width: 4em;
 	left: 50%;
-	transform: translate(-50%, 0);
-	top: -3em;
-	border-radius: 50%;
-	padding: 0.5em;
+	transform: translateX(-50%) translateY(-50%);
+	border-radius: 1em;
+	padding: 0.1em 0.75em;
+	z-index: 10;
 }
 
-.blackfriday-countdown-container {
-	margin-bottom: 4em;
+.blackfriday-monthly-price.blackfriday-monthly-price {
+	display: block;
+	.suffix {
+		display: block;
+	}
+	.amount {
+		font-size: em($amount-size);
+		font-weight: bold;
+	}
+	.currency {
+		font-size: em($price-size);
+		font-weight: bold;
+	}
+	.decimal {
+		font-size: em($price-size, $amount-size);
+		font-weight: bold;
+	}
+}
+
+.blackfriday-plan-container {
+	flex: 1;
+	max-width: 25em;
+	&:not(:first-child) {
+		margin-left: 1em;
+		@include respond-to($breakpoint-small) {
+			margin-left: 0;
+		}
+	}
+	@include respond-to($breakpoint-small) {
+		max-width: none;
+	}
+}
+
+.blackfriday-plan-name {
+	min-height: 3em;
+	@include respond-to($breakpoint-small) {
+		min-height: 0;
+	}
+}
+
+.blackfriday-protonDrive-free {
+	display: inline-block;
+	border-radius: 1em;
+}
+
+.blackfriday-standardPrice .price {
+	text-decoration: line-through;
+}
+
+// some tiny modifications
+.blackfriday-plan-container--mostPopular {
+	.blackfriday-plan {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		border-width: 2px;
+		// no mention of $pm-primary here, otherwise it will be blue for VPN.
+		// used a helper instead
+		//border-color: $pm-primary;
+	}
+	.blackfriday-percentage {
+		top: -2.8em;
+		z-index: 10;
+	}
 }
 
 @include respond-to($breakpoint-small) {
 	.blackfriday-plan-container {
-		margin-bottom: 4em;
+		margin-bottom: 2em;
+
+		&:first-of-type {
+			order: 10;
+		}
+	}
+	.blackfriday-plan-container--productPayer {
+		margin-bottom: 0;
 	}
 }

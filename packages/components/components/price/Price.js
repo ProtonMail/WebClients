@@ -12,9 +12,15 @@ const CURRENCIES = {
 
 const Price = ({ children: amount = 0, currency = '', className = '', divisor = 100, suffix = '', prefix = '' }) => {
     const value = humanPrice(amount, divisor);
+    const [integer, decimal] = `${value}`.split('.');
     const c = <span className="currency">{CURRENCIES[currency] || currency}</span>;
     const p = amount < 0 ? <span className="prefix">-</span> : null;
-    const v = <span className="amount">{value}</span>;
+    const v = (
+        <span className="amount">
+            <span className="integer">{integer}</span>
+            {decimal ? <span className="decimal">.{decimal}</span> : null}
+        </span>
+    );
     const s = suffix ? <span className="suffix ml0-25">{suffix}</span> : null;
     const pr = prefix ? <span className="prefix">{prefix}</span> : null;
 

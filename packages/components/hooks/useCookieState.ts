@@ -1,16 +1,20 @@
-import { useState, useEffect } from 'react';
-import { getCookie, setCookie } from 'proton-shared/lib/helpers/cookies';
+import React, { useState, useEffect } from 'react';
+import { checkCookie, setCookie } from 'proton-shared/lib/helpers/cookies';
 
-const useCookieState = (cookieValue: any, cookieName: string, expirationDate?: string, cookieDomain?: string) => {
-    const [value, setValue] = useState(() => {
-        const stickyValue = getCookie(cookieName, cookieValue);
+const COOKIE_VALUE = '1';
 
-        return stickyValue !== null && stickyValue !== undefined ? JSON.parse(stickyValue) : cookieValue;
-    });
+const useCookieState = (
+    cookieName: string,
+    expirationDate?: string,
+    cookieDomain?: string
+): [boolean, React.Dispatch<React.SetStateAction<boolean>>] => {
+    const [value, setValue] = useState(() => !!checkCookie(cookieName, COOKIE_VALUE));
 
     useEffect(() => {
-        setCookie(cookieName, JSON.stringify(cookieValue), expirationDate, cookieDomain);
-    }, [cookieName, cookieValue, expirationDate, cookieDomain]);
+        if (value) {
+            setCookie(cookieName, COOKIE_VALUE, expirationDate, cookieDomain);
+        }
+    }, [value]);
 
     return [value, setValue];
 };

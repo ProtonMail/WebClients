@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 import { DAY, HOUR, MINUTE, SECOND } from 'proton-shared/lib/constants';
 import { isBefore, isAfter, differenceInMilliseconds } from 'date-fns';
 
 const EVERY_SECOND = SECOND;
 
-const Countdown = ({ start, end, separator = ' | ' }) => {
+interface Props {
+    start?: Date;
+    end: Date;
+    separator?: string;
+}
+
+const Countdown = ({ start, end, separator = ' | ' }: Props) => {
     const [now, setNow] = useState(new Date());
 
     useEffect(() => {
@@ -24,7 +29,7 @@ const Countdown = ({ start, end, separator = ' | ' }) => {
     }
 
     if (isAfter(now, end)) {
-        return c('Countdown status').t`Expired`;
+        return <>{c('Countdown status').t`Expired`}</>;
     }
 
     const diff = differenceInMilliseconds(end, now);
@@ -43,12 +48,6 @@ const Countdown = ({ start, end, separator = ' | ' }) => {
             ].join(separator)}
         </>
     );
-};
-
-Countdown.propTypes = {
-    end: PropTypes.object.isRequired,
-    start: PropTypes.object,
-    separator: PropTypes.node,
 };
 
 export default Countdown;

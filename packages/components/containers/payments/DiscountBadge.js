@@ -5,7 +5,7 @@ import { COUPON_CODES, BLACK_FRIDAY } from 'proton-shared/lib/constants';
 
 import { Badge } from '../../components';
 
-const { BUNDLE, PROTONTEAM, BLACK_FRIDAY_2018 } = COUPON_CODES;
+const { BUNDLE, PROTONTEAM, BLACK_FRIDAY_2018, BLACK_FRIDAY_2019 } = COUPON_CODES;
 
 const DiscountBadge = ({ code }) => {
     if (code === BUNDLE) {
@@ -24,9 +24,17 @@ const DiscountBadge = ({ code }) => {
         );
     }
 
+    if (code === BLACK_FRIDAY_2019) {
+        return (
+            <Badge type="info" tooltip={c('Info').t`Black Friday 2019 applied to your subscription`}>
+                Black Friday
+            </Badge>
+        );
+    }
+
     if (code === BLACK_FRIDAY.COUPON_CODE) {
         return (
-            <Badge type="info" tooltip={c('Info').t`Black Friday 2019 newcomer discount has been applied`}>
+            <Badge type="info" tooltip={c('Info').t`Black Friday 2020 newcomer discount has been applied`}>
                 Black Friday
             </Badge>
         );
