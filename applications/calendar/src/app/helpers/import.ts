@@ -36,6 +36,7 @@ import {
     VcalFloatingDateTimeProperty,
     VcalValarmComponent,
     VcalVeventComponent,
+    VcalVtimezoneComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { c } from 'ttag';
 import {
@@ -116,6 +117,17 @@ const getComponentIdentifier = (vcalComponent: VcalCalendarComponentOrError) => 
         return c('Error importing event').t`no UID, title or start time`;
     }
     return '';
+};
+
+const extractGuessTzid = (components: VcalCalendarComponentOrError[]) => {
+    const vtimezone = components.find((componentOrError): componentOrError is VcalVtimezoneComponent => {
+        if (getParsedComponentHasError(componentOrError)) {
+            return false;
+        }
+        return getIsTimezoneComponent(componentOrError);
+    });
+    const guessTzid = vtimezone?.tzid.value;
+    return guessTzid ? getSupportedTimezone(guessTzid) : undefined;
 };
 
 interface GetSupportedDateOrDateTimePropertyArgs {
@@ -208,8 +220,14 @@ interface GetSupportedEventArgs {
     vcalComponent: VcalCalendarComponentOrError;
     hasXWrTimezone: boolean;
     calendarTzid?: string;
+    guessTzid?: string;
 }
-export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid }: GetSupportedEventArgs) => {
+export const getSupportedEvent = ({
+    vcalComponent,
+    hasXWrTimezone,
+    calendarTzid,
+    guessTzid,
+}: GetSupportedEventArgs) => {
     const componentId = getComponentIdentifier(vcalComponent);
     if (getParsedComponentHasError(vcalComponent)) {
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR, '', componentId, vcalComponent.error);
@@ -376,7 +394,7 @@ export const getSupportedEvent = ({ vcalComponent, hasXWrTimezone, calendarTzid 
         }
 
         if (rrule) {
-            const supportedRrule = getSupportedRrule({ ...validated, rrule });
+            const supportedRrule = getSupportedRrule({ ...validated, rrule }, false, guessTzid);
             if (!supportedRrule) {
                 throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_UNSUPPORTED, 'vevent', componentId);
             }
@@ -413,10 +431,11 @@ export const getSupportedEvents = ({ components, calscale, xWrTimezone }: GetSup
     }
     const hasXWrTimezone = !!xWrTimezone;
     const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone) : undefined;
+    const guessTzid = extractGuessTzid(components);
     return components
         .map((vcalComponent) => {
             try {
-                return getSupportedEvent({ vcalComponent, calendarTzid, hasXWrTimezone });
+                return getSupportedEvent({ vcalComponent, calendarTzid, hasXWrTimezone, guessTzid });
             } catch (e) {
                 if (e instanceof ImportEventError && e.type === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
                     return;
