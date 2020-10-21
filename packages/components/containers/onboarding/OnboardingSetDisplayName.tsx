@@ -9,7 +9,7 @@ import { Label } from '../../components/label';
 import { Input } from '../../components/input';
 import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
 
-interface Props extends OnboardingContentProps {
+interface Props extends Omit<OnboardingContentProps, 'img' | 'text' | 'description'> {
     displayName: string;
     setDisplayName: (displayName: string) => void;
     displayNameError?: string;
