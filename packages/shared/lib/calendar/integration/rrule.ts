@@ -107,64 +107,8 @@ export const getIsSupportedSetpos = (setpos: number) => {
     return ALLOWED_BYSETPOS.includes(setpos);
 };
 
-const isLongArray = <T>(arg: T | T[] | undefined): arg is T[] => {
-    return Array.isArray(arg) && arg.length > 1;
-};
-
 /**
- * Given an rrule, return true it's one of the non-custom rules that we support
- */
-export const getIsRruleSimple = (rrule?: VcalRrulePropertyValue): boolean => {
-    if (!rrule) {
-        return false;
-    }
-    const nonEmptyFields = Object.entries(rrule)
-        .filter(([, value]) => value !== undefined)
-        .map(([field]) => field) as (keyof VcalRrulePropertyValue)[];
-    const { freq, count, interval, until, bysetpos, byday, bymonth, bymonthday, byyearday } = rrule;
-    const hasUnsupportedFields = nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES.includes(field));
-    if (!freq || hasUnsupportedFields) {
-        return false;
-    }
-    const isBasicSimple = (!interval || interval === 1) && (!count || count === 1) && !until;
-    if (freq === FREQUENCY.DAILY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(field))) {
-            return false;
-        }
-        return isBasicSimple;
-    }
-    if (freq === FREQUENCY.WEEKLY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_WEEKLY.includes(field))) {
-            return false;
-        }
-        if (isLongArray(byday)) {
-            return false;
-        }
-        return isBasicSimple;
-    }
-    if (freq === FREQUENCY.MONTHLY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_MONTHLY.includes(field))) {
-            return false;
-        }
-        if (byday || isLongArray(bymonthday) || bysetpos) {
-            return false;
-        }
-        return isBasicSimple;
-    }
-    if (freq === FREQUENCY.YEARLY) {
-        if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_YEARLY.includes(field))) {
-            return false;
-        }
-        if (isLongArray(bymonthday) || isLongArray(bymonth) || byyearday) {
-            return false;
-        }
-        return isBasicSimple;
-    }
-    return false;
-};
-
-/**
- * Given an rrule property, return true if it's one of our custom rules (the limits for COUNT and interval are not taken into account).
+ * Given an rrule property, return true if it's one of our custom rules.
  * If the event is not recurring or the rrule is not supported, return false.
  */
 export const getIsRruleCustom = (rrule?: VcalRrulePropertyValue): boolean => {
@@ -190,13 +134,13 @@ export const getIsRruleCustom = (rrule?: VcalRrulePropertyValue): boolean => {
         if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_WEEKLY.includes(field))) {
             return false;
         }
-        return isLongArray(byday) || isBasicCustom;
+        return Array.isArray(byday) || isBasicCustom;
     }
     if (freq === FREQUENCY.MONTHLY) {
         if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_MONTHLY.includes(field))) {
             return false;
         }
-        if (isLongArray(byday) || isLongArray(bymonthday) || isLongArray(bysetpos)) {
+        if (Array.isArray(byday) || Array.isArray(bymonthday) || Array.isArray(bysetpos)) {
             return false;
         }
         const { setpos } = getDayAndSetpos(byday, bysetpos);
@@ -206,7 +150,7 @@ export const getIsRruleCustom = (rrule?: VcalRrulePropertyValue): boolean => {
         if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_YEARLY.includes(field))) {
             return false;
         }
-        if (isLongArray(bymonthday) || isLongArray(bymonth) || isLongArray(byyearday)) {
+        if (Array.isArray(bymonthday) || Array.isArray(bymonth) || Array.isArray(byyearday)) {
             return false;
         }
         return isBasicCustom;
@@ -275,7 +219,7 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
         if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_MONTHLY.includes(property))) {
             return false;
         }
-        if (isLongArray(byday) || isLongArray(bysetpos) || isLongArray(bymonthday)) {
+        if (Array.isArray(byday) || Array.isArray(bysetpos) || Array.isArray(bymonthday)) {
             return false;
         }
         // byday and bysetpos must both be absent or both present. If they are present, bymonthday should not be present
@@ -298,7 +242,7 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
         if (rruleProperties.some((property) => !SUPPORTED_RRULE_PROPERTIES_YEARLY.includes(property))) {
             return false;
         }
-        if (isLongArray(bymonthday) || isLongArray(bymonth) || isLongArray(byyearday)) {
+        if (Array.isArray(bymonthday) || Array.isArray(bymonth) || Array.isArray(byyearday)) {
             return false;
         }
         return true;

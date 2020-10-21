@@ -11,7 +11,7 @@ import {
     VcalRruleProperty,
 } from '../../interfaces/calendar/VcalModel';
 import { getEndType, getMonthType, getUntilDate, getWeeklyDays } from './rruleProperties';
-import { getIsRruleCustom, getIsRruleSimple } from './rrule';
+import { getIsRruleCustom, getIsRruleSupported } from './rrule';
 import { getPropertyTzid } from '../vcalHelper';
 import { toUTCDate } from '../../date/timezone';
 
@@ -560,12 +560,13 @@ const getCustomYearlyString = (
 export const getFrequencyString = (
     rruleValue: VcalRrulePropertyValue,
     dtstart: VcalDateOrDateTimeProperty,
-    { weekStartsOn, locale }: Pick<GetTimezonedFrequencyStringOptions, 'weekStartsOn' | 'locale'>
+    { weekStartsOn, locale }: Pick<GetTimezonedFrequencyStringOptions, 'weekStartsOn' | 'locale'>,
+    isInvitation = false
 ) => {
     const { freq, count, until } = rruleValue;
 
-    const isSimple = getIsRruleSimple(rruleValue);
     const isCustom = getIsRruleCustom(rruleValue);
+    const isSupported = getIsRruleSupported(rruleValue, isInvitation);
     const startFakeUtcDate = toUTCDate(dtstart.value);
     const startDay = startFakeUtcDate.getUTCDay();
     const end = {
@@ -574,14 +575,14 @@ export const getFrequencyString = (
         until: getUntilDate(until, getPropertyTzid(dtstart)),
     };
 
-    if (!isSimple) {
-        if (!isCustom) {
-            if (!freq) {
-                return c('Info').t`Custom`;
-            }
-            const frequencyString = freq.toLowerCase();
-            return c('Info').t`Custom ${frequencyString}`;
+    if (!isSupported) {
+        if (!freq) {
+            return c('Info').t`Custom`;
         }
+        const frequencyString = freq.toLowerCase();
+        return c('Info').t`Custom ${frequencyString}`;
+    }
+    if (isCustom) {
         if (freq === FREQUENCY.DAILY) {
             return getCustomDailyString(rruleValue, end, locale);
         }
@@ -638,7 +639,8 @@ export const getFrequencyString = (
 export const getTimezonedFrequencyString = (
     rrule: VcalRruleProperty | undefined,
     dtstart: VcalDateOrDateTimeProperty,
-    options: GetTimezonedFrequencyStringOptions
+    options: GetTimezonedFrequencyStringOptions,
+    isInvitation = false
 ) => {
     if (!rrule) {
         return '';
@@ -648,7 +650,7 @@ export const getTimezonedFrequencyString = (
     const { currentTzid } = options;
 
     if (!startTzid || startTzid === currentTzid) {
-        return getFrequencyString(rruleValue, dtstart, options);
+        return getFrequencyString(rruleValue, dtstart, options, isInvitation);
     }
 
     const isTimezoneStringNeeded = (() => {
@@ -679,5 +681,5 @@ export const getTimezonedFrequencyString = (
     })();
 
     const timezoneString = isTimezoneStringNeeded ? ` (${startTzid})` : '';
-    return getFrequencyString(rruleValue, dtstart, options) + timezoneString;
+    return getFrequencyString(rruleValue, dtstart, options, isInvitation) + timezoneString;
 };
