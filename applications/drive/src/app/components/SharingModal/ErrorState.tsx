@@ -11,7 +11,7 @@ function ErrorState({ modalTitleID, onClose }: Props) {
     return (
         <>
             <HeaderModal modalTitleID={modalTitleID} onClose={onClose}>
-                {c('Title').t`Get secure link`}
+                {c('Title').t`Manage secure link`}
             </HeaderModal>
             <div className="pm-modalContent">
                 <InnerModal>
