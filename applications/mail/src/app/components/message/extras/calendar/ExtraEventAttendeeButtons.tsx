@@ -15,7 +15,7 @@ import {
     getErrorMessage
 } from '../../../../helpers/calendar/EventInvitationError';
 import { InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
-import useInviteButtons from '../../../../../../hooks/useInviteButtons';
+import useInviteButtons from '../../../../hooks/useInviteButtons';
 import { MessageExtended } from '../../../../models/message';
 
 const { EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR } = EVENT_INVITATION_ERROR_TYPE;
