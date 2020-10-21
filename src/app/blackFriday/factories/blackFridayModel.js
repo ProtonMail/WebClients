@@ -6,7 +6,7 @@ import { isDealEvent, isProductPayerPeriod as productPayerPeriod } from '../help
 
 /* @ngInject */
 function blackFridayModel(authentication, subscriptionModel, paymentModel, PaymentCache, userType) {
-    let allowed = true;
+    let allowed = false;
     // Needed as function because the authentiation.user.ID can change.
     const getKey = () => `protonmail_black_friday_${authentication.user.ID}_${BLACK_FRIDAY.YEAR}`;
 

@@ -6,8 +6,8 @@ function navigationBlackFriday(blackFridayModalOpener, $cookies, dispatchers, bl
     const IS_BLACK_FRIDAY_CLASS = 'navigationBlackFriday-is-black-friday';
 
     /*
-         Cookie is not bulletproof
-      */
+        Cookie is not bulletproof
+    */
     const alreadySeen = (name) => {
         try {
             const value = $cookies.get(`${COOKIE_NAME}-${name}`) || localStorage.getItem(`${COOKIE_NAME}-${name}`);
@@ -37,38 +37,33 @@ function navigationBlackFriday(blackFridayModalOpener, $cookies, dispatchers, bl
 
             const refresh = () => {
                 textEl.textContent = getEventName();
-            };
-
-            const update = () => {
                 element[0].classList[blackFridayModel.isBlackFridayPeriod() ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);
+
+                if (
+                    !alreadySeen(authentication.user.ID) &&
+                    (blackFridayModel.isProductPayerPeriod() || blackFridayModel.isBlackFridayPeriod())
+                ) {
+                    blackFridayModalOpener();
+                    setAlreadySeen(authentication.user.ID);
+                }
             };
 
             const id = setInterval(refresh, 60000);
 
             refresh();
-            update();
 
             on('subscription', (event, { type = '' }) => {
-                type === 'update' && update();
+                type === 'update' && refresh();
             });
 
-            on('updateUser', update);
+            on('updateUser', refresh);
 
             on('blackFriday', (event, { type = '' }) => {
+                // Event received after checking status of the latest subscription
                 if (type === 'run') {
-                    update();
-                    // Open only once then you need to click button
-                    if (!alreadySeen(authentication.user.ID) && blackFridayModel.isBlackFridayPeriod()) {
-                        blackFridayModalOpener();
-                        setAlreadySeen(authentication.user.ID);
-                    }
+                    refresh();
                 }
             });
-
-            if (!alreadySeen(authentication.user.ID) && blackFridayModel.isProductPayerPeriod()) {
-                blackFridayModalOpener();
-                setAlreadySeen(authentication.user.ID);
-            }
 
             element.on('click', blackFridayModalOpener);
 
