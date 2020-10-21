@@ -227,7 +227,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                 <div className="mb1 ml1 flex flex-items-center">
                     <Icon className="mr0-5" name="parent-folder" />
                     {c('Info').ngettext(
-                        msgid`${providerFoldersNum} folder found`,
+                        msgid`${providerFoldersNumLocalized} folder found`,
                         `${providerFoldersNumLocalized} folders found`,
                         providerFoldersNum
                     )}
@@ -247,7 +247,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                         <strong>
                             <Icon className="mr0-5" name="parent-folder" />
                             {c('Info').ngettext(
-                                msgid`${selectedFolders.length} folder selected`,
+                                msgid`${selectedFoldersCountLocalized} folder selected`,
                                 `${selectedFoldersCountLocalized} folders selected`,
                                 selectedFolders.length
                             )}
