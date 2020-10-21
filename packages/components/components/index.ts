@@ -3,6 +3,7 @@ export * from './attachedFile';
 export * from './button';
 export * from './badge';
 export * from './dropdown';
+export * from './dots';
 export * from './breadcrumb';
 export * from './autocomplete';
 export * from './sidebar';
