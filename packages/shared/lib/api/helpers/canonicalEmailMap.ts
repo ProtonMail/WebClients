@@ -7,7 +7,8 @@ import { getCanonicalAddresses } from '../addresses';
 export const getCanonicalEmailMap = async (emails: string[] = [], api: Api) => {
     const map: SimpleMap<string> = {};
     if (emails.length) {
-        const { Responses, Code } = await api<GetCanonicalAddressesResponse>(getCanonicalAddresses(emails));
+        const encodedEmails = emails.map((email) => encodeURIComponent(email));
+        const { Responses, Code } = await api<GetCanonicalAddressesResponse>(getCanonicalAddresses(encodedEmails));
         if (Code !== API_CODES.GLOBAL_SUCCESS) {
             throw new Error('Canonize operation failed');
         }
