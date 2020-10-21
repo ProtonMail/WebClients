@@ -123,6 +123,8 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
         }
     };
 
+    const contactEmailsLength = model.contactEmails.length;
+
     return (
         <FormModal
             onSubmit={handleSubmit}
@@ -182,12 +184,12 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
 
             <ContactGroupTable contactEmails={model.contactEmails} onDelete={handleDeleteEmail} />
 
-            {model.contactEmails.length ? (
+            {contactEmailsLength ? (
                 <div className="aligncenter opacity-50">
                     {c('Info').ngettext(
-                        msgid`1 Member`,
-                        `${model.contactEmails.length} Members`,
-                        model.contactEmails.length
+                        msgid`${contactEmailsLength} Member`,
+                        `${contactEmailsLength} Members`,
+                        contactEmailsLength
                     )}
                 </div>
             ) : null}

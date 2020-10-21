@@ -151,6 +151,15 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
         onClose?.();
     };
 
+    const actionText =
+        totalChecked === 1
+            ? c('Action').t`Insert contact`
+            : c('Action').ngettext(
+                  msgid`Insert ${totalChecked} contact`,
+                  `Insert ${totalChecked} contacts`,
+                  totalChecked
+              );
+
     return (
         <FormModal
             title={c('Title').t`Insert contacts`}
@@ -159,7 +168,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
             submit={
                 contactEmails.length ? (
                     <PrimaryButton loading={loading} type="submit" disabled={!totalChecked}>
-                        {c('Action').ngettext(msgid`Insert contact`, `Insert ${totalChecked} contacts`, totalChecked)}
+                        {actionText}
                     </PrimaryButton>
                 ) : null
             }

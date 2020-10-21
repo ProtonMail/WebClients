@@ -47,8 +47,20 @@ const DeleteModal = ({ contactIDs = [], deleteAll, onDelete, onClose = noop, ...
 
     const count = contactIDs.length;
     const contact = contacts.find((contact: ContactEmail) => contact.ID === contactIDs[0]);
-    const name = contact?.Name || contact?.Email || '';
-    const title = c('Title').ngettext(msgid`Delete ${name}`, `Delete ${count} contacts`, count);
+    const Name = contact?.Name || contact?.Email || '';
+    const title =
+        count === 1
+            ? c('Title').t`Delete ${Name}`
+            : c('Title').ngettext(msgid`Delete ${count} contact`, `Delete ${count} contacts`, count);
+
+    const text =
+        count === 1
+            ? c('Warning').t`Are you sure you want to permanently delete this contact?`
+            : c('Warning').ngettext(
+                  msgid`Are you sure you want to permanently delete ${count} contact?`,
+                  `Are you sure you want to permanently delete ${count} contacts?`,
+                  count
+              );
 
     return (
         <FormModal
@@ -60,13 +72,7 @@ const DeleteModal = ({ contactIDs = [], deleteAll, onDelete, onClose = noop, ...
             className="pm-modal--smaller"
             {...rest}
         >
-            <Alert type="error">
-                {c('Warning').ngettext(
-                    msgid`Are you sure you want to permanently delete this contact?`,
-                    `Are you sure you want to permanently delete these ${count} contacts?`,
-                    count
-                )}
-            </Alert>
+            <Alert type="error">{text}</Alert>
         </FormModal>
     );
 };
