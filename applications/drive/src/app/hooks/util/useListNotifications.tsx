@@ -48,21 +48,30 @@ const useListNotifications = () => {
         const firstItemName = first?.Name;
 
         const notificationMessages = {
-            allFiles: c('Notification').ngettext(
-                msgid`"${firstItemName}" deleted permanently from Trash`,
-                `${deletedItemsCount} files deleted permanently from Trash`,
-                deletedItemsCount
-            ),
-            allFolders: c('Notification').ngettext(
-                msgid`"${firstItemName}" deleted permanently from Trash`,
-                `${deletedItemsCount} folders deleted permanently from Trash`,
-                deletedItemsCount
-            ),
-            mixed: c('Notification').ngettext(
-                msgid`"${firstItemName}" deleted permanently from Trash`,
-                `${deletedItemsCount} items deleted permanently from Trash`,
-                deletedItemsCount
-            ),
+            allFiles:
+                deletedItemsCount === 1
+                    ? c('Notification').t`"${firstItemName}" deleted permanently from Trash`
+                    : c('Notification').ngettext(
+                          msgid`${deletedItemsCount} file deleted permanently from Trash`,
+                          `${deletedItemsCount} files deleted permanently from Trash`,
+                          deletedItemsCount
+                      ),
+            allFolders:
+                deletedItemsCount === 1
+                    ? c('Notification').t`"${firstItemName}" deleted permanently from Trash`
+                    : c('Notification').ngettext(
+                          msgid`${deletedItemsCount} folder deleted permanently from Trash`,
+                          `${deletedItemsCount} folders deleted permanently from Trash`,
+                          deletedItemsCount
+                      ),
+            mixed:
+                deletedItemsCount === 1
+                    ? c('Notification').t`"${firstItemName}" deleted permanently from Trash`
+                    : c('Notification').ngettext(
+                          msgid`${deletedItemsCount} item deleted permanently from Trash`,
+                          `${deletedItemsCount} items deleted permanently from Trash`,
+                          deletedItemsCount
+                      ),
         };
 
         const notificationText = getNotificationTextForItemList(
@@ -83,21 +92,30 @@ const useListNotifications = () => {
         const firstItemName = first?.Name;
 
         const notificationMessages = {
-            allFiles: c('Notification').ngettext(
-                msgid`"${firstItemName}" moved to Trash`,
-                `${trashedLinksCount} files moved to Trash`,
-                trashedLinksCount
-            ),
-            allFolders: c('Notification').ngettext(
-                msgid`"${firstItemName}" moved to Trash`,
-                `${trashedLinksCount} folders moved to Trash`,
-                trashedLinksCount
-            ),
-            mixed: c('Notification').ngettext(
-                msgid`"${firstItemName}" moved to Trash`,
-                `${trashedLinksCount} items moved to Trash`,
-                trashedLinksCount
-            ),
+            allFiles:
+                trashedLinksCount === 1
+                    ? c('Notification').t`"${firstItemName}" moved to Trash`
+                    : c('Notification').ngettext(
+                          msgid`${trashedLinksCount} file moved to Trash`,
+                          `${trashedLinksCount} files moved to Trash`,
+                          trashedLinksCount
+                      ),
+            allFolders:
+                trashedLinksCount === 1
+                    ? c('Notification').t`"${firstItemName}" moved to Trash`
+                    : c('Notification').ngettext(
+                          msgid`${trashedLinksCount} folder moved to Trash`,
+                          `${trashedLinksCount} folders moved to Trash`,
+                          trashedLinksCount
+                      ),
+            mixed:
+                trashedLinksCount === 1
+                    ? c('Notification').t`"${firstItemName}" moved to Trash`
+                    : c('Notification').ngettext(
+                          msgid`${trashedLinksCount} item moved to Trash`,
+                          `${trashedLinksCount} items moved to Trash`,
+                          trashedLinksCount
+                      ),
         };
 
         const movedToTrashText = getNotificationTextForItemList(
@@ -128,21 +146,30 @@ const useListNotifications = () => {
             const first = toRestore.find(({ LinkID }) => LinkID === restored[0]);
             const firstItemName = first?.Name;
             const notificationMessages = {
-                allFiles: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash`,
-                    `${restoredItemsCount} files restored from Trash`,
-                    restoredItemsCount
-                ),
-                allFolders: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash`,
-                    `${restoredItemsCount} folders restored from Trash`,
-                    restoredItemsCount
-                ),
-                mixed: c('Notification').ngettext(
-                    msgid`"${firstItemName}" restored from Trash`,
-                    `${restoredItemsCount} items restored from Trash`,
-                    restoredItemsCount
-                ),
+                allFiles:
+                    restoredItemsCount === 1
+                        ? c('Notification').t`"${firstItemName}" restored from Trash`
+                        : c('Notification').ngettext(
+                              msgid`${restoredItemsCount} file restored from Trash`,
+                              `${restoredItemsCount} files restored from Trash`,
+                              restoredItemsCount
+                          ),
+                allFolders:
+                    restoredItemsCount === 1
+                        ? c('Notification').t`"${firstItemName}" restored from Trash`
+                        : c('Notification').ngettext(
+                              msgid`${restoredItemsCount} folder restored from Trash`,
+                              `${restoredItemsCount} folders restored from Trash`,
+                              restoredItemsCount
+                          ),
+                mixed:
+                    restoredItemsCount === 1
+                        ? c('Notification').t`"${firstItemName}" restored from Trash`
+                        : c('Notification').ngettext(
+                              msgid`${restoredItemsCount} item restored from Trash`,
+                              `${restoredItemsCount} items restored from Trash`,
+                              restoredItemsCount
+                          ),
             };
 
             const notificationText = getNotificationTextForItemList(
@@ -185,21 +212,30 @@ const useListNotifications = () => {
         if (movedLinksCount) {
             const [{ Name: firstItemName }] = moved;
             const notificationMessages = {
-                allFiles: c('Notification').ngettext(
-                    msgid`"${firstItemName}" successfully moved`,
-                    `${movedLinksCount} files successfully moved`,
-                    movedLinksCount
-                ),
-                allFolders: c('Notification').ngettext(
-                    msgid`"${firstItemName}" successfully moved`,
-                    `${movedLinksCount} folders successfully moved`,
-                    movedLinksCount
-                ),
-                mixed: c('Notification').ngettext(
-                    msgid`"${firstItemName}" successfully moved`,
-                    `${movedLinksCount} items successfully moved`,
-                    movedLinksCount
-                ),
+                allFiles:
+                    movedLinksCount === 1
+                        ? c('Notification').t`"${firstItemName}" successfully moved`
+                        : c('Notification').ngettext(
+                              msgid`${movedLinksCount} file successfully moved`,
+                              `${movedLinksCount} files successfully moved`,
+                              movedLinksCount
+                          ),
+                allFolders:
+                    movedLinksCount === 1
+                        ? c('Notification').t`"${firstItemName}" successfully moved`
+                        : c('Notification').ngettext(
+                              msgid`${movedLinksCount} folder successfully moved`,
+                              `${movedLinksCount} folders successfully moved`,
+                              movedLinksCount
+                          ),
+                mixed:
+                    movedLinksCount === 1
+                        ? c('Notification').t`"${firstItemName}" successfully moved`
+                        : c('Notification').ngettext(
+                              msgid`${movedLinksCount} item successfully moved`,
+                              `${movedLinksCount} items successfully moved`,
+                              movedLinksCount
+                          ),
             };
             const notificationMessage = getNotificationTextForItemList(
                 moved.map((item) => item.Type),
@@ -220,21 +256,30 @@ const useListNotifications = () => {
         const first = toMove.find(({ LinkID }) => LinkID === failed[0]);
         const firstItemName = first?.Name;
         const notificationMessages = {
-            allFiles: c('Notification').ngettext(
-                msgid`"${firstItemName}" failed to be moved`,
-                `${failedMovesCount} files failed to be moved`,
-                failedMovesCount
-            ),
-            allFolders: c('Notification').ngettext(
-                msgid`"${firstItemName}" failed to be moved`,
-                `${failedMovesCount} folders failed to be moved`,
-                failedMovesCount
-            ),
-            mixed: c('Notification').ngettext(
-                msgid`"${firstItemName}" failed to be moved`,
-                `${failedMovesCount} items failed to be moved`,
-                failedMovesCount
-            ),
+            allFiles:
+                failedMovesCount === 1
+                    ? c('Notification').t`"${firstItemName}" failed to be moved`
+                    : c('Notification').ngettext(
+                          msgid`${failedMovesCount} file failed to be moved`,
+                          `${failedMovesCount} files failed to be moved`,
+                          failedMovesCount
+                      ),
+            allFolders:
+                failedMovesCount === 1
+                    ? c('Notification').t`"${firstItemName}" failed to be moved`
+                    : c('Notification').ngettext(
+                          msgid`${failedMovesCount} folder failed to be moved`,
+                          `${failedMovesCount} folders failed to be moved`,
+                          failedMovesCount
+                      ),
+            mixed:
+                failedMovesCount === 1
+                    ? c('Notification').t`"${firstItemName}" failed to be moved`
+                    : c('Notification').ngettext(
+                          msgid`${failedMovesCount} item failed to be moved`,
+                          `${failedMovesCount} items failed to be moved`,
+                          failedMovesCount
+                      ),
         };
 
         const notificationMessage = getNotificationTextForItemList(
