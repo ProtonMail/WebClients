@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, SupportDropdown } from 'react-components';
 import { c } from 'ttag';
-import { CYCLE } from 'proton-shared/lib/constants';
+import { BLACK_FRIDAY, CYCLE } from 'proton-shared/lib/constants';
 import { checkCookie } from 'proton-shared/lib/helpers/cookies';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
@@ -179,7 +179,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
         </div>
     );
 
-    const isBlackFridayCoupon = appliedCoupon && appliedCoupon.code === 'BF2019';
+    const isBlackFridayCoupon = appliedCoupon && appliedCoupon.code === BLACK_FRIDAY.COUPON_CODE;
     const homepageUrl = isBlackFridayCoupon ? 'https://protonvpn.com/blackfriday' : 'https://protonvpn.com';
 
     return (
