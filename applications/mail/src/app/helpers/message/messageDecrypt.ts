@@ -61,7 +61,7 @@ const decryptMimeMessage = async (message: Message, privateKeys: OpenPGPKey[], a
         decryptedSubject,
         signature,
         mimetype: mimetype as MIME_TYPES,
-        errors: { decryption: errors }
+        errors: errors?.length ? { decryption: errors } : undefined
     };
 };
 
