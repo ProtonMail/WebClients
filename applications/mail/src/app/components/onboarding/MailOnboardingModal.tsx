@@ -37,15 +37,25 @@ const MailOnboardingModal = (props: any) => {
                     close={paidUser ? goToImportButton : null}
                 >
                     <OnboardingContent
-                        description={c('Onboarding ProtonMail')
-                            .t`You can now start sending emails to anyone. We built ${appName} to be both secure and easy to use. Be sure to install our mobile apps and try out tools such as Bridge, which adds Proton encryption to any desktop email app.`}
+                        description={
+                            <>
+                                <div className="mb1">
+                                    {c('Onboarding ProtonMail')
+                                        .t`You can now start sending emails to anyone. We built ${appName} to be both secure and easy to use. Be sure to install our mobile apps and try out tools such as Bridge, which adds Proton encryption to any desktop email app.`}
+                                </div>
+                                {!paidUser && (
+                                    <div>
+                                        {c('Onboarding ProtonMail')
+                                            .t`If you like, we can help you import emails from your existing accounts. You can use our Import-Export app, which is available with paid plans.`}
+                                    </div>
+                                )}
+                            </>
+                        }
                         img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
                         text={
-                            paidUser
-                                ? c('Onboarding ProtonMail')
-                                      .t`If you like, we can help you import emails from your existing account. You can either use our Import Assistant or download our Import-Export app, which are available with paid plans.`
-                                : c('Onboarding ProtonMail')
-                                      .t`If you like, we can help you import emails from your existing accounts. You can use our Import-Export app, which is available with paid plans.`
+                            Boolean(paidUser) &&
+                            c('Onboarding ProtonMail')
+                                .t`If you like, we can help you import emails from your existing account. You can either use our Import Assistant or download our Import-Export app, which are available with paid plans.`
                         }
                     />
                 </OnboardingStep>
