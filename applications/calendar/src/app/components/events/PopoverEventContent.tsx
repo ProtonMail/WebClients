@@ -55,8 +55,10 @@ const PopoverEventContent = ({
     const isInvitation = !model.isOrganizer;
     const { organizer } = model;
     const organizerContact = organizer.email && contactEmailMap[organizer.email];
-    const organizerName = organizerContact ? organizerContact.Name : organizer.cn;
-    const organizerTitle = organizerContact ? `${organizerContact.Name} <${organizerContact.Email}>` : organizer.cn;
+    const organizerName = organizerContact ? organizerContact.Name : organizer.cn || organizer.email;
+    const organizerTitle = organizerContact
+        ? `${organizerContact.Name} <${organizerContact.Email}>`
+        : organizer.cn || organizer.email;
     const organizerString = c('Event info').t`Organized by:`;
     const trimmedLocation = model.location.trim();
     const htmlString = useMemo(() => {
