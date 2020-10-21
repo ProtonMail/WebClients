@@ -1,7 +1,7 @@
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import React from 'react';
 import { classnames } from 'react-components';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 import { dateLocale } from 'proton-shared/lib/i18n';
@@ -65,7 +65,8 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                 key: 'organizer'
             },
         totalParticipants && {
-            label: c('Label').ngettext(msgid`Participant`, `Participants (${totalParticipants})`, totalParticipants),
+            label:
+                totalParticipants === 1 ? c('Label').t`Participant` : c('Label').t`Participants (${totalParticipants})`,
             value: <ExtraEventParticipants list={participants} />,
             key: 'participants'
         }

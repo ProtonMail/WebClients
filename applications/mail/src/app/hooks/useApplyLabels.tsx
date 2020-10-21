@@ -14,6 +14,94 @@ const { ALL_MAIL, ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, STARRED } = MAILBOX_LABEL_
 
 const EXPIRATION = 7500;
 
+const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
+    if (isMessage) {
+        if (elementsCount === 1) {
+            return c('Success').t`Message marked as Starred`;
+        }
+        return c('Success').ngettext(
+            msgid`${elementsCount} message marked as Starred.`,
+            `${elementsCount} messages marked as Starred.`,
+            elementsCount
+        );
+    }
+
+    if (elementsCount === 1) {
+        return c('Success').t`Conversation marked as Starred`;
+    }
+    return c('Success').ngettext(
+        msgid`${elementsCount} conversation marked as Starred.`,
+        `${elementsCount} conversations marked as Starred.`,
+        elementsCount
+    );
+};
+
+const getNotificationTextRemoved = (isMessage: boolean, elementsCount: number, labelName: string) => {
+    if (isMessage) {
+        if (elementsCount === 1) {
+            return c('Success').t`Message removed from ${labelName}`;
+        }
+        return c('Success').ngettext(
+            msgid`${elementsCount} message removed from ${labelName}.`,
+            `${elementsCount} messages removed from ${labelName}.`,
+            elementsCount
+        );
+    }
+
+    if (elementsCount === 1) {
+        return c('Success').t`Conversation removed from ${labelName}`;
+    }
+    return c('Success').ngettext(
+        msgid`${elementsCount} conversation removed from ${labelName}.`,
+        `${elementsCount} conversations removed from ${labelName}.`,
+        elementsCount
+    );
+};
+
+const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, labelName: string) => {
+    if (isMessage) {
+        if (elementsCount === 1) {
+            return c('Success').t`Message added to ${labelName}`;
+        }
+        return c('Success').ngettext(
+            msgid`${elementsCount} message added to ${labelName}.`,
+            `${elementsCount} messages added to ${labelName}.`,
+            elementsCount
+        );
+    }
+
+    if (elementsCount === 1) {
+        return c('Success').t`Conversation added to ${labelName}`;
+    }
+    return c('Success').ngettext(
+        msgid`${elementsCount} conversation added to ${labelName}.`,
+        `${elementsCount} conversations added to ${labelName}.`,
+        elementsCount
+    );
+};
+
+const getNotificationTextMoved = (isMessage: boolean, elementsCount: number, folderName: string) => {
+    if (isMessage) {
+        if (elementsCount === 1) {
+            return c('Success').t`Message moved to ${folderName}.`;
+        }
+        return c('Success').ngettext(
+            msgid`${elementsCount} message moved to ${folderName}.`,
+            `${elementsCount} messages moved to ${folderName}.`,
+            elementsCount
+        );
+    }
+
+    if (elementsCount === 1) {
+        return c('Success').t`Conversation moved to ${folderName}.`;
+    }
+    return c('Success').ngettext(
+        msgid`${elementsCount} conversation moved to ${folderName}.`,
+        `${elementsCount} conversations moved to ${folderName}.`,
+        elementsCount
+    );
+};
+
 export const useApplyLabels = () => {
     const api = useApi();
     const { call } = useEventManager();
@@ -65,42 +153,12 @@ export const useApplyLabels = () => {
                 const labelName = labels.filter((l) => l.ID === changesKeys[0])[0]?.Name;
 
                 if (changesKeys[0] === MAILBOX_LABEL_IDS.STARRED) {
-                    notificationText = isMessage
-                        ? c('Success').ngettext(
-                              msgid`Message marked as Starred.`,
-                              `${elementsCount} messages marked as Starred.`,
-                              elementsCount
-                          )
-                        : c('Success').ngettext(
-                              msgid`Conversation marked as Starred.`,
-                              `${elementsCount} conversations marked as Starred.`,
-                              elementsCount
-                          );
+                    notificationText = getNotificationTextStarred(isMessage, elementsCount);
                 } else {
                     if (!Object.values(changes)[0]) {
-                        notificationText = isMessage
-                            ? c('Success').ngettext(
-                                  msgid`Message removed from ${labelName}.`,
-                                  `${elementsCount} messages removed from ${labelName}.`,
-                                  elementsCount
-                              )
-                            : c('Success').ngettext(
-                                  msgid`Conversation removed from ${labelName}.`,
-                                  `${elementsCount} conversations removed from ${labelName}.`,
-                                  elementsCount
-                              );
+                        notificationText = getNotificationTextRemoved(isMessage, elementsCount, labelName);
                     } else {
-                        notificationText = isMessage
-                            ? c('Success').ngettext(
-                                  msgid`Message added to ${labelName}.`,
-                                  `${elementsCount} messages added to ${labelName}.`,
-                                  elementsCount
-                              )
-                            : c('Success').ngettext(
-                                  msgid`Conversation added to ${labelName}.`,
-                                  `${elementsCount} conversations added to ${labelName}.`,
-                                  elementsCount
-                              );
+                        notificationText = getNotificationTextAdded(isMessage, elementsCount, labelName);
                     }
                 }
             }
@@ -159,19 +217,7 @@ export const useMoveToFolder = () => {
             // No await ==> optimistic
             handleDo();
 
-            const elementsCount = elementIDs.length;
-
-            const notificationText = isMessage
-                ? c('Success').ngettext(
-                      msgid`Message moved to ${folderName}.`,
-                      `${elementsCount} messages moved to ${folderName}.`,
-                      elementsCount
-                  )
-                : c('Success').ngettext(
-                      msgid`Conversation moved to ${folderName}.`,
-                      `${elementsCount} conversations moved to ${folderName}.`,
-                      elementsCount
-                  );
+            const notificationText = getNotificationTextMoved(isMessage, elementIDs.length, folderName);
 
             if (!silent) {
                 createNotification({

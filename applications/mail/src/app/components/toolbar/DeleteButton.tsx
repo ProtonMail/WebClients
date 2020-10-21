@@ -25,6 +25,81 @@ interface Props {
     selectedIDs: string[];
 }
 
+const getDeleteTitle = (isDraft: boolean, isConversationMode: boolean, count: number) => {
+    if (isDraft) {
+        if (count === 1) {
+            return c('Title').t`Delete draft`;
+        }
+        return c('Title').ngettext(msgid`Delete ${count} draft`, `Delete ${count} drafts`, count);
+    }
+
+    if (isConversationMode) {
+        if (count === 1) {
+            return c('Title').t`Delete conversation`;
+        }
+        return c('Title').ngettext(msgid`Delete ${count} conversation`, `Delete ${count} conversations`, count);
+    }
+
+    if (count === 1) {
+        return c('Title').t`Delete message`;
+    }
+    return c('Title').ngettext(msgid`Delete ${count} message`, `Delete ${count} messages`, count);
+};
+
+const getModalText = (isDraft: boolean, isConversationMode: boolean, count: number) => {
+    if (isDraft) {
+        if (count === 1) {
+            return c('Info').t`Are you sure you want to permanently delete this draft?`;
+        }
+        return c('Info').ngettext(
+            msgid`Are you sure you want to permanently delete ${count} draft?`,
+            `Are you sure you want to permanently delete ${count} drafts?`,
+            count
+        );
+    }
+
+    if (isConversationMode) {
+        if (count === 1) {
+            return c('Info').t`Are you sure you want to permanently delete this conversation?`;
+        }
+        return c('Info').ngettext(
+            msgid`Are you sure you want to permanently delete ${count} conversation?`,
+            `Are you sure you want to permanently delete ${count} conversations?`,
+            count
+        );
+    }
+
+    if (count === 1) {
+        return c('Info').t`Are you sure you want to permanently delete this message?`;
+    }
+    return c('Info').ngettext(
+        msgid`Are you sure you want to permanently delete ${count} message?`,
+        `Are you sure you want to permanently delete ${count} messages?`,
+        count
+    );
+};
+
+const getNotificationText = (isDraft: boolean, isConversationMode: boolean, count: number) => {
+    if (isDraft) {
+        if (count === 1) {
+            return c('Success').t`Draft deleted`;
+        }
+        return c('Success').ngettext(msgid`${count} draft deleted`, `${count} drafts deleted`, count);
+    }
+
+    if (isConversationMode) {
+        if (count === 1) {
+            return c('Success').t`Conversation deleted`;
+        }
+        return c('Success').ngettext(msgid`${count} conversation deleted`, `${count} conversations deleted`, count);
+    }
+
+    if (count === 1) {
+        return c('Success').t`Message deleted`;
+    }
+    return c('Success').ngettext(msgid`${count} message deleted`, `${count} messages deleted`, count);
+};
+
 const DeleteButton = ({ labelID = '', conversationMode, selectedIDs = [] }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -35,29 +110,8 @@ const DeleteButton = ({ labelID = '', conversationMode, selectedIDs = [] }: Prop
     const draft = labelID === DRAFTS || labelID == ALL_DRAFTS;
 
     const handleDelete = async () => {
-        const modalTitle = draft
-            ? c('Title').ngettext(msgid`Delete draft`, `Delete ${count} drafts`, count)
-            : conversationMode
-            ? c('Title').ngettext(msgid`Delete conversation`, `Delete ${count} conversations`, count)
-            : c('Title').ngettext(msgid`Delete message`, `Delete ${count} messages`, count);
-
-        const modalText = draft
-            ? c('Info').ngettext(
-                  msgid`Are you sure you want to permanently delete this draft?`,
-                  `Are you sure you want to permanently delete these ${count} drafts?`,
-                  count
-              )
-            : conversationMode
-            ? c('Info').ngettext(
-                  msgid`Are you sure you want to permanently delete this conversation?`,
-                  `Are you sure you want to permanently delete these ${count} conversations?`,
-                  count
-              )
-            : c('Info').ngettext(
-                  msgid`Are you sure you want to permanently delete this message?`,
-                  `Are you sure you want to permanently delete these ${count} messages?`,
-                  count
-              );
+        const modalTitle = getDeleteTitle(draft, conversationMode, count);
+        const modalText = getModalText(draft, conversationMode, count);
 
         await new Promise((resolve, reject) => {
             createModal(
@@ -76,11 +130,7 @@ const DeleteButton = ({ labelID = '', conversationMode, selectedIDs = [] }: Prop
         await api(action);
         await call();
 
-        const notificationText = draft
-            ? c('Success').ngettext(msgid`Draft deleted`, `${count} drafts deleted`, count)
-            : conversationMode
-            ? c('Success').ngettext(msgid`Conversation deleted`, `${count} conversations deleted`, count)
-            : c('Success').ngettext(msgid`Message deleted`, `${count} messages deleted`, count);
+        const notificationText = getNotificationText(draft, conversationMode, count);
 
         createNotification({ text: notificationText });
     };
