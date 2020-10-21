@@ -155,13 +155,21 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
     const itemsToMove = selectedItems.map((item) => item.LinkID);
     const itemsToMoveCount = itemsToMove.length;
     const messages = {
-        allFiles: c('Notification').ngettext(msgid`Move 1 file`, `Move ${itemsToMoveCount} files`, itemsToMoveCount),
+        allFiles: c('Notification').ngettext(
+            msgid`Move ${itemsToMoveCount} file`,
+            `Move ${itemsToMoveCount} files`,
+            itemsToMoveCount
+        ),
         allFolders: c('Notification').ngettext(
-            msgid`Move 1 folder`,
+            msgid`Move ${itemsToMoveCount} folder`,
             `Move ${itemsToMoveCount} folders`,
             itemsToMoveCount
         ),
-        mixed: c('Notification').ngettext(msgid`Move 1 item`, `Move ${itemsToMoveCount} items`, itemsToMoveCount),
+        mixed: c('Notification').ngettext(
+            msgid`Move ${itemsToMoveCount} item`,
+            `Move ${itemsToMoveCount} items`,
+            itemsToMoveCount
+        ),
     };
     const moveIsDisabled = !selectedFolder || itemsToMove.includes(selectedFolder) || linkId === selectedFolder;
 
