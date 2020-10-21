@@ -1,6 +1,16 @@
+# [4.0.0-beta.27] - 2020-10-26
+
+## Improvements
+
+-   Various UI/UX improvements Fixes
+
+## Fixes
+
+-   Various bug fixes
+
 # [4.0.0-beta.26] - 2020-10-21
 
-## Improvement
+## Improvements
 
 -   Performance improvements when loading the list of conversations
 -   Performance improvements when starring a conversation
@@ -13,7 +23,7 @@
 
 # [4.0.0-beta.25] - 2020-10-14
 
-## Improvement
+## Improvements
 
 -   Various UI/UX improvements
 
@@ -29,7 +39,7 @@
 
 -   Added a widget in the email header to display an event's summary when an invitation (ICS file) is attached to a message
 
-## Improvement
+## Improvements
 
 -   Show the recipients' information instead of the sender's information when viewing the drafts folder
 -   Remember the collapsed state of folders and labels section in the menu
