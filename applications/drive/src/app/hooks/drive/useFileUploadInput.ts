@@ -65,7 +65,7 @@ const useFileUploadInput = (forFolders?: boolean) => {
         }
 
         const filesToUpload = forFolders ? getFolderItemsToUpload(files) : files;
-        uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload, true).catch(console.error);
+        uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload, !forFolders).catch(console.error);
     };
 
     return { inputRef, handleClick, handleChange };

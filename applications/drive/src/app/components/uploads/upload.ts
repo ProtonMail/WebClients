@@ -134,7 +134,7 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
             uploadingBlocks.set(index, {
                 index,
                 originalSize: chunk.length,
-                chunk: transform(chunk), // TODO: no transform
+                chunk: transform(chunk),
             });
             index++;
         }

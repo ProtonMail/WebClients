@@ -375,7 +375,7 @@ function useFiles() {
         async (
             shareId: string,
             ParentLinkID: string,
-            files: FileList | File[] | { path: string[]; file?: File }[],
+            files: FileList | { path: string[]; file?: File }[],
             filesOnly = false
         ) => {
             const { result, total } = await checkHasEnoughSpace(files);
@@ -393,13 +393,12 @@ function useFiles() {
             for (let i = 0; i < files.length; i++) {
                 const entry = files[i];
 
-                if (!filesOnly && !(await isFile(entry))) {
-                    return;
-                }
+                const file = 'path' in entry ? entry.file : entry;
 
-                isFile(entry)
+                (file ? isFile(file) : Promise.resolve(false))
                     .then((isEntryFile) => {
-                        if (!isEntryFile) {
+                        // MacOS has bug, where you can select folders when uploading files in some cases
+                        if (filesOnly && !isEntryFile) {
                             return;
                         }
 
