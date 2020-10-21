@@ -7,16 +7,16 @@ import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import SignupLabelInputRow from '../signup/SignupLabelInputRow';
 import { Label } from '../../components/label';
 import { Input } from '../../components/input';
-import OnboardingContent from './OnboardingContent';
+import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
 
-interface Props {
+interface Props extends OnboardingContentProps {
     displayName: string;
     setDisplayName: (displayName: string) => void;
     displayNameError?: string;
     isSubmitted?: boolean;
 }
 
-const OnboardingSetDisplayName = ({ isSubmitted, displayName, setDisplayName, displayNameError }: Props) => {
+const OnboardingSetDisplayName = ({ isSubmitted, displayName, setDisplayName, displayNameError, ...rest }: Props) => {
     return (
         <OnboardingContent
             description={c('Onboarding Proton')
@@ -24,6 +24,7 @@ const OnboardingSetDisplayName = ({ isSubmitted, displayName, setDisplayName, di
             img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt="Proton" />}
             text={c('Onboarding Proton')
                 .t`Please choose a display name to finish setting up your account. (Other people will see this.)`}
+            {...rest}
         >
             <div className="signLayout-container">
                 <SignupLabelInputRow

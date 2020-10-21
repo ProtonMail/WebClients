@@ -3,8 +3,9 @@ import { c } from 'ttag';
 import { updateAddress } from 'proton-shared/lib/api/addresses';
 import { updateWelcomeFlags } from 'proton-shared/lib/api/settings';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { range } from 'proton-shared/lib/helpers/array';
 
-import { Dots, FormModal } from '../../components';
+import { StepDots, StepDot, FormModal } from '../../components';
 import { useApi, useEventManager, useGetAddresses, useLoading, useUser, useWelcomeFlags } from '../../hooks';
 
 import { OnboardingStepProps, OnboardingStepRenderCallback } from './interface';
@@ -46,80 +47,95 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
         }
     }, []);
 
-    const setDisplayNameStep = ({ onNext }: OnboardingStepRenderCallback) => {
-        const handleNext = async () => {
-            const addresses = await getAddresses();
-            const firstAddress = addresses[0];
-            // Should never happen.
-            if (!firstAddress) {
-                handleUpdateWelcomeFlags();
-                onNext();
-                return;
-            }
-            await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
-            await call();
-            handleUpdateWelcomeFlags();
-            onNext();
-        };
-        return (
-            <OnboardingStep
-                title={c('Onboarding Proton').t`Welcome to privacy`}
-                submit={c('Action').t`Next`}
-                loading={loadingDisplayName}
-                close={null}
-                onSubmit={() => withLoading(handleNext())}
-            >
-                <OnboardingSetDisplayName displayName={displayName} setDisplayName={setDisplayName} />
-            </OnboardingStep>
-        );
-    };
-
-    const accessingProtonAppsStep = ({ onNext }: OnboardingStepRenderCallback) => {
-        return (
-            <OnboardingStep
-                title={c('Onboarding Proton').t`Accessing your Proton Apps`}
-                submit={c('Action').t`Next`}
-                close={null}
-                onSubmit={onNext}
-            >
-                <OnboardingAccessingProtonApps />
-            </OnboardingStep>
-        );
-    };
-
-    const manageAccountStep = ({ onNext }: OnboardingStepRenderCallback) => {
-        return (
-            <OnboardingStep
-                title={c('Onboarding Proton').t`Manage Your Proton Account`}
-                submit={c('Action').t`Next`}
-                close={null}
-                onSubmit={onNext}
-            >
-                <OnboardingManageAccount />
-            </OnboardingStep>
-        );
-    };
-
     const [step, setStep] = useState(0);
 
     const handleNext = () => {
         setStep((step) => step + 1);
     };
 
+    const handleBack = () => {
+        setStep((step) => step - 1);
+    };
+
+    const handleChange = (step: number) => {
+        setStep(step);
+    };
+
+    const handleSetDisplayNameNext = async () => {
+        const addresses = await getAddresses();
+        const firstAddress = addresses[0];
+        // Should never happen.
+        if (!firstAddress) {
+            handleUpdateWelcomeFlags();
+            handleNext();
+            return;
+        }
+        await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
+        await call();
+        handleUpdateWelcomeFlags();
+        handleNext();
+    };
+
+    const setDisplayNameStep = (
+        <OnboardingStep
+            title={c('Onboarding Proton').t`Welcome to privacy`}
+            submit={c('Action').t`Next`}
+            loading={loadingDisplayName}
+            close={null}
+            onSubmit={() => withLoading(handleSetDisplayNameNext())}
+        >
+            <OnboardingSetDisplayName id="onboarding-0" displayName={displayName} setDisplayName={setDisplayName} />
+        </OnboardingStep>
+    );
+
+    const accessingProtonAppsStep = (
+        <OnboardingStep
+            title={c('Onboarding Proton').t`Accessing your Proton Apps`}
+            submit={c('Action').t`Next`}
+            close={c('Action').t`Back`}
+            onSubmit={handleNext}
+            onClose={handleBack}
+        >
+            <OnboardingAccessingProtonApps id="onboarding-1" />
+        </OnboardingStep>
+    );
+
+    const manageAccountStep = (
+        <OnboardingStep
+            title={c('Onboarding Proton').t`Manage Your Proton Account`}
+            submit={c('Action').t`Next`}
+            close={c('Action').t`Back`}
+            onSubmit={handleNext}
+            onClose={handleBack}
+        >
+            <OnboardingManageAccount id="onboarding-2" />
+        </OnboardingStep>
+    );
+
+    let childrenSteps: (JSX.Element | null)[] = [];
+
     const hasDisplayNameStep = welcomeFlags?.hasDisplayNameStep;
 
-    const childrenSteps = [
-        ...(hasDisplayNameStep ? [setDisplayNameStep, accessingProtonAppsStep, manageAccountStep] : []),
-        ...(Array.isArray(children) ? children : [children]),
-    ].map((renderCallback) => {
-        if (!renderCallback) {
-            return null;
-        }
-        return renderCallback({
-            onNext: handleNext,
-            onClose: rest?.onClose,
-        });
-    });
+    if (hasDisplayNameStep) {
+        childrenSteps = [setDisplayNameStep, accessingProtonAppsStep, manageAccountStep];
+    }
+
+    if (children) {
+        childrenSteps = [
+            ...childrenSteps,
+            ...(Array.isArray(children) ? children : [children]).map((renderCallback) => {
+                if (!renderCallback) {
+                    return null;
+                }
+
+                return renderCallback({
+                    onNext: handleNext,
+                    onBack: handleBack,
+                    onClose: rest?.onClose,
+                });
+            }),
+        ];
+    }
 
     const childStep = childrenSteps[step];
 
@@ -150,12 +166,11 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
             <>
                 {childStep}
                 {dotsShouldDisplay && (
-                    <Dots
-                        style={{ display: 'flex', justifyContent: 'center' }}
-                        className="mt2"
-                        amount={childrenSteps.length - 1}
-                        active={step}
-                    />
+                    <StepDots className="mt2 flex flex-justify-center" onChange={handleChange} value={step}>
+                        {range(0, childrenSteps.length - 1).map((index) => (
+                            <StepDot key={index} aria-controls={`onboarding-${index}`} />
+                        ))}
+                    </StepDots>
                 )}
             </>
         </FormModal>
