@@ -37,12 +37,7 @@ const getMapEmailHeaders = (headers?: string): { [key: string]: X_PM_HEADERS } =
     if (!headers) {
         return {};
     }
-    const splitHeaders = headers.split(';').map((str) =>
-        str
-            .replace('%40', '@')
-            .replace(/%2B|%2b/g, '+')
-            .trim()
-    );
+    const splitHeaders = headers.split(';').map((str) => decodeURIComponent(str.trim()));
     return splitHeaders.reduce<{ [key: string]: X_PM_HEADERS }>((acc, header) => {
         const match = header.match(/(.*)=(.*)/);
         if (!match) {
