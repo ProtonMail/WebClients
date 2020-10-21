@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Dots from './Dots';
+import Dots from './StepDots';
 
 describe('Dots component', () => {
     render(<Dots amount={3} active={2} />);
