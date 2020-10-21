@@ -21,11 +21,19 @@ const AccountOnboardingModal = (props: any) => {
                     close={null}
                 >
                     <OnboardingContent
-                        description={c('Onboarding ProtonAccount')
-                            .t`When you sign in to your Proton account, we'll remember your credentials even if you close a browser tab, and you can keep multiple Proton apps open in different tabs at once.`}
+                        description={
+                            <>
+                                <div className="mb1">
+                                    {c('Onboarding ProtonAccount')
+                                        .t`When you sign in to your Proton account, we'll remember your credentials even if you close a browser tab, and you can keep multiple Proton apps open in different tabs at once.`}
+                                </div>
+                                <div>
+                                    {c('Onboarding ProtonAccount')
+                                        .t`You can switch between Proton apps using the menu in the top left corner.`}
+                                </div>
+                            </>
+                        }
                         img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
-                        text={c('Onboarding ProtonAccount')
-                            .t`You can switch between Proton apps using the menu in the top left corner.`}
                     />
                 </OnboardingStep>
             )}
