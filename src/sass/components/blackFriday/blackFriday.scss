@@ -303,7 +303,6 @@ $price-info-text-size: 1.5em;
         margin-bottom: .5em;
     }
     .blackFridayOffer-services-protonDrive {
-        color: $proton-drive-access;
         position: relative;
     }
     .blackFridayOffer-services-protonDrive-productName {
@@ -369,6 +368,9 @@ $price-info-text-size: 1.5em;
     }
 }
 
+.blackFridayOffer-services-protonDrive--productPayer {
+    color: $proton-drive-access;
+}
 
 // Modifier stuff for most popular
 .blackFridayOffer-container--most-popular {
@@ -384,6 +386,9 @@ $price-info-text-size: 1.5em;
 
     .bf-bubble-percentTxt {
         background: $offer-bubble-most-popular;
+    }
+    .blackFridayOffer-services-protonDrive {
+        color: $proton-drive-access;
     }
 }
 
