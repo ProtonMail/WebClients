@@ -16,12 +16,12 @@ import {
 } from 'proton-shared/lib/calendar/constants';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { findAttendee, getInvitedEventWithAlarms } from 'proton-shared/lib/calendar/integration/invite';
+import { getIsRruleEqual } from 'proton-shared/lib/calendar/rruleEqual';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import {
     getHasModifiedAttendees,
     getHasModifiedDateTimes,
-    getHasModifiedRrule,
-    propertyToUTCDate,
+    propertyToUTCDate
 } from 'proton-shared/lib/calendar/vcalConverter';
 import {
     getAttendeeHasPartStat,
@@ -302,7 +302,7 @@ export const updateEventInvitation = async ({
         const hasUpdatedTitle = veventIcs.summary?.value !== veventApi.summary?.value;
         const hasUpdatedDescription = veventIcs.description?.value !== veventApi.description?.value;
         const hasUpdatedLocation = veventIcs.location?.value !== veventApi.location?.value;
-        const hasUpdatedRrule = getHasModifiedRrule(veventIcs, veventApi);
+        const hasUpdatedRrule = !getIsRruleEqual(veventIcs.rrule, veventApi.rrule);
         const hasUpdatedAttendees = getHasModifiedAttendees(veventIcs, veventApi);
         const isReinvited = getEventStatus(veventApi) === CANCELLED;
         const hasBreakingChange = sequenceDiff > 0;

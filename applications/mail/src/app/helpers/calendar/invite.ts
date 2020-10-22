@@ -9,7 +9,7 @@ import {
     MAX_LENGTHS,
 } from 'proton-shared/lib/calendar/constants';
 import { findAttendee, getParticipant } from 'proton-shared/lib/calendar/integration/invite';
-import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/integration/rrule';
+import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/rrule';
 import {
     getIsDateOutOfBounds,
     getIsWellFormedDateOrDateTime,

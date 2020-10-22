@@ -1,5 +1,5 @@
 import { enUS } from 'date-fns/locale';
-import { getIsRruleSupported } from 'proton-shared/lib/calendar/integration/rrule';
+import { getIsRruleSupported } from 'proton-shared/lib/calendar/rrule';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { VcalDateProperty, VcalVcalendar, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
