@@ -137,7 +137,7 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
         throw new Error('Missing step');
     }
 
-    const hasDots = genericSteps.length && step < genericSteps.length;
+    const hasDots = genericSteps.length > 0 && step < genericSteps.length;
 
     return (
         <FormModal {...rest} hasClose={false} autoFocusClose {...childStep.props}>
