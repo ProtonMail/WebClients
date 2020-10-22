@@ -1,4 +1,4 @@
-import { BLACK_FRIDAY, PLANS_TYPE } from '../../constants';
+import { PLANS_TYPE } from '../../constants';
 import { isBlackFriday, isCyberMonday } from '../helpers/blackFridayHelper';
 import { getAfterCouponDiscount } from '../../../helpers/paymentHelper';
 
