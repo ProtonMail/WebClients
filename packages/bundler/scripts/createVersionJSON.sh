@@ -47,8 +47,14 @@ function getCommit {
 }
 
 function getVersionDep {
-    # sadly jq is not available everywhere, nor gawk
-    grep -E "version.+$1#" package-lock.json | awk -F '#' '{print $2}' | sed 's/",//' || echo '';
+  # sadly jq is not available everywhere, nor gawk so we take the first entry (as we can have more than 1 inside the lock...)
+  if ! command -v jq &> /dev/null; then
+    grep -E "version.+$1#" package-lock.json | awk -F '#' '{print $2}' | sed 's/",//' | head -1 || echo '';
+    return 0
+  fi
+
+  local version="$(jq -r  ".dependencies[\"$1\"].version" package-lock.json || jq -r  ".dependencies[\"$1\"].version" package-lock.json || echo '')"
+  echo "$version" | awk -F '#' '{print $2}'
 }
 
 function getBranch {
