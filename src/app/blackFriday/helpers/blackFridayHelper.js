@@ -13,16 +13,13 @@ export const getEventName = () => {
     if (!isDealEvent()) {
         return '';
     }
-    if (isBlackFriday()) {
+
+    if (isBlackFriday() || isBlackFridayExtension()) {
         return 'Black Friday';
     }
 
     if (isCyberMonday()) {
         return 'Cyber Monday';
-    }
-
-    if (isBlackFridayExtension()) {
-        return 'Black Friday Extension';
     }
 };
 
