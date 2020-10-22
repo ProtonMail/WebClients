@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
+import React, { createContext, useContext, useState, useRef, useEffect, useCallback } from 'react';
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
 import {
     TransferState,
@@ -73,11 +73,13 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         setUploads(uploadsRef.current);
     };
 
-    const clearUploads = () => {
-        // TODO: cancel pending uploads when implementing reject
+    const clearUploads = useCallback(() => {
+        uploadsRef.current.forEach(({ id }) => {
+            controls.current[id].cancel();
+        });
         uploadsRef.current = [];
         setUploads(uploadsRef.current);
-    };
+    }, []);
 
     const updateUploadState = (id: string, nextState: UploadStateUpdater, data: Partial<Upload> = {}) => {
         const currentUpload = uploadsRef.current.find((upload) => upload.id === id);

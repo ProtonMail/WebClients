@@ -73,6 +73,18 @@ function TransferManager() {
     const [statsHistory, setStatsHistory] = React.useState<TransfersStats[]>([]);
     const { openConfirmModal } = useConfirm();
 
+    const clearAllTransfers = useCallback(() => {
+        clearDownloads();
+        clearUploads();
+    }, [clearDownloads, clearUploads]);
+
+    useEffect(() => {
+        document.addEventListener('unload', clearAllTransfers);
+        return () => {
+            document.removeEventListener('unload', clearAllTransfers);
+        };
+    }, [clearAllTransfers]);
+
     const getTransfer = useCallback(
         (id: string) => downloads.find((download) => download.id === id) || uploads.find((upload) => upload.id === id),
         [downloads, uploads]
@@ -151,11 +163,6 @@ function TransferManager() {
     if (!latestStats || downloads.length + uploads.length === 0) {
         return null;
     }
-
-    const clearAllTransfers = () => {
-        clearDownloads();
-        clearUploads();
-    };
 
     const handleCloseClick = () => {
         if (allTransfersFinished) {

@@ -1,5 +1,4 @@
 /* eslint-disable no-restricted-globals */
-import { contentType } from 'mime-types';
 
 interface DownloadConfig {
     stream: ReadableStream<Uint8Array>;
@@ -75,13 +74,13 @@ class DownloadServiceWorker {
             return;
         }
 
-        const { stream, filename, mimeType, size } = pendingDownload;
+        const { stream, filename, size } = pendingDownload;
 
         this.pendingDownloads.delete(url);
 
         const headers = new Headers({
             ...(size ? { 'Content-Length': `${size}` } : {}),
-            'Content-Type': `${contentType(mimeType || 'application/octet-stream')}`,
+            'Content-Type': 'application/octet-stream; charset=utf-8',
             'Content-Disposition': `attachment; filename="${encodeURI(filename || 'file')}"`,
             'Content-Security-Policy': "default-src 'none'",
             'X-Content-Security-Policy': "default-src 'none'",
