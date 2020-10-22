@@ -1,5 +1,5 @@
 import { PLANS_TYPE } from '../../constants';
-import { isBlackFriday, isCyberMonday } from '../helpers/blackFridayHelper';
+import { isCyberMonday } from '../helpers/blackFridayHelper';
 import { getAfterCouponDiscount } from '../../../helpers/paymentHelper';
 
 /* @ngInject */
@@ -204,7 +204,6 @@ function blackFriday(
                 currency: subscriptionModel.currency(),
                 perMonth: TEXTS.perMonth,
                 buy: subscriptionModel.isProductPayer() ? TEXTS.upgrade : TEXTS.buy,
-                isBlackFriday: isBlackFriday(),
                 isCyberMonday: isCyberMonday(),
                 isProductPayer: subscriptionModel.isProductPayer()
             };
@@ -248,7 +247,6 @@ function blackFriday(
 
             const intervalID = setInterval(() => {
                 scope.$applyAsync(() => {
-                    scope.state.isBlackFriday = isBlackFriday();
                     scope.state.isCyberMonday = isCyberMonday();
                 });
             }, 1000);
