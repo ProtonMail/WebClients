@@ -252,9 +252,21 @@ function blackFriday(
                 }
             });
 
+            const intervalID = setInterval(() => {
+                scope.state.isBlackFriday = isBlackFriday();
+                scope.state.isCyberMonday = isCyberMonday();
+                // eslint-disable-next-line no-nested-ternary
+                scope.state.end = isBlackFriday()
+                    ? BLACK_FRIDAY.BETWEEN.CYBER_START
+                    : isCyberMonday()
+                    ? BLACK_FRIDAY.BETWEEN.CYBER_END
+                    : BLACK_FRIDAY.BETWEEN.END;
+            }, 1000);
+
             scope.$on('destroy', () => {
                 element.off('click', onClick);
                 unsubscribe();
+                clearInterval(intervalID);
             });
         }
     };
