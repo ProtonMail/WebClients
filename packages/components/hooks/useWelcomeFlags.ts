@@ -15,7 +15,7 @@ const useWelcomeFlags = (): [WelcomeFlagsState, () => void] => {
     const [state, setState] = useState<WelcomeFlagsState>(() => {
         // Set from ProtonApp
         const flow = cache.get(WELCOME_FLAG_KEY);
-        const hasDisplayNameStep = flow === 'signup' || flow === 'welcome-full';
+        const hasDisplayNameStep = true; // flow === 'signup' || flow === 'welcome-full';
         const hasWelcomeModal = flow === 'welcome';
         // Assumes that user settings has been pre-loaded. Not using hook to avoid re-renders.
         const isWelcomeFlag = cache.get(UserSettingsModel.key)?.value?.WelcomeFlag === 0 || hasWelcomeModal;

@@ -1,14 +1,15 @@
 import React from 'react';
 
+import { classnames } from '../../helpers';
 import { Props as StepDotProps } from '../stepDot/StepDot';
 
 export interface Props extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
     value: number;
-    onChange: (index: number | undefined) => void;
+    onChange: (index: number) => void;
     children: React.ReactElement<StepDotProps>[];
 }
 
-const StepDots = ({ value, onChange, children, ...rest }: Props) => {
+const StepDots = ({ value, onChange, children, className, ...rest }: Props) => {
     const clonedChildren = React.Children.map(children, (child, index) =>
         React.cloneElement(child, {
             active: index === value,
@@ -18,8 +19,8 @@ const StepDots = ({ value, onChange, children, ...rest }: Props) => {
     );
 
     return (
-        <nav {...rest} className="stepDots-container">
-            <ul className="stepDots-list" role="tablist">
+        <nav {...rest} className={classnames([className, 'stepDots-container'])}>
+            <ul className="stepDots-list unstyled inline-flex flex-row" role="tablist">
                 {clonedChildren}
             </ul>
         </nav>

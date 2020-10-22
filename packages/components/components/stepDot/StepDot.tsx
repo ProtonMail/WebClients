@@ -8,15 +8,15 @@ import { classnames } from '../../helpers';
  * the possible values for types, omitting for now due to incompatibility
  */
 export interface Props extends Omit<React.HTMLProps<HTMLButtonElement>, 'onChange' | 'type'> {
-    onChange?: (index: number | undefined) => void;
+    onChange?: (index: number) => void;
     index?: number;
     active?: boolean;
 }
 
 const StepDot = ({ index, className, onChange, active, role = 'presentation', ...rest }: Props) => {
     function handleClick() {
-        if (onChange) {
-            onChange(index);
+        if (index !== undefined) {
+            onChange?.(index);
         }
     }
 
@@ -26,7 +26,7 @@ const StepDot = ({ index, className, onChange, active, role = 'presentation', ..
                 type="button"
                 role="tab"
                 aria-selected={active}
-                className={classnames([className, 'stepDots-dot'])}
+                className={classnames([className, 'stepDots-dot', 'rounded50'])}
                 title={c('Action').t`Go to panel ${index}`}
                 onClick={handleClick}
                 {...rest}
