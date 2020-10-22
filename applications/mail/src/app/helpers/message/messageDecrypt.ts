@@ -31,6 +31,7 @@ const decryptMimeMessage = async (message: Message, privateKeys: OpenPGPKey[], a
             message: message?.Body,
             messageDate: getDate(message),
             privateKeys,
+            publicKeys: [], // mandatory, even empty unless there is an error in openpgp
             headerFilename,
             sender
         });
@@ -72,7 +73,8 @@ const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[])
         result = await decryptMessageLegacy({
             message: message?.Body,
             messageDate: getDate(message),
-            privateKeys: privateKeys
+            privateKeys,
+            publicKeys: []
         });
     } catch (error) {
         return {

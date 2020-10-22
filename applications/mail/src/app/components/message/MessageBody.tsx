@@ -40,7 +40,7 @@ const MessageBody = ({
         [message.document?.innerHTML, message.plainText, plain]
     );
 
-    const encryptedMode = messageLoaded && message.errors?.decryption;
+    const encryptedMode = messageLoaded && !!message.errors?.decryption?.length;
     const sourceMode = !encryptedMode && inputSourceMode;
     const decryptingMode = !encryptedMode && !sourceMode && !bodyLoaded && messageLoaded;
     const loadingMode = !messageLoaded;

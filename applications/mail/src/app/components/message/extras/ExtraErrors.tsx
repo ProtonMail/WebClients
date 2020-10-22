@@ -25,7 +25,9 @@ const ExtraErrors = ({ message }: Props) => {
     const { addAction } = useMessage(message.localID);
     const reloadMessage = useReloadMessage(message.localID);
 
-    const errorTypes = Object.keys(message.errors || {}) as (keyof MessageErrors)[];
+    const errorTypes = (Object.keys(message.errors || {}) as (keyof MessageErrors)[]).filter(
+        (type) => message.errors?.[type]?.length
+    );
 
     if (errorTypes.length === 0) {
         return null;
