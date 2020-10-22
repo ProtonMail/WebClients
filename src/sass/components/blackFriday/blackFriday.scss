@@ -51,11 +51,15 @@ $price-info-text-size: 1.5em;
 /* --force-douce */
 .blackFriday-header.blackFriday-header.blackFriday-header {
     position: relative;
-    padding: 4rem 0 0;
+    padding: 2rem 0 0;
     text-align: center;
     margin-bottom: 3em;
     font-size: 1.2rem;
     color: $white;
+
+    &.blackFriday-header--productPayer {
+        margin-bottom: 1.5em;
+    }
 
     h1, h2 {
         color: $white;
