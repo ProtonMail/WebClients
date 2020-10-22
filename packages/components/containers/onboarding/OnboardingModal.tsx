@@ -117,14 +117,16 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
     const genericSteps = hasDisplayNameStep ? [setDisplayNameStep, accessingProtonAppsStep, manageAccountStep] : [];
 
     const productSteps = children
-        ? (Array.isArray(children) ? children : [children]).map(
-              (renderCallback) =>
-                  renderCallback?.({
-                      onNext: handleNext,
-                      onBack: handleBack,
-                      onClose: rest?.onClose,
-                  }) ?? null
-          )
+        ? (Array.isArray(children) ? children : [children])
+              .map(
+                  (renderCallback) =>
+                      renderCallback?.({
+                          onNext: handleNext,
+                          onBack: handleBack,
+                          onClose: rest?.onClose,
+                      }) ?? null
+              )
+              .filter((x) => x !== null)
         : [];
 
     const steps = [...genericSteps, ...productSteps];
