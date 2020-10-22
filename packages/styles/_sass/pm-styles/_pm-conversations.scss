@@ -752,9 +752,3 @@ $message-attachment-icon-width: 2.6em !default;
 
 
 @import "_pm-reset-display-messages";
-
-
-.protonmail_quote {
-	border-left: 1px solid var(--bordercolor-input, $pm-global-border);
-	padding-left: 1rem;
-}
