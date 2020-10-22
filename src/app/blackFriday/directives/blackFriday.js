@@ -206,12 +206,6 @@ function blackFriday(
                 buy: subscriptionModel.isProductPayer() ? TEXTS.upgrade : TEXTS.buy,
                 isBlackFriday: isBlackFriday(),
                 isCyberMonday: isCyberMonday(),
-                // eslint-disable-next-line no-nested-ternary
-                end: isBlackFriday()
-                    ? BLACK_FRIDAY.BETWEEN.CYBER_START
-                    : isCyberMonday()
-                    ? BLACK_FRIDAY.BETWEEN.CYBER_END
-                    : BLACK_FRIDAY.BETWEEN.END,
                 isProductPayer: subscriptionModel.isProductPayer()
             };
 
@@ -253,14 +247,10 @@ function blackFriday(
             });
 
             const intervalID = setInterval(() => {
-                scope.state.isBlackFriday = isBlackFriday();
-                scope.state.isCyberMonday = isCyberMonday();
-                // eslint-disable-next-line no-nested-ternary
-                scope.state.end = isBlackFriday()
-                    ? BLACK_FRIDAY.BETWEEN.CYBER_START
-                    : isCyberMonday()
-                    ? BLACK_FRIDAY.BETWEEN.CYBER_END
-                    : BLACK_FRIDAY.BETWEEN.END;
+                scope.$applyAsync(() => {
+                    scope.state.isBlackFriday = isBlackFriday();
+                    scope.state.isCyberMonday = isCyberMonday();
+                });
             }, 1000);
 
             scope.$on('destroy', () => {
