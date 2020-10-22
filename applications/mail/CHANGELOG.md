@@ -1,4 +1,10 @@
-# [4.0.0-beta.27] - 2020-10-26
+# [4.0.0-beta.28] - 2020-10-22
+
+## Fixes
+
+-   Hot fixing an issue whereby some messages would not decrypt
+
+# [4.0.0-beta.27] - 2020-10-21
 
 ## Improvements
 
