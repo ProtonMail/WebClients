@@ -18,8 +18,9 @@ const DriveOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONDRIVE);
 
     const learnMoreLink = (
-        <Href url="https://protonmail.com/blog/protondrive-security/">{c('Onboarding ProtonDrive')
-            .t`Learn about ProtonDrive security`}</Href>
+        <Href key="learnMoreLink" url="https://protonmail.com/blog/protondrive-security/">
+            {c('Onboarding ProtonDrive').t`Learn about ProtonDrive security`}
+        </Href>
     );
 
     return (
