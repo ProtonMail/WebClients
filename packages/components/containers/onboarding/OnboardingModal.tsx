@@ -112,62 +112,38 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
         </OnboardingStep>
     );
 
-    let childrenSteps: (JSX.Element | null)[] = [];
-
     const hasDisplayNameStep = welcomeFlags?.hasDisplayNameStep;
 
-    if (hasDisplayNameStep) {
-        childrenSteps = [setDisplayNameStep, accessingProtonAppsStep, manageAccountStep];
-    }
+    const genericSteps = hasDisplayNameStep ? [setDisplayNameStep, accessingProtonAppsStep, manageAccountStep] : [];
 
-    if (children) {
-        childrenSteps = [
-            ...childrenSteps,
-            ...(Array.isArray(children) ? children : [children]).map((renderCallback) => {
-                if (!renderCallback) {
-                    return null;
-                }
+    const productSteps = children
+        ? (Array.isArray(children) ? children : [children]).map(
+              (renderCallback) =>
+                  renderCallback?.({
+                      onNext: handleNext,
+                      onBack: handleBack,
+                      onClose: rest?.onClose,
+                  }) ?? null
+          )
+        : [];
 
-                return renderCallback({
-                    onNext: handleNext,
-                    onBack: handleBack,
-                    onClose: rest?.onClose,
-                });
-            }),
-        ];
-    }
+    const steps = [...genericSteps, ...productSteps];
 
-    const childStep = childrenSteps[step];
+    const childStep = steps[step];
 
     if (!React.isValidElement<OnboardingStepProps>(childStep)) {
         throw new Error('Missing step');
     }
 
-    const isLastStep = childrenSteps.length === step + 1;
-
-    /*
-     * The last step of these OnboardingModal steps is assumed to be the app-specific step
-     * of the onboarding, and it is also assumed that there is only one such last app-specific step.
-     * If there is only a single step prior to that there's no point in showing the dots stepper.
-     * So the calculation to determine whether or not dots should display goes:
-     *
-     * total number of steps - 1 (last, app-specific step)
-     * at least 2 left?
-     * yes -> are we on the last step?
-     * no -> does this onboarding-modal have the display name step?
-     * yes -> dots should display
-     */
-    const atLeastTwoDottableSteps = childrenSteps.length - 1 >= 2;
-
-    const dotsShouldDisplay = !isLastStep && hasDisplayNameStep && atLeastTwoDottableSteps;
+    const hasDots = genericSteps.length && step < genericSteps.length;
 
     return (
         <FormModal {...rest} hasClose={false} autoFocusClose {...childStep.props}>
             <>
                 {childStep}
-                {dotsShouldDisplay && (
+                {hasDots && (
                     <StepDots className="mt2 flex flex-justify-center" onChange={handleChange} value={step}>
-                        {range(0, childrenSteps.length - 1).map((index) => (
+                        {range(0, genericSteps.length).map((index) => (
                             <StepDot key={index} aria-controls={`onboarding-${index}`} />
                         ))}
                     </StepDots>
