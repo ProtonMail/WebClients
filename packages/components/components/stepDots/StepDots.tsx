@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { Props as StepDotProps } from '../stepDot/StepDot';
+
 export interface Props extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
     value: number;
-    onChange: (index: number) => void;
-    children: React.ReactElement[];
+    onChange: (index: number | undefined) => void;
+    children: React.ReactElement<StepDotProps>[];
 }
 
 const StepDots = ({ value, onChange, children, ...rest }: Props) => {
