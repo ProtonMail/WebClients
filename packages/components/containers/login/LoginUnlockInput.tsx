@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import React from 'react';
-import { Input } from '../../components';
+import { PasswordInput } from '../../components';
 
 interface Props {
     password: string;
@@ -10,8 +10,7 @@ interface Props {
 
 const LoginUnlockInput = ({ password, setPassword, id }: Props) => {
     return (
-        <Input
-            type="password"
+        <PasswordInput
             name="password"
             autoFocus
             autoCapitalize="off"
