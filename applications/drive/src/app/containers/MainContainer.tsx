@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { LoaderPage, ModalsChildren, useLoading, useWelcomeFlags } from 'react-components';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { noop } from 'proton-shared/lib/helpers/function';
+
 import DriveEventManagerProvider from '../components/DriveEventManager/DriveEventManagerProvider';
 import DriveCacheProvider from '../components/DriveCache/DriveCacheProvider';
 import DriveFolderProvider from '../components/Drive/DriveFolderProvider';
@@ -29,7 +31,7 @@ const InitContainer = () => {
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
 
     useEffect(() => {
-        withLoading(initDrive()).catch((error) => {
+        const initPromise = initDrive().catch((error) => {
             if (
                 error?.data?.Code === InitStatusCodes.NoAccess ||
                 error?.data?.Details?.MissingScopes?.includes('drive')
@@ -40,6 +42,7 @@ const InitContainer = () => {
                 throw error;
             });
         });
+        withLoading(initPromise).catch(noop);
     }, []);
 
     if (loading) {
