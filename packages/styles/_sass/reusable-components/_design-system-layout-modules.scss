@@ -426,7 +426,7 @@ $list-width-rem: 33 !default; // say 33
 }
 
 /* here you may add em widths */
-$list-width-em: 2, 6, 8, 10, 11, 14, 16 !default;
+$list-width-em: 2, 6, 8, 10, 11, 13, 14, 16 !default;
 // ex .w16e { width: 16em; }
 
 @each $width in $list-width-em {
@@ -789,6 +789,10 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4 !default; // sp
     -ms-flex-align: end;
     -ms-grid-row-align: flex-end;
     align-items: flex-end;
+}
+
+.flex-items-stretch {
+    align-items: stretch;
 }
 
 .flex-item-fluid {

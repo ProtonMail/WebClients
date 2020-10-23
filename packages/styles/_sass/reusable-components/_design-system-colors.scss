@@ -26,6 +26,9 @@
 .bg-global-attention {
   background-color: $pm-global-attention;
 }
+.bg-global-info {
+  background-color: $pm-global-info;
+}
 .bg-pm-blue {
   background-color: $pm-blue;
 }
@@ -85,6 +88,9 @@
 }
 .bg-inherit {
   background: inherit;
+}
+.bg-currentColor {
+  background: currentColor;
 }
 
 .fill-global-grey {
