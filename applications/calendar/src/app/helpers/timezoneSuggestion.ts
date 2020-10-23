@@ -1,11 +1,10 @@
-import { SHA256, binaryStringToArray, arrayToHexString } from 'pmcrypto';
+import { getSHA256String } from 'proton-shared/lib/helpers/hash';
 
 const DAY_IN_MILLISECONDS = 86400000;
 const LOCALSTORAGE_TZ_KEY = 'tzSuggestion';
 
 export const getTimezoneSuggestionKey = async (userID: string) => {
-    const value = await SHA256(binaryStringToArray(`${LOCALSTORAGE_TZ_KEY}${userID}`));
-    return arrayToHexString(value);
+    return getSHA256String(`${LOCALSTORAGE_TZ_KEY}${userID}`);
 };
 
 export const getLastTimezoneSuggestion = (key: string) => {
