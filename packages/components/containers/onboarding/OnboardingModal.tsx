@@ -5,7 +5,7 @@ import { updateWelcomeFlags } from 'proton-shared/lib/api/settings';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { range } from 'proton-shared/lib/helpers/array';
 
-import { StepDots, StepDot, FormModal } from '../../components';
+import { StepDots, StepDot, FormModal, ResetButton, PrimaryButton } from '../../components';
 import { useApi, useEventManager, useGetAddresses, useLoading, useUser, useWelcomeFlags } from '../../hooks';
 
 import { OnboardingStepProps, OnboardingStepRenderCallback } from './interface';
@@ -154,17 +154,38 @@ const OnboardingModal = ({ children, showGenericSteps, setWelcomeFlags = true, .
             : childStep.props;
 
     return (
-        <FormModal {...rest} hasClose={false} autoFocusClose {...childStepProps}>
-            <>
-                {childStep}
-                {hasDots && (
-                    <StepDots className="mt2 flex flex-justify-center" onChange={handleChange} value={step}>
-                        {range(0, genericSteps.length).map((index) => (
-                            <StepDot key={index} aria-controls={`onboarding-${index}`} />
-                        ))}
-                    </StepDots>
-                )}
-            </>
+        <FormModal
+            {...rest}
+            hasClose={false}
+            autoFocusClose
+            {...childStepProps}
+            footer={
+                <>
+                    {childStep.props.close && (
+                        <ResetButton disabled={childStep.props.loading}>{childStepProps.close}</ResetButton>
+                    )}
+
+                    {hasDots && (
+                        <StepDots
+                            className="absolute centered-absolute-horizontal"
+                            onChange={handleChange}
+                            value={step}
+                        >
+                            {range(0, genericSteps.length).map((index) => (
+                                <StepDot key={index} aria-controls={`onboarding-${index}`} />
+                            ))}
+                        </StepDots>
+                    )}
+
+                    {childStep.props.submit && (
+                        <PrimaryButton loading={childStep.props.loading} type="submit" className="mlauto">
+                            {childStepProps.submit}
+                        </PrimaryButton>
+                    )}
+                </>
+            }
+        >
+            {childStep}
         </FormModal>
     );
 };
