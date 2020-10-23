@@ -34,15 +34,9 @@
 	&.isDeclined,
 	&.isCancelled {
 		border-color: var(--color-alt);
-		background: var(--bgcolor-highlight, $pm-global-muted);
+		background-color: var(--bgcolor-main-area, #{$white});
 		color: inherit;
 		text-decoration: line-through;
-	}
-	&.isDeclined,
-	&.isCancelled {
-		& > * {
-			opacity: .5;
-		}
 	}
 
 	&.isUnanswered {
@@ -70,7 +64,10 @@
 		border-color: rgba(black, .4);
 		box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .25);
 
-		&.isPast {
+		&.isPast,
+		&.isDeclined,
+		&.isCancelled,
+		&.isUnanswered {
 			border-left-color: var(--color-alt);
 		}
 	}
@@ -104,6 +101,7 @@
 		&.isNotAllDay {
 			border: none;
 
+			&.isPast,
 			&:not(.isUnanswered) {
 				background: none;
 				color: inherit;
