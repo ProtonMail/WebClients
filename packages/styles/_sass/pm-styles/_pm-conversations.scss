@@ -215,7 +215,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 
 	.item-senders {
 		&::before {
-			width: 25%;
+			width: 35%;
 		}
 	}
 
@@ -383,6 +383,10 @@ $conversation-icon-size: 3.2rem !default;
 	font-size: em(12);
 }
 
+.message-header-metas-container {
+	height: $conversation-icon-size;
+}
+
 .starbutton {
 	color: var(--color-main-area, $pm-global-grey);
 	width: 1.6rem;
@@ -413,6 +417,22 @@ $conversation-icon-size: 3.2rem !default;
 
 	.starbutton-icon-starred {
 		transform: scale(1);
+	}
+}
+
+.pill-icon {
+	display: inline-flex;
+	padding: .125em .5em;
+	border-radius: 1em;
+	line-height: 1;
+
+	& > * {
+		color: white;
+	}
+
+	&-attachment {
+		background-color: rgba(black, .5);
+		// Plus some adaptations for dark theme in _pm-dark-theme.scss
 	}
 }
 
@@ -567,21 +587,12 @@ $conversation-icon-size: 3.2rem !default;
 	.message-show-hide-link {
 		padding: 0;
 	}
-
-	@include respond-to($breakpoint-small) {
-		.message-show-hide-link-container,
-		.message-header-expanded-label-container {
-			padding-left: $container-to-width;
-			order: 10;
-		}
-	}
 }
 
 // alignements when expanded/details
 .message-header--showDetails {
 	.message-show-hide-link-container {
-		padding: .25em 0 .4em $container-to-width*2;
-		margin-top: .5em;
+		padding-left: calc(#{$container-to-width} + #{$conversation-icon-size} + .75em);
 	}
 
 	// show/hide details should go below otherwise it will be strangely place depending of recipients
@@ -594,19 +605,12 @@ $conversation-icon-size: 3.2rem !default;
 		}
 	}
 
-	> :not(.message-detailed-header-extra) {
-		.container-to:not(.container-to--item) {
-			margin-top: .35em;
-
-			@include respond-to($breakpoint-small) {
-				margin-top: .6em;
-			}
-
-		}
-	}
-
 	.message-recipient-item-expanded {
-		margin-top: .5em;
+		margin-top: .25em;
+
+		@include respond-to($breakpoint-small) {
+			margin-top: .5em;
+		}
 
 		.message-recipient-item:not(:first-child) {
 			margin-top: .25em;
@@ -622,13 +626,12 @@ $conversation-icon-size: 3.2rem !default;
 			display: block;
 		}
 	}
-	.message-recipient-item-lockIcon {
-		align-self: flex-end;
-		margin-bottom: .25em;
+	.message-recipient-item-lockIcon::before {
+		@include respond-to($breakpoint-small) {
+			content: '\00a0';
+			width: 100%;
+		}
 	}
-
-
-
 }
 
 .message-detailed-header-extra {
@@ -716,14 +719,16 @@ $message-attachment-icon-width: 2.6em !default;
 .container-to {
 	min-width: $container-to-width;
 
-	&:focus,
-	&:hover {
-		.item-abbr {
-			display: none;
-		}
+	.item-icon {
+		&:focus,
+		&:hover {
+			.item-abbr {
+				display: none;
+			}
 
-		.item-caret {
-			display: block;
+			.item-caret {
+				display: block;
+			}
 		}
 	}
 }
