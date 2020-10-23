@@ -36,7 +36,7 @@ const UserDropdown = ({ ...rest }) => {
     const { Name: organizationName } = organization || {};
     const [user] = useUser();
     const [userSettings] = useUserSettings();
-    const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
+    const { UsedSpace, MaxSpace, isMember, canPay, isSubUser } = user;
     const spacePercentage = Math.round((UsedSpace * 100) / MaxSpace);
     const { logout } = useAuthentication();
     const { createModal } = useModals();
@@ -162,16 +162,18 @@ const UserDropdown = ({ ...rest }) => {
                             {c('Action').t`Proton shop`}
                         </a>
                     </li>
-                    <li>
-                        <button
-                            type="button"
-                            className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
-                            onClick={handleSupportUsClick}
-                        >
-                            <Icon className="mt0-25 mr0-5" name="donate" />
-                            {c('Action').t`Support us`}
-                        </button>
-                    </li>
+                    {canPay && !isSubUser ? (
+                        <li>
+                            <button
+                                type="button"
+                                className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
+                                onClick={handleSupportUsClick}
+                            >
+                                <Icon className="mt0-25 mr0-5" name="donate" />
+                                {c('Action').t`Support us`}
+                            </button>
+                        </li>
+                    ) : null}
                     <li className="dropDown-item-hr mt0-5" aria-hidden="false" />
                     <li>
                         <div className="pl1 pr1 pt0-5 pb0-5 w100 flex flex-nowrap flex-spacebetween flex-items-center">
