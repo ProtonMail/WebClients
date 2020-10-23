@@ -19,7 +19,7 @@ const MoveToTrashButton = ({ disabled }: Props) => {
     return (
         <ToolbarButton
             disabled={disabled || moveToTrashLoading}
-            title={c('Action').t`Move to Trash`}
+            title={c('Action').t`Move to trash`}
             icon="trash"
             onClick={() => withMoveToTrashLoading(openMoveToTrash(selectedItems))}
             data-testid="toolbar-trash"

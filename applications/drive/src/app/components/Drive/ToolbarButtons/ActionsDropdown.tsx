@@ -51,7 +51,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
         },
         {
             hidden: false,
-            name: c('Action').t`Move to Folder`,
+            name: c('Action').t`Move to folder`,
             icon: 'arrow-cross',
             testId: 'context-menu-move',
             action: () => openMoveToFolder(selectedItems),
@@ -65,7 +65,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
         },
         {
             hidden: false,
-            name: c('Action').t`Move to Trash`,
+            name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'context-menu-trash',
             action: () => openMoveToTrash(selectedItems),
@@ -102,7 +102,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
                 onClick={toggle}
                 icon={toolbarButtonIcon}
                 data-testid="actions-dropdown"
-                title={c('Title').t`Show Actions`}
+                title={c('Title').t`Show actions`}
             />
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom">
                 <DropdownMenu>{dropdownMenuButtons}</DropdownMenu>

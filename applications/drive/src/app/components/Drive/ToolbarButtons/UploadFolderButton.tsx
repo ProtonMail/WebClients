@@ -14,7 +14,7 @@ const UploadFolderButton = () => {
             <ToolbarButton
                 data-testid="toolbar-upload-folder"
                 icon="folder-upload"
-                title={c('Action').t`Upload Folder`}
+                title={c('Action').t`Upload folder`}
                 onClick={handleUploadFolder}
             />
         </>
