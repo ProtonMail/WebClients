@@ -1,10 +1,10 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
 import { Location, History } from 'history';
+import { UserSettings, MailSettings } from 'proton-shared/lib/interfaces';
 
 import MailboxContainer from './MailboxContainer';
 import { render, addApiMock, clearAll, addToCache, addApiResolver } from '../helpers/test/helper';
-import { UserSettings, MailSettings } from 'proton-shared/lib/interfaces';
 import { Breakpoints } from '../models/utils';
 
 const props = {
@@ -15,21 +15,23 @@ const props = {
     elementID: undefined,
     location: {} as Location,
     history: {} as History,
-    onCompose: jest.fn()
+    onCompose: jest.fn(),
 };
 
 const conversationsResult = {
     Total: 2,
     Conversations: [
         { ID: '1', Labels: [{ ID: props.labelID }] },
-        { ID: '2', Labels: [{ ID: props.labelID }] }
-    ]
+        { ID: '2', Labels: [{ ID: props.labelID }] },
+    ],
 };
 
 describe('MailboxContainer', () => {
     beforeEach(() => {
         clearAll();
         addToCache('Labels', []);
+        addApiMock('mail/v4/messages/count', () => ({}));
+        addApiMock('mail/v4/conversations/count', () => ({}));
     });
 
     it('should show loader instead of list when elements loading', async () => {

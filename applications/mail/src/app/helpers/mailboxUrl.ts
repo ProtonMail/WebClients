@@ -1,9 +1,8 @@
 import { isNumber } from 'proton-shared/lib/helpers/validators';
 import { getSearchParams, changeSearchParams } from 'proton-shared/lib/helpers/url';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-
-import { Sort, Filter, SearchParameters } from '../models/tools';
 import { Location } from 'history';
+import { Sort, Filter, SearchParameters } from '../models/tools';
 import { getHumanLabelID } from './labels';
 
 export const getUrlPathname = (location: Location, labelID: string, elementID?: string, messageID?: string) => {
@@ -13,7 +12,7 @@ export const getUrlPathname = (location: Location, labelID: string, elementID?: 
 export const setPathInUrl = (location: Location, labelID: string, elementID?: string, messageID?: string): Location => {
     return {
         ...location,
-        pathname: getUrlPathname(location, labelID, elementID, messageID)
+        pathname: getUrlPathname(location, labelID, elementID, messageID),
     };
 };
 
@@ -22,7 +21,7 @@ const stringToPage = (string: string | undefined): number => {
         return 0;
     }
     const pageNumber = parseInt(string, 10);
-    if (!isNaN(pageNumber)) {
+    if (!Number.isNaN(pageNumber)) {
         return pageNumber - 1;
     }
     return 0;
@@ -67,7 +66,7 @@ const filterToString = (filter: Filter): string | undefined =>
 
 export const keywordToString = (keyword: string): string | undefined => {
     const trimmed = keyword.trim();
-    return trimmed ? trimmed : undefined;
+    return trimmed || undefined;
 };
 
 export const pageFromUrl = (location: Location) => stringToPage(getSearchParams(location.search).page);
@@ -86,7 +85,7 @@ export const extractSearchParameters = (location: Location): SearchParameters =>
         begin: stringToInt(begin),
         end: stringToInt(end),
         attachments: stringToInt(attachments),
-        wildcard: stringToInt(wildcard)
+        wildcard: stringToInt(wildcard),
     };
 };
 

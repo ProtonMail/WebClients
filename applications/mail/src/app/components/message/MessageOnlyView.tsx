@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useLabels, classnames } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
-import MessageView from '../message/MessageView';
+import MessageView from './MessageView';
 import { useMessage } from '../../hooks/message/useMessage';
 import { OnCompose } from '../../hooks/useCompose';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
@@ -32,7 +32,7 @@ const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onC
     // Manage loading the message
     useEffect(() => {
         if (!messageLoaded) {
-            addAction(load);
+            void addAction(load);
         }
     }, [messageLoaded]);
 

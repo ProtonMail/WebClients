@@ -67,9 +67,8 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
                 updatedMessages = messages.map((message) => {
                     if (message.ID === messageEvent.ID) {
                         return parseLabelIDsInEvent(message, messageEvent);
-                    } else {
-                        return message;
                     }
+                    return message;
                 });
             } else {
                 updatedMessages = [...messages, messageEvent];
@@ -77,7 +76,7 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
 
             cache.set(messageEvent.ConversationID, {
                 Conversation: conversationResult.Conversation,
-                Messages: updatedMessages
+                Messages: updatedMessages,
             });
         });
 
@@ -88,7 +87,7 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
                 if (conversationResult.Messages?.length !== updatedMessages?.length) {
                     cache.set(conversationResult.Conversation.ID as string, {
                         Conversation: conversationResult.Conversation,
-                        Messages: updatedMessages
+                        Messages: updatedMessages,
                     });
                 }
             });
@@ -113,16 +112,16 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
                     );
 
                     if (updatedConversation.NumMessages !== currentValue.Messages?.length) {
-                        reloadConversation(ID);
+                        void reloadConversation(ID);
                     } else {
                         cache.set(ID, {
                             Conversation: updatedConversation,
-                            Messages: currentValue.Messages
+                            Messages: currentValue.Messages,
                         });
                     }
                 } catch (error) {
                     console.warn('Something went wrong on updating a conversation from an event.', error);
-                    reloadConversation(ID);
+                    void reloadConversation(ID);
                 }
             }
         }

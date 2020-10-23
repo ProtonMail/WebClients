@@ -24,9 +24,8 @@ const replaceCounter = (counters: Counter[], counter: Counter) =>
     counters.map((existingCounter: any) => {
         if (existingCounter.LabelID === counter.LabelID) {
             return counter;
-        } else {
-            return existingCounter;
         }
+        return existingCounter;
     });
 
 export const useOptimisticEmptyLabel = () => {
@@ -63,7 +62,7 @@ export const useOptimisticEmptyLabel = () => {
                 if (messages?.length !== conversation.Messages?.length) {
                     conversationCache.set(conversationID, {
                         Conversation: conversation.Conversation,
-                        Messages: messages
+                        Messages: messages,
                     });
                     rollbackConversations.push(conversation);
                 }
@@ -79,8 +78,8 @@ export const useOptimisticEmptyLabel = () => {
                 limit: PAGE_SIZE,
                 page: 0,
                 size: PAGE_SIZE,
-                total: 0
-            }
+                total: 0,
+            },
         });
 
         // Message counters
@@ -90,7 +89,7 @@ export const useOptimisticEmptyLabel = () => {
         ) as Counter;
         globalCache.set(MessageCountsModel.key, {
             ...messageCounters,
-            value: replaceCounter(messageCounters.value, { LabelID: labelID, Total: 0, Unread: 0 })
+            value: replaceCounter(messageCounters.value, { LabelID: labelID, Total: 0, Unread: 0 }),
         });
 
         // Conversation counters
@@ -100,7 +99,7 @@ export const useOptimisticEmptyLabel = () => {
         ) as Counter;
         globalCache.set(ConversationCountsModel.key, {
             ...conversationCounters,
-            value: replaceCounter(conversationCounters.value, { LabelID: labelID, Total: 0, Unread: 0 })
+            value: replaceCounter(conversationCounters.value, { LabelID: labelID, Total: 0, Unread: 0 }),
         });
 
         return () => {
@@ -115,7 +114,7 @@ export const useOptimisticEmptyLabel = () => {
                 const entry = globalCache.get(key) as CacheEntry<Counter[]>;
                 globalCache.set(key, {
                     ...entry,
-                    value: replaceCounter(entry.value, value)
+                    value: replaceCounter(entry.value, value),
                 });
             });
         };

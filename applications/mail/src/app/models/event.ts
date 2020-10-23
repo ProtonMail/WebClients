@@ -1,6 +1,6 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { Conversation } from './conversation';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
+import { Conversation } from './conversation';
 
 interface EventType {
     ID: string;

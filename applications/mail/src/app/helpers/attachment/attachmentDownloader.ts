@@ -32,7 +32,7 @@ export const formatDownload = async (
             attachment,
             data: data as Uint8Array,
             // Only care about signature verification for verified senders with pinned keys
-            verified: reverify ? verified : VERIFICATION_STATUS.NOT_VERIFIED
+            verified: reverify ? verified : VERIFICATION_STATUS.NOT_VERIFIED,
         };
     } catch (error) {
         // If the decryption fails we download the encrypted version
@@ -41,11 +41,11 @@ export const formatDownload = async (
                 attachment: {
                     Name: `${attachment.Name}.pgp`,
                     MIMEType: 'application/pgp',
-                    ID: attachment.ID
+                    ID: attachment.ID,
                 },
                 data: error.binary,
                 isError: true,
-                verified: VERIFICATION_STATUS.NOT_VERIFIED
+                verified: VERIFICATION_STATUS.NOT_VERIFIED,
             };
         }
         throw error;
@@ -55,7 +55,7 @@ export const formatDownload = async (
 /**
  * Generate a download for an attachment
  */
-export const generateDownload = async (download: Download /*, message: MessageExtended*/) => {
+export const generateDownload = async (download: Download /* , message: MessageExtended */) => {
     // TODO: uncomment
     // try {
     //     await checkAllSignatures(message, [attachment]);

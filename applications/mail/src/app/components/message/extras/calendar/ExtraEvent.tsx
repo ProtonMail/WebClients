@@ -14,14 +14,14 @@ import {
     useApi,
     useGetCalendarEventRaw,
     useGetCalendarInfo,
-    useLoading
+    useLoading,
 } from 'react-components';
 import { c } from 'ttag';
 import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
-    getErrorMessage
+    getErrorMessage,
 } from '../../../../helpers/calendar/EventInvitationError';
 import {
     EventInvitation,
@@ -33,7 +33,7 @@ import {
     getInvitationHasEventID,
     getIsInvitationOutdated,
     InvitationModel,
-    UPDATE_ACTION
+    UPDATE_ACTION,
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
 
@@ -49,7 +49,7 @@ const {
     UPDATING_ERROR,
     CANCELLATION_ERROR,
     EVENT_CREATION_ERROR,
-    EVENT_UPDATE_ERROR
+    EVENT_UPDATE_ERROR,
 } = EVENT_INVITATION_ERROR_TYPE;
 
 interface Props {
@@ -70,7 +70,7 @@ const ExtraEvent = ({
     canCreateCalendar,
     contactEmails,
     ownAddresses,
-    userSettings
+    userSettings,
 }: Props) => {
     const [model, setModel] = useState<InvitationModel>(() =>
         getInitialInvitationModel({
@@ -80,7 +80,7 @@ const ExtraEvent = ({
             ownAddresses,
             calendar: defaultCalendar,
             hasNoCalendars: calendars.length === 0,
-            canCreateCalendar
+            canCreateCalendar,
         })
     );
     const [loading, withLoading] = useLoading(true);
@@ -100,10 +100,9 @@ const ExtraEvent = ({
                 ownAddresses,
                 calendar: defaultCalendar,
                 hasNoCalendars: calendars.length === 0,
-                canCreateCalendar
+                canCreateCalendar,
             })
         );
-        return;
     };
 
     const { isOrganizerMode, invitationIcs, isAddressDisabled } = model;
@@ -131,7 +130,7 @@ const ExtraEvent = ({
                     defaultCalendar,
                     message,
                     contactEmails,
-                    ownAddresses
+                    ownAddresses,
                 });
                 invitationApi = invitation;
                 calendarData = calData;
@@ -139,7 +138,9 @@ const ExtraEvent = ({
                 if (parentInvitation) {
                     parentInvitationApi = parentInvitation;
                 }
-                !unmounted && setModel({ ...model, isOutdated, calendarData });
+                if (!unmounted) {
+                    setModel({ ...model, isOutdated, calendarData });
+                }
             } catch (error) {
                 // if fetching fails, proceed as if there was no event in the database
                 return;
@@ -166,14 +167,14 @@ const ExtraEvent = ({
                     isAddressDisabled,
                     message,
                     contactEmails,
-                    ownAddresses
+                    ownAddresses,
                 });
-                const newInvitationApi = updatedInvitationApi ? updatedInvitationApi : invitationApi;
+                const newInvitationApi = updatedInvitationApi || invitationApi;
                 const isOutdated =
                     updateAction !== UPDATE_ACTION.NONE
                         ? false
                         : getIsInvitationOutdated(invitationIcs.vevent, newInvitationApi.vevent);
-                !unmounted &&
+                if (!unmounted) {
                     setModel({
                         ...model,
                         invitationApi: newInvitationApi,
@@ -181,19 +182,22 @@ const ExtraEvent = ({
                         calendarData,
                         timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now()),
                         isOutdated,
-                        updateAction
+                        updateAction,
                     });
+                }
             } catch (e) {
-                !unmounted &&
+                if (!unmounted) {
                     setModel({
                         ...model,
                         invitationApi,
                         parentInvitationApi,
-                        error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR)
+                        error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR),
                     });
+                }
             }
         };
-        withLoading(run());
+
+        void withLoading(run());
 
         return () => {
             unmounted = true;

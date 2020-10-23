@@ -8,7 +8,7 @@ import {
     ConfirmModal,
     ErrorButton,
     useModals,
-    Alert
+    Alert,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { deleteMessages } from 'proton-shared/lib/api/messages';
@@ -107,7 +107,7 @@ const DeleteButton = ({ labelID = '', conversationMode, selectedIDs = [] }: Prop
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const count = selectedIDs.length;
-    const draft = labelID === DRAFTS || labelID == ALL_DRAFTS;
+    const draft = labelID === DRAFTS || labelID === ALL_DRAFTS;
 
     const handleDelete = async () => {
         const modalTitle = getDeleteTitle(draft, conversationMode, count);

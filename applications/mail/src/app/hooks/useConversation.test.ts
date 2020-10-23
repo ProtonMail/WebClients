@@ -39,7 +39,7 @@ describe('useConversation', () => {
         addApiMock('mail/v4/conversations/ID', () => response);
         const hook = setup();
         expect(hook.result.current.conversation).toBe(undefined);
-        await act(async () => await wait(0));
+        await act(async () => wait(0));
         expect(hook.result.current.conversation).toBe(response);
     });
 

@@ -7,13 +7,13 @@ import { getFrequencyString } from 'proton-shared/lib/calendar/integration/getFr
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import {
     formatEndDateTime,
     formatStartDateTime,
     getAllDayInfo,
-    InvitationModel
+    InvitationModel,
 } from '../../../../helpers/calendar/invite';
-import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import ExtraEventParticipants from './ExtraEventParticipants';
 
 interface Props {
@@ -26,7 +26,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
         calendarData,
         invitationIcs,
         invitationIcs: { method },
-        invitationApi
+        invitationApi,
     } = model;
     const { vevent, organizer, participants } =
         method === ICAL_METHOD.DECLINECOUNTER && invitationApi ? invitationApi : invitationIcs;
@@ -48,12 +48,12 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
         {
             label: c('Label').t`Start time`,
             value: formatStartDateTime(dtstart, dateLocale, isAllDay, isSingleAllDay),
-            key: 'startTime'
+            key: 'startTime',
         },
         !isSingleAllDay && {
             label: c('Label').t`End time`,
             value: formatEndDateTime(dtend, dateLocale, isAllDay),
-            key: 'endTime'
+            key: 'endTime',
         },
         !!frequencyString && { label: c('Label').t`Repeats`, value: frequencyString, key: 'frequency' },
         !!calendar && { label: c('Label').t`Calendar`, value: calendar, key: 'calendar' },
@@ -62,14 +62,14 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
             organizer && {
                 label: c('Label').t`Organizer`,
                 value: <ExtraEventParticipants list={[organizer]} />,
-                key: 'organizer'
+                key: 'organizer',
             },
         totalParticipants && {
             label:
                 totalParticipants === 1 ? c('Label').t`Participant` : c('Label').t`Participants (${totalParticipants})`,
             value: <ExtraEventParticipants list={participants} />,
-            key: 'participants'
-        }
+            key: 'participants',
+        },
     ].filter(isTruthy);
 
     return (
@@ -77,6 +77,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
             {properties.map(({ value, label, key }, index) => {
                 return (
                     <div key={key} className={classnames(['flex', index < properties.length - 1 && 'mb0-5'])}>
+                        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                         <label className="mr1 w20">{label}</label>
                         <div className="flex-item-fluid">{value}</div>
                     </div>

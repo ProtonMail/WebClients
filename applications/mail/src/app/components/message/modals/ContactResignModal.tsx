@@ -9,13 +9,12 @@ import {
     useLoading,
     useGetUserKeys,
     PrimaryButton,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
 import { resignCards } from 'proton-shared/lib/contacts/resign';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { updateContact } from 'proton-shared/lib/api/contacts';
-import { getContact } from 'proton-shared/lib/api/contacts';
+import { updateContact, getContact } from 'proton-shared/lib/api/contacts';
 import { ContactEmail, ContactCard } from 'proton-shared/lib/interfaces/contacts';
 import { c } from 'ttag';
 
@@ -60,7 +59,7 @@ const ContactResignModal = ({
     useEffect(() => {
         const getContactFingerprintsByEmailMap = async (contactID: string) => {
             const {
-                Contact: { Cards, ContactEmails }
+                Contact: { Cards, ContactEmails },
             } = await api(getContact(contactID));
 
             const fingerprintsByEmail: { [key: string]: string[] | undefined } = {};
@@ -77,13 +76,13 @@ const ContactResignModal = ({
 
             setContactFingerprintsByEmailMap((fingerprintsByEmailMap) => ({
                 ...fingerprintsByEmailMap,
-                ...fingerprintsByEmail
+                ...fingerprintsByEmail,
             }));
             setContactCardsMap((map) => ({ ...map, [contactID]: Cards }));
             setLoadingMap((map) => ({ ...map, [contactID]: false }));
         };
 
-        Promise.all(contacts.map(({ contactID }) => getContactFingerprintsByEmailMap(contactID)));
+        void Promise.all(contacts.map(({ contactID }) => getContactFingerprintsByEmailMap(contactID)));
     }, []);
 
     const handleSubmit = async () => {
@@ -98,7 +97,7 @@ const ContactResignModal = ({
                     }
                     const resignedCards = await resignCards({
                         contactCards,
-                        privateKeys: [privateKeys[0]]
+                        privateKeys: [privateKeys[0]],
                     });
                     resignedCardsMap[contactID] = resignedCards;
                 })

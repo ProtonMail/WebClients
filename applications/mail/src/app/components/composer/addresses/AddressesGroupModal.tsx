@@ -27,13 +27,13 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
         !!model?.recipients?.find((recipient) => contact.Email === recipient.Address);
 
     const handleChange = (contact: ContactEmail) => (event: ChangeEvent<HTMLInputElement>) => {
-        const checked = event.target.checked;
+        const { checked } = event.target;
         const recipients = model.recipients || [];
         let newValue;
         if (checked) {
             newValue = [
                 ...recipients,
-                { Name: contact.Name, Address: contact.Email, Group: recipientGroup?.group?.Path }
+                { Name: contact.Name, Address: contact.Email, Group: recipientGroup?.group?.Path },
             ];
         } else {
             newValue = recipients.filter((recipient) => recipient.Address !== contact.Email);

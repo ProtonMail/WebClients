@@ -14,7 +14,7 @@ import {
     isSent,
     isSentAndReceived,
     ORIGINAL_MESSAGE,
-    RE_PREFIX
+    RE_PREFIX,
 } from 'proton-shared/lib/mail/messages';
 import { generateUID } from 'react-components';
 import { c } from 'ttag';
@@ -59,12 +59,12 @@ export const keepEmbeddeds = (refEmbeddeds?: EmbeddedMap) => {
 const newCopy = (
     {
         data: { Subject = '', ToList = [], CCList = [], BCCList = [] } = {},
-        decryptedSubject = ''
+        decryptedSubject = '',
     }: PartialMessageExtended = {},
     useEncrypted = false
 ): PartialMessageExtended => {
     return {
-        data: { Subject: useEncrypted ? decryptedSubject : Subject, ToList, CCList, BCCList }
+        data: { Subject: useEncrypted ? decryptedSubject : Subject, ToList, CCList, BCCList },
     };
 };
 
@@ -85,7 +85,7 @@ const reply = (referenceMessage: PartialMessageExtended, useEncrypted = false): 
 
     return {
         data: { Subject, ToList, Attachments },
-        embeddeds
+        embeddeds,
     };
 };
 
@@ -106,7 +106,7 @@ const replyAll = (
     if (isSent(referenceMessage.data) || isSentAndReceived(referenceMessage.data)) {
         return {
             data: { Subject, ToList: data.ToList, CCList: data.CCList, BCCList: data.BCCList, Attachments },
-            embeddeds
+            embeddeds,
         };
     }
 
@@ -145,15 +145,15 @@ export const handleActions = (
     const useEncrypted = !!referenceMessage?.decryptedSubject;
 
     switch (action) {
-        case MESSAGE_ACTIONS.NEW:
-            return newCopy(referenceMessage, useEncrypted);
         case MESSAGE_ACTIONS.REPLY:
             return reply(referenceMessage, useEncrypted);
         case MESSAGE_ACTIONS.REPLY_ALL:
             return replyAll(referenceMessage, useEncrypted, addresses);
         case MESSAGE_ACTIONS.FORWARD:
             return forward(referenceMessage, useEncrypted);
-        // No default needed as all enum values are addressed
+        case MESSAGE_ACTIONS.NEW:
+        default:
+            return newCopy(referenceMessage, useEncrypted);
     }
 };
 
@@ -191,7 +191,7 @@ export const createNewDraft = (
     addresses: Address[]
 ): PartialMessageExtended => {
     const MIMEType = referenceMessage?.data?.MIMEType || ((mailSettings.DraftMIMEType as unknown) as MIME_TYPES);
-    const RightToLeft = mailSettings.RightToLeft;
+    const { RightToLeft } = mailSettings;
 
     let Flags = 0;
     if (mailSettings.AttachPublicKey) {
@@ -203,7 +203,7 @@ export const createNewDraft = (
 
     const {
         data: { Subject = '', ToList = [], CCList = [], BCCList = [], Attachments = [] } = {},
-        embeddeds
+        embeddeds,
     } = handleActions(action, referenceMessage, addresses);
 
     const originalTo = getOriginalTo(referenceMessage?.data);
@@ -221,7 +221,7 @@ export const createNewDraft = (
 
     const plain = isPlainText({ MIMEType });
     const document = plain ? undefined : parseInDiv(content);
-    const plainText = plain ? '\n\n' + exportPlainText(content) : undefined;
+    const plainText = plain ? `\n\n${exportPlainText(content)}` : undefined;
 
     return {
         localID: generateUID(DRAFT_ID_PREFIX),
@@ -237,7 +237,7 @@ export const createNewDraft = (
             Flags,
             Sender,
             AddressID,
-            Unread: 0
+            Unread: 0,
         },
         ParentID,
         document,
@@ -246,7 +246,7 @@ export const createNewDraft = (
         expiresIn: 0,
         originalTo,
         initialized: true,
-        embeddeds
+        embeddeds,
     };
 };
 
@@ -254,7 +254,7 @@ export const cloneDraft = (draft: MessageExtendedWithData): MessageExtendedWithD
     return {
         ...draft,
         data: { ...draft.data },
-        document: draft.document?.cloneNode(true) as Element
+        document: draft.document?.cloneNode(true) as Element,
     };
 };
 

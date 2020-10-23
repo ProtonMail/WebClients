@@ -18,7 +18,7 @@ const { SEND_PM, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME, SEND_EO, SEND_CLEAR
 const sendPM = async ({ publicKeys }: Pick<SendPreferences, 'publicKeys'>, message: Message) => ({
     Type: SEND_PM,
     PublicKey: (publicKeys?.length && publicKeys[0]) || undefined,
-    Signature: getAttachments(message).every(({ Signature }) => Signature)
+    Signature: getAttachments(message).every(({ Signature }) => Signature),
 });
 
 /**
@@ -31,7 +31,7 @@ const sendPMEncryptedOutside = async (message: Message, api: Api) => {
 
         const [{ data: EncToken }, { Auth }] = await Promise.all([
             encryptMessage({ data: Token, publicKeys: [], passwords: [message.Password] }),
-            srpGetVerify({ api, credentials: { password: message.Password || '' } })
+            srpGetVerify({ api, credentials: { password: message.Password || '' } }),
         ]);
 
         return {
@@ -40,7 +40,7 @@ const sendPMEncryptedOutside = async (message: Message, api: Api) => {
             PasswordHint: message.PasswordHint,
             Token,
             EncToken,
-            Signature: +message.Attachments.every(({ Signature }) => Signature)
+            Signature: +message.Attachments.every(({ Signature }) => Signature),
         };
     } catch (err) {
         // TODO: mark encryption failed
@@ -56,14 +56,14 @@ const sendPGPMime = async ({ encrypt, sign, publicKeys }: Pick<SendPreferences, 
     if (encrypt) {
         return {
             Type: SEND_PGP_MIME,
-            PublicKey: (publicKeys?.length && publicKeys[0]) || undefined
+            PublicKey: (publicKeys?.length && publicKeys[0]) || undefined,
         };
     }
 
     // PGP/MIME signature only
     return {
         Type: SEND_CLEAR_MIME,
-        Signature: +sign
+        Signature: +sign,
     };
 };
 
@@ -78,14 +78,14 @@ const sendPGPInline = async (
         return {
             Type: SEND_PGP_INLINE,
             PublicKey: (publicKeys?.length && publicKeys[0]) || undefined,
-            Signature: getAttachments(message).every(({ Signature }) => Signature)
+            Signature: getAttachments(message).every(({ Signature }) => Signature),
         };
     }
 
     // PGP/Inline signature only
     return {
         Type: SEND_CLEAR,
-        Signature: +sign
+        Signature: +sign,
     };
 };
 
@@ -140,6 +140,7 @@ export const attachSubPackages = async (
                 return bindPackageSet(sendPGPInline({ encrypt, sign, publicKeys }, message.data), email, PLAINTEXT);
             case SEND_EO:
             case SEND_CLEAR:
+            default:
                 // Encrypted for outside (EO)
                 if (isEO(message.data)) {
                     return bindPackageSet(sendPMEncryptedOutside(message.data, api), email, packageType);

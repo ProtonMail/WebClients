@@ -43,7 +43,7 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
                     <DropdownMenu>
                         {[...Array(count)].map((_, i) => (
                             <DropdownMenuButton
-                                key={i}
+                                key={i} // eslint-disable-line react/no-array-index-key
                                 loading={loading}
                                 disabled={page.page === i}
                                 onClick={handlePage(i)}

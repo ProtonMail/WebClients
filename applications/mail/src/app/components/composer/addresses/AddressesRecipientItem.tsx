@@ -11,11 +11,13 @@ import {
     DropdownMenuButton,
     DropdownMenu,
     useNotifications,
-    ContactModal
+    ContactModal,
 } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 
 import { recipientToInput, inputToRecipient } from '../../../helpers/addresses';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
@@ -24,8 +26,6 @@ import { useUpdateRecipientSendInfo, MessageSendInfo } from '../../../hooks/useS
 import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useDragOver } from '../../../hooks/useDragOver';
 import { getContactOfRecipient } from '../../../helpers/contacts';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 
 interface Props {
     recipient: RequireSome<Recipient, 'Address' | 'ContactID'>;
@@ -72,7 +72,7 @@ const AddressesRecipientItem = ({
         anchorRef: itemRef,
         isOpen: contextMenuIsOpen,
         open: openContextMenu,
-        close: closeContextMenu
+        close: closeContextMenu,
     } = usePopperAnchor<HTMLDivElement>();
 
     const { handleRemove } = useUpdateRecipientSendInfo(messageSendInfo, recipient, onRemove);
@@ -134,7 +134,7 @@ const AddressesRecipientItem = ({
                 <ContactModal
                     properties={[
                         { field: 'email', value: recipient.Address || '' },
-                        { field: 'fn', value: recipient.Name || recipient.Address || '' }
+                        { field: 'fn', value: recipient.Name || recipient.Address || '' },
                     ]}
                 />
             );
@@ -152,7 +152,7 @@ const AddressesRecipientItem = ({
     }, []);
 
     const [, dragHandlers] = useDragOver((event) => event.dataTransfer.types.includes(DRAG_ADDRESS_KEY), 'move', {
-        onDragOver: onDragOver?.(itemRef)
+        onDragOver: onDragOver?.(itemRef),
     });
 
     return (
@@ -163,7 +163,7 @@ const AddressesRecipientItem = ({
                     !valid && 'invalid',
                     cannotSend && 'color-global-warning',
                     dragged && 'composer-addresses-item-dragged',
-                    !editableMode && 'cursor-grab'
+                    !editableMode && 'cursor-grab',
                 ])}
                 data-dragover="composer-addresses-item"
                 data-testid="composer-addresses-item"

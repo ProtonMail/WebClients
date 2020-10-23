@@ -12,7 +12,7 @@ import { c } from 'ttag';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
-    getErrorMessage
+    getErrorMessage,
 } from '../../../../helpers/calendar/EventInvitationError';
 import { InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
@@ -32,11 +32,11 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         invitationApi,
         calendarData,
         isAddressDisabled,
-        error
+        error,
     } = model;
     const partstat = invitationApi?.attendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
-    const attendee = (invitationApi || invitationIcs).attendee;
-    const organizer = (invitationApi || invitationIcs).organizer;
+    const { attendee } = invitationApi || invitationIcs;
+    const { organizer } = invitationApi || invitationIcs;
 
     const [loadingRetry, withLoadingRetry] = useLoading();
     const { createNotification } = useNotifications();
@@ -44,19 +44,19 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     const handleEmailSuccess = () => {
         createNotification({
             type: 'success',
-            text: c('Reply to calendar invitation').t`Answer sent`
+            text: c('Reply to calendar invitation').t`Answer sent`,
         });
     };
     const handleCreateEventSuccess = () => {
         createNotification({
             type: 'success',
-            text: c('Reply to calendar invitation').t`Calendar event created`
+            text: c('Reply to calendar invitation').t`Calendar event created`,
         });
     };
     const handleUpdateEventSuccess = () => {
         createNotification({
             type: 'success',
-            text: c('Reply to calendar invitation').t`Calendar event updated`
+            text: c('Reply to calendar invitation').t`Calendar event updated`,
         });
     };
     const handleSuccess = useCallback(
@@ -67,21 +67,21 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
             const savedAttendee: Participant = {
                 ...attendee,
                 vcalComponent: savedVcalAttendee,
-                partstat: getAttendeePartstat(savedVcalAttendee)
+                partstat: getAttendeePartstat(savedVcalAttendee),
             };
             const invitationApiToSave = {
                 ...invitationApi,
                 vevent: savedVevent,
                 calendarEvent: savedEvent,
                 attendee: savedAttendee,
-                organizer
+                organizer,
             };
             setModel({
                 ...omit(model, ['error']),
                 invitationApi: invitationApiToSave,
                 hideSummary: true,
                 hideLink: false,
-                updateAction: UPDATE_ACTION.NONE
+                updateAction: UPDATE_ACTION.NONE,
             });
         },
         [invitationApi, attendee, organizer]
@@ -90,13 +90,13 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     const handleUnexpectedError = () => {
         setModel({
             ...model,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR)
+            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR),
         });
     };
     const handleCreateEventError = (partstat: ICAL_ATTENDEE_STATUS) => {
         createNotification({
             type: 'error',
-            text: c('Reply to calendar invitation').t`Creating calendar event failed`
+            text: c('Reply to calendar invitation').t`Creating calendar event failed`,
         });
         if (error instanceof EventInvitationError && error.type === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR) {
             handleUnexpectedError();
@@ -105,13 +105,13 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         setModel({
             ...model,
             hideLink: true,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR, { partstat })
+            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR, { partstat }),
         });
     };
     const handleUpdateEventError = (partstat: ICAL_ATTENDEE_STATUS) => {
         createNotification({
             type: 'error',
-            text: c('Reply to calendar invitation').t`Updating calendar event failed`
+            text: c('Reply to calendar invitation').t`Updating calendar event failed`,
         });
         if (error instanceof EventInvitationError && error.type === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR) {
             handleUnexpectedError();
@@ -120,13 +120,13 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         setModel({
             ...model,
             hideLink: true,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR, { partstat })
+            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR, { partstat }),
         });
     };
     const handleEmailError = () => {
         createNotification({
             type: 'error',
-            text: c('Reply to calendar invitation').t`Answering invitation failed`
+            text: c('Reply to calendar invitation').t`Answering invitation failed`,
         });
     };
 
@@ -151,7 +151,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         onUpdateEventError: handleUpdateEventError,
         onSuccess: handleSuccess,
         onUnexpectedError: handleUnexpectedError,
-        disabled: buttonsDisabled
+        disabled: buttonsDisabled,
     });
 
     if (error && [EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR].includes(error.type)) {

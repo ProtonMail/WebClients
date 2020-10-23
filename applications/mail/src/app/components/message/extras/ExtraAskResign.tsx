@@ -4,7 +4,7 @@ import { Icon, Href, useContactEmails, useModals, Alert } from 'react-components
 import { c } from 'ttag';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
-import ContactResignModal from '../../../components/message/modals/ContactResignModal';
+import ContactResignModal from '../modals/ContactResignModal';
 import { MessageExtended } from '../../../models/message';
 
 interface Props {

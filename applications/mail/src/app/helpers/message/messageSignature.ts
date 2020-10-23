@@ -43,7 +43,7 @@ const getSpaces = (signature: string, protonSignature: string, isReply = false) 
     return {
         start: isEmptySignature ? createSpace() : createSpace() + createSpace(),
         end: isReply ? createSpace() : '',
-        between: !isUserEmpty && protonSignature ? createSpace() : ''
+        between: !isUserEmpty && protonSignature ? createSpace() : '',
     };
 };
 
@@ -56,7 +56,7 @@ const getClassNamesSignature = (signature: string, protonSignature: string) => {
     return {
         userClass: isUserEmpty ? CLASSNAME_SIGNATURE_EMPTY : '',
         protonClass: isProtonEmpty ? CLASSNAME_SIGNATURE_EMPTY : '',
-        containerClass: isUserEmpty && isProtonEmpty ? CLASSNAME_SIGNATURE_EMPTY : ''
+        containerClass: isUserEmpty && isProtonEmpty ? CLASSNAME_SIGNATURE_EMPTY : '',
     };
 };
 
@@ -130,26 +130,25 @@ export const changeSignature = (
         const oldSignatureText = exportPlainText(oldTemplate).trim();
         const newSignatureText = exportPlainText(newTemplate).trim();
         return content.replace(oldSignatureText, newSignatureText);
-    } else {
-        const document = message.document as Element;
-
-        const userSignature = [...document.querySelectorAll(`.${CLASSNAME_SIGNATURE_USER}`)].find(
-            (element) => element.closest(`.${CLASSNAME_BLOCKQUOTE}`) === null
-        );
-
-        if (userSignature) {
-            const protonSignature = getProtonSignature(mailSettings);
-            const { userClass, containerClass } = getClassNamesSignature(newSignature, protonSignature);
-
-            userSignature.innerHTML = replaceLineBreaks(newSignature);
-            userSignature.className = `${CLASSNAME_SIGNATURE_USER} ${userClass}`;
-
-            const signatureContainer = userSignature?.closest(`.${CLASSNAME_SIGNATURE_CONTAINER}`);
-            if (signatureContainer && signatureContainer !== null) {
-                signatureContainer.className = `${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}`;
-            }
-        }
-
-        return document.innerHTML;
     }
+    const document = message.document as Element;
+
+    const userSignature = [...document.querySelectorAll(`.${CLASSNAME_SIGNATURE_USER}`)].find(
+        (element) => element.closest(`.${CLASSNAME_BLOCKQUOTE}`) === null
+    );
+
+    if (userSignature) {
+        const protonSignature = getProtonSignature(mailSettings);
+        const { userClass, containerClass } = getClassNamesSignature(newSignature, protonSignature);
+
+        userSignature.innerHTML = replaceLineBreaks(newSignature);
+        userSignature.className = `${CLASSNAME_SIGNATURE_USER} ${userClass}`;
+
+        const signatureContainer = userSignature?.closest(`.${CLASSNAME_SIGNATURE_CONTAINER}`);
+        if (signatureContainer && signatureContainer !== null) {
+            signatureContainer.className = `${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}`;
+        }
+    }
+
+    return document.innerHTML;
 };

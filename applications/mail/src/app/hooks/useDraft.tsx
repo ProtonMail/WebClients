@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { c } from 'ttag';
 import {
     useCache,
@@ -8,13 +8,12 @@ import {
     Alert,
     useGetMailSettings,
     useGetAddresses,
-    useGetUser
+    useGetUser,
 } from 'react-components';
 import { isPaid } from 'proton-shared/lib/user/helpers';
 
 import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
 import { MESSAGE_ACTIONS } from '../constants';
-import { useEffect, useCallback } from 'react';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../models/message';
 import { useMessageCache } from '../containers/MessageProvider';
 import { findSender } from '../helpers/addresses';
@@ -69,7 +68,7 @@ export const useDraft = () => {
             const message = createNewDraft(MESSAGE_ACTIONS.NEW, undefined, mailSettings, addresses);
             cache.set(CACHE_KEY, message);
         };
-        run();
+        void run();
     }, [cache]);
 
     const createDraft = useCallback(

@@ -49,7 +49,7 @@ const MessageView = ({
     conversationID,
     onBack,
     onCompose,
-    breakpoints
+    breakpoints,
 }: Props) => {
     const inputMessageIsDraft = !loading && isDraft(inputMessage);
 
@@ -90,14 +90,14 @@ const MessageView = ({
     // Manage loading the message
     useEffect(() => {
         if (!loading && !messageLoaded) {
-            addAction(load);
+            void addAction(load);
         }
     }, [loading, messageLoaded]);
 
     // Manage preparing the content of the message
     useEffect(() => {
         if (!loading && expanded && message.initialized === undefined) {
-            addAction(initialize);
+            void addAction(initialize);
         }
     }, [loading, expanded, message.initialized]);
 
@@ -106,8 +106,9 @@ const MessageView = ({
         if (!hasBeenFocused && inputExpand && messageLoaded && conversationIndex !== 0) {
             // Let the browser render the content before scrolling
             setTimeout(() => {
-                elementRef.current &&
+                if (elementRef.current) {
                     elementRef.current.scrollIntoView({ behavior: bodyLoaded ? 'smooth' : 'auto', block: 'start' });
+                }
             });
             setHasBeenFocused(bodyLoaded);
         }
@@ -170,7 +171,7 @@ const MessageView = ({
             className={classnames([
                 'message-container m0-5 mb1',
                 expanded && 'is-opened',
-                hasAttachments(message.data) && 'message-container--hasAttachment'
+                hasAttachments(message.data) && 'message-container--hasAttachment',
             ])}
             style={{ '--index': conversationIndex * 2 }}
         >
@@ -215,7 +216,6 @@ const MessageView = ({
                     mailSettings={mailSettings}
                     isSentMessage={sent}
                     isUnreadMessage={unread}
-                    isDraftMessage={draft}
                     onExpand={handleExpand(true)}
                     onCompose={onCompose}
                     breakpoints={breakpoints}

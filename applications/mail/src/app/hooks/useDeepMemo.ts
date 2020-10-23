@@ -13,9 +13,9 @@ export const useDeepMemo = <T>(factory: () => T, deps: DependencyList): T => {
 
         if (isDeepEqual(newValue, previousValue.current)) {
             return previousValue.current as T;
-        } else {
-            previousValue.current = newValue;
-            return newValue;
         }
+
+        previousValue.current = newValue;
+        return newValue;
     }, deps);
 };

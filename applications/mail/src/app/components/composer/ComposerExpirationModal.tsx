@@ -14,7 +14,7 @@ const initValues = ({ expiresIn = 0 }: Partial<MessageExtended> = {}) => {
 
     return {
         days: deltaDays,
-        hours: deltaHours % 24
+        hours: deltaHours % 24,
     };
 };
 
@@ -54,10 +54,10 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
     };
 
     const handleSubmit = () => {
-        if (isNaN(valueInHours)) {
+        if (Number.isNaN(valueInHours)) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`Invalid expiration time.`
+                text: c('Error').t`Invalid expiration time.`,
             });
             return;
         }
@@ -65,7 +65,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         if (valueInHours > MAX_EXPIRATION_TIME) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`The maximum expiration is 4 weeks.`
+                text: c('Error').t`The maximum expiration is 4 weeks.`,
             });
             return;
         }
@@ -79,7 +79,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         onClose();
     };
 
-    const disabled = valueInHours === 0 || isNaN(valueInHours);
+    const disabled = valueInHours === 0 || Number.isNaN(valueInHours);
 
     return (
         <ComposerInnerModal

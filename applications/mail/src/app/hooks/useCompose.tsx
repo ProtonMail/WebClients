@@ -8,7 +8,7 @@ import {
     Alert,
     useAddresses,
     useAppLink,
-    useGetUser
+    useGetUser,
 } from 'react-components';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
@@ -37,7 +37,7 @@ export const getComposeNew = (composeArgs: ComposeArgs) =>
 
 export const getComposeArgs = (composeArgs: ComposeArgs) => ({
     composeExisting: getComposeExisting(composeArgs),
-    composeNew: getComposeNew(composeArgs)
+    composeNew: getComposeNew(composeArgs),
 });
 
 export interface OnCompose {
@@ -73,14 +73,14 @@ export const useCompose = (
                         <br />
                         {c('Error').t`Contact your organization’s administrator to resolve this.`}
                     </>
-                )
+                ),
             });
             return;
         }
 
         const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
 
-        if (!isNaN(spacePercentage) && spacePercentage >= 100) {
+        if (!Number.isNaN(spacePercentage) && spacePercentage >= 100) {
             createModal(
                 <ConfirmModal
                     title={c('Title').t`Storage capacity warning`}
@@ -103,7 +103,7 @@ export const useCompose = (
         if (openComposers.length >= maxActiveComposer) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`Maximum composer reached`
+                text: c('Error').t`Maximum composer reached`,
             });
             return;
         }

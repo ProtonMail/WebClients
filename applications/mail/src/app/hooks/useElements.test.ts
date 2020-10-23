@@ -14,7 +14,7 @@ import {
     api,
     triggerEvent,
     addApiResolver,
-    addToCache
+    addToCache,
 } from '../helpers/test/helper';
 import { ConversationLabel, Conversation } from '../models/conversation';
 import { Event } from '../models/event';
@@ -37,7 +37,7 @@ describe('useElements', () => {
     const element3 = {
         ID: 'id3',
         Labels: [{ ID: 'otherLabelID', ContextTime: 3 }],
-        LabelIDs: ['otherLabelID']
+        LabelIDs: ['otherLabelID'],
     } as Element;
     const defaultSort = { sort: 'Time', desc: true } as Sort;
     const defaultFilter = {};
@@ -48,7 +48,7 @@ describe('useElements', () => {
             ID: `id${i}`,
             Labels: [{ ID: label, ContextTime: i }] as ConversationLabel[],
             LabelIDs: [label],
-            ...elementProps
+            ...elementProps,
         }));
 
     let renderHookResult: RenderHookResult<any, any> | null = null;
@@ -60,7 +60,7 @@ describe('useElements', () => {
         page = { page: 0, size: 50, limit: 50, total: elements.length },
         sort = defaultSort,
         filter = defaultFilter,
-        search = defaultSearch
+        search = defaultSearch,
     }: SetupArgs = {}) => {
         const counts = { LabelID: inputLabelID, Total: page.total };
         addToCache('ConversationCounts', conversationMode ? [counts] : []);
@@ -100,7 +100,7 @@ describe('useElements', () => {
         it('should filter message with the right label', async () => {
             const hook = await setup({
                 page: { page: 0, size: 50, limit: 50, total: 2 },
-                elements: [element1, element2, element3]
+                elements: [element1, element2, element3],
             });
             expect(hook.result.current.elements.length).toBe(2);
         });
@@ -146,9 +146,9 @@ describe('useElements', () => {
                     LabelID: labelID,
                     Sort: 'Time',
                     Limit: page.limit,
-                    PageSize: page.size
+                    PageSize: page.size,
                 } as any),
-                signal: new AbortController().signal
+                signal: new AbortController().signal,
             };
 
             const result = await setup({ elements: getElements(page.size), page });
@@ -174,7 +174,9 @@ describe('useElements', () => {
             const element = { ID: 'id3', Labels: [{ ID: labelID }], LabelIDs: [labelID] };
             await sendEvent({
                 ConversationCounts: [{ LabelID: labelID, Total: page.total + 1, Unread: 0 }],
-                Conversations: [{ ID: element.ID, Action: EVENT_ACTIONS.CREATE, Conversation: element as Conversation }]
+                Conversations: [
+                    { ID: element.ID, Action: EVENT_ACTIONS.CREATE, Conversation: element as Conversation },
+                ],
             });
             expect(hook.result.current.elements.length).toBe(4);
         });
@@ -189,7 +191,9 @@ describe('useElements', () => {
 
             const element = { ID: 'id3', Labels: [{ ID: labelID }], LabelIDs: [labelID] };
             await sendEvent({
-                Conversations: [{ ID: element.ID, Action: EVENT_ACTIONS.CREATE, Conversation: element as Conversation }]
+                Conversations: [
+                    { ID: element.ID, Action: EVENT_ACTIONS.CREATE, Conversation: element as Conversation },
+                ],
             });
             expect(hook.result.current.elements.length).toBe(3);
             expect(api.mock.calls.length).toBe(2);
@@ -204,7 +208,7 @@ describe('useElements', () => {
 
             const ID = 'id0';
             await sendEvent({
-                Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }]
+                Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }],
             });
             expect(hook.result.current.elements.length).toBe(3);
             expect(api.mock.calls.length).toBe(1);
@@ -216,7 +220,7 @@ describe('useElements', () => {
 
             const ID = 'id0';
             await sendEvent({
-                Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }]
+                Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }],
             });
             expect(hook.result.current.elements.length).toBe(3);
             expect(api.mock.calls.length).toBe(1);
@@ -228,7 +232,7 @@ describe('useElements', () => {
 
             const ID = 'id0';
             await sendEvent({
-                Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }]
+                Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }],
             });
             expect(hook.result.current.elements.length).toBe(5);
             expect(api.mock.calls.length).toBe(2);
@@ -241,7 +245,7 @@ describe('useElements', () => {
 
             const ID = 'id10';
             await sendEvent({
-                Conversations: [{ ID, Action: EVENT_ACTIONS.DELETE, Conversation: { ID } as Conversation }]
+                Conversations: [{ ID, Action: EVENT_ACTIONS.DELETE, Conversation: { ID } as Conversation }],
             });
             expect(hook.result.current.elements.length).toBe(3);
             expect(api.mock.calls.length).toBe(2);
@@ -255,7 +259,7 @@ describe('useElements', () => {
             await setup({ elements, page });
 
             await sendEvent({
-                ConversationCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }]
+                ConversationCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }],
             });
 
             expect(api.mock.calls.length).toBe(2);
@@ -270,7 +274,7 @@ describe('useElements', () => {
             await setup({ elements, page, search });
 
             await sendEvent({
-                ConversationCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }]
+                ConversationCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }],
             });
 
             expect(api.mock.calls.length).toBe(1);
@@ -292,13 +296,15 @@ describe('useElements', () => {
 
             const element = setTime({ ...elements[4] }, 0);
             await sendEvent({
-                Conversations: [{ ID: element.ID || '', Action: EVENT_ACTIONS.UPDATE_FLAGS, Conversation: element }]
+                Conversations: [{ ID: element.ID || '', Action: EVENT_ACTIONS.UPDATE_FLAGS, Conversation: element }],
             });
 
             expect(api.mock.calls.length).toBe(2);
         });
 
         it('should not show the loader if not live cache but params has not changed', async () => {
+            addApiMock('mail/v4/messages/count', () => ({}));
+            addApiMock('mail/v4/conversations/count', () => ({}));
             const resolve = addApiResolver('mail/v4/conversations');
 
             const page: Page = { page: 0, size: 5, limit: 5, total: 5 };
@@ -313,7 +319,7 @@ describe('useElements', () => {
                     sort: defaultSort,
                     filter: defaultFilter,
                     search,
-                    ...props
+                    ...props,
                 })
             );
 
@@ -329,7 +335,7 @@ describe('useElements', () => {
 
             const element = elements[0];
             await sendEvent({
-                Conversations: [{ ID: element.ID || '', Action: EVENT_ACTIONS.UPDATE_FLAGS, Conversation: element }]
+                Conversations: [{ ID: element.ID || '', Action: EVENT_ACTIONS.UPDATE_FLAGS, Conversation: element }],
             });
 
             // Event triggered a reload, load is pending but it's hidded to the user
@@ -346,6 +352,8 @@ describe('useElements', () => {
         });
 
         it('should show the loader if not live cache and params has changed', async () => {
+            addApiMock('mail/v4/messages/count', () => ({}));
+            addApiMock('mail/v4/conversations/count', () => ({}));
             const resolve = addApiResolver('mail/v4/conversations');
 
             const page: Page = { page: 0, size: 5, limit: 5, total: 5 };
@@ -360,7 +368,7 @@ describe('useElements', () => {
                     sort: defaultSort,
                     filter: defaultFilter,
                     search,
-                    ...props
+                    ...props,
                 })
             );
 

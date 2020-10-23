@@ -7,7 +7,7 @@ import {
     useNotifications,
     useMailSettings,
     useGetEncryptionPreferences,
-    useHandler
+    useHandler,
 } from 'react-components';
 import { c } from 'ttag';
 import { Address } from 'proton-shared/lib/interfaces';
@@ -37,14 +37,13 @@ import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { reloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
-import { OnCompose } from '../../hooks/useCompose';
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import { usePromiseFromState } from '../../hooks/usePromiseFromState';
 
 enum ComposerInnerModal {
     None,
     Password,
-    Expiration
+    Expiration,
 }
 
 export type MessageUpdate = PartialMessageExtended | ((message: MessageExtended) => PartialMessageExtended);
@@ -67,7 +66,6 @@ interface Props {
     breakpoints: Breakpoints;
     onFocus: () => void;
     onClose: () => void;
-    onCompose: OnCompose;
 }
 
 const Composer = ({
@@ -79,7 +77,7 @@ const Composer = ({
     windowSize,
     breakpoints,
     onFocus,
-    onClose: inputOnClose
+    onClose: inputOnClose,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const { createNotification } = useNotifications();
@@ -120,7 +118,7 @@ const Composer = ({
 
     // Model value of the edited message in the composer
     const [modelMessage, setModelMessage] = useState<MessageExtended>({
-        localID: messageID
+        localID: messageID,
     });
 
     // Map of send preferences and send icons for each recipient
@@ -167,7 +165,7 @@ const Composer = ({
             (syncedMessage.data?.ID || (!syncedMessage.data?.ID && !isNewDraft(syncedMessage.localID))) &&
             syncedMessage.initialized === undefined
         ) {
-            addAction(initialize);
+            void addAction(initialize);
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID, syncedMessage.initialized]);
 
@@ -187,13 +185,13 @@ const Composer = ({
                     PasswordHint: undefined,
                     ...modelMessage.data,
                     // Attachments are updated by the draft creation request
-                    Attachments: syncedMessage.data?.Attachments
+                    Attachments: syncedMessage.data?.Attachments,
                 } as Message,
                 document: syncedMessage.document,
-                embeddeds: syncedMessage.embeddeds
+                embeddeds: syncedMessage.embeddeds,
             };
             setModelMessage(newModelMessage);
-            reloadSendInfo(messageSendInfo, newModelMessage, getEncryptionPreferences);
+            void reloadSendInfo(messageSendInfo, newModelMessage, getEncryptionPreferences);
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID]);
 
@@ -202,7 +200,7 @@ const Composer = ({
         const attachmentToCreate = !syncedMessage.data?.ID && !!syncedMessage.data?.Attachments?.length;
 
         if (!syncInProgress && attachmentToCreate) {
-            addAction(() => saveDraft(syncedMessage as MessageExtendedWithData));
+            void addAction(() => saveDraft(syncedMessage as MessageExtendedWithData));
         }
 
         if (editorReady && !syncInProgress && !attachmentToCreate) {
@@ -251,9 +249,9 @@ const Composer = ({
             const messageChanges = update instanceof Function ? update(modelMessage) : update;
             const newModelMessage = mergeMessages(modelMessage, messageChanges);
             if (shouldReloadSendInfo) {
-                reloadSendInfo(messageSendInfo, newModelMessage, getEncryptionPreferences);
+                void reloadSendInfo(messageSendInfo, newModelMessage, getEncryptionPreferences);
             }
-            autoSave(newModelMessage);
+            void autoSave(newModelMessage);
             return newModelMessage;
         });
     });
@@ -262,7 +260,7 @@ const Composer = ({
         setModelMessage((modelMessage) => {
             setContent(modelMessage, content);
             const newModelMessage = { ...modelMessage };
-            autoSave(newModelMessage);
+            void autoSave(newModelMessage);
             if (refreshEditor) {
                 editorActionsRef.current?.setContent(newModelMessage);
             }
@@ -296,11 +294,10 @@ const Composer = ({
         pendingUploads,
         uploadInProgress,
         handleAddAttachmentsStart,
-        handleAddEmbeddedImages,
         handleAddAttachmentsUpload,
         handleCancelAddAttachment,
         handleRemoveAttachment,
-        handleRemoveUpload
+        handleRemoveUpload,
     } = useAttachments(modelMessage, handleChange, handleSaveNow, editorActionsRef);
 
     const promiseUploadInProgress = usePromiseFromState(!uploadInProgress);
@@ -345,7 +342,7 @@ const Composer = ({
                 } catch (error) {
                     createNotification({
                         text: c('Error').t`Error while sending the message. Message is not sent`,
-                        type: 'error'
+                        type: 'error',
                     });
                     console.error('Error while sending the message.', error);
                     setSending(false);
@@ -406,7 +403,7 @@ const Composer = ({
             className={classnames([
                 'composer flex flex-column',
                 !focus && 'composer--is-blur',
-                minimized && 'composer--is-minimized'
+                minimized && 'composer--is-minimized',
             ])}
             style={style}
             onFocus={onFocus}
@@ -441,7 +438,7 @@ const Composer = ({
                     className={classnames([
                         'composer-blur-container flex flex-column flex-item-fluid mw100',
                         // Only hide the editor not to unload it each time a modal is on top
-                        innerModal === ComposerInnerModal.None ? 'flex' : 'hidden'
+                        innerModal === ComposerInnerModal.None ? 'flex' : 'hidden',
                     ])}
                 >
                     <div
@@ -461,7 +458,6 @@ const Composer = ({
                         />
                         <ComposerContent
                             message={modelMessage}
-                            messageSendInfo={messageSendInfo}
                             disabled={lock}
                             breakpoints={breakpoints}
                             onEditorReady={handleEditorReady}
@@ -470,7 +466,6 @@ const Composer = ({
                             onChangeFlag={handleChangeFlag}
                             onFocus={handleContentFocus}
                             onAddAttachments={handleAddAttachmentsStart}
-                            onAddEmbeddedImages={handleAddEmbeddedImages}
                             onCancelAddAttachment={handleCancelAddAttachment}
                             onRemoveAttachment={handleRemoveAttachment}
                             onRemoveUpload={handleRemoveUpload}

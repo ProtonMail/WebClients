@@ -7,6 +7,7 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { hasAttachments as messageHasAttachments } from 'proton-shared/lib/mail/messages';
+import { Folder } from 'proton-shared/lib/interfaces/Folder';
 
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
@@ -15,12 +16,11 @@ import { isConversationMode } from './mailSettings';
 import {
     isUnread as conversationIsUnread,
     hasAttachments as conversationHasAttachments,
-    getNumAttachments as conversationNumAttachments
+    getNumAttachments as conversationNumAttachments,
 } from './conversation';
 
 import { LabelIDsChanges } from '../models/event';
 import { Conversation } from '../models/conversation';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
@@ -110,7 +110,7 @@ export const getSize = ({ Size = 0 }: Element) => Size;
 export const sort = (elements: Element[], sort: Sort, labelID: string) => {
     const getValue = {
         Time: (element: Element, labelID: string) => getDate(element, labelID).getTime(),
-        Size: getSize
+        Size: getSize,
     }[sort.sort] as any;
     const compare = (a: Element, b: Element) => {
         const valueA = getValue(a, labelID);
@@ -157,11 +157,10 @@ export const parseLabelIDsInEvent = <T extends Element>(element: T, changes: T &
             diff((element as Message).LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || [])
         );
         return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
-    } else {
-        // Conversation don't use LabelIDs even if these properties are still present in update events
-        // The conversation.Labels object is fully updated each time so we can safely ignore them
-        return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']) };
     }
+    // Conversation don't use LabelIDs even if these properties are still present in update events
+    // The conversation.Labels object is fully updated each time so we can safely ignore them
+    return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']) };
 };
 
 export const isSearch = (searchParams: SearchParameters) =>
@@ -185,7 +184,7 @@ export const getCurrentFolderID = (element: Element | undefined, customFoldersLi
         [INBOX]: true,
         [TRASH]: true,
         [SPAM]: true,
-        [ARCHIVE]: true
+        [ARCHIVE]: true,
     };
     const customFolders = toMap(customFoldersList, 'ID');
     return labelIDs.find((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';

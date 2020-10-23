@@ -7,7 +7,7 @@ import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { contactToInput } from '../../../helpers/addresses';
 import { RecipientGroup } from '../../../models/address';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
+import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { getContactsOfGroup } from '../../../helpers/contacts';
 
 interface Props {
@@ -48,10 +48,10 @@ const HeaderGroupModal = ({
             <ul className="unstyled">
                 {contacts.map((contact) => {
                     const id = `${uid}-${contact.ID}`;
-                    const icon = globalIcon ? globalIcon : mapStatusIcons ? mapStatusIcons[contact.Email] : undefined;
+                    const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[contact.Email] : undefined);
                     return (
                         <li key={contact.ID} className="mb0-5">
-                            <Checkbox id={id} checked={isChecked(contact)} disabled={true} />
+                            <Checkbox id={id} checked={isChecked(contact)} disabled />
                             <span className="min-w1-4e inline-flex alignmiddle">
                                 {icon && <EncryptionStatusIcon {...icon} />}
                             </span>

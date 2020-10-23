@@ -8,10 +8,11 @@ import {
     ContextMenu,
     DropdownMenu,
     DropdownMenuButton,
-    useNotifications
+    useNotifications,
 } from 'react-components';
-
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { textToClipboard } from 'proton-shared/lib/helpers/browser';
+
 import AddressesGroupModal from './AddressesGroupModal';
 import { getRecipientGroupLabel } from '../../../helpers/addresses';
 import { RecipientGroup } from '../../../models/address';
@@ -19,7 +20,6 @@ import { getContactsOfGroup } from '../../../helpers/contacts';
 import { useUpdateGroupSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
 import { useDragOver } from '../../../hooks/useDragOver';
 import { DRAG_ADDRESS_KEY } from '../../../constants';
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 
 interface Props {
     recipientGroup: RecipientGroup;
@@ -42,7 +42,7 @@ const AddressesGroupItem = ({
     dragged = false,
     onDragStart,
     onDragEnd,
-    onDragOver
+    onDragOver,
 }: Props) => {
     const { createModal, getModal, hideModal, removeModal } = useModals();
     const [modalID, setModalID] = useState();
@@ -53,7 +53,7 @@ const AddressesGroupItem = ({
         anchorRef: itemRef,
         isOpen: contextMenuIsOpen,
         open: openContextMenu,
-        close: closeContextMenu
+        close: closeContextMenu,
     } = usePopperAnchor<HTMLDivElement>();
 
     const contactsInGroup = getContactsOfGroup(contacts, recipientGroup?.group?.ID);
@@ -94,7 +94,7 @@ const AddressesGroupItem = ({
     };
 
     const [, dragHandlers] = useDragOver((event) => event.dataTransfer.types.includes(DRAG_ADDRESS_KEY), 'move', {
-        onDragOver: onDragOver(itemRef)
+        onDragOver: onDragOver(itemRef),
     });
 
     return (
@@ -102,7 +102,7 @@ const AddressesGroupItem = ({
             <div
                 className={classnames([
                     'composer-addresses-item mt0-25 mb0-25 mr0-5 bordered-container flex flex-nowrap flex-row mw100 stop-propagation cursor-grab',
-                    dragged && 'composer-addresses-item-dragged'
+                    dragged && 'composer-addresses-item-dragged',
                 ])}
                 draggable
                 onDragStart={onDragStart}

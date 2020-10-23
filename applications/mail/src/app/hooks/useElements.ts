@@ -8,13 +8,14 @@ import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/m
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { noop } from 'proton-shared/lib/helpers/function';
 
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import {
     sort as sortElements,
     hasLabel,
     parseLabelIDsInEvent,
     isSearch,
     isFilter,
-    isUnread
+    isUnread,
 } from '../helpers/elements';
 import { Element } from '../models/element';
 import { Page, Filter, Sort, SearchParameters } from '../models/tools';
@@ -25,11 +26,10 @@ import {
     ElementCountEvent,
     ConversationEvent,
     MessageEvent,
-    LabelIDsChanges
+    LabelIDsChanges,
 } from '../models/event';
 import { useExpirationCheck } from './useExpiration';
 import { ElementsCache, ElementsCacheParams, useElementsCache, useSetElementsCache } from './useElementsCache';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 interface Options {
     conversationMode: boolean;
@@ -64,7 +64,7 @@ const emptyCache = (page: Page, labelID: string, counts: LabelCount[], params: E
         page: { ...page, total },
         elements: {},
         pages: [],
-        updatedElements: []
+        updatedElements: [],
     };
 };
 
@@ -81,7 +81,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             labelID,
             sort,
             filter,
-            ...search
+            ...search,
         })
     );
     const setCache = useSetElementsCache();
@@ -111,7 +111,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         // To prevent any desynchronization between cache and the output of the memo
         const {
             params: { labelID, sort, filter },
-            page
+            page,
         } = cache;
 
         const minPage = cache.pages.reduce((acc, page) => (page < acc ? page : acc), cache.pages[0]);
@@ -134,7 +134,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const expectedLength = useMemo(() => expectedPageLength(cache.page), [cache.page]);
     const expectedLengthMismatch = useMemo(() => Math.abs(elements.length - expectedLength), [
         elements.length,
-        expectedLength
+        expectedLength,
     ]);
 
     const paramsChanged = () =>
@@ -179,7 +179,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const updatePage = () => {
         setCache({
             ...cache,
-            page: { ...cache.page, page: page.page }
+            page: { ...cache.page, page: page.page },
         });
     };
 
@@ -213,14 +213,14 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 Unread: filter.Unread,
                 AddressID: search.address,
                 // ID,
-                AutoWildcard: search.wildcard
+                AutoWildcard: search.wildcard,
             } as any),
-            signal: abortControllerRef.current.signal
+            signal: abortControllerRef.current.signal,
         });
 
         return {
             Total: result.Total,
-            Elements: conversationMode ? result.Conversations : result.Messages
+            Elements: conversationMode ? result.Conversations : result.Messages,
         };
     };
 
@@ -230,7 +230,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 labelID,
                 sort,
                 filter,
-                ...search
+                ...search,
             })
         );
 
@@ -249,14 +249,14 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     page: {
                         ...cache.page,
                         page: page.page,
-                        total: Total
+                        total: Total,
                     },
                     pages: [...cache.pages, page.page],
                     elements: {
                         ...cache.elements,
-                        ...elementsMap
+                        ...elementsMap,
                     },
-                    updatedElements
+                    updatedElements,
                 };
             });
         } catch {
@@ -266,9 +266,15 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     // Main effect watching all inputs and responsible to trigger actions on the cache
     useEffect(() => {
-        shouldResetCache() && resetCache();
-        shouldSendRequest() && load();
-        shouldUpdatePage() && updatePage();
+        if (shouldResetCache()) {
+            resetCache();
+        }
+        if (shouldSendRequest()) {
+            void load();
+        }
+        if (shouldUpdatePage()) {
+            updatePage();
+        }
     }, [
         labelID,
         page,
@@ -283,7 +289,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         search.attachments,
         search.wildcard,
         cache.invalidated,
-        cache.updatedElements
+        cache.updatedElements,
     ]);
 
     // Listen to event manager and update de cache
@@ -356,7 +362,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 });
                 const newElements = {
                     ...cache.elements,
-                    ...newReplacements
+                    ...newReplacements,
                 };
                 toDelete.forEach((elementID) => {
                     delete newElements[elementID];
@@ -369,9 +375,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     elements: newElements,
                     page: {
                         ...cache.page,
-                        total: count ? count.Total : cache.page.total
+                        total: count ? count.Total : cache.page.total,
                     },
-                    updatedElements
+                    updatedElements,
                 };
             });
         }
@@ -388,6 +394,6 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         expectedLength,
         pendingRequest: cache.pendingRequest,
         loading,
-        total: cache.page.total
+        total: cache.page.total,
     };
 };

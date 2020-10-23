@@ -1,10 +1,10 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { SIGNATURE_START, VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
+import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 import { STATUS_ICONS_FILLS } from '../../models/crypto';
 import { MessageExtended } from '../../models/message';
 import { getReceivedStatusIcon, getSendStatusIcon, getSentStatusIconInfo } from './icon';
-import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 
 const { NOT_VERIFIED } = VERIFICATION_STATUS;
 
@@ -15,10 +15,10 @@ const fakeKey1: OpenPGPKey = {
     users: [
         {
             userId: {
-                userid: '<user@pm.me>'
-            }
-        }
-    ]
+                userid: '<user@pm.me>',
+            },
+        },
+    ],
 } as any;
 
 describe('icon', () => {
@@ -31,13 +31,13 @@ describe('icon', () => {
                 mimeType: MIME_TYPES.DEFAULT,
                 hasApiKeys: true,
                 hasPinnedKeys: false,
-                isPublicKeyPinned: false
+                isPublicKeyPinned: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'End-to-end encrypted'
+                text: 'End-to-end encrypted',
             });
         });
 
@@ -49,13 +49,13 @@ describe('icon', () => {
                 mimeType: MIME_TYPES.DEFAULT,
                 hasApiKeys: true,
                 hasPinnedKeys: true,
-                isPublicKeyPinned: true
+                isPublicKeyPinned: true,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'End-to-end encrypted to verified recipient'
+                text: 'End-to-end encrypted to verified recipient',
             });
         });
 
@@ -70,14 +70,14 @@ describe('icon', () => {
                 isPublicKeyPinned: false,
                 failure: {
                     type: EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED,
-                    error: Error('test error')
-                }
+                    error: Error('test error'),
+                },
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-warning',
                 isEncrypted: false,
                 fill: STATUS_ICONS_FILLS.FAIL,
-                text: 'test error'
+                text: 'test error',
             });
         });
 
@@ -89,13 +89,13 @@ describe('icon', () => {
                 mimeType: MIME_TYPES.PLAINTEXT,
                 hasApiKeys: true,
                 hasPinnedKeys: false,
-                isPublicKeyPinned: false
+                isPublicKeyPinned: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'End-to-end encrypted'
+                text: 'End-to-end encrypted',
             });
         });
 
@@ -107,13 +107,13 @@ describe('icon', () => {
                 mimeType: MIME_TYPES.MIME,
                 hasApiKeys: true,
                 hasPinnedKeys: true,
-                isPublicKeyPinned: true
+                isPublicKeyPinned: true,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'End-to-end encrypted to verified recipient'
+                text: 'End-to-end encrypted to verified recipient',
             });
         });
 
@@ -128,14 +128,14 @@ describe('icon', () => {
                 isPublicKeyPinned: false,
                 failure: {
                     type: EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED,
-                    error: Error('test error')
-                }
+                    error: Error('test error'),
+                },
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-warning',
                 isEncrypted: false,
                 fill: STATUS_ICONS_FILLS.FAIL,
-                text: 'test error'
+                text: 'test error',
             });
         });
 
@@ -148,13 +148,13 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: false,
                 isPublicKeyPinned: false,
-                warnings: ['warning test 1', 'warning test 2']
+                warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.WARNING,
-                text: "End-to-end encrypted. Recipient's key validation failed: warning test 1; warning test 2"
+                text: "End-to-end encrypted. Recipient's key validation failed: warning test 1; warning test 2",
             });
         });
 
@@ -167,13 +167,13 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
-                warnings: ['warning test 1', 'warning test 2']
+                warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.WARNING,
-                text: "End-to-end encrypted. Recipient's key validation failed: warning test 1; warning test 2"
+                text: "End-to-end encrypted. Recipient's key validation failed: warning test 1; warning test 2",
             });
         });
 
@@ -184,13 +184,13 @@ describe('icon', () => {
                 pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                 mimeType: MIME_TYPES.MIME,
                 hasApiKeys: false,
-                hasPinnedKeys: false
+                hasPinnedKeys: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: false,
                 fill: STATUS_ICONS_FILLS.SIGN,
-                text: 'PGP-signed'
+                text: 'PGP-signed',
             });
         });
 
@@ -202,13 +202,13 @@ describe('icon', () => {
                 mimeType: MIME_TYPES.PLAINTEXT,
                 hasApiKeys: false,
                 hasPinnedKeys: true,
-                isPublicKeyPinned: false
+                isPublicKeyPinned: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.SIGN,
-                text: 'PGP-encrypted'
+                text: 'PGP-encrypted',
             });
         });
 
@@ -220,13 +220,13 @@ describe('icon', () => {
                 mimeType: MIME_TYPES.MIME,
                 hasApiKeys: false,
                 hasPinnedKeys: true,
-                isPublicKeyPinned: true
+                isPublicKeyPinned: true,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'PGP-encrypted to verified recipient'
+                text: 'PGP-encrypted to verified recipient',
             });
         });
 
@@ -239,13 +239,13 @@ describe('icon', () => {
                 hasApiKeys: false,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
-                warnings: ['warning test 1', 'warning test 2']
+                warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.WARNING,
-                text: "PGP-encrypted. Recipient's key validation failed: warning test 1; warning test 2"
+                text: "PGP-encrypted. Recipient's key validation failed: warning test 1; warning test 2",
             });
         });
 
@@ -257,7 +257,7 @@ describe('icon', () => {
                 mimeType: MIME_TYPES.MIME,
                 hasApiKeys: false,
                 hasPinnedKeys: false,
-                isPublicKeyPinned: false
+                isPublicKeyPinned: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toBeUndefined();
         });
@@ -268,8 +268,8 @@ describe('icon', () => {
         const getIconFromHeaders = (headers: { [key: string]: string }, emailAddress: string) => {
             const message = ({
                 data: {
-                    ParsedHeaders: headers
-                }
+                    ParsedHeaders: headers,
+                },
             } as unknown) as MessageExtended;
             const { mapStatusIcon } = getSentStatusIconInfo(message) || {};
             return mapStatusIcon[emailAddress];
@@ -279,7 +279,7 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=none',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=none',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toEqual(undefined);
@@ -289,14 +289,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=none',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-inline',
-                'X-Pm-Content-Encryption': 'on-delivery'
+                'X-Pm-Content-Encryption': 'on-delivery',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Encrypted by ProtonMail to PGP recipient'
+                text: 'Encrypted by ProtonMail to PGP recipient',
             });
         });
 
@@ -304,14 +304,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-inline',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=none',
-                'X-Pm-Content-Encryption': 'on-compose'
+                'X-Pm-Content-Encryption': 'on-compose',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: false,
                 fill: STATUS_ICONS_FILLS.SIGN,
-                text: 'PGP-signed'
+                text: 'PGP-signed',
             });
         });
 
@@ -319,14 +319,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-pm',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-pm-pinned',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'End-to-end encrypted to verified recipient'
+                text: 'End-to-end encrypted to verified recipient',
             });
         });
 
@@ -334,14 +334,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-mime',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-mime-pinned',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'End-to-end encrypted to verified PGP recipient'
+                text: 'End-to-end encrypted to verified PGP recipient',
             });
         });
 
@@ -349,14 +349,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-pm',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-pm',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'End-to-end encrypted'
+                text: 'End-to-end encrypted',
             });
         });
 
@@ -364,14 +364,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-pm',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-pm',
-                'X-Pm-Content-Encryption': 'on-delivery'
+                'X-Pm-Content-Encryption': 'on-delivery',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Encrypted by ProtonMail'
+                text: 'Encrypted by ProtonMail',
             });
         });
 
@@ -379,14 +379,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-pm',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-pm-pinned',
-                'X-Pm-Content-Encryption': 'on-delivery'
+                'X-Pm-Content-Encryption': 'on-delivery',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'Encrypted by ProtonMail to verified recipient'
+                text: 'Encrypted by ProtonMail to verified recipient',
             });
         });
 
@@ -394,14 +394,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-mime',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-mime-pinned',
-                'X-Pm-Content-Encryption': 'on-delivery'
+                'X-Pm-Content-Encryption': 'on-delivery',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'Encrypted by ProtonMail to verified PGP recipient'
+                text: 'Encrypted by ProtonMail to verified PGP recipient',
             });
         });
 
@@ -409,14 +409,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-eo',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-eo',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'End-to-end encrypted'
+                text: 'End-to-end encrypted',
             });
         });
 
@@ -430,7 +430,7 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-pm',
                 'X-Pm-Recipient-Encryption': 'testing%40pm.me=pgp-pm',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toEqual(undefined);
@@ -441,8 +441,8 @@ describe('icon', () => {
         const getIconFromHeaders = (headers: { [key: string]: string }) => {
             const message = ({
                 data: {
-                    ParsedHeaders: headers
-                }
+                    ParsedHeaders: headers,
+                },
             } as unknown) as MessageExtended;
             const { globalIcon } = getSentStatusIconInfo(message);
             return globalIcon;
@@ -453,14 +453,14 @@ describe('icon', () => {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-mime;test2%40pm.me=pgp-inline;test3%40pm.me=pgp-pm',
                 'X-Pm-Recipient-Encryption':
                     'test%40pm.me=pgp-mime-pinned;test2%40pm.me=pgp-inline-pinned;test3%40pm.me=pgp-pm-pinned',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'Sent by you with end-to-end encryption to verified recipients'
+                text: 'Sent by you with end-to-end encryption to verified recipients',
             });
         });
 
@@ -468,14 +468,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-mime;test2%40pm.me=pgp-inline',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-mime-pinned;test2%40pm.me=pgp-inline-pinned;',
-                'X-Pm-Content-Encryption': 'on-delivery'
+                'X-Pm-Content-Encryption': 'on-delivery',
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'Sent by ProtonMail with zero-access encryption to verified recipients'
+                text: 'Sent by ProtonMail with zero-access encryption to verified recipients',
             });
         });
 
@@ -483,14 +483,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-eo',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-eo;',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Sent by you with end-to-end encryption'
+                text: 'Sent by you with end-to-end encryption',
             });
         });
 
@@ -498,14 +498,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-mime;test2%40pm.me=pgp-inline',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-mime-pinned;test2%40pm.me=pgp-inline;',
-                'X-Pm-Content-Encryption': 'on-delivery'
+                'X-Pm-Content-Encryption': 'on-delivery',
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Sent by ProtonMail with zero-access encryption'
+                text: 'Sent by ProtonMail with zero-access encryption',
             });
         });
 
@@ -513,14 +513,14 @@ describe('icon', () => {
             const headers = {
                 'X-Pm-Recipient-Authentication': 'test%40pm.me=pgp-pm;test2%40pm.me=pgp-inline;test3%40pm.me=pgp-eo',
                 'X-Pm-Recipient-Encryption': 'test%40pm.me=pgp-pm-pinned;test2%40pm.me=pgp-inline;test3%40pm.me=pgp-eo',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Sent by you with end-to-end encryption'
+                text: 'Sent by you with end-to-end encryption',
             });
         });
 
@@ -530,27 +530,27 @@ describe('icon', () => {
                     'test%40pm.me=pgp-pm;test2%40pm.me=pgp-inline;test3%40pm.me=pgp-eo;test4%40pm.me=none',
                 'X-Pm-Recipient-Encryption':
                     'test%40pm.me=pgp-pm-pinned;test2%40pm.me=pgp-inline;test3%40pm.me=pgp-eo;test4%40pm.me=none',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Stored with zero-access encryption'
+                text: 'Stored with zero-access encryption',
             });
         });
 
         it('should fall back to a blue lock when some headers are missing', () => {
             const headers = {
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Stored with zero-access encryption'
+                text: 'Stored with zero-access encryption',
             });
         });
 
@@ -561,7 +561,7 @@ describe('icon', () => {
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Stored with zero-access encryption'
+                text: 'Stored with zero-access encryption',
             });
         });
     });
@@ -575,10 +575,10 @@ describe('icon', () => {
             const message = ({
                 data: {
                     Time: SIGNATURE_START.USER + 10 * 1000,
-                    ParsedHeaders: headers
+                    ParsedHeaders: headers,
                 },
                 senderPinnedKeys,
-                verificationStatus
+                verificationStatus,
             } as unknown) as MessageExtended;
             return getReceivedStatusIcon(message);
         };
@@ -586,56 +586,56 @@ describe('icon', () => {
         it('should return a blue lock with in case of decryption error for internal users (end-to-end encryption)', () => {
             const headers = {
                 'X-Pm-Origin': 'internal',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'End-to-end encrypted message'
+                text: 'End-to-end encrypted message',
             });
         });
 
         it('should return a blue lock with in case of decryption error for internal users (on-delivery encryption)', () => {
             const headers = {
                 'X-Pm-Origin': 'internal',
-                'X-Pm-Content-Encryption': 'on-delivery'
+                'X-Pm-Content-Encryption': 'on-delivery',
             };
             const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
             expect(icon).toMatchObject({
                 colorClassName: 'color-pm-blue',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Sent by ProtonMail with zero-access encryption'
+                text: 'Sent by ProtonMail with zero-access encryption',
             });
         });
 
         it('should return a green lock with in case of decryption error for external users (end-to-end encryption)', () => {
             const headers = {
                 'X-Pm-Origin': 'external',
-                'X-Pm-Content-Encryption': 'end-to-end'
+                'X-Pm-Content-Encryption': 'end-to-end',
             };
             const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
             expect(icon).toMatchObject({
                 colorClassName: 'color-global-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'PGP-encrypted message'
+                text: 'PGP-encrypted message',
             });
         });
 
         it('should return a black lock with in case of decryption error for internal users (on-delivery encryption)', () => {
             const headers = {
                 'X-Pm-Origin': 'external',
-                'X-Pm-Content-Encryption': 'on-delivery'
+                'X-Pm-Content-Encryption': 'on-delivery',
             };
             const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
             expect(icon).toMatchObject({
                 colorClassName: 'color-global-grey-dm',
                 isEncrypted: false,
                 fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Stored with zero-access encryption'
+                text: 'Stored with zero-access encryption',
             });
         });
     });

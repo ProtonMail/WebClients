@@ -13,6 +13,7 @@ const getTranslations = (key: keyof MessageErrors) => {
         case 'decryption':
             return c('Error').t`Decryption error: decryption of this message's encryption content failed.`;
         case 'common':
+        default:
             return c('Error').t`Message processing error.`;
     }
 };

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Route } from 'react-router-dom';
 import { useActiveBreakpoint } from 'react-components';
 
@@ -6,7 +7,6 @@ import ConversationProvider from './containers/ConversationProvider';
 import AttachmentProvider from './containers/AttachmentProvider';
 import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
-import React from 'react';
 
 const MainContainer = () => {
     const breakpoints = useActiveBreakpoint();

@@ -12,7 +12,7 @@ import {
     LabelChanges,
     applyLabelChangesOnMessage,
     applyLabelChangesOnConversation,
-    applyLabelChangesOnOneMessageOfAConversation
+    applyLabelChangesOnOneMessageOfAConversation,
 } from '../../helpers/labels';
 
 const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) => {
@@ -68,7 +68,7 @@ export const useOptimisticApplyLabels = () => {
                 if (messageFromCache && messageFromCache.data) {
                     messageCache.set(localID, {
                         ...messageFromCache,
-                        data: applyLabelChangesOnMessage(messageFromCache.data, changes)
+                        data: applyLabelChangesOnMessage(messageFromCache.data, changes),
                     });
                 }
 
@@ -81,10 +81,9 @@ export const useOptimisticApplyLabels = () => {
                         Messages: conversationResult.Messages?.map((messageFromConversation) => {
                             if (messageFromConversation.ID === message.ID) {
                                 return applyLabelChangesOnMessage(messageFromConversation, changes);
-                            } else {
-                                return messageFromConversation;
                             }
-                        })
+                            return messageFromConversation;
+                        }),
                     });
                 }
 
@@ -112,7 +111,7 @@ export const useOptimisticApplyLabels = () => {
                     const conversationFromCache = conversationResult.Conversation;
                     conversationCache.set(conversation.ID, {
                         Conversation: applyLabelChangesOnConversation(conversationFromCache, changes),
-                        Messages: conversationResult.Messages
+                        Messages: conversationResult.Messages,
                     });
                 }
 
@@ -135,7 +134,7 @@ export const useOptimisticApplyLabels = () => {
                     if (messageFromCache && messageFromCache.data) {
                         messageCache.set(localID, {
                             ...messageFromCache,
-                            data: applyLabelChangesOnMessage(messageFromCache.data, changes)
+                            data: applyLabelChangesOnMessage(messageFromCache.data, changes),
                         });
                     }
                 });
@@ -145,7 +144,7 @@ export const useOptimisticApplyLabels = () => {
         if (Object.keys(updatedElements).length) {
             setElementsCache({
                 ...elementsCache,
-                elements: { ...elementsCache.elements, ...updatedElements }
+                elements: { ...elementsCache.elements, ...updatedElements },
             });
         }
 

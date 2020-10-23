@@ -12,7 +12,7 @@ import {
     Tooltip,
     Icon,
     EllipsisLoader,
-    ErrorButton
+    ErrorButton,
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
@@ -53,7 +53,7 @@ const ComposerActions = ({
     onSave,
     onSend,
     onDelete,
-    addressesBlurRef
+    addressesBlurRef,
 }: Props) => {
     const { createModal } = useModals();
 
@@ -83,19 +83,17 @@ const ComposerActions = ({
     } else if (syncInProgress) {
         const ellipsis = <EllipsisLoader key="ellipsis2" />;
         dateMessage = c('Action').jt`Saving${ellipsis}`;
-    } else {
-        if (date.getTime() !== 0) {
-            const dateString = formatSimpleDate(date);
-            if (isToday(date)) {
-                dateMessage = c('Info').t`Saved at ${dateString}`;
-            } else if (isYesterday(date)) {
-                dateMessage = c('Info').t`Saved ${dateString}`;
-            } else {
-                dateMessage = c('Info').t`Saved on ${dateString}`;
-            }
+    } else if (date.getTime() !== 0) {
+        const dateString = formatSimpleDate(date);
+        if (isToday(date)) {
+            dateMessage = c('Info').t`Saved at ${dateString}`;
+        } else if (isYesterday(date)) {
+            dateMessage = c('Info').t`Saved ${dateString}`;
         } else {
-            dateMessage = c('Action').t`Not saved`;
+            dateMessage = c('Info').t`Saved on ${dateString}`;
         }
+    } else {
+        dateMessage = c('Action').t`Not saved`;
     }
 
     let buttonSendLabel = c('Action').t`Send`;
@@ -121,7 +119,7 @@ const ComposerActions = ({
                         icon="expiration"
                         className={classnames([
                             'inline-flex flex-items-center pm-button--for-icon',
-                            isExpiration && 'pm-button--primaryborder'
+                            isExpiration && 'pm-button--primaryborder',
                         ])}
                         onClick={onExpiration}
                         disabled={lock}
@@ -134,7 +132,7 @@ const ComposerActions = ({
                         icon="lock-alone"
                         className={classnames([
                             'inline-flex flex-items-center pm-button--for-icon',
-                            isPassword && 'pm-button--primaryborder'
+                            isPassword && 'pm-button--primaryborder',
                         ])}
                         onClick={onPassword}
                         disabled={lock}
@@ -171,7 +169,7 @@ const ComposerActions = ({
                     loading={sending}
                     onClick={onSend}
                 >
-                    <Icon name="sent" className="nodesktop notablet onmobile-flex"></Icon>
+                    <Icon name="sent" className="nodesktop notablet onmobile-flex" />
                     <span className="pl1 pr1 nomobile">{buttonSendLabel}</span>
                 </Button>
             </div>

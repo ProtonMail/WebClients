@@ -2,9 +2,8 @@ import { range } from 'proton-shared/lib/helpers/array';
 import { Address } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-
-import { findSender, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from './addresses';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { findSender, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from './addresses';
 
 const recipient1: Recipient = { Address: 'address1' };
 const recipient2: Recipient = { Name: 'recipient2', Address: 'address2' };
@@ -35,7 +34,7 @@ describe('addresses', () => {
             const result = findSender(
                 [{ Status: 2 }, first, { Status: 1, Order: 2, ID: '3' }] as Address[],
                 {
-                    AddressID: '1'
+                    AddressID: '1',
                 } as Message
             );
             expect(result).toBe(first);
@@ -46,7 +45,7 @@ describe('addresses', () => {
             const result = findSender(
                 [{ Status: 2, Order: 0, ID: '1' }, first, { Status: 1, Order: 2, ID: '3' }] as Address[],
                 {
-                    AddressID: '1'
+                    AddressID: '1',
                 } as Message
             );
             expect(result).toEqual(first);
@@ -57,7 +56,7 @@ describe('addresses', () => {
             const result = findSender(
                 [{ Status: 2 }, match, { Status: 1, Order: 1, ID: '2' }] as Address[],
                 {
-                    AddressID: '1'
+                    AddressID: '1',
                 } as Message
             );
             expect(result).toBe(match);

@@ -64,10 +64,10 @@ const AddressesSummary = ({ message, mapSendInfo, contacts, contactGroups, toggl
                                     const cannotSend = !valid || icon?.fill === STATUS_ICONS_FILLS.FAIL;
                                     return (
                                         <span
-                                            key={i}
+                                            key={i} // eslint-disable-line react/no-array-index-key
                                             className={classnames([
                                                 'mr0-5 aligntop',
-                                                cannotSend && 'color-global-warning'
+                                                cannotSend && 'color-global-warning',
                                             ])}
                                         >
                                             <span>

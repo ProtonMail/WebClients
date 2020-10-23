@@ -20,7 +20,7 @@ import {
     useAddresses,
     useContactEmails,
     useMailSettings,
-    Input
+    Input,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
@@ -67,7 +67,7 @@ const DEFAULT_MODEL: SearchModel = {
     to: [],
     address: ALL_ADDRESSES,
     attachments: UNDEFINED,
-    wildcard: AUTO_WILDCARD
+    wildcard: AUTO_WILDCARD,
 };
 
 const getRecipients = (value = '') =>
@@ -81,7 +81,7 @@ const folderReducer = (acc: LabelInfo[], folder: FolderWithSubFolders, level = 0
     acc.push({
         text: formatFolderName(level, folder.Name, ' ∙ '),
         value: folder.ID,
-        group: c('Group').t`Custom folders`
+        group: c('Group').t`Custom folders`,
     });
 
     if (Array.isArray(folder.subfolders)) {
@@ -126,7 +126,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                 attachments: typeof attachments === 'number' ? String(attachments) : UNDEFINED,
                 wildcard: wildcard ? String(wildcard) : UNDEFINED,
                 filter: UNDEFINED, // Make sure to reset filter parameter when performing an advanced search
-                sort: UNDEFINED // Make sure to reset sort parameter when performing an advanced search
+                sort: UNDEFINED, // Make sure to reset sort parameter when performing an advanced search
             })
         );
 
@@ -152,7 +152,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                     from: getRecipients(from),
                     to: getRecipients(to),
                     begin: begin ? fromUnixTime(begin) : UNDEFINED,
-                    end: end ? fromUnixTime(end) : UNDEFINED
+                    end: end ? fromUnixTime(end) : UNDEFINED,
                 };
             });
         }
@@ -168,16 +168,16 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
         {
             value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS,
             text: c('Mailbox').t`Drafts`,
-            group: c('Group').t`Default folders`
+            group: c('Group').t`Default folders`,
         },
         {
             value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT,
             text: c('Mailbox').t`Sent`,
-            group: c('Group').t`Default folders`
+            group: c('Group').t`Default folders`,
         },
         { value: ARCHIVE, text: c('Mailbox').t`Archive`, group: c('Group').t`Default folders` },
         { value: SPAM, text: c('Mailbox').t`Spam`, group: c('Group').t`Default folders` },
-        { value: TRASH, text: c('Mailbox').t`Trash`, group: c('Group').t`Default folders` }
+        { value: TRASH, text: c('Mailbox').t`Trash`, group: c('Group').t`Default folders` },
     ] as LabelInfo[])
         .concat(treeview.reduce<LabelInfo[]>((acc, folder) => folderReducer(acc, folder), []))
         .concat(labels.map(({ ID: value, Name: text }) => ({ value, text, group: c('Group').t`Labels` })));
@@ -214,7 +214,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                 autoClose={false}
                 autoCloseOutside={false}
                 isOpen={isOpen}
-                noMaxSize={true}
+                noMaxSize
                 anchorRef={anchorRef}
                 onClose={close}
                 className="dropDown-content--wide"
@@ -230,7 +230,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
                         <Input
                             id="search-keyword"
                             value={model.keyword}
-                            autoFocus={true}
+                            autoFocus
                             onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
                         />
                     </div>

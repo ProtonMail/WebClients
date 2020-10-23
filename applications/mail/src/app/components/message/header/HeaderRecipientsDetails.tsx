@@ -35,7 +35,7 @@ const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompo
         <>
             {recipientsOrGroup.map((recipientOrGroup, index) => (
                 <HeaderRecipientItem
-                    key={index}
+                    key={index} // eslint-disable-line react/no-array-index-key
                     recipientOrGroup={recipientOrGroup}
                     mapStatusIcons={mapStatusIcons}
                     contacts={contacts}

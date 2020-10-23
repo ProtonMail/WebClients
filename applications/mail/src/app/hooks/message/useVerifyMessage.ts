@@ -28,14 +28,18 @@ export const useVerifyMessage = (localID: string) => {
 
         const errors: MessageErrors = {};
 
-        let encryptionPreferences, verification, signingPublicKey, attachedPublicKeys, verificationStatus;
+        let encryptionPreferences;
+        let verification;
+        let signingPublicKey;
+        let attachedPublicKeys;
+        let verificationStatus;
 
         try {
             encryptionPreferences = await getEncryptionPreferences(getData().Sender.Address as string);
 
             const messageWithKeys = {
                 ...messageFromCache,
-                publicKeys: encryptionPreferences.pinnedKeys
+                publicKeys: encryptionPreferences.pinnedKeys,
             };
 
             verification = await verifyMessage(getData(), encryptionPreferences.pinnedKeys);
@@ -53,7 +57,7 @@ export const useVerifyMessage = (localID: string) => {
                             const [key] = await getKeys(arrayToBinaryString(data));
                             return key;
                         } catch (e) {
-                            return;
+                            // Nothing
                         }
                     })
                 )
@@ -62,7 +66,7 @@ export const useVerifyMessage = (localID: string) => {
             const allSenderPublicKeys = [
                 ...encryptionPreferences.pinnedKeys,
                 ...encryptionPreferences.apiKeys,
-                ...attachedPublicKeys
+                ...attachedPublicKeys,
             ];
 
             const signed = verification.verified !== VERIFICATION_STATUS.NOT_SIGNED;
@@ -81,7 +85,7 @@ export const useVerifyMessage = (localID: string) => {
                 senderVerified: encryptionPreferences?.isContactSignatureVerified,
                 verificationStatus,
                 verificationErrors: verification?.verificationErrors,
-                errors
+                errors,
             });
         }
     }, [localID]);

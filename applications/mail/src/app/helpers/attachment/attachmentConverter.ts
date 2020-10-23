@@ -18,10 +18,10 @@ const getHeaders = ({
     contentDisposition = '',
     contentId = '',
     transferEncoding = '',
-    contentType = ''
+    contentType = '',
 }: AttachmentMime) => {
     const headers: { [key: string]: any } = {};
-    const filenameOption = '; filename=' + JSON.stringify(generatedFileName);
+    const filenameOption = `; filename=${JSON.stringify(generatedFileName)}`;
     headers['content-disposition'] = contentDisposition + filenameOption;
     // test if this is an assigned content id
     if (!/^.*@mailparser$/.test(contentId)) {
@@ -56,17 +56,17 @@ const convertSingle = (
         KeyPackets: null, // already decrypted;
         MIMEType: parsedAttachment.contentType,
         Size: parsedAttachment.length,
-        Encrypted: ENCRYPTED_STATUS.PGP_MIME
+        Encrypted: ENCRYPTED_STATUS.PGP_MIME,
     };
 
     const attachmentData: DecryptResultPmcrypto = {
         data: parsedAttachment.content,
         filename: '',
         signatures: [],
-        verified: VERIFICATION_STATUS.NOT_SIGNED
+        verified: VERIFICATION_STATUS.NOT_SIGNED,
     };
 
-    cache.set(ID, attachmentData /*, verified*/);
+    cache.set(ID, attachmentData /* , verified */);
     // invalidSignature.askAgain(message, attachment, false);
     return attachment;
 };

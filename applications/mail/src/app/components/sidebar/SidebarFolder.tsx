@@ -18,7 +18,7 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount }:
         <SidebarItem
             currentLabelID={currentLabelID}
             labelID={folder.ID}
-            isFolder={true}
+            isFolder
             text={folder.Name}
             unreadCount={unreadCount}
             content={
@@ -39,7 +39,7 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount }:
                                 name="caret"
                                 className={classnames([
                                     'navigation__icon navigation__icon--expand',
-                                    !!folder.Expanded && 'rotateX-180'
+                                    !!folder.Expanded && 'rotateX-180',
                                 ])}
                             />
                         </button>

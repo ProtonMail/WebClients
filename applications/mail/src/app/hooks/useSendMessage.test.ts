@@ -3,7 +3,6 @@ import { MIME_TYPES, PGP_SIGN } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 
-import { useSendVerifications, useSendMessage } from './useSendMessage';
 import {
     renderHook,
     clearAll,
@@ -21,7 +20,7 @@ import {
     addKeysToUserKeysCache,
     createAttachment,
     createDocument,
-    attachmentsCache
+    attachmentsCache,
 } from '../helpers/test/helper';
 import { MessageExtendedWithData, PartialMessageExtended } from '../models/message';
 import { mergeMessages } from '../helpers/message/messages';
@@ -29,6 +28,8 @@ import { addApiContact } from '../helpers/test/contact';
 import { decryptSessionKey } from '../helpers/test/crypto';
 import { createEmbeddedMap } from '../helpers/embedded/embeddeds';
 import { arrayToBase64 } from '../helpers/base64';
+
+const { useSendVerifications, useSendMessage } = require('./useSendMessage');
 
 describe('useSendMessage', () => {
     const fromAddress = 'me@home.net';
@@ -47,8 +48,8 @@ describe('useSendMessage', () => {
                 Sender: { Address: fromAddress },
                 ToList: [{ Address: toAddress }],
                 CCList: [],
-                BCCList: []
-            } as Partial<Message>
+                BCCList: [],
+            } as Partial<Message>,
         } as MessageExtendedWithData;
 
         const resultMessage = mergeMessages(baseMessage, message);
@@ -114,7 +115,7 @@ describe('useSendMessage', () => {
         it('text/plain self', async () => {
             const message = prepareMessage({
                 plainText: 'test',
-                data: { MIMEType: MIME_TYPES.PLAINTEXT, ToList: [{ Address: fromAddress }] }
+                data: { MIMEType: MIME_TYPES.PLAINTEXT, ToList: [{ Address: fromAddress }] },
             });
 
             minimalCache();
@@ -123,8 +124,8 @@ describe('useSendMessage', () => {
                     ID: message.data.AddressID,
                     Email: fromAddress,
                     Receive: 1,
-                    HasKeys: true
-                }
+                    HasKeys: true,
+                },
             ]);
             addKeysToAddressKeysCache(message.data.AddressID, fromKeys);
 
@@ -228,7 +229,7 @@ describe('useSendMessage', () => {
 
             const message = prepareMessage({
                 document: createDocument(content),
-                data: { MIMEType: MIME_TYPES.DEFAULT }
+                data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
             minimalCache();
@@ -269,7 +270,7 @@ describe('useSendMessage', () => {
 
             const message = prepareMessage({
                 document: createDocument(content),
-                data: { MIMEType: MIME_TYPES.DEFAULT }
+                data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
             minimalCache();
@@ -312,7 +313,7 @@ describe('useSendMessage', () => {
 
             const message = prepareMessage({
                 document: createDocument(content),
-                data: { MIMEType: MIME_TYPES.DEFAULT }
+                data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
             addKeysToAddressKeysCache(message.data.AddressID, fromKeys);
@@ -353,7 +354,7 @@ describe('useSendMessage', () => {
 
             const message = prepareMessage({
                 document: createDocument(content),
-                data: { MIMEType: MIME_TYPES.DEFAULT }
+                data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
             minimalCache();
@@ -395,7 +396,7 @@ describe('useSendMessage', () => {
 
             const message = prepareMessage({
                 document: createDocument(content),
-                data: { MIMEType: MIME_TYPES.DEFAULT }
+                data: { MIMEType: MIME_TYPES.DEFAULT },
             });
 
             minimalCache();
@@ -480,14 +481,14 @@ describe('useSendMessage', () => {
                 {
                     ID: 'AttachmentID',
                     Name: 'image.png',
-                    MIMEType: 'image/png'
+                    MIMEType: 'image/png',
                 },
                 fromKeys.publicKeys
             );
             const message = prepareMessage({
                 document: createDocument(content),
                 privateKeys: fromKeys.privateKeys,
-                data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] }
+                data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
             });
 
             minimalCache();
@@ -527,14 +528,14 @@ describe('useSendMessage', () => {
                 {
                     ID: 'AttachmentID',
                     Name: 'image.png',
-                    MIMEType: 'image/png'
+                    MIMEType: 'image/png',
                 },
                 fromKeys.publicKeys
             );
             const message = prepareMessage({
                 document: createDocument(content),
                 privateKeys: fromKeys.privateKeys,
-                data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] }
+                data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
             });
 
             addApiKeys(false, toKeys);
@@ -580,7 +581,7 @@ describe('useSendMessage', () => {
                     ID: 'AttachmentID',
                     Name: 'embedded.png',
                     MIMEType: 'image/png',
-                    Headers: { 'content-id': cid }
+                    Headers: { 'content-id': cid },
                 },
                 fromKeys.publicKeys
             );
@@ -596,7 +597,7 @@ describe('useSendMessage', () => {
                 document,
                 embeddeds,
                 privateKeys: fromKeys.privateKeys,
-                data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] }
+                data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
             });
 
             minimalCache();

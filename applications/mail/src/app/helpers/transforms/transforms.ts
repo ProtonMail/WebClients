@@ -1,4 +1,5 @@
 import { message as sanitize } from 'proton-shared/lib/sanitize';
+import { Api, MailSettings } from 'proton-shared/lib/interfaces';
 
 import { transformEscape, attachBase64 } from './transformEscape';
 import { Base64Cache } from '../../hooks/useBase64Cache';
@@ -7,7 +8,6 @@ import { transformLinks } from './transformLinks';
 import { transformEmbedded } from './transformEmbedded';
 import { MessageExtended } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { Api, MailSettings } from 'proton-shared/lib/interfaces';
 import { transformWelcome } from './transformWelcome';
 import { transformStylesheet } from './transformStylesheet';
 import { transformRemote } from './transformRemote';

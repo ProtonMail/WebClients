@@ -1,42 +1,16 @@
 {
+    "extends": ["proton-lint"],
     "parser": "@typescript-eslint/parser",
-    "plugins": ["react", "react-hooks", "import", "@typescript-eslint"],
     "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
+        "project": "./tsconfig.json"
     },
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "jest": true,
-        "node": true
-    },
-    "settings": {
-        "react": {
-            "version": "detect"
-        },
-        "import/resolver": {
-            "node": {
-                "extensions": [".js", ".ts", ".tsx"]
-            }
-        }
-    },
-    "extends": ["plugin:@typescript-eslint/recommended", "eslint:recommended", "plugin:react/recommended"],
     "rules": {
-        "react/display-name": "off",
-        "react/prop-types": "warn",
-        "react-hooks/rules-of-hooks": "error",
-        "import/no-unresolved": [2, { "commonjs": true, "amd": true }],
-        "import/named": 2,
-        "import/namespace": 2,
-        "import/default": 2,
-        "import/export": 2,
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/indent": "off"
+        "no-console": "off",
+        "no-nested-ternary": "off",
+        "import/no-cycle": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "jsx-a11y/click-events-have-key-events": "off"
     }
 }

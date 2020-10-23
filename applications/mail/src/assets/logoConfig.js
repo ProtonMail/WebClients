@@ -7,7 +7,7 @@ module.exports = {
         developerName: 'Proton Technologies AG',
         developerURL: 'https://github.com/ProtonMail/proton-mail',
         background: '#262a33',
-        // eslint-disable-next-line @typescript-eslint/camelcase
-        theme_color: '#262a33'
-    }
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        theme_color: '#262a33',
+    },
 };

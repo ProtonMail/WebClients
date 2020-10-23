@@ -12,7 +12,7 @@ const ExtraEventOrganizerButtons = ({ model }: Props) => {
     const {
         invitationIcs,
         invitationIcs: { method },
-        invitationApi
+        invitationApi,
     } = model;
     if (!invitationApi?.vevent.sequence) {
         return null;
@@ -27,7 +27,7 @@ const ExtraEventOrganizerButtons = ({ model }: Props) => {
             return <SmallButton>{c('Action').t`Accept`}</SmallButton>;
         }
         if (sequenceDiff < 0) {
-            return <SmallButton disabled={true}>{c('Action').t`Accept`}</SmallButton>;
+            return <SmallButton disabled>{c('Action').t`Accept`}</SmallButton>;
         }
     }
     return null;

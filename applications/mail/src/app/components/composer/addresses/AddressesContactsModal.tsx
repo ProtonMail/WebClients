@@ -34,7 +34,7 @@ const AddressesContactsModal = ({
     };
 
     const handleChangeCheckbox = (contact: ContactEmail) => (event: ChangeEvent<HTMLInputElement>) => {
-        const checked = event.target.checked;
+        const { checked } = event.target;
         let newValue: Recipient[];
         if (checked) {
             newValue = [...value, { Name: contact.Name, Address: contact.Email }];
@@ -77,7 +77,7 @@ const AddressesContactsModal = ({
                                     onChange={handleChangeCheckbox(contact)}
                                 />,
                                 contact.Name,
-                                contact.Email
+                                contact.Email,
                             ]}
                         />
                     ))}

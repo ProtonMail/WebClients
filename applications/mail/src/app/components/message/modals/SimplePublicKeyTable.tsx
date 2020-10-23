@@ -27,7 +27,7 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
             const time = await publicKey.getExpirationTime('encrypt');
             setExpirationDate(new Date(time));
         };
-        withLoading(getExpirationTime());
+        void withLoading(getExpirationTime());
     }, []);
 
     const fingerprintCell = (

@@ -15,7 +15,7 @@ import {
     Group,
     ButtonGroup,
     Tooltip,
-    useLabels
+    useLabels,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -60,7 +60,7 @@ const HeaderMoreDropdown = ({
     onBack,
     onCollapse,
     onSourceMode,
-    breakpoints
+    breakpoints,
 }: Props) => {
     const api = useApi();
     const attachmentsCache = useAttachmentCache();
@@ -92,7 +92,7 @@ const HeaderMoreDropdown = ({
             reportPhishing({
                 MessageID: message.data?.ID,
                 MIMEType: message.data?.MIMEType === 'text/plain' ? 'text/plain' : 'text/html', // Accept only 'text/plain' / 'text/html'
-                Body: message.decryptedBody
+                Body: message.decryptedBody,
             })
         );
 
@@ -132,7 +132,7 @@ const HeaderMoreDropdown = ({
     const isSpam = messageLabelIDs.includes(SPAM);
     const isInTrash = messageLabelIDs.includes(TRASH);
     const fromFolderID = getCurrentFolderID(messageLabelIDs, folders);
-    const isNarrow = breakpoints.isNarrow;
+    const { isNarrow } = breakpoints;
     const additionalDropdowns: DropdownRender[] | undefined = isNarrow
         ? [
               ({ onClose }) => <CustomFilterDropdown message={message.data as Message} onClose={onClose} />,
@@ -156,7 +156,7 @@ const HeaderMoreDropdown = ({
                       onLock={onLock}
                       breakpoints={breakpoints}
                   />
-              )
+              ),
           ]
         : undefined;
 
@@ -192,7 +192,7 @@ const HeaderMoreDropdown = ({
             <HeaderDropdown
                 disabled={!messageLoaded}
                 className="pm-button pm-button--for-icon pm-group-button"
-                autoClose={true}
+                autoClose
                 title={c('Title').t`More`}
                 content={<Icon name="caret" className="caret-like" alt={c('Title').t`More options`} />}
                 hasCaret={false}

@@ -15,9 +15,9 @@ export const combineHeaders = async (baseHeader: string, extraHeaders: string) =
         const capsKey = key.replace(/(^|-)./g, (letter) => letter.toUpperCase());
         const values = toList(parsedExtras[key]);
         const headerLine = values.map((val) => `${capsKey}: ${val}`).join('\r\n');
-        const outputHeader = inputHeader.replace(new RegExp('^' + key + ':.*(?=$[^ ])', 'im'), headerLine);
+        const outputHeader = inputHeader.replace(new RegExp(`^${key}:.*(?=$[^ ])`, 'im'), headerLine);
         if (outputHeader.indexOf(capsKey) === -1) {
-            return inputHeader + headerLine + '\r\n';
+            return `${inputHeader + headerLine}\r\n`;
         }
         return outputHeader;
     }, baseHeader);

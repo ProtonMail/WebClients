@@ -11,7 +11,7 @@ import {
     useContactGroups,
     useFolders,
     ButtonGroup as OriginalButtonGroup,
-    Tooltip
+    Tooltip,
 } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -96,7 +96,7 @@ const HeaderExpanded = ({
     onBack,
     onCompose,
     onSourceMode,
-    breakpoints
+    breakpoints,
 }: Props) => {
     const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [contactGroups = []] = useContactGroups();
@@ -120,7 +120,7 @@ const HeaderExpanded = ({
     const handleCompose = (action: MESSAGE_ACTIONS) => () => {
         onCompose({
             action,
-            referenceMessage: message
+            referenceMessage: message,
         });
     };
 
@@ -133,7 +133,7 @@ const HeaderExpanded = ({
         />
     );
 
-    const isNarrow = breakpoints.isNarrow;
+    const { isNarrow } = breakpoints;
 
     return (
         <div
@@ -141,7 +141,7 @@ const HeaderExpanded = ({
                 'message-header message-header-expanded',
                 showDetails && 'message-header--showDetails',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
-                !messageLoaded && 'is-loading'
+                !messageLoaded && 'is-loading',
             ])}
         >
             <div className="flex flex-nowrap flex-items-center cursor-pointer" onClick={handleClick}>
@@ -151,7 +151,7 @@ const HeaderExpanded = ({
                             label={c('Label').t`From:`}
                             className={classnames([
                                 'flex flex-items-start flex-nowrap',
-                                !messageLoaded && 'flex-item-fluid'
+                                !messageLoaded && 'flex-item-fluid',
                             ])}
                         >
                             {from}
@@ -160,7 +160,7 @@ const HeaderExpanded = ({
                         <div
                             className={classnames([
                                 'flex flex-nowrap is-appearing-content',
-                                !messageLoaded && 'flex-item-fluid'
+                                !messageLoaded && 'flex-item-fluid',
                             ])}
                         >
                             {from}
@@ -170,7 +170,7 @@ const HeaderExpanded = ({
                 <div
                     className={classnames([
                         'message-header-metas-container flex flex-items-center flex-item-noshrink',
-                        isNarrow && 'flex-self-start'
+                        isNarrow && 'flex-self-start',
                     ])}
                 >
                     {messageLoaded && !showDetails && (
@@ -194,7 +194,7 @@ const HeaderExpanded = ({
                             <ItemAction element={message.data} className="flex-item-noshrink" />
                         </span>
                     )}
-                    {!messageLoaded && <span className="message-header-metas ml0-5 inline-flex"></span>}
+                    {!messageLoaded && <span className="message-header-metas ml0-5 inline-flex" />}
                     <span className="message-header-star ml0-5 inline-flex">
                         <ItemStar element={message.data} />
                     </span>
@@ -203,7 +203,7 @@ const HeaderExpanded = ({
             <div
                 className={classnames([
                     'flex flex-nowrap flex-items-center mb0-5 onmobile-flex-wrap',
-                    !showDetails && 'mt0-5'
+                    !showDetails && 'mt0-5',
                 ])}
             >
                 <div className="flex-item-fluid flex flex-nowrap mr0-5 onmobile-mr0 message-header-recipients">
@@ -227,7 +227,7 @@ const HeaderExpanded = ({
                     <span
                         className={classnames([
                             'message-show-hide-link-container flex-item-noshrink',
-                            showDetails ? 'mt0-25 onmobile-mt0-5' : 'ml0-5'
+                            showDetails ? 'mt0-25 onmobile-mt0-5' : 'ml0-5',
                         ])}
                     >
                         {messageLoaded && (
@@ -282,7 +282,7 @@ const HeaderExpanded = ({
                             </div>
                         </>
                     ) : (
-                        <span className="message-header-metas inline-flex"></span>
+                        <span className="message-header-metas inline-flex" />
                     )}
                 </div>
             )}
@@ -338,7 +338,7 @@ const HeaderExpanded = ({
                             </HeaderDropdown>
                             <HeaderDropdown
                                 autoClose={false}
-                                noMaxSize={true}
+                                noMaxSize
                                 content={<Icon name="folder" alt={c('Action').t`Move to`} />}
                                 className="pm-button pm-group-button pm-button--for-icon"
                                 dropDownClassName="moveDropdown"
@@ -359,7 +359,7 @@ const HeaderExpanded = ({
                             </HeaderDropdown>
                             <HeaderDropdown
                                 autoClose={false}
-                                noMaxSize={true}
+                                noMaxSize
                                 content={<Icon name="label" alt={c('Action').t`Label as`} />}
                                 className="pm-button pm-group-button pm-button--for-icon"
                                 dropDownClassName="labelDropdown"
@@ -411,7 +411,7 @@ const HeaderExpanded = ({
                     </ButtonGroup>
                 </Group>
             </div>
-            {/*{messageLoaded ? <HeaderAttachmentEvent message={message} /> : null}*/}
+            {/* {messageLoaded ? <HeaderAttachmentEvent message={message} /> : null} */}
         </div>
     );
 };

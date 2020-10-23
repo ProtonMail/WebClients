@@ -38,7 +38,7 @@ const ConversationView = ({
     mailSettings,
     onBack,
     onCompose,
-    breakpoints
+    breakpoints,
 }: Props) => {
     const [labels = []] = useLabels();
     const {
@@ -46,7 +46,7 @@ const ConversationView = ({
         conversation: conversationResult,
         pendingRequest,
         loadingConversation,
-        loadingMessages
+        loadingMessages,
     } = useConversation(inputConversationID, messageID);
     const { state: filter, toggle: toggleFilter, set: setFilter } = useToggle(DEFAULT_FILTER_VALUE);
     useShouldMoveOut(true, conversationID, pendingRequest, onBack);
@@ -95,7 +95,7 @@ const ConversationView = ({
                     <MessageView
                         key={message.ID}
                         labelID={labelID}
-                        conversationMode={true}
+                        conversationMode
                         loading={loadingMessages}
                         message={message}
                         expand={message.ID === expand}

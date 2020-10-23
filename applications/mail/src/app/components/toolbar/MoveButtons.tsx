@@ -31,7 +31,7 @@ const MoveButtons = ({
     breakpoints,
     selectedIDs = [],
     onBack,
-    conversationMode
+    conversationMode,
 }: Props) => {
     const [loading, withLoading] = useLoading();
     const moveToFolder = useMoveToFolder();
@@ -115,28 +115,26 @@ const MoveButtons = ({
         } else {
             buttons = [trashButton];
         }
-    } else {
-        if (labelID === INBOX) {
-            buttons = [trashButton, archiveButton, spamButton];
-        } else if (labelID === DRAFTS || labelID === ALL_DRAFTS) {
-            buttons = [trashButton, archiveButton, deleteButton];
-        } else if (labelID === SENT || labelID === ALL_SENT) {
-            buttons = [trashButton, archiveButton, deleteButton];
-        } else if (labelID === STARRED) {
-            buttons = [inboxButton, trashButton, archiveButton];
-        } else if (labelID === ARCHIVE) {
-            buttons = [inboxButton, trashButton, spamButton];
-        } else if (labelID === SPAM) {
-            buttons = [inboxButton, trashButton, deleteButton];
-        } else if (labelID === TRASH) {
-            buttons = [inboxButton, archiveButton, deleteButton];
-        } else if (labelID === ALL_MAIL) {
-            buttons = [inboxButton, trashButton, archiveButton];
-        } else if (isCustomFolder(labelID, folders)) {
-            buttons = [inboxButton, trashButton, archiveButton];
-        } else if (isCustomLabel(labelID, labels)) {
-            buttons = [inboxButton, trashButton, archiveButton];
-        }
+    } else if (labelID === INBOX) {
+        buttons = [trashButton, archiveButton, spamButton];
+    } else if (labelID === DRAFTS || labelID === ALL_DRAFTS) {
+        buttons = [trashButton, archiveButton, deleteButton];
+    } else if (labelID === SENT || labelID === ALL_SENT) {
+        buttons = [trashButton, archiveButton, deleteButton];
+    } else if (labelID === STARRED) {
+        buttons = [inboxButton, trashButton, archiveButton];
+    } else if (labelID === ARCHIVE) {
+        buttons = [inboxButton, trashButton, spamButton];
+    } else if (labelID === SPAM) {
+        buttons = [inboxButton, trashButton, deleteButton];
+    } else if (labelID === TRASH) {
+        buttons = [inboxButton, archiveButton, deleteButton];
+    } else if (labelID === ALL_MAIL) {
+        buttons = [inboxButton, trashButton, archiveButton];
+    } else if (isCustomFolder(labelID, folders)) {
+        buttons = [inboxButton, trashButton, archiveButton];
+    } else if (isCustomLabel(labelID, labels)) {
+        buttons = [inboxButton, trashButton, archiveButton];
     }
 
     return <>{buttons}</>; // TS limitation

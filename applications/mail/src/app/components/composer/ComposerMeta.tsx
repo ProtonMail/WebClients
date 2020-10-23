@@ -31,13 +31,13 @@ const ComposerMeta = ({
     onChange,
     onChangeContent,
     addressesBlurRef,
-    addressesFocusRef
+    addressesFocusRef,
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
 
     const addressesOptions = getFromAdresses(addresses, message.originalTo).map((address) => ({
         text: address.Email,
-        value: address.ID
+        value: address.ID,
     }));
 
     const handleFromChange = (event: ChangeEvent) => {
@@ -72,7 +72,7 @@ const ComposerMeta = ({
                     onChange={handleFromChange}
                     onFocus={addressesBlurRef.current}
                     data-test-id="composer:from"
-                ></Select>
+                />
             </div>
             <ComposerAddresses
                 message={message}

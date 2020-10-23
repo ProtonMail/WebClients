@@ -10,7 +10,7 @@ import { useOptimisticMarkAs } from './optimistic/useOptimisticMarkAs';
 
 export enum MARK_AS_STATUS {
     READ = 'read',
-    UNREAD = 'unread'
+    UNREAD = 'unread',
 }
 
 export const useMarkAs = () => {
@@ -28,6 +28,7 @@ export const useMarkAs = () => {
         const markAsUnreadAction = isMessage ? markMessageAsUnread : markConversationsAsUnread;
         const action = status === MARK_AS_STATUS.READ ? markAsReadAction : markAsUnreadAction;
         const rollback = optimisticMarkAs(elements, labelID, { status });
+
         const request = async () => {
             try {
                 await api(
@@ -42,7 +43,9 @@ export const useMarkAs = () => {
             }
             await call();
         };
-        request(); // No await since we are doing optimistic UI here
+
+        // No await since we are doing optimistic UI here
+        void request();
     }, []);
 
     return markAs;

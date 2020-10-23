@@ -4,6 +4,8 @@ import { Href, Icon, useFolders } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
+import { pick } from 'proton-shared/lib/helpers/object';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import { MessageExtended } from '../../../models/message';
@@ -12,9 +14,7 @@ import { getNumAttachmentByType } from '../../../helpers/message/messages';
 import { getSize, getLabelIDs } from '../../../helpers/elements';
 import { getSendIconHref, MessageViewIcons } from '../../../helpers/message/icon';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import { pick } from 'proton-shared/lib/helpers/object';
 import ItemLocation from '../../list/ItemLocation';
-import { MailSettings } from 'proton-shared/lib/interfaces';
 
 interface Props {
     labelID: string;
@@ -36,7 +36,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
 
     const [numPureAttachments, numEmbedded] = getNumAttachmentByType(message);
     const attachmentsTexts = [];
-    numPureAttachments &&
+    if (numPureAttachments) {
         attachmentsTexts.push(
             c('Info').ngettext(
                 msgid`${numPureAttachments} file attached`,
@@ -44,10 +44,12 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                 numPureAttachments
             )
         );
-    numEmbedded &&
+    }
+    if (numEmbedded) {
         attachmentsTexts.push(
             c('Info').ngettext(msgid`${numEmbedded} embedded image`, `${numEmbedded} embedded images`, numEmbedded)
         );
+    }
 
     const attachmentsText = attachmentsTexts.join(', ');
 

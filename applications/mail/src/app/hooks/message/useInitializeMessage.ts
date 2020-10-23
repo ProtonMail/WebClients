@@ -12,7 +12,7 @@ import { updateMessageCache, useMessageCache } from '../../containers/MessagePro
 import { prepareMailDocument } from '../../helpers/transforms/transforms';
 import { isApiError } from '../../helpers/errors';
 import { useBase64Cache } from '../useBase64Cache';
-import { useMarkAs, MARK_AS_STATUS } from './../useMarkAs';
+import { useMarkAs, MARK_AS_STATUS } from '../useMarkAs';
 import { isUnreadMessage } from '../../helpers/elements';
 import { hasShowEmbedded } from '../../helpers/settings';
 import { useLoadEmbeddedImages } from './useLoadImages';
@@ -46,7 +46,10 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
 
         const errors: MessageErrors = {};
 
-        let userKeys, decryption, preparation, dataChanges;
+        let userKeys;
+        let decryption;
+        let preparation;
+        let dataChanges;
 
         try {
             // Ensure the message data is loaded
@@ -59,7 +62,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             const messageWithKeys = {
                 ...message,
                 publicKeys: [], // Signature verification are done later for performance
-                privateKeys: userKeys.privateKeys
+                privateKeys: userKeys.privateKeys,
             };
 
             decryption = await decryptMessage(getData(), userKeys.privateKeys, attachmentsCache);
@@ -76,7 +79,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             }
 
             // Trigger all public key and signature verification but we are not waiting for it
-            verifyMessage();
+            void verifyMessage();
 
             if (isUnreadMessage(getData())) {
                 markAs([getData()], labelID, MARK_AS_STATUS.READ);
@@ -112,14 +115,14 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 showRemoteImages: preparation?.showRemoteImages,
                 embeddeds: preparation?.embeddeds,
                 errors,
-                initialized: true
+                initialized: true,
             });
         }
 
         if (hasShowEmbedded(mailSettings)) {
             // Load embedded images as a second step not synchronized with the initialization
             // To prevent slowing the message body when there is heavy embedded attachments
-            loadEmbeddedImages();
+            void loadEmbeddedImages();
         }
     }, [localID]);
 };

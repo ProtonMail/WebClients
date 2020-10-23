@@ -2,13 +2,13 @@ module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
-    transformIgnorePatterns: ['node_modules/(?!(proton-shared|react-components|mutex-browser)/)'],
+    transformIgnorePatterns: ['node_modules/(?!(proton-shared|react-components|mutex-browser|pmcrypto)/)'],
     transform: {
-        '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js'
+        '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',
     },
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$': 'react-components/__mocks__/fileMock.js',
         '\\.(css|scss|less)$': 'react-components/__mocks__/styleMock.js',
-        'sieve.js': 'react-components/__mocks__/sieve.js'
-    }
+        'sieve.js': 'react-components/__mocks__/sieve.js',
+    },
 };

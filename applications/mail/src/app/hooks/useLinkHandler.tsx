@@ -4,13 +4,12 @@ import psl from 'psl';
 import { useMailSettings, useModals, useNotifications, useHandler } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isIE11, isEdge } from 'proton-shared/lib/helpers/browser';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
-import { MESSAGE_ACTIONS } from '../constants';
+import { MESSAGE_ACTIONS, PROTON_DOMAINS } from '../constants';
 import { mailtoParser, isExternal, isSubDomain, getHostname } from '../helpers/url';
-import { PROTON_DOMAINS } from '../constants';
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
 import { OnCompose } from './useCompose';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
 
@@ -50,7 +49,7 @@ export const useLinkHandler = (onCompose: OnCompose) => {
             createNotification({
                 text: c('Error')
                     .t`This message may contain some link's URL that cannot be properly opened by your current browser`,
-                type: 'error'
+                type: 'error',
             });
             return { raw: '' };
         }
@@ -81,10 +80,7 @@ export const useLinkHandler = (onCompose: OnCompose) => {
             const parser = (input: string) => {
                 // Sometimes Blink is enable to decode the URL to convert it again
                 const uri = !input.startsWith('%') ? input : decodeURIComponent(input);
-                return uri
-                    .split('/')
-                    .map(punycode.toASCII)
-                    .join('/');
+                return uri.split('/').map(punycode.toASCII).join('/');
             };
 
             const newUrl = [url, ...tracking].map(parser).join('://');

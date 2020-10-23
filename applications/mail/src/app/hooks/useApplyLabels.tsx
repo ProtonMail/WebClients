@@ -129,9 +129,8 @@ export const useApplyLabels = () => {
                         try {
                             if (changes[LabelID]) {
                                 return await api(labelAction({ LabelID, IDs: elementIDs }));
-                            } else {
-                                return await api(unlabelAction({ LabelID, IDs: elementIDs }));
                             }
+                            return await api(unlabelAction({ LabelID, IDs: elementIDs }));
                         } catch (error) {
                             rollbacks[LabelID]();
                             throw error;
@@ -143,7 +142,7 @@ export const useApplyLabels = () => {
             };
 
             // No await ==> optimistic
-            handleDo();
+            void handleDo();
 
             let notificationText = c('Success').t`Labels applied.`;
 
@@ -154,19 +153,17 @@ export const useApplyLabels = () => {
 
                 if (changesKeys[0] === MAILBOX_LABEL_IDS.STARRED) {
                     notificationText = getNotificationTextStarred(isMessage, elementsCount);
+                } else if (!Object.values(changes)[0]) {
+                    notificationText = getNotificationTextRemoved(isMessage, elementsCount, labelName);
                 } else {
-                    if (!Object.values(changes)[0]) {
-                        notificationText = getNotificationTextRemoved(isMessage, elementsCount, labelName);
-                    } else {
-                        notificationText = getNotificationTextAdded(isMessage, elementsCount, labelName);
-                    }
+                    notificationText = getNotificationTextAdded(isMessage, elementsCount, labelName);
                 }
             }
 
             if (!silent) {
                 createNotification({
                     text: notificationText,
-                    expiration: EXPIRATION
+                    expiration: EXPIRATION,
                 });
             }
         },
@@ -215,7 +212,7 @@ export const useMoveToFolder = () => {
             };
 
             // No await ==> optimistic
-            handleDo();
+            void handleDo();
 
             const notificationText = getNotificationTextMoved(isMessage, elementIDs.length, folderName);
 
@@ -227,7 +224,7 @@ export const useMoveToFolder = () => {
                             {canUndo ? <UndoButton onUndo={handleUndo} /> : null}
                         </>
                     ),
-                    expiration: EXPIRATION
+                    expiration: EXPIRATION,
                 });
             }
         },

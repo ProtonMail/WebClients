@@ -19,6 +19,7 @@ const ExtraEventParticipants = ({ list = [] }: Props) => {
                 if (emailAddress) {
                     if (name) {
                         return (
+                            // eslint-disable-next-line react/no-array-index-key
                             <div key={`${name}-${emailAddress}-${i}`}>
                                 <span title={name}>{`${name} `}</span>(
                                 <a href={buildMailTo(emailAddress)} title={emailAddress}>
@@ -29,6 +30,7 @@ const ExtraEventParticipants = ({ list = [] }: Props) => {
                         );
                     }
                     return (
+                        // eslint-disable-next-line react/no-array-index-key
                         <div key={`${emailAddress}-${i}`}>
                             <a href={buildMailTo(emailAddress)} title={emailAddress}>
                                 {emailAddress}
@@ -39,6 +41,7 @@ const ExtraEventParticipants = ({ list = [] }: Props) => {
                 }
 
                 return (
+                    // eslint-disable-next-line react/no-array-index-key
                     <div key={`${name}-${i}`} className="ellipsis">
                         {name}
                     </div>

@@ -3,6 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
+import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import ItemStar from './ItemStar';
 import ItemLabels from './ItemLabels';
@@ -10,7 +11,6 @@ import ItemAttachmentIcon from './ItemAttachmentIcon';
 import ItemLocation from './ItemLocation';
 import ItemDate from './ItemDate';
 import NumMessages from '../conversation/NumMessages';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { Element } from '../../models/element';
 import ItemExpiration from './ItemExpiration';
 
@@ -39,7 +39,7 @@ const ItemRowLayout = ({
     addresses,
     unread,
     displayRecipients,
-    loading
+    loading,
 }: Props) => {
     const { Subject, Size } = element;
     const size = humanSize(Size);

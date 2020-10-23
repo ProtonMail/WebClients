@@ -6,7 +6,7 @@ import {
     generateSessionKey,
     encryptSessionKey,
     SessionKey,
-    OpenPGPKey
+    OpenPGPKey,
 } from 'pmcrypto';
 import { enums } from 'openpgp';
 
@@ -18,10 +18,10 @@ import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { CachedKey } from 'proton-shared/lib/interfaces';
 import { getAttachments } from 'proton-shared/lib/mail/messages';
 import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
+import { AES256, MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 
 import { MessageExtended } from '../../models/message';
 import { arrayToBase64 } from '../base64';
-import { AES256, MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 
 // Reference: Angular/src/app/composer/services/encryptPackages.js
 
@@ -39,7 +39,7 @@ const packToBase64 = ({ data, algorithm: Algorithm = AES256 }: SessionKey) => {
 const encryptKeyPacket = async ({
     sessionKeys = [],
     publicKeys = [],
-    passwords = []
+    passwords = [],
 }: {
     sessionKeys?: SessionKey[];
     publicKeys?: OpenPGPKey[];
@@ -51,7 +51,7 @@ const encryptKeyPacket = async ({
                 data: sessionKey.data,
                 algorithm: sessionKey.algorithm,
                 publicKeys: publicKeys.length > 0 ? publicKeys : undefined,
-                passwords
+                passwords,
             });
             const data = message.packets.write();
             return arrayToBase64(data as Uint8Array);
@@ -77,11 +77,13 @@ const encryptAttachmentKeys = async (pack: Package, message: MessageExtended, at
         const keys = await encryptKeyPacket({
             sessionKeys: attachmentKeys.map(({ SessionKey }) => SessionKey),
             passwords: isEo ? [message.data?.Password || ''] : undefined,
-            publicKeys: isEo ? undefined : [address.PublicKey as OpenPGPKey]
+            publicKeys: isEo ? undefined : [address.PublicKey as OpenPGPKey],
         });
 
         const AttachmentKeyPackets: { [AttachmentID: string]: string } = {};
-        attachmentKeys.forEach(({ Attachment }, i) => (AttachmentKeyPackets[Attachment.ID || ''] = keys[i]));
+        attachmentKeys.forEach(({ Attachment }, i) => {
+            AttachmentKeyPackets[Attachment.ID || ''] = keys[i];
+        });
         address.AttachmentKeyPackets = AttachmentKeyPackets;
     });
 
@@ -101,7 +103,7 @@ const encryptAttachmentKeys = async (pack: Package, message: MessageExtended, at
  */
 const generateSessionKeyHelper = async (): Promise<SessionKey> => ({
     algorithm: AES256,
-    data: await generateSessionKey(AES256)
+    data: await generateSessionKey(AES256),
 });
 
 /**
@@ -118,7 +120,7 @@ const encryptBodyPackage = async (pack: Package, ownKeys: CachedKey[], publicKey
         sessionKey: cleanPublicKeys.length ? undefined : await generateSessionKeyHelper(),
         privateKeys,
         returnSessionKey: true,
-        compression: enums.compression.zip
+        compression: enums.compression.zip,
     });
 
     const { asymmetric: keys, encrypted } = await splitMessage(data);
@@ -148,7 +150,7 @@ const encryptDraftBodyPackage = async (
         publicKeys: cleanPublicKeys,
         privateKeys,
         returnSessionKey: true,
-        compression: enums.compression.zip
+        compression: enums.compression.zip,
     });
 
     const packets = await splitMessage(data);
@@ -199,7 +201,7 @@ const encryptBody = async (pack: Package, ownKeys: CachedKey[], message: Message
             }
             const [BodyKeyPacket] = await encryptKeyPacket({
                 sessionKeys: [sessionKey],
-                passwords: [message.data?.Password || '']
+                passwords: [message.data?.Password || ''],
             });
 
             // eslint-disable-next-line require-atomic-updates
@@ -232,7 +234,7 @@ const getAttachmentKeys = async (message: MessageExtended): Promise<AttachmentKe
     Promise.all(
         getAttachments(message.data).map(async (attachment) => ({
             Attachment: attachment,
-            SessionKey: await getSessionKey(attachment, message.privateKeys || [])
+            SessionKey: await getSessionKey(attachment, message.privateKeys || []),
         }))
     );
 

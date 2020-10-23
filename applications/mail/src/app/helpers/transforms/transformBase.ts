@@ -1,12 +1,12 @@
 const ELEMENTS = [
     {
         selector: 'a:not([href^="http"])',
-        attribute: 'href'
+        attribute: 'href',
     },
     {
         selector: 'img:not([src^="http"]):not([proton-src^="cid"])',
-        attribute: 'proton-src'
-    }
+        attribute: 'proton-src',
+    },
 ];
 
 const getBaseURL = (base: HTMLBaseElement) => {
@@ -51,8 +51,11 @@ export const transformBase = (document: Element) => {
                 Bind the value only when we need, if there is a proton-src we don't need
                 to add the src else it will generate a request to the domain
              */
-            !ptValue && bindAttribute(el, attribute, url);
-            ptValue && bindAttribute(el, keyproton, ptValue);
+            if (ptValue) {
+                bindAttribute(el, keyproton, ptValue);
+            } else {
+                bindAttribute(el, attribute, url);
+            }
         });
     });
 };

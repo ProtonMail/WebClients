@@ -42,7 +42,7 @@ const ToolbarDropdown = ({
                     buttonRef={anchorRef}
                     isOpen={isOpen}
                     onClick={toggle}
-                    hasCaret={true}
+                    hasCaret
                     disabled={disabled}
                     caretClassName="toolbar-icon"
                     className={classnames(['flex-item-noshrink toolbar-button toolbar-button--dropdown', className])}

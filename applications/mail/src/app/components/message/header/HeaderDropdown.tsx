@@ -57,7 +57,7 @@ const HeaderDropdown = ({
                 buttonRef={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
-                hasCaret={true}
+                hasCaret
                 disabled={loading}
                 {...rest}
             >
@@ -81,20 +81,20 @@ const HeaderDropdown = ({
             {additionalDropdowns?.map((additionalDropdown, index) => {
                 return (
                     <Dropdown
-                        key={index}
+                        key={index} // eslint-disable-line react/no-array-index-key
                         id={`${uid}-${index}`}
                         className={dropDownClassName}
                         originalPlacement="bottom"
                         autoClose={false}
                         isOpen={additionalOpen === index}
-                        noMaxSize={true}
+                        noMaxSize
                         anchorRef={anchorRef}
                         onClose={handleAdditionalClose}
                     >
                         {additionalDropdown({
                             onClose: handleAdditionalClose,
                             onLock: setLock,
-                            onOpenAdditionnal: setAdditionalOpen
+                            onOpenAdditionnal: setAdditionalOpen,
                         })}
                     </Dropdown>
                 );

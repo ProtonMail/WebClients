@@ -19,23 +19,23 @@ export const formatDelay = (nowDate: Date, expirationDate: Date): string => {
         {
             diff: days,
             unit: c('Time unit').t`day`,
-            units: c('Time unit').t`days`
+            units: c('Time unit').t`days`,
         },
         {
             diff: hours,
             unit: c('Time unit').t`hour`,
-            units: c('Time unit').t`hours`
+            units: c('Time unit').t`hours`,
         },
         {
             diff: minutes,
             unit: c('Time unit').t`minute`,
-            units: c('Time unit').t`minutes`
+            units: c('Time unit').t`minutes`,
         },
         {
             diff: seconds,
             unit: c('Time unit').t`second`,
-            units: c('Time unit').t`seconds`
-        }
+            units: c('Time unit').t`seconds`,
+        },
     ]
         .reduce((acc: string[], { diff, unit, units }: { diff: number; unit: string; units: string }) => {
             if (diff) {
@@ -72,7 +72,7 @@ export const useExpiration = ({ ExpirationTime }: Element): [boolean, string] =>
         handler();
 
         if (ExpirationTime) {
-            const intervalID = window.setInterval(handler, 1000);
+            const intervalID = window.setInterval(handler, 1000); // eslint-disable-line @typescript-eslint/no-implied-eval
             return () => clearInterval(intervalID);
         }
     }, [ExpirationTime]);

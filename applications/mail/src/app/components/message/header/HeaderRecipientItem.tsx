@@ -31,14 +31,14 @@ const HeaderRecipientItem = ({
     showLockIcon = true,
     contacts,
     onCompose,
-    isLoading
+    isLoading,
 }: Props) => {
     if (isLoading) {
         return (
             <HeaderRecipientItemLayout
                 isLoading
                 button={
-                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded50 bl mr0-5"></span>
+                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded50 bl mr0-5" />
                 }
                 showAddress={showAddress}
             />

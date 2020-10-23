@@ -8,7 +8,6 @@ import { SquireEditorRef } from 'react-components/components/editor/SquireEditor
 import { RIGHT_TO_LEFT, MIME_TYPES } from 'proton-shared/lib/constants';
 import { diff } from 'proton-shared/lib/helpers/array';
 
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { MessageExtended, EmbeddedMap } from '../../../models/message';
 import { Breakpoints } from '../../../models/utils';
 import { MessageChange } from '../Composer';
@@ -16,7 +15,7 @@ import {
     getContent,
     exportPlainText,
     plainTextToHTML,
-    setDocumentContent
+    setDocumentContent,
 } from '../../../helpers/message/messageContent';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import { removeEmbeddedHTML } from '../../../helpers/embedded/embeddedParser';
@@ -34,7 +33,6 @@ export type EditorActionsRef = MutableRefObject<ExternalEditorActions | undefine
 
 interface Props {
     message: MessageExtended;
-    messageSendInfo: MessageSendInfo;
     disabled: boolean;
     breakpoints: Breakpoints;
     onReady: () => void;
@@ -43,7 +41,6 @@ interface Props {
     onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
-    onAddEmbeddedImages: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => () => void;
     contentFocusRef: MutableRefObject<() => void>;
     editorActionsRef: EditorActionsRef;
@@ -61,7 +58,7 @@ const SquireEditorWrapper = ({
     onRemoveAttachment,
     onFocus,
     contentFocusRef,
-    editorActionsRef
+    editorActionsRef,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
@@ -86,7 +83,7 @@ const SquireEditorWrapper = ({
             isPlainText,
             supportRightToLeft: true,
             rightToLeft,
-            supportImages: true
+            supportImages: true,
         }),
         [isPlainText, rightToLeft]
     );
@@ -224,7 +221,7 @@ const SquireEditorWrapper = ({
         embeddeds.forEach((info, cid) => {
             squireEditorRef.current?.insertImage(info.url || '', {
                 'data-embedded-img': cid,
-                alt: info.attachment.Name
+                alt: info.attachment.Name,
             });
         });
     });
@@ -240,7 +237,7 @@ const SquireEditorWrapper = ({
         editorActionsRef.current = {
             setContent: handleSetContent,
             insertEmbedded: handleInsertEmbedded,
-            removeEmbedded: handleRemoveEmbedded
+            removeEmbedded: handleRemoveEmbedded,
         };
         contentFocusRef.current = () => {
             squireEditorRef.current?.focus();

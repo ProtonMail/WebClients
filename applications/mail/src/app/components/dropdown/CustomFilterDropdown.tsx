@@ -7,7 +7,7 @@ import {
     Checkbox,
     useUser,
     useFilters,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
 import { FocusScope } from '@react-aria/focus';
@@ -23,7 +23,7 @@ enum AVAILABLE_FILTERS {
     SUBJECT = 'subject',
     SENDER = 'sender',
     RECIPIENT = 'recipient',
-    ATTACHMENTS = 'attachments'
+    ATTACHMENTS = 'attachments',
 }
 
 type FiltersState = {
@@ -40,23 +40,23 @@ const FILTER_TYPES: FilterType[] = [
     {
         value: AVAILABLE_FILTERS.SUBJECT,
         label: c('CustomFilter').t`Subject`,
-        conditionLabel: c('Filter modal type').t`If the subject`
+        conditionLabel: c('Filter modal type').t`If the subject`,
     },
     {
         value: AVAILABLE_FILTERS.SENDER,
         label: c('CustomFilter').t`Sender`,
-        conditionLabel: c('Filter modal type').t`If the sender`
+        conditionLabel: c('Filter modal type').t`If the sender`,
     },
     {
         value: AVAILABLE_FILTERS.RECIPIENT,
         label: c('CustomFilter').t`Recipient`,
-        conditionLabel: c('Filter modal type').t`If the recipient`
+        conditionLabel: c('Filter modal type').t`If the recipient`,
     },
     {
         value: AVAILABLE_FILTERS.ATTACHMENTS,
         label: c('CustomFilter').t`Attachments`,
-        conditionLabel: c('Filter modal type').t`If the attachments`
-    }
+        conditionLabel: c('Filter modal type').t`If the attachments`,
+    },
 ];
 
 interface Props {
@@ -69,7 +69,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
         [AVAILABLE_FILTERS.SUBJECT]: false,
         [AVAILABLE_FILTERS.SENDER]: false,
         [AVAILABLE_FILTERS.RECIPIENT]: false,
-        [AVAILABLE_FILTERS.ATTACHMENTS]: false
+        [AVAILABLE_FILTERS.ATTACHMENTS]: false,
     });
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -79,7 +79,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
     const toggleFilterType = (filterType: AVAILABLE_FILTERS) => {
         setFiltersState({
             ...filtersState,
-            [filterType]: !filtersState[filterType]
+            [filterType]: !filtersState[filterType],
         });
     };
 
@@ -110,9 +110,9 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
                     Values: [value],
                     Type: {
                         label: filterType.conditionLabel,
-                        value: filterType.value
+                        value: filterType.value,
                     },
-                    Comparator: { label: 'contains', value: 'contains' }
+                    Comparator: { label: 'contains', value: 'contains' },
                 }
             );
         });
@@ -122,7 +122,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
         if (!isPaid(user) && filters.filter((filter) => filter.Status === FILTER_STATUS.ENABLED).length > 0) {
             createNotification({
                 text: c('Error').t`Too many active filters. Please upgrade to a paid plan to activate more filters`,
-                type: 'error'
+                type: 'error',
             });
             onClose();
             return;
@@ -133,7 +133,9 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
         let filterType: AVAILABLE_FILTERS;
 
         for (filterType in filtersState) {
-            if (filtersState[filterType]) conditions.push(filterType);
+            if (filtersState[filterType]) {
+                conditions.push(filterType);
+            }
         }
 
         filter.Simple.Conditions = formatConditions(conditions);

@@ -10,6 +10,7 @@ interface Props {
 
 const ItemCheckbox = ({ children, className, ...rest }: Props) => {
     return (
+        // eslint-disable-next-line jsx-a11y/label-has-associated-control
         <label className={classnames(['relative stop-propagation', className])}>
             <input type="checkbox" className="item-checkbox inner-ratio-container cursor-pointer m0" {...rest} />
             <span className="item-icon flex-item-noshrink relative rounded50 inline-flex">

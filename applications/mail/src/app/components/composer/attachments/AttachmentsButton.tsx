@@ -1,11 +1,10 @@
-import React, { ChangeEvent, ReactNode } from 'react';
+import React, { ChangeEvent } from 'react';
 import { classnames, Icon } from 'react-components';
 
 interface Props {
     className?: string;
     disabled?: boolean;
     onAddAttachments: (files: File[]) => void;
-    children?: ReactNode;
 }
 
 const AttachmentsButton = ({ onAddAttachments, disabled, className }: Props) => {
@@ -19,12 +18,12 @@ const AttachmentsButton = ({ onAddAttachments, disabled, className }: Props) => 
 
     return (
         <div className="composer-attachments-button-wrapper flex">
-            <label
-                role="button"
+            <label // eslint-disable-line
+                role="button" // eslint-disable-line
                 className={classnames([
                     'pm-button pm-button--for-icon inline-flex flex-items-center',
                     disabled && 'is-disabled',
-                    className
+                    className,
                 ])}
             >
                 <Icon name="attach" />

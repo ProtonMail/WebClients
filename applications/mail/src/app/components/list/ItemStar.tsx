@@ -29,7 +29,7 @@ const ItemStar = ({ element = {} }: Props) => {
         // Programmatically block the action instead of disabling the action
         // Perhaps a bit less accessible but prevent to collapse a message on a second click
         if (!loading) {
-            withLoading(star([element], !isStarred));
+            void withLoading(star([element], !isStarred));
         }
     };
 
@@ -39,7 +39,7 @@ const ItemStar = ({ element = {} }: Props) => {
                 type="button"
                 className={classnames([
                     'starbutton relative item-star flex stop-propagation',
-                    isStarred && 'starbutton--is-starred'
+                    isStarred && 'starbutton--is-starred',
                 ])}
                 onClick={handleClick}
             >

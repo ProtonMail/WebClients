@@ -23,13 +23,6 @@ jest.mock('react-components/hooks/useEventManager.ts', () => {
 jest.mock('./src/app/helpers/upload');
 
 global.MutationObserver = class {
-    constructor() {
-        // Nothing
-    }
-    disconnect() {
-        // Nothing
-    }
-    observe() {
-        // Nothing
-    }
+    disconnect() {} // eslint-disable-line
+    observe() {} // eslint-disable-line
 };

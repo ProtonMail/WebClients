@@ -47,7 +47,10 @@ function prepareInjection(html: Element) {
     const mapAttributes = (node: Element) => {
         return [...node.attributes]
             .filter((attr) => ATTRIBUTES.indexOf(attr.name) !== -1)
-            .reduce((acc, attr) => ((acc[`${attr.name}`] = attr.value), acc), {} as { [name: string]: string });
+            .reduce<{ [name: string]: string }>((acc, attr) => {
+                acc[`${attr.name}`] = attr.value;
+                return acc;
+            }, {});
     };
 
     const $list = [...html.querySelectorAll(selector)];

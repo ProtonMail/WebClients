@@ -6,7 +6,7 @@ import React, {
     MutableRefObject,
     useRef,
     MouseEvent,
-    Fragment
+    Fragment,
 } from 'react';
 import { Input, classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -22,7 +22,7 @@ import {
     majorToRecipient,
     recipientsWithoutGroup,
     recipientsToRecipientOrGroup,
-    getRecipientOrGroupKey
+    getRecipientOrGroupKey,
 } from '../../../helpers/addresses';
 import AddressesAutocomplete from './AddressesAutocomplete';
 import AddressesGroupItem from './AddressesGroupItem';
@@ -85,7 +85,7 @@ const AddressesInput = ({
 
     const handleInputChange = (event: ChangeEvent) => {
         const input = event.target as HTMLInputElement;
-        const value = input.value;
+        const { value } = input;
         const values = value.split(';');
 
         if (value === ';') {
@@ -165,7 +165,7 @@ const AddressesInput = ({
         placeholderPosition,
         placeholderSize,
         containerDragHandlers,
-        itemDragHandlers
+        itemDragHandlers,
     } = useAddressesInputDrag(recipientsOrGroups, setRecipientsOrGroups, onChange);
 
     const dragPlaceholder = (
@@ -189,7 +189,7 @@ const AddressesInput = ({
             <div
                 className={classnames([
                     'composer-addresses-container pm-field flex-item-fluid bordered-container',
-                    !expanded && 'composer-addresses-container-closed'
+                    !expanded && 'composer-addresses-container-closed',
                 ])}
                 onClick={handleClick}
                 {...containerDragHandlers}

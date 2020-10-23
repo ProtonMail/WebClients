@@ -11,7 +11,6 @@ import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import unreadEmailsSvgLight from 'design-system/assets/img/shared/unread-emails.svg';
 import unreadEmailsSvgDark from 'design-system/assets/img/shared/unread-emails-dark.svg';
 import storageSvg from 'design-system/assets/img/shared/welcome/storage.svg';
-import mailSvg from 'design-system/assets/img/shared/welcome/custom.svg';
 import customSvg from 'design-system/assets/img/shared/welcome/custom.svg';
 
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -82,7 +81,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                             >{c('Action').t`Upgrade`}</AppLink>
                         </div>
                         <div className="bordered-container flex-item-fluid flex flex-column aligncenter p1 mr2">
-                            <img className="mb1 hauto" src={mailSvg} alt={c('Alt').t`Mail`} />
+                            <img className="mb1 hauto" src={customSvg} alt={c('Alt').t`Mail`} />
                             <p className="mt0 mb1 bold">{c('Info').t`5 Email Addresses`}</p>
                             <p className="mt0 mb1">{c('Info')
                                 .t`Set up to 5 email addresses and use them as you deem fit.`}</p>

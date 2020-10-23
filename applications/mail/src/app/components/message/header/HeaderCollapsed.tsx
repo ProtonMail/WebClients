@@ -25,7 +25,6 @@ interface Props {
     mailSettings: MailSettings;
     isSentMessage: boolean;
     isUnreadMessage: boolean;
-    isDraftMessage: boolean;
     onExpand: () => void;
     onCompose: OnCompose;
     breakpoints: Breakpoints;
@@ -41,7 +40,7 @@ const HeaderCollapsed = ({
     isUnreadMessage,
     onExpand,
     onCompose,
-    breakpoints
+    breakpoints,
 }: Props) => {
     const [contacts = []] = useContactEmails();
 
@@ -62,7 +61,7 @@ const HeaderCollapsed = ({
                 'message-header message-header-collapsed flex flex-nowrap flex-items-center cursor-pointer',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'is-unread',
-                !messageLoaded && 'is-loading'
+                !messageLoaded && 'is-loading',
             ])}
             onClick={handleClick}
         >
@@ -113,7 +112,7 @@ const HeaderCollapsed = ({
                         <ItemDate className="ml0-25 is-appearing-content" element={message.data} labelID={labelID} />
                     </>
                 ) : (
-                    <span className="message-header-metas ml0-5 flex"></span>
+                    <span className="message-header-metas ml0-5 flex" />
                 )}
                 <span className="message-header-star ml0-5 flex">
                     <ItemStar element={message.data} />

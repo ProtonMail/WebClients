@@ -43,8 +43,6 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
         if (conversationFromElementsCache) {
             return { Conversation: conversationFromElementsCache, Messages: undefined };
         }
-
-        return;
     };
 
     const [conversation, setConversation] = useState<ConversationResult | undefined>(initConversation);
@@ -64,7 +62,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
         }
 
         if (!conversation || !conversation.Messages) {
-            withPendingRequest(load());
+            void withPendingRequest(load());
         }
 
         return cache.subscribe((changedId: string) => {

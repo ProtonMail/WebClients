@@ -9,14 +9,14 @@ import {
     useAddresses,
     useLoading,
     useUserSettings,
-    useGetCalendarUserSettings
+    useGetCalendarUserSettings,
 } from 'react-components';
 import { arrayToBinaryString, decodeUtf8 } from 'pmcrypto';
 import {
     getCanCreateCalendar,
     getDefaultCalendar,
     getIsCalendarDisabled,
-    getProbablyActiveCalendars
+    getProbablyActiveCalendars,
 } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
@@ -28,7 +28,7 @@ import {
     EventInvitation,
     filterAttachmentsForEvents,
     getSupportedEventInvitation,
-    parseEventInvitation
+    parseEventInvitation,
 } from '../../../helpers/calendar/invite';
 
 import { MessageExtendedWithData } from '../../../models/message';
@@ -113,7 +113,7 @@ const ExtraEvents = ({ message }: Props) => {
             setInvitations(invitations);
         };
 
-        withLoadingWidget(run());
+        void withLoadingWidget(run());
 
         return () => {
             unmounted = true;
@@ -129,7 +129,7 @@ const ExtraEvents = ({ message }: Props) => {
             {invitations.map((invitation, index: number) => {
                 return (
                     <ExtraEvent
-                        key={index}
+                        key={index} // eslint-disable-line react/no-array-index-key
                         invitationOrError={invitation}
                         message={message}
                         calendars={calendars}

@@ -13,7 +13,7 @@ export const BLOCKQUOTE_SELECTORS = [
     '#oriMsgHtmlSeperator',
     'blockquote[type="cite"]',
     '[name="quote"]', // gmx
-    '.zmail_extra' // zoho
+    '.zmail_extra', // zoho
 ];
 
 const BLOCKQUOTE_TEXT_SELECTORS = ['-----Original Message-----'];
@@ -42,6 +42,7 @@ const searchForContent = (element: Element, text: string) => {
     );
     const result: Element[] = [];
     let match = null;
+    // eslint-disable-next-line no-cond-assign
     while ((match = xpathResult?.iterateNext())) {
         result.push(match as Element);
     }
@@ -96,7 +97,7 @@ export const locateBlockquote = (inputDocument: Element | undefined): [string, s
                 });
             }
         });
-        document.ownerDocument?.evaluate;
+        // document.ownerDocument?.evaluate;
     }
 
     return result || [parentHTML, ''];

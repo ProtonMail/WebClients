@@ -36,7 +36,10 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
             </Alert>
             <ul>
                 {emails.map((email, index) => (
-                    <li key={index} className={classnames([index !== emails.length && 'mb0-5'])}>
+                    <li
+                        key={index} // eslint-disable-line react/no-array-index-key
+                        className={classnames([index !== emails.length && 'mb0-5'])}
+                    >
                         <span className="bl mw100">{email}</span>
                     </li>
                 ))}

@@ -4,7 +4,6 @@ import React, { MutableRefObject, DragEvent, useState, DragEventHandler } from '
 import { c } from 'ttag';
 import { classnames } from 'react-components';
 
-import { MessageSendInfo } from '../../hooks/useSendInfo';
 import { MessageExtended } from '../../models/message';
 import AttachmentsList from './attachments/AttachmentsList';
 import SquireEditorWrapper, { EditorActionsRef } from './editor/SquireEditorWrapper';
@@ -17,7 +16,6 @@ import { Breakpoints } from '../../models/utils';
 
 interface Props {
     message: MessageExtended;
-    messageSendInfo: MessageSendInfo;
     disabled: boolean;
     breakpoints: Breakpoints;
     onEditorReady: () => void;
@@ -26,7 +24,6 @@ interface Props {
     onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
-    onAddEmbeddedImages: (files: File[]) => void;
     onCancelAddAttachment: () => void;
     onRemoveAttachment: (attachment: Attachment) => () => void;
     onRemoveUpload: (pendingUpload: PendingUpload) => () => void;
@@ -39,7 +36,6 @@ interface Props {
 
 const ComposerContent = ({
     message,
-    messageSendInfo,
     disabled,
     breakpoints,
     onEditorReady,
@@ -48,7 +44,6 @@ const ComposerContent = ({
     onChangeFlag,
     onFocus,
     onAddAttachments,
-    onAddEmbeddedImages,
     onCancelAddAttachment,
     onRemoveAttachment,
     onRemoveUpload,
@@ -56,7 +51,7 @@ const ComposerContent = ({
     pendingUploads,
     onSelectEmbedded,
     contentFocusRef,
-    editorActionsRef
+    editorActionsRef,
 }: Props) => {
     const [fileHover, setFileHover] = useState(false);
 
@@ -89,7 +84,7 @@ const ComposerContent = ({
         <section
             className={classnames([
                 'flex-item-fluid mb0-5 ml1 mr1 flex flex-column flex-nowrap relative composer-content',
-                attachments?.length > 0 && 'composer-content--has-attachments'
+                attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
             onDrop={handleDrop}
             onDragEnter={handleHover(true)}
@@ -98,7 +93,6 @@ const ComposerContent = ({
             <div className="flex-item-fluid w100 flex flex-column flex-nowrap relative">
                 <SquireEditorWrapper
                     message={message}
-                    messageSendInfo={messageSendInfo}
                     disabled={disabled}
                     breakpoints={breakpoints}
                     onReady={onEditorReady}
@@ -107,7 +101,6 @@ const ComposerContent = ({
                     onChangeFlag={onChangeFlag}
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
-                    onAddEmbeddedImages={onAddEmbeddedImages}
                     onRemoveAttachment={onRemoveAttachment}
                     contentFocusRef={contentFocusRef}
                     editorActionsRef={editorActionsRef}

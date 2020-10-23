@@ -8,7 +8,7 @@ const SIGNATURE_PLACEHOLDER = '--protonSignature--';
 
 const OPTIONS = {
     breaks: true,
-    linkify: true
+    linkify: true,
 };
 
 const md = markdownit('default', OPTIONS);
@@ -27,13 +27,7 @@ const md = markdownit('default', OPTIONS);
 const generatePlaceHolder = (text: string) => {
     let placeholder = '';
     do {
-        placeholder =
-            Math.random()
-                .toString(36)
-                .substring(3) +
-            Math.random()
-                .toString(36)
-                .substring(3);
+        placeholder = Math.random().toString(36).substring(3) + Math.random().toString(36).substring(3);
     } while (text.includes(placeholder));
     return placeholder;
 };
@@ -57,7 +51,7 @@ const generatePlaceHolder = (text: string) => {
  * empty new line. This is how addNewLinePlaceholders uses this function.
  */
 const newLineIntoPlaceholder = (match: string, placeholder: string) =>
-    match.replace(/(\r\n|\n)/g, (match) => match + placeholder).replace(new RegExp(placeholder + '$', 'g'), '');
+    match.replace(/(\r\n|\n)/g, (match) => match + placeholder).replace(new RegExp(`${placeholder}$`, 'g'), '');
 
 /**
  * Turns any empty lines into lines filled with the specified placeholder

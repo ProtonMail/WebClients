@@ -2,9 +2,8 @@ import mimemessage from 'mimemessage';
 import { getEmailParts } from 'proton-shared/lib/helpers/email';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 
-import { ucFirst, toUnsignedString } from '../string';
+import { ucFirst, toUnsignedString, hash } from '../string';
 import { transformEscape } from '../transforms/transformEscape';
-import { hash } from '../string';
 import { EmbeddedInfo, EmbeddedMap } from '../../models/message';
 import { UploadResult } from '../attachment/attachmentUploader';
 
@@ -59,7 +58,7 @@ export const convertMimeHeaders = (config: { [key: string]: string } = {}) => {
 
     return {
         formatted: mimemessage.factory(headers),
-        headers
+        headers,
     };
 };
 
@@ -107,7 +106,7 @@ export const createEmbeddedMap = (...args: any[]) => new Map<string, EmbeddedInf
 
 export const createEmbeddedInfo = (upload: UploadResult) => ({
     attachment: upload.attachment,
-    url: createBlob(upload.attachment, upload.packets.Preview)
+    url: createBlob(upload.attachment, upload.packets.Preview),
 });
 
 export const cloneEmbedddedMap = (source: EmbeddedMap | undefined) => {
@@ -119,7 +118,7 @@ export const cloneEmbedddedMap = (source: EmbeddedMap | undefined) => {
 export const isEmbeddable = (fileType: string) => embeddableTypes.includes(fileType);
 
 export const isEmbeddedLocal = ({
-    Headers: { 'content-disposition': disposition, embedded } = {}
+    Headers: { 'content-disposition': disposition, embedded } = {},
 }: Attachment = {}) => {
     return disposition === 'inline' || Number(embedded) === 1;
 };

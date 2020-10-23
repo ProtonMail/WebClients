@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import { Icon, Tooltip, classnames } from 'react-components';
 import { c } from 'ttag';
+import { fromUnixTime } from 'date-fns';
 
 import { Element } from '../../models/element';
-import { fromUnixTime } from 'date-fns';
 import { formatFullDate } from '../../helpers/date';
 
 interface Props {

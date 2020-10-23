@@ -15,7 +15,7 @@ import AttachmentProvider from '../../containers/AttachmentProvider';
 export const authentication = ({
     getUID: jest.fn(),
     getLocalID: jest.fn(),
-    getPassword: jest.fn()
+    getPassword: jest.fn(),
 } as unknown) as PrivateAuthenticationStore;
 
 interface Props {
@@ -56,6 +56,8 @@ export const render = async (component: JSX.Element): Promise<RenderResult> => {
 };
 
 export const renderHook = (callback: (props: any) => any, useMinimalCache = true) => {
-    useMinimalCache && minimalCache();
+    if (useMinimalCache) {
+        minimalCache();
+    }
     return originalRenderHook<any, any>(callback, { wrapper: TestProvider as any });
 };

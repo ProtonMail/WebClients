@@ -1,9 +1,9 @@
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { getRecipientsAddresses } from 'proton-shared/lib/mail/messages';
 import React, { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
+import { Alert, useGetEncryptionPreferences, useModals } from 'react-components';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { getRecipientsAddresses } from 'proton-shared/lib/mail/messages';
 import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -12,13 +12,11 @@ import { omit } from 'proton-shared/lib/helpers/object';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { EncryptionPreferences, EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
 
-import { Alert, useGetEncryptionPreferences, useModals } from 'react-components';
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
-import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
 import { getSendStatusIcon } from '../helpers/message/icon';
-
 import { MapSendInfo } from '../models/crypto';
 import { MessageExtended } from '../models/message';
 
@@ -37,7 +35,7 @@ export const useMessageSendInfo = (message: MessageExtended) => {
     // Use memo is ok there but not really effective as any message change will update the ref
     const messageSendInfo: MessageSendInfo = useMemo(() => ({ message, mapSendInfo, setMapSendInfo }), [
         message,
-        mapSendInfo
+        mapSendInfo,
     ]);
 
     return messageSendInfo;
@@ -78,8 +76,8 @@ export const useUpdateRecipientSendInfo = (
                         sendIcon: undefined,
                         loading: false,
                         emailValidation,
-                        emailAddressWarnings: []
-                    }
+                        emailAddressWarnings: [],
+                    },
                 }));
                 return;
             }
@@ -87,8 +85,8 @@ export const useUpdateRecipientSendInfo = (
                 ...mapSendInfo,
                 [emailAddress]: {
                     loading: true,
-                    emailValidation
-                }
+                    emailValidation,
+                },
             }));
             const encryptionPreferences = await getEncryptionPreferences(emailAddress);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
@@ -116,7 +114,7 @@ export const useUpdateRecipientSendInfo = (
                         </ContactResignModal>
                     );
                 });
-                return await updateRecipientIcon();
+                return updateRecipientIcon();
             }
 
             if (sendPreferences.failure?.type === PRIMARY_NOT_PINNED) {
@@ -126,8 +124,8 @@ export const useUpdateRecipientSendInfo = (
                             contactID: recipient.ContactID,
                             emailAddress,
                             isInternal: encryptionPreferences.isInternal,
-                            bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey
-                        }
+                            bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey,
+                        },
                     ];
                     createModal(
                         <AskForKeyPinningModal
@@ -139,7 +137,7 @@ export const useUpdateRecipientSendInfo = (
                         />
                     );
                 });
-                return await updateRecipientIcon();
+                return updateRecipientIcon();
             }
             const sendIcon = getSendStatusIcon(sendPreferences);
 
@@ -150,12 +148,12 @@ export const useUpdateRecipientSendInfo = (
                     sendIcon,
                     loading: false,
                     emailValidation,
-                    emailAddressWarnings: encryptionPreferences.emailAddressWarnings || []
-                }
+                    emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
+                },
             }));
         };
 
-        updateRecipientIcon();
+        void updateRecipientIcon();
     }, [emailAddress]);
 
     return { handleRemove };
@@ -195,7 +193,7 @@ export const useUpdateGroupSendInfo = (
             contactID,
             contactName,
             abortController,
-            checkForFailure
+            checkForFailure,
         }: LoadParams) => {
             const { signal } = abortController;
             const icon = messageSendInfo?.mapSendInfo[emailAddress]?.sendIcon;
@@ -212,18 +210,19 @@ export const useUpdateGroupSendInfo = (
             }
 
             const { message, setMapSendInfo } = messageSendInfo;
-            !signal.aborted &&
+            if (!signal.aborted) {
                 setMapSendInfo((mapSendInfo) => {
                     const sendInfo = mapSendInfo[emailAddress];
                     return {
                         ...mapSendInfo,
-                        [emailAddress]: { ...sendInfo, loading: true, emailValidation }
+                        [emailAddress]: { ...sendInfo, loading: true, emailValidation },
                     };
                 });
+            }
             const encryptionPreferences = await getEncryptionPreferences(emailAddress);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
             const sendIcon = getSendStatusIcon(sendPreferences);
-            !signal.aborted &&
+            if (!signal.aborted) {
                 setMapSendInfo((mapSendInfo) => ({
                     ...mapSendInfo,
                     [emailAddress]: {
@@ -231,9 +230,10 @@ export const useUpdateGroupSendInfo = (
                         sendIcon,
                         loading: false,
                         emailValidation,
-                        emailAddressWarnings: encryptionPreferences.emailAddressWarnings || []
-                    }
+                        emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
+                    },
                 }));
+            }
             if (checkForFailure && sendPreferences.failure) {
                 return {
                     failure: sendPreferences.failure,
@@ -242,16 +242,15 @@ export const useUpdateGroupSendInfo = (
                         contactName,
                         emailAddress,
                         isInternal: encryptionPreferences.isInternal,
-                        bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey
-                    }
+                        bePinnedPublicKey: encryptionPreferences.sendKey as OpenPGPKey,
+                    },
                 };
             }
-            return;
         };
 
         const loadSendIcons = async ({
             abortController,
-            checkForFailure
+            checkForFailure,
         }: Pick<LoadParams, 'abortController' | 'checkForFailure'>): Promise<void> => {
             const requests = contacts.map(({ Email, ContactID, Name }) => () =>
                 loadSendIcon({
@@ -259,7 +258,7 @@ export const useUpdateGroupSendInfo = (
                     contactID: ContactID,
                     contactName: Name,
                     abortController,
-                    checkForFailure
+                    checkForFailure,
                 })
             );
             // the routes called in requests support 100 calls every 10 seconds
@@ -297,7 +296,7 @@ export const useUpdateGroupSendInfo = (
                         </ContactResignModal>
                     );
                 });
-                return await loadSendIcons({ abortController, checkForFailure: false });
+                return loadSendIcons({ abortController, checkForFailure: false });
             }
             const contactsKeyPinning = results
                 .filter(isTruthy)
@@ -315,10 +314,11 @@ export const useUpdateGroupSendInfo = (
                         />
                     );
                 });
-                return await loadSendIcons({ abortController, checkForFailure: false });
+                return loadSendIcons({ abortController, checkForFailure: false });
             }
         };
-        loadSendIcons({ abortController, checkForFailure: true });
+
+        void loadSendIcons({ abortController, checkForFailure: true });
 
         return () => {
             abortController.abort();
@@ -341,7 +341,7 @@ const getUpdatedSendInfo = async (
         sendPreferences,
         sendIcon,
         loading: false,
-        emailAddressWarnings: encryptionPreferences.emailAddressWarnings || []
+        emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
     };
     setMapSendInfo((mapSendInfo) => {
         const sendInfo = mapSendInfo[emailAddress];
@@ -350,7 +350,7 @@ const getUpdatedSendInfo = async (
         }
         return {
             ...mapSendInfo,
-            [emailAddress]: { ...sendInfo, ...updatedSendInfo }
+            [emailAddress]: { ...sendInfo, ...updatedSendInfo },
         };
     });
 };

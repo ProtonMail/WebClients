@@ -64,43 +64,43 @@ export const getStandardFolders = (): FolderMap => ({
     [INBOX]: {
         icon: 'inbox',
         name: c('Mailbox').t`Inbox`,
-        to: '/inbox'
+        to: '/inbox',
     },
     [TRASH]: {
         icon: 'trash',
         name: c('Mailbox').t`Trash`,
-        to: '/trash'
+        to: '/trash',
     },
     [SPAM]: {
         icon: 'spam',
         name: c('Mailbox').t`Spam`,
-        to: '/spam'
+        to: '/spam',
     },
     [ARCHIVE]: {
         icon: 'archive',
         name: c('Mailbox').t`Archive`,
-        to: '/archive'
+        to: '/archive',
     },
     [SENT]: {
         icon: 'sent',
         name: c('Mailbox').t`Sent`,
-        to: `/${LABEL_IDS_TO_HUMAN[SENT]}`
+        to: `/${LABEL_IDS_TO_HUMAN[SENT]}`,
     },
     [ALL_SENT]: {
         icon: 'sent',
         name: c('Mailbox').t`Sent`,
-        to: `/${LABEL_IDS_TO_HUMAN[ALL_SENT]}`
+        to: `/${LABEL_IDS_TO_HUMAN[ALL_SENT]}`,
     },
     [DRAFTS]: {
         icon: 'drafts',
         name: c('Mailbox').t`Drafts`,
-        to: `/${LABEL_IDS_TO_HUMAN[DRAFTS]}`
+        to: `/${LABEL_IDS_TO_HUMAN[DRAFTS]}`,
     },
     [ALL_DRAFTS]: {
         icon: 'drafts',
         name: c('Mailbox').t`Drafts`,
-        to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`
-    }
+        to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`,
+    },
 });
 
 export const getCurrentFolders = (
@@ -133,7 +133,7 @@ export const getCurrentFolders = (
                 icon: 'folder',
                 name: folder?.Name,
                 to: `/${folder?.ID}`,
-                color: folder?.Color
+                color: folder?.Color,
             };
         });
 };
@@ -163,10 +163,8 @@ export const applyLabelChangesOnMessage = (message: Message, changes: LabelChang
             if (index === -1) {
                 LabelIDs.push(labelID);
             }
-        } else {
-            if (index >= 0) {
-                LabelIDs.splice(index, 1);
-            }
+        } else if (index >= 0) {
+            LabelIDs.splice(index, 1);
         }
     });
 
@@ -181,13 +179,11 @@ export const applyLabelChangesOnConversation = (conversation: Conversation, chan
             if (index === -1) {
                 Labels.push({
                     ID: labelID,
-                    ContextNumMessages: conversation.ContextNumMessages || conversation.NumMessages || 1
+                    ContextNumMessages: conversation.ContextNumMessages || conversation.NumMessages || 1,
                 });
             }
-        } else {
-            if (index >= 0) {
-                Labels.splice(index, 1);
-            }
+        } else if (index >= 0) {
+            Labels.splice(index, 1);
         }
     });
 

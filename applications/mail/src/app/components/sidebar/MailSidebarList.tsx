@@ -12,7 +12,7 @@ import {
     useUser,
     SidebarList,
     SimpleSidebarListItemHeader,
-    SidebarListItemHeaderLink
+    SidebarListItemHeaderLink,
 } from 'react-components';
 import { SHOW_MOVED, MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 
@@ -70,7 +70,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
         currentLabelID,
         labelID,
         isConversation,
-        unreadCount: counterMap[labelID]
+        unreadCount: counterMap[labelID],
     });
 
     return (
@@ -79,7 +79,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 {...getCommonProps(MAILBOX_LABEL_IDS.INBOX)}
                 icon="inbox"
                 text={c('Link').t`Inbox`}
-                isFolder={true}
+                isFolder
                 data-test-id="inbox"
             />
             <SidebarItem
@@ -88,14 +88,14 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 )}
                 icon="drafts"
                 text={c('Link').t`Drafts`}
-                isFolder={true}
+                isFolder
                 data-test-id="drafts"
             />
             <SidebarItem
                 {...getCommonProps(ShowMoved & SHOW_MOVED.SENT ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT)}
                 icon="sent"
                 text={c('Link').t`Sent`}
-                isFolder={true}
+                isFolder
                 data-test-id="sent"
             />
             <SidebarItem
@@ -109,28 +109,28 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 {...getCommonProps(MAILBOX_LABEL_IDS.ARCHIVE)}
                 icon="archive"
                 text={c('Link').t`Archive`}
-                isFolder={true}
+                isFolder
                 data-test-id="archive"
             />
             <SidebarItem
                 {...getCommonProps(MAILBOX_LABEL_IDS.SPAM)}
                 icon="spam"
                 text={c('Link').t`Spam`}
-                isFolder={true}
+                isFolder
                 data-test-id="spam"
             />
             <SidebarItem
                 {...getCommonProps(MAILBOX_LABEL_IDS.TRASH)}
                 icon="trash"
                 text={c('Link').t`Trash`}
-                isFolder={true}
+                isFolder
                 data-test-id="trash"
             />
             <SidebarItem
                 {...getCommonProps(MAILBOX_LABEL_IDS.ALL_MAIL)}
                 icon="all-emails"
                 text={c('Link').t`All mail`}
-                isFolder={true}
+                isFolder
                 data-test-id="allmail"
             />
             <SimpleSidebarListItemHeader

@@ -1,8 +1,8 @@
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { isConversation, isMessage, sort, getCounterMap, getDate, isUnread } from './elements';
 import { Conversation, ConversationLabel } from '../models/conversation';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 describe('elements', () => {
     describe('isConversation / isMessage', () => {
@@ -32,7 +32,7 @@ describe('elements', () => {
             const elements = [
                 { ContextTime: 1, Order: 3 },
                 { ContextTime: 1, Order: 2 },
-                { ContextTime: 1, Order: 1 }
+                { ContextTime: 1, Order: 1 },
             ];
             expect(sort(elements, { sort: 'Time', desc: false }, 'labelID')).toEqual([...elements].reverse());
         });
@@ -80,8 +80,8 @@ describe('elements', () => {
             const conversation = {
                 Labels: [
                     { ID: 'something', ContextTime: WrongTime } as ConversationLabel,
-                    { ID: LabelID, ContextTime: Time } as ConversationLabel
-                ]
+                    { ID: LabelID, ContextTime: Time } as ConversationLabel,
+                ],
             };
             expect(getDate(conversation, LabelID)).toEqual(expected);
         });
@@ -95,7 +95,7 @@ describe('elements', () => {
             const LabelID = 'LabelID';
             const conversation = {
                 ContextTime: WrongTime,
-                Labels: [{ ID: LabelID, ContextTime: Time } as ConversationLabel]
+                Labels: [{ ID: LabelID, ContextTime: Time } as ConversationLabel],
             };
             expect(getDate(conversation, LabelID)).toEqual(expected);
         });
@@ -116,8 +116,8 @@ describe('elements', () => {
             const conversation = {
                 Labels: [
                     { ID: 'something', ContextNumUnread: 1 } as ConversationLabel,
-                    { ID: LabelID, ContextNumUnread: 0 } as ConversationLabel
-                ]
+                    { ID: LabelID, ContextNumUnread: 0 } as ConversationLabel,
+                ],
             };
             expect(isUnread(conversation, LabelID)).toBe(false);
         });
@@ -137,7 +137,7 @@ describe('elements', () => {
             const conversation = {
                 ContextNumUnread: 1,
                 NumUnread: 1,
-                Labels: [{ ID: LabelID, ContextNumUnread: 0 } as ConversationLabel]
+                Labels: [{ ID: LabelID, ContextNumUnread: 0 } as ConversationLabel],
             };
             expect(isUnread(conversation, LabelID)).toBe(false);
         });

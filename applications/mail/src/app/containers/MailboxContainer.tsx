@@ -19,7 +19,7 @@ import {
     setSortInUrl,
     setFilterInUrl,
     setPathInUrl,
-    extractSearchParameters
+    extractSearchParameters,
 } from '../helpers/mailboxUrl';
 import Toolbar from '../components/toolbar/Toolbar';
 import List from '../components/list/List';
@@ -59,7 +59,7 @@ const MailboxContainer = ({
     messageID,
     location,
     history,
-    onCompose
+    onCompose,
 }: Props) => {
     const getElementsFromIDs = useGetElementsFromIDs();
 
@@ -74,7 +74,7 @@ const MailboxContainer = ({
         page: pageFromUrl(location),
         total: 0,
         size: PAGE_SIZE,
-        limit: PAGE_SIZE
+        limit: PAGE_SIZE,
     });
 
     const searchParams = getSearchParams(location.search);
@@ -88,7 +88,7 @@ const MailboxContainer = ({
         searchParams.begin,
         searchParams.end,
         searchParams.attachments,
-        searchParams.wildcard
+        searchParams.wildcard,
     ]);
     const isSearch = testIsSearch(searchParameters);
     const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
@@ -102,7 +102,7 @@ const MailboxContainer = ({
         page,
         sort,
         filter,
-        search: searchParameters
+        search: searchParameters,
     });
 
     useEffect(() => setPage({ ...page, page: pageFromUrl(location) }), [searchParams.page]);
@@ -244,7 +244,6 @@ const MailboxContainer = ({
                                 location={location}
                                 labelID={labelID}
                                 mailSettings={mailSettings}
-                                elementID={elementID}
                                 checkedIDs={checkedIDs}
                                 onUncheckAll={handleUncheckAll}
                             />

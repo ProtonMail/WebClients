@@ -19,7 +19,7 @@ interface Params {
 const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }: Params) => {
     const { contactID, isInternal, emailAddress, bePinnedPublicKey } = contact;
     const {
-        Contact: { Cards: contactCards }
+        Contact: { Cards: contactCards },
     } = await api<{ Contact: { Cards: ContactCard[] } }>(getContact(contactID));
     const updatedContactCards = await pinKeyUpdateContact({
         contactCards,
@@ -27,7 +27,7 @@ const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }
         isInternal,
         bePinnedPublicKey,
         publicKeys,
-        privateKeys
+        privateKeys,
     });
     await api(updateContact(contactID, { Cards: updatedContactCards }));
 };
@@ -96,10 +96,10 @@ const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError
                     totalContacts
                 )}
                 <ul>
-                    {contacts.map(({ emailAddress, bePinnedPublicKey }, index) => {
+                    {contacts.map(({ contactID, emailAddress, bePinnedPublicKey }, index) => {
                         const fingerprint = bePinnedPublicKey.getFingerprint();
                         return (
-                            <li key={index} className={classnames([index !== totalContacts && 'mb0-5'])}>
+                            <li key={contactID} className={classnames([index !== totalContacts && 'mb0-5'])}>
                                 <span className="bl mw100 ellipsis">{`${emailAddress}: ${fingerprint}`}</span>
                             </li>
                         );

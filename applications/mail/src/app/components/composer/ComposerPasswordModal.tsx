@@ -3,10 +3,10 @@ import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { Alert, Href, Label, Input, generateUID, useNotifications } from 'react-components';
+import { clearBit, setBit } from 'proton-shared/lib/helpers/bitset';
 
 import ComposerInnerModal from './ComposerInnerModal';
 import { MessageChange } from './Composer';
-import { clearBit, setBit } from 'proton-shared/lib/helpers/bitset';
 
 interface Props {
     message?: Message;
@@ -29,7 +29,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
         if (password !== passwordVerif) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`Message passwords do not match.`
+                text: c('Error').t`Message passwords do not match.`,
             });
             return;
         }
@@ -38,8 +38,8 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                 data: {
                     Flags: setBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
                     Password: password,
-                    PasswordHint: passwordHint
-                }
+                    PasswordHint: passwordHint,
+                },
             }),
             true
         );
@@ -52,8 +52,8 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                 data: {
                     Flags: clearBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
                     Password: undefined,
-                    PasswordHint: undefined
-                }
+                    PasswordHint: undefined,
+                },
             }),
             true
         );

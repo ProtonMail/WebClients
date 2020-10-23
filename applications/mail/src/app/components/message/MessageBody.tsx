@@ -29,7 +29,7 @@ const MessageBody = ({
     bodyLoaded,
     sourceMode: inputSourceMode,
     message,
-    forceBlockquote = false
+    forceBlockquote = false,
 }: Props) => {
     const plain = isPlainText(message.data);
 
@@ -54,21 +54,22 @@ const MessageBody = ({
             className={classnames([
                 'message-content scroll-horizontal-if-needed relative bodyDecrypted',
                 plain && 'plain',
-                !loadingMode && getLightOrDark('', 'bg-white color-global-grey')
+                !loadingMode && getLightOrDark('', 'bg-white color-global-grey'),
             ])}
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}
             {sourceMode && <pre>{message.decryptedBody}</pre>}
             {(loadingMode || decryptingMode) && (
                 <>
-                    <div className="message-content-loading-placeholder mb0-25 mw15e"></div>
-                    <div className="message-content-loading-placeholder mb0-25 mw40e"></div>
-                    <div className="message-content-loading-placeholder mb0-25 mw50e"></div>
-                    <div className="message-content-loading-placeholder mw8e"></div>
+                    <div className="message-content-loading-placeholder mb0-25 mw15e" />
+                    <div className="message-content-loading-placeholder mb0-25 mw40e" />
+                    <div className="message-content-loading-placeholder mb0-25 mw50e" />
+                    <div className="message-content-loading-placeholder mw8e" />
                 </>
             )}
             {contentMode && (
                 <>
+                    {/* eslint-disable-next-line react/no-danger */}
                     <div dangerouslySetInnerHTML={{ __html: content }} />
                     {isBlockquote && (
                         <>
@@ -85,6 +86,7 @@ const MessageBody = ({
                                     </Button>
                                 </Tooltip>
                             )}
+                            {/* eslint-disable-next-line react/no-danger */}
                             {showBlockquote && <div dangerouslySetInnerHTML={{ __html: blockquote }} />}
                         </>
                     )}

@@ -79,13 +79,17 @@ export const prepareImages = (
                 // `getUrl` may return undefined here because the embedded attachments have not yet been decrypted and put in the blob store.
                 // const url = getUrl(cache, image);
                 // only set it if it is defined, otherwise the unescapeSrc will add two src=""
-                info?.url && image.setAttribute('src', info.url);
+                if (info?.url) {
+                    image.setAttribute('src', info.url);
+                }
                 return;
             }
 
             // We don't need to add it outside
             if (!isOutside) {
-                !draft && !image.parentElement.classList.contains('loading') && wrapImage(image);
+                if (!draft && !image.parentElement.classList.contains('loading')) {
+                    wrapImage(image);
+                }
                 image.removeAttribute('src');
             }
             return;
@@ -145,7 +149,7 @@ const triggerSigVerification = (
      * wait a bit before disabling the invalidsignature modal
      * this allows the user to see the change icon popup.
      */
-    Promise.all(
+    void Promise.all(
         attachments.map(async (attachment) => {
             await get(attachment, message, cache, api);
             await wait(1000);

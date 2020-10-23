@@ -1,10 +1,10 @@
 import React, { useState, useEffect, ReactNode, useCallback } from 'react';
 import { PrivateAppContainer } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { Location, History } from 'history';
 
 import MailHeader from '../header/MailHeader';
 import MailSidebar from '../sidebar/MailSidebar';
-import { Location, History } from 'history';
 import { getHumanLabelID } from '../../helpers/labels';
 import { setKeywordInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
@@ -29,7 +29,7 @@ const PrivateLayout = ({
     labelID,
     elementID,
     onCompose,
-    isBlurred
+    isBlurred,
 }: Props) => {
     const [expanded, setExpand] = useState(false);
 

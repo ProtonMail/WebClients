@@ -1,6 +1,5 @@
-import { uniqID } from '../string';
 import { protonizer as purifyHTML } from 'proton-shared/lib/sanitize';
-
+import { uniqID } from '../string';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 
 /*
@@ -39,7 +38,9 @@ const removeBase64 = (input: string, cache?: Base64Cache): string => {
     /* eslint no-useless-escape: "off" */
     return input.replace(/src="data:image\/([a-zA-Z]*);base64,([^\"]*)\"/g, (match) => {
         const hash = uniqID();
-        cache && cache.set(hash, match);
+        if (cache) {
+            cache.set(hash, match);
+        }
         return `data-proton-replace-base="${hash}"`;
     });
 };
@@ -59,7 +60,9 @@ export const attachBase64 = (element: Element, cache: Base64Cache) => {
             .replace(/^src="/, '')
             .replace(/"$/, '')
             .replace(/\n/, '');
-        src && node.setAttribute('src', src);
+        if (src) {
+            node.setAttribute('src', src);
+        }
         node.removeAttribute('data-proton-replace-base');
     });
 };

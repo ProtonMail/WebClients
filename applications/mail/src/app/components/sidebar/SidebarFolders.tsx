@@ -26,7 +26,7 @@ const SidebarFolders = ({ currentLabelID, counterMap }: Props) => {
             setFoldersUI(
                 folders.map((folder) => ({
                     ...folder,
-                    Expanded: getItem(formatFolderID(folder.ID)) === '0' ? 0 : 1
+                    Expanded: getItem(formatFolderID(folder.ID)) === '0' ? 0 : 1,
                 }))
             );
         }
@@ -45,7 +45,7 @@ const SidebarFolders = ({ currentLabelID, counterMap }: Props) => {
                     if (folderItem.ID === folder.ID) {
                         return {
                             ...folderItem,
-                            Expanded: newExpanded
+                            Expanded: newExpanded,
                         };
                     }
                     return folderItem;
@@ -53,12 +53,12 @@ const SidebarFolders = ({ currentLabelID, counterMap }: Props) => {
             );
 
             // Save expanded state locally
-            setItem(formatFolderID(folder.ID), '' + newExpanded);
+            setItem(formatFolderID(folder.ID), `${newExpanded}`);
         },
         [foldersUI]
     );
 
-    const treeviewReducer = (acc: ReactNode[], folder: FolderWithSubFolders, level = 0): Array<any> => {
+    const treeviewReducer = (acc: ReactNode[], folder: FolderWithSubFolders, level = 0): any[] => {
         acc.push(
             <SidebarFolder
                 key={folder.ID}

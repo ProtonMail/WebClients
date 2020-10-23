@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/camelcase */
+/* eslint-disable @typescript-eslint/naming-convention */
 
 /**
  * Mails extracted by us
@@ -998,7 +998,7 @@ export default {
     sina,
     thunderbird,
     yahoo,
-    zoho
+    zoho,
 };
 
 export const unsuported /* yet? */ = {
@@ -1015,5 +1015,5 @@ export const unsuported /* yet? */ = {
     tencent, // text separator + not including
     windows_mail, // almost nothing
     yandex1, // only blockquote
-    yandex2 // only blockquote
+    yandex2, // only blockquote
 };

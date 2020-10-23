@@ -49,7 +49,7 @@ const buildAttachments = (attachments: AttachmentData[]) =>
         const entity = mimemessage.factory({
             contentType: `${contentTypeValue}; filename=${attachmentName}; name=${attachmentName}`,
             contentTransferEncoding: 'base64',
-            body: arrayToBinaryString(data.data as Uint8Array)
+            body: arrayToBinaryString(data.data as Uint8Array),
         });
 
         entity.header(
@@ -68,7 +68,7 @@ const buildEmbeddedHtml = (html: string | undefined, attachments: AttachmentData
     const htmlEntity = mimemessage.factory({
         contentType: 'text/html;charset=utf-8',
         contentTransferEncoding: 'base64',
-        body: html
+        body: html,
     });
 
     // Attachments
@@ -80,7 +80,7 @@ const buildEmbeddedHtml = (html: string | undefined, attachments: AttachmentData
 
     return mimemessage.factory({
         contentType: 'multipart/related',
-        body: relatedBody
+        body: relatedBody,
     });
 };
 
@@ -91,7 +91,7 @@ const buildEmbeddedHtml = (html: string | undefined, attachments: AttachmentData
 const buildPlaintextEntity = (plaintext?: string) =>
     mimemessage.factory({
         body: plaintext,
-        contentTransferEncoding: 'quoted-printable'
+        contentTransferEncoding: 'quoted-printable',
     });
 
 /**
@@ -105,7 +105,7 @@ const buildAlternateEntity = (
 ) =>
     mimemessage.factory({
         contentType: 'multipart/alternative',
-        body: [buildPlaintextEntity(plaintext), buildEmbeddedHtml(html, attachments, embeddeds)]
+        body: [buildPlaintextEntity(plaintext), buildEmbeddedHtml(html, attachments, embeddeds)],
     });
 
 /**
@@ -140,11 +140,11 @@ const build = (
 
     const msgentity = mimemessage.factory({
         contentType: 'multipart/mixed',
-        body
+        body,
     });
 
     // this trailing line space is important: if it's not there outlook.com adds it and breaks pgp/mime signatures.
-    return msgentity.toString() + '\r\n';
+    return `${msgentity.toString()}\r\n`;
 };
 
 const fetchMimeDependencies = async (
@@ -155,7 +155,7 @@ const fetchMimeDependencies = async (
     return Promise.all(
         getAttachments(message.data).map(async (attachment) => ({
             attachment,
-            data: await get(attachment, message, cache, api)
+            data: await get(attachment, message, cache, api),
         }))
     );
 };

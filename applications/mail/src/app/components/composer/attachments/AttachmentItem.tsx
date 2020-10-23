@@ -38,11 +38,12 @@ const AttachmentItem = ({ name, size = 0, progression = 0, onDownload, onRemove 
                 style={{ backgroundImage }}
                 className={classnames([
                     'bg-white-dm flex bordered-container flex-nowrap flex-items-center pm_button p0',
-                    progressionHappening && 'composer-attachments-item--uploadInProgress'
+                    progressionHappening && 'composer-attachments-item--uploadInProgress',
                 ])}
             >
                 <button
                     className="p0-5 border-right flex flex-item-noshrink composer-attachments-item-typeIcon"
+                    type="button"
                     onClick={onDownload}
                 >
                     <Icon name="attach" size={12} className="mauto" />
@@ -50,6 +51,7 @@ const AttachmentItem = ({ name, size = 0, progression = 0, onDownload, onRemove 
                 <button
                     className="flex-item-fluid mtauto mbauto flex flex-items-center flex-nowrap pl0-5 pr0-5"
                     title={title}
+                    type="button"
                     onClick={onDownload}
                 >
                     <span className="ellipsis pr0-25">{name}</span>
@@ -82,7 +84,7 @@ export const AttachmentItemNormal = ({ message, attachment, onRemove }: PropsNor
     const download = useDownload();
 
     const handleDownload = () => {
-        download(message, attachment);
+        void download(message, attachment);
     };
 
     return (

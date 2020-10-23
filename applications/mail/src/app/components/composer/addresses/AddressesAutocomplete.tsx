@@ -17,7 +17,9 @@ const compareFunction = (
 
     if (item1.label > item2.label) {
         return 1;
-    } else if (item1.label < item2.label) {
+    }
+
+    if (item1.label < item2.label) {
         return -1;
     }
 
@@ -43,7 +45,7 @@ const AddressesAutocomplete = ({
     majorDomains,
     onSelect,
     currentValue,
-    children
+    children,
 }: Props) => {
     const [awesomplete, setAwesomplete] = useState<Awesomplete>();
     const containerRef = useRef<HTMLDivElement>(null);
@@ -57,7 +59,7 @@ const AddressesAutocomplete = ({
                 .map((contact) => ({
                     label: contactToInput(contact),
                     value: `Contact:${contact.ID}`,
-                    score: ((contact as any).LastUsedTime as number | undefined) || 0
+                    score: ((contact as any).LastUsedTime as number | undefined) || 0,
                 }))
                 .sort(compareFunction),
         [recipientAddressesMap, contacts]
@@ -68,7 +70,7 @@ const AddressesAutocomplete = ({
                 .filter((group) => !recipientGroupsMap[group.Path])
                 .map((group) => ({
                     label: group.Name,
-                    value: `Group:${group.ID}`
+                    value: `Group:${group.ID}`,
                 }))
                 .sort(compareFunction),
         [recipientGroupsMap, contactGroups]
@@ -79,7 +81,7 @@ const AddressesAutocomplete = ({
                 .filter((email) => !recipientAddressesMap[email] && !contactEmailsMap[email])
                 .map((email) => ({
                     label: email,
-                    value: `Major:${email}`
+                    value: `Major:${email}`,
                 }))
                 .sort(compareFunction),
         [majorDomains, recipientAddressesMap, contactEmailsMap]
@@ -95,7 +97,7 @@ const AddressesAutocomplete = ({
                 minChars: 1,
                 maxItems: 20,
                 autoFirst: true,
-                sort: false
+                sort: false,
             } as Awesomplete.Options
         );
         (awesompleteInstance as any).item = recipientItem;
@@ -123,7 +125,7 @@ const AddressesAutocomplete = ({
     }, [awesomplete]);
 
     const handleSelect = (event: any) => {
-        const value = event.text.value;
+        const { value } = event.text;
         const contactID = /Contact:(.*)/.exec(value)?.[1];
         const contact = contacts.find((contact) => contact.ID === contactID);
         const groupID = /Group:(.*)/.exec(value)?.[1];

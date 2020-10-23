@@ -39,7 +39,7 @@ const MessageAttachment = ({ attachment, message }: Props) => {
 
     const classNames = classnames([
         'listAttachments-icon listAttachments-signature-icon mauto file-outer-icon',
-        isEmbedded && 'is-embedded' // unsused at this point
+        isEmbedded && 'is-embedded', // unsused at this point
     ]);
 
     const clickHandler = async () => {
@@ -54,7 +54,7 @@ const MessageAttachment = ({ attachment, message }: Props) => {
         }
     };
 
-    const title = `${attachment.Name} (${humanAttachmentSize})` + getSenderVerificationString(attachmentVerified);
+    const title = `${attachment.Name} (${humanAttachmentSize})${getSenderVerificationString(attachmentVerified)}`;
 
     if (!message.initialized) {
         return null;

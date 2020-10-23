@@ -8,7 +8,6 @@ interface Props {
     address?: ReactNode;
     title?: string;
     icon?: ReactNode;
-    iconAction?: ReactNode;
     isLoading?: boolean;
 }
 
@@ -19,20 +18,20 @@ const HeaderRecipientItemLayout = ({
     address,
     title,
     icon,
-    isLoading = false
+    isLoading = false,
 }: Props) => {
     return (
         <span
             className={classnames([
                 'flex flex-items-center flex-nowrap message-recipient-item',
-                isLoading ? 'flex-item-fluid' : 'is-appearing-content'
+                isLoading ? 'flex-item-fluid' : 'is-appearing-content',
             ])}
         >
             <span className="container-to container-to--item noprint">{button}</span>
             <span
                 className={classnames([
                     'flex flex-items-center flex-nowrap ellipsis mw100',
-                    isLoading && 'flex-item-fluid'
+                    isLoading && 'flex-item-fluid',
                 ])}
             >
                 <span
@@ -40,7 +39,9 @@ const HeaderRecipientItemLayout = ({
                     title={title}
                 >
                     <span className={classnames(['message-recipient-item-label', isLoading && 'inbl'])}>{label}</span>
-                    {` ` /** I need a real space in source here, as everything is inline, no margin/padding to have correct ellipsis applied :-| **/}
+                    {
+                        ` ` /** I need a real space in source here, as everything is inline, no margin/padding to have correct ellipsis applied :-| * */
+                    }
                     {showAddress && (
                         <span
                             className={classnames(['message-recipient-item-address opacity-50', isLoading && 'inbl'])}

@@ -1,18 +1,16 @@
 import * as openpgp from 'openpgp';
-import * as pmcrypto from 'pmcrypto';
-import { generateKey } from 'openpgp';
+import { init } from 'pmcrypto/lib/pmcrypto';
 import {
+    OpenPGPKey,
+    SessionKey,
     getMessage,
     getKeys,
-    OpenPGPKey,
     getPreferredAlgorithm,
     generateSessionKey as realGenerateSessionKey,
     encryptSessionKey as realEncryptSessionKey,
     decryptSessionKey as realDecryptSessionKey,
     splitMessage,
-    SessionKey
 } from 'pmcrypto';
-
 import { KEY_FLAG, RECIPIENT_TYPES } from 'proton-shared/lib/constants';
 
 import { addressKeysCache, resolvedRequest, cache } from './cache';
@@ -20,8 +18,6 @@ import { addApiMock } from './api';
 import { base64ToArray } from '../base64';
 
 const { TYPE_INTERNAL, TYPE_EXTERNAL } = RECIPIENT_TYPES;
-
-const init = (pmcrypto as any).init as (openpgp: any) => void;
 
 init(openpgp);
 
@@ -51,9 +47,9 @@ const addApiKeysMock = () => {
                 Keys: [
                     {
                         Flags: KEY_FLAG.FLAG_NOT_OBSOLETE | KEY_FLAG.FLAG_NOT_COMPROMISED,
-                        PublicKey: key.key.publicKeyArmored
-                    }
-                ]
+                        PublicKey: key.key.publicKeyArmored,
+                    },
+                ],
             };
         }
         return {};
@@ -72,8 +68,8 @@ export const clearApiKeys = () => {
 };
 
 export const generateKeys = async (name: string, email: string): Promise<GeneratedKey> => {
-    const { publicKeyArmored, privateKeyArmored } = await generateKey({
-        userIds: [{ name, email }]
+    const { publicKeyArmored, privateKeyArmored } = await openpgp.generateKey({
+        userIds: [{ name, email }],
     });
     const publicKeys = await getKeys(publicKeyArmored);
     const privateKeys = await getKeys(privateKeyArmored);
@@ -84,7 +80,7 @@ export const generateKeys = async (name: string, email: string): Promise<Generat
         publicKeyArmored,
         privateKeyArmored,
         publicKeys,
-        privateKeys
+        privateKeys,
     };
 };
 
@@ -115,6 +111,6 @@ export const decryptSessionKey = async (keyPacket: string, privateKeys: OpenPGPK
     const sessionKeyMessage = await getMessage(base64ToArray(keyPacket));
     return (await realDecryptSessionKey({
         message: sessionKeyMessage,
-        privateKeys: privateKeys
+        privateKeys,
     })) as SessionKey;
 };

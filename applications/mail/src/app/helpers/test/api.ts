@@ -8,7 +8,7 @@ export const apiMocks: ApiMock = {};
 
 export const api = jest.fn<Promise<any>, any>(async (args: any) => {
     if (apiMocks[args.url]) {
-        return await apiMocks[args.url](args);
+        return apiMocks[args.url](args);
     }
     console.log('api', args, apiMocks);
     return {};

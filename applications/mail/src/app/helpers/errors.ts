@@ -3,4 +3,4 @@
  * Check if the common error is corresponding to an error raised by the API
  */
 export const isApiError = (error: Error) =>
-    !isNaN((error as any).status) && (error as any).response && (error as any).config;
+    !Number.isNaN((error as any).status) && (error as any).response && (error as any).config;

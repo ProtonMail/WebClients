@@ -21,7 +21,7 @@ const message = {
     ToList: [recipient1],
     CCList: [recipient2],
     BCCList: [recipient3],
-    ReplyTos: [recipient4]
+    ReplyTos: [recipient4],
 };
 
 const allActions = [MESSAGE_ACTIONS.NEW, MESSAGE_ACTIONS.REPLY, MESSAGE_ACTIONS.REPLY_ALL, MESSAGE_ACTIONS.FORWARD];
@@ -34,7 +34,7 @@ const address = {
     Email: 'email',
     Status: 1,
     Send: 1,
-    Signature: 'signature'
+    Signature: 'signature',
 } as Address;
 const addresses: Address[] = [address];
 
@@ -75,11 +75,11 @@ describe('messageDraft', () => {
         it('should copy values', () => {
             const result = handleActions(MESSAGE_ACTIONS.NEW, {
                 data: {
-                    Subject: Subject,
+                    Subject,
                     ToList: [recipient1],
                     CCList: [recipient2],
-                    BCCList: [recipient3]
-                }
+                    BCCList: [recipient3],
+                },
             } as MessageExtendedWithData);
             expect(result.data?.Subject).toEqual(Subject);
             expect(result.data?.ToList).toEqual([recipient1]);
@@ -91,8 +91,8 @@ describe('messageDraft', () => {
             const result = handleActions(MESSAGE_ACTIONS.REPLY, {
                 data: {
                     ...message,
-                    Flags: MESSAGE_FLAGS.FLAG_RECEIVED
-                }
+                    Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
+                },
             } as MessageExtendedWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
@@ -103,8 +103,8 @@ describe('messageDraft', () => {
             const result = handleActions(MESSAGE_ACTIONS.REPLY, {
                 data: {
                     ...message,
-                    Flags: MESSAGE_FLAGS.FLAG_SENT
-                }
+                    Flags: MESSAGE_FLAGS.FLAG_SENT,
+                },
             } as MessageExtendedWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
@@ -115,8 +115,8 @@ describe('messageDraft', () => {
             const result = handleActions(MESSAGE_ACTIONS.REPLY, {
                 data: {
                     ...message,
-                    Flags: MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED
-                }
+                    Flags: MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED,
+                },
             } as MessageExtendedWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
@@ -127,8 +127,8 @@ describe('messageDraft', () => {
             const result = handleActions(MESSAGE_ACTIONS.REPLY_ALL, {
                 data: {
                     ...message,
-                    Flags: MESSAGE_FLAGS.FLAG_RECEIVED
-                }
+                    Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
+                },
             } as MessageExtendedWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
@@ -141,8 +141,8 @@ describe('messageDraft', () => {
             const result = handleActions(MESSAGE_ACTIONS.REPLY_ALL, {
                 data: {
                     ...message,
-                    Flags: MESSAGE_FLAGS.FLAG_SENT
-                }
+                    Flags: MESSAGE_FLAGS.FLAG_SENT,
+                },
             } as MessageExtendedWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);
@@ -155,8 +155,8 @@ describe('messageDraft', () => {
             const result = handleActions(MESSAGE_ACTIONS.REPLY_ALL, {
                 data: {
                     ...message,
-                    Flags: MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED
-                }
+                    Flags: MESSAGE_FLAGS.FLAG_SENT | MESSAGE_FLAGS.FLAG_RECEIVED,
+                },
             } as MessageExtendedWithData);
 
             expect(result.data?.Subject).toEqual(`${RE_PREFIX} ${Subject}`);

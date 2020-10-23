@@ -1,5 +1,5 @@
-import { decryptMessageLegacy as realDecryptMessageLegacy, decryptMIMEMessage, SessionKey } from 'pmcrypto';
-import { OpenPGPKey } from 'pmcrypto';
+import { decryptMessageLegacy as realDecryptMessageLegacy, decryptMIMEMessage, SessionKey, OpenPGPKey } from 'pmcrypto';
+
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 
 import { base64ToArray, arrayToBase64 } from '../base64';
@@ -14,7 +14,7 @@ export const createDocument = (content: string): Element => {
 export const readSessionKey = (key: any) => {
     return {
         data: base64ToArray(key.Key),
-        algorithm: key.Algorithm
+        algorithm: key.Algorithm,
     };
 };
 
@@ -22,8 +22,8 @@ export const decryptMessageLegacy = async (pack: any, privateKeys: OpenPGPKey[],
     const decryptResult = await realDecryptMessageLegacy({
         message: base64ToArray(pack.Body) as any,
         messageDate: new Date(),
-        privateKeys: privateKeys,
-        sessionKeys: [sessionKey]
+        privateKeys,
+        sessionKeys: [sessionKey],
     });
 
     return { data: decryptResult.data };
@@ -33,8 +33,8 @@ export const decryptMessageMultipart = async (pack: any, privateKeys: OpenPGPKey
     const decryptResult = await decryptMIMEMessage({
         message: base64ToArray(pack.Body) as any,
         messageDate: new Date(),
-        privateKeys: privateKeys,
-        sessionKeys: [sessionKey]
+        privateKeys,
+        sessionKeys: [sessionKey],
     });
 
     const bodyResult = await decryptResult.getBody();

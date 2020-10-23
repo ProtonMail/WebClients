@@ -1,9 +1,8 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { useState, useEffect } from 'react';
 import { c, msgid } from 'ttag';
-import { isUnread } from '../../helpers/elements';
-
 import { Icon } from 'react-components';
+import { isUnread } from '../../helpers/elements';
 
 interface Props {
     conversationID: string;
@@ -53,6 +52,7 @@ const UnreadMessages = ({ conversationID, messages, onClick }: Props) => {
         <span className="absolute centered-absolute-horizontal bottom pb1" aria-live="assertive" aria-atomic="true">
             <button
                 className="pm-button pm-button--primary pm-button--pill flex flex-nowrap flex-items-center conversation-unread-messages"
+                type="button"
                 onClick={handleClick}
             >
                 <span>{text}</span> <Icon name="arrow-down" className="ml0-5" />

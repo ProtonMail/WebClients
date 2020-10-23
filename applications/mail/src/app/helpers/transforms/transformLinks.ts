@@ -2,7 +2,10 @@ import { matches } from '../dom';
 
 const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:'];
 const ALL_PROTOCOLS = PROTOCOLS.concat(['mailto:']);
-const MAP = PROTOCOLS.reduce((acc, key) => ((acc[key] = true), acc), {} as { [key: string]: boolean });
+const MAP = PROTOCOLS.reduce<{ [key: string]: boolean }>((acc, key) => {
+    acc[key] = true;
+    return acc;
+}, {});
 const EXCLUDE_ANCHORS = ':not([href=""]):not([href^="#"])';
 
 const getNormalizedHref = (link: HTMLLinkElement) => {
@@ -54,7 +57,9 @@ const sanitizeRelativeHttpLinks = (link: HTMLLinkElement) => {
  * opening them in a new tab will just open a empty page.
  */
 const disableAnchors = (link: HTMLLinkElement) => {
-    isEmptyAnchor(link) && (link.style.pointerEvents = 'none');
+    if (isEmptyAnchor(link)) {
+        link.style.pointerEvents = 'none';
+    }
 };
 
 export const transformLinks = (document: Element) => {

@@ -1,8 +1,8 @@
-import { APP_VERSION, API_VERSION, API_URL, APP_NAME } from '../config';
 import { serializeData } from 'proton-shared/lib/fetch/helpers';
 import { getUIDHeaders } from 'proton-shared/lib/fetch/headers';
 import createListeners from 'proton-shared/lib/helpers/listeners';
 import { getClientID } from 'proton-shared/lib/apps/helper';
+import { APP_VERSION, API_VERSION, API_URL, APP_NAME } from '../config';
 
 export type HTTPHeaders = { [key: string]: string };
 
@@ -10,11 +10,11 @@ export enum HTTP_METHODS {
     GET = 'get',
     POST = 'post',
     PUT = 'put',
-    DELETE = 'delete'
+    DELETE = 'delete',
 }
 
 export enum HTTP_INPUTS {
-    FORM_DATA = 'form'
+    FORM_DATA = 'form',
 }
 
 export interface RequestParams {
@@ -30,7 +30,7 @@ export const defaultHeaders: HTTPHeaders = {
     'X-Requested-With': 'XMLHttpRequest',
     Accept: 'application/vnd.protonmail.v1+json',
     'x-pm-appversion': `${CLIENT_ID}_${APP_VERSION}`,
-    'x-pm-apiversion': API_VERSION
+    'x-pm-apiversion': API_VERSION,
 };
 
 export interface Upload<T> {
@@ -69,7 +69,7 @@ export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<Re
         const headers = {
             ...defaultHeaders,
             ...dataHeaders,
-            ...authHeaders
+            ...authHeaders,
         };
         await new Promise<XMLHttpRequest>((resolve, reject) => {
             xhr.upload.onprogress = notify;
@@ -88,6 +88,6 @@ export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<Re
         xhr,
         addProgressListener: subscribe,
         abort: () => xhr.abort(),
-        resultPromise: asyncResolution()
+        resultPromise: asyncResolution(),
     };
 };

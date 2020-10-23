@@ -1,7 +1,7 @@
 import { ContactEmail, ContactProperties, Contact } from 'proton-shared/lib/interfaces/contacts';
+import { prepareCards } from 'proton-shared/lib/contacts/encrypt';
 
 import { addApiMock } from './api';
-import { prepareCards } from 'proton-shared/lib/contacts/encrypt';
 import { GeneratedKey } from './crypto';
 
 export interface ContactMock {

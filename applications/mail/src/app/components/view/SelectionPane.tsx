@@ -37,10 +37,10 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const labelName = useMemo(() => getLabelName(labelCount.LabelID || '', labels, folders), [
         labels,
         folders,
-        labelCount
+        labelCount,
     ]);
 
-    const count = checkeds ? checkeds : total;
+    const count = checkeds || total;
 
     const strongText = conversationMode ? (
         <strong key="conversation">

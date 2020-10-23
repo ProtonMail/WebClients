@@ -5,17 +5,17 @@ import {
     OpenPGPSignature,
     verifyMessage as pmcryptoVerifyMessage,
     createCleartextMessage,
-    DecryptResultPmcrypto
+    DecryptResultPmcrypto,
 } from 'pmcrypto';
 import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { getDate, getSender, isMIME } from 'proton-shared/lib/mail/messages';
 import { c } from 'ttag';
+import { MIME_TYPES } from 'proton-shared/lib/constants';
 
 import { MessageErrors } from '../../models/message';
 import { convert } from '../attachment/attachmentConverter';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
 
 const { NOT_VERIFIED } = VERIFICATION_STATUS;
 
@@ -33,7 +33,7 @@ const decryptMimeMessage = async (message: Message, privateKeys: OpenPGPKey[], a
             privateKeys,
             publicKeys: [], // mandatory, even empty unless there is an error in openpgp
             headerFilename,
-            sender
+            sender,
         });
     } catch (error) {
         return {
@@ -41,8 +41,8 @@ const decryptMimeMessage = async (message: Message, privateKeys: OpenPGPKey[], a
             Attachments: [],
             verified: NOT_VERIFIED,
             errors: {
-                decryption: [error]
-            }
+                decryption: [error],
+            },
         };
     }
 
@@ -62,7 +62,7 @@ const decryptMimeMessage = async (message: Message, privateKeys: OpenPGPKey[], a
         decryptedSubject,
         signature,
         mimetype: mimetype as MIME_TYPES,
-        errors: errors?.length ? { decryption: errors } : undefined
+        errors: errors?.length ? { decryption: errors } : undefined,
     };
 };
 
@@ -74,20 +74,20 @@ const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[])
             message: message?.Body,
             messageDate: getDate(message),
             privateKeys,
-            publicKeys: []
+            publicKeys: [],
         });
     } catch (error) {
         return {
             decryptedBody: '',
             errors: {
-                decryption: error
-            }
+                decryption: error,
+            },
         };
     }
 
     const {
         data,
-        signatures: [signature]
+        signatures: [signature],
     } = result;
 
     return { decryptedBody: data, signature };
@@ -112,9 +112,8 @@ export const decryptMessage = async (
 }> => {
     if (isMIME(message)) {
         return decryptMimeMessage(message, privateKeys, attachmentsCache);
-    } else {
-        return decryptLegacyMessage(message, privateKeys);
     }
+    return decryptLegacyMessage(message, privateKeys);
 };
 
 export const verifyMessage = async (
@@ -131,12 +130,12 @@ export const verifyMessage = async (
         result = await pmcryptoVerifyMessage({
             message: createCleartextMessage(message?.Body),
             date: getDate(message),
-            publicKeys: publicKeys
+            publicKeys,
         });
     } catch (error) {
         return {
             verified: NOT_VERIFIED,
-            verificationErrors: [error]
+            verificationErrors: [error],
         };
     }
 

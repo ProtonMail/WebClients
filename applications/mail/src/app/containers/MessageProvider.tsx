@@ -73,8 +73,8 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
                     ...currentValue,
                     data: {
                         ...currentValue.data,
-                        ...MessageToUpdate
-                    }
+                        ...MessageToUpdate,
+                    },
                 });
             }
         }

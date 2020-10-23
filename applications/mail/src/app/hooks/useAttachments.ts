@@ -12,7 +12,7 @@ import {
     isEmbeddable,
     createEmbeddedMap,
     createEmbeddedInfo,
-    cloneEmbedddedMap
+    cloneEmbedddedMap,
 } from '../helpers/embedded/embeddeds';
 import { MessageExtended, MessageExtendedWithData } from '../models/message';
 import { EditorActionsRef } from '../components/composer/editor/SquireEditorWrapper';
@@ -72,7 +72,7 @@ export const useAttachments = (
             // Update embeddeds map if embedded attachments
             const embeddeds = cloneEmbedddedMap(message.embeddeds);
 
-            if (action == ATTACHMENT_ACTION.INLINE) {
+            if (action === ATTACHMENT_ACTION.INLINE) {
                 const embeddedsToInsert = createEmbeddedMap();
                 const cid = readCID(upload.attachment);
                 const info = createEmbeddedInfo(upload);
@@ -94,7 +94,7 @@ export const useAttachments = (
         if (sizeExcedeed) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`Attachments are limited to 25 MB.`
+                text: c('Error').t`Attachments are limited to 25 MB.`,
             });
         }
         return sizeExcedeed;
@@ -122,7 +122,7 @@ export const useAttachments = (
             return;
         }
 
-        handleAddAttachmentsUpload(ATTACHMENT_ACTION.INLINE, files);
+        void handleAddAttachmentsUpload(ATTACHMENT_ACTION.INLINE, files);
     };
 
     /**
@@ -139,7 +139,7 @@ export const useAttachments = (
         if (!plainText && embeddable) {
             setPendingFiles(files);
         } else {
-            handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
+            void handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
         }
     });
 
@@ -189,6 +189,6 @@ export const useAttachments = (
         handleAddAttachmentsUpload,
         handleCancelAddAttachment,
         handleRemoveAttachment,
-        handleRemoveUpload
+        handleRemoveUpload,
     };
 };

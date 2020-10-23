@@ -12,7 +12,6 @@ import { getCurrentType } from '../../helpers/elements';
 interface Props {
     welcomeFlag: boolean;
     labelID: string;
-    elementID?: string;
     checkedIDs?: string[];
     onUncheckAll: () => void;
     mailSettings: MailSettings;
@@ -25,7 +24,7 @@ const PlaceholderView = ({
     checkedIDs = [],
     onUncheckAll,
     mailSettings,
-    location
+    location,
 }: Props) => {
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();

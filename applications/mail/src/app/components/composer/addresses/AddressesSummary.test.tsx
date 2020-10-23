@@ -1,10 +1,10 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React from 'react';
+import { noop } from 'proton-shared/lib/helpers/function';
+import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { clearAll, render } from '../../../helpers/test/helper';
 import AddressesSummary from './AddressesSummary';
-import { noop } from 'proton-shared/lib/helpers/function';
 import { getRecipientLabel } from '../../../helpers/addresses';
-import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 const message = {} as Message;
 const props = { message, contacts: [], contactGroups: [], onFocus: noop, toggleExpanded: noop };

@@ -7,8 +7,9 @@ import {
     useEventManager,
     SidebarListItemLink,
     useLoading,
-    useCache
+    useCache,
 } from 'react-components';
+import { useHistory } from 'react-router-dom';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { wait } from 'proton-shared/lib/helpers/promise';
 
@@ -43,10 +44,11 @@ const SidebarItem = ({
     content = text,
     color,
     isFolder,
-    unreadCount
+    unreadCount,
 }: Props) => {
     const { call } = useEventManager();
     const cache = useCache();
+    const history = useHistory();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
@@ -70,8 +72,8 @@ const SidebarItem = ({
     const ariaCurrent = active ? 'page' : undefined;
 
     const handleClick = () => {
-        if (location.pathname.endsWith(link) && !refreshing) {
-            withRefreshing(Promise.all([call(), wait(1000)]));
+        if (history.location.pathname.endsWith(link) && !refreshing) {
+            void withRefreshing(Promise.all([call(), wait(1000)]));
         }
     };
 
@@ -91,9 +93,9 @@ const SidebarItem = ({
         const elementIDs = JSON.parse(event.dataTransfer.getData(DRAG_ELEMENT_KEY)) as string[];
         const elements = elementIDs.map((elementID) => elementsCache.elements[elementID]);
         if (isFolder) {
-            moveToFolder(elements, labelID, text, currentLabelID);
+            void moveToFolder(elements, labelID, text, currentLabelID);
         } else {
-            applyLabel(elements, { [labelID]: true });
+            void applyLabel(elements, { [labelID]: true });
         }
     };
 
