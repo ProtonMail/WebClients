@@ -8,6 +8,7 @@ import BugModal from '../support/BugModal';
 import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 import SupportDropdownButton from './SupportDropdownButton';
 import { generateUID } from '../../helpers';
+import { OnboardingModal } from '../onboarding';
 
 interface Props {
     className?: string;
@@ -25,6 +26,10 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false }: Props) 
 
     const handleBugReportClick = () => {
         createModal(isAuthenticated ? <AuthenticatedBugModal /> : <BugModal />);
+    };
+
+    const handleTourClick = () => {
+        createModal(<OnboardingModal showGenericSteps />);
     };
 
     return (
@@ -56,6 +61,10 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false }: Props) 
                     <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={handleBugReportClick}>
                         <Icon className="mt0-25 mr0-5" name="report-bug" />
                         {c('Action').t`Report bug`}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={handleTourClick}>
+                        <Icon className="mt0-25 mr0-5" name="tutorial" />
+                        {c('Action').t`Take a tour`}
                     </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>

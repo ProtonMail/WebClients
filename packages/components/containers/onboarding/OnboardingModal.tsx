@@ -15,7 +15,7 @@ import OnboardingManageAccount from './OnboardingManageAccount';
 import OnboardingStep from './OnboardingStep';
 
 interface Props {
-    title: string;
+    title?: string;
     isLoading?: boolean;
     hasClose?: boolean;
     close?: React.ReactNode;
@@ -24,9 +24,10 @@ interface Props {
     onClose?: () => void;
     children?: ((props: OnboardingStepRenderCallback) => JSX.Element)[];
     setWelcomeFlags?: boolean;
+    showGenericSteps?: boolean;
 }
 
-const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) => {
+const OnboardingModal = ({ children, showGenericSteps, setWelcomeFlags = true, ...rest }: Props) => {
     const [user] = useUser();
     const [displayName, setDisplayName] = useState(user.Name || '');
     const [loadingDisplayName, withLoading] = useLoading();
@@ -114,7 +115,9 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
 
     const hasDisplayNameStep = welcomeFlags?.hasDisplayNameStep;
 
-    const genericSteps = hasDisplayNameStep ? [setDisplayNameStep, accessingProtonAppsStep, manageAccountStep] : [];
+    const displayGenericSteps = showGenericSteps || hasDisplayNameStep;
+
+    const genericSteps = displayGenericSteps ? [setDisplayNameStep, accessingProtonAppsStep, manageAccountStep] : [];
 
     const productSteps = children
         ? (Array.isArray(children) ? children : [children])
@@ -139,8 +142,16 @@ const OnboardingModal = ({ children, setWelcomeFlags = true, ...rest }: Props) =
 
     const hasDots = genericSteps.length > 0 && step < genericSteps.length;
 
+    const isLastStep = steps.length - 1 === step;
+
+    const childStepProps = {
+        ...childStep.props,
+        submit: isLastStep ? c('Action').t`Done` : childStep.props?.submit,
+        onSubmit: isLastStep ? rest?.onClose : childStep.props?.onSubmit,
+    };
+
     return (
-        <FormModal {...rest} hasClose={false} autoFocusClose {...childStep.props}>
+        <FormModal {...rest} hasClose={false} autoFocusClose {...childStepProps}>
             <>
                 {childStep}
                 {hasDots && (
