@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
+import React, { createContext, useContext, useState, useRef, useEffect, useCallback } from 'react';
 import { useApi, generateUID } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
 import {
@@ -109,12 +109,12 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
 
     const getDownloadsProgresses = () => ({ ...progresses.current });
 
-    const clearDownloads = () => {
+    const clearDownloads = useCallback(() => {
         downloads.forEach(({ id }) => {
             controls.current[id].cancel();
         });
         setDownloads([]);
-    };
+    }, [downloads]);
 
     const cancelDownload = (id: string) => {
         updateDownloadState(id, TransferState.Canceled);
