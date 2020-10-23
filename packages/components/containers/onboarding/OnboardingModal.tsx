@@ -144,11 +144,14 @@ const OnboardingModal = ({ children, showGenericSteps, setWelcomeFlags = true, .
 
     const isLastStep = steps.length - 1 === step;
 
-    const childStepProps = {
-        ...childStep.props,
-        submit: isLastStep ? c('Action').t`Done` : childStep.props?.submit,
-        onSubmit: isLastStep ? rest?.onClose : childStep.props?.onSubmit,
-    };
+    const childStepProps =
+        isLastStep && productSteps.length === 0
+            ? {
+                  ...childStep.props,
+                  submit: c('Action').t`Done`,
+                  onSubmit: rest?.onClose,
+              }
+            : childStep.props;
 
     return (
         <FormModal {...rest} hasClose={false} autoFocusClose {...childStepProps}>
