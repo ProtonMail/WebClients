@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS, BRAND_NAME } from 'proton-shared/lib/constants';
 import { Icon, Dropdown, DropdownMenu, DropdownMenuButton, DropdownMenuLink, usePopperAnchor } from '../../components';
 import { useModals, useAuthentication, useConfig } from '../../hooks';
 
@@ -64,7 +64,7 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false }: Props) 
                     </DropdownMenuButton>
                     <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={handleTourClick}>
                         <Icon className="mt0-25 mr0-5" name="tutorial" />
-                        {c('Action').t`Take a tour`}
+                        {c('Action').t`${BRAND_NAME} introduction`}
                     </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
