@@ -21,6 +21,8 @@ export const DOMAIN_PLACEHOLDER = 'example.com';
 export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
 export const USERNAME_PLACEHOLDER = 'john.doe';
 
+export const BRAND_NAME = 'Proton';
+
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
     PROTONMAIL: 'proton-mail',
