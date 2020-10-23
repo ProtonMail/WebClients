@@ -24,7 +24,7 @@ const DriveOnboardingModalNoAccess = (props: any) => {
                 <OnboardingStep
                     title={c('Onboarding ProtonDrive Title').t`Welcome to ${appName}`}
                     close={null}
-                    submit={c('Onboarding ProtonDrive Action').t`Back to your Dashboard`}
+                    submit={c('Onboarding ProtonDrive Action').t`Back to your dashboard`}
                     onSubmit={handleBack}
                 >
                     <OnboardingContent

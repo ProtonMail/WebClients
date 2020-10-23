@@ -197,14 +197,14 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
                             icon="folder-new"
                             disabled={loading || !selectedFolder}
                             onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
-                            title={c('Action').t`Create New Folder`}
+                            title={c('Action').t`Create new folder`}
                         />
                     ) : (
                         <LinkButton
                             disabled={loading || !selectedFolder}
                             onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
                         >
-                            {c('Action').t`Create New Folder`}
+                            {c('Action').t`Create new folder`}
                         </LinkButton>
                     )}
                     <div>

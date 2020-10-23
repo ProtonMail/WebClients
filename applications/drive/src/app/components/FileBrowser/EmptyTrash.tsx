@@ -11,7 +11,7 @@ const EmptyTrash = () => (
     <div className="p2 mt2 flex w100 flex flex-item-fluid">
         <IllustrationPlaceholder
             url={getLightOrDark(noContentSvgLight, noContentSvgDark)}
-            title={c('Info').t`No files or folders in Trash`}
+            title={c('Info').t`No files or folders in trash`}
         />
     </div>
 );

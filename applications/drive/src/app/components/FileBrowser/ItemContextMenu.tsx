@@ -80,7 +80,7 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
         },
         {
             hidden: false,
-            name: c('Action').t`Move to Folder`,
+            name: c('Action').t`Move to folder`,
             icon: 'arrow-cross',
             testId: 'context-menu-move',
             action: () => openMoveToFolder(selectedItems),
@@ -94,7 +94,7 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
         },
         {
             hidden: false,
-            name: c('Action').t`Move to Trash`,
+            name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'context-menu-trash',
             action: () => openMoveToTrash(selectedItems),
@@ -104,7 +104,7 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
     const trashMenuItems = [
         {
             hidden: false,
-            name: c('Action').t`Restore from Trash`,
+            name: c('Action').t`Restore from trash`,
             icon: 'repeat',
             testId: 'context-menu-restore',
             action: () => restoreFromTrash(shareId, selectedItems),

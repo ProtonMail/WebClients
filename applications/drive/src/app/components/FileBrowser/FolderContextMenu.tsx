@@ -34,19 +34,19 @@ const FolderContextMenu = ({ anchorRef, isOpen, position, open, close }: Props) 
 
     const menuButtons = [
         {
-            name: c('Action').t`Upload File`,
+            name: c('Action').t`Upload file`,
             icon: 'file-upload',
             testId: 'context-menu-upload-file',
             action: uploadFile,
         },
         {
-            name: c('Action').t`Upload Folder`,
+            name: c('Action').t`Upload folder`,
             icon: 'folder-upload',
             testId: 'context-menu-upload-folder',
             action: uploadFolder,
         },
         {
-            name: c('Action').t`Create New Folder`,
+            name: c('Action').t`Create new folder`,
             icon: 'folder-new',
             testId: 'context-menu-create-folder',
             action: openCreateFolder,

@@ -50,26 +50,26 @@ const useListNotifications = () => {
         const notificationMessages = {
             allFiles:
                 deletedItemsCount === 1
-                    ? c('Notification').t`"${firstItemName}" deleted permanently from Trash`
+                    ? c('Notification').t`"${firstItemName}" deleted permanently from trash`
                     : c('Notification').ngettext(
-                          msgid`${deletedItemsCount} file deleted permanently from Trash`,
-                          `${deletedItemsCount} files deleted permanently from Trash`,
+                          msgid`${deletedItemsCount} file deleted permanently from trash`,
+                          `${deletedItemsCount} files deleted permanently from trash`,
                           deletedItemsCount
                       ),
             allFolders:
                 deletedItemsCount === 1
-                    ? c('Notification').t`"${firstItemName}" deleted permanently from Trash`
+                    ? c('Notification').t`"${firstItemName}" deleted permanently from trash`
                     : c('Notification').ngettext(
-                          msgid`${deletedItemsCount} folder deleted permanently from Trash`,
-                          `${deletedItemsCount} folders deleted permanently from Trash`,
+                          msgid`${deletedItemsCount} folder deleted permanently from trash`,
+                          `${deletedItemsCount} folders deleted permanently from trash`,
                           deletedItemsCount
                       ),
             mixed:
                 deletedItemsCount === 1
-                    ? c('Notification').t`"${firstItemName}" deleted permanently from Trash`
+                    ? c('Notification').t`"${firstItemName}" deleted permanently from trash`
                     : c('Notification').ngettext(
-                          msgid`${deletedItemsCount} item deleted permanently from Trash`,
-                          `${deletedItemsCount} items deleted permanently from Trash`,
+                          msgid`${deletedItemsCount} item deleted permanently from trash`,
+                          `${deletedItemsCount} items deleted permanently from trash`,
                           deletedItemsCount
                       ),
         };
@@ -94,26 +94,26 @@ const useListNotifications = () => {
         const notificationMessages = {
             allFiles:
                 trashedLinksCount === 1
-                    ? c('Notification').t`"${firstItemName}" moved to Trash`
+                    ? c('Notification').t`"${firstItemName}" moved to trash`
                     : c('Notification').ngettext(
-                          msgid`${trashedLinksCount} file moved to Trash`,
-                          `${trashedLinksCount} files moved to Trash`,
+                          msgid`${trashedLinksCount} file moved to trash`,
+                          `${trashedLinksCount} files moved to trash`,
                           trashedLinksCount
                       ),
             allFolders:
                 trashedLinksCount === 1
-                    ? c('Notification').t`"${firstItemName}" moved to Trash`
+                    ? c('Notification').t`"${firstItemName}" moved to trash`
                     : c('Notification').ngettext(
-                          msgid`${trashedLinksCount} folder moved to Trash`,
-                          `${trashedLinksCount} folders moved to Trash`,
+                          msgid`${trashedLinksCount} folder moved to trash`,
+                          `${trashedLinksCount} folders moved to trash`,
                           trashedLinksCount
                       ),
             mixed:
                 trashedLinksCount === 1
-                    ? c('Notification').t`"${firstItemName}" moved to Trash`
+                    ? c('Notification').t`"${firstItemName}" moved to trash`
                     : c('Notification').ngettext(
-                          msgid`${trashedLinksCount} item moved to Trash`,
-                          `${trashedLinksCount} items moved to Trash`,
+                          msgid`${trashedLinksCount} item moved to trash`,
+                          `${trashedLinksCount} items moved to trash`,
                           trashedLinksCount
                       ),
         };
@@ -148,26 +148,26 @@ const useListNotifications = () => {
             const notificationMessages = {
                 allFiles:
                     restoredItemsCount === 1
-                        ? c('Notification').t`"${firstItemName}" restored from Trash`
+                        ? c('Notification').t`"${firstItemName}" restored from trash`
                         : c('Notification').ngettext(
-                              msgid`${restoredItemsCount} file restored from Trash`,
-                              `${restoredItemsCount} files restored from Trash`,
+                              msgid`${restoredItemsCount} file restored from trash`,
+                              `${restoredItemsCount} files restored from trash`,
                               restoredItemsCount
                           ),
                 allFolders:
                     restoredItemsCount === 1
-                        ? c('Notification').t`"${firstItemName}" restored from Trash`
+                        ? c('Notification').t`"${firstItemName}" restored from trash`
                         : c('Notification').ngettext(
-                              msgid`${restoredItemsCount} folder restored from Trash`,
-                              `${restoredItemsCount} folders restored from Trash`,
+                              msgid`${restoredItemsCount} folder restored from trash`,
+                              `${restoredItemsCount} folders restored from trash`,
                               restoredItemsCount
                           ),
                 mixed:
                     restoredItemsCount === 1
-                        ? c('Notification').t`"${firstItemName}" restored from Trash`
+                        ? c('Notification').t`"${firstItemName}" restored from trash`
                         : c('Notification').ngettext(
-                              msgid`${restoredItemsCount} item restored from Trash`,
-                              `${restoredItemsCount} items restored from Trash`,
+                              msgid`${restoredItemsCount} item restored from trash`,
+                              `${restoredItemsCount} items restored from trash`,
                               restoredItemsCount
                           ),
             };
