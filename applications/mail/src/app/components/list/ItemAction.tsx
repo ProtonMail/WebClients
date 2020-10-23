@@ -1,6 +1,6 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React from 'react';
-import { Icon } from 'react-components';
+import { classnames, Icon, Tooltip } from 'react-components';
 import { c } from 'ttag';
 
 import { Element } from '../../models/element';
@@ -23,10 +23,22 @@ const ItemAction = ({ element = {}, className }: Props) => {
     }
 
     return (
-        <div className={className}>
-            {!!message.IsReplied && <Icon name="reply" alt={c('Alt').t`Replied to`} />}
-            {!!message.IsRepliedAll && <Icon name="reply-all" alt={c('Alt').t`Replied to all`} />}
-            {!!message.IsForwarded && <Icon name="reply" className="mirror" alt={c('Alt').t`Forwarded`} />}
+        <div className={classnames(['flex flex-nowrap', className])}>
+            {!!message.IsReplied && (
+                <Tooltip title={c('Alt').t`Replied to`} className="flex flex-item-noshrink mr0-5">
+                    <Icon name="reply" alt={c('Alt').t`Replied to`} />
+                </Tooltip>
+            )}
+            {!!message.IsRepliedAll && (
+                <Tooltip title={c('Alt').t`Replied to all`} className="flex flex-item-noshrink mr0-5">
+                    <Icon name="reply-all" alt={c('Alt').t`Replied to all`} />
+                </Tooltip>
+            )}
+            {!!message.IsForwarded && (
+                <Tooltip title={c('Alt').t`Forwarded`} className="flex flex-item-noshrink mr0-5">
+                    <Icon className="mirror" name="reply" alt={c('Alt').t`Forwarded`} />
+                </Tooltip>
+            )}
         </div>
     );
 };

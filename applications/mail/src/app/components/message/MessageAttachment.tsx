@@ -63,7 +63,7 @@ const MessageAttachment = ({ attachment, message }: Props) => {
     return (
         <li className="mr0-5 mt0-5">
             <button
-                className="message-attachment inline-flex flex-nowrap mw100 pm-button listAttachments-item relative no-pointer-events-children"
+                className="message-attachment inline-flex flex-nowrap flex-items-stretch mw100 pm-button listAttachments-item relative no-pointer-events-children"
                 title={title}
                 type="button"
                 onClick={clickHandler}

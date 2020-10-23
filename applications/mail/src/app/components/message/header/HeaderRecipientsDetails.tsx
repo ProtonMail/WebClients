@@ -20,7 +20,6 @@ interface Props {
 }
 
 interface ListProps {
-    message: MessageExtended;
     list: Recipient[];
     mapStatusIcons?: MapStatusIcons;
     contacts: ContactEmail[];
@@ -29,15 +28,7 @@ interface ListProps {
     isLoading: boolean;
 }
 
-const RecipientsList = ({
-    message,
-    list,
-    mapStatusIcons,
-    contacts,
-    contactGroups,
-    onCompose,
-    isLoading
-}: ListProps) => {
+const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompose, isLoading }: ListProps) => {
     const recipientsOrGroup = recipientsToRecipientOrGroup(list, contactGroups);
 
     return (
@@ -50,7 +41,6 @@ const RecipientsList = ({
                     contacts={contacts}
                     onCompose={onCompose}
                     isLoading={isLoading}
-                    message={message}
                 />
             ))}
         </>
@@ -73,7 +63,6 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contactGroups={contactGroups}
                         onCompose={onCompose}
                         isLoading={isLoading}
-                        message={message}
                     />
                 </HeaderRecipientType>
             )}
@@ -86,7 +75,6 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contactGroups={contactGroups}
                         onCompose={onCompose}
                         isLoading={isLoading}
-                        message={message}
                     />
                 </HeaderRecipientType>
             )}
@@ -99,7 +87,6 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contactGroups={contactGroups}
                         onCompose={onCompose}
                         isLoading={isLoading}
-                        message={message}
                     />
                 </HeaderRecipientType>
             )}
@@ -110,7 +97,6 @@ const HeaderRecipientsDetails = ({ message, mapStatusIcons, contacts, contactGro
                         contacts={contacts}
                         onCompose={onCompose}
                         isLoading={isLoading}
-                        message={message}
                     />
                 </HeaderRecipientType>
             )}

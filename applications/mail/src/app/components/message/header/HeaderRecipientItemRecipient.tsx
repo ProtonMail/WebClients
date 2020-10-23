@@ -24,10 +24,8 @@ import { MESSAGE_ACTIONS } from '../../../constants';
 import { OnCompose } from '../../../hooks/useCompose';
 import HeaderRecipientItemLayout from './HeaderRecipientItemLayout';
 import { getContactOfRecipient } from '../../../helpers/contacts';
-import { MessageExtended } from '../../../models/message';
 
 interface Props {
-    message: MessageExtended;
     recipient: Recipient;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
@@ -38,7 +36,6 @@ interface Props {
 }
 
 const HeaderRecipientItemRecipient = ({
-    message,
     recipient,
     mapStatusIcons,
     globalIcon,
@@ -145,12 +142,11 @@ const HeaderRecipientItemRecipient = ({
             icon={
                 showLockIcon &&
                 icon && (
-                    <span className="flex pl0-25 pr0-25 flex-item-noshrink message-recipient-item-lockIcon">
+                    <span className="flex ml0-25 flex-item-noshrink message-recipient-item-lockIcon">
                         <EncryptionStatusIcon {...icon} />
                     </span>
                 )
             }
-            message={message}
         />
     );
 };

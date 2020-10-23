@@ -14,6 +14,8 @@ import { MessageExtended } from '../../../models/message';
 import HeaderRecipientItem from './HeaderRecipientItem';
 import ItemExpiration from '../../list/ItemExpiration';
 import { OnCompose } from '../../../hooks/useCompose';
+import ItemAction from '../../list/ItemAction';
+import { Breakpoints } from '../../../models/utils';
 
 interface Props {
     labelID: string;
@@ -26,6 +28,7 @@ interface Props {
     isDraftMessage: boolean;
     onExpand: () => void;
     onCompose: OnCompose;
+    breakpoints: Breakpoints;
 }
 
 const HeaderCollapsed = ({
@@ -37,7 +40,8 @@ const HeaderCollapsed = ({
     isSentMessage,
     isUnreadMessage,
     onExpand,
-    onCompose
+    onCompose,
+    breakpoints
 }: Props) => {
     const [contacts = []] = useContactEmails();
 
@@ -62,25 +66,25 @@ const HeaderCollapsed = ({
             ])}
             onClick={handleClick}
         >
-            <div className="flex flex-item-fluid flex-nowrap flex-items-center pr0-5">
+            <div className="flex flex-item-fluid flex-nowrap flex-items-center mr0-5">
                 <HeaderRecipientItem
                     recipientOrGroup={{ recipient: message.data?.Sender }}
                     showAddress={false}
                     onCompose={onCompose}
                     contacts={contacts}
                     isLoading={!messageLoaded}
-                    message={message}
                 />
+
                 {messageLoaded && (
-                    <>
-                        <ItemExpiration
-                            element={message.data}
-                            className="flex flex-item-noshrink ml0-25 is-appearing-content"
-                        />
-                    </>
+                    <ItemAction element={message.data} className="flex-item-noshrink mtauto mbauto ml0-25" />
+                )}
+
+                {messageLoaded && isDraftMessage && (
+                    <span className="badgeLabel-success ml0-5 flex-item-noshrink is-appearing-content">{c('Info')
+                        .t`Draft`}</span>
                 )}
             </div>
-            <div className="flex flex-items-center flex-item-noshrink">
+            <div className="flex flex-items-center flex-nowrap flex-item-noshrink">
                 {messageLoaded ? (
                     <>
                         <ItemLabels
@@ -88,29 +92,30 @@ const HeaderCollapsed = ({
                             element={message.data}
                             labels={labels}
                             showUnlabel
-                            maxNumber={5}
+                            maxNumber={breakpoints.isTablet ? 1 : 5}
                         />
 
-                        {isDraftMessage && (
-                            <span className="badgeLabel-success ml0-5 is-appearing-content">{c('Info').t`Draft`}</span>
-                        )}
-
                         {!!hasAttachments(message.data) && (
-                            <span className="ml0-5 inline-flex is-appearing-content">
-                                <ItemAttachmentIcon element={message.data} className="mauto" />
+                            <span className="ml0-5 flex is-appearing-content">
+                                <ItemAttachmentIcon element={message.data} labelID={labelID} className="mauto" />
                             </span>
                         )}
 
-                        <span className="ml0-5 inline-flex is-appearing-content">
+                        <span className="ml0-5 flex is-appearing-content">
                             <ItemLocation message={message.data} mailSettings={mailSettings} />
                         </span>
 
-                        <ItemDate className="ml0-5 is-appearing-content" element={message.data} labelID={labelID} />
+                        <ItemExpiration
+                            element={message.data}
+                            className="flex flex-item-noshrink ml0-25 mr0-25 is-appearing-content"
+                        />
+
+                        <ItemDate className="ml0-25 is-appearing-content" element={message.data} labelID={labelID} />
                     </>
                 ) : (
-                    <span className="message-header-metas ml0-5 inline-flex"></span>
+                    <span className="message-header-metas ml0-5 flex"></span>
                 )}
-                <span className="message-header-star ml0-5 inline-flex">
+                <span className="message-header-star ml0-5 flex">
                     <ItemStar element={message.data} />
                 </span>
             </div>

@@ -39,7 +39,7 @@ const HeaderExtra = ({
 }: Props) => {
     const received = message.data && isReceived(message.data);
     return (
-        <section className="message-header-extra mt0-5 border-top pt0-5">
+        <section className="message-header-extra border-top pt0-5">
             <ExtraExpirationTime message={message} />
             <ExtraDecryptedSubject message={message} />
             <ExtraSpamScore message={message} labelID={labelID} />

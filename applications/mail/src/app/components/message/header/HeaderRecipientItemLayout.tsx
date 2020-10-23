@@ -1,10 +1,7 @@
 import React, { ReactNode } from 'react';
 import { classnames } from 'react-components';
-import { MessageExtended } from '../../../models/message';
-import ItemAction from '../../list/ItemAction';
 
 interface Props {
-    message: MessageExtended;
     button?: ReactNode;
     label?: ReactNode;
     showAddress?: boolean;
@@ -16,7 +13,6 @@ interface Props {
 }
 
 const HeaderRecipientItemLayout = ({
-    message,
     button,
     label,
     showAddress = true,
@@ -28,12 +24,17 @@ const HeaderRecipientItemLayout = ({
     return (
         <span
             className={classnames([
-                'flex flex-items-center flex-nowrap message-recipient-item w100',
+                'flex flex-items-center flex-nowrap message-recipient-item',
                 isLoading ? 'flex-item-fluid' : 'is-appearing-content'
             ])}
         >
             <span className="container-to container-to--item noprint">{button}</span>
-            <span className={classnames(['flex flex-nowrap ellipsis mw100', isLoading && 'flex-item-fluid'])}>
+            <span
+                className={classnames([
+                    'flex flex-items-center flex-nowrap ellipsis mw100',
+                    isLoading && 'flex-item-fluid'
+                ])}
+            >
                 <span
                     className="flex-item-fluid message-recipient-item-label-address ellipsis mw100 inbl"
                     title={title}
@@ -49,11 +50,6 @@ const HeaderRecipientItemLayout = ({
                     )}
                 </span>
                 {icon}
-                {isLoading ? null : (
-                    <span className="ml0-5">
-                        <ItemAction element={message.data} className="mtauto mbauto" />
-                    </span>
-                )}
             </span>
         </span>
     );

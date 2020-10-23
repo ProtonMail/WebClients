@@ -13,6 +13,7 @@ import { isMessage as testIsMessage } from '../../helpers/elements';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 
 import './Drag.scss';
+import { Breakpoints } from '../../models/utils';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -31,6 +32,7 @@ interface Props {
     onClick: (elementID: string | undefined) => void;
     conversationMode: boolean;
     isSearch: boolean;
+    breakpoints: Breakpoints;
 }
 
 const List = ({
@@ -46,7 +48,8 @@ const List = ({
     onCheck,
     onClick,
     conversationMode,
-    isSearch
+    isSearch,
+    breakpoints
 }: Props) => {
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
@@ -199,6 +202,7 @@ const List = ({
                             onDragCanceled={handleDragCanceled}
                             dragged={draggedIDs.includes(element.ID || '')}
                             index={index}
+                            breakpoints={breakpoints}
                         />
                     ))
                 )}

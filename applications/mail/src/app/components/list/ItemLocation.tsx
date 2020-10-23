@@ -9,9 +9,10 @@ interface Props {
     message?: Message;
     mailSettings: MailSettings;
     shouldStack?: boolean;
+    showTooltip?: boolean;
 }
 
-const ItemLocation = ({ message, mailSettings, shouldStack = false }: Props) => {
+const ItemLocation = ({ message, mailSettings, shouldStack = false, showTooltip = true }: Props) => {
     const [customFolders = []] = useFolders();
     let infos = getCurrentFolders(message, customFolders, mailSettings);
 
@@ -28,8 +29,8 @@ const ItemLocation = ({ message, mailSettings, shouldStack = false }: Props) => 
     return (
         <>
             {infos.map(({ icon, name, to }) => (
-                <Tooltip title={name} key={to}>
-                    <span className="flex flex-item-noshrink">
+                <Tooltip className="mr0-25" title={showTooltip ? name : undefined} key={to}>
+                    <span className="flex flex-item-noshrink pt0-125">
                         <Icon name={icon} alt={name} />
                     </span>
                 </Tooltip>

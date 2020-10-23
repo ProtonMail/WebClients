@@ -9,14 +9,16 @@ import { isConversation as testIsConversation } from '../../helpers/elements';
 import { getNumParticipants } from '../../helpers/addresses';
 import { Element } from '../../models/element';
 import { Conversation } from '../../models/conversation';
+import { Breakpoints } from '../../models/utils';
 
 interface Props {
     className: string;
     loading: boolean;
     element: Element;
+    breakpoints: Breakpoints;
 }
 
-const ConversationHeader = ({ className, loading, element }: Props) => {
+const ConversationHeader = ({ className, loading, element, breakpoints }: Props) => {
     const [labels = []] = useLabels();
 
     const isConversation = testIsConversation(element);
@@ -82,7 +84,12 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
                 </div>
                 {!loading && (
                     <div className="flex-item-fluid alignright no-scroll is-appearing-content">
-                        <ItemLabels labels={labels} element={element} showUnlabel maxNumber={5} />
+                        <ItemLabels
+                            labels={labels}
+                            element={element}
+                            showUnlabel
+                            maxNumber={breakpoints.isNarrow ? 1 : 5}
+                        />
                     </div>
                 )}
             </div>

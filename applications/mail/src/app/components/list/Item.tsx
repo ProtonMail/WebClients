@@ -20,6 +20,7 @@ import {
     getRecipientOrGroupLabelDetailed
 } from '../../helpers/addresses';
 import { isCustomLabel } from '../../helpers/labels';
+import { Breakpoints } from '../../models/utils';
 
 const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -44,6 +45,7 @@ interface Props {
     onDragCanceled: () => void;
     dragged: boolean;
     index: number;
+    breakpoints: Breakpoints;
 }
 
 const Item = ({
@@ -64,7 +66,8 @@ const Item = ({
     onDragStart,
     onDragCanceled,
     dragged,
-    index
+    index,
+    breakpoints
 }: Props) => {
     const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
@@ -151,6 +154,7 @@ const Item = ({
                 unread={unread}
                 displayRecipients={displayRecipients}
                 loading={loading}
+                breakpoints={breakpoints}
             />
         </div>
     );

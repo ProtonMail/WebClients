@@ -218,6 +218,7 @@ const MessageView = ({
                     isDraftMessage={draft}
                     onExpand={handleExpand(true)}
                     onCompose={onCompose}
+                    breakpoints={breakpoints}
                 />
             )}
         </article>

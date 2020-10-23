@@ -12,7 +12,11 @@ import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
 import { Sort, SearchParameters, Filter } from '../models/tools';
 import { isConversationMode } from './mailSettings';
-import { hasAttachments as conversationHasAttachments } from './conversation';
+import {
+    isUnread as conversationIsUnread,
+    hasAttachments as conversationHasAttachments,
+    getNumAttachments as conversationNumAttachments
+} from './conversation';
 
 import { LabelIDsChanges } from '../models/event';
 import { Conversation } from '../models/conversation';
@@ -83,22 +87,9 @@ export const isUnread = (element: Element | undefined, labelID: string | undefin
 
     if (isMessage(element)) {
         return (element as Message).Unread !== 0;
-    } else {
-        const conversation = element as Conversation;
-        const labelUnread = conversation.Labels?.find((label) => label.ID === labelID)?.ContextNumUnread;
-
-        if (labelUnread !== undefined) {
-            return labelUnread !== 0;
-        }
-        if (conversation.ContextNumUnread !== undefined && conversation.ContextNumUnread !== 0) {
-            return conversation.ContextNumUnread !== 0;
-        }
-        if (conversation.NumUnread !== undefined) {
-            return conversation.NumUnread !== 0;
-        }
     }
 
-    return false;
+    return conversationIsUnread(element as Conversation, labelID);
 };
 
 export const isUnreadMessage = (message: Message) => isUnread(message, undefined);
@@ -151,8 +142,11 @@ export const getCounterMap = (
     }, {});
 };
 
-export const hasAttachments = (element: Element) =>
-    isMessage(element) ? messageHasAttachments(element as Message) : conversationHasAttachments(element);
+export const hasAttachments = (element: Element, labelID: string | undefined) =>
+    isMessage(element) ? messageHasAttachments(element as Message) : conversationHasAttachments(element, labelID);
+
+export const getNumAttachments = (element: Element, labelID: string | undefined) =>
+    isMessage(element) ? (element as Message)?.NumAttachments || 0 : conversationNumAttachments(element, labelID);
 
 /**
  * Starting from the element LabelIDs list, add and remove labels from an event manager event

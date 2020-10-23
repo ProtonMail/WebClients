@@ -233,6 +233,7 @@ const MailboxContainer = ({
                         onClick={handleElement}
                         userSettings={userSettings}
                         isSearch={isSearch}
+                        breakpoints={breakpoints}
                     />
                 )}
                 {showContentPanel && (

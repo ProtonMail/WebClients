@@ -1,14 +1,23 @@
 import React from 'react';
-import { Href, Icon, Loader, Tooltip } from 'react-components';
+import { classnames, Href, Icon, Loader, Tooltip } from 'react-components';
 import { getSendIconHref, getStatusIconName } from '../../helpers/message/icon';
 import { StatusIcon } from '../../models/crypto';
 
 interface Props extends Partial<StatusIcon> {
     loading?: boolean;
     useTooltip?: boolean;
+    className?: string;
 }
 
-const EncryptionStatusIcon = ({ colorClassName, isEncrypted, fill, text, loading, useTooltip = true }: Props) => {
+const EncryptionStatusIcon = ({
+    colorClassName,
+    isEncrypted,
+    fill,
+    text,
+    loading,
+    useTooltip = true,
+    className
+}: Props) => {
     if (loading) {
         return <Loader className="icon-16p mauto flex" />;
     }
@@ -30,7 +39,10 @@ const EncryptionStatusIcon = ({ colorClassName, isEncrypted, fill, text, loading
 
     if (useTooltip) {
         return (
-            <Tooltip title={text || ''} className="inline-flex flex-item-noshrink mauto alignmiddle">
+            <Tooltip
+                title={text || ''}
+                className={classnames(['inline-flex flex-item-noshrink alignmiddle', className])}
+            >
                 {icon}
             </Tooltip>
         );
