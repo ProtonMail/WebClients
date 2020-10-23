@@ -80,7 +80,7 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
             autoFocusClose={false}
             {...rest}
         >
-            <Row className="p1 pl2">
+            <Row className="mt1 mb1">
                 <Label>{isFolder ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
                 <Field>
                     <Input

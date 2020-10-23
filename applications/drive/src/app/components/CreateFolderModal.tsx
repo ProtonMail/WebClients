@@ -74,7 +74,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
             autoFocusClose={false}
             {...rest}
         >
-            <Row className="p1 pl2">
+            <Row className="mt1 mb1">
                 <Label>{c('Label').t`Folder name`}</Label>
                 <Field>
                     <Input
