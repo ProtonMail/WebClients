@@ -1,7 +1,7 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { hasAttachments, isDraft, isSent } from 'proton-shared/lib/mail/messages';
-import React, { useEffect, useMemo, useRef, useState, memo } from 'react';
+import React, { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, RefCallback } from 'react';
 import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
@@ -29,7 +29,6 @@ interface Props {
     labels: Label[];
     message: Message;
     mailSettings: any;
-    expand?: boolean;
     conversationIndex?: number;
     conversationID?: string;
     onBack: () => void;
@@ -37,27 +36,31 @@ interface Props {
     breakpoints: Breakpoints;
 }
 
-const MessageView = ({
-    labelID,
-    conversationMode,
-    loading,
-    labels = [],
-    message: inputMessage,
-    mailSettings,
-    expand: inputExpand = true,
-    conversationIndex = 0,
-    conversationID,
-    onBack,
-    onCompose,
-    breakpoints,
-}: Props) => {
-    const inputMessageIsDraft = !loading && isDraft(inputMessage);
+export interface MessageViewRef {
+    open: (smoothScrolling?: boolean) => void;
+}
 
+const MessageView = (
+    {
+        labelID,
+        conversationMode,
+        loading,
+        labels = [],
+        message: inputMessage,
+        mailSettings,
+        conversationIndex = 0,
+        conversationID,
+        onBack,
+        onCompose,
+        breakpoints,
+    }: Props,
+    ref: Ref<MessageViewRef>
+) => {
     // Actual expanded state
-    const [expanded, setExpanded] = useState(inputExpand && !inputMessageIsDraft);
+    const [expanded, setExpanded] = useState(!conversationMode);
 
-    // Whether or not the focus has already been made
-    const [hasBeenFocused, setHasBeenFocused] = useState(false);
+    // The message is beeing opened
+    const [beingFocused, setBeingFocused] = useState(false);
 
     const [sourceMode, setSourceMode] = useState(false);
 
@@ -101,18 +104,40 @@ const MessageView = ({
         }
     }, [loading, expanded, message.initialized]);
 
-    // Manage the focus to the message
+    // Setup ref to allow opening the message from outside, typically the ConversationView
     useEffect(() => {
-        if (!hasBeenFocused && inputExpand && messageLoaded && conversationIndex !== 0) {
+        const refCallback = ref as RefCallback<MessageViewRef> | undefined;
+        refCallback?.({
+            open: (smoothScrolling = true) => {
+                setExpanded(true);
+                // Let the browser render the content before scrolling
+                setTimeout(() => {
+                    if (elementRef.current) {
+                        elementRef.current.scrollIntoView({
+                            behavior: smoothScrolling ? 'smooth' : 'auto',
+                            block: 'start',
+                        });
+                    }
+                });
+                if (!bodyLoaded) {
+                    setBeingFocused(true);
+                }
+            },
+        });
+    }, [bodyLoaded]);
+
+    // Focus the content after body is loaded
+    useEffect(() => {
+        if (beingFocused && bodyLoaded) {
             // Let the browser render the content before scrolling
             setTimeout(() => {
                 if (elementRef.current) {
-                    elementRef.current.scrollIntoView({ behavior: bodyLoaded ? 'smooth' : 'auto', block: 'start' });
+                    elementRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-            setHasBeenFocused(bodyLoaded);
+            setBeingFocused(false);
         }
-    }, [inputExpand, messageLoaded, bodyLoaded, hasBeenFocused, conversationIndex]);
+    }, [bodyLoaded, beingFocused]);
 
     // Mark as read a message already loaded (when user marked as unread)
     useEffect(() => {
@@ -124,18 +149,10 @@ const MessageView = ({
     // Re-initialize context if message is changed without disposing the component
     useEffect(() => {
         if (message.data?.ID) {
-            setExpanded(inputExpand && !draft);
-            setHasBeenFocused(false);
+            setBeingFocused(false);
             setSourceMode(false);
         }
     }, [draft, message.data?.ID]);
-
-    // Expand the message if the conversation view ask for it
-    useEffect(() => {
-        if (inputExpand) {
-            setExpanded(inputExpand && !inputMessageIsDraft);
-        }
-    }, [inputExpand]);
 
     const handleTrustSigningPublicKey = async (key: OpenPGPKey) => {
         await addAction(() => trustSigningPublicKey(key));
@@ -225,4 +242,4 @@ const MessageView = ({
     );
 };
 
-export default memo(MessageView);
+export default memo(forwardRef(MessageView));

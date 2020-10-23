@@ -8,6 +8,8 @@ import AttachmentProvider from './containers/AttachmentProvider';
 import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
 
+export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
+
 const MainContainer = () => {
     const breakpoints = useActiveBreakpoint();
     return (
@@ -17,7 +19,7 @@ const MainContainer = () => {
                     <ComposerContainer breakpoints={breakpoints}>
                         {({ onCompose }) => (
                             <Route
-                                path="/:labelID?/:elementID?/:messageID?"
+                                path={MAIN_ROUTE_PATH}
                                 render={() => <PageContainer breakpoints={breakpoints} onCompose={onCompose} />}
                             />
                         )}

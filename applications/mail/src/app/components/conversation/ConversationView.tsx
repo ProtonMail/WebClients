@@ -1,9 +1,9 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import React, { useState, useEffect, memo } from 'react';
+import React, { useEffect, memo, useRef, useState } from 'react';
 import { useLabels, useToggle, classnames } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
-import MessageView from '../message/MessageView';
+import MessageView, { MessageViewRef } from '../message/MessageView';
 import { useConversation } from '../../hooks/useConversation';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import TrashWarning from './TrashWarning';
@@ -50,6 +50,8 @@ const ConversationView = ({
     } = useConversation(inputConversationID, messageID);
     const { state: filter, toggle: toggleFilter, set: setFilter } = useToggle(DEFAULT_FILTER_VALUE);
     useShouldMoveOut(true, conversationID, pendingRequest, onBack);
+    const messageViewsRefs = useRef({} as { [messageID: string]: MessageViewRef | undefined });
+    const [firstOpening, setFirstOpening] = useState(true);
 
     const { Conversation: conversation = {}, Messages: inputMessages = [] } = conversationResult || {};
     const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
@@ -59,18 +61,23 @@ const ConversationView = ({
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
 
-    const initExpand = () => {
-        if (messageID) {
-            return messageID;
-        }
-
-        return findMessageToExpand(labelID, messagesToShow)?.ID;
+    const openMessage = (messageID: string | undefined) => {
+        messageViewsRefs.current[messageID || '']?.open(!firstOpening);
+        setFirstOpening(false);
     };
 
-    const [expand, setExpand] = useState(initExpand);
-
+    // Open the first message of a conversation if none selected in URL
     useEffect(() => {
-        setExpand(initExpand());
+        if (!loadingMessages && !messageID) {
+            openMessage(findMessageToExpand(labelID, messagesToShow)?.ID);
+        }
+    }, [conversationID, loadingMessages]);
+
+    // Open the message in URL
+    useEffect(() => {
+        if (!loadingMessages && messageID) {
+            openMessage(messageID);
+        }
     }, [conversationID, messageID, loadingMessages]);
 
     useEffect(() => {
@@ -78,7 +85,7 @@ const ConversationView = ({
     }, [inputConversationID]);
 
     const handleClickUnread = (messageID: string) => {
-        setExpand(messageID);
+        openMessage(messageID);
     };
 
     return (
@@ -94,11 +101,13 @@ const ConversationView = ({
                 {messagesToShow.map((message, index) => (
                     <MessageView
                         key={message.ID}
+                        ref={(ref) => {
+                            messageViewsRefs.current[message.ID] = ref || undefined;
+                        }}
                         labelID={labelID}
                         conversationMode
                         loading={loadingMessages}
                         message={message}
-                        expand={message.ID === expand}
                         labels={labels}
                         mailSettings={mailSettings}
                         conversationIndex={index}

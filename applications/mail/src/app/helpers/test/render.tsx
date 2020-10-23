@@ -1,5 +1,6 @@
 import React from 'react';
 import { CacheProvider, NotificationsProvider, ModalsProvider, PrivateAuthenticationStore } from 'react-components';
+import { MemoryRouter } from 'react-router';
 import { render as originalRender, RenderResult, act } from '@testing-library/react';
 import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
 import ApiContext from 'react-components/containers/api/apiContext';
@@ -31,7 +32,9 @@ const TestProvider = ({ children }: Props) => {
                         <CacheProvider cache={cache}>
                             <MessageProvider cache={messageCache}>
                                 <ConversationProvider cache={conversationCache}>
-                                    <AttachmentProvider cache={attachmentsCache}>{children}</AttachmentProvider>
+                                    <AttachmentProvider cache={attachmentsCache}>
+                                        <MemoryRouter initialEntries={['/inbox']}>{children}</MemoryRouter>
+                                    </AttachmentProvider>
                                 </ConversationProvider>
                             </MessageProvider>
                         </CacheProvider>

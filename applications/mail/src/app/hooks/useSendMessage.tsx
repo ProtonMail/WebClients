@@ -3,6 +3,7 @@ import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { getRecipientsAddresses, isAttachPublicKey } from 'proton-shared/lib/mail/messages';
 import React, { useCallback } from 'react';
+import { useHistory, match, matchPath } from 'react-router';
 import { c, msgid } from 'ttag';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { sendMessage } from 'proton-shared/lib/api/messages';
@@ -16,6 +17,7 @@ import {
     ConfirmModal,
     Alert,
     useNotifications,
+    useGetMailSettings,
 } from 'react-components';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
@@ -32,6 +34,8 @@ import { attachPublicKey } from '../helpers/message/messageAttachPublicKey';
 import SendWithWarningsModal from '../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
 import { useSaveDraft } from './message/useSaveDraft';
+import { isConversationMode } from '../helpers/mailSettings';
+import { MAIN_ROUTE_PATH } from '../MainContainer';
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();
@@ -168,6 +172,8 @@ export const useSendMessage = () => {
     const messageCache = useMessageCache();
     const auth = useAuthentication();
     const saveDraft = useSaveDraft();
+    const history = useHistory();
+    const getMailSettings = useGetMailSettings();
 
     return useCallback(
         async (
@@ -225,6 +231,18 @@ export const useSendMessage = () => {
             updateMessageCache(messageCache, localID, { data: Sent, initialized: undefined });
 
             call();
+
+            // Navigation to the sent message
+            const {
+                params: { labelID },
+            } = matchPath(history.location.pathname, { path: MAIN_ROUTE_PATH }) as match<{ labelID: string }>;
+            const mailSettings = await getMailSettings();
+            const conversationMode = isConversationMode(labelID, mailSettings, history.location);
+            if (conversationMode) {
+                history.push(`/${labelID}/${Sent.ConversationID}/${Sent.ID}`);
+            } else {
+                history.push(`/${labelID}/${Sent.ID}`);
+            }
 
             // } catch (e) {
             //     if (retry && e.data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED) {
