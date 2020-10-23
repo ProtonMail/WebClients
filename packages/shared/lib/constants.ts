@@ -154,7 +154,8 @@ export enum INVOICE_OWNER {
     USER = 0,
     ORGANIZATION = 1,
 }
-export const PM_SIGNATURE = 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.';
+export const PM_SIGNATURE =
+    'Sent with <a href="https://protonmail.com/?utm_campaign=ww-all-2a-mail-pmm_mail-protonmail_signature&utm_source=proton_users&utm_medium=cta&utm_content=sent_with_protonmail_secure_email" target="_blank">ProtonMail</a> Secure Email.';
 export const PGP_SIGN = 1;
 export const DEFAULT_CURRENCY = 'EUR';
 export const CURRENCIES = ['EUR', 'USD', 'CHF'];
