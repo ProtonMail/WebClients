@@ -24,7 +24,7 @@ describe('toText', () => {
         <div>A table<br></div>
     </div>
     <div><br></div>
-    <div class="protonmail_signature_block-proton">Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.<br></div>
+    <div class="protonmail_signature_block-proton">Sent with <a href="https://protonmail.com/?utm_campaign=ww-all-2a-mail-pmm_mail-protonmail_signature&utm_source=proton_users&utm_medium=cta&utm_content=sent_with_protonmail_secure_email" target="_blank">ProtonMail</a> Secure Email.<br></div>
 </div>`;
         const result = `jeanne mange\xa0une boule de glace\xa0à la vanille.
 
@@ -50,7 +50,7 @@ Sent with ProtonMail Secure Email.`;
         <div>: Registered in England and Wales number 05992203<br></div>
     </div>
     <div><br></div>
-    <div class="protonmail_signature_block-proton">Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.<br></div>
+    <div class="protonmail_signature_block-proton">Sent with <a href="https://protonmail.com/?utm_campaign=ww-all-2a-mail-pmm_mail-protonmail_signature&utm_source=proton_users&utm_medium=cta&utm_content=sent_with_protonmail_secure_email" target="_blank">ProtonMail</a> Secure Email.<br></div>
 </div>`;
 
         const result = `: http://anothercoffee.net
