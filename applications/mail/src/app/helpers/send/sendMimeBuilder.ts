@@ -3,7 +3,7 @@ import { arrayToBinaryString, DecryptResultPmcrypto } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { Api } from 'proton-shared/lib/interfaces';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-import { getAttachments } from 'proton-shared/lib/mail/messages';
+import { getAttachments, isPlainText as testIsPlainText } from 'proton-shared/lib/mail/messages';
 
 import { MessageExtended, EmbeddedMap } from '../../models/message';
 import { get } from '../attachment/attachmentLoader';
@@ -169,6 +169,16 @@ export const constructMime = async (
     const plaintext = getPlainText(message, downconvert);
     const html =
         message.data?.MIMEType !== MIME_TYPES.PLAINTEXT ? getDocumentContent(prepareExport(message)) : undefined;
+    const attachments = await fetchMimeDependencies(message, cache, api);
+    const embeddeds = message.embeddeds || new Map();
+
+    return build(plaintext, html, attachments, embeddeds);
+};
+
+export const constructMimeFromSource = async (message: MessageExtended, cache: AttachmentsCache, api: Api) => {
+    const isPlainText = testIsPlainText(message.data);
+    const plaintext = isPlainText ? message.decryptedBody : undefined;
+    const html = isPlainText ? undefined : message.decryptedBody;
     const attachments = await fetchMimeDependencies(message, cache, api);
     const embeddeds = message.embeddeds || new Map();
 

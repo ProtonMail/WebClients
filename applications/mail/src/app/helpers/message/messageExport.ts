@@ -11,10 +11,9 @@ import { MessageExtended } from '../../models/message';
 import { mutateHTMLCid } from '../embedded/embeddedParser';
 import { find } from '../embedded/embeddedFinder';
 import { getDocumentContent, getPlainTextContent } from './messageContent';
-import { constructMime } from '../send/sendMimeBuilder';
+import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { splitMail, combineHeaders } from '../mail';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { parseInDiv } from '../dom';
 
 export const prepareExport = (message: MessageExtended) => {
     if (!message.document) {
@@ -125,8 +124,7 @@ export const updateMessage = async (
  * Use mime format, don't encrypt,
  */
 export const exportBlob = async (message: MessageExtended, attachmentsCache: AttachmentsCache, api: Api) => {
-    const document = parseInDiv(message.decryptedBody || '');
-    const mimeMessage = await constructMime({ ...message, document }, attachmentsCache, api, false);
+    const mimeMessage = await constructMimeFromSource(message, attachmentsCache, api);
     const { body, headers: mimeHeaders } = splitMail(mimeMessage);
     const headers = await combineHeaders(message.data?.Header || '', mimeHeaders);
 
