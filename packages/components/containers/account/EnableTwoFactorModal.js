@@ -250,6 +250,8 @@ const EnableTwoFactorModal = (props) => {
                     props.onClose();
                 },
                 submit: c('Action').t`Ok`,
+                onClose: null,
+                close: null,
             };
         }
     })();
