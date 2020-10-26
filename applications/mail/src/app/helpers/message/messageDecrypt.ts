@@ -80,7 +80,7 @@ const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[])
         return {
             decryptedBody: '',
             errors: {
-                decryption: error,
+                decryption: [error],
             },
         };
     }
