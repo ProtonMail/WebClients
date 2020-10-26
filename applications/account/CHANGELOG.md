@@ -1,3 +1,12 @@
+# [4.0.0-beta.3] - 2020-10-27
+
+## Fixes
+
+- Users with overdue invoices being asked to sign in again
+- Wording when deleting messages in some non-English languages
+
+---
+
 # [4.0.0-beta.2] - 2020-09-30
 
 ## Fixes
