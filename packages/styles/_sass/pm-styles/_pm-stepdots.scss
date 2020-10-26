@@ -12,6 +12,7 @@
 		width: .8rem;
 		height: .8rem;
 		background-color: var(--bordercolor-input, $pm-global-border);
+		transition: background-color .25s easing(ease);
 
 		&:focus,
 		&:hover,
