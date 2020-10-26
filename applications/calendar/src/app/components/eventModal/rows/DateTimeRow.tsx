@@ -34,7 +34,8 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
         minEndTime,
         isDuration,
     } = useDateTimeFormHandlers({ model, setModel });
-    const [showTzSelector, setShowTzSelector] = useState(false);
+    const canToggleTzSelector = start.tzid === end.tzid && start.tzid === tzid;
+    const [showTzSelector, setShowTzSelector] = useState<boolean>(!canToggleTzSelector);
     const handleChangeStart = (tzid: string) => {
         const startUtcDate = getTimeInUtc(start, false);
         const newStartUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startUtcDate), tzid));
@@ -59,7 +60,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
     const startDateTime = useMemo(() => getDateTime(start), [start]);
     const endDateTime = useMemo(() => getDateTime(end), [end]);
-    const isCalendarTzSelected = model.start.tzid !== tzid || model.end.tzid !== tzid;
+
     return (
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Time of the event`}>
             <div className={classnames([isAllDay && 'w50 onmobile-w100'])}>
@@ -89,7 +90,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         )}
                     </div>
 
-                    {!isAllDay && (showTzSelector || isCalendarTzSelected) && (
+                    {!isAllDay && showTzSelector && (
                         <TimezoneSelector
                             className="pm-field ml0-5 onmobile-ml0 onmobile-mt0-5 onmobile-mb0-5 flex-item-fluid"
                             id="event-start-timezone-select"
@@ -132,7 +133,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         )}
                     </div>
 
-                    {!isAllDay && (showTzSelector || isCalendarTzSelected) && (
+                    {!isAllDay && showTzSelector && (
                         <TimezoneSelector
                             className="pm-field ml0-5 onmobile-ml0 onmobile-mt0-5 onmobile-mb0-5 flex-item-fluid"
                             id="event-end-timezone-select"
@@ -157,31 +158,27 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                     onChange={(isAllDay) => setModel({ ...model, ...getAllDayCheck(model, isAllDay) })}
                 />
 
-                {!isAllDay && (
-                    <>
-                        {!showTzSelector && start.tzid === tzid && (
-                            <LinkButton
-                                className="p0"
-                                data-test-id="show-tz"
-                                onClick={() => setShowTzSelector(true)}
-                                title={c('Title').t`Show time zones for event start and end times`}
-                            >
-                                {c('Action').t`Show time zones`}
-                            </LinkButton>
-                        )}
-
-                        {showTzSelector && start.tzid === tzid && end.tzid === tzid && (
-                            <LinkButton
-                                className="p0"
-                                data-test-id="hide-tz"
-                                onClick={() => setShowTzSelector(false)}
-                                title={c('Title').t`Hide time zones for event start and end times`}
-                            >
-                                {c('Action').t`Hide time zones`}
-                            </LinkButton>
-                        )}
-                    </>
-                )}
+                {!isAllDay &&
+                    canToggleTzSelector &&
+                    (showTzSelector ? (
+                        <LinkButton
+                            className="p0"
+                            data-test-id="hide-tz"
+                            onClick={() => setShowTzSelector(false)}
+                            title={c('Title').t`Hide time zones for event start and end times`}
+                        >
+                            {c('Action').t`Hide time zones`}
+                        </LinkButton>
+                    ) : (
+                        <LinkButton
+                            className="p0"
+                            data-test-id="show-tz"
+                            onClick={() => setShowTzSelector(true)}
+                            title={c('Title').t`Show time zones for event start and end times`}
+                        >
+                            {c('Action').t`Show time zones`}
+                        </LinkButton>
+                    ))}
             </div>
         </IconRow>
     );
