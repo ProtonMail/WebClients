@@ -17,7 +17,7 @@ export const mergeSavedMessage = (messageSaved: Message, messageReturned: Messag
     ...messageSaved,
     ID: messageReturned.ID,
     Time: messageReturned.Time,
-    ConversationID: messageReturned.ConversationID
+    ConversationID: messageReturned.ConversationID,
 });
 
 export const useCreateDraft = () => {
@@ -34,7 +34,7 @@ export const useCreateDraft = () => {
             ...messageKeys,
             embeddeds: createEquivalentEmbeddeds(message.embeddeds, newMessage.Attachments),
             document: message.document,
-            plainText: message.plainText
+            plainText: message.plainText,
         });
         await call();
     }, []);
@@ -55,9 +55,13 @@ const useUpdateDraft = () => {
         const newMessage = await updateMessage(messageToSave, senderHasChanged, previousMessageKeys.privateKeys, api);
         updateMessageCache(messageCache, message.localID, {
             ...newMessageKeys,
-            data: mergeSavedMessage(message.data, newMessage),
+            data: {
+                ...mergeSavedMessage(message.data, newMessage),
+                // If sender has changed, attachments are re-encrypted and then have to be updated
+                Attachments: senderHasChanged ? newMessage.Attachments : message.data?.Attachments,
+            },
             document: message.document,
-            plainText: message.plainText
+            plainText: message.plainText,
         });
         await call();
     }, []);
