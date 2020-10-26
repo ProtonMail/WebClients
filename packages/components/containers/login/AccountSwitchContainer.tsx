@@ -63,6 +63,23 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
         history.push('/login');
     };
 
+    const compareSessions = (a: LocalSessionResponse, b: LocalSessionResponse) => {
+        if (a.DisplayName && b.DisplayName) {
+            return a.DisplayName.localeCompare(b.DisplayName);
+        }
+        if (a.Username && b.Username) {
+            return a.Username.localeCompare(b.Username);
+        }
+        if (a.PrimaryEmail && b.PrimaryEmail) {
+            return a.PrimaryEmail.localeCompare(b.PrimaryEmail);
+        }
+        return 0;
+    };
+
+    const sortSessions = (sessions: LocalSessionResponse[]) => {
+        return [...sessions].sort(compareSessions);
+    };
+
     const handleClickSession = async (localID: number) => {
         try {
             setLoadingMap((old) => ({ ...old, [localID]: true }));
@@ -103,7 +120,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
         if (!localActiveSessions?.length) {
             return <div className={listItemClassName}>{c('Error').t`No active sessions`}</div>;
         }
-        return localActiveSessions.map(({ DisplayName, Username, LocalID, PrimaryEmail }) => {
+        return sortSessions(localActiveSessions).map(({ DisplayName, Username, LocalID, PrimaryEmail }) => {
             const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
             const initials = getInitial(nameToDisplay);
             return (
