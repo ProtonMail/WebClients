@@ -160,7 +160,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
     const minMaxTitle = minimized ? c('Action').t`Maximize transfers` : c('Action').t`Minimize transfers`;
     const closeTitle = c('Action').t`Close transfers`;
 
-    const includeLatestFeatures = FEATURE_FLAGS.includes('transfers-bulk-cancel');
+    const includeLatestFeatures = FEATURE_FLAGS.includes('drive-sprint-25');
     const closeDisabled = !includeLatestFeatures && !allTransfersFinished;
 
     return (

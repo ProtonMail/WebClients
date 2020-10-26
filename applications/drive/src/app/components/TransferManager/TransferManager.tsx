@@ -3,6 +3,7 @@ import { useToggle, classnames, useElementRect } from 'react-components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { buffer } from 'proton-shared/lib/helpers/function';
 import { c } from 'ttag';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import Header from './Header';
@@ -79,10 +80,12 @@ function TransferManager() {
     }, [clearDownloads, clearUploads]);
 
     useEffect(() => {
-        document.addEventListener('unload', clearAllTransfers);
-        return () => {
-            document.removeEventListener('unload', clearAllTransfers);
-        };
+        if (FEATURE_FLAGS.includes('drive-sprint-25')) {
+            document.addEventListener('unload', clearAllTransfers);
+            return () => {
+                document.removeEventListener('unload', clearAllTransfers);
+            };
+        }
     }, [clearAllTransfers]);
 
     const getTransfer = useCallback(
