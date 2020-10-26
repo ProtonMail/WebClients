@@ -63,7 +63,7 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false }: Props) 
                         {c('Action').t`Report bug`}
                     </DropdownMenuButton>
                     <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={handleTourClick}>
-                        <Icon className="mt0-25 mr0-5" name="tutorial" />
+                        <Icon className="mt0-25 mr0-5" name="tour" />
                         {c('Action').t`${BRAND_NAME} introduction`}
                     </DropdownMenuButton>
                 </DropdownMenu>
