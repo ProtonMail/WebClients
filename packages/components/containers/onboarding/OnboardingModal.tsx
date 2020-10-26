@@ -161,8 +161,10 @@ const OnboardingModal = ({ children, showGenericSteps, setWelcomeFlags = true, .
             {...childStepProps}
             footer={
                 <>
-                    {childStep.props.close && (
+                    {typeof childStep.props.close === 'string' ? (
                         <ResetButton disabled={childStep.props.loading}>{childStepProps.close}</ResetButton>
+                    ) : (
+                        childStep.props.close
                     )}
 
                     {hasDots && (
@@ -177,10 +179,12 @@ const OnboardingModal = ({ children, showGenericSteps, setWelcomeFlags = true, .
                         </StepDots>
                     )}
 
-                    {childStep.props.submit && (
+                    {typeof childStep.props.submit === 'string' ? (
                         <PrimaryButton loading={childStep.props.loading} type="submit" className="mlauto">
                             {childStepProps.submit}
                         </PrimaryButton>
+                    ) : (
+                        childStep.props.submit
                     )}
                 </>
             }
