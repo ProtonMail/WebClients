@@ -48,6 +48,9 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
     const loginType = useLoginType();
 
     const handleConfirmDelete = async () => {
+        if (member.Role === MEMBER_ROLE.ORGANIZATION_OWNER) {
+            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+        }
         await api(removeMember(member.ID));
         await call();
         createNotification({ text: c('Success message').t`User deleted` });
