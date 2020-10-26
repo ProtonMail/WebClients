@@ -1,5 +1,4 @@
 import { DEFAULT_LOCALE } from '../constants';
-import { TtagLocaleMap } from '../interfaces/Locale';
 
 /**
  * Gets the first specified locale from the browser, if any.
@@ -33,7 +32,7 @@ export const getClosestLocaleMatch = (locale = '', locales = {}) => {
     }
 };
 
-export const getClosestLocaleCode = (locale: string | undefined, locales: TtagLocaleMap) => {
+export const getClosestLocaleCode = (locale: string | undefined, locales: { [key: string]: any }) => {
     if (!locale) {
         return DEFAULT_LOCALE;
     }
