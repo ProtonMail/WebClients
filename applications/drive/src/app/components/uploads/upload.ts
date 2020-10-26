@@ -2,6 +2,7 @@ import { generateUID } from 'react-components';
 import { generateContentHash } from 'proton-shared/lib/keys/driveKeys';
 import { serializeFormData } from 'proton-shared/lib/fetch/helpers';
 import { createApiError } from 'proton-shared/lib/fetch/ApiError';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
 import { TransferCancel, UploadInfo } from '../../interfaces/transfer';
@@ -241,7 +242,7 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
                     abortController.signal
                 );
             } catch (e) {
-                if (!isTransferCancelError(e) && numRetries < 3) {
+                if (FEATURE_FLAGS.includes('drive-sprint-25') && !isTransferCancelError(e) && numRetries < 3) {
                     console.error(`Failed block #${index} upload for ${id}. Retry num: ${numRetries}`);
                     resetBlockUploadProgress(block);
                     blockUploaders.push(getBlockUploader(block, numRetries + 1));
