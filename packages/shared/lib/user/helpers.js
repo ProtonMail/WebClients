@@ -11,7 +11,7 @@ export const isAdmin = ({ Role }) => Role === ADMIN_ROLE;
 export const isMember = ({ Role }) => Role === MEMBER_ROLE;
 export const isSubUser = ({ OrganizationPrivateKey }) => typeof OrganizationPrivateKey !== 'undefined';
 export const isDelinquent = ({ Delinquent }) => Delinquent;
-export const canPay = ({ Role }) => [ADMIN_ROLE, FREE_ROLE].includes(Role);
+export const canPay = (user) => [ADMIN_ROLE, FREE_ROLE].includes(user.Role) && !isSubUser(user);
 
 export const getInfo = (User) => {
     return {
