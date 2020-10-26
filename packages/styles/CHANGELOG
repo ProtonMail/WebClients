@@ -6,7 +6,7 @@
 - added Gmail and Yahoo logos
 - added some images for Import
 - added new typographic helper `strike`
-- added new icons `shape-globe`, `caret-double-left`
+- added new icons `globe`, `caret-double-left`, `tour`
 - added `onmobile-list-1column` helpers and made `list-2columns` more flexible (accepts any child type now)
 - added `borderColor-primary` helper
 
@@ -24,6 +24,8 @@
 - added `pm-button--primaryborderEvenInDarkMode`: a `pm-button--primaryborder` that stays the same even on Dark mode
 - fixed display on Design system website
 - fixed double border for quotes
+- display of past unanswered events in month view
+- update list view and message view layouts
 
 
 # [1.8.5] - 2019-09-30
