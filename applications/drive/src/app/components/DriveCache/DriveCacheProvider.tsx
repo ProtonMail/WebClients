@@ -394,7 +394,7 @@ const useDriveCacheState = () => {
         setRerender((old) => ++old);
     };
 
-    const setEmptyShares = (shares: ({ ShareID: string; LinkType: LinkType } | ShareMetaShort)[]) => {
+    const setEmptyShares = (shares: ({ ShareID: string; LinkType: LinkType; Flags?: number } | ShareMetaShort)[]) => {
         shares.forEach((share) => {
             cacheRef.current[share.ShareID] = {
                 links: {},
@@ -404,7 +404,7 @@ const useDriveCacheState = () => {
                 cacheRef.current[share.ShareID].meta = share;
             }
 
-            if ('Flags' in share && share.Flags & ShareFlags.PrimaryShare) {
+            if (share.Flags && share.Flags & ShareFlags.PrimaryShare) {
                 cacheRef.current[share.ShareID].trash = {
                     complete: false,
                     locked: false,

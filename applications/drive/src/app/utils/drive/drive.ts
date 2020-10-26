@@ -142,7 +142,7 @@ export const createVolumeAsync = async (
     );
 
     // TODO: get share meta from events when BE implements them
-    cache.set.emptyShares([{ ShareID: Volume.Share.ID, LinkType: LinkType.FOLDER }]);
+    cache.set.emptyShares([{ ShareID: Volume.Share.ID, LinkType: LinkType.FOLDER, Flags: ShareFlags.PrimaryShare }]);
 
     return Volume;
 };
@@ -156,7 +156,7 @@ export const getUserSharesAsync = async (api: Api, cache: DriveCache): Promise<[
 
     const { Shares } = await api<UserShareResult>(queryUserShares());
     const shareIds = Shares.map(({ ShareID }) => ShareID);
-    const defaultShare = Shares.find(({ Flags }) => Flags & 1);
+    const defaultShare = Shares.find(({ Flags }) => Flags & ShareFlags.PrimaryShare);
     cache.set.emptyShares(Shares);
 
     if (defaultShare) {
