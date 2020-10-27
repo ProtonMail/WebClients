@@ -222,7 +222,7 @@ const SubscriptionCustomization = ({
                     plusDomains
                 )}
             />,
-            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All plus features`} />,
+            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All Plus features`} />,
         ],
         [PLANS.PROFESSIONAL]: [
             <SubscriptionFeatureRow
@@ -260,7 +260,7 @@ const SubscriptionCustomization = ({
                     professionalDomains
                 )}
             />,
-            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All professional features`} />,
+            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All Professional features`} />,
         ],
         [PLANS.VISIONARY]: [
             <SubscriptionFeatureRow key="user" icon="organization-users" feature={c('Feature').t`6 users`} />,
