@@ -2,6 +2,8 @@ RewriteEngine On
 
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)
 
 # Redirect nothing to app
 RewriteRule ^$ /index.html [NC,L]
