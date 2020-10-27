@@ -64,6 +64,8 @@ export async function upload(
     onProgress: (relativeIncrement: number, uploadDone: boolean) => void,
     signal?: AbortSignal
 ) {
+    let listener: () => void;
+
     return new Promise<void>((resolve, reject) => {
         if (signal?.aborted) {
             reject(new TransferCancel(id));
@@ -80,14 +82,16 @@ export async function upload(
             lastLoaded = e.loaded;
         };
 
+        listener = () => {
+            // When whole block is uploaded, we mustn't cancel even if we don't get a response
+            if (lastLoaded !== total) {
+                xhr.abort();
+                reject(new TransferCancel(id));
+            }
+        };
+
         if (signal) {
-            signal.addEventListener('abort', () => {
-                // When whole block is uploaded, we mustn't cancel even if we don't get a response
-                if (lastLoaded !== total) {
-                    xhr.abort();
-                    reject(new TransferCancel(id));
-                }
-            });
+            signal.addEventListener('abort', listener);
         }
 
         xhr.onload = async () => {
@@ -116,12 +120,15 @@ export async function upload(
                 Block: new Blob([content]),
             })
         );
+    }).finally(() => {
+        if (signal && listener) {
+            signal.removeEventListener('abort', listener);
+        }
     });
 }
 
 export function initUpload(file: File, { requestUpload, transform, onProgress, finalize, onError }: UploadCallbacks) {
     const id = generateUID('drive-transfers');
-    let abortController = new AbortController();
     let paused = false;
 
     const fillUploadQueue = async (
@@ -192,9 +199,10 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
 
     const uploadBlocks = async (
         uploadingBlocks: Map<number, EncryptedBlock>,
-        blockTokens: Map<number, BlockTokenInfo>
+        blockTokens: Map<number, BlockTokenInfo>,
+        abortSignal: AbortSignal
     ) => {
-        if (abortController.signal.aborted) {
+        if (abortSignal.aborted) {
             throw new TransferCancel(id);
         }
 
@@ -238,7 +246,7 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
                         }
                         onProgress?.(increment);
                     },
-                    abortController.signal
+                    abortSignal
                 );
             } catch (e) {
                 if (!isTransferCancelError(e) && numRetries < 3) {
@@ -271,28 +279,24 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
             blockUploaders.push(getBlockUploader(block));
         });
 
-        await runInQueue(blockUploaders, MAX_THREADS_PER_UPLOAD).catch((e) => {
-            abortController.abort();
-            throw e;
-        });
+        await runInQueue(blockUploaders, MAX_THREADS_PER_UPLOAD);
     };
 
-    const start = async () => {
-        if (abortController.signal.aborted && !paused) {
-            throw new TransferCancel(id);
-        }
+    let abortController: AbortController;
 
+    const start = async () => {
         let activeIndex = 1;
         const uploadingBlocks = new Map<number, EncryptedBlock>();
         const blockTokens = new Map<number, BlockTokenInfo>();
         const reader = new ChunkFileReader(file, FILE_CHUNK_SIZE);
+        abortController = new AbortController();
 
         const startUpload = async () => {
             try {
                 // Keep filling queue with up to 20 blocks and uploading them
                 while (!reader.isEOF() || uploadingBlocks.size) {
                     activeIndex = await fillUploadQueue(reader, uploadingBlocks, activeIndex);
-                    await uploadBlocks(uploadingBlocks, blockTokens);
+                    await uploadBlocks(uploadingBlocks, blockTokens, abortController.signal);
                 }
                 await finalize(blockTokens, { id });
             } catch (e) {

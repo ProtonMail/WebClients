@@ -53,6 +53,8 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
     const removeUpload = (id: string) => {
         uploadsRef.current = uploadsRef.current.filter((upload) => upload.id !== id);
+        delete controls.current[id];
+        delete progresses.current[id];
         setUploads(uploadsRef.current);
     };
 
@@ -82,8 +84,9 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                     controls.current[upload.id].cancel();
                 }
             });
+            uploadsRef.current = [];
+            progresses.current = {};
         }
-        uploadsRef.current = [];
         setUploads(uploadsRef.current);
     }, []);
 
