@@ -12,7 +12,7 @@ const UploadFileButton = () => {
             <ToolbarButton
                 data-testid="toolbar-upload-file"
                 icon="file-upload"
-                title={c('Action').t`Upload File`}
+                title={c('Action').t`Upload file`}
                 onClick={handleClick}
             />
         </>

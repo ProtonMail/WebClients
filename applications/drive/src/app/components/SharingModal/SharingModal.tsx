@@ -6,13 +6,14 @@ import useDrive from '../../hooks/drive/useDrive';
 import useEvents from '../../hooks/drive/useEvents';
 import useSharing from '../../hooks/drive/useSharing';
 import useConfirm from '../../hooks/util/useConfirm';
-import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL } from '../../interfaces/sharing';
+import { SharedURLSessionKeyPayload, ShareURL } from '../../interfaces/sharing';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 import EditPasswordState from './EditPasswordState';
 import ErrorState from './ErrorState';
 import GeneratedLinkState from './GeneratedLinkState';
 import LoadingState from './LoadingState';
 import { validateSharedURLPassword } from '../../utils/validation';
+import { isCustomSharedURLPassword } from '../../utils/link';
 
 interface Props {
     onClose?: () => void;
@@ -68,7 +69,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                       await events.call(shareId);
                       return result;
                   });
-            setIncludePassword(!(shareUrlInfo.ShareURL.Flags & SharedURLFlags.CustomPassword));
+            setIncludePassword(!isCustomSharedURLPassword(shareUrlInfo.ShareURL));
             setShareUrlInfo(shareUrlInfo);
         };
 
@@ -167,7 +168,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                 <GeneratedLinkState
                     modalTitleID={modalTitleID}
                     includePassword={includePassword}
-                    customPassword={!!(shareUrlInfo.ShareURL.Flags & SharedURLFlags.CustomPassword)}
+                    customPassword={isCustomSharedURLPassword(shareUrlInfo.ShareURL)}
                     itemName={item.Name}
                     onClose={onClose}
                     onEditPasswordClick={() => setModalState(SharingModalState.EditPassword)}

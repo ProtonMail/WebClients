@@ -40,13 +40,13 @@ const SortDropdown = () => {
             sortOrder: SORT_DIRECTION.DESC,
         },
         {
-            name: c('Action').t`Modified Date: New to Old`,
+            name: c('Action').t`Modified date: new to old`,
             icon: 'sort-new-old',
             sortField: 'ModifyTime',
             sortOrder: SORT_DIRECTION.DESC,
         },
         {
-            name: c('Action').t`Modified Date: Old to New`,
+            name: c('Action').t`Modified date: old to new`,
             icon: 'sort-old-new',
             sortField: 'ModifyTime',
             sortOrder: SORT_DIRECTION.ASC,
@@ -64,13 +64,13 @@ const SortDropdown = () => {
             sortOrder: SORT_DIRECTION.DESC,
         },
         {
-            name: c('Action').t`Size: Small to Large`,
+            name: c('Action').t`Size: small to large`,
             icon: 'sort-small-large',
             sortField: 'Size',
             sortOrder: SORT_DIRECTION.ASC,
         },
         {
-            name: c('Action').t`Size: Large to Small`,
+            name: c('Action').t`Size: large to small`,
             icon: 'sort-large-small',
             sortField: 'Size',
             sortOrder: SORT_DIRECTION.DESC,
@@ -100,7 +100,7 @@ const SortDropdown = () => {
                 onClick={toggle}
                 icon={toolbarButtonIcon}
                 data-testid="toolbar-sort"
-                title={c('Title').t`Sort Files/Folders`}
+                title={c('Title').t`Sort files/folders`}
             >
                 <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" />
             </ToolbarButton>

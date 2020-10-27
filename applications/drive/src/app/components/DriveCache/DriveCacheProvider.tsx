@@ -3,8 +3,9 @@ import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta, SortKeys, LinkType } from '../../interfaces/link';
-import { ShareFlags, ShareMeta, ShareMetaShort } from '../../interfaces/share';
+import { ShareMeta, ShareMetaShort } from '../../interfaces/share';
 import { DEFAULT_SORT_PARAMS } from '../../constants';
+import { isPrimaryShare } from '../../utils/share';
 
 interface FileLinkKeys {
     privateKey: OpenPGPKey;
@@ -404,7 +405,7 @@ const useDriveCacheState = () => {
                 cacheRef.current[share.ShareID].meta = share;
             }
 
-            if (share.Flags && share.Flags & ShareFlags.PrimaryShare) {
+            if (isPrimaryShare(share)) {
                 cacheRef.current[share.ShareID].trash = {
                     complete: false,
                     locked: false,
