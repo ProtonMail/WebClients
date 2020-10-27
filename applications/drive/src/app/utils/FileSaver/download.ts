@@ -80,7 +80,7 @@ export async function openDownloadStream(
             channel.port1.postMessage({ action: 'end' });
         },
         abort(reason) {
-            channel.port1.postMessage({ action: 'abort', reason });
+            channel.port1.postMessage({ action: 'abort', reason: String(reason) });
         },
     });
 

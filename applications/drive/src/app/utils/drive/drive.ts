@@ -43,6 +43,7 @@ import { validateLinkName, ValidationError } from '../validation';
 import { FOLDER_PAGE_SIZE, DEFAULT_SORT_PARAMS, MAX_THREADS_PER_REQUEST, BATCH_REQUEST_SIZE } from '../../constants';
 import { decryptPassphrase, getDecryptedSessionKey, PrimaryAddressKey, VerificationKeys } from './driveCrypto';
 import runInQueue from '../runInQueue';
+import { isPrimaryShare } from '../share';
 
 export interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -156,7 +157,7 @@ export const getUserSharesAsync = async (api: Api, cache: DriveCache): Promise<[
 
     const { Shares } = await api<UserShareResult>(queryUserShares());
     const shareIds = Shares.map(({ ShareID }) => ShareID);
-    const defaultShare = Shares.find(({ Flags }) => Flags & ShareFlags.PrimaryShare);
+    const defaultShare = Shares.find(isPrimaryShare);
     cache.set.emptyShares(Shares);
 
     if (defaultShare) {
@@ -182,7 +183,7 @@ export const getShareMetaAsync = async (
     cache.set.shareMeta(Share);
     await subscribeToEvents(shareId);
 
-    if (Share.Flags & ShareFlags.PrimaryShare) {
+    if (isPrimaryShare(Share)) {
         cache.setDefaultShare(Share.ShareID);
     }
 
