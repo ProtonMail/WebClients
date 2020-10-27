@@ -113,6 +113,9 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         downloads.forEach(({ id }) => {
             controls.current[id].cancel();
         });
+        progresses.current = {};
+        callbacks.current = {};
+        controls.current = {};
         setDownloads([]);
     }, [downloads]);
 
