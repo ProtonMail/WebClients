@@ -21,7 +21,8 @@ import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import {
     getHasModifiedAttendees,
     getHasModifiedDateTimes,
-    propertyToUTCDate
+    getHasModifiedDtstamp,
+    propertyToUTCDate,
 } from 'proton-shared/lib/calendar/vcalConverter';
 import {
     getAttendeeHasPartStat,
@@ -281,12 +282,9 @@ export const updateEventInvitation = async ({
     invitation?: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
 }> => {
     const { method, vevent: veventIcs, attendee: attendeeIcs } = invitationIcs;
-    const {
-        calendarEvent,
-        vevent: veventApi,
-        attendee: { vcalComponent: vcalAttendeeApi },
-    } = invitationApi;
+    const { calendarEvent, vevent: veventApi, attendee: attendeeApi } = invitationApi;
     const vcalAttendeeIcs = attendeeIcs?.vcalComponent;
+    const vcalAttendeeApi = attendeeApi?.vcalComponent;
     const recurrenceIdIcs = veventIcs['recurrence-id'];
 
     if (isOrganizerMode) {
@@ -312,7 +310,13 @@ export const updateEventInvitation = async ({
         }
     }
     // attendee mode
-    if (isAddressDisabled || calendarData.isCalendarDisabled || getIsInvitationOutdated(veventIcs, veventApi)) {
+    if (
+        isAddressDisabled ||
+        calendarData.isCalendarDisabled ||
+        getIsInvitationOutdated(veventIcs, veventApi) ||
+        !attendeeIcs ||
+        !attendeeApi
+    ) {
         // do not update
         return { action: NONE };
     }
@@ -322,22 +326,24 @@ export const updateEventInvitation = async ({
             // TODO: check for SharedEventID and create new event accordingly
             return { action: NONE };
         }
+        const hasUpdatedDtstamp = getHasModifiedDtstamp(veventIcs, veventApi);
         const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
         const hasUpdatedDateTimes = getHasModifiedDateTimes(veventIcs, veventApi);
         const hasUpdatedTitle = veventIcs.summary?.value !== veventApi.summary?.value;
         const hasUpdatedDescription = veventIcs.description?.value !== veventApi.description?.value;
         const hasUpdatedLocation = veventIcs.location?.value !== veventApi.location?.value;
         const hasUpdatedRrule = !getIsRruleEqual(veventIcs.rrule, veventApi.rrule);
-        const hasUpdatedAttendees = getHasModifiedAttendees(veventIcs, veventApi);
+        const hasUpdatedAttendees = getHasModifiedAttendees({ veventIcs, veventApi, attendeeIcs, attendeeApi });
         const isReinvited = getEventStatus(veventApi) === CANCELLED;
-        const hasBreakingChange = sequenceDiff > 0;
-        const hasNonBreakingChange =
-            hasUpdatedDateTimes ||
-            hasUpdatedTitle ||
-            hasUpdatedDescription ||
-            hasUpdatedLocation ||
-            hasUpdatedRrule ||
-            hasUpdatedAttendees;
+        const hasBreakingChange = hasUpdatedDtstamp ? sequenceDiff > 0 : false;
+        const hasNonBreakingChange = hasUpdatedDtstamp
+            ? hasUpdatedDateTimes ||
+              hasUpdatedTitle ||
+              hasUpdatedDescription ||
+              hasUpdatedLocation ||
+              hasUpdatedRrule ||
+              hasUpdatedAttendees
+            : false;
         const action = hasBreakingChange || isReinvited ? RESET_PARTSTAT : hasNonBreakingChange ? KEEP_PARTSTAT : NONE;
         if ([KEEP_PARTSTAT, RESET_PARTSTAT].includes(action)) {
             // update the api event by the ics one with the appropriate answer
