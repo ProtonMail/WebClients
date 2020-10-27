@@ -135,12 +135,6 @@ const PopoverEventContent = ({
                     {calendarString}
                 </div>
             ) : null}
-            {htmlString ? (
-                <div className={wrapClassName}>
-                    <Icon name="text-align-left" className={iconClassName} />
-                    <div className="break mt0 mb0 pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
-                </div>
-            ) : null}
             {Array.isArray(model.notifications) && model.notifications.length ? (
                 <div className={wrapClassName}>
                     <Icon name="notifications-enabled" className={iconClassName} />
@@ -152,6 +146,12 @@ const PopoverEventContent = ({
                             );
                         })}
                     </div>
+                </div>
+            ) : null}
+            {htmlString ? (
+                <div className={wrapClassName}>
+                    <Icon name="text-align-left" className={iconClassName} />
+                    <div className="break mt0 mb0 pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
                 </div>
             ) : null}
         </>
@@ -217,7 +217,7 @@ const PopoverEventContent = ({
         });
     }
 
-    return <Tabs value={tab} onChange={setTab} tabs={tabs} />;
+    return <Tabs value={tab} onChange={setTab} tabs={tabs} stickyTabs />;
 };
 
 export default PopoverEventContent;

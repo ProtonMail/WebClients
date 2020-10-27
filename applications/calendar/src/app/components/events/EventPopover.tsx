@@ -18,6 +18,8 @@ import {
     classnames,
     Dropdown,
     DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
     Icon,
     Loader,
     Tooltip,
@@ -53,7 +55,7 @@ const MoreButtons = ({
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const emptyContent = '';
     return (
-        <div>
+        <>
             <Tooltip title={c('Title').t`More options`} className="flex flex-item-noshrink">
                 <DropdownButton
                     title={c('Title').t`More options`}
@@ -62,7 +64,7 @@ const MoreButtons = ({
                     onClick={toggle}
                     hasCaret
                     caretClassName=""
-                    className="flex-item-noshrink toolbar-button toolbar-button--dropdown"
+                    className="flex-item-noshrink pm-button pm-button--small"
                 >
                     {emptyContent}
                 </DropdownButton>
@@ -74,26 +76,27 @@ const MoreButtons = ({
                 anchorRef={anchorRef}
                 onClose={close}
                 autoClose={false}
-                className="toolbar-dropdown"
             >
-                <Button
-                    data-test-id="event-popover:edit"
-                    disabled={loadingAction || isCalendarDisabled}
-                    className="dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5 alignleft"
-                    onClick={onEdit}
-                >
-                    {c('Action').t`Edit`}
-                </Button>
-                <Button
-                    data-test-id="event-popover:delete"
-                    className="dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5 alignleft"
-                    onClick={loadingAction ? noop : onDelete}
-                    loading={loadingAction}
-                >
-                    {c('Action').t`Delete`}
-                </Button>
+                <DropdownMenu>
+                    <DropdownMenuButton
+                        data-test-id="event-popover:edit"
+                        disabled={loadingAction || isCalendarDisabled}
+                        className="alignleft"
+                        onClick={onEdit}
+                    >
+                        {c('Action').t`Edit`}
+                    </DropdownMenuButton>
+                    <DropdownMenuButton
+                        data-test-id="event-popover:delete"
+                        className="alignleft"
+                        onClick={loadingAction ? noop : onDelete}
+                        loading={loadingAction}
+                    >
+                        {c('Action').t`Delete`}
+                    </DropdownMenuButton>
+                </DropdownMenu>
             </Dropdown>
-        </div>
+        </>
     );
 };
 
