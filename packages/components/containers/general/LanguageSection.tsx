@@ -46,13 +46,15 @@ const LanguageSection = ({ locales = {} }: Props) => {
         forceRefresh();
     };
 
+    const displayedValue = getClosestLocaleCode(userSettings?.Locale, locales);
+
     return (
         <Row>
             <Label htmlFor="languageSelect">{c('Label').t`Default language`}</Label>
             <Field>
                 <Select
                     disabled={loading}
-                    value={userSettings?.Locale}
+                    value={displayedValue}
                     id="languageSelect"
                     options={options}
                     onChange={(e) => {

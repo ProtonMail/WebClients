@@ -5,6 +5,7 @@ import { getInitial } from 'proton-shared/lib/helpers/string';
 import { getPlan } from 'proton-shared/lib/helpers/subscription';
 import { PLAN_SERVICES, APPS, PLANS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
+import { getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
 
 import { AppLink, Icon, Loader } from '../../components';
 import { useConfig } from '../../hooks';
@@ -18,7 +19,6 @@ interface Props {
 
 const SummarySection = ({ user, userSettings, organization, subscription }: Props) => {
     const { APP_NAME, LOCALES = {} } = useConfig();
-    const { Locale } = userSettings;
     const { Email, DisplayName, Name, canPay, isAdmin } = user;
     const { UsedMembers = 0, UsedDomains = 0, MaxMembers = 0, MaxDomains = 0 } = organization || {};
     const initials = getInitial(DisplayName || Name || Email || '');
@@ -38,7 +38,8 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
         }
     };
 
-    const languageText = LOCALES[Locale];
+    const closestLocale = getClosestLocaleCode(userSettings?.Locale, LOCALES);
+    const languageText = LOCALES[closestLocale];
 
     return (
         <div className="bordered-container bg-white-dm tiny-shadow-container p2">
