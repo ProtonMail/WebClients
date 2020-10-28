@@ -32,7 +32,7 @@ sentry(enhancedConfig);
 const App = () => {
     const includeDriveSharing = FEATURE_FLAGS.includes('drive-sharing');
     const [hasInitialAuth] = useState(() => {
-        return window.location.pathname.startsWith('/urls');
+        return !window.location.pathname.startsWith('/urls');
     });
 
     return (
