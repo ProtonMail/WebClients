@@ -16,12 +16,13 @@ import { deleteConversations } from 'proton-shared/lib/api/conversations';
 import { c, msgid } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
+import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
+import { isConversation } from '../../helpers/elements';
 
 const { DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
-    conversationMode: boolean;
     selectedIDs: string[];
 }
 
@@ -100,16 +101,20 @@ const getNotificationText = (isDraft: boolean, isConversationMode: boolean, coun
     return c('Success').ngettext(msgid`${count} message deleted`, `${count} messages deleted`, count);
 };
 
-const DeleteButton = ({ labelID = '', conversationMode, selectedIDs = [] }: Props) => {
+const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
     const api = useApi();
     const [loading, withLoading] = useLoading();
+    const getElementsFromIDs = useGetElementsFromIDs();
     const count = selectedIDs.length;
     const draft = labelID === DRAFTS || labelID === ALL_DRAFTS;
 
     const handleDelete = async () => {
+        const elements = getElementsFromIDs(selectedIDs);
+        const conversationMode = isConversation(elements[0]);
+
         const modalTitle = getDeleteTitle(draft, conversationMode, count);
         const modalText = getModalText(draft, conversationMode, count);
 

@@ -98,7 +98,6 @@ const Toolbar = ({
                     breakpoints={breakpoints}
                     selectedIDs={selectedIDs}
                     onBack={onBack}
-                    conversationMode={conversationMode}
                 />
                 <ToolbarSeparator />
                 <ToolbarDropdown

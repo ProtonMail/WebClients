@@ -21,18 +21,9 @@ interface Props {
     breakpoints: Breakpoints;
     selectedIDs: string[];
     onBack: () => void;
-    conversationMode: boolean;
 }
 
-const MoveButtons = ({
-    labelID = '',
-    labels = [],
-    folders = [],
-    breakpoints,
-    selectedIDs = [],
-    onBack,
-    conversationMode,
-}: Props) => {
+const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, selectedIDs = [], onBack }: Props) => {
     const [loading, withLoading] = useLoading();
     const moveToFolder = useMoveToFolder();
     const labelIDs = labels.map(({ ID }) => ID);
@@ -102,9 +93,7 @@ const MoveButtons = ({
         </ToolbarButton>
     );
 
-    const deleteButton = (
-        <DeleteButton key="delete" labelID={labelID} conversationMode={conversationMode} selectedIDs={selectedIDs} />
-    );
+    const deleteButton = <DeleteButton key="delete" labelID={labelID} selectedIDs={selectedIDs} />;
 
     let buttons: ReactNode[] = [];
 
