@@ -55,7 +55,13 @@ const MainContainer = () => {
     );
 
     const sidebar = (
-        <Sidebar logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} version={<VpnSidebarVersion />}>
+        <Sidebar
+            logo={logo}
+            expanded={expanded}
+            onToggleExpand={onToggleExpand}
+            version={<VpnSidebarVersion />}
+            hasAppLinks={false}
+        >
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
