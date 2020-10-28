@@ -127,21 +127,20 @@ function subscriptionModel(dispatchers, Payment) {
         return CouponCode === coupon;
     };
 
-    const getAddons = () => {
-        const { Plans = [] } = CACHE.subscription || {};
-        return Plans.filter(({ Type }) => Type === PLANS_TYPE.ADDON);
-    };
-
     const isProductPayer = () => {
-        const addons = getAddons();
-        const { CouponCode = '' } = CACHE.subscription || {};
+        const { CouponCode = '', Plans = [] } = CACHE.subscription || {};
         const noPro = !hasPaid('professional');
         const isPaying = hasPaid('plus') || hasPaid('vpnplus') || hasPaid('vpnbasic');
         const noBundle = !(hasPaid('plus') && hasPaid('vpnplus'));
         const noBFCoupon = ![BLACK_FRIDAY.COUPON_CODE].includes(CouponCode);
-        const noAddons = !addons.length;
+        const noAddons = !Plans.some(({ Type }) => Type === PLANS_TYPE.ADDON);
 
         return isPaying && noPro && noBundle && noBFCoupon && noAddons;
+    };
+
+    const getAddons = () => {
+        const { Plans = [] } = CACHE.subscription || {};
+        return Plans.filter(({ Type }) => Type === PLANS_TYPE.ADDON);
     };
 
     on('app.event', (event, { type, data }) => {
