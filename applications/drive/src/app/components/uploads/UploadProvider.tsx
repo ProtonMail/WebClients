@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useRef, useEffect, useCallback } from 'react';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { initUpload, UploadCallbacks, UploadControls } from './upload';
 import {
     TransferState,
@@ -78,15 +77,13 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     };
 
     const clearUploads = useCallback(() => {
-        if (FEATURE_FLAGS.includes('drive-sprint-25')) {
-            uploadsRef.current.forEach((upload) => {
-                if (!isTransferFinished(upload)) {
-                    controls.current[upload.id].cancel();
-                }
-            });
-            uploadsRef.current = [];
-            progresses.current = {};
-        }
+        uploadsRef.current.forEach((upload) => {
+            if (!isTransferFinished(upload)) {
+                controls.current[upload.id].cancel();
+            }
+        });
+        uploadsRef.current = [];
+        progresses.current = {};
         setUploads(uploadsRef.current);
     }, []);
 
