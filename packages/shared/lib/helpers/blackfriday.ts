@@ -22,7 +22,12 @@ export const isProductPayer = (subscription: Subscription) => {
     }
 
     const couponCode = subscription?.CouponCode || '';
-    const noBundle = ![COUPON_CODES.BUNDLE, BLACK_FRIDAY.COUPON_CODE].includes(couponCode);
+    const noBundle = ![
+        COUPON_CODES.BUNDLE,
+        BLACK_FRIDAY.COUPON_CODE,
+        COUPON_CODES.BLACK_FRIDAY_2018,
+        COUPON_CODES.BLACK_FRIDAY_2019,
+    ].includes(couponCode);
 
     return (
         (hasMailPlus(subscription) || hasVpnBasic(subscription) || hasVpnPlus(subscription)) &&
