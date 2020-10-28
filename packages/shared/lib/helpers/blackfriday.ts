@@ -2,7 +2,7 @@ import { isWithinInterval } from 'date-fns';
 
 import { BLACK_FRIDAY, PRODUCT_PAYER } from '../constants';
 import { Subscription } from '../interfaces';
-import { hasMailPlus, hasMailProfessional, hasVpnBasic, hasVpnPlus } from './subscription';
+import { hasMailPlus, hasMailProfessional, hasVpnBasic, hasVpnPlus, hasAddons } from './subscription';
 
 export const isBlackFridayPeriod = () => {
     return isWithinInterval(new Date(), { start: BLACK_FRIDAY.START, end: BLACK_FRIDAY.END });
@@ -26,6 +26,7 @@ export const isProductPayer = (subscription: Subscription) => {
     const noPro = !hasMailProfessional(subscription);
     const noBundle = !(hasMailPlus(subscription) && hasVpnPlus(subscription));
     const noBFCoupon = ![BLACK_FRIDAY.COUPON_CODE].includes(couponCode);
+    const noAddons = !hasAddons(subscription);
 
-    return isPaying && noPro && noBundle && noBFCoupon;
+    return isPaying && noPro && noBundle && noBFCoupon && noAddons;
 };

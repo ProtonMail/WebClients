@@ -14,6 +14,7 @@ export const getPlan = ({ Plans = [] }: Subscription, service: PLAN_SERVICES = M
 
 export const getPlans = ({ Plans = [] }: Subscription) => Plans.filter(({ Type }) => Type === PLAN);
 export const getAddons = ({ Plans = [] }: Subscription) => Plans.filter(({ Type }) => Type === ADDON);
+export const hasAddons = ({ Plans = [] }: Subscription) => Plans.some(({ Type }) => Type === ADDON);
 
 export const getPlanName = (subscription: Subscription, service: PLAN_SERVICES = MAIL) => {
     const plan = getPlan(subscription, service);
