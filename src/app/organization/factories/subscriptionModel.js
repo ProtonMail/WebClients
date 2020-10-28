@@ -1,6 +1,14 @@
 import _ from 'lodash';
 
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS_TYPE, BUNDLE_COUPON_CODE, BLACK_FRIDAY } from '../../constants';
+import {
+    DEFAULT_CURRENCY,
+    DEFAULT_CYCLE,
+    PLANS_TYPE,
+    BUNDLE_COUPON_CODE,
+    BLACK_FRIDAY,
+    BLACK_FRIDAY_2018,
+    BLACK_FRIDAY_2019
+} from '../../constants';
 
 const PAID_TYPES = {
     plus: ['plus'],
@@ -131,7 +139,9 @@ function subscriptionModel(dispatchers, Payment) {
         const { CouponCode = '' } = CACHE.subscription || {};
         const noPro = !hasPaid('professional');
         const isPaying = hasPaid('plus') || hasPaid('vpnplus') || hasPaid('vpnbasic');
-        const noBundle = ![BUNDLE_COUPON_CODE, BLACK_FRIDAY.COUPON_CODE].includes(CouponCode);
+        const noBundle = ![BUNDLE_COUPON_CODE, BLACK_FRIDAY.COUPON_CODE, BLACK_FRIDAY_2018, BLACK_FRIDAY_2019].includes(
+            CouponCode
+        );
 
         return isPaying && noPro && noBundle;
     };

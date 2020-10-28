@@ -466,6 +466,8 @@ export const SIGNUP_PLANS = ['plus', 'visionary', 'plus_vpnplus'];
 export const BLACK_FRIDAY_YEAR = 2020;
 
 export const BUNDLE_COUPON_CODE = 'BUNDLE';
+export const BLACK_FRIDAY_2018 = 'TWO4ONE2018';
+export const BLACK_FRIDAY_2019 = 'BF2019';
 
 export const BLACK_FRIDAY = {
     PLANS: ['plus', 'plus_vpnplus'],
