@@ -7,7 +7,7 @@ import PopoverFooter from '../events/PopoverFooter';
 import PopoverHeader from '../events/PopoverHeader';
 import EventForm from './EventForm';
 import validateEventModel from './eventForm/validateEventModel';
-import { useForm } from './hooks/useForm';
+import { ACTION, useForm } from './hooks/useForm';
 
 interface Props {
     isNarrow: boolean;
@@ -36,7 +36,7 @@ const CreateEventPopover = ({
 }: Props) => {
     const errors = validateEventModel(model);
     const formRef = useRef<HTMLFormElement>(null);
-    const { isSubmitted, loadingAction, handleSubmit } = useForm({
+    const { isSubmitted, loadingAction, lastAction, handleSubmit } = useForm({
         containerEl: formRef.current,
         model,
         errors,
@@ -71,10 +71,18 @@ const CreateEventPopover = ({
                 isMinimal
             />
             <PopoverFooter>
-                <Button data-test-id="create-event-popover:more-event-options" className="mr1" onClick={handleMore}>{c(
-                    'Action'
-                ).t`More options`}</Button>
-                <PrimaryButton data-test-id="create-event-popover:save" type="submit" loading={loadingAction}>
+                <Button
+                    disabled={loadingAction}
+                    data-test-id="create-event-popover:more-event-options"
+                    className="mr1"
+                    onClick={handleMore}
+                >{c('Action').t`More options`}</Button>
+                <PrimaryButton
+                    data-test-id="create-event-popover:save"
+                    type="submit"
+                    loading={loadingAction && lastAction === ACTION.SUBMIT}
+                    disabled={loadingAction}
+                >
                     {c('Action').t`Save`}
                 </PrimaryButton>
             </PopoverFooter>

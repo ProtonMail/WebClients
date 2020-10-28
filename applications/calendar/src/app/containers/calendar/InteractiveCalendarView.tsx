@@ -175,6 +175,7 @@ const InteractiveCalendarView = ({
     const sendIcs = useSendIcs();
     const config = useConfig();
     const prodId = useMemo(() => getProdId(config), [config]);
+    const isSavingEvent = useRef(false);
 
     const [eventModalID, setEventModalID] = useState();
 
@@ -243,7 +244,7 @@ const InteractiveCalendarView = ({
     }, [temporaryEvent, sortedEvents]);
 
     const handleSetTemporaryEventModel = (model: EventModel) => {
-        if (!temporaryEvent) {
+        if (!temporaryEvent || isSavingEvent.current) {
             return;
         }
         const newTemporaryEvent = getTemporaryEvent(temporaryEvent, model, tzid);
@@ -373,6 +374,9 @@ const InteractiveCalendarView = ({
     };
 
     const handleMouseDown = (mouseDownAction: MouseDownAction) => {
+        if (isSavingEvent.current) {
+            return;
+        }
         if (isEventDownAction(mouseDownAction)) {
             const { event, type } = mouseDownAction.payload;
 
@@ -716,6 +720,9 @@ const InteractiveCalendarView = ({
     };
 
     const handleConfirmDeleteTemporary = ({ ask = false } = {}) => {
+        if (isSavingEvent.current) {
+            return Promise.reject(new Error('Keep event'));
+        }
         if (isInTemporaryBlocking) {
             if (!ask) {
                 return Promise.reject(new Error('Keep event'));
@@ -726,6 +733,9 @@ const InteractiveCalendarView = ({
     };
 
     const handleEditEvent = (temporaryEvent: CalendarViewEventTemporaryEvent) => {
+        if (isSavingEvent.current) {
+            return;
+        }
         // Close the popover only
         setInteractiveData({ temporaryEvent });
         setEventModalID(createModal());
@@ -806,6 +816,7 @@ const InteractiveCalendarView = ({
         inviteActions: InviteActions = { type: INVITE_ACTION_TYPES.NONE }
     ) => {
         try {
+            isSavingEvent.current = true;
             const syncActions = await getSaveEventActions({
                 temporaryEvent,
                 weekStartsOn,
@@ -820,6 +831,8 @@ const InteractiveCalendarView = ({
             await handleSyncActions(syncActions);
         } catch (e) {
             createNotification({ text: e.message, type: 'error' });
+        } finally {
+            isSavingEvent.current = false;
         }
     };
 
