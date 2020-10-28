@@ -135,45 +135,50 @@ const BlackFridayModal = <T,>({ bundles = [], onSelect, ...rest }: Props<T>) => 
     };
 
     const getBundlePrices = async () => {
-        const result = await Promise.all(
-            bundles.map(({ planIDs = [], cycle = DEFAULT_CYCLE, couponCode }) => {
-                return Promise.all([
-                    api<SubscriptionCheckResult>(
-                        checkSubscription({
-                            PlanIDs: planIDs,
-                            CouponCode: couponCode,
-                            Currency: currency,
-                            Cycle: cycle,
-                        })
-                    ),
-                    api<SubscriptionCheckResult>(
-                        checkSubscription({
-                            PlanIDs: planIDs,
-                            Currency: currency,
-                            Cycle: cycle,
-                        })
-                    ),
-                    api<SubscriptionCheckResult>(
-                        checkSubscription({
-                            PlanIDs: planIDs,
-                            Currency: currency,
-                            Cycle: MONTHLY,
-                        })
-                    ),
-                ]);
-            })
-        );
+        try {
+            const result = await Promise.all(
+                bundles.map(({ planIDs = [], cycle = DEFAULT_CYCLE, couponCode }) => {
+                    return Promise.all([
+                        api<SubscriptionCheckResult>(
+                            checkSubscription({
+                                PlanIDs: planIDs,
+                                CouponCode: couponCode,
+                                Currency: currency,
+                                Cycle: cycle,
+                            })
+                        ),
+                        api<SubscriptionCheckResult>(
+                            checkSubscription({
+                                PlanIDs: planIDs,
+                                Currency: currency,
+                                Cycle: cycle,
+                            })
+                        ),
+                        api<SubscriptionCheckResult>(
+                            checkSubscription({
+                                PlanIDs: planIDs,
+                                Currency: currency,
+                                Cycle: MONTHLY,
+                            })
+                        ),
+                    ]);
+                })
+            );
 
-        updatePricing(
-            result.reduce<Pricing>((acc, [withCoupon, withoutCoupon, withoutCouponMonthly], index) => {
-                acc[index] = {
-                    withCoupon: withCoupon.Amount + withCoupon.CouponDiscount,
-                    withoutCoupon: withoutCoupon.Amount + withoutCoupon.CouponDiscount, // BUNDLE discount can be applied
-                    withoutCouponMonthly: withoutCouponMonthly.Amount,
-                };
-                return acc;
-            }, {})
-        );
+            updatePricing(
+                result.reduce<Pricing>((acc, [withCoupon, withoutCoupon, withoutCouponMonthly], index) => {
+                    acc[index] = {
+                        withCoupon: withCoupon.Amount + withCoupon.CouponDiscount,
+                        withoutCoupon: withoutCoupon.Amount + withoutCoupon.CouponDiscount, // BUNDLE discount can be applied
+                        withoutCouponMonthly: withoutCouponMonthly.Amount,
+                    };
+                    return acc;
+                }, {})
+            );
+        } catch (error) {
+            rest.onClose?.();
+            throw error;
+        }
     };
 
     useEffect(() => {
