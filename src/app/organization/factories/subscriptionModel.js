@@ -1,14 +1,6 @@
 import _ from 'lodash';
 
-import {
-    DEFAULT_CURRENCY,
-    DEFAULT_CYCLE,
-    PLANS_TYPE,
-    BUNDLE_COUPON_CODE,
-    BLACK_FRIDAY,
-    BLACK_FRIDAY_2018,
-    BLACK_FRIDAY_2019
-} from '../../constants';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS_TYPE, BLACK_FRIDAY } from '../../constants';
 
 const PAID_TYPES = {
     plus: ['plus'],
