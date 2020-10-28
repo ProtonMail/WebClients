@@ -139,11 +139,10 @@ function subscriptionModel(dispatchers, Payment) {
         const { CouponCode = '' } = CACHE.subscription || {};
         const noPro = !hasPaid('professional');
         const isPaying = hasPaid('plus') || hasPaid('vpnplus') || hasPaid('vpnbasic');
-        const noBundle = ![BUNDLE_COUPON_CODE, BLACK_FRIDAY.COUPON_CODE, BLACK_FRIDAY_2018, BLACK_FRIDAY_2019].includes(
-            CouponCode
-        );
+        const noBundle = !(hasPaid('plus') && hasPaid('vpnplus'));
+        const noBFCoupon = ![BLACK_FRIDAY.COUPON_CODE].includes(CouponCode);
 
-        return isPaying && noPro && noBundle;
+        return isPaying && noPro && noBundle && noBFCoupon;
     };
 
     const getAddons = () => {
