@@ -1,3 +1,11 @@
+# [3.16.36] - 2020-10-28
+
+## Improvements
+- Various UI/UX improvements Fixes
+
+## Fixes
+- Various bug fixes
+
 # [3.16.35] - 2020-10-28
 
 ## Improvements
