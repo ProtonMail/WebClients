@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { format } from 'date-fns';
 import cnLocale from 'date-fns/locale/zh-CN';
 
-import { getClosestLocaleMatch } from '../../lib/i18n/helper';
+import { getClosestLocaleMatch, getLanguageCode } from '../../lib/i18n/helper';
 import { getDateFnLocaleWithTimeFormat } from '../../lib/i18n/dateFnLocale';
 import { loadDateLocale, loadLocale } from '../../lib/i18n/loadLocale';
 import { SETTINGS_TIME_FORMAT } from '../../lib/interfaces';
@@ -10,8 +10,20 @@ import { SETTINGS_TIME_FORMAT } from '../../lib/interfaces';
 describe('helper', () => {
     it('should get the closest locale', () => {
         expect(getClosestLocaleMatch('en_US', { en_US: true })).toBe('en_US');
+        expect(getClosestLocaleMatch('kab_KAB', { kab_KAB: true })).toBe('kab_KAB');
+        expect(getClosestLocaleMatch('kab', { kab_KAB: true })).toBe('kab_KAB');
+        expect(getClosestLocaleMatch('ka', { kab_KAB: true })).toBeUndefined();
         expect(getClosestLocaleMatch('en', { en_US: true })).toBe('en_US');
         expect(getClosestLocaleMatch('sv', { en_US: true })).toBeUndefined();
+        expect(getClosestLocaleMatch('en_US', { en_US: true, sv_SE: true })).toBe('en_US');
+        expect(getClosestLocaleMatch('en_US', { aa_AA: true, en_US: true })).toBe('en_US');
+        expect(getClosestLocaleMatch('en', { aa_AA: true, en_US: true })).toBe('en_US');
+    });
+
+    it('should get the language code', () => {
+        expect(getLanguageCode('en_US')).toBe('en');
+        expect(getLanguageCode('kab_KAB')).toBe('kab');
+        expect(getLanguageCode('sv-se')).toBe('sv');
     });
 });
 

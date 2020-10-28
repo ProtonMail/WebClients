@@ -4,10 +4,10 @@ import { setDateLocales, setLocales } from './index';
 import { getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings, Options } from './dateFnLocale';
 import { TtagLocaleMap } from '../interfaces/Locale';
 import { DEFAULT_LOCALE } from '../constants';
-import { getClosestLocaleMatch } from './helper';
+import { getClosestLocaleMatch, getLanguageCode } from './helper';
 
 export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => {
-    const languageCode = localeCode.substr(0, 2);
+    const languageCode = getLanguageCode(localeCode);
 
     if (localeCode !== DEFAULT_LOCALE) {
         const data = await locales[localeCode]();
