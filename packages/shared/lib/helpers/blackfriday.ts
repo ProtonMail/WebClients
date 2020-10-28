@@ -1,6 +1,6 @@
 import { isWithinInterval } from 'date-fns';
 
-import { BLACK_FRIDAY, PRODUCT_PAYER, COUPON_CODES } from '../constants';
+import { BLACK_FRIDAY, PRODUCT_PAYER } from '../constants';
 import { Subscription } from '../interfaces';
 import { hasMailPlus, hasMailProfessional, hasVpnBasic, hasVpnPlus } from './subscription';
 
@@ -22,16 +22,10 @@ export const isProductPayer = (subscription: Subscription) => {
     }
 
     const couponCode = subscription?.CouponCode || '';
-    const noBundle = ![
-        COUPON_CODES.BUNDLE,
-        BLACK_FRIDAY.COUPON_CODE,
-        COUPON_CODES.BLACK_FRIDAY_2018,
-        COUPON_CODES.BLACK_FRIDAY_2019,
-    ].includes(couponCode);
+    const isPaying = hasMailPlus(subscription) || hasVpnBasic(subscription) || hasVpnPlus(subscription);
+    const noPro = !hasMailProfessional(subscription);
+    const noBundle = !(hasMailPlus(subscription) && hasVpnPlus(subscription));
+    const noBFCoupon = ![BLACK_FRIDAY.COUPON_CODE].includes(couponCode);
 
-    return (
-        (hasMailPlus(subscription) || hasVpnBasic(subscription) || hasVpnPlus(subscription)) &&
-        !hasMailProfessional(subscription) &&
-        noBundle
-    );
+    return isPaying && noPro && noBundle && noBFCoupon;
 };
