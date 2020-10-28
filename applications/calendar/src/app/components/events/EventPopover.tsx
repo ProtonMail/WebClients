@@ -144,7 +144,7 @@ const EventPopover = ({
             data-test-id="event-popover:edit"
             onClick={handleEdit}
             disabled={loadingAction || isCalendarDisabled}
-            className="mr1"
+            className="ml1"
         >
             {c('Action').t`Edit`}
         </Button>
@@ -154,7 +154,6 @@ const EventPopover = ({
             data-test-id="event-popover:delete"
             onClick={loadingAction ? noop : handleDelete}
             loading={loadingAction}
-            className="mr1"
         >
             {c('Action').t`Delete`}
         </Button>
