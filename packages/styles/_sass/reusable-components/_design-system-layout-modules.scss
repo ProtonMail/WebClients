@@ -307,6 +307,23 @@ svg {
     position: fixed;
 }
 
+
+.sticky {
+	&-top,
+	&-bottom {
+		position: sticky;
+		z-index: 1;
+	}
+
+	&-top {
+		top: 0;
+	}
+
+	&-bottom {
+		bottom: 0;
+	}
+}
+
 /* hardware-acceleration activation */
 .hardware-accelerated {
     @include vendor-prefix(transform, translateZ(0));
