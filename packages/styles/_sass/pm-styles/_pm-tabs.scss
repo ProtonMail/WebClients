@@ -42,6 +42,10 @@
 
 .tabs-container {
   border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+
+  &[class*='sticky'] {
+    background: var(--bgcolor-main-area, $white);
+  }
 }
 
 .tabs-indicator {
