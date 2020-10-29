@@ -313,10 +313,24 @@ export const getIsRruleSupported = (rruleProperty?: VcalRrulePropertyValue, isIn
     return false;
 };
 
-export const getSupportedUntil = (until: VcalDateOrDateTimeValue, isAllDay: boolean, tzid = 'UTC') => {
+export const getSupportedUntil = (
+    until: VcalDateOrDateTimeValue,
+    isAllDay: boolean,
+    tzid = 'UTC',
+    guessTzid = 'UTC'
+) => {
     // According to the RFC, we should use UTC dates if and only if the event is not all-day.
     if (isAllDay) {
         // we should use a floating date in this case
+        if (getIsDateTimeValue(until)) {
+            // try to guess the right UNTIL
+            const untilGuess = convertUTCDateTimeToZone(until, guessTzid);
+            return {
+                year: untilGuess.year,
+                month: untilGuess.month,
+                day: untilGuess.day,
+            };
+        }
         return {
             year: until.year,
             month: until.month,
@@ -333,7 +347,11 @@ export const getSupportedUntil = (until: VcalDateOrDateTimeValue, isAllDay: bool
     return { ...utcEndOfDay, isUTC: true };
 };
 
-export const getSupportedRrule = (vevent: VcalVeventComponent, isInvitation = false): VcalRruleProperty | undefined => {
+export const getSupportedRrule = (
+    vevent: VcalVeventComponent,
+    isInvitation = false,
+    guessTzid?: string
+): VcalRruleProperty | undefined => {
     if (!vevent.rrule?.value) {
         return;
     }
@@ -342,7 +360,12 @@ export const getSupportedRrule = (vevent: VcalVeventComponent, isInvitation = fa
     const supportedRrule = { ...rrule };
 
     if (until) {
-        const supportedUntil = getSupportedUntil(until, getIsPropertyAllDay(dtstart), getPropertyTzid(dtstart));
+        const supportedUntil = getSupportedUntil(
+            until,
+            getIsPropertyAllDay(dtstart),
+            getPropertyTzid(dtstart),
+            guessTzid
+        );
         supportedRrule.value.until = supportedUntil;
     }
     if (!getIsRruleSupported(rrule.value, isInvitation)) {
