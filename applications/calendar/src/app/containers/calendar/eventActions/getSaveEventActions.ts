@@ -8,6 +8,7 @@ import { omit } from 'proton-shared/lib/helpers/object';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import withVeventRruleWkst from 'proton-shared/lib/calendar/rruleWkst';
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
 import getEditEventData from '../event/getEditEventData';
@@ -22,7 +23,6 @@ import getSaveRecurringEventActions from './getSaveRecurringEventActions';
 import getSaveSingleEventActions from './getSaveSingleEventActions';
 import { INVITE_ACTION_TYPES, InviteActions } from './inviteActions';
 import { getOriginalEvent } from './recurringHelper';
-import withVeventRruleWkst from './rruleWkst';
 import { withVeventSequence } from './sequence';
 
 interface Arguments {
@@ -62,10 +62,11 @@ const getSaveEventActions = async ({
 
     // All updates will remove any existing exdates since they would be more complicated to normalize
     const modelVeventComponent = modelToVeventComponent(tmpData) as VcalVeventComponent;
-    const newVeventComponent = await withPmAttendees(
-        withVeventRruleWkst(omit(modelVeventComponent, ['exdate']), weekStartsOn),
-        api
-    );
+    // Do not touch RRULE for invitations
+    const veventComponentWithRruleWkst = isInvitation
+        ? modelVeventComponent
+        : withVeventRruleWkst(omit(modelVeventComponent, ['exdate']), weekStartsOn);
+    const newVeventComponent = await withPmAttendees(veventComponentWithRruleWkst, api);
 
     const newEditEventData = {
         veventComponent: newVeventComponent,
@@ -157,7 +158,8 @@ const getSaveEventActions = async ({
         originalEditEventData.mainVeventComponent,
         oldEditEventData.mainVeventComponent,
         newEditEventData.veventComponent,
-        actualEventRecurrence
+        actualEventRecurrence,
+        weekStartsOn
     );
 
     const hasModifiedCalendar = originalEditEventData.calendarID !== newEditEventData.calendarID;

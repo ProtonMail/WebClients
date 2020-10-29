@@ -43,7 +43,7 @@ import {
     getIsWellFormedDateOrDateTime,
     getSupportedUID,
 } from 'proton-shared/lib/calendar/support';
-import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/integration/rrule';
+import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/rrule';
 
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../components/import/ImportEventError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportFileError';

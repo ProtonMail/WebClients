@@ -1,9 +1,10 @@
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { getDateOrDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
+import { getIsRruleEqual } from 'proton-shared/lib/calendar/rruleEqual';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import { getIsRruleEqual } from './rruleEqual';
 
 export enum UpdateAllPossibilities {
     KEEP_SINGLE_EDITS,
@@ -15,7 +16,8 @@ const getRecurringUpdateAllPossibilities = (
     originalVeventComponent: VcalVeventComponent,
     oldVeventComponent: VcalVeventComponent,
     newVeventComponent: VcalVeventComponent,
-    recurrence: CalendarEventRecurring
+    recurrence: CalendarEventRecurring,
+    weekStartsOn: WeekStartsOn
 ) => {
     // If editing a single edit, we can use the dtstart as is...
     const oldStartProperty = oldVeventComponent['recurrence-id']
@@ -47,7 +49,7 @@ const getRecurringUpdateAllPossibilities = (
     if (
         isSameDay(oldLocalStartDate, newLocalStartDate) &&
         originalVeventComponent.rrule &&
-        getIsRruleEqual(originalVeventComponent.rrule, newVeventComponent.rrule)
+        getIsRruleEqual(originalVeventComponent.rrule, newVeventComponent.rrule, weekStartsOn)
     ) {
         return UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME;
     }

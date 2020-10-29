@@ -35,7 +35,7 @@ export const propertiesToModel = (
 
     return {
         uid: uid ? uid.value : undefined,
-        frequencyModel: propertiesToFrequencyModel(rrule, start),
+        frequencyModel: propertiesToFrequencyModel(rrule, start, !isOrganizer),
         title: summary?.value ?? '',
         location: location?.value ?? '',
         description: description?.value ?? '',

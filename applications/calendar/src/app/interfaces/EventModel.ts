@@ -10,6 +10,7 @@ import {
     ICAL_ATTENDEE_RSVP,
     ICAL_EVENT_STATUS,
 } from 'proton-shared/lib/calendar/constants';
+import { VcalRrulePropertyValue } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { NotificationModel } from './NotificationModel';
 
 export interface FrequencyModel {
@@ -34,6 +35,7 @@ export interface FrequencyModel {
         count?: number;
         until?: Date;
     };
+    rruleValue?: VcalRrulePropertyValue;
 }
 
 export interface DateTimeModel {
