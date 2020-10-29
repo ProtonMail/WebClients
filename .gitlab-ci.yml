@@ -2,13 +2,3 @@ include:
   - project: 'deploy-app/fe-scripts'
     ref: master
     file: '/jobs/angular/v3.gitlab-ci.yml'
-
-deploy-atlas:
-  when: on_success
-  extends: .deploy-atlas-common
-  needs:
-    - job: bundle
-      artifacts: true
-  except:
-    - tags
-    - schedules
