@@ -1,3 +1,4 @@
+import React, { useMemo } from 'react';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
@@ -10,18 +11,17 @@ import { Address } from 'proton-shared/lib/interfaces';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import React, { useMemo } from 'react';
 import {
     Alert,
     Badge,
     Button,
     classnames,
-    Dropdown,
-    DropdownButton,
     Loader,
     Tooltip,
     useLoading,
     usePopperAnchor,
+    DropdownButton,
+    Dropdown,
 } from 'react-components';
 import InviteButtons from 'react-components/components/calendar/InviteButtons';
 import { c } from 'ttag';
@@ -38,6 +38,64 @@ import useReadEvent from './useReadEvent';
 
 const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
+const MoreButtons = ({
+    onEdit,
+    onDelete,
+    loadingAction,
+    isCalendarDisabled,
+}: {
+    onEdit?: () => void;
+    onDelete?: () => void;
+    loadingAction?: boolean;
+    isCalendarDisabled?: boolean;
+}) => {
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const emptyContent = '';
+    return (
+        <div>
+            <Tooltip title={c('Title').t`More options`} className="flex flex-item-noshrink">
+                <DropdownButton
+                    title={c('Title').t`More options`}
+                    buttonRef={anchorRef}
+                    isOpen={isOpen}
+                    onClick={toggle}
+                    hasCaret
+                    caretClassName=""
+                    className="flex-item-noshrink toolbar-button toolbar-button--dropdown"
+                >
+                    {emptyContent}
+                </DropdownButton>
+            </Tooltip>
+            <Dropdown
+                id="popover-more-options"
+                originalPlacement="bottom"
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+                autoClose={false}
+                className="toolbar-dropdown"
+            >
+                <Button
+                    data-test-id="event-popover:edit"
+                    disabled={loadingAction || isCalendarDisabled}
+                    className="dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5 alignleft"
+                    onClick={onEdit}
+                >
+                    {c('Action').t`Edit`}
+                </Button>
+                <Button
+                    data-test-id="event-popover:delete"
+                    className="dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5 alignleft"
+                    onClick={loadingAction ? noop : onDelete}
+                    loading={loadingAction}
+                >
+                    {c('Action').t`Delete`}
+                </Button>
+            </Dropdown>
+        </div>
+    );
+};
+
 interface Props {
     formatTime: (date: Date) => string;
     onEdit: (event: CalendarEvent) => void;
@@ -53,6 +111,7 @@ interface Props {
     contactEmailMap: SimpleMap<ContactEmail>;
     addresses: Address[];
 }
+
 const EventPopover = ({
     formatTime,
     onEdit,
@@ -159,52 +218,6 @@ const EventPopover = ({
         </Button>
     );
 
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const emptyContent = '';
-    const moreOptions = (
-        <div>
-            <Tooltip title={c('Title').t`More options`} className="flex flex-item-noshrink">
-                <DropdownButton
-                    title={c('Title').t`More options`}
-                    buttonRef={anchorRef}
-                    isOpen={isOpen}
-                    onClick={toggle}
-                    hasCaret
-                    caretClassName=""
-                    className="flex-item-noshrink toolbar-button toolbar-button--dropdown"
-                >
-                    {emptyContent}
-                </DropdownButton>
-            </Tooltip>
-            <Dropdown
-                id="popover-more-options"
-                originalPlacement="bottom"
-                isOpen={isOpen}
-                anchorRef={anchorRef}
-                onClose={close}
-                autoClose={false}
-                className="toolbar-dropdown"
-            >
-                <Button
-                    data-test-id="event-popover:edit"
-                    disabled={loadingAction || isCalendarDisabled}
-                    className="dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5 alignleft"
-                    onClick={handleEdit}
-                >
-                    {c('Action').t`Edit`}
-                </Button>
-                <Button
-                    data-test-id="event-popover:delete"
-                    className="dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5 alignleft"
-                    onClick={loadingAction ? noop : handleDelete}
-                    loading={loadingAction}
-                >
-                    {c('Action').t`Delete`}
-                </Button>
-            </Dropdown>
-        </div>
-    );
-
     const actions = {
         accept: () => onChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
         acceptTentatively: () => onChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
@@ -264,7 +277,7 @@ const EventPopover = ({
                     contactEmailMap={contactEmailMap}
                 />
             </div>
-            <PopoverFooter className="flex-item-noshrink">
+            <PopoverFooter className="flex-item-noshrink" key={targetEvent.id}>
                 {isCancelled || model.isOrganizer ? (
                     <>
                         {deleteButton}
@@ -278,7 +291,12 @@ const EventPopover = ({
                             partstat={userPartstat}
                             disabled={isCalendarDisabled || isAddressDisabled}
                         />
-                        {moreOptions}
+                        <MoreButtons
+                            onEdit={handleEdit}
+                            onDelete={handleDelete}
+                            loadingAction={loadingAction}
+                            isCalendarDisabled={isCalendarDisabled}
+                        />
                     </>
                 )}
             </PopoverFooter>
