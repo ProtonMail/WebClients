@@ -17,6 +17,12 @@ export const InactiveSessionError = () => {
     return error;
 };
 
+export const AppVersionBadError = () => {
+    const error = new Error('App version outdated');
+    error.name = 'AppVersionBadError';
+    return error;
+};
+
 export const RetryError = () => {
     const error = new Error('Retry-After');
     error.name = 'RetryAfterError';
@@ -100,6 +106,7 @@ const refresh = (call, UID, attempts, maxAttempts) => {
  */
 export default ({ call, UID, onUnlock, onError, onVerification }) => {
     let loggedOut = false;
+    let appVersionBad = false;
 
     const refreshHandlers = {};
     const refreshHandler = (UID, responseDate) => {
@@ -151,6 +158,11 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
             if (loggedOut) {
                 return Promise.resolve().then(() => {
                     return onError(InactiveSessionError());
+                });
+            }
+            if (appVersionBad) {
+                return Promise.resolve().then(() => {
+                    return onError(AppVersionBadError());
                 });
             }
 
@@ -224,6 +236,11 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
                 }
 
                 const { code } = getApiError(e);
+
+                if (code === API_CUSTOM_ERROR_CODES.APP_VERSION_BAD) {
+                    appVersionBad = true;
+                    return onError(AppVersionBadError());
+                }
 
                 const ignoreHumanVerification =
                     Array.isArray(ignoreHandler) &&

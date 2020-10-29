@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import { API_CUSTOM_ERROR_CODES } from '../../errors';
 
 export const getApiError = (e?: any) => {
     if (!e) {
@@ -36,15 +35,9 @@ export const getIs401Error = (e: any) => {
 };
 
 export const getApiErrorMessage = (e: Error) => {
-    const { message, code } = getApiError(e);
-    if (code === API_CUSTOM_ERROR_CODES.APP_VERSION_BAD) {
-        return message || c('Info').t`Application upgrade required`;
-    }
+    const { message } = getApiError(e);
     if (getIs401Error(e)) {
         return message || c('Info').t`Session timed out.`;
-    }
-    if (e.name === 'OfflineError') {
-        return c('Error').t`Servers are unreachable.`;
     }
     if (e.name === 'TimeoutError') {
         return c('Error').t`Request timed out.`;
