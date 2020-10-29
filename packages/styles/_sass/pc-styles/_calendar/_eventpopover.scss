@@ -1,9 +1,9 @@
 .eventpopover {
 	position: absolute;
 	z-index: 11;
-	width: 400px;
+	width: 50rem;
 	max-width: 100%;
-	max-height: 70%;
+	max-height: 95%;
 	transform-origin: 50%;
 	border-radius: $global-border-radius;
 	box-shadow: 0 0 16px 3px $input-shadow-color;
@@ -14,7 +14,6 @@
 	// transition: all .25s ease; should be applied only when opened and end of animation <-- this is solved by react-transition-group
 
 	&-title {
-		padding-right: 0.5em;
 		font-size: 2.2rem;
 	}
 
