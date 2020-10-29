@@ -36,6 +36,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const [forkState, setForkState] = useState<ProduceForkParameters | undefined>();
     const [activeSessions, setActiveSessions] = useState<LocalSessionResponse[] | undefined>();
     const ignoreAutoRef = useRef(false);
+    const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
         const { keyPassword, UID, User } = args;
@@ -79,6 +80,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             if (!sessions.length) {
                 history.replace('/login');
             }
+            setHasBackToSwitch(true);
             return false;
         }
         if (!sessions.length) {
@@ -90,6 +92,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             return true;
         }
         setActiveSessions(sessions);
+        setHasBackToSwitch(true);
         history.replace(SSO_PATHS.SWITCH);
         return false;
     };
@@ -118,6 +121,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                     toApp={toApp}
                                     onLogin={handleLogin}
                                     Layout={AccountPublicLayoutWrapper}
+                                    onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
                                 />
                             </Route>
                             <Route path={SSO_PATHS.RESET_PASSWORD}>
@@ -134,6 +138,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                     toApp={toApp}
                                     onLogin={handleLogin}
                                     Layout={AccountPublicLayoutWrapper}
+                                    onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
                                 />
                             </Route>
                             <Redirect to={SSO_PATHS.LOGIN} />
