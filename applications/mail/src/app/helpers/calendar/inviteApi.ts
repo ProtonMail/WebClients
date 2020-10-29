@@ -41,11 +41,14 @@ import {
     Calendar,
     CalendarEvent,
     CalendarWidgetData,
+    DecryptedPersonalVeventMapResult,
     SyncMultipleApiResponse,
+    VcalAttendeeProperty,
+    VcalVeventComponent,
+    DecryptedVeventResult,
 } from 'proton-shared/lib/interfaces/calendar';
-import { VcalAttendeeProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { RequireSome, SimpleMap, Unwrap } from 'proton-shared/lib/interfaces/utils';
+import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
 import { MessageExtended } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import {
@@ -64,8 +67,8 @@ const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, CANCEL } = UPDATE_ACTION;
 interface GetVeventWithAlarmsArgs {
     calendarEvent: CalendarEvent;
     memberID?: string;
-    getCalendarEventRaw: (event: CalendarEvent) => Promise<VcalVeventComponent>;
-    getCalendarEventPersonal: (event: CalendarEvent) => Promise<SimpleMap<VcalVeventComponent>>;
+    getCalendarEventRaw: (event: CalendarEvent) => Promise<DecryptedVeventResult>;
+    getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
 }
 const getVeventWithAlarms = async ({
     calendarEvent,
@@ -73,11 +76,12 @@ const getVeventWithAlarms = async ({
     getCalendarEventRaw,
     getCalendarEventPersonal,
 }: GetVeventWithAlarmsArgs) => {
-    const [vevent, eventPersonalMap] = await Promise.all([
+    const [{ veventComponent: vevent }, eventPersonalMap] = await Promise.all([
         getCalendarEventRaw(calendarEvent),
         getCalendarEventPersonal(calendarEvent),
     ]);
-    const valarms = memberID ? eventPersonalMap[memberID] : {};
+    const personalVevent = memberID ? eventPersonalMap[memberID] : undefined;
+    const valarms = personalVevent ? personalVevent.veventComponent : {};
     return {
         ...valarms,
         ...vevent,
@@ -90,8 +94,8 @@ type FetchEventInvitation = (args: {
     getCalendarInfo: (
         ID: string
     ) => Promise<Omit<CalendarWidgetData, 'calendar' | 'isCalendarDisabled' | 'calendarNeedsUserAction'>>;
-    getCalendarEventRaw: (event: CalendarEvent) => Promise<VcalVeventComponent>;
-    getCalendarEventPersonal: (event: CalendarEvent) => Promise<SimpleMap<VcalVeventComponent>>;
+    getCalendarEventRaw: (event: CalendarEvent) => Promise<DecryptedVeventResult>;
+    getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
     calendars: Calendar[];
     defaultCalendar?: Calendar;
     message: MessageExtended;

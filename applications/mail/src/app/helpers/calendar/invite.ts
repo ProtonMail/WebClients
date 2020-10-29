@@ -170,8 +170,11 @@ export const getIsInvitationOutdated = (veventIcs: VcalVeventComponent, veventAp
     if (!veventApi) {
         return false;
     }
+    // DTSTAMP should always be present, but just in case
     const timestampDiff =
-        getUnixTime(propertyToUTCDate(veventIcs.dtstamp)) - getUnixTime(propertyToUTCDate(veventApi.dtstamp));
+        veventIcs.dtstamp && veventApi.dtstamp
+            ? getUnixTime(propertyToUTCDate(veventIcs.dtstamp)) - getUnixTime(propertyToUTCDate(veventApi.dtstamp))
+            : 0;
     if (timestampDiff < 0) {
         return true;
     }
@@ -677,12 +680,12 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
     if (recurrenceID) {
         params.set('RecurrenceID', `${recurrenceID}`);
     }
-    const link = calendarID && eventID ? `/event?${params.toString()}` : undefined;
-    if (!link) {
+    const linkTo = calendarID && eventID ? `/event?${params.toString()}` : undefined;
+    if (!linkTo) {
         return {};
     }
     return {
-        to: link,
+        to: linkTo,
         text: c('Link').t`Open in ProtonCalendar`,
     };
 };
