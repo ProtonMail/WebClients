@@ -56,8 +56,10 @@ const MessageView = (
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
+    const getInitialExpand = () => !conversationMode && !isDraft(inputMessage);
+
     // Actual expanded state
-    const [expanded, setExpanded] = useState(!conversationMode);
+    const [expanded, setExpanded] = useState(getInitialExpand);
 
     // The message is beeing opened
     const [beingFocused, setBeingFocused] = useState(false);
@@ -149,6 +151,7 @@ const MessageView = (
     // Re-initialize context if message is changed without disposing the component
     useEffect(() => {
         if (message.data?.ID) {
+            setExpanded(getInitialExpand);
             setBeingFocused(false);
             setSourceMode(false);
         }

@@ -1,10 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useFolders } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import { MessageExtended } from '../models/message';
 import { hasLabel, getCurrentFolderID } from '../helpers/elements';
-import { useMessageCache } from '../containers/MessageProvider';
+import { getLocalID, useMessageCache } from '../containers/MessageProvider';
 import { ConversationResult } from './useConversation';
 import { useConversationCache } from '../containers/ConversationProvider';
 
@@ -26,7 +26,7 @@ const cacheEntryIsFailedLoading = (
 
 export const useShouldMoveOut = (
     conversationMode: boolean,
-    ID: string | undefined,
+    inputID: string | undefined,
     loading: boolean,
     onBack: () => void
 ) => {
@@ -36,6 +36,8 @@ export const useShouldMoveOut = (
     const [folders = []] = useFolders();
 
     const previousVersionRef = useRef<MessageExtended | ConversationResult | undefined>();
+
+    const ID = useMemo(() => (conversationMode ? inputID : getLocalID(messageCache, inputID || '')), [inputID]);
 
     useEffect(() => {
         if (ID) {

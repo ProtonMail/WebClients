@@ -3,6 +3,7 @@ import React, { useEffect, memo, useRef, useState } from 'react';
 import { useLabels, useToggle, classnames } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
+import { isDraft } from 'proton-shared/lib/mail/messages';
 import MessageView, { MessageViewRef } from '../message/MessageView';
 import { useConversation } from '../../hooks/useConversation';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
@@ -76,7 +77,10 @@ const ConversationView = ({
     // Open the message in URL
     useEffect(() => {
         if (!loadingMessages && messageID) {
-            openMessage(messageID);
+            const message = conversationResult?.Messages?.find((message) => message.ID === messageID);
+            if (!isDraft(message)) {
+                openMessage(messageID);
+            }
         }
     }, [conversationID, messageID, loadingMessages]);
 
