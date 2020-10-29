@@ -1,6 +1,6 @@
 import { VcalDateOrDateTimeValue, VcalDateTimeValue, VcalDays } from '../../interfaces/calendar/VcalModel';
 import { END_TYPE, MONTHLY_TYPE } from '../constants';
-import { getDayAndSetpos, getIsStandardBydayArray } from './rrule';
+import { getDayAndSetpos, getIsStandardBydayArray } from '../rrule';
 import { dayToNumericDay, propertyToUTCDate } from '../vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate } from '../../date/timezone';
 import { unique } from '../../helpers/array';

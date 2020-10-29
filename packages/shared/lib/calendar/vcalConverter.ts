@@ -1,7 +1,6 @@
 import { addDays } from '../date-fns-utc';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
 import { buildMailTo, getEmailTo } from '../helpers/email';
-import isDeepEqual from '../helpers/isDeepEqual';
 import { mod } from '../helpers/math';
 import { DateTime } from '../interfaces/calendar/Date';
 import {
@@ -169,18 +168,6 @@ export const getHasModifiedDateTimes = (newVevent: VcalVeventComponent, oldVeven
     const isEndPreserved =
         +propertyToUTCDate(getDtendProperty(newVevent)) === +propertyToUTCDate(getDtendProperty(oldVevent));
     return !isStartPreserved || !isEndPreserved;
-};
-
-export const getHasModifiedRrule = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
-    const { rrule: newRrule } = newVevent;
-    const { rrule: oldRrule } = oldVevent;
-    if (!oldRrule) {
-        return !!newRrule;
-    }
-    if (!newRrule) {
-        return true;
-    }
-    return !isDeepEqual(newRrule, oldRrule);
 };
 
 const getIsEquivalentAttendee = (newAttendee: VcalAttendeeProperty, oldAttendee: VcalAttendeeProperty) => {
