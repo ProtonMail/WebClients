@@ -1,4 +1,5 @@
 import { FREQUENCY, ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
+import { getAggregatedEventVerificationStatus } from 'proton-shared/lib/calendar/decrypt';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import { Address } from 'proton-shared/lib/interfaces';
 import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
@@ -18,12 +19,21 @@ const getEventInformation = (
 
     const isEventReadLoading = !isTemporaryEvent && !eventReadResult;
     const eventReadError = eventReadResult?.error;
+    const decryptedPersonalVeventMap = eventReadResult?.result?.[1] || {};
+    const verificationStatusPersonal = Object.values(decryptedPersonalVeventMap).map(
+        (result) => result?.verificationStatus
+    );
+    const verificationStatusRest = eventReadResult?.result?.[0].verificationStatus;
+    const verificationStatus = getAggregatedEventVerificationStatus([
+        ...verificationStatusPersonal,
+        verificationStatusRest,
+    ]);
 
     const calendarColor = tmpData?.calendar.color || calendarData.Color;
     const eventTitleSafe = getDisplayTitle(tmpData?.title || model.title);
     const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
     const isRecurring = model.frequencyModel.type !== FREQUENCY.ONCE;
-    const isSingleEdit = !!eventReadResult?.result?.[0]?.['recurrence-id'];
+    const isSingleEdit = !!eventReadResult?.result?.[0]?.veventComponent?.['recurrence-id'];
     const { userAttendee, userAddress } = findUserAttendeeModel(model.attendees, addresses);
 
     return {
@@ -33,6 +43,7 @@ const getEventInformation = (
         calendarColor,
         eventReadError,
         eventTitleSafe,
+        verificationStatus,
         isCancelled,
         isRecurring,
         isSingleEdit,

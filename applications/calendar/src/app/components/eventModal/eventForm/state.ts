@@ -7,6 +7,7 @@ import {
     WEEKLY_TYPE,
     YEARLY_TYPE,
 } from 'proton-shared/lib/calendar/constants';
+import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface';
 import { getIsAllDay, getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { Address as tsAddress } from 'proton-shared/lib/interfaces';
@@ -128,6 +129,7 @@ interface GetInitialModelArguments {
     Addresses: tsAddress[];
     Address: tsAddress;
     isAllDay: boolean;
+    verificationStatus?: EVENT_VERIFICATION_STATUS;
     tzid: string;
 }
 
@@ -141,6 +143,7 @@ export const getInitialModel = ({
     Addresses,
     Address,
     isAllDay,
+    verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
     tzid,
 }: GetInitialModelArguments): EventModel => {
     const { DefaultEventDuration: defaultEventDuration = DEFAULT_EVENT_DURATION } = CalendarSettings;
@@ -160,6 +163,7 @@ export const getInitialModel = ({
         initialDate,
         initialTzid: tzid,
         isAllDay,
+        verificationStatus,
         isOrganizer: true,
         organizer: { email: memberEmail, cn: memberEmail },
         status: ICAL_EVENT_STATUS.CONFIRMED,

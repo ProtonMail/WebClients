@@ -27,8 +27,7 @@ const getEditEventData = ({ eventData, eventResult, memberResult: [member, addre
 
     const veventComponentFull = eventResult
         ? getComponentWithPersonalPart({
-              component: eventResult[0],
-              personalMap: eventResult[1],
+              decryptedEventResult: eventResult,
               memberID: member.ID,
           })
         : undefined;

@@ -103,7 +103,7 @@ const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => 
                         if (unmounted) {
                             return;
                         }
-                        const component = eventRaw;
+                        const { veventComponent: component } = eventRaw;
                         // compute event start time based on trigger, as we cannot rely on dtstart for recurring events
                         const start = new Date(getNextEventTime({ Occurrence, Trigger, tzid }));
                         const now = new Date();

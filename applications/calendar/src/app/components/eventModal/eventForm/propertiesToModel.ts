@@ -1,3 +1,4 @@
+import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface';
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { getEventStatus } from 'proton-shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
@@ -17,7 +18,8 @@ export const propertiesToModel = (
     component: VcalVeventComponent,
     isAllDay: boolean,
     isOrganizer: boolean,
-    tzid: string
+    tzid: string,
+    verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED
 ): EventModelView => {
     const {
         uid,
@@ -43,6 +45,7 @@ export const propertiesToModel = (
         organizer: propertiesToOrganizerModel(organizer),
         isOrganizer,
         status: getEventStatus(component),
+        verificationStatus,
         start,
         end,
         rest,

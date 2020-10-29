@@ -67,7 +67,7 @@ const PopoverEventContent = ({
     }, [model.description]);
 
     const frequencyString = useMemo(() => {
-        const [eventComponent] = eventReadResult?.result || [];
+        const [{ veventComponent: eventComponent }] = eventReadResult?.result || [{}];
         if (!eventComponent) {
             return;
         }

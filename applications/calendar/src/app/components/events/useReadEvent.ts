@@ -1,10 +1,13 @@
-import { useMemo } from 'react';
+import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface';
 import { getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
+import { DecryptedPersonalVeventMapResult, DecryptedVeventResult } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { useMemo } from 'react';
+import { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
+import { EventInternalProperties } from '../../interfaces/EventInternalProperties';
+import { EventModelReadView } from '../../interfaces/EventModel';
 import { propertiesToModel } from '../eventModal/eventForm/propertiesToModel';
 import { propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToNotificationModel';
-import { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
-import { EventModelReadView } from '../../interfaces/EventModel';
 
 const DEFAULT_VEVENT: VcalVeventComponent = {
     component: 'vevent',
@@ -21,8 +24,12 @@ const DEFAULT_VEVENT: VcalVeventComponent = {
 };
 const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string): EventModelReadView => {
     return useMemo(() => {
-        const [veventComponent = DEFAULT_VEVENT, alarmMap = {}, { IsOrganizer }]: DecryptedEventTupleResult = value || [
-            DEFAULT_VEVENT,
+        const [{ veventComponent = DEFAULT_VEVENT }, alarmMap = {}, { IsOrganizer }]: [
+            DecryptedVeventResult,
+            DecryptedPersonalVeventMapResult,
+            EventInternalProperties
+        ] = value || [
+            { veventComponent: DEFAULT_VEVENT, verificationStatus: EVENT_VERIFICATION_STATUS.NOT_VERIFIED },
             {},
             { Permissions: 3, IsOrganizer: 1 },
         ];
@@ -31,7 +38,7 @@ const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string
         const model = propertiesToModel(veventComponent, isAllDay, isOrganizer, tzid);
         const notifications = Object.keys(alarmMap)
             .map((key) => {
-                return propertiesToNotificationModel(alarmMap[key], isAllDay);
+                return propertiesToNotificationModel(alarmMap[key]?.veventComponent, isAllDay);
             })
             .flat(1);
 

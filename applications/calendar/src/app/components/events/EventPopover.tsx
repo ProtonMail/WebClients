@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { EVENT_VERIFICATION_STATUS, WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -16,12 +16,13 @@ import {
     Badge,
     Button,
     classnames,
+    Dropdown,
+    DropdownButton,
+    Icon,
     Loader,
     Tooltip,
     useLoading,
     usePopperAnchor,
-    DropdownButton,
-    Dropdown,
 } from 'react-components';
 import InviteButtons from 'react-components/components/calendar/InviteButtons';
 import { c } from 'ttag';
@@ -140,6 +141,7 @@ const EventPopover = ({
         eventReadError,
         isEventReadLoading,
         eventTitleSafe,
+        verificationStatus,
         isCancelled,
         userPartstat,
         isAddressDisabled,
@@ -254,15 +256,28 @@ const EventPopover = ({
 
     return (
         <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
-            <PopoverHeader className="ml0-5 flex-item-noshrink" onClose={onClose}>
+            <PopoverHeader className="ml0-25 flex-item-noshrink" onClose={onClose}>
                 <div className="color-subheader">{dateHeader}</div>
-                <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut mb0-5" title={eventTitleSafe}>
-                    {eventTitleSafe}
-                </h1>
                 {isCancelled && (
                     <Badge type="error" tooltip={c('Calendar invite info').t`This event has been cancelled`}>
                         {c('Title').t`CANCELLED`}
                     </Badge>
+                )}
+                <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut mb0-25" title={eventTitleSafe}>
+                    {eventTitleSafe}
+                </h1>
+                {verificationStatus === EVENT_VERIFICATION_STATUS.SUCCESSFUL && (
+                    <div className="mb0-75 flex flex-nowrap flex-items-center">
+                        <span className="flex flex-item-noshrink mr1">
+                            <Icon name="lock-check" />
+                        </span>
+                        <span className="flex-item-fluid">{c('Event info').t`Event verified`}</span>
+                    </div>
+                )}
+                {verificationStatus === EVENT_VERIFICATION_STATUS.FAILED && (
+                    <Alert type="warning" learnMore="https://protonmail.com/blog/protoncalendar-security-model/">
+                        {c('Event info').t`The verification of the event signature failed.`}
+                    </Alert>
                 )}
             </PopoverHeader>
             <div className="scroll-if-needed mb1">

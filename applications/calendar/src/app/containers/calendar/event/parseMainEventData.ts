@@ -1,12 +1,15 @@
+import { CALENDAR_CARD_TYPE } from 'proton-shared/lib/calendar/constants';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { unwrap } from 'proton-shared/lib/calendar/helper';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
+const { CLEAR_TEXT, SIGNED } = CALENDAR_CARD_TYPE;
+
 const parseMainEventData = ({ SharedEvents = [] }: CalendarEvent): VcalVeventComponent | undefined => {
     try {
-        const { Data = '' } = SharedEvents.find(({ Type }) => Type === 2) || { Data: '' };
-        const component = parse(unwrap(Data)) as VcalVeventComponent;
+        const unencryptedPart = SharedEvents.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
+        const component = parse(unwrap(unencryptedPart?.Data || '')) as VcalVeventComponent;
         if (component.component !== 'vevent') {
             return undefined;
         }

@@ -334,7 +334,7 @@ const InteractiveCalendarView = ({
         const { Members = [], CalendarSettings } = readCalendarBootstrap(calendarData.ID);
         const [Member, Address] = getMemberAndAddress(activeAddresses, Members, eventData.Author);
 
-        const [veventComponent, personalMap] = eventReadResult.result;
+        const [{ veventComponent, verificationStatus }, personalMap] = eventReadResult.result;
 
         const veventComponentParentPartial = veventComponent['recurrence-id']
             ? getVeventComponentParent(veventComponent.uid.value, eventData.CalendarID)
@@ -349,6 +349,7 @@ const InteractiveCalendarView = ({
             Member,
             Address,
             isAllDay: false,
+            verificationStatus,
             tzid,
         });
         const originalOrOccurrenceEvent = eventRecurrence
@@ -356,7 +357,7 @@ const InteractiveCalendarView = ({
             : veventComponent;
         const eventResult = getExistingEvent({
             veventComponent: originalOrOccurrenceEvent,
-            veventValarmComponent: personalMap[Member.ID],
+            veventValarmComponent: personalMap[Member.ID]?.veventComponent,
             veventComponentParentPartial,
             tzid,
             isOrganizer: !!eventData.IsOrganizer,
@@ -388,7 +389,7 @@ const InteractiveCalendarView = ({
             const targetCalendar = (event && event.data && event.data.calendarData) || undefined;
 
             const isAllowedToTouchEvent = true;
-            const vevent = event.data.eventReadResult?.result?.[0];
+            const vevent = event.data.eventReadResult?.result?.[0]?.veventComponent;
             const hasAttendees = !!vevent && getHasAttendee(vevent);
             let isAllowedToMoveEvent = getIsCalendarProbablyActive(targetCalendar) && !hasAttendees;
 

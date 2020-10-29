@@ -1,11 +1,10 @@
 import createIntervalTree from 'interval-tree';
-import { CalendarEvent, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { OccurrenceIterationCache } from 'proton-shared/lib/calendar/recurring';
 import { SHARED_SIGNED_FIELDS } from 'proton-shared/lib/calendar/veventHelper';
 import { pick } from 'proton-shared/lib/helpers/object';
+import { CalendarEvent, CalendarEventSharedData, DecryptedVeventResult } from 'proton-shared/lib/interfaces/calendar';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { EventInternalProperties } from '../../../interfaces/EventInternalProperties';
-import { EventPersonalMap } from '../../../interfaces/EventPersonalMap';
 
 export type IntervalTree = ReturnType<typeof createIntervalTree>;
 
@@ -15,8 +14,11 @@ export interface RecurringCache {
     recurrenceInstances?: { [key: number]: string };
 }
 
-export type DecryptedEventPersonalMap = EventPersonalMap;
-export type DecryptedEventTupleResult = [VcalVeventComponent, DecryptedEventPersonalMap, EventInternalProperties];
+export type DecryptedEventTupleResult = [
+    DecryptedVeventResult,
+    { [memberID: string]: DecryptedVeventResult | undefined },
+    EventInternalProperties
+];
 export type EventReadResult = {
     result?: DecryptedEventTupleResult;
     error?: Error;
