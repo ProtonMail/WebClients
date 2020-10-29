@@ -12,6 +12,12 @@ export interface SignPartResult {
     signature: OpenPGPSignature;
 }
 
+export enum EVENT_VERIFICATION_STATUS {
+    SUCCESSFUL = 1,
+    NOT_VERIFIED = 0,
+    FAILED = -1,
+}
+
 export interface AttendeeClearPartResult {
     permissions: number;
     status: ATTENDEE_STATUS_API;

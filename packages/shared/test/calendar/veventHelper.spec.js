@@ -2,7 +2,7 @@ import { parse } from '../../lib/calendar/vcal';
 import { getVeventParts } from '../../lib/calendar/veventHelper';
 import { CALENDAR_CARD_TYPE } from '../../lib/calendar/constants';
 
-const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR } = CALENDAR_CARD_TYPE;
+const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
 export const toCRLF = (str) => str.replace(/\n/g, '\r\n');
 
@@ -43,7 +43,7 @@ END:VCALENDAR`),
             },
             calendarPart: { [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
             personalPart: { [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
-            attendeesPart: { [CLEAR]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
+            attendeesPart: { [CLEAR_TEXT]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
         });
     });
 
@@ -121,7 +121,7 @@ END:VEVENT
 END:VCALENDAR`),
                 [ENCRYPTED_AND_SIGNED]: undefined,
             },
-            attendeesPart: { [CLEAR]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
+            attendeesPart: { [CLEAR_TEXT]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
         });
     });
 });

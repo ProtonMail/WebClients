@@ -1,7 +1,8 @@
 export enum CALENDAR_CARD_TYPE {
-    ENCRYPTED_AND_SIGNED = 3,
+    CLEAR_TEXT = 0,
+    ENCRYPTED = 1,
     SIGNED = 2,
-    CLEAR = 1,
+    ENCRYPTED_AND_SIGNED = 3,
 }
 
 export enum CALENDAR_PERMISSIONS {

@@ -8,7 +8,7 @@ import { AttendeeClearPartResult, AttendeePart } from './interface';
 import { serialize } from './vcal';
 import { dateTimeToProperty } from './vcalConverter';
 
-const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR } = CALENDAR_CARD_TYPE;
+const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
 export const SHARED_SIGNED_FIELDS = [
     'uid',
@@ -96,17 +96,17 @@ export const getUserPart = (veventProperties: VcalVeventComponent) => {
 export const getAttendeesPart = (
     veventProperties: VcalVeventComponent
 ): {
-    [CLEAR]: AttendeeClearPartResult[];
+    [CLEAR_TEXT]: AttendeeClearPartResult[];
     [ENCRYPTED_AND_SIGNED]: Partial<VcalVeventComponent>;
 } => {
-    const formattedAttendees: { [CLEAR]: AttendeeClearPartResult[]; attendee: AttendeePart[] } = {
-        [CLEAR]: [],
+    const formattedAttendees: { [CLEAR_TEXT]: AttendeeClearPartResult[]; attendee: AttendeePart[] } = {
+        [CLEAR_TEXT]: [],
         attendee: [],
     };
     if (Array.isArray(veventProperties.attendee)) {
         for (const attendee of veventProperties.attendee) {
             const { clear, attendee: newAttendee } = fromInternalAttendee(attendee);
-            formattedAttendees[CLEAR].push(clear);
+            formattedAttendees[CLEAR_TEXT].push(clear);
             formattedAttendees.attendee.push(newAttendee);
         }
     }
@@ -114,7 +114,7 @@ export const getAttendeesPart = (
     if (!formattedAttendees.attendee.length) {
         return {
             [ENCRYPTED_AND_SIGNED]: {},
-            [CLEAR]: [],
+            [CLEAR_TEXT]: [],
         };
     }
 
@@ -125,7 +125,7 @@ export const getAttendeesPart = (
 
     return {
         [ENCRYPTED_AND_SIGNED]: result,
-        [CLEAR]: formattedAttendees[CLEAR],
+        [CLEAR_TEXT]: formattedAttendees[CLEAR_TEXT],
     };
 };
 
@@ -185,7 +185,7 @@ export const getVeventParts = ({ components, ...properties }: VcalVeventComponen
             // Nothing to sign for now
             [SIGNED]: undefined,
             [ENCRYPTED_AND_SIGNED]: toResultOptimized(attendeesPart[ENCRYPTED_AND_SIGNED]),
-            [CLEAR]: attendeesPart[CLEAR],
+            [CLEAR_TEXT]: attendeesPart[CLEAR_TEXT],
         },
     };
 };

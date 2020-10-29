@@ -1,15 +1,13 @@
-import { ATTENDEE_STATUS_API } from '../../calendar/constants';
-
-export type CalendarEventDataType = 1 | 2 | 3;
+import { ATTENDEE_STATUS_API, CALENDAR_CARD_TYPE } from '../../calendar/constants';
 
 export interface CalendarEventData {
-    Type: CalendarEventDataType;
+    Type: CALENDAR_CARD_TYPE;
     Data: string;
-    Signature: string;
+    Signature: string | null;
     Author: string;
 }
 
-export type CalendarEventDataMap = { [key in CalendarEventDataType]?: CalendarEventData };
+export type CalendarEventDataMap = { [key in CALENDAR_CARD_TYPE]?: CalendarEventData };
 
 export interface CalendarPersonalEventData extends CalendarEventData {
     MemberID: string;

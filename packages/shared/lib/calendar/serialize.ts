@@ -9,7 +9,7 @@ import { AttendeeClearPartResult, EncryptPartResult, SignPartResult } from './in
 import isTruthy from '../helpers/isTruthy';
 import { getIsEventComponent } from './vcalHelper';
 
-const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR } = CALENDAR_CARD_TYPE;
+const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
 // Wrong typings in openpgp.d.ts...
 const getArmoredSignatureString = (signature: OpenPGPSignature) => (signature.armor() as unknown) as string;
@@ -174,6 +174,6 @@ export const createCalendarEvent = async ({
         calendarSessionKey: encryptedCalendarSessionKey,
         personalSignedPart,
         attendeesEncryptedPart,
-        attendeesClearPart: attendeesPart[CLEAR],
+        attendeesClearPart: attendeesPart[CLEAR_TEXT],
     });
 };

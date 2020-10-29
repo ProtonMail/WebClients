@@ -5,3 +5,5 @@ export * from './Member';
 export * from './Key';
 export * from './Passphrase';
 export * from './Invite';
+export * from './Decrypt';
+export * from './VcalModel';

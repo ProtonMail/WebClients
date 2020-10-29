@@ -1,6 +1,7 @@
 /**
  * Build an array with a numeric range, specified by a start, an end, and a step
  */
+
 export const range = (start = 0, end = 1, step = 1) => {
     const result = [];
     for (let index = start; index < end; index += step) {

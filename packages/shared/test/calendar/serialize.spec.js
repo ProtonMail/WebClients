@@ -5,6 +5,7 @@ import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
 import { unwrap, wrap } from '../../lib/calendar/helper';
 import { toCRLF } from './veventHelper.spec';
 import { ATTENDEE_STATUS_API } from '../../lib/calendar/constants';
+import { EVENT_VERIFICATION_STATUS } from '../../lib/calendar/interface';
 
 const veventComponent = {
     component: 'vevent',
@@ -162,12 +163,18 @@ describe('calendar encryption', () => {
         });
 
         const [sharedSessionKey, calendarSessionKey] = await readSessionKeys(data, primaryCalendarKey);
-        const otherVeventComponent = await readCalendarEvent(
-            transformToExternal(data, publicAddressKey, sharedSessionKey, calendarSessionKey)
-        );
-        const { components } = await readPersonalPart(data.PersonalEventContent, publicAddressKey);
+        const {
+            veventComponent: otherVeventComponent,
+            verificationStatus: verificationStatusOther,
+        } = await readCalendarEvent(transformToExternal(data, publicAddressKey, sharedSessionKey, calendarSessionKey));
+        const {
+            veventComponent: { components },
+            verificationStatus: verificationStatusPersonal,
+        } = await readPersonalPart(data.PersonalEventContent, publicAddressKey);
 
         expect({ ...otherVeventComponent, components }).toEqual(veventComponent);
+        expect(verificationStatusOther).toEqual(EVENT_VERIFICATION_STATUS.SUCCESSFUL);
+        expect(verificationStatusPersonal).toEqual(EVENT_VERIFICATION_STATUS.SUCCESSFUL);
     });
 });
 
