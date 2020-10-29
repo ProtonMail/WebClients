@@ -319,13 +319,17 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
 
     const cancel = () => {
         paused = false;
-        abortController.abort();
+        if (abortController) {
+            abortController.abort();
+        }
         onError?.(new TransferCancel(id));
     };
 
     const pause = () => {
         paused = true;
-        abortController.abort();
+        if (abortController) {
+            abortController.abort();
+        }
     };
 
     const resume = () => {
