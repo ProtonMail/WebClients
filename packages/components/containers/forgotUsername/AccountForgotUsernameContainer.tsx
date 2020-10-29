@@ -12,9 +12,10 @@ import SignupSubmitRow from '../signup/SignupSubmitRow';
 
 interface Props {
     Layout: FunctionComponent<AccountLayoutProps>;
+    onBack?: () => void;
 }
 
-const AccountForgotUsernameContainer = ({ Layout }: Props) => {
+const AccountForgotUsernameContainer = ({ Layout, onBack }: Props) => {
     const history = useHistory();
     const api = useApi();
     const [loading, withLoading] = useLoading();
@@ -39,7 +40,7 @@ const AccountForgotUsernameContainer = ({ Layout }: Props) => {
             title={c('Title').t`Find email or username`}
             subtitle={c('Info')
                 .t`Enter your recovery email address or recovery phone number and we will send you your username or email address.`}
-            left={<BackButton onClick={handleBack} />}
+            left={<BackButton onClick={onBack || handleBack} />}
         >
             <form
                 className="signup-form"

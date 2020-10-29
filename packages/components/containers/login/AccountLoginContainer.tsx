@@ -38,9 +38,10 @@ interface InternalAddressGeneration {
 interface Props extends Omit<UseLoginProps, 'api'> {
     Layout: FunctionComponent<AccountPublicLayoutProps>;
     toApp?: APP_NAMES;
+    onBack?: () => void;
 }
 
-const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }: Props) => {
+const AccountLoginContainer = ({ onLogin, onBack, ignoreUnlock = false, Layout, toApp }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const [loginFlow] = useState<LoginFlows>(() => {
@@ -152,6 +153,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }:
                 subtitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
                 aside={<OneAccountIllustration />}
                 right={null}
+                left={onBack && <BackButton onClick={onBack} />}
             >
                 <AccountLoginForm onSubmit={handleSubmit} state={state} setters={setters} />
                 <div className="mb2 alignright">{c('Info').jt`New to Proton? ${signupLink}`}</div>

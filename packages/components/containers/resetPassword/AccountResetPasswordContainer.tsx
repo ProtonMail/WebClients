@@ -23,10 +23,11 @@ import RequestNewCodeModal from '../api/humanVerification/RequestNewCodeModal';
 
 interface Props {
     onLogin: OnLoginCallback;
+    onBack?: () => void;
     Layout: FunctionComponent<AccountPublicLayoutProps>;
 }
 
-const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
+const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
     const history = useHistory();
     const {
         loading,
@@ -56,7 +57,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout }: Props) => {
             <Layout
                 title={c('Title').t`Enter Proton Account`}
                 subtitle={c('Info').t`Enter the Proton Account that you would like to reset the password for.`}
-                left={<BackButton onClick={handleBack} />}
+                left={<BackButton onClick={onBack || handleBack} />}
             >
                 <form
                     className="signup-form"
