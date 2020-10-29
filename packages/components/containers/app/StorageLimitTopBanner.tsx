@@ -33,10 +33,12 @@ const StorageLimitTopBanner = () => {
         }
     }, [ignoreStorageLimit]);
 
-    const upgradeLink = (
+    const upgradeLink = user.canPay ? (
         <AppLink key="storage-link" className="color-currentColor" {...paymentLinkProps}>
             {c('Link').t`Upgrade account`}
         </AppLink>
+    ) : (
+        ''
     );
     const freeUpMessage = user.canPay
         ? c('Info').t`Free up some space or add more storage space.`
