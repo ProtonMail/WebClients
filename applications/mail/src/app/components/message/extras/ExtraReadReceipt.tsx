@@ -28,7 +28,7 @@ const ExtraReadReceipt = ({ message }: Props) => {
     };
 
     return (
-        <div className="bg-global-attention rounded bordered-container p0-5 mb0-5 flex flex-nowrap">
+        <div className="bg-global-attention color-black rounded bordered-container p0-5 mb0-5 flex flex-nowrap">
             <Icon name="notifications-enabled" className="flex-item-noshrink mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info').t`The sender has requested a read receipt.`}</span>
             <span className="flex-item-noshrink flex">

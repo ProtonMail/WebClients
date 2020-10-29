@@ -148,7 +148,7 @@ const ExtraPinKey = ({ message, onTrustSigningKey, onTrustAttachedKey }: Props) 
         !senderAddress ||
         (isPinUnseen && !contactID) ||
         !bePinnedPublicKey;
-    const bannerColorClassName = isPinUnseen ? 'bg-global-attention' : 'bg-white-dm';
+    const bannerColorClassName = isPinUnseen ? 'bg-global-attention color-black' : 'bg-white-dm';
 
     if (promptKeyPinningType === undefined) {
         return null;
@@ -190,7 +190,7 @@ const ExtraPinKey = ({ message, onTrustSigningKey, onTrustAttachedKey }: Props) 
                     <span className="mr0-5">{getBannerMessage(promptKeyPinningType)}</span>
                     {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
                         <InlineLinkButton
-                            className="underline"
+                            className="color-currentColor underline"
                             disabled={loadingDisablePromptPin}
                             onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
                         >
