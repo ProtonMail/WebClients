@@ -89,8 +89,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             onLogin(session);
             return true;
         }
+        setActiveSessions(sessions);
         history.replace(SSO_PATHS.SWITCH);
-        setActiveSessions(activeSessions);
         return false;
     };
 
