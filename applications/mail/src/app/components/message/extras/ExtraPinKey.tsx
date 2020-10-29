@@ -197,7 +197,7 @@ const ExtraPinKey = ({ message, onTrustSigningKey, onTrustAttachedKey }: Props) 
                             {c('Action').t`Never show`}
                         </InlineLinkButton>
                     ) : (
-                        <LearnMore url="https://protonmail.com/support/knowledge-base/address-verification/" />
+                        <LearnMore className="color-currentColor" url="https://protonmail.com/support/knowledge-base/address-verification/" />
                     )}
                 </div>
             </div>
