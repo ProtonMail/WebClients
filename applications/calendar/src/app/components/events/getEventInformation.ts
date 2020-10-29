@@ -23,7 +23,7 @@ const getEventInformation = (
     const eventTitleSafe = getDisplayTitle(tmpData?.title || model.title);
     const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
     const isRecurring = model.frequencyModel.type !== FREQUENCY.ONCE;
-    const isSingleEdit = !!eventReadResult?.result?.[0]['recurrence-id'];
+    const isSingleEdit = !!eventReadResult?.result?.[0]?.['recurrence-id'];
     const { userAttendee, userAddress } = findUserAttendeeModel(model.attendees, addresses);
 
     return {
