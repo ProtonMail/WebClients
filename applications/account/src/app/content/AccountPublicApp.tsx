@@ -8,8 +8,8 @@ import {
     ModalsChildren,
     useApi,
     ProtonLoginCallback,
-    useNotifications,
     StandardLoadError,
+    useErrorHandler,
 } from 'react-components';
 import {
     getActiveSessions,
@@ -18,8 +18,7 @@ import {
 } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { getLocalIDFromPathname } from 'proton-shared/lib/authentication/pathnameHelper';
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
-import { getIs401Error, getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { traceError } from 'proton-shared/lib/helpers/sentry';
+import { getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
 interface Props {
     locales?: TtagLocaleMap;
@@ -33,7 +32,7 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
     const [error, setError] = useState(false);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const { createNotification } = useNotifications();
+    const errorHandler = useErrorHandler();
 
     useEffect(() => {
         const runGetSessions = async () => {
@@ -71,9 +70,7 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
         };
 
         run().catch((e) => {
-            const errorMessage = getApiErrorMessage(e) || 'Unknown error';
-            createNotification({ type: 'error', text: errorMessage });
-            traceError(e);
+            errorHandler(e);
             setError(true);
         });
     }, []);
