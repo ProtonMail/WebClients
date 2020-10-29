@@ -162,11 +162,23 @@ const HeaderMoreDropdown = ({
 
     return (
         <Group className="mr1 mb0-5">
-            <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon relative">
-                <Tooltip title={c('Title').t`Mark as unread`} className="flex increase-surface-click">
-                    <Icon name="unread" alt={c('Title').t`Mark as unread`} />
-                </Tooltip>
-            </ButtonGroup>
+            {isSpam ? (
+                <ButtonGroup
+                    disabled={!messageLoaded}
+                    onClick={handleMove(INBOX, SPAM)}
+                    className="pm-button--for-icon relative"
+                >
+                    <Tooltip title={c('Title').t`Move to inbox (not spam)`} className="flex increase-surface-click">
+                        <Icon name="nospam" alt={c('Title').t`Move to inbox (not spam)`} />
+                    </Tooltip>
+                </ButtonGroup>
+            ) : (
+                <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon relative">
+                    <Tooltip title={c('Title').t`Mark as unread`} className="flex increase-surface-click">
+                        <Icon name="unread" alt={c('Title').t`Mark as unread`} />
+                    </Tooltip>
+                </ButtonGroup>
+            )}
             {isInTrash ? (
                 <ButtonGroup
                     disabled={!messageLoaded}
@@ -230,12 +242,10 @@ const HeaderMoreDropdown = ({
                                 </DropdownMenuButton>
                             )}
                             {isSpam ? (
-                                <DropdownMenuButton
-                                    className="alignleft flex flex-nowrap"
-                                    onClick={handleMove(INBOX, SPAM)}
-                                >
-                                    <Icon name="nospam" className="mr0-5 mt0-25" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Not spam`}</span>
+                                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleUnread}>
+                                    <Icon name="unread" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                        .t`Mark as unread`}</span>
                                 </DropdownMenuButton>
                             ) : (
                                 <DropdownMenuButton
@@ -243,7 +253,7 @@ const HeaderMoreDropdown = ({
                                     onClick={handleMove(SPAM, fromFolderID)}
                                 >
                                     <Icon name="spam" className="mr0-5 mt0-25" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Mark as spam`}</span>
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Move to spam`}</span>
                                 </DropdownMenuButton>
                             )}
                             <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handlePhishing}>

@@ -69,13 +69,27 @@ const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, sel
         <ToolbarButton
             key="spam"
             loading={loading}
-            title={c('Action').t`Move to Spam and add sender to blacklist`}
+            title={c('Action').t`Move to spam`}
             onClick={() => withLoading(handleMove(SPAM))}
             disabled={!selectedIDs.length}
             data-test-id="toolbar:movetospam"
         >
             <Icon className="toolbar-icon mauto" name="spam" />
-            <span className="sr-only">{c('Action').t`Move to Spam and add sender to blacklist`}</span>
+            <span className="sr-only">{c('Action').t`Move to spam`}</span>
+        </ToolbarButton>
+    );
+
+    const nospamButton = (
+        <ToolbarButton
+            key="nospam"
+            loading={loading}
+            title={c('Action').t`Move to inbox (not spam)`}
+            onClick={() => withLoading(handleMove(INBOX))}
+            disabled={!selectedIDs.length}
+            data-test-id="toolbar:movetonospam"
+        >
+            <Icon className="toolbar-icon mauto" name="nospam" />
+            <span className="sr-only">{c('Action').t`Move to inbox (not spam)`}</span>
         </ToolbarButton>
     );
 
@@ -115,7 +129,7 @@ const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, sel
     } else if (labelID === ARCHIVE) {
         buttons = [inboxButton, trashButton, spamButton];
     } else if (labelID === SPAM) {
-        buttons = [inboxButton, trashButton, deleteButton];
+        buttons = [nospamButton, trashButton, deleteButton];
     } else if (labelID === TRASH) {
         buttons = [inboxButton, archiveButton, deleteButton];
     } else if (labelID === ALL_MAIL) {
