@@ -25,7 +25,14 @@ import {
 } from '../../interfaces/file';
 import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
-import { TransferMeta, TransferState, DownloadInfo, PreUploadData, UploadInfo } from '../../interfaces/transfer';
+import {
+    TransferMeta,
+    TransferState,
+    DownloadInfo,
+    PreUploadData,
+    UploadInfo,
+    TransferCancel,
+} from '../../interfaces/transfer';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../../components/downloads/download';
 import { streamToBuffer } from '../../utils/stream';
@@ -39,7 +46,7 @@ import { FILE_CHUNK_SIZE } from '../../constants';
 import useQueuedFunction from '../util/useQueuedFunction';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { isFile } from '../../utils/file';
-import { getMetaForTransfer } from '../../utils/transfer';
+import { getMetaForTransfer, isTransferCancelError } from '../../utils/transfer';
 import useEvents from './useEvents';
 
 const HASH_CHECK_AMOUNT = 10;
@@ -145,6 +152,7 @@ function useFiles() {
         noNameCheck = false
     ) => {
         const lowercaseName = file.name.toLowerCase();
+        let canceled = false;
         // Queue for files with same name, to not duplicate names
         // Another queue for uploads in general so that they don't timeout
         const setupPromise = queuedFunction(
@@ -184,6 +192,10 @@ function useFiles() {
                     throw new Error('Could not generate ContentKeyPacket');
                 }
 
+                if (canceled) {
+                    throw new TransferCancel(file.name);
+                }
+
                 const { filename, hash: Hash } = noNameCheck
                     ? await generateNameHash()
                     : await findAvailableName(shareId, ParentLinkID, file.name);
@@ -191,6 +203,10 @@ function useFiles() {
                 const Name = await encryptName(filename, parentKeys.privateKey.toPublic(), addressKeyInfo.privateKey);
 
                 const MIMEType = lookup(filename) || 'application/octet-stream';
+
+                if (canceled) {
+                    throw new TransferCancel(filename);
+                }
 
                 const { File } = await debouncedRequest<CreateFileResult>(
                     queryCreateFile(shareId, {
@@ -327,8 +343,15 @@ function useFiles() {
                     5
                 ),
                 onError: async () => {
-                    const { File, ParentLinkID } = await setupPromise;
-                    await deleteChildrenLinks(shareId, ParentLinkID, [File.ID]);
+                    try {
+                        canceled = true;
+                        const { File, ParentLinkID } = await setupPromise;
+                        await deleteChildrenLinks(shareId, ParentLinkID, [File.ID]);
+                    } catch (err) {
+                        if (!isTransferCancelError(err)) {
+                            throw err;
+                        }
+                    }
                 },
             }
         );
