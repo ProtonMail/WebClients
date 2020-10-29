@@ -48,7 +48,7 @@ const StorageLimitTopBanner = () => {
         );
     }
 
-    if (!ignoreStorageLimit && spacePercentage >= 90 && spacePercentage < 100) {
+    if (!ignoreStorageLimit && spacePercentage >= 80 && spacePercentage < 100) {
         return (
             <TopBanner className="bg-global-attention color-global-grey" onClose={() => setIgnoreStorageLimit(true)}>{c(
                 'Info'
