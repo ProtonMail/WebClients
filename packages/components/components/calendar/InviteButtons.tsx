@@ -5,8 +5,9 @@ import { PartstatActions } from 'proton-shared/lib/interfaces/calendar';
 import { c } from 'ttag';
 import React from 'react';
 import { useLoadingMap } from '../../hooks';
-import { SmallButton } from '../button';
-import { DropdownActions } from '../dropdown';
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../dropdown';
+import { ButtonGroup, Group } from '../button';
+import { classnames } from '../../helpers';
 
 interface Props {
     actions: PartstatActions;
@@ -25,29 +26,38 @@ const InviteButtons = ({ actions, partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION, 
     const { accept: loadingAccept, tentative: loadingTentative, decline: loadingDecline } = loadingMap;
     const loadingAnswer = loadingAccept || loadingTentative || loadingDecline;
 
+    const acceptText = c('Action').t`Yes, I'll attend`;
+    const tentativeText = c('Action').t`Maybe I'll attend`;
+    const declineText = c('Action').t`No, I won't attend`;
+
     if (partstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION) {
         return (
-            <div className={className}>
-                <SmallButton
+            <Group className={className}>
+                <ButtonGroup
                     onClick={onAccept}
                     disabled={loadingAnswer || disabled}
                     loading={loadingAccept}
-                    className="mr0-5"
+                    title={acceptText}
                 >
                     {c('Action').t`Yes`}
-                </SmallButton>
-                <SmallButton
+                </ButtonGroup>
+                <ButtonGroup
                     onClick={onTentative}
                     disabled={loadingAnswer || disabled}
                     loading={loadingTentative}
-                    className="mr0-5"
+                    title={tentativeText}
                 >
                     {c('Action').t`Maybe`}
-                </SmallButton>
-                <SmallButton onClick={onDecline} disabled={loadingAnswer || disabled} loading={loadingDecline}>
+                </ButtonGroup>
+                <ButtonGroup
+                    onClick={onDecline}
+                    disabled={loadingAnswer || disabled}
+                    loading={loadingDecline}
+                    title={declineText}
+                >
                     {c('Action').t`No`}
-                </SmallButton>
-            </div>
+                </ButtonGroup>
+            </Group>
         );
     }
     const accepted = partstat === ICAL_ATTENDEE_STATUS.ACCEPTED;
@@ -55,31 +65,43 @@ const InviteButtons = ({ actions, partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION, 
     const declined = partstat === ICAL_ATTENDEE_STATUS.DECLINED;
     const list = [
         {
-            text: c('Action').t`Yes, I'm attending`,
+            text: acceptText,
             onClick: accepted ? noop : onAccept,
         },
         {
-            text: c('Action').t`Maybe I'm attending`,
+            text: tentativeText,
             onClick: tentative ? noop : onTentative,
         },
         {
-            text: c('Action').t`No, I'm not attending`,
+            text: declineText,
             onClick: declined ? noop : onDecline,
         },
     ];
     const answerIndex = [accepted, tentative, declined].findIndex((bool) => bool === true);
     const orderedList = move(list, answerIndex, 0);
-    list.unshift();
+    // list.unshift();
+    const [{ text }, ...restList] = orderedList;
+
     return (
-        <div className={className}>
-            <DropdownActions
-                className="pm-button--small"
-                key="actions"
-                list={orderedList}
-                loading={loadingAnswer}
-                disabled={disabled}
-            />
-        </div>
+        <SimpleDropdown
+            originalPlacement="top-right"
+            disabled={disabled}
+            loading={loadingAnswer}
+            className={classnames(['pm-button', className])}
+            title={c('Title').t`Change my answer`}
+            content={text}
+            data-test-id="dropdown:open"
+        >
+            <DropdownMenu>
+                {restList.map(({ text, ...restProps }, index) => {
+                    return (
+                        <DropdownMenuButton className="alignleft" key={index} {...restProps}>
+                            {text}
+                        </DropdownMenuButton>
+                    );
+                })}
+            </DropdownMenu>
+        </SimpleDropdown>
     );
 };
 

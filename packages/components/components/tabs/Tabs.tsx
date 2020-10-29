@@ -1,6 +1,7 @@
 import React from 'react';
 import { useIndicator } from './useIndicator';
 import { Tab } from './index.d';
+import { classnames } from '../../helpers';
 
 const toKey = (index: number, prefix = '') => `${prefix}${index}`;
 
@@ -9,9 +10,10 @@ interface Props {
     children?: Tab[];
     value: number;
     onChange: (index: number) => void;
+    stickyTabs?: boolean;
 }
 
-export const Tabs = ({ value, onChange, tabs, children }: Props) => {
+export const Tabs = ({ value, onChange, tabs, children, stickyTabs }: Props) => {
     const key = toKey(value, 'key_');
     const label = toKey(value, 'label_');
     const tabList = tabs || children || [];
@@ -25,7 +27,7 @@ export const Tabs = ({ value, onChange, tabs, children }: Props) => {
 
     return (
         <div className="tabs">
-            <nav className="tabs-container">
+            <nav className={classnames(['tabs-container', stickyTabs && 'sticky-top'])}>
                 <ul
                     className="tabs-list"
                     role="tablist"
