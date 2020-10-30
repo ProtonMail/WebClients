@@ -6,7 +6,7 @@ export const FILTER_VERSION = 2;
 
 export const TYPES = [
     {
-        label: c('Filter modal type').t`Select ...`,
+        label: c('Filter modal type').t`Select…`,
         value: ConditionType.SELECT,
     },
     {

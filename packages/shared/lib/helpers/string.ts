@@ -73,7 +73,7 @@ export const uncapitalize = (str: any) => {
  * Given a maximum number of characters to display,
  * truncate a string by adding omission if too long
  */
-export const truncate = (str = '', charsToDisplay = 50, omission = '...') => {
+export const truncate = (str = '', charsToDisplay = 50, omission = '…') => {
     if (str.length === 0) {
         return str;
     }
@@ -87,7 +87,7 @@ export const truncate = (str = '', charsToDisplay = 50, omission = '...') => {
  * Given a maximum number of characters to capture from a string at the start and end of it,
  * truncate the string by adding omission if too long
  */
-export const truncateMore = ({ string = '', charsToDisplayStart = 0, charsToDisplayEnd = 0, omission = '...' }) => {
+export const truncateMore = ({ string = '', charsToDisplayStart = 0, charsToDisplayEnd = 0, omission = '…' }) => {
     if (string.length === 0) {
         return string;
     }

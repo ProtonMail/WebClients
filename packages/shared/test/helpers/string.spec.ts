@@ -9,7 +9,7 @@ import {
 
 describe('string', () => {
     describe('getRandomString', () => {
-        // We mock the random generator so the test itself...
+        // We mock the random generator so the test itself…
         it('should generate a random string of length 16', () => {
             const result = getRandomString(16);
             expect(result).toEqual('ABCDEFGHIJKLMNOP');
@@ -35,8 +35,8 @@ describe('string', () => {
             expect(cases.map(capitalize)).toEqual(expected);
         });
         it('should capitalize strings as expected', () => {
-            const cases = ['', 'n', 'A', 'NY', 'name', 'once upon a time...'];
-            const expected = ['', 'N', 'A', 'NY', 'Name', 'Once upon a time...'];
+            const cases = ['', 'n', 'A', 'NY', 'name', 'once upon a time…'];
+            const expected = ['', 'N', 'A', 'NY', 'Name', 'Once upon a time…'];
             expect(cases.map(capitalize)).toEqual(expected);
         });
     });
@@ -67,12 +67,12 @@ describe('string', () => {
         it('should truncate', () => {
             expect(truncate('', 1)).toEqual('');
             expect(truncate('a', 1)).toEqual('a');
-            expect(truncate('ab', 1)).toEqual('...');
-            expect(truncate('abc', 1)).toEqual('...');
+            expect(truncate('ab', 1)).toEqual('…');
+            expect(truncate('abc', 1)).toEqual('…');
             expect(truncate('abc', 3)).toEqual('abc');
-            expect(truncate('abcd', 3)).toEqual('...');
+            expect(truncate('abcd', 3)).toEqual('ab…');
             expect(truncate('abcd', 4)).toEqual('abcd');
-            expect(truncate('abcde', 4)).toEqual('a...');
+            expect(truncate('abcde', 4)).toEqual('abc…');
             expect(truncate('abcde', 8)).toEqual('abcde');
         });
     });
@@ -83,17 +83,17 @@ describe('string', () => {
             expect(truncateMore({ string: 'a', charsToDisplayStart: 1 })).toEqual('a');
             expect(truncateMore({ string: 'ab', charsToDisplayStart: 1 })).toEqual('ab');
             expect(truncateMore({ string: 'abc', charsToDisplayStart: 4 })).toEqual('abc');
-            expect(truncateMore({ string: 'abcd', charsToDisplayStart: 1 })).toEqual('abcd');
-            expect(truncateMore({ string: 'abcde', charsToDisplayStart: 1 })).toEqual('a...');
+            expect(truncateMore({ string: 'abcd', charsToDisplayStart: 1 })).toEqual('a…');
+            expect(truncateMore({ string: 'abcde', charsToDisplayStart: 1 })).toEqual('a…');
             expect(truncateMore({ string: '', charsToDisplayEnd: 1 })).toEqual('');
             expect(truncateMore({ string: 'a', charsToDisplayEnd: 1 })).toEqual('a');
             expect(truncateMore({ string: 'ab', charsToDisplayEnd: 1 })).toEqual('ab');
             expect(truncateMore({ string: 'abc', charsToDisplayEnd: 4 })).toEqual('abc');
-            expect(truncateMore({ string: 'abcd', charsToDisplayEnd: 1 })).toEqual('abcd');
-            expect(truncateMore({ string: 'abcde', charsToDisplayEnd: 1 })).toEqual('...e');
+            expect(truncateMore({ string: 'abcd', charsToDisplayEnd: 1 })).toEqual('…d');
+            expect(truncateMore({ string: 'abcde', charsToDisplayEnd: 1 })).toEqual('…e');
             expect(truncateMore({ string: '12345', charsToDisplayStart: 2, charsToDisplayEnd: 2 })).toEqual('12345');
             expect(truncateMore({ string: '123456789', charsToDisplayStart: 2, charsToDisplayEnd: 3 })).toEqual(
-                '12...789'
+                '12…789'
             );
         });
     });
