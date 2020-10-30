@@ -26,6 +26,7 @@ const useWelcomeFlags = (): [WelcomeFlagsState, () => void] => {
         };
     });
     const setDone = useCallback(() => {
+        cache.delete(WELCOME_FLAG_KEY);
         setState({});
     }, []);
     return [state, setDone];
