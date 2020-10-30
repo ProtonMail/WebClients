@@ -33,7 +33,7 @@ const DriveContainer = () => {
     );
 
     return (
-        <UploadDragDrop>
+        <UploadDragDrop className="h100">
             <PrivateAppContainer header={header} sidebar={sidebar}>
                 <AppErrorBoundary>
                     <Switch>
