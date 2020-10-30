@@ -38,7 +38,6 @@ import {
     SERVICES,
     SERVICES_KEYS,
     SignupModel,
-    SignupPlan,
     SubscriptionCheckResult,
 } from './interfaces';
 import { DEFAULT_CHECK_RESULT, DEFAULT_SIGNUP_MODEL, SIGNUP_STEPS } from './constants';
@@ -98,7 +97,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
     const api = useApi();
     const { createModal } = useModals();
     const { CLIENT_TYPE } = useConfig();
-    const [plans, loadingPlans]: [SignupPlan[], boolean, Error] = usePlans();
+    const [plans, loadingPlans] = usePlans();
     const [loading, withLoading] = useLoading();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResult>(DEFAULT_CHECK_RESULT);
 
@@ -297,7 +296,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
     useEffect(() => {
         // Pre-select plan
         if (Array.isArray(plans) && preSelectedPlan) {
-            const plan = plans.find(({ Name }: SignupPlan) => Name === preSelectedPlan);
+            const plan = plans.find(({ Name }) => Name === preSelectedPlan);
             if (plan) {
                 const planIDs = { [plan.ID]: 1 };
                 setModelDiff({ planIDs });
@@ -530,7 +529,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
                 setModelDiff({ planIDs: {} });
                 return handleFinalizeSignup({ planIDs: {} });
             }
-            const plan = plans.find(({ ID }: SignupPlan) => ID === planID);
+            const plan = plans?.find(({ ID }) => ID === planID);
             if (!plan) {
                 throw new Error('Unknown plan');
             }

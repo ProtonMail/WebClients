@@ -58,24 +58,6 @@ export interface SignupErrors {
     verificationCode?: string;
 }
 
-export interface SignupPlanPricing {
-    [cycle: number]: number;
-}
-
-export interface SignupPlan {
-    ID: string;
-    Name: string;
-    Type: number;
-    Title: string;
-    Currency: string;
-    Amount: number;
-    Quantity: number;
-    Cycle: number;
-    Services: number;
-    Features: number;
-    Pricing: SignupPlanPricing;
-}
-
 export interface SignupPayPal {
     isReady: boolean;
     loadingToken: boolean;

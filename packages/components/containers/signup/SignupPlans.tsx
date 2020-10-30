@@ -1,15 +1,16 @@
 import React from 'react';
 import { c } from 'ttag';
+import { Plan } from 'proton-shared/lib/interfaces';
 
 import { MailSubscriptionTable, CycleSelector, CurrencySelector } from '../payments';
-import { SignupModel, SignupPlan } from './interfaces';
+import { SignupModel } from './interfaces';
 
 interface Props {
     model: SignupModel;
     onChange: (model: SignupModel) => void;
     onSelectPlan: (planID: string) => void;
     loading: boolean;
-    plans?: SignupPlan[];
+    plans?: Plan[];
     planNameSelected?: string;
 }
 

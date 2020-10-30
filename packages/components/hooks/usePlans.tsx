@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { queryPlans } from 'proton-shared/lib/api/payments';
+import { Api, Plan } from 'proton-shared/lib/interfaces';
 
 import useCachedModelResult from './useCachedModelResult';
 import useApi from './useApi';
@@ -7,13 +8,13 @@ import useCache from './useCache';
 
 const KEY = 'plans';
 
-const getPlans = (api, Currency) => api(queryPlans({ Currency })).then(({ Plans }) => Plans);
+const getPlans = (api: Api, Currency?: string) =>
+    api<{ Plans: Plan[] }>(queryPlans({ Currency })).then(({ Plans }) => Plans);
 
 /**
  * Requests available plans information
- * @param {*=} currency Currency to use for the request, if empty - it's selected based on IP
  */
-const usePlans = (currency) => {
+const usePlans = (currency?: string): [Plan[] | undefined, boolean, Error] => {
     const api = useApi();
     const cache = useCache();
     const miss = useCallback(() => getPlans(api, currency), [api, currency]);

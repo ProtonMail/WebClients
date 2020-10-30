@@ -1,10 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { Plan } from 'proton-shared/lib/interfaces';
 
 import { Alert } from '../../components';
 import { SubscriptionCheckout, Payment } from '../payments';
-import { SignupModel, SignupPlan, SignupPayPal, SubscriptionCheckResult } from './interfaces';
+import { SignupModel, SignupPayPal, SubscriptionCheckResult } from './interfaces';
 import SignupCheckoutButton from './SignupCheckoutButton';
 
 interface Props {
@@ -20,7 +21,7 @@ interface Props {
     errors: any;
     canPay: boolean;
     loading: boolean;
-    plans: SignupPlan[];
+    plans?: Plan[];
     onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
