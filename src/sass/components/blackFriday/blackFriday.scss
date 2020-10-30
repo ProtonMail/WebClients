@@ -306,11 +306,18 @@ $price-info-text-size: 1.5em;
     > li {
         margin-bottom: .5em;
     }
+    .blackFridayOffer-services-info {
+        text-decoration: none;
+        &::after {
+            content: '';
+            display: block;
+        }
+    }
     .blackFridayOffer-services-protonDrive {
         position: relative;
     }
     .blackFridayOffer-services-protonDrive-productName {
-        display: block;
+        display: inline-block;
         font-weight: bold;
     }
     .blackFridayOffer-services-protonDrive-free {
