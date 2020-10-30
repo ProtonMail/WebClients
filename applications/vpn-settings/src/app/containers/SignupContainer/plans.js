@@ -147,7 +147,7 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     maxConnections
                 ),
                 c('Plan Feature').t`Servers in ${countries.all.length} countries`,
-                c('Plan Feature').t`Highest speed (10Gbps)`,
+                c('Plan Feature').t`Highest speed (up to 10Gbps)`,
                 c('Plan Feature').t`No logs/No ads`,
                 <>
                     <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
