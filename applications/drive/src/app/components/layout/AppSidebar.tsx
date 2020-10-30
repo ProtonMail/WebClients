@@ -27,7 +27,7 @@ const DriveSidebarDescription = () => {
     return (
         <div className="aligncenter opacity-50 mr4 ml4">
             <Icon name="lock-check" size={20} />
-            <div className="small m0">{c('Label').t`Encrypted with Zero Access by Proton`}</div>
+            <div className="small m0">{c('Label').t`Zero-Access Encryption by Proton`}</div>
             <hr className="opacity-30 m0-25" />
         </div>
     );
