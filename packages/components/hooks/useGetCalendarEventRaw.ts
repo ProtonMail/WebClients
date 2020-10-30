@@ -25,6 +25,7 @@ const useGetCalendarEventRaw = () => {
 
     return useCallback(
         async (Event: CalendarEvent) => {
+            const addresses = await getAddresses();
             const getAuthorPublicKeysMap = async () => {
                 const publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]> = {};
                 const authors = unique(
@@ -38,7 +39,6 @@ const useGetCalendarEventRaw = () => {
                         })
                         .filter(isTruthy)
                 );
-                const addresses = await getAddresses();
                 const normalizedAddresses = addresses.map((address) => ({
                     ...address,
                     normalizedEmailAddress: normalizeEmail(address.Email),
@@ -88,6 +88,7 @@ const useGetCalendarEventRaw = () => {
                 publicKeysMap,
                 sharedSessionKey,
                 calendarSessionKey,
+                addresses,
             });
         },
         [getAddresses, getAddressKeys, getCalendarBootstrap, getCalendarKeys]
