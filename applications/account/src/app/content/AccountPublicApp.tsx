@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { loadOpenPGP } from 'proton-shared/lib/openpgp';
-import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
+import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from 'proton-shared/lib/i18n/helper';
 import { loadLocale, loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import {
@@ -19,6 +19,7 @@ import {
 import { getLocalIDFromPathname } from 'proton-shared/lib/authentication/pathnameHelper';
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
 import { getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { getCookie } from 'proton-shared/lib/helpers/cookies';
 
 interface Props {
     locales?: TtagLocaleMap;
@@ -36,8 +37,13 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
 
     useEffect(() => {
         const runGetSessions = async () => {
+            const searchParams = new URLSearchParams(window.location.search);
+            const languageParams = searchParams.get('language');
+            const languageCookie = getCookie('Locale');
             const browserLocale = getBrowserLocale();
-            const localeCode = getClosestLocaleCode(browserLocale, locales);
+            const localeCode =
+                getClosestLocaleMatch(languageParams || languageCookie || '', locales) ||
+                getClosestLocaleCode(browserLocale, locales);
             await Promise.all([
                 loadOpenPGP(),
                 loadLocale(localeCode, locales),
