@@ -39,7 +39,7 @@ const setModalCookie = (key: string, value: string) => {
 const useBlackFriday = () => {
     const api = useApi();
     const { APP_NAME } = useConfig();
-    const [{ isFree, ID }] = useUser();
+    const [{ isFree, isDelinquent, ID }] = useUser();
     const [plans = []] = usePlans();
     const [subscription] = useSubscription();
     const isBlackFridayPeriod = useBlackFridayPeriod();
@@ -122,6 +122,9 @@ const useBlackFriday = () => {
 
     useEffect(() => {
         if (!keys.current.productPayerStateKey) {
+            return;
+        }
+        if (isDelinquent) {
             return;
         }
         if (plans.length && isProductPayerPeriod && isProductPayer(subscription) && productPayerModalState !== '1') {
