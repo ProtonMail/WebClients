@@ -6,7 +6,7 @@ import NewVersionTopBanner from './NewVersionTopBanner';
 const PublicTopBanners = () => {
     return (
         <>
-            <OnlineTopBanner />
+            <OnlineTopBanner isPublic />
             <NewVersionTopBanner />
         </>
     );

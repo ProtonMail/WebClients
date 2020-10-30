@@ -8,7 +8,7 @@ import { updateUsername } from 'proton-shared/lib/api/settings';
 import { generateAddressKey } from 'proton-shared/lib/keys/keys';
 import { Api } from 'proton-shared/lib/interfaces';
 
-import { useNotifications } from '../../hooks';
+import { useErrorHandler } from '../../hooks';
 
 import createKeyHelper from '../keys/addKey/createKeyHelper';
 import handleSetupAddress from '../signup/helpers/handleSetupAddress';
@@ -22,8 +22,8 @@ interface Props {
 const AccountGenerateInternalAddressContainer = ({ onDone, api, keyPassword }: Props) => {
     const [username, setUsername] = useState('');
     const [usernameError, setUsernameError] = useState('');
-    const { createNotification } = useNotifications();
     const [availableDomains, setAvailableDomains] = useState([]);
+    const errorHandler = useErrorHandler();
 
     const handleCreateAddressAndKey = async () => {
         if (!keyPassword) {
@@ -68,8 +68,7 @@ const AccountGenerateInternalAddressContainer = ({ onDone, api, keyPassword }: P
             await handleCreateAddressAndKey();
             await onDone();
         } catch (error) {
-            const errorText = getApiErrorMessage(error) || c('Error').t`Unknown error`;
-            createNotification({ type: 'error', text: errorText });
+            errorHandler(error);
         }
     };
 

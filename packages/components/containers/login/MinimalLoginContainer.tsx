@@ -2,8 +2,7 @@ import React, { FormEvent } from 'react';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { useLoading, useNotifications, useModals, useApi } from '../../hooks';
+import { useLoading, useNotifications, useModals, useApi, useErrorHandler } from '../../hooks';
 import { LinkButton, PrimaryButton, Label } from '../../components';
 
 import AbuseModal from './AbuseModal';
@@ -24,6 +23,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+    const errorHandler = useErrorHandler();
 
     const { state, setters, handleLogin, handleTotp, handleUnlock, handleCancel } = useLogin({
         onLogin,
@@ -42,7 +42,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
         if (e.name === 'TOTPError' || e.name === 'PasswordError') {
             return createNotification({ type: 'error', text: e.message });
         }
-        createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
+        errorHandler(e);
     };
 
     if (form === FORM.LOGIN) {

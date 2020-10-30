@@ -8,13 +8,12 @@ import { destroyOpenPGP, loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { Model } from 'proton-shared/lib/interfaces/Model';
 import { Address, User as tsUser, UserSettings as tsUserSettings } from 'proton-shared/lib/interfaces';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
-import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { traceError } from 'proton-shared/lib/helpers/sentry';
+import { getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
 import { REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT, UNPAID_STATE } from 'proton-shared/lib/constants';
 import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
 
-import { useApi, useCache, useConfig, useNotifications } from '../../hooks';
+import { useApi, useCache, useConfig, useErrorHandler } from '../../hooks';
 
 import { EventManagerProvider, EventModelListener, EventNotices } from '../eventManager';
 import ForceRefreshProvider from '../forceRefresh/Provider';
@@ -65,7 +64,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const cache = useCache();
-    const { createNotification } = useNotifications();
+    const errorHandler = useErrorHandler();
     const onceRef = useRef<{ externalEmailAddress: Address } | undefined>();
     const appRef = useRef<FunctionComponent | null>(null);
     const hasDelinquentBlockRef = useRef(false);
@@ -130,10 +129,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                 if (getIs401Error(e)) {
                     return onLogout();
                 }
-                const errorMessage = getApiErrorMessage(e) || 'Unknown error';
-                createNotification({ type: 'error', text: errorMessage });
-                console.error(e);
-                traceError(e);
+                errorHandler(e);
                 setError(true);
             });
 

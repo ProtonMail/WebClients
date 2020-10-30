@@ -11,11 +11,10 @@ import { getInitial } from 'proton-shared/lib/helpers/string';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
 import { revoke } from 'proton-shared/lib/api/auth';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { LinkButton, Loader, LoaderIcon } from '../../components';
-import { useApi, useLoading, useNotifications } from '../../hooks';
+import { useApi, useErrorHandler, useLoading, useNotifications } from '../../hooks';
 import { OnLoginCallbackArguments } from '../app/interface';
 import { Props as AccountLayoutProps } from '../signup/AccountPublicLayout';
 import { getToAppName } from '../signup/helpers/helper';
@@ -31,6 +30,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
     const history = useHistory();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+    const errorHandler = useErrorHandler();
 
     const [localActiveSessions, setLocalActiveSessions] = useState(activeSessions);
     const [loading, withLoading] = useLoading(!localActiveSessions);
@@ -97,9 +97,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
                 });
                 return;
             }
-            const errorMessage = getApiErrorMessage(e) || 'Unknown error';
-            createNotification({ type: 'error', text: errorMessage });
-            console.error(e);
+            errorHandler(e);
         } finally {
             setLoadingMap((old) => ({ ...old, [localID]: false }));
         }

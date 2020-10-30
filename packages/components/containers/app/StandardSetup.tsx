@@ -45,7 +45,7 @@ const StandardSetup = ({ locales, PrivateApp }: Props) => {
             return replaceUrl(getAppHref('/', APPS.PROTONACCOUNT));
         };
         const handleInactiveSession = (localID?: number) => {
-            return requestFork(APP_NAME, localID);
+            requestFork(APP_NAME, localID);
         };
         return (
             <Switch>

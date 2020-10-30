@@ -71,7 +71,7 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
                 await api(validateEmail(model.recoveryEmail));
                 setRecoveryEmailError('');
             } catch (error) {
-                setRecoveryEmailError(getApiErrorMessage(error));
+                setRecoveryEmailError(getApiErrorMessage(error) || c('Error').t`Can't validate email, try again later`);
                 throw error;
             }
             return onSubmit(payload);

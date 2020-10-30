@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { InvalidForkConsumeError } from 'proton-shared/lib/authentication/error';
 import { consumeFork, getConsumeForkParameters } from 'proton-shared/lib/authentication/sessionForking';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { traceError } from 'proton-shared/lib/helpers/sentry';
 
-import { useApi, useNotifications } from '../../hooks';
+import { useApi, useErrorHandler } from '../../hooks';
 import { ProtonLoginCallback } from './interface';
 import StandardLoadError from './StandardLoadError';
 import { ModalsChildren } from '../modals';
@@ -20,7 +18,7 @@ const SSOForkConsumer = ({ onLogin, onEmptyFork, onInvalidFork }: Props) => {
     const [error, setError] = useState<Error | undefined>();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const { createNotification } = useNotifications();
+    const errorHandler = useErrorHandler();
 
     useEffect(() => {
         const run = async () => {
@@ -44,10 +42,7 @@ const SSOForkConsumer = ({ onLogin, onEmptyFork, onInvalidFork }: Props) => {
         };
 
         run().catch((e) => {
-            const errorMessage = getApiErrorMessage(e) || 'Unknown error';
-            createNotification({ type: 'error', text: errorMessage });
-            traceError(e);
-            console.error(e);
+            errorHandler(e);
             setError(e);
         });
     }, []);

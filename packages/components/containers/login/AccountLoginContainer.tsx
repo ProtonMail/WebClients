@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { APP_NAMES, REQUIRES_INTERNAL_EMAIL_ADDRESS } from 'proton-shared/lib/constants';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
@@ -12,7 +11,7 @@ import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
 import { revoke } from 'proton-shared/lib/api/auth';
 import { removePersistedSession } from 'proton-shared/lib/authentication/persistedSessionStorage';
 
-import { useApi, useModals, useNotifications } from '../../hooks';
+import { useApi, useModals, useNotifications, useErrorHandler } from '../../hooks';
 
 import AbuseModal from './AbuseModal';
 import { Props as AccountPublicLayoutProps } from '../signup/AccountPublicLayout';
@@ -54,6 +53,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }:
             return 'welcome-full';
         }
     });
+    const errorHandler = useErrorHandler();
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -111,7 +111,7 @@ const AccountLoginContainer = ({ onLogin, ignoreUnlock = false, Layout, toApp }:
         if (e.name === 'TOTPError' || e.name === 'PasswordError') {
             return createNotification({ type: 'error', text: e.message });
         }
-        createNotification({ type: 'error', text: getApiErrorMessage(e) || 'Unknown error' });
+        errorHandler(e);
     };
 
     const toAppName = getToAppName(toApp);

@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { c } from 'ttag';
-import { APPS_CONFIGURATION } from 'proton-shared/lib/constants';
 import { traceError } from 'proton-shared/lib/helpers/sentry';
 
-import { InlineLinkButton } from '../../components';
 import { useConfig } from '../../hooks';
-import TopBanner from './TopBanner';
+import NewVersionTopBannerView from './NewVersionTopBannerView';
+import useApiStatus from '../../hooks/useApiStatus';
 
 const EVERY_THIRTY_MINUTES = 30 * 60 * 1000;
 const isDifferent = (a?: string, b?: string) => !!a && !!b && b !== a;
 
 const NewVersionTopBanner = () => {
-    const { VERSION_PATH, COMMIT_RELEASE, APP_NAME } = useConfig();
+    const { VERSION_PATH, COMMIT_RELEASE } = useConfig();
     const [newVersionAvailable, setNewVersionAvailable] = useState(false);
+    const { appVersionBad } = useApiStatus();
 
     const isNewVersionAvailable = async () => {
         try {
@@ -31,23 +30,11 @@ const NewVersionTopBanner = () => {
         return () => clearInterval(intervalID);
     }, []);
 
-    if (!newVersionAvailable) {
+    if (!newVersionAvailable && !appVersionBad) {
         return null;
     }
 
-    const appName = APPS_CONFIGURATION[APP_NAME].name;
-    const reloadTab = () => window.location.reload();
-    const reloadButton = (
-        <InlineLinkButton key="reload-button" className="color-currentColor" onClick={() => reloadTab()}>{c('Action')
-            .t`Refresh the page`}</InlineLinkButton>
-    );
-
-    return (
-        <TopBanner className="bg-pm-blue">
-            {c('Message display when a new app version is available')
-                .jt`A new version of ${appName} is available. ${reloadButton}.`}
-        </TopBanner>
-    );
+    return <NewVersionTopBannerView isError={appVersionBad} />;
 };
 
 export default NewVersionTopBanner;
