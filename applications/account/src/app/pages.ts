@@ -1,6 +1,7 @@
 import { UserModel, Organization } from 'proton-shared/lib/interfaces';
 import { SectionConfig } from 'react-components';
 import { c } from 'ttag';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { getSubscriptionPage } from './containers/SubscriptionContainer';
 import { getAccountPage } from './containers/AccountContainer';
@@ -16,11 +17,12 @@ export const getOverviewPage = () => {
     };
 };
 
-export const getPages = (user: UserModel, organization: Organization): SectionConfig[] => [
-    getOverviewPage(),
-    getAccountPage(user),
-    getSubscriptionPage(user),
-    getGeneralPage(),
-    getSecurityPage(),
-    getOrganizationPage(organization),
-];
+export const getPages = (user: UserModel, organization: Organization): SectionConfig[] =>
+    [
+        getOverviewPage(),
+        getAccountPage(user),
+        user.canPay && getSubscriptionPage(user),
+        getGeneralPage(),
+        getSecurityPage(),
+        user.isAdmin && !user.isSubUser && getOrganizationPage(organization),
+    ].filter(isTruthy);
