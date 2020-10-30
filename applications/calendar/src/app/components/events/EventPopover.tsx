@@ -259,14 +259,14 @@ const EventPopover = ({
 
     return (
         <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
-            <PopoverHeader className="ml0-25 flex-item-noshrink" onClose={onClose}>
+            <PopoverHeader className="flex-item-noshrink" onClose={onClose}>
                 <div className="color-subheader">{dateHeader}</div>
                 {isCancelled && (
                     <Badge type="error" tooltip={c('Calendar invite info').t`This event has been cancelled`}>
                         {c('Title').t`CANCELLED`}
                     </Badge>
                 )}
-                <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut mb0-25" title={eventTitleSafe}>
+                <h1 className="eventpopover-title lh-standard cut mb0-25" title={eventTitleSafe}>
                     {eventTitleSafe}
                 </h1>
                 {verificationStatus === EVENT_VERIFICATION_STATUS.SUCCESSFUL && (

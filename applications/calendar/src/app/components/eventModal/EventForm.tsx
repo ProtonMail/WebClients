@@ -1,4 +1,3 @@
-import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import React, { HTMLAttributes } from 'react';
 import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { FREQUENCY, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
@@ -54,7 +53,6 @@ const EventForm = ({
         start,
         isAllDay,
         isOrganizer,
-        title,
         fullDayNotifications,
         defaultFullDayNotification,
         partDayNotifications,
@@ -95,14 +93,7 @@ const EventForm = ({
                 {...createHandlers({ model, setModel, field: 'title' }).native}
             />
         </IconRow>
-    ) : (
-        <div className="flex flex-nowrap item pm-form--iconLabels">
-            <span title={c('Label').t`Event title`} />
-            <div id={TITLE_INPUT_ID} className="flex-item-fluid biggest mt0 mb1 ellipsis">
-                {getDisplayTitle(title)}
-            </div>
-        </div>
-    );
+    ) : null;
 
     return (
         <div className="mt0-5" {...props}>

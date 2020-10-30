@@ -5,6 +5,7 @@ import React from 'react';
 import { FormModal, PrimaryButton, Button } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import { findUserAttendeeModel } from '../../helpers/attendees';
 
 import validateEventModel from './eventForm/validateEventModel';
@@ -57,6 +58,7 @@ const CreateEventModal = ({
         !isAddressDisabled &&
         !isCancelled &&
         [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
+    const modalTitle = isCreateEvent ? c('Title').t`Create event` : c('Title').t`Edit event`;
 
     // Can't use default close button in FormModal because button type reset resets selects
     const closeButton = (
@@ -93,8 +95,8 @@ const CreateEventModal = ({
 
     return (
         <FormModal
-            displayTitle={false}
-            title={c('Title').t`Create event`}
+            displayTitle={!model.isOrganizer}
+            title={model.isOrganizer ? modalTitle : getDisplayTitle(model.title)}
             loading={loadingAction}
             onSubmit={loadingAction ? noop : handleSubmit}
             submit={submit}
