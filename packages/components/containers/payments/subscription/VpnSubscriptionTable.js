@@ -180,7 +180,7 @@ const VpnSubscriptionTable = ({
             features: [
                 { icon: 'arrow-right', content: c('Feature').t`5 VPN connections` },
                 { icon: 'arrow-right', content: c('Feature').t`Servers in ${vpnCountries.all.length} countries` },
-                { icon: 'arrow-right', content: c('Feature').t`Highest speed (10 Gbps)` },
+                { icon: 'arrow-right', content: c('Feature').t`Highest speed (up to 10 Gbps)` },
                 { icon: 'arrow-right', content: c('Feature').t`No logs/No ads` },
                 {
                     icon: 'arrow-right',
