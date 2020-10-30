@@ -1,6 +1,8 @@
+import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface';
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { getEventStatus } from 'proton-shared/lib/calendar/vcalHelper';
+import { truncate } from 'proton-shared/lib/helpers/string';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { EventModelView } from '../../../interfaces/EventModel';
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';
@@ -34,13 +36,16 @@ export const propertiesToModel = (
     } = component;
 
     const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(component), isAllDay, tzid);
+    const titleString = summary?.value ?? '';
+    const locationString = location?.value ?? '';
+    const descriptionString = description?.value ?? '';
 
     return {
         uid: uid ? uid.value : undefined,
         frequencyModel: propertiesToFrequencyModel(rrule, start, !isOrganizer),
-        title: summary?.value ?? '',
-        location: location?.value ?? '',
-        description: description?.value ?? '',
+        title: truncate(titleString.trim(), MAX_LENGTHS.TITLE),
+        location: truncate(locationString.trim(), MAX_LENGTHS.LOCATION),
+        description: truncate(descriptionString.trim(), MAX_LENGTHS.EVENT_DESCRIPTION),
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
         isOrganizer,
