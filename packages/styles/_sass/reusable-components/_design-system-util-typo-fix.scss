@@ -200,6 +200,9 @@ abbr[title] {
 b, strong, .strong, .bold {
   font-weight: bold;
 }
+.nobold {
+	font-weight: normal;
+}
 
 .semibold {
   font-weight: 600;

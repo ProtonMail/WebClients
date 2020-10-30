@@ -49,6 +49,12 @@ $border-width: 2px !default;
   border-color: $pm-global-grey;
 }
 
+.badgeLabel-greylight {
+  background: var(--bordercolor-input, $pm-global-muted);
+  border-color: var(--bordercolor-input, $pm-global-muted);
+  color: var(--color-main-area, $black);
+}
+
 .badgeLabel-warning {
   @extend .bg-global-attention;
   border-color: $pm-global-attention;
