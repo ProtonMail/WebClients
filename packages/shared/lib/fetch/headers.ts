@@ -24,10 +24,17 @@ export const getAuthHeaders = (UID: string, AccessToken: string) => ({
     Authorization: `Bearer ${AccessToken}`,
 });
 
+export const getLocaleHeaders = (localeCode: string) => ({
+    'x-pm-locale': localeCode,
+});
+
 export const withAuthHeaders = (UID: string, AccessToken: string, config: any) =>
     mergeHeaders(config, getAuthHeaders(UID, AccessToken));
 
 export const withUIDHeaders = (UID: string, config: any) => mergeHeaders(config, getUIDHeaders(UID));
+
+export const withLocaleHeaders = (localeCode: string, config: any) =>
+    mergeHeaders(config, getLocaleHeaders(localeCode));
 
 export const getVerificationHeaders = (token?: string, tokenType?: HumanVerificationMethodType) => {
     if (!token || !tokenType) {
