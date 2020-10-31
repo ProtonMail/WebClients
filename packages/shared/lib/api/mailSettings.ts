@@ -142,3 +142,9 @@ export const updateAutoWildcardSearch = (AutoWildcardSearch: number) => ({
     method: 'put',
     data: { AutoWildcardSearch },
 });
+
+export const updateDelaySend = (DelaySendSeconds: number) => ({
+    url: 'mail/v4/settings/delaysend',
+    method: 'put',
+    data: { DelaySendSeconds },
+});
