@@ -123,3 +123,8 @@ export const emptyLabel = ({ LabelID, AddressID }) => ({
     url: 'mail/v4/messages/empty',
     params: { LabelID, AddressID },
 });
+
+export const cancelSend = (messageID) => ({
+    method: 'post',
+    url: `mail/v4/messages/${messageID}/cancel_send`,
+});
