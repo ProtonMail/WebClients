@@ -157,14 +157,15 @@ const getSaveRecurringEventActions = ({
     if (type === RECURRING_TYPES.ALL) {
         // Any single edits in the recurrence chain.
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
-
-        const deleteOperations = singleEditRecurrences.map(getDeleteSyncOperation);
+        // For an invitation, we do not want to delete single edits as we want to keep in sync with the organizer's event
+        const deleteOperations = isInvitation ? [] : singleEditRecurrences.map(getDeleteSyncOperation);
 
         const newRecurrentVevent = updateAllRecurrence({
             component: newVeventComponent,
             originalComponent: originalVeventComponent,
             mode: updateAllPossibilities,
             isSingleEdit,
+            isInvitation,
         });
         const newRecurrentVeventWithSequence = withVeventSequence(
             newRecurrentVevent,
