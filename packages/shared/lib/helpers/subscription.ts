@@ -142,12 +142,12 @@ export const switchPlan = ({
 }: {
     planIDs: PlanIDs;
     plans: Plan[];
-    planID: string;
+    planID: string | undefined;
     service: PLAN_SERVICES;
     organization: Organization;
 }) => {
     // Handle FREE VPN and FREE Mail
-    if (typeof planID === 'undefined') {
+    if (planID === undefined) {
         return removeService(planIDs, plans, service);
     }
 
