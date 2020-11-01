@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 import { addDomain, getDomain } from 'proton-shared/lib/api/domains';
 import { VERIFY_STATE, DOMAIN_STATE, SPF_STATE, MX_STATE, DMARC_STATE, DKIM_STATE } from 'proton-shared/lib/constants';
 import { FormModal, Group, ButtonGroup, RoundedIcon, Tooltip, Icon } from '../../components';
@@ -37,9 +36,8 @@ const verifyDomain = ({ VerifyState }) => {
     }
 };
 
-// Pull staticContext to avoid it being passed with rest
-// eslint-disable-next-line no-unused-vars
-const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, staticContext, ...rest }) => {
+/** @type any */
+const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) => {
     const [domains, loadingDomains] = useDomains();
     const [domainModel, setDomain] = useState(() => ({ ...domain }));
 
@@ -279,8 +277,6 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], history, stat
 DomainModal.propTypes = {
     onClose: PropTypes.func,
     domain: PropTypes.object,
-    history: PropTypes.object.isRequired,
-    staticContext: PropTypes.object,
 };
 
-export default withRouter(DomainModal);
+export default DomainModal;
