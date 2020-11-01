@@ -86,36 +86,28 @@ const SettingsContainer = ({
     return (
         <PrivateAppContainer header={header} sidebar={sidebar}>
             <Switch>
-                <Route path="/settings/overview" render={() => <OverviewPage />} />
-                <Route
-                    path="/settings/calendars"
-                    render={({ location }) => {
-                        return (
-                            <CalendarsPage
-                                activeAddresses={activeAddresses}
-                                calendars={calendars}
-                                activeCalendars={activeCalendars}
-                                disabledCalendars={disabledCalendars}
-                                defaultCalendar={defaultCalendar}
-                                location={location}
-                                setActiveSection={setActiveSection}
-                                calendarsEventsCacheRef={calendarsEventsCacheRef}
-                            />
-                        );
-                    }}
-                />
-                <Route
-                    path="/settings/general"
-                    render={({ location }) => {
-                        return (
-                            <GeneralPage
-                                calendarUserSettings={calendarUserSettings}
-                                location={location}
-                                setActiveSection={setActiveSection}
-                            />
-                        );
-                    }}
-                />
+                <Route path="/settings/overview">
+                    <OverviewPage />
+                </Route>
+                <Route path="/settings/calendars">
+                    <CalendarsPage
+                        activeAddresses={activeAddresses}
+                        calendars={calendars}
+                        activeCalendars={activeCalendars}
+                        disabledCalendars={disabledCalendars}
+                        defaultCalendar={defaultCalendar}
+                        location={location}
+                        setActiveSection={setActiveSection}
+                        calendarsEventsCacheRef={calendarsEventsCacheRef}
+                    />
+                </Route>
+                <Route path="/settings/general">
+                    <GeneralPage
+                        calendarUserSettings={calendarUserSettings}
+                        location={location}
+                        setActiveSection={setActiveSection}
+                    />
+                </Route>
                 <Redirect to="/settings/overview" />
             </Switch>
         </PrivateAppContainer>
