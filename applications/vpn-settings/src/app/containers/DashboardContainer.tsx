@@ -50,19 +50,22 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
     const [user] = useUser();
     const { createModal } = useModals();
     const searchParams = new URLSearchParams(location.search);
-    const plan = searchParams.get('plan');
+    const planName = searchParams.get('plan');
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
 
     useEffect(() => {
-        if (plan && !loadingPlans && !loadingSubscription && !loadingOrganization) {
+        if (plans && planName && !loadingPlans && !loadingSubscription && !loadingOrganization) {
             const { Cycle = DEFAULT_CYCLE, Currency = plans[0].Currency } = subscription;
-            const { ID } = plans.find(({ Name = '' }) => Name === plan);
+            const plan = plans.find(({ Name = '' }) => Name === planName);
+            if (!plan) {
+                return;
+            }
             const planIDs = switchPlan({
                 planIDs: getPlanIDs(subscription),
                 plans,
-                planID: ID,
+                planID: plan.ID,
                 service: PLAN_SERVICES.VPN,
                 organization,
             });
