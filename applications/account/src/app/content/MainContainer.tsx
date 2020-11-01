@@ -76,37 +76,24 @@ const MainContainer = () => {
     return (
         <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={welcomeFlags.isWelcomeFlow}>
             <Switch>
-                <Route path="/overview" render={() => <OverviewContainer />} />
-                <Route
-                    path="/account"
-                    render={({ location }) => (
-                        <AccountContainer location={location} setActiveSection={setActiveSection} user={user} />
-                    )}
-                />
-                <Route
-                    path="/organization/:memberID?"
-                    render={({ location }) => (
-                        <OrganizationContainer location={location} setActiveSection={setActiveSection} />
-                    )}
-                />
-                <Route
-                    path="/subscription"
-                    render={({ location }) => (
-                        <SubscriptionContainer location={location} setActiveSection={setActiveSection} />
-                    )}
-                />
-                <Route
-                    path="/general"
-                    render={({ location }) => (
-                        <GeneralContainer location={location} setActiveSection={setActiveSection} />
-                    )}
-                />
-                <Route
-                    path="/security"
-                    render={({ location }) => (
-                        <SecurityContainer location={location} setActiveSection={setActiveSection} />
-                    )}
-                />
+                <Route path="/overview">
+                    <OverviewContainer />
+                </Route>
+                <Route path="/account">
+                    <AccountContainer location={location} setActiveSection={setActiveSection} user={user} />
+                </Route>
+                <Route path="/organization/:memberID?">
+                    <OrganizationContainer location={location} setActiveSection={setActiveSection} />
+                </Route>
+                <Route path="/subscription">
+                    <SubscriptionContainer location={location} setActiveSection={setActiveSection} />
+                </Route>
+                <Route path="/general">
+                    <GeneralContainer location={location} setActiveSection={setActiveSection} />
+                </Route>
+                <Route path="/security">
+                    <SecurityContainer location={location} setActiveSection={setActiveSection} />
+                </Route>
                 <Redirect to="/overview" />
             </Switch>
         </PrivateAppContainer>
