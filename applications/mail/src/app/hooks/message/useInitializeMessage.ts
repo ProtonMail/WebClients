@@ -86,7 +86,9 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 dataChanges = { ...dataChanges, Unread: 0 };
             }
 
-            preparation = isPlainText(getData())
+            const MIMEType = dataChanges.MIMEType || getData().MIMEType;
+
+            preparation = isPlainText({ MIMEType })
                 ? ({ plainText: decryption.decryptedBody } as any)
                 : await prepareMailDocument(
                       { ...messageWithKeys, decryptedBody: decryption.decryptedBody },
