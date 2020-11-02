@@ -41,4 +41,5 @@ export interface MailSettings {
     ShowMIMEType: string;
     StickyLabels: number;
     ConfirmLink: number;
+    DelaySendSeconds: number;
 }
