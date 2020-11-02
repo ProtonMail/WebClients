@@ -26,7 +26,7 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
     };
 
     const isProductPayerPeriod = () => {
-        return productPayerPeriod() && subscriptionModel.isProductPayer();
+        return productPayerPeriod() && !userType().isDelinquent && subscriptionModel.isProductPayer();
     };
 
     /**
