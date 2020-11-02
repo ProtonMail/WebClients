@@ -1,3 +1,28 @@
+# [4.0.0 - Beta 29] - 2020-11-04
+
+## New features
+
+-   At the bottom of the message list view, a navigation widget is displayed to help browse through pages of messages
+
+## Improvements
+
+-   Moved the "show original message" button higher up in the composer when replying to a message or forwarding a message
+-   Improved the way we identify email addresses when pasting a list of addresses separated by a comma or a semicolon
+-   Added tooltips to reply, reply all and forward icons
+-   Updated the phishing detection warning banner to make the action clearer
+-   Improved the "mark as spam" and "not a spam" actions
+-   Improved the list and the message layouts to account for small screen layouts
+-   Various visual elements updated to increase readability of messages
+
+## Fixes
+
+-   When a message gets exported, the message's remote content loaded, which could present a security vulnerability
+-   Sometimes, the "failed domain authentication" banner would disappear after a short moment
+-   In some cases, deleting permanently a sent email by clicking on the button in the tool bar did not work
+-   Sometimes, the error "Error while sending the message. Message is not sent." would appear
+-   When emptying a labels, user would see multiple errors stacked that read "Conversation does not exist"
+-   Various bug fixes related to message signatures and trusted keys
+
 # [4.0.0-beta.28] - 2020-10-22
 
 ## Fixes
