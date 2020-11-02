@@ -11,7 +11,7 @@ export const UNDO_SEND_DELAY = 5000;
 
 export const ELEMENT_TYPES = {
     MESSAGE: 'message',
-    CONVERSATION: 'conversation'
+    CONVERSATION: 'conversation',
 };
 
 export const LABEL_IDS_TO_HUMAN = {
@@ -24,7 +24,8 @@ export const LABEL_IDS_TO_HUMAN = {
     [MAILBOX_LABEL_IDS.ARCHIVE]: 'archive',
     [MAILBOX_LABEL_IDS.SENT]: 'sent',
     [MAILBOX_LABEL_IDS.DRAFTS]: 'drafts',
-    [MAILBOX_LABEL_IDS.STARRED]: 'starred'
+    [MAILBOX_LABEL_IDS.STARRED]: 'starred',
+    [MAILBOX_LABEL_IDS.OUTBOX]: 'outbox',
 };
 
 export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc, [key, value]) => {
@@ -42,24 +43,25 @@ export const LABEL_IDS_TO_I18N = {
     [MAILBOX_LABEL_IDS.ARCHIVE]: c('Link').t`Archive`,
     [MAILBOX_LABEL_IDS.SENT]: c('Link').t`Sent`,
     [MAILBOX_LABEL_IDS.DRAFTS]: c('Link').t`Drafts`,
-    [MAILBOX_LABEL_IDS.STARRED]: c('Link').t`Starred`
+    [MAILBOX_LABEL_IDS.STARRED]: c('Link').t`Starred`,
+    [MAILBOX_LABEL_IDS.OUTBOX]: c('Link').t`Outbox`,
 };
 
 export enum ENCRYPTED_STATUS {
-    PGP_MIME = 8 // Used for attachment
+    PGP_MIME = 8, // Used for attachment
 }
 
 export enum LINK_TYPES {
     WEB = 'web',
     EMAIL = 'email',
-    PHONE = 'phone'
+    PHONE = 'phone',
 }
 
 export enum MESSAGE_ACTIONS {
     NEW = -1,
     REPLY = 0,
     REPLY_ALL = 1,
-    FORWARD = 2
+    FORWARD = 2,
 }
 
 export const DRAG_ELEMENT_KEY = 'drag-element';
@@ -75,5 +77,5 @@ export const PROTON_DOMAINS = [
     'gdpr.eu',
     'protonvpn.net',
     'pm.me',
-    'protonirockerxow.onion'
+    'protonirockerxow.onion',
 ];
