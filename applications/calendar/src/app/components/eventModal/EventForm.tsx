@@ -62,7 +62,7 @@ const EventForm = ({
     const isSingleEdit = !!model.rest?.['recurrence-id'];
 
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
-    const showParticipants = FEATURE_FLAGS.includes('calendar-invitations');
+    const showParticipants = FEATURE_FLAGS.includes('calendar-send-invitations');
 
     const dateRow = isMinimal ? (
         <MiniDateTimeRows
