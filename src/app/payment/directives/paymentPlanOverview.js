@@ -3,6 +3,8 @@ import { getAfterCouponDiscount, getPlansMap, normalizePrice } from '../../../he
 import { getEventName } from '../../blackFriday/helpers/blackFridayHelper';
 
 const { MEMBER, ADDRESS, DOMAIN, SPACE, VPN } = PLANS.ADDON;
+const { VISIONARY, PLUS, VPN_PLUS } = PLANS.PLAN;
+const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
 const FEATURE_KEYS = ['MaxSpace', 'MaxMembers', 'MaxDomains', 'MaxAddresses', 'MaxVPN'];
 const FEATURE_KEYS_VPN = ['MaxVPN'];
@@ -22,23 +24,24 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
     const humanFilter = $filter('humanSize');
 
     const I18N = {
+        FREE: gettextCatalog.getString('FREE', null, 'Title'),
         TOTAL: {
-            [CYCLE.MONTHLY]: gettextCatalog.getString('Total (monthly billing)', null, 'Title'),
-            [CYCLE.YEARLY]: gettextCatalog.getString('Total (annual billing)', null, 'Title'),
-            [CYCLE.TWO_YEARS]: gettextCatalog.getString('Total (2-year billing)', null, 'Title')
+            [MONTHLY]: gettextCatalog.getString('Total (monthly billing)', null, 'Title'),
+            [YEARLY]: gettextCatalog.getString('Total (annual billing)', null, 'Title'),
+            [TWO_YEARS]: gettextCatalog.getString('Total (2-year billing)', null, 'Title')
         },
         TOOLTIP: {
-            [CYCLE.YEARLY]: (percentage) =>
+            [YEARLY]: (percentage) =>
                 gettextCatalog.getString('1-year plan, {{percentage}} off', { percentage }, 'Tooltip'),
-            [CYCLE.TWO_YEARS]: (percentage) =>
+            [TWO_YEARS]: (percentage) =>
                 gettextCatalog.getString('2-year plan, {{percentage}} off', { percentage }, 'Tooltip')
         },
         DISCOUNTS: {
             [BLACK_FRIDAY.COUPON_CODE]: getEventName(),
             [BUNDLE_COUPON_CODE]: 'Bundle',
             ANY: gettextCatalog.getString('Discount', null, 'Title'),
-            [CYCLE.YEARLY]: gettextCatalog.getString('1-year plan', null, 'Title'),
-            [CYCLE.TWO_YEARS]: gettextCatalog.getString('2-year plan', null, 'Title')
+            [YEARLY]: gettextCatalog.getString('1-year plan', null, 'Title'),
+            [TWO_YEARS]: gettextCatalog.getString('2-year plan', null, 'Title')
         },
         PER_MONTH: gettextCatalog.getString('Cost per month', null, 'Title'),
         CREDIT: gettextCatalog.getString('Credit', null, 'Title'),
@@ -64,14 +67,14 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
             PaymentCache.valid({
                 PlanIDs,
                 Currency,
-                Cycle: CYCLE.MONTHLY
+                Cycle: MONTHLY
             })
         ]);
     };
 
     const getPriceString = (amount, currency, cycle, wantedCycle = cycle) => {
         const normalizedPrice = normalizePrice(amount, cycle, wantedCycle);
-        const priceTextSuffix = wantedCycle === CYCLE.MONTHLY ? '/mo' : '';
+        const priceTextSuffix = wantedCycle === MONTHLY ? '/mo' : '';
         return currencyFilter(normalizedPrice, currency) + priceTextSuffix;
     };
 
@@ -80,10 +83,17 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
      * Together with the specific feature addons, their amount and price.
      * @param {Object} planIds
      * @param {Object} plans
+     * @param {String} currency
+     * @param {Number} cycle
      * @returns {Array}
      */
-    const getPlanItems = (planIds, plans, Currency) => {
+    const getPlanItems = (planIds, plans, currency, cycle) => {
         const plansMap = getPlansMap(plans, 'ID');
+        const planNameMap = getPlansMap(plans);
+        const hasProtonDrive = !!(
+            planIds[planNameMap[VISIONARY].ID] ||
+            (planIds[planNameMap[PLUS].ID] && planIds[planNameMap[VPN_PLUS].ID] && [YEARLY, TWO_YEARS].includes(cycle))
+        );
 
         const { totalFeatures, addons } = Object.keys(planIds).reduce(
             (acc, id) => {
@@ -103,42 +113,44 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
             { totalFeatures: {}, addons: {} }
         );
 
-        return Object.keys(planIds).reduce((acc, id) => {
-            const quantity = planIds[id];
-            const { Name, Type, Title, Amount, Cycle } = plansMap[id];
+        return Object.keys(planIds)
+            .reduce((acc, id) => {
+                const quantity = planIds[id];
+                const { Name, Type, Title, Amount, Cycle } = plansMap[id];
 
-            if (Type === PLANS_TYPE.ADDON) {
+                if (Type === PLANS_TYPE.ADDON) {
+                    return acc;
+                }
+
+                const planText = Title;
+                const planAmount = Amount * quantity;
+
+                const isVpnPlan = Name.indexOf('vpn') !== -1;
+                const featureKeys = isVpnPlan ? FEATURE_KEYS_VPN : FEATURE_KEYS_MAIL;
+
+                const features = featureKeys.map((key) => {
+                    const value = totalFeatures[key];
+                    const addonName = ADDONS_MAP[key];
+
+                    const text = I18N.FEATURES[addonName](value);
+                    const amount = addons[ADDONS_MAP[key]] || 0;
+
+                    return {
+                        text,
+                        price: amount === 0 ? '' : getPriceString(amount, currency, Cycle, MONTHLY)
+                    };
+                });
+
+                // Always show the mail subscription, if any, before vpn.
+                acc[isVpnPlan ? 'push' : 'unshift']({
+                    text: planText,
+                    price: getPriceString(planAmount, currency, Cycle, MONTHLY),
+                    features
+                });
+
                 return acc;
-            }
-
-            const planText = Title;
-            const planAmount = Amount * quantity;
-
-            const isVpnPlan = Name.indexOf('vpn') !== -1;
-            const featureKeys = isVpnPlan ? FEATURE_KEYS_VPN : FEATURE_KEYS_MAIL;
-
-            const features = featureKeys.map((key) => {
-                const value = totalFeatures[key];
-                const addonName = ADDONS_MAP[key];
-
-                const text = I18N.FEATURES[addonName](value);
-                const amount = addons[ADDONS_MAP[key]] || 0;
-
-                return {
-                    text,
-                    price: amount === 0 ? '' : getPriceString(amount, Currency, Cycle, CYCLE.MONTHLY)
-                };
-            });
-
-            // Always show the mail subscription, if any, before vpn.
-            acc[isVpnPlan ? 'push' : 'unshift']({
-                text: planText,
-                price: getPriceString(planAmount, Currency, Cycle, CYCLE.MONTHLY),
-                features
-            });
-
-            return acc;
-        }, []);
+            }, [])
+            .concat(hasProtonDrive ? [{ text: 'ProtonDrive', price: I18N.FREE, className: 'discount' }] : []);
     };
 
     /**
@@ -167,7 +179,7 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
 
             result.push({
                 text: couponText,
-                price: `-${getPriceString(savings, Currency, Cycle, CYCLE.MONTHLY)}`,
+                price: `-${getPriceString(savings, Currency, Cycle, MONTHLY)}`,
                 className: 'discount',
                 tooltip: {
                     text: `-${percentage}%`,
@@ -223,7 +235,7 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
         return [
             {
                 text: I18N.PER_MONTH,
-                price: getPriceString(getAfterCouponDiscount(price), Currency, Cycle, CYCLE.MONTHLY),
+                price: getPriceString(getAfterCouponDiscount(price), Currency, Cycle, MONTHLY),
                 className: 'final'
             },
             {
@@ -249,7 +261,7 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
 
     const getList = (planIds, plans, offerPrice, basePrice) => {
         return [
-            ...getPlanItems(planIds, plans, offerPrice.Currency),
+            ...getPlanItems(planIds, plans, offerPrice.Currency, offerPrice.Cycle),
             ...getDiscountItems(offerPrice, basePrice),
             ...getTotalPrice(offerPrice),
             ...getCreditItems(offerPrice),
