@@ -237,7 +237,7 @@ const ExtraEvent = ({
         return null;
     }
 
-    const interactiveWidget = FEATURE_FLAGS.includes('calendar-invitations');
+    const interactiveWidget = FEATURE_FLAGS.includes('calendar-receive-invitations');
 
     return (
         <div className="rounded bordered bg-white-dm mb1 pl1 pr1 pt0-5 pb0-5">
