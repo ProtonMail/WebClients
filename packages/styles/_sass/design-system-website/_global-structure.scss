@@ -4,9 +4,10 @@ body {
   height: 100%;
 }
 /* === page === */
+html,
+.app-root,
 .content-container {
-	max-height: 100vh;
-	min-height: 100vh;
+ 	height: 100%;
 }
 
 
@@ -139,14 +140,14 @@ $height-for-mobile: 8em !default;
 }
 
 .main-full {
-  height: 100vh;
+  height: 100%;
   overflow: auto;
   @extend .bg-global-altgrey-gradient;
 }
 .main-area--noHeader {
   @extend .main-area;
   //height: 100vh; // create a crazy bug on Safari on VPN
-  max-height: 100vh;
+  max-height: 100%;
 }
 .main-area--withToolbar--noHeader {
   @extend .main-area--withToolbar;
