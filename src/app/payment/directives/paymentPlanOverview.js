@@ -150,7 +150,7 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
 
                 return acc;
             }, [])
-            .concat(hasProtonDrive ? [{ text: 'ProtonDrive', price: I18N.FREE, className: 'discount' }] : []);
+            .concat(hasProtonDrive ? [{ text: 'ProtonDrive', price: I18N.FREE, className: 'drive' }] : []);
     };
 
     /**

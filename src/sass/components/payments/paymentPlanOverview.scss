@@ -61,6 +61,11 @@
     color: $green;
 }
 
+.paymentPlanOverview-item-container.drive .paymentPlanOverview-item-price {
+    color: $green;
+    font-weight: bold;
+}
+
 
 .paymentPlanOverview-header {
     display: flex;
