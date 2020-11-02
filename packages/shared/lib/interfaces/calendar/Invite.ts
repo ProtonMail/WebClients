@@ -22,6 +22,10 @@ export interface CalendarWidgetData {
     calendarSettings?: CalendarSettings;
 }
 
+export interface SingleEditWidgetData {
+    ids: string[];
+}
+
 export interface Participant {
     vcalComponent: VcalAttendeeProperty | VcalOrganizerProperty;
     name: string;

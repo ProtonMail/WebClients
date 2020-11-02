@@ -116,6 +116,23 @@ END:VEVENT`);
         ]);
     });
 
+    it('should pick a targeted given occurrence ', () => {
+        const component = parse(`
+BEGIN:VEVENT
+DTSTART:20200129T113000Z
+DTEND:20200129T123000Z
+RRULE:FREQ=WEEKLY;BYDAY=SU,MO,TU,WE,TH,FR,SA;COUNT=3
+END:VEVENT`);
+        const cache = {};
+        const result = getOccurrencesBetween(
+            component,
+            Date.UTC(2020, 0, 29, 11, 30),
+            Date.UTC(2020, 0, 29, 11, 30),
+            cache
+        );
+        expect(stringifyResultSimple(result)).toEqual(['2020-01-29T11:30:00.000Z - 2020-01-29T12:30:00.000Z']);
+    });
+
     it('should fill occurrences until 31st of Jan in for all day events', () => {
         const component = parse(`
 BEGIN:VEVENT
