@@ -8,7 +8,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { LARGE_KEY_SIZE } from '../../constants';
 import { get } from '../../helpers/attachment/attachmentLoader';
 import { MessageExtended, MessageErrors, MessageExtendedWithData } from '../../models/message';
-import { verifyMessage } from '../../helpers/message/messageDecrypt';
+import { DecryptMessageResult, verifyMessage } from '../../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 
@@ -18,75 +18,78 @@ export const useVerifyMessage = (localID: string) => {
     const attachmentsCache = useAttachmentCache();
     const getEncryptionPreferences = useGetEncryptionPreferences();
 
-    return useCallback(async () => {
-        // Message can change during the whole sequence
-        // To have the most up to date version, best is to get back to the cache version each time
-        const getData = () => (messageCache.get(localID) as MessageExtendedWithData).data;
+    return useCallback(
+        async (result: DecryptMessageResult) => {
+            // Message can change during the whole sequence
+            // To have the most up to date version, best is to get back to the cache version each time
+            const getData = () => (messageCache.get(localID) as MessageExtendedWithData).data;
 
-        // Cache entry will be (at least) initialized by the queue system
-        const messageFromCache = messageCache.get(localID) as MessageExtended;
+            // Cache entry will be (at least) initialized by the queue system
+            const messageFromCache = messageCache.get(localID) as MessageExtended;
 
-        const errors: MessageErrors = {};
+            const errors: MessageErrors = {};
 
-        let encryptionPreferences;
-        let verification;
-        let signingPublicKey;
-        let attachedPublicKeys;
-        let verificationStatus;
+            let encryptionPreferences;
+            let verification;
+            let signingPublicKey;
+            let attachedPublicKeys;
+            let verificationStatus;
 
-        try {
-            encryptionPreferences = await getEncryptionPreferences(getData().Sender.Address as string);
+            try {
+                encryptionPreferences = await getEncryptionPreferences(getData().Sender.Address as string);
 
-            const messageWithKeys = {
-                ...messageFromCache,
-                publicKeys: encryptionPreferences.pinnedKeys,
-            };
+                const messageWithKeys = {
+                    ...messageFromCache,
+                    publicKeys: encryptionPreferences.pinnedKeys,
+                };
 
-            verification = await verifyMessage(getData(), encryptionPreferences.pinnedKeys);
+                verification = await verifyMessage(result, getData(), encryptionPreferences.pinnedKeys);
 
-            const keyAttachments =
-                getData().Attachments.filter(
-                    ({ Name, Size }) => splitExtension(Name)[1] === 'asc' && (Size || 0) < LARGE_KEY_SIZE
-                ) || [];
+                const keyAttachments =
+                    getData().Attachments.filter(
+                        ({ Name, Size }) => splitExtension(Name)[1] === 'asc' && (Size || 0) < LARGE_KEY_SIZE
+                    ) || [];
 
-            attachedPublicKeys = (
-                await Promise.all(
-                    keyAttachments.map(async (attachment) => {
-                        try {
-                            const { data } = await get(attachment, messageWithKeys, attachmentsCache, api);
-                            const [key] = await getKeys(arrayToBinaryString(data));
-                            return key;
-                        } catch (e) {
-                            // Nothing
-                        }
-                    })
-                )
-            ).filter(isTruthy);
+                attachedPublicKeys = (
+                    await Promise.all(
+                        keyAttachments.map(async (attachment) => {
+                            try {
+                                const { data } = await get(attachment, messageWithKeys, attachmentsCache, api);
+                                const [key] = await getKeys(arrayToBinaryString(data));
+                                return key;
+                            } catch (e) {
+                                // Nothing
+                            }
+                        })
+                    )
+                ).filter(isTruthy);
 
-            const allSenderPublicKeys = [
-                ...encryptionPreferences.pinnedKeys,
-                ...encryptionPreferences.apiKeys,
-                ...attachedPublicKeys,
-            ];
+                const allSenderPublicKeys = [
+                    ...encryptionPreferences.pinnedKeys,
+                    ...encryptionPreferences.apiKeys,
+                    ...attachedPublicKeys,
+                ];
 
-            const signed = verification.verified !== VERIFICATION_STATUS.NOT_SIGNED;
-            signingPublicKey =
-                signed && verification.signature
-                    ? await getMatchingKey(verification.signature, allSenderPublicKeys)
-                    : undefined;
-            verificationStatus = verification.verified;
-        } catch (error) {
-            errors.common = error;
-        } finally {
-            updateMessageCache(messageCache, localID, {
-                senderPinnedKeys: encryptionPreferences?.pinnedKeys,
-                signingPublicKey,
-                attachedPublicKeys,
-                senderVerified: encryptionPreferences?.isContactSignatureVerified,
-                verificationStatus,
-                verificationErrors: verification?.verificationErrors,
-                errors,
-            });
-        }
-    }, [localID]);
+                const signed = verification.verified !== VERIFICATION_STATUS.NOT_SIGNED;
+                signingPublicKey =
+                    signed && verification.signature
+                        ? await getMatchingKey(verification.signature, allSenderPublicKeys)
+                        : undefined;
+                verificationStatus = verification.verified;
+            } catch (error) {
+                errors.common = error;
+            } finally {
+                updateMessageCache(messageCache, localID, {
+                    senderPinnedKeys: encryptionPreferences?.pinnedKeys,
+                    signingPublicKey,
+                    attachedPublicKeys,
+                    senderVerified: encryptionPreferences?.isContactSignatureVerified,
+                    verificationStatus,
+                    verificationErrors: verification?.verificationErrors,
+                    errors,
+                });
+            }
+        },
+        [localID]
+    );
 };

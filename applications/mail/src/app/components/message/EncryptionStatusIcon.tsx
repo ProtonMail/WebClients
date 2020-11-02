@@ -16,7 +16,7 @@ const EncryptionStatusIcon = ({
     text,
     loading,
     useTooltip = true,
-    className
+    className,
 }: Props) => {
     if (loading) {
         return <Loader className="icon-16p mauto flex" />;

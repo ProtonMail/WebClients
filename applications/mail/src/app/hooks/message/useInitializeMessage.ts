@@ -79,7 +79,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             }
 
             // Trigger all public key and signature verification but we are not waiting for it
-            void verifyMessage();
+            void verifyMessage(decryption);
 
             if (isUnreadMessage(getData())) {
                 markAs([getData()], labelID, MARK_AS_STATUS.READ);
@@ -109,6 +109,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 publicKeys: userKeys?.publicKeys,
                 privateKeys: userKeys?.privateKeys,
                 decryptedBody: decryption?.decryptedBody,
+                signature: decryption?.signature,
                 decryptedSubject: decryption?.decryptedSubject,
                 // Anticipate showEmbedded flag while triggering the load just after
                 showEmbeddedImages: preparation?.showEmbeddedImages,

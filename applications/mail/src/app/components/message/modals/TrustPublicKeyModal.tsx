@@ -1,4 +1,4 @@
-import { API_CODES } from 'proton-shared/lib/constants';
+import { API_CODES, CONTACT_CARD_TYPE } from 'proton-shared/lib/constants';
 import React from 'react';
 import {
     Alert,
@@ -7,14 +7,14 @@ import {
     useApi,
     useGetUserKeys,
     useLoading,
-    useNotifications
+    useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 import { addContacts, getContact, updateContact } from 'proton-shared/lib/api/contacts';
 import { pinKeyCreateContact, pinKeyUpdateContact } from 'proton-shared/lib/contacts/keyPinning';
 import { Api } from 'proton-shared/lib/interfaces';
-import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
+import { ContactCard, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 
 import SimplePublicKeyTable from './SimplePublicKeyTable';
@@ -28,16 +28,32 @@ interface ParamsUpdate {
 const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }: ParamsUpdate) => {
     const { contactID, emailAddress, bePinnedPublicKey, isInternal } = contact;
     const {
-        Contact: { Cards: contactCards }
-    } = await api(getContact(contactID));
-    const updatedContactCards = await pinKeyUpdateContact({
-        contactCards,
-        emailAddress,
-        isInternal,
-        bePinnedPublicKey,
-        publicKeys,
-        privateKeys
-    });
+        Contact: { Cards: contactCards },
+    } = await api<{ Contact: { Cards: ContactCard[] } }>(getContact(contactID));
+    const hasSignedCard = !!contactCards.find(({ Type }) => Type === CONTACT_CARD_TYPE.SIGNED);
+    const hasEncryptedCard = !!contactCards.find(({ Type }) =>
+        [CONTACT_CARD_TYPE.ENCRYPTED, CONTACT_CARD_TYPE.ENCRYPTED_AND_SIGNED].includes(Type)
+    );
+    if (hasEncryptedCard && !hasSignedCard) {
+        throw new Error('Corrupted contact card data');
+    }
+    // If no signed card is present, that means the contact was created by the server,
+    // and we can simply create a new contact
+    const updatedContactCards = hasSignedCard
+        ? await pinKeyUpdateContact({
+              contactCards,
+              emailAddress,
+              isInternal,
+              bePinnedPublicKey,
+              publicKeys,
+              privateKeys,
+          })
+        : await pinKeyCreateContact({
+              emailAddress,
+              isInternal,
+              bePinnedPublicKey,
+              privateKeys,
+          });
     await api(updateContact(contactID, { Cards: updatedContactCards }));
 };
 
@@ -53,7 +69,7 @@ const createContactPinnedKeys = async ({ contact, api, privateKeys }: ParamsCrea
         name,
         isInternal,
         bePinnedPublicKey,
-        privateKeys
+        privateKeys,
     });
     return api<{ Code: number; Responses: { Response: { Code: number } }[] }>(
         addContacts({ Contacts: [{ Cards: contactCards }], Overwrite: 1, Labels: 0 })
@@ -80,7 +96,7 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
             contact: contact as Required<ContactWithBePinnedPublicKey>,
             api,
             publicKeys,
-            privateKeys
+            privateKeys,
         });
         createNotification({ text: c('Success').t`Public key trusted`, type: 'success' });
         onSubmit?.();
@@ -92,9 +108,9 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
         const {
             Responses: [
                 {
-                    Response: { Code }
-                }
-            ]
+                    Response: { Code },
+                },
+            ],
         } = await createContactPinnedKeys({ contact, api, privateKeys });
         if (Code !== API_CODES.SINGLE_SUCCESS) {
             createNotification({ text: c('Error').t`Public key could not be trusted`, type: 'error' });

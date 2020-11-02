@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { OpenPGPKey, OpenPGPSignature } from 'pmcrypto';
 import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
@@ -60,6 +60,11 @@ export interface MessageExtended {
      * Only used in rare situations where the message is sent by an external system which encrypt even the subject
      */
     decryptedSubject?: string;
+
+    /**
+     * Message signature obtained after decryption, if any
+     */
+    signature?: OpenPGPSignature;
 
     /**
      * Document representing the message body

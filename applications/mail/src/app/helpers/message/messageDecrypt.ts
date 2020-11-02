@@ -19,6 +19,15 @@ import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 const { NOT_VERIFIED } = VERIFICATION_STATUS;
 
+export interface DecryptMessageResult {
+    decryptedBody: string;
+    Attachments?: Attachment[];
+    decryptedSubject?: string;
+    signature?: OpenPGPSignature;
+    errors?: MessageErrors;
+    mimetype?: MIME_TYPES;
+}
+
 const decryptMimeMessage = async (message: Message, privateKeys: OpenPGPKey[], attachmentsCache: AttachmentsCache) => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
@@ -102,14 +111,7 @@ export const decryptMessage = async (
     message: Message,
     privateKeys: OpenPGPKey[],
     attachmentsCache: AttachmentsCache
-): Promise<{
-    decryptedBody: string;
-    Attachments?: Attachment[];
-    decryptedSubject?: string;
-    signature?: OpenPGPSignature;
-    errors?: MessageErrors;
-    mimetype?: MIME_TYPES;
-}> => {
+): Promise<DecryptMessageResult> => {
     if (isMIME(message)) {
         return decryptMimeMessage(message, privateKeys, attachmentsCache);
     }
@@ -117,6 +119,7 @@ export const decryptMessage = async (
 };
 
 export const verifyMessage = async (
+    { decryptedBody, signature }: DecryptMessageResult,
     message: Message,
     publicKeys: OpenPGPKey[]
 ): Promise<{
@@ -128,8 +131,9 @@ export const verifyMessage = async (
 
     try {
         result = await pmcryptoVerifyMessage({
-            message: createCleartextMessage(message?.Body),
+            message: createCleartextMessage(decryptedBody),
             date: getDate(message),
+            signature,
             publicKeys,
         });
     } catch (error) {
@@ -138,6 +142,8 @@ export const verifyMessage = async (
             verificationErrors: [error],
         };
     }
-
-    return result;
+    return {
+        verified: result.verified,
+        signature,
+    };
 };

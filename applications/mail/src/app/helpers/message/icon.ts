@@ -25,7 +25,7 @@ const {
     EXTERNAL,
     END_TO_END,
     ON_COMPOSE,
-    ON_DELIVERY
+    ON_DELIVERY,
 } = X_PM_HEADERS;
 
 export interface MessageViewIcons {
@@ -64,7 +64,7 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
             return {
                 ...result,
                 fill: CHECKMARK,
-                text: c('Composer email icon').t`End-to-end encrypted to verified recipient`
+                text: c('Composer email icon').t`End-to-end encrypted to verified recipient`,
             };
         }
         return { ...result, fill: PLAIN, text: c('Composer email icon').t`End-to-end encrypted` };
@@ -74,7 +74,7 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
             colorClassName: 'color-pm-blue',
             isEncrypted: true,
             fill: PLAIN,
-            text: c('Composer email icon').t`End-to-end encrypted`
+            text: c('Composer email icon').t`End-to-end encrypted`,
         };
     }
     if ([SEND_PGP_INLINE, SEND_PGP_MIME].includes(pgpScheme)) {
@@ -85,13 +85,13 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
                 return {
                     ...result,
                     fill: WARNING,
-                    text: c('Composer email icon').t`End-to-end encrypted. ${warningsText}`
+                    text: c('Composer email icon').t`End-to-end encrypted. ${warningsText}`,
                 };
             }
             return {
                 ...result,
                 fill: WARNING,
-                text: c('Composer email icon').t`PGP-encrypted. ${warningsText}`
+                text: c('Composer email icon').t`PGP-encrypted. ${warningsText}`,
             };
         }
         if (encrypt) {
@@ -100,13 +100,13 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
                     return {
                         ...result,
                         fill: CHECKMARK,
-                        text: c('Composer email icon').t`End-to-end encrypted to verified recipient`
+                        text: c('Composer email icon').t`End-to-end encrypted to verified recipient`,
                     };
                 }
                 return {
                     ...result,
                     fill: CHECKMARK,
-                    text: c('Composer email icon').t`PGP-encrypted to verified recipient`
+                    text: c('Composer email icon').t`PGP-encrypted to verified recipient`,
                 };
             }
             if (hasApiKeys) {
@@ -129,7 +129,7 @@ export const getSentStatusIcon = ({
     mapAuthentication,
     mapEncryption,
     contentEncryption,
-    emailAddress
+    emailAddress,
 }: Params): StatusIcon | undefined => {
     if (!emailAddress) {
         // we return the aggregated send icon in this case
@@ -160,7 +160,7 @@ export const getSentStatusIcon = ({
                 colorClassName: allExternal ? 'color-global-success' : 'color-pm-blue',
                 isEncrypted: true,
                 fill: CHECKMARK,
-                text
+                text,
             };
         }
         if (allEncrypted) {
@@ -171,14 +171,14 @@ export const getSentStatusIcon = ({
                 text:
                     contentEncryption === END_TO_END
                         ? c('Sent email icon').t`Sent by you with end-to-end encryption`
-                        : c('Sent email icon').t`Sent by ProtonMail with zero-access encryption`
+                        : c('Sent email icon').t`Sent by ProtonMail with zero-access encryption`,
             };
         }
         return {
             colorClassName: 'color-pm-blue',
             isEncrypted: true,
             fill: PLAIN,
-            text: c('Sent email icon').t`Stored with zero-access encryption`
+            text: c('Sent email icon').t`Stored with zero-access encryption`,
         };
     }
 
@@ -191,7 +191,7 @@ export const getSentStatusIcon = ({
             colorClassName: 'color-global-success',
             isEncrypted: false,
             fill: SIGN,
-            text: c('Sent email icon').t`PGP-signed`
+            text: c('Sent email icon').t`PGP-signed`,
         };
     }
     if ([PGP_INLINE, PGP_MIME].includes(encryption) && [NONE, PGP_INLINE, PGP_MIME].includes(authentication)) {
@@ -202,7 +202,7 @@ export const getSentStatusIcon = ({
             text:
                 contentEncryption === END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted to PGP recipient`
-                    : c('Sent email icon').t`Encrypted by ProtonMail to PGP recipient`
+                    : c('Sent email icon').t`Encrypted by ProtonMail to PGP recipient`,
         };
     }
     if (
@@ -216,7 +216,7 @@ export const getSentStatusIcon = ({
             text:
                 contentEncryption === END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted to verified PGP recipient`
-                    : c('Sent email icon').t`Encrypted by ProtonMail to verified PGP recipient`
+                    : c('Sent email icon').t`Encrypted by ProtonMail to verified PGP recipient`,
         };
     }
     if (authentication === PGP_EO && encryption === PGP_EO) {
@@ -227,7 +227,7 @@ export const getSentStatusIcon = ({
             text:
                 contentEncryption === END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted`
-                    : c('Sent email icon').t`Encrypted by ProtonMail`
+                    : c('Sent email icon').t`Encrypted by ProtonMail`,
         };
     }
     if (encryption === PGP_PM && [NONE, PGP_PM].includes(authentication)) {
@@ -238,7 +238,7 @@ export const getSentStatusIcon = ({
             text:
                 contentEncryption === END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted`
-                    : c('Sent email icon').t`Encrypted by ProtonMail`
+                    : c('Sent email icon').t`Encrypted by ProtonMail`,
         };
     }
     if (encryption === PGP_PM_PINNED && [NONE, PGP_PM].includes(authentication)) {
@@ -249,7 +249,7 @@ export const getSentStatusIcon = ({
             text:
                 contentEncryption === END_TO_END
                     ? c('Sent email icon').t`End-to-end encrypted to verified recipient`
-                    : c('Sent email icon').t`Encrypted by ProtonMail to verified recipient`
+                    : c('Sent email icon').t`Encrypted by ProtonMail to verified recipient`,
         };
     }
 };
@@ -307,13 +307,13 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
                     return {
                         ...result,
                         fill: WARNING,
-                        text: c('Signature verification warning').t`Sender verification failed`
+                        text: c('Signature verification warning').t`Sender verification failed`,
                     };
                 }
                 return {
                     ...result,
                     fill: PLAIN,
-                    text: c('Received email icon').t`End-to-end encrypted and signed message`
+                    text: c('Received email icon').t`End-to-end encrypted and signed message`,
                 };
             }
             if (verificationStatus === SIGNED_AND_VALID) {
@@ -322,19 +322,19 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
                         return {
                             ...result,
                             fill: WARNING,
-                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`
+                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
                         };
                     }
                     return {
                         ...result,
                         fill: CHECKMARK,
-                        text: c('Received email icon').t`End-to-end encrypted message from verified sender`
+                        text: c('Received email icon').t`End-to-end encrypted message from verified sender`,
                     };
                 }
                 return {
                     ...result,
                     fill: PLAIN,
-                    text: c('Received email icon').t`End-to-end encrypted and signed message`
+                    text: c('Received email icon').t`End-to-end encrypted and signed message`,
                 };
             }
             return { ...result, fill: PLAIN, text: c('Received email icon').t`End-to-end encrypted message` };
@@ -343,7 +343,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
             return {
                 ...result,
                 fill: PLAIN,
-                text: c('Received email icon').t`Sent by ProtonMail with zero-access encryption`
+                text: c('Received email icon').t`Sent by ProtonMail with zero-access encryption`,
             };
         }
     }
@@ -368,13 +368,13 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
                     return {
                         ...result,
                         fill: WARNING,
-                        text: c('Signature verification warning').t`Sender verification failed`
+                        text: c('Signature verification warning').t`Sender verification failed`,
                     };
                 }
                 return {
                     ...result,
                     fill: PLAIN,
-                    text: c('Received email icon').t`PGP-encrypted and signed message`
+                    text: c('Received email icon').t`PGP-encrypted and signed message`,
                 };
             }
             if (verificationStatus === SIGNED_AND_VALID) {
@@ -383,19 +383,19 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
                         return {
                             ...result,
                             fill: WARNING,
-                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`
+                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
                         };
                     }
                     return {
                         ...result,
                         fill: CHECKMARK,
-                        text: c('Received email icon').t`PGP-encrypted message from verified sender`
+                        text: c('Received email icon').t`PGP-encrypted message from verified sender`,
                     };
                 }
                 return {
                     ...result,
                     fill: PLAIN,
-                    text: c('Received email icon').t`PGP-encrypted and signed message`
+                    text: c('Received email icon').t`PGP-encrypted and signed message`,
                 };
             }
             return { ...result, fill: PLAIN, text: c('Received email icon').t`PGP-encrypted message` };
@@ -406,7 +406,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
                     colorClassName: 'color-global-grey-dm',
                     isEncrypted: false,
                     fill: PLAIN,
-                    text: c('Received email icon').t`Stored with zero-access encryption`
+                    text: c('Received email icon').t`Stored with zero-access encryption`,
                 };
             }
 
@@ -429,19 +429,19 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
                         return {
                             ...result,
                             fill: WARNING,
-                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`
+                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
                         };
                     }
                     return {
                         ...result,
                         fill: CHECKMARK,
-                        text: c('Received email icon').t`PGP-signed message from verified sender`
+                        text: c('Received email icon').t`PGP-signed message from verified sender`,
                     };
                 }
                 return {
                     ...result,
                     fill: SIGN,
-                    text: c('Received email icon').t`PGP-signed message`
+                    text: c('Received email icon').t`PGP-signed message`,
                 };
             }
         }
@@ -451,7 +451,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
         colorClassName: 'color-global-grey-dm',
         isEncrypted: false,
         fill: PLAIN,
-        text: c('Received email icon').t`Stored with zero-access encryption`
+        text: c('Received email icon').t`Stored with zero-access encryption`,
     };
 };
 
@@ -460,7 +460,7 @@ export const getStatusIconName = ({ isEncrypted, fill }: Pick<Partial<StatusIcon
         return 'locks-closed';
     }
     if (fill === CHECKMARK) {
-        return 'locks-check';
+        return isEncrypted ? 'locks-check' : 'locks-open-check';
     }
     if (fill === SIGN) {
         return isEncrypted ? 'locks-signed' : 'locks-open-signed';
