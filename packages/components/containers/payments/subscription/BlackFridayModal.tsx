@@ -278,7 +278,7 @@ const BlackFridayModal = <T,>({ bundles = [], onSelect, ...rest }: Props<T>) => 
                                                         </strong>
                                                         <Info
                                                             buttonClass="inline-flex color-currentColor ml0-25 mb0-1"
-                                                            url="https://protonmail.com/support/knowledge-base/protondrive-early-access/?utm_campaign=ww-en-2c-mail-coms_inapp-protondrive_learn_more&amps;utm_source=webmail&amps;utm_medium=app_ad&amps;utm_content=tooltip_v4"
+                                                            url="https://protonmail.com/support/knowledge-base/protondrive-early-access/?utm_campaign=ww-en-2c-mail-coms_inapp-protondrive_learn_more&utm_source=webmail&utm_medium=app_ad&utm_content=tooltip_v4"
                                                         />
                                                         <span className="bl">
                                                             <span className="blackfriday-protonDrive-free bg-global-success uppercase color-white bold pl0-5 pr0-5">
