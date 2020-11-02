@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Currency, Cycle, PlanIDs } from 'proton-shared/lib/interfaces';
 import { isProductPayer } from 'proton-shared/lib/helpers/blackfriday';
 
-import { FormModal, FullLoader, Button, Price } from '../../../components';
+import { FormModal, FullLoader, Button, Price, Info } from '../../../components';
 import { useLoading, useApi, useSubscription } from '../../../hooks';
 import { classnames } from '../../../helpers';
 import CurrencySelector from '../CurrencySelector';
@@ -276,6 +276,10 @@ const BlackFridayModal = <T,>({ bundles = [], onSelect, ...rest }: Props<T>) => 
                                                         <strong className="blackfriday-protonDrive-productName ml0-25">
                                                             {c('blackfriday Info').t`ProtonDrive`}
                                                         </strong>
+                                                        <Info
+                                                            buttonClass="inline-flex color-currentColor ml0-25 mb0-1"
+                                                            url="https://protonmail.com/support/knowledge-base/protondrive-early-access/?utm_campaign=ww-en-2c-mail-coms_inapp-protondrive_learn_more&amps;utm_source=webmail&amps;utm_medium=app_ad&amps;utm_content=tooltip_v4"
+                                                        />
                                                         <span className="bl">
                                                             <span className="blackfriday-protonDrive-free bg-global-success uppercase color-white bold pl0-5 pr0-5">
                                                                 {c('blackfriday Info').t`Free`}
@@ -287,7 +291,7 @@ const BlackFridayModal = <T,>({ bundles = [], onSelect, ...rest }: Props<T>) => 
                                         </div>
                                         <Button
                                             className={classnames([
-                                                'mb1 uppercase increase-surface-click',
+                                                'mb1 uppercase',
                                                 popular || productPayer
                                                     ? 'pm-button--primary'
                                                     : 'pm-button--primaryborderEvenInDarkMode',
