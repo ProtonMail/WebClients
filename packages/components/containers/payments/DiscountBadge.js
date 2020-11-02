@@ -10,7 +10,7 @@ const { BUNDLE, PROTONTEAM, BLACK_FRIDAY_2018, BLACK_FRIDAY_2019 } = COUPON_CODE
 const DiscountBadge = ({ code }) => {
     if (code === BUNDLE) {
         return (
-            <Badge type="success" tooltip={c('Info').t`20% discount applied to your subscription with coupon ${code}`}>
+            <Badge type="light" tooltip={c('Info').t`20% discount applied to your subscription with coupon ${code}`}>
                 -20%
             </Badge>
         );
@@ -41,11 +41,11 @@ const DiscountBadge = ({ code }) => {
     }
 
     if (code === PROTONTEAM) {
-        return <Badge type="success">-100%</Badge>;
+        return <Badge type="info">-100%</Badge>;
     }
 
     return (
-        <Badge type="success" tooltip={c('Info').t`Discount applied to your subscription with coupon ${code}`}>
+        <Badge type="light" tooltip={c('Info').t`Discount applied to your subscription with coupon ${code}`}>
             {code}
         </Badge>
     );

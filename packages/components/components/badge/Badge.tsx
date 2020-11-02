@@ -6,6 +6,7 @@ const CLASSNAMES = {
     success: 'badgeLabel-success',
     default: 'badgeLabel',
     origin: 'badgeLabel-grey',
+    light: 'badgeLabel-greylight',
     warning: 'badgeLabel-warning',
     error: 'badgeLabel-error',
     primary: 'badgeLabel-primary',
