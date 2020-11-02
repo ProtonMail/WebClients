@@ -577,6 +577,7 @@ export enum MAILBOX_IDENTIFIERS {
     archive = '6',
     sent = '7',
     drafts = '8',
+    outbox = '9',
     search = 'search',
     label = 'label',
 }
@@ -697,6 +698,7 @@ export enum MAILBOX_LABEL_IDS {
     ARCHIVE = '6',
     SENT = '7',
     DRAFTS = '8',
+    OUTBOX = '9',
 }
 
 export enum AutoReplyDuration {
