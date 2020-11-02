@@ -1,6 +1,7 @@
 import { Ref, RefObject, MutableRefObject } from 'react';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { content } from 'proton-shared/lib/sanitize';
+import { c } from 'ttag';
 
 export enum FONT_FACE {
     Georgia = 'georgia',
@@ -177,88 +178,108 @@ export const insertCustomStyle = (document: Document) => {
             visibility: hidden;
         }
 
-       html {
-           height: 100%;
-           font-size: 62.5%;
-       }
+        html {
+            height: 100%;
+            font-size: 62.5%;
+        }
 
-       body {
-           height: 100%;
-           box-sizing: border-box;
-           padding: 1.6rem 1rem;
-           font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-           font-size: 1.4rem;
-           line-height: 1.65;
-           color: #222;
-           background: #fff;
-           /* to fix, CSS var are not passing through the iframe */
-           word-wrap: break-word;
-           margin: 0;
-       }
+        body {
+            box-sizing: border-box;
+            padding: 1.6rem 1rem;
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-size: 1.4rem;
+            line-height: 1.65;
+            color: #222;
+            background: #fff;
+            /* to fix, CSS var are not passing through the iframe */
+            word-wrap: break-word;
+            margin: 0;
+        }
 
-       body a {
-           color: #657ee4;
-       }
+        body a {
+            color: #657ee4;
+        }
 
-       blockquote {
-           padding: 0 0 0 1.6rem;
-           margin: 0;
-           border-left: 4px solid #e5e5e5;
-       }
+        [id="squire"] {
+            outline: none;
+        }
 
-       blockquote blockquote blockquote {
-           padding-left: 0;
-           margin-left: 0;
-           border: none;
-       }
+        [id="ellispsis"] {
+            color: inherit;
+            border: 1px solid silver;
+            background-color: white;
+            border-radius: 3px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 0 .5em;
+        }
 
-       .proton-embedded:not([src]) {
-           position: relative;
-           min-height: 38px;
-           border: 1px solid;
-           border-color: #444 #CCC #CCC #444;
-           background: url('/assets/img/icons/broken-img.png') no-repeat 0 50% white;
-       }
+        [id="ellispsis"]:hover,
+        [id="ellispsis"]:focus {
+            border-color: darkgrey;
+            background-color: whitesmoke;
+        }
 
-       .proton-embedded:not([src]):not([alt]) {
-           background-position-x: 50%;
-       }
+        blockquote {
+            padding: 0 0 0 1.6rem;
+            margin: 0;
+            border-left: 4px solid #e5e5e5;
+        }
 
-       .proton-embedded[alt]:not([src])::after {
-           position: absolute;
-           top: 0;
-           left: 0;
-           right: 0;
-           bottom: 0;
-           content: " " attr(alt);
-           white-space: nowrap;
-           overflow: hidden;
-           text-overflow: ellipsis;
-           padding: 10px 0 0 20px;
-           color: rgba(0,0,0,0.5);
-           background: url('/assets/img/icons/broken-img.png') no-repeat 0 50% white;
-       }
+        blockquote blockquote blockquote {
+            padding-left: 0;
+            margin-left: 0;
+            border: none;
+        }
 
-       /* see embedded.scss rules */
-       .proton-embedded:not([width]):not([style*="width"]) {
-           max-width: 100%;
-           min-width: 38px;
-       }
+        .proton-embedded:not([src]) {
+            position: relative;
+            min-height: 38px;
+            border: 1px solid;
+            border-color: #444 #CCC #CCC #444;
+            background: url('/assets/img/icons/broken-img.png') no-repeat 0 50% white;
+        }
 
-       .protonmail_signature_block-empty { display: none }
+        .proton-embedded:not([src]):not([alt]) {
+            background-position-x: 50%;
+        }
 
-       .protonmail_quote {
-           position: relative;
-       }
+        .proton-embedded[alt]:not([src])::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: " " attr(alt);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 10px 0 0 20px;
+            color: rgba(0,0,0,0.5);
+            background: url('/assets/img/icons/broken-img.png') no-repeat 0 50% white;
+        }
 
-       li {
-           list-style-position: inside;
-       }
+        /* see embedded.scss rules */
+        .proton-embedded:not([width]):not([style*="width"]) {
+            max-width: 100%;
+            min-width: 38px;
+        }
 
-       // Handle outlook https://github.com/ProtonMail/Angular/issues/6711
-       p.MsoNormal, li.MsoNormal, div.MsoNormal {
-           margin: 0;
-       }
+        .protonmail_signature_block-empty { display: none }
+
+        .protonmail_quote {
+            position: relative;
+        }
+
+        li {
+            list-style-position: inside;
+        }
+
+        // Handle outlook https://github.com/ProtonMail/Angular/issues/6711
+        p.MsoNormal, li.MsoNormal, div.MsoNormal {
+            margin: 0;
+        }
    `;
 
     style.setAttribute('type', 'text/css');
@@ -290,10 +311,26 @@ const wrapInsertHTML = (squire: any) => {
     };
 };
 
-export const initSquire = async (document: Document): Promise<any> => {
+export const initSquire = async (document: Document, onEllipseClick: () => void): Promise<any> => {
     insertCustomStyle(document);
     const { default: Squire } = await import('squire-rte');
-    const squire = new Squire(document, SQUIRE_CONFIG);
+
+    const title = c('Title').t`Expand content`;
+    document.body.innerHTML = `
+        <div id="squire"></div>
+        <div><button id="ellispsis" title="${title}" style="display: none;">&hellip;</button></div>
+    `;
+    const root = document.body.querySelector('#squire');
+    const squire = new Squire(root, SQUIRE_CONFIG);
     wrapInsertHTML(squire);
+    document.body.querySelector('#ellispsis')?.addEventListener('click', onEllipseClick);
+
     return squire;
+};
+
+export const toggleEllipsisButton = (document: Document, show: boolean) => {
+    const element = document.body.querySelector('#ellispsis') as HTMLDivElement | undefined;
+    if (element?.style?.display) {
+        element.style.display = show ? 'block' : 'none';
+    }
 };
