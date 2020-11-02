@@ -6,7 +6,7 @@ import ToolbarButton from './ToolbarButton';
 import ToolbarDropdown from './ToolbarDropdown';
 
 import { Page } from '../../models/tools';
-import { pageCount } from '../../helpers/paging';
+import { usePaging } from '../../hooks/usePaging';
 
 interface Props {
     loading: boolean;
@@ -14,20 +14,16 @@ interface Props {
     onPage: (page: number) => void;
 }
 
-const PagingControls = ({ loading, page, onPage }: Props) => {
-    const setPage = (pageNumber: number) => onPage(pageNumber);
-    const handleNext = () => setPage(page.page + 1);
-    const handlePrevious = () => setPage(page.page - 1);
-    const handlePage = (newPage: number) => () => setPage(newPage);
-    const count = pageCount(page);
+const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage }: Props) => {
+    const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputOnPage);
 
     return (
         <>
             <ToolbarButton
                 loading={loading}
-                disabled={page.page <= 0}
+                disabled={page <= 1}
                 title={c('Action').t`Previous page`}
-                onClick={handlePrevious}
+                onClick={onPrevious}
                 className="notablet nomobile"
             >
                 <Icon className="toolbar-icon rotateZ-90 mauto" name="caret" />
@@ -35,18 +31,18 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
             </ToolbarButton>
             <ToolbarDropdown
                 title={c('Action').t`Change page`}
-                content={String(page.page + 1)}
-                disabled={count <= 1}
+                content={String(page)}
+                disabled={total <= 1}
                 size="narrow"
             >
                 {() => (
                     <DropdownMenu>
-                        {[...Array(count)].map((_, i) => (
+                        {[...Array(total)].map((_, i) => (
                             <DropdownMenuButton
                                 key={i} // eslint-disable-line react/no-array-index-key
                                 loading={loading}
-                                disabled={page.page === i}
-                                onClick={handlePage(i)}
+                                disabled={page - 1 === i}
+                                onClick={() => onPage(i + 1)}
                             >
                                 {i + 1}
                             </DropdownMenuButton>
@@ -56,9 +52,9 @@ const PagingControls = ({ loading, page, onPage }: Props) => {
             </ToolbarDropdown>
             <ToolbarButton
                 loading={loading}
-                disabled={page.page >= count - 1}
+                disabled={page >= total}
                 title={c('Action').t`Next page`}
-                onClick={handleNext}
+                onClick={onNext}
                 className="notablet nomobile"
             >
                 <Icon className="toolbar-icon rotateZ-270 mauto" name="caret" />

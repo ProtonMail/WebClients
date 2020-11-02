@@ -1,6 +1,14 @@
 import React, { useState, useEffect, ChangeEvent, DragEvent, useRef, useCallback, memo } from 'react';
 import { c, msgid } from 'ttag';
-import { useLabels, useContactEmails, useContactGroups, classnames, useHandler, generateUID } from 'react-components';
+import {
+    useLabels,
+    useContactEmails,
+    useContactGroups,
+    classnames,
+    useHandler,
+    generateUID,
+    PaginationRow,
+} from 'react-components';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { DENSITY } from 'proton-shared/lib/constants';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -11,9 +19,11 @@ import EmptyView from '../view/EmptyView';
 import { DRAG_ELEMENT_KEY, DRAG_ELEMENT_ID_KEY } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
+import { Breakpoints } from '../../models/utils';
+import { Page } from '../../models/tools';
+import { usePaging } from '../../hooks/usePaging';
 
 import './Drag.scss';
-import { Breakpoints } from '../../models/utils';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -33,6 +43,8 @@ interface Props {
     conversationMode: boolean;
     isSearch: boolean;
     breakpoints: Breakpoints;
+    page: Page;
+    onPage: (page: number) => void;
 }
 
 const List = ({
@@ -49,7 +61,9 @@ const List = ({
     onClick,
     conversationMode,
     isSearch,
-    breakpoints
+    breakpoints,
+    page: inputPage,
+    onPage,
 }: Props) => {
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
@@ -65,6 +79,9 @@ const List = ({
 
     const elements = usePlaceholders(inputElements, loading, expectedLength);
 
+    const pagingHandlers = usePaging(inputPage, onPage);
+    const { page, total } = pagingHandlers;
+
     useEffect(() => {
         setDraggedIDs([]);
 
@@ -76,11 +93,10 @@ const List = ({
         }
     }, [elements]);
 
+    // Scroll top when changing page
     useEffect(() => {
-        if (loading) {
-            listRef.current?.scroll?.({ top: 0 });
-        }
-    }, [loading]);
+        listRef.current?.scroll?.({ top: 0 });
+    }, [loading, page]);
 
     const handleCheck = useHandler((event: ChangeEvent, elementID: string) => {
         const target = event.target as HTMLInputElement;
@@ -174,37 +190,43 @@ const List = ({
             ref={listRef}
             className={classnames([
                 'items-column-list scroll-if-needed scroll-smooth-touch',
-                isCompactView && 'is-compact'
+                isCompactView && 'is-compact',
             ])}
         >
             <div className="items-column-list-inner flex flex-nowrap flex-column">
                 {expectedLength === 0 ? (
                     <EmptyView labelID={labelID} isSearch={isSearch} />
                 ) : (
-                    elements.map((element, index) => (
-                        <Item
-                            key={element.ID}
-                            conversationMode={conversationMode}
-                            labels={labels}
-                            labelID={labelID}
-                            loading={loading}
-                            columnLayout={columnLayout}
-                            elementID={elementID}
-                            element={element}
-                            checked={checkedIDs.includes(element.ID || '')}
-                            contacts={contacts}
-                            contactGroups={contactGroups}
-                            onCheck={handleCheck}
-                            onClick={onClick}
-                            userSettings={userSettings}
-                            mailSettings={mailSettings}
-                            onDragStart={handleDragStart}
-                            onDragCanceled={handleDragCanceled}
-                            dragged={draggedIDs.includes(element.ID || '')}
-                            index={index}
-                            breakpoints={breakpoints}
-                        />
-                    ))
+                    <>
+                        {elements.map((element, index) => (
+                            <Item
+                                key={element.ID}
+                                conversationMode={conversationMode}
+                                labels={labels}
+                                labelID={labelID}
+                                loading={loading}
+                                columnLayout={columnLayout}
+                                elementID={elementID}
+                                element={element}
+                                checked={checkedIDs.includes(element.ID || '')}
+                                contacts={contacts}
+                                contactGroups={contactGroups}
+                                onCheck={handleCheck}
+                                onClick={onClick}
+                                userSettings={userSettings}
+                                mailSettings={mailSettings}
+                                onDragStart={handleDragStart}
+                                onDragCanceled={handleDragCanceled}
+                                dragged={draggedIDs.includes(element.ID || '')}
+                                index={index}
+                                breakpoints={breakpoints}
+                            />
+                        ))}
+                        <div className="p1-5 flex flex-column flex-items-center">
+                            <p className="mt0 mb1">{c('Info').t`Page ${page} of ${total}`}</p>
+                            <PaginationRow {...pagingHandlers} disabled={loading} />
+                        </div>
+                    </>
                 )}
             </div>
         </div>

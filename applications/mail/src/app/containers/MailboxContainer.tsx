@@ -234,6 +234,8 @@ const MailboxContainer = ({
                         userSettings={userSettings}
                         isSearch={isSearch}
                         breakpoints={breakpoints}
+                        page={page}
+                        onPage={handlePage}
                     />
                 )}
                 {showContentPanel && (
