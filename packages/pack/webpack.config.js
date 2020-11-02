@@ -11,11 +11,6 @@ function main({ port, publicPath, flow, appMode, featureFlags, writeSRI = true }
     const isProduction = process.env.NODE_ENV === 'production';
     const isTtag = flow === 'i18n';
 
-    const sourcesDevServer =
-        !isProduction && !isTtag
-            ? [`webpack-dev-server/client?http://localhost:${port}/`, 'webpack/hot/dev-server']
-            : [];
-
     const options = {
         isProduction,
         isTtag,
@@ -40,7 +35,6 @@ function main({ port, publicPath, flow, appMode, featureFlags, writeSRI = true }
         entry: {
             // The order is important. The supported.js file sets a global variable that is used by unsupported.js to detect if the main bundle could be parsed.
             index: [
-                ...sourcesDevServer,
                 firstExisting(['./src/app/index.tsx', './src/app/index.js']),
                 getSource('./node_modules/proton-shared/lib/browser/supported.js')
             ],
@@ -65,7 +59,6 @@ function main({ port, publicPath, flow, appMode, featureFlags, writeSRI = true }
             inline: true,
             compress: true,
             host: '0.0.0.0',
-            public: 'localhost',
             historyApiFallback: {
                 index: publicPath
             },
