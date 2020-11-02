@@ -17,6 +17,14 @@ import CycleDiscountBadge from '../CycleDiscountBadge';
 import DiscountBadge from '../DiscountBadge';
 
 const CheckoutRow = ({ title, amount = 0, currency, className = '' }) => {
+    if (amount === 0 && !currency) {
+        return (
+            <div className={classnames(['flex flex-nowrap flex-spacebetween mb0-5', className])}>
+                <div className="pr0-5">{title}</div>
+                <span className="color-global-success uppercase">{c('Price').t`Free`}</span>
+            </div>
+        );
+    }
     return (
         <div className={classnames(['flex flex-nowrap flex-spacebetween mb0-5', className])}>
             <div className="pr0-5">{title}</div>
@@ -31,7 +39,7 @@ CheckoutRow.propTypes = {
     className: PropTypes.string,
     title: PropTypes.node.isRequired,
     amount: PropTypes.number.isRequired,
-    currency: PropTypes.string.isRequired,
+    currency: PropTypes.string,
 };
 
 /** @type any */
@@ -69,6 +77,8 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
         ({ Type, Services }) => Type === PLAN_TYPES.PLAN && hasBit(Services, PLAN_SERVICES.VPN)
     );
     const hasVisionary = collection.some(({ Name }) => Name === PLANS.VISIONARY);
+    const hasMailPlus = collection.some(({ Name }) => Name === PLANS.PLUS);
+    const hasVpnPlus = collection.some(({ Name }) => Name === PLANS.VPNPLUS);
 
     const getTitle = (planName, quantity) => {
         const addresses = quantity * addressAddon.MaxAddresses;
@@ -163,6 +173,12 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                             )}
                         </div>
                     )}
+                    {hasVisionary ||
+                    (hasMailPlus && hasVpnPlus && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle)) ? (
+                        <div className="border-top border-top--dashed pt0-5">
+                            <CheckoutRow className="bold" title={c('Info').t`ProtonDrive`} amount={0} />
+                        </div>
+                    ) : null}
                 </div>
             </div>
             {checkResult.Amount ? (
