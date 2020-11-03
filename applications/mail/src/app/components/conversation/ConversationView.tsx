@@ -61,6 +61,7 @@ const ConversationView = ({
     const filteredMessages = messages.filter((message) => inTrash === hasLabel(message, TRASH));
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
+    const messageInUrl = conversationResult?.Messages?.find((message) => message.ID === messageID);
 
     const openMessage = (messageID: string | undefined) => {
         messageViewsRefs.current[messageID || '']?.open(!firstOpening);
@@ -76,13 +77,10 @@ const ConversationView = ({
 
     // Open the message in URL
     useEffect(() => {
-        if (!loadingMessages && messageID) {
-            const message = conversationResult?.Messages?.find((message) => message.ID === messageID);
-            if (!isDraft(message)) {
-                openMessage(messageID);
-            }
+        if (!loadingMessages && messageID && !isDraft(messageInUrl)) {
+            openMessage(messageID);
         }
-    }, [conversationID, messageID, loadingMessages]);
+    }, [conversationID, messageID, loadingMessages, isDraft(messageInUrl)]);
 
     useEffect(() => {
         setFilter(DEFAULT_FILTER_VALUE);
