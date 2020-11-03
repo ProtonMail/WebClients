@@ -671,6 +671,8 @@ export enum CLIENT_IDS {
     WebVPNSettings = 'Web VPN Settings',
     WebDrive = 'Web Drive',
     WebAdmin = 'Web Admin',
+    // Android
+    AndroidTvVPN = 'AndroidTvVPN',
 }
 export type CLIENT_ID_KEYS = keyof typeof CLIENT_IDS;
 
