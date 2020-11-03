@@ -16,7 +16,7 @@ export const getEventUpdatedText = (inviteActions?: InviteActions) => {
     return c('Success').t`Event updated`;
 };
 
-export const getEventDeletedText = (sendCancellationNotice = false) => {
+export const getEventDeletedText = ({ sendCancellationNotice = false }: InviteActions) => {
     return sendCancellationNotice ? c('Success').t`Answer sent and event deleted` : c('Success').t`Event deleted`;
 };
 
@@ -24,7 +24,7 @@ export const getRecurringEventCreatedText = () => {
     return c('Success').t`Events created`;
 };
 
-export const getRecurringEventUpdatedText = (saveType: RECURRING_TYPES, inviteActions?: InviteActions) => {
+export const getRecurringEventUpdatedText = (saveType: RECURRING_TYPES, inviteActions: InviteActions) => {
     if (saveType === RECURRING_TYPES.SINGLE) {
         return getEventUpdatedText(inviteActions);
     }
@@ -36,9 +36,10 @@ export const getRecurringEventUpdatedText = (saveType: RECURRING_TYPES, inviteAc
         : c('Success').t`All events updated`;
 };
 
-export const getRecurringEventDeletedText = (deleteType: RECURRING_TYPES, sendCancellationNotice = false) => {
+export const getRecurringEventDeletedText = (deleteType: RECURRING_TYPES, inviteActions: InviteActions) => {
+    const { sendCancellationNotice } = inviteActions;
     if (deleteType === RECURRING_TYPES.SINGLE) {
-        return getEventDeletedText(sendCancellationNotice);
+        return getEventDeletedText(inviteActions);
     }
     if (deleteType === RECURRING_TYPES.FUTURE) {
         return sendCancellationNotice

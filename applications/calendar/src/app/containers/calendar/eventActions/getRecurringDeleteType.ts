@@ -1,5 +1,6 @@
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES } from '../../../constants';
+import { InviteActions } from './inviteActions';
 import { getHasFutureOption } from './recurringHelper';
 import { EventOldData } from '../../../interfaces/EventData';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
@@ -8,9 +9,8 @@ import { OnDeleteConfirmationCb } from '../interface';
 interface Arguments {
     originalEditEventData: EventOldData;
     recurrence: CalendarEventRecurring;
-    isInvitation: boolean;
+    inviteActions: InviteActions;
     veventComponent?: VcalVeventComponent;
-    sendCancellationNotice?: boolean;
     canOnlyDeleteAll: boolean;
     canOnlyDeleteThis: boolean;
     onDeleteConfirmation: OnDeleteConfirmationCb;
@@ -21,9 +21,8 @@ const getRecurringDeleteType = ({
     canOnlyDeleteAll,
     canOnlyDeleteThis,
     onDeleteConfirmation,
-    isInvitation,
+    inviteActions,
     veventComponent,
-    sendCancellationNotice,
 }: Arguments) => {
     let deleteTypes;
     if (canOnlyDeleteAll || !originalEditEventData.veventComponent) {
@@ -38,9 +37,8 @@ const getRecurringDeleteType = ({
     return onDeleteConfirmation({
         type: DELETE_CONFIRMATION_TYPES.RECURRING,
         data: deleteTypes,
-        isInvitation,
+        inviteActions,
         veventComponent,
-        sendCancellationNotice,
     });
 };
 

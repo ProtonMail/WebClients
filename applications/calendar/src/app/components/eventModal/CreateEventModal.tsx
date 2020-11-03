@@ -1,18 +1,23 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { Address } from 'proton-shared/lib/interfaces';
-import React from 'react';
-import { FormModal, PrimaryButton, Button } from 'react-components';
-import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
+import { Address } from 'proton-shared/lib/interfaces';
+import React from 'react';
+import { Button, FormModal, PrimaryButton } from 'react-components';
+import { c } from 'ttag';
+import {
+    INVITE_ACTION_TYPES,
+    InviteActions,
+    NO_INVITE_ACTION,
+} from '../../containers/calendar/eventActions/inviteActions';
 import { findUserAttendeeModel } from '../../helpers/attendees';
-
-import validateEventModel from './eventForm/validateEventModel';
+import { EventModel } from '../../interfaces/EventModel';
 
 import EventForm from './EventForm';
-import { useForm, ACTION } from './hooks/useForm';
-import { EventModel } from '../../interfaces/EventModel';
+
+import validateEventModel from './eventForm/validateEventModel';
+import { ACTION, useForm } from './hooks/useForm';
 
 interface Props {
     isNarrow: boolean;
@@ -22,7 +27,7 @@ interface Props {
     model: EventModel;
     addresses: Address[];
     onSave: (value: EventModel) => Promise<void>;
-    onDelete: (isInvitation?: boolean, sendCancellationNotice?: boolean) => Promise<void>;
+    onDelete: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
     setModel: (value: EventModel) => void;
     tzid: string;
@@ -77,8 +82,11 @@ const CreateEventModal = ({
             {c('Action').t`Save`}
         </PrimaryButton>
     );
+    const inviteActions = model.isOrganizer
+        ? NO_INVITE_ACTION
+        : { type: INVITE_ACTION_TYPES.DECLINE, sendCancellationNotice };
 
-    const handleDeleteWithNotice = () => handleDelete(!model.isOrganizer, sendCancellationNotice);
+    const handleDeleteWithNotice = () => handleDelete(inviteActions);
     const submit = isCreateEvent ? (
         submitButton
     ) : (

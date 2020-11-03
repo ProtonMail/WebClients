@@ -72,7 +72,7 @@ const useCalendarsEventsReader = (
             ]);
         };
 
-        // Single edits are not always tied to the parent. Ensure that the parent exists in the cache before viewing it.
+        // Single edits are not always tied to the parent. Ensure that if the parent exists, it's in the cache before viewing it.
         const getRecurringEventAndUpsert = (
             eventComponent: SharedVcalVeventComponent,
             eventData: CalendarEvent,
@@ -109,9 +109,6 @@ const useCalendarsEventsReader = (
                     eventOccurrences.forEach((eventOccurrence) => {
                         upsertCalendarApiEvent(eventOccurrence, calendarEventsCache);
                     });
-                    if (!getParentEvent()) {
-                        throw new Error(c('Error').t`Failed to get original occurrence in series`);
-                    }
                 })
                 .catch(() => {
                     throw new Error(c('Error').t`Failed to get original occurrence in series`);
