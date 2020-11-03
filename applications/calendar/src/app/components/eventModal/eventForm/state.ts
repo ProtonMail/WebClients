@@ -7,10 +7,11 @@ import {
     WEEKLY_TYPE,
     YEARLY_TYPE,
 } from 'proton-shared/lib/calendar/constants';
+import { getSelfAttendeeData } from 'proton-shared/lib/calendar/integration/invite';
 import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface';
 import { getIsAllDay, getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
-import { Address as tsAddress } from 'proton-shared/lib/interfaces';
+import { Address, Address as tsAddress } from 'proton-shared/lib/interfaces';
 import {
     Calendar as tsCalendar,
     CalendarSettings as tsCalendarSettings,
@@ -185,7 +186,12 @@ const getParentMerge = (
     tzid: string
 ) => {
     const isAllDay = getIsAllDay(veventComponentParentPartial);
-    const parentModel = propertiesToModel(veventComponentParentPartial, isAllDay, isOrganizer, tzid);
+    const parentModel = propertiesToModel(
+        { veventComponent: veventComponentParentPartial },
+        isAllDay,
+        isOrganizer,
+        tzid
+    );
     const { frequencyModel, start } = parentModel;
     return {
         frequencyModel: getFrequencyModelChange(start, recurrenceStart, frequencyModel),
@@ -198,6 +204,7 @@ interface GetExistingEventArguments {
     veventComponentParentPartial?: SharedVcalVeventComponent;
     isOrganizer: boolean;
     tzid: string;
+    addresses?: Address[];
 }
 
 export const getExistingEvent = ({
@@ -206,11 +213,13 @@ export const getExistingEvent = ({
     veventComponentParentPartial,
     isOrganizer,
     tzid,
+    addresses = [],
 }: GetExistingEventArguments): Partial<EventModel> => {
     const isAllDay = getIsAllDay(veventComponent);
     const recurrenceId = getRecurrenceId(veventComponent);
+    const selfAttendeeData = getSelfAttendeeData(veventComponent.attendee, addresses);
 
-    const newModel = propertiesToModel(veventComponent, isAllDay, isOrganizer, tzid);
+    const newModel = propertiesToModel({ veventComponent, selfAttendeeData }, isAllDay, isOrganizer, tzid);
     const strippedDescription = stripAllTags(newModel.description);
 
     // Email notifications are not supported atm.

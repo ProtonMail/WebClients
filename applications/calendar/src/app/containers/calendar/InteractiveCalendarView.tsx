@@ -4,7 +4,7 @@ import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar
 import { ICAL_ATTENDEE_STATUS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
-import { createReplyIcs, findUserAttendee } from 'proton-shared/lib/calendar/integration/invite';
+import { createReplyIcs, getSelfAttendeeData } from 'proton-shared/lib/calendar/integration/invite';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { getHasAttendee, getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
@@ -361,11 +361,12 @@ const InteractiveCalendarView = ({
             veventComponentParentPartial,
             tzid,
             isOrganizer: !!eventData.IsOrganizer,
+            addresses,
         });
         if (partstat && addresses) {
             return {
                 ...createResult,
-                ...modifyEventModelPartstat(eventResult, partstat, addresses, CalendarSettings),
+                ...modifyEventModelPartstat(eventResult, partstat, CalendarSettings),
             };
         }
         return {
@@ -607,24 +608,24 @@ const InteractiveCalendarView = ({
             if (!vevent) {
                 throw new Error('Cannot build reply ics without the event component');
             }
-            const { userAttendee, userAddress } = findUserAttendee(vevent.attendee, addresses);
+            const { selfAttendee, selfAddress } = getSelfAttendeeData(vevent.attendee || [], addresses);
             const { organizer } = vevent;
-            if (!userAttendee || !userAddress || !organizer) {
+            if (!selfAttendee || !selfAddress || !organizer) {
                 throw new Error('Missing invitation data');
             }
             const organizerEmail = getAttendeeEmail(organizer);
             const ics = createReplyIcs({
                 prodId,
                 vevent: pick(vevent, ['uid', 'dtstart', 'dtend', 'sequence', 'recurrence-id', 'organizer']),
-                emailTo: userAttendee.value,
+                emailTo: selfAttendee.value,
                 partstat,
             });
             await sendIcs({
                 ics,
-                addressID: userAddress.ID,
+                addressID: selfAddress.ID,
                 from: {
-                    Address: userAddress.Email,
-                    Name: userAddress.DisplayName || userAddress.Email,
+                    Address: selfAddress.Email,
+                    Name: selfAddress.DisplayName || selfAddress.Email,
                 },
                 to: [{ Address: organizerEmail, Name: organizer.parameters?.cn || organizerEmail }],
                 subject: formatSubject(`Invitation: ${getDisplayTitle(vevent.summary?.value)}`, RE_PREFIX),
@@ -1005,7 +1006,6 @@ const InteractiveCalendarView = ({
                             weekStartsOn={weekStartsOn}
                             contactEmailMap={contactEmailMap}
                             formatTime={formatTime}
-                            addresses={addresses}
                             onDelete={(calendarEvent, inviteActions) => {
                                 return (
                                     handleDeleteEvent(targetEvent, inviteActions)

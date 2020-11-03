@@ -3,7 +3,8 @@ import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface'
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import { getEventStatus } from 'proton-shared/lib/calendar/vcalHelper';
 import { truncate } from 'proton-shared/lib/helpers/string';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { DecryptedVeventResult } from 'proton-shared/lib/interfaces/calendar';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { EventModelView } from '../../../interfaces/EventModel';
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
@@ -17,11 +18,14 @@ const DEFAULT_TIME = {
 };
 
 export const propertiesToModel = (
-    component: VcalVeventComponent,
+    {
+        veventComponent,
+        verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
+        selfAttendeeData,
+    }: RequireSome<Partial<DecryptedVeventResult>, 'veventComponent'>,
     isAllDay: boolean,
     isOrganizer: boolean,
-    tzid: string,
-    verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED
+    tzid: string
 ): EventModelView => {
     const {
         uid,
@@ -33,9 +37,10 @@ export const propertiesToModel = (
         attendee,
         organizer,
         ...rest
-    } = component;
+    } = veventComponent;
 
-    const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(component), isAllDay, tzid);
+    const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(veventComponent), isAllDay, tzid);
+    const { selfAttendeeIndex, selfAddress } = selfAttendeeData || {};
     const titleString = summary?.value ?? '';
     const locationString = location?.value ?? '';
     const descriptionString = description?.value ?? '';
@@ -49,8 +54,10 @@ export const propertiesToModel = (
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
         isOrganizer,
-        status: getEventStatus(component),
+        status: getEventStatus(veventComponent),
         verificationStatus,
+        selfAttendeeIndex,
+        selfAddress,
         start,
         end,
         rest,

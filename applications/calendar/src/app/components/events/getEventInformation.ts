@@ -1,17 +1,11 @@
 import { FREQUENCY, ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getAggregatedEventVerificationStatus } from 'proton-shared/lib/calendar/decrypt';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { Address } from 'proton-shared/lib/interfaces';
 import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
-import { findUserAttendeeModel } from '../../helpers/attendees';
 import { EventModelReadView } from '../../interfaces/EventModel';
 
-const getEventInformation = (
-    calendarViewEvent: CalendarViewEvent,
-    model: EventModelReadView,
-    addresses: Address[] = []
-) => {
+const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventModelReadView) => {
     const { calendarData, eventReadResult } = calendarViewEvent.data;
 
     const isTemporaryEvent = getIsTemporaryViewEvent(calendarViewEvent);
@@ -23,7 +17,7 @@ const getEventInformation = (
     const verificationStatusPersonal = Object.values(decryptedPersonalVeventMap).map(
         (result) => result?.verificationStatus
     );
-    const verificationStatusRest = eventReadResult?.result?.[0].verificationStatus;
+    const verificationStatusRest = eventReadResult?.result?.[0]?.verificationStatus;
     const verificationStatus = getAggregatedEventVerificationStatus([
         ...verificationStatusPersonal,
         verificationStatusRest,
@@ -34,7 +28,8 @@ const getEventInformation = (
     const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
     const isRecurring = model.frequencyModel.type !== FREQUENCY.ONCE;
     const isSingleEdit = !!eventReadResult?.result?.[0]?.veventComponent?.['recurrence-id'];
-    const { userAttendee, userAddress } = findUserAttendeeModel(model.attendees, addresses);
+    const { selfAddress, selfAttendeeIndex } = model;
+    const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
 
     return {
         isTemporaryEvent,
@@ -47,8 +42,8 @@ const getEventInformation = (
         isCancelled,
         isRecurring,
         isSingleEdit,
-        userPartstat: userAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
-        isAddressDisabled: userAddress ? userAddress.Status === 0 : true,
+        userPartstat: selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+        isSelfAddressDisabled: selfAddress ? selfAddress.Status === 0 : true,
     };
 };
 

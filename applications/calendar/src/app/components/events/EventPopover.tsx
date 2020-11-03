@@ -7,7 +7,6 @@ import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { Address } from 'proton-shared/lib/interfaces';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
@@ -114,7 +113,6 @@ interface Props {
     weekStartsOn: WeekStartsOn;
     isNarrow: boolean;
     contactEmailMap: SimpleMap<ContactEmail>;
-    addresses: Address[];
 }
 
 const EventPopover = ({
@@ -131,7 +129,6 @@ const EventPopover = ({
     weekStartsOn,
     isNarrow,
     contactEmailMap,
-    addresses,
 }: Props) => {
     const [loadingAction, withLoadingAction] = useLoading();
 
@@ -148,14 +145,14 @@ const EventPopover = ({
         verificationStatus,
         isCancelled,
         userPartstat,
-        isAddressDisabled,
-    } = getEventInformation(targetEvent, model, addresses);
+        isSelfAddressDisabled,
+    } = getEventInformation(targetEvent, model);
 
     const handleDelete = () => {
         if (eventData && getIsCalendarEvent(eventData)) {
             const sendCancellationNotice =
                 !eventReadError &&
-                !isAddressDisabled &&
+                !isSelfAddressDisabled &&
                 !isCalendarDisabled &&
                 !isCancelled &&
                 [ACCEPTED, TENTATIVE].includes(userPartstat);
@@ -316,7 +313,7 @@ const EventPopover = ({
                             className="mr1"
                             actions={actions}
                             partstat={userPartstat}
-                            disabled={isCalendarDisabled || isAddressDisabled}
+                            disabled={isCalendarDisabled || isSelfAddressDisabled}
                         />
                         <MoreButtons
                             onEdit={handleEdit}

@@ -24,18 +24,27 @@ const DEFAULT_VEVENT: VcalVeventComponent = {
 };
 const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string): EventModelReadView => {
     return useMemo(() => {
-        const [{ veventComponent = DEFAULT_VEVENT }, alarmMap = {}, { IsOrganizer }]: [
-            DecryptedVeventResult,
-            DecryptedPersonalVeventMapResult,
-            EventInternalProperties
-        ] = value || [
-            { veventComponent: DEFAULT_VEVENT, verificationStatus: EVENT_VERIFICATION_STATUS.NOT_VERIFIED },
+        const [
+            { veventComponent = DEFAULT_VEVENT, verificationStatus, selfAttendeeData },
+            alarmMap = {},
+            { IsOrganizer },
+        ]: [DecryptedVeventResult, DecryptedPersonalVeventMapResult, EventInternalProperties] = value || [
+            {
+                veventComponent: DEFAULT_VEVENT,
+                verificationStatus: EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
+                selfAttendeeData: {},
+            },
             {},
             { Permissions: 3, IsOrganizer: 1 },
         ];
         const isAllDay = getIsAllDay(veventComponent);
         const isOrganizer = !!IsOrganizer;
-        const model = propertiesToModel(veventComponent, isAllDay, isOrganizer, tzid);
+        const model = propertiesToModel(
+            { veventComponent, verificationStatus, selfAttendeeData },
+            isAllDay,
+            isOrganizer,
+            tzid
+        );
         const notifications = Object.keys(alarmMap)
             .map((key) => {
                 return propertiesToNotificationModel(alarmMap[key]?.veventComponent, isAllDay);
