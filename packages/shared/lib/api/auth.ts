@@ -80,6 +80,7 @@ export const pushForkSession = (data: {
     ChildClientID: CLIENT_ID_KEYS;
     Independent: 0 | 1;
     Selector?: string;
+    UserCode?: string;
 }) => ({
     method: 'post',
     url: 'auth/sessions/forks',
