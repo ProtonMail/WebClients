@@ -16,6 +16,7 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import {
     DriveFileRevisionResult,
     CreateFileResult,
@@ -48,6 +49,7 @@ import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { isFile } from '../../utils/file';
 import { getMetaForTransfer, isTransferCancelError } from '../../utils/transfer';
 import useEvents from './useEvents';
+import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -202,7 +204,11 @@ function useFiles() {
 
                 const Name = await encryptName(filename, parentKeys.privateKey.toPublic(), addressKeyInfo.privateKey);
 
-                const MIMEType = lookup(filename) || 'application/octet-stream';
+                const fileMimeType = FEATURE_FLAGS.includes('drive-sprint-25')
+                    ? await mimeTypeFromFile(file)
+                    : undefined;
+
+                const MIMEType = fileMimeType || lookup(filename) || 'application/octet-stream';
 
                 if (canceled) {
                     throw new TransferCancel(filename);
