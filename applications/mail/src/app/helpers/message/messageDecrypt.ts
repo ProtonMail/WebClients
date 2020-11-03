@@ -32,10 +32,12 @@ const decryptMimeMessage = async (message: Message, privateKeys: OpenPGPKey[], a
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
 
-    let result: ReturnType<typeof decryptMIMEMessage>;
+    // TS trick to get decrypt return value type
+    type ThenArg<T> = T extends PromiseLike<infer U> ? U : T;
+    type DecryptMimeResult = ThenArg<ReturnType<typeof decryptMIMEMessage>>;
+    let result: DecryptMimeResult;
 
     try {
-        // Don't listen to TS, this await is needed
         result = await decryptMIMEMessage({
             message: message?.Body,
             messageDate: getDate(message),
