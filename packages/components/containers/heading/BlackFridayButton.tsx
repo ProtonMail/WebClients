@@ -23,7 +23,7 @@ const BlackFridayButton = ({ plans, subscription, ...rest }: Props) => {
     const icon = 'blackfriday';
     const cyberModay = useCyberMondayPeriod();
     const text = isProductPayer(subscription)
-        ? c('Promo title, need to be short').t`Special offer`
+        ? c('blackfriday Promo title, need to be short').t`Special offer`
         : cyberModay
         ? 'Cyber Monday'
         : 'Black Friday';
