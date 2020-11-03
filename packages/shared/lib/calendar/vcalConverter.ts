@@ -1,7 +1,8 @@
 import { addDays } from '../date-fns-utc';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
-import { buildMailTo, getEmailTo } from '../helpers/email';
+import { buildMailTo, cleanEmail, getEmailTo } from '../helpers/email';
 import { mod } from '../helpers/math';
+import { Participant } from '../interfaces/calendar';
 import { DateTime } from '../interfaces/calendar/Date';
 import {
     VcalAttendeeProperty,
@@ -14,6 +15,7 @@ import {
     VcalOrganizerProperty,
     VcalVeventComponent,
 } from '../interfaces/calendar/VcalModel';
+import { getAttendeeEmail } from './attendees';
 import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
 
 export const dateToProperty = ({
@@ -161,6 +163,15 @@ export const buildVcalAttendee = (email: string) => {
     };
 };
 
+export const getHasModifiedDtstamp = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
+    const { dtstamp: newDtstamp } = newVevent;
+    const { dtstamp: oldDtstamp } = oldVevent;
+    if (!newDtstamp || !oldDtstamp) {
+        return undefined;
+    }
+    return +propertyToUTCDate(newDtstamp) !== +propertyToUTCDate(oldDtstamp);
+};
+
 export const getHasModifiedDateTimes = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
     const { dtstart: newDtstart } = newVevent;
     const { dtstart: oldDtstart } = oldVevent;
@@ -183,22 +194,41 @@ const getIsEquivalentAttendee = (newAttendee: VcalAttendeeProperty, oldAttendee:
     return true;
 };
 
-export const getHasModifiedAttendees = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
-    const { attendee: newAttendees } = newVevent;
-    const { attendee: oldAttendees } = oldVevent;
-    if (!newAttendees) {
-        return !!oldAttendees;
+export const getHasModifiedAttendees = ({
+    veventIcs,
+    veventApi,
+    attendeeIcs,
+    attendeeApi,
+}: {
+    veventIcs: VcalVeventComponent;
+    veventApi: VcalVeventComponent;
+    attendeeIcs: Participant;
+    attendeeApi: Participant;
+}) => {
+    const { attendee: attendeesIcs } = veventIcs;
+    const { attendee: attendeesApi } = veventApi;
+    if (!attendeesIcs) {
+        return !!attendeesApi;
     }
-    if (!oldAttendees || oldAttendees.length !== newAttendees.length) {
+    if (!attendeesApi || attendeesApi.length !== attendeesIcs.length) {
         return true;
     }
-    const modifiedAttendees = [...oldAttendees];
-    newAttendees.forEach((attendee) => {
-        const index = modifiedAttendees.findIndex((oldAttendee) => getIsEquivalentAttendee(oldAttendee, attendee));
+    // We check if attendees other than the invitation attendees have been modified
+    const otherAttendeesIcs = attendeesIcs.filter(
+        (attendee) => cleanEmail(getAttendeeEmail(attendee)) !== cleanEmail(attendeeIcs.emailAddress)
+    );
+    const otherAttendeesApi = attendeesApi.filter(
+        (attendee) => cleanEmail(getAttendeeEmail(attendee)) !== cleanEmail(attendeeApi.emailAddress)
+    );
+    return otherAttendeesIcs.reduce((acc, attendee) => {
+        if (acc === true) {
+            return true;
+        }
+        const index = otherAttendeesApi.findIndex((oldAttendee) => getIsEquivalentAttendee(oldAttendee, attendee));
         if (index === -1) {
             return true;
         }
-        modifiedAttendees.splice(index, 1);
-    });
-    return false;
+        otherAttendeesApi.splice(index, 1);
+        return false;
+    }, false);
 };

@@ -156,14 +156,14 @@ export const removeDot = (email = '') => {
 /**
  * Remove plus alias part present in the email value
  */
-export const removeEmailAlias = (email = '') => {
-    return normalizeEmail(email)
+export const removeEmailAlias = (email = '', isInternal?: boolean) => {
+    return normalizeEmail(email, isInternal)
         .replace(/(\+[^@]*)@/, '@')
         .replace(/[._-](?=[^@]*@)/g, '');
 };
 
-export const cleanEmail = (email = '') => {
-    return removeDot(removeEmailAlias(email));
+export const cleanEmail = (email = '', isInternal?: boolean) => {
+    return removeDot(removeEmailAlias(email, isInternal));
 };
 
 /**

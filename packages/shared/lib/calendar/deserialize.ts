@@ -1,4 +1,5 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import { Address } from '../interfaces';
 
 import { SimpleMap } from '../interfaces/utils';
 import {
@@ -7,6 +8,7 @@ import {
     getAggregatedEventVerificationStatus,
     verifySignedCard,
 } from './decrypt';
+import { getSelfAttendeeData } from './integration/invite';
 import { parse } from './vcal';
 import { unwrap } from './helper';
 import { toInternalAttendee } from './attendees';
@@ -42,6 +44,7 @@ interface ReadCalendarEventArguments {
     publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]>;
     sharedSessionKey?: SessionKey;
     calendarSessionKey?: SessionKey;
+    addresses: Address[];
 }
 
 export const readCalendarEvent = async ({
@@ -49,6 +52,7 @@ export const readCalendarEvent = async ({
     publicKeysMap,
     sharedSessionKey,
     calendarSessionKey,
+    addresses,
 }: ReadCalendarEventArguments) => {
     const decryptedEventsResults = await Promise.all([
         Promise.all(SharedEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey))),
@@ -88,8 +92,8 @@ export const readCalendarEvent = async ({
     }, []);
 
     const veventWithAttendees = veventAttendees.length ? { ...vevent, attendee: veventAttendees } : vevent;
-
-    return { veventComponent: veventWithAttendees, verificationStatus };
+    const selfAttendeeData = getSelfAttendeeData(veventAttendees, addresses);
+    return { veventComponent: veventWithAttendees, verificationStatus, selfAttendeeData };
 };
 
 export const readPersonalPart = async (

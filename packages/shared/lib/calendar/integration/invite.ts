@@ -29,12 +29,12 @@ export const getParticipant = (
     participant: VcalAttendeeProperty | VcalOrganizerProperty,
     contactEmails: ContactEmail[],
     ownAddresses: Address[],
-    emailTo: string
+    emailTo?: string
 ): Participant => {
     const emailAddress = getAttendeeEmail(participant);
     const normalizedEmailAddress = normalizeInternalEmail(emailAddress);
-    const isYou = normalizeInternalEmail(emailTo) === normalizedEmailAddress;
     const selfAddress = ownAddresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizedEmailAddress);
+    const isYou = emailTo ? normalizeInternalEmail(emailTo) === normalizedEmailAddress : !!selfAddress;
     const contact = contactEmails.find(({ Email }) => cleanEmail(Email) === cleanEmail(emailAddress));
     const participantName = isYou
         ? c('Participant name').t`You`
@@ -101,20 +101,84 @@ export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = 
     return { index, attendee };
 };
 
-export const findUserAttendee = (attendees: VcalAttendeeProperty[] = [], addresses: Address[]) => {
-    const cleanUserEmails = addresses.map(({ Email }) => cleanEmail(Email));
-    return attendees.reduce<{ userAttendee?: VcalAttendeeProperty; userAddress?: Address }>((acc, attendee) => {
-        if (acc.userAttendee && acc.userAddress) {
+export function getSelfAttendeeData(attendees: VcalAttendeeProperty[] = [], addresses: Address[] = []) {
+    const normalizedAttendeeEmails = attendees.map((attendee) => cleanEmail(getAttendeeEmail(attendee)));
+    // start checking active addresses
+    const activeAddresses = addresses.filter(({ Status }) => Status !== 0);
+    const { selfActiveAttendee, selfActiveAddress, selfActiveAttendeeIndex } = activeAddresses.reduce<{
+        selfActiveAttendee?: VcalAttendeeProperty;
+        selfActiveAttendeeIndex?: number;
+        selfActiveAddress?: Address;
+        answeredAttendeeFound: boolean;
+    }>(
+        (acc, address) => {
+            if (acc.answeredAttendeeFound) {
+                return acc;
+            }
+            const cleanSelfEmail = cleanEmail(address.Email, true);
+            const index = normalizedAttendeeEmails.findIndex((email) => email === cleanSelfEmail);
+            if (index === -1) {
+                return acc;
+            }
+            const attendee = attendees[index];
+            const partstat = getAttendeePartstat(attendee);
+            const answeredAttendeeFound = partstat !== ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
+            if (answeredAttendeeFound || !(acc.selfActiveAttendee && acc.selfActiveAddress)) {
+                return {
+                    selfActiveAttendee: attendee,
+                    selfActiveAddress: address,
+                    selfActiveAttendeeIndex: index,
+                    answeredAttendeeFound,
+                };
+            }
             return acc;
-        }
-        const cleanAttendeeEmail = cleanEmail(getAttendeeEmail(attendee));
-        const index = cleanUserEmails.findIndex((email) => email === cleanAttendeeEmail);
-        if (index === -1) {
+        },
+        { answeredAttendeeFound: false }
+    );
+    if (selfActiveAttendee && selfActiveAddress) {
+        return {
+            selfAttendee: selfActiveAttendee,
+            selfAddress: selfActiveAddress,
+            selfAttendeeIndex: selfActiveAttendeeIndex,
+        };
+    }
+    const disabledAddresses = addresses.filter(({ Status }) => Status === 0);
+    const { selfDisabledAttendee, selfDisabledAddress, selfDisabledAttendeeIndex } = disabledAddresses.reduce<{
+        selfDisabledAttendee?: VcalAttendeeProperty;
+        selfDisabledAttendeeIndex?: number;
+        selfDisabledAddress?: Address;
+        answeredAttendeeFound: boolean;
+    }>(
+        (acc, address) => {
+            if (acc.answeredAttendeeFound) {
+                return acc;
+            }
+            const cleanSelfEmail = cleanEmail(address.Email, true);
+            const index = normalizedAttendeeEmails.findIndex((email) => email === cleanSelfEmail);
+            if (index === -1) {
+                return acc;
+            }
+            const attendee = attendees[index];
+            const partstat = getAttendeePartstat(attendee);
+            const answeredAttendeeFound = partstat !== ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
+            if (answeredAttendeeFound || !(acc.selfDisabledAttendee && acc.selfDisabledAddress)) {
+                return {
+                    selfDisabledAttendee: attendee,
+                    selfDisabledAttendeeIndex: index,
+                    selfDisabledAddress: address,
+                    answeredAttendeeFound,
+                };
+            }
             return acc;
-        }
-        return { userAttendee: attendee, userAddress: addresses[index] };
-    }, {});
-};
+        },
+        { answeredAttendeeFound: false }
+    );
+    return {
+        selfAttendee: selfDisabledAttendee,
+        selfAddress: selfDisabledAddress,
+        selfAttendeeIndex: selfDisabledAttendeeIndex,
+    };
+}
 
 export const getInvitedEventWithAlarms = (
     vevent: VcalVeventComponent,
