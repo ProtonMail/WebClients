@@ -1,4 +1,4 @@
-import { getUnixTime, format } from 'date-fns';
+import { format, getUnixTime } from 'date-fns';
 import { getAttendeeEmail, getSupportedAttendee } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import {
@@ -9,6 +9,8 @@ import {
     MAX_LENGTHS,
 } from 'proton-shared/lib/calendar/constants';
 import { getSelfAttendeeData, getParticipant } from 'proton-shared/lib/calendar/integration/invite';
+import { getOccurrencesBetween } from 'proton-shared/lib/calendar/recurring';
+
 import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/rrule';
 import {
     getIsDateOutOfBounds,
@@ -26,10 +28,12 @@ import {
 } from 'proton-shared/lib/calendar/vcalConverter';
 import {
     getHasDtStart,
+    getHasRecurrenceId,
     getHasUid,
     getIsCalendar,
     getIsEventComponent,
     getIsPropertyAllDay,
+    getIsRecurring,
     getIsTimezoneComponent,
     getIsXOrIanaComponent,
     getPropertyTzid,
@@ -43,7 +47,13 @@ import { cleanEmail } from 'proton-shared/lib/helpers/email';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { Address } from 'proton-shared/lib/interfaces';
-import { Calendar, CalendarEvent, CalendarWidgetData, Participant } from 'proton-shared/lib/interfaces/calendar';
+import {
+    Calendar,
+    CalendarEvent,
+    CalendarWidgetData,
+    Participant,
+    SingleEditWidgetData,
+} from 'proton-shared/lib/interfaces/calendar';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
@@ -55,11 +65,12 @@ import {
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
 import { getOriginalTo } from 'proton-shared/lib/mail/messages';
 import { c } from 'ttag';
 import { MessageExtended } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
+import { FetchAllEventsByUID } from './inviteApi';
 
 export enum EVENT_TIME_STATUS {
     PAST,
@@ -97,6 +108,7 @@ export interface InvitationModel {
     hideSummary?: boolean;
     hideLink?: boolean;
     calendarData?: CalendarWidgetData;
+    singleEditData?: SingleEditWidgetData;
     invitationIcs?: RequireSome<EventInvitation, 'method'>;
     invitationApi?: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
     parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
@@ -167,6 +179,16 @@ export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) 
     return cleanEmail(organizerEmail) === cleanEmail(emailTo);
 };
 
+export const getSingleEditWidgetData = ({
+    otherEvents,
+    otherParentEvents,
+}: Unwrap<ReturnType<FetchAllEventsByUID>>) => {
+    const singleEdits = (otherParentEvents || otherEvents).filter(({ RecurrenceID }) => !!RecurrenceID);
+    return {
+        ids: singleEdits.map(({ ID }) => ID),
+    };
+};
+
 export const getIsInvitationOutdated = (veventIcs: VcalVeventComponent, veventApi?: VcalVeventComponent) => {
     if (!veventApi) {
         return false;
@@ -183,6 +205,19 @@ export const getIsInvitationOutdated = (veventIcs: VcalVeventComponent, veventAp
         return false;
     }
     return getSequence(veventIcs) < getSequence(veventApi);
+};
+
+/**
+ * Determines if a single edit can be created from a parent. So basically check if the recurrence-id
+ * matches a parent occurrence
+ */
+export const getCanCreateSingleEdit = (singleEditVevent: VcalVeventComponent, parentVevent: VcalVeventComponent) => {
+    if (!getIsRecurring(parentVevent) || !getHasRecurrenceId(singleEditVevent)) {
+        return false;
+    }
+    const utcStart = +propertyToUTCDate(singleEditVevent['recurrence-id']);
+    const occurrencesAtStart = getOccurrencesBetween(parentVevent, utcStart, utcStart);
+    return occurrencesAtStart.length === 1;
 };
 
 /**

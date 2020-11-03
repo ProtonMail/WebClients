@@ -14,7 +14,7 @@ import { getParticipantHasAddressID, createReplyIcs } from 'proton-shared/lib/ca
 import { useCallback } from 'react';
 import { useApi, useConfig } from 'react-components';
 import useSendIcs from 'react-components/hooks/useSendIcs';
-import { createCalendarEventFromInvitation, updateCalendarEventFromInvitation } from '../helpers/calendar/inviteApi';
+import { createCalendarEventFromInvitation, updatePartstatFromInvitation } from '../helpers/calendar/inviteApi';
 
 interface Args {
     veventApi?: VcalVeventComponent;
@@ -122,7 +122,7 @@ const useInviteButtons = ({
                 return;
             }
             try {
-                const { savedEvent, savedVevent, savedVcalAttendee } = await updateCalendarEventFromInvitation({
+                const { savedEvent, savedVevent, savedVcalAttendee } = await updatePartstatFromInvitation({
                     veventIcs,
                     veventApi,
                     calendarEvent,

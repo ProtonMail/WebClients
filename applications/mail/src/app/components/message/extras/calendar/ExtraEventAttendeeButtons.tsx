@@ -35,7 +35,6 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         error,
         hasDecryptionError,
     } = model;
-    console.log({ hasDecryptionError });
     const partstat = invitationApi?.attendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
     const { attendee } = invitationApi || invitationIcs;
     const { organizer } = invitationApi || invitationIcs;
