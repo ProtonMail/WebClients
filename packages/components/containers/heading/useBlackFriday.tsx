@@ -104,6 +104,9 @@ const useBlackFriday = () => {
         if (!keys.current.blackFridayStateKey) {
             return;
         }
+        if (isDelinquent) {
+            return;
+        }
         if (
             plans.length &&
             isBlackFridayPeriod &&
