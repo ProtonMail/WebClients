@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, Tooltip, classnames } from 'react-components';
 import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
-import { Transfer, Download, Upload } from '../../interfaces/transfer';
+import { Download, Upload } from '../../interfaces/transfer';
 import {
     isTransferActive,
     isTransferDone,
@@ -10,6 +10,7 @@ import {
     isTransferError,
     isTransferCanceled,
     isTransferFinished,
+    calculateProgress,
 } from '../../utils/transfer';
 import { TransfersStats } from './interfaces';
 
@@ -77,19 +78,6 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
         const canceledCount = canceledTransfers.length;
         const pausedCount = pausedTransfers.length;
 
-        const calculateProgress = (transfers: Transfer[]) => {
-            const result = transfers.reduce(
-                (result, transfer) => {
-                    result.size += transfer.meta.size || 0;
-                    result.progress += latestStats.stats[transfer.id]?.progress || 0;
-                    return result;
-                },
-                { size: 0, progress: 0 }
-            );
-
-            return Math.floor(100 * (result.progress / (result.size || 1)));
-        };
-
         if (!activeCount) {
             if (doneUploadsCount && doneDownloadsCount) {
                 headingElements.push(
@@ -118,7 +106,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
         }
 
         if (activeUploadsCount) {
-            const uploadProgress = calculateProgress(currentUploads);
+            const uploadProgress = calculateProgress(latestStats, currentUploads);
             headingElements.push(
                 c('Info').ngettext(
                     msgid`${activeUploadsCount} Uploading ${uploadProgress}%`,
@@ -128,7 +116,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
             );
         }
         if (activeDownloadsCount) {
-            const downloadProgress = calculateProgress(currentDownloads);
+            const downloadProgress = calculateProgress(latestStats, currentDownloads);
             headingElements.push(
                 c('Info').ngettext(
                     msgid`${activeDownloadsCount} Downloading ${downloadProgress}%`,

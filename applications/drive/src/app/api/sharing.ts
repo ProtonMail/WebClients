@@ -4,6 +4,7 @@ export const queryInitSRPHandshake = (token: string) => {
     return {
         method: 'get',
         url: `drive/urls/${token}/info`,
+        silence: true,
     };
 };
 
@@ -11,6 +12,7 @@ export const queryGetSharedLinkPayload = (token: string) => {
     return {
         method: 'post',
         url: `drive/urls/${token}/file`,
+        silence: true,
     };
 };
 

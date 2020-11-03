@@ -1,8 +1,7 @@
 import React from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { classnames, Loader, FileIcon } from 'react-components';
-import ProgressBar, { ProgressBarStatus } from './ProgressBar';
-import { TransferState } from '../../interfaces/transfer';
+import ProgressBar from './ProgressBar';
 import TransferStateIndicator from './TransferStateIndicator';
 import TransferControls from './TransferControls';
 import {
@@ -11,6 +10,7 @@ import {
     isTransferPaused,
     isTransferCanceled,
     isTransferDone,
+    getProgressBarStatus,
 } from '../../utils/transfer';
 import { TransferType, TransferProps } from './interfaces';
 
@@ -74,13 +74,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
             <TransferControls transfer={transfer} type={type} />
 
             <ProgressBar
-                status={
-                    ({
-                        [TransferState.Done]: ProgressBarStatus.Success,
-                        [TransferState.Canceled]: ProgressBarStatus.Disabled,
-                        [TransferState.Error]: ProgressBarStatus.Error,
-                    } as any)[transfer.state] || ProgressBarStatus.Running
-                }
+                status={getProgressBarStatus(transfer.state)}
                 aria-describedby={transfer.id}
                 value={isCanceled ? 0 : progress}
                 max={progressLimit}
