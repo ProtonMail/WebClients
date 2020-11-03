@@ -128,7 +128,7 @@ li ul {
   word-break: break-word;
 }
 .hyphens {
-	@include vendor-prefix(hyphens, none, webkit);
+	@include vendor-prefix(hyphens, auto, webkit);
 }
 
 code,
