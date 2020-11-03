@@ -17,7 +17,6 @@ import {
     ConfirmModal,
     Alert,
     useNotifications,
-    useGetMailSettings,
 } from 'react-components';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
@@ -34,7 +33,6 @@ import { attachPublicKey } from '../helpers/message/messageAttachPublicKey';
 import SendWithWarningsModal from '../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
 import { useSaveDraft } from './message/useSaveDraft';
-import { isConversationMode } from '../helpers/mailSettings';
 import { MAIN_ROUTE_PATH } from '../MainContainer';
 
 export const useSendVerifications = () => {
@@ -173,7 +171,6 @@ export const useSendMessage = () => {
     const auth = useAuthentication();
     const saveDraft = useSaveDraft();
     const history = useHistory();
-    const getMailSettings = useGetMailSettings();
 
     return useCallback(
         async (
@@ -234,14 +231,13 @@ export const useSendMessage = () => {
 
             // Navigation to the sent message
             const {
-                params: { labelID },
-            } = matchPath(history.location.pathname, { path: MAIN_ROUTE_PATH }) as match<{ labelID: string }>;
-            const mailSettings = await getMailSettings();
-            const conversationMode = isConversationMode(labelID, mailSettings, history.location);
-            if (conversationMode) {
+                params: { labelID, elementID },
+            } = matchPath(history.location.pathname, { path: MAIN_ROUTE_PATH }) as match<{
+                labelID: string;
+                elementID?: string;
+            }>;
+            if (elementID === Sent.ConversationID) {
                 history.push(`/${labelID}/${Sent.ConversationID}/${Sent.ID}`);
-            } else {
-                history.push(`/${labelID}/${Sent.ID}`);
             }
 
             // } catch (e) {
