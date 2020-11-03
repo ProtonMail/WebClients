@@ -22,7 +22,7 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount }:
             text={folder.Name}
             unreadCount={unreadCount}
             content={
-                <div className="flex flex-nowrap" data-level={level}>
+                <div className="flex flex-nowrap flex-items-center" data-level={level}>
                     <Icon
                         className="mr0-5 navigation__icon flex-item-noshrink"
                         name={folder.subfolders?.length ? 'parent-folder' : 'folder'}
