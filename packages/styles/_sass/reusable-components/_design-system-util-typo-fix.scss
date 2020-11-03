@@ -87,7 +87,7 @@ li ul {
   p {
     word-break: break-word;
   }
-  @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+  @supports (-webkit-hyphens: auto) or (hyphens: auto) {
     textarea,
     table,
     td,
@@ -98,7 +98,7 @@ li ul {
     div,
     p {
       word-break: normal;
-      @include vendor-prefix(hyphens, auto, webkit ms);
+      @include vendor-prefix(hyphens, auto, webkit);
     }
   }
 }
@@ -106,10 +106,10 @@ li ul {
   .cut {
     word-break: break-word;
   }
-  @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+  @supports (-webkit-hyphens: auto) or (hyphens: auto) {
     .cut {
       word-break: normal;
-      @include vendor-prefix(hyphens, auto, webkit ms);
+      @include vendor-prefix(hyphens, auto, webkit);
     }
   }
 }
@@ -118,14 +118,17 @@ li ul {
 .nocut {
   word-wrap: normal;
 }
-@supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+@supports (-webkit-hyphens: auto) or (hyphens: auto) {
   .nocut {
-    @include vendor-prefix(hyphens, none, webkit ms);
+    @include vendor-prefix(hyphens, none, webkit);
   }
 }
 
 .break {
   word-break: break-word;
+}
+.hyphens {
+	@include vendor-prefix(hyphens, none, webkit);
 }
 
 code,

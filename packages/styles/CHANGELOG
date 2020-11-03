@@ -10,6 +10,7 @@
 - added `onmobile-list-1column` helpers and made `list-2columns` more flexible (accepts any child type now)
 - added `borderColor-primary` helper
 - added `sticky-top` and `sticky-bottom` helpers
+- added `hyphens` helper (only hyphenation, no `word-break`)
 
 ## Updated/fixes
 
@@ -27,6 +28,8 @@
 - fixed double border for quotes
 - display of past unanswered events in month view
 - update list view and message view layouts
+- changed event popover sizes
+- added a testcase for `optgroup`s
 
 
 # [1.8.5] - 2019-09-30
