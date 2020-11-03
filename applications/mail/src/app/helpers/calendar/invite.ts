@@ -101,6 +101,7 @@ export interface InvitationModel {
     invitationApi?: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
     parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     error?: EventInvitationError;
+    hasDecryptionError?: boolean;
 }
 
 export const getHasInvitation = (model: InvitationModel): model is RequireSome<InvitationModel, 'invitationIcs'> => {

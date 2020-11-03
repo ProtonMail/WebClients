@@ -118,9 +118,15 @@ const ExtraEvent = ({
             let invitationApi;
             let parentInvitationApi;
             let calendarData;
+            let hasDecryptionError;
             try {
                 // check if an event with the same uid exists in the calendar already
-                const { invitation, parentInvitation, calendarData: calData } = await fetchEventInvitation({
+                const {
+                    invitation,
+                    parentInvitation,
+                    calendarData: calData,
+                    hasDecryptionError: hasDecryptError,
+                } = await fetchEventInvitation({
                     veventComponent: invitationIcs.vevent,
                     api,
                     getCalendarInfo,
@@ -134,12 +140,13 @@ const ExtraEvent = ({
                 });
                 invitationApi = invitation;
                 calendarData = calData;
+                hasDecryptionError = hasDecryptError;
                 const isOutdated = getIsInvitationOutdated(invitationIcs.vevent, invitationApi?.vevent);
                 if (parentInvitation) {
                     parentInvitationApi = parentInvitation;
                 }
                 if (!unmounted) {
-                    setModel({ ...model, isOutdated, calendarData });
+                    setModel({ ...model, isOutdated, calendarData, hasDecryptionError });
                 }
             } catch (error) {
                 // if fetching fails, proceed as if there was no event in the database
@@ -168,6 +175,7 @@ const ExtraEvent = ({
                     message,
                     contactEmails,
                     ownAddresses,
+                    overwrite: !!hasDecryptionError,
                 });
                 const newInvitationApi = updatedInvitationApi || invitationApi;
                 const isOutdated =
@@ -183,6 +191,7 @@ const ExtraEvent = ({
                         timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now()),
                         isOutdated,
                         updateAction,
+                        hasDecryptionError,
                     });
                 }
             } catch (e) {

@@ -33,7 +33,9 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         calendarData,
         isAddressDisabled,
         error,
+        hasDecryptionError,
     } = model;
+    console.log({ hasDecryptionError });
     const partstat = invitationApi?.attendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
     const { attendee } = invitationApi || invitationIcs;
     const { organizer } = invitationApi || invitationIcs;
@@ -135,6 +137,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         calendarData.isCalendarDisabled ||
         isAddressDisabled ||
         calendarData.calendarNeedsUserAction;
+
     const actions = useInviteButtons({
         veventIcs: invitationIcs.vevent,
         veventApi: invitationApi?.vevent,
@@ -152,6 +155,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         onSuccess: handleSuccess,
         onUnexpectedError: handleUnexpectedError,
         disabled: buttonsDisabled,
+        overwrite: !!hasDecryptionError,
     });
 
     if (error && [EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR].includes(error.type)) {

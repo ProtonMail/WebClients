@@ -7,7 +7,7 @@ import {
     CalendarWidgetData,
     PartstatActions,
     Participant,
-    SavedInviteData
+    SavedInviteData,
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getParticipantHasAddressID, createReplyIcs } from 'proton-shared/lib/calendar/integration/invite';
@@ -32,6 +32,7 @@ interface Args {
     onUpdateEventError: (partstat: ICAL_ATTENDEE_STATUS, error?: Error) => void;
     onSuccess: (savedData: SavedInviteData) => void;
     onUnexpectedError: () => void;
+    overwrite: boolean;
     disabled?: boolean;
 }
 const useInviteButtons = ({
@@ -50,7 +51,8 @@ const useInviteButtons = ({
     onCreateEventError,
     onUpdateEventError,
     onUnexpectedError,
-    disabled = false
+    overwrite,
+    disabled = false,
 }: Args): PartstatActions => {
     const api = useApi();
     const sendIcs = useSendIcs();
@@ -70,14 +72,14 @@ const useInviteButtons = ({
                     prodId,
                     vevent: pick(vevent, ['uid', 'dtstart', 'dtend', 'sequence', 'recurrence-id', 'organizer']),
                     emailTo: attendee.vcalComponent.value,
-                    partstat
+                    partstat,
                 });
                 await sendIcs({
                     ics,
                     addressID: attendee.addressID,
                     from: { Address: attendee.emailAddress, Name: attendee.displayName || attendee.emailAddress },
                     to: [{ Address: organizer.emailAddress, Name: organizer.name }],
-                    subject
+                    subject,
                 });
                 onEmailSuccess();
                 return true;
@@ -101,7 +103,8 @@ const useInviteButtons = ({
                     vcalAttendee: attendee.vcalComponent,
                     partstat,
                     api,
-                    calendarData
+                    calendarData,
+                    overwrite,
                 });
                 onCreateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };
@@ -127,7 +130,8 @@ const useInviteButtons = ({
                     partstat,
                     oldPartstat: attendee.partstat,
                     api,
-                    calendarData
+                    calendarData,
+                    overwrite,
                 });
                 onUpdateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };
@@ -157,7 +161,7 @@ const useInviteButtons = ({
         acceptTentatively: () => wait(0),
         decline: () => wait(0),
         retryCreateEvent: () => wait(0),
-        retryUpdateEvent: () => wait(0)
+        retryUpdateEvent: () => wait(0),
     };
 
     if (!attendee || !organizer || disabled) {
@@ -179,7 +183,7 @@ const useInviteButtons = ({
             if (result) {
                 onSuccess(result);
             }
-        }
+        },
     };
 };
 
