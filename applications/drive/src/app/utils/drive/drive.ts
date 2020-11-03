@@ -474,6 +474,8 @@ export const renameLinkAsync = async (
     }
 
     const lowerCaseName = newName.toLowerCase();
+
+    // TODO: possibly remove this since we're now pretty sure about file types (could mark extension-based types with a flag)
     const MIMEType = type === LinkType.FOLDER ? 'Folder' : lookup(newName) || 'application/octet-stream';
 
     const parentKeys = await getLinkKeys(shareId, parentLinkID);
