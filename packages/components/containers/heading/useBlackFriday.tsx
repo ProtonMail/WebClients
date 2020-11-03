@@ -144,6 +144,7 @@ const useBlackFriday = () => {
     return (
         !loading &&
         plans.length &&
+        !isDelinquent &&
         ((isBlackFridayPeriod && isEligible) || (isProductPayerPeriod && isProductPayer(subscription)))
     );
 };
