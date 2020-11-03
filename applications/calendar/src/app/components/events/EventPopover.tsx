@@ -272,7 +272,7 @@ const EventPopover = ({
                         {c('Title').t`CANCELLED`}
                     </Badge>
                 )}
-                <h1 className="eventpopover-title lh-standard cut mb0-25" title={eventTitleSafe}>
+                <h1 className="eventpopover-title lh-standard hyphens mb0-25" title={eventTitleSafe}>
                     {eventTitleSafe}
                 </h1>
                 {verificationStatus === EVENT_VERIFICATION_STATUS.SUCCESSFUL && (
