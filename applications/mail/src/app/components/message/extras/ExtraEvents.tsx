@@ -64,7 +64,7 @@ const ExtraEvents = ({ message }: Props) => {
             setInvitations([]);
             return;
         }
-        if (!message.privateKeys || loadingConfigs) {
+        if (!message.privateKeys || message.errors?.decryption?.length || loadingConfigs) {
             return;
         }
         let unmounted = false;

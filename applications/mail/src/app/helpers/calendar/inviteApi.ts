@@ -40,6 +40,7 @@ import { Address, Api } from 'proton-shared/lib/interfaces';
 import {
     Calendar,
     CalendarEvent,
+    CalendarEventWithMetadata,
     CalendarWidgetData,
     DecryptedPersonalVeventMapResult,
     SyncMultipleApiResponse,
@@ -88,6 +89,16 @@ const getVeventWithAlarms = async ({
     };
 };
 
+const getIsNonSoughtEvent = (event: CalendarEventWithMetadata, vevent: VcalVeventComponent) => {
+    if (!event.RecurrenceID) {
+        return false;
+    }
+    if (!getHasRecurrenceId(vevent)) {
+        return true;
+    }
+    return getUnixTime(propertyToUTCDate(vevent['recurrence-id'])) !== event.RecurrenceID;
+};
+
 type FetchEventInvitation = (args: {
     veventComponent: VcalVeventComponent;
     api: Api;
@@ -105,6 +116,7 @@ type FetchEventInvitation = (args: {
     invitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendarData?: CalendarWidgetData;
+    hasDecryptionError?: boolean;
 }>;
 export const fetchEventInvitation: FetchEventInvitation = async ({
     veventComponent,
@@ -125,7 +137,9 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         const timestamp = getUnixTime(propertyToUTCDate(recurrenceID));
         params.unshift({ UID: veventComponent.uid.value, Page: 0, PageSize: 1, RecurrenceID: timestamp });
     }
-    const response = await Promise.all(params.map((args) => api<{ Events: CalendarEvent[] }>(getEventByUID(args))));
+    const response = await Promise.all(
+        params.map((args) => api<{ Events: CalendarEventWithMetadata[] }>(getEventByUID(args)))
+    );
     // keep only the first event the API found (typically the one from the default calendar)
     const calendarEvents = response.map(({ Events: [event] = [] }) => event).filter(isTruthy);
     const [calendarEvent, calendarParentEvent] = calendarEvents;
@@ -142,7 +156,8 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
             hasBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE),
         ...(await getCalendarInfo(calendar.ID)),
     };
-    if (!calendarEvents.length) {
+    // if we retrieved a single edit when not looking for one, or looking for another one, do not return it
+    if (!calendarEvents.length || getIsNonSoughtEvent(calendarEvent, veventComponent)) {
         return { calendarData };
     }
     try {
@@ -171,7 +186,9 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         }
         return result;
     } catch (e) {
-        return { calendarData };
+        // We need to detect if the error is due to a failed decryption of the event.
+        // We don't have a great way of doing this as the error comes from openpgp
+        return { calendarData, hasDecryptionError: e.message.includes('decrypt') };
     }
 };
 
@@ -181,6 +198,7 @@ interface UpdateEventArgs {
     api: Api;
     calendarData: Required<CalendarWidgetData>;
     createSingleEdit?: boolean;
+    overwrite: boolean;
 }
 const updateEventApi = async ({
     calendarEvent,
@@ -188,6 +206,7 @@ const updateEventApi = async ({
     api,
     calendarData,
     createSingleEdit = false,
+    overwrite,
 }: UpdateEventArgs) => {
     const {
         calendar: { ID: calendarID },
@@ -207,7 +226,7 @@ const updateEventApi = async ({
         ...creationKeys,
     });
     const Events: (CreateCalendarEventSyncData | UpdateCalendarEventSyncData)[] = createSingleEdit
-        ? [{ Event: { Permissions: 3, IsOrganizer: 0, ...data }, Overwrite: 1 }]
+        ? [{ Event: { Permissions: 3, IsOrganizer: 0, ...data }, Overwrite: overwrite ? 1 : 0 }]
         : [{ Event: { Permissions: 3, ...data }, ID: calendarEvent.ID }];
     const {
         Responses: [
@@ -243,6 +262,7 @@ interface UpdateEventInvitationArgs
     message: MessageExtended;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
+    overwrite: boolean;
 }
 export const updateEventInvitation = async ({
     isOrganizerMode,
@@ -255,6 +275,7 @@ export const updateEventInvitation = async ({
     message,
     contactEmails,
     ownAddresses,
+    overwrite,
 }: UpdateEventInvitationArgs): Promise<{
     action: UPDATE_ACTION;
     invitation?: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
@@ -346,6 +367,7 @@ export const updateEventInvitation = async ({
                     calendarData,
                     createSingleEdit,
                     api,
+                    overwrite,
                 });
                 const { invitation: updatedInvitation } = processEventInvitation(
                     { vevent: updatedVevent, calendarEvent: updatedCalendarEvent },
@@ -401,6 +423,7 @@ export const updateEventInvitation = async ({
                     calendarData,
                     createSingleEdit,
                     api,
+                    overwrite,
                 });
                 const { invitation: updatedInvitation } = processEventInvitation(
                     { vevent: updatedVevent },
@@ -427,12 +450,14 @@ export const createCalendarEventFromInvitation = async ({
     partstat,
     api,
     calendarData,
+    overwrite,
 }: {
     vevent: VcalVeventComponent;
     vcalAttendee: VcalAttendeeProperty;
     partstat: ICAL_ATTENDEE_STATUS;
     calendarData?: CalendarWidgetData;
     api: Api;
+    overwrite: boolean;
 }) => {
     const { calendar, memberID, addressKeys, calendarKeys, calendarSettings } = calendarData || {};
     if (!calendar || !memberID || !addressKeys || !calendarKeys || !calendarSettings) {
@@ -461,7 +486,7 @@ export const createCalendarEventFromInvitation = async ({
         ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys })),
     });
     const Events: CreateCalendarEventSyncData[] = [
-        { Overwrite: 1, Event: { Permissions: 3, IsOrganizer: 0, ...data } },
+        { Overwrite: overwrite ? 1 : 0, Event: { Permissions: 3, IsOrganizer: 0, ...data } },
     ];
     const {
         Responses: [
@@ -501,6 +526,7 @@ export const updateCalendarEventFromInvitation = async ({
     oldPartstat?: ICAL_ATTENDEE_STATUS;
     calendarData?: CalendarWidgetData;
     api: Api;
+    overwrite: boolean;
 }) => {
     const { calendar, memberID, addressKeys, calendarKeys, calendarSettings } = calendarData || {};
     if (
