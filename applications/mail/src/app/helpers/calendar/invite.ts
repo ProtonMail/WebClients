@@ -8,7 +8,7 @@ import {
     ICAL_MIME_TYPE,
     MAX_LENGTHS,
 } from 'proton-shared/lib/calendar/constants';
-import { findAttendee, getParticipant } from 'proton-shared/lib/calendar/integration/invite';
+import { getSelfAttendeeData, getParticipant } from 'proton-shared/lib/calendar/integration/invite';
 import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/rrule';
 import {
     getIsDateOutOfBounds,
@@ -39,7 +39,7 @@ import { addDays, format as formatUTC, isNextDay } from 'proton-shared/lib/date-
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from 'proton-shared/lib/date/timezone';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { cleanEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { cleanEmail } from 'proton-shared/lib/helpers/email';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { Address } from 'proton-shared/lib/interfaces';
@@ -283,15 +283,13 @@ export const processEventInvitation = <T>(
 ): ProcessedInvitation<T> => {
     const { vevent } = invitation;
     const timeStatus = getEventTimeStatus(vevent, Date.now());
-    const attendees = vevent.attendee;
+    const attendees = vevent.attendee || [];
     const { organizer } = vevent;
     const originalTo = getOriginalTo(message.data);
     const isOrganizerMode = getIsOrganizerMode(vevent, originalTo);
-    const selfEmailAddress = isOrganizerMode ? message.data?.SenderAddress || '' : originalTo;
-    const { attendee } = findAttendee(selfEmailAddress, attendees);
-    const selfAddress = ownAddresses.find(
-        ({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(selfEmailAddress)
-    );
+    const { selfAddress, selfAttendee } = isOrganizerMode
+        ? getSelfAttendeeData([], ownAddresses)
+        : getSelfAttendeeData(attendees, ownAddresses);
     const isAddressDisabled = selfAddress ? selfAddress.Status === 0 : false;
 
     const processed: EventInvitation & T = { ...invitation };
@@ -304,8 +302,8 @@ export const processEventInvitation = <T>(
     if (organizer) {
         processed.organizer = getParticipant(organizer, contactEmails, ownAddresses, originalTo);
     }
-    if (attendee) {
-        processed.attendee = getParticipant(attendee, contactEmails, ownAddresses, originalTo);
+    if (selfAttendee) {
+        processed.attendee = getParticipant(selfAttendee, contactEmails, ownAddresses, originalTo);
     }
 
     return { isOrganizerMode, timeStatus, isAddressDisabled, invitation: processed };
