@@ -1,6 +1,8 @@
 import React from 'react';
+import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 import { PlanIDs, Cycle, Currency, Subscription, Plan } from 'proton-shared/lib/interfaces';
+import { isProductPayer } from 'proton-shared/lib/helpers/blackfriday';
 
 import { useModals, useConfig, useCyberMondayPeriod } from '../../hooks';
 import { TopNavbarLink, Icon } from '../../components';
@@ -20,7 +22,11 @@ const BlackFridayButton = ({ plans, subscription, ...rest }: Props) => {
     const { createModal } = useModals();
     const icon = 'blackfriday';
     const cyberModay = useCyberMondayPeriod();
-    const text = cyberModay ? 'Cyber Monday' : 'Black Friday';
+    const text = isProductPayer(subscription)
+        ? c('Promo title, need to be short').t`Special offer`
+        : cyberModay
+        ? 'Cyber Monday'
+        : 'Black Friday';
 
     const onSelect = ({
         planIDs,

@@ -141,7 +141,11 @@ const useBlackFriday = () => {
         }
     }, [productPayerModalState, isProductPayerPeriod, subscription, plans]);
 
-    return isBlackFridayPeriod && isEligible && !loading;
+    return (
+        !loading &&
+        plans.length &&
+        ((isBlackFridayPeriod && isEligible) || (isProductPayerPeriod && isProductPayer(subscription)))
+    );
 };
 
 export default useBlackFriday;
