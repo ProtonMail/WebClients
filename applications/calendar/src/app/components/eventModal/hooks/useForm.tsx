@@ -1,5 +1,6 @@
 import { useLoading } from 'react-components';
 import { useState } from 'react';
+import { InviteActions } from '../../../containers/calendar/eventActions/inviteActions';
 import { COUNT_ID, UNTIL_ID } from '../rows/EndsRow';
 import { EventModel, EventModelErrors } from '../../../interfaces/EventModel';
 import { NOTIFICATION_ID } from '../Notifications';
@@ -37,7 +38,7 @@ interface Arguments {
     model: EventModel;
     errors: EventModelErrors;
     onSave: (value: EventModel) => Promise<void>;
-    onDelete?: (isInvitation?: boolean, sendCancellationNotice?: boolean) => Promise<void>;
+    onDelete?: (inviteActions: InviteActions) => Promise<void>;
 }
 
 export const useForm = ({ containerEl, model, errors, onSave, onDelete }: Arguments) => {
@@ -54,12 +55,12 @@ export const useForm = ({ containerEl, model, errors, onSave, onDelete }: Argume
         void withLoadingAction(onSave(model));
     };
 
-    const handleDelete = (isInvitation?: boolean, sendCancellationNotice?: boolean) => {
+    const handleDelete = (inviteActions: InviteActions) => {
         setLastAction(ACTION.DELETE);
         if (!onDelete) {
             return;
         }
-        void withLoadingAction(onDelete(isInvitation, sendCancellationNotice));
+        void withLoadingAction(onDelete(inviteActions));
     };
 
     return {

@@ -1,10 +1,12 @@
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { Address, Api } from 'proton-shared/lib/interfaces';
-import { CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarBootstrap, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
+import { EventOldData } from '../../../interfaces/EventData';
 import getEditEventData from '../event/getEditEventData';
 import getAllEventsByUID from '../getAllEventsByUID';
+import { INVITE_ACTION_TYPES, InviteActions, NO_INVITE_ACTION } from './inviteActions';
 import { getOriginalEvent } from './recurringHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { GetDecryptedEventCb } from '../eventStore/interface';
@@ -16,6 +18,40 @@ import { getDeleteRecurringEventActions } from './getDeleteRecurringEventActions
 import getRecurringDeleteType from './getRecurringDeleteType';
 import { DELETE_CONFIRMATION_TYPES } from '../../../constants';
 
+const getDeleteSingleEventActionsHelper = async ({
+    oldEventData,
+    oldEditEventData,
+    onDeleteConfirmation,
+    inviteActions = NO_INVITE_ACTION,
+}: {
+    oldEventData: CalendarEvent;
+    oldEditEventData: EventOldData;
+    onDeleteConfirmation: OnDeleteConfirmationCb;
+    inviteActions: InviteActions;
+}) => {
+    await onDeleteConfirmation({
+        type: DELETE_CONFIRMATION_TYPES.SINGLE,
+        veventComponent: oldEditEventData.veventComponent,
+        inviteActions,
+    });
+    const deleteOperation = getDeleteSyncOperation(oldEventData);
+    const multiActions: SyncEventActionOperations[] = [
+        {
+            calendarID: oldEditEventData.calendarID,
+            memberID: oldEditEventData.memberID,
+            addressID: oldEditEventData.addressID,
+            operations: [deleteOperation],
+        },
+    ];
+    const successText = getEventDeletedText(inviteActions);
+    return {
+        actions: multiActions,
+        texts: {
+            success: successText,
+        },
+    };
+};
+
 interface Arguments {
     targetEvent: CalendarViewEvent;
     addresses: Address[];
@@ -23,8 +59,7 @@ interface Arguments {
     api: Api;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
     getEventDecrypted: GetDecryptedEventCb;
-    isInvitation: boolean;
-    sendCancellationNotice: boolean;
+    inviteActions?: InviteActions;
 }
 
 const getDeleteEventActions = async ({
@@ -36,8 +71,7 @@ const getDeleteEventActions = async ({
     api,
     getEventDecrypted,
     getCalendarBootstrap,
-    isInvitation,
-    sendCancellationNotice,
+    inviteActions = NO_INVITE_ACTION,
 }: Arguments) => {
     const calendarBootstrap = getCalendarBootstrap(oldCalendarData.ID);
     if (!calendarBootstrap) {
@@ -53,36 +87,30 @@ const getDeleteEventActions = async ({
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
 
+    const isSingleEdit = !!oldEditEventData.recurrenceID;
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
-    const isSingleEdit = !eventRecurrence && !!oldEditEventData.recurrenceID;
     if (!eventRecurrence && !isSingleEdit) {
-        await onDeleteConfirmation({
-            type: DELETE_CONFIRMATION_TYPES.SINGLE,
-            isInvitation,
-            sendCancellationNotice,
-            veventComponent: oldEditEventData.veventComponent,
+        return getDeleteSingleEventActionsHelper({
+            oldEventData,
+            oldEditEventData,
+            onDeleteConfirmation,
+            inviteActions,
         });
-        const deleteOperation = getDeleteSyncOperation(oldEventData);
-        const multiActions: SyncEventActionOperations[] = [
-            {
-                calendarID: oldEditEventData.calendarID,
-                memberID: oldEditEventData.memberID,
-                addressID: oldEditEventData.addressID,
-                operations: [deleteOperation],
-            },
-        ];
-        const successText = getEventDeletedText(sendCancellationNotice);
-        return {
-            actions: multiActions,
-            texts: {
-                success: successText,
-            },
-        };
     }
 
     const recurrences = await getAllEventsByUID(api, oldEditEventData.uid, oldEditEventData.calendarID);
-
     const originalEventData = getOriginalEvent(recurrences);
+    const isOrphanSingleEdit = isSingleEdit && !originalEventData;
+    // If it's an orphan single edit, treat as a single event
+    if (isOrphanSingleEdit) {
+        return getDeleteSingleEventActionsHelper({
+            oldEventData,
+            oldEditEventData,
+            onDeleteConfirmation,
+            inviteActions,
+        });
+    }
+
     let originalEditEventData = oldEditEventData;
 
     // If this is a single edit, get the original event data
@@ -99,6 +127,7 @@ const getDeleteEventActions = async ({
     const actualEventRecurrence =
         eventRecurrence ||
         getSingleEditRecurringData(originalEditEventData.mainVeventComponent, oldEditEventData.mainVeventComponent);
+    const isDeleteInvitation = inviteActions.type === INVITE_ACTION_TYPES.DECLINE;
 
     const deleteType = await getRecurringDeleteType({
         originalEditEventData,
@@ -107,13 +136,12 @@ const getDeleteEventActions = async ({
             !oldEditEventData.veventComponent ||
             getIsCalendarDisabled(oldCalendarData) ||
             actualEventRecurrence.isSingleOccurrence ||
-            (isInvitation && !isSingleEdit),
-        canOnlyDeleteThis: isInvitation && isSingleEdit,
+            (isDeleteInvitation && !isSingleEdit),
+        canOnlyDeleteThis: isDeleteInvitation && isSingleEdit,
         onDeleteConfirmation,
         recurrence: actualEventRecurrence,
-        isInvitation,
+        inviteActions,
         veventComponent: isSingleEdit ? oldEditEventData.veventComponent : originalEditEventData.veventComponent,
-        sendCancellationNotice,
     });
     const multiActions = getDeleteRecurringEventActions({
         type: deleteType,
@@ -122,7 +150,7 @@ const getDeleteEventActions = async ({
         originalEditEventData,
         oldEditEventData,
     });
-    const successText = getRecurringEventDeletedText(deleteType, sendCancellationNotice);
+    const successText = getRecurringEventDeletedText(deleteType, inviteActions);
     return {
         actions: [multiActions],
         texts: {

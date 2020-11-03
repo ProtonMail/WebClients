@@ -310,7 +310,7 @@ const InteractiveCalendarView = ({
             ? calendarsEventsCacheRef.current.getCachedEvent(calendarID, parentEventID)
             : undefined;
         if (!parentEvent) {
-            throw new Error('Missing parent event');
+            return undefined;
         }
         return getComponentFromCalendarEvent(parentEvent);
     };
@@ -668,14 +668,12 @@ const InteractiveCalendarView = ({
     const handleDeleteConfirmation = ({
         type,
         data,
-        isInvitation,
-        sendCancellationNotice = false,
+        inviteActions,
         veventComponent,
     }: {
         type: DELETE_CONFIRMATION_TYPES;
         data?: RECURRING_TYPES[];
-        isInvitation: boolean;
-        sendCancellationNotice?: boolean;
+        inviteActions?: InviteActions;
         veventComponent?: VcalVeventComponent;
     }): Promise<RECURRING_TYPES> => {
         return new Promise((resolve, reject) => {
@@ -685,7 +683,7 @@ const InteractiveCalendarView = ({
                         onClose={reject}
                         onConfirm={resolve}
                         onDecline={() => handleSendReplyIcs(ICAL_ATTENDEE_STATUS.DECLINED, veventComponent)}
-                        decline={sendCancellationNotice}
+                        inviteActions={inviteActions}
                     />
                 );
             }
@@ -693,8 +691,7 @@ const InteractiveCalendarView = ({
                 return createModal(
                     <DeleteRecurringConfirmModal
                         types={data}
-                        isInvitation={isInvitation}
-                        decline={sendCancellationNotice}
+                        inviteActions={inviteActions}
                         onClose={reject}
                         onConfirm={resolve}
                         onDecline={() => handleSendReplyIcs(ICAL_ATTENDEE_STATUS.DECLINED, veventComponent)}
@@ -812,10 +809,7 @@ const InteractiveCalendarView = ({
         createNotification({ text: texts.success });
     };
 
-    const handleSaveEvent = async (
-        temporaryEvent: CalendarViewEventTemporaryEvent,
-        inviteActions: InviteActions = { type: INVITE_ACTION_TYPES.NONE }
-    ) => {
+    const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent, inviteActions?: InviteActions) => {
         try {
             isSavingEvent.current = true;
             const syncActions = await getSaveEventActions({
@@ -837,11 +831,7 @@ const InteractiveCalendarView = ({
         }
     };
 
-    const handleDeleteEvent = async (
-        targetEvent: CalendarViewEvent,
-        isInvitation = false,
-        sendCancellationNotice = false
-    ) => {
+    const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions?: InviteActions) => {
         try {
             const syncActions = await getDeleteEventActions({
                 targetEvent,
@@ -850,8 +840,7 @@ const InteractiveCalendarView = ({
                 api,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
-                isInvitation,
-                sendCancellationNotice,
+                inviteActions,
             });
             await handleSyncActions(syncActions);
         } catch (e) {
@@ -1017,9 +1006,9 @@ const InteractiveCalendarView = ({
                             contactEmailMap={contactEmailMap}
                             formatTime={formatTime}
                             addresses={addresses}
-                            onDelete={(calendarEvent, isInvitation, sendCancellationNotice) => {
+                            onDelete={(calendarEvent, inviteActions) => {
                                 return (
-                                    handleDeleteEvent(targetEvent, isInvitation, sendCancellationNotice)
+                                    handleDeleteEvent(targetEvent, inviteActions)
                                         // Also close the more popover to avoid this event showing there
                                         .then(closeAllPopovers)
                                         .catch(noop)
@@ -1115,11 +1104,11 @@ const InteractiveCalendarView = ({
                             .then(() => hideModal(eventModalID))
                             .catch(noop);
                     }}
-                    onDelete={(isInvitation, sendCancellationNotice) => {
+                    onDelete={(inviteActions) => {
                         if (!temporaryEvent?.data?.eventData || !temporaryEvent.tmpOriginalTarget) {
                             return;
                         }
-                        return handleDeleteEvent(temporaryEvent.tmpOriginalTarget, isInvitation, sendCancellationNotice)
+                        return handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions)
                             .then(() => hideModal(eventModalID))
                             .catch(noop);
                     }}

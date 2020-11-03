@@ -1,15 +1,17 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Alert, ErrorButton, FormModal, ResetButton, useLoading } from 'react-components';
+import { InviteActions, NO_INVITE_ACTION } from '../eventActions/inviteActions';
 
 interface Props {
     onClose: () => void;
     onConfirm: () => void;
     onDecline?: () => Promise<void>;
-    decline: boolean;
+    inviteActions?: InviteActions;
 }
-const DeleteConfirmModal = ({ decline = false, onClose, onConfirm, onDecline, ...rest }: Props) => {
+const DeleteConfirmModal = ({ inviteActions = NO_INVITE_ACTION, onClose, onConfirm, onDecline, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
+    const { sendCancellationNotice: decline } = inviteActions;
     const handleConfirm = async () => {
         if (decline) {
             await onDecline?.();

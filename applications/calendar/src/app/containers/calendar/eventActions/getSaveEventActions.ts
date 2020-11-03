@@ -11,6 +11,7 @@ import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalM
 import withVeventRruleWkst from 'proton-shared/lib/calendar/rruleWkst';
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
+import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import getEditEventData from '../event/getEditEventData';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
@@ -21,9 +22,44 @@ import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
 import getSaveSingleEventActions from './getSaveSingleEventActions';
-import { INVITE_ACTION_TYPES, InviteActions } from './inviteActions';
+import { INVITE_ACTION_TYPES, InviteActions, NO_INVITE_ACTION } from './inviteActions';
 import { getOriginalEvent } from './recurringHelper';
 import { withVeventSequence } from './sequence';
+
+const getSaveSingleEventActionsHelper = async ({
+    newEditEventData,
+    oldEditEventData,
+    sendReplyIcs,
+    inviteActions = NO_INVITE_ACTION,
+}: {
+    newEditEventData: EventNewData;
+    oldEditEventData: EventOldData;
+    sendReplyIcs: (partstat: ICAL_ATTENDEE_STATUS, vevent?: VcalVeventComponent) => Promise<void>;
+    inviteActions?: InviteActions;
+}) => {
+    const { type, partstat } = inviteActions;
+    const newVeventWithSequence = withVeventSequence(
+        newEditEventData.veventComponent,
+        oldEditEventData.mainVeventComponent
+    );
+    if (type === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
+        if (!partstat) {
+            throw new Error('Cannot update participation status without new answer');
+        }
+        await sendReplyIcs(partstat, newEditEventData.veventComponent);
+    }
+    const multiActions = getSaveSingleEventActions({
+        newEditEventData: { ...newEditEventData, veventComponent: newVeventWithSequence },
+        oldEditEventData,
+    });
+    const successText = getSingleEventText(oldEditEventData, newEditEventData, inviteActions);
+    return {
+        actions: multiActions,
+        texts: {
+            success: successText,
+        },
+    };
+};
 
 interface Arguments {
     temporaryEvent: CalendarViewEventTemporaryEvent;
@@ -41,7 +77,7 @@ const getSaveEventActions = async ({
     temporaryEvent,
     weekStartsOn,
     addresses,
-    inviteActions = { type: INVITE_ACTION_TYPES.NONE },
+    inviteActions = NO_INVITE_ACTION,
     onSaveConfirmation,
     api,
     getEventDecrypted,
@@ -87,7 +123,7 @@ const getSaveEventActions = async ({
                 veventComponent: newVeventWithSequence,
             },
         });
-        const successText = getSingleEventText(undefined, newEditEventData, { type: INVITE_ACTION_TYPES.NONE });
+        const successText = getSingleEventText(undefined, newEditEventData, NO_INVITE_ACTION);
         return {
             actions: multiActions,
             texts: {
@@ -110,35 +146,30 @@ const getSaveEventActions = async ({
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
 
+    const isSingleEdit = !!oldEditEventData.recurrenceID;
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
-    const isSingleEdit = !eventRecurrence && !!oldEditEventData.recurrenceID;
-    if (!eventRecurrence && !oldEditEventData.recurrenceID) {
-        const newVeventWithSequence = withVeventSequence(
-            newEditEventData.veventComponent,
-            oldEditEventData.mainVeventComponent
-        );
-        if (inviteType === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
-            if (!invitePartstat) {
-                throw new Error('Cannot update participation status without new answer');
-            }
-            await sendReplyIcs(invitePartstat, newEditEventData.veventComponent);
-        }
-        const multiActions = getSaveSingleEventActions({
-            newEditEventData: { ...newEditEventData, veventComponent: newVeventWithSequence },
+    if (!eventRecurrence && !isSingleEdit) {
+        return getSaveSingleEventActionsHelper({
+            newEditEventData,
             oldEditEventData,
+            sendReplyIcs,
+            inviteActions,
         });
-        const successText = getSingleEventText(oldEditEventData, newEditEventData, inviteActions);
-        return {
-            actions: multiActions,
-            texts: {
-                success: successText,
-            },
-        };
     }
 
     const recurrences = await getAllEventsByUID(api, oldEditEventData.uid, oldEditEventData.calendarID);
-
     const originalEventData = getOriginalEvent(recurrences);
+    const isOrphanSingleEdit = isSingleEdit && !originalEventData;
+    // If it's an orphan single edit, treat as a single event
+    if (isOrphanSingleEdit) {
+        return getSaveSingleEventActionsHelper({
+            newEditEventData,
+            oldEditEventData,
+            sendReplyIcs,
+            inviteActions,
+        });
+    }
+
     const originalEventResult = originalEventData ? await getEventDecrypted(originalEventData).catch(noop) : undefined;
     if (!originalEventData || !originalEventResult?.[0]) {
         throw new Error('Original event not found');

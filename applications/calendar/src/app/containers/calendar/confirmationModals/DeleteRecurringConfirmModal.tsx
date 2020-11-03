@@ -1,25 +1,27 @@
 import { c } from 'ttag';
 import { Alert, ErrorButton, FormModal, ResetButton, useLoading } from 'react-components';
 import React, { useState } from 'react';
+import { INVITE_ACTION_TYPES, InviteActions, NO_INVITE_ACTION } from '../eventActions/inviteActions';
 import SelectRecurringType from './SelectRecurringType';
 import { RECURRING_TYPES } from '../../../constants';
 
 interface Props {
     types: RECURRING_TYPES[];
-    isInvitation: boolean;
-    decline?: boolean;
+    inviteActions?: InviteActions;
     onConfirm: (type: RECURRING_TYPES) => void;
     onClose: () => void;
     onDecline?: () => Promise<void>;
 }
 
-const getAlertText = (types: RECURRING_TYPES[], isInvitation = false, decline = false) => {
+const getAlertText = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
+    const { type: inviteType, sendCancellationNotice: decline } = inviteActions;
+    const isDeleteInvitation = inviteType === INVITE_ACTION_TYPES.DECLINE;
     if (types.length === 1) {
         if (types[0] === RECURRING_TYPES.SINGLE) {
             return decline
                 ? c('Info')
                       .t`This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?`
-                : isInvitation
+                : isDeleteInvitation
                 ? c('Info').t`This event has been updated by the organizer. Would you like to delete this event?`
                 : c('Info').t`Would you like to delete this event?`;
         }
@@ -35,8 +37,7 @@ const getAlertText = (types: RECURRING_TYPES[], isInvitation = false, decline = 
 
 const DeleteRecurringConfirmModal = ({
     types,
-    isInvitation,
-    decline = false,
+    inviteActions = NO_INVITE_ACTION,
     onConfirm,
     onClose,
     onDecline,
@@ -44,6 +45,7 @@ const DeleteRecurringConfirmModal = ({
 }: Props) => {
     const [loading, withLoading] = useLoading();
     const [type, setType] = useState(types[0]);
+    const { sendCancellationNotice: decline } = inviteActions;
     const handleConfirm = async () => {
         if (decline) {
             await onDecline?.();
@@ -62,7 +64,7 @@ const DeleteRecurringConfirmModal = ({
             onClose={onClose}
             {...rest}
         >
-            <Alert type="error">{getAlertText(types, isInvitation, decline)}</Alert>
+            <Alert type="error">{getAlertText(types, inviteActions)}</Alert>
             {types.length > 1 ? (
                 <SelectRecurringType
                     types={types}

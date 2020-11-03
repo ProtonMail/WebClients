@@ -95,8 +95,7 @@ export type OnSaveConfirmationCb = (data: OnSaveConfirmationArgs) => Promise<REC
 export type OnDeleteConfirmationCb = (data: {
     type: DELETE_CONFIRMATION_TYPES;
     data?: RECURRING_TYPES[];
-    isInvitation: boolean;
-    sendCancellationNotice?: boolean;
+    inviteActions?: InviteActions;
     veventComponent?: VcalVeventComponent;
 }) => Promise<RECURRING_TYPES>;
 

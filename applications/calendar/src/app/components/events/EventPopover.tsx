@@ -28,6 +28,7 @@ import {
 } from 'react-components';
 import InviteButtons from 'react-components/components/calendar/InviteButtons';
 import { c } from 'ttag';
+import { INVITE_ACTION_TYPES, InviteActions } from '../../containers/calendar/eventActions/inviteActions';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { EnDash } from '../EnDash';
@@ -104,7 +105,7 @@ interface Props {
     formatTime: (date: Date) => string;
     onEdit: (event: CalendarEvent) => void;
     onChangePartstat: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
-    onDelete: (event: CalendarEvent, isInvitation?: boolean, sendCancellationNotice?: boolean) => Promise<void>;
+    onDelete: (event: CalendarEvent, inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
     style: any;
     popoverRef: any;
@@ -158,7 +159,15 @@ const EventPopover = ({
                 !isCalendarDisabled &&
                 !isCancelled &&
                 [ACCEPTED, TENTATIVE].includes(userPartstat);
-            withLoadingAction(onDelete(eventData, !model.isOrganizer, sendCancellationNotice)).catch(noop);
+            const inviteActions = model.isOrganizer
+                ? {
+                      type: INVITE_ACTION_TYPES.NONE,
+                  }
+                : {
+                      type: INVITE_ACTION_TYPES.DECLINE,
+                      sendCancellationNotice,
+                  };
+            withLoadingAction(onDelete(eventData, inviteActions)).catch(noop);
         }
     };
 
