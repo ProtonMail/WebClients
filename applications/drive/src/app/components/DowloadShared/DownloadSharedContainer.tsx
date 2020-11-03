@@ -20,6 +20,8 @@ import EnterPasswordInfo from './EnterPasswordInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
 
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
+const ERROR_MESSAGE_INCORRECT_PASSWORD = c('Error').t`Incorrect password. Please try again.`;
+const ERROR_MESSAGE_LINK_DOESN_NOT_EXIST = c('Error').t`The link either does not exist or has expired.`;
 
 const DownloadSharedContainer = () => {
     const [error, setError] = useState<Error | undefined>();
@@ -35,11 +37,16 @@ const DownloadSharedContainer = () => {
     const password = useMemo(() => hash.replace('#', ''), [hash]);
 
     const initHandshake = useCallback(async () => {
-        return initSRPHandshake(token).then(setHandshekeInfo).catch(setError);
+        return initSRPHandshake(token)
+            .then(setHandshekeInfo)
+            .catch((e) => {
+                setError(e);
+                setHandshekeInfo(null);
+            });
     }, [token]);
 
     const getSharedLinkInfo = useCallback(
-        async (password: string) => {
+        async (password: string, passSubmittedManually = false) => {
             if (!handshakeInfo) {
                 return;
             }
@@ -47,16 +54,26 @@ const DownloadSharedContainer = () => {
             await getSharedLinkPayload(token, password, handshakeInfo)
                 .then(setLinkInfo)
                 .catch((e) => {
-                    console.error(e);
                     const { code, message } = getApiError(e);
+                    let text = message;
+
                     if (code === ERROR_CODE_INVALID_SRP_PARAMS) {
-                        createNotification({ type: 'error', text: 'Incorrect password. Please try again.' });
-                    } else {
-                        createNotification({ type: 'error', text: message });
+                        text = ERROR_MESSAGE_LINK_DOESN_NOT_EXIST;
+
+                        if (passSubmittedManually) {
+                            text = ERROR_MESSAGE_INCORRECT_PASSWORD;
+
+                            // SRP session ephemerals are destroyed when you retrieve them.
+                            initHandshake().catch(console.error);
+                        }
                     }
 
-                    // SRP session ephemerals are destroyed when you retrieve them.
-                    initHandshake().catch(console.error);
+                    createNotification({
+                        type: 'error',
+                        text,
+                    });
+
+                    setLinkInfo(null);
                 });
         },
         [token, password, handshakeInfo]
@@ -79,7 +96,7 @@ const DownloadSharedContainer = () => {
     };
 
     const submitPassword = (pass: string) => {
-        return getSharedLinkInfo(pass).catch(console.error);
+        return getSharedLinkInfo(pass, true).catch(console.error);
     };
 
     useEffect(() => {
