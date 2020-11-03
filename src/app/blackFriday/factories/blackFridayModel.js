@@ -22,7 +22,7 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
      * @return {Boolean}
      */
     const isBlackFridayPeriod = () => {
-        return allowed && isDealEvent() && userType().isFree;
+        return allowed && isDealEvent() && userType().isFree && !userType().isDelinquent;
     };
 
     const isProductPayerPeriod = () => {
