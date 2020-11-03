@@ -133,7 +133,7 @@ export const getIsRruleSimple = (rrule?: VcalRrulePropertyValue): boolean => {
     if (!freq || hasUnsupportedFields) {
         return false;
     }
-    const isBasicSimple = (!interval || interval === 1) && (!count || count === 1) && !until;
+    const isBasicSimple = (!interval || interval === 1) && !count && !until;
     if (freq === FREQUENCY.DAILY) {
         if (nonEmptyFields.some((field) => !SUPPORTED_RRULE_PROPERTIES_DAILY.includes(field))) {
             return false;
