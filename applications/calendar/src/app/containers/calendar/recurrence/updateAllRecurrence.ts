@@ -31,8 +31,9 @@ interface Arguments {
     originalComponent: VcalVeventComponent;
     mode: UpdateAllPossibilities;
     isSingleEdit: boolean;
+    isInvitation: boolean;
 }
-const updateAllRecurrence = ({ component, originalComponent, mode }: Arguments): VcalVeventComponent => {
+const updateAllRecurrence = ({ component, originalComponent, mode, isInvitation }: Arguments): VcalVeventComponent => {
     // Have to set the old UID (this won't be necessary until we merge chains)
     const veventWithOldUID = {
         ...component,
@@ -42,9 +43,11 @@ const updateAllRecurrence = ({ component, originalComponent, mode }: Arguments):
     // Strip any RECURRENCE-ID when updating all events
     delete veventWithOldUID['recurrence-id'];
 
-    if (mode === UpdateAllPossibilities.KEEP_SINGLE_EDITS) {
-        // Copy over the exdates
-        veventWithOldUID.exdate = originalComponent.exdate;
+    if (mode === UpdateAllPossibilities.KEEP_SINGLE_EDITS || isInvitation) {
+        // Copy over the exdates, if any
+        if (originalComponent.exdate) {
+            veventWithOldUID.exdate = originalComponent.exdate;
+        }
         // If single edits are to be kept, the start time can not change, shouldn't get here if not but just to be sure
         veventWithOldUID.dtstart = originalComponent.dtstart;
         veventWithOldUID.dtend = getEndDateTimeMerged(

@@ -50,6 +50,7 @@ describe('update all recurrence', () => {
             originalComponent: ALL_DAY_COMPONENT,
             recurrence,
             isSingleEdit: false,
+            isInvitation: false,
             mode: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
         });
         expectCompare(
@@ -74,6 +75,7 @@ END:VEVENT`
             recurrence,
             mode: UpdateAllPossibilities.USE_NEW_START_DATE,
             isSingleEdit: false,
+            isInvitation: false,
         });
 
         expectCompare(
@@ -101,6 +103,7 @@ END:VEVENT`
             originalComponent: PART_DAY_COMPONENT,
             recurrence,
             isSingleEdit: false,
+            isInvitation: false,
             mode: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
         });
 
@@ -125,6 +128,7 @@ END:VEVENT`
             originalComponent: ALL_DAY_COMPONENT,
             recurrence,
             isSingleEdit: false,
+            isInvitation: false,
             mode: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
         });
 
