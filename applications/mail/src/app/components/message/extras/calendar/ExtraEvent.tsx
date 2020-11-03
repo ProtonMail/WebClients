@@ -119,12 +119,14 @@ const ExtraEvent = ({
             let parentInvitationApi;
             let calendarData;
             let hasDecryptionError;
+            let singleEditData;
             try {
                 // check if an event with the same uid exists in the calendar already
                 const {
                     invitation,
                     parentInvitation,
                     calendarData: calData,
+                    singleEditData: singleData,
                     hasDecryptionError: hasDecryptError,
                 } = await fetchEventInvitation({
                     veventComponent: invitationIcs.vevent,
@@ -140,13 +142,14 @@ const ExtraEvent = ({
                 });
                 invitationApi = invitation;
                 calendarData = calData;
+                singleEditData = singleData;
                 hasDecryptionError = hasDecryptError;
                 const isOutdated = getIsInvitationOutdated(invitationIcs.vevent, invitationApi?.vevent);
                 if (parentInvitation) {
                     parentInvitationApi = parentInvitation;
                 }
                 if (!unmounted) {
-                    setModel({ ...model, isOutdated, calendarData, hasDecryptionError });
+                    setModel({ ...model, isOutdated, calendarData, singleEditData, hasDecryptionError });
                 }
             } catch (error) {
                 // if fetching fails, proceed as if there was no event in the database
@@ -171,6 +174,7 @@ const ExtraEvent = ({
                     invitationApi,
                     api,
                     calendarData,
+                    singleEditData,
                     isAddressDisabled,
                     message,
                     contactEmails,

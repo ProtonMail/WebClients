@@ -1,8 +1,7 @@
 import { getUnixTime } from 'date-fns';
 import {
     CreateCalendarEventSyncData,
-    getEventByUID,
-    GetEventByUIDArguments,
+    DeleteCalendarEventSyncData,
     syncMultipleEvents,
     UpdateCalendarEventSyncData,
 } from 'proton-shared/lib/api/calendars';
@@ -15,6 +14,7 @@ import {
     ICAL_METHOD,
 } from 'proton-shared/lib/calendar/constants';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
+import getPaginatedEventsByUID from 'proton-shared/lib/calendar/integration/getPaginatedEventsByUID';
 import { findAttendee, getInvitedEventWithAlarms } from 'proton-shared/lib/calendar/integration/invite';
 import { getIsRruleEqual } from 'proton-shared/lib/calendar/rruleEqual';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
@@ -48,6 +48,7 @@ import {
     VcalAttendeeProperty,
     VcalVeventComponent,
     DecryptedVeventResult,
+    SingleEditWidgetData,
 } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
@@ -55,9 +56,11 @@ import { MessageExtended } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import {
     EventInvitation,
+    getCanCreateSingleEdit,
     getInvitationHasAttendee,
     getIsInvitationOutdated,
     getSequence,
+    getSingleEditWidgetData,
     InvitationModel,
     processEventInvitation,
     UPDATE_ACTION,
@@ -67,7 +70,7 @@ const { CANCELLED } = ICAL_EVENT_STATUS;
 const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, CANCEL } = UPDATE_ACTION;
 
 interface GetVeventWithAlarmsArgs {
-    calendarEvent: CalendarEvent;
+    calendarEvent: CalendarEventWithMetadata;
     memberID?: string;
     getCalendarEventRaw: (event: CalendarEvent) => Promise<DecryptedVeventResult>;
     getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
@@ -100,6 +103,36 @@ const getIsNonSoughtEvent = (event: CalendarEventWithMetadata, vevent: VcalVeven
     return getUnixTime(propertyToUTCDate(vevent['recurrence-id'])) !== event.RecurrenceID;
 };
 
+export type FetchAllEventsByUID = ({
+    uid,
+    api,
+    recurrenceID,
+}: {
+    uid: string;
+    recurrenceID?: number;
+    api: Api;
+}) => Promise<{
+    event?: CalendarEventWithMetadata;
+    otherEvents: CalendarEventWithMetadata[];
+    parentEvent?: CalendarEventWithMetadata;
+    otherParentEvents?: CalendarEventWithMetadata[];
+}>;
+
+const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceID }) => {
+    const promises: Promise<CalendarEventWithMetadata[]>[] = [getPaginatedEventsByUID({ api, uid })];
+    if (recurrenceID) {
+        promises.unshift(getPaginatedEventsByUID({ api, uid, recurrenceID }));
+    }
+    const [[event, ...otherEvents] = [], [parentEvent, ...otherParentEvents] = []] = await Promise.all(promises);
+    if (parentEvent) {
+        // If recurrenceID is passed, but not single edit is found, return the parent
+        return event
+            ? { event, otherEvents, parentEvent, otherParentEvents }
+            : { event: parentEvent, otherEvents: otherParentEvents };
+    }
+    return { event, otherEvents };
+};
+
 type FetchEventInvitation = (args: {
     veventComponent: VcalVeventComponent;
     api: Api;
@@ -117,6 +150,7 @@ type FetchEventInvitation = (args: {
     invitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendarData?: CalendarWidgetData;
+    singleEditData?: SingleEditWidgetData;
     hasDecryptionError?: boolean;
 }>;
 export const fetchEventInvitation: FetchEventInvitation = async ({
@@ -132,18 +166,13 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     ownAddresses,
 }) => {
     const recurrenceID = veventComponent['recurrence-id'];
-    const params: GetEventByUIDArguments[] = [{ UID: veventComponent.uid.value, Page: 0, PageSize: 1 }];
-    if (recurrenceID) {
-        // we want to retrieve the single edit plus the parent in this case
-        const timestamp = getUnixTime(propertyToUTCDate(recurrenceID));
-        params.unshift({ UID: veventComponent.uid.value, Page: 0, PageSize: 1, RecurrenceID: timestamp });
-    }
-    const response = await Promise.all(
-        params.map((args) => api<{ Events: CalendarEventWithMetadata[] }>(getEventByUID(args)))
-    );
-    // keep only the first event the API found (typically the one from the default calendar)
-    const calendarEvents = response.map(({ Events: [event] = [] }) => event).filter(isTruthy);
-    const [calendarEvent, calendarParentEvent] = calendarEvents;
+    const timestamp = recurrenceID ? getUnixTime(propertyToUTCDate(recurrenceID)) : undefined;
+    const allEventsWithUID = await fetchAllEventsByUID({
+        uid: veventComponent.uid.value,
+        api,
+        recurrenceID: timestamp,
+    });
+    const { event: calendarEvent, parentEvent: calendarParentEvent } = allEventsWithUID;
     const calendar =
         calendars.find(({ ID }) => ID === (calendarEvent || calendarParentEvent)?.CalendarID) || defaultCalendar;
     if (!calendar) {
@@ -158,12 +187,13 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         ...(await getCalendarInfo(calendar.ID)),
     };
     // if we retrieved a single edit when not looking for one, or looking for another one, do not return it
-    if (!calendarEvents.length || getIsNonSoughtEvent(calendarEvent, veventComponent)) {
+    if (!calendarEvent || getIsNonSoughtEvent(calendarEvent, veventComponent)) {
         return { calendarData };
     }
+    const singleEditData = getSingleEditWidgetData(allEventsWithUID);
     try {
         const vevents = await Promise.all(
-            calendarEvents.map((event) =>
+            [calendarEvent, calendarParentEvent].filter(isTruthy).map((event) =>
                 getVeventWithAlarms({
                     calendarEvent: event,
                     memberID: calendarData.memberID,
@@ -173,10 +203,10 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
             )
         );
         const [vevent, parentVevent] = vevents;
-        const result: Unwrap<ReturnType<FetchEventInvitation>> = { calendarData };
+        const result: Unwrap<ReturnType<FetchEventInvitation>> = { calendarData, singleEditData };
         const { invitation } = processEventInvitation({ vevent }, message, contactEmails, ownAddresses);
         result.invitation = { ...invitation, calendarEvent };
-        if (parentVevent) {
+        if (parentVevent && calendarParentEvent) {
             const { invitation: parentInvitation } = processEventInvitation(
                 { vevent: parentVevent },
                 message,
@@ -199,6 +229,7 @@ interface UpdateEventArgs {
     api: Api;
     calendarData: Required<CalendarWidgetData>;
     createSingleEdit?: boolean;
+    deleteIds?: string[];
     overwrite: boolean;
 }
 const updateEventApi = async ({
@@ -208,6 +239,7 @@ const updateEventApi = async ({
     calendarData,
     createSingleEdit = false,
     overwrite,
+    deleteIds = [],
 }: UpdateEventArgs) => {
     const {
         calendar: { ID: calendarID },
@@ -226,9 +258,14 @@ const updateEventApi = async ({
         isSwitchCalendar: false,
         ...creationKeys,
     });
-    const Events: (CreateCalendarEventSyncData | UpdateCalendarEventSyncData)[] = createSingleEdit
+    const deleteEvents = deleteIds.map((id) => ({ ID: id }));
+    const Events: (
+        | CreateCalendarEventSyncData
+        | UpdateCalendarEventSyncData
+        | DeleteCalendarEventSyncData
+    )[] = createSingleEdit
         ? [{ Event: { Permissions: 3, IsOrganizer: 0, ...data }, Overwrite: overwrite ? 1 : 0 }]
-        : [{ Event: { Permissions: 3, ...data }, ID: calendarEvent.ID }];
+        : [...deleteEvents, { Event: { Permissions: 3, ...data }, ID: calendarEvent.ID }];
     const {
         Responses: [
             {
@@ -259,6 +296,7 @@ interface UpdateEventInvitationArgs
     invitationApi: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
     parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendarData: Required<CalendarWidgetData>;
+    singleEditData?: SingleEditWidgetData;
     api: Api;
     message: MessageExtended;
     contactEmails: ContactEmail[];
@@ -268,6 +306,7 @@ interface UpdateEventInvitationArgs
 export const updateEventInvitation = async ({
     isOrganizerMode,
     calendarData,
+    singleEditData,
     isAddressDisabled,
     invitationIcs,
     invitationApi,
@@ -348,6 +387,11 @@ export const updateEventInvitation = async ({
         if ([KEEP_PARTSTAT, RESET_PARTSTAT].includes(action)) {
             // update the api event by the ics one with the appropriate answer
             const createSingleEdit = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(veventApi);
+            const canCreateSingleEdit = createSingleEdit ? getCanCreateSingleEdit(veventIcs, veventApi) : undefined;
+            if (createSingleEdit && !canCreateSingleEdit) {
+                // The parent has been updated. Nothing to do then
+                return { action: NONE };
+            }
             try {
                 if (!vcalAttendeeIcs) {
                     throw new Error('Missing attendee parameters');
@@ -367,11 +411,13 @@ export const updateEventInvitation = async ({
                         getAttendeePartstat(vcalAttendeeApi)
                     )
                 );
+                // we are updating a recurring event with previous modifications. We must delete those
                 const updatedCalendarEvent = await updateEventApi({
                     calendarEvent,
                     vevent: updatedVevent,
                     calendarData,
                     createSingleEdit,
+                    deleteIds: singleEditData?.ids,
                     api,
                     overwrite,
                 });
@@ -411,6 +457,11 @@ export const updateEventInvitation = async ({
         // cancel API event if needed
         if (cancel) {
             const createSingleEdit = getHasRecurrenceId(veventIcs) && !getHasRecurrenceId(veventApi);
+            const canCreateSingleEdit = createSingleEdit ? getCanCreateSingleEdit(veventIcs, veventApi) : undefined;
+            if (createSingleEdit && !canCreateSingleEdit) {
+                // The parent has been updated. Nothing to do then
+                return { action: NONE };
+            }
             try {
                 const updatedVevent = createSingleEdit
                     ? {
@@ -514,7 +565,7 @@ export const createCalendarEventFromInvitation = async ({
     };
 };
 
-export const updateCalendarEventFromInvitation = async ({
+export const updatePartstatFromInvitation = async ({
     veventApi,
     calendarEvent,
     veventIcs,
@@ -547,7 +598,9 @@ export const updateCalendarEventFromInvitation = async ({
         throw new Error('Missing data for updating calendar event from invitation');
     }
     const emailAddress = getAttendeeEmail(vcalAttendee);
-    const veventToUpdate = veventIcs ? { ...veventIcs, ...pick(veventApi, ['components']) } : { ...veventApi };
+    const veventToUpdate = veventIcs
+        ? { ...veventIcs, ...pick(veventApi, ['components', 'exdate']) }
+        : { ...veventApi };
     const updatedVevent = {
         ...veventToUpdate,
         attendee: modifyAttendeesPartstat(veventToUpdate.attendee, { [emailAddress]: partstat }),
