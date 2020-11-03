@@ -1,8 +1,9 @@
 import React, { MutableRefObject } from 'react';
-import { PrivateMainSettingsArea, SettingsPropsShared } from 'react-components';
+import { PrivateMainSettingsArea, SettingsPropsShared, RelatedSettingsSection, AppLink } from 'react-components';
 import { Address } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { c } from 'ttag';
+import { APPS } from 'proton-shared/lib/constants';
 
 import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 import CalendarsSection from './section/CalendarsSection';
@@ -21,6 +22,11 @@ export const getCalendarSettingsPage = () => {
             {
                 text: c('Title').t`Import`,
                 id: 'import',
+            },
+            {
+                text: c('Title').t`Related features`,
+                id: 'related-features',
+                hide: true,
             },
         ],
     };
@@ -63,6 +69,36 @@ const SettingsCalendarPage = ({
                 activeCalendars={activeCalendars}
                 defaultCalendar={defaultCalendar}
                 calendarsEventsCacheRef={calendarsEventsCacheRef}
+            />
+            <RelatedSettingsSection
+                list={[
+                    {
+                        icon: 'email',
+                        text: c('Info').t`Import your old messages and folders into ProtonMail.`,
+                        link: (
+                            <AppLink
+                                to="/import#start-import"
+                                toApp={APPS.PROTONMAIL_SETTINGS}
+                                className="pm-button--primary mtauto"
+                            >
+                                {c('Action').t`Import mailbox`}
+                            </AppLink>
+                        ),
+                    },
+                    {
+                        icon: 'contacts',
+                        text: c('Info').t`Import your address book or individual contacts into ProtonContacts.`,
+                        link: (
+                            <AppLink
+                                to="/settings/import"
+                                toApp={APPS.PROTONCONTACTS}
+                                className="pm-button--primary mtauto"
+                            >
+                                {c('Action').t`Import contacts`}
+                            </AppLink>
+                        ),
+                    },
+                ]}
             />
         </PrivateMainSettingsArea>
     );
