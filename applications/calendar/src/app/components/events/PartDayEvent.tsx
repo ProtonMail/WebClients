@@ -1,5 +1,5 @@
 import React, { CSSProperties, Ref, useMemo } from 'react';
-import { classnames, Icon, useAddresses } from 'react-components';
+import { classnames, Icon } from 'react-components';
 import { getEventStatusTraits } from '../../helpers/event';
 
 import useReadEvent from './useReadEvent';
@@ -22,8 +22,7 @@ const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, event
     const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
 
     const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
-    const [addresses] = useAddresses();
-    const { isUnanswered, isCancelled } = getEventStatusTraits({ model, addresses });
+    const { isUnanswered, isCancelled } = getEventStatusTraits(model);
 
     const eventStyle = useMemo(() => {
         return getEventStyle(calendarColor, style);

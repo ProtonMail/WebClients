@@ -11,6 +11,7 @@ import {
     ICAL_EVENT_STATUS,
 } from 'proton-shared/lib/calendar/constants';
 import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface';
+import { Address } from 'proton-shared/lib/interfaces';
 import { VcalRrulePropertyValue } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { NotificationModel } from './NotificationModel';
 
@@ -82,6 +83,8 @@ export interface EventModelView {
     attendees: AttendeeModel[];
     organizer: OrganizerModel;
     isOrganizer: boolean;
+    selfAttendeeIndex?: number;
+    selfAddress?: Address;
     status: ICAL_EVENT_STATUS;
     verificationStatus: EVENT_VERIFICATION_STATUS;
     rest?: any;

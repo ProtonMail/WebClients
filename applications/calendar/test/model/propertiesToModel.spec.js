@@ -8,7 +8,7 @@ DTSTART;TZID=America/New_York:20190719T120000
 DTEND;TZID=Europe/Zurich:20190719T183000
 SUMMARY:My title
 END:VEVENT`;
-        expect(propertiesToModel(parse(VEVENT))).toMatchObject({
+        expect(propertiesToModel({ veventComponent: parse(VEVENT) })).toMatchObject({
             title: 'My title',
             start: {
                 date: new Date(2019, 6, 19),
@@ -28,7 +28,7 @@ END:VEVENT`;
 DTSTART;TZID=Europe/Zurich:20190719T120000
 DTEND;TZID=Europe/Zurich:20190719T110000
 END:VEVENT`;
-        expect(propertiesToModel(parse(VEVENT))).toMatchObject({
+        expect(propertiesToModel({ veventComponent: parse(VEVENT) })).toMatchObject({
             start: {
                 date: new Date(2019, 6, 19),
                 time: new Date(2000, 0, 1, 12),
@@ -47,7 +47,7 @@ END:VEVENT`;
 DTSTART;VALUE=DATE:20190719
 DTEND;VALUE=DATE:20190718
 END:VEVENT`;
-        expect(propertiesToModel(parse(VEVENT), true, true, 'Europe/Zurich')).toMatchObject({
+        expect(propertiesToModel({ veventComponent: parse(VEVENT) }, true, true, 'Europe/Zurich')).toMatchObject({
             start: {
                 date: new Date(2019, 6, 19),
                 time: new Date(2000, 0, 1, 0),

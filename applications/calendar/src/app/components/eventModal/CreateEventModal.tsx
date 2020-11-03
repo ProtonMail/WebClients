@@ -11,7 +11,7 @@ import {
     InviteActions,
     NO_INVITE_ACTION,
 } from '../../containers/calendar/eventActions/inviteActions';
-import { findUserAttendeeModel } from '../../helpers/attendees';
+
 import { EventModel } from '../../interfaces/EventModel';
 
 import EventForm from './EventForm';
@@ -56,11 +56,12 @@ const CreateEventModal = ({
         onDelete,
     });
     const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
-    const { userAttendee, userAddress } = findUserAttendeeModel(model.attendees, addresses);
-    const isAddressDisabled = userAddress ? userAddress.Status === 0 : true;
-    const userPartstat = userAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
+    const { selfAddress, selfAttendeeIndex } = model;
+    const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
+    const isSelfAddressDisabled = selfAddress ? selfAddress.Status === 0 : true;
+    const userPartstat = selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
     const sendCancellationNotice =
-        !isAddressDisabled &&
+        !isSelfAddressDisabled &&
         !isCancelled &&
         [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
     const modalTitle = isCreateEvent ? c('Title').t`Create event` : c('Title').t`Edit event`;
