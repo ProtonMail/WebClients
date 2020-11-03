@@ -18,12 +18,16 @@ function usePublicSharing() {
     const api = useApi();
     const { addToDownloadQueue } = useDownloadProvider();
 
-    const getSharedLinkPayload = async (token: string, password: string): Promise<SharedLinkInfo> => {
-        const initHandshake = async (token: string) => {
-            return api<InitHandshake>(queryInitSRPHandshake(token));
-        };
+    const initSRPHandshake = async (token: string) => {
+        return api<InitHandshake>(queryInitSRPHandshake(token));
+    };
 
-        const { Modulus, ServerEphemeral, UrlPasswordSalt, SRPSession, Version } = await initHandshake(token);
+    const getSharedLinkPayload = async (
+        token: string,
+        password: string,
+        initHandshake: InitHandshake
+    ): Promise<SharedLinkInfo> => {
+        const { Modulus, ServerEphemeral, UrlPasswordSalt, SRPSession, Version } = initHandshake;
 
         const { Payload } = await srpAuth<{ Code: number; Payload: SharedLinkPayload }>({
             api,
@@ -107,6 +111,7 @@ function usePublicSharing() {
     };
 
     return {
+        initSRPHandshake,
         getSharedLinkPayload,
         startSharedFileTransfer,
     };

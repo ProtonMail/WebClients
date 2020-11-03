@@ -8,7 +8,7 @@ import sentry from 'proton-shared/lib/helpers/sentry';
 
 import * as config from './config';
 import PrivateApp from './PrivateApp';
-import DownloadSharedContainer from './containers/DownloadSharedContainer';
+import DownloadSharedContainer from './components/DowloadShared/DownloadSharedContainer';
 import { DownloadProvider } from './components/downloads/DownloadProvider';
 
 import './app.scss';
