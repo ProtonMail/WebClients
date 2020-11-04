@@ -13,7 +13,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 const { getSource } = require('./helpers/source');
 const transformOpenpgpFiles = require('./helpers/openpgp');
-const { OPENPGP_FILES, OPENPGP_WORKERS } = require('./constants');
+const { OPENPGP_FILES } = require('./constants');
 const { logo, ...logoConfig } = require(getSource('src/assets/logoConfig.js'));
 
 const HTML_MINIFY = {
