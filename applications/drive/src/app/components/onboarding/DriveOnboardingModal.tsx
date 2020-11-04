@@ -18,8 +18,9 @@ const DriveOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONDRIVE);
 
     const learnMoreLink = (
-        <Href url="https://protonmail.com/blog/protondrive-security/">{c('Onboarding ProtonDrive')
-            .t`Learn about ProtonDrive security`}</Href>
+        <Href key="learnMoreLink" url="https://protonmail.com/blog/protondrive-security/">
+            {c('Onboarding ProtonDrive').t`Learn about ProtonDrive security`}
+        </Href>
     );
 
     return (
@@ -32,11 +33,19 @@ const DriveOnboardingModal = (props: any) => {
                     close={null}
                 >
                     <OnboardingContent
-                        description={c('Onboarding ProtonDrive Info')
-                            .t`Your support powers our mission to ensure privacy for all. As a way of saying thanks, you now have early access to our new encrypted cloud storage service.`}
+                        description={
+                            <>
+                                <div className="mb1">
+                                    {c('Onboarding ProtonDrive Info')
+                                        .t`Your support powers our mission to ensure privacy for all. As a way of saying thanks, you now have early access to our new encrypted cloud storage service.`}
+                                </div>
+                                <div>
+                                    {c('Onboarding ProtonDrive Info')
+                                        .jt`${appName} currently lets you upload and manage your files, secure your data with end-to-end encryption, and access your account from any device through your web browser. ${learnMoreLink}`}
+                                </div>
+                            </>
+                        }
                         img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
-                        text={c('Onboarding ProtonDrive Info')
-                            .jt`${appName} currently lets you upload and manage your files, secure your data with end-to-end encryption, and access your account from any device through your web browser. ${learnMoreLink}`}
                     />
                 </OnboardingStep>
             )}
