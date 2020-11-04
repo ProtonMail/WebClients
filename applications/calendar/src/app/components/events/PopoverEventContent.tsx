@@ -115,7 +115,7 @@ const PopoverEventContent = ({
             {trimmedLocation ? (
                 <div className={wrapClassName}>
                     <Icon name="address" className={iconClassName} />
-                    <span className="break">{trimmedLocation}</span>
+                    <span className="hyphens scroll-if-needed">{trimmedLocation}</span>
                 </div>
             ) : null}
             {isInvitation ? (
