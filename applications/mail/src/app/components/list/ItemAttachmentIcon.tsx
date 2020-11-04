@@ -19,8 +19,8 @@ const ItemAttachmentIcon = ({ element = {}, labelID, className }: Props) => {
     }
 
     const title = c('Info').ngettext(
-        msgid`Has ${numAttachments} attachement`,
-        `Has ${numAttachments} attachements`,
+        msgid`Has ${numAttachments} attachment`,
+        `Has ${numAttachments} attachments`,
         numAttachments
     );
 
