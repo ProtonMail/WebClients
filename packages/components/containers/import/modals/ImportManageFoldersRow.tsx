@@ -207,7 +207,7 @@ const ImportManageFoldersRow = ({
                     handleSave(e);
                 }}
                 icon={item}
-                error={error || warning}
+                error={error}
                 errorZoneClassName="hidden"
             />
         );
