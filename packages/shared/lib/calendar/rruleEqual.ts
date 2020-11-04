@@ -55,7 +55,7 @@ const getNormalizedRrule = (rrule: VcalRrulePropertyValue, wkst = VcalDays.MO) =
     }
     if (freq === FREQUENCY.YEARLY) {
         if (isSingleValue(byday) && isSingleValue(bymonth)) {
-            redundantProperties.concat(['byday', 'bymonth']);
+            redundantProperties.push('byday', 'bymonth');
         }
     }
     return withRruleWkst({ freq, ...omit(rrule, redundantProperties) }, wkst);

@@ -169,6 +169,12 @@ describe('rrule equal', () => {
         ),
         getTest({ bymonth: [1, 3, 2] }, { bymonth: [3, 2, 1] }, true),
         getTest({}, { bymonth: [1, 3, 2] }, false),
+        getTest({ freq: FREQUENCY.WEEKLY, byday: [1] }, { freq: FREQUENCY.WEEKLY }, true),
+        getTest({ freq: FREQUENCY.WEEKLY, byday: [1], bymonth: [8] }, { freq: FREQUENCY.WEEKLY }, false),
+        getTest({ freq: FREQUENCY.MONTHLY, bymonthday: [13] }, { freq: FREQUENCY.MONTHLY }, true),
+        getTest({ freq: FREQUENCY.MONTHLY, bymonthday: [13], byday: [2] }, { freq: FREQUENCY.MONTHLY }, false),
+        getTest({ freq: FREQUENCY.YEARLY, byday: [7], bymonth: [7] }, { freq: FREQUENCY.YEARLY }, true),
+        getTest({ freq: FREQUENCY.YEARLY, byday: [7] }, { freq: FREQUENCY.YEARLY }, false),
     ].forEach(({ a, b, result }, i) => {
         it(`is rrule equal for ${i}`, () => {
             expect(getIsRruleEqual({ value: a }, { value: b })).toEqual(result);
