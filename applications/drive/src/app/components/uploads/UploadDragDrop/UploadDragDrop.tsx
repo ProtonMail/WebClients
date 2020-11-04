@@ -69,7 +69,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
 
                     filesToUpload.push({ path: newPath });
 
-                    // Iterates over folders recursively and puts them into fileToUpload list
+                    // Iterates over folders recursively and puts them into filesToUpload list
                     const getEntries = async () => {
                         const promises: Promise<any>[] = [];
 

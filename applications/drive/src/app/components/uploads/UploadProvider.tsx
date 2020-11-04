@@ -33,6 +33,7 @@ interface UploadProviderState {
     cancelUpload: (id: string) => void;
     pauseUpload: (id: string) => void;
     resumeUpload: (id: string) => void;
+    getAbortController: () => AbortController;
 }
 
 const MAX_ACTIVE_UPLOADS = 3;
@@ -44,11 +45,12 @@ interface UserProviderProps {
 }
 
 export const UploadProvider = ({ children }: UserProviderProps) => {
-    // Keeping ref in case we need to immediatelly get uploads without waiting for rerender
+    // Keeping ref in case we need to immediately get uploads without waiting for rerender
     const uploadsRef = useRef<Upload[]>([]);
     const [uploads, setUploads] = useState<Upload[]>([]);
     const controls = useRef<{ [id: string]: UploadControls }>({});
     const progresses = useRef<TransferProgresses>({});
+    const abortRef = useRef(new AbortController());
 
     const removeUpload = (id: string) => {
         uploadsRef.current = uploadsRef.current.filter((upload) => upload.id !== id);
@@ -77,6 +79,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     };
 
     const clearUploads = useCallback(() => {
+        abortRef.current.abort();
         uploadsRef.current.forEach((upload) => {
             if (!isTransferFinished(upload)) {
                 controls.current[upload.id].cancel();
@@ -85,6 +88,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
         uploadsRef.current = [];
         progresses.current = {};
         setUploads(uploadsRef.current);
+        abortRef.current = new AbortController();
     }, []);
 
     const updateUploadState = (id: string, nextState: UploadStateUpdater, data: Partial<Upload> = {}) => {
@@ -211,6 +215,8 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
 
     const getUploadsImmediate = () => uploadsRef.current;
 
+    const getAbortController = () => abortRef.current;
+
     return (
         <UploadContext.Provider
             value={{
@@ -223,6 +229,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                 cancelUpload,
                 pauseUpload,
                 resumeUpload,
+                getAbortController,
             }}
         >
             {children}
