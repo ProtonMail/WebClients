@@ -12,6 +12,9 @@ import { getResetAddressesKeys } from 'proton-shared/lib/keys/resetKeys';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { useHistory } from 'react-router-dom';
+import { updateLocale } from 'proton-shared/lib/api/settings';
+import { noop } from 'proton-shared/lib/helpers/function';
+import { localeCode } from 'proton-shared/lib/i18n';
 import {
     getUser,
     queryCheckUsernameAvailability,
@@ -259,6 +262,7 @@ const AccountSignupContainer = ({ toApp, onLogin, Layout }: Props) => {
 
             const authResponse = authApi.getAuthResponse();
             const User = await authApi.api<{ User: tsUser }>(getUser()).then(({ User }) => User);
+            await authApi.api(updateLocale(localeCode)).catch(noop);
             await persistSession({ ...authResponse, User, keyPassword, api });
             await onLogin({ ...authResponse, User, keyPassword, flow: 'signup' });
         } catch (error) {
