@@ -9,7 +9,11 @@ export const isBlackFridayExtension = () =>
 
 export const isDealEvent = () => moment().isBetween(BLACK_FRIDAY.BETWEEN.START, BLACK_FRIDAY.BETWEEN.END);
 
-export const getEventName = () => {
+export const getEventName = (isProductPayer) => {
+    if (isProductPayer) {
+        return 'Special offer';
+    }
+
     if (!isDealEvent()) {
         return '';
     }

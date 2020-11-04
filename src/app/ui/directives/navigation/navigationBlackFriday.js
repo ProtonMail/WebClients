@@ -36,13 +36,11 @@ function navigationBlackFriday(blackFridayModalOpener, $cookies, dispatchers, bl
             const textEl = element[0].querySelector('.navigation-title');
 
             const refresh = () => {
-                textEl.textContent = getEventName();
-                element[0].classList[blackFridayModel.isBlackFridayPeriod() ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);
+                const showPromo = blackFridayModel.isProductPayerPeriod() || blackFridayModel.isBlackFridayPeriod();
+                textEl.textContent = getEventName(blackFridayModel.isProductPayerPeriod());
+                element[0].classList[showPromo ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);
 
-                if (
-                    !alreadySeen(authentication.user.ID) &&
-                    (blackFridayModel.isProductPayerPeriod() || blackFridayModel.isBlackFridayPeriod())
-                ) {
+                if (!alreadySeen(authentication.user.ID) && showPromo) {
                     blackFridayModalOpener();
                     setAlreadySeen(authentication.user.ID);
                 }
