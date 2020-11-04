@@ -29,13 +29,13 @@ const SortDropdown = () => {
     }[] = [
         {
             name: c('Action').t`Name: A to Z`,
-            icon: 'arrow-down',
+            icon: 'arrow-up',
             sortField: 'Name',
             sortOrder: SORT_DIRECTION.ASC,
         },
         {
             name: c('Action').t`Name: Z to A`,
-            icon: 'arrow-up',
+            icon: 'arrow-down',
             sortField: 'Name',
             sortOrder: SORT_DIRECTION.DESC,
         },
@@ -53,13 +53,13 @@ const SortDropdown = () => {
         },
         {
             name: c('Action').t`Type: A to Z`,
-            icon: 'arrow-down',
+            icon: 'arrow-up',
             sortField: 'MIMEType',
             sortOrder: SORT_DIRECTION.ASC,
         },
         {
             name: c('Action').t`Type: Z to A`,
-            icon: 'arrow-up',
+            icon: 'arrow-down',
             sortField: 'MIMEType',
             sortOrder: SORT_DIRECTION.DESC,
         },
