@@ -118,7 +118,7 @@ const ExtraEvents = ({ message }: Props) => {
         return () => {
             unmounted = true;
         };
-    }, [message.data, message.privateKeys, loadingConfigs]);
+    }, [message.data, message.privateKeys, message.errors, loadingConfigs]);
 
     if (loadingConfigs || loadingWidget) {
         return null;

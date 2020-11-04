@@ -140,7 +140,7 @@ export const getHasFullCalendarData = (data?: CalendarWidgetData): data is Requi
 export const filterAttachmentsForEvents = (attachments: Attachment[]): Attachment[] =>
     attachments.filter(
         ({ Name = '', MIMEType = '' }) =>
-            ICAL_EXTENSIONS.includes(splitExtension(Name)[1]) && MIMEType === ICAL_MIME_TYPE
+            ICAL_EXTENSIONS.includes(splitExtension(Name)[1]) && MIMEType.includes(ICAL_MIME_TYPE)
     );
 
 const withMessageDtstamp = <T>(properties: VcalVeventComponent & T, { Time }: Message): VcalVeventComponent & T => {
