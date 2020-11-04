@@ -59,7 +59,7 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
 
         // Ignore updates for non-fetched messages.
         if (!cache.has(localID)) {
-            return;
+            continue;
         }
         if (Action === EVENT_ACTIONS.DELETE) {
             cache.delete(localID);
