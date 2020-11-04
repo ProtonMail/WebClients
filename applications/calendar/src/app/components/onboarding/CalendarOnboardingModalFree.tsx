@@ -33,11 +33,19 @@ const CalendarOnboardingModalFree = (props: any) => {
                     onClose={handleClose}
                 >
                     <OnboardingContent
-                        description={c('Onboarding ProtonCalendar')
-                            .t`${appName} is currently in beta and only available to paid users of ${mailAppName}.`}
+                        description={
+                            <>
+                                <div className="mb1">
+                                    {c('Onboarding ProtonCalendar')
+                                        .t`${appName} is currently in beta and only available to paid users of ${mailAppName}.`}
+                                </div>
+                                <div>
+                                    {c('Onboarding ProtonCalendar')
+                                        .t`To start keeping your plans private now, consider upgrading to a paid plan. ${appName} will be available to Free plan users when it launches.`}
+                                </div>
+                            </>
+                        }
                         img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
-                        text={c('Onboarding ProtonCalendar')
-                            .t`To access ${appName} Beta program today, consider upgrading to a paid plan. ${appName} will be available to Free plan users upon launch.`}
                     />
                 </OnboardingStep>
             )}
