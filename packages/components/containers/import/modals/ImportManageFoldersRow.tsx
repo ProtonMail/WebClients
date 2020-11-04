@@ -169,7 +169,6 @@ const ImportManageFoldersRow = ({
 
     const renderInput = () => {
         let error;
-        let warning;
         let item;
 
         if (nameTooLongError) {
@@ -178,18 +177,6 @@ const ImportManageFoldersRow = ({
 
         if (emptyValueError) {
             error = ERRORS.emptyValueError;
-        }
-
-        if (warning) {
-            item = (
-                <Tooltip title={WARNINGS.mergeWarning} type="warning">
-                    <Icon
-                        tabIndex={-1}
-                        name="info"
-                        className="color-global-attention inline-flex flex-self-vcenter flex-item-noshrink"
-                    />
-                </Tooltip>
-            );
         }
 
         if (error) {
