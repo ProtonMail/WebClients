@@ -8,7 +8,7 @@ import { convertModel } from 'proton-shared/lib/filters/utils';
 import { templates as sieveTemplates } from 'proton-shared/lib/filters/sieve';
 
 import { noop } from 'proton-shared/lib/helpers/function';
-import { FormModal, ConfirmModal, Alert, useDebounceInput } from '../../../../components';
+import { FormModal, ConfirmModal, Alert, useDebounceInput, ErrorButton } from '../../../../components';
 
 import {
     useModals,
@@ -129,8 +129,13 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         }
 
         createModal(
-            <ConfirmModal onConfirm={onClose} title={c('Title').t`Are you sure you want to close?`}>
-                <Alert type="error">{c('Info').t`All your changes will be lost.`}</Alert>
+            <ConfirmModal
+                onConfirm={onClose}
+                title={c('Title').t`Are you sure you want to close?`}
+                confirm={<ErrorButton type="submit">{c('Action').t`Discard`}</ErrorButton>}
+            >
+                <Alert>{c('Info').t`All your changes will be lost.`}</Alert>
+                <Alert type="error">{c('Info').t`Are you sure you want to discard your changes?`}</Alert>
             </ConfirmModal>
         );
     };

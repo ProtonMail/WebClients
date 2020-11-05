@@ -287,9 +287,10 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
                 onConfirm={onClose}
                 title={c('Confirm modal title').t`Quit import?`}
                 cancel={c('Action').t`Continue import`}
-                confirm={<ErrorButton type="submit">{c('Action').t`Quit`}</ErrorButton>}
+                confirm={<ErrorButton type="submit">{c('Action').t`Discard`}</ErrorButton>}
             >
-                <Alert type="error">{c('Warning').t`You will lose all progress if you quit.`}</Alert>
+                <Alert>{c('Info').t`Your import will not be processed.`}</Alert>
+                <Alert type="error">{c('Warning').t`Are you sure you want to discard your import?`}</Alert>
             </ConfirmModal>
         );
     };
