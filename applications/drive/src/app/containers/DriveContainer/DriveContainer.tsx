@@ -1,8 +1,8 @@
 import React from 'react';
 import { PrivateAppContainer, useToggle, MainLogo } from 'react-components';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import AppHeader from '../../components/layout/AppHeader';
-import AppSidebar from '../../components/layout/AppSidebar';
+import DriveHeader from '../../components/layout/DriveHeader';
+import DriveSidebar from '../../components/layout/DriveSidebar/DriveSidebar';
 import DriveContainerView from './DriveContainerView';
 import UploadButton from '../../components/uploads/UploadButton';
 import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
@@ -15,7 +15,7 @@ const DriveContainer = () => {
 
     const logo = <MainLogo to="/" />;
     const header = (
-        <AppHeader
+        <DriveHeader
             logo={logo}
             floatingPrimary={<UploadButton floating />}
             isHeaderExpanded={expanded}
@@ -24,7 +24,7 @@ const DriveContainer = () => {
     );
 
     const sidebar = (
-        <AppSidebar
+        <DriveSidebar
             logo={logo}
             primary={<UploadButton />}
             isHeaderExpanded={expanded}

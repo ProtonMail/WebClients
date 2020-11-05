@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useCallback } from 'react';
 import { PrivateAppContainer, useToggle, MainLogo } from 'react-components';
 import { Route, Redirect, Switch, RouteComponentProps } from 'react-router-dom';
-import AppHeader from '../../components/layout/AppHeader';
-import AppSidebar from '../../components/layout/AppSidebar';
+import DriveHeader from '../../components/layout/DriveHeader';
+import DriveSidebar from '../../components/layout/DriveSidebar/DriveSidebar';
 import TrashContainerView from './TrashContainerView';
 import EmptyTrashButton from '../../components/Drive/Trash/EmptyTrashButton';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
@@ -28,7 +28,7 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
 
     const logo = <MainLogo to="/" />;
     const header = (
-        <AppHeader
+        <DriveHeader
             logo={logo}
             floatingPrimary={<EmptyTrashButton floating shareId={shareId} />}
             isHeaderExpanded={expanded}
@@ -37,7 +37,7 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
     );
 
     const sidebar = (
-        <AppSidebar
+        <DriveSidebar
             logo={logo}
             primary={<EmptyTrashButton shareId={shareId} />}
             isHeaderExpanded={expanded}

@@ -11,8 +11,8 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
-import AppSidebar from '../components/layout/AppSidebar';
-import AppHeader from '../components/layout/AppHeader';
+import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
+import DriveHeader from '../components/layout/DriveHeader';
 import ListView from '../components/FileBrowser/ListView/ListView';
 import { LinkType } from '../interfaces/link';
 
@@ -25,7 +25,7 @@ const DriveContainerBlurred = () => {
     const dummyFolderTitle = c('Title').t`My files`;
 
     const header = (
-        <AppHeader
+        <DriveHeader
             logo={logo}
             floatingPrimary={<FloatingButton title={c('Action').t`New upload`} icon="plus" />}
             isHeaderExpanded={expanded}
@@ -34,7 +34,7 @@ const DriveContainerBlurred = () => {
     );
 
     const sidebar = (
-        <AppSidebar
+        <DriveSidebar
             logo={logo}
             primary={dummyUploadButton}
             isHeaderExpanded={expanded}
