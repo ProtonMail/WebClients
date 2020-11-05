@@ -1,3 +1,4 @@
+import { noop } from 'proton-shared/lib/helpers/function';
 import { useCache } from 'react-components';
 
 type FunctionQueue<R> = [number, (() => Promise<R>)[]];
@@ -20,7 +21,7 @@ const useQueuedFunction = () => {
 
             if (queued.length) {
                 const [next, ...remaining] = queued;
-                next().finally(runNextQueued);
+                next().catch(noop).finally(runNextQueued);
                 cache.set(key, [processing, remaining]);
             } else {
                 cache.set(key, [processing - 1, []]);
@@ -31,7 +32,7 @@ const useQueuedFunction = () => {
             const [processing, queued]: FunctionQueue<R> = cache.get(key);
             cache.set(key, [processing + 1, queued]);
             const promise = fn(...args);
-            promise.finally(runNextQueued);
+            promise.catch(noop).finally(runNextQueued);
             return promise;
         };
 
@@ -46,8 +47,8 @@ const useQueuedFunction = () => {
                             const promise = fn(...args);
                             resolve(promise);
                             return promise;
-                        }
-                    ]
+                        },
+                    ],
                 ]);
             });
 

@@ -65,7 +65,7 @@ function useFiles() {
     const { getLinkMeta, getLinkKeys, fetchAllFolderPages, createNewFolder } = useDrive();
     const events = useEvents();
     const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
-    const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses } = useUploadProvider();
+    const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses, getAbortController } = useUploadProvider();
     const { preventLeave } = usePreventLeave();
     const { call } = useEventManager();
 
@@ -131,18 +131,23 @@ function useFiles() {
         shareId: string,
         ParentLinkID: string,
         folderName: string,
-        { checkNameAvailability = true }: { checkNameAvailability?: boolean } = {}
+        { checkNameAvailability = true, signal }: { checkNameAvailability?: boolean; signal?: AbortSignal } = {}
     ) => {
         const lowercaseName = folderName.toLowerCase();
 
         return queuedFunction(`upload_empty_folder:${lowercaseName}`, async () => {
             let adjustedFolderName = folderName;
 
-            if (checkNameAvailability) {
+            if (checkNameAvailability && !signal?.aborted) {
                 const checkResult = await findAvailableName(shareId, ParentLinkID, adjustedFolderName);
 
                 adjustedFolderName = checkResult.filename;
             }
+
+            if (signal?.aborted) {
+                throw new Error(`Upload folder "${folderName}" aborted in ${ParentLinkID}`);
+            }
+
             return createNewFolder(shareId, ParentLinkID, adjustedFolderName);
         })();
     };
@@ -355,7 +360,7 @@ function useFiles() {
                         await deleteChildrenLinks(shareId, ParentLinkID, [File.ID]);
                     } catch (err) {
                         if (!isTransferCancelError(err)) {
-                            throw err;
+                            console.error(err);
                         }
                     }
                 },
@@ -407,8 +412,9 @@ function useFiles() {
             files: FileList | { path: string[]; file?: File }[],
             filesOnly = false
         ) => {
+            const { signal } = getAbortController();
             const { result, total } = await checkHasEnoughSpace(files);
-            if (!result) {
+            if (!result && !signal.aborted) {
                 const formattedRemaining = humanSize(total);
                 createNotification({
                     text: c('Notification').t`Not enough space to upload ${formattedRemaining}`,
@@ -424,6 +430,27 @@ function useFiles() {
 
                 const file = 'path' in entry ? entry.file : entry;
 
+                if (signal.aborted) {
+                    return;
+                }
+
+                const uploadFile = (parentLinkID: string | Promise<string>, file: File, noNameCheck?: boolean) => {
+                    if (!signal.aborted) {
+                        preventLeave(uploadDriveFile(shareId, parentLinkID, file, noNameCheck)).catch(console.error);
+                    }
+                };
+
+                const createFolder = (ParentLinkID: string, folderName: string, checkNameAvailability = false) => {
+                    if (signal.aborted) {
+                        throw new TransferCancel(folderName);
+                    }
+
+                    return uploadEmptyFolder(shareId, ParentLinkID, folderName, {
+                        checkNameAvailability,
+                        signal,
+                    });
+                };
+
                 (file ? isFile(file) : Promise.resolve(false))
                     .then((isEntryFile) => {
                         // MacOS has bug, where you can select folders when uploading files in some cases
@@ -433,7 +460,7 @@ function useFiles() {
 
                         setTimeout(() => {
                             if (!('path' in entry)) {
-                                preventLeave(uploadDriveFile(shareId, ParentLinkID, entry)).catch(console.error);
+                                uploadFile(ParentLinkID, entry);
                                 return;
                             }
 
@@ -446,20 +473,14 @@ function useFiles() {
                                 const parent = folders.slice(0, -1).join('/');
                                 const path = parent ? folders.join('/') : folder;
 
-                                if (!folderPromises.get(path)) {
+                                if (!folderPromises.has(path)) {
                                     const parentFolderPromise = folderPromises.get(parent);
 
                                     // Wait for parent folders to be created first
+                                    // If root folder's in tree, it's name must be checked, all other folders are new ones
                                     const promise = parentFolderPromise
-                                        ? parentFolderPromise.then(({ Folder }) =>
-                                              uploadEmptyFolder(shareId, Folder.ID, folder, {
-                                                  checkNameAvailability: false,
-                                              })
-                                          )
-                                        : // If root folder in a tree, it's name must be checked, all other folders are new ones
-                                          uploadEmptyFolder(shareId, ParentLinkID, folder, {
-                                              checkNameAvailability: !parent,
-                                          });
+                                        ? parentFolderPromise.then(({ Folder }) => createFolder(Folder.ID, folder))
+                                        : createFolder(ParentLinkID, folder, !parent);
 
                                     // Fetch events to get keys required for encryption in the new folder
                                     folderPromises.set(
@@ -473,20 +494,18 @@ function useFiles() {
 
                                 const folderPromise = folderPromises.get(path);
 
-                                if (!file || !folderPromise) {
-                                    return; // No file to upload
-                                }
-
-                                preventLeave(
-                                    uploadDriveFile(
-                                        shareId,
+                                if (file && folderPromise) {
+                                    uploadFile(
                                         folderPromise.then(({ Folder: { ID } }) => ID),
                                         file,
                                         true
-                                    )
-                                ).catch(console.error);
+                                    );
+                                }
+
+                                // Log unhandled exceptions
+                                folderPromise?.catch(console.error);
                             } else if (file) {
-                                preventLeave(uploadDriveFile(shareId, ParentLinkID, file)).catch(console.error);
+                                uploadFile(ParentLinkID, file);
                             }
                         }, 0);
                     })
