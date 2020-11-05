@@ -122,7 +122,7 @@ const PlansTable = ({
                         .t`Speed`}</th>
                     <td className="aligncenter">{c('Plan details').t`Medium`}</td>
                     <td className="aligncenter">{c('Plan details').t`High`}</td>
-                    <td className="aligncenter">{c('Plan details').t`Highest speed (10Gbps)`}</td>
+                    <td className="aligncenter">{c('Plan details').t`Highest speed (up to 10Gbps)`}</td>
                     <td className="aligncenter">{c('Plan details').t`Highest speed (10Gbps)`}</td>
                 </tr>
 
