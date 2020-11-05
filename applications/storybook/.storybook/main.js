@@ -54,7 +54,7 @@ module.exports = {
         '@storybook/addon-essentials',
     ],
     typescript: {
-        check: true,
+        check: false,
         checkOptions: {},
         reactDocgenTypescriptOptions: {
         },
