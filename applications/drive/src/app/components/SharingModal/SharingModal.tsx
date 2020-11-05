@@ -48,6 +48,11 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
     const { openConfirmModal } = useConfirm();
 
     useEffect(() => {
+        // If token already loaded, don't reload it
+        if (shareUrlInfo?.ShareURL.ShareID) {
+            return;
+        }
+
         const generatePassword = (): string => {
             const password = getRandomString(12);
 
@@ -81,7 +86,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             .finally(() => {
                 setModalState(SharingModalState.GeneratedLink);
             });
-    }, [shareId, item.LinkID, item.SharedURLShareID]);
+    }, [shareId, item.LinkID, item.SharedURLShareID, shareUrlInfo?.ShareURL.ShareID]);
 
     const handleSavePassword = async (password: string) => {
         if (!shareUrlInfo) {
@@ -102,6 +107,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         try {
             setSavingPassword(true);
             const updatedFields = await updatePassword();
+            createNotification({ text: c('Notification').t`Password has been changed successfully.` });
             setShareUrlInfo({
                 ...shareUrlInfo,
                 ShareURL: {
