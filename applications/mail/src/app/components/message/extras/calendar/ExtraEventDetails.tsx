@@ -39,7 +39,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     const frequencyString = rrule
         ? getFrequencyString(rrule.value, dtstart, {
               weekStartsOn,
-              locale: dateLocale
+              locale: dateLocale,
           })
         : undefined;
     const calendar = calendarData?.calendar?.Name;
@@ -79,7 +79,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                     <div key={key} className={classnames(['flex', index < properties.length - 1 && 'mb0-5'])}>
                         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                         <label className="mr1 w20">{label}</label>
-                        <div className="flex-item-fluid">{value}</div>
+                        <div className="flex-item-fluid hyphens">{value}</div>
                     </div>
                 );
             })}

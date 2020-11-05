@@ -253,14 +253,14 @@ const ExtraEvent = ({
     const interactiveWidget = FEATURE_FLAGS.includes('calendar-receive-invitations');
 
     return (
-        <div className="rounded bordered bg-white-dm mb1 pl1 pr1 pt0-5 pb0-5">
+        <div className="rounded bordered bg-white-dm mb1 pl1 pr1 pt0-5 pb0-5 scroll-if-needed">
             <header className="flex flex-nowrap flex-items-center">
                 <Icon name="calendar" className="mr0-5 flex-item-noshrink" />
                 <strong className="ellipsis flex-item-fluid" title={title}>
                     {title}
                 </strong>
             </header>
-            {!interactiveWidget && <div className="pt0-5 mt0-5 mb0-5 border-top" />}
+            {!interactiveWidget && <div className="mt0-5 mb0-5 border-top" />}
             {interactiveWidget && <ExtraEventSummary model={model} />}
             {interactiveWidget && <ExtraEventWarning model={model} />}
             {interactiveWidget && <ExtraEventButtons model={model} setModel={setModel} message={message} />}
