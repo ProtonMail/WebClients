@@ -40,7 +40,7 @@ $field-container: 26rem !default;
   border-radius: $global-border-radius;
   color: var(--color-input, $pm-global-grey);
   outline: 0;
-  &:not(textarea) {
+  &:not(textarea,.pm-field--tiny,.pm-field--small,.pm-field--large) {
   	height: $default-height-fields;
   }
   &:focus,
