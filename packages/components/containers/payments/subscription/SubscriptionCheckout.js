@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { orderBy } from 'proton-shared/lib/helpers/array';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { PLAN_SERVICES, PLAN_TYPES, CYCLE, PLANS, ADDON_NAMES, APPS } from 'proton-shared/lib/constants';
+import { PLAN_SERVICES, PLAN_TYPES, CYCLE, PLANS, ADDON_NAMES, APPS, BLACK_FRIDAY } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { Price, Info, Badge } from '../../../components';
 import { useConfig } from '../../../hooks';
@@ -181,7 +181,11 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                         </div>
                     )}
                     {hasVisionary ||
-                    (hasMailPlus && hasVpnPlus && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle)) ? (
+                    (hasMailPlus && hasVpnPlus && model.cycle === CYCLE.TWO_YEARS) ||
+                    (model.coupon === BLACK_FRIDAY.COUPON_CODE &&
+                        hasMailPlus &&
+                        hasVpnPlus &&
+                        [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle)) ? (
                         <div className="border-top border-top--dashed pt0-5">
                             <CheckoutRow className="bold" title={c('Info').t`ProtonDrive`} amount={0} />
                         </div>
