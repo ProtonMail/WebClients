@@ -26,7 +26,7 @@ const ERROR_MESSAGE_LINK_DOESN_NOT_EXIST = c('Error').t`The link either does not
 const DownloadSharedContainer = () => {
     const [error, setError] = useState<Error | undefined>();
     const [loading, withLoading] = useLoading(false);
-    const [handshakeInfo, setHandshekeInfo] = useState<InitHandshake | null>();
+    const [handshakeInfo, setHandshakeInfo] = useState<InitHandshake | null>();
     const [linkInfo, setLinkInfo] = useState<SharedLinkInfo | null>();
     const { initSRPHandshake, getSharedLinkPayload, startSharedFileTransfer } = usePublicSharing();
     const { hash, pathname } = useLocation();
@@ -38,12 +38,12 @@ const DownloadSharedContainer = () => {
 
     const initHandshake = useCallback(async () => {
         return initSRPHandshake(token)
-            .then(setHandshekeInfo)
+            .then(setHandshakeInfo)
             .catch((e) => {
                 setError(e);
-                setHandshekeInfo(null);
+                setHandshakeInfo(null);
             });
-    }, [token]);
+    }, [token, password]);
 
     const getSharedLinkInfo = useCallback(
         async (password: string, passSubmittedManually = false) => {
@@ -73,6 +73,9 @@ const DownloadSharedContainer = () => {
                         text,
                     });
 
+                    if (!passSubmittedManually) {
+                        setHandshakeInfo(null);
+                    }
                     setLinkInfo(null);
                 });
         },
@@ -100,10 +103,10 @@ const DownloadSharedContainer = () => {
     };
 
     useEffect(() => {
-        if (token) {
+        if (token && !handshakeInfo) {
             withLoading(initHandshake()).catch(console.error);
         }
-    }, [token]);
+    }, [token, password]);
 
     useEffect(() => {
         if (token && password && handshakeInfo) {
