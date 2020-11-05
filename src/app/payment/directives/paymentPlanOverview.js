@@ -87,12 +87,17 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
      * @param {Number} cycle
      * @returns {Array}
      */
-    const getPlanItems = (planIds, plans, currency, cycle) => {
+    const getPlanItems = (planIds, plans, { Currency, Cycle, Coupon }) => {
+        const { Code } = Coupon || {}; // Coupon can be null
         const plansMap = getPlansMap(plans, 'ID');
         const planNameMap = getPlansMap(plans);
         const hasProtonDrive = !!(
             planIds[planNameMap[VISIONARY].ID] ||
-            (planIds[planNameMap[PLUS].ID] && planIds[planNameMap[VPN_PLUS].ID] && [YEARLY, TWO_YEARS].includes(cycle))
+            (planIds[planNameMap[PLUS].ID] && planIds[planNameMap[VPN_PLUS].ID] && Cycle === TWO_YEARS) ||
+            (Code === BLACK_FRIDAY.COUPON_CODE &&
+                planIds[planNameMap[PLUS].ID] &&
+                planIds[planNameMap[VPN_PLUS].ID] &&
+                [YEARLY, TWO_YEARS].includes(Cycle))
         );
 
         const { totalFeatures, addons } = Object.keys(planIds).reduce(
@@ -137,14 +142,14 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
 
                     return {
                         text,
-                        price: amount === 0 ? '' : getPriceString(amount, currency, Cycle, MONTHLY)
+                        price: amount === 0 ? '' : getPriceString(amount, Currency, Cycle, MONTHLY)
                     };
                 });
 
                 // Always show the mail subscription, if any, before vpn.
                 acc[isVpnPlan ? 'push' : 'unshift']({
                     text: planText,
-                    price: getPriceString(planAmount, currency, Cycle, MONTHLY),
+                    price: getPriceString(planAmount, Currency, Cycle, MONTHLY),
                     features
                 });
 
@@ -261,7 +266,7 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
 
     const getList = (planIds, plans, offerPrice, basePrice) => {
         return [
-            ...getPlanItems(planIds, plans, offerPrice.Currency, offerPrice.Cycle),
+            ...getPlanItems(planIds, plans, offerPrice),
             ...getDiscountItems(offerPrice, basePrice),
             ...getTotalPrice(offerPrice),
             ...getCreditItems(offerPrice),
