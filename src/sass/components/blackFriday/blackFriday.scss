@@ -21,6 +21,8 @@ $price-info-text-size: 1.5em;
     margin-left: calc(-58rem/2);
     border: 0;
     background: transparent;
+    margin-top: 2rem;
+    margin-bottom: 0;
 }
 
 .blackFridayModal  .modal-dialog .close {
@@ -199,7 +201,7 @@ $price-info-text-size: 1.5em;
     flex-direction: column;
     align-items: center;
     flex: 1;
-    padding: 1rem;
+    padding: 0 1rem 1rem 1rem;
     width: 100%;
     color: #2f333e
 }
@@ -281,7 +283,7 @@ $price-info-text-size: 1.5em;
     font-size: 1em;
     padding: 1em;
     margin-top: auto;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     height: auto;
     line-height: normal;
     border-radius: $border-radius-boxes;
@@ -351,7 +353,7 @@ $price-info-text-size: 1.5em;
 }
 
 .blackFriday-container .currencySelector-container {
-    margin: 3em 0;
+    margin: 1.5em 0;
     justify-content: center;
 
     .currencySelector-button.currencySelector-button {
