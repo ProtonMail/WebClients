@@ -19,6 +19,8 @@ import DownloadSharedInfo from './DownloadSharedInfo';
 import EnterPasswordInfo from './EnterPasswordInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
 
+const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
+const REPORT_ABUSE_LABEL = c('Label').t`Report abuse`;
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
 const ERROR_MESSAGE_INCORRECT_PASSWORD = c('Error').t`Incorrect password. Please try again.`;
 const ERROR_MESSAGE_LINK_DOESN_NOT_EXIST = c('Error').t`The link either does not exist or has expired.`;
@@ -156,6 +158,9 @@ const DownloadSharedContainer = () => {
                     <div className="aligncenter opacity-50 mb2">
                         <Icon name="lock-check" size={20} />
                         <div className="small m0">{c('Label').t`Zero-Access Encryption by Proton`}</div>
+                        <a href={`mailto:${REPORT_ABUSE_EMAIL}`} title={`${REPORT_ABUSE_LABEL}`}>
+                            {REPORT_ABUSE_LABEL}
+                        </a>
                     </div>
                 </div>
             </div>
