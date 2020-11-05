@@ -10,7 +10,7 @@ interface Props {
     title?: string;
 }
 
-const AppHeader = ({
+const DriveHeader = ({
     logo,
     isHeaderExpanded,
     toggleHeaderExpanded,
@@ -30,4 +30,4 @@ const AppHeader = ({
     );
 };
 
-export default AppHeader;
+export default DriveHeader;
