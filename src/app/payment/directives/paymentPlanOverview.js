@@ -24,7 +24,7 @@ function paymentPlanOverview(gettextCatalog, $filter, PaymentCache, networkActiv
     const humanFilter = $filter('humanSize');
 
     const I18N = {
-        FREE: gettextCatalog.getString('FREE', null, 'Title'),
+        FREE: gettextCatalog.getString('FREE', null, 'Price value'),
         TOTAL: {
             [MONTHLY]: gettextCatalog.getString('Total (monthly billing)', null, 'Title'),
             [YEARLY]: gettextCatalog.getString('Total (annual billing)', null, 'Title'),
