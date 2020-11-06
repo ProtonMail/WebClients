@@ -30,6 +30,10 @@
 - update list view and message view layouts
 - changed event popover sizes
 - added a testcase for `optgroup`s
+- fixed attachment icon in dark mode
+- hotfixed `pm-field--tiny`, `pm-field--small`, `pm-field--large` that were broken
+- fixed icon list to make it more maintanable
+- added icon size of `60`
 
 
 # [1.8.5] - 2019-09-30
