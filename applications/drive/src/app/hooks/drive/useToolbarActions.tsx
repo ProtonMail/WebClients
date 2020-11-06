@@ -79,12 +79,17 @@ function useToolbarActions() {
         const confirm = c('Action').t`Delete permanently`;
         const message = c('Info').t`Are you sure you want to permanently delete selected item(s) from trash?`;
 
-        openConfirmModal(title, confirm, message, async () => {
-            const deleted = await deleteTrashedLinks(
-                shareId,
-                itemsToDelete.map(({ LinkID }) => LinkID)
-            );
-            createDeleteLinksNotifications(itemsToDelete, deleted);
+        openConfirmModal({
+            title,
+            confirm,
+            message,
+            onConfirm: async () => {
+                const deleted = await deleteTrashedLinks(
+                    shareId,
+                    itemsToDelete.map(({ LinkID }) => LinkID)
+                );
+                createDeleteLinksNotifications(itemsToDelete, deleted);
+            },
         });
     };
 

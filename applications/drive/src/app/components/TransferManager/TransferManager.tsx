@@ -126,12 +126,12 @@ function TransferManager() {
         if (allTransfersFinished) {
             clearAllTransfers();
         } else {
-            openConfirmModal(
-                c('Title').t`Cancel all active transfers`,
-                c('Action').t`Confirm`,
-                c('Info').t`Closing transfer manager will cancel all active transfers, are you sure?`,
-                clearAllTransfers
-            );
+            openConfirmModal({
+                title: c('Title').t`Cancel all active transfers`,
+                confirm: c('Action').t`Confirm`,
+                message: c('Info').t`Closing transfer manager will cancel all active transfers, are you sure?`,
+                onConfirm: clearAllTransfers,
+            });
         }
     };
 

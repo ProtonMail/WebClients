@@ -22,8 +22,8 @@ export interface TransferMeta {
 }
 
 export class TransferCancel extends Error {
-    constructor(id: string) {
-        super(`Transfer ${id} canceled`);
+    constructor(options: { id: string } | { message: string }) {
+        super('id' in options ? `Transfer ${options.id} canceled` : options.message);
         this.name = 'TransferCancel';
     }
 }

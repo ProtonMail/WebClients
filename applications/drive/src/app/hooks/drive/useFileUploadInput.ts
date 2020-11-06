@@ -1,6 +1,6 @@
 import { useRef, useEffect, ChangeEvent } from 'react';
-
 import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
+import { isTransferCancelError } from '../../utils/transfer';
 import useFiles from './useFiles';
 
 const useFileUploadInput = (forFolders?: boolean) => {
@@ -65,7 +65,11 @@ const useFileUploadInput = (forFolders?: boolean) => {
         }
 
         const filesToUpload = forFolders ? getFolderItemsToUpload(files) : files;
-        uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload, !forFolders).catch(console.error);
+        uploadDriveFiles(activeFolder.shareId, activeFolder.linkId, filesToUpload, !forFolders).catch((err) => {
+            if (!isTransferCancelError(err)) {
+                console.error(err);
+            }
+        });
     };
 
     return { inputRef, handleClick, handleChange };

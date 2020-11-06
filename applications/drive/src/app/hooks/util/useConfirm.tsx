@@ -6,12 +6,26 @@ import { useModals, Alert, ConfirmModal, ErrorButton } from 'react-components';
 const useConfirm = () => {
     const { createModal } = useModals();
 
-    const openConfirmModal = (title: string, confirm: string, message: string, onConfirm: () => any) => {
+    const openConfirmModal = ({
+        confirm,
+        message,
+        onCancel,
+        onConfirm,
+        title,
+        canUndo = false,
+    }: {
+        title: string;
+        confirm: string;
+        message: string;
+        onConfirm: () => any;
+        onCancel?: () => any;
+        canUndo?: boolean;
+    }) => {
         const content = (
             <>
                 {message}
                 <br />
-                {c('Info').t`You cannot undo this action.`}
+                {!canUndo && c('Info').t`You cannot undo this action.`}
             </>
         );
 
@@ -21,6 +35,7 @@ const useConfirm = () => {
                 title={title}
                 confirm={<ErrorButton type="submit">{confirm}</ErrorButton>}
                 onConfirm={onConfirm}
+                onClose={onCancel}
             >
                 <Alert type="error">{content}</Alert>
             </ConfirmModal>

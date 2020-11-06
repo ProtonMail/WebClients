@@ -43,13 +43,14 @@ import { ValidationError, validateLinkName } from '../../utils/validation';
 import useDriveCrypto from './useDriveCrypto';
 import useDrive from './useDrive';
 import useDebouncedRequest from '../util/useDebouncedRequest';
-import { FILE_CHUNK_SIZE } from '../../constants';
+import { FILE_CHUNK_SIZE, MAX_SAFE_UPLOADING_FILE_COUNT } from '../../constants';
 import useQueuedFunction from '../util/useQueuedFunction';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import { isFile } from '../../utils/file';
+import { countFilesToUpload, isFile } from '../../utils/file';
 import { getMetaForTransfer, isTransferCancelError } from '../../utils/transfer';
 import useEvents from './useEvents';
 import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
+import useConfirm from '../util/useConfirm';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -68,6 +69,7 @@ function useFiles() {
     const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses, getAbortController } = useUploadProvider();
     const { preventLeave } = usePreventLeave();
     const { call } = useEventManager();
+    const { openConfirmModal } = useConfirm();
 
     const findAvailableName = queuedFunction(
         'findAvailableName',
@@ -145,7 +147,7 @@ function useFiles() {
             }
 
             if (signal?.aborted) {
-                throw new Error(`Upload folder "${folderName}" aborted in ${ParentLinkID}`);
+                throw new TransferCancel({ message: `Upload folder "${folderName}" aborted in ${ParentLinkID}` });
             }
 
             return createNewFolder(shareId, ParentLinkID, adjustedFolderName);
@@ -200,7 +202,7 @@ function useFiles() {
                 }
 
                 if (canceled) {
-                    throw new TransferCancel(file.name);
+                    throw new TransferCancel({ message: `Transfer canceled for file "${file.name}"` });
                 }
 
                 const { filename, hash: Hash } = noNameCheck
@@ -216,7 +218,7 @@ function useFiles() {
                 const MIMEType = fileMimeType || lookup(filename) || 'application/octet-stream';
 
                 if (canceled) {
-                    throw new TransferCancel(filename);
+                    throw new TransferCancel({ message: `Transfer canceled for file "${filename}"` });
                 }
 
                 const { File } = await debouncedRequest<CreateFileResult>(
@@ -423,6 +425,21 @@ function useFiles() {
                 throw new Error('Insufficient storage left');
             }
 
+            const fileCount = countFilesToUpload(files);
+
+            if (fileCount >= MAX_SAFE_UPLOADING_FILE_COUNT) {
+                await new Promise((resolve, reject) => {
+                    openConfirmModal({
+                        title: c('Title').t`Warning`,
+                        confirm: c('Action').t`Continue`,
+                        message: c('Info').t`Uploading hundreds of files at once may have a performance impact.`,
+                        onConfirm: resolve,
+                        onCancel: () =>
+                            reject(new TransferCancel({ message: `Upload of ${fileCount} files was canceled` })),
+                    });
+                });
+            }
+
             const folderPromises = new Map<string, ReturnType<typeof createNewFolder>>();
 
             for (let i = 0; i < files.length; i++) {
@@ -436,13 +453,17 @@ function useFiles() {
 
                 const uploadFile = (parentLinkID: string | Promise<string>, file: File, noNameCheck?: boolean) => {
                     if (!signal.aborted) {
-                        preventLeave(uploadDriveFile(shareId, parentLinkID, file, noNameCheck)).catch(console.error);
+                        preventLeave(uploadDriveFile(shareId, parentLinkID, file, noNameCheck)).catch((err) => {
+                            if (!isTransferCancelError(err)) {
+                                console.error(err);
+                            }
+                        });
                     }
                 };
 
                 const createFolder = (ParentLinkID: string, folderName: string, checkNameAvailability = false) => {
                     if (signal.aborted) {
-                        throw new TransferCancel(folderName);
+                        throw new TransferCancel({ message: `Transfer canceled for folder "${folderName}"` });
                     }
 
                     return uploadEmptyFolder(shareId, ParentLinkID, folderName, {
@@ -503,13 +524,21 @@ function useFiles() {
                                 }
 
                                 // Log unhandled exceptions
-                                folderPromise?.catch(console.error);
+                                folderPromise?.catch((err) => {
+                                    if (!isTransferCancelError(err)) {
+                                        console.error(err);
+                                    }
+                                });
                             } else if (file) {
                                 uploadFile(ParentLinkID, file);
                             }
                         }, 0);
                     })
-                    .catch(console.error);
+                    .catch((err) => {
+                        if (!isTransferCancelError(err)) {
+                            console.error(err);
+                        }
+                    });
             }
         }
     );

@@ -20,3 +20,21 @@ export const isFile = async (item: File) => {
         .then(() => true)
         .catch(() => false);
 };
+
+export const countFilesToUpload = (
+    files:
+        | FileList
+        | {
+              path: string[];
+              file?: File | undefined;
+          }[]
+) => {
+    let count = 0;
+    for (const entry of files) {
+        const file = 'path' in entry ? entry.file : entry;
+        if (file) {
+            count += 1;
+        }
+    }
+    return count;
+};

@@ -142,12 +142,12 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             onClose?.();
         };
 
-        openConfirmModal(
-            c('Title').t`Delete secure link`,
-            c('Action').t`Delete`,
-            c('Info').t`Are you sure you want to delete the secure link?`,
-            () => withDeleting(deleteLink())
-        );
+        openConfirmModal({
+            title: c('Title').t`Delete secure link`,
+            confirm: c('Action').t`Delete`,
+            message: c('Info').t`Are you sure you want to delete the secure link?`,
+            onConfirm: () => withDeleting(deleteLink()),
+        });
     };
 
     const loading = modalState === SharingModalState.Loading;

@@ -80,7 +80,7 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
                     </Row>
                 </InnerModal>
                 <FooterModal>
-                    <Button disabled={isSaveDisabled} type="reset">{c('Action').t`Cancel`}</Button>
+                    <Button type="reset">{c('Action').t`Cancel`}</Button>
                     <PrimaryButton disabled={isSaveDisabled} type="submit" loading={saving}>{c('Action')
                         .t`Update`}</PrimaryButton>
                 </FooterModal>
