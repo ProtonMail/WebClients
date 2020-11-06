@@ -18,14 +18,14 @@ const UploadButton = ({ floating }: Props) => {
 
     const { downloads } = useDownloadProvider();
     const { uploads } = useUploadProvider();
-    const isTransfering = uploads.length > 0 || downloads.length > 0;
+    const isTransferring = uploads.length > 0 || downloads.length > 0;
 
     return (
         <>
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
             {floating ? (
                 <FloatingButton
-                    className={classnames([isTransfering && 'compose-fab--is-higher'])}
+                    className={classnames([isTransferring && 'compose-fab--is-higher'])}
                     disabled={!folder?.shareId}
                     onClick={handleClick}
                     title={c('Action').t`New upload`}

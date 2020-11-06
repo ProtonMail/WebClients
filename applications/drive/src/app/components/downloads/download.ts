@@ -43,7 +43,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
 
     const start = async (api: Api) => {
         if (abortController.signal.aborted) {
-            throw new TransferCancel(id);
+            throw new TransferCancel({ id });
         }
 
         const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
@@ -89,7 +89,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
                     await waitUntil(() => buffers.size < MAX_TOTAL_BUFFER_SIZE || abortController.signal.aborted);
 
                     if (abortController.signal.aborted) {
-                        throw new TransferCancel(id);
+                        throw new TransferCancel({ id });
                     }
 
                     const blockStream = toPolyfillReadable(
@@ -103,7 +103,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
 
                     const progressStream = new ObserverStream((value) => {
                         if (abortController.signal.aborted) {
-                            throw new TransferCancel(id);
+                            throw new TransferCancel({ id });
                         }
                         incompleteProgress.set(Index, (incompleteProgress.get(Index) ?? 0) + value.length);
                         onProgress?.(value.length);
@@ -117,7 +117,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
 
                     await untilStreamEnd(transformedContentStream, async (data) => {
                         if (abortController.signal.aborted) {
-                            throw new TransferCancel(id);
+                            throw new TransferCancel({ id });
                         }
                         const buffer = buffers.get(Index);
                         if (buffer) {
@@ -186,7 +186,7 @@ export const initDownload = ({ onStart, onProgress, onFinish, onError, transform
     const cancel = () => {
         paused = false;
         abortController.abort();
-        const error = new TransferCancel(id);
+        const error = new TransferCancel({ id });
         fsWriter.abort(error).catch(console.error);
         onError?.(error);
     };

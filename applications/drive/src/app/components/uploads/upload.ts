@@ -68,7 +68,7 @@ export async function upload(
 
     return new Promise<void>((resolve, reject) => {
         if (signal?.aborted) {
-            reject(new TransferCancel(id));
+            reject(new TransferCancel({ id }));
             return;
         }
 
@@ -86,7 +86,7 @@ export async function upload(
             // When whole block is uploaded, we mustn't cancel even if we don't get a response
             if (lastLoaded !== total) {
                 xhr.abort();
-                reject(new TransferCancel(id));
+                reject(new TransferCancel({ id }));
             }
         };
 
@@ -203,7 +203,7 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
         abortSignal: AbortSignal
     ) => {
         if (abortSignal.aborted) {
-            throw new TransferCancel(id);
+            throw new TransferCancel({ id });
         }
 
         const blocksMissingMeta: number[] = [];
@@ -322,7 +322,7 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
         if (abortController) {
             abortController.abort();
         }
-        onError?.(new TransferCancel(id));
+        onError?.(new TransferCancel({ id }));
     };
 
     const pause = () => {

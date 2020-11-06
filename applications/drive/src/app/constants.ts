@@ -24,6 +24,8 @@ export const MIN_SHARED_URL_PASSWORD_LENGTH = 8;
 export const DEFAULT_SHARE_EXPIRATION_DAYS = 90;
 export const DEFAULT_SHARE_MAX_ACCESSES = 10000;
 
+export const MAX_SAFE_UPLOADING_FILE_COUNT = 500;
+
 export const CUSTOM_DATA_FORMAT = 'pd-custom';
 
 export enum LinkURLType {
