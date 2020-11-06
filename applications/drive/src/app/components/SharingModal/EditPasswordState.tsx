@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
     Alert,
     BackButtonModal,
+    Button,
     Field,
     FooterModal,
     HeaderModal,
@@ -50,6 +51,7 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
             </HeaderModal>
             <form
                 className="pm-modalContent"
+                onReset={onBack}
                 onSubmit={(e) => {
                     e.preventDefault();
                     if (initialPassword === password) {
@@ -78,6 +80,7 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
                     </Row>
                 </InnerModal>
                 <FooterModal>
+                    <Button disabled={isSaveDisabled} type="reset">{c('Action').t`Cancel`}</Button>
                     <PrimaryButton disabled={isSaveDisabled} type="submit" loading={saving}>{c('Action')
                         .t`Update`}</PrimaryButton>
                 </FooterModal>
