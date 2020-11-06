@@ -10,25 +10,23 @@ import {
 } from 'react-components';
 import { useRouteMatch } from 'react-router-dom';
 import useEvents from '../../../hooks/drive/useEvents';
-import { useDriveActiveFolder } from '../../Drive/DriveFolderProvider';
 import LocationAside from './ReloadSpinner';
 
 interface Props {
     to: string;
     icon: string;
     children: React.ReactNode;
+    shareId?: string;
 }
-const DriveSidebarListItem = ({ to, children, icon }: Props) => {
+const DriveSidebarListItem = ({ to, children, icon, shareId }: Props) => {
     const match = useRouteMatch();
     const { callAll } = useEvents();
-    const { folder } = useDriveActiveFolder();
     const [refreshing, withRefreshing] = useLoading(false);
 
     const isActive = match.path === to;
 
     const left = icon ? <SidebarListItemContentIcon name={icon} /> : null;
-    const right = isActive && <LocationAside refreshing={refreshing} />;
-    const shareId = folder?.shareId;
+    const right = isActive && shareId && <LocationAside refreshing={refreshing} />;
 
     const handleClick = () => {
         if (!refreshing && shareId) {
