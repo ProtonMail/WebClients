@@ -9,7 +9,7 @@ import { updateKey } from './state';
 
 interface Arguments {
     api: Api;
-    signingKey: OpenPGPKey;
+    signingKey?: OpenPGPKey;
     keysToImport: ImportKey[];
     setKeysToImport: SetKeys;
     password: string;
@@ -20,7 +20,7 @@ interface Arguments {
 export default async ({
     api,
     keysToImport,
-    signingKey,
+    signingKey: maybeSigningKey,
     password,
     parsedKeys,
     actionableKeys,
@@ -44,7 +44,13 @@ export default async ({
                 if (oldPrivateKey?.isDecrypted()) {
                     throw new Error(c('Error').t`Key is already decrypted`);
                 }
+                // In this case (compared to the case below) we are reactivating a key by importing a backup.
+                // That means there has to exist a signing key that can be used.
+                if (!maybeSigningKey) {
+                    throw new Error(c('Error').t`Missing signing key`);
+                }
 
+                const signingKey = maybeSigningKey;
                 const { privateKey, encryptedPrivateKeyArmored } = await reactivateByUpload({
                     ID,
                     newPassword: password,
@@ -70,6 +76,9 @@ export default async ({
                     privateKey: uploadedPrivateKey,
                 });
 
+                // The signing key is either the passed signing key (the primary key of the old key list),
+                // or this newly imported key (the new primary key, of an empty key list)
+                const signingKey = maybeSigningKey || reformattedPrivateKey;
                 updatedAddressKeys = await createKeyHelper({
                     api,
                     privateKeyArmored,
