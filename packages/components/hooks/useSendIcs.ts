@@ -2,22 +2,20 @@ import { enums } from 'openpgp';
 import { encryptMessage } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { Recipient } from 'proton-shared/lib/interfaces';
-import { Packages, SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
+import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
 import { Message, SimpleMessageExtended } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome, SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { createDraft, sendMessage } from 'proton-shared/lib/api/messages';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { uploadAttachment } from 'proton-shared/lib/api/attachments';
-import { addReceived } from 'proton-shared/lib/mail/messages';
 import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
 import { encryptAttachment } from 'proton-shared/lib/mail/send/attachments';
+import { generateTopPackages } from 'proton-shared/lib/mail/send/sendTopPackages';
 import { encryptPackages } from 'proton-shared/lib/mail/send/sendEncrypt';
 import { attachSubPackages } from 'proton-shared/lib/mail/send/sendSubPackages';
 import { useCallback } from 'react';
 import { useApi, useGetAddressKeys, useGetEncryptionPreferences, useUserSettings } from './index';
 import { generateUID } from '../helpers/component';
-
-const { PLAINTEXT } = MIME_TYPES;
 
 interface Params {
     ics: string;
@@ -75,7 +73,7 @@ export const useSendIcs = () => {
             const replyAttachment = new File([new Blob([ics])], 'invite.ics', { type: 'text/calendar; method=REPLY' });
             const packets = await encryptAttachment(ics, replyAttachment, false, publicKeys, privateKeys);
 
-            const { Attachment } = await api(
+            const { Attachment: attachment } = await api(
                 await uploadAttachment({
                     Filename: packets.Filename,
                     MessageID: updatedMessageData.ID,
@@ -88,25 +86,22 @@ export const useSendIcs = () => {
             );
             const message = {
                 ...inputMessage,
-                data: { ...updatedMessageData, Attachments: [Attachment] },
+                data: { ...updatedMessageData, Attachments: [attachment] },
+            };
+            const attachmentData = {
+                attachment,
+                data: ics,
             };
             const emails = to.map(({ Address }) => Address);
             const mapSendPrefs: SimpleMap<SendPreferences> = {};
             await Promise.all(
                 emails.map(async (email) => {
                     const encryptionPreferences = await getEncryptionPreferences(email);
-                    const sendPreferences = getSendPreferences(encryptionPreferences);
+                    const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
                     mapSendPrefs[email] = sendPreferences;
                 })
             );
-            let packages: Packages = {
-                [PLAINTEXT]: {
-                    Flags: addReceived(message.data?.Flags),
-                    Addresses: {},
-                    MIMEType: PLAINTEXT,
-                    Body: plainTextBody,
-                },
-            };
+            let packages = generateTopPackages(message.data, '', mapSendPrefs, attachmentData);
             packages = await attachSubPackages(packages, message.data, emails, mapSendPrefs, api);
             packages = await encryptPackages(message, packages, getAddressKeys);
             await api(sendMessage(message.data.ID, { Packages: packages, AutoSaveContacts: 0 } as any));
