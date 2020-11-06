@@ -8,8 +8,8 @@ interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
 }
 const ExtraEventSummary = ({ model }: Props) => {
-    const { hideSummary, isOrganizerMode } = model;
-    if (hideSummary) {
+    const { hideSummary, isOrganizerMode, isForwardedInvitation } = model;
+    if (hideSummary || isForwardedInvitation) {
         return null;
     }
 

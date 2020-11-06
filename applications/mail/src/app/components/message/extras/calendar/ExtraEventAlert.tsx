@@ -12,6 +12,7 @@ interface Props {
 const ExtraEventAlert = ({ model }: Props) => {
     const {
         isOutdated,
+        isForwardedInvitation,
         invitationIcs: { method },
         calendarData,
         invitationApi,
@@ -21,7 +22,7 @@ const ExtraEventAlert = ({ model }: Props) => {
     } = model;
     const isCancel = method === ICAL_METHOD.CANCEL;
 
-    if (isOutdated) {
+    if (isOutdated || isForwardedInvitation) {
         return null;
     }
     // the invitation is unanswered
