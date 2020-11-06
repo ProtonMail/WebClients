@@ -5,7 +5,7 @@ import { updateWelcomeFlags } from 'proton-shared/lib/api/settings';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { range } from 'proton-shared/lib/helpers/array';
 
-import { StepDots, StepDot, FormModal, ResetButton, PrimaryButton } from '../../components';
+import { StepDots, StepDot, FormModal, Button, PrimaryButton } from '../../components';
 import { useApi, useEventManager, useGetAddresses, useLoading, useUser, useWelcomeFlags } from '../../hooks';
 
 import { OnboardingStepProps, OnboardingStepRenderCallback } from './interface';
@@ -25,11 +25,20 @@ interface Props {
     children?: ((props: OnboardingStepRenderCallback) => JSX.Element)[];
     setWelcomeFlags?: boolean;
     showGenericSteps?: boolean;
+    allowClose?: boolean;
+    hideDisplayName?: boolean;
 }
 
-const OnboardingModal = ({ children, showGenericSteps, setWelcomeFlags = true, ...rest }: Props) => {
+const OnboardingModal = ({
+    children,
+    showGenericSteps,
+    allowClose = false,
+    hideDisplayName,
+    setWelcomeFlags = true,
+    ...rest
+}: Props) => {
     const [user] = useUser();
-    const [displayName, setDisplayName] = useState(user.Name || '');
+    const [displayName, setDisplayName] = useState(user.DisplayName || user.Name || '');
     const [loadingDisplayName, withLoading] = useLoading();
     const getAddresses = useGetAddresses();
     const api = useApi();
@@ -83,9 +92,14 @@ const OnboardingModal = ({ children, showGenericSteps, setWelcomeFlags = true, .
             submit={c('Action').t`Next`}
             loading={loadingDisplayName}
             close={null}
-            onSubmit={() => withLoading(handleSetDisplayNameNext())}
+            onSubmit={hideDisplayName ? handleNext : () => withLoading(handleSetDisplayNameNext())}
         >
-            <OnboardingSetDisplayName id="onboarding-0" displayName={displayName} setDisplayName={setDisplayName} />
+            <OnboardingSetDisplayName
+                id="onboarding-0"
+                displayName={displayName}
+                setDisplayName={setDisplayName}
+                hideDisplayName={hideDisplayName}
+            />
         </OnboardingStep>
     );
 
@@ -95,7 +109,6 @@ const OnboardingModal = ({ children, showGenericSteps, setWelcomeFlags = true, .
             submit={c('Action').t`Next`}
             close={c('Action').t`Back`}
             onSubmit={handleNext}
-            onClose={handleBack}
         >
             <OnboardingAccessingProtonApps id="onboarding-1" />
         </OnboardingStep>
@@ -107,7 +120,6 @@ const OnboardingModal = ({ children, showGenericSteps, setWelcomeFlags = true, .
             submit={c('Action').t`Next`}
             close={c('Action').t`Back`}
             onSubmit={handleNext}
-            onClose={handleBack}
         >
             <OnboardingManageAccount id="onboarding-2" />
         </OnboardingStep>
@@ -156,13 +168,15 @@ const OnboardingModal = ({ children, showGenericSteps, setWelcomeFlags = true, .
     return (
         <FormModal
             {...rest}
-            hasClose={false}
+            hasClose={allowClose}
             autoFocusClose
             {...childStepProps}
             footer={
                 <>
                     {typeof childStep.props.close === 'string' ? (
-                        <ResetButton disabled={childStep.props.loading}>{childStepProps.close}</ResetButton>
+                        <Button disabled={childStep.props.loading} onClick={childStep.props.onClose || handleBack}>
+                            {childStepProps.close}
+                        </Button>
                     ) : (
                         childStep.props.close
                     )}

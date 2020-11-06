@@ -29,7 +29,7 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false }: Props) 
     };
 
     const handleTourClick = () => {
-        createModal(<OnboardingModal showGenericSteps />);
+        createModal(<OnboardingModal showGenericSteps allowClose hideDisplayName />);
     };
 
     return (
@@ -62,10 +62,12 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false }: Props) 
                         <Icon className="mt0-25 mr0-5" name="report-bug" />
                         {c('Action').t`Report bug`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={handleTourClick}>
-                        <Icon className="mt0-25 mr0-5" name="tour" />
-                        {c('Action').t`${BRAND_NAME} introduction`}
-                    </DropdownMenuButton>
+                    {APP_NAME !== APPS.PROTONVPN_SETTINGS && (
+                        <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={handleTourClick}>
+                            <Icon className="mt0-25 mr0-5" name="tour" />
+                            {c('Action').t`${BRAND_NAME} introduction`}
+                        </DropdownMenuButton>
+                    )}
                 </DropdownMenu>
             </Dropdown>
         </>

@@ -11,37 +11,50 @@ import OnboardingContent, { Props as OnboardingContentProps } from './Onboarding
 
 interface Props extends Omit<OnboardingContentProps, 'img' | 'text' | 'description'> {
     displayName: string;
+    hideDisplayName?: boolean;
     setDisplayName: (displayName: string) => void;
     displayNameError?: string;
     isSubmitted?: boolean;
 }
 
-const OnboardingSetDisplayName = ({ isSubmitted, displayName, setDisplayName, displayNameError, ...rest }: Props) => {
+const OnboardingSetDisplayName = ({
+    isSubmitted,
+    displayName,
+    hideDisplayName,
+    setDisplayName,
+    displayNameError,
+    ...rest
+}: Props) => {
     return (
         <OnboardingContent
             description={c('Onboarding Proton')
                 .t`Proton is your private space on the Internet. No one is reading your emails, monitoring your calendar events, or scanning your files. Your data is encrypted, and you’re in control.`}
             img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt="Proton" />}
-            text={c('Onboarding Proton')
-                .t`Please choose a display name to finish setting up your account. (Other people will see this.)`}
+            text={
+                !hideDisplayName &&
+                c('Onboarding Proton')
+                    .t`Please choose a display name to finish setting up your account. (Other people will see this.)`
+            }
             {...rest}
         >
-            <div className="signLayout-container">
-                <SignupLabelInputRow
-                    label={<Label htmlFor="displayName">{c('Label').t`Display name`}</Label>}
-                    input={
-                        <Input
-                            value={displayName}
-                            onChange={({ target }) => setDisplayName(target.value)}
-                            id="displayName"
-                            placeholder={c('Placeholder').t`e.g. Julia Smith`}
-                            isSubmitted={isSubmitted}
-                            error={displayNameError}
-                            autoFocus
-                        />
-                    }
-                />
-            </div>
+            {!hideDisplayName && (
+                <div className="signLayout-container">
+                    <SignupLabelInputRow
+                        label={<Label htmlFor="displayName">{c('Label').t`Display name`}</Label>}
+                        input={
+                            <Input
+                                value={displayName}
+                                onChange={({ target }) => setDisplayName(target.value)}
+                                id="displayName"
+                                placeholder={c('Placeholder').t`e.g. Julia Smith`}
+                                isSubmitted={isSubmitted}
+                                error={displayNameError}
+                                autoFocus
+                            />
+                        }
+                    />
+                </div>
+            )}
         </OnboardingContent>
     );
 };
