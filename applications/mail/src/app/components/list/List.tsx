@@ -222,10 +222,11 @@ const List = ({
                                 breakpoints={breakpoints}
                             />
                         ))}
-                        <div className="p1-5 flex flex-column flex-items-center">
-                            <p className="mt0 mb1">{c('Info').t`Page ${page} of ${total}`}</p>
-                            <PaginationRow {...pagingHandlers} disabled={loading} />
-                        </div>
+                        {!loading && total > 1 && (
+                            <div className="p1-5 flex flex-column flex-items-center">
+                                <PaginationRow {...pagingHandlers} disabled={loading} />
+                            </div>
+                        )}
                     </>
                 )}
             </div>
