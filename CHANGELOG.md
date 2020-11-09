@@ -1,3 +1,8 @@
+# [3.16.40] - 2020-11-09
+
+## Improvements
+- Various UI/UX improvements Fixes
+
 # [3.16.39] - 2020-11-04
 
 ## Improvements
