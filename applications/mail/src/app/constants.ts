@@ -1,6 +1,8 @@
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
+export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
+
 export const EXPIRATION_CHECK_FREQUENCY = 10000; // each 10 seconds
 export const MAX_EXPIRATION_TIME = 672; // hours
 export const PAGE_SIZE = 50;

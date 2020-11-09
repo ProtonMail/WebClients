@@ -18,7 +18,7 @@ import {
     setPageInUrl,
     setSortInUrl,
     setFilterInUrl,
-    setPathInUrl,
+    setParamsInLocation,
     extractSearchParameters,
 } from '../helpers/mailboxUrl';
 import Toolbar from '../components/toolbar/Toolbar';
@@ -145,15 +145,21 @@ const MailboxContainer = ({
                 onCompose({ existingDraft: { localID: element.ID as string, data: element as Message } });
             }
             if (isConversationContentView && isMessage(element)) {
-                history.push(setPathInUrl(history.location, labelID, (element as Message).ConversationID, element.ID));
+                history.push(
+                    setParamsInLocation(history.location, {
+                        labelID,
+                        elementID: (element as Message).ConversationID,
+                        messageID: element.ID,
+                    })
+                );
             } else {
-                history.push(setPathInUrl(history.location, labelID, element.ID));
+                history.push(setParamsInLocation(history.location, { labelID, elementID: element.ID }));
             }
             setCheckedElements({});
         },
         [onCompose, isConversationContentView, labelID]
     );
-    const handleBack = useCallback(() => history.push(setPathInUrl(history.location, labelID)), [labelID]);
+    const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
     const handlePage = useCallback(
         (pageNumber: number) => history.push(setPageInUrl(history.location, pageNumber)),
         []

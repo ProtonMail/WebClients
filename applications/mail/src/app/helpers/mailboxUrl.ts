@@ -1,20 +1,31 @@
+import { Location } from 'history';
+import { match, matchPath, generatePath } from 'react-router';
 import { isNumber } from 'proton-shared/lib/helpers/validators';
 import { getSearchParams, changeSearchParams } from 'proton-shared/lib/helpers/url';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Location } from 'history';
 import { Sort, Filter, SearchParameters } from '../models/tools';
 import { getHumanLabelID } from './labels';
+import { MAIN_ROUTE_PATH } from '../constants';
 
-export const getUrlPathname = (location: Location, labelID: string, elementID?: string, messageID?: string) => {
-    return [`/${getHumanLabelID(labelID)}`, elementID, messageID].filter(isTruthy).join('/');
+// No interface to comply with generatePath argument type
+export type MailUrlParams = {
+    labelID: string;
+    elementID?: string;
+    messageID?: string;
 };
 
-export const setPathInUrl = (location: Location, labelID: string, elementID?: string, messageID?: string): Location => {
-    return {
-        ...location,
-        pathname: getUrlPathname(location, labelID, elementID, messageID),
-    };
-};
+export const getUrlPathname = (params: MailUrlParams) =>
+    generatePath(MAIN_ROUTE_PATH, { ...params, labelID: getHumanLabelID(params.labelID) });
+
+export const setParamsInLocation = (location: Location, params: MailUrlParams): Location => ({
+    ...location,
+    pathname: getUrlPathname(params),
+});
+
+export const setParamsInUrl = (location: Location, params: MailUrlParams): string =>
+    getUrlPathname(params) + location.search;
+
+export const getParamsFromPathname = (pathname: string): match<MailUrlParams> =>
+    matchPath(pathname, { path: MAIN_ROUTE_PATH }) as match<MailUrlParams>;
 
 const stringToPage = (string: string | undefined): number => {
     if (string === undefined) {
