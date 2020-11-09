@@ -146,10 +146,16 @@ export default React.memo(ItemRow, (a, b) => {
         return true;
     }
 
-    const cheapPropsEqual = isEquivalent(
-        pick(a, ['shareId', 'showLocation', 'secondaryActionActive', 'style']),
-        pick(b, ['shareId', 'showLocation', 'secondaryActionActive', 'style'])
-    );
+    const cheapPropsToCheck: (keyof ItemProps)[] = [
+        'shareId',
+        'showLocation',
+        'secondaryActionActive',
+        'style',
+        'onToggleSelect',
+        'onShiftClick',
+        'onClick',
+    ];
+    const cheapPropsEqual = isEquivalent(pick(a, cheapPropsToCheck), pick(b, cheapPropsToCheck));
 
     if (!cheapPropsEqual || !isEquivalent(a.item, b.item) || !shallowEqual(a.selectedItems, b.selectedItems)) {
         return false;
