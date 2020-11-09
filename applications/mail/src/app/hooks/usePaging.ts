@@ -15,8 +15,8 @@ export const usePaging = (inputPage: Page, onPage: (page: number) => void) => {
         setTotal(getTotal);
     }, [inputPage]);
 
-    const handleNext = () => onPage(inputPage.page + 1);
-    const handlePrevious = () => onPage(inputPage.page - 1);
+    const handleNext = () => onPage(inputPage.page === total - 1 ? total - 1 : inputPage.page + 1);
+    const handlePrevious = () => onPage(inputPage.page === 0 ? 0 : inputPage.page - 1);
     const handlePage = (newPage: number) => onPage(newPage - 1);
     const handleStart = () => onPage(0);
     const handleEnd = () => onPage(total - 1);
