@@ -16,13 +16,14 @@ const ExtraEventAlert = ({ model }: Props) => {
         invitationIcs: { method },
         calendarData,
         invitationApi,
+        isFreeUser,
         isAddressDisabled,
         canCreateCalendar,
         hasNoCalendars,
     } = model;
     const isCancel = method === ICAL_METHOD.CANCEL;
 
-    if (isOutdated || isForwardedInvitation) {
+    if (isOutdated || isFreeUser || isForwardedInvitation) {
         return null;
     }
     // the invitation is unanswered

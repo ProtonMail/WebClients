@@ -100,6 +100,7 @@ export enum UPDATE_ACTION {
 export interface InvitationModel {
     isOrganizerMode: boolean;
     timeStatus: EVENT_TIME_STATUS;
+    isFreeUser: boolean;
     isForwardedInvitation?: boolean;
     isAddressDisabled: boolean;
     canCreateCalendar: boolean;
@@ -351,6 +352,7 @@ interface GetInitialInvitationModelArgs {
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
     calendar?: Calendar;
+    isFreeUser: boolean;
     hasNoCalendars: boolean;
     canCreateCalendar: boolean;
 }
@@ -360,6 +362,7 @@ export const getInitialInvitationModel = ({
     contactEmails,
     ownAddresses,
     calendar,
+    isFreeUser,
     hasNoCalendars,
     canCreateCalendar,
 }: GetInitialInvitationModelArgs) => {
@@ -367,6 +370,7 @@ export const getInitialInvitationModel = ({
         return {
             isOrganizerMode: false,
             isAddressDisabled: false,
+            isFreeUser,
             canCreateCalendar,
             hasNoCalendars,
             timeStatus: EVENT_TIME_STATUS.FUTURE,
@@ -382,6 +386,7 @@ export const getInitialInvitationModel = ({
     const result: InvitationModel = {
         isOrganizerMode,
         timeStatus,
+        isFreeUser,
         isAddressDisabled,
         canCreateCalendar,
         hasNoCalendars,
@@ -667,10 +672,10 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         hideLink,
         isForwardedInvitation,
         isOutdated,
-        timeStatus,
         calendarData,
         invitationIcs: { method },
         invitationApi,
+        isFreeUser,
         canCreateCalendar,
     } = model;
 
@@ -678,7 +683,14 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         return {};
     }
 
-    const canBeAnswered = method === ICAL_METHOD.REQUEST && timeStatus !== EVENT_TIME_STATUS.PAST && !isOutdated;
+    const canBeAnswered = method === ICAL_METHOD.REQUEST && !isOutdated;
+
+    if (isFreeUser && canBeAnswered) {
+        return {
+            to: '',
+            text: c('Link').t`Create a new calendar to answer this invitation`,
+        };
+    }
 
     // the calendar needs a user action to be active
     if (calendarData?.calendarNeedsUserAction) {
@@ -734,6 +746,7 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
         invitationIcs: { method },
         calendarData,
         isOutdated,
+        isFreeUser,
         isAddressDisabled,
     } = model;
 
@@ -745,6 +758,7 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
         !!isOutdated ||
         isAddressDisabled ||
         !!calendarData?.isCalendarDisabled ||
+        isFreeUser ||
         isForwardedInvitation
     );
 };
