@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels } from 'react-components';
+import { useApi, useNotifications, useEventManager, useLabels, classnames } from 'react-components';
 import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/conversations';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
@@ -10,7 +10,7 @@ import { isMessage as testIsMessage } from '../helpers/elements';
 import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
 
-const { ALL_MAIL, ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, STARRED, SPAM } = MAILBOX_LABEL_IDS;
+const { ALL_MAIL, ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, STARRED, SPAM, TRASH } = MAILBOX_LABEL_IDS;
 
 const EXPIRATION = 7500;
 
@@ -108,7 +108,7 @@ const getNotificationTextMoved = (
         );
     }
 
-    if (fromLabelID === SPAM) {
+    if (fromLabelID === SPAM && folderID !== TRASH) {
         if (isMessage) {
             if (elementsCount === 1) {
                 return c('Success').t`Message moved to ${folderName} and sender removed from blacklist.`;
@@ -274,7 +274,7 @@ export const useMoveToFolder = () => {
                 createNotification({
                     text: (
                         <>
-                            <span className="mr1">{notificationText}</span>
+                            <span className={classnames([canUndo && 'mr1'])}>{notificationText}</span>
                             {canUndo ? <UndoButton onUndo={handleUndo} /> : null}
                         </>
                     ),
