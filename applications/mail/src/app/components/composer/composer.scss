@@ -106,7 +106,7 @@
 
     &.pm-field {
         padding: 0.25em 0.5em;
-        height: auto;
+        height: auto !important;
     }
 
     &.composer-addresses-container-closed {
