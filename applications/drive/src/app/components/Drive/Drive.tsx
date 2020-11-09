@@ -62,10 +62,13 @@ function Drive({ activeFolder }: Props) {
     // On content change, check scroll end (does not rebind listeners)
     useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents, view]);
 
-    const handleClick = async (item: FileBrowserItem) => {
-        document.getSelection()?.removeAllRanges();
-        navigateToLink(shareId, item.LinkID, item.Type);
-    };
+    const handleClick = useCallback(
+        async (item: FileBrowserItem) => {
+            document.getSelection()?.removeAllRanges();
+            navigateToLink(shareId, item.LinkID, item.Type);
+        },
+        [navigateToLink, shareId]
+    );
 
     return complete && !contents.length && !loading ? (
         <EmptyFolder />

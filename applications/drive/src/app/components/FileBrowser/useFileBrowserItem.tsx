@@ -60,49 +60,76 @@ function useFileBrowserItem<T extends HTMLElement>({
 
     const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.Disabled ? undefined : fn);
 
-    const handleClick = unlessDisabled((e: React.MouseEvent<HTMLDivElement>) => {
-        e.stopPropagation();
+    const handleClick = unlessDisabled(
+        useCallback(
+            (e: React.MouseEvent<HTMLDivElement>) => {
+                e.stopPropagation();
 
-        if (e.shiftKey) {
-            onShiftClick?.(item.LinkID);
-        } else if (e.ctrlKey || e.metaKey) {
-            onToggleSelect(item.LinkID);
-        } else {
-            onClick?.(item);
-        }
-    });
+                if (e.shiftKey) {
+                    onShiftClick?.(item.LinkID);
+                } else if (e.ctrlKey || e.metaKey) {
+                    onToggleSelect(item.LinkID);
+                } else {
+                    onClick?.(item);
+                }
+            },
+            [item, onShiftClick, onToggleSelect, onClick]
+        )
+    );
 
-    const handleKeyDown = unlessDisabled((e: React.KeyboardEvent<HTMLTableRowElement>) => {
-        if (e.key === ' ' || e.key === 'Enter') {
-            onClick?.(item);
-        }
-    });
+    const handleKeyDown = unlessDisabled(
+        useCallback(
+            (e: React.KeyboardEvent<HTMLTableRowElement>) => {
+                if (e.key === ' ' || e.key === 'Enter') {
+                    onClick?.(item);
+                }
+            },
+            [onClick]
+        )
+    );
 
-    const handleTouchStart = unlessDisabled((e: React.TouchEvent<HTMLTableRowElement>) => {
-        e.stopPropagation();
-        touchStarted.current = true;
-    });
+    const handleTouchStart = unlessDisabled(
+        useCallback(
+            (e: React.TouchEvent<HTMLTableRowElement>) => {
+                e.stopPropagation();
+                touchStarted.current = true;
+            },
+            [touchStarted]
+        )
+    );
 
-    const handleTouchCancel = unlessDisabled(() => {
-        if (touchStarted.current) {
-            touchStarted.current = false;
-        }
-    });
+    const handleTouchCancel = unlessDisabled(
+        useCallback(() => {
+            if (touchStarted.current) {
+                touchStarted.current = false;
+            }
+        }, [touchStarted])
+    );
 
-    const handleTouchEnd = unlessDisabled((e: React.TouchEvent<HTMLTableRowElement>) => {
-        if (touchStarted.current) {
-            onClick?.(item);
-            e.preventDefault();
-        }
-        touchStarted.current = false;
-    });
+    const handleTouchEnd = unlessDisabled(
+        useCallback(
+            (e: React.TouchEvent<HTMLTableRowElement>) => {
+                if (touchStarted.current) {
+                    onClick?.(item);
+                    e.preventDefault();
+                }
+                touchStarted.current = false;
+            },
+            [touchStarted, onClick]
+        )
+    );
 
-    const handleDragStart = unlessDisabled((e: React.DragEvent<HTMLTableRowElement>) => {
-        if (!isDraggingSelected) {
-            selectItem(item.LinkID);
-        }
-        dragMove.handleDragStart(e);
-    });
+    const handleDragStart = unlessDisabled(
+        useCallback(
+            (e: React.DragEvent<HTMLTableRowElement>) => {
+                if (!isDraggingSelected) {
+                    selectItem(item.LinkID);
+                }
+                dragMove.handleDragStart(e);
+            },
+            [isDraggingSelected, dragMove.handleDragStart, selectItem]
+        )
+    );
 
     const handleContextMenu = useCallback(
         (e: React.MouseEvent<HTMLTableRowElement>) => {
@@ -123,7 +150,7 @@ function useFileBrowserItem<T extends HTMLElement>({
 
             setContextMenuPosition({ top: e.clientY, left: e.clientX });
         },
-        [contextMenu.isOpen, isSelected, item]
+        [contextMenu.isOpen, isSelected, item.Disabled, item.LinkID, selectItem]
     );
 
     const handleDragEnd = useCallback(
@@ -136,19 +163,25 @@ function useFileBrowserItem<T extends HTMLElement>({
 
     const handleMouseDown = useCallback(() => document.getSelection()?.removeAllRanges(), []);
 
-    const handleCheckboxClick = useCallback((e) => {
-        if (!e.shiftKey) {
-            onToggleSelect(item.LinkID);
-        }
-    }, []);
+    const handleCheckboxClick = useCallback(
+        (e) => {
+            if (!e.shiftKey) {
+                onToggleSelect(item.LinkID);
+            }
+        },
+        [onToggleSelect, item.LinkID]
+    );
 
-    const handleCheckboxWrapperClick = useCallback((e) => {
-        e.stopPropagation();
-        // Wrapper handles shift key, because FF has issues: https://bugzilla.mozilla.org/show_bug.cgi?id=559506
-        if (e.shiftKey) {
-            onShiftClick?.(item.LinkID);
-        }
-    }, []);
+    const handleCheckboxWrapperClick = useCallback(
+        (e) => {
+            e.stopPropagation();
+            // Wrapper handles shift key, because FF has issues: https://bugzilla.mozilla.org/show_bug.cgi?id=559506
+            if (e.shiftKey) {
+                onShiftClick?.(item.LinkID);
+            }
+        },
+        [onShiftClick, item.LinkID]
+    );
 
     const stopPropagation = useCallback((e) => {
         e.stopPropagation();
