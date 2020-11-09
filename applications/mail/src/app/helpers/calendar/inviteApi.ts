@@ -146,6 +146,7 @@ type FetchEventInvitation = (args: {
     message: MessageExtended;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
+    isFreeUser: boolean;
 }) => Promise<{
     invitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitation?: RequireSome<EventInvitation, 'calendarEvent'>;
@@ -164,7 +165,13 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     message,
     contactEmails,
     ownAddresses,
+    isFreeUser,
 }) => {
+    if (isFreeUser) {
+        // The API may return calendar data for downgraded free users,
+        // but at the moment those users are not entitled to have a calendar
+        return {};
+    }
     const recurrenceID = veventComponent['recurrence-id'];
     const timestamp = recurrenceID ? getUnixTime(propertyToUTCDate(recurrenceID)) : undefined;
     const allEventsWithUID = await fetchAllEventsByUID({
@@ -285,7 +292,7 @@ const updateEventApi = async ({
 interface UpdateEventInvitationArgs
     extends Omit<
         RequireSome<InvitationModel, 'invitationIcs' | 'invitationApi'>,
-        'timeStatus' | 'canCreateCalendar' | 'hasNoCalendars'
+        'timeStatus' | 'isFreeUser' | 'canCreateCalendar' | 'hasNoCalendars'
     > {
     isOrganizerMode: boolean;
     isAddressDisabled: boolean;

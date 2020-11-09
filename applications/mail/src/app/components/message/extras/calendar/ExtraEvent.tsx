@@ -1,7 +1,7 @@
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
-import { Address, UserSettings } from 'proton-shared/lib/interfaces';
+import { Address, UserModel, UserSettings } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
@@ -60,6 +60,7 @@ interface Props {
     defaultCalendar?: Calendar;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
+    user: UserModel;
     userSettings: UserSettings;
 }
 const ExtraEvent = ({
@@ -70,8 +71,10 @@ const ExtraEvent = ({
     canCreateCalendar,
     contactEmails,
     ownAddresses,
+    user,
     userSettings,
 }: Props) => {
+    const isFreeUser = user.isFree;
     const [model, setModel] = useState<InvitationModel>(() =>
         getInitialInvitationModel({
             invitationOrError,
@@ -81,6 +84,7 @@ const ExtraEvent = ({
             calendar: defaultCalendar,
             hasNoCalendars: calendars.length === 0,
             canCreateCalendar,
+            isFreeUser,
         })
     );
     const [loading, withLoading] = useLoading(true);
@@ -99,6 +103,7 @@ const ExtraEvent = ({
                 contactEmails,
                 ownAddresses,
                 calendar: defaultCalendar,
+                isFreeUser,
                 hasNoCalendars: calendars.length === 0,
                 canCreateCalendar,
             })
@@ -139,6 +144,7 @@ const ExtraEvent = ({
                     message,
                     contactEmails,
                     ownAddresses,
+                    isFreeUser,
                 });
                 invitationApi = invitation;
                 calendarData = calData;
@@ -149,7 +155,7 @@ const ExtraEvent = ({
                     parentInvitationApi = parentInvitation;
                 }
                 if (!unmounted) {
-                    setModel({ ...model, isOutdated, calendarData, singleEditData, hasDecryptionError });
+                    setModel({ ...model, isOutdated, calendarData, singleEditData, hasDecryptionError, isFreeUser });
                 }
             } catch (error) {
                 // if fetching fails, proceed as if there was no event in the database
