@@ -36,7 +36,7 @@ const ImportSection = ({ activeCalendars, defaultCalendar, calendarsEventsCacheR
             )
                 .t`You can import ICS files from another calendar to ProtonCalendar. This lets you quickly import one event or your entire agenda.`}</Alert>
             <div>
-                <PrimaryButton onClick={handleImport} disabled={!canImport}>{c('Action').t`Import`}</PrimaryButton>
+                <PrimaryButton onClick={handleImport} disabled={!canImport}>{c('Action').t`Import calendar`}</PrimaryButton>
             </div>
         </>
     );
