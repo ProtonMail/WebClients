@@ -100,6 +100,7 @@ export enum UPDATE_ACTION {
 export interface InvitationModel {
     isOrganizerMode: boolean;
     timeStatus: EVENT_TIME_STATUS;
+    isForwardedInvitation?: boolean;
     isAddressDisabled: boolean;
     canCreateCalendar: boolean;
     hasNoCalendars: boolean;
@@ -385,6 +386,7 @@ export const getInitialInvitationModel = ({
         canCreateCalendar,
         hasNoCalendars,
         invitationIcs: invitation,
+        isForwardedInvitation: !isOrganizerMode && !invitation.attendee,
     };
     if (calendar) {
         result.calendarData = {
@@ -663,6 +665,7 @@ export const getSupportedEventInvitation = (
 export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
     const {
         hideLink,
+        isForwardedInvitation,
         isOutdated,
         timeStatus,
         calendarData,
@@ -671,7 +674,7 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         canCreateCalendar,
     } = model;
 
-    if (hideLink) {
+    if (hideLink || isForwardedInvitation) {
         return {};
     }
 
@@ -727,6 +730,7 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
 export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
     const {
         isOrganizerMode,
+        isForwardedInvitation,
         invitationIcs: { method },
         calendarData,
         isOutdated,
@@ -736,5 +740,11 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
     if (isOrganizerMode) {
         return false;
     }
-    return method === ICAL_METHOD.CANCEL || !!isOutdated || isAddressDisabled || !!calendarData?.isCalendarDisabled;
+    return (
+        method === ICAL_METHOD.CANCEL ||
+        !!isOutdated ||
+        isAddressDisabled ||
+        !!calendarData?.isCalendarDisabled ||
+        isForwardedInvitation
+    );
 };
