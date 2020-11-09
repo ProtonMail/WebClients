@@ -1,0 +1,19 @@
+// redefine specific sass vars here if needed
+$breakpoint-medium: 940;
+$use-height-auto-td: false;
+$use-height-auto-img: false;
+$use-height-auto-table: false;
+
+// include components that are shared across all Proton Products
+@import './components';
+
+// project specific components
+
+// stuff for responsive
+@import '../reusable-components/design-system-responsive';
+@import '../design-system-website/responsive';
+
+// others
+@import '../reusable-components/design-system-print';
+@import '../reusable-components/design-system-viewport-fix';
+@import '../reusable-components/design-system-reduced-motion';
