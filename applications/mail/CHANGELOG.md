@@ -1,3 +1,23 @@
+# [4.0.0 - Beta 30] - 2020-11-12
+
+## New features
+
+-   allow the user to respond to an invitation from the event's widget
+-   allow the user to see the response to an invitation
+-   allow the user to update the response to an invitation
+
+## Improvements
+
+-   Visual improvements to the pagination component
+-   Pagination component is not visible when there is only one page
+
+## Fixes
+
+-   After replying to a message not located on the first page of a folder, the user would be redirected to the first page
+-   The "Trust public key" options was missing in the sender's dropdown
+-   The "Trust new key" modal could sometimes get stuck
+-   Message cache would not get updated after a new key is trusted
+
 # [4.0.0 - Beta 29] - 2020-11-04
 
 ## New features
