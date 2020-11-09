@@ -1,3 +1,17 @@
+# [4.0.0-beta.9] - 2020-11-12
+## Added
+
+- Display answered invitation
+- Change answer of invitation
+- Edit invitation notifications and calendar
+- Update automatically answered invitations
+- Delete invitations from calendar
+
+## Fixed
+- Disable clicking in calendar view when event is being saved
+- Fix link for showing timezones selector during event creation when start and end timezones are different
+- Fix display of special format links in event description
+---
 # [4.0.0-beta.8] - 2020-09-29
 
 ## Added
