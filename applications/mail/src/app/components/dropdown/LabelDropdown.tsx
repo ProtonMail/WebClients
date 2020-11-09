@@ -1,6 +1,5 @@
 import React, { useState, ChangeEvent, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
-import { FocusScope } from '@react-aria/focus';
 import {
     SearchInput,
     Icon,
@@ -11,7 +10,7 @@ import {
     Tooltip,
     useLoading,
     Checkbox,
-    generateUID
+    generateUID,
 } from 'react-components';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { LABEL_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
@@ -31,7 +30,7 @@ import './LabelDropdown.scss';
 enum LabelState {
     On,
     Off,
-    Indeterminate
+    Indeterminate,
 }
 
 type SelectionState = { [labelID: string]: LabelState };
@@ -143,7 +142,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
         const newLabel: Pick<Label, 'Name' | 'Color' | 'Type'> = {
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
-            Type: LABEL_TYPE.MESSAGE_LABEL
+            Type: LABEL_TYPE.MESSAGE_LABEL,
         };
         createModal(
             <LabelModal
@@ -162,7 +161,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
     const autoFocusSearch = !breakpoints.isNarrow;
 
     return (
-        <FocusScope contain={containFocus} restoreFocus autoFocus>
+        <>
             <div className="flex flex-spacebetween flex-items-center m1 mb0">
                 <span className="bold" tabIndex={-2}>
                     {c('Label').t`Label as`}
@@ -241,7 +240,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                     {c('Action').t`Apply`}
                 </PrimaryButton>
             </div>
-        </FocusScope>
+        </>
     );
 };
 

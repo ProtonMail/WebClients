@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { FocusScope } from '@react-aria/focus';
 import {
     LabelModal,
     SearchInput,
@@ -11,7 +10,7 @@ import {
     Mark,
     Tooltip,
     useLoading,
-    generateUID
+    generateUID,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
 import { normalize } from 'proton-shared/lib/helpers/string';
@@ -35,7 +34,7 @@ const folderReducer = (acc: FolderItem[], folder: FolderWithSubFolders, level = 
         ...folder,
         Name: folder.Name,
         icon: folder.subfolders?.length ? 'parent-folder' : 'folder',
-        level
+        level,
     });
 
     if (Array.isArray(folder.subfolders)) {
@@ -77,7 +76,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
             { ID: INBOX, Name: c('Mailbox').t`Inbox`, icon: 'inbox' },
             { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive' },
             { ID: SPAM, Name: c('Mailbox').t`Spam`, icon: 'spam' },
-            { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' }
+            { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' },
         ] as FolderItem[])
         .filter(({ Name = '' }: { Name: string }) => {
             if (!search) {
@@ -104,7 +103,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             ParentID: ROOT_FOLDER,
-            Type: LABEL_TYPE.MESSAGE_FOLDER
+            Type: LABEL_TYPE.MESSAGE_FOLDER,
         };
         createModal(<LabelModal label={newLabel} onClose={() => setContainFocus(true)} />);
     };
@@ -114,7 +113,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const autoFocusSearch = !breakpoints.isNarrow;
 
     return (
-        <FocusScope contain={containFocus} restoreFocus autoFocus>
+        <>
             <div className="flex flex-spacebetween flex-items-center m1 mb0">
                 <span className="bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
@@ -161,7 +160,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     )}
                 </ul>
             </div>
-        </FocusScope>
+        </>
     );
 };
 

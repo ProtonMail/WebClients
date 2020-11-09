@@ -10,7 +10,6 @@ import {
     useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
-import { FocusScope } from '@react-aria/focus';
 
 import { newFilter } from 'proton-shared/lib/filters/factory';
 import { computeTree } from 'proton-shared/lib/filters/sieve';
@@ -147,7 +146,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
     const buttonDisabled = !Object.values(filtersState).some(identity);
 
     return (
-        <FocusScope contain restoreFocus autoFocus>
+        <>
             <div className="m1">
                 <span className="bold" tabIndex={-2}>
                     {c('CustomFilter').t`Filter on`}
@@ -176,7 +175,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
                     {c('CustomFilter').t`Next`}
                 </PrimaryButton>
             </div>
-        </FocusScope>
+        </>
     );
 };
 
