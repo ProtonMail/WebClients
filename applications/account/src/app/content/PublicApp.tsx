@@ -79,8 +79,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             setActiveSessions(sessions);
             if (!sessions.length) {
                 history.replace('/login');
+            } else {
+                setHasBackToSwitch(true);
             }
-            setHasBackToSwitch(true);
             return false;
         }
         if (!sessions.length) {
