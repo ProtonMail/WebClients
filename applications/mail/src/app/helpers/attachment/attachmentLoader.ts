@@ -96,7 +96,11 @@ export const getAndVerify = async (
     if (!reverify && cache.has(attachmentID)) {
         attachmentdata = cache.get(attachmentID) as DecryptResultPmcrypto;
     } else {
-        attachmentdata = await getDecryptedAttachment(attachment, message, api);
+        const isMIMEAttachment = !attachment.KeyPackets;
+        // TODO: implement reverification of MIME attachment
+        attachmentdata = isMIMEAttachment
+            ? (cache.get(attachmentID) as DecryptResultPmcrypto)
+            : await getDecryptedAttachment(attachment, message, api);
     }
 
     cache.set(attachmentID, attachmentdata);
