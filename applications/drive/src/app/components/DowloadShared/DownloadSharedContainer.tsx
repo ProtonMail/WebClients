@@ -158,7 +158,11 @@ const DownloadSharedContainer = () => {
                     <div className="aligncenter opacity-50 mb2">
                         <Icon name="lock-check" size={20} />
                         <div className="small m0">{c('Label').t`Zero-Access Encryption by Proton`}</div>
-                        <a className="small" href={`mailto:${REPORT_ABUSE_EMAIL}`} title={`${REPORT_ABUSE_LABEL}`}>
+                        <a
+                            className="small signup-footer-link"
+                            href={`mailto:${REPORT_ABUSE_EMAIL}`}
+                            title={REPORT_ABUSE_LABEL}
+                        >
                             {REPORT_ABUSE_LABEL}
                         </a>
                     </div>

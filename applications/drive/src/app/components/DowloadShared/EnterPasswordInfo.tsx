@@ -23,8 +23,10 @@ const EnterPasswordInfo = ({ submitPassword }: Props) => {
                 <div className="alignleft">
                     <Label htmlFor="password">{c('Label').t`Password`}</Label>
                 </div>
+
                 <PasswordInput
                     name="password"
+                    className="flex"
                     autoComplete="current-password"
                     maxLength={50}
                     id="password"
