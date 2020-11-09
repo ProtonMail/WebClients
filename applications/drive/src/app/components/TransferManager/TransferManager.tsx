@@ -131,6 +131,7 @@ function TransferManager() {
                 confirm: c('Action').t`Confirm`,
                 message: c('Info').t`Closing transfer manager will cancel all active transfers, are you sure?`,
                 onConfirm: clearAllTransfers,
+                canUndo: true,
             });
         }
     };

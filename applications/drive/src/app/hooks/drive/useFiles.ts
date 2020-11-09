@@ -462,10 +462,6 @@ function useFiles() {
                 };
 
                 const createFolder = (ParentLinkID: string, folderName: string, checkNameAvailability = false) => {
-                    if (signal.aborted) {
-                        throw new TransferCancel({ message: `Transfer canceled for folder "${folderName}"` });
-                    }
-
                     return uploadEmptyFolder(shareId, ParentLinkID, folderName, {
                         checkNameAvailability,
                         signal,
@@ -499,28 +495,23 @@ function useFiles() {
 
                                     // Wait for parent folders to be created first
                                     // If root folder's in tree, it's name must be checked, all other folders are new ones
-                                    const promise = parentFolderPromise
+                                    const promise = (parentFolderPromise
                                         ? parentFolderPromise.then(({ Folder }) => createFolder(Folder.ID, folder))
-                                        : createFolder(ParentLinkID, folder, !parent);
+                                        : createFolder(ParentLinkID, folder, !parent)
+                                    ).then(async (args) => {
+                                        await events.call(shareId);
+                                        return args;
+                                    });
 
                                     // Fetch events to get keys required for encryption in the new folder
-                                    folderPromises.set(
-                                        path,
-                                        promise.then(async (args) => {
-                                            await events.call(shareId);
-                                            return args;
-                                        })
-                                    );
+                                    folderPromises.set(path, promise);
                                 }
 
-                                const folderPromise = folderPromises.get(path);
+                                const folderPromise = folderPromises.get(path)?.then(({ Folder: { ID } }) => ID);
 
                                 if (file && folderPromise) {
-                                    uploadFile(
-                                        folderPromise.then(({ Folder: { ID } }) => ID),
-                                        file,
-                                        true
-                                    );
+                                    const promise = folderPromise;
+                                    uploadFile(promise, file, true);
                                 }
 
                                 // Log unhandled exceptions
