@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { EVENT_VERIFICATION_STATUS, WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -19,7 +19,6 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
-    Icon,
     Loader,
     Tooltip,
     useLoading,
@@ -142,7 +141,6 @@ const EventPopover = ({
         eventReadError,
         isEventReadLoading,
         eventTitleSafe,
-        verificationStatus,
         isCancelled,
         userPartstat,
         isSelfAddressDisabled,
@@ -275,19 +273,6 @@ const EventPopover = ({
                 <h1 className="eventpopover-title lh-standard hyphens scroll-if-needed mb0-25" title={eventTitleSafe}>
                     {eventTitleSafe}
                 </h1>
-                {verificationStatus === EVENT_VERIFICATION_STATUS.SUCCESSFUL && (
-                    <div className="mb0-75 flex flex-nowrap flex-items-center">
-                        <span className="flex flex-item-noshrink mr1">
-                            <Icon name="lock-check" />
-                        </span>
-                        <span className="flex-item-fluid">{c('Event info').t`Event verified`}</span>
-                    </div>
-                )}
-                {verificationStatus === EVENT_VERIFICATION_STATUS.FAILED && (
-                    <Alert type="warning" learnMore="https://protonmail.com/blog/protoncalendar-security-model/">
-                        {c('Event info').t`The verification of the event signature failed.`}
-                    </Alert>
-                )}
             </PopoverHeader>
             <div className="scroll-if-needed mb1">
                 <PopoverEventContent
