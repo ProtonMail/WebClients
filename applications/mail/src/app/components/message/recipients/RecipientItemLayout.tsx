@@ -11,15 +11,7 @@ interface Props {
     isLoading?: boolean;
 }
 
-const HeaderRecipientItemLayout = ({
-    button,
-    label,
-    showAddress = true,
-    address,
-    title,
-    icon,
-    isLoading = false,
-}: Props) => {
+const RecipientItemLayout = ({ button, label, showAddress = true, address, title, icon, isLoading = false }: Props) => {
     return (
         <span
             className={classnames([
@@ -56,4 +48,4 @@ const HeaderRecipientItemLayout = ({
     );
 };
 
-export default HeaderRecipientItemLayout;
+export default RecipientItemLayout;

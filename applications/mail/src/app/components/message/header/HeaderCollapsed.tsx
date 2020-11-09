@@ -11,7 +11,7 @@ import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
-import HeaderRecipientItem from './HeaderRecipientItem';
+import RecipientItem from '../recipients/RecipientItem';
 import ItemExpiration from '../../list/ItemExpiration';
 import { OnCompose } from '../../../hooks/useCompose';
 import ItemAction from '../../list/ItemAction';
@@ -66,7 +66,7 @@ const HeaderCollapsed = ({
             onClick={handleClick}
         >
             <div className="flex flex-item-fluid flex-nowrap flex-items-center mr0-5">
-                <HeaderRecipientItem
+                <RecipientItem
                     recipientOrGroup={{ recipient: message.data?.Sender }}
                     showAddress={false}
                     onCompose={onCompose}

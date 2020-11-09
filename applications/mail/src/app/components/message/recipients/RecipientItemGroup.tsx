@@ -17,10 +17,10 @@ import { getInitial } from 'proton-shared/lib/helpers/string';
 import { RecipientGroup } from '../../../models/address';
 import { getRecipientGroupLabel } from '../../../helpers/addresses';
 import { getContactsOfGroup } from '../../../helpers/contacts';
-import HeaderRecipientItemLayout from './HeaderRecipientItemLayout';
+import RecipientItemLayout from './RecipientItemLayout';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { OnCompose } from '../../../hooks/useCompose';
-import HeaderGroupModal from './HeaderGroupModal';
+import GroupModal from '../modals/GroupModal';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 
 interface Props {
@@ -32,14 +32,7 @@ interface Props {
     onCompose: OnCompose;
 }
 
-const HeaderRecipientItemGroup = ({
-    group,
-    mapStatusIcons,
-    globalIcon,
-    contacts,
-    showAddress = true,
-    onCompose,
-}: Props) => {
+const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, contacts, showAddress = true, onCompose }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [uid] = useState(generateUID('dropdown-group'));
@@ -74,7 +67,7 @@ const HeaderRecipientItemGroup = ({
     const handleRecipients = (event: MouseEvent) => {
         event.stopPropagation();
         createModal(
-            <HeaderGroupModal
+            <GroupModal
                 recipientGroup={group}
                 contacts={contacts}
                 mapStatusIcons={mapStatusIcons}
@@ -84,7 +77,7 @@ const HeaderRecipientItemGroup = ({
     };
 
     return (
-        <HeaderRecipientItemLayout
+        <RecipientItemLayout
             button={
                 <>
                     <button
@@ -128,4 +121,4 @@ const HeaderRecipientItemGroup = ({
     );
 };
 
-export default HeaderRecipientItemGroup;
+export default RecipientItemGroup;

@@ -1,4 +1,4 @@
-import { arrayToBinaryString, getKeys, getMatchingKey } from 'pmcrypto';
+import { arrayToBinaryString, getKeys, getMatchingKey, OpenPGPSignature } from 'pmcrypto';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { useCallback } from 'react';
 import { useApi, useGetEncryptionPreferences } from 'react-components';
@@ -8,7 +8,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { LARGE_KEY_SIZE } from '../../constants';
 import { get } from '../../helpers/attachment/attachmentLoader';
 import { MessageExtended, MessageErrors, MessageExtendedWithData } from '../../models/message';
-import { DecryptMessageResult, verifyMessage } from '../../helpers/message/messageDecrypt';
+import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 
@@ -19,7 +19,7 @@ export const useVerifyMessage = (localID: string) => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
 
     return useCallback(
-        async (result: DecryptMessageResult) => {
+        async (decryptedBody: string, signature?: OpenPGPSignature) => {
             // Message can change during the whole sequence
             // To have the most up to date version, best is to get back to the cache version each time
             const getData = () => (messageCache.get(localID) as MessageExtendedWithData).data;
@@ -43,7 +43,12 @@ export const useVerifyMessage = (localID: string) => {
                     publicKeys: encryptionPreferences.pinnedKeys,
                 };
 
-                verification = await verifyMessage(result, getData(), encryptionPreferences.pinnedKeys);
+                verification = await verifyMessage(
+                    decryptedBody,
+                    signature,
+                    getData(),
+                    encryptionPreferences.pinnedKeys
+                );
 
                 const keyAttachments =
                     getData().Attachments.filter(
@@ -77,7 +82,7 @@ export const useVerifyMessage = (localID: string) => {
                         : undefined;
                 verificationStatus = verification.verified;
             } catch (error) {
-                errors.common = error;
+                errors.common = [error];
             } finally {
                 updateMessageCache(messageCache, localID, {
                     senderPinnedKeys: encryptionPreferences?.pinnedKeys,

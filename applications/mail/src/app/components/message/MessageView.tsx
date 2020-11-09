@@ -1,4 +1,3 @@
-import { OpenPGPKey } from 'pmcrypto';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { hasAttachments, isDraft, isSent } from 'proton-shared/lib/mail/messages';
 import React, { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, RefCallback } from 'react';
@@ -18,9 +17,9 @@ import { OnCompose } from '../../hooks/useCompose';
 import { Breakpoints } from '../../models/utils';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
-import { useTrustAttachedPublicKey, useTrustSigningPublicKey } from '../../hooks/message/useTrustPublicKey';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/useLoadImages';
 import { useResignContact } from '../../hooks/message/useResignContact';
+import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 
 interface Props {
     labelID: string;
@@ -71,8 +70,7 @@ const MessageView = (
     const { message, addAction, messageLoaded, bodyLoaded } = useMessage(inputMessage.ID, conversationID);
     const load = useLoadMessage(inputMessage);
     const initialize = useInitializeMessage(message.localID, labelID);
-    const trustSigningPublicKey = useTrustSigningPublicKey(message.localID);
-    const trustAttachedPublicKey = useTrustAttachedPublicKey(message.localID);
+    const verify = useVerifyMessage(message.localID);
     const loadRemoteImages = useLoadRemoteImages(message.localID);
     const loadEmbeddedImages = useLoadEmbeddedImages(message.localID);
     const resignContact = useResignContact(message.localID);
@@ -105,6 +103,13 @@ const MessageView = (
             void addAction(initialize);
         }
     }, [loading, expanded, message.initialized]);
+
+    // Manage recomputing signature verification (happens when invalidated after initial load)
+    useEffect(() => {
+        if (!loading && expanded && message.initialized && message.verificationStatus === undefined) {
+            void addAction(() => verify(message.decryptedBody as string, message.signature));
+        }
+    }, [loading, expanded, message.initialized, message.verificationStatus]);
 
     // Setup ref to allow opening the message from outside, typically the ConversationView
     useEffect(() => {
@@ -157,14 +162,6 @@ const MessageView = (
         }
     }, [draft, message.data?.ID]);
 
-    const handleTrustSigningPublicKey = async (key: OpenPGPKey) => {
-        await addAction(() => trustSigningPublicKey(key));
-    };
-
-    const handleTrustAttachedPublicKey = async (key: OpenPGPKey) => {
-        await addAction(() => trustAttachedPublicKey(key));
-    };
-
     const handleLoadRemoteImages = async () => {
         await addAction(loadRemoteImages);
     };
@@ -206,8 +203,6 @@ const MessageView = (
                         bodyLoaded={bodyLoaded}
                         isSentMessage={sent}
                         sourceMode={sourceMode}
-                        onTrustSigningKey={handleTrustSigningPublicKey}
-                        onTrustAttachedKey={handleTrustAttachedPublicKey}
                         onLoadRemoteImages={handleLoadRemoteImages}
                         onLoadEmbeddedImages={handleLoadEmbeddedImages}
                         onResignContact={handleResignContact}

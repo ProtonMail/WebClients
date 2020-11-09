@@ -13,7 +13,7 @@ interface Props {
     isLoading?: boolean;
 }
 
-const HeaderRecipientsSimple = ({ message, contacts, contactGroups, isLoading }: Props) => {
+const RecipientsSimple = ({ message, contacts, contactGroups, isLoading }: Props) => {
     const recipients = getRecipients(message);
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
 
@@ -45,4 +45,4 @@ const HeaderRecipientsSimple = ({ message, contacts, contactGroups, isLoading }:
     );
 };
 
-export default HeaderRecipientsSimple;
+export default RecipientsSimple;

@@ -1,6 +1,6 @@
 import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
-import { addPlusAlias, removeEmailAlias } from 'proton-shared/lib/helpers/email';
+import { addPlusAlias, normalizeInternalEmail, removeEmailAlias } from 'proton-shared/lib/helpers/email';
 import { Address, Key } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
@@ -33,18 +33,21 @@ export const isDirtyAddress = ({ Keys, Status }: Address) => !Keys.length || Sta
 
 export const isOwnAddress = (address?: Address, keys: Key[] = []) => !!address && !isFallbackAddress(address, keys);
 
+export const isSelfAddress = (email: string | undefined, addresses: Address[]) =>
+    !!addresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(email || ''));
+
 export const inputToRecipient = (input: string): Recipient => {
     const match = REGEX_RECIPIENT.exec(input);
 
     if (match !== null) {
         return {
             Name: match[1],
-            Address: match[2]
+            Address: match[2],
         };
     }
     return {
         Name: input,
-        Address: input
+        Address: input,
     };
 };
 
@@ -64,12 +67,12 @@ export const contactToRecipient = (contact: Partial<ContactEmail> = {}, groupPat
     Name: contact.Name,
     Address: contact.Email,
     ContactID: contact.ContactID,
-    Group: groupPath
+    Group: groupPath,
 });
 
 export const majorToRecipient = (email: string) => ({
     Name: email,
-    Address: email
+    Address: email,
 });
 
 export const contactToInput = (contact: Partial<ContactEmail> = {}): string =>
