@@ -7,8 +7,7 @@ import ConversationProvider from './containers/ConversationProvider';
 import AttachmentProvider from './containers/AttachmentProvider';
 import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
-
-export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
+import { MAIN_ROUTE_PATH } from './constants';
 
 const MainContainer = () => {
     const breakpoints = useActiveBreakpoint();

@@ -3,7 +3,7 @@ import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { getRecipientsAddresses, isAttachPublicKey } from 'proton-shared/lib/mail/messages';
 import React, { useCallback } from 'react';
-import { useHistory, match, matchPath } from 'react-router';
+import { useHistory } from 'react-router';
 import { c, msgid } from 'ttag';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { sendMessage } from 'proton-shared/lib/api/messages';
@@ -33,7 +33,7 @@ import { attachPublicKey } from '../helpers/message/messageAttachPublicKey';
 import SendWithWarningsModal from '../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
 import { useSaveDraft } from './message/useSaveDraft';
-import { MAIN_ROUTE_PATH } from '../MainContainer';
+import { getParamsFromPathname, setParamsInLocation } from '../helpers/mailboxUrl';
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();
@@ -229,15 +229,17 @@ export const useSendMessage = () => {
 
             call();
 
-            // Navigation to the sent message
             const {
                 params: { labelID, elementID },
-            } = matchPath(history.location.pathname, { path: MAIN_ROUTE_PATH }) as match<{
-                labelID: string;
-                elementID?: string;
-            }>;
+            } = getParamsFromPathname(history.location.pathname);
             if (elementID === Sent.ConversationID) {
-                history.push(`/${labelID}/${Sent.ConversationID}/${Sent.ID}`);
+                history.push(
+                    setParamsInLocation(history.location, {
+                        labelID,
+                        elementID: Sent.ConversationID,
+                        messageID: Sent.ID,
+                    })
+                );
             }
 
             // } catch (e) {

@@ -8,12 +8,12 @@ import {
     PrivateHeader,
     FloatingButton,
     MainLogo,
-    SettingsButton
+    SettingsButton,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 
 import AdvancedSearchDropdown from './AdvancedSearchDropdown';
-import { extractSearchParameters, getUrlPathname } from '../../helpers/mailboxUrl';
+import { extractSearchParameters, setParamsInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
 import { getLabelName } from '../../helpers/labels';
 import { OnCompose } from '../../hooks/useCompose';
@@ -40,7 +40,7 @@ const MailHeader = ({
     expanded,
     onToggleExpand,
     onSearch,
-    onCompose
+    onCompose,
 }: Props) => {
     const { keyword = '' } = extractSearchParameters(location);
     const [value, updateValue] = useState(keyword);
@@ -77,7 +77,7 @@ const MailHeader = ({
         />
     );
 
-    const backUrl = getUrlPathname(location, labelID);
+    const backUrl = setParamsInUrl(history.location, { labelID });
     const showBackButton = breakpoints.isNarrow && elementID;
     const labelName = getLabelName(labelID, labels, folders);
     const logo = <MainLogo to="/inbox" />;

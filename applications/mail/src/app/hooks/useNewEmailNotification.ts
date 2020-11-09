@@ -8,7 +8,7 @@ import { c } from 'ttag';
 
 import { Event } from '../models/event';
 import { isConversationMode } from '../helpers/mailSettings';
-import { setPathInUrl } from '../helpers/mailboxUrl';
+import { setParamsInLocation } from '../helpers/mailboxUrl';
 import notificationIcon from '../assets/notification.gif';
 
 const useNewEmailNotification = (history: History) => {
@@ -17,7 +17,7 @@ const useNewEmailNotification = (history: History) => {
     const notifier = [
         MAILBOX_LABEL_IDS.INBOX,
         MAILBOX_LABEL_IDS.STARRED,
-        ...folders.filter(({ Notify }) => Notify).map(({ ID }) => ID)
+        ...folders.filter(({ Notify }) => Notify).map(({ ID }) => ID),
     ];
 
     useSubscribeEventManager(({ Messages = [] }: Event) => {
@@ -39,11 +39,13 @@ const useNewEmailNotification = (history: History) => {
                     window.focus();
 
                     if (isConversationMode(labelID, mailSettings, history.location)) {
-                        return history.push(setPathInUrl(history.location, labelID, ConversationID));
+                        return history.push(
+                            setParamsInLocation(history.location, { labelID, elementID: ConversationID })
+                        );
                     }
 
-                    history.push(setPathInUrl(history.location, labelID, ID));
-                }
+                    history.push(setParamsInLocation(history.location, { labelID, elementID: ID }));
+                },
             });
         });
     });
