@@ -98,12 +98,12 @@ function GeneratedLinkState({
                             <span className="mr0-5">{c('Label').t`Password protection`}</span>
                         </Label>
                         <div className="flex flex-column flex-item-fluid">
-                            <div
-                                className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 pm-field--accented ellipsis"
+                            <input
+                                readOnly
+                                value={password}
+                                className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 pm-field--accented ellipsis pre"
                                 data-testid="sharing-modal-password"
-                            >
-                                {password}
-                            </div>
+                            />
                             <Checkbox
                                 className="mb0-5"
                                 disabled={customPassword}
