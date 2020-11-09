@@ -70,6 +70,46 @@ describe('Load date locales', () => {
         expect(format(zero, 'Pp', { locale: dateFnLocale })).toBe('01/01/2000, 00:00');
     });
 
+    it('should keep long date format from locale and only override time', async () => {
+        const dateFnLocale = await loadDateLocale('fr_FR', 'en_US');
+        expect(format(zero, 'PPPPp', { locale: dateFnLocale })).toBe('samedi 1 janvier 2000 à 12:00 AM');
+    });
+
+    it('should keep long date format from locale', async () => {
+        const dateFnLocale = await loadDateLocale('fr_FR', 'fr_FR');
+        expect(format(zero, 'PPPPp', { locale: dateFnLocale })).toBe('samedi 1 janvier 2000 à 00:00');
+    });
+
+    it('should keep short long date format from locale', async () => {
+        const dateFnLocale = await loadDateLocale('fr_FR', 'fr_FR');
+        expect(format(zero, 'Pp', { locale: dateFnLocale })).toBe('01/01/2000, 00:00');
+    });
+
+    it('should keep short long date format from locale, and only override short time', async () => {
+        const dateFnLocale = await loadDateLocale('fr_FR', 'en_US');
+        expect(format(zero, 'Pp', { locale: dateFnLocale })).toBe('01/01/2000, 12:00 AM');
+    });
+
+    it('should keep medium long date format from locale', async () => {
+        const dateFnLocale = await loadDateLocale('fr_FR', 'fr_FR');
+        expect(format(zero, 'PPp', { locale: dateFnLocale })).toBe('1 janv. 2000, 00:00');
+    });
+
+    it('should keep medium long date format from locale, and only override short time', async () => {
+        const dateFnLocale = await loadDateLocale('fr_FR', 'en_US');
+        expect(format(zero, 'PPp', { locale: dateFnLocale })).toBe('1 janv. 2000, 12:00 AM');
+    });
+
+    it('should override medium time', async () => {
+        const dateFnLocale = await loadDateLocale('fr_FR', 'fr_FR');
+        expect(format(zero, 'PPpp', { locale: dateFnLocale })).toBe('1 janv. 2000, 00:00:00');
+    });
+
+    it('should keep medium long date format from locale, and only override medium time', async () => {
+        const dateFnLocale = await loadDateLocale('fr_FR', 'en_US');
+        expect(format(zero, 'PPpp', { locale: dateFnLocale })).toBe('1 janv. 2000, 12:00:00 AM');
+    });
+
     it('should override time format and date format with 12 hour format', async () => {
         const dateFnLocale = await loadDateLocale('en_US', 'en_US', { TimeFormat: SETTINGS_TIME_FORMAT.H24 });
         expect(format(zero, 'p', { locale: getDateFnLocaleWithTimeFormat(dateFnLocale, true) })).toBe('12:00 AM');

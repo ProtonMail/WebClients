@@ -12,9 +12,15 @@ export const getDateFnLocaleWithLongFormat = (a: Locale, b: Locale): Locale => {
      * the long date and time format to get 12 or 24 hour time and the correct date format depending
      * on what is selected in the browser for the "system settings" option.
      */
+    if (!b.formatLong?.time || !a.formatLong) {
+        return a;
+    }
     return {
         ...a,
-        formatLong: b.formatLong,
+        formatLong: {
+            ...a.formatLong,
+            time: b.formatLong.time,
+        },
     };
 };
 
