@@ -5,6 +5,7 @@ import {
     FormModal,
     PrimaryButton,
     useApi,
+    useEventManager,
     useGetUserKeys,
     useLoading,
     useNotifications,
@@ -86,6 +87,7 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
     const getUserKeys = useGetUserKeys();
     const [loading, withLoading] = useLoading(false);
     const { createNotification } = useNotifications();
+    const { call } = useEventManager();
 
     const isCreateContact = !contact.contactID;
 
@@ -99,6 +101,7 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
             privateKeys,
         });
         createNotification({ text: c('Success').t`Public key trusted`, type: 'success' });
+        void call(); // No await
         onSubmit?.();
         rest.onClose?.();
     };

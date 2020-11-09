@@ -18,14 +18,7 @@ interface Props {
     onClose?: () => void;
 }
 
-const HeaderGroupModal = ({
-    recipientGroup,
-    contacts: allContacts,
-    globalIcon,
-    mapStatusIcons,
-    onClose,
-    ...rest
-}: Props) => {
+const GroupModal = ({ recipientGroup, contacts: allContacts, globalIcon, mapStatusIcons, onClose, ...rest }: Props) => {
     const [uid] = useState<string>(generateUID('header-group-modal'));
 
     const contacts = getContactsOfGroup(allContacts, recipientGroup.group?.ID);
@@ -66,4 +59,4 @@ const HeaderGroupModal = ({
     );
 };
 
-export default HeaderGroupModal;
+export default GroupModal;

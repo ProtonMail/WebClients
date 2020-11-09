@@ -121,7 +121,8 @@ export const decryptMessage = async (
 };
 
 export const verifyMessage = async (
-    { decryptedBody, signature }: DecryptMessageResult,
+    decryptedBody: string,
+    signature: OpenPGPSignature | undefined,
     message: Message,
     publicKeys: OpenPGPKey[]
 ): Promise<{

@@ -1,4 +1,3 @@
-import { OpenPGPKey } from 'pmcrypto';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
@@ -12,11 +11,13 @@ import {
     useFolders,
     ButtonGroup as OriginalButtonGroup,
     Tooltip,
+    useAddresses,
 } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { MailSettings } from 'proton-shared/lib/interfaces';
-
+import { isInternal } from 'proton-shared/lib/mail/messages';
+import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import { MESSAGE_ACTIONS } from '../../../constants';
@@ -28,19 +29,20 @@ import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import { getCurrentFolderID } from '../../../helpers/labels';
 import HeaderExtra from './HeaderExtra';
-import HeaderRecipientsSimple from './HeaderRecipientsSimple';
-import HeaderRecipientsDetails from './HeaderRecipientsDetails';
+import RecipientsSimple from '../recipients/RecipientsSimple';
+import RecipientsDetails from '../recipients/RecipientsDetails';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
 import HeaderDropdown from './HeaderDropdown';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderExpandedDetails from './HeaderExpandedDetails';
-import HeaderRecipientType from './HeaderRecipientType';
-import HeaderRecipientItem from './HeaderRecipientItem';
+import RecipientType from '../recipients/RecipientType';
+import RecipientItem from '../recipients/RecipientItem';
 import { OnCompose } from '../../../hooks/useCompose';
 import { Breakpoints } from '../../../models/utils';
 import ItemAction from '../../list/ItemAction';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
+import { isSelfAddress } from '../../../helpers/addresses';
 
 // Hacky override of the typing
 const ButtonGroup = OriginalButtonGroup as ({
@@ -64,8 +66,6 @@ interface Props {
     messageLoaded: boolean;
     bodyLoaded: boolean;
     sourceMode: boolean;
-    onTrustSigningKey: (key: OpenPGPKey) => void;
-    onTrustAttachedKey: (key: OpenPGPKey) => void;
     onResignContact: () => void;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
@@ -86,8 +86,6 @@ const HeaderExpanded = ({
     messageLoaded,
     bodyLoaded,
     sourceMode,
-    onTrustSigningKey,
-    onTrustAttachedKey,
     onResignContact,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
@@ -98,6 +96,7 @@ const HeaderExpanded = ({
     onSourceMode,
     breakpoints,
 }: Props) => {
+    const [addresses = []] = useAddresses();
     const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [contactGroups = []] = useContactGroups();
     const [folders = []] = useFolders();
@@ -124,12 +123,19 @@ const HeaderExpanded = ({
         });
     };
 
+    const showPinPublicKey =
+        isInternal(message.data) &&
+        !isSelfAddress(message.data?.Sender.Address, addresses) &&
+        message.signingPublicKey &&
+        message.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID;
+
     const from = (
-        <HeaderRecipientItem
+        <RecipientItem
             recipientOrGroup={{ recipient: message.data?.Sender }}
             contacts={contacts}
             onCompose={onCompose}
             isLoading={!messageLoaded}
+            signingPublicKey={showPinPublicKey ? message.signingPublicKey : undefined}
         />
     );
 
@@ -147,7 +153,7 @@ const HeaderExpanded = ({
             <div className="flex flex-nowrap flex-items-center cursor-pointer" onClick={handleClick}>
                 <span className="flex flex-item-fluid flex-nowrap mr0-5">
                     {showDetails ? (
-                        <HeaderRecipientType
+                        <RecipientType
                             label={c('Label').t`From:`}
                             className={classnames([
                                 'flex flex-items-start flex-nowrap',
@@ -155,7 +161,7 @@ const HeaderExpanded = ({
                             ])}
                         >
                             {from}
-                        </HeaderRecipientType>
+                        </RecipientType>
                     ) : (
                         <div
                             className={classnames([
@@ -208,7 +214,7 @@ const HeaderExpanded = ({
             >
                 <div className="flex-item-fluid flex flex-nowrap mr0-5 onmobile-mr0 message-header-recipients">
                     {showDetails ? (
-                        <HeaderRecipientsDetails
+                        <RecipientsDetails
                             message={message}
                             mapStatusIcons={messageViewIcons.mapStatusIcon}
                             contacts={contacts}
@@ -217,7 +223,7 @@ const HeaderExpanded = ({
                             isLoading={!messageLoaded}
                         />
                     ) : (
-                        <HeaderRecipientsSimple
+                        <RecipientsSimple
                             message={message.data}
                             contacts={contacts}
                             contactGroups={contactGroups}
@@ -301,8 +307,6 @@ const HeaderExpanded = ({
                 labelID={labelID}
                 message={message}
                 sourceMode={sourceMode}
-                onTrustSigningKey={onTrustSigningKey}
-                onTrustAttachedKey={onTrustAttachedKey}
                 onResignContact={onResignContact}
                 messageLoaded={messageLoaded}
                 onLoadRemoteImages={onLoadRemoteImages}

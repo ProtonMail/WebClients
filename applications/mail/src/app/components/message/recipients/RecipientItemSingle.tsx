@@ -12,7 +12,8 @@ import {
     useNotifications,
     useModals,
 } from 'react-components';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { OpenPGPKey } from 'pmcrypto';
+import { ContactEmail, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import { Recipient } from 'proton-shared/lib/interfaces';
@@ -22,8 +23,9 @@ import { getRecipientLabelDetailed } from '../../../helpers/addresses';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { OnCompose } from '../../../hooks/useCompose';
-import HeaderRecipientItemLayout from './HeaderRecipientItemLayout';
+import RecipientItemLayout from './RecipientItemLayout';
 import { getContactOfRecipient } from '../../../helpers/contacts';
+import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
 interface Props {
     recipient: Recipient;
@@ -33,9 +35,10 @@ interface Props {
     showLockIcon?: boolean;
     contacts?: ContactEmail[];
     onCompose: OnCompose;
+    signingPublicKey?: OpenPGPKey;
 }
 
-const HeaderRecipientItemRecipient = ({
+const RecipientItemSingle = ({
     recipient,
     mapStatusIcons,
     globalIcon,
@@ -43,6 +46,7 @@ const HeaderRecipientItemRecipient = ({
     showLockIcon = true,
     contacts,
     onCompose,
+    signingPublicKey,
 }: Props) => {
     const [uid] = useState(generateUID('dropdown-recipient'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -51,6 +55,10 @@ const HeaderRecipientItemRecipient = ({
 
     const contact = getContactOfRecipient(contacts, recipient.Address);
     const { ContactID } = contact || {};
+    const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined);
+    const label = getRecipientLabelDetailed(recipient, contacts);
+    const initial = getInitial(label);
+    const showTrustPublicKey = !!signingPublicKey;
 
     const handleCompose = (event: MouseEvent) => {
         event.stopPropagation();
@@ -86,12 +94,22 @@ const HeaderRecipientItemRecipient = ({
         );
     };
 
-    const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined);
-    const label = getRecipientLabelDetailed(recipient, contacts);
-    const initial = getInitial(label);
+    const handleClickTrust = (event: MouseEvent) => {
+        event.stopPropagation();
+
+        const contact: ContactWithBePinnedPublicKey = {
+            emailAddress: recipient.Address || '',
+            name: label,
+            contactID: ContactID,
+            isInternal: true,
+            bePinnedPublicKey: signingPublicKey as OpenPGPKey,
+        };
+
+        createModal(<TrustPublicKeyModal contact={contact} />);
+    };
 
     return (
-        <HeaderRecipientItemLayout
+        <RecipientItemLayout
             button={
                 <>
                     <button
@@ -132,6 +150,13 @@ const HeaderRecipientItemRecipient = ({
                                         .t`Create new contact`}</span>
                                 </DropdownMenuButton>
                             )}
+                            {showTrustPublicKey && (
+                                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleClickTrust}>
+                                    <Icon name="contact" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                        .t`Trust Public Key`}</span>
+                                </DropdownMenuButton>
+                            )}
                         </DropdownMenu>
                     </Dropdown>
                 </>
@@ -152,4 +177,4 @@ const HeaderRecipientItemRecipient = ({
     );
 };
 
-export default HeaderRecipientItemRecipient;
+export default RecipientItemSingle;

@@ -6,10 +6,10 @@ interface Props {
     children: ReactNode;
 }
 
-const HeaderRecipientType = ({
+const RecipientType = ({
     label,
     className = 'flex flex-items-start flex-nowrap message-recipient-item-expanded mw100',
-    children
+    children,
 }: Props) => {
     return (
         <span className={className}>
@@ -19,4 +19,4 @@ const HeaderRecipientType = ({
     );
 };
 
-export default HeaderRecipientType;
+export default RecipientType;

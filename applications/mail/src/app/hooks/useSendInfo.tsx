@@ -88,7 +88,7 @@ export const useUpdateRecipientSendInfo = (
                     emailValidation,
                 },
             }));
-            const encryptionPreferences = await getEncryptionPreferences(emailAddress);
+            const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
 
             if (sendPreferences.failure?.type === CONTACT_SIGNATURE_NOT_VERIFIED) {
@@ -219,7 +219,7 @@ export const useUpdateGroupSendInfo = (
                     };
                 });
             }
-            const encryptionPreferences = await getEncryptionPreferences(emailAddress);
+            const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
             const sendIcon = getSendStatusIcon(sendPreferences);
             if (!signal.aborted) {
@@ -334,7 +334,7 @@ const getUpdatedSendInfo = async (
     setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>,
     getEncryptionPreferences: (emailAddress: string, silence?: any) => Promise<EncryptionPreferences>
 ) => {
-    const encryptionPreferences = await getEncryptionPreferences(emailAddress);
+    const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0);
     const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
     const sendIcon = getSendStatusIcon(sendPreferences);
     const updatedSendInfo = {

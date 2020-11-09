@@ -7,7 +7,7 @@ import {
     useLabels,
     useFolders,
     useWelcomeFlags,
-    useModals
+    useModals,
 } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
@@ -20,6 +20,7 @@ import { useLinkHandler } from '../hooks/useLinkHandler';
 import { OnCompose } from '../hooks/useCompose';
 import { useDeepMemo } from '../hooks/useDeepMemo';
 import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
+import { useContactsListener } from '../hooks/useContactsListener';
 
 type RouteProps = { labelID: string; elementID?: string; messageID?: string };
 
@@ -49,6 +50,7 @@ const PageContainer = ({ params, breakpoints, onCompose }: Props) => {
     }, []);
 
     useLinkHandler(onCompose);
+    useContactsListener();
 
     if (!labelID) {
         return <Redirect to="/inbox" />;

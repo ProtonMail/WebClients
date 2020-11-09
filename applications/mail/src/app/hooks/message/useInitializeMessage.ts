@@ -79,7 +79,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             }
 
             // Trigger all public key and signature verification but we are not waiting for it
-            void verifyMessage(decryption);
+            void verifyMessage(decryption.decryptedBody, decryption.signature);
 
             if (isUnreadMessage(getData())) {
                 markAs([getData()], labelID, MARK_AS_STATUS.READ);

@@ -7,11 +7,11 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import { MessageExtendedWithData } from '../../../models/message';
 import MessageBody from '../MessageBody';
-import HeaderRecipientsDetails from '../header/HeaderRecipientsDetails';
+import RecipientsDetails from '../recipients/RecipientsDetails';
 import ItemDate from '../../list/ItemDate';
 import MessageFooter from '../MessageFooter';
 import { getRecipientLabelDetailed } from '../../../helpers/addresses';
-import HeaderRecipientType from '../header/HeaderRecipientType';
+import RecipientType from '../recipients/RecipientType';
 
 import './MessagePrint.scss';
 
@@ -50,20 +50,20 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
             <div className="message-print">
                 <div className="message-print-header pb1 mb1">
                     <h2 className="message-print-subject bold pb0-5 mb0-5">{message.data?.Subject}</h2>
-                    <HeaderRecipientType label={c('Label').t`From:`}>
+                    <RecipientType label={c('Label').t`From:`}>
                         {getRecipientLabelDetailed(sender, contacts)}{' '}
                         <span className="opacity-50">&lt;{sender?.Address}&gt;</span>
-                    </HeaderRecipientType>
-                    <HeaderRecipientsDetails
+                    </RecipientType>
+                    <RecipientsDetails
                         message={message}
                         contacts={contacts}
                         contactGroups={contactGroups}
                         onCompose={noop}
                         isLoading={false}
                     />
-                    <HeaderRecipientType label={c('Label').t`Date:`}>
+                    <RecipientType label={c('Label').t`Date:`}>
                         <ItemDate element={message.data} labelID={labelID} mode="full" />
-                    </HeaderRecipientType>
+                    </RecipientType>
                 </div>
                 <MessageBody messageLoaded bodyLoaded sourceMode={false} message={message} forceBlockquote />
                 {hasAttachments(message.data) ? <MessageFooter message={message} showActions={false} /> : null}

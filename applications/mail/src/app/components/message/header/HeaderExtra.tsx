@@ -1,4 +1,3 @@
-import { OpenPGPKey } from 'pmcrypto';
 import { isReceived } from 'proton-shared/lib/mail/messages';
 import React from 'react';
 import ExtraImages from '../extras/ExtraImages';
@@ -17,8 +16,6 @@ import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 interface Props {
     message: MessageExtended;
     sourceMode: boolean;
-    onTrustSigningKey: (key: OpenPGPKey) => void;
-    onTrustAttachedKey: (key: OpenPGPKey) => void;
     onResignContact: () => void;
     messageLoaded: boolean;
     onLoadRemoteImages: () => void;
@@ -31,8 +28,6 @@ const HeaderExtra = ({
     message,
     sourceMode,
     messageLoaded,
-    onTrustSigningKey,
-    onTrustAttachedKey,
     onResignContact,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
@@ -47,13 +42,7 @@ const HeaderExtra = ({
             <ExtraUnsubscribe message={message} />
             <ExtraReadReceipt message={message} />
             <ExtraAutoReply message={message} />
-            {messageLoaded && (
-                <ExtraPinKey
-                    message={message}
-                    onTrustSigningKey={onTrustSigningKey}
-                    onTrustAttachedKey={onTrustAttachedKey}
-                />
-            )}
+            {messageLoaded && <ExtraPinKey message={message} />}
             <ExtraAskResign message={message} onResignContact={onResignContact} />
             {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
             {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}

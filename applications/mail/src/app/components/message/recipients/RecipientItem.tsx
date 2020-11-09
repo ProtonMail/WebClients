@@ -3,14 +3,15 @@ import { c } from 'ttag';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { Recipient } from 'proton-shared/lib/interfaces';
 import { Tooltip } from 'react-components';
+import { OpenPGPKey } from 'pmcrypto';
 
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
 
 import { OnCompose } from '../../../hooks/useCompose';
-import HeaderRecipientItemLayout from './HeaderRecipientItemLayout';
-import HeaderRecipientItemGroup from './HeaderRecipientItemGroup';
-import HeaderRecipientItemRecipient from './HeaderRecipientItemRecipient';
+import RecipientItemLayout from './RecipientItemLayout';
+import RecipientItemGroup from './RecipientItemGroup';
+import RecipientItemSingle from './RecipientItemSingle';
 
 interface Props {
     recipientOrGroup: RecipientOrGroup;
@@ -21,9 +22,10 @@ interface Props {
     contacts: ContactEmail[];
     onCompose: OnCompose;
     isLoading: boolean;
+    signingPublicKey?: OpenPGPKey;
 }
 
-const HeaderRecipientItem = ({
+const RecipientItem = ({
     recipientOrGroup,
     mapStatusIcons,
     globalIcon,
@@ -32,10 +34,11 @@ const HeaderRecipientItem = ({
     contacts,
     onCompose,
     isLoading,
+    signingPublicKey,
 }: Props) => {
     if (isLoading) {
         return (
-            <HeaderRecipientItemLayout
+            <RecipientItemLayout
                 isLoading
                 button={
                     <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded50 bl mr0-5" />
@@ -47,7 +50,7 @@ const HeaderRecipientItem = ({
 
     if (recipientOrGroup.group) {
         return (
-            <HeaderRecipientItemGroup
+            <RecipientItemGroup
                 group={recipientOrGroup.group}
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
@@ -60,7 +63,7 @@ const HeaderRecipientItem = ({
 
     if (recipientOrGroup.recipient) {
         return (
-            <HeaderRecipientItemRecipient
+            <RecipientItemSingle
                 recipient={recipientOrGroup.recipient as Recipient}
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
@@ -68,13 +71,14 @@ const HeaderRecipientItem = ({
                 showLockIcon={showLockIcon}
                 contacts={contacts}
                 onCompose={onCompose}
+                signingPublicKey={signingPublicKey}
             />
         );
     }
 
     // Undisclosed Recipient
     return (
-        <HeaderRecipientItemLayout
+        <RecipientItemLayout
             button={
                 <Tooltip title={c('Title').t`All recipients were added to the BCC field and cannot be disclosed`}>
                     <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded50 bl mr0-5 flex flex-justify-center flex-items-center">
@@ -88,4 +92,4 @@ const HeaderRecipientItem = ({
     );
 };
 
-export default HeaderRecipientItem;
+export default RecipientItem;

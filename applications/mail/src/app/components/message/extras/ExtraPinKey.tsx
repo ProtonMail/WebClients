@@ -1,4 +1,3 @@
-import { OpenPGPKey } from 'pmcrypto';
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
 import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
@@ -104,10 +103,9 @@ const getBannerMessage = (promptKeyPinningType: PROMPT_KEY_PINNING_TYPE) => {
 
 interface Props {
     message: MessageExtended;
-    onTrustSigningKey: (key: OpenPGPKey) => void;
-    onTrustAttachedKey: (key: OpenPGPKey) => void;
 }
-const ExtraPinKey = ({ message, onTrustSigningKey, onTrustAttachedKey }: Props) => {
+
+const ExtraPinKey = ({ message }: Props) => {
     const api = useApi();
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
@@ -170,11 +168,7 @@ const ExtraPinKey = ({ message, onTrustSigningKey, onTrustAttachedKey }: Props) 
             isInternal: isSenderInternal,
             bePinnedPublicKey,
         };
-        const handleSubmit =
-            promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED
-                ? () => onTrustAttachedKey(firstAttachedPublicKey as OpenPGPKey)
-                : () => onTrustSigningKey(bePinnedPublicKey);
-        return createModal(<TrustPublicKeyModal contact={contact} onSubmit={handleSubmit} />);
+        return createModal(<TrustPublicKeyModal contact={contact} />);
     };
 
     return (
@@ -197,7 +191,10 @@ const ExtraPinKey = ({ message, onTrustSigningKey, onTrustAttachedKey }: Props) 
                             {c('Action').t`Never show`}
                         </InlineLinkButton>
                     ) : (
-                        <LearnMore className="color-currentColor" url="https://protonmail.com/support/knowledge-base/address-verification/" />
+                        <LearnMore
+                            className="color-currentColor"
+                            url="https://protonmail.com/support/knowledge-base/address-verification/"
+                        />
                     )}
                 </div>
             </div>
