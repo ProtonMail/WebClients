@@ -430,6 +430,7 @@ function useFiles() {
             if (fileCount >= MAX_SAFE_UPLOADING_FILE_COUNT) {
                 await new Promise((resolve, reject) => {
                     openConfirmModal({
+                        canUndo: true,
                         title: c('Title').t`Warning`,
                         confirm: c('Action').t`Continue`,
                         message: c('Info').t`Uploading hundreds of files at once may have a performance impact.`,
