@@ -5,6 +5,7 @@ import { DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE, CURRENCIES, PAYMENT_METHOD_TYPE
 import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 import { clearPlanIDs, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
+import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 
 import { Alert, FormModal } from '../../../components';
 import {
@@ -133,6 +134,12 @@ const NewSubscriptionModal = ({
             await call();
             setStep(SUBSCRIPTION_STEPS.THANKS);
         } catch (error) {
+            const { Code = 0 } = error.data || {};
+
+            if (Code === API_CUSTOM_ERROR_CODES.PAYMENTS_SUBSCRIPTION_AMOUNT_MISMATCH) {
+                await check(); // eslint-disable-line @typescript-eslint/no-use-before-define
+                createNotification({ text: c('Error').t`Checkout expired, please try again.`, type: 'error' });
+            }
             setStep(SUBSCRIPTION_STEPS.PAYMENT);
             throw error;
         }
