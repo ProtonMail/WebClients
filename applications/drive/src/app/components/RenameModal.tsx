@@ -2,7 +2,6 @@ import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { LinkType } from '../interfaces/link';
 import { validateLinkNameField, formatLinkName } from '../utils/validation';
 import useDrive from '../hooks/drive/useDrive';
@@ -81,7 +80,7 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
             autoFocusClose={false}
             {...rest}
         >
-            <Row className={FEATURE_FLAGS.includes('drive-sprint-25') ? 'mt1 mb1' : 'p1 pl2'}>
+            <Row className="mt1 mb1">
                 <Label>{isFolder ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
                 <Field>
                     <Input

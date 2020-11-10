@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, Tooltip, classnames } from 'react-components';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { Download, Upload } from '../../interfaces/transfer';
 import {
     isTransferActive,
@@ -148,8 +147,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
     const minMaxTitle = minimized ? c('Action').t`Maximize transfers` : c('Action').t`Minimize transfers`;
     const closeTitle = c('Action').t`Close transfers`;
 
-    const includeLatestFeatures = FEATURE_FLAGS.includes('drive-sprint-25');
-    const closeDisabled = !includeLatestFeatures && !allTransfersFinished;
+    const closeDisabled = !allTransfersFinished;
 
     return (
         <div className="pd-transfers-heading flex flex-items-center flex-nowrap pl0-5 pr0-5 color-global-light">
