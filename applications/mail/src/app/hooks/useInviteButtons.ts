@@ -1,6 +1,5 @@
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
-import { pick } from 'proton-shared/lib/helpers/object';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import {
     CalendarEvent,
@@ -70,7 +69,7 @@ const useInviteButtons = ({
                 const prodId = getProdId(config);
                 const ics = createReplyIcs({
                     prodId,
-                    vevent: pick(vevent, ['uid', 'dtstart', 'dtend', 'sequence', 'recurrence-id', 'organizer']),
+                    vevent,
                     emailTo: attendee.vcalComponent.value,
                     partstat,
                 });
