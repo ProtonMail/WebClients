@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { validateLinkNameField, formatLinkName } from '../utils/validation';
 import useDrive from '../hooks/drive/useDrive';
 import { useDriveActiveFolder, DriveFolder } from './Drive/DriveFolderProvider';
@@ -75,7 +74,7 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...rest }: Props) =>
             autoFocusClose={false}
             {...rest}
         >
-            <Row className={FEATURE_FLAGS.includes('drive-sprint-25') ? 'mt1 mb1' : 'p1 pl2'}>
+            <Row className="mt1 mb1">
                 <Label>{c('Label').t`Folder name`}</Label>
                 <Field>
                     <Input
