@@ -1,3 +1,26 @@
+# [4.0.0-beta.3] - 2020-11-11 
+
+We have been working on adding new functionality to ProtonDrive, as well as listening to your feedback to address frictions you've been having.
+
+We resolved large file uploading errors by curing the memory leaks, and before uploading hundreds of files, user will get a warning message. This is to improve the uploading files experience, but it does not stop here, as we will continue iterating and building better product going forward.
+
+Thank you for your feedback and time with us. 
+
+## Fixed
+
+- Memory leaks addressed which caused large uploads to fail
+- Updated the encryption label text
+- Sorting arrows aligned
+- Labels aligned when creating a new folder
+- Shift-selecting items on Windows
+
+## Added
+
+- Upload file button in the toolbar
+- Retry loop for smoother transfers
+- Refresh button to reload the current view in My files and Trash
+- Cancel all the transfers when closing Transfer manager
+
 # [4.0.0-beta.2] - 2020-10-14 
 
 ## Fixed
