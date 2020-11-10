@@ -58,7 +58,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
                         <>
                             <ToolbarSeparator />
                             <UploadFolderButton />
-                            {FEATURE_FLAGS.includes('drive-sprint-25') && <UploadFileButton />}
+                            <UploadFileButton />
                         </>
                     )}
                 </>
