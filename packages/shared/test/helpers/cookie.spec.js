@@ -42,4 +42,16 @@ describe('cookie helper', () => {
         document.cookie = 'name=124';
         expect(getCookie('name')).toEqual('124');
     });
+
+    it('should get first cookie if there are multiple', () => {
+        expect(getCookie('0d938947', 'a=1; 0d938947=1; 0d938947=1; b=1')).toEqual('1');
+    });
+
+    it('should return undefined cookie if there is no match', () => {
+        expect(getCookie('0d938947', 'a=1; b=1')).toBeUndefined();
+    });
+
+    it('should get first cookie if there is one', () => {
+        expect(getCookie('0d938947', '0d938947=1')).toEqual('1');
+    });
 });

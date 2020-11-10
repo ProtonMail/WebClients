@@ -8,12 +8,8 @@ export const getCookies = (): string[] => {
     }
 };
 
-export const getCookie = (name: string) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts && parts.length === 2) {
-        return parts.pop()?.split(';').shift();
-    }
+export const getCookie = (name: string, cookies = document.cookie) => {
+    return `; ${cookies}`.match(`;\\s*${name}=([^;]+)`)?.[1];
 };
 
 export const checkCookie = (name: string, value: string) => {
@@ -27,6 +23,7 @@ export interface SetCookieArguments {
     path?: string;
     cookieDomain?: string;
 }
+
 export const setCookie = ({
     cookieName,
     cookieValue: maybeCookieValue,
