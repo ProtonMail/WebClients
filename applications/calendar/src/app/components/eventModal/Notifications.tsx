@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkButton, ErrorZone, Icon } from 'react-components';
+import { LinkButton, ErrorZone, Icon, classnames } from 'react-components';
 import { c } from 'ttag';
 
 import NotificationInput from './inputs/NotificationInput';
@@ -31,7 +31,7 @@ const Notifications = ({
         <>
             {notifications.map((notification, index) => {
                 return (
-                    <div className="mb1 flex flex-nowrap flex-items-center">
+                    <div className="mb0-5 flex flex-nowrap flex-items-center">
                         <NotificationInput
                             hasWhen={hasWhen}
                             hasType={hasType}
@@ -52,7 +52,7 @@ const Notifications = ({
             })}
             {canAdd && (
                 <LinkButton
-                    className="p0"
+                    className={classnames(['p0', notifications.length === 0 && 'mt0-5'])}
                     data-test-id="add-notification"
                     title={c('Title').t`Add another notification to remind you of this event`}
                     onClick={() => onChange(addItem(notifications, { ...defaultNotification }))}
