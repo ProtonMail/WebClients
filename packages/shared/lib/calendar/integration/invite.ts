@@ -64,22 +64,42 @@ interface CreateReplyIcsParams {
     prodId: string;
     emailTo: string;
     partstat: ICAL_ATTENDEE_STATUS;
-    vevent: Pick<VcalVeventComponent, 'uid' | 'dtstart' | 'dtend' | 'sequence' | 'recurrence-id' | 'organizer'>;
+    vevent: VcalVeventComponent;
     vtimezone?: VcalVtimezoneComponent;
+    keepDtstamp?: boolean;
 }
 
-export const createReplyIcs = ({ prodId, emailTo, partstat, vevent, vtimezone }: CreateReplyIcsParams): string => {
-    // use current time as dtstamp
+export const createReplyIcs = ({
+    prodId,
+    emailTo,
+    partstat,
+    vevent,
+    vtimezone,
+    keepDtstamp,
+}: CreateReplyIcsParams): string => {
+    // use current time as dtstamp unless indicated otherwise
+    const propertiesToKeep: (keyof VcalVeventComponent)[] = [
+        'uid',
+        'dtstart',
+        'dtend',
+        'sequence',
+        'recurrence-id',
+        'organizer',
+        'summary',
+    ];
+    if (keepDtstamp) {
+        propertiesToKeep.push('dtstamp');
+    }
     const replyVevent = withDtstamp({
+        ...pick(vevent, propertiesToKeep),
         component: 'vevent',
-        ...pick(vevent, ['uid', 'dtstart', 'dtend', 'sequence', 'recurrence-id', 'organizer']),
         attendee: [
             {
                 value: emailTo,
                 parameters: { partstat },
             },
         ],
-    } as VcalVeventComponent);
+    });
     const replyVcal: RequireSome<VcalVcalendar, 'components'> = {
         component: 'vcalendar',
         components: [replyVevent],
