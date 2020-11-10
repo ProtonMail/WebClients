@@ -86,9 +86,9 @@ function TransferManager() {
 
     useEffect(() => {
         if (FEATURE_FLAGS.includes('drive-sprint-25')) {
-            document.addEventListener('unload', clearAllTransfers);
+            window.addEventListener('unload', clearAllTransfers);
             return () => {
-                document.removeEventListener('unload', clearAllTransfers);
+                window.removeEventListener('unload', clearAllTransfers);
             };
         }
     }, [clearAllTransfers]);
