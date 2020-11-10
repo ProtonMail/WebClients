@@ -7,16 +7,17 @@ We resolved large file uploading errors by curing the memory leaks, and before u
 Thank you for your feedback and time with us. 
 
 ## Fixed
-
+​
 - Memory leaks addressed which caused large uploads to fail
 - Updated the encryption label text
 - Sorting arrows aligned
 - Labels aligned when creating a new folder
 - Shift-selecting items on Windows
-
+​
 ## Added
-
+​
 - Upload file button in the toolbar
+- Warning message when uploading many files
 - Retry loop for smoother transfers
 - Refresh button to reload the current view in My files and Trash
 - Cancel all the transfers when closing Transfer manager
