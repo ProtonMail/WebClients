@@ -8,7 +8,6 @@ import {
     isTransferPaused,
     isTransferError,
     isTransferCanceled,
-    isTransferFinished,
     calculateProgress,
 } from '../../utils/transfer';
 import { TransfersStats } from './interfaces';
@@ -31,7 +30,6 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
 
     const activeUploads = useMemo(() => uploads.filter(isTransferActive), [uploads]);
     const activeDownloads = useMemo(() => downloads.filter(isTransferActive), [downloads]);
-    const allTransfersFinished = useMemo(() => transfers.every(isTransferFinished), [transfers]);
 
     const doneUploads = useMemo(() => uploads.filter(isTransferDone), [uploads]);
     const doneDownloads = useMemo(() => downloads.filter(isTransferDone), [downloads]);
@@ -147,8 +145,6 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
     const minMaxTitle = minimized ? c('Action').t`Maximize transfers` : c('Action').t`Minimize transfers`;
     const closeTitle = c('Action').t`Close transfers`;
 
-    const closeDisabled = !allTransfersFinished;
-
     return (
         <div className="pd-transfers-heading flex flex-items-center flex-nowrap pl0-5 pr0-5 color-global-light">
             <div
@@ -175,19 +171,8 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
                     <span className="sr-only">{minMaxTitle}</span>
                 </button>
             </Tooltip>
-            <Tooltip
-                title={closeTitle}
-                className={classnames([
-                    'pd-transfers-headingTooltip flex-item-noshrink flex',
-                    closeDisabled && 'pd-transfers-headingTooltip--isDisabled',
-                ])}
-            >
-                <button
-                    type="button"
-                    disabled={closeDisabled}
-                    className="pd-transfers-headingButton flex p0-5"
-                    onClick={onClose}
-                >
+            <Tooltip title={closeTitle} className={classnames(['pd-transfers-headingTooltip flex-item-noshrink flex'])}>
+                <button type="button" className="pd-transfers-headingButton flex p0-5" onClick={onClose}>
                     <Icon className="mauto" name="off" />
                     <span className="sr-only">{closeTitle}</span>
                 </button>
