@@ -149,9 +149,10 @@ export const prepareContact = async (
 
     const { vcards, errors } = sanitizedCards.reduce(
         (acc, { type, data, error }) => {
-            if (type === SUCCESS) {
+            if (data) {
                 acc.vcards.push(data);
-            } else {
+            }
+            if (error) {
                 acc.errors.push({ type, error });
             }
             return acc;
