@@ -616,7 +616,7 @@ const InteractiveCalendarView = ({
             const organizerEmail = getAttendeeEmail(organizer);
             const ics = createReplyIcs({
                 prodId,
-                vevent: pick(vevent, ['uid', 'dtstart', 'dtend', 'sequence', 'recurrence-id', 'organizer']),
+                vevent,
                 emailTo: selfAttendee.value,
                 partstat,
             });
