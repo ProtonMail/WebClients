@@ -28,6 +28,16 @@ module.exports = {
                     ...config.module.rules.filter((rule) => {
                         return rule.test.toString().includes('mdx');
                     }),
+                    {
+                        test: /\.stories\.tsx?$/,
+                        loaders: [
+                            {
+                                loader: require.resolve('@storybook/source-loader'),
+                                options: { parser: 'typescript' },
+                            },
+                        ],
+                        enforce: 'pre',
+                    },
                     ...[getJsLoader(options), ...getCssLoaders(options), ...getAssetsLoaders(options)],
                 ],
             },
@@ -42,21 +52,17 @@ module.exports = {
     },
     stories: ['../src/stories/*.stories.*'],
     addons: [
-        {
-            name: '@storybook/addon-docs',
-            options: {
-                sourceLoaderOptions: {
-                    parser: 'typescript',
-                    injectStoryParameters: true,
-                },
-            },
-        },
+        '@storybook/addon-docs',
         '@storybook/addon-essentials',
+        '@storybook/addon-storysource',
     ],
     typescript: {
         check: false,
         checkOptions: {},
+        reactDocgen: 'react-docgen-typescript',
         reactDocgenTypescriptOptions: {
+        shouldExtractLiteralValuesFromEnum: true,
+        propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
         },
     },
 };
