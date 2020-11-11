@@ -288,7 +288,7 @@ const SubscriptionCustomization = ({
                 feature={c('Feature').t`${vpnCountries.basic.length} countries`}
             />,
             <SubscriptionFeatureRow key="speed" icon="speed-medium" feature={c('Feature').t`High speed`} />,
-            <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`P2P/Bittorrent support`} />,
+            <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`P2P/BitTorrent support`} />,
         ],
         [PLANS.VPNPLUS]: [
             <SubscriptionFeatureRow
@@ -302,7 +302,7 @@ const SubscriptionCustomization = ({
                 feature={c('Feature').t`${vpnCountries.all.length} countries`}
             />,
             <SubscriptionFeatureRow key="speed" icon="speed-fast" feature={c('Feature').t`Highest speed`} />,
-            <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`P2P/Bittorrent support`} />,
+            <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`P2P/BitTorrent support`} />,
             <SubscriptionFeatureRow
                 key="blocked-content"
                 icon="blocked-content"
