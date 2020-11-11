@@ -40,6 +40,20 @@ module.exports = {
             ]
         };
     },
+    module: {
+        rules: [
+            {
+                test: /\.stories\.tsx?$/,
+                loaders: [
+                    {
+                        loader: require.resolve('@storybook/source-loader'),
+                        options: { parser: 'typescript' },
+                    },
+                ],
+                enforce: 'pre',
+            },
+        ],
+    },
     stories: ['../src/stories/*.stories.*'],
     addons: [
         {
@@ -52,11 +66,24 @@ module.exports = {
             },
         },
         '@storybook/addon-essentials',
+        {
+            
+            name: '@storybook/addon-storysource',
+            options: {
+                sourceLoaderOptions: {
+                    parser: 'typescript',
+                    injectStoryParameters: true,
+                },
+            },
+        }
     ],
     typescript: {
         check: false,
         checkOptions: {},
+        reactDocgen: 'react-docgen-typescript',
         reactDocgenTypescriptOptions: {
+        shouldExtractLiteralValuesFromEnum: true,
+        propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
         },
     },
 };
