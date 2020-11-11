@@ -1,0 +1,22 @@
+import { useState } from "react";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { SelectTwo, Option } from "react-components";
+
+<Meta title="Proton UI / Select" component={SelectTwo} />
+
+# Select
+
+Use the fancy schmancy Select for inputs which have the user do a thing.
+
+<Canvas>
+  <Story name="basic">
+    <SelectTwo aria-label="ant" value="" placeholder={<span>placeholder...</span>}>
+        <Option value="ant">Ant</Option>
+        <Option value="zebra">Zebra</Option>
+    </SelectTwo>
+    <SelectTwo aria-label="zebra" value="zebra">
+        <Option value="ant">Ant</Option>
+        <Option value="zebra">Zebra</Option>
+    </SelectTwo>
+  </Story>
+</Canvas>
