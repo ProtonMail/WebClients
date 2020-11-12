@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useAppTitle, useConfig } from '../../hooks';
 import { classnames, getAppVersion } from '../../helpers';
 
-import PublicTopBanners from '../app/PublicTopBanners';
+import { PublicTopBanners } from '../topBanners';
 import { Href } from '../../components';
 
 import PublicLanguageSelect from './PublicLanguageSelect';
