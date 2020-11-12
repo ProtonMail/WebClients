@@ -106,7 +106,7 @@ function useFiles() {
                         const adjustedFileName = adjustName(i);
                         return {
                             filename: adjustedFileName,
-                            hash: await generateLookupHash(adjustedFileName.toLowerCase(), parentKeys.hashKey),
+                            hash: await generateLookupHash(adjustedFileName, parentKeys.hashKey),
                         };
                     })
                 );
@@ -160,13 +160,12 @@ function useFiles() {
         file: File,
         noNameCheck = false
     ) => {
-        const lowercaseName = file.name.toLowerCase();
         let canceled = false;
         // Queue for files with same name, to not duplicate names
         // Another queue for uploads in general so that they don't timeout
         const setupPromise = queuedFunction(
             'upload_setup',
-            queuedFunction(`upload_setup:${lowercaseName}`, async () => {
+            queuedFunction(`upload_setup:${file.name}`, async () => {
                 const error = validateLinkName(file.name);
 
                 if (error) {
@@ -186,7 +185,7 @@ function useFiles() {
                     }
                     return {
                         filename: file.name,
-                        hash: await generateLookupHash(lowercaseName, parentKeys.hashKey),
+                        hash: await generateLookupHash(file.name, parentKeys.hashKey),
                     };
                 };
 
@@ -636,9 +635,9 @@ function useFiles() {
         const fileStreamPromises: Promise<void>[] = [];
         const abortController = new AbortController();
 
-        const downloadFolder = async (linkId: string, filePath = ''): Promise<any> => {
+        const downloadFolder = async (linkId: string, parentPath = ''): Promise<any> => {
             if (abortController.signal.aborted) {
-                throw Error(`Folder download canceled for ${filePath}`);
+                throw Error(`Folder download canceled for ${parentPath}`);
             }
 
             await fetchAllFolderPages(shareId, linkId);
@@ -649,7 +648,6 @@ function useFiles() {
             }
 
             const promises = children.map(async (child) => {
-                const path = `${filePath}/${child.Name}`;
                 if (child.Type === LinkType.FILE) {
                     const promise = new Promise<void>((resolve, reject) => {
                         addDownload(
@@ -660,7 +658,8 @@ function useFiles() {
                                 onStart: async (stream) => {
                                     cb.onStartFileTransfer({
                                         stream,
-                                        path,
+                                        parentPath,
+                                        fileName: child.Name,
                                     }).catch(reject);
                                     return getFileBlocks(shareId, child.LinkID);
                                 },
@@ -687,8 +686,11 @@ function useFiles() {
                         })
                     );
                 } else if (!abortController.signal.aborted) {
-                    cb.onStartFolderTransfer(path).catch((err) => console.error(`Failed to zip empty folder ${err}`));
-                    await downloadFolder(child.LinkID, path);
+                    const folderPath = `${parentPath}/`;
+                    cb.onStartFolderTransfer(folderPath).catch((err) =>
+                        console.error(`Failed to zip empty folder ${err}`)
+                    );
+                    await downloadFolder(child.LinkID, folderPath);
                 }
             });
 

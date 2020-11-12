@@ -2,12 +2,14 @@ import { ReadableStream } from 'web-streams-polyfill';
 import { Writer as ZipWriter } from '@transcend-io/conflux';
 import { lookup } from 'mime-types';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import { isWindows } from 'proton-shared/lib/helpers/browser';
 import { openDownloadStream, initDownloadSW } from './download';
 import { TransferMeta } from '../../interfaces/transfer';
 import { streamToBuffer } from '../stream';
 import { NestedFileStream } from '../../interfaces/file';
 import { MEMORY_DOWNLOAD_LIMIT } from '../../constants';
 import { isTransferCancelError } from '../transfer';
+import { adjustWindowsFileName } from '../link';
 
 class FileSaver {
     private useBlobFallback = false;
@@ -88,9 +90,11 @@ class FileSaver {
 
         return {
             addFile: async (file: NestedFileStream) => {
+                const fileName = isWindows() ? adjustWindowsFileName(file.fileName) : file.fileName;
+                const fullPath = `${file.parentPath}/${fileName}`;
                 files.push(file);
                 await writer.write({
-                    name: file.path,
+                    name: fullPath,
                     lastModified: new Date(),
                     stream: () => file.stream,
                 });

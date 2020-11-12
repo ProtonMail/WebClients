@@ -473,8 +473,6 @@ export const renameLinkAsync = async (
         throw new ValidationError(error);
     }
 
-    const lowerCaseName = newName.toLowerCase();
-
     // TODO: possibly remove this since we're now pretty sure about file types (could mark extension-based types with a flag)
     const MIMEType = type === LinkType.FOLDER ? 'Folder' : lookup(newName) || 'application/octet-stream';
 
@@ -494,7 +492,7 @@ export const renameLinkAsync = async (
     ]);
 
     const [Hash, { data: encryptedName }] = await Promise.all([
-        generateLookupHash(lowerCaseName, parentKeys.hashKey),
+        generateLookupHash(newName, parentKeys.hashKey),
         encryptMessage({
             data: newName,
             sessionKey,
@@ -522,7 +520,6 @@ export const createNewFolderAsync = async (
 ) => {
     // Name Hash is generated from LC, for case-insensitive duplicate detection
     const error = validateLinkName(name);
-    const lowerCaseName = name.toLowerCase();
 
     if (error) {
         throw new ValidationError(error);
@@ -538,7 +535,7 @@ export const createNewFolderAsync = async (
     }
 
     const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] = await Promise.all([
-        generateLookupHash(lowerCaseName, parentKeys.hashKey),
+        generateLookupHash(name, parentKeys.hashKey),
         generateNodeKeys(parentKeys.privateKey, addressKey),
         encryptName(name, parentKeys.privateKey.toPublic(), addressKey),
     ]);
@@ -589,8 +586,6 @@ export const moveLinkAsync = async (
         throw new Error('Missing hash key on folder link');
     }
 
-    const lowerCaseName = meta.Name.toLowerCase();
-
     const currentParent = await getLinkKeys(shareId, meta.ParentLinkID);
     const sessionKeyName = await getDecryptedSessionKey({
         data: meta.EncryptedName,
@@ -598,7 +593,7 @@ export const moveLinkAsync = async (
     });
 
     const [Hash, { NodePassphrase, NodePassphraseSignature }, { data: encryptedName }] = await Promise.all([
-        generateLookupHash(lowerCaseName, parentKeys.hashKey),
+        generateLookupHash(meta.Name, parentKeys.hashKey),
         decryptLinkPassphrase(shareId, meta).then(({ decryptedPassphrase, sessionKey }) =>
             encryptPassphrase(parentKeys.privateKey, addressKey, decryptedPassphrase, sessionKey)
         ),
