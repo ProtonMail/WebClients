@@ -43,6 +43,7 @@ const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage }: Props
                                 loading={loading}
                                 disabled={page - 1 === i}
                                 onClick={() => onPage(i + 1)}
+                                aria-label={c('Action').t`Page ${i + 1}`}
                             >
                                 {i + 1}
                             </DropdownMenuButton>
