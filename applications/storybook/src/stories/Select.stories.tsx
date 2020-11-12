@@ -10,9 +10,9 @@ export const Basic = () => {
     const [ value, setValue ] = useState('');
 
     return (
-        <SelectTwo aria-label={value} value={value} onChange={({ value: v }) => setValue(v)}>
-            <Option value="ant">Ant</Option>
-            <Option value="zebra">Zebra</Option>
+        <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
+            <Option title="ant" value="ant">Ant</Option>
+            <Option title="zebra" value="zebra">Zebra</Option>
         </SelectTwo>
     );
 }
@@ -32,15 +32,14 @@ export const controlledOpenState = () => {
 
     return (
         <SelectTwo
-            aria-label={value}
             isOpen={open}
             value={value}
             onChange={({ value: v }) => setValue(v)}
             onOpen={handleOpen}
             onClose={handleClose}
         >
-            <Option value="ant">Ant</Option>
-            <Option value="zebra">Zebra</Option>
+            <Option title="ant" value="ant">Ant</Option>
+            <Option title="zebra" value="zebra">Zebra</Option>
         </SelectTwo>
     );
 }
@@ -49,15 +48,11 @@ export const withRichOptionContent = () => {
     const [ value, setValue ] = useState('');
 
     return (
-        <SelectTwo
-            value={value}
-            aria-label={value} 
-            onChange={({ value: v }) => setValue(v)}
-        >
-            <Option value="reddit"><Icon name="reddit"/> Reddit</Option>
-            <Option value="twitter"><Icon name="twitter"/> Twitter</Option>
-            <Option value="yahoo"><Icon name="yahoo"/> Yahoo</Option>
-            <Option value="youtube"><Icon name="youtube"/> Youtube</Option>
+        <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
+            <Option title="reddit" value="reddit"><Icon name="reddit"/> Reddit</Option>
+            <Option title="twitter" value="twitter"><Icon name="twitter"/> Twitter</Option>
+            <Option title="yahoo" value="yahoo"><Icon name="yahoo"/> Yahoo</Option>
+            <Option title="youtube" value="youtube"><Icon name="youtube"/> Youtube</Option>
         </SelectTwo>
     );
 }
@@ -68,15 +63,14 @@ export const withCustomSearchClearTimer = () => {
     return (
         <SelectTwo
             value={value}
-            aria-label={value}
             onChange={({ value: v }) => setValue(v)}
             clearSearchAfter={1000}
         >
-            <Option value="ant">Ant</Option>
-            <Option value="bear">Bear</Option>
-            <Option value="chimpanzee">Chimpanzee</Option>
-            <Option value="deer">Deer</Option>
-            <Option value="zebra">Zebra</Option>
+            <Option title="ant" value="ant">Ant</Option>
+            <Option title="bear" value="bear">Bear</Option>
+            <Option title="chimpanzee" value="chimpanzee">Chimpanzee</Option>
+            <Option title="deer" value="deer">Deer</Option>
+            <Option title="zebra" value="zebra">Zebra</Option>
         </SelectTwo>
     );
 }
@@ -85,14 +79,10 @@ export const withComplexValues = () => {
     const [ value, setValue ] = useState<{ name: string } | null>(null);
 
     return (
-        <SelectTwo
-            value={value}
-            aria-label={value?.name}
-            onChange={({ value: v }) => setValue(v)}
-        >
-            <Option value={{ name: 'ant' }}>Ant</Option>
-            <Option value={{ name: 'bear' }}>Bear</Option>
-            <Option value={{ name: 'chimpanzee' }}>Chimpanzee</Option>
+        <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
+            <Option title="ant" value={{ name: 'ant' }}>Ant</Option>
+            <Option title="bear" value={{ name: 'bear' }}>Bear</Option>
+            <Option title="chimpanzee" value={{ name: 'chimpanzee' }}>Chimpanzee</Option>
         </SelectTwo>
     );
 }
