@@ -1,9 +1,16 @@
-import { decryptMessageLegacy as realDecryptMessageLegacy, decryptMIMEMessage, SessionKey, OpenPGPKey } from 'pmcrypto';
+import {
+    decryptMessageLegacy as realDecryptMessageLegacy,
+    decryptMIMEMessage,
+    SessionKey,
+    OpenPGPKey,
+    encryptMessage as realEncryptMessage,
+} from 'pmcrypto';
+import { enums } from 'openpgp';
 
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 
 import { base64ToArray, arrayToBase64 } from '../base64';
-import { generateSessionKey, encryptSessionKey } from './crypto';
+import { generateSessionKey, encryptSessionKey, GeneratedKey } from './crypto';
 
 export const createDocument = (content: string): Element => {
     const document = window.document.createElement('div');
@@ -52,4 +59,14 @@ export const createAttachment = async (inputAttachment: Partial<Attachment>, pub
     attachment.KeyPackets = arrayToBase64(encryptedSessionKey);
 
     return { attachment, sessionKey };
+};
+
+export const encryptMessage = async (body: string, keys: GeneratedKey) => {
+    const { data } = await realEncryptMessage({
+        data: body,
+        publicKeys: [keys.publicKeys?.[0]],
+        privateKeys: [keys.privateKeys?.[0]],
+        compression: enums.compression.zip,
+    });
+    return data;
 };

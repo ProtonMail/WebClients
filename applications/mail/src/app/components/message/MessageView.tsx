@@ -191,6 +191,7 @@ const MessageView = (
                 hasAttachments(message.data) && 'message-container--hasAttachment',
             ])}
             style={{ '--index': conversationIndex * 2 }}
+            data-testid="message-view"
         >
             {expanded ? (
                 <>
