@@ -34,6 +34,7 @@ export const isEdgeChromium = () => isEdge() && ua.engine.name === 'Blink';
 export const isFirefox = () => ua.browser.name === 'Firefox';
 export const isChrome = () => ua.browser.name === 'Chrome';
 export const isMac = () => ua.os.name === 'Mac OS';
+export const isWindows = () => ua.os.name === 'Windows';
 export const hasTouch = typeof document === 'undefined' ? false : 'ontouchstart' in document.documentElement;
 export const hasCookie = () => navigator.cookieEnabled;
 export const getBrowser = () => ua.browser;
