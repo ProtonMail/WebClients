@@ -230,10 +230,6 @@ export default angular
 
                         // Allow BF only for a period
                         if (couponParam === BLACK_FRIDAY.COUPON_CODE) {
-                            if (!isDealEvent()) {
-                                return config;
-                            }
-
                             const [plus, vpnPlusPlus] = BLACK_FRIDAY.PLANS;
 
                             // Allow only plus 12/24
