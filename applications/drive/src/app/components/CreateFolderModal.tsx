@@ -1,7 +1,8 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
-import { validateLinkNameField, formatLinkName } from '../utils/validation';
+import { validateLinkNameField } from '../utils/validation';
+import { formatLinkName } from '../utils/link';
 import useDrive from '../hooks/drive/useDrive';
 import { useDriveActiveFolder, DriveFolder } from './Drive/DriveFolderProvider';
 import { MAX_NAME_LENGTH } from '../constants';

@@ -72,5 +72,6 @@ export interface DriveFileRevisionResult {
 
 export interface NestedFileStream {
     stream: ReadableStream<Uint8Array>;
-    path: string;
+    parentPath: string;
+    fileName: string;
 }

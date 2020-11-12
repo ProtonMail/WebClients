@@ -3,7 +3,8 @@ import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } fro
 import { c } from 'ttag';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { LinkType } from '../interfaces/link';
-import { validateLinkNameField, formatLinkName } from '../utils/validation';
+import { validateLinkNameField } from '../utils/validation';
+import { formatLinkName } from '../utils/link';
 import useDrive from '../hooks/drive/useDrive';
 import { DriveFolder } from './Drive/DriveFolderProvider';
 import { MAX_NAME_LENGTH } from '../constants';
