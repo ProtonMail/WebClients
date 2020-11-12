@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { isProductPayer } from 'proton-shared/lib/helpers/blackfriday';
 import { PlanIDs, Cycle, Currency } from 'proton-shared/lib/interfaces';
-import { APPS, BLACK_FRIDAY } from 'proton-shared/lib/constants';
-import { getSHA256String } from 'proton-shared/lib/helpers/hash';
+import { APPS } from 'proton-shared/lib/constants';
 import { useLocation } from 'react-router';
-import { getSecondLevelDomain } from 'proton-shared/lib/helpers/url';
-import { getCookie, setCookie } from 'proton-shared/lib/helpers/cookies';
 
 import { checkLastCancelledSubscription } from '../payments/subscription/helpers';
 import {
@@ -21,51 +18,17 @@ import {
 } from '../../hooks';
 import { MailBlackFridayModal, NewSubscriptionModal, VPNBlackFridayModal } from '../payments';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
-
-const cookieExpirationDate = BLACK_FRIDAY.END.toUTCString();
-const cookiePath = '/';
-const cookieDomain = `.${getSecondLevelDomain()}`;
-
-const setModalCookie = (key: string, value: string) => {
-    setCookie({
-        cookieName: key,
-        cookieValue: value,
-        expirationDate: cookieExpirationDate,
-        path: cookiePath,
-        cookieDomain,
-    });
-};
+import usePromoModalState from './usePromoModalState';
 
 const useBlackFriday = () => {
     const api = useApi();
     const { APP_NAME } = useConfig();
-    const [{ isFree, isDelinquent, ID }] = useUser();
+    const [{ isFree, isDelinquent }] = useUser();
     const [plans = []] = usePlans();
     const [subscription] = useSubscription();
     const isBlackFridayPeriod = useBlackFridayPeriod();
     const isProductPayerPeriod = useProductPayerPeriod();
-
-    const [blackFridayModalState, setBlackFridayModalState] = useState<string | undefined>(undefined);
-    const [productPayerModalState, setProductPayerModalState] = useState<string | undefined>(undefined);
-
-    const keys = useRef<{ blackFridayStateKey?: string; productPayerStateKey?: string }>({});
-
-    useEffect(() => {
-        const run = async () => {
-            const [newBlackFridayStateKey, newProductPayerStateKey] = await Promise.all([
-                getSHA256String(`${ID}${BLACK_FRIDAY.COUPON_CODE}-black-friday-modal`),
-                getSHA256String(`${ID}-product-payer-modal`),
-            ]);
-
-            keys.current.blackFridayStateKey = newBlackFridayStateKey.slice(0, 8);
-            keys.current.productPayerStateKey = newProductPayerStateKey.slice(0, 8);
-
-            setBlackFridayModalState(getCookie(keys.current.blackFridayStateKey) || '');
-            setProductPayerModalState(getCookie(keys.current.productPayerStateKey) || '');
-        };
-        run();
-    }, []);
-
+    const [modalState, setModalState] = usePromoModalState();
     const [isEligible, setEligibility] = useState(false);
     const location = useLocation();
     const { createModal } = useModals();
@@ -101,45 +64,32 @@ const useBlackFriday = () => {
     }, [isBlackFridayPeriod, isFree]);
 
     useEffect(() => {
-        if (!keys.current.blackFridayStateKey) {
-            return;
-        }
         if (isDelinquent) {
             return;
         }
-        if (
-            plans.length &&
-            isBlackFridayPeriod &&
-            isEligible &&
-            (blackFridayModalState !== '1' || openBlackFridayModal)
-        ) {
-            setModalCookie(keys.current.blackFridayStateKey, '1');
-            setBlackFridayModalState('1');
+        if (plans.length && isBlackFridayPeriod && isEligible && (!modalState || openBlackFridayModal)) {
+            setModalState(true);
             if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
                 createModal(<VPNBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
             } else {
                 createModal(<MailBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
             }
         }
-    }, [blackFridayModalState, isBlackFridayPeriod, isEligible, plans]);
+    }, [modalState, isBlackFridayPeriod, isEligible, plans]);
 
     useEffect(() => {
-        if (!keys.current.productPayerStateKey) {
-            return;
-        }
         if (isDelinquent) {
             return;
         }
-        if (plans.length && isProductPayerPeriod && isProductPayer(subscription) && productPayerModalState !== '1') {
-            setModalCookie(keys.current.productPayerStateKey, '1');
-            setProductPayerModalState('1');
+        if (plans.length && isProductPayerPeriod && isProductPayer(subscription) && !modalState) {
+            setModalState(true);
             if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
                 createModal(<VPNBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
             } else {
                 createModal(<MailBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
             }
         }
-    }, [productPayerModalState, isProductPayerPeriod, subscription, plans]);
+    }, [modalState, isProductPayerPeriod, subscription, plans]);
 
     return (
         !loading &&
