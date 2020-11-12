@@ -251,6 +251,10 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                         url="https://protonmail.com"
                     />
                 </>,
+                <>
+                    <span className="mr0-5">ProtonDrive</span>
+                    <span className="text-success">{c('Price').t`FREE`}</span>
+                </>,
             ],
         },
     }[plan]);
