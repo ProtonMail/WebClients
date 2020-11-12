@@ -13,7 +13,6 @@ import {
     SIGNUP_PLANS,
     BLACK_FRIDAY
 } from './constants';
-import { isDealEvent } from './blackFriday/helpers/blackFridayHelper';
 import { decrypt } from '../helpers/message';
 import { isIE11 } from '../helpers/browser';
 
