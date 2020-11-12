@@ -3,7 +3,6 @@ import { encryptSessionKey, splitMessage, decryptSessionKey, getMessage, Session
 import { computeKeyPassword } from 'pm-srp';
 import { srpGetVerify } from 'proton-shared/lib/srp';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
-import { getUnixTime } from 'date-fns';
 import { useApi } from 'react-components';
 import { decryptUnsigned, encryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
 import {
@@ -18,6 +17,7 @@ import { DEFAULT_SHARE_EXPIRATION_DAYS, DEFAULT_SHARE_MAX_ACCESSES } from '../..
 import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import { validateSharedURLPassword, ValidationError } from '../../utils/validation';
+import { getExpirationTime } from '../../components/Drive/helpers';
 
 function useSharing() {
     const { getPrimaryAddressKey } = useDriveCrypto();
@@ -89,8 +89,7 @@ function useSharing() {
             }),
         ]);
 
-        // Simple math instead of addDays because we don't need to compensate for DST
-        const ExpirationTime = getUnixTime(new Date()) + DEFAULT_SHARE_EXPIRATION_DAYS * 24 * 60 * 60;
+        const ExpirationTime = getExpirationTime(DEFAULT_SHARE_EXPIRATION_DAYS);
 
         const { ShareURL } = await api<{ ShareURL: ShareURL }>(
             queryCreateSharedLink(ID, {
@@ -117,6 +116,16 @@ function useSharing() {
                 shareSessionKey: sessionKey,
                 sharePasswordSalt: SharePasswordSalt,
             },
+        };
+    };
+
+    const updateSharedLinkExpirationTime = async (shareId: string, token: string, newExpirationTime: number) => {
+        const fieldsToUpdate: Partial<UpdateSharedURL> = {
+            ExpirationTime: newExpirationTime,
+        };
+        await api(queryUpdateSharedLink(shareId, token, fieldsToUpdate));
+        return {
+            ...fieldsToUpdate,
         };
     };
 
@@ -212,6 +221,7 @@ function useSharing() {
     };
 
     return {
+        updateSharedLinkExpirationTime,
         updateSharedLinkPassword,
         decryptSharedLink,
         createSharedLink,

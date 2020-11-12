@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { getUnixTime } from 'date-fns';
 import { LinkType, LinkMeta } from '../../interfaces/link';
 import { LinkURLType, fileDescriptions } from '../../constants';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
@@ -70,3 +71,6 @@ export const getMimeTypeDescription = (mimeType: string) => {
 
     return c('Label').t`Unknown file`;
 };
+
+// Simple math instead of addDays because we don't need to compensate for DST
+export const getExpirationTime = (daysToExtendBy: number) => getUnixTime(new Date()) + daysToExtendBy * 24 * 60 * 60;

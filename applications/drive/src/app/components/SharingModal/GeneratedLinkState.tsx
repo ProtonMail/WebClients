@@ -13,10 +13,12 @@ import {
     useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
+import TimeCell from '../FileBrowser/ListView/Cells/TimeCell';
 
 interface Props {
     itemName: string;
     password: string;
+    expirationDate: number;
     token: string;
     includePassword: boolean;
     customPassword: boolean;
@@ -24,6 +26,7 @@ interface Props {
     deleting?: boolean;
     onClose?: () => void;
     onEditPasswordClick: () => void;
+    onEditExpirationTimeClick: () => void;
     onDeleteLinkClick: () => void;
     onIncludePasswordToggle: () => void;
 }
@@ -33,11 +36,13 @@ function GeneratedLinkState({
     onClose,
     itemName,
     password,
+    expirationDate,
     token,
     customPassword,
     deleting,
     includePassword,
     onEditPasswordClick,
+    onEditExpirationTimeClick,
     onDeleteLinkClick,
     onIncludePasswordToggle,
 }: Props) {
@@ -124,6 +129,31 @@ function GeneratedLinkState({
                                     onClick={handleCopyPasswordClick}
                                     className="min-w5e ml0-5"
                                 >{c('Action').t`Copy`}</Button>
+                            </div>
+                        </div>
+                    </Row>
+
+                    <h3>{c('Title').t`Additional settings`}</h3>
+
+                    <Row>
+                        <Label htmlFor="edit-expiration-time-button">
+                            <span className="mr0-5">{c('Label').t`Link expires on`}</span>
+                        </Label>
+                        <div className="flex flex-column flex-item-fluid">
+                            <div
+                                className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis"
+                                data-testid="sharing-modal-expiration-time"
+                            >
+                                <TimeCell time={expirationDate} />
+                            </div>
+                        </div>
+                        <div className="flex flex-justify-end ml0-5 onmobile-ml0">
+                            <div>
+                                <Button
+                                    id="edit-expiration-time-button"
+                                    onClick={onEditExpirationTimeClick}
+                                    className="min-w5e"
+                                >{c('Action').t`Edit`}</Button>
                             </div>
                         </div>
                     </Row>

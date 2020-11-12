@@ -40,6 +40,14 @@ export enum EVENT_TYPES {
     UPDATE_METADATA = 3,
 }
 
+export enum EXPIRATION_DAYS {
+    ONE = 1,
+    FIFTEEN = 15,
+    THIRTY = 30,
+    SIXTY = 60,
+    NINETY = 90,
+}
+
 export const fileDescriptions: { [type: string]: string } = {
     'audio/aac': 'AAC audio',
     'application/x-abiword': 'AbiWord document',

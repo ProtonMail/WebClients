@@ -14,6 +14,7 @@ import GeneratedLinkState from './GeneratedLinkState';
 import LoadingState from './LoadingState';
 import { validateSharedURLPassword } from '../../utils/validation';
 import { isCustomSharedURLPassword } from '../../utils/link';
+import EditExpirationTimeState from './EditExpirationTimeState';
 
 interface Props {
     onClose?: () => void;
@@ -26,11 +27,13 @@ enum SharingModalState {
     Loading,
     GeneratedLink,
     EditPassword,
+    EditExpirationDate,
 }
 
 function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, ...rest }: Props) {
     const [modalState, setModalState] = useState(SharingModalState.Loading);
     const [deleting, withDeleting] = useLoading(false);
+    const [savingExpirationTime, withSavingExpirationTime] = useLoading(false);
     const [savingPassword, withSavingPassword] = useLoading(false);
     const [includePassword, setIncludePassword] = useState(false);
     const [shareUrlInfo, setShareUrlInfo] = useState<{ ShareURL: ShareURL; keyInfo: SharedURLSessionKeyPayload }>();
@@ -40,6 +43,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         createSharedLink,
         getSharedURLs,
         decryptSharedLink,
+        updateSharedLinkExpirationTime,
         updateSharedLinkPassword,
         deleteSharedLink,
     } = useSharing();
@@ -87,6 +91,33 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                 setModalState(SharingModalState.GeneratedLink);
             });
     }, [shareId, item.LinkID, item.SharedURLShareID, shareUrlInfo?.ShareURL.ShareID]);
+
+    const handleSaveExpirationTime = async (expirationTime: number) => {
+        if (!shareUrlInfo) {
+            return;
+        }
+
+        const updateExpirationTime = async () => {
+            const res = await updateSharedLinkExpirationTime(
+                shareUrlInfo.ShareURL.ShareID,
+                shareUrlInfo.ShareURL.Token,
+                expirationTime
+            );
+            await events.call(shareId);
+            return res;
+        };
+
+        const updatedFields = await withSavingExpirationTime(updateExpirationTime());
+        createNotification({ text: c('Notification').t`Expiration date has been changed successfully.` });
+        setShareUrlInfo({
+            ...shareUrlInfo,
+            ShareURL: {
+                ...shareUrlInfo.ShareURL,
+                ...updatedFields,
+            },
+        });
+        setModalState(SharingModalState.GeneratedLink);
+    };
 
     const handleSavePassword = async (password: string) => {
         if (!shareUrlInfo) {
@@ -169,10 +200,12 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                     customPassword={isCustomSharedURLPassword(shareUrlInfo.ShareURL)}
                     itemName={item.Name}
                     onClose={onClose}
+                    onEditExpirationTimeClick={() => setModalState(SharingModalState.EditExpirationDate)}
                     onEditPasswordClick={() => setModalState(SharingModalState.EditPassword)}
                     onIncludePasswordToggle={handleToggleIncludePassword}
                     onDeleteLinkClick={handleDeleteLinkClick}
                     password={shareUrlInfo.ShareURL.Password}
+                    expirationDate={shareUrlInfo.ShareURL.ExpirationTime}
                     token={shareUrlInfo.ShareURL.Token}
                     deleting={deleting}
                 />
@@ -188,6 +221,18 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                     onClose={onClose}
                     onSave={handleSavePassword}
                     saving={savingPassword}
+                />
+            );
+        }
+
+        if (modalState === SharingModalState.EditExpirationDate) {
+            return (
+                <EditExpirationTimeState
+                    modalTitleID={modalTitleID}
+                    onBack={() => setModalState(SharingModalState.GeneratedLink)}
+                    onClose={onClose}
+                    onSave={handleSaveExpirationTime}
+                    saving={savingExpirationTime}
                 />
             );
         }
