@@ -10,8 +10,7 @@ import {
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
     BILLING_CYCLE,
-    SIGNUP_PLANS,
-    BLACK_FRIDAY
+    SIGNUP_PLANS
 } from './constants';
 import { decrypt } from '../helpers/message';
 import { isIE11 } from '../helpers/browser';
@@ -214,7 +213,7 @@ export default angular
                         return i18nLoader.translate();
                     },
                     subscriptionInfo($stateParams) {
-                        const { currency, billing, plan, coupon: couponParam } = $stateParams;
+                        const { currency, billing, plan, coupon } = $stateParams;
                         const cycle = +billing;
 
                         const isValidCurrency = _.includes(CURRENCIES, currency);
@@ -225,26 +224,7 @@ export default angular
                             return;
                         }
 
-                        const config = { planNames: plan.split('_'), currency, cycle };
-
-                        // Allow BF only for a period
-                        if (couponParam === BLACK_FRIDAY.COUPON_CODE) {
-                            const [plus, vpnPlusPlus] = BLACK_FRIDAY.PLANS;
-
-                            // Allow only plus 12/24
-                            if (BLACK_FRIDAY.CYCLES.includes(cycle) && plan === plus) {
-                                config.coupon = couponParam;
-                            }
-
-                            // Allow vpn_plus 24
-                            if (BLACK_FRIDAY.CYCLE === cycle && plan === vpnPlusPlus) {
-                                config.coupon = couponParam;
-                            }
-
-                            return config;
-                        }
-
-                        return { ...config, coupon: couponParam };
+                        return { planNames: plan.split('_'), currency, cycle, coupon };
                     },
                     optionsHumanCheck(signupModel) {
                         return signupModel.getOptionsVerification();
