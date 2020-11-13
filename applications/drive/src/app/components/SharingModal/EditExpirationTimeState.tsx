@@ -27,7 +27,7 @@ interface Props {
 }
 
 function EditExpirationTimeState({ modalTitleID, onBack, onSave, onClose, saving }: Props) {
-    const [extendBy, setExtendBy] = useState(EXPIRATION_DAYS.ONE);
+    const [extendBy, setExtendBy] = useState(EXPIRATION_DAYS.NINETY);
     const [expirationTime, setExpirationTime] = useState(getExpirationTime(extendBy));
 
     const isSaveDisabled = !expirationTime;
@@ -62,7 +62,7 @@ function EditExpirationTimeState({ modalTitleID, onBack, onSave, onClose, saving
                 <InnerModal>
                     <Alert>{c('Info').t`Change this link's expiration date.`}</Alert>
                     <Row>
-                        <Label htmlFor="shared-url-expiration-date">{c('Label').t`Link expiries in`}</Label>
+                        <Label htmlFor="shared-url-expiration-date">{c('Label').t`Link expires in`}</Label>
                         <Field>
                             <div className="flex flex-nowrap flex-items-center onmobile-flex-column">
                                 <ExpirationTimeDropdown value={extendBy} onChange={handleChangeExpirationDate} />

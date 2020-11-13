@@ -12,7 +12,7 @@ interface Props {
 const ExpirationTimeDropdown = ({ value, onChange, disabled = false }: Props) => {
     const options = [
         { text: c('Label').t`1 day`, value: EXPIRATION_DAYS.ONE },
-        { text: c('Label').t`15 day`, value: EXPIRATION_DAYS.FIFTEEN },
+        { text: c('Label').t`15 days`, value: EXPIRATION_DAYS.FIFTEEN },
         { text: c('Label').t`30 days`, value: EXPIRATION_DAYS.THIRTY },
         { text: c('Label').t`60 days`, value: EXPIRATION_DAYS.SIXTY },
         { text: c('Label').t`90 days`, value: EXPIRATION_DAYS.NINETY },
