@@ -179,7 +179,7 @@ const AddressesRecipientItem = ({
                         <EncryptionStatusIcon loading={loading} {...icon} />
                     </span>
                 )}
-                <Tooltip className="flex" title={sendInfo?.emailAddressWarnings?.join(', ')}>
+                <Tooltip className="flex" title={sendInfo?.emailAddressWarnings?.[0]}>
                     <span
                         className="composer-addresses-item-label mtauto mbauto pl0-5 ellipsis pr0-5"
                         contentEditable={editableMode}
