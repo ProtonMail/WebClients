@@ -78,7 +78,7 @@ const ContactSummary = ({
     ].filter(Boolean);
 
     return (
-        <div className={classnames(['contactsummary-container p1 mb1', !isNarrow && 'flex flex-nowrap'])}>
+        <div className={classnames(['contactsummary-container border-bottom m1', !isNarrow && 'flex flex-nowrap'])}>
             <div className={classnames(['aligncenter contactsummary-photo-container pt0-5', leftBlockWidth])}>
                 <ContactImageSummary photo={photo} name={name} />
             </div>
@@ -103,7 +103,7 @@ const ContactSummary = ({
                 </div>
             </div>
             {!isPreview && (
-                <div className="flex-item-noshrink pt0-5 onmobile-aligncenter">
+                <div className="flex-item-noshrink pt0-5 onmobile-aligncenter mb1">
                     <Tooltip title={c('Action').t`Edit`} className="ml0-5">
                         <Button onClick={() => handleEdit()} className="pm-button--for-icon inline-flex">
                             <Icon className="color-primary mt0-25 mb0-1" name="pen" alt={c('Action').t`Edit`} />
