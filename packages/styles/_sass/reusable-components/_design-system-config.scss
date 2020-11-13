@@ -12,6 +12,8 @@ $size-h4               : 18 !default;
 $size-h5               : 17 !default;
 $size-h6               : 16 !default;
 
+$use-other-typo-helpers: true !default;
+$use-other-line-height-helpers: true !default;
 $size-smallest         : 9 !default;
 $size-smaller          : 10 !default;
 $size-small            : 12 !default;
@@ -118,9 +120,11 @@ $use-clearfix          : false !default;
 
 // color reset for mark tag
 $use-color-reset-mark  : true !default;
+$default-bgColor-mark  : #ff0 !default;
+
 
 // vertical rythm
-// possible values     : 'double_top_single_bottom',  'single_top', 'single_bottom'
+// possible values     : 'double_top_single_bottom', 'single_top_single_bottom', 'single_top', 'single_bottom'
 $vertical-rythm        : 'single_bottom' !default;
 
 // units for typo
@@ -133,6 +137,9 @@ $root-equiv-10-px      : true !default;
 // basic premise: default user setting for font size is at 16 pixels in the browser
 // you should NEVER update this value, however… who can predict the future…
 $root-default-font-size: 16 !default;
+
+// applies main colors on body tag
+$apply-body-styles     : true !default;
 
 // others
 $use-reset-button      : true !default;
@@ -203,6 +210,9 @@ $pm-label-width: 18em !default;
 
   @if $type-vr == 'double_top_single_bottom' {
      @return ( ($margin * $other_coef)*1em 0 ( ($margin/2) * $other_coef) *1em 0 );
+  }
+  @if $type-vr == 'single_top_single_bottom' {
+	@return ( ( ($margin/2) * $other_coef) *1em 0 );
   }
   @else if $type-vr == 'single_bottom' {
      @return ( 0 0 ( ($margin/2) * $other_coef) *1em 0 );

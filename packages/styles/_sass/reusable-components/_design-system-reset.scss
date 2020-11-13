@@ -12,7 +12,7 @@ html { box-sizing: border-box; }
 /* reset minimum */
 html, body, blockquote, ul, ol, form, button, figure { margin: 0; padding: 0; }
 button, progress { border: 0; }
-p, ul, ol, dl, blockquote, pre, td, th {
+p, ul, ol, dl, blockquote, pre, menu, td, th {
   font-size: 1em;
   line-height: $l-h;
   margin: $l-h * 1em 0;
@@ -35,27 +35,33 @@ p, ul, ol, dl, blockquote, pre, td, th {
   }
 
 }
+@else {
+	input, select, textarea, optgroup, button {
+		font: inherit;
+	}
+}
 
 /* fix display img/iframe */
 img,
 iframe { vertical-align: middle; }
 
-ul, ol { padding-left: 2em; }
+ul, ol, menu { padding-left: 2em; }
 
-.unstyled {
-  padding-left: 0;
-  list-style-type: none;
-}
+dd { margin-left: 2em; }
+
 
 @if $rtl-option == true {
   /* RTL */
-  [dir="rtl"] ul,
-  [dir="rtl"] ol {
-    padding-left: 0;
-    padding-right: 2em;
-  }
-  [dir="rtl"] .unstyled {
-    padding-right: 0;
+  [dir="rtl"] {
+	ul,
+    ol {
+    	padding-left: 0;
+    	padding-right: 2em;
+	  }
+	dd {
+		margin-left: 0;
+		margin-right: 2em;
+	}
   }
 }
 
@@ -69,71 +75,107 @@ ul, ol { padding-left: 2em; }
 	}
   }
 }
-body {
-  background: $pm-global-grey;
-  color: $pm-global-light;
-  font-family: $font-family;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
 
-  @if $typo-unit == 'use_em' {
-     @if $root-equiv-10-px == true {
-       font-size: em($base-font, 10);
-	 }
-	 @else {
-	       font-size: em($base-font, $root-default-font-size);
-	       }
-  }
-  @else if $typo-unit == 'use_rem' {
-     font-size: var(--body-fontsize, rem($base-font));
-  }
-  @else if $typo-unit == 'use_rem_with_em_fallback' {
-     @if $root-equiv-10-px == true {
-       font-size: em($base-font, 10);
-	 }
-	 @else {
-	       font-size: em($base-font, $root-default-font-size);
-	       }
-     font-size: rem($base-font);
-  }
-  line-height: $l-h;
-  min-height: 100%;
+@if $apply-body-styles == true {
+	body {
+	background: $pm-global-grey;
+	color: $pm-global-light;
+	font-family: $font-family;
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+
+	@if $typo-unit == 'use_em' {
+		@if $root-equiv-10-px == true {
+		font-size: em($base-font, 10);
+		}
+		@else {
+			font-size: em($base-font, $root-default-font-size);
+			}
+	}
+	@else if $typo-unit == 'use_rem' {
+		font-size: var(--body-fontsize, rem($base-font));
+	}
+	@else if $typo-unit == 'use_rem_with_em_fallback' {
+		@if $root-equiv-10-px == true {
+		font-size: em($base-font, 10);
+		}
+		@else {
+			font-size: em($base-font, $root-default-font-size);
+			}
+		font-size: rem($base-font);
+	}
+	line-height: $l-h;
+	min-height: 100%;
+	}
 }
 
+
+// Sass placeholder, don't touch if you are not sure ;)
+%bold {
+    font-weight: bold;
+}
+b, strong {
+	@extend %bold;
+}
 
 /* harmonization between Chrome/Firefox */
 pre, code, kbd, samp {
 	font-family: $font-family-monospace;
+	font-size: 1em;
+}
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 // tiny reset for mark tag
 mark {
 	@if ( $use-color-reset-mark == true ) {
 		background-color: unset;
-		color: currentColor;
 	}
+	@else {
+		background-color: var(--bgcolor-mark, $default-bgColor-mark);
+	}
+	color: var(--color-mark, currentColor);
 	font-weight: bold;
 }
 
-
-/* remember focus */
-a,
-.link {
-  color: $color-links;
-  text-decoration: underline;
-  cursor: pointer;
-
-  &:focus,
-  &:hover,
-  &:active {
-    color: $color-hover;
-    text-decoration: underline;
-  }
+small {
+	font-size: 80%;
 }
+
+
 /* avoid border on images in links + fix border image IE */
 a:link img,
 a:visited img,
 img {
-  border-style: none;
+	border-style: none;
 }
 
+/* tiny control */
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/* important, abbr are good */
+/* only those with a title are shown */
+abbr[title] {
+  border-bottom: dotted 1px;
+  cursor: help;
+  text-decoration: none;
+  /* color inherited from text */
+}
+
+
+code,
+pre,
+samp {
+  white-space: pre-wrap;
+}
+code {
+  line-height: 1;
+}
+dfn {
+    font-style: italic;
+}

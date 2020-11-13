@@ -35,34 +35,37 @@ h6,
   font-weight: normal;
 }
 
-/* other useful classes */
-.smallest {
-  @include flow-other($size-smaller);
-}
-.smaller {
-  @include flow-other($size-smaller);
-}
-.small {
-  @include flow-other($size-small);
-}
-.big {
-  @include flow-other($size-big);
-}
-.bigger {
-  @include flow-other($size-bigger);
-}
-.biggest {
-  @include flow-other($size-biggest);
+@if $use-other-typo-helpers == true {
+	/* other useful classes */
+	.smallest {
+	@include flow-other($size-smallest);
+	}
+	.smaller {
+	@include flow-other($size-smaller);
+	}
+	.small {
+	@include flow-other($size-small);
+	}
+	.big {
+	@include flow-other($size-big);
+	}
+	.bigger {
+	@include flow-other($size-bigger);
+	}
+	.biggest {
+	@include flow-other($size-biggest);
+	}
+
+	.size-40 {
+	font-size: 4rem;
+	}
 }
 
-.size-40 {
-  font-size: 4rem;
+@if $use-other-line-height-helpers == true {
+	.lh100 { line-height: 1; }
+
+	.lh120 { line-height: 1.2; }
+	.lh130 { line-height: 1.3; }
+
+	.lh-standard { line-height: $l-h; }
 }
-
-
-.lh100 { line-height: 1; }
-
-.lh120 { line-height: 1.2; }
-.lh130 { line-height: 1.3; }
-
-.lh-standard { line-height: $l-h; }

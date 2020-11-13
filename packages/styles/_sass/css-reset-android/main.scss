@@ -1,0 +1,78 @@
+$custom-scroll: false;
+$root-equiv-10-px: false;
+$use-reset-button: false;
+$apply-body-styles: false;
+$use-old-ie-fallbacks : false;
+$use-height-auto-img: false;
+$use-height-auto-td: false;
+$use-height-auto-table: false;
+$use-color-reset-mark: false;
+
+@import "../reusable-components/design-system-config";
+
+@import "../reusable-components/design-system-reset";
+
+[hidden] {
+    display: none;
+}
+
+body {
+	font-size: 100%;
+	width: 100%;
+	font-family: $font-family;
+	padding: 1rem;
+	line-height: $l-h;
+  	color: var(--color-main-area, $pm-global-grey);
+}
+
+$use-other-typo-helpers: false;
+$use-other-line-height-helpers: false;
+
+$base-font             : 16;
+$typo-unit             : 'use_em';
+$vertical-rythm        : 'single_top_single_bottom';
+$size-h1               : 32;
+$size-h2               : 24;
+$size-h3               : 19;
+$size-h4               : 16;
+$size-h5               : 13;
+$size-h6               : 12;
+
+@import "../design-system-website/webfonts-hx";
+
+@import "../reusable-components/_includes/_resets/typo-sub-sup";
+
+// specific to Android/iOS
+q {
+	quotes: none;
+	&::after,
+	&::before {
+		content: none;
+	}
+}
+a {
+	&:focus {
+		outline: dotted thin;
+	}
+	&:active,
+	&:hover {
+		outline: 0;
+	}
+}
+
+img {
+    border: 0;
+	max-width: 100%;
+}
+table img {
+    max-width: none;
+}
+
+/* styling quotes for messages */
+blockquote {
+    padding: .2em 1.2em !important;
+	/*margin: 1em 0 2em 0 !important;*/
+	margin: 0 !important; // actually on web
+    border: 3px solid $pm-primary !important;
+	border-width: 0 0 0 3px !important;
+}

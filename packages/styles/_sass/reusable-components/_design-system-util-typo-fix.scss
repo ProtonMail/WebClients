@@ -6,6 +6,20 @@ dialog { border: 0; }
   border-collapse: collapse;
 }
 
+.unstyled {
+	padding-left: 0;
+	list-style-type: none;
+}
+
+@if $rtl-option == true {
+	/* RTL */
+	[dir="rtl"] {
+		.unstyled {
+			padding-right: 0;
+		}
+	}
+}
+
 /*
  * taken from http://tinytypo.tetue.net/ made by @tetue
  * tuned with the help of https://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
@@ -28,18 +42,7 @@ q:after {
   content: close-quote;
 }
 
-/* avoid ugly line-height */
-sup,
-sub {
-  vertical-align: 0;
-  position: relative;
-}
-sup {
-  bottom: 1ex;
-}
-sub {
-  top: .5ex;
-}
+@import './_includes/_resets/typo-sub-sup';
 
 /* avoid margin problems */
 @if $vertical-rythm == 'single_top' or $vertical-rythm == 'double_top_single_bottom' {
@@ -131,14 +134,6 @@ li ul {
 	@include vendor-prefix(hyphens, auto, webkit);
 }
 
-code,
-pre,
-samp {
-  white-space: pre-wrap;
-}
-code {
-  line-height: 1;
-}
 kbd {
   border: solid 1px;
   border-top-left-radius: .5em;
@@ -148,14 +143,6 @@ kbd {
 table {
   margin-bottom: 1.5em;
   table-layout: fixed;
-}
-/* important, abbr are good */
-/* only those with a title are shown */
-abbr[title] {
-  border-bottom: dotted 1px;
-  cursor: help;
-  text-decoration: none;
-  /* color inherited from text */
 }
 
 /* text aligns */
@@ -200,8 +187,8 @@ abbr[title] {
   }
 }
 
-b, strong, .strong, .bold {
-  font-weight: bold;
+.strong, .bold {
+	@extend %bold;
 }
 .nobold {
 	font-weight: normal;
