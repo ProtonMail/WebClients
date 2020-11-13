@@ -14,7 +14,6 @@ import key from './models/key';
 import label from './models/label';
 import logs from './models/logs';
 import payment from './models/payment';
-import feature from './models/feature';
 import paymentCache from './models/paymentCache';
 import reset from './models/reset';
 import user from './models/user';
@@ -54,7 +53,6 @@ export default angular
     .factory('Label', label)
     .factory('Logs', logs)
     .factory('Payment', payment)
-    .factory('Feature', feature)
     .factory('PaymentCache', paymentCache)
     .factory('Reset', reset)
     .factory('User', user)
