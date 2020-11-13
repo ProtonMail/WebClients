@@ -1,30 +1,8 @@
 import { getEventName } from '../../../blackFriday/helpers/blackFridayHelper';
 
 /* @ngInject */
-function navigationBlackFriday(blackFridayModalOpener, $cookies, dispatchers, blackFridayModel, authentication) {
-    const COOKIE_NAME = 'protonmail-BF-autoload-modal';
+function navigationBlackFriday(blackFridayModalOpener, dispatchers, blackFridayModel) {
     const IS_BLACK_FRIDAY_CLASS = 'navigationBlackFriday-is-black-friday';
-
-    /*
-        Cookie is not bulletproof
-    */
-    const alreadySeen = (name) => {
-        try {
-            const value = $cookies.get(`${COOKIE_NAME}-${name}`) || localStorage.getItem(`${COOKIE_NAME}-${name}`);
-            return value && value === 'true';
-        } catch (e) {
-            // ( ･_･)ﾉ  ⌒●~*
-        }
-    };
-
-    const setAlreadySeen = (name) => {
-        try {
-            $cookies.put(`${COOKIE_NAME}-${name}`, 'true');
-            localStorage.setItem(`${COOKIE_NAME}-${name}`, 'true');
-        } catch (e) {
-            // ( ･_･)ﾉ  ⌒●~*
-        }
-    };
 
     return {
         restrict: 'E',
@@ -40,9 +18,12 @@ function navigationBlackFriday(blackFridayModalOpener, $cookies, dispatchers, bl
                 textEl.textContent = getEventName(blackFridayModel.isProductPayerPeriod());
                 element[0].classList[showPromo ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);
 
-                if (!alreadySeen(authentication.user.ID) && showPromo) {
-                    blackFridayModalOpener();
-                    setAlreadySeen(authentication.user.ID);
+                if (showPromo) {
+                    blackFridayModel.getCloseState().then((showModal) => {
+                        if (showModal) {
+                            blackFridayModalOpener();
+                        }
+                    });
                 }
             };
 
