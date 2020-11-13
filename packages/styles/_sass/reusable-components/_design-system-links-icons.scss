@@ -1,5 +1,20 @@
 /* links */
 
+/* remember focus */
+a,
+.link {
+  color: $color-links;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: $color-hover;
+    text-decoration: underline;
+  }
+}
+
 .nodecoration {
   text-decoration: none;
 }
