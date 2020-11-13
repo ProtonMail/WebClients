@@ -60,6 +60,8 @@ const useBlackFriday = () => {
     useEffect(() => {
         if (isFree && isBlackFridayPeriod) {
             withLoading(checkLastCancelledSubscription(api).then(setEligibility));
+        } else {
+            setEligibility(false);
         }
     }, [isBlackFridayPeriod, isFree]);
 
