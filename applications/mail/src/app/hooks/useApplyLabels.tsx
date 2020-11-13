@@ -90,20 +90,20 @@ const getNotificationTextMoved = (
     if (folderID === SPAM) {
         if (isMessage) {
             if (elementsCount === 1) {
-                return c('Success').t`Message moved to spam and sender added to blacklist.`;
+                return c('Success').t`Message moved to spam and sender added to Block List.`;
             }
             return c('Success').ngettext(
-                msgid`${elementsCount} message moved to spam and sender added to blacklist.`,
-                `${elementsCount} messages moved to spam and sender added to blacklist.`,
+                msgid`${elementsCount} message moved to spam and sender added to Block List.`,
+                `${elementsCount} messages moved to spam and sender added to Block List.`,
                 elementsCount
             );
         }
         if (elementsCount === 1) {
-            return c('Success').t`Conversation moved to spam and sender added to blacklist.`;
+            return c('Success').t`Conversation moved to spam and sender added to Block List.`;
         }
         return c('Success').ngettext(
-            msgid`${elementsCount} conversation moved to spam and sender added to blacklist.`,
-            `${elementsCount} conversations moved to spam and sender added to blacklist.`,
+            msgid`${elementsCount} conversation moved to spam and sender added to Block List.`,
+            `${elementsCount} conversations moved to spam and sender added to Block List.`,
             elementsCount
         );
     }
@@ -111,20 +111,20 @@ const getNotificationTextMoved = (
     if (fromLabelID === SPAM && folderID !== TRASH) {
         if (isMessage) {
             if (elementsCount === 1) {
-                return c('Success').t`Message moved to ${folderName} and sender removed from blacklist.`;
+                return c('Success').t`Message moved to ${folderName} and sender removed from Block List.`;
             }
             return c('Success').ngettext(
-                msgid`${elementsCount} message moved to ${folderName} and sender removed from blacklist.`,
-                `${elementsCount} messages moved to ${folderName} and sender removed from blacklist.`,
+                msgid`${elementsCount} message moved to ${folderName} and sender removed from Block List.`,
+                `${elementsCount} messages moved to ${folderName} and sender removed from Block List.`,
                 elementsCount
             );
         }
         if (elementsCount === 1) {
-            return c('Success').t`Conversation moved to ${folderName} and sender removed from blacklist.`;
+            return c('Success').t`Conversation moved to ${folderName} and sender removed from Block List.`;
         }
         return c('Success').ngettext(
-            msgid`${elementsCount} conversation moved to ${folderName} and sender removed from blacklist.`,
-            `${elementsCount} conversations moved to ${folderName} and sender removed from blacklist.`,
+            msgid`${elementsCount} conversation moved to ${folderName} and sender removed from Block List.`,
+            `${elementsCount} conversations moved to ${folderName} and sender removed from Block List.`,
             elementsCount
         );
     }
