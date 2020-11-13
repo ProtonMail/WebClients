@@ -77,7 +77,8 @@ export const createReplyIcs = ({
     vtimezone,
     keepDtstamp,
 }: CreateReplyIcsParams): string => {
-    // use current time as dtstamp unless indicated otherwise
+    // only put RFC-mandatory fields to make reply as short as possible
+    // rrule, summary and location are also included for a better UI in the external provider widget
     const propertiesToKeep: (keyof VcalVeventComponent)[] = [
         'uid',
         'dtstart',
@@ -85,8 +86,11 @@ export const createReplyIcs = ({
         'sequence',
         'recurrence-id',
         'organizer',
+        'rrule',
+        'location',
         'summary',
     ];
+    // use current time as dtstamp unless indicated otherwise
     if (keepDtstamp) {
         propertiesToKeep.push('dtstamp');
     }
