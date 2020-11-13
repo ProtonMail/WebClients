@@ -12,6 +12,7 @@ import {
 } from 'proton-shared/lib/api/mailImport';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
+import { isNumber } from 'proton-shared/lib/helpers/validators';
 
 import { useLoading, useAddresses, useModals, useApi, useEventManager } from '../../../hooks';
 import {
@@ -112,6 +113,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
     const changeProvider = (provider: PROVIDER_INSTRUCTIONS) => setProviderInstructions(provider);
 
     const needAppPassword = useMemo(() => modalModel.imap === IMAPS.YAHOO, [modalModel.imap]);
+    const invalidPortError = useMemo(() => !isNumber(modalModel.port), [modalModel.port]);
 
     const title = useMemo(() => {
         switch (modalModel.step) {
@@ -363,7 +365,9 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
     const submitRenderer = useMemo(() => {
         const { email, password, needIMAPDetails, imap, port, isPayloadValid, step } = modalModel;
 
-        const disabledStartStep = needIMAPDetails ? !email || !password || !imap || !port : !email || !password;
+        const disabledStartStep = needIMAPDetails
+            ? !email || !password || !imap || !port || invalidPortError
+            : !email || !password;
 
         switch (step) {
             case Step.INSTRUCTIONS:
@@ -437,6 +441,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
                     needAppPassword={needAppPassword}
                     showPassword={showPassword}
                     currentImport={currentImport}
+                    invalidPortError={invalidPortError}
                 />
             )}
             {modalModel.step === Step.PREPARE && (

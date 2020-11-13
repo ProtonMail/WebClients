@@ -18,9 +18,17 @@ interface Props {
     needAppPassword: boolean;
     showPassword: boolean;
     currentImport?: Importer;
+    invalidPortError: boolean;
 }
 
-const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPassword, currentImport }: Props) => {
+const ImportStartStep = ({
+    modalModel,
+    updateModalModel,
+    needAppPassword,
+    showPassword,
+    currentImport,
+    invalidPortError,
+}: Props) => {
     const { email, password, needIMAPDetails, imap, port, errorCode, errorLabel } = modalModel;
 
     useEffect(() => {
@@ -32,6 +40,11 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
     const isAuthError = [INVALID_CREDENTIALS_ERROR_LABEL, IMAP_AUTHENTICATION_ERROR_LABEL].includes(errorLabel);
     const isIMAPError = errorLabel === IMAP_CONNECTION_ERROR_LABEL;
     const isReconnect = currentImport?.Active?.ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION;
+
+    let imapPortError = isIMAPError ? errorLabel : undefined;
+    if (invalidPortError) {
+        imapPortError = c('Import error').t`Invalid IMAP port`;
+    }
 
     const renderError = () => {
         let message = null;
@@ -272,7 +285,6 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                     </Field>
                 </Row>
             )}
-
             {needIMAPDetails && email && showPassword && (
                 <>
                     <Row>
@@ -282,9 +294,9 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                                 id="imap"
                                 placeholder="imap.domain.com"
                                 value={imap}
-                                onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                    updateModalModel({ ...modalModel, imap: target.value })
-                                }
+                                onChange={({ target }: ChangeEvent<HTMLInputElement>) => {
+                                    updateModalModel({ ...modalModel, imap: target.value });
+                                }}
                                 required
                                 isSubmitted={!!errorLabel}
                                 error={isIMAPError ? errorLabel : undefined}
@@ -303,8 +315,8 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                                     updateModalModel({ ...modalModel, port: target.value })
                                 }
                                 required
-                                isSubmitted={!!errorLabel}
-                                error={isIMAPError ? errorLabel : undefined}
+                                isSubmitted={!!imapPortError}
+                                error={imapPortError}
                                 errorZoneClassName="hidden"
                             />
                         </Field>
