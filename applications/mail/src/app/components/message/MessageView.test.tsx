@@ -21,6 +21,8 @@ import * as messageDecrypt from '../../helpers/message/messageDecrypt';
 import { constructMime } from '../../helpers/send/sendMimeBuilder';
 import { parseInDiv } from '../../helpers/dom';
 
+jest.setTimeout(10000);
+
 const localID = 'localID';
 const labelID = 'labelID';
 const messageID = 'messageID';

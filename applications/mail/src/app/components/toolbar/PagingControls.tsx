@@ -37,17 +37,20 @@ const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage }: Props
             >
                 {() => (
                     <DropdownMenu>
-                        {[...Array(total)].map((_, i) => (
-                            <DropdownMenuButton
-                                key={i} // eslint-disable-line react/no-array-index-key
-                                loading={loading}
-                                disabled={page - 1 === i}
-                                onClick={() => onPage(i + 1)}
-                                aria-label={c('Action').t`Page ${i + 1}`}
-                            >
-                                {i + 1}
-                            </DropdownMenuButton>
-                        ))}
+                        {[...Array(total)].map((_, i) => {
+                            const pageNumber = i + 1; // paging tooling is 0 based
+                            return (
+                                <DropdownMenuButton
+                                    key={i} // eslint-disable-line react/no-array-index-key
+                                    loading={loading}
+                                    disabled={page - 1 === i}
+                                    onClick={() => onPage(i + 1)}
+                                    aria-label={c('Action').t`Page ${pageNumber}`}
+                                >
+                                    {pageNumber}
+                                </DropdownMenuButton>
+                            );
+                        })}
                     </DropdownMenu>
                 )}
             </ToolbarDropdown>
