@@ -144,7 +144,7 @@ function autocompleteEmailsItem(
                 return;
             }
 
-            const title = warnings.join(', ');
+            const title = warnings[0];
 
             if (!tooltip) {
                 tooltip = tooltipModel(el, { title });
