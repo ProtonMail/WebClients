@@ -1,19 +1,31 @@
 import blackFridayOffers from '../helpers/blackFridayOffers';
 import { getPlansMap } from '../../../helpers/paymentHelper';
 import { isDealEvent, isProductPayerPeriod as productPayerPeriod } from '../helpers/blackFridayHelper';
+import { BLACK_FRIDAY } from '../../constants';
+import { setItem, getItem } from '../../../helpers/storageHelper';
 
 /* @ngInject */
-function blackFridayModel(subscriptionModel, paymentModel, PaymentCache, Feature, userType) {
+function blackFridayModel(authentication, subscriptionModel, paymentModel, PaymentCache, Feature, userType) {
     let allowed = false;
     const FEATURE_ID = 'BlackFridayPromoShown';
+    const getKey = () => `protonmail_black_friday_${authentication.user.ID}_${BLACK_FRIDAY.YEAR}`;
 
     const saveClose = () => {
+        const key = getKey();
+        setItem(key, '1');
         Feature.updateValue(FEATURE_ID, true);
     };
 
     const getCloseState = async () => {
+        const key = getKey();
+
+        if (getItem(key)) {
+            return true;
+        }
+
         const { Feature: feature } = await Feature.get(FEATURE_ID);
         const { Value, DefaultValue } = feature;
+
         return typeof Value === 'undefined' ? DefaultValue : Value;
     };
 
