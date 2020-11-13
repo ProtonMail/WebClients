@@ -59,8 +59,8 @@ export const useSendIcs = () => {
             };
             const { data: Body } = await encryptMessage({
                 data: inputMessage.plainText,
-                publicKeys: [publicKeys?.[0]],
-                privateKeys: [privateKeys?.[0]],
+                publicKeys,
+                privateKeys,
                 compression: enums.compression.zip,
             });
             const { Message: updatedMessageData } = await api<{ Message: Message }>(
