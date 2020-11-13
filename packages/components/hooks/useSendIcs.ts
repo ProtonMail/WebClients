@@ -14,7 +14,7 @@ import { generateTopPackages } from 'proton-shared/lib/mail/send/sendTopPackages
 import { encryptPackages } from 'proton-shared/lib/mail/send/sendEncrypt';
 import { attachSubPackages } from 'proton-shared/lib/mail/send/sendSubPackages';
 import { useCallback } from 'react';
-import { useApi, useGetAddressKeys, useGetEncryptionPreferences, useUserSettings } from './index';
+import { useApi, useGetAddressKeys, useGetEncryptionPreferences, useGetMailSettings } from './index';
 import { generateUID } from '../helpers/component';
 
 interface Params {
@@ -28,8 +28,8 @@ interface Params {
 
 export const useSendIcs = () => {
     const api = useApi();
-    const [userSettings] = useUserSettings();
     const getAddressKeys = useGetAddressKeys();
+    const getMailSettings = useGetMailSettings();
     const getEncryptionPreferences = useGetEncryptionPreferences();
 
     const send = useCallback(
@@ -41,6 +41,7 @@ export const useSendIcs = () => {
                 await getAddressKeys(addressID)
             );
             const [publicKeys, privateKeys] = [allPublicKeys.slice(0, 1), allPrivateKeys.slice(0, 1)];
+            const { AutoSaveContacts } = await getMailSettings();
             const inputMessage: SimpleMessageExtended = {
                 localID: generateUID('reply-invitation'),
                 plainText: plainTextBody,
@@ -104,9 +105,9 @@ export const useSendIcs = () => {
             let packages = generateTopPackages(message.data, '', mapSendPrefs, attachmentData);
             packages = await attachSubPackages(packages, message.data, emails, mapSendPrefs, api);
             packages = await encryptPackages(message, packages, getAddressKeys);
-            await api(sendMessage(message.data.ID, { Packages: packages, AutoSaveContacts: 0 } as any));
+            await api(sendMessage(message.data.ID, { Packages: packages, AutoSaveContacts } as any));
         },
-        [api, userSettings, getAddressKeys, getEncryptionPreferences]
+        [api, getMailSettings, getAddressKeys, getEncryptionPreferences]
     );
     return send;
 };
