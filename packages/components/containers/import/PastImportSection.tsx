@@ -10,7 +10,7 @@ import { Button, Loader, Alert, Table, TableCell, TableBody, TableRow, Badge, Er
 
 import { ConfirmModal } from '../../components/modal';
 
-import { ImportMailReportStatus } from './interfaces';
+import { ImportHistory, ImportMailReportStatus } from './interfaces';
 
 interface ImportStatusProps {
     status: ImportMailReportStatus;
@@ -68,12 +68,12 @@ const DeleteButton = ({ ID }: DeleteButtonProps) => {
         <Button
             loading={loadingActions}
             className="pm-button--small"
-            onClick={() => {
-                withLoadingActions(handleDelete());
-            }}
+            onClick={() => withLoadingActions(handleDelete())}
         >{c('Action').t`Delete record`}</Button>
     );
 };
+
+const sortByDate = (a: ImportHistory, b: ImportHistory) => (a.EndTime > b.EndTime ? -1 : 1);
 
 const PastImportsSection = () => {
     const [imports, loading] = useImportHistory();
@@ -102,16 +102,16 @@ const PastImportsSection = () => {
 
     return (
         <>
-            <Alert>{c('Info').t`Check records of already processed imports`}</Alert>
+            <Alert>{c('Info').t`Check the records of your past imports.`}</Alert>
             <Table className="onmobile-hideTd3 onmobile-hideTd4 onmobile-hideTd5 pm-simple-table--has-actions">
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
                 <TableBody>
-                    {imports.map(({ State, Email, ID, TotalSize, EndTime }, index) => {
+                    {imports.sort(sortByDate).map(({ State, Email, ID, TotalSize, EndTime }) => {
                         return (
                             <TableRow
-                                key={index}
+                                key={ID}
                                 cells={[
                                     <>
                                         <div key="email" className="w100 ellipsis">

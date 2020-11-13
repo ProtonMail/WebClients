@@ -78,10 +78,10 @@ const RowActions = ({ currentImport }: RowActionsProps) => {
             text: isAuthError ? c('Action').t`Reconnect` : c('Action').t`Resume`,
             onClick: () => {
                 if (isAuthError) {
-                    withLoadingSecondaryAction(handleReconnect());
-                } else {
-                    withLoadingSecondaryAction(handleResume(ID));
+                    return withLoadingSecondaryAction(handleReconnect());
                 }
+
+                return withLoadingSecondaryAction(handleResume(ID));
             },
             loading: loadingSecondaryAction,
         });
@@ -89,14 +89,20 @@ const RowActions = ({ currentImport }: RowActionsProps) => {
 
     list.push({
         text: c('Action').t`Cancel`,
-        onClick: () => {
-            withLoadingPrimaryAction(handleCancel(ID));
-        },
+        onClick: () => withLoadingPrimaryAction(handleCancel(ID)),
         loading: loadingPrimaryAction,
         disabled: State === ImportMailStatus.CANCELED,
     });
 
     return <DropdownActions key="actions" className="pm-button--small" list={list} />;
+};
+
+const sortByDate = (a: Importer, b: Importer) => {
+    if (!a.Active || !b.Active) {
+        return 0;
+    }
+
+    return a.Active.CreateTime > b.Active.CreateTime ? -1 : 1;
 };
 
 const CurrentImportsSection = () => {
@@ -164,8 +170,8 @@ const CurrentImportsSection = () => {
                     <tr>{headerCells}</tr>
                 </thead>
                 <TableBody>
-                    {importsToDisplay.map((currentImport, index) => {
-                        const { Email, Active } = currentImport;
+                    {importsToDisplay.sort(sortByDate).map((currentImport) => {
+                        const { Email, Active, ID } = currentImport;
                         const { State, ErrorCode, CreateTime = Date.now(), Mapping = [] } = Active || {};
 
                         const { total, processed } = Mapping.reduce(
@@ -215,7 +221,7 @@ const CurrentImportsSection = () => {
 
                         return (
                             <TableRow
-                                key={index}
+                                key={ID}
                                 cells={[
                                     <>
                                         <div key="email" className="w100 ellipsis">

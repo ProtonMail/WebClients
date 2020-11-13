@@ -208,7 +208,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, needAppPassword, showPa
                 learnMore={
                     isReconnect
                         ? 'https://protonmail.com/support/knowledge-base/import-assistant/#reconnection-errors'
-                        : 'https://protonmail.com/support/knowledge-base/import-assistant/#common-questions-and-import-errors/'
+                        : 'https://protonmail.com/support/knowledge-base/import-assistant/#common-questions-and-import-errors'
                 }
             >
                 {message}
