@@ -1,7 +1,7 @@
 import React from 'react';
-import Icon from './Icon';
+import Icon, { Props as IconProps } from './Icon';
 
-interface Props {
+interface Props extends IconProps {
     name: string;
     className?: string;
 }

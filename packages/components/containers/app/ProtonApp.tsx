@@ -23,7 +23,7 @@ import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 
 import { MimeIcons, Icons } from '../../components';
 import Signout from './Signout';
-import CompatibilityCheck from './CompatibilityCheck';
+import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
 import ConfigProvider from '../config/Provider';
 import NotificationsProvider from '../notifications/Provider';
 import ModalsProvider from '../modals/Provider';

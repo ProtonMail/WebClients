@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { APPS_CONFIGURATION } from 'proton-shared/lib/constants';
+import { getAppName } from 'proton-shared/lib/apps/helper';
 
 import useConfig from './useConfig';
 import useDocumentTitle from './useDocumentTitle';
@@ -8,7 +8,7 @@ const useAppTitle = (title: string, maybeAppName?: string) => {
     const { APP_NAME } = useConfig();
 
     const memoedTitle = useMemo(() => {
-        const appName = maybeAppName || APPS_CONFIGURATION[APP_NAME]?.name;
+        const appName = maybeAppName || getAppName(APP_NAME);
         return [title, appName].filter(Boolean).join(' - ');
     }, [title]);
 
