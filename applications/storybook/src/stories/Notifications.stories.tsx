@@ -1,8 +1,7 @@
 import React from 'react';
-import {Meta} from '@storybook/react/types-6-0';
 import { PrimaryButton, ConfirmModal, useNotifications } from 'react-components';
 
-export default {component: ConfirmModal, title: 'Proton UI / Notifications'} as Meta;
+export default { component: ConfirmModal, title: 'Proton UI / Notifications' };
 
 export const Basic = () => {
     const { createNotification } = useNotifications();
@@ -10,13 +9,9 @@ export const Basic = () => {
     const handleClick = () => {
         createNotification({
             type: 'success',
-            text: 'Success!'
+            text: 'Success!',
         });
-    }
+    };
 
-    return (
-        <PrimaryButton onClick={handleClick}>
-            Create notification
-        </PrimaryButton>
-    );
+    return <PrimaryButton onClick={handleClick}>Create notification</PrimaryButton>;
 };
