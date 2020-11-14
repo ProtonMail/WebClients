@@ -28,7 +28,7 @@ const useBlackFriday = () => {
     const [subscription] = useSubscription();
     const isBlackFridayPeriod = useBlackFridayPeriod();
     const isProductPayerPeriod = useProductPayerPeriod();
-    const [modalState, setModalState] = usePromoModalState();
+    const [modalState, loadingModalState, setModalState] = usePromoModalState();
     const [isEligible, setEligibility] = useState(false);
     const location = useLocation();
     const { createModal } = useModals();
@@ -66,7 +66,7 @@ const useBlackFriday = () => {
     }, [isBlackFridayPeriod, isFree]);
 
     useEffect(() => {
-        if (isDelinquent) {
+        if (isDelinquent || loadingModalState) {
             return;
         }
         if (plans.length && isBlackFridayPeriod && isEligible && (!modalState || openBlackFridayModal)) {
@@ -77,10 +77,10 @@ const useBlackFriday = () => {
                 createModal(<MailBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
             }
         }
-    }, [modalState, isBlackFridayPeriod, isEligible, plans]);
+    }, [loadingModalState, isBlackFridayPeriod, isEligible, plans]);
 
     useEffect(() => {
-        if (isDelinquent) {
+        if (isDelinquent || loadingModalState) {
             return;
         }
         if (plans.length && isProductPayerPeriod && isProductPayer(subscription) && !modalState) {
@@ -91,7 +91,7 @@ const useBlackFriday = () => {
                 createModal(<MailBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
             }
         }
-    }, [modalState, isProductPayerPeriod, subscription, plans]);
+    }, [loadingModalState, isProductPayerPeriod, subscription, plans]);
 
     return (
         !loading &&

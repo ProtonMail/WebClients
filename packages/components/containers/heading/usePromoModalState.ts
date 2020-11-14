@@ -5,7 +5,7 @@ import { BLACK_FRIDAY } from 'proton-shared/lib/constants';
 import { getCookie, setCookie } from 'proton-shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from 'proton-shared/lib/helpers/url';
 
-import { useApi, useUser } from '../../hooks';
+import { useApi, useUser, useLoading } from '../../hooks';
 
 const FEATURE_ID = 'BlackFridayPromoShown';
 
@@ -24,6 +24,7 @@ const setModalCookie = (key: string, value: string) => {
 };
 
 const usePromoModalState = () => {
+    const [loading, withLoading] = useLoading();
     const [state, setState] = useState(false);
     const api = useApi();
     const [user] = useUser();
@@ -51,7 +52,7 @@ const usePromoModalState = () => {
     };
 
     useEffect(() => {
-        fetchFeature();
+        withLoading(fetchFeature());
     }, []);
 
     const onChange = async (Value: boolean) => {
@@ -63,7 +64,7 @@ const usePromoModalState = () => {
         }
     };
 
-    return [state, onChange] as const;
+    return [state, loading, onChange] as const;
 };
 
 export default usePromoModalState;
