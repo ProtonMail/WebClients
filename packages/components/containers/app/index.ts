@@ -1,6 +1,5 @@
 export { default as AppsDropdown } from './AppsDropdown';
 export { default as ErrorBoundary } from './ErrorBoundary';
-export { default as CompatibilityCheck } from './CompatibilityCheck';
 export { default as LoaderPage } from './LoaderPage';
 export { default as ProtonApp } from './ProtonApp';
 export { default as StandalonePublicApp } from './StandalonePublicApp';
