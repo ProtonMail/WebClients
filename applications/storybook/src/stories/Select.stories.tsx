@@ -21,19 +21,19 @@ export const basic = () => {
             <Option title="Zebra" value="zebra" />
         </SelectTwo>
     );
-}
+};
 
-export const controlledOpenState = () => {
-    const [ value, setValue ] = useState('ant');
+export const ControlledOpenState = () => {
+    const [value, setValue] = useState('');
 
-    const [ open, setOpen ] = useState(false);
-    
-    function handleOpen () {
-        setOpen(true)
+    const [open, setOpen] = useState(false);
+
+    function handleOpen() {
+        setOpen(true);
     }
-    
-    function handleClose () {
-        setOpen(false)
+
+    function handleClose() {
+        setOpen(false);
     }
 
     return (
@@ -48,7 +48,7 @@ export const controlledOpenState = () => {
             <Option title="Zebra" value="zebra" />
         </SelectTwo>
     );
-}
+};
 
 export const withRichOptionContent = () => {
     const [ value, setValue ] = useState('reddit');
@@ -69,7 +69,7 @@ export const withRichOptionContent = () => {
             </Option>
         </SelectTwo>
     );
-}
+};
 
 export const withCustomSearchClearTimer = () => {
     const [ value, setValue ] = useState('ant');
@@ -87,7 +87,7 @@ export const withCustomSearchClearTimer = () => {
             <Option title="Zebra" value="zebra" />
         </SelectTwo>
     );
-}
+};
 
 export const withComplexValues = () => {
     /*
@@ -110,4 +110,4 @@ export const withComplexValues = () => {
             ))}
         </SelectTwo>
     );
-}
+};
