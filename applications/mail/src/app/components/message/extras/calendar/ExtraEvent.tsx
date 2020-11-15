@@ -1,6 +1,5 @@
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { Address, UserModel, UserSettings } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -256,8 +255,6 @@ const ExtraEvent = ({
         return null;
     }
 
-    const interactiveWidget = FEATURE_FLAGS.includes('calendar-receive-invitations');
-
     return (
         <div className="rounded bordered bg-white-dm mb1 pl1 pr1 pt0-5 pb0-5 scroll-if-needed">
             <header className="flex flex-nowrap flex-items-center">
@@ -266,10 +263,9 @@ const ExtraEvent = ({
                     {title}
                 </strong>
             </header>
-            {!interactiveWidget && <div className="mt0-5 mb0-5 border-top" />}
-            {interactiveWidget && <ExtraEventSummary model={model} />}
-            {interactiveWidget && <ExtraEventWarning model={model} />}
-            {interactiveWidget && <ExtraEventButtons model={model} setModel={setModel} message={message} />}
+            <ExtraEventSummary model={model} />
+            <ExtraEventWarning model={model} />
+            <ExtraEventButtons model={model} setModel={setModel} message={message} />
             <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />
         </div>
     );

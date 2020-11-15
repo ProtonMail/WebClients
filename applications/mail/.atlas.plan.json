@@ -1,0 +1,19 @@
+[
+  {
+    "name": "galileo-sso",
+    "ns": "galileo",
+    "chart": "domain-0.1.0",
+    "chart_path": "/home/edusan/Work/devops/proton-atlas/charts/domain",
+    "values": [
+      "/home/edusan/Work/devops/proton-atlas/envs/auto-sso/sso.yaml",
+      "/home/edusan/Work/devops/proton-atlas/envs/auto-sso/galileo-sso/values.yaml"
+    ],
+    "patch": {
+      "global": {
+        "deployed_by": "econdepe@protonmail.com",
+        "deployed_at": "2020-11-13T13:45:01.383Z"
+      }
+    },
+    "helm_opts": "upgrade galileo-sso /home/edusan/Work/devops/proton-atlas/charts/domain -n galileo --reuse-values --values /home/edusan/Work/devops/proton-atlas/charts/domain/values.yaml --values /home/edusan/Work/devops/proton-atlas/envs/auto-sso/sso.yaml --values /home/edusan/Work/devops/proton-atlas/envs/auto-sso/galileo-sso/values.yaml --values ==patch_file=="
+  }
+]
