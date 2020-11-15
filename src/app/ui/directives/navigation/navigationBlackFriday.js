@@ -19,8 +19,8 @@ function navigationBlackFriday(blackFridayModalOpener, dispatchers, blackFridayM
                 element[0].classList[showPromo ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);
 
                 if (showPromo) {
-                    blackFridayModel.getCloseState().then((showModal) => {
-                        if (showModal) {
+                    blackFridayModel.getCloseState().then((alreadySeen) => {
+                        if (!alreadySeen) {
                             blackFridayModalOpener();
                         }
                     });
