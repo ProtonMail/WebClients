@@ -1,3 +1,13 @@
+# [4.0.0 - Beta 31] - 2020-11-18
+
+## Improvements
+
+-   Improved the way we deal with the original message when switching between rich text and plain text mode
+
+## Fixes
+
+-   An error sometimes appeared when sending a message after changing the "from" address
+
 # [4.0.0 - Beta 30] - 2020-11-12
 
 ## New features
