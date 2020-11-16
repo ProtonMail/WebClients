@@ -60,3 +60,7 @@ export enum SupportedMimeTypes {
     mp1s = 'video/MP1S',
     mp2p = 'video/MP2P',
 }
+
+export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
+    py: 'text/x-python',
+};

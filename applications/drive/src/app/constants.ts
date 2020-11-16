@@ -127,4 +127,5 @@ export const fileDescriptions: { [type: string]: string } = {
     'video/3gpp2': '3GPP2 audio/video container',
     'audio/3gpp2': '3GPP2 audio/video container',
     'application/x-7z-compressed': '7-zip archive',
+    'text/x-python': 'Python',
 };

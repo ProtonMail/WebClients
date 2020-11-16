@@ -1,6 +1,5 @@
 import { ReadableStream } from 'web-streams-polyfill';
 import { Writer as ZipWriter } from '@transcend-io/conflux';
-import { lookup } from 'mime-types';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { isWindows } from 'proton-shared/lib/helpers/browser';
 import { openDownloadStream, initDownloadSW } from './download';
@@ -68,7 +67,7 @@ class FileSaver {
             this.saveViaBuffer(readable, filename).catch(console.error);
         } else {
             try {
-                const mimeType = lookup(filename) || undefined;
+                const mimeType = 'application/zip';
                 const zipMeta = { filename, mimeType };
 
                 const saveStream = await openDownloadStream(zipMeta, {

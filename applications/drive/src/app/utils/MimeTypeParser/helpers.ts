@@ -1,3 +1,5 @@
+import { EXTRA_EXTENSION_TYPES } from './constants';
+
 interface Options {
     /**
      * Offset in source buffer to start checking from
@@ -74,4 +76,10 @@ export function isTarHeaderChecksumValid(buffer: Buffer) {
     }
 
     return readSum === sum;
+}
+
+export async function mimetypeFromExtension(filename: string) {
+    const { lookup } = await import('mime-types');
+    const extension = filename.split('.').pop();
+    return lookup(filename) || (extension && EXTRA_EXTENSION_TYPES[extension]) || 'application/octet-stream';
 }

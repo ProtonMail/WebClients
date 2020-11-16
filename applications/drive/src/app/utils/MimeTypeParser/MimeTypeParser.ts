@@ -1,6 +1,6 @@
 import ChunkFileReader from '../../components/uploads/ChunkFileReader';
 import { SupportedMimeTypes } from './constants';
-import { SignatureChecker } from './helpers';
+import { mimetypeFromExtension, SignatureChecker } from './helpers';
 import applicationSignatures from './signatureChecks/applicationSignatures';
 import archiveSignatures from './signatureChecks/archiveSignatures';
 import audioSignatures from './signatureChecks/audioSignatures';
@@ -34,14 +34,18 @@ export function mimeTypeFromBuffer(input: Uint8Array | ArrayBuffer | Buffer) {
     return mimeTypeFromSignature(SignatureChecker(sourceBuffer));
 }
 
-export async function mimeTypeFromFile(input: File | Blob) {
+export async function mimeTypeFromFile(input: File, extensionFallback = true) {
     const reader = new ChunkFileReader(input, minimumBytesToCheck);
+    const defaultType = 'application/octet-stream';
 
     if (reader.isEOF()) {
-        return undefined;
+        return defaultType;
     }
 
     const chunk = await reader.readNextChunk();
-
-    return mimeTypeFromSignature(SignatureChecker(Buffer.from(chunk)));
+    return (
+        mimeTypeFromSignature(SignatureChecker(Buffer.from(chunk))) ||
+        (extensionFallback && mimetypeFromExtension(input.name)) ||
+        defaultType
+    );
 }
