@@ -37,7 +37,7 @@ const validateInvalidName = (str: string) => {
 };
 
 const validateInvalidCharacters = (str: string) => {
-    return /\/\\/.test(str) ? c('Validation Error').t`Name cannot include / and \\` : undefined;
+    return /\/|\\/.test(str) ? c('Validation Error').t`Name cannot include / and \\` : undefined;
 };
 
 const validateNameEmpty = (str: string) => {
