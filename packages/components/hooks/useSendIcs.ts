@@ -3,7 +3,7 @@ import { encryptMessage } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { Recipient } from 'proton-shared/lib/interfaces';
 import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
-import { Message, SimpleMessageExtended } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome, SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { createDraft, sendMessage } from 'proton-shared/lib/api/messages';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
@@ -42,7 +42,7 @@ export const useSendIcs = () => {
             );
             const [publicKeys, privateKeys] = [allPublicKeys.slice(0, 1), allPrivateKeys.slice(0, 1)];
             const { AutoSaveContacts } = await getMailSettings();
-            const inputMessage: SimpleMessageExtended = {
+            const inputMessage = {
                 localID: generateUID('reply-invitation'),
                 plainText: plainTextBody,
                 publicKeys,
