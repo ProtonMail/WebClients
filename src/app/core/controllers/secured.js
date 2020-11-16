@@ -19,7 +19,8 @@ function SecuredController(
     versionInfoModel,
     blackFridayHandler,
     prepareDraft,
-    userType
+    userType,
+    setPaidCookie
 ) {
     const { on, unsubscribe } = dispatchers();
     $scope.mobileMode = AppModel.is('mobile');
@@ -64,6 +65,7 @@ function SecuredController(
     prepareDraft.init();
 
     versionInfoModel();
+    setPaidCookie();
 
     on('updateUser', () => {
         $scope.$applyAsync(() => {

@@ -24,6 +24,7 @@ import attachSignupSubscription from './services/attachSignupSubscription';
 import isDelinquent from './services/isDelinquent';
 import manageUser from './services/manageUser';
 import signupModel from './services/signupModel';
+import setPaidCookie from './services/setPaidCookie';
 import signupUserProcess from './services/signupUserProcess';
 import userType from './services/userType';
 import needUpgrade from './services/needUpgrade';
@@ -34,6 +35,7 @@ export default angular
     .factory('iframeVerifWizard', iframeVerifWizard)
     .factory('needUpgrade', needUpgrade)
     .service('userType', userType)
+    .factory('setPaidCookie', setPaidCookie)
     .directive('humanVerification', humanVerification)
     .directive('signupCreationProcess', signupCreationProcess)
     .directive('signupHumanForm', signupHumanForm)
