@@ -13,6 +13,7 @@ import {
     FolderRelationshipsMap,
     FolderNamesMap,
     FolderPathsMap,
+    EditModeMap,
 } from '../interfaces';
 
 import { escapeSlashes, splitEscaped } from '../helpers';
@@ -159,6 +160,24 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
         setFoldersNameMap(newFoldersNameMap);
     };
 
+    const [editModeMap, setEditModeMap] = useState(
+        providerFolders.reduce<EditModeMap>((acc, folder) => {
+            acc[folder.Source] = false;
+            return acc;
+        }, {})
+    );
+
+    const updateEditModeMapping = (key: string, editMode: boolean) => {
+        const newEditModeMap = { ...editModeMap };
+        newEditModeMap[key] = editMode;
+        setEditModeMap(newEditModeMap);
+    };
+
+    useEffect(() => {
+        const isEditing = Object.values(editModeMap).some(Boolean);
+        toggleEditing(isEditing);
+    }, [editModeMap]);
+
     useEffect(() => {
         const Mapping = providerFolders.reduce<FolderMapping[]>((acc, folder) => {
             if (checkedFoldersMap[folder.Source]) {
@@ -216,8 +235,9 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
                                     folderNamesMap={folderNamesMap}
                                     folderPathsMap={folderPathsMap}
                                     onRename={handleRename}
-                                    toggleEditing={toggleEditing}
+                                    editModeMap={editModeMap}
                                     getParent={getParent}
+                                    updateEditModeMapping={updateEditModeMapping}
                                 />
                             ))}
                     </ul>
