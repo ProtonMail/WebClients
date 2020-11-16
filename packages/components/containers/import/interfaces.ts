@@ -145,6 +145,10 @@ export interface FolderNamesMap {
     [key: string]: string;
 }
 
+export interface EditModeMap {
+    [key: string]: boolean;
+}
+
 export interface FolderPathsMap {
     [key: string]: string;
 }

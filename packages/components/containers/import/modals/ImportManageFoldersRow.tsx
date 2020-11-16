@@ -12,6 +12,7 @@ import {
     MailImportFolder,
     FolderNamesMap,
     FolderPathsMap,
+    EditModeMap,
 } from '../interfaces';
 
 import { escapeSlashes, unescapeSlashes, splitEscaped } from '../helpers';
@@ -68,7 +69,8 @@ interface Props {
     providerFolders: MailImportFolder[];
     folderNamesMap: FolderNamesMap;
     folderPathsMap: FolderPathsMap;
-    toggleEditing: (editing: boolean) => void;
+    editModeMap: EditModeMap;
+    updateEditModeMapping: (key: string, editMode: boolean) => void;
     getParent: (folderName: string) => string | undefined;
 }
 
@@ -83,8 +85,9 @@ const ImportManageFoldersRow = ({
     folderNamesMap,
     folderPathsMap,
     onRename,
-    toggleEditing,
+    updateEditModeMapping,
     getParent,
+    editModeMap,
 }: Props) => {
     const { Source, Separator, DestinationFolder } = folder;
 
@@ -240,7 +243,7 @@ const ImportManageFoldersRow = ({
         if (editMode && inputRef && inputRef.current) {
             inputRef.current.focus();
         }
-        toggleEditing(editMode);
+        updateEditModeMapping(Source, editMode);
     }, [editMode]);
 
     return (
@@ -394,8 +397,9 @@ const ImportManageFoldersRow = ({
                             folderNamesMap={folderNamesMap}
                             folderPathsMap={folderPathsMap}
                             onRename={onRename}
-                            toggleEditing={toggleEditing}
+                            updateEditModeMapping={updateEditModeMapping}
                             getParent={getParent}
+                            editModeMap={editModeMap}
                         />
                     ))}
                 </ul>
