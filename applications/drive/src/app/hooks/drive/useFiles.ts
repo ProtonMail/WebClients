@@ -2,7 +2,6 @@ import { useApi, useEventManager, useNotifications, usePreventLeave, useGetUser 
 import { ReadableStream } from 'web-streams-polyfill';
 import { decryptMessage, encryptMessage } from 'pmcrypto';
 import { c } from 'ttag';
-import { lookup } from 'mime-types';
 import {
     generateNodeKeys,
     generateContentKeys,
@@ -51,6 +50,7 @@ import { getMetaForTransfer, isTransferCancelError } from '../../utils/transfer'
 import useEvents from './useEvents';
 import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
 import useConfirm from '../util/useConfirm';
+import { mimetypeFromExtension } from '../../utils/MimeTypeParser/helpers';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -210,11 +210,9 @@ function useFiles() {
 
                 const Name = await encryptName(filename, parentKeys.privateKey.toPublic(), addressKeyInfo.privateKey);
 
-                const fileMimeType = FEATURE_FLAGS.includes('drive-sprint-25')
+                const MIMEType = FEATURE_FLAGS.includes('drive-sprint-25')
                     ? await mimeTypeFromFile(file)
-                    : undefined;
-
-                const MIMEType = fileMimeType || lookup(filename) || 'application/octet-stream';
+                    : await mimetypeFromExtension(filename);
 
                 if (canceled) {
                     throw new TransferCancel({ message: `Transfer canceled for file "${filename}"` });

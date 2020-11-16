@@ -19,7 +19,7 @@ const composeValidators = <T>(validators: ((value: T) => string | undefined)[]) 
 };
 
 const validateSpaceEnd = (str: string) => {
-    return str.endsWith(' ') ? c('Validation Error').t`Name must not begin with a space` : undefined;
+    return str.endsWith(' ') ? c('Validation Error').t`Name must not end with a space` : undefined;
 };
 
 const validateSpaceStart = (str: string) => {

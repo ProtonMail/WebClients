@@ -1,6 +1,4 @@
 import { decryptPrivateKey, OpenPGPKey, SessionKey, encryptMessage } from 'pmcrypto';
-
-import { lookup } from 'mime-types';
 import { Api } from 'proton-shared/lib/interfaces';
 import {
     decryptUnsigned,
@@ -464,17 +462,13 @@ export const renameLinkAsync = async (
     shareId: string,
     linkId: string,
     parentLinkID: string,
-    newName: string,
-    type: LinkType
+    newName: string
 ) => {
     const error = validateLinkName(newName);
 
     if (error) {
         throw new ValidationError(error);
     }
-
-    // TODO: possibly remove this since we're now pretty sure about file types (could mark extension-based types with a flag)
-    const MIMEType = type === LinkType.FOLDER ? 'Folder' : lookup(newName) || 'application/octet-stream';
 
     const parentKeys = await getLinkKeys(shareId, parentLinkID);
 
@@ -503,7 +497,6 @@ export const renameLinkAsync = async (
     await api(
         queryRenameLink(shareId, linkId, {
             Name: encryptedName,
-            MIMEType,
             Hash,
             SignatureAddress: address.Email,
         })
