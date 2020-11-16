@@ -186,9 +186,9 @@ export const getSecondLevelDomain = () => {
 };
 
 export const getCookie = (name, cookies = document.cookie) => {
-    const [, value] = `; ${cookies}`.match(`;\\s*${name}=([^;]+)`);
-    if (value) {
-        return value;
+    const result = `; ${cookies}`.match(`;\\s*${name}=([^;]+)`);
+    if (result && result.length === 2) {
+        return result[1];
     }
     return null;
 };
