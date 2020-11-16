@@ -1,9 +1,8 @@
 import React from 'react';
 import { AppVersion } from 'react-components';
-import changelog from '../../../CHANGELOG.md';
 
 const VpnSidebarVersion = () => {
-    return <AppVersion changelog={changelog} />;
+    return <AppVersion />;
 };
 
 export default VpnSidebarVersion;
