@@ -1,3 +1,9 @@
+# [4.0.0-beta.10] - 2020-11-18
+## Fixed
+- Add fields SUMMARY, RRULE and LOCATION to ics when replying invites for a better display of the answer by other providers
+- Add organiser to contacts when "Automatically save contacts" is enabled
+- Fix alignment of notifications in event creation form
+---
 # [4.0.0-beta.9] - 2020-11-12
 ## Added
 
