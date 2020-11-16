@@ -134,15 +134,6 @@ const SquireEditorWrapper = ({
         }
     }, [editorReady, documentReady, isPlainText]);
 
-    // Insert the blockquote in the editor
-    // In an effect and not an handler to have blockquoteExpanded value updated on the handleInput
-    useEffect(() => {
-        if (blockquoteExpanded && blockquoteSaved?.length && squireEditorRef.current) {
-            const content = squireEditorRef.current.value;
-            squireEditorRef.current.value = content + blockquoteSaved;
-        }
-    }, [blockquoteExpanded]);
-
     // Watch for image deletion
     // Angular/src/app/squire/services/removeInlineWatcher.js
     const checkImageDeletion = useHandler(
@@ -200,21 +191,19 @@ const SquireEditorWrapper = ({
         onChange({ document, data: { MIMEType } });
     };
 
-    const handleChangeMetadata = useCallback(
-        (change: Partial<SquireEditorMetadata>) => {
-            if (change.isPlainText !== undefined) {
-                if (change.isPlainText) {
-                    switchToPlainText();
-                } else {
-                    switchToHTML();
-                }
+    const handleChangeMetadata = useHandler((change: Partial<SquireEditorMetadata>) => {
+        if (change.isPlainText !== undefined) {
+            if (change.isPlainText) {
+                switchToPlainText();
+                setBlockquoteExpanded(true);
+            } else {
+                switchToHTML();
             }
-            if (change.rightToLeft !== undefined) {
-                onChange({ data: { RightToLeft: change.rightToLeft } });
-            }
-        },
-        [onChange, message, mailSettings, addresses]
-    );
+        }
+        if (change.rightToLeft !== undefined) {
+            onChange({ data: { RightToLeft: change.rightToLeft } });
+        }
+    });
 
     // Editors actions ref to add and remove embedded image
     const handleInsertEmbedded = useHandler(async (embeddeds: EmbeddedMap) => {
@@ -244,7 +233,14 @@ const SquireEditorWrapper = ({
         };
     }, [blockquoteExpanded, blockquoteSaved, isPlainText]);
 
-    const handleEllipseClick = useCallback(() => setBlockquoteExpanded(true), []);
+    const handleEllipseClick = useHandler(() => {
+        setBlockquoteExpanded(true);
+        skipNextInputRef.current = true;
+        if (squireEditorRef.current) {
+            const content = squireEditorRef.current.value;
+            squireEditorRef.current.value = content + blockquoteSaved;
+        }
+    });
     const handleSquireReady = useCallback(() => setEditorReady(true), []);
 
     return (
