@@ -24,7 +24,7 @@ const setModalCookie = (key: string, value: string) => {
 };
 
 const usePromoModalState = () => {
-    const [loading, withLoading] = useLoading();
+    const [loading, withLoading] = useLoading(true);
     const [state, setState] = useState(false);
     const api = useApi();
     const [user] = useUser();
