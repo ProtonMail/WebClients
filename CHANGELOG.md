@@ -1,46 +1,62 @@
+# [3.16.42] - 2020-11-16
+
+## Improvements
+
+-   Various UI/UX improvements Fixes
+
 # [3.16.41] - 2020-11-13
 
 ## Improvements
-- Various UI/UX improvements Fixes
+
+-   Various UI/UX improvements Fixes
 
 # [3.16.40] - 2020-11-09
 
 ## Improvements
-- Various UI/UX improvements Fixes
+
+-   Various UI/UX improvements Fixes
 
 # [3.16.39] - 2020-11-04
 
 ## Improvements
-- Various UI/UX improvements Fixes
+
+-   Various UI/UX improvements Fixes
 
 # [3.16.38] - 2020-11-04
 
 ## Improvements
-- Various UI/UX improvements Fixes
+
+-   Various UI/UX improvements Fixes
 
 # [3.16.37] - 2020-10-28
 
 ## Improvements
-- Various UI/UX improvements Fixes
+
+-   Various UI/UX improvements Fixes
 
 ## Fixes
-- Various bug fixes
+
+-   Various bug fixes
 
 # [3.16.36] - 2020-10-28
 
 ## Improvements
-- Various UI/UX improvements Fixes
+
+-   Various UI/UX improvements Fixes
 
 ## Fixes
-- Various bug fixes
+
+-   Various bug fixes
 
 # [3.16.35] - 2020-10-28
 
 ## Improvements
-- Various UI/UX improvements Fixes
+
+-   Various UI/UX improvements Fixes
 
 ## Fixes
-- Various bug fixes
+
+-   Various bug fixes
 
 # [3.16.34] - 2020-10-05
 
