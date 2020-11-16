@@ -1,3 +1,9 @@
+# [3.16.43] - 2020-11-16
+
+## Improvements
+
+-   Keep promotion modal state with API instead of using local storage
+
 # [3.16.42] - 2020-11-16
 
 ## Improvements
