@@ -2,31 +2,22 @@ import React, { ReactNode, useEffect, useMemo, useCallback, useState } from 'rea
 import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
-import {
-    useLoading,
-    LoaderPage,
-    Icon,
-    usePreventLeave,
-    Bordered,
-    StandardLoadError,
-    useNotifications,
-} from 'react-components';
+import { useLoading, LoaderPage, Icon, usePreventLeave, Bordered, useNotifications } from 'react-components';
 import { getApiError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
 import usePublicSharing from '../../hooks/drive/usePublicSharing';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import DownloadSharedInfo from './DownloadSharedInfo';
 import EnterPasswordInfo from './EnterPasswordInfo';
+import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
-const REPORT_ABUSE_LABEL = c('Label').t`Report abuse`;
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
-const ERROR_MESSAGE_INCORRECT_PASSWORD = c('Error').t`Incorrect password. Please try again.`;
-const ERROR_MESSAGE_LINK_DOESN_NOT_EXIST = c('Error').t`The link either does not exist or has expired.`;
+const ERROR_CODE_NOT_FOUND = 404;
 
 const DownloadSharedContainer = () => {
-    const [error, setError] = useState<Error | undefined>();
+    const [notFoundError, setNotFoundError] = useState<Error | undefined>();
     const [loading, withLoading] = useLoading(false);
     const [handshakeInfo, setHandshakeInfo] = useState<InitHandshake | null>();
     const [linkInfo, setLinkInfo] = useState<SharedLinkInfo | null>();
@@ -42,7 +33,7 @@ const DownloadSharedContainer = () => {
         return initSRPHandshake(token)
             .then(setHandshakeInfo)
             .catch((e) => {
-                setError(e);
+                setNotFoundError(e);
                 setHandshakeInfo(null);
             });
     }, [token, password]);
@@ -57,27 +48,31 @@ const DownloadSharedContainer = () => {
                 .then(setLinkInfo)
                 .catch((e) => {
                     const { code, message } = getApiError(e);
-                    let text = message;
+                    let errorText = message;
 
-                    if (code === ERROR_CODE_INVALID_SRP_PARAMS) {
-                        text = ERROR_MESSAGE_LINK_DOESN_NOT_EXIST;
+                    if (code === ERROR_CODE_INVALID_SRP_PARAMS && passSubmittedManually) {
+                        errorText = c('Error').t`Incorrect password. Please try again.`;
 
-                        if (passSubmittedManually) {
-                            text = ERROR_MESSAGE_INCORRECT_PASSWORD;
-
-                            // SRP session ephemerals are destroyed when you retrieve them.
-                            initHandshake().catch(console.error);
-                        }
+                        // SRP session ephemerals are destroyed when you retrieve them.
+                        initHandshake().catch(console.error);
                     }
-
-                    createNotification({
-                        type: 'error',
-                        text,
-                    });
 
                     if (!passSubmittedManually) {
+                        if (code === ERROR_CODE_INVALID_SRP_PARAMS || code === ERROR_CODE_NOT_FOUND) {
+                            setNotFoundError(e);
+                            errorText = null;
+                        }
+
                         setHandshakeInfo(null);
                     }
+
+                    if (errorText) {
+                        createNotification({
+                            type: 'error',
+                            text: errorText,
+                        });
+                    }
+
                     setLinkInfo(null);
                 });
         },
@@ -106,6 +101,7 @@ const DownloadSharedContainer = () => {
 
     useEffect(() => {
         if (token && !handshakeInfo) {
+            setNotFoundError(undefined);
             withLoading(initHandshake()).catch(console.error);
         }
     }, [token, password]);
@@ -116,18 +112,14 @@ const DownloadSharedContainer = () => {
         }
     }, [getSharedLinkInfo, token, password, handshakeInfo]);
 
-    if (!token && !password) {
-        return null;
-    }
-    if (error) {
-        return <StandardLoadError />;
-    }
     if (loading) {
         return <LoaderPage />;
     }
 
     let content: ReactNode = null;
-    if (linkInfo) {
+    if (notFoundError || (!token && !password)) {
+        content = <LinkDoesNotExistInfo />;
+    } else if (linkInfo) {
         content = (
             <DownloadSharedInfo
                 name={linkInfo.Name}
@@ -161,9 +153,9 @@ const DownloadSharedContainer = () => {
                         <a
                             className="small signup-footer-link"
                             href={`mailto:${REPORT_ABUSE_EMAIL}`}
-                            title={REPORT_ABUSE_LABEL}
+                            title={c('Label').t`Report abuse`}
                         >
-                            {REPORT_ABUSE_LABEL}
+                            {c('Label').t`Report abuse`}
                         </a>
                     </div>
                 </div>
