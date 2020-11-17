@@ -210,9 +210,6 @@ const AddressKeysSection = () => {
             return;
         }
         const { privateKey: primaryPrivateKey } = getPrimaryKey(addressKeys) || {};
-        if (!primaryPrivateKey) {
-            return;
-        }
 
         const onAdd = async (encryptionConfig: EncryptionConfig): Promise<string> => {
             const { privateKey, privateKeyArmored } = await generateAddressKey({
@@ -220,6 +217,8 @@ const AddressKeysSection = () => {
                 passphrase: authentication.getPassword(),
                 encryptionConfig,
             });
+            // If there is no primary private key, assume there exists no keys and this new key should be used to sign
+            const signingKey = primaryPrivateKey || privateKey;
             await createKeyHelper({
                 api,
                 privateKeyArmored,
@@ -227,7 +226,7 @@ const AddressKeysSection = () => {
                 Address,
                 parsedKeys: await getParsedKeys(addressKeys),
                 actionableKeys: await getActionableKeysList(addressKeys),
-                signingKey: primaryPrivateKey,
+                signingKey,
             });
             await call();
             return privateKey.getFingerprint();
@@ -242,9 +241,6 @@ const AddressKeysSection = () => {
             return;
         }
         const { privateKey: primaryPrivateKey } = getPrimaryKey(addressKeys) || {};
-        if (!primaryPrivateKey) {
-            return;
-        }
 
         const onProcess = async ({ keysToImport, setKeysToImport }: ImportProcessArguments) => {
             await importKeysProcess({
