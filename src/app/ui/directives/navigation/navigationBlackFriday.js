@@ -27,7 +27,7 @@ function navigationBlackFriday(blackFridayModalOpener, dispatchers, blackFridayM
                 }
             };
 
-            const id = setInterval(refresh, 60000);
+            const id = setInterval(refresh, 60 * 60 * 1000);
 
             refresh();
 
