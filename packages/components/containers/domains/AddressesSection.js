@@ -13,8 +13,8 @@ const AddressesSection = ({ onClose }) => {
                 <AppLink
                     className="pm-button pm-button--primary"
                     onClick={() => onClose?.()}
-                    to="/members"
-                    toApp={APPS.PROTONMAIL_SETTINGS}
+                    to="/organization#members"
+                    toApp={APPS.PROTONACCOUNT}
                 >{c('Action').t`Add user`}</AppLink>
             </Block>
             <Alert>{c('Info for domain modal')
@@ -23,8 +23,8 @@ const AddressesSection = ({ onClose }) => {
                 <AppLink
                     className="pm-button pm-button--primary"
                     onClick={() => onClose?.()}
-                    to="/addresses"
-                    toApp={APPS.PROTONMAIL_SETTINGS}
+                    to="/organization#addresses"
+                    toApp={APPS.PROTONACCOUNT}
                 >{c('Action').t`Add address`}</AppLink>
             </Block>
         </>

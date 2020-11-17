@@ -120,7 +120,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                     <ul className="unstyled mt0 mb0">
                         <li className="flex flex-items-center">
                             <Icon name="protonmail" className="mr0-5" />
-                            <AppLink to="/overview" toApp={APPS.PROTONMAIL_SETTINGS}>{c('Link')
+                            <AppLink to="/settings/overview" toApp={APPS.PROTONMAIL}>{c('Link')
                                 .t`ProtonMail settings`}</AppLink>
                         </li>
                         <li className="flex flex-items-center">
