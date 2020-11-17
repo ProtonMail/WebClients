@@ -10,9 +10,9 @@ async function runInQueue<T>(functions: (() => Promise<T>)[], maxProcessing = 1)
     const runNext = (): Promise<any> => {
         const index = resultIndex;
         const executor = functions[index];
-        resultIndex += 1;
 
         if (executor) {
+            resultIndex += 1;
             return executor().then((result) => {
                 results[index] = result;
                 return runNext();

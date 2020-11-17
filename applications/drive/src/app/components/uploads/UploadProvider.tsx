@@ -139,7 +139,7 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                     if (isTransferCancelError(error)) {
                         updateUploadState(id, TransferState.Canceled);
                     } else {
-                        console.error(`Download ${id} failed: ${error}`);
+                        console.error(`Upload ${id} failed: ${error}`);
                         updateUploadState(id, TransferState.Error, { error });
                     }
                 });
