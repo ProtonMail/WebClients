@@ -26,7 +26,6 @@ export const BRAND_NAME = 'Proton';
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
     PROTONMAIL: 'proton-mail',
-    PROTONMAIL_SETTINGS: 'proton-mail-settings',
     PROTONCONTACTS: 'proton-contacts',
     PROTONDRIVE: 'proton-drive',
     PROTONCALENDAR: 'proton-calendar',
@@ -45,14 +44,6 @@ export const APPS_CONFIGURATION = {
         publicPath: '',
         subdomain: 'beta',
         name: 'ProtonMail',
-        clientID: 'WebMail',
-        icon: 'protonmail',
-    },
-    [APPS.PROTONMAIL_SETTINGS]: {
-        publicPath: '/settings',
-        subdomain: 'beta',
-        name: 'ProtonMail',
-        // Needs to be the same ClientID as mail since they are deployed as an embedded app
         clientID: 'WebMail',
         icon: 'protonmail',
     },
@@ -104,12 +95,7 @@ export const SSO_PATHS = {
     SIGNUP: '/signup',
 } as const;
 
-export const REQUIRES_INTERNAL_EMAIL_ADDRESS: APP_NAMES[] = [
-    APPS.PROTONMAIL,
-    APPS.PROTONMAIL_SETTINGS,
-    APPS.PROTONCONTACTS,
-    APPS.PROTONCALENDAR,
-];
+export const REQUIRES_INTERNAL_EMAIL_ADDRESS: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONCONTACTS, APPS.PROTONCALENDAR];
 
 export const REQUIRES_NONDELINQUENT: APP_NAMES[] = [
     APPS.PROTONMAIL,
@@ -789,9 +775,7 @@ export const OPENPGP =
         : WEBPACK_OPENPGP;
 
 export const FORKABLE_APPS = new Set(
-    [APPS.PROTONMAIL, APPS.PROTONMAIL_SETTINGS, APPS.PROTONCONTACTS, APPS.PROTONDRIVE, APPS.PROTONCALENDAR].filter(
-        Boolean
-    )
+    [APPS.PROTONMAIL, APPS.PROTONCONTACTS, APPS.PROTONDRIVE, APPS.PROTONCALENDAR].filter(Boolean)
 );
 
 export const AES256 = 'aes256';
