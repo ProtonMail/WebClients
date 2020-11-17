@@ -106,7 +106,7 @@ const Mark = ({ children: textToHighlight, value: searchWord }: Props) => {
             {allChunks.map(({ start, end, highlight }) => {
                 const insert = textToHighlight.substring(start, end);
                 if (highlight) {
-                    return <mark>{insert}</mark>;
+                    return <mark key={`${start}-${end}`}>{insert}</mark>;
                 }
                 return insert;
             }, [])}
