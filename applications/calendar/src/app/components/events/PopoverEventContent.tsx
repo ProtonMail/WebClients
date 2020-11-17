@@ -8,6 +8,7 @@ import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import React, { useMemo, useState } from 'react';
 import { Icon, Info, Tabs, Tooltip } from 'react-components';
 import { c, msgid } from 'ttag';
+import { getOrganizerDisplayData } from '../../helpers/attendees';
 import { sanitizeDescription, buildMSTeamsLinks } from '../../helpers/sanitize';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { sortNotifications } from '../../containers/calendar/sortNotifications';
@@ -50,15 +51,15 @@ const PopoverEventContent = ({
 }: Props) => {
     const [tab, setTab] = useState(0);
     const { Name: calendarName, Color } = Calendar;
-    const numberOfParticipants = model.attendees.length;
 
     const isInvitation = !model.isOrganizer;
-    const { organizer } = model;
-    const organizerContact = organizer.email && contactEmailMap[organizer.email];
-    const organizerName = organizerContact ? organizerContact.Name : organizer.cn || organizer.email;
-    const organizerTitle = organizerContact
-        ? `${organizerContact.Name} <${organizerContact.Email}>`
-        : organizer.cn || organizer.email;
+    const { organizer, attendees } = model;
+    const numberOfParticipants = attendees.length;
+    const { name: organizerName, title: organizerTitle } = getOrganizerDisplayData(
+        organizer,
+        isInvitation,
+        contactEmailMap
+    );
     const organizerString = c('Event info').t`Organized by:`;
     const trimmedLocation = model.location.trim();
     const htmlString = useMemo(() => {
@@ -118,7 +119,7 @@ const PopoverEventContent = ({
                     <span className="hyphens scroll-if-needed">{trimmedLocation}</span>
                 </div>
             ) : null}
-            {isInvitation ? (
+            {isInvitation || numberOfParticipants ? (
                 <div className={wrapClassName}>
                     <Icon name="contact" className={iconClassName} />
                     <span className="mr0-5r">{organizerString}</span>
