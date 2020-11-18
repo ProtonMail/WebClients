@@ -34,6 +34,7 @@ const DropdownButton = ({
             aria-expanded={isOpen}
             aria-busy={loading}
             disabled={loading ? true : disabled}
+            data-testid="dropdown-button"
             {...rest}
         >
             <span className="mauto">

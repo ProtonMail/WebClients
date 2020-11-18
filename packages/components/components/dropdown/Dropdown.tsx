@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, CSSProperties } from 'react';
+import React, { useEffect, useState, useRef, CSSProperties, useLayoutEffect } from 'react';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { classnames } from '../../helpers';
@@ -21,10 +21,13 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     onContextMenu?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     originalPlacement?: string;
     isOpen?: boolean;
+    noMaxWidth?: boolean;
+    noMaxHeight?: boolean;
     noMaxSize?: boolean;
     noCaret?: boolean;
     availablePlacements?: string[];
     originalPosition?: Position;
+    sameAnchorWidth?: boolean;
     offset?: number;
     autoClose?: boolean;
     autoCloseOutside?: boolean;
@@ -44,8 +47,11 @@ const Dropdown = ({
     onClose = noop,
     onContextMenu = noop,
     isOpen = false,
+    noMaxWidth = false,
+    noMaxHeight = false,
     noMaxSize = false,
     noCaret = false,
+    sameAnchorWidth = false,
     autoClose = true,
     autoCloseOutside = true,
     autoCloseOutsideAnchor = true,
@@ -75,7 +81,18 @@ const Dropdown = ({
     };
 
     const contentRef = useRef<HTMLDivElement>(null);
-    const [contentRect, setContentRect] = useState<DOMRect>();
+
+    const anchorRectRef = useRef<DOMRect | undefined>();
+    const [contentRect, setContentRect] = useState<DOMRect | undefined>();
+
+    useLayoutEffect(() => {
+        if (!isOpen) {
+            return;
+        }
+        if (sameAnchorWidth) {
+            anchorRectRef.current = anchorRef.current?.getBoundingClientRect();
+        }
+    }, [isOpen]);
 
     useEffect(() => {
         if (!isOpen) {
@@ -132,12 +149,13 @@ const Dropdown = ({
         '--left': position.left,
     };
 
-    const varSize = contentRect
-        ? {
-              '--width': `${contentRect.width}`,
-              '--height': `${contentRect.height}`,
-          }
-        : {};
+    const varSize =
+        contentRect || anchorRectRef.current
+            ? {
+                  '--width': `${anchorRectRef.current?.width || contentRect?.width}`,
+                  '--height': `${contentRect?.height || undefined}`,
+              }
+            : {};
 
     const handleAnimationEnd = ({ animationName }: React.AnimationEvent) => {
         if (animationName.includes('dropdownOut') && isClosing) {
@@ -145,20 +163,27 @@ const Dropdown = ({
             setContentRect(undefined);
         }
         if (animationName.includes('dropdownIn') && isOpen && contentRef.current && !contentRect) {
-            setContentRect(contentRef.current.getBoundingClientRect());
+            const contentClientRect = contentRef.current?.getBoundingClientRect();
+            setContentRect(contentClientRect);
         }
+    };
+
+    const rootStyle = {
+        ...(noMaxHeight ? { '--max-height': 'unset' } : {}),
+        ...(noMaxWidth ? { '--max-width': 'unset' } : {}),
     };
 
     return (
         <Portal>
             <div
                 ref={setPopperEl}
-                style={{ ...style, ...varPosition, ...varSize }}
+                style={{ ...rootStyle, ...style, ...varPosition, ...varSize }}
                 role="dialog"
                 className={popperClassName}
                 onClick={handleClickContent}
                 onAnimationEnd={handleAnimationEnd}
                 onContextMenu={onContextMenu}
+                data-testid="dropdown-button"
                 {...rest}
             >
                 {/* Backdrop button, meant to override 'autoClose' option on mobile */}
