@@ -35,5 +35,5 @@ export const decorators = [(Story) => (
 )];
 
 export const parameters = {
-    controls: { expanded: true },
+    controls: { expanded: true }
 }

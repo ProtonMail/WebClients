@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { SelectTwo, Option, Icon } from 'react-components';
+import mdx from './Select.mdx'
 
 export default {
+    title: 'Proton UI / Select',
     component: SelectTwo,
-    title: 'Proton UI / Select'
-};
+    parameters: {
+        docs: {
+            page: mdx
+        }
+    }
+}
 
-export const Basic = () => {
-    const [ value, setValue ] = useState('');
+export const basic = () => {
+    const [ value, setValue ] = useState('ant');
 
     return (
         <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
@@ -18,7 +24,7 @@ export const Basic = () => {
 }
 
 export const controlledOpenState = () => {
-    const [ value, setValue ] = useState('');
+    const [ value, setValue ] = useState('ant');
 
     const [ open, setOpen ] = useState(false);
     
@@ -45,7 +51,7 @@ export const controlledOpenState = () => {
 }
 
 export const withRichOptionContent = () => {
-    const [ value, setValue ] = useState('');
+    const [ value, setValue ] = useState('reddit');
 
     return (
         <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
@@ -66,7 +72,7 @@ export const withRichOptionContent = () => {
 }
 
 export const withCustomSearchClearTimer = () => {
-    const [ value, setValue ] = useState('');
+    const [ value, setValue ] = useState('ant');
 
     return (
         <SelectTwo
@@ -84,13 +90,24 @@ export const withCustomSearchClearTimer = () => {
 }
 
 export const withComplexValues = () => {
-    const [ value, setValue ] = useState<{ name: string } | null>(null);
+    /*
+     * The useRef is used here in order to preserve identity of the value to its
+     * option between render cycles since the Select uses identity comparison to
+     * determine which option is selected.
+     */
+    const { current: options } = useRef([
+        { name: 'ant' },
+        { name: 'bear' },
+        { name: 'chimpanzee' }
+    ])
+
+    const [ value, setValue ] = useState<{ name: string } | null>(options[0]);
 
     return (
         <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
-            <Option title="Ant" value={{ name: 'ant' }} />
-            <Option title="Bear" value={{ name: 'bear' }} />
-            <Option title="Chimpanzee" value={{ name: 'chimpanzee' }} />
+            {options.map(option => (
+                <Option title={option.name} value={option} />
+            ))}
         </SelectTwo>
     );
 }
