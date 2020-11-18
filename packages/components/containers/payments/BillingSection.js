@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 import { PLAN_NAMES, CYCLE } from 'proton-shared/lib/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { getMonthlyBaseAmount, hasVisionary, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { checkSubscription } from 'proton-shared/lib/api/payments';
 
 import { Alert, Price, Loader, LinkButton, Time, Info } from '../../components';
-import { useUser, useSubscription, useOrganization, useModals, usePlans } from '../../hooks';
+import { useUser, useSubscription, useOrganization, useModals, usePlans, useLoading, useApi } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { formatPlans } from './subscription/helpers';
 import DiscountBadge from './DiscountBadge';
@@ -27,11 +28,14 @@ const getCyclesI18N = () => ({
 
 const BillingSection = ({ permission }) => {
     const i18n = getCyclesI18N();
+    const api = useApi();
     const { createModal } = useModals();
     const [{ hasPaidMail, hasPaidVpn, Credit }] = useUser();
+    const [nextSubscription, setNextSubscription] = useState();
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
+    const [loadingNextSubscription, withLoadingNextSubscription] = useLoading();
     const handleOpenGiftCodeModal = () => createModal(<GiftCodeModal />);
     const handleOpenCreditsModal = () => createModal(<CreditsModal />);
     const handleOpenSubscriptionModal = () =>
@@ -43,6 +47,24 @@ const BillingSection = ({ permission }) => {
                 cycle={YEARLY}
             />
         );
+
+    const getNextSubscription = async () => {
+        // Without any coupon
+        const next = await api(
+            checkSubscription({
+                Plans: getPlanIDs(subscription),
+                Currency: subscription.Currency,
+                Cycle: subscription.Cycle,
+            })
+        );
+        setNextSubscription(next);
+    };
+
+    useEffect(() => {
+        if (subscription && subscription.Plans) {
+            withLoadingNextSubscription(getNextSubscription());
+        }
+    }, []);
 
     if (!permission) {
         return (
@@ -76,7 +98,7 @@ const BillingSection = ({ permission }) => {
         );
     }
 
-    if (loadingSubscription || loadingPlans || loadingOrganization) {
+    if (loadingSubscription || loadingPlans || loadingOrganization || loadingNextSubscription) {
         return <Loader />;
     }
 
@@ -388,7 +410,7 @@ const BillingSection = ({ permission }) => {
                     <div className="flex-autogrid w100 mb1">
                         <div className="flex-autogrid-item">{c('Label').t`Billing amount`}</div>
                         <div className="flex-autogrid-item bold alignright">
-                            <Price currency={Currency}>{Amount}</Price>
+                            <Price currency={Currency}>{nextSubscription.AmountDue}</Price>
                         </div>
                     </div>
                     <div className="flex-autogrid w100 mb1">
