@@ -1,0 +1,10 @@
+/**
+ * Add a fallback to a background color
+ * @param {String} $color - The initial color
+ * @param {Number} $opacity - The wanted opacity
+ * @return {String} - The background color with a fallback
+ */
+@mixin background-opacity($color, $opacity: 0.9) {
+	background-color: $color; /* The Fallback */
+	background-color: rgba($color, $opacity);
+}
