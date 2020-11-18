@@ -67,15 +67,32 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
             );
 
             return {
+                Currency: currency,
                 PlanIDs,
                 planList,
                 ...offer
             };
         });
 
-        const load = ({ planList, ...config }) => {
-            return PaymentCache.valid(config).then((offer) => ({ offer, config: { planList, ...config } }));
+        const load = async ({ planList, mostPopular, CouponCode, PlanIDs, Cycle, Currency }) => {
+            const [withCoupon, withoutCoupon, withoutCouponMonthly] = await Promise.all([
+                PaymentCache.valid({ CouponCode, PlanIDs, Cycle, Currency }),
+                PaymentCache.valid({ PlanIDs, Cycle, Currency }),
+                PaymentCache.valid({ PlanIDs, Cycle: 1, Currency })
+            ]);
+
+            return {
+                offer: withCoupon,
+                mostPopular,
+                Cycle,
+                Currency: withCoupon.Currency,
+                planList,
+                withCoupon: withCoupon.Amount + withCoupon.CouponDiscount,
+                withoutCoupon: withoutCoupon.Amount + withoutCoupon.CouponDiscount, // BUNDLE discount can be applied
+                withoutCouponMonthly: withoutCouponMonthly.Amount
+            };
         };
+
         return Promise.all(offers.map(load));
     };
 

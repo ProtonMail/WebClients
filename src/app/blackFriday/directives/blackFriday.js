@@ -1,6 +1,5 @@
 import { PLANS_TYPE } from '../../constants';
 import { isCyberMonday } from '../helpers/blackFridayHelper';
-import { getAfterCouponDiscount } from '../../../helpers/paymentHelper';
 
 /* @ngInject */
 function blackFriday(
@@ -66,7 +65,6 @@ function blackFriday(
         }
     };
 
-    const percentageFilter = $filter('percentage');
     const currencyFilter = (amount, cycle, currency) => $filter('currency')(amount / 100 / cycle, currency, true);
 
     const getClickData = (plans, payment) => {
@@ -77,29 +75,31 @@ function blackFriday(
         return { payment, plans };
     };
 
-    const getOffer = ({ offer, config: { planList, Cycle, mostPopular } }) => {
-        // Plans are all Cycle 1
-        const priceRegular = planList.reduce((acc, { Pricing }) => acc + Pricing[1], 0);
-        const priceOffer = getAfterCouponDiscount(offer);
-        const price = {
-            monthly: currencyFilter(priceOffer, offer.Cycle, offer.Currency),
-            monthlyRegular: currencyFilter(priceRegular, 1, offer.Currency),
-            total: currencyFilter(priceOffer, 1, offer.Currency),
-            totalRegular: currencyFilter(priceRegular * offer.Cycle, 1, offer.Currency)
-        };
-        const percentage = 100 - percentageFilter(priceOffer, priceRegular * offer.Cycle);
-        const afterBillValue = planList.reduce((acc, { Pricing }) => acc + Pricing[Cycle], 0);
-
+    const getOffer = ({
+        offer,
+        withCoupon,
+        withoutCoupon,
+        withoutCouponMonthly,
+        mostPopular,
+        planList,
+        Cycle,
+        Currency
+    }) => {
+        const withCouponMonthly = withCoupon / Cycle;
         return {
-            offer,
             mostPopular,
-            price,
-            percentage,
+            price: {
+                monthly: currencyFilter(withCoupon, Cycle, Currency),
+                monthlyRegular: currencyFilter(withoutCouponMonthly, 1, Currency),
+                total: currencyFilter(withCoupon, 1, Currency),
+                totalRegular: currencyFilter(withoutCouponMonthly * Cycle, 1, Currency)
+            },
+            percentage: 100 - Math.round((withCouponMonthly * 100) / withoutCouponMonthly),
             driveIncluded: planList.length === 2,
-            afterBilling: TEXTS.afterBilling(currencyFilter(afterBillValue, 1, offer.Currency), offer.Cycle, planList),
+            afterBilling: TEXTS.afterBilling(currencyFilter(withoutCoupon, 1, Currency), Cycle, planList),
             clickData: getClickData(planList, offer),
             header: TEXTS.offer(planList, Cycle),
-            billingTxt: TEXTS.billing(price.total, offer.Cycle)
+            billingTxt: TEXTS.billing(currencyFilter(withCoupon, 1, Currency), Cycle)
         };
     };
 
