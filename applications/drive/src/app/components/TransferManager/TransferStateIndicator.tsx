@@ -21,7 +21,7 @@ const getErrorText = (error: any) => {
     if (error?.data?.Error) {
         return error.data.Error;
     }
-    return error?.message ?? c('Info').t`Something went wrong, please try again later.`;
+    return error?.message || c('Info').t`Something went wrong, please try again later.`;
 };
 
 const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
