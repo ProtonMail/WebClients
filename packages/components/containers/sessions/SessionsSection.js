@@ -42,6 +42,7 @@ const getClientsI18N = () => ({
     iOSCalendar: c('Badge').t`ProtonCalendar for iOS`,
     AndroidMail: c('Badge').t`ProtonMail for Android`,
     AndroidVPN: c('Badge').t`ProtonVPN for Android`,
+    AndroidTvVPN: c('Badge').t`ProtonVPN for Android TV`,
     AndroidCalendar: c('Badge').t`ProtonCalendar for Android`,
     WindowsVPN: c('Badge').t`ProtonVPN for Windows`,
     WindowsImportExport: c('Badge').t`ProtonMail Import-Export for Windows`,
@@ -51,6 +52,7 @@ const getClientsI18N = () => ({
     macOSBridge: c('Badge').t`ProtonMail Bridge for macOS`,
     LinuxImportExport: c('Badge').t`ProtonMail Import-Export for GNU/Linux`,
     LinuxBridge: c('Badge').t`ProtonMail Bridge for GNU/Linux`,
+    LinuxVPN: c('Badge').t`ProtonVPN for GNU/Linux`,
 });
 
 const SessionsSection = () => {
