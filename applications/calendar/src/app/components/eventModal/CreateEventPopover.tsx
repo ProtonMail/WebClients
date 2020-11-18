@@ -1,8 +1,9 @@
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import React, { CSSProperties, Ref, useRef } from 'react';
-import { Button, classnames, PrimaryButton, useCombinedRefs } from 'react-components';
+import { Button, classnames, PrimaryButton } from 'react-components';
 import { c } from 'ttag';
 import { EventModel } from '../../interfaces/EventModel';
+import PopoverContainer from '../events/PopoverContainer';
 import PopoverFooter from '../events/PopoverFooter';
 import PopoverHeader from '../events/PopoverHeader';
 import EventForm from './EventForm';
@@ -18,7 +19,7 @@ interface Props {
     onClose: () => void;
     onEdit: (value: EventModel) => void;
     style: CSSProperties;
-    popoverRef: Ref<HTMLFormElement>;
+    popoverRef: Ref<HTMLDivElement>;
     setModel: (value: EventModel) => void;
 }
 
@@ -48,45 +49,47 @@ const CreateEventPopover = ({
     };
 
     return (
-        <form
+        <PopoverContainer
             style={isNarrow ? undefined : style}
-            onSubmit={(e) => {
-                e.preventDefault();
-                handleSubmit();
-            }}
-            className={classnames([
-                'eventpopover pm-form--iconLabels pt2 pl1-5 pr1-5 pb1',
-                isNarrow && 'eventpopover--full-width',
-            ])}
-            ref={useCombinedRefs<HTMLFormElement>(formRef, popoverRef)}
+            className={classnames(['eventpopover pt2 pl1-5 pr1-5 pb1', isNarrow && 'eventpopover--full-width'])}
+            ref={popoverRef}
         >
-            <PopoverHeader onClose={onClose} />
-            <EventForm
-                displayWeekNumbers={displayWeekNumbers}
-                weekStartsOn={weekStartsOn}
-                isSubmitted={isSubmitted}
-                errors={errors}
-                model={model}
-                setModel={setModel}
-                isMinimal
-            />
-            <PopoverFooter>
-                <Button
-                    disabled={loadingAction}
-                    data-test-id="create-event-popover:more-event-options"
-                    className="mr1"
-                    onClick={handleMore}
-                >{c('Action').t`More options`}</Button>
-                <PrimaryButton
-                    data-test-id="create-event-popover:save"
-                    type="submit"
-                    loading={loadingAction && lastAction === ACTION.SUBMIT}
-                    disabled={loadingAction}
-                >
-                    {c('Action').t`Save`}
-                </PrimaryButton>
-            </PopoverFooter>
-        </form>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    handleSubmit();
+                }}
+                className="pm-form--iconLabels"
+                ref={formRef}
+            >
+                <PopoverHeader onClose={onClose} />
+                <EventForm
+                    displayWeekNumbers={displayWeekNumbers}
+                    weekStartsOn={weekStartsOn}
+                    isSubmitted={isSubmitted}
+                    errors={errors}
+                    model={model}
+                    setModel={setModel}
+                    isMinimal
+                />
+                <PopoverFooter>
+                    <Button
+                        disabled={loadingAction}
+                        data-test-id="create-event-popover:more-event-options"
+                        className="mr1"
+                        onClick={handleMore}
+                    >{c('Action').t`More options`}</Button>
+                    <PrimaryButton
+                        data-test-id="create-event-popover:save"
+                        type="submit"
+                        loading={loadingAction && lastAction === ACTION.SUBMIT}
+                        disabled={loadingAction}
+                    >
+                        {c('Action').t`Save`}
+                    </PrimaryButton>
+                </PopoverFooter>
+            </form>
+        </PopoverContainer>
     );
 };
 

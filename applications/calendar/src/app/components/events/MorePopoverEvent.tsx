@@ -13,6 +13,7 @@ import {
     TargetEventData,
 } from '../../containers/calendar/interface';
 import getIsBeforeNow from '../calendar/getIsBeforeNow';
+import PopoverContainer from './PopoverContainer';
 
 interface Props {
     isNarrow: boolean;
@@ -75,7 +76,7 @@ const MorePopoverEvent = ({
     });
 
     return (
-        <div
+        <PopoverContainer
             style={isNarrow ? undefined : style}
             className={classnames([
                 'eventpopover flex flex-nowrap flex-column pt2 pl1-5 pr1-5 pb2',
@@ -89,7 +90,7 @@ const MorePopoverEvent = ({
                 </h1>
             </PopoverHeader>
             <div className="scroll-if-needed">{eventsContent}</div>
-        </div>
+        </PopoverContainer>
     );
 };
 

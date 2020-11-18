@@ -34,6 +34,7 @@ import { getEventErrorMessage } from './error';
 import getEventInformation from './getEventInformation';
 
 import PopoverEventContent from './PopoverEventContent';
+import PopoverContainer from './PopoverContainer';
 import PopoverFooter from './PopoverFooter';
 import PopoverHeader from './PopoverHeader';
 import useReadEvent from './useReadEvent';
@@ -243,26 +244,26 @@ const EventPopover = ({
 
     if (eventReadError) {
         return (
-            <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
+            <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>
                 <PopoverHeader onClose={onClose} className="flex-item-noshrink">
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
                 <Alert type="error">{getEventErrorMessage(eventReadError)}</Alert>
                 <PopoverFooter>{deleteButton}</PopoverFooter>
-            </div>
+            </PopoverContainer>
         );
     }
 
     if (isEventReadLoading) {
         return (
-            <div style={mergedStyle} className="eventpopover p1" ref={popoverRef}>
+            <PopoverContainer style={mergedStyle} className="eventpopover p1" ref={popoverRef}>
                 <Loader />
-            </div>
+            </PopoverContainer>
         );
     }
 
     return (
-        <div style={mergedStyle} className={mergedClassName} ref={popoverRef}>
+        <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>
             <PopoverHeader className="flex-item-noshrink" onClose={onClose}>
                 <div className="color-subheader">{dateHeader}</div>
                 {isCancelled && (
@@ -309,7 +310,7 @@ const EventPopover = ({
                     </>
                 )}
             </PopoverFooter>
-        </div>
+        </PopoverContainer>
     );
 };
 
