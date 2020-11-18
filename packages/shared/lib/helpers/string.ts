@@ -144,3 +144,7 @@ export const findLongestMatchingIndex = (strings: string[] = [], substring = '')
 };
 
 export const stripLeadingAndTrailingSlash = (str: string) => str.replace(/^\/+|\/+$/g, '');
+
+export const removeDiacritics = (str: string) => {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+};
