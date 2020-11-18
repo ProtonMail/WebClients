@@ -11,7 +11,7 @@ import {
     Mark,
     Tooltip,
     useLoading,
-    generateUID
+    generateUID,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
 import { normalize } from 'proton-shared/lib/helpers/string';
@@ -35,7 +35,7 @@ const folderReducer = (acc: FolderItem[], folder: FolderWithSubFolders, level = 
         ...folder,
         Name: folder.Name,
         icon: folder.subfolders?.length ? 'parent-folder' : 'folder',
-        level
+        level,
     });
 
     if (Array.isArray(folder.subfolders)) {
@@ -63,7 +63,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const [folders = []] = useFolders();
     const [search, updateSearch] = useState('');
     const [containFocus, setContainFocus] = useState(true);
-    const normSearch = normalize(search);
+    const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
     const moveToFolder = useMoveToFolder();
 
@@ -77,13 +77,13 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
             { ID: INBOX, Name: c('Mailbox').t`Inbox`, icon: 'inbox' },
             { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive' },
             { ID: SPAM, Name: c('Mailbox').t`Spam`, icon: 'spam' },
-            { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' }
+            { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' },
         ] as FolderItem[])
         .filter(({ Name = '' }: { Name: string }) => {
             if (!search) {
                 return true;
             }
-            const normName = normalize(Name);
+            const normName = normalize(Name, true);
             return normName.includes(normSearch);
         });
 
@@ -104,7 +104,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             ParentID: ROOT_FOLDER,
-            Type: LABEL_TYPE.MESSAGE_FOLDER
+            Type: LABEL_TYPE.MESSAGE_FOLDER,
         };
         createModal(<LabelModal label={newLabel} onClose={() => setContainFocus(true)} />);
     };

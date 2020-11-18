@@ -11,7 +11,7 @@ import {
     Tooltip,
     useLoading,
     Checkbox,
-    generateUID
+    generateUID,
 } from 'react-components';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { LABEL_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
@@ -31,7 +31,7 @@ import './LabelDropdown.scss';
 enum LabelState {
     On,
     Off,
-    Indeterminate
+    Indeterminate,
 }
 
 type SelectionState = { [labelID: string]: LabelState };
@@ -77,12 +77,12 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
         return null;
     }
 
-    const normSearch = normalize(search);
+    const normSearch = normalize(search, true);
     const list = labels.filter(({ Name = '' }) => {
         if (!search) {
             return true;
         }
-        const normName = normalize(Name);
+        const normName = normalize(Name, true);
         return normName.includes(normSearch);
     });
 
@@ -143,7 +143,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
         const newLabel: Pick<Label, 'Name' | 'Color' | 'Type'> = {
             Name: search,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
-            Type: LABEL_TYPE.MESSAGE_LABEL
+            Type: LABEL_TYPE.MESSAGE_LABEL,
         };
         createModal(
             <LabelModal
