@@ -34,6 +34,7 @@ const useBlackFriday = () => {
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const openBlackFridayModal = location.search.includes('modal=bf2020');
+    const noBFCoupon = location.search.includes('coupon=bf2020');
 
     const onSelect = ({
         planIDs,
@@ -69,7 +70,12 @@ const useBlackFriday = () => {
         if (isDelinquent || loadingModalState) {
             return;
         }
-        if (plans.length && isBlackFridayPeriod && isEligible && (!modalState || openBlackFridayModal)) {
+        if (
+            plans.length &&
+            isBlackFridayPeriod &&
+            isEligible &&
+            ((!modalState && !noBFCoupon) || openBlackFridayModal)
+        ) {
             setModalState(true);
             if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
                 createModal(<VPNBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
