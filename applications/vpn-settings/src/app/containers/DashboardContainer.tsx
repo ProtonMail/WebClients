@@ -11,7 +11,7 @@ import {
     useSubscription,
     useOrganization,
 } from 'react-components';
-import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 import { Plan, UserModel } from 'proton-shared/lib/interfaces';
 import { c } from 'ttag';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
@@ -57,50 +57,60 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
     const [user] = useUser();
     const { createModal } = useModals();
     const searchParams = new URLSearchParams(location.search);
-    const planName = searchParams.get('plan');
-    const cycle = searchParams.get('cycle');
-    const currency = searchParams.get('currency');
-    const coupon = searchParams.get('coupon');
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
 
-    useEffect(() => {
-        if (plans && planName && !loadingPlans && !loadingSubscription && !loadingOrganization) {
-            if (!planName) {
-                return;
-            }
-            const { Cycle = cycle || DEFAULT_CYCLE, Currency = currency || plans[0].Currency } = subscription;
-            const plansMap = toMap(plans, 'Name') as PlansMap;
-            if (user.isFree) {
-                const planIDs = planName.split('_').reduce<PlanIDs>((acc, name) => {
-                    acc[plansMap[name].ID] = 1;
-                    return acc;
-                }, {});
-                createModal(
-                    <NewSubscriptionModal
-                        planIDs={planIDs}
-                        currency={Currency}
-                        cycle={Cycle}
-                        coupon={coupon}
-                        step={SUBSCRIPTION_STEPS.PAYMENT}
-                    />
-                );
-                return;
-            }
-            const plan = plansMap[planName];
-            if (!plan) {
-                return;
-            }
-            const planIDs = switchPlan({
-                planIDs: getPlanIDs(subscription),
-                plans,
-                planID: plan.ID,
-                service: PLAN_SERVICES.VPN,
-                organization,
-            });
-            createModal(<NewSubscriptionModal planIDs={planIDs} currency={Currency} cycle={Cycle} />);
+    const openSubscriptionModal = () => {
+        const planName = searchParams.get('plan');
+        if (!plans || !planName || loadingPlans || loadingSubscription || loadingOrganization) {
+            return;
         }
+        const coupon = searchParams.get('coupon');
+        const cycleParam = searchParams.get('cycle') as any;
+        const currencyParam = searchParams.get('currency') as any;
+        const defaultCycle =
+            cycleParam && [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycleParam)
+                ? cycleParam
+                : DEFAULT_CYCLE;
+        const defaultCurrency = currencyParam && CURRENCIES.includes(currencyParam) ? currencyParam : plans[0].Currency;
+        const { Cycle = defaultCycle, Currency = defaultCurrency } = subscription;
+        const plansMap = toMap(plans, 'Name') as PlansMap;
+        if (user.isFree) {
+            const planIDs = planName.split('_').reduce<PlanIDs>((acc, name) => {
+                acc[plansMap[name].ID] = 1;
+                return acc;
+            }, {});
+            if (!Object.keys(planIDs).length) {
+                return;
+            }
+            createModal(
+                <NewSubscriptionModal
+                    planIDs={planIDs}
+                    currency={Currency}
+                    cycle={Cycle}
+                    coupon={coupon}
+                    step={SUBSCRIPTION_STEPS.PAYMENT}
+                />
+            );
+            return;
+        }
+        const plan = plansMap[planName];
+        if (!plan) {
+            return;
+        }
+        const planIDs = switchPlan({
+            planIDs: getPlanIDs(subscription),
+            plans,
+            planID: plan.ID,
+            service: PLAN_SERVICES.VPN,
+            organization,
+        });
+        createModal(<NewSubscriptionModal planIDs={planIDs} currency={Currency} cycle={Cycle} />);
+    };
+
+    useEffect(() => {
+        openSubscriptionModal();
     }, [loadingPlans, loadingSubscription, loadingOrganization]);
 
     return (
