@@ -44,6 +44,7 @@ export const Tabs = ({ value, onChange, tabs, children, stickyTabs }: Props) => 
                                         event.preventDefault();
                                         onChange(index);
                                     }}
+                                    type="button"
                                     className="tabs-list-link"
                                     id={label}
                                     role="tab"
