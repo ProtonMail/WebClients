@@ -72,7 +72,7 @@ const useResetPassword = ({ onLogin, initalStep }: Props) => {
     };
 
     const displayTokenNotification = (destination: string) =>
-        createNotification({ text: c('Info').t`Reset instructions sent to ${destination}`, expiration: 5000 });
+        createNotification({ text: c('Info').t`Done! We sent a code to ${destination}`, expiration: 5000 });
 
     const handleRequestRecoveryMethods = async () => {
         const { username } = state;

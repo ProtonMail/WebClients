@@ -5,8 +5,9 @@ interface Props {
     value: string;
     setValue: (phone: string) => void;
     id: string;
+    placeholder?: string;
 }
-const ResetPasswordPhoneInput = ({ value, setValue, id }: Props) => {
+const ResetPasswordPhoneInput = ({ value, setValue, id, placeholder }: Props) => {
     return (
         <IntlTelInput
             name="phone"
@@ -17,6 +18,7 @@ const ResetPasswordPhoneInput = ({ value, setValue, id }: Props) => {
             inputClassName="w100"
             dropdownContainer="body"
             onPhoneNumberChange={(_status: any, _value: any, _countryData: any, number: string) => setValue(number)}
+            placeholder={placeholder}
             required
         />
     );

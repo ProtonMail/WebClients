@@ -6,8 +6,9 @@ interface Props {
     value: string;
     setValue: (email: string) => void;
     id: string;
+    placeholder?: string;
 }
-const ResetPasswordEmailInput = ({ value, setValue, id }: Props) => {
+const ResetPasswordEmailInput = ({ value, setValue, id, placeholder = c('Placeholder').t`Recovery email` }: Props) => {
     return (
         <EmailInput
             name="email"
@@ -15,7 +16,7 @@ const ResetPasswordEmailInput = ({ value, setValue, id }: Props) => {
             autoCorrect="off"
             autoFocus
             id={id}
-            placeholder={c('Placeholder').t`Recovery email`}
+            placeholder={placeholder}
             value={value}
             onChange={({ target: { value } }) => setValue(value)}
             required
