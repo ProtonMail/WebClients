@@ -34,8 +34,8 @@ const useBlackFriday = () => {
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
     const params = new URLSearchParams(location.search);
-    const openBlackFridayModal = params.get('modal') === 'bf2020';
-    const hasBlackFridayCoupon = params.get('coupon') === 'bf2020';
+    const openBlackFridayModal = (params.get('modal') || '').toLocaleLowerCase() === 'bf2020';
+    const hasBlackFridayCoupon = (params.get('coupon') || '').toLocaleLowerCase() === 'bf2020';
 
     const onSelect = ({
         planIDs,
