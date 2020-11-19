@@ -35,9 +35,10 @@ interface Props {
     disabled?: boolean;
     list?: DropdownActionProps[];
     className?: string;
+    autoFocus?: boolean;
 }
 
-const DropdownActions = ({ loading = false, disabled = false, list = [], className = '' }: Props) => {
+const DropdownActions = ({ loading = false, disabled = false, list = [], className = '', autoFocus = false }: Props) => {
     if (!list.length) {
         return null;
     }
@@ -58,6 +59,7 @@ const DropdownActions = ({ loading = false, disabled = false, list = [], classNa
                 {wrapTooltip(text, tooltip)}
             </ButtonGroup>
             <SimpleDropdown
+                autoFocus={autoFocus}
                 originalPlacement="bottom-right"
                 disabled={disabled}
                 loading={loading}

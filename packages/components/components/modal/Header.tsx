@@ -32,7 +32,13 @@ const Header = ({
             {...rest}
         >
             {hasClose ? (
-                <button type="button" className="pm-modalClose" title={closeText} onClick={onClose}>
+                <button
+                    type="button"
+                    className="pm-modalClose"
+                    title={closeText}
+                    onClick={onClose}
+                    data-focus-fallback="-3"
+                >
                     <span className={classnames(['mr0-25', !closeTextVisible && 'sr-only'])}>{closeText}</span>
                     <Icon className="pm-modalClose-icon" name="close" />
                 </button>

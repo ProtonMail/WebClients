@@ -187,6 +187,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
+                disableFocusTrap
                 autoClose={false}
                 autoCloseOutside={false}
                 contentProps={{
