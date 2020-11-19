@@ -10,7 +10,6 @@ import {
     getStreamMessage,
 } from 'proton-shared/lib/keys/driveKeys';
 import { range, mergeUint8Arrays } from 'proton-shared/lib/helpers/array';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -51,6 +50,7 @@ import useEvents from './useEvents';
 import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
 import useConfirm from '../util/useConfirm';
 import { mimetypeFromExtension } from '../../utils/MimeTypeParser/helpers';
+import { adjustName } from '../../utils/link';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -82,19 +82,6 @@ function useFiles() {
 
             const [namePart, extension] = splitExtension(filename);
 
-            const adjustName = (i: number) => {
-                if (i === 0) {
-                    return filename;
-                }
-
-                if (!namePart) {
-                    return [`.${extension}`, `(${i})`].filter(isTruthy).join(' ');
-                }
-
-                const newNamePart = [namePart, `(${i})`].filter(isTruthy).join(' ');
-                return extension ? [newNamePart, extension].join('.') : newNamePart;
-            };
-
             const findAdjustedName = async (
                 start = 0
             ): Promise<{
@@ -103,7 +90,7 @@ function useFiles() {
             }> => {
                 const hashesToCheck = await Promise.all(
                     range(start, start + HASH_CHECK_AMOUNT).map(async (i) => {
-                        const adjustedFileName = adjustName(i);
+                        const adjustedFileName = adjustName(i, namePart, extension);
                         return {
                             filename: adjustedFileName,
                             hash: await generateLookupHash(adjustedFileName, parentKeys.hashKey),
@@ -684,7 +671,7 @@ function useFiles() {
                         })
                     );
                 } else if (!abortController.signal.aborted) {
-                    const folderPath = `${parentPath}/`;
+                    const folderPath = `${parentPath}/${child.Name}`;
                     cb.onStartFolderTransfer(folderPath).catch((err) =>
                         console.error(`Failed to zip empty folder ${err}`)
                     );
