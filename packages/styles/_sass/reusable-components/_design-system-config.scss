@@ -12,8 +12,10 @@ $size-h4               : 18 !default;
 $size-h5               : 17 !default;
 $size-h6               : 16 !default;
 
-$use-other-typo-helpers: true !default;
+// Use typo helpers on demand
+$use-other-typo-helpers       : true !default;
 $use-other-line-height-helpers: true !default;
+
 $size-smallest         : 9 !default;
 $size-smaller          : 10 !default;
 $size-small            : 12 !default;
@@ -123,9 +125,9 @@ $use-color-reset-mark  : true !default;
 $default-bgColor-mark  : #ff0 !default;
 
 
-// vertical rythm
+// vertical rhythm
 // possible values     : 'double_top_single_bottom', 'single_top_single_bottom', 'single_top', 'single_bottom'
-$vertical-rythm        : 'single_bottom' !default;
+$vertical-rhythm        : 'single_bottom' !default;
 
 // units for typo
 // possible values     : 'use_em',  'use_rem', 'use_rem_with_em_fallback'
@@ -220,21 +222,13 @@ $pm-label-width: 18em !default;
   @else if $type-vr == 'single_top' {
      @return ( ( ($margin/2) * $other_coef) *1em 0 0 0 );
   }
+  @else if $type-vr == 'double_top_double_bottom_without_coef' {
+     @return (($margin *1em) 0);
+  }
 }
 
 
-@function margin-em-other ($font-size, $base-height, $base-font, $type-vr){
-
-  $coef: ceil(1 / ($base-height * $base-font / $font-size));
-  $height: ($base-font * $base-height / $font-size) ;
-  $margin: ($height * $coef );
-
-  @return ( ($margin)*1em 0 );
-
-}
-
-
-@mixin flow-hr( $value, $type-vr: $vertical-rythm, $type-unit: $typo-unit ){
+@mixin rhythm( $value, $type-vr: $vertical-rhythm, $type-unit: $typo-unit ){
 
   @if $type-unit == 'use_em' {
      font-size: em($value);
@@ -248,24 +242,6 @@ $pm-label-width: 18em !default;
   }
   line-height: line-height($value, $l-h, $base-font, $type-vr);
   margin: margin-em($value, $l-h, $base-font, $type-vr) ;
-
-}
-
-
-@mixin flow-other( $value, $type-vr: $vertical-rythm, $type-unit: $typo-unit ){
-
-  @if $type-unit == 'use_em' {
-     font-size: em($value);
-  }
-  @else if $type-unit == 'use_rem' {
-     font-size: rem($value);
-  }
-  @else if $type-unit == 'use_rem_with_em_fallback' {
-     font-size: em($value);
-     font-size: rem($value);
-  }
-  line-height: line-height($value, $l-h, $base-font, $type-vr);
-  margin: margin-em-other($value, $l-h, $base-font, $type-vr) ;
 
 }
 
