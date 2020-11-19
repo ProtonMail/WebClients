@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState, useRef } from 'react';
 import { c } from 'ttag';
 import { useHistory, Link } from 'react-router-dom';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { BRAND_NAME } from 'proton-shared/lib/constants';
 
 import { useModals } from '../../hooks';
 import { Alert, ConfirmModal, Label, PasswordInput, PrimaryButton } from '../../components';
@@ -55,8 +56,9 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
     if (step === STEPS.REQUEST_RECOVERY_METHODS) {
         return (
             <Layout
-                title={c('Title').t`Enter Proton Account`}
-                subtitle={c('Info').t`Enter the Proton Account that you would like to reset the password for.`}
+                title={c('Title').t`Reset password`}
+                subtitle={c('Info')
+                    .t`Enter the email address associated with your Proton Account or your account username.`}
                 left={<BackButton onClick={onBack || handleBack} />}
             >
                 <form
@@ -69,12 +71,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     <SignupLabelInputRow
                         label={<Label htmlFor="username">{c('Label').t`Email or username`}</Label>}
                         input={
-                            <ResetUsernameInput
-                                id="username"
-                                value={username}
-                                setValue={setUsername}
-                                placeholder={c('Label').t`Email or username`}
-                            />
+                            <ResetUsernameInput id="username" value={username} setValue={setUsername} placeholder="" />
                         }
                     />
                     <SignupSubmitRow>
@@ -116,6 +113,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
 
     if (step === STEPS.REQUEST_RESET_TOKEN) {
         handleBack = () => gotoStep(STEPS.REQUEST_RECOVERY_METHODS);
+
         const tabs = [
             (methods?.includes('email') || methods?.includes('login')) && {
                 title: c('Recovery method').t`Email`,
@@ -123,7 +121,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                 content: (
                     <SignupLabelInputRow
                         label={<Label htmlFor="email">{c('Label').t`Recovery email`}</Label>}
-                        input={<ResetPasswordEmailInput value={email} setValue={setEmail} id="email" />}
+                        input={<ResetPasswordEmailInput value={email} setValue={setEmail} id="email" placeholder="" />}
                     />
                 ),
             },
@@ -133,17 +131,17 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                 content: (
                     <SignupLabelInputRow
                         label={<Label htmlFor="phone">{c('Label').t`Recovery phone`}</Label>}
-                        input={<ResetPasswordPhoneInput value={phone} setValue={setPhone} id="phone" />}
+                        input={<ResetPasswordPhoneInput value={phone} setValue={setPhone} id="phone" placeholder="" />}
                     />
                 ),
             },
         ].filter(isTruthy);
-        const recoveryTitle =
-            tabs[tabIndex].method === 'email'
-                ? c('Title').t`Enter recovery email`
-                : c('Title').t`Enter recovery phone number`;
+
         const recoveryMethodText =
-            tabs[tabIndex].method === 'email' ? c('Recovery method').t`email` : c('Recovery method').t`phone number`;
+            tabs[tabIndex].method === 'email'
+                ? c('Recovery method').t`email address`
+                : c('Recovery method').t`phone number`;
+
         const handleChangeIndex = (newIndex: number) => {
             if (tabs[tabIndex].method === 'email') {
                 setEmail('');
@@ -153,10 +151,12 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
             }
             setTabIndex(newIndex);
         };
+
         return (
             <Layout
-                title={recoveryTitle}
-                subtitle={c('Info').t`We will send a password reset code to your recovery ${recoveryMethodText}.`}
+                title={c('Title').t`Reset password`}
+                subtitle={c('Info')
+                    .t`Enter the recovery ${recoveryMethodText} associated with your ${BRAND_NAME} Account. We will send you a code to confirm the password reset.`}
                 left={<BackButton onClick={handleBack} />}
             >
                 <form
@@ -166,18 +166,14 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                         handleRequest();
                     }}
                 >
-                    {tabs.length === 1 ? (
-                        tabs[0].content
-                    ) : (
-                        <Tabs tabs={tabs} value={tabIndex} onChange={handleChangeIndex} />
-                    )}
+                    <Tabs tabs={tabs} value={tabIndex} onChange={handleChangeIndex} />
                     <SignupSubmitRow>
                         <PrimaryButton
                             className="pm-button--large onmobile-w100"
                             disabled={!email && !phone}
                             loading={loading}
                             type="submit"
-                        >{c('Action').t`Reset password`}</PrimaryButton>
+                        >{c('Action').t`Send code`}</PrimaryButton>
                     </SignupSubmitRow>
                 </form>
             </Layout>
@@ -187,24 +183,30 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
     if (step === STEPS.VALIDATE_RESET_TOKEN) {
         const subTitle = email
             ? c('Info')
-                  .t`Enter the recovery code that was sent to ${email}. If you don’t find the email in your inbox, please check your spam folder.`
-            : c('Info').t`Enter the verification code that was sent to your phone number: ${phone}.`;
+                  .t`Enter the code that was sent to ${email}. If you can't find the message in your inbox, please check your spam folder.`
+            : c('Info').t`Enter the code sent to your phone number ${phone}.`;
+
         handleBack = () =>
             gotoStep(methods?.includes('login') ? STEPS.REQUEST_RECOVERY_METHODS : STEPS.REQUEST_RESET_TOKEN);
+
         const handleSubmit = async () => {
             await new Promise((resolve, reject) => {
+                const loseAllData = (
+                    <span className="bold">{c('Info').t`lose access to all current encrypted data`}</span>
+                );
                 createModal(
                     <ConfirmModal
-                        title={c('Title').t`Confirm reset password`}
-                        confirm={c('Action').t`Confirm password reset`}
+                        title={c('Title').t`Reset password`}
+                        confirm={c('Action').t`Reset password`}
                         onConfirm={resolve}
                         onClose={reject}
                     >
                         <div>
                             <p className="mt0">{c('Info')
-                                .t`Resetting your password means that you will no longer be able to read your encrypted data unless you know your old password.`}</p>
-                            <p className="mt0 mb0">{c('Info')
-                                .t`If you know your password and would like to change it, please log into your account first and change your password after logging in.`}</p>
+                                .jt`You will ${loseAllData} in your ${BRAND_NAME} Account. To restore it, you will need to enter your old password.`}</p>
+                            <p className="mt0">{c('Info')
+                                .t`This will also disable any 2-Factor Authentication method associated with this account.`}</p>
+                            <p className="mt0 mb0">{c('Info').t`Continue anyway?`}</p>
                         </div>
                     </ConfirmModal>
                 );
@@ -212,11 +214,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
             await handleValidateResetToken(STEPS.NEW_PASSWORD);
         };
         return (
-            <Layout
-                title={c('Title').t`Enter recovery code`}
-                subtitle={subTitle}
-                left={<BackButton onClick={handleBack} />}
-            >
+            <Layout title={c('Title').t`Reset password`} subtitle={subTitle} left={<BackButton onClick={handleBack} />}>
                 <form
                     className="signup-form"
                     onSubmit={(e) => {
@@ -235,8 +233,8 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     }}
                 >
                     <SignupLabelInputRow
-                        label={<Label htmlFor="reset-token">{c('Label').t`Recovery code`}</Label>}
-                        input={<ResetTokenInput id="reset-token" value={token} setValue={setToken} />}
+                        label={<Label htmlFor="reset-token">{c('Label').t`Code`}</Label>}
+                        input={<ResetTokenInput id="reset-token" value={token} setValue={setToken} placeholder="" />}
                     />
                     {email || phone ? (
                         <InlineLinkButton
@@ -251,7 +249,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                                     />
                                 )
                             }
-                        >{c('Action').t`Did not receive a code?`}</InlineLinkButton>
+                        >{c('Action').t`Didn't receive a code?`}</InlineLinkButton>
                     ) : null}
                     <SignupSubmitRow>
                         <PrimaryButton
