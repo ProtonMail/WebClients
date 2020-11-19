@@ -5,10 +5,19 @@ import { BLACK_FRIDAY } from '../../constants';
 import { setItem, getItem } from '../../../helpers/storageHelper';
 
 /* @ngInject */
-function blackFridayModel(authentication, subscriptionModel, paymentModel, PaymentCache, Feature, userType) {
+function blackFridayModel(
+    authentication,
+    dispatchers,
+    subscriptionModel,
+    paymentModel,
+    PaymentCache,
+    Feature,
+    userType
+) {
     let allowed = false;
     const FEATURE_ID = 'BlackFridayPromoShown';
     const getKey = () => `protonmail_black_friday_${authentication.user.ID}_${BLACK_FRIDAY.YEAR}`;
+    const { on } = dispatchers();
 
     const saveClose = () => {
         const key = getKey();
@@ -103,6 +112,10 @@ function blackFridayModel(authentication, subscriptionModel, paymentModel, Payme
     function allow() {
         allowed = true;
     }
+
+    on('logout', () => {
+        allowed = false;
+    });
 
     return { isBlackFridayPeriod, isProductPayerPeriod, loadPayments, getOffers, saveClose, getCloseState, allow };
 }
