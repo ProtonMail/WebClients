@@ -1,9 +1,9 @@
 /**
- * Calculate margins in em unit for vertical rythm
+ * Calculate margins in em unit for vertical rhythm
  * @param {Number} $font-size - The font size of the element from which calculate
  * @param {Number} $base-height - The base line height from which calculate
  * @param {Number} $base-font - The base font size from which calculate
- * @param {String} $type-vr - The type of wanted vertical rythm
+ * @param {String} $type-vr - The type of wanted vertical rhythm
  * @return {String} - The 4 margin values
  */
 @function margin-em ($font-size, $base-height, $base-font, $type-vr) {
