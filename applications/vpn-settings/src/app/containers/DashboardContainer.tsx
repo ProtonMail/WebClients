@@ -67,7 +67,7 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
             return;
         }
         const coupon = searchParams.get('coupon');
-        const cycleParam = searchParams.get('cycle') as any;
+        const cycleParam = parseInt(searchParams.get('cycle') as any, 10);
         const currencyParam = searchParams.get('currency') as any;
         const defaultCycle =
             cycleParam && [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycleParam)
