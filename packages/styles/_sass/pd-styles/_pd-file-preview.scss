@@ -39,6 +39,8 @@
 }
 
 .pd-file-preview-image {
-	@extend .absolute;
+	@extend .covered-absolute;
+	@extend .mauto;
+	object-fit: cover;
 	max-width: none;
 }
