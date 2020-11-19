@@ -61,7 +61,7 @@ export async function upload(
     id: string,
     url: string,
     content: Uint8Array,
-    onProgress: (relativeIncrement: number, uploadDone: boolean) => void,
+    onProgress: (relativeIncrement: number) => void,
     signal?: AbortSignal
 ) {
     let listener: () => void;
@@ -78,7 +78,7 @@ export async function upload(
         let total = 0;
         xhr.upload.onprogress = (e) => {
             total = e.total;
-            onProgress((e.loaded - lastLoaded) / total, e.loaded === total);
+            onProgress((e.loaded - lastLoaded) / total);
             lastLoaded = e.loaded;
         };
 
@@ -237,17 +237,14 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
                     id,
                     URL,
                     encryptedData,
-                    (relativeIncrement, isUploadDone) => {
+                    (relativeIncrement) => {
                         const increment = Math.ceil(originalSize * relativeIncrement);
-                        if (isUploadDone) {
-                            uploadingBlocks.delete(index);
-                        } else {
-                            block.progress = (block.progress ?? 0) + increment;
-                        }
+                        block.progress = (block.progress ?? 0) + increment;
                         onProgress?.(increment);
                     },
                     abortSignal
                 );
+                uploadingBlocks.delete(index);
             } catch (e) {
                 if (!isTransferCancelError(e) && numRetries < 3) {
                     console.error(`Failed block #${index} upload for ${id}. Retry num: ${numRetries}`);
