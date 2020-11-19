@@ -6,7 +6,7 @@ interface Props {
     onClose: () => void;
 }
 
-const BF_DEAL_URL = 'https://protonmail.com/blog/black-friday-2020/';
+const BF_DEAL_URL = 'https://protonmail.com/blackfriday';
 
 const DiscountBanner = ({ onClose }: Props) => {
     return (
