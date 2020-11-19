@@ -36,7 +36,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
     };
 
     return (
-        <div className="flex flex-item-fluid ondesktop-h100 ontablet-flex-column flex-nowrap">
+        <div className="flex flex-item-fluid ondesktop-h100 autotablet flex-nowrap">
             <div
                 ref={mainAreaRef}
                 onScroll={handleScroll}
