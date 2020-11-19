@@ -2,13 +2,14 @@ import { ReadableStream } from 'web-streams-polyfill';
 import { Writer as ZipWriter } from '@transcend-io/conflux';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { isWindows } from 'proton-shared/lib/helpers/browser';
+import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { openDownloadStream, initDownloadSW } from './download';
 import { TransferMeta } from '../../interfaces/transfer';
 import { streamToBuffer } from '../stream';
 import { NestedFileStream } from '../../interfaces/file';
 import { MEMORY_DOWNLOAD_LIMIT } from '../../constants';
 import { isTransferCancelError } from '../transfer';
-import { adjustWindowsFileName } from '../link';
+import { adjustName, adjustWindowsLinkName } from '../link';
 
 class FileSaver {
     private useBlobFallback = false;
@@ -58,10 +59,57 @@ class FileSaver {
     async saveAsZip(name: string) {
         const filename = name.endsWith('.zip') ? name : `${name}.zip`;
         const files: NestedFileStream[] = [];
+        const folders = new Map<string, string>(); // original path : adjusted path
+        const folderPaths = new Set<string>(); // unique lowercase folder paths
 
         const abortController = new AbortController();
         const { readable, writable } = new ZipWriter();
         const writer = writable.getWriter();
+
+        const adjustFolderPath = (folderPath: string): string => {
+            const parents = folderPath.split('/');
+            const folderName = parents.pop();
+
+            if (!folderName) {
+                throw new Error(`Folder path ${folderPath} is invalid`);
+            }
+
+            const parentPath = folders.get(parents.join('/'));
+            const fixedName = isWindows() ? adjustWindowsLinkName(folderName) : folderName;
+
+            const deduplicate = (index = 0): string => {
+                const adjustedName = adjustName(index, fixedName);
+                const adjustedPath = parentPath ? `${parentPath}/${adjustedName}/` : `${adjustedName}/`;
+
+                if (folderPaths.has(adjustedPath.toLowerCase())) {
+                    return deduplicate(index + 1);
+                }
+                folders.set(folderPath, adjustedPath);
+                return adjustedPath;
+            };
+
+            return deduplicate();
+        };
+
+        const adjustFileName = ({ fileName, parentPath }: NestedFileStream) => {
+            const fixedName = isWindows() ? adjustWindowsLinkName(fileName) : fileName;
+            const [namePart, extension] = splitExtension(fixedName);
+
+            const deduplicate = (index = 0): string => {
+                const adjustedName = adjustName(index, namePart, extension);
+                if (
+                    files.find(
+                        (file) =>
+                            file.parentPath === parentPath && file.fileName.toLowerCase() === adjustedName.toLowerCase()
+                    )
+                ) {
+                    return deduplicate(index + 1);
+                }
+                return adjustedName;
+            };
+
+            return deduplicate();
+        };
 
         if (this.useBlobFallback) {
             this.saveViaBuffer(readable, filename).catch(console.error);
@@ -89,9 +137,13 @@ class FileSaver {
 
         return {
             addFile: async (file: NestedFileStream) => {
-                const fileName = isWindows() ? adjustWindowsFileName(file.fileName) : file.fileName;
-                const fullPath = `${file.parentPath}/${fileName}`;
-                files.push(file);
+                const fileName = adjustFileName(file);
+                const parentFolder = folders.get(file.parentPath) ?? '';
+                const fullPath = `${parentFolder}${fileName}`;
+                files.push({
+                    ...file,
+                    fileName,
+                });
                 await writer.write({
                     name: fullPath,
                     lastModified: new Date(),
@@ -99,9 +151,11 @@ class FileSaver {
                 });
             },
             addFolder: async (path: string) => {
+                const folderPath = adjustFolderPath(path);
+                folderPaths.add(folderPath.toLocaleLowerCase());
                 await writer.write({
                     directory: true,
-                    name: path,
+                    name: folderPath,
                 });
             },
             close: () => writer.close(),

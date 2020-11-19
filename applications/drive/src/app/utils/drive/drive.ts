@@ -462,7 +462,8 @@ export const renameLinkAsync = async (
     shareId: string,
     linkId: string,
     parentLinkID: string,
-    newName: string
+    newName: string,
+    type: string
 ) => {
     const error = validateLinkName(newName);
 
@@ -499,6 +500,7 @@ export const renameLinkAsync = async (
             Name: encryptedName,
             Hash,
             SignatureAddress: address.Email,
+            MIMEType: type,
         })
     );
 };

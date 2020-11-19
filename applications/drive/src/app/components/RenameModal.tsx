@@ -50,7 +50,7 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
         setName(formattedName);
 
         try {
-            await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, formattedName);
+            await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, formattedName, item.MIMEType);
             await events.call(activeFolder.shareId);
         } catch (e) {
             if (e.name === 'ValidationError') {
