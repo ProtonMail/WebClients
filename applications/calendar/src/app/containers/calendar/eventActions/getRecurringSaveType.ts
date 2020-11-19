@@ -58,7 +58,7 @@ const getRecurringSaveType = async ({
     const exdates = originalEditEventData.mainVeventComponent.exdate || [];
     const exdatesAfter = getExdatesAfter(exdates, recurrence.localStart);
 
-    const hasSingleModifications = singleEditRecurrences.length >= 1 || exdates.length >= 1;
+    const hasSingleModifications = singleEditRecurrencesWithoutSelf.length >= 1 || exdates.length >= 1;
     const hasSingleModificationsAfter = singleEditRecurrencesAfter.length >= 1 || exdatesAfter.length >= 1;
 
     return onSaveConfirmation({
