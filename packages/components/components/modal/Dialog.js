@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
+
 import Portal from '../portal/Portal';
 import { classnames } from '../../helpers';
+import { useFocusTrap } from '../focus';
 
 const CLASSES = {
     MODAL: 'pm-modal',
@@ -26,6 +28,9 @@ const Dialog = ({
     className: extraClassNames = '',
     ...rest
 }) => {
+    const rootRef = useRef(null);
+    const focusTrapProps = useFocusTrap({ rootRef });
+
     const handleAnimationEnd = ({ animationName }) => {
         if (animationName === CLASSES.MODAL_OUT && isClosing) {
             onExit?.();
@@ -37,7 +42,11 @@ const Dialog = ({
 
     return (
         <Portal>
-            <div className={classnames(['pm-modalContainer', isBehind && 'pm-modalContainer--inBackground'])}>
+            <div
+                ref={rootRef}
+                {...focusTrapProps}
+                className={classnames(['pm-modalContainer', isBehind && 'pm-modalContainer--inBackground'])}
+            >
                 <dialog
                     aria-labelledby={modalTitleID}
                     aria-modal="true"

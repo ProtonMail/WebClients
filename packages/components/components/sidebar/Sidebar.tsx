@@ -1,7 +1,8 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useRef } from 'react';
 
 import Hamburger from './Hamburger';
 import MobileAppsLinks from './MobileAppsLinks';
+import { useFocusTrap } from '../focus';
 
 interface Props {
     logo?: React.ReactNode;
@@ -14,12 +15,22 @@ interface Props {
 }
 
 const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, primary, children, version }: Props) => {
+    const rootRef = useRef<HTMLDivElement>(null);
+    const focusTrapProps = useFocusTrap({
+        active: expanded,
+        rootRef,
+    });
     return (
-        <div className="sidebar flex flex-nowrap flex-column noprint" data-expanded={expanded}>
+        <div
+            ref={rootRef}
+            className="sidebar flex flex-nowrap flex-column noprint"
+            data-expanded={expanded}
+            {...focusTrapProps}
+        >
             <div className="nodesktop notablet flex-item-noshrink">
                 <div className="flex flex-spacebetween flex-items-center pl1 pr1">
                     {logo}
-                    <Hamburger expanded={expanded} onToggle={onToggleExpand} />
+                    <Hamburger expanded={expanded} onToggle={onToggleExpand} data-focus-fallback={1} />
                 </div>
             </div>
             {primary ? <div className="nomobile pl1 pr1 pb1 flex-item-noshrink">{primary}</div> : null}

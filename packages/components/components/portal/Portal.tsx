@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 interface Props {
@@ -6,13 +6,7 @@ interface Props {
 }
 
 const Portal = ({ children }: Props) => {
-    const [target, setTarget] = useState<HTMLElement | null>(null);
-
-    useEffect(() => {
-        setTarget(document.body);
-    }, []);
-
-    return <>{target ? ReactDOM.createPortal(children, target) : null}</>;
+    return ReactDOM.createPortal(children, document.body);
 };
 
 export default Portal;
