@@ -17,11 +17,11 @@ const DiscountBanner = ({ onClose }: Props) => {
                 </button>
             ) : null}
             <div className="flex flex-column flex-nowrap flex-items-center aligncenter p1 w100">
-                <h3 className="uppercase bold">{c('Title').t`Get your own protondrive`}</h3>
-                <p className="m0 small bold">
+                <h3 className="uppercase bold m0">{c('Title').t`Get your own protondrive`}</h3>
+                <p className="mt1 mb1 small">
                     {c('Label').t`Up to 50% off on new subscriptions via our Black Friday promotion`}
                 </p>
-                <Href url={BF_DEAL_URL} className="pm-button--primary pm-button--large mt1 mb1">
+                <Href url={BF_DEAL_URL} className="pm-button--primary pm-button--large mt0-25 mb1">
                     {c('Action').t`Get the deal`}
                 </Href>
             </div>
