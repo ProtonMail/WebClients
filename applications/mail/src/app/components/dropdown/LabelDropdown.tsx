@@ -1,6 +1,5 @@
 import React, { useState, ChangeEvent, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
-import { FocusScope } from '@react-aria/focus';
 import {
     SearchInput,
     Icon,
@@ -162,7 +161,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
     const autoFocusSearch = !breakpoints.isNarrow;
 
     return (
-        <FocusScope contain={containFocus} restoreFocus autoFocus>
+        <>
             <div className="flex flex-spacebetween flex-items-center m1 mb0">
                 <span className="bold" tabIndex={-2}>
                     {c('Label').t`Label as`}
@@ -241,7 +240,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                     {c('Action').t`Apply`}
                 </PrimaryButton>
             </div>
-        </FocusScope>
+        </>
     );
 };
 

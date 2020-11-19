@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { FocusScope } from '@react-aria/focus';
 import {
     LabelModal,
     SearchInput,
@@ -114,7 +113,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const autoFocusSearch = !breakpoints.isNarrow;
 
     return (
-        <FocusScope contain={containFocus} restoreFocus autoFocus>
+        <>
             <div className="flex flex-spacebetween flex-items-center m1 mb0">
                 <span className="bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
@@ -161,7 +160,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     )}
                 </ul>
             </div>
-        </FocusScope>
+        </>
     );
 };
 
