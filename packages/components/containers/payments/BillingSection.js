@@ -6,7 +6,7 @@ import { unique } from 'proton-shared/lib/helpers/array';
 import { getMonthlyBaseAmount, hasVisionary, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import { Alert, Price, Loader, LinkButton, Time, Info } from '../../components';
+import { Alert, Loader, LinkButton, Time, Info } from '../../components';
 import { useUser, useSubscription, useOrganization, useModals, usePlans } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { formatPlans } from './subscription/helpers';
@@ -383,12 +383,6 @@ const BillingSection = ({ permission }) => {
                         <div className="flex-autogrid-item">{c('Label').t`Renewal date`}</div>
                         <div className="flex-autogrid-item bold alignright">
                             <Time>{PeriodEnd}</Time>
-                        </div>
-                    </div>
-                    <div className="flex-autogrid w100 mb1">
-                        <div className="flex-autogrid-item">{c('Label').t`Billing amount`}</div>
-                        <div className="flex-autogrid-item bold alignright">
-                            <Price currency={Currency}>{subscription.Amount}</Price>
                         </div>
                     </div>
                     <div className="flex-autogrid w100 mb1">
