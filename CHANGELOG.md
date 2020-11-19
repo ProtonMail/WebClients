@@ -1,3 +1,9 @@
+# [3.16.45] - 2020-11-19
+
+## Fixes
+
+-   Next promotion was sometimes not properly calculated.
+-   Promotion state was not reset after logout.
 # [3.16.44] - 2020-11-17
 
 ## Improvements
