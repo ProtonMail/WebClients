@@ -1,0 +1,13 @@
+.pd-discount-banner {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 18em;
+    border-radius: 3px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    background-image: url('DiscountBackground.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

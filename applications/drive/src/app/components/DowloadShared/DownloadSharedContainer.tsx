@@ -11,12 +11,14 @@ import DownloadSharedInfo from './DownloadSharedInfo';
 import EnterPasswordInfo from './EnterPasswordInfo';
 import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
+import DiscountBanner from './DiscountBanner/DiscountBanner';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
 const ERROR_CODE_NOT_FOUND = 404;
 
 const DownloadSharedContainer = () => {
+    const [showDiscountBanner, setShowDiscountBanner] = useState(true);
     const [notFoundError, setNotFoundError] = useState<Error | undefined>();
     const [loading, withLoading] = useLoading(false);
     const [handshakeInfo, setHandshakeInfo] = useState<InitHandshake | null>();
@@ -134,32 +136,41 @@ const DownloadSharedContainer = () => {
 
     return (
         content && (
-            <div className="flex flex-column flex-nowrap flex-item-noshrink flex-items-center scroll-if-needed h100v">
-                <Bordered className="bg-white-dm color-global-grey-dm flex flex-items-center flex-item-noshrink w100 mw40e mbauto mtauto">
-                    <div className="flex flex-column flex-nowrap flex-items-center aligncenter p2 w100">
-                        <h3>
-                            <span className="flex flex-nowrap flex-items-center">
-                                <Icon name="protondrive" className="mr0-25" size={20} />
-                                <b>ProtonDrive</b>
-                            </span>
-                        </h3>
-                        {content}
-                    </div>
-                </Bordered>
-                <div className="color-global-light flex flex-item-noshrink flex-items-end onmobile-pt1">
-                    <div className="aligncenter opacity-50 mb2">
-                        <Icon name="lock-check" size={20} />
-                        <div className="small m0">{c('Label').t`Zero-Access Encryption by Proton`}</div>
-                        <a
-                            className="small signup-footer-link"
-                            href={`mailto:${REPORT_ABUSE_EMAIL}`}
-                            title={c('Label').t`Report abuse`}
-                        >
-                            {c('Label').t`Report abuse`}
-                        </a>
+            <>
+                {showDiscountBanner && (
+                    <DiscountBanner
+                        onClose={() => {
+                            setShowDiscountBanner(false);
+                        }}
+                    />
+                )}
+                <div className="flex flex-column flex-nowrap flex-item-noshrink flex-items-center scroll-if-needed h100v">
+                    <Bordered className="bg-white-dm color-global-grey-dm flex flex-items-center flex-item-noshrink w100 mw40e mbauto mtauto">
+                        <div className="flex flex-column flex-nowrap flex-items-center aligncenter p2 w100">
+                            <h3>
+                                <span className="flex flex-nowrap flex-items-center">
+                                    <Icon name="protondrive" className="mr0-25" size={20} />
+                                    <b>ProtonDrive</b>
+                                </span>
+                            </h3>
+                            {content}
+                        </div>
+                    </Bordered>
+                    <div className="color-global-light flex flex-item-noshrink flex-items-end onmobile-pt1">
+                        <div className="aligncenter opacity-50 mb2">
+                            <Icon name="lock-check" size={20} />
+                            <div className="small m0">{c('Label').t`Zero-Access Encryption by Proton`}</div>
+                            <a
+                                className="small signup-footer-link"
+                                href={`mailto:${REPORT_ABUSE_EMAIL}`}
+                                title={c('Label').t`Report abuse`}
+                            >
+                                {c('Label').t`Report abuse`}
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         )
     );
 };
