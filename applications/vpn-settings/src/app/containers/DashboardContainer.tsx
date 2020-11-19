@@ -12,10 +12,13 @@ import {
     useOrganization,
 } from 'react-components';
 import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES } from 'proton-shared/lib/constants';
-import { UserModel } from 'proton-shared/lib/interfaces';
+import { Plan, UserModel } from 'proton-shared/lib/interfaces';
 import { c } from 'ttag';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { getPlanIDs, switchPlan } from 'proton-shared/lib/helpers/subscription';
+import { PlanIDs } from 'react-components/containers/signup/interfaces';
+import { toMap } from 'proton-shared/lib/helpers/object';
+import { SUBSCRIPTION_STEPS } from 'react-components/containers/payments/subscription/constants';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';
 
@@ -46,19 +49,46 @@ export const getDashboardPage = (user: UserModel) => {
     };
 };
 
+interface PlansMap {
+    [planName: string]: Plan;
+}
+
 const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared) => {
     const [user] = useUser();
     const { createModal } = useModals();
     const searchParams = new URLSearchParams(location.search);
     const planName = searchParams.get('plan');
+    const cycle = searchParams.get('cycle');
+    const currency = searchParams.get('currency');
+    const coupon = searchParams.get('coupon');
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
 
     useEffect(() => {
         if (plans && planName && !loadingPlans && !loadingSubscription && !loadingOrganization) {
-            const { Cycle = DEFAULT_CYCLE, Currency = plans[0].Currency } = subscription;
-            const plan = plans.find(({ Name = '' }) => Name === planName);
+            if (!planName) {
+                return;
+            }
+            const { Cycle = cycle || DEFAULT_CYCLE, Currency = currency || plans[0].Currency } = subscription;
+            const plansMap = toMap(plans, 'Name') as PlansMap;
+            if (user.isFree) {
+                const planIDs = planName.split('_').reduce<PlanIDs>((acc, name) => {
+                    acc[plansMap[name].ID] = 1;
+                    return acc;
+                }, {});
+                createModal(
+                    <NewSubscriptionModal
+                        planIDs={planIDs}
+                        currency={Currency}
+                        cycle={Cycle}
+                        coupon={coupon}
+                        step={SUBSCRIPTION_STEPS.PAYMENT}
+                    />
+                );
+                return;
+            }
+            const plan = plansMap[planName];
             if (!plan) {
                 return;
             }
