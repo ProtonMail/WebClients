@@ -7,7 +7,7 @@ import { getMonthlyBaseAmount, hasVisionary, getPlanIDs } from 'proton-shared/li
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { Alert, Price, Loader, LinkButton, Time, Info } from '../../components';
-import { useUser, useSubscription, useNextSubscription, useOrganization, useModals, usePlans } from '../../hooks';
+import { useUser, useSubscription, useOrganization, useModals, usePlans } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { formatPlans } from './subscription/helpers';
 import DiscountBadge from './DiscountBadge';
@@ -31,7 +31,6 @@ const BillingSection = ({ permission }) => {
     const [{ hasPaidMail, hasPaidVpn, Credit }] = useUser();
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
-    const [nextSubscription, loadingNextSubscription] = useNextSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const handleOpenGiftCodeModal = () => createModal(<GiftCodeModal />);
     const handleOpenCreditsModal = () => createModal(<CreditsModal />);
@@ -77,15 +76,13 @@ const BillingSection = ({ permission }) => {
         );
     }
 
-    if (loadingSubscription || loadingPlans || loadingOrganization || loadingNextSubscription) {
+    if (loadingSubscription || loadingPlans || loadingOrganization) {
         return <Loader />;
     }
 
     if (subscription.ManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
-
-    console.log({ nextSubscription, loadingNextSubscription });
 
     const { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd } = subscription;
     const { mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } = formatPlans(Plans);
@@ -391,7 +388,7 @@ const BillingSection = ({ permission }) => {
                     <div className="flex-autogrid w100 mb1">
                         <div className="flex-autogrid-item">{c('Label').t`Billing amount`}</div>
                         <div className="flex-autogrid-item bold alignright">
-                            <Price currency={Currency}>{nextSubscription.AmountDue}</Price>
+                            <Price currency={Currency}>{subscription.Amount}</Price>
                         </div>
                     </div>
                     <div className="flex-autogrid w100 mb1">
