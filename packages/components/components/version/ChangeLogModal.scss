@@ -2,10 +2,10 @@
 
 .pm-modalContentInner-changelog {
 	h1 {
-		@include flow-hr($size-h2);
+		@include rhythm($size-h2);
 	}
 	h2 {
-		@include flow-hr($size-h4);
+		@include rhythm($size-h4);
 		margin-bottom: 0.5em;
 	}
 	ul {
