@@ -91,6 +91,8 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "warn",
     "react/require-default-props": "off",
+    "jsx-a11y/alt-text": ["warn"],
+    "jsx-a11y/no-autofocus": ["off"],
   },
   settings: {
     "import/resolver": {
