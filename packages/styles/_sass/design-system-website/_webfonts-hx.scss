@@ -1,59 +1,59 @@
 h1,
 .h1 {
   display: block;
-  @include flow-hr($size-h1);
+  @include rhythm($size-h1);
   font-weight: normal;
 }
 h2,
 .h2 {
   display: block;
-  @include flow-hr($size-h2);
+  @include rhythm($size-h2);
   font-weight: normal;
 }
 h3,
 .h3 {
   display: block;
-  @include flow-hr($size-h3);
+  @include rhythm($size-h3);
   font-weight: normal;
 }
 h4,
 .h4 {
   display: block;
-  @include flow-hr($size-h4);
+  @include rhythm($size-h4);
   font-weight: normal;
 }
 h5,
 .h5 {
   display: block;
-  @include flow-hr($size-h5);
+  @include rhythm($size-h5);
   font-weight: normal;
 }
 h6,
 .h6 {
   display: block;
-  @include flow-hr($size-h6);
+  @include rhythm($size-h6);
   font-weight: normal;
 }
 
 @if $use-other-typo-helpers == true {
 	/* other useful classes */
 	.smallest {
-	@include flow-other($size-smallest);
+		@include rhythm($size-smallest, 'double_top_double_bottom_without_coef');
 	}
 	.smaller {
-	@include flow-other($size-smaller);
+		@include rhythm($size-smaller, 'double_top_double_bottom_without_coef');
 	}
 	.small {
-	@include flow-other($size-small);
+		@include rhythm($size-small, 'double_top_double_bottom_without_coef');
 	}
 	.big {
-	@include flow-other($size-big);
+		@include rhythm($size-big, 'double_top_double_bottom_without_coef');
 	}
 	.bigger {
-	@include flow-other($size-bigger);
+		@include rhythm($size-bigger, 'double_top_double_bottom_without_coef');
 	}
 	.biggest {
-	@include flow-other($size-biggest);
+		@include rhythm($size-biggest, 'double_top_double_bottom_without_coef');
 	}
 
 	.size-40 {

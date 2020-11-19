@@ -45,7 +45,7 @@ q:after {
 @import './_includes/_resets/typo-sub-sup';
 
 /* avoid margin problems */
-@if $vertical-rythm == 'single_top' or $vertical-rythm == 'double_top_single_bottom' {
+@if $vertical-rhythm == 'single_top' or $vertical-rhythm == 'double_top_single_bottom' {
   h1,.h1,
   h2,.h2,
   h3,.h3,
