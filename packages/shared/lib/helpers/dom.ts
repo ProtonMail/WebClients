@@ -26,7 +26,7 @@ const loadScriptHelper = ({ path, integrity }: ScriptInfo, cb: Callback) => {
 export const loadScript = (path: string, integrity?: string) => {
     return new Promise<Event>((resolve, reject) => {
         loadScriptHelper({ path, integrity }, (event, error) => {
-            if (error) {
+            if (error || !event) {
                 return reject(error);
             }
             return resolve(event);
