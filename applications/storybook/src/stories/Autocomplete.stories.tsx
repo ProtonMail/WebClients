@@ -3,7 +3,7 @@ import { AutocompleteTwo, Input, Icon, AutocompleteChangeEvent, AutocompleteRend
 import mdx from './Autocomplete.mdx'
 
 export default {
-    title: 'Proton UI / Autocomplete',
+    title: 'Components / Autocomplete',
     component: AutocompleteTwo,
     parameters: {
         docs: {

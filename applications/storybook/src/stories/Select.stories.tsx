@@ -3,7 +3,7 @@ import { SelectTwo, Option, Icon } from 'react-components';
 import mdx from './Select.mdx'
 
 export default {
-    title: 'Proton UI / Select',
+    title: 'Components / Select',
     component: SelectTwo,
     parameters: {
         docs: {
