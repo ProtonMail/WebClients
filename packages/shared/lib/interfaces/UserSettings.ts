@@ -1,5 +1,11 @@
 import { DENSITY } from '../constants';
 
+export enum SETTINGS_LOG_AUTH_STATE {
+    DISABLE = 0,
+    BASIC = 1,
+    ADVANCED = 2,
+}
+
 export enum SETTINGS_WEEK_START {
     LOCALE_DEFAULT = 0,
     MONDAY = 1,
@@ -55,7 +61,7 @@ export interface UserSettings {
     };
     News: number;
     Locale: string;
-    LogAuth: number;
+    LogAuth: SETTINGS_LOG_AUTH_STATE;
     InvoiceText: number;
     Density: DENSITY;
     Theme: string;

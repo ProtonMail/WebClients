@@ -165,13 +165,6 @@ export const MIN_CREDIT_AMOUNT = 500;
 export const MIN_BITCOIN_AMOUNT = 500;
 export const DEFAULT_CREDITS_AMOUNT = 5000;
 export const DEFAULT_DONATION_AMOUNT = 5000;
-export enum AUTH_LOG_EVENTS {
-    LOGIN_FAILURE_PASSWORD = 0,
-    LOGIN_SUCCESS = 1,
-    LOGOUT = 2,
-    LOGIN_FAILURE_2FA = 3,
-    LOGIN_SUCCESS_AWAIT_2FA = 4,
-}
 export enum INVOICE_TYPE {
     OTHER = 0,
     SUBSCRIPTION = 1,
@@ -202,12 +195,6 @@ export enum UNPAID_STATE {
 
 export const BASE_SIZE = 1024;
 export const GIGA = BASE_SIZE ** 3;
-
-export enum LOGS_STATE {
-    DISABLE = 0,
-    BASIC = 1,
-    ADVANCED = 2,
-}
 
 export enum MEMBER_TYPE {
     MEMBER = 0,
