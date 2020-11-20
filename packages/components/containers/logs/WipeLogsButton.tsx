@@ -1,14 +1,19 @@
 import React from 'react';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
 import { Button, ConfirmModal, Alert, ErrorButton } from '../../components';
-import { useModals } from '../../hooks';
+import { useModals, useLoading } from '../../hooks';
 
-const WipeLogsButton = ({ onWipe, className }) => {
+interface Props {
+    onWipe: () => Promise<void>;
+    className?: string;
+}
+
+const WipeLogsButton = ({ onWipe, className }: Props) => {
     const { createModal } = useModals();
+    const [loading, withLoading] = useLoading();
 
     const handleConfirm = () => {
-        onWipe();
+        withLoading(onWipe());
     };
 
     const handleOpenModal = () => {
@@ -23,12 +28,7 @@ const WipeLogsButton = ({ onWipe, className }) => {
         );
     };
 
-    return <Button className={className} onClick={handleOpenModal}>{c('Action').t`Wipe`}</Button>;
-};
-
-WipeLogsButton.propTypes = {
-    onWipe: PropTypes.func.isRequired,
-    className: PropTypes.string,
+    return <Button className={className} loading={loading} onClick={handleOpenModal}>{c('Action').t`Wipe`}</Button>;
 };
 
 export default WipeLogsButton;
