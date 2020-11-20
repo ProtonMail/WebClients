@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { querySessions, revokeOtherSessions, revokeSession } from 'proton-shared/lib/api/auth';
-import { ELEMENTS_PER_PAGE } from 'proton-shared/lib/constants';
 import {
     Button,
     Table,
@@ -21,6 +20,8 @@ import SessionAction from './SessionAction';
 import { Session } from './interface';
 import { getClientsI18N } from './helper';
 
+const PAGE_SIZE = 10;
+
 const SessionsSection = () => {
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -28,7 +29,7 @@ const SessionsSection = () => {
     const [loading, withLoading] = useLoading();
     const [loadingRevokeAll, withLoadingRevokeAll] = useLoading();
     const [state, setState] = useState<{ sessions: Session[]; total: number }>({ sessions: [], total: 0 });
-    const { page, list, onNext, onPrevious, onSelect } = usePagination(state.sessions);
+    const { page, list, onNext, onPrevious, onSelect } = usePagination(state.sessions, 1, PAGE_SIZE);
     const { createModal } = useModals();
 
     const handleRevoke = async (UID: string) => {
@@ -87,7 +88,7 @@ const SessionsSection = () => {
                 <Pagination
                     page={page}
                     total={state.total}
-                    limit={ELEMENTS_PER_PAGE}
+                    limit={PAGE_SIZE}
                     onNext={onNext}
                     onPrevious={onPrevious}
                     onSelect={onSelect}

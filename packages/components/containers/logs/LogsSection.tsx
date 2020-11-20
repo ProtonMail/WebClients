@@ -1,62 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { fromUnixTime } from 'date-fns';
-import { queryLogs, clearLogs } from 'proton-shared/lib/api/logs';
+import { clearLogs, queryLogs } from 'proton-shared/lib/api/logs';
 import { updateLogAuth } from 'proton-shared/lib/api/settings';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { ELEMENTS_PER_PAGE, LOGS_STATE, AUTH_LOG_EVENTS } from 'proton-shared/lib/constants';
+import { SETTINGS_LOG_AUTH_STATE } from 'proton-shared/lib/interfaces';
+import { wait } from 'proton-shared/lib/helpers/promise';
+import { AuthLog } from './interface';
 import {
+    Alert,
+    Block,
     Button,
     ButtonGroup,
     ConfirmModal,
     Group,
-    Alert,
-    Block,
     Pagination,
     usePaginationAsync,
 } from '../../components';
-import { useUserSettings, useApiResult, useApiWithoutResult, useModals } from '../../hooks';
+import { useApi, useLoading, useModals, useUserSettings } from '../../hooks';
 
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
+import { getAllAuthenticationLogs, getEventsI18N } from './helper';
 
-const { DISABLE, BASIC, ADVANCED } = LOGS_STATE;
-const { LOGIN_FAILURE_PASSWORD, LOGIN_SUCCESS, LOGOUT, LOGIN_FAILURE_2FA, LOGIN_SUCCESS_AWAIT_2FA } = AUTH_LOG_EVENTS;
+const { BASIC, DISABLE, ADVANCED } = SETTINGS_LOG_AUTH_STATE;
 
-const getEventsI18N = () => ({
-    [LOGIN_FAILURE_PASSWORD]: c('Log event').t`Sign in failure (password)`,
-    [LOGIN_SUCCESS]: c('Log event').t`Sign in success`,
-    [LOGOUT]: c('Log event').t`Sign out`,
-    [LOGIN_FAILURE_2FA]: c('Log event').t`Sign in failure (2FA)`,
-    [LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Sign in success (2FA)`,
-});
+const INITIAL_STATE = {
+    logs: [],
+    total: 0,
+};
+const PAGE_SIZE = 10;
 
 const LogsSection = () => {
     const i18n = getEventsI18N();
     const [settings] = useUserSettings();
     const { createModal } = useModals();
     const [logAuth, setLogAuth] = useState(settings.LogAuth);
+    const api = useApi();
+    const [state, setState] = useState<{ logs: AuthLog[]; total: number }>(INITIAL_STATE);
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
-    const { result = {}, loading, request: requestQueryLogs } = useApiResult(
-        () =>
-            queryLogs({
-                Page: page - 1,
-                PageSize: ELEMENTS_PER_PAGE,
-            }),
-        [page]
-    );
-    const { Logs: logs = [], Total: total = 0 } = result;
-    const requestDownload = useApiWithoutResult(queryLogs);
-    const { request: requestClearLogs } = useApiWithoutResult(clearLogs);
-    const { request: requestUpdateLogAuth } = useApiWithoutResult(updateLogAuth);
+    const [loading, withLoading] = useLoading();
+    const [loadingRefresh, withLoadingRefresh] = useLoading();
+    const [loadingDownload, withLoadingDownload] = useLoading();
+    const [error, setError] = useState(false);
 
     const handleWipe = async () => {
-        await requestClearLogs();
-        await requestQueryLogs();
+        await api(clearLogs());
+        setState(INITIAL_STATE);
     };
 
     const handleDownload = async () => {
-        const { Logs = [] } = await requestDownload.request();
+        const Logs = await getAllAuthenticationLogs(api);
+
         const data = Logs.reduce(
             (acc, { Event, Time, IP }) => {
                 acc.push(`${i18n[Event]},${fromUnixTime(Time).toISOString()},${IP}`);
@@ -73,7 +68,7 @@ const LogsSection = () => {
     };
 
     const confirmDisable = () => {
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             createModal(
                 <ConfirmModal title={c('Title').t`Clear`} onConfirm={resolve} onClose={reject}>
                     <Alert type="warning">{c('Warning')
@@ -83,12 +78,15 @@ const LogsSection = () => {
         });
     };
 
-    const handleLogAuth = (LogAuth) => async () => {
-        if (total > 0 && LogAuth === DISABLE) {
+    const handleLogAuth = (newLogAuthState: SETTINGS_LOG_AUTH_STATE) => async () => {
+        if (state.total > 0 && newLogAuthState === DISABLE) {
             await confirmDisable();
         }
-        await requestUpdateLogAuth(LogAuth);
-        setLogAuth(LogAuth);
+        await api(updateLogAuth(newLogAuthState));
+        setLogAuth(newLogAuthState);
+        if (newLogAuthState === DISABLE) {
+            setState(INITIAL_STATE);
+        }
     };
 
     // Handle updates from the event manager
@@ -96,9 +94,35 @@ const LogsSection = () => {
         setLogAuth(settings.LogAuth);
     }, [settings.LogAuth]);
 
+    const latestRef = useRef<any>();
+
+    const fetchAndSetState = async () => {
+        const latest = {};
+        latestRef.current = latest;
+
+        setError(false);
+        try {
+            const { Logs, Total } = await api<{ Logs: AuthLog[]; Total: number }>(
+                queryLogs({
+                    Page: page - 1,
+                    PageSize: 10,
+                })
+            );
+            if (latestRef.current !== latest) {
+                return;
+            }
+            setState({ logs: Logs, total: Total });
+        } catch (e) {
+            if (latestRef.current !== latest) {
+                return;
+            }
+            setError(true);
+        }
+    };
+
     useEffect(() => {
-        requestQueryLogs();
-    }, [logAuth]);
+        withLoading(fetchAndSetState());
+    }, [page]);
 
     return (
         <>
@@ -123,14 +147,17 @@ const LogsSection = () => {
                         <Button
                             icon="reload"
                             className="mr1 mb0-5"
-                            onClick={requestQueryLogs}
+                            loading={loadingRefresh}
+                            onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
                             title={c('Action').t`Refresh`}
                         />
-                        {logs.length ? <WipeLogsButton className="mr1 mb0-5" onWipe={handleWipe} /> : null}
-                        {logs.length ? (
-                            <Button className="mb0-5 mr1" onClick={handleDownload} loading={requestDownload.loading}>{c(
-                                'Action'
-                            ).t`Download`}</Button>
+                        {state.logs.length ? <WipeLogsButton className="mr1 mb0-5" onWipe={handleWipe} /> : null}
+                        {state.logs.length ? (
+                            <Button
+                                className="mb0-5 mr1"
+                                onClick={() => withLoadingDownload(handleDownload())}
+                                loading={loadingDownload}
+                            >{c('Action').t`Download`}</Button>
                         ) : null}
                     </span>
                 </div>
@@ -139,13 +166,13 @@ const LogsSection = () => {
                         onNext={onNext}
                         onPrevious={onPrevious}
                         onSelect={onSelect}
-                        total={total}
+                        total={state.total}
                         page={page}
-                        limit={ELEMENTS_PER_PAGE}
+                        limit={PAGE_SIZE}
                     />
                 </div>
             </Block>
-            <LogsTable logs={logs} logAuth={logAuth} loading={loading} />
+            <LogsTable logs={state.logs} logAuth={logAuth} loading={loading} error={error} />
         </>
     );
 };
