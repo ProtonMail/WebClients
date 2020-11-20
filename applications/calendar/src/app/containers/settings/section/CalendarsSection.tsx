@@ -69,7 +69,7 @@ const CalendarsSection = ({
             ? (firstRemainingCalendar && firstRemainingCalendar.ID) || null
             : undefined;
 
-        await new Promise((resolve, reject) => {
+        await new Promise<void>((resolve, reject) => {
             const calendarName = firstRemainingCalendar ? (
                 <span key="calendar-name" className="break">
                     {firstRemainingCalendar.Name}

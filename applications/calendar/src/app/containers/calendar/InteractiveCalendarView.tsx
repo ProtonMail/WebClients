@@ -677,7 +677,7 @@ const InteractiveCalendarView = ({
         inviteActions?: InviteActions;
         veventComponent?: VcalVeventComponent;
     }): Promise<RECURRING_TYPES> => {
-        return new Promise((resolve, reject) => {
+        return new Promise<RECURRING_TYPES>((resolve, reject) => {
             if (type === DELETE_CONFIRMATION_TYPES.SINGLE) {
                 return createModal(
                     <DeleteConfirmModal
