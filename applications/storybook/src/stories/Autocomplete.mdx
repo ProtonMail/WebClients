@@ -23,6 +23,27 @@ Type 'enl' to see all the options.
     <Story id="proton-ui-autocomplete--multiple" />
 </Canvas>
 
+### Render props API
+
+The Autocomplete component achieves flexibility for different types of input collection & rendering use-cases by not rendering those ui elements itself and instead relying on a render-prop api (via `children`) to ensure that the necessary data and handlers are made available to the render-prop children.
+
+The render-prop api looks as follows:
+
+| prop | type | description |
+|:--- |:--- |:--- |
+| aria-owns | AriaAttributes['aria-owns'] |
+| aria-activedescendant | AriaAttributes['aria-activedescendant'] |
+| aria-autocomplete | AriaAttributes['aria-autocomplete'] |
+| aria-describedby | AriaAttributes['aria-describedby'] |
+| autocompleteValue | V | The value of the autocomplete, same as what is passed as the `value` prop inside the autocomplete |
+| inputValue | string | The value of the autocomplete's input |
+| ref | React.RefObject | The ref for the HTML node the autocomplete dropdown should attach to, this doesn't need to go on the input necessarily as can be seen in the `multiple` example |
+| onChange | `(e: React.ChangeEvent<HTMLInputElement>)` => void | Change handler for the input to manage autocomplete input state. |
+| onFocus | () => void | Focus handler for the input to manage open state. |
+| onKeyDown | `(e: React.KeyboardEvent<HTMLInputElement>)` => void | Keydown handler for the input for keyboard navigation purposes. |
+
+All aria attributes should go on the input node directly for correct accessibility linking.
+
 ### Accessibility
 
 Since this is a component where focus persists inside the anchor even while keyboard navigating through the elements inside its dropdown, accessibility can't be managed via native focus and has to be artifically created via aria attributes. It is for that reason that the `id` prop, which is used internally to link the dropdown contents to it's anchor, is required.
