@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { AutocompleteTwo, Input, AutocompleteChangeEvent } from 'react-components';
+import { AutocompleteTwo, Input, Icon, AutocompleteChangeEvent, AutocompleteRenderProps } from 'react-components';
 import mdx from './Autocomplete.mdx'
 
 export default {
@@ -13,22 +13,27 @@ export default {
 }
 
 export const single = () => {
-    const [ value, setValue ] = useState<{ key: string, value: string, label: string }>({ key: 'henlo', value: 'henlo', label: 'henlo' });
-
     const options = [
-        { key: 'henlo', value: 'henlo', label: 'henlo' },
-        { key: 'schmenlo', value: 'schmenlo', label: 'schmenlo' },
-        { key: 'benlo', value: 'benlo', label: 'benlo' }
+        'henlo',
+        'benlo',
+        'schmenlo',
+        'henlo and benlo',
+        'benlo and schmenlo',
+        'schmenlo and schmenlo'
     ];
+
+    const [ value, setValue ] = useState(options[0]);
 
     return (
         <AutocompleteTwo
-            value={value}
-            onChange={({ value }) => setValue(value)}
             id="autocomplete"
+            value={value}
             options={options}
+            onChange={({ value }) => setValue(value)}
+            getOptionKey={v => v}
+            getOptionLabel={v => v}
         >
-            {({ input, value, ...rest }) => <Input value={input} {...rest} />}
+            {({ inputValue, autocompleteValue, ...rest }) => <Input value={inputValue} {...rest} />}
         </AutocompleteTwo>
     );
 }
@@ -90,7 +95,31 @@ export const multiple = () => {
     const handleChange = ({ value }: AutocompleteChangeEvent<V[]>) => {
         setValues(value)
     }
-   return (
+
+    const renderAutocompleteInput = ({
+        ref,
+        inputValue,
+        autocompleteValue,
+        ...rest
+    }: AutocompleteRenderProps<V []>) =>(
+        <div style={anchorStyle} ref={ref}>
+            {autocompleteValue.map(
+                ({ label, key }, index) => (
+                     <span key={key} style={itemStyle}>
+                         {label}
+                         <Icon
+                             style={iconStyle}
+                             name="delete"
+                             onClick={() => handleValueItemDelete(index)}
+                         />
+                     </span>
+                 )
+            )}
+            <input style={inputStyle} value={inputValue} {...rest} />
+        </div>
+    )
+
+    return (
         <AutocompleteTwo
             id="autocomplete"
             multiple
@@ -98,24 +127,7 @@ export const multiple = () => {
             options={options}
             onChange={handleChange}
         >
-           {({ ref, input: inputValue, value, ...rest }) => (
-               <div style={anchorStyle} ref={ref}>
-                   {value.map(
-                       (value, index) => (
-                            <span key={value.key} style={itemStyle}>
-                                {value.label}
-                                <span
-                                    style={iconStyle}
-                                    onClick={() => handleValueItemDelete(index)}
-                                >
-                                    x
-                                </span>
-                            </span>
-                        )
-                   )}
-                   <input style={inputStyle} value={inputValue} {...rest} />
-               </div>
-           )}
+           {renderAutocompleteInput}
        </AutocompleteTwo>
-   );
+    );
 }
