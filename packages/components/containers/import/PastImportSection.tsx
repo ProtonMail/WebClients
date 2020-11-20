@@ -44,7 +44,7 @@ const DeleteButton = ({ ID }: DeleteButtonProps) => {
     const { createNotification } = useNotifications();
 
     const handleDelete = async () => {
-        await new Promise((resolve, reject) => {
+        await new Promise<void>((resolve, reject) => {
             createModal(
                 <ConfirmModal
                     onConfirm={resolve}

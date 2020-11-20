@@ -190,7 +190,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
             gotoStep(methods?.includes('login') ? STEPS.REQUEST_RECOVERY_METHODS : STEPS.REQUEST_RESET_TOKEN);
 
         const handleSubmit = async () => {
-            await new Promise((resolve, reject) => {
+            await new Promise<void>((resolve, reject) => {
                 const loseAllData = (
                     <span className="bold">{c('Info').t`lose access to all current encrypted data`}</span>
                 );

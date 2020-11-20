@@ -31,7 +31,7 @@ const ExportPrivateKeyModal = ({ name, privateKey, onSuccess, onClose, ...rest }
 
     const handleSubmit = async () => {
         // Force a login since the private key is sensitive
-        await new Promise((resolve, reject) => {
+        await new Promise<void>((resolve, reject) => {
             createModal(<UnlockModal onClose={() => reject()} onSuccess={resolve} />);
         });
         await handleExport(name, privateKey, password);

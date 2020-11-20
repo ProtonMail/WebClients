@@ -23,7 +23,7 @@ const PhoneModal = ({ phone, hasReset, onClose, ...rest }: Props) => {
 
     const handleSubmit = async () => {
         if (!input && hasReset) {
-            await new Promise((resolve, reject) => {
+            await new Promise<void>((resolve, reject) => {
                 createModal(
                     <ConfirmModal title={c('Title').t`Confirm phone number`} onConfirm={resolve} onClose={reject}>
                         <Alert type="warning">

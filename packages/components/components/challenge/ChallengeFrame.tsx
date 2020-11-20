@@ -184,9 +184,9 @@ const ChallengeFrame = ({
 
         challengeRef.current = {
             getChallenge: () => {
-                return new Promise((resolve, reject) => {
+                return new Promise<ChallengeResult | undefined>((resolve, reject) => {
                     if (challengeError) {
-                        return resolve();
+                        return resolve(undefined);
                     }
                     const contentWindow = iframeRef.current?.contentWindow;
                     if (!contentWindow) {

@@ -45,7 +45,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
 
     if (step === STEPS.REQUEST_RESET_TOKEN) {
         const handleSubmit = async () => {
-            await new Promise((resolve, reject) => {
+            await new Promise<void>((resolve, reject) => {
                 createModal(
                     <ConfirmModal title={c('Title').t`Confirm reset password`} onConfirm={resolve} onClose={reject}>
                         <Alert type="warning">{c('Info')

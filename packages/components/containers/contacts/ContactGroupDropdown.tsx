@@ -113,7 +113,7 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
         const { contacts: collectedContacts } = collectContacts(contactEmails, contacts);
 
         if (collectedContacts.length) {
-            selectedContactEmails = await new Promise((resolve, reject) => {
+            selectedContactEmails = await new Promise<ContactEmail[]>((resolve, reject) => {
                 createModal(<SelectEmailsModal contacts={collectedContacts} onSubmit={resolve} onClose={reject} />);
             });
         }

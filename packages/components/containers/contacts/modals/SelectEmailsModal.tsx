@@ -8,7 +8,7 @@ import { FormModal, Alert, Row, Label, Field, Checkbox } from '../../../componen
 
 interface Props {
     contacts: Contact[];
-    onSubmit: (value?: ContactEmail[] | PromiseLike<ContactEmail[]> | undefined) => void;
+    onSubmit: (value: ContactEmail[]) => void;
     onClose: () => void;
 }
 

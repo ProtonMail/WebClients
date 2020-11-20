@@ -48,7 +48,7 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
     };
 
     const handleSkip = async () => {
-        await new Promise((resolve, reject) => {
+        await new Promise<void>((resolve, reject) => {
             createModal(
                 <ConfirmModal title={c('Title').t`Warning`} onConfirm={resolve} onClose={reject}>
                     <Alert type="warning">{c('Info')

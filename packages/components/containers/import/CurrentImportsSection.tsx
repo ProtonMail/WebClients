@@ -48,7 +48,7 @@ const RowActions = ({ currentImport }: RowActionsProps) => {
     };
 
     const handleCancel = async (importID: string) => {
-        await new Promise((resolve, reject) => {
+        await new Promise<void>((resolve, reject) => {
             createModal(
                 <ConfirmModal
                     onConfirm={resolve}

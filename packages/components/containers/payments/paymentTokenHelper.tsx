@@ -88,7 +88,7 @@ export const process = ({
 }) => {
     const tab = window.open(ApprovalURL);
 
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         let listen = false;
 
         const reset = () => {

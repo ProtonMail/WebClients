@@ -24,7 +24,7 @@ const EmailModal = ({ email, hasReset, hasNotify, onClose, ...rest }: Props) => 
 
     const handleSubmit = async () => {
         if (!input && (hasReset || hasNotify)) {
-            await new Promise((resolve, reject) => {
+            await new Promise<void>((resolve, reject) => {
                 createModal(
                     <ConfirmModal title={c('Title').t`Confirm address`} onConfirm={resolve} onClose={reject}>
                         <Alert type="warning">

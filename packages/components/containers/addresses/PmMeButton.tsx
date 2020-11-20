@@ -32,7 +32,7 @@ const PmMeButton = () => {
 
     const createPremiumAddress = async () => {
         const [{ DisplayName = '', Signature = '' } = {}] = addresses || [];
-        await new Promise((resolve, reject) => {
+        await new Promise<void>((resolve, reject) => {
             createModal(<UnlockModal onClose={() => reject()} onSuccess={resolve} />);
         });
         const { Address } = await api(

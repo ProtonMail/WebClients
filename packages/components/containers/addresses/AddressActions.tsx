@@ -27,7 +27,7 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
     const { createModal } = useModals();
 
     const confirmDelete = async () => {
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             createModal(
                 <ConfirmModal
                     title={c('Title').t`Delete ${address.Email}`}
@@ -60,7 +60,7 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
     };
 
     const confirmDisable = async () => {
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             createModal(
                 <ConfirmModal onConfirm={resolve} onClose={reject}>
                     <Alert type="warning">{c('Warning')
