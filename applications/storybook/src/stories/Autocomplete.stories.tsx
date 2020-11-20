@@ -81,7 +81,7 @@ export const multiple = () => {
         { key: 'menlo', value: 'menlo', label: 'menlo' }
     ])
 
-    const [ values, setValues ] = useState<V []>([]);
+    const [ values, setValues ] = useState<V []>([ options[0], options[1] ]);
 
     const handleValueItemDelete = (index: number) => {
         setValues(
@@ -115,7 +115,12 @@ export const multiple = () => {
                      </span>
                  )
             )}
-            <input style={inputStyle} value={inputValue} {...rest} />
+            <input
+                style={inputStyle}
+                value={inputValue}
+                placeholder="..."
+                {...rest}
+            />
         </div>
     )
 
