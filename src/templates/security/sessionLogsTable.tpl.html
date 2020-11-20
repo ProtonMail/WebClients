@@ -35,6 +35,42 @@
                     <span data-if="4"><i class="fa fa-check"></i>
                         <span translate translate-context="auth log entry">Login success (two-factor)</span>
                     </span>
+                    <span data-if="10"><i class="fa fa-times-circle text-red"></i>
+                        <span translate translate-context="auth log entry">Authentication failure (wrong password)</span>
+                    </span>
+                    <span data-if="11"><i class="fa fa-times-circle text-red"></i>
+                        <span translate translate-context="auth log entry">Authentication failure (second factor failed)</span>
+                    </span>
+                    <span data-if="12"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Authentication success</span>
+                    </span>
+                    <span data-if="20"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Account password change</span>
+                    </span>
+                    <span data-if="21"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Mailbox password change</span>
+                    </span>
+                    <span data-if="22"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Password reset</span>
+                    </span>
+                    <span data-if="30"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Two password mode enabled</span>
+                    </span>
+                    <span data-if="31"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Two password mode disabled</span>
+                    </span>
+                    <span data-if="32"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Second factor enabled (authenticator app)</span>
+                    </span>
+                    <span data-if="33"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Second factor disabled (authenticator app)</span>
+                    </span>
+                    <span data-if="34"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Second factor enabled (security key)</span>
+                    </span>
+                    <span data-if="35"><i class="fa fa-check"></i>
+                        <span translate translate-context="auth log entry">Second factor disabled (security key)</span>
+                    </span>
                 </td>
                 <td ng-if="model.doLogging == 2" class="text-right">
                     <kbd>{{ ::log.IP || '--' }}</kbd>
