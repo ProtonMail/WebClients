@@ -205,7 +205,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                     onIncludePasswordToggle={handleToggleIncludePassword}
                     onDeleteLinkClick={handleDeleteLinkClick}
                     password={shareUrlInfo.ShareURL.Password}
-                    expirationDate={shareUrlInfo.ShareURL.ExpirationTime}
+                    expirationTime={shareUrlInfo.ShareURL.ExpirationTime}
                     token={shareUrlInfo.ShareURL.Token}
                     deleting={deleting}
                 />

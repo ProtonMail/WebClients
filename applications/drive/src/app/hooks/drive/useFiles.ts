@@ -412,7 +412,7 @@ function useFiles() {
             const fileCount = countFilesToUpload(files);
 
             if (fileCount >= MAX_SAFE_UPLOADING_FILE_COUNT) {
-                await new Promise((resolve, reject) => {
+                await new Promise<void>((resolve, reject) => {
                     openConfirmModal({
                         canUndo: true,
                         title: c('Title').t`Warning`,

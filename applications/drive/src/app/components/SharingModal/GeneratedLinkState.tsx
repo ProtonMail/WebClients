@@ -13,12 +13,12 @@ import {
     useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
-import TimeCell from '../FileBrowser/ListView/Cells/TimeCell';
+import DateTime from './DateTime';
 
 interface Props {
     itemName: string;
     password: string;
-    expirationDate: number;
+    expirationTime: number;
     token: string;
     includePassword: boolean;
     customPassword: boolean;
@@ -36,7 +36,7 @@ function GeneratedLinkState({
     onClose,
     itemName,
     password,
-    expirationDate,
+    expirationTime,
     token,
     customPassword,
     deleting,
@@ -144,7 +144,7 @@ function GeneratedLinkState({
                                 className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis"
                                 data-testid="sharing-modal-expiration-time"
                             >
-                                <TimeCell time={expirationDate} />
+                                <DateTime key="expirationTime" value={expirationTime} />
                             </div>
                         </div>
                         <div className="flex flex-justify-end ml0-5 onmobile-ml0">

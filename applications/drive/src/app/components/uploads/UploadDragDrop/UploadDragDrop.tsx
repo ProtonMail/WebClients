@@ -54,7 +54,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
 
             const traverseDirectories = async (item: any, path: string[] = []) => {
                 if (item.isFile) {
-                    return new Promise((resolve, reject) => {
+                    return new Promise<void>((resolve, reject) => {
                         item.file(
                             (file: File) => {
                                 filesToUpload.push({ path, file });
@@ -75,7 +75,7 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
                         const promises: Promise<any>[] = [];
 
                         // Folders are read in batch, need to wait
-                        await new Promise((resolve, reject) => {
+                        await new Promise<PromiseSettledResult<any>[] | void>((resolve, reject) => {
                             reader.readEntries(
                                 (entries: any[]) => {
                                     if (entries.length) {
