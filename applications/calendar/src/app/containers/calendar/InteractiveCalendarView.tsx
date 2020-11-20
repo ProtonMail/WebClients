@@ -635,7 +635,7 @@ const InteractiveCalendarView = ({
     );
 
     const handleCloseConfirmation = () => {
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             createModal(<CloseConfirmationModal onClose={reject} onConfirm={resolve} />);
         });
     };
@@ -646,7 +646,7 @@ const InteractiveCalendarView = ({
         isInvitation,
         inviteActions,
     }: OnSaveConfirmationArgs): Promise<RECURRING_TYPES> => {
-        return new Promise((resolve, reject) => {
+        return new Promise<RECURRING_TYPES>((resolve, reject) => {
             if (type === SAVE_CONFIRMATION_TYPES.RECURRING && data) {
                 return createModal(
                     <EditRecurringConfirmModal

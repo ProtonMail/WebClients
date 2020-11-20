@@ -1,14 +1,16 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Alert, ErrorButton, FormModal, ResetButton, useLoading } from 'react-components';
+import { RECURRING_TYPES } from '../../../constants';
 import { InviteActions, NO_INVITE_ACTION } from '../eventActions/inviteActions';
 
 interface Props {
     onClose: () => void;
-    onConfirm: () => void;
+    onConfirm: (type: RECURRING_TYPES) => void;
     onDecline?: () => Promise<void>;
     inviteActions?: InviteActions;
 }
+
 const DeleteConfirmModal = ({ inviteActions = NO_INVITE_ACTION, onClose, onConfirm, onDecline, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const { sendCancellationNotice: decline } = inviteActions;
@@ -16,7 +18,7 @@ const DeleteConfirmModal = ({ inviteActions = NO_INVITE_ACTION, onClose, onConfi
         if (decline) {
             await onDecline?.();
         }
-        onConfirm();
+        onConfirm(RECURRING_TYPES.SINGLE);
         onClose();
     };
     return (
