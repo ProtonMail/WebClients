@@ -5,7 +5,7 @@ export const isFile = async (item: File) => {
         return true;
     }
 
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = ({ target }) => {
             if (!target?.result) {

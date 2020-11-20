@@ -11,10 +11,10 @@ import {
     Label,
     PrimaryButton,
     Row,
-    Time,
     TitleModal,
 } from 'react-components';
 import ExpirationTimeDropdown from './ExpirationTimeDropdown';
+import DateTime from './DateTime';
 import { getExpirationTime } from '../Drive/helpers';
 import { EXPIRATION_DAYS } from '../../constants';
 
@@ -68,9 +68,7 @@ function EditExpirationTimeState({ modalTitleID, onBack, onSave, onClose, saving
                                 <ExpirationTimeDropdown value={extendBy} onChange={handleChangeExpirationDate} />
                                 <span className="pre onmobile-mt0-25">
                                     <span className="ml2 mr0-5 onmobile-ml0">{c('Info').t`on`}</span>
-                                    <Time key="expirationTime" format="PPp">
-                                        {expirationTime}
-                                    </Time>
+                                    <DateTime key="expirationTime" value={expirationTime} />
                                 </span>
                             </div>
                         </Field>
