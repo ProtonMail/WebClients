@@ -18,72 +18,57 @@ import {
 import { useApi, useAuthentication, useModals, useLoading, useNotifications } from '../../hooks';
 
 import SessionAction from './SessionAction';
-
-const getClientsI18N = () => ({
-    Web: c('Badge').t`ProtonMail for web`,
-    VPN: c('Badge').t`ProtonVPN for Windows`,
-    WebVPN: c('Badge').t`ProtonVPN for web`,
-    Admin: c('Badge').t`Admin`,
-    ImportExport: c('Badge').t`ProtonMail Import-Export`,
-    Bridge: c('Badge').t`ProtonMail Bridge`,
-    iOS: c('Badge').t`ProtonMail for iOS`,
-    Android: c('Badge').t`ProtonMail for Android`,
-    WebAccount: c('Badge').t`Proton Account for web`,
-    WebMail: c('Badge').t`ProtonMail for web`,
-    WebMailSettings: c('Badge').t`ProtonMail settings for web`,
-    WebContacts: c('Badge').t`ProtonContacts for web`,
-    WebVPNSettings: c('Badge').t`ProtonVPN settings for web`,
-    WebCalendar: c('Badge').t`ProtonCalendar for web`,
-    WebDrive: c('Badge').t`ProtonDrive for web`,
-    // WebWallet: c('Badge').t`ProtonWallet for web`,
-    WebAdmin: c('Badge').t`Admin`,
-    iOSMail: c('Badge').t`ProtonMail for iOS`,
-    iOSVPN: c('Badge').t`ProtonVPN for iOS`,
-    iOSCalendar: c('Badge').t`ProtonCalendar for iOS`,
-    AndroidMail: c('Badge').t`ProtonMail for Android`,
-    AndroidVPN: c('Badge').t`ProtonVPN for Android`,
-    AndroidTvVPN: c('Badge').t`ProtonVPN for Android TV`,
-    AndroidCalendar: c('Badge').t`ProtonCalendar for Android`,
-    WindowsVPN: c('Badge').t`ProtonVPN for Windows`,
-    WindowsImportExport: c('Badge').t`ProtonMail Import-Export for Windows`,
-    WindowsBridge: c('Badge').t`ProtonMail Bridge for Windows`,
-    macOSVPN: c('Badge').t`ProtonVPN for macOS`,
-    macOSImportExport: c('Badge').t`ProtonMail Import-Export for macOS`,
-    macOSBridge: c('Badge').t`ProtonMail Bridge for macOS`,
-    LinuxImportExport: c('Badge').t`ProtonMail Import-Export for GNU/Linux`,
-    LinuxBridge: c('Badge').t`ProtonMail Bridge for GNU/Linux`,
-    LinuxVPN: c('Badge').t`ProtonVPN for GNU/Linux`,
-});
+import { Session } from './interface';
+import { getClientsI18N } from './helper';
 
 const SessionsSection = () => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const authentication = useAuthentication();
     const [loading, withLoading] = useLoading();
-    const [table, setTable] = useState({ sessions: [], total: 0 });
-    const { page, list, onNext, onPrevious, onSelect } = usePagination(table.sessions);
+    const [loadingRevokeAll, withLoadingRevokeAll] = useLoading();
+    const [state, setState] = useState<{ sessions: Session[]; total: number }>({ sessions: [], total: 0 });
+    const { page, list, onNext, onPrevious, onSelect } = usePagination(state.sessions);
     const { createModal } = useModals();
 
-    const fetchSessions = async () => {
-        const { Sessions } = await api(querySessions());
-        setTable({ sessions: Sessions.reverse(), total: Sessions.length }); // Most recent, first
+    const handleRevoke = async (UID: string) => {
+        await api(revokeSession(UID));
+        setState(({ sessions }) => {
+            const newSessions = sessions.filter(({ UID: otherUID }) => UID !== otherUID);
+            return {
+                sessions: newSessions,
+                total: sessions.length,
+            };
+        });
+        createNotification({ text: c('Success').t`Session revoked` });
     };
 
-    const handleRevoke = async (UID) => {
-        await api(UID ? revokeSession(UID) : revokeOtherSessions());
-        await fetchSessions();
-        createNotification({ text: UID ? c('Success').t`Session revoked` : c('Success').t`Sessions revoked` });
+    const handleRevokeAllSessions = async () => {
+        await api(revokeOtherSessions());
+        const selfUID = authentication.getUID();
+        setState(({ sessions }) => {
+            const newSessions = sessions.filter(({ UID: otherUID }) => selfUID === otherUID);
+            return {
+                sessions: newSessions,
+                total: sessions.length,
+            };
+        });
+        createNotification({ text: c('Success').t`Sessions revoked` });
     };
 
     const handleOpenModal = () => {
         createModal(
-            <ConfirmModal onConfirm={() => withLoading(handleRevoke())}>
+            <ConfirmModal onConfirm={() => withLoadingRevokeAll(handleRevokeAllSessions())}>
                 <Alert>{c('Info').t`Do you want to revoke all other sessions than the current one?`}</Alert>
             </ConfirmModal>
         );
     };
 
     useEffect(() => {
+        const fetchSessions = async () => {
+            const { Sessions } = await api<{ Sessions: Session[] }>(querySessions());
+            setState({ sessions: Sessions.reverse(), total: Sessions.length }); // Most recent, first
+        };
         withLoading(fetchSessions());
     }, []);
 
@@ -96,11 +81,12 @@ const SessionsSection = () => {
                 .t`Unless you explicitly sign out or change your password, sessions remain active and only expire after 30 days of inactivity.`}</Alert>
             <Block className="flex flex-spacebetween">
                 <div>
-                    <Button onClick={handleOpenModal}>{c('Action').t`Revoke all other sessions`}</Button>
+                    <Button onClick={handleOpenModal} loading={loadingRevokeAll}>{c('Action')
+                        .t`Revoke all other sessions`}</Button>
                 </div>
                 <Pagination
                     page={page}
-                    total={table.total}
+                    total={state.total}
                     limit={ELEMENTS_PER_PAGE}
                     onNext={onNext}
                     onPrevious={onPrevious}
@@ -124,9 +110,7 @@ const SessionsSection = () => {
                                         key={2}
                                         session={session}
                                         currentUID={currentUID}
-                                        onRevoke={
-                                            session.Revocable ? () => withLoading(handleRevoke(session.UID)) : undefined
-                                        }
+                                        onRevoke={session.Revocable ? () => handleRevoke(session.UID) : undefined}
                                     />,
                                 ]}
                             />
