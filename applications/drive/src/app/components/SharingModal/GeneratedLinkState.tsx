@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import {
     Alert,
@@ -46,17 +46,25 @@ function GeneratedLinkState({
     onDeleteLinkClick,
     onIncludePasswordToggle,
 }: Props) {
+    const contentRef = useRef<HTMLDivElement>(null);
     const { createNotification } = useNotifications();
     const baseUrl = `${window.location.origin}/urls`;
 
     const handleClickCopyURL = () => {
-        textToClipboard(includePassword ? `${baseUrl}/${token}#${password}` : `${baseUrl}/${token}`);
-        createNotification({ text: c('Success').t`Secure link was copied to the clipboard` });
+        if (contentRef.current) {
+            textToClipboard(
+                includePassword ? `${baseUrl}/${token}#${password}` : `${baseUrl}/${token}`,
+                contentRef.current
+            );
+            createNotification({ text: c('Success').t`Secure link was copied to the clipboard` });
+        }
     };
 
     const handleCopyPasswordClick = () => {
-        textToClipboard(password);
-        createNotification({ text: c('Success').t`Password was copied to the clipboard` });
+        if (contentRef.current) {
+            textToClipboard(password, contentRef.current);
+            createNotification({ text: c('Success').t`Password was copied to the clipboard` });
+        }
     };
 
     const boldNameText = (
@@ -70,7 +78,7 @@ function GeneratedLinkState({
             <HeaderModal modalTitleID={modalTitleID} onClose={onClose}>
                 {c('Title').t`Manage secure link`}
             </HeaderModal>
-            <div className="pm-modalContent">
+            <div ref={contentRef} className="pm-modalContent">
                 <InnerModal>
                     <Alert>{c('Info').jt`Secure link of "${boldNameText}" has been generated.`}</Alert>
 
