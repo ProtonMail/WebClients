@@ -1,5 +1,10 @@
 import { DENSITY } from '../constants';
 
+export enum SETTINGS_PASSWORD_MODE {
+    ONE_PASSWORD_MODE = 1,
+    TWO_PASSWORD_MODE = 2,
+}
+
 export enum SETTINGS_LOG_AUTH_STATE {
     DISABLE = 0,
     BASIC = 1,
@@ -44,7 +49,7 @@ export interface UserSettings {
         Reset: number;
     };
     Password: {
-        Mode: number;
+        Mode: SETTINGS_PASSWORD_MODE;
         ExpirationTime: number; // If set, after this time force password change
     };
     '2FA': {
