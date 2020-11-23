@@ -1,13 +1,14 @@
 import React from 'react';
 import { c } from 'ttag';
+import { SETTINGS_PASSWORD_MODE } from 'proton-shared/lib/interfaces';
 
-import { PrimaryButton, Loader, Toggle, Info, Label, Row, Field } from '../../components';
-import { useModals, useAddresses, useUserSettings } from '../../hooks';
+import { Field, Info, Label, Loader, PrimaryButton, Row, Toggle } from '../../components';
+import { useAddresses, useModals, useUserSettings } from '../../hooks';
 
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 
 const PasswordsSection = () => {
-    const [{ PasswordMode } = {}, loadingUserSettings] = useUserSettings();
+    const [userSettings, loadingUserSettings] = useUserSettings();
     const [addresses, loadingAddresses] = useAddresses();
     const { createModal } = useModals();
 
@@ -17,11 +18,11 @@ const PasswordsSection = () => {
 
     // VPN users are by default in two password mode, even if they don't have any addresses. Don't allow them to change two-password mode.
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
-    const isOnePasswordMode = PasswordMode === 1;
+    const isOnePasswordMode = userSettings?.Password?.Mode === SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE;
     const passwordLabel = isOnePasswordMode ? c('Title').t`Password` : c('Title').t`Login password`;
     const passwordButtonLabel = isOnePasswordMode ? c('Title').t`Change password` : c('Title').t`Change login password`;
 
-    const handleChangePassword = (mode) => {
+    const handleChangePassword = (mode: MODES) => {
         createModal(<ChangePasswordModal mode={mode} />);
     };
 
