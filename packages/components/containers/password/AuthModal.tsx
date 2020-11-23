@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import { srpAuth } from 'proton-shared/lib/srp';
+import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { useApi } from '../../hooks';
 import AskAuthModal from './AskAuthModal';
 
@@ -10,6 +11,7 @@ interface Props<T> {
     onSuccess: (data: { password: string; totp: string; result: T }) => void;
     config: any;
 }
+
 const AuthModal = <T,>({ onClose, onError, onSuccess, config, ...rest }: Props<T>) => {
     const api = useApi();
     const [loading, setLoading] = useState(false);
@@ -28,9 +30,9 @@ const AuthModal = <T,>({ onClose, onError, onSuccess, config, ...rest }: Props<T
             onSuccess({ password, totp, result });
             onClose?.();
         } catch (error) {
-            const { data: { Code, Error } = { Code: 0, Error: '' } } = error;
-            if (Code === PASSWORD_WRONG_ERROR) {
-                setError(Error);
+            const { code, message } = getApiErrorMessage(error);
+            if (code === PASSWORD_WRONG_ERROR) {
+                setError(message);
             }
             onError?.(error);
             onClose?.();

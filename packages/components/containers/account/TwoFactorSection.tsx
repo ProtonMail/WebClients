@@ -1,23 +1,26 @@
 import React from 'react';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
+import { getHasTOTPSettingEnabled } from 'proton-shared/lib/settings/twoFactor';
 
 import { Row, Label, Info, Field, Toggle } from '../../components';
 import { useConfig, useModals, useUserSettings } from '../../hooks';
 
-import EnableTwoFactorModal from './EnableTwoFactorModal';
-import DisableTwoFactorModal from './DisableTwoFactorModal';
+import EnableTOTPModal from './EnableTOTPModal';
+import DisableTOTPModal from './DisableTOTPModal';
 
 const TwoFactorSection = () => {
     const { APP_NAME } = useConfig();
-    const [{ '2FA': { Enabled } } = {}] = useUserSettings();
+    const [userSettings] = useUserSettings();
     const { createModal } = useModals();
 
+    const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
+
     const handleChange = () => {
-        if (Enabled) {
-            return createModal(<DisableTwoFactorModal />);
+        if (hasTOTPEnabled) {
+            return createModal(<DisableTOTPModal />);
         }
-        return createModal(<EnableTwoFactorModal />);
+        return createModal(<EnableTOTPModal />);
     };
 
     const twoFactorAuthLink =
@@ -32,7 +35,7 @@ const TwoFactorSection = () => {
                 <Info url={twoFactorAuthLink} />
             </Label>
             <Field>
-                <Toggle checked={!!Enabled} id="twoFactorToggle" onChange={handleChange} />
+                <Toggle checked={hasTOTPEnabled} id="twoFactorToggle" onChange={handleChange} />
             </Field>
         </Row>
     );
