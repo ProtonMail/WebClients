@@ -1,5 +1,4 @@
-import React, { useState, useMemo } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { ACCOUNT_DELETION_REASONS } from 'proton-shared/lib/constants';
 import { deleteUser, unlockPasswordChanges } from 'proton-shared/lib/api/user';
@@ -8,6 +7,7 @@ import { srpAuth } from 'proton-shared/lib/srp';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { getClientID } from 'proton-shared/lib/apps/helper';
+import { getHasTOTPSettingEnabled } from 'proton-shared/lib/settings/twoFactor';
 
 import { collectInfo, getClient } from '../../helpers/report';
 import {
@@ -35,13 +35,17 @@ import {
     useConfig,
 } from '../../hooks';
 
-const DeleteAccountModal = ({ onClose, ...rest }) => {
+interface Props {
+    onClose?: () => void;
+}
+
+const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const eventManager = useEventManager();
     const api = useApi();
     const authentication = useAuthentication();
-    const [{ isAdmin, Name } = {}] = useUser();
-    const [{ TwoFactor } = {}] = useUserSettings();
+    const [{ isAdmin, Name }] = useUser();
+    const [userSettings] = useUserSettings();
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState({
         check: false,
@@ -54,17 +58,26 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
     const { APP_NAME, APP_VERSION, CLIENT_TYPE } = useConfig();
     const ClientID = getClientID(APP_NAME);
     const Client = getClient(ClientID);
+    const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
+
     const isDisabled = useMemo(() => {
         if (!model.check || !model.reason || !model.feedback || !model.email || !model.password) {
             return true;
         }
-        if (TwoFactor && !model.twoFa) {
+        if (hasTOTPEnabled && !model.twoFa) {
             return true;
         }
         return false;
     }, [model.check, model.reason, model.feedback, model.email, model.password, model.twoFa]);
 
-    const handleChange = (key) => ({ target }) => setModel({ ...model, [key]: target.value });
+    const handleChange = (key: string) => ({
+        target,
+    }: ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) =>
+        setModel({
+            ...model,
+            [key]: target.value,
+        });
+
     const reasons = [
         { text: c('Option').t`Select a reason`, value: '', disabled: true },
         { text: c('Option').t`I use a different Proton account`, value: ACCOUNT_DELETION_REASONS.DIFFERENT_ACCOUNT },
@@ -118,7 +131,7 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
             // Add an artificial delay to show the notification.
             await wait(2500);
 
-            onClose();
+            onClose?.();
             authentication.logout();
         } catch (error) {
             eventManager.start();
@@ -207,7 +220,7 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
                     <div className="small m0">{c('Info').t`Enter your login password to confirm your identity.`}</div>
                 </Field>
             </Row>
-            {TwoFactor ? (
+            {hasTOTPEnabled ? (
                 <Row>
                     <Label htmlFor="twoFa">{c('Label').t`Two-factor code`}</Label>
                     <Field>
@@ -232,10 +245,6 @@ const DeleteAccountModal = ({ onClose, ...rest }) => {
             </Row>
         </FormModal>
     );
-};
-
-DeleteAccountModal.propTypes = {
-    onClose: PropTypes.func,
 };
 
 export default DeleteAccountModal;
