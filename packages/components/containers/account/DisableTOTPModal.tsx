@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { disableTotp } from 'proton-shared/lib/api/settings';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
+import { getApiError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
 import { Alert, FormModal } from '../../components';
 import { useLoading, useApi, useEventManager, useNotifications } from '../../hooks';
@@ -14,7 +15,7 @@ const STEPS = {
     PASSWORD: 2,
 };
 
-const DisableTwoFactorModal = (props) => {
+const DisableTOTPModal = (props: any) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -47,9 +48,9 @@ const DisableTwoFactorModal = (props) => {
                     createNotification({ text: c('Info').t`Two-factor authentication disabled` });
                     props.onClose();
                 } catch (error) {
-                    const { data: { Code, Error } = {} } = error;
-                    if (Code === PASSWORD_WRONG_ERROR) {
-                        setError(Error);
+                    const { code, message } = getApiError(error);
+                    if (code === PASSWORD_WRONG_ERROR) {
+                        setError(message);
                     }
                 }
             };
@@ -72,6 +73,8 @@ const DisableTwoFactorModal = (props) => {
                 submit: c('Action').t`Submit`,
             };
         }
+
+        throw new Error('Invalid step');
     })();
 
     return (
@@ -81,4 +84,4 @@ const DisableTwoFactorModal = (props) => {
     );
 };
 
-export default DisableTwoFactorModal;
+export default DisableTOTPModal;

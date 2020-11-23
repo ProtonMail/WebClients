@@ -4,10 +4,10 @@ import { lockSensitiveSettings } from 'proton-shared/lib/api/user';
 import { InfoAuthedResponse, TwoFaResponse } from 'proton-shared/lib/authentication/interface';
 import { getInfo, PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { TWO_FA_FLAGS, isSSOMode } from 'proton-shared/lib/constants';
+import { isSSOMode } from 'proton-shared/lib/constants';
 import { persistSessionWithPassword } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from 'proton-shared/lib/helpers/crossTab';
+import { getHasTOTPEnabled, getHasTOTPSettingEnabled } from 'proton-shared/lib/settings/twoFactor';
 
 import {
     handleUnlock,
@@ -51,6 +51,7 @@ interface Inputs {
     confirmPassword: string;
     totp: string;
 }
+
 interface Errors {
     loginError: string;
     confirmPasswordError: string;
@@ -75,7 +76,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const getAddresses = useGetAddresses();
 
     const [User] = useUser();
-    const [{ '2FA': userAuth2FA }, loadingUserSettings] = useUserSettings();
+    const [userSettings, loadingUserSettings] = useUserSettings();
 
     const { isSubUser, isAdmin } = User;
     const [adminAuthTwoFA, setAdminAuthTwoFA] = useState<TwoFaResponse>();
@@ -426,8 +427,9 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         </>
     );
 
-    const twoFAEnabledFlag = isSubUser ? adminAuthTwoFA?.Enabled : userAuth2FA?.Enabled;
-    const hasTotp = hasBit(twoFAEnabledFlag, TWO_FA_FLAGS.TOTP);
+    const hasTOTPEnabled = isSubUser
+        ? getHasTOTPEnabled(adminAuthTwoFA?.Enabled)
+        : getHasTOTPSettingEnabled(userSettings);
 
     const children = isLoading ? (
         <Loader />
@@ -453,7 +455,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                     </Field>
                 </Row>
             )}
-            {!isSecondPhase && hasTotp && (
+            {!isSecondPhase && hasTOTPEnabled && (
                 <Row>
                     <Label htmlFor="totp">{c('Label').t`Two-factor code`}</Label>
                     <Field>

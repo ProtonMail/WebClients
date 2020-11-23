@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import QRCode from 'qrcode.react';
-import { generateSharedSecret, getUri } from 'proton-shared/lib/helpers/twofa';
 import { setupTotp, TOTP_WRONG_ERROR } from 'proton-shared/lib/api/settings';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { TWO_FA_CONFIG, APPS } from 'proton-shared/lib/constants';
+import { APPS } from 'proton-shared/lib/constants';
+import { getApiError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { getTOTPData } from 'proton-shared/lib/settings/twoFactor';
 
 import { Alert, Href, InlineLinkButton, Loader, Block, FormModal, Button } from '../../components';
-import { useConfig, useNotifications, useLoading, useAddresses, useUser, useApi, useEventManager } from '../../hooks';
+import {
+    useConfig,
+    useNotifications,
+    useLoading,
+    useApi,
+    useEventManager,
+    useGetAddresses,
+    useGetUser,
+} from '../../hooks';
 
 import PasswordTotpInputs from '../password/PasswordTotpInputs';
-
-const { PERIOD, DIGITS, ALGORITHM } = TWO_FA_CONFIG;
 
 const STEPS = {
     INFO: 1,
@@ -23,14 +29,21 @@ const STEPS = {
     RECOVERY_CODES: 4,
 };
 
-const EnableTwoFactorModal = (props) => {
+const INITIAL_STATE = {
+    sharedSecret: '',
+    uri: '',
+    period: 0,
+    digits: 0,
+};
+
+const EnableTOTPModal = (props: any) => {
     const { APP_NAME } = useConfig();
-    const [addresses] = useAddresses();
-    const [user] = useUser();
+    const getAddresses = useGetAddresses();
+    const getUser = useGetUser();
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [{ sharedSecret, uri = '' }, setTotpData] = useState({});
+    const [{ sharedSecret, uri = '', period, digits }, setTotpData] = useState(INITIAL_STATE);
     const [step, setStep] = useState(STEPS.INFO);
     const [manualCode, setManualCode] = useState(false);
     const [recoveryCodes, setRecoveryCodes] = useState([]);
@@ -41,26 +54,14 @@ const EnableTwoFactorModal = (props) => {
     const [loading, withLoading] = useLoading();
 
     useEffect(() => {
-        if (!Array.isArray(addresses) || sharedSecret) {
-            return;
-        }
-
-        const generatedSharedSecret = generateSharedSecret();
-        const primaryAddress = addresses.find(({ Keys = [] }) => Keys.length > 0);
-        const identifier = (primaryAddress && primaryAddress.Email) || user.Name;
-
-        setTotpData({
-            uri: getUri({
-                identifier,
-                issuer: 'Proton',
-                sharedSecret: generatedSharedSecret,
-                period: PERIOD,
-                digits: DIGITS,
-                algorithm: ALGORITHM,
-            }),
-            sharedSecret: generatedSharedSecret,
-        });
-    }, [addresses]);
+        const run = async () => {
+            const [user, addresses] = await Promise.all([getUser(), getAddresses()]);
+            const primaryAddress = addresses.find(({ Keys = [] }) => Keys.length > 0);
+            const identifier = primaryAddress?.Email || user.Name;
+            setTotpData(getTOTPData(identifier));
+        };
+        run();
+    }, []);
 
     const { section, ...modalProps } = (() => {
         if (!sharedSecret) {
@@ -146,13 +147,13 @@ const EnableTwoFactorModal = (props) => {
                             <div className="flex flex-spacebetween mb0-5">
                                 <div className="w20">{c('Label').t`Interval`}</div>
                                 <div className="w80 flex-self-vcenter bold">
-                                    <code>{PERIOD}</code>
+                                    <code>{period}</code>
                                 </div>
                             </div>
                             <div className="flex flex-spacebetween mb0-5">
                                 <div className="w20">{c('Label').t`Digits`}</div>
                                 <div className="w80 flex-self-vcenter bold">
-                                    <code>{DIGITS}</code>
+                                    <code>{digits}</code>
                                 </div>
                             </div>
                         </div>
@@ -175,17 +176,17 @@ const EnableTwoFactorModal = (props) => {
                     setRecoveryCodes(TwoFactorRecoveryCodes);
                     setStep(STEPS.RECOVERY_CODES);
                 } catch (error) {
-                    const { data: { Code, Error } = {} } = error;
+                    const { code, message } = getApiError(error);
 
-                    setPasswordError();
-                    setTotpError();
+                    setPasswordError('');
+                    setTotpError('');
 
-                    if (Code === PASSWORD_WRONG_ERROR) {
-                        setPasswordError(Error);
+                    if (code === PASSWORD_WRONG_ERROR) {
+                        setPasswordError(message);
                     }
 
-                    if (Code === TOTP_WRONG_ERROR) {
-                        setTotpError(Error);
+                    if (code === TOTP_WRONG_ERROR) {
+                        setTotpError(message);
                     }
                 }
             };
@@ -253,6 +254,8 @@ const EnableTwoFactorModal = (props) => {
                 close: null,
             };
         }
+
+        throw new Error('Unknown step');
     })();
 
     return (
@@ -268,8 +271,4 @@ const EnableTwoFactorModal = (props) => {
     );
 };
 
-EnableTwoFactorModal.propTypes = {
-    onClose: PropTypes.func,
-};
-
-export default EnableTwoFactorModal;
+export default EnableTOTPModal;
