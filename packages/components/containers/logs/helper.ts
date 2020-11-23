@@ -30,7 +30,7 @@ export const getEventsI18N = () => ({
     [AUTH_LOG_EVENTS.LOGIN_SUCCESS]: c('Log event').t`Sign in success`,
     [AUTH_LOG_EVENTS.LOGOUT]: c('Log event').t`Sign out`,
     [AUTH_LOG_EVENTS.LOGIN_FAILURE_2FA]: c('Log event').t`Sign in failure (second factor failed)`,
-    [AUTH_LOG_EVENTS.LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Sign in success (second factor failed)`,
+    [AUTH_LOG_EVENTS.LOGIN_SUCCESS_AWAIT_2FA]: c('Log event').t`Sign in success (awaiting second factor)`,
 
     [AUTH_LOG_EVENTS.REAUTH_FAILURE_PASSWORD]: c('Log event').t`Authentication failure (wrong password)`,
     [AUTH_LOG_EVENTS.REAUTH_FAILURE_2FA]: c('Log event').t`Authentication failure (second factor failed)`,
