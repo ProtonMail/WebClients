@@ -39,7 +39,7 @@ const DateFormatSection = () => {
                     value={userSettings.DateFormat}
                     options={[
                         {
-                            text: c('Option').t`Use system settings (${defaultFormat})`,
+                            text: c('Option').t`Use browser settings (${defaultFormat})`,
                             value: SETTINGS_DATE_FORMAT.LOCALE_DEFAULT,
                         },
                         { text: 'DD/MM/YYYY', value: SETTINGS_DATE_FORMAT.DDMMYYYY },
