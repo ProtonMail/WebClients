@@ -35,6 +35,11 @@ export enum SETTINGS_TIME_FORMAT {
     H12 = 2,
 }
 
+export enum SETTINGS_2FA_ENABLED {
+    OTP = 1,
+    U2F = 2,
+}
+
 export interface UserSettings {
     Email: {
         Value: string;

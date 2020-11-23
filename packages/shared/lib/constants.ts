@@ -598,17 +598,6 @@ export enum PASSWORD_MODE {
     TWO_PASSWORD = 2,
 }
 
-export enum TWO_FA_FLAGS {
-    TOTP = 1,
-    U2F = 2,
-}
-
-export enum TWO_FA_CONFIG {
-    PERIOD = 30,
-    DIGITS = 6,
-    ALGORITHM = 'SHA1',
-}
-
 export enum SORT_DIRECTION {
     ASC = 'ASC',
     DESC = 'DESC',
