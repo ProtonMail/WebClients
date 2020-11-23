@@ -15,15 +15,7 @@ import { classnames } from '../../helpers';
 import AppLink, { Props as AppLinkProps } from '../link/AppLink';
 
 const { MAIL, VPN } = PLAN_SERVICES;
-const {
-    PROTONACCOUNT,
-    PROTONCALENDAR,
-    PROTONCONTACTS,
-    PROTONDRIVE,
-    PROTONMAIL,
-    PROTONMAIL_SETTINGS,
-    PROTONVPN_SETTINGS,
-} = APPS;
+const { PROTONACCOUNT, PROTONCALENDAR, PROTONCONTACTS, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS } = APPS;
 
 const getLogoText = (subscription: Subscription, APP_NAME: APP_NAMES) => {
     if (APP_NAME === PROTONCALENDAR) {
@@ -44,7 +36,7 @@ const MainLogo = ({ className = '', ...rest }: AppLinkProps) => {
     const planName = getLogoText(subscription, APP_NAME);
 
     const logo = (() => {
-        if (APP_NAME === PROTONMAIL || APP_NAME === PROTONMAIL_SETTINGS) {
+        if (APP_NAME === PROTONMAIL) {
             return <MailLogo />;
         }
         if (APP_NAME === PROTONCALENDAR) {
