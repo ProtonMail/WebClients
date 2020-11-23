@@ -1,6 +1,6 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import { useActiveBreakpoint } from 'react-components';
+import React, { Suspense, lazy } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { useActiveBreakpoint, LoaderPage } from 'react-components';
 
 import MessageProvider from './containers/MessageProvider';
 import ConversationProvider from './containers/ConversationProvider';
@@ -8,6 +8,8 @@ import AttachmentProvider from './containers/AttachmentProvider';
 import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
 import { MAIN_ROUTE_PATH } from './constants';
+
+const SettingsContainer = lazy(() => import('./SettingsContainer'));
 
 const MainContainer = () => {
     const breakpoints = useActiveBreakpoint();
@@ -17,10 +19,17 @@ const MainContainer = () => {
                 <AttachmentProvider>
                     <ComposerContainer breakpoints={breakpoints}>
                         {({ onCompose }) => (
-                            <Route
-                                path={MAIN_ROUTE_PATH}
-                                render={() => <PageContainer breakpoints={breakpoints} onCompose={onCompose} />}
-                            />
+                            <Switch>
+                                <Route path="/settings">
+                                    <Suspense fallback={<LoaderPage />}>
+                                        <SettingsContainer />
+                                    </Suspense>
+                                </Route>
+                                <Route
+                                    path={MAIN_ROUTE_PATH}
+                                    render={() => <PageContainer breakpoints={breakpoints} onCompose={onCompose} />}
+                                />
+                            </Switch>
                         )}
                     </ComposerContainer>
                 </AttachmentProvider>

@@ -36,7 +36,7 @@ const ExtraEventAlert = ({ model }: Props) => {
                 <Alert type="warning">
                     <span className="mr0-5">{c('Info').t`The invited email address is disabled.`}</span>
                     <span>
-                        <AppLink to="/addresses" toApp={APPS.PROTONMAIL_SETTINGS}>
+                        <AppLink to="/settings/addresses" toApp={APPS.PROTONMAIL}>
                             {c('Link').t`Enable your address to answer this invitation.`}
                         </AppLink>
                     </span>
@@ -61,7 +61,7 @@ const ExtraEventAlert = ({ model }: Props) => {
                 <Alert type="warning">
                     <span className="mr0-5">{c('Info').t`All your calendars are disabled.`}</span>
                     <span className="mr0-5">
-                        <AppLink to="/addresses" toApp={APPS.PROTONMAIL_SETTINGS}>
+                        <AppLink to="/settings/addresses" toApp={APPS.PROTONMAIL}>
                             {c('Link').t`Enable an email address linked to one of your calendars.`}
                         </AppLink>
                     </span>
@@ -90,7 +90,7 @@ const ExtraEventAlert = ({ model }: Props) => {
             <Alert type="warning">
                 <span className="mr0-5">{c('Info').t`The invited email address is disabled.`}</span>
                 <span>
-                    <AppLink to="/addresses" toApp={APPS.PROTONMAIL_SETTINGS}>
+                    <AppLink to="/settings/addresses" toApp={APPS.PROTONMAIL}>
                         {c('Link').t`Enable your address again to modify your answer.`}
                     </AppLink>
                 </span>
@@ -105,7 +105,7 @@ const ExtraEventAlert = ({ model }: Props) => {
             <Alert type="warning">
                 <span className="mr0-5">{c('Info').t`This invitation is saved in a disabled calendar.`}</span>
                 <span>
-                    <AppLink to="/addresses" toApp={APPS.PROTONMAIL_SETTINGS}>
+                    <AppLink to="/settings/addresses" toApp={APPS.PROTONMAIL}>
                         {text}
                     </AppLink>
                 </span>
