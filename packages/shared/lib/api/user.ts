@@ -65,15 +65,7 @@ export const queryUnlock = () => ({
     method: 'put',
 });
 
-export const deleteUser = (data: {
-    ClientEphemeral: string;
-    ClientProof: string;
-    SRPSession: string;
-    TwoFactorCode: number;
-    Reason?: string;
-    Feedback?: string;
-    Email?: string;
-}) => ({
+export const deleteUser = (data: { Reason?: string; Feedback?: string; Email?: string }) => ({
     url: 'users/delete',
     method: 'put',
     data,
