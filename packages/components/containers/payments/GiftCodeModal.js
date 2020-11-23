@@ -16,7 +16,7 @@ const GiftCodeModal = ({ onClose, ...rest }) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [value, setValue] = useState('');
-    const handleChange = ({ target }) => setValue(target.value);
+    const handleChange = ({ target }) => setValue(target.value.replace(/\s/g, ''));
 
     const handleSubmit = async () => {
         if (!isValid(value)) {
