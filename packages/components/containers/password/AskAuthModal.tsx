@@ -4,7 +4,7 @@ import { getHasTOTPEnabled, getHasTOTPSettingEnabled } from 'proton-shared/lib/s
 import { InfoAuthedResponse, TwoFaResponse } from 'proton-shared/lib/authentication/interface';
 import { getInfo } from 'proton-shared/lib/api/auth';
 
-import { FormModal } from '../../components';
+import { FormModal, Loader } from '../../components';
 import { useApi, useUser, useUserSettings } from '../../hooks';
 import PasswordTotpInputs from './PasswordTotpInputs';
 
@@ -19,7 +19,7 @@ interface Props {
 const AskAuthModal = ({ onClose, onSubmit, error, ...rest }: Props) => {
     const [password, setPassword] = useState('');
     const [totp, setTotp] = useState('');
-    const [userSettings] = useUserSettings();
+    const [userSettings, loadingUserSettings] = useUserSettings();
     const [{ isSubUser }] = useUser();
     const api = useApi();
     const [adminAuthTwoFA, setAdminAuthTwoFA] = useState<TwoFaResponse>();
@@ -41,6 +41,8 @@ const AskAuthModal = ({ onClose, onSubmit, error, ...rest }: Props) => {
         ? getHasTOTPEnabled(adminAuthTwoFA?.Enabled)
         : getHasTOTPSettingEnabled(userSettings);
 
+    const isLoading = loadingUserSettings || (isSubUser && !adminAuthTwoFA);
+
     return (
         <FormModal
             onClose={onClose}
@@ -50,17 +52,22 @@ const AskAuthModal = ({ onClose, onSubmit, error, ...rest }: Props) => {
             submit={c('Label').t`Submit`}
             error={error}
             small
+            loading={isLoading}
             {...rest}
         >
-            <PasswordTotpInputs
-                password={password}
-                setPassword={setPassword}
-                passwordError={error}
-                totp={totp}
-                setTotp={setTotp}
-                totpError={error}
-                showTotp={hasTOTPEnabled}
-            />
+            {isLoading ? (
+                <Loader />
+            ) : (
+                <PasswordTotpInputs
+                    password={password}
+                    setPassword={setPassword}
+                    passwordError={error}
+                    totp={totp}
+                    setTotp={setTotp}
+                    totpError={error}
+                    showTotp={hasTOTPEnabled}
+                />
+            )}
         </FormModal>
     );
 };
