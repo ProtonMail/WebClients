@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { validateCredit, buyCredit } from 'proton-shared/lib/api/payments';
-import { isValid } from 'proton-shared/lib/helpers/giftCode';
 
 import { FormModal, Alert, Row, Field, Label } from '../../components';
 import { useApiWithoutResult, useEventManager, useNotifications, useLoading } from '../../hooks';
@@ -16,14 +15,9 @@ const GiftCodeModal = ({ onClose, ...rest }) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [value, setValue] = useState('');
-    const handleChange = ({ target }) => setValue(target.value.replace(/\s/g, ''));
+    const handleChange = ({ target }) => setValue(target.value.replace(/\s|\t/g, '').toUpperCase());
 
     const handleSubmit = async () => {
-        if (!isValid(value)) {
-            createNotification({ text: c('Error').t`Invalid gift code`, type: 'error' });
-            return;
-        }
-
         await requestValidateCredit({ GiftCode: value });
         await requestBuyCredit({ GiftCode: value, Amount: 0 });
         await call();
