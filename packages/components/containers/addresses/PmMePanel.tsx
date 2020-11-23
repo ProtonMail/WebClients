@@ -10,7 +10,7 @@ const PmMePanel = () => {
     const [{ canPay, hasPaidMail }] = useUser();
     const [addresses, loading] = useAddresses();
 
-    if (loading) {
+    if (loading && !Array.isArray(addresses)) {
         return <Loader />;
     }
 

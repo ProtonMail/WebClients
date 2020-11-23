@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from 'proton-shared/lib/constants';
 import { Alert, Button, Label, Select, Info, Row, Field, Loader } from '../../components';
@@ -28,7 +28,7 @@ const IdentitySection = () => {
 
     const address = filtered[addressIndex];
     const options = filtered.map(({ Email: text }, index) => ({ text, value: index }));
-    const handleChange = ({ target }) => setAddressIndex(target.value);
+    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => setAddressIndex(+target.value);
     const handleOpenModal = () => createModal(<EditAddressModal address={address} />);
 
     return (
