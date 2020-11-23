@@ -17,8 +17,10 @@ const useWelcomeFlags = (): [WelcomeFlagsState, () => void] => {
         const flow = cache.get(WELCOME_FLAG_KEY);
         const hasDisplayNameStep = flow === 'signup' || flow === 'welcome-full';
         const hasWelcomeModal = flow === 'welcome';
+        const hasSeenFlow = flow === 'seen';
         // Assumes that user settings has been pre-loaded. Not using hook to avoid re-renders.
-        const isWelcomeFlag = cache.get(UserSettingsModel.key)?.value?.WelcomeFlag === 0 || hasWelcomeModal;
+        const isWelcomeFlag =
+            !hasSeenFlow && (cache.get(UserSettingsModel.key)?.value?.WelcomeFlag === 0 || hasWelcomeModal);
         return {
             hasDisplayNameStep,
             isWelcomeFlag,
@@ -26,7 +28,7 @@ const useWelcomeFlags = (): [WelcomeFlagsState, () => void] => {
         };
     });
     const setDone = useCallback(() => {
-        cache.delete(WELCOME_FLAG_KEY);
+        cache.set(WELCOME_FLAG_KEY, 'seen');
         setState({});
     }, []);
     return [state, setDone];

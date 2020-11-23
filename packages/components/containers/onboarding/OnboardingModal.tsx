@@ -169,7 +169,6 @@ const OnboardingModal = ({
         <FormModal
             {...rest}
             hasClose={allowClose}
-            autoFocusClose
             {...childStepProps}
             footer={
                 <>
@@ -194,7 +193,12 @@ const OnboardingModal = ({
                     )}
 
                     {typeof childStep.props.submit === 'string' ? (
-                        <PrimaryButton loading={childStep.props.loading} type="submit" className="mlauto">
+                        <PrimaryButton
+                            loading={childStep.props.loading}
+                            type="submit"
+                            className="mlauto"
+                            data-focus-fallback={1}
+                        >
                             {childStepProps.submit}
                         </PrimaryButton>
                     ) : (
