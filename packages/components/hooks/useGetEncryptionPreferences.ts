@@ -1,5 +1,5 @@
 import { MINUTE, RECIPIENT_TYPES } from 'proton-shared/lib/constants';
-import { normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { useCallback } from 'react';
 import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
@@ -36,8 +36,9 @@ const useGetEncryptionPreferences = () => {
     const getEncryptionPreferences = useCallback(
         async (emailAddress: string, lifetime?: number) => {
             const [addresses, mailSettings] = await Promise.all([getAddresses(), getMailSettings()]);
+            const normalizedInternalEmail = normalizeInternalEmail(emailAddress);
             const selfAddress = addresses.find(
-                ({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(emailAddress)
+                ({ Email }) => normalizeInternalEmail(Email) === normalizedInternalEmail
             );
             let selfSend;
             let apiKeysConfig;
@@ -71,8 +72,12 @@ const useGetEncryptionPreferences = () => {
                 cache.set(CACHE_KEY, new Map());
             }
             const subCache = cache.get(CACHE_KEY);
-            const miss = () => getEncryptionPreferences(email, lifetime);
-            return getPromiseValue(subCache, email, miss, lifetime);
+            // By normalizing email here, we consider that it could not exists different encryption preferences
+            // For 2 addresses identical but for the cases.
+            // If a provider does different one day, this would have to evolve.
+            const normalizedEmail = normalizeEmail(email);
+            const miss = () => getEncryptionPreferences(normalizedEmail, lifetime);
+            return getPromiseValue(subCache, normalizedEmail, miss, lifetime);
         },
         [cache, getEncryptionPreferences]
     );
