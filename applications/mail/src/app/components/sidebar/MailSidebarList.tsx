@@ -140,8 +140,8 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 title={c('Link').t`Folders`}
                 right={
                     <SidebarListItemHeaderLink
-                        to="/labels"
-                        toApp={APPS.PROTONMAIL_SETTINGS}
+                        to="/settings/labels"
+                        toApp={APPS.PROTONMAIL}
                         icon="settings-singular"
                         title={c('Info').t`Manage your folders`}
                         info={c('Link').t`Manage your folders`}
@@ -156,8 +156,8 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                 title={c('Link').t`Labels`}
                 right={
                     <SidebarListItemHeaderLink
-                        to="/labels"
-                        toApp={APPS.PROTONMAIL_SETTINGS}
+                        to="/settings/labels"
+                        toApp={APPS.PROTONMAIL}
                         icon="settings-singular"
                         title={c('Info').t`Manage your labels`}
                         info={c('Link').t`Manage your labels`}

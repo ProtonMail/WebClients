@@ -87,7 +87,7 @@ const MailHeader = ({
             logo={logo}
             backUrl={showBackButton && backUrl ? backUrl : undefined}
             title={labelName}
-            settingsButton={<SettingsButton to="/" toApp={APPS.PROTONMAIL_SETTINGS} target="_self" />}
+            settingsButton={<SettingsButton to="/settings/overview" toApp={APPS.PROTONMAIL} target="_self" />}
             searchBox={searchBox}
             searchDropdown={searchDropdown}
             expanded={!!expanded}

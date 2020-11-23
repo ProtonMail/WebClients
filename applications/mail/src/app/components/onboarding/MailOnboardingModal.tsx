@@ -19,7 +19,7 @@ const MailOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONMAIL);
 
     const goToImportButton = (
-        <AppLink to="/import" toApp={APPS.PROTONMAIL_SETTINGS}>
+        <AppLink to="/settings/import" toApp={APPS.PROTONMAIL}>
             <Button>{c('Action').t`Import your emails`}</Button>
         </AppLink>
     );
