@@ -26,7 +26,7 @@ const LoginContainer = ({ onLogin }: Props) => {
                     const { User } = data;
                     const previousLocation = location.state?.from;
                     const previousSearch = previousLocation?.search || '';
-                    const path = User && isMember(User) ? '/account' : '/dashboard';
+                    const path = previousLocation?.pathname || (User && isMember(User) ? '/account' : '/dashboard');
                     const pathWithSearch = `${path}${previousSearch}`;
                     return onLogin({ ...data, path: pathWithSearch });
                 }}
