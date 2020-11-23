@@ -22,6 +22,11 @@ const ProtonVPNClientsSection = () => {
                 icon="linux"
                 link="https://protonvpn.com/support/linux-vpn-tool/"
             />
+            <VPNClientCard
+                title={c('VPNClient').t`ChromeBook`}
+                icon="chrome"
+                link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_source=protonvpn.com&utm_content=dashboard"
+            />
         </div>
     );
 };
