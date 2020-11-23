@@ -3,8 +3,8 @@ import _ from 'lodash';
 /* @ngInject */
 function emailBlockList(dispatchers, gettextCatalog, spamListModel, translator) {
     const I18N = translator(() => ({
-        whitelist: gettextCatalog.getString('Whitelist', null, 'Info'),
-        blacklist: gettextCatalog.getString('Blacklist', null, 'Info'),
+        whitelist: gettextCatalog.getString('Allow list', null, 'Info'),
+        blacklist: gettextCatalog.getString('Block list', null, 'Info'),
         add: gettextCatalog.getString('Add', null, 'Action')
     }));
 
