@@ -42,6 +42,23 @@ describe('email', () => {
                 'test(rare)@[192.168.12.23]',
                 '(comment)"te@ st"(rare)@[192.168.12.23]',
                 "weird!#$%&'*+-/=?^_`{|}~123@pa-ta-Ton32.com.edu.org",
+                'simple@example.com',
+                'very.common@example.com',
+                'disposable.style.email.with+symbol@example.com',
+                'other.email-with-hyphen@example.com',
+                'fully-qualified-domain@example.com',
+                'user.name+tag+sorting@example.com',
+                'x@example.com',
+                'example-indeed@strange-example.com',
+                'example@s.example',
+                '" "@example.org',
+                '"john..doe"@example.org',
+                '"john\\"doe"@example.org',
+                '"john\\\\doe"@example.org',
+                'mailhost!username@example.org',
+                'user%example.com@example.org',
+                'customer/department=shipping@example.com',
+                '!def!xyz%abc@example.com',
             ];
             expect(emails.map((email) => validateEmailAddress(email)).filter(Boolean).length).toBe(emails.length);
         });
@@ -61,6 +78,13 @@ describe('email', () => {
                 'test@test@domain.com',
                 'français@baguette.fr',
                 'ezpaña@espain.es',
+                'Abc.example.com',
+                'A@b@c@example.com',
+                'a"b(c)d,e:f;g<h>i[j\\k]l@example.com',
+                'just"not"right@example.com',
+                'this is"not\\allowed@example.com',
+                'this\\ still\\"not\\\\allowed@example.com',
+                '1234567890123456789012345678901234567890123456789012345678901234+x@example.com',
             ];
             expect(emails.map((email) => validateEmailAddress(email)).filter(Boolean).length).toBe(0);
         });

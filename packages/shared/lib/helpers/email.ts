@@ -1,19 +1,25 @@
 /**
- * Validate the local part of an email string according to the RFC https://tools.ietf.org/html/rfc5322;
- * see also https://en.wikipedia.org/wiki/Email_address#Local-part
+ * Validate the local part of an email string according to the RFC https://tools.ietf.org/html/rfc5321#section-4.1.2;
+ * see also https://tools.ietf.org/html/rfc3696#page-5 and https://en.wikipedia.org/wiki/Email_address#Local-part
  */
 import isTruthy from './isTruthy';
 import { MAJOR_DOMAINS } from '../constants';
 import { Recipient } from '../interfaces';
 
 export const validateLocalPart = (localPart: string) => {
+    if (localPart.length > 64) {
+        return false;
+    }
+    // remove comments first
     const match = localPart.match(/(^\(.+?\))?([^()]*)(\(.+?\)$)?/);
     if (!match) {
         return false;
     }
     const uncommentedPart = match[2];
-    if (/".+"/.test(uncommentedPart)) {
-        return true;
+    if (/^".+"$/.test(uncommentedPart)) {
+        // case of a quoted string
+        // The only characters non-allowed are \ and " unless preceded by a backslash
+        return !/(?<!\\)"|(?<!\\)\\[^"\\]/.test(uncommentedPart.slice(1, -1));
     }
     return !/[^a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]|^\.|\.$|\.\./.test(uncommentedPart);
 };
