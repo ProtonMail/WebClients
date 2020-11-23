@@ -6,7 +6,7 @@ import { updateLogAuth } from 'proton-shared/lib/api/settings';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { SETTINGS_LOG_AUTH_STATE } from 'proton-shared/lib/interfaces';
 import { wait } from 'proton-shared/lib/helpers/promise';
-import { AuthLog } from './interface';
+import { AuthLog, getAuthLogEventsI18N } from 'proton-shared/lib/authlog';
 import {
     Alert,
     Block,
@@ -21,7 +21,7 @@ import { useApi, useLoading, useModals, useUserSettings } from '../../hooks';
 
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
-import { getAllAuthenticationLogs, getEventsI18N } from './helper';
+import { getAllAuthenticationLogs } from './helper';
 
 const { BASIC, DISABLE, ADVANCED } = SETTINGS_LOG_AUTH_STATE;
 
@@ -32,7 +32,6 @@ const INITIAL_STATE = {
 const PAGE_SIZE = 10;
 
 const LogsSection = () => {
-    const i18n = getEventsI18N();
     const [settings] = useUserSettings();
     const { createModal } = useModals();
     const [logAuth, setLogAuth] = useState(settings.LogAuth);
@@ -54,7 +53,7 @@ const LogsSection = () => {
 
         const data = Logs.reduce(
             (acc, { Event, Time, IP }) => {
-                acc.push(`${i18n[Event]},${fromUnixTime(Time).toISOString()},${IP}`);
+                acc.push(`${getAuthLogEventsI18N(Event)},${fromUnixTime(Time).toISOString()},${IP}`);
                 return acc;
             },
             [['Event', 'Time', 'IP'].join(',')]

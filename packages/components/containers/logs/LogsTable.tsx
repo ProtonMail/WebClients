@@ -1,10 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 import { SETTINGS_LOG_AUTH_STATE } from 'proton-shared/lib/interfaces';
+import { getAuthLogEventsI18N, AuthLog, AUTH_LOG_EVENTS } from 'proton-shared/lib/authlog';
 
 import { Alert, Icon, Table, TableBody, TableHeader, TableRow, Time } from '../../components';
-import { AUTH_LOG_EVENTS, AuthLog } from './interface';
-import { getEventsI18N } from './helper';
 
 const { ADVANCED, DISABLE } = SETTINGS_LOG_AUTH_STATE;
 
@@ -30,8 +29,6 @@ interface Props {
 }
 
 const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
-    const i18n = getEventsI18N();
-
     if (logAuth === DISABLE) {
         return (
             <Alert>{c('Info')
@@ -59,7 +56,7 @@ const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
                             key={key}
                             cells={[
                                 <>
-                                    {getIcon(Event)} {i18n[Event]}
+                                    {getIcon(Event)} {getAuthLogEventsI18N(Event)}
                                 </>,
                                 logAuth === ADVANCED ? <code>{IP || '-'}</code> : '',
                                 <Time key={key} format="PPp">
