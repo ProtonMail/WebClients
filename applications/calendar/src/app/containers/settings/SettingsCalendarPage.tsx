@@ -77,8 +77,8 @@ const SettingsCalendarPage = ({
                         text: c('Info').t`Import your old messages and folders into ProtonMail.`,
                         link: (
                             <AppLink
-                                to="/import#start-import"
-                                toApp={APPS.PROTONMAIL_SETTINGS}
+                                to="/settings/import#start-import"
+                                toApp={APPS.PROTONMAIL}
                                 className="pm-button--primary mtauto"
                             >
                                 {c('Action').t`Import mailbox`}
