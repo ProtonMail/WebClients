@@ -1,13 +1,7 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
-import {
-    AppLink,
-    Button,
-    OnboardingContent,
-    OnboardingModal,
-    OnboardingStep,
-    OnboardingStepRenderCallback,
-} from 'react-components';
+import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from 'react-components';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { APPS } from 'proton-shared/lib/constants';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
@@ -17,12 +11,7 @@ import onboardingWelcomeDark from 'design-system/assets/img/onboarding/onboardin
 
 const MailOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONMAIL);
-
-    const goToImportButton = (
-        <AppLink to="/settings/import" toApp={APPS.PROTONMAIL}>
-            <Button>{c('Action').t`Import your emails`}</Button>
-        </AppLink>
-    );
+    const history = useHistory();
 
     return (
         <OnboardingModal {...props}>
@@ -31,7 +20,11 @@ const MailOnboardingModal = (props: any) => {
                     title={c('Onboarding ProtonMail').t`Your secure inbox is ready`}
                     submit={c('Onboarding').t`Start using ${appName}`}
                     onSubmit={onClose}
-                    close={goToImportButton}
+                    onClose={() => {
+                        history.push('/settings/import');
+                        onClose?.();
+                    }}
+                    close={c('Action').t`Import your emails`}
                 >
                     <OnboardingContent
                         description={
