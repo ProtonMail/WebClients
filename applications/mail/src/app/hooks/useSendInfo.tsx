@@ -100,7 +100,7 @@ export const useUpdateRecipientSendInfo = (
                         <ContactResignModal
                             title={c('Title').t`Re-sign contact`}
                             contacts={[contact]}
-                            onResign={resolve}
+                            onResign={() => resolve(undefined)}
                             onClose={reject}
                             onNotResign={handleRemove}
                             onError={handleRemove}
@@ -130,7 +130,7 @@ export const useUpdateRecipientSendInfo = (
                     createModal(
                         <AskForKeyPinningModal
                             contacts={contacts}
-                            onTrust={resolve}
+                            onTrust={() => resolve(undefined)}
                             onClose={reject}
                             onNotTrust={handleRemove}
                             onError={handleRemove}
@@ -277,8 +277,8 @@ export const useUpdateGroupSendInfo = (
                         <ContactResignModal
                             title={title}
                             contacts={contactsResign}
-                            onResign={resolve}
-                            onClose={resolve}
+                            onResign={() => resolve(undefined)}
+                            onClose={() => resolve(undefined)}
                             onNotResign={noop}
                             onError={noop}
                         >
@@ -307,8 +307,8 @@ export const useUpdateGroupSendInfo = (
                     createModal(
                         <AskForKeyPinningModal
                             contacts={contactsKeyPinning}
-                            onTrust={resolve}
-                            onClose={resolve}
+                            onTrust={() => resolve(undefined)}
+                            onClose={() => resolve(undefined)}
                             onNotTrust={noop}
                             onError={noop}
                         />

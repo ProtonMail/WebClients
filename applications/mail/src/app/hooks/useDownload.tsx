@@ -9,7 +9,7 @@ import {
     formatDownload,
     formatDownloadAll,
     generateDownload,
-    generateDownloadAll
+    generateDownloadAll,
 } from '../helpers/attachment/attachmentDownloader';
 
 import { MessageExtended, MessageExtendedWithData } from '../models/message';
@@ -48,7 +48,12 @@ const useShowConfirmModal = () => {
                           total
                       );
                 createModal(
-                    <ConfirmModal onConfirm={resolve} onClose={reject} title={title} confirm={c('Action').t`Download`}>
+                    <ConfirmModal
+                        onConfirm={() => resolve(undefined)}
+                        onClose={reject}
+                        title={title}
+                        confirm={c('Action').t`Download`}
+                    >
                         <Alert type="warning" learnMore={learnMore}>
                             {warningContent}
                         </Alert>

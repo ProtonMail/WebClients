@@ -42,7 +42,7 @@ describe('useMessage', () => {
 
     describe('message actions', () => {
         it('should add the action to the queue', async () => {
-            let resolve: () => void = noop;
+            let resolve: (value: unknown) => void = noop;
             const action = () =>
                 new Promise((r) => {
                     resolve = r;
@@ -54,7 +54,7 @@ describe('useMessage', () => {
             expect(hook.result.current.message?.actionInProgress).toBe(true);
             expect(hook.result.current.message?.actionQueue?.length).toBe(0);
 
-            resolve();
+            resolve(undefined);
             await tick();
 
             expect(hook.result.current.message?.actionInProgress).toBe(false);

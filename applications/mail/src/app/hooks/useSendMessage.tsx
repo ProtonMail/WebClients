@@ -50,7 +50,7 @@ export const useSendVerifications = () => {
             await new Promise((resolve, reject) => {
                 createModal(
                     <ConfirmModal
-                        onConfirm={resolve}
+                        onConfirm={() => resolve(undefined)}
                         onClose={reject}
                         title={c('Title').t`Message without subject?`}
                         confirm={c('Action').t`Send anyway`}
@@ -109,7 +109,13 @@ export const useSendVerifications = () => {
         const emailsWithWarnings = Object.keys(emailWarnings);
         if (emailsWithWarnings.length > 0) {
             await new Promise((resolve, reject) => {
-                createModal(<SendWithWarningsModal mapWarnings={emailWarnings} onSubmit={resolve} onClose={reject} />);
+                createModal(
+                    <SendWithWarningsModal
+                        mapWarnings={emailWarnings}
+                        onSubmit={() => resolve(undefined)}
+                        onClose={reject}
+                    />
+                );
             });
         }
 
@@ -123,7 +129,7 @@ export const useSendVerifications = () => {
                         emails.splice(indexOfEmail, 1);
                         delete mapSendPrefs[email];
                     }
-                    resolve();
+                    resolve(undefined);
                 };
                 createModal(
                     <SendWithErrorsModal
@@ -140,7 +146,11 @@ export const useSendVerifications = () => {
         if (expiresNotEncrypted.length > 0) {
             await new Promise((resolve, reject) => {
                 createModal(
-                    <SendWithExpirationModal emails={expiresNotEncrypted} onSubmit={resolve} onClose={reject} />
+                    <SendWithExpirationModal
+                        emails={expiresNotEncrypted}
+                        onSubmit={() => resolve(undefined)}
+                        onClose={reject}
+                    />
                 );
             });
         }

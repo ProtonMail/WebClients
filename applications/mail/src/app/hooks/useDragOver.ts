@@ -7,12 +7,12 @@ import { useState, DragEventHandler, DragEvent } from 'react';
  */
 export const useDragOver = (
     dragFilter: (event: DragEvent) => boolean = () => true,
-    dropEffect = 'move',
+    dropEffect: 'none' | 'copy' | 'link' | 'move' = 'move',
     {
         onDragOver,
         onDragEnter,
         onDragLeave,
-        onDrop
+        onDrop,
     }: {
         onDragOver?: (event: DragEvent) => void;
         onDragEnter?: (event: DragEvent) => void;
@@ -63,6 +63,6 @@ export const useDragOver = (
 
     return [
         dragOver > 0,
-        { onDragEnter: handleDragEnter, onDragLeave: handleDragLeave, onDragOver: handleDragOver, onDrop: handleDrop }
+        { onDragEnter: handleDragEnter, onDragLeave: handleDragLeave, onDragOver: handleDragOver, onDrop: handleDrop },
     ];
 };

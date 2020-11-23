@@ -123,7 +123,7 @@ const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
                 <ConfirmModal
                     title={modalTitle}
                     confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
-                    onConfirm={resolve}
+                    onConfirm={() => resolve(undefined)}
                     onClose={reject}
                 >
                     <Alert type="error">{modalText}</Alert>

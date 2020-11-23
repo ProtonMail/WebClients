@@ -9,7 +9,7 @@ import {
     useEventManager,
     useApi,
     useLabels,
-    useFolders
+    useFolders,
 } from 'react-components';
 import { emptyLabel as emptyLabelRequest } from 'proton-shared/lib/api/messages';
 
@@ -34,7 +34,7 @@ export const useEmptyLabel = () => {
                     <ConfirmModal
                         title={c('Title').t`Empty ${labelName}`}
                         confirm={<ErrorButton type="submit">{c('Action').t`Empty`}</ErrorButton>}
-                        onConfirm={resolve}
+                        onConfirm={() => resolve(undefined)}
                         onClose={reject}
                     >
                         <Alert type="info">

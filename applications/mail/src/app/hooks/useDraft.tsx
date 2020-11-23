@@ -34,9 +34,9 @@ export const useDraftVerifications = () => {
                 await new Promise((resolve) => {
                     createModal(
                         <ConfirmModal
-                            onConfirm={resolve}
+                            onConfirm={() => resolve(undefined)}
                             cancel={null}
-                            onClose={resolve}
+                            onClose={() => resolve(undefined)}
                             title={c('Title').t`Sending notice`}
                             confirm={c('Action').t`OK`}
                         >

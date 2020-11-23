@@ -10,7 +10,7 @@ import {
     useNotifications,
     useAddresses,
     useLoading,
-    useModals
+    useModals,
 } from 'react-components';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
@@ -61,7 +61,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             createModal(
                 <ConfirmModal
                     title={c('Title').t`Unsubscribe`}
-                    onConfirm={resolve}
+                    onConfirm={() => resolve(undefined)}
                     onClose={reject}
                     confirm={c('Action').t`Unsubscribe`}
                 >
@@ -95,8 +95,8 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         ToList: [{ Address: toAddress, Name: toAddress }],
                         CCList: [],
                         BCCList: [],
-                        MIMEType: MIME_TYPES.PLAINTEXT
-                    }
+                        MIMEType: MIME_TYPES.PLAINTEXT,
+                    },
                 };
 
                 const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData);
@@ -110,8 +110,8 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                         input: 'form',
                         method: 'post',
                         data: {
-                            'List-Unsubscribe': 'One-Click'
-                        }
+                            'List-Unsubscribe': 'One-Click',
+                        },
                     };
 
                     await performRequest(config);
