@@ -24,6 +24,7 @@ import AccountContainer from './containers/AccountContainer';
 import DownloadsContainer from './containers/DownloadsContainer';
 import PaymentsContainer from './containers/PaymentsContainer';
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
+import TVContainer from './containers/TVContainer';
 
 const MainContainer = () => {
     const [user] = useUser();
@@ -75,46 +76,51 @@ const MainContainer = () => {
     );
 
     return (
-        <PrivateAppContainer header={header} sidebar={sidebar}>
-            <Switch>
-                <Route
-                    path="/dashboard"
-                    exact
-                    render={({ location }) => (
-                        <DashboardContainer location={location} setActiveSection={setActiveSection} />
-                    )}
-                />
-                <Route
-                    path="/general"
-                    exact
-                    render={({ location }) => (
-                        <GeneralContainer location={location} setActiveSection={setActiveSection} />
-                    )}
-                />
-                <Route
-                    path="/account"
-                    exact
-                    render={({ location }) => (
-                        <AccountContainer location={location} setActiveSection={setActiveSection} />
-                    )}
-                />
-                <Route
-                    path="/downloads"
-                    exact
-                    render={({ location }) => (
-                        <DownloadsContainer location={location} setActiveSection={setActiveSection} />
-                    )}
-                />
-                <Route
-                    path="/payments"
-                    exact
-                    render={({ location }) => (
-                        <PaymentsContainer location={location} setActiveSection={setActiveSection} />
-                    )}
-                />
-                <Redirect to="/dashboard" />
-            </Switch>
-        </PrivateAppContainer>
+        <Switch>
+            <Route path="/tv" exact component={TVContainer} />
+            <Route path="*">
+                <PrivateAppContainer header={header} sidebar={sidebar}>
+                    <Switch>
+                        <Route
+                            path="/dashboard"
+                            exact
+                            render={({ location }) => (
+                                <DashboardContainer location={location} setActiveSection={setActiveSection} />
+                            )}
+                        />
+                        <Route
+                            path="/general"
+                            exact
+                            render={({ location }) => (
+                                <GeneralContainer location={location} setActiveSection={setActiveSection} />
+                            )}
+                        />
+                        <Route
+                            path="/account"
+                            exact
+                            render={({ location }) => (
+                                <AccountContainer location={location} setActiveSection={setActiveSection} />
+                            )}
+                        />
+                        <Route
+                            path="/downloads"
+                            exact
+                            render={({ location }) => (
+                                <DownloadsContainer location={location} setActiveSection={setActiveSection} />
+                            )}
+                        />
+                        <Route
+                            path="/payments"
+                            exact
+                            render={({ location }) => (
+                                <PaymentsContainer location={location} setActiveSection={setActiveSection} />
+                            )}
+                        />
+                        <Redirect to="/dashboard" />
+                    </Switch>
+                </PrivateAppContainer>
+            </Route>
+        </Switch>
     );
 };
 
