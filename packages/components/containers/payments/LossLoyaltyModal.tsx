@@ -17,7 +17,8 @@ const LossLoyaltyModal = ({ organization, ...rest }: Props) => {
             confirm={<ErrorButton type="submit">{c('Action').t`Remove bonuses`}</ErrorButton>}
             {...rest}
         >
-            <Paragraph>{c('Info').t`As an early Proton user, your account has extra features.`}</Paragraph>
+            <Paragraph>{c('Info')
+                .t`Since you're an early access user, your account has additional features enabled.`}</Paragraph>
             <Alert type="warning">
                 {c('Info')
                     .t`By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.`}
