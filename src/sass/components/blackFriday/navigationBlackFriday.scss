@@ -19,7 +19,22 @@
     border-radius: 50%;
 }
 
+// Red for all users
+.navigationBlackFriday-icon::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #D32E26;
+    border-radius: 50%;
+    left: calc(50% + .5em);
+    top: .25em;
+}
+
 .appConfigBody-is-mobile {
+    .navigationBlackFriday {
+        position: relative;
+    }
     .navigationBlackFriday-button {
         margin-top: 5px;
     }
