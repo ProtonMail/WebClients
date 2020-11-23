@@ -12,6 +12,7 @@ import EnterPasswordInfo from './EnterPasswordInfo';
 import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
 import DiscountBanner from './DiscountBanner/DiscountBanner';
+import { useDownloadProvider } from '../downloads/DownloadProvider';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -19,6 +20,7 @@ const ERROR_CODE_NOT_FOUND = 404;
 
 const DownloadSharedContainer = () => {
     const [showDiscountBanner, setShowDiscountBanner] = useState(true);
+    const { clearDownloads } = useDownloadProvider();
     const [notFoundError, setNotFoundError] = useState<Error | undefined>();
     const [loading, withLoading] = useLoading(false);
     const [handshakeInfo, setHandshakeInfo] = useState<InitHandshake | null>();
@@ -47,34 +49,31 @@ const DownloadSharedContainer = () => {
             }
 
             await getSharedLinkPayload(token, password, handshakeInfo)
-                .then(setLinkInfo)
+                .then((linkInfo) => {
+                    setLinkInfo(linkInfo);
+                    setHandshakeInfo(null);
+                })
                 .catch((e) => {
                     const { code, message } = getApiError(e);
                     let errorText = message;
-
                     if (code === ERROR_CODE_INVALID_SRP_PARAMS && passSubmittedManually) {
                         errorText = c('Error').t`Incorrect password. Please try again.`;
-
                         // SRP session ephemerals are destroyed when you retrieve them.
                         initHandshake().catch(console.error);
                     }
-
                     if (!passSubmittedManually) {
                         if (code === ERROR_CODE_INVALID_SRP_PARAMS || code === ERROR_CODE_NOT_FOUND) {
                             setNotFoundError(e);
                             errorText = null;
                         }
-
                         setHandshakeInfo(null);
                     }
-
                     if (errorText) {
                         createNotification({
                             type: 'error',
                             text: errorText,
                         });
                     }
-
                     setLinkInfo(null);
                 });
         },
@@ -102,6 +101,7 @@ const DownloadSharedContainer = () => {
     };
 
     useEffect(() => {
+        clearDownloads();
         if (token && !handshakeInfo) {
             setNotFoundError(undefined);
             withLoading(initHandshake()).catch(console.error);
