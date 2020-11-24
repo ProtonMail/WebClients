@@ -16,7 +16,8 @@ import { useDownloadProvider } from '../downloads/DownloadProvider';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
-const ERROR_CODE_NOT_FOUND = 404;
+const ERROR_CODE_COULD_NOT_IDENTIFY_TARGET = 2000;
+const STATUS_NOT_FOUND = 404;
 
 const DownloadSharedContainer = () => {
     const [showDiscountBanner, setShowDiscountBanner] = useState(true);
@@ -54,15 +55,19 @@ const DownloadSharedContainer = () => {
                     setHandshakeInfo(null);
                 })
                 .catch((e) => {
-                    const { code, message } = getApiError(e);
+                    const { code, status, message } = getApiError(e);
                     let errorText = message;
-                    if (code === ERROR_CODE_INVALID_SRP_PARAMS && passSubmittedManually) {
-                        errorText = c('Error').t`Incorrect password. Please try again.`;
-                        // SRP session ephemerals are destroyed when you retrieve them.
-                        initHandshake().catch(console.error);
-                    }
-                    if (!passSubmittedManually) {
-                        if (code === ERROR_CODE_INVALID_SRP_PARAMS || code === ERROR_CODE_NOT_FOUND) {
+                    if (passSubmittedManually) {
+                        if (code === ERROR_CODE_INVALID_SRP_PARAMS) {
+                            errorText = c('Error').t`Incorrect password. Please try again.`;
+                            // SRP session ephemerals are destroyed when you retrieve them.
+                            initHandshake().catch(console.error);
+                        } else if (code === ERROR_CODE_COULD_NOT_IDENTIFY_TARGET || status === STATUS_NOT_FOUND) {
+                            setNotFoundError(e);
+                            errorText = null;
+                        }
+                    } else {
+                        if (code === ERROR_CODE_INVALID_SRP_PARAMS || status === STATUS_NOT_FOUND) {
                             setNotFoundError(e);
                             errorText = null;
                         }
