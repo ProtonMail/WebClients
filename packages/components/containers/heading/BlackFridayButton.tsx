@@ -5,11 +5,10 @@ import { PlanIDs, Cycle, Currency, Subscription, Plan } from 'proton-shared/lib/
 import { isProductPayer } from 'proton-shared/lib/helpers/blackfriday';
 
 import { useModals, useConfig, useCyberMondayPeriod } from '../../hooks';
-import { TopNavbarLink, Icon } from '../../components';
+import { Icon } from '../../components';
 import NewSubscriptionModal from '../payments/subscription/NewSubscriptionModal';
 import VPNBlackFridayModal from '../payments/subscription/VPNBlackFridayModal';
 import MailBlackFridayModal from '../payments/subscription/MailBlackFridayModal';
-import { TopNavbarItem } from '../app/TopNavbar';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
 
 interface Props {
@@ -17,7 +16,7 @@ interface Props {
     subscription: Subscription;
 }
 
-const BlackFridayButton = ({ plans, subscription, ...rest }: Props) => {
+const BlackFridayButton = ({ plans, subscription }: Props) => {
     const { APP_NAME } = useConfig();
     const { createModal } = useModals();
     const icon = 'blackfriday';
@@ -50,34 +49,26 @@ const BlackFridayButton = ({ plans, subscription, ...rest }: Props) => {
         );
     };
 
-    if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
-        return (
-            <TopNavbarLink
-                to="/dashboard"
-                toApp={APPS.PROTONVPN_SETTINGS}
-                icon={icon}
-                text={text}
-                onClick={() => {
-                    createModal(<VPNBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
-                }}
-                {...rest}
-            />
-        );
-    }
-
+    // span is required because TopNavbarItem erase className prop
     return (
-        <TopNavbarItem>
+        <span className="flex flex-items-center relative">
             <button
-                className="topnav-link"
                 type="button"
+                className="topnav-link inline-flex flex-nowrap nodecoration topnav-link--blackfriday"
                 onClick={() => {
+                    if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
+                        createModal(
+                            <VPNBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />
+                        );
+                        return;
+                    }
                     createModal(<MailBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
                 }}
             >
                 <Icon className="topnav-icon mr0-5 flex-item-centered-vert" name={icon} />
                 <span className="navigation-title topnav-linkText">{text}</span>
             </button>
-        </TopNavbarItem>
+        </span>
     );
 };
 
