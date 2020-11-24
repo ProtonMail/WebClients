@@ -91,7 +91,7 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
             </Alert>
             <Row>
                 <Label>{c('Label').t`User`}</Label>
-                <Field className="flex-item-fluid-auto">
+                <Field className="flex-item-fluid-auto pt0-5">
                     <strong>{member.Name}</strong>
                 </Field>
             </Row>
