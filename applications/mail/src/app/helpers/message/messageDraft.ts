@@ -1,6 +1,7 @@
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { setBit } from 'proton-shared/lib/helpers/bitset';
+import { removeEmailAlias } from 'proton-shared/lib/helpers/email';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
@@ -21,7 +22,7 @@ import { c } from 'ttag';
 import { MESSAGE_ACTIONS } from '../../constants';
 
 import { EmbeddedMap, MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
-import { findSender } from '../addresses';
+import { getFromAddress } from '../addresses';
 import { formatFullDate } from '../date';
 import { parseInDiv } from '../dom';
 import { getDate } from '../elements';
@@ -113,11 +114,9 @@ const replyAll = (
     const ToList = data.ReplyTos;
 
     // Remove user address in CCList and ToList
-    const userAddresses = addresses.map(({ Email = '' }) => Email.toLowerCase());
-    const CCListWithoutUserAddresses: Recipient[] = unique([...(data.ToList || []), ...(data.CCList || [])]);
-    const CCList = CCListWithoutUserAddresses.filter(
-        ({ Address = '' }) => !userAddresses.includes(Address.toLowerCase())
-    );
+    const userAddresses = addresses.map(({ Email = '' }) => removeEmailAlias(Email));
+    const CCListAll: Recipient[] = unique([...(data.ToList || []), ...(data.CCList || [])]);
+    const CCList = CCListAll.filter(({ Address = '' }) => !userAddresses.includes(removeEmailAlias(Address)));
 
     return { data: { Subject, ToList, CCList, Attachments }, embeddeds };
 };
@@ -208,7 +207,7 @@ export const createNewDraft = (
 
     const originalTo = getOriginalTo(referenceMessage?.data);
 
-    const senderAddress = findSender(addresses, referenceMessage?.data, true);
+    const senderAddress = getFromAddress(addresses, originalTo, referenceMessage?.data?.AddressID);
 
     const AddressID = senderAddress?.ID || ''; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
     const Sender = senderAddress ? { Name: senderAddress.DisplayName, Address: senderAddress.Email } : {};

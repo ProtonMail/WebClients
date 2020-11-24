@@ -33,6 +33,7 @@ const address = {
     DisplayName: 'name',
     Email: 'email',
     Status: 1,
+    Receive: 1,
     Send: 1,
     Signature: 'signature',
 } as Address;

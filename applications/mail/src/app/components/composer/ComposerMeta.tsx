@@ -1,19 +1,14 @@
 import React, { useState, ChangeEvent, MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { Label, Select, Input, generateUID } from 'react-components';
-import { Address, MailSettings } from 'proton-shared/lib/interfaces';
-
+import { Label, Input, generateUID } from 'react-components';
 import ComposerAddresses from './addresses/Addresses';
 import { MessageExtended } from '../../models/message';
-import { getFromAdresses } from '../../helpers/addresses';
 import { MessageChange } from './Composer';
 import { MessageSendInfo } from '../../hooks/useSendInfo';
-import { changeSignature } from '../../helpers/message/messageSignature';
+import SelectSender from './addresses/SelectSender';
 
 interface Props {
     message: MessageExtended;
-    addresses: Address[];
-    mailSettings?: Partial<MailSettings>;
     messageSendInfo: MessageSendInfo;
     disabled: boolean;
     onChange: MessageChange;
@@ -24,8 +19,6 @@ interface Props {
 
 const ComposerMeta = ({
     message,
-    addresses,
-    mailSettings,
     messageSendInfo,
     disabled,
     onChange,
@@ -34,24 +27,6 @@ const ComposerMeta = ({
     addressesFocusRef,
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
-
-    const addressesOptions = getFromAdresses(addresses, message.originalTo).map((address) => ({
-        text: address.Email,
-        value: address.ID,
-    }));
-
-    const handleFromChange = (event: ChangeEvent) => {
-        const select = event.target as HTMLSelectElement;
-        const AddressID = select.value;
-        const currentAddress = addresses.find((address: Address) => address.Email === message.data?.Sender.Address);
-        const address = addresses.find((address: Address) => address.ID === AddressID);
-        const Sender = address ? { Name: address.DisplayName, Address: address.Email } : undefined;
-        onChange({ data: { AddressID, Sender } });
-        onChangeContent(
-            changeSignature(message, mailSettings, currentAddress?.Signature || '', address?.Signature || ''),
-            true
-        );
-    };
 
     const handleSubjectChange = (event: ChangeEvent) => {
         const input = event.target as HTMLInputElement;
@@ -64,14 +39,12 @@ const ComposerMeta = ({
                 <Label htmlFor={`from-${uid}`} className="composer-meta-label pt0 bold">
                     {c('Info').t`From`}
                 </Label>
-                <Select
-                    id={`from-${uid}`}
-                    options={addressesOptions}
-                    value={message.data?.AddressID}
+                <SelectSender
+                    message={message}
                     disabled={disabled}
-                    onChange={handleFromChange}
-                    onFocus={addressesBlurRef.current}
-                    data-test-id="composer:from"
+                    onChange={onChange}
+                    onChangeContent={onChangeContent}
+                    addressesBlurRef={addressesBlurRef}
                 />
             </div>
             <ComposerAddresses

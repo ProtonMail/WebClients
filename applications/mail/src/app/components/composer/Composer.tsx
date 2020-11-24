@@ -10,7 +10,6 @@ import {
     useHandler,
 } from 'react-components';
 import { c } from 'ttag';
-import { Address } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 import { COMPOSER_MODE } from 'proton-shared/lib/constants';
@@ -61,7 +60,6 @@ interface Props {
     count: number;
     focus: boolean;
     messageID: string;
-    addresses: Address[];
     windowSize: WindowSize;
     breakpoints: Breakpoints;
     onFocus: () => void;
@@ -73,7 +71,6 @@ const Composer = ({
     count,
     focus,
     messageID,
-    addresses,
     windowSize,
     breakpoints,
     onFocus,
@@ -447,8 +444,6 @@ const Composer = ({
                     >
                         <ComposerMeta
                             message={modelMessage}
-                            addresses={addresses}
-                            mailSettings={mailSettings}
                             messageSendInfo={messageSendInfo}
                             disabled={!editorReady}
                             onChange={handleChange}
