@@ -2,7 +2,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SharedURLFlags } from '../interfaces/sharing';
 
 // eslint-disable-next-line no-control-regex
-export const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"\\/|?*]|[\x00-\x1F]/g;
+export const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"\\/|?*]|[\x00-\x1F]/;
 export const WINDOWS_RESERVED_NAMES = [
     'CON',
     'PRN',
@@ -35,7 +35,7 @@ export const isCustomSharedURLPassword = (sharedURL: { Flags?: number }) => {
 export const formatLinkName = (str: string) => str.trim();
 
 export const adjustWindowsLinkName = (fileName: string) => {
-    let adjustedFileName = fileName.replaceAll(WINDOWS_FORBIDDEN_CHARACTERS, '_');
+    let adjustedFileName = fileName.replaceAll(RegExp(WINDOWS_FORBIDDEN_CHARACTERS, 'g'), '_');
 
     if (WINDOWS_RESERVED_NAMES.includes(fileName.toUpperCase())) {
         adjustedFileName = `_${fileName}`;

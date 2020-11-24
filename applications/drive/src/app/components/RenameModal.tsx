@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
+import { noop } from 'proton-shared/lib/helpers/function';
 import { LinkType } from '../interfaces/link';
 import { validateLinkNameField } from '../utils/validation';
 import { formatLinkName } from '../utils/link';
@@ -52,20 +53,19 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
         try {
             await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, formattedName, item.MIMEType);
             await events.call(activeFolder.shareId);
+            const nameElement = (
+                <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
+                    &quot;{formattedName}&quot;
+                </span>
+            );
+            createNotification({ text: c('Success').jt`${nameElement} renamed successfully` });
+            onClose?.();
         } catch (e) {
             if (e.name === 'ValidationError') {
                 createNotification({ text: e.message, type: 'error' });
             }
             throw e;
         }
-
-        const nameElement = (
-            <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
-                &quot;{formattedName}&quot;
-            </span>
-        );
-        createNotification({ text: c('Success').jt`${nameElement} renamed successfully` });
-        onClose?.();
     };
 
     const isFolder = item.Type === LinkType.FOLDER;
@@ -75,7 +75,7 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
         <FormModal
             onClose={onClose}
             loading={loading}
-            onSubmit={() => withLoading(handleSubmit())}
+            onSubmit={() => withLoading(handleSubmit()).catch(noop)}
             title={isFolder ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
             submit={c('Action').t`Rename`}
             autoFocusClose={false}
