@@ -1,5 +1,5 @@
 import React, { ReactNode, useState, useEffect, memo } from 'react';
-import { useAddresses, useWindowSize, useHandler, useBeforeUnload } from 'react-components';
+import { useWindowSize, useHandler, useBeforeUnload } from 'react-components';
 import { c } from 'ttag';
 
 import Composer from '../components/composer/Composer';
@@ -16,7 +16,6 @@ interface Props {
 }
 
 const ComposerContainer = ({ breakpoints, children }: Props) => {
-    const [addresses] = useAddresses();
     const [messageIDs, setMessageIDs] = useState<string[]>([]);
     const [focusedMessageID, setFocusedMessageID] = useState<string>();
     const [width, height] = useWindowSize();
@@ -71,7 +70,6 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
                         index={i}
                         count={messageIDs.length}
                         focus={messageID === focusedMessageID}
-                        addresses={addresses}
                         windowSize={windowSize}
                         breakpoints={breakpoints}
                         onFocus={handleFocus(messageID)}

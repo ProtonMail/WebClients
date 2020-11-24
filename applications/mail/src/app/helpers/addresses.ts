@@ -188,6 +188,21 @@ export const getAddressFromPlusAlias = (addresses: Address[], email = ''): Addre
 };
 
 /**
+ * Get matching address for the email in the list dealing with potential plus aliases
+ */
+export const getAddressFromEmail = (addresses: Address[], email = '') => {
+    const addressForPlusAlias = getAddressFromPlusAlias(addresses, email);
+
+    if (addressForPlusAlias) {
+        return addressForPlusAlias;
+    }
+
+    const address = getByEmail(addresses, email);
+
+    return address;
+};
+
+/**
  * Return list of addresses available in the FROM select
  * Reference: Angular/src/app/composer/factories/composerFromModel.js
  */
@@ -204,6 +219,14 @@ export const getFromAdresses = (addresses: Address[], originalTo = '') => {
     }
 
     return result;
+};
+
+/**
+ * Get address to use as sender for a new draft
+ */
+export const getFromAddress = (addresses: Address[], originalTo = '', addressID: string | undefined) => {
+    const fromAddresses = getFromAdresses(addresses, originalTo);
+    return fromAddresses.find((address) => address.ID === addressID) || fromAddresses[0];
 };
 
 /**
