@@ -1,20 +1,21 @@
 # [4.0.0-beta.4] - 2020-11-25 
-​
+
 The Proton Drive beta now lets you share files with end-to-end encrypted URL links.
 ​
 In addition, we have been improving the upload experience.
-​
+
 ## Fixed
-​
+
 - Upload progress goes above 100% when an upload fails
 - Block upload not being retried
 - Space at the end shows incorrect error when uploading
-​
+
 ## Added
 
 - Share a secure link publicly
 - Use a pre-generated password for the secure link, or change it
 - Change the default expiration date (90 days) of a secure link
+
 
 # [4.0.0-beta.3] - 2020-11-11 
 
