@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 import FormModal from './FormModal';
 
-interface Props {
+export interface ConfirmModalProps {
     onClose?: () => void;
     onConfirm?: () => void;
     title?: string;
@@ -21,7 +21,7 @@ const Confirm = ({
     confirm = c('Action').t`Confirm`,
     small = true,
     ...rest
-}: Props) => {
+}: ConfirmModalProps) => {
     return (
         <FormModal
             onClose={onClose}

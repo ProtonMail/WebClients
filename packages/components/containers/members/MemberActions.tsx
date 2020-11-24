@@ -18,7 +18,7 @@ import { getUser } from 'proton-shared/lib/api/user';
 import { MemberAuthResponse } from 'proton-shared/lib/authentication/interface';
 import { LoginTypes } from 'proton-shared/lib/authentication/LoginInterface';
 
-import { Alert, ConfirmModal, DropdownActions, ErrorButton } from '../../components';
+import { DropdownActions } from '../../components';
 import {
     useApi,
     useAuthentication,
@@ -31,6 +31,7 @@ import {
 
 import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
+import DeleteMemberModal from './DeleteMemberModal';
 
 interface Props {
     member: Member;
@@ -53,7 +54,6 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
         }
         await api(removeMember(member.ID));
         await call();
-        createNotification({ text: c('Success message').t`User deleted` });
     };
 
     const login = async () => {
@@ -146,20 +146,12 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
         createModal(<EditMemberModal member={member} onClose={noop} />);
     };
 
-    const openDelete = () => {
-        createModal(
-            <ConfirmModal
-                title={c('Title').t`Delete ${member.Name}`}
-                onConfirm={() => withLoading(handleConfirmDelete())}
-                confirm={<ErrorButton type="submit" loading={loading}>{c('Action').t`Delete`}</ErrorButton>}
-            >
-                <Alert type="info">
-                    {c('Info')
-                        .t`Please note that if you delete this user, you will permanently delete its inbox and remove all addresses associated with it.`}
-                </Alert>
-                <Alert type="error">{c('Info').t`Are you sure you want to delete this user?`}</Alert>
-            </ConfirmModal>
-        );
+    const openDelete = async () => {
+        await new Promise((resolve, reject) => {
+            createModal(<DeleteMemberModal member={member} onConfirm={resolve} onClose={reject} />);
+        });
+        await withLoading(handleConfirmDelete());
+        createNotification({ text: c('Success message').t`User deleted` });
     };
 
     const list = [
