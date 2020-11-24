@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FormEvent, RefObject } from 'react';
-import { History, Location } from 'history';
+import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import { getUnixTime, fromUnixTime, isBefore, isAfter } from 'date-fns';
 import {
@@ -94,12 +94,11 @@ const folderReducer = (acc: LabelInfo[], folder: FolderWithSubFolders, level = 0
 interface Props {
     labelID: string;
     keyword?: string;
-    history: History;
-    location: Location;
     isNarrow: boolean;
 }
 
-const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, history, isNarrow }: Props) => {
+const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', isNarrow }: Props) => {
+    const history = useHistory();
     const [uid] = useState(generateUID('advanced-search-dropdown'));
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
@@ -109,6 +108,18 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
     const [addresses, loadingAddresses] = useAddresses();
     const [model, updateModel] = useState<SearchModel>(DEFAULT_MODEL);
 
+    // Get right keyword value depending on the current situation
+    const getKeyword = (keyword: string, reset?: boolean) => {
+        if (reset) {
+            return UNDEFINED;
+        }
+        const value = isNarrow ? keyword : keywordToString(fullInput);
+        if (value) {
+            return value;
+        }
+        return UNDEFINED;
+    };
+
     const handleSubmit = (event: FormEvent, reset?: boolean) => {
         event.preventDefault(); // necessary to not run a basic submission
         event.stopPropagation(); // necessary to not submit normal search from header
@@ -116,8 +127,8 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
         const { keyword, address, begin, end, wildcard, from, to, attachments } = reset ? DEFAULT_MODEL : model;
 
         history.push(
-            changeSearchParams(`/${getHumanLabelID(model.labelID)}`, location.search, {
-                keyword: reset ? UNDEFINED : isNarrow ? keywordToString(fullInput) : keyword || UNDEFINED,
+            changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.search, {
+                keyword: getKeyword(keyword, reset),
                 address: address === ALL_ADDRESSES ? UNDEFINED : address,
                 from: from.length ? formatRecipients(from) : UNDEFINED,
                 to: to.length ? formatRecipients(to) : UNDEFINED,
@@ -139,7 +150,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', location, hi
         if (isOpen) {
             updateModel(() => {
                 const { keyword, address, attachments, wildcard, from, to, begin, end } = extractSearchParameters(
-                    location
+                    history.location
                 );
 
                 return {
