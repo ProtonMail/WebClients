@@ -31,7 +31,7 @@ import { arrayToBase64 } from '../helpers/base64';
 
 const { useSendVerifications, useSendMessage } = require('./useSendMessage');
 
-jest.setTimeout(10000);
+jest.setTimeout(20000);
 
 describe('useSendMessage', () => {
     const fromAddress = 'me@home.net';
