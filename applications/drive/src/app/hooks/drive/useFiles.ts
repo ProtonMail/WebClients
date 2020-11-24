@@ -2,13 +2,7 @@ import { useApi, useEventManager, useNotifications, usePreventLeave, useGetUser 
 import { ReadableStream } from 'web-streams-polyfill';
 import { decryptMessage, encryptMessage } from 'pmcrypto';
 import { c } from 'ttag';
-import {
-    generateNodeKeys,
-    generateContentKeys,
-    encryptName,
-    generateLookupHash,
-    getStreamMessage,
-} from 'proton-shared/lib/keys/driveKeys';
+import { generateNodeKeys, generateContentKeys, encryptName, getStreamMessage } from 'proton-shared/lib/keys/driveKeys';
 import { range, mergeUint8Arrays } from 'proton-shared/lib/helpers/array';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
@@ -51,6 +45,7 @@ import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
 import useConfirm from '../util/useConfirm';
 import { mimetypeFromExtension } from '../../utils/MimeTypeParser/helpers';
 import { adjustName } from '../../utils/link';
+import { generateLookupHash } from '../../utils/hash';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -148,11 +143,14 @@ function useFiles() {
         noNameCheck = false
     ) => {
         let canceled = false;
+        const queuedFnId = FEATURE_FLAGS.includes('nonrestrictive-naming')
+            ? `upload_setup:${file.name}`
+            : `upload_setup:${file.name.toLocaleLowerCase()}`;
         // Queue for files with same name, to not duplicate names
         // Another queue for uploads in general so that they don't timeout
         const setupPromise = queuedFunction(
             'upload_setup',
-            queuedFunction(`upload_setup:${file.name}`, async () => {
+            queuedFunction(queuedFnId, async () => {
                 const error = validateLinkName(file.name);
 
                 if (error) {
@@ -197,7 +195,7 @@ function useFiles() {
 
                 const Name = await encryptName(filename, parentKeys.privateKey.toPublic(), addressKeyInfo.privateKey);
 
-                const MIMEType = FEATURE_FLAGS.includes('drive-sprint-25')
+                const MIMEType = FEATURE_FLAGS.includes('mime-types-parser')
                     ? await mimeTypeFromFile(file)
                     : await mimetypeFromExtension(filename);
 

@@ -2,7 +2,6 @@ import { decryptPrivateKey, OpenPGPKey, SessionKey, encryptMessage } from 'pmcry
 import { Api } from 'proton-shared/lib/interfaces';
 import {
     decryptUnsigned,
-    generateLookupHash,
     generateNodeKeys,
     generateDriveBootstrap,
     generateNodeHashKey,
@@ -42,6 +41,7 @@ import { FOLDER_PAGE_SIZE, DEFAULT_SORT_PARAMS, MAX_THREADS_PER_REQUEST, BATCH_R
 import { decryptPassphrase, getDecryptedSessionKey, PrimaryAddressKey, VerificationKeys } from './driveCrypto';
 import runInQueue from '../runInQueue';
 import { isPrimaryShare } from '../share';
+import { generateLookupHash } from '../hash';
 
 export interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
