@@ -147,7 +147,7 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
     };
 
     const openDelete = async () => {
-        await new Promise((resolve, reject) => {
+        await new Promise<void>((resolve, reject) => {
             createModal(<DeleteMemberModal member={member} onConfirm={resolve} onClose={reject} />);
         });
         await withLoading(handleConfirmDelete());
