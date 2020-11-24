@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { Row, Label, Field, DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton } from 'react-components';
 import { LinkType } from '../interfaces/link';
 import { DriveFolder } from './Drive/DriveFolderProvider';
@@ -37,7 +36,6 @@ const DetailsRow = ({ label, children }: RowProps) => {
 };
 
 const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
-    const includeDriveSharing = FEATURE_FLAGS.includes('drive-sharing');
     const modalTitleID = 'details-modal';
     const isFile = item.Type === LinkType.FILE;
     const title = isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
@@ -73,7 +71,7 @@ const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
                             <DetailsRow label={c('Title').t`Size`}>
                                 <SizeCell size={item.Size} />
                             </DetailsRow>
-                            {includeDriveSharing && <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>}
+                            <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>
                         </>
                     )}
                 </InnerModal>

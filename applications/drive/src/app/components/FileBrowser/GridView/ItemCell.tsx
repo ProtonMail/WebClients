@@ -1,5 +1,4 @@
 import React from 'react';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { FileIcon, Checkbox, classnames, DragMoveContainer, Icon, Tooltip } from 'react-components';
 import { c } from 'ttag';
 import { LinkType } from '../../../interfaces/link';
@@ -46,7 +45,6 @@ function ItemCell({
         onClick,
         onShiftClick,
     });
-    const includeDriveSharing = FEATURE_FLAGS.includes('drive-sharing');
 
     return (
         <div className={classnames(['flex flex-col', className])} style={style}>
@@ -93,7 +91,7 @@ function ItemCell({
                         />
                     </div>
 
-                    {includeDriveSharing && item.SharedURLShareID && (
+                    {item.SharedURLShareID && (
                         <Tooltip title={c('Tooltip').t`Shared`} className="flex flex-item-noshrink">
                             <Icon className="color-primary" name="link" />
                         </Tooltip>

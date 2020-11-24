@@ -3,7 +3,6 @@ import { useToggle, classnames, useElementRect } from 'react-components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { buffer } from 'proton-shared/lib/helpers/function';
 import { c } from 'ttag';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import Header from './Header';
@@ -85,12 +84,10 @@ function TransferManager() {
     }, [clearDownloads, clearUploads]);
 
     useEffect(() => {
-        if (FEATURE_FLAGS.includes('drive-sprint-25')) {
-            window.addEventListener('unload', clearAllTransfers);
-            return () => {
-                window.removeEventListener('unload', clearAllTransfers);
-            };
-        }
+        window.addEventListener('unload', clearAllTransfers);
+        return () => {
+            window.removeEventListener('unload', clearAllTransfers);
+        };
     }, [clearAllTransfers]);
 
     const latestStats = statsHistory[0];

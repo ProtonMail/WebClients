@@ -2,8 +2,8 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SharedURLFlags } from '../interfaces/sharing';
 
 // eslint-disable-next-line no-control-regex
-const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"\\/|?*]|[\x00-\x1F]/g;
-const WINDOWS_RESERVED_NAMES = [
+export const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"\\/|?*]|[\x00-\x1F]/g;
+export const WINDOWS_RESERVED_NAMES = [
     'CON',
     'PRN',
     'AUX',
@@ -42,7 +42,7 @@ export const adjustWindowsLinkName = (fileName: string) => {
     }
 
     if (adjustedFileName.endsWith('.')) {
-        adjustedFileName = `${adjustedFileName.slice(-1)}_`;
+        adjustedFileName = `${adjustedFileName.slice(0, -1)}_`;
     }
 
     return adjustedFileName;
