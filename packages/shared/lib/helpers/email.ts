@@ -19,7 +19,12 @@ export const validateLocalPart = (localPart: string) => {
     if (/^".+"$/.test(uncommentedPart)) {
         // case of a quoted string
         // The only characters non-allowed are \ and " unless preceded by a backslash
-        return !/(?<!\\)"|(?<!\\)\\[^"\\]/.test(uncommentedPart.slice(1, -1));
+        const quotedText = uncommentedPart.slice(1, -1);
+        const chunks = quotedText
+            .split('\\"')
+            .map((chunk) => chunk.split('\\\\'))
+            .flat();
+        return !chunks.some((chunk) => /"|\\/.test(chunk));
     }
     return !/[^a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]|^\.|\.$|\.\./.test(uncommentedPart);
 };
