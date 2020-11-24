@@ -3,13 +3,13 @@ import { isPlainText } from 'proton-shared/lib/mail/messages';
 import { useCallback } from 'react';
 import { useApi, useMailSettings } from 'react-components';
 
-import { MessageExtended, MessageErrors, MessageExtendedWithData } from '../../models/message';
+import { MessageExtended, MessageErrors, MessageExtendedWithData, EmbeddedMap } from '../../models/message';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
-import { prepareMailDocument } from '../../helpers/transforms/transforms';
+import { prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
 import { isApiError } from '../../helpers/errors';
 import { useBase64Cache } from '../useBase64Cache';
 import { useMarkAs, MARK_AS_STATUS } from '../useMarkAs';
@@ -17,6 +17,14 @@ import { isUnreadMessage } from '../../helpers/elements';
 import { hasShowEmbedded } from '../../helpers/settings';
 import { useLoadEmbeddedImages } from './useLoadImages';
 import { useVerifyMessage } from './useVerifyMessage';
+
+interface Preparation {
+    plainText?: string;
+    document?: Element;
+    showEmbeddedImages?: boolean;
+    showRemoteImages?: boolean;
+    embeddeds?: EmbeddedMap;
+}
 
 export const useInitializeMessage = (localID: string, labelID?: string) => {
     const api = useApi();
@@ -47,7 +55,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
         const errors: MessageErrors = {};
 
         let decryption;
-        let preparation;
+        let preparation: Preparation | undefined;
         let dataChanges;
 
         try {
@@ -83,8 +91,8 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             const MIMEType = dataChanges.MIMEType || getData().MIMEType;
 
             preparation = isPlainText({ MIMEType })
-                ? ({ plainText: decryption.decryptedBody } as any)
-                : await prepareMailDocument(
+                ? await preparePlainText(decryption.decryptedBody)
+                : await prepareHtml(
                       { ...message, decryptedBody: decryption.decryptedBody },
                       messageKeys,
                       base64Cache,

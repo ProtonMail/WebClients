@@ -85,7 +85,9 @@ export const plainTextToHTML = (
     addresses: Address[]
 ) => {
     const sender = findSender(addresses, message.data);
-    const content = getContent(message);
+    // message.plainText is linkify and it will interfer with the next step
+    // so we get back to the original content
+    const content = message.decryptedBody;
 
     return textToHtml(content, sender?.Signature || '', mailSettings);
 };
