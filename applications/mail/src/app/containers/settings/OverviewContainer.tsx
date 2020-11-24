@@ -10,7 +10,7 @@ interface Props {
 }
 
 const OverviewContainer = ({ user }: Props) => {
-    const pages = getPages(user).filter(({ to }) => to !== '/overview');
+    const pages = getPages(user).filter(({ to }) => !to.includes('overview'));
     useAppTitle(c('Title').t`Overview`);
 
     return (
