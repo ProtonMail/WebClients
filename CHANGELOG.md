@@ -1,3 +1,11 @@
+# [3.16.46] - 2020-11-25
+
+## Improvements
+
+-  Add red dot for BF navigation icon
+- Remove cookie support for remembering displayed modals
+- Update whitelist / blacklist to Allow List/Block List
+
 # [3.16.45] - 2020-11-19
 
 ## Fixes
