@@ -37,15 +37,21 @@ interface Props {
     active?: boolean;
     restoreFocus?: boolean;
     preventScroll?: boolean;
+    enableInitialFocus?: boolean;
 }
 
-const useFocusTrap = ({ active = true, restoreFocus = true, preventScroll = true, rootRef }: Props) => {
+const useFocusTrap = ({
+    active = true,
+    enableInitialFocus = true,
+    restoreFocus = true,
+    preventScroll = true,
+    rootRef,
+}: Props) => {
     const [id] = useState({});
 
     const nodeToRestoreRef = useRef<Element | null>(null);
     const prevOpenRef = useRef(false);
     const pendingRef = useRef('');
-    const tabIndexRef = useRef<number | undefined>();
 
     useEffect(() => {
         prevOpenRef.current = active;
@@ -70,17 +76,6 @@ const useFocusTrap = ({ active = true, restoreFocus = true, preventScroll = true
         rootRef.current.removeAttribute('data-focus-pending');
         pendingRef.current = '';
 
-        const setRootTabIndex = (tabbableElements: FocusableElement[], rootElement: HTMLElement) => {
-            // If there are no tabbable elements, make the root tabbable.
-            if (tabbableElements.length === 0) {
-                tabIndexRef.current = -1;
-                rootElement.setAttribute('tabIndex', `${tabIndexRef.current}`);
-            } else {
-                rootElement.removeAttribute('tabIndex');
-                tabIndexRef.current = undefined;
-            }
-        };
-
         const focusElement = (node?: FocusableElement | HTMLElement | null, fallback?: HTMLElement) => {
             if (node === document.activeElement) {
                 return;
@@ -93,8 +88,7 @@ const useFocusTrap = ({ active = true, restoreFocus = true, preventScroll = true
         };
 
         const initFocus = (rootElement: HTMLElement) => {
-            const tabbableElements = tabbable(rootElement);
-            setRootTabIndex(tabbableElements, rootElement);
+            const tabbableElements = tabbable(rootElement, { includeContainer: false });
             if (!tabbableElements.length) {
                 focusElement(rootElement);
                 return;
@@ -132,8 +126,7 @@ const useFocusTrap = ({ active = true, restoreFocus = true, preventScroll = true
                 return;
             }
             const { current: rootElement } = rootRef;
-            const tabbableElements = tabbable(rootElement);
-            setRootTabIndex(tabbableElements, rootElement);
+            const tabbableElements = tabbable(rootElement, { includeContainer: false });
             if (tabbableElements.length === 0) {
                 focusElement(rootElement);
                 return;
@@ -152,7 +145,12 @@ const useFocusTrap = ({ active = true, restoreFocus = true, preventScroll = true
 
         // If the current focused element is not in this root. E.g. no autoFocus
         if (!rootRef.current.contains(document.activeElement)) {
-            initFocus(rootRef.current);
+            // If the first tabbable element should not be focused, fall back to the container
+            if (!enableInitialFocus) {
+                focusElement(rootRef.current);
+            } else {
+                initFocus(rootRef.current);
+            }
         }
 
         document.addEventListener('focusin', handleFocusIn, true);
@@ -175,7 +173,7 @@ const useFocusTrap = ({ active = true, restoreFocus = true, preventScroll = true
     return {
         ...(pendingRef.current && { 'data-focus-pending': pendingRef.current }),
         'data-focus-root': '1',
-        ...(tabIndexRef.current && { tabIndex: tabIndexRef.current }),
+        tabIndex: -1,
     };
 };
 

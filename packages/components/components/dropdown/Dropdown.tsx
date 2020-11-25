@@ -92,7 +92,7 @@ const Dropdown = ({
     const anchorRectRef = useRef<DOMRect | undefined>();
     const [contentRect, setContentRect] = useState<DOMRect | undefined>();
 
-    const focusTrapProps = useFocusTrap({ rootRef, active: isOpen && !disableFocusTrap });
+    const focusTrapProps = useFocusTrap({ rootRef, active: isOpen && !disableFocusTrap, enableInitialFocus: false });
 
     useLayoutEffect(() => {
         if (!isOpen) {
@@ -147,6 +147,7 @@ const Dropdown = ({
         isClosing && `is-dropdownOut`,
         noCaret && 'dropDown--noCaret',
         className,
+        'no-outline',
     ]);
 
     if (isClosed && !isOpen) {
