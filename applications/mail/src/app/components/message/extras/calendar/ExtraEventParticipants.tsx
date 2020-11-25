@@ -13,37 +13,28 @@ const ExtraEventParticipants = ({ list = [] }: Props) => {
     return (
         <div className="break">
             {list.map((participant, i) => {
-                const { name, emailAddress } = participant;
+                const { displayEmail, displayName } = participant;
                 const isLast = i === list.length - 1;
 
-                if (emailAddress) {
-                    if (name) {
-                        return (
-                            // eslint-disable-next-line react/no-array-index-key
-                            <div key={`${name}-${emailAddress}-${i}`}>
-                                <span title={name}>{`${name} `}</span>(
-                                <a href={buildMailTo(emailAddress)} title={emailAddress}>
-                                    {emailAddress}
-                                </a>
-                                ){!isLast && ', '}
-                            </div>
-                        );
-                    }
+                if (displayName !== displayEmail) {
                     return (
                         // eslint-disable-next-line react/no-array-index-key
-                        <div key={`${emailAddress}-${i}`}>
-                            <a href={buildMailTo(emailAddress)} title={emailAddress}>
-                                {emailAddress}
+                        <div key={`${displayName}-${displayEmail}-${i}`}>
+                            <span title={displayName}>{`${displayName} `}</span>(
+                            <a href={buildMailTo(displayEmail)} title={displayEmail}>
+                                {displayEmail}
                             </a>
-                            {!isLast && ', '}
+                            ){!isLast && ', '}
                         </div>
                     );
                 }
-
                 return (
                     // eslint-disable-next-line react/no-array-index-key
-                    <div key={`${name}-${i}`} className="ellipsis">
-                        {name}
+                    <div key={`${displayEmail}-${i}`}>
+                        <a href={buildMailTo(displayEmail)} title={displayEmail}>
+                            {displayEmail}
+                        </a>
+                        {!isLast && ', '}
                     </div>
                 );
             })}
