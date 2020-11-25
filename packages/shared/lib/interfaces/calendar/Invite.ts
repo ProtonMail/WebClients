@@ -30,10 +30,11 @@ export interface Participant {
     vcalComponent: VcalAttendeeProperty | VcalOrganizerProperty;
     name: string;
     emailAddress: string;
+    displayName: string;
+    displayEmail: string;
     partstat?: ICAL_ATTENDEE_STATUS;
     role?: ICAL_ATTENDEE_ROLE;
     addressID?: string;
-    displayName?: string;
 }
 
 export interface SavedInviteData {
