@@ -8,7 +8,7 @@ import {
     encryptPassphrase,
     encryptName,
 } from 'proton-shared/lib/keys/driveKeys';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { FEATURE_FLAGS, SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
 
 // These imports must go to proton-shared
@@ -42,6 +42,7 @@ import { decryptPassphrase, getDecryptedSessionKey, PrimaryAddressKey, Verificat
 import runInQueue from '../runInQueue';
 import { isPrimaryShare } from '../share';
 import { generateLookupHash } from '../hash';
+import { mimetypeFromExtension } from '../MimeTypeParser/helpers';
 
 export interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -462,8 +463,7 @@ export const renameLinkAsync = async (
     shareId: string,
     linkId: string,
     parentLinkID: string,
-    newName: string,
-    type: string
+    newName: string
 ) => {
     const error = validateLinkName(newName);
 
@@ -495,12 +495,14 @@ export const renameLinkAsync = async (
         }),
     ]);
 
+    const MIMEType = !FEATURE_FLAGS.includes('mime-types-parser') ? await mimetypeFromExtension(newName) : undefined;
+
     await api(
         queryRenameLink(shareId, linkId, {
             Name: encryptedName,
             Hash,
             SignatureAddress: address.Email,
-            MIMEType: type,
+            MIMEType,
         })
     );
 };
