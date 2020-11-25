@@ -163,7 +163,7 @@ function useDrive() {
         }
     };
 
-    const renameLink = async (shareId: string, linkId: string, parentLinkID: string, newName: string, type: string) => {
+    const renameLink = async (shareId: string, linkId: string, parentLinkID: string, newName: string) => {
         await renameLinkAsync(
             debouncedRequest,
             getLinkKeys,
@@ -172,8 +172,7 @@ function useDrive() {
             shareId,
             linkId,
             parentLinkID,
-            newName,
-            type
+            newName
         );
     };
 

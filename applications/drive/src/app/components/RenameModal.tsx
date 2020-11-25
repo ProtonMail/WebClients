@@ -51,7 +51,7 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
         setName(formattedName);
 
         try {
-            await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, formattedName, item.MIMEType);
+            await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, formattedName);
             await events.call(activeFolder.shareId);
             const nameElement = (
                 <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
