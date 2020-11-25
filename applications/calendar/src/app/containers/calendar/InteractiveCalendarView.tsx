@@ -10,6 +10,7 @@ import { getHasAttendee, getProdId } from 'proton-shared/lib/calendar/vcalHelper
 import { API_CODES } from 'proton-shared/lib/constants';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
+import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit, pick } from 'proton-shared/lib/helpers/object';
@@ -96,6 +97,7 @@ import {
     CalendarViewEvent,
     CalendarViewEventData,
     CalendarViewEventTemporaryEvent,
+    DisplayNameEmail,
     EventTargetAction,
     InteractiveRef,
     InteractiveState,
@@ -180,13 +182,21 @@ const InteractiveCalendarView = ({
     const [eventModalID, setEventModalID] = useState();
 
     const contacts = (useContactEmails()[0] as ContactEmail[]) || [];
-    const contactEmailMap = useMemo(() => {
-        return contacts.reduce<SimpleMap<ContactEmail>>((acc, item) => {
-            if (!acc[item.Email]) {
-                acc[item.Email] = item;
+    const displayNameEmailMap = useMemo(() => {
+        const result = contacts.reduce<SimpleMap<DisplayNameEmail>>((acc, { Email, Name }) => {
+            const normalizedEmail = normalizeEmail(Email);
+            if (!acc[normalizedEmail]) {
+                acc[normalizedEmail] = { displayName: Name, displayEmail: Email };
             }
             return acc;
         }, {});
+        addresses.forEach(({ DisplayName, Email }) => {
+            const normalizedEmail = normalizeInternalEmail(Email);
+            if (!result[normalizedEmail]) {
+                result[normalizedEmail] = { displayName: DisplayName, displayEmail: Email };
+            }
+        });
+        return result;
     }, [contacts]);
 
     const readCalendarBootstrap = useReadCalendarBootstrap();
@@ -1004,7 +1014,7 @@ const InteractiveCalendarView = ({
                             event={targetEvent}
                             tzid={tzid}
                             weekStartsOn={weekStartsOn}
-                            contactEmailMap={contactEmailMap}
+                            displayNameEmailMap={displayNameEmailMap}
                             formatTime={formatTime}
                             onDelete={(calendarEvent, inviteActions) => {
                                 return (

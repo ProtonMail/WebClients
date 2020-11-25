@@ -1,16 +1,20 @@
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import React, { useMemo, useState } from 'react';
 import { Icon, Info, Tabs, Tooltip } from 'react-components';
 import { c, msgid } from 'ttag';
 import { getOrganizerDisplayData } from '../../helpers/attendees';
 import { sanitizeDescription, buildMSTeamsLinks } from '../../helpers/sanitize';
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import {
+    CalendarViewEvent,
+    CalendarViewEventTemporaryEvent,
+    DisplayNameEmail,
+} from '../../containers/calendar/interface';
 import { sortNotifications } from '../../containers/calendar/sortNotifications';
 import { EventModelReadView } from '../../interfaces/EventModel';
 import ParticipantStatusIcon from './ParticipantStatusIcon';
@@ -35,7 +39,7 @@ interface Props {
     weekStartsOn: WeekStartsOn;
     model: EventModelReadView;
     formatTime: (date: Date) => string;
-    contactEmailMap: SimpleMap<ContactEmail>;
+    displayNameEmailMap: SimpleMap<DisplayNameEmail>;
 }
 const PopoverEventContent = ({
     Calendar,
@@ -47,7 +51,7 @@ const PopoverEventContent = ({
     weekStartsOn,
     model,
     formatTime,
-    contactEmailMap,
+    displayNameEmailMap,
 }: Props) => {
     const [tab, setTab] = useState(0);
     const { Name: calendarName, Color } = Calendar;
@@ -58,7 +62,7 @@ const PopoverEventContent = ({
     const { name: organizerName, title: organizerTitle } = getOrganizerDisplayData(
         organizer,
         isInvitation,
-        contactEmailMap
+        displayNameEmailMap
     );
     const organizerString = c('Event info').t`Organized by:`;
     const trimmedLocation = model.location.trim();
@@ -168,10 +172,15 @@ const PopoverEventContent = ({
     if (numberOfParticipants) {
         const attendees = model.attendees
             .map((attendee) => {
-                const contact = attendee.email && contactEmailMap[attendee.email];
-                const name = contact ? contact.Name : attendee.email;
+                const attendeeEmail = attendee.email;
+                const selfEmail = model.selfAddress?.Email;
+                const displayName =
+                    displayNameEmailMap[normalizeEmail(attendeeEmail)]?.displayName || attendee.cn || attendeeEmail;
+                const isYou = selfEmail && normalizeInternalEmail(selfEmail) === normalizeInternalEmail(attendeeEmail);
+                const name = isYou ? c('Participant name').t`You` : displayName;
+                const title = name === attendee.email || isYou ? attendeeEmail : `${name} (${attendeeEmail})`;
                 return {
-                    title: contact ? `${contact.Name} <${contact.Email}>` : attendee.email,
+                    title,
                     text: name,
                     icon: <ParticipantStatusIcon name={name} partstat={attendee.partstat} />,
                     partstat: attendee.partstat,

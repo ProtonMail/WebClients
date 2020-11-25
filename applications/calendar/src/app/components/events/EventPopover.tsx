@@ -8,7 +8,6 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import {
     Alert,
@@ -28,7 +27,11 @@ import InviteButtons from 'react-components/components/calendar/InviteButtons';
 import { c } from 'ttag';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../containers/calendar/eventActions/inviteActions';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
-import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import {
+    CalendarViewEvent,
+    CalendarViewEventTemporaryEvent,
+    DisplayNameEmail,
+} from '../../containers/calendar/interface';
 import { EnDash } from '../EnDash';
 import { getEventErrorMessage } from './error';
 import getEventInformation from './getEventInformation';
@@ -112,7 +115,7 @@ interface Props {
     tzid: string;
     weekStartsOn: WeekStartsOn;
     isNarrow: boolean;
-    contactEmailMap: SimpleMap<ContactEmail>;
+    displayNameEmailMap: SimpleMap<DisplayNameEmail>;
 }
 
 const EventPopover = ({
@@ -128,7 +131,7 @@ const EventPopover = ({
     tzid,
     weekStartsOn,
     isNarrow,
-    contactEmailMap,
+    displayNameEmailMap,
 }: Props) => {
     const [loadingAction, withLoadingAction] = useLoading();
 
@@ -284,7 +287,7 @@ const EventPopover = ({
                     weekStartsOn={weekStartsOn}
                     model={model}
                     formatTime={formatTime}
-                    contactEmailMap={contactEmailMap}
+                    displayNameEmailMap={displayNameEmailMap}
                 />
             </div>
             <PopoverFooter className="flex-item-noshrink" key={targetEvent.id}>
