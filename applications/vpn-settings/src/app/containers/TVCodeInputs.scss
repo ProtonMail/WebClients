@@ -1,0 +1,35 @@
+@import '~design-system/_sass/reusable-components/design-system-config';
+
+.background-container {
+    background-image: url('../../assets/tv_bg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1200px 800px;
+}
+.code-input-div {
+    .pm-field,
+    .pm-field:focus,
+    .pm-field:active {
+        letter-spacing: 1.5rem;
+        text-indent: 1.9rem;
+        border: none;
+        color: $white;
+        height: 4.5rem !important;
+        font-size: 1.5rem;
+        background-color: rgba(0, 0, 0, 0.301);
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.76);
+        }
+    }
+}
+@include respond-to(450) {
+    .code-input-div {
+        .pm-field,
+        .pm-field:focus,
+        .pm-field:active {
+            letter-spacing: .6rem;
+            text-indent: .4rem;
+            font-size: 1.3rem;
+        }
+    }
+}

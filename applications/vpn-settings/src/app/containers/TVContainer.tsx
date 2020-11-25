@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { VpnLogo, PrimaryButton, Icon, Alert, Href, useApi, useLoading } from 'react-components';
+import { VpnLogo, PrimaryButton, Icon, Href, useApi, useLoading } from 'react-components';
 import { pushForkSession } from 'proton-shared/lib/api/auth';
 import { CLIENT_IDS } from 'proton-shared/lib/constants';
 import TVCodeInputs from './TVCodeInputs';
@@ -45,20 +45,26 @@ const TVContainer = () => {
         if (step === STEP.ENTER_CODE) {
             return (
                 <form onSubmit={(event) => withLoading(handleSubmit(event))}>
-                    <label className="h2" htmlFor="code-input">{c('Label')
+                    <label className="h3 aligncenter" htmlFor="code-input">{c('Label')
                         .t`Enter the code displayed on your TV`}</label>
                     <TVCodeInputs value={code} setValue={setCode} />
                     {error ? (
                         <>
-                            <p className="mt1 pl1 aligncenter color-global-warning">{c('Error')
+                            <p className="mt2 mb0 pl1 aligncenter color-global-warning">{c('Error')
                                 .t`Code wrong or not valid anymore`}</p>
-                            <Alert type="error" className="mt1">{c('Error')
-                                .t`If the time on your TV has expired. Click on Refresh on your tv and try again your code.`}</Alert>
+                            <p className="m0 aligncenter noborder color-global-light">{c('Error')
+                                .t`If the time on your TV has expired, click on Refresh on your TV and enter your code again.`}</p>
                         </>
                     ) : null}
                     <div className="flex">
-                        <PrimaryButton loading={loading} type="submit" className="mt2 mb1-5 mlauto">
-                            {error ? c('Action').t`Verify code again` : c('Action').t`Verify code`}
+                        <PrimaryButton
+                            loading={loading}
+                            type="submit"
+                            className="uppercase bold pm-button--pill mt2 mb1-5 center"
+                        >
+                            <span className="p0-5 inline-flex">
+                                {error ? c('Action').t`Verify code again` : c('Action').t`Verify code`}
+                            </span>
                         </PrimaryButton>
                     </div>
                 </form>
@@ -82,19 +88,19 @@ const TVContainer = () => {
     };
 
     return (
-        <>
-            <div className="w150p center pt1">
-                <Href url="https://protonvpn.com" target="_self">
-                    <VpnLogo className="fill-primary" />
-                </Href>
-                <h1 className="color-primary pt1">{c('Title').t`TV log in`}</h1>
-            </div>
-            <div className="flex flex-column flex-nowrap flex-item-noshrink">
-                <div className="center bg-white-dm color-global-grey-dm mt2 mw40e w100 p2 bordered-container flex-item-noshrink">
-                    {render()}
+        <div className="background-container h100 flex-noMinChildren flex-column flex-nowrap flex-items-center scroll-if-needed">
+            <div className="flex flex-justify-center flex-items-center pt2">
+                <div className="w150p">
+                    <Href url="https://protonvpn.com" target="_self">
+                        <VpnLogo className="fill-primary" />
+                    </Href>
                 </div>
+                <h3 className="mb0 pl0-25 uppercase bold">{c('Title').t`TV log in`}</h3>
             </div>
-        </>
+            <div className="flex flex-column flex-item-fluid flex-nowrap flex-item-noshrink">
+                <div className="mauto p2 flex-item-noshrink mw30e">{render()}</div>
+            </div>
+        </div>
     );
 };
 
