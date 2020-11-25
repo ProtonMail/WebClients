@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Input } from 'react-components';
+import './TVCodeInputs.scss';
 
 interface Props {
     value: string;
@@ -43,11 +44,11 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={({ target }) => setFirst(target.value.toUpperCase())}
                         onKeyDown={handleKeyDownFirst}
                         placeholder="1234"
-                        className="aligncenter mw7e flex-self-end"
+                        className="aligncenter bold mw100 flex-self-end"
                         required
                     />
                 </div>
-                <hr className="w2 tv-hr ml1 mr1 mt1-5 mbauto bg-global-grey" />
+                <hr className="w5 tv-hr ml1 mr1 mt1-5 mbauto" />
                 <div className="code-input-div flex-item-fluid flex flex-column">
                     <Input
                         ref={refSecondInput}
@@ -57,7 +58,7 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={({ target }) => setSecond(target.value.toUpperCase())}
                         onKeyDown={handleKeyDownSecond}
                         placeholder="ABCD"
-                        className="aligncenter mw7e"
+                        className="aligncenter bold mw100"
                         required
                     />
                 </div>
