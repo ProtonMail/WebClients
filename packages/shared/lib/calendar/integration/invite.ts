@@ -36,24 +36,27 @@ export const getParticipant = (
     const selfAddress = ownAddresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizedEmailAddress);
     const isYou = emailTo ? normalizeInternalEmail(emailTo) === normalizedEmailAddress : !!selfAddress;
     const contact = contactEmails.find(({ Email }) => cleanEmail(Email) === cleanEmail(emailAddress));
-    const participantName = isYou
-        ? c('Participant name').t`You`
-        : selfAddress?.DisplayName || contact?.Name || participant?.parameters?.cn || emailAddress;
+    const participantName = participant?.parameters?.cn || emailAddress;
+    const displayName = selfAddress?.DisplayName || contact?.Name || participantName;
     const result: Participant = {
         vcalComponent: participant,
         name: participantName,
         emailAddress,
+        displayName: isYou ? c('Participant name').t`You` : displayName,
+        displayEmail: emailAddress,
     };
-    const { partstat, role } = (participant as VcalAttendeeProperty).parameters || {};
+    const { partstat, role, email } = (participant as VcalAttendeeProperty).parameters || {};
     if (partstat) {
         result.partstat = getAttendeePartstat(participant);
     }
     if (role) {
         result.role = getAttendeeRole(participant);
     }
+    if (email) {
+        result.displayEmail = email;
+    }
     if (selfAddress) {
         result.addressID = selfAddress.ID;
-        result.displayName = selfAddress.DisplayName;
         // Use Proton form of the email address (important for sending email)
         result.emailAddress = selfAddress.Email;
     }

@@ -147,6 +147,7 @@ export interface VcalOrganizerPropertyParameters {
     dir?: string;
     language?: string;
     'sent-by'?: string;
+    email?: string;
 }
 
 export interface VcalOrganizerProperty {

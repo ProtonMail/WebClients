@@ -1,6 +1,6 @@
 import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
 import { getCanonicalEmailMap } from '../api/helpers/canonicalEmailMap';
-import { buildMailTo, getEmailTo } from '../helpers/email';
+import { buildMailTo, getEmailTo, validateEmailAddress } from '../helpers/email';
 import { Api } from '../interfaces';
 import { Attendee } from '../interfaces/calendar';
 import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
@@ -95,7 +95,18 @@ export const toInternalAttendee = (
 };
 
 export const getAttendeeEmail = (attendee: VcalAttendeeProperty | VcalOrganizerProperty) => {
-    return getEmailTo(attendee.value);
+    const { cn, email } = attendee.parameters || {};
+    const emailTo = getEmailTo(attendee.value);
+    if (validateEmailAddress(emailTo)) {
+        return emailTo;
+    }
+    if (email && validateEmailAddress(email)) {
+        return email;
+    }
+    if (cn && validateEmailAddress(cn)) {
+        return cn;
+    }
+    return emailTo;
 };
 
 export const modifyAttendeesPartstat = (
