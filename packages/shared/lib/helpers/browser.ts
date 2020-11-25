@@ -11,12 +11,14 @@ export const hasModulesSupport = () => {
 export const isFileSaverSupported = () => !!new Blob();
 
 export const textToClipboard = (text = '', target = document.body) => {
+    const oldActiveElement = document.activeElement as HTMLElement;
     const dummy = document.createElement('textarea');
     target.appendChild(dummy);
     dummy.value = text;
     dummy.select();
     document.execCommand('copy');
     target.removeChild(dummy);
+    oldActiveElement?.focus?.();
 };
 
 export const getOS = () => {
