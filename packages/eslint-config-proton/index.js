@@ -21,7 +21,7 @@ module.exports = {
     project: "./tsconfig.json",
     sourceType: "module",
   },
-  plugins: ["react", "react-hooks", "import", "@typescript-eslint"],
+  plugins: ["react", "react-hooks", "import", "@typescript-eslint", "es"],
   rules: {
     "@typescript-eslint/array-type": [
       "error",
@@ -93,6 +93,7 @@ module.exports = {
     "react/require-default-props": "off",
     "jsx-a11y/alt-text": ["warn"],
     "jsx-a11y/no-autofocus": ["off"],
+    "es/no-regexp-lookbehind-assertions": "error",
   },
   settings: {
     "import/resolver": {
