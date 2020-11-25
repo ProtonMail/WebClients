@@ -42,11 +42,7 @@ const Dialog = ({
 
     return (
         <Portal>
-            <div
-                ref={rootRef}
-                {...focusTrapProps}
-                className={classnames(['pm-modalContainer', isBehind && 'pm-modalContainer--inBackground'])}
-            >
+            <div className={classnames(['pm-modalContainer', isBehind && 'pm-modalContainer--inBackground'])}>
                 <dialog
                     aria-labelledby={modalTitleID}
                     aria-modal="true"
@@ -57,9 +53,12 @@ const Dialog = ({
                         isSmall && 'pm-modal--shorterLabels',
                         isClosing && CLASSES.MODAL_OUT,
                         extraClassNames,
+                        'no-outline',
                     ])}
                     onAnimationEnd={handleAnimationEnd}
                     {...rest}
+                    ref={rootRef}
+                    {...focusTrapProps}
                 >
                     {children}
                 </dialog>
