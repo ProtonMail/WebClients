@@ -38,6 +38,7 @@ const DownloadSharedContainer = () => {
         return initSRPHandshake(token)
             .then(setHandshakeInfo)
             .catch((e) => {
+                console.error(e);
                 setNotFoundError(e);
                 setHandshakeInfo(null);
             });
@@ -55,6 +56,7 @@ const DownloadSharedContainer = () => {
                     setHandshakeInfo(null);
                 })
                 .catch((e) => {
+                    console.error(e);
                     const { code, status, message } = getApiError(e);
                     let errorText = message;
                     if (passSubmittedManually) {
