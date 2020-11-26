@@ -33,7 +33,7 @@ const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, p
                     <Hamburger expanded={expanded} onToggle={onToggleExpand} data-focus-fallback={1} />
                 </div>
             </div>
-            {primary ? <div className="nomobile pl1 pr1 pb1 flex-item-noshrink">{primary}</div> : null}
+            {primary ? <div className="pl1 pr1 pb1 flex-item-noshrink">{primary}</div> : null}
             <div className="onmobile-mt1" aria-hidden="true" />
             <div className="flex-item-fluid flex-nowrap flex flex-column scroll-if-needed customScrollBar-container pb1">
                 {children}
