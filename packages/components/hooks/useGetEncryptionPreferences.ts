@@ -5,6 +5,7 @@ import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKey
 import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
 import extractEncryptionPreferences, { EncryptionPreferences } from 'proton-shared/lib/mail/encryptionPreferences';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import useApi from './useApi';
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
@@ -17,6 +18,12 @@ import useCache from './useCache';
 export const CACHE_KEY = 'ENCRYPTION_PREFERENCES';
 
 const DEFAULT_LIFETIME = 5 * MINUTE;
+
+export type GetEncryptionPreferences = (
+    emailAddress: string,
+    lifetime?: number,
+    contactEmailsMap?: { [email: string]: ContactEmail | undefined }
+) => Promise<EncryptionPreferences>;
 
 // Implement the logic in the document 'Send preferences for outgoing email'
 /**
@@ -33,8 +40,8 @@ const useGetEncryptionPreferences = () => {
     const getPublicKeys = useGetPublicKeys();
     const getMailSettings = useGetMailSettings();
 
-    const getEncryptionPreferences = useCallback(
-        async (emailAddress: string, lifetime?: number) => {
+    const getEncryptionPreferences = useCallback<GetEncryptionPreferences>(
+        async (emailAddress, lifetime, contactEmailsMap) => {
             const [addresses, mailSettings] = await Promise.all([getAddresses(), getMailSettings()]);
             const normalizedInternalEmail = normalizeInternalEmail(emailAddress);
             const selfAddress = addresses.find(
@@ -54,7 +61,13 @@ const useGetEncryptionPreferences = () => {
                 const { publicKeys } = splitKeys(await getUserKeys());
                 apiKeysConfig = await getPublicKeys(emailAddress, lifetime);
                 const isInternal = apiKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
-                pinnedKeysConfig = await getPublicKeysVcardHelper(api, emailAddress, publicKeys, isInternal);
+                pinnedKeysConfig = await getPublicKeysVcardHelper(
+                    api,
+                    emailAddress,
+                    publicKeys,
+                    isInternal,
+                    contactEmailsMap
+                );
             }
             const publicKeyModel = await getContactPublicKeyModel({
                 emailAddress,
@@ -66,8 +79,8 @@ const useGetEncryptionPreferences = () => {
         [api, getAddressKeys, getAddresses, getPublicKeys, getMailSettings]
     );
 
-    return useCallback<(email: string, lifetime?: number) => Promise<EncryptionPreferences>>(
-        (email: string, lifetime = DEFAULT_LIFETIME) => {
+    return useCallback<GetEncryptionPreferences>(
+        (email, lifetime = DEFAULT_LIFETIME, contactEmailsMap) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
             }
@@ -76,7 +89,7 @@ const useGetEncryptionPreferences = () => {
             // For 2 addresses identical but for the cases.
             // If a provider does different one day, this would have to evolve.
             const normalizedEmail = normalizeEmail(email);
-            const miss = () => getEncryptionPreferences(normalizedEmail, lifetime);
+            const miss = () => getEncryptionPreferences(normalizedEmail, lifetime, contactEmailsMap);
             return getPromiseValue(subCache, normalizedEmail, miss, lifetime);
         },
         [cache, getEncryptionPreferences]
