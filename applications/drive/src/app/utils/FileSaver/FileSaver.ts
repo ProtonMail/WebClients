@@ -74,12 +74,12 @@ class FileSaver {
                 throw new Error(`Folder path ${folderPath} is invalid`);
             }
 
-            const parentPath = folders.get(parents.join('/'));
+            const parentPath = folders.get(parents.join('/')) || '';
             const fixedName = isWindows() ? adjustWindowsLinkName(folderName) : folderName;
 
             const deduplicate = (index = 0): string => {
-                const adjustedName = adjustName(index, fixedName);
-                const adjustedPath = parentPath ? `${parentPath}/${adjustedName}/` : `${adjustedName}/`;
+                const adjustedName = `${adjustName(index, fixedName)}/`;
+                const adjustedPath = `${parentPath}${adjustedName}`;
 
                 if (folderPaths.has(adjustedPath.toLowerCase())) {
                     return deduplicate(index + 1);
