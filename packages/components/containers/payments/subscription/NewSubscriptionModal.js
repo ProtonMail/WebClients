@@ -8,6 +8,7 @@ import {
     CURRENCIES,
     PAYMENT_METHOD_TYPES,
     BLACK_FRIDAY,
+    COUPON_CODES,
 } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
@@ -27,8 +28,6 @@ import {
     useOrganization,
     useSubscription,
     useModals,
-    useBlackFridayPeriod,
-    useProductPayerPeriod,
 } from '../../../hooks';
 
 import { classnames } from '../../../helpers';
@@ -71,8 +70,6 @@ const NewSubscriptionModal = ({
     };
 
     const api = useApi();
-    const isBlackFridayPeriod = useBlackFridayPeriod();
-    const isProductPayerPeriod = useProductPayerPeriod();
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const { call } = useEventManager();
@@ -106,10 +103,10 @@ const NewSubscriptionModal = ({
         Credit: 0,
     };
 
-    const getCodes = ({
-        gift,
-        coupon = isBlackFridayPeriod || isProductPayerPeriod ? BLACK_FRIDAY.COUPON_CODE : '',
-    }) => {
+    const getCodes = ({ gift, coupon }) => {
+        if (coupon === COUPON_CODES.BUNDLE || !coupon) {
+            return [gift, BLACK_FRIDAY.COUPON_CODE].filter(isTruthy);
+        }
         return [gift, coupon].filter(isTruthy);
     };
 
