@@ -21,7 +21,7 @@ function useEvents() {
     const cache = useDriveCache();
     const eventManager = useEventManager();
     const { getShareEventManager, createShareEventManager } = useDriveEventManager();
-    const { getVerificationKeys, decryptSharePassphrase } = useDriveCrypto();
+    const { getVerificationKey, decryptSharePassphrase } = useDriveCrypto();
     const debouncedRequest = useDebouncedRequest();
 
     const handleEvents = (shareId: string) => async ({ Events = [] }: { Events: ShareEvent[] }) => {
@@ -75,7 +75,7 @@ function useEvents() {
         };
 
         const decryptLinkPassphrase = (shareId: string, linkMeta: LinkMeta) => {
-            return decryptLinkPassphraseAsync(shareId, getLinkKeys, getShareKeys, getVerificationKeys, linkMeta);
+            return decryptLinkPassphraseAsync(shareId, getLinkKeys, getShareKeys, getVerificationKey, linkMeta);
         };
 
         const isTrashedRestoredOrMoved = ({ LinkID, ParentLinkID, Trashed }: LinkMeta) => {

@@ -10,7 +10,7 @@ import {
     decryptSharePassphraseAsync,
     getPrimaryAddressAsync,
     getPrimaryAddressKeyAsync,
-    getVerificationKeysAsync,
+    getOwnAddressKeysAsync,
 } from '../../utils/drive/driveCrypto';
 
 // Special case for drive to allow users with just an external address
@@ -34,8 +34,16 @@ function useDriveCrypto() {
         return getPrimaryAddressKeyAsync(getPrimaryAddress, getAddressKeys);
     }, [getPrimaryAddress, getAddressKeys]);
 
-    const getVerificationKeys = useCallback(
-        async (email: string) => getVerificationKeysAsync(getAddresses, getAddressKeys, email),
+    const getOwnAddressKeys = useCallback(
+        async (email: string) => getOwnAddressKeysAsync(email, getAddresses, getAddressKeys),
+        [getAddresses, getAddressKeys]
+    );
+
+    const getVerificationKey = useCallback(
+        async (email: string) => {
+            const { publicKeys } = await getOwnAddressKeysAsync(email, getAddresses, getAddressKeys);
+            return publicKeys;
+        },
         [getAddresses, getAddressKeys]
     );
 
@@ -48,11 +56,21 @@ function useDriveCrypto() {
         [getPrimaryAddressKey]
     );
 
-    const decryptSharePassphrase = (meta: ShareMeta) => {
-        return decryptSharePassphraseAsync(meta, getVerificationKeys);
+    /**
+     * Decrypts share passphrase. By default decrypts with the same user's keys who encrypted.
+     * Keys can be passed explicitly if user is different, i.e. in case of sharing between users.
+     * @param meta share metadata
+     * @param privateKeys keys to use, when the user is not the same who encrypted
+     */
+    const decryptSharePassphrase = async (meta: ShareMeta, privateKeys?: OpenPGPKey[]) => {
+        return decryptSharePassphraseAsync(
+            meta,
+            privateKeys || (await getOwnAddressKeys(meta.Creator)).privateKeys,
+            getVerificationKey
+        );
     };
 
-    return { getPrimaryAddressKey, getVerificationKeys, getPrimaryAddress, sign, decryptSharePassphrase };
+    return { getPrimaryAddressKey, getVerificationKey, getPrimaryAddress, sign, decryptSharePassphrase };
 }
 
 export default useDriveCrypto;

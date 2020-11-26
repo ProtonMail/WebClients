@@ -39,7 +39,7 @@ function useDrive() {
     const cache = useDriveCache();
     const queuedFunction = useQueuedFunction();
     const withGlobalLoader = useGlobalLoader({ text: c('Info').t`Loading folder contents` });
-    const { getPrimaryAddressKey, getVerificationKeys, decryptSharePassphrase } = useDriveCrypto();
+    const { getPrimaryAddressKey, getVerificationKey, decryptSharePassphrase } = useDriveCrypto();
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
     const events = useEvents();
@@ -109,7 +109,7 @@ function useDrive() {
     };
 
     const decryptLinkPassphrase = (shareId: string, linkMeta: LinkMeta, config?: FetchLinkConfig) => {
-        return decryptLinkPassphraseAsync(shareId, getLinkKeys, getShareKeys, getVerificationKeys, linkMeta, config);
+        return decryptLinkPassphraseAsync(shareId, getLinkKeys, getShareKeys, getVerificationKey, linkMeta, config);
     };
 
     const fetchNextFoldersOnlyContents = (shareId: string, linkId: string) => {
