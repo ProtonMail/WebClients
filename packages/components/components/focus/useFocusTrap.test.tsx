@@ -29,6 +29,20 @@ describe('FocusTrap', () => {
         expect(getByTestId('auto-focus')).toHaveFocus();
     });
 
+    it('should focus the root element if initial setting is off', () => {
+        const Component = () => {
+            const rootRef = useRef<HTMLDivElement>(null);
+            const props = useFocusTrap({ rootRef, enableInitialFocus: false });
+            return (
+                <div ref={rootRef} {...props} data-testid="root-focus">
+                    <input data-testid="auto-focus" />
+                </div>
+            );
+        };
+        const { getByTestId } = render(<Component />);
+        expect(getByTestId('root-focus')).toHaveFocus();
+    });
+
     it('should respect autoFocus in children', () => {
         const Component = () => {
             const rootRef = useRef<HTMLDivElement>(null);
@@ -44,7 +58,7 @@ describe('FocusTrap', () => {
         expect(getByTestId('auto-focus')).toHaveFocus();
     });
 
-    it('should not set tabIndex on root if there are focusable elements', () => {
+    it('should set tabIndex on root if there are focusable elements', () => {
         const Component = () => {
             const rootRef = useRef<HTMLDivElement>(null);
             const props = useFocusTrap({ rootRef });
@@ -55,7 +69,7 @@ describe('FocusTrap', () => {
             );
         };
         const { getByTestId } = render(<Component />);
-        expect(getByTestId('root')).not.toHaveAttribute('tabIndex');
+        expect(getByTestId('root')).toHaveAttribute('tabIndex', '-1');
     });
 
     it('should set tabIndex on root if there are no focusable elements', () => {
