@@ -21,11 +21,6 @@ export interface PrimaryAddressKey {
     address: Address;
 }
 
-export interface VerificationKeys {
-    privateKeys: OpenPGPKey[];
-    publicKeys: OpenPGPKey[];
-}
-
 export const getDecryptedSessionKey = async ({
     data,
     privateKeys,
@@ -107,25 +102,26 @@ export const getPrimaryAddressKeyAsync = async (
     return { privateKey, publicKey: publicKey || privateKey.toPublic(), address: activeAddress };
 };
 
-export const getVerificationKeysAsync = async (
+export const getOwnAddressKeysAsync = async (
+    email: string,
     getAddresses: () => Promise<Address[]>,
-    getAddressKeys: (id: string) => Promise<CachedKey[]>,
-    email: string
+    getAddressKeys: (id: string) => Promise<CachedKey[]>
 ) => {
     const addresses = await getAddresses();
     const ownAddress = addresses.find(({ Email }) => Email === email);
     if (!ownAddress) {
         // Should never happen
-        throw new Error('Adress was not found.');
+        throw new Error('Address was not found.');
     }
     return splitKeys(await getAddressKeys(ownAddress.ID));
 };
 
 export const decryptSharePassphraseAsync = async (
     meta: ShareMeta,
-    getVerificationKeys: (email: string) => Promise<VerificationKeys>
+    privateKeys: OpenPGPKey[],
+    getVerificationKey: (email: string) => Promise<OpenPGPKey[]>
 ) => {
-    const { privateKeys, publicKeys } = await getVerificationKeys(meta.Creator);
+    const publicKeys = await getVerificationKey(meta.Creator);
     return decryptPassphrase({
         armoredPassphrase: meta.Passphrase,
         armoredSignature: meta.PassphraseSignature,

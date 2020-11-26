@@ -38,7 +38,7 @@ import { queryFolderChildren, queryCreateFolder } from '../../api/folder';
 import { LinkKeys, DriveCache, ShareKeys } from '../../components/DriveCache/DriveCacheProvider';
 import { validateLinkName, ValidationError } from '../validation';
 import { FOLDER_PAGE_SIZE, DEFAULT_SORT_PARAMS, MAX_THREADS_PER_REQUEST, BATCH_REQUEST_SIZE } from '../../constants';
-import { decryptPassphrase, getDecryptedSessionKey, PrimaryAddressKey, VerificationKeys } from './driveCrypto';
+import { decryptPassphrase, getDecryptedSessionKey, PrimaryAddressKey } from './driveCrypto';
 import runInQueue from '../runInQueue';
 import { isPrimaryShare } from '../share';
 import { generateLookupHash } from '../hash';
@@ -261,17 +261,17 @@ export const decryptLinkPassphraseAsync = async (
     shareId: string,
     getLinkKeys: (shareId: string, linkId: string, config?: FetchLinkConfig) => Promise<LinkKeys>,
     getShareKeys: (shareId: string) => Promise<ShareKeys>,
-    getVerificationKeys: (email: string) => Promise<VerificationKeys>,
+    getVerificationKey: (email: string) => Promise<OpenPGPKey[]>,
 
     meta: LinkMeta,
     config: FetchLinkConfig = {}
 ) => {
-    const [{ privateKey: parentKey }, { publicKeys }] = await Promise.all([
+    const [{ privateKey: parentKey }, publicKeys] = await Promise.all([
         meta.ParentLinkID
             ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
               await getLinkKeys(shareId, meta.ParentLinkID, config)
             : await getShareKeys(shareId),
-        getVerificationKeys(meta.SignatureAddress),
+        getVerificationKey(meta.SignatureAddress),
     ]);
 
     return decryptPassphrase({
