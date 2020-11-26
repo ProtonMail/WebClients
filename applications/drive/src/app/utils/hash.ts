@@ -3,5 +3,5 @@ import { generateLookupHash as generateLookupHashShared } from 'proton-shared/li
 
 export const generateLookupHash = (name: string, hashKey: string) =>
     FEATURE_FLAGS.includes('nonrestrictive-naming')
-        ? generateLookupHashShared(name.toLocaleLowerCase(), hashKey)
+        ? generateLookupHashShared(name, hashKey)
         : generateLookupHashShared(name.toLocaleLowerCase(), hashKey);
