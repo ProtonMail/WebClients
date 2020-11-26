@@ -277,6 +277,7 @@ const EventPopover = ({
             </PopoverHeader>
             <div className="scroll-if-needed mb1">
                 <PopoverEventContent
+                    key={targetEvent.id}
                     Calendar={calendarData}
                     isCalendarDisabled={isCalendarDisabled}
                     event={targetEvent}
