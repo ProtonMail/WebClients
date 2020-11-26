@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE, CURRENCIES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import {
+    DEFAULT_CURRENCY,
+    DEFAULT_CYCLE,
+    CYCLE,
+    CURRENCIES,
+    PAYMENT_METHOD_TYPES,
+    BLACK_FRIDAY,
+} from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 import { clearPlanIDs, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { Alert, FormModal } from '../../../components';
 import {
@@ -19,6 +27,8 @@ import {
     useOrganization,
     useSubscription,
     useModals,
+    useBlackFridayPeriod,
+    useProductPayerPeriod,
 } from '../../../hooks';
 
 import { classnames } from '../../../helpers';
@@ -41,16 +51,6 @@ import { handlePaymentToken } from '../paymentTokenHelper';
 
 const hasPlans = (planIDs = {}) => Object.keys(clearPlanIDs(planIDs)).length;
 
-const getCodes = ({ gift, coupon }) => {
-    const codes = [gift, coupon].filter(Boolean);
-
-    if (!codes.length) {
-        return;
-    }
-
-    return codes;
-};
-
 /** @type any */
 const NewSubscriptionModal = ({
     expanded = false,
@@ -71,6 +71,8 @@ const NewSubscriptionModal = ({
     };
 
     const api = useApi();
+    const isBlackFridayPeriod = useBlackFridayPeriod();
+    const isProductPayerPeriod = useProductPayerPeriod();
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const { call } = useEventManager();
@@ -102,6 +104,13 @@ const NewSubscriptionModal = ({
         Proration: 0,
         Gift: 0,
         Credit: 0,
+    };
+
+    const getCodes = ({
+        gift,
+        coupon = isBlackFridayPeriod || isProductPayerPeriod ? BLACK_FRIDAY.COUPON_CODE : '',
+    }) => {
+        return [gift, coupon].filter(isTruthy);
     };
 
     const handleUnsubscribe = async () => {
@@ -153,7 +162,7 @@ const NewSubscriptionModal = ({
         },
     });
 
-    const check = async (newModel = model) => {
+    const check = async (newModel = model, wantToApplyNewGiftCode = false) => {
         if (!hasPlans(newModel.planIDs)) {
             setCheckResult(TOTAL_ZERO);
             return;
@@ -173,7 +182,7 @@ const NewSubscriptionModal = ({
             const { Code = '' } = result.Coupon || {}; // Coupon can equal null
             const copyNewModel = { ...newModel };
 
-            if (newModel.gift && newModel.gift !== Code && !Gift) {
+            if (wantToApplyNewGiftCode && newModel.gift !== Code && !Gift) {
                 createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
             }
 
@@ -234,7 +243,7 @@ const NewSubscriptionModal = ({
             delete withoutGift.gift;
             return withLoadingCheck(check(withoutGift));
         }
-        withLoadingCheck(check({ ...model, gift }));
+        withLoadingCheck(check({ ...model, gift }, true));
     };
 
     useEffect(() => {
