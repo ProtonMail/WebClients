@@ -6,9 +6,7 @@ import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { MailSettings } from 'proton-shared/lib/interfaces';
-
 import { LABEL_IDS_TO_HUMAN, LABEL_IDS_TO_I18N } from '../constants';
-import { getLabelIDs } from './elements';
 import { Conversation } from '../models/conversation';
 
 const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
@@ -109,7 +107,7 @@ export const getCurrentFolders = (
     mailSettings: MailSettings
 ): FolderInfo[] => {
     const { ShowMoved } = mailSettings;
-    const labelIDs = getLabelIDs(message);
+    const labelIDs = message?.LabelIDs || [];
     const standardFolders = getStandardFolders();
     const customFolders = toMap(customFoldersList, 'ID');
 
@@ -179,8 +177,10 @@ export const applyLabelChangesOnConversation = (conversation: Conversation, chan
             if (index === -1) {
                 Labels.push({
                     ID: labelID,
-                    ContextNumMessages: conversation.ContextNumMessages || conversation.NumMessages || 1,
+                    ContextNumMessages: conversation.NumMessages || 1,
                 });
+            } else {
+                Labels[index].ContextNumMessages = conversation.NumMessages || 1;
             }
         } else if (index >= 0) {
             Labels.splice(index, 1);

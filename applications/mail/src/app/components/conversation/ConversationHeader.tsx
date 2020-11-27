@@ -15,10 +15,11 @@ interface Props {
     className: string;
     loading: boolean;
     element: Element;
+    labelID: string;
     breakpoints: Breakpoints;
 }
 
-const ConversationHeader = ({ className, loading, element, breakpoints }: Props) => {
+const ConversationHeader = ({ className, loading, element, labelID, breakpoints }: Props) => {
     const [labels = []] = useLabels();
 
     const isConversation = testIsConversation(element);
@@ -30,7 +31,7 @@ const ConversationHeader = ({ className, loading, element, breakpoints }: Props)
             className={classnames([
                 'border-bottom mw100 message-conversation-summary p0-5 pb1 flex-item-noshrink',
                 loading && 'message-conversation-summary-is-loading',
-                className
+                className,
             ])}
         >
             <div className="flex flex-nowrap mb1">
@@ -87,6 +88,7 @@ const ConversationHeader = ({ className, loading, element, breakpoints }: Props)
                         <ItemLabels
                             labels={labels}
                             element={element}
+                            labelID={labelID}
                             showUnlabel
                             maxNumber={breakpoints.isNarrow ? 1 : 5}
                         />

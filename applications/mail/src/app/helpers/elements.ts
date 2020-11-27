@@ -8,7 +8,6 @@ import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { hasAttachments as messageHasAttachments } from 'proton-shared/lib/mail/messages';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
-
 import { ELEMENT_TYPES } from '../constants';
 import { Element } from '../models/element';
 import { Sort, SearchParameters, Filter } from '../models/tools';
@@ -17,8 +16,9 @@ import {
     isUnread as conversationIsUnread,
     hasAttachments as conversationHasAttachments,
     getNumAttachments as conversationNumAttachments,
+    getLabelIDs as conversationGetLabelIDs,
+    getTime as conversationGetTime,
 } from './conversation';
-
 import { LabelIDsChanges } from '../models/event';
 import { Conversation } from '../models/conversation';
 
@@ -46,20 +46,7 @@ export const getDate = (element: Element | undefined, labelID: string | undefine
         return new Date();
     }
 
-    let time;
-
-    if (isMessage(element)) {
-        time = element.Time;
-    } else {
-        const conversation = element as Conversation;
-        const labelTime = conversation.Labels?.find((label) => label.ID === labelID)?.ContextTime;
-        if (labelTime) {
-            time = labelTime;
-        }
-        if (!time && conversation.ContextTime) {
-            time = conversation.ContextTime;
-        }
-    }
+    const time = isMessage(element) ? element.Time : conversationGetTime(element, labelID);
 
     return new Date((time || 0) * 1000);
 };
@@ -94,16 +81,21 @@ export const isUnread = (element: Element | undefined, labelID: string | undefin
 
 export const isUnreadMessage = (message: Message) => isUnread(message, undefined);
 
-export const getLabelIDs = (element?: Element) =>
+export const getLabelIDs = (element: Element | undefined, contextLabelID: string | undefined) =>
     isMessage(element)
-        ? (element as Message | undefined)?.LabelIDs || []
-        : (element as Conversation | undefined)?.Labels?.map(({ ID }) => ID || '') || [];
+        ? (element as Message | undefined)?.LabelIDs?.reduce<{ [labelID: string]: boolean | undefined }>(
+              (acc, labelID) => {
+                  acc[labelID] = true;
+                  return acc;
+              },
+              {}
+          ) || {}
+        : conversationGetLabelIDs(element, contextLabelID);
 
-export const hasLabel = (element: Element, labelID?: string) => {
-    return getLabelIDs(element).some((ID) => labelID === ID);
-};
+export const hasLabel = (element: Element | undefined, labelID: string) =>
+    getLabelIDs(element, undefined)[labelID] !== undefined;
 
-export const isStarred = (element: Element) => getLabelIDs(element).includes(MAILBOX_LABEL_IDS.STARRED);
+export const isStarred = (element: Element) => hasLabel(element, MAILBOX_LABEL_IDS.STARRED);
 
 export const getSize = ({ Size = 0 }: Element) => Size;
 
@@ -179,7 +171,7 @@ export const isFilter = (filter: Filter) => Object.keys(filter).length > 0;
  * Get the ID of the folder where the element is currently located
  */
 export const getCurrentFolderID = (element: Element | undefined, customFoldersList: Folder[]): string => {
-    const labelIDs = getLabelIDs(element);
+    const labelIDs = getLabelIDs(element, undefined);
     const standardFolders: { [labelID: string]: boolean } = {
         [INBOX]: true,
         [TRASH]: true,
@@ -187,5 +179,5 @@ export const getCurrentFolderID = (element: Element | undefined, customFoldersLi
         [ARCHIVE]: true,
     };
     const customFolders = toMap(customFoldersList, 'ID');
-    return labelIDs.find((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';
+    return Object.keys(labelIDs).find((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';
 };

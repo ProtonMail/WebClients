@@ -45,6 +45,7 @@ const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onC
                 className={classnames([hidden && 'hidden'])}
                 loading={!messageLoaded}
                 element={message.data || {}}
+                labelID={labelID}
                 breakpoints={breakpoints}
             />
             <div className={classnames(['scroll-if-needed flex-item-fluid pt0-5 mw100', hidden && 'hidden'])}>

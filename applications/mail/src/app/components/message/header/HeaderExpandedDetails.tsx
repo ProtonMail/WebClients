@@ -10,7 +10,7 @@ import ItemLabels from '../../list/ItemLabels';
 import { MessageExtended } from '../../../models/message';
 import { getCurrentFolders, isCustomLabel } from '../../../helpers/labels';
 import { getNumAttachmentByType } from '../../../helpers/message/messages';
-import { getSize, getLabelIDs } from '../../../helpers/elements';
+import { getSize } from '../../../helpers/elements';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import ItemLocation from '../../list/ItemLocation';
@@ -51,7 +51,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
 
     const attachmentsText = attachmentsTexts.join(', ');
 
-    const labelIDs = (getLabelIDs(message.data || {}) || []).filter((labelID) => isCustomLabel(labelID, labels));
+    const labelIDs = (message.data?.LabelIDs || []).filter((labelID) => isCustomLabel(labelID, labels));
 
     return (
         <div className="message-detailed-header-extra border-top pt0-5 is-appearing-content">
@@ -111,7 +111,13 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                     <span className="container-to flex">
                         <Icon name="label" className="mauto" alt={c('Label').t`Labels:`} />
                     </span>
-                    <ItemLabels isCollapsed={false} element={message.data} labels={labels} showUnlabel />
+                    <ItemLabels
+                        isCollapsed={false}
+                        element={message.data}
+                        labelID={labelID}
+                        labels={labels}
+                        showUnlabel
+                    />
                 </div>
             )}
         </div>

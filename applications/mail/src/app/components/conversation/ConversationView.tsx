@@ -96,6 +96,7 @@ const ConversationView = ({
                 className={classnames([hidden && 'hidden'])}
                 loading={loadingConversation}
                 element={conversation}
+                labelID={labelID}
                 breakpoints={breakpoints}
             />
             <div className={classnames(['scroll-if-needed flex-item-fluid pt0-5 mw100', hidden && 'hidden'])}>

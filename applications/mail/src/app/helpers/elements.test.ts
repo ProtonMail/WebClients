@@ -21,18 +21,18 @@ describe('elements', () => {
 
     describe('sort', () => {
         it('should sort by time', () => {
-            const elements = [{ ContextTime: 1 }, { ContextTime: 2 }, { ContextTime: 3 }];
+            const elements = [{ Time: 1 }, { Time: 2 }, { Time: 3 }];
             expect(sort(elements, { sort: 'Time', desc: false }, 'labelID')).toEqual(elements);
         });
         it('should sort by time desc', () => {
-            const elements = [{ ContextTime: 1 }, { ContextTime: 2 }, { ContextTime: 3 }];
+            const elements = [{ Time: 1 }, { Time: 2 }, { Time: 3 }];
             expect(sort(elements, { sort: 'Time', desc: true }, 'labelID')).toEqual([...elements].reverse());
         });
         it('should sort by time and fallback on order', () => {
             const elements = [
-                { ContextTime: 1, Order: 3 },
-                { ContextTime: 1, Order: 2 },
-                { ContextTime: 1, Order: 1 },
+                { Time: 1, Order: 3 },
+                { Time: 1, Order: 2 },
+                { Time: 1, Order: 1 },
             ];
             expect(sort(elements, { sort: 'Time', desc: false }, 'labelID')).toEqual([...elements].reverse());
         });
@@ -86,15 +86,15 @@ describe('elements', () => {
             expect(getDate(conversation, LabelID)).toEqual(expected);
         });
 
-        it('should take the ContextTime property of a conversation', () => {
-            const conversation = { ContextTime: Time };
+        it('should take the Time property of a conversation', () => {
+            const conversation = { Time };
             expect(getDate(conversation, '')).toEqual(expected);
         });
 
         it('should take the label time in priority for a conversation', () => {
             const LabelID = 'LabelID';
             const conversation = {
-                ContextTime: WrongTime,
+                Time: WrongTime,
                 Labels: [{ ID: LabelID, ContextTime: Time } as ConversationLabel],
             };
             expect(getDate(conversation, LabelID)).toEqual(expected);
