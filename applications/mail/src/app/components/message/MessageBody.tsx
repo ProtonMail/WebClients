@@ -2,13 +2,11 @@ import { isPlainText } from 'proton-shared/lib/mail/messages';
 import React, { useMemo, useState } from 'react';
 import { classnames, Button, Tooltip } from 'react-components';
 import { c } from 'ttag';
-
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { MessageExtended } from '../../models/message';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 
 import './MessageBody.scss';
-import { htmlEntities } from '../../helpers/string';
 
 interface Props {
     messageLoaded: boolean;
@@ -36,7 +34,7 @@ const MessageBody = ({
     const [expanded, setExpanded] = useState(false);
 
     const [content, blockquote] = useMemo(
-        () => (plain ? [htmlEntities(message.plainText as string), ''] : locateBlockquote(message.document)),
+        () => (plain ? [message.plainText as string, ''] : locateBlockquote(message.document)),
         [message.document?.innerHTML, message.plainText, plain]
     );
 
