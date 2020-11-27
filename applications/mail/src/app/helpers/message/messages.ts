@@ -25,6 +25,6 @@ export const mergeMessages = (
         ...messageState,
         ...messageModel,
         data: { ...messageState?.data, ...messageModel.data } as Message,
-        errors: { ...messageState?.errors, ...messageModel.errors }
+        errors: { ...messageState?.errors, ...messageModel.errors },
     } as MessageExtended;
 };

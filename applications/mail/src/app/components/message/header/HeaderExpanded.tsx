@@ -257,6 +257,7 @@ const HeaderExpanded = ({
                         <div className="flex-item-noshrink flex flex-items-center message-header-expanded-label-container is-appearing-content">
                             <ItemLabels
                                 element={message.data}
+                                labelID={labelID}
                                 labels={labels}
                                 showUnlabel
                                 maxNumber={5}
@@ -279,6 +280,7 @@ const HeaderExpanded = ({
                             <div className="mlauto flex flex-nowrap">
                                 <ItemLabels
                                     element={message.data}
+                                    labelID={labelID}
                                     labels={labels}
                                     showUnlabel
                                     maxNumber={1}

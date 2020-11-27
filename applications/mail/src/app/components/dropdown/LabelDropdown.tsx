@@ -19,7 +19,7 @@ import { Label } from 'proton-shared/lib/interfaces/Label';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 
 import { Element } from '../../models/element';
-import { hasLabel } from '../../helpers/elements';
+import { getLabelIDs } from '../../helpers/elements';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { getStandardFolders } from '../../helpers/labels';
 import { Breakpoints } from '../../models/utils';
@@ -28,19 +28,39 @@ import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
 import './LabelDropdown.scss';
 
 enum LabelState {
-    On,
-    Off,
-    Indeterminate,
+    On = 'On',
+    Off = 'Off',
+    Indeterminate = 'Indeterminate',
 }
+const { On, Off, Indeterminate } = LabelState;
 
 type SelectionState = { [labelID: string]: LabelState };
 
 const getInitialState = (labels: Label[] = [], elements: Element[] = []) => {
     const result: SelectionState = {};
+    const elementsLabels = elements.map((element) =>
+        getLabelIDs(
+            element,
+            // Undefined and not labelID here. Because applying a label to a conversation apply to all messages
+            // Not only those from the current labelID.
+            undefined
+        )
+    );
     labels.forEach(({ ID = '' }) => {
-        const count = elements.filter((element) => hasLabel(element, ID)).length;
-        result[ID] =
-            count === 0 ? LabelState.Off : count === elements.length ? LabelState.On : LabelState.Indeterminate;
+        const counts = elementsLabels.reduce<{ [state: string]: number }>(
+            (acc, elementLabels) => {
+                if (elementLabels[ID] === undefined) {
+                    acc[Off] += 1;
+                } else if (elementLabels[ID]) {
+                    acc[On] += 1;
+                } else {
+                    acc[Indeterminate] += 1;
+                }
+                return acc;
+            },
+            { [On]: 0, [Off]: 0, [Indeterminate]: 0 }
+        );
+        result[ID] = counts[Off] === elements.length ? Off : counts[On] === elements.length ? On : Indeterminate;
     });
     return result;
 };
@@ -67,7 +87,11 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
     const applyLabels = useApplyLabels();
     const moveToFolder = useMoveToFolder();
 
-    const initialState = useMemo(() => getInitialState(labels, getElementsFromIDs(selectedIDs)), [selectedIDs, labels]);
+    const initialState = useMemo(() => getInitialState(labels, getElementsFromIDs(selectedIDs)), [
+        selectedIDs,
+        labels,
+        labelID,
+    ]);
     const [selectedLabelIDs, setSelectedLabelIDs] = useState<SelectionState>(initialState);
 
     useEffect(() => onLock(!containFocus), [containFocus]);

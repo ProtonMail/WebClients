@@ -90,6 +90,7 @@ const HeaderCollapsed = ({
                             className="nomobile"
                             element={message.data}
                             labels={labels}
+                            labelID={labelID}
                             showUnlabel
                             maxNumber={breakpoints.isTablet ? 1 : 5}
                         />

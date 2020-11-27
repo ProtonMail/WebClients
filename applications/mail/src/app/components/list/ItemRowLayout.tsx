@@ -73,7 +73,13 @@ const ItemRowLayout = ({
                 </span>
             </div>
 
-            <ItemLabels labels={labels} element={element} maxNumber={5} className="flex-item-noshrink mlauto" />
+            <ItemLabels
+                labels={labels}
+                element={element}
+                labelID={labelID}
+                maxNumber={5}
+                className="flex-item-noshrink mlauto"
+            />
 
             <span className="item-weight mtauto mbauto ml1 alignright">{!loading && size}</span>
 

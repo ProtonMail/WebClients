@@ -12,6 +12,7 @@ import { useApplyLabels } from '../../hooks/useApplyLabels';
 
 interface Props {
     element?: Element;
+    labelID: string;
     labels?: Label[];
     showUnlabel?: boolean;
     className?: string;
@@ -21,15 +22,16 @@ interface Props {
 
 const ItemLabels = ({
     element = {},
+    labelID,
     showUnlabel = false,
     labels = [],
     className = '',
     isCollapsed = true,
-    maxNumber
+    maxNumber,
 }: Props) => {
     const applyLabels = useApplyLabels();
 
-    const labelIDs = getLabelIDs(element) || [];
+    const labelIDs = Object.keys(getLabelIDs(element, labelID));
     const labelsMap = toMap(labels);
     const labelsObjects = labelIDs.map((ID) => labelsMap[ID]).filter(isTruthy);
     const labelsSorted = orderBy(labelsObjects, 'Order') as Label[];
@@ -48,7 +50,7 @@ const ItemLabels = ({
         color: label.Color,
         title: label.Name,
         onClick: handleGo(label),
-        onDelete: handleUnlabel(label.ID)
+        onDelete: handleUnlabel(label.ID),
     }));
 
     return (

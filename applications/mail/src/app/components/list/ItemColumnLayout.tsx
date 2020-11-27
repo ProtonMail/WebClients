@@ -43,7 +43,7 @@ const ItemColumnLayout = ({
     unread,
     displayRecipients,
     loading,
-    breakpoints
+    breakpoints,
 }: Props) => {
     const { Subject } = element;
 
@@ -99,6 +99,7 @@ const ItemColumnLayout = ({
                         className="ml0-5"
                         labels={labels}
                         element={element}
+                        labelID={labelID}
                         maxNumber={breakpoints.isNarrow ? 1 : 5}
                     />
                     <ItemAttachmentIcon element={element} labelID={labelID} className="ml0-25 flex-self-vcenter" />
