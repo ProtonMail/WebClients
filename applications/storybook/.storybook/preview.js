@@ -17,23 +17,30 @@ import '../src/app/index.scss';
 
 const cacheRef = createCache();
 
-export const decorators = [(Story) => (
-    <ConfigProvider config={config}>
-        <Icons />
-        <MimeIcons />
-        <NotificationsProvider>
-            <ModalsProvider>
-                <ApiProvider config={config}>
-                    <ModalsChildren />
-                    <CacheProvider cache={cacheRef}>
-                        <Story/>
-                    </CacheProvider>
-                </ApiProvider>
-            </ModalsProvider>
-        </NotificationsProvider>
-    </ConfigProvider>
-)];
+const tempConfig = {
+    ...config,
+    APP_NAME: 'proton-mail',
+};
+
+export const decorators = [
+    (Story) => (
+        <ConfigProvider config={tempConfig}>
+            <Icons />
+            <MimeIcons />
+            <NotificationsProvider>
+                <ModalsProvider>
+                    <ApiProvider config={tempConfig}>
+                        <ModalsChildren />
+                        <CacheProvider cache={cacheRef}>
+                            <Story />
+                        </CacheProvider>
+                    </ApiProvider>
+                </ModalsProvider>
+            </NotificationsProvider>
+        </ConfigProvider>
+    ),
+];
 
 export const parameters = {
     controls: { expanded: true },
-}
+};
