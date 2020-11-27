@@ -86,8 +86,6 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     ParentID: message.data?.ID,
                     localID: generateUID('unsubscribe'),
                     plainText: body,
-                    publicKeys: message.publicKeys,
-                    privateKeys: message.privateKeys,
                     data: {
                         AddressID: from?.ID,
                         Subject: subject,

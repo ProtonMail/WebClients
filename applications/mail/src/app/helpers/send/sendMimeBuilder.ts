@@ -5,7 +5,7 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText as testIsPlainText } from 'proton-shared/lib/mail/messages';
 
-import { MessageExtended, EmbeddedMap } from '../../models/message';
+import { MessageExtended, EmbeddedMap, MessageKeys } from '../../models/message';
 import { get } from '../attachment/attachmentLoader';
 import { readCID } from '../embedded/embeddeds';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
@@ -149,19 +149,21 @@ const build = (
 
 const fetchMimeDependencies = async (
     message: MessageExtended,
+    messageKeys: MessageKeys,
     cache: AttachmentsCache,
     api: Api
 ): Promise<AttachmentData[]> => {
     return Promise.all(
         getAttachments(message.data).map(async (attachment) => ({
             attachment,
-            data: await get(attachment, message, cache, api),
+            data: await get(attachment, message, messageKeys, cache, api),
         }))
     );
 };
 
 export const constructMime = async (
     message: MessageExtended,
+    messageKeys: MessageKeys,
     cache: AttachmentsCache,
     api: Api,
     downconvert = true
@@ -169,17 +171,22 @@ export const constructMime = async (
     const plaintext = getPlainText(message, downconvert);
     const html =
         message.data?.MIMEType !== MIME_TYPES.PLAINTEXT ? getDocumentContent(prepareExport(message)) : undefined;
-    const attachments = await fetchMimeDependencies(message, cache, api);
+    const attachments = await fetchMimeDependencies(message, messageKeys, cache, api);
     const embeddeds = message.embeddeds || new Map();
 
     return build(plaintext, html, attachments, embeddeds);
 };
 
-export const constructMimeFromSource = async (message: MessageExtended, cache: AttachmentsCache, api: Api) => {
+export const constructMimeFromSource = async (
+    message: MessageExtended,
+    messageKeys: MessageKeys,
+    cache: AttachmentsCache,
+    api: Api
+) => {
     const isPlainText = testIsPlainText(message.data);
     const plaintext = isPlainText ? message.decryptedBody : undefined;
     const html = isPlainText ? undefined : message.decryptedBody;
-    const attachments = await fetchMimeDependencies(message, cache, api);
+    const attachments = await fetchMimeDependencies(message, messageKeys, cache, api);
     const embeddeds = message.embeddeds || new Map();
 
     return build(plaintext, html, attachments, embeddeds);

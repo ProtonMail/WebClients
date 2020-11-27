@@ -6,7 +6,7 @@ import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { getAndVerify } from './attachmentLoader';
 
 export interface Download {
@@ -22,12 +22,13 @@ export interface Download {
 export const formatDownload = async (
     attachment: Attachment,
     message: MessageExtended,
+    messageKeys: MessageKeys,
     cache: AttachmentsCache,
     api: Api
 ): Promise<Download> => {
     try {
         const reverify = !!(message.senderVerified && message.senderPinnedKeys?.length);
-        const { data, verified } = await getAndVerify(attachment, message, reverify, cache, api);
+        const { data, verified } = await getAndVerify(attachment, message, messageKeys, reverify, cache, api);
         return {
             attachment,
             data: data as Uint8Array,
@@ -73,6 +74,7 @@ export const generateDownload = async (download: Download /* , message: MessageE
  */
 export const formatDownloadAll = async (
     message: MessageExtended,
+    messageKeys: MessageKeys,
     cache: AttachmentsCache,
     api: Api
 ): Promise<Download[]> => {
@@ -94,7 +96,7 @@ export const formatDownloadAll = async (
         { list: [], map: {} }
     );
 
-    return Promise.all(list.map((att) => formatDownload(att, message, cache, api)));
+    return Promise.all(list.map((att) => formatDownload(att, message, messageKeys, cache, api)));
 };
 
 const getZipAttachmentName = (message: Message) => `Attachments-${message.Subject}.zip`;

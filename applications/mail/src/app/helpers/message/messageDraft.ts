@@ -206,6 +206,7 @@ export const createNewDraft = (
     } = handleActions(action, referenceMessage, addresses);
 
     const originalTo = getOriginalTo(referenceMessage?.data);
+    const originalAddressID = referenceMessage?.data?.AddressID;
 
     const senderAddress = getFromAddress(addresses, originalTo, referenceMessage?.data?.AddressID);
 
@@ -244,6 +245,7 @@ export const createNewDraft = (
         action,
         expiresIn: 0,
         originalTo,
+        originalAddressID,
         initialized: true,
         embeddeds,
     };

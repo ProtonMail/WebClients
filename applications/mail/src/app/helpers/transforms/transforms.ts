@@ -6,7 +6,7 @@ import { Base64Cache } from '../../hooks/useBase64Cache';
 import { transformBase } from './transformBase';
 import { transformLinks } from './transformLinks';
 import { transformEmbedded } from './transformEmbedded';
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageKeys } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { transformWelcome } from './transformWelcome';
 import { transformStylesheet } from './transformStylesheet';
@@ -15,6 +15,7 @@ import { inlineCss } from '../dom';
 
 export const prepareMailDocument = async (
     message: MessageExtended,
+    messageKeys: MessageKeys,
     base64Cache: Base64Cache,
     attachmentsCache: AttachmentsCache,
     api: Api,
@@ -28,7 +29,12 @@ export const prepareMailDocument = async (
 
     transformLinks(document);
 
-    const { showEmbeddedImages, embeddeds } = await transformEmbedded({ ...message, document }, attachmentsCache, api);
+    const { showEmbeddedImages, embeddeds } = await transformEmbedded(
+        { ...message, document },
+        messageKeys,
+        attachmentsCache,
+        api
+    );
 
     transformWelcome(document);
 

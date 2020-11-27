@@ -48,7 +48,7 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
         <div
             className={classnames([
                 'message-attachments border-top m0-5 pt0-5 pl0-5 pr0-5',
-                !showActions && 'no-pointer-events'
+                !showActions && 'no-pointer-events',
             ])}
         >
             <div className="flex flex-spacebetween mb0">
@@ -97,7 +97,11 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
 
             <ul className="listAttachments-list unstyled flex mt0 mb0">
                 {attachments.map((attachment) => (
-                    <MessageAttachment key={attachment.ID} attachment={attachment} message={message} />
+                    <MessageAttachment
+                        key={attachment.ID}
+                        attachment={attachment}
+                        message={message as MessageExtendedWithData}
+                    />
                 ))}
             </ul>
         </div>

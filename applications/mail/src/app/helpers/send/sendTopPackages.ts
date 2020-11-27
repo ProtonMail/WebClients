@@ -6,7 +6,7 @@ import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { addReceived } from 'proton-shared/lib/mail/messages';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageKeys } from '../../models/message';
 import { getDocumentContent, getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
 import { constructMime } from './sendMimeBuilder';
@@ -20,18 +20,23 @@ const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
  * Generates the mime top-level packages, which include all attachments in the body.
  * Build the multipart/alternate MIME entity containing both the HTML and plain text entities.
  */
-const generateMimePackage = async (message: MessageExtended, cache: AttachmentsCache, api: Api): Promise<Package> => ({
+const generateMimePackage = async (
+    message: MessageExtended,
+    messageKeys: MessageKeys,
+    cache: AttachmentsCache,
+    api: Api
+): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
     MIMEType: MIME,
-    Body: await constructMime(message, cache, api)
+    Body: await constructMime(message, messageKeys, cache, api),
 });
 
 const generatePlainTextPackage = async (message: MessageExtended): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
     Addresses: {},
     MIMEType: PLAINTEXT,
-    Body: getPlainText(message, true)
+    Body: getPlainText(message, true),
 });
 
 const generateHTMLPackage = async (message: MessageExtended): Promise<Package> => ({
@@ -39,7 +44,7 @@ const generateHTMLPackage = async (message: MessageExtended): Promise<Package> =
     Addresses: {},
     MIMEType: DEFAULT,
     // We NEVER upconvert, if the user wants html: plaintext is actually fine as well
-    Body: getDocumentContent(prepareExport(message))
+    Body: getDocumentContent(prepareExport(message)),
 });
 
 /**
@@ -49,6 +54,7 @@ const generateHTMLPackage = async (message: MessageExtended): Promise<Package> =
  */
 export const generateTopPackages = async (
     message: MessageExtended,
+    messageKeys: MessageKeys,
     mapSendPrefs: SimpleMap<SendPreferences>,
     cache: AttachmentsCache,
     api: Api
@@ -62,12 +68,12 @@ export const generateTopPackages = async (
                     packages[DEFAULT] ||
                     mimeType === DEFAULT ||
                     (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && !encrypt && !sign),
-                [MIME]: packages[MIME] || (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && (encrypt || sign))
+                [MIME]: packages[MIME] || (pgpScheme === PACKAGE_TYPE.SEND_PGP_MIME && (encrypt || sign)),
             }),
             {
                 [PLAINTEXT]: false,
                 [DEFAULT]: false,
-                [MIME]: false
+                [MIME]: false,
             } as PackageStatus
         );
 
@@ -79,7 +85,7 @@ export const generateTopPackages = async (
         demandedPackages.map(async (type) => {
             switch (type) {
                 case MIME:
-                    packages[MIME] = await generateMimePackage(message, cache, api);
+                    packages[MIME] = await generateMimePackage(message, messageKeys, cache, api);
                     return;
                 case PLAINTEXT:
                     packages[PLAINTEXT] = await generatePlainTextPackage(message);

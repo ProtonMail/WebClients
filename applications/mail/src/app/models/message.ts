@@ -4,6 +4,11 @@ import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { MESSAGE_ACTIONS } from '../constants';
 
+export interface MessageKeys {
+    publicKeys: OpenPGPKey[];
+    privateKeys: OpenPGPKey[];
+}
+
 export interface MessageAction<T = void> {
     (): Promise<T>;
 }
@@ -88,11 +93,6 @@ export interface MessageExtended {
     verificationErrors?: Error[];
 
     /**
-     * Address public keys of the user (used for encrypting drafts and attachments)
-     */
-    publicKeys?: OpenPGPKey[];
-
-    /**
      * Pinned public keys of the sender, if any
      */
     senderPinnedKeys?: OpenPGPKey[];
@@ -111,11 +111,6 @@ export interface MessageExtended {
      * Attached public key, if the message contains any
      */
     attachedPublicKeys?: OpenPGPKey[];
-
-    /**
-     * Address private keys of the user (used for decryption)
-     */
-    privateKeys?: OpenPGPKey[];
 
     /**
      * Initialization status of the message
@@ -150,6 +145,12 @@ export interface MessageExtended {
      * Original "To" address of the referring message. Only added for drafts.
      */
     originalTo?: string;
+
+    /**
+     * Original "AddressID" of the address of the referring message. Only added for drafts.
+     * Used on rare situation when replying with a different address than the one you received the message.
+     */
+    originalAddressID?: string;
 
     /**
      * Action flags for draft messages

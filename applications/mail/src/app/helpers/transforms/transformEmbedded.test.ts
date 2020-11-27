@@ -2,7 +2,7 @@ import createCache from 'proton-shared/lib/helpers/cache';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageKeys } from '../../models/message';
 import { transformEmbedded } from './transformEmbedded';
 import { prepareImages } from '../embedded/embeddedParser';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
@@ -11,13 +11,13 @@ import { api } from '../test/helper';
 const prepareImagesMock = prepareImages as jest.Mock;
 
 jest.mock('../embedded/embeddedFinder', () => ({
-    find: jest.fn(() => [])
+    find: jest.fn(() => []),
 }));
 
 jest.mock('../embedded/embeddedParser', () => ({
     mutateHTMLBlob: jest.fn(),
     decrypt: jest.fn(),
-    prepareImages: jest.fn()
+    prepareImages: jest.fn(),
 }));
 
 const attachmentsCache = createCache() as AttachmentsCache;
@@ -31,7 +31,7 @@ describe('transformEmbedded', () => {
         // Reference: Angular/test/specs/message/services/transformEmbedded.spec.js
 
         const setup = async (message: Partial<MessageExtended> = {}) => {
-            await transformEmbedded({ localID, ...message }, attachmentsCache, api);
+            await transformEmbedded({ localID, ...message }, {} as MessageKeys, attachmentsCache, api);
             return prepareImagesMock.mock.calls[0][1] as boolean;
         };
 

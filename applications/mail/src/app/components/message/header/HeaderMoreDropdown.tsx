@@ -38,6 +38,7 @@ import { Breakpoints } from '../../../models/utils';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
+import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 
 const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
@@ -72,6 +73,7 @@ const HeaderMoreDropdown = ({
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
     const markAs = useMarkAs();
+    const getMessageKeys = useGetMessageKeys();
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
@@ -116,9 +118,10 @@ const HeaderMoreDropdown = ({
 
     const handleExport = async () => {
         // Angular/src/app/message/directives/actionMessage.js
+        const messageKeys = await getMessageKeys(message.data as Message);
         const { Subject = '' } = message.data || {};
         const time = formatFileNameDate(getDate(message.data, labelID));
-        const blob = await exportBlob(message, attachmentsCache, api);
+        const blob = await exportBlob(message, messageKeys, attachmentsCache, api);
         const filename = `${Subject} ${time}.eml`;
         downloadFile(blob, filename);
     };
