@@ -82,8 +82,7 @@ const AddressesAutocomplete = ({
                 .map((email) => ({
                     label: email,
                     value: `Major:${email}`,
-                }))
-                .sort(compareFunction),
+                })),
         [majorDomains, recipientAddressesMap, contactEmailsMap]
     );
     const recipientItem = useAutocompleteRecipient();
