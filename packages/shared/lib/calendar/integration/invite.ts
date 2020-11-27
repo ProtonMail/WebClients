@@ -59,6 +59,8 @@ export const getParticipant = (
         result.addressID = selfAddress.ID;
         // Use Proton form of the email address (important for sending email)
         result.emailAddress = selfAddress.Email;
+        // Use Proton name when sending out the email
+        result.name = selfAddress.DisplayName || participantName;
     }
     return result;
 };
