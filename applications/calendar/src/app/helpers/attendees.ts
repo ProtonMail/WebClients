@@ -1,9 +1,10 @@
+import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { c } from 'ttag';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { getDeviceNotifications } from '../components/eventModal/eventForm/notificationModel';
+import { DisplayNameEmail } from '../containers/calendar/interface';
 import { EventModel, OrganizerModel } from '../interfaces/EventModel';
 import { notificationsToModel } from './notificationsToModel';
 
@@ -46,18 +47,18 @@ export const modifyEventModelPartstat = (
 export const getOrganizerDisplayData = (
     organizer: OrganizerModel,
     isInvitation: boolean,
-    contactEmailMap: SimpleMap<ContactEmail>
+    displayNameEmailMap: SimpleMap<DisplayNameEmail>
 ) => {
     const { email, cn } = organizer;
+    const normalizedEmail = isInvitation ? normalizeEmail(email) : normalizeInternalEmail(email);
     if (!isInvitation) {
         return {
             name: c('Event info. Organizer name').t`You`,
             title: `${email}`,
         };
     }
-    const contact = contactEmailMap[email];
-    const safeCn = cn || email;
-    const name = contact ? contact.Name : safeCn;
-    const title = contact ? `${name} <${contact.Email}>` : `${safeCn} <${email}>`;
+    const { displayName } = displayNameEmailMap[normalizedEmail] || {};
+    const name = displayName || cn || email;
+    const title = name === email ? email : `${name} (${email})`;
     return { name, title };
 };

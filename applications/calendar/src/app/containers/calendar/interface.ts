@@ -79,6 +79,11 @@ export interface InteractiveState {
     targetMoreData?: TargetMoreData;
 }
 
+export interface DisplayNameEmail {
+    displayName: string;
+    displayEmail: string;
+}
+
 export interface OnSaveConfirmationArgs {
     type: SAVE_CONFIRMATION_TYPES;
     data?: {
