@@ -22,14 +22,13 @@
         }
     }
 }
-@include respond-to(450) {
+@include respond-to($breakpoint-small) {
     .code-input-div {
         .pm-field,
         .pm-field:focus,
         .pm-field:active {
-            letter-spacing: .6rem;
-            text-indent: .4rem;
-            font-size: 1.3rem;
+            letter-spacing: 2.6rem;
+            text-indent: 2rem;
         }
     }
 }

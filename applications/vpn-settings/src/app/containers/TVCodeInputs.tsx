@@ -34,8 +34,8 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
 
     return (
         <>
-            <div className="code-input-container flex flex-justify-center">
-                <div className="code-input-div flex-item-fluid flex flex-column alignright">
+            <div className="code-input-container flex flex-justify-center automobile">
+                <div className="code-input-div flex-item-fluid flex flex-column aligncenter onmobile-pb1 onmobile-pt0-5">
                     <Input
                         ref={refFirstInput}
                         minLength={4}
@@ -44,12 +44,12 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={({ target }) => setFirst(target.value.toUpperCase())}
                         onKeyDown={handleKeyDownFirst}
                         placeholder="1234"
-                        className="aligncenter bold mw100 flex-self-end"
+                        className="aligncenter bold mw15e flex-self-end mauto"
                         required
                     />
                 </div>
-                <hr className="w5 tv-hr ml1 mr1 mt1-5 mbauto" />
-                <div className="code-input-div flex-item-fluid flex flex-column">
+                <hr className="w5 tv-hr ml1 mr1 mt1-5 mbauto nomobile" />
+                <div className="code-input-div flex-item-fluid flex flex-column aligncenter onmobile-pb1 onmobile-pt0-5">
                     <Input
                         ref={refSecondInput}
                         minLength={4}
@@ -58,7 +58,7 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={({ target }) => setSecond(target.value.toUpperCase())}
                         onKeyDown={handleKeyDownSecond}
                         placeholder="ABCD"
-                        className="aligncenter bold mw100"
+                        className="aligncenter bold mw15e mauto"
                         required
                     />
                 </div>
