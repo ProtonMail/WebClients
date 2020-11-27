@@ -29,7 +29,7 @@ module.exports = {
                         return rule.test.toString().includes('mdx');
                     }),
                     {
-                        test: /\.stories\.tsx?$/,
+                        test: /\.stories\.(tsx|mdx)?$/,
                         loaders: [
                             {
                                 loader: require.resolve('@storybook/source-loader'),
@@ -61,8 +61,8 @@ module.exports = {
         checkOptions: {},
         reactDocgen: 'react-docgen-typescript',
         reactDocgenTypescriptOptions: {
-        shouldExtractLiteralValuesFromEnum: true,
-        propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+            shouldRemoveUndefinedFromOptional: true,
+            propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
         },
     },
 };
