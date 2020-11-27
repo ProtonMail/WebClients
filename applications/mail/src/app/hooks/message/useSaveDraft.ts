@@ -4,7 +4,7 @@ import { useApi, useEventManager } from 'react-components';
 import { deleteMessages } from 'proton-shared/lib/api/messages';
 
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
-import { useMessageKeys } from './useMessageKeys';
+import { useGetMessageKeys } from './useGetMessageKeys';
 import { mergeMessages } from '../../helpers/message/messages';
 import { useMessageCache, updateMessageCache } from '../../containers/MessageProvider';
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
@@ -24,11 +24,11 @@ export const useCreateDraft = () => {
     const api = useApi();
     const messageCache = useMessageCache();
     const { call } = useEventManager();
-    const getMessageKeys = useMessageKeys();
+    const getMessageKeys = useGetMessageKeys();
 
     return useCallback(async (message: MessageExtendedWithData) => {
-        const messageKeys = await getMessageKeys(message);
-        const newMessage = await createMessage({ ...message, ...messageKeys }, api);
+        const messageKeys = await getMessageKeys(message.data);
+        const newMessage = await createMessage(message, api, getMessageKeys);
         updateMessageCache(messageCache, message.localID, {
             data: { ...mergeSavedMessage(message.data, newMessage), Attachments: newMessage.Attachments },
             ...messageKeys,
@@ -44,21 +44,20 @@ const useUpdateDraft = () => {
     const api = useApi();
     const messageCache = useMessageCache();
     const { call } = useEventManager();
-    const getMessageKeys = useMessageKeys();
+    const getMessageKeys = useGetMessageKeys();
 
     return useCallback(async (message: MessageExtendedWithData) => {
         const messageFromCache = messageCache.get(message.localID) as MessageExtended;
-        const senderHasChanged = messageFromCache.data?.Sender.Address !== message.data?.Sender.Address;
-        const newMessageKeys = await getMessageKeys(message);
-        const previousMessageKeys = await getMessageKeys(messageFromCache as MessageExtendedWithData);
-        const messageToSave = mergeMessages(messageFromCache, { ...message, ...newMessageKeys });
-        const newMessage = await updateMessage(messageToSave, senderHasChanged, previousMessageKeys.privateKeys, api);
+        const previousAddressID = messageFromCache.data?.AddressID || '';
+        const newMessageKeys = await getMessageKeys(message.data);
+        const messageToSave = mergeMessages(messageFromCache, message) as MessageExtendedWithData;
+        const newMessage = await updateMessage(messageToSave, previousAddressID, api, getMessageKeys);
         updateMessageCache(messageCache, message.localID, {
             ...newMessageKeys,
             data: {
                 ...mergeSavedMessage(message.data, newMessage),
                 // If sender has changed, attachments are re-encrypted and then have to be updated
-                Attachments: senderHasChanged ? newMessage.Attachments : message.data?.Attachments,
+                Attachments: newMessage.Attachments,
             },
             document: message.document,
             plainText: message.plainText,

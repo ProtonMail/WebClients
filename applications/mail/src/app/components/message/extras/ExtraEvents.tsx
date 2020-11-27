@@ -31,14 +31,16 @@ import {
     getSupportedEventInvitation,
     parseEventInvitation,
 } from '../../../helpers/calendar/invite';
-
 import { MessageExtendedWithData } from '../../../models/message';
 import ExtraEvent from './calendar/ExtraEvent';
+import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 
 interface Props {
     message: MessageExtendedWithData;
 }
 const ExtraEvents = ({ message }: Props) => {
+    const api = useApi();
+    const getMessageKeys = useGetMessageKeys();
     const cache = useAttachmentCache();
     const [calendars = [], loadingCalendars] = useCalendars();
     const [contactEmails = [], loadingContactEmails] = useContactEmails() as [
@@ -56,7 +58,6 @@ const ExtraEvents = ({ message }: Props) => {
     );
     const [defaultCalendar, setDefaultCalendar] = useState<Calendar | undefined>();
     const [canCreateCalendar, setCanCreateCalendar] = useState<boolean>(true);
-    const api = useApi();
     const loadingConfigs =
         loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || loadingUser;
 
@@ -67,7 +68,7 @@ const ExtraEvents = ({ message }: Props) => {
             setInvitations([]);
             return;
         }
-        if (!message.privateKeys || message.errors?.decryption?.length || loadingConfigs) {
+        if (message.errors?.decryption?.length || loadingConfigs) {
             return;
         }
         let unmounted = false;
@@ -90,7 +91,8 @@ const ExtraEvents = ({ message }: Props) => {
                 await Promise.all(
                     eventAttachments.map(async (attachment: Attachment) => {
                         try {
-                            const download = await formatDownload(attachment, message, cache, api);
+                            const messageKeys = await getMessageKeys(message.data);
+                            const download = await formatDownload(attachment, message, messageKeys, cache, api);
                             if (download.isError) {
                                 return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
                             }
@@ -121,7 +123,7 @@ const ExtraEvents = ({ message }: Props) => {
         return () => {
             unmounted = true;
         };
-    }, [message.data, message.privateKeys, message.errors, loadingConfigs]);
+    }, [message.data, message.data.AddressID, message.errors, loadingConfigs]);
 
     if (loadingConfigs || loadingWidget) {
         return null;

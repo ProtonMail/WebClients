@@ -6,12 +6,12 @@ import { Icon, useToggle } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { diff } from 'proton-shared/lib/helpers/array';
 
-import { MessageExtended } from '../../../models/message';
+import { MessageExtendedWithData } from '../../../models/message';
 import { PendingUpload } from '../../../hooks/useAttachments';
 import { AttachmentItemNormal, AttachmentItemPending } from './AttachmentItem';
 
 interface Props {
-    message: MessageExtended;
+    message: MessageExtendedWithData;
     pendingUploads?: PendingUpload[];
     onRemoveAttachment: (attachment: Attachment) => () => void;
     onRemoveUpload: (pendingUpload: PendingUpload) => () => void;

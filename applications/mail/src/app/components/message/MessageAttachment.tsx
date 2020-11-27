@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { isEmbeddedLocal } from '../../helpers/embedded/embeddeds';
 import { useDownload } from '../../hooks/useDownload';
 
-import { MessageExtended } from '../../models/message';
+import { MessageExtendedWithData } from '../../models/message';
 
 // Reference: Angular/src/templates/attachments/attachmentElement.tpl.html
 
@@ -25,7 +25,7 @@ const getSenderVerificationString = (verified: VERIFICATION_STATUS) => {
 
 interface Props {
     attachment: Attachment;
-    message: MessageExtended;
+    message: MessageExtendedWithData;
 }
 
 const MessageAttachment = ({ attachment, message }: Props) => {

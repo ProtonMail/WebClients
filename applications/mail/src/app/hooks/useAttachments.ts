@@ -4,7 +4,6 @@ import { useState, useMemo, useCallback } from 'react';
 import { useApi, useNotifications, useAuthentication, useHandler } from 'react-components';
 import { c } from 'ttag';
 import { removeAttachment } from 'proton-shared/lib/api/attachments';
-
 import { Upload } from '../helpers/upload';
 import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../helpers/attachment/attachmentUploader';
 import {
@@ -18,6 +17,7 @@ import { MessageExtended, MessageExtendedWithData } from '../models/message';
 import { EditorActionsRef } from '../components/composer/editor/SquireEditorWrapper';
 import { MessageChange } from '../components/composer/Composer';
 import { useMessageCache } from '../containers/MessageProvider';
+import { useGetMessageKeys } from './message/useGetMessageKeys';
 
 export interface PendingUpload {
     file: File;
@@ -34,6 +34,7 @@ export const useAttachments = (
     const { createNotification } = useNotifications();
     const auth = useAuthentication();
     const messageCache = useMessageCache();
+    const getMessageKeys = useGetMessageKeys();
 
     // Pending files to upload
     const [pendingFiles, setPendingFiles] = useState<File[]>();
@@ -41,9 +42,15 @@ export const useAttachments = (
     // Pending uploads
     const [pendingUploads, setPendingUploads] = useState<PendingUpload[]>();
 
+    const { localID } = message;
+
     const uploadInProgress = useMemo(() => {
         return (pendingUploads?.length || 0) > 0;
     }, [pendingUploads]);
+
+    const addPendingUploads = (newPendingUploads: PendingUpload[]) => {
+        setPendingUploads((pendingUploads) => [...(pendingUploads || []), ...newPendingUploads]);
+    };
 
     const removePendingUpload = (pendingUpload: PendingUpload) => {
         setPendingUploads((pendingUploads) =>
@@ -54,39 +61,41 @@ export const useAttachments = (
     const ensureMessageIsCreated = async () => {
         await onSaveNow();
         // Message from cache has data because we just saved it if not
-        return messageCache.get(message.localID) as MessageExtendedWithData;
+        return messageCache.get(localID) as MessageExtendedWithData;
     };
 
     /**
      * Wait for upload to finish, modify the message, add to embedded images if needed
      */
     const handleAddAttachmentEnd = useHandler(async (action: ATTACHMENT_ACTION, pendingUpload: PendingUpload) => {
-        const upload = await pendingUpload.upload.resultPromise;
+        try {
+            const upload = await pendingUpload.upload.resultPromise;
 
-        removePendingUpload(pendingUpload);
+            onChange((message: MessageExtended) => {
+                // New attachment list
+                const Attachments = [...getAttachments(message.data), upload.attachment];
 
-        onChange((message: MessageExtended) => {
-            // New attachment list
-            const Attachments = [...getAttachments(message.data), upload.attachment];
+                // Update embeddeds map if embedded attachments
+                const embeddeds = cloneEmbedddedMap(message.embeddeds);
 
-            // Update embeddeds map if embedded attachments
-            const embeddeds = cloneEmbedddedMap(message.embeddeds);
+                if (action === ATTACHMENT_ACTION.INLINE) {
+                    const embeddedsToInsert = createEmbeddedMap();
+                    const cid = readCID(upload.attachment);
+                    const info = createEmbeddedInfo(upload);
 
-            if (action === ATTACHMENT_ACTION.INLINE) {
-                const embeddedsToInsert = createEmbeddedMap();
-                const cid = readCID(upload.attachment);
-                const info = createEmbeddedInfo(upload);
+                    embeddedsToInsert.set(cid, info);
+                    embeddeds.set(cid, info);
 
-                embeddedsToInsert.set(cid, info);
-                embeddeds.set(cid, info);
+                    setTimeout(() => {
+                        editorActionsRef.current?.insertEmbedded(embeddedsToInsert);
+                    });
+                }
 
-                setTimeout(() => {
-                    editorActionsRef.current?.insertEmbedded(embeddedsToInsert);
-                });
-            }
-
-            return { embeddeds, data: { Attachments } };
-        });
+                return { embeddeds, data: { Attachments } };
+            });
+        } finally {
+            removePendingUpload(pendingUpload);
+        }
     });
 
     const checkSize = (files: File[]) => {
@@ -107,9 +116,10 @@ export const useAttachments = (
         setPendingFiles(undefined);
 
         const messageFromCache = await ensureMessageIsCreated();
-        const uploads = upload(files, messageFromCache, action, auth.UID);
-        const pendingUploads = files?.map((file, i) => ({ file, upload: uploads[i] }));
-        setPendingUploads(pendingUploads);
+        const messageKeys = await getMessageKeys(messageFromCache.data);
+        const uploads = upload(files, messageFromCache, messageKeys, action, auth.UID);
+        const pendingUploads = files.map((file, i) => ({ file, upload: uploads[i] }));
+        addPendingUploads(pendingUploads);
 
         pendingUploads.forEach((pendingUpload) => handleAddAttachmentEnd(action, pendingUpload));
     };
@@ -177,7 +187,7 @@ export const useAttachments = (
      */
     const handleRemoveUpload = (pendingUpload: PendingUpload) => () => {
         pendingUpload.upload.abort();
-        removePendingUpload(pendingUpload);
+        void removePendingUpload(pendingUpload);
     };
 
     return {

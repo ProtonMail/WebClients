@@ -9,7 +9,7 @@ import { encryptAttachment } from 'proton-shared/lib/mail/send/attachments';
 import { c } from 'ttag';
 import { ATTACHMENT_MAX_SIZE } from '../../constants';
 
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { generateCid, isEmbeddable } from '../embedded/embeddeds';
 import { RequestParams, upload as uploadHelper, Upload } from '../upload';
 
@@ -19,12 +19,13 @@ type UploadQueryResult = Promise<{ Attachment: Attachment }>;
 
 export enum ATTACHMENT_ACTION {
     ATTACHMENT = 'attachment',
-    INLINE = 'inline'
+    INLINE = 'inline',
 }
 
 export interface UploadResult {
     attachment: Attachment;
     packets: Packets;
+    addressID: string; // The addressID used to encrypt packets
 }
 
 /**
@@ -48,6 +49,7 @@ const encryptFile = async (file: File, inline: boolean, pubKeys: OpenPGPKey[], p
 const uploadFile = (
     file: File,
     message: MessageExtendedWithData,
+    messageKeys: MessageKeys,
     inline: boolean,
     uid: string,
     cid = ''
@@ -57,8 +59,9 @@ const uploadFile = (
     const filename = file.name || `${titleImage} ${getAttachments(message.data).length + 1}`;
     const ContentID = inline ? cid || generateCid(generateProtonWebUID(), message.data?.Sender?.Address || '') : '';
 
-    const publicKeys = message.publicKeys && message.publicKeys.length > 0 ? [message.publicKeys[0]] : [];
-    const privateKeys = message.privateKeys && message.privateKeys.length > 0 ? [message.privateKeys[0]] : [];
+    const publicKeys = messageKeys.publicKeys && messageKeys.publicKeys.length > 0 ? [messageKeys.publicKeys[0]] : [];
+    const privateKeys =
+        messageKeys.privateKeys && messageKeys.privateKeys.length > 0 ? [messageKeys.privateKeys[0]] : [];
 
     let packets: Packets;
 
@@ -70,9 +73,9 @@ const uploadFile = (
             MessageID: message.data.ID,
             ContentID,
             MIMEType: packets.MIMEType,
-            KeyPackets: new Blob([packets.keys] as any),
-            DataPacket: new Blob([packets.data] as any),
-            Signature: packets.signature ? new Blob([packets.signature] as any) : undefined
+            KeyPackets: new Blob([packets.keys]),
+            DataPacket: new Blob([packets.data]),
+            Signature: packets.signature ? new Blob([packets.signature]) : undefined,
         }) as RequestParams;
     };
 
@@ -80,12 +83,12 @@ const uploadFile = (
 
     const attachPackets = async () => {
         const result = await upload.resultPromise;
-        return { attachment: result.Attachment, packets };
+        return { attachment: result.Attachment, packets, addressID: message.data.AddressID };
     };
 
     return {
         ...upload,
-        resultPromise: attachPackets()
+        resultPromise: attachPackets(),
     };
 };
 
@@ -95,13 +98,14 @@ const uploadFile = (
 export const upload = (
     files: File[] = [],
     message: MessageExtendedWithData,
+    messageKeys: MessageKeys,
     action = ATTACHMENT_ACTION.ATTACHMENT,
     uid: string,
     cid = ''
 ): Upload<UploadResult>[] => {
     return files.map((file) => {
         const inline = isEmbeddable(file.type) && action === ATTACHMENT_ACTION.INLINE;
-        return uploadFile(file, message, inline, uid, cid);
+        return uploadFile(file, message, messageKeys, inline, uid, cid);
     });
 };
 

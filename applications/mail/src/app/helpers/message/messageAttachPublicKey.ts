@@ -1,8 +1,7 @@
-import { OpenPGPKey } from 'pmcrypto';
 import { keyInfo } from 'pmcrypto/lib/pmcrypto';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 
-import { MessageExtended, MessageExtendedWithData } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { upload, ATTACHMENT_ACTION } from '../attachment/attachmentUploader';
 
 // TS Hack waiting for keyInfo to be completely typed
@@ -35,10 +34,10 @@ const fileFromKeyInfo = (message: MessageExtended, { publicKeyArmored, fingerpri
 /**
  * Attaches the senders public key to the message
  */
-export const attachPublicKey = async (message: MessageExtendedWithData, uid: string) => {
+export const attachPublicKey = async (message: MessageExtendedWithData, messageKeys: MessageKeys, uid: string) => {
     const attachments = message.data?.Attachments || [];
 
-    const privateKeys = message.privateKeys?.[0] as OpenPGPKey;
+    const privateKeys = messageKeys.privateKeys?.[0];
     const info = await keyInfo(privateKeys.armor());
     const file = fileFromKeyInfo(message, info);
     const attachmentExists = attachments.some((attachment) => blobEqualsAttachment(file, attachment));
@@ -47,7 +46,7 @@ export const attachPublicKey = async (message: MessageExtendedWithData, uid: str
         return attachments;
     }
 
-    const [uploadInfo] = upload([file], message, ATTACHMENT_ACTION.ATTACHMENT, uid);
+    const [uploadInfo] = upload([file], message, messageKeys, ATTACHMENT_ACTION.ATTACHMENT, uid);
     const uploadResult = await uploadInfo.resultPromise;
     return [...attachments, uploadResult.attachment];
 };

@@ -4,7 +4,7 @@ import React, { MutableRefObject, DragEvent, useState, DragEventHandler } from '
 import { c } from 'ttag';
 import { classnames } from 'react-components';
 
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import AttachmentsList from './attachments/AttachmentsList';
 import SquireEditorWrapper, { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
@@ -125,7 +125,7 @@ const ComposerContent = ({
             </div>
             {showAttachements && (
                 <AttachmentsList
-                    message={message}
+                    message={message as MessageExtendedWithData}
                     pendingUploads={pendingUploads}
                     onRemoveAttachment={onRemoveAttachment}
                     onRemoveUpload={onRemoveUpload}

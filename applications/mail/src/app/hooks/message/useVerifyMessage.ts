@@ -7,16 +7,18 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { LARGE_KEY_SIZE } from '../../constants';
 import { get } from '../../helpers/attachment/attachmentLoader';
-import { MessageExtended, MessageErrors, MessageExtendedWithData } from '../../models/message';
+import { MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
+import { useGetMessageKeys } from './useGetMessageKeys';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();
     const messageCache = useMessageCache();
     const attachmentsCache = useAttachmentCache();
     const getEncryptionPreferences = useGetEncryptionPreferences();
+    const getMessageKeys = useGetMessageKeys();
 
     return useCallback(
         async (decryptedBody: string, signature?: OpenPGPSignature) => {
@@ -24,8 +26,7 @@ export const useVerifyMessage = (localID: string) => {
             // To have the most up to date version, best is to get back to the cache version each time
             const getData = () => (messageCache.get(localID) as MessageExtendedWithData).data;
 
-            // Cache entry will be (at least) initialized by the queue system
-            const messageFromCache = messageCache.get(localID) as MessageExtended;
+            const message = messageCache.get(localID) as MessageExtendedWithData;
 
             const errors: MessageErrors = {};
 
@@ -38,10 +39,8 @@ export const useVerifyMessage = (localID: string) => {
             try {
                 encryptionPreferences = await getEncryptionPreferences(getData().Sender.Address as string);
 
-                const messageWithKeys = {
-                    ...messageFromCache,
-                    publicKeys: encryptionPreferences.pinnedKeys,
-                };
+                const messageKeys = await getMessageKeys(getData());
+                messageKeys.publicKeys = encryptionPreferences.pinnedKeys;
 
                 verification = await verifyMessage(
                     decryptedBody,
@@ -59,7 +58,7 @@ export const useVerifyMessage = (localID: string) => {
                     await Promise.all(
                         keyAttachments.map(async (attachment) => {
                             try {
-                                const { data } = await get(attachment, messageWithKeys, attachmentsCache, api);
+                                const { data } = await get(attachment, message, messageKeys, attachmentsCache, api);
                                 const [key] = await getKeys(arrayToBinaryString(data));
                                 return key;
                             } catch (e) {

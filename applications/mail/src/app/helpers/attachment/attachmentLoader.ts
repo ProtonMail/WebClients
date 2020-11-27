@@ -13,11 +13,9 @@ import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
 
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageKeys } from '../../models/message';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js
-
-// TODO: Handle isOutside()
 
 export const decrypt = async (
     encryptedBinaryBuffer: ArrayBuffer,
@@ -42,23 +40,18 @@ export const decrypt = async (
 };
 
 export const getRequest = ({ ID = '' }: Attachment = {}, api: Api): Promise<ArrayBuffer> => {
-    // if (isOutside()) {
-    //     const decryptedToken = eoStore.getToken();
-    //     const token = $stateParams.tag;
-    //     return Eo.attachment(decryptedToken, token, ID);
-    // }
-
     return api(getAttachment(ID));
 };
 
 export const getDecryptedAttachment = async (
     attachment: Attachment,
     message: MessageExtended,
+    messageKeys: MessageKeys,
     api: Api
 ): Promise<DecryptResultPmcrypto> => {
     const encryptedBinary = await getRequest(attachment, api);
     try {
-        const sessionKey = await getSessionKey(attachment, message.privateKeys || []);
+        const sessionKey = await getSessionKey(attachment, messageKeys.privateKeys);
         // verify attachment signature only when sender is verified
         const publicKeys = message.senderVerified ? message.senderPinnedKeys : undefined;
         return await decrypt(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
@@ -76,6 +69,7 @@ export const getDecryptedAttachment = async (
 export const getAndVerify = async (
     attachment: Attachment = {},
     message: MessageExtended,
+    messageKeys: MessageKeys,
     reverify = false,
     cache: AttachmentsCache,
     api: Api
@@ -100,7 +94,7 @@ export const getAndVerify = async (
         // TODO: implement reverification of MIME attachment
         attachmentdata = isMIMEAttachment
             ? (cache.get(attachmentID) as DecryptResultPmcrypto)
-            : await getDecryptedAttachment(attachment, message, api);
+            : await getDecryptedAttachment(attachment, message, messageKeys, api);
     }
 
     cache.set(attachmentID, attachmentdata);
@@ -111,19 +105,21 @@ export const getAndVerify = async (
 export const get = (
     attachment: Attachment = {},
     message: MessageExtended,
+    messageKeys: MessageKeys,
     cache: AttachmentsCache,
     api: Api
 ): Promise<DecryptResultPmcrypto> => {
     const reverify = false;
-    return getAndVerify(attachment, message, reverify, cache, api);
+    return getAndVerify(attachment, message, messageKeys, reverify, cache, api);
 };
 
 export const reverify = (
     attachment: Attachment = {},
     message: MessageExtended,
+    messageKeys: MessageKeys,
     cache: AttachmentsCache,
     api: Api
 ): Promise<DecryptResultPmcrypto> => {
     const reverify = true;
-    return getAndVerify(attachment, message, reverify, cache, api);
+    return getAndVerify(attachment, message, messageKeys, reverify, cache, api);
 };

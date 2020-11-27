@@ -5,15 +5,15 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from 'proton-shared/lib/mail/messages';
 import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
-
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { mutateHTMLCid } from '../embedded/embeddedParser';
 import { find } from '../embedded/embeddedFinder';
 import { getDocumentContent, getPlainTextContent } from './messageContent';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { splitMail, combineHeaders } from '../mail';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
+import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 
 export const prepareExport = (message: MessageExtended) => {
     if (!message.document) {
@@ -27,23 +27,22 @@ export const prepareExport = (message: MessageExtended) => {
     return document;
 };
 
-const encryptBody = async (content: string, publicKeys?: OpenPGPKey[], privateKeys?: OpenPGPKey[]) => {
+const encryptBody = async (content: string, messageKeys: MessageKeys) => {
     const { data } = await encryptMessage({
         data: content,
-        publicKeys: [publicKeys?.[0]] as OpenPGPKey[],
-        privateKeys: [privateKeys?.[0]] as OpenPGPKey[],
-        // format: 'utf8',
+        publicKeys: [messageKeys.publicKeys?.[0]],
+        privateKeys: [messageKeys.privateKeys?.[0]],
         compression: enums.compression.zip,
     });
 
     return data;
 };
 
-export const prepareAndEncryptBody = async (message: MessageExtended) => {
+export const prepareAndEncryptBody = async (message: MessageExtended, messageKeys: MessageKeys) => {
     const plainText = isPlainText(message.data);
     const document = plainText ? undefined : prepareExport(message);
     const content = plainText ? getPlainTextContent(message) : getDocumentContent(document);
-    const encrypted = await encryptBody(content, message.publicKeys, message.privateKeys);
+    const encrypted = await encryptBody(content, messageKeys);
     return { document, content, encrypted };
 };
 
@@ -52,43 +51,52 @@ export const encryptAttachmentKeyPackets = async (
     previousAddressPrivateKeys: OpenPGPKey[] = [],
     newAddressPublicKeys: OpenPGPKey[] = []
 ) => {
-    const packets: { [key: string]: string } = {};
-
-    await Promise.all(
-        attachments
-            .filter(({ ID = '' }) => ID.indexOf('PGPAttachment'))
-            .map(async (attachment) => {
-                const sessionKey = await getSessionKey(attachment, previousAddressPrivateKeys);
-                const result = await encryptSessionKey({
-                    data: sessionKey.data,
-                    algorithm: sessionKey.algorithm,
-                    publicKeys: newAddressPublicKeys,
-                });
-                packets[attachment.ID || ''] = encodeBase64(
-                    arrayToBinaryString(result.message.packets.write() as Uint8Array)
-                );
-            })
+    return Object.fromEntries(
+        await Promise.all(
+            attachments
+                .filter(({ ID = '' }) => ID.indexOf('PGPAttachment'))
+                .map(async (attachment) => {
+                    const sessionKey = await getSessionKey(attachment, previousAddressPrivateKeys);
+                    const result = await encryptSessionKey({
+                        data: sessionKey.data,
+                        algorithm: sessionKey.algorithm,
+                        publicKeys: newAddressPublicKeys,
+                    });
+                    return [
+                        attachment.ID || '',
+                        encodeBase64(arrayToBinaryString(result.message.packets.write() as Uint8Array)),
+                    ];
+                })
+        )
     );
-
-    return packets;
 };
 
-export const createMessage = async (message: MessageExtended, api: Api): Promise<Message> => {
-    const { encrypted: Body } = await prepareAndEncryptBody(message);
-    const AttachmentKeyPackets = await encryptAttachmentKeyPackets(
-        getAttachments(message.data),
-        message.privateKeys,
-        message.publicKeys
-    );
+export const createMessage = async (
+    message: MessageExtendedWithData,
+    api: Api,
+    getMessageKeys: GetMessageKeys
+): Promise<Message> => {
+    const messageKeys = await getMessageKeys(message.data);
+    const { encrypted: Body } = await prepareAndEncryptBody(message, messageKeys);
+    const attachments = getAttachments(message.data);
+
+    let AttachmentKeyPackets;
+    if (attachments?.length && message.originalAddressID && message.originalAddressID !== message.data.AddressID) {
+        const originalMessageKeys = await getMessageKeys({ AddressID: message.originalAddressID });
+        AttachmentKeyPackets = await encryptAttachmentKeyPackets(
+            attachments,
+            originalMessageKeys.privateKeys,
+            messageKeys.publicKeys
+        );
+    }
     const { Message: updatedMessage } = await api(
         createDraft({
             Action: message.action !== MESSAGE_ACTIONS.NEW ? message.action : undefined,
             Message: { ...message.data, Body },
             ParentID: message.ParentID,
             AttachmentKeyPackets,
-        } as any)
+        })
     );
-
     return updatedMessage;
 };
 
@@ -100,19 +108,23 @@ export const createMessage = async (message: MessageExtended, api: Api): Promise
  * @param api Api handler to use
  */
 export const updateMessage = async (
-    message: MessageExtended,
-    senderHasChanged: boolean,
-    previousAddressPrivateKeys: OpenPGPKey[],
-    api: Api
+    message: MessageExtendedWithData,
+    previousAddressID: string,
+    api: Api,
+    getMessageKeys: GetMessageKeys
 ): Promise<Message> => {
-    const { encrypted: Body } = await prepareAndEncryptBody(message);
-    const AttachmentKeyPackets = senderHasChanged
-        ? await encryptAttachmentKeyPackets(
-              getAttachments(message.data),
-              previousAddressPrivateKeys,
-              message.publicKeys
-          )
-        : undefined;
+    const messageKeys = await getMessageKeys(message.data);
+    const { encrypted: Body } = await prepareAndEncryptBody(message, messageKeys);
+    const attachments = getAttachments(message.data);
+    let AttachmentKeyPackets;
+    if (attachments?.length && previousAddressID !== message.data.AddressID) {
+        const previousMessageKeys = await getMessageKeys({ AddressID: previousAddressID });
+        AttachmentKeyPackets = await encryptAttachmentKeyPackets(
+            attachments,
+            previousMessageKeys.privateKeys,
+            messageKeys.publicKeys
+        );
+    }
     const { Message: updatedMessage } = await api(
         updateDraft(message.data?.ID, { ...message.data, Body }, AttachmentKeyPackets)
     );
@@ -123,8 +135,13 @@ export const updateMessage = async (
  * Prepare a message a blob to download
  * Use mime format, don't encrypt,
  */
-export const exportBlob = async (message: MessageExtended, attachmentsCache: AttachmentsCache, api: Api) => {
-    const mimeMessage = await constructMimeFromSource(message, attachmentsCache, api);
+export const exportBlob = async (
+    message: MessageExtended,
+    messageKeys: MessageKeys,
+    attachmentsCache: AttachmentsCache,
+    api: Api
+) => {
+    const mimeMessage = await constructMimeFromSource(message, messageKeys, attachmentsCache, api);
     const { body, headers: mimeHeaders } = splitMail(mimeMessage);
     const headers = await combineHeaders(message.data?.Header || '', mimeHeaders);
 

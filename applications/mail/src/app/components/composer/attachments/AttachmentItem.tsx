@@ -6,7 +6,7 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 
 import { PendingUpload } from '../../../hooks/useAttachments';
 import { useDownload } from '../../../hooks/useDownload';
-import { MessageExtended } from '../../../models/message';
+import { MessageExtendedWithData } from '../../../models/message';
 
 interface Props {
     name: string;
@@ -75,7 +75,7 @@ const AttachmentItem = ({ name, size = 0, progression = 0, onDownload, onRemove 
 };
 
 interface PropsNormal {
-    message: MessageExtended;
+    message: MessageExtendedWithData;
     attachment: Attachment;
     onRemove: () => void;
 }

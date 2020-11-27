@@ -3,7 +3,7 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { isDraft } from 'proton-shared/lib/mail/messages';
 
-import { MessageExtended, EmbeddedMap } from '../../models/message';
+import { MessageExtended, EmbeddedMap, MessageKeys } from '../../models/message';
 import { escapeSrc, unescapeSrc, wrap } from '../dom';
 import { ENCRYPTED_STATUS } from '../../constants';
 import { getAttachment, findEmbedded } from './embeddedFinder';
@@ -140,6 +140,7 @@ export const removeEmbeddedHTML = (document: Element, attachment: Attachment) =>
  */
 const triggerSigVerification = (
     message: MessageExtended,
+    messageKeys: MessageKeys,
     attachments: Attachment[],
     api: Api,
     cache: AttachmentsCache
@@ -151,7 +152,7 @@ const triggerSigVerification = (
      */
     void Promise.all(
         attachments.map(async (attachment) => {
-            await get(attachment, message, cache, api);
+            await get(attachment, message, messageKeys, cache, api);
             await wait(1000);
             // invalidSignature.askAgain(message, attachment, false);
         })
@@ -210,7 +211,12 @@ export const mutateHTMLCid = (embeddeds: EmbeddedMap | undefined, document: Elem
     );
 };
 
-export const decrypt = async (message: MessageExtended, api: Api, cache: AttachmentsCache) => {
+export const decrypt = async (
+    message: MessageExtended,
+    messageKeys: MessageKeys,
+    api: Api,
+    cache: AttachmentsCache
+) => {
     // const show = message.showEmbeddedImages === true || mailSettings.ShowImages & SHOW_IMAGES.EMBEDDED;
     // const sigList = show ? list : list.filter(({ attachment }) => cache.has(attachment.ID));
 
@@ -223,7 +229,7 @@ export const decrypt = async (message: MessageExtended, api: Api, cache: Attachm
         .filter((info) => info.attachment.KeyPackets || info.attachment.Encrypted === ENCRYPTED_STATUS.PGP_MIME)
         .filter((info) => !info.url)
         .map(async (info) => {
-            const buffer = await get(info.attachment, message, cache, api);
+            const buffer = await get(info.attachment, message, messageKeys, cache, api);
             info.url = createBlob(info.attachment, buffer.data as Uint8Array);
         });
 
@@ -231,7 +237,7 @@ export const decrypt = async (message: MessageExtended, api: Api, cache: Attachm
 
     if (!promises.length) {
         // all cid was already stored, we can resolve
-        triggerSigVerification(message, attachments, api, cache);
+        triggerSigVerification(message, messageKeys, attachments, api, cache);
         return;
     }
 
@@ -239,5 +245,5 @@ export const decrypt = async (message: MessageExtended, api: Api, cache: Attachm
 
     // We need to trigger on the original list not after filtering: after filter they are just stored
     // somewhere else
-    triggerSigVerification(message, attachments, api, cache);
+    triggerSigVerification(message, messageKeys, attachments, api, cache);
 };

@@ -4,10 +4,15 @@ import { isDraft } from 'proton-shared/lib/mail/messages';
 import { find } from '../embedded/embeddedFinder';
 import { mutateHTMLBlob, decrypt, prepareImages } from '../embedded/embeddedParser';
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageKeys } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
-export const transformEmbedded = async (message: MessageExtended, attachmentsCache: AttachmentsCache, api: Api) => {
+export const transformEmbedded = async (
+    message: MessageExtended,
+    messageKeys: MessageKeys,
+    attachmentsCache: AttachmentsCache,
+    api: Api
+) => {
     const show = message.showEmbeddedImages === true || isDraft(message.data);
     const isReplyForward =
         message.action === MESSAGE_ACTIONS.REPLY ||
@@ -29,7 +34,7 @@ export const transformEmbedded = async (message: MessageExtended, attachmentsCac
             mutateHTMLBlob(message.embeddeds, message.document);
         }
     } else {
-        await decrypt(message, api, attachmentsCache);
+        await decrypt(message, messageKeys, api, attachmentsCache);
         mutateHTMLBlob(message.embeddeds, message.document);
     }
 

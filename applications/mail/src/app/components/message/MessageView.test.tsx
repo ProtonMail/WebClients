@@ -142,6 +142,7 @@ describe('MessageView', () => {
 
             const mimeBody = await constructMime(
                 { localID, data: message, document: parseInDiv(body) },
+                toKeys,
                 attachmentsCache,
                 api,
                 false
@@ -173,6 +174,7 @@ describe('MessageView', () => {
 
             const mimeBody = await constructMime(
                 { localID, data: { ...message, MIMEType: MIME_TYPES.PLAINTEXT }, plainText: body },
+                toKeys,
                 attachmentsCache,
                 api,
                 false
