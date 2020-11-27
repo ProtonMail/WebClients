@@ -1,19 +1,19 @@
 import React, { useRef, useState } from 'react';
 import { SelectTwo, Option, Icon } from 'react-components';
-import mdx from './Select.mdx'
+import mdx from './Select.mdx';
 
 export default {
     title: 'Components / Select',
     component: SelectTwo,
     parameters: {
         docs: {
-            page: mdx
-        }
-    }
-}
+            page: mdx,
+        },
+    },
+};
 
-export const basic = () => {
-    const [ value, setValue ] = useState('ant');
+export const Basic = () => {
+    const [value, setValue] = useState('ant');
 
     return (
         <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
@@ -50,36 +50,32 @@ export const ControlledOpenState = () => {
     );
 };
 
-export const withRichOptionContent = () => {
-    const [ value, setValue ] = useState('reddit');
+export const WithRichOptionContent = () => {
+    const [value, setValue] = useState('reddit');
 
     return (
         <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
             <Option title="Reddit" value="reddit">
-                <Icon name="reddit"/> Reddit
+                <Icon name="reddit" /> Reddit
             </Option>
             <Option title="Twitter" value="twitter">
-                <Icon name="twitter"/> Twitter
+                <Icon name="twitter" /> Twitter
             </Option>
             <Option title="Yahoo" value="yahoo">
-                <Icon name="yahoo"/> Yahoo
+                <Icon name="yahoo" /> Yahoo
             </Option>
             <Option title="Youtube" value="youtube">
-                <Icon name="youtube"/> Youtube
+                <Icon name="youtube" /> Youtube
             </Option>
         </SelectTwo>
     );
 };
 
-export const withCustomSearchClearTimer = () => {
-    const [ value, setValue ] = useState('ant');
+export const WithCustomSearchClearTimer = () => {
+    const [value, setValue] = useState('ant');
 
     return (
-        <SelectTwo
-            value={value}
-            onChange={({ value: v }) => setValue(v)}
-            clearSearchAfter={1000}
-        >
+        <SelectTwo value={value} onChange={({ value: v }) => setValue(v)} clearSearchAfter={1000}>
             <Option title="Ant" value="ant" />
             <Option title="Bear" value="bear" />
             <Option title="Chimpanzee" value="chimpanzee" />
@@ -89,23 +85,19 @@ export const withCustomSearchClearTimer = () => {
     );
 };
 
-export const withComplexValues = () => {
+export const WithComplexValues = () => {
     /*
      * The useRef is used here in order to preserve identity of the value to its
      * option between render cycles since the Select uses identity comparison to
      * determine which option is selected.
      */
-    const { current: options } = useRef([
-        { name: 'ant' },
-        { name: 'bear' },
-        { name: 'chimpanzee' }
-    ])
+    const { current: options } = useRef([{ name: 'ant' }, { name: 'bear' }, { name: 'chimpanzee' }]);
 
-    const [ value, setValue ] = useState<{ name: string } | null>(options[0]);
+    const [value, setValue] = useState<{ name: string } | null>(options[0]);
 
     return (
         <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
-            {options.map(option => (
+            {options.map((option) => (
                 <Option title={option.name} value={option} />
             ))}
         </SelectTwo>
