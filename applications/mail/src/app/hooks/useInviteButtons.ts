@@ -76,7 +76,7 @@ const useInviteButtons = ({
                 await sendIcs({
                     ics,
                     addressID: attendee.addressID,
-                    from: { Address: attendee.emailAddress, Name: attendee.displayName || attendee.emailAddress },
+                    from: { Address: attendee.emailAddress, Name: attendee.name || attendee.emailAddress },
                     to: [{ Address: organizer.emailAddress, Name: organizer.name }],
                     subject,
                 });
