@@ -12,9 +12,9 @@ const toCard = ({ Details = {}, Type }) => {
     if (Type === 'card') {
         return {
             fullname: Details.Name,
-            month: Details.ExpMonth,
+            month: `${Details.ExpMonth}`, // ExpMonth is a number
             number: '',
-            year: Details.ExpYear.slice(-2),
+            year: `${Details.ExpYear}`.slice(-2), // ExpYear is a number
             cvc: '',
             zip: Details.ZIP,
             country: Details.Country,
