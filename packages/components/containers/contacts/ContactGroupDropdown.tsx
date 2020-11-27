@@ -161,11 +161,11 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
         if (!Array.isArray(contactGroups)) {
             return [];
         }
-        const normalizedKeyword = normalize(keyword);
+        const normalizedKeyword = normalize(keyword, true);
         if (!normalizedKeyword.length) {
             return contactGroups;
         }
-        return contactGroups.filter(({ Name }) => normalize(Name).includes(normalizedKeyword));
+        return contactGroups.filter(({ Name }) => normalize(Name, true).includes(normalizedKeyword));
     }, [keyword, contactGroups]);
 
     return (
