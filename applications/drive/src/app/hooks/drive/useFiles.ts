@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { generateNodeKeys, generateContentKeys, encryptName, getStreamMessage } from 'proton-shared/lib/keys/driveKeys';
 import { range, mergeUint8Arrays } from 'proton-shared/lib/helpers/array';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
 import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
@@ -44,7 +43,7 @@ import useEvents from './useEvents';
 import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
 import useConfirm from '../util/useConfirm';
 import { mimetypeFromExtension } from '../../utils/MimeTypeParser/helpers';
-import { adjustName } from '../../utils/link';
+import { adjustName, splitLinkName } from '../../utils/link';
 import { generateLookupHash } from '../../utils/hash';
 
 const HASH_CHECK_AMOUNT = 10;
@@ -75,7 +74,7 @@ function useFiles() {
                 throw Error('Missing hash key on folder link');
             }
 
-            const [namePart, extension] = splitExtension(filename);
+            const [namePart, extension] = splitLinkName(filename);
 
             const findAdjustedName = async (
                 start = 0

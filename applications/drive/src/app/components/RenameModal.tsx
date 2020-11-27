@@ -1,11 +1,10 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react';
 import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
 import { c } from 'ttag';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { LinkType } from '../interfaces/link';
 import { validateLinkNameField } from '../utils/validation';
-import { formatLinkName } from '../utils/link';
+import { formatLinkName, splitLinkName } from '../utils/link';
 import useDrive from '../hooks/drive/useDrive';
 import { DriveFolder } from './Drive/DriveFolderProvider';
 import { MAX_NAME_LENGTH } from '../constants';
@@ -31,7 +30,7 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
             return;
         }
         setAutofocusDone(true);
-        const [namePart] = splitExtension(item.Name);
+        const [namePart] = splitLinkName(item.Name);
         if (!namePart || item.Type === LinkType.FOLDER) {
             return e.target.select();
         }
