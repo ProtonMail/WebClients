@@ -2,14 +2,13 @@ import { ReadableStream } from 'web-streams-polyfill';
 import { Writer as ZipWriter } from '@transcend-io/conflux';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { isWindows } from 'proton-shared/lib/helpers/browser';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { openDownloadStream, initDownloadSW } from './download';
 import { TransferMeta } from '../../interfaces/transfer';
 import { streamToBuffer } from '../stream';
 import { NestedFileStream } from '../../interfaces/file';
 import { MEMORY_DOWNLOAD_LIMIT } from '../../constants';
 import { isTransferCancelError } from '../transfer';
-import { adjustName, adjustWindowsLinkName } from '../link';
+import { adjustName, adjustWindowsLinkName, splitLinkName } from '../link';
 
 class FileSaver {
     private useBlobFallback = false;
@@ -93,7 +92,7 @@ class FileSaver {
 
         const adjustFileName = ({ fileName, parentPath }: NestedFileStream) => {
             const fixedName = isWindows() ? adjustWindowsLinkName(fileName) : fileName;
-            const [namePart, extension] = splitExtension(fixedName);
+            const [namePart, extension] = splitLinkName(fixedName);
 
             const deduplicate = (index = 0): string => {
                 const adjustedName = adjustName(index, namePart, extension);

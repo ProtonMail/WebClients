@@ -1,3 +1,4 @@
+import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SharedURLFlags } from '../interfaces/sharing';
 
@@ -34,6 +35,13 @@ export const isCustomSharedURLPassword = (sharedURL: { Flags?: number }) => {
 
 export const formatLinkName = (str: string) => str.trim();
 
+export const splitLinkName = (linkName: string) => {
+    if (linkName.endsWith('.')) {
+        return [linkName, ''];
+    }
+    return splitExtension(linkName);
+};
+
 export const adjustWindowsLinkName = (fileName: string) => {
     let adjustedFileName = fileName.replaceAll(RegExp(WINDOWS_FORBIDDEN_CHARACTERS, 'g'), '_');
 
@@ -50,7 +58,7 @@ export const adjustWindowsLinkName = (fileName: string) => {
 
 export const adjustName = (index: number, namePart: string, extension?: string) => {
     if (index === 0) {
-        return [namePart, extension].filter(isTruthy).join('.');
+        return extension ? `${namePart}.${extension}` : namePart;
     }
 
     if (!namePart) {
