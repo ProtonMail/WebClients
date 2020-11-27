@@ -1,10 +1,9 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Href, Icon, useFolders } from 'react-components';
+import { Icon, useFolders } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
-import { pick } from 'proton-shared/lib/helpers/object';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
@@ -12,7 +11,7 @@ import { MessageExtended } from '../../../models/message';
 import { getCurrentFolders, isCustomLabel } from '../../../helpers/labels';
 import { getNumAttachmentByType } from '../../../helpers/message/messages';
 import { getSize, getLabelIDs } from '../../../helpers/elements';
-import { getSendIconHref, MessageViewIcons } from '../../../helpers/message/icon';
+import { MessageViewIcons } from '../../../helpers/message/icon';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import ItemLocation from '../../list/ItemLocation';
 
@@ -26,7 +25,6 @@ interface Props {
 
 const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mailSettings }: Props) => {
     const icon = messageViewIcons.globalIcon;
-    const href = icon ? getSendIconHref(pick(icon, ['isEncrypted', 'fill'])) : undefined;
 
     const [customFolders = []] = useFolders();
     const folders = getCurrentFolders(message.data, customFolders, mailSettings);
@@ -62,9 +60,8 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                     <span className="container-to flex">
                         <EncryptionStatusIcon useTooltip={false} {...icon} />
                     </span>
-                    <span className="ellipsis">{icon.text}</span>
-                    <span className="flex-item-noshrink no-wrap">
-                        &nbsp;(<Href href={href}>{c('Action').t`learn more`}</Href>)
+                    <span className="ellipsis" title={icon.text}>
+                        {icon.text}
                     </span>
                 </div>
             )}
@@ -87,20 +84,26 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                         />
                     </span>
                 </span>
-                <span className="flex-self-vcenter mr0-5 ellipsis">{locationText}</span>
+                <span className="flex-self-vcenter mr0-5 ellipsis" title={locationText}>
+                    {locationText}
+                </span>
             </div>
             <div className="mb0-5 flex flex-nowrap">
                 <span className="container-to flex">
                     <Icon name="user-storage" className="mauto" alt={c('Label').t`Size:`} />
                 </span>
-                <span className="flex-self-vcenter mr0-5 ellipsis">{sizeText}</span>
+                <span className="flex-self-vcenter mr0-5 ellipsis" title={sizeText}>
+                    {sizeText}
+                </span>
             </div>
             {attachmentsText && (
                 <div className="mb0-5 flex flex-nowrap">
                     <span className="container-to flex">
                         <Icon name="attach" className="mauto" alt={c('Alt').t`Has attachments`} />
                     </span>
-                    <span className="flex-self-vcenter mr0-5 ellipsis">{attachmentsText}</span>
+                    <span className="flex-self-vcenter mr0-5 ellipsis" title={attachmentsText}>
+                        {attachmentsText}
+                    </span>
                 </div>
             )}
             {labelIDs.length > 0 && (
