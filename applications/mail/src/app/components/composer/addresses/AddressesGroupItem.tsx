@@ -86,9 +86,9 @@ const AddressesGroupItem = ({
         setModalID(undefined);
     };
 
-    const handleCopy = (event: MouseEvent) => {
+    const handleCopy = (event: MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
-        textToClipboard(recipientGroup.recipients.map((recipient) => recipient.Address).join(';'));
+        textToClipboard(recipientGroup.recipients.map((recipient) => recipient.Address).join(';'), event.currentTarget);
         createNotification({ text: c('Info').t`Copied to clipboard` });
         closeContextMenu();
     };

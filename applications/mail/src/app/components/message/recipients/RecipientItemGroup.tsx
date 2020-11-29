@@ -57,9 +57,9 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, contacts, showA
         close();
     };
 
-    const handleCopy = (event: MouseEvent) => {
+    const handleCopy = (event: MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
-        textToClipboard(group.recipients.map((recipient) => recipient.Address).join(';'));
+        textToClipboard(group.recipients.map((recipient) => recipient.Address).join(';'), event.currentTarget);
         createNotification({ text: c('Info').t`Copied to clipboard` });
         close();
     };

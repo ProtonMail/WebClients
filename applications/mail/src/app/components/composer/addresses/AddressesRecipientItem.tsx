@@ -117,9 +117,9 @@ const AddressesRecipientItem = ({
         openContextMenu();
     };
 
-    const handleCopy = (event: MouseEvent) => {
+    const handleCopy = (event: MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
-        textToClipboard(recipient.Address);
+        textToClipboard(recipient.Address, event.currentTarget);
         createNotification({ text: c('Info').t`Copied to clipboard` });
         closeContextMenu();
     };
