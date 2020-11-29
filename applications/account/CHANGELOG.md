@@ -1,3 +1,15 @@
+# [4.0.0-beta.6] - 2020-11-30
+
+## Fixes
+
+- Copy button not working for the value field during custom domain configuration
+- A crash on the subscription screen if credit card details are stored in the wrong format
+- Navigation header disappearing when viewing on mobile
+- Banner messages not aligning to the top of the window
+- Gift code field unnecessarily limiting character limit 
+
+---
+
 # [4.0.0-beta.5] - 2020-11-09
 
 ## Improvements
