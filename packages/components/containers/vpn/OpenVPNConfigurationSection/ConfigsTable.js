@@ -153,8 +153,8 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                                     <Icon name="clipboard" title={c('Action').t`Copy`} />
                                                 </div>
                                             ),
-                                            onClick() {
-                                                textToClipboard(server.Domain);
+                                            onClick(event) {
+                                                textToClipboard(server.Domain, event.currentTarget);
                                                 createNotification({
                                                     text: c('Success').t`${server.Domain} copied in your clipboard`,
                                                 });
