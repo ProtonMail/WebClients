@@ -14,7 +14,7 @@ interface Props {
 const Copy = ({ value, className = '', onCopy }: Props) => {
     const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
-        textToClipboard(value);
+        textToClipboard(value, e.currentTarget);
         onCopy?.();
     };
 
