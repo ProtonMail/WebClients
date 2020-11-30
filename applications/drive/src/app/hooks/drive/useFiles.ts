@@ -567,10 +567,8 @@ function useFiles() {
 
         const { downloadControls } = initDownload({
             transformBlockStream: decryptBlockStream(shareId, linkId),
-            onStart: async (stream) => {
-                resolve(streamToBuffer(stream));
-                return getFileBlocks(shareId, linkId);
-            },
+            getBlocks: () => getFileBlocks(shareId, linkId),
+            onStart: (stream) => resolve(streamToBuffer(stream)),
         });
 
         downloadControls.start(api).catch(reject);
@@ -583,7 +581,7 @@ function useFiles() {
 
     const saveFileTransferFromBuffer = async (content: Uint8Array[], meta: TransferMeta, info: DownloadInfo) => {
         return addToDownloadQueue(meta, info, {
-            onStart: async () => content,
+            getBlocks: async () => content,
         });
     };
 
@@ -593,7 +591,7 @@ function useFiles() {
             { ShareID: shareId, LinkID: linkId },
             {
                 transformBlockStream: decryptBlockStream(shareId, linkId),
-                onStart: async () => getFileBlocks(shareId, linkId),
+                getBlocks: async () => getFileBlocks(shareId, linkId),
             }
         );
     };
@@ -636,14 +634,14 @@ function useFiles() {
                             getMetaForTransfer(child),
                             { ShareID: shareId, LinkID: linkId },
                             {
+                                getBlocks: () => getFileBlocks(shareId, child.LinkID),
                                 transformBlockStream: decryptBlockStream(shareId, child.LinkID),
-                                onStart: async (stream) => {
+                                onStart: (stream) => {
                                     cb.onStartFileTransfer({
                                         stream,
                                         parentPath,
                                         fileName: child.Name,
                                     }).catch(reject);
-                                    return getFileBlocks(shareId, child.LinkID);
                                 },
                                 onFinish: () => {
                                     resolve();

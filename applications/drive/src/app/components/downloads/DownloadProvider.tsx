@@ -205,7 +205,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
                 },
                 onStart: (stream) => {
                     resolve(stream);
-                    return cb.onStart(stream);
+                    return cb.onStart?.(stream);
                 },
             });
 

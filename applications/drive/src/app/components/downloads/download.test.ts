@@ -29,23 +29,21 @@ describe('initDownload', () => {
     it('should download data from remote server using block metadata', async () => {
         const buffer = new Promise<ReadableStream<Uint8Array>>((resolve, reject) => {
             const { downloadControls } = initDownload({
-                async onStart(stream) {
-                    resolve(stream);
-                    return [
-                        {
-                            Index: 1,
-                            URL: 'url:1',
-                        },
-                        {
-                            Index: 2,
-                            URL: 'url:2',
-                        },
-                        {
-                            Index: 3,
-                            URL: 'url:3',
-                        },
-                    ];
-                },
+                onStart: resolve,
+                getBlocks: async () => [
+                    {
+                        Index: 1,
+                        URL: 'url:1',
+                    },
+                    {
+                        Index: 2,
+                        URL: 'url:2',
+                    },
+                    {
+                        Index: 3,
+                        URL: 'url:3',
+                    },
+                ],
             });
             downloadControls.start(mockApi).catch(reject);
         })
@@ -58,15 +56,13 @@ describe('initDownload', () => {
     it('should discard downloaded data and finish download on cancel', async () => {
         const buffer = new Promise<ReadableStream<Uint8Array>>((resolve, reject) => {
             const { downloadControls } = initDownload({
-                async onStart(stream) {
-                    resolve(stream);
-                    return [
-                        {
-                            Index: 1,
-                            URL: 'url:1',
-                        },
-                    ];
-                },
+                onStart: resolve,
+                getBlocks: async () => [
+                    {
+                        Index: 1,
+                        URL: 'url:1',
+                    },
+                ],
             });
             downloadControls.start(mockApi).catch(reject);
             downloadControls.cancel();
@@ -82,10 +78,8 @@ describe('initDownload', () => {
 
         const buffer = new Promise<ReadableStream<Uint8Array>>((resolve, reject) => {
             const { downloadControls } = initDownload({
-                async onStart(stream) {
-                    resolve(stream);
-                    return sendData;
-                },
+                onStart: resolve,
+                getBlocks: async () => sendData,
             });
             downloadControls.start(jest.fn()).catch(reject);
         }).then(streamToBuffer);
