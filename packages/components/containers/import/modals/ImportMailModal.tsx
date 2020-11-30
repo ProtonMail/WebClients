@@ -252,7 +252,12 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
                 ...payload,
                 StartTime: payload.StartTime ? dateToTimestamp(payload.StartTime) : undefined,
                 EndTime: payload.EndTime ? dateToTimestamp(payload.EndTime) : undefined,
-                Mapping: modalModel.payload.Mapping.filter((m: FolderMapping) => m.checked),
+                Mapping: payload.Mapping.filter(({ checked }: FolderMapping) => checked).map(
+                    ({ Source, Destinations }: FolderMapping) => ({
+                        Source,
+                        Destinations,
+                    })
+                ),
             })
         );
         await call();
