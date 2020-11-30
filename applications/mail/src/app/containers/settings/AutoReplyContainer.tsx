@@ -19,7 +19,7 @@ export const getAutoReply = () => {
                 id: 'auto-reply',
             },
             {
-                text: c('Title').t` Related features`,
+                text: c('Title').t`Related features`,
                 id: 'related-features',
                 hide: true,
             },
