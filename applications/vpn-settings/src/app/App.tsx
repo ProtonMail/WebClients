@@ -9,7 +9,12 @@ import PublicApp from './PublicApp';
 
 import './app.scss';
 
-sentry(config);
+const enhancedConfig = {
+    APP_VERSION_DISPLAY: '4.1.42',
+    ...config,
+};
+
+sentry(enhancedConfig);
 
 const Setup = () => {
     const { UID, login, logout } = useAuthentication() as PublicAuthenticationStore & PrivateAuthenticationStore;
@@ -21,7 +26,7 @@ const Setup = () => {
 
 const App = () => {
     return (
-        <ProtonApp config={config}>
+        <ProtonApp config={enhancedConfig}>
             <Setup />
         </ProtonApp>
     );
