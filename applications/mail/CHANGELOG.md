@@ -1,3 +1,23 @@
+# [4.0.0 - Beta 32] - 2020-12-02
+
+## Improvements
+
+-   Improved transition between settings and the mail application by merging both projects
+-   Improved the processing of encryption keys when changing the email address the user wants to send the message from
+-   Better handling of searching/filtering queries and matching results
+-   Updated the list of suggestion when auto-completing an email address input
+-   Vocalization improvements
+-   Various UI/UX improvements
+
+## Fixes
+
+-   Fixed a few key-related issues that sometimes would lead to an "invalid packet address" error message
+-   Fixed an issue whereby the selection of multiple labels would make the focus jump to the top of the labels list
+-   Fixed an issue that made it difficult for users to apply a label to all the messages inside a conversation if one message was already tagged with that label
+-   Fixed a few issues when replying to messages sent to an alias that contains the "+" character
+-   Fixed an issue that broke searching on mobile devices
+-   Fixed a bug that removed the navigation bar when viewing the settings from a mobile device
+
 # [4.0.0 - Beta 31] - 2020-11-18
 
 ## Improvements
