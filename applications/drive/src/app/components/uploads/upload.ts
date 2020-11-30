@@ -7,12 +7,13 @@ import { UploadLink } from '../../interfaces/file';
 import { TransferCancel, UploadInfo } from '../../interfaces/transfer';
 import { isTransferCancelError } from '../../utils/transfer';
 import runInQueue from '../../utils/runInQueue';
-import { FILE_CHUNK_SIZE } from '../../constants';
+import { FILE_CHUNK_SIZE, STATUS_CODE } from '../../constants';
 import { waitUntil } from '../../utils/async';
 
 // Max decrypted block size
 const MAX_CHUNKS_READ = 10;
 const MAX_THREADS_PER_UPLOAD = 3;
+const MAX_RETRIES_BEFORE_FAIL = 3;
 
 type BlockList = {
     EncSignature: string;
@@ -95,7 +96,7 @@ export async function upload(
         }
 
         xhr.onload = async () => {
-            if (xhr.status >= 200 && xhr.status < 300) {
+            if (xhr.status >= STATUS_CODE.OK && xhr.status < STATUS_CODE.BAD_REQUEST) {
                 resolve();
             } else {
                 reject(
@@ -197,11 +198,15 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
         });
     };
 
+    let abortController: AbortController;
+
     const uploadBlocks = async (
         uploadingBlocks: Map<number, EncryptedBlock>,
         blockTokens: Map<number, BlockTokenInfo>,
-        abortSignal: AbortSignal
-    ) => {
+        numRetry = 0
+    ): Promise<void> => {
+        const abortSignal = abortController.signal;
+
         if (abortSignal.aborted) {
             throw new TransferCancel({ id });
         }
@@ -246,7 +251,11 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
                 );
                 uploadingBlocks.delete(index);
             } catch (e) {
-                if (!isTransferCancelError(e) && numRetries < 3) {
+                if (
+                    !isTransferCancelError(e) &&
+                    e.status !== STATUS_CODE.NOT_FOUND &&
+                    numRetries < MAX_RETRIES_BEFORE_FAIL
+                ) {
                     console.error(`Failed block #${index} upload for ${id}. Retry num: ${numRetries}`);
                     resetBlockUploadProgress(block);
                     blockUploaders.push(getBlockUploader(block, numRetries + 1));
@@ -276,10 +285,27 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
             blockUploaders.push(getBlockUploader(block));
         });
 
-        await runInQueue(blockUploaders, MAX_THREADS_PER_UPLOAD);
-    };
+        try {
+            await runInQueue(blockUploaders, MAX_THREADS_PER_UPLOAD);
+        } catch (e) {
+            if (e.status === STATUS_CODE.NOT_FOUND && numRetry < MAX_RETRIES_BEFORE_FAIL) {
+                console.error(`Blocks for upload ${id}, might have expired. Retry num: ${numRetry}`);
 
-    let abortController: AbortController;
+                // Cancel all pending blocks because they will have also expired
+                abortController.abort();
+                abortController = new AbortController();
+                resetUploadProgress(uploadingBlocks);
+
+                // Remove block meta (token+url) to request them again
+                uploadingBlocks.forEach((block) => {
+                    delete block.meta;
+                });
+                await uploadBlocks(uploadingBlocks, blockTokens, numRetry + 1);
+            } else {
+                throw e;
+            }
+        }
+    };
 
     const start = async () => {
         let activeIndex = 1;
@@ -293,7 +319,7 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
                 // Keep filling queue with up to 20 blocks and uploading them
                 while (!reader.isEOF() || uploadingBlocks.size) {
                     activeIndex = await fillUploadQueue(reader, uploadingBlocks, activeIndex);
-                    await uploadBlocks(uploadingBlocks, blockTokens, abortController.signal);
+                    await uploadBlocks(uploadingBlocks, blockTokens);
                 }
                 await finalize(blockTokens, { id });
             } catch (e) {
