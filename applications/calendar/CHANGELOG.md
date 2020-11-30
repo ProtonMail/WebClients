@@ -1,3 +1,13 @@
+# [4.0.0-beta.11] - 2020-12-02
+## Updated
+- Improve display of participants in event popover
+- Hide email notifications for imported events until they are supported
+
+## Fixed
+- Fix creation of badly formatted events from Apple Calendar when answering an invite
+- Add invite organiser to contacts when answering if automatic creation of contacts is on
+- Fix responsive display of event popover
+---
 # [4.0.0-beta.10] - 2020-11-18
 ## Fixed
 - Add fields SUMMARY, RRULE and LOCATION to ics when replying invites for a better display of the answer by other providers
