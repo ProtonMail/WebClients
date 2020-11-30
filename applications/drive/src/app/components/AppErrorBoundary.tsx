@@ -13,6 +13,7 @@ import {
 import { ApiError } from 'proton-shared/lib/fetch/ApiError';
 
 import { useDriveActiveFolder } from './Drive/DriveFolderProvider';
+import { STATUS_CODE } from '../constants';
 
 interface Props {
     children: React.ReactNode;
@@ -43,13 +44,13 @@ const AppErrorBoundary = ({ children }: Props) => {
         }
 
         if (error instanceof ApiError) {
-            if (error.status === 500) {
+            if (error.status === STATUS_CODE.INTERNAL_SERVER_ERROR) {
                 return <InternalServerError />;
             }
-            if (error.status === 404) {
+            if (error.status === STATUS_CODE.NOT_FOUND) {
                 return <NotFoundError />;
             }
-            if (error.status === 403) {
+            if (error.status === STATUS_CODE.FORBIDDEN) {
                 return <AccessDeniedError />;
             }
         }

@@ -48,6 +48,14 @@ export enum EXPIRATION_DAYS {
     NINETY = 90,
 }
 
+export enum STATUS_CODE {
+    OK = 200,
+    BAD_REQUEST = 400,
+    FORBIDDEN = 403,
+    NOT_FOUND = 404,
+    INTERNAL_SERVER_ERROR = 500,
+}
+
 export const fileDescriptions: { [type: string]: string } = {
     'audio/aac': 'AAC audio',
     'application/x-abiword': 'AbiWord document',

@@ -13,11 +13,11 @@ import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
 import DiscountBanner from './DiscountBanner/DiscountBanner';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
+import { STATUS_CODE } from '../../constants';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
 const ERROR_CODE_COULD_NOT_IDENTIFY_TARGET = 2000;
-const STATUS_NOT_FOUND = 404;
 
 const DownloadSharedContainer = () => {
     const [showDiscountBanner, setShowDiscountBanner] = useState(true);
@@ -64,12 +64,12 @@ const DownloadSharedContainer = () => {
                             errorText = c('Error').t`Incorrect password. Please try again.`;
                             // SRP session ephemerals are destroyed when you retrieve them.
                             initHandshake().catch(console.error);
-                        } else if (code === ERROR_CODE_COULD_NOT_IDENTIFY_TARGET || status === STATUS_NOT_FOUND) {
+                        } else if (code === ERROR_CODE_COULD_NOT_IDENTIFY_TARGET || status === STATUS_CODE.NOT_FOUND) {
                             setNotFoundError(e);
                             errorText = null;
                         }
                     } else {
-                        if (code === ERROR_CODE_INVALID_SRP_PARAMS || status === STATUS_NOT_FOUND) {
+                        if (code === ERROR_CODE_INVALID_SRP_PARAMS || status === STATUS_CODE.NOT_FOUND) {
                             setNotFoundError(e);
                             errorText = null;
                         }
