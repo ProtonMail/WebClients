@@ -22,7 +22,7 @@ export interface Props<V>
     onOpen?: () => void;
 }
 
-const Select = <V extends any>({
+const SelectTwo = <V extends any>({
     children,
     value,
     placeholder,
@@ -243,4 +243,4 @@ const Select = <V extends any>({
     );
 };
 
-export default Select;
+export default SelectTwo;
