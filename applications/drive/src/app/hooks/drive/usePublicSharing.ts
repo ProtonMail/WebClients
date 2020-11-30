@@ -105,7 +105,7 @@ function usePublicSharing() {
             { ShareID: 'SharedFile', LinkID: 'SharedFile' },
             {
                 transformBlockStream: decryptSharedBlockStream(sessionKey, privateKey),
-                onStart: async () => blocks,
+                getBlocks: async () => blocks,
             }
         );
     };
