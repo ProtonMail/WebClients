@@ -1,0 +1,16 @@
+import { Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Price } from "react-components";
+
+# Price
+
+`Price` component helps to display a price in different currencies.
+
+### Basic
+
+`Price` supports `EUR | USD | CHF`. Amount coming from the API are always coming in cents. `amount`, `currency`, `integer` and `decimal` parts are splitted to facilitate CSS customization.
+
+<Canvas>
+    <Story id="components-price--basic" />
+</Canvas>
+
+<ArgsTable of={Price} />
