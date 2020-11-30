@@ -160,8 +160,10 @@ export const getSupportedAlarm = (
     if (!isAbsoluteTrigger(trigger) && trigger.parameters?.related?.toLocaleLowerCase() === 'end') {
         return;
     }
+    if (alarm.action.value === 'EMAIL') {
+        return;
+    }
 
-    const actionValue = alarm.action.value === 'EMAIL' ? 'EMAIL' : 'DISPLAY';
     const normalizedTrigger = normalizeTrigger(trigger, dtstart);
     const triggerDurationInSeconds = normalizeDurationToUnit(normalizedTrigger, 1);
 
@@ -181,7 +183,7 @@ export const getSupportedAlarm = (
 
     return {
         component: 'valarm',
-        action: { value: actionValue },
+        action: { value: 'DISPLAY' },
         trigger: { value: normalizedTrigger },
     };
 };

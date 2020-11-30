@@ -453,7 +453,7 @@ describe('getSupportedAlarm', () => {
     test('it should filter out attendees, description and summary', () => {
         const alarm = {
             ...baseAlarm,
-            action: { value: 'EMAIL' },
+            action: { value: 'DISPLAY' },
             description: { value: 'test' },
             summary: { value: 'test' },
             attendee: [{ value: 'mailto:wild@west.org' }],
@@ -463,12 +463,21 @@ describe('getSupportedAlarm', () => {
         };
         const expected = {
             ...baseAlarm,
-            action: { value: 'EMAIL' },
+            action: { value: 'DISPLAY' },
             trigger: {
                 value: { ...baseTriggerValue },
             },
         };
         expect(getSupportedAlarm(alarm, dtstartPartDay)).toEqual(expected);
+    });
+
+    test('it should filter out email notifications', () => {
+        const alarm = {
+            ...baseAlarm,
+            action: { value: 'EMAIL' },
+        };
+        expect(getSupportedAlarm(alarm, dtstartPartDay)).toEqual(undefined);
+        expect(getSupportedAlarm(alarm, dtstartAllDay)).toEqual(undefined);
     });
 
     test('it should filter out future notifications', () => {

@@ -8,8 +8,9 @@ export const propertiesToNotificationModel = (
     { components = [] }: Partial<VcalVeventComponent> = {},
     isAllDay: boolean
 ): NotificationModel[] => {
+    // filter out email notifications while unsupported. They could be there due to client mistakes
     const modelNotifications = components
-        .filter(({ component }) => component === 'valarm')
+        .filter(({ component, action }) => component === 'valarm' && action?.value?.toLowerCase() === 'display')
         .map(({ trigger, action }: VcalValarmComponent) => {
             const type =
                 action?.value?.toLowerCase() === 'email'
