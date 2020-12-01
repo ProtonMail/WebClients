@@ -193,7 +193,9 @@ const List = ({
                 isCompactView && 'is-compact',
             ])}
         >
-            <h1 className="sr-only">{c('Title').t`Email list`}</h1>
+            <h1 className="sr-only">
+                {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
+            </h1>
             <div className="items-column-list-inner flex flex-nowrap flex-column">
                 {expectedLength === 0 ? (
                     <EmptyView labelID={labelID} isSearch={isSearch} />
