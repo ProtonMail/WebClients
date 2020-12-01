@@ -153,7 +153,6 @@ export const getInitialModel = ({
     const notificationModel = getNotificationModels(CalendarSettings);
     const memberModel = getInitialMemberModel(Addresses, Members, Member, Address);
     const calendarsModel = getCalendarsModel(Calendar, Calendars);
-    const memberEmail = Member.Email;
 
     return {
         type: 'event',
@@ -166,7 +165,6 @@ export const getInitialModel = ({
         isAllDay,
         verificationStatus,
         isOrganizer: true,
-        organizer: { email: memberEmail, cn: memberEmail },
         status: ICAL_EVENT_STATUS.CONFIRMED,
         defaultEventDuration,
         frequencyModel,

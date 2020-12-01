@@ -81,7 +81,7 @@ export interface EventModelView {
     start: DateTimeModel;
     end: DateTimeModel;
     attendees: AttendeeModel[];
-    organizer: OrganizerModel;
+    organizer?: OrganizerModel;
     isOrganizer: boolean;
     selfAttendeeIndex?: number;
     selfAddress?: Address;
