@@ -7,6 +7,7 @@
 - Fix creation of badly formatted events from Apple Calendar when answering an invite
 - Add invite organiser to contacts when answering if automatic creation of contacts is on
 - Fix responsive display of event popover
+- Fix incorrect confirmation modal when deleting an invite from the edit modal
 ---
 # [4.0.0-beta.10] - 2020-11-18
 ## Fixed
