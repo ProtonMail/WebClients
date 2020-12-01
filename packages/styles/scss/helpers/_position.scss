@@ -1,0 +1,102 @@
+/* to relativize */
+.relative {
+	position: relative;
+}
+
+/* to absolute */
+.absolute {
+	position: absolute;
+	z-index: 1;
+}
+
+/* to centered absolute */
+.centered-absolute {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.centered-absolute-horizontal {
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+
+.covered-absolute {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/* to top right */
+.top-right {
+	top: 0;
+	right: 0;
+}
+
+.bottom {
+	bottom: 0;
+}
+
+@if $rtl-option==true {
+	[dir="rtl"] {
+		.top-right {
+			left: 0;
+			right: auto;
+		}
+	}
+}
+
+.right-icon,
+.right-text {
+	top: 0;
+	right: .5em;
+	height: $default-height-fields; // height of field
+	align-content: center;
+}
+
+.right-text {
+	right: 1em;
+
+	&-inner {
+		padding-bottom: .2rem;
+	}
+}
+
+@if $rtl-option==true {
+	[dir="rtl"] {
+
+		.right-icon,
+		.right-text {
+			left: .5em;
+			right: auto;
+		}
+
+		.right-text {
+			left: 1em;
+		}
+	}
+}
+
+.fixed {
+	position: fixed;
+}
+
+.sticky {
+
+	&-top,
+	&-bottom {
+		position: sticky;
+		z-index: 1;
+	}
+
+	&-top {
+		top: 0;
+	}
+
+	&-bottom {
+		bottom: 0;
+	}
+}

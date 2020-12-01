@@ -1,0 +1,20 @@
+.compose-fab {
+	position: fixed;
+	bottom: 1em;
+	right: 1.6em;
+	z-index: 77;
+	height: 6.6rem;
+	width: 6.6rem;
+	border-radius: 50%;
+	padding: .5em;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+	transition: bottom .5s easing(easeOutQuart);
+
+	&--is-higher {
+		bottom: 4em;
+	}
+
+	&--inBackground {
+		z-index: 0;
+	}
+}

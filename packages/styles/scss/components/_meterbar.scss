@@ -1,0 +1,88 @@
+@mixin meterbar-size($size: 1.5rem) {
+	height: $size;
+	border-radius: #{$size/2};
+
+	&::-moz-meter-bar {
+		border-radius: #{$size/2};
+	}
+
+	&::-webkit-meter-bar {
+		height: $size; // Chrome 83 does not make meter and its bar the same height -_-v
+	}
+
+	&::-webkit-meter-optimum-value {
+		border-radius: #{$size/2};
+	}
+
+	&::-webkit-meter-suboptimum-value {
+		border-radius: #{$size/2};
+	}
+
+	&::-webkit-meter-even-less-good-value {
+		border-radius: #{$size/2};
+	}
+}
+
+.meterbar {
+	@include meterbar-size;
+
+	width: 100%;
+	background: var(--bgcolor-meterbar, $pm-global-muted);
+
+	//-webkit-appearance: none; // Can't. Well, because Chrome.
+	// -moz-appearance: none;
+	/* autoprefixer: ignore next */
+	// appearance: none;
+
+
+	&::-webkit-meter-bar {
+		border: none;
+		background: none;
+	}
+
+	&::-moz-meter-bar {
+		display: inherit;
+	}
+
+	&:not(#{&}--primary) {
+		&::-webkit-meter-optimum-value {
+			background: $pm-global-success;
+		}
+		&::-webkit-meter-suboptimum-value {
+			background: $pm-global-attention;
+		}
+		&::-webkit-meter-even-less-good-value {
+			background: $pm-global-warning;
+		}
+
+		&:-moz-meter-optimum::-moz-meter-bar {
+			background: $pm-global-success;
+		}
+		&:-moz-meter-sub-optimum::-moz-meter-bar {
+			background: $pm-global-attention;
+		}
+		&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+			background: $pm-global-warning;
+		}
+	}
+
+	&--primary {
+		&::-webkit-meter-optimum-value {
+			background: $pm-primary;
+		}
+		&::-webkit-meter-suboptimum-value {
+			background: $pm-primary;
+		}
+		&::-webkit-meter-even-less-good-value {
+			background: $pm-primary;
+		}
+
+		&::-moz-meter-bar {
+			background: $pm-primary;
+		}
+	}
+
+	&.is-thin {
+		@include meterbar-size(.375em);
+	}
+}

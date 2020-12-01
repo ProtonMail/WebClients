@@ -1,0 +1,22 @@
+// reset/display fixes for emails contents
+.message-content {
+	@extend .p1;
+	// rules coming from Angular
+	box-sizing: content-box; // to avoid problems in some emails
+	border-radius: 0 0 $global-border-radius $global-border-radius;
+
+	// remove reset margins
+	blockquote, dl, ol, p, pre, td, th, ul {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	p {
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+
+	table {
+		margin-bottom: 0;
+	}
+}

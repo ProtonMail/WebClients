@@ -5,7 +5,7 @@
  * @param {String} $prefix - Specify a prefix for each class if needed
  * @returns {String} - CSS classes with correct names from coordinates and values
  */
-@mixin margin-generator ($list-margin, $list-margin-values, $prefix: "") {
+@mixin margin-generator ($list-margin, $list-margin-values, $prefix: '') {
 
 	@each $margin-type in $list-margin {
 		@each $margin in $list-margin-values {
@@ -42,7 +42,7 @@
 			// from 1.5 to 1-5
 			$property-class: str-replace($text-margin, '.', '-');
 
-			// .mr 1-5 { margin-right: 1.5em; }
+			// .mr1-5 { margin-right: 1.5em; }
 			.#{$prefix}#{$margin-type}#{$property-class} {
 				#{$property}: #{$value};
 			}

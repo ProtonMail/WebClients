@@ -1,0 +1,248 @@
+@if $use-other-typo-helpers==true {
+
+	/* other useful classes */
+	.smallest {
+		@include rhythm($size-smallest, 'double_top_double_bottom_without_coef');
+	}
+
+	.smaller {
+		@include rhythm($size-smaller, 'double_top_double_bottom_without_coef');
+	}
+
+	.small {
+		@include rhythm($size-small, 'double_top_double_bottom_without_coef');
+	}
+
+	.big {
+		@include rhythm($size-big, 'double_top_double_bottom_without_coef');
+	}
+
+	.bigger {
+		@include rhythm($size-bigger, 'double_top_double_bottom_without_coef');
+	}
+
+	.biggest {
+		@include rhythm($size-biggest, 'double_top_double_bottom_without_coef');
+	}
+
+	.size-40 {
+		font-size: 4rem;
+	}
+}
+
+@if $use-other-line-height-helpers==true {
+	.lh100 {
+		line-height: 1;
+	}
+
+	.lh120 {
+		line-height: 1.2;
+	}
+
+	.lh130 {
+		line-height: 1.3;
+	}
+
+	.lh-standard {
+		line-height: $l-h;
+	}
+}
+
+/* Hyphenation: Thou shalt not pass (Moïse or Gandalf, don’t remember) */
+@if $hyphenation==false {
+	.cut {
+		word-break: break-word;
+	}
+
+	@supports (-webkit-hyphens: auto) or (hyphens: auto) {
+		.cut {
+			word-break: normal;
+			@include vendor-prefix(hyphens, auto, webkit);
+		}
+	}
+}
+
+.link {
+	@extend a;
+}
+
+/* remove hyphenation if needed */
+.nocut {
+	word-wrap: normal;
+}
+
+@supports (-webkit-hyphens: auto) or (hyphens: auto) {
+	.nocut {
+		@include vendor-prefix(hyphens, none, webkit);
+	}
+}
+
+.break {
+	word-break: break-word;
+}
+
+.hyphens {
+	@include vendor-prefix(hyphens, auto, webkit);
+}
+
+.alignright {
+	text-align: right;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.alignleft {
+	text-align: left;
+}
+
+.aligntop {
+	vertical-align: top;
+}
+
+.alignbottom {
+	vertical-align: bottom;
+}
+
+.alignmiddle {
+	vertical-align: middle;
+}
+
+.alignbaseline {
+	vertical-align: baseline;
+}
+
+.alignsub {
+	vertical-align: sub;
+}
+
+@if $rtl-option==true {
+
+	/* RTL */
+	[dir="rtl"] .alignright {
+		text-align: left;
+	}
+
+	[dir="rtl"] .alignleft {
+		text-align: right;
+	}
+}
+
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ellipsis-two-lines,
+.ellipsis-four-lines {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.ellipsis-two-lines {
+	-webkit-line-clamp: 2;
+}
+
+.ellipsis-four-lines {
+	-webkit-line-clamp: 4;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.capitalize-block {
+	text-transform: lowercase;
+
+	&:first-letter {
+		text-transform: uppercase;
+	}
+}
+
+.strong,
+.bold {
+	@extend %bold;
+}
+
+.nobold {
+	font-weight: normal;
+}
+
+.semibold {
+	font-weight: 600;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.no-outline {
+	outline: 0;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
+.pre-wrap {
+	white-space: pre-wrap;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+.pre {
+	white-space: pre;
+}
+
+.nodecoration {
+	text-decoration: none;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.underline-hover {
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+.primary-link {
+	&:focus,
+	&:hover {
+		color: $pm-primary;
+	}
+}
+
+.hover-same-color {
+	&:focus,
+	&:hover {
+		&.color-white {
+			color: $white;
+		}
+
+		&.primary-link {
+			color: $pm-primary;
+		}
+	}
+}
+
+.button-showOnHover {
+	&:focus,
+	&:hover {
+		.button-showOnHover-element {
+			visibility: visible;
+		}
+	}
+}

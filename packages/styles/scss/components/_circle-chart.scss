@@ -1,0 +1,50 @@
+// be careful to udpate SVG if you want to update this value
+$stroke-width: 3px !default;
+
+// this component is used for VPN
+// and for the moment on Angular/React sidebar
+.circle-chart {
+	&__background {
+		stroke: var(--color-main-area, $pm-global-grey);
+		opacity: .2;
+		stroke-width: $stroke-width;
+		fill: transparent;
+
+		&--bigger & {
+			stroke: var(--bgcolor-input, rgba($pm-global-grey, .2));
+			opacity: .4;
+		}
+	}
+
+	&__circle {
+		stroke: $pm-global-success;
+		stroke-width: $stroke-width;
+		fill: transparent;
+		animation: circle-chart-fill 2s reverse;
+		transform: rotate(-90deg);
+		transform-origin: center;
+	}
+
+	&__percent {
+		fill: var(--color-main-area, rgba($pm-global-grey, .5));
+	}
+
+	&-info {
+		color: var(--color-standard-text, $pm-global-light);
+	}
+
+	.circle-bar--medium &__circle {
+		stroke: $pm-global-attention;
+	}
+
+	.circle-bar--full &__circle {
+		stroke: $pm-global-warning;
+	}
+}
+
+
+@keyframes circle-chart-fill {
+	to {
+		stroke-dasharray: 0 100;
+	}
+}

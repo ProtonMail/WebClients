@@ -6,7 +6,7 @@
  */
 @mixin body-before ($value-content, $display-none : false) {
 
-	@if $value-content != "" {
+	@if $value-content != '' {
 		body::before {
 			content: '#{$value-content}';
 
@@ -17,6 +17,6 @@
 	}
 
 	@else {
-		@warn "$value-content not specified";
+		@warn '$value-content not specified';
 	}
 }
