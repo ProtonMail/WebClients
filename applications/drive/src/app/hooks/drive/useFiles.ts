@@ -18,14 +18,7 @@ import {
 } from '../../interfaces/file';
 import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
-import {
-    TransferMeta,
-    TransferState,
-    DownloadInfo,
-    PreUploadData,
-    UploadInfo,
-    TransferCancel,
-} from '../../interfaces/transfer';
+import { TransferMeta, TransferState, DownloadInfo, PreUploadData, TransferCancel } from '../../interfaces/transfer';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../../components/downloads/download';
 import { streamToBuffer } from '../../utils/stream';
@@ -148,21 +141,62 @@ function useFiles() {
             : `upload_setup:${file.name.toLocaleLowerCase()}`;
         // Queue for files with same name, to not duplicate names
         // Another queue for uploads in general so that they don't timeout
-        const setupPromise = queuedFunction(
-            'upload_setup',
+        const setupPromise = (async () => {
+            const error = validateLinkName(file.name);
+
+            if (error) {
+                throw new ValidationError(error);
+            }
+
+            const [parentKeys, addressKeyInfo] = await Promise.all([
+                getLinkKeys(shareId, await parentLinkID),
+                getPrimaryAddressKey(),
+            ]);
+
+            const { NodeKey, privateKey, NodePassphrase, NodePassphraseSignature } = await generateNodeKeys(
+                parentKeys.privateKey,
+                addressKeyInfo.privateKey
+            );
+
+            const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
+
+            if (!ContentKeyPacket) {
+                throw new Error('Could not generate ContentKeyPacket');
+            }
+
+            if (canceled) {
+                throw new TransferCancel({ message: `Transfer canceled for file "${file.name}"` });
+            }
+
+            return {
+                NodeKey,
+                NodePassphrase,
+                NodePassphraseSignature,
+                ContentKeyPacket,
+                sessionKey,
+                privateKey,
+                parentKeys,
+                addressKeyInfo,
+            };
+        })();
+
+        // Queue for files with same name, to not duplicate names
+        // Another queue for uploads in general so that they don't timeout
+        const createFile = queuedFunction(
+            'create_file',
             queuedFunction(queuedFnId, async () => {
-                const error = validateLinkName(file.name);
+                const {
+                    addressKeyInfo,
+                    parentKeys,
+                    ContentKeyPacket,
+                    NodePassphrase,
+                    NodePassphraseSignature,
+                    NodeKey,
+                } = await setupPromise;
 
-                if (error) {
-                    throw new ValidationError(error);
+                if (canceled) {
+                    throw new TransferCancel({ message: `Transfer canceled for file "${file.name}"` });
                 }
-
-                const ParentLinkID = await parentLinkID;
-
-                const [parentKeys, addressKeyInfo] = await Promise.all([
-                    getLinkKeys(shareId, ParentLinkID),
-                    getPrimaryAddressKey(),
-                ]);
 
                 const generateNameHash = async () => {
                     if (!('hashKey' in parentKeys)) {
@@ -174,24 +208,9 @@ function useFiles() {
                     };
                 };
 
-                const { NodeKey, privateKey, NodePassphrase, NodePassphraseSignature } = await generateNodeKeys(
-                    parentKeys.privateKey,
-                    addressKeyInfo.privateKey
-                );
-
-                const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
-
-                if (!ContentKeyPacket) {
-                    throw new Error('Could not generate ContentKeyPacket');
-                }
-
-                if (canceled) {
-                    throw new TransferCancel({ message: `Transfer canceled for file "${file.name}"` });
-                }
-
                 const { filename, hash: Hash } = noNameCheck
                     ? await generateNameHash()
-                    : await findAvailableName(shareId, ParentLinkID, file.name);
+                    : await findAvailableName(shareId, await parentLinkID, file.name);
 
                 const Name = await encryptName(filename, parentKeys.privateKey.toPublic(), addressKeyInfo.privateKey);
 
@@ -208,28 +227,23 @@ function useFiles() {
                         Name,
                         MIMEType,
                         Hash,
-                        ParentLinkID,
                         NodeKey,
                         NodePassphrase,
                         NodePassphraseSignature,
                         SignatureAddress: addressKeyInfo.address.Email,
                         ContentKeyPacket,
+                        ParentLinkID: await parentLinkID,
                     })
                 );
 
                 return {
-                    File,
                     filename,
-                    Name,
+                    File,
                     MIMEType,
-                    sessionKey,
-                    privateKey,
-                    addressKeyInfo,
-                    ParentLinkID,
                 };
             }),
             5
-        )();
+        );
 
         const preUploadData: PreUploadData = {
             file,
@@ -237,119 +251,107 @@ function useFiles() {
             ShareID: shareId,
         };
 
-        return addToUploadQueue(
-            preUploadData,
-            setupPromise.then(({ filename, MIMEType, File, ParentLinkID }): {
-                meta: TransferMeta;
-                info: UploadInfo;
-            } => ({
-                meta: {
-                    size: file.size,
-                    mimeType: MIMEType,
-                    filename,
-                },
-                info: {
-                    ParentLinkID,
-                    LinkID: File.ID,
-                    RevisionID: File.RevisionID,
-                },
-            })),
-            {
-                transform: async (data) => {
-                    const [
-                        { sessionKey, privateKey: nodePrivateKey },
-                        { privateKey: addressPrivateKey },
-                    ] = await Promise.all([setupPromise, getPrimaryAddressKey()]);
+        let createdFile: {
+            ID: string;
+            RevisionID: string;
+        };
 
-                    const { message, signature } = await encryptMessage({
-                        data,
-                        sessionKey,
-                        privateKeys: addressPrivateKey,
-                        armor: false,
-                        detached: true,
-                    });
+        return addToUploadQueue(preUploadData, setupPromise, {
+            initialize: async () => {
+                const result = await createFile();
+                createdFile = result.File;
+                return result;
+            },
+            transform: async (data) => {
+                const [
+                    { sessionKey, privateKey: nodePrivateKey },
+                    { privateKey: addressPrivateKey },
+                ] = await Promise.all([setupPromise, getPrimaryAddressKey()]);
 
-                    const { data: encryptedSignature } = await encryptMessage({
-                        data: signature.packets.write(),
-                        publicKeys: nodePrivateKey.toPublic(),
-                        armor: true,
-                    });
+                const { message, signature } = await encryptMessage({
+                    data,
+                    sessionKey,
+                    privateKeys: addressPrivateKey,
+                    armor: false,
+                    detached: true,
+                });
 
-                    return {
-                        encryptedData: message.packets.write(),
-                        signature: encryptedSignature,
-                    };
-                },
-                requestUpload: async (Blocks) => {
-                    const { File, addressKeyInfo } = await setupPromise;
+                const { data: encryptedSignature } = await encryptMessage({
+                    data: signature.packets.write(),
+                    publicKeys: nodePrivateKey.toPublic(),
+                    armor: true,
+                });
 
-                    const BlockList = await Promise.all(
-                        Blocks.map(({ Hash, ...block }) => ({ ...block, Hash: uint8ArrayToBase64String(Hash) }))
-                    );
+                return {
+                    encryptedData: message.packets.write(),
+                    signature: encryptedSignature,
+                };
+            },
+            requestUpload: async (Blocks) => {
+                const { addressKeyInfo } = await setupPromise;
 
-                    const { UploadLinks } = await debouncedRequest<RequestUploadResult>(
-                        queryRequestUpload({
+                const BlockList = await Promise.all(
+                    Blocks.map(({ Hash, ...block }) => ({ ...block, Hash: uint8ArrayToBase64String(Hash) }))
+                );
+
+                const { UploadLinks } = await debouncedRequest<RequestUploadResult>(
+                    queryRequestUpload({
+                        BlockList,
+                        AddressID: addressKeyInfo.address.ID,
+                        LinkID: createdFile.ID,
+                        RevisionID: createdFile.RevisionID,
+                        ShareID: shareId,
+                    })
+                );
+                return UploadLinks;
+            },
+            finalize: queuedFunction(
+                'upload_finalize',
+                async (blockTokens, config) => {
+                    const hashes: Uint8Array[] = [];
+                    const BlockList: { Index: number; Token: string }[] = [];
+
+                    for (let Index = 1; Index <= blockTokens.size; Index++) {
+                        const info = blockTokens.get(Index);
+                        if (!info) {
+                            throw new Error(`Block Token not found for ${Index} in upload ${config?.id}`);
+                        }
+                        hashes.push(info.Hash);
+                        BlockList.push({
+                            Index,
+                            Token: info.Token,
+                        });
+                    }
+
+                    const contentHashes = mergeUint8Arrays(hashes);
+                    const {
+                        signature,
+                        address: { Email: SignatureAddress },
+                    } = await sign(contentHashes);
+
+                    await debouncedRequest(
+                        queryUpdateFileRevision(shareId, createdFile.ID, createdFile.RevisionID, {
+                            State: FileRevisionState.Active,
                             BlockList,
-                            AddressID: addressKeyInfo.address.ID,
-                            LinkID: File.ID,
-                            RevisionID: File.RevisionID,
-                            ShareID: shareId,
+                            ManifestSignature: signature,
+                            SignatureAddress,
                         })
                     );
-                    return UploadLinks;
+                    events.callAll(shareId).catch(console.error);
                 },
-                finalize: queuedFunction(
-                    'upload_finalize',
-                    async (blockTokens, config) => {
-                        const hashes: Uint8Array[] = [];
-                        const BlockList: { Index: number; Token: string }[] = [];
-
-                        for (let Index = 1; Index <= blockTokens.size; Index++) {
-                            const info = blockTokens.get(Index);
-                            if (!info) {
-                                throw new Error(`Block Token not found for ${Index} in upload ${config?.id}`);
-                            }
-                            hashes.push(info.Hash);
-                            BlockList.push({
-                                Index,
-                                Token: info.Token,
-                            });
-                        }
-
-                        const contentHashes = mergeUint8Arrays(hashes);
-                        const [
-                            { File },
-                            {
-                                signature,
-                                address: { Email: SignatureAddress },
-                            },
-                        ] = await Promise.all([setupPromise, sign(contentHashes)]);
-
-                        await debouncedRequest(
-                            queryUpdateFileRevision(shareId, File.ID, File.RevisionID, {
-                                State: FileRevisionState.Active,
-                                BlockList,
-                                ManifestSignature: signature,
-                                SignatureAddress,
-                            })
-                        );
-                        events.callAll(shareId).catch(console.error);
-                    },
-                    5
-                ),
-                onError: async () => {
-                    try {
-                        canceled = true;
-                        const { File, ParentLinkID } = await setupPromise;
-                        await deleteChildrenLinks(shareId, ParentLinkID, [File.ID]);
-                    } catch (err) {
-                        if (!isTransferCancelError(err)) {
-                            console.error(err);
-                        }
+                5
+            ),
+            onError: async () => {
+                try {
+                    canceled = true;
+                    await deleteChildrenLinks(shareId, await parentLinkID, [createdFile.ID]);
+                } catch (err) {
+                    if (!isTransferCancelError(err)) {
+                        console.error(err);
                     }
-                },
-            }
-        );
+                }
+            },
+        });
     };
 
     const checkHasEnoughSpace = async (files: FileList | File[] | { path: string[]; file?: File }[]) => {

@@ -11,6 +11,7 @@ import {
     isTransferCanceled,
     isTransferDone,
     getProgressBarStatus,
+    isTransferPending,
 } from '../../utils/transfer';
 import { TransferType, TransferProps } from './interfaces';
 
@@ -24,6 +25,7 @@ type Props<T extends TransferType> = React.HTMLAttributes<HTMLDivElement> &
 
 const Transfer = <T extends TransferType>({ stats, transfer, type, className, ...rest }: Props<T>) => {
     const isInitializing = isTransferInitializing(transfer);
+    const isNameUnresolved = isInitializing || isTransferPending(transfer);
     const isProgress = isTransferProgress(transfer);
     const isPaused = isTransferPaused(transfer);
     const isCanceled = isTransferCanceled(transfer);
@@ -55,7 +57,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
                     )}
                 </span>
                 <span
-                    className={classnames(['ellipsis', isInitializing && 'opacity-50'])}
+                    className={classnames(['ellipsis', isNameUnresolved && 'opacity-50'])}
                     title={transfer.meta.filename}
                 >
                     <span className="pre">{transfer.meta.filename}</span>
