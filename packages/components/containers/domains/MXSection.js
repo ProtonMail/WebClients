@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Alert, Label, Table, TableHeader, TableBody, TableRow } from '../../components';
 
 const MXSection = () => {
+    const boldAddresses = <strong key="addresses">{c('Tab in domain modal').t`Addresses`}</strong>;
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
@@ -29,7 +30,7 @@ const MXSection = () => {
                 {c('Info').t`Delete any other MX records or make sure ProtonMail's Priority is the lowest number.`}
                 <br />
                 {c('Info')
-                    .t`If this domain is currently actively receiving emails, create all used email addresses in Step 3 before changing MX record to ensure a smooth transition.`}
+                    .jt`If this domain is currently receiving emails, select the ${boldAddresses} tab and add all active email addresses before changing the MX record to ensure a smooth transition.`}
             </Alert>
         </>
     );
