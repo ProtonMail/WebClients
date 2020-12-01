@@ -246,6 +246,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
             submit={c('Action').t`Next`}
             title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}
             loading={loading}
+            className="pm-modal--full"
             {...rest}
             {...modalProps}
         >
