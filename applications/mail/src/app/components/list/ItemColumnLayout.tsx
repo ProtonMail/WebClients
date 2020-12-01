@@ -89,7 +89,12 @@ const ItemColumnLayout = ({
                         />
                     )}
 
-                    <span className={classnames(['inbl mw100 ellipsis', unread && 'bold'])} title={Subject}>
+                    <span
+                        role="heading"
+                        aria-level={2}
+                        className={classnames(['inbl mw100 ellipsis', unread && 'bold'])}
+                        title={Subject}
+                    >
                         {Subject}
                     </span>
                 </div>

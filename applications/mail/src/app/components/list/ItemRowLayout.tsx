@@ -68,7 +68,12 @@ const ItemRowLayout = ({
                         conversation={element}
                     />
                 )}
-                <span className={classnames(['inbl mw100 ellipsis mr1', unread && 'bold'])} title={Subject}>
+                <span
+                    role="heading"
+                    aria-level={2}
+                    className={classnames(['inbl mw100 ellipsis mr1', unread && 'bold'])}
+                    title={Subject}
+                >
                     {Subject}
                 </span>
             </div>

@@ -35,7 +35,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
             ])}
         >
             <div className="flex flex-nowrap mb1">
-                <h2
+                <h1
                     className="message-conversation-summary-header mb0 h3 ellipsis-two-lines lh-standard flex-item-fluid pr1"
                     title={element.Subject}
                 >
@@ -49,7 +49,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                     ) : (
                         <>&nbsp;</>
                     )}
-                </h2>
+                </h1>
                 <div className="message-conversation-summary-star flex-item-noshrink pt0-25">
                     <ItemStar element={element} />
                 </div>
