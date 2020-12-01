@@ -4,7 +4,7 @@ import { serializeFormData } from 'proton-shared/lib/fetch/helpers';
 import { createApiError } from 'proton-shared/lib/fetch/ApiError';
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
-import { TransferCancel, UploadInfo } from '../../interfaces/transfer';
+import { TransferCancel } from '../../interfaces/transfer';
 import { isTransferCancelError } from '../../utils/transfer';
 import runInQueue from '../../utils/runInQueue';
 import { FILE_CHUNK_SIZE, STATUS_CODE } from '../../constants';
@@ -15,7 +15,7 @@ const MAX_CHUNKS_READ = 10;
 const MAX_THREADS_PER_UPLOAD = 3;
 const MAX_RETRIES_BEFORE_FAIL = 3;
 
-type BlockList = {
+export type BlockList = {
     EncSignature: string;
     Hash: Uint8Array;
     Size: number;
@@ -47,12 +47,16 @@ export interface UploadCallbacks {
     transform: (buffer: Uint8Array) => Promise<{ encryptedData: Uint8Array; signature: string }>;
     requestUpload: (blockList: BlockList) => Promise<UploadLink[]>;
     finalize: (blocklist: Map<number, BlockTokenInfo>, config?: { id: string }) => Promise<void>;
+    initialize: () => Promise<{
+        filename: string;
+        MIMEType: string;
+    }>;
     onProgress?: (bytes: number) => void;
     onError?: (error: Error) => void;
 }
 
 export interface UploadControls {
-    start: (info: UploadInfo) => Promise<void>;
+    start: () => Promise<void>;
     pause: () => void;
     resume: () => void;
     cancel: () => void;
@@ -128,7 +132,10 @@ export async function upload(
     });
 }
 
-export function initUpload(file: File, { requestUpload, transform, onProgress, finalize, onError }: UploadCallbacks) {
+export function initUpload(
+    file: File,
+    { initialize, requestUpload, transform, onProgress, finalize, onError }: UploadCallbacks
+) {
     const id = generateUID('drive-transfers');
     let paused = false;
 
@@ -316,6 +323,7 @@ export function initUpload(file: File, { requestUpload, transform, onProgress, f
 
         const startUpload = async () => {
             try {
+                await initialize?.();
                 // Keep filling queue with up to 20 blocks and uploading them
                 while (!reader.isEOF() || uploadingBlocks.size) {
                     activeIndex = await fillUploadQueue(reader, uploadingBlocks, activeIndex);
