@@ -327,8 +327,8 @@ const InteractiveCalendarView = ({
 
     const getUpdateModel = (
         { calendarData, eventData, eventReadResult, eventRecurrence }: CalendarViewEventData,
-        partstat?: ICAL_ATTENDEE_STATUS,
-        addresses?: Address[]
+        addresses?: Address[],
+        partstat?: ICAL_ATTENDEE_STATUS
     ): EventModel | undefined => {
         if (
             !eventData ||
@@ -1028,7 +1028,7 @@ const InteractiveCalendarView = ({
                                 if (!targetEvent) {
                                     return;
                                 }
-                                const newTemporaryModel = getUpdateModel(targetEvent.data);
+                                const newTemporaryModel = getUpdateModel(targetEvent.data, addresses);
                                 if (!newTemporaryModel) {
                                     return;
                                 }
@@ -1043,7 +1043,7 @@ const InteractiveCalendarView = ({
                                 if (!targetEvent) {
                                     return;
                                 }
-                                const newTemporaryModel = getUpdateModel(targetEvent.data, partstat, addresses);
+                                const newTemporaryModel = getUpdateModel(targetEvent.data, addresses, partstat);
                                 if (!newTemporaryModel) {
                                     return;
                                 }

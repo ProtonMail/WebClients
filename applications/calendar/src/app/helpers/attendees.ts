@@ -5,7 +5,7 @@ import { CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { getDeviceNotifications } from '../components/eventModal/eventForm/notificationModel';
 import { DisplayNameEmail } from '../containers/calendar/interface';
-import { EventModel, OrganizerModel } from '../interfaces/EventModel';
+import { EventModel } from '../interfaces/EventModel';
 import { notificationsToModel } from './notificationsToModel';
 
 const { NEEDS_ACTION, DECLINED, ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
@@ -45,11 +45,17 @@ export const modifyEventModelPartstat = (
 };
 
 export const getOrganizerDisplayData = (
-    organizer: OrganizerModel,
+    organizer = { email: '', cn: '' },
     isInvitation: boolean,
     displayNameEmailMap: SimpleMap<DisplayNameEmail>
 ) => {
     const { email, cn } = organizer;
+    if (!email) {
+        return {
+            name: '',
+            title: '',
+        };
+    }
     const normalizedEmail = isInvitation ? normalizeEmail(email) : normalizeInternalEmail(email);
     if (!isInvitation) {
         return {
