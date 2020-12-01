@@ -20,7 +20,7 @@ interface Props {
     className?: string;
 }
 
-const LabelStack = ({ labels, showDelete = true, isStacked = false, maxNumber, className }: Props) => {
+const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, className }: Props) => {
     const labelsToShow = labels.slice(0, maxNumber);
     const labelsOverflow = labels.slice(maxNumber || labels.length);
 
