@@ -200,7 +200,6 @@ const CustomizeImportModal = ({
                                         title: customizedPayload.ImportLabel.Name,
                                     },
                                 ]}
-                                showDelete={false}
                                 className="mw100"
                             />
                         )}

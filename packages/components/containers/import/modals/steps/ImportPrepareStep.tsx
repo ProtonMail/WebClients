@@ -281,7 +281,6 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                                         title: payload.ImportLabel.Name,
                                     },
                                 ]}
-                                showDelete={false}
                                 className="mw100"
                             />
                         </span>

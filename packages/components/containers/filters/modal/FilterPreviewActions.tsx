@@ -51,7 +51,6 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                                         title: labelsMap[l].Name,
                                     },
                                 ]}
-                                showDelete={false}
                             />
                         </span>
                     ) : (

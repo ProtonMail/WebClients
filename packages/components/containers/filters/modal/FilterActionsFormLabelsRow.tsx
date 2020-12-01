@@ -78,7 +78,6 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                             title: label.Name,
                                         },
                                     ]}
-                                    showDelete={false}
                                 />
                             </span>
                         </React.Fragment>
@@ -126,7 +125,6 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                                             title: label.Name,
                                                         },
                                                     ]}
-                                                    showDelete={false}
                                                 />
                                             </span>
                                         </Checkbox>
