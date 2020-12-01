@@ -37,6 +37,7 @@ export const Basic = () => (
 export const Size = () => (
     <>
         <SmallButton className="mr1">Small</SmallButton>
+        <Button className="mr1">Normal</Button>
         <LargeButton>Large</LargeButton>
     </>
 );
