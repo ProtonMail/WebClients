@@ -146,8 +146,8 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
             <RoundedIcon
                 className="mr0-5 onmobile-p0-25 onmobile-mr0-25"
                 key="addresses-icon"
-                type={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'success' : 'error'}
-                name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'on' : 'off'}
+                type="success"
+                name="on"
             />
         ) : null,
     ];
