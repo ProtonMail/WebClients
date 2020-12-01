@@ -7,7 +7,7 @@ import { useNotifications } from '../../hooks';
 const VerifySection = ({ domain }) => {
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`Verify code copied to clipboard!` });
-    const domainName = domain.Name;
+    const domainName = domain.DomainName;
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
