@@ -81,14 +81,17 @@ export const createMessage = async (
     const attachments = getAttachments(message.data);
 
     let AttachmentKeyPackets;
-    if (attachments?.length && message.originalAddressID && message.originalAddressID !== message.data.AddressID) {
-        const originalMessageKeys = await getMessageKeys({ AddressID: message.originalAddressID });
+    if (attachments?.length) {
+        const originalMessageKeys = await getMessageKeys({
+            AddressID: message.originalAddressID || message.data?.AddressID,
+        });
         AttachmentKeyPackets = await encryptAttachmentKeyPackets(
             attachments,
             originalMessageKeys.privateKeys,
             messageKeys.publicKeys
         );
     }
+
     const { Message: updatedMessage } = await api(
         createDraft({
             Action: message.action !== MESSAGE_ACTIONS.NEW ? message.action : undefined,
