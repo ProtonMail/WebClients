@@ -74,7 +74,7 @@ export const useSaveDraft = () => {
     return useCallback(async (message: MessageExtendedWithData) => {
         const messageFromCache = messageCache.get(message.localID) as MessageExtended;
 
-        if (messageFromCache.data?.ID) {
+        if (messageFromCache?.data?.ID) {
             await updateDraft(message);
         } else {
             await createDraft(message);
