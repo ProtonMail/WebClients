@@ -1,8 +1,9 @@
+// Main configurations
 @import
 	'variables',
 	'colors';
 
-// Import functions
+// Functions
 @import
 	'functions/em',
 	'functions/rem',
@@ -11,7 +12,7 @@
 	'functions/str-replace',
 	'functions/easing';
 
-// Import mixins
+// Mixins
 @import
 	'mixins/rhythm',
 	'mixins/vendor-prefix',
