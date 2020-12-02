@@ -49,7 +49,7 @@ const WeekStartSection = () => {
                     value={userSettings.WeekStart}
                     options={[
                         {
-                            text: c('Option').t`Use browser settings (${defaultDay})`,
+                            text: c('Option').t`Automatic (${defaultDay})`,
                             value: SETTINGS_WEEK_START.LOCALE_DEFAULT,
                         },
                         days[0],
