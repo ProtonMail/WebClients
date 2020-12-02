@@ -9,6 +9,8 @@ import {
     useGetMailSettings,
     useGetAddresses,
     useGetUser,
+    useAddresses,
+    useMailSettings,
 } from 'react-components';
 import { isPaid } from 'proton-shared/lib/user/helpers';
 
@@ -61,15 +63,19 @@ export const useDraft = () => {
     const getAddresses = useGetAddresses();
     const messageCache = useMessageCache();
     const draftVerifications = useDraftVerifications();
+    const [addresses] = useAddresses();
+    const [mailSettings] = useMailSettings();
 
     useEffect(() => {
         const run = async () => {
-            const [mailSettings, addresses] = await Promise.all([getMailSettings(), getAddresses()]);
+            if (!mailSettings || !addresses) {
+                return;
+            }
             const message = createNewDraft(MESSAGE_ACTIONS.NEW, undefined, mailSettings, addresses);
             cache.set(CACHE_KEY, message);
         };
         void run();
-    }, [cache]);
+    }, [cache, addresses, mailSettings]);
 
     const createDraft = useCallback(
         async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageExtended) => {
