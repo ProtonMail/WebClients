@@ -6,7 +6,7 @@
 
 		&:focus,
 		&:hover,
-		&[aria-expanded="true"] {
+		&[aria-expanded='true'] {
 			background-color: $navigation-hover-bg-color;
 
 		}
@@ -14,18 +14,18 @@
 		&:focus,
 		&:hover {
 			.dropDown-logout-initials {
-				background-color: rgba(0, 0, 0, 0.2);
+				background-color: rgb(0 0 0 / 0.2);
 			}
 		}
 
-		&[aria-expanded="true"] {
+		&[aria-expanded='true'] {
 			.dropDown-logout-initials {
-				background-color: rgba(0, 0, 0, 0.5);
+				background-color: rgb(0 0 0 / 0.5);
 			}
 		}
 
-		@if $rtl-option==true {
-			[dir="rtl"] &-button>span:first-child {
+		@if $rtl-option == true {
+			[dir='rtl'] &-button > span:first-child {
 				margin-left: .5em;
 				margin-right: 0;
 			}
@@ -50,9 +50,11 @@
 	}
 
 	&-initials {
-		min-width: 2.5em;
-		min-height: 2.5em;
-		border: 1px solid var(--bordercolor-input, $pm-global-border);
-		color: $white;
+		&#{&} { // Specificity -_-v
+			min-width: 2.5em;
+			min-height: 2.5em;
+			border: 1px solid var(--bordercolor-input, $pm-global-border);
+			color: $white;
+		}
 	}
 }

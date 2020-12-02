@@ -8,17 +8,17 @@
 	&:focus,
 	&:hover,
 	&:active,
-	&[aria-current="true"] {
+	&[aria-current='true'] {
 		background-color: $navigation-hover-bg-color;
 		color: inherit;
 		text-decoration: none;
 	}
 
-	&[aria-current="true"] {
+	&[aria-current='true'] {
 		font-weight: bold;
 	}
 
-	&>svg {
+	& > svg {
 		fill: var(--fillcolor-icons, $white);
 	}
 
@@ -36,7 +36,7 @@
 
 
 @if $rtl-option==true {
-	[dir="rtl"] {
+	[dir='rtl'] {
 		.topnav-list {
 			margin-left: 0;
 			margin-right: 1em;
@@ -91,7 +91,7 @@
 			padding-right: .5rem;
 		}
 
-		.topnav-link--blackfriday:before {
+		.topnav-link--blackfriday::before {
 			left: calc(.5rem + 15px);
 		}
 	}
@@ -111,15 +111,19 @@
 	}
 
 	.topnav-icon {
-		margin-right: 0;
+		&#{&} { // Specificity -_-v
+			margin-right: 0;
+		}
 	}
 }
 
 
 @include respond-to($breakpoint-small) {
 	.topnav-icon {
-		width: 24px;
-		height: 24px;
+		&#{&} { // Specificity -_-v
+			width: 24px;
+			height: 24px;
+		}
 	}
 
 	.topnav-list--four-elements .topnav-link {
@@ -128,7 +132,7 @@
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
-	.topnav-link--blackfriday:before {
+	.topnav-link--blackfriday::before {
 		left: calc(1.75rem + 22px);
 		top: calc(50% - 18px);
 	}
@@ -143,7 +147,7 @@
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
-	.topnav-link--blackfriday:before {
+	.topnav-link--blackfriday::before {
 		left: calc(.5rem + 22px);
 	}
 }

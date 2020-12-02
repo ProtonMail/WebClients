@@ -120,11 +120,11 @@
 @if $rtl-option==true {
 
 	/* RTL */
-	[dir="rtl"] .alignright {
+	[dir='rtl'] .alignright {
 		text-align: left;
 	}
 
-	[dir="rtl"] .alignleft {
+	[dir='rtl'] .alignleft {
 		text-align: right;
 	}
 }
@@ -161,7 +161,7 @@
 .capitalize-block {
 	text-transform: lowercase;
 
-	&:first-letter {
+	&::first-letter {
 		text-transform: uppercase;
 	}
 }

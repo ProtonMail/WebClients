@@ -3,7 +3,7 @@ $sticky-title-height: 10rem !default;
 .sticky-title {
 	position: sticky;
 	top: 0;
-	box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 5px 5px 0 rgb(0 0 0 / 0.1);
 	padding: .5em .75em;
 	background: inherit;
 	z-index: 11;
@@ -18,13 +18,13 @@ $sticky-title-height: 10rem !default;
 }
 
 .container-section-sticky {
-	padding: 3em 2em 0 2em;
+	padding: 3em 2em 0;
 	max-width: 120ch; // avoid too long lines
 	margin-left: auto;
 	margin-right: auto;
 
-	&.pt0 { // 😓
-		padding-top: 0;
+	@include respond-to($breakpoint-large, 'min') {
+		max-width: 75vw;
 	}
 
 	&--fullwidth {
