@@ -22,8 +22,8 @@ interface Props {
 }
 
 const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, minimized = false }: Props) => {
-    const [currentUploads, setCurrentUploads] = useState<Upload[]>([]);
-    const [currentDownloads, setCurrentDownloads] = useState<Download[]>([]);
+    const [uploadsInSession, setUploadsInSession] = useState<Upload[]>([]);
+    const [downloadsInSession, setDownloadsInSession] = useState<Download[]>([]);
 
     const minimizeRef = useRef<HTMLButtonElement>(null);
     const transfers = useMemo(() => [...downloads, ...uploads], [uploads, downloads]);
@@ -43,23 +43,20 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
 
     useEffect(() => {
         if (activeUploadsCount) {
-            setCurrentUploads((currentUploads) => [
-                ...currentUploads.filter((upload) => activeUploads.every(({ id }) => id !== upload.id)),
-                ...activeUploads,
-            ]);
+            setUploadsInSession((uploadsInSession) => [...uploadsInSession.filter(isTransferDone), ...activeUploads]);
         } else {
-            setCurrentUploads([]);
+            setUploadsInSession([]);
         }
     }, [activeUploads]);
 
     useEffect(() => {
         if (activeDownloadsCount) {
-            setCurrentDownloads((currentDownloads) => [
-                ...currentDownloads.filter((download) => activeDownloads.every(({ id }) => id !== download.id)),
+            setDownloadsInSession((downloadsInSession) => [
+                ...downloadsInSession.filter(isTransferDone),
                 ...activeDownloads,
             ]);
         } else {
-            setCurrentDownloads([]);
+            setDownloadsInSession([]);
         }
     }, [activeDownloads]);
 
@@ -103,7 +100,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
         }
 
         if (activeUploadsCount) {
-            const uploadProgress = calculateProgress(latestStats, currentUploads);
+            const uploadProgress = calculateProgress(latestStats, uploadsInSession);
             headingElements.push(
                 c('Info').ngettext(
                     msgid`${activeUploadsCount} Uploading ${uploadProgress}%`,
@@ -113,7 +110,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
             );
         }
         if (activeDownloadsCount) {
-            const downloadProgress = calculateProgress(latestStats, currentDownloads);
+            const downloadProgress = calculateProgress(latestStats, downloadsInSession);
             headingElements.push(
                 c('Info').ngettext(
                     msgid`${activeDownloadsCount} Downloading ${downloadProgress}%`,
