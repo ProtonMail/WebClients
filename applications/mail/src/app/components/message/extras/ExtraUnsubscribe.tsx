@@ -83,7 +83,6 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 const from = findSender(addresses, { AddressID: address.ID }, true);
 
                 const inputMessage: PartialMessageExtended = {
-                    ParentID: message.data?.ID,
                     localID: generateUID('unsubscribe'),
                     plainText: body,
                     data: {
