@@ -1,0 +1,20 @@
+import { Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Tabs } from "react-components"
+
+# Tabs
+
+Simple responsive horizontal navigation tabs. `Tabs` organize and allow navigation between groups of content that are related and at the same level of hierarchy.
+
+- The link between tabs and tab panels using `aria-controls` and `aria-labelledby`.
+- The use of `role="tablist/presentation/tab/tabpanel"`.
+- A selected tab has `aria-selected="true"`, `aria-selected="false"` if not.
+
+### Basic
+
+A simple example with no frills.
+
+<Canvas>
+    <Story id="components-tabs--basic" />
+</Canvas>
+
+<ArgsTable of={Tabs} />
