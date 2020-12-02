@@ -55,52 +55,70 @@ subsection: sass-variables
 
 <h3>Global ones</h3>
 
+
+<h4>Colors</h4>
+
 <ul>
-  <li class="mb0-5"><code>--main-bg-color</code>: global main color</li>
-  <li class="mb0-5"><code>--secondary-bg-color</code>: secondary main color</li>
-  <li class="mb0-5"><code>--bgcolor-searchbox-field</code>: background-color of searchbox</li>
+	<li class="mb0-5"><code>--main-bg-color</code>: global main color</li>
+	<li class="mb0-5"><code>--secondary-bg-color</code>: secondary main color</li>
+	<li class="mb0-5"><code>--bgcolor-searchbox-field</code>: background-color of searchbox</li>
+	<li class="mb0-5"><code>--boxshadow-main</code>: used to apply a box shadow on main content (used for light theme for example)</li>
+	<li class="mb0-5"><code>--bgcolor-main-area</code>: background-color of the main area (settings)</li>
+	<li class="mb0-5"><code>--color-main-area</code>: color of the main area (settings)</li>
+	<li class="mb0-5"><code>--bgcolor-toolbar</code>: background-color of the toolbar</li>
+
+	<li class="mb0-5"><code>--color-nav-link</code>: color used for navigation links</li>
+	<li class="mb0-5"><code>--color-nav-active</code>: color used for navigation links when active</li>
+	<li class="mb0-5"><code>--color-standard-text</code>: color used for text</li>
+
+	<li class="mb0-5"><code>--fillcolor-logo</code>: color used for filling SVG logo</li>
+  	<li class="mb0-5"><code>--fillcolor-icons</code>: color used for filling icons</li>
+</ul>
+
+<h4>Inputs</h4>
+
+<ul>
+	<li class="mb0-5"><code>--bordercolor-input</code>: border-color of the inputs</li>
+	<li class="mb0-5"><code>--bgcolor-input</code>: background-color of the inputs</li>
+	<li class="mb0-5"><code>--color-input</code>: color of the text in inputs</li>
+</ul>
+
+<h4>List mails/contacts</h4>
+
+<ul>
+	<li class="mb0-5"><code>--bgcolor-item-column-list</code>: background-color of the list of items/mails (left column in conversations)</li>
+	<li class="mb0-5"><code>--bgcolor-unread-item-column-list</code>: background-color of unread items/mails (left column in conversations)</li>
+	<li class="mb0-5"><code>--bgcolor-item-column-active</code>: background-color of the list of items/mails (left column in conversations)</li>
+	<li class="mb0-5"><code>--bgcolor-view-column-detail</code>: background-color of the detail view of emails (right column in conversations)</li>
+</ul>
+
+<h4>UI widths/sizes</h4>
+
+<ul>
+	<li class="mb0-5"><code>--width-sidebar</code>: width of the navigation</li>
+	<li class="mb0-5"><code>--width-conversation-column</code>: width of the conversation column</li>
+	<li class="mb0-5"><code>--width-subnav</code>: width of the sub navigation (short links)</li>
+	<li class="mb0-5"><code>--body-fontsize</code>: global font size.</li>
+	<li class="mb0-5"><code>--label-width</code>: the width of <code>label</code> (in forms)</li>
+</ul>
+
+<h4>Other specific components</h4>
+
+<ul>
+	<li class="mb0-5"><code>--bgcolor-highlight</code>: background-color of highlight helper</li>
+	<li class="mb0-5"><code>--bgcolor-meterbar</code>: the background color of <code>meter</code></li>
+	<li class="mb0-5"><code>--bgcolor-mark</code>: the background color of <code>mark</code></li>
+	<li class="mb0-5"><code>--color-mark</code>: the color of <code>mark</code></li>
+	<li class="mb0-5"><code>--bgcolor-calendar-now-indicator</code>: background-color for now hour line indicator</li>
+</ul>
+
+<h4>To triage</h4>
+
+<ul>
   <li class="mb0-5"><code>--bgcolor-spacebar</code>: background-color of remaining space bar</li>
   <li class="mb0-5"><code>--bgcolor-aside-link</code>: background-color of link icons in aside bar.</li>
-  <li class="mb0-5"><code>--bgcolor-toolbar</code>: background-color of the toolbar</li>
-  <li class="mb0-5"><code>--bgcolor-item-column-list</code>: background-color of the list of items/mails (left column in conversations)</li>
-  <li class="mb0-5"><code>--bgcolor-unread-item-column-list</code>: background-color of unread items/mails (left column in conversations)</li>
-  <li class="mb0-5"><code>--bgcolor-item-column-active</code>: background-color of the list of items/mails (left column in conversations)</li>
-
-  <li class="mb0-5"><code>--bgcolor-view-column-detail</code>: background-color of the detail view of emails (right column in conversations)</li>
-
-  <li class="mb0-5"><code>--bgcolor-main-area</code>: background-color of the main area (settings)</li>
-  <li class="mb0-5"><code>--color-main-area</code>: color of the main area (settings)</li>
-  <li class="mb0-5"><code>--bgcolor-subnav</code>: background-color of the subnavigation</li>
-  <li class="mb0-5"><code>--color-subnav-link</code>: color of the subnavigation links</li>
-
-  <li class="mb0-5"><code>--bordercolor-input</code>: border-color of the inputs</li>
-  <li class="mb0-5"><code>--bgcolor-input</code>: background-color of the inputs</li>
-  <li class="mb0-5"><code>--color-input</code>: color of the text in inputs</li>
-
-  <li class="mb0-5"><code>--bgcolor-highlight</code>: background-color of highlight helper</li>
-
-  <li class="mb0-5"><code>--fillcolor-logo</code>: color used for filling SVG logo</li>
-  <li class="mb0-5"><code>--fillcolor-icons</code>: color used for filling icons</li>
-  <li class="mb0-5"><code>--color-nav-link</code>: color used for navigation links</li>
-  <li class="mb0-5"><code>--color-nav-active</code>: color used for navigation links when active</li>
-  <li class="mb0-5"><code>--color-standard-text</code>: color used for text</li>
-  <li class="mb0-5"><code>--boxshadow-main</code>: used to apply a box shadow on main content (used for light theme for example)</li>
-  <li class="mb0-5"><code>--width-sidebar</code>: width of the navigation</li>
-  <li class="mb0-5"><code>--width-conversation-column</code>: width of the conversation column</li>
-  <li class="mb0-5"><code>--width-subnav</code>: width of the sub navigation (short links)</li>
-  <li class="mb0-5"><code>--body-fontsize</code>: global font size.</li>
-  <li class="mb0-5"><code>--label-width</code>: the width of <code>label</code> (in forms)</li>
-
-  <li class="mb0-5"><code>--bgcolor-meterbar</code>: the background color of <code>meter</code></li>
-  <li class="mb0-5"><code>--bgcolor-mark</code>: the background color of <code>mark</code></li>
-  <li class="mb0-5"><code>--color-mark</code>: the color of <code>mark</code></li>
 </ul>
 
-<h3>Project-specific ones</h3>
-
-<ul>
-  <li class="mb0-5"><code>--bgcolor-calendar-now-indicator</code>: background-color for now hour line indicator</li>
-</ul>
 
 <p>Updating these custom properties allows to create simple themes without surcharging all the CSS stuff.</p>
 
