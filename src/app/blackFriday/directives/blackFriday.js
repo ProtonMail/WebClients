@@ -87,7 +87,7 @@ function blackFriday(
             total: currencyFilter(priceOffer, 1, offer.Currency),
             totalRegular: currencyFilter(priceRegular * offer.Cycle, 1, offer.Currency)
         };
-        const percentage = percentageFilter(priceOffer, priceRegular * offer.Cycle);
+        const percentage = 100 - percentageFilter(priceOffer, priceRegular * offer.Cycle);
         const afterBillValue = planList.reduce((acc, { Pricing }) => acc + Pricing[Cycle], 0);
 
         return {
