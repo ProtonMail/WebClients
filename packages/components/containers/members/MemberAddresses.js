@@ -21,6 +21,10 @@ const MemberAddresses = ({ member, addresses }) => {
         </>
     ); // trick for responsive and mobile display
 
+    if (!n) {
+        return <>{contentDropDown}</>;
+    }
+
     return (
         <>
             <SimpleDropdown className="pm-button--link" content={contentDropDown}>
