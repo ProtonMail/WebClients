@@ -13,7 +13,13 @@ import {
     ConversationCountsModel,
     MessageCountsModel,
     ContactsModel,
-    ContactEmailsModel
+    ContactEmailsModel,
+    DomainsModel,
+    FiltersModel,
+    MembersModel,
+    PaymentMethodsModel,
+    ImportersModel,
+    ImportHistoriesModel,
 } from 'proton-shared/lib/models';
 
 interface Props {
@@ -37,7 +43,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 AddressesModel,
                 MailSettingsModel,
                 MessageCountsModel as Model<any>,
-                ConversationCountsModel as Model<any>
+                ConversationCountsModel as Model<any>,
             ]}
             eventModels={[
                 UserModel,
@@ -50,7 +56,13 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 SubscriptionModel,
                 OrganizationModel,
                 ContactsModel,
-                ContactEmailsModel
+                ContactEmailsModel,
+                DomainsModel,
+                FiltersModel,
+                MembersModel,
+                PaymentMethodsModel,
+                ImportersModel,
+                ImportHistoriesModel,
             ]}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
