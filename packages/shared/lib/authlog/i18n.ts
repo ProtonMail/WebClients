@@ -13,6 +13,8 @@ export const getAuthLogEventsI18N = (type: AUTH_LOG_EVENTS) => {
             return c('Log event').t`Sign in failure (second factor failed)`;
         case AUTH_LOG_EVENTS.LOGIN_SUCCESS_AWAIT_2FA:
             return c('Log event').t`Sign in success (awaiting second factor)`;
+        case AUTH_LOG_EVENTS.LOGIN_SUCCESS_FORBIDDEN:
+            return c('Log event').t`Sign in success (forbidden)`;
 
         case AUTH_LOG_EVENTS.REAUTH_FAILURE_PASSWORD:
             return c('Log event').t`Authentication failure (wrong password)`;
