@@ -42,6 +42,7 @@ export interface Upload {
     startDate: Date;
     resumeState?: TransferState;
     error?: Error;
+    ready?: boolean;
 }
 
 export interface DownloadInfo {
