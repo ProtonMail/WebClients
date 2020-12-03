@@ -22,65 +22,63 @@ const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes
     }
 
     return {
-        status: isElementUnread ? MARK_AS_STATUS.UNREAD : MARK_AS_STATUS.READ
+        status: isElementUnread ? MARK_AS_STATUS.UNREAD : MARK_AS_STATUS.READ,
     };
 };
 
 const applyMarkAsChangesOnMessage = (message: Message, { status }: MarkAsChanges) => ({
     ...message,
-    Unread: status === MARK_AS_STATUS.UNREAD ? 1 : 0
+    Unread: status === MARK_AS_STATUS.UNREAD ? 1 : 0,
 });
 
-const applyMarkAsChangesOnWholeConversation = (
-    conversation: Conversation,
-    labelID: string,
-    { status }: MarkAsChanges
-) => {
-    const { NumUnread = 0, ContextNumUnread = 0, Labels = [] } = conversation;
-
-    const updatedNumUnread = status === MARK_AS_STATUS.UNREAD ? NumUnread + 1 : 0;
+const applyMarkAsChangesOnConversation = (conversation: Conversation, labelID: string, { status }: MarkAsChanges) => {
+    const { NumUnread = 0, Labels = [] } = conversation;
+    const { ContextNumUnread = 0 } = Labels.find(({ ID }) => ID === labelID) || {};
+    const updatedNumUnread =
+        status === MARK_AS_STATUS.UNREAD ? NumUnread + 1 : Math.max(NumUnread - ContextNumUnread, 0);
     const updatedContextNumUnread = status === MARK_AS_STATUS.UNREAD ? ContextNumUnread + 1 : 0;
     const updatedLabels = Labels.map((label) =>
         label.ID === labelID
-            ? label
-            : {
+            ? {
                   ...label,
-                  ContextNumUnread: updatedContextNumUnread
+                  ContextNumUnread: updatedContextNumUnread,
               }
+            : label
     );
 
     return {
         ...conversation,
         NumUnread: updatedNumUnread,
         ContextNumUnread: updatedContextNumUnread,
-        Labels: updatedLabels
+        Labels: updatedLabels,
     };
 };
 
-const applySingleMarkAsChangesOnConversation = (
+// Here only one message is marked as read/unread
+const applyMarkAsChangesOnConversationWithMessages = (
     conversation: Conversation,
     labelID: string,
     { status }: MarkAsChanges
 ) => {
-    const { ContextNumUnread = 0, NumUnread = 0, Labels = [] } = conversation;
-
+    const { NumUnread = 0, Labels = [] } = conversation;
+    const { ContextNumUnread = 0 } = Labels.find(({ ID }) => ID === labelID) || {};
     const updatedNumUnread = status === MARK_AS_STATUS.UNREAD ? NumUnread + 1 : Math.max(NumUnread - 1, 0);
     const updatedContextNumUnread =
         status === MARK_AS_STATUS.UNREAD ? ContextNumUnread + 1 : Math.max(ContextNumUnread - 1, 0);
-    const updatedLabels = Labels.map((l) =>
-        l.ID === labelID
+    const updatedLabels = Labels.map((label) =>
+        label.ID === labelID
             ? {
-                  ...l,
-                  ContextNumUnread: updatedContextNumUnread
+                  ...label,
+                  ContextNumUnread: updatedContextNumUnread,
               }
-            : l
+            : label
     );
 
     return {
         ...conversation,
         NumUnread: updatedNumUnread,
         ContextNumUnread: updatedContextNumUnread,
-        Labels: updatedLabels
+        Labels: updatedLabels,
     };
 };
 
@@ -108,7 +106,7 @@ export const useOptimisticMarkAs = () => {
                 if (messageFromCache && messageFromCache.data) {
                     messageCache.set(localID, {
                         ...messageFromCache,
-                        data: applyMarkAsChangesOnMessage(messageFromCache.data, changes)
+                        data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
                     });
                 }
 
@@ -117,13 +115,13 @@ export const useOptimisticMarkAs = () => {
                 if (conversationResult) {
                     const conversation = conversationResult.Conversation;
                     conversationCache.set(message.ConversationID, {
-                        Conversation: applySingleMarkAsChangesOnConversation(conversation, labelID, changes),
+                        Conversation: applyMarkAsChangesOnConversationWithMessages(conversation, labelID, changes),
                         Messages: conversationResult.Messages?.map((conversationMessage) => {
                             if (conversationMessage.ID === message.ID) {
                                 return applyMarkAsChangesOnMessage(conversationMessage, changes);
                             }
                             return conversationMessage;
-                        })
+                        }),
                     });
                 }
 
@@ -136,7 +134,7 @@ export const useOptimisticMarkAs = () => {
                 // Update in elements cache if conversation mode
                 const conversationElement = elementsCache.elements[message.ConversationID] as Conversation | undefined;
                 if (conversationElement && conversationElement.ID) {
-                    updatedElements[conversationElement.ID] = applySingleMarkAsChangesOnConversation(
+                    updatedElements[conversationElement.ID] = applyMarkAsChangesOnConversationWithMessages(
                         conversationElement,
                         labelID,
                         changes
@@ -152,15 +150,15 @@ export const useOptimisticMarkAs = () => {
                 if (conversationResult) {
                     const conversationFromCache = conversationResult.Conversation;
                     conversationCache.set(conversation.ID, {
-                        Conversation: applyMarkAsChangesOnWholeConversation(conversationFromCache, labelID, changes),
-                        Messages: conversationResult.Messages
+                        Conversation: applyMarkAsChangesOnConversation(conversationFromCache, labelID, changes),
+                        Messages: conversationResult.Messages,
                     });
                 }
 
                 // Update in elements cache if conversation mode
                 const conversationElement = elementsCache.elements[conversation.ID] as Conversation | undefined;
                 if (conversationElement && conversationElement.ID) {
-                    updatedElements[conversationElement.ID] = applyMarkAsChangesOnWholeConversation(
+                    updatedElements[conversationElement.ID] = applyMarkAsChangesOnConversation(
                         conversationElement,
                         labelID,
                         changes
@@ -182,7 +180,7 @@ export const useOptimisticMarkAs = () => {
                         if (messageFromCache && messageFromCache.data) {
                             messageCache.set(localID, {
                                 ...messageFromCache,
-                                data: applyMarkAsChangesOnMessage(messageFromCache.data, changes)
+                                data: applyMarkAsChangesOnMessage(messageFromCache.data, changes),
                             });
                         }
                     });
@@ -193,7 +191,7 @@ export const useOptimisticMarkAs = () => {
         if (Object.keys(updatedElements).length) {
             setElementsCache({
                 ...elementsCache,
-                elements: { ...elementsCache.elements, ...updatedElements }
+                elements: { ...elementsCache.elements, ...updatedElements },
             });
         }
 
