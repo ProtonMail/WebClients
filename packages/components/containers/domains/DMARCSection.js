@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
+
 import { useNotifications } from '../../hooks';
-import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy } from '../../components';
+import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy, Input } from '../../components';
 
 const DMARCSection = () => {
     const none = <strong key="none">p=none</strong>;
     const address = <strong key="address">address@example.com</strong>;
-    const valueToCopy = 'v=DMARC1; p=none; rua=mailto:address@example.com';
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`DMARC value copied to clipboard!` });
+    const dmarcValue = 'v=DMARC1; p=none; rua=mailto:address@example.com';
+    const [value, setValue] = useState(dmarcValue);
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
@@ -33,11 +35,13 @@ const DMARCSection = () => {
                                 <Copy
                                     onCopy={handleCopy}
                                     className="flex-item-noshrink pm-button--small mr0-5"
-                                    value={valueToCopy}
+                                    value={value}
                                 />{' '}
-                                <code className="ellipsis" title={valueToCopy}>
-                                    {valueToCopy}
-                                </code>
+                                <Input
+                                    value={value}
+                                    onChange={({ target }) => setValue(target.value)}
+                                    placeholder={dmarcValue}
+                                />
                             </div>,
                         ]}
                     />
