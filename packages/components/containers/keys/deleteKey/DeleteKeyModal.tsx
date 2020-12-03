@@ -45,7 +45,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                     <>
                         <Alert>
                             {c('Info')
-                                .t`This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been with it. It may lead to data loss.`}
+                                .t`This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.`}
                         </Alert>
                         <Alert type="error">
                             {c('Confirm').t`Are you sure you want to permanently delete this key?`}
