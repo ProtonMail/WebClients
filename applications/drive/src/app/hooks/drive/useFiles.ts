@@ -93,6 +93,7 @@ function useFiles() {
                     return findAdjustedName(start + HASH_CHECK_AMOUNT);
                 }
                 const availableName = hashesToCheck.find(({ hash }) => hash === AvailableHashes[0]);
+
                 if (!availableName) {
                     throw new Error('Backend returned unexpected hash');
                 }

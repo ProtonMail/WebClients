@@ -319,6 +319,7 @@ export function initUpload(
         const uploadingBlocks = new Map<number, EncryptedBlock>();
         const blockTokens = new Map<number, BlockTokenInfo>();
         const reader = new ChunkFileReader(file, FILE_CHUNK_SIZE);
+
         abortController = new AbortController();
 
         const startUpload = async () => {

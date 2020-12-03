@@ -99,11 +99,17 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
     };
 
     useEffect(() => {
-        const uploading = uploads.filter(isTransferProgress);
-        const nextPending = uploads.find(isTransferPending);
+        const uploadingOrReady = uploads.filter(
+            (upload) => isTransferProgress(upload) || (isTransferPending(upload) && upload.ready)
+        );
+        const nextQueued = uploads.find((upload) => isTransferPending(upload) && !upload.ready);
 
-        if (uploading.length < MAX_ACTIVE_UPLOADS && nextPending) {
-            const { id } = nextPending;
+        if (uploadingOrReady.length < MAX_ACTIVE_UPLOADS && nextQueued) {
+            const { id } = nextQueued;
+
+            updateUploadState(id, TransferState.Pending, {
+                ready: true,
+            });
 
             controls.current[id]
                 .start()
