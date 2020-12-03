@@ -194,6 +194,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
 
                     if (hasPaidVpn) {
                         setStep(STEPS.VPN);
+                        return;
                     }
 
                     await call();
