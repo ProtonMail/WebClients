@@ -1,4 +1,4 @@
-# [4.0.0-beta.11] - 2020-12-02
+# [4.0.0-beta.11] - 2020-12-03
 ## Updated
 - Improve display of participants in event popover
 - Hide email notifications for imported events until they are supported
