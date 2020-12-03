@@ -89,7 +89,7 @@ export async function upload(
 
         listener = () => {
             // When whole block is uploaded, we mustn't cancel even if we don't get a response
-            if (lastLoaded !== total) {
+            if (!total || lastLoaded !== total) {
                 xhr.abort();
                 reject(new TransferCancel({ id }));
             }
@@ -137,6 +137,7 @@ export function initUpload(
     { initialize, requestUpload, transform, onProgress, finalize, onError }: UploadCallbacks
 ) {
     const id = generateUID('drive-transfers');
+    let abortController: AbortController;
     let paused = false;
 
     const fillUploadQueue = async (
@@ -205,15 +206,12 @@ export function initUpload(
         });
     };
 
-    let abortController: AbortController;
-
     const uploadBlocks = async (
         uploadingBlocks: Map<number, EncryptedBlock>,
         blockTokens: Map<number, BlockTokenInfo>,
+        abortSignal: AbortSignal,
         numRetry = 0
     ): Promise<void> => {
-        const abortSignal = abortController.signal;
-
         if (abortSignal.aborted) {
             throw new TransferCancel({ id });
         }
@@ -307,7 +305,7 @@ export function initUpload(
                 uploadingBlocks.forEach((block) => {
                     delete block.meta;
                 });
-                await uploadBlocks(uploadingBlocks, blockTokens, numRetry + 1);
+                await uploadBlocks(uploadingBlocks, blockTokens, abortController.signal, numRetry + 1);
             } else {
                 throw e;
             }
@@ -322,20 +320,27 @@ export function initUpload(
 
         abortController = new AbortController();
 
-        const startUpload = async () => {
+        const startUpload = async (initialized = false) => {
             try {
-                await initialize?.();
+                if (abortController.signal.aborted) {
+                    throw new TransferCancel({ id });
+                }
+
+                if (!initialized) {
+                    await initialize?.();
+                }
+
                 // Keep filling queue with up to 20 blocks and uploading them
                 while (!reader.isEOF() || uploadingBlocks.size) {
                     activeIndex = await fillUploadQueue(reader, uploadingBlocks, activeIndex);
-                    await uploadBlocks(uploadingBlocks, blockTokens);
+                    await uploadBlocks(uploadingBlocks, blockTokens, abortController.signal);
                 }
                 await finalize(blockTokens, { id });
             } catch (e) {
                 if (paused) {
                     resetUploadProgress(uploadingBlocks);
                     await waitUntil(() => paused === false);
-                    await startUpload();
+                    await startUpload(true);
                 } else {
                     abortController.abort();
                     throw e;
