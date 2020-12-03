@@ -19,6 +19,7 @@ import {
     isTransferPending,
     isTransferCancelError,
 } from '../../utils/transfer';
+import { SupportedMimeTypes } from '../../utils/MimeTypeParser/constants';
 
 const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
 type DownloadStateUpdater = TransferState | ((download: Download | PartialDownload) => TransferState);
@@ -235,7 +236,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         const partialsPromises: Promise<void>[] = [];
         const folderMeta = {
             filename: folderName.endsWith('.zip') ? folderName : `${folderName}.zip`,
-            mimeType: 'application/zip',
+            mimeType: SupportedMimeTypes.zip,
         };
         let aborted = false;
 

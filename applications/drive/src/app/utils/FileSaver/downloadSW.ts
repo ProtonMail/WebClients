@@ -3,8 +3,8 @@
 interface DownloadConfig {
     stream: ReadableStream<Uint8Array>;
     port: string;
-    filename?: string;
-    mimeType?: string;
+    filename: string;
+    mimeType: string;
     size?: number;
 }
 
@@ -74,14 +74,14 @@ class DownloadServiceWorker {
             return;
         }
 
-        const { stream, filename, size } = pendingDownload;
+        const { stream, filename, size, mimeType } = pendingDownload;
 
         this.pendingDownloads.delete(url);
 
         const headers = new Headers({
             ...(size ? { 'Content-Length': `${size}` } : {}),
-            'Content-Type': 'application/octet-stream; charset=utf-8',
-            'Content-Disposition': `attachment; filename="${encodeURI(filename || 'file')}"`,
+            'Content-Type': mimeType,
+            'Content-Disposition': `attachment; filename="${encodeURI(filename)}"`,
             'Content-Security-Policy': "default-src 'none'",
             'X-Content-Security-Policy': "default-src 'none'",
             'X-WebKit-CSP': "default-src 'none'",

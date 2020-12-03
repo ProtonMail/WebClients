@@ -4,6 +4,7 @@ import { isSafari, isEdge, isEdgeChromium, isIos } from 'proton-shared/lib/helpe
 import { WritableStream } from 'web-streams-polyfill';
 import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
 import { PUBLIC_PATH } from 'proton-shared/lib/constants';
+import { TransferMeta } from '../../interfaces/transfer';
 
 /**
  * Safari and Edge don't support returning stream as a response.
@@ -64,11 +65,7 @@ export async function initDownloadSW() {
  * Opens download stream into service worker. Use abort signal when pipeTo can't close the download stream.
  */
 export async function openDownloadStream(
-    meta: {
-        filename: string;
-        mimeType?: string;
-        size?: number;
-    },
+    meta: TransferMeta,
     { onCancel, abortSignal }: { onCancel: () => void; abortSignal?: AbortSignal }
 ) {
     const channel = new MessageChannel();
