@@ -49,6 +49,7 @@ const CalendarSidebar = ({
             data-test-id="calendar-view:new-event-button"
             disabled={!onCreateEvent}
             onClick={onCreateEvent}
+            className="nomobile"
         >{c('Action').t`New event`}</SidebarPrimaryButton>
     );
 
