@@ -10,9 +10,9 @@ import {
 } from 'pmcrypto';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { Address } from 'proton-shared/lib/interfaces/Address';
-import { CachedKey } from 'proton-shared/lib/interfaces';
+import { DecryptedKey } from 'proton-shared/lib/interfaces';
 import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
-import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
+import { getPrimaryKey } from 'proton-shared/lib/keys';
 import { ShareMeta } from '../../interfaces/share';
 
 export interface PrimaryAddressKey {
@@ -88,7 +88,7 @@ export const getPrimaryAddressAsync = async (getAddresses: () => Promise<Address
 
 export const getPrimaryAddressKeyAsync = async (
     getPrimaryAddress: () => Promise<Address>,
-    getAddressKeys: (id: string) => Promise<CachedKey[]>
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
 ) => {
     const activeAddress = await getPrimaryAddress();
     const addressKeys = await getAddressKeys(activeAddress.ID);
@@ -105,7 +105,7 @@ export const getPrimaryAddressKeyAsync = async (
 export const getOwnAddressKeysAsync = async (
     email: string,
     getAddresses: () => Promise<Address[]>,
-    getAddressKeys: (id: string) => Promise<CachedKey[]>
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
 ) => {
     const addresses = await getAddresses();
     const ownAddress = addresses.find(({ Email }) => Email === email);
