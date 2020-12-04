@@ -170,11 +170,13 @@ const useFocusTrap = ({
         };
     }, [active]);
 
-    return {
-        ...(pendingRef.current && { 'data-focus-pending': pendingRef.current }),
-        'data-focus-root': '1',
-        tabIndex: -1,
-    };
+    return active
+        ? {
+              ...(pendingRef.current && { 'data-focus-pending': pendingRef.current }),
+              'data-focus-root': '1',
+              tabIndex: -1,
+          }
+        : {};
 };
 
 export default useFocusTrap;
