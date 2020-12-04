@@ -111,11 +111,14 @@ const generateSessionKeyHelper = async (): Promise<SessionKey> => ({
 const encryptBodyPackage = async (pack: Package, messageKeys: MessageKeys, publicKeys: OpenPGPKey[]) => {
     const cleanPublicKeys = publicKeys.filter(identity);
 
+    // Always encrypt with a single private key
+    const privateKeys = messageKeys.privateKeys.slice(0, 1);
+
     const { data, sessionKey } = await encryptMessage({
         data: pack.Body || '',
         publicKeys: cleanPublicKeys,
         sessionKey: cleanPublicKeys.length ? undefined : await generateSessionKeyHelper(),
-        privateKeys: messageKeys.privateKeys,
+        privateKeys,
         returnSessionKey: true,
         compression: enums.compression.zip,
     });
@@ -137,10 +140,13 @@ const encryptDraftBodyPackage = async (
 ) => {
     const cleanPublicKeys = [...messageKeys.publicKeys, ...publicKeys].filter(identity);
 
+    // Always encrypt with a single private key
+    const privateKeys = messageKeys.privateKeys.slice(0, 1);
+
     const { data, sessionKey } = await encryptMessage({
         data: pack.Body || '',
         publicKeys: cleanPublicKeys,
-        privateKeys: messageKeys.privateKeys,
+        privateKeys,
         returnSessionKey: true,
         compression: enums.compression.zip,
     });

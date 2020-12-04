@@ -28,10 +28,13 @@ export const prepareExport = (message: MessageExtended) => {
 };
 
 const encryptBody = async (content: string, messageKeys: MessageKeys) => {
+    const publicKeys = messageKeys.publicKeys.slice(0, 1);
+    const privateKeys = messageKeys.privateKeys.slice(0, 1);
+
     const { data } = await encryptMessage({
         data: content,
-        publicKeys: [messageKeys.publicKeys?.[0]],
-        privateKeys: [messageKeys.privateKeys?.[0]],
+        publicKeys,
+        privateKeys,
         compression: enums.compression.zip,
     });
 
