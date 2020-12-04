@@ -3,18 +3,17 @@ $padding-left-link: 2rem !default;
 
 .navigation__link,
 .navigation__link--groupHeader {
-	padding: .95rem 1em .95rem $padding-left-link;
+	padding: 0.95rem 1em 0.95rem $padding-left-link;
 	color: var(--color-nav-link, $white);
 	text-decoration: none;
 	display: block;
 }
 
 @if $rtl-option==true {
-	[dir='rtl'] {
-
+	[dir="rtl"] {
 		.navigation__link,
 		.navigation__link--groupHeader {
-			padding: .95rem $padding-left-link .95rem 1em;
+			padding: 0.95rem $padding-left-link 0.95rem 1em;
 		}
 	}
 }
@@ -34,7 +33,7 @@ $padding-left-link: 2rem !default;
 	text-decoration: none;
 }
 
-[aria-current='page'].navigation__link {
+[aria-current="page"].navigation__link {
 	background: $navigation-hover-bg-color;
 	color: var(--color-nav-active, $white);
 	font-weight: bold;
@@ -47,12 +46,11 @@ $padding-left-link: 2rem !default;
 	.navigation__refresh {
 		display: inline-flex;
 	}
-
 }
 
 // labels/folders sections
 .navigation__link--groupHeader-link {
-	color: var(--color-nav-link, $white);
+	color: var(--fillcolor-icons, $navigation-fillcolor-icons);
 
 	.navigation__icon--expand {
 		color: var(--fillcolor-icons, $navigation-fillcolor-icons);
@@ -66,11 +64,6 @@ $padding-left-link: 2rem !default;
 			color: var(--fillcolor-icons, $white);
 		}
 	}
-}
-
-/* expand hover only on button + groupHeader */
-.navigation__link--groupHeader-link {
-	color: var(--fillcolor-icons, $navigation-fillcolor-icons);
 }
 
 .navigation__link--expand:focus,
@@ -87,7 +80,7 @@ $padding-left-link: 2rem !default;
 	background: $pm-primary;
 	color: $white;
 	font-size: 1.1rem;
-	padding: 0.2rem .4em 0; // em value for top gives non rounded value, so rem
+	padding: 0.2rem 0.4em 0; // em value for top gives non rounded value, so rem
 	border-radius: 1.1rem;
 	line-height: 1;
 	height: 1.6rem;
@@ -98,51 +91,49 @@ $padding-left-link: 2rem !default;
 	}
 }
 
-
 /* Sub folders */
 .navigation__item {
-	[data-level='1'] {
+	[data-level="1"] {
 		padding-left: 1em;
 	}
 
-	[data-level='2'] {
+	[data-level="2"] {
 		padding-left: 2em;
 	}
 }
-
-
 
 /* Sub-navigation */
 .navigation__sublist {
 	margin-left: $padding-left-link;
 	overflow: hidden;
 	opacity: 1;
-	transition: visibility 0s ease, transform .5s ease, opacity .5s ease, max-height .5s ease;
+	transition: visibility 0s ease, transform 0.5s ease, opacity 0.5s ease,
+		max-height 0.5s ease;
 	transform-origin: top center;
 	transform: scale(1, 1);
 	max-height: 44em;
 	visibility: visible;
 	transition-delay: 0s;
 
-	&[aria-hidden='true'] {
+	&[aria-hidden="true"] {
 		display: block;
 		opacity: 0;
 		max-height: 0;
 		visibility: hidden;
 		transform: scale(1, 0);
-		transition-duration: 0s, .25s, .25s, .25s;
-		transition-delay: .5s, 0s, 0s, 0s;
+		transition-duration: 0s, 0.25s, 0.25s, 0.25s;
+		transition-delay: 0.5s, 0s, 0s, 0s;
 	}
 }
 
 .navigation__subitem {
-	margin-left: .7rem;
+	margin-left: 0.7rem;
 }
 
 .navigation__sublink {
 	border-left: 2px solid $navigation-fillcolor-icons;
 	display: block;
-	padding: .75rem 1rem .75rem 1.5rem;
+	padding: 0.75rem 1rem 0.75rem 1.5rem;
 	text-decoration: none;
 	color: var(--color-nav-link, $white);
 
@@ -154,18 +145,18 @@ $padding-left-link: 2rem !default;
 	}
 
 	&:hover {
-		border-left: 2px solid var(--color-nav-link, rgba($pm-global-light, .5));
+		border-left: 2px solid
+			var(--color-nav-link, #{rgba($pm-global-light, 0.5)});
 	}
 
-	&[aria-current='true'] {
+	&[aria-current="true"] {
 		border-left: 2px solid var(--color-nav-active, $white);
 		font-weight: bold;
 	}
 }
 
-
 @if $rtl-option==true {
-	[dir='rtl'] {
+	[dir="rtl"] {
 		.navigation__sublist {
 			margin-left: 0;
 			margin-right: $padding-left-link;
@@ -173,20 +164,20 @@ $padding-left-link: 2rem !default;
 
 		.navigation__subitem {
 			margin-left: 0;
-			margin-right: .7rem;
+			margin-right: 0.7rem;
 		}
 
 		.navigation__sublink {
 			border-left: 0;
 			border-right: 2px solid $navigation-fillcolor-icons;
-			padding: .75rem 1.5rem .75rem 1rem;
+			padding: 0.75rem 1.5rem 0.75rem 1rem;
 
 			&:hover {
 				border-left: 0;
 				border-right: 2px solid var(--color-nav-link, $pm-global-light);
 			}
 
-			&[aria-current='true'] {
+			&[aria-current="true"] {
 				border-left: 0;
 				border-right: 2px solid var(--color-nav-active, $pm-primary);
 			}
