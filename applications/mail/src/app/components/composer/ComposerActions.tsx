@@ -168,6 +168,7 @@ const ComposerActions = ({
                     disabled={sendDisabled}
                     loading={sending}
                     onClick={onSend}
+                    data-testid="send-button"
                 >
                     <Icon name="sent" className="nodesktop notablet onmobile-flex" />
                     <span className="pl1 pr1 nomobile">{buttonSendLabel}</span>

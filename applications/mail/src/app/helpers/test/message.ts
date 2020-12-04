@@ -33,7 +33,7 @@ export const decryptMessageLegacy = async (pack: any, privateKeys: OpenPGPKey[],
         sessionKeys: [sessionKey],
     });
 
-    return { data: decryptResult.data };
+    return { data: decryptResult.data, signatures: decryptResult.signatures };
 };
 
 export const decryptMessageMultipart = async (pack: any, privateKeys: OpenPGPKey[], sessionKey: SessionKey) => {
