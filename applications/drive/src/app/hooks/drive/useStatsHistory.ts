@@ -23,10 +23,10 @@ function useStatsHistory(transfers: Transfer[], getTransferProgresses: () => Tra
                     ...stats,
                     [id]: {
                         // get speed snapshot based on bytes downloaded since last update
-                        speed: isTransferProgress(lastStats(id))
+                        speed: lastStats(id).active
                             ? (transferProgresses[id] - lastStats(id).progress) * (1000 / PROGRESS_UPDATE_INTERVAL)
                             : 0,
-                        state: getTransfer(id)?.state ?? TransferState.Error,
+                        active: getTransfer(id)?.state === TransferState.Progress,
                         progress,
                     },
                 }),

@@ -43,22 +43,25 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
 
     useEffect(() => {
         if (activeUploadsCount) {
-            setUploadsInSession((uploadsInSession) => [...uploadsInSession.filter(isTransferDone), ...activeUploads]);
+            setUploadsInSession((uploadsInSession) => [
+                ...doneUploads.filter((done) => uploadsInSession.some(({ id }) => id === done.id)),
+                ...activeUploads,
+            ]);
         } else {
             setUploadsInSession([]);
         }
-    }, [activeUploads]);
+    }, [activeUploads, doneUploads, activeUploadsCount]);
 
     useEffect(() => {
         if (activeDownloadsCount) {
             setDownloadsInSession((downloadsInSession) => [
-                ...downloadsInSession.filter(isTransferDone),
+                ...doneDownloads.filter((done) => downloadsInSession.some(({ id }) => id === done.id)),
                 ...activeDownloads,
             ]);
         } else {
             setDownloadsInSession([]);
         }
-    }, [activeDownloads]);
+    }, [activeDownloads, activeDownloadsCount]);
 
     const getHeadingText = () => {
         const headingElements: string[] = [];

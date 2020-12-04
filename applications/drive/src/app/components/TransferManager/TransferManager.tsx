@@ -138,7 +138,7 @@ function TransferManager() {
         for (let i = 0; i < statsHistory.length; i++) {
             const stats = statsHistory[i].stats[id];
 
-            if (stats?.state !== TransferState.Progress || stats.speed < 0) {
+            if (!stats?.active || stats.speed < 0) {
                 break; // Only take most recent progress (e.g. after pause or progress reset)
             }
             sum += stats.speed;
