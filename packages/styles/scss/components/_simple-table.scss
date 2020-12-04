@@ -44,7 +44,6 @@
 
 	&--isHoverable tbody tr {
 		@media (hover: hover) {
-
 			&:hover,
 			&:focus-within {
 				background-color: var(--bgcolor-input, $pm-global-light);
@@ -53,7 +52,6 @@
 	}
 
 	tr#{&}-stickyRow {
-
 		td,
 		th {
 			position: sticky;
@@ -62,22 +60,25 @@
 			z-index: 1;
 
 			&::after {
-				content: '';
+				content: "";
 				position: absolute;
 				top: 100%;
 				left: 0;
 				right: 0;
 				z-index: -1;
 				height: 1rem;
-				background: linear-gradient(to bottom, rgba(black, .1) 0%, transparent 100%);
+				background: linear-gradient(
+					to bottom,
+					rgb(0 0 0 / 0.1) 0%,
+					transparent 100%
+				);
 				pointer-events: none;
-				transition: opacity .125s ease-out;
+				transition: opacity 0.125s ease-out;
 			}
 		}
 	}
 
 	tr#{&}-stickyRow#{&}-stickyRow--isOnTop {
-
 		td,
 		th {
 			&::after {
@@ -88,7 +89,6 @@
 
 	/* bordered-table */
 	&--bordered {
-
 		&,
 		th,
 		td {
@@ -97,7 +97,6 @@
 	}
 
 	&--has-actions {
-
 		td,
 		th {
 			&:last-child {
@@ -112,7 +111,6 @@
 		top: -0.15em;
 	}
 }
-
 
 /*
  * specifics case

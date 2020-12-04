@@ -4,9 +4,9 @@
 
 .placeholder,
 ::placeholder {
-	color: var(--color-input, rgba($pm-global-grey, .65));
+	color: var(--color-input, #{rgba($pm-global-grey, 0.65)});
 	font-style: normal;
-	opacity: .6;
+	opacity: 0.6;
 }
 
 $field-container: 26rem !default;
@@ -56,7 +56,7 @@ $field-container: 26rem !default;
 	}
 
 	&[disabled] {
-		color: rgba($pm-global-grey, .3);
+		color: #{rgba($pm-global-grey, 0.3)};
 	}
 
 	&.w100 {
@@ -73,7 +73,8 @@ $field-container: 26rem !default;
 	}
 
 	&[type="search"] {
-		background: url("#{$path-images}sprite-for-css-only.svg#css-search") 6px 50% no-repeat;
+		background: url("#{$path-images}sprite-for-css-only.svg#css-search") 6px
+			50% no-repeat;
 		background-size: 1.5rem;
 		padding-left: 2em;
 
@@ -83,7 +84,7 @@ $field-container: 26rem !default;
 	}
 
 	&[type="number"] {
-		padding-right: .25em;
+		padding-right: 0.25em;
 	}
 }
 
@@ -92,13 +93,18 @@ $field-container: 26rem !default;
 		[type="search"].pm-field {
 			padding-left: 0;
 			padding-right: 2em;
-			background: url("#{$path-images}sprite-for-css-only.svg#css-search-rtl") calc(100% - 6px) 50% no-repeat;
+			background: url("#{$path-images}sprite-for-css-only.svg#css-search-rtl")
+				calc(100% - 6px)
+				50%
+				no-repeat;
 		}
 	}
 }
 
 select.pm-field {
-	background: var(--bgcolor-input, $pm-input-background) url("#{$path-images}sprite-for-css-only.svg#css-caret") calc(100% - 6px) 50% no-repeat;
+	background: var(--bgcolor-input, $pm-input-background)
+		url("#{$path-images}sprite-for-css-only.svg#css-caret") calc(100% - 6px)
+		50% no-repeat;
 	background-size: 1.5rem;
 	padding-left: 1em;
 	padding-right: 20px;
@@ -110,7 +116,7 @@ select.pm-field {
 		display: none;
 	}
 
-	&>optgroup {
+	& > optgroup {
 		background-color: var(--bgcolor-highlight, $pm-global-light);
 	}
 
@@ -123,9 +129,7 @@ select.pm-field {
 
 		@if ($pm-primary==$pm-blue) {
 			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-primary-blue");
-		}
-
-		@else {
+		} @else {
 			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-primary-green");
 		}
 
@@ -148,7 +152,7 @@ select.pm-field {
 			color: $color-hover;
 		}
 
-		&>* {
+		& > * {
 			color: $pm-primary;
 		}
 	}
@@ -175,7 +179,7 @@ textarea[required].pm-field.field-pristine:invalid {
 
 /* errors */
 .error-zone {
-	transition: transform .15s linear, max-height .15s linear;
+	transition: transform 0.15s linear, max-height 0.15s linear;
 	transform: scaleY(1);
 	transform-origin: top center;
 
@@ -185,14 +189,11 @@ textarea[required].pm-field.field-pristine:invalid {
 }
 
 // general rule: if focus is on the field => don't display error yet
-.pm-field-icon-container:focus-within+.error-zone,
-.pm-field:focus+.error-zone {
+.pm-field-icon-container:focus-within + .error-zone,
+.pm-field:focus + .error-zone {
 	transform: scaleY(0);
 	max-height: 0;
 }
-
-
-
 
 /* sizes/other modifiers */
 .pm-field--tiny {
@@ -210,7 +211,7 @@ textarea[required].pm-field.field-pristine:invalid {
 .pm-field--highlight {
 	border-color: $pm-primary;
 	border-width: 2px;
-	background-color: rgba($pm-primary, .1);
+	background-color: #{rgba($pm-primary, 0.1)};
 }
 
 /* checkboxes */
@@ -221,7 +222,7 @@ textarea[required].pm-field.field-pristine:invalid {
 	min-width: 1.6rem;
 	width: 1.6rem;
 	height: 1.6rem;
-	margin: auto .5rem auto 0;
+	margin: auto 0.5rem auto 0;
 }
 
 .item-icon-compact .pm-checkbox-fakecheck {
@@ -233,29 +234,29 @@ textarea[required].pm-field.field-pristine:invalid {
 	margin: auto;
 	width: 1rem;
 	transform: scale(0);
-	transition: .15s transform linear;
+	transition: 0.15s transform linear;
 }
 
 .pm-checkbox {
 	@extend .sr-only;
 
-	&:checked+.pm-checkbox-fakecheck {
+	&:checked + .pm-checkbox-fakecheck {
 		.pm-checkbox-fakecheck-img {
 			transform: scale(1);
 		}
 	}
 
-	&:focus+.pm-checkbox-fakecheck {
+	&:focus + .pm-checkbox-fakecheck {
 		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
-	&[disabled]+.pm-checkbox-fakecheck,
-	&:indeterminate+.pm-checkbox-fakecheck {
+	&[disabled] + .pm-checkbox-fakecheck,
+	&:indeterminate + .pm-checkbox-fakecheck {
 		background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
 	}
 
-	&:indeterminate+.pm-checkbox-fakecheck {
-		content: '';
+	&:indeterminate + .pm-checkbox-fakecheck {
+		content: "";
 		width: 1.6rem;
 		height: 1.6rem;
 		background-image: url("#{$path-images}sprite-for-css-only.svg#css-dash");
@@ -266,15 +267,14 @@ textarea[required].pm-field.field-pristine:invalid {
 // exception for toolbar
 .pm-select-all {
 	.pm-checkbox-fakecheck {
-		border: 1px solid #585C67;
-		background-color: var(--bgcolor-aside-link, #484E59);
+		border: 1px solid #585c67;
+		background-color: var(--bgcolor-aside-link, #484e59);
 	}
 
 	.pm-checkbox-fakecheck-img {
 		fill: var(--fillcolor-icons, $white);
 	}
 }
-
 
 /* radios */
 .pm-radio-fakeradio {
@@ -283,43 +283,42 @@ textarea[required].pm-field.field-pristine:invalid {
 }
 
 .pm-radio--onTop .pm-radio-fakeradio {
-	margin-top: .25em;
+	margin-top: 0.25em;
 }
 
 .pm-radio-fakeradio::before {
-	content: '';
+	content: "";
 	margin: auto;
-	width: .8rem;
-	height: .8rem;
+	width: 0.8rem;
+	height: 0.8rem;
 	border-radius: 50%;
 	background: transparent;
 	transform: scale(0);
-	transition: .15s transform linear;
+	transition: 0.15s transform linear;
 }
 
 .pm-radio {
 	@extend .sr-only;
 
-	&:checked+.pm-radio-fakeradio::before {
+	&:checked + .pm-radio-fakeradio::before {
 		background: $pm-primary;
 		transform: scale(1);
 	}
 
-	&:focus+.pm-radio-fakeradio {
+	&:focus + .pm-radio-fakeradio {
 		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
-	&[disabled]+.pm-radio-fakeradio {
+	&[disabled] + .pm-radio-fakeradio {
 		background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
 	}
 }
-
 
 /* toggle */
 $width: 5.5em !default;
 
 .pm-toggle-label {
-	margin-top: .15em;
+	margin-top: 0.15em;
 	// height: 2em;
 	width: $width;
 	display: inline-flex;
@@ -328,13 +327,14 @@ $width: 5.5em !default;
 	border-radius: 2rem;
 	padding: 2px;
 	position: relative;
-	transition: border-color .15s ease-out;
+	transition: border-color 0.15s ease-out;
 
 	&::before {
-		content: '';
+		content: "";
 		position: absolute;
 		width: calc(#{$width/2} - 2px);
-		transition: transform .25s ease, background-color .25s ease, border-color .25s linear;
+		transition: transform 0.25s ease, background-color 0.25s ease,
+			border-color 0.25s linear;
 		border-radius: 2rem;
 		background: var(--bgcolor-context-bar, $pm-global-muted);
 		top: 2px;
@@ -344,7 +344,7 @@ $width: 5.5em !default;
 		border: 1px solid var(--bordercolor-input, $pm-global-border);
 	}
 
-	&>.pm-toggle-label-text {
+	& > .pm-toggle-label-text {
 		align-self: center;
 		margin: 0;
 		text-align: center;
@@ -356,7 +356,7 @@ $width: 5.5em !default;
 		display: inline-flex;
 
 		& .pm-toggle-label-img {
-			transition: fill .1s steps(1, end);
+			transition: fill 0.1s steps(1, end);
 		}
 	}
 }
@@ -388,12 +388,12 @@ $width: 5.5em !default;
 .pm-toggle-checkbox {
 	@extend .invisible;
 
-	&:checked+.pm-toggle-label {
-		&>.pm-toggle-label-text:first-child .pm-toggle-label-img {
+	&:checked + .pm-toggle-label {
+		& > .pm-toggle-label-text:first-child .pm-toggle-label-img {
 			fill: var(--bordercolor-input, $black);
 		}
 
-		&>.pm-toggle-label-text:last-child .pm-toggle-label-img {
+		& > .pm-toggle-label-text:last-child .pm-toggle-label-img {
 			fill: $white;
 		}
 
@@ -405,57 +405,56 @@ $width: 5.5em !default;
 		}
 	}
 
-	&:checked+.pm-toggle-label--theme-toggle {
-
+	&:checked + .pm-toggle-label--theme-toggle {
 		// Theme toggle inside user dropdown
-		&>.pm-toggle-label-text:last-child .pm-toggle-label-img {
+		& > .pm-toggle-label-text:last-child .pm-toggle-label-img {
 			fill: #fce988;
 		}
 
 		&::before {
-			background: rgba(black, .75);
-			border-color: rgba(white, .25);
+			background: rgb(0 0 0 / 0.75);
+			border-color: rgb(255 255 255 / 0.25);
 		}
 	}
 
-	&:focus+.pm-toggle-label {
+	&:focus + .pm-toggle-label {
 		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
-	&[disabled]+.pm-toggle-label {
-		background: rgba($pm-global-muted, .6);
+	&[disabled] + .pm-toggle-label {
+		background: #{rgba($pm-global-muted, 0.6)};
 
 		.pm-toggle-label-text {
-			opacity: .3;
+			opacity: 0.3;
 		}
 	}
 
-	&[aria-busy="true"]+.pm-toggle-label {
+	&[aria-busy="true"] + .pm-toggle-label {
 		border-color: $pm-global-border;
 
 		&::before {
 			border-color: transparent;
 			transform: translateX(#{$width/4}) translateX(-2px);
-			background: transparent url(#{$path-images}loading-atom-smaller.svg) 50% 50% no-repeat;
+			background: transparent url(#{$path-images}loading-atom-smaller.svg)
+				50% 50% no-repeat;
 		}
 
-		&>.pm-toggle-label-text {
+		& > .pm-toggle-label-text {
 			opacity: 0;
 		}
 	}
-
 }
 
 @if $rtl-option==true {
 	[dir="rtl"] {
 		.pm-toggle-checkbox {
-			&:checked+.pm-toggle-label {
+			&:checked + .pm-toggle-label {
 				&::before {
 					transform: translateX(-#{$width/2}) translateX(2px);
 				}
 			}
 
-			&[aria-busy="true"]+.pm-toggle-label {
+			&[aria-busy="true"] + .pm-toggle-label {
 				&::before {
 					//background-color: $pm-primary;
 					transform: translateX(-#{$width/4}) translateX(2px);
@@ -465,10 +464,9 @@ $width: 5.5em !default;
 	}
 }
 
-
 .pm-toggle-label--small {
-	margin-top: .25em;
-	font-size: .8em;
+	margin-top: 0.25em;
+	font-size: 0.8em;
 
 	& .pm-toggle-label-img {
 		width: 1.3rem;
@@ -476,14 +474,12 @@ $width: 5.5em !default;
 	}
 }
 
-
-
 /* label */
 // $pm-label-width defined in global vars
 .pm-label {
-	padding-top: .5em;
+	padding-top: 0.5em;
 	width: var(--label-width, $pm-label-width);
-	padding-right: .5em;
+	padding-right: 0.5em;
 	max-width: 100%;
 	flex-shrink: 0;
 
@@ -513,20 +509,19 @@ $pm-label-icon-width: 2.4em !default;
 	margin-top: -1.6em;
 }
 
-
 /* field with icon */
 .pm-field-icon-container {
 	@extend .pm-field; // added focus-within inside on pm-field for this fake-field :)
 	min-height: calc(#{$default-height-fields} + 2px);
 	padding: 0;
 
-	>.pm-field {
+	> .pm-field {
 		border: 0;
 		width: calc(100% - 1.5em);
 	}
 
 	&:focus-within {
-		>.pm-field {
+		> .pm-field {
 			background-color: transparent;
 			box-shadow: none;
 			outline: 0;
@@ -537,7 +532,7 @@ $pm-label-icon-width: 2.4em !default;
 .pm-field-icon-container--invalid:not(:focus-within) {
 	border-color: $pm-global-warning;
 
-	>.pm-field {
+	> .pm-field {
 		border-color: $pm-global-warning;
 	}
 }
@@ -547,7 +542,6 @@ $pm-label-icon-width: 2.4em !default;
 .signLayout-container .pm-field--username.pm-field--username {
 	padding-right: var(--padding-right-field-above, 9em);
 }
-
 
 /* special case for very large inputs in modals, like rich text editor */
 .pm-modalContainer .pm-field-container--full {
@@ -573,7 +567,6 @@ $pm-label-icon-width: 2.4em !default;
 }
 
 /* end special case */
-
 
 /* special stupid case for signup iframe challenge... not using same styles for the moment */
 .signLayout-container {

@@ -28,16 +28,12 @@ $border-width: 2px !default;
 }
 
 @if ($pm-primary==$pm-blue) {
-
 	.badgeLabel-primary,
 	.badgeLabel {
 		@extend .bg-pm-blue;
 		border-color: $pm-blue;
 	}
-}
-
-@else {
-
+} @else {
 	.badgeLabel-primary,
 	.badgeLabel {
 		@extend .bg-pv-green;

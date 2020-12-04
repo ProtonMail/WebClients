@@ -52,7 +52,7 @@
 .right-icon,
 .right-text {
 	top: 0;
-	right: .5em;
+	right: 0.5em;
 	height: $default-height-fields; // height of field
 	align-content: center;
 }
@@ -61,16 +61,15 @@
 	right: 1em;
 
 	&-inner {
-		padding-bottom: .2rem;
+		padding-bottom: 0.2rem;
 	}
 }
 
 @if $rtl-option==true {
 	[dir="rtl"] {
-
 		.right-icon,
 		.right-text {
-			left: .5em;
+			left: 0.5em;
 			right: auto;
 		}
 
@@ -85,7 +84,6 @@
 }
 
 .sticky {
-
 	&-top,
 	&-bottom {
 		position: sticky;

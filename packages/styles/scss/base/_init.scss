@@ -25,26 +25,18 @@ body {
 		text-rendering: geometricPrecision;
 		-webkit-font-smoothing: antialiased;
 
-		@if $typo-unit=='use_em' {
+		@if $typo-unit== "use_em" {
 			@if $root-equiv-10-px==true {
 				font-size: em($base-font, 10);
-			}
-
-			@else {
+			} @else {
 				font-size: em($base-font, $root-default-font-size);
 			}
-		}
-
-		@else if $typo-unit=='use_rem' {
+		} @else if $typo-unit== "use_rem" {
 			font-size: var(--body-fontsize, rem($base-font));
-		}
-
-		@else if $typo-unit=='use_rem_with_em_fallback' {
+		} @else if $typo-unit== "use_rem_with_em_fallback" {
 			@if $root-equiv-10-px==true {
 				font-size: em($base-font, 10);
-			}
-
-			@else {
+			} @else {
 				font-size: em($base-font, $root-default-font-size);
 			}
 
@@ -69,7 +61,6 @@ a {
 	}
 }
 
-
 /* it depends, it exceeds (french joke) */
 %reset-responsive-height-max-width {
 	height: auto;
@@ -93,9 +84,7 @@ svg {
 	td {
 		@extend %reset-responsive-height-max-width;
 	}
-}
-
-@else {
+} @else {
 	td {
 		@extend %reset-responsive-max-width-only;
 	}
@@ -105,9 +94,7 @@ svg {
 	img {
 		@extend %reset-responsive-height-max-width;
 	}
-}
-
-@else {
+} @else {
 	img {
 		@extend %reset-responsive-max-width-only;
 	}
@@ -117,9 +104,7 @@ svg {
 	table {
 		@extend %reset-responsive-height-max-width;
 	}
-}
-
-@else {
+} @else {
 	table {
 		@extend %reset-responsive-max-width-only;
 	}
@@ -133,27 +118,29 @@ textarea {
  * avoids dimensioning for radio, checkboxes and images
  * and a different display on IE
  */
-input[type='radio'],
-input[type='checkbox'],
-input[type='image'] {
+input[type="radio"],
+input[type="checkbox"],
+input[type="image"] {
 	background-color: transparent;
 	border: 0;
 	width: auto;
 }
 
 // for components that rely on checkboxes
-input[type='radio'],
-input[type='checkbox'] {
+input[type="radio"],
+input[type="checkbox"] {
 	opacity: 0;
 	// this is a crazy fix for Firefox - for having ::after stuff working on it for mail conversations
 	// to have increased area around checkbox for clicking
 	/* autoprefixer: ignore next */
+	/* stylelint-disable-next-line */
 	-moz-appearance: initial;
 }
 
 // fix "autofill state"
 input:-webkit-autofill {
-	box-shadow: 200px 200px 100px var(--bgcolor-input, $pm-input-background) inset;
+	box-shadow: 200px 200px 100px var(--bgcolor-input, $pm-input-background)
+		inset;
 }
 
 /* removes X in input when typing in IE/EDGE */
@@ -179,15 +166,13 @@ sup {
 }
 
 sub {
-	top: .5ex;
+	top: 0.5ex;
 }
 
 mark {
 	@if $use-color-reset-mark==true {
 		background-color: unset;
-	}
-
-	@else {
+	} @else {
 		background-color: var(--bgcolor-mark, $default-bgColor-mark);
 	}
 
@@ -205,7 +190,7 @@ li {
 }
 
 kbd {
-	padding: 0 .25em;
+	padding: 0 0.25em;
 	background-color: var(--bgcolor-main-area, $pm-global-light);
 	border: 1px solid var(--bordercolor-input, $pm-global-border);
 	border-radius: $global-border-radius;
@@ -238,13 +223,15 @@ details {
 	}
 
 	&[open] > summary {
-		background: url(#{$path-images}sprite-for-css-only.svg#css-caret-close) 0 50% no-repeat;
+		background: url(#{$path-images}sprite-for-css-only.svg#css-caret-close)
+			0 50% no-repeat;
 	}
 }
 
 summary {
 	padding: 1em 0 1em 2rem;
-	background: url(#{$path-images}sprite-for-css-only.svg#css-caret) 0 50% no-repeat;
+	background: url(#{$path-images}sprite-for-css-only.svg#css-caret) 0 50%
+		no-repeat;
 	list-style: none;
 	border: 0;
 	cursor: pointer;

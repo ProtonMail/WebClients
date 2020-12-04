@@ -8,7 +8,7 @@ button[aria-busy="true"] {
 	padding-left: em(5);
 	padding-right: em(27);
 	background-image: url(#{$path-images}loading-atom-smaller-disabled.svg);
-	background-position: calc(100% - .25em) 50%;
+	background-position: calc(100% - 0.25em) 50%;
 	background-size: 1.5em;
 	background-repeat: no-repeat;
 }
@@ -17,14 +17,14 @@ button[aria-busy="true"] {
 	padding-left: em(2);
 	padding-right: em(22);
 	background-size: 1.25em;
-	background-position: calc(100% - .125em) 50%;
+	background-position: calc(100% - 0.125em) 50%;
 }
 
 tr[aria-busy="true"] {
 	background-image: none;
 
 	td::after {
-		content: '\00a0'; // Force a height with default line height
+		content: "\00a0"; // Force a height with default line height
 		pointer-events: none;
 		visibility: hidden;
 	}
@@ -36,18 +36,19 @@ td[aria-busy="true"] {
 	background-image: none;
 
 	&::before {
-		content: '';
+		content: "";
 		position: absolute;
 		top: 0;
 		right: 0;
 		left: 0;
 		bottom: 0;
-		background: var(--bgcolor-main-area, white) url(#{$path-images}loading-atom-smaller.svg) 50% 50% no-repeat;
+		background: var(--bgcolor-main-area, white)
+			url(#{$path-images}loading-atom-smaller.svg) 50% 50% no-repeat;
 	}
 }
 
 svg[aria-busy="true"] {
-	&>* {
+	& > * {
 		visibility: hidden;
 	}
 }
@@ -57,7 +58,7 @@ svg[aria-busy="true"] {
 	background-image: none;
 
 	&::before {
-		content: '';
+		content: "";
 		position: absolute;
 		top: 0;
 		right: 0;

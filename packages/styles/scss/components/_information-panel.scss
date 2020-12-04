@@ -1,5 +1,4 @@
 .information-panel {
-
 	&-image {
 		position: absolute;
 		width: 48px;
@@ -12,7 +11,7 @@
 		background-color: var(--bgcolor-main-area, $pm-global-light);
 
 		&::before {
-			content: '';
+			content: "";
 			position: absolute;
 			display: inline-block;
 			width: 12px;
@@ -33,8 +32,12 @@
 					left: auto;
 					right: -1px;
 					border: 6px solid transparent;
-					border-top: 6px solid var(--bordercolor-input, $pm-global-border);
-					border-left: 6px solid var(--bordercolor-input, $pm-global-border);
+					border-top: 6px
+						solid
+						var(--bordercolor-input, $pm-global-border);
+					border-left: 6px
+						solid
+						var(--bordercolor-input, $pm-global-border);
 				}
 			}
 		}

@@ -2,30 +2,28 @@
  * MIXINS
  ****************************************/
 
-@mixin button-disabled-state ($color: null) {
+@mixin button-disabled-state($color: null) {
 	pointer-events: none;
 
 	@if $color==null {
 		background-color: $pm-global-muted;
 		border-color: $pm-global-border;
-		color: rgba($pm-global-grey, .3);
-	}
-
-	@else {
-		background-color: rgba($color, .2);
-		border-color: rgba($color, .25);
-		color: rgba($color, .5);
+		color: #{rgba($pm-global-grey, 0.3)};
+	} @else {
+		background-color: #{rgba($color, 0.2)};
+		border-color: #{rgba($color, 0.25)};
+		color: #{rgba($color, 0.5)};
 	}
 }
 
 @mixin button-disabled-state-dm() {
 	background-color: $pm-global-grey;
-	color: rgba($pm-global-muted, .3);
+	color: #{rgba($pm-global-muted, 0.3)};
 	pointer-events: none;
-	border-color: rgba($pm-global-muted, .3);
+	border-color: #{rgba($pm-global-muted, 0.3)};
 
 	& svg {
-		fill: rgba($pm-global-muted, .3);
+		fill: #{rgba($pm-global-muted, 0.3)};
 	}
 }
 
@@ -38,13 +36,13 @@
 	&:hover,
 	&.is-hover {
 		color: $white;
-		background-color: rgba(0, 0, 0, 0.2);
+		background-color: rgb(0 0 0 / 0.2);
 	}
 
 	&:not(div):active,
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgb(0 0 0 / 0.5);
 	}
 
 	&[disabled],
@@ -54,10 +52,9 @@
 
 	/* just to cancel examples  */
 	&.is-hover:hover {
-		background-color: rgba(0, 0, 0, 0.2);
+		background-color: rgb(0 0 0 / 0.2);
 	}
 }
-
 
 @mixin pm-button-blueborder-dark {
 	border-color: $pm-primary-light;
@@ -71,7 +68,7 @@
 	&:not(div):active,
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
-		background-color: rgba(0, 0, 0, 0.2);
+		background-color: rgb(0 0 0 / 0.2);
 		border-color: $pm-primary-light;
 		color: $pm-primary-dark;
 	}
@@ -79,7 +76,7 @@
 	&:not(div):active,
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgb(0 0 0 / 0.5);
 	}
 
 	&[disabled],
@@ -99,7 +96,7 @@
 	&.is-hover,
 	&:active,
 	&.is-active {
-		background-color: rgba(0, 0, 0, 0.2);
+		background-color: rgb(0 0 0 / 0.2);
 		border-color: $pv-green-dark;
 		color: $pv-green-dark;
 	}
@@ -107,7 +104,7 @@
 	&:not(div):active,
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgb(0 0 0 / 0.5);
 	}
 
 	&[disabled],
@@ -115,8 +112,6 @@
 		@include button-disabled-state-dm;
 	}
 }
-
-
 
 /****************************************
  * CLASSES
@@ -129,9 +124,9 @@
 	border-style: solid;
 	border-width: 1px;
 	text-decoration: none;
-	transition: .15s easing(easeOutQuint), background-position 0s;
+	transition: 0.15s easing(easeOutQuint), background-position 0s;
 
-	&>button {
+	& > button {
 		// this is for drop down buttons
 		color: inherit;
 	}
@@ -149,20 +144,23 @@
 	background-color: $white;
 	color: $pm-global-grey;
 
-
 	&:hover,
 	&:focus,
 	&:focus-within,
 	&.is-hover {
 		color: $pm-global-grey;
-		box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+		box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2);
 	}
 
 	&:not(div):active,
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
 		//background-color: $pm-global-border;
-		background-image: radial-gradient(closest-side, transparent, rgba(black, .1));
+		background-image: radial-gradient(
+			closest-side,
+			transparent,
+			rgb(0 0 0 / 0.1)
+		);
 		box-shadow: none;
 	}
 
@@ -189,11 +187,9 @@
 	}
 }
 
-
 .pm-button-dark {
 	@include pm-button-dark;
 }
-
 
 .pm-button-blue,
 .pm-button.pm-button-blue {
@@ -206,7 +202,7 @@
 	&:focus-within,
 	&.is-hover {
 		color: $white;
-		box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+		box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2);
 		background-color: $pm-primary-dark;
 	}
 
@@ -214,7 +210,8 @@
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
 		background-color: $pm-primary-dark;
-		text-shadow: 1px 1px 10px rgba($white, .3), -1px -1px 10px rgba($white, .3);
+		text-shadow: 1px 1px 10px #{rgba($white, 0.3)},
+			-1px -1px 10px #{rgba($white, 0.3)};
 		box-shadow: none;
 	}
 
@@ -238,7 +235,7 @@
 	&:hover,
 	&:focus-within,
 	&.is-hover {
-		box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+		box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2);
 		border-color: $pm-primary-dark;
 		color: $pm-primary-dark;
 	}
@@ -248,7 +245,11 @@
 	&.is-active {
 		border-color: $pm-primary-dark;
 		color: $pm-primary-dark;
-		background-image: radial-gradient(closest-side, transparent, rgba(black, .1));
+		background-image: radial-gradient(
+			closest-side,
+			transparent,
+			rgb(0 0 0 / 0.1)
+		);
 		box-shadow: none;
 	}
 
@@ -257,7 +258,6 @@
 		@include button-disabled-state;
 	}
 }
-
 
 .pm-button-blueborder-dark {
 	@include pm-button-blueborder-dark;
@@ -274,7 +274,7 @@
 	&:focus-within,
 	&.is-hover {
 		color: $white;
-		box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+		box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2);
 		background-color: $pv-green-dark;
 	}
 
@@ -282,7 +282,8 @@
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
 		background-color: $pv-green-dark;
-		text-shadow: 1px 1px 10px rgba($white, .3), -1px -1px 10px rgba($white, .3);
+		text-shadow: 1px 1px 10px #{rgba($white, 0.3)},
+			-1px -1px 10px #{rgba($white, 0.3)};
 		box-shadow: none;
 	}
 
@@ -306,7 +307,7 @@
 	&:hover,
 	&:focus-within,
 	&.is-hover {
-		box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+		box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2);
 		border-color: $pv-green-dark;
 		color: $pv-green-dark;
 	}
@@ -316,7 +317,11 @@
 	&.is-active {
 		border-color: $pv-green-dark;
 		color: $pv-green-dark;
-		background-image: radial-gradient(closest-side, transparent, rgba(black, .1));
+		background-image: radial-gradient(
+			closest-side,
+			transparent,
+			rgb(0 0 0 / 0.1)
+		);
 		box-shadow: none;
 	}
 
@@ -326,12 +331,9 @@
 	}
 }
 
-
 .pv-button-greenborder-dark {
 	@include pv-button-greenborder-dark;
 }
-
-
 
 /* modifiers */
 .pm-button--large {
@@ -343,13 +345,13 @@
 }
 
 .pm-button--for-icon {
-	padding-left: .75em;
-	padding-right: .75em;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
 }
 
 .pm-button--for-smallicon {
-	padding-left: .25em;
-	padding-right: .25em;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
 }
 
 /* button group */
@@ -373,24 +375,26 @@
 	position: relative;
 }
 
-.pm-group-buttons>.pm-group-button:first-child {
+.pm-group-buttons > .pm-group-button:first-child {
 	border-radius: $global-border-radius 0 0 $global-border-radius;
 	border-left-width: 1px;
 }
 
-.pm-group-buttons>.pm-group-button:last-child {
+.pm-group-buttons > .pm-group-button:last-child {
 	border-radius: 0 $global-border-radius $global-border-radius 0;
 }
 
 @if $rtl-option==true {
 	[dir="rtl"] {
-		.pm-group-buttons>.pm-group-button:not(.pagination-expand):first-child {
+		.pm-group-buttons
+			> .pm-group-button:not(.pagination-expand):first-child {
 			border-radius: 0 $global-border-radius $global-border-radius 0;
 			border-right-width: 1px;
 			border-left-width: 0;
 		}
 
-		.pm-group-buttons>.pm-group-button:not(.pagination-expand):last-child {
+		.pm-group-buttons
+			> .pm-group-button:not(.pagination-expand):last-child {
 			border-radius: $global-border-radius 0 0 $global-border-radius;
 			border-left-width: 1px;
 		}
@@ -398,7 +402,7 @@
 }
 
 /* special case for group button with primary colors */
-.pm-group-buttons>.pm-group-button.pm-button--primary {
+.pm-group-buttons > .pm-group-button.pm-button--primary {
 	border-color: $pm-primary;
 	border-left-width: 0;
 
@@ -413,7 +417,6 @@
 
 /* exception for group buttons, disabled state should keep the border */
 .pm-group-button {
-
 	&[disabled],
 	&.is-disabled {
 		&.pm-button {
@@ -430,7 +433,6 @@
 	}
 }
 
-
 /* aliases for buttons => different per project */
 /* primary/link/error/warning/info */
 @if ($pm-primary==$pm-blue) {
@@ -446,9 +448,7 @@
 	.pm-button--primaryborder-dark {
 		@extend .pm-button-blueborder-dark;
 	}
-}
-
-@else {
+} @else {
 	.pm-button--primary {
 		@extend .pv-button-green;
 	}
@@ -485,7 +485,7 @@
 
 	&[disabled],
 	&.is-disabled {
-		color: rgba($pm-global-grey, .5);
+		color: #{rgba($pm-global-grey, 0.5)};
 		pointer-events: none;
 		text-decoration: none;
 		background-color: transparent; // to avoid heriting from other classes
@@ -586,7 +586,7 @@
 	&:hover,
 	&:not(div):active,
 	&:active {
-		background-color: rgba(black, .2);
+		background-color: rgb(0 0 0 / 0.2);
 		color: currentColor;
 	}
 }

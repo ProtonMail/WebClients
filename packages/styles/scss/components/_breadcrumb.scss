@@ -4,15 +4,17 @@
 	}
 
 	&-item:not(:last-of-type)::after {
-		content: '';
+		content: "";
 		display: inline-block;
 		width: 1.6rem;
 		height: 1.6rem;
-		background: transparent url("#{$path-images}sprite-for-css-only.svg#css-greater") 0 0 no-repeat;
+		background: transparent
+			url("#{$path-images}sprite-for-css-only.svg#css-greater") 0 0
+			no-repeat;
 		background-size: 1.4rem;
 		position: relative;
 		top: 6px;
-		opacity: .3;
+		opacity: 0.3;
 	}
 
 	@if $rtl-option==true {
@@ -22,8 +24,8 @@
 	}
 
 	&-button {
-		padding: .4em;
-		opacity: .3;
+		padding: 0.4em;
+		opacity: 0.3;
 		color: inherit;
 
 		&[disabled][aria-current="step"] {

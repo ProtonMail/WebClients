@@ -1,14 +1,13 @@
 .stepDots {
-
 	&-item:not(:last-child) {
-		margin-right: .5em;
+		margin-right: 0.5em;
 	}
 
 	&-dot {
-		width: .8rem;
-		height: .8rem;
+		width: 0.8rem;
+		height: 0.8rem;
 		background-color: var(--bordercolor-input, $pm-global-border);
-		transition: background-color .25s easing(ease);
+		transition: background-color 0.25s easing(ease);
 
 		&:focus,
 		&:hover,
@@ -20,5 +19,4 @@
 			background-color: var(--secondary-bg-color, $pm-global-altgrey);
 		}
 	}
-
 }

@@ -1,6 +1,5 @@
 article,
 aside,
-datagrid,
 datalist,
 details,
 dialog,
@@ -22,12 +21,10 @@ video {
 }
 
 abbr,
-eventsource,
 mark,
 meter,
 time,
-output,
-bb {
+output {
 	display: inline;
 }
 
@@ -64,7 +61,6 @@ th {
 }
 
 @if $use-reset-button==true {
-
 	/* reset buttons, remember to style them in forms */
 	input,
 	select,
@@ -75,22 +71,21 @@ th {
 		border: 0;
 		font: inherit;
 		color: inherit;
+		/* stylelint-disable-next-line */
 		-webkit-appearance: none;
 	}
-
 	// -webkit-appearance: none makes vocalization failing
+
 	input[type="checkbox"] {
+		/* stylelint-disable-next-line */
 		-webkit-appearance: checkbox;
 	}
 
 	input[type="radio"] {
+		/* stylelint-disable-next-line */
 		-webkit-appearance: radio;
 	}
-
-}
-
-@else {
-
+} @else {
 	input,
 	select,
 	textarea,
@@ -172,10 +167,8 @@ dd {
 
 // Right to left resets
 @if $rtl-option==true {
-
 	/* RTL */
 	[dir="rtl"] {
-
 		ul,
 		ol {
 			padding-left: 0;
@@ -213,10 +206,8 @@ small {
 	font-size: 80%;
 }
 
-
 /* avoid border on images in links */
 a {
-
 	&:link,
 	&:visited {
 		img {
@@ -269,24 +260,23 @@ html {
 	quotes: "\201C""\201D""\2018""\2019"; // default
 }
 
-@each $quotes in (('lang' : 'fr',
-		'quotes': '"\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019"'
-	), ('lang' : 'en',
-		'quotes': '"\201C" "\201D" "\2018" "\2019"'
-	), ('lang' : 'es',
-		'quotes': '"\00AB" "\00BB" "\201C" "\201D"'
-	), ('lang' : 'it',
-		'quotes': '"\00AB\00A0" "\00A0\00BB" "\201C" "\201D"'
-	), ('lang' : 'de',
-		'quotes': '"\201e" "\201c" "\201a" "\2018"'
-	), ('lang' : 'ja',
-		'quotes': '"\300c" "\300d" "\300e" "\300f"'
-	), ('lang' : 'ar',
-		'quotes': '"\201C" "\201D"'
-
-	)) {
+@each $quotes
+	in (
+		(
+			"lang": "fr",
+			"quotes":
+				'"\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019"'
+		),
+		("lang": "en", "quotes": '"\201C" "\201D" "\2018" "\2019"'),
+		("lang": "es", "quotes": '"\00AB" "\00BB" "\201C" "\201D"'),
+		("lang": "it", "quotes": '"\00AB\00A0" "\00A0\00BB" "\201C" "\201D"'),
+		("lang": "de", "quotes": '"\201e" "\201c" "\201a" "\2018"'),
+		("lang": "ja", "quotes": '"\300c" "\300d" "\300e" "\300f"'),
+		("lang": "ar", "quotes": '"\201C" "\201D"')
+	)
+{
 	:lang(#{map-get($quotes, 'lang')}) {
-		quotes: #{map-get($quotes, 'quotes')};
+		quotes: #{map-get($quotes, "quotes")};
 	}
 }
 

@@ -1,28 +1,30 @@
 @if $use-other-typo-helpers==true {
-
 	/* other useful classes */
 	.smallest {
-		@include rhythm($size-smallest, 'double_top_double_bottom_without_coef');
+		@include rhythm(
+			$size-smallest,
+			"double_top_double_bottom_without_coef"
+		);
 	}
 
 	.smaller {
-		@include rhythm($size-smaller, 'double_top_double_bottom_without_coef');
+		@include rhythm($size-smaller, "double_top_double_bottom_without_coef");
 	}
 
 	.small {
-		@include rhythm($size-small, 'double_top_double_bottom_without_coef');
+		@include rhythm($size-small, "double_top_double_bottom_without_coef");
 	}
 
 	.big {
-		@include rhythm($size-big, 'double_top_double_bottom_without_coef');
+		@include rhythm($size-big, "double_top_double_bottom_without_coef");
 	}
 
 	.bigger {
-		@include rhythm($size-bigger, 'double_top_double_bottom_without_coef');
+		@include rhythm($size-bigger, "double_top_double_bottom_without_coef");
 	}
 
 	.biggest {
-		@include rhythm($size-biggest, 'double_top_double_bottom_without_coef');
+		@include rhythm($size-biggest, "double_top_double_bottom_without_coef");
 	}
 
 	.size-40 {
@@ -118,13 +120,12 @@
 }
 
 @if $rtl-option==true {
-
 	/* RTL */
-	[dir='rtl'] .alignright {
+	[dir="rtl"] .alignright {
 		text-align: left;
 	}
 
-	[dir='rtl'] .alignleft {
+	[dir="rtl"] .alignleft {
 		text-align: right;
 	}
 }
@@ -137,7 +138,9 @@
 
 .ellipsis-two-lines,
 .ellipsis-four-lines {
+	/* stylelint-disable-next-line */
 	display: -webkit-box;
+	/* stylelint-disable-next-line */
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }

@@ -17,7 +17,7 @@
 	@extend .flex;
 	color: inherit;
 	border-bottom: 2px solid transparent;
-	padding: .5em;
+	padding: 0.5em;
 	@extend .nodecoration;
 	@extend .relative;
 	top: 1px;
@@ -31,7 +31,7 @@
 	}
 
 	&[disabled] {
-		opacity: .4;
+		opacity: 0.4;
 		cursor: default;
 		pointer-events: none;
 	}
@@ -45,7 +45,7 @@
 .tabs-container {
 	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 
-	&[class*='sticky'] {
+	&[class*="sticky"] {
 		background: var(--bgcolor-main-area, $white);
 	}
 }
@@ -59,7 +59,7 @@
 	left: 0;
 	right: 0;
 	transform-origin: left center;
-	transition: transform .15s ease-out;
+	transition: transform 0.15s ease-out;
 	transform: translateX(var(--translate)) scaleX(var(--scale));
 }
 

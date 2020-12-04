@@ -6,13 +6,13 @@ $stroke-width: 3px !default;
 .circle-chart {
 	&__background {
 		stroke: var(--color-main-area, $pm-global-grey);
-		opacity: .2;
+		opacity: 0.2;
 		stroke-width: $stroke-width;
 		fill: transparent;
 
 		&--bigger & {
-			stroke: var(--bgcolor-input, rgba($pm-global-grey, .2));
-			opacity: .4;
+			stroke: var(--bgcolor-input, #{rgba($pm-global-grey, 0.2)});
+			opacity: 0.4;
 		}
 	}
 
@@ -26,7 +26,7 @@ $stroke-width: 3px !default;
 	}
 
 	&__percent {
-		fill: var(--color-main-area, rgba($pm-global-grey, .5));
+		fill: var(--color-main-area, #{rgba($pm-global-grey, 0.5)});
 	}
 
 	&-info {
@@ -41,7 +41,6 @@ $stroke-width: 3px !default;
 		stroke: $pm-global-warning;
 	}
 }
-
 
 @keyframes circle-chart-fill {
 	to {

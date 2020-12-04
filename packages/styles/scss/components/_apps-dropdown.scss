@@ -9,8 +9,8 @@
 
 		color: $pm-global-light;
 
-		@include respond-to($breakpoint-small, 'min') {
-			box-shadow: 0 .5rem 1.5rem 0 rgba(black, .75);
+		@include respond-to($breakpoint-small, "min") {
+			box-shadow: 0 0.5rem 1.5rem 0 rgb(0 0 0 / 0.75);
 		}
 
 		a {
@@ -24,7 +24,7 @@
 
 	&-button {
 		border-radius: $global-border-radius;
-		padding: .25em;
+		padding: 0.25em;
 
 		&:hover,
 		&:focus,
@@ -47,7 +47,6 @@
 	*/
 
 	&-link {
-
 		&,
 		&:hover,
 		&:focus {
@@ -56,7 +55,7 @@
 
 		&:hover,
 		&:focus {
-			background-color: rgba(white, .05);
+			background-color: rgb(255 255 255 / 0.05);
 		}
 	}
 }

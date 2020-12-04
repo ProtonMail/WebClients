@@ -22,9 +22,9 @@ $modal-smaller-width: 28em !default;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	background: rgba(0, 0, 0, .4);
+	background: rgb(0 0 0 / 0.4);
 	z-index: 666;
-	animation: pm-modalOverlayIn ease .5s 1 normal;
+	animation: pm-modalOverlayIn ease 0.5s 1 normal;
 }
 
 .pm-modalContainer {
@@ -37,7 +37,7 @@ $modal-smaller-width: 28em !default;
 	justify-content: center;
 	flex-direction: column;
 	z-index: 666;
-	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-tap-highlight-color: rgb(255 255 255 / 0);
 }
 
 .pm-modalContainer--inBackground {
@@ -45,28 +45,27 @@ $modal-smaller-width: 28em !default;
 }
 
 .pm-modalOverlayOut {
-	animation: pm-modalOverlayOut ease .5s 1 normal;
+	animation: pm-modalOverlayOut ease 0.5s 1 normal;
 	animation-fill-mode: forwards;
 }
 
-
 @keyframes pm-modalOverlayIn {
 	0% {
-		background: rgba(0, 0, 0, 0);
+		background: rgb(0 0 0 / 0);
 	}
 
 	100% {
-		background: rgba(0, 0, 0, .4);
+		background: rgb(0 0 0 / 0.4);
 	}
 }
 
 @keyframes pm-modalOverlayOut {
 	0% {
-		background: rgba(0, 0, 0, .4);
+		background: rgb(0 0 0 / 0.4);
 	}
 
 	100% {
-		background: rgba(0, 0, 0, 0);
+		background: rgb(0 0 0 / 0);
 	}
 }
 
@@ -80,10 +79,10 @@ $modal-smaller-width: 28em !default;
 	padding: 0;
 	overflow: hidden;
 	border-radius: $global-border-radius;
-	box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
-	animation: pm-modalIn ease .15s 1 normal;
+	box-shadow: 0 0 50px 0 rgb(0 0 0 / 0.3);
+	animation: pm-modalIn ease 0.15s 1 normal;
 	animation-fill-mode: both;
-	animation-delay: .1s; // stupid fix for Safari crazy display bug
+	animation-delay: 0.1s; // stupid fix for Safari crazy display bug
 	margin: auto;
 	display: flex;
 	flex-direction: column;
@@ -93,7 +92,7 @@ $modal-smaller-width: 28em !default;
 @keyframes pm-modalIn {
 	0% {
 		opacity: 0;
-		transform: scale(.8);
+		transform: scale(0.8);
 	}
 
 	100% {
@@ -110,12 +109,12 @@ $modal-smaller-width: 28em !default;
 
 	100% {
 		opacity: 0;
-		transform: scale(.8);
+		transform: scale(0.8);
 	}
 }
 
 .pm-modalOut {
-	animation: pm-modalOut ease .15s 1 normal;
+	animation: pm-modalOut ease 0.15s 1 normal;
 	animation-fill-mode: both;
 }
 
@@ -147,13 +146,10 @@ $modal-smaller-width: 28em !default;
 	margin-bottom: 1%;
 }
 
-
-
-
 .pm-modalClose {
 	position: absolute;
-	right: .5rem;
-	top: .5rem;
+	right: 0.5rem;
+	top: 0.5rem;
 	@extend .flex;
 	overflow: hidden;
 	background: transparent;
@@ -177,7 +173,7 @@ $modal-smaller-width: 28em !default;
 @if $rtl-option==true {
 	[dir="rtl"] {
 		.pm-modalClose {
-			left: .5rem;
+			left: 0.5rem;
 			right: auto;
 		}
 	}
@@ -222,11 +218,11 @@ $modal-smaller-width: 28em !default;
 
 	background: var(--bgcolor-main-area, $white) no-repeat;
 
-	>p:first-child {
+	> p:first-child {
 		margin-top: 0;
 	}
 
-	>p:last-child {
+	> p:last-child {
 		margin-bottom: 0;
 	}
 }
@@ -244,12 +240,10 @@ $pm-label-shorter-width: 10em !default;
 	}
 }
 
-
 // modal with title visually hidden
 .pm-modalHeader--no-title {
 	padding-top: 2rem;
 }
-
 
 // single button on right
 .pm-modalFooter [class*="pm-button"]:only-child {
@@ -277,10 +271,9 @@ $pm-label-shorter-width: 10em !default;
 
 	.pm-modalHeader {
 		padding-top: 1rem;
-		padding-bottom: .5rem;
+		padding-bottom: 0.5rem;
 	}
 }
-
 
 // small viewports
 @media (max-width: $modal-breakpoint-width) {
@@ -294,7 +287,7 @@ $pm-label-shorter-width: 10em !default;
 	}
 }
 
-@include respond-to($breakpoint-large, 'min') {
+@include respond-to($breakpoint-large, "min") {
 	.pm-modal--full {
 		max-width: $modal-full-max-width;
 		margin-left: auto;
