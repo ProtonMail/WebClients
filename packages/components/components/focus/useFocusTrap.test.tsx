@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { wait, render, fireEvent } from '@testing-library/react';
 import useFocusTrap from './useFocusTrap';
 
@@ -70,6 +70,26 @@ describe('FocusTrap', () => {
         };
         const { getByTestId } = render(<Component />);
         expect(getByTestId('root')).toHaveAttribute('tabIndex', '-1');
+    });
+
+    it('should set tabIndex on root when active', () => {
+        const Component = () => {
+            const [active, setActive] = useState(false);
+            const rootRef = useRef<HTMLDivElement>(null);
+            const props = useFocusTrap({ active, rootRef });
+            return (
+                <div ref={rootRef} {...props} data-testid="root">
+                    <button data-testid="button" autoFocus onClick={() => setActive(!active)} />
+                </div>
+            );
+        };
+        const { getByTestId } = render(<Component />);
+        expect(getByTestId('root')).not.toHaveAttribute('tabIndex', '-1');
+        const openerButton = getByTestId('button');
+        openerButton.click();
+        expect(getByTestId('root')).toHaveAttribute('tabIndex', '-1');
+        openerButton.click();
+        expect(getByTestId('root')).not.toHaveAttribute('tabIndex', '-1');
     });
 
     it('should set tabIndex on root if there are no focusable elements', () => {

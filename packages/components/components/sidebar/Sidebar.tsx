@@ -23,7 +23,7 @@ const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, p
     return (
         <div
             ref={rootRef}
-            className="sidebar flex flex-nowrap flex-column noprint"
+            className="sidebar flex flex-nowrap flex-column noprint no-outline"
             data-expanded={expanded}
             {...focusTrapProps}
         >
