@@ -12,14 +12,14 @@
 
 @include margin-generator(
 	(m, mt, mr, mb, ml),
-	, // coordinat
-	(0, 0.1, 0.25, 0.4, 0.5, 0.6, 0.75, 1, 1.5, 2, 4) ) // margin siz
+	, /* coordinates  (0, 0.1, 0.25, 0.4, 0.5, 0.6, 0.75, 1, 1.5, 2, 4)
+		) /* margin sizes
 );
 
 @include padding-generator(
 	(p, pt, pr, pb, pl),
-	, // coordinat
-	(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4) ) // padding siz
+	, /* coordinates  (0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4)
+		) /* padding sizes
 );
 
 .mtauto {
