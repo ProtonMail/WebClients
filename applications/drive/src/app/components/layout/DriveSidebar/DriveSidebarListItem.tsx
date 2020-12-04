@@ -37,7 +37,12 @@ const DriveSidebarListItem = ({ to, children, icon, shareId }: Props) => {
     return (
         <SidebarListItem>
             <SidebarListItemLink to={to} isActive={() => isActive}>
-                <SidebarListItemContent onClick={handleClick} left={left} right={right}>
+                <SidebarListItemContent
+                    onClick={handleClick}
+                    left={left}
+                    right={right}
+                    title={typeof children === 'string' ? children : undefined}
+                >
                     {children}
                 </SidebarListItemContent>
             </SidebarListItemLink>
