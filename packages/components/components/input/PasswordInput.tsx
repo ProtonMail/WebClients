@@ -26,6 +26,9 @@ const PasswordInput = ({ disabled = false, ...rest }: Props) => {
                 </button>
             }
             {...rest}
+            autoCapitalize="off"
+            autoCorrect="off"
+            spellCheck="false"
         />
     );
 };
