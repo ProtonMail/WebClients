@@ -45,7 +45,7 @@ const TimeSection = () => {
                     value={userSettings.TimeFormat}
                     options={[
                         {
-                            text: c('Option').t`Use browser settings (${defaultFormat})`,
+                            text: c('Option').t`Automatic (${defaultFormat})`,
                             value: SETTINGS_TIME_FORMAT.LOCALE_DEFAULT,
                         },
                         ...timeFormats,
