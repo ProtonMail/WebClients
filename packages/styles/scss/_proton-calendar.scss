@@ -65,8 +65,3 @@ $breakpoint-tiny  : 520;
 // Helpers
 @import
 	'helpers/';
-
-// TODO: move those into Calendar
-@import
-	'TO_BE_MOVED/calendar/',
-	'TO_BE_MOVED/calendar/calendar-loader-container';
