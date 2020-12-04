@@ -13,7 +13,7 @@ import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
 import DiscountBanner from './DiscountBanner/DiscountBanner';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
-import { STATUS_CODE } from '../../constants';
+import { STATUS_CODE, DOWNLOAD_SHARED_STATE } from '../../constants';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -126,6 +126,7 @@ const DownloadSharedContainer = () => {
     }
 
     let content: ReactNode = null;
+    let contentState = DOWNLOAD_SHARED_STATE.DOES_NOT_EXIST;
     if (notFoundError || (!token && !password)) {
         content = <LinkDoesNotExistInfo />;
     } else if (linkInfo) {
@@ -137,8 +138,10 @@ const DownloadSharedContainer = () => {
                 downloadFile={downloadFile}
             />
         );
+        contentState = DOWNLOAD_SHARED_STATE.DOWNLOAD;
     } else if (handshakeInfo && !password) {
         content = <EnterPasswordInfo submitPassword={submitPassword} />;
+        contentState = DOWNLOAD_SHARED_STATE.ENTER_PASS;
     }
 
     return (
@@ -146,6 +149,7 @@ const DownloadSharedContainer = () => {
             <>
                 {showDiscountBanner && (
                     <DiscountBanner
+                        contentState={contentState}
                         onClose={() => {
                             setShowDiscountBanner(false);
                         }}
