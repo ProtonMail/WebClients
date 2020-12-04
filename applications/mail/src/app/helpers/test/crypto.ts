@@ -89,10 +89,18 @@ export const addKeysToUserKeysCache = (key: GeneratedKey) => {
 };
 
 export const addKeysToAddressKeysCache = (addressID: string, key: GeneratedKey) => {
-    addressKeysCache.set(
-        addressID,
-        resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }])
-    );
+    const currentValue = addressKeysCache.get(addressID);
+    if (currentValue) {
+        addressKeysCache.set(
+            addressID,
+            resolvedRequest([...currentValue.value, { publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }])
+        );
+    } else {
+        addressKeysCache.set(
+            addressID,
+            resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }])
+        );
+    }
 };
 
 export const encryptSessionKey = async ({ data, algorithm }: SessionKey, publicKey: OpenPGPKey) => {

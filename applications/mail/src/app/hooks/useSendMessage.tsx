@@ -207,6 +207,7 @@ export const useSendMessage = () => {
             }
 
             const message = messageCache.get(localID) as MessageExtendedWithData;
+
             const messageWithGoodFlags = {
                 ...message,
                 data: {

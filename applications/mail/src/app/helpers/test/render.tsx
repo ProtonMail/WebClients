@@ -51,8 +51,10 @@ const TestProvider = ({ children }: Props) => {
  */
 export const tick = () => act(() => wait(0));
 
-export const render = async (component: JSX.Element): Promise<RenderResult> => {
-    minimalCache();
+export const render = async (component: JSX.Element, useMinimalCache = true): Promise<RenderResult> => {
+    if (useMinimalCache) {
+        minimalCache();
+    }
     const result = originalRender(<TestProvider>{component}</TestProvider>);
     await tick(); // Should not be necessary, would be better not to use it, but fails without
     return result;
