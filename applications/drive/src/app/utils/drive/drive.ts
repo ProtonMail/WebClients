@@ -48,6 +48,7 @@ export interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
     preventRerenders?: boolean;
     skipCache?: boolean;
+    abortSignal?: AbortSignal;
 }
 
 export const createShareAsync = async (
@@ -262,7 +263,6 @@ export const decryptLinkPassphraseAsync = async (
     getLinkKeys: (shareId: string, linkId: string, config?: FetchLinkConfig) => Promise<LinkKeys>,
     getShareKeys: (shareId: string) => Promise<ShareKeys>,
     getVerificationKey: (email: string) => Promise<OpenPGPKey[]>,
-
     meta: LinkMeta,
     config: FetchLinkConfig = {}
 ) => {
@@ -355,7 +355,7 @@ export const getLinkMetaAsync = async (
 
     const Link = config.fetchLinkMeta
         ? await config.fetchLinkMeta(linkId)
-        : (await api<LinkMetaResult>(queryGetLink(shareId, linkId))).Link;
+        : (await api<LinkMetaResult>({ ...queryGetLink(shareId, linkId), signal: config.abortSignal })).Link;
 
     const { privateKey } = Link.ParentLinkID
         ? await getLinkKeys(shareId, Link.ParentLinkID, config)

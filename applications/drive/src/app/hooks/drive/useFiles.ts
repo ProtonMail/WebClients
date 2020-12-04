@@ -538,11 +538,15 @@ function useFiles() {
         return data as ReadableStream<Uint8Array>;
     };
 
-    const getFileRevision = async (shareId: string, linkId: string): Promise<DriveFileRevisionResult> => {
-        let fileMeta = await getLinkMeta(shareId, linkId);
+    const getFileRevision = async (
+        shareId: string,
+        linkId: string,
+        abortSignal?: AbortSignal
+    ): Promise<DriveFileRevisionResult> => {
+        let fileMeta = await getLinkMeta(shareId, linkId, { abortSignal });
 
         if (!fileMeta.FileProperties?.ActiveRevision) {
-            fileMeta = await getLinkMeta(shareId, linkId, { skipCache: true });
+            fileMeta = await getLinkMeta(shareId, linkId, { skipCache: true, abortSignal });
         }
 
         const revision = fileMeta.FileProperties?.ActiveRevision;
@@ -551,11 +555,14 @@ function useFiles() {
             throw new Error(`Invalid link metadata, expected File (${LinkType.FILE}), got ${fileMeta.Type}`);
         }
 
-        return debouncedRequest<DriveFileRevisionResult>(queryFileRevision(shareId, linkId, revision.ID));
+        return debouncedRequest<DriveFileRevisionResult>({
+            ...queryFileRevision(shareId, linkId, revision.ID),
+            signal: abortSignal,
+        });
     };
 
-    const getFileBlocks = async (shareId: string, linkId: string) => {
-        const { Revision } = await getFileRevision(shareId, linkId);
+    const getFileBlocks = async (shareId: string, linkId: string, abortSignal?: AbortSignal) => {
+        const { Revision } = await getFileRevision(shareId, linkId, abortSignal);
         return Revision.Blocks;
     };
 
@@ -570,7 +577,7 @@ function useFiles() {
 
         const { downloadControls } = initDownload({
             transformBlockStream: decryptBlockStream(shareId, linkId),
-            getBlocks: () => getFileBlocks(shareId, linkId),
+            getBlocks: (abortSignal) => getFileBlocks(shareId, linkId, abortSignal),
             onStart: (stream) => resolve(streamToBuffer(stream)),
         });
 
@@ -594,7 +601,7 @@ function useFiles() {
             { ShareID: shareId, LinkID: linkId },
             {
                 transformBlockStream: decryptBlockStream(shareId, linkId),
-                getBlocks: async () => getFileBlocks(shareId, linkId),
+                getBlocks: async (abortSignal) => getFileBlocks(shareId, linkId, abortSignal),
             }
         );
     };
@@ -637,7 +644,7 @@ function useFiles() {
                             getMetaForTransfer(child),
                             { ShareID: shareId, LinkID: linkId },
                             {
-                                getBlocks: () => getFileBlocks(shareId, child.LinkID),
+                                getBlocks: (abortSignal) => getFileBlocks(shareId, child.LinkID, abortSignal),
                                 transformBlockStream: decryptBlockStream(shareId, child.LinkID),
                                 onStart: (stream) => {
                                     cb.onStartFileTransfer({

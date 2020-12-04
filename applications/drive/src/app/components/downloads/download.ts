@@ -26,7 +26,7 @@ export interface DownloadControls {
 }
 
 export interface DownloadCallbacks {
-    getBlocks: () => Promise<DriveFileBlock[] | Uint8Array[]>;
+    getBlocks: (abortSignal: AbortSignal) => Promise<DriveFileBlock[] | Uint8Array[]>;
     onStart?: (stream: ReadableStream<Uint8Array>) => void;
     onFinish?: () => void;
     onError?: (err: any) => void;
@@ -56,7 +56,7 @@ export const initDownload = ({
         }
 
         const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
-        const blocksOrBuffer = await getBlocks();
+        const blocksOrBuffer = await getBlocks(abortController.signal);
 
         await fsWriter.ready;
         onStart?.(fileStream.readable);
@@ -114,7 +114,7 @@ export const initDownload = ({
             activeIndex = blockQueue[0].Index;
 
             const retryDownload = async (activeIndex: number) => {
-                const newBlocks = await getBlocks();
+                const newBlocks = await getBlocks(abortController.signal);
                 if (areUint8Arrays(newBlocks)) {
                     throw new Error('Unexpected Uint8Array block data');
                 }
