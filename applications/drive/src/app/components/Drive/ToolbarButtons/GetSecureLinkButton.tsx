@@ -21,7 +21,7 @@ const GetSecureLinkButton = ({ shareId, disabled }: Props) => {
     return (
         <ToolbarButton
             disabled={disabled}
-            title={hasSharedLink ? c('Action').t`Manage secure link` : c('Action').t`Get secure link`}
+            title={hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share with link`}
             icon="link"
             onClick={() => openLinkSharing(shareId, selectedItems[0])}
             data-testid="toolbar-share"

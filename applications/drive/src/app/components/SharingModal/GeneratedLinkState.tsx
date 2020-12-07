@@ -3,13 +3,15 @@ import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import {
     Alert,
     Button,
-    Checkbox,
     FooterModal,
     HeaderModal,
+    Icon,
     InnerModal,
+    Input,
     Label,
     PrimaryButton,
     Row,
+    Toggle,
     useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
@@ -56,7 +58,7 @@ function GeneratedLinkState({
                 includePassword ? `${baseUrl}/${token}#${password}` : `${baseUrl}/${token}`,
                 contentRef.current
             );
-            createNotification({ text: c('Success').t`Secure link was copied to the clipboard` });
+            createNotification({ text: c('Success').t`The link to your file was successfully copied.` });
         }
     };
 
@@ -69,28 +71,32 @@ function GeneratedLinkState({
 
     const boldNameText = (
         <b key="name" className="break">
-            {itemName}
+            {`"${itemName}"`}
         </b>
     );
+
+    const url = `${baseUrl}/${token}${includePassword && `#${password}`}`;
 
     return (
         <>
             <HeaderModal modalTitleID={modalTitleID} onClose={onClose}>
-                {c('Title').t`Manage secure link`}
+                {c('Title').t`Share with link`}
             </HeaderModal>
             <div ref={contentRef} className="pm-modalContent">
                 <InnerModal>
-                    <Alert>{c('Info').jt`Secure link of "${boldNameText}" has been generated.`}</Alert>
-
+                    <Alert>
+                        {c('Info').jt`Anyone with this link can download the file ${boldNameText}.`}
+                        <br />
+                        {c('Info').t`Protect the link with a password.`}
+                    </Alert>
                     <Row>
                         <div className="flex flex-item-fluid">
-                            <div
-                                className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis"
+                            <Input
+                                readOnly
+                                value={url}
+                                className="mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis pre"
                                 data-testid="sharing-modal-url"
-                            >
-                                {baseUrl}/{token}
-                                {includePassword && <span className="accented">#{password}</span>}
-                            </div>
+                            />
                         </div>
                         <div className="flex flex-justify-end ml0-5 onmobile-ml0">
                             <div>
@@ -100,48 +106,52 @@ function GeneratedLinkState({
                             </div>
                         </div>
                     </Row>
-
-                    <Alert>
-                        {c('Info').t`A secure password has been generated for you.`}
-                        <br />
-                        {c('Info').t`Use it to download a file.`}
-                    </Alert>
                     <Row>
                         <Label htmlFor="edit-password-button">
                             <span className="mr0-5">{c('Label').t`Password protection`}</span>
                         </Label>
-                        <div className="flex flex-column flex-item-fluid">
-                            <input
-                                readOnly
-                                value={password}
-                                className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 pm-field--accented ellipsis pre"
-                                data-testid="sharing-modal-password"
-                            />
-                            <Checkbox
+                        <div className="flex flex-justify-start mr0-5 onmobile-mr0">
+                            <Toggle
                                 className="mb0-5"
                                 disabled={customPassword}
-                                checked={includePassword}
+                                id="passwordModeToggle"
+                                checked={!includePassword}
                                 onChange={onIncludePasswordToggle}
-                                data-testid="sharing-modal-includePassword"
-                            >{c('Label').t`Include password in the link`}</Checkbox>
+                                data-testid="sharing-modal-passwordModeToggle"
+                            />
+                        </div>
+                        <div className="flex flex-item-fluid mb0-5">
+                            {!includePassword && (
+                                <Input
+                                    readOnly
+                                    value={password}
+                                    className="pl1 pr1 pt0-5 pb0-5 ellipsis pre"
+                                    data-testid="sharing-modal-password"
+                                    icon={
+                                        <button
+                                            title={c('Label').t`Copy password`}
+                                            className="inline-flex flex-item-noshrink"
+                                            tabIndex={-1}
+                                            type="button"
+                                            onClick={handleCopyPasswordClick}
+                                        >
+                                            <Icon className="mauto" name="copy" alt={c('Label').t`Copy password`} />
+                                        </button>
+                                    }
+                                />
+                            )}
                         </div>
                         <div className="flex flex-justify-end ml0-5 onmobile-ml0">
                             <div>
-                                <Button id="edit-password-button" onClick={onEditPasswordClick} className="min-w5e">{c(
-                                    'Action'
-                                ).t`Edit`}</Button>
-                            </div>
-                            <div>
                                 <Button
-                                    id="copy-password-button"
-                                    onClick={handleCopyPasswordClick}
-                                    className="min-w5e ml0-5"
-                                >{c('Action').t`Copy`}</Button>
+                                    id="edit-password-button"
+                                    hidden={includePassword}
+                                    onClick={onEditPasswordClick}
+                                    className="min-w5e"
+                                >{c('Action').t`Edit`}</Button>
                             </div>
                         </div>
                     </Row>
-
-                    <h3>{c('Title').t`Additional settings`}</h3>
 
                     <Row>
                         <Label htmlFor="edit-expiration-time-button">
@@ -168,8 +178,7 @@ function GeneratedLinkState({
                 </InnerModal>
                 <FooterModal>
                     <div className="flex flex-spacebetween w100 flex-nowrap">
-                        <Button loading={deleting} onClick={onDeleteLinkClick}>{c('Action')
-                            .t`Delete secure link`}</Button>
+                        <Button loading={deleting} onClick={onDeleteLinkClick}>{c('Action').t`Stop sharing`}</Button>
                         <Button onClick={onClose}>{c('Action').t`Done`}</Button>
                     </div>
                 </FooterModal>

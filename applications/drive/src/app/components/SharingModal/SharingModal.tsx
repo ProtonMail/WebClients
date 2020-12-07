@@ -169,14 +169,15 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             await deleteSharedLink(ShareID, Token);
             await deleteShare(ShareID);
             await events.call(shareId);
-            createNotification({ text: c('Notification').t`Secure link has been deleted` });
+            createNotification({ text: c('Notification').t`The link to your file was deleted.` });
             onClose?.();
         };
 
         openConfirmModal({
-            title: c('Title').t`Delete secure link`,
-            confirm: c('Action').t`Delete`,
-            message: c('Info').t`Are you sure you want to delete the secure link?`,
+            title: c('Title').t`Stop sharing`,
+            confirm: c('Action').t`Stop sharing`,
+            message: c('Info').t`This will delete the link and remove access to your file for anyone with the link.`,
+            canUndo: true,
             onConfirm: () => withDeleting(deleteLink()),
         });
     };
