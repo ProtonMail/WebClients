@@ -16,7 +16,7 @@ const AddressesSection = ({ onClose }: Props) => {
         return (
             <>
                 <Alert>{c('Info for domain modal')
-                    .t`Add a new user to your organization and create an address for them.`}</Alert>
+                    .t`Add a new user to your organization and create an address for it.`}</Alert>
                 <Block>
                     <AppLink
                         className="pm-button pm-button--primary"
