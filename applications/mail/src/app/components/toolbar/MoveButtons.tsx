@@ -125,19 +125,20 @@ const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, sel
     } else if (labelID === SENT || labelID === ALL_SENT) {
         buttons = [trashButton, archiveButton, deleteButton];
     } else if (labelID === STARRED) {
-        buttons = [inboxButton, trashButton, archiveButton];
+        //
+        buttons = [trashButton, archiveButton, spamButton];
     } else if (labelID === ARCHIVE) {
-        buttons = [inboxButton, trashButton, spamButton];
+        buttons = [trashButton, inboxButton, spamButton];
     } else if (labelID === SPAM) {
-        buttons = [nospamButton, trashButton, deleteButton];
+        buttons = [trashButton, nospamButton, deleteButton];
     } else if (labelID === TRASH) {
         buttons = [inboxButton, archiveButton, deleteButton];
     } else if (labelID === ALL_MAIL) {
-        buttons = [inboxButton, trashButton, archiveButton];
+        buttons = [trashButton, archiveButton, spamButton];
     } else if (isCustomFolder(labelID, folders)) {
-        buttons = [inboxButton, trashButton, archiveButton];
+        buttons = [trashButton, archiveButton, spamButton];
     } else if (isCustomLabel(labelID, labels)) {
-        buttons = [inboxButton, trashButton, archiveButton];
+        buttons = [trashButton, archiveButton, spamButton];
     }
 
     return <>{buttons}</>; // TS limitation
