@@ -10,6 +10,7 @@ import { TransferCancel } from '../../interfaces/transfer';
 import runInQueue from '../../utils/runInQueue';
 import { waitUntil } from '../../utils/async';
 import { MAX_THREADS_PER_DOWNLOAD, DOWNLOAD_TIMEOUT, STATUS_CODE } from '../../constants';
+import { isTransferCancelError } from '../../utils/transfer';
 
 const MAX_TOTAL_BUFFER_SIZE = 10; // number of blocks
 const MAX_RETRIES_BEFORE_FAIL = 3;
@@ -56,7 +57,19 @@ export const initDownload = ({
         }
 
         const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
-        const blocksOrBuffer = await getBlocks(abortController.signal);
+        let blocksOrBuffer: DriveFileBlock[] | Uint8Array[];
+
+        try {
+            blocksOrBuffer = await getBlocks(abortController.signal);
+        } catch (err) {
+            // If paused before blocks/meta is fetched (DOM Error), restart on resume pause
+            if (paused && isTransferCancelError(err)) {
+                await waitUntil(() => paused === false);
+                await start(api);
+                return;
+            }
+            throw err;
+        }
 
         await fsWriter.ready;
         onStart?.(fileStream.readable);
@@ -82,9 +95,6 @@ export const initDownload = ({
             }
         };
 
-        let blocks = blocksOrBuffer;
-        let activeIndex = 1;
-
         const revertProgress = () => {
             if (onProgress) {
                 // Revert progress of blacks that weren't finished
@@ -102,6 +112,9 @@ export const initDownload = ({
                 onProgress(-progressToRevert);
             }
         };
+
+        let blocks = blocksOrBuffer;
+        let activeIndex = 1;
 
         const getBlockQueue = (startIndex = 1) => orderBy(blocks, 'Index').filter(({ Index }) => Index >= startIndex);
 
