@@ -56,7 +56,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
         },
         {
             hidden: isMultiSelect || hasFoldersSelected,
-            name: hasSharedLink ? c('Action').t`Manage secure link` : c('Action').t`Get secure link`,
+            name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share with link`,
             icon: 'link',
             testId: 'context-menu-share',
             action: () => openLinkSharing(shareId, selectedItems[0]),

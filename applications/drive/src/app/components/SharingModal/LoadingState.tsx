@@ -13,7 +13,7 @@ function LoadingState({ generated }: Props) {
                 <div className="flex flex-column flex-items-center">
                     <Loader size="medium" className="mt1 mb1" />
                     <TextLoader className="m0">
-                        {generated ? c('Info').t`Preparing secure link` : c('Info').t`Generating secure link`}
+                        {generated ? c('Info').t`Preparing link to file` : c('Info').t`Creating link to file`}
                     </TextLoader>
                 </div>
             </InnerModal>
