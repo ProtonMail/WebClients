@@ -1,3 +1,17 @@
+# [4.0.0-beta.7] - 2020-12-07
+
+## Improvements
+
+- Made it more difficult to accidentally delete the wrong user for multi-user account holders
+
+## Fixes
+
+- Various small bugs and inconsistencies with custom domain configuration
+- Confusing wording used when settings timezone format
+- A glitch causing display name to present over other elements in the application header
+
+---
+
 # [4.0.0-beta.6] - 2020-11-30
 
 ## Fixes
