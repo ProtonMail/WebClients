@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { useHistory } from 'react-router-dom';
 import { APP_NAMES } from 'proton-shared/lib/constants';
 
 import { resumeSession, getActiveSessions } from 'proton-shared/lib/authentication/persistedSessionHelper';
@@ -24,10 +23,28 @@ interface Props {
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
     toApp?: APP_NAMES;
     activeSessions?: LocalSessionResponse[];
+    onSignOutAll: () => void;
+    onAddAccount: () => void;
 }
 
-const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Props) => {
-    const history = useHistory();
+const compareSessions = (a: LocalSessionResponse, b: LocalSessionResponse) => {
+    if (a.DisplayName && b.DisplayName) {
+        return a.DisplayName.localeCompare(b.DisplayName);
+    }
+    if (a.Username && b.Username) {
+        return a.Username.localeCompare(b.Username);
+    }
+    if (a.PrimaryEmail && b.PrimaryEmail) {
+        return a.PrimaryEmail.localeCompare(b.PrimaryEmail);
+    }
+    return 0;
+};
+
+const sortSessions = (sessions: LocalSessionResponse[]) => {
+    return [...sessions].sort(compareSessions);
+};
+
+const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions, onAddAccount, onSignOutAll }: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
@@ -56,28 +73,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
                 return silentApi(withUIDHeaders(persistedSession.UID, revoke())).catch(noop);
             }
         });
-        history.push('/login');
-    };
-
-    const handleAddAccount = () => {
-        history.push('/login');
-    };
-
-    const compareSessions = (a: LocalSessionResponse, b: LocalSessionResponse) => {
-        if (a.DisplayName && b.DisplayName) {
-            return a.DisplayName.localeCompare(b.DisplayName);
-        }
-        if (a.Username && b.Username) {
-            return a.Username.localeCompare(b.Username);
-        }
-        if (a.PrimaryEmail && b.PrimaryEmail) {
-            return a.PrimaryEmail.localeCompare(b.PrimaryEmail);
-        }
-        return 0;
-    };
-
-    const sortSessions = (sessions: LocalSessionResponse[]) => {
-        return [...sessions].sort(compareSessions);
+        onSignOutAll();
     };
 
     const handleClickSession = async (localID: number) => {
@@ -160,7 +156,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions }: Prop
                 <div className="button-account-container-inner">
                     {inner()}
                     <div className="relative p1">
-                        <LinkButton className="semibold increase-surface-click" onClick={handleAddAccount}>{c('Action')
+                        <LinkButton className="semibold increase-surface-click" onClick={onAddAccount}>{c('Action')
                             .t`Add account`}</LinkButton>
                     </div>
                 </div>
