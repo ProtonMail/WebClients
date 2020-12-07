@@ -1,7 +1,5 @@
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { MAX_NAME_LENGTH, MIN_SHARED_URL_PASSWORD_LENGTH } from '../constants';
-import { WINDOWS_FORBIDDEN_CHARACTERS, WINDOWS_RESERVED_NAMES } from './link';
 
 export class ValidationError extends Error {
     constructor(message: string) {
@@ -46,51 +44,21 @@ const validateNameEmpty = (str: string) => {
     return !str ? c('Validation Error').t`Name must not be empty` : undefined;
 };
 
-const validateDotEnd = (str: string) => {
-    return str.endsWith('.') ? c('Validation Error').t`Name must not end with a period` : undefined;
-};
+export const validateLinkName = composeValidators([
+    validateNameEmpty,
+    validateNameLength,
+    validateSpaceStart,
+    validateSpaceEnd,
+    validateInvalidName,
+    validateInvalidCharacters,
+]);
 
-const validateReservedName = (str: string) => {
-    return WINDOWS_RESERVED_NAMES.includes(str.toUpperCase())
-        ? c('Validation Error').t`Name must not be a system reserved name`
-        : undefined;
-};
-
-const validateReservedCharacters = (str: string) => {
-    return WINDOWS_FORBIDDEN_CHARACTERS.test(str)
-        ? c('Validation Error').t`Name must not contain special characters: <>:"\\/|?*`
-        : undefined;
-};
-
-export const validateLinkName = FEATURE_FLAGS.includes('nonrestrictive-naming')
-    ? composeValidators([
-          validateNameEmpty,
-          validateNameLength,
-          validateSpaceStart,
-          validateSpaceEnd,
-          validateInvalidName,
-          validateInvalidCharacters,
-      ])
-    : composeValidators([
-          validateNameEmpty,
-          validateReservedCharacters,
-          validateReservedName,
-          validateNameLength,
-          validateDotEnd,
-          validateSpaceStart,
-          validateSpaceEnd,
-      ]);
-
-export const validateLinkNameField = FEATURE_FLAGS.includes('nonrestrictive-naming')
-    ? composeValidators([validateNameEmpty, validateNameLength, validateInvalidName, validateInvalidCharacters])
-    : composeValidators([
-          validateNameEmpty,
-          validateReservedCharacters,
-          validateReservedName,
-          validateNameLength,
-          validateDotEnd,
-      ]);
-
+export const validateLinkNameField = composeValidators([
+    validateNameEmpty,
+    validateNameLength,
+    validateInvalidName,
+    validateInvalidCharacters,
+]);
 const validatePasswordLength = (length: number) => (str: string) => {
     return str.length < length
         ? c('Validation Error').t`Password must be at least ${length} characters long`

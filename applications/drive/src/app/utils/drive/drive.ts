@@ -3,12 +3,13 @@ import { Api } from 'proton-shared/lib/interfaces';
 import {
     decryptUnsigned,
     generateNodeKeys,
+    generateLookupHash,
     generateDriveBootstrap,
     generateNodeHashKey,
     encryptPassphrase,
     encryptName,
 } from 'proton-shared/lib/keys/driveKeys';
-import { FEATURE_FLAGS, SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
 
 // These imports must go to proton-shared
@@ -41,7 +42,6 @@ import { FOLDER_PAGE_SIZE, DEFAULT_SORT_PARAMS, MAX_THREADS_PER_REQUEST, BATCH_R
 import { decryptPassphrase, getDecryptedSessionKey, PrimaryAddressKey } from './driveCrypto';
 import runInQueue from '../runInQueue';
 import { isPrimaryShare } from '../share';
-import { generateLookupHash } from '../hash';
 import { mimetypeFromExtension } from '../MimeTypeParser/helpers';
 
 export interface FetchLinkConfig {
@@ -495,7 +495,7 @@ export const renameLinkAsync = async (
         }),
     ]);
 
-    const MIMEType = !FEATURE_FLAGS.includes('mime-types-parser') ? await mimetypeFromExtension(newName) : undefined;
+    const MIMEType = await mimetypeFromExtension(newName);
 
     await api(
         queryRenameLink(shareId, linkId, {
