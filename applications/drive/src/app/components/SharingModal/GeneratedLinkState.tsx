@@ -75,7 +75,7 @@ function GeneratedLinkState({
         </b>
     );
 
-    const url = `${baseUrl}/${token}${includePassword && `#${password}`}`;
+    const url = `${baseUrl}/${token}${includePassword ? `#${password}` : ''}`;
 
     return (
         <>
