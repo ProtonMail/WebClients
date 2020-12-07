@@ -2,7 +2,7 @@ import { DecryptResultPmcrypto } from 'pmcrypto';
 import { MIME_TYPES, PGP_SIGN } from 'proton-shared/lib/constants';
 import { MailSettings, Recipient } from 'proton-shared/lib/interfaces';
 import React from 'react';
-import { fireEvent } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { useEventManager } from 'react-components';
 import {
@@ -136,6 +136,9 @@ describe('Composer', () => {
         const send = async (message: MessageExtended, useMinimalCache = true) => {
             const renderResult = await render(<Composer {...props} messageID={message.localID} />, useMinimalCache);
 
+            // Fake timers after render, it breaks rendering, I would love to know why
+            jest.useFakeTimers();
+
             const sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
             addApiMock(`mail/v4/messages/${ID}`, sendSpy);
 
@@ -147,6 +150,10 @@ describe('Composer', () => {
             const { call } = ((useEventManager as any) as () => { call: jest.Mock })();
 
             await waitForSpyCall(call);
+
+            await act(async () => {
+                jest.runAllTimers();
+            });
 
             const sendRequest = (sendSpy.mock.calls[0] as any[])[0];
 
@@ -163,6 +170,10 @@ describe('Composer', () => {
 
         beforeEach(() => {
             addKeysToAddressKeysCache(AddressID, fromKeys);
+        });
+
+        afterEach(() => {
+            jest.useRealTimers();
         });
 
         describe('send plaintext', () => {

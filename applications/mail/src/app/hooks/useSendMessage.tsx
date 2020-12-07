@@ -276,6 +276,7 @@ export const useSendMessage = () => {
 
             try {
                 const { Sent, DeliveryTime } = await promise;
+
                 const delta = DeliveryTime * 1000 - Date.now();
                 const undoTimeout = delta > 0 ? delta : 0;
                 setTimeout(
