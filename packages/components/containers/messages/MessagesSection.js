@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { Row, Field, Label, Info } from '../../components';
-import { useMailSettings } from '../../hooks';
+import { Row, Field, Label, Info, AppLink } from '../../components';
+import { useMailSettings, useUser } from '../../hooks';
 
 import RemoteToggle from './RemoteToggle';
 import EmbeddedToggle from './EmbeddedToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
+import DelaySendSecondsToggle from './DelaySendSecondsToggle';
 
 const MessagesSection = () => {
-    const [{ ShowImages, ConfirmLink } = {}] = useMailSettings();
+    const [user] = useUser();
+    const [{ ShowImages, ConfirmLink, DelaySendSeconds } = {}] = useMailSettings();
     const [showImages, setShowImages] = useState(ShowImages);
     const handleChange = (newValue) => setShowImages(newValue);
 
@@ -51,6 +54,22 @@ const MessagesSection = () => {
                 <Label htmlFor="requestLinkConfirmationToggle">{c('Label').t`Request link confirmation`}</Label>
                 <Field>
                     <RequestLinkConfirmationToggle confirmLink={ConfirmLink} id="requestLinkConfirmationToggle" />
+                </Field>
+            </Row>
+            <Row>
+                <Label htmlFor="delaySendSecondsToggle">
+                    <span className="mr0-5">{c('Label').t`Delay message sending`}</span>
+                    <Info
+                        title={c('Tooltip')
+                            .t`You can delay your message sending by 5 seconds, which gives you the possibility to cancel and go back to editing your draft.`}
+                    />
+                </Label>
+                <Field>
+                    {user.isPaid ? (
+                        <DelaySendSecondsToggle id="delaySendSecondsToggle" delaySendSeconds={DelaySendSeconds} />
+                    ) : (
+                        <AppLink to="/subscription" toApp={getAccountSettingsApp()}>{c('Action').t`Upgrade`}</AppLink>
+                    )}
                 </Field>
             </Row>
         </>
