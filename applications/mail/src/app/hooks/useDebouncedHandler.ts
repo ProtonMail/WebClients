@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useHandler } from 'react-components';
 import { Handler, Abortable } from 'react-components/hooks/useHandler';
 
@@ -8,20 +8,20 @@ import { Handler, Abortable } from 'react-components/hooks/useHandler';
  * - pause and restart actions
  */
 export const useDebouncedHandler = <T extends Handler>(handler: T, debounce: number) => {
-    const [pending, setPending] = useState(false);
+    const pending = useRef<boolean>(false);
     const pauseFlag = useRef<boolean>(false);
     const lastCall = useRef<any[]>([]);
 
     const debouncedHandler = useHandler(
         (...args: any[]) => {
-            setPending(false);
+            pending.current = false;
             return handler(...args);
         },
         { debounce }
     );
 
     const resultHandler = (...args: any[]) => {
-        setPending(true);
+        pending.current = true;
         lastCall.current = args;
         if (!pauseFlag.current) {
             return debouncedHandler(...args);
@@ -35,7 +35,7 @@ export const useDebouncedHandler = <T extends Handler>(handler: T, debounce: num
 
     const restart = () => {
         pauseFlag.current = false;
-        if (pending) {
+        if (pending.current) {
             debouncedHandler(...lastCall.current);
         }
     };
