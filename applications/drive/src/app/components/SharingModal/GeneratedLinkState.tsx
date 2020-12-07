@@ -120,7 +120,7 @@ function GeneratedLinkState({
                                 data-testid="sharing-modal-passwordModeToggle"
                             />
                         </div>
-                        <div className="flex flex-item-fluid mb0-5">
+                        <div className="flex flex-item-fluid onmobile-mb0-5">
                             {!includePassword && (
                                 <Input
                                     readOnly
@@ -159,7 +159,7 @@ function GeneratedLinkState({
                         </Label>
                         <div className="flex flex-column flex-item-fluid">
                             <div
-                                className="pm-field w100 mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis"
+                                className="pm-field w100 onmobile-mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis"
                                 data-testid="sharing-modal-expiration-time"
                             >
                                 <DateTime key="expirationTime" value={expirationTime} />
