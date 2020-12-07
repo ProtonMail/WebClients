@@ -1,12 +1,12 @@
 import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { getRecipientsAddresses, isAttachPublicKey } from 'proton-shared/lib/mail/messages';
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router';
 import { c, msgid } from 'ttag';
 import { unique } from 'proton-shared/lib/helpers/array';
-import { sendMessage } from 'proton-shared/lib/api/messages';
+import { sendMessage, cancelSend } from 'proton-shared/lib/api/messages';
 import {
     useApi,
     useEventManager,
@@ -32,8 +32,11 @@ import { attachPublicKey } from '../helpers/message/messageAttachPublicKey';
 import SendWithWarningsModal from '../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
 import { useSaveDraft } from './message/useSaveDraft';
-import { getParamsFromPathname, setParamsInLocation } from '../helpers/mailboxUrl';
+import SendingMessageNotification from '../components/notifications/SendingMessageNotification';
+import { OnCompose } from './useCompose';
+import useDelaySendSeconds from './useDelaySendSeconds';
 import { useGetMessageKeys } from './message/useGetMessageKeys';
+import { getParamsFromPathname, setParamsInLocation } from '../helpers/mailboxUrl';
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();
@@ -181,108 +184,148 @@ export const useSendMessage = () => {
     const auth = useAuthentication();
     const saveDraft = useSaveDraft();
     const history = useHistory();
+    const delaySendSeconds = useDelaySendSeconds();
+    const { createNotification, hideNotification } = useNotifications();
 
     return useCallback(
         async (
             inputMessage: MessageExtendedWithData,
             mapSendPrefs: SimpleMap<SendPreferences>,
+            onCompose: OnCompose,
             alreadySaved = false
         ) => {
-            const { localID } = inputMessage;
+            const { localID, data } = inputMessage;
+            const hasUndo = !!delaySendSeconds;
 
-            if (!alreadySaved) {
-                await saveDraft(inputMessage);
-            }
-
-            const messageKeys = await getMessageKeys(inputMessage.data);
-
-            // Add public key if selected
-            if (isAttachPublicKey(inputMessage.data)) {
+            const handleUndo = async () => {
                 const savedMessage = messageCache.get(localID) as MessageExtendedWithData;
-                const Attachments: Attachment[] = await attachPublicKey(savedMessage, messageKeys, auth.UID);
-                await saveDraft({
-                    ...savedMessage,
-                    data: { ...savedMessage.data, Attachments },
+                await api(cancelSend(savedMessage.data.ID));
+                createNotification({ text: c('Message notification').t`Sending undone` });
+                call();
+                // Re-open draft
+                onCompose({
+                    existingDraft: {
+                        localID,
+                        data,
+                    },
                 });
-            }
-
-            const message = messageCache.get(localID) as MessageExtendedWithData;
-
-            const messageWithGoodFlags = {
-                ...message,
-                data: {
-                    ...message.data,
-                    Flags: inputMessage.data.Flags,
-                },
             };
 
-            // TODO: handleAttachmentSigs ?
+            const prepareMessageToSend = async () => {
+                if (!alreadySaved) {
+                    await saveDraft(inputMessage);
+                }
 
-            const emails = unique(getRecipientsAddresses(inputMessage.data));
+                const messageKeys = await getMessageKeys(inputMessage.data);
 
-            let packages = await generateTopPackages(
-                messageWithGoodFlags,
-                messageKeys,
-                mapSendPrefs,
-                attachmentCache,
-                api
-            );
-            packages = await attachSubPackages(packages, messageWithGoodFlags, emails, mapSendPrefs, api);
-            packages = await encryptPackages(messageWithGoodFlags, messageKeys, packages);
+                // Add public key if selected
+                if (isAttachPublicKey(inputMessage.data)) {
+                    const savedMessage = messageCache.get(localID) as MessageExtendedWithData;
+                    const Attachments: Attachment[] = await attachPublicKey(savedMessage, messageKeys, auth.UID);
+                    await saveDraft({
+                        ...savedMessage,
+                        data: { ...savedMessage.data, Attachments },
+                    });
+                }
 
-            // TODO: Implement retry system
-            // const suppress = retry ? [API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED] : [];
-            // try {
+                const message = messageCache.get(localID) as MessageExtendedWithData;
+                const messageWithGoodFlags = {
+                    ...message,
+                    data: {
+                        ...message.data,
+                        Flags: inputMessage.data.Flags,
+                    },
+                };
 
-            // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
-            const { expiresIn } = inputMessage;
+                // TODO: handleAttachmentSigs ?
 
-            const { Sent } = await api(
-                sendMessage(message.data?.ID, {
-                    Packages: packages,
-                    ExpiresIn: expiresIn === 0 ? undefined : expiresIn,
-                } as any)
-            );
+                const emails = unique(getRecipientsAddresses(inputMessage.data));
 
-            updateMessageCache(messageCache, localID, { data: Sent, initialized: undefined });
-
-            call();
-
-            const {
-                params: { labelID, elementID },
-            } = getParamsFromPathname(history.location.pathname);
-            if (elementID === Sent.ConversationID) {
-                history.push(
-                    setParamsInLocation(history.location, {
-                        labelID,
-                        elementID: Sent.ConversationID,
-                        messageID: Sent.ID,
-                    })
+                let packages = await generateTopPackages(
+                    messageWithGoodFlags,
+                    messageKeys,
+                    mapSendPrefs,
+                    attachmentCache,
+                    api
                 );
+                packages = await attachSubPackages(packages, messageWithGoodFlags, emails, mapSendPrefs, api);
+                packages = await encryptPackages(messageWithGoodFlags, messageKeys, packages);
+
+                // TODO: Implement retry system
+                // const suppress = retry ? [API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED] : [];
+                // try {
+
+                // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
+                const { expiresIn } = inputMessage;
+                const deliveryTime = delaySendSeconds ? Math.floor(Date.now() / 1000) + delaySendSeconds : 0;
+                return api<{ Sent: Message; DeliveryTime: number }>(
+                    sendMessage(message.data?.ID, {
+                        Packages: packages,
+                        ExpiresIn: expiresIn === 0 ? undefined : expiresIn,
+                        DeliveryTime: deliveryTime,
+                    } as any)
+                );
+            };
+
+            const promise = prepareMessageToSend();
+
+            const notificationID = createNotification({
+                text: <SendingMessageNotification promise={promise} onUndo={hasUndo ? handleUndo : undefined} />,
+                expiration: -1,
+            });
+
+            try {
+                const { Sent, DeliveryTime } = await promise;
+                const delta = DeliveryTime * 1000 - Date.now();
+                const undoTimeout = delta > 0 ? delta : 0;
+                setTimeout(
+                    () => {
+                        hideNotification(notificationID);
+                        if (hasUndo) {
+                            call();
+                        }
+                    },
+                    hasUndo ? undoTimeout : 2500
+                );
+
+                updateMessageCache(messageCache, localID, { data: Sent, initialized: undefined });
+
+                call();
+
+                // Navigation to the sent message
+                const {
+                    params: { labelID, elementID },
+                } = getParamsFromPathname(history.location.pathname);
+                if (elementID === Sent.ConversationID) {
+                    history.push(
+                        setParamsInLocation(history.location, {
+                            labelID,
+                            elementID: Sent.ConversationID,
+                            messageID: Sent.ID,
+                        })
+                    );
+                }
+
+                // } catch (e) {
+                //     if (retry && e.data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED) {
+                //         sendPreferences.clearCache();
+                //         keyCache.clearCache();
+                //         // retry if we used the wrong keys
+                //         return send(message, parameters, false);
+                //     }
+                //     throw e;
+                // }
+            } catch (error) {
+                hideNotification(notificationID);
+                onCompose({
+                    existingDraft: {
+                        localID,
+                        data,
+                    },
+                });
+                throw error;
             }
-
-            // } catch (e) {
-            //     if (retry && e.data.Code === API_CUSTOM_ERROR_CODES.MESSAGE_VALIDATE_KEY_ID_NOT_ASSOCIATED) {
-            //         sendPreferences.clearCache();
-            //         keyCache.clearCache();
-            //         // retry if we used the wrong keys
-            //         return send(message, parameters, false);
-            //     }
-            //     throw e;
-            // }
         },
-        []
+        [delaySendSeconds, messageCache, attachmentCache, saveDraft]
     );
-};
-
-export const useSendWithUndo = () => {
-    const { createNotification } = useNotifications();
-
-    return useCallback(async (actualSend: () => Promise<void>) => {
-        const send = async () => {
-            await actualSend();
-            createNotification({ text: c('Info').t`Message sent` });
-        };
-        return send();
-    }, []);
 };

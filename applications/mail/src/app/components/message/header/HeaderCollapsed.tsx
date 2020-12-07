@@ -1,4 +1,4 @@
-import { hasAttachments, isDraft } from 'proton-shared/lib/mail/messages';
+import { hasAttachments, isDraft, isOutbox } from 'proton-shared/lib/mail/messages';
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames, useContactEmails } from 'react-components';
@@ -54,6 +54,7 @@ const HeaderCollapsed = ({
     };
 
     const isDraftMessage = isDraft(message.data);
+    const isOutboxMessage = isOutbox(message.data);
 
     return (
         <div
@@ -81,6 +82,10 @@ const HeaderCollapsed = ({
                 {messageLoaded && isDraftMessage && (
                     <span className="badgeLabel-success ml0-5 flex-item-noshrink is-appearing-content">{c('Info')
                         .t`Draft`}</span>
+                )}
+                {messageLoaded && isOutboxMessage && (
+                    <span className="badgeLabel-primary ml0-5 flex-item-noshrink is-appearing-content">{c('Info')
+                        .t`Sending`}</span>
                 )}
             </div>
             <div className="flex flex-items-center flex-nowrap flex-item-noshrink">
