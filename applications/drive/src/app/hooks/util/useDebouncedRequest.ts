@@ -18,9 +18,11 @@ const useDebouncedRequest = () => {
 
         const promise = api<T>(args);
         cache.set(key, promise);
-        promise.finally(() => {
+
+        const cleanup = () => {
             cache.delete(key);
-        });
+        };
+        promise.then(cleanup).catch(cleanup);
         return promise;
     };
 
