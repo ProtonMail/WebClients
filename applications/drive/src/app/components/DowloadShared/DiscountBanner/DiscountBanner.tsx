@@ -20,11 +20,11 @@ const UTM_PARAMS = {
 };
 
 const DiscountBanner = ({ contentState, onClose }: Props) => {
-    const hasBfDiscountFlag = FEATURE_FLAGS.includes('bf-discount');
-    const url = hasBfDiscountFlag ? BF_DEAL_URL : `${BF_DEAL_URL}?${UTM_PARAMS[contentState]}`;
-    const bannerLabel = hasBfDiscountFlag
-        ? c('Label').t`Up to 50% off on new subscriptions via our Black Friday promotion`
-        : c('Label').t`Up to 47% off on new subscriptions`;
+    const hasUpdatedDiscountFlag = FEATURE_FLAGS.includes('updated-discount');
+    const url = hasUpdatedDiscountFlag ? `${BF_DEAL_URL}?${UTM_PARAMS[contentState]}` : BF_DEAL_URL;
+    const bannerLabel = hasUpdatedDiscountFlag
+        ? c('Label').t`Up to 47% off on new subscriptions`
+        : c('Label').t`Up to 50% off on new subscriptions via our Black Friday promotion`;
 
     return (
         <div className="pd-discount-banner bg-primary color-white-dm p0-25 mb1 mr1 w100 onmobile-m0 onmobile-mw100">
