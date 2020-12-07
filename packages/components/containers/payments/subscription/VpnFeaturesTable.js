@@ -122,7 +122,7 @@ const VpnFeaturesTable = ({ cycle, currency }) => {
                         <td colSpan={4}>{c('Feature').t`Always-on VPN`}</td>
                     </tr>
                     <tr>
-                        <td colSpan={4}>{c('Feature').t`100% anonymous`}</td>
+                        <td colSpan={4}>{c('Feature').t`Open Source`}</td>
                     </tr>
                     <tr>
                         <td colSpan={4}>{c('Feature').t`10 Gpbs servers`}</td>
