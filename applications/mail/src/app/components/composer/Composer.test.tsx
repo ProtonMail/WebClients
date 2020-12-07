@@ -4,6 +4,7 @@ import { MailSettings, Recipient } from 'proton-shared/lib/interfaces';
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { useEventManager } from 'react-components';
 import {
     clearAll,
     render,
@@ -141,7 +142,11 @@ describe('Composer', () => {
             const sendButton = renderResult.getByTestId('send-button');
             fireEvent.click(sendButton);
 
-            await waitForSpyCall(props.onClose);
+            // Wait for the event manager to be called as it's the last step of the sendMessage hook
+            // Hard override of the typing as event manager is mocked
+            const { call } = ((useEventManager as any) as () => { call: jest.Mock })();
+
+            await waitForSpyCall(call);
 
             const sendRequest = (sendSpy.mock.calls[0] as any[])[0];
 

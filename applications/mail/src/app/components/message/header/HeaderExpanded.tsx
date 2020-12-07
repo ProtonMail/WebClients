@@ -313,6 +313,7 @@ const HeaderExpanded = ({
                 messageLoaded={messageLoaded}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
+                onCompose={onCompose}
             />
 
             <div className="pt0-5 flex flex-spacebetween border-top">

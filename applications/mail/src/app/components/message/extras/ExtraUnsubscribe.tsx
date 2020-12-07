@@ -24,15 +24,17 @@ import { useMessage } from '../../../hooks/message/useMessage';
 import { useSendMessage, useSendVerifications } from '../../../hooks/useSendMessage';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
 import { findSender } from '../../../helpers/addresses';
+import { OnCompose } from '../../../hooks/useCompose';
 
 interface Props {
     message: MessageExtended;
+    onCompose: OnCompose;
 }
 
 const UNSUBSCRIBE_ONE_CLICK = 'List-Unsubscribe=One-Click';
 const UNSUBSCRIBE_REGEX = /<(.*?)>/g;
 
-const ExtraUnsubscribe = ({ message }: Props) => {
+const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const [addresses] = useAddresses();
@@ -97,7 +99,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 };
 
                 const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData);
-                await addAction(() => sendMessage(cleanMessage, mapSendPrefs));
+                await addAction(() => sendMessage(cleanMessage, mapSendPrefs, onCompose));
             } else if (value.startsWith('http')) {
                 if (oneClick) {
                     // NOTE Exist with MailChimp but has CORS issue

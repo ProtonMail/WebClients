@@ -1,5 +1,5 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { hasAttachments, isDraft, isSent } from 'proton-shared/lib/mail/messages';
+import { hasAttachments, isDraft, isSent, isOutbox } from 'proton-shared/lib/mail/messages';
 import React, { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, RefCallback } from 'react';
 import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
@@ -55,7 +55,7 @@ const MessageView = (
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
-    const getInitialExpand = () => !conversationMode && !isDraft(inputMessage);
+    const getInitialExpand = () => !conversationMode && !isDraft(inputMessage) && !isOutbox(inputMessage);
 
     // Actual expanded state
     const [expanded, setExpanded] = useState(getInitialExpand);
@@ -77,6 +77,7 @@ const MessageView = (
     const markAs = useMarkAs();
 
     const draft = !loading && isDraft(message.data);
+    const outbox = !loading && isOutbox(message.data);
     const sent = isSent(message.data);
     const unread = isUnread(message.data, labelID);
     // It can be attachments but not yet loaded
@@ -175,6 +176,9 @@ const MessageView = (
     };
 
     const handleExpand = (value: boolean) => () => {
+        if (outbox) {
+            return;
+        }
         if (draft) {
             onCompose({ existingDraft: message });
         } else {
