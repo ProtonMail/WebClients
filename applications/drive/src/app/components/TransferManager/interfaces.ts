@@ -1,4 +1,4 @@
-import { TransferState, Download, Upload } from '../../interfaces/transfer';
+import { Download, Upload } from '../../interfaces/transfer';
 
 export interface DownloadProps {
     transfer: Download;
@@ -16,7 +16,7 @@ export interface TransferProps<T extends TransferType> {
 }
 
 export interface TransferStats {
-    state: TransferState;
+    active: boolean;
     progress: number;
     speed: number;
 }
