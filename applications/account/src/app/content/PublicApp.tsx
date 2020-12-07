@@ -98,6 +98,16 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         return false;
     };
 
+    const handleSignOutAll = async () => {
+        setActiveSessions([]);
+        setHasBackToSwitch(false);
+        history.push('/login');
+    };
+
+    const handleAddAccount = () => {
+        history.push('/login');
+    };
+
     const toApp = forkState?.app || APP_NAME;
 
     return (
@@ -114,6 +124,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                     activeSessions={activeSessions}
                                     toApp={toApp}
                                     onLogin={handleLogin}
+                                    onSignOutAll={handleSignOutAll}
+                                    onAddAccount={handleAddAccount}
                                     Layout={AccountPublicLayoutWrapper}
                                 />
                             </Route>
