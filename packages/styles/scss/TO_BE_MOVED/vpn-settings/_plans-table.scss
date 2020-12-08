@@ -92,7 +92,7 @@ $border-width: 2px !default;
 $nb-plans-max: 4 !default;
 
 @for $i from 1 through $nb-plans-max {
-	.pm-table--highlight[data-plan-number="#{$i}"] {
+	.pm-table--highlight[data-plan-number='#{$i}'] {
 		& tr td:nth-child(#{$i + 1}),
 		& tr th:nth-child(#{$i + 1}) {
 			border-left: #{$border-width} solid $pm-primary;

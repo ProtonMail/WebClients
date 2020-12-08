@@ -1,7 +1,6 @@
-$scrollshadow-height: .5rem !default;
+$scrollshadow-height: 0.5rem !default;
 
 .scrollshadow {
-
 	&-sticky {
 		position: sticky;
 		display: block;
@@ -9,12 +8,20 @@ $scrollshadow-height: .5rem !default;
 
 		&--top {
 			top: 0;
-			background-image: radial-gradient(farthest-side at 50% 0, var(--bordercolor-input, #acb0bf), transparent);
+			background-image: radial-gradient(
+				farthest-side at 50% 0,
+				var(--bordercolor-input, #acb0bf),
+				transparent
+			);
 		}
 
 		&--bottom {
 			bottom: 0;
-			background-image: radial-gradient(farthest-side at 50% 100%, var(--bordercolor-input, #acb0bf), transparent);
+			background-image: radial-gradient(
+				farthest-side at 50% 100%,
+				var(--bordercolor-input, #acb0bf),
+				transparent
+			);
 		}
 	}
 

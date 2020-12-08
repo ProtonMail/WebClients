@@ -5,8 +5,7 @@
  * @param {String} $prefix - Specify a prefix for each class if needed
  * @returns {String} - CSS classes with correct names from coordinates and values
  */
-@mixin margin-generator ($list-margin, $list-margin-values, $prefix: '') {
-
+@mixin margin-generator($list-margin, $list-margin-values, $prefix: '') {
 	@each $margin-type in $list-margin {
 		@each $margin in $list-margin-values {
 			//$temp_m : str-slice($margin-type, 0, 1);
@@ -16,28 +15,22 @@
 
 			@if $temp_t==t {
 				$property: margin-top;
-			}
-
-			@else if $temp_t==r {
+			} @else if $temp_t==r {
 				$property: margin-right;
-			}
-
-			@else if $temp_t==b {
+			} @else if $temp_t==b {
 				$property: margin-bottom;
-			}
-
-			@else if $temp_t==l {
+			} @else if $temp_t==l {
 				$property: margin-left;
 			}
 
-			$value : $margin+0em;
+			$value: $margin + 0em;
 
 			@if $margin==0 {
 				$value: $margin;
 			}
 
 			// convert to string
-			$text-margin: $margin+'';
+			$text-margin: $margin + '';
 
 			// from 1.5 to 1-5
 			$property-class: str-replace($text-margin, '.', '-');

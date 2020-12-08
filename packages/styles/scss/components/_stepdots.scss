@@ -15,7 +15,7 @@
 			background-color: $pm-primary;
 		}
 
-		&[aria-selected="true"] {
+		&[aria-selected='true'] {
 			background-color: var(--secondary-bg-color, $pm-global-altgrey);
 		}
 	}

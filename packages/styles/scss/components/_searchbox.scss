@@ -24,17 +24,17 @@
 		}
 
 		&--reset-advanced {
-			.searchbox-field[type="search"] {
+			.searchbox-field[type='search'] {
 				padding-right: 6.25rem;
 			}
 
-			[type="reset"].searchbox-advanced-search-button {
+			[type='reset'].searchbox-advanced-search-button {
 				right: 2.75rem;
 			}
 		}
 	}
 
-	&-field[type="search"] {
+	&-field[type='search'] {
 		height: 4rem;
 		background-color: var(--bgcolor-searchbox-field, #{rgba($black, 0.3)});
 		background-image: none;
@@ -85,8 +85,8 @@
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
-		.searchbox-field[type="search"] {
+	[dir='rtl'] {
+		.searchbox-field[type='search'] {
 			padding-right: calc(2em + 2rem);
 			padding-left: 4rem;
 			background-image: none;
@@ -108,7 +108,7 @@
 		}
 
 		.searchbox-container--reset-advanced {
-			.searchbox-field[type="search"] {
+			.searchbox-field[type='search'] {
 				padding-right: calc(2em + 2rem);
 				padding-left: 6rem;
 			}

@@ -1,6 +1,6 @@
 $block-info-border-width: 3px !default;
 
-[class*="block-info"] {
+[class*='block-info'] {
 	padding: 0.5em 1.2em;
 	color: var(--color-main-area, $pm-global-grey);
 	background-color: var(--bordercolor-input, $pm-global-light);
@@ -9,8 +9,8 @@ $block-info-border-width: 3px !default;
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
-		[class*="block-info"] {
+	[dir='rtl'] {
+		[class*='block-info'] {
 			border-left-width: 0;
 			border-right-width: $block-info-border-width;
 			border-right-style: solid;
@@ -34,7 +34,7 @@ $block-info-border-width: 3px !default;
 	border-color: $pm-global-success;
 }
 
-[class*="block-info-standard"] {
+[class*='block-info-standard'] {
 	padding: 0.2em 1.2em;
 	background-color: transparent;
 }
@@ -57,6 +57,6 @@ $block-info-border-width: 3px !default;
 
 // other colors might be added later
 
-[class*="block-info"].color-white {
+[class*='block-info'].color-white {
 	color: $white;
 }

@@ -4,8 +4,7 @@
  * @param {Boolean} $display-none - Display or not this content
  * @returns {String} - The CSS rule for adding the content inside a pseudo-element on body tag
  */
-@mixin body-before ($value-content, $display-none : false) {
-
+@mixin body-before($value-content, $display-none: false) {
 	@if $value-content != '' {
 		body::before {
 			content: '#{$value-content}';
@@ -14,9 +13,7 @@
 				display: none;
 			}
 		}
-	}
-
-	@else {
+	} @else {
 		@warn '$value-content not specified';
 	}
 }

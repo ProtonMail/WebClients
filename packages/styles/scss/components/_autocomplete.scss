@@ -30,8 +30,10 @@
 		&:hover,
 		&:active,
 		&:focus {
-			background-color: var(--bordercolor-input,
-					$autocomplete-bg-color-hover);
+			background-color: var(
+				--bordercolor-input,
+				$autocomplete-bg-color-hover
+			);
 		}
 	}
 

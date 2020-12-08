@@ -5,7 +5,7 @@
 
 		&:focus,
 		&:hover,
-		&[aria-expanded="true"] {
+		&[aria-expanded='true'] {
 			background-color: $navigation-hover-bg-color;
 		}
 
@@ -16,21 +16,21 @@
 			}
 		}
 
-		&[aria-expanded="true"] {
+		&[aria-expanded='true'] {
 			.dropDown-logout-initials {
 				background-color: rgb(0 0 0 / 0.5);
 			}
 		}
 
 		@if $rtl-option == true {
-			[dir="rtl"] &-button > span:first-child {
+			[dir='rtl'] &-button > span:first-child {
 				margin-left: 0.5em;
 				margin-right: 0;
 			}
 		}
 
 		// yes, but only on HUGE screens for looooooooooong accounts
-		@include respond-to(1400, "min") {
+		@include respond-to(1400, 'min') {
 			max-width: 18em;
 		}
 	}

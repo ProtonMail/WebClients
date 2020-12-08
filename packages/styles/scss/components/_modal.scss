@@ -171,7 +171,7 @@ $modal-smaller-width: 28em !default;
 // .pm-modalClose:active {
 // }
 @if $rtl-option==true {
-	[dir="rtl"] {
+	[dir='rtl'] {
 		.pm-modalClose {
 			left: 0.5rem;
 			right: auto;
@@ -204,7 +204,7 @@ $modal-smaller-width: 28em !default;
 
 	min-height: 7.9rem; // only for Safari the ugly
 
-	[class*="pm-button"] {
+	[class*='pm-button'] {
 		// only for Safari the ugly
 		min-height: 3.4rem;
 	}
@@ -246,13 +246,13 @@ $pm-label-shorter-width: 10em !default;
 }
 
 // single button on right
-.pm-modalFooter [class*="pm-button"]:only-child {
+.pm-modalFooter [class*='pm-button']:only-child {
 	margin-left: auto;
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
-		.pm-modalFooter [class*="pm-button"]:only-child {
+	[dir='rtl'] {
+		.pm-modalFooter [class*='pm-button']:only-child {
 			margin-right: auto;
 			margin-left: 0;
 		}
@@ -287,7 +287,7 @@ $pm-label-shorter-width: 10em !default;
 	}
 }
 
-@include respond-to($breakpoint-large, "min") {
+@include respond-to($breakpoint-large, 'min') {
 	.pm-modal--full {
 		max-width: $modal-full-max-width;
 		margin-left: auto;

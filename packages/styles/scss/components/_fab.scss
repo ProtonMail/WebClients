@@ -6,9 +6,9 @@
 	height: 6.6rem;
 	width: 6.6rem;
 	border-radius: 50%;
-	padding: .5em;
+	padding: 0.5em;
 	box-shadow: 0 0 20px 0 rgb(0 0 0 / 0.3);
-	transition: bottom .5s easing(easeOutQuart);
+	transition: bottom 0.5s easing(easeOutQuart);
 
 	&--is-higher {
 		bottom: 4em;

@@ -45,7 +45,7 @@
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
+	[dir='rtl'] {
 		.mrauto {
 			margin-right: 0;
 			margin-left: auto;

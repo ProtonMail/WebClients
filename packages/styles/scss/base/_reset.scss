@@ -76,12 +76,12 @@ th {
 	}
 	// -webkit-appearance: none makes vocalization failing
 
-	input[type="checkbox"] {
+	input[type='checkbox'] {
 		/* stylelint-disable-next-line */
 		-webkit-appearance: checkbox;
 	}
 
-	input[type="radio"] {
+	input[type='radio'] {
 		/* stylelint-disable-next-line */
 		-webkit-appearance: radio;
 	}
@@ -99,16 +99,16 @@ th {
 /* makes you want to click on */
 label,
 button,
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
+input[type='submit'],
+input[type='button'],
+input[type='reset'] {
 	cursor: pointer;
 }
 
 button[disabled],
-input[type="submit"][disabled],
-input[type="button"][disabled],
-input[type="reset"][disabled] {
+input[type='submit'][disabled],
+input[type='button'][disabled],
+input[type='reset'][disabled] {
 	cursor: default;
 	pointer-events: none;
 }
@@ -168,7 +168,7 @@ dd {
 // Right to left resets
 @if $rtl-option==true {
 	/* RTL */
-	[dir="rtl"] {
+	[dir='rtl'] {
 		ul,
 		ol {
 			padding-left: 0;
@@ -257,26 +257,26 @@ dfn {
  * see https://en.wikipedia.org/wiki/Quotation_mark#Summary_table for reference
  */
 html {
-	quotes: "\201C""\201D""\2018""\2019"; // default
+	quotes: '\201C''\201D''\2018''\2019'; // default
 }
 
 @each $quotes
 	in (
 		(
-			"lang": "fr",
-			"quotes":
+			'lang': 'fr',
+			'quotes':
 				'"\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019"'
 		),
-		("lang": "en", "quotes": '"\201C" "\201D" "\2018" "\2019"'),
-		("lang": "es", "quotes": '"\00AB" "\00BB" "\201C" "\201D"'),
-		("lang": "it", "quotes": '"\00AB\00A0" "\00A0\00BB" "\201C" "\201D"'),
-		("lang": "de", "quotes": '"\201e" "\201c" "\201a" "\2018"'),
-		("lang": "ja", "quotes": '"\300c" "\300d" "\300e" "\300f"'),
-		("lang": "ar", "quotes": '"\201C" "\201D"')
+		('lang': 'en', 'quotes': '"\201C" "\201D" "\2018" "\2019"'),
+		('lang': 'es', 'quotes': '"\00AB" "\00BB" "\201C" "\201D"'),
+		('lang': 'it', 'quotes': '"\00AB\00A0" "\00A0\00BB" "\201C" "\201D"'),
+		('lang': 'de', 'quotes': '"\201e" "\201c" "\201a" "\2018"'),
+		('lang': 'ja', 'quotes': '"\300c" "\300d" "\300e" "\300f"'),
+		('lang': 'ar', 'quotes': '"\201C" "\201D"')
 	)
 {
 	:lang(#{map-get($quotes, 'lang')}) {
-		quotes: #{map-get($quotes, "quotes")};
+		quotes: #{map-get($quotes, 'quotes')};
 	}
 }
 

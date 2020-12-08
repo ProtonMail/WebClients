@@ -6,7 +6,6 @@
  * @return {String} - The property with each prefix
  */
 @mixin vendor-prefix($property, $value, $prefixes: (webkit, moz, ms, o)) {
-
 	@if $prefixes {
 		@each $prefix in $prefixes {
 			#{'-' + $prefix + '-' + $property}: $value;

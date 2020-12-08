@@ -34,7 +34,6 @@
 	/* autoprefixer: ignore next */
 	// appearance: none;
 
-
 	&::-webkit-meter-bar {
 		border: none;
 		background: none;
@@ -83,6 +82,6 @@
 	}
 
 	&.is-thin {
-		@include meterbar-size(.375em);
+		@include meterbar-size(0.375em);
 	}
 }

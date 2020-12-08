@@ -10,7 +10,7 @@ $padding-left-link: 2rem !default;
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
+	[dir='rtl'] {
 		.navigation__link,
 		.navigation__link--groupHeader {
 			padding: 0.95rem $padding-left-link 0.95rem 1em;
@@ -33,7 +33,7 @@ $padding-left-link: 2rem !default;
 	text-decoration: none;
 }
 
-[aria-current="page"].navigation__link {
+[aria-current='page'].navigation__link {
 	background: $navigation-hover-bg-color;
 	color: var(--color-nav-active, $white);
 	font-weight: bold;
@@ -93,11 +93,11 @@ $padding-left-link: 2rem !default;
 
 /* Sub folders */
 .navigation__item {
-	[data-level="1"] {
+	[data-level='1'] {
 		padding-left: 1em;
 	}
 
-	[data-level="2"] {
+	[data-level='2'] {
 		padding-left: 2em;
 	}
 }
@@ -115,7 +115,7 @@ $padding-left-link: 2rem !default;
 	visibility: visible;
 	transition-delay: 0s;
 
-	&[aria-hidden="true"] {
+	&[aria-hidden='true'] {
 		display: block;
 		opacity: 0;
 		max-height: 0;
@@ -149,14 +149,14 @@ $padding-left-link: 2rem !default;
 			var(--color-nav-link, #{rgba($pm-global-light, 0.5)});
 	}
 
-	&[aria-current="true"] {
+	&[aria-current='true'] {
 		border-left: 2px solid var(--color-nav-active, $white);
 		font-weight: bold;
 	}
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
+	[dir='rtl'] {
 		.navigation__sublist {
 			margin-left: 0;
 			margin-right: $padding-left-link;
@@ -177,7 +177,7 @@ $padding-left-link: 2rem !default;
 				border-right: 2px solid var(--color-nav-link, $pm-global-light);
 			}
 
-			&[aria-current="true"] {
+			&[aria-current='true'] {
 				border-left: 0;
 				border-right: 2px solid var(--color-nav-active, $pm-primary);
 			}

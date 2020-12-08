@@ -10,7 +10,7 @@
 	}
 
 	@include respond-to($breakpoint-tiny) {
-		[class*="notification-"] {
+		[class*='notification-'] {
 			transform: none;
 			left: 1em;
 			right: 1em;
@@ -19,7 +19,7 @@
 	}
 }
 
-[class*="notification-"] {
+[class*='notification-'] {
 	border-radius: $global-border-radius;
 	overflow: hidden;
 	display: block;

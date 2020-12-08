@@ -6,8 +6,7 @@
  * @param {Number} $base-font - The base font size from which calculate
  * @return {Number} - The $px value converted in rem
  */
-@function line-height ($font-size, $base-height, $base-font) {
-
+@function line-height($font-size, $base-height, $base-font) {
 	$coef: ceil(1 / ($base-height * $base-font / $font-size));
 	$height: ($base-font * $base-height / $font-size);
 

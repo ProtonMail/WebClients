@@ -1,5 +1,4 @@
 .button-account {
-
 	&-container {
 		border: 1px solid var(--bordercolor-input, $pm-global-muted); // inconsistent with borders...
 		max-height: 50vh;
@@ -14,10 +13,10 @@
 	}
 
 	&-login {
-		transition: opacity .35s easing(easeInOut), visibility 0s;
+		transition: opacity 0.35s easing(easeInOut), visibility 0s;
 		opacity: 0;
 		width: 0;
-		transition-delay: 0s, .35s;
+		transition-delay: 0s, 0.35s;
 	}
 
 	&:focus,
@@ -30,6 +29,5 @@
 			width: auto;
 			transition-delay: 0s;
 		}
-
 	}
 }

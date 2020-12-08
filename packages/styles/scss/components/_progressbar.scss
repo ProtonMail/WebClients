@@ -1,4 +1,4 @@
-@mixin progressbar-size($size: .5em) {
+@mixin progressbar-size($size: 0.5em) {
 	height: $size;
 	border-radius: #{$size/2};
 
@@ -28,25 +28,28 @@
 
 	&::-webkit-progress-value {
 		background: $pm-primary;
-		transition: .25s width easing(easeInOutQuint);
+		transition: 0.25s width easing(easeInOutQuint);
 	}
 
 	&::-moz-progress-bar {
 		background: $pm-primary;
-		transition: .25s width easing(easeInOutQuint);
+		transition: 0.25s width easing(easeInOutQuint);
 	}
 
 	&::-ms-fill {
 		border-color: currentColor;
 	}
 
-	@each $variant, $color in (
-		disabled : darken($pm-global-muted, 25%),
-		running  : $pm-global-info,
-		success  : $pm-global-success,
-		warning  : $pm-global-attention,
-		error    : $pm-global-warning
-	) {
+	@each $variant,
+		$color
+			in (
+				disabled: darken($pm-global-muted, 25%),
+				running: $pm-global-info,
+				success: $pm-global-success,
+				warning: $pm-global-attention,
+				error: $pm-global-warning
+			)
+	{
 		&--#{$variant} {
 			color: $color;
 
@@ -61,6 +64,6 @@
 	}
 
 	&.is-thin {
-		@include progressbar-size(.25em);
+		@include progressbar-size(0.25em);
 	}
 }

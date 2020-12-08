@@ -6,16 +6,11 @@
  * @return {String} - Line height and margin for vertical rhythm
  */
 @mixin rhythm($value, $type-vr: $vertical-rhythm, $type-unit: $typo-unit) {
-
-	@if $type-unit=='use_em' {
+	@if $type-unit== 'use_em' {
 		font-size: em($value);
-	}
-
-	@else if $type-unit=='use_rem' {
+	} @else if $type-unit== 'use_rem' {
 		font-size: rem($value);
-	}
-
-	@else if $type-unit=='use_rem_with_em_fallback' {
+	} @else if $type-unit== 'use_rem_with_em_fallback' {
 		font-size: em($value);
 		font-size: rem($value);
 	}

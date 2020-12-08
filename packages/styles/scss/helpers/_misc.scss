@@ -11,7 +11,7 @@
 	list-style-type: none;
 
 	@if $rtl-option==true {
-		[dir="rtl"] & {
+		[dir='rtl'] & {
 			padding-right: 0;
 		}
 	}
@@ -58,7 +58,7 @@
 
 /* RTL/others */
 .mirror,
-[dir="rtl"] .on-rtl-mirror {
+[dir='rtl'] .on-rtl-mirror {
 	transform: rotateY(180deg);
 }
 
@@ -76,7 +76,7 @@
 
 /* increase surface click/tap */
 .increase-surface-click::before {
-	content: "";
+	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;

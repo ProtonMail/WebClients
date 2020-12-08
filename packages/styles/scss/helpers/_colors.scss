@@ -8,7 +8,11 @@
 }
 
 .bg-global-altgrey-gradient {
-	background-image: linear-gradient(to bottom, $pm-global-grey, $pm-global-altgrey);
+	background-image: linear-gradient(
+		to bottom,
+		$pm-global-grey,
+		$pm-global-altgrey
+	);
 }
 
 .bg-global-light {
@@ -58,7 +62,6 @@
 .bg-global-highlight {
 	background-color: var(--bgcolor-highlight, $pm-global-light);
 }
-
 
 .bg-pv-green {
 	background-color: $pv-green;
@@ -295,7 +298,6 @@
 	stroke: $pm-primary;
 }
 
-
 .stroke-visionary {
 	stroke: $visionary;
 }
@@ -315,8 +317,6 @@
 .stroke-vpnplus {
 	stroke: $vpnplus;
 }
-
-
 
 .color-global-grey {
 	color: $pm-global-grey;

@@ -9,7 +9,7 @@
 
 		color: $pm-global-light;
 
-		@include respond-to($breakpoint-small, "min") {
+		@include respond-to($breakpoint-small, 'min') {
 			box-shadow: 0 0.5rem 1.5rem 0 rgb(0 0 0 / 0.75);
 		}
 
@@ -28,7 +28,7 @@
 
 		&:hover,
 		&:focus,
-		&[aria-expanded="true"] {
+		&[aria-expanded='true'] {
 			background-color: $navigation-hover-bg-color;
 		}
 

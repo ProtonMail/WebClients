@@ -1,17 +1,18 @@
 /* general case */
-@include body-before ('desktop', true);
-
+@include body-before('desktop', true);
 
 /**
  * medium/tablet landscape minor breakpoint
  */
 @include respond-to($breakpoint-medium-landscape) {
-
 	$list-paddings-medium-landscape: p, pt, pr, pb, pl !default;
 	$list-paddings-medium-landscape-values: 0, 1 !default; // specify 2.5 if needed
 
-	@include padding-generator($list-paddings-medium-landscape, $list-paddings-medium-landscape-values, 'ontablet-landscape-');
-
+	@include padding-generator(
+		$list-paddings-medium-landscape,
+		$list-paddings-medium-landscape-values,
+		'ontablet-landscape-'
+	);
 }
 
 /**
@@ -29,7 +30,6 @@
  * medium/tablet breakpoint
  */
 @include respond-to($breakpoint-medium) {
-
 	/**
    * layout/modules
    */
@@ -55,14 +55,21 @@
 	$list-margins-tablet: m, mt, mr, mb, ml !default;
 	$list-margins-tablet-values: 0, 1, 2 !default; // specify 2.5 if needed
 
-	@include margin-generator($list-margins-tablet, $list-margins-tablet-values, 'ontablet-');
+	@include margin-generator(
+		$list-margins-tablet,
+		$list-margins-tablet-values,
+		'ontablet-'
+	);
 
 	/* paddings */
 	$list-paddings-tablet: p, pt, pr, pb, pl !default;
 	$list-paddings-tablet-values: 0, 1, 2 !default; // specify 2.5 if needed
 
-	@include padding-generator($list-paddings-tablet, $list-paddings-tablet-values, 'ontablet-');
-
+	@include padding-generator(
+		$list-paddings-tablet,
+		$list-paddings-tablet-values,
+		'ontablet-'
+	);
 
 	.ontablet- {
 		&alignleft {
@@ -80,7 +87,7 @@
 		&flex-column {
 			flex-direction: column;
 
-			&>* {
+			& > * {
 				width: 100%;
 				flex-basis: auto;
 			}
@@ -113,24 +120,18 @@
 		&list-1column {
 			column-count: 1;
 		}
-
 	}
 
 	/**
 	 * global structure adaptation (page / skip links / header / main content / footer)
 	 */
-	@include body-before ('tablet');
-
+	@include body-before('tablet');
 }
-
-
-
 
 /**
  * small/mobile breakpoint
  */
 @include respond-to($breakpoint-small) {
-
 	/**
 	 * layout/modules
 	 */
@@ -156,13 +157,21 @@
 	$list-margins-mobile: m, mt, mr, mb, ml !default;
 	$list-margins-mobile-values: 0, 0.25, 0.5, 1, 2, 3.5 !default; // specify 2.5 if needed
 
-	@include margin-generator($list-margins-mobile, $list-margins-mobile-values, 'onmobile-');
+	@include margin-generator(
+		$list-margins-mobile,
+		$list-margins-mobile-values,
+		'onmobile-'
+	);
 
 	/* paddings */
 	$list-paddings-mobile: p, pt, pr, pb, pl !default;
 	$list-paddings-mobile-values: 0, 0.25, 0.5, 1, 2 !default; // specify 2.5 if needed
 
-	@include padding-generator($list-paddings-mobile, $list-paddings-mobile-values, 'onmobile-');
+	@include padding-generator(
+		$list-paddings-mobile,
+		$list-paddings-mobile-values,
+		'onmobile-'
+	);
 
 	/* text aligns */
 	.onmobile- {
@@ -181,7 +190,7 @@
 		&flex-column {
 			flex-direction: column;
 
-			&>* {
+			& > * {
 				width: 100%;
 				flex-basis: auto;
 			}
@@ -194,7 +203,7 @@
 				}
 			}
 
-			&>.flex-autogrid-item {
+			& > .flex-autogrid-item {
 				padding: 0;
 				min-height: auto;
 			}
@@ -203,7 +212,7 @@
 		&flex-column-nostretch {
 			flex-direction: column;
 
-			&>* {
+			& > * {
 				align-self: center;
 			}
 		}
@@ -273,21 +282,16 @@
 		}
 	}
 
-
 	/**
 	 * global structure adaptation (page / skip links / header / main content / footer)
 	 */
-	@include body-before ('mobile');
-
+	@include body-before('mobile');
 }
-
-
 
 /**
  * tiny/small mobile breakpoint
  */
 @include respond-to($breakpoint-tiny) {
-
 	/**
 	 * layout/modules
 	 */
@@ -319,7 +323,7 @@
 		&flex-column {
 			flex-direction: column;
 
-			&>* {
+			& > * {
 				width: 100%;
 				flex-basis: auto;
 			}
@@ -336,7 +340,11 @@
 	$list-margins-tinymobile: m, mt, mr, mb, ml !default;
 	$list-margins-tinymobile-values: 0, 1 !default;
 
-	@include margin-generator($list-margins-tinymobile, $list-margins-tinymobile-values, 'ontinymobile-');
+	@include margin-generator(
+		$list-margins-tinymobile,
+		$list-margins-tinymobile-values,
+		'ontinymobile-'
+	);
 
 	/* paddings */
 	//$list-paddings-tinymobile: p, pt, pr, pb, pl !default;
@@ -347,6 +355,5 @@
 	/**
 	 * global structure adaptation (page / skip links / header / main content / footer)
 	 */
-	@include body-before ('tinymobile');
-
+	@include body-before('tinymobile');
 }

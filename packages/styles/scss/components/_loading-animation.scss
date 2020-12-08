@@ -1,12 +1,12 @@
 // Init values
-$animation-duration       : 3s !default;
-$second-circle-time-offset: .125s !default;
+$animation-duration: 3s !default;
+$second-circle-time-offset: 0.125s !default;
 
 // We need to adjust animation for each size.
 $stroke-map: (
 	default: 4.5,
-	bold   : 6.5,
-	xbold  : 15
+	bold: 6.5,
+	xbold: 15,
 ) !default;
 
 .loadingAnimation {
@@ -16,8 +16,12 @@ $stroke-map: (
 	will-change: transform;
 
 	@keyframes loaderRotation {
-		from { transform: rotate(0); }
-		to   { transform: rotate(360deg); }
+		from {
+			transform: rotate(0);
+		}
+		to {
+			transform: rotate(360deg);
+		}
 	}
 
 	&-circle {
@@ -39,7 +43,6 @@ $stroke-map: (
 	}
 
 	@each $name, $value in $stroke-map {
-
 		@if $name != 'default' {
 			&.is-#{$name} &-circle {
 				stroke-width: $value;
@@ -54,7 +57,7 @@ $stroke-map: (
 			}
 		}
 
-		@each $axis in (X,Y) {
+		@each $axis in (X, Y) {
 			@keyframes #{'loaderOrbit' + $axis + if($name == 'default', '', '-' + $name)} {
 				from {
 					transform: #{'rotate' + $axis + '(0)'};

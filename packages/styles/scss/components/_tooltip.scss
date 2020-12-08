@@ -11,7 +11,7 @@ $tooltip-bg-color: var(--bgcolor-tooltip, $black) !default;
 	border-radius: $global-border-radius;
 	background: $tooltip-bg-color;
 	color: $pm-global-light;
-	padding: .5em .75em;
+	padding: 0.5em 0.75em;
 	text-align: center;
 	word-break: break-word;
 
@@ -116,7 +116,6 @@ $tooltip-bg-color: var(--bgcolor-tooltip, $black) !default;
 	&--right-bottom::before {
 		bottom: 0;
 	}
-
 
 	// colored versions
 	&--success {

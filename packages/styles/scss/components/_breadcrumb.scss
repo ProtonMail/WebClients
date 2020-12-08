@@ -4,12 +4,12 @@
 	}
 
 	&-item:not(:last-of-type)::after {
-		content: "";
+		content: '';
 		display: inline-block;
 		width: 1.6rem;
 		height: 1.6rem;
 		background: transparent
-			url("#{$path-images}sprite-for-css-only.svg#css-greater") 0 0
+			url('#{$path-images}sprite-for-css-only.svg#css-greater') 0 0
 			no-repeat;
 		background-size: 1.4rem;
 		position: relative;
@@ -18,8 +18,8 @@
 	}
 
 	@if $rtl-option==true {
-		[dir="rtl"] &-item:not(:last-of-type)::after {
-			background-image: url("#{$path-images}sprite-for-css-only.svg#css-lesser");
+		[dir='rtl'] &-item:not(:last-of-type)::after {
+			background-image: url('#{$path-images}sprite-for-css-only.svg#css-lesser');
 		}
 	}
 
@@ -28,7 +28,7 @@
 		opacity: 0.3;
 		color: inherit;
 
-		&[disabled][aria-current="step"] {
+		&[disabled][aria-current='step'] {
 			font-weight: bold;
 			opacity: 1;
 			color: inherit;

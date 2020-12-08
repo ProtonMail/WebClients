@@ -2,13 +2,13 @@ $treeview-border-width: 1px !default;
 $treeview-indentation-margin: 3rem !default;
 
 .treeview-item {
-
-	border-bottom: $treeview-border-width solid var(--bordercolor-input, $pm-global-border);
+	border-bottom: $treeview-border-width solid
+		var(--bordercolor-input, $pm-global-border);
 	margin-bottom: -$treeview-border-width;
 
-	$arrow-width: .9rem !default;
-	$arrow-height: .7rem !default;
-	$circle-size: .8rem !default;
+	$arrow-width: 0.9rem !default;
+	$arrow-height: 0.7rem !default;
+	$circle-size: 0.8rem !default;
 
 	&--moveInside,
 	&--moveTop,
@@ -44,7 +44,6 @@ $treeview-indentation-margin: 3rem !default;
 	}
 
 	&--moveInside#{&}--selfGrabbed {
-
 		// no primary color on the self grabbed element
 		&::before {
 			border-left-color: $pm-global-muted;
@@ -81,7 +80,12 @@ $treeview-indentation-margin: 3rem !default;
 		padding-left: $treeview-indentation-margin;
 
 		&.treeview-item--moveInside {
-			background: linear-gradient(to right, transparent 0, transparent #{$treeview-indentation-margin}, var(--bgcolor-highlight, $pm-global-light) #{$treeview-indentation-margin});
+			background: linear-gradient(
+				to right,
+				transparent 0,
+				transparent #{$treeview-indentation-margin},
+				var(--bgcolor-highlight, $pm-global-light) #{$treeview-indentation-margin}
+			);
 
 			&::before {
 				left: calc(-#{$arrow-width} + #{$treeview-indentation-margin});
@@ -91,7 +95,9 @@ $treeview-indentation-margin: 3rem !default;
 		&.treeview-item--moveTop,
 		&.treeview-item--moveBottom {
 			&::before {
-				left: calc(-#{$circle-size/2} + #{$treeview-indentation-margin});
+				left: calc(
+					-#{$circle-size/2} + #{$treeview-indentation-margin}
+				);
 			}
 		}
 
@@ -101,7 +107,6 @@ $treeview-indentation-margin: 3rem !default;
 		}
 	}
 }
-
 
 @include respond-to($breakpoint-medium) {
 	.treeview-toggle,

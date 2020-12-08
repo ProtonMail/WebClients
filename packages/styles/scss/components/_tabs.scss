@@ -37,7 +37,7 @@
 	}
 }
 
-[aria-selected="true"].tabs-list-link {
+[aria-selected='true'].tabs-list-link {
 	border-bottom: 2px solid $pm-primary;
 	color: var(--color-main-area, $pm-global-grey);
 }
@@ -45,7 +45,7 @@
 .tabs-container {
 	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 
-	&[class*="sticky"] {
+	&[class*='sticky'] {
 		background: var(--bgcolor-main-area, $white);
 	}
 }
@@ -53,7 +53,7 @@
 .tabs-indicator {
 	position: absolute;
 	border-bottom: 2px solid $pm-primary;
-	content: "";
+	content: '';
 	height: 0;
 	bottom: -1px;
 	left: 0;

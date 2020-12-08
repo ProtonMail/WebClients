@@ -11,7 +11,7 @@
 		background-color: var(--bgcolor-main-area, $pm-global-light);
 
 		&::before {
-			content: "";
+			content: '';
 			position: absolute;
 			display: inline-block;
 			width: 12px;
@@ -24,7 +24,7 @@
 		}
 
 		@if $rtl-option==true {
-			[dir="rtl"] & {
+			[dir='rtl'] & {
 				left: auto;
 				right: -12px;
 
@@ -47,7 +47,7 @@
 		margin: 1.6rem 2.3rem 1.6rem 5.1rem;
 
 		@if $rtl-option==true {
-			[dir="rtl"] & {
+			[dir='rtl'] & {
 				margin: 1.6rem 5.1rem 1.6rem 2.3rem;
 			}
 		}

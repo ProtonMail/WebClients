@@ -34,7 +34,6 @@
 	}
 }
 
-
 @if $rtl-option==true {
 	[dir='rtl'] {
 		.topnav-list {
@@ -44,7 +43,7 @@
 
 		.topnav-icon {
 			margin-right: 0;
-			margin-left: .5em;
+			margin-left: 0.5em;
 		}
 	}
 }
@@ -52,12 +51,11 @@
 /* Decrease margins (was 1em) */
 @include respond-to(1500) {
 	.topnav-list {
-		>li {
+		> li {
 			margin-right: 1px;
 		}
 	}
 }
-
 
 @include respond-to(1300) {
 	.topnav-list--four-elements {
@@ -77,7 +75,7 @@
 			margin-right: 0;
 
 			&.expand-caret {
-				margin-left: .25em;
+				margin-left: 0.25em;
 			}
 		}
 	}
@@ -85,14 +83,13 @@
 
 @include respond-to(870) {
 	.topnav-list--four-elements {
-
 		.topnav-link {
-			padding-left: .5rem;
-			padding-right: .5rem;
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
 		}
 
 		.topnav-link--blackfriday::before {
-			left: calc(.5rem + 15px);
+			left: calc(0.5rem + 15px);
 		}
 	}
 }
@@ -111,16 +108,17 @@
 	}
 
 	.topnav-icon {
-		&#{&} { // Specificity -_-v
+		// Specificity -_-v
+		&#{&} {
 			margin-right: 0;
 		}
 	}
 }
 
-
 @include respond-to($breakpoint-small) {
 	.topnav-icon {
-		&#{&} { // Specificity -_-v
+		// Specificity -_-v
+		&#{&} {
 			width: 24px;
 			height: 24px;
 		}
@@ -139,15 +137,14 @@
 }
 
 @include respond-to($breakpoint-tiny) {
-
 	.topnav-list--four-elements .topnav-link,
 	.topnav-link {
-		padding-left: .5rem;
-		padding-right: .5rem;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
-		left: calc(.5rem + 22px);
+		left: calc(0.5rem + 22px);
 	}
 }

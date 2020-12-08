@@ -81,7 +81,7 @@ $breakpoint-2-columns: 1180 !default;
 	.boxes-placeholder-container {
 		flex-direction: column;
 
-		&>* {
+		& > * {
 			margin-bottom: 1em;
 			width: 100%;
 			flex-basis: auto;

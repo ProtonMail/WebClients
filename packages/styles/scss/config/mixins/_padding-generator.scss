@@ -5,8 +5,7 @@
  * @param {String} $prefix - Specify a prefix for each class if needed
  * @returns {String} - CSS classes with correct names from coordinates and values
  */
-@mixin padding-generator ($list-padding, $list-padding-values, $prefix: '') {
-
+@mixin padding-generator($list-padding, $list-padding-values, $prefix: '') {
 	@each $padding-type in $list-padding {
 		@each $padding in $list-padding-values {
 			//$temp_p : str-slice($padding-type, 0, 1);
@@ -16,28 +15,22 @@
 
 			@if $temp_t==t {
 				$property: padding-top;
-			}
-
-			@else if $temp_t==r {
+			} @else if $temp_t==r {
 				$property: padding-right;
-			}
-
-			@else if $temp_t==b {
+			} @else if $temp_t==b {
 				$property: padding-bottom;
-			}
-
-			@else if $temp_t==l {
+			} @else if $temp_t==l {
 				$property: padding-left;
 			}
 
-			$value : $padding+0em;
+			$value: $padding + 0em;
 
 			@if $padding==0 {
 				$value: $padding;
 			}
 
 			// convert to string
-			$text-padding: $padding+'';
+			$text-padding: $padding + '';
 
 			// from 1.5 to 1-5
 			$property-class: str-replace($text-padding, '.', '-');
@@ -46,8 +39,6 @@
 			.#{$prefix}#{$padding-type}#{$property-class} {
 				#{$property}: #{$value};
 			}
-
-
 		}
 	}
 }

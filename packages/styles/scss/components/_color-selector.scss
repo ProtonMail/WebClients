@@ -1,5 +1,4 @@
 .ColorSelector {
-
 	&-container {
 		@include respond-to($breakpoint-small, 'min') {
 			max-width: 13em;
@@ -13,7 +12,7 @@
 		width: 2.5em;
 		border-radius: 50%;
 		padding: 0;
-		margin: .125em;
+		margin: 0.125em;
 		overflow: hidden;
 		cursor: pointer;
 
@@ -31,22 +30,22 @@
 			background: currentColor;
 			border: 2px solid var(--bgcolor-main-area, white);
 			pointer-events: none;
-			transition: border .1s ease-out;
+			transition: border 0.1s ease-out;
 		}
 
 		&.selected &-mask {
-			border: 3px solid rgb(0 0 0 / .1);
+			border: 3px solid rgb(0 0 0 / 0.1);
 		}
 
 		svg {
 			opacity: 0;
 			color: white;
 			display: inline-block;
-			transition: opacity .1s linear;
+			transition: opacity 0.1s linear;
 		}
 
 		&:hover svg {
-			opacity: .75;
+			opacity: 0.75;
 		}
 
 		&.selected svg {
@@ -54,7 +53,7 @@
 		}
 	}
 
-	&-input-color[type = 'radio'] {
+	&-input-color[type='radio'] {
 		position: absolute;
 		z-index: 1;
 		top: 0;

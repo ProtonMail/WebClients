@@ -11,7 +11,6 @@ body {
 	}
 }
 
-
 /* === page === */
 html,
 .app-root,
@@ -42,13 +41,13 @@ html,
 			padding: 1rem 0 1rem 2rem;
 		}
 	}
-
 }
 
 .sidebar {
 	width: var(--width-sidebar, $width-sidebar);
 	visibility: visible;
-	transition: visibility 0s ease, transform 1s ease, width .6s ease, opacity 1s ease;
+	transition: visibility 0s ease, transform 1s ease, width 0.6s ease,
+		opacity 1s ease;
 	transition-delay: 0s;
 	overflow: auto;
 
@@ -64,17 +63,21 @@ html,
 		max-height: none;
 		padding-top: 1em;
 		transform-origin: 0 50%;
-		background-image: linear-gradient(to bottom, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
-		transition: 0s visibility ease, .25s transform ease;
+		background-image: linear-gradient(
+			to bottom,
+			var(--main-bg-color, $pm-global-grey),
+			var(--secondary-bg-color, $pm-global-altgrey)
+		);
+		transition: 0s visibility ease, 0.25s transform ease;
 		transition-delay: 0s;
 
-		&[data-expanded = 'false'] {
+		&[data-expanded='false'] {
 			transform: translateX(-100%);
 			visibility: hidden;
-			transition-delay: .25s, 0s;
+			transition-delay: 0.25s, 0s;
 		}
 
-		&[aria-hidden = 'true'] {
+		&[aria-hidden='true'] {
 			transform: translateX(0);
 		}
 	}
@@ -87,7 +90,7 @@ html,
 
 .logo-link {
 	position: relative;
-	padding: .875em .5em 1.125em;
+	padding: 0.875em 0.5em 1.125em;
 	box-sizing: initial;
 	border-radius: $global-border-radius;
 
@@ -102,7 +105,7 @@ html,
 
 	.plan {
 		position: absolute;
-		bottom: .5em;
+		bottom: 0.5em;
 		left: 3rem;
 		font-size: 1rem;
 		line-height: 1;
@@ -127,12 +130,10 @@ html,
 
 .topnav-container {
 	@include respond-to($breakpoint-small) {
-		flex-shrink: 0;    // this has to stay
+		flex-shrink: 0; // this has to stay
 		margin-left: auto; // case of mail display
 	}
 }
-
-
 
 .main {
 	overflow: hidden;
@@ -162,7 +163,6 @@ html,
 		overflow: hidden;
 	}
 }
-
 
 .main-area--withToolbar {
 	// only for Angular this one

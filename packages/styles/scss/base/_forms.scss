@@ -45,8 +45,8 @@ $field-container: 26rem !default;
 		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
-	&[aria-invalid="true"]:not(:focus),
-	&[aria-invalid="true"]:not(.ng-pristine) {
+	&[aria-invalid='true']:not(:focus),
+	&[aria-invalid='true']:not(.ng-pristine) {
 		border-color: $pm-global-warning;
 		box-shadow: none;
 	}
@@ -72,8 +72,8 @@ $field-container: 26rem !default;
 		box-shadow: none;
 	}
 
-	&[type="search"] {
-		background: url("#{$path-images}sprite-for-css-only.svg#css-search") 6px
+	&[type='search'] {
+		background: url('#{$path-images}sprite-for-css-only.svg#css-search') 6px
 			50% no-repeat;
 		background-size: 1.5rem;
 		padding-left: 2em;
@@ -83,17 +83,17 @@ $field-container: 26rem !default;
 		}
 	}
 
-	&[type="number"] {
+	&[type='number'] {
 		padding-right: 0.25em;
 	}
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
-		[type="search"].pm-field {
+	[dir='rtl'] {
+		[type='search'].pm-field {
 			padding-left: 0;
 			padding-right: 2em;
-			background: url("#{$path-images}sprite-for-css-only.svg#css-search-rtl")
+			background: url('#{$path-images}sprite-for-css-only.svg#css-search-rtl')
 				calc(100% - 6px)
 				50%
 				no-repeat;
@@ -103,7 +103,7 @@ $field-container: 26rem !default;
 
 select.pm-field {
 	background: var(--bgcolor-input, $pm-input-background)
-		url("#{$path-images}sprite-for-css-only.svg#css-caret") calc(100% - 6px)
+		url('#{$path-images}sprite-for-css-only.svg#css-caret') calc(100% - 6px)
 		50% no-repeat;
 	background-size: 1.5rem;
 	padding-left: 1em;
@@ -128,9 +128,9 @@ select.pm-field {
 		padding-right: 2.5rem;
 
 		@if ($pm-primary==$pm-blue) {
-			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-primary-blue");
+			background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret-primary-blue');
 		} @else {
-			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-primary-green");
+			background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret-primary-green');
 		}
 
 		&,
@@ -146,7 +146,7 @@ select.pm-field {
 		&.focus,
 		&:focus-within,
 		&:hover {
-			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret");
+			background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret');
 			border-color: transparent;
 			text-decoration: underline;
 			color: $color-hover;
@@ -168,7 +168,7 @@ textarea[required].pm-field.field-pristine:invalid {
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
+	[dir='rtl'] {
 		select.pm-field {
 			background-position: 6px 50%;
 			padding-right: 1em;
@@ -256,10 +256,10 @@ textarea[required].pm-field.field-pristine:invalid {
 	}
 
 	&:indeterminate + .pm-checkbox-fakecheck {
-		content: "";
+		content: '';
 		width: 1.6rem;
 		height: 1.6rem;
-		background-image: url("#{$path-images}sprite-for-css-only.svg#css-dash");
+		background-image: url('#{$path-images}sprite-for-css-only.svg#css-dash');
 		background-repeat: no-repeat;
 	}
 }
@@ -287,7 +287,7 @@ textarea[required].pm-field.field-pristine:invalid {
 }
 
 .pm-radio-fakeradio::before {
-	content: "";
+	content: '';
 	margin: auto;
 	width: 0.8rem;
 	height: 0.8rem;
@@ -330,7 +330,7 @@ $width: 5.5em !default;
 	transition: border-color 0.15s ease-out;
 
 	&::before {
-		content: "";
+		content: '';
 		position: absolute;
 		width: calc(#{$width/2} - 2px);
 		transition: transform 0.25s ease, background-color 0.25s ease,
@@ -362,7 +362,7 @@ $width: 5.5em !default;
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
+	[dir='rtl'] {
 		.pm-toggle-label {
 			&::before {
 				left: auto;
@@ -429,7 +429,7 @@ $width: 5.5em !default;
 		}
 	}
 
-	&[aria-busy="true"] + .pm-toggle-label {
+	&[aria-busy='true'] + .pm-toggle-label {
 		border-color: $pm-global-border;
 
 		&::before {
@@ -446,7 +446,7 @@ $width: 5.5em !default;
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
+	[dir='rtl'] {
 		.pm-toggle-checkbox {
 			&:checked + .pm-toggle-label {
 				&::before {
@@ -454,7 +454,7 @@ $width: 5.5em !default;
 				}
 			}
 
-			&[aria-busy="true"] + .pm-toggle-label {
+			&[aria-busy='true'] + .pm-toggle-label {
 				&::before {
 					//background-color: $pm-primary;
 					transform: translateX(-#{$width/4}) translateX(2px);

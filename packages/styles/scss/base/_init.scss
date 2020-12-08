@@ -25,15 +25,15 @@ body {
 		text-rendering: geometricPrecision;
 		-webkit-font-smoothing: antialiased;
 
-		@if $typo-unit== "use_em" {
+		@if $typo-unit== 'use_em' {
 			@if $root-equiv-10-px==true {
 				font-size: em($base-font, 10);
 			} @else {
 				font-size: em($base-font, $root-default-font-size);
 			}
-		} @else if $typo-unit== "use_rem" {
+		} @else if $typo-unit== 'use_rem' {
 			font-size: var(--body-fontsize, rem($base-font));
-		} @else if $typo-unit== "use_rem_with_em_fallback" {
+		} @else if $typo-unit== 'use_rem_with_em_fallback' {
 			@if $root-equiv-10-px==true {
 				font-size: em($base-font, 10);
 			} @else {
@@ -118,17 +118,17 @@ textarea {
  * avoids dimensioning for radio, checkboxes and images
  * and a different display on IE
  */
-input[type="radio"],
-input[type="checkbox"],
-input[type="image"] {
+input[type='radio'],
+input[type='checkbox'],
+input[type='image'] {
 	background-color: transparent;
 	border: 0;
 	width: auto;
 }
 
 // for components that rely on checkboxes
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
 	opacity: 0;
 	// this is a crazy fix for Firefox - for having ::after stuff working on it for mail conversations
 	// to have increased area around checkbox for clicking

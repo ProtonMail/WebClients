@@ -29,11 +29,11 @@
 
 @if $rtl-option==true {
 	/* RTL */
-	[dir="rtl"] .left {
+	[dir='rtl'] .left {
 		float: right;
 	}
 
-	[dir="rtl"] .right {
+	[dir='rtl'] .right {
 		float: left;
 	}
 }
@@ -54,11 +54,11 @@
 
 	@if $rtl-option==true {
 		/* RTL */
-		[dir="rtl"] .clearleft {
+		[dir='rtl'] .clearleft {
 			clear: right;
 		}
 
-		[dir="rtl"] .clearright {
+		[dir='rtl'] .clearright {
 			clear: left;
 		}
 	}
@@ -75,7 +75,7 @@
 
 @if $use-clearfix==true {
 	.clearfix::after {
-		content: ".";
+		content: '.';
 		display: block;
 		height: 0;
 		clear: both;
@@ -174,7 +174,7 @@
 /*
  * ratio container (for responsive iframes/videos/etc.)
  */
-[class*="ratio-container-"] {
+[class*='ratio-container-'] {
 	width: 100%;
 	height: 0;
 	@extend .relative;

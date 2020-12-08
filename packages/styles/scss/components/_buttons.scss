@@ -117,8 +117,8 @@
  * CLASSES
  ****************************************/
 
-[class*="pm-button"],
-[class*="pv-button"] {
+[class*='pm-button'],
+[class*='pv-button'] {
 	border-radius: $global-border-radius;
 	padding: em(5) em(16) em(6); // design want 34px height
 	border-style: solid;
@@ -182,7 +182,7 @@
 		padding: 0;
 	}
 
-	&[aria-expanded="true"] .caret-like {
+	&[aria-expanded='true'] .caret-like {
 		@extend .rotateX-180;
 	}
 
@@ -397,7 +397,7 @@
 }
 
 @if $rtl-option==true {
-	[dir="rtl"] {
+	[dir='rtl'] {
 		.pm-group-buttons
 			> .pm-group-button:not(.pagination-expand):first-child {
 			border-radius: 0 $global-border-radius $global-border-radius 0;

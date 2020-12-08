@@ -12,8 +12,16 @@
 }
 
 @keyframes ellipsis-loading {
-	0%  { content: '\00a0'; }
-	25% { content: '.'; }
-	50% { content: '..'; }
-	75% { content: '...'; }
+	0% {
+		content: '\00a0';
+	}
+	25% {
+		content: '.';
+	}
+	50% {
+		content: '..';
+	}
+	75% {
+		content: '...';
+	}
 }
