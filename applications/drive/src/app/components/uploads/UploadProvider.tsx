@@ -142,13 +142,15 @@ export const UploadProvider = ({ children }: UserProviderProps) => {
                 ...callbacks,
                 initialize: async (abortSignal) => {
                     const result = await callbacks.initialize(abortSignal);
-                    updateUploadState(id, TransferState.Progress, {
-                        meta: {
-                            size: preUploadData.file.size,
-                            mimeType: result.MIMEType,
-                            filename: result.filename,
-                        },
-                    });
+                    if (!abortSignal.aborted) {
+                        updateUploadState(id, TransferState.Progress, {
+                            meta: {
+                                size: preUploadData.file.size,
+                                mimeType: result.MIMEType,
+                                filename: result.filename,
+                            },
+                        });
+                    }
                     return result;
                 },
                 finalize: async (blocklist, config) => {
