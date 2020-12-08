@@ -26,7 +26,7 @@ const DriveContainer = () => {
     const sidebar = (
         <DriveSidebar
             logo={logo}
-            primary={<UploadButton />}
+            primary={<UploadButton className="nomobile" />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />
