@@ -47,7 +47,9 @@ export interface UploadCallbacks {
     transform: (buffer: Uint8Array) => Promise<{ encryptedData: Uint8Array; signature: string }>;
     requestUpload: (blockList: BlockList) => Promise<UploadLink[]>;
     finalize: (blocklist: Map<number, BlockTokenInfo>, config?: { id: string }) => Promise<void>;
-    initialize: () => Promise<{
+    initialize: (
+        abortSignal: AbortSignal
+    ) => Promise<{
         filename: string;
         MIMEType: string;
     }>;
@@ -318,16 +320,18 @@ export function initUpload(
         const blockTokens = new Map<number, BlockTokenInfo>();
         const reader = new ChunkFileReader(file, FILE_CHUNK_SIZE);
 
+        let initialized = false;
         abortController = new AbortController();
 
-        const startUpload = async (initialized = false) => {
+        const startUpload = async () => {
             try {
                 if (abortController.signal.aborted) {
                     throw new TransferCancel({ id });
                 }
 
                 if (!initialized) {
-                    await initialize?.();
+                    await initialize?.(abortController.signal);
+                    initialized = true;
                 }
 
                 // Keep filling queue with up to 20 blocks and uploading them
@@ -340,7 +344,7 @@ export function initUpload(
                 if (paused) {
                     resetUploadProgress(uploadingBlocks);
                     await waitUntil(() => paused === false);
-                    await startUpload(true);
+                    await startUpload();
                 } else {
                     abortController.abort();
                     throw e;
