@@ -184,7 +184,7 @@ const HeaderExpanded = ({
                             <span className="inline-flex is-appearing-content">
                                 <ItemAction element={message.data} className="flex-item-noshrink" />
                                 <EncryptionStatusIcon {...messageViewIcons.globalIcon} className="mr0-5" />
-                                <ItemLocation message={message.data} mailSettings={mailSettings} />
+                                <ItemLocation element={message.data} labelID={labelID} />
                             </span>
                             {!isNarrow && (
                                 <ItemDate

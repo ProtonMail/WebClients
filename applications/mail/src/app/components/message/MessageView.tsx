@@ -233,7 +233,6 @@ const MessageView = (
                     labels={labels}
                     message={message}
                     messageLoaded={messageLoaded}
-                    mailSettings={mailSettings}
                     isSentMessage={sent}
                     isUnreadMessage={unread}
                     onExpand={handleExpand(true)}

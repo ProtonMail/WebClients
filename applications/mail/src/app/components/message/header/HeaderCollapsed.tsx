@@ -2,7 +2,6 @@ import { hasAttachments, isDraft, isOutbox } from 'proton-shared/lib/mail/messag
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames, useContactEmails } from 'react-components';
-import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import ItemStar from '../../list/ItemStar';
@@ -22,7 +21,6 @@ interface Props {
     labels?: Label[];
     message: MessageExtended;
     messageLoaded: boolean;
-    mailSettings: MailSettings;
     isSentMessage: boolean;
     isUnreadMessage: boolean;
     onExpand: () => void;
@@ -35,7 +33,6 @@ const HeaderCollapsed = ({
     labels,
     message,
     messageLoaded,
-    mailSettings,
     isSentMessage,
     isUnreadMessage,
     onExpand,
@@ -107,7 +104,7 @@ const HeaderCollapsed = ({
                         )}
 
                         <span className="ml0-5 flex is-appearing-content">
-                            <ItemLocation message={message.data} mailSettings={mailSettings} />
+                            <ItemLocation element={message.data} labelID={labelID} />
                         </span>
 
                         <ItemExpiration
