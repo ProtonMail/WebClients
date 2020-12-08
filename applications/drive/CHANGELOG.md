@@ -1,3 +1,29 @@
+# [4.0.0-beta.5] - 2020-12-08 
+
+We have updated share with link feature with easier to grasp labels and more convenient layout to set password.
+Further improved uploading experience by chasing down couple of bugs and increasing upload success rating. 
+Next, we have made file type recognition better by reading its header bytes.
+Read on for the full list of improvements below, and get in touch with us if you have feedback to share please.
+
+## Fixed
+
+- When uploading, naming restrictions updated to avoid errors and name collisions:
+  - Only reject files that are names `.`, `..`  or have `/` in their name
+  - \ and / symbols not be allowed  
+- User can now open image files downloaded via shared link with Firefox mobile browser too
+- Upload or download progress rate displayed correctly in the transfer manager header
+- File and folder names are selected when rename modal is opened
+- Pausing one transfer will not resume another
+
+## Added
+
+- For share with link we have updated: toolbar button and context menu labels, new dialog explanatory text and set password layout 
+- Upload URL request retries for more successful operation
+- Download URL request retries for more successful operation (for regular downloads, excluding shared links)
+- Determine file mime-type from file header bytes, so that we can more reliably determine file mime-type and only use extension as a fallback
+- Improved file preview process when previewing a lot of files
+- Added tooltips for My files and Trash sections
+
 # [4.0.0-beta.4] - 2020-11-25 
 
 The Proton Drive beta now lets you share files with end-to-end encrypted URL links.
@@ -15,7 +41,6 @@ In addition, we have been improving the upload experience.
 - Share a secure link publicly
 - Use a pre-generated password for the secure link, or change it
 - Change the default expiration date (90 days) of a secure link
-
 
 # [4.0.0-beta.3] - 2020-11-11 
 

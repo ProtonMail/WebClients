@@ -42,7 +42,6 @@ import { FOLDER_PAGE_SIZE, DEFAULT_SORT_PARAMS, MAX_THREADS_PER_REQUEST, BATCH_R
 import { decryptPassphrase, getDecryptedSessionKey, PrimaryAddressKey } from './driveCrypto';
 import runInQueue from '../runInQueue';
 import { isPrimaryShare } from '../share';
-import { mimetypeFromExtension } from '../MimeTypeParser/helpers';
 
 export interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -495,14 +494,11 @@ export const renameLinkAsync = async (
         }),
     ]);
 
-    const MIMEType = await mimetypeFromExtension(newName);
-
     await api(
         queryRenameLink(shareId, linkId, {
             Name: encryptedName,
             Hash,
             SignatureAddress: address.Email,
-            MIMEType,
         })
     );
 };
