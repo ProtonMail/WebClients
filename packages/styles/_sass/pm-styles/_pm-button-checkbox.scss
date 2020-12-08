@@ -1,0 +1,27 @@
+.button-checkbox.pm-button {
+    width: 2.5em;
+    padding: em(6); // Same as inputs
+}
+
+.button-checkbox-input {
+    &:focus + .button-checkbox {
+        // Same as buttons
+        box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+    }
+
+    &:checked + .button-checkbox {
+        // Need !important because current dark mode management. Remove those as soon as possible.
+        background-color: $pm-primary !important;
+        border-color: $pm-primary !important;
+    }
+
+    &:checked:not(:active) + .button-checkbox {
+        // Need !important because current dark mode management. Remove those as soon as possible.
+        color: $white !important;
+    }
+
+    &:active + .button-checkbox {
+        // Need !important because current dark mode management. Remove those as soon as possible.
+        border-color: $pm-global-border !important;
+    }
+}
