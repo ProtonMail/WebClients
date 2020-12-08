@@ -185,6 +185,18 @@
 	&[aria-expanded="true"] .caret-like {
 		@extend .rotateX-180;
 	}
+
+	&.pm-select {
+		padding-right: 0.6rem;
+		.mauto {
+			display: flex;
+			width: 100%;
+		}
+		.mr0-5 {
+			flex: 1 1 0px;
+			@extend .ellipsis;
+		}
+	}
 }
 
 .pm-button-dark {
