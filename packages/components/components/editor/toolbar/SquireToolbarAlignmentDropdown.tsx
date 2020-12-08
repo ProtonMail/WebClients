@@ -15,7 +15,7 @@ interface Props {
 const SquireToolbarAlignmentDropdown = ({ handleAlignment, squireInfos }: Props) => {
     return (
         <SquireToolbarDropdown
-            content={<Icon name="text-align-left" />}
+            content={<Icon name="text-align-left" alt={c('Action').t`Alignment`} />}
             className="flex-item-noshrink"
             title={c('Action').t`Alignment`}
         >

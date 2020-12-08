@@ -157,7 +157,7 @@ const SquireToolbar = ({
                         className="flex-item-noshrink"
                         title={c('Action').t`Bold`}
                     >
-                        <Icon name="text-bold" className="mauto" />
+                        <Icon name="text-bold" className="mauto" alt={c('Action').t`Bold`} />
                     </SquireToolbarButton>
                     <SquireToolbarButton
                         onClick={handleItalic}
@@ -165,7 +165,7 @@ const SquireToolbar = ({
                         className="flex-item-noshrink"
                         title={c('Action').t`Italic`}
                     >
-                        <Icon name="text-italic" className="mauto" />
+                        <Icon name="text-italic" className="mauto" alt={c('Action').t`Italic`} />
                     </SquireToolbarButton>
                     <SquireToolbarButton
                         onClick={handleUnderline}
@@ -173,7 +173,7 @@ const SquireToolbar = ({
                         className="flex-item-noshrink"
                         title={c('Action').t`Underline`}
                     >
-                        <Icon name="text-underline" className="mauto" />
+                        <Icon name="text-underline" className="mauto" alt={c('Action').t`Underline`} />
                     </SquireToolbarButton>
                     <SquireToolbarSeparator />
                     {!isNarrow && (
@@ -184,7 +184,7 @@ const SquireToolbar = ({
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Unordered list`}
                             >
-                                <Icon name="bullet-points" className="mauto" />
+                                <Icon name="bullet-points" className="mauto" alt={c('Action').t`Unordered list`} />
                             </SquireToolbarButton>
                             <SquireToolbarButton
                                 onClick={handleOrderedList}
@@ -192,7 +192,7 @@ const SquireToolbar = ({
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Ordered list`}
                             >
-                                <Icon name="ordered-list" className="mauto" />
+                                <Icon name="ordered-list" className="mauto" alt={c('Action').t`Ordered list`} />
                             </SquireToolbarButton>
                             <SquireToolbarSeparator />
                             <SquireToolbarAlignmentDropdown
@@ -206,21 +206,25 @@ const SquireToolbar = ({
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Quote`}
                             >
-                                <Icon name="text-quote" className="mauto" />
+                                <Icon name="text-quote" className="mauto" alt={c('Action').t`Quote`} />
                             </SquireToolbarButton>
                             <SquireToolbarButton
                                 onClick={handleLink}
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Insert link`}
                             >
-                                <Icon name="link" className="mauto" />
+                                <Icon name="link" className="mauto" alt={c('Action').t`Insert link`} />
                             </SquireToolbarButton>
                             <SquireToolbarButton
                                 onClick={handleClearFormatting}
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Clear all formatting`}
                             >
-                                <Icon name="remove-text-formatting" className="mauto" />
+                                <Icon
+                                    name="remove-text-formatting"
+                                    className="mauto"
+                                    alt={c('Action').t`Clear all formatting`}
+                                />
                             </SquireToolbarButton>
                             <SquireToolbarSeparator />
                             {metadata.supportImages && (
@@ -230,7 +234,7 @@ const SquireToolbar = ({
                                         className="flex-item-noshrink"
                                         title={c('Action').t`Insert image`}
                                     >
-                                        <Icon name="file-image" className="mauto" />
+                                        <Icon name="file-image" className="mauto" alt={c('Action').t`Insert image`} />
                                     </SquireToolbarButton>
                                     <SquireToolbarSeparator />
                                 </>

@@ -70,7 +70,11 @@ const SquireToolbarMoreDropdown = ({
     // DropdownMenu works with its list of children so we can't use Fragments here
     // We use array of node instead
     return (
-        <SquireToolbarDropdown className="flex-item-noshrink mlauto" title={c('Action').t`More`}>
+        <SquireToolbarDropdown
+            className="flex-item-noshrink mlauto"
+            title={c('Action').t`More`}
+            content={<span className="sr-only">{c('Action').t`More`}</span>}
+        >
             <DropdownMenu className="editor-toolbar-more-menu flex-item-noshrink">
                 {isNarrow && [
                     <DropdownMenuButton
