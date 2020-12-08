@@ -21,7 +21,9 @@ const DriveContainerBlurred = () => {
     const { state: expanded, toggle: toggleExpanded } = useToggle();
 
     const logo = <MainLogo to="/" />;
-    const dummyUploadButton = <SidebarPrimaryButton>{c('Action').t`New upload`}</SidebarPrimaryButton>;
+    const dummyUploadButton = (
+        <SidebarPrimaryButton className="nomobile">{c('Action').t`New upload`}</SidebarPrimaryButton>
+    );
     const dummyFolderTitle = c('Title').t`My files`;
 
     const header = (

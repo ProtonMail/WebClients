@@ -10,9 +10,10 @@ import { useUploadProvider } from './UploadProvider';
 
 interface Props {
     floating?: boolean;
+    className?: string;
 }
 
-const UploadButton = ({ floating }: Props) => {
+const UploadButton = ({ floating, className }: Props) => {
     const { folder } = useDriveActiveFolder();
     const { inputRef: fileInput, handleClick, handleChange: handleFileChange } = useFileUploadInput();
 
@@ -32,8 +33,9 @@ const UploadButton = ({ floating }: Props) => {
                     icon="plus"
                 />
             ) : (
-                <SidebarPrimaryButton disabled={!folder?.shareId} onClick={handleClick}>{c('Action')
-                    .t`New upload`}</SidebarPrimaryButton>
+                <SidebarPrimaryButton className={className} disabled={!folder?.shareId} onClick={handleClick}>{c(
+                    'Action'
+                ).t`New upload`}</SidebarPrimaryButton>
             )}
         </>
     );

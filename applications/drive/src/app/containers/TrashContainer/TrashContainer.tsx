@@ -40,7 +40,7 @@ const TrashContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) =>
         <DriveSidebar
             logo={logo}
             shareId={shareId}
-            primary={<EmptyTrashButton shareId={shareId} />}
+            primary={<EmptyTrashButton className="nomobile" shareId={shareId} />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />
