@@ -211,7 +211,11 @@ const SubscriptionCustomization = ({
             <SubscriptionFeatureRow
                 key="address"
                 icon="email-address"
-                feature={c('Feature').t`${plusAddresses} email addresses`}
+                feature={c('Feature').ngettext(
+                    msgid`${plusAddresses} email address`,
+                    `${plusAddresses} email addresses`,
+                    plusAddresses
+                )}
             />,
             <SubscriptionFeatureRow
                 key="domain"
@@ -275,7 +279,11 @@ const SubscriptionCustomization = ({
             <SubscriptionFeatureRow
                 key="country"
                 icon="servers-country"
-                feature={c('Feature').t`${vpnCountries.free.length} countries`}
+                feature={c('Feature').ngettext(
+                    msgid`${vpnCountries.free.length} country`,
+                    `${vpnCountries.free.length} countries`,
+                    vpnCountries.free.length
+                )}
             />,
             <SubscriptionFeatureRow key="speed" icon="speed-low" feature={c('Feature').t`Medium speed`} />,
             <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`Unlimited bandwidth`} />,
@@ -285,7 +293,11 @@ const SubscriptionCustomization = ({
             <SubscriptionFeatureRow
                 key="country"
                 icon="servers-country"
-                feature={c('Feature').t`${vpnCountries.basic.length} countries`}
+                feature={c('Feature').ngettext(
+                    msgid`${vpnCountries.basic.length} country`,
+                    `${vpnCountries.basic.length} countries`,
+                    vpnCountries.basic.length
+                )}
             />,
             <SubscriptionFeatureRow key="speed" icon="speed-medium" feature={c('Feature').t`High speed`} />,
             <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`P2P/BitTorrent support`} />,
@@ -294,12 +306,20 @@ const SubscriptionCustomization = ({
             <SubscriptionFeatureRow
                 key="connection"
                 icon="vpn-connx"
-                feature={c('Feature').t`${vpnPlusVpn} VPN connections`}
+                feature={c('Feature').ngettext(
+                    msgid`${vpnPlusVpn} VPN connection`,
+                    `${vpnPlusVpn} VPN connections`,
+                    vpnPlusVpn
+                )}
             />,
             <SubscriptionFeatureRow
                 key="country"
                 icon="servers-country"
-                feature={c('Feature').t`${vpnCountries.all.length} countries`}
+                feature={c('Feature').ngettext(
+                    msgid`${vpnCountries.all.length} country`,
+                    `${vpnCountries.all.length} countries`,
+                    vpnCountries.all.length
+                )}
             />,
             <SubscriptionFeatureRow key="speed" icon="speed-fast" feature={c('Feature').t`Highest speed`} />,
             <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`P2P/BitTorrent support`} />,

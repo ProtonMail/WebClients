@@ -92,7 +92,11 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
         const members = quantity * memberAddon.MaxMembers;
         const vpn = quantity * vpnAddon.MaxVPN;
         return {
-            [ADDON_NAMES.ADDRESS]: c('Addon').t`+ ${addresses} email addresses`,
+            [ADDON_NAMES.ADDRESS]: c('Addon').ngettext(
+                msgid`+ ${addresses} email address`,
+                `+ ${addresses} email addresses`,
+                addresses
+            ),
             [ADDON_NAMES.SPACE]: c('Addon').t`+ ${storage} storage`,
             [ADDON_NAMES.DOMAIN]: c('Addon').ngettext(
                 msgid`+ ${domains} custom domain`,
