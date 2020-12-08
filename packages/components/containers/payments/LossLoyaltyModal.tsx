@@ -1,5 +1,5 @@
 import React from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { Organization } from 'proton-shared/lib/interfaces';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
@@ -25,8 +25,13 @@ const LossLoyaltyModal = ({ organization, ...rest }: Props) => {
                 <ul>
                     {organization.BonusSpace ? <li>{c('Info').t`+${bonusSpace} bonus storage`}</li> : null}
                     {organization.BonusVPN ? (
-                        <li>{c('Info')
-                            .t`+${organization.BonusVPN} connections for ProtonVPN (allows you to connect more devices to VPN)`}</li>
+                        <li>
+                            {c('Info').ngettext(
+                                msgid`+${organization.BonusVPN} connection for ProtonVPN (allows you to connect more devices to VPN)`,
+                                `+${organization.BonusVPN} connections for ProtonVPN (allows you to connect more devices to VPN)`,
+                                organization.BonusVPN
+                            )}
+                        </li>
                     ) : null}
                 </ul>
             </Alert>
