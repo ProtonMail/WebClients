@@ -45,7 +45,9 @@ function downgrade(
                     ),
                 hasBonuses(organization) &&
                     organization.BonusVPN &&
-                    gettextCatalog.getString(
+                    gettextCatalog.getPlural(
+                        organization.BonusVPN,
+                        '+{{vpn}} connection for ProtonVPN (allows you to connect more devices to VPN)',
                         '+{{vpn}} connections for ProtonVPN (allows you to connect more devices to VPN)',
                         { vpn: organization.BonusVPN },
                         'Info'
