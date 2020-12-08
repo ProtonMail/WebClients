@@ -138,7 +138,6 @@ function useFiles() {
         file: File,
         noNameCheck = false
     ) => {
-        let canceled = false;
         const queuedFnId = `upload_setup:${file.name}`;
         // Queue for files with same name, to not duplicate names
         // Another queue for uploads in general so that they don't timeout
@@ -165,10 +164,6 @@ function useFiles() {
                 throw new Error('Could not generate ContentKeyPacket');
             }
 
-            if (canceled) {
-                throw new TransferCancel({ message: `Transfer canceled for file "${file.name}"` });
-            }
-
             return {
                 NodeKey,
                 NodePassphrase,
@@ -185,7 +180,7 @@ function useFiles() {
         // Another queue for uploads in general so that they don't timeout
         const createFile = queuedFunction(
             'create_file',
-            queuedFunction(queuedFnId, async () => {
+            queuedFunction(queuedFnId, async (abortSignal: AbortSignal) => {
                 const {
                     addressKeyInfo,
                     parentKeys,
@@ -195,7 +190,7 @@ function useFiles() {
                     NodeKey,
                 } = await setupPromise;
 
-                if (canceled) {
+                if (abortSignal.aborted) {
                     throw new TransferCancel({ message: `Transfer canceled for file "${file.name}"` });
                 }
 
@@ -216,10 +211,11 @@ function useFiles() {
                 const Name = await encryptName(filename, parentKeys.privateKey.toPublic(), addressKeyInfo.privateKey);
                 const MIMEType = await mimeTypeFromFile(file);
 
-                if (canceled) {
+                if (abortSignal.aborted) {
                     throw new TransferCancel({ message: `Transfer canceled for file "${filename}"` });
                 }
 
+                // If create draft hasn't been cancel up to this point do not try to cancel it anymore
                 const { File } = await debouncedRequest<CreateFileResult>(
                     queryCreateFile(shareId, {
                         Name,
@@ -249,14 +245,16 @@ function useFiles() {
             ShareID: shareId,
         };
 
-        let createdFile: {
-            ID: string;
-            RevisionID: string;
-        };
+        let createdFile:
+            | {
+                  ID: string;
+                  RevisionID: string;
+              }
+            | undefined;
 
         return addToUploadQueue(preUploadData, setupPromise, {
-            initialize: async () => {
-                const result = await createFile();
+            initialize: async (abortSignal) => {
+                const result = await createFile(abortSignal);
                 createdFile = result.File;
                 return result;
             },
@@ -291,6 +289,10 @@ function useFiles() {
                 const BlockList = await Promise.all(
                     Blocks.map(({ Hash, ...block }) => ({ ...block, Hash: uint8ArrayToBase64String(Hash) }))
                 );
+
+                if (!createdFile) {
+                    throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
+                }
 
                 const { UploadLinks } = await debouncedRequest<RequestUploadResult>(
                     queryRequestUpload({
@@ -327,6 +329,10 @@ function useFiles() {
                         address: { Email: SignatureAddress },
                     } = await sign(contentHashes);
 
+                    if (!createdFile) {
+                        throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
+                    }
+
                     await debouncedRequest(
                         queryUpdateFileRevision(shareId, createdFile.ID, createdFile.RevisionID, {
                             State: FileRevisionState.Active,
@@ -341,8 +347,9 @@ function useFiles() {
             ),
             onError: async () => {
                 try {
-                    canceled = true;
-                    await deleteChildrenLinks(shareId, await parentLinkID, [createdFile.ID]);
+                    if (createdFile) {
+                        await deleteChildrenLinks(shareId, await parentLinkID, [createdFile.ID]);
+                    }
                 } catch (err) {
                     if (!isTransferCancelError(err)) {
                         console.error(err);
