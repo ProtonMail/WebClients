@@ -36,7 +36,8 @@ const ERRORS = {
 };
 
 const WARNINGS = {
-    mergeWarning: c('Warning').t`This folder name already exists. Messages will be imported into the existing folder.`,
+    mergeWarning: c('Warning')
+        .t`Proton will merge all folders with the same name. To avoid this, change the names before import.`,
 };
 
 const DIMMED_OPACITY_CLASSNAME = 'opacity-30';
