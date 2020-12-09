@@ -100,6 +100,13 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
         return null;
     }
 
+    // The dropdown is several times in the view, native html ids has to be different each time
+    const searchInputID = `${uid}-search`;
+    const archiveCheckID = `${uid}-archive`;
+    const labelCheckID = (ID: string) => `${uid}-${ID}`;
+    const areSameLabels = isDeepEqual(initialState, selectedLabelIDs);
+    const applyDisabled = areSameLabels && !alsoArchive;
+    const autoFocusSearch = !breakpoints.isNarrow;
     const normSearch = normalize(search, true);
     const list = labels.filter(({ Name = '' }) => {
         if (!search) {
@@ -110,23 +117,29 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
     });
 
     const handleApply = async (selection = selectedLabelIDs) => {
+        const promises = [];
         const elements = getElementsFromIDs(selectedIDs);
-        const initialState = getInitialState(labels, elements);
-        const changes = Object.keys(selection).reduce((acc, LabelID) => {
-            if (selection[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
-                acc[LabelID] = true;
-            }
-            if (selection[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
-                acc[LabelID] = false;
-            }
-            return acc;
-        }, {} as { [labelID: string]: boolean });
-        const promises = [applyLabels(elements, changes)];
+
+        if (!areSameLabels) {
+            const initialState = getInitialState(labels, elements);
+            const changes = Object.keys(selection).reduce((acc, LabelID) => {
+                if (selection[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
+                    acc[LabelID] = true;
+                }
+                if (selection[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
+                    acc[LabelID] = false;
+                }
+                return acc;
+            }, {} as { [labelID: string]: boolean });
+            promises.push(applyLabels(elements, changes));
+        }
+
         if (alsoArchive) {
             const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
             const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_IDENTIFIERS.inbox : labelID;
             promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID));
         }
+
         await Promise.all(promises);
         onClose();
     };
@@ -176,13 +189,6 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
             />
         );
     };
-
-    // The dropdown is several times in the view, native html ids has to be different each time
-    const searchInputID = `${uid}-search`;
-    const archiveCheckID = `${uid}-archive`;
-    const labelCheckID = (ID: string) => `${uid}-${ID}`;
-    const applyDisabled = isDeepEqual(initialState, selectedLabelIDs);
-    const autoFocusSearch = !breakpoints.isNarrow;
 
     return (
         <>
