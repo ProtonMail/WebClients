@@ -144,15 +144,19 @@ export const getNumAttachments = (element: Element, labelID: string | undefined)
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
  */
 export const parseLabelIDsInEvent = <T extends Element>(element: T, changes: T & LabelIDsChanges): T => {
+    const omitted = omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']);
     if (isMessage(element)) {
+        if (omitted?.LabelIDs) {
+            return { ...element, ...omitted };
+        }
         const LabelIDs = unique(
             diff((element as Message).LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || [])
         );
-        return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']), LabelIDs };
+        return { ...element, ...omitted, LabelIDs };
     }
     // Conversation don't use LabelIDs even if these properties are still present in update events
     // The conversation.Labels object is fully updated each time so we can safely ignore them
-    return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']) };
+    return { ...element, ...omitted };
 };
 
 export const isSearch = (searchParams: SearchParameters) =>

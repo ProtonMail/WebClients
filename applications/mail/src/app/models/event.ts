@@ -11,6 +11,7 @@ interface EventType {
 export interface LabelIDsChanges {
     LabelIDsAdded?: string[];
     LabelIDsRemoved?: string[];
+    LabelIDs?: string[];
 }
 
 export interface Event {
