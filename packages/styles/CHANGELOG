@@ -1,4 +1,4 @@
-# [1.8.x] - 2019-xx-xx
+# [1.8.x] - 2020-xx-xx
 
 ## New
 
@@ -6,12 +6,14 @@
 - added Gmail and Yahoo logos
 - added some images for Import
 - added new typographic helper `strike`
-- added new icons `globe`, `caret-double-left`, `tour`, `outbox`, `scheduled-box`
+- added new icons `globe`, `caret-double-left`, `tour`, `outbox`, `scheduled-box`, `attention-circle`, `chrome`, `calendar-today`
 - added `onmobile-list-1column` helpers and made `list-2columns` more flexible (accepts any child type now)
 - added `borderColor-primary` helper
 - added `sticky-top` and `sticky-bottom` helpers
 - added `hyphens` helper (only hyphenation, no `word-break`)
-- added `attention-circle` icon
+- added Android CSS reset
+- Bf stuff
+- added `pm-select`
 
 ## Updated/fixes
 
@@ -35,9 +37,16 @@
 - hotfixed `pm-field--tiny`, `pm-field--small`, `pm-field--large`/textarea and account fields that were broken
 - fixed icon list to make it more maintanable
 - added icon size of `60`
+- fixed template to get rid of `vh`, thanks Safari
+- debug flags
+- factorised some mixins
+- added `max-width` values
+- fixed `eventpopover` `z-index`
+- cleaned up CSS custom props references
+- fixed account display
 
 
-# [1.8.5] - 2019-09-30
+# [1.8.5] - 2020-09-30
 
 ## New
 
@@ -111,7 +120,7 @@
 - add `onmobile-w33` helper and fixed `onmobile-aligncenter` for some `th`
 
 
-# [1.8.4] - 2019-07-28
+# [1.8.4] - 2020-07-28
 
 ## New
 
@@ -191,7 +200,7 @@
 - fix some stuff on Design system website, shame on me for not taking care of you, my dear website.
 
 
-# [1.8.3] - 2019-05-18
+# [1.8.3] - 2020-05-18
 
 ## New
 
@@ -249,7 +258,7 @@
 - updated icon `calendar-repeat` to `repeat`
 
 
-# [1.8.2] - 2019-03-19
+# [1.8.2] - 2020-03-19
 
 ## New
 
@@ -298,7 +307,7 @@
 - increase dropdown width on default and narrow states, for time options
 
 
-# [1.8.1] - 2019-01-31
+# [1.8.1] - 2020-01-31
 
 ## New
 
