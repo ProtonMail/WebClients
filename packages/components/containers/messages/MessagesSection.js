@@ -68,7 +68,10 @@ const MessagesSection = () => {
                     {user.isPaid ? (
                         <DelaySendSecondsToggle id="delaySendSecondsToggle" delaySendSeconds={DelaySendSeconds} />
                     ) : (
-                        <AppLink to="/subscription" toApp={getAccountSettingsApp()}>{c('Action').t`Upgrade`}</AppLink>
+                        <div className="pt0-5">
+                            <AppLink to="/subscription" toApp={getAccountSettingsApp()}>{c('Action')
+                                .t`Upgrade`}</AppLink>
+                        </div>
                     )}
                 </Field>
             </Row>
