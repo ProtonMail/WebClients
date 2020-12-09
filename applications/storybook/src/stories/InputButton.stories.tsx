@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import { InputButton } from 'react-components';
+import { remove } from 'proton-shared/lib/helpers/array';
+
+import mdx from './InputButton.mdx';
 
 export default {
     component: InputButton,
     title: 'Components / InputButton',
+    parameters: {
+        docs: {
+            page: mdx,
+        },
+    },
 };
 
 export const Basic = () => {
@@ -20,14 +28,14 @@ export const Basic = () => {
     );
 };
 
-export const Exclusivity = () => {
-    const [checkedId, setCheckedId] = useState<null | string>(null);
+export const Multiple = () => {
+    const [checkedIds, setCheckedIds] = useState<string[]>([]);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (!e.target.checked) {
-            setCheckedId(null);
+    const handleChange = (id: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.checked) {
+            setCheckedIds([...checkedIds, id]);
         } else {
-            setCheckedId(e.target.id);
+            setCheckedIds(remove(checkedIds, id));
         }
     };
 
@@ -37,6 +45,32 @@ export const Exclusivity = () => {
                 <InputButton
                     id={n}
                     title="checkbox"
+                    checked={checkedIds.includes(n)}
+                    onChange={handleChange(n)}
+                    labelProps={{ className: 'mr1' }}
+                >
+                    {n}
+                </InputButton>
+            ))}
+        </div>
+    );
+};
+
+export const Exclusivity = () => {
+    const [checkedId, setCheckedId] = useState<null | string>(null);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setCheckedId(e.target.value);
+    };
+
+    return (
+        <div>
+            {['1', '2', '3', '4', '5'].map((n) => (
+                <InputButton
+                    id={`radio-${n}`}
+                    title="radio"
+                    type="radio"
+                    value={n}
                     checked={n === checkedId}
                     onChange={handleChange}
                     labelProps={{ className: 'mr1' }}
