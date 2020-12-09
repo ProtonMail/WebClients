@@ -18,6 +18,7 @@ export const mergeSavedMessage = (messageSaved: Message, messageReturned: Messag
     ID: messageReturned.ID,
     Time: messageReturned.Time,
     ConversationID: messageReturned.ConversationID,
+    LabelIDs: messageReturned.LabelIDs,
 });
 
 export const useCreateDraft = () => {

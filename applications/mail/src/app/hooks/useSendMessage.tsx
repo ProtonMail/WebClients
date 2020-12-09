@@ -201,7 +201,7 @@ export const useSendMessage = () => {
                 const savedMessage = messageCache.get(localID) as MessageExtendedWithData;
                 await api(cancelSend(savedMessage.data.ID));
                 createNotification({ text: c('Message notification').t`Sending undone` });
-                call();
+                await call();
                 // Re-open draft
                 onCompose({
                     existingDraft: {
@@ -289,7 +289,11 @@ export const useSendMessage = () => {
                     hasUndo ? undoTimeout : 2500
                 );
 
-                updateMessageCache(messageCache, localID, { data: Sent, initialized: undefined });
+                updateMessageCache(messageCache, localID, {
+                    data: Sent,
+                    initialized: undefined,
+                    showEmbeddedImages: undefined,
+                });
 
                 call();
 
