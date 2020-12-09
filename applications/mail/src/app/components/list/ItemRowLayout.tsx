@@ -13,6 +13,7 @@ import ItemDate from './ItemDate';
 import NumMessages from '../conversation/NumMessages';
 import { Element } from '../../models/element';
 import ItemExpiration from './ItemExpiration';
+import ItemAction from './ItemAction';
 
 interface Props {
     labelID: string;
@@ -50,10 +51,11 @@ const ItemRowLayout = ({
                 <ItemStar element={element} />
             </div>
 
-            <div className={classnames(['item-senders w20 flex mauto pr1', unread && 'bold'])}>
+            <div className={classnames(['item-senders w20 flex flex-nowrap mauto pr1', unread && 'bold'])}>
                 <span className="mw100 ellipsis" title={addresses}>
                     {!loading && displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
                 </span>
+                <ItemAction element={element} className="ml0-5 flex-item-noshrink mtauto mbauto" />
             </div>
 
             <div className="item-subject flex-item-fluid flex flex-items-center flex-nowrap mauto">
