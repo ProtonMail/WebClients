@@ -1,4 +1,7 @@
 import React, { useRef } from 'react';
+import { c } from 'ttag';
+import { fromUnixTime, format as formatDate } from 'date-fns';
+import { dateLocale } from 'proton-shared/lib/i18n';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import {
     Alert,
@@ -14,8 +17,6 @@ import {
     Toggle,
     useNotifications,
 } from 'react-components';
-import { c } from 'ttag';
-import DateTime from './DateTime';
 
 interface Props {
     itemName: string;
@@ -107,7 +108,7 @@ function GeneratedLinkState({
                         </div>
                     </Row>
                     <Row>
-                        <Label htmlFor="edit-password-button">
+                        <Label htmlFor="sharing-modal-password">
                             <span className="mr0-5">{c('Label').t`Password protection`}</span>
                         </Label>
                         <div className="flex flex-justify-start mr0-5 onmobile-mr0">
@@ -123,10 +124,11 @@ function GeneratedLinkState({
                         <div className="flex flex-item-fluid onmobile-mb0-5">
                             {!includePassword && (
                                 <Input
+                                    id="sharing-modal-password"
+                                    data-testid="sharing-modal-password"
                                     readOnly
                                     value={password}
                                     className="pl1 pr1 pt0-5 pb0-5 ellipsis pre"
-                                    data-testid="sharing-modal-password"
                                     icon={
                                         <button
                                             title={c('Label').t`Copy password`}
@@ -154,16 +156,17 @@ function GeneratedLinkState({
                     </Row>
 
                     <Row>
-                        <Label htmlFor="edit-expiration-time-button">
+                        <Label htmlFor="sharing-modal-expiration-time">
                             <span className="mr0-5">{c('Label').t`Link expires on`}</span>
                         </Label>
                         <div className="flex flex-column flex-item-fluid">
-                            <div
-                                className="pm-field w100 onmobile-mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis"
+                            <Input
+                                id="sharing-modal-expiration-time"
                                 data-testid="sharing-modal-expiration-time"
-                            >
-                                <DateTime key="expirationTime" value={expirationTime} />
-                            </div>
+                                readOnly
+                                value={formatDate(fromUnixTime(expirationTime), 'PPp', { locale: dateLocale })}
+                                className="w100 onmobile-mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis"
+                            />
                         </div>
                         <div className="flex flex-justify-end ml0-5 onmobile-ml0">
                             <div>
