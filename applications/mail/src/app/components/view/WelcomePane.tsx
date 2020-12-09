@@ -29,7 +29,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     const Unread = labelCount.Unread || 0;
     const unreadEmailsSvg = getLightOrDark(unreadEmailsSvgLight, unreadEmailsSvgDark);
-    const userName = capitalize(user.DisplayName);
+    const userName = <span className="inbl mw100 ellipsis alignbottom">{capitalize(user.DisplayName)}</span>;
 
     const unreadsLabel = conversationMode ? (
         <strong key="unreads-label">
@@ -50,7 +50,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     return (
         <div className="mtauto mbauto aligncenter p2 mw100 scroll-if-needed">
-            <h1>{user.DisplayName ? c('Title').t`Welcome, ${userName}!` : c('Title').t`Welcome!`}</h1>
+            <h1>{user.DisplayName ? c('Title').jt`Welcome, ${userName}!` : c('Title').t`Welcome!`}</h1>
             {Unread ? <p>{c('Info').jt`You have ${unreadsLabel} in your inbox.`}</p> : null}
             {user.hasPaidMail ? (
                 <>
