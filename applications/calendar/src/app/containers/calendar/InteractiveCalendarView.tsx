@@ -630,16 +630,20 @@ const InteractiveCalendarView = ({
                 emailTo: selfAttendee.value,
                 partstat,
             });
-            await sendIcs({
-                ics,
-                addressID: selfAddress.ID,
-                from: {
-                    Address: selfAddress.Email,
-                    Name: selfAddress.DisplayName || selfAddress.Email,
-                },
-                to: [{ Address: organizerEmail, Name: organizer.parameters?.cn || organizerEmail }],
-                subject: formatSubject(`Invitation: ${getDisplayTitle(vevent.summary?.value)}`, RE_PREFIX),
-            });
+            try {
+                await sendIcs({
+                    ics,
+                    addressID: selfAddress.ID,
+                    from: {
+                        Address: selfAddress.Email,
+                        Name: selfAddress.DisplayName || selfAddress.Email,
+                    },
+                    to: [{ Address: organizerEmail, Name: organizer.parameters?.cn || organizerEmail }],
+                    subject: formatSubject(`Invitation: ${getDisplayTitle(vevent.summary?.value)}`, RE_PREFIX),
+                });
+            } catch (e) {
+                throw new Error('Sending reply email failed');
+            }
         },
         [addresses]
     );
