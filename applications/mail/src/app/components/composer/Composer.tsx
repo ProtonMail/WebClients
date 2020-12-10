@@ -459,7 +459,7 @@ const Composer = ({
                 >
                     <div
                         ref={bodyRef}
-                        className="composer-body-container flex flex-column flex-nowrap flex-item-fluid mw100 scroll-if-needed mt0-5"
+                        className="composer-body-container flex flex-column flex-nowrap flex-item-fluid mw100 mt0-5"
                     >
                         <ComposerMeta
                             message={modelMessage}

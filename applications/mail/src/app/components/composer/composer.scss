@@ -267,9 +267,15 @@
     }
 }
 
-.composer-body-container textarea {
-    resize: none;
-    font-family: $font-family-monospace;
+.composer-body-container {
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    textarea {
+        resize: none;
+        font-family: $font-family-monospace;
+    }
 }
 
 .composer-attachments-button-wrapper {
