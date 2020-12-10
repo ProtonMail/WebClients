@@ -3,6 +3,7 @@ import { getEventName } from '../../../blackFriday/helpers/blackFridayHelper';
 /* @ngInject */
 function navigationBlackFriday(blackFridayModalOpener, dispatchers, blackFridayModel) {
     const IS_BLACK_FRIDAY_CLASS = 'navigationBlackFriday-is-black-friday';
+    const HAS_RED_DOT_CLASS = 'navigationBlackFriday--redDot';
 
     return {
         restrict: 'E',
@@ -19,6 +20,8 @@ function navigationBlackFriday(blackFridayModalOpener, dispatchers, blackFridayM
                 element[0].classList[showPromo ? 'add' : 'remove'](IS_BLACK_FRIDAY_CLASS);
 
                 if (showPromo) {
+                    const hasRedDot = blackFridayModel.isBlackFridayPeriod();
+                    element[0].classList[hasRedDot ? 'add' : 'remove'](HAS_RED_DOT_CLASS);
                     blackFridayModel.getCloseState().then((alreadySeen) => {
                         if (!alreadySeen) {
                             blackFridayModalOpener();
