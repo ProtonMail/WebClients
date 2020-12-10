@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WriteWebpackPlugin = require('write-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -14,6 +15,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const { getSource } = require('./helpers/source');
 const transformOpenpgpFiles = require('./helpers/openpgp');
 const { OPENPGP_FILES } = require('./constants');
+
 const { logo, ...logoConfig } = require(getSource('src/assets/logoConfig.js'));
 
 const HTML_MINIFY = {
@@ -87,6 +89,10 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
                 data: Buffer.from(contents)
             }))
         ),
+
+        new CopyWebpackPlugin({
+            patterns: [{ from: 'public', noErrorOnMissing: true }]
+        }),
 
         new MiniCssExtractPlugin({
             filename: isProduction ? '[name].[contenthash:8].css' : '[name].css',
