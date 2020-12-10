@@ -18,7 +18,7 @@ const DelaySendSecondsToggle = ({ id, delaySendSeconds }: Props) => {
     const { state, toggle } = useToggle(!!delaySendSeconds);
 
     const handleChange = async (checked: boolean) => {
-        await api(updateDelaySend(checked ? 5 : 0));
+        await api(updateDelaySend(checked ? 10 : 0));
         await call();
         toggle();
         createNotification({ text: c('Success').t`Preference saved` });
