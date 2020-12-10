@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { useActiveBreakpoint, LoaderPage } from 'react-components';
+import { useActiveBreakpoint, LoaderPage, ModalsChildren } from 'react-components';
 
 import MessageProvider from './containers/MessageProvider';
 import ConversationProvider from './containers/ConversationProvider';
@@ -19,6 +19,7 @@ const MainContainer = () => {
             <ConversationProvider>
                 <AttachmentProvider>
                     <ContactProvider>
+                        <ModalsChildren />
                         <ComposerContainer breakpoints={breakpoints}>
                             {({ onCompose }) => (
                                 <Switch>
