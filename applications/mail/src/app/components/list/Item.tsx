@@ -1,5 +1,5 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { getRecipients as getMessageRecipients, getSender } from 'proton-shared/lib/mail/messages';
+import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from 'proton-shared/lib/mail/messages';
 import React, { ChangeEvent, MouseEvent, DragEvent, memo } from 'react';
 import { classnames, Checkbox } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
@@ -17,7 +17,7 @@ import { getSenders, getRecipients as getConversationRecipients } from '../../he
 import {
     recipientsToRecipientOrGroup,
     getRecipientLabelDetailed,
-    getRecipientOrGroupLabelDetailed
+    getRecipientOrGroupLabelDetailed,
 } from '../../helpers/addresses';
 import { isCustomLabel } from '../../helpers/labels';
 import { Breakpoints } from '../../models/utils';
@@ -67,9 +67,12 @@ const Item = ({
     onDragCanceled,
     dragged,
     index,
-    breakpoints
+    breakpoints,
 }: Props) => {
-    const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS);
+    const displayRecipients =
+        [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS) ||
+        isSent(element) ||
+        isDraft(element);
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
@@ -137,7 +140,7 @@ const Item = ({
                 isSelected && 'item-is-selected',
                 !unread && 'read',
                 dragged && 'item-dragging',
-                loading && 'item-is-loading'
+                loading && 'item-is-loading',
             ])}
             style={{ '--index': index }}
         >
