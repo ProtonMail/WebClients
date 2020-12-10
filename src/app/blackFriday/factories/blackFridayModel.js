@@ -5,7 +5,7 @@ import { isDealEvent, isProductPayerPeriod as productPayerPeriod } from '../help
 /* @ngInject */
 function blackFridayModel(dispatchers, subscriptionModel, paymentModel, PaymentCache, Feature, userType) {
     let allowed = false;
-    const FEATURE_ID = 'BlackFridayPromoShown';
+    const FEATURE_ID = userType().isFree ? 'BlackFridayPromoShown' : 'BundlePromoShown';
     const { on } = dispatchers();
 
     const saveClose = async () => {
