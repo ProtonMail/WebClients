@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import brokenImageSvg from 'design-system/assets/img/shared/broken-image.svg';
-import brokenFileSvg from 'design-system/assets/img/shared/broken-file.svg';
+import unsupportedPreviewSvg from 'design-system/assets/img/shared/preview-unsupported.svg';
+import corruptedPreviewSvg from 'design-system/assets/img/shared/preview-corrupted.svg';
 import { PrimaryButton } from '../../components';
 
 interface Props {
@@ -10,13 +10,18 @@ interface Props {
 }
 
 const UnsupportedPreview = ({ onSave, type = 'file' }: Props) => {
-    const imageSrc = type === 'file' ? brokenFileSvg : brokenImageSvg;
-
     return (
         <div className="centered-absolute aligncenter">
-            <img className="mb0-5" src={imageSrc} alt={c('Info').t`Unsupported file`} />
-            <div className="p0-25">{c('Info').t`No preview available.`}</div>
-            {onSave && <PrimaryButton onClick={onSave} className="mt2">{c('Action').t`Download`}</PrimaryButton>}
+            <img
+                className="mb1"
+                src={type === 'file' ? unsupportedPreviewSvg : corruptedPreviewSvg}
+                alt={c('Info').t`Unsupported file`}
+            />
+            <h2 className="p0-25 bold">{c('Info').t`No preview available`}</h2>
+            {onSave && (
+                <PrimaryButton className="pm-button--large w150p bold" onClick={onSave}>{c('Action')
+                    .t`Download`}</PrimaryButton>
+            )}
         </div>
     );
 };
