@@ -257,12 +257,11 @@ export const useSendMessage = () => {
 
                 // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
                 const { expiresIn } = inputMessage;
-                const deliveryTime = delaySendSeconds ? Math.floor(Date.now() / 1000) + delaySendSeconds : 0;
                 return api<{ Sent: Message; DeliveryTime: number }>(
                     sendMessage(message.data?.ID, {
                         Packages: packages,
                         ExpiresIn: expiresIn === 0 ? undefined : expiresIn,
-                        DeliveryTime: deliveryTime,
+                        DelaySeconds: delaySendSeconds, // Once the API receive this request, it calculates how much time the notification needs to be display
                     } as any)
                 );
             };
@@ -276,7 +275,6 @@ export const useSendMessage = () => {
 
             try {
                 const { Sent, DeliveryTime } = await promise;
-
                 const delta = DeliveryTime * 1000 - Date.now();
                 const undoTimeout = delta > 0 ? delta : 0;
                 setTimeout(
