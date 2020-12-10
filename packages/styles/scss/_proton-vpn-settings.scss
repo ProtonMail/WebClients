@@ -5,28 +5,13 @@
 @import 'config/';
 
 // Initialisation
-@import 'base/viewport', 'base/reset', 'base/init', 'base/typo', 'base/forms',
-	'base/scrollbar', 'base/media';
+@import 'base/';
 
 // Layout
-@import 'layout/structure', 'layout/navigation', 'layout/toolbar',
-	'layout/context-bar';
+@import 'layout/';
 
-// Components | Alphabetical order
-@import 'components/app-link', 'components/apps-dropdown',
-	'components/autocomplete', 'components/badges', 'components/block-info',
-	'components/breadcrumb', 'components/buttons', 'components/button-account',
-	'components/circle-chart', 'components/collapsing-breadcrumb',
-	'components/color-selector', 'components/dropdown',
-	'components/dropdown-logout', 'components/ellipsis-loader', 'components/fab',
-	'components/file-preview', 'components/information-panel',
-	'components/label-stack', 'components/loading-animation',
-	'components/meterbar', 'components/minicalendar', 'components/modal',
-	'components/notification', 'components/overview-grid',
-	'components/progressbar', 'components/scrollshadow', 'components/searchbox',
-	'components/simple-table', 'components/stepdots', 'components/sticky-title',
-	'components/tabs', 'components/tooltip', 'components/topnav',
-	'components/treeview', 'components/wizard';
+// Components
+@import 'components/';
 
 // Helpers
 @import 'helpers/';
