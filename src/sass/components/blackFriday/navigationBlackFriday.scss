@@ -20,7 +20,7 @@
 }
 
 // Red for all users
-.navigationBlackFriday-icon--redDot::before {
+.navigationBlackFriday--redDot .navigationBlackFriday-icon::before {
     content: '';
     position: absolute;
     width: 7px;
