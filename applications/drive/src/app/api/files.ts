@@ -37,6 +37,7 @@ export const queryFileBlock = (url: string) => {
     return {
         method: 'get',
         output: 'stream',
+        credentials: 'omit',
         url,
     };
 };

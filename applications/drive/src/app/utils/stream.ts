@@ -30,7 +30,7 @@ export class ObserverStream extends TransformStream<Uint8Array, Uint8Array> {
             transform(chunk, controller) {
                 fn?.(chunk);
                 controller.enqueue(chunk);
-            }
+            },
         });
     }
 }
