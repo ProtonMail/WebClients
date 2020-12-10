@@ -9,7 +9,7 @@ describe('runInQueue', () => {
         const executors = [
             jest.fn().mockResolvedValue(1),
             jest.fn().mockResolvedValue(2),
-            jest.fn().mockResolvedValue(3)
+            jest.fn().mockResolvedValue(3),
         ];
         await runInQueue(executors);
         executors.forEach((executor) => {
