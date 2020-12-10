@@ -26,7 +26,7 @@ export const validateLocalPart = (localPart: string) => {
             .flat();
         return !chunks.some((chunk) => /"|\\/.test(chunk));
     }
-    return !/[^a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]|^\.|\.$|\.\./.test(uncommentedPart);
+    return !/[^a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]|^\.|\.$|\.\./.test(uncommentedPart);
 };
 
 /**
