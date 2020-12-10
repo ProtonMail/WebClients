@@ -61,7 +61,7 @@ const MessagesSection = () => {
                     <span className="mr0-5">{c('Label').t`Delay message sending`}</span>
                     <Info
                         title={c('Tooltip')
-                            .t`You can delay your message sending by 10 seconds, which gives you the possibility to cancel and go back to editing your draft.`}
+                            .t`You can delay your message sending by 5 seconds, which gives you the possibility to cancel and go back to editing your draft.`}
                     />
                 </Label>
                 <Field>
