@@ -7,11 +7,17 @@ const usePromoModalState = (featureID: string) => {
     const [loading, withLoading] = useLoading(true);
     const [state, setState] = useState(false);
     const api = useApi();
+    const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
 
     const fetchFeature = async () => {
-        const { Feature } = await api(getFeature(featureID));
-        const { Value, DefaultValue } = Feature;
-        setState(typeof Value === 'undefined' ? DefaultValue : Value);
+        try {
+            const { Feature } = await silentApi(getFeature(featureID));
+            const { Value, DefaultValue } = Feature;
+            setState(typeof Value === 'undefined' ? DefaultValue : Value);
+        } catch {
+            // If it fails, we define promo state as already seen
+            setState(true);
+        }
     };
 
     useEffect(() => {
