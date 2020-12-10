@@ -27,4 +27,4 @@ export const getEventName = (isProductPayer) => {
     }
 };
 
-export const isProductPayerPeriod = () => moment().isBetween(PRODUCT_PAYER.BETWEEN.START, PRODUCT_PAYER.BETWEEN.END);
+export const isProductPayerPeriod = () => moment().isAfter(PRODUCT_PAYER.BETWEEN.START);
