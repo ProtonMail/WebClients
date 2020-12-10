@@ -77,6 +77,7 @@ describe('email', () => {
                 'test@domain-.com',
                 'test@test@domain.com',
                 'français@baguette.fr',
+                'asd,@asd.com',
                 'ezpaña@espain.es',
                 'Abc.example.com',
                 'A@b@c@example.com',
