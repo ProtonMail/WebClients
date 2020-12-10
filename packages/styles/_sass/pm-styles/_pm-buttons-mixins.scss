@@ -1,5 +1,5 @@
 // these mixins are present to be called from pm-buttons and pm-darkmode
-@import "../reusable-components/design-system-config";
+@import '../../scss/config/';
 
 @mixin button-disabled-state($color: null) {
 	pointer-events: none;
