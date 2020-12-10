@@ -1,4 +1,4 @@
-import { isWithinInterval } from 'date-fns';
+import { isWithinInterval, isAfter } from 'date-fns';
 
 import { BLACK_FRIDAY, PRODUCT_PAYER } from '../constants';
 import { Subscription } from '../interfaces';
@@ -13,7 +13,7 @@ export const isCyberMonday = () => {
 };
 
 export const isProductPayerPeriod = () => {
-    return isWithinInterval(new Date(), { start: PRODUCT_PAYER.START, end: PRODUCT_PAYER.END });
+    return isAfter(new Date(), PRODUCT_PAYER.START);
 };
 
 export const isProductPayer = (subscription: Subscription) => {
