@@ -28,7 +28,9 @@ const useBlackFriday = () => {
     const [subscription] = useSubscription();
     const isBlackFridayPeriod = useBlackFridayPeriod();
     const isProductPayerPeriod = useProductPayerPeriod();
-    const [modalState, loadingModalState, setModalState] = usePromoModalState();
+    const [modalState, loadingModalState, setModalState] = usePromoModalState(
+        isFree ? 'BlackFridayPromoShown' : 'BundlePromoShown'
+    );
     const [isEligible, setEligibility] = useState(false);
     const location = useLocation();
     const { createModal } = useModals();
