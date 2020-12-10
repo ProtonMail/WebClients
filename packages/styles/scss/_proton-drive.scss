@@ -1,14 +1,32 @@
-// redefine specific sass vars here if needed
+// Variables specific overrides
+// Nope
 
+// Configuration
+@import 'config/';
 
-// include components that are shared across all Proton Products
-@import './components';
+// Initialisation
+@import 'base/viewport', 'base/reset', 'base/init', 'base/typo', 'base/forms',
+	'base/scrollbar', 'base/media';
 
-// stuff for responsive
-@import '../reusable-components/design-system-responsive';
-@import '../design-system-website/responsive';
+// Layout
+@import 'layout/structure', 'layout/navigation', 'layout/toolbar',
+	'layout/context-bar';
 
-// others
-@import '../reusable-components/design-system-print';
-@import '../reusable-components/design-system-viewport-fix';
-@import '../reusable-components/design-system-reduced-motion';
+// Components | Alphabetical order
+@import 'components/app-link', 'components/apps-dropdown',
+	'components/autocomplete', 'components/badges', 'components/block-info',
+	'components/breadcrumb', 'components/buttons', 'components/button-account',
+	'components/circle-chart', 'components/collapsing-breadcrumb',
+	'components/color-selector', 'components/dropdown',
+	'components/dropdown-logout', 'components/ellipsis-loader', 'components/fab',
+	'components/file-preview', 'components/information-panel',
+	'components/label-stack', 'components/loading-animation',
+	'components/meterbar', 'components/minicalendar', 'components/modal',
+	'components/notification', 'components/overview-grid',
+	'components/progressbar', 'components/scrollshadow', 'components/searchbox',
+	'components/simple-table', 'components/stepdots', 'components/sticky-title',
+	'components/tabs', 'components/tooltip', 'components/topnav',
+	'components/treeview', 'components/wizard';
+
+// Helpers
+@import 'helpers/';
