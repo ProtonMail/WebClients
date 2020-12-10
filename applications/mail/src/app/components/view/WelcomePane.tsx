@@ -29,7 +29,11 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     const Unread = labelCount.Unread || 0;
     const unreadEmailsSvg = getLightOrDark(unreadEmailsSvgLight, unreadEmailsSvgDark);
-    const userName = <span className="inbl mw100 ellipsis alignbottom">{capitalize(user.DisplayName)}</span>;
+    const userName = (
+        <span key="display-name" className="inbl mw100 ellipsis alignbottom">
+            {capitalize(user.DisplayName)}
+        </span>
+    );
 
     const unreadsLabel = conversationMode ? (
         <strong key="unreads-label">
