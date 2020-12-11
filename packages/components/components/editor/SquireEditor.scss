@@ -38,7 +38,13 @@
 
 .editor-squire-wrapper {
 	.placeholder {
-		margin-top: 1.2em;
+		// The point is to match exactly Squire text content and position
+		font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+		font-size: 1.4rem;
+		line-height: 1.65;
+		margin-left: 0.8rem;
+		margin-top: 0.8rem;
+		color: rgba($pm-global-grey, 0.65);
 	}
 }
 

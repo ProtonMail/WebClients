@@ -143,7 +143,7 @@ const SquireIframe = (
 
     return (
         <div className="editor-squire-wrapper fill w100 scroll-if-needed flex-item-fluid relative">
-            {placeholder && isEmpty && <div className="absolute ml1 no-pointer-events placeholder">{placeholder}</div>}
+            {placeholder && isEmpty && <div className="absolute no-pointer-events placeholder">{placeholder}</div>}
             <iframe title="Editor" ref={iframeRef} frameBorder="0" className="w100 h100 squireIframe" {...rest} />
         </div>
     );
