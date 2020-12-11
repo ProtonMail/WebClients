@@ -74,6 +74,7 @@ const SquireToolbarMoreDropdown = ({
             className="flex-item-noshrink mlauto"
             title={c('Action').t`More`}
             content={<span className="sr-only">{c('Action').t`More`}</span>}
+            data-testid="squire-more"
         >
             <DropdownMenu className="editor-toolbar-more-menu flex-item-noshrink">
                 {isNarrow && [
@@ -202,6 +203,7 @@ const SquireToolbarMoreDropdown = ({
                         key={3}
                         className="alignleft flex flex-nowrap noborder-bottom"
                         onClick={handleChangePlainText(false)}
+                        data-testid="squire-to-html"
                     >
                         <Icon name="on" className={classnames(['mt0-25', getClassname(!isPlainText)])} />
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Normal`}</span>
@@ -211,6 +213,7 @@ const SquireToolbarMoreDropdown = ({
                         liClassName="dropDown-item--no-separator"
                         className="alignleft flex flex-nowrap"
                         onClick={handleChangePlainText(true)}
+                        data-testid="squire-to-plaintext"
                     >
                         <Icon name="on" className={classnames(['mt0-25', getClassname(isPlainText)])} />
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Plain text`}</span>
