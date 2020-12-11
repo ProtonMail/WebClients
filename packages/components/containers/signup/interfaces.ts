@@ -1,5 +1,5 @@
 import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS, ADDON_NAMES } from 'proton-shared/lib/constants';
 import { SIGNUP_STEPS } from './constants';
 
 export const SERVICES = {
@@ -15,6 +15,14 @@ export interface PlanIDs {
     [planID: string]: number;
 }
 
+export interface Additions {
+    [ADDON_NAMES.ADDRESS]?: number;
+    [ADDON_NAMES.DOMAIN]?: number;
+    [ADDON_NAMES.MEMBER]?: number;
+    [ADDON_NAMES.SPACE]?: number;
+    [ADDON_NAMES.VPN]?: number;
+}
+
 export interface SubscriptionCheckResult {
     Amount: number;
     AmountDue: number;
@@ -28,6 +36,8 @@ export interface SubscriptionCheckResult {
         Code: string;
         Description: string;
     };
+    Additions: null | Additions;
+    PeriodEnd: number;
 }
 
 export interface SignupModel {
