@@ -7,7 +7,7 @@ import { UploadLink } from '../../interfaces/file';
 import { TransferCancel } from '../../interfaces/transfer';
 import { isTransferCancelError } from '../../utils/transfer';
 import runInQueue from '../../utils/runInQueue';
-import { FILE_CHUNK_SIZE, STATUS_CODE } from '../../constants';
+import { FILE_CHUNK_SIZE, RESPONSE_CODE, STATUS_CODE } from '../../constants';
 import { waitUntil } from '../../utils/async';
 
 // Max decrypted block size
@@ -113,12 +113,13 @@ export async function upload(
                             statusText: xhr.statusText,
                         } as Response,
                         undefined,
-                        xhr.responseType === 'json' ? JSON.parse(xhr.response) : undefined
+                        xhr.response
                     )
                 );
             }
         };
 
+        xhr.responseType = 'json';
         xhr.upload.onerror = reject;
         xhr.onerror = reject;
         xhr.open('POST', url);
@@ -257,17 +258,23 @@ export function initUpload(
                     abortSignal
                 );
                 uploadingBlocks.delete(index);
-            } catch (e) {
+            } catch (err) {
+                if (err?.data?.Code === RESPONSE_CODE.ALREADY_EXISTS) {
+                    console.warn(`Redundant upload for block #${index}. Proceeding, but this might indicate an issue.`);
+                    uploadingBlocks.delete(index);
+                    return;
+                }
+
                 if (
-                    !isTransferCancelError(e) &&
-                    e.status !== STATUS_CODE.NOT_FOUND &&
+                    !isTransferCancelError(err) &&
+                    err.status !== STATUS_CODE.NOT_FOUND &&
                     numRetries < MAX_RETRIES_BEFORE_FAIL
                 ) {
                     console.error(`Failed block #${index} upload for ${id}. Retry num: ${numRetries}`);
                     resetBlockUploadProgress(block);
                     blockUploaders.push(getBlockUploader(block, numRetries + 1));
                 } else {
-                    throw e;
+                    throw err;
                 }
             }
         };

@@ -21,7 +21,3 @@ export interface DriveVolume {
 export interface CreatedDriveVolumeResult {
     Volume: DriveVolume;
 }
-
-export enum InitStatusCodes {
-    NoAccess = 2011,
-}

@@ -58,6 +58,12 @@ export enum STATUS_CODE {
     INTERNAL_SERVER_ERROR = 500,
 }
 
+export enum RESPONSE_CODE {
+    SUCCESS = 1000,
+    NOT_ALLOWED = 2011,
+    ALREADY_EXISTS = 2500,
+}
+
 export enum DOWNLOAD_SHARED_STATE {
     ENTER_PASS = 0,
     DOWNLOAD = 1,
