@@ -9,7 +9,7 @@ function blackFridayModel(dispatchers, subscriptionModel, paymentModel, PaymentC
     const { on } = dispatchers();
 
     const saveClose = async () => {
-        await Feature.updateValue(FEATURE_ID, true);
+        await Feature.updateValue(FEATURE_ID, true, { noNotify: true });
     };
 
     const getCloseState = async () => {
