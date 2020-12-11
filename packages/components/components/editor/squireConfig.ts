@@ -181,11 +181,11 @@ export const insertCustomStyle = (document: Document) => {
         html {
             height: 100%;
             font-size: 62.5%;
+            cursor: text;
         }
 
         body {
             box-sizing: border-box;
-            padding: 1.6rem 1rem;
             font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
             font-size: 1.4rem;
             line-height: 1.65;
@@ -202,9 +202,10 @@ export const insertCustomStyle = (document: Document) => {
 
         [id="squire"] {
             outline: none;
+            padding: 0.8rem;
         }
 
-        [id="ellispsis"] {
+        [id="ellipsis"] {
             color: inherit;
             border: 1px solid silver;
             background-color: white;
@@ -213,10 +214,11 @@ export const insertCustomStyle = (document: Document) => {
             cursor: pointer;
             font-size: 1.2em;
             padding: 0 .5em;
+            margin: 0 0.8rem 0.8rem 0.8rem;
         }
 
-        [id="ellispsis"]:hover,
-        [id="ellispsis"]:focus {
+        [id="ellipsis"]:hover,
+        [id="ellipsis"]:focus {
             border-color: darkgrey;
             background-color: whitesmoke;
         }
@@ -315,21 +317,40 @@ export const initSquire = async (document: Document, onEllipseClick: () => void)
     insertCustomStyle(document);
     const { default: Squire } = await import('squire-rte');
 
+    // Good old HTML management because there is no React or anything inside the iframe
     const title = c('Title').t`Expand content`;
     document.body.innerHTML = `
         <div id="squire"></div>
-        <div><button id="ellispsis" title="${title}" style="display: none;">&hellip;</button></div>
+        <div id="ellipsis-container">
+            <button id="ellipsis" title="${title}" style="display: none;">&hellip;</button>
+        </div>
     `;
-    const root = document.body.querySelector('#squire');
-    const squire = new Squire(root, SQUIRE_CONFIG);
+    const squireContainer = document.body.querySelector('#squire');
+    const ellipsisContainer = document.querySelector('#ellipsis-container');
+    const ellipsisButton = document.querySelector('#ellipsis');
+
+    const squire = new Squire(squireContainer, SQUIRE_CONFIG);
     wrapInsertHTML(squire);
-    document.body.querySelector('#ellispsis')?.addEventListener('click', onEllipseClick);
+
+    ellipsisButton?.addEventListener('click', onEllipseClick);
+    const fallbackElements = [document.documentElement, document.body, ellipsisContainer];
+    document.addEventListener('click', (event) => {
+        if (
+            fallbackElements.includes(event.target as Element | null) &&
+            // Prevent to deselect an ongoing selection
+            !document.defaultView?.getSelection()?.toString().length
+        ) {
+            squire.moveCursorToEnd();
+            squire.focus();
+            squire.insertHTML(''); // Needed for FF to show the cursor
+        }
+    });
 
     return squire;
 };
 
 export const toggleEllipsisButton = (document: Document, show: boolean) => {
-    const element = document.body.querySelector('#ellispsis') as HTMLDivElement | undefined;
+    const element = document.body.querySelector('#ellipsis') as HTMLDivElement | undefined;
     if (element?.style?.display) {
         element.style.display = show ? 'block' : 'none';
     }
