@@ -61,11 +61,11 @@ export const getMessage = (messageID) => ({
 
 export const sendMessage = (
     messageID,
-    { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DeliveryTime = 0 }
+    { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds = 0 }
 ) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}`,
-    data: { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DeliveryTime },
+    data: { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds },
 });
 
 export const createDraft = ({ Message, ParentID, Action, AttachmentKeyPackets }) => ({
