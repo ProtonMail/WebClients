@@ -1,13 +1,6 @@
 import React from 'react';
 
-import {
-    MimeIcons,
-    Icons,
-    NotificationsProvider,
-    ModalsProvider,
-    ModalsChildren,
-    CacheProvider,
-} from 'react-components';
+import { Icons, NotificationsProvider, ModalsProvider, ModalsChildren, CacheProvider } from 'react-components';
 import ApiProvider from 'react-components/containers/api/ApiProvider';
 import ConfigProvider from 'react-components/containers/config/Provider';
 import createCache from 'proton-shared/lib/helpers/cache';
@@ -26,7 +19,6 @@ export const decorators = [
     (Story) => (
         <ConfigProvider config={tempConfig}>
             <Icons />
-            <MimeIcons />
             <NotificationsProvider>
                 <ModalsProvider>
                     <ApiProvider config={tempConfig}>
