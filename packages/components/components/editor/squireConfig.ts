@@ -112,6 +112,7 @@ export interface SquireType {
     addEventListener: <E extends Event>(type: string, handler: (event: E) => void) => void;
     removeEventListener: <E extends Event>(type: string, handler: (event: E) => void) => void;
     fireEvent: (type: string, event?: Event) => void;
+    getCursorPosition: () => DOMRect;
 }
 
 export interface LinkData {

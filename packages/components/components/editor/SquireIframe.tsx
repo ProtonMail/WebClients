@@ -4,7 +4,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import { useHandler, useNotifications } from '../../hooks';
 import { SquireType, getSquireRef, setSquireRef, initSquire, toggleEllipsisButton } from './squireConfig';
-import { pasteFileHandler } from './squireActions';
+import { pasteFileHandler, scrollIntoViewIfNeeded } from './squireActions';
 import { SquireEditorMetadata } from './interface';
 import { LinkButton } from '../button';
 
@@ -114,6 +114,7 @@ const SquireIframe = (
     });
     const handlePasteEnhanced = useHandler(pasteFileHandler(onAddImages));
     const handlePaste = metadata.supportImages ? handlePasteEnhanced : noop;
+    const handleCursor = () => scrollIntoViewIfNeeded(getSquireRef(ref));
 
     // Pass dragenter and dragleave events to parent document
     const handlePassDragEvents = useHandler((event: DragEvent) => {
@@ -131,12 +132,14 @@ const SquireIframe = (
             squire.addEventListener('paste', handlePaste);
             squire.addEventListener('dragenter', handlePassDragEvents);
             squire.addEventListener('dragleave', handlePassDragEvents);
+            squire.addEventListener('cursor', handleCursor);
             return () => {
                 squire.removeEventListener('focus', handleFocus);
                 squire.removeEventListener('input', handleInput);
                 squire.removeEventListener('paste', handlePaste);
                 squire.removeEventListener('dragenter', handlePassDragEvents);
                 squire.removeEventListener('dragleave', handlePassDragEvents);
+                squire.removeEventListener('cursor', handleCursor);
             };
         }
     }, [squireReady]);
