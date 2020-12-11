@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { isBrokenUploadSafari } from '../../../helpers/browser';
 
 /* @ngInject */
 function composer(AppModel, attachmentFileFormat, dispatchers, mailSettingsModel) {
@@ -22,6 +23,8 @@ function composer(AppModel, attachmentFileFormat, dispatchers, mailSettingsModel
             const { dispatcher, on, unsubscribe } = dispatchers(['composer.update', 'editorListener']);
             const updateMini = (value) => (scope.mini = value);
             const updateSmall = (value) => (scope.small = value);
+
+            scope.isBrokenSafari = isBrokenUploadSafari();
 
             const focusComposer = (event, data = {}) => {
                 dispatcher['composer.update'](`focus.${event}`, data);

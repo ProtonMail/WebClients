@@ -69,7 +69,24 @@
             }"
             pt-tooltip-translate="Attachments"
             pt-tooltip-translate-context="Tooltip"
+            ng-if="!isBrokenSafari"
             pt-placement="top">
+            <i class="fa fa-paperclip"></i>
+            <span class="sr-only" translate-context="Action" translate>Attachments</span>
+        </button>
+
+        <button class="pm_button composer-btn-attachment needsclick"
+                data-action-compose="::message"
+                data-action-compose-type="addFile"
+                ng-disabled="message.disableOthers() || message !== selected"
+                ng-if="isBrokenSafari"
+                ng-class="{
+                'active': message.displayPanel && message.panelName == 'attachments',
+                'primary': message.Attachments && message.Attachments.length > 0
+            }"
+                pt-tooltip-translate="To attach a file, drag and drop into this email"
+                pt-tooltip-translate-context="Tooltip"
+                pt-placement="top">
             <i class="fa fa-paperclip"></i>
             <span class="sr-only" translate-context="Action" translate>Attachments</span>
         </button>
