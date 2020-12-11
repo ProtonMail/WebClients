@@ -2,6 +2,8 @@ import DOMPurify, { Config } from 'dompurify';
 
 import { escapeURLinStyle } from './escape';
 
+const LIST_STYLE_PROPERTIES_REMOVED = ['position', 'left', 'right', 'top', 'bottom'];
+
 const { LIST_PROTON_ATTR, MAP_PROTON_ATTR } = [
     'data-src',
     'src',
@@ -46,22 +48,37 @@ const CONFIG: { [key: string]: any } = {
     },
 };
 
-const beforeSanitizeElements = (node: Element) => {
+const sanitizeStyle = (node: Node) => {
     // We only work on elements
     if (node.nodeType !== 1) {
         return node;
     }
 
-    Array.from(node.attributes).forEach((type) => {
+    const element = node as HTMLElement;
+
+    LIST_STYLE_PROPERTIES_REMOVED.forEach((prop) => {
+        element.style[prop as any] = '';
+    });
+};
+
+const beforeSanitizeElements = (node: Node) => {
+    // We only work on elements
+    if (node.nodeType !== 1) {
+        return node;
+    }
+
+    const element = node as HTMLElement;
+
+    Array.from(element.attributes).forEach((type) => {
         const item = type.name;
         if (MAP_PROTON_ATTR[item]) {
-            node.setAttribute(`proton-${item}`, node.getAttribute(item) || '');
-            node.removeAttribute(item);
+            element.setAttribute(`proton-${item}`, element.getAttribute(item) || '');
+            element.removeAttribute(item);
         }
 
         if (item === 'style') {
-            const escaped = escapeURLinStyle(node.getAttribute('style') || '');
-            node.setAttribute('style', escaped);
+            const escaped = escapeURLinStyle(element.getAttribute('style') || '');
+            element.setAttribute('style', escaped);
         }
     });
 
@@ -83,7 +100,9 @@ const clean = (mode: string) => {
 
     return (input: string | Node): string | Element => {
         DOMPurify.clearConfig();
+        DOMPurify.addHook('afterSanitizeElements', sanitizeStyle);
         const value = DOMPurify.sanitize(input, config) as string | Element;
+        DOMPurify.removeHook('afterSanitizeElements');
         purifyHTMLHooks(false); // Always remove the hooks
         if (mode === 'str') {
             // When trusted types is available, DOMPurify returns a trustedHTML object and not a string, force cast it.
