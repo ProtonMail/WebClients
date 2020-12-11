@@ -1,6 +1,7 @@
 import { MailSettings, Address } from 'proton-shared/lib/interfaces';
 import { isPlainText } from 'proton-shared/lib/mail/messages';
 
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { toText } from '../parserHtml';
 import { findSender } from '../addresses';
@@ -80,14 +81,11 @@ export const getPlainText = (message: MessageExtended, downconvert: boolean) => 
  * Convert the body of a message in plain text to an HTML version
  */
 export const plainTextToHTML = (
-    message: MessageExtended,
+    message: Message | undefined,
+    plainTextContent: string | undefined,
     mailSettings: Partial<MailSettings> = {},
     addresses: Address[]
 ) => {
-    const sender = findSender(addresses, message.data);
-    // message.plainText is linkify and it will interfer with the next step
-    // so we get back to the original content
-    const content = message.decryptedBody;
-
-    return textToHtml(content, sender?.Signature || '', mailSettings);
+    const sender = findSender(addresses, message);
+    return textToHtml(plainTextContent, sender?.Signature || '', mailSettings);
 };

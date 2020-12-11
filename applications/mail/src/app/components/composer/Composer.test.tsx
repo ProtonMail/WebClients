@@ -5,6 +5,7 @@ import React from 'react';
 import { act, fireEvent } from '@testing-library/react';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { useEventManager } from 'react-components';
+import squire from 'squire-rte';
 import {
     clearAll,
     render,
@@ -34,6 +35,8 @@ import { mergeMessages } from '../../helpers/message/messages';
 import { addApiContact } from '../../helpers/test/contact';
 import { arrayToBase64 } from '../../helpers/base64';
 import { createEmbeddedMap } from '../../helpers/embedded/embeddeds';
+
+const setHTML = squire().setHTML as jest.Mock;
 
 jest.setTimeout(20000);
 
@@ -610,6 +613,71 @@ describe('Composer', () => {
             // It's not "wrong", it works with OpenPGP and API accept it
             // But other clients (Android, iOS, Bridge) don't support it so it's critical to use only one key
             expect(decryptResult.signatures.length).toBe(1);
+        });
+    });
+
+    describe('switch plaintext <-> html', () => {
+        it('should switch from plaintext to html content without loosing content', async () => {
+            const content = 'content';
+
+            const message = {
+                localID: ID,
+                initialized: true,
+                data: {
+                    ID,
+                    MIMEType: 'text/plain' as MIME_TYPES,
+                    Subject: '',
+                    ToList: [] as Recipient[],
+                },
+                plainText: content,
+            } as MessageExtended;
+            messageCache.set(ID, message);
+
+            const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
+
+            const moreDropdown = await findByTestId('squire-more');
+            fireEvent.click(moreDropdown);
+
+            const toHtmlButton = await findByTestId('squire-to-html');
+            fireEvent.click(toHtmlButton);
+
+            await waitForSpyCall(setHTML);
+
+            findByTestId('squire-iframe');
+
+            expect(setHTML).toHaveBeenCalledWith(`<p>${content}</p>\n`);
+        });
+
+        it('should switch from html to plaintext content without loosing content', async () => {
+            const content = `
+              <div>content line 1<br><div>
+              <div>content line 2<br><div>
+            `;
+
+            const message = {
+                localID: ID,
+                initialized: true,
+                data: {
+                    ID,
+                    MIMEType: 'text/html' as MIME_TYPES,
+                    Subject: '',
+                    ToList: [] as Recipient[],
+                },
+                document: createDocument(content),
+            } as MessageExtended;
+            messageCache.set(ID, message);
+
+            const { findByTestId } = await render(<Composer {...props} messageID={ID} />);
+
+            const moreDropdown = await findByTestId('squire-more');
+            fireEvent.click(moreDropdown);
+
+            const toHtmlButton = await findByTestId('squire-to-plaintext');
+            fireEvent.click(toHtmlButton);
+
+            const textarea = (await findByTestId('squire-textarea')) as HTMLTextAreaElement;
+
+            expect(textarea.value).toBe('content line 1\n\ncontent line 2');
         });
     });
 });

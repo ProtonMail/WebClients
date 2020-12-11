@@ -90,7 +90,7 @@ const ComposerContent = ({
             onDragEnter={handleHover(true)}
             onDragOver={(event) => event.preventDefault()}
         >
-            <div className="flex-item-fluid w100 flex flex-column flex-nowrap relative">
+            <div className="flex-item-fluid w100 flex flex-column flex-nowrap relative" data-testid="composer-content">
                 <SquireEditorWrapper
                     message={message}
                     disabled={disabled}
