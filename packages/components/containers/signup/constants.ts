@@ -132,4 +132,6 @@ export const DEFAULT_CHECK_RESULT = {
     Gift: 0,
     CouponDiscount: 0,
     Coupon: null,
+    Additions: null,
+    PeriodEnd: 0,
 };
