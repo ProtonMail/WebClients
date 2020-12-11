@@ -27,7 +27,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
     const icon = messageViewIcons.globalIcon;
 
     const [customFolders = []] = useFolders();
-    const folders = getCurrentFolders(message.data, customFolders, mailSettings);
+    const folders = getCurrentFolders(message.data, labelID, customFolders, mailSettings);
     const locationText = folders.map((folder) => folder.name).join(', ');
 
     const sizeText = humanSize(getSize(message.data || {}));
@@ -76,12 +76,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             <div className="mb0-5 flex flex-nowrap">
                 <span className="container-to flex">
                     <span className="mauto flex">
-                        <ItemLocation
-                            message={message.data}
-                            mailSettings={mailSettings}
-                            shouldStack
-                            showTooltip={false}
-                        />
+                        <ItemLocation element={message.data} labelID={labelID} shouldStack showTooltip={false} />
                     </span>
                 </span>
                 <span className="flex-self-vcenter mr0-5 ellipsis" title={locationText}>

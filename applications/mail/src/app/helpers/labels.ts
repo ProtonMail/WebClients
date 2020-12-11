@@ -8,6 +8,8 @@ import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { LABEL_IDS_TO_HUMAN, LABEL_IDS_TO_I18N } from '../constants';
 import { Conversation } from '../models/conversation';
+import { getLabelIDs } from './elements';
+import { Element } from '../models/element';
 
 const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, OUTBOX } = MAILBOX_LABEL_IDS;
 
@@ -107,12 +109,13 @@ export const getStandardFolders = (): FolderMap => ({
 });
 
 export const getCurrentFolders = (
-    message: Message | undefined,
+    element: Element | undefined,
+    labelID: string,
     customFoldersList: Folder[],
-    mailSettings: MailSettings
+    mailSettings: MailSettings | undefined
 ): FolderInfo[] => {
-    const { ShowMoved } = mailSettings;
-    const labelIDs = message?.LabelIDs || [];
+    const { ShowMoved = SHOW_MOVED.NONE } = mailSettings || {};
+    const labelIDs = Object.keys(getLabelIDs(element, labelID));
     const standardFolders = getStandardFolders();
     const customFolders = toMap(customFoldersList, 'ID');
 

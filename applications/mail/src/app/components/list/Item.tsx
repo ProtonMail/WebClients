@@ -149,7 +149,6 @@ const Item = ({
                 labelID={labelID}
                 labels={labels}
                 element={element}
-                mailSettings={mailSettings}
                 conversationMode={conversationMode}
                 showIcon={showIcon}
                 senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}

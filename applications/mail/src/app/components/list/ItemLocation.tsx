@@ -1,28 +1,28 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React from 'react';
-import { Icon, useFolders, Tooltip } from 'react-components';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { Icon, useFolders, Tooltip, useMailSettings } from 'react-components';
 
 import { getCurrentFolders } from '../../helpers/labels';
+import { Element } from '../../models/element';
 
 interface Props {
-    message?: Message;
-    mailSettings: MailSettings;
+    element: Element | undefined;
+    labelID: string;
     shouldStack?: boolean;
     showTooltip?: boolean;
 }
 
-const ItemLocation = ({ message, mailSettings, shouldStack = false, showTooltip = true }: Props) => {
+const ItemLocation = ({ element, labelID, shouldStack = false, showTooltip = true }: Props) => {
+    const [mailSettings] = useMailSettings();
     const [customFolders = []] = useFolders();
-    let infos = getCurrentFolders(message, customFolders, mailSettings);
+    let infos = getCurrentFolders(element, labelID, customFolders, mailSettings);
 
     if (infos.length > 1 && shouldStack) {
         infos = [
             {
                 to: infos.map((info) => info.to).join(','),
                 name: infos.map((info) => info.name).join(', '),
-                icon: 'parent-folder'
-            }
+                icon: 'parent-folder',
+            },
         ];
     }
 

@@ -1,4 +1,3 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React from 'react';
 import { c } from 'ttag';
 import { classnames } from 'react-components';
@@ -19,7 +18,6 @@ interface Props {
     labelID: string;
     labels?: Label[];
     element: Element;
-    mailSettings: any;
     conversationMode: boolean;
     showIcon: boolean;
     senders: string;
@@ -33,7 +31,6 @@ const ItemRowLayout = ({
     labelID,
     labels,
     element,
-    mailSettings = {},
     conversationMode,
     showIcon,
     senders,
@@ -61,7 +58,7 @@ const ItemRowLayout = ({
             <div className="item-subject flex-item-fluid flex flex-items-center flex-nowrap mauto">
                 {showIcon && (
                     <span className="mr0-25 inline-flex flex-item-noshrink">
-                        <ItemLocation message={element as Message} mailSettings={mailSettings} />
+                        <ItemLocation element={element} labelID={labelID} />
                     </span>
                 )}
                 {conversationMode && (
