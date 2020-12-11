@@ -30,10 +30,10 @@ export default function archiveSignatures({ check, sourceBuffer }: ReturnType<ty
             const uncompressedSize = sourceBuffer.readUInt32LE(offset + 22);
             const filenameLength = sourceBuffer.readUInt16LE(offset + 26);
             const extraFieldLength = sourceBuffer.readUInt16LE(offset + 28);
-
             offset += 30;
+
             const filename = sourceBuffer.slice(offset, offset + filenameLength).toString('utf-8');
-            offset += extraFieldLength;
+            offset += extraFieldLength + filenameLength;
 
             if (filename.endsWith('.rels') || filename.endsWith('.xml')) {
                 const type = filename.split('/')[0];
