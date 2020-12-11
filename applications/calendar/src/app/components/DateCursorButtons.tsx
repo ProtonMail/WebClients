@@ -55,7 +55,7 @@ const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, 
                 title={todayTitle}
                 onClick={onToday}
             >
-                <Icon name="target" className="flex-item-noshrink mtauto mbauto toolbar-icon" />
+                <Icon name="calendar-today" className="flex-item-noshrink mtauto mbauto toolbar-icon" />
                 <span className="ml0-5 mtauto mbauto nomobile">{c('Action').t`Today`}</span>
             </button>
             <span className="toolbar-separator flex-item-noshrink" />
