@@ -14,9 +14,9 @@ import TransferManager from '../components/TransferManager/TransferManager';
 import FileBrowerLayoutProvider from '../components/FileBrowser/FileBrowserLayoutProvider';
 import DriveErrorBoundary from '../components/DriveErrorBoundary';
 import useDrive from '../hooks/drive/useDrive';
-import { InitStatusCodes } from '../interfaces/volume';
 import NoAccessContainer from './NoAccessContainer/NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
+import { RESPONSE_CODE } from '../constants';
 
 enum ERROR_TYPES {
     STANDARD,
@@ -33,7 +33,7 @@ const InitContainer = () => {
     useEffect(() => {
         const initPromise = initDrive().catch((error) => {
             if (
-                error?.data?.Code === InitStatusCodes.NoAccess ||
+                error?.data?.Code === RESPONSE_CODE.NOT_ALLOWED ||
                 error?.data?.Details?.MissingScopes?.includes('drive')
             ) {
                 return setErrorType(ERROR_TYPES.NO_ACCESS);

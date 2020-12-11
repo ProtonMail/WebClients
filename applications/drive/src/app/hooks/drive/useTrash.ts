@@ -3,8 +3,8 @@ import { chunk } from 'proton-shared/lib/helpers/array';
 import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteTrashedLinks } from '../../api/link';
 import { LinkMeta, FolderLinkMeta } from '../../interfaces/link';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import { FOLDER_PAGE_SIZE, BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '../../constants';
-import { RestoreFromTrashResult, RESTORE_STATUS_CODE, RestoreResponse } from '../../interfaces/restore';
+import { FOLDER_PAGE_SIZE, BATCH_REQUEST_SIZE, RESPONSE_CODE, MAX_THREADS_PER_REQUEST } from '../../constants';
+import { RestoreFromTrashResult, RestoreResponse } from '../../interfaces/restore';
 import { queryTrashList } from '../../api/share';
 import runInQueue from '../../utils/runInQueue';
 import useDrive from './useDrive';
@@ -99,7 +99,7 @@ function useTrash() {
                         return results;
                     }
 
-                    if (Response.Code === RESTORE_STATUS_CODE.ALREADY_EXISTS) {
+                    if (Response.Code === RESPONSE_CODE.ALREADY_EXISTS) {
                         results.alreadyExisting.push(linkIds[index]);
                     } else {
                         results.otherErrors.push(Response.Error);
