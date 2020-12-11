@@ -13,9 +13,8 @@ function blackFridayModel(dispatchers, subscriptionModel, paymentModel, PaymentC
     };
 
     const getCloseState = async () => {
-        const { Feature: feature } = await Feature.get(FEATURE_ID);
+        const { Feature: feature } = await Feature.get(FEATURE_ID, { noNotify: true });
         const { Value, DefaultValue } = feature;
-
         return typeof Value === 'undefined' ? DefaultValue : Value;
     };
 
