@@ -18,6 +18,7 @@ import {
 } from '../helpers/test/helper';
 import { ConversationLabel, Conversation } from '../models/conversation';
 import { Event } from '../models/event';
+import { PAGE_SIZE } from '../constants';
 
 interface SetupArgs {
     elements?: Element[];
@@ -62,6 +63,7 @@ describe('useElements', () => {
         filter = defaultFilter,
         search = defaultSearch,
     }: SetupArgs = {}) => {
+        const pageFromUrl = page.page;
         const counts = { LabelID: inputLabelID, Total: page.total };
         addToCache('ConversationCounts', conversationMode ? [counts] : []);
         addToCache('MessageCounts', conversationMode ? [] : [counts]);
@@ -69,11 +71,11 @@ describe('useElements', () => {
 
         if (renderHookResult === null) {
             renderHookResult = renderHook((props: any = {}) =>
-                useElements({ conversationMode, labelID: inputLabelID, page, sort, filter, search, ...props })
+                useElements({ conversationMode, labelID: inputLabelID, pageFromUrl, sort, filter, search, ...props })
             );
             await renderHookResult.waitForNextUpdate();
         } else {
-            renderHookResult.rerender({ conversationMode, labelID: inputLabelID, page, sort, filter });
+            renderHookResult.rerender({ conversationMode, labelID: inputLabelID, pageFromUrl, sort, filter });
         }
 
         return renderHookResult;
@@ -106,13 +108,13 @@ describe('useElements', () => {
         });
 
         it('should limit to the page size', async () => {
-            const page: Page = { page: 0, size: 5, limit: 5, total: 15 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: PAGE_SIZE + 5 };
             const hook = await setup({ elements: getElements(page.total), page });
             expect(hook.result.current.elements.length).toBe(page.size);
         });
 
         it('should returns the current page', async () => {
-            const page1: Page = { page: 0, size: 5, limit: 5, total: 7 };
+            const page1: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: PAGE_SIZE + 2 };
             const page2: Page = { ...page1, page: 1 };
             const allElements = getElements(page1.total);
 
@@ -140,7 +142,7 @@ describe('useElements', () => {
 
     describe('request effect', () => {
         it('should send request for conversations current page', async () => {
-            const page: Page = { page: 0, size: 5, limit: 5, total: 8 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: PAGE_SIZE + 3 };
             const expectedRequest = {
                 ...queryConversations({
                     LabelID: labelID,
@@ -168,7 +170,7 @@ describe('useElements', () => {
         it('should add to the cache a message which is not existing yet', async () => {
             // Usefull to receive incoming mail or draft without having to reload the list
 
-            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: 3 };
             const hook = await setup({ elements: getElements(page.total), page });
 
             const element = { ID: 'id3', Labels: [{ ID: labelID }], LabelIDs: [labelID] };
@@ -185,7 +187,7 @@ describe('useElements', () => {
             // When a search is active, all the cache will be shown, we can't accept any updated message
             // But we will refresh the request each time
 
-            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: 3 };
             const search = { keyword: 'test' } as SearchParameters;
             const hook = await setup({ elements: getElements(page.total), page, search });
 
@@ -200,7 +202,7 @@ describe('useElements', () => {
         });
 
         it('should not reload the list on an update event if a filter is active', async () => {
-            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: 3 };
             const filter = { Unread: 1 } as Filter;
             const elements = getElements(page.total, labelID, { NumUnread: 1 });
 
@@ -215,7 +217,7 @@ describe('useElements', () => {
         });
 
         it('should not reload the list on an update event if has list from start', async () => {
-            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: 3 };
             const hook = await setup({ elements: getElements(page.total), page });
 
             const ID = 'id0';
@@ -227,19 +229,19 @@ describe('useElements', () => {
         });
 
         it('should reload the list on an update event if has not list from start', async () => {
-            const page: Page = { page: 2, size: 5, limit: 5, total: 32 };
+            const page: Page = { page: 2, size: PAGE_SIZE, limit: PAGE_SIZE, total: PAGE_SIZE * 6 + 2 };
             const hook = await setup({ elements: getElements(page.size), page });
 
             const ID = 'id0';
             await sendEvent({
                 Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }],
             });
-            expect(hook.result.current.elements.length).toBe(5);
+            expect(hook.result.current.elements.length).toBe(PAGE_SIZE);
             expect(api.mock.calls.length).toBe(2);
         });
 
         it('should reload the list on an delete event if a search is active', async () => {
-            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: 3 };
             const search = { keyword: 'test' } as SearchParameters;
             const hook = await setup({ elements: getElements(page.total), page, search });
 
@@ -254,7 +256,7 @@ describe('useElements', () => {
         it('should reload the list on count event and expected length not matched', async () => {
             // The updated counter should trigger a check on the expected length
 
-            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: 3 };
             const elements = getElements(page.total);
             await setup({ elements, page });
 
@@ -268,7 +270,7 @@ describe('useElements', () => {
         it('should not reload the list on count event when a search is active', async () => {
             // If a search is active, the expected length computation has no meaning
 
-            const page: Page = { page: 0, size: 5, limit: 5, total: 3 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: 3 };
             const search = { keyword: 'test' } as SearchParameters;
             const elements = getElements(page.total);
             await setup({ elements, page, search });
@@ -289,7 +291,7 @@ describe('useElements', () => {
                 return element;
             };
 
-            const page: Page = { page: 0, size: 5, limit: 5, total: 5 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: PAGE_SIZE };
             const elements = getElements(page.total);
             elements.forEach((element, i) => setTime(element, i + 10));
             await setup({ elements, page });
@@ -307,7 +309,7 @@ describe('useElements', () => {
             addApiMock('mail/v4/conversations/count', () => ({}));
             const resolve = addApiResolver('mail/v4/conversations');
 
-            const page: Page = { page: 0, size: 5, limit: 5, total: 5 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: PAGE_SIZE };
             const search = { keyword: 'test' } as SearchParameters;
             const elements = getElements(page.total);
 
@@ -315,7 +317,7 @@ describe('useElements', () => {
                 useElements({
                     conversationMode: true,
                     labelID,
-                    page,
+                    pageFromUrl: page.page,
                     sort: defaultSort,
                     filter: defaultFilter,
                     search,
@@ -340,7 +342,7 @@ describe('useElements', () => {
 
             // Event triggered a reload, load is pending but it's hidded to the user
             expect(hook.result.current.loading).toBe(false);
-            expect(hook.result.current.elements.length).toBe(5);
+            expect(hook.result.current.elements.length).toBe(PAGE_SIZE);
 
             await act(async () => {
                 resolve({ Total: page.total, Conversations: elements });
@@ -356,7 +358,7 @@ describe('useElements', () => {
             addApiMock('mail/v4/conversations/count', () => ({}));
             const resolve = addApiResolver('mail/v4/conversations');
 
-            const page: Page = { page: 0, size: 5, limit: 5, total: 5 };
+            const page: Page = { page: 0, size: PAGE_SIZE, limit: PAGE_SIZE, total: PAGE_SIZE };
             const search = { keyword: 'test' } as SearchParameters;
             const elements = getElements(page.total);
 
@@ -364,7 +366,7 @@ describe('useElements', () => {
                 useElements({
                     conversationMode: true,
                     labelID,
-                    page,
+                    pageFromUrl: page.page,
                     sort: defaultSort,
                     filter: defaultFilter,
                     search,

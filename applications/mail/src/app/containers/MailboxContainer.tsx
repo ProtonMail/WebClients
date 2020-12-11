@@ -78,7 +78,6 @@ const MailboxContainer = ({
     });
 
     const searchParams = getSearchParams(location.search);
-    const conversationMode = isConversationMode(inputLabelID, mailSettings, location);
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [
         searchParams.address,
@@ -97,9 +96,9 @@ const MailboxContainer = ({
     const [checkedElements, setCheckedElements] = useState<{ [ID: string]: boolean }>({});
     useNewEmailNotification(history);
     const { labelID, elements, loading, expectedLength, total } = useElements({
-        conversationMode,
+        conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
-        page,
+        pageFromUrl: pageFromUrl(location),
         sort,
         filter,
         search: searchParameters,
@@ -192,6 +191,7 @@ const MailboxContainer = ({
 
     const handleUncheckAll = () => handleCheck([], true, true);
 
+    const conversationMode = isConversationMode(labelID, mailSettings, location);
     const showToolbar = !breakpoints.isNarrow || !elementID;
     const showList = columnMode || !elementID;
     const showContentPanel = (columnMode && !!expectedLength) || !!elementID;

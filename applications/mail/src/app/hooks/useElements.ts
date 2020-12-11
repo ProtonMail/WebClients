@@ -18,7 +18,7 @@ import {
     isUnread,
 } from '../helpers/elements';
 import { Element } from '../models/element';
-import { Page, Filter, Sort, SearchParameters } from '../models/tools';
+import { Filter, Sort, SearchParameters } from '../models/tools';
 import { expectedPageLength } from '../helpers/paging';
 import {
     ElementEvent,
@@ -30,11 +30,12 @@ import {
 } from '../models/event';
 import { useExpirationCheck } from './useExpiration';
 import { ElementsCache, ElementsCacheParams, useElementsCache, useSetElementsCache } from './useElementsCache';
+import { PAGE_SIZE } from '../constants';
 
 interface Options {
     conversationMode: boolean;
     labelID: string;
-    page: Page;
+    pageFromUrl: number;
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
@@ -53,7 +54,12 @@ interface UseElements {
     (options: Options): ReturnValue;
 }
 
-const emptyCache = (page: Page, labelID: string, counts: LabelCount[], params: ElementsCacheParams): ElementsCache => {
+const emptyCache = (
+    pageFromUrl: number,
+    labelID: string,
+    counts: LabelCount[],
+    params: ElementsCacheParams
+): ElementsCache => {
     const total = counts.find((count) => count.LabelID === labelID)?.Total || 0;
 
     return {
@@ -61,14 +67,14 @@ const emptyCache = (page: Page, labelID: string, counts: LabelCount[], params: E
         invalidated: false,
         pendingRequest: false,
         params,
-        page: { ...page, total },
+        page: { page: pageFromUrl, total, size: PAGE_SIZE, limit: PAGE_SIZE },
         elements: {},
         pages: [],
         updatedElements: [],
     };
 };
 
-export const useElements: UseElements = ({ conversationMode, labelID, search, page, sort, filter }) => {
+export const useElements: UseElements = ({ conversationMode, labelID, search, pageFromUrl, sort, filter }) => {
     const api = useApi();
     const abortControllerRef = useRef<AbortController>();
 
@@ -77,7 +83,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const counts = conversationMode ? conversationCounts : messageCounts;
 
     const cache = useElementsCache(
-        emptyCache(page, labelID, counts, {
+        emptyCache(pageFromUrl, labelID, counts, {
             labelID,
             sort,
             filter,
@@ -150,19 +156,19 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         search.attachments !== cache.params.attachments ||
         search.wildcard !== cache.params.wildcard;
 
-    const pageCached = () => cache.pages.includes(page.page);
+    const pageCached = () => cache.pages.includes(pageFromUrl);
 
-    const pageChanged = () => cache.page.page !== page.page;
+    const pageChanged = () => cache.page.page !== pageFromUrl;
 
     const pageIsConsecutive = () =>
         cache.pages.length === 0 ||
-        cache.pages.some((p) => p === page.page || p === page.page - 1 || p === page.page + 1);
+        cache.pages.some((p) => p === pageFromUrl || p === pageFromUrl - 1 || p === pageFromUrl + 1);
 
     const hasListFromTheStart = () => cache.pages.includes(0);
 
     const lastHasBeenUpdated = () =>
-        elements.length === page.size &&
-        page.page === Math.max.apply(null, cache.pages) &&
+        elements.length === PAGE_SIZE &&
+        pageFromUrl === Math.max.apply(null, cache.pages) &&
         cache.updatedElements.includes(elements[elements.length - 1].ID || '');
 
     // Live cache means we listen to events from event manager without refreshing the list every time
@@ -179,7 +185,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const updatePage = () => {
         setCache({
             ...cache,
-            page: { ...cache.page, page: page.page },
+            page: { ...cache.page, page: pageFromUrl },
         });
     };
 
@@ -195,9 +201,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         const query = conversationMode ? queryConversations : queryMessageMetadata;
         const result: any = await api({
             ...query({
-                Page: page.page,
-                PageSize: page.size,
-                Limit: page.limit,
+                Page: pageFromUrl,
+                PageSize: PAGE_SIZE,
+                Limit: PAGE_SIZE,
                 LabelID: labelID,
                 Sort: sort.sort,
                 Desc: sort.desc ? 1 : 0,
@@ -226,7 +232,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const resetCache = () =>
         setCache(
-            emptyCache(page, labelID, counts, {
+            emptyCache(pageFromUrl, labelID, counts, {
                 labelID,
                 sort,
                 filter,
@@ -248,10 +254,10 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     params: cache.params,
                     page: {
                         ...cache.page,
-                        page: page.page,
+                        page: pageFromUrl,
                         total: Total,
                     },
-                    pages: [...cache.pages, page.page],
+                    pages: [...cache.pages, pageFromUrl],
                     elements: {
                         ...cache.elements,
                         ...elementsMap,
@@ -277,7 +283,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         }
     }, [
         labelID,
-        page,
+        pageFromUrl,
         sort,
         filter,
         search.address,
