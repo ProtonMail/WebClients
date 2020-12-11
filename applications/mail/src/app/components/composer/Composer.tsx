@@ -82,7 +82,7 @@ const Composer = ({
     const { createNotification } = useNotifications();
 
     const bodyRef = useRef<HTMLDivElement>(null);
-    const [hasVertialScroll] = useHasScroll(bodyRef);
+    const [hasVerticalScroll] = useHasScroll(bodyRef);
 
     // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
@@ -420,6 +420,7 @@ const Composer = ({
                 'composer flex flex-column',
                 !focus && 'composer--is-blur',
                 minimized && 'composer--is-minimized',
+                maximized && 'composer--is-maximized',
             ])}
             style={style}
             onFocus={onFocus}
@@ -491,7 +492,7 @@ const Composer = ({
                         />
                     </div>
                     <ComposerActions
-                        className={hasVertialScroll ? 'composer-actions--has-scroll' : undefined}
+                        className={hasVerticalScroll ? 'composer-actions--has-scroll' : undefined}
                         message={modelMessage}
                         date={getDate(syncedMessage.data, '')}
                         lock={lock}
