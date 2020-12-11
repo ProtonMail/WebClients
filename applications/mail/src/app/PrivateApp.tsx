@@ -32,6 +32,7 @@ const getAppContainer = () => import('./MainContainer');
 const PrivateApp = ({ onLogout, locales }: Props) => {
     return (
         <StandardPrivateApp
+            noModals
             fallback={false}
             openpgpConfig={{}}
             onLogout={onLogout}
