@@ -680,6 +680,31 @@ $conversation-icon-size: 3.2rem !default;
 	font-size: 1.4rem;
 }
 
+.message-attachmentPrimaryAction,
+.message-attachmentSecondaryAction {
+	&:hover,
+	&:focus-within {
+		box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+	}
+}
+.isDarkMode {
+	.message-attachmentPrimaryAction,
+	.message-attachmentSecondaryAction {
+		background-color: $pm-global-grey;
+		&:hover,
+		&:focus-within {
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+	}
+}
+
+
+.message-attachmentSecondaryAction {
+	svg[aria-busy="true"] {
+		background-size: 16px;
+	}
+}
+
 .message-attachment {
 	line-height: 1.3;
 	padding: 0;
@@ -690,6 +715,53 @@ $conversation-icon-size: 3.2rem !default;
 		text-decoration: none;
 	}
 }
+
+.message-attachmentList-item-container {
+    margin-top: .5em;
+	width: 50%;
+
+    &:first-child,
+    &:nth-child(2) {
+        margin-top: 0;
+    }
+    &:nth-child(even) {
+        padding-left: 0.5em;
+    }
+    &:nth-child(odd) {
+        padding-right: 0.5em;
+    }
+    // fix on last only if there are more than 4
+    &:nth-child(n + 5):last-child {
+        padding-bottom: 0.5em;
+    }
+
+	@include respond-to($breakpoint-tiny) {
+		width: 100%;
+		&:nth-child(even),
+		&:nth-child(odd) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		&:nth-child(2) {
+			margin-top: .5em;
+		}
+	}
+
+}
+
+
+.message-attachmentList-item {
+	&--uploadInProgress {
+		background-color: var(--bordercolor-input, $pm-global-muted);
+		.message-attachmentSecondaryAction {
+			border: 0;
+		}
+	}
+	&--loading {
+		background: var(--bordercolor-input, $pm-global-muted);
+	}
+}
+
 
 $message-attachment-icon-width: 2.6em !default;
 .message-attachmentIcon {
