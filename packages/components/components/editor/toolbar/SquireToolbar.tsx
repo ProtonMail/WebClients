@@ -60,7 +60,14 @@ const SquireToolbar = ({
         handleCursor();
     };
 
-    useEffect(() => listenToCursor(squireRef.current, handleCursorDebounced), [editorReady]);
+    useEffect(() => {
+        const removeListener = listenToCursor(squireRef.current, handleCursorDebounced);
+
+        return () => {
+            handleCursorDebounced.abort?.();
+            removeListener?.();
+        };
+    }, [editorReady]);
 
     const handleBold = useCallback(
         forceRefresh(() => toggleBold(squireRef.current)),
