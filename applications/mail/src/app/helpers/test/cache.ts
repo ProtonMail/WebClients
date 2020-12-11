@@ -26,6 +26,16 @@ export const conversationCache = createCache<string, ConversationResult>();
 export const attachmentsCache = createCache<string, DecryptResultPmcrypto>();
 export const addressKeysCache = createCache<string, { status: number; value: Partial<CachedKey>[] }>();
 
+export const elementsCache = { elements: {}, params: { sort: {} }, pages: [], page: {}, updatedElements: [] };
+export const contactCache = {
+    contactsMap: {} as { [email: string]: any },
+    contactsMapWithDuplicates: {} as { [email: string]: any[] },
+    contactGroupsMap: {} as { [path: string]: any },
+    groupsWithContactsMap: {} as { [groupID: string]: any },
+    recipientsLabelCache: new Map<string, string>(),
+    groupsLabelCache: new Map<string, string>(),
+};
+
 export const resolvedRequest = <T>(value: T): ResolvedRequest<T> => ({ status: STATUS.RESOLVED, value });
 
 export const addToCache = (key: string, value: any) => {
@@ -41,7 +51,7 @@ export const minimalCache = () => {
     addToCache('ContactEmails', []);
     addToCache('Labels', []);
     cache.set('ADDRESS_KEYS', addressKeysCache);
-    cache.set(ELEMENTS_CACHE_KEY, { elements: {}, params: { sort: {} }, pages: [], page: {}, updatedElements: [] });
+    cache.set(ELEMENTS_CACHE_KEY, elementsCache);
 };
 
 export const addAddressToCache = (inputAddress: Partial<Address>) => {

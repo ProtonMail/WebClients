@@ -2,20 +2,18 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getRecipients } from 'proton-shared/lib/mail/messages';
 import React from 'react';
 import { c } from 'ttag';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
-import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 
 interface Props {
     message?: Message;
-    contacts: ContactEmail[];
-    contactGroups: ContactGroup[];
     isLoading?: boolean;
 }
 
-const RecipientsSimple = ({ message, contacts, contactGroups, isLoading }: Props) => {
+const RecipientsSimple = ({ message, isLoading }: Props) => {
+    const { getRecipientsOrGroups, getRecipientOrGroupLabel } = useRecipientLabel();
     const recipients = getRecipients(message);
-    const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
+    const recipientsOrGroup = getRecipientsOrGroups(recipients);
 
     return (
         <div className="flex flex-nowrap is-appearing-content">
@@ -25,7 +23,7 @@ const RecipientsSimple = ({ message, contacts, contactGroups, isLoading }: Props
                     <>
                         {recipients.length
                             ? recipientsOrGroup.map((recipientOrGroup, index) => {
-                                  const label = getRecipientOrGroupLabel(recipientOrGroup, contacts);
+                                  const label = getRecipientOrGroupLabel(recipientOrGroup);
 
                                   return (
                                       <span

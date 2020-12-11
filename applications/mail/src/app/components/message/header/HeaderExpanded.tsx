@@ -6,15 +6,12 @@ import {
     Icon,
     Group,
     useToggle,
-    useContactEmails,
-    useContactGroups,
     useFolders,
     ButtonGroup as OriginalButtonGroup,
     Tooltip,
     useAddresses,
 } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isInternal } from 'proton-shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
@@ -97,8 +94,6 @@ const HeaderExpanded = ({
     breakpoints,
 }: Props) => {
     const [addresses = []] = useAddresses();
-    const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
-    const [contactGroups = []] = useContactGroups();
     const [folders = []] = useFolders();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const selectedIDs = [message.data?.ID || ''];
@@ -132,7 +127,6 @@ const HeaderExpanded = ({
     const from = (
         <RecipientItem
             recipientOrGroup={{ recipient: message.data?.Sender }}
-            contacts={contacts}
             onCompose={onCompose}
             isLoading={!messageLoaded}
             signingPublicKey={showPinPublicKey ? message.signingPublicKey : undefined}
@@ -217,18 +211,11 @@ const HeaderExpanded = ({
                         <RecipientsDetails
                             message={message}
                             mapStatusIcons={messageViewIcons.mapStatusIcon}
-                            contacts={contacts}
-                            contactGroups={contactGroups}
                             onCompose={onCompose}
                             isLoading={!messageLoaded}
                         />
                     ) : (
-                        <RecipientsSimple
-                            message={message.data}
-                            contacts={contacts}
-                            contactGroups={contactGroups}
-                            isLoading={!messageLoaded}
-                        />
+                        <RecipientsSimple message={message.data} isLoading={!messageLoaded} />
                     )}
                     <span
                         className={classnames([

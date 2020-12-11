@@ -1,9 +1,8 @@
-import { range } from 'proton-shared/lib/helpers/array';
 import { Address } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { findSender, recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from './addresses';
+import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { findSender, getRecipientGroupLabel, getRecipientLabel, recipientsToRecipientOrGroup } from './addresses';
 
 const recipient1: Recipient = { Address: 'address1' };
 const recipient2: Recipient = { Name: 'recipient2', Address: 'address2' };
@@ -11,6 +10,7 @@ const recipient3: Recipient = { Name: 'recipient3', Address: 'address3', Group: 
 const recipient4: Recipient = { Name: 'recipient4', Address: 'address4', Group: 'Group1' };
 const recipient5: Recipient = { Name: 'recipient5', Address: 'address5', Group: 'Group2' };
 const group1 = { ID: 'GroupID1', Name: 'GroupName1', Path: 'Group1' } as ContactGroup;
+const groupMap = { [group1.Path]: group1 };
 
 describe('addresses', () => {
     describe('findSender', () => {
@@ -65,47 +65,44 @@ describe('addresses', () => {
 
     describe('recipientsToRecipientOrGroup', () => {
         it('should return recipients if no group', () => {
-            const result = recipientsToRecipientOrGroup([recipient1, recipient2], []);
+            const result = recipientsToRecipientOrGroup([recipient1, recipient2], {});
             expect(result).toEqual([{ recipient: recipient1 }, { recipient: recipient2 }]);
         });
 
         it('should merge recipients from a group', () => {
-            const result = recipientsToRecipientOrGroup([recipient3, recipient4], [group1]);
+            const result = recipientsToRecipientOrGroup([recipient3, recipient4], groupMap);
             expect(result).toEqual([{ group: { group: group1, recipients: [recipient3, recipient4] } }]);
         });
 
         it('should split recipients from group and those not', () => {
-            const result = recipientsToRecipientOrGroup([recipient2, recipient3], [group1]);
+            const result = recipientsToRecipientOrGroup([recipient2, recipient3], groupMap);
             expect(result).toEqual([{ recipient: recipient2 }, { group: { group: group1, recipients: [recipient3] } }]);
         });
 
         it('should give up group from recipient if not in group list', () => {
-            const result = recipientsToRecipientOrGroup([recipient5], [group1]);
+            const result = recipientsToRecipientOrGroup([recipient5], groupMap);
             expect(result).toEqual([{ recipient: recipient5 }]);
         });
     });
 
     describe('getRecipientOrGroupLabel', () => {
         it('should return recipient address if it has no name', () => {
-            const result = getRecipientOrGroupLabel({ recipient: recipient1 }, []);
+            const result = getRecipientLabel(recipient1, {});
             expect(result).toEqual('address1');
         });
 
         it('should return recipient name if it exists', () => {
-            const result = getRecipientOrGroupLabel({ recipient: recipient2 }, []);
+            const result = getRecipientLabel(recipient2, {});
             expect(result).toEqual('recipient2');
         });
 
         it('should return group label', () => {
-            const result = getRecipientOrGroupLabel({ group: { group: group1, recipients: [] } }, []);
+            const result = getRecipientGroupLabel({ group: group1, recipients: [] }, 0);
             expect(result).toEqual('GroupName1 (0/0 Members)');
         });
 
         it('should compute group size with contact list', () => {
-            const result = getRecipientOrGroupLabel(
-                { group: { group: group1, recipients: [recipient3, recipient4] } },
-                range(0, 8).map(() => ({ LabelIDs: [group1.ID] })) as ContactEmail[]
-            );
+            const result = getRecipientGroupLabel({ group: group1, recipients: [recipient3, recipient4] }, 8);
             expect(result).toEqual('GroupName1 (2/8 Members)');
         });
     });

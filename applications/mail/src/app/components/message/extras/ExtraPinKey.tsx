@@ -1,7 +1,7 @@
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
 import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
-import { ContactEmail, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
+import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { isInternal } from 'proton-shared/lib/mail/messages';
 import React, { useMemo } from 'react';
@@ -13,7 +13,6 @@ import {
     LearnMore,
     useAddresses,
     useApi,
-    useContactEmails,
     useEventManager,
     useLoading,
     useMailSettings,
@@ -21,9 +20,8 @@ import {
     useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
-
+import { useContactCache } from '../../../containers/ContactProvider';
 import { MessageExtended } from '../../../models/message';
-
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
 const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -109,11 +107,11 @@ const ExtraPinKey = ({ message }: Props) => {
     const api = useApi();
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
-    const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
     const [loadingDisablePromptPin, withLoadingDisablePromptPin] = useLoading();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
+    const { contactsMap } = useContactCache();
 
     const senderAddress = message.data?.SenderAddress;
     const name = message.data?.SenderName;
@@ -126,11 +124,9 @@ const ExtraPinKey = ({ message }: Props) => {
         if (!senderAddress) {
             return;
         }
-        const preferredContact = contacts.find(
-            ({ Email }) => normalizeEmail(Email, isSenderInternal) === normalizeEmail(senderAddress, isSenderInternal)
-        );
+        const preferredContact = contactsMap[normalizeEmail(senderAddress, isSenderInternal)];
         return preferredContact?.ContactID;
-    }, [messageContactID, contacts, senderAddress]);
+    }, [messageContactID, contactsMap, senderAddress]);
     const promptKeyPinningType = useMemo<PROMPT_KEY_PINNING_TYPE | undefined>(() => {
         if (!senderAddress) {
             return undefined;
@@ -140,12 +136,7 @@ const ExtraPinKey = ({ message }: Props) => {
     const isPinUnseen = promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
     const firstAttachedPublicKey = message.attachedPublicKeys?.length ? message.attachedPublicKeys[0] : undefined;
     const bePinnedPublicKey = message.signingPublicKey || firstAttachedPublicKey;
-    const loading =
-        loadingContacts ||
-        loadingDisablePromptPin ||
-        !senderAddress ||
-        (isPinUnseen && !contactID) ||
-        !bePinnedPublicKey;
+    const loading = loadingDisablePromptPin || !senderAddress || (isPinUnseen && !contactID) || !bePinnedPublicKey;
     const bannerColorClassName = isPinUnseen ? 'bg-global-attention color-black' : 'bg-white-dm';
 
     if (promptKeyPinningType === undefined) {

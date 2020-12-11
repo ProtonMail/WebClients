@@ -8,12 +8,9 @@ import {
     Tooltip,
     ContactListModal,
     useModals,
-    InlineLinkButton
+    InlineLinkButton,
 } from 'react-components';
-
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-
 import { MessageExtended } from '../../../models/message';
 import { RecipientType } from '../../../models/address';
 import { MessageChange } from '../Composer';
@@ -22,8 +19,6 @@ import AddressesInput from './AddressesInput';
 
 interface Props {
     message: MessageExtended;
-    contacts: ContactEmail[];
-    contactGroups: ContactGroup[];
     messageSendInfo: MessageSendInfo;
     onChange: MessageChange;
     expanded: boolean;
@@ -31,16 +26,7 @@ interface Props {
     inputFocusRef: MutableRefObject<() => void>;
 }
 
-const AddressesEditor = ({
-    message,
-    contacts,
-    contactGroups,
-    messageSendInfo,
-    onChange,
-    expanded,
-    toggleExpanded,
-    inputFocusRef
-}: Props) => {
+const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleExpanded, inputFocusRef }: Props) => {
     const [uid] = useState(generateUID('composer'));
     const { createModal } = useModals();
 
@@ -72,8 +58,6 @@ const AddressesEditor = ({
                     id={`to-${uid}`}
                     recipients={message.data?.ToList}
                     messageSendInfo={messageSendInfo}
-                    contacts={contacts}
-                    contactGroups={contactGroups}
                     onChange={handleChange('ToList')}
                     inputFocusRef={inputFocusRef}
                     placeholder={c('Placeholder').t`Email address`}
@@ -109,8 +93,6 @@ const AddressesEditor = ({
                             recipients={message.data?.CCList}
                             messageSendInfo={messageSendInfo}
                             onChange={handleChange('CCList')}
-                            contacts={contacts}
-                            contactGroups={contactGroups}
                             placeholder={c('Placeholder').t`Email address`}
                             data-test-id="composer:cc"
                         />
@@ -132,8 +114,6 @@ const AddressesEditor = ({
                             recipients={message.data?.BCCList}
                             messageSendInfo={messageSendInfo}
                             onChange={handleChange('BCCList')}
-                            contacts={contacts}
-                            contactGroups={contactGroups}
                             placeholder={c('Placeholder').t`Email address`}
                             data-test-id="composer:bcc"
                         />

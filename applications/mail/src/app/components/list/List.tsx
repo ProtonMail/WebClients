@@ -1,17 +1,8 @@
 import React, { useState, useEffect, ChangeEvent, DragEvent, useRef, useCallback, memo } from 'react';
 import { c, msgid } from 'ttag';
-import {
-    useLabels,
-    useContactEmails,
-    useContactGroups,
-    classnames,
-    useHandler,
-    generateUID,
-    PaginationRow,
-} from 'react-components';
+import { useLabels, classnames, useHandler, generateUID, PaginationRow } from 'react-components';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { DENSITY } from 'proton-shared/lib/constants';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
 import Item from './Item';
 import { Element } from '../../models/element';
@@ -67,8 +58,6 @@ const List = ({
 }: Props) => {
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
-    const [contacts = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
-    const [contactGroups = []] = useContactGroups();
     const [labels] = useLabels();
     const [lastChecked, setLastChecked] = useState<string>(); // Store ID of the last element ID checked
     const [dragElement, setDragElement] = useState<HTMLDivElement>();
@@ -212,8 +201,6 @@ const List = ({
                                 elementID={elementID}
                                 element={element}
                                 checked={checkedIDs.includes(element.ID || '')}
-                                contacts={contacts}
-                                contactGroups={contactGroups}
                                 onCheck={handleCheck}
                                 onClick={onClick}
                                 userSettings={userSettings}

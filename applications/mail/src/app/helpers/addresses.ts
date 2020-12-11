@@ -1,15 +1,20 @@
 import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
-import { addPlusAlias, normalizeInternalEmail, removeEmailAlias } from 'proton-shared/lib/helpers/email';
+import {
+    addPlusAlias,
+    normalizeEmail,
+    normalizeInternalEmail,
+    removeEmailAlias,
+} from 'proton-shared/lib/helpers/email';
 import { Address, Key } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
+import { ContactGroupsMap, ContactsMap } from '../containers/ContactProvider';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
-import { getContactOfRecipient, getContactsOfGroup } from './contacts';
 import { isMessage } from './elements';
 
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
@@ -21,6 +26,14 @@ export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 export const getByEmail = (addresses: Address[], email = '') => {
     const cleanEmail = removeEmailAlias(email);
     return addresses.find(({ Email }) => removeEmailAlias(Email) === cleanEmail);
+};
+
+/**
+ * Return the matching ContactEmail in the map taking care of email normalization
+ */
+export const getContactEmail = (contactsMap: ContactsMap, email: string | undefined) => {
+    const normalizedEmail = normalizeEmail(email || '');
+    return contactsMap[normalizedEmail];
 };
 
 /**
@@ -81,9 +94,9 @@ export const contactToInput = (contact: Partial<ContactEmail> = {}): string =>
 export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: string) =>
     recipients.filter((recipient) => recipient.Group !== groupPath);
 
-export const getRecipientLabelDetailed = (recipient?: Recipient, allContacts?: ContactEmail[]) => {
+export const getRecipientLabelDetailed = (recipient: Recipient, contactsMap: ContactsMap) => {
     const { Name, Address } = recipient || {};
-    const contact = getContactOfRecipient(allContacts, Address);
+    const contact = getContactEmail(contactsMap, Address);
 
     if (contact?.Name?.trim()) {
         return contact.Name;
@@ -94,9 +107,9 @@ export const getRecipientLabelDetailed = (recipient?: Recipient, allContacts?: C
     return Address;
 };
 
-export const getRecipientLabel = (recipient?: Recipient, allContacts?: ContactEmail[]) => {
+export const getRecipientLabel = (recipient: Recipient, contactsMap: ContactsMap) => {
     const { Name, Address } = recipient || {};
-    const contact = getContactOfRecipient(allContacts, Address);
+    const contact = getContactEmail(contactsMap, Address);
 
     if (contact?.Name?.trim()) {
         return contact.Name;
@@ -116,24 +129,14 @@ export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contacts
     return `${recipientGroup?.group?.Name} (${count}/${contactsInGroup} ${members})`;
 };
 
-export const getRecipientOrGroupLabel = ({ recipient, group }: RecipientOrGroup, allContacts: ContactEmail[]) =>
-    recipient
-        ? getRecipientLabel(recipient, allContacts)
-        : getRecipientGroupLabel(group, getContactsOfGroup(allContacts, group?.group?.ID).length);
-
-export const getRecipientOrGroupLabelDetailed = ({ recipient, group }: RecipientOrGroup, allContacts: ContactEmail[]) =>
-    recipient
-        ? getRecipientLabelDetailed(recipient, allContacts)
-        : getRecipientGroupLabel(group, getContactsOfGroup(allContacts, group?.group?.ID).length);
-
-export const recipientsToRecipientOrGroup = (recipients: Recipient[], groups: ContactGroup[]) =>
+export const recipientsToRecipientOrGroup = (recipients: Recipient[], contactGroupsMap: ContactGroupsMap) =>
     recipients.reduce<RecipientOrGroup[]>((acc, value) => {
         if (value.Group) {
             const existingGroup = acc.find((recipientsOrGroup) => recipientsOrGroup.group?.group?.Path === value.Group);
             if (existingGroup) {
                 existingGroup.group?.recipients.push(value);
             } else {
-                const group = groups.find((group) => group.Path === value.Group);
+                const group = contactGroupsMap[value.Group];
                 if (group) {
                     acc.push({ group: { group, recipients: [value] } });
                 } else {

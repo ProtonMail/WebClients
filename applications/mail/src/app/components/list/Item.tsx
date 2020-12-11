@@ -1,11 +1,10 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from 'proton-shared/lib/mail/messages';
-import React, { ChangeEvent, MouseEvent, DragEvent, memo } from 'react';
+import React, { ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
 import { classnames, Checkbox } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { MAILBOX_LABEL_IDS, DENSITY, VIEW_MODE } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 
 import ItemCheckbox from './ItemCheckbox';
@@ -14,13 +13,9 @@ import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import { Element } from '../../models/element';
 import { getSenders, getRecipients as getConversationRecipients } from '../../helpers/conversation';
-import {
-    recipientsToRecipientOrGroup,
-    getRecipientLabelDetailed,
-    getRecipientOrGroupLabelDetailed,
-} from '../../helpers/addresses';
 import { isCustomLabel } from '../../helpers/labels';
 import { Breakpoints } from '../../models/utils';
+import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 
 const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -37,8 +32,6 @@ interface Props {
     columnLayout: boolean;
     element: Element;
     checked?: boolean;
-    contacts: ContactEmail[];
-    contactGroups: ContactGroup[];
     onCheck: (event: ChangeEvent, elementID: string) => void;
     onClick: (elementID: string | undefined) => void;
     onDragStart: (event: DragEvent, element: Element) => void;
@@ -59,8 +52,6 @@ const Item = ({
     userSettings,
     mailSettings,
     checked = false,
-    contacts,
-    contactGroups,
     onCheck,
     onClick,
     onDragStart,
@@ -73,6 +64,7 @@ const Item = ({
         [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS) ||
         isSent(element) ||
         isDraft(element);
+    const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
@@ -80,14 +72,16 @@ const Item = ({
             ? elementID === (element as Message).ConversationID
             : elementID === element.ID;
     const showIcon = labelsWithIcons.includes(labelID) || isCustomLabel(labelID, labels);
-    const senders = conversationMode ? getSenders(element) : [getSender(element as Message)];
+    const senders = conversationMode
+        ? getSenders(element)
+        : getSender(element as Message)
+        ? [getSender(element as Message)]
+        : [];
     const recipients = conversationMode ? getConversationRecipients(element) : getMessageRecipients(element as Message);
-    const sendersLabels = senders.map((sender) => getRecipientLabelDetailed(sender, contacts));
+    const sendersLabels = useMemo(() => senders.map((sender) => getRecipientLabel(sender, true)), [senders]);
     const sendersAddresses = senders.map((sender) => sender?.Address);
-    const recipientsOrGroup = recipientsToRecipientOrGroup(recipients, contactGroups);
-    const recipientsLabels = recipientsOrGroup.map((recipientOrGroup) =>
-        getRecipientOrGroupLabelDetailed(recipientOrGroup, contacts)
-    );
+    const recipientsOrGroup = getRecipientsOrGroups(recipients);
+    const recipientsLabels = getRecipientsOrGroupsLabels(recipientsOrGroup);
     const recipientsAddresses = recipientsOrGroup
         .map(({ recipient, group }) =>
             recipient ? recipient.Address : group?.recipients.map((recipient) => recipient.Address)

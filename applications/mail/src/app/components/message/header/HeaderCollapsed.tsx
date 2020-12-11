@@ -1,20 +1,19 @@
 import { hasAttachments, isDraft, isOutbox } from 'proton-shared/lib/mail/messages';
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { classnames, useContactEmails } from 'react-components';
+import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
-import RecipientItem from '../recipients/RecipientItem';
 import ItemExpiration from '../../list/ItemExpiration';
 import { OnCompose } from '../../../hooks/useCompose';
 import ItemAction from '../../list/ItemAction';
 import { Breakpoints } from '../../../models/utils';
+import RecipientItem from '../recipients/RecipientItem';
 
 interface Props {
     labelID: string;
@@ -39,8 +38,6 @@ const HeaderCollapsed = ({
     onCompose,
     breakpoints,
 }: Props) => {
-    const [contacts = []] = useContactEmails();
-
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
             event.stopPropagation();
@@ -68,7 +65,6 @@ const HeaderCollapsed = ({
                     recipientOrGroup={{ recipient: message.data?.Sender }}
                     showAddress={false}
                     onCompose={onCompose}
-                    contacts={contacts}
                     isLoading={!messageLoaded}
                 />
 

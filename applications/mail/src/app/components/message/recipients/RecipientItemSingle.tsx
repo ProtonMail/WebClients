@@ -13,19 +13,19 @@ import {
     useModals,
 } from 'react-components';
 import { OpenPGPKey } from 'pmcrypto';
-import { ContactEmail, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
+import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import { Recipient } from 'proton-shared/lib/interfaces';
-
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import { getRecipientLabelDetailed } from '../../../helpers/addresses';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { OnCompose } from '../../../hooks/useCompose';
 import RecipientItemLayout from './RecipientItemLayout';
-import { getContactOfRecipient } from '../../../helpers/contacts';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { useContactCache } from '../../../containers/ContactProvider';
+import { getContactEmail } from '../../../helpers/addresses';
 
 interface Props {
     recipient: Recipient;
@@ -33,7 +33,6 @@ interface Props {
     globalIcon?: StatusIcon;
     showAddress?: boolean;
     showLockIcon?: boolean;
-    contacts?: ContactEmail[];
     onCompose: OnCompose;
     signingPublicKey?: OpenPGPKey;
 }
@@ -44,7 +43,6 @@ const RecipientItemSingle = ({
     globalIcon,
     showAddress = true,
     showLockIcon = true,
-    contacts,
     onCompose,
     signingPublicKey,
 }: Props) => {
@@ -52,11 +50,12 @@ const RecipientItemSingle = ({
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
+    const { contactsMap } = useContactCache();
+    const { getRecipientLabel } = useRecipientLabel();
 
-    const contact = getContactOfRecipient(contacts, recipient.Address);
-    const { ContactID } = contact || {};
+    const { ContactID } = getContactEmail(contactsMap, recipient.Address) || {};
     const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined);
-    const label = getRecipientLabelDetailed(recipient, contacts);
+    const label = getRecipientLabel(recipient, true);
     const initial = getInitial(label);
     const showTrustPublicKey = !!signingPublicKey;
 

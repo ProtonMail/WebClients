@@ -18,7 +18,6 @@ import {
     useLabels,
     useFolders,
     useAddresses,
-    useContactEmails,
     useMailSettings,
     Input,
 } from 'react-components';
@@ -104,7 +103,6 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', isNarrow }: 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
     const [labels = [], loadingLabels] = useLabels();
     const [folders, loadingFolders] = useFolders();
-    const [contactEmails, loadingContactEmails] = useContactEmails();
     const [addresses, loadingAddresses] = useAddresses();
     const [model, updateModel] = useState<SearchModel>(DEFAULT_MODEL);
 
@@ -169,7 +167,7 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', isNarrow }: 
         }
     }, [isOpen]);
 
-    const loading = loadingLabels || loadingFolders || loadingAddresses || loadingContactEmails || loadingMailSettings;
+    const loading = loadingLabels || loadingFolders || loadingAddresses || loadingMailSettings;
 
     const treeview: FolderWithSubFolders[] = buildTreeview(folders);
 
@@ -268,8 +266,6 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', isNarrow }: 
                             .t`From`}</Label>
                         <div className="flex-item-fluid">
                             <AddressesInput
-                                contacts={contactEmails}
-                                contactGroups={[]}
                                 id="from"
                                 recipients={model.from}
                                 onChange={(from) => updateModel({ ...model, from })}
@@ -282,8 +278,6 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', isNarrow }: 
                             .t`To`}</Label>
                         <div className="flex-item-fluid">
                             <AddressesInput
-                                contacts={contactEmails}
-                                contactGroups={[]}
                                 id="to"
                                 recipients={model.to}
                                 onChange={(to) => updateModel({ ...model, to })}

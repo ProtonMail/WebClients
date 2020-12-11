@@ -1,6 +1,5 @@
 import React from 'react';
 import { c } from 'ttag';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { Recipient } from 'proton-shared/lib/interfaces';
 import { Tooltip } from 'react-components';
 import { OpenPGPKey } from 'pmcrypto';
@@ -19,7 +18,6 @@ interface Props {
     globalIcon?: StatusIcon;
     showAddress?: boolean;
     showLockIcon?: boolean;
-    contacts: ContactEmail[];
     onCompose: OnCompose;
     isLoading: boolean;
     signingPublicKey?: OpenPGPKey;
@@ -31,7 +29,6 @@ const RecipientItem = ({
     globalIcon,
     showAddress = true,
     showLockIcon = true,
-    contacts,
     onCompose,
     isLoading,
     signingPublicKey,
@@ -52,7 +49,6 @@ const RecipientItem = ({
                 group={recipientOrGroup.group}
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
-                contacts={contacts}
                 showAddress={showAddress}
                 onCompose={onCompose}
             />
@@ -67,7 +63,6 @@ const RecipientItem = ({
                 globalIcon={globalIcon}
                 showAddress={showAddress}
                 showLockIcon={showLockIcon}
-                contacts={contacts}
                 onCompose={onCompose}
                 signingPublicKey={signingPublicKey}
             />

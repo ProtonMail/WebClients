@@ -1,11 +1,10 @@
-import { normalizeEmail } from 'proton-shared/lib/helpers/email';
-import React from 'react';
-import { Icon, Href, useContactEmails, useModals, Alert } from 'react-components';
+import React, { useMemo } from 'react';
+import { Icon, Href, useModals, Alert } from 'react-components';
 import { c } from 'ttag';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-
 import ContactResignModal from '../modals/ContactResignModal';
 import { MessageExtended } from '../../../models/message';
+import { useContactCache } from '../../../containers/ContactProvider';
+import { getContactEmail } from '../../../helpers/addresses';
 
 interface Props {
     message: MessageExtended;
@@ -16,16 +15,16 @@ const ExtraAskResign = ({ message, onResignContact }: Props) => {
     const { senderVerified, senderPinnedKeys } = message;
     const { Address = '' } = message.data?.Sender || {};
     const { createModal } = useModals();
-    const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
+    const { contactsMap } = useContactCache();
 
-    const contactEmail = contacts.find(({ Email }) => normalizeEmail(Email) === normalizeEmail(Address));
+    const contactEmail = useMemo(() => getContactEmail(contactsMap, Address), [contactsMap, Address]);
 
     if (senderVerified || !senderPinnedKeys?.length) {
         return null;
     }
 
     const handleClick = () => {
-        if (loadingContacts || !contactEmail) {
+        if (!contactEmail) {
             return;
         }
         const contact = { contactID: contactEmail.ContactID };
