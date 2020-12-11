@@ -79,7 +79,8 @@
 	.pm-modalFooter,
 	.pm-modalContentInnerTopShadow,
 	.pm-modalContentInnerBottomShadow,
-	.item-icon {
+	.item-icon,
+	[class^="scrollshadow-"] {
 		@extend .noprint;
 	}
   }
