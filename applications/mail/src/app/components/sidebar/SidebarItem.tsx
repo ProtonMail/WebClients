@@ -8,9 +8,10 @@ import {
     SidebarListItemLink,
     useLoading,
     useCache,
+    useMailSettings,
 } from 'react-components';
-import { useHistory } from 'react-router-dom';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { useLocation } from 'react-router-dom';
+import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
 import { wait } from 'proton-shared/lib/helpers/promise';
 
 import LocationAside from './LocationAside';
@@ -48,10 +49,11 @@ const SidebarItem = ({
 }: Props) => {
     const { call } = useEventManager();
     const cache = useCache();
-    const history = useHistory();
-
+    const location = useLocation();
+    const [mailSettings] = useMailSettings();
     const [refreshing, withRefreshing] = useLoading(false);
-
+    const applyLabel = useApplyLabels();
+    const moveToFolder = useMoveToFolder();
     const [dragOver, dragProps] = useDragOver(
         (event: DragEvent) =>
             event.dataTransfer.types.includes(DRAG_ELEMENT_KEY) &&
@@ -60,19 +62,38 @@ const SidebarItem = ({
         isFolder ? 'move' : 'link'
     );
 
-    const applyLabel = useApplyLabels();
-    const moveToFolder = useMoveToFolder();
-
+    const isColumnLayout = mailSettings?.ViewLayout === VIEW_LAYOUT.COLUMN;
     const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
         ? LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
         : labelID;
     const link = `/${humanID}`;
-
     const active = labelID === currentLabelID;
     const ariaCurrent = active ? 'page' : undefined;
 
-    const handleClick = () => {
-        if (history.location.pathname.endsWith(link) && !refreshing) {
+    const getTo = () => {
+        if (active && isColumnLayout) {
+            // Keep element open if present
+            const [, context] = location.pathname.split(link);
+            if (context) {
+                return `${link}${context}`;
+            }
+        }
+        return link;
+    };
+
+    const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        const ended = location.pathname.endsWith(link);
+        const params = new URLSearchParams(location.search);
+        const page = params.get('page') || 1;
+        const onFirstPage = page === 1;
+
+        // Don't loose conversation focus with column layout
+        if (isColumnLayout && active && onFirstPage) {
+            event.preventDefault();
+        }
+
+        // Refresh models depending on current location and view layout
+        if (!refreshing && ((active && isColumnLayout) || (ended && !isColumnLayout))) {
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
     };
@@ -103,7 +124,7 @@ const SidebarItem = ({
         <SidebarListItem className={classnames([dragOver && 'navigation__dragover'])}>
             <SidebarListItemLink
                 aria-current={ariaCurrent}
-                to={link}
+                to={getTo()}
                 onClick={handleClick}
                 {...dragProps}
                 onDrop={handleDrop}
