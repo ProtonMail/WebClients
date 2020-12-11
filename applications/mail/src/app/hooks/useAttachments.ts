@@ -159,7 +159,7 @@ export const useAttachments = (
      * Remove an existing attachment, deal with potential embedded image
      */
     const handleRemoveAttachment = useCallback(
-        (attachment: Attachment) => async () => {
+        async (attachment: Attachment) => {
             await api(removeAttachment(attachment.ID || '', message.data?.ID || ''));
 
             onChange((message: MessageExtended) => {
@@ -185,7 +185,7 @@ export const useAttachments = (
     /**
      * Cancel pending upload
      */
-    const handleRemoveUpload = (pendingUpload: PendingUpload) => () => {
+    const handleRemoveUpload = async (pendingUpload: PendingUpload) => {
         pendingUpload.upload.abort();
         void removePendingUpload(pendingUpload);
     };

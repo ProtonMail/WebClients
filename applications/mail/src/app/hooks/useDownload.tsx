@@ -117,3 +117,24 @@ export const useDownloadAll = () => {
         [api, cache]
     );
 };
+
+export const usePreview = () => {
+    const api = useApi();
+    const cache = useAttachmentCache();
+    const getMessageKeys = useGetMessageKeys();
+    const showConfirmModal = useShowConfirmModal();
+
+    return useCallback(
+        async (message: MessageExtendedWithData, attachment: Attachment) => {
+            const messageKeys = await getMessageKeys(message.data);
+            const download = await formatDownload(attachment, message, messageKeys, cache, api);
+
+            if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+                await showConfirmModal([download]);
+            }
+
+            return download;
+        },
+        [api, cache]
+    );
+};

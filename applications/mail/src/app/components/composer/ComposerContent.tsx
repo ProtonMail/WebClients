@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { classnames } from 'react-components';
 
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
-import AttachmentsList from './attachments/AttachmentsList';
+import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 import SquireEditorWrapper, { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 import EditorEmbeddedModal from './editor/EditorEmbeddedModal';
@@ -25,8 +25,8 @@ interface Props {
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
     onCancelAddAttachment: () => void;
-    onRemoveAttachment: (attachment: Attachment) => () => void;
-    onRemoveUpload: (pendingUpload: PendingUpload) => () => void;
+    onRemoveAttachment: (attachment: Attachment) => Promise<void>;
+    onRemoveUpload: (pendingUpload: PendingUpload) => Promise<void>;
     pendingFiles?: File[];
     pendingUploads?: PendingUpload[];
     onSelectEmbedded: (action: ATTACHMENT_ACTION) => void;
@@ -124,11 +124,18 @@ const ComposerContent = ({
                 )}
             </div>
             {showAttachements && (
-                <AttachmentsList
-                    message={message as MessageExtendedWithData}
+                <AttachmentList
+                    attachments={attachments}
                     pendingUploads={pendingUploads}
+                    embeddeds={message.embeddeds}
+                    message={message as MessageExtendedWithData}
+                    primaryAction={AttachmentAction.Preview}
+                    secondaryAction={AttachmentAction.Remove}
+                    collapsable
+                    showDownloadAll={false}
                     onRemoveAttachment={onRemoveAttachment}
                     onRemoveUpload={onRemoveUpload}
+                    className="composer-attachments-list bg-global-highlight"
                 />
             )}
         </section>

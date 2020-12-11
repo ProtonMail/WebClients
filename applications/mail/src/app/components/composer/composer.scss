@@ -44,6 +44,30 @@
     height: 2.5em; // title bar height
 }
 
+@include respond-to($breakpoint-medium-landscape, 'min') {
+    .composer--is-maximized {
+        .message-attachmentList-item-container {
+            width: 33%;
+
+            &:first-child,
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin-top: 0;
+            }
+            &:nth-child(even) {
+                padding-left: 0;
+            }
+            &:nth-child(odd) {
+                padding-right: 0;
+            }
+            &:nth-child(3n-1),
+            &:nth-child(3n) {
+                padding-left: 1em;
+            }
+        }
+    }
+}
+
 .composer-title-bar {
     background: var(--bgcolor-main-area, $pm-global-altgrey);
     transition: background 0.15s ease-out;
@@ -325,46 +349,22 @@
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
+
 }
 
-.composer-attachments-expand {
-    overflow: auto;
-    border-top: 1px solid var(--bordercolor-input, $pm-global-border);
-    max-height: 6.5em;
-}
-
+// overrides only in composer case
 .composer-attachments-list {
     border-left: 1px solid var(--bordercolor-input, $pm-global-border);
     border-right: 1px solid var(--bordercolor-input, $pm-global-border);
     border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
     border-bottom-left-radius: $global-border-radius;
     border-bottom-right-radius: $global-border-radius;
-}
 
-.composer-attachments-item {
-    margin-top: 0.5em;
-    width: 50%;
-
-    &:first-child,
-    &:nth-child(2) {
-        margin-top: 0;
-    }
-    &:nth-child(even) {
-        padding-left: 0.5em;
-    }
-    &:nth-child(odd) {
-        padding-right: 0.5em;
-    }
-    // fix on last only if there are more than 4
-    &:nth-child(n + 5):last-child {
-        padding-bottom: 0.5em;
-    }
-
-    &--uploadInProgress {
-        .composer-attachments-item-typeIcon,
-        .composer-attachments-item-deleteButton {
-            border: 0;
-        }
+    .message-attachmentList {
+        border-top: 1px solid var(--bordercolor-input, $pm-global-border);
+        overflow: auto;
+        max-height: 8.5em;
+        padding-top: 1em;
     }
 }
 

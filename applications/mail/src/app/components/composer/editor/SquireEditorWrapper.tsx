@@ -41,7 +41,7 @@ interface Props {
     onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
-    onRemoveAttachment: (attachment: Attachment) => () => void;
+    onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     contentFocusRef: MutableRefObject<() => void>;
     editorActionsRef: EditorActionsRef;
 }
@@ -148,7 +148,7 @@ const SquireEditorWrapper = ({
             removedCIDs.forEach((cid) => {
                 const info = message.embeddeds?.get(cid);
                 if (info) {
-                    onRemoveAttachment(info.attachment)();
+                    void onRemoveAttachment(info.attachment);
                 }
             });
             setCIDs(newCIDs);
