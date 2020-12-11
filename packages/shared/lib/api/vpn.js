@@ -64,14 +64,7 @@ export const queryVPNActiveSessionInfo = () => ({
     url: 'vpn/sessions',
 });
 
-export const updateVPNName = (VPNName) => ({
+export const resetVPNSettings = () => ({
     method: 'put',
-    url: 'vpn/settings/name',
-    data: { VPNName },
-});
-
-export const updateVPNPassword = (VPNPassword) => ({
-    method: 'put',
-    url: 'vpn/settings/password',
-    data: { VPNPassword },
+    url: 'vpn/settings/reset'
 });
