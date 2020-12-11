@@ -1,3 +1,24 @@
+# [4.0.0 - Beta 33] - 2020-12-16
+
+## New features
+
+-   Premium users can delay the message sending by 5 seconds (to activate this feature go to Settings > General > Messages)
+-   All users can preview PDF files and images locally within the Protonmail Web App
+
+## Improvements
+
+-   The opened conversation/message stays opened while navigating through pages of the same folder
+-   Improved performance and memory consumption on all browsers, especially Chrome
+-   Improved mouse and keyboard interactions when composing a new message
+-   Improved localization strings for easier translation
+-   Accessibility and vocalization improvements
+
+## Various UI/UX improvements Fixes
+
+-   Fixed an issue whereby switching from plain text to HTML would wipe the message content out
+-   Fixed an issue whereby sometimes copy/pasting content inside the composer would not properly format the pasted content
+-   Various small bug fixes
+
 # [4.0.0 - Beta 32] - 2020-12-08
 
 ## Improvements
@@ -20,26 +41,36 @@
 
 # [4.0.0 - Beta 31] - 2020-11-18
 
+## New feature
+
+-   Making the Import Assistant feature available to all users, including users on the Free subscription plan.
+-   Import Assistant is a tool that allows user to connect to an external email provider and import selected messages and folders. [Learn More](https://protonmail.com/support/knowledge-base/import-assistant).
+
 ## Improvements
 
 -   Improved the way we deal with the original message when switching between rich text and plain text mode
+-   Updated the content of the Import Assistant page
 
 ## Fixes
 
 -   An error sometimes appeared when sending a message after changing the "from" address
+-   Fixed an issue that made the error message disappear upon submitting a wrong port number during the import process
+-   Fixed an issue whereby when saving the name of a folder during the import process, other names being edited would also get saved
 
 # [4.0.0 - Beta 30] - 2020-11-12
 
 ## New features
 
--   allow the user to respond to an invitation from the event's widget
--   allow the user to see the response to an invitation
--   allow the user to update the response to an invitation
+-   Allow the user to respond to an invitation from the event's widget
+-   Allow the user to see the response to an invitation
+-   Allow the user to update the response to an invitation
 
 ## Improvements
 
 -   Visual improvements to the pagination component
 -   Pagination component is not visible when there is only one page
+-   Improved warning when leaving a flow without saving changes
+-   Improved handling of member permissions when accessing restricted areas
 
 ## Fixes
 
@@ -63,6 +94,7 @@
 -   Improved the "mark as spam" and "not a spam" actions
 -   Improved the list and the message layouts to account for small screen layouts
 -   Various visual elements updated to increase readability of messages
+-   Added a more descriptive error message when failing to authenticate to another email service provider while using the import assistant
 
 ## Fixes
 
@@ -104,41 +136,59 @@
 
 # [4.0.0-beta.25] - 2020-10-14
 
+## New features
+
+-   Import Assistant tool that allows connecting external email provider and imports selected messages and folders (accessible by paid users only). [Learn More](https://protonmail.com/support/knowledge-base/import-assistant).
+
 ## Improvements
 
+-   Added a dedicated import/export page (accessible by paid users only)
 -   Various UI/UX improvements
 
 ## Fixes
 
 -   Various bug fixes
 
----
-
 # [4.0.0-beta.24] - 2020-10-07
 
 ## New features
 
 -   Added a widget in the email header to display an event's summary when an invitation (ICS file) is attached to a message
+-   Various bug fixes on the addresses page
+-   Various bug fixes on the filter page
 
 ## Improvements
 
 -   Show the recipients' information instead of the sender's information when viewing the drafts folder
 -   Remember the collapsed state of folders and labels section in the menu
+-   Reworked the apps page to focus on mobile applications
+-   Moved the IMAP/SMTP content to a dedicated page for better visibility
 
 ## Fixes
 
 -   Sometimes the original message would not load in the composer when replying to or forwarding that message
 -   The original message would not get sent when replying to or forwarding that message
 
----
-
 # [4.0.0-beta.23] - 2020-09-30
+
+## New features
+
+-   Folders/labels: separation of folders and labels tables
+-   Folders/labels: support for sub-folders added (up to 3 levels)
+-   Appearance: support for view density (compact, comfortable)
+
+## Improvements
+
+-   Updated overview page
+-   Updated page layout
+-   Improved filter flow experience
+-   Content limited to mail-related settings
+-   Account-related settings moved to Proton Account
 
 ## Fixes
 
 -   Minor UI/UX bug fixes following the deployment of the new Protonmail app
-
----
+-   Various bug fixes
 
 # [4.0.0-beta.22] - 2020-09-30
 
