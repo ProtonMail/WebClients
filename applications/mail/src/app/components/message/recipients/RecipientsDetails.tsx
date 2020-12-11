@@ -1,6 +1,5 @@
 import React from 'react';
 import { c } from 'ttag';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 import { MessageExtended } from '../../../models/message';
 import { MapStatusIcons } from '../../../models/crypto';
@@ -12,13 +11,11 @@ import RecipientsList from './RecipientsList';
 interface Props {
     message: MessageExtended;
     mapStatusIcons?: MapStatusIcons;
-    contacts: ContactEmail[];
-    contactGroups: ContactGroup[];
     onCompose: OnCompose;
     isLoading: boolean;
 }
 
-const RecipientsDetails = ({ message, mapStatusIcons, contacts, contactGroups, onCompose, isLoading }: Props) => {
+const RecipientsDetails = ({ message, mapStatusIcons, onCompose, isLoading }: Props) => {
     const { ToList = [], CCList = [], BCCList = [] } = message?.data || {};
 
     const undisclosedRecipients = ToList.length + CCList.length + BCCList.length === 0;
@@ -30,8 +27,6 @@ const RecipientsDetails = ({ message, mapStatusIcons, contacts, contactGroups, o
                     <RecipientsList
                         list={ToList}
                         mapStatusIcons={mapStatusIcons}
-                        contacts={contacts}
-                        contactGroups={contactGroups}
                         onCompose={onCompose}
                         isLoading={isLoading}
                     />
@@ -42,8 +37,6 @@ const RecipientsDetails = ({ message, mapStatusIcons, contacts, contactGroups, o
                     <RecipientsList
                         list={CCList}
                         mapStatusIcons={mapStatusIcons}
-                        contacts={contacts}
-                        contactGroups={contactGroups}
                         onCompose={onCompose}
                         isLoading={isLoading}
                     />
@@ -54,8 +47,6 @@ const RecipientsDetails = ({ message, mapStatusIcons, contacts, contactGroups, o
                     <RecipientsList
                         list={BCCList}
                         mapStatusIcons={mapStatusIcons}
-                        contacts={contacts}
-                        contactGroups={contactGroups}
                         onCompose={onCompose}
                         isLoading={isLoading}
                     />
@@ -63,12 +54,7 @@ const RecipientsDetails = ({ message, mapStatusIcons, contacts, contactGroups, o
             )}
             {undisclosedRecipients && (
                 <RecipientType label={c('Label').t`To:`}>
-                    <RecipientItem
-                        recipientOrGroup={{}}
-                        contacts={contacts}
-                        onCompose={onCompose}
-                        isLoading={isLoading}
-                    />
+                    <RecipientItem recipientOrGroup={{}} onCompose={onCompose} isLoading={isLoading} />
                 </RecipientType>
             )}
         </div>

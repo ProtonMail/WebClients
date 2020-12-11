@@ -10,9 +10,10 @@ import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import AuthenticationProvider from 'react-components/containers/authentication/Provider';
 import MessageProvider from '../../containers/MessageProvider';
 import ConversationProvider from '../../containers/ConversationProvider';
-import { minimalCache, cache, messageCache, conversationCache, attachmentsCache } from './cache';
+import { minimalCache, cache, messageCache, conversationCache, attachmentsCache, contactCache } from './cache';
 import { api } from './api';
 import AttachmentProvider from '../../containers/AttachmentProvider';
+import ContactProvider from '../../containers/ContactProvider';
 
 export const authentication = ({
     getUID: jest.fn(),
@@ -37,7 +38,9 @@ const TestProvider = ({ children }: Props) => {
                                 <MessageProvider cache={messageCache}>
                                     <ConversationProvider cache={conversationCache}>
                                         <AttachmentProvider cache={attachmentsCache}>
-                                            <MemoryRouter initialEntries={['/inbox']}>{children}</MemoryRouter>
+                                            <ContactProvider cache={contactCache}>
+                                                <MemoryRouter initialEntries={['/inbox']}>{children}</MemoryRouter>
+                                            </ContactProvider>
                                         </AttachmentProvider>
                                     </ConversationProvider>
                                 </MessageProvider>

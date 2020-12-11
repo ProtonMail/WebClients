@@ -10,20 +10,17 @@ import {
     DropdownMenuButton,
     useNotifications,
 } from 'react-components';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-
 import AddressesGroupModal from './AddressesGroupModal';
-import { getRecipientGroupLabel } from '../../../helpers/addresses';
 import { RecipientGroup } from '../../../models/address';
-import { getContactsOfGroup } from '../../../helpers/contacts';
 import { useUpdateGroupSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
 import { useDragOver } from '../../../hooks/useDragOver';
 import { DRAG_ADDRESS_KEY } from '../../../constants';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { useContactCache } from '../../../containers/ContactProvider';
 
 interface Props {
     recipientGroup: RecipientGroup;
-    contacts: ContactEmail[];
     messageSendInfo?: MessageSendInfo;
     onChange: (value: RecipientGroup) => void;
     onRemove: () => void;
@@ -35,7 +32,6 @@ interface Props {
 
 const AddressesGroupItem = ({
     recipientGroup,
-    contacts,
     messageSendInfo,
     onChange,
     onRemove,
@@ -45,8 +41,12 @@ const AddressesGroupItem = ({
     onDragOver,
 }: Props) => {
     const { createModal, getModal, hideModal, removeModal } = useModals();
-    const [modalID, setModalID] = useState();
     const { createNotification } = useNotifications();
+
+    const { groupsWithContactsMap } = useContactCache();
+    const { getGroupLabel } = useRecipientLabel();
+
+    const [modalID, setModalID] = useState();
 
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const {
@@ -56,8 +56,10 @@ const AddressesGroupItem = ({
         close: closeContextMenu,
     } = usePopperAnchor<HTMLDivElement>();
 
-    const contactsInGroup = getContactsOfGroup(contacts, recipientGroup?.group?.ID);
-    const label = getRecipientGroupLabel(recipientGroup, contactsInGroup.length);
+    // const contactsInGroup = getContactsOfGroup(contacts, recipientGroup?.group?.ID);
+    const contactsInGroup = groupsWithContactsMap[recipientGroup?.group?.ID || '']?.contacts || [];
+    // const label = getRecipientGroupLabel(recipientGroup, contactsInGroup.length);
+    const label = getGroupLabel(recipientGroup);
 
     const { handleRemove } = useUpdateGroupSendInfo(messageSendInfo, contactsInGroup, onRemove);
 

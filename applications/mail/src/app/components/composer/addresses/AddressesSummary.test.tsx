@@ -1,18 +1,17 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React from 'react';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { clearAll, render } from '../../../helpers/test/helper';
+import { clearAll, contactCache, render } from '../../../helpers/test/helper';
 import AddressesSummary from './AddressesSummary';
 import { getRecipientLabel } from '../../../helpers/addresses';
 
 const message = {} as Message;
 const props = { message, contacts: [], contactGroups: [], onFocus: noop, toggleExpanded: noop };
 const recipient = { Name: 'RecipientName', Address: 'Address' };
-const recipientLabel = getRecipientLabel(recipient) || '';
+const recipientLabel = getRecipientLabel(recipient, {}) || '';
 const recipientGroup = { Name: 'RecipientName', Address: 'Address', Group: 'GroupPath' };
 const group = { Name: 'GroupName', Path: 'GroupPath' };
-const contactGroups = [group] as ContactGroup[];
+contactCache.contactGroupsMap[group.Path] = group;
 
 describe('AddressesSummary', () => {
     afterEach(() => clearAll());
@@ -28,9 +27,7 @@ describe('AddressesSummary', () => {
     it('should render a group', async () => {
         const message = { ToList: [recipientGroup] } as Message;
 
-        const { getByText } = await render(
-            <AddressesSummary {...props} message={message} contactGroups={contactGroups} />
-        );
+        const { getByText } = await render(<AddressesSummary {...props} message={message} />);
 
         getByText(group.Name, { exact: false });
     });
@@ -38,9 +35,7 @@ describe('AddressesSummary', () => {
     it('should render a recipient and a group', async () => {
         const message = { ToList: [recipient, recipientGroup] } as Message;
 
-        const { getByText } = await render(
-            <AddressesSummary {...props} message={message} contactGroups={contactGroups} />
-        );
+        const { getByText } = await render(<AddressesSummary {...props} message={message} />);
 
         getByText(recipientLabel);
         getByText(group.Name, { exact: false });

@@ -4,26 +4,28 @@ import React, { memo, Fragment, MouseEvent } from 'react';
 import { c } from 'ttag';
 import { Label, LinkButton, classnames } from 'react-components';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
 import { recipientTypes } from '../../../models/address';
-import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
+// import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 
 interface Props {
     message: Message | undefined;
     mapSendInfo?: MapSendInfo;
-    contacts: ContactEmail[];
-    contactGroups: ContactGroup[];
     onFocus: () => void;
     toggleExpanded: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const AddressesSummary = ({ message, mapSendInfo, contacts, contactGroups, toggleExpanded, onFocus }: Props) => {
-    const title = recipientsToRecipientOrGroup(getRecipients(message), contactGroups)
-        .map((recipientOrGroup) => getRecipientOrGroupLabel(recipientOrGroup, contacts))
-        .join(', ');
+const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Props) => {
+    const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
+    const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(getRecipients(message))).join(', ');
+
+    // recipientsToRecipientOrGroup;
+    // recipientsToRecipientOrGroup(getRecipients(message), contactGroups)
+    //     .map((recipientOrGroup) => getRecipientOrGroupLabel(recipientOrGroup, contacts))
+    //     .join(', ');
     return (
         <div className="flex flex-row flex-nowrap flex-items-center m0-5 pl0-5 pr0-5" onClick={onFocus}>
             <Label className="composer-meta-label pr0-5 pt0 bold">{c('Title').t`To`}</Label>
@@ -37,7 +39,7 @@ const AddressesSummary = ({ message, mapSendInfo, contacts, contactGroups, toggl
                         if (recipients.length === 0) {
                             return null;
                         }
-                        const recipientOrGroups = recipientsToRecipientOrGroup(recipients, contactGroups);
+                        const recipientOrGroups = getRecipientsOrGroups(recipients);
                         return (
                             <Fragment key={type}>
                                 {type === 'CCList' && (
@@ -75,7 +77,7 @@ const AddressesSummary = ({ message, mapSendInfo, contacts, contactGroups, toggl
                                                     {icon && <EncryptionStatusIcon {...icon} />}
                                                 </span>
                                                 <span className="mw100 ellipsis">
-                                                    {getRecipientOrGroupLabel(recipientOrGroup, contacts)}
+                                                    {getRecipientOrGroupLabel(recipientOrGroup)}
                                                 </span>
                                             </span>
                                             {i !== recipientOrGroups.length - 1 && ','}

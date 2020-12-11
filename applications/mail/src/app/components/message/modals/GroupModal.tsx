@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { Checkbox, FormModal, generateUID, Label } from 'react-components';
-
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-
 import { contactToInput } from '../../../helpers/addresses';
 import { RecipientGroup } from '../../../models/address';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import { getContactsOfGroup } from '../../../helpers/contacts';
+import { GroupWithContacts } from '../../../containers/ContactProvider';
 
 interface Props {
     recipientGroup: RecipientGroup;
-    contacts: ContactEmail[];
+    group: GroupWithContacts | undefined;
     globalIcon?: StatusIcon;
     mapStatusIcons?: MapStatusIcons;
     onClose?: () => void;
 }
 
-const GroupModal = ({ recipientGroup, contacts: allContacts, globalIcon, mapStatusIcons, onClose, ...rest }: Props) => {
+const GroupModal = ({ recipientGroup, group, globalIcon, mapStatusIcons, onClose, ...rest }: Props) => {
     const [uid] = useState<string>(generateUID('header-group-modal'));
 
-    const contacts = getContactsOfGroup(allContacts, recipientGroup.group?.ID);
+    const contacts = group?.contacts || [];
 
     const isChecked = (contact: ContactEmail) =>
         !!recipientGroup.recipients?.find((recipient) => contact.Email === recipient.Address);

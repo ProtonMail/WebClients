@@ -16,20 +16,17 @@ import {
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-
-import { recipientToInput, inputToRecipient } from '../../../helpers/addresses';
+import { recipientToInput, inputToRecipient, getContactEmail } from '../../../helpers/addresses';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { useUpdateRecipientSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
 import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useDragOver } from '../../../hooks/useDragOver';
-import { getContactOfRecipient } from '../../../helpers/contacts';
+import { useContactCache } from '../../../containers/ContactProvider';
 
 interface Props {
     recipient: RequireSome<Recipient, 'Address' | 'ContactID'>;
-    contacts: ContactEmail[];
     messageSendInfo?: MessageSendInfo;
     onChange?: (value: Recipient) => void;
     onRemove: () => void;
@@ -41,7 +38,6 @@ interface Props {
 
 const AddressesRecipientItem = ({
     recipient,
-    contacts,
     messageSendInfo,
     onChange = noop,
     onRemove,
@@ -51,19 +47,12 @@ const AddressesRecipientItem = ({
     onDragOver,
     ...rest
 }: Props) => {
-    const [editableMode, setEditableMode] = useState(false);
-
-    const emailAddress = recipient.Address || '';
-    const sendInfo = messageSendInfo?.mapSendInfo[emailAddress];
-    const icon = sendInfo?.sendIcon;
-    const loading = sendInfo?.loading;
-    const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL;
-
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
 
-    const contact = getContactOfRecipient(contacts, recipient.Address);
-    const { ContactID } = contact || {};
+    const { contactsMap } = useContactCache();
+
+    const [editableMode, setEditableMode] = useState(false);
 
     const editableRef = useRef<HTMLSpanElement>(null);
 
@@ -76,6 +65,13 @@ const AddressesRecipientItem = ({
     } = usePopperAnchor<HTMLDivElement>();
 
     const { handleRemove } = useUpdateRecipientSendInfo(messageSendInfo, recipient, onRemove);
+
+    const emailAddress = recipient.Address || '';
+    const sendInfo = messageSendInfo?.mapSendInfo[emailAddress];
+    const icon = sendInfo?.sendIcon;
+    const loading = sendInfo?.loading;
+    const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL;
+    const { ContactID } = getContactEmail(contactsMap, recipient.Address) || {};
 
     // Hide invalid when no send info or while loading
     const valid = !sendInfo || loading || (sendInfo?.emailValidation && !sendInfo?.emailAddressWarnings?.length);

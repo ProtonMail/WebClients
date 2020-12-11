@@ -9,8 +9,8 @@ import { Contact } from 'proton-shared/lib/interfaces/contacts';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { CACHE_KEY } from 'react-components/hooks/useGetEncryptionPreferences';
 import { normalizeEmail } from 'proton-shared/lib/helpers/email';
-import { Event } from '../models/event';
-import { MessageCache, updateMessageCache, useMessageCache } from '../containers/MessageProvider';
+import { MessageCache, updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
+import { Event } from '../../models/event';
 
 /**
  * Deal with contact update from the event manager

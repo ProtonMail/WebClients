@@ -1,11 +1,12 @@
 import React, { useState, useMemo, useEffect, MutableRefObject, useRef, ReactNode } from 'react';
 import Awesomplete from 'awesomplete';
-import { useEventListener, useAutocompleteRecipient } from 'react-components';
+import { useEventListener, useAutocompleteRecipient, useContactGroups, useContactEmails } from 'react-components';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { ContactEmail, ContactGroup, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
-
-import { contactToInput } from '../../../helpers/addresses';
+import { ContactEmail, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
+import { normalizeEmail } from 'proton-shared/lib/helpers/email';
+import { contactToInput, getContactEmail } from '../../../helpers/addresses';
+import { useContactCache } from '../../../containers/ContactProvider';
 
 const compareFunction = (
     item1: { label: string; value: string; score?: number },
@@ -28,8 +29,6 @@ const compareFunction = (
 
 interface Props {
     inputRef: MutableRefObject<HTMLInputElement | null>;
-    contacts: ContactEmail[];
-    contactGroups: ContactGroup[];
     majorDomains: string[];
     children: ReactNode;
     onSelect: (value: ContactOrGroup) => void;
@@ -37,25 +36,26 @@ interface Props {
     autoComplete?: string;
 }
 
-const AddressesAutocomplete = ({
-    inputRef,
-    autoComplete,
-    contacts,
-    contactGroups,
-    majorDomains,
-    onSelect,
-    currentValue,
-    children,
-}: Props) => {
+const AddressesAutocomplete = ({ inputRef, autoComplete, majorDomains, onSelect, currentValue, children }: Props) => {
+    const { contactsMap } = useContactCache();
+    const [contacts = []] = useContactEmails() as [ContactEmail[], boolean, Error];
+    const [contactGroups = []] = useContactGroups();
     const [awesomplete, setAwesomplete] = useState<Awesomplete>();
     const containerRef = useRef<HTMLDivElement>(null);
-    const contactEmailsMap = useMemo(() => toMap(contacts, 'Email'), [contacts]);
-    const recipientAddressesMap = useMemo(() => toMap(currentValue, 'Address'), [currentValue]);
+
+    const recipientAddressesMap = useMemo(
+        () =>
+            toMap(
+                currentValue.map((recipient) => ({ ...recipient, Address: normalizeEmail(recipient.Address || '') })),
+                'Address'
+            ),
+        [currentValue]
+    );
     const recipientGroupsMap = useMemo(() => toMap(currentValue, 'Group'), [currentValue]);
     const contactList = useMemo(
         () =>
             contacts
-                .filter((contact) => !recipientAddressesMap[contact.Email])
+                .filter((contact) => !recipientAddressesMap[normalizeEmail(contact.Email)])
                 .map((contact) => ({
                     label: contactToInput(contact),
                     value: `Contact:${contact.ID}`,
@@ -78,12 +78,14 @@ const AddressesAutocomplete = ({
     const majorList = useMemo(
         () =>
             majorDomains
-                .filter((email) => !recipientAddressesMap[email] && !contactEmailsMap[email])
+                .filter(
+                    (email) => !recipientAddressesMap[normalizeEmail(email)] && !getContactEmail(contactsMap, email)
+                )
                 .map((email) => ({
                     label: email,
                     value: `Major:${email}`,
                 })),
-        [majorDomains, recipientAddressesMap, contactEmailsMap]
+        [majorDomains, recipientAddressesMap, contactsMap]
     );
     const recipientItem = useAutocompleteRecipient();
 

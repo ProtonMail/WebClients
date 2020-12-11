@@ -1,6 +1,5 @@
 import React, { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
-import { useToggle, useContactEmails, useContactGroups } from 'react-components';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { useToggle } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { MessageExtended } from '../../../models/message';
@@ -19,8 +18,6 @@ interface Props {
 }
 
 const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
-    const [contacts = [], loadingContacts] = useContactEmails() as [ContactEmail[] | undefined, boolean, Error];
-    const [contactGroups = [], loadingContactGroups] = useContactGroups();
     const inputFocusRef = useRef<() => void>(noop);
 
     // Summary of selected addresses or addresses editor
@@ -53,15 +50,9 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         setExpanded(true);
     }, []);
 
-    if (loadingContacts || loadingContactGroups) {
-        return null;
-    }
-
     return editor ? (
         <AddressesEditor
             message={message}
-            contacts={contacts}
-            contactGroups={contactGroups}
             messageSendInfo={messageSendInfo}
             onChange={onChange}
             expanded={expanded}
@@ -72,8 +63,6 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         <AddressesSummary
             message={message.data}
             mapSendInfo={messageSendInfo.mapSendInfo}
-            contacts={contacts}
-            contactGroups={contactGroups}
             onFocus={handleFocus}
             toggleExpanded={handleToggleExpanded}
         />

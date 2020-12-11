@@ -20,8 +20,8 @@ import { useLinkHandler } from '../hooks/useLinkHandler';
 import { OnCompose } from '../hooks/useCompose';
 import { useDeepMemo } from '../hooks/useDeepMemo';
 import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
-import { useContactsListener } from '../hooks/useContactsListener';
 import { MailUrlParams } from '../helpers/mailboxUrl';
+import { useContactsListener } from '../hooks/contact/useContactsListener';
 
 interface Props {
     params: MailUrlParams;
@@ -44,6 +44,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints,
     }, []);
 
     useLinkHandler(onCompose);
+    // useManageContactsCache();
     useContactsListener();
 
     if (!labelID) {

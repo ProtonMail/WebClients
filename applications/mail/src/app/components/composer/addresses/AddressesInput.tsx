@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import { Input, classnames } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { ContactGroup, ContactEmail, ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
+import { ContactOrGroup } from 'proton-shared/lib/interfaces/contacts';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { MAJOR_DOMAINS } from 'proton-shared/lib/constants';
 import { getEmailParts } from 'proton-shared/lib/helpers/email';
@@ -21,7 +21,6 @@ import {
     contactToRecipient,
     majorToRecipient,
     recipientsWithoutGroup,
-    recipientsToRecipientOrGroup,
     getRecipientOrGroupKey,
 } from '../../../helpers/addresses';
 import AddressesAutocomplete from './AddressesAutocomplete';
@@ -29,12 +28,12 @@ import AddressesGroupItem from './AddressesGroupItem';
 import { RecipientGroup } from '../../../models/address';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { useAddressesInputDrag } from '../../../hooks/useAddressesInputDrag';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { useContactCache } from '../../../containers/ContactProvider';
 
 interface Props {
     id: string;
     recipients?: Recipient[];
-    contacts: ContactEmail[];
-    contactGroups: ContactGroup[];
     messageSendInfo?: MessageSendInfo;
     onChange: (value: Partial<Recipient>[]) => void;
     inputFocusRef?: MutableRefObject<() => void>;
@@ -45,8 +44,6 @@ interface Props {
 const AddressesInput = ({
     id,
     recipients = [],
-    contacts,
-    contactGroups,
     messageSendInfo,
     onChange,
     inputFocusRef,
@@ -54,15 +51,16 @@ const AddressesInput = ({
     expanded = false,
     ...rest
 }: Props) => {
+    const { groupsWithContactsMap } = useContactCache();
+    const { getRecipientsOrGroups } = useRecipientLabel();
+
     const [inputModel, setInputModel] = useState('');
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const [recipientsOrGroups, setRecipientsOrGroups] = useState(() =>
-        recipientsToRecipientOrGroup(recipients, contactGroups)
-    );
+    const [recipientsOrGroups, setRecipientsOrGroups] = useState(() => getRecipientsOrGroups(recipients));
 
-    useEffect(() => setRecipientsOrGroups(recipientsToRecipientOrGroup(recipients, contactGroups)), [recipients]);
+    useEffect(() => setRecipientsOrGroups(getRecipientsOrGroups(recipients)), [recipients]);
 
     const majorDomains = useMemo(() => {
         const [localPart] = getEmailParts(inputModel);
@@ -150,10 +148,9 @@ const AddressesInput = ({
         if (contact) {
             onChange([...recipients, contactToRecipient(contact)]);
         } else if (group) {
-            const groupContacts = contacts
-                .filter((contact) => contact.LabelIDs?.includes(group.ID || ''))
-                .map((contact) => contactToRecipient(contact, group.Path));
-            onChange([...recipients, ...groupContacts]);
+            const groupContacts = groupsWithContactsMap[group.ID]?.contacts || [];
+            const groupRecipients = groupContacts.map((contact) => contactToRecipient(contact, group.Path));
+            onChange([...recipients, ...groupRecipients]);
         } else if (major) {
             onChange([...recipients, majorToRecipient(major)]);
         }
@@ -180,8 +177,6 @@ const AddressesInput = ({
             inputRef={inputRef}
             // Chrome ignores autocomplete="off" and Awesome lib forces autocomplete to "off" after instance
             autoComplete="no"
-            contacts={contacts}
-            contactGroups={contactGroups}
             majorDomains={majorDomains}
             onSelect={handleAutocompleteSelect}
             currentValue={recipients}
@@ -203,7 +198,6 @@ const AddressesInput = ({
                                     recipientOrGroup.recipient as Required<Pick<Recipient, 'Address' | 'ContactID'>>
                                 }
                                 messageSendInfo={messageSendInfo}
-                                contacts={contacts}
                                 onChange={handleRecipientChange(recipientOrGroup.recipient)}
                                 onRemove={handleRecipientRemove(recipientOrGroup.recipient)}
                                 dragged={draggedRecipient === recipientOrGroup}
@@ -213,7 +207,6 @@ const AddressesInput = ({
                             <AddressesGroupItem
                                 recipientGroup={recipientOrGroup.group as RecipientGroup}
                                 messageSendInfo={messageSendInfo}
-                                contacts={contacts}
                                 onChange={handleGroupChange(recipientOrGroup.group)}
                                 onRemove={handleGroupRemove(recipientOrGroup.group)}
                                 dragged={draggedRecipient === recipientOrGroup}

@@ -10,34 +10,34 @@ import {
     useModals,
     useNotifications,
 } from 'react-components';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import { getInitial } from 'proton-shared/lib/helpers/string';
 
 import { RecipientGroup } from '../../../models/address';
-import { getRecipientGroupLabel } from '../../../helpers/addresses';
-import { getContactsOfGroup } from '../../../helpers/contacts';
 import RecipientItemLayout from './RecipientItemLayout';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { OnCompose } from '../../../hooks/useCompose';
 import GroupModal from '../modals/GroupModal';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { useContactCache } from '../../../containers/ContactProvider';
 
 interface Props {
     group: RecipientGroup;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
-    contacts: ContactEmail[];
     showAddress?: boolean;
     onCompose: OnCompose;
 }
 
-const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, contacts, showAddress = true, onCompose }: Props) => {
+const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showAddress = true, onCompose }: Props) => {
+    const { getGroupLabel } = useRecipientLabel();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
+    const { groupsWithContactsMap } = useContactCache();
     const [uid] = useState(generateUID('dropdown-group'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const label = getRecipientGroupLabel(group, getContactsOfGroup(contacts, group?.group?.ID).length);
+    const label = getGroupLabel(group);
     const initial = getInitial(group.group?.Name);
 
     let addresses = group.recipients.map((recipient) => recipient.Address).join(', ');
@@ -69,7 +69,7 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, contacts, showA
         createModal(
             <GroupModal
                 recipientGroup={group}
-                contacts={contacts}
+                group={groupsWithContactsMap[group.group?.ID || '']}
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
             />

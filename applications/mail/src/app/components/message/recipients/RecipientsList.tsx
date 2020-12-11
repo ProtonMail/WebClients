@@ -1,23 +1,22 @@
 import React from 'react';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 import { MapStatusIcons } from '../../../models/crypto';
-import { recipientsToRecipientOrGroup } from '../../../helpers/addresses';
 import RecipientItem from './RecipientItem';
 import { OnCompose } from '../../../hooks/useCompose';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 
 interface Props {
     list: Recipient[];
     mapStatusIcons?: MapStatusIcons;
-    contacts: ContactEmail[];
-    contactGroups: ContactGroup[];
     onCompose: OnCompose;
     isLoading: boolean;
 }
 
-const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompose, isLoading }: Props) => {
-    const recipientsOrGroup = recipientsToRecipientOrGroup(list, contactGroups);
+const RecipientsList = ({ list, mapStatusIcons, onCompose, isLoading }: Props) => {
+    const { getRecipientsOrGroups } = useRecipientLabel();
+
+    const recipientsOrGroup = getRecipientsOrGroups(list);
 
     return (
         <>
@@ -26,7 +25,6 @@ const RecipientsList = ({ list, mapStatusIcons, contacts, contactGroups, onCompo
                     key={index} // eslint-disable-line react/no-array-index-key
                     recipientOrGroup={recipientOrGroup}
                     mapStatusIcons={mapStatusIcons}
-                    contacts={contacts}
                     onCompose={onCompose}
                     isLoading={isLoading}
                 />
