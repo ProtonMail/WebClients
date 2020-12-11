@@ -4,7 +4,7 @@ import Icon from '../icon/Icon';
 
 import './FileButton.scss';
 
-interface Props {
+interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     className?: string;
     icon?: string;
     disabled?: boolean;
@@ -12,7 +12,7 @@ interface Props {
     children?: ReactNode;
 }
 
-const FileButton = ({ onAddFiles, icon = 'attach', disabled, className, children }: Props) => {
+const FileButton = ({ onAddFiles, icon = 'attach', disabled, className, children, ...rest }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input = event.target;
@@ -42,13 +42,7 @@ const FileButton = ({ onAddFiles, icon = 'attach', disabled, className, children
             >
                 <Icon name="attach" />
                 {children}
-                <input
-                    ref={inputRef}
-                    type="file"
-                    multiple
-                    onChange={handleChange}
-                    data-testid="composer-attachments-button"
-                />
+                <input ref={inputRef} type="file" multiple onChange={handleChange} {...rest} />
             </label>
         </div>
     );
