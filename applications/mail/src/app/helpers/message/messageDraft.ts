@@ -4,7 +4,7 @@ import { setBit } from 'proton-shared/lib/helpers/bitset';
 import { removeEmailAlias } from 'proton-shared/lib/helpers/email';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 import {
     DRAFT_ID_PREFIX,
@@ -21,7 +21,7 @@ import { generateUID } from 'react-components';
 import { c } from 'ttag';
 import { MESSAGE_ACTIONS } from '../../constants';
 
-import { EmbeddedMap, MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
+import { EmbeddedMap, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { getFromAddress } from '../addresses';
 import { formatFullDate } from '../date';
 import { parseInDiv } from '../dom';
@@ -171,7 +171,7 @@ const generateBlockquote = (
     const previousContent = referenceMessage.errors?.decryption
         ? referenceMessage.data?.Body
         : isPlainText(referenceMessage.data)
-        ? plainTextToHTML(referenceMessage as MessageExtended, mailSettings, addresses)
+        ? plainTextToHTML(referenceMessage.data as Message, referenceMessage.decryptedBody, mailSettings, addresses)
         : getDocumentContent(referenceMessage.document);
 
     return `<div class="${CLASSNAME_BLOCKQUOTE}">

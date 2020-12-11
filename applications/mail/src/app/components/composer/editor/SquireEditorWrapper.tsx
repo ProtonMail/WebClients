@@ -186,7 +186,7 @@ const SquireEditorWrapper = ({
     };
     const switchToHTML = () => {
         const MIMEType = MIME_TYPES.DEFAULT;
-        const content = plainTextToHTML(message, mailSettings, addresses);
+        const content = plainTextToHTML(message.data, message.plainText, mailSettings, addresses);
         const document = setDocumentContent(message.document, content);
         onChange({ document, data: { MIMEType } });
     };

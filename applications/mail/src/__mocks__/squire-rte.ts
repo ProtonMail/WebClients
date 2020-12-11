@@ -1,7 +1,7 @@
 // I would love no to mock Squire
 // But I'm stuck into a use of window.Range inside of Squire which seems not to work in JSDom
 
-export default () => ({
+const instance = {
     setHTML: jest.fn(),
     getFontInfo: jest.fn(() => ({})),
     addEventListener: jest.fn(),
@@ -10,4 +10,6 @@ export default () => ({
     fireEvent: jest.fn(),
     focus: jest.fn(),
     getPath: jest.fn(),
-});
+};
+
+export default () => instance;
