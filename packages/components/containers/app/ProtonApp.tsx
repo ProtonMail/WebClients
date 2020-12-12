@@ -21,7 +21,7 @@ import { getAppHref } from 'proton-shared/lib/apps/helper';
 import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 
-import { MimeIcons, Icons } from '../../components';
+import { Icons } from '../../components';
 import Signout from './Signout';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
 import ConfigProvider from '../config/Provider';
@@ -248,7 +248,6 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
         <ConfigProvider config={config}>
             <CompatibilityCheck>
                 <Icons />
-                <MimeIcons />
                 <RightToLeftProvider>
                     <React.Fragment key={UID}>
                         <Router history={history}>
