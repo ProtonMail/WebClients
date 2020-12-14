@@ -13,19 +13,36 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
     const refFirstInput = useRef<HTMLInputElement>(null);
     const refSecondInput = useRef<HTMLInputElement>(null);
 
-    const handleKeyDownFirst = (event: React.KeyboardEvent<HTMLElement>) => {
-        if (first.length === 4 && event.key.length === 1) {
+    const handleKeyUpFirst = (event: React.KeyboardEvent<HTMLElement>) => {
+        const eventKey = event.key;
+        if (first.length === 4 && eventKey !== 'Backspace' && eventKey !== 'Delete') {
             event.preventDefault();
             refSecondInput?.current?.focus();
-            if (second.length < 4) setSecond([second, event.key].join(''));
         }
     };
 
-    const handleKeyDownSecond = (event: React.KeyboardEvent<HTMLElement>) => {
-        if (second.length === 1 && (event.key === 'Backspace' || event.key === 'Delete')) {
+    const handleKeyUpSecond = (event: React.KeyboardEvent<HTMLElement>) => {
+        const eventKey = event.key;
+        if (second.length === 0 && (eventKey === 'Backspace' || eventKey === 'Delete')) {
             refFirstInput?.current?.focus();
             setSecond('');
         }
+    };
+
+    const handleOnChangeFirst = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.value.length > 4) {
+            event.preventDefault();
+            return false;
+        }
+        setFirst(event.target.value.toUpperCase());
+    };
+
+    const handleOnChangeSecond = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.value.length > 4) {
+            event.preventDefault();
+            return false;
+        }
+        setSecond(event.target.value.toUpperCase());
     };
 
     useEffect(() => {
@@ -41,11 +58,12 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         minLength={4}
                         maxLength={4}
                         value={first}
-                        onChange={({ target }) => setFirst(target.value.toUpperCase())}
-                        onKeyDown={handleKeyDownFirst}
+                        onChange={handleOnChangeFirst}
+                        onKeyUp={handleKeyUpFirst}
                         placeholder="1234"
-                        className="aligncenter bold mw15e flex-self-end mauto"
+                        className="bold mw15e flex-self-end mauto"
                         required
+                        autoFocus
                     />
                 </div>
                 <hr className="w5 tv-hr ml1 mr1 mt1-5 mbauto nomobile" />
@@ -55,10 +73,10 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         minLength={4}
                         maxLength={4}
                         value={second}
-                        onChange={({ target }) => setSecond(target.value.toUpperCase())}
-                        onKeyDown={handleKeyDownSecond}
+                        onChange={handleOnChangeSecond}
+                        onKeyUp={handleKeyUpSecond}
                         placeholder="ABCD"
-                        className="aligncenter bold mw15e mauto"
+                        className="bold mw15e mauto"
                         required
                     />
                 </div>

@@ -15,7 +15,6 @@ $color-links: $pm-primary;
 
 // project specific components
 
-@import '~design-system/_sass/pv-styles/pv-indicator';
 @import '~design-system/_sass/pv-styles/pv-plan-card';
 @import './containers/RedeemContainer.scss';
 @import '~react-components/containers/payments/subscription/BlackFridayModal.scss';
