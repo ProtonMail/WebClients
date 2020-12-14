@@ -240,7 +240,11 @@ const getCustomWeeklyString = (
             if (interval === 1) {
                 return c('Weekly recurring event, frequency').t`Weekly on all days`;
             }
-            return c('Weekly recurring event, frequency').t`Every ${interval} weeks on all days`;
+            return c('Weekly recurring event, frequency').ngettext(
+                msgid`Every ${interval} week on all days`,
+                `Every ${interval} weeks on all days`,
+                interval
+            );
         }
         if (days.length === 1) {
             const startDate = days[0];
@@ -248,49 +252,81 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Sunday`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Sunday`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Sunday`,
+                    `Every ${interval} weeks on Sunday`,
+                    interval
+                );
             }
             if (startDate === 1) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Monday`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Monday`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Monday`,
+                    `Every ${interval} weeks on Monday`,
+                    interval
+                );
             }
             if (startDate === 2) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Tuesday`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Tuesday`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Tuesday`,
+                    `Every ${interval} weeks on Tuesday`,
+                    interval
+                );
             }
             if (startDate === 3) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Wednesday`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Wednesday`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Wednesday`,
+                    `Every ${interval} weeks on Wednesday`,
+                    interval
+                );
             }
             if (startDate === 4) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Thursday`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Thursday`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Thursday`,
+                    `Every ${interval} weeks on Thursday`,
+                    interval
+                );
             }
             if (startDate === 5) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Friday`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Friday`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Friday`,
+                    `Every ${interval} weeks on Friday`,
+                    interval
+                );
             }
             if (startDate === 6) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Saturday`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Saturday`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Saturday`,
+                    `Every ${interval} weeks on Saturday`,
+                    interval
+                );
             }
         }
         if (interval === 1) {
             return c('Weekly recurring event, frequency').t`Weekly on ${multipleDaysString}`;
         }
-        return c('Weekly recurring event, frequency').t`Every ${interval} weeks on ${multipleDaysString}`;
+        return c('Weekly recurring event, frequency').ngettext(
+            msgid`Every ${interval} week on ${multipleDaysString}`,
+            `Every ${interval} weeks on ${multipleDaysString}`,
+            interval
+        );
     }
     if (endType === END_TYPE.AFTER_N_TIMES) {
         const timesString = getTimesString(count);
@@ -298,7 +334,11 @@ const getCustomWeeklyString = (
             if (interval === 1) {
                 return c('Weekly recurring event, frequency').t`Weekly on all days, ${timesString}`;
             }
-            return c('Weekly recurring event, frequency').t`Every ${interval} weeks on all days, ${timesString}`;
+            return c('Weekly recurring event, frequency').ngettext(
+                msgid`Every ${interval} week on all days, ${timesString}`,
+                `Every ${interval} weeks on all days, ${timesString}`,
+                interval
+            );
         }
         if (days.length === 1) {
             const startDate = days[0];
@@ -306,50 +346,81 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Sunday, ${timesString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Sunday, ${timesString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Sunday, ${timesString}`,
+                    `Every ${interval} weeks on Sunday, ${timesString}`,
+                    interval
+                );
             }
             if (startDate === 1) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Monday, ${timesString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Monday, ${timesString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Monday, ${timesString}`,
+                    `Every ${interval} weeks on Monday, ${timesString}`,
+                    interval
+                );
             }
             if (startDate === 2) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Tuesday, ${timesString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Tuesday, ${timesString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Tuesday, ${timesString}`,
+                    `Every ${interval} weeks on Tuesday, ${timesString}`,
+                    interval
+                );
             }
             if (startDate === 3) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Wednesday, ${timesString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Wednesday, ${timesString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Wednesday, ${timesString}`,
+                    `Every ${interval} weeks on Wednesday, ${timesString}`,
+                    interval
+                );
             }
             if (startDate === 4) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Thursday, ${timesString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Thursday, ${timesString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Thursday, ${timesString}`,
+                    `Every ${interval} weeks on Thursday, ${timesString}`,
+                    interval
+                );
             }
             if (startDate === 5) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Friday, ${timesString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Friday, ${timesString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Friday, ${timesString}`,
+                    `Every ${interval} weeks on Friday, ${timesString}`,
+                    interval
+                );
             }
             if (startDate === 6) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Saturday, ${timesString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Saturday, ${timesString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Saturday, ${timesString}`,
+                    `Every ${interval} weeks on Saturday, ${timesString}`,
+                    interval
+                );
             }
         }
         if (interval === 1) {
             return c('Weekly recurring event, frequency').t`Weekly on ${multipleDaysString}, ${timesString}`;
         }
-        return c('Weekly recurring event, frequency')
-            .t`Every ${interval} weeks on ${multipleDaysString}, ${timesString}`;
+        return c('Weekly recurring event, frequency').ngettext(
+            msgid`Every ${interval} week on ${multipleDaysString}, ${timesString}`,
+            `Every ${interval} weeks on ${multipleDaysString}, ${timesString}`,
+            interval
+        );
     }
     if (endType === END_TYPE.UNTIL && until) {
         const dateString = format(until, 'PP', { locale });
@@ -358,7 +429,11 @@ const getCustomWeeklyString = (
             if (interval === 1) {
                 return c('Weekly recurring event, frequency').t`Weekly on all days, ${untilString}`;
             }
-            return c('Weekly recurring event, frequency').t`Every ${interval} weeks on all days, ${untilString}`;
+            return c('Weekly recurring event, frequency').ngettext(
+                msgid`Every ${interval} week on all days, ${untilString}`,
+                `Every ${interval} weeks on all days, ${untilString}`,
+                interval
+            );
         }
         if (days.length === 1) {
             const startDate = days[0];
@@ -366,50 +441,81 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Sunday, ${untilString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Sunday, ${untilString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Sunday, ${untilString}`,
+                    `Every ${interval} weeks on Sunday, ${untilString}`,
+                    interval
+                );
             }
             if (startDate === 1) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Monday, ${untilString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Monday, ${untilString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Monday, ${untilString}`,
+                    `Every ${interval} weeks on Monday, ${untilString}`,
+                    interval
+                );
             }
             if (startDate === 2) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Tuesday, ${untilString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Tuesday, ${untilString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Tuesday, ${untilString}`,
+                    `Every ${interval} weeks on Tuesday, ${untilString}`,
+                    interval
+                );
             }
             if (startDate === 3) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Wednesday, ${untilString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Wednesday, ${untilString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Wednesday, ${untilString}`,
+                    `Every ${interval} weeks on Wednesday, ${untilString}`,
+                    interval
+                );
             }
             if (startDate === 4) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Thursday, ${untilString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Thursday, ${untilString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Thursday, ${untilString}`,
+                    `Every ${interval} weeks on Thursday, ${untilString}`,
+                    interval
+                );
             }
             if (startDate === 5) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Friday, ${untilString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Friday, ${untilString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Friday, ${untilString}`,
+                    `Every ${interval} weeks on Friday, ${untilString}`,
+                    interval
+                );
             }
             if (startDate === 6) {
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Saturday, ${untilString}`;
                 }
-                return c('Weekly recurring event, frequency').t`Every ${interval} weeks on Saturday, ${untilString}`;
+                return c('Weekly recurring event, frequency').ngettext(
+                    msgid`Every ${interval} week on Saturday, ${untilString}`,
+                    `Every ${interval} weeks on Saturday, ${untilString}`,
+                    interval
+                );
             }
         }
         if (interval === 1) {
             return c('Weekly recurring event, frequency').t`Weekly on ${multipleDaysString}, ${untilString}`;
         }
-        return c('Weekly recurring event, frequency')
-            .t`Every ${interval} weeks on ${multipleDaysString}, ${untilString}`;
+        return c('Weekly recurring event, frequency').ngettext(
+            msgid`Every ${interval} week on ${multipleDaysString}, ${untilString}`,
+            `Every ${interval} weeks on ${multipleDaysString}, ${untilString}`,
+            interval
+        );
     }
 };
 
@@ -426,14 +532,22 @@ const getCustomMonthlyString = (
         if (interval === 1) {
             return c('Monthly recurring event, frequency').t`Monthly ${onDayString}`;
         }
-        return c('Monthly recurring event, frequency').t`Every ${interval} months ${onDayString}`;
+        return c('Monthly recurring event, frequency').ngettext(
+            msgid`Every ${interval} month ${onDayString}`,
+            `Every ${interval} months ${onDayString}`,
+            interval
+        );
     }
     if (endType === END_TYPE.AFTER_N_TIMES) {
         const timesString = getTimesString(count);
         if (interval === 1) {
             return c('Monthly recurring event, frequency').t`Monthly ${onDayString}, ${timesString}`;
         }
-        return c('Monthly recurring event, frequency').t`Every ${interval} months ${onDayString}, ${timesString}`;
+        return c('Monthly recurring event, frequency').ngettext(
+            msgid`Every ${interval} month ${onDayString}, ${timesString}`,
+            `Every ${interval} months ${onDayString}, ${timesString}`,
+            interval
+        );
     }
     if (endType === END_TYPE.UNTIL && until) {
         const dateString = format(until, 'PP', { locale });
@@ -441,7 +555,11 @@ const getCustomMonthlyString = (
         if (interval === 1) {
             return c('Monthly recurring event, frequency').t`Monthly ${onDayString}, ${untilString}`;
         }
-        return c('Monthly recurring event, frequency').t`Every ${interval} months ${onDayString}, ${untilString}`;
+        return c('Monthly recurring event, frequency').ngettext(
+            msgid`Every ${interval} month ${onDayString}, ${untilString}`,
+            `Every ${interval} months ${onDayString}, ${untilString}`,
+            interval
+        );
     }
 };
 
@@ -454,7 +572,11 @@ const getCustomYearlyString = (
         if (interval === 1) {
             return c('Yearly recurring event, frequency').t`Yearly`;
         }
-        return c('Yearly recurring event, frequency').t`Every ${interval} years`;
+        return c('Yearly recurring event, frequency').ngettext(
+            msgid`Every ${interval} year`,
+            `Every ${interval} years`,
+            interval
+        );
     }
 
     if (endType === END_TYPE.AFTER_N_TIMES) {
@@ -462,7 +584,11 @@ const getCustomYearlyString = (
         if (interval === 1) {
             return c('Yearly recurring event, frequency').t`Yearly, ${timesString}`;
         }
-        return c('Yearly recurring event, frequency').t`Every ${interval} years, ${timesString}`;
+        return c('Yearly recurring event, frequency').ngettext(
+            msgid`Every ${interval} year, ${timesString}`,
+            `Every ${interval} years, ${timesString}`,
+            interval
+        );
     }
 
     if (endType === END_TYPE.UNTIL && until) {
@@ -471,7 +597,11 @@ const getCustomYearlyString = (
         if (interval === 1) {
             return c('Yearly recurring event, frequency').t`Yearly, ${untilString}`;
         }
-        return c('Yearly recurring event, frequency').t`Every ${interval} years, ${untilString}`;
+        return c('Yearly recurring event, frequency').ngettext(
+            msgid`Every ${interval} year, ${untilString}`,
+            `Every ${interval} years, ${untilString}`,
+            interval
+        );
     }
 };
 
