@@ -76,3 +76,9 @@ blockquote {
     border: 3px solid $pm-primary !important;
 	border-width: 0 0 0 3px !important;
 }
+
+// limit - same as mail web
+blockquote blockquote blockquote blockquote blockquote blockquote {
+	padding: 0 !important;
+	border: none !important;
+}
