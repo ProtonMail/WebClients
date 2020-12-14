@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import unsupportedPreviewSvg from 'design-system/assets/img/shared/preview-unsupported.svg';
 import corruptedPreviewSvg from 'design-system/assets/img/shared/preview-corrupted.svg';
 import { PrimaryButton } from '../../components';
+import { useActiveBreakpoint } from '../../hooks';
+import { classnames } from '../../helpers';
 
 interface Props {
     type?: 'file' | 'image';
@@ -10,17 +12,23 @@ interface Props {
 }
 
 const UnsupportedPreview = ({ onSave, type = 'file' }: Props) => {
+    const { isNarrow } = useActiveBreakpoint();
+
     return (
-        <div className="centered-absolute aligncenter">
+        <div className="centered-absolute aligncenter w100 pl1 pr1">
             <img
-                className="mb1"
+                className={classnames(['mb1', isNarrow ? 'w150p' : 'w200p'])}
                 src={type === 'file' ? unsupportedPreviewSvg : corruptedPreviewSvg}
                 alt={c('Info').t`Unsupported file`}
             />
-            <h2 className="p0-25 bold">{c('Info').t`No preview available`}</h2>
+
+            <h2 className={classnames(['p0-25 bold', isNarrow && 'h3'])}>{c('Info').t`No preview available`}</h2>
+
             {onSave && (
-                <PrimaryButton className="pm-button--large w150p bold" onClick={onSave}>{c('Action')
-                    .t`Download`}</PrimaryButton>
+                <PrimaryButton
+                    className={classnames(['bold', !isNarrow && 'pm-button--large w150p'])}
+                    onClick={onSave}
+                >{c('Action').t`Download`}</PrimaryButton>
             )}
         </div>
     );
