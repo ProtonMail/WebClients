@@ -10,7 +10,7 @@ import PublicApp from './PublicApp';
 import './app.scss';
 
 const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.1.42',
+    APP_VERSION_DISPLAY: '4.1.43',
     ...config,
 };
 
