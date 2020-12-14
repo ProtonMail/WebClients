@@ -72,7 +72,7 @@ function downgrade(
     }
 
     function hasBonuses(organization = {}) {
-        return !!organization.Flags;
+        return !!organization.Flags || !!organization.LoyaltyCounter;
     }
 
     async function check() {
