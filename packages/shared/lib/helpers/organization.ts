@@ -11,5 +11,5 @@ export const hasCovid = (organization: Partial<Organization> = {}) => {
 };
 
 export const hasBonuses = (organization: Partial<Organization> = {}) => {
-    return !!organization.Flags;
+    return !!organization.Flags || !!organization.LoyaltyCounter;
 };
