@@ -1,3 +1,19 @@
+# [4.0.0-beta.6] - 2020-12-15
+
+More improvements and fixes coming your way before the holiday season kicks in.
+
+## Fixed
+
+- Improved the upload process (block retries)
+- You can now pause queued file in Transfer manager
+- Changed "No preview available" placeholder image to better convey the situation
+- Other minor fixes
+
+## Added
+
+- Black Friday promo replaced with a regular promo text
+- og:image and og:description texts added when sharing a link to Proton Drive
+
 # [4.0.0-beta.5] - 2020-12-08 
 
 We have updated share with link feature with easier to grasp labels and more convenient layout to set password.
