@@ -16,11 +16,16 @@
         background-color: transparent;
     }
 
-    blockquote {
+    .protonmail_quote {
         padding: .2em 0 .2em 1.2em;
         border-color: #657ee4;
         border-left-width: 3px;
         border-left-style: solid;
+    }
+    .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote {
+        padding-left: 0;
+        padding-right: 0;
+	    border-left-width: 0;
     }
 
     // This is needed by the link handler (useLinkHandler.ts)
