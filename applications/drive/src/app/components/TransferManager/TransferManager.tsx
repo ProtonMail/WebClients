@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useMemo } from 'react';
-import { useToggle, classnames, useElementRect } from 'react-components';
+import { useToggle, classnames, useElementRect, useActiveBreakpoint } from 'react-components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { buffer } from 'proton-shared/lib/helpers/function';
 import { c } from 'ttag';
@@ -36,7 +36,8 @@ const STATE_TO_GROUP_MAP = {
     [TransferState.Pending]: TRANSFER_GROUP.QUEUED,
 };
 
-export const MAX_VISIBLE_TRANSFERS = 5;
+const MAX_VISIBLE_TRANSFERS = 5;
+const MAX_VISIBLE_TRANSFERS_MOBILE = 3;
 
 type ListItemData = {
     sortedEntries: (TransferListEntry<TransferType.Download> | TransferListEntry<TransferType.Upload>)[];
@@ -70,6 +71,7 @@ function TransferManager() {
     const { openConfirmModal } = useConfirm();
     const { downloads, getDownloadsProgresses, clearDownloads } = useDownloadProvider();
     const { uploads, getUploadsProgresses, clearUploads } = useUploadProvider();
+    const { isNarrow } = useActiveBreakpoint();
 
     const transfers = useMemo(() => [...downloads, ...uploads], [downloads, uploads]);
     const allTransfersFinished = useMemo(() => transfers.every(isTransferFinished), [transfers]);
@@ -147,6 +149,8 @@ function TransferManager() {
         return sum / statsHistory.length;
     };
 
+    const maxVisibleTransfers = isNarrow ? MAX_VISIBLE_TRANSFERS_MOBILE : MAX_VISIBLE_TRANSFERS;
+
     return (
         <div className={classnames(['pd-transfers', minimized && 'pd-transfers--minimized'])}>
             <Header
@@ -169,7 +173,7 @@ function TransferManager() {
                         }}
                         itemCount={sortedEntries.length}
                         itemSize={ROW_HEIGHT_PX}
-                        height={ROW_HEIGHT_PX * Math.min(MAX_VISIBLE_TRANSFERS, sortedEntries.length)}
+                        height={ROW_HEIGHT_PX * Math.min(maxVisibleTransfers, sortedEntries.length)}
                         width={rect.width}
                         itemKey={(index, { sortedEntries }: ListItemData) => sortedEntries[index].transfer?.id ?? index}
                     >
