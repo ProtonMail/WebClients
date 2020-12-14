@@ -124,7 +124,7 @@ const ExtraPinKey = ({ message }: Props) => {
         if (!senderAddress) {
             return;
         }
-        const preferredContact = contactsMap[normalizeEmail(senderAddress, isSenderInternal)];
+        const preferredContact = contactsMap[normalizeEmail(senderAddress)];
         return preferredContact?.ContactID;
     }, [messageContactID, contactsMap, senderAddress]);
     const promptKeyPinningType = useMemo<PROMPT_KEY_PINNING_TYPE | undefined>(() => {
