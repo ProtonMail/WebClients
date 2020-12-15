@@ -206,7 +206,10 @@
 	}
 	&w100 {
       width: 100%;
-    }
+	}
+	&no-border {
+		border: 0;
+	}
 
     &static {
       position: static;
