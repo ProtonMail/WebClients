@@ -124,7 +124,8 @@ export const verifyMessage = async (
     decryptedBody: string,
     signature: OpenPGPSignature | undefined,
     message: Message,
-    publicKeys: OpenPGPKey[]
+    publicKeys: OpenPGPKey[],
+    privateKeys: OpenPGPKey[] = []
 ): Promise<{
     verified: VERIFICATION_STATUS;
     signature?: OpenPGPSignature;
@@ -133,18 +134,29 @@ export const verifyMessage = async (
     let result;
 
     try {
-        result = await pmcryptoVerifyMessage({
-            message: createCleartextMessage(decryptedBody),
-            date: getDate(message),
-            signature,
-            publicKeys,
-        });
+        if (message.ParsedHeaders['Content-Type'] === MIME_TYPES.MIME) {
+            result = await decryptMessageLegacy({
+                message: message.Body,
+                messageDate: getDate(message),
+                signature,
+                publicKeys,
+                privateKeys,
+            });
+        } else {
+            result = await pmcryptoVerifyMessage({
+                message: createCleartextMessage(decryptedBody),
+                date: getDate(message),
+                signature,
+                publicKeys,
+            });
+        }
     } catch (error) {
         return {
             verified: NOT_VERIFIED,
             verificationErrors: [error],
         };
     }
+
     return {
         verified: result.verified,
         signature,
