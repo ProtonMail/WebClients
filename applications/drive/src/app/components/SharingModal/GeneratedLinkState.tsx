@@ -21,7 +21,7 @@ import {
 interface Props {
     itemName: string;
     password: string;
-    expirationTime: number;
+    expirationTime: number | null;
     token: string;
     includePassword: boolean;
     customPassword: boolean;
@@ -77,6 +77,9 @@ function GeneratedLinkState({
     );
 
     const url = `${baseUrl}/${token}${includePassword ? `#${password}` : ''}`;
+    const expirationDate = expirationTime
+        ? formatDate(fromUnixTime(expirationTime), 'PPp', { locale: dateLocale })
+        : c('Label').t`Never`;
 
     return (
         <>
@@ -157,14 +160,14 @@ function GeneratedLinkState({
 
                     <Row>
                         <Label htmlFor="sharing-modal-expiration-time">
-                            <span className="mr0-5">{c('Label').t`Link expires on`}</span>
+                            <span className="mr0-5">{c('Label').t`Expiration date`}</span>
                         </Label>
                         <div className="flex flex-column flex-item-fluid">
                             <Input
                                 id="sharing-modal-expiration-time"
                                 data-testid="sharing-modal-expiration-time"
                                 readOnly
-                                value={formatDate(fromUnixTime(expirationTime), 'PPp', { locale: dateLocale })}
+                                value={expirationDate}
                                 className="w100 onmobile-mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis"
                             />
                         </div>

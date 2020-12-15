@@ -13,11 +13,10 @@ import {
 } from '../../api/sharing';
 import useDrive from './useDrive';
 import useDriveCrypto from './useDriveCrypto';
-import { DEFAULT_SHARE_EXPIRATION_DAYS, DEFAULT_SHARE_MAX_ACCESSES } from '../../constants';
+import { DEFAULT_SHARE_MAX_ACCESSES } from '../../constants';
 import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import { validateSharedURLPassword, ValidationError } from '../../utils/validation';
-import { getExpirationTime } from '../../components/Drive/helpers';
 
 function useSharing() {
     const { getPrimaryAddressKey } = useDriveCrypto();
@@ -89,15 +88,13 @@ function useSharing() {
             }),
         ]);
 
-        const ExpirationTime = getExpirationTime(DEFAULT_SHARE_EXPIRATION_DAYS);
-
-        const { ShareURL } = await api<{ ShareURL: ShareURL }>(
+        const { ShareURL } = await api(
             queryCreateSharedLink(ID, {
                 Flags: 0,
                 Permissions: 4,
                 MaxAccesses: DEFAULT_SHARE_MAX_ACCESSES,
                 CreatorEmail,
-                ExpirationTime,
+                ExpirationTime: null,
                 SharePassphraseKeyPacket,
                 SRPModulusID,
                 SRPVerifier,
@@ -119,7 +116,7 @@ function useSharing() {
         };
     };
 
-    const updateSharedLinkExpirationTime = async (shareId: string, token: string, newExpirationTime: number) => {
+    const updateSharedLinkExpirationTime = async (shareId: string, token: string, newExpirationTime: number | null) => {
         const fieldsToUpdate: Partial<UpdateSharedURL> = {
             ExpirationTime: newExpirationTime,
         };
