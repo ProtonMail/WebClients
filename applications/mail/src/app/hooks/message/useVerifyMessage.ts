@@ -46,7 +46,8 @@ export const useVerifyMessage = (localID: string) => {
                     decryptedBody,
                     signature,
                     getData(),
-                    encryptionPreferences.pinnedKeys
+                    encryptionPreferences.pinnedKeys,
+                    messageKeys.privateKeys
                 );
 
                 const keyAttachments =
