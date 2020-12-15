@@ -31,8 +31,6 @@ function EditExpirationTimeState({ hasExpirationTime, saving, onBack, onSave, on
     const [extendBy, setExtendBy] = useState(EXPIRATION_DAYS.NEVER);
     const [expirationTime, setExpirationTime] = useState<number | null>(null);
 
-    const isSaveDisabled = !hasExpirationTime && !expirationTime;
-
     const handleChangeExpirationDate = (extendBy: EXPIRATION_DAYS) => {
         setExtendBy(extendBy);
 
@@ -58,7 +56,11 @@ function EditExpirationTimeState({ hasExpirationTime, saving, onBack, onSave, on
                 onReset={onBack}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    onSave(expirationTime);
+                    if (!hasExpirationTime && !expirationTime) {
+                        onBack();
+                    } else {
+                        onSave(expirationTime);
+                    }
                 }}
             >
                 <InnerModal>
@@ -82,8 +84,7 @@ function EditExpirationTimeState({ hasExpirationTime, saving, onBack, onSave, on
                 </InnerModal>
                 <FooterModal>
                     <Button type="reset">{c('Action').t`Cancel`}</Button>
-                    <PrimaryButton disabled={isSaveDisabled} type="submit" loading={saving}>{c('Action')
-                        .t`Update`}</PrimaryButton>
+                    <PrimaryButton type="submit" loading={saving}>{c('Action').t`Update`}</PrimaryButton>
                 </FooterModal>
             </form>
         </>

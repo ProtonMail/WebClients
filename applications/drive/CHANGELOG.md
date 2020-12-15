@@ -1,3 +1,11 @@
+# [4.0.0-beta.7] - 2020-12-17
+
+In order to provide full control and comfort for our initial waves of Beta users, we have opted in to set the shared links to never expire by default. However, user can change this option and set number of days for a shared link to expire.
+
+## Added
+
+- By default, shared links will never expire
+
 # [4.0.0-beta.6] - 2020-12-15
 
 More improvements and fixes coming your way before the holiday season kicks in.
