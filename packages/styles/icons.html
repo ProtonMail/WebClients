@@ -281,28 +281,6 @@ youtube" | split: '#
 </div>
 
 
-<div id="mime-lists" class="container-section-sticky container-section-sticky--fullwidth">
-  <h3>Icons with a “native” viewbox of 24×24</h3>
-  {% assign listIcons = "default#folder#image#portable#text" | split: '#' %}
-
-  <!-- question/what-is-it to merge -->
-
-  <div class="flex mb2">
-    {% for icon in listIcons %}
-    <div class="w200p aligncenter p1">
-      <svg viewBox="0 0 24 24" class="icon-24p fill-global-grey " role="img" focusable="false">
-        <use xlink:href="#mime-{{ icon }}"></use>
-      </svg>
-      <code class="bl mt0-5">#mime-{{ icon }}</code>
-    </div>
-    {% endfor %}
-    <div class="w200p flex-self-vcenter">
-      … to come
-    </div>
-  </div>
-
-
-</div>
 
 <div id="icon-bank-icon" class="container-section-sticky container-section-sticky--fullwidth">
 
