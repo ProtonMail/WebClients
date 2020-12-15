@@ -22,7 +22,6 @@ export const EXPENSIVE_REQUEST_TIMEOUT = 60000;
 export const MAX_NAME_LENGTH = 255;
 export const MIN_SHARED_URL_PASSWORD_LENGTH = 8;
 
-export const DEFAULT_SHARE_EXPIRATION_DAYS = 90;
 export const DEFAULT_SHARE_MAX_ACCESSES = 10000;
 
 export const MAX_SAFE_UPLOADING_FILE_COUNT = 500;
@@ -42,11 +41,12 @@ export enum EVENT_TYPES {
 }
 
 export enum EXPIRATION_DAYS {
-    ONE = 1,
-    FIFTEEN = 15,
-    THIRTY = 30,
-    SIXTY = 60,
-    NINETY = 90,
+    NEVER = 'never',
+    ONE = '1',
+    FIFTEEN = '15',
+    THIRTY = '30',
+    SIXTY = '60',
+    NINETY = '90',
 }
 
 export enum STATUS_CODE {

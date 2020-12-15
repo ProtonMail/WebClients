@@ -92,7 +92,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             });
     }, [shareId, item.LinkID, item.SharedURLShareID, shareUrlInfo?.ShareURL.ShareID]);
 
-    const handleSaveExpirationTime = async (expirationTime: number) => {
+    const handleSaveExpirationTime = async (expirationTime: number | null) => {
         if (!shareUrlInfo) {
             return;
         }
@@ -234,6 +234,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                     onClose={onClose}
                     onSave={handleSaveExpirationTime}
                     saving={savingExpirationTime}
+                    hasExpirationTime={!!shareUrlInfo.ShareURL.ExpirationTime}
                 />
             );
         }

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
+import { fromUnixTime, format as formatDate } from 'date-fns';
 
-import readableTime from 'proton-shared/lib/helpers/readableTime';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Icon, LargeButton } from 'react-components';
 
@@ -15,7 +15,7 @@ import useStatsHistory from '../../hooks/drive/useStatsHistory';
 interface Props {
     name: string;
     size: number;
-    expirationTime: number;
+    expirationTime: number | null;
     downloadFile: () => Promise<void>;
 }
 
@@ -23,8 +23,9 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
     const { downloads, getDownloadsProgresses } = useDownloadProvider();
     const statsHistory = useStatsHistory(downloads, getDownloadsProgresses);
 
-    const expirationDate = readableTime(expirationTime, 'PP', { locale: dateLocale });
-
+    const expirationDate = expirationTime
+        ? formatDate(fromUnixTime(expirationTime), 'PP', { locale: dateLocale })
+        : c('Label').t`Never`;
     const onDownload = () => {
         downloadFile().catch(console.error);
     };
@@ -36,7 +37,7 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
         title: c('Title').t`Your file is ready to be downloaded`,
         info: (
             <>
-                {c('Info').t`Secure link expires on`}
+                {c('Info').t`Expiration date: `}
                 <span className="ml0-25 no-wrap">{expirationDate}</span>
             </>
         ),

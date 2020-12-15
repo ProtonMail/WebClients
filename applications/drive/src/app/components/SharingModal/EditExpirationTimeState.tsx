@@ -19,22 +19,24 @@ import { getExpirationTime } from '../Drive/helpers';
 import { EXPIRATION_DAYS } from '../../constants';
 
 interface Props {
+    hasExpirationTime: boolean;
     saving?: boolean;
-    onSave: (date: number) => void;
+    onSave: (date: number | null) => void;
     onBack: () => void;
     onClose?: () => void;
     modalTitleID: string;
 }
 
-function EditExpirationTimeState({ modalTitleID, onBack, onSave, onClose, saving }: Props) {
-    const [extendBy, setExtendBy] = useState(EXPIRATION_DAYS.NINETY);
-    const [expirationTime, setExpirationTime] = useState(getExpirationTime(extendBy));
+function EditExpirationTimeState({ hasExpirationTime, saving, onBack, onSave, onClose, modalTitleID }: Props) {
+    const [extendBy, setExtendBy] = useState(EXPIRATION_DAYS.NEVER);
+    const [expirationTime, setExpirationTime] = useState<number | null>(null);
 
-    const isSaveDisabled = !expirationTime;
+    const isSaveDisabled = !hasExpirationTime && !expirationTime;
 
     const handleChangeExpirationDate = (extendBy: EXPIRATION_DAYS) => {
         setExtendBy(extendBy);
-        const expirationTime = getExpirationTime(extendBy);
+
+        const expirationTime = extendBy === EXPIRATION_DAYS.NEVER ? null : getExpirationTime(parseInt(extendBy, 10));
         setExpirationTime(expirationTime);
     };
 
@@ -62,13 +64,17 @@ function EditExpirationTimeState({ modalTitleID, onBack, onSave, onClose, saving
                 <InnerModal>
                     <Alert>{c('Info').t`Change this link's expiration date.`}</Alert>
                     <Row>
-                        <Label htmlFor="shared-url-expiration-date">{c('Label').t`Link expires in`}</Label>
+                        <Label htmlFor="shared-url-expiration-date">{c('Label').t`Link expires`}</Label>
                         <Field>
                             <div className="flex flex-nowrap flex-items-center onmobile-flex-column">
                                 <ExpirationTimeDropdown value={extendBy} onChange={handleChangeExpirationDate} />
-                                <span className="pre onmobile-mt0-25">
-                                    <span className="ml2 mr0-5 onmobile-ml0">{c('Info').t`on`}</span>
-                                    <DateTime key="expirationTime" value={expirationTime} />
+                                <span className="pre onmobile-mt0-25 w30">
+                                    {expirationTime && (
+                                        <>
+                                            <span className="ml2 mr0-5 onmobile-ml0">{c('Info').t`on`}</span>
+                                            <DateTime key="expirationTime" value={expirationTime} />
+                                        </>
+                                    )}
                                 </span>
                             </div>
                         </Field>

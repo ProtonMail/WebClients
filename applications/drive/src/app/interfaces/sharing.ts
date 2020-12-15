@@ -3,7 +3,7 @@ import { AuthVersion } from 'proton-shared/lib/authentication/interface';
 import { DriveFileBlock } from './file';
 
 export interface CreateSharedURL {
-    ExpirationTime: number;
+    ExpirationTime: number | null;
     MaxAccesses: number;
     CreatorEmail: string;
     UrlPasswordSalt: string;
@@ -17,7 +17,7 @@ export interface CreateSharedURL {
 }
 
 export interface UpdateSharedURL {
-    ExpirationTime: number;
+    ExpirationTime: number | null;
     MaxAccesses: number;
     UrlPasswordSalt: string;
     SharePasswordSalt: string;
@@ -31,7 +31,7 @@ export interface UpdateSharedURL {
 
 export interface ShareURL {
     CreatorEmail: string;
-    ExpirationTime: number;
+    ExpirationTime: number | null;
     Flags: number;
     LastAccessTime: number;
     MaxAccesses: number;
@@ -50,7 +50,7 @@ export interface ShareURL {
 export interface SharedURL {
     URLID: string;
     Token: string;
-    ExpirationTime: number;
+    ExpirationTime: number | null;
     LastAccessTime: number;
     MaxAccesses: number;
     NumAccesses: number;
@@ -74,7 +74,7 @@ export interface SharedLinkInfo {
     Name: string;
     Size: number;
     MIMEType: string;
-    ExpirationTime: number;
+    ExpirationTime: number | null;
     NodeKey: OpenPGPKey;
     SessionKey: SessionKey;
     Blocks: DriveFileBlock[];
@@ -83,7 +83,7 @@ export interface SharedLinkInfo {
 export interface SharedLinkPayload {
     Name: string;
     MIMEType: string;
-    ExpirationTime: number;
+    ExpirationTime: number | null;
     Size: number;
     ContentKeyPacket: string;
     NodeKey: string;
