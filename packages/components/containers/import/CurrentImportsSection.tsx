@@ -185,7 +185,7 @@ const CurrentImportsSection = () => {
 
                         const badgeRenderer = () => {
                             const percentage = (processed * 100) / total;
-                            const percentageValue = Number.isNaN(percentage) ? 0 : Math.round(percentage);
+                            const percentageValue = Number.isNaN(percentage) ? 0 : Math.floor(percentage);
 
                             let badge = <Badge>{c('Import status').t`${percentageValue}% processed`}</Badge>;
 
