@@ -132,6 +132,10 @@
 	@extend .aligntop;
 }
 
+.inline-grid-container {
+	display: inline-grid;
+}
+
 /* centered block */
 .center {
 	margin-left: auto;
