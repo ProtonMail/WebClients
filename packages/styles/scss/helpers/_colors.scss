@@ -27,6 +27,10 @@
 	background-color: $pm-global-muted;
 }
 
+.bg-global-muted-dm {
+	background-color: var(--bgcolor-muted, $pm-global-muted);
+}
+
 .bg-global-success {
 	background-color: $pm-global-success;
 }
