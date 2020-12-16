@@ -151,13 +151,17 @@ const AddressesRecipientItem = ({
         onDragOver: onDragOver?.(itemRef),
     });
 
+    const title = sendInfo?.emailAddressWarnings?.[0]
+        ? sendInfo?.emailAddressWarnings?.[0]
+        : c('Info').t`Right-click for options`;
+
     return (
         <>
             <div
                 className={classnames([
                     'composer-addresses-item bordered-container mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row mw100 stop-propagation',
                     !valid && 'invalid',
-                    cannotSend && 'color-global-warning',
+                    cannotSend && 'color-global-warning invalid',
                     dragged && 'composer-addresses-item-dragged',
                     !editableMode && 'cursor-grab',
                 ])}
@@ -171,13 +175,16 @@ const AddressesRecipientItem = ({
                 {...rest}
             >
                 {(icon || loading) && (
-                    <span className="border-right flex pl0-25 pr0-25 flex-item-noshrink">
+                    <span className="flex pl0-25 flex-item-noshrink">
                         <EncryptionStatusIcon loading={loading} {...icon} />
                     </span>
                 )}
-                <Tooltip className="flex" title={sendInfo?.emailAddressWarnings?.[0]}>
+                <Tooltip className="flex" title={title}>
                     <span
-                        className="composer-addresses-item-label mtauto mbauto pl0-5 ellipsis pr0-5"
+                        className={classnames([
+                            'composer-addresses-item-label mtauto mbauto ellipsis pr0-5',
+                            icon || loading || !valid ? 'pl0-25' : 'pl0-5',
+                        ])}
                         contentEditable={editableMode}
                         onDoubleClick={handleDoubleClick}
                         onBlur={handleBlur}
@@ -186,15 +193,16 @@ const AddressesRecipientItem = ({
                         ref={editableRef}
                     />
                 </Tooltip>
-                <button
-                    type="button"
-                    className="composer-addresses-item-remove flex flex-item-noshrink pl0-25 pr0-25"
-                    onClick={handleRemove}
-                    title={c('Action').t`Remove`}
-                >
-                    <Icon name="off" size={12} className="mauto" />
-                    <span className="sr-only">{c('Action').t`Remove`}</span>
-                </button>
+                <Tooltip title={c('Action').t`Remove`} className="flex">
+                    <button
+                        type="button"
+                        className="composer-addresses-item-remove border-left flex flex-item-noshrink pl0-25 pr0-25"
+                        onClick={handleRemove}
+                    >
+                        <Icon name="off" size={12} className="mauto" />
+                        <span className="sr-only">{c('Action').t`Remove`}</span>
+                    </button>
+                </Tooltip>
             </div>
             <ContextMenu
                 isOpen={contextMenuIsOpen}

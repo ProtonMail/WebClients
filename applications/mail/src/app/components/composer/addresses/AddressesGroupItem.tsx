@@ -2,6 +2,7 @@ import React, { useState, RefObject, DragEvent, MouseEvent } from 'react';
 import { c } from 'ttag';
 import {
     Icon,
+    Tooltip,
     useModals,
     classnames,
     usePopperAnchor,
@@ -112,25 +113,28 @@ const AddressesGroupItem = ({
                 ref={itemRef}
                 {...dragHandlers}
             >
-                <span className="inline-flex composer-addresses-item-icon pl0-5 pr0-5 no-pointer-events-children h100">
+                <span className="inline-flex composer-addresses-item-icon pl0-25 ml0-1 pr0-25 no-pointer-events-children h100">
                     <Icon name="contacts-groups" size={12} color={recipientGroup?.group?.Color} className="mauto" />
                 </span>
-                <span
-                    className="composer-addresses-item-label mtauto mbauto pl0-5 ellipsis pr0-5"
-                    onClick={handleOpenGroupModal}
-                    onContextMenu={handleContextMenu}
-                >
-                    {label}
-                </span>
-                <button
-                    type="button"
-                    className="composer-addresses-item-remove inline-flex pl0-5 pr0-5 no-pointer-events-children h100"
-                    onClick={handleRemove}
-                    title={c('Action').t`Remove`}
-                >
-                    <Icon name="off" size={12} className="mauto" />
-                    <span className="sr-only">{c('Action').t`Remove`}</span>
-                </button>
+                <Tooltip className="flex" title={c('Info').t`Click to view group details`}>
+                    <span
+                        className="composer-addresses-item-label mtauto mbauto pl0-25 ellipsis pr0-5"
+                        onClick={handleOpenGroupModal}
+                        onContextMenu={handleContextMenu}
+                    >
+                        {label}
+                    </span>
+                </Tooltip>
+                <Tooltip title={c('Action').t`Remove`} className="flex">
+                    <button
+                        type="button"
+                        className="composer-addresses-item-remove inline-flex border-left pl0-25 pr0-25 no-pointer-events-children h100"
+                        onClick={handleRemove}
+                    >
+                        <Icon name="off" size={12} className="mauto" />
+                        <span className="sr-only">{c('Action').t`Remove`}</span>
+                    </button>
+                </Tooltip>
             </div>
             {modalID && (
                 <AddressesGroupModal

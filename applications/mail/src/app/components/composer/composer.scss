@@ -164,6 +164,9 @@
 */
 .composer-addresses-addressIcon {
     top: -0.2rem;
+    &:empty {
+        margin-right: 0;
+    }
 }
 
 .composer-addresses-autocomplete {
