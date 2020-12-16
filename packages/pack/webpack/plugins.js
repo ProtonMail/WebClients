@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -90,9 +91,11 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
             }))
         ),
 
-        new CopyWebpackPlugin({
-            patterns: [{ from: 'public', noErrorOnMissing: true }]
-        }),
+        // Fix max file limit if the folder does not exist
+        fs.existsSync('public') &&
+            new CopyWebpackPlugin({
+                patterns: [{ from: 'public', noErrorOnMissing: true }]
+            }),
 
         new MiniCssExtractPlugin({
             filename: isProduction ? '[name].[contenthash:8].css' : '[name].css',
