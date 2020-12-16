@@ -11,7 +11,7 @@ const OnboardingContent = ({ description, img, text, children, ...rest }: Props)
     return (
         <div {...rest}>
             {description && <div className="mb1">{description}</div>}
-            <div className="mb1 aligncenter">{img}</div>
+            <div className="mb1 aligncenter mauto w60 onmobile-w100">{img}</div>
             {text && <div className="mb1">{text}</div>}
             {children}
         </div>
