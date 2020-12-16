@@ -73,12 +73,10 @@ const HeaderCollapsed = ({
                 )}
 
                 {messageLoaded && isDraftMessage && (
-                    <span className="badgeLabel-success ml0-5 flex-item-noshrink is-appearing-content">{c('Info')
-                        .t`Draft`}</span>
+                    <span className="badgeLabel-success ml0-5 flex-item-noshrink">{c('Info').t`Draft`}</span>
                 )}
                 {messageLoaded && isOutboxMessage && (
-                    <span className="badgeLabel-primary ml0-5 flex-item-noshrink is-appearing-content">{c('Info')
-                        .t`Sending`}</span>
+                    <span className="badgeLabel-primary ml0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
                 )}
             </div>
             <div className="flex flex-items-center flex-nowrap flex-item-noshrink">
@@ -94,21 +92,18 @@ const HeaderCollapsed = ({
                         />
 
                         {!!hasAttachments(message.data) && (
-                            <span className="ml0-5 flex is-appearing-content">
+                            <span className="ml0-5 flex">
                                 <ItemAttachmentIcon element={message.data} labelID={labelID} className="mauto" />
                             </span>
                         )}
 
-                        <span className="ml0-5 flex is-appearing-content">
+                        <span className="ml0-5 flex">
                             <ItemLocation element={message.data} labelID={labelID} />
                         </span>
 
-                        <ItemExpiration
-                            element={message.data}
-                            className="flex flex-item-noshrink ml0-25 mr0-25 is-appearing-content"
-                        />
+                        <ItemExpiration element={message.data} className="flex flex-item-noshrink ml0-25 mr0-25" />
 
-                        <ItemDate className="ml0-25 is-appearing-content" element={message.data} labelID={labelID} />
+                        <ItemDate className="ml0-25" element={message.data} labelID={labelID} />
                     </>
                 ) : (
                     <span className="message-header-metas ml0-5 flex" />

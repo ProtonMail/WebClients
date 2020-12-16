@@ -21,6 +21,8 @@ import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 
+import './MessageView.scss';
+
 interface Props {
     labelID: string;
     conversationMode: boolean;
