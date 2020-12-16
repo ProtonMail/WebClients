@@ -83,12 +83,16 @@ function SpamFiltersSection() {
         const { Email, Domain, ID, Location } = incomingDefault;
         const type = Location === WHITELIST_LOCATION ? BLACKLIST_LOCATION : WHITELIST_LOCATION;
         const { IncomingDefault: data } = await api(updateIncomingDefault(ID, { Location: type }));
-        const item = Email || Domain;
+        const domainTxt =
+            Location === WHITELIST_LOCATION
+                ? c('Spam filter moved to blacklist').t`${Domain} moved to Block List`
+                : c('Spam filter moved to whitelist').t`${Domain} moved to Allow List`;
+        const emailTxt =
+            Location === WHITELIST_LOCATION
+                ? c('Spam filter moved to blacklist').t`${Email} moved to Block List`
+                : c('Spam filter moved to whitelist').t`${Email} moved to Allow List`;
         createNotification({
-            text:
-                Location === WHITELIST_LOCATION
-                    ? c('Spam filter moved to blacklist').t`${item} moved to Block List`
-                    : c('Spam filter moved to whitelist').t`${item} moved to Allow List`,
+            text: Email ? emailTxt : domainTxt,
         });
         move(type, data);
     };
@@ -96,8 +100,9 @@ function SpamFiltersSection() {
     const handleRemove = async (incomingDefault) => {
         const { Email, Domain, ID } = incomingDefault;
         await api(deleteIncomingDefaults([ID]));
-        const item = Email || Domain;
-        createNotification({ text: c('Moved to black/whitelist').t`${item} removed` });
+        const domainTxt = c('Moved to black/whitelist').t`${Domain} removed`;
+        const emailTxt = c('Moved to black/whitelist').t`${Email} removed`;
+        createNotification({ text: Email ? emailTxt : domainTxt });
         remove(incomingDefault);
     };
 

@@ -50,9 +50,10 @@ function AddEmailToListModal({ type, incomingDefault, onAdd = noop, onClose, ...
         const { IncomingDefault: data } = ID
             ? await api(updateIncomingDefault(ID, parameters))
             : await api(addIncomingDefault(parameters));
-        const value = mode === EMAIL_MODE ? email : domain;
+        const domainTxt = ID ? c('Spam notification').t`${domain} updated` : c('Spam notification').t`${domain} added`;
+        const emailTxt = ID ? c('Spam notification').t`${email} updated` : c('Spam notification').t`${email} added`;
         createNotification({
-            text: ID ? c('Spam notification').t`${value} updated` : c('Spam notification').t`${value} added`,
+            text: mode === EMAIL_MODE ? emailTxt : domainTxt,
         });
         onAdd(data);
         onClose();
