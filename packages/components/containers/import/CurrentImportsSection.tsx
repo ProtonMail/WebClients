@@ -18,6 +18,7 @@ import {
     Tooltip,
     Icon,
     ErrorButton,
+    Href,
 } from '../../components';
 
 import { Importer, ImportMailStatus, ImportMailError } from './interfaces';
@@ -119,19 +120,19 @@ const CurrentImportsSection = () => {
     }
 
     const hasStoragePausedImports = importsToDisplay.some(({ Active }) => {
-        if (!Active) {
-            return false;
-        }
-        const { State, ErrorCode } = Active;
-        return State === ImportMailStatus.PAUSED && ErrorCode === ImportMailError.ERROR_CODE_QUOTA_LIMIT;
+        return Active
+            && Active.State === ImportMailStatus.PAUSED
+            && Active.ErrorCode === ImportMailError.ERROR_CODE_QUOTA_LIMIT;
     });
 
     const hasAuthPausedImports = importsToDisplay.some(({ Active }) => {
-        if (!Active) {
-            return false;
-        }
-        const { State, ErrorCode } = Active;
-        return State === ImportMailStatus.PAUSED && ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION;
+        return Active
+            && Active.State === ImportMailStatus.PAUSED
+            && Active.ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION;
+    });
+
+    const delayedImport = importsToDisplay.find(({ Active }) => {
+        return Active?.State === ImportMailStatus.DELAYED;
     });
 
     const headerCells = [
@@ -146,6 +147,15 @@ const CurrentImportsSection = () => {
             </TableCell>
         );
     });
+
+    const bandwithLimitLink = (
+        <Href
+            key="bandwithLimitLink"
+            url="https://protonmail.com/support/knowledge-base/import-assistant/#delayed-import"
+        >
+            {c('Import error link').t`bandwidth limit`}
+        </Href>
+    );
 
     return (
         <>
@@ -163,6 +173,14 @@ const CurrentImportsSection = () => {
                 <Alert type="warning">
                     {c('Info')
                         .t`Proton paused an import because it lost the connection with your other email provider. Please reconnect.`}
+                </Alert>
+            )}
+            {delayedImport && (
+                <Alert type="warning">
+                    {c('Info').t`Your import from ${delayedImport.Email} is temporarily delayed.`}
+                    <br />
+                    {c('Info')
+                        .jt`Proton will try to resume the import as soon as your email provider resets your account’s ${bandwithLimitLink}. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.`}
                 </Alert>
             )}
             <Table className="onmobile-hideTd3 onmobile-hideTd4 pm-simple-table--has-actions">
@@ -214,6 +232,20 @@ const CurrentImportsSection = () => {
 
                             if (State === ImportMailStatus.CANCELED) {
                                 badge = <Badge type="error">{c('Import status').t`Canceling`}</Badge>;
+                            }
+
+                            if (State === ImportMailStatus.DELAYED) {
+                                badge = (
+                                    <>
+                                        <Badge type="warning">{c('Import status').t`Delayed`}</Badge>
+                                        <Tooltip
+                                            title={c('Tooltip')
+                                                .t`Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.`}
+                                        >
+                                            <Icon name="attention-plain" />
+                                        </Tooltip>
+                                    </>
+                                );
                             }
 
                             return <div className="onmobile-aligncenter">{badge}</div>;
