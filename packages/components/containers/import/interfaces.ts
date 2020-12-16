@@ -87,6 +87,7 @@ export enum ImportMailStatus {
     FAILED = 3,
     PAUSED = 4,
     CANCELED = 5,
+    DELAYED = 6,
 }
 
 export enum ImportMailError {
@@ -117,6 +118,7 @@ export enum ImportMailReportStatus {
     FAILED = 3,
     PAUSED = 4,
     CANCELED = 5,
+    DELAYED = 6,
 }
 
 export interface ImportHistory {
