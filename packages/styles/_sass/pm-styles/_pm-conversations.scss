@@ -192,7 +192,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 			bottom: 0;
 			left: 0;
 			z-index: 1;
-			border-radius: 50%;
+			border-radius: $global-border-radius;
 			background-color: currentColor;
 			opacity: 0;
 		}
