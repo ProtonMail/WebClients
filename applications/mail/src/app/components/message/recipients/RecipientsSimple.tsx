@@ -16,7 +16,7 @@ const RecipientsSimple = ({ message, isLoading }: Props) => {
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
 
     return (
-        <div className="flex flex-nowrap is-appearing-content">
+        <div className="flex flex-nowrap">
             <span className="message-header-to container-to pl0-5">{!isLoading && c('Label').t`To:`}</span>
             <span className="message-header-contact ellipsis">
                 {!isLoading && (

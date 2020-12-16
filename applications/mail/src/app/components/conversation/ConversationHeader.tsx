@@ -41,10 +41,8 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                 >
                     {!loading ? (
                         <>
-                            {isConversation && (
-                                <NumMessages className="is-appearing-content mr0-25" conversation={element} />
-                            )}
-                            <span className="is-appearing-content">{element.Subject}</span>
+                            {isConversation && <NumMessages className="mr0-25" conversation={element} />}
+                            <span>{element.Subject}</span>
                         </>
                     ) : (
                         <>&nbsp;</>
@@ -58,7 +56,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                 <div className="flex flex-items-center flex-nowrap">
                     <span className="message-conversation-summary-stat mr1 flex flex-items-center flex-item-noshrink">
                         {!loading && (
-                            <span className="flex flex-items-center is-appearing-content">
+                            <span className="flex flex-items-center">
                                 <Icon
                                     name="email-address"
                                     className="opacity-50"
@@ -70,7 +68,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                     </span>
                     <span className="message-conversation-summary-stat mr1 flex flex-items-center flex-item-noshrink">
                         {!loading ? (
-                            <span className="flex flex-items-center is-appearing-content">
+                            <span className="flex flex-items-center">
                                 <Icon
                                     name="contact"
                                     className="opacity-50"
@@ -84,7 +82,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                     </span>
                 </div>
                 {!loading && (
-                    <div className="flex-item-fluid alignright no-scroll is-appearing-content">
+                    <div className="flex-item-fluid alignright no-scroll">
                         <ItemLabels
                             labels={labels}
                             element={element}

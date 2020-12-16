@@ -157,12 +157,7 @@ const HeaderExpanded = ({
                             {from}
                         </RecipientType>
                     ) : (
-                        <div
-                            className={classnames([
-                                'flex flex-nowrap is-appearing-content',
-                                !messageLoaded && 'flex-item-fluid',
-                            ])}
-                        >
+                        <div className={classnames(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
                             {from}
                         </div>
                     )}
@@ -175,22 +170,16 @@ const HeaderExpanded = ({
                 >
                     {messageLoaded && !showDetails && (
                         <>
-                            <span className="inline-flex is-appearing-content">
+                            <span className="inline-flex">
                                 <ItemAction element={message.data} className="flex-item-noshrink" />
                                 <EncryptionStatusIcon {...messageViewIcons.globalIcon} className="mr0-5" />
                                 <ItemLocation element={message.data} labelID={labelID} />
                             </span>
-                            {!isNarrow && (
-                                <ItemDate
-                                    className="ml0-5 is-appearing-content"
-                                    element={message.data}
-                                    labelID={labelID}
-                                />
-                            )}
+                            {!isNarrow && <ItemDate className="ml0-5" element={message.data} labelID={labelID} />}
                         </>
                     )}
                     {messageLoaded && showDetails && (
-                        <span className="ml0-5 inline-flex is-appearing-content">
+                        <span className="ml0-5 inline-flex">
                             <ItemAction element={message.data} className="flex-item-noshrink" />
                         </span>
                     )}
@@ -227,7 +216,7 @@ const HeaderExpanded = ({
                             <button
                                 type="button"
                                 onClick={toggleDetails}
-                                className="message-show-hide-link pm-button--link alignbaseline is-appearing-content"
+                                className="message-show-hide-link pm-button--link alignbaseline"
                                 disabled={!messageLoaded}
                             >
                                 {showDetails
@@ -241,7 +230,7 @@ const HeaderExpanded = ({
                 </div>
                 {messageLoaded && !showDetails && !isNarrow && (
                     <>
-                        <div className="flex-item-noshrink flex flex-items-center message-header-expanded-label-container is-appearing-content">
+                        <div className="flex-item-noshrink flex flex-items-center message-header-expanded-label-container">
                             <ItemLabels
                                 element={message.data}
                                 labelID={labelID}
@@ -262,7 +251,7 @@ const HeaderExpanded = ({
                         <>
                             <div className="flex flex-nowrap flex-items-center">
                                 <Icon name="calendar" className="ml0-5 mr0-5" />
-                                <ItemDate className="is-appearing-content" element={message.data} labelID={labelID} />
+                                <ItemDate element={message.data} labelID={labelID} />
                             </div>
                             <div className="mlauto flex flex-nowrap">
                                 <ItemLabels
@@ -271,7 +260,6 @@ const HeaderExpanded = ({
                                     labels={labels}
                                     showUnlabel
                                     maxNumber={1}
-                                    className="is-appearing-content"
                                 />
                                 <ItemAttachmentIcon element={message.data} labelID={labelID} className="ml0-5" />
                             </div>

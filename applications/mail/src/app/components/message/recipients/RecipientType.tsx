@@ -13,7 +13,7 @@ const RecipientType = ({
 }: Props) => {
     return (
         <span className={className}>
-            <span className="container-to pt0-5 is-appearing-content">{label}</span>
+            <span className="container-to pt0-5">{label}</span>
             <span className="flex-self-vcenter">{children}</span>
         </span>
     );

@@ -16,7 +16,7 @@ const RecipientItemLayout = ({ button, label, showAddress = true, address, title
         <span
             className={classnames([
                 'flex flex-items-center flex-nowrap message-recipient-item',
-                isLoading ? 'flex-item-fluid' : 'is-appearing-content',
+                isLoading && 'flex-item-fluid',
             ])}
         >
             <span className="container-to container-to--item noprint">{button}</span>
