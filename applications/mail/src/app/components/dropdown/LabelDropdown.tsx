@@ -117,6 +117,8 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
     });
 
     const handleApply = async (selection = selectedLabelIDs) => {
+        const areSameLabels = isDeepEqual(initialState, selection);
+
         const promises = [];
         const elements = getElementsFromIDs(selectedIDs);
 
