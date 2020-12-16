@@ -469,7 +469,7 @@ export const getStatusIconName = ({ isEncrypted, fill }: Pick<Partial<StatusIcon
         return 'locks-warning';
     }
     if (fill === FAIL) {
-        return 'circle';
+        return 'attention';
     }
     return '';
 };

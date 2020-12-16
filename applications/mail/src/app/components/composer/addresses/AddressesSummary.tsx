@@ -7,7 +7,6 @@ import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
 import { recipientTypes } from '../../../models/address';
-// import { recipientsToRecipientOrGroup, getRecipientOrGroupLabel } from '../../../helpers/addresses';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 
@@ -22,10 +21,6 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(getRecipients(message))).join(', ');
 
-    // recipientsToRecipientOrGroup;
-    // recipientsToRecipientOrGroup(getRecipients(message), contactGroups)
-    //     .map((recipientOrGroup) => getRecipientOrGroupLabel(recipientOrGroup, contacts))
-    //     .join(', ');
     return (
         <div className="flex flex-row flex-nowrap flex-items-center m0-5 pl0-5 pr0-5" onClick={onFocus}>
             <Label className="composer-meta-label pr0-5 pt0 bold">{c('Title').t`To`}</Label>
@@ -58,12 +53,9 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
                                 {recipientOrGroups.map((recipientOrGroup, i) => {
                                     const Address = recipientOrGroup.recipient?.Address;
                                     const sendInfo = Address ? mapSendInfo?.[Address] : undefined;
-                                    const valid = sendInfo
-                                        ? (sendInfo?.emailValidation && !sendInfo?.emailAddressWarnings?.length) ||
-                                          false
-                                        : true;
                                     const icon = sendInfo?.sendIcon;
-                                    const cannotSend = !valid || icon?.fill === STATUS_ICONS_FILLS.FAIL;
+                                    const cannotSend = icon?.fill === STATUS_ICONS_FILLS.FAIL;
+
                                     return (
                                         <span
                                             key={i} // eslint-disable-line react/no-array-index-key
@@ -73,7 +65,7 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
                                             ])}
                                         >
                                             <span>
-                                                <span className="composer-addresses-addressIcon relative">
+                                                <span className="composer-addresses-addressIcon relative mr0-25">
                                                     {icon && <EncryptionStatusIcon {...icon} />}
                                                 </span>
                                                 <span className="mw100 ellipsis">

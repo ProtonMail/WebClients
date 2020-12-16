@@ -13,11 +13,10 @@ import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { EncryptionPreferences, EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
-
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
-import { MapSendInfo } from '../models/crypto';
+import { MapSendInfo, STATUS_ICONS_FILLS } from '../models/crypto';
 import { MessageExtended } from '../models/message';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = EncryptionPreferencesFailureTypes;
@@ -73,7 +72,12 @@ export const useUpdateRecipientSendInfo = (
                     ...mapSendInfo,
                     [emailAddress]: {
                         sendPreferences: undefined,
-                        sendIcon: undefined,
+                        sendIcon: {
+                            colorClassName: 'color-global-warning',
+                            isEncrypted: false,
+                            fill: STATUS_ICONS_FILLS.FAIL,
+                            text: c('Composer email icon').t`The address might be mispelled`,
+                        },
                         loading: false,
                         emailValidation,
                         emailAddressWarnings: [],
