@@ -42,47 +42,10 @@ export const useSendIcs = () => {
             );
             const [publicKeys, privateKeys] = [allPublicKeys.slice(0, 1), allPrivateKeys.slice(0, 1)];
             const { AutoSaveContacts, Sign } = await getMailSettings();
-            // const inputMessage = {
-            //     localID: generateUID('reply-invitation'),
-            //     plainText: plainTextBody,
-            //     publicKeys,
-            //     privateKeys,
-            //     data: {
-            //         AddressID: addressID,
-            //         Subject: subject,
-            //         Sender: from,
-            //         ToList: to,
-            //         CCList: [],
-            //         BCCList: [],
-            //         MIMEType: MIME_TYPES.PLAINTEXT,
-            //     },
-            // };
-            // const { Message: updatedMessageData } = await api<{ Message: Message }>(
-            //     // MESSAGE_ACTIONS.NEW = -1, better not to export that constant for the moment
-            //     createDraft({
-            //         Action: -1,
-            //         Message: { ...inputMessage.data, Body },
-            //         AttachmentKeyPackets: {},
-            //     } as any)
-            // );
+
             const replyAttachment = new File([new Blob([ics])], 'invite.ics', { type: 'text/calendar; method=REPLY' });
             const packets = await encryptAttachment(ics, replyAttachment, false, publicKeys, privateKeys);
             const concatenatedPackets = concatArrays([packets.data, packets.keys, packets.signature].filter(isTruthy));
-            // const { Attachment: attachment } = await api(
-            //     await uploadAttachment({
-            //         Filename: packets.Filename,
-            //         MessageID: updatedMessageData.ID,
-            //         ContentID: '',
-            //         MIMEType: packets.MIMEType,
-            //         KeyPackets: new Blob([packets.keys] as any),
-            //         DataPacket: new Blob([packets.data] as any),
-            //         Signature: packets.signature ? new Blob([packets.signature] as any) : undefined,
-            //     })
-            // );
-            // const message = {
-            //     ...inputMessage,
-            //     data: { ...updatedMessageData, Attachments: [attachment] },
-            // };
             const emails = to.map(({ Address }) => Address);
             const attachment = {
                 Filename: packets.Filename,
