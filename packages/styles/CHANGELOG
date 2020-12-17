@@ -14,7 +14,12 @@
 - added Android CSS reset
 - Bf stuff
 - added `pm-select`
-- added `bg-global-muted-dm` (dark-mode-friendly alias of `bg-global-muted`)
+- added `bg-global-muted-dm` (dark-mode-friendly alias of `bg-global-muted`) + custom prop
+- added `pm-editableSection` fragment (Mail autoreply & filters)
+- added `onmobile-no-border` helper
+- added inline-grid helper
+- limit nested blockquote to 5 levels
+- Feat - attachment preview rework
 
 ## Updated/fixes
 
@@ -46,6 +51,8 @@
 - cleaned up CSS custom props references
 - fixed account display
 - remove mime icons sprite because they aren’t used
+- Hotfix - loading state of conversations
+- fixed display on website (modal page was broken)
 
 
 # [1.8.5] - 2020-09-30

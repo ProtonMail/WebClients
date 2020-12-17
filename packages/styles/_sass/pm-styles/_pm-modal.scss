@@ -204,7 +204,8 @@ $modal-smaller-width: 28em !default;
 
 .pm-modalContentInner {
   position: relative;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   flex: 1 1 auto;
   padding: 0 rem(30);
 
