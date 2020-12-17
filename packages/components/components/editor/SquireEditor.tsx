@@ -121,6 +121,7 @@ const SquireEditor = (
             },
             insertImage: (url: string, attrs: { [key: string]: string | undefined } = {}) => {
                 insertImage(squireRef.current, url, attrs);
+                onChange(squireRef.current?.getHTML());
             },
         };
     }, [metadata]);

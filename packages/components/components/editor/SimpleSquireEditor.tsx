@@ -22,37 +22,35 @@ interface Props {
  * Uncontrolled components is prefered in this case
  * Look at the specific SquireEditorRef provided to set initial value
  */
-const SimpleSquireEditor = forwardRef(
-    (
-        { className, supportImages = true, isNarrow: forcedIsNarrow, onChange, disabled, onReady, onFocus }: Props,
-        ref: Ref<SquireEditorRef>
-    ) => {
-        const { isNarrow } = useActiveBreakpoint();
+const SimpleSquireEditor = (
+    { className, supportImages = true, isNarrow: forcedIsNarrow, onChange, disabled, onReady, onFocus }: Props,
+    ref: Ref<SquireEditorRef>
+) => {
+    const { isNarrow } = useActiveBreakpoint();
 
-        const handleAddImages = (files: File[]) => {
-            const run = async (file: File) => {
-                const base64str = await toBase64(file);
-                (ref as MutableRefObject<SquireEditorRef>).current?.insertImage(base64str);
-            };
-            files.forEach((file) => {
-                run(file);
-            });
+    const handleAddImages = (files: File[]) => {
+        const run = async (file: File) => {
+            const base64str = await toBase64(file);
+            (ref as MutableRefObject<SquireEditorRef>).current?.insertImage(base64str);
         };
+        files.forEach((file) => {
+            void run(file);
+        });
+    };
 
-        return (
-            <SquireEditor
-                ref={ref}
-                className={classnames([className, 'simple-squire-editor'])}
-                metadata={{ supportImages }}
-                onChange={onChange}
-                isNarrow={isNarrow || forcedIsNarrow}
-                disabled={disabled}
-                onReady={onReady}
-                onFocus={onFocus}
-                onAddImages={handleAddImages}
-            />
-        );
-    }
-);
+    return (
+        <SquireEditor
+            ref={ref}
+            className={classnames([className, 'simple-squire-editor'])}
+            metadata={{ supportImages }}
+            onChange={onChange}
+            isNarrow={isNarrow || forcedIsNarrow}
+            disabled={disabled}
+            onReady={onReady}
+            onFocus={onFocus}
+            onAddImages={handleAddImages}
+        />
+    );
+};
 
-export default SimpleSquireEditor;
+export default forwardRef(SimpleSquireEditor);
