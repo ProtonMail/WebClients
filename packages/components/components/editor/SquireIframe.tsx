@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect, forwardRef, Ref } from 'react';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
 
 import { useHandler, useNotifications } from '../../hooks';
 import { SquireType, getSquireRef, setSquireRef, initSquire, toggleEllipsisButton } from './squireConfig';
@@ -112,8 +111,14 @@ const SquireIframe = (
         setIsEmpty(isHTMLEmpty(content));
         onInput(content);
     });
-    const handlePasteEnhanced = useHandler(pasteFileHandler(onAddImages));
-    const handlePaste = metadata.supportImages ? handlePasteEnhanced : noop;
+    const handlePaste = useHandler((event: ClipboardEvent) => {
+        // Some paste action will not trigger an input event
+        // And it can be down without the keyboard, there is no other place to catch it
+        handleInput();
+        if (metadata.supportImages) {
+            pasteFileHandler(event, onAddImages);
+        }
+    });
     const handleCursor = () => scrollIntoViewIfNeeded(getSquireRef(ref));
 
     // Pass dragenter and dragleave events to parent document
@@ -133,6 +138,9 @@ const SquireIframe = (
             squire.addEventListener('dragenter', handlePassDragEvents);
             squire.addEventListener('dragleave', handlePassDragEvents);
             squire.addEventListener('cursor', handleCursor);
+            // Listening to all keyups as inputs is aggressive but we tested some deletion actions that trigger no other events
+            // Also it's keyup and not keydown, keydown is too early and don't contains changes
+            squire.addEventListener('keyup', handleInput);
             return () => {
                 squire.removeEventListener('focus', handleFocus);
                 squire.removeEventListener('input', handleInput);
@@ -140,6 +148,7 @@ const SquireIframe = (
                 squire.removeEventListener('dragenter', handlePassDragEvents);
                 squire.removeEventListener('dragleave', handlePassDragEvents);
                 squire.removeEventListener('cursor', handleCursor);
+                squire.removeEventListener('keyup', handleInput);
             };
         }
     }, [squireReady]);
