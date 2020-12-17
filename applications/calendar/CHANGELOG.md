@@ -1,3 +1,12 @@
+# [4.0.0-beta.12] - 2020-12-21
+## Updated
+- Harmonise answer for recurring events with single edits for all other calendar providers
+- Speed-up email replies
+- Align today icon with mobile
+
+## Fixed
+- Add more timezones support
+---
 # [4.0.0-beta.11] - 2020-12-03
 ## Updated
 - Improve display of participants in event popover
