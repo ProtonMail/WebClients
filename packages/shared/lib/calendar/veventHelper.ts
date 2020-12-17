@@ -1,5 +1,6 @@
 import { fromUTCDate } from '../date/timezone';
 import { omit, pick } from '../helpers/object';
+import { CalendarEventData } from '../interfaces/calendar';
 import { VcalValarmComponent, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
 import { fromInternalAttendee } from './attendees';
 import { CALENDAR_CARD_TYPE } from './constants';
@@ -47,6 +48,10 @@ const TAKEN_KEYS = [
         ...ATTENDEES_SIGNED_FIELDS,
     ]),
 ] as const;
+
+export const getReadableCard = (cards: CalendarEventData[]) => {
+    return cards.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
+};
 
 export const withUid = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {
     if (properties.uid) {

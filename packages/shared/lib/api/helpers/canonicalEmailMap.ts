@@ -1,6 +1,6 @@
 import { API_CODES } from '../../constants';
 import { Api } from '../../interfaces';
-import { GetCanonicalAddressesResponse } from '../../interfaces/calendar';
+import { GetCanonicalAddressesApiResponse } from '../../interfaces/calendar';
 import { SimpleMap } from '../../interfaces/utils';
 import { getCanonicalAddresses } from '../addresses';
 
@@ -8,7 +8,7 @@ export const getCanonicalEmailMap = async (emails: string[] = [], api: Api) => {
     const map: SimpleMap<string> = {};
     if (emails.length) {
         const encodedEmails = emails.map((email) => encodeURIComponent(email));
-        const { Responses, Code } = await api<GetCanonicalAddressesResponse>(getCanonicalAddresses(encodedEmails));
+        const { Responses, Code } = await api<GetCanonicalAddressesApiResponse>(getCanonicalAddresses(encodedEmails));
         if (Code !== API_CODES.GLOBAL_SUCCESS) {
             throw new Error('Canonize operation failed');
         }

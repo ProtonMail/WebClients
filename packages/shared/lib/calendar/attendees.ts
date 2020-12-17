@@ -14,7 +14,7 @@ export const generateAttendeeToken = async (normalizedEmail: string, uid: string
     return arrayToHexString(hash);
 };
 
-const toApiPartstat = (partstat?: string) => {
+export const toApiPartstat = (partstat?: string) => {
     if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
         return ATTENDEE_STATUS_API.TENTATIVE;
     }
@@ -27,7 +27,7 @@ const toApiPartstat = (partstat?: string) => {
     return ATTENDEE_STATUS_API.NEEDS_ACTION;
 };
 
-const toIcsPartstat = (partstat?: ATTENDEE_STATUS_API) => {
+export const toIcsPartstat = (partstat?: ATTENDEE_STATUS_API) => {
     if (partstat === ATTENDEE_STATUS_API.TENTATIVE) {
         return ICAL_ATTENDEE_STATUS.TENTATIVE;
     }
