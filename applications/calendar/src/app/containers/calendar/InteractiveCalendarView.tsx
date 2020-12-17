@@ -1,5 +1,6 @@
-import { updateCalendar } from 'proton-shared/lib/api/calendars';
-import { getAttendeeEmail } from 'proton-shared/lib/calendar/attendees';
+import { updateAttendeePartstat, updateCalendar } from 'proton-shared/lib/api/calendars';
+import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
+import { getAttendeeEmail, toApiPartstat } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
@@ -21,6 +22,7 @@ import {
     CalendarBootstrap,
     CalendarEvent,
     SyncMultipleApiResponse,
+    UpdatePartstatApiResponse,
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -73,7 +75,7 @@ import { getExistingEvent, getInitialModel } from '../../components/eventModal/e
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
-import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '../../constants';
+import { DELETE_CONFIRMATION_TYPES, SAVE_CONFIRMATION_TYPES } from '../../constants';
 import { modifyEventModelPartstat } from '../../helpers/attendees';
 import { DateTimeModel, EventModel } from '../../interfaces/EventModel';
 import CalendarView from './CalendarView';
@@ -84,15 +86,16 @@ import DeleteRecurringConfirmModal from './confirmationModals/DeleteRecurringCon
 import EditRecurringConfirmModal from './confirmationModals/EditRecurringConfirmation';
 import getDeleteEventActions from './eventActions/getDeleteEventActions';
 import getSaveEventActions from './eventActions/getSaveEventActions';
-import { INVITE_ACTION_TYPES, InviteActions } from './eventActions/inviteActions';
+import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from './eventActions/inviteActions';
 import withOccurrenceEvent from './eventActions/occurrenceEvent';
 
 import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getUpdatedDateTime } from './eventHelper';
 import getComponentFromCalendarEvent from './eventStore/cache/getComponentFromCalendarEvent';
 import { getIsCalendarEvent } from './eventStore/cache/helper';
-import upsertMultiActionsResponses from './eventStore/cache/upsertResponsesArray';
+import { upsertSyncMultiActionsResponses } from './eventStore/cache/upsertResponsesArray';
 import { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
 import getSyncMultipleEventsPayload, { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
+import { UpdatePartstatOperation } from './getUpdatePartstatOperation';
 import {
     CalendarViewEvent,
     CalendarViewEventData,
@@ -101,6 +104,7 @@ import {
     EventTargetAction,
     InteractiveRef,
     InteractiveState,
+    OnDeleteConfirmationArgs,
     OnSaveConfirmationArgs,
     SharedViewProps,
     TargetEventData,
@@ -655,8 +659,8 @@ const InteractiveCalendarView = ({
         data,
         isInvitation,
         inviteActions,
-    }: OnSaveConfirmationArgs): Promise<RECURRING_TYPES> => {
-        return new Promise<RECURRING_TYPES>((resolve, reject) => {
+    }: OnSaveConfirmationArgs): Promise<RecurringActionData> => {
+        return new Promise<RecurringActionData>((resolve, reject) => {
             if (type === SAVE_CONFIRMATION_TYPES.RECURRING && data) {
                 return createModal(
                     <EditRecurringConfirmModal
@@ -679,15 +683,11 @@ const InteractiveCalendarView = ({
     const handleDeleteConfirmation = ({
         type,
         data,
+        isInvitation,
         inviteActions,
         veventComponent,
-    }: {
-        type: DELETE_CONFIRMATION_TYPES;
-        data?: RECURRING_TYPES[];
-        inviteActions?: InviteActions;
-        veventComponent?: VcalVeventComponent;
-    }): Promise<RECURRING_TYPES> => {
-        return new Promise<RECURRING_TYPES>((resolve, reject) => {
+    }: OnDeleteConfirmationArgs): Promise<RecurringActionData> => {
+        return new Promise<RecurringActionData>((resolve, reject) => {
             if (type === DELETE_CONFIRMATION_TYPES.SINGLE) {
                 return createModal(
                     <DeleteConfirmModal
@@ -701,7 +701,10 @@ const InteractiveCalendarView = ({
             if (type === DELETE_CONFIRMATION_TYPES.RECURRING && data) {
                 return createModal(
                     <DeleteRecurringConfirmModal
-                        types={data}
+                        types={data.types}
+                        isInvitation={isInvitation}
+                        hasSingleModifications={data.hasSingleModifications}
+                        hasOnlyCancelledSingleModifications={data.hasOnlyCancelledSingleModifications}
                         inviteActions={inviteActions}
                         onClose={reject}
                         onConfirm={resolve}
@@ -794,7 +797,7 @@ const InteractiveCalendarView = ({
 
         const calendarsEventCache = calendarsEventsCacheRef.current;
         if (calendarsEventCache) {
-            upsertMultiActionsResponses(multiActions, multiResponses, calendarsEventCache);
+            upsertSyncMultiActionsResponses(multiActions, multiResponses, calendarsEventCache);
         }
 
         const hiddenCalendars = multiActions.filter(({ calendarID }) => {
@@ -820,10 +823,35 @@ const InteractiveCalendarView = ({
         createNotification({ text: texts.success });
     };
 
+    const handleUpdatePartstatActions = async (operations: UpdatePartstatOperation[] = []) => {
+        if (!operations.length) {
+            return;
+        }
+        const requests = operations.map(({ data: { eventID, calendarID, attendeeID, partstat, updateTime } }) => () =>
+            api<UpdatePartstatApiResponse>({
+                ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
+                    Status: toApiPartstat(partstat),
+                    UpdateTime: updateTime,
+                }),
+                silence: true,
+            })
+        );
+        // the routes called in requests do not have any specific jail limit
+        // the limit per user session is 25k requests / 900s
+        await processApiRequestsSafe(requests, 1000, 100 * 1000);
+
+        // const calendarsEventCache = calendarsEventsCacheRef.current;
+        // if (calendarsEventCache) {
+        //     upsertUpdatePartstatResponses(operations, results, calendarsEventCache);
+        // }
+        // calendarsEventCache.rerender?.();
+        await call();
+    };
+
     const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent, inviteActions?: InviteActions) => {
         try {
             isSavingEvent.current = true;
-            const syncActions = await getSaveEventActions({
+            const { syncActions, updatePartstatActions } = await getSaveEventActions({
                 temporaryEvent,
                 weekStartsOn,
                 addresses,
@@ -834,7 +862,7 @@ const InteractiveCalendarView = ({
                 getCalendarBootstrap: readCalendarBootstrap,
                 sendReplyIcs: handleSendReplyIcs,
             });
-            await handleSyncActions(syncActions);
+            await Promise.all([handleSyncActions(syncActions), handleUpdatePartstatActions(updatePartstatActions)]);
         } catch (e) {
             createNotification({ text: e.message, type: 'error' });
         } finally {
@@ -844,7 +872,7 @@ const InteractiveCalendarView = ({
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions?: InviteActions) => {
         try {
-            const syncActions = await getDeleteEventActions({
+            const { syncActions, updatePartstatActions } = await getDeleteEventActions({
                 targetEvent,
                 addresses,
                 onDeleteConfirmation: handleDeleteConfirmation,
@@ -853,7 +881,7 @@ const InteractiveCalendarView = ({
                 getCalendarBootstrap: readCalendarBootstrap,
                 inviteActions,
             });
-            await handleSyncActions(syncActions);
+            await Promise.all([handleSyncActions(syncActions), handleUpdatePartstatActions(updatePartstatActions)]);
         } catch (e) {
             createNotification({ text: e.message, type: 'error' });
         }

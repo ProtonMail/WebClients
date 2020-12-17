@@ -9,7 +9,7 @@ const getResponse = (responses: SyncMultipleApiResponses[], index: number) => {
     return responses.find((x) => x.Index === index);
 };
 
-const upsertMultiActionsResponses = (
+export const upsertSyncMultiActionsResponses = (
     multiActions: SyncEventActionOperations[],
     multiResponses: SyncMultipleApiResponse[],
     calendarsEventsCache: CalendarsEventsCache
@@ -45,5 +45,3 @@ const upsertMultiActionsResponses = (
         }
     }
 };
-
-export default upsertMultiActionsResponses;

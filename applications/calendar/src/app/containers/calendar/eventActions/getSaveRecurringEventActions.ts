@@ -1,20 +1,23 @@
+import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { RECURRING_TYPES } from '../../../constants';
-import createSingleRecurrence from '../recurrence/createSingleRecurrence';
-import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
-import createFutureRecurrence from '../recurrence/createFutureRecurrence';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
     getCreateSyncOperation,
     getDeleteSyncOperation,
     getUpdateSyncOperation,
     SyncEventActionOperations,
 } from '../getSyncMultipleEventsPayload';
-import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
-import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
+import getUpdatePartstatOperation, { UpdatePartstatOperation } from '../getUpdatePartstatOperation';
+import createFutureRecurrence from '../recurrence/createFutureRecurrence';
+import createSingleRecurrence from '../recurrence/createSingleRecurrence';
+import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import updateAllRecurrence from '../recurrence/updateAllRecurrence';
+import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
+import { InviteActions } from './inviteActions';
+import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { withIncreasedSequence, withVeventSequence } from './sequence';
 
 interface SaveRecurringArguments {
@@ -26,7 +29,9 @@ interface SaveRecurringArguments {
     recurrence: CalendarEventRecurring;
     updateAllPossibilities: UpdateAllPossibilities;
     hasModifiedRrule: boolean;
+    inviteActions: InviteActions;
     isInvitation: boolean;
+    selfAttendeeToken?: string;
 }
 
 const getSaveRecurringEventActions = ({
@@ -49,8 +54,14 @@ const getSaveRecurringEventActions = ({
     recurrence,
     updateAllPossibilities,
     hasModifiedRrule,
+    inviteActions,
     isInvitation,
-}: SaveRecurringArguments): SyncEventActionOperations[] => {
+    selfAttendeeToken,
+}: SaveRecurringArguments): {
+    multiSyncActions: SyncEventActionOperations[];
+    updatePartstatActions?: UpdatePartstatOperation[];
+} => {
+    const { resetSingleEditsPartstat } = inviteActions;
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
 
     if (!originalVeventComponent) {
@@ -91,14 +102,16 @@ const getSaveRecurringEventActions = ({
             const newVeventWithSequence = withVeventSequence(newVeventComponent, oldVeventWithSequence, false);
             const updateOperation = getUpdateSyncOperation(updateSingleRecurrence(newVeventWithSequence), oldEvent);
 
-            return [
-                {
-                    calendarID: originalCalendarID,
-                    addressID: originalAddressID,
-                    memberID: originalMemberID,
-                    operations: [...maybeUpdateParentOperations, updateOperation],
-                },
-            ];
+            return {
+                multiSyncActions: [
+                    {
+                        calendarID: originalCalendarID,
+                        addressID: originalAddressID,
+                        memberID: originalMemberID,
+                        operations: [...maybeUpdateParentOperations, updateOperation],
+                    },
+                ],
+            };
         }
 
         const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventWithSequence, recurrence);
@@ -111,14 +124,16 @@ const getSaveRecurringEventActions = ({
             withVeventSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent, false)
         );
 
-        return [
-            {
-                calendarID: originalCalendarID,
-                addressID: originalAddressID,
-                memberID: originalMemberID,
-                operations: [...maybeUpdateParentOperations, createOperation],
-            },
-        ];
+        return {
+            multiSyncActions: [
+                {
+                    calendarID: originalCalendarID,
+                    addressID: originalAddressID,
+                    memberID: originalMemberID,
+                    operations: [...maybeUpdateParentOperations, createOperation],
+                },
+            ],
+        };
     }
 
     if (type === RECURRING_TYPES.FUTURE) {
@@ -144,14 +159,16 @@ const getSaveRecurringEventActions = ({
             createFutureRecurrence(newVeventWithSequence, originalVeventWithSequence, recurrence)
         );
 
-        return [
-            {
-                calendarID: originalCalendarID,
-                addressID: originalAddressID,
-                memberID: originalMemberID,
-                operations: [...deleteOperations, updateOperation, createOperation],
-            },
-        ];
+        return {
+            multiSyncActions: [
+                {
+                    calendarID: originalCalendarID,
+                    addressID: originalAddressID,
+                    memberID: originalMemberID,
+                    operations: [...deleteOperations, updateOperation, createOperation],
+                },
+            ],
+        };
     }
 
     if (type === RECURRING_TYPES.ALL) {
@@ -159,6 +176,16 @@ const getSaveRecurringEventActions = ({
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
         // For an invitation, we do not want to delete single edits as we want to keep in sync with the organizer's event
         const deleteOperations = isInvitation ? [] : singleEditRecurrences.map(getDeleteSyncOperation);
+        const resetPartstatOperations =
+            isInvitation && resetSingleEditsPartstat
+                ? singleEditRecurrences.map((event) =>
+                      getUpdatePartstatOperation({
+                          event,
+                          token: selfAttendeeToken,
+                          partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+                      })
+                  )
+                : [];
 
         const newRecurrentVevent = updateAllRecurrence({
             component: newVeventComponent,
@@ -176,30 +203,35 @@ const getSaveRecurringEventActions = ({
 
         if (originalCalendarID !== newCalendarID) {
             const deleteOriginalOperation = getDeleteSyncOperation(originalEvent);
-            return [
+            return {
+                multiSyncActions: [
+                    {
+                        calendarID: newCalendarID,
+                        addressID: newAddressID,
+                        memberID: newMemberID,
+                        operations: [updateOperation],
+                    },
+                    {
+                        calendarID: originalCalendarID,
+                        addressID: originalAddressID,
+                        memberID: originalMemberID,
+                        operations: [...deleteOperations, deleteOriginalOperation],
+                    },
+                ],
+            };
+        }
+
+        return {
+            multiSyncActions: [
                 {
                     calendarID: newCalendarID,
                     addressID: newAddressID,
                     memberID: newMemberID,
-                    operations: [updateOperation],
+                    operations: isInvitation ? [updateOperation] : [...deleteOperations, updateOperation],
                 },
-                {
-                    calendarID: originalCalendarID,
-                    addressID: originalAddressID,
-                    memberID: originalMemberID,
-                    operations: [...deleteOperations, deleteOriginalOperation],
-                },
-            ];
-        }
-
-        return [
-            {
-                calendarID: newCalendarID,
-                addressID: newAddressID,
-                memberID: newMemberID,
-                operations: isInvitation ? [updateOperation] : [...deleteOperations, updateOperation],
-            },
-        ];
+            ],
+            updatePartstatActions: resetPartstatOperations,
+        };
     }
 
     throw new Error('Unknown type');

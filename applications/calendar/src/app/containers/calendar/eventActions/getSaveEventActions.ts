@@ -1,6 +1,7 @@
 import { withPmAttendees } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
+import { getSelfAttendeeToken } from 'proton-shared/lib/calendar/integration/invite';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
@@ -17,6 +18,8 @@ import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import getAllEventsByUID from '../getAllEventsByUID';
+import { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
+import { UpdatePartstatOperation } from '../getUpdatePartstatOperation';
 import { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb } from '../interface';
 import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
@@ -54,9 +57,11 @@ const getSaveSingleEventActionsHelper = async ({
     });
     const successText = getSingleEventText(oldEditEventData, newEditEventData, inviteActions);
     return {
-        actions: multiActions,
-        texts: {
-            success: successText,
+        syncActions: {
+            actions: multiActions,
+            texts: {
+                success: successText,
+            },
         },
     };
 };
@@ -83,7 +88,15 @@ const getSaveEventActions = async ({
     getEventDecrypted,
     getCalendarBootstrap,
     sendReplyIcs,
-}: Arguments) => {
+}: Arguments): Promise<{
+    syncActions: {
+        actions: SyncEventActionOperations[];
+        texts: {
+            success: string;
+        };
+    };
+    updatePartstatActions?: UpdatePartstatOperation[];
+}> => {
     const {
         tmpOriginalTarget: { data: { eventData: oldEventData, eventRecurrence, eventReadResult } } = { data: {} },
         tmpData,
@@ -125,9 +138,11 @@ const getSaveEventActions = async ({
         });
         const successText = getSingleEventText(undefined, newEditEventData, NO_INVITE_ACTION);
         return {
-            actions: multiActions,
-            texts: {
-                success: successText,
+            syncActions: {
+                actions: multiActions,
+                texts: {
+                    success: successText,
+                },
             },
         };
     }
@@ -197,8 +212,9 @@ const getSaveEventActions = async ({
     const hasModifiedRrule =
         tmpData.hasTouchedRrule &&
         !isDeepEqual(originalEditEventData.mainVeventComponent.rrule, newEditEventData.veventComponent.rrule);
+    const selfAttendeeToken = getSelfAttendeeToken(newEditEventData.veventComponent, addresses);
 
-    const saveType = await getRecurringSaveType({
+    const { type: saveType, inviteActions: updatedInviteActions } = await getRecurringSaveType({
         originalEditEventData,
         oldEditEventData,
         canOnlySaveAll:
@@ -211,6 +227,7 @@ const getSaveEventActions = async ({
         recurrence: actualEventRecurrence,
         recurrences,
         isInvitation,
+        selfAttendeeToken,
     });
     if (inviteType === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
         if (!invitePartstat) {
@@ -218,7 +235,7 @@ const getSaveEventActions = async ({
         }
         await sendReplyIcs(invitePartstat, newEditEventData.veventComponent);
     }
-    const multiActions = getSaveRecurringEventActions({
+    const { multiSyncActions, updatePartstatActions } = getSaveRecurringEventActions({
         type: saveType,
         recurrences,
         recurrence: actualEventRecurrence,
@@ -227,14 +244,19 @@ const getSaveEventActions = async ({
         oldEditEventData,
         originalEditEventData,
         hasModifiedRrule,
+        inviteActions: updatedInviteActions,
         isInvitation,
+        selfAttendeeToken,
     });
-    const successText = getRecurringEventUpdatedText(saveType, inviteActions);
+    const successText = getRecurringEventUpdatedText(saveType, updatedInviteActions);
     return {
-        actions: multiActions,
-        texts: {
-            success: successText,
+        syncActions: {
+            actions: multiSyncActions,
+            texts: {
+                success: successText,
+            },
         },
+        updatePartstatActions,
     };
 };
 

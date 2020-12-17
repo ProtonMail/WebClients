@@ -1,10 +1,11 @@
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '../../../constants';
+import { getHasAnsweredSingleEdits } from '../../../helpers/attendees';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventOldData } from '../../../interfaces/EventData';
-import { InviteActions } from './inviteActions';
-import { getExdatesAfter, getHasFutureOption, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { OnSaveConfirmationCb } from '../interface';
+import { INVITE_ACTION_TYPES, InviteActions } from './inviteActions';
+import { getExdatesAfter, getHasFutureOption, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 
 interface Arguments {
     originalEditEventData: EventOldData;
@@ -18,6 +19,7 @@ interface Arguments {
     hasModifiedCalendar: boolean;
     isInvitation: boolean;
     inviteActions: InviteActions;
+    selfAttendeeToken?: string;
 }
 
 const getRecurringSaveType = async ({
@@ -32,6 +34,7 @@ const getRecurringSaveType = async ({
     hasModifiedCalendar,
     isInvitation,
     inviteActions,
+    selfAttendeeToken,
 }: Arguments) => {
     const isFutureAllowed = getHasFutureOption(originalEditEventData.mainVeventComponent, recurrence);
     let saveTypes;
@@ -61,6 +64,16 @@ const getRecurringSaveType = async ({
     const hasSingleModifications = singleEditRecurrencesWithoutSelf.length >= 1 || exdates.length >= 1;
     const hasSingleModificationsAfter = singleEditRecurrencesAfter.length >= 1 || exdatesAfter.length >= 1;
 
+    const hasAnsweredSingleEdits = getHasAnsweredSingleEdits(singleEditRecurrencesWithoutSelf, selfAttendeeToken);
+    const updatedInviteActions = {
+        ...inviteActions,
+        resetSingleEditsPartstat:
+            saveTypes.length === 1 &&
+            saveTypes[0] === RECURRING_TYPES.ALL &&
+            inviteActions.type === INVITE_ACTION_TYPES.CHANGE_PARTSTAT &&
+            hasAnsweredSingleEdits,
+    };
+
     return onSaveConfirmation({
         type: SAVE_CONFIRMATION_TYPES.RECURRING,
         data: {
@@ -70,7 +83,7 @@ const getRecurringSaveType = async ({
             hasRruleModification: hasModifiedRrule,
             hasCalendarModification: hasModifiedCalendar,
         },
-        inviteActions,
+        inviteActions: updatedInviteActions,
         isInvitation,
     });
 };
