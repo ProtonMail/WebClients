@@ -65,7 +65,7 @@ export const isExternalEncrypted = (message: Message) => isE2E(message) && !isIn
 export const isPGPEncrypted = (message: Message) => isExternal(message) && isReceived(message) && isE2E(message);
 export const inSigningPeriod = ({ Time = 0 }: Message) => Time >= Math.max(SIGNATURE_START.USER, SIGNATURE_START.BULK);
 export const isPGPInline = (message: Message) => isPGPEncrypted(message) && !isMIME(message);
-export const isEO = (message?: Message) => !!message?.Password;
+export const isEO = (message?: Partial<Message>) => !!message?.Password;
 export const addReceived = (Flags = 0) => setBit(Flags, MESSAGE_FLAGS.FLAG_RECEIVED);
 
 export const getSender = (message?: Message) => message?.Sender;

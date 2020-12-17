@@ -8,7 +8,10 @@ import { getPGPSchemeAndMimeType } from './sendPreferences';
  * Get the send preferences for sending a message based on the encryption preferences
  * for sending to an email address, and the message preferences.
  */
-const getSendPreferences = (encryptionPreferences: EncryptionPreferences, message?: Message): SendPreferences => {
+const getSendPreferences = (
+    encryptionPreferences: EncryptionPreferences,
+    message?: Partial<Message>
+): SendPreferences => {
     const {
         encrypt,
         sign,

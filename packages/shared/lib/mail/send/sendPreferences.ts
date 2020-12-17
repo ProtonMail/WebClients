@@ -11,7 +11,7 @@ const { SEND_PM, SEND_EO, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE
  */
 export const getPGPScheme = (
     { encrypt, sign, scheme, isInternal }: Pick<EncryptionPreferences, 'encrypt' | 'sign' | 'scheme' | 'isInternal'>,
-    message?: Message
+    message?: Partial<Message>
 ): PACKAGE_TYPE => {
     if (isInternal) {
         return SEND_PM;
@@ -33,7 +33,7 @@ export const getPGPSchemeAndMimeType = (
         isInternal,
         mimeType: prefMimeType,
     }: Pick<EncryptionPreferences, 'encrypt' | 'sign' | 'scheme' | 'mimeType' | 'isInternal'>,
-    message?: Message
+    message?: Partial<Message>
 ): { pgpScheme: PACKAGE_TYPE; mimeType: MIME_TYPES } => {
     const messageMimeType = message?.MIMEType as MIME_TYPES;
     const pgpScheme = getPGPScheme({ encrypt, sign, scheme, isInternal }, message);

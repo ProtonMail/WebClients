@@ -1,4 +1,3 @@
-import { OpenPGPKey } from 'pmcrypto';
 import { MIME_TYPES } from '../../constants';
 import { Recipient } from '../Address';
 
@@ -51,12 +50,4 @@ export interface Message {
     Password?: string;
     PasswordHint?: string;
     RightToLeft?: number;
-}
-
-export interface SimpleMessageExtended {
-    localID: string;
-    data: Partial<Message>;
-    plainText?: string;
-    publicKeys?: OpenPGPKey[];
-    privateKeys?: OpenPGPKey[];
 }
