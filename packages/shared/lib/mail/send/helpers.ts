@@ -47,12 +47,6 @@ const buildPlaintextEntity = (plaintext?: string) => {
         contentTransferEncoding: 'quoted-printable',
     });
     if (!plaintext) {
-        entity.internalBody = '';
-    }
-    return entity;
-};
-
-    if (!plaintext) {
         // the mimemessage library is buggy in this case and converts an empty string into 'null'
         entity.internalBody = '';
     }
