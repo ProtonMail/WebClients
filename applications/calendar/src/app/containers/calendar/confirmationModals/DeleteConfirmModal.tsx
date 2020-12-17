@@ -2,11 +2,11 @@ import React from 'react';
 import { c } from 'ttag';
 import { Alert, ErrorButton, FormModal, ResetButton, useLoading } from 'react-components';
 import { RECURRING_TYPES } from '../../../constants';
-import { InviteActions, NO_INVITE_ACTION } from '../eventActions/inviteActions';
+import { InviteActions, NO_INVITE_ACTION, RecurringActionData } from '../eventActions/inviteActions';
 
 interface Props {
     onClose: () => void;
-    onConfirm: (type: RECURRING_TYPES) => void;
+    onConfirm: (data: RecurringActionData) => void;
     onDecline?: () => Promise<void>;
     inviteActions?: InviteActions;
 }
@@ -18,7 +18,7 @@ const DeleteConfirmModal = ({ inviteActions = NO_INVITE_ACTION, onClose, onConfi
         if (decline) {
             await onDecline?.();
         }
-        onConfirm(RECURRING_TYPES.SINGLE);
+        onConfirm({ type: RECURRING_TYPES.SINGLE, inviteActions });
         onClose();
     };
     return (

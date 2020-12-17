@@ -1,4 +1,8 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
+import { parse } from 'proton-shared/lib/calendar/vcal';
+import { getEventStatus, getIsCalendar, getIsEventComponent } from 'proton-shared/lib/calendar/vcalHelper';
+import { getReadableCard } from 'proton-shared/lib/calendar/veventHelper';
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { DecryptedEventTupleResult } from '../containers/calendar/eventStore/interface';
 import { EventModelReadView } from '../interfaces/EventModel';
 
@@ -36,4 +40,17 @@ export const getEventStatusTraits = (model: EventModelReadView) => {
         isTentative: eventStatus === ICAL_EVENT_STATUS.TENTATIVE,
         isCancelled: eventStatus === ICAL_EVENT_STATUS.CANCELLED,
     };
+};
+
+export const getIsEventCancelled = (event: CalendarEvent) => {
+    const calendarClearTextPart = getReadableCard(event.CalendarEvents);
+    if (!calendarClearTextPart) {
+        return undefined;
+    }
+    const vcalPart = parse(calendarClearTextPart.Data);
+    const vevent = getIsCalendar(vcalPart) ? vcalPart.components?.find(getIsEventComponent) : undefined;
+    if (vevent) {
+        return getEventStatus(vevent) === ICAL_EVENT_STATUS.CANCELLED;
+    }
+    return undefined;
 };

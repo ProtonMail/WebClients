@@ -37,11 +37,10 @@ export const getCurrentEvent = (originalComponent: VcalVeventComponent, recurren
         dtstart: recurrenceDtstart,
         dtend: recurrenceDtend,
     };
-
-}
+};
 
 export const getRecurrenceEvents = (recurrences: CalendarEvent[], originalEvent: CalendarEvent) => {
-    return recurrences.filter((Event) => Event !== originalEvent);
+    return recurrences.filter((Event) => Event.ID !== originalEvent.ID);
 };
 
 export const getExdatesAfter = (exdates: VcalDateOrDateTimeProperty[], date: Date) => {

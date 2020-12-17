@@ -1,5 +1,3 @@
-import { useGetAddressKeys, useGetCalendarKeys } from 'react-components';
-import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -7,10 +5,12 @@ import {
     syncMultipleEvents as syncMultipleEventsRoute,
     UpdateCalendarEventSyncData,
 } from 'proton-shared/lib/api/calendars';
+import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import { CachedKey } from 'proton-shared/lib/interfaces';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { useGetAddressKeys, useGetCalendarKeys } from 'react-components';
 
 export enum SyncOperationTypes {
     DELETE,
@@ -24,7 +24,6 @@ export interface DeleteEventActionOperation {
         Event: CalendarEvent;
     };
 }
-
 export interface CreateEventActionOperation {
     type: SyncOperationTypes.CREATE;
     data: {
@@ -38,6 +37,7 @@ export interface UpdateEventActionOperation {
         veventComponent: VcalVeventComponent;
     };
 }
+
 export type SyncEventActionOperation =
     | CreateEventActionOperation
     | UpdateEventActionOperation
@@ -77,6 +77,7 @@ export const getUpdateSyncOperation = (
     type: SyncOperationTypes.UPDATE,
     data: { veventComponent, Event },
 });
+
 export const getDeleteSyncOperation = (Event: CalendarEvent): DeleteEventActionOperation => ({
     type: SyncOperationTypes.DELETE,
     data: { Event },

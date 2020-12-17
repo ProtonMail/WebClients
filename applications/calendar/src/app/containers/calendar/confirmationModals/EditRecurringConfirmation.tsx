@@ -13,7 +13,7 @@ interface Props {
     hasCalendarModification: boolean;
     isInvitation: boolean;
     inviteActions: InviteActions;
-    onConfirm: (type: RECURRING_TYPES) => void;
+    onConfirm: ({ type, inviteActions }: { type: RECURRING_TYPES; inviteActions: InviteActions }) => void;
     onClose: () => void;
 }
 
@@ -35,8 +35,14 @@ const getAlertText = (types: RECURRING_TYPES[], inviteActions: InviteActions) =>
     return c('Info').t`Which event would you like to update?`;
 };
 
-const getRecurringWarningText = () => {
-    return c('Info').t`Previous modifications on this series will be lost`;
+const getRecurringWarningText = (isInvitation: boolean, inviteActions: InviteActions) => {
+    if (!isInvitation) {
+        return c('Info').t`Previous modifications on this series will be lost`;
+    }
+    if (inviteActions.resetSingleEditsPartstat) {
+        return c('Info').t`Your answers to occurrences previously updated by the organizer will be lost`;
+    }
+    return '';
 };
 
 const getRruleWarningText = () => {
@@ -60,8 +66,7 @@ const EditRecurringConfirmModal = ({
     const hasPreviousModifications =
         (type === RECURRING_TYPES.ALL && hasSingleModifications) ||
         (type === RECURRING_TYPES.FUTURE && hasSingleModificationsAfter);
-    const showRecurringWarning = !isInvitation && hasPreviousModifications;
-    const recurringWarningText = showRecurringWarning ? getRecurringWarningText() : '';
+    const recurringWarningText = hasPreviousModifications ? getRecurringWarningText(isInvitation, inviteActions) : '';
 
     const showRruleWarning = !isInvitation && type === RECURRING_TYPES.SINGLE && hasRruleModification;
     const rruleWarningText = showRruleWarning ? getRruleWarningText() : '';
@@ -88,7 +93,7 @@ const EditRecurringConfirmModal = ({
             title={c('Info').t`Update recurring event`}
             cancel={c('Action').t`Cancel`}
             {...rest}
-            onConfirm={() => onConfirm(type)}
+            onConfirm={() => onConfirm({ type, inviteActions })}
         >
             <Alert type="info">{alertText}</Alert>
             {types.length > 1 ? (

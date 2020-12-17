@@ -1,14 +1,22 @@
 import { c } from 'ttag';
 import { Alert, ErrorButton, FormModal, ResetButton, useLoading } from 'react-components';
 import React, { useState } from 'react';
-import { INVITE_ACTION_TYPES, InviteActions, NO_INVITE_ACTION } from '../eventActions/inviteActions';
+import {
+    INVITE_ACTION_TYPES,
+    InviteActions,
+    NO_INVITE_ACTION,
+    RecurringActionData,
+} from '../eventActions/inviteActions';
 import SelectRecurringType from './SelectRecurringType';
 import { RECURRING_TYPES } from '../../../constants';
 
 interface Props {
     types: RECURRING_TYPES[];
+    isInvitation: boolean;
+    hasSingleModifications: boolean;
+    hasOnlyCancelledSingleModifications: boolean;
     inviteActions?: InviteActions;
-    onConfirm: (type: RECURRING_TYPES) => void;
+    onConfirm: (data: RecurringActionData) => void;
     onClose: () => void;
     onDecline?: () => Promise<void>;
 }
@@ -28,15 +36,28 @@ const getAlertText = (types: RECURRING_TYPES[], inviteActions: InviteActions) =>
         if (types[0] === RECURRING_TYPES.ALL) {
             return decline
                 ? c('Info')
-                      .t`The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in the series?`
+                      .t`The organizer will be notified that you decline the invitation. Would you like to delete all the events in the series?`
                 : c('Info').t`Would you like to delete all the events in the series?`;
         }
     }
     return c('Info').t`Which event would you like to delete?`;
 };
 
+const getRecurringWarningText = (isInvitation: boolean, inviteActions: InviteActions) => {
+    if (!isInvitation) {
+        return '';
+    }
+    if (inviteActions.resetSingleEditsPartstat) {
+        return c('Info').t`Occurrences previously updated by the organizer will be kept, but your answers will be lost`;
+    }
+    return c('Info').t`Occurrences previously updated by the organizer will be kept`;
+};
+
 const DeleteRecurringConfirmModal = ({
     types,
+    hasSingleModifications,
+    hasOnlyCancelledSingleModifications,
+    isInvitation,
     inviteActions = NO_INVITE_ACTION,
     onConfirm,
     onClose,
@@ -46,11 +67,13 @@ const DeleteRecurringConfirmModal = ({
     const [loading, withLoading] = useLoading();
     const [type, setType] = useState(types[0]);
     const { sendCancellationNotice: decline } = inviteActions;
+    const showWarning = hasSingleModifications && !hasOnlyCancelledSingleModifications && type === RECURRING_TYPES.ALL;
+    const warningText = showWarning ? getRecurringWarningText(isInvitation, inviteActions) : '';
     const handleConfirm = async () => {
         if (decline) {
             await onDecline?.();
         }
-        onConfirm(type);
+        onConfirm({ type, inviteActions });
         onClose();
     };
 
@@ -65,6 +88,7 @@ const DeleteRecurringConfirmModal = ({
             {...rest}
         >
             <Alert type="error">{getAlertText(types, inviteActions)}</Alert>
+            {warningText && <Alert type="warning">{warningText}</Alert>}
             {types.length > 1 ? (
                 <SelectRecurringType
                     types={types}
