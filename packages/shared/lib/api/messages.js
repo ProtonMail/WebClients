@@ -68,6 +68,21 @@ export const sendMessage = (
     data: { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds },
 });
 
+export const sendMessageDirect = ({
+    Message,
+    ParentID,
+    Action,
+    AttachmentKeys,
+    ExpirationTime,
+    ExpiresIn,
+    AutoSaveContacts,
+    Packages,
+}) => ({
+    method: 'post',
+    url: `mail/v4/messages/send/direct`,
+    data: { Message, ParentID, Action, AttachmentKeys, ExpirationTime, ExpiresIn, AutoSaveContacts, Packages },
+});
+
 export const createDraft = ({ Message, ParentID, Action, AttachmentKeyPackets }) => ({
     method: 'post',
     url: 'mail/v4/messages',

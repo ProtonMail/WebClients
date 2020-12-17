@@ -1,6 +1,7 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { MIME_TYPES, PACKAGE_TYPE } from '../../constants';
 import { EncryptionPreferencesFailure } from '../../mail/encryptionPreferences';
+import { SimpleMap } from '../utils';
 
 export interface SendPreferences {
     encrypt: boolean;
@@ -39,9 +40,40 @@ export interface Package {
     AttachmentKeyPackets?: { [AttachmentID: string]: string };
 }
 
+export interface PackageDirect {
+    Addresses?: SimpleMap<PackageDirect>;
+    MIMEType?: MIME_TYPES;
+    Body?: string;
+    BodyKey?: any;
+    BodyKeyPacket?: string;
+    Type?: PACKAGE_TYPE;
+    PublicKey?: OpenPGPKey;
+    Token?: string;
+    EncToken?: string;
+    Auth?: {
+        Version: number;
+        ModulusID: string;
+        Salt: string;
+        Verifier: string;
+    };
+    PasswordHint?: string;
+    Signature?: number;
+    AttachmentKeys?: { Key: string; Algorithm: string }[];
+    AttachmentKeyPackets?: string[];
+}
+
+export interface AttachmentDirect {
+    Filename: string;
+    MIMEType: MIME_TYPES;
+    ContentID?: string;
+    Contents: string;
+    Headers?: any;
+}
+
 export type PackageStatus = {
     [key in MIME_TYPES]?: boolean;
 };
+
 export type Packages = {
     [key in MIME_TYPES]?: Package;
 };
