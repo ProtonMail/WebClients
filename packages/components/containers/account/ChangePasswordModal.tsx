@@ -457,7 +457,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
             )}
             {!isSecondPhase && hasTOTPEnabled && (
                 <Row>
-                    <Label htmlFor="totp">{c('Label').t`Two-factor code`}</Label>
+                    <Label htmlFor="totp">{c('Label').t`Two-factor authentication code`}</Label>
                     <Field>
                         <TwoFactorInput
                             id="totp"
@@ -466,7 +466,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                                 setPartialInput({ totp: value })
                             }
                             error={errors.loginError}
-                            placeholder={c('Placeholder').t`Two-factor code`}
+                            placeholder={c('Placeholder').t`Two-factor authentication code`}
                             required
                         />
                     </Field>

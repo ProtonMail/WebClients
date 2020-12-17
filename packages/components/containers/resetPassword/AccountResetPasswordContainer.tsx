@@ -205,7 +205,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                             <p className="mt0">{c('Info')
                                 .jt`You will ${loseAllData} in your ${BRAND_NAME} Account. To restore it, you will need to enter your old password.`}</p>
                             <p className="mt0">{c('Info')
-                                .t`This will also disable any 2-Factor Authentication method associated with this account.`}</p>
+                                .t`This will also disable any two-factor authentication method associated with this account.`}</p>
                             <p className="mt0 mb0">{c('Info').t`Continue anyway?`}</p>
                         </div>
                     </ConfirmModal>
