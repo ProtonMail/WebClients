@@ -1,0 +1,38 @@
+/*
+ * Shared for placeholder loading
+ */
+@keyframes loadingItem {
+	from {
+		opacity: 0.05;
+	}
+	to {
+		opacity: 0.15;
+	}
+}
+
+%item-loading-pseudo {
+	content: '\00a0';
+	display: inline-block;
+	border-radius: $global-border-radius;
+	background-color: currentColor;
+	line-height: 1.2;
+	opacity: 0;
+}
+
+%appearing-container {
+	animation: itemFadeIn 0.5s easing(easeOutQuint);
+}
+
+%placeholder-loading {
+	animation: loadingItem 0.5s calc(var(--index, 0) * 20ms) easing(easeOutSine)
+		infinite alternate;
+}
+
+@keyframes itemFadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
