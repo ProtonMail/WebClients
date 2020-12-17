@@ -76,17 +76,21 @@ const EnableTOTPModal = (props: any) => {
                     ? 'https://protonvpn.com/support/two-factor-authentication'
                     : 'https://protonmail.com/support/knowledge-base/two-factor-authentication';
 
-            const guideButton = <Href key="0" url={twoFactorAuthLink}>{c('Info').t`reading our 2FA Guide first`}</Href>;
+            const guideButton = (
+                <Href key="0" url={twoFactorAuthLink}>{c('Info')
+                    .t`reading our two-factor authentication Guide first`}</Href>
+            );
 
             return {
                 section: (
                     <>
                         <Block>
                             {c('Info')
-                                .t`This wizard will enable Two Factor Authentication (2FA) on your Proton account. 2FA will make your Proton account more secure so we recommend enabling it.`}
+                                .t`This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.`}
                         </Block>
                         <Alert>
-                            {c('Info').jt`If you have never used 2FA before, we strongly recommend you ${guideButton}.`}
+                            {c('Info')
+                                .jt`If you have never used two-factor authentication before, we strongly recommend you ${guideButton}.`}
                         </Alert>
                     </>
                 ),
@@ -217,11 +221,11 @@ const EnableTOTPModal = (props: any) => {
                     <>
                         <Alert>
                             <span className="bold">{c('Info')
-                                .t`Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your 2FA device.`}</span>
+                                .t`Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.`}</span>
                             <br />
                             <br />
                             {c('Info')
-                                .t`If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit 2FA code to log into your account. Each code can only be used once.`}
+                                .t`If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.`}
                         </Alert>
                         <div className="flex aligncenter">
                             {recoveryCodes.map((code) => {

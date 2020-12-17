@@ -222,14 +222,14 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
             </Row>
             {hasTOTPEnabled ? (
                 <Row>
-                    <Label htmlFor="twoFa">{c('Label').t`Two-factor code`}</Label>
+                    <Label htmlFor="twoFa">{c('Label').t`Two-factor authentication code`}</Label>
                     <Field>
                         <TwoFactorInput
                             id="twoFa"
                             disabled={loading}
                             value={model.twoFa}
                             onChange={handleChange('twoFa')}
-                            placeholder={c('Placeholder').t`Two-factor code`}
+                            placeholder={c('Placeholder').t`Two-factor authentication code`}
                         />
                     </Field>
                 </Row>

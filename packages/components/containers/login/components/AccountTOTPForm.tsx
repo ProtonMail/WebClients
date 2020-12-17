@@ -27,7 +27,7 @@ const AccountTOTPForm = ({ onSubmit, state, setters }: Props) => {
 
     const totpForm = (
         <SignupLabelInputRow
-            label={<Label htmlFor="twoFa">{c('Label').t`Two-factor code`}</Label>}
+            label={<Label htmlFor="twoFa">{c('Label').t`Two-factor authentication code`}</Label>}
             input={<LoginTotpInput totp={state.totp} setTotp={loading ? noop : setters.totp} id="twoFa" />}
         />
     );
@@ -51,7 +51,9 @@ const AccountTOTPForm = ({ onSubmit, state, setters }: Props) => {
                         setters.isTotpRecovery(!state.isTotpRecovery);
                     }}
                 >
-                    {state.isTotpRecovery ? c('Action').t`Use two-factor code` : c('Action').t`Use recovery code`}
+                    {state.isTotpRecovery
+                        ? c('Action').t`Use two-factor authentication code`
+                        : c('Action').t`Use recovery code`}
                 </InlineLinkButton>
             </div>
             <SignupSubmitRow>

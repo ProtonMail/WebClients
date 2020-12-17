@@ -23,10 +23,10 @@ const PasswordTotpInputs = ({ password, setPassword, passwordError, totp, setTot
             </Row>
             {showTotp && (
                 <Row>
-                    <Label htmlFor="totp">{c('Label').t`Two-factor code`}</Label>
+                    <Label htmlFor="totp">{c('Label').t`Two-factor authentication code`}</Label>
                     <Field>
                         <TwoFactorInput
-                            placeholder={c('Placeholder').t`Two-factor code`}
+                            placeholder={c('Placeholder').t`Two-factor authentication code`}
                             id="totp"
                             value={totp}
                             error={totpError}

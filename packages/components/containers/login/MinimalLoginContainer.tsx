@@ -93,7 +93,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
         };
         return (
             <form name="totpForm" onSubmit={handleSubmit}>
-                <Label htmlFor="twoFa">{c('Label').t`Two-factor code`}</Label>
+                <Label htmlFor="twoFa">{c('Label').t`Two-factor authentication code`}</Label>
                 <div className="mb1">
                     <LoginTotpInput totp={totp} setTotp={loading ? noop : setters.totp} id="twoFa" />
                 </div>
