@@ -14,9 +14,11 @@ export interface CalendarPersonalEventData extends CalendarEventData {
 }
 
 export interface Attendee {
+    ID: string;
     Token: string;
     Permissions: number;
     Status: ATTENDEE_STATUS_API;
+    UpdateTime: number;
 }
 
 export interface CalendarEventBlobData {
@@ -72,7 +74,12 @@ export interface SyncMultipleApiResponse {
     Responses: SyncMultipleApiResponses[];
 }
 
-export interface GetCanonicalAddressesResponses {
+export interface UpdatePartstatApiResponse {
+    Code: number;
+    Attendee: Attendee;
+}
+
+export interface GetCanonicalAddressesApiResponses {
     Email: string;
     Response: {
         Code: number;
@@ -80,7 +87,7 @@ export interface GetCanonicalAddressesResponses {
     };
 }
 
-export interface GetCanonicalAddressesResponse {
+export interface GetCanonicalAddressesApiResponse {
     Code: number;
-    Responses: GetCanonicalAddressesResponses[];
+    Responses: GetCanonicalAddressesApiResponses[];
 }
