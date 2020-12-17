@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import Portal from '../portal/Portal';
@@ -14,6 +14,7 @@ const CLASSES = {
 
 /** @type any */
 const Dialog = ({
+    onClose,
     onEnter,
     onExit,
     small: isSmall = false,
@@ -29,16 +30,35 @@ const Dialog = ({
     ...rest
 }) => {
     const rootRef = useRef(null);
+    const hasCalledExit = useRef(false);
+    const hasCalledClose = useRef(false);
     const focusTrapProps = useFocusTrap({ rootRef });
 
     const handleAnimationEnd = ({ animationName }) => {
         if (animationName === CLASSES.MODAL_OUT && isClosing) {
+            hasCalledExit.current = true;
             onExit?.();
         }
         if (animationName === CLASSES.MODAL_IN && !isClosing) {
             onEnter?.();
         }
     };
+
+    useLayoutEffect(() => {
+        hasCalledClose.current = isClosing;
+    }, [isClosing]);
+
+    useEffect(() => {
+        return () => {
+            // Safety measure to make sure cleanup functions always get called, even if the component gets forcefully removed
+            if (!hasCalledClose.current) {
+                onClose?.();
+            }
+            if (!hasCalledExit.current) {
+                onExit?.();
+            }
+        };
+    }, []);
 
     return (
         <Portal>
