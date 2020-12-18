@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import usePrevious from '../../hooks/usePrevious';
 import { DropdownMenuButton } from '../dropdown';
+import { classnames } from '../../helpers';
 
 export interface Props<V> extends Omit<React.ComponentPropsWithoutRef<'button'>, 'value' | 'onChange' | 'title'> {
     value: V;
@@ -8,9 +9,10 @@ export interface Props<V> extends Omit<React.ComponentPropsWithoutRef<'button'>,
     selected?: boolean;
     active?: boolean;
     title: string;
+    focusOnActive?: boolean;
 }
 
-const Option = <V extends any>({
+const Option = <V,>({
     type = 'button',
     value,
     selected,
@@ -18,24 +20,25 @@ const Option = <V extends any>({
     onChange,
     title,
     children = title,
+    focusOnActive = true,
     ...rest
 }: Props<V>) => {
-    function handleClick() {
-        onChange?.(value);
-    }
-
     const ref = useRef<HTMLButtonElement | null>(null);
-
     const previousActive = usePrevious(active);
 
-    useEffect(
-        function () {
-            if (!previousActive && active) {
+    useEffect(() => {
+        if (!previousActive && active) {
+            if (focusOnActive) {
                 ref.current?.focus();
+            } else {
+                ref.current?.scrollIntoView({ block: 'center' });
             }
-        },
-        [active]
-    );
+        }
+    }, [active]);
+
+    const handleClick = () => {
+        onChange?.(value);
+    };
 
     return (
         <li className="dropDown-item">
@@ -45,7 +48,7 @@ const Option = <V extends any>({
                 isSelected={selected}
                 onClick={handleClick}
                 title={title}
-                className="bl w100 ellipsis alignleft no-outline"
+                className={classnames(['bl w100 ellipsis alignleft no-outline', active && 'active'])}
                 {...rest}
             >
                 {children}
