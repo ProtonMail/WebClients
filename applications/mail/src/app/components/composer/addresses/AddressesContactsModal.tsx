@@ -88,7 +88,7 @@ const AddressesContactsModal = ({
                     {value.map((recipient) => (
                         <AddressesRecipientItem
                             key={recipient.Address}
-                            recipient={recipient as Required<Pick<Recipient, 'Address' | 'ContactID'>>}
+                            recipient={recipient}
                             messageSendInfo={messageSendInfo}
                             onRemove={handleRemove(recipient)}
                         />

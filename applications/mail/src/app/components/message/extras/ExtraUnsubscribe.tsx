@@ -84,13 +84,17 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                 // "address" by default, but will default to another address if this address cant send message
                 const from = findSender(addresses, { AddressID: address.ID }, true);
 
+                if (!from) {
+                    throw new Error('Unable to find from');
+                }
+
                 const inputMessage: PartialMessageExtended = {
                     localID: generateUID('unsubscribe'),
                     plainText: body,
                     data: {
-                        AddressID: from?.ID,
+                        AddressID: from.ID,
                         Subject: subject,
-                        Sender: { Address: from?.Email, Name: from?.DisplayName },
+                        Sender: { Address: from.Email, Name: from.DisplayName },
                         ToList: [{ Address: toAddress, Name: toAddress }],
                         CCList: [],
                         BCCList: [],

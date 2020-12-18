@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import { Checkbox, FormModal, generateUID, Label } from 'react-components';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { contactToInput } from '../../../helpers/addresses';
+import { contactToInput } from 'proton-shared/lib/mail/recipient';
 import { RecipientGroup } from '../../../models/address';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';

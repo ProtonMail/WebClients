@@ -2,7 +2,6 @@ import React, { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'r
 import { Alert, useGetEncryptionPreferences, useModals } from 'react-components';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { getRecipientsAddresses } from 'proton-shared/lib/mail/messages';
 import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
@@ -42,7 +41,7 @@ export const useMessageSendInfo = (message: MessageExtended) => {
 
 export const useUpdateRecipientSendInfo = (
     messageSendInfo: MessageSendInfo | undefined,
-    recipient: RequireSome<Recipient, 'Address' | 'ContactID'>,
+    recipient: Recipient,
     onRemove: () => void
 ) => {
     const { createModal } = useModals();
@@ -97,6 +96,9 @@ export const useUpdateRecipientSendInfo = (
 
             if (sendPreferences.failure?.type === CONTACT_SIGNATURE_NOT_VERIFIED) {
                 await new Promise((resolve, reject) => {
+                    if (!recipient.ContactID) {
+                        return reject(new Error('Invalid contact id'));
+                    }
                     const contact = { contactID: recipient.ContactID };
                     const contactAddress = recipient.Address;
                     const contactName = recipient.Name || contactAddress;
@@ -123,6 +125,9 @@ export const useUpdateRecipientSendInfo = (
 
             if (sendPreferences.failure?.type === PRIMARY_NOT_PINNED) {
                 await new Promise((resolve, reject) => {
+                    if (!recipient.ContactID) {
+                        return reject(new Error('Invalid contact id'));
+                    }
                     const contacts = [
                         {
                             contactID: recipient.ContactID,

@@ -8,7 +8,6 @@ import {
 } from 'proton-shared/lib/helpers/email';
 import { Address, Key } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
 import { ContactGroupsMap, ContactsMap } from '../containers/ContactProvider';
@@ -16,8 +15,6 @@ import { RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { isMessage } from './elements';
-
-export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 
 /**
  * Get address from email
@@ -48,48 +45,6 @@ export const isOwnAddress = (address?: Address, keys: Key[] = []) => !!address &
 
 export const isSelfAddress = (email: string | undefined, addresses: Address[]) =>
     !!addresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(email || ''));
-
-export const inputToRecipient = (input: string): Recipient => {
-    const match = REGEX_RECIPIENT.exec(input);
-
-    if (match !== null) {
-        return {
-            Name: match[1],
-            Address: match[2],
-        };
-    }
-    return {
-        Name: input,
-        Address: input,
-    };
-};
-
-export const recipientToInput = (recipient: Partial<Recipient> = {}): string => {
-    if (recipient.Address && recipient.Name && recipient.Address !== recipient.Name) {
-        return `${recipient.Name} <${recipient.Address}>`;
-    }
-
-    if (recipient.Address === recipient.Name) {
-        return recipient.Address || '';
-    }
-
-    return `${recipient.Name} ${recipient.Address}`;
-};
-
-export const contactToRecipient = (contact: Partial<ContactEmail> = {}, groupPath?: string): Partial<Recipient> => ({
-    Name: contact.Name,
-    Address: contact.Email,
-    ContactID: contact.ContactID,
-    Group: groupPath,
-});
-
-export const majorToRecipient = (email: string) => ({
-    Name: email,
-    Address: email,
-});
-
-export const contactToInput = (contact: Partial<ContactEmail> = {}): string =>
-    recipientToInput(contactToRecipient(contact));
 
 export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: string) =>
     recipients.filter((recipient) => recipient.Group !== groupPath);
@@ -260,7 +215,7 @@ export const getNumParticipants = (element: Element) => {
 
     if (isMessage(element)) {
         const { ToList = [], CCList = [], BCCList = [], Sender = {} } = element as Message;
-        recipients = [...ToList, ...CCList, ...BCCList, Sender];
+        recipients = [...ToList, ...CCList, ...BCCList, Sender as Recipient];
     } else {
         const { Senders = [], Recipients = [] } = element as Conversation;
         recipients = [...Recipients, ...Senders];

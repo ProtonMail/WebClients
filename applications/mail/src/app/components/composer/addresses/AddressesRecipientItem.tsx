@@ -1,4 +1,3 @@
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import React, { useEffect, useRef, DragEvent, KeyboardEvent, RefObject, useState, MouseEvent } from 'react';
 import {
     classnames,
@@ -17,7 +16,9 @@ import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import { recipientToInput, inputToRecipient, getContactEmail } from '../../../helpers/addresses';
+import { inputToRecipient, recipientToInput } from 'proton-shared/lib/mail/recipient';
+
+import { getContactEmail } from '../../../helpers/addresses';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { useUpdateRecipientSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
@@ -26,7 +27,7 @@ import { useDragOver } from '../../../hooks/useDragOver';
 import { useContactCache } from '../../../containers/ContactProvider';
 
 interface Props {
-    recipient: RequireSome<Recipient, 'Address' | 'ContactID'>;
+    recipient: Recipient;
     messageSendInfo?: MessageSendInfo;
     onChange?: (value: Recipient) => void;
     onRemove: () => void;
@@ -77,7 +78,7 @@ const AddressesRecipientItem = ({
     const valid = !sendInfo || loading || (sendInfo?.emailValidation && !sendInfo?.emailAddressWarnings?.length);
 
     const confirmInput = () => {
-        onChange(inputToRecipient(editableRef.current?.textContent as string));
+        onChange(inputToRecipient(editableRef.current?.textContent?.trim() || ''));
     };
 
     const handleDoubleClick = () => {

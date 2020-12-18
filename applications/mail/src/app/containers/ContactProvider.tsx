@@ -53,11 +53,12 @@ interface Props {
 const toMapWithDuplicates = (contacts: ContactEmail[]) => {
     const contactsMapWithDuplicates = contacts.reduce<ContactsMapWithDuplicates>((acc, contact) => {
         const email = normalizeEmail(contact.Email);
-        if (acc[email]) {
-            acc[email]?.push(contact);
-            acc[email]?.sort((a, b) => a.Order - b.Order);
-        } else {
+        const contacts = acc[email];
+        if (!contacts) {
             acc[email] = [contact];
+        } else {
+            contacts.push(contact);
+            contacts.sort((a, b) => a.Order - b.Order);
         }
         return acc;
     }, {});

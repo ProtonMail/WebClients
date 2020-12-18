@@ -5,12 +5,12 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
  * Remove duplicate recipients from a recipient list
  */
 const uniqueRecipientList = (recipients: Recipient[]) => {
-    const seenAddresses: string[] = [];
+    const seenAddresses = new Set<string>();
     return recipients.reduce<Recipient[]>((acc, recipient) => {
-        if (!recipient.Address || seenAddresses.includes(recipient.Address)) {
+        if (seenAddresses.has(recipient.Address)) {
             return acc;
         }
-        seenAddresses.push(recipient.Address);
+        seenAddresses.add(recipient.Address);
         acc.push(recipient);
         return acc;
     }, []);
