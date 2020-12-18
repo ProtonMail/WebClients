@@ -10,7 +10,7 @@ module.exports = {
 
         const options = {
             isProduction,
-            hasReactRefresh: false
+            hasReactRefresh: false,
         };
 
         return {
@@ -20,7 +20,7 @@ module.exports = {
                 alias: {
                     ...config.resolve.alias,
                     ...getAlias(),
-                }
+                },
             },
             module: {
                 ...config.module,
@@ -45,17 +45,13 @@ module.exports = {
                 ...config.plugins,
                 new MiniCssExtractPlugin({
                     filename: isProduction ? '[name].[contenthash:8].css' : '[name].css',
-                    chunkFilename: isProduction ? '[id].[contenthash:8].css' : '[id].css'
+                    chunkFilename: isProduction ? '[id].[contenthash:8].css' : '[id].css',
                 }),
-            ]
+            ],
         };
     },
     stories: ['../src/stories/*.stories.*'],
-    addons: [
-        '@storybook/addon-docs',
-        '@storybook/addon-essentials',
-        '@storybook/addon-storysource',
-    ],
+    addons: ['@storybook/addon-essentials', '@storybook/addon-storysource'],
     typescript: {
         check: false,
         checkOptions: {},
