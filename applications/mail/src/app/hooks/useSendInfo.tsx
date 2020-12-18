@@ -76,7 +76,7 @@ export const useUpdateRecipientSendInfo = (
                             colorClassName: 'color-global-warning',
                             isEncrypted: false,
                             fill: STATUS_ICONS_FILLS.FAIL,
-                            text: c('Composer email icon').t`The address might be mispelled`,
+                            text: c('Composer email icon').t`The address might be misspelled`,
                         },
                         loading: false,
                         emailValidation,
