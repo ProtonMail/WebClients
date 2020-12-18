@@ -25,9 +25,6 @@
                     pt-tooltip-translate-context="Tooltip"
                     pt-tooltip-translate="Copy login"></copy>
             </div>
-            <div>
-                <button data-action="changeName" type="button" class="pm_button" translate-context="Action" translate>Edit</button>
-            </div>
         </div>
     </div>
     <div class="clearfix">
@@ -48,12 +45,12 @@
             <div>
                 <button type="button" class="pm_button openVpnSection-show-button" data-action="togglePassword" translate-context="Action" translate>Show</button>
                 <button type="button" class="pm_button openVpnSection-hide-button" data-action="togglePassword" translate-context="Action" translate>Hide</button>
-
-                <button data-action="changePassword" type="button" class="pm_button">
-                    <span ng-if="!VPNPassword" translate-context="Action" translate>Set</span>
-                    <span ng-if="VPNPassword" translate-context="Action" translate>Edit</span>
-                </button>
             </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div>
+            <button data-action="resetSettings" type="button" class="pm_button" translate-context="Action" translate>Reset credentials</button>
         </div>
     </div>
 </section>

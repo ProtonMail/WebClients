@@ -33,8 +33,7 @@ function vpnSettingsModel(dispatchers, vpnSettingsApi, vpnApi) {
     };
 
     const fetch = callApi('fetch', true);
-    const updateName = callApi('updateName');
-    const updatePassword = callApi('updatePassword');
+    const resetSettings = callApi('resetSettings');
 
     on('logout', clear);
 
@@ -42,8 +41,7 @@ function vpnSettingsModel(dispatchers, vpnSettingsApi, vpnApi) {
         get,
         set,
         fetch,
-        updateName,
-        updatePassword
+        resetSettings
     };
 }
 
