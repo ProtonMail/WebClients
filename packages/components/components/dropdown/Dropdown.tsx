@@ -36,6 +36,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     autoCloseOutside?: boolean;
     autoCloseOutsideAnchor?: boolean;
     contentProps?: ContentProps;
+    UNSTABLE_AUTO_HEIGHT?: boolean;
 }
 
 const Dropdown = ({
@@ -60,6 +61,7 @@ const Dropdown = ({
     autoCloseOutside = true,
     autoCloseOutsideAnchor = true,
     contentProps,
+    UNSTABLE_AUTO_HEIGHT,
     ...rest
 }: Props) => {
     const { isRTL } = useRightToLeft();
@@ -181,7 +183,12 @@ const Dropdown = ({
     const rootStyle = {
         ...(noMaxHeight ? { '--max-height': 'unset' } : {}),
         ...(noMaxWidth ? { '--max-width': 'unset' } : {}),
+        ...style,
+        ...varPosition,
+        ...varSize,
     };
+
+    const contentStyle = UNSTABLE_AUTO_HEIGHT ? { height: 'auto' } : undefined;
 
     return (
         <Portal>
@@ -207,7 +214,12 @@ const Dropdown = ({
                 >
                     <span className="sr-only">{c('Action').t`Close`}</span>
                 </button>
-                <div ref={contentRef} className={classnames(['dropDown-content'])} {...contentProps}>
+                <div
+                    ref={contentRef}
+                    style={contentStyle}
+                    className={classnames(['dropDown-content'])}
+                    {...contentProps}
+                >
                     {children}
                 </div>
             </div>

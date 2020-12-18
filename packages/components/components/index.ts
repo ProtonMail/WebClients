@@ -1,3 +1,4 @@
+export * from './addressesAutomplete';
 export * from './alert';
 export * from './attachedFile';
 export * from './autocomplete';
