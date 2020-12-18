@@ -4,6 +4,8 @@ import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { Dropdown, DropdownButton } from '../dropdown';
 import { Props as DropdownButtonProps } from '../dropdown/DropdownButton';
 import { Props as OptionProps } from '../option/Option';
+import useControlled from '../../hooks/useControlled';
+import { classnames } from '../../helpers';
 
 export type FakeSelectChangeEvent<V> = {
     value: V;
@@ -13,9 +15,27 @@ export type FakeSelectChangeEvent<V> = {
 export interface Props<V>
     extends Omit<DropdownButtonProps, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
     value?: V;
+    /**
+     * Optionally allows controlling the Select's open state
+     */
     isOpen?: boolean;
+    /**
+     * Children Options of the Select, have to be of type Option
+     * (or something that implements the same interface)
+     */
     children: React.ReactElement<OptionProps<V>>[];
+    /**
+     * Milliseconds after which to clear the current user input
+     * (the input is used for highlighting match based on keyboard input)
+     */
     clearSearchAfter?: number;
+    /**
+     * In case you're providing complex values to your options, you can
+     * provide a function to return a string given one of your complex
+     * value items. This is optional however if you do not provide it and
+     * your values are complex, the search feature will be disabled for
+     * that instance of the Select.
+     */
     getSearchableValue?: (value: V) => string;
     onChange?: (e: FakeSelectChangeEvent<V>) => void;
     onClose?: () => void;
@@ -26,6 +46,7 @@ const SelectTwo = <V extends any>({
     children,
     value,
     placeholder,
+    className,
     isOpen: controlledOpen,
     onClose,
     onOpen,
@@ -38,15 +59,11 @@ const SelectTwo = <V extends any>({
 
     const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
 
-    const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
-
     const [search, setSearch] = useState('');
 
     const searchClearTimeout = useRef<number | undefined>(undefined);
 
-    const isControlled = controlledOpen !== undefined;
-
-    const isOpen = isControlled ? controlledOpen : uncontrolledOpen;
+    const [isOpen, setIsOpen] = useControlled(controlledOpen, false);
 
     const allOptionValues = children.map((child) => child.props.value);
 
@@ -95,21 +112,14 @@ const SelectTwo = <V extends any>({
     }, [search]);
 
     const open = () => {
-        if (isControlled) {
-            onOpen?.();
-        } else {
-            setUncontrolledOpen(true);
-        }
-
+        onOpen?.();
+        setIsOpen(true);
         setFocusedIndex(selectedIndex || 0);
     };
 
     const close = () => {
-        if (isControlled) {
-            onClose?.();
-        } else {
-            setUncontrolledOpen(false);
-        }
+        onClose?.();
+        setIsOpen(false);
     };
 
     const goToPreviousItem = () => {
@@ -208,10 +218,13 @@ const SelectTwo = <V extends any>({
 
     const ariaLabel = selectedChild?.props?.title;
 
+    const dropdownButtonClassName = classnames(['alignleft ellipsis no-outline pm-select pm-button', className]);
+
     return (
         <>
             <DropdownButton
-                className="alignleft w100 ellipsis no-outline pm-select pm-button"
+                style={{ minWidth: 200 }}
+                className={dropdownButtonClassName}
                 isOpen={isOpen}
                 hasCaret
                 buttonRef={anchorRef}
