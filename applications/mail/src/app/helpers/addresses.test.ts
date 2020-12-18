@@ -4,7 +4,7 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { findSender, getRecipientGroupLabel, getRecipientLabel, recipientsToRecipientOrGroup } from './addresses';
 
-const recipient1: Recipient = { Address: 'address1' };
+const recipient1: Recipient = { Name: '', Address: 'address1' };
 const recipient2: Recipient = { Name: 'recipient2', Address: 'address2' };
 const recipient3: Recipient = { Name: 'recipient3', Address: 'address3', Group: 'Group1' };
 const recipient4: Recipient = { Name: 'recipient4', Address: 'address4', Group: 'Group1' };

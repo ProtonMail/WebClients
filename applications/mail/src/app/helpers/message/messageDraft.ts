@@ -211,7 +211,9 @@ export const createNewDraft = (
     const senderAddress = getFromAddress(addresses, originalTo, referenceMessage?.data?.AddressID);
 
     const AddressID = senderAddress?.ID || ''; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
-    const Sender = senderAddress ? { Name: senderAddress.DisplayName, Address: senderAddress.Email } : {};
+    const Sender = senderAddress
+        ? { Name: senderAddress.DisplayName, Address: senderAddress.Email }
+        : { Name: '', Address: '' };
 
     const ParentID = action === MESSAGE_ACTIONS.NEW ? undefined : referenceMessage?.data?.ID;
 

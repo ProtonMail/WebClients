@@ -17,7 +17,7 @@ interface DragInfo {
 
 enum DragStatus {
     Success = 'success',
-    None = 'none'
+    None = 'none',
 }
 
 interface DragCacheEntry {
@@ -29,7 +29,7 @@ interface UseAddressesInputDrag {
     (
         recipientsOrGroups: RecipientOrGroup[],
         setRecipientsOrGroups: Dispatch<SetStateAction<RecipientOrGroup[]>>,
-        onChange: (value: Partial<Recipient>[]) => void
+        onChange: (value: Recipient[]) => void
     ): {
         draggedRecipient: RecipientOrGroup | undefined;
         placeholderPosition: number | undefined;
@@ -95,7 +95,7 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
         {
             onDragEnter: handleContainerDragEnter,
             onDragLeave: handleContainerDragLeave,
-            onDrop: handleContainerDrop
+            onDrop: handleContainerDrop,
         }
     );
 
@@ -186,7 +186,7 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
         itemDragHandlers: (recipient: RecipientOrGroup) => ({
             onDragStart: handleItemDragStart(recipient),
             onDragEnd: handleItemDragEnd,
-            onDragOver: handleItemDragOver(recipient)
-        })
+            onDragOver: handleItemDragOver(recipient),
+        }),
     };
 };

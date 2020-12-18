@@ -121,8 +121,8 @@ describe('Composer', () => {
                     ID,
                     AddressID,
                     Subject: 'Subject',
-                    Sender: { Address: fromAddress },
-                    ToList: [{ Address: toAddress }],
+                    Sender: { Name: '', Address: fromAddress },
+                    ToList: [{ Name: '', Address: toAddress }],
                     CCList: [],
                     BCCList: [],
                 } as Partial<Message>,
@@ -209,7 +209,7 @@ describe('Composer', () => {
             it('text/plain self', async () => {
                 const message = prepareMessage({
                     plainText: 'test',
-                    data: { MIMEType: MIME_TYPES.PLAINTEXT, ToList: [{ Address: fromAddress }] },
+                    data: { MIMEType: MIME_TYPES.PLAINTEXT, ToList: [{ Name: '', Address: fromAddress }] },
                 });
 
                 minimalCache();
