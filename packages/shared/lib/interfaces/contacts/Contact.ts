@@ -10,6 +10,7 @@ export interface ContactEmail {
     Order: number;
     ContactID: string;
     LabelIDs: string[];
+    LastUsedTime: number;
 }
 
 export interface ContactCard {
