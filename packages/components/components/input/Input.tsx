@@ -7,6 +7,7 @@ import ErrorZone from '../text/ErrorZone';
 
 export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     ref?: Ref<HTMLInputElement>; // override ref so that LegacyRef isn't used
+    containerRef?: Ref<HTMLDivElement>;
     icon?: React.ReactElement;
     error?: string;
     errorZoneClassName?: string;
@@ -20,6 +21,7 @@ export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes
 const Input = React.forwardRef<HTMLInputElement, Props>(
     (
         {
+            containerRef,
             icon,
             error,
             errorZoneClassName,
@@ -50,6 +52,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
 
             return (
                 <div
+                    ref={containerRef}
                     className={classnames([
                         'relative pm-field-icon-container w100',
                         hasError && 'pm-field-icon-container--invalid',

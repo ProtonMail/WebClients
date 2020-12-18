@@ -1,4 +1,5 @@
+export * from './useAutocomplete';
+export { default as AutocompleteSuggestions } from './AutocompleteList';
 export { default as Autocomplete } from './Autocomplete';
-export { default as AutocompleteSelection } from './AutocompleteSelection';
-export { default as useAutocomplete } from './useAutocomplete';
-export { default as useAutocompleteRecipient } from './useAutocompleteRecipient';
+export { default as SimpleAutocomplete } from './SimpleAutocomplete';
+export { default as AutocompleteList } from './AutocompleteList';
