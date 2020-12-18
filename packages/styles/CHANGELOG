@@ -2,24 +2,39 @@
 
 ## New
 
-- added `--width-conversation-column` CSS custom property
-- added Gmail and Yahoo logos
-- added some images for Import
+## Updated/fixes
+
+# [1.8.6] - 2020-12-18
+
+## New
+
+### Brand new 🎉
+
+- added Android CSS reset
+- added `pm-editableSection` fragment (Mail autoreply & filters)
+- Bf stuff
+- added `pm-select`
+- limit nested blockquote to 5 levels
+- Feat - attachment preview rework
+
+### New helpers
+
 - added new typographic helper `strike`
-- added new icons `globe`, `caret-double-left`, `tour`, `outbox`, `scheduled-box`, `attention-circle`, `chrome`, `calendar-today`
 - added `onmobile-list-1column` helpers and made `list-2columns` more flexible (accepts any child type now)
 - added `borderColor-primary` helper
 - added `sticky-top` and `sticky-bottom` helpers
 - added `hyphens` helper (only hyphenation, no `word-break`)
-- added Android CSS reset
-- Bf stuff
-- added `pm-select`
 - added `bg-global-muted-dm` (dark-mode-friendly alias of `bg-global-muted`) + custom prop
-- added `pm-editableSection` fragment (Mail autoreply & filters)
 - added `onmobile-no-border` helper
 - added inline-grid helper
-- limit nested blockquote to 5 levels
-- Feat - attachment preview rework
+
+### Misc
+
+- added `--width-conversation-column` CSS custom property
+- added Gmail and Yahoo logos
+- added some images for Import
+- added new icons `globe`, `caret-double-left`, `tour`, `outbox`, `scheduled-box`, `attention-circle`, `chrome`, `calendar-today`
+
 
 ## Updated/fixes
 
