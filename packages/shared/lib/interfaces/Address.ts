@@ -27,8 +27,8 @@ export interface AddressKey {
 }
 
 export interface Recipient {
-    Name?: string;
-    Address?: string;
+    Name: string;
+    Address: string;
     ContactID?: string;
     Group?: string;
 }
