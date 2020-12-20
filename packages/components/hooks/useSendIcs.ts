@@ -99,7 +99,6 @@ export const useSendIcs = () => {
                 privateKeys,
                 message: directMessage,
             });
-            // await api(sendMessage(message.data.ID, { Packages: packages, AutoSaveContacts } as any));
             await api(
                 sendMessageDirect({
                     Message: directMessage,
