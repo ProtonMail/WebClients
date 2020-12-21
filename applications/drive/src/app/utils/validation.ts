@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import { MAX_NAME_LENGTH, MIN_SHARED_URL_PASSWORD_LENGTH } from '../constants';
+import { GLOBAL_FORBIDDEN_CHARACTERS } from './link';
 
 export class ValidationError extends Error {
     constructor(message: string) {
@@ -37,7 +38,9 @@ const validateInvalidName = (str: string) => {
 };
 
 const validateInvalidCharacters = (str: string) => {
-    return /\/|\\/.test(str) ? c('Validation Error').t`Name cannot include / and \\` : undefined;
+    return RegExp(GLOBAL_FORBIDDEN_CHARACTERS, 'u').test(str)
+        ? c('Validation Error').t`Name cannot include invisible characters, / or \\.`
+        : undefined;
 };
 
 const validateNameEmpty = (str: string) => {
