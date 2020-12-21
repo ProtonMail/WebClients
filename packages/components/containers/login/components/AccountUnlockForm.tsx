@@ -25,7 +25,7 @@ const AccountUnlockForm = ({ onSubmit, state, setters }: Props) => {
     };
 
     return (
-        <form name="unlockForm" className="signup-form" onSubmit={handleSubmit}>
+        <form name="unlockForm" className="signup-form" onSubmit={handleSubmit} method="post">
             <SignupLabelInputRow
                 label={<Label htmlFor="password">{c('Label').t`Mailbox password`}</Label>}
                 input={
