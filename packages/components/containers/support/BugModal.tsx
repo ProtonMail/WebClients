@@ -6,9 +6,10 @@ import { reportBug } from 'proton-shared/lib/api/reports';
 import { APPS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getClientID } from 'proton-shared/lib/apps/helper';
+import { omit } from 'proton-shared/lib/helpers/object';
 
 import AttachScreenshot from './AttachScreenshot';
-import { collectInfo, getClient } from '../../helpers/report';
+import { getReportInfo, getClient } from '../../helpers/report';
 import {
     Href,
     Info,
@@ -99,12 +100,15 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
         },
         [{ text: c('Action to select a title for the bug report modal').t`Select`, value: '', disabled: true }]
     );
-    const [model, update] = useState({
-        ...collectInfo(),
-        Title: '',
-        Description: '',
-        Email,
-        Username,
+
+    const [model, update] = useState(() => {
+        return {
+            ...getReportInfo(),
+            Title: '',
+            Description: '',
+            Email: Email || '',
+            Username: Username || '',
+        };
     });
     const { state: showDetails, toggle: toggleDetails } = useToggle(false);
     const [images, setImages] = useState([]);
@@ -114,29 +118,28 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
     }: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
         update({ ...model, [key]: target.value });
 
-    const getParameters = () => {
-        const imageBlobs = images.reduce((acc, { name, blob }) => {
-            acc[name] = blob;
-            return acc;
-        }, {});
-
-        const Title = [!isVpn && '[V4]', `[${Client}] Bug [${location.pathname}]`, model.Title]
-            .filter(Boolean)
-            .join(' ');
-
-        return {
-            ...imageBlobs,
-            ...model,
-            Client,
-            ClientVersion: APP_VERSION,
-            ClientType: CLIENT_TYPE,
-            Title,
-        };
-    };
-
     const handleSubmit = async () => {
-        const data = getParameters();
-        await api(reportBug(data, 'form'));
+        const getParameters = () => {
+            const imageBlobs = images.reduce((acc, { name, blob }) => {
+                acc[name] = blob;
+                return acc;
+            }, {});
+
+            const Title = [!isVpn && '[V4]', `[${Client}] Bug [${location.pathname}]`, model.Title]
+                .filter(Boolean)
+                .join(' ');
+
+            return {
+                ...imageBlobs,
+                ...omit(model, ['OSArtificial']),
+                Client,
+                ClientVersion: APP_VERSION,
+                ClientType: CLIENT_TYPE,
+                Title,
+            };
+        };
+
+        await api(reportBug(getParameters(), 'form'));
         onClose();
         createNotification({ text: c('Success').t`Bug reported` });
     };
@@ -147,6 +150,33 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
             update({ ...model, Email });
         }
     }, [addresses]);
+
+    const OSAndOSVersionFields = (
+        <>
+            <Row>
+                <Label htmlFor="OS">{c('Label').t`Operating system`}</Label>
+                <Field>
+                    <Input
+                        id="OS"
+                        value={model.OS}
+                        onChange={handleChange('OS')}
+                        placeholder={c('Placeholder').t`OS name`}
+                    />
+                </Field>
+            </Row>
+            <Row>
+                <Label htmlFor="OSVersion">{c('Label').t`Operating system version`}</Label>
+                <Field>
+                    <Input
+                        id="OSVersion"
+                        value={model.OSVersion}
+                        onChange={handleChange('OSVersion')}
+                        placeholder={c('Placeholder').t`OS version`}
+                    />
+                </Field>
+            </Row>
+        </>
+    );
 
     return (
         <FormModal
@@ -220,6 +250,9 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
                     <AttachScreenshot id="Attachments" onUpload={setImages} onReset={() => setImages([])} />
                 </Field>
             </Row>
+
+            {model.OSArtificial && OSAndOSVersionFields}
+
             <Row>
                 <Label>{c('Label').t`System information`}</Label>
                 <Field className="inline-flex">
@@ -230,28 +263,8 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
             </Row>
             {showDetails ? (
                 <>
-                    <Row>
-                        <Label htmlFor="OS">{c('Label').t`Operating system`}</Label>
-                        <Field>
-                            <Input
-                                id="OS"
-                                value={model.OS}
-                                onChange={handleChange('OS')}
-                                placeholder={c('Placeholder').t`OS name`}
-                            />
-                        </Field>
-                    </Row>
-                    <Row>
-                        <Label htmlFor="OSVersion">{c('Label').t`Operating system version`}</Label>
-                        <Field>
-                            <Input
-                                id="OSVersion"
-                                value={model.OSVersion}
-                                onChange={handleChange('OSVersion')}
-                                placeholder={c('Placeholder').t`OS version`}
-                            />
-                        </Field>
-                    </Row>
+                    {!model.OSArtificial && OSAndOSVersionFields}
+
                     <Row>
                         <Label htmlFor="Browser">{c('Label').t`Browser`}</Label>
                         <Field>
