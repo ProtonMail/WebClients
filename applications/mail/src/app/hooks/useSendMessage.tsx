@@ -269,7 +269,19 @@ export const useSendMessage = () => {
             const promise = prepareMessageToSend();
 
             const notificationID = createNotification({
-                text: <SendingMessageNotification promise={promise} onUndo={hasUndo ? handleUndo : undefined} />,
+                text: (
+                    <SendingMessageNotification
+                        promise={promise}
+                        onUndo={
+                            hasUndo
+                                ? () => {
+                                      hideNotification(notificationID);
+                                      return handleUndo();
+                                  }
+                                : undefined
+                        }
+                    />
+                ),
                 disableAutoClose: true,
                 expiration: -1,
             });
