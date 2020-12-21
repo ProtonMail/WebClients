@@ -51,7 +51,6 @@ export const useSendIcs = () => {
                 Filename: packets.Filename,
                 MIMEType: packets.MIMEType,
                 Contents: uint8ArrayToBase64String(concatenatedPackets),
-                ContentID: 'reply-ics',
                 KeyPackets: uint8ArrayToBase64String(packets.keys),
                 Signature: packets.signature ? uint8ArrayToBase64String(packets.signature) : undefined,
             };
@@ -67,7 +66,7 @@ export const useSendIcs = () => {
                 Sender: from,
                 Body: plainTextBody,
                 MIMEType: MIME_TYPES.PLAINTEXT,
-                Attachments: [pick(attachment, ['Filename', 'MIMEType', 'ContentID', 'Contents'])],
+                Attachments: [pick(attachment, ['Filename', 'MIMEType', 'Contents'])],
                 Flags: Sign ? MESSAGE_FLAGS.FLAG_SIGN : undefined,
             };
             const mapSendPrefs: SimpleMap<SendPreferences> = {};
