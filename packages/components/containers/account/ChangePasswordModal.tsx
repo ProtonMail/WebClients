@@ -78,7 +78,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const [User] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
 
-    const { isSubUser, isAdmin } = User;
+    const { isSubUser, isAdmin, Name, Email } = User;
     const [adminAuthTwoFA, setAdminAuthTwoFA] = useState<TwoFaResponse>();
 
     const [inputs, setInputs] = useState<Inputs>({
@@ -174,8 +174,37 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         }
     };
 
-    const { labels, extraAlert, ...modalProps } = (() => {
-        if (mode === MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE) {
+    const getModalProperties = (mode: MODES) => {
+        if ([MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE, MODES.CHANGE_ONE_PASSWORD_MODE].includes(mode)) {
+            if (isSubUser) {
+                return {
+                    title: c('Title').t`Change password for ${Name} (${Email})`,
+                    extraAlert: (
+                        <Alert>
+                            {c('Info').t`Enter your own password (as organization admin) and this user's new password.`}
+                        </Alert>
+                    ),
+                    labels: {
+                        oldPassword: c('Label').t`Your password (admin)`,
+                        newPassword: c('Label').t`User's new password`,
+                        confirmPassword: c('Label').t`Confirm new password`,
+                    },
+                    close: c('Action').t`Cancel`,
+                    submit: c('Action').t`Change password`,
+                };
+            }
+
+            if (mode === MODES.CHANGE_ONE_PASSWORD_MODE) {
+                return {
+                    title: c('Title').t`Change password`,
+                    labels: {
+                        oldPassword: c('Label').t`Old password`,
+                        newPassword: c('Label').t`New password`,
+                        confirmPassword: c('Label').t`Confirm password`,
+                    },
+                };
+            }
+
             return {
                 title: c('Title').t`Change login password`,
                 labels: {
@@ -183,6 +212,16 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                     newPassword: c('Label').t`New login password`,
                     confirmPassword: c('Label').t`Confirm login password`,
                 },
+            };
+        }
+
+        throw new Error('mode not supported');
+    };
+
+    const { labels, extraAlert, ...modalProps } = (() => {
+        if (mode === MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE) {
+            return {
+                ...getModalProperties(mode),
                 async onSubmit() {
                     try {
                         validateConfirmPassword();
@@ -213,7 +252,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                     </Alert>
                 ),
                 labels: {
-                    oldPassword: c('Label').t`Old password`,
+                    oldPassword: isSubUser ? c('Label').t`Your password (admin)` : c('Label').t`Old password`,
                     newPassword: c('Label').t`New login password`,
                     confirmPassword: c('Label').t`Confirm login password`,
                 },
@@ -366,7 +405,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
             return {
                 title: c('Title').t`Switch to one-password mode`,
                 labels: {
-                    oldPassword: c('Label').t`Old login password`,
+                    oldPassword: isSubUser ? c('Label').t`Your password (admin)` : c('Label').t`Old login password`,
                     newPassword: c('Label').t`New password`,
                     confirmPassword: c('Label').t`Confirm password`,
                 },
@@ -382,12 +421,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
 
         if (mode === MODES.CHANGE_ONE_PASSWORD_MODE) {
             return {
-                title: c('Title').t`Change password`,
-                labels: {
-                    oldPassword: c('Label').t`Old password`,
-                    newPassword: c('Label').t`New password`,
-                    confirmPassword: c('Label').t`Confirm password`,
-                },
+                ...getModalProperties(mode),
                 onSubmit,
             };
         }
@@ -396,7 +430,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
             return {
                 title: c('Title').t`Change mailbox password`,
                 labels: {
-                    oldPassword: c('Label').t`Old login password`,
+                    oldPassword: isSubUser ? c('Label').t`Your password (admin)` : c('Label').t`Old login password`,
                     newPassword: c('Label').t`New mailbox password`,
                     confirmPassword: c('Label').t`Confirm mailbox password`,
                 },
