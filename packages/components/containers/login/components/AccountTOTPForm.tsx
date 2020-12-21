@@ -42,7 +42,7 @@ const AccountTOTPForm = ({ onSubmit, state, setters }: Props) => {
     );
 
     return (
-        <form name="totpForm" className="signup-form" onSubmit={handleSubmit} autoComplete="off">
+        <form name="totpForm" className="signup-form" onSubmit={handleSubmit} autoComplete="off" method="post">
             {state.isTotpRecovery ? recoveryForm : totpForm}
             <div className="mb1">
                 <InlineLinkButton

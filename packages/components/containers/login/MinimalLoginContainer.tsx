@@ -51,7 +51,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
             withLoading(handleLogin().catch(catchHandler));
         };
         return (
-            <form name="loginForm" onSubmit={handleSubmit}>
+            <form name="loginForm" onSubmit={handleSubmit} method="post">
                 <Label htmlFor="login">{c('Label').t`Username or ProtonMail address`}</Label>
                 <div className="mb1">
                     <LoginUsernameInput
@@ -92,7 +92,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
             withLoading(handleTotp().catch(catchHandler));
         };
         return (
-            <form name="totpForm" onSubmit={handleSubmit}>
+            <form name="totpForm" onSubmit={handleSubmit} method="post">
                 <Label htmlFor="twoFa">{c('Label').t`Two-factor authentication code`}</Label>
                 <div className="mb1">
                     <LoginTotpInput totp={totp} setTotp={loading ? noop : setters.totp} id="twoFa" />
@@ -118,7 +118,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
             withLoading(handleUnlock().catch(catchHandler));
         };
         return (
-            <form name="unlockForm" onSubmit={handleSubmit}>
+            <form name="unlockForm" onSubmit={handleSubmit} method="post">
                 <Label htmlFor="password">{c('Label').t`Mailbox password`}</Label>
                 <div className="mb1">
                     <LoginUnlockInput
