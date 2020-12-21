@@ -8,8 +8,9 @@ import { wait } from 'proton-shared/lib/helpers/promise';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { getClientID } from 'proton-shared/lib/apps/helper';
 import { getHasTOTPSettingEnabled } from 'proton-shared/lib/settings/twoFactor';
+import { omit } from 'proton-shared/lib/helpers/object';
 
-import { collectInfo, getClient } from '../../helpers/report';
+import { getReportInfo, getClient } from '../../helpers/report';
 import {
     Checkbox,
     Row,
@@ -106,7 +107,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
             if (isAdmin) {
                 await api(
                     reportBug({
-                        ...collectInfo(),
+                        ...omit(getReportInfo(), ['OSArtificial']),
                         Client,
                         ClientVersion: APP_VERSION,
                         ClientType: CLIENT_TYPE,
