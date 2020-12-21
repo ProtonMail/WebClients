@@ -134,6 +134,59 @@ describe('FocusTrap', () => {
         });
     });
 
+    it('should not restore focus when another trap overrides it', async () => {
+        const Dropdown = ({ open, children }: { open: boolean; children: React.ReactNode }) => {
+            const rootRef = useRef<HTMLDivElement>(null);
+            const props = useFocusTrap({ rootRef, active: open });
+            return (
+                <>
+                    ( open && (
+                    <div {...props} ref={rootRef}>
+                        {children}
+                    </div>
+                    ) )
+                </>
+            );
+        };
+        const Component = () => {
+            const [open, setOpen] = React.useState(false);
+            const [open2nd, setOpen2nd] = React.useState(false);
+            return (
+                <div>
+                    <button data-testid="button1" onClick={() => setOpen(!open)} />
+                    <Dropdown open={open}>
+                        <input autoFocus data-testid="input1" />
+                    </Dropdown>
+                    <button data-testid="button2" onClick={() => setOpen2nd(!open2nd)} />
+                    <Dropdown open={open2nd}>
+                        <input autoFocus data-testid="input2" />
+                    </Dropdown>
+                </div>
+            );
+        };
+        const { getByTestId } = render(<Component />);
+        const openerButton = getByTestId('button1');
+        openerButton.focus();
+        openerButton.click();
+        await wait(() => {
+            expect(getByTestId('input1')).toHaveFocus();
+        });
+        const openerButton2 = getByTestId('button2');
+        openerButton2.focus();
+        openerButton2.click();
+        await wait(() => {
+            expect(getByTestId('input2')).toHaveFocus();
+        });
+        openerButton.click();
+        await wait(() => {
+            expect(getByTestId('input2')).toHaveFocus();
+        });
+        openerButton2.click();
+        await wait(() => {
+            expect(openerButton2).toHaveFocus();
+        });
+    });
+
     it('should contain focus when tabbing', async () => {
         const Component = () => {
             const rootRef = useRef<HTMLDivElement>(null);

@@ -1,4 +1,4 @@
-import { FocusableElement, tabbable } from 'tabbable';
+import { FocusableElement, isFocusable, tabbable } from 'tabbable';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 
 const findParentElement = (el: Element | null | undefined, cb: (el: Element) => boolean) => {
@@ -9,6 +9,14 @@ const findParentElement = (el: Element | null | undefined, cb: (el: Element) => 
         }
         nextEl = nextEl.parentElement;
     }
+};
+
+export const getTargetRootElement = (start: Element | null | undefined) => {
+    const result = findParentElement(start, (el) => {
+        const htmlEl = el as HTMLElement;
+        return htmlEl.dataset?.focusRoot === '1';
+    });
+    return result as HTMLElement | undefined;
 };
 
 const manager = (() => {
@@ -52,6 +60,7 @@ const useFocusTrap = ({
     const nodeToRestoreRef = useRef<Element | null>(null);
     const prevOpenRef = useRef(false);
     const pendingRef = useRef('');
+    const mouseDownRef = useRef(false);
 
     useEffect(() => {
         prevOpenRef.current = active;
@@ -105,16 +114,17 @@ const useFocusTrap = ({
             if (!rootElement || !isLastFocusTrap() || !document.hasFocus()) {
                 return;
             }
-            const targetRootElement = findParentElement(document.activeElement, (el) => {
-                const htmlEl = el as HTMLElement;
-                return htmlEl.dataset?.focusRoot === '1';
-            }) as HTMLElement;
+            const targetRootElement = getTargetRootElement(document.activeElement);
             // A new focus trap is going to become active, but has not yet triggered its useEffect, abort.
             if (targetRootElement?.dataset?.focusPending) {
                 return;
             }
             // Focus is already in this root.
             if (targetRootElement === rootElement) {
+                return;
+            }
+            if (mouseDownRef.current) {
+                mouseDownRef.current = false;
                 return;
             }
             event.stopImmediatePropagation();
@@ -153,20 +163,44 @@ const useFocusTrap = ({
             }
         }
 
+        const handleMouseDown = () => {
+            mouseDownRef.current = true;
+        };
+        const handleMouseUp = () => {
+            mouseDownRef.current = false;
+        };
+
+        document.addEventListener('mousedown', handleMouseDown, true);
+        document.addEventListener('mouseup', handleMouseUp, true);
         document.addEventListener('focusin', handleFocusIn, true);
         document.addEventListener('keydown', handleKeyDown, true);
 
         return () => {
             document.removeEventListener('focusin', handleFocusIn, true);
             document.removeEventListener('keydown', handleKeyDown, true);
+            document.removeEventListener('mousedown', handleMouseDown, true);
+            document.removeEventListener('mouseup', handleMouseUp, true);
 
             manager.remove(id);
 
-            if (restoreFocus) {
-                const nodeToRestore = nodeToRestoreRef.current as HTMLElement;
-                nodeToRestore?.focus?.();
-            }
+            const currentActiveElement = document.activeElement;
+            const targetRootElement = getTargetRootElement(currentActiveElement);
+
+            const isFocusInAnotherRoot = targetRootElement && targetRootElement !== rootRef.current;
+            const isFocusInThisRoot = targetRootElement && targetRootElement === rootRef.current;
+            const isCurrentActiveElementFocusable = currentActiveElement && isFocusable(currentActiveElement);
+
+            const nodeToRestore = nodeToRestoreRef.current as HTMLElement | undefined;
             nodeToRestoreRef.current = null;
+            if (
+                !restoreFocus ||
+                !nodeToRestore ||
+                isFocusInAnotherRoot ||
+                (!isFocusInThisRoot && isCurrentActiveElementFocusable)
+            ) {
+                return;
+            }
+            nodeToRestore.focus?.();
         };
     }, [active]);
 
@@ -176,7 +210,9 @@ const useFocusTrap = ({
               'data-focus-root': '1',
               tabIndex: -1,
           }
-        : {};
+        : {
+              'data-focus-root': '1',
+          };
 };
 
 export default useFocusTrap;
