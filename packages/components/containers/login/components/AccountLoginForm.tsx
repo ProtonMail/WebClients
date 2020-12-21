@@ -26,7 +26,7 @@ const AccountLoginForm = ({ onSubmit, state, setters }: Props) => {
     };
 
     return (
-        <form name="loginForm" className="signup-form" onSubmit={handleSubmit}>
+        <form name="loginForm" className="signup-form" onSubmit={handleSubmit} method="post">
             <SignupLabelInputRow
                 label={<Label htmlFor="login">{c('Label').t`Email or Username`}</Label>}
                 input={
