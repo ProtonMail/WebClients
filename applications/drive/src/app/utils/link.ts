@@ -2,8 +2,9 @@ import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SharedURLFlags } from '../interfaces/sharing';
 
+export const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"|?*]/;
 // eslint-disable-next-line no-control-regex
-export const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"\\/|?*]|[\x00-\x1F]/;
+export const GLOBAL_FORBIDDEN_CHARACTERS = /\/|\\|[\u0000-\u001F]|[\u2000-\u200F]|[\u202E-\u202F]/;
 export const WINDOWS_RESERVED_NAMES = [
     'CON',
     'PRN',
