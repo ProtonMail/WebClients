@@ -68,7 +68,7 @@ const AccountSetPasswordForm = ({ onSubmit, errors, state, setters }: Props) => 
     );
 
     return (
-        <form name="setPasswordForm" className="signup-form" onSubmit={handleSubmit}>
+        <form name="setPasswordForm" className="signup-form" onSubmit={handleSubmit} method="post">
             {newPasswordInput}
             {confirmNewPasswordInput}
             <SignupSubmitRow>

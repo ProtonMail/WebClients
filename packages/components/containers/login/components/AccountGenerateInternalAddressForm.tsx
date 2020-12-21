@@ -33,7 +33,7 @@ const AccountGenerateInternalAddressForm = ({
     };
 
     return (
-        <form name="addressForm" className="signup-form" onSubmit={handleSubmit}>
+        <form name="addressForm" className="signup-form" onSubmit={handleSubmit} method="post">
             <SignupLabelInputRow
                 label={<Label htmlFor="login">{c('Label').t`Username`}</Label>}
                 input={
