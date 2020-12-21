@@ -1,10 +1,9 @@
-import { useUser, useMailSettings } from 'react-components';
+import { useMailSettings } from 'react-components';
 
 const useDelaySendSeconds = () => {
-    const [user] = useUser();
     const [mailSettings] = useMailSettings();
     const { DelaySendSeconds = 0 } = mailSettings || {};
-    return user.isPaid ? DelaySendSeconds : 0;
+    return DelaySendSeconds;
 };
 
 export default useDelaySendSeconds;
