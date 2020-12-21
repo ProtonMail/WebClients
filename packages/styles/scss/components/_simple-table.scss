@@ -97,10 +97,13 @@
 	}
 
 	&--has-actions {
-		td,
-		th {
-			&:last-child {
-				text-align: right;
+		&#{&} {
+			// Specificity -_-v
+			td,
+			th {
+				&:last-child {
+					text-align: right;
+				}
 			}
 		}
 	}
