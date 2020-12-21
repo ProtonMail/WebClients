@@ -98,9 +98,9 @@ const VpnFeaturesTable = ({ cycle, currency }) => {
                         <td>{c('Feature').t`Access blocked content`}</td>
                     </tr>
                     <tr>
-                        <td>{c('Feature').t`ProtonMail (optional) *`}</td>
-                        <td>{c('Feature').t`ProtonMail (optional) *`}</td>
-                        <td>{c('Feature').t`ProtonMail (optional) *`}</td>
+                        <td>{c('Feature').t`ProtonMail (optional)*`}</td>
+                        <td>{c('Feature').t`ProtonMail (optional)*`}</td>
+                        <td>{c('Feature').t`ProtonMail (optional)*`}</td>
                         <td>{c('Feature').t`ProtonMail included`}</td>
                     </tr>
                     <tr>
