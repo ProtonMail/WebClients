@@ -48,13 +48,8 @@
     }
 
     &-list {
-        max-height: 25em; // 5x listItem
         background-color: var(--bgcolor-input, $pm-global-light);
         transition: inherit;
-
-        @include respond-to(640, 'height') {
-            max-height: 35vh;
-        }
     }
 
     &--minimized &-list {
