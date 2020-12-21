@@ -6,16 +6,16 @@ import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy, Input } fr
 
 const DMARCSection = () => {
     const none = <strong key="none">p=none</strong>;
-    const address = <strong key="address">address@example.com</strong>;
+    const quarantine = <strong key="quarantine">p=quarantine</strong>;
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`DMARC value copied to clipboard!` });
-    const dmarcValue = 'v=DMARC1; p=none; rua=mailto:address@example.com';
+    const dmarcValue = 'v=DMARC1; p=none';
     const [value, setValue] = useState(dmarcValue);
     return (
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
                 {c('Info')
-                    .t`If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. Feel free to ignore and skip DMARC unless you really want strict policies such as "p=quarantine" or "p=reject".`}
+                    .t`If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.`}
             </Alert>
             <Label>{c('Label').t`Here is a basic DMARC record that does nothing except email you reports.`}</Label>
             <Table>
@@ -48,9 +48,8 @@ const DMARCSection = () => {
                 </TableBody>
             </Table>
             <Alert>
-                {c('Info').jt`${none} has no effect on email delivery.`}
-                <br />
-                {c('Info').jt`${address} is where you will receive DMARC reports from other email services.`}
+                {c('Info')
+                    .jt`${none} has no effect on email delivery, but we recommend ${quarantine} for better security.`}
             </Alert>
         </>
     );
