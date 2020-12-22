@@ -13,6 +13,23 @@
 @import '~design-system/_sass/reusable-components/design-system-reduced-motion';
 
 body {
-  overflow: scroll !important;
-  color: inherit;
+	overflow: scroll !important;
+	color: inherit;
+}
+
+// dirty fixes while whaiting to have better solutions
+.language-markup code {
+	width: 100%;
+	padding: 1em;
+	white-space: pre-wrap;
+}
+.mauto {
+	margin: auto !important;
+}
+.mlauto {
+	margin-left: auto !important;
+}
+.center {
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
