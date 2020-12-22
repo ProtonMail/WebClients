@@ -66,13 +66,13 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                         <Loader />
                     ) : (
                         <ul className="unstyled mt0 mb0">
-                            <li>
-                                <Icon name="protonvpn" className="mr0-5" />
-                                {getPlanTitle(vpnPlan, 'ProtonVPN')}
+                            <li className="flex flex-nowrap flex-items-center">
+                                <Icon name="protonvpn" className="mr0-5 flex-item-noshrink" />
+                                <span className="flex-item-fluid">{getPlanTitle(vpnPlan, 'ProtonVPN')}</span>
                             </li>
-                            <li>
-                                <Icon name="protonmail" className="mr0-5" />
-                                {getPlanTitle(mailPlan, 'ProtonMail')}
+                            <li className="flex flex-nowrap flex-items-center">
+                                <Icon name="protonmail" className="mr0-5 flex-item-noshrink" />
+                                <span className="flex-item-fluid">{getPlanTitle(mailPlan, 'ProtonMail')}</span>
                             </li>
                         </ul>
                     )}
@@ -83,8 +83,8 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                     <strong className="bl mb0-5">{c('Title').t`Default language`}</strong>
                     <ul className="unstyled mt0 mb0">
                         <li className="flex flex-nowrap flex-items-center">
-                            <Icon name="globe" className="mr0-5" />
-                            {languageText}
+                            <Icon name="globe" className="mr0-5 flex-item-noshrink" />
+                            <span className="flex-item-fluid">{languageText}</span>
                         </li>
                     </ul>
                 </div>
@@ -118,18 +118,18 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 <div className="mb1">
                     <strong className="bl mb0-5">{c('Title').t`Application settings`}</strong>
                     <ul className="unstyled mt0 mb0">
-                        <li className="flex flex-items-center">
-                            <Icon name="protonmail" className="mr0-5" />
+                        <li className="flex flex-nowrap flex-items-center">
+                            <Icon name="protonmail" className="mr0-5 flex-item-noshrink" />
                             <AppLink to="/settings/overview" toApp={APPS.PROTONMAIL}>{c('Link')
                                 .t`ProtonMail settings`}</AppLink>
                         </li>
-                        <li className="flex flex-items-center">
-                            <Icon name="protoncalendar" className="mr0-5" />
+                        <li className="flex flex-nowrap flex-items-center">
+                            <Icon name="protoncalendar" className="mr0-5 flex-item-noshrink" />
                             <AppLink to="/settings/overview" toApp={APPS.PROTONCALENDAR}>{c('Link')
                                 .t`ProtonCalendar settings`}</AppLink>
                         </li>
-                        <li className="flex flex-items-center">
-                            <Icon name="protoncontacts" className="mr0-5" />
+                        <li className="flex flex-nowrap flex-items-center">
+                            <Icon name="protoncontacts" className="mr0-5 flex-item-noshrink" />
                             <AppLink to="/settings/overview" toApp={APPS.PROTONCONTACTS}>{c('Link')
                                 .t`ProtonContacts settings`}</AppLink>
                         </li>
