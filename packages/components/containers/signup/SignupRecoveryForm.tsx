@@ -171,6 +171,7 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
                 onSubmit={(e) => withLoadingChallenge(handleSubmit(e))}
                 hidden={model.step === RECOVERY_EMAIL && challengeLoading}
                 ref={formRef}
+                method="post"
             >
                 {inner}
                 <SignupSubmitRow>

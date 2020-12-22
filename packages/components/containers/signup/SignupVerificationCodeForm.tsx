@@ -19,7 +19,7 @@ const SignupVerificationCodeForm = ({ model, onChange, onSubmit, onResend, error
     const disableSubmit = !!errors.verificationCode;
     const destinationBold = <strong key="destination">{model.email}</strong>;
     return (
-        <form name="humanForm" onSubmit={onSubmit}>
+        <form name="humanForm" onSubmit={onSubmit} method="post">
             <div className="mb1">{c('Info').t`For security reasons, please verify that your are not a robot.`}</div>
             <div className="mb1">{c('Info')
                 .jt`Enter the verification code that was sent to ${destinationBold}. If you don't find the email in your inbox, please check your spam folder.`}</div>
