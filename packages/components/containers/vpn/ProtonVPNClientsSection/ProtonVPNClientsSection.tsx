@@ -30,9 +30,7 @@ const ProtonVPNClientsSection = () => {
             <VPNClientCard
                 title={c('VPNClient').t`Android TV`}
                 icon="tv"
-                link="https://play.google.com/apps/testing/ch.protonvpn.android"
-                tooltip={c('Tooltip')
-                    .t`The app is currently available to anyone who wants to beta test ProtonVPN products.`}
+                link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_source=protonvpn.com&utm_content=dashboard"
             />
         </div>
     );
