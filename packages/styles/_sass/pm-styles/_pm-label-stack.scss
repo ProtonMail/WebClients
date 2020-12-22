@@ -61,6 +61,11 @@
 			}
 		}
 	}
+	&--noMargin {
+		&#{&} { // specificity issue
+			margin: 0;
+		}
+	}
 
 	&.is-stacked {
 		overflow: hidden;
