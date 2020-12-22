@@ -33,6 +33,7 @@ const Content = ({
             autoComplete={autoComplete}
             className={classnames(['pm-modalContent', className])}
             noValidate={noValidate}
+            method="post"
             {...rest}
         >
             {children}
