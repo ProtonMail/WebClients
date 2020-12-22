@@ -42,7 +42,7 @@ const SignupPayment = ({
     onSubmit,
 }: Props) => {
     return (
-        <form name="payment-form" onSubmit={onSubmit}>
+        <form name="payment-form" onSubmit={onSubmit} method="post">
             <Alert>{c('Info')
                 .t`Please note that depending on the total amount due, some payment options may not be available.`}</Alert>
             <div className="flex-noMinChildren flex-nowrap onmobile-flex-column onmobile-flex-wrap">

@@ -183,6 +183,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                     withLoadingChallenge(handleSubmit());
                 }}
                 autoComplete="off"
+                method="post"
             >
                 {inner}
                 <div className="flex flex-nowrap onmobile-flex-column mb2">
