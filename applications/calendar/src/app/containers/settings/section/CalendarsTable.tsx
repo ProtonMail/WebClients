@@ -15,7 +15,7 @@ interface Props {
 }
 const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, onDelete, loadingMap }: Props) => {
     return (
-        <Table>
+        <Table className="pm-simple-table--has-actions">
             <TableHeader cells={[c('Header').t`Name`, c('Header').t`Status`, c('Header').t`Actions`]} />
             <TableBody>
                 {(calendars || []).map((calendar) => {
