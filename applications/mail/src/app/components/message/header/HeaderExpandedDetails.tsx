@@ -57,7 +57,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
         <div className="message-detailed-header-extra border-top pt0-5">
             {icon && (
                 <div className="mb0-5 flex flex-nowrap flex-items-center">
-                    <span className="container-to flex">
+                    <span className="container-to flex flex-justify-center">
                         <EncryptionStatusIcon useTooltip={false} {...icon} />
                     </span>
                     <span className="ellipsis" title={icon.text}>
