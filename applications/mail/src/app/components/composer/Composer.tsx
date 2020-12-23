@@ -1,6 +1,7 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getRecipients } from 'proton-shared/lib/mail/messages';
 import React, { useState, useEffect, useRef, useCallback, DragEvent } from 'react';
+import { c } from 'ttag';
 import {
     classnames,
     useToggle,
@@ -9,7 +10,6 @@ import {
     useGetEncryptionPreferences,
     useHandler,
 } from 'react-components';
-import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 import { COMPOSER_MODE } from 'proton-shared/lib/constants';
@@ -38,6 +38,9 @@ import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import { usePromiseFromState } from '../../hooks/usePromiseFromState';
 import { OnCompose } from '../../hooks/useCompose';
+import SendingMessageNotification, {
+    createSendingMessageNotificationManager,
+} from '../notifications/SendingMessageNotification';
 
 enum ComposerInnerModal {
     None,
@@ -79,7 +82,7 @@ const Composer = ({
     onCompose,
 }: Props) => {
     const [mailSettings] = useMailSettings();
-    const { createNotification } = useNotifications();
+    const { createNotification, hideNotification } = useNotifications();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
@@ -353,11 +356,20 @@ const Composer = ({
         const alreadySaved = !!cleanMessage.data.ID && !pendingSave.current && !hasChanged;
         autoSave.abort?.();
 
+        const manager = createSendingMessageNotificationManager();
+        // Display growler to receive direct feedback (UX) since sendMessage function is added to queue (and other async process could need to complete first)
+        manager.ID = createNotification({
+            text: <SendingMessageNotification manager={manager} />,
+            expiration: -1,
+            disableAutoClose: true,
+        });
+
         // No await here to close the composer directly
         void addAction(async () => {
             try {
-                await sendMessage(cleanMessage, mapSendPrefs, onCompose, alreadySaved);
+                await sendMessage(cleanMessage, mapSendPrefs, onCompose, alreadySaved, manager);
             } catch (error) {
+                hideNotification(manager.ID);
                 createNotification({
                     text: c('Error').t`Error while sending the message. Message is not sent`,
                     type: 'error',
