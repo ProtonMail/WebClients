@@ -1,6 +1,6 @@
 import { isImported } from 'proton-shared/lib/mail/messages';
 import { useEffect } from 'react';
-import { History } from 'history';
+import { useHistory } from 'react-router-dom';
 import { useFolders, useMailSettings, useSubscribeEventManager } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
@@ -11,7 +11,8 @@ import { isConversationMode } from '../helpers/mailSettings';
 import { setParamsInLocation } from '../helpers/mailboxUrl';
 import notificationIcon from '../assets/notification.gif';
 
-const useNewEmailNotification = (history: History) => {
+const useNewEmailNotification = (onOpenElement: () => void) => {
+    const history = useHistory();
     const [mailSettings] = useMailSettings();
     const [folders = []] = useFolders();
     const notifier = [
@@ -37,14 +38,15 @@ const useNewEmailNotification = (history: History) => {
                 icon: notificationIcon,
                 onClick() {
                     window.focus();
-
-                    if (isConversationMode(labelID, mailSettings, history.location)) {
-                        return history.push(
-                            setParamsInLocation(history.location, { labelID, elementID: ConversationID })
-                        );
-                    }
-
-                    history.push(setParamsInLocation(history.location, { labelID, elementID: ID }));
+                    history.push(
+                        setParamsInLocation(history.location, {
+                            labelID,
+                            elementID: isConversationMode(labelID, mailSettings, history.location)
+                                ? ConversationID
+                                : ID,
+                        })
+                    );
+                    onOpenElement();
                 },
             });
         });

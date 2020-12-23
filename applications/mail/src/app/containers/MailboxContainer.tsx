@@ -94,7 +94,7 @@ const MailboxContainer = ({
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
 
     const [checkedElements, setCheckedElements] = useState<{ [ID: string]: boolean }>({});
-    useNewEmailNotification(history);
+
     const { labelID, elements, loading, expectedLength, total } = useElements({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
@@ -109,6 +109,7 @@ const MailboxContainer = ({
     useEffect(() => setCheckedElements({}), [labelID]);
 
     useMailboxPageTitle(labelID, location);
+    useNewEmailNotification(() => setCheckedElements({}));
 
     const checkedIDs = useDeepMemo(() => {
         return Object.entries(checkedElements).reduce((acc, [elementID, isChecked]) => {
