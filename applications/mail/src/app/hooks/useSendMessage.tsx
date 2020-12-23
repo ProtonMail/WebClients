@@ -32,7 +32,7 @@ import { attachPublicKey } from '../helpers/message/messageAttachPublicKey';
 import SendWithWarningsModal from '../components/composer/addresses/SendWithWarningsModal';
 import SendWithExpirationModal from '../components/composer/addresses/SendWithExpirationModal';
 import { useSaveDraft } from './message/useSaveDraft';
-import SendingMessageNotification from '../components/notifications/SendingMessageNotification';
+import { SendingMessageNotificationManager } from '../components/notifications/SendingMessageNotification';
 import { OnCompose } from './useCompose';
 import useDelaySendSeconds from './useDelaySendSeconds';
 import { useGetMessageKeys } from './message/useGetMessageKeys';
@@ -192,7 +192,8 @@ export const useSendMessage = () => {
             inputMessage: MessageExtendedWithData,
             mapSendPrefs: SimpleMap<SendPreferences>,
             onCompose: OnCompose,
-            alreadySaved = false
+            alreadySaved = false,
+            sendingMessageNotificationManager?: SendingMessageNotificationManager
         ) => {
             const { localID, data } = inputMessage;
             const hasUndo = !!delaySendSeconds;
@@ -266,39 +267,25 @@ export const useSendMessage = () => {
                 );
             };
 
-            const promise = prepareMessageToSend();
-
-            const notificationID = createNotification({
-                text: (
-                    <SendingMessageNotification
-                        promise={promise}
-                        onUndo={
-                            hasUndo
-                                ? () => {
-                                      hideNotification(notificationID);
-                                      return handleUndo();
-                                  }
-                                : undefined
-                        }
-                    />
-                ),
-                disableAutoClose: true,
-                expiration: -1,
+            const promise = prepareMessageToSend().then((result) => {
+                const delta = result.DeliveryTime * 1000 - Date.now();
+                const undoTimeout = delta > 0 ? delta : 0;
+                return { ...result, undoTimeout };
             });
 
+            sendingMessageNotificationManager?.setProperties(promise, handleUndo);
+
             try {
-                const { Sent, DeliveryTime } = await promise;
-                const delta = DeliveryTime * 1000 - Date.now();
-                const undoTimeout = delta > 0 ? delta : 0;
-                setTimeout(
-                    () => {
-                        hideNotification(notificationID);
-                        if (hasUndo) {
-                            call();
-                        }
-                    },
-                    hasUndo ? undoTimeout : 2500
-                );
+                const { Sent, undoTimeout } = await promise;
+                setTimeout(() => {
+                    if (sendingMessageNotificationManager) {
+                        hideNotification(sendingMessageNotificationManager.ID);
+                    }
+
+                    if (hasUndo) {
+                        call();
+                    }
+                }, Math.max(undoTimeout, 2500));
 
                 updateMessageCache(messageCache, localID, {
                     data: Sent,
@@ -332,7 +319,6 @@ export const useSendMessage = () => {
                 //     throw e;
                 // }
             } catch (error) {
-                hideNotification(notificationID);
                 onCompose({
                     existingDraft: {
                         localID,
