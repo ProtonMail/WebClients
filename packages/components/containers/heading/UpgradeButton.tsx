@@ -12,6 +12,7 @@ const UpgradeButton = (props: Omit<Props, 'text' | 'icon' | 'to'>) => {
             icon="upgrade-to-paid"
             to="/subscription"
             toApp={getAccountSettingsApp()}
+            title={c('Link').t`Upgrade`}
         />
     );
 };

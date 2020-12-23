@@ -58,6 +58,7 @@ const BlackFridayButton = ({ plans, subscription }: Props) => {
         <span className="flex flex-items-center relative">
             <button
                 type="button"
+                title={text}
                 className={classnames([
                     'topnav-link inline-flex flex-nowrap nodecoration',
                     hasRedDot && 'topnav-link--blackfriday',
