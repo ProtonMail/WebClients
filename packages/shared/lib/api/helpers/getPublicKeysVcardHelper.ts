@@ -10,6 +10,22 @@ import { Api, PinnedKeysConfig } from '../../interfaces';
 import { Contact as tsContact, ContactEmail } from '../../interfaces/contacts';
 import { getContact, queryContactEmails } from '../contacts';
 
+const getContactEmail = async (
+    emailAddress: string,
+    contactEmailsMap: { [email: string]: ContactEmail | undefined } = {},
+    api: Api
+) => {
+    // Simple normalize here, internal version is to aggressive relative to contacts emails
+    const normalizedEmailAddress = normalizeEmail(emailAddress);
+    if (contactEmailsMap[normalizedEmailAddress]) {
+        return contactEmailsMap[normalizedEmailAddress];
+    }
+    const { ContactEmails = [] } = await api<{ ContactEmails: ContactEmail[] }>(
+        queryContactEmails({ Email: normalizedEmailAddress } as any)
+    );
+    return ContactEmails[0];
+};
+
 /**
  * Get the public keys stored in the vcard of a contact associated to a certain email address.
  * Verify the signature on the contact in the process with the public keys provided
@@ -18,27 +34,31 @@ const getPublicKeysVcardHelper = async (
     api: Api,
     emailAddress: string,
     publicKeys: OpenPGPKey[],
-    isInternal?: boolean
+    isInternal?: boolean,
+    contactEmailsMap: { [email: string]: ContactEmail | undefined } = {}
 ): Promise<PinnedKeysConfig> => {
     let isContact = false;
+    let isContactSignatureVerified;
     try {
-        const { ContactEmails = [] } = await api<{ ContactEmails: ContactEmail[] }>(
-            queryContactEmails({ Email: emailAddress } as any)
-        );
-        if (!ContactEmails.length) {
+        const ContactEmail = await getContactEmail(emailAddress, contactEmailsMap, api);
+        if (ContactEmail === undefined) {
             return { pinnedKeys: [], isContact };
         }
         isContact = true;
+        // ContactEmail.Defaults flag informs if there is specific configuration in the contact for this email
+        if (ContactEmail.Defaults === 1) {
+            return { pinnedKeys: [], isContact };
+        }
         // pick the first contact with the desired email. The API returns them ordered by decreasing priority already
-        const { Contact } = await api<{ Contact: tsContact }>(getContact(ContactEmails[0].ContactID));
+        const { Contact } = await api<{ Contact: tsContact }>(getContact(ContactEmail.ContactID));
         // all the info we need is in the signed part
         const signedCard = Contact.Cards.find(({ Type }) => Type === CONTACT_CARD_TYPE.SIGNED);
         if (!signedCard) {
             // contacts created by the server are not signed
-            return { pinnedKeys: [], isContact: !!Contact.Cards.length, isContactSignatureVerified: true };
+            return { pinnedKeys: [], isContact: !!Contact.Cards.length };
         }
         const { type, data: signedVcard } = await readSigned(signedCard, { publicKeys });
-        const isContactSignatureVerified = type === CRYPTO_PROCESSING_TYPES.SUCCESS;
+        isContactSignatureVerified = type === CRYPTO_PROCESSING_TYPES.SUCCESS;
         const properties = parse(signedVcard);
         const emailProperty = properties.find(
             ({ field, value }) =>
@@ -54,7 +74,7 @@ const getPublicKeysVcardHelper = async (
             isContactSignatureVerified,
         };
     } catch (error) {
-        return { pinnedKeys: [], isContact, isContactSignatureVerified: false, error };
+        return { pinnedKeys: [], isContact, isContactSignatureVerified, error };
     }
 };
 
