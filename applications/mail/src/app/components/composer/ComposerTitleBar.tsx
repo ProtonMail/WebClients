@@ -44,12 +44,23 @@ const ComposerTitleBar = ({
     maximized,
     toggleMinimized,
     toggleMaximized,
-    onClose
+    onClose,
 }: Props) => {
     const title = message.data?.Subject || c('Title').t`New message`;
 
+    const handleDoubleClick = () => {
+        if (minimized) {
+            toggleMinimized();
+            return;
+        }
+        toggleMaximized();
+    };
+
     return (
-        <header className="composer-title-bar flex flex-row flex-items-center flex-nowrap pl0-5 pr0-5 w100 color-global-light">
+        <header
+            className="composer-title-bar flex flex-row flex-items-center flex-nowrap pl0-5 pr0-5 w100 color-global-light"
+            onDoubleClick={handleDoubleClick}
+        >
             <span className="flex-item-fluid p0-5 pr1 ellipsis">{title}</span>
             <TitleBarButton
                 iconName="minimize"
