@@ -150,7 +150,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             },
         };
     }
-    if (isContact && !isContactSignatureVerified) {
+    if (isContact && isContactSignatureVerified === false) {
         return {
             ...result,
             failure: {
@@ -242,7 +242,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
             },
         };
     }
-    if (isContact && !isContactSignatureVerified) {
+    if (isContact && isContactSignatureVerified === false) {
         return {
             ...result,
             failure: {
@@ -325,7 +325,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
             },
         };
     }
-    if (isContact && !isContactSignatureVerified) {
+    if (isContact && isContactSignatureVerified === false) {
         return {
             ...result,
             failure: {
