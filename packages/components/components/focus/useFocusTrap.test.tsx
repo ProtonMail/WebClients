@@ -106,7 +106,7 @@ describe('FocusTrap', () => {
         expect(getByTestId('root')).toHaveAttribute('tabIndex', '-1');
     });
 
-    it('should restore focus', async () => {
+    it('should not restore focus if closed by click', async () => {
         const Component = () => {
             const [open, setOpen] = React.useState(false);
             const rootRef = useRef<HTMLDivElement>(null);
@@ -126,9 +126,40 @@ describe('FocusTrap', () => {
         const { getByTestId } = render(<Component />);
         const openerButton = getByTestId('button');
         openerButton.focus();
-        openerButton.click();
+        fireEvent.mouseUp(openerButton);
+        fireEvent.click(openerButton);
         expect(getByTestId('input')).toHaveFocus();
-        getByTestId('close').click();
+        const closeButton = getByTestId('close');
+        fireEvent.mouseUp(closeButton);
+        fireEvent.click(closeButton);
+        await wait(() => {
+            expect(openerButton).not.toHaveFocus();
+        });
+    });
+
+    it('should restore focus if closed by keyboard', async () => {
+        const Component = () => {
+            const [open, setOpen] = React.useState(false);
+            const rootRef = useRef<HTMLDivElement>(null);
+            const props = useFocusTrap({ rootRef, active: open });
+            return (
+                <div>
+                    <button data-testid="button" onClick={() => setOpen(true)} />
+                    {open && (
+                        <div {...props} ref={rootRef}>
+                            <input autoFocus data-testid="input" onKeyDown={() => setOpen(false)} />
+                        </div>
+                    )}
+                </div>
+            );
+        };
+        const { getByTestId } = render(<Component />);
+        const openerButton = getByTestId('button');
+        openerButton.focus();
+        fireEvent.mouseUp(openerButton);
+        fireEvent.click(openerButton);
+        expect(getByTestId('input')).toHaveFocus();
+        fireEvent.keyDown(getByTestId('input'), { key: 'Esc' });
         await wait(() => {
             expect(openerButton).toHaveFocus();
         });
