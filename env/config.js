@@ -175,7 +175,6 @@ module.exports = {
     getStatsConfig,
     argv,
     getEnv,
-    getHostURL,
     hasEnv,
     isWebClient
 };
