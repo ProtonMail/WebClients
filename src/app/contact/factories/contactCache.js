@@ -301,7 +301,7 @@ function contactCache(
         type === 'importContacts' && contactImporter(data.contactID);
         type === 'exportContacts' && contactDownloader(data.contactID);
         type === 'selectContacts' && selectContacts(data);
-        type === 'searchingContact' && searchingContact(data);
+        type === 'searchingContact' && searchingContact();
     });
 
     on('logout', () => {
