@@ -50,7 +50,7 @@ function contactCache(
 
         const parameter = $stateParams.sort || 'Name';
         const reverseOrder = parameter.indexOf('-') > -1;
-        const key = parameter.replace('-', '');
+        const key = parameter.replace(/\-/g,'');
 
         // Sort is a key not defined inside a contact
         if (!_.has(contacts[0], key)) {
