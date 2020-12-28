@@ -2,16 +2,6 @@
 function openVpnSection(vpnSettingsModel, gettextCatalog, networkActivityTracker, eventManager, notification) {
     const SHOW_PASSWORD_CLASS = 'openVpnSection-show-password';
     const togglePassword = (element) => element.classList.toggle(SHOW_PASSWORD_CLASS);
-    const resetSettings = () => {
-        const success = gettextCatalog.getString('OpenVPN / IKEv2 credentials regenerated', null, 'Info');
-
-        const promise = vpnSettingsModel
-            .resetSettings()
-            .then(() => eventManager.call())
-            .then(() => notification.success(success));
-
-        networkActivityTracker.track(promise);
-    };
 
     return {
         restrict: 'E',
@@ -23,6 +13,24 @@ function openVpnSection(vpnSettingsModel, gettextCatalog, networkActivityTracker
 
             scope.VPNName = Name;
             scope.VPNPassword = Password;
+
+            const resetSettings = () => {
+                const success = gettextCatalog.getString('OpenVPN / IKEv2 credentials regenerated', null, 'Info');
+
+                const promise = vpnSettingsModel
+                    .resetSettings()
+                    .then(({ Name, Password }) => {
+                        scope.$applyAsync(() => {
+                            scope.VPNName = Name;
+                            scope.VPNPassword = Password;
+                        });
+
+                        return eventManager.call();
+                    })
+                    .then(() => notification.success(success));
+
+                networkActivityTracker.track(promise);
+            };
 
             const onClick = ({ target }) => {
                 const action = target.getAttribute('data-action');
