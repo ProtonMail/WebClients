@@ -3,9 +3,10 @@ export const getSubscription = () => ({
     method: 'get',
 });
 
-export const deleteSubscription = () => ({
+export const deleteSubscription = (data) => ({
     url: 'payments/subscription',
     method: 'delete',
+    data,
 });
 
 export const checkSubscription = (data) => ({
