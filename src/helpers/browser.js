@@ -26,7 +26,7 @@ export const getOS = () => {
 export const isSafari = () => ['Safari', 'Mobile Safari'].includes($.ua.browser.name);
 export const isSafariMobile = () => $.ua.browser.name === 'Mobile Safari';
 export const isBrokenUploadSafari = () => {
-    return isSafari() && $.ua.browser.version === '14.0.1' && $.ua.os.version === '10.14.6';
+    return isSafari() && ['14.0.1', '14.0.2'].includes($.ua.browser.version) && $.ua.os.version === '10.14.6';
 };
 export const isIE11 = () => $.ua.browser.name === 'IE' && $.ua.browser.major === '11';
 export const isEdge = () => $.ua.browser.name === 'Edge';
