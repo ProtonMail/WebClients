@@ -3,9 +3,9 @@ import { c, msgid } from 'ttag';
 import { Organization } from 'proton-shared/lib/interfaces';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import { Alert, ConfirmModal, ErrorButton, Paragraph } from '../../components';
+import { Alert, ConfirmModal, ConfirmModalProps, ErrorButton, Paragraph } from '../../components';
 
-interface Props {
+interface Props extends ConfirmModalProps {
     organization: Organization;
 }
 
