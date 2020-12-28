@@ -1,10 +1,29 @@
+# [3.16.47] 2020-12-15
+
+## Improvements
+
+-   Show tooltip for broken Safari
+-   Make Feature API call silent
+-   Add missing plural form
+
+## Fixes
+
+-   `hasBonuses` has to check `LoyaltyCounter` not just `Flags`
+
+## Updates
+
+-   Add forbidden login auth event
+-   Remove end limit for product payer promotion
+-   Turn autocomplete off for username input
+-   Try to apply BF2020 coupon code each time the user update subscription configuration
+
 # [3.16.46] - 2020-11-25
 
 ## Improvements
 
--  Add red dot for BF navigation icon
-- Remove cookie support for remembering displayed modals
-- Update whitelist / blacklist to Allow List/Block List
+-   Add red dot for BF navigation icon
+-   Remove cookie support for remembering displayed modals
+-   Update whitelist / blacklist to Allow List/Block List
 
 # [3.16.45] - 2020-11-19
 
@@ -12,6 +31,7 @@
 
 -   Next promotion was sometimes not properly calculated.
 -   Promotion state was not reset after logout.
+
 # [3.16.44] - 2020-11-17
 
 ## Improvements
