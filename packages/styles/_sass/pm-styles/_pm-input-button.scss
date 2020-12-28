@@ -1,0 +1,27 @@
+.input-button.pm-button {
+    width: 2.5em;
+    padding: em(6); // Same as inputs
+}
+
+.input-button-input {
+    &:focus + .input-button {
+        // Same as buttons
+        box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+    }
+
+    &:checked + .input-button {
+        // Need !important because current dark mode management. Remove those as soon as possible.
+        background-color: $pm-primary !important;
+        border-color: $pm-primary !important;
+    }
+
+    &:checked:not(:active) + .input-button {
+        // Need !important because current dark mode management. Remove those as soon as possible.
+        color: $white !important;
+    }
+
+    &:active + .input-button {
+        // Need !important because current dark mode management. Remove those as soon as possible.
+        border-color: $pm-global-border !important;
+    }
+}
