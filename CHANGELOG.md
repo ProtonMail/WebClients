@@ -1,3 +1,9 @@
+# [3.16.49] - 2020-12-28
+
+## Fixes
+
+-   Refresh name and password for VPN after reset
+
 # [3.16.48] - 2020-12-28
 
 ## Updates
