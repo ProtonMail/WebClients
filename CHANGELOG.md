@@ -1,4 +1,11 @@
-# [3.16.47] 2020-12-15
+# [3.16.48] - 2020-12-28
+
+## Updates
+
+-   Includes Safari 14.0.2 version to broken upload
+-   Reset VPN user/name instead of manual edition
+
+# [3.16.47] - 2020-12-15
 
 ## Improvements
 
