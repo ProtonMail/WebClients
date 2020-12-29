@@ -1,0 +1,154 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Front-End conventions / DOs - DONTs" />
+
+# DOs / DONTs
+
+## CSS
+
+### General
+
+- <strong>Do NOT reinvent the wheel</strong>.
+- <strong>Have a look at what is already existing</strong>, and use it.
+- Using <strong>several classes for an element</strong> is a good practice.
+- <strong>Separating design styles of a module from its positionning</strong> (if possible) is also a good practice: better for reusability/responsive/etc.
+
+### Sass nesting inferno
+
+<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-css prismjs p1 relative icon-ko w100"><code>.my-module &#123;<br />
+  .blabla &#123;<br />
+    .why-not-more-complexifing &#123;<br />
+      em &#123;<br />
+        …<br />
+      }<br />
+    }<br />
+  }<br />
+}</code></pre>
+  </div>
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-css prismjs p1 relative icon-ok w100"><code>.my-module &#123;<br />
+  …<br />
+}<br />
+.my-module-title &#123;<br />
+}<br />
+.my-module-other &#123;<br />
+}<br />
+.my-module-important &#123;<br />
+}
+</code></pre>
+  </div>
+</div>
+
+Stop doing Sass nesting inferno. The structure must <strong class="uppercase">NOT</strong> be so complex and intricated with CSS, and it is a pain to surcharge (and the weight of the CSS will be far lighter not doing this). Let's be flexible!
+
+### Targetting elements
+
+<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-css prismjs p1 relative icon-ko w100"><code>#my-module &#123;<br />
+  …<br />
+}<br />
+#my-module a &#123;<br />
+  …<br />
+}<br />
+.icon-30-blah, .icon-30-blahblah &#123; /* etc. */<br />
+  …<br />
+} </code></pre>
+  </div>
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-css prismjs p1 relative icon-ok w100"><code>.my-module &#123;<br />
+  …<br />
+}<br />
+.my-module-link &#123;<br />
+  …<br />
+}<br />
+[class*=icon-30] &#123;<br />
+    …<br />
+}
+</code></pre>
+  </div>
+</div>
+
+Please avoid targetting via id and neighbour, better use a direct target via a class (<a href="https://openweb.eu.org/articles/performance-seen-from-css">See performance from CSS point of view</a>). Also better factorising when possible.
+
+### line-height
+
+No unit for this property. Do <strong>NOT</strong> use it to center vertically text.
+
+<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-css prismjs p1 relative icon-ko w100"><code>line-height: 36px;
+line-height: 3em;</code></pre>
+  </div>
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-css prismjs p1 relative icon-ok w100"><code>line-height: 1.5;
+line-height: normal</code></pre>
+  </div>
+</div>
+
+See <a href="https://tzi.fr/css/line-height-units/">unitless values for line-height</a>.
+
+
+### Positionning
+
+Unless you really have to, avoid mixing positionning on tables (creates bugs on some browsers).
+
+<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-markup prismjs p1 relative icon-ko w100 m0"><code>&lt;td class="my-module-style"&gt;</code></pre>
+    <pre class=" language-css prismjs p1 relative icon-ko w100 mt0 mb1"><code>.my-module-style &#123;<br />
+  display: flex<br />
+  …<br />
+}</code></pre>
+  </div>
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-markup prismjs p1 relative icon-ok w100 m0"><code>&lt;td&gt;&lt;span class="my-module-style"&gt;…&lt;/span&gt;</code></pre>
+    <pre class=" language-css prismjs p1 relative icon-ok w100 mt0 mb1"><code>.my-module-style &#123;<br />
+  display: flex<br />
+  …<br />
+}</code></pre>
+  </div>
+</div>
+
+A bug on v3, so trust me :)
+
+
+## HTML
+
+<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-markup prismjs p1 relative icon-ko w100"><code>&lt;button&gt;&lt;/button&gt;<br />
+&lt;button&gt;&lt;span&gt;&lt;/span&gt;&lt;/button&gt;
+    </code></pre>
+  </div>
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-markup prismjs p1 relative icon-ok w100"><code>&lt;button title="What it does"&gt;&lt;/button&gt;<br />
+&lt;button&gt;&lt;img alt="What it does" …&gt;&lt;/button&gt;<br />
+&lt;button&gt;<br />
+&lt;span class="sr-only"&gt;What it does&lt;/span&gt;<br />
+&lt;/button&gt;
+    </code></pre>
+  </div>
+</div>
+
+Put a <code>title</code> in the button, an image with <code>alt</code> in it, a <code>span class="sr-only"</code> in it, but do not leave it empty, otherwise, will be vocalized “button” without any information for the user.
+
+<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-markup prismjs p1 relative icon-ko w100"><code>&lt;button class="ellipsis"&gt;<br />
+    lorem dolor si amet…<br />
+    &lt;/button&gt;
+    </code></pre>
+  </div>
+  <div class="w49 bg-global-highlight">
+    <pre class=" language-markup prismjs p1 relative icon-ok w100"><code>&lt;button class="ellipsis" <br />
+    &nbsp;title="lorem dolor si amet consegur"&gt;<br />
+    lorem dolor si amet…<br />
+    &lt;/button&gt;
+    </code></pre>
+  </div>
+</div>
+
+When using the class <code>ellipsis</code>, add a <code>title</code> attribute with the full version.

@@ -20,9 +20,9 @@ export const PrimaryIcons = () => {
             <Input placeholder="Name..." value={search} onChange={({ target: { value } }) => setSearch(value)} />
             <div className="flex mb2">
                 {iconResults.map((iconName: string) => (
-                    <div className="w200p aligncenter p1">
+                    <div className="w200p aligncenter p1 bg-white">
                         <Icon name={iconName} size={24} />
-                        <code className="bl mt0-5">
+                        <code className="bl mt0-5 color-white-dm">
                             <Mark value={search}>{iconName}</Mark>
                         </code>
                     </div>

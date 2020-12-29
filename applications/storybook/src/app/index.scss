@@ -49,3 +49,18 @@ body {
 		margin: 1em !important;
 	}
 }
+
+.icon-ko::after,
+.icon-ok::after {
+	content: '⚠';
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+	padding: 0 0.5em 0 0;
+	font-size: 2em;
+	color: $pm-global-warning;
+}
+.icon-ok::after {
+	content: '✔';
+	color: $pm-global-success;
+}
