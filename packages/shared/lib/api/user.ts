@@ -65,6 +65,11 @@ export const queryUnlock = () => ({
     method: 'put',
 });
 
+export const canDelete = () => ({
+    url: 'users/delete',
+    method: 'get',
+});
+
 export const deleteUser = (data: { Reason?: string; Feedback?: string; Email?: string }) => ({
     url: 'users/delete',
     method: 'put',
