@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon, classnames } from 'react-components';
+import { c, msgid } from 'ttag';
 
 import './RefreshRotation.scss';
 
@@ -9,7 +10,12 @@ interface Props {
     refreshing?: boolean;
 }
 
+const UNREAD_LIMIT = 999;
+
 const LocationAside = ({ unreadCount, active = false, refreshing = false }: Props) => {
+    const unreadTitle = unreadCount
+        ? c('Info').ngettext(msgid`${unreadCount} unread element`, `${unreadCount} unread elements`, unreadCount)
+        : undefined;
     return (
         <>
             {active && (
@@ -19,7 +25,9 @@ const LocationAside = ({ unreadCount, active = false, refreshing = false }: Prop
                 />
             )}
             {unreadCount ? (
-                <span className="navigation__counterItem flex-item-noshrink rounded">{unreadCount}</span>
+                <span className="navigation__counterItem flex-item-noshrink rounded" title={unreadTitle}>
+                    {unreadCount > UNREAD_LIMIT ? '+999' : unreadCount}
+                </span>
             ) : null}
         </>
     );
