@@ -111,6 +111,8 @@ function deleteAccountModal(
                     try {
                         eventManager.stop();
 
+                        await User.canDelete();
+
                         // First ensure the password and totp is correct
                         await User.password({ Password: this.password, TwoFactorCode: this.twoFactorCode });
 

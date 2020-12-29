@@ -15,6 +15,7 @@ function User($http, url, srp) {
     const unlock = (credentials) => srp.auth.put(credentials, requestURL('unlock'));
     const password = (credentials) => srp.auth.put(credentials, requestURL('password'));
     const remove = (data) => $http.put(requestURL('delete'), data);
+    const canDelete = () => $http.get(requestURL('delete'));
 
     return {
         requestURL,
@@ -29,7 +30,8 @@ function User($http, url, srp) {
         lock,
         unlock,
         password,
-        delete: remove
+        delete: remove,
+        canDelete
     };
 }
 export default User;
