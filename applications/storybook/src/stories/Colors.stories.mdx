@@ -4,6 +4,8 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
 
 # Colors
 
+## Main colors
+
 <ColorPalette>
     <ColorItem
         title="Global Grey"
@@ -40,5 +42,43 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
     <ColorItem
         title="Global attention"
         colors={['#eac819']}
+    />
+    <ColorItem
+        title="White"
+        colors={['#fff']}
+    />
+    <ColorItem
+        title="Black"
+        colors={['#000']}
+    />
+</ColorPalette>
+
+Class aliases exist also for <code>$primary-color</code>: <code>fill-primary</code>/<code>bg-primary</code>/<code>color-primary</code>.
+
+For highlighting using <code>bg-global-light</code>, you may use the alias <code>bg-global-highlight</code>, same for <code>bg-white/bg-white-dm</code>, <code>bg-global-muted/bg-global-muted-dm</code>, <code>color-global-grey/color-global-grey-dm</code> (dark mode friendly aliases). <code>bg-global-border</code> is already dark-mode compatible.
+
+## Plan Colors
+
+
+<ColorPalette>
+    <ColorItem
+        title="Visionary"
+        colors={['#6ddcfb']}
+    />
+    <ColorItem
+        title="Plus"
+        colors={['#c6e422']}
+    />
+    <ColorItem
+        title="Professional"
+        colors={['#d4b46e']}
+    />
+    <ColorItem
+        title="VPN Basic"
+        colors={['#f67f60']}
+    />
+    <ColorItem
+        title="VPN Plus"
+        colors={['#9ccc23']}
     />
 </ColorPalette>
