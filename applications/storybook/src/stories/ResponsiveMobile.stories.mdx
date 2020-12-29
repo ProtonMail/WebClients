@@ -1,0 +1,169 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Front-End helpers / Responsive / 3. Mobile" />
+
+# Responsive - Mobile
+
+## Hiding something on mobile and lower
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+	Applies <code>display: none</code> to the element for mobile breakpoint. (will stay hidden even on tinymobile breakpoint)
+  </div>
+  <div class="w49">
+    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="nomobile"</strong>&gt;…&lt;/span&gt;</code></pre>
+  </div>
+</div>
+
+## Linearizing content on mobile
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+	Applies <code>float: none; display: block; width: auto;</code> to the element for mobile and smaller breakpoints.
+  </div>
+  <div class="w49">
+    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="automobile"</strong>&gt;…&lt;/span&gt;</code></pre>
+  </div>
+</div>
+
+<br />
+
+<strong>Flexbox version:</strong> resize the window, by default, elements take all the width on mobile thanks to <code>onmobile-flex-column</code>.
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <div class="flex flex-spacebetween onmobile-flex-column bordered-container color-global-light">
+      <div class="bg-pm-blue-light p1 w30">.w30</div>
+      <span class="bg-pm-blue p1 w30">.w30</span>
+      <em class="bg-pm-blue-dark p1 w30">.w30</em>
+    </div>
+  </div>
+  <div class="w49 flex-self-vcenter">
+    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-spacebetween onmobile-flex-column"</strong>&gt;<br />
+  &lt;div class="w30"&gt;div&lt;/div&gt;<br />
+  &lt;span class="w30"&gt;span&lt;/span&gt;<br />
+  &lt;em class="w30"&gt;em&lt;/em&gt;<br />
+&lt;/div&gt;<br />
+</code></pre>
+  </div>
+</div>
+
+This can also be used on <code>.autogrid</code> class.
+
+Other flexbox helpers for mobile:
+
+- <code>onmobile-flex-item-fluid</code> applies <code>flex: 1 1 0px</code> to the element for mobile and smaller breakpoints.
+- <code>onmobile-flex-item-fluid-auto</code> applies <code>flex: 1 1 auto</code> to the element for mobile and smaller breakpoints.
+- <code>onmobile-no-flex</code> applies <code>flex: 0 0 auto</code> to the element for mobile and smaller breakpoints.
+- <code>onmobile-flex-shrink</code> applies <code>flex-shrink: 1</code> to the element for mobile and smaller breakpoints.
+- <code>onmobile-flex-self-start</code> applies <code>align-self: start</code> to the element for mobile and smaller breakpoints.
+- <code>onmobile-flex-wrap</code> applies <code>flex-wrap: wrap;</code> to the element for mobile and smaller breakpoints.
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+	Applies <code>position: static</code> to the element for mobile and smaller breakpoints.
+  </div>
+  <div class="w49">
+    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="onmobile-static"</strong>&gt;…&lt;/span&gt;</code></pre>
+  </div>
+</div>
+
+
+## Margin/padding helpers
+
+Please check before how <a href="?path=/docs/front-end-helpers-margin-padding--page">margin/padding helpers</a> work.
+
+- <code>.onmobile-m</code> = <code>margin</code>
+- <code>.onmobile-p</code> = <code>padding</code>
+- <code>t/r/b/l</code> = <code>top/right/bottom/left</code>
+- <code>0/0.25/0.5/1/2/3.5</code> = 0/0.25em/0.5em/1em/2em/3.5em
+
+Examples:
+
+<div class="flex flex-spacebetween mb1 onmobile-flex-column">
+  <div class="w49 onmobile-mb1 bordered-container">
+    <div class="onmobile-pt2 bg-pm-blue-light ">
+      <code>.onmobile-pt2</code> = <code>padding-top: 2em</code> <span class="color-white">on mobile and smaller</span>.
+    </div>
+  </div>
+  <div class="w49 onmobile-mb1 bordered-container">
+    <div class="onmobile-pl2 bg-pm-blue-light">
+      <code>.onmobile-pl2</code> = <code>padding-left: 2em</code> <span class="color-white">on mobile and smaller</span>.
+    </div>
+  </div>
+</div>
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 onmobile-mb1 bordered-container">
+    <div class="onmobile-p1 bg-pm-blue-light">
+      <code>.onmobile-p1</code> = <code>padding: 1em</code> <span class="color-white">on mobile and smaller</span>.
+    </div>
+  </div>
+  <div class="w49 onmobile-mb1 bordered-container">
+    <div class="onmobile-pl1 onmobile-pr1 onmobile-m1 bg-pm-blue-light">
+      <code>.onmobile-pl1</code> + <code>.onmobile-pr1</code> + <code>.onmobile-m1</code>  = <code>padding-left: 1em</code> + <code>padding-right: 1em</code> + <code>margin: 1em</code> <span class="color-white">on mobile and smaller</span>.
+    </div>
+  </div>
+</div>
+
+## Width/max-width helpers
+
+<div><ul class="list-2columns onmobile-list-1column">
+  <li><code>.onmobile-w25</code> = <code>width: 25%;</code></li>
+  <li><code>.onmobile-w100</code> = <code>width: 100%;</code></li>
+  <li><code>.onmobile-wauto</code> = <code>width: auto;</code></li>
+  <li><code>.onmobile-mw100</code> = <code>max-width: 100%;</code></li>
+  <li><code>.onmobile-min-w100</code> = <code>min-width: 100%;</code></li>
+</ul></div>
+
+These apply for mobile breakpoint and smaller.
+
+## Text alignments
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+	Applies <code>text-align: left</code>/<code>text-align: center</code>/<code>text-align: right</code> to the element for mobile and smaller breakpoints.
+  </div>
+  <div class="w49">
+	<pre class=" language-markup prismjs"><code>&lt;span <strong>class="onmobile-alignleft"</strong>&gt;…&lt;/span&gt;<br />
+&lt;span <strong>class="onmobile-aligncenter"</strong>&gt;…&lt;/span&gt;<br />
+&lt;span <strong>class="onmobile-alignright"</strong>&gt;…&lt;/span&gt;</code></pre>
+  </div>
+</div>
+
+
+## Table helpers
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+	Hides the second, third, fourth and fifth column of a table for mobile breakpoint and smaller.
+  </div>
+  <div class="w49">
+	<pre class=" language-markup prismjs"><code>&lt;table <strong>class="onmobile-hideTd2"</strong>&gt;…<br />
+  &lt;table <strong>class="onmobile-hideTd3"</strong>&gt;…<br />
+  &lt;table <strong>class="onmobile-hideTd4"</strong>&gt;…<br />
+  &lt;table <strong>class="onmobile-hideTd5"</strong>&gt;…<br />
+</code></pre>
+  </div>
+</div>
+
+## List helper
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    Will use css multicolumn to display the list on 2 columns. On mobile, the list will be put on one column.
+	<ul class="list-2columns onmobile-list-1column">
+		<li>Normal</li>
+		<li>list</li>
+		<li>list</li>
+		<li>list</li>
+		<li>list</li>
+		<li>list end</li>
+	</ul>
+  </div>
+  <div class="w49">
+    <pre class=" language-markup prismjs"><code>&lt;ul <strong>class="list-2columns onmobile-list-1column"</strong>&gt;<br />
+  …<br />
+&lt;/ul&gt;
+</code></pre>
+  </div>
+</div>

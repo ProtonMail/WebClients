@@ -1,79 +1,105 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 
-<Meta title="Front-End helpers / Margin - Padding" />
+<Meta title="Front-End helpers / Absolute - Fixed - Relative" />
 
-# Margin/padding helpers
+# Relative, fixed, absolute and other helpers
 
-Here is a set of margin and padding helpers - check in Design system fragments the values you have.
-
-- <code>.m</code> = <code>margin</code>
-- <code>.p</code> = <code>padding</code>
-- <code>t/r/b/l</code> = <code>top/right/bottom/left</code>
-- <code>0/0-5/1/2</code> = 0/0.5em/1em/2em
-
-Examples:
-
-<div class="flex flex-spacebetween mb1 onmobile-flex-column">
-  <div class="w49 onmobile-mb1">
-    <div class="pt2 bg-pm-blue-light">
-      <code>.pt2</code> = <code>padding-top: 2em</code>.
-    </div>
-  </div>
-  <div class="w49 onmobile-mb1">
-    <div class="pl2 bg-pm-blue-light">
-      <code>.pl2</code> = <code>padding-left: 2em</code>.
-    </div>
-  </div>
-</div>
-<br />
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 onmobile-mb1">
-    <div class="p1 bg-pm-blue-light">
-      <code>.p1</code> = <code>padding: 1em</code>.
-    </div>
-  </div>
-  <div class="w49 onmobile-mb1">
-    <div class="pl1 pr1 bg-pm-blue-light">
-      <code>.pl1</code> + <code>.pr1</code>  = <code>padding-left: 1em</code> + <code>padding-right: 1em</code>.
-    </div>
-  </div>
-</div>
-
-Also available:
-
-<ul>
-  <li><code>.mtauto</code> = <code>margin-left: auto</code>.</li>
-  <li><code>.mrauto</code> = <code>margin-right: auto</code>.</li>
-  <li><code>.mbauto</code> = <code>margin-bottom: auto</code>.</li>
-  <li><code>.mlauto</code> = <code>margin-left: auto</code>.</li>
-  <li><code>.mauto</code> = <code>margin: auto</code>.</li>
-  <li><code>.center</code> = <code>.mlauto</code> + <code>.mrauto</code></li>
-</ul>
-
-This helps for positionning blocks or [with flexbox](?path=/docs/front-end-helpers-flexbox--page).
-
-For some very rare cases, we also have helpers in <code>rem</code>: <code>.mt1r</code>, <code>mt0-5r</code>, <code>mr0-5r</code>.
+## Relative and fixed
 
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
   <div class="w49 flex-self-vcenter">
-    <div class="bordered-container color-global-light">
-     <div class="w50 mlauto bg-pm-blue-light p1">Right-aligned block</div>
-    </div>
+    Applies <code>position: relative</code> to element.
   </div>
   <div class="w49">
-    <pre class=" language-markup"><code>&lt;div <strong>class="w50 mlauto"</strong>&gt;Right-aligned block&lt;/div&gt;
+    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="relative"</strong>&gt;…&lt;/span&gt;
 </code></pre>
   </div>
 </div>
-<br />
+
+<br /><br />
+
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
   <div class="w49 flex-self-vcenter">
-    <div class="bordered-container color-global-light">
-     <div class="w50 center bg-pm-blue-light p1">Centered block</div>
-    </div>
+    Applies <code>position: fixed</code> to element.
   </div>
   <div class="w49">
-    <pre class=" language-markup"><code>&lt;div <strong>class="w50 center"</strong>&gt;Centered block&lt;/div&gt;
+    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="fixed"</strong>&gt;…&lt;/span&gt;
 </code></pre>
   </div>
 </div>
+
+## Absolute and other helpers
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    Applies <code>position: absolute</code> to element + <code>z-index: 1</code>.
+  </div>
+  <div class="w49">
+    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="absolute"</strong>&gt;…&lt;/span&gt;
+</code></pre>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    Centers absolute-positionned element via <code>top: 50%; left: 50%; transform: translate(-50%, -50%);</code>.
+  </div>
+  <div class="w49">
+    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="centered-absolute"</strong>&gt;…&lt;/span&gt;
+</code></pre>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    Centers absolute-positionned element via <code>left: 50%; transform: translate(-50%, 0);</code>.
+  </div>
+  <div class="w49">
+    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="centered-absolute-horizontal"</strong>&gt;…&lt;/span&gt;
+</code></pre>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    <code>covered-absolute</code> class applies <code>position: absolute; top: 0; right: 0; bottom: 0; left: 0;</code>.
+  </div>
+  <div class="w49">
+    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="covered-absolute"</strong>&gt;…&lt;/span&gt;
+</code></pre>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 flex-self-vcenter">
+    Applies <code>top: 0; right: 0;</code> to absolute-positionned element.
+  </div>
+  <div class="w49">
+    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="top-right"</strong>&gt;…&lt;/span&gt;
+</code></pre>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+	<div class="w49 flex-self-vcenter">
+	  Applies <code>bottom: 0;</code> to absolute-positionned element.
+	</div>
+  <div class="w49">
+	  <pre class=" language-markup prismjs"><code>&lt;span <strong>class="bottom"</strong>&gt;…&lt;/span&gt;
+  </code></pre>
+	</div>
+</div>
+
+In case of, there are helpers on mobile like <code>onmobile-static</code> which can cancel fixed/absolute positionning.
+
+
