@@ -116,6 +116,10 @@ function deleteAccountModal(
                         // First ensure the password and totp is correct
                         await User.password({ Password: this.password, TwoFactorCode: this.twoFactorCode });
 
+                        if (this.isAdmin) {
+                            await Report.bug(params);
+                        }
+
                         await User.delete({
                             Reason: this.reason.value,
                             Email: this.email,
@@ -124,12 +128,8 @@ function deleteAccountModal(
 
                         notification.success(gettextCatalog.getString('Account deleted. Logging out...', null, 'Info'));
 
-                        await Promise.all(
-                            [
-                                wait(2500), // Add an artificial delay to show the notification.
-                                this.isAdmin && Report.bug(params)
-                            ].filter(Boolean)
-                        );
+                        // Add an artificial delay to show the notification.
+                        await wait(2500);
 
                         authentication.logout(false, false);
 
