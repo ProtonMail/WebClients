@@ -1,3 +1,9 @@
+# [3.16.50] - 2020-12-29
+
+## Fixes
+
+-   Delete account process was not working proplery for paid account
+
 # [3.16.49] - 2020-12-28
 
 ## Fixes
