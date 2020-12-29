@@ -18,7 +18,7 @@ interface Props {
 const SelectAll = ({ labelID, loading, disabled, elementIDs, selectedIDs, onCheck }: Props) => {
     const getElementsFromIDs = useGetElementsFromIDs();
 
-    const checked = elementIDs.length === selectedIDs.length;
+    const checked = elementIDs.length ? elementIDs.length === selectedIDs.length : false;
 
     const handleAll = (checked: boolean) => () => onCheck(elementIDs, checked, true);
 
