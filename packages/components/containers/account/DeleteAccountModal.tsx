@@ -1,7 +1,7 @@
 import React, { useState, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { ACCOUNT_DELETION_REASONS } from 'proton-shared/lib/constants';
-import { deleteUser, unlockPasswordChanges } from 'proton-shared/lib/api/user';
+import { deleteUser, canDelete, unlockPasswordChanges } from 'proton-shared/lib/api/user';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { wait } from 'proton-shared/lib/helpers/promise';
@@ -103,6 +103,8 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                 credentials: { password: model.password, totp: model.twoFa },
                 config: unlockPasswordChanges(),
             });
+
+            await api(canDelete());
 
             if (isAdmin) {
                 await api(
