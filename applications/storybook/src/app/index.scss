@@ -33,3 +33,19 @@ body {
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
+
+@include respond-to($breakpoint-medium) {
+	.ontablet-m1 {
+		margin: 1em !important;
+	}
+}
+@include respond-to($breakpoint-small) {
+	.onmobile-m1 {
+		margin: 1em !important;
+	}
+}
+@include respond-to($breakpoint-tiny) {
+	.ontinymobile-m1 {
+		margin: 1em !important;
+	}
+}
