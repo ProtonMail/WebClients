@@ -3,9 +3,10 @@ import { classnames, Icon, Input, useContactEmails, useContactGroups, AddressesA
 import { c, msgid } from 'ttag';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { toMap } from 'proton-shared/lib/helpers/object';
 import { Recipient } from 'proton-shared/lib/interfaces';
+import { uniqueBy } from 'proton-shared/lib/helpers/array';
 import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
+import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { normalizeEmail, validateEmailAddress } from 'proton-shared/lib/helpers/email';
 
 import { AttendeeModel } from '../../../interfaces/EventModel';
@@ -42,7 +43,13 @@ const ParticipantsInput = ({
     const [contactGroups] = useContactGroups();
 
     const contactEmailsMap = useMemo(() => {
-        return toMap(contactEmails, 'Email');
+        return (contactEmails || []).reduce<SimpleMap<ContactEmail>>((acc, cur) => {
+            const { Email } = cur;
+            if (!acc[Email]) {
+                acc[Email] = cur;
+            }
+            return acc;
+        }, {});
     }, [contactEmails]);
 
     const recipients = value.map((attendee) => {
@@ -52,11 +59,22 @@ const ParticipantsInput = ({
     const recipientsSet = new Set(recipients.map(({ Address }) => normalizeEmail(Address)));
 
     const handleAddRecipients = (recipients: Recipient[]) => {
-        const newAttendees: AttendeeModel[] = recipients
-            .filter(({ Address }) => {
-                return Address && validateEmailAddress(Address) && !recipientsSet.has(normalizeEmail(Address));
+        const normalizedRecipients = recipients.map((recipient) => {
+            const { Address } = recipient;
+            return {
+                recipient,
+                normalizedAddress: normalizeEmail(Address),
+                valid: validateEmailAddress(Address),
+            };
+        });
+        const uniqueRecipients = uniqueBy(normalizedRecipients, ({ normalizedAddress }) => normalizedAddress);
+        const newAttendees = uniqueRecipients
+            .filter(({ valid, normalizedAddress }) => {
+                return valid && !recipientsSet.has(normalizedAddress);
             })
-            .map((recipient) => emailToAttendee(recipient.Address as string));
+            .map(({ recipient }) => {
+                return emailToAttendee(recipient.Address);
+            });
         if (!newAttendees.length) {
             return;
         }
