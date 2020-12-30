@@ -74,7 +74,7 @@ const UnsubscribeButton = ({ className, children }: Props) => {
     };
 
     return (
-        <Button loading={loading} className={className} onClick={() => withLoading(handleClick())}>
+        <Button disabled={loading} className={className} onClick={() => withLoading(handleClick())}>
             {children}
         </Button>
     );
