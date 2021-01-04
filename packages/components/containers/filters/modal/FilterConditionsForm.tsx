@@ -111,8 +111,7 @@ const FilterConditionsForm = ({ isNarrow, model, isDark, onChange }: Props) => {
                     />
                 ))}
             </div>
-
-            {!conditions.some((c) => !!c.error) && (
+            {conditions.every((c) => !c.error) && (
                 <LinkButton onClick={onAddCondition} className="mt0-5 mb0-5">
                     <strong>{c('Action').t`Add condition`}</strong>
                 </LinkButton>
