@@ -28,11 +28,11 @@ function SpamListItem({ list, type, onCreate, onEdit, onMove, onRemove, classNam
             // we do not use the variable for both mode because of declension issues with ex: Polish
             if (mode === WHITELIST_LOCATION) {
                 return c('Info')
-                    .t`No emails or domains in the Allow List, click Add to add addresses or domains to the Allow List`;
+                    .t`No emails or domains in the Allow List, click Add to add addresses or domains to the Allow List.`;
             }
 
             return c('Info')
-                .t`No emails or domains in the Block List, click Add to add addresses or domains to the Block List`;
+                .t`No emails or domains in the Block List, click Add to add addresses or domains to the Block List.`;
         },
     };
 
