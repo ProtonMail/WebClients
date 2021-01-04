@@ -11,7 +11,7 @@ export interface AttachmentPreviewControls {
 
 interface Preview {
     attachment: Attachment;
-    data?: Uint8Array;
+    contents?: Uint8Array[];
 }
 
 interface Props {
@@ -36,7 +36,7 @@ const AttachmentPreview = (
         const download = await preview(message, attachment);
         setPreviewing((previewing) => ({
             ...(previewing as Preview),
-            data: download.data,
+            contents: [download.data],
         }));
         onDownload(attachment, download.verified);
     };
@@ -65,8 +65,8 @@ const AttachmentPreview = (
 
     return (
         <FilePreview
-            loading={!previewing.data}
-            contents={previewing.data && [previewing.data]}
+            loading={!previewing.contents}
+            contents={previewing.contents}
             fileName={previewing.attachment?.Name}
             mimeType={previewing.attachment?.MIMEType}
             onClose={handleClose}
