@@ -14,7 +14,12 @@ export type MailUrlParams = {
 };
 
 export const getUrlPathname = (params: MailUrlParams) =>
-    generatePath(MAIN_ROUTE_PATH, { ...params, labelID: getHumanLabelID(params.labelID) });
+    generatePath(MAIN_ROUTE_PATH, {
+        ...params,
+        // The as any is needed du to a bug into ExtractRouteParams inference which takes the `?` in the param name
+        // Remove this once fixed
+        labelID: getHumanLabelID(params.labelID),
+    } as any);
 
 export const setParamsInLocation = (location: Location, params: MailUrlParams): Location => ({
     ...location,
