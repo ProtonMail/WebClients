@@ -2,6 +2,7 @@ export { default as SettingsTitle } from './SettingsTitle';
 export { default as Bordered } from './Bordered';
 export { default as Block } from './Block';
 export { default as Row } from './Row';
+export { default as EditableSection } from './EditableSection';
 export { default as Field } from './Field';
 export { default as Information } from './Information';
 export { default as Details } from './Details';

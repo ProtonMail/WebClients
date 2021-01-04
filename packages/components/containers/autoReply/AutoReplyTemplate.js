@@ -6,9 +6,8 @@ import { getWeekStartsOn, getFormattedWeekdays } from 'proton-shared/lib/date/da
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { AutoReplyDuration } from 'proton-shared/lib/constants';
 import { sanitizeString } from 'proton-shared/lib/sanitize';
-import { Button } from '../../components';
 import { getDaysOfMonthOptions } from './utils';
-import InfoLine from './InfoLine';
+import { Field, Label } from '../../components';
 import { getMatchingValues, toModel } from './AutoReplyForm/useAutoReplyForm';
 
 const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
@@ -70,24 +69,61 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
     }, [model.message]);
 
     return (
-        <div className="bordered-container p2 mw650p">
-            <table>
-                <tbody>
-                    <InfoLine label={c('Label').t`Duration`}>{durationText}</InfoLine>
-                    <InfoLine label={c('Label').t`Start`}>{startText}</InfoLine>
-                    <InfoLine label={c('Label').t`End`}>{endText}</InfoLine>
-                    <InfoLine label={c('Label').t`Timezone`}>{timezoneText}</InfoLine>
-                    <InfoLine plain label={c('Label').t`Message`}>
-                        <div className="cut" dangerouslySetInnerHTML={{ __html: sanitizedMessage }} />
-                    </InfoLine>
-                </tbody>
-            </table>
-            <div className="flex">
-                <Button onClick={onEdit} className="mlauto">
-                    {c('Action').t`Edit`}
-                </Button>
-            </div>
-        </div>
+        <>
+            <Label className="">{c('Label').t`Duration`}</Label>
+            <Field className="bordered-container bg-global-muted-dm auto">
+                <div
+                    className="pl1 pr1 pt0-5 pb0-5 ellipsis cursor-pointer"
+                    onClick={onEdit}
+                    title={c('Action').t`Edit`}
+                >
+                    {durationText}
+                </div>
+            </Field>
+
+            <Label className="">{c('Label').t`Start`}</Label>
+            <Field className="bordered-container bg-global-muted-dm auto">
+                <div
+                    className="pl1 pr1 pt0-5 pb0-5 ellipsis cursor-pointer"
+                    onClick={onEdit}
+                    title={c('Action').t`Edit`}
+                >
+                    {startText}
+                </div>
+            </Field>
+
+            <Label className="">{c('Label').t`End`}</Label>
+            <Field className="bordered-container bg-global-muted-dm auto">
+                <div
+                    className="pl1 pr1 pt0-5 pb0-5 ellipsis cursor-pointer"
+                    onClick={onEdit}
+                    title={c('Action').t`Edit`}
+                >
+                    {endText}
+                </div>
+            </Field>
+
+            <Label className="">{c('Label').t`Timezone`}</Label>
+            <Field className="bordered-container bg-global-muted-dm auto">
+                <div
+                    className="pl1 pr1 pt0-5 pb0-5 ellipsis cursor-pointer"
+                    onClick={onEdit}
+                    title={c('Action').t`Edit`}
+                >
+                    {timezoneText}
+                </div>
+            </Field>
+
+            <Label className="">{c('Label').t`Message`}</Label>
+            <Field className="bordered-container bg-global-muted-dm auto">
+                <div
+                    className="pl1 pr1 pt0-5 pb0-5 break cursor-pointer"
+                    onClick={onEdit}
+                    title={c('Action').t`Edit`}
+                    dangerouslySetInnerHTML={{ __html: sanitizedMessage }}
+                />
+            </Field>
+        </>
     );
 };
 
