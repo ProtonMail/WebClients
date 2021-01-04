@@ -307,7 +307,7 @@ const wrapInsertHTML = (squire: any) => {
                     return;
                 }
             } catch (e) {
-                console.error(e);
+                console.error(e); // eslint-disable-line no-console
             }
         }
         ghost.call(squire, html, isPaste);

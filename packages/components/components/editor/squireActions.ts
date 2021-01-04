@@ -245,7 +245,7 @@ export const setTextDirectionWithoutFocus = (squire: SquireType, direction: RIGH
  * Handler for squire paste event
  * Deals with pasting images
  */
-export const pasteFileHandler = (onAddImages: (files: File[]) => void) => (event: ClipboardEvent) => {
+export const pasteFileHandler = (event: ClipboardEvent, onAddImages: (files: File[]) => void) => {
     const { clipboardData } = event;
     // Edge needs items as files is undefined
     const files = Array.from(clipboardData?.files || ((clipboardData?.items as any) as FileList) || []);
