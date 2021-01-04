@@ -205,14 +205,14 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         } finally {
             // Some failed request will add the filter but in disabled mode
             // So we have to refresh the list in both cases
-            call();
+            await call();
             onClose();
         }
     };
 
     const editFilter = async (filter: Filter) => {
         const { Filter } = await reqUpdate.request(filter.ID, filter);
-        call();
+        await call();
         createNotification({
             text: c('Filter notification').t`Filter ${Filter.Name} updated`,
         });
