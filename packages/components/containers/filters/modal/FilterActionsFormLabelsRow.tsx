@@ -116,7 +116,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                             }}
                                             labelOnClick={(e) => e.stopPropagation()}
                                         >
-                                            <span className="ml0-5">
+                                            <span className="inline-flex alignmiddle">
                                                 <LabelStack
                                                     labels={[
                                                         {
