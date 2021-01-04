@@ -12,6 +12,7 @@ import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { useGetMessageKeys } from './useGetMessageKeys';
+import { useContactCache } from '../../containers/ContactProvider';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();
@@ -19,6 +20,7 @@ export const useVerifyMessage = (localID: string) => {
     const attachmentsCache = useAttachmentCache();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getMessageKeys = useGetMessageKeys();
+    const { contactsMap } = useContactCache();
 
     return useCallback(
         async (decryptedBody: string, signature?: OpenPGPSignature) => {
@@ -37,7 +39,11 @@ export const useVerifyMessage = (localID: string) => {
             let verificationStatus;
 
             try {
-                encryptionPreferences = await getEncryptionPreferences(getData().Sender.Address as string);
+                encryptionPreferences = await getEncryptionPreferences(
+                    getData().Sender.Address as string,
+                    0,
+                    contactsMap
+                );
 
                 const messageKeys = await getMessageKeys(getData());
                 messageKeys.publicKeys = encryptionPreferences.pinnedKeys;

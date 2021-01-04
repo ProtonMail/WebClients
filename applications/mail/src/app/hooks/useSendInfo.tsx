@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
+import React, { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
 import { Alert, useGetEncryptionPreferences, useModals } from 'react-components';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
@@ -9,14 +9,16 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { EncryptionPreferences, EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
+import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
+import { GetEncryptionPreferences } from 'react-components/hooks/useGetEncryptionPreferences';
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../models/crypto';
 import { MessageExtended } from '../models/message';
+import { ContactsMap, useContactCache } from '../containers/ContactProvider';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = EncryptionPreferencesFailureTypes;
 
@@ -46,6 +48,7 @@ export const useUpdateRecipientSendInfo = (
 ) => {
     const { createModal } = useModals();
     const getEncryptionPreferences = useGetEncryptionPreferences();
+    const { contactsMap } = useContactCache();
     const emailAddress = recipient.Address;
 
     const handleRemove = () => {
@@ -91,7 +94,7 @@ export const useUpdateRecipientSendInfo = (
                     emailValidation,
                 },
             }));
-            const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0);
+            const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
 
             if (sendPreferences.failure?.type === CONTACT_SIGNATURE_NOT_VERIFIED) {
@@ -163,7 +166,7 @@ export const useUpdateRecipientSendInfo = (
         };
 
         void updateRecipientIcon();
-    }, [emailAddress]);
+    }, [emailAddress, contactsMap]);
 
     return { handleRemove };
 };
@@ -182,6 +185,7 @@ export const useUpdateGroupSendInfo = (
     onRemove: () => void
 ) => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
+    const { contactsMap } = useContactCache();
     const { createModal } = useModals();
     const emailsInGroup = contacts.map(({ Email }) => Email);
 
@@ -228,7 +232,7 @@ export const useUpdateGroupSendInfo = (
                     };
                 });
             }
-            const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0);
+            const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
             const sendIcon = getSendStatusIcon(sendPreferences);
             if (!signal.aborted) {
@@ -341,9 +345,10 @@ const getUpdatedSendInfo = async (
     emailAddress: string,
     message: MessageExtended,
     setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>,
-    getEncryptionPreferences: (emailAddress: string, silence?: any) => Promise<EncryptionPreferences>
+    getEncryptionPreferences: GetEncryptionPreferences,
+    contactsMap: ContactsMap
 ) => {
-    const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0);
+    const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
     const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
     const sendIcon = getSendStatusIcon(sendPreferences);
     const updatedSendInfo = {
@@ -364,30 +369,34 @@ const getUpdatedSendInfo = async (
     });
 };
 
-export const reloadSendInfo = async (
-    messageSendInfo: MessageSendInfo | undefined,
-    message: MessageExtended,
-    getEncryptionPreferences: (emailAddress: string, silence?: any) => Promise<EncryptionPreferences>
-) => {
-    const { mapSendInfo, setMapSendInfo } = messageSendInfo || {};
+export const useReloadSendInfo = () => {
+    const getEncryptionPreferences = useGetEncryptionPreferences();
+    const { contactsMap } = useContactCache();
 
-    if (mapSendInfo === undefined || !setMapSendInfo || !message.data) {
-        return;
-    }
+    return useCallback(
+        async (messageSendInfo: MessageSendInfo | undefined, message: MessageExtended) => {
+            const { mapSendInfo, setMapSendInfo } = messageSendInfo || {};
 
-    const recipients = getRecipientsAddresses(message.data);
-    const requests = recipients.map((emailAddress) => () =>
-        getUpdatedSendInfo(emailAddress, message, setMapSendInfo, getEncryptionPreferences)
-    );
-    const loadingMapSendInfo = recipients.reduce(
-        (acc, emailAddress) => {
-            const sendInfo = acc[emailAddress] || { emailValidation: validateEmailAddress(emailAddress) };
-            acc[emailAddress] = { ...sendInfo, loading: true };
-            return acc;
+            if (mapSendInfo === undefined || !setMapSendInfo || !message.data) {
+                return;
+            }
+
+            const recipients = getRecipientsAddresses(message.data);
+            const requests = recipients.map((emailAddress) => () =>
+                getUpdatedSendInfo(emailAddress, message, setMapSendInfo, getEncryptionPreferences, contactsMap)
+            );
+            const loadingMapSendInfo = recipients.reduce(
+                (acc, emailAddress) => {
+                    const sendInfo = acc[emailAddress] || { emailValidation: validateEmailAddress(emailAddress) };
+                    acc[emailAddress] = { ...sendInfo, loading: true };
+                    return acc;
+                },
+                { ...mapSendInfo }
+            );
+            setMapSendInfo(loadingMapSendInfo);
+            // the routes called in requests support 100 calls every 10 seconds
+            await processApiRequestsSafe(requests, 100, 10 * 1000);
         },
-        { ...mapSendInfo }
+        [getEncryptionPreferences, contactsMap]
     );
-    setMapSendInfo(loadingMapSendInfo);
-    // the routes called in requests support 100 calls every 10 seconds
-    await processApiRequestsSafe(requests, 100, 10 * 1000);
 };

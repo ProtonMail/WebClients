@@ -37,11 +37,13 @@ import { OnCompose } from './useCompose';
 import useDelaySendSeconds from './useDelaySendSeconds';
 import { useGetMessageKeys } from './message/useGetMessageKeys';
 import { getParamsFromPathname, setParamsInLocation } from '../helpers/mailboxUrl';
+import { useContactCache } from '../containers/ContactProvider';
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const getEncryptionPreferences = useGetEncryptionPreferences();
+    const { contactsMap } = useContactCache();
 
     return useCallback(async (message: MessageExtendedWithData): Promise<{
         cleanMessage: MessageExtendedWithData;
@@ -93,7 +95,7 @@ export const useSendVerifications = () => {
 
         await Promise.all(
             emails.map(async (email) => {
-                const encryptionPreferences = await getEncryptionPreferences(email);
+                const encryptionPreferences = await getEncryptionPreferences(email, 0, contactsMap);
                 if (encryptionPreferences.emailAddressWarnings?.length) {
                     emailWarnings[email] = encryptionPreferences.emailAddressWarnings as string[];
                 }
