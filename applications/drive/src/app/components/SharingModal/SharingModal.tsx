@@ -9,12 +9,13 @@ import useConfirm from '../../hooks/util/useConfirm';
 import { SharedURLSessionKeyPayload, ShareURL } from '../../interfaces/sharing';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 import EditPasswordState from './EditPasswordState';
-import ErrorState from './ErrorState';
 import GeneratedLinkState from './GeneratedLinkState';
+import EditExpirationTimeState from './EditExpirationTimeState';
+import ErrorState from './ErrorState';
 import LoadingState from './LoadingState';
 import { validateSharedURLPassword } from '../../utils/validation';
 import { isCustomSharedURLPassword } from '../../utils/link';
-import EditExpirationTimeState from './EditExpirationTimeState';
+import { EXPIRATION_DAYS } from '../../constants';
 
 interface Props {
     onClose?: () => void;
@@ -92,7 +93,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             });
     }, [shareId, item.LinkID, item.SharedURLShareID, shareUrlInfo?.ShareURL.ShareID]);
 
-    const handleSaveExpirationTime = async (expirationTime: number | null) => {
+    const handleSaveExpirationTime = async (duration: EXPIRATION_DAYS) => {
         if (!shareUrlInfo) {
             return;
         }
@@ -101,7 +102,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             const res = await updateSharedLinkExpirationTime(
                 shareUrlInfo.ShareURL.ShareID,
                 shareUrlInfo.ShareURL.Token,
-                expirationTime
+                duration
             );
             await events.call(shareId);
             return res;

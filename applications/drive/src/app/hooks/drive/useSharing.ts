@@ -13,10 +13,11 @@ import {
 } from '../../api/sharing';
 import useDrive from './useDrive';
 import useDriveCrypto from './useDriveCrypto';
-import { DEFAULT_SHARE_MAX_ACCESSES } from '../../constants';
+import { DEFAULT_SHARE_MAX_ACCESSES, EXPIRATION_DAYS } from '../../constants';
 import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import { validateSharedURLPassword, ValidationError } from '../../utils/validation';
+import { getDurationInSeconds } from '../../components/Drive/helpers';
 
 function useSharing() {
     const { getPrimaryAddressKey } = useDriveCrypto();
@@ -116,13 +117,13 @@ function useSharing() {
         };
     };
 
-    const updateSharedLinkExpirationTime = async (shareId: string, token: string, newExpirationTime: number | null) => {
+    const updateSharedLinkExpirationTime = async (shareId: string, token: string, newDuration: EXPIRATION_DAYS) => {
         const fieldsToUpdate: Partial<UpdateSharedURL> = {
-            ExpirationTime: newExpirationTime,
+            ExpirationDuration: getDurationInSeconds(newDuration),
         };
-        await api(queryUpdateSharedLink(shareId, token, fieldsToUpdate));
+        const { ShareURL } = await api(queryUpdateSharedLink(shareId, token, fieldsToUpdate));
         return {
-            ...fieldsToUpdate,
+            ExpirationTime: ShareURL.ExpirationTime,
         };
     };
 

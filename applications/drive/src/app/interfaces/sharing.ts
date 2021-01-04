@@ -18,6 +18,7 @@ export interface CreateSharedURL {
 
 export interface UpdateSharedURL {
     ExpirationTime: number | null;
+    ExpirationDuration: number | null;
     MaxAccesses: number;
     UrlPasswordSalt: string;
     SharePasswordSalt: string;
