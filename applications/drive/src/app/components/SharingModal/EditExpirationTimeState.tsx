@@ -21,20 +21,20 @@ import { EXPIRATION_DAYS } from '../../constants';
 interface Props {
     hasExpirationTime: boolean;
     saving?: boolean;
-    onSave: (date: number | null) => void;
+    onSave: (duration: EXPIRATION_DAYS) => void;
     onBack: () => void;
     onClose?: () => void;
     modalTitleID: string;
 }
 
 function EditExpirationTimeState({ hasExpirationTime, saving, onBack, onSave, onClose, modalTitleID }: Props) {
-    const [extendBy, setExtendBy] = useState(EXPIRATION_DAYS.NEVER);
+    const [duration, setDuration] = useState(EXPIRATION_DAYS.NEVER);
     const [expirationTime, setExpirationTime] = useState<number | null>(null);
 
-    const handleChangeExpirationDate = (extendBy: EXPIRATION_DAYS) => {
-        setExtendBy(extendBy);
+    const handleChangeExpirationDate = (duration: EXPIRATION_DAYS) => {
+        setDuration(duration);
 
-        const expirationTime = extendBy === EXPIRATION_DAYS.NEVER ? null : getExpirationTime(parseInt(extendBy, 10));
+        const expirationTime = getExpirationTime(duration);
         setExpirationTime(expirationTime);
     };
 
@@ -56,10 +56,10 @@ function EditExpirationTimeState({ hasExpirationTime, saving, onBack, onSave, on
                 onReset={onBack}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    if (!hasExpirationTime && !expirationTime) {
+                    if (!hasExpirationTime && !duration) {
                         onBack();
                     } else {
-                        onSave(expirationTime);
+                        onSave(duration);
                     }
                 }}
             >
@@ -69,7 +69,7 @@ function EditExpirationTimeState({ hasExpirationTime, saving, onBack, onSave, on
                         <Label htmlFor="shared-url-expiration-date">{c('Label').t`Link expires`}</Label>
                         <Field>
                             <div className="flex flex-nowrap flex-items-center onmobile-flex-column">
-                                <ExpirationTimeDropdown value={extendBy} onChange={handleChangeExpirationDate} />
+                                <ExpirationTimeDropdown value={duration} onChange={handleChangeExpirationDate} />
                                 <span className="pre onmobile-mt0-25 w30">
                                     {expirationTime && (
                                         <>

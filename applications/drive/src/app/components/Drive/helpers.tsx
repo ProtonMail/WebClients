@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { getUnixTime } from 'date-fns';
 import { LinkType, LinkMeta } from '../../interfaces/link';
-import { LinkURLType, fileDescriptions } from '../../constants';
+import { LinkURLType, fileDescriptions, EXPIRATION_DAYS } from '../../constants';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 
 export const selectMessageForItemList = (
@@ -73,4 +73,8 @@ export const getMimeTypeDescription = (mimeType: string) => {
 };
 
 // Simple math instead of addDays because we don't need to compensate for DST
-export const getExpirationTime = (daysToExtendBy: number) => getUnixTime(new Date()) + daysToExtendBy * 24 * 60 * 60;
+export const getDurationInSeconds = (duration: EXPIRATION_DAYS) =>
+    duration === EXPIRATION_DAYS.NEVER ? null : parseInt(duration, 10) * 24 * 60 * 60;
+
+export const getExpirationTime = (duration: EXPIRATION_DAYS) =>
+    duration === EXPIRATION_DAYS.NEVER ? null : getUnixTime(new Date()) + (getDurationInSeconds(duration) || 0);
