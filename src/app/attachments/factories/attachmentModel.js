@@ -347,7 +347,7 @@ function attachmentModel(
      */
     async function sign(attachment, message) {
         // async because we need to use data twice :-)
-        const privateKeys = keysModel.getPrivateKeys(message.AddressID);
+        const privateKeys = keysModel.getPrivateKeys(message.AddressID)[0];
 
         const data = await AttachmentLoader.get(attachment, message);
         const { signature } = await signMessage({ data, privateKeys, armor: true, detached: true });
@@ -386,7 +386,7 @@ function attachmentModel(
             tempPacket.Inline = 1;
         }
 
-        const privateKeys = keysModel.getPrivateKeys(message.AddressID);
+        const privateKeys = keysModel.getPrivateKeys(message.AddressID)[0];
         message.attachmentsToggle = true;
 
         const doUpload = (packets) => {
