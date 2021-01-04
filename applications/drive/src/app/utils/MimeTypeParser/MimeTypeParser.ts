@@ -43,7 +43,11 @@ export async function mimeTypeFromFile(input: File, extensionFallback = true) {
     }
 
     const chunk = await reader.readNextChunk();
+    const extension = input.name.split('.').pop();
+    const isSVG = extension && extension.toLowerCase() === 'svg';
+
     return (
+        (isSVG && 'image/svg+xml') ||
         mimeTypeFromSignature(SignatureChecker(Buffer.from(chunk))) ||
         (extensionFallback && mimetypeFromExtension(input.name)) ||
         defaultType
