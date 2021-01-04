@@ -21,7 +21,7 @@ import {
     useOrganization,
     useSubscription,
 } from '../../hooks';
-import { usePopperAnchor, Dropdown, Icon, Toggle, PrimaryButton, AppLink, Meter } from '../../components';
+import { usePopperAnchor, Dropdown, Icon, Toggle, PrimaryButton, AppLink, Meter, Href } from '../../components';
 import { generateUID } from '../../helpers';
 import { ToggleState } from '../../components/toggle/Toggle';
 import UserDropdownButton from './UserDropdownButton';
@@ -151,16 +151,14 @@ const UserDropdown = ({ ...rest }) => {
                         </li>
                     ) : null}
                     <li>
-                        <a
+                        <Href
                             className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
-                            href="https://shop.protonmail.com"
-                            // eslint-disable-next-line react/jsx-no-target-blank
-                            target="_blank"
+                            url="https://shop.protonmail.com"
                             onClick={() => close()}
                         >
                             <Icon className="mt0-25 mr0-5" name="shop" />
                             {c('Action').t`Proton shop`}
-                        </a>
+                        </Href>
                     </li>
                     {canPay && !isSubUser ? (
                         <li>
