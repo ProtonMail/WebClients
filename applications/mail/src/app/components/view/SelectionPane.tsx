@@ -11,7 +11,7 @@ import conversationSingleSvgDark from 'design-system/assets/img/shared/selected-
 import conversationManySvgLight from 'design-system/assets/img/shared/selected-conversation-many.svg';
 import conversationManySvgDark from 'design-system/assets/img/shared/selected-conversation-many-dark.svg';
 
-import { getLabelName } from '../../helpers/labels';
+import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 
 interface Props {
@@ -29,6 +29,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const [labels] = useLabels();
     const [folders] = useFolders();
 
+    const isCustomLabel = testIsCustomLabel(labelID, labels);
     const total = labelCount.Total || 0;
     const checkeds = checkedIDs.length;
     const conversationSingleSvg = getLightOrDark(conversationSingleSvgLight, conversationSingleSvgDark);
@@ -42,17 +43,23 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     const count = checkeds || total;
 
-    const strongText = conversationMode ? (
+    const countOfConversationOrMessage = conversationMode ? (
         <strong key="conversation">
             {c('Info').ngettext(msgid`${count} conversation`, `${count} conversations`, count)}
         </strong>
     ) : (
-        <strong key="email">{c('Info').ngettext(msgid`${count} email`, `${count} emails`, count)}</strong>
+        <strong key="email">{c('Info').ngettext(msgid`${count} message`, `${count} messages`, count)}</strong>
     );
 
-    const text = checkeds
-        ? c('Info').jt`You selected ${strongText} from this folder`
-        : c('Info').jt`You have ${strongText} stored in this folder`;
+    const folderText = checkeds
+        ? c('Info').jt`You selected ${countOfConversationOrMessage} from this folder`
+        : c('Info').jt`You have ${countOfConversationOrMessage} stored in this folder`;
+
+    const labelText = checkeds
+        ? c('Info').jt`You selected ${countOfConversationOrMessage} with this label`
+        : c('Info').jt`You have ${countOfConversationOrMessage} tagged with this label`;
+
+    const text = isCustomLabel ? labelText : folderText;
 
     return (
         <div className="mauto aligncenter p2 mw100">
