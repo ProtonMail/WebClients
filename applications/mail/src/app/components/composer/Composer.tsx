@@ -2,14 +2,7 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getRecipients } from 'proton-shared/lib/mail/messages';
 import React, { useState, useEffect, useRef, useCallback, DragEvent } from 'react';
 import { c } from 'ttag';
-import {
-    classnames,
-    useToggle,
-    useNotifications,
-    useMailSettings,
-    useGetEncryptionPreferences,
-    useHandler,
-} from 'react-components';
+import { classnames, useToggle, useNotifications, useMailSettings, useHandler } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 import { COMPOSER_MODE } from 'proton-shared/lib/constants';
@@ -33,7 +26,7 @@ import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerP
 import { WindowSize, Breakpoints } from '../../models/utils';
 import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
-import { reloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
+import { useReloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import { usePromiseFromState } from '../../hooks/usePromiseFromState';
@@ -125,7 +118,7 @@ const Composer = ({
 
     // Map of send preferences and send icons for each recipient
     const messageSendInfo = useMessageSendInfo(modelMessage);
-    const getEncryptionPreferences = useGetEncryptionPreferences();
+    const reloadSendInfo = useReloadSendInfo();
 
     // Synced with server version of the edited message
     const { message: syncedMessage, addAction } = useMessage(messageID);
@@ -192,7 +185,7 @@ const Composer = ({
                 embeddeds: syncedMessage.embeddeds,
             };
             setModelMessage(newModelMessage);
-            void reloadSendInfo(messageSendInfo, newModelMessage, getEncryptionPreferences);
+            void reloadSendInfo(messageSendInfo, newModelMessage);
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID]);
 
@@ -255,7 +248,7 @@ const Composer = ({
             const messageChanges = update instanceof Function ? update(modelMessage) : update;
             const newModelMessage = mergeMessages(modelMessage, messageChanges);
             if (shouldReloadSendInfo) {
-                void reloadSendInfo(messageSendInfo, newModelMessage, getEncryptionPreferences);
+                void reloadSendInfo(messageSendInfo, newModelMessage);
             }
             void autoSave(newModelMessage);
             return newModelMessage;

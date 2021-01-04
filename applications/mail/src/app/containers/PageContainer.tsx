@@ -44,7 +44,6 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints,
     }, []);
 
     useLinkHandler(onCompose);
-    // useManageContactsCache();
     useContactsListener();
 
     if (!labelID) {
