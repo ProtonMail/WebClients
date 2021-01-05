@@ -60,6 +60,11 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
         }
     };
 
+    const dimensions = {
+        height: imageRef.current ? imageRef.current.naturalHeight * scale : undefined,
+        width: imageRef.current ? imageRef.current.naturalWidth * scale : undefined,
+    };
+
     return (
         <>
             <div ref={containerRef} className="pd-file-preview-container">
@@ -67,18 +72,17 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
                     <UnsupportedPreview onSave={onSave} type="image" />
                 ) : (
                     imageData.src && (
-                        <img
-                            ref={imageRef}
-                            onLoad={() => fitToContainer()}
-                            onError={handleBrokenImage}
-                            className="pd-file-preview-image"
-                            style={{
-                                height: imageRef.current ? imageRef.current.naturalHeight * scale : undefined,
-                                width: imageRef.current ? imageRef.current.naturalWidth * scale : undefined,
-                            }}
-                            src={imageData.src}
-                            alt={c('Info').t`Preview`}
-                        />
+                        <div className="flex-noMinChildren mauto relative" style={dimensions}>
+                            <img
+                                ref={imageRef}
+                                onLoad={() => fitToContainer()}
+                                onError={handleBrokenImage}
+                                className="pd-file-preview-image"
+                                style={dimensions}
+                                src={imageData.src}
+                                alt={c('Info').t`Preview`}
+                            />
+                        </div>
                     )
                 )}
             </div>
