@@ -1,0 +1,259 @@
+.message-conversation-summary {
+	.is-appearing-content {
+		@extend %appearing-container;
+	}
+
+	&-is-loading {
+		pointer-events: none;
+	}
+
+	&-is-loading &-header,
+	&-is-loading &-stat {
+		position: relative;
+
+		&::before {
+			@extend %item-loading-pseudo;
+			@extend %placeholder-loading;
+		}
+	}
+
+	&-is-loading &-header {
+		&::before {
+			width: 25%;
+
+			@include respond-to($breakpoint-small) {
+				width: 50%;
+			}
+		}
+	}
+
+	&-is-loading &-stat {
+		&::before {
+			width: 2em;
+		}
+	}
+
+	&-is-loading &-star {
+		@extend %placeholder-loading;
+	}
+}
+
+.trashed-messages,
+.message-header {
+	background-color: var(--bgcolor-item-column-list, $pm-global-muted);
+}
+
+.message-container {
+	border: 1px solid var(--bordercolor-input, $pm-global-border);
+	border-radius: $global-border-radius;
+	@extend %appearing-container;
+}
+
+.message-header {
+	border-radius: $global-border-radius; // Can't overflow 'cause of ::before, so repeat radius
+	padding: .6em;
+
+	.is-appearing-content {
+		@extend %appearing-container;
+	}
+
+	&.is-unread {
+		background: var(--bgcolor-unread-item-column-list, $white);
+		box-shadow: 2px 2px 3px 0px $input-shadow-color;
+		font-weight: bold;
+	}
+
+	&.is-loading {
+		pointer-events: none;
+	}
+
+	&.is-loading .message-recipient-item-icon,
+	&.is-loading &-star {
+		@extend %placeholder-loading;
+	}
+
+	&.is-loading .message-recipient-item-icon {
+		background-color: currentColor;
+		opacity: 0;
+	}
+
+	&.is-loading .message-recipient-item-label,
+	&.is-loading .message-recipient-item-address,
+	&.is-loading &-metas,
+	&.is-loading &-to,
+	&.is-loading &-contact,
+	&.is-loading .message-show-hide-link-container {
+		position: relative;
+
+		&::before {
+			@extend %item-loading-pseudo;
+			@extend %placeholder-loading;
+		}
+	}
+
+	&.is-loading .message-recipient-item-label {
+		width: 100%;
+		max-width: 7.5em;
+
+		&::before {
+			width: 100%;
+		}
+	}
+
+	&.is-loading .message-recipient-item-address {
+		width: 100%;
+		max-width: 12.5em;
+
+		&::before {
+			width: 100%;
+		}
+	}
+
+	&.is-loading &-metas {
+		&::before {
+			width: 10em;
+		}
+	}
+
+	&.is-loading &-to {
+		&::before {
+			width: 1.25em;
+		}
+	}
+
+	&.is-loading &-contact {
+		&::before {
+			width: 7.5em;
+		}
+	}
+
+	&.is-loading .message-show-hide-link-container {
+		&::before {
+			width: 6em;
+		}
+	}
+}
+
+// hide extra container when there is nothing inside
+.message-header-extra:empty {
+	display: none;
+}
+
+// when expanded but no full details
+.message-header-expanded {
+	padding: .6em .6em 0;
+
+	.message-show-hide-link {
+		padding: 0;
+	}
+}
+
+// alignements when expanded/details
+.message-header--showDetails {
+	.message-show-hide-link-container {
+		padding-left: calc(#{$container-to-width} + #{$conversation-icon-size} + .75em);
+	}
+
+	// show/hide details should go below otherwise it will be strangely place depending of recipients
+	.message-header-recipients {
+		flex-direction: column;
+
+		&>* {
+			width: 100%;
+			flex-basis: auto;
+		}
+	}
+
+	.message-recipient-item-expanded {
+		margin-top: .25em;
+
+		@include respond-to($breakpoint-small) {
+			margin-top: .5em;
+		}
+
+		.message-recipient-item:not(:first-child) {
+			margin-top: .25em;
+		}
+	}
+
+	// display of email default none except when details
+	.message-recipient-item-address,
+	.message-recipient-item-label {
+		@extend .ellipsis;
+
+		@include respond-to($breakpoint-small) {
+			display: block;
+		}
+	}
+
+	.message-recipient-item-lockIcon::before {
+		@include respond-to($breakpoint-small) {
+			content: '\00a0';
+			width: 100%;
+		}
+	}
+}
+
+.message-detailed-header-extra {
+	.item-date {
+		font-size: 1.4rem;
+	}
+}
+
+/* states classes */
+.message-container.is-opened {
+
+	>.message-header {
+		border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+	}
+
+}
+
+.message-container--hasAttachment {
+	.message-content {
+		border-radius: 0;
+	}
+}
+
+.message-content {
+	transition: .5s easing(easeOutSine);
+	transition-property: background-color, color;
+
+	&-loading-placeholder {
+		position: relative;
+
+		&::before {
+			@extend %item-loading-pseudo;
+			@extend %placeholder-loading;
+			width: 100%;
+		}
+	}
+}
+
+.message-expand {
+	padding: 0 .5em .6em; // centers
+	background-color: var(--bgcolor-item-column-list, $pm-global-light);
+	line-height: .75;
+}
+
+.message-infobox {
+	background: var(--bgcolor-main-area, $white);
+}
+
+.container-to {
+	min-width: $container-to-width;
+
+	.item-icon {
+
+		&:focus,
+		&:hover {
+			.item-abbr {
+				display: none;
+			}
+
+			.item-caret {
+				display: block;
+			}
+		}
+	}
+}

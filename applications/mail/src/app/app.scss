@@ -1,19 +1,9 @@
-// redefine specific sass vars here if needed
-$breakpoint-medium: 940;
-$use-height-auto-td: false;
-$use-height-auto-img: false;
-$use-height-auto-table: false;
+@import '~design-system/scss/proton-mail';
 
-// include components that are shared across all Proton Products
-@import '~react-components/styles/index';
-
-// project specific components
-
-// stuff for responsive
-@import '~design-system/_sass/reusable-components/design-system-responsive';
-@import '~design-system/_sass/design-system-website/responsive';
-
-// others
-@import '~design-system/_sass/reusable-components/design-system-print';
-@import '~design-system/_sass/reusable-components/design-system-viewport-fix';
-@import '~design-system/_sass/reusable-components/design-system-reduced-motion';
+// Specific styles
+@import
+    '~design-system/scss/specifics/placeholder-loading',
+    '~design-system/scss/specifics/list',
+    'styles/message',
+    'styles/attachments',
+    'styles/email-reset';
