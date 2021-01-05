@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Tabs } from 'react-components';
 
 import mdx from './Tabs.mdx';
-import bulbasaur from '../assets/bulbasaur.png';
-import charmander from '../assets/charmander.png';
-import squirtle from '../assets/squirtle.png';
+import bulbasaur from '../../assets/bulbasaur.png';
+import charmander from '../../assets/charmander.png';
+import squirtle from '../../assets/squirtle.png';
 
 export default {
     title: 'Components / Tabs',
