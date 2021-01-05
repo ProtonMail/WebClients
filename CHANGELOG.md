@@ -1,3 +1,9 @@
+# [3.16.51] - 2021-01-05
+
+## Updates
+
+-   Sign attachments with the primary key to support new API changes
+
 # [3.16.50] - 2020-12-29
 
 ## Fixes
