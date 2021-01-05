@@ -1,3 +1,5 @@
+@import '~design-system/scss/config/';
+
 .subscriptionTable-plan[data-current-plan='true'] {
 	border-left: 2px solid $pm-primary;
 	border-right: 2px solid $pm-primary;
