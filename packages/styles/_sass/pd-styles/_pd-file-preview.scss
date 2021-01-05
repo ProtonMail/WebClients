@@ -17,7 +17,7 @@
 	@extend .flex-column;
 	@extend .flex-item-fluid-auto;
 	@extend .scroll-if-needed;
-	display: flex;
+	@extend .flex-noMinChildren;
 }
 
 .pd-file-preview-filename {
@@ -39,8 +39,10 @@
 }
 
 .pd-file-preview-image {
-	@extend .covered-absolute;
 	@extend .mauto;
 	object-fit: cover;
 	max-width: none;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
