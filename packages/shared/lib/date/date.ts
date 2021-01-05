@@ -1,4 +1,13 @@
-import { eachDayOfInterval, startOfWeek, endOfWeek, startOfYear, format, addMonths } from 'date-fns';
+import {
+    eachDayOfInterval,
+    startOfWeek,
+    endOfWeek,
+    startOfYear,
+    format,
+    addMonths,
+    differenceInMilliseconds,
+} from 'date-fns';
+import { DAY, MONTH } from '../constants';
 
 interface FormatOptions {
     locale?: Locale;
@@ -28,3 +37,10 @@ export const getFormattedMonths = (stringFormat: string, options?: FormatOptions
  * Get the index of the start of week day for a given date-fn locale
  */
 export const getWeekStartsOn = ({ options: { weekStartsOn = 0 } = { weekStartsOn: 0 } }: Locale) => weekStartsOn;
+
+export const getDifferenceInMonthsAndDays = (laterDate: Date, earlierDate: Date) => {
+    const diff = differenceInMilliseconds(laterDate, earlierDate);
+    const months = Math.floor(diff / MONTH);
+    const days = Math.floor((diff % MONTH) / DAY);
+    return { months, days };
+};
