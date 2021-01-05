@@ -1,8 +1,0 @@
-/*
- * Cursors
- */
-$list-cursors: default, help, wait, grab, row-resize, pointer !default;
-
-@each $cursor in $list-cursors {
-  .cursor-#{$cursor} { cursor: #{$cursor}; }
-}
