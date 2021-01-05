@@ -256,7 +256,7 @@ const TimeGrid = ({
 
     return (
         <div
-            className={classnames(['flex-item-fluid scroll-if-needed view-column-detail', displayViewClass])}
+            className={classnames(['flex-item-fluid scroll-if-needed h100', displayViewClass])}
             onScroll={handleScroll}
             ref={scrollRef}
         >

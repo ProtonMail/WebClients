@@ -1,23 +1,14 @@
-$breakpoint-medium     : 1000;
-$breakpoint-small      : 870;
-$breakpoint-tiny       : 520;
+@import '~design-system/scss/proton-calendar';
 
-
-// include components that are shared across all Proton Products
-@import '~react-components/styles/index';
-
-
-// project specific components
-@import '~design-system/_sass/pc-styles/pc-calendar-grid';
-@import '~design-system/_sass/pc-styles/pc-calendar-event-loader';
-
-
-// stuff for responsive
-@import '~design-system/_sass/reusable-components/design-system-responsive';
-@import '~design-system/_sass/design-system-website/responsive';
-
-
-// others
-@import '~design-system/_sass/reusable-components/design-system-print';
-@import '~design-system/_sass/reusable-components/design-system-viewport-fix';
-@import '~design-system/_sass/reusable-components/design-system-reduced-motion';
+// Specific styles
+@import
+    'styles/config',
+    'styles/specifics',
+    'styles/grid',
+    'styles/monthgrid',
+    'styles/daygrid',
+    'styles/eventcell',
+    'styles/aside',
+    'styles/eventpopover',
+    'styles/debug',
+    'styles/loader-container';

@@ -110,7 +110,7 @@ const DayGrid = ({
     const mainRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div className="flex-item-fluid scroll-if-needed view-column-detail is-month-view">
+        <div className="flex-item-fluid scroll-if-needed h100 is-month-view">
             <div className="calendar-daygrid flex flex-column relative h100" ref={mainRef}>
                 <div data-test-id="calendar-month-view:week-header" className="flex calendar-daygrid-days">
                     {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
