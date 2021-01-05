@@ -3,7 +3,7 @@ import { AuthVersion } from 'proton-shared/lib/authentication/interface';
 import { DriveFileBlock } from './file';
 
 export interface CreateSharedURL {
-    ExpirationTime: number | null;
+    ExpirationDuration: number | null;
     MaxAccesses: number;
     CreatorEmail: string;
     UrlPasswordSalt: string;

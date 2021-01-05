@@ -95,7 +95,7 @@ function useSharing() {
                 Permissions: 4,
                 MaxAccesses: DEFAULT_SHARE_MAX_ACCESSES,
                 CreatorEmail,
-                ExpirationTime: null,
+                ExpirationDuration: null,
                 SharePassphraseKeyPacket,
                 SRPModulusID,
                 SRPVerifier,
