@@ -50,7 +50,7 @@ module.exports = {
             ],
         };
     },
-    stories: ['../src/stories/*.stories.*'],
+    stories: ['../src/stories/**/*.stories.*'],
     addons: ['@storybook/addon-essentials', '@storybook/addon-storysource'],
     typescript: {
         check: false,
