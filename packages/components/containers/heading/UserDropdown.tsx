@@ -142,7 +142,7 @@ const UserDropdown = ({ ...rest }) => {
                         <li>
                             <button
                                 type="button"
-                                className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
+                                className="w100 flex dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
                                 onClick={handleSwitchAccount}
                             >
                                 <Icon className="mt0-25 mr0-5" name="organization-users" />
@@ -164,7 +164,7 @@ const UserDropdown = ({ ...rest }) => {
                         <li>
                             <button
                                 type="button"
-                                className="w100 flex underline-hover dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
+                                className="w100 flex dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
                                 onClick={handleSupportUsClick}
                             >
                                 <Icon className="mt0-25 mr0-5" name="donate" />
