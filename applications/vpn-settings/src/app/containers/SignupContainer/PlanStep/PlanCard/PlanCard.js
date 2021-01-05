@@ -5,6 +5,8 @@ import { c } from 'ttag';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 import PlanPrice from './PlanPrice';
 
+import './PlanCard.scss';
+
 const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => {
     const button = (
         <Button

@@ -4,6 +4,8 @@ import { c } from 'ttag';
 import { Price } from 'react-components';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 
+import './PlanPrice.scss';
+
 const PlanPrice = ({ plan, cycle, currency }) => {
     const discount = plan.couponDiscount || plan.price.saved;
     const totalMonthlyPriceText = (

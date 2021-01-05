@@ -6,6 +6,8 @@ import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 import { PLAN } from '../plans';
 import PriceInfo from './PriceInfo';
 
+import './Plan.scss';
+
 const PlanDetails = ({ selectedPlan, cycle, currency }) => {
     const { planName, title, features } = selectedPlan;
     return (

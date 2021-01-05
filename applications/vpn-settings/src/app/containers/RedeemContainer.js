@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Title } from 'react-components';
+import './RedeemContainer.scss';
 
 import GadgetImage from 'design-system/assets/img/pv-images/redeem/gadgets.png';
 import SwissBasedIcon from 'design-system/assets/img/pv-images/redeem/swiss_based.svg';
