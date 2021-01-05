@@ -1,0 +1,69 @@
+h1,
+.h1 {
+	display: block;
+	@include rhythm($size-h1);
+	font-weight: normal;
+}
+
+h2,
+.h2 {
+	display: block;
+	@include rhythm($size-h2);
+	font-weight: normal;
+}
+
+h3,
+.h3 {
+	display: block;
+	@include rhythm($size-h3);
+	font-weight: normal;
+}
+
+h4,
+.h4 {
+	display: block;
+	@include rhythm($size-h4);
+	font-weight: normal;
+}
+
+h5,
+.h5 {
+	display: block;
+	@include rhythm($size-h5);
+	font-weight: normal;
+}
+
+h6,
+.h6 {
+	display: block;
+	@include rhythm($size-h6);
+	font-weight: normal;
+}
+
+/* avoid margin problems */
+@if $vertical-rhythm == 'single_top' or $vertical-rhythm == 'double_top_single_bottom' {
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	/* remove bottom margin on last child */
+	p, ul, ol, dl, blockquote, pre, table {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/* Hyphenation: Thou shalt not pass (Moïse or Gandalf, don’t remember) */
+@if $hyphenation == true {
+	textarea, table, td, th, code, pre, samp, div, p {
+		word-break: break-word;
+
+		@supports (-webkit-hyphens: auto) or (hyphens: auto) {
+			word-break: normal;
+			@include vendor-prefix(hyphens, auto, webkit);
+		}
+	}
+}

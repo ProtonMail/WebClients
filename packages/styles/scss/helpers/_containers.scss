@@ -1,0 +1,120 @@
+.bordered,
+.bordered-container,
+.dashed,
+.dashed-container {
+	border: 1px solid var(--bordercolor-input, $pm-global-border);
+}
+
+.bordered-container,
+.dashed-container {
+	border-radius: $global-border-radius;
+}
+
+.bordered-container--error {
+	border-color: $pm-global-warning;
+}
+
+.dashed,
+.dashed-container {
+	border-style: dashed;
+}
+
+.border-bottom {
+	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+}
+
+.border-bottom--dashed {
+	border-bottom-style: dashed;
+}
+
+.border-bottom--currentColor {
+	border-bottom-color: currentColor;
+}
+
+.border-top {
+	border-top: 1px solid var(--bordercolor-input, $pm-global-border);
+}
+
+.border-top--dashed {
+	border-top-style: dashed;
+}
+
+.border-left {
+	border-left: 1px solid var(--bordercolor-input, $pm-global-border);
+}
+
+.border-right {
+	border-right: 1px solid var(--bordercolor-input, $pm-global-border);
+}
+
+.border-currentColor {
+	border: 1px solid currentColor;
+}
+
+.borderColor-primary {
+	border-color: $pm-primary;
+}
+
+.shadow-container {
+	box-shadow: 0 0 20px 0 $input-shadow-color;
+}
+
+.tiny-shadow-container {
+	box-shadow: 0 1px 3px 0 var(--bgcolor-main-area, $pm-global-border);
+	border: 1px solid var(--bordercolor-input, transparent);
+}
+
+.row--orderable {
+	z-index: 666;
+	/* In case the modal is open */
+	background: var(--bgcolor-main-area, $white);
+	color: var(--color-main-area, $pm-global-grey);
+}
+
+/*
+ * Welcome boxes in a 2 column design
+ * Make breakpoint overable
+ */
+$breakpoint-2-columns: 1180 !default;
+
+@include respond-to($breakpoint-2-columns) {
+	.boxes-placeholder-container {
+		flex-direction: column;
+
+		& > * {
+			margin-bottom: 1em;
+			width: 100%;
+			flex-basis: auto;
+		}
+	}
+
+	.boxes-placeholder-button {
+		margin-top: 0;
+	}
+}
+
+.rounded {
+	border-radius: $global-border-radius;
+}
+
+.rounded50 {
+	border-radius: 50%;
+}
+
+.rounded1e {
+	border-radius: 1em;
+}
+
+.rounded0 {
+	border-radius: 0;
+}
+
+.rounded0-left {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.rounded0-right {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}

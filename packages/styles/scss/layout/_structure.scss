@@ -1,0 +1,217 @@
+/* fix bug on Chrome */
+body {
+	@extend .no-scroll;
+	height: 100%;
+}
+
+@include respond-to($breakpoint-large, 'min') {
+	:root {
+		--width-sidebar: 25rem;
+		--width-context-bar: 45rem;
+	}
+}
+
+/* === page === */
+html,
+.app-root,
+.content-container {
+	height: 100%;
+}
+
+.content {
+	background-color: var(--main-bg-color, $pm-global-grey);
+	/*display: grid;
+	grid-template-areas:
+		"header header"
+		"sidebar content";
+		grid-template-columns: 180px auto;
+		grid-template-rows: 60px auto;
+	*/
+}
+
+.header {
+	padding: 1rem 1.5rem 1rem 0;
+	height: $header-height;
+	flex-shrink: 0;
+}
+
+@if $rtl-option==true {
+	[dir='rtl'] {
+		.header {
+			padding: 1rem 0 1rem 2rem;
+		}
+	}
+}
+
+.sidebar {
+	width: var(--width-sidebar, $width-sidebar);
+	visibility: visible;
+	transition: visibility 0s ease, transform 1s ease, width 0.6s ease,
+		opacity 1s ease;
+	transition-delay: 0s;
+	overflow: auto;
+
+	@include respond-to($breakpoint-small) {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		z-index: 500;
+		width: 100%;
+		max-width: 100%;
+		max-height: none;
+		padding-top: 1em;
+		transform-origin: 0 50%;
+		background-image: linear-gradient(
+			to bottom,
+			var(--main-bg-color, $pm-global-grey),
+			var(--secondary-bg-color, $pm-global-altgrey)
+		);
+		transition: 0s visibility ease, 0.25s transform ease;
+		transition-delay: 0s;
+
+		&[data-expanded='false'] {
+			transform: translateX(-100%);
+			visibility: hidden;
+			transition-delay: 0.25s, 0s;
+		}
+
+		&[aria-hidden='true'] {
+			transform: translateX(0);
+		}
+	}
+}
+
+.logo-container {
+	padding: 0 1em;
+	width: var(--width-sidebar, #{$width-sidebar});
+}
+
+.logo-link {
+	position: relative;
+	padding: 0.875em 0.5em 1.125em;
+	box-sizing: initial;
+	border-radius: $global-border-radius;
+
+	&:hover,
+	&:focus {
+		color: inherit;
+	}
+
+	&:focus {
+		background-color: $navigation-hover-bg-color;
+	}
+
+	.plan {
+		position: absolute;
+		bottom: 0.5em;
+		left: 3rem;
+		font-size: 1rem;
+		line-height: 1;
+	}
+}
+
+.logo {
+	width: auto;
+	height: 1.5em;
+}
+
+.logo g {
+	fill: var(--fillcolor-logo, $pm-global-light);
+}
+
+.hamburger {
+	@include respond-to($breakpoint-small) {
+		color: $white;
+		flex-shrink: 0; // this has to stay
+	}
+}
+
+.topnav-container {
+	@include respond-to($breakpoint-small) {
+		flex-shrink: 0; // this has to stay
+		margin-left: auto; // case of mail display
+	}
+}
+
+.main {
+	overflow: hidden;
+	border-top-left-radius: 4px;
+	box-shadow: var(--boxshadow-main, none);
+
+	@include respond-to($breakpoint-small) {
+		margin-right: 0;
+		border-radius: 0;
+	}
+
+	@if $rtl-option==true {
+		[dir='rtl'] & {
+			border-top-left-radius: 0;
+			border-top-right-radius: 4px;
+		}
+	}
+}
+
+.main-area {
+	background: var(--bgcolor-main-area, $white);
+	color: var(--color-main-area, $pm-global-grey);
+	overflow: auto;
+	border-top-left-radius: 4px;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+.main-area--withToolbar {
+	// only for Angular this one
+	@extend .main-area;
+	border-radius: 0;
+}
+
+// only for Safari mobile shitty way to handle vh unit
+$height-for-tablet: 5em !default;
+$height-for-mobile: 8em !default;
+
+.main-area--paddingFix {
+	padding-bottom: $height-for-tablet;
+}
+
+.main-area-content--paddingFix::after {
+	content: '';
+	display: flex;
+	width: 100%;
+	height: $height-for-tablet;
+}
+
+@include respond-to($breakpoint-small) {
+	.main-area--paddingFix {
+		padding-bottom: $height-for-mobile;
+		// thanks Apple for the fixed toolbar at the bottom
+	}
+
+	.main-area-content--paddingFix::after {
+		height: $height-for-mobile;
+	}
+}
+
+.main-full {
+	height: 100%;
+	overflow: auto;
+	@extend .bg-global-altgrey-gradient;
+}
+
+.main-area--noHeader {
+	@extend .main-area;
+	//height: 100vh; // create a crazy bug on Safari on VPN
+	max-height: 100%;
+}
+
+.main-area--withToolbar--noHeader {
+	@extend .main-area--withToolbar;
+}
+
+.main-area-content {
+	background: var(--bgcolor-main-area, #{$white});
+}

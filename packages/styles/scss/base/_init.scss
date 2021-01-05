@@ -1,0 +1,238 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit; // From html
+}
+
+html {
+	box-sizing: border-box;
+
+	/* base font size at 10px */
+	@if $root-equiv-10-px==true {
+		font-size: 62.5%;
+
+		@if ($use-ie-calc-font-fallback==true) {
+			font-size: calc(1em * 0.625);
+		}
+	}
+}
+
+body {
+	@if $apply-body-styles==true {
+		background: $pm-global-grey;
+		color: $pm-global-light;
+		font-family: $font-family;
+		text-rendering: geometricPrecision;
+		-webkit-font-smoothing: antialiased;
+
+		@if $typo-unit== 'use_em' {
+			@if $root-equiv-10-px==true {
+				font-size: em($base-font, 10);
+			} @else {
+				font-size: em($base-font, $root-default-font-size);
+			}
+		} @else if $typo-unit== 'use_rem' {
+			font-size: var(--body-fontsize, rem($base-font));
+		} @else if $typo-unit== 'use_rem_with_em_fallback' {
+			@if $root-equiv-10-px==true {
+				font-size: em($base-font, 10);
+			} @else {
+				font-size: em($base-font, $root-default-font-size);
+			}
+
+			font-size: rem($base-font);
+		}
+
+		line-height: $l-h;
+		min-height: 100%;
+	}
+}
+
+a {
+	color: $color-links;
+	text-decoration: underline;
+	cursor: pointer;
+
+	&:focus,
+	&:hover,
+	&:active {
+		color: $color-hover;
+		text-decoration: underline;
+	}
+}
+
+/* it depends, it exceeds (french joke) */
+%reset-responsive-height-max-width {
+	height: auto;
+	max-width: 100%;
+}
+
+%reset-responsive-max-width-only {
+	max-width: 100%;
+}
+
+blockquote,
+code,
+pre,
+textarea,
+input,
+svg {
+	@extend %reset-responsive-height-max-width;
+}
+
+@if $use-height-auto-td==true {
+	td {
+		@extend %reset-responsive-height-max-width;
+	}
+} @else {
+	td {
+		@extend %reset-responsive-max-width-only;
+	}
+}
+
+@if $use-height-auto-img==true {
+	img {
+		@extend %reset-responsive-height-max-width;
+	}
+} @else {
+	img {
+		@extend %reset-responsive-max-width-only;
+	}
+}
+
+@if $use-height-auto-table==true {
+	table {
+		@extend %reset-responsive-height-max-width;
+	}
+} @else {
+	table {
+		@extend %reset-responsive-max-width-only;
+	}
+}
+
+textarea {
+	min-height: $default-height-fields; // Equals pm-field inputs height
+}
+
+/*
+ * avoids dimensioning for radio, checkboxes and images
+ * and a different display on IE
+ */
+input[type='radio'],
+input[type='checkbox'],
+input[type='image'] {
+	background-color: transparent;
+	border: 0;
+	width: auto;
+}
+
+// for components that rely on checkboxes
+input[type='radio'],
+input[type='checkbox'] {
+	opacity: 0;
+	// this is a crazy fix for Firefox - for having ::after stuff working on it for mail conversations
+	// to have increased area around checkbox for clicking
+	/* autoprefixer: ignore next */
+	/* stylelint-disable-next-line */
+	-moz-appearance: initial;
+}
+
+// fix "autofill state"
+input:-webkit-autofill {
+	box-shadow: 200px 200px 100px var(--bgcolor-input, $pm-input-background)
+		inset;
+}
+
+/* removes X in input when typing in IE/EDGE */
+input::-ms-clear {
+	width: 0;
+	height: 0;
+}
+
+/* removes native password revealer for IE/EDGE */
+input::-ms-reveal {
+	display: none;
+}
+
+/* avoid ugly line-height */
+sup,
+sub {
+	vertical-align: 0;
+	position: relative;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: 0.5ex;
+}
+
+mark {
+	@if $use-color-reset-mark==true {
+		background-color: unset;
+	} @else {
+		background-color: var(--bgcolor-mark, $default-bgColor-mark);
+	}
+
+	color: var(--color-mark, currentColor);
+	font-weight: bold;
+}
+
+/* avoid margin on nested elements */
+li {
+	p,
+	ul {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+}
+
+kbd {
+	padding: 0 0.25em;
+	background-color: var(--bgcolor-main-area, $pm-global-light);
+	border: 1px solid var(--bordercolor-input, $pm-global-border);
+	border-radius: $global-border-radius;
+}
+
+hr {
+	background-color: $color-hr;
+	border: 0;
+	color: $color-hr;
+	height: $hr-height;
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+table {
+	margin-bottom: 1.5em;
+	table-layout: fixed;
+}
+
+details {
+	border-bottom: 1px solid $pm-global-border;
+	border-radius: $global-border-radius;
+
+	& > summary::-webkit-details-marker {
+		display: none;
+	}
+
+	&:first-child {
+		border-top: 1px solid $pm-global-border;
+	}
+
+	&[open] > summary {
+		background: url(#{$path-images}sprite-for-css-only.svg#css-caret-close)
+			0 50% no-repeat;
+	}
+}
+
+summary {
+	padding: 1em 0 1em 2rem;
+	background: url(#{$path-images}sprite-for-css-only.svg#css-caret) 0 50%
+		no-repeat;
+	list-style: none;
+	border: 0;
+	cursor: pointer;
+}

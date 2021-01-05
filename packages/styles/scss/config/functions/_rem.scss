@@ -1,0 +1,18 @@
+/**
+ * Calculate an rem value from a px value
+ * @param {Number} $px - A value to be converted in em
+ * @param {Boolean} $reset-applied - Check if the root font-size is equivalent to 10px
+ * @param {Number} $user-default-font-size - The default font-size of the browser. Should be equivalent to 16px
+ * @return {Number} - The $px value converted in rem
+ */
+@function rem(
+	$px,
+	$reset-applied: $root-equiv-10-px,
+	$user-default-font-size: $root-default-font-size
+) {
+	@if ($reset-applied==true) {
+		@return ($px / 10) * 1rem;
+	} @else {
+		@return ($px / $user-default-font-size) * 1rem;
+	}
+}

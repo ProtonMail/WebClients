@@ -1,0 +1,44 @@
+/**
+ * Generate padding classes from coordinates and amounts
+ * @param {List} $list-padding - List of coordinates for generation, i.e. 'mt, mr, mb, ml, m'
+ * @param {List} $list-padding-values - List of value for generation, i.e. '0, 1, 2, 3'
+ * @param {String} $prefix - Specify a prefix for each class if needed
+ * @returns {String} - CSS classes with correct names from coordinates and values
+ */
+@mixin padding-generator($list-padding, $list-padding-values, $prefix: '') {
+	@each $padding-type in $list-padding {
+		@each $padding in $list-padding-values {
+			//$temp_p : str-slice($padding-type, 0, 1);
+			$temp_t: str-slice($padding-type, 2, 3);
+
+			$property: padding;
+
+			@if $temp_t==t {
+				$property: padding-top;
+			} @else if $temp_t==r {
+				$property: padding-right;
+			} @else if $temp_t==b {
+				$property: padding-bottom;
+			} @else if $temp_t==l {
+				$property: padding-left;
+			}
+
+			$value: $padding + 0em;
+
+			@if $padding==0 {
+				$value: $padding;
+			}
+
+			// convert to string
+			$text-padding: $padding + '';
+
+			// from 1.5 to 1-5
+			$property-class: str-replace($text-padding, '.', '-');
+
+			// .pr1-5 { padding-right: 1.5em; }
+			.#{$prefix}#{$padding-type}#{$property-class} {
+				#{$property}: #{$value};
+			}
+		}
+	}
+}

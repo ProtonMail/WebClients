@@ -1,0 +1,19 @@
+/**
+ * Add a pseudo-element '::before' on body tag with a wanted content
+ * @param {String} $value-content - The wanted content
+ * @param {Boolean} $display-none - Display or not this content
+ * @returns {String} - The CSS rule for adding the content inside a pseudo-element on body tag
+ */
+@mixin body-before($value-content, $display-none: false) {
+	@if $value-content != '' {
+		body::before {
+			content: '#{$value-content}';
+
+			@if $display-none == true {
+				display: none;
+			}
+		}
+	} @else {
+		@warn '$value-content not specified';
+	}
+}

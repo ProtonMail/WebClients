@@ -1,0 +1,205 @@
+/* useful to manage floats */
+/* containing floats */
+.mod,
+.scroll-if-needed {
+	overflow: auto;
+}
+
+.scroll-horizontal-if-needed {
+	overflow-x: auto;
+}
+
+.mod--hidden,
+.no-scroll {
+	overflow: hidden;
+}
+
+.scroll-smooth-touch {
+	-webkit-overflow-scrolling: touch;
+}
+
+/* some floattings */
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+@if $rtl-option==true {
+	/* RTL */
+	[dir='rtl'] .left {
+		float: right;
+	}
+
+	[dir='rtl'] .right {
+		float: left;
+	}
+}
+
+/* clear floats */
+.clear {
+	clear: both;
+}
+
+@if $use-clearleft_right==true {
+	.clearleft {
+		clear: left;
+	}
+
+	.clearright {
+		clear: right;
+	}
+
+	@if $rtl-option==true {
+		/* RTL */
+		[dir='rtl'] .clearleft {
+			clear: right;
+		}
+
+		[dir='rtl'] .clearright {
+			clear: left;
+		}
+	}
+}
+
+@if $use-clearhidden==true {
+	.clearhidden {
+		clear: both;
+		margin: 0;
+		padding: 0;
+		visibility: hidden;
+	}
+}
+
+@if $use-clearfix==true {
+	.clearfix::after {
+		content: '.';
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+}
+
+/* gut: "spacing" empty div */
+.gut {
+	height: 1px;
+}
+
+/* table-design in CSS */
+.row {
+	display: table;
+	table-layout: fixed;
+}
+
+.inline-row {
+	display: inline-table;
+	table-layout: fixed;
+}
+
+.line {
+	display: table-row;
+}
+
+.col {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.col-noalign {
+	display: table-cell;
+}
+
+/* block */
+.bl {
+	display: block;
+}
+
+.inline {
+	display: inline;
+}
+
+/* inline-block, useful for grids, and not only */
+.inbl {
+	display: inline-block;
+}
+
+/* grid = element of inline-grid */
+.grid {
+	@extend .inbl;
+	@extend .aligntop;
+}
+
+.inline-grid-container {
+	display: inline-grid;
+}
+
+/* centered block */
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hidden,
+[hidden],
+.display-on-darkmode {
+	display: none;
+}
+
+/* hidden everywhere */
+.nodesktop {
+	display: none;
+}
+
+/* hidden on desktop */
+/*.noprint   {} /* hidden on print */
+/*.notablet  {} /* hidden on tablets */
+/*.nomobile  {} /* hidden on mobile */
+
+.list-2columns {
+	column-count: 2;
+	column-gap: 0;
+
+	& > * {
+		/* stylelint-disable-next-line */
+		-webkit-column-break-inside: avoid;
+		/* Chrome, Safari, Opera */
+		page-break-inside: avoid;
+		/* Firefox */
+		break-inside: avoid;
+		/* IE 10+ */
+		break-inside: avoid-column;
+		/* W3C */
+	}
+}
+
+/*
+ * ratio container (for responsive iframes/videos/etc.)
+ */
+[class*='ratio-container-'] {
+	width: 100%;
+	height: 0;
+	@extend .relative;
+}
+
+.ratio-container-square {
+	padding-top: 100%;
+}
+
+.ratio-container-16-9 {
+	padding-top: 56.25%;
+}
+
+.ratio-container-5-1 {
+	padding-top: 20%;
+}
+
+.inner-ratio-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}

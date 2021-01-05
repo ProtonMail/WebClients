@@ -1,0 +1,27 @@
+/**
+ * Generate media queries in em
+ * @param {Number} $breakpoint - The wanted breakpoint in pixels
+ * @param {String} $query-type - The media query type, between 'max', 'min', 'height' and 'min-height'
+ * @returns {String} - The content contained inside the wanted media query
+ */
+@mixin respond-to($breakpoint, $query-type: 'max') {
+	@if $query-type== 'max' {
+		@media (max-width: em($breakpoint, $root-default-font-size)) {
+			@content;
+		}
+	} @else if $query-type== 'min' {
+		@media (min-width: em($breakpoint + 1, $root-default-font-size)) {
+			@content;
+		}
+	} @else if $query-type== 'height' {
+		@media (max-height: em($breakpoint, $root-default-font-size)) {
+			@content;
+		}
+	} @else if $query-type== 'min-height' {
+		@media (min-height: em($breakpoint, $root-default-font-size)) {
+			@content;
+		}
+	} @else {
+		@warn 'Type non supported.';
+	}
+}
