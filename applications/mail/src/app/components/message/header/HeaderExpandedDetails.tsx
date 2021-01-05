@@ -76,7 +76,13 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             <div className="mb0-5 flex flex-nowrap">
                 <span className="container-to flex">
                     <span className="mauto flex">
-                        <ItemLocation element={message.data} labelID={labelID} shouldStack showTooltip={false} />
+                        <ItemLocation
+                            element={message.data}
+                            labelID={labelID}
+                            shouldStack
+                            showTooltip={false}
+                            withDefaultMargin={false}
+                        />
                     </span>
                 </span>
                 <span className="flex-self-vcenter mr0-5 ellipsis" title={locationText}>
