@@ -55,7 +55,7 @@ const Checkbox = ({
                 {...rest}
             />
             <span className="pm-checkbox-fakecheck" style={{ borderColor, background: backgroundColor, color }}>
-                <Icon className="pm-checkbox-fakecheck-img" name="on" color={color} />
+                <Icon className="pm-checkbox-fakecheck-img" size={12} name="on" color={color} />
             </span>
             {children}
         </label>

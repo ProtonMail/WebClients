@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Button, LinkButton, Icon } from '../../../components';
 import { classnames } from '../../../helpers';
+import './SubscriptionTable.scss';
 
 const SubscriptionTable = ({
     plans,
