@@ -5,6 +5,8 @@ import { PrimaryButton, Price } from 'react-components';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 import { PLAN } from '../plans';
 
+import './Plan.scss';
+
 const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycle, onUpgrade }) => {
     const { planName, upsell } = selectedPlan;
     const upsellCycle = cycle === CYCLE.MONTHLY && planName !== PLAN.FREE;

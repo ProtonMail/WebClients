@@ -1,0 +1,30 @@
+@import '~design-system/scss/config/';
+
+.plan-price {
+    min-height: 8em;
+
+    @include respond-to($breakpoint-small) {
+        min-height: 0;
+    }
+
+    /* use nesting to restrict styles only for VPN signup page */
+    &-area {
+        vertical-align: bottom;
+        display: inline-block;
+
+        .amount {
+            font-size: 5rem;
+            line-height: 1;
+        }
+
+        .currency {
+            order: -1;
+            font-size: 2rem;
+            line-height: 1;
+            position: relative;
+            top: .5rem; // magic value
+            color: rgb(70 74 78 / .7);
+            margin-right: .5rem;
+        }
+    }
+}

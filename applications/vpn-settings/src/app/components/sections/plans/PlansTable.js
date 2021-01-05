@@ -17,6 +17,8 @@ import { getPlanName } from 'proton-shared/lib/helpers/subscription';
 
 import PlanPrice from './PlanPrice';
 
+import './PlansTable.scss';
+
 const { VISIONARY, VPNBASIC, VPNPLUS } = PLANS;
 const FREE = 'free';
 const PLAN_NUMBERS = {
@@ -53,7 +55,10 @@ const PlansTable = ({
     };
 
     return (
-        <table className="pm-plans-table pm-table--highlight noborder" data-plan-number={PLAN_NUMBERS[planName]}>
+        <table
+            className="pm-plans-table pm-table--highlight noborder w100 min-w35e"
+            data-plan-number={PLAN_NUMBERS[planName]}
+        >
             <thead>
                 <tr>
                     <th className="is-empty" />
