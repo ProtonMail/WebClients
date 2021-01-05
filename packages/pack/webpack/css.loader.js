@@ -34,9 +34,9 @@ const getSassLoaders = (isProduction) => {
               }
             : undefined,
         {
-            loader: 'fast-sass-loader',
+            loader: 'sass-loader',
             options: {
-                data: PREPEND_SASS
+                additionalData: PREPEND_SASS
             }
         }
     ].filter(Boolean);
