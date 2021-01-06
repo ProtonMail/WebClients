@@ -9,6 +9,12 @@
     border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
+.message-recipient-item-expanded {
+    .message-recipient-item-expanded-content {
+        padding-top: .5em;
+    }
+}
+
 .is-printed-version {
     .item-icon,
     .container-to.container-to--item {
