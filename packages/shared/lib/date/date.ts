@@ -7,7 +7,7 @@ import {
     addMonths,
     differenceInMilliseconds,
 } from 'date-fns';
-import { DAY, MONTH } from '../constants';
+import { DAY, MONTH, SECOND, HOUR, MINUTE, YEAR } from '../constants';
 
 interface FormatOptions {
     locale?: Locale;
@@ -38,9 +38,20 @@ export const getFormattedMonths = (stringFormat: string, options?: FormatOptions
  */
 export const getWeekStartsOn = ({ options: { weekStartsOn = 0 } = { weekStartsOn: 0 } }: Locale) => weekStartsOn;
 
-export const getDifferenceInMonthsAndDays = (laterDate: Date, earlierDate: Date) => {
-    const diff = differenceInMilliseconds(laterDate, earlierDate);
-    const months = Math.floor(diff / MONTH);
-    const days = Math.floor((diff % MONTH) / DAY);
-    return { months, days };
+export const getTimeRemaining = (endTime: Date) => {
+    const diff = differenceInMilliseconds(endTime, new Date());
+    const seconds = Math.floor((diff / SECOND) % 60);
+    const minutes = Math.floor((diff / MINUTE) % 60);
+    const hours = Math.floor((diff / HOUR) % 24);
+    const days = Math.floor((diff / DAY) % (7 * 4));
+    const months = Math.floor((diff / MONTH) % 12);
+    const years = Math.floor(diff / YEAR);
+    return {
+        years,
+        months,
+        days,
+        hours,
+        minutes,
+        seconds,
+    };
 };
