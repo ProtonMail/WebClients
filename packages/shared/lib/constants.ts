@@ -9,6 +9,7 @@ export const HOUR = 60 * MINUTE;
 export const DAY = 24 * HOUR;
 export const WEEK = 7 * DAY;
 export const MONTH = 4 * WEEK;
+export const YEAR = 12 * MONTH;
 
 // Max quantity for all addons
 export const MAX_VPN_ADDON = 496;
