@@ -7,7 +7,6 @@ import { Icon, LargeButton } from 'react-components';
 
 import DownloadProgressBar from './DownloadProgressBar';
 import SizeCell from '../FileBrowser/ListView/Cells/SizeCell';
-import NameCell from '../FileBrowser/ListView/Cells/NameCell';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { TransferState } from '../../interfaces/transfer';
 import useStatsHistory from '../../hooks/drive/useStatsHistory';
@@ -72,13 +71,13 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
             <p className="m0">{contents.info}</p>
             <div
                 style={{ height: '7em' }}
-                className="flex flex-column flex-nowrap flex-items-center flex-justify-center w100 mt2 mb2"
+                className="flex flex-column flex-nowrap flex-items-center flex-justify-center mt1 mb1 w100"
             >
                 {contents.content}
             </div>
-            <h4 className="bold mb0-25 w100">
-                <NameCell name={name} />
-            </h4>
+            <div style={{ maxHeight: '6em' }} title={name} className="bold mb0-5 scroll-if-needed w100">
+                {name}
+            </div>
             <SizeCell size={size} />
         </>
     );
