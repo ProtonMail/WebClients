@@ -25,7 +25,7 @@ const LocationAside = ({ unreadCount, active = false, refreshing = false }: Prop
                 />
             )}
             {unreadCount ? (
-                <span className="navigation__counterItem flex-item-noshrink rounded" title={unreadTitle}>
+                <span className="navigation__counterItem flex-item-noshrink" title={unreadTitle}>
                     {unreadCount > UNREAD_LIMIT ? '+999' : unreadCount}
                 </span>
             ) : null}
