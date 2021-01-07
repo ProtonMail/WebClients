@@ -10,14 +10,14 @@ import { useDriveContent } from './DriveContentProvider';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 import useDriveDragMove from '../../hooks/drive/useDriveDragMove';
 import FileBrowser from '../FileBrowser/FileBrowser';
-import { useFileBrowserLayout } from '../FileBrowser/FileBrowserLayoutProvider';
+import useUserSettings from '../../hooks/drive/useUserSettings';
 
 interface Props {
     activeFolder: DriveFolder;
 }
 
 function Drive({ activeFolder }: Props) {
-    const { view } = useFileBrowserLayout('drive');
+    const { layout } = useUserSettings();
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const cache = useDriveCache();
     const { getLinkMeta } = useDrive();
@@ -57,10 +57,10 @@ function Drive({ activeFolder }: Props) {
         if (isInitialized && !complete) {
             loadNextPage();
         }
-    }, [complete, loadNextPage, view, shareId, linkId, sortParams]);
+    }, [complete, loadNextPage, layout, shareId, linkId, sortParams]);
 
     // On content change, check scroll end (does not rebind listeners)
-    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents, view]);
+    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents, layout]);
 
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {
@@ -74,7 +74,7 @@ function Drive({ activeFolder }: Props) {
         <EmptyFolder />
     ) : (
         <FileBrowser
-            view={view}
+            layout={layout}
             scrollAreaRef={scrollAreaRef}
             caption={folderName}
             shareId={shareId}

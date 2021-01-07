@@ -2,6 +2,7 @@ import { isMobile } from 'proton-shared/lib/helpers/browser';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { SortParams } from './interfaces/link';
 import { SupportedMimeTypes } from './utils/MimeTypeParser/constants';
+import { LayoutSetting, SortSetting, UserSettings } from './interfaces/userSettings';
 
 export const MB = 1024 * 1024;
 export const FOLDER_PAGE_SIZE = 150;
@@ -15,6 +16,10 @@ export const DEFAULT_SORT_ORDER = SORT_DIRECTION.ASC;
 export const DEFAULT_SORT_PARAMS: SortParams = {
     sortField: DEFAULT_SORT_FIELD,
     sortOrder: DEFAULT_SORT_ORDER,
+};
+export const DEFAULT_USER_SETTINGS: UserSettings = {
+    Layout: LayoutSetting.List,
+    Sort: SortSetting.ModifiedAsc,
 };
 export const UPLOAD_TIMEOUT = 60000;
 export const DOWNLOAD_TIMEOUT = 60000;

@@ -4,14 +4,14 @@ import EmptyTrash from '../../FileBrowser/EmptyTrash';
 import useOnScrollEnd from '../../../hooks/util/useOnScrollEnd';
 import { useTrashContent } from './TrashContentProvider';
 import FileBrowser from '../../FileBrowser/FileBrowser';
-import { useFileBrowserLayout } from '../../FileBrowser/FileBrowserLayoutProvider';
+import useUserSettings from '../../../hooks/drive/useUserSettings';
 
 interface Props {
     shareId: string;
 }
 
 function Trash({ shareId }: Props) {
-    const { view } = useFileBrowserLayout('trash');
+    const { layout } = useUserSettings();
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls } = useTrashContent();
 
@@ -29,17 +29,17 @@ function Trash({ shareId }: Props) {
         if (initialized && !complete) {
             loadNextPage();
         }
-    }, [initialized, complete, loadNextPage, view]);
+    }, [initialized, complete, loadNextPage, layout]);
 
     // On content change, check scroll end (does not rebind listeners)
-    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents, view]);
+    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents, layout]);
 
     return complete && !contents.length && !loading ? (
         <EmptyTrash />
     ) : (
         <FileBrowser
             isTrash
-            view={view}
+            layout={layout}
             scrollAreaRef={scrollAreaRef}
             caption={c('Title').t`Trash`}
             shareId={shareId}

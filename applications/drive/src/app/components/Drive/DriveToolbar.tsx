@@ -100,7 +100,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
 
             {renderSelectionActions()}
             <span className="mlauto flex flex-nowrap">
-                <LayoutDropdown layoutId="drive" />
+                <LayoutDropdown />
                 <SortDropdown />
             </span>
         </Toolbar>
