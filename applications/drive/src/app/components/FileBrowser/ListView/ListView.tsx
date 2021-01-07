@@ -90,7 +90,7 @@ const TableBodyRenderer = ({
     );
 };
 
-type Props = Omit<FileBrowserProps, 'view'>;
+type Props = Omit<FileBrowserProps, 'layout'>;
 
 const ListView = ({
     loading,

@@ -1,22 +1,39 @@
-import { useCache, useMultiSortedList } from 'react-components';
+import { useMultiSortedList } from 'react-components';
+import { useMemo } from 'react';
 import { SortConfig } from 'react-components/hooks/useSortedList';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import { DEFAULT_SORT_PARAMS } from '../../constants';
-import { LinkMeta, SortKeys } from '../../interfaces/link';
+import { LinkMeta, SortKeys, SortParams } from '../../interfaces/link';
+import useUserSettings from './useUserSettings';
+import { SortSetting } from '../../interfaces/userSettings';
 
-type SortParams = typeof DEFAULT_SORT_PARAMS;
-const SORT_CACHE_KEY = 'sortParams';
 const getNameSortConfig = (direction = SORT_DIRECTION.ASC) => ({
     key: 'Name' as SortKeys,
     direction,
     compare: (a: LinkMeta['Name'], b: LinkMeta['Name']) => a.localeCompare(b),
 });
 
+const fieldMap: { [key in SortSetting]: SortKeys } = {
+    [SortSetting.ModifiedAsc]: 'ModifyTime',
+    [SortSetting.ModifiedDesc]: 'ModifyTime',
+    [SortSetting.NameAsc]: 'Name',
+    [SortSetting.NameDesc]: 'Name',
+    [SortSetting.SizeAsc]: 'Size',
+    [SortSetting.SizeDesc]: 'Size',
+    [SortSetting.TypeAsc]: 'MIMEType',
+    [SortSetting.TypeDesc]: 'MIMEType',
+};
+
 function useDriveSorting(getList: (sortParams: SortParams) => LinkMeta[]) {
-    const cache = useCache();
-    if (!cache.has(SORT_CACHE_KEY)) {
-        cache.set(SORT_CACHE_KEY, DEFAULT_SORT_PARAMS);
-    }
+    const { sort, changeSort } = useUserSettings();
+
+    const sortParams = useMemo((): SortParams => {
+        const sortOrder = sort < 0 ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC;
+        const sortField = fieldMap[sort];
+        return {
+            sortOrder,
+            sortField,
+        };
+    }, [sort]);
 
     const getConfig = (sortField: SortKeys, direction: SORT_DIRECTION) => {
         const configs: {
@@ -30,15 +47,27 @@ function useDriveSorting(getList: (sortParams: SortParams) => LinkMeta[]) {
         return configs[sortField];
     };
 
-    const sortParams: SortParams = cache.get(SORT_CACHE_KEY);
     const { sortedList, setConfigs } = useMultiSortedList(
         getList(sortParams),
         getConfig(sortParams.sortField, sortParams.sortOrder)
     );
 
-    const setSorting = (sortField: SortKeys, sortOrder: SORT_DIRECTION) => {
-        cache.set(SORT_CACHE_KEY, { sortField, sortOrder });
+    const setSorting = async (sortField: SortKeys, sortOrder: SORT_DIRECTION) => {
         setConfigs(getConfig(sortField, sortOrder));
+        const sortSettingValue = Object.entries(fieldMap).find(([setting, fieldName]) => {
+            if (fieldName === sortField) {
+                const settingValue = Number(setting);
+                const isSameDirection =
+                    (sortOrder === SORT_DIRECTION.ASC && settingValue > 0) ||
+                    (sortOrder === SORT_DIRECTION.DESC && settingValue < 0);
+                return isSameDirection;
+            }
+            return false;
+        })?.[0];
+
+        if (sortSettingValue) {
+            await changeSort(Number(sortSettingValue));
+        }
     };
 
     return {

@@ -34,7 +34,7 @@ const calculateCellDimensions = (areaWidth: number) => {
 
 type Props = Omit<
     FileBrowserProps,
-    'view' | 'onToggleAllSelected' | 'isPreview' | 'caption' | 'setSorting' | 'sortParams'
+    'layout' | 'onToggleAllSelected' | 'isPreview' | 'caption' | 'setSorting' | 'sortParams'
 >;
 
 type ItemCellData = {

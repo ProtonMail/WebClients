@@ -11,7 +11,6 @@ import { DownloadProvider } from '../components/downloads/DownloadProvider';
 import TrashContainer from './TrashContainer/TrashContainer';
 import DriveContainer from './DriveContainer/DriveContainer';
 import TransferManager from '../components/TransferManager/TransferManager';
-import FileBrowerLayoutProvider from '../components/FileBrowser/FileBrowserLayoutProvider';
 import DriveErrorBoundary from '../components/DriveErrorBoundary';
 import useDrive from '../hooks/drive/useDrive';
 import NoAccessContainer from './NoAccessContainer/NoAccessContainer';
@@ -66,13 +65,11 @@ const InitContainer = () => {
         <>
             <ModalsChildren />
             <TransferManager />
-            <FileBrowerLayoutProvider>
-                <Switch>
-                    <Route path="/trash" component={TrashContainer} />
-                    <Route path="/" component={DriveContainer} />
-                    <Redirect to="/" />
-                </Switch>
-            </FileBrowerLayoutProvider>
+            <Switch>
+                <Route path="/trash" component={TrashContainer} />
+                <Route path="/" component={DriveContainer} />
+                <Redirect to="/" />
+            </Switch>
         </>
     );
 };

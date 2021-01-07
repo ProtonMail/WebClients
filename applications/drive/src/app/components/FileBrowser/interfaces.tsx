@@ -1,5 +1,6 @@
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { LinkType, SortParams, SortKeys } from '../../interfaces/link';
+import { LayoutSetting } from '../../interfaces/userSettings';
 
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
@@ -41,7 +42,7 @@ export interface ItemProps {
 }
 
 export interface FileBrowserProps {
-    view: 'list' | 'grid';
+    layout: LayoutSetting;
     loading?: boolean;
     scrollAreaRef: React.RefObject<HTMLDivElement>;
     shareId: string;

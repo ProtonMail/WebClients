@@ -2,13 +2,14 @@ import React from 'react';
 import { FileBrowserProps } from './interfaces';
 import ListView from './ListView/ListView';
 import GridView from './GridView/GridView';
+import { LayoutSetting } from '../../interfaces/userSettings';
 
 /**
  * File browser that supports grid view and list view
  * If only grid or list view is needed better use them directly
  */
 const FileBrowser = ({
-    view,
+    layout,
     loading,
     caption,
     contents,
@@ -27,7 +28,7 @@ const FileBrowser = ({
     setSorting,
     getDragMoveControls,
 }: FileBrowserProps) => {
-    return view === 'grid' ? (
+    return layout === LayoutSetting.Grid ? (
         <GridView
             scrollAreaRef={scrollAreaRef}
             shareId={shareId}

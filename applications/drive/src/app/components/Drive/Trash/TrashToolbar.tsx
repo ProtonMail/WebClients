@@ -19,7 +19,7 @@ const TrashToolbar = ({ shareId }: Props) => {
             <DeletePermanentlyButton shareId={shareId} disabled={!selectedItems.length} />
 
             <span className="mlauto flex">
-                <LayoutDropdown layoutId="trash" />
+                <LayoutDropdown />
             </span>
         </Toolbar>
     );

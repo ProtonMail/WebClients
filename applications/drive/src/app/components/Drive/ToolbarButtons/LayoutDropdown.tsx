@@ -9,18 +9,15 @@ import {
     ToolbarButton,
     DropdownCaret,
 } from 'react-components';
-import { useFileBrowserLayout } from '../../FileBrowser/FileBrowserLayoutProvider';
+import useUserSettings from '../../../hooks/drive/useUserSettings';
+import { LayoutSetting } from '../../../interfaces/userSettings';
 
-interface Props {
-    layoutId?: string;
-}
-
-const LayoutDropdown = ({ layoutId }: Props) => {
-    const { changeView, view } = useFileBrowserLayout(layoutId);
+const LayoutDropdown = () => {
+    const { layout, changeLayout } = useUserSettings();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const id = `dropdown-layout-${layoutId}`;
-    const buttonIcon = view === 'grid' ? 'layout-columns' : 'layout-rows';
+    const id = `dropdown-layout`;
+    const buttonIcon = layout === LayoutSetting.Grid ? 'layout-columns' : 'layout-rows';
 
     return (
         <>
@@ -39,14 +36,14 @@ const LayoutDropdown = ({ layoutId }: Props) => {
                 <DropdownMenu>
                     <DropdownMenuButton
                         className="flex flex-nowrap alignleft"
-                        onClick={() => changeView('list', layoutId)}
+                        onClick={() => changeLayout(LayoutSetting.List)}
                     >
                         <Icon className="mt0-25 mr0-5" name="layout-rows" />
                         {c('Action').t`List layout`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="flex flex-nowrap alignleft"
-                        onClick={() => changeView('grid', layoutId)}
+                        onClick={() => changeLayout(LayoutSetting.Grid)}
                     >
                         <Icon className="mt0-25 mr0-5" name="layout-columns" />
                         {c('Action').t`Grid layout`}
