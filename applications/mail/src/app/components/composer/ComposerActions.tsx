@@ -27,12 +27,10 @@ interface Props {
     lock: boolean;
     opening: boolean;
     sending: boolean;
-    manualSaving: boolean;
     syncInProgress: boolean;
     onAddAttachments: (files: File[]) => void;
     onPassword: () => void;
     onExpiration: () => void;
-    onSave: () => Promise<void>;
     onSend: () => Promise<void>;
     onDelete: () => Promise<void>;
     addressesBlurRef: MutableRefObject<() => void>;
@@ -45,12 +43,10 @@ const ComposerActions = ({
     lock,
     opening,
     sending,
-    manualSaving,
     syncInProgress,
     onAddAttachments,
     onPassword,
     onExpiration,
-    onSave,
     onSend,
     onDelete,
     addressesBlurRef,
@@ -151,16 +147,6 @@ const ComposerActions = ({
                         onClick={handleDelete}
                     >
                         <span className="sr-only">{c('Action').t`Delete draft`}</span>
-                    </Button>
-                </Tooltip>
-                <Tooltip title={c('Action').t`Save`} className="flex mr0-5">
-                    <Button
-                        className="inline-flex flex-items-center pm-button--for-icon"
-                        icon="save"
-                        disabled={lock || manualSaving}
-                        onClick={() => onSave()}
-                    >
-                        <span className="sr-only">{c('Action').t`Save`}</span>
                     </Button>
                 </Tooltip>
                 <Button

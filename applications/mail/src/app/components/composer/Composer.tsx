@@ -100,10 +100,6 @@ const Composer = ({
     // Some behavior has to change, example, stop auto saving
     const [sending, setSending] = useState(false);
 
-    // Indicates that the composer is saving the message
-    // Not background auto-save, only user manually using the save button
-    const [manualSaving, setManualSaving] = useState(false);
-
     // Indicates that the composer is open but the edited message is not yet ready
     // Needed to prevent edition while data is not ready
     const [editorReady, setEditorReady] = useState(false);
@@ -321,16 +317,11 @@ const Composer = ({
 
     const handleManualSaveAfterUploads = useHandler(async () => {
         autoSave.abort?.();
-        try {
-            await actualSave(modelMessage);
-            createNotification({ text: c('Info').t`Message saved` });
-        } finally {
-            setManualSaving(false);
-        }
+        await actualSave(modelMessage);
+        createNotification({ text: c('Info').t`Message saved` });
     });
 
     const handleManualSave = async () => {
-        setManualSaving(true);
         await promiseUploadInProgress.current;
         // Split handlers to have the updated version of the message
         await handleManualSaveAfterUploads();
@@ -503,12 +494,10 @@ const Composer = ({
                         lock={lock}
                         opening={opening}
                         sending={sending}
-                        manualSaving={manualSaving}
                         syncInProgress={syncInProgress}
                         onAddAttachments={handleAddAttachmentsStart}
                         onExpiration={handleExpiration}
                         onPassword={handlePassword}
-                        onSave={handleManualSave}
                         onSend={handleSend}
                         onDelete={handleDelete}
                         addressesBlurRef={addressesBlurRef}
