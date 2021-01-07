@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { c } from 'ttag';
-import { useLoading } from 'react-components';
 import createListeners from 'proton-shared/lib/helpers/listeners';
 import { wait } from 'proton-shared/lib/helpers/promise';
 
@@ -30,7 +29,6 @@ enum SendingStep {
 
 const SendingMessageNotification = ({ manager }: SendingMessageNotificationProps) => {
     const [state, setState] = useState(SendingStep.sending);
-    const [loading, withLoading] = useLoading();
     const onUndoRef = useRef<() => Promise<void> | undefined>();
 
     useEffect(() => {
@@ -55,7 +53,7 @@ const SendingMessageNotification = ({ manager }: SendingMessageNotificationProps
         return (
             <>
                 <span className="mr1">{c('Info').t`Message sent`}</span>
-                <UndoButton onUndo={() => withLoading(onUndo())} loading={loading} />
+                <UndoButton onUndo={onUndo} />
             </>
         );
     }

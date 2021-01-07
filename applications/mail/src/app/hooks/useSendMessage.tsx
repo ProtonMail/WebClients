@@ -201,6 +201,9 @@ export const useSendMessage = () => {
             const hasUndo = !!delaySendSeconds;
 
             const handleUndo = async () => {
+                if (sendingMessageNotificationManager) {
+                    hideNotification(sendingMessageNotificationManager.ID);
+                }
                 const savedMessage = messageCache.get(localID) as MessageExtendedWithData;
                 await api(cancelSend(savedMessage.data.ID));
                 createNotification({ text: c('Message notification').t`Sending undone` });
@@ -285,7 +288,7 @@ export const useSendMessage = () => {
                     }
 
                     if (hasUndo) {
-                        call();
+                        void call();
                     }
                 }, Math.max(undoTimeout, 2500));
 
@@ -295,7 +298,7 @@ export const useSendMessage = () => {
                     showEmbeddedImages: undefined,
                 });
 
-                call();
+                void call();
 
                 // Navigation to the sent message
                 const {
