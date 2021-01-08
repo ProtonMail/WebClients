@@ -6,6 +6,8 @@ import { classnames, useToggle, useNotifications, useMailSettings, useHandler } 
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 import { COMPOSER_MODE } from 'proton-shared/lib/constants';
+import { wait } from 'proton-shared/lib/helpers/promise';
+
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import ComposerTitleBar from './ComposerTitleBar';
 import ComposerMeta from './ComposerMeta';
@@ -34,6 +36,7 @@ import { OnCompose } from '../../hooks/useCompose';
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,
 } from '../notifications/SendingMessageNotification';
+import SavingDraftNotification from '../notifications/SavingDraftNotification';
 
 enum ComposerInnerModal {
     None,
@@ -330,10 +333,46 @@ const Composer = ({
         setInnerModal(ComposerInnerModal.None);
     };
 
-    const handleManualSaveAfterUploads = useHandler(async () => {
+    const handleDelete = async () => {
+        setClosing(true);
         autoSave.abort?.();
-        await actualSave(modelMessage);
-        createNotification({ text: c('Info').t`Message saved` });
+        try {
+            if (syncedMessage.data?.ID) {
+                await addAction(deleteDraft);
+            }
+            createNotification({ text: c('Info').t`Draft discarded` });
+        } finally {
+            onClose();
+        }
+    };
+
+    const handleManualSaveAfterUploads = useHandler(async () => {
+        let notificationID: number | undefined;
+        autoSave.abort?.();
+        try {
+            const promise = actualSave(modelMessage);
+            notificationID = createNotification({
+                text: (
+                    <SavingDraftNotification
+                        promise={promise}
+                        onDiscard={() => {
+                            if (notificationID) {
+                                hideNotification(notificationID);
+                            }
+                            void handleDelete();
+                        }}
+                    />
+                ),
+                expiration: -1,
+                disableAutoClose: true,
+            });
+            await promise;
+            await wait(3000);
+        } finally {
+            if (notificationID) {
+                hideNotification(notificationID);
+            }
+        }
     });
 
     const handleManualSave = async () => {
@@ -388,19 +427,6 @@ const Composer = ({
         await handleSendAfterUploads();
     });
 
-    const handleDelete = async () => {
-        setClosing(true);
-        autoSave.abort?.();
-        try {
-            if (syncedMessage.data?.ID) {
-                await addAction(deleteDraft);
-            }
-            createNotification({ text: c('Info').t`Message discarded` });
-        } finally {
-            onClose();
-        }
-    };
-
     const handleClick = async () => {
         if (minimized) {
             toggleMinimized();
@@ -411,7 +437,18 @@ const Composer = ({
         setClosing(true);
         try {
             if (pendingSave.current || uploadInProgress) {
-                void handleManualSave();
+                void handleManualSave().catch(() => {
+                    createNotification({
+                        text: c('Error').t`Draft could not be saved. Try again.`,
+                        type: 'error',
+                    });
+                    onCompose({
+                        existingDraft: {
+                            localID: syncedMessage.localID,
+                            data: syncedMessage.data,
+                        },
+                    });
+                });
             }
         } finally {
             onClose();
