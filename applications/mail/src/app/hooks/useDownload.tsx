@@ -148,7 +148,12 @@ export const usePreview = () => {
             const download = await formatDownload(attachment, message.verification, messageKeys, cache, api);
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
-                await showConfirmModal([download]);
+                const handleError = async () => {
+                    await showConfirmModal([download]);
+                    await generateDownload(download);
+                };
+
+                void handleError();
             }
 
             return download;
