@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from 'react';
 import { useApi, useNotifications, useAuthentication, useHandler } from 'react-components';
 import { c } from 'ttag';
 import { removeAttachment } from 'proton-shared/lib/api/attachments';
+import { readFileAsBuffer } from 'proton-shared/lib/helpers/file';
 import { Upload } from '../helpers/upload';
 import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../helpers/attachment/attachmentUploader';
 import {
@@ -18,6 +19,7 @@ import { EditorActionsRef } from '../components/composer/editor/SquireEditorWrap
 import { MessageChange } from '../components/composer/Composer';
 import { useMessageCache } from '../containers/MessageProvider';
 import { useGetMessageKeys } from './message/useGetMessageKeys';
+import { useAttachmentCache } from '../containers/AttachmentProvider';
 
 export interface PendingUpload {
     file: File;
@@ -35,6 +37,7 @@ export const useAttachments = (
     const auth = useAuthentication();
     const messageCache = useMessageCache();
     const getMessageKeys = useGetMessageKeys();
+    const attachmentCache = useAttachmentCache();
 
     // Pending files to upload
     const [pendingFiles, setPendingFiles] = useState<File[]>();
@@ -70,6 +73,10 @@ export const useAttachments = (
     const handleAddAttachmentEnd = useHandler(async (action: ATTACHMENT_ACTION, pendingUpload: PendingUpload) => {
         try {
             const upload = await pendingUpload.upload.resultPromise;
+
+            const data = new Uint8Array(await readFileAsBuffer(pendingUpload.file));
+            const filename = pendingUpload.file.name;
+            attachmentCache.set(upload.attachment.ID || '', { data, verified: 1, filename, signatures: [] });
 
             onChange((message: MessageExtended) => {
                 // New attachment list

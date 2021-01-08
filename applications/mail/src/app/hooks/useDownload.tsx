@@ -4,6 +4,7 @@ import React, { useCallback } from 'react';
 import { Alert, ConfirmModal, useApi, useModals } from 'react-components';
 import { c, msgid } from 'ttag';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
+import { useMessageCache } from '../containers/MessageProvider';
 import {
     Download,
     formatDownload,
@@ -71,15 +72,30 @@ const useShowConfirmModal = () => {
     );
 };
 
+/**
+ * Returns the keys from the sender of the message version in cache
+ * Extra security here because when used in the composer context,
+ * sender address can be desynchronized from the attachment key packets
+ */
+const useSyncedMessageKeys = () => {
+    const messageCache = useMessageCache();
+    const getMessageKeys = useGetMessageKeys();
+
+    return (localID: string) => {
+        const messageFromCache = messageCache.get(localID) as MessageExtendedWithData;
+        return getMessageKeys(messageFromCache.data);
+    };
+};
+
 export const useDownload = () => {
     const api = useApi();
     const cache = useAttachmentCache();
     const showConfirmModal = useShowConfirmModal();
-    const getMessageKeys = useGetMessageKeys();
+    const getMessageKeys = useSyncedMessageKeys();
 
     return useCallback(
         async (message: MessageExtendedWithData, attachment: Attachment) => {
-            const messageKeys = await getMessageKeys(message.data);
+            const messageKeys = await getMessageKeys(message.localID);
             const download = await formatDownload(attachment, message, messageKeys, cache, api);
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
@@ -97,11 +113,11 @@ export const useDownloadAll = () => {
     const api = useApi();
     const cache = useAttachmentCache();
     const showConfirmModal = useShowConfirmModal();
-    const getMessageKeys = useGetMessageKeys();
+    const getMessageKeys = useSyncedMessageKeys();
 
     return useCallback(
         async (message: MessageExtendedWithData) => {
-            const messageKeys = await getMessageKeys(message.data);
+            const messageKeys = await getMessageKeys(message.localID);
             const list = await formatDownloadAll(message, messageKeys, cache, api);
             const isError = list.some(({ isError }) => isError);
             const senderVerificationFailed = list.some(
@@ -121,12 +137,12 @@ export const useDownloadAll = () => {
 export const usePreview = () => {
     const api = useApi();
     const cache = useAttachmentCache();
-    const getMessageKeys = useGetMessageKeys();
+    const getMessageKeys = useSyncedMessageKeys();
     const showConfirmModal = useShowConfirmModal();
 
     return useCallback(
         async (message: MessageExtendedWithData, attachment: Attachment) => {
-            const messageKeys = await getMessageKeys(message.data);
+            const messageKeys = await getMessageKeys(message.localID);
             const download = await formatDownload(attachment, message, messageKeys, cache, api);
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
