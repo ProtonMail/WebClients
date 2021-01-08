@@ -45,7 +45,7 @@ const AttachmentPreview = (
         (ref as MutableRefObject<AttachmentPreviewControls>).current = {
             preview: handlePreview,
         };
-    }, []);
+    });
 
     if (!previewing) {
         return null;

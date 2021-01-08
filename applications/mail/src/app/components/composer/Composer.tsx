@@ -186,6 +186,21 @@ const Composer = ({
             };
             setModelMessage(newModelMessage);
             void reloadSendInfo(messageSendInfo, newModelMessage);
+        } else {
+            let change = false;
+            const Attachments = modelMessage.data?.Attachments?.map((attachment) => {
+                const match = syncedMessage?.data?.Attachments.find(
+                    (syncedAttachment) => attachment.ID === syncedAttachment.ID
+                );
+                if (match && attachment.KeyPackets !== match.KeyPackets) {
+                    change = true;
+                    return { ...attachment, KeyPackets: match.KeyPackets };
+                }
+                return attachment;
+            });
+            if (change) {
+                setModelMessage({ ...modelMessage, data: { ...modelMessage.data, Attachments } as Message });
+            }
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID]);
 
