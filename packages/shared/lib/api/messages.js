@@ -100,6 +100,11 @@ export const readReceipt = (messageID) => ({
     url: `mail/v4/messages/${messageID}/receipt`,
 });
 
+export const markAsHam = (messageID) => ({
+    method: 'put',
+    url: `mail/v4/messages/${messageID}/mark/ham`,
+});
+
 export const markMessageAsRead = (IDs) => ({
     method: 'put',
     url: 'mail/v4/messages/read',
