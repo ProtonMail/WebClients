@@ -1,3 +1,23 @@
+# [4.0.0 - Beta 34] - 2020-01-13
+
+## Improvements
+
+-   Undo send is available to free users
+-   User is able to set the undo send delay to 5, 10 or 20 seconds
+-   Improved filter creation flow
+-   Various UX and UI improvements to the import assistant
+-   Various improvements to better support localization / translation
+-   UI improvements to the recipient's list in the composer
+
+## Fixes
+
+-   Fixed an issue whereby in some case sending a message would trigger a chain of "too many API requests" errors
+-   Fixed some issues related to the file preview not working at all or displaying only a minimized version of the file
+-   Fixed an issue whereby unselecting all contacts from a group will freeze the application
+-   Fixed some issues related to pasting content in the composers
+-   Fixed an issue whereby in some cases undoing a move would not work
+-   Fixed a bug whereby default auto-reply would not be saved in some cases
+
 # [4.0.0 - Beta 33] - 2020-12-16
 
 ## New features
