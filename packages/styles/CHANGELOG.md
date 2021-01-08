@@ -3,7 +3,8 @@
 ## New
 
 - added `z-index` helper
-- added `tv` icon
+- Refactor all design system arbo ^^
+- added `tv`, `broken-link` icon
 
 ## Updated/fixes
 
