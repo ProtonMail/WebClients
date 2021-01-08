@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { useConfig } from '../../hooks';
 import { getChallengeURL, handleEvent, normalizeSelectOptions } from './challengeHelper';
 
-const ERROR_TIMEOUT_MS = 10000;
-const CHALLENGE_TIMEOUT_MS = 7000;
+export const ERROR_TIMEOUT_MS = 10000;
+export const CHALLENGE_TIMEOUT_MS = 7000;
 
 export type ChallengeResult = { [key: string]: string } | undefined;
 
@@ -24,6 +24,8 @@ export interface Props
     type: number;
     onError?: () => void;
     onLoaded?: () => void;
+    errorTimeout?: number;
+    challengeTimeout?: number;
 }
 const ChallengeFrame = ({
     type,
@@ -36,6 +38,8 @@ const ChallengeFrame = ({
     innerClassName = '',
     challengeRef,
     src,
+    errorTimeout = ERROR_TIMEOUT_MS,
+    challengeTimeout = CHALLENGE_TIMEOUT_MS,
     ...rest
 }: Props) => {
     const config = useConfig();
@@ -55,7 +59,7 @@ const ChallengeFrame = ({
             error = true;
             onError?.();
         };
-        let errorTimeout = window.setTimeout(handleError, ERROR_TIMEOUT_MS);
+        let errorTimeoutHandle = window.setTimeout(handleError, errorTimeout);
 
         const challengeUrlSrc = getChallengeURL(config.API_URL, type).toString();
         const styleSrcs = [...document.querySelectorAll<HTMLLinkElement>('link[rel=stylesheet]')].map((x) => {
@@ -71,7 +75,7 @@ const ChallengeFrame = ({
         let assetsLoaded = 0;
 
         const handleInitDone = () => {
-            clearTimeout(errorTimeout);
+            clearTimeout(errorTimeoutHandle);
             setIsLoaded(true);
             onLoaded?.();
         };
@@ -139,8 +143,8 @@ const ChallengeFrame = ({
                     return;
                 }
 
-                clearTimeout(errorTimeout);
-                errorTimeout = window.setTimeout(handleError, ERROR_TIMEOUT_MS);
+                clearTimeout(errorTimeoutHandle);
+                errorTimeoutHandle = window.setTimeout(handleError, errorTimeout);
 
                 contentWindow.postMessage(
                     {
@@ -210,7 +214,7 @@ const ChallengeFrame = ({
                     );
                     window.setTimeout(() => {
                         reject(new Error('Challenge timeout'));
-                    }, CHALLENGE_TIMEOUT_MS);
+                    }, challengeTimeout);
                 });
             },
         };
