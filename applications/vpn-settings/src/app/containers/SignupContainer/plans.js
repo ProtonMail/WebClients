@@ -60,6 +60,14 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     />
                 </>,
                 <>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`NetShield`}</del>
+                    <Info
+                        title={c('Info')
+                            .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
+                        url=" https://protonvpn.com/support/netshield/"
+                    />
+                </>,
+                <>
                     <del className="opacity-50 mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
                     <Info
                         title={c('Info')
@@ -112,6 +120,14 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     />
                 </>,
                 <>
+                    <span className="mr0-5">{c('Plan feature').t`NetShield`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
+                        url=" https://protonvpn.com/support/netshield/"
+                    />
+                </>,
+                <>
                     <del className="opacity-50 mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
                     <Info
                         title={c('Info')
@@ -157,6 +173,14 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     />
                 </>,
                 <>
+                    <span className="mr0-5">{c('Plan feature').t`NetShield`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
+                        url=" https://protonvpn.com/support/netshield/"
+                    />
+                </>,
+                <>
                     <span className="mr0-5">{c('Plan feature').t`Secure Core VPN`}</span>
                     <Info
                         title={c('Info')
@@ -197,6 +221,14 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                         title={c('Info')
                             .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`}
                         url="https://protonmail.com"
+                    />
+                </>,
+                <>
+                    <span className="mr0-5">{c('Plan feature').t`NetShield`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
+                        url=" https://protonvpn.com/support/netshield/"
                     />
                 </>,
             ],
