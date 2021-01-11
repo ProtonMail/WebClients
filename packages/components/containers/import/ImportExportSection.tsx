@@ -43,7 +43,7 @@ const ImportExportSection = () => {
 
     if (!hasPaidMail) {
         const upgradeLink = (
-            <AppLink to="/subscription" toApp={APPS.PROTONACCOUNT}>
+            <AppLink key="upgradeLink" to="/subscription" toApp={APPS.PROTONACCOUNT}>
                 {c('Action').t`upgrade`}
             </AppLink>
         );
