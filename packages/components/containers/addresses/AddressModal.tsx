@@ -45,7 +45,7 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
         if (!hasPremium && `${user.Name}@${premiumDomain}`.toLowerCase() === `${Local}@${Domain}`.toLowerCase()) {
             return createNotification({
                 text: c('Error')
-                    .t`${Local} is your username. To create ${Local}@${Domain}, please go to Settings > Identity > Short domain (pm.me)`,
+                    .t`${Local} is your username. To create ${Local}@${Domain}, please go to Settings > Addresses > Short domain (pm.me)`,
                 type: 'error',
             });
         }
