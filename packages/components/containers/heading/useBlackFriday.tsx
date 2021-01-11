@@ -14,11 +14,11 @@ import {
     useApi,
     useConfig,
     useProductPayerPeriod,
+    usePromoModalState,
     useBlackFridayPeriod,
 } from '../../hooks';
 import { MailBlackFridayModal, NewSubscriptionModal, VPNBlackFridayModal } from '../payments';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
-import usePromoModalState from './usePromoModalState';
 
 const useBlackFriday = () => {
     const api = useApi();

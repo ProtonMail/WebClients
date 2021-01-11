@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getFeature, updateFeatureValue } from 'proton-shared/lib/api/features';
 
-import { useApi, useLoading } from '../../hooks';
+import useApi from './useApi';
+import useLoading from './useLoading';
 
-const usePromoModalState = (featureID: string) => {
+const usePromoModalState = (featureID: string, fallbackValue = true) => {
     const [loading, withLoading] = useLoading(true);
     const [state, setState] = useState(false);
     const api = useApi();
@@ -16,7 +17,7 @@ const usePromoModalState = (featureID: string) => {
             setState(typeof Value === 'undefined' ? DefaultValue : Value);
         } catch {
             // If it fails, we define promo state as already seen
-            setState(true);
+            setState(fallbackValue);
         }
     };
 
