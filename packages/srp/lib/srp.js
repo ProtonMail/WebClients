@@ -156,7 +156,7 @@ export const generateProofs = async ({ len, modulusArray, hashedPasswordArray, s
     const exponent = scramblingParam
         .multiply(hashedPassword)
         .add(clientSecret)
-        .divide(modulus.subtract(ONE_BN)).remainder;
+        .divide(modulusMinusOne).remainder;
 
     const sharedSession = modulus.power(subtracted, exponent);
 
