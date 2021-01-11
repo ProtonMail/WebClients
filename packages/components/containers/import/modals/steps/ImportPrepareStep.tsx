@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useRef } from 'react';
+import React, { useMemo, useEffect, useRef, useState } from 'react';
 import { format, isValid } from 'date-fns';
 import { c, msgid } from 'ttag';
 
@@ -20,6 +20,12 @@ interface Props {
     modalModel: ImportModalModel;
     updateModalModel: (newModel: ImportModalModel) => void;
     address: Address;
+}
+
+enum CustomFieldsBitmap {
+    Mapping = 1,
+    Label = 2,
+    Period = 4,
 }
 
 const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => {
@@ -84,19 +90,40 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
         updateModalModel(initialModel.current);
     };
 
-    const isCustom = useMemo(() => {
-        const { ImportLabel, StartTime, EndTime, Mapping } = initialModel.current.payload;
-
-        return (
-            StartTime !== payload.StartTime ||
-            EndTime !== payload.EndTime ||
-            !isDeepEqual(ImportLabel, payload.ImportLabel) ||
-            !isDeepEqual(Mapping, payload.Mapping)
-        );
-    }, [initialModel.current.payload, payload]);
+    const [isCustom, setIsCustom] = useState(false);
 
     useEffect(() => {
-        updateModalModel({ ...modalModel, isPayloadValid: showFoldersNumError || showFoldersNameError });
+        const { StartTime, EndTime, ImportLabel, Mapping } = initialModel.current.payload;
+
+        const isCustomPeriod = StartTime !== payload.StartTime || EndTime !== payload.EndTime;
+        const isCustomLabel = !isDeepEqual(ImportLabel, payload.ImportLabel);
+        const isCustomMapping = !isDeepEqual(Mapping, payload.Mapping);
+
+        let CustomFields = 0;
+
+        if (isCustomMapping) {
+            CustomFields += CustomFieldsBitmap.Mapping;
+        }
+        if (isCustomLabel) {
+            CustomFields += CustomFieldsBitmap.Label;
+        }
+        if (isCustomPeriod) {
+            CustomFields += CustomFieldsBitmap.Period;
+        }
+
+        setIsCustom(isCustomPeriod || isCustomLabel || isCustomMapping);
+
+        updateModalModel({
+            ...modalModel,
+            payload: {
+                ...modalModel.payload,
+                CustomFields,
+            },
+        });
+    }, [payload.StartTime, payload.EndTime, payload.ImportLabel, payload.Mapping]);
+
+    useEffect(() => {
+        updateModalModel({ ...modalModel, isPayloadInvalid: showFoldersNumError || showFoldersNameError });
     }, [showFoldersNumError, showFoldersNameError]);
 
     const getParentSource = (folderPath: string, separator: string) => {

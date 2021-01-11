@@ -55,7 +55,7 @@ export interface ImportModalModel {
     errorLabel: string;
     selectedPeriod: TIME_UNIT;
     payload: ImportPayloadModel;
-    isPayloadValid: boolean;
+    isPayloadInvalid: boolean;
 }
 
 export interface FolderMapping {
@@ -78,6 +78,7 @@ export interface ImportPayloadModel {
     StartTime?: Date;
     EndTime?: Date;
     Mapping: FolderMapping[];
+    CustomFields?: number;
 }
 
 export enum ImportMailStatus {
