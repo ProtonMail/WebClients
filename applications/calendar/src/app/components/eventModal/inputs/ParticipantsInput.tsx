@@ -1,5 +1,13 @@
-import React, { ComponentProps, memo, useMemo, useRef } from 'react';
-import { classnames, Icon, Input, useContactEmails, useContactGroups, AddressesAutocomplete } from 'react-components';
+import React, { memo, useMemo, useRef } from 'react';
+import {
+    LinkButton,
+    Tooltip,
+    classnames,
+    Icon,
+    useContactEmails,
+    useContactGroups,
+    AddressesAutocomplete,
+} from 'react-components';
 import { c, msgid } from 'ttag';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -26,16 +34,12 @@ const emailToAttendee = (email: string): AttendeeModel => ({
 interface Props {
     onChange: (recipients: AttendeeModel[]) => void;
     value: AttendeeModel[];
+    className?: string;
+    placeholder: string;
+    id: string;
 }
 
-const ParticipantsInput = ({
-    className,
-    placeholder,
-    value = [],
-    onChange,
-    id,
-    ...props
-}: Props & Omit<ComponentProps<typeof Input>, 'onChange' | 'value'>) => {
+const ParticipantsInput = ({ className, placeholder, value = [], onChange, id }: Props) => {
     const numberOfParticipants = value.length;
     const anchorRef = useRef<HTMLInputElement>(null);
 
@@ -100,9 +104,8 @@ const ParticipantsInput = ({
             <AddressesAutocomplete
                 className={className}
                 placeholder={placeholder}
-                id="participants-input"
+                id={id}
                 data-test-id="participants-input"
-                {...props}
                 ref={anchorRef}
                 anchorRef={anchorRef}
                 contactEmails={contactEmails}
@@ -114,7 +117,7 @@ const ParticipantsInput = ({
             />
 
             {value.length > 0 && (
-                <details className="mt0-25" open>
+                <details className="noborder mt0-25" open>
                     <summary>
                         {c('Event form').ngettext(
                             msgid`${numberOfParticipants} participant`,
@@ -151,24 +154,40 @@ const ParticipantsInput = ({
                                             <span className="color-subheader w100">{c('Label').t`Optional`}</span>
                                         ) : null}
                                     </div>
-                                    <button
-                                        type="button"
-                                        className="flex flex-item-noshrink p0-5"
-                                        onClick={() => setIsOptional(recipient)}
-                                        title={c('Label').t`Optional`}
+                                    <Tooltip
+                                        title={
+                                            isOptional
+                                                ? c('Action').t`Make this participant required`
+                                                : c('Action').t`Make this participant optional`
+                                        }
+                                        className="w2e flex flex-item-noshrink"
                                     >
-                                        <Icon name={isOptional ? 'contact' : 'contact-full'} size={12} />
-                                        <span className="sr-only">{c('Label').t`Optional`}</span>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="flex flex-item-noshrink p0-5"
-                                        onClick={() => onDelete(recipient)}
-                                        title={c('Action').t`Remove`}
+                                        <LinkButton
+                                            type="button"
+                                            className="w2e flex flex-item-noshrink"
+                                            onClick={() => setIsOptional(recipient)}
+                                        >
+                                            <Icon name={isOptional ? 'contact' : 'contact-full'} className="mauto" />
+                                            <span className="sr-only">
+                                                {isOptional
+                                                    ? c('Action').t`Make this participant required`
+                                                    : c('Action').t`Make this participant optional`}
+                                            </span>
+                                        </LinkButton>
+                                    </Tooltip>
+                                    <Tooltip
+                                        title={c('Action').t`Remove this participant`}
+                                        className="w2e flex flex-item-noshrink ml0-5"
                                     >
-                                        <Icon name="close" size={12} />
-                                        <span className="sr-only">{c('Action').t`Remove`}</span>
-                                    </button>
+                                        <LinkButton
+                                            type="button"
+                                            className="w2e flex flex-item-noshrink"
+                                            onClick={() => onDelete(recipient)}
+                                        >
+                                            <Icon name="trash" className="mauto" />
+                                            <span className="sr-only">{c('Action').t`Remove this participant`}</span>
+                                        </LinkButton>
+                                    </Tooltip>
                                 </div>
                             );
                         })}
