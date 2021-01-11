@@ -14,6 +14,9 @@ import {
     SidebarNav,
     SidebarList,
     SidebarListItemsWithSubsections,
+    useModals,
+    usePromoModalState,
+    ImportWelcomeModal,
 } from 'react-components';
 
 import OverviewContainer from './containers/settings/OverviewContainer';
@@ -37,6 +40,30 @@ const SettingsContainer = () => {
     const { isNarrow } = useActiveBreakpoint();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
+
+    const { createModal } = useModals();
+    const [modalState, loadingModalState, setModalState] = usePromoModalState('WelcomeImportModalShown');
+    const [showImportWelcomeModal, setShowImportWelcomeModal] = useState(false);
+
+    useEffect(() => {
+        if (location.pathname === '/settings/import' && !loadingModalState && !modalState) {
+            setShowImportWelcomeModal(true);
+        }
+    }, [location.pathname, modalState, loadingModalState]);
+
+    useEffect(() => {
+        if (!showImportWelcomeModal) {
+            return;
+        }
+        createModal(
+            <ImportWelcomeModal
+                onClose={async () => {
+                    setShowImportWelcomeModal(false);
+                    await setModalState(true);
+                }}
+            />
+        );
+    }, [showImportWelcomeModal]);
 
     useEffect(() => {
         setExpand(false);
@@ -79,7 +106,7 @@ const SettingsContainer = () => {
     );
 
     return (
-        <PrivateAppContainer header={header} sidebar={sidebar}>
+        <PrivateAppContainer isBlurred={showImportWelcomeModal} header={header} sidebar={sidebar}>
             <Switch>
                 <Route path="/settings/overview" exact>
                     <OverviewContainer user={user} />
