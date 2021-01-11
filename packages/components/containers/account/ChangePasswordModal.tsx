@@ -16,7 +16,7 @@ import {
     handleChangeOnePassword,
     getArmoredPrivateKeys,
 } from './changePasswordHelper';
-import { Alert, PasswordInput, TwoFactorInput, Row, Label, Field, Icon, FormModal, Loader } from '../../components';
+import { Alert, PasswordInput, TwoFactorInput, Row, Label, Field, FormModal, Loader } from '../../components';
 import { GenericError } from '../error';
 import {
     useAuthentication,
@@ -443,20 +443,12 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
 
     const isLoading = loadingUserSettings || (isSubUser && !adminAuthTwoFA);
 
-    const eye = <Icon key="0" name="read" />;
+    const boldAlert = <b key="bold-alert">{c('Info').t`Proton can't help you recover any lost passwords`}</b>;
     const alert = (
         <>
             <Alert type="warning">
                 {c('Info')
-                    .t`Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.`}
-                <br />
-                <br />
-                {c('Info')
-                    .jt`Save your password somewhere safe. Click on the ${eye} icon to confirm you that have typed your password correctly.`}
-                <br />
-                <br />
-                {c('Info')
-                    .t`We recommend adding a recovery email address first. Otherwise, you cannot recover your account if something goes wrong.`}
+                    .jt`Make sure you remember the password to log in and decrypt emails. ${boldAlert}. We recommend adding a recovery email first.`}
             </Alert>
         </>
     );
