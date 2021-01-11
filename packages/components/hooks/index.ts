@@ -84,3 +84,4 @@ export { default as useCookieState } from './useCookieState';
 export { default as usePaidCookie } from './usePaidCookie';
 export { default as useActiveWindow } from './useActiveWindow';
 export { default as useErrorHandler } from './useErrorHandler';
+export { default as usePromoModalState } from './usePromoModalState';
