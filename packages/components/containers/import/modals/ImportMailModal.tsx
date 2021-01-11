@@ -100,8 +100,9 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
         selectedPeriod: TIME_UNIT.BIG_BANG,
         payload: {
             Mapping: [],
+            CustomFields: 0,
         },
-        isPayloadValid: false,
+        isPayloadInvalid: false,
     });
     const api = useApi();
     const { call } = useEventManager();
@@ -302,16 +303,16 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
         );
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         switch (modalModel.step) {
             case Step.START:
                 if (isReconnectMode) {
-                    withLoading(resumeImport());
+                    await withLoading(resumeImport());
                     return;
                 }
-                withLoading(submitAuthentication(modalModel.needIMAPDetails));
+                await withLoading(submitAuthentication(modalModel.needIMAPDetails));
                 break;
             case Step.INSTRUCTIONS:
                 if (providerInstructions === PROVIDER_INSTRUCTIONS.GMAIL) {
@@ -331,7 +332,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
                 });
                 break;
             case Step.PREPARE:
-                withLoading(launchImport());
+                await withLoading(launchImport());
                 break;
             case Step.STARTED:
                 onClose();
@@ -368,7 +369,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
     }, [modalModel.step, providerInstructions, gmailInstructionsStep, loading]);
 
     const submitRenderer = useMemo(() => {
-        const { email, password, needIMAPDetails, imap, port, isPayloadValid, step } = modalModel;
+        const { email, password, needIMAPDetails, imap, port, isPayloadInvalid, step } = modalModel;
 
         const disabledStartStep = needIMAPDetails
             ? !email || !password || !imap || !port || invalidPortError
@@ -396,7 +397,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
                 );
             case Step.PREPARE:
                 return (
-                    <PrimaryButton loading={loading} disabled={isPayloadValid} type="submit">
+                    <PrimaryButton loading={loading} disabled={isPayloadInvalid} type="submit">
                         {c('Action').t`Start import`}
                     </PrimaryButton>
                 );
@@ -414,7 +415,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, ...rest }: Props) => {
         modalModel.needIMAPDetails,
         modalModel.imap,
         modalModel.port,
-        modalModel.isPayloadValid,
+        modalModel.isPayloadInvalid,
         loading,
     ]);
 
