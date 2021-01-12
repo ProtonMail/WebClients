@@ -109,7 +109,7 @@ const AttachmentList = ({
     const handleDownloadAll = async () => {
         setShowLoader(true);
         try {
-            await downloadAll(message as MessageExtendedWithData);
+            await downloadAll(message);
         } catch (error) {
             // Notification is handled by the hook
             console.log('error', error);

@@ -32,7 +32,7 @@ export interface GeneratedKey {
 
 export interface ApiKey {
     isInternal: boolean;
-    key: GeneratedKey;
+    keys: GeneratedKey[];
 }
 
 export const apiKeys = new Map<string, ApiKey>();
@@ -41,25 +41,24 @@ const addApiKeysMock = () => {
     addApiMock('keys', (args) => {
         const email = args.params.Email;
         if (apiKeys.has(email)) {
-            const key = apiKeys.get(email) as ApiKey;
+            const apiKey = apiKeys.get(email) as ApiKey;
             return {
-                RecipientType: key.isInternal ? TYPE_INTERNAL : TYPE_EXTERNAL,
-                Keys: [
-                    {
-                        Flags: KEY_FLAG.FLAG_NOT_OBSOLETE | KEY_FLAG.FLAG_NOT_COMPROMISED,
-                        PublicKey: key.key.publicKeyArmored,
-                    },
-                ],
+                RecipientType: apiKey.isInternal ? TYPE_INTERNAL : TYPE_EXTERNAL,
+                Keys: apiKey.keys.map((key) => ({
+                    Flags: KEY_FLAG.FLAG_NOT_OBSOLETE | KEY_FLAG.FLAG_NOT_COMPROMISED,
+                    PublicKey: key.publicKeyArmored,
+                })),
             };
         }
+        console.log('api keys', args, email);
         return {};
     });
 };
 
 addApiKeysMock();
 
-export const addApiKeys = (isInternal: boolean, key: GeneratedKey) => {
-    apiKeys.set(key.email, { isInternal, key });
+export const addApiKeys = (isInternal: boolean, email: string, keys: GeneratedKey[]) => {
+    apiKeys.set(email, { isInternal, keys });
 };
 
 export const clearApiKeys = () => {

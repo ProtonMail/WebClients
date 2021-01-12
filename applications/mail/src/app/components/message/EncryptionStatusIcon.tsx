@@ -21,6 +21,9 @@ const EncryptionStatusIcon = ({
     if (loading) {
         return <Loader className="icon-16p mauto flex" />;
     }
+    if (fill === undefined && isEncrypted === undefined) {
+        return null;
+    }
 
     const href = getSendIconHref({ isEncrypted, fill });
     const iconName = getStatusIconName({ isEncrypted, fill });
@@ -35,6 +38,7 @@ const EncryptionStatusIcon = ({
                     name={iconName}
                     className={colorClassName}
                     alt={text || ''}
+                    data-testid="encryption-icon"
                 />
             </Href>
         </Tooltip>

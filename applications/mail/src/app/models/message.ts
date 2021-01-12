@@ -25,6 +25,41 @@ export interface MessageErrors {
 }
 
 /**
+ * Data structure containing all the needed informations about the signature verification of a message
+ */
+export interface MessageVerification {
+    /**
+     * Signatures verification status flag
+     */
+    verificationStatus: VERIFICATION_STATUS | undefined;
+
+    /**
+     * Signature verification errors, if any
+     */
+    verificationErrors: Error[] | undefined;
+
+    /**
+     * Pinned public keys of the sender, if any
+     */
+    senderPinnedKeys: OpenPGPKey[] | undefined;
+
+    /**
+     * If the sender is in the list of contacts, whether its contact signature has been verified
+     */
+    senderVerified: boolean | undefined;
+
+    /**
+     * If the message is signed, the public key that verifies the signature
+     */
+    signingPublicKey: OpenPGPKey | undefined;
+
+    /**
+     * Attached public key, if the message contains any
+     */
+    attachedPublicKeys: OpenPGPKey[] | undefined;
+}
+
+/**
  * Message attachments limited to the embedded images
  * Mapped by the CID of the embedded attachment
  */
@@ -61,15 +96,21 @@ export interface MessageExtended {
     decryptedBody?: string;
 
     /**
-     * Decrypted subject
-     * Only used in rare situations where the message is sent by an external system which encrypt even the subject
+     * Decrypted raw content
+     * Often the same as decryptedBody except for pgp-mime format, used for signature verification
      */
-    decryptedSubject?: string;
+    decryptedRawContent?: string;
 
     /**
      * Message signature obtained after decryption, if any
      */
     signature?: OpenPGPSignature;
+
+    /**
+     * Decrypted subject
+     * Only used in rare situations where the message is sent by an external system which encrypt even the subject
+     */
+    decryptedSubject?: string;
 
     /**
      * Document representing the message body
@@ -81,36 +122,6 @@ export interface MessageExtended {
      * Mail content when in plaintext mode
      */
     plainText?: string;
-
-    /**
-     * Cryptography signatures verification status flag
-     */
-    verificationStatus?: VERIFICATION_STATUS;
-
-    /**
-     * Signature verification errors, if any
-     */
-    verificationErrors?: Error[];
-
-    /**
-     * Pinned public keys of the sender, if any
-     */
-    senderPinnedKeys?: OpenPGPKey[];
-
-    /**
-     * If the sender is in the list of contacts, whether its contact signature has been verified
-     */
-    senderVerified?: boolean;
-
-    /**
-     * If the message is signed, the public key that verifies the signature
-     */
-    signingPublicKey?: OpenPGPKey;
-
-    /**
-     * Attached public key, if the message contains any
-     */
-    attachedPublicKeys?: OpenPGPKey[];
 
     /**
      * Initialization status of the message
@@ -171,6 +182,11 @@ export interface MessageExtended {
      * Unsubscribed flag
      */
     unsubscribed?: boolean;
+
+    /**
+     * Signature verifications results
+     */
+    verification?: MessageVerification;
 
     /**
      * All kind of errors that appears during message processing

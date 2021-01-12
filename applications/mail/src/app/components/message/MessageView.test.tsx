@@ -14,12 +14,16 @@ import {
     GeneratedKey,
     api,
     attachmentsCache,
+    addApiKeys,
+    addKeysToUserKeysCache,
 } from '../../helpers/test/helper';
 import MessageView, { MessageViewRef } from './MessageView';
 import { Breakpoints } from '../../models/utils';
 import * as messageDecrypt from '../../helpers/message/messageDecrypt';
 import { constructMime } from '../../helpers/send/sendMimeBuilder';
 import { parseInDiv } from '../../helpers/dom';
+import { X_PM_HEADERS } from '../../models/crypto';
+import { addApiContact } from '../../helpers/test/contact';
 
 jest.setTimeout(20000);
 
@@ -73,11 +77,17 @@ const setup = async (specificProps: Partial<MessageViewProps> = {}) => {
 
 describe('MessageView', () => {
     const toAddress = 'me@home.net';
+    const fromAddress = 'someone@somewhere.net';
+    const otherAddress = 'other@somewhere.net';
 
     let toKeys: GeneratedKey;
+    let fromKeys: GeneratedKey;
+    let otherKeys: GeneratedKey;
 
     beforeAll(async () => {
         toKeys = await generateKeys('me', toAddress);
+        fromKeys = await generateKeys('someone', fromAddress);
+        otherKeys = await generateKeys('other', otherAddress);
     });
 
     afterEach(clearAll);
@@ -86,7 +96,7 @@ describe('MessageView', () => {
         it('html', async () => {
             addKeysToAddressKeysCache(addressID, toKeys);
 
-            const encryptedBody = await encryptMessage(body, toKeys);
+            const encryptedBody = await encryptMessage(body, fromKeys, toKeys);
 
             addApiMock(`mail/v4/messages/${messageID}`, () => ({
                 Message: {
@@ -109,7 +119,7 @@ describe('MessageView', () => {
         it('plaintext', async () => {
             addKeysToAddressKeysCache(addressID, toKeys);
 
-            const encryptedBody = await encryptMessage(body, toKeys);
+            const encryptedBody = await encryptMessage(body, fromKeys, toKeys);
 
             addApiMock(`mail/v4/messages/${messageID}`, () => ({
                 Message: {
@@ -148,7 +158,7 @@ describe('MessageView', () => {
                 false
             );
 
-            const encryptedBody = await encryptMessage(mimeBody, toKeys);
+            const encryptedBody = await encryptMessage(mimeBody, fromKeys, toKeys);
 
             addApiMock(`mail/v4/messages/${messageID}`, () => ({
                 Message: { ...message, Body: encryptedBody },
@@ -180,7 +190,7 @@ describe('MessageView', () => {
                 false
             );
 
-            const encryptedBody = await encryptMessage(mimeBody, toKeys);
+            const encryptedBody = await encryptMessage(mimeBody, fromKeys, toKeys);
 
             addApiMock(`mail/v4/messages/${messageID}`, () => ({
                 Message: { ...message, Body: encryptedBody },
@@ -201,10 +211,133 @@ describe('MessageView', () => {
     //     it('source mode', async () => {});
     // });
 
-    // TODO
-    // describe('Signature verification', () => {
-    //     it('verified sender', async () => {});
-    //     it('verification error', async () => {});
-    //     it('trust key banner', async () => {});
-    // });
+    describe('Signature verification', () => {
+        it('verified sender internal', async () => {
+            addKeysToAddressKeysCache(addressID, toKeys);
+            addKeysToUserKeysCache(toKeys);
+            addApiKeys(true, fromAddress, [fromKeys]);
+            addApiContact({ contactID: 'contactID', email: fromAddress, pinKey: fromKeys }, toKeys);
+
+            const encryptedBody = await encryptMessage(body, fromKeys, toKeys);
+
+            addApiMock(`mail/v4/messages/${messageID}`, () => ({
+                Message: {
+                    ID: messageID,
+                    AddressID: addressID,
+                    Sender: {
+                        Address: fromAddress,
+                    },
+                    Subject: subject,
+                    Body: encryptedBody,
+                    MIMEType: MIME_TYPES.DEFAULT,
+                    Attachments: [] as Attachment[],
+                    ParsedHeaders: {
+                        'X-Pm-Origin': X_PM_HEADERS.INTERNAL,
+                        'X-Pm-Content-Encryption': X_PM_HEADERS.END_TO_END,
+                    } as any,
+                    Time: new Date().getTime(),
+                } as Message,
+            }));
+
+            const { open, findByTestId } = await setup();
+
+            await open();
+
+            const icon = await findByTestId('encryption-icon');
+
+            expect(icon.classList.contains('color-pm-blue')).toBe(true);
+            expect((icon.firstChild as Element).getAttribute('xlink:href')).toBe('#shape-locks-check');
+        });
+
+        it('verified sender external', async () => {
+            addKeysToAddressKeysCache(addressID, toKeys);
+            addKeysToUserKeysCache(toKeys);
+            addApiKeys(false, fromAddress, [fromKeys]);
+            addApiContact({ contactID: 'contactID', email: fromAddress, pinKey: fromKeys }, toKeys);
+
+            const message = {
+                ID: messageID,
+                AddressID: addressID,
+                Sender: {
+                    Address: fromAddress,
+                },
+                Subject: subject,
+                MIMEType: MIME_TYPES.DEFAULT,
+                Attachments: [] as Attachment[],
+                ParsedHeaders: {
+                    'X-Pm-Origin': X_PM_HEADERS.EXTERNAL,
+                    'X-Pm-Content-Encryption': X_PM_HEADERS.END_TO_END,
+                } as any,
+                Time: new Date().getTime(),
+            } as Message;
+
+            const mimeBody = await constructMime(
+                { localID, data: message, document: parseInDiv(body) },
+                toKeys,
+                attachmentsCache,
+                api,
+                false
+            );
+
+            const encryptedBody = await encryptMessage(mimeBody, fromKeys, toKeys);
+
+            addApiMock(`mail/v4/messages/${messageID}`, () => ({
+                Message: { ...message, Body: encryptedBody },
+            }));
+
+            const { open, findByTestId } = await setup();
+
+            await open();
+
+            const icon = await findByTestId('encryption-icon');
+
+            expect(icon.classList.contains('color-global-success')).toBe(true);
+            expect((icon.firstChild as Element).getAttribute('xlink:href')).toBe('#shape-locks-check');
+        });
+
+        it('signature verification error', async () => {
+            addKeysToAddressKeysCache(addressID, toKeys);
+            addKeysToUserKeysCache(toKeys);
+            addApiKeys(true, fromAddress, []);
+            addApiContact({ contactID: 'contactID', email: fromAddress, pinKey: otherKeys }, toKeys);
+
+            const encryptedBody = await encryptMessage(body, fromKeys, toKeys);
+
+            addApiMock(`mail/v4/messages/${messageID}`, () => ({
+                Message: {
+                    ID: messageID,
+                    AddressID: addressID,
+                    Sender: {
+                        Address: fromAddress,
+                    },
+                    Subject: subject,
+                    Body: encryptedBody,
+                    MIMEType: MIME_TYPES.DEFAULT,
+                    Attachments: [] as Attachment[],
+                    ParsedHeaders: {
+                        'X-Pm-Origin': X_PM_HEADERS.INTERNAL,
+                        'X-Pm-Content-Encryption': X_PM_HEADERS.END_TO_END,
+                    } as any,
+                    Time: new Date().getTime(),
+                } as Message,
+            }));
+
+            const { open, findByTestId } = await setup();
+
+            await open();
+
+            const icon = await findByTestId('encryption-icon');
+
+            expect(icon.classList.contains('color-pm-blue')).toBe(true);
+            expect((icon.firstChild as Element).getAttribute('xlink:href')).toBe('#shape-locks-warning');
+        });
+
+        // TODO
+        // describe('Trust key banner', () => {
+        //     it('AUTOPROMPT', async () => {});
+        //     it('PIN_UNSEEN', async () => {});
+        //     it('PIN_ATTACHED_SIGNING mode', async () => {});
+        //     it('PIN_ATTACHED mode', async () => {});
+        // });
+    });
 });

@@ -156,7 +156,7 @@ const fetchMimeDependencies = async (
     return Promise.all(
         getAttachments(message.data).map(async (attachment) => ({
             attachment,
-            data: await get(attachment, message, messageKeys, cache, api),
+            data: await get(attachment, message.verification, messageKeys, cache, api),
         }))
     );
 };

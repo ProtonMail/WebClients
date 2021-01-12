@@ -1,10 +1,11 @@
 import { PACKAGE_TYPE } from 'proton-shared/lib/constants';
 import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { getParsedHeadersFirstValue, inSigningPeriod } from 'proton-shared/lib/mail/messages';
 import { c, msgid } from 'ttag';
 import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageVerification } from '../../models/message';
 
 // The logic for determining the status icons can be found here:
 // https://confluence.protontech.ch/display/MAILFE/Encryption+status+for+outgoing+and+incoming+email
@@ -271,24 +272,27 @@ export const getSentStatusIconInfo = (message: MessageExtended): MessageViewIcon
     return { globalIcon, mapStatusIcon };
 };
 
-export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | undefined => {
-    if (!message.data?.ParsedHeaders || message.verificationStatus === undefined) {
+export const getReceivedStatusIcon = (
+    message: Message | undefined,
+    verification: MessageVerification | undefined
+): StatusIcon | undefined => {
+    if (!message?.ParsedHeaders || verification?.verificationStatus === undefined) {
         return;
     }
-    const origin = message.data.ParsedHeaders['X-Pm-Origin'];
-    const encryption = message.data.ParsedHeaders['X-Pm-Content-Encryption'];
-    const { verificationStatus, senderVerified } = message;
-    const hasPinnedKeys = !!message.senderPinnedKeys?.length;
+    const origin = message.ParsedHeaders['X-Pm-Origin'];
+    const encryption = message.ParsedHeaders['X-Pm-Content-Encryption'];
+    const { verificationStatus, senderVerified } = verification;
+    const hasPinnedKeys = !!verification.senderPinnedKeys?.length;
 
     if (origin === INTERNAL) {
         const result = { colorClassName: 'color-pm-blue', isEncrypted: true };
         if (encryption === END_TO_END) {
-            const verificationErrorsMessage = message.verificationErrors
+            const verificationErrorsMessage = verification.verificationErrors
                 ?.map(({ message }) => message)
                 .filter(Boolean)
                 .join('; ');
             const warningsText = (() => {
-                const expectSigned = inSigningPeriod(message.data) || hasPinnedKeys;
+                const expectSigned = inSigningPeriod(message) || hasPinnedKeys;
                 if (verificationStatus === NOT_SIGNED && expectSigned) {
                     return c('Signature verification warning').t`Sender could not be verified: Message not signed`;
                 }
@@ -351,7 +355,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
     if (origin === EXTERNAL) {
         if (encryption === END_TO_END) {
             const result = { colorClassName: 'color-global-success', isEncrypted: true };
-            const verificationErrorsMessage = message.verificationErrors
+            const verificationErrorsMessage = verification.verificationErrors
                 ?.map(({ message }) => message)
                 .filter(Boolean)
                 .join('; ');
@@ -411,7 +415,7 @@ export const getReceivedStatusIcon = (message: MessageExtended): StatusIcon | un
             }
 
             const result = { colorClassName: 'color-global-success', isEncrypted: false };
-            const verificationErrorsMessage = message.verificationErrors
+            const verificationErrorsMessage = verification.verificationErrors
                 ?.map(({ message }) => message)
                 .filter(Boolean)
                 .join('; ');

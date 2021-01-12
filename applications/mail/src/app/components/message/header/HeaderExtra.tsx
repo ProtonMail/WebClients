@@ -45,8 +45,12 @@ const HeaderExtra = ({
             <ExtraUnsubscribe message={message} onCompose={onCompose} />
             <ExtraReadReceipt message={message} />
             <ExtraAutoReply message={message} />
-            {messageLoaded && <ExtraPinKey message={message} />}
-            <ExtraAskResign message={message} onResignContact={onResignContact} />
+            {messageLoaded && <ExtraPinKey message={message.data} messageVerification={message.verification} />}
+            <ExtraAskResign
+                message={message.data}
+                messageVerification={message.verification}
+                onResignContact={onResignContact}
+            />
             {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
             {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
             {messageLoaded && received ? <ExtraEvents message={message as MessageExtendedWithData} /> : null}

@@ -121,6 +121,7 @@ const TrustPublicKeyModal = ({ contact, onSubmit, ...rest }: Props) => {
             return;
         }
         createNotification({ text: c('Success').t`Public key trusted`, type: 'success' });
+        void call(); // No await
         onSubmit?.();
         rest.onClose?.();
     };

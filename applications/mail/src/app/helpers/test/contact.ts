@@ -1,13 +1,16 @@
 import { ContactEmail, ContactProperties, Contact } from 'proton-shared/lib/interfaces/contacts';
 import { prepareCards } from 'proton-shared/lib/contacts/encrypt';
 
+import { toKeyProperty } from 'proton-shared/lib/contacts/keyProperties';
 import { addApiMock } from './api';
 import { GeneratedKey } from './crypto';
 
 export interface ContactMock {
     contactID: string;
     email: string;
-    mimeType: string;
+
+    mimeType?: string;
+    pinKey?: GeneratedKey;
 }
 
 export const apiContacts = new Map<string, ContactMock>();
@@ -19,6 +22,7 @@ const addApiContactMock = () => {
             const contactMock = apiContacts.get(email) as ContactMock;
             return { ContactEmails: [{ ContactID: contactMock.contactID }] as ContactEmail[] };
         }
+        // console.log('api contact email', args, email);
         return {};
     });
 };
@@ -28,7 +32,11 @@ addApiContactMock();
 export const addApiContact = (contact: ContactMock, key: GeneratedKey) => {
     apiContacts.set(contact.email, contact);
     addApiMock(`contacts/${contact.contactID}`, async () => {
-        const properties: ContactProperties = [{ field: 'email', value: contact.email, group: 'group' }];
+        const group = 'group';
+        const properties: ContactProperties = [{ field: 'email', value: contact.email, group }];
+        if (contact.pinKey) {
+            properties.push(toKeyProperty({ publicKey: contact.pinKey.publicKeys[0], group, index: 0 }));
+        }
         if (contact.mimeType) {
             properties.push({ field: 'x-pm-mimetype', value: contact.mimeType, group: 'group' });
         }

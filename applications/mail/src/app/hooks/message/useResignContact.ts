@@ -13,12 +13,15 @@ export const useResignContact = (localID: string) => {
         const messageFromCache = messageCache.get(localID) as MessageExtended;
         const message = await loadMessage(messageFromCache, api);
         const address = message.data.Sender?.Address;
-        if (!address) {
+        if (!address || !messageFromCache.verification) {
             return;
         }
         const { isContactSignatureVerified } = await getEncryptionPreferences(address);
         updateMessageCache(messageCache, localID, {
-            senderVerified: isContactSignatureVerified
+            verification: {
+                ...messageFromCache.verification,
+                senderVerified: isContactSignatureVerified,
+            },
         });
     }, [localID]);
 };

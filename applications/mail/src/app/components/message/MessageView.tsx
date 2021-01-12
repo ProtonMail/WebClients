@@ -90,7 +90,7 @@ const MessageView = (
             return getSentStatusIconInfo(message);
         }
         // else it's a received message
-        return { globalIcon: getReceivedStatusIcon(message), mapStatusIcon: {} };
+        return { globalIcon: getReceivedStatusIcon(message.data, message.verification), mapStatusIcon: {} };
     }, [message]);
 
     // Manage loading the message
@@ -109,10 +109,10 @@ const MessageView = (
 
     // Manage recomputing signature verification (happens when invalidated after initial load)
     useEffect(() => {
-        if (!loading && expanded && message.initialized && message.verificationStatus === undefined) {
-            void addAction(() => verify(message.decryptedBody as string, message.signature));
+        if (!loading && expanded && message.initialized && message.verification === undefined) {
+            void addAction(() => verify(message.decryptedRawContent as string, message.signature));
         }
-    }, [loading, expanded, message.initialized, message.verificationStatus]);
+    }, [loading, expanded, message.initialized, message.verification]);
 
     // Setup ref to allow opening the message from outside, typically the ConversationView
     useEffect(() => {

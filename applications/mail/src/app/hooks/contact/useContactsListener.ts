@@ -44,15 +44,9 @@ const processContactUpdate = async (
 
     // Looking in the Message cache to check if there is message signed from one of the contact addresses
     messageCache.forEach((message, localID) => {
-        if (message.signingPublicKey && emails.includes(message.data?.Sender.Address || '')) {
-            updateMessageCache(messageCache, localID, {
-                senderPinnedKeys: undefined,
-                signingPublicKey: undefined,
-                attachedPublicKeys: undefined,
-                senderVerified: undefined,
-                verificationStatus: undefined,
-                verificationErrors: undefined,
-            });
+        const senderAddress = normalizeEmail(message.data?.Sender.Address || '');
+        if (emails.includes(senderAddress)) {
+            updateMessageCache(messageCache, localID, { verification: undefined });
         }
     });
 };

@@ -1,5 +1,6 @@
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { getAttachments } from 'proton-shared/lib/mail/messages';
 import React, { useCallback } from 'react';
 import { Alert, ConfirmModal, useApi, useModals } from 'react-components';
 import { c, msgid } from 'ttag';
@@ -96,7 +97,7 @@ export const useDownload = () => {
     return useCallback(
         async (message: MessageExtendedWithData, attachment: Attachment) => {
             const messageKeys = await getMessageKeys(message.localID);
-            const download = await formatDownload(attachment, message, messageKeys, cache, api);
+            const download = await formatDownload(attachment, message.verification, messageKeys, cache, api);
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 await showConfirmModal([download]);
@@ -118,7 +119,8 @@ export const useDownloadAll = () => {
     return useCallback(
         async (message: MessageExtendedWithData) => {
             const messageKeys = await getMessageKeys(message.localID);
-            const list = await formatDownloadAll(message, messageKeys, cache, api);
+            const attachments = getAttachments(message.data);
+            const list = await formatDownloadAll(attachments, message.verification, messageKeys, cache, api);
             const isError = list.some(({ isError }) => isError);
             const senderVerificationFailed = list.some(
                 ({ verified }) => verified === VERIFICATION_STATUS.SIGNED_AND_INVALID
@@ -128,7 +130,7 @@ export const useDownloadAll = () => {
                 await showConfirmModal(list);
             }
 
-            await generateDownloadAll(message, list);
+            await generateDownloadAll(message.data, list);
         },
         [api, cache]
     );
@@ -143,7 +145,7 @@ export const usePreview = () => {
     return useCallback(
         async (message: MessageExtendedWithData, attachment: Attachment) => {
             const messageKeys = await getMessageKeys(message.localID);
-            const download = await formatDownload(attachment, message, messageKeys, cache, api);
+            const download = await formatDownload(attachment, message.verification, messageKeys, cache, api);
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
                 await showConfirmModal([download]);
