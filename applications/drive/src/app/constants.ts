@@ -21,8 +21,9 @@ export const DEFAULT_USER_SETTINGS: UserSettings = {
     Layout: LayoutSetting.List,
     Sort: SortSetting.ModifiedAsc,
 };
-export const UPLOAD_TIMEOUT = 60000;
-export const DOWNLOAD_TIMEOUT = 60000;
+export const UPLOAD_TIMEOUT = 90000;
+export const DOWNLOAD_TIMEOUT = 90000;
+export const DOWNLOAD_RETRIES_ON_TIMEOUT = 3;
 export const EXPENSIVE_REQUEST_TIMEOUT = 60000;
 export const MAX_NAME_LENGTH = 255;
 export const MIN_SHARED_URL_PASSWORD_LENGTH = 8;
