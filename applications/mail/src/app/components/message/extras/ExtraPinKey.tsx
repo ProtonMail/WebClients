@@ -1,7 +1,8 @@
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
-import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { isInternal } from 'proton-shared/lib/mail/messages';
 import React, { useMemo } from 'react';
@@ -21,7 +22,8 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { useContactCache } from '../../../containers/ContactProvider';
-import { MessageExtended } from '../../../models/message';
+import { getContactEmail } from '../../../helpers/addresses';
+import { MessageVerification } from '../../../models/message';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
 const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -34,13 +36,13 @@ enum PROMPT_KEY_PINNING_TYPE {
 }
 
 interface Params {
-    message: MessageExtended;
+    messageVerification: MessageVerification | undefined;
     mailSettings?: Partial<MailSettings>;
     addresses: Address[];
     senderAddress: string;
 }
 const getPromptKeyPinningType = ({
-    message,
+    messageVerification,
     mailSettings = {},
     addresses,
     senderAddress,
@@ -50,17 +52,21 @@ const getPromptKeyPinningType = ({
         return undefined;
     }
     const { PromptPin } = mailSettings;
-    const senderHasPinnedKeys = !!message.senderPinnedKeys?.length;
-    const firstAttachedPublicKey = message.attachedPublicKeys?.length ? message.attachedPublicKeys[0] : undefined;
+    const senderHasPinnedKeys = !!messageVerification?.senderPinnedKeys?.length;
+    const firstAttachedPublicKey = messageVerification?.attachedPublicKeys?.length
+        ? messageVerification.attachedPublicKeys[0]
+        : undefined;
     const isSignedByAttachedKey =
-        !!message.signingPublicKey &&
-        message.attachedPublicKeys?.map((key) => key.armor()).includes(message.signingPublicKey?.armor());
+        !!messageVerification?.signingPublicKey &&
+        messageVerification?.attachedPublicKeys
+            ?.map((key) => key.armor())
+            .includes(messageVerification.signingPublicKey?.armor());
     const isAttachedKeyPinned =
         firstAttachedPublicKey &&
-        message.senderPinnedKeys?.map((key) => key.armor()).includes(firstAttachedPublicKey.armor());
+        messageVerification?.senderPinnedKeys?.map((key) => key.armor()).includes(firstAttachedPublicKey.armor());
 
-    if (message.verificationStatus === SIGNED_AND_INVALID) {
-        if (!message.signingPublicKey) {
+    if (messageVerification?.verificationStatus === SIGNED_AND_INVALID) {
+        if (!messageVerification.signingPublicKey) {
             if (firstAttachedPublicKey) {
                 return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
             }
@@ -76,7 +82,7 @@ const getPromptKeyPinningType = ({
             return PROMPT_KEY_PINNING_TYPE.AUTOPROMPT;
         }
     }
-    if (message.verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
+    if (messageVerification?.verificationStatus === VERIFICATION_STATUS.NOT_SIGNED) {
         if (!firstAttachedPublicKey || isAttachedKeyPinned) {
             return;
         }
@@ -100,10 +106,11 @@ const getBannerMessage = (promptKeyPinningType: PROMPT_KEY_PINNING_TYPE) => {
 };
 
 interface Props {
-    message: MessageExtended;
+    message: Message | undefined;
+    messageVerification: MessageVerification | undefined;
 }
 
-const ExtraPinKey = ({ message }: Props) => {
+const ExtraPinKey = ({ message, messageVerification }: Props) => {
     const api = useApi();
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
@@ -113,10 +120,10 @@ const ExtraPinKey = ({ message }: Props) => {
     const { call } = useEventManager();
     const { contactsMap } = useContactCache();
 
-    const senderAddress = message.data?.SenderAddress;
-    const name = message.data?.SenderName;
-    const isSenderInternal = isInternal(message.data);
-    const messageContactID = message.data?.Sender?.ContactID;
+    const senderAddress = message?.SenderAddress;
+    const name = message?.SenderName;
+    const isSenderInternal = isInternal(message);
+    const messageContactID = message?.Sender?.ContactID;
     const contactID = useMemo<string | undefined>(() => {
         if (messageContactID) {
             return messageContactID;
@@ -124,18 +131,20 @@ const ExtraPinKey = ({ message }: Props) => {
         if (!senderAddress) {
             return;
         }
-        const preferredContact = contactsMap[normalizeEmail(senderAddress)];
+        const preferredContact = getContactEmail(contactsMap, senderAddress);
         return preferredContact?.ContactID;
     }, [messageContactID, contactsMap, senderAddress]);
     const promptKeyPinningType = useMemo<PROMPT_KEY_PINNING_TYPE | undefined>(() => {
         if (!senderAddress) {
             return undefined;
         }
-        return getPromptKeyPinningType({ message, mailSettings, addresses, senderAddress });
+        return getPromptKeyPinningType({ messageVerification, mailSettings, addresses, senderAddress });
     }, [message, mailSettings, addresses, senderAddress]);
     const isPinUnseen = promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.PIN_UNSEEN;
-    const firstAttachedPublicKey = message.attachedPublicKeys?.length ? message.attachedPublicKeys[0] : undefined;
-    const bePinnedPublicKey = message.signingPublicKey || firstAttachedPublicKey;
+    const firstAttachedPublicKey = messageVerification?.attachedPublicKeys?.length
+        ? messageVerification.attachedPublicKeys[0]
+        : undefined;
+    const bePinnedPublicKey = messageVerification?.signingPublicKey || firstAttachedPublicKey;
     const loading = loadingDisablePromptPin || !senderAddress || (isPinUnseen && !contactID) || !bePinnedPublicKey;
     const bannerColorClassName = isPinUnseen ? 'bg-global-attention color-black' : 'bg-white-dm';
 

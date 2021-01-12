@@ -92,7 +92,13 @@ const ExtraEvents = ({ message }: Props) => {
                     eventAttachments.map(async (attachment: Attachment) => {
                         try {
                             const messageKeys = await getMessageKeys(message.data);
-                            const download = await formatDownload(attachment, message, messageKeys, cache, api);
+                            const download = await formatDownload(
+                                attachment,
+                                message.verification,
+                                messageKeys,
+                                cache,
+                                api
+                            );
                             if (download.isError) {
                                 return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
                             }

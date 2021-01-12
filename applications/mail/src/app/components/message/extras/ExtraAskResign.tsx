@@ -1,19 +1,21 @@
 import React, { useMemo } from 'react';
 import { Icon, Href, useModals, Alert } from 'react-components';
 import { c } from 'ttag';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import ContactResignModal from '../modals/ContactResignModal';
-import { MessageExtended } from '../../../models/message';
+import { MessageVerification } from '../../../models/message';
 import { useContactCache } from '../../../containers/ContactProvider';
 import { getContactEmail } from '../../../helpers/addresses';
 
 interface Props {
-    message: MessageExtended;
+    message: Message | undefined;
+    messageVerification: MessageVerification | undefined;
     onResignContact: () => void;
 }
 
-const ExtraAskResign = ({ message, onResignContact }: Props) => {
-    const { senderVerified, senderPinnedKeys } = message;
-    const { Address = '' } = message.data?.Sender || {};
+const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props) => {
+    const { senderVerified, senderPinnedKeys } = messageVerification || {};
+    const { Address = '' } = message?.Sender || {};
     const { createModal } = useModals();
     const { contactsMap } = useContactCache();
 
@@ -28,7 +30,7 @@ const ExtraAskResign = ({ message, onResignContact }: Props) => {
             return;
         }
         const contact = { contactID: contactEmail.ContactID };
-        const senderName = message.data?.SenderName || ''; // No optional in translations
+        const senderName = message?.SenderName || ''; // No optional in translations
 
         createModal(
             <ContactResignModal

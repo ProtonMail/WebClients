@@ -27,6 +27,7 @@ import {
     addKeysToUserKeysCache,
     createAttachment,
     attachmentsCache,
+    apiKeys,
 } from '../../helpers/test/helper';
 import Composer from './Composer';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
@@ -137,6 +138,10 @@ describe('Composer', () => {
         };
 
         const send = async (message: MessageExtended, useMinimalCache = true) => {
+            if (!apiKeys.has(toAddress)) {
+                addApiKeys(false, toAddress, []);
+            }
+
             const renderResult = await render(<Composer {...props} messageID={message.localID} />, useMinimalCache);
 
             // Fake timers after render, it breaks rendering, I would love to know why
@@ -243,7 +248,7 @@ describe('Composer', () => {
             it('text/plain pgp internal', async () => {
                 const message = prepareMessage({ plainText: 'test', data: { MIMEType: MIME_TYPES.PLAINTEXT } });
 
-                addApiKeys(true, toKeys);
+                addApiKeys(true, toAddress, [toKeys]);
 
                 const sendRequest = await send(message);
 
@@ -266,7 +271,7 @@ describe('Composer', () => {
             it('multipart/mixed pgp external', async () => {
                 const message = prepareMessage({ plainText: 'test', data: { MIMEType: MIME_TYPES.PLAINTEXT } });
 
-                addApiKeys(false, toKeys);
+                addApiKeys(false, toAddress, [toKeys]);
 
                 const sendRequest = await send(message);
 
@@ -386,7 +391,7 @@ describe('Composer', () => {
 
                 minimalCache();
                 addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
-                addApiKeys(true, toKeys);
+                addApiKeys(true, toAddress, [toKeys]);
 
                 const sendRequest = await send(message, false);
 
@@ -416,7 +421,7 @@ describe('Composer', () => {
 
                 minimalCache();
                 addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.PLAINTEXT } as MailSettings);
-                addApiKeys(true, toKeys);
+                addApiKeys(true, toAddress, [toKeys]);
 
                 const sendRequest = await send(message, false);
 
@@ -445,7 +450,7 @@ describe('Composer', () => {
 
                 minimalCache();
                 addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
-                addApiKeys(false, toKeys);
+                addApiKeys(false, toAddress, [toKeys]);
 
                 const sendRequest = await send(message, false);
 
@@ -485,7 +490,7 @@ describe('Composer', () => {
 
                 minimalCache();
                 addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
-                addApiKeys(true, toKeys);
+                addApiKeys(true, toAddress, [toKeys]);
 
                 const sendRequest = await send(message, false);
 
@@ -517,7 +522,7 @@ describe('Composer', () => {
                     data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
                 });
 
-                addApiKeys(false, toKeys);
+                addApiKeys(false, toAddress, [toKeys]);
                 attachmentsCache.set(attachment.ID as string, {} as DecryptResultPmcrypto);
 
                 const sendRequest = await send(message);
@@ -570,7 +575,7 @@ describe('Composer', () => {
 
                 minimalCache();
                 addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
-                addApiKeys(true, toKeys);
+                addApiKeys(true, toAddress, [toKeys]);
 
                 const sendRequest = await send(message, false);
 
@@ -595,7 +600,7 @@ describe('Composer', () => {
             const message = prepareMessage({ plainText: 'test', data: { MIMEType: MIME_TYPES.PLAINTEXT } });
 
             addKeysToAddressKeysCache(message.data.AddressID, secondFromKeys);
-            addApiKeys(true, toKeys);
+            addApiKeys(true, toAddress, [toKeys]);
 
             const sendRequest = await send(message);
 
@@ -643,7 +648,7 @@ describe('Composer', () => {
 
             await waitForSpyCall(setHTML);
 
-            findByTestId('squire-iframe');
+            await findByTestId('squire-iframe');
 
             expect(setHTML).toHaveBeenCalledWith(`<p>${content}</p>\n`);
         });

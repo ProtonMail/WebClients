@@ -16,7 +16,6 @@ import { useMarkAs, MARK_AS_STATUS } from '../useMarkAs';
 import { isUnreadMessage } from '../../helpers/elements';
 import { hasShowEmbedded } from '../../helpers/settings';
 import { useLoadEmbeddedImages } from './useLoadImages';
-import { useVerifyMessage } from './useVerifyMessage';
 
 interface Preparation {
     plainText?: string;
@@ -35,7 +34,6 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
     const loadEmbeddedImages = useLoadEmbeddedImages(localID);
-    const verifyMessage = useVerifyMessage(localID);
 
     return useCallback(async () => {
         // Message can change during the whole initilization sequence
@@ -72,16 +70,13 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             if (decryption.mimetype) {
                 dataChanges = { ...dataChanges, MIMEType: decryption.mimetype };
             }
-            const mimeAttachments = decryption.Attachments || [];
+            const mimeAttachments = decryption.attachments || [];
             const allAttachments = [...getData().Attachments, ...mimeAttachments];
             dataChanges = { ...dataChanges, Attachments: allAttachments, NumAttachments: allAttachments.length };
 
             if (decryption.errors) {
                 Object.assign(errors, decryption.errors);
             }
-
-            // Trigger all public key and signature verification but we are not waiting for it
-            void verifyMessage(decryption.decryptedBody, decryption.signature);
 
             if (isUnreadMessage(getData())) {
                 markAs([getData()], labelID, MARK_AS_STATUS.READ);
@@ -112,6 +107,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 document: preparation?.document,
                 plainText: preparation?.plainText,
                 decryptedBody: decryption?.decryptedBody,
+                decryptedRawContent: decryption?.decryptedRawContent,
                 signature: decryption?.signature,
                 decryptedSubject: decryption?.decryptedSubject,
                 // Anticipate showEmbedded flag while triggering the load just after

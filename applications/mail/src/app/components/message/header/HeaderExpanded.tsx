@@ -121,15 +121,15 @@ const HeaderExpanded = ({
     const showPinPublicKey =
         isInternal(message.data) &&
         !isSelfAddress(message.data?.Sender.Address, addresses) &&
-        message.signingPublicKey &&
-        message.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID;
+        message.verification?.signingPublicKey &&
+        message.verification?.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID;
 
     const from = (
         <RecipientItem
             recipientOrGroup={{ recipient: message.data?.Sender }}
             onCompose={onCompose}
             isLoading={!messageLoaded}
-            signingPublicKey={showPinPublicKey ? message.signingPublicKey : undefined}
+            signingPublicKey={showPinPublicKey ? message.verification?.signingPublicKey : undefined}
         />
     );
 

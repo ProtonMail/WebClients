@@ -3,7 +3,7 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { isDraft } from 'proton-shared/lib/mail/messages';
 
-import { MessageExtended, EmbeddedMap, MessageKeys } from '../../models/message';
+import { MessageExtended, EmbeddedMap, MessageKeys, MessageVerification } from '../../models/message';
 import { escapeSrc, unescapeSrc, wrap } from '../dom';
 import { ENCRYPTED_STATUS } from '../../constants';
 import { getAttachment, findEmbedded } from './embeddedFinder';
@@ -139,7 +139,7 @@ export const removeEmbeddedHTML = (document: Element, attachment: Attachment) =>
  * changed and is not valid. So even in that case we want to show the icon.
  */
 const triggerSigVerification = (
-    message: MessageExtended,
+    verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
     attachments: Attachment[],
     api: Api,
@@ -152,7 +152,7 @@ const triggerSigVerification = (
      */
     void Promise.all(
         attachments.map(async (attachment) => {
-            await get(attachment, message, messageKeys, cache, api);
+            await get(attachment, verification, messageKeys, cache, api);
             await wait(1000);
             // invalidSignature.askAgain(message, attachment, false);
         })
@@ -229,7 +229,7 @@ export const decrypt = async (
         .filter((info) => info.attachment.KeyPackets || info.attachment.Encrypted === ENCRYPTED_STATUS.PGP_MIME)
         .filter((info) => !info.url)
         .map(async (info) => {
-            const buffer = await get(info.attachment, message, messageKeys, cache, api);
+            const buffer = await get(info.attachment, message.verification, messageKeys, cache, api);
             info.url = createBlob(info.attachment, buffer.data as Uint8Array);
         });
 
@@ -237,7 +237,7 @@ export const decrypt = async (
 
     if (!promises.length) {
         // all cid was already stored, we can resolve
-        triggerSigVerification(message, messageKeys, attachments, api, cache);
+        triggerSigVerification(message.verification, messageKeys, attachments, api, cache);
         return;
     }
 
@@ -245,5 +245,5 @@ export const decrypt = async (
 
     // We need to trigger on the original list not after filtering: after filter they are just stored
     // somewhere else
-    triggerSigVerification(message, messageKeys, attachments, api, cache);
+    triggerSigVerification(message.verification, messageKeys, attachments, api, cache);
 };

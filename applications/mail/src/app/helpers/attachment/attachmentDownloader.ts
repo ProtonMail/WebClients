@@ -6,7 +6,7 @@ import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
-import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
+import { MessageKeys, MessageVerification } from '../../models/message';
 import { getAndVerify } from './attachmentLoader';
 
 export interface Download {
@@ -21,14 +21,14 @@ export interface Download {
  */
 export const formatDownload = async (
     attachment: Attachment,
-    message: MessageExtended,
+    verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
     cache: AttachmentsCache,
     api: Api
 ): Promise<Download> => {
     try {
-        const reverify = !!(message.senderVerified && message.senderPinnedKeys?.length);
-        const { data, verified } = await getAndVerify(attachment, message, messageKeys, reverify, cache, api);
+        const reverify = !!(verification?.senderVerified && verification.senderPinnedKeys?.length);
+        const { data, verified } = await getAndVerify(attachment, verification, messageKeys, reverify, cache, api);
         return {
             attachment,
             data: data as Uint8Array,
@@ -73,13 +73,13 @@ export const generateDownload = async (download: Download /* , message: MessageE
  * The lib doesn't allow duplicates
  */
 export const formatDownloadAll = async (
-    message: MessageExtended,
+    attachments: Attachment[],
+    verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
     cache: AttachmentsCache,
     api: Api
 ): Promise<Download[]> => {
-    const { Attachments = [] } = message.data || {};
-    const { list }: { list: Attachment[] } = Attachments.reduce(
+    const { list }: { list: Attachment[] } = attachments.reduce(
         (acc: any, att) => {
             const name = att.Name || '';
             if (!acc.map[name]) {
@@ -96,7 +96,7 @@ export const formatDownloadAll = async (
         { list: [], map: {} }
     );
 
-    return Promise.all(list.map((att) => formatDownload(att, message, messageKeys, cache, api)));
+    return Promise.all(list.map((att) => formatDownload(att, verification, messageKeys, cache, api)));
 };
 
 const getZipAttachmentName = (message: Message) => `Attachments-${message.Subject}.zip`;
@@ -104,7 +104,7 @@ const getZipAttachmentName = (message: Message) => `Attachments-${message.Subjec
 /**
  * Zip and trigger download of a list of download objects
  */
-export const generateDownloadAll = async (message: MessageExtendedWithData, list: Download[]) => {
+export const generateDownloadAll = async (message: Message, list: Download[]) => {
     // TODO: uncomment
     // try {
     //     await checkAllSignatures(message, list);
@@ -116,7 +116,7 @@ export const generateDownloadAll = async (message: MessageExtendedWithData, list
     const zip = new JSZip();
     list.forEach(({ attachment: { Name = '' }, data }) => zip.file(Name, data));
     const content = await zip.generateAsync({ type: 'blob' });
-    const name = getZipAttachmentName(message.data);
+    const name = getZipAttachmentName(message);
 
     downloadFile(content, name);
 };

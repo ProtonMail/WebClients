@@ -2,8 +2,9 @@ import { OpenPGPKey } from 'pmcrypto';
 import { SIGNATURE_START, VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
 import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { STATUS_ICONS_FILLS } from '../../models/crypto';
-import { MessageExtended } from '../../models/message';
+import { MessageExtended, MessageVerification } from '../../models/message';
 import { getReceivedStatusIcon, getSendStatusIcon, getSentStatusIconInfo } from './icon';
 
 const { NOT_VERIFIED } = VERIFICATION_STATUS;
@@ -572,15 +573,15 @@ describe('icon', () => {
             senderPinnedKeys: OpenPGPKey[],
             verificationStatus: VERIFICATION_STATUS
         ) => {
-            const message = ({
-                data: {
-                    Time: SIGNATURE_START.USER + 10 * 1000,
-                    ParsedHeaders: headers,
-                },
+            const message = {
+                Time: SIGNATURE_START.USER + 10 * 1000,
+                ParsedHeaders: headers,
+            } as Message;
+            const verification = {
                 senderPinnedKeys,
                 verificationStatus,
-            } as unknown) as MessageExtended;
-            return getReceivedStatusIcon(message);
+            } as MessageVerification;
+            return getReceivedStatusIcon(message, verification);
         };
 
         it('should return a blue lock with in case of decryption error for internal users (end-to-end encryption)', () => {

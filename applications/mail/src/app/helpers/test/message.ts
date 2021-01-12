@@ -61,11 +61,11 @@ export const createAttachment = async (inputAttachment: Partial<Attachment>, pub
     return { attachment, sessionKey };
 };
 
-export const encryptMessage = async (body: string, keys: GeneratedKey) => {
+export const encryptMessage = async (body: string, fromKeys: GeneratedKey, toKeys: GeneratedKey) => {
     const { data } = await realEncryptMessage({
         data: body,
-        publicKeys: [keys.publicKeys?.[0]],
-        privateKeys: [keys.privateKeys?.[0]],
+        publicKeys: [toKeys.publicKeys?.[0]],
+        privateKeys: [fromKeys.privateKeys?.[0]],
         compression: enums.compression.zip,
     });
     return data;
