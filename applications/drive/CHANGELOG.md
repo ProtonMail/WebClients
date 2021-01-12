@@ -1,3 +1,18 @@
+# [4.0.0-beta.8] - 2021-01-13
+
+With this update we bring you more convenience by remembering which layout you chose to browse your files. Also, numerous bug fixes and improvements.
+
+## Fixed
+
+- Long file name is displayed fully on the download page
+- Invisible and breaking characters can no longer be entered into a file name
+- Image rendering when in zoomed in mode
+- SVG file type detection
+
+## Added
+
+- Layout (Grid or List), and column used for sorting are remembered
+
 # [4.0.0-beta.7] - 2020-12-17
 
 In order to provide full control and comfort for our initial waves of Beta users, we have opted in to set the shared links to never expire by default. However, user can change this option and set number of days for a shared link to expire.

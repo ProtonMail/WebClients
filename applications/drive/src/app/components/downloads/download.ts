@@ -3,6 +3,7 @@ import { orderBy, areUint8Arrays } from 'proton-shared/lib/helpers/array';
 import { ReadableStream } from 'web-streams-polyfill';
 import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
 import { Api } from 'proton-shared/lib/interfaces';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { DriveFileBlock } from '../../interfaces/file';
 import { queryFileBlock } from '../../api/files';
 import { ObserverStream, untilStreamEnd } from '../../utils/stream';
@@ -149,7 +150,9 @@ export const initDownload = ({
                         await api({
                             ...queryFileBlock(URL),
                             timeout: DOWNLOAD_TIMEOUT,
-                            retriesOnTimeout: DOWNLOAD_RETRIES_ON_TIMEOUT,
+                            retriesOnTimeout: FEATURE_FLAGS.includes('download-timeout-retry')
+                                ? DOWNLOAD_RETRIES_ON_TIMEOUT
+                                : undefined,
                             signal: abortController.signal,
                             silence: true,
                         })
