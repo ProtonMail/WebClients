@@ -177,20 +177,26 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
 
                 const { status, name, response } = e;
 
-                const { ignoreHandler, silence = [], headers } = options || {};
+                const {
+                    ignoreHandler,
+                    silence = [],
+                    headers,
+                    retriesOnOffline = OFFLINE_RETRY_ATTEMPTS_MAX,
+                    retriesOnTimeout = OFFLINE_RETRY_ATTEMPTS_MAX,
+                } = options || {};
 
                 if (name === 'OfflineError') {
-                    if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
+                    if (attempts > retriesOnOffline) {
                         return onError(e);
                     }
-                    return wait(OFFLINE_RETRY_DELAY).then(() => perform(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX));
+                    return wait(OFFLINE_RETRY_DELAY).then(() => perform(attempts + 1, retriesOnOffline));
                 }
 
                 if (name === 'TimeoutError') {
-                    if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
+                    if (attempts > retriesOnTimeout) {
                         return onError(e);
                     }
-                    return perform(attempts + 1, OFFLINE_RETRY_ATTEMPTS_MAX);
+                    return perform(attempts + 1, retriesOnTimeout);
                 }
 
                 const ignoreUnauthorized =
