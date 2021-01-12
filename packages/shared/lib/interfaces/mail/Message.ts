@@ -14,6 +14,16 @@ export interface Attachment {
     Signature?: string;
 }
 
+export interface UnsubscribeMethods {
+    MailTo?: {
+        Subject?: string;
+        Body?: string;
+        ToList: string[];
+    };
+    HttpClient?: string;
+    OneClick?: 'OneClick';
+}
+
 export interface Message {
     ID: string;
     Order: number;
@@ -50,4 +60,5 @@ export interface Message {
     Password?: string;
     PasswordHint?: string;
     RightToLeft?: number;
+    UnsubscribeMethods?: UnsubscribeMethods;
 }
