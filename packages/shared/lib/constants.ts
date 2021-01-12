@@ -274,6 +274,11 @@ export enum MEMBER_ROLE {
     ORGANIZATION_OWNER = 2,
 }
 
+export enum MEMBER_SUBSCRIBER {
+    NON_PAYER = 0,
+    PAYER = 1,
+}
+
 export enum PACKAGE_TYPE {
     SEND_PM = 1,
     SEND_EO = 2,
