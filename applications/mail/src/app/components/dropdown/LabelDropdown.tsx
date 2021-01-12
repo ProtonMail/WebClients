@@ -187,7 +187,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
             <LabelModal
                 label={newLabel}
                 onAdd={(label) => handleAddNewLabel(label)}
-                onClose={() => setContainFocus(false)}
+                onClose={() => setContainFocus(true)}
             />
         );
     };
