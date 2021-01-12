@@ -156,4 +156,5 @@ export const fileDescriptions: { [type: string]: string } = {
     'audio/3gpp': '3GPP audio/video container',
     'audio/3gpp2': '3GPP2 audio/video container',
     'text/x-python': 'Python',
+    'application/typescript': 'TypeScript',
 };

@@ -63,4 +63,5 @@ export enum SupportedMimeTypes {
 
 export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
     py: 'text/x-python',
+    ts: 'application/typescript',
 };

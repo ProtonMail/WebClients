@@ -82,6 +82,6 @@ export async function mimetypeFromExtension(filename: string) {
     const { lookup } = await import('mime-types');
     const extension = filename.split('.').pop();
     return (
-        lookup(filename) || (extension && EXTRA_EXTENSION_TYPES[extension.toLowerCase()]) || 'application/octet-stream'
+        (extension && EXTRA_EXTENSION_TYPES[extension.toLowerCase()]) || lookup(filename) || 'application/octet-stream'
     );
 }
