@@ -1,9 +1,10 @@
+import _ from 'lodash';
 import CONFIG from '../../config';
 import { uniqID } from '../../../helpers/string';
 import { isIE11, isEdge } from '../../../helpers/browser';
 
 /* @ngInject */
-function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gettextCatalog) {
+function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gettextCatalog, $injector) {
     const getDomains = () => {
         return pmDomainModel.get().map((value, i) => ({
             selected: i === 0,
@@ -174,23 +175,46 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             const { dispatcher } = dispatchers(['signup']);
             const wizard = iframeVerifWizard('signupUserForm');
             let loaded = false;
+            let attempts = 0;
 
             const name = mode || 'top';
             el[0].querySelector('.signupIframe-iframe').innerHTML = createIframe(name);
             const iframe = el[0].querySelector('iframe');
-            const checkIframeLoaded = () => {
-                if (!loaded) {
-                    el[0].classList.add('signupIframe-loaded');
-                    el[0].classList.add('signupIframe-error');
-                }
+            let timeoutID;
+
+            const handleLoadError = () => {
+                el[0].classList.add('signupIframe-loaded');
+                el[0].classList.add('signupIframe-error');
             };
-            // Wait 30 seconds to check if the iframe is properly loaded
-            const timeoutID = setTimeout(checkIframeLoaded, 30 * 1000);
+
+            const checkIframeLoaded = () => {
+                if (loaded) {
+                    return;
+                }
+
+                const timeoutError = new Error(
+                    `[signupIframe] ${name} -Cannot load  ${iframe.src} attempt ${attempts}`
+                );
+
+                if (++attempts <= 2) {
+                    timeoutID = setTimeout(checkIframeLoaded, (10 + attempts * 5 - _.random(0, 5)) * 1000);
+                    iframe.src = `${IFRAME}?name=${name}&retry=${attempts}`;
+
+                    $injector.get('bugReportApi').crash(timeoutError);
+                    return;
+                }
+
+                handleLoadError();
+                $injector.get('bugReportApi').crash(timeoutError);
+            };
+
+            // Wait 10 seconds to check if the iframe is properly loaded
+            timeoutID = setTimeout(checkIframeLoaded, 10 * 1000);
+
             /**
              * Fire in the hole, iframe is loaded, give it the form config.
              */
             const onLoad = () => {
-                loaded = true;
                 dispatcher.signup('iframe.loaded');
                 iframe.contentWindow.postMessage(
                     {
@@ -216,12 +240,16 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             });
 
             wizard.onLoad(name, (isError, { name, file } = {}) => {
+                loaded = !isError;
+
                 el[0].classList.add('signupIframe-loaded');
 
                 // Throw error to track it
                 if (isError) {
-                    el[0].classList.add('signupIframe-error');
-                    throw new Error(`[signupIframe] ${name} -Cannot load  ${file}`);
+                    handleLoadError();
+                    const error = new Error(`[signupIframe] ${name} -Cannot load  ${file}`);
+                    $injector.get('bugReportApi').crash(error);
+                    throw error;
                 }
             });
 
@@ -235,4 +263,5 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
         }
     };
 }
+
 export default signupIframe;
