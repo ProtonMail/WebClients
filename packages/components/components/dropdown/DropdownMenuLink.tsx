@@ -8,11 +8,12 @@ interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
     target?: string;
 }
 
-const DropdownMenuLink = ({ className = '', children, ...rest }: Props) => {
+const DropdownMenuLink = ({ className = '', children, target = '_blank', ...rest }: Props) => {
     return (
         <a
             className={classnames(['dropDown-item-link w100 pr1 pl1 pt0-5 pb0-5 bl nodecoration', className])}
             rel="noopener noreferrer"
+            target={target}
             {...rest}
         >
             {children}
