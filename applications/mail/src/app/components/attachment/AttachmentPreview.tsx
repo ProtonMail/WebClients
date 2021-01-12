@@ -34,10 +34,17 @@ const AttachmentPreview = (
             attachment,
         });
         const download = await preview(message, attachment);
-        setPreviewing((previewing) => ({
-            ...(previewing as Preview),
-            contents: [download.data],
-        }));
+        setPreviewing((previewing) => {
+            // Preview can be closed or changed during download;
+            if (previewing === undefined || previewing.attachment !== attachment) {
+                return previewing;
+            }
+
+            return {
+                ...previewing,
+                contents: [download.data],
+            };
+        });
         onDownload(attachment, download.verified);
     };
 
