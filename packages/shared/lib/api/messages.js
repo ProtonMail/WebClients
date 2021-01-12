@@ -105,6 +105,17 @@ export const markAsHam = (messageID) => ({
     url: `mail/v4/messages/${messageID}/mark/ham`,
 });
 
+export const oneClickUnsubscribe = (ID) => ({
+    method: 'post',
+    url: `mail/v4/messages/${ID}/unsubscribe`,
+});
+
+export const markAsUnsubscribed = (IDs) => ({
+    method: 'put',
+    url: `mail/v4/messages/mark/unsubscribed`,
+    data: { IDs },
+});
+
 export const markMessageAsRead = (IDs) => ({
     method: 'put',
     url: 'mail/v4/messages/read',
