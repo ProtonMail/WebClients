@@ -120,15 +120,19 @@ const CurrentImportsSection = () => {
     }
 
     const hasStoragePausedImports = importsToDisplay.some(({ Active }) => {
-        return Active
-            && Active.State === ImportMailStatus.PAUSED
-            && Active.ErrorCode === ImportMailError.ERROR_CODE_QUOTA_LIMIT;
+        return (
+            Active &&
+            Active.State === ImportMailStatus.PAUSED &&
+            Active.ErrorCode === ImportMailError.ERROR_CODE_QUOTA_LIMIT
+        );
     });
 
     const hasAuthPausedImports = importsToDisplay.some(({ Active }) => {
-        return Active
-            && Active.State === ImportMailStatus.PAUSED
-            && Active.ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION;
+        return (
+            Active &&
+            Active.State === ImportMailStatus.PAUSED &&
+            Active.ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION
+        );
     });
 
     const delayedImport = importsToDisplay.find(({ Active }) => {
@@ -157,6 +161,10 @@ const CurrentImportsSection = () => {
         </Href>
     );
 
+    // translator: the variable here is a HTML tag, here is the complete sentence: "Proton will try to resume the import as soon as your email provider resets your account’s bandwidth limit. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over."
+    const bandwidthMessage = c('Info')
+        .jt`Proton will try to resume the import as soon as your email provider resets your account’s ${bandwithLimitLink}. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.`;
+
     return (
         <>
             {!hasAuthPausedImports && <Alert>{c('Info').t`Check the status of your imports in progress`}</Alert>}
@@ -179,8 +187,7 @@ const CurrentImportsSection = () => {
                 <Alert type="warning">
                     {c('Info').t`Your import from ${delayedImport.Email} is temporarily delayed.`}
                     <br />
-                    {c('Info')
-                        .jt`Proton will try to resume the import as soon as your email provider resets your account’s ${bandwithLimitLink}. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.`}
+                    {bandwidthMessage}
                 </Alert>
             )}
             <Table className="onmobile-hideTd3 onmobile-hideTd4 pm-simple-table--has-actions">

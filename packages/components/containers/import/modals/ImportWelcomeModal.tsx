@@ -31,6 +31,10 @@ const ImportWelcomeModal = ({ onClose = noop, ...rest }: Props) => {
         </Href>
     );
 
+    // translator: the variables here are HTML tags, here is the complete sentence: "Our guides for Gmail, Yahoo, and Outlook show you the next steps as you switch to Proton."
+    const bottomMessage = c('Info')
+        .jt`Our guides for ${gmailLink}, ${yahooLink}, and ${outlookLink} show you the next steps as you switch to Proton.`;
+
     return (
         <FormModal
             title={
@@ -49,8 +53,7 @@ const ImportWelcomeModal = ({ onClose = noop, ...rest }: Props) => {
                 <div className="mt1 mb1">{c('Info')
                     .t`Shelter your data behind Proton encryption with our email transfer feature Import Assistant.`}</div>
                 <img src={importWelcomeSvg} alt="" className="mb1" />
-                <div className="mb1">{c('Info')
-                    .jt`Our guides for ${gmailLink}, ${yahooLink}, and ${outlookLink} show you the next steps as you switch to Proton.`}</div>
+                <div className="mb1">{bottomMessage}</div>
             </div>
         </FormModal>
     );

@@ -47,12 +47,12 @@ const ImportExportSection = () => {
                 {c('Action').t`upgrade`}
             </AppLink>
         );
-        return (
-            <Alert>
-                {c('Info')
-                    .jt`Import and export your messages for local backups with Proton's dedicated desktop app. To use Import-Export, ${upgradeLink} to a paid account.`}
-            </Alert>
-        );
+
+        // translator: the variable here is a HTML tag, here is the complete sentence: "Import and export your messages for local backups with Proton's dedicated desktop app. To use Import-Export, upgrade to a paid account."
+        const message = c('Info')
+            .jt`Import and export your messages for local backups with Proton's dedicated desktop app. To use Import-Export, ${upgradeLink} to a paid account.`;
+
+        return <Alert>{message}</Alert>;
     }
 
     return (

@@ -68,27 +68,30 @@ const ImportStartStep = ({
         switch (modalModel.imap) {
             case IMAPS.GMAIL:
                 if (isReconnect) {
+                    // translator: the variable here is a HTML tag, here is the complete sentence: "If 2-step verification is disabled in Gmail (default settings), please make sure that:"
+                    const twoStepsDisabledMessage = c('Import error')
+                        .jt`If ${bold2StepsDisabled} in Gmail (default settings), please make sure that:`;
+
+                    // translator: the variable here is a HTML tag, here is the complete sentence: "If 2-step verification is enabled in Gmail, please make sure that you are using your app password instead of your regular password."
+                    const twoStepsEnabledMessage = c('Import error')
+                        .jt`If ${bold2StepsEnabled} in Gmail, please make sure that you are using your app password instead of your regular password.`;
+
+                    // translator: the variables here are HTML tags, here is the complete sentence: "You can also try to sign out of all your other Google accounts in the browser, then unlock CAPTCHA."
+                    const captchaMessage = c('Import error')
+                        .jt`You can also try to sign out of ${boldGoogleAccounts} in the browser, then unlock ${linkCAPTCHA}.`;
+
                     message = (
                         <>
                             <div className="mb1">{c('Import error')
                                 .t`Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.`}</div>
-                            <div className="mb1">
-                                {c('Import error')
-                                    .jt`If ${bold2StepsDisabled} in Gmail (default settings), please make sure that:`}
-                            </div>
+                            <div className="mb1">{twoStepsDisabledMessage}</div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`your password is correct`}</li>
                                 <li>{c('Import error')
                                     .t`"Less secure app access" is turned on in your Google account security settings`}</li>
                             </ul>
-                            <div className="mb1">
-                                {c('Import error')
-                                    .jt`If ${bold2StepsEnabled} in Gmail, please make sure that you are using your app password instead of your regular password.`}
-                            </div>
-                            <div className="mb1">
-                                {c('Import error')
-                                    .jt`You can also try to sign out of ${boldGoogleAccounts} in the browser, then unlock ${linkCAPTCHA}.`}
-                            </div>
+                            <div className="mb1">{twoStepsEnabledMessage}</div>
+                            <div className="mb1">{captchaMessage}</div>
                         </>
                     );
                 }
@@ -99,27 +102,30 @@ const ImportStartStep = ({
                 }
 
                 if (isAuthError) {
+                    // translator: the variable here is a HTML tag, here is the complete sentence: "If 2-step verification is disabled (default Gmail settings), please make sure that:"
+                    const twoStepsDisabledMessage = c('Import error')
+                        .jt`If ${bold2StepsDisabled} (default Gmail settings), please make sure that:`;
+
+                    // translator: the variables here are HTML tags, here is the complete sentence: "If 2-step verification is enabled, please make sure that your email address and app password are correct. Do not use your regular password."
+                    const twoStepsEnabledMessage = c('Import error')
+                        .jt`If ${bold2StepsEnabled}, please make sure that your email address and app password are correct. Do ${boldNot} use your regular password.`;
+
+                    // translator: the variables here are HTML tags, here is the complete sentence: "You can also try to sign out of all your other Google accounts in the browser, then unlock CAPTCHA."
+                    const captchaMessage = c('Import error')
+                        .jt`You can also try to sign out of ${boldGoogleAccounts} in the browser, then unlock ${linkCAPTCHA}.`;
+
                     message = (
                         <>
                             <div className="mb1">{c('Import error')
                                 .t`Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.`}</div>
-                            <div className="mb1">
-                                {c('Import error')
-                                    .jt`If ${bold2StepsDisabled} (default Gmail settings), please make sure that:`}
-                            </div>
+                            <div className="mb1">{twoStepsDisabledMessage}</div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`your email address and password are correct`}</li>
                                 <li>{c('Import error')
                                     .t`"Less secure app access" is turned on in your Google account security settings`}</li>
                             </ul>
-                            <div className="mb1">
-                                {c('Import error')
-                                    .jt`If ${bold2StepsEnabled}, please make sure that your email address and app password are correct. Do ${boldNot} use your regular password.`}
-                            </div>
-                            <div className="mb1">
-                                {c('Import error')
-                                    .jt`You can also try to sign out of ${boldGoogleAccounts} in the browser, then unlock ${linkCAPTCHA}.`}
-                            </div>
+                            <div className="mb1">{twoStepsEnabledMessage}</div>
+                            <div className="mb1">{captchaMessage}</div>
                         </>
                     );
                 }
@@ -127,6 +133,10 @@ const ImportStartStep = ({
                 break;
             case IMAPS.YAHOO:
                 if (isReconnect) {
+                    // translator: the variable here is a HTML tag, here is the complete sentence: "your app password is correct. Do not use your regular password"
+                    const appPasswordIsCorrectMessage = c('Import error')
+                        .jt`your app password is correct. Do ${boldNot} use your regular password`;
+
                     message = (
                         <>
                             <div className="mb1">
@@ -135,8 +145,7 @@ const ImportStartStep = ({
                             </div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`IMAP access is enabled in your Yahoo account`}</li>
-                                <li>{c('Import error')
-                                    .jt`your app password is correct. Do ${boldNot} use your regular password`}</li>
+                                <li>{appPasswordIsCorrectMessage}</li>
                             </ul>
                         </>
                     );
@@ -148,6 +157,10 @@ const ImportStartStep = ({
                 }
 
                 if (isAuthError) {
+                    // translator: the variable here is a HTML tag, here is the complete sentence: "your email address and app password are correct. Do not use your regular password"
+                    const credentialsAreCorrectMessage = c('Import error')
+                        .jt`your email address and app password are correct. Do ${boldNot} use your regular password`;
+
                     message = (
                         <>
                             <div className="mb1">
@@ -155,8 +168,7 @@ const ImportStartStep = ({
                                     .t`Proton can't connect to your external account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error')
-                                    .jt`your email address and app password are correct. Do ${boldNot} use your regular password`}</li>
+                                <li>{credentialsAreCorrectMessage}</li>
                                 <li>{c('Import error').t`IMAP access is enabled in your Yahoo account`}</li>
                             </ul>
                         </>
