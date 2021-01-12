@@ -1,14 +1,38 @@
 import React from 'react';
 import { c } from 'ttag';
 import VPNClientCard from './VPNClientCard';
+import { DropdownMenuLink, Copy, Group } from '../../../components';
 
 const ProtonVPNClientsSection = () => {
+    const androidLinks = [
+        {
+            href: 'https://protonvpn.com/download/ProtonVPN.apk',
+            children: 'APK',
+        },
+        {
+            href: 'https://github.com/ProtonVPN/android-app/releases',
+            children: 'GitHub',
+        },
+        {
+            href: 'https://f-droid.org/en/packages/ch.protonvpn.android/',
+            children: 'F-Droid',
+        },
+    ].map(({ href, children }) => {
+        return (
+            <Group className="flex">
+                <DropdownMenuLink href={href}>{children}</DropdownMenuLink>
+                <Copy value={href} />
+            </Group>
+        );
+    });
+
     return (
         <div className="flex onmobile-flex-column">
             <VPNClientCard
                 title={c('VPNClient').t`Android`}
                 icon="android"
                 link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_source=protonvpn.com&utm_content=dashboard"
+                items={androidLinks}
             />
             <VPNClientCard
                 title={c('VPNClient').t`iOS`}
@@ -26,11 +50,13 @@ const ProtonVPNClientsSection = () => {
                 title={c('VPNClient').t`ChromeBook`}
                 icon="chrome"
                 link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_source=protonvpn.com&utm_content=dashboard"
+                items={androidLinks}
             />
             <VPNClientCard
                 title={c('VPNClient').t`Android TV`}
                 icon="tv"
                 link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_source=protonvpn.com&utm_content=dashboard"
+                items={androidLinks}
             />
         </div>
     );
