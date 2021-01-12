@@ -114,7 +114,7 @@ const AttachmentItem = ({
             <div
                 style={{ backgroundImage }}
                 className={classnames([
-                    'bg-white-dm flex bordered-container flex-nowrap pm_button p0',
+                    'message-attachmentList-item flex bordered-container flex-nowrap pm_button p0',
                     progressionHappening && 'message-attachmentList-item--uploadInProgress',
                     loading && 'message-attachmentList-item--loading',
                 ])}

@@ -2,6 +2,10 @@
     font-size: 1.4rem;
 }
 
+.message-attachmentList-item {
+    background-color: $white;
+}
+
 .message-attachmentPrimaryAction,
 .message-attachmentSecondaryAction {
 
@@ -13,9 +17,12 @@
 
 .isDarkMode {
 
+    .message-attachmentList-item {
+        background-color: $pm-global-grey;
+    }
+
     .message-attachmentPrimaryAction,
     .message-attachmentSecondaryAction {
-        background-color: $pm-global-grey;
 
         &:hover,
         &:focus-within {
