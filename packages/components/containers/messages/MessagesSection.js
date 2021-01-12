@@ -56,10 +56,10 @@ const MessagesSection = () => {
             </Row>
             <Row>
                 <Label htmlFor="delaySendSecondsSelect">
-                    <span className="mr0-5">{c('Label').t`Delay message sending`}</span>
+                    <span className="mr0-5">{c('Label').t`Undo send`}</span>
                     <Info
                         title={c('Tooltip')
-                            .t`You can delay your message sending by 5, 10 or 20 seconds, which gives you the possibility to cancel and go back to editing your draft.`}
+                            .t`This features delays sending your emails. You can undo send during the selected timeframe.`}
                     />
                 </Label>
                 <Field>
