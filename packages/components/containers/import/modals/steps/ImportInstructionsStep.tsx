@@ -30,15 +30,20 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
     const boldAccess = <strong key="boldAccess">{c('Import instructions emphasis').t`turn on access`}</strong>;
     const boldAppPassword = <strong key="boldAppPassword">{c('Import instructions emphasis').t`app password`}</strong>;
 
+    // translator: the variables here are HTML tags, here is the complete sentence: "Go to myaccount.google.com. In the Security section, turn on access for less secure apps. If you don't see this option, you might have 2-step verification enabled."
+    const gmail2StepsInstructions = c('Import instructions')
+        .jt`Go to ${googleAccountLink}. In the ${boldSecurity} section, ${boldAccess} for less secure apps. If you don't see this option, you might have 2-step verification enabled.`;
+
+    // translator: the variables here are HTML tags, here is the complete sentence: "Go to myaccount.google.com. In the Security section, create an app passwordif if you don't have one already. You will need this password during the import."
+    const gmailAppPasswordInstructions = c('Import instructions')
+        .jt`Go to ${googleAccountLink}. In the ${boldSecurity} section, create an ${boldAppPassword} if you don't have one already. You will need this password during the import.`;
+
     const gmailTabs = [
         {
             title: c('Import instructions tab title').t`2-step verification disabled (default settings)`,
             content: (
                 <>
-                    <div className="mb1">
-                        {c('Import instructions')
-                            .jt`Go to ${googleAccountLink}. In the ${boldSecurity} section, ${boldAccess} for less secure apps. If you don't see this option, you might have 2-step verification enabled.`}
-                    </div>
+                    <div className="mb1">{gmail2StepsInstructions}</div>
                     <img
                         className="border-currentColor"
                         src={gmailLessSecureAppsImg}
@@ -52,10 +57,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
             title: c('Import instructions tab title').t`2-step verification enabled`,
             content: (
                 <>
-                    <div className="mb1">
-                        {c('Import instructions')
-                            .jt`Go to ${googleAccountLink}. In the ${boldSecurity} section, create an ${boldAppPassword} if you don't have one already. You will need this password during the import.`}
-                    </div>
+                    <div className="mb1">{gmailAppPasswordInstructions}</div>
                     <img
                         className="border-currentColor"
                         src={gmailAppPasswordImg}
@@ -80,14 +82,23 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
         const boldLabels = <strong key="boldLabels">{c('Import instructions emphasis').t`Labels`}</strong>;
         const bold2Steps = <strong key="bold2Steps">{c('Import instructions emphasis').t`2-step verification`}</strong>;
 
+        // translator: the variables here are HTML tags, here is the complete sentence: "In your Gmail Settings, go to Forwarding and POP/IMAP and make sure that IMAP access is enabled."
+        const gmailImapMessage = c('Import instructions')
+            .jt`In your ${boldGmailSettings}, go to ${boldForwarding} and make sure that ${boldIMAPAccess} is enabled.`;
+
+        // translator: the variable here is a HTML tag, here is the complete sentence: "In the Labels section, choose the folders allowed for import into ProtonMail."
+        const gmailLabelsMessage = c('Import instructions')
+            .jt`In the ${boldLabels} section, choose the folders allowed for import into ProtonMail.`;
+
+        // translator: the variable here is a HTML tag, here is the complete sentence: "Allow ProtonMail access into your Gmail account: choose whether 2-step verification is enabled and follow the steps below."
+        const gmail2StepsMessage = c('Import instructions')
+            .jt`Allow ProtonMail access into your Gmail account: choose whether ${bold2Steps} is enabled and follow the steps below.`;
+
         switch (gmailInstructionsStep) {
             case GMAIL_INSTRUCTIONS.IMAP:
                 return (
                     <>
-                        <div className="mb1">
-                            {c('Import instructions')
-                                .jt`In your ${boldGmailSettings}, go to ${boldForwarding} and make sure that ${boldIMAPAccess} is enabled.`}
-                        </div>
+                        <div className="mb1">{gmailImapMessage}</div>
                         <img
                             className="border-currentColor"
                             src={gmailImapImg}
@@ -99,10 +110,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
             case GMAIL_INSTRUCTIONS.LABELS:
                 return (
                     <>
-                        <div className="mb1">
-                            {c('Import instructions')
-                                .jt`In the ${boldLabels} section, choose the folders allowed for import into ProtonMail.`}
-                        </div>
+                        <div className="mb1">{gmailLabelsMessage}</div>
                         <img
                             className="border-currentColor"
                             src={gmailImapFolderImg}
@@ -114,10 +122,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
             case GMAIL_INSTRUCTIONS.TWO_STEPS:
                 return (
                     <>
-                        <div className="mb1">
-                            {c('Import instructions')
-                                .jt`Allow ProtonMail access into your Gmail account: choose whether ${bold2Steps} is enabled and follow the steps below.`}
-                        </div>
+                        <div className="mb1">{gmail2StepsMessage}</div>
                         <Tabs tabs={gmailTabs} value={tabIndex} onChange={handleChangeIndex} />
                     </>
                 );
@@ -187,12 +192,13 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
             <strong key="boldManageAppPass">{c('Import instructions emphasis').t`Manage app passwords`}</strong>
         );
 
+        // translator: the variables here are HTML tags, here is the complete sentence: "Log into Yahoo Mail and click on your name in the upper right corner to access Account info. In the Account security section, go to Manage app passwords to generate a password. You will need this password during the import."
+        const yahooAppPasswordMessage = c('Import instructions')
+            .jt`Log into Yahoo Mail and click on your name in the upper right corner to access ${boldAccountInfo}. In the ${boldAccountSec} section, go to ${boldManageAppPass} to generate a password. You will need this password during the import.`;
+
         return (
             <>
-                <div className="mb1">
-                    {c('Import instructions')
-                        .jt`Log into Yahoo Mail and click on your name in the upper right corner to access ${boldAccountInfo}. In the ${boldAccountSec} section, go to  ${boldManageAppPass} to generate a password. You will need this password during the import.`}
-                </div>
+                <div className="mb1">{yahooAppPasswordMessage}</div>
                 <img
                     className="border-currentColor"
                     src={yahooAppPasswordImg}

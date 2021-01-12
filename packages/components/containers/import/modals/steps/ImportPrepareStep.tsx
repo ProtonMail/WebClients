@@ -288,7 +288,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                         c('Info').t`Import all messages since ${selectedPeriodLowerCased}`
                     ) : (
                         <span>
-                            {c('Info').jt`Import all messages since`}
+                            {c('Info').t`Import all messages since`}
                             {` `}
                             <strong>{timeUnitLabels[selectedPeriod]}</strong>
                         </span>
