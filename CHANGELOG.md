@@ -1,3 +1,9 @@
+# [3.16.52] - 2021-01-13
+
+## Improvements
+
+-   Add retry mechanism when inputs are not loading properly on signup page
+
 # [3.16.51] - 2021-01-05
 
 ## Updates
