@@ -4,7 +4,6 @@ const argv = require('minimist')(process.argv.slice(2));
 
 const { sync } = require('./helpers/cli');
 const { warn, error } = require('./helpers/log');
-const prepareSentry = require('./helpers/sentry');
 const { getPublicPath } = require('../webpack/helpers/source');
 
 const isSilent = argv._.includes('help') || argv._.includes('init') || argv._.includes('print-config');
@@ -84,15 +83,8 @@ const ENV_CONFIG = Object.keys(CONFIG_ENV.env).reduce(
         secure && (acc.secure[key] = secure);
         return acc;
     },
-    { sentry: {}, api: {}, secure: {}, pkg: CONFIG_ENV.pkg, app: {} }
+    { api: {}, secure: {}, pkg: CONFIG_ENV.pkg, app: {} }
 );
-
-ENV_CONFIG.sentry = Object.entries(CONFIG_ENV.env).reduce((acc, [env, { sentry }]) => {
-    if (sentry && env !== 'proxy') {
-        acc[env] = sentry;
-    }
-    return acc;
-}, Object.create(null));
 
 const API_TARGETS = {
     prod: 'https://mail.protonmail.com/api',
@@ -133,7 +125,7 @@ const getApi = (api) => {
 };
 
 function main({ api = 'dev' }) {
-    const { url: apiUrl, first: firstApi } = getApi(api);
+    const { url: apiUrl } = getApi(api);
     const json = {
         clientId: ENV_CONFIG.app.clientId || 'WebMail',
         appName: ENV_CONFIG.app.appName || ENV_CONFIG.pkg.name || 'protonmail',
@@ -144,13 +136,8 @@ function main({ api = 'dev' }) {
 
     const COMMIT_RELEASE = getBuildCommit();
 
-    // When we give to --api an url it means -> dev mode so osef of sentry
-    const SENTRY_DSN = firstApi ? prepareSentry(ENV_CONFIG, firstApi) : '';
-
-    json.sentry = {
-        release: firstApi ? COMMIT_RELEASE : '',
-        dsn: SENTRY_DSN
-    };
+    const isProduction = process.env.NODE_ENV === 'production';
+    const SENTRY_DSN = isProduction ? ENV_CONFIG.app.sentry : '';
 
     const PUBLIC_APP_PATH = getPublicPath(argv);
 
