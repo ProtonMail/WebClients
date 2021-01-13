@@ -59,7 +59,7 @@ const MessagesSection = () => {
                     <span className="mr0-5">{c('Label').t`Undo send`}</span>
                     <Info
                         title={c('Tooltip')
-                            .t`This features delays sending your emails. You can undo send during the selected timeframe.`}
+                            .t`This feature delays sending your emails. You can undo send during the selected timeframe.`}
                     />
                 </Label>
                 <Field>
