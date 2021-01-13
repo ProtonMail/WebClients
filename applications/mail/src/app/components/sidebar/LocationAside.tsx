@@ -10,7 +10,7 @@ interface Props {
     refreshing?: boolean;
 }
 
-const UNREAD_LIMIT = 999;
+const UNREAD_LIMIT = 9999;
 
 const LocationAside = ({ unreadCount, active = false, refreshing = false }: Props) => {
     const unreadTitle = unreadCount
@@ -26,7 +26,7 @@ const LocationAside = ({ unreadCount, active = false, refreshing = false }: Prop
             )}
             {unreadCount ? (
                 <span className="navigation__counterItem flex-item-noshrink" title={unreadTitle}>
-                    {unreadCount > UNREAD_LIMIT ? '+999' : unreadCount}
+                    {unreadCount > UNREAD_LIMIT ? '9999+' : unreadCount}
                 </span>
             ) : null}
         </>
