@@ -70,8 +70,8 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                 );
             });
             await api(oneClickUnsubscribe(messageID));
-        } else if (unsubscribeMethods.MailTo) {
-            const { Subject = 'Unsubscribe', Body = 'Please, unsubscribe me', ToList = [] } = unsubscribeMethods.MailTo;
+        } else if (unsubscribeMethods.Mailto) {
+            const { Subject = 'Unsubscribe', Body = 'Please, unsubscribe me', ToList = [] } = unsubscribeMethods.Mailto;
             // "address" by default, but will default to another address if this address cant send message
             const from = findSender(addresses, { AddressID: address.ID }, true);
 
