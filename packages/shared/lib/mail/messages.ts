@@ -20,6 +20,7 @@ const {
     FLAG_E2E,
     FLAG_SIGN,
     FLAG_PUBLIC_KEY,
+    FLAG_UNSUBSCRIBED,
 } = MESSAGE_FLAGS;
 const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
 
@@ -60,6 +61,7 @@ export const isSentEncrypted = hasFlag(FLAG_E2E | FLAG_SENT);
 export const isInternalEncrypted = hasFlag(FLAG_E2E | FLAG_INTERNAL);
 export const isSign = hasFlag(FLAG_SIGN);
 export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
+export const isUnsubscribed = hasFlag(FLAG_UNSUBSCRIBED);
 
 export const isExternalEncrypted = (message: Message) => isE2E(message) && !isInternal(message);
 export const isPGPEncrypted = (message: Message) => isExternal(message) && isReceived(message) && isE2E(message);
