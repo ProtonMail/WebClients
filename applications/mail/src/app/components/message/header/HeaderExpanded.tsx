@@ -281,7 +281,6 @@ const HeaderExpanded = ({
             )}
 
             <HeaderExtra
-                labelID={labelID}
                 message={message}
                 sourceMode={sourceMode}
                 onResignContact={onResignContact}

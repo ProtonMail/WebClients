@@ -1,24 +1,35 @@
 import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import React from 'react';
-import { Icon, Href, InlineLinkButton, ConfirmModal, Alert, useModals, useLoading } from 'react-components';
+import {
+    Icon,
+    Href,
+    InlineLinkButton,
+    ConfirmModal,
+    Alert,
+    useModals,
+    useLoading,
+    useEventManager,
+    useApi,
+    useNotifications,
+} from 'react-components';
 import { c } from 'ttag';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { markAsHam } from 'proton-shared/lib/api/messages';
 
 import { MessageExtended } from '../../../models/message';
-import { useMoveToFolder } from '../../../hooks/useApplyLabels';
-import { LABEL_IDS_TO_I18N } from '../../../constants';
 
 interface Props {
     message: MessageExtended;
-    labelID: string;
 }
 
-const ExtraSpamScore = ({ message, labelID }: Props) => {
+const ExtraSpamScore = ({ message }: Props) => {
     const { createModal } = useModals();
     const [loading, withLoading] = useLoading();
-    const moveToFolder = useMoveToFolder();
     const { Flags, LabelIDs = [] } = message.data || {};
+    const { call } = useEventManager();
+    const api = useApi();
+    const { createNotification } = useNotifications();
 
     if (hasBit(Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL)) {
         return (
@@ -56,12 +67,9 @@ const ExtraSpamScore = ({ message, labelID }: Props) => {
                     </ConfirmModal>
                 );
             });
-            await moveToFolder(
-                [message.data || {}],
-                MAILBOX_LABEL_IDS.INBOX,
-                LABEL_IDS_TO_I18N[MAILBOX_LABEL_IDS.INBOX],
-                labelID
-            );
+            await api(markAsHam(message.data?.ID));
+            await call();
+            createNotification({ text: c('Success').t`Message marked as legitimate` });
         };
         return (
             <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
