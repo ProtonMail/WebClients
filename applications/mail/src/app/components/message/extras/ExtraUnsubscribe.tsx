@@ -1,4 +1,4 @@
-import { getListUnsubscribe, getListUnsubscribePost, getOriginalTo } from 'proton-shared/lib/mail/messages';
+import { getOriginalTo, isUnsubscribed } from 'proton-shared/lib/mail/messages';
 import React from 'react';
 import {
     Icon,
@@ -11,18 +11,18 @@ import {
     useAddresses,
     useLoading,
     useModals,
+    useApi,
+    useEventManager,
 } from 'react-components';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { openNewTab } from 'proton-shared/lib/helpers/browser';
-import performRequest from 'proton-shared/lib/fetch/fetch';
 import { removeEmailAlias } from 'proton-shared/lib/helpers/email';
-import { getSearchParams } from 'proton-shared/lib/helpers/url';
+import { oneClickUnsubscribe, markAsUnsubscribed } from 'proton-shared/lib/api/messages';
 
 import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from '../../../models/message';
 import { useMessage } from '../../../hooks/message/useMessage';
 import { useSendMessage, useSendVerifications } from '../../../hooks/useSendMessage';
-import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
 import { findSender } from '../../../helpers/addresses';
 import { OnCompose } from '../../../hooks/useCompose';
 
@@ -31,102 +31,117 @@ interface Props {
     onCompose: OnCompose;
 }
 
-const UNSUBSCRIBE_ONE_CLICK = 'List-Unsubscribe=One-Click';
-const UNSUBSCRIBE_REGEX = /<(.*?)>/g;
-
 const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
     const { createNotification } = useNotifications();
+    const api = useApi();
+    const { call } = useEventManager();
     const { createModal } = useModals();
     const [addresses] = useAddresses();
     const { addAction } = useMessage(message.localID);
     const sendVerification = useSendVerifications();
     const sendMessage = useSendMessage();
-    const messageCache = useMessageCache();
     const [loading, withLoading] = useLoading();
     const toAddress = getOriginalTo(message.data);
     const { Address: senderAddress, Name: senderName } = message.data?.Sender || {};
-    const lists = getListUnsubscribe(message.data);
-    const oneClick = getListUnsubscribePost(message.data)?.some((value) => value === UNSUBSCRIBE_ONE_CLICK) || false;
-    const matches = (lists?.map((list) => list.match(UNSUBSCRIBE_REGEX) || []) || [])
-        .flat()
-        .map((match) => match.replace('<', '').replace('>', ''));
     const address = addresses.find(({ Email }) => removeEmailAlias(Email) === removeEmailAlias(toAddress));
+    const unsubscribeMethods = message?.data?.UnsubscribeMethods || {};
 
-    if (message.unsubscribed || !lists || !address) {
+    if (!Object.keys(unsubscribeMethods).length || !address) {
         return null;
     }
 
-    const boldFromEmail = <strong key="email">{senderName || senderAddress}</strong>;
+    const messageID = message?.data?.ID;
 
     const handleClick = async () => {
-        await new Promise((resolve, reject) => {
-            createModal(
-                <ConfirmModal
-                    title={c('Title').t`Unsubscribe`}
-                    onConfirm={() => resolve(undefined)}
-                    onClose={reject}
-                    confirm={c('Action').t`Unsubscribe`}
-                >
-                    <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
-                        {c('Info')
-                            .jt`Are you sure you'd like to stop receiving similar messages from ${boldFromEmail}?`}
-                    </Alert>
-                </ConfirmModal>
-            );
-        });
-        try {
-            // We check the first method which is supposed to work
-            const [value] = matches;
+        if (unsubscribeMethods.OneClick) {
+            await new Promise((resolve, reject) => {
+                createModal(
+                    <ConfirmModal
+                        title={c('Title').t`Unsubscribe`}
+                        onConfirm={() => resolve(undefined)}
+                        onClose={reject}
+                        confirm={c('Action').t`Unsubscribe`}
+                    >
+                        <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
+                            {c('Info')
+                                .t`A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.`}
+                        </Alert>
+                    </ConfirmModal>
+                );
+            });
+            await api(oneClickUnsubscribe(messageID));
+        } else if (unsubscribeMethods.MailTo) {
+            const { Subject = 'Unsubscribe', Body = 'Please, unsubscribe me', ToList = [] } = unsubscribeMethods.MailTo;
+            // "address" by default, but will default to another address if this address cant send message
+            const from = findSender(addresses, { AddressID: address.ID }, true);
 
-            if (value.startsWith('mailto:')) {
-                const [toAddress, search = ''] = value.replace('mailto:', '').split('?');
-                const { subject = 'Unsubscribe', body = 'Please, unsubscribe me' } = getSearchParams(search);
-                // "address" by default, but will default to another address if this address cant send message
-                const from = findSender(addresses, { AddressID: address.ID }, true);
-
-                if (!from) {
-                    throw new Error('Unable to find from');
-                }
-
-                const inputMessage: PartialMessageExtended = {
-                    localID: generateUID('unsubscribe'),
-                    plainText: body,
-                    data: {
-                        AddressID: from.ID,
-                        Subject: subject,
-                        Sender: { Address: from.Email, Name: from.DisplayName },
-                        ToList: [{ Address: toAddress, Name: toAddress }],
-                        CCList: [],
-                        BCCList: [],
-                        MIMEType: MIME_TYPES.PLAINTEXT,
-                    },
-                };
-
-                const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData);
-                await addAction(() => sendMessage(cleanMessage, mapSendPrefs, onCompose));
-            } else if (value.startsWith('http')) {
-                if (oneClick) {
-                    // NOTE Exist with MailChimp but has CORS issue
-                    const config = {
-                        url: value,
-                        headers: {},
-                        input: 'form',
-                        method: 'post',
-                        data: {
-                            'List-Unsubscribe': 'One-Click',
-                        },
-                    };
-
-                    await performRequest(config);
-                } else {
-                    openNewTab(value);
-                }
+            if (!from) {
+                throw new Error('Unable to find from address');
             }
-        } finally {
-            // Even if the request fail, we need to mark the message as unsubscribed
-            updateMessageCache(messageCache, message.localID, { unsubscribed: true });
-            createNotification({ text: c('Success').t`Mail list unsubscribed` });
+
+            const boldFromEmail = <strong key="email">{senderName || senderAddress}</strong>;
+            const toEmails = ToList.join(', ');
+            const divTo = <div key="to">{c('Info').t`Recipient: ${toEmails}`}</div>;
+            const divSubject = <div key="subject">{c('Info').t`Subject: ${Subject}`}</div>;
+            const divBody = <div key="body">{c('Info').t`Body: ${Body}`}</div>;
+
+            await new Promise((resolve, reject) => {
+                createModal(
+                    <ConfirmModal
+                        title={c('Title').t`Unsubscribe`}
+                        onConfirm={() => resolve(undefined)}
+                        onClose={reject}
+                        confirm={c('Action').t`Unsubscribe`}
+                    >
+                        <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
+                            {c('Info')
+                                .jt`To unsubscribe from this mailing list, an email will be sent from ${boldFromEmail} with following details as defined by the sender of the newsletter:${divTo}${divSubject}${divBody}`}
+                        </Alert>
+                    </ConfirmModal>
+                );
+            });
+
+            const inputMessage: PartialMessageExtended = {
+                localID: generateUID('unsubscribe'),
+                plainText: Body,
+                data: {
+                    AddressID: from.ID,
+                    Subject,
+                    Sender: { Address: from.Email, Name: from.DisplayName },
+                    ToList: ToList.map((email) => ({
+                        Address: email,
+                        Name: email,
+                    })),
+                    CCList: [],
+                    BCCList: [],
+                    MIMEType: MIME_TYPES.PLAINTEXT,
+                },
+            };
+
+            const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData);
+            await addAction(() => sendMessage(cleanMessage, mapSendPrefs, onCompose));
+        } else if (unsubscribeMethods.HttpClient) {
+            const divUrl = <div key="url" className="bold">{c('Info').t`URL: ${unsubscribeMethods.HttpClient}`}</div>;
+            await new Promise((resolve, reject) => {
+                createModal(
+                    <ConfirmModal
+                        title={c('Title').t`Unsubscribe`}
+                        onConfirm={() => resolve(undefined)}
+                        onClose={reject}
+                        confirm={c('Action').t`Unsubscribe`}
+                    >
+                        <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
+                            {c('Info')
+                                .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:${divUrl}`}
+                        </Alert>
+                    </ConfirmModal>
+                );
+            });
+            openNewTab(unsubscribeMethods.HttpClient);
         }
+        await api(markAsUnsubscribed([messageID]));
+        await call();
+        createNotification({ text: c('Success').t`Mail list unsubscribed` });
     };
 
     return (
@@ -139,9 +154,15 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                 </Href>
             </span>
             <span className="flex-item-noshrink flex">
-                <InlineLinkButton disabled={loading} className="underline" onClick={() => withLoading(handleClick())}>
-                    {loading ? c('Action').t`Unsubscribing` : c('Action').t`Unsubscribe`}
-                </InlineLinkButton>
+                {isUnsubscribed(message.data) ? null : (
+                    <InlineLinkButton
+                        disabled={loading}
+                        className="underline"
+                        onClick={() => withLoading(handleClick())}
+                    >
+                        {loading ? c('Action').t`Unsubscribing` : c('Action').t`Unsubscribe`}
+                    </InlineLinkButton>
+                )}
             </span>
         </div>
     );

@@ -179,11 +179,6 @@ export interface MessageExtended {
     embeddeds?: EmbeddedMap;
 
     /**
-     * Unsubscribed flag
-     */
-    unsubscribed?: boolean;
-
-    /**
      * Signature verifications results
      */
     verification?: MessageVerification;
