@@ -15,7 +15,7 @@ export interface Attachment {
 }
 
 export interface UnsubscribeMethods {
-    MailTo?: {
+    Mailto?: {
         Subject?: string;
         Body?: string;
         ToList: string[];
