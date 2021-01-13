@@ -19,6 +19,7 @@ import {
 } from 'react-components';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
+import { wait } from 'proton-shared/lib/helpers/promise';
 
 import SendWithErrorsModal from '../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../helpers/message/cleanMessage';
@@ -38,6 +39,9 @@ import useDelaySendSeconds from './useDelaySendSeconds';
 import { useGetMessageKeys } from './message/useGetMessageKeys';
 import { getParamsFromPathname, setParamsInLocation } from '../helpers/mailboxUrl';
 import { useContactCache } from '../containers/ContactProvider';
+
+const DELAY_SEND_PROCESSING = 5000;
+const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();
@@ -282,15 +286,18 @@ export const useSendMessage = () => {
 
             try {
                 const { Sent, undoTimeout } = await promise;
-                setTimeout(() => {
+                const endSending = async () => {
+                    await wait(Math.max(undoTimeout, MIN_DELAY_SENT_NOTIFICATION));
                     if (sendingMessageNotificationManager) {
                         hideNotification(sendingMessageNotificationManager.ID);
                     }
-
                     if (hasUndo) {
-                        void call();
+                        await wait(DELAY_SEND_PROCESSING);
+                        await call();
                     }
-                }, Math.max(undoTimeout, 2500));
+                };
+
+                endSending();
 
                 updateMessageCache(messageCache, localID, {
                     data: Sent,
