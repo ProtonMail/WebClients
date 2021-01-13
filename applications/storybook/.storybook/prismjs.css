@@ -9,7 +9,7 @@ code {
   font-size: 1.1em;
   padding: .25em;
   border-radius: 5px;
-  background: #f6f7fa;
+  background: #f6f7fa !important;
   line-height: 1; }
 
 code[class*="language-"],
