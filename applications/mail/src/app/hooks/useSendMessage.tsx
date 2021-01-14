@@ -1,6 +1,7 @@
 import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
 import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { EncryptionPreferencesError } from 'proton-shared/lib/mail/encryptionPreferences';
 import { getRecipientsAddresses, isAttachPublicKey } from 'proton-shared/lib/mail/messages';
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router';
@@ -94,7 +95,7 @@ export const useSendVerifications = () => {
 
         const emailWarnings: { [email: string]: string[] } = {};
         const mapSendPrefs: SimpleMap<SendPreferences> = {};
-        const sendErrors: { [email: string]: Error } = {};
+        const sendErrors: { [email: string]: EncryptionPreferencesError } = {};
         const expiresNotEncrypted: string[] = [];
 
         await Promise.all(
@@ -105,8 +106,8 @@ export const useSendVerifications = () => {
                 }
                 const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
                 mapSendPrefs[email] = sendPreferences;
-                if (sendPreferences.failure) {
-                    sendErrors[email] = sendPreferences.failure?.error;
+                if (sendPreferences.error) {
+                    sendErrors[email] = sendPreferences.error;
                 }
                 if (message.expiresIn && !sendPreferences.encrypt) {
                     expiresNotEncrypted.push(email);

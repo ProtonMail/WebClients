@@ -15,20 +15,16 @@ import {
     useGetCalendarInfo,
     useLoading,
 } from 'react-components';
+import { useGetCanonicalEmails } from 'react-components/hooks/useGetCanonicalEmails';
 import { c } from 'ttag';
 import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
-import {
-    EVENT_INVITATION_ERROR_TYPE,
-    EventInvitationError,
-    getErrorMessage,
-} from '../../../../helpers/calendar/EventInvitationError';
+import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../../../../helpers/calendar/EventInvitationError';
 import {
     EventInvitation,
     getEventTimeStatus,
     getHasFullCalendarData,
     getHasInvitation,
     getInitialInvitationModel,
-    getInvitationHasAttendee,
     getInvitationHasEventID,
     getIsInvitationOutdated,
     InvitationModel,
@@ -36,7 +32,7 @@ import {
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
 
-import { MessageExtended } from '../../../../models/message';
+import { MessageExtendedWithData } from '../../../../models/message';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';
 import ExtraEventSummary from './ExtraEventSummary';
@@ -51,8 +47,10 @@ const {
     EVENT_UPDATE_ERROR,
 } = EVENT_INVITATION_ERROR_TYPE;
 
+const { DECLINECOUNTER, REPLY } = ICAL_METHOD;
+
 interface Props {
-    message: MessageExtended;
+    message: MessageExtendedWithData;
     invitationOrError: RequireSome<EventInvitation, 'method'> | EventInvitationError;
     calendars: Calendar[];
     canCreateCalendar: boolean;
@@ -92,6 +90,7 @@ const ExtraEvent = ({
     const getCalendarInfo = useGetCalendarInfo();
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
+    const getCanonicalEmails = useGetCanonicalEmails();
 
     const handleRetry = () => {
         setRetryCount((count) => count + 1);
@@ -109,9 +108,13 @@ const ExtraEvent = ({
         );
     };
 
-    const { isOrganizerMode, invitationIcs, isAddressDisabled } = model;
+    const { isOrganizerMode, invitationIcs, isPartyCrasher: isPartyCrasherIcs } = model;
     const method = model.invitationIcs?.method;
-    const title = getDisplayTitle(invitationIcs?.vevent.summary?.value);
+    const displayVevent =
+        method && [DECLINECOUNTER, REPLY].includes(method) && model.invitationApi?.vevent
+            ? model.invitationApi?.vevent
+            : model.invitationIcs?.vevent;
+    const title = getDisplayTitle(displayVevent?.summary?.value);
 
     useEffect(() => {
         let unmounted = false;
@@ -124,6 +127,7 @@ const ExtraEvent = ({
             let calendarData;
             let hasDecryptionError;
             let singleEditData;
+            let isPartyCrasher = isPartyCrasherIcs;
             try {
                 // check if an event with the same uid exists in the calendar already
                 const {
@@ -149,12 +153,23 @@ const ExtraEvent = ({
                 calendarData = calData;
                 singleEditData = singleData;
                 hasDecryptionError = hasDecryptError;
-                const isOutdated = getIsInvitationOutdated(invitationIcs.vevent, invitationApi?.vevent);
+                const isOutdated = getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode });
                 if (parentInvitation) {
                     parentInvitationApi = parentInvitation;
                 }
+                if (isOrganizerMode && invitation) {
+                    isPartyCrasher = !invitation.attendee;
+                }
                 if (!unmounted) {
-                    setModel({ ...model, isOutdated, calendarData, singleEditData, hasDecryptionError, isFreeUser });
+                    setModel({
+                        ...model,
+                        isOutdated,
+                        calendarData,
+                        singleEditData,
+                        hasDecryptionError,
+                        isFreeUser,
+                        isPartyCrasher,
+                    });
                 }
             } catch (error) {
                 // if fetching fails, proceed as if there was no event in the database
@@ -163,7 +178,6 @@ const ExtraEvent = ({
             if (
                 !invitationApi ||
                 !getInvitationHasEventID(invitationApi) ||
-                !getInvitationHasAttendee(invitationApi) ||
                 !getHasFullCalendarData(calendarData) ||
                 calendarData.calendarNeedsUserAction ||
                 unmounted
@@ -178,9 +192,9 @@ const ExtraEvent = ({
                     invitationIcs,
                     invitationApi,
                     api,
+                    getCanonicalEmails,
                     calendarData,
                     singleEditData,
-                    isAddressDisabled,
                     message,
                     contactEmails,
                     ownAddresses,
@@ -190,7 +204,7 @@ const ExtraEvent = ({
                 const isOutdated =
                     updateAction !== UPDATE_ACTION.NONE
                         ? false
-                        : getIsInvitationOutdated(invitationIcs.vevent, newInvitationApi.vevent);
+                        : getIsInvitationOutdated({ invitationIcs, invitationApi: newInvitationApi, isOrganizerMode });
                 if (!unmounted) {
                     setModel({
                         ...model,
@@ -201,6 +215,8 @@ const ExtraEvent = ({
                         isOutdated,
                         updateAction,
                         hasDecryptionError,
+                        isFreeUser,
+                        isPartyCrasher,
                     });
                 }
             } catch (e) {
@@ -231,7 +247,7 @@ const ExtraEvent = ({
     }
 
     if (model.error && ![EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR].includes(model.error.type)) {
-        const message = getErrorMessage(model.error.type);
+        const { message } = model.error;
         const canTryAgain = [DECRYPTION_ERROR, FETCHING_ERROR, UPDATING_ERROR, CANCELLATION_ERROR].includes(
             model.error.type
         );
@@ -251,7 +267,7 @@ const ExtraEvent = ({
         );
     }
 
-    if ((isOrganizerMode && method === ICAL_METHOD.REFRESH) || !getHasInvitation(model)) {
+    if (!getHasInvitation(model)) {
         return null;
     }
 

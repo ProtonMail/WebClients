@@ -51,13 +51,13 @@ const getMapEmailHeaders = (headers?: string): { [key: string]: X_PM_HEADERS } =
 };
 
 export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon | undefined => {
-    const { encrypt, pgpScheme, hasApiKeys, isPublicKeyPinned, warnings, failure } = sendPreferences;
+    const { encrypt, pgpScheme, hasApiKeys, isPublicKeyPinned, warnings, error } = sendPreferences;
     const validationErrorsMessage = warnings?.join('; ');
     const warningsText = validationErrorsMessage
         ? c('Key validation warning').t`Recipient's key validation failed: ${validationErrorsMessage}`
         : undefined;
-    if (failure) {
-        return { colorClassName: 'color-global-warning', isEncrypted: false, fill: FAIL, text: failure.error.message };
+    if (error) {
+        return { colorClassName: 'color-global-warning', isEncrypted: false, fill: FAIL, text: error.message };
     }
     if (pgpScheme === SEND_PM) {
         const result = { colorClassName: 'color-pm-blue', isEncrypted: true };

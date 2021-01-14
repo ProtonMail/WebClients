@@ -1,9 +1,10 @@
+import { getSequence } from 'proton-shared/lib/calendar/vcalHelper';
 import React from 'react';
 import { c } from 'ttag';
 import { SmallButton } from 'react-components';
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { getSequence, InvitationModel } from '../../../../helpers/calendar/invite';
+import { InvitationModel } from '../../../../helpers/calendar/invite';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;

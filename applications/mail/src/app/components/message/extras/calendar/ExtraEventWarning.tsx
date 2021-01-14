@@ -1,18 +1,75 @@
-import React from 'react';
-import { c } from 'ttag';
+import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import React from 'react';
 import { Alert } from 'react-components';
+import { c } from 'ttag';
 import { EVENT_TIME_STATUS, InvitationModel } from '../../../../helpers/calendar/invite';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
 }
 const ExtraEventWarning = ({ model }: Props) => {
-    const { timeStatus, isForwardedInvitation } = model;
-    if (isForwardedInvitation) {
+    const {
+        isOrganizerMode,
+        invitationIcs: { method, vevent: veventIcs },
+        invitationApi,
+        isOutdated,
+        timeStatus,
+        isPartyCrasher,
+    } = model;
+    if (isPartyCrasher) {
+        const text = isOrganizerMode
+            ? c('Calendar invite info')
+                  .t`The sender of this email has not been invited to this event and cannot be added as a participant.`
+            : c('Calendar invite info').t`Your email address is not in the participants list.`;
         return (
             <Alert className="mt0-5" type="warning">
-                {c('Calendar invite info').t`Your email address is not in the participants list.`}
+                {text}
+            </Alert>
+        );
+    }
+    if (isOutdated && method !== ICAL_METHOD.REFRESH) {
+        return null;
+    }
+    if (isOrganizerMode) {
+        if (!invitationApi) {
+            return null;
+        }
+        if (method === ICAL_METHOD.REFRESH) {
+            return (
+                <Alert className="mt0-5" type="warning">
+                    {c('Calendar invite info').t`Event refreshing is not supported for the moment.`}
+                </Alert>
+            );
+        }
+        if (method === ICAL_METHOD.COUNTER) {
+            return (
+                <>
+                    {veventIcs['recurrence-id'] && (
+                        <Alert className="mt0-5" type="warning">
+                            {c('Calendar invite info')
+                                .t`This answer cannot be added to ProtonCalendar as we only support answers to all events of a series for the moment.`}
+                        </Alert>
+                    )}
+                    <Alert className="mt0-5" type="warning">
+                        {c('Calendar invite info').t`Event rescheduling is not supported for the moment.`}
+                    </Alert>
+                </>
+            );
+        }
+        if (method === ICAL_METHOD.REPLY && veventIcs['recurrence-id']) {
+            return (
+                <Alert className="mt0-5" type="warning">
+                    {c('Calendar invite info')
+                        .t`This answer cannot be added to ProtonCalendar as we only support answers to all events of a series for the moment.`}
+                </Alert>
+            );
+        }
+    }
+    if (method === ICAL_METHOD.ADD && invitationApi) {
+        return (
+            <Alert className="mt0-5" type="warning">
+                {c('Calendar invite info').t`Adding occurrences to an event is not supported for the moment.`}
             </Alert>
         );
     }

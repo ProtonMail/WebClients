@@ -1,9 +1,10 @@
-import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from 'proton-shared/lib/calendar/constants';
 import { c } from 'ttag';
 
 export enum EVENT_INVITATION_ERROR_TYPE {
     INVITATION_INVALID,
     INVITATION_UNSUPPORTED,
+    INVALID_METHOD,
     PARSING_ERROR,
     DECRYPTION_ERROR,
     FETCHING_ERROR,
@@ -12,15 +13,29 @@ export enum EVENT_INVITATION_ERROR_TYPE {
     EVENT_UPDATE_ERROR,
     CANCELLATION_ERROR,
     UNEXPECTED_ERROR,
-    EXTERNAL_ERROR
+    EXTERNAL_ERROR,
 }
 
-export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, externalError?: Error) => {
+export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?: EventInvitationErrorConfig) => {
+    const isResponse = config?.method && ICAL_METHODS_ATTENDEE.includes(config?.method);
     if (errorType === EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID) {
-        return c('Event invitation error').t`Invalid invitation`;
+        return isResponse
+            ? c('Event invitation error').t`Invalid response`
+            : c('Event invitation error').t`Invalid invitation`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED) {
-        return c('Event invitation error').t`Unsupported invitation`;
+        return isResponse
+            ? c('Event invitation error').t`Unsupported response`
+            : c('Event invitation error').t`Unsupported invitation`;
+    }
+    if (errorType === EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD) {
+        if (!config?.method) {
+            return c('Event invitation error').t`Invalid method`;
+        }
+        // Here we invert response <-> invitation as we take the perspective of the sender
+        return isResponse
+            ? c('Event invitation error').t`Invalid invitation`
+            : c('Event invitation error').t`Invalid response`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.PARSING_ERROR) {
         return c('Event invitation error').t`Attached invitation could not be parsed`;
@@ -47,7 +62,7 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, external
         return c('Event invitation error').t`Unexpected error`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.EXTERNAL_ERROR) {
-        return externalError?.message || '';
+        return config?.externalError?.message || '';
     }
     return '';
 };
@@ -55,6 +70,7 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, external
 interface EventInvitationErrorConfig {
     externalError?: Error;
     partstat?: ICAL_ATTENDEE_STATUS;
+    method?: ICAL_METHOD;
 }
 
 export class EventInvitationError extends Error {
@@ -64,8 +80,10 @@ export class EventInvitationError extends Error {
 
     externalError?: Error;
 
+    method?: ICAL_METHOD;
+
     constructor(errorType: EVENT_INVITATION_ERROR_TYPE, config?: EventInvitationErrorConfig) {
-        super(getErrorMessage(errorType, config?.externalError));
+        super(getErrorMessage(errorType, config));
         this.type = errorType;
         this.partstat = config?.partstat;
         this.externalError = config?.externalError;

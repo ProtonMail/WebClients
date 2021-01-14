@@ -11,8 +11,9 @@ interface Props {
 }
 const ExtraEventAlert = ({ model }: Props) => {
     const {
+        isOrganizerMode,
         isOutdated,
-        isForwardedInvitation,
+        isPartyCrasher,
         invitationIcs: { method },
         calendarData,
         invitationApi,
@@ -23,9 +24,39 @@ const ExtraEventAlert = ({ model }: Props) => {
     } = model;
     const isCancel = method === ICAL_METHOD.CANCEL;
 
-    if (isOutdated || isFreeUser || isForwardedInvitation) {
+    if (isOutdated || isFreeUser || isPartyCrasher) {
         return null;
     }
+
+    // organizer mode
+    if (isOrganizerMode) {
+        if (method !== ICAL_METHOD.REPLY) {
+            return null;
+        }
+        const partstatIcs = model.invitationIcs.attendee?.partstat;
+        const partstatApi = model.invitationApi?.attendee?.partstat;
+        if (!partstatIcs || !partstatApi) {
+            return null;
+        }
+        if (calendarData?.isCalendarDisabled) {
+            const text = isOutdated
+                ? c('Link').t`Re-enable the address linked to this calendar to manage your invitation.`
+                : c('Link').t`Re-enable the address linked to this calendar to update your invitation.`;
+            return (
+                <Alert type="warning">
+                    <span className="mr0-5">{c('Info').t`This invitation is saved in a disabled calendar.`}</span>
+                    <span>
+                        <AppLink to="/settings/addresses" toApp={APPS.PROTONMAIL}>
+                            {text}
+                        </AppLink>
+                    </span>
+                </Alert>
+            );
+        }
+        return null;
+    }
+
+    // attendee mode
     // the invitation is unanswered
     if (!invitationApi) {
         if (isCancel) {

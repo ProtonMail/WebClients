@@ -1,9 +1,11 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { reformatApiErrorMessage } from 'proton-shared/lib/calendar/helper';
 import { getAttendeePartstat } from 'proton-shared/lib/calendar/vcalHelper';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { Participant, SavedInviteData } from 'proton-shared/lib/interfaces/calendar';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { EncryptionPreferencesError } from 'proton-shared/lib/mail/encryptionPreferences';
 import { formatSubject, RE_PREFIX } from 'proton-shared/lib/mail/messages';
 import React, { useCallback, Dispatch, SetStateAction } from 'react';
 import { Icon, InlineLinkButton, Loader, useLoading, useNotifications } from 'react-components';
@@ -124,7 +126,15 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
             error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR, { partstat }),
         });
     };
-    const handleEmailError = () => {
+    const handleEmailError = (error: Error) => {
+        if (error instanceof EncryptionPreferencesError) {
+            const errorMessage = reformatApiErrorMessage(error.message);
+            createNotification({
+                type: 'error',
+                text: c('Reply to calendar invitation').t`Cannot send to organizer address: ${errorMessage}`,
+            });
+            return;
+        }
         createNotification({
             type: 'error',
             text: c('Reply to calendar invitation').t`Answering invitation failed`,

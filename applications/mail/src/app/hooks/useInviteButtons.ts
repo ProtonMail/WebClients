@@ -1,18 +1,20 @@
-import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { createInviteIcs, getParticipantHasAddressID } from 'proton-shared/lib/calendar/integration/invite';
 import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import {
     CalendarEvent,
     CalendarWidgetData,
-    PartstatActions,
     Participant,
+    PartstatActions,
     SavedInviteData,
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { getParticipantHasAddressID, createReplyIcs } from 'proton-shared/lib/calendar/integration/invite';
 import { useCallback } from 'react';
 import { useApi, useConfig } from 'react-components';
+import { useGetCanonicalEmails } from 'react-components/hooks/useGetCanonicalEmails';
 import useSendIcs from 'react-components/hooks/useSendIcs';
+import { useContactCache } from '../containers/ContactProvider';
 import { createCalendarEventFromInvitation, updatePartstatFromInvitation } from '../helpers/calendar/inviteApi';
 
 interface Args {
@@ -24,7 +26,7 @@ interface Args {
     calendarData?: CalendarWidgetData;
     calendarEvent?: CalendarEvent;
     onEmailSuccess: () => void;
-    onEmailError: (error?: Error) => void;
+    onEmailError: (error: Error) => void;
     onCreateEventSuccess: () => void;
     onUpdateEventSuccess: () => void;
     onCreateEventError: (partstat: ICAL_ATTENDEE_STATUS, error?: Error) => void;
@@ -56,6 +58,8 @@ const useInviteButtons = ({
     const api = useApi();
     const sendIcs = useSendIcs();
     const config = useConfig();
+    const getCanonicalEmails = useGetCanonicalEmails();
+    const { contactsMap: contactEmailsMap } = useContactCache();
 
     // Returns true if the operation is succesful
     const sendReplyEmail = useCallback(
@@ -67,18 +71,27 @@ const useInviteButtons = ({
             }
             try {
                 const prodId = getProdId(config);
-                const ics = createReplyIcs({
+                const attendeeWithPartstat = {
+                    ...attendee.vcalComponent,
+                    parameters: {
+                        ...attendee.vcalComponent.parameters,
+                        partstat,
+                    },
+                };
+                const ics = createInviteIcs({
+                    method: ICAL_METHOD.REPLY,
                     prodId,
                     vevent,
-                    emailTo: attendee.vcalComponent.value,
-                    partstat,
+                    attendeesTo: [attendeeWithPartstat],
                 });
                 await sendIcs({
+                    method: ICAL_METHOD.REPLY,
                     ics,
                     addressID: attendee.addressID,
                     from: { Address: attendee.emailAddress, Name: attendee.name || attendee.emailAddress },
                     to: [{ Address: organizer.emailAddress, Name: organizer.name }],
                     subject,
+                    contactEmailsMap,
                 });
                 onEmailSuccess();
                 return true;
@@ -102,6 +115,7 @@ const useInviteButtons = ({
                     vcalAttendee: attendee.vcalComponent,
                     partstat,
                     api,
+                    getCanonicalEmails,
                     calendarData,
                     overwrite,
                 });
@@ -129,6 +143,7 @@ const useInviteButtons = ({
                     partstat,
                     oldPartstat: attendee.partstat,
                     api,
+                    getCanonicalEmails,
                     calendarData,
                     overwrite,
                 });

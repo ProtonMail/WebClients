@@ -5,16 +5,13 @@ import { c } from 'ttag';
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
+import { getAllDayInfo, getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
-import {
-    formatEndDateTime,
-    formatStartDateTime,
-    getAllDayInfo,
-    InvitationModel,
-} from '../../../../helpers/calendar/invite';
+import { formatEndDateTime, formatStartDateTime, InvitationModel } from '../../../../helpers/calendar/invite';
 import ExtraEventParticipants from './ExtraEventParticipants';
+
+const { REFRESH, REPLY } = ICAL_METHOD;
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
@@ -28,8 +25,8 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
         invitationIcs: { method },
         invitationApi,
     } = model;
-    const { vevent, organizer, participants } =
-        method === ICAL_METHOD.DECLINECOUNTER && invitationApi ? invitationApi : invitationIcs;
+    const displayApiDetails = [REFRESH, REPLY].includes(method);
+    const { vevent, organizer, participants } = invitationApi && displayApiDetails ? invitationApi : invitationIcs;
     const { rrule, dtstart } = vevent;
     const dtend = getDtendProperty(vevent);
     const { isAllDay, isSingleAllDay } = getAllDayInfo(dtstart, dtend);
@@ -76,10 +73,13 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
         <>
             {properties.map(({ value, label, key }, index) => {
                 return (
-                    <div key={key} className={classnames(['flex', index < properties.length - 1 && 'mb0-5'])}>
+                    <div
+                        key={key}
+                        className={classnames(['flex onmobile-flex-column', index < properties.length - 1 && 'mb0-5'])}
+                    >
                         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                        <label className="mr1 w20">{label}</label>
-                        <div className="flex-item-fluid hyphens">{value}</div>
+                        <span className="mr1 w20 onmobile-w100 onmobile-mr0">{label}</span>
+                        <div className="flex-item-fluid onmobile-pl1 hyphens">{value}</div>
                     </div>
                 );
             })}

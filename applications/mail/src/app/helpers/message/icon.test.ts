@@ -1,6 +1,9 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { SIGNATURE_START, VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
-import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
+import {
+    ENCRYPTION_PREFERENCES_ERROR_TYPES,
+    EncryptionPreferencesError,
+} from 'proton-shared/lib/mail/encryptionPreferences';
 import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { STATUS_ICONS_FILLS } from '../../models/crypto';
@@ -60,7 +63,7 @@ describe('icon', () => {
             });
         });
 
-        it('should return a failure sign when sending to internal users with pinned keys, but the pinned key is not used', () => {
+        it('should return an error sign when sending to internal users with pinned keys, but the pinned key is not used', () => {
             const sendPreferences = {
                 encrypt: true,
                 sign: true,
@@ -69,10 +72,10 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: false,
-                failure: {
-                    type: EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED,
-                    error: Error('test error'),
-                },
+                error: new EncryptionPreferencesError(
+                    ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED,
+                    'test error'
+                ),
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-warning',
@@ -118,7 +121,7 @@ describe('icon', () => {
             });
         });
 
-        it('should return a failure sign when sending to WKD users with pinned keys, but the pinned key is not used', () => {
+        it('should return ar error sign when sending to WKD users with pinned keys, but the pinned key is not used', () => {
             const sendPreferences = {
                 encrypt: true,
                 sign: true,
@@ -127,10 +130,10 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: false,
-                failure: {
-                    type: EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED,
-                    error: Error('test error'),
-                },
+                error: new EncryptionPreferencesError(
+                    ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED,
+                    'test error'
+                ),
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
                 colorClassName: 'color-global-warning',

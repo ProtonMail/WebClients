@@ -1,160 +1,135 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import React from 'react';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { Icon } from 'react-components';
-import { getSequence, InvitationModel } from '../../../../helpers/calendar/invite';
+import { InvitationModel } from '../../../../helpers/calendar/invite';
+import { getSummaryParagraph } from './ExtraEventSummary';
 
-const { REPLY, COUNTER } = ICAL_METHOD;
+const { REPLY, COUNTER, REFRESH } = ICAL_METHOD;
 const { ACCEPTED, TENTATIVE, DECLINED } = ICAL_ATTENDEE_STATUS;
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
 }
 const ExtraEventOrganizerSummary = ({ model }: Props) => {
-    const { invitationIcs, invitationApi } = model;
-    if (!invitationApi) {
-        return null;
-    }
-    const { method, vevent: eventIcs, attendee: attendeeIcs, participants: participantsIcs } = invitationIcs;
-    const { vevent: eventApi } = invitationApi;
-    const [sequenceApi, sequenceIcs] = [eventApi, eventIcs].map(getSequence);
-    const sequenceDiff = sequenceIcs - sequenceApi;
-    const totalParticipants = participantsIcs?.length || 0;
+    const {
+        invitationIcs: { method, attendee: attendeeIcs, vevent: veventIcs },
+        invitationApi,
+        hasNoCalendars,
+        isOutdated,
+    } = model;
+    const isSingleEdit = !!veventIcs['recurrence-id'];
 
-    if (method === COUNTER && attendeeIcs) {
-        if (sequenceDiff > 0) {
-            return null;
-        }
-        const icon = (
-            <span className="inline-flex bg-global-attention rounded50 p0-25 mr0-5r">
-                <Icon name="clock" color="white" size={12} />
-            </span>
-        );
-        if (sequenceDiff < 0) {
-            return (
-                <p>
-                    {icon}
-                    {c('Calendar invite info').ngettext(
-                        msgid`You already accepted the new time proposal. The participant has been notified`,
-                        `You already accepted the new time proposal. All the participants have been notified`,
-                        totalParticipants
-                    )}
-                </p>
+    if (method === REPLY) {
+        if (!invitationApi) {
+            if (hasNoCalendars) {
+                return getSummaryParagraph(
+                    c('Calendar invite info').t`This response is out of date. You have no calendars.`
+                );
+            }
+            return getSummaryParagraph(
+                c('Calendar invite info')
+                    .t`This response is out of date. The event does not exist in your calendar anymore.`
             );
         }
-        const participantName = attendeeIcs.name;
 
-        return (
-            <p className="mt0-5 mb0-5">
-                {icon}
-                {c('Calendar invite info').jt`${participantName} proposed a new time for this event.`}
-            </p>
-        );
-    }
-    if (method === REPLY) {
         if (!attendeeIcs?.partstat) {
             return null;
         }
-        if (!eventApi || !eventIcs['recurrence-id']) {
-            return (
-                <div>
-                    <p className="mt0 mb0-5">{c('Calendar invite info').t`This event could not be found.`}</p>
-                    <p className="mt0 mb0-5">{c('Calendar invite info').t`It might have been cancelled or updated.`}</p>
-                </div>
-            );
-        }
         const { partstat } = attendeeIcs;
-        const participantName = attendeeIcs.name;
-        if (sequenceDiff === 0) {
+        const participantName = attendeeIcs.displayName;
+        if (!isOutdated) {
             if (partstat === ACCEPTED) {
-                const icon = (
-                    <span className="inline-flex bg-global-success rounded50 p0-25 mr0-25">
-                        <Icon name="on" color="white" size={12} />
-                    </span>
-                );
-                return (
-                    <p className="mt0-5 mb0-5">
-                        {icon}
-                        {c('Calendar invite info').jt`${participantName} accepted your invitation.`}
-                    </p>
-                );
+                if (isSingleEdit) {
+                    return getSummaryParagraph(
+                        c('Calendar invite info')
+                            .jt`${participantName} accepted your invitation to one occurrence of the event.`
+                    );
+                }
+                return getSummaryParagraph(c('Calendar invite info').jt`${participantName} accepted your invitation.`);
             }
             if (partstat === DECLINED) {
-                const icon = (
-                    <span className="inline-flex bg-global-warning rounded50 p0-25 mr0-25">
-                        <Icon name="off" color="white" size={12} />
-                    </span>
-                );
-                return (
-                    <p className="mt0-5 mb0-5">
-                        {icon}
-                        {c('Calendar invite info').jt`${participantName} declined your invitation.`}
-                    </p>
-                );
+                if (isSingleEdit) {
+                    return getSummaryParagraph(
+                        c('Calendar invite info')
+                            .jt`${participantName} declined your invitation to one occurrence of the event.`
+                    );
+                }
+                return getSummaryParagraph(c('Calendar invite info').jt`${participantName} declined your invitation.`);
             }
             if (partstat === TENTATIVE) {
-                const icon = (
-                    <span className="inline-flex bg-global-attention rounded50 p0-25 mr0-25">
-                        <Icon name="question-nocircle" color="white" size={12} />
-                    </span>
-                );
-                return (
-                    <p className="mt0-5 mb0-5">
-                        {icon}
-                        {c('Calendar invite info').jt`${participantName} tentatively accepted your invitation.`}
-                    </p>
+                if (isSingleEdit) {
+                    return getSummaryParagraph(
+                        c('Calendar invite info')
+                            .jt`${participantName} tentatively accepted your invitation to one occurrence of the event.`
+                    );
+                }
+                return getSummaryParagraph(
+                    c('Calendar invite info').jt`${participantName} tentatively accepted your invitation.`
                 );
             }
         }
-        const eventUpdated = (
-            <p className="mt0-5 mb0-5">
-                {c('Calendar invite info').t`This invitation is out of date. This event has been updated.`}
-            </p>
+        const eventUpdated = getSummaryParagraph(
+            c('Calendar invite info').t`This response is out of date. This event has been updated.`
         );
         if (partstat === ACCEPTED) {
-            const icon = (
-                <span className="inline-flex bg-global-success rounded50 p0-25 mr0-25">
-                    <Icon name="on" color="white" size={12} />
-                </span>
-            );
+            if (isSingleEdit) {
+                return (
+                    <>
+                        {eventUpdated}
+                        {getSummaryParagraph(
+                            c('Calendar invite info')
+                                .jt`${participantName} had previously accepted your invitation to one occurrence of the event.`
+                        )}
+                    </>
+                );
+            }
             return (
                 <>
                     {eventUpdated}
-                    <p className="mt0-5 mb0-5">
-                        {icon}
-                        {c('Calendar invite info').jt`${participantName} had previously accepted your invitation.`}
-                    </p>
+                    {getSummaryParagraph(
+                        c('Calendar invite info').jt`${participantName} had previously accepted your invitation.`
+                    )}
                 </>
             );
         }
         if (partstat === DECLINED) {
-            const icon = (
-                <span className="inline-flex bg-global-warning rounded50 p0-25 mr0-25">
-                    <Icon name="off" color="white" size={12} />
-                </span>
-            );
+            if (isSingleEdit) {
+                return (
+                    <>
+                        {eventUpdated}
+                        {getSummaryParagraph(
+                            c('Calendar invite info')
+                                .jt`${participantName} had previously declined your invitation to one occurrence of the event.`
+                        )}
+                    </>
+                );
+            }
             return (
                 <>
                     {eventUpdated}
-                    <p className="mt0-5 mb0-5">
-                        {icon}
-                        {c('Calendar invite info').jt`${participantName} had previously declined your invitation.`}
-                    </p>
+                    {getSummaryParagraph(
+                        c('Calendar invite info').jt`${participantName} had previously declined your invitation.`
+                    )}
                 </>
             );
         }
         if (partstat === TENTATIVE) {
-            const icon = (
-                <span className="inline-flex bg-global-attention rounded50 p0-25 mr0-25">
-                    <Icon name="question-nocircle" color="white" size={12} />
-                </span>
-            );
+            if (isSingleEdit) {
+                return (
+                    <>
+                        {eventUpdated}
+                        <p className="mt0-5 mb0-5">
+                            {c('Calendar invite info')
+                                .jt`${participantName} had previously tentatively accepted your invitation to one occurrence of the event.`}
+                        </p>
+                    </>
+                );
+            }
             return (
                 <>
                     {eventUpdated}
                     <p className="mt0-5 mb0-5">
-                        {icon}
                         {c('Calendar invite info')
                             .jt`${participantName} had previously tentatively accepted your invitation.`}
                     </p>
@@ -162,6 +137,139 @@ const ExtraEventOrganizerSummary = ({ model }: Props) => {
             );
         }
     }
+
+    if (method === COUNTER && attendeeIcs) {
+        const { displayName: participantName, partstat } = attendeeIcs;
+        const hasAlsoReplied = partstat && [ACCEPTED, TENTATIVE, DECLINED].includes(partstat);
+        if (!invitationApi) {
+            if (hasNoCalendars) {
+                if (isSingleEdit) {
+                    return getSummaryParagraph(c('Calendar invite info')
+                        .jt`${participantName} had proposed a new time for one occurrence of this event.
+                        This proposal is out of date. You have no calendars.`);
+                }
+                return getSummaryParagraph(c('Calendar invite info')
+                    .jt`${participantName} had proposed a new time for this event. This proposal is out of date.
+                    You have no calendars.`);
+            }
+            if (isSingleEdit) {
+                return getSummaryParagraph(c('Calendar invite info')
+                    .jt`${participantName} had proposed a new time for one occurrence of this event. This proposal is out of date.
+                    The event does not exist in your calendar anymore.`);
+            }
+            return getSummaryParagraph(c('Calendar invite info')
+                .jt`${participantName} had proposed a new time for this event. This proposal is out of date.
+                The event does not exist in your calendar anymore.`);
+        }
+        if (isOutdated) {
+            if (hasAlsoReplied) {
+                if (partstat === ACCEPTED) {
+                    if (isSingleEdit) {
+                        return getSummaryParagraph(c('Calendar invite info')
+                            .jt`${participantName} had accepted your invitation and proposed a new time for one occurrence of this event.
+                            Answer and proposal are out of date.`);
+                    }
+                    return getSummaryParagraph(c('Calendar invite info')
+                        .jt`${participantName} had accepted your invitation and proposed a new time for this event.
+                        Answer and proposal are out of date.`);
+                }
+                if (partstat === DECLINED) {
+                    if (isSingleEdit) {
+                        return getSummaryParagraph(c('Calendar invite info')
+                            .jt`${participantName} had declined your invitation and proposed a new time for one occurrence of this event.
+                            Answer and proposal are out of date.`);
+                    }
+                    return getSummaryParagraph(c('Calendar invite info')
+                        .jt`${participantName} had declined your invitation and proposed a new time for this event.
+                        Answer and proposal are out of date.`);
+                }
+                if (partstat === TENTATIVE) {
+                    if (isSingleEdit) {
+                        return getSummaryParagraph(c('Calendar invite info')
+                            .jt`${participantName} had tentatively accepted your invitation and proposed a new time for one occurrence of this event.
+                            Answer and proposal are out of date.`);
+                    }
+                    return getSummaryParagraph(c('Calendar invite info')
+                        .jt`${participantName} had tentatively accepted your invitation and proposed a new time for this event.
+                        Answer and proposal are out of date.`);
+                }
+            }
+            if (isSingleEdit) {
+                return getSummaryParagraph(c('Calendar invite info')
+                    .jt`${participantName} had proposed a new time for one occurrence of this event.
+                    This proposal is out of date.`);
+            }
+            return getSummaryParagraph(
+                c('Calendar invite info')
+                    .jt`${participantName} had proposed a new time for this event. This proposal is out of date.`
+            );
+        }
+        if (hasAlsoReplied) {
+            if (partstat === ACCEPTED) {
+                if (isSingleEdit) {
+                    return getSummaryParagraph(
+                        c('Calendar invite info')
+                            .jt`${participantName} accepted your invitation and proposed a new time for one occurrence of this event.`
+                    );
+                }
+                return getSummaryParagraph(
+                    c('Calendar invite info')
+                        .jt`${participantName} accepted your invitation and proposed a new time for this event.`
+                );
+            }
+            if (partstat === DECLINED) {
+                if (isSingleEdit) {
+                    return getSummaryParagraph(
+                        c('Calendar invite info')
+                            .jt`${participantName} declined your invitation and proposed a new time for one occurrence of this event.`
+                    );
+                }
+                return getSummaryParagraph(
+                    c('Calendar invite info')
+                        .jt`${participantName} declined your invitation and proposed a new time for this event.`
+                );
+            }
+            if (partstat === TENTATIVE) {
+                if (isSingleEdit) {
+                    return getSummaryParagraph(
+                        c('Calendar invite info')
+                            .jt`${participantName} tentatively accepted your invitation and proposed a new time for one occurrence of this event.`
+                    );
+                }
+                return getSummaryParagraph(
+                    c('Calendar invite info')
+                        .jt`${participantName} tentatively accepted your invitation and proposed a new time for this event.`
+                );
+            }
+        }
+        if (isSingleEdit) {
+            return getSummaryParagraph(
+                c('Calendar invite info').jt`${participantName} proposed a new time for one occurrence of this event.`
+            );
+        }
+        return getSummaryParagraph(
+            c('Calendar invite info').jt`${participantName} proposed a new time for this event.`
+        );
+    }
+
+    if (method === REFRESH && attendeeIcs) {
+        const { displayName: participantName } = attendeeIcs;
+        if (!invitationApi) {
+            if (hasNoCalendars) {
+                return getSummaryParagraph(c('Calendar invite info')
+                    .jt`${participantName} asked for the latest updates to an event which does not exist anymore.
+                    You have no calendars.`);
+            }
+            return getSummaryParagraph(
+                c('Calendar invite info')
+                    .jt`${participantName} asked for the latest updates to an event which does not exist in your calendar anymore.`
+            );
+        }
+        return getSummaryParagraph(
+            c('Calendar invite info').jt`${participantName} asked for the latest event updates.`
+        );
+    }
+
     return null;
 };
 
