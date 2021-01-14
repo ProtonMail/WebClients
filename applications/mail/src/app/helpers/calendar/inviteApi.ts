@@ -3,9 +3,15 @@ import {
     CreateCalendarEventSyncData,
     DeleteCalendarEventSyncData,
     syncMultipleEvents,
+    updateAttendeePartstat,
     UpdateCalendarEventSyncData,
 } from 'proton-shared/lib/api/calendars';
-import { getAttendeeEmail, modifyAttendeesPartstat, withPmAttendees } from 'proton-shared/lib/calendar/attendees';
+import {
+    getAttendeeEmail,
+    modifyAttendeesPartstat,
+    toApiPartstat,
+    withPmAttendees,
+} from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import {
     CALENDAR_FLAGS,
@@ -25,49 +31,48 @@ import {
     propertyToUTCDate,
 } from 'proton-shared/lib/calendar/vcalConverter';
 import {
-    getAttendeeHasPartStat,
-    getAttendeePartstat,
     getEventStatus,
     getHasAttendee,
     getHasRecurrenceId,
     getIsAlarmComponent,
+    getSequence,
 } from 'proton-shared/lib/calendar/vcalHelper';
 import { withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit, pick } from 'proton-shared/lib/helpers/object';
-import { Address, Api } from 'proton-shared/lib/interfaces';
+import { Address, Api, GetCanonicalEmails } from 'proton-shared/lib/interfaces';
 import {
     Calendar,
     CalendarEvent,
     CalendarEventWithMetadata,
     CalendarWidgetData,
     DecryptedPersonalVeventMapResult,
+    DecryptedVeventResult,
+    Participant,
+    SingleEditWidgetData,
     SyncMultipleApiResponse,
+    UpdatePartstatApiResponse,
     VcalAttendeeProperty,
     VcalVeventComponent,
-    DecryptedVeventResult,
-    SingleEditWidgetData,
 } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
-import { MessageExtended } from '../../models/message';
+import { MessageExtendedWithData } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import {
     EventInvitation,
     getCanCreateSingleEdit,
     getInvitationHasAttendee,
     getIsInvitationOutdated,
-    getSequence,
     getSingleEditWidgetData,
-    InvitationModel,
     processEventInvitation,
     UPDATE_ACTION,
 } from './invite';
 
 const { CANCELLED } = ICAL_EVENT_STATUS;
-const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, CANCEL } = UPDATE_ACTION;
+const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, UPDATE_PARTSTAT, CANCEL } = UPDATE_ACTION;
 
 interface GetVeventWithAlarmsArgs {
     calendarEvent: CalendarEventWithMetadata;
@@ -143,7 +148,7 @@ type FetchEventInvitation = (args: {
     getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
     calendars: Calendar[];
     defaultCalendar?: Calendar;
-    message: MessageExtended;
+    message: MessageExtendedWithData;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
     isFreeUser: boolean;
@@ -211,16 +216,16 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         );
         const [vevent, parentVevent] = vevents;
         const result: Unwrap<ReturnType<FetchEventInvitation>> = { calendarData, singleEditData };
-        const { invitation } = processEventInvitation({ vevent }, message, contactEmails, ownAddresses);
-        result.invitation = { ...invitation, calendarEvent };
+        const { invitation } = processEventInvitation({ vevent, calendarEvent }, message, contactEmails, ownAddresses);
+        result.invitation = invitation;
         if (parentVevent && calendarParentEvent) {
             const { invitation: parentInvitation } = processEventInvitation(
-                { vevent: parentVevent },
+                { vevent: parentVevent, calendarEvent: calendarParentEvent },
                 message,
                 contactEmails,
                 ownAddresses
             );
-            result.parentInvitation = { ...parentInvitation, calendarEvent: calendarParentEvent };
+            result.parentInvitation = parentInvitation;
         }
         return result;
     } catch (e) {
@@ -234,8 +239,12 @@ interface UpdateEventArgs {
     calendarEvent: CalendarEvent;
     vevent: VcalVeventComponent;
     api: Api;
+    getCanonicalEmails: GetCanonicalEmails;
     calendarData: Required<CalendarWidgetData>;
     createSingleEdit?: boolean;
+    updateTime?: number;
+    updatePartstat?: ICAL_ATTENDEE_STATUS;
+    attendee?: Participant;
     deleteIds?: string[];
     overwrite: boolean;
 }
@@ -243,8 +252,12 @@ const updateEventApi = async ({
     calendarEvent,
     vevent,
     api,
+    getCanonicalEmails,
     calendarData,
     createSingleEdit = false,
+    updateTime,
+    updatePartstat,
+    attendee,
     overwrite,
     deleteIds = [],
 }: UpdateEventArgs) => {
@@ -254,7 +267,31 @@ const updateEventApi = async ({
         addressKeys,
         calendarKeys,
     } = calendarData;
-    const veventWithPmAttendees = await withPmAttendees(vevent, api);
+    if (updateTime !== undefined) {
+        const { ID: eventID, Attendees } = calendarEvent;
+        const token = attendee?.token;
+        const attendeeID = Attendees.find(({ Token }) => Token === token)?.ID;
+        if (!attendeeID || !updatePartstat) {
+            throw new Error('Missing data for updating participation status');
+        }
+        const data = {
+            Status: toApiPartstat(updatePartstat),
+            UpdateTime: updateTime,
+        };
+        const { Attendee: updatedAttendee } = await api<UpdatePartstatApiResponse>(
+            updateAttendeePartstat(calendarID, eventID, attendeeID, data)
+        );
+        return {
+            ...calendarEvent,
+            Attendees: Attendees.map((Attendee) => {
+                if (Attendee.Token === token) {
+                    return updatedAttendee;
+                }
+                return Attendee;
+            }),
+        };
+    }
+    const veventWithPmAttendees = await withPmAttendees(vevent, getCanonicalEmails);
     const creationKeys = await getCreationKeys({
         Event: createSingleEdit ? undefined : calendarEvent,
         addressKeys,
@@ -265,6 +302,7 @@ const updateEventApi = async ({
         isSwitchCalendar: false,
         ...creationKeys,
     });
+    // If we are updating a recurring event with previous modifications, we must delete those
     const deleteEvents = deleteIds.map((id) => ({ ID: id }));
     const Events: (
         | CreateCalendarEventSyncData
@@ -289,23 +327,19 @@ const updateEventApi = async ({
     return Event;
 };
 
-interface UpdateEventInvitationArgs
-    extends Omit<
-        RequireSome<InvitationModel, 'invitationIcs' | 'invitationApi'>,
-        'timeStatus' | 'isFreeUser' | 'canCreateCalendar' | 'hasNoCalendars'
-    > {
+interface UpdateEventInvitationArgs {
     isOrganizerMode: boolean;
-    isAddressDisabled: boolean;
     isOutdated?: boolean;
     updateAction?: UPDATE_ACTION;
     hideSummary?: boolean;
     invitationIcs: RequireSome<EventInvitation, 'method'>;
-    invitationApi: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
+    invitationApi: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendarData: Required<CalendarWidgetData>;
     singleEditData?: SingleEditWidgetData;
     api: Api;
-    message: MessageExtended;
+    getCanonicalEmails: GetCanonicalEmails;
+    message: MessageExtendedWithData;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
     overwrite: boolean;
@@ -314,11 +348,11 @@ export const updateEventInvitation = async ({
     isOrganizerMode,
     calendarData,
     singleEditData,
-    isAddressDisabled,
     invitationIcs,
     invitationApi,
     parentInvitationApi,
     api,
+    getCanonicalEmails,
     message,
     contactEmails,
     ownAddresses,
@@ -329,37 +363,15 @@ export const updateEventInvitation = async ({
 }> => {
     const { method, vevent: veventIcs, attendee: attendeeIcs } = invitationIcs;
     const { calendarEvent, vevent: veventApi, attendee: attendeeApi } = invitationApi;
-    const vcalAttendeeIcs = attendeeIcs?.vcalComponent;
-    const vcalAttendeeApi = attendeeApi?.vcalComponent;
+    const partstatIcs = attendeeIcs?.partstat;
+    const partstatApi = attendeeApi?.partstat;
+    const attendeesApi = veventApi.attendee;
     const recurrenceIdIcs = veventIcs['recurrence-id'];
+    const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
 
-    if (isOrganizerMode) {
-        // TODO
-        if (method === ICAL_METHOD.REPLY) {
-            if (!veventApi) {
-                if (!recurrenceIdIcs) {
-                    return { action: NONE };
-                }
-                // TODO: create single edit
-            }
-            if (!vcalAttendeeIcs) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
-            }
-            if (!getAttendeeHasPartStat(vcalAttendeeIcs) || !getAttendeeHasPartStat(vcalAttendeeApi)) {
-                throw new Error('Participation status of attendees required');
-            }
-            const partStatIcs = vcalAttendeeIcs.parameters.partstat;
-            const partStatApi = vcalAttendeeApi.parameters.partstat;
-            if (partStatApi !== partStatIcs) {
-                // TODO: update eventApi with partstatIcs
-            }
-        }
-    }
-    // attendee mode
     if (
-        isAddressDisabled ||
         calendarData.isCalendarDisabled ||
-        getIsInvitationOutdated(veventIcs, veventApi) ||
+        getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode }) ||
         !attendeeIcs ||
         !attendeeApi
     ) {
@@ -367,13 +379,79 @@ export const updateEventInvitation = async ({
         return { action: NONE };
     }
 
+    if (isOrganizerMode) {
+        // Some external providers also want us to update attendee status with a COUNTER method
+        const updateCounter =
+            method === ICAL_METHOD.COUNTER &&
+            partstatIcs &&
+            [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.DECLINED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(
+                partstatIcs
+            );
+        if (method === ICAL_METHOD.REPLY || updateCounter) {
+            if (!veventApi) {
+                if (!recurrenceIdIcs) {
+                    return { action: NONE };
+                }
+                // In the future, create single edit. Not supported for now
+                return { action: NONE };
+            }
+            if (recurrenceIdIcs) {
+                // Replies to single edits not supported for the moment
+                return { action: NONE };
+            }
+            if (!partstatIcs || !partstatApi || !attendeesApi) {
+                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
+            }
+            try {
+                // update attendee partstat if needed
+                const updateTime = getUnixTime(
+                    veventIcs.dtstamp ? propertyToUTCDate(veventIcs.dtstamp) : message.data.Time
+                );
+                if (attendeeApi.updateTime && updateTime <= attendeeApi.updateTime) {
+                    return { action: NONE };
+                }
+                const updatedVevent = {
+                    ...veventApi,
+                    attendee: modifyAttendeesPartstat(attendeesApi, { [attendeeApi.emailAddress]: partstatIcs }),
+                };
+                const updatedCalendarEvent = await updateEventApi({
+                    calendarEvent,
+                    vevent: updatedVevent,
+                    updateTime,
+                    updatePartstat: attendeeIcs.partstat,
+                    attendee: attendeeApi,
+                    calendarData,
+                    api,
+                    getCanonicalEmails,
+                    overwrite: false,
+                });
+                const { invitation: updatedInvitation } = processEventInvitation(
+                    { vevent: updatedVevent, calendarEvent: updatedCalendarEvent },
+                    message,
+                    contactEmails,
+                    ownAddresses
+                );
+                if (!getInvitationHasAttendee(updatedInvitation)) {
+                    throw new Error('Missing attendee after update');
+                }
+                return {
+                    action: UPDATE_PARTSTAT,
+                    invitation: { ...updatedInvitation, calendarEvent: updatedCalendarEvent },
+                };
+            } catch (error) {
+                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
+            }
+        }
+
+        return { action: NONE };
+    }
+    // attendee mode
     if (method === ICAL_METHOD.REQUEST) {
         if (!veventApi) {
             // TODO: check for SharedEventID and create new event accordingly
             return { action: NONE };
         }
         const hasUpdatedDtstamp = getHasModifiedDtstamp(veventIcs, veventApi);
-        const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
         const hasUpdatedDateTimes = getHasModifiedDateTimes(veventIcs, veventApi);
         const hasUpdatedTitle = veventIcs.summary?.value !== veventApi.summary?.value;
         const hasUpdatedDescription = veventIcs.description?.value !== veventApi.description?.value;
@@ -400,7 +478,7 @@ export const updateEventInvitation = async ({
                 return { action: NONE };
             }
             try {
-                if (!vcalAttendeeIcs) {
+                if (!partstatIcs) {
                     throw new Error('Missing attendee parameters');
                 }
                 const veventIcsWithApiAlarms: VcalVeventComponent = {
@@ -413,12 +491,11 @@ export const updateEventInvitation = async ({
                 const updatedVevent = withDtstamp(
                     getInvitedEventWithAlarms(
                         veventIcsWithApiAlarms,
-                        getAttendeePartstat(vcalAttendeeIcs),
+                        partstatIcs,
                         calendarData.calendarSettings,
-                        getAttendeePartstat(vcalAttendeeApi)
+                        partstatApi
                     )
                 );
-                // we are updating a recurring event with previous modifications. We must delete those
                 const updatedCalendarEvent = await updateEventApi({
                     calendarEvent,
                     vevent: updatedVevent,
@@ -426,6 +503,7 @@ export const updateEventInvitation = async ({
                     createSingleEdit,
                     deleteIds: singleEditData?.ids,
                     api,
+                    getCanonicalEmails,
                     overwrite,
                 });
                 const { invitation: updatedInvitation } = processEventInvitation(
@@ -487,6 +565,7 @@ export const updateEventInvitation = async ({
                     calendarData,
                     createSingleEdit,
                     api,
+                    getCanonicalEmails,
                     overwrite,
                 });
                 const { invitation: updatedInvitation } = processEventInvitation(
@@ -513,6 +592,7 @@ export const createCalendarEventFromInvitation = async ({
     vcalAttendee,
     partstat,
     api,
+    getCanonicalEmails,
     calendarData,
     overwrite,
 }: {
@@ -521,6 +601,7 @@ export const createCalendarEventFromInvitation = async ({
     partstat: ICAL_ATTENDEE_STATUS;
     calendarData?: CalendarWidgetData;
     api: Api;
+    getCanonicalEmails: GetCanonicalEmails;
     overwrite: boolean;
 }) => {
     const { calendar, memberID, addressKeys, calendarKeys, calendarSettings } = calendarData || {};
@@ -542,7 +623,7 @@ export const createCalendarEventFromInvitation = async ({
         throw new Error('Missing data for creating calendar event from invitation');
     }
     veventToSave.attendee[attendeeIndex] = vcalAttendeeToSave;
-    const veventToSaveWithPmAttendees = await withPmAttendees(veventToSave, api);
+    const veventToSaveWithPmAttendees = await withPmAttendees(veventToSave, getCanonicalEmails);
     // create calendar event
     const data = await createCalendarEvent({
         eventComponent: veventToSaveWithPmAttendees,
@@ -580,6 +661,7 @@ export const updatePartstatFromInvitation = async ({
     partstat,
     oldPartstat,
     api,
+    getCanonicalEmails,
     calendarData,
 }: {
     veventApi: VcalVeventComponent;
@@ -590,6 +672,7 @@ export const updatePartstatFromInvitation = async ({
     oldPartstat?: ICAL_ATTENDEE_STATUS;
     calendarData?: CalendarWidgetData;
     api: Api;
+    getCanonicalEmails: GetCanonicalEmails;
     overwrite: boolean;
 }) => {
     const { calendar, memberID, addressKeys, calendarKeys, calendarSettings } = calendarData || {};
@@ -614,7 +697,7 @@ export const updatePartstatFromInvitation = async ({
     };
     // add alarms to event if necessary
     const veventToSave = getInvitedEventWithAlarms(updatedVevent, partstat, calendarSettings, oldPartstat);
-    const veventWithPmAttendees = await withPmAttendees(veventToSave, api);
+    const veventWithPmAttendees = await withPmAttendees(veventToSave, getCanonicalEmails);
     const vcalAttendeeToSave = {
         ...vcalAttendee,
         parameters: { ...vcalAttendee.parameters, partstat },

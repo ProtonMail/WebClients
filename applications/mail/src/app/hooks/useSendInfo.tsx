@@ -9,7 +9,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { EncryptionPreferencesFailureTypes } from 'proton-shared/lib/mail/encryptionPreferences';
+import { ENCRYPTION_PREFERENCES_ERROR_TYPES, } from 'proton-shared/lib/mail/encryptionPreferences';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
 import { GetEncryptionPreferences } from 'react-components/hooks/useGetEncryptionPreferences';
@@ -20,7 +20,7 @@ import { MapSendInfo, STATUS_ICONS_FILLS } from '../models/crypto';
 import { MessageExtended } from '../models/message';
 import { ContactsMap, useContactCache } from '../containers/ContactProvider';
 
-const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = EncryptionPreferencesFailureTypes;
+const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = ENCRYPTION_PREFERENCES_ERROR_TYPES;
 
 export interface MessageSendInfo {
     message: MessageExtended;
@@ -97,7 +97,7 @@ export const useUpdateRecipientSendInfo = (
             const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
 
-            if (sendPreferences.failure?.type === CONTACT_SIGNATURE_NOT_VERIFIED) {
+            if (sendPreferences.error?.type === CONTACT_SIGNATURE_NOT_VERIFIED) {
                 await new Promise((resolve, reject) => {
                     if (!recipient.ContactID) {
                         return reject(new Error('Invalid contact id'));
@@ -126,7 +126,7 @@ export const useUpdateRecipientSendInfo = (
                 return updateRecipientIcon();
             }
 
-            if (sendPreferences.failure?.type === PRIMARY_NOT_PINNED) {
+            if (sendPreferences.error?.type === PRIMARY_NOT_PINNED) {
                 await new Promise((resolve, reject) => {
                     if (!recipient.ContactID) {
                         return reject(new Error('Invalid contact id'));
@@ -176,7 +176,7 @@ interface LoadParams {
     contactID: string;
     contactName: string;
     abortController: AbortController;
-    checkForFailure: boolean;
+    checkForError: boolean;
 }
 
 export const useUpdateGroupSendInfo = (
@@ -206,7 +206,7 @@ export const useUpdateGroupSendInfo = (
             contactID,
             contactName,
             abortController,
-            checkForFailure,
+            checkForError,
         }: LoadParams) => {
             const { signal } = abortController;
             const icon = messageSendInfo?.mapSendInfo[emailAddress]?.sendIcon;
@@ -247,9 +247,9 @@ export const useUpdateGroupSendInfo = (
                     },
                 }));
             }
-            if (checkForFailure && sendPreferences.failure) {
+            if (checkForError && sendPreferences.error) {
                 return {
-                    failure: sendPreferences.failure,
+                    error: sendPreferences.error,
                     contact: {
                         contactID,
                         contactName,
@@ -263,22 +263,22 @@ export const useUpdateGroupSendInfo = (
 
         const loadSendIcons = async ({
             abortController,
-            checkForFailure,
-        }: Pick<LoadParams, 'abortController' | 'checkForFailure'>): Promise<void> => {
+            checkForError,
+        }: Pick<LoadParams, 'abortController' | 'checkForError'>): Promise<void> => {
             const requests = contacts.map(({ Email, ContactID, Name }) => () =>
                 loadSendIcon({
                     emailAddress: Email,
                     contactID: ContactID,
                     contactName: Name,
                     abortController,
-                    checkForFailure,
+                    checkForError,
                 })
             );
             // the routes called in requests support 100 calls every 10 seconds
             const results = await processApiRequestsSafe(requests, 100, 10 * 1000);
             const contactsResign = results
                 .filter(isTruthy)
-                .filter(({ failure: { type } }) => type === CONTACT_SIGNATURE_NOT_VERIFIED)
+                .filter(({ error: { type } }) => type === CONTACT_SIGNATURE_NOT_VERIFIED)
                 .map(({ contact }) => contact);
             const totalContactsResign = contactsResign.length;
             if (totalContactsResign) {
@@ -309,11 +309,11 @@ export const useUpdateGroupSendInfo = (
                         </ContactResignModal>
                     );
                 });
-                return loadSendIcons({ abortController, checkForFailure: false });
+                return loadSendIcons({ abortController, checkForError: false });
             }
             const contactsKeyPinning = results
                 .filter(isTruthy)
-                .filter(({ failure: { type } }) => type === PRIMARY_NOT_PINNED)
+                .filter(({ error: { type } }) => type === PRIMARY_NOT_PINNED)
                 .map(({ contact }) => contact);
             if (contactsKeyPinning.length) {
                 await new Promise((resolve) => {
@@ -327,11 +327,11 @@ export const useUpdateGroupSendInfo = (
                         />
                     );
                 });
-                return loadSendIcons({ abortController, checkForFailure: false });
+                return loadSendIcons({ abortController, checkForError: false });
             }
         };
 
-        void loadSendIcons({ abortController, checkForFailure: true });
+        void loadSendIcons({ abortController, checkForError: true });
 
         return () => {
             abortController.abort();
