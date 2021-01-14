@@ -38,8 +38,11 @@ const processContactUpdate = async (
 
     // Looking in the EncryptionPreference cache
     const encryptionPreferenceCache = globalCache.get(CACHE_KEY) as Map<string, any>;
+
     emails.forEach((email) => {
-        encryptionPreferenceCache.delete(email);
+        if (encryptionPreferenceCache) {
+            encryptionPreferenceCache.delete(email);
+        }
     });
 
     // Looking in the Message cache to check if there is message signed from one of the contact addresses
