@@ -79,6 +79,7 @@ const useGetCalendarEventRaw = () => {
                 return x.map(withNormalizedAuthor);
             };
             return readCalendarEvent({
+                isOrganizer: !!Event.IsOrganizer,
                 event: {
                     SharedEvents: withNormalizedAuthors(Event.SharedEvents),
                     CalendarEvents: withNormalizedAuthors(Event.CalendarEvents),
