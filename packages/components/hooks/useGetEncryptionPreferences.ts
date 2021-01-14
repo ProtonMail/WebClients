@@ -25,10 +25,9 @@ export type GetEncryptionPreferences = (
     contactEmailsMap?: { [email: string]: ContactEmail | undefined }
 ) => Promise<EncryptionPreferences>;
 
-// Implement the logic in the document 'Send preferences for outgoing email'
 /**
  * Given an email address and the user mail settings, return the encryption preferences for sending to that email.
- * The API entry point is also needed. The logic for how those preferences are determined is laid out in the
+ * The logic for how those preferences are determined is laid out in the
  * Confluence document 'Encryption preferences for outgoing email'
  */
 const useGetEncryptionPreferences = () => {

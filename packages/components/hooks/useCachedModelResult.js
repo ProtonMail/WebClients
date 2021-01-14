@@ -59,13 +59,17 @@ const update = (cache, key, promise) => {
     return record;
 };
 
-export const getPromiseValue = (cache, key, miss, lifetime = Number.MAX_SAFE_INTEGER) => {
+export const getIsRecordInvalid = (record, lifetime = Number.MAX_SAFE_INTEGER) => {
+    return (
+        !record ||
+        record.status === STATUS.REJECTED ||
+        (record.status === STATUS.RESOLVED && Date.now() - record.timestamp > lifetime)
+    );
+};
+
+export const getPromiseValue = (cache, key, miss, lifetime) => {
     const oldRecord = cache.get(key);
-    if (
-        !oldRecord ||
-        oldRecord.status === STATUS.REJECTED ||
-        (oldRecord.status === STATUS.RESOLVED && Date.now() - oldRecord.timestamp > lifetime)
-    ) {
+    if (getIsRecordInvalid(oldRecord, lifetime)) {
         const record = update(cache, key, miss(key));
         return record.promise;
     }
