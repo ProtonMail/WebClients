@@ -9,7 +9,7 @@ import {
     PGP_SIGN,
 } from '../../lib/constants';
 import { MailSettings, SelfSend } from '../../lib/interfaces';
-import extractEncryptionPreferences, { EncryptionPreferencesFailureTypes } from '../../lib/mail/encryptionPreferences';
+import extractEncryptionPreferences, { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '../../lib/mail/encryptionPreferences';
 
 const fakeKey1: OpenPGPKey = {
     getFingerprint() {
@@ -200,7 +200,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         expect(result.warnings?.length).toEqual(1);
     });
 
-    it('should give a failure when the API gave emailAddress errors', () => {
+    it('should give an error when the API gave emailAddress errors', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
@@ -211,10 +211,10 @@ describe('extractEncryptionPreferences for an internal user', () => {
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.EMAIL_ADDRESS_ERROR);
     });
 
-    it('should give a failure when the preferred pinned key is not valid for sending', () => {
+    it('should give an error when the preferred pinned key is not valid for sending', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
@@ -224,10 +224,10 @@ describe('extractEncryptionPreferences for an internal user', () => {
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED);
     });
 
-    it('should give a failure when the preferred pinned key is not among the keys returned by the API', () => {
+    it('should give an error when the preferred pinned key is not among the keys returned by the API', () => {
         const apiKeys = [fakeKey1, fakeKey2];
         const pinnedKeys = [pinnedFakeKey3];
         const publicKeyModel = {
@@ -237,10 +237,10 @@ describe('extractEncryptionPreferences for an internal user', () => {
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED);
     });
 
-    it('should give a failure if the API returned no keys', () => {
+    it('should give an error if the API returned no keys', () => {
         const apiKeys = [] as OpenPGPKey[];
         const pinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
@@ -250,10 +250,10 @@ describe('extractEncryptionPreferences for an internal user', () => {
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.INTERNAL_USER_NO_API_KEY);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_API_KEY);
     });
 
-    it('should give a failure if the API returned no keys valid for sending', () => {
+    it('should give an error if the API returned no keys valid for sending', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
@@ -266,10 +266,10 @@ describe('extractEncryptionPreferences for an internal user', () => {
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.INTERNAL_USER_NO_VALID_API_KEY);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_VALID_API_KEY);
     });
 
-    it('should give a failure if there are pinned keys but the contact signature could not be verified', () => {
+    it('should give an error if there are pinned keys but the contact signature could not be verified', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
@@ -279,7 +279,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.CONTACT_SIGNATURE_NOT_VERIFIED);
     });
 });
 
@@ -413,7 +413,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         expect(result.warnings?.length).toEqual(1);
     });
 
-    it('should give a failure when the API gave emailAddress errors', () => {
+    it('should give an error when the API gave emailAddress errors', () => {
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys: [fakeKey1, fakeKey2, fakeKey3], pinnedKeys: [pinnedFakeKey1] },
@@ -422,10 +422,10 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.EMAIL_ADDRESS_ERROR);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.EMAIL_ADDRESS_ERROR);
     });
 
-    it('should give a failure when the preferred pinned key is not valid for sending', () => {
+    it('should give an error when the preferred pinned key is not valid for sending', () => {
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys: [fakeKey1, fakeKey2, fakeKey3], pinnedKeys: [pinnedFakeKey1] },
@@ -433,10 +433,10 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED);
     });
 
-    it('should give a failure when the preferred pinned key is not among the keys returned by the API', () => {
+    it('should give an error when the preferred pinned key is not among the keys returned by the API', () => {
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys: [fakeKey1, fakeKey2], pinnedKeys: [pinnedFakeKey3] },
@@ -444,10 +444,10 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.PRIMARY_NOT_PINNED);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED);
     });
 
-    it('should give a failure if the API returned no keys valid for sending', () => {
+    it('should give an error if the API returned no keys valid for sending', () => {
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys: [fakeKey1, fakeKey2, fakeKey3], pinnedKeys: [pinnedFakeKey1] },
@@ -458,10 +458,10 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.WKD_USER_NO_VALID_WKD_KEY);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.WKD_USER_NO_VALID_WKD_KEY);
     });
 
-    it('should give a failure if there are pinned keys but the contact signature could not be verified', () => {
+    it('should give an error if there are pinned keys but the contact signature could not be verified', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
@@ -471,7 +471,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.CONTACT_SIGNATURE_NOT_VERIFIED);
     });
 });
 
@@ -606,7 +606,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         expect(result.warnings?.length).toEqual(1);
     });
 
-    it('should give a failure when the preferred pinned key is not valid for sending', () => {
+    it('should give an error when the preferred pinned key is not valid for sending', () => {
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys: [], pinnedKeys: [pinnedFakeKey2, pinnedFakeKey1] },
@@ -615,10 +615,10 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.EXTERNAL_USER_NO_VALID_PINNED_KEY);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.EXTERNAL_USER_NO_VALID_PINNED_KEY);
     });
 
-    it('should give a failure if there are pinned keys but the contact signature could not be verified', () => {
+    it('should give an error if there are pinned keys but the contact signature could not be verified', () => {
         const publicKeyModel = {
             ...model,
             isContactSignatureVerified: false,
@@ -626,7 +626,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.CONTACT_SIGNATURE_NOT_VERIFIED);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.CONTACT_SIGNATURE_NOT_VERIFIED);
     });
 });
 
@@ -698,7 +698,7 @@ describe('extractEncryptionPreferences for an own address', () => {
         expect(result.warnings?.length).toEqual(1);
     });
 
-    it('should give a failure when the address is disabled', () => {
+    it('should give an error when the address is disabled', () => {
         const selfSend: SelfSend = {
             address: {
                 HasKeys: 1,
@@ -708,10 +708,10 @@ describe('extractEncryptionPreferences for an own address', () => {
         } as any;
         const result = extractEncryptionPreferences(model, mailSettings, selfSend);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.INTERNAL_USER_DISABLED);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_DISABLED);
     });
 
-    it('should give a failure when the API returned no keys for the address', () => {
+    it('should give an error when the API returned no keys for the address', () => {
         const selfSend: SelfSend = {
             address: {
                 HasKeys: 0,
@@ -721,10 +721,10 @@ describe('extractEncryptionPreferences for an own address', () => {
         } as any;
         const result = extractEncryptionPreferences(model, mailSettings, selfSend);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.INTERNAL_USER_NO_API_KEY);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_API_KEY);
     });
 
-    it('should give a failure when no public key (from the decypted private key) was received', () => {
+    it('should give an error when no public key (from the decypted private key) was received', () => {
         const selfSend: SelfSend = {
             address: {
                 HasKeys: 1,
@@ -733,6 +733,6 @@ describe('extractEncryptionPreferences for an own address', () => {
         } as any;
         const result = extractEncryptionPreferences(model, mailSettings, selfSend);
 
-        expect(result?.failure?.type).toEqual(EncryptionPreferencesFailureTypes.INTERNAL_USER_NO_VALID_API_KEY);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_VALID_API_KEY);
     });
 });

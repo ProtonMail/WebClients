@@ -1,7 +1,6 @@
 import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
-import { getCanonicalEmailMap } from '../api/helpers/canonicalEmailMap';
 import { buildMailTo, getEmailTo, validateEmailAddress } from '../helpers/email';
-import { Api } from '../interfaces';
+import { GetCanonicalEmails } from '../interfaces';
 import { Attendee } from '../interfaces/calendar';
 import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
 import { RequireSome, SimpleMap } from '../interfaces/utils';
@@ -159,7 +158,10 @@ export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
     return supportedAttendee;
 };
 
-export const withPmAttendees = async (vevent: VcalVeventComponent, api: Api): Promise<VcalVeventComponent> => {
+export const withPmAttendees = async (
+    vevent: VcalVeventComponent,
+    getCanonicalEmails: GetCanonicalEmails
+): Promise<VcalVeventComponent> => {
     const { uid, attendee: vcalAttendee } = vevent;
     if (!vcalAttendee?.length) {
         return { ...vevent };
@@ -174,7 +176,7 @@ export const withPmAttendees = async (vevent: VcalVeventComponent, api: Api): Pr
     const emailsWithoutToken = attendeesWithEmail
         .filter(({ attendee }) => !attendee.parameters?.['x-pm-token'])
         .map(({ emailAddress }) => emailAddress);
-    const canonicalEmailMap = await getCanonicalEmailMap(emailsWithoutToken, api);
+    const canonicalEmailMap = await getCanonicalEmails(emailsWithoutToken);
 
     const pmAttendees = await Promise.all(
         attendeesWithEmail.map(async ({ attendee, emailAddress }) => {

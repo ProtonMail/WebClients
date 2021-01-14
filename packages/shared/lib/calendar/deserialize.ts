@@ -8,7 +8,7 @@ import {
     getAggregatedEventVerificationStatus,
     verifySignedCard,
 } from './decrypt';
-import { getSelfAttendeeData } from './integration/invite';
+import { getSelfAddressData } from './integration/invite';
 import { parse } from './vcal';
 import { unwrap } from './helper';
 import { toInternalAttendee } from './attendees';
@@ -40,6 +40,7 @@ export const readSessionKeys = (
  * Read the parts of a calendar event into an internal vcal component.
  */
 interface ReadCalendarEventArguments {
+    isOrganizer: boolean;
     event: Pick<CalendarEvent, 'SharedEvents' | 'CalendarEvents' | 'AttendeesEvents' | 'Attendees'>;
     publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]>;
     sharedSessionKey?: SessionKey;
@@ -48,6 +49,7 @@ interface ReadCalendarEventArguments {
 }
 
 export const readCalendarEvent = async ({
+    isOrganizer,
     event: { SharedEvents = [], CalendarEvents = [], AttendeesEvents = [], Attendees = [] },
     publicKeysMap,
     sharedSessionKey,
@@ -92,8 +94,13 @@ export const readCalendarEvent = async ({
     }, []);
 
     const veventWithAttendees = veventAttendees.length ? { ...vevent, attendee: veventAttendees } : vevent;
-    const selfAttendeeData = getSelfAttendeeData(veventAttendees, addresses);
-    return { veventComponent: veventWithAttendees, verificationStatus, selfAttendeeData };
+    const selfAddressData = getSelfAddressData({
+        isOrganizer,
+        organizer: vevent.organizer,
+        attendees: veventAttendees,
+        addresses,
+    });
+    return { veventComponent: veventWithAttendees, verificationStatus, selfAddressData };
 };
 
 export const readPersonalPart = async (

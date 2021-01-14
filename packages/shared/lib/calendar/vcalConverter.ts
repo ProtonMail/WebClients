@@ -1,4 +1,4 @@
-import { addDays } from '../date-fns-utc';
+import { addDays, isNextDay } from '../date-fns-utc';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
 import { buildMailTo, cleanEmail, getEmailTo } from '../helpers/email';
 import { mod } from '../helpers/math';
@@ -113,6 +113,21 @@ export const getDateTimePropertyInDifferentTimezone = (
     const utcDate = propertyToUTCDate(property);
     const zonedDate = convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid);
     return getDateTimeProperty(zonedDate, tzid);
+};
+
+export const getAllDayInfo = (dtstart: VcalDateOrDateTimeProperty, dtend?: VcalDateOrDateTimeProperty) => {
+    const isAllDay = getIsPropertyAllDay(dtstart);
+    if (!isAllDay) {
+        return { isAllDay: false, isSingleAllDay: false };
+    }
+    if (!dtend) {
+        return { isAllDay: true, isSingleAllDay: true };
+    }
+    // For all-day events, we need fake UTC dates to determine if the event lasts a single day
+    const fakeUTCStart = toUTCDate(dtstart.value);
+    const fakeUTCEnd = toUTCDate(dtend.value);
+    // account for non-RFC-compliant all-day events with DTSTART = DTEND
+    return { isAllDay: true, isSingleAllDay: isNextDay(fakeUTCStart, fakeUTCEnd) || +fakeUTCStart === +fakeUTCEnd };
 };
 
 export interface UntilDateArgument {
