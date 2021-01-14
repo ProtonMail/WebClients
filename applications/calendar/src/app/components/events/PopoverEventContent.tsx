@@ -58,6 +58,7 @@ const PopoverEventContent = ({
 
     const isInvitation = !model.isOrganizer;
     const { organizer, attendees } = model;
+    const hasOrganizer = !!organizer;
     const numberOfParticipants = attendees.length;
     const { name: organizerName, title: organizerTitle } = getOrganizerDisplayData(
         organizer,
@@ -123,7 +124,7 @@ const PopoverEventContent = ({
                     <span className="hyphens scroll-if-needed">{trimmedLocation}</span>
                 </div>
             ) : null}
-            {isInvitation || numberOfParticipants ? (
+            {hasOrganizer && (isInvitation || numberOfParticipants) ? (
                 <div className={wrapClassName}>
                     <Icon name="contact" className={iconClassName} />
                     <span className="mr0-5r">{organizerString}</span>

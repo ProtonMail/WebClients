@@ -1,8 +1,11 @@
-import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/invite';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { RECURRING_TYPES } from '../../../constants';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
+import { INVITE_ACTION_TYPES, InviteActions, SendIcsActionData } from '../../../interfaces/Invite';
 import {
     getCreateSyncOperation,
     getDeleteSyncOperation,
@@ -16,7 +19,6 @@ import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import updateAllRecurrence from '../recurrence/updateAllRecurrence';
 import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
-import { InviteActions } from './inviteActions';
 import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { withIncreasedSequence, withVeventSequence } from './sequence';
 
@@ -28,13 +30,15 @@ interface SaveRecurringArguments {
     newEditEventData: EventNewData;
     recurrence: CalendarEventRecurring;
     updateAllPossibilities: UpdateAllPossibilities;
-    hasModifiedRrule: boolean;
-    inviteActions: InviteActions;
     isInvitation: boolean;
+    inviteActions: InviteActions;
+    sendIcs: (
+        data: SendIcsActionData
+    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
     selfAttendeeToken?: string;
 }
 
-const getSaveRecurringEventActions = ({
+const getSaveRecurringEventActions = async ({
     type,
     recurrences,
     oldEditEventData: { eventData: oldEvent, veventComponent: oldVeventComponent },
@@ -53,15 +57,16 @@ const getSaveRecurringEventActions = ({
     },
     recurrence,
     updateAllPossibilities,
-    hasModifiedRrule,
     inviteActions,
     isInvitation,
+    sendIcs,
     selfAttendeeToken,
-}: SaveRecurringArguments): {
+}: SaveRecurringArguments): Promise<{
     multiSyncActions: SyncEventActionOperations[];
+    inviteActions: InviteActions;
     updatePartstatActions?: UpdatePartstatOperation[];
-} => {
-    const { resetSingleEditsPartstat } = inviteActions;
+}> => {
+    const { type: inviteType, partstat: invitePartstat, resetSingleEditsPartstat } = inviteActions;
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
 
     if (!originalVeventComponent) {
@@ -69,6 +74,13 @@ const getSaveRecurringEventActions = ({
     }
     if (!oldVeventComponent) {
         throw Error('Old component missing');
+    }
+
+    if (inviteType === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
+        if (!invitePartstat) {
+            throw new Error('Cannot update participation status without new answer');
+        }
+        await sendIcs({ inviteActions, vevent: newVeventComponent });
     }
 
     if (type === RECURRING_TYPES.SINGLE) {
@@ -94,12 +106,8 @@ const getSaveRecurringEventActions = ({
             };
             const oldVeventWithSequence = oldVeventComponent.sequence
                 ? oldVeventWithSafeSequence
-                : withVeventSequence(
-                      oldVeventComponent,
-                      getCurrentEvent(originalVeventWithSequence, recurrence),
-                      false
-                  );
-            const newVeventWithSequence = withVeventSequence(newVeventComponent, oldVeventWithSequence, false);
+                : withVeventSequence(oldVeventComponent, getCurrentEvent(originalVeventWithSequence, recurrence));
+            const newVeventWithSequence = withVeventSequence(newVeventComponent, oldVeventWithSequence);
             const updateOperation = getUpdateSyncOperation(updateSingleRecurrence(newVeventWithSequence), oldEvent);
 
             return {
@@ -111,6 +119,7 @@ const getSaveRecurringEventActions = ({
                         operations: [...maybeUpdateParentOperations, updateOperation],
                     },
                 ],
+                inviteActions,
             };
         }
 
@@ -121,7 +130,7 @@ const getSaveRecurringEventActions = ({
             recurrence.localStart
         );
         const createOperation = getCreateSyncOperation(
-            withVeventSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent, false)
+            withVeventSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent)
         );
 
         return {
@@ -133,6 +142,7 @@ const getSaveRecurringEventActions = ({
                     operations: [...maybeUpdateParentOperations, createOperation],
                 },
             ],
+            inviteActions,
         };
     }
 
@@ -168,6 +178,7 @@ const getSaveRecurringEventActions = ({
                     operations: [...deleteOperations, updateOperation, createOperation],
                 },
             ],
+            inviteActions,
         };
     }
 
@@ -194,12 +205,31 @@ const getSaveRecurringEventActions = ({
             isSingleEdit,
             isInvitation,
         });
-        const newRecurrentVeventWithSequence = withVeventSequence(
-            newRecurrentVevent,
-            originalVeventComponent,
-            hasModifiedRrule
+        const newRecurrentVeventWithSequence = withVeventSequence(newRecurrentVevent, originalVeventComponent);
+        const isSendInviteType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
+            inviteActions.type
         );
-        const updateOperation = getUpdateSyncOperation(newRecurrentVeventWithSequence, originalEvent);
+
+        const method = isSendInviteType ? ICAL_METHOD.REQUEST : undefined;
+        let updatedVeventComponent = getUpdatedInviteVevent(
+            newRecurrentVeventWithSequence,
+            originalVeventComponent,
+            method
+        );
+        let updatedInviteActions = inviteActions;
+        if (isSendInviteType) {
+            const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
+                inviteActions,
+                vevent: updatedVeventComponent,
+                cancelVevent: originalVeventComponent,
+            });
+            if (cleanVeventComponent) {
+                updatedVeventComponent = cleanVeventComponent;
+                updatedInviteActions = cleanInviteActions;
+            }
+        }
+
+        const updateOperation = getUpdateSyncOperation(updatedVeventComponent, originalEvent);
 
         if (originalCalendarID !== newCalendarID) {
             const deleteOriginalOperation = getDeleteSyncOperation(originalEvent);
@@ -218,6 +248,7 @@ const getSaveRecurringEventActions = ({
                         operations: [...deleteOperations, deleteOriginalOperation],
                     },
                 ],
+                inviteActions: updatedInviteActions,
             };
         }
 
@@ -231,6 +262,7 @@ const getSaveRecurringEventActions = ({
                 },
             ],
             updatePartstatActions: resetPartstatOperations,
+            inviteActions: updatedInviteActions,
         };
     }
 

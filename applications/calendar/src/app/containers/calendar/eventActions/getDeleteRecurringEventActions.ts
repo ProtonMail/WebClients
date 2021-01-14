@@ -1,20 +1,21 @@
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { getIsEventCancelled } from '../../../helpers/event';
 import getUpdatePartstatOperation, { UpdatePartstatOperation } from '../getUpdatePartstatOperation';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import deleteSingleRecurrence from '../recurrence/deleteSingleRecurrence';
 import { RECURRING_TYPES } from '../../../constants';
+import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import { EventOldData } from '../../../interfaces/EventData';
+import { INVITE_ACTION_TYPES, InviteActions, SendIcsActionData } from '../../../interfaces/Invite';
 import {
     getDeleteSyncOperation,
     getUpdateSyncOperation,
     SyncEventActionOperations,
 } from '../getSyncMultipleEventsPayload';
-import { InviteActions } from './inviteActions';
 import { getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import { EventOldData } from '../../../interfaces/EventData';
 
 interface DeleteRecurringArguments {
     type: RECURRING_TYPES;
@@ -25,9 +26,12 @@ interface DeleteRecurringArguments {
     isInvitation: boolean;
     inviteActions: InviteActions;
     selfAttendeeToken?: string;
+    sendIcs: (
+        data: SendIcsActionData
+    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
 }
 
-export const getDeleteRecurringEventActions = ({
+export const getDeleteRecurringEventActions = async ({
     type,
     recurrence,
     recurrences,
@@ -38,21 +42,34 @@ export const getDeleteRecurringEventActions = ({
         addressID: originalAddressID,
         memberID: originalMemberID,
     },
-    oldEditEventData: { eventData: oldEvent },
+    oldEditEventData: { eventData: oldEvent, veventComponent: oldVeventComponent },
     isInvitation,
     inviteActions,
     selfAttendeeToken,
-}: DeleteRecurringArguments): {
+    sendIcs,
+}: DeleteRecurringArguments): Promise<{
     multiSyncActions: SyncEventActionOperations[];
+    inviteActions: InviteActions;
     updatePartstatActions?: UpdatePartstatOperation[];
-} => {
-    const { resetSingleEditsPartstat } = inviteActions;
+}> => {
+    const { type: inviteType, sendCancellationNotice, resetSingleEditsPartstat } = inviteActions;
+    const isDeclineInvitation = inviteType === INVITE_ACTION_TYPES.DECLINE_INVITATION && sendCancellationNotice;
+    const isCancelInvitation = inviteType === INVITE_ACTION_TYPES.CANCEL_INVITATION;
+    let updatedInviteActions = inviteActions;
+
     if (type === RECURRING_TYPES.SINGLE) {
         if (!originalVeventComponent) {
             throw new Error('Can not delete single occurrence without original event');
         }
 
         const isSingleEdit = oldEvent.ID !== originalEvent.ID;
+        if (isSingleEdit && isDeclineInvitation) {
+            const { inviteActions: cleanInviteActions } = await sendIcs({
+                inviteActions,
+                vevent: oldVeventComponent,
+            });
+            updatedInviteActions = cleanInviteActions;
+        }
         const updatedVeventComponent = deleteSingleRecurrence(originalVeventComponent, recurrence.localStart);
 
         const singleDeleteOperation = isSingleEdit ? getDeleteSyncOperation(oldEvent) : undefined;
@@ -68,6 +85,7 @@ export const getDeleteRecurringEventActions = ({
                     operations: [singleDeleteOperation, originalExdateOperation].filter(isTruthy),
                 },
             ],
+            inviteActions: updatedInviteActions,
         };
     }
 
@@ -100,12 +118,21 @@ export const getDeleteRecurringEventActions = ({
                     operations: [...deleteOperations, updateOperation],
                 },
             ],
+            inviteActions,
         };
     }
 
     if (type === RECURRING_TYPES.ALL) {
         if (!recurrences.length) {
             throw new Error('Can not delete all events without any recurrences');
+        }
+        if (isDeclineInvitation || isCancelInvitation) {
+            const { inviteActions: cleanInviteActions } = await sendIcs({
+                inviteActions,
+                vevent: originalVeventComponent,
+                cancelVevent: originalVeventComponent,
+            });
+            updatedInviteActions = cleanInviteActions;
         }
         // For invitations we do not delete single edits, but reset partstat if necessary
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
@@ -132,6 +159,7 @@ export const getDeleteRecurringEventActions = ({
                     operations: deleteOperations,
                 },
             ],
+            inviteActions: updatedInviteActions,
             updatePartstatActions: resetPartstatOperations,
         };
     }

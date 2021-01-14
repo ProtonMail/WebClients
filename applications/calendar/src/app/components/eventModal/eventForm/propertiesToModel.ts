@@ -21,7 +21,7 @@ export const propertiesToModel = (
     {
         veventComponent,
         verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
-        selfAttendeeData,
+        selfAddressData,
     }: RequireSome<Partial<DecryptedVeventResult>, 'veventComponent'>,
     isAllDay: boolean,
     isOrganizer: boolean,
@@ -40,7 +40,7 @@ export const propertiesToModel = (
     } = veventComponent;
 
     const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(veventComponent), isAllDay, tzid);
-    const { selfAttendeeIndex, selfAddress } = selfAttendeeData || {};
+    const { selfAttendeeIndex, selfAddress } = selfAddressData || {};
     const titleString = summary?.value ?? '';
     const locationString = location?.value ?? '';
     const descriptionString = description?.value ?? '';

@@ -52,10 +52,7 @@ export const getOrganizerDisplayData = (
 ) => {
     const { email, cn } = organizer;
     if (!email) {
-        return {
-            name: '',
-            title: '',
-        };
+        return { name: '', title: '' };
     }
     const normalizedEmail = isInvitation ? normalizeEmail(email) : normalizeInternalEmail(email);
     if (!isInvitation) {

@@ -7,6 +7,8 @@ import {
     CalendarUserSettingsModel,
     AddressesModel,
     MailSettingsModel,
+    ContactEmailsModel,
+    LabelsModel,
 } from 'proton-shared/lib/models';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
@@ -18,6 +20,8 @@ const EVENT_MODELS = [
     CalendarsModel,
     CalendarUserSettingsModel,
     AddressesModel,
+    ContactEmailsModel,
+    LabelsModel,
 ];
 
 const PRELOAD_MODELS = [UserModel, UserSettingsModel, AddressesModel];

@@ -1,4 +1,3 @@
-import React, { useMemo } from 'react';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
@@ -9,6 +8,7 @@ import { wait } from 'proton-shared/lib/helpers/promise';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import React, { useMemo } from 'react';
 import {
     Alert,
     Badge,
@@ -25,19 +25,19 @@ import {
 } from 'react-components';
 import InviteButtons from 'react-components/components/calendar/InviteButtons';
 import { c } from 'ttag';
-import { INVITE_ACTION_TYPES, InviteActions } from '../../containers/calendar/eventActions/inviteActions';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
+import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import { EnDash } from '../EnDash';
 import { getEventErrorMessage } from './error';
 import getEventInformation from './getEventInformation';
+import PopoverContainer from './PopoverContainer';
 
 import PopoverEventContent from './PopoverEventContent';
-import PopoverContainer from './PopoverContainer';
 import PopoverFooter from './PopoverFooter';
 import PopoverHeader from './PopoverHeader';
 import useReadEvent from './useReadEvent';
@@ -67,6 +67,7 @@ const MoreButtons = ({
                     onClick={toggle}
                     hasCaret
                     caretClassName=""
+                    loading={loadingAction && !isOpen}
                     className="flex-item-noshrink pm-button pm-button--small"
                 >
                     {emptyContent}
@@ -107,7 +108,7 @@ interface Props {
     formatTime: (date: Date) => string;
     onEdit: (event: CalendarEvent) => void;
     onChangePartstat: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
-    onDelete: (event: CalendarEvent, inviteActions: InviteActions) => Promise<void>;
+    onDelete: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
     style: any;
     popoverRef: any;
@@ -153,20 +154,25 @@ const EventPopover = ({
     const handleDelete = () => {
         if (eventData && getIsCalendarEvent(eventData)) {
             const sendCancellationNotice =
-                !eventReadError &&
-                !isSelfAddressDisabled &&
-                !isCalendarDisabled &&
-                !isCancelled &&
-                [ACCEPTED, TENTATIVE].includes(userPartstat);
+                !eventReadError && !isCalendarDisabled && !isCancelled && [ACCEPTED, TENTATIVE].includes(userPartstat);
             const inviteActions = model.isOrganizer
                 ? {
-                      type: INVITE_ACTION_TYPES.NONE,
+                      type: isSelfAddressDisabled
+                          ? INVITE_ACTION_TYPES.CANCEL_DISABLED
+                          : INVITE_ACTION_TYPES.CANCEL_INVITATION,
+                      selfAddress: model.selfAddress,
+                      selfAttendeeIndex: model.selfAttendeeIndex,
                   }
                 : {
-                      type: INVITE_ACTION_TYPES.DECLINE,
+                      type: isSelfAddressDisabled
+                          ? INVITE_ACTION_TYPES.DECLINE_DISABLED
+                          : INVITE_ACTION_TYPES.DECLINE_INVITATION,
                       sendCancellationNotice,
+                      selfAddress: model.selfAddress,
+                      selfAttendeeIndex: model.selfAttendeeIndex,
+                      partstat: ICAL_ATTENDEE_STATUS.DECLINED,
                   };
-            withLoadingAction(onDelete(eventData, inviteActions)).catch(noop);
+            withLoadingAction(onDelete(inviteActions)).catch(noop);
         }
     };
 

@@ -80,16 +80,17 @@ export const modelToGeneralProperties = ({
 };
 
 const modelToOrganizerProperties = ({ organizer }: EventModel) => {
-    if (!organizer?.email) {
+    const organizerEmail = organizer?.email;
+    if (!organizerEmail) {
         return {};
     }
     return {
-        organizer: buildVcalOrganizer(organizer.email, organizer.cn),
+        organizer: buildVcalOrganizer(organizerEmail, organizer?.cn || organizerEmail),
     };
 };
 
-const modelToAttendeeProperties = ({ attendees, organizer }: EventModel) => {
-    if (!Array.isArray(attendees) || !attendees.length || !organizer?.email) {
+const modelToAttendeeProperties = ({ attendees }: EventModel) => {
+    if (!Array.isArray(attendees) || !attendees.length) {
         return {};
     }
     return {
