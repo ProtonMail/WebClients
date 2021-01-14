@@ -5,13 +5,21 @@
 }
 
 button[aria-busy='true'] {
-	padding-left: em(5);
-	padding-right: em(27);
 	background-image: url(#{$path-images}loading-atom-smaller-disabled.svg);
 	background-position: calc(100% - 0.25em) 50%;
 	background-size: 1.5em;
 	background-repeat: no-repeat;
 }
+
+.pm-button[aria-busy="true"] {
+	padding-left: em(5);
+	padding-right: em(27);
+}
+
+.dropDown-item-button[aria-busy="true"] {
+	padding-right: em(27);
+}
+
 
 .pm-button--small[aria-busy='true'] {
 	padding-left: em(2);
