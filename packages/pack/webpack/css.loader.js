@@ -1,11 +1,16 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
+const fs = require('fs');
+const { getSource } = require('./helpers/source');
 
 const DESIGN_SYSTEM_THEME = /.*theme\.scss$/;
 
+const SASS_VARIABLES_FILEPATH = getSource('src/app/variables.scss');
+const SASS_VARIABLES = fs.existsSync(SASS_VARIABLES_FILEPATH) ? fs.readFileSync(SASS_VARIABLES_FILEPATH) : '';
 // Set up the variables to the design system so that files are resolved properly.
 const PREPEND_SASS = `
 $path-images: "~design-system/assets/img/shared/";
+${SASS_VARIABLES}
 `;
 
 const getSassLoaders = (isProduction) => {
