@@ -59,6 +59,7 @@ describe('email', () => {
                 'user%example.com@example.org',
                 'customer/department=shipping@example.com',
                 '!def!xyz%abc@example.com',
+                '1234567890123456789012345678901234567890123456789012345678901234+x@a.example.com',
             ];
             expect(emails.map((email) => validateEmailAddress(email)).filter(Boolean).length).toBe(emails.length);
         });
@@ -85,7 +86,6 @@ describe('email', () => {
                 'just"not"right@example.com',
                 'this is"not\\allowed@example.com',
                 'this\\ still\\"not\\\\allowed@example.com',
-                '1234567890123456789012345678901234567890123456789012345678901234+x@example.com',
             ];
             expect(emails.map((email) => validateEmailAddress(email)).filter(Boolean).length).toBe(0);
         });

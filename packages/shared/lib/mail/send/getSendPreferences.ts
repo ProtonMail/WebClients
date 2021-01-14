@@ -20,7 +20,7 @@ const getSendPreferences = (
         hasApiKeys,
         hasPinnedKeys,
         warnings,
-        failure,
+        error,
     } = encryptionPreferences;
     const isEncryptedToOutside = isEO(message);
     // override encrypt if necessary
@@ -41,7 +41,7 @@ const getSendPreferences = (
         hasApiKeys,
         hasPinnedKeys,
         warnings,
-        failure,
+        error,
     };
 };
 

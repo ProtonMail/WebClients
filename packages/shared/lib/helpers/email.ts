@@ -1,15 +1,18 @@
 /**
  * Validate the local part of an email string according to the RFC https://tools.ietf.org/html/rfc5321#section-4.1.2;
  * see also https://tools.ietf.org/html/rfc3696#page-5 and https://en.wikipedia.org/wiki/Email_address#Local-part
+ *
+ * NOTE: Email providers respect the RFC only loosely. We do not want to invalidate addresses that would be accepted by the BE.
+ * It is not fully guaranteed that this helper is currently accepting everything that the BE accepts.
+ *
+ * Examples of RFC rules violated in the wild:
+ * * Local parts should have a maximum length of 64 octets
  */
 import isTruthy from './isTruthy';
 import { MAJOR_DOMAINS } from '../constants';
 import { Recipient } from '../interfaces';
 
 export const validateLocalPart = (localPart: string) => {
-    if (localPart.length > 64) {
-        return false;
-    }
     // remove comments first
     const match = localPart.match(/(^\(.+?\))?([^()]*)(\(.+?\)$)?/);
     if (!match) {
