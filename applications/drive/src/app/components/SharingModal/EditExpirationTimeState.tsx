@@ -66,16 +66,18 @@ function EditExpirationTimeState({ hasExpirationTime, saving, onBack, onSave, on
                 <InnerModal>
                     <Alert>{c('Info').t`Change this link's expiration date.`}</Alert>
                     <Row>
-                        <Label htmlFor="shared-url-expiration-date">{c('Label').t`Link expires`}</Label>
-                        <Field>
+                        <Label htmlFor="expiration-time-dropdown">{c('Label').t`Link expires`}</Label>
+                        <Field className="w100">
                             <div className="flex flex-nowrap flex-items-center onmobile-flex-column">
-                                <ExpirationTimeDropdown value={duration} onChange={handleChangeExpirationDate} />
-                                <span className="pre onmobile-mt0-25 w30">
+                                <span className="flex-item-fluid mw50 onmobile-mw100">
+                                    <ExpirationTimeDropdown value={duration} onChange={handleChangeExpirationDate} />
+                                </span>
+                                <span className="flex-item-noshrink inline-flex onmobile-mt0-25">
                                     {expirationTime && (
-                                        <>
-                                            <span className="ml2 mr0-5 onmobile-ml0">{c('Info').t`on`}</span>
+                                        <span className="ml2 flex-item-noshrink onmobile-ml0 inline-flex flex-row flex-nowrap">
+                                            <span className="mr0-5">{c('Info').t`on`}</span>
                                             <DateTime key="expirationTime" value={expirationTime} />
-                                        </>
+                                        </span>
                                     )}
                                 </span>
                             </div>
