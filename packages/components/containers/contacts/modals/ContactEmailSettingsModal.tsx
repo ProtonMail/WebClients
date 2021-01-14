@@ -79,7 +79,7 @@ const ContactEmailSettingsModal = ({
      * @returns {Promise}
      */
     const prepare = async (api: Api) => {
-        const apiKeysConfig = await getPublicKeysEmailHelper(api, emailAddress);
+        const apiKeysConfig = await getPublicKeysEmailHelper(api, emailAddress, true);
         const pinnedKeysConfig = await getKeyInfoFromProperties(properties, emailGroup || '');
         const publicKeyModel = await getContactPublicKeyModel({
             emailAddress,

@@ -1,39 +1,55 @@
+import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { concatArrays } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { pick } from 'proton-shared/lib/helpers/object';
 import { Recipient } from 'proton-shared/lib/interfaces';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
 import { RequireSome, SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { sendMessageDirect } from 'proton-shared/lib/api/messages';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
+import generatePackages from 'proton-shared/lib/mail/send/generatePackages';
 import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
 import { encryptAttachment } from 'proton-shared/lib/mail/send/attachments';
-import { generateTopPackages } from 'proton-shared/lib/mail/send/sendTopPackages';
-import { encryptPackages } from 'proton-shared/lib/mail/send/sendEncrypt';
-import { attachSubPackages } from 'proton-shared/lib/mail/send/sendSubPackages';
 import { useCallback } from 'react';
 import { useApi, useGetAddressKeys, useGetEncryptionPreferences, useGetMailSettings } from './index';
 
-interface Params {
+export interface SendIcsParams {
+    method: ICAL_METHOD;
     ics: string;
     from: RequireSome<Recipient, 'Address' | 'Name'>;
     addressID: string;
     to: RequireSome<Recipient, 'Address' | 'Name'>[];
     subject: string;
     plainTextBody?: string;
+    sendPreferencesMap?: SimpleMap<SendPreferences>;
+    contactEmailsMap?: SimpleMap<ContactEmail>;
 }
 
-export const useSendIcs = () => {
+const useSendIcs = () => {
     const api = useApi();
     const getAddressKeys = useGetAddressKeys();
     const getMailSettings = useGetMailSettings();
     const getEncryptionPreferences = useGetEncryptionPreferences();
 
     const send = useCallback(
-        async ({ ics, from, addressID, to, subject, plainTextBody = '' }: Params) => {
+        async ({
+            method,
+            ics,
+            from,
+            addressID,
+            to,
+            subject,
+            plainTextBody = '',
+            sendPreferencesMap = {},
+            contactEmailsMap,
+        }: SendIcsParams) => {
+            if (!to.length) {
+                return;
+            }
             if (!addressID) {
                 throw new Error('Missing addressID');
             }
@@ -43,8 +59,10 @@ export const useSendIcs = () => {
             const [publicKeys, privateKeys] = [allPublicKeys.slice(0, 1), allPrivateKeys.slice(0, 1)];
             const { AutoSaveContacts, Sign } = await getMailSettings();
 
-            const replyAttachment = new File([new Blob([ics])], 'invite.ics', { type: 'text/calendar; method=REPLY' });
-            const packets = await encryptAttachment(ics, replyAttachment, false, publicKeys, privateKeys);
+            const inviteAttachment = new File([new Blob([ics])], 'invite.ics', {
+                type: `text/calendar; method=${method}`,
+            });
+            const packets = await encryptAttachment(ics, inviteAttachment, false, publicKeys, privateKeys);
             const concatenatedPackets = concatArrays([packets.data, packets.keys, packets.signature].filter(isTruthy));
             const emails = to.map(({ Address }) => Address);
             const attachment = {
@@ -69,44 +87,43 @@ export const useSendIcs = () => {
                 Attachments: [pick(attachment, ['Filename', 'MIMEType', 'Contents'])],
                 Flags: Sign ? MESSAGE_FLAGS.FLAG_SIGN : undefined,
             };
-            const mapSendPrefs: SimpleMap<SendPreferences> = {};
+            const sendPrefsMap = { ...sendPreferencesMap };
             await Promise.all(
                 emails.map(async (email) => {
-                    const encryptionPreferences = await getEncryptionPreferences(email);
+                    if (sendPrefsMap[email]) {
+                        return;
+                    }
+                    const encryptionPreferences = await getEncryptionPreferences(email, 0, contactEmailsMap);
                     const sendPreferences = getSendPreferences(encryptionPreferences, directMessage);
-                    mapSendPrefs[email] = sendPreferences;
+                    sendPrefsMap[email] = sendPreferences;
                 })
             );
-            // There are two packages to be generated for the payload.
-            // The Packages in the request body, called here top-level packages
-            // The Packages inside Packages.addresses, called subpackages here
-            let packages = generateTopPackages({
+            // throw if trying to send a reply to an organizer with send preferences error
+            if (method === ICAL_METHOD.REPLY) {
+                const sendPrefError = sendPrefsMap[to[0].Address]?.error;
+                if (sendPrefError) {
+                    throw sendPrefError;
+                }
+            }
+            const packages = await generatePackages({
                 message: directMessage,
-                mapSendPrefs,
+                sendPreferencesMap: sendPrefsMap,
                 attachmentData,
-            });
-            packages = await attachSubPackages({
-                packages,
                 attachments: [attachment],
                 emails,
-                mapSendPrefs,
-            });
-            packages = await encryptPackages({
-                packages,
-                attachments: [attachment],
                 publicKeys,
                 privateKeys,
-                message: directMessage,
             });
-            await api(
-                sendMessageDirect({
+            await api({
+                ...sendMessageDirect({
                     Message: directMessage,
                     AttachmentKeys: uint8ArrayToBase64String(packets.keys),
                     Action: -1,
                     AutoSaveContacts,
                     Packages: Object.values(packages),
-                } as any)
-            );
+                } as any),
+                silence: true,
+            });
         },
         [api, getMailSettings, getAddressKeys, getEncryptionPreferences]
     );
