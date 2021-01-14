@@ -106,8 +106,8 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
             const uploadProgress = calculateProgress(latestStats, uploadsInSession);
             headingElements.push(
                 c('Info').ngettext(
-                    msgid`${activeUploadsCount} Uploading ${uploadProgress}%`,
-                    `${activeUploadsCount} Uploading ${uploadProgress}%`,
+                    msgid`${activeUploadsCount} Uploading (${uploadProgress}%)`,
+                    `${activeUploadsCount} Uploading (${uploadProgress}%)`,
                     activeUploadsCount
                 )
             );
@@ -116,8 +116,8 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
             const downloadProgress = calculateProgress(latestStats, downloadsInSession);
             headingElements.push(
                 c('Info').ngettext(
-                    msgid`${activeDownloadsCount} Downloading ${downloadProgress}%`,
-                    `${activeDownloadsCount} Downloading ${downloadProgress}%`,
+                    msgid`${activeDownloadsCount} Downloading (${downloadProgress}%)`,
+                    `${activeDownloadsCount} Downloading (${downloadProgress}%)`,
                     activeDownloadsCount
                 )
             );
