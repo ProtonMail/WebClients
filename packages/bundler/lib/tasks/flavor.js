@@ -132,14 +132,15 @@ function sed(rule, files) {
 }
 
 async function writeNewConfig(api) {
+    // Sentry does not exist for react application anymore.
     const {
-        sentry: { dsn: currentSentryDSN },
+        sentry: { dsn: currentSentryDSN } = {},
         secureUrl: currentSecureURL,
         deployConfig: { version: currentVersionDeploy, versionDevelop: currentVersionDeployFromDevelop } = {} // no config for angular
     } = await getNewConfig(api, ['--api proxy'], true);
     const {
         apiUrl,
-        sentry: { dsn: newSentryDSN },
+        sentry: { dsn: newSentryDSN } = {},
         secureUrl: newSecureURL,
         deployConfig: { version: newVersionDeploy } = {} // no config for angular
     } = await getNewConfig(api);
@@ -186,12 +187,6 @@ async function writeNewConfig(api) {
 
     await sed(`s#="/api"#="${apiUrl}"#;`, SOURCE_FILE_INDEX);
     info(`replace current api by ${apiUrl} inside the main index`);
-
-    await sed(`s#="${currentSentryDSN}"#="${newSentryDSN}"#;`, SOURCE_FILE_INDEX);
-    info('replace sentry config inside the main index');
-
-    await sed(`s#="${currentSecureURL}"#="${newSecureURL}"#;`, SOURCE_FILE_INDEX);
-    info('replace secureURL config inside the main index');
 }
 
 /**
