@@ -1,23 +1,16 @@
 import React, { memo, useMemo, useRef } from 'react';
-import {
-    LinkButton,
-    Tooltip,
-    classnames,
-    Icon,
-    useContactEmails,
-    useContactGroups,
-    AddressesAutocomplete,
-} from 'react-components';
+import { AddressesAutocomplete, useNotifications, Alert } from 'react-components';
 import { c, msgid } from 'ttag';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { Recipient } from 'proton-shared/lib/interfaces';
 import { uniqueBy } from 'proton-shared/lib/helpers/array';
+import { Address, Recipient } from 'proton-shared/lib/interfaces';
 import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { normalizeEmail, validateEmailAddress } from 'proton-shared/lib/helpers/email';
+import { normalizeEmail, normalizeInternalEmail, validateEmailAddress } from 'proton-shared/lib/helpers/email';
+import { useContactEmailsCache } from '../../../containers/calendar/ContactEmailsProvider';
 
-import { AttendeeModel } from '../../../interfaces/EventModel';
+import { AttendeeModel, EventModel } from '../../../interfaces/EventModel';
+import OrganizerRow from '../rows/OrganizerRow';
+import ParticipantRow from '../rows/ParticipantRow';
 
 const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
 const { TRUE } = ICAL_ATTENDEE_RSVP;
@@ -32,29 +25,25 @@ const emailToAttendee = (email: string): AttendeeModel => ({
 });
 
 interface Props {
-    onChange: (recipients: AttendeeModel[]) => void;
     value: AttendeeModel[];
-    className?: string;
-    placeholder: string;
+    model: EventModel;
+    addresses: Address[];
     id: string;
+    placeholder: string;
+    className?: string;
+    onChange: (recipients: AttendeeModel[]) => void;
 }
 
-const ParticipantsInput = ({ className, placeholder, value = [], onChange, id }: Props) => {
+const ParticipantsInput = ({ className, placeholder, model, value = [], onChange, id, addresses }: Props) => {
     const numberOfParticipants = value.length;
     const anchorRef = useRef<HTMLInputElement>(null);
 
-    const [contactEmails] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
-    const [contactGroups] = useContactGroups();
+    const { contactEmails, contactGroups, contactEmailsMap } = useContactEmailsCache();
+    const { createNotification } = useNotifications();
 
-    const contactEmailsMap = useMemo(() => {
-        return (contactEmails || []).reduce<SimpleMap<ContactEmail>>((acc, cur) => {
-            const { Email } = cur;
-            if (!acc[Email]) {
-                acc[Email] = cur;
-            }
-            return acc;
-        }, {});
-    }, [contactEmails]);
+    const ownNormalizedEmails = useMemo(() => {
+        return addresses.map(({ Email }) => normalizeInternalEmail(Email));
+    }, [addresses]);
 
     const recipients = value.map((attendee) => {
         return inputToRecipient(attendee.email);
@@ -82,14 +71,36 @@ const ParticipantsInput = ({ className, placeholder, value = [], onChange, id }:
         if (!newAttendees.length) {
             return;
         }
-        onChange([...newAttendees, ...value]);
+        const { attendees, selfAttendees } = newAttendees.reduce<{
+            attendees: AttendeeModel[];
+            selfAttendees: AttendeeModel[];
+        }>(
+            (acc, cur) => {
+                if (ownNormalizedEmails.includes(normalizeInternalEmail(cur.email))) {
+                    acc.selfAttendees.push(cur);
+                } else {
+                    acc.attendees.push(cur);
+                }
+                return acc;
+            },
+            { attendees: [], selfAttendees: [] }
+        );
+        if (selfAttendees.length) {
+            createNotification({
+                type: 'error',
+                text: c('Error').t`Self invitation not allowed`,
+            });
+        }
+        if (attendees.length) {
+            onChange([...attendees, ...value]);
+        }
     };
 
     const onDelete = (recipient: AttendeeModel) => {
         onChange(value.filter((item) => recipient !== item));
     };
 
-    const setIsOptional = ({ email }: AttendeeModel) => {
+    const toggleIsOptional = ({ email }: AttendeeModel) => {
         onChange(
             value.map((attendee) =>
                 email === attendee.email
@@ -115,7 +126,11 @@ const ParticipantsInput = ({ className, placeholder, value = [], onChange, id }:
                 onAddRecipients={handleAddRecipients}
                 hasEmailValidation
             />
-
+            {numberOfParticipants > 100 && (
+                <Alert className="mt0-5" type="error">
+                    {c('Info').t`At most 100 participants are allowed per invitation`}
+                </Alert>
+            )}
             {value.length > 0 && (
                 <details className="noborder mt0-25" open>
                     <summary>
@@ -126,73 +141,23 @@ const ParticipantsInput = ({ className, placeholder, value = [], onChange, id }:
                         )}
                     </summary>
                     <div className="pt0-25">
-                        {value.map((recipient) => {
-                            const isOptional = recipient.role === ICAL_ATTENDEE_ROLE.OPTIONAL;
-                            const contact = recipient.email && contactEmailsMap[recipient.email];
+                        {value.map((participant) => {
                             return (
-                                <div
-                                    key={recipient.email}
-                                    className={classnames(['address-item flex mb0-25 pl0-5 pr0-5'])}
-                                >
-                                    <div
-                                        className="flex flex-item-fluid p0-5"
-                                        title={contact ? `${contact.Name} <${contact.Email}>` : recipient.email}
-                                    >
-                                        {contact ? (
-                                            <>
-                                                <div className="mw50 ellipsis">{contact.Name}</div>
-                                                <div className="mw50 ellipsis">
-                                                    {' <'}
-                                                    {contact.Email}
-                                                    {'>'}
-                                                </div>
-                                            </>
-                                        ) : (
-                                            <div className="mw100 ellipsis">{recipient.email}</div>
-                                        )}
-                                        {isOptional ? (
-                                            <span className="color-subheader w100">{c('Label').t`Optional`}</span>
-                                        ) : null}
-                                    </div>
-                                    <Tooltip
-                                        title={
-                                            isOptional
-                                                ? c('Action').t`Make this participant required`
-                                                : c('Action').t`Make this participant optional`
-                                        }
-                                        className="w2e flex flex-item-noshrink"
-                                    >
-                                        <LinkButton
-                                            type="button"
-                                            className="w2e flex flex-item-noshrink"
-                                            onClick={() => setIsOptional(recipient)}
-                                        >
-                                            <Icon name={isOptional ? 'contact' : 'contact-full'} className="mauto" />
-                                            <span className="sr-only">
-                                                {isOptional
-                                                    ? c('Action').t`Make this participant required`
-                                                    : c('Action').t`Make this participant optional`}
-                                            </span>
-                                        </LinkButton>
-                                    </Tooltip>
-                                    <Tooltip
-                                        title={c('Action').t`Remove this participant`}
-                                        className="w2e flex flex-item-noshrink ml0-5"
-                                    >
-                                        <LinkButton
-                                            type="button"
-                                            className="w2e flex flex-item-noshrink"
-                                            onClick={() => onDelete(recipient)}
-                                        >
-                                            <Icon name="trash" className="mauto" />
-                                            <span className="sr-only">{c('Action').t`Remove this participant`}</span>
-                                        </LinkButton>
-                                    </Tooltip>
-                                </div>
+                                <ParticipantRow
+                                    attendee={participant}
+                                    contactEmailsMap={contactEmailsMap}
+                                    onToggleOptional={toggleIsOptional}
+                                    onDelete={onDelete}
+                                />
                             );
                         })}
                     </div>
                 </details>
+            )}
+            {value.length > 0 && (
+                <div className="pt0-25">
+                    <OrganizerRow model={model} addresses={addresses} />
+                </div>
             )}
         </>
     );

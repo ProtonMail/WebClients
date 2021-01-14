@@ -1,9 +1,8 @@
 import { Calendar, CalendarEvent, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { TYPE } from '../../components/calendar/interactions/constants';
 import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES, SAVE_CONFIRMATION_TYPES, VIEWS } from '../../constants';
 import { EventModel } from '../../interfaces/EventModel';
-import { InviteActions, RecurringActionData } from './eventActions/inviteActions';
+import { InviteActions, RecurringActionData } from '../../interfaces/Invite';
 import { EventReadResult } from './eventStore/interface';
 
 export interface CalendarViewEventDataRecurring {
@@ -103,9 +102,8 @@ export interface OnDeleteConfirmationArgs {
         hasSingleModifications: boolean;
         hasOnlyCancelledSingleModifications: boolean;
     };
-    inviteActions?: InviteActions;
+    inviteActions: InviteActions;
     isInvitation: boolean;
-    veventComponent?: VcalVeventComponent;
 }
 export type OnSaveConfirmationCb = (data: OnSaveConfirmationArgs) => Promise<RecurringActionData>;
 export type OnDeleteConfirmationCb = (data: OnDeleteConfirmationArgs) => Promise<RecurringActionData>;

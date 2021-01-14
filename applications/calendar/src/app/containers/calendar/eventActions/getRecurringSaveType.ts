@@ -4,7 +4,7 @@ import { getHasAnsweredSingleEdits } from '../../../helpers/attendees';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventOldData } from '../../../interfaces/EventData';
 import { OnSaveConfirmationCb } from '../interface';
-import { INVITE_ACTION_TYPES, InviteActions } from './inviteActions';
+import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 import { getExdatesAfter, getHasFutureOption, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 
 interface Arguments {

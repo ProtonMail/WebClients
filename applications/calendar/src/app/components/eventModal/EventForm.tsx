@@ -1,8 +1,10 @@
+import { getIsProtonUID } from 'proton-shared/lib/calendar/helper';
+import { Address } from 'proton-shared/lib/interfaces';
 import React, { HTMLAttributes } from 'react';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
+import { APPS } from 'proton-shared/lib/constants';
 import { FREQUENCY, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { classnames, Input, TextArea } from 'react-components';
+import { Alert, AppLink, classnames, Input, TextArea } from 'react-components';
 import { c } from 'ttag';
 import { MAX_NOTIFICATIONS } from '../../constants';
 import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
@@ -30,25 +32,30 @@ interface Props {
     isSubmitted: boolean;
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
+    addresses: Address[];
     errors: EventModelErrors;
     model: EventModel;
     setModel: (value: EventModel) => void;
     tzid?: string;
     isMinimal?: boolean;
+    isCreateEvent: boolean;
 }
 
 const EventForm = ({
     isSubmitted,
     displayWeekNumbers,
     weekStartsOn,
+    addresses,
     errors,
     model,
     setModel,
     tzid,
     isMinimal,
+    isCreateEvent,
     ...props
 }: Props & HTMLAttributes<HTMLDivElement>) => {
     const {
+        uid,
         frequencyModel,
         start,
         isAllDay,
@@ -58,11 +65,16 @@ const EventForm = ({
         partDayNotifications,
         defaultPartDayNotification,
         calendars,
+        selfAddress,
     } = model;
     const isSingleEdit = !!model.rest?.['recurrence-id'];
 
+    const isImportedEvent = uid && !getIsProtonUID(uid);
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
-    const showParticipants = FEATURE_FLAGS.includes('calendar-send-invitations');
+    const showParticipants = !isImportedEvent;
+    const canEditSharedEventData = isOrganizer && selfAddress?.Status !== 0;
+    const canChangeCalendar = isOrganizer ? !model.organizer : !isSingleEdit;
+    const isOrganizerDisabled = isOrganizer && selfAddress?.Status === 0;
 
     const dateRow = isMinimal ? (
         <MiniDateTimeRows
@@ -82,7 +94,7 @@ const EventForm = ({
             tzid={tzid!}
         />
     );
-    const titleRow = isOrganizer ? (
+    const titleRow = canEditSharedEventData ? (
         <IconRow id={TITLE_INPUT_ID} title={c('Label').t`Event title`}>
             <Input
                 id={TITLE_INPUT_ID}
@@ -94,12 +106,24 @@ const EventForm = ({
             />
         </IconRow>
     ) : null;
+    const organizerDisabledAlert = isOrganizerDisabled ? (
+        <Alert type="warning">
+            <span className="mr0-25">{c('Info')
+                .t`You can only modify personal event properties as your organizer email address is disabled. To modify other event properties,`}</span>
+            <span>
+                <AppLink to="/settings/addresses" toApp={APPS.PROTONMAIL}>
+                    {c('Link').t`enable your email address.`}
+                </AppLink>
+            </span>
+        </Alert>
+    ) : null;
 
     return (
         <div className="mt0-5" {...props}>
+            {organizerDisabledAlert}
             {titleRow}
-            {isOrganizer && dateRow}
-            {!isMinimal && isOrganizer && (
+            {canEditSharedEventData && dateRow}
+            {!isMinimal && canEditSharedEventData && (
                 <IconRow icon="reload" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
                     <FrequencyInput
                         className={classnames([isCustomFrequencySet && 'mb0-5'])}
@@ -128,16 +152,18 @@ const EventForm = ({
                     )}
                 </IconRow>
             )}
-            {!isMinimal && isOrganizer && showParticipants && (
+            {!isMinimal && canEditSharedEventData && showParticipants && (
                 <IconRow icon="contacts-groups" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
                     <ParticipantsInput
                         placeholder={c('Placeholder').t`Add participants`}
                         id={PARTICIPANTS_INPUT_ID}
+                        model={model}
+                        addresses={addresses}
                         {...createHandlers({ model, setModel, field: 'attendees' }).model}
                     />
                 </IconRow>
             )}
-            {isOrganizer && (
+            {canEditSharedEventData && (
                 <IconRow icon="address" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
                     <Input
                         id={LOCATION_INPUT_ID}
@@ -206,12 +232,14 @@ const EventForm = ({
                         withIcon={false}
                         id={CALENDAR_INPUT_ID}
                         title={c('Title').t`Select which calendar to add this event to`}
-                        disabled={!isOrganizer && isSingleEdit}
-                        {...{ model, setModel }}
+                        frozen={!canChangeCalendar}
+                        model={model}
+                        setModel={setModel}
+                        isCreateEvent={isCreateEvent}
                     />
                 </IconRow>
             ) : null}
-            {isOrganizer && (
+            {canEditSharedEventData && (
                 <IconRow icon="text-align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
                     <TextArea
                         id={DESCRIPTION_INPUT_ID}

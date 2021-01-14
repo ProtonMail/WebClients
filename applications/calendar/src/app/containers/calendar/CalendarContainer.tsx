@@ -16,6 +16,7 @@ import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/cal
 import { Address, UserSettings, User } from 'proton-shared/lib/interfaces';
 import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
 import { VIEWS } from '../../constants';
+import ContactEmailsProvider from './ContactEmailsProvider';
 import useCalendarsEvents from './eventStore/useCalendarsEvents';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
@@ -330,33 +331,35 @@ const CalendarContainer = ({
             onChangeView={handleChangeView}
             containerRef={setContainerRef}
         >
-            <InteractiveCalendarView
-                view={view}
-                isNarrow={isNarrow}
-                isLoading={isLoading}
-                tzid={tzid}
-                {...timezoneInformation}
-                displayWeekNumbers={displayWeekNumbers}
-                displaySecondaryTimezone={displaySecondaryTimezone}
-                weekStartsOn={weekStartsOn}
-                now={utcNowDateInTimezone}
-                date={utcDate}
-                dateRange={utcDateRange}
-                events={calendarsEvents}
-                onClickDate={isNarrow ? handleChangeDate : handleClickDateWeekView}
-                onChangeDate={handleChangeDate}
-                onInteraction={(active: boolean) => setDisableCreate(active)}
-                addresses={addresses}
-                activeAddresses={activeAddresses}
-                activeCalendars={activeCalendars}
-                defaultCalendar={defaultCalendar}
-                defaultCalendarBootstrap={defaultCalendarBootstrap}
-                interactiveRef={interactiveRef}
-                containerRef={containerRef}
-                timeGridViewRef={timeGridViewRef}
-                calendarsEventsCacheRef={calendarsEventsCacheRef}
-                eventTargetActionRef={eventTargetActionRef}
-            />
+            <ContactEmailsProvider>
+                <InteractiveCalendarView
+                    view={view}
+                    isNarrow={isNarrow}
+                    isLoading={isLoading}
+                    tzid={tzid}
+                    {...timezoneInformation}
+                    displayWeekNumbers={displayWeekNumbers}
+                    displaySecondaryTimezone={displaySecondaryTimezone}
+                    weekStartsOn={weekStartsOn}
+                    now={utcNowDateInTimezone}
+                    date={utcDate}
+                    dateRange={utcDateRange}
+                    events={calendarsEvents}
+                    onClickDate={isNarrow ? handleChangeDate : handleClickDateWeekView}
+                    onChangeDate={handleChangeDate}
+                    onInteraction={(active: boolean) => setDisableCreate(active)}
+                    addresses={addresses}
+                    activeAddresses={activeAddresses}
+                    activeCalendars={activeCalendars}
+                    defaultCalendar={defaultCalendar}
+                    defaultCalendarBootstrap={defaultCalendarBootstrap}
+                    interactiveRef={interactiveRef}
+                    containerRef={containerRef}
+                    timeGridViewRef={timeGridViewRef}
+                    calendarsEventsCacheRef={calendarsEventsCacheRef}
+                    eventTargetActionRef={eventTargetActionRef}
+                />
+            </ContactEmailsProvider>
         </CalendarContainerView>
     );
 };

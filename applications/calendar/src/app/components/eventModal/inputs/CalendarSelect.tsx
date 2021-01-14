@@ -12,15 +12,27 @@ export interface Props extends Omit<SelectProps, 'options' | 'value'> {
     withIcon?: boolean;
     model: EventModel;
     setModel: (value: EventModel) => void;
+    isCreateEvent: boolean;
+    frozen?: boolean;
 }
 
-const CalendarSelect = ({ withIcon = false, model, setModel, ...rest }: Props) => {
+const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, frozen = false, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
 
     const { color, id } = model.calendar;
     const options = model.calendars;
+    const name = options.find(({ value }) => value === id)?.text;
+
+    if (frozen) {
+        return (
+            <div className="pt0-5 pb0-5 flex">
+                {withIcon !== false && <CalendarIcon className="mr1" color={color} />}
+                {name}
+            </div>
+        );
+    }
 
     const handleChangeCalendar = async ({ target }: React.ChangeEvent<HTMLSelectElement>) => {
         const { value: newId, color: newColor } = options[target.selectedIndex];
@@ -52,8 +64,9 @@ const CalendarSelect = ({ withIcon = false, model, setModel, ...rest }: Props) =
         const Addresses = await getAddresses();
 
         const [Member = {}] = Members;
-        const Address = Addresses.find(({ Email }) => Member.Email === Email);
-        if (!Member || !Address) {
+        const memberEmail = Member.Email;
+        const Address = Addresses.find(({ Email }) => Email === memberEmail);
+        if (!memberEmail || !Address) {
             throw new Error('Address does not exist');
         }
         const newDefaultPartDayNotifications = getDeviceNotifications(

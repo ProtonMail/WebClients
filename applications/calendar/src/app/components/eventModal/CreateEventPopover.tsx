@@ -1,8 +1,10 @@
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { Address } from 'proton-shared/lib/interfaces';
 import React, { CSSProperties, Ref, useRef } from 'react';
 import { Button, classnames, PrimaryButton } from 'react-components';
 import { c } from 'ttag';
 import { EventModel } from '../../interfaces/EventModel';
+import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import PopoverContainer from '../events/PopoverContainer';
 import PopoverFooter from '../events/PopoverFooter';
 import PopoverHeader from '../events/PopoverHeader';
@@ -15,7 +17,8 @@ interface Props {
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
     model: EventModel;
-    onSave: (value: EventModel) => Promise<void>;
+    addresses: Address[];
+    onSave: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
     onEdit: (value: EventModel) => void;
     style: CSSProperties;
@@ -33,19 +36,25 @@ const CreateEventPopover = ({
     popoverRef,
     displayWeekNumbers,
     weekStartsOn,
+    addresses,
     isNarrow,
 }: Props) => {
     const errors = validateEventModel(model);
     const formRef = useRef<HTMLFormElement>(null);
     const { isSubmitted, loadingAction, lastAction, handleSubmit } = useForm({
         containerEl: formRef.current,
-        model,
         errors,
         onSave,
     });
 
     const handleMore = () => {
         onEdit(model);
+    };
+    // new events have no uid yet
+    const inviteActions = {
+        // the type will be more properly assessed in getSaveEventActions
+        type: model.isOrganizer ? INVITE_ACTION_TYPES.SEND_INVITATION : INVITE_ACTION_TYPES.NONE,
+        selfAddress: model.selfAddress,
     };
 
     return (
@@ -57,7 +66,7 @@ const CreateEventPopover = ({
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    handleSubmit();
+                    handleSubmit(inviteActions);
                 }}
                 className="pm-form--iconLabels"
                 ref={formRef}
@@ -65,12 +74,14 @@ const CreateEventPopover = ({
                 <PopoverHeader onClose={onClose} />
                 <EventForm
                     displayWeekNumbers={displayWeekNumbers}
+                    addresses={addresses}
                     weekStartsOn={weekStartsOn}
                     isSubmitted={isSubmitted}
                     errors={errors}
                     model={model}
                     setModel={setModel}
                     isMinimal
+                    isCreateEvent
                 />
                 <PopoverFooter>
                     <Button

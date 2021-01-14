@@ -1,13 +1,9 @@
 import { extractEmailAddress } from 'proton-shared/lib/calendar/vcalConverter';
 import { VcalOrganizerProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { OrganizerModel } from '../../../interfaces/EventModel';
 
-export const propertiesToOrganizerModel = (organizer?: VcalOrganizerProperty): OrganizerModel => {
+export const propertiesToOrganizerModel = (organizer?: VcalOrganizerProperty) => {
     if (!organizer) {
-        return {
-            email: '',
-            cn: '',
-        };
+        return;
     }
     const email = extractEmailAddress(organizer);
     if (email === undefined) {

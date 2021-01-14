@@ -1,8 +1,8 @@
 import { useLoading } from 'react-components';
 import { useState } from 'react';
-import { InviteActions } from '../../../containers/calendar/eventActions/inviteActions';
+import { InviteActions } from '../../../interfaces/Invite';
 import { COUNT_ID, UNTIL_ID } from '../rows/EndsRow';
-import { EventModel, EventModelErrors } from '../../../interfaces/EventModel';
+import { EventModelErrors } from '../../../interfaces/EventModel';
 import { NOTIFICATION_ID } from '../Notifications';
 import { TITLE_INPUT_ID } from '../const';
 
@@ -35,24 +35,23 @@ export enum ACTION {
 
 interface Arguments {
     containerEl: HTMLElement | null;
-    model: EventModel;
     errors: EventModelErrors;
-    onSave: (value: EventModel) => Promise<void>;
+    onSave: (inviteActions: InviteActions) => Promise<void>;
     onDelete?: (inviteActions: InviteActions) => Promise<void>;
 }
 
-export const useForm = ({ containerEl, model, errors, onSave, onDelete }: Arguments) => {
+export const useForm = ({ containerEl, errors, onSave, onDelete }: Arguments) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [loadingAction, withLoadingAction] = useLoading();
     const [lastAction, setLastAction] = useState<ACTION | null>(null);
 
-    const handleSubmit = () => {
+    const handleSubmit = (inviteActions: InviteActions) => {
         setIsSubmitted(true);
         setLastAction(ACTION.SUBMIT);
         if (handleValidation(errors, containerEl)) {
             return;
         }
-        void withLoadingAction(onSave(model));
+        void withLoadingAction(onSave(inviteActions));
     };
 
     const handleDelete = (inviteActions: InviteActions) => {

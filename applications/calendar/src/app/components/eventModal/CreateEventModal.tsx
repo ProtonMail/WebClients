@@ -1,18 +1,14 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { noop } from 'proton-shared/lib/helpers/function';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
+import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { getIsAddressDisabled } from 'proton-shared/lib/helpers/address';
+import { noop } from 'proton-shared/lib/helpers/function';
 import { Address } from 'proton-shared/lib/interfaces';
 import React from 'react';
 import { Button, FormModal, PrimaryButton } from 'react-components';
 import { c } from 'ttag';
-import {
-    INVITE_ACTION_TYPES,
-    InviteActions,
-    NO_INVITE_ACTION,
-} from '../../containers/calendar/eventActions/inviteActions';
-
 import { EventModel } from '../../interfaces/EventModel';
+import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 
 import EventForm from './EventForm';
 
@@ -26,7 +22,7 @@ interface Props {
     isCreateEvent: boolean;
     model: EventModel;
     addresses: Address[];
-    onSave: (value: EventModel) => Promise<void>;
+    onSave: (inviteActions: InviteActions) => Promise<void>;
     onDelete: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
     setModel: (value: EventModel) => void;
@@ -50,21 +46,26 @@ const CreateEventModal = ({
     const errors = validateEventModel(model);
     const { isSubmitted, loadingAction, handleDelete, handleSubmit, lastAction } = useForm({
         containerEl: document.body, // Annoying to get a ref, mostly fine to use this
-        model,
         errors,
         onSave,
         onDelete,
     });
     const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
-    const { selfAddress, selfAttendeeIndex } = model;
+    const { selfAddress, selfAttendeeIndex, attendees } = model;
+    const cannotSave = model.isOrganizer && attendees.length > 100;
     const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
-    const isSelfAddressDisabled = selfAddress ? selfAddress.Status === 0 : true;
+    const isSelfAddressDisabled = getIsAddressDisabled(selfAddress);
     const userPartstat = selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
     const sendCancellationNotice =
-        !isSelfAddressDisabled &&
-        !isCancelled &&
-        [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
+        !isCancelled && [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
     const modalTitle = isCreateEvent ? c('Title').t`Create event` : c('Title').t`Edit event`;
+    const displayTitle = !(model.isOrganizer && model.selfAddress?.Status !== 0);
+    // new events have no uid yet
+    const inviteActions = {
+        // the type will be more properly assessed in getSaveEventActions
+        type: model.isOrganizer ? INVITE_ACTION_TYPES.SEND_INVITATION : INVITE_ACTION_TYPES.NONE,
+        selfAddress,
+    };
 
     // Can't use default close button in FormModal because button type reset resets selects
     const closeButton = (
@@ -73,21 +74,35 @@ const CreateEventModal = ({
         </Button>
     );
 
+    const handleSubmitWithInviteActions = () => handleSubmit(inviteActions);
     const submitButton = (
         <PrimaryButton
             data-test-id="create-event-modal:save"
+            onClick={loadingAction ? noop : handleSubmitWithInviteActions}
             loading={loadingAction && lastAction === ACTION.SUBMIT}
-            disabled={loadingAction}
+            disabled={loadingAction || cannotSave}
             type="submit"
         >
             {c('Action').t`Save`}
         </PrimaryButton>
     );
-    const inviteActions = model.isOrganizer
-        ? NO_INVITE_ACTION
-        : { type: INVITE_ACTION_TYPES.DECLINE, sendCancellationNotice };
+    const deleteInviteActions = model.isOrganizer
+        ? {
+              type: isSelfAddressDisabled ? INVITE_ACTION_TYPES.CANCEL_DISABLED : INVITE_ACTION_TYPES.CANCEL_INVITATION,
+              selfAddress: model.selfAddress,
+              selfAttendeeIndex: model.selfAttendeeIndex,
+          }
+        : {
+              type: isSelfAddressDisabled
+                  ? INVITE_ACTION_TYPES.DECLINE_DISABLED
+                  : INVITE_ACTION_TYPES.DECLINE_INVITATION,
+              partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+              sendCancellationNotice,
+              selfAddress: model.selfAddress,
+              selfAttendeeIndex: model.selfAttendeeIndex,
+          };
 
-    const handleDeleteWithNotice = () => handleDelete(inviteActions);
+    const handleDeleteWithNotice = () => handleDelete(deleteInviteActions);
     const submit = isCreateEvent ? (
         submitButton
     ) : (
@@ -104,8 +119,8 @@ const CreateEventModal = ({
 
     return (
         <FormModal
-            displayTitle={!model.isOrganizer}
-            title={model.isOrganizer ? modalTitle : getDisplayTitle(model.title)}
+            displayTitle={displayTitle}
+            title={displayTitle ? getDisplayTitle(model.title) : modalTitle}
             loading={loadingAction}
             onSubmit={loadingAction ? noop : handleSubmit}
             submit={submit}
@@ -116,11 +131,13 @@ const CreateEventModal = ({
             <EventForm
                 displayWeekNumbers={displayWeekNumbers}
                 weekStartsOn={weekStartsOn}
+                addresses={addresses}
                 isSubmitted={isSubmitted}
                 errors={errors}
                 model={model}
                 setModel={setModel}
                 tzid={tzid}
+                isCreateEvent={isCreateEvent}
             />
         </FormModal>
     );

@@ -1,13 +1,12 @@
 import { updateAttendeePartstat, updateCalendar } from 'proton-shared/lib/api/calendars';
 import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
-import { getAttendeeEmail, toApiPartstat } from 'proton-shared/lib/calendar/attendees';
+import { toApiPartstat } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
-import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
+import { reformatApiErrorMessage } from 'proton-shared/lib/calendar/helper';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
-import { createReplyIcs, getSelfAttendeeData } from 'proton-shared/lib/calendar/integration/invite';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { getHasAttendee, getProdId } from 'proton-shared/lib/calendar/vcalHelper';
+import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
@@ -24,10 +23,9 @@ import {
     SyncMultipleApiResponse,
     UpdatePartstatApiResponse,
 } from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { formatSubject, RE_PREFIX } from 'proton-shared/lib/mail/messages';
+import { EncryptionPreferencesError } from 'proton-shared/lib/mail/encryptionPreferences';
 import React, {
     MutableRefObject,
     RefObject,
@@ -52,6 +50,8 @@ import {
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
+import { useGetCanonicalEmails } from 'react-components/hooks/useGetCanonicalEmails';
+import { useGetVTimezones } from 'react-components/hooks/useGetVtimezones';
 import useSendIcs from 'react-components/hooks/useSendIcs';
 import { Prompt } from 'react-router';
 import { c } from 'ttag';
@@ -77,16 +77,27 @@ import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
 import { DELETE_CONFIRMATION_TYPES, SAVE_CONFIRMATION_TYPES } from '../../constants';
 import { modifyEventModelPartstat } from '../../helpers/attendees';
+import useGetMapSendIcsPreferences from '../../hooks/useGetSendIcsPreferencesMap';
 import { DateTimeModel, EventModel } from '../../interfaces/EventModel';
+import {
+    CleanSendIcsActionData,
+    INVITE_ACTION_TYPES,
+    InviteActions,
+    RecurringActionData,
+    SendIcsActionData,
+} from '../../interfaces/Invite';
 import CalendarView from './CalendarView';
+import SendWithErrorsConfirmationModal from './confirmationModals/SendWithErrorsConfirmationModal';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
 import DeleteConfirmModal from './confirmationModals/DeleteConfirmModal';
 import DeleteRecurringConfirmModal from './confirmationModals/DeleteRecurringConfirmModal';
 
 import EditRecurringConfirmModal from './confirmationModals/EditRecurringConfirmation';
+import EditSingleConfirmModal from './confirmationModals/EditSingleConfirmModal';
+import { useContactEmailsCache } from './ContactEmailsProvider';
 import getDeleteEventActions from './eventActions/getDeleteEventActions';
 import getSaveEventActions from './eventActions/getSaveEventActions';
-import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from './eventActions/inviteActions';
+import { getSendIcsAction } from './eventActions/inviteActions';
 import withOccurrenceEvent from './eventActions/occurrenceEvent';
 
 import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getUpdatedDateTime } from './eventHelper';
@@ -178,7 +189,9 @@ const InteractiveCalendarView = ({
     const { call } = useEventManager();
     const { createModal, getModal, hideModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
+    const { contactEmailsMap } = useContactEmailsCache();
     const sendIcs = useSendIcs();
+    const getVTimezones = useGetVTimezones();
     const config = useConfig();
     const prodId = useMemo(() => getProdId(config), [config]);
     const isSavingEvent = useRef(false);
@@ -208,6 +221,8 @@ const InteractiveCalendarView = ({
     const getAddressKeys = useGetAddressKeys();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getCalendarEventRaw = useGetCalendarEventRaw();
+    const getCanonicalEmails = useGetCanonicalEmails();
+    const getSendIcsPreferencesMap = useGetMapSendIcsPreferences();
 
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
         return Promise.all([
@@ -331,7 +346,6 @@ const InteractiveCalendarView = ({
 
     const getUpdateModel = (
         { calendarData, eventData, eventReadResult, eventRecurrence }: CalendarViewEventData,
-        addresses?: Address[],
         partstat?: ICAL_ATTENDEE_STATUS
     ): EventModel | undefined => {
         if (
@@ -348,7 +362,7 @@ const InteractiveCalendarView = ({
         const { Members = [], CalendarSettings } = readCalendarBootstrap(calendarData.ID);
         const [Member, Address] = getMemberAndAddress(activeAddresses, Members, eventData.Author);
 
-        const [{ veventComponent, verificationStatus }, personalMap] = eventReadResult.result;
+        const [{ veventComponent, verificationStatus, selfAddressData }, personalMap] = eventReadResult.result;
 
         const veventComponentParentPartial = veventComponent['recurrence-id']
             ? getVeventComponentParent(veventComponent.uid.value, eventData.CalendarID)
@@ -375,9 +389,9 @@ const InteractiveCalendarView = ({
             veventComponentParentPartial,
             tzid,
             isOrganizer: !!eventData.IsOrganizer,
-            addresses,
+            selfAddressData,
         });
-        if (partstat && addresses) {
+        if (partstat) {
             return {
                 ...createResult,
                 ...modifyEventModelPartstat(eventResult, partstat, CalendarSettings),
@@ -404,9 +418,8 @@ const InteractiveCalendarView = ({
             const targetCalendar = (event && event.data && event.data.calendarData) || undefined;
 
             const isAllowedToTouchEvent = true;
-            const vevent = event.data.eventReadResult?.result?.[0]?.veventComponent;
-            const hasAttendees = !!vevent && getHasAttendee(vevent);
-            let isAllowedToMoveEvent = getIsCalendarProbablyActive(targetCalendar) && !hasAttendees;
+            const isInvitation = !event.data.eventData?.IsOrganizer;
+            let isAllowedToMoveEvent = getIsCalendarProbablyActive(targetCalendar) && !isInvitation;
 
             if (!isAllowedToTouchEvent) {
                 return;
@@ -617,40 +630,69 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSendReplyIcs = useCallback(
-        async (partstat: ICAL_ATTENDEE_STATUS, vevent?: VcalVeventComponent) => {
-            if (!vevent) {
-                throw new Error('Cannot build reply ics without the event component');
+    const handleSendPrefsErrors = async ({ inviteActions, vevent, cancelVevent }: SendIcsActionData) => {
+        const sendPreferencesMap = await getSendIcsPreferencesMap({
+            inviteActions,
+            vevent,
+            cancelVevent,
+            contactEmailsMap,
+        });
+        const hasErrors = Object.values(sendPreferencesMap).some((sendPref) => !!sendPref?.error);
+        if (!hasErrors) {
+            return { sendPreferencesMap, inviteActions, vevent, cancelVevent };
+        }
+        return new Promise<CleanSendIcsActionData>((resolve, reject) => {
+            createModal(
+                <SendWithErrorsConfirmationModal
+                    sendPreferencesMap={sendPreferencesMap}
+                    inviteActions={inviteActions}
+                    vevent={vevent}
+                    cancelVevent={cancelVevent}
+                    onClose={reject}
+                    onConfirm={resolve}
+                />
+            );
+        });
+    };
+
+    const handleSendIcs = async ({ inviteActions, vevent, cancelVevent }: SendIcsActionData) => {
+        const onRequestError = () => {
+            throw new Error(c('Error').t`Invitation failed to be sent`);
+        };
+        const onReplyError = (error: Error) => {
+            if (error instanceof EncryptionPreferencesError) {
+                const apiErrorMessage = reformatApiErrorMessage(error.message);
+                const errorMessage = c('Reply to calendar invitation')
+                    .t`Cannot send to organizer address: ${apiErrorMessage}`;
+                throw new Error(errorMessage);
             }
-            const { selfAttendee, selfAddress } = getSelfAttendeeData(vevent.attendee || [], addresses);
-            const { organizer } = vevent;
-            if (!selfAttendee || !selfAddress || !organizer) {
-                throw new Error('Missing invitation data');
-            }
-            const organizerEmail = getAttendeeEmail(organizer);
-            const ics = createReplyIcs({
-                prodId,
-                vevent,
-                emailTo: selfAttendee.value,
-                partstat,
-            });
-            try {
-                await sendIcs({
-                    ics,
-                    addressID: selfAddress.ID,
-                    from: {
-                        Address: selfAddress.Email,
-                        Name: selfAddress.DisplayName || selfAddress.Email,
-                    },
-                    to: [{ Address: organizerEmail, Name: organizer.parameters?.cn || organizerEmail }],
-                    subject: formatSubject(`Invitation: ${getDisplayTitle(vevent.summary?.value)}`, RE_PREFIX),
-                });
-            } catch (e) {
-                throw new Error('Sending reply email failed');
-            }
-        },
-        [addresses]
-    );
+            throw new Error(c('Error').t`Answer failed to be sent`);
+        };
+        const onCancelError = () => {
+            throw new Error(c('Error').t`Cancellation failed to be sent`);
+        };
+        const {
+            sendPreferencesMap,
+            inviteActions: cleanInviteActions,
+            vevent: cleanVevent,
+            cancelVevent: cleanCancelVevent,
+        } = await handleSendPrefsErrors({ inviteActions, vevent, cancelVevent });
+        const sendIcsAction = getSendIcsAction({
+            vevent: cleanVevent,
+            cancelVevent: cleanCancelVevent,
+            inviteActions: cleanInviteActions,
+            sendIcs,
+            sendPreferencesMap,
+            contactEmailsMap,
+            getVTimezones,
+            prodId,
+            onRequestError,
+            onReplyError,
+            onCancelError,
+        });
+        await sendIcsAction();
+        return { veventComponent: cleanVevent, inviteActions: cleanInviteActions };
+    };
 
     const handleCloseConfirmation = () => {
         return new Promise<void>((resolve, reject) => {
@@ -680,6 +722,11 @@ const InteractiveCalendarView = ({
                     />
                 );
             }
+            if (type === SAVE_CONFIRMATION_TYPES.SINGLE) {
+                return createModal(
+                    <EditSingleConfirmModal inviteActions={inviteActions} onClose={reject} onConfirm={resolve} />
+                );
+            }
             return reject(new Error('Unknown type'));
         });
     };
@@ -689,17 +736,11 @@ const InteractiveCalendarView = ({
         data,
         isInvitation,
         inviteActions,
-        veventComponent,
     }: OnDeleteConfirmationArgs): Promise<RecurringActionData> => {
         return new Promise<RecurringActionData>((resolve, reject) => {
             if (type === DELETE_CONFIRMATION_TYPES.SINGLE) {
                 return createModal(
-                    <DeleteConfirmModal
-                        onClose={reject}
-                        onConfirm={resolve}
-                        onDecline={() => handleSendReplyIcs(ICAL_ATTENDEE_STATUS.DECLINED, veventComponent)}
-                        inviteActions={inviteActions}
-                    />
+                    <DeleteConfirmModal onClose={reject} onConfirm={resolve} inviteActions={inviteActions} />
                 );
             }
             if (type === DELETE_CONFIRMATION_TYPES.RECURRING && data) {
@@ -712,7 +753,6 @@ const InteractiveCalendarView = ({
                         inviteActions={inviteActions}
                         onClose={reject}
                         onConfirm={resolve}
-                        onDecline={() => handleSendReplyIcs(ICAL_ATTENDEE_STATUS.DECLINED, veventComponent)}
                     />
                 );
             }
@@ -844,15 +884,10 @@ const InteractiveCalendarView = ({
         // the limit per user session is 25k requests / 900s
         await processApiRequestsSafe(requests, 1000, 100 * 1000);
 
-        // const calendarsEventCache = calendarsEventsCacheRef.current;
-        // if (calendarsEventCache) {
-        //     upsertUpdatePartstatResponses(operations, results, calendarsEventCache);
-        // }
-        // calendarsEventCache.rerender?.();
         await call();
     };
 
-    const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent, inviteActions?: InviteActions) => {
+    const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent, inviteActions: InviteActions) => {
         try {
             isSavingEvent.current = true;
             const { syncActions, updatePartstatActions } = await getSaveEventActions({
@@ -864,7 +899,8 @@ const InteractiveCalendarView = ({
                 onSaveConfirmation: handleSaveConfirmation,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
-                sendReplyIcs: handleSendReplyIcs,
+                getCanonicalEmails,
+                sendIcs: handleSendIcs,
             });
             await Promise.all([handleSyncActions(syncActions), handleUpdatePartstatActions(updatePartstatActions)]);
         } catch (e) {
@@ -874,7 +910,7 @@ const InteractiveCalendarView = ({
         }
     };
 
-    const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions?: InviteActions) => {
+    const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions) => {
         try {
             const { syncActions, updatePartstatActions } = await getDeleteEventActions({
                 targetEvent,
@@ -884,6 +920,7 @@ const InteractiveCalendarView = ({
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
                 inviteActions,
+                sendIcs: handleSendIcs,
             });
             await Promise.all([handleSyncActions(syncActions), handleUpdatePartstatActions(updatePartstatActions)]);
         } catch (e) {
@@ -1015,14 +1052,17 @@ const InteractiveCalendarView = ({
                                 style={style}
                                 popoverRef={ref}
                                 model={tmpData}
+                                addresses={addresses}
                                 displayWeekNumbers={displayWeekNumbers}
                                 weekStartsOn={weekStartsOn}
                                 setModel={handleSetTemporaryEventModel}
-                                onSave={() => {
+                                onSave={(inviteActions: InviteActions) => {
                                     if (!temporaryEvent) {
                                         return Promise.reject(new Error('Undefined behavior'));
                                     }
-                                    return handleSaveEvent(temporaryEvent).then(closeAllPopovers).catch(noop);
+                                    return handleSaveEvent(temporaryEvent, inviteActions)
+                                        .then(closeAllPopovers)
+                                        .catch(noop);
                                 }}
                                 onEdit={() => {
                                     if (!temporaryEvent) {
@@ -1048,7 +1088,7 @@ const InteractiveCalendarView = ({
                             weekStartsOn={weekStartsOn}
                             displayNameEmailMap={displayNameEmailMap}
                             formatTime={formatTime}
-                            onDelete={(calendarEvent, inviteActions) => {
+                            onDelete={(inviteActions) => {
                                 return (
                                     handleDeleteEvent(targetEvent, inviteActions)
                                         // Also close the more popover to avoid this event showing there
@@ -1060,7 +1100,7 @@ const InteractiveCalendarView = ({
                                 if (!targetEvent) {
                                     return;
                                 }
-                                const newTemporaryModel = getUpdateModel(targetEvent.data, addresses);
+                                const newTemporaryModel = getUpdateModel(targetEvent.data);
                                 if (!newTemporaryModel) {
                                     return;
                                 }
@@ -1075,7 +1115,7 @@ const InteractiveCalendarView = ({
                                 if (!targetEvent) {
                                     return;
                                 }
-                                const newTemporaryModel = getUpdateModel(targetEvent.data, addresses, partstat);
+                                const newTemporaryModel = getUpdateModel(targetEvent.data, partstat);
                                 if (!newTemporaryModel) {
                                     return;
                                 }
@@ -1083,6 +1123,8 @@ const InteractiveCalendarView = ({
                                     isInvitation: true,
                                     type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
                                     partstat,
+                                    selfAddress: newTemporaryModel.selfAddress,
+                                    selfAttendeeIndex: newTemporaryModel.selfAttendeeIndex,
                                 };
 
                                 const newTemporaryEvent = getTemporaryEvent(
@@ -1138,11 +1180,11 @@ const InteractiveCalendarView = ({
                     tzid={tzid}
                     model={tmpData}
                     setModel={handleSetTemporaryEventModel}
-                    onSave={() => {
+                    onSave={(inviteActions: InviteActions) => {
                         if (!temporaryEvent) {
                             return Promise.reject(new Error('Undefined behavior'));
                         }
-                        return handleSaveEvent(temporaryEvent)
+                        return handleSaveEvent(temporaryEvent, inviteActions)
                             .then(() => hideModal(eventModalID))
                             .catch(noop);
                     }}

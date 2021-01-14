@@ -1,6 +1,11 @@
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { getDateOrDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
-import { isSameDay } from 'proton-shared/lib/date-fns-utc';
+import {
+    getDateOrDateTimeProperty,
+    getDtendProperty,
+    propertyToUTCDate,
+} from 'proton-shared/lib/calendar/vcalConverter';
+import { getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
+import { addDays, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { toUTCDate } from 'proton-shared/lib/date/timezone';
 import { getIsRruleEqual } from 'proton-shared/lib/calendar/rruleEqual';
@@ -23,7 +28,15 @@ const getRecurringUpdateAllPossibilities = (
     const oldStartProperty = oldVeventComponent['recurrence-id']
         ? oldVeventComponent.dtstart
         : getDateOrDateTimeProperty(oldVeventComponent.dtstart, recurrence.localStart);
+    const modifiedLocalEnd = getIsAllDay(oldVeventComponent) ? addDays(recurrence.localEnd, +1) : recurrence.localEnd;
+    const oldEndProperty = oldVeventComponent['recurrence-id']
+        ? getDtendProperty(oldVeventComponent)
+        : getDateOrDateTimeProperty(getDtendProperty(oldVeventComponent), modifiedLocalEnd);
     const newStartProperty = newVeventComponent.dtstart;
+    const newEndProperty = getDtendProperty(newVeventComponent);
+    const hasModifiedDateTimes =
+        +propertyToUTCDate(oldStartProperty) !== +propertyToUTCDate(newStartProperty) ||
+        +propertyToUTCDate(oldEndProperty) !== +propertyToUTCDate(newEndProperty);
     /*
     const oldIsAllDay = isIcalPropertyAllDay(oldStartProperty);
     const newIsAllDay = isIcalPropertyAllDay(newStartProperty);
@@ -51,10 +64,16 @@ const getRecurringUpdateAllPossibilities = (
         originalVeventComponent.rrule &&
         getIsRruleEqual(originalVeventComponent.rrule, newVeventComponent.rrule, weekStartsOn)
     ) {
-        return UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME;
+        return {
+            updateAllPossibilities: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
+            hasModifiedDateTimes,
+        };
     }
 
-    return UpdateAllPossibilities.USE_NEW_START_DATE;
+    return {
+        updateAllPossibilities: UpdateAllPossibilities.USE_NEW_START_DATE,
+        hasModifiedDateTimes,
+    };
 };
 
 export default getRecurringUpdateAllPossibilities;

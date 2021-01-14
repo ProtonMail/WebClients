@@ -1,4 +1,7 @@
-# [4.0.0-beta.12] - 2020-12-21
+# [4.0.0-beta.12] - 2021-01-20
+## Added
+- Add participants to Proton events
+
 ## Updated
 - Harmonise answer for recurring events with single edits for all other calendar providers
 - Speed-up email replies

@@ -1,6 +1,6 @@
+import { getIsRruleSubset } from 'proton-shared/lib/calendar/rruleSubset';
 import { getHasModifiedDateTimes } from 'proton-shared/lib/calendar/vcalConverter';
 import { getIsPropertyAllDay } from 'proton-shared/lib/calendar/vcalHelper';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
 export const withIncreasedSequence = (vevent: VcalVeventComponent) => {
@@ -14,23 +14,20 @@ export const withIncreasedSequence = (vevent: VcalVeventComponent) => {
     };
 };
 
-export const withVeventSequence = (
-    vevent: VcalVeventComponent,
-    oldVevent: VcalVeventComponent,
-    hasModifiedRrule?: boolean
-) => {
+export const withVeventSequence = (vevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
     if (oldVevent.sequence?.value === undefined) {
         return { ...vevent, sequence: { value: 0 } };
     }
-    const { dtstart, rrule } = vevent;
-    const { dtstart: oldDtstart, rrule: oldRrule, sequence: oldSequence } = oldVevent;
+    const { dtstart } = vevent;
+    const { dtstart: oldDtstart, sequence: oldSequence } = oldVevent;
     const { sequence: newSequence } = vevent;
     const [isAllDay, oldIsAllDay] = [dtstart, oldDtstart].map(getIsPropertyAllDay);
     const isAllDayPreserved = isAllDay === oldIsAllDay;
     const areDateTimesPreserved = !getHasModifiedDateTimes(vevent, oldVevent);
-    const isRrulePreserved = hasModifiedRrule === undefined ? isDeepEqual(rrule, oldRrule) : !hasModifiedRrule;
+    const isRrulePreservedOrSubset =
+        isAllDayPreserved && areDateTimesPreserved ? getIsRruleSubset(vevent, oldVevent) : false;
     const oldSequenceValue = Math.max(0, oldSequence.value);
-    if (isAllDayPreserved && areDateTimesPreserved && isRrulePreserved) {
+    if (isAllDayPreserved && areDateTimesPreserved && isRrulePreservedOrSubset) {
         return newSequence ? { ...vevent } : { ...vevent, sequence: { value: oldSequenceValue } };
     }
     return {

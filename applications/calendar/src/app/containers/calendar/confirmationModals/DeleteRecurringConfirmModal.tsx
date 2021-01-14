@@ -1,46 +1,93 @@
-import { c } from 'ttag';
-import { Alert, ErrorButton, FormModal, ResetButton, useLoading } from 'react-components';
 import React, { useState } from 'react';
-import {
-    INVITE_ACTION_TYPES,
-    InviteActions,
-    NO_INVITE_ACTION,
-    RecurringActionData,
-} from '../eventActions/inviteActions';
-import SelectRecurringType from './SelectRecurringType';
+import { Alert, ErrorButton, FormModal, ResetButton } from 'react-components';
+import { c } from 'ttag';
 import { RECURRING_TYPES } from '../../../constants';
+import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';
+import SelectRecurringType from './SelectRecurringType';
 
-interface Props {
-    types: RECURRING_TYPES[];
-    isInvitation: boolean;
-    hasSingleModifications: boolean;
-    hasOnlyCancelledSingleModifications: boolean;
-    inviteActions?: InviteActions;
-    onConfirm: (data: RecurringActionData) => void;
-    onClose: () => void;
-    onDecline?: () => Promise<void>;
-}
+const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
+    const { type: inviteType, sendCancellationNotice } = inviteActions;
 
-const getAlertText = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
-    const { type: inviteType, sendCancellationNotice: decline } = inviteActions;
-    const isDeleteInvitation = inviteType === INVITE_ACTION_TYPES.DECLINE;
-    if (types.length === 1) {
-        if (types[0] === RECURRING_TYPES.SINGLE) {
-            return decline
-                ? c('Info')
-                      .t`This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?`
-                : isDeleteInvitation
-                ? c('Info').t`This event has been updated by the organizer. Would you like to delete this event?`
-                : c('Info').t`Would you like to delete this event?`;
-        }
-        if (types[0] === RECURRING_TYPES.ALL) {
-            return decline
-                ? c('Info')
-                      .t`The organizer will be notified that you decline the invitation. Would you like to delete all the events in the series?`
-                : c('Info').t`Would you like to delete all the events in the series?`;
-        }
+    const defaultTexts = {
+        title: c('Title').t`Delete recurring event`,
+        confirm: c('Action').t`Delete`,
+        alertText: c('Info').t`Which event would you like to delete?`,
+    };
+
+    if (types.length !== 1) {
+        return defaultTexts;
     }
-    return c('Info').t`Which event would you like to delete?`;
+    if (types[0] === RECURRING_TYPES.SINGLE) {
+        if (inviteType === INVITE_ACTION_TYPES.DECLINE_INVITATION) {
+            if (sendCancellationNotice) {
+                return {
+                    ...defaultTexts,
+                    alertText: c('Info').t`This event has been updated.
+                    The organizer will be notified that you decline the invitation. Would you like to delete this event?`,
+                };
+            }
+            return {
+                ...defaultTexts,
+                alertText: c('Info')
+                    .t`This event has been updated by the organizer. Would you like to delete this event?`,
+            };
+        }
+        if (inviteType === INVITE_ACTION_TYPES.DECLINE_DISABLED && sendCancellationNotice) {
+            return {
+                ...defaultTexts,
+                alertText: c('Info').t`This event has been updated.
+                    The organizer will not be notified that you decline the invitation as your address is disabled.
+                    Would you like to delete this event anyway?`,
+            };
+        }
+        return {
+            ...defaultTexts,
+            alertText: c('Info').t`Would you like to delete this event?`,
+        };
+    }
+    if (types[0] === RECURRING_TYPES.ALL) {
+        if (inviteType === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
+            return {
+                ...defaultTexts,
+                alertText: c('Info').t`A cancellation email will be sent to the event participants.
+                Would you like to delete all events in this series?`,
+            };
+        }
+        if (inviteType === INVITE_ACTION_TYPES.CANCEL_DISABLED) {
+            return {
+                ...defaultTexts,
+                alertText: c('Info')
+                    .t`Your address is disabled. A cancellation email cannot be sent to the event participants.
+                Would you like to delete all events in this series anyway?`,
+            };
+        }
+        if (inviteType === INVITE_ACTION_TYPES.DECLINE_INVITATION && sendCancellationNotice) {
+            return {
+                ...defaultTexts,
+                alertText: c('Info')
+                    .t`The organizer of this series of events will be notified that you decline the invitation.
+                Would you like to delete all the events in this series?`,
+            };
+        }
+        if (inviteType === INVITE_ACTION_TYPES.DECLINE_DISABLED && sendCancellationNotice) {
+            return {
+                ...defaultTexts,
+                alertText: c('Info')
+                    .t`The organizer of this series of events will not be notified that you decline the invitation as your address is disabled.
+                    Would you like to delete all the events in this series anyway?`,
+            };
+        }
+        return {
+            ...defaultTexts,
+            alertText: c('Info').t`Would you like to delete all the events in this series?`,
+        };
+    }
+    // should never fall here
+    return {
+        title: '',
+        confirm: '',
+        alertText: '',
+    };
 };
 
 const getRecurringWarningText = (isInvitation: boolean, inviteActions: InviteActions) => {
@@ -53,41 +100,43 @@ const getRecurringWarningText = (isInvitation: boolean, inviteActions: InviteAct
     return c('Info').t`Occurrences previously updated by the organizer will be kept`;
 };
 
+interface Props {
+    types: RECURRING_TYPES[];
+    isInvitation: boolean;
+    hasSingleModifications: boolean;
+    hasOnlyCancelledSingleModifications: boolean;
+    inviteActions: InviteActions;
+    onConfirm: (data: RecurringActionData) => void;
+    onClose: () => void;
+}
 const DeleteRecurringConfirmModal = ({
     types,
     hasSingleModifications,
     hasOnlyCancelledSingleModifications,
     isInvitation,
-    inviteActions = NO_INVITE_ACTION,
+    inviteActions,
     onConfirm,
-    onClose,
-    onDecline,
     ...rest
 }: Props) => {
-    const [loading, withLoading] = useLoading();
     const [type, setType] = useState(types[0]);
-    const { sendCancellationNotice: decline } = inviteActions;
+    const { title, confirm, alertText } = getTexts(types, inviteActions);
     const showWarning = hasSingleModifications && !hasOnlyCancelledSingleModifications && type === RECURRING_TYPES.ALL;
     const warningText = showWarning ? getRecurringWarningText(isInvitation, inviteActions) : '';
     const handleConfirm = async () => {
-        if (decline) {
-            await onDecline?.();
-        }
         onConfirm({ type, inviteActions });
-        onClose();
+        rest.onClose();
     };
 
     return (
         <FormModal
-            title={c('Info').t`Delete recurring event`}
+            title={title}
             small
-            submit={<ErrorButton type="submit" loading={loading}>{c('Action').t`Delete`}</ErrorButton>}
+            submit={<ErrorButton type="submit">{confirm}</ErrorButton>}
             close={<ResetButton autoFocus>{c('Action').t`Cancel`}</ResetButton>}
-            onSubmit={() => withLoading(handleConfirm())}
-            onClose={onClose}
+            onSubmit={handleConfirm}
             {...rest}
         >
-            <Alert type="error">{getAlertText(types, inviteActions)}</Alert>
+            <Alert type="error">{alertText}</Alert>
             {warningText && <Alert type="warning">{warningText}</Alert>}
             {types.length > 1 ? (
                 <SelectRecurringType
