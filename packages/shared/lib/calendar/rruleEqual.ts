@@ -12,6 +12,7 @@ import { omit } from '../helpers/object';
 import { toUTCDate } from '../date/timezone';
 import { isSameDay } from '../date-fns-utc';
 import { withRruleWkst } from './rruleWkst';
+import { dayToNumericDay } from './vcalConverter';
 
 const maybeArrayComparisonKeys = [
     'byday',
@@ -34,8 +35,9 @@ const isSingleValue = <T>(arg: T | T[] | undefined) => {
 /**
  * Remove redundant properties for a given RRULE
  */
-const getNormalizedRrule = (rrule: VcalRrulePropertyValue, wkst = VcalDays.MO) => {
-    const { freq, count, interval, byday, bymonth, bymonthday } = rrule;
+const getNormalizedRrule = (rrule: VcalRrulePropertyValue, wkstCalendar = VcalDays.MO) => {
+    const { freq, count, interval, byday, bymonth, bymonthday, wkst: wkstRrule } = rrule;
+    const wkst = wkstRrule ? dayToNumericDay(wkstRrule) : wkstCalendar;
     const redundantProperties: (keyof VcalRrulePropertyValue)[] = [];
     if (count && count === 1) {
         redundantProperties.push('count');
@@ -76,12 +78,16 @@ const isUntilEqual = (oldUntil?: VcalDateOrDateTimeValue, newUntil?: VcalDateOrD
     return oldUntil && newUntil && isSameDay(toUTCDate(oldUntil), toUTCDate(newUntil));
 };
 
+/**
+ * Determine if two recurring rules are equal up to re-writing.
+ * WKST can be passed separately for the second recurring rule
+ */
 export const getIsRruleEqual = (oldRrule?: VcalRruleProperty, newRrule?: VcalRruleProperty, wkst?: WeekStartsOn) => {
     const oldValue = oldRrule?.value;
     const newValue = newRrule?.value;
     if (newValue && oldValue) {
         // we "normalize" the rrules first (i.e. remove maybeArrayComparisonKeys in case they are redundant)
-        const normalizedOldValue = getNormalizedRrule(oldValue, wkst);
+        const normalizedOldValue = getNormalizedRrule(oldValue);
         const normalizedNewValue = getNormalizedRrule(newValue, wkst);
         // Compare array values separately because they can be possibly unsorted...
         const oldWithoutMaybeArrays = omit(normalizedOldValue, [...maybeArrayComparisonKeys, 'until']);

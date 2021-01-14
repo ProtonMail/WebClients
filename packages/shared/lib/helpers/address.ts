@@ -1,6 +1,14 @@
 import { ADDRESS_STATUS, ADDRESS_TYPE, RECEIVE_ADDRESS, SEND_ADDRESS } from '../constants';
 import { Address, Recipient } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
+import { normalizeInternalEmail } from './email';
+
+export const getIsAddressDisabled = (address?: Address) => {
+    if (!address) {
+        return undefined;
+    }
+    return address.Status === ADDRESS_STATUS.STATUS_DISABLED;
+};
 
 export const getActiveAddresses = (addresses: Address[]): Address[] => {
     return addresses.filter(({ Status, Receive, Send }) => {
@@ -26,3 +34,11 @@ export const contactToRecipient = (contact: Partial<ContactEmail> = {}, groupPat
     ContactID: contact.ContactID,
     Group: groupPath,
 });
+
+export const findUserAddress = (userEmail?: string, addresses: Address[] = []) => {
+    if (!userEmail) {
+        return undefined;
+    }
+    const normalizedUserEmail = normalizeInternalEmail(userEmail);
+    return addresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizedUserEmail);
+};

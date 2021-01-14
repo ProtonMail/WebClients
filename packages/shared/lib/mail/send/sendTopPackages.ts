@@ -43,14 +43,14 @@ const generateHTMLPackage = (message: RequireOnly<Message, 'Body'>): PackageDire
  */
 export const generateTopPackages = ({
     message,
-    mapSendPrefs,
+    sendPreferencesMap,
     attachmentData,
 }: {
     message: RequireOnly<Message, 'Body'>;
-    mapSendPrefs: SimpleMap<SendPreferences>;
+    sendPreferencesMap: SimpleMap<SendPreferences>;
     attachmentData: { attachment: AttachmentDirect; data: string };
 }): SimpleMap<PackageDirect> => {
-    const packagesStatus: PackageStatus = Object.values(mapSendPrefs)
+    const packagesStatus: PackageStatus = Object.values(sendPreferencesMap)
         .filter(isTruthy)
         .reduce(
             (packages, { encrypt, sign, pgpScheme, mimeType }) => ({
