@@ -71,12 +71,12 @@ export const attachSubPackages = async ({
     packages,
     attachments = [],
     emails,
-    mapSendPrefs,
+    sendPreferencesMap,
 }: {
     packages: SimpleMap<PackageDirect>;
     attachments: Attachment[];
     emails: string[];
-    mapSendPrefs: SimpleMap<SendPreferences>;
+    sendPreferencesMap: SimpleMap<SendPreferences>;
 }): Promise<SimpleMap<PackageDirect>> => {
     const bindPackageSet = async (promise: Promise<PackageDirect>, email: string, type: MIME_TYPES) => {
         const pack = await promise;
@@ -94,7 +94,7 @@ export const attachSubPackages = async ({
     };
 
     const promises = emails.map((email: string) => {
-        const sendPrefs = mapSendPrefs[email];
+        const sendPrefs = sendPreferencesMap[email];
         if (!sendPrefs) {
             throw new Error('Missing send preferences');
         }

@@ -11,6 +11,7 @@ import {
     VcalDateOrDateTimeValue,
     VcalDateProperty,
     VcalDateTimeValue,
+    VcalStringProperty,
     VcalVcalendar,
     VcalVeventComponent,
     VcalVfreebusyComponent,
@@ -19,7 +20,14 @@ import {
     VcalVtodoComponent,
     VcalXOrIanaComponent,
 } from '../interfaces/calendar/VcalModel';
-import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from './constants';
+import {
+    ICAL_ATTENDEE_ROLE,
+    ICAL_ATTENDEE_STATUS,
+    ICAL_EVENT_STATUS,
+    ICAL_METHOD,
+    ICAL_METHODS_ATTENDEE,
+    ICAL_METHODS_ORGANIZER,
+} from './constants';
 
 export const getIsPropertyAllDay = (property: VcalDateOrDateTimeProperty): property is VcalDateProperty => {
     return property.parameters?.type === 'date' ?? false;
@@ -42,6 +50,11 @@ export const getIsRecurring = ({ rrule }: Pick<VcalVeventComponent, 'rrule'>) =>
 
 export const getRecurrenceId = ({ 'recurrence-id': recurrenceId }: Pick<VcalVeventComponent, 'recurrence-id'>) => {
     return recurrenceId;
+};
+
+export const getSequence = (event: VcalVeventComponent) => {
+    const sequence = +(event.sequence?.value || 0);
+    return Math.max(sequence, 0);
 };
 
 export const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is VcalDateTimeValue => {
@@ -115,6 +128,12 @@ export const getHasAttendee = (
     return !!vevent.attendee;
 };
 
+export const getHasAttendees = (
+    vevent: VcalVeventComponent
+): vevent is VcalVeventComponent & Required<Pick<VcalVeventComponent, 'attendee'>> => {
+    return !!vevent.attendee?.length;
+};
+
 export const getAttendeeHasCn = (attendee: VcalAttendeeProperty): attendee is VcalAttendeePropertyWithCn => {
     return !!attendee.parameters?.cn;
 };
@@ -150,6 +169,20 @@ export const getProdId = (config: ProtonConfig) => {
     const appName = APPS_CONFIGURATION[APP_NAME].name;
 
     return `-//Proton Technologies//${appName} ${appVersion}//EN`;
+};
+
+export const getIcalMethod = ({ value }: VcalStringProperty) => {
+    if (Object.values(ICAL_METHOD).some((icalMethod) => icalMethod === value)) {
+        return value as ICAL_METHOD;
+    }
+};
+
+export const getIsValidMethod = (method: ICAL_METHOD, isOrganizerMode: boolean) => {
+    if (method === ICAL_METHOD.DECLINECOUNTER) {
+        // we should never encounter DECLINECOUNTER for the moment
+        return false;
+    }
+    return isOrganizerMode ? ICAL_METHODS_ATTENDEE.includes(method) : ICAL_METHODS_ORGANIZER.includes(method);
 };
 
 export const getEventStatus = ({ status }: VcalVeventComponent) => {
