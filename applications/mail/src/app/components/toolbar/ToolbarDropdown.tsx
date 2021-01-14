@@ -45,7 +45,10 @@ const ToolbarDropdown = ({
                     hasCaret
                     disabled={disabled}
                     caretClassName="toolbar-icon"
-                    className={classnames(['flex-item-noshrink toolbar-button toolbar-button--dropdown', className])}
+                    className={classnames([
+                        'flex-flex-children flex-flex-items-center toolbar-button toolbar-button--dropdown',
+                        className,
+                    ])}
                     {...rest}
                 >
                     {content}

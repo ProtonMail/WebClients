@@ -13,12 +13,12 @@ const SIZE = 'Size';
 const ICONS = {
     [SIZE]: {
         [ASC]: 'sort-small-large',
-        [DESC]: 'sort-large-small'
+        [DESC]: 'sort-large-small',
     },
     [TIME]: {
         [ASC]: 'sort-old-new',
-        [DESC]: 'sort-new-old'
-    }
+        [DESC]: 'sort-new-old',
+    },
 };
 
 interface Props {
@@ -31,7 +31,11 @@ interface Props {
 const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort }: Props) => {
     return (
         <ToolbarDropdown
-            content={<Icon className="toolbar-icon" name={ICONS[sort][desc ? DESC : ASC]} />}
+            content={
+                <span className="flex flex-items-center">
+                    <Icon className="toolbar-icon" name={ICONS[sort][desc ? DESC : ASC]} />
+                </span>
+            }
             title={conversationMode ? c('Title').t`Sort view conversations` : c('Title').t`Sort view messages`}
         >
             {() => (
