@@ -64,6 +64,9 @@
 .flex-flex-children > * {
 	display: flex;
 }
+.flex-flex-items-center > * {
+	align-items: center;
+}
 
 .inline-flex-vcenter > *,
 .flex-item-centered-vert {
