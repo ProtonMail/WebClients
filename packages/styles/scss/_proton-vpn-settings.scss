@@ -1,12 +1,6 @@
 // Configuration
 @import 'config/';
 
-// Variables specific overrides
-$pm-primary: $pv-green;
-$pm-primary-dark: $pv-green-dark;
-$pm-primary-light: $pv-green-light;
-$color-links: $pm-primary;
-
 // Initialisation
 @import 'base/';
 
