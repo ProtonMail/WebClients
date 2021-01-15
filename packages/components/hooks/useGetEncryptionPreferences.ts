@@ -1,5 +1,5 @@
 import { MINUTE, RECIPIENT_TYPES } from 'proton-shared/lib/constants';
-import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { cleanEmail, normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { useCallback } from 'react';
 import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
@@ -42,7 +42,7 @@ const useGetEncryptionPreferences = () => {
     const getEncryptionPreferences = useCallback<GetEncryptionPreferences>(
         async (emailAddress, lifetime, contactEmailsMap) => {
             const [addresses, mailSettings] = await Promise.all([getAddresses(), getMailSettings()]);
-            const normalizedInternalEmail = normalizeInternalEmail(emailAddress);
+            const normalizedInternalEmail = cleanEmail(emailAddress, true);
             const selfAddress = addresses.find(
                 ({ Email }) => normalizeInternalEmail(Email) === normalizedInternalEmail
             );
