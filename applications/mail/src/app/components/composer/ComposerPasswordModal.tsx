@@ -2,7 +2,7 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { Alert, Href, Label, Input, generateUID, useNotifications } from 'react-components';
+import { Alert, Href, Label, Input, generateUID, useNotifications, PasswordInput } from 'react-components';
 import { clearBit, setBit } from 'proton-shared/lib/helpers/bitset';
 
 import ComposerInnerModal from './ComposerInnerModal';
@@ -80,28 +80,26 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
             <div className="flex flex-nowrap mb1 onmobile-flex-column">
                 <Label htmlFor={`composer-password-${uid}`}>{c('Info').t`Message Password`}</Label>
                 <div className="flex-item-fluid">
-                    <Input
+                    <PasswordInput
                         id={`composer-password-${uid}`}
-                        type="password"
-                        autoComplete="off"
-                        required
                         value={password}
                         onChange={handleChange(setPassword)}
                         placeholder={c('Placeholder').t`Password`}
+                        autoComplete="off"
+                        required
                     />
                 </div>
             </div>
             <div className="flex flex-nowrap mb1 onmobile-flex-column">
                 <Label htmlFor={`composer-password-verif-${uid}`}>{c('Info').t`Confirm Password`}</Label>
                 <div className="flex-item-fluid">
-                    <Input
+                    <PasswordInput
                         id={`composer-password-verif-${uid}`}
-                        type="password"
-                        autoComplete="off"
-                        required
                         value={passwordVerif}
                         onChange={handleChange(setPasswordVerif)}
                         placeholder={c('Placeholder').t`Confirm Password`}
+                        autoComplete="off"
+                        required
                     />
                 </div>
             </div>
