@@ -51,6 +51,7 @@ interface Props {
     onFocus?: () => void;
     onAddImages?: (files: File[]) => void;
     toolbarMoreDropdownExtension?: ReactNode;
+    keydownHandler?: (e: KeyboardEvent) => void;
 }
 
 /**
@@ -75,6 +76,7 @@ const SquireEditor = (
         onFocus = noop,
         onAddImages = noop,
         toolbarMoreDropdownExtension = null,
+        keydownHandler,
     }: Props,
     ref: Ref<SquireEditorRef>
 ) => {
@@ -174,6 +176,7 @@ const SquireEditor = (
                     showEllipseButton={showEllipseButton}
                     onEllipseClick={onEllipseClick}
                     data-test-id="composer:body"
+                    keydownHandler={keydownHandler}
                 />
             )}
             <EditorToolbar

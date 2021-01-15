@@ -7,13 +7,18 @@ export interface Props extends NavLinkProps {
     itemClassName?: string;
 }
 
-const SidebarListItemLink = ({ children, itemClassName = 'navigation__link', className, ...rest }: Props) => {
-    return (
-        <NavLink className={classnames([itemClassName, className])} {...rest}>
-            {children}
-        </NavLink>
-    );
-};
+const SidebarListItemLink = React.forwardRef(
+    (
+        { children, itemClassName = 'navigation__link', className, ...rest }: Props,
+        ref: React.Ref<HTMLAnchorElement>
+    ) => {
+        return (
+            <NavLink ref={ref} className={classnames([itemClassName, className])} {...rest}>
+                {children}
+            </NavLink>
+        );
+    }
+);
 
 export const SubSidebarListItemLink = ({ children, ...rest }: Props) => {
     return (
