@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { SUBSCRIPTION_CANCELLATION_REASONS } from 'proton-shared/lib/constants';
+import { BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from 'proton-shared/lib/constants';
 import { FormModal, SelectTwo, TextArea, Option, Scale, Button } from '../../../components';
 
 export interface SubscriptionCancelModel {
@@ -97,7 +97,7 @@ const SubscriptionCancellationModal = ({ onSubmit, onClose, onSkip, ...rest }: P
 
                 <div className="mb2">
                     <label className="mb1 bl" id="score-label">{c('Label')
-                        .t`How likely are you to recommend ProtonMail to others?`}</label>
+                        .t`How likely are you to recommend ${BRAND_NAME} to others?`}</label>
                     <Scale
                         from={0}
                         to={10}
