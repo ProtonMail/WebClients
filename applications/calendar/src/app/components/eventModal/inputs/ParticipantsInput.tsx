@@ -5,7 +5,12 @@ import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from 'pr
 import { uniqueBy } from 'proton-shared/lib/helpers/array';
 import { Address, Recipient } from 'proton-shared/lib/interfaces';
 import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
-import { normalizeEmail, normalizeInternalEmail, validateEmailAddress } from 'proton-shared/lib/helpers/email';
+import {
+    cleanEmail,
+    normalizeEmail,
+    normalizeInternalEmail,
+    validateEmailAddress,
+} from 'proton-shared/lib/helpers/email';
 import { useContactEmailsCache } from '../../../containers/calendar/ContactEmailsProvider';
 
 import { AttendeeModel, EventModel } from '../../../interfaces/EventModel';
@@ -76,7 +81,7 @@ const ParticipantsInput = ({ className, placeholder, model, value = [], onChange
             selfAttendees: AttendeeModel[];
         }>(
             (acc, cur) => {
-                if (ownNormalizedEmails.includes(normalizeInternalEmail(cur.email))) {
+                if (ownNormalizedEmails.includes(cleanEmail(cur.email, true))) {
                     acc.selfAttendees.push(cur);
                 } else {
                     acc.attendees.push(cur);
