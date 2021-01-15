@@ -14,7 +14,7 @@ const RecipientType = ({
     return (
         <span className={className}>
             <span className="container-to pt0-5">{label}</span>
-            <span className="flex-self-vcenter">{children}</span>
+            <span className="flex-self-vcenter message-recipient-item-expanded-content">{children}</span>
         </span>
     );
 };
