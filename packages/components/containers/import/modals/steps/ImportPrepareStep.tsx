@@ -10,7 +10,7 @@ import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { useFolders, useUser, useModals } from '../../../../hooks';
 import { Icon, LabelStack, Button, Alert, Loader, Tooltip, InlineLinkButton } from '../../../../components';
 
-import { ImportModalModel, MailImportFolder, TIME_UNIT } from '../../interfaces';
+import { ImportModalModel, MailImportFolder, TIME_UNIT, DestinationFolder } from '../../interfaces';
 import { timeUnitLabels } from '../../constants';
 import { escapeSlashes, splitEscaped } from '../../helpers';
 
@@ -150,15 +150,21 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
             : escapeSlashes(folderPath);
     };
 
-    const getDestinationFolderPath = (folderPath: string, separator: string) => {
-        const folderName = getFolderName(folderPath, separator);
+    const getDestinationFolderPath = ({ Source, Separator }: MailImportFolder) => {
+        const folderName = getFolderName(Source, Separator);
+        const systemFolders = Object.values(DestinationFolder) as string[];
 
-        const pathParts = [folderName];
-        let parentSource = getParentSource(folderPath, separator);
+        let parentSource = getParentSource(Source, Separator);
+        let pathParts = [folderName];
 
         while (parentSource) {
-            pathParts.unshift(getFolderName(parentSource, separator));
-            parentSource = getParentSource(parentSource, separator);
+            if (!systemFolders.includes(parentSource)) {
+                pathParts = [getFolderName(parentSource, Separator), ...pathParts];
+            } else {
+                pathParts[0] = `[${parentSource}]${pathParts[0]}`;
+            }
+
+            parentSource = getParentSource(parentSource, Separator);
         }
 
         if (pathParts.length > 2) {
@@ -173,7 +179,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
         const Mapping = providerFolders.map((folder) => ({
             Source: folder.Source,
             Destinations: {
-                FolderPath: folder.DestinationFolder || getDestinationFolderPath(folder.Source, folder.Separator),
+                FolderPath: folder.DestinationFolder || getDestinationFolderPath(folder),
             },
             checked: true,
         }));

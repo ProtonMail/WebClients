@@ -17,6 +17,8 @@ import {
 
 import { escapeSlashes, unescapeSlashes, splitEscaped } from '../helpers';
 
+const SYSTEM_FOLDERS = Object.values(DestinationFolder) as string[];
+
 const FOLDER_ICONS = {
     [DestinationFolder.INBOX]: 'inbox',
     [DestinationFolder.ALL_DRAFTS]: 'drafts',
@@ -73,6 +75,7 @@ interface Props {
     editModeMap: EditModeMap;
     updateEditModeMapping: (key: string, editMode: boolean) => void;
     getParent: (folderName: string) => string | undefined;
+    isSystemSubfolder?: boolean;
 }
 
 const ImportManageFoldersRow = ({
@@ -89,6 +92,7 @@ const ImportManageFoldersRow = ({
     updateEditModeMapping,
     getParent,
     editModeMap,
+    isSystemSubfolder = false,
 }: Props) => {
     const { Source, Separator, DestinationFolder } = folder;
 
@@ -102,8 +106,6 @@ const ImportManageFoldersRow = ({
         }
         return acc;
     }, []);
-
-    const levelDestination = Math.min(level, 2);
 
     const destinationName = folderNamesMap[Source];
 
@@ -247,6 +249,22 @@ const ImportManageFoldersRow = ({
         updateEditModeMapping(Source, editMode);
     }, [editMode]);
 
+    const isParentSystemFolder = useMemo(() => {
+        const split = splitEscaped(Source, Separator);
+        return SYSTEM_FOLDERS.includes(split[0]);
+    }, [Source, Separator]);
+
+    const sourceIndentStyles = { marginLeft: `${level}em` };
+
+    /*
+     * For "regular" destination folders we keep the same level, capped at 2
+     * Otherwise, for destination folders which parent is a System Folder (possible with Outlook)
+     * then we apply the level minus one, but can't be less than 0 nor higher than 2
+     * */
+    const destinationIndentStyles = {
+        marginLeft: `${isParentSystemFolder ? Math.max(0, Math.min(level - 1, 2)) : Math.min(level, 2)}em`,
+    };
+
     return (
         <li>
             <div className="border-bottom">
@@ -260,10 +278,7 @@ const ImportManageFoldersRow = ({
                     ])}
                 >
                     <div className="flex w40 flex-nowrap flex-items-center flex-item-noshrink pr1">
-                        <div
-                            className="flex-item-noshrink"
-                            style={DestinationFolder ? undefined : { marginLeft: `${level}em` }}
-                        >
+                        <div className="flex-item-noshrink" style={DestinationFolder ? undefined : sourceIndentStyles}>
                             <Checkbox
                                 onChange={({ target: { checked } }: ChangeEvent<HTMLInputElement>) => {
                                     if (!checked && editMode) {
@@ -284,7 +299,7 @@ const ImportManageFoldersRow = ({
                     <div className="flex w40 pr1">
                         <div
                             className="flex flex-nowrap flex-items-center flex-item-fluid-auto"
-                            style={DestinationFolder ? undefined : { marginLeft: `${levelDestination}em` }}
+                            style={DestinationFolder ? undefined : destinationIndentStyles}
                         >
                             <Icon
                                 name={DestinationFolder ? FOLDER_ICONS[DestinationFolder] : 'folder'}
@@ -337,6 +352,19 @@ const ImportManageFoldersRow = ({
                                                     tabIndex={-1}
                                                     name="info"
                                                     className="color-global-attention inline-flex flex-self-vcenter flex-item-noshrink"
+                                                />
+                                            </Tooltip>
+                                        )}
+                                        {isSystemSubfolder && !mergeWarning && (
+                                            <Tooltip
+                                                title={c('Tooltip')
+                                                    .t`System subfolders will show up as separate folders in ProtonMail`}
+                                                className="flex-item-noshrink"
+                                            >
+                                                <Icon
+                                                    tabIndex={-1}
+                                                    name="info"
+                                                    className="inline-flex flex-self-vcenter flex-item-noshrink"
                                                 />
                                             </Tooltip>
                                         )}
@@ -401,6 +429,7 @@ const ImportManageFoldersRow = ({
                             updateEditModeMapping={updateEditModeMapping}
                             getParent={getParent}
                             editModeMap={editModeMap}
+                            isSystemSubfolder={!!DestinationFolder || isSystemSubfolder}
                         />
                     ))}
                 </ul>
