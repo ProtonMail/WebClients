@@ -162,7 +162,8 @@
 	column-count: 2;
 	column-gap: 0;
 
-	& > * {
+	& > *,
+	&-nobreak {
 		/* stylelint-disable-next-line */
 		-webkit-column-break-inside: avoid;
 		/* Chrome, Safari, Opera */
