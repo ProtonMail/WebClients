@@ -1,13 +1,15 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useRef, useEffect } from 'react';
 import { classnames, Icon } from 'react-components';
 
 interface Props {
     className?: string;
     disabled?: boolean;
     onAddAttachments: (files: File[]) => void;
+    attachmentTriggerRef: React.MutableRefObject<() => void>;
 }
 
-const AttachmentsButton = ({ onAddAttachments, disabled, className }: Props) => {
+const AttachmentsButton = ({ onAddAttachments, disabled, className, attachmentTriggerRef }: Props) => {
+    const inputRef = useRef<HTMLInputElement>(null);
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input = event.target;
         if (input.files) {
@@ -15,6 +17,12 @@ const AttachmentsButton = ({ onAddAttachments, disabled, className }: Props) => 
             input.value = '';
         }
     };
+
+    const triggerAttachment = () => inputRef?.current?.click();
+
+    useEffect(() => {
+        attachmentTriggerRef.current = triggerAttachment;
+    }, []);
 
     return (
         <div className="composer-attachments-button-wrapper flex">
@@ -27,7 +35,14 @@ const AttachmentsButton = ({ onAddAttachments, disabled, className }: Props) => 
                 ])}
             >
                 <Icon name="attach" />
-                <input type="file" multiple onChange={handleChange} data-testid="composer-attachments-button" />
+                <input
+                    ref={inputRef}
+                    type="file"
+                    multiple
+                    onChange={handleChange}
+                    className="composer-attachments-button"
+                    data-testid="composer-attachments-button"
+                />
             </label>
         </div>
     );

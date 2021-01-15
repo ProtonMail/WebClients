@@ -3,7 +3,7 @@ import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientItem from './RecipientItem';
-import { OnCompose } from '../../../hooks/useCompose';
+import { OnCompose } from '../../../hooks/composer/useCompose';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 
 interface Props {

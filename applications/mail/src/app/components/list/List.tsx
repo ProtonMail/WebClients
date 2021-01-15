@@ -31,11 +31,14 @@ interface Props {
     checkedIDs?: string[];
     onCheck: (ID: string[], checked: boolean, replace: boolean) => void;
     onClick: (elementID: string | undefined) => void;
+    onFocus: (number: number) => void;
     conversationMode: boolean;
     isSearch: boolean;
     breakpoints: Breakpoints;
     page: Page;
     onPage: (page: number) => void;
+    onCheckElement: (ID: string) => void;
+    onCheckRange: (ID: string) => void;
 }
 
 const List = ({
@@ -55,11 +58,13 @@ const List = ({
     breakpoints,
     page: inputPage,
     onPage,
+    onFocus,
+    onCheckElement,
+    onCheckRange,
 }: Props) => {
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
     const [labels] = useLabels();
-    const [lastChecked, setLastChecked] = useState<string>(); // Store ID of the last element ID checked
     const [dragElement, setDragElement] = useState<HTMLDivElement>();
     const [draggedIDs, setDraggedIDs] = useState<string[]>([]);
     const [savedCheck, setSavedCheck] = useState<string[]>();
@@ -88,20 +93,13 @@ const List = ({
     }, [loading, page]);
 
     const handleCheck = useHandler((event: ChangeEvent, elementID: string) => {
-        const target = event.target as HTMLInputElement;
         const { shiftKey } = event.nativeEvent as any;
-        const elementIDs = [elementID];
 
-        if (lastChecked && shiftKey) {
-            const start = elements.findIndex(({ ID }) => ID === elementID);
-            const end = elements.findIndex(({ ID }) => ID === lastChecked);
-            elementIDs.push(
-                ...elements.slice(Math.min(start, end), Math.max(start, end) + 1).map(({ ID }) => ID || '')
-            );
+        if (shiftKey) {
+            onCheckRange(elementID);
+        } else {
+            onCheckElement(elementID);
         }
-
-        setLastChecked(elementID);
-        onCheck(elementIDs, target.checked, false);
     });
 
     const clearDragElement = useHandler(() => {
@@ -210,6 +208,7 @@ const List = ({
                                 dragged={draggedIDs.includes(element.ID || '')}
                                 index={index}
                                 breakpoints={breakpoints}
+                                onFocus={onFocus}
                             />
                         ))}
                         {!loading && total > 1 && (

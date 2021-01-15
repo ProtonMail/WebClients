@@ -4,8 +4,8 @@ import { STATUS } from 'proton-shared/lib/models/cache';
 import { Address, CachedKey, Key } from 'proton-shared/lib/interfaces';
 import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 import { MessageExtended } from '../../models/message';
-import { ConversationResult } from '../../hooks/useConversation';
-import { ELEMENTS_CACHE_KEY } from '../../hooks/useElementsCache';
+import { ConversationResult } from '../../hooks/conversation/useConversation';
+import { ELEMENTS_CACHE_KEY } from '../../hooks/mailbox/useElementsCache';
 
 export interface ResolvedRequest<T> {
     status: STATUS;

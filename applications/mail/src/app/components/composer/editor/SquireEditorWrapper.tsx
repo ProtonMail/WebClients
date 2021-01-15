@@ -7,6 +7,7 @@ import { SquireEditorMetadata } from 'react-components/components/editor/interfa
 import { SquireEditorRef } from 'react-components/components/editor/SquireEditor';
 import { RIGHT_TO_LEFT, MIME_TYPES } from 'proton-shared/lib/constants';
 import { diff } from 'proton-shared/lib/helpers/array';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 import { MessageExtended, EmbeddedMap } from '../../../models/message';
 import { Breakpoints } from '../../../models/utils';
@@ -44,6 +45,7 @@ interface Props {
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     contentFocusRef: MutableRefObject<() => void>;
     editorActionsRef: EditorActionsRef;
+    keydownHandler?: (e: KeyboardEvent) => void;
 }
 
 const SquireEditorWrapper = ({
@@ -59,6 +61,7 @@ const SquireEditorWrapper = ({
     onFocus,
     contentFocusRef,
     editorActionsRef,
+    keydownHandler = noop,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
@@ -258,6 +261,7 @@ const SquireEditorWrapper = ({
             onReady={handleSquireReady}
             onAddImages={onAddAttachments}
             toolbarMoreDropdownExtension={<EditorToolbarExtension message={message.data} onChangeFlag={onChangeFlag} />}
+            keydownHandler={keydownHandler}
         />
     );
 };

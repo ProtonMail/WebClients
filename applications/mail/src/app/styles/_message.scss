@@ -209,6 +209,11 @@
 
 }
 
+.message-container.is-focused {
+	border-color: $pm-primary-light;
+	box-shadow: 0 .125em .25em 0 var(--dropdown-box-shadow, $input-shadow-color);
+}
+
 .message-container--hasAttachment {
 	.message-content {
 		border-radius: 0;

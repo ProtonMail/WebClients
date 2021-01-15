@@ -1,8 +1,8 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from 'proton-shared/lib/mail/messages';
-import React, { ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
+import React, { useEffect, useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
 import { classnames, Checkbox } from 'react-components';
 import { getInitial } from 'proton-shared/lib/helpers/string';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from 'proton-shared/lib/mail/messages';
 import { MAILBOX_LABEL_IDS, DENSITY, VIEW_MODE } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
@@ -39,6 +39,7 @@ interface Props {
     dragged: boolean;
     index: number;
     breakpoints: Breakpoints;
+    onFocus: (index: number) => void;
 }
 
 const Item = ({
@@ -59,7 +60,10 @@ const Item = ({
     dragged,
     index,
     breakpoints,
+    onFocus,
 }: Props) => {
+    const elementRef = useRef<HTMLDivElement>(null);
+    const [hasFocus, setHasFocus] = useState(false);
     const displayRecipients =
         [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS) ||
         isSent(element) ||
@@ -110,6 +114,15 @@ const Item = ({
         onCheck(event, element.ID || '');
     };
 
+    const handleFocus = () => {
+        setHasFocus(true);
+        onFocus(index);
+    };
+
+    const handleBlur = () => {
+        setHasFocus(false);
+    };
+
     const itemCheckboxType = isCompactView ? (
         <Checkbox className="item-icon-compact mr0-75 stop-propagation" checked={checked} onChange={handleCheck} />
     ) : (
@@ -121,6 +134,12 @@ const Item = ({
             {getInitial(displayRecipients ? recipientsLabels[0] : sendersLabels[0])}
         </ItemCheckbox>
     );
+
+    useEffect(() => {
+        if (hasFocus) {
+            elementRef?.current?.scrollIntoView?.({ block: 'nearest' });
+        }
+    }, [hasFocus]);
 
     return (
         <div
@@ -135,8 +154,16 @@ const Item = ({
                 !unread && 'read',
                 dragged && 'item-dragging',
                 loading && 'item-is-loading',
+                hasFocus && 'item-is-focused',
             ])}
             style={{ '--index': index }}
+            ref={elementRef}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            tabIndex={-1}
+            data-element-id={element.ID}
+            data-shortcut-target="item-container"
+            data-shortcut-target-selected={isSelected}
         >
             {itemCheckboxType}
             <ItemLayout

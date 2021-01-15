@@ -3,7 +3,7 @@ import { hasAttachments, isDraft, isSent, isOutbox } from 'proton-shared/lib/mai
 import React, { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, RefCallback } from 'react';
 import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-
+import { noop } from 'proton-shared/lib/helpers/function';
 import { getSentStatusIconInfo, getReceivedStatusIcon, MessageViewIcons } from '../../helpers/message/icon';
 import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
@@ -13,13 +13,14 @@ import { Element } from '../../models/element';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import { isUnread } from '../../helpers/elements';
-import { OnCompose } from '../../hooks/useCompose';
+import { OnCompose } from '../../hooks/composer/useCompose';
 import { Breakpoints } from '../../models/utils';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/useLoadImages';
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
+import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 
 import './MessageView.scss';
 
@@ -35,6 +36,7 @@ interface Props {
     onBack: () => void;
     onCompose: OnCompose;
     breakpoints: Breakpoints;
+    onFocus?: (index: number) => void;
 }
 
 export interface MessageViewRef {
@@ -54,6 +56,7 @@ const MessageView = (
         onBack,
         onCompose,
         breakpoints,
+        onFocus = noop,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
@@ -61,6 +64,8 @@ const MessageView = (
 
     // Actual expanded state
     const [expanded, setExpanded] = useState(getInitialExpand);
+
+    const [originalMessageMode, setOriginalMessageMode] = useState(false);
 
     // The message is beeing opened
     const [beingFocused, setBeingFocused] = useState(false);
@@ -122,12 +127,11 @@ const MessageView = (
                 setExpanded(true);
                 // Let the browser render the content before scrolling
                 setTimeout(() => {
-                    if (elementRef.current) {
-                        elementRef.current.scrollIntoView({
-                            behavior: smoothScrolling ? 'smooth' : 'auto',
-                            block: 'start',
-                        });
-                    }
+                    elementRef.current?.scrollIntoView({
+                        behavior: smoothScrolling ? 'smooth' : 'auto',
+                        block: 'start',
+                    });
+                    elementRef.current?.focus();
                 });
                 if (!bodyLoaded) {
                     setBeingFocused(true);
@@ -141,9 +145,8 @@ const MessageView = (
         if (beingFocused && bodyLoaded) {
             // Let the browser render the content before scrolling
             setTimeout(() => {
-                if (elementRef.current) {
-                    elementRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                elementRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                elementRef.current?.focus();
             });
             setBeingFocused(false);
         }
@@ -188,16 +191,53 @@ const MessageView = (
         }
     };
 
+    const toggleOriginalMessage = () => setOriginalMessageMode(!originalMessageMode);
+
+    const {
+        hasFocus,
+        handleFocus,
+        handleBlur,
+        labelDropdownToggleRef,
+        moveDropdownToggleRef,
+        filterDropdownToggleRef,
+    } = useMessageHotkeys(
+        elementRef,
+        {
+            labelID,
+            conversationIndex,
+            message,
+            bodyLoaded,
+            expanded,
+            messageLoaded,
+            draft,
+            conversationMode,
+        },
+        {
+            onFocus,
+            onCompose,
+            setExpanded,
+            toggleOriginalMessage,
+            handleLoadRemoteImages,
+            handleLoadEmbeddedImages,
+        }
+    );
+
     return (
         <article
             ref={elementRef}
             className={classnames([
-                'message-container m0-5 mb1',
+                'message-container m0-5 mb1 no-outline',
                 expanded && 'is-opened',
                 hasAttachments(message.data) && 'message-container--hasAttachment',
+                hasFocus && 'is-focused',
             ])}
             style={{ '--index': conversationIndex * 2 }}
             data-testid="message-view"
+            tabIndex={-1}
+            data-message-id={message.data?.ID}
+            data-shortcut-target="message-container"
+            onFocus={handleFocus}
+            onBlur={handleBlur}
         >
             {expanded ? (
                 <>
@@ -220,12 +260,17 @@ const MessageView = (
                         onCompose={onCompose}
                         onSourceMode={setSourceMode}
                         breakpoints={breakpoints}
+                        labelDropdownToggleRef={labelDropdownToggleRef}
+                        moveDropdownToggleRef={moveDropdownToggleRef}
+                        filterDropdownToggleRef={filterDropdownToggleRef}
                     />
                     <MessageBody
                         messageLoaded={messageLoaded}
                         bodyLoaded={bodyLoaded}
                         sourceMode={sourceMode}
                         message={message}
+                        originalMessageMode={originalMessageMode}
+                        toggleOriginalMessage={toggleOriginalMessage}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
                 </>

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Icon, classnames, useLoading, FileIcon } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
-import { PendingUpload } from '../../hooks/useAttachments';
+import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { AttachmentAction, AttachmentHandler } from './AttachmentList';
 
 const getActionIcon = (action: AttachmentAction) => {

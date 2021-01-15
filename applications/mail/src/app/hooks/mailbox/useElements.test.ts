@@ -5,8 +5,8 @@ import { wait } from 'proton-shared/lib/helpers/promise';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 
 import { useElements } from './useElements';
-import { Element } from '../models/element';
-import { Page, Sort, Filter, SearchParameters } from '../models/tools';
+import { Element } from '../../models/element';
+import { Page, Sort, Filter, SearchParameters } from '../../models/tools';
 import {
     renderHook,
     clearAll,
@@ -15,10 +15,10 @@ import {
     triggerEvent,
     addApiResolver,
     addToCache,
-} from '../helpers/test/helper';
-import { ConversationLabel, Conversation } from '../models/conversation';
-import { Event } from '../models/event';
-import { PAGE_SIZE } from '../constants';
+} from '../../helpers/test/helper';
+import { ConversationLabel, Conversation } from '../../models/conversation';
+import { Event } from '../../models/event';
+import { PAGE_SIZE } from '../../constants';
 
 interface SetupArgs {
     elements?: Element[];

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Icon, useLoading, useLabels } from 'react-components';
+import { Icon, useLoading, useLabels, useMailSettings } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { metaKey } from 'proton-shared/lib/helpers/browser';
 import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
@@ -21,6 +22,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
     const [loading, withLoading] = useLoading();
     const [labels = []] = useLabels();
     const emptyLabel = useEmptyLabel();
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
 
     const displayEmpty =
         !breakpoints.isNarrow &&
@@ -44,13 +46,25 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
         title = c('Action').t`Empty folder`;
     }
 
+    const titleEmpty = Hotkeys ? (
+        <>
+            {title}
+            <br />
+            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">Backspace</kbd>
+        </>
+    ) : (
+        title
+    );
+
     return (
         <>
             <ToolbarSeparator />
             <ToolbarButton
                 disabled={!elementIDs.length}
                 loading={loading}
-                title={title}
+                title={titleEmpty}
                 onClick={handleClick}
                 data-test-id="toolbar:emptyfolder"
             >

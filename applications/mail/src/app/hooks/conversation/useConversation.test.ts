@@ -2,7 +2,7 @@ import { act } from '@testing-library/react-hooks';
 import { wait } from 'proton-shared/lib/helpers/promise';
 
 import { useConversation } from './useConversation';
-import { renderHook, clearAll, addApiMock, conversationCache } from '../helpers/test/helper';
+import { renderHook, clearAll, addApiMock, conversationCache } from '../../helpers/test/helper';
 
 describe('useConversation', () => {
     const ID = 'ID';

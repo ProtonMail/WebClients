@@ -10,8 +10,8 @@ import {
 } from 'react-components';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
-import { getLabelName } from '../helpers/labels';
-import { isConversationMode } from '../helpers/mailSettings';
+import { getLabelName } from '../../helpers/labels';
+import { isConversationMode } from '../../helpers/mailSettings';
 
 export const useMailboxPageTitle = (labelID: string, location: Location) => {
     const [mailSettings] = useMailSettings();

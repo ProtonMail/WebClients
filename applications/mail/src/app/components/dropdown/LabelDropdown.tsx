@@ -23,7 +23,7 @@ import { getLabelIDs } from '../../helpers/elements';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { getStandardFolders } from '../../helpers/labels';
 import { Breakpoints } from '../../models/utils';
-import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 
 import './LabelDropdown.scss';
 

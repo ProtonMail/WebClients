@@ -21,7 +21,7 @@ import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folde
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { Breakpoints } from '../../models/utils';
-import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 
 import './MoveDropdown.scss';
 

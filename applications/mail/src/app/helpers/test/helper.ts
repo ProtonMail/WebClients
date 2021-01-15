@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react';
 import { waitFor } from '@testing-library/dom';
-import { ELEMENTS_CACHE_KEY } from '../../hooks/useElementsCache';
+import { ELEMENTS_CACHE_KEY } from '../../hooks/mailbox/useElementsCache';
 import { clearCache, messageCache, conversationCache, cache, attachmentsCache, addressKeysCache } from './cache';
 import { api, clearApiMocks } from './api';
 import { eventManagerListeners } from './event-manager';

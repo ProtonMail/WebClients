@@ -10,6 +10,7 @@ import {
     ButtonGroup as OriginalButtonGroup,
     Tooltip,
     useAddresses,
+    useMailSettings,
 } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
@@ -35,7 +36,7 @@ import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderExpandedDetails from './HeaderExpandedDetails';
 import RecipientType from '../recipients/RecipientType';
 import RecipientItem from '../recipients/RecipientItem';
-import { OnCompose } from '../../../hooks/useCompose';
+import { OnCompose } from '../../../hooks/composer/useCompose';
 import { Breakpoints } from '../../../models/utils';
 import ItemAction from '../../list/ItemAction';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
@@ -71,6 +72,9 @@ interface Props {
     onCompose: OnCompose;
     onSourceMode: (sourceMode: boolean) => void;
     breakpoints: Breakpoints;
+    labelDropdownToggleRef: React.MutableRefObject<() => void>;
+    moveDropdownToggleRef: React.MutableRefObject<() => void>;
+    filterDropdownToggleRef: React.MutableRefObject<() => void>;
 }
 
 const HeaderExpanded = ({
@@ -92,12 +96,16 @@ const HeaderExpanded = ({
     onCompose,
     onSourceMode,
     breakpoints,
+    labelDropdownToggleRef,
+    moveDropdownToggleRef,
+    filterDropdownToggleRef,
 }: Props) => {
     const [addresses = []] = useAddresses();
     const [folders = []] = useFolders();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const selectedIDs = [message.data?.ID || ''];
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
 
     const handleClick = (event: MouseEvent) => {
         if (
@@ -134,6 +142,63 @@ const HeaderExpanded = ({
     );
 
     const { isNarrow } = breakpoints;
+
+    const titleReply = Hotkeys ? (
+        <>
+            {c('Title').t`Reply`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">R</kbd>
+        </>
+    ) : (
+        c('Title').t`Reply`
+    );
+    const titleReplyAll = Hotkeys ? (
+        <>
+            {c('Title').t`Reply all`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">R</kbd>
+        </>
+    ) : (
+        c('Title').t`Reply all`
+    );
+    const titleForward = Hotkeys ? (
+        <>
+            {c('Title').t`Forward`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">F</kbd>
+        </>
+    ) : (
+        c('Title').t`Forward`
+    );
+    const titleFilterOn = Hotkeys ? (
+        <>
+            {c('Title').t`Filter on`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">F</kbd>
+        </>
+    ) : (
+        c('Title').t`Filter on`
+    );
+    const titleMoveTo = Hotkeys ? (
+        <>
+            {c('Title').t`Move to`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">M</kbd>
+        </>
+    ) : (
+        c('Title').t`Move to`
+    );
+    const titleLabelAs = Hotkeys ? (
+        <>
+            {c('Title').t`Label as`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">L</kbd>
+        </>
+    ) : (
+        c('Title').t`Label as`
+    );
 
     return (
         <div
@@ -308,10 +373,11 @@ const HeaderExpanded = ({
                             <HeaderDropdown
                                 autoClose={false}
                                 content={<Icon name="filter" alt={c('Action').t`Custom filter`} />}
-                                className="pm-button pm-group-button pm-button--for-icon"
+                                className="pm-button pm-group-button pm-button--for-icon messageFilterDropdownButton"
                                 dropDownClassName="customFilterDropdown"
-                                title={c('Action').t`Filter on`}
+                                title={titleFilterOn}
                                 loading={!messageLoaded}
+                                externalToggleRef={filterDropdownToggleRef}
                             >
                                 {({ onClose }) => (
                                     <CustomFilterDropdown message={message.data as Message} onClose={onClose} />
@@ -321,10 +387,11 @@ const HeaderExpanded = ({
                                 autoClose={false}
                                 noMaxSize
                                 content={<Icon name="folder" alt={c('Action').t`Move to`} />}
-                                className="pm-button pm-group-button pm-button--for-icon"
+                                className="pm-button pm-group-button pm-button--for-icon messageMoveDropdownButton"
                                 dropDownClassName="moveDropdown"
-                                title={c('Action').t`Move to`}
+                                title={titleMoveTo}
                                 loading={!messageLoaded}
+                                externalToggleRef={moveDropdownToggleRef}
                             >
                                 {({ onClose, onLock }) => (
                                     <MoveDropdown
@@ -342,10 +409,11 @@ const HeaderExpanded = ({
                                 autoClose={false}
                                 noMaxSize
                                 content={<Icon name="label" alt={c('Action').t`Label as`} />}
-                                className="pm-button pm-group-button pm-button--for-icon"
+                                className="pm-button pm-group-button pm-button--for-icon messageLabelDropdownButton"
                                 dropDownClassName="labelDropdown"
-                                title={c('Action').t`Label as`}
+                                title={titleLabelAs}
                                 loading={!messageLoaded}
+                                externalToggleRef={labelDropdownToggleRef}
                             >
                                 {({ onClose, onLock }) => (
                                     <LabelDropdown
@@ -368,7 +436,7 @@ const HeaderExpanded = ({
                         className="pm-button--for-icon pm-button--primary flex flex-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                     >
-                        <Tooltip title={c('Title').t`Reply`} className="flex increase-surface-click">
+                        <Tooltip title={titleReply} className="flex increase-surface-click">
                             <Icon name="reply" size={20} alt={c('Title').t`Reply`} />
                         </Tooltip>
                     </ButtonGroup>
@@ -377,7 +445,7 @@ const HeaderExpanded = ({
                         className="pm-button--for-icon pm-button--primary flex flex-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                     >
-                        <Tooltip title={c('Title').t`Reply all`} className="flex increase-surface-click">
+                        <Tooltip title={titleReplyAll} className="flex increase-surface-click">
                             <Icon name="reply-all" size={20} alt={c('Title').t`Reply all`} />
                         </Tooltip>
                     </ButtonGroup>
@@ -386,7 +454,7 @@ const HeaderExpanded = ({
                         className=" pm-button--for-icon pm-button--primary flex flex-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                     >
-                        <Tooltip title={c('Title').t`Forward`} className="flex increase-surface-click">
+                        <Tooltip title={titleForward} className="flex increase-surface-click">
                             <Icon name="forward" size={20} alt={c('Title').t`Forward`} />
                         </Tooltip>
                     </ButtonGroup>

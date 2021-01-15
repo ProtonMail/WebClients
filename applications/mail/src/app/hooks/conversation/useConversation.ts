@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { getConversation } from 'proton-shared/lib/api/conversations';
 import { useApi, useLoading } from 'react-components';
 
-import { Conversation } from '../models/conversation';
-import { useConversationCache } from '../containers/ConversationProvider';
-import { useGetElementsFromIDs } from './useElementsCache';
+import { Conversation } from '../../models/conversation';
+import { useConversationCache } from '../../containers/ConversationProvider';
+import { useGetElementsFromIDs } from '../mailbox/useElementsCache';
 
 export interface ConversationResult {
     Conversation: Conversation;

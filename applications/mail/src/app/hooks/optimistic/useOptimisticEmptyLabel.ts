@@ -2,11 +2,11 @@ import { useHandler, useCache } from 'react-components';
 import { MessageCountsModel, ConversationCountsModel } from 'proton-shared/lib/models';
 
 import { useMessageCache } from '../../containers/MessageProvider';
-import { useGetElementsCache, useSetElementsCache } from '../useElementsCache';
+import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { MessageExtended } from '../../models/message';
 import { useConversationCache } from '../../containers/ConversationProvider';
 import { hasLabel } from '../../helpers/elements';
-import { ConversationResult } from '../useConversation';
+import { ConversationResult } from '../conversation/useConversation';
 import { PAGE_SIZE } from '../../constants';
 
 interface Counter {

@@ -1,4 +1,4 @@
-import React, { DragEvent, ReactNode, memo } from 'react';
+import React, { DragEvent, ReactNode, useRef, memo } from 'react';
 import {
     classnames,
     SidebarListItem,
@@ -8,17 +8,21 @@ import {
     SidebarListItemLink,
     useLoading,
     useCache,
+    HotkeyTuple,
+    useHotkeys,
     useMailSettings,
 } from 'react-components';
-import { useLocation } from 'react-router-dom';
-import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from 'proton-shared/lib/constants';
+import { useHistory } from 'react-router-dom';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { wait } from 'proton-shared/lib/helpers/promise';
+import { noop } from 'proton-shared/lib/helpers/function';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import LocationAside from './LocationAside';
 import { LABEL_IDS_TO_HUMAN, DRAG_ELEMENT_KEY, DRAG_ELEMENT_ID_KEY } from '../../constants';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { useDragOver } from '../../hooks/useDragOver';
-import { ELEMENTS_CACHE_KEY } from '../../hooks/useElementsCache';
+import { ELEMENTS_CACHE_KEY } from '../../hooks/mailbox/useElementsCache';
 
 const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
 
@@ -31,9 +35,13 @@ interface Props {
     icon?: string;
     iconSize?: number;
     text: string;
+    shortcutText?: string;
     content?: ReactNode;
     color?: string;
     unreadCount?: number;
+    shortcutHandlers?: HotkeyTuple[];
+    onFocus?: () => void;
+    id?: string;
 }
 
 const SidebarItem = ({
@@ -42,18 +50,22 @@ const SidebarItem = ({
     icon,
     iconSize,
     text,
+    shortcutText,
     content = text,
     color,
     isFolder,
     unreadCount,
+    shortcutHandlers = [],
+    onFocus = noop,
+    id,
 }: Props) => {
     const { call } = useEventManager();
     const cache = useCache();
-    const location = useLocation();
-    const [mailSettings] = useMailSettings();
+    const history = useHistory();
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+
     const [refreshing, withRefreshing] = useLoading(false);
-    const applyLabel = useApplyLabels();
-    const moveToFolder = useMoveToFolder();
+
     const [dragOver, dragProps] = useDragOver(
         (event: DragEvent) =>
             event.dataTransfer.types.includes(DRAG_ELEMENT_KEY) &&
@@ -62,38 +74,19 @@ const SidebarItem = ({
         isFolder ? 'move' : 'link'
     );
 
-    const isColumnLayout = mailSettings?.ViewLayout === VIEW_LAYOUT.COLUMN;
+    const applyLabel = useApplyLabels();
+    const moveToFolder = useMoveToFolder();
+
     const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
         ? LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
         : labelID;
     const link = `/${humanID}`;
+
     const active = labelID === currentLabelID;
     const ariaCurrent = active ? 'page' : undefined;
 
-    const getTo = () => {
-        if (active && isColumnLayout) {
-            // Keep element open if present
-            const [, context] = location.pathname.split(link);
-            if (context) {
-                return `${link}${context}`;
-            }
-        }
-        return link;
-    };
-
-    const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        const ended = location.pathname.endsWith(link);
-        const params = new URLSearchParams(location.search);
-        const page = params.get('page') || 1;
-        const onFirstPage = page === 1;
-
-        // Don't loose conversation focus with column layout
-        if (isColumnLayout && active && onFirstPage) {
-            event.preventDefault();
-        }
-
-        // Refresh models depending on current location and view layout
-        if (!refreshing && ((active && isColumnLayout) || (ended && !isColumnLayout))) {
+    const handleClick = () => {
+        if (history.location.pathname.endsWith(link) && !refreshing) {
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
     };
@@ -120,15 +113,22 @@ const SidebarItem = ({
         }
     };
 
+    const elementRef = useRef<HTMLAnchorElement>(null);
+    useHotkeys(elementRef, shortcutHandlers);
+
     return (
         <SidebarListItem className={classnames([dragOver && 'navigation__dragover'])}>
             <SidebarListItemLink
                 aria-current={ariaCurrent}
-                to={getTo()}
+                to={link}
                 onClick={handleClick}
                 {...dragProps}
                 onDrop={handleDrop}
-                title={text}
+                title={shortcutText !== undefined && Hotkeys ? `${text} ${shortcutText}` : text}
+                ref={elementRef}
+                data-test-id={id}
+                data-shortcut-target={['navigation-link', id].filter(isTruthy).join(' ')}
+                onFocus={onFocus}
             >
                 <SidebarListItemContent
                     left={icon ? <SidebarListItemContentIcon name={icon} color={color} size={iconSize} /> : undefined}

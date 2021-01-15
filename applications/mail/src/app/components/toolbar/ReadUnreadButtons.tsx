@@ -1,11 +1,11 @@
 import React from 'react';
 import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
-import { Icon, useLoading } from 'react-components';
+import { Icon, useLoading, useMailSettings } from 'react-components';
 import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
 import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
-import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 
@@ -21,6 +21,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
     const [loading, withLoading] = useLoading();
     const markAs = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
 
     const handleMarkAs = async (status: MARK_AS_STATUS) => {
         const isUnread = status === UNREAD;
@@ -31,10 +32,30 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
         await markAs(elements, labelID, status);
     };
 
+    const titleRead = Hotkeys ? (
+        <>
+            {c('Action').t`Mark as read`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">R</kbd>
+        </>
+    ) : (
+        c('Action').t`Mark as read`
+    );
+
+    const titleUnread = Hotkeys ? (
+        <>
+            {c('Action').t`Mark as unread`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">U</kbd>
+        </>
+    ) : (
+        c('Action').t`Mark as unread`
+    );
+
     const buttons = [
         <ToolbarButton
             key="read"
-            title={c('Action').t`Mark as read`}
+            title={titleRead}
             loading={loading}
             disabled={!selectedIDs.length}
             onClick={() => withLoading(handleMarkAs(READ))}
@@ -46,7 +67,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
         </ToolbarButton>,
         <ToolbarButton
             key="unread"
-            title={c('Action').t`Mark as unread`}
+            title={titleUnread}
             loading={loading}
             disabled={!selectedIDs.length}
             onClick={() => withLoading(handleMarkAs(UNREAD))}
@@ -54,7 +75,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
         >
             <Icon className="toolbar-icon mauto" name="unread" />
             <span className="sr-only">{c('Action').t`Mark as unread`}</span>
-        </ToolbarButton>
+        </ToolbarButton>,
     ];
 
     if (MessageButtons === MESSAGE_BUTTONS.UNREAD_READ) {

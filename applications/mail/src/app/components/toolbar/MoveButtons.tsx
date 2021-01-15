@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
-import { Icon, useLoading } from 'react-components';
+import { Icon, useLoading, useMailSettings } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
@@ -9,7 +9,7 @@ import ToolbarButton from './ToolbarButton';
 import { Breakpoints } from '../../models/utils';
 import { getFolderName, isCustomFolder, isCustomLabel } from '../../helpers/labels';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
-import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 import DeleteButton from './DeleteButton';
 
 const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED, ALL_MAIL } = MAILBOX_LABEL_IDS;
@@ -28,6 +28,7 @@ const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, sel
     const moveToFolder = useMoveToFolder();
     const labelIDs = labels.map(({ ID }) => ID);
     const getElementsFromIDs = useGetElementsFromIDs();
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
 
     const handleMove = async (LabelID: string) => {
         const folderName = getFolderName(LabelID, folders);
@@ -37,11 +38,21 @@ const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, sel
         onBack();
     };
 
+    const titleInbox = Hotkeys ? (
+        <>
+            {c('Action').t`Move to inbox`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">I</kbd>
+        </>
+    ) : (
+        c('Action').t`Move to inbox`
+    );
+
     const inboxButton = (
         <ToolbarButton
             key="inbox"
             loading={loading}
-            title={c('Action').t`Move to inbox`}
+            title={titleInbox}
             onClick={() => withLoading(handleMove(INBOX))}
             disabled={!selectedIDs.length}
             data-test-id="toolbar:movetoinbox"
@@ -51,11 +62,21 @@ const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, sel
         </ToolbarButton>
     );
 
+    const titleArchive = Hotkeys ? (
+        <>
+            {c('Action').t`Move to archive`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">A</kbd>
+        </>
+    ) : (
+        c('Action').t`Move to archive`
+    );
+
     const archiveButton = (
         <ToolbarButton
             key="archive"
             loading={loading}
-            title={c('Action').t`Move to archive`}
+            title={titleArchive}
             onClick={() => withLoading(handleMove(ARCHIVE))}
             disabled={!selectedIDs.length}
             data-test-id="toolbar:movetoarchive"
@@ -65,11 +86,21 @@ const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, sel
         </ToolbarButton>
     );
 
+    const titleSpam = Hotkeys ? (
+        <>
+            {c('Action').t`Move to spam`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">S</kbd>
+        </>
+    ) : (
+        c('Action').t`Move to spam`
+    );
+
     const spamButton = (
         <ToolbarButton
             key="spam"
             loading={loading}
-            title={c('Action').t`Move to spam`}
+            title={titleSpam}
             onClick={() => withLoading(handleMove(SPAM))}
             disabled={!selectedIDs.length}
             data-test-id="toolbar:movetospam"
@@ -79,11 +110,21 @@ const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, sel
         </ToolbarButton>
     );
 
+    const titleNoSpam = Hotkeys ? (
+        <>
+            {c('Action').t`Move to inbox (not spam)`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">I</kbd>
+        </>
+    ) : (
+        c('Action').t`Move to inbox (not spam)`
+    );
+
     const nospamButton = (
         <ToolbarButton
             key="nospam"
             loading={loading}
-            title={c('Action').t`Move to inbox (not spam)`}
+            title={titleNoSpam}
             onClick={() => withLoading(handleMove(INBOX))}
             disabled={!selectedIDs.length}
             data-test-id="toolbar:movetonospam"
@@ -93,11 +134,21 @@ const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, sel
         </ToolbarButton>
     );
 
+    const titleTrash = Hotkeys ? (
+        <>
+            {c('Action').t`Move to trash`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">T</kbd>
+        </>
+    ) : (
+        c('Action').t`Move to trash`
+    );
+
     const trashButton = (
         <ToolbarButton
             key="trash"
             loading={loading}
-            title={c('Action').t`Move to trash`}
+            title={titleTrash}
             onClick={() => withLoading(handleMove(TRASH))}
             disabled={!selectedIDs.length}
             data-test-id="toolbar:movetotrash"

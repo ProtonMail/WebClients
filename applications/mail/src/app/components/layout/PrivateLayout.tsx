@@ -8,7 +8,7 @@ import MailSidebar from '../sidebar/MailSidebar';
 import { getHumanLabelID } from '../../helpers/labels';
 import { setKeywordInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
-import { OnCompose } from '../../hooks/useCompose';
+import { OnCompose } from '../../hooks/composer/useCompose';
 
 interface Props {
     children: ReactNode;
@@ -19,6 +19,7 @@ interface Props {
     elementID: string | undefined;
     onCompose: OnCompose;
     isBlurred?: boolean;
+    onOpenShortcutsModal: () => void;
 }
 
 const PrivateLayout = ({
@@ -30,6 +31,7 @@ const PrivateLayout = ({
     elementID,
     onCompose,
     isBlurred,
+    onOpenShortcutsModal,
 }: Props) => {
     const [expanded, setExpand] = useState(false);
 
@@ -54,6 +56,7 @@ const PrivateLayout = ({
             onToggleExpand={handleToggleExpand}
             onSearch={handleSearch}
             onCompose={onCompose}
+            onOpenShortcutsModal={onOpenShortcutsModal}
         />
     );
 

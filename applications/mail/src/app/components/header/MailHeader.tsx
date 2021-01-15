@@ -9,6 +9,7 @@ import {
     FloatingButton,
     MainLogo,
     SettingsButton,
+    SupportDropdown,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 
@@ -16,7 +17,7 @@ import AdvancedSearchDropdown from './AdvancedSearchDropdown';
 import { extractSearchParameters, setParamsInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
 import { getLabelName } from '../../helpers/labels';
-import { OnCompose } from '../../hooks/useCompose';
+import { OnCompose } from '../../hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '../../constants';
 
 interface Props {
@@ -29,6 +30,7 @@ interface Props {
     onCompose: OnCompose;
     expanded?: boolean;
     onToggleExpand: () => void;
+    onOpenShortcutsModal: () => void;
 }
 
 const MailHeader = ({
@@ -41,6 +43,7 @@ const MailHeader = ({
     onToggleExpand,
     onSearch,
     onCompose,
+    onOpenShortcutsModal,
 }: Props) => {
     const { keyword = '' } = extractSearchParameters(location);
     const [value, updateValue] = useState(keyword);
@@ -85,6 +88,7 @@ const MailHeader = ({
             expanded={!!expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={breakpoints.isNarrow}
+            supportDropdown={<SupportDropdown onOpenShortcutsModal={onOpenShortcutsModal} />}
             floatingButton={
                 <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })} icon="compose" />
             }

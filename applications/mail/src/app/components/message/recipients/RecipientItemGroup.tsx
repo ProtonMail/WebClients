@@ -16,7 +16,7 @@ import { getInitial } from 'proton-shared/lib/helpers/string';
 import { RecipientGroup } from '../../../models/address';
 import RecipientItemLayout from './RecipientItemLayout';
 import { MESSAGE_ACTIONS } from '../../../constants';
-import { OnCompose } from '../../../hooks/useCompose';
+import { OnCompose } from '../../../hooks/composer/useCompose';
 import GroupModal from '../modals/GroupModal';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';

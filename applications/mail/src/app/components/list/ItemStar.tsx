@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { Icon, useLoading, classnames, Tooltip } from 'react-components';
+import { Icon, useLoading, classnames, Tooltip, useMailSettings } from 'react-components';
 
 import { Element } from '../../models/element';
 import { isStarred as testIsStarred, isMessage } from '../../helpers/elements';
@@ -13,6 +13,7 @@ interface Props {
 const ItemStar = ({ element = {} }: Props) => {
     const [loading, withLoading] = useLoading();
     const star = useStar();
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
 
     const isStarred = testIsStarred(element);
 
@@ -34,7 +35,19 @@ const ItemStar = ({ element = {} }: Props) => {
     };
 
     return (
-        <Tooltip title={title}>
+        <Tooltip
+            title={
+                Hotkeys ? (
+                    <>
+                        {title}
+                        <br />
+                        <kbd className="bg-global-altgrey noborder">*</kbd>
+                    </>
+                ) : (
+                    <>title</>
+                )
+            }
+        >
             <button
                 type="button"
                 className={classnames([
