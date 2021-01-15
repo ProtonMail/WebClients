@@ -49,6 +49,8 @@ export const isDesktop = () => {
     return !type;
 };
 
+export const metaKey = isMac() ? '⌘' : 'Ctrl';
+
 export const doNotTrack = () => {
     return navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes' || window.doNotTrack === '1';
 };
