@@ -512,12 +512,16 @@ $pm-label-icon-width: 2.4em !default;
 /* field with icon */
 .pm-field-icon-container {
 	@extend .pm-field; // added focus-within inside on pm-field for this fake-field :)
-	min-height: calc(#{$default-height-fields} + 2px);
 	padding: 0;
 
 	> .pm-field {
 		border: 0;
 		width: calc(100% - 1.5em);
+	}
+	&,
+	&-empty {
+		// for drive, to keep the same height
+		min-height: calc(#{$default-height-fields} + 2px);
 	}
 
 	&:focus-within {
