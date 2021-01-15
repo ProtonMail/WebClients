@@ -56,6 +56,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 	background-color: var(--bgcolor-item-column-list, $pm-global-muted);
 
+	&::after,
 	&::before {
 		content: '';
 		position: absolute;
@@ -65,8 +66,24 @@ $item-container-row-height-compact-mode: 4rem !default;
 		left: 0;
 		z-index: 1;
 		pointer-events: none;
-		border: 1px solid transparent;
 		transition: 0.15s easing(easeOutQuart);
+	}
+
+	&::before {
+		border: 1px solid transparent;
+	}
+
+	&::after {
+		border-left: 4px solid transparent;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:focus::after,
+	&.item-is-focused::after {
+		border-left: 4px solid $pm-primary-light;
 	}
 
 	&:hover::before {

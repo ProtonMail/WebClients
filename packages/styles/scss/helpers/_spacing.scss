@@ -10,6 +10,10 @@
 	margin-right: 0.5rem;
 }
 
+.mr-2e {
+	margin-right: -2em;
+}
+
 @include margin-generator(
 	// coordinates
 	(m, mt, mr, mb, ml),

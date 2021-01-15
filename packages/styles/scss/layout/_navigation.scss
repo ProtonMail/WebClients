@@ -26,11 +26,33 @@ $padding-left-link: 2rem !default;
 	display: none;
 }
 
-.navigation__link:focus,
-.navigation__link:hover {
-	background: $navigation-hover-bg-color;
-	color: var(--color-nav-link, $pm-global-light);
-	text-decoration: none;
+.navigation__link {
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		pointer-events: none;
+		transition: 0.15s easing(easeOutQuart);
+		border-left: 4px solid transparent;
+	}
+
+	&:focus,
+	&:hover {
+		background: $navigation-hover-bg-color;
+		color: var(--color-nav-link, $pm-global-light);
+		text-decoration: none;
+		outline: none;
+	}
+
+	&:focus::after {
+		border-left: 4px solid $pm-primary-light;
+	}
 }
 
 [aria-current='page'].navigation__link {
