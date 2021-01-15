@@ -33,10 +33,16 @@ const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = 
                 <SearchInput
                     delay={delay}
                     value={value}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Escape') {
+                            e.target.blur();
+                        }
+                    }}
                     onChange={onChange}
                     id="global_search"
                     placeholder={placeholder}
                     className="searchbox-field"
+                    data-shorcut-target="searchbox-field"
                 />
             </label>
             <button type="submit" className="searchbox-search-button flex">
