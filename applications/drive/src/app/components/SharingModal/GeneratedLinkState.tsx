@@ -93,30 +93,28 @@ function GeneratedLinkState({
                         <br />
                         {c('Info').t`Protect the link with a password.`}
                     </Alert>
-                    <Row>
-                        <div className="flex flex-item-fluid">
+                    <Row className="onmobile-mb0-5">
+                        <div className="flex flex-item-fluid onmobile-mb0-5">
                             <Input
                                 readOnly
                                 value={url}
-                                className="mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis pre"
+                                className="no-scroll ellipsis"
                                 data-testid="sharing-modal-url"
                             />
                         </div>
-                        <div className="flex flex-justify-end ml0-5 onmobile-ml0">
-                            <div>
-                                <PrimaryButton id="copy-url-button" onClick={handleClickCopyURL} className="min-w5e">{c(
-                                    'Action'
-                                ).t`Copy`}</PrimaryButton>
-                            </div>
+                        <div className="flex-noMinChildren flex-justify-end ml0-5 onmobile-ml0">
+                            <PrimaryButton id="copy-url-button" onClick={handleClickCopyURL} className="min-w7e">{c(
+                                'Action'
+                            ).t`Copy`}</PrimaryButton>
                         </div>
                     </Row>
-                    <Row>
-                        <Label htmlFor="sharing-modal-password">
+                    <div className="flex-noMinChildren flex-nowrap mb1 onmobile-flex-column onmobile-mb0-5">
+                        <Label htmlFor="passwordModeToggle">
                             <span className="mr0-5">{c('Label').t`Password protection`}</span>
                         </Label>
                         <div className="flex flex-justify-start mr0-5 onmobile-mr0">
                             <Toggle
-                                className="mb0-5"
+                                className="onmobile-mb0-5"
                                 disabled={customPassword}
                                 id="passwordModeToggle"
                                 checked={!includePassword}
@@ -124,39 +122,42 @@ function GeneratedLinkState({
                                 data-testid="sharing-modal-passwordModeToggle"
                             />
                         </div>
-                        <div className="flex flex-item-fluid onmobile-mb0-5">
+                        <div className="flex-noMinChildren flex-item-fluid onmobile-mb0-5 pm-field-icon-container-empty onmobile-min-h0">
                             {!includePassword && (
-                                <Input
-                                    id="sharing-modal-password"
-                                    data-testid="sharing-modal-password"
-                                    readOnly
-                                    value={password}
-                                    className="pl1 pr1 pt0-5 pb0-5 ellipsis pre"
-                                    icon={
-                                        <button
-                                            title={c('Label').t`Copy password`}
-                                            className="inline-flex flex-item-noshrink"
-                                            tabIndex={-1}
-                                            type="button"
-                                            onClick={handleCopyPasswordClick}
-                                        >
-                                            <Icon className="mauto" name="copy" alt={c('Label').t`Copy password`} />
-                                        </button>
-                                    }
-                                />
+                                <>
+                                    <Label htmlFor="sharing-modal-password" className="sr-only">
+                                        {c('Label').t`Password`}
+                                    </Label>
+                                    <Input
+                                        id="sharing-modal-password"
+                                        data-testid="sharing-modal-password"
+                                        readOnly
+                                        className="no-scroll ellipsis"
+                                        value={password}
+                                        onClick={onEditPasswordClick}
+                                        icon={
+                                            <button
+                                                title={c('Label').t`Copy password`}
+                                                className="inline-flex flex-item-noshrink"
+                                                type="button"
+                                                onClick={handleCopyPasswordClick}
+                                            >
+                                                <Icon className="mauto" name="copy" alt={c('Label').t`Copy password`} />
+                                            </button>
+                                        }
+                                    />
+                                </>
                             )}
                         </div>
-                        <div className="flex flex-justify-end ml0-5 onmobile-ml0">
-                            <div>
-                                <Button
-                                    id="edit-password-button"
-                                    hidden={includePassword}
-                                    onClick={onEditPasswordClick}
-                                    className="min-w5e"
-                                >{c('Action').t`Edit`}</Button>
-                            </div>
+                        <div className="flex-noMinChildren flex-justify-end ml0-5 onmobile-ml0">
+                            <Button
+                                id="edit-password-button"
+                                hidden={includePassword}
+                                onClick={onEditPasswordClick}
+                                className="min-w7e"
+                            >{c('Action').t`Edit`}</Button>
                         </div>
-                    </Row>
+                    </div>
 
                     <Row>
                         <Label htmlFor="sharing-modal-expiration-time">
@@ -168,17 +169,16 @@ function GeneratedLinkState({
                                 data-testid="sharing-modal-expiration-time"
                                 readOnly
                                 value={expirationDate}
-                                className="w100 onmobile-mb0-5 pl1 pr1 pt0-5 pb0-5 ellipsis"
+                                className="w100 onmobile-mb0-5 ellipsis"
+                                onClick={onEditExpirationTimeClick}
                             />
                         </div>
-                        <div className="flex flex-justify-end ml0-5 onmobile-ml0">
-                            <div>
-                                <Button
-                                    id="edit-expiration-time-button"
-                                    onClick={onEditExpirationTimeClick}
-                                    className="min-w5e"
-                                >{c('Action').t`Edit`}</Button>
-                            </div>
+                        <div className="flex-noMinChildren flex-justify-end ml0-5 onmobile-ml0">
+                            <Button
+                                id="edit-expiration-time-button"
+                                onClick={onEditExpirationTimeClick}
+                                className="min-w7e"
+                            >{c('Action').t`Edit`}</Button>
                         </div>
                     </Row>
                 </InnerModal>
