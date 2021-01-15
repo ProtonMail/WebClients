@@ -1,11 +1,11 @@
+import React, { useEffect, useRef } from 'react';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import React, { useEffect } from 'react';
-import { useLabels, classnames } from 'react-components';
+import { useLabels, classnames, useHotkeys } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import MessageView from './MessageView';
 import { useMessage } from '../../hooks/message/useMessage';
-import { OnCompose } from '../../hooks/useCompose';
+import { OnCompose } from '../../hooks/composer/useCompose';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import ConversationHeader from '../conversation/ConversationHeader';
@@ -39,6 +39,24 @@ const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onC
     // Message content could be undefined
     const data = message.data || ({ ID: messageID } as Message);
 
+    const messageRef = useRef(null);
+
+    useHotkeys(messageRef, [
+        [
+            'ArrowLeft',
+            (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const element =
+                    (document.querySelector(
+                        '[data-shortcut-target="item-container"][data-shortcut-target-selected="true"]'
+                    ) as HTMLElement) ||
+                    (document.querySelector('[data-shortcut-target="item-container"]') as HTMLElement);
+                element?.focus();
+            },
+        ],
+    ]);
+
     return (
         <>
             <ConversationHeader
@@ -48,7 +66,12 @@ const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onC
                 labelID={labelID}
                 breakpoints={breakpoints}
             />
-            <div className={classnames(['scroll-if-needed flex-item-fluid pt0-5 mw100', hidden && 'hidden'])}>
+            <div
+                className={classnames(['scroll-if-needed flex-item-fluid pt0-5 mw100', hidden && 'hidden'])}
+                ref={messageRef}
+                tabIndex={-1}
+                style={{ outline: 'none' }}
+            >
                 <MessageView
                     labelID={labelID}
                     conversationMode={false}

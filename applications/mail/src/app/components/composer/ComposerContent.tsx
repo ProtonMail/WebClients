@@ -10,7 +10,7 @@ import SquireEditorWrapper, { EditorActionsRef } from './editor/SquireEditorWrap
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 import EditorEmbeddedModal from './editor/EditorEmbeddedModal';
 import { isDragFile } from '../../helpers/dom';
-import { PendingUpload } from '../../hooks/useAttachments';
+import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { MessageChange } from './Composer';
 import { Breakpoints } from '../../models/utils';
 
@@ -32,6 +32,7 @@ interface Props {
     onSelectEmbedded: (action: ATTACHMENT_ACTION) => void;
     contentFocusRef: MutableRefObject<() => void>;
     editorActionsRef: EditorActionsRef;
+    squireKeydownHandler: (e: KeyboardEvent) => void;
 }
 
 const ComposerContent = ({
@@ -52,6 +53,7 @@ const ComposerContent = ({
     onSelectEmbedded,
     contentFocusRef,
     editorActionsRef,
+    squireKeydownHandler,
 }: Props) => {
     const [fileHover, setFileHover] = useState(false);
 
@@ -104,6 +106,7 @@ const ComposerContent = ({
                     onRemoveAttachment={onRemoveAttachment}
                     contentFocusRef={contentFocusRef}
                     editorActionsRef={editorActionsRef}
+                    keydownHandler={squireKeydownHandler}
                 />
                 {pendingFiles && (
                     <EditorEmbeddedModal

@@ -6,7 +6,7 @@ interface Props {
     loading?: boolean;
     children: ReactNode;
     className?: string;
-    title?: string;
+    title?: ReactNode;
     [rest: string]: any;
 }
 

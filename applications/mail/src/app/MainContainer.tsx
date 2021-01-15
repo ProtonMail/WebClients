@@ -14,6 +14,7 @@ const SettingsContainer = lazy(() => import('./SettingsContainer'));
 
 const MainContainer = () => {
     const breakpoints = useActiveBreakpoint();
+
     return (
         <MessageProvider>
             <ConversationProvider>

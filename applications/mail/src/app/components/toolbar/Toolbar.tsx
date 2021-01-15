@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { c } from 'ttag';
-import { Icon, useLabels, useFolders } from 'react-components';
+import { Icon, useMailSettings, useLabels, useFolders } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import ToolbarSeparator from './ToolbarSeparator';
@@ -42,6 +42,8 @@ interface Props {
     onBack: () => void;
     onElement: (elementID: string | undefined) => void;
     onNavigate: (labelID: string) => void;
+    labelDropdownToggleRef: React.MutableRefObject<() => void>;
+    moveDropdownToggleRef: React.MutableRefObject<() => void>;
 }
 
 const Toolbar = ({
@@ -64,10 +66,34 @@ const Toolbar = ({
     onPage,
     onElement,
     onNavigate,
+    labelDropdownToggleRef,
+    moveDropdownToggleRef,
 }: Props) => {
     const [labels] = useLabels();
     const [folders] = useFolders();
     const listInView = columnMode || !elementID;
+
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+
+    const titleMove = Hotkeys ? (
+        <>
+            {c('Title').t`Move to`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">M</kbd>
+        </>
+    ) : (
+        c('Title').t`Move to`
+    );
+
+    const titleLabel = Hotkeys ? (
+        <>
+            {c('Title').t`Label as`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">L</kbd>
+        </>
+    ) : (
+        c('Title').t`Label as`
+    );
 
     return (
         <nav className="toolbar toolbar--heavy flex noprint flex-spacebetween">
@@ -106,8 +132,10 @@ const Toolbar = ({
                     disabled={!selectedIDs || !selectedIDs.length}
                     content={<Icon className="toolbar-icon" name="folder" />}
                     dropDownClassName="moveDropdown"
-                    title={c('Title').t`Move to`}
+                    className="moveDropdownButton"
+                    title={titleMove}
                     data-test-id="toolbar:moveto"
+                    externalToggleRef={moveDropdownToggleRef}
                 >
                     {({ onClose, onLock }) => (
                         <MoveDropdown
@@ -127,8 +155,10 @@ const Toolbar = ({
                     disabled={!selectedIDs || !selectedIDs.length}
                     content={<Icon className="toolbar-icon" name="label" />}
                     dropDownClassName="labelDropdown"
-                    title={c('Title').t`Label as`}
+                    className="labelDropdownButton"
+                    title={titleLabel}
                     data-test-id="toolbar:labelas"
+                    externalToggleRef={labelDropdownToggleRef}
                 >
                     {({ onClose, onLock }) => (
                         <LabelDropdown

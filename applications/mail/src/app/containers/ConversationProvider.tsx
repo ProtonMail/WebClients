@@ -9,7 +9,7 @@ import { getConversation } from 'proton-shared/lib/api/conversations';
 import { identity } from 'proton-shared/lib/helpers/function';
 
 import { Event } from '../models/event';
-import { ConversationResult } from '../hooks/useConversation';
+import { ConversationResult } from '../hooks/conversation/useConversation';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { useExpirationCheck } from '../hooks/useExpiration';
 import { Conversation } from '../models/conversation';

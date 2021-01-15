@@ -12,11 +12,11 @@ import {
 } from 'react-components';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { MessageExtended, PartialMessageExtended } from '../models/message';
-import { MESSAGE_ACTIONS } from '../constants';
-import { useDraft } from './useDraft';
-import { isDirtyAddress } from '../helpers/addresses';
-import { useMessageCache, getLocalID } from '../containers/MessageProvider';
+import { MessageExtended, PartialMessageExtended } from '../../models/message';
+import { MESSAGE_ACTIONS } from '../../constants';
+import { useDraft } from '../useDraft';
+import { isDirtyAddress } from '../../helpers/addresses';
+import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 
 export interface ComposeExisting {
     existingDraft: MessageExtended;

@@ -4,6 +4,7 @@ import { MailSettings } from 'proton-shared/lib/interfaces';
 import { waitFor } from '@testing-library/dom';
 import { act } from '@testing-library/react';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { noop } from 'proton-shared/lib/helpers/function';
 import {
     render,
     clearAll,
@@ -46,6 +47,7 @@ const defaultProps: MessageViewProps = {
     onBack: jest.fn(),
     onCompose: jest.fn(),
     breakpoints: {} as Breakpoints,
+    onFocus: noop,
 };
 
 const setup = async (specificProps: Partial<MessageViewProps> = {}) => {

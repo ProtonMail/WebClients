@@ -6,7 +6,7 @@ import Composer from '../components/composer/Composer';
 import { useMessageCache } from './MessageProvider';
 import { Breakpoints, WindowSize } from '../models/utils';
 import { MAX_ACTIVE_COMPOSER_MOBILE, MAX_ACTIVE_COMPOSER_DESKTOP } from '../helpers/composerPositioning';
-import { useCompose, OnCompose } from '../hooks/useCompose';
+import { useCompose, OnCompose } from '../hooks/composer/useCompose';
 
 import '../components/composer/composer.scss';
 

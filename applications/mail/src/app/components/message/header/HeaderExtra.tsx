@@ -12,7 +12,7 @@ import ExtraAskResign from '../extras/ExtraAskResign';
 import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import ExtraErrors from '../extras/ExtraErrors';
 import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
-import { OnCompose } from '../../../hooks/useCompose';
+import { OnCompose } from '../../../hooks/composer/useCompose';
 
 interface Props {
     message: MessageExtended;

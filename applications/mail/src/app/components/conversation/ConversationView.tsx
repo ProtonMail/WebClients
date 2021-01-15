@@ -1,20 +1,23 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { useEffect, memo, useRef, useState } from 'react';
 import { useLabels, useToggle, classnames } from 'react-components';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-
 import { isDraft } from 'proton-shared/lib/mail/messages';
+
 import MessageView, { MessageViewRef } from '../message/MessageView';
-import { useConversation } from '../../hooks/useConversation';
+import { useConversation } from '../../hooks/conversation/useConversation';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import TrashWarning from './TrashWarning';
 import { hasLabel } from '../../helpers/elements';
-import { OnCompose } from '../../hooks/useCompose';
+import { OnCompose } from '../../hooks/composer/useCompose';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import ConversationHeader from './ConversationHeader';
 import { Breakpoints } from '../../models/utils';
+
 import UnreadMessages from './UnreadMessages';
+import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
+import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
 
 const { TRASH } = MAILBOX_LABEL_IDS;
 
@@ -90,6 +93,13 @@ const ConversationView = ({
         openMessage(messageID);
     };
 
+    const { focusIndex, handleFocus, getFocusedId } = useConversationFocus(messagesToShow);
+
+    const { elementRef } = useConversationHotkeys(
+        { messages: messagesToShow, focusIndex },
+        { handleFocus, getFocusedId, openMessage }
+    );
+
     return (
         <>
             <ConversationHeader
@@ -99,7 +109,12 @@ const ConversationView = ({
                 labelID={labelID}
                 breakpoints={breakpoints}
             />
-            <div className={classnames(['scroll-if-needed flex-item-fluid pt0-5 mw100', hidden && 'hidden'])}>
+            <div
+                className={classnames(['scroll-if-needed flex-item-fluid pt0-5 mw100', hidden && 'hidden'])}
+                ref={elementRef}
+                tabIndex={-1}
+                style={{ outline: 'none' }}
+            >
                 {showTrashWarning && <TrashWarning inTrash={inTrash} filter={filter} onToggle={toggleFilter} />}
                 {messagesToShow.map((message, index) => (
                     <MessageView
@@ -118,6 +133,7 @@ const ConversationView = ({
                         onBack={onBack}
                         onCompose={onCompose}
                         breakpoints={breakpoints}
+                        onFocus={handleFocus}
                     />
                 ))}
             </div>

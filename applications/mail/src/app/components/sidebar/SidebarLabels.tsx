@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { useLabels } from 'react-components';
+import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import SidebarItem from './SidebarItem';
 import EmptyLabels from './EmptyLabels';
@@ -9,11 +9,11 @@ import { UnreadCounts } from './MailSidebarList';
 interface Props {
     currentLabelID: string;
     counterMap: UnreadCounts;
+    labels: Label[];
+    updateFocusItem: (item: string) => void;
 }
 
-const SidebarLabels = ({ currentLabelID, counterMap }: Props) => {
-    const [labels = []] = useLabels();
-
+const SidebarLabels = ({ currentLabelID, counterMap, labels, updateFocusItem }: Props) => {
     return (
         <>
             {labels.length ? (
@@ -28,10 +28,12 @@ const SidebarLabels = ({ currentLabelID, counterMap }: Props) => {
                         color={label.Color}
                         isFolder={false}
                         unreadCount={counterMap[label.ID]}
+                        id={label.ID}
+                        onFocus={() => updateFocusItem(label.ID)}
                     />
                 ))
             ) : (
-                <EmptyLabels />
+                <EmptyLabels onFocus={() => updateFocusItem('add-label')} />
             )}
         </>
     );

@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react';
+import React, { useState, ReactNode, useEffect } from 'react';
 import { generateUID, usePopperAnchor, DropdownButton, Dropdown, Tooltip, classnames } from 'react-components';
 
 export interface DropdownRenderProps {
@@ -14,7 +14,7 @@ export interface DropdownRender {
 interface Props {
     dropDownClassName?: string;
     content?: ReactNode;
-    title?: string;
+    title?: ReactNode;
     className?: string;
     children: DropdownRender;
     autoClose?: boolean;
@@ -25,6 +25,7 @@ interface Props {
      * The handler onOpenAdditionnal is passed to use them
      */
     additionalDropdowns?: DropdownRender[];
+    externalToggleRef?: React.MutableRefObject<() => void>;
     [rest: string]: any;
 }
 
@@ -37,6 +38,7 @@ const HeaderDropdown = ({
     loading,
     className,
     dropDownClassName,
+    externalToggleRef,
     additionalDropdowns,
     ...rest
 }: Props) => {
@@ -49,6 +51,12 @@ const HeaderDropdown = ({
     const handleAdditionalClose = () => {
         setAdditionalOpen(undefined);
     };
+
+    useEffect(() => {
+        if (externalToggleRef) {
+            externalToggleRef.current = toggle;
+        }
+    }, []);
 
     return (
         <>

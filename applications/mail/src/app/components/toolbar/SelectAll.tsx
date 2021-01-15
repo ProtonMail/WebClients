@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import ToolbarDropdown from './ToolbarDropdown';
 import { isUnread, isStarred } from '../../helpers/elements';
-import { useGetElementsFromIDs } from '../../hooks/useElementsCache';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 
 interface Props {
     labelID: string;

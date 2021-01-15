@@ -5,7 +5,7 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { MessageExtended } from '../models/message';
 import { hasLabel, getCurrentFolderID } from '../helpers/elements';
 import { getLocalID, useMessageCache } from '../containers/MessageProvider';
-import { ConversationResult } from './useConversation';
+import { ConversationResult } from './conversation/useConversation';
 import { useConversationCache } from '../containers/ConversationProvider';
 
 const { ALL_MAIL } = MAILBOX_LABEL_IDS;

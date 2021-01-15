@@ -19,14 +19,18 @@ export const getGeneralPage = () => {
                 id: 'messages',
             },
             {
-                text: c('Title').t`Shortcuts`,
+                text: c('Title').t`Keyboard shortcuts`,
                 id: 'shortcuts',
             },
         ],
     };
 };
 
-const GeneralContainer = ({ setActiveSection, location }: SettingsPropsShared) => {
+interface Props extends SettingsPropsShared {
+    onOpenShortcutsModal: () => void;
+}
+
+const GeneralContainer = ({ setActiveSection, location, onOpenShortcutsModal }: Props) => {
     return (
         <PrivateMainSettingsAreaWithPermissions
             location={location}
@@ -35,7 +39,7 @@ const GeneralContainer = ({ setActiveSection, location }: SettingsPropsShared) =
         >
             <DesktopNotificationSection />
             <MessagesSection />
-            <ShortcutsSection />
+            <ShortcutsSection onOpenShortcutsModal={onOpenShortcutsModal} />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };

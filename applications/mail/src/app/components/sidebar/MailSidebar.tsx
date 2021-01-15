@@ -1,12 +1,12 @@
 import React, { useCallback, memo } from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { Sidebar, SidebarPrimaryButton, SidebarNav, MainLogo } from 'react-components';
+import { Sidebar, SidebarPrimaryButton, SidebarNav, MainLogo, useMailSettings, Tooltip } from 'react-components';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import MailSidebarList from './MailSidebarList';
 import SidebarVersion from './SidebarVersion';
-import { OnCompose } from '../../hooks/useCompose';
+import { OnCompose } from '../../hooks/composer/useCompose';
 
 interface Props {
     labelID: string;
@@ -20,16 +20,31 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCo
     const handleCompose = useCallback(() => {
         onCompose({ action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
 
+    const titlePrimaryButton = Hotkeys ? (
+        <>
+            {c('Title').t`New message`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">N</kbd>
+        </>
+    ) : null;
+    const sideBarPrimaryButton = Hotkeys ? (
+        <Tooltip title={titlePrimaryButton} originalPlacement="right">
+            <SidebarPrimaryButton className="nomobile" onClick={handleCompose} data-test-id="sidebar:compose">
+                {c('Action').t`New message`}
+            </SidebarPrimaryButton>
+        </Tooltip>
+    ) : (
+        <SidebarPrimaryButton className="nomobile" onClick={handleCompose} data-test-id="sidebar:compose">
+            {c('Action').t`New message`}
+        </SidebarPrimaryButton>
+    );
     return (
         <Sidebar
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            primary={
-                <SidebarPrimaryButton className="nomobile" onClick={handleCompose} data-test-id="sidebar:compose">
-                    {c('Action').t`New message`}
-                </SidebarPrimaryButton>
-            }
+            primary={sideBarPrimaryButton}
             logo={<MainLogo to="/inbox" />}
             version={<SidebarVersion />}
         >

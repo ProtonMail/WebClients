@@ -48,20 +48,20 @@ export const computeComposerStyle = (
             bottom: 0,
             left: 0,
             height: 'auto',
-            width: 'auto'
+            width: 'auto',
         };
     }
 
     const style = {
         right: computeRightPosition(index, count, windowSize.width),
         zIndex: focus ? COMPOSER_ZINDEX + 1 : COMPOSER_ZINDEX,
-        computeHeight: computeHeight(windowSize.height)
+        computeHeight: computeHeight(windowSize.height),
     };
 
     if (minimized) {
         return {
             ...style,
-            height: 35
+            height: 35,
         };
     }
 
@@ -70,7 +70,7 @@ export const computeComposerStyle = (
             ...style,
             right: COMPOSER_GUTTER,
             width: windowSize.width - COMPOSER_GUTTER - APP_BAR_WIDTH,
-            height: windowSize.height - COMPOSER_VERTICAL_GUTTER * 2
+            height: windowSize.height - COMPOSER_VERTICAL_GUTTER * 2,
         };
     }
 

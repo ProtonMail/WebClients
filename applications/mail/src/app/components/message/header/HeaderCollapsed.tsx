@@ -10,7 +10,7 @@ import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
 import ItemExpiration from '../../list/ItemExpiration';
-import { OnCompose } from '../../../hooks/useCompose';
+import { OnCompose } from '../../../hooks/composer/useCompose';
 import ItemAction from '../../list/ItemAction';
 import { Breakpoints } from '../../../models/utils';
 import RecipientItem from '../recipients/RecipientItem';

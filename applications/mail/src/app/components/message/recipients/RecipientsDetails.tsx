@@ -5,7 +5,7 @@ import { MessageExtended } from '../../../models/message';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientType from './RecipientType';
 import RecipientItem from './RecipientItem';
-import { OnCompose } from '../../../hooks/useCompose';
+import { OnCompose } from '../../../hooks/composer/useCompose';
 import RecipientsList from './RecipientsList';
 
 interface Props {

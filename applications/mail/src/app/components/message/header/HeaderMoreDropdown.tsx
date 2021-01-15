@@ -16,6 +16,7 @@ import {
     ButtonGroup,
     Tooltip,
     useLabels,
+    useMailSettings,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -74,6 +75,7 @@ const HeaderMoreDropdown = ({
     const [labels = []] = useLabels();
     const markAs = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
@@ -163,6 +165,43 @@ const HeaderMoreDropdown = ({
           ]
         : undefined;
 
+    const titleMoveInboxNotSpam = Hotkeys ? (
+        <>
+            {c('Title').t`Move to inbox (not spam)`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">I</kbd>
+        </>
+    ) : (
+        c('Title').t`Move to inbox (not spam)`
+    );
+    const titleUnread = Hotkeys ? (
+        <>
+            {c('Title').t`Mark as unread`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">U</kbd>
+        </>
+    ) : (
+        c('Title').t`Mark as unread`
+    );
+    const titleMoveInbox = Hotkeys ? (
+        <>
+            {c('Title').t`Move to inbox`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">I</kbd>
+        </>
+    ) : (
+        c('Title').t`Move to inbox`
+    );
+    const titleMoveTrash = Hotkeys ? (
+        <>
+            {c('Title').t`Move to trash`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">T</kbd>
+        </>
+    ) : (
+        c('Title').t`Move to trash`
+    );
+
     return (
         <Group className="mr1 mb0-5">
             {isSpam ? (
@@ -171,13 +210,13 @@ const HeaderMoreDropdown = ({
                     onClick={handleMove(INBOX, SPAM)}
                     className="pm-button--for-icon relative"
                 >
-                    <Tooltip title={c('Title').t`Move to inbox (not spam)`} className="flex increase-surface-click">
+                    <Tooltip title={titleMoveInboxNotSpam} className="flex increase-surface-click">
                         <Icon name="nospam" alt={c('Title').t`Move to inbox (not spam)`} />
                     </Tooltip>
                 </ButtonGroup>
             ) : (
                 <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon relative">
-                    <Tooltip title={c('Title').t`Mark as unread`} className="flex increase-surface-click">
+                    <Tooltip title={titleUnread} className="flex increase-surface-click">
                         <Icon name="unread" alt={c('Title').t`Mark as unread`} />
                     </Tooltip>
                 </ButtonGroup>
@@ -188,7 +227,7 @@ const HeaderMoreDropdown = ({
                     onClick={handleMove(INBOX, TRASH)}
                     className="pm-button--for-icon relative"
                 >
-                    <Tooltip title={c('Title').t`Move to inbox`} className="flex increase-surface-click">
+                    <Tooltip title={titleMoveInbox} className="flex increase-surface-click">
                         <Icon name="inbox" alt={c('Title').t`Move to inbox`} />
                     </Tooltip>
                 </ButtonGroup>
@@ -198,7 +237,7 @@ const HeaderMoreDropdown = ({
                     onClick={handleMove(TRASH, fromFolderID)}
                     className="pm-button--for-icon relative"
                 >
-                    <Tooltip title={c('Title').t`Move to trash`} className="flex increase-surface-click">
+                    <Tooltip title={titleMoveTrash} className="flex increase-surface-click">
                         <Icon name="trash" alt={c('Title').t`Move to trash`} />
                     </Tooltip>
                 </ButtonGroup>

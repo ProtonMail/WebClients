@@ -2,10 +2,10 @@ import { SetStateAction, useCallback, useEffect, useState } from 'react';
 import { useCache } from 'react-components';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
-import { Element } from '../models/element';
-import { Page, Filter, Sort } from '../models/tools';
-import { useMessageCache, getLocalID } from '../containers/MessageProvider';
-import { useConversationCache } from '../containers/ConversationProvider';
+import { Element } from '../../models/element';
+import { Page, Filter, Sort } from '../../models/tools';
+import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
+import { useConversationCache } from '../../containers/ConversationProvider';
 
 export const ELEMENTS_CACHE_KEY = 'Elements';
 

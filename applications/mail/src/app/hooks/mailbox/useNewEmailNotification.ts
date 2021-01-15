@@ -6,10 +6,10 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
 import { c } from 'ttag';
 
-import { Event } from '../models/event';
-import { isConversationMode } from '../helpers/mailSettings';
-import { setParamsInLocation } from '../helpers/mailboxUrl';
-import notificationIcon from '../assets/notification.gif';
+import { Event } from '../../models/event';
+import { isConversationMode } from '../../helpers/mailSettings';
+import { setParamsInLocation } from '../../helpers/mailboxUrl';
+import notificationIcon from '../../assets/notification.gif';
 
 const useNewEmailNotification = (onOpenElement: () => void) => {
     const history = useHistory();

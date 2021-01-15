@@ -3,7 +3,7 @@ import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { useHandler } from 'react-components';
 
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
-import { useGetElementsCache, useSetElementsCache } from '../useElementsCache';
+import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { useConversationCache } from '../../containers/ConversationProvider';

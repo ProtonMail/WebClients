@@ -16,10 +16,10 @@ import {
     isSearch,
     isFilter,
     isUnread,
-} from '../helpers/elements';
-import { Element } from '../models/element';
-import { Filter, Sort, SearchParameters } from '../models/tools';
-import { expectedPageLength } from '../helpers/paging';
+} from '../../helpers/elements';
+import { Element } from '../../models/element';
+import { Filter, Sort, SearchParameters } from '../../models/tools';
+import { expectedPageLength } from '../../helpers/paging';
 import {
     ElementEvent,
     Event,
@@ -27,10 +27,10 @@ import {
     ConversationEvent,
     MessageEvent,
     LabelIDsChanges,
-} from '../models/event';
-import { useExpirationCheck } from './useExpiration';
+} from '../../models/event';
+import { useExpirationCheck } from '../useExpiration';
 import { ElementsCache, ElementsCacheParams, useElementsCache, useSetElementsCache } from './useElementsCache';
-import { PAGE_SIZE } from '../constants';
+import { PAGE_SIZE } from '../../constants';
 
 interface Options {
     conversationMode: boolean;

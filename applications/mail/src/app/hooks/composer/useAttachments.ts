@@ -5,21 +5,21 @@ import { useApi, useNotifications, useAuthentication, useHandler } from 'react-c
 import { c } from 'ttag';
 import { removeAttachment } from 'proton-shared/lib/api/attachments';
 import { readFileAsBuffer } from 'proton-shared/lib/helpers/file';
-import { Upload } from '../helpers/upload';
-import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../helpers/attachment/attachmentUploader';
+import { Upload } from '../../helpers/upload';
+import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../../helpers/attachment/attachmentUploader';
 import {
     readCID,
     isEmbeddable,
     createEmbeddedMap,
     createEmbeddedInfo,
     cloneEmbedddedMap,
-} from '../helpers/embedded/embeddeds';
-import { MessageExtended, MessageExtendedWithData } from '../models/message';
-import { EditorActionsRef } from '../components/composer/editor/SquireEditorWrapper';
-import { MessageChange } from '../components/composer/Composer';
-import { useMessageCache } from '../containers/MessageProvider';
-import { useGetMessageKeys } from './message/useGetMessageKeys';
-import { useAttachmentCache } from '../containers/AttachmentProvider';
+} from '../../helpers/embedded/embeddeds';
+import { MessageExtended, MessageExtendedWithData } from '../../models/message';
+import { EditorActionsRef } from '../../components/composer/editor/SquireEditorWrapper';
+import { MessageChange } from '../../components/composer/Composer';
+import { useMessageCache } from '../../containers/MessageProvider';
+import { useAttachmentCache } from '../../containers/AttachmentProvider';
+import { useGetMessageKeys } from '../message/useGetMessageKeys';
 
 export interface PendingUpload {
     file: File;

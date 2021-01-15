@@ -7,7 +7,7 @@ import { OpenPGPKey } from 'pmcrypto';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
 
-import { OnCompose } from '../../../hooks/useCompose';
+import { OnCompose } from '../../../hooks/composer/useCompose';
 import RecipientItemLayout from './RecipientItemLayout';
 import RecipientItemGroup from './RecipientItemGroup';
 import RecipientItemSingle from './RecipientItemSingle';

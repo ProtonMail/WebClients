@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Redirect, Route, useLocation, Switch } from 'react-router-dom';
 import { APPS } from 'proton-shared/lib/constants';
+import { KeyboardKey } from 'proton-shared/lib/interfaces';
 import { c } from 'ttag';
 import {
     useActiveBreakpoint,
@@ -17,7 +18,10 @@ import {
     useModals,
     usePromoModalState,
     ImportWelcomeModal,
+    useHotkeys,
+    SupportDropdown,
 } from 'react-components';
+import { isTargetEditable } from 'proton-shared/lib/shortcuts/helpers';
 
 import OverviewContainer from './containers/settings/OverviewContainer';
 import ImportContainer from './containers/settings/ImportContainer';
@@ -32,6 +36,7 @@ import AutoReplyContainer from './containers/settings/AutoReplyContainer';
 import BridgeContainer from './containers/settings/BridgeContainer';
 import SecurityContainer from './containers/settings/SecurityContainer';
 import SidebarVersion from './components/sidebar/SidebarVersion';
+import MailShortCutsModal from './components/shortcuts/MailShortcutsModal';
 import { getPages } from './pages';
 
 const SettingsContainer = () => {
@@ -40,8 +45,10 @@ const SettingsContainer = () => {
     const { isNarrow } = useActiveBreakpoint();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
-
     const { createModal } = useModals();
+
+    const documentRef = useRef(window.document);
+
     const [modalState, loadingModalState, setModalState] = usePromoModalState('WelcomeImportModalShown');
     const [showImportWelcomeModal, setShowImportWelcomeModal] = useState(false);
 
@@ -72,6 +79,10 @@ const SettingsContainer = () => {
     const base = '/inbox';
     const logo = <MainLogo to={base} toApp={APPS.PROTONMAIL} target="_self" />;
 
+    const handleOpenShortcutsModal = () => {
+        createModal(<MailShortCutsModal />, 'shortcuts-modal');
+    };
+
     const header = (
         <PrivateHeader
             logo={logo}
@@ -79,6 +90,7 @@ const SettingsContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
+            supportDropdown={<SupportDropdown onOpenShortcutsModal={handleOpenShortcutsModal} />}
         />
     );
 
@@ -105,6 +117,17 @@ const SettingsContainer = () => {
         </Sidebar>
     );
 
+    useHotkeys(documentRef, [
+        [
+            KeyboardKey.QuestionMark,
+            (e) => {
+                if (!isTargetEditable(e)) {
+                    handleOpenShortcutsModal();
+                }
+            },
+        ],
+    ]);
+
     return (
         <PrivateAppContainer isBlurred={showImportWelcomeModal} header={header} sidebar={sidebar}>
             <Switch>
@@ -130,7 +153,11 @@ const SettingsContainer = () => {
                     <AppsContainer location={location} setActiveSection={setActiveSection} />
                 </Route>
                 <Route path="/settings/general">
-                    <GeneralContainer location={location} setActiveSection={setActiveSection} />
+                    <GeneralContainer
+                        location={location}
+                        setActiveSection={setActiveSection}
+                        onOpenShortcutsModal={handleOpenShortcutsModal}
+                    />
                 </Route>
                 <Route path="/settings/filters">
                     <FiltersContainer location={location} setActiveSection={setActiveSection} />

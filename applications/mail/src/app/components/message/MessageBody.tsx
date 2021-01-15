@@ -1,5 +1,5 @@
 import { isPlainText } from 'proton-shared/lib/mail/messages';
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { classnames, Button, Tooltip } from 'react-components';
 import { c } from 'ttag';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
@@ -13,7 +13,8 @@ interface Props {
     bodyLoaded: boolean;
     sourceMode: boolean;
     message: MessageExtended;
-
+    originalMessageMode: boolean;
+    toggleOriginalMessage?: () => void;
     /**
      * Needed for print message
      * true: don't show button, show full content
@@ -28,10 +29,10 @@ const MessageBody = ({
     sourceMode: inputSourceMode,
     message,
     forceBlockquote = false,
+    originalMessageMode,
+    toggleOriginalMessage,
 }: Props) => {
     const plain = isPlainText(message.data);
-
-    const [expanded, setExpanded] = useState(false);
 
     const [content, blockquote] = useMemo(
         () => (plain ? [message.plainText as string, ''] : locateBlockquote(message.document)),
@@ -45,7 +46,7 @@ const MessageBody = ({
     const contentMode = !encryptedMode && !sourceMode && bodyLoaded;
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
-    const showBlockquote = forceBlockquote || expanded;
+    const showBlockquote = forceBlockquote || originalMessageMode;
 
     return (
         <div
@@ -74,12 +75,12 @@ const MessageBody = ({
                             {showButton && (
                                 <Tooltip
                                     title={
-                                        expanded
+                                        originalMessageMode
                                             ? c('Info').t`Hide original message`
                                             : c('Info').t`Show original message`
                                     }
                                 >
-                                    <Button className="pm-button--small m0-5" onClick={() => setExpanded(!expanded)}>
+                                    <Button className="pm-button--small m0-5" onClick={() => toggleOriginalMessage?.()}>
                                         ...
                                     </Button>
                                 </Tooltip>

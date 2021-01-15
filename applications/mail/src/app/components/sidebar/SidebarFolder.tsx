@@ -1,5 +1,5 @@
-import React, { MouseEvent } from 'react';
-import { classnames, Icon } from 'react-components';
+import React from 'react';
+import { classnames, Icon, HotkeyTuple } from 'react-components';
 import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 import { formatFolderName } from 'proton-shared/lib/helpers/folder';
 
@@ -9,11 +9,34 @@ interface Props {
     currentLabelID: string;
     folder: FolderWithSubFolders;
     level: number;
-    onToggle: (event: MouseEvent, folder: FolderWithSubFolders) => void;
+    onToggle: (folder: FolderWithSubFolders, expanded: boolean) => void;
     unreadCount?: number;
+    expanded?: boolean;
+    onFocus: () => void;
+    id: string;
 }
 
-const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount }: Props) => {
+const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount, expanded, onFocus, id }: Props) => {
+    const shortcutHandlers: HotkeyTuple[] = [
+        [
+            'ArrowRight',
+            (e) => {
+                if (!expanded) {
+                    e.stopPropagation();
+                    onToggle(folder, true);
+                }
+            },
+        ],
+        [
+            'ArrowLeft',
+            () => {
+                if (expanded) {
+                    onToggle(folder, false);
+                }
+            },
+        ],
+    ];
+
     return (
         <SidebarItem
             currentLabelID={currentLabelID}
@@ -21,6 +44,9 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount }:
             isFolder
             text={folder.Name}
             unreadCount={unreadCount}
+            shortcutHandlers={shortcutHandlers}
+            id={id}
+            onFocus={onFocus}
             content={
                 <div className="flex flex-nowrap flex-items-center" data-level={level}>
                     <Icon
@@ -33,7 +59,11 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount }:
                             type="button"
                             className="mr0-5 flex-item-noshrink navigation__link--expand"
                             aria-expanded={!!folder.Expanded}
-                            onClick={(event) => onToggle(event, folder)}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                onToggle(folder, !expanded);
+                            }}
                         >
                             <Icon
                                 name="caret"

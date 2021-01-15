@@ -20,7 +20,7 @@ import { Recipient } from 'proton-shared/lib/interfaces';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { MESSAGE_ACTIONS } from '../../../constants';
-import { OnCompose } from '../../../hooks/useCompose';
+import { OnCompose } from '../../../hooks/composer/useCompose';
 import RecipientItemLayout from './RecipientItemLayout';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';

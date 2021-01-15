@@ -1,15 +1,14 @@
+import React, { useState, useMemo, useEffect, useCallback, memo } from 'react';
+import { History, Location } from 'history';
+import { PrivateMainArea } from 'react-components';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { isDraft } from 'proton-shared/lib/mail/messages';
-import React, { useState, useMemo, useEffect, useCallback, memo } from 'react';
-import { PrivateMainArea, useHandler } from 'react-components';
-import { History, Location } from 'history';
 import { VIEW_MODE } from 'proton-shared/lib/constants';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
-
 import { Sort, Filter, Page, SearchParameters } from '../models/tools';
-import { useMailboxPageTitle } from '../hooks/useMailboxPageTitle';
-import { useElements } from '../hooks/useElements';
+import { useMailboxPageTitle } from '../hooks/mailbox/useMailboxPageTitle';
+import { useElements } from '../hooks/mailbox/useElements';
 import { isColumnMode, isConversationMode } from '../helpers/mailSettings';
 import {
     pageFromUrl,
@@ -29,12 +28,15 @@ import MessageOnlyView from '../components/message/MessageOnlyView';
 import { PAGE_SIZE } from '../constants';
 import { isMessage, isSearch as testIsSearch } from '../helpers/elements';
 import { Breakpoints } from '../models/utils';
-import { OnCompose } from '../hooks/useCompose';
-import { useWelcomeFlag } from '../hooks/useWelcomeFlag';
-import useNewEmailNotification from '../hooks/useNewEmailNotification';
+import { OnCompose } from '../hooks/composer/useCompose';
+import { useWelcomeFlag } from '../hooks/mailbox/useWelcomeFlag';
+import useNewEmailNotification from '../hooks/mailbox/useNewEmailNotification';
 import { pageCount } from '../helpers/paging';
 import { useDeepMemo } from '../hooks/useDeepMemo';
-import { useGetElementsFromIDs } from '../hooks/useElementsCache';
+import { useGetElementsFromIDs } from '../hooks/mailbox/useElementsCache';
+import { useMailboxHotkeys } from '../hooks/mailbox/useMailboxHotkeys';
+import { useMailboxSelection } from '../hooks/mailbox/useMailboxSelection';
+import { useMailboxFocus } from '../hooks/mailbox/useMailboxFocus';
 
 import './MailboxContainer.scss';
 
@@ -93,8 +95,6 @@ const MailboxContainer = ({
     const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
 
-    const [checkedElements, setCheckedElements] = useState<{ [ID: string]: boolean }>({});
-
     const { labelID, elements, loading, expectedLength, total } = useElements({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
@@ -106,34 +106,38 @@ const MailboxContainer = ({
 
     useEffect(() => setPage({ ...page, page: pageFromUrl(location) }), [searchParams.page]);
     useEffect(() => setPage({ ...page, total }), [total]);
-    useEffect(() => setCheckedElements({}), [labelID]);
 
     useMailboxPageTitle(labelID, location);
-    useNewEmailNotification(() => setCheckedElements({}));
-
-    const checkedIDs = useDeepMemo(() => {
-        return Object.entries(checkedElements).reduce((acc, [elementID, isChecked]) => {
-            if (!isChecked) {
-                return acc;
-            }
-            acc.push(elementID);
-            return acc;
-        }, [] as string[]);
-    }, [checkedElements]);
-
-    const selectedIDs = useDeepMemo(() => {
-        if (checkedIDs.length) {
-            return checkedIDs;
-        }
-        if (elementID) {
-            return [elementID];
-        }
-        return [];
-    }, [checkedIDs, elementID]);
 
     const elementIDs = useDeepMemo(() => {
         return elements.map((element) => element.ID || '');
     }, [elements]);
+
+    const {
+        checkedIDs,
+        selectedIDs,
+        handleCheck,
+        handleUncheckAll,
+        handleCheckElement,
+        handleCheckRange,
+    } = useMailboxSelection(labelID, elementID, elementIDs);
+
+    useNewEmailNotification(() => handleUncheckAll());
+
+    const showToolbar = !breakpoints.isNarrow || !elementID;
+    const showList = columnMode || !elementID;
+    const showContentPanel = (columnMode && !!expectedLength) || !!elementID;
+    const showPlaceholder = !breakpoints.isNarrow && (!elementID || !!checkedIDs.length);
+    const showContentView = showContentPanel && !!elementID;
+    const elementIDForList = checkedIDs.length ? undefined : elementID;
+
+    const { focusIndex, getFocusedId, setFocusIndex, handleFocus, focusOnLastMessage } = useMailboxFocus({
+        elementIDs,
+        columnLayout,
+        showContentPanel,
+        showContentView,
+        showList,
+    });
 
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
 
@@ -141,6 +145,7 @@ const MailboxContainer = ({
         (elementID: string | undefined) => {
             // Using the getter to prevent having elements in dependency of the callback
             const [element] = getElementsFromIDs([elementID || '']);
+
             if (isMessage(element) && isDraft(element)) {
                 onCompose({ existingDraft: { localID: element.ID as string, data: element as Message } });
             }
@@ -155,7 +160,8 @@ const MailboxContainer = ({
             } else {
                 history.push(setParamsInLocation(history.location, { labelID, elementID: element.ID }));
             }
-            setCheckedElements({});
+            focusOnLastMessage();
+            handleUncheckAll();
         },
         [onCompose, isConversationContentView, labelID]
     );
@@ -175,33 +181,26 @@ const MailboxContainer = ({
         }
     }, [page]);
 
-    /**
-     * Put *IDs* to *checked* state
-     * Uncheck others if *replace* is true
-     */
-    const handleCheck = useHandler((IDs: string[], checked: boolean, replace: boolean) => {
-        setCheckedElements(
-            elements.reduce((acc, { ID = '' }) => {
-                const wasChecked = checkedIDs.includes(ID);
-                const toCheck = IDs.includes(ID);
-                acc[ID] = toCheck ? checked : replace ? !checked : wasChecked;
-                return acc;
-            }, {} as { [ID: string]: boolean })
-        );
-    });
-
-    const handleUncheckAll = () => handleCheck([], true, true);
-
     const conversationMode = isConversationMode(labelID, mailSettings, location);
-    const showToolbar = !breakpoints.isNarrow || !elementID;
-    const showList = columnMode || !elementID;
-    const showContentPanel = (columnMode && !!expectedLength) || !!elementID;
-    const showPlaceholder = !breakpoints.isNarrow && (!elementID || !!checkedIDs.length);
-    const showContentView = showContentPanel && !!elementID;
-    const elementIDForList = checkedIDs.length ? undefined : elementID;
+
+    const { elementRef, labelDropdownToggleRef, moveDropdownToggleRef } = useMailboxHotkeys(
+        { labelID, elementID, elementIDs, checkedIDs, focusIndex, columnLayout, showContentView },
+        {
+            focusOnLastMessage,
+            getFocusedId,
+            handleBack,
+            handleCheck,
+            handleCheckElement,
+            handleCheckRange,
+            handleElement,
+            handleFilter,
+            handleUncheckAll,
+            setFocusIndex,
+        }
+    );
 
     return (
-        <>
+        <div ref={elementRef} tabIndex={-1} className="flex-item-fluid flex flex-column flex-nowrap no-outline">
             {showToolbar && (
                 <Toolbar
                     labelID={labelID}
@@ -222,6 +221,8 @@ const MailboxContainer = ({
                     onBack={handleBack}
                     onElement={handleElement}
                     onNavigate={handleNavigate}
+                    labelDropdownToggleRef={labelDropdownToggleRef}
+                    moveDropdownToggleRef={moveDropdownToggleRef}
                 />
             )}
             <PrivateMainArea className="flex" hasToolbar={showToolbar} hasRowMode={!showContentPanel}>
@@ -243,6 +244,9 @@ const MailboxContainer = ({
                         breakpoints={breakpoints}
                         page={page}
                         onPage={handlePage}
+                        onFocus={handleFocus}
+                        onCheckElement={handleCheckElement}
+                        onCheckRange={handleCheckRange}
                     />
                 )}
                 {showContentPanel && (
@@ -283,7 +287,7 @@ const MailboxContainer = ({
                     </section>
                 )}
             </PrivateMainArea>
-        </>
+        </div>
     );
 };
 

@@ -9,7 +9,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { MESSAGE_ACTIONS, PROTON_DOMAINS } from '../constants';
 import { mailtoParser, isExternal, isSubDomain, getHostname } from '../helpers/url';
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
-import { OnCompose } from './useCompose';
+import { OnCompose } from './composer/useCompose';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
 

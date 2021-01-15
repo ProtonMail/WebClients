@@ -33,6 +33,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                 loading && 'message-conversation-summary-is-loading',
                 className,
             ])}
+            data-shortcut-target="message-conversation-summary"
         >
             <div className="flex flex-nowrap mb1">
                 <h1
