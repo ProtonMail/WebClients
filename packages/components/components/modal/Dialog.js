@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Portal from '../portal/Portal';
 import { classnames } from '../../helpers';
 import { useFocusTrap } from '../focus';
+import { useHotkeys } from '../../hooks';
 
 const CLASSES = {
     MODAL: 'pm-modal',
@@ -27,6 +28,7 @@ const Dialog = ({
     modalTitleID,
     children,
     className: extraClassNames = '',
+    disableCloseOnOnEscape,
     ...rest
 }) => {
     const rootRef = useRef(null);
@@ -59,6 +61,18 @@ const Dialog = ({
             }
         };
     }, []);
+
+    useHotkeys(rootRef, [
+        [
+            'Escape',
+            (e) => {
+                if (!disableCloseOnOnEscape) {
+                    e.stopPropagation();
+                    onClose?.();
+                }
+            },
+        ],
+    ]);
 
     return (
         <Portal>
@@ -99,6 +113,7 @@ Dialog.propTypes = {
     isFirst: PropTypes.bool,
     isLast: PropTypes.bool,
     isClosing: PropTypes.bool,
+    disableCloseOnOnEscape: PropTypes.bool,
 };
 
 export default Dialog;

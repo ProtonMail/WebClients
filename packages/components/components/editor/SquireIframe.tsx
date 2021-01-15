@@ -1,11 +1,14 @@
 import React, { useRef, useState, useEffect, forwardRef, Ref } from 'react';
 import { c } from 'ttag';
+import { isMac } from 'proton-shared/lib/helpers/browser';
 
-import { useHandler, useNotifications } from '../../hooks';
+import { useHandler, useModals, useNotifications } from '../../hooks';
 import { SquireType, getSquireRef, setSquireRef, initSquire, toggleEllipsisButton } from './squireConfig';
-import { pasteFileHandler, scrollIntoViewIfNeeded } from './squireActions';
+import { getLinkAtCursor, makeLink, pasteFileHandler, scrollIntoViewIfNeeded } from './squireActions';
 import { SquireEditorMetadata } from './interface';
 import { LinkButton } from '../button';
+
+import InsertLinkModal from './modals/InsertLinkModal';
 
 const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div>' || html === '<div><br></div>';
 
@@ -18,6 +21,7 @@ interface Props {
     onAddImages: (files: File[]) => void;
     showEllipseButton: boolean;
     onEllipseClick: () => void;
+    keydownHandler?: (e: KeyboardEvent) => void;
 }
 
 /**
@@ -36,6 +40,7 @@ const SquireIframe = (
         onAddImages,
         showEllipseButton,
         onEllipseClick,
+        keydownHandler,
         ...rest
     }: Props,
     ref: Ref<SquireType>
@@ -128,6 +133,26 @@ const SquireIframe = (
         iframeRef.current?.dispatchEvent(newEvent);
     });
 
+    const { createModal } = useModals();
+
+    const handleLink = (squire: SquireType) => {
+        const link = getLinkAtCursor(squire);
+        createModal(<InsertLinkModal inputLink={link} onSubmit={() => makeLink(squire, link)} />);
+    };
+
+    const handleKeyDown = (e: KeyboardEvent, squire: SquireType) => {
+        const ctrlOrMetaKey = isMac() ? e.metaKey : e.ctrlKey;
+
+        if (e.key === 'k' && ctrlOrMetaKey) {
+            e.preventDefault();
+            e.stopPropagation();
+            handleLink(squire);
+            return;
+        }
+
+        keydownHandler?.(e);
+    };
+
     useEffect(() => {
         if (squireReady) {
             const squire = getSquireRef(ref);
@@ -141,6 +166,7 @@ const SquireIframe = (
             // Listening to all keyups as inputs is aggressive but we tested some deletion actions that trigger no other events
             // Also it's keyup and not keydown, keydown is too early and don't contains changes
             squire.addEventListener('keyup', handleInput);
+            squire.addEventListener('keydown', (e: KeyboardEvent) => handleKeyDown(e, squire));
             return () => {
                 squire.removeEventListener('focus', handleFocus);
                 squire.removeEventListener('input', handleInput);
@@ -149,6 +175,7 @@ const SquireIframe = (
                 squire.removeEventListener('dragleave', handlePassDragEvents);
                 squire.removeEventListener('cursor', handleCursor);
                 squire.removeEventListener('keyup', handleInput);
+                squire.removeEventListener('keydown', (e: KeyboardEvent) => handleKeyDown(e, squire));
             };
         }
     }, [squireReady]);

@@ -42,6 +42,7 @@ export * from './scroll';
 export * from './select';
 export * from './selectTwo';
 export * from './sidebar';
+export * from './shortcuts';
 export * from './stepDot';
 export * from './stepDots';
 export * from './table';
