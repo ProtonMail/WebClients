@@ -26,18 +26,18 @@ export default (modals, setModals) => {
         });
     };
 
-    const createModal = (content) => {
-        const id = Math.random().toString(36).substr(2, 9);
-
+    const createModal = (content, id = Math.random().toString(36).substr(2, 9)) => {
         setModals((oldModals) => {
-            return [
-                ...oldModals,
-                {
-                    id,
-                    content,
-                    isClosing: false,
-                },
-            ].map(updatePosition);
+            return oldModals.find(({ id: otherId }) => id === otherId)
+                ? oldModals
+                : [
+                      ...oldModals,
+                      {
+                          id,
+                          content,
+                          isClosing: false,
+                      },
+                  ].map(updatePosition);
         });
 
         return id;

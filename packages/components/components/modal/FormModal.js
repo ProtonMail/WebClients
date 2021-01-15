@@ -27,7 +27,6 @@ const Modal = ({
     // Destructure these options so they are not passed to the DOM.
     // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
     disableCloseOnLocation,
-    // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
     disableCloseOnOnEscape,
     ...rest
 }) => {
@@ -86,7 +85,12 @@ function DemoModal({ onAdd, ...rest }) {
     };
 
     return (
-        <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
+        <DialogModal
+            onClose={onClose}
+            modalTitleID={modalTitleID}
+            disableCloseOnOnEscape={disableCloseOnOnEscape || loading}
+            {...rest}
+        >
             <HeaderModal hasClose={hasClose} displayTitle={displayTitle} modalTitleID={modalTitleID} onClose={onClose}>
                 {title}
             </HeaderModal>

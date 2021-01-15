@@ -44,13 +44,18 @@ export const useHandler = <T extends Handler>(
  * Listen to the eventNane of the ref element
  * Use useHandler to ensure an updated version of the handler
  */
-export const useEventListener = (ref: RefObject<Element | null | undefined>, eventName: string, handler: Handler) => {
+export const useEventListener = (
+    ref: RefObject<Document | Element | null | undefined>,
+    eventName: string,
+    handler: Handler,
+    dependencies: React.DependencyList
+) => {
     const actualHandler = useHandler(handler);
 
     useEffect(() => {
         ref.current?.addEventListener(eventName, actualHandler);
         return () => ref.current?.removeEventListener(eventName, actualHandler);
-    }, []);
+    }, dependencies);
 };
 
 /**

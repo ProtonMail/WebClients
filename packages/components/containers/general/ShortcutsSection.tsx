@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Row, Label, Field, SmallButton } from '../../components';
-import { useMailSettings, useModals } from '../../hooks';
 
-import ShortcutsModal from './ShortcutsModal';
+import { Row, Label, Field, SmallButton } from '../../components';
+import { useMailSettings } from '../../hooks';
+
 import ShortcutsToggle from './ShortcutsToggle';
 
-const ShortcutsSection = () => {
+interface Props {
+    onOpenShortcutsModal: () => void;
+}
+
+const ShortcutsSection = ({ onOpenShortcutsModal }: Props) => {
     const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
     const [hotkeys, setHotkeys] = useState(Hotkeys);
-    const { createModal } = useModals();
 
     // Handle updates from the Event Manager.
     useEffect(() => {
@@ -18,8 +21,6 @@ const ShortcutsSection = () => {
 
     const handleChange = (newValue: number) => setHotkeys(newValue);
 
-    const handleOpenModal = () => createModal(<ShortcutsModal />);
-
     return (
         <Row>
             <Label htmlFor="hotkeysToggle">{c('Title').t`Keyboard shortcuts`}</Label>
@@ -27,11 +28,9 @@ const ShortcutsSection = () => {
                 <div>
                     <ShortcutsToggle className="mr1" id="hotkeysToggle" hotkeys={hotkeys} onChange={handleChange} />
                 </div>
-                {hotkeys ? (
-                    <div className="mt1">
-                        <SmallButton onClick={handleOpenModal}>{c('Action').t`View keyboard shortcuts`}</SmallButton>
-                    </div>
-                ) : null}
+                <div className="mt1">
+                    <SmallButton onClick={onOpenShortcutsModal}>{c('Action').t`View keyboard shortcuts`}</SmallButton>
+                </div>
             </Field>
         </Row>
     );

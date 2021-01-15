@@ -163,6 +163,7 @@ const SquireToolbar = ({
                         aria-pressed={squireInfos.bold}
                         className="flex-item-noshrink"
                         title={c('Action').t`Bold`}
+                        tabIndex={-1}
                     >
                         <Icon name="text-bold" className="mauto" alt={c('Action').t`Bold`} />
                     </SquireToolbarButton>
@@ -171,6 +172,7 @@ const SquireToolbar = ({
                         aria-pressed={squireInfos.italic}
                         className="flex-item-noshrink"
                         title={c('Action').t`Italic`}
+                        tabIndex={-1}
                     >
                         <Icon name="text-italic" className="mauto" alt={c('Action').t`Italic`} />
                     </SquireToolbarButton>
@@ -179,6 +181,7 @@ const SquireToolbar = ({
                         aria-pressed={squireInfos.underline}
                         className="flex-item-noshrink"
                         title={c('Action').t`Underline`}
+                        tabIndex={-1}
                     >
                         <Icon name="text-underline" className="mauto" alt={c('Action').t`Underline`} />
                     </SquireToolbarButton>
@@ -190,6 +193,7 @@ const SquireToolbar = ({
                                 aria-pressed={squireInfos.unorderedList}
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Unordered list`}
+                                tabIndex={-1}
                             >
                                 <Icon name="bullet-points" className="mauto" alt={c('Action').t`Unordered list`} />
                             </SquireToolbarButton>
@@ -198,6 +202,7 @@ const SquireToolbar = ({
                                 aria-pressed={squireInfos.orderedList}
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Ordered list`}
+                                tabIndex={-1}
                             >
                                 <Icon name="ordered-list" className="mauto" alt={c('Action').t`Ordered list`} />
                             </SquireToolbarButton>
@@ -212,6 +217,7 @@ const SquireToolbar = ({
                                 aria-pressed={squireInfos.blockquote}
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Quote`}
+                                tabIndex={-1}
                             >
                                 <Icon name="text-quote" className="mauto" alt={c('Action').t`Quote`} />
                             </SquireToolbarButton>
@@ -219,6 +225,7 @@ const SquireToolbar = ({
                                 onClick={handleLink}
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Insert link`}
+                                tabIndex={-1}
                             >
                                 <Icon name="link" className="mauto" alt={c('Action').t`Insert link`} />
                             </SquireToolbarButton>
@@ -226,6 +233,7 @@ const SquireToolbar = ({
                                 onClick={handleClearFormatting}
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Clear all formatting`}
+                                tabIndex={-1}
                             >
                                 <Icon
                                     name="remove-text-formatting"
@@ -240,6 +248,7 @@ const SquireToolbar = ({
                                         onClick={handleImage}
                                         className="flex-item-noshrink"
                                         title={c('Action').t`Insert image`}
+                                        tabIndex={-1}
                                     >
                                         <Icon name="file-image" className="mauto" alt={c('Action').t`Insert image`} />
                                     </SquireToolbarButton>

@@ -8,7 +8,7 @@ type TooltipType = 'info' | 'error' | 'warning';
 
 interface Props {
     children: React.ReactNode;
-    title?: string;
+    title?: React.ReactNode;
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
     className?: string;
     type?: TooltipType;

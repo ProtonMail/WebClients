@@ -23,6 +23,7 @@ interface Props extends HeaderProps {
     floatingButton?: React.ReactNode;
     searchBox?: React.ReactNode;
     searchDropdown?: React.ReactNode;
+    supportDropdown?: React.ReactNode;
     hasAppsDropdown?: boolean;
     title: string;
     expanded: boolean;
@@ -37,6 +38,7 @@ const PrivateHeader = ({
     backUrl,
     searchBox,
     searchDropdown,
+    supportDropdown,
     floatingButton,
     expanded,
     onToggleExpand,
@@ -96,9 +98,7 @@ const PrivateHeader = ({
                     </TopNavbarItem>
                 )}
                 {!settingsButton ? null : <TopNavbarItem>{settingsButton}</TopNavbarItem>}
-                <TopNavbarItem>
-                    <SupportDropdown />
-                </TopNavbarItem>
+                <TopNavbarItem>{supportDropdown || <SupportDropdown />}</TopNavbarItem>
                 <TopNavbarItem className="relative">
                     <UserDropdown />
                 </TopNavbarItem>
