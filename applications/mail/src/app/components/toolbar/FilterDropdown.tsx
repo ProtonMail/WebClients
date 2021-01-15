@@ -29,7 +29,14 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
     };
 
     return (
-        <ToolbarDropdown content={<Icon className="toolbar-icon" name="bullet-points" />} title={c('Title').t`Filters`}>
+        <ToolbarDropdown
+            content={
+                <span className="flex flex-items-center">
+                    <Icon className="toolbar-icon" name="bullet-points" />
+                </span>
+            }
+            title={c('Title').t`Filters`}
+        >
             {() => (
                 <DropdownMenu>
                     <DropdownMenuButton
@@ -79,7 +86,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
                         >
                             <Icon name="add" className="mr0-5" />
                             {c('Action').t`Hide moved message`}
-                        </DropdownMenuButton>
+                        </DropdownMenuButton>,
                     ]}
                 </DropdownMenu>
             )}

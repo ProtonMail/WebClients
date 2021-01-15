@@ -130,7 +130,11 @@ const Toolbar = ({
                     autoClose={false}
                     noMaxSize
                     disabled={!selectedIDs || !selectedIDs.length}
-                    content={<Icon className="toolbar-icon" name="folder" />}
+                    content={
+                        <span className="flex flex-items-center">
+                            <Icon className="toolbar-icon" name="folder" />
+                        </span>
+                    }
                     dropDownClassName="moveDropdown"
                     className="moveDropdownButton"
                     title={titleMove}
@@ -153,7 +157,11 @@ const Toolbar = ({
                     autoClose={false}
                     noMaxSize
                     disabled={!selectedIDs || !selectedIDs.length}
-                    content={<Icon className="toolbar-icon" name="label" />}
+                    content={
+                        <span className="flex flex-items-center">
+                            <Icon className="toolbar-icon" name="label" />
+                        </span>
+                    }
                     dropDownClassName="labelDropdown"
                     className="labelDropdownButton"
                     title={titleLabel}
