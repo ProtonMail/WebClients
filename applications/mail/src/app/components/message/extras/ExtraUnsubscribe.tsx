@@ -81,9 +81,6 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
 
             const boldFromEmail = <strong key="email">{senderName || senderAddress}</strong>;
             const toEmails = ToList.join(', ');
-            const divTo = <div key="to">{c('Info').t`Recipient: ${toEmails}`}</div>;
-            const divSubject = <div key="subject">{c('Info').t`Subject: ${Subject}`}</div>;
-            const divBody = <div key="body">{c('Info').t`Body: ${Body}`}</div>;
 
             await new Promise((resolve, reject) => {
                 createModal(
@@ -95,7 +92,10 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                     >
                         <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
                             {c('Info')
-                                .jt`To unsubscribe from this mailing list, an email will be sent from ${boldFromEmail} with following details as defined by the sender of the newsletter:${divTo}${divSubject}${divBody}`}
+                                .jt`To unsubscribe from this mailing list, an email will be sent from ${boldFromEmail} with following details as defined by the sender of the newsletter:`}
+                            <div>{c('Info').t`Recipient: ${toEmails}`}</div>
+                            <div>{c('Info').t`Subject: ${Subject}`}</div>
+                            <div>{c('Info').t`Body: ${Body}`}</div>
                         </Alert>
                     </ConfirmModal>
                 );
@@ -121,7 +121,6 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
             const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData);
             await addAction(() => sendMessage(cleanMessage, mapSendPrefs, onCompose));
         } else if (unsubscribeMethods.HttpClient) {
-            const divUrl = <div key="url" className="bold">{c('Info').t`URL: ${unsubscribeMethods.HttpClient}`}</div>;
             await new Promise((resolve, reject) => {
                 createModal(
                     <ConfirmModal
@@ -132,7 +131,8 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                     >
                         <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
                             {c('Info')
-                                .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:${divUrl}`}
+                                .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:`}
+                            <div className="bold">{c('Info').t`URL: ${unsubscribeMethods.HttpClient}`}</div>
                         </Alert>
                     </ConfirmModal>
                 );
