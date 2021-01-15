@@ -14,6 +14,7 @@ import {
     FolderNamesMap,
     FolderPathsMap,
     EditModeMap,
+    DestinationFolder,
 } from '../interfaces';
 
 import { escapeSlashes, splitEscaped } from '../helpers';
@@ -46,13 +47,17 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
         return level;
     };
 
+    // Here we map folders with their direct children
     const folderRelationshipsMap = providerFolders.reduce((acc: FolderRelationshipsMap, folder) => {
         const currentLevel = getLevel(folder.Source, folder.Separator);
 
         acc[folder.Source] = providerFolders
             .filter((f) => {
                 const level = getLevel(f.Source, f.Separator);
-                return currentLevel + 1 === level && f.Source.startsWith(folder.Source);
+                return (
+                    currentLevel + 1 === level &&
+                    f.Source.split(f.Separator).slice(0, -1).join(f.Separator) === folder.Source
+                );
             })
             .map((f) => f.Source);
 
@@ -76,11 +81,11 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
     };
 
     const getNameValue = (destinationPath: string) => {
-        const [firstLevel, secondLevel, ...restOfTheTree] = splitEscaped(destinationPath);
+        const [firstLevel, secondLevel, ...rest] = splitEscaped(destinationPath);
 
         // for level 3 or more
-        if (restOfTheTree.length) {
-            return restOfTheTree.join('/');
+        if (rest.length) {
+            return rest.join('/');
         }
         return secondLevel || firstLevel;
     };
@@ -96,12 +101,17 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
     );
 
     const forgeNewPath = (folder: MailImportFolder) => {
+        const systemFolders = Object.values(DestinationFolder) as string[];
         let sourceParentPath = getParent(folder.Source);
         const ancestors = [];
 
         while (sourceParentPath) {
             ancestors.unshift(folderNamesMap[sourceParentPath]);
             sourceParentPath = getParent(sourceParentPath);
+        }
+
+        if (ancestors.length && systemFolders.includes(ancestors[0])) {
+            ancestors.shift();
         }
 
         const [firstLevel, secondLevel] = ancestors;
