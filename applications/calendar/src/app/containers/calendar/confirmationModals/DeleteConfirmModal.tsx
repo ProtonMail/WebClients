@@ -11,8 +11,8 @@ const getTexts = ({ type, sendCancellationNotice }: InviteActions) => {
         return {
             title: c('Title').t`Delete event`,
             submit: c('Action').t`Delete`,
-            alertText: c('Info').t`The organizer of this event will be notified that you decline the invitation.
-                Would you like to delete this event?`,
+            alertText: c('Info')
+                .t`The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?`,
         };
     }
     if (type === DECLINE_DISABLED && sendCancellationNotice) {
@@ -20,8 +20,7 @@ const getTexts = ({ type, sendCancellationNotice }: InviteActions) => {
             title: c('Title').t`Delete event`,
             submit: c('Action').t`Delete`,
             alertText: c('Info')
-                .t`The organizer of this event will not be notified that you decline the invitation as your address is disabled.
-                Would you like to delete this event anyway?`,
+                .t`The organizer of this event will not be notified that you decline the invitation as your address is disabled. Would you like to delete this event anyway?`,
         };
     }
     if (type === CANCEL_INVITATION) {
@@ -37,8 +36,7 @@ const getTexts = ({ type, sendCancellationNotice }: InviteActions) => {
             title: c('Title').t`Delete event`,
             submit: c('Action').t`Delete`,
             alertText: c('Info')
-                .t`Your address is disabled. A cancellation email cannot be sent to the event participants.
-                Would you like to delete this event anyway?`,
+                .t`Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?`,
         };
     }
     return {

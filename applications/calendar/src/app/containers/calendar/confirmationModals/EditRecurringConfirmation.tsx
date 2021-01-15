@@ -23,8 +23,8 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
         if (inviteType === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
             return {
                 ...defaultTexts,
-                alertText: c('Info').t`This event has been updated by the organizer.
-                   Would you like to change your answer only for this occurrence in this series?`,
+                alertText: c('Info')
+                    .t`This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?`,
             };
         }
         return {
@@ -73,45 +73,45 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
                     return {
                         title: c('Title').t`Save changes`,
                         confirm: c('Action').t`Save`,
-                        alertText: c('Info').t`You will update all the events in this series.
-                        Added and removed participants will be notified.`,
+                        alertText: c('Info')
+                            .t`You will update all the events in this series. Added and removed participants will be notified.`,
                     };
                 }
                 return {
                     title: c('Title').t`Save changes`,
                     confirm: c('Action').t`Save`,
-                    alertText: c('Info').t`You will update all the events in this series.
-                    Existent, added and removed participants will be notified.`,
+                    alertText: c('Info')
+                        .t`You will update all the events in this series. Existent, added and removed participants will be notified.`,
                 };
             }
             if (hasAddedAttendees) {
                 return {
                     title: c('Title').t`Save changes`,
                     confirm: c('Action').t`Save`,
-                    alertText: c('Info').t`You will update all the events in this series.
-                    Existent and added participants will be notified.`,
+                    alertText: c('Info')
+                        .t`You will update all the events in this series. Existent and added participants will be notified.`,
                 };
             }
             if (hasRemovedAllAttendees) {
                 return {
                     title: c('Title').t`Save changes`,
                     confirm: c('Action').t`Save`,
-                    alertText: c('Info').t`You will update all the events in this series.
-                    Removed participants will be notified.`,
+                    alertText: c('Info')
+                        .t`You will update all the events in this series. Removed participants will be notified.`,
                 };
             }
             if (hasRemovedAttendees) {
                 return {
                     title: c('Title').t`Save changes`,
                     confirm: c('Action').t`Save`,
-                    alertText: c('Info').t`You will update all the events in this series.
-                    Existent and removed participants will be notified.`,
+                    alertText: c('Info')
+                        .t`You will update all the events in this series. Existent and removed participants will be notified.`,
                 };
             }
             return {
                 ...defaultTexts,
-                alertText: c('Info').t`You will update all the events in this series.
-                An invitation update will be sent to the event participants.`,
+                alertText: c('Info')
+                    .t`You will update all the events in this series. An invitation update will be sent to the event participants.`,
             };
         }
         return {
@@ -171,8 +171,8 @@ const EditRecurringConfirmModal = ({
     const rruleWarningText = showRruleWarning ? getRruleWarningText() : '';
 
     if (isInvitation && hasCalendarModification && hasPreviousModifications) {
-        const alertText = c('Info').t`The organizer has updated some of the events in this series.
-        Changing the calendar is not supported yet for this type of recurring events.`;
+        const alertText = c('Info')
+            .t`The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.`;
         return (
             <FormModal
                 small

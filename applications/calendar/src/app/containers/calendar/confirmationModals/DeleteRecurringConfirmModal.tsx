@@ -22,8 +22,8 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
             if (sendCancellationNotice) {
                 return {
                     ...defaultTexts,
-                    alertText: c('Info').t`This event has been updated.
-                    The organizer will be notified that you decline the invitation. Would you like to delete this event?`,
+                    alertText: c('Info')
+                        .t`This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?`,
                 };
             }
             return {
@@ -35,9 +35,8 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
         if (inviteType === INVITE_ACTION_TYPES.DECLINE_DISABLED && sendCancellationNotice) {
             return {
                 ...defaultTexts,
-                alertText: c('Info').t`This event has been updated.
-                    The organizer will not be notified that you decline the invitation as your address is disabled.
-                    Would you like to delete this event anyway?`,
+                alertText: c('Info')
+                    .t`This event has been updated. The organizer will not be notified that you decline the invitation as your address is disabled. Would you like to delete this event anyway?`,
             };
         }
         return {
@@ -49,32 +48,29 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
         if (inviteType === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
             return {
                 ...defaultTexts,
-                alertText: c('Info').t`A cancellation email will be sent to the event participants.
-                Would you like to delete all events in this series?`,
+                alertText: c('Info')
+                    .t`A cancellation email will be sent to the event participants. Would you like to delete all events in this series?`,
             };
         }
         if (inviteType === INVITE_ACTION_TYPES.CANCEL_DISABLED) {
             return {
                 ...defaultTexts,
                 alertText: c('Info')
-                    .t`Your address is disabled. A cancellation email cannot be sent to the event participants.
-                Would you like to delete all events in this series anyway?`,
+                    .t`Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?`,
             };
         }
         if (inviteType === INVITE_ACTION_TYPES.DECLINE_INVITATION && sendCancellationNotice) {
             return {
                 ...defaultTexts,
                 alertText: c('Info')
-                    .t`The organizer of this series of events will be notified that you decline the invitation.
-                Would you like to delete all the events in this series?`,
+                    .t`The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?`,
             };
         }
         if (inviteType === INVITE_ACTION_TYPES.DECLINE_DISABLED && sendCancellationNotice) {
             return {
                 ...defaultTexts,
                 alertText: c('Info')
-                    .t`The organizer of this series of events will not be notified that you decline the invitation as your address is disabled.
-                    Would you like to delete all the events in this series anyway?`,
+                    .t`The organizer of this series of events will not be notified that you decline the invitation as your address is disabled. Would you like to delete all the events in this series anyway?`,
             };
         }
         return {
