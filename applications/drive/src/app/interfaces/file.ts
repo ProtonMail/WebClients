@@ -52,6 +52,7 @@ export interface RequestUploadResult {
 export interface DriveFileBlock {
     Index: number;
     URL: string;
+    EncSignature?: string;
 }
 
 export interface DriveFileRevision {

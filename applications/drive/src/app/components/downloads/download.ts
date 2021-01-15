@@ -18,7 +18,10 @@ const MAX_RETRIES_BEFORE_FAIL = 3;
 
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
-export type StreamTransformer = (stream: ReadableStream<Uint8Array>) => Promise<ReadableStream<Uint8Array>>;
+export type StreamTransformer = (
+    stream: ReadableStream<Uint8Array>,
+    EncSignature: string
+) => Promise<ReadableStream<Uint8Array>>;
 
 export interface DownloadControls {
     start: (api: (query: any) => any) => Promise<void>;
@@ -138,7 +141,7 @@ export const initDownload = ({
                 await startDownload(getBlockQueue(activeIndex), numRetries + 1);
             };
 
-            const downloadQueue = blockQueue.map(({ URL, Index }) => async () => {
+            const downloadQueue = blockQueue.map(({ URL, Index, EncSignature }) => async () => {
                 if (!buffers.get(Index)?.done) {
                     await waitUntil(() => buffers.size < MAX_TOTAL_BUFFER_SIZE || abortController.signal.aborted);
 
@@ -168,8 +171,9 @@ export const initDownload = ({
                     const rawContentStream = blockStream.pipeThrough(progressStream);
 
                     // Decrypt the file block content using streaming decryption
+                    // TODO: make EncSignature type of string, when downloadShared payload will contain encSignature
                     const transformedContentStream = transformBlockStream
-                        ? await transformBlockStream(rawContentStream)
+                        ? await transformBlockStream(rawContentStream, EncSignature || '')
                         : rawContentStream;
 
                     await untilStreamEnd(transformedContentStream, async (data) => {
