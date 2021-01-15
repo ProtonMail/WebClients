@@ -11,8 +11,8 @@ interface Props {
     right?: React.ReactNode;
     text: string;
     title?: string;
-    onFocus: () => void;
-    id: string;
+    onFocus?: () => void;
+    id?: string;
 }
 
 const SimpleSidebarListItemHeader = ({ toggle, onToggle, hasCaret = true, right, text, id, title, onFocus }: Props) => {
