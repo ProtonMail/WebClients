@@ -1,3 +1,4 @@
+import { noop } from 'proton-shared/lib/helpers/function';
 import React, { useRef } from 'react';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
@@ -15,7 +16,16 @@ interface Props {
     id?: string;
 }
 
-const SimpleSidebarListItemHeader = ({ toggle, onToggle, hasCaret = true, right, text, id, title, onFocus }: Props) => {
+const SimpleSidebarListItemHeader = ({
+    toggle,
+    onToggle,
+    hasCaret = true,
+    right,
+    text,
+    id,
+    title,
+    onFocus = noop,
+}: Props) => {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const shortcutHandlers: HotkeyTuple[] = [
         [
