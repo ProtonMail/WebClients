@@ -1,8 +1,11 @@
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import React, { ReactNode } from 'react';
 import { InvitationModel } from '../../../../helpers/calendar/invite';
-import ExtraEventAttendeeSummary from './ExtraEventAttendeeSummary';
-import ExtraEventOrganizerSummary from './ExtraEventOrganizerSummary';
+import {
+    getAttendeeSummaryText,
+    getHasBeenUpdatedText,
+    getOrganizerSummaryText,
+} from '../../../../helpers/calendar/summary';
 
 export const getSummaryParagraph = (text: ReactNode) => {
     return <p className="mt0-5 mb0-5">{text}</p>;
@@ -13,11 +16,23 @@ interface Props {
 }
 const ExtraEventSummary = ({ model }: Props) => {
     const { hideSummary, isOrganizerMode, isPartyCrasher } = model;
-    if (hideSummary || isPartyCrasher) {
+    const summaryText = isOrganizerMode ? getOrganizerSummaryText(model) : getAttendeeSummaryText(model);
+    const hasBeenUpdatedText = getHasBeenUpdatedText(model);
+
+    if (hideSummary || isPartyCrasher || !summaryText) {
         return null;
     }
 
-    return isOrganizerMode ? <ExtraEventOrganizerSummary model={model} /> : <ExtraEventAttendeeSummary model={model} />;
+    if (hasBeenUpdatedText) {
+        return (
+            <>
+                {getSummaryParagraph(hasBeenUpdatedText)}
+                {getSummaryParagraph(summaryText)}
+            </>
+        );
+    }
+
+    return getSummaryParagraph(summaryText);
 };
 
 export default ExtraEventSummary;
