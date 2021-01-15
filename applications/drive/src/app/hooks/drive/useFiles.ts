@@ -1,6 +1,6 @@
 import { useApi, useEventManager, useNotifications, usePreventLeave, useGetUser } from 'react-components';
 import { ReadableStream } from 'web-streams-polyfill';
-import { decryptMessage, encryptMessage } from 'pmcrypto';
+import { decryptMessage, encryptMessage, getMessage, getSignature } from 'pmcrypto';
 import { c } from 'ttag';
 import {
     generateNodeKeys,
@@ -274,6 +274,7 @@ function useFiles() {
 
                 const { data: encryptedSignature } = await encryptMessage({
                     data: signature.packets.write(),
+                    sessionKey,
                     publicKeys: nodePrivateKey.toPublic(),
                     armor: true,
                 });
@@ -524,18 +525,35 @@ function useFiles() {
         }
     );
 
-    const decryptBlockStream = (shareId: string, linkId: string): StreamTransformer => async (stream) => {
+    const decryptBlockStream = (shareId: string, linkId: string): StreamTransformer => async (stream, encSignature) => {
         // TODO: implement root hash validation when file updates are implemented
         const keys = await getLinkKeys(shareId, linkId);
-
         if (!('sessionKeys' in keys)) {
             throw new Error('Session key missing on file link');
         }
 
+        const signatureMessage = await getMessage(encSignature);
+        const decryptedSignature = await decryptMessage({
+            privateKeys: keys.privateKey,
+            message: signatureMessage,
+            format: 'binary',
+        });
+        const [message, signature] = await Promise.all([
+            getStreamMessage(stream),
+            getSignature(decryptedSignature.data),
+        ]);
+
+        // NOTE: the message is signed under the uploader's address key, so that's what it should be used here
+        // to verify it. Note that getPrimaryAddressKey will give the current user's address key, meaning that
+        // if the file was uploaded by a different user, this verification will fail.
+
+        // TODO: Fetch addressPublicKey of signer when we start supporting drive volumes with multiple users.
+        const { privateKey: addressPrivateKey } = await getPrimaryAddressKey();
         const { data } = await decryptMessage({
-            message: await getStreamMessage(stream),
+            message,
+            signature,
             sessionKeys: keys.sessionKeys,
-            publicKeys: keys.privateKey.toPublic(),
+            publicKeys: addressPrivateKey.toPublic(),
             streaming: 'web',
             format: 'binary',
         });
