@@ -99,10 +99,6 @@ export default [
                 keys: `${metaKey} + Enter`,
             },
             {
-                name: c('Keyboard shortcut name').t`Save draft`,
-                keys: `${metaKey} + S`,
-            },
-            {
                 name: c('Keyboard shortcut name').t`Close draft`,
                 keys: `Escape`,
             },
