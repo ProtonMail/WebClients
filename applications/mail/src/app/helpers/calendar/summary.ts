@@ -108,7 +108,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
             if (hasNoCalendars) {
                 if (isSingleEdit) {
                     return c('Calendar invite info')
-                        .jt`${participantName} had proposed a new time for one occurrence of this event.  This proposal is out of date. You have no calendars.`;
+                        .jt`${participantName} had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.`;
                 }
                 return c('Calendar invite info')
                     .jt`${participantName} had proposed a new time for this event. This proposal is out of date. You have no calendars.`;
