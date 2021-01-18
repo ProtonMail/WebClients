@@ -47,8 +47,8 @@ const HeaderCollapsed = ({
         onExpand();
     };
 
-    const isDraftMessage = isDraft(message.data);
-    const isOutboxMessage = isOutbox(message.data);
+    const isDraftMessage = isDraft(message.data) && !message.sending;
+    const isOutboxMessage = isOutbox(message.data) || message.sending;
 
     return (
         <div

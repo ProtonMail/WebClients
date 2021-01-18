@@ -181,6 +181,9 @@ const MessageView = (
     };
 
     const handleExpand = (value: boolean) => () => {
+        if (message.sending) {
+            return;
+        }
         if (outbox) {
             return;
         }

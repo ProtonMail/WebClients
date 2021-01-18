@@ -187,6 +187,11 @@ export interface MessageExtended {
      * All kind of errors that appears during message processing
      */
     errors?: MessageErrors;
+
+    /**
+     * true when sending message
+     */
+    sending?: boolean;
 }
 
 /**
