@@ -170,7 +170,7 @@ const DownloadSharedContainer = () => {
                     <div className="color-global-light flex flex-item-noshrink flex-items-end onmobile-pt1">
                         <div className="aligncenter opacity-50 mb2">
                             <Icon name="lock-check" size={20} />
-                            <div className="small m0">{c('Label').jt`End-to-End Encryption by Proton`}</div>
+                            <div className="small m0">{c('Label').jt`End-to-end Encryption by Proton`}</div>
                             <a
                                 className="small signup-footer-link"
                                 href={`mailto:${REPORT_ABUSE_EMAIL}`}
