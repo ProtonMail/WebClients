@@ -24,6 +24,7 @@ export interface MailboxHotkeysContext {
     elementID: string | undefined;
     elementIDs: string[];
     checkedIDs: string[];
+    selectedIDs: string[];
     focusIndex: number | undefined;
     columnLayout: boolean;
     showContentView: boolean;
@@ -43,7 +44,16 @@ export interface MailboxHotkeysHandlers {
 }
 
 export const useMailboxHotkeys = (
-    { labelID, elementID, elementIDs, checkedIDs, focusIndex, columnLayout, showContentView }: MailboxHotkeysContext,
+    {
+        labelID,
+        elementID,
+        elementIDs,
+        checkedIDs,
+        selectedIDs,
+        focusIndex,
+        columnLayout,
+        showContentView,
+    }: MailboxHotkeysContext,
     {
         handleBack,
         getFocusedId,
@@ -377,7 +387,7 @@ export const useMailboxHotkeys = (
         [
             'L',
             (e) => {
-                if (hotkeysEnabledAndListView) {
+                if (hotkeysEnabledAndListView && selectedIDs.length) {
                     e.preventDefault();
                     labelDropdownToggleRef.current?.();
                 }
@@ -386,7 +396,7 @@ export const useMailboxHotkeys = (
         [
             'M',
             (e) => {
-                if (hotkeysEnabledAndListView) {
+                if (hotkeysEnabledAndListView && selectedIDs.length) {
                     e.preventDefault();
                     moveDropdownToggleRef.current?.();
                 }

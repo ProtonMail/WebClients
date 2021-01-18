@@ -184,7 +184,7 @@ const MailboxContainer = ({
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
     const { elementRef, labelDropdownToggleRef, moveDropdownToggleRef } = useMailboxHotkeys(
-        { labelID, elementID, elementIDs, checkedIDs, focusIndex, columnLayout, showContentView },
+        { labelID, elementID, elementIDs, checkedIDs, selectedIDs, focusIndex, columnLayout, showContentView },
         {
             focusOnLastMessage,
             getFocusedId,
