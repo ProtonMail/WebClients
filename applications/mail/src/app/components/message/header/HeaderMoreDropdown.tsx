@@ -11,6 +11,7 @@ import {
     useModals,
     useFolders,
     ConfirmModal,
+    ErrorButton,
     Alert,
     Group,
     ButtonGroup,
@@ -22,6 +23,7 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { reportPhishing } from 'proton-shared/lib/api/reports';
+import { deleteMessages } from 'proton-shared/lib/api/messages';
 
 import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
@@ -40,6 +42,7 @@ import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
+import { getDeleteTitle, getModalText, getNotificationText } from '../../toolbar/DeleteButton';
 
 const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
@@ -112,6 +115,24 @@ const HeaderMoreDropdown = ({
                     .t`Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.`}</Alert>
             </ConfirmModal>
         );
+    };
+
+    const handleDelete = async () => {
+        await new Promise((resolve, reject) => {
+            createModal(
+                <ConfirmModal
+                    title={getDeleteTitle(false, false, 1)}
+                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    onConfirm={() => resolve(undefined)}
+                    onClose={reject}
+                >
+                    <Alert type="error">{getModalText(false, false, 1)}</Alert>
+                </ConfirmModal>
+            );
+        });
+        await api(deleteMessages([message.data?.ID]));
+        await call();
+        createNotification({ text: getNotificationText(false, false, 1) });
     };
 
     const handleHeaders = () => {
@@ -298,6 +319,12 @@ const HeaderMoreDropdown = ({
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Move to spam`}</span>
                                 </DropdownMenuButton>
                             )}
+                            {isInTrash ? (
+                                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleDelete}>
+                                    <Icon name="delete" className="mr0-5 mt0-25" />
+                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Delete`}</span>
+                                </DropdownMenuButton>
+                            ) : null}
                             <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handlePhishing}>
                                 <Icon name="phishing" className="mr0-5 mt0-25" />
                                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Report phishing`}</span>
