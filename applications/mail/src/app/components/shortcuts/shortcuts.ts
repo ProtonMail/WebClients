@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { metaKey } from 'proton-shared/lib/helpers/browser';
+import { metaKey, altKey, shiftKey } from 'proton-shared/lib/helpers/browser';
 
 export default [
     {
@@ -112,23 +112,23 @@ export default [
             },
             {
                 name: c('Keyboard shortcut name').t`Maximize composer`,
-                keys: `${metaKey} + Shift + M`,
+                keys: `${metaKey} + ${shiftKey} + M`,
             },
             {
                 name: c('Keyboard shortcut name').t`Attach file`,
-                keys: `${metaKey} + Shift + A`,
+                keys: `${metaKey} + ${shiftKey} + A`,
             },
             {
                 name: c('Keyboard shortcut name').t`Add expiration time`,
-                keys: `${metaKey} + Shift + X`,
+                keys: `${metaKey} + ${shiftKey} + X`,
             },
             {
                 name: c('Keyboard shortcut name').t`Add encryption`,
-                keys: `${metaKey} + Shift + E`,
+                keys: `${metaKey} + ${shiftKey} + E`,
             },
             {
                 name: c('Keyboard shortcut name').t`Discard draft`,
-                keys: `${metaKey} + Alt + Backspace`,
+                keys: `${metaKey} + ${altKey} + Backspace`,
             },
         ],
     },
@@ -149,11 +149,11 @@ export default [
             },
             {
                 name: c('Keyboard shortcut name').t`Show unread emails`,
-                keys: 'Shift + U',
+                keys: `${shiftKey} + U`,
             },
             {
                 name: c('Keyboard shortcut name').t`Show all emails`,
-                keys: 'Shift + A',
+                keys: `${shiftKey} + A`,
             },
             {
                 name: c('Keyboard shortcut name').t`Select / unselect all`,
@@ -214,7 +214,7 @@ export default [
             },
             {
                 name: c('Keyboard shortcut name').t`Empty folder`,
-                keys: `${metaKey} + Shift + Backspace`,
+                keys: `${metaKey} + ${shiftKey} + Backspace`,
             },
         ],
     },
@@ -227,19 +227,19 @@ export default [
             },
             {
                 name: c('Keyboard shortcut name').t`Reply all`,
-                keys: 'Shift + R',
+                keys: `${shiftKey} + R`,
             },
             {
                 name: c('Keyboard shortcut name').t`Forward`,
-                keys: 'Shift + F',
+                keys: `${shiftKey} + F`,
             },
             {
                 name: c('Keyboard shortcut name').t`Load remote content`,
-                keys: 'Shift + C',
+                keys: `${shiftKey} + C`,
             },
             {
                 name: c('Keyboard shortcut name').t`Load embedded images`,
-                keys: 'Shift + E',
+                keys: `${shiftKey} + E`,
             },
             {
                 name: c('Keyboard shortcut name').t`Show original message`,

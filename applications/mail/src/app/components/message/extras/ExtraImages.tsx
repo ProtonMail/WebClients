@@ -1,3 +1,4 @@
+import { shiftKey } from 'proton-shared/lib/helpers/browser';
 import React from 'react';
 import { Icon, useMailSettings, Tooltip } from 'react-components';
 import { c } from 'ttag';
@@ -40,14 +41,14 @@ const ExtraImages = ({
             <>
                 {c('Title').t`Load remote content`}
                 <br />
-                <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+                <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
                 <kbd className="bg-global-altgrey noborder">C</kbd>
             </>
         ) : (
             <>
                 {c('Title').t`Load embedded images`}
                 <br />
-                <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+                <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
                 <kbd className="bg-global-altgrey noborder">E</kbd>
             </>
         );

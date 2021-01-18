@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Icon, Tooltip, classnames, useMailSettings } from 'react-components';
-import { metaKey } from 'proton-shared/lib/helpers/browser';
+import { metaKey, shiftKey } from 'proton-shared/lib/helpers/browser';
 import { MessageExtended } from '../../models/message';
 
 interface ButtonProps {
@@ -73,7 +73,7 @@ const ComposerTitleBar = ({
             {c('Action').t`Maximize composer`}
             <br />
             <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">M</kbd>
         </>
     ) : (

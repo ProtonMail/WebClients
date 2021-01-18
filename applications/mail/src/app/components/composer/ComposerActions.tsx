@@ -16,7 +16,7 @@ import {
     useMailSettings,
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { metaKey } from 'proton-shared/lib/helpers/browser';
+import { metaKey, shiftKey, altKey } from 'proton-shared/lib/helpers/browser';
 
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
@@ -107,7 +107,7 @@ const ComposerActions = ({
             {c('Title').t`Attachments`}
             <br />
             <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">A</kbd>
         </>
     ) : (
@@ -118,7 +118,7 @@ const ComposerActions = ({
             {c('Title').t`Expiration time`}
             <br />
             <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">X</kbd>
         </>
     ) : (
@@ -129,7 +129,7 @@ const ComposerActions = ({
             {c('Title').t`Encryption`}
             <br />
             <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">E</kbd>
         </>
     ) : (
@@ -140,7 +140,7 @@ const ComposerActions = ({
             {c('Title').t`Delete draft`}
             <br />
             <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">Alt</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">{altKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">Backspace</kbd>
         </>
     ) : (
