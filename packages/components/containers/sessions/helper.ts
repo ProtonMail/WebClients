@@ -26,6 +26,7 @@ export const getClientsI18N = () => ({
     AndroidVPN: c('Badge').t`ProtonVPN for Android`,
     AndroidTvVPN: c('Badge').t`ProtonVPN for Android TV`,
     AndroidCalendar: c('Badge').t`ProtonCalendar for Android`,
+    AndroidDrive: c('Badge').t`ProtonDrive for Android`,
     WindowsVPN: c('Badge').t`ProtonVPN for Windows`,
     WindowsImportExport: c('Badge').t`ProtonMail Import-Export for Windows`,
     WindowsBridge: c('Badge').t`ProtonMail Bridge for Windows`,
