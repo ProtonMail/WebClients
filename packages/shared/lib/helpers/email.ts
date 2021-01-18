@@ -171,9 +171,7 @@ export const removeDot = (email = '') => {
  * Remove plus alias part present in the email value
  */
 export const removeEmailAlias = (email = '', isInternal?: boolean) => {
-    return normalizeEmail(email, isInternal)
-        .replace(/(\+[^@]*)@/, '@')
-        .replace(/[._-](?=[^@]*@)/g, '');
+    return normalizeEmail(email, isInternal).replace(/(\+[^@]*)@/, '@');
 };
 
 export const cleanEmail = (email = '', isInternal?: boolean) => {
