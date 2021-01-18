@@ -286,6 +286,11 @@ export const useSendMessage = () => {
             sendingMessageNotificationManager?.setProperties(promise, handleUndo);
 
             try {
+                const currentMessage = messageCache.get(localID) as MessageExtendedWithData;
+                updateMessageCache(messageCache, localID, {
+                    ...currentMessage,
+                    sending: true,
+                });
                 const { Sent, undoTimeout } = await promise;
                 const endSending = async () => {
                     await wait(Math.max(undoTimeout, MIN_DELAY_SENT_NOTIFICATION));
@@ -305,8 +310,6 @@ export const useSendMessage = () => {
                     initialized: undefined,
                     showEmbeddedImages: undefined,
                 });
-
-                void call();
 
                 // Navigation to the sent message
                 const {
@@ -339,6 +342,13 @@ export const useSendMessage = () => {
                     },
                 });
                 throw error;
+            } finally {
+                const currentMessage = messageCache.get(localID) as MessageExtendedWithData;
+                updateMessageCache(messageCache, localID, {
+                    ...currentMessage,
+                    sending: false,
+                });
+                void call();
             }
         },
         [delaySendSeconds, messageCache, attachmentCache, saveDraft]
