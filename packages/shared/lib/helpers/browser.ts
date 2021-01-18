@@ -50,6 +50,8 @@ export const isDesktop = () => {
 };
 
 export const metaKey = isMac() ? '⌘' : 'Ctrl';
+export const altKey = isMac() ? 'Option' : 'Alt';
+export const shiftKey = 'Shift';
 
 export const doNotTrack = () => {
     return navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes' || window.doNotTrack === '1';
