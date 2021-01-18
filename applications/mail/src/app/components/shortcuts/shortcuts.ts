@@ -103,11 +103,11 @@ export default [
                 keys: `Escape`,
             },
             {
-                name: c('Keyboard shortcut name').t`Minimize composer`,
+                name: c('Keyboard shortcut name').t`Minimize / maximize composer`,
                 keys: `${metaKey} + M`,
             },
             {
-                name: c('Keyboard shortcut name').t`Maximize composer`,
+                name: c('Keyboard shortcut name').t`Expand / contract composer`,
                 keys: `${metaKey} + ${shiftKey} + M`,
             },
             {

@@ -60,25 +60,31 @@ const ComposerTitleBar = ({
 
     const titleMinimize = Hotkeys ? (
         <>
-            {c('Action').t`Minimize composer`}
+            {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
             <br />
             <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">M</kbd>
         </>
+    ) : minimized ? (
+        c('Action').t`Maximize composer`
     ) : (
         c('Action').t`Minimize composer`
     );
+
     const titleMaximize = Hotkeys ? (
         <>
-            {c('Action').t`Maximize composer`}
+            {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
             <br />
             <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">M</kbd>
         </>
+    ) : maximized ? (
+        c('Action').t`Contract composer`
     ) : (
-        c('Title').t`Maximize composer`
+        c('Action').t`Expand composer`
     );
+
     const titleClose = Hotkeys ? (
         <>
             {c('Action').t`Close composer`}
@@ -98,12 +104,12 @@ const ComposerTitleBar = ({
             <TitleBarButton
                 iconName="minimize"
                 className={classnames(['nomobile', minimized && 'rotateX-180'])}
-                title={minimized ? titleMaximize : titleMinimize}
+                title={titleMinimize}
                 onClick={toggleMinimized}
             />
             <TitleBarButton
                 iconName={maximized ? 'contract-window' : 'expand'}
-                title={maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
+                title={titleMaximize}
                 className="nomobile"
                 onClick={toggleMaximized}
             />
