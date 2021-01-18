@@ -66,7 +66,7 @@ function GeneratedLinkState({
     const handleCopyPasswordClick = () => {
         if (contentRef.current) {
             textToClipboard(password, contentRef.current);
-            createNotification({ text: c('Success').t`Password was copied to the clipboard` });
+            createNotification({ text: c('Success').t`The password to access your file was copied.` });
         }
     };
 
@@ -122,8 +122,8 @@ function GeneratedLinkState({
                                 data-testid="sharing-modal-passwordModeToggle"
                             />
                         </div>
-                        <div className="flex-noMinChildren flex-item-fluid onmobile-mb0-5 pm-field-icon-container-empty onmobile-min-h0">
-                            {!includePassword && (
+                        <div className="flex-noMinChildren flex-item-fluid flex-items-center onmobile-mb0-5 pm-field-icon-container-empty onmobile-min-h0">
+                            {!includePassword ? (
                                 <>
                                     <Label htmlFor="sharing-modal-password" className="sr-only">
                                         {c('Label').t`Password`}
@@ -147,6 +147,9 @@ function GeneratedLinkState({
                                         }
                                     />
                                 </>
+                            ) : (
+                                <span className="pl1 onmobile-pl0">{c('Label')
+                                    .t`Your file isn't password protected`}</span>
                             )}
                         </div>
                         <div className="flex-noMinChildren flex-justify-end ml0-5 onmobile-ml0">

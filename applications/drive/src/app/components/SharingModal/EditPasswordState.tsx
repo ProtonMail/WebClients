@@ -46,7 +46,7 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
             >
                 <div className="flex flex-items-center">
                     <BackButtonModal onClick={onBack} />
-                    <TitleModal id={modalTitleID}>{c('Title').t`Password protection`}</TitleModal>
+                    <TitleModal id={modalTitleID}>{c('Title').t`Change password`}</TitleModal>
                 </div>
             </HeaderModal>
             <form
@@ -62,7 +62,8 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
                 }}
             >
                 <InnerModal>
-                    <Alert>{c('Info').t`Type a new password below.`}</Alert>
+                    <Alert>{c('Info')
+                        .t`Changing the original password makes password protection mandatory. You won't be able to remove password protection anymore.`}</Alert>
 
                     <Row>
                         <Label htmlFor="shared-url-password">{c('Label').t`New password`}</Label>
@@ -82,7 +83,7 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
                 <FooterModal>
                     <Button type="reset">{c('Action').t`Cancel`}</Button>
                     <PrimaryButton disabled={isSaveDisabled} type="submit" loading={saving}>{c('Action')
-                        .t`Update`}</PrimaryButton>
+                        .t`Change password`}</PrimaryButton>
                 </FooterModal>
             </form>
         </>
