@@ -13,8 +13,10 @@ import {
     Icon,
     EllipsisLoader,
     ErrorButton,
+    useMailSettings,
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { metaKey } from 'proton-shared/lib/helpers/browser';
 
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
@@ -73,6 +75,7 @@ const ComposerActions = ({
     const isExpiration = !!message.expiresIn;
     const hasRecipients = getRecipients(message.data).length > 0;
     const sendDisabled = !hasRecipients || lock;
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
 
     let dateMessage: string | string[] = '';
     if (opening) {
@@ -99,14 +102,61 @@ const ComposerActions = ({
         buttonSendLabel = c('Action').t`Sending`;
     }
 
-    return (
-        <footer
-            className={classnames([
-                'composer-actions flex-item-noshrink flex flex-reverse flex-self-vcenter w100 pl1 pr1 mb0-5',
-                className,
-            ])}
-            onClick={addressesBlurRef.current}
-        >
+    const titleAttachment = Hotkeys ? (
+        <>
+            {c('Title').t`Attachments`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">A</kbd>
+        </>
+    ) : (
+        c('Title').t`Attachments`
+    );
+    const titleExpiration = Hotkeys ? (
+        <>
+            {c('Title').t`Expiration time`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">X</kbd>
+        </>
+    ) : (
+        c('Title').t`Expiration time`
+    );
+    const titleEncryption = Hotkeys ? (
+        <>
+            {c('Title').t`Encryption`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">E</kbd>
+        </>
+    ) : (
+        c('Title').t`Encryption`
+    );
+    const titleDeleteDraft = Hotkeys ? (
+        <>
+            {c('Title').t`Delete draft`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">Alt</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">Backspace</kbd>
+        </>
+    ) : (
+        c('Title').t`Delete draft`
+    );
+    const titleSendButton = Hotkeys ? (
+        <>
+            {c('Title').t`Send email`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">Enter</kbd>
+        </>
+    ) : null;
+
+    const sendButton = Hotkeys ? (
+        <Tooltip title={titleSendButton}>
             <Button
                 className="pm-button--primary composer-send-button"
                 disabled={sendDisabled}
@@ -117,9 +167,32 @@ const ComposerActions = ({
                 <Icon name="sent" className="nodesktop notablet onmobile-flex" />
                 <span className="pl1 pr1 nomobile">{buttonSendLabel}</span>
             </Button>
+        </Tooltip>
+    ) : (
+        <Button
+            className="pm-button--primary composer-send-button"
+            disabled={sendDisabled}
+            loading={sending}
+            onClick={onSend}
+            data-testid="send-button"
+        >
+            <Icon name="sent" className="nodesktop notablet onmobile-flex" />
+            <span className="pl1 pr1 nomobile">{buttonSendLabel}</span>
+        </Button>
+    );
+
+    return (
+        <footer
+            className={classnames([
+                'composer-actions flex-item-noshrink flex flex-reverse flex-self-vcenter w100 pl1 pr1 mb0-5',
+                className,
+            ])}
+            onClick={addressesBlurRef.current}
+        >
+            {sendButton}
             <div className="flex flex-item-fluid">
                 <div className="flex">
-                    <Tooltip title={c('Action').t`Attachments`} className="flex">
+                    <Tooltip title={titleAttachment} className="flex">
                         <AttachmentsButton
                             className={classnames([isAttachments && 'pm-button--primaryborder'])}
                             disabled={lock}
@@ -127,7 +200,7 @@ const ComposerActions = ({
                             attachmentTriggerRef={attachmentTriggerRef}
                         />
                     </Tooltip>
-                    <Tooltip title={c('Action').t`Expiration time`} className="flex ml0-5">
+                    <Tooltip title={titleExpiration} className="flex ml0-5">
                         <Button
                             icon="expiration"
                             className={classnames([
@@ -140,7 +213,7 @@ const ComposerActions = ({
                             <span className="sr-only">{c('Action').t`Expiration time`}</span>
                         </Button>
                     </Tooltip>
-                    <Tooltip title={c('Action').t`Encryption`} className="flex ml0-5">
+                    <Tooltip title={titleEncryption} className="flex ml0-5">
                         <Button
                             icon="lock-alone"
                             className={classnames([
@@ -156,7 +229,7 @@ const ComposerActions = ({
                 </div>
                 <div className="flex mlauto">
                     <span className="mr0-5 mtauto mbauto nomobile">{dateMessage}</span>
-                    <Tooltip title={c('Action').t`Delete draft`} className="flex mr0-5">
+                    <Tooltip title={titleDeleteDraft} className="flex mr0-5">
                         <Button
                             className="inline-flex flex-items-center pm-button--for-icon"
                             icon="trash"

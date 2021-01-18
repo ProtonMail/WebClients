@@ -30,7 +30,7 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCo
         </>
     ) : null;
     const sideBarPrimaryButton = Hotkeys ? (
-        <Tooltip title={titlePrimaryButton} originalPlacement="right">
+        <Tooltip title={titlePrimaryButton} originalPlacement="top">
             <SidebarPrimaryButton className="nomobile" onClick={handleCompose} data-test-id="sidebar:compose">
                 {c('Action').t`New message`}
             </SidebarPrimaryButton>
