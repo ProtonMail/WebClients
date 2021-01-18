@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { format as formatUTC } from '../../date-fns-utc';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
-import { cleanEmail, normalizeInternalEmail } from '../../helpers/email';
+import { cleanEmail, normalizeExternalEmail, normalizeInternalEmail } from '../../helpers/email';
 import isTruthy from '../../helpers/isTruthy';
 import { omit, pick } from '../../helpers/object';
 import { dateLocale } from '../../i18n';
@@ -59,10 +59,11 @@ export const getParticipant = ({
     calendarAttendees?: Attendee[];
 }): Participant => {
     const emailAddress = getAttendeeEmail(participant);
-    const normalizedEmailAddress = normalizeInternalEmail(emailAddress);
-    const selfAddress = addresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizedEmailAddress);
-    const isYou = emailTo ? normalizeInternalEmail(emailTo) === normalizedEmailAddress : !!selfAddress;
-    const contact = contactEmails.find(({ Email }) => cleanEmail(Email) === cleanEmail(emailAddress));
+    const normalizedInternalEmailAddress = cleanEmail(emailAddress, true);
+    const normalizedExternalEmailAddress = cleanEmail(emailAddress, false);
+    const selfAddress = addresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizedInternalEmailAddress);
+    const isYou = emailTo ? cleanEmail(emailTo, true) === normalizedInternalEmailAddress : !!selfAddress;
+    const contact = contactEmails.find(({ Email }) => normalizeExternalEmail(Email) === normalizedExternalEmailAddress);
     const participantName = participant?.parameters?.cn || emailAddress;
     const displayName = selfAddress?.DisplayName || contact?.Name || participantName;
     const result: Participant = {
@@ -220,7 +221,7 @@ export function getSelfAddressData({
             // old events will not have organizer
             return {};
         }
-        const organizerEmail = normalizeInternalEmail(getAttendeeEmail(organizer));
+        const organizerEmail = cleanEmail(getAttendeeEmail(organizer), true);
         return {
             selfAddress: addresses.find(({ Email }) => normalizeInternalEmail(Email) === organizerEmail),
         };
