@@ -16,6 +16,8 @@ import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isInternal } from 'proton-shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { shiftKey } from 'proton-shared/lib/helpers/browser';
+
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import { MESSAGE_ACTIONS } from '../../../constants';
@@ -156,7 +158,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Reply all`}
             <br />
-            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">R</kbd>
         </>
     ) : (
@@ -166,7 +168,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Forward`}
             <br />
-            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">F</kbd>
         </>
     ) : (

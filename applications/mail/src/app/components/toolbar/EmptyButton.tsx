@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon, useLoading, useLabels, useMailSettings } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { metaKey } from 'proton-shared/lib/helpers/browser';
+import { metaKey, shiftKey } from 'proton-shared/lib/helpers/browser';
 import { c } from 'ttag';
 
 import ToolbarButton from './ToolbarButton';
@@ -51,7 +51,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
             {title}
             <br />
             <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey noborder">Backspace</kbd>
         </>
     ) : (
