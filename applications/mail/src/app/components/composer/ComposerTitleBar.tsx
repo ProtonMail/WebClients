@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { c } from 'ttag';
-import { Icon, Tooltip, classnames } from 'react-components';
+import { Icon, Tooltip, classnames, useMailSettings } from 'react-components';
+import { metaKey } from 'proton-shared/lib/helpers/browser';
 import { MessageExtended } from '../../models/message';
 
 interface ButtonProps {
     onClick: () => void;
     iconName: string;
     className?: string;
-    title?: string;
+    title?: ReactNode;
     disabled?: boolean;
 }
 
@@ -47,6 +48,7 @@ const ComposerTitleBar = ({
     onClose,
 }: Props) => {
     const title = message.data?.Subject || c('Title').t`New message`;
+    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
 
     const handleDoubleClick = () => {
         if (minimized) {
@@ -55,6 +57,37 @@ const ComposerTitleBar = ({
         }
         toggleMaximized();
     };
+
+    const titleMinimize = Hotkeys ? (
+        <>
+            {c('Action').t`Minimize composer`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">M</kbd>
+        </>
+    ) : (
+        c('Action').t`Minimize composer`
+    );
+    const titleMaximize = Hotkeys ? (
+        <>
+            {c('Action').t`Maximize composer`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">Shift</kbd> +{' '}
+            <kbd className="bg-global-altgrey noborder">M</kbd>
+        </>
+    ) : (
+        c('Title').t`Maximize composer`
+    );
+    const titleClose = Hotkeys ? (
+        <>
+            {c('Action').t`Close composer`}
+            <br />
+            <kbd className="bg-global-altgrey noborder">Escape</kbd>
+        </>
+    ) : (
+        c('Action').t`Close composer`
+    );
 
     return (
         <header
@@ -65,7 +98,7 @@ const ComposerTitleBar = ({
             <TitleBarButton
                 iconName="minimize"
                 className={classnames(['nomobile', minimized && 'rotateX-180'])}
-                title={minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
+                title={minimized ? titleMaximize : titleMinimize}
                 onClick={toggleMinimized}
             />
             <TitleBarButton
@@ -74,12 +107,7 @@ const ComposerTitleBar = ({
                 className="nomobile"
                 onClick={toggleMaximized}
             />
-            <TitleBarButton
-                iconName="close"
-                title={c('Action').t`Close composer`}
-                onClick={onClose}
-                disabled={closing}
-            />
+            <TitleBarButton iconName="close" title={titleClose} onClick={onClose} disabled={closing} />
         </header>
     );
 };
