@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
-import { useApi, useLoading, useNotifications } from 'react-components';
+import { Loader, useApi, useLoading, useNotifications } from 'react-components';
 import { authJwt } from 'proton-shared/lib/api/auth';
 import { getNewsExternal, updateNewsExternal } from 'proton-shared/lib/api/settings';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
@@ -127,7 +127,7 @@ const EmailUnsubscribeContainer = () => {
 
     const renderView = () => {
         if (!news) {
-            return 'loading';
+            return <Loader />;
         }
 
         switch (page) {
