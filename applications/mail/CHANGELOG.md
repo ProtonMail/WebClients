@@ -2,9 +2,7 @@
 
 ## New features
 
--   Keyboard shortcuts are finally back, for faster inbox processing
--   Go to Settings > General > Keyboard shortcuts to turn them on
--   Hit ? at any point in time to view the list of applicable shortcuts
+-   Keyboard shortcuts are finally back, for faster inbox processing. Go to Settings > General > Keyboard shortcuts to turn them on. Hit `?` at any point in time to view the list of applicable shortcuts.
 
 ## Improvements
 
@@ -16,11 +14,15 @@
 -   Added a welcome modal on the Import/Export page in settings
 -   Added the support for default system sub-folders when importing messages using the import assistant
 -   Improved the process to unsubscribe from newsletters depending on the method supported by the sender
+-   Added back the ability to permanently delete a single message from the conversation view
+-   Improved the process to clear a phishing attempt that is wrongly categorized as such
+-   Various UI and UX improvements
 
 ## Fixes
 
 -   Fixed an issue whereby the view profile option would not work after trusting the new key
 -   Fixed an issue whereby the banner would not be removed after trusting the new key
+-   Fixed an issue whereby system subfolders have beem imported into the inbox. Now system subfolders will be imported as custom folders
 
 # [4.0.0 - Beta 34] - 2021-01-13
 
