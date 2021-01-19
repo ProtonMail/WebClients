@@ -22,7 +22,6 @@
 
 -   Fixed an issue whereby the view profile option would not work after trusting the new key
 -   Fixed an issue whereby the banner would not be removed after trusting the new key
--   Fixed an issue whereby system subfolders have beem imported into the inbox. Now system subfolders will be imported as custom folders
 
 # [4.0.0 - Beta 34] - 2021-01-13
 
