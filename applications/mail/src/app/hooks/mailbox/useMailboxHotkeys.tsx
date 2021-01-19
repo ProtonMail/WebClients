@@ -362,7 +362,10 @@ export const useMailboxHotkeys = (
         [
             ['Meta', 'Backspace'],
             async () => {
-                if (hotkeysEnabledAndListView && (labelID === SPAM || labelID === TRASH)) {
+                if (
+                    hotkeysEnabledAndListView &&
+                    labelIncludes(labelID, DRAFTS, ALL_DRAFTS, SPAM, TRASH, SENT, ALL_SENT)
+                ) {
                     const elements = getElementsForShortcuts();
                     if (!elements.length) {
                         return;
