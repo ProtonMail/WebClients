@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import React, { useEffect, useState, useRef } from 'react';
+import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import { useApi, useLoading, useNotifications } from 'react-components';
 import { authJwt } from 'proton-shared/lib/api/auth';
@@ -33,10 +33,20 @@ const EmailUnsubscribeContainer = () => {
     const [news, setNews] = useState<number | null>(null);
     const [page, setPage] = useState(PAGE.UNSUBSCRIBE);
     const [loading, withLoading] = useLoading();
-    const { hash } = useLocation();
+    const history = useHistory();
+    const location = useLocation();
     const { subscriptions: subscriptionsParam } = useParams<{ subscriptions: string | undefined }>();
 
-    const subscriptions = Number(subscriptionsParam);
+    /**
+     * use refs because we're replacing the history after initial load and
+     * we don't want to lose these values to a re-render
+     */
+    const { current: hash } = useRef(location.hash);
+    const { current: subscriptions } = useRef(Number(subscriptionsParam));
+
+    useEffect(() => {
+        history.replace(location.pathname);
+    }, []);
 
     const subscriptionBits = getBits(subscriptions) as NEWS[];
 
