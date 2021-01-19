@@ -38,6 +38,7 @@ import SendingMessageNotification, {
     createSendingMessageNotificationManager,
 } from '../notifications/SendingMessageNotification';
 import SavingDraftNotification from '../notifications/SavingDraftNotification';
+import { useMessageCache } from '../../containers/MessageProvider';
 
 enum ComposerInnerModal {
     None,
@@ -78,6 +79,7 @@ const Composer = ({
     onClose: inputOnClose,
     onCompose,
 }: Props) => {
+    const messageCache = useMessageCache();
     const [mailSettings] = useMailSettings();
     const { createNotification, hideNotification } = useNotifications();
 
@@ -128,7 +130,7 @@ const Composer = ({
     const saveDraft = useSaveDraft();
     const sendVerifications = useSendVerifications();
     const sendMessage = useSendMessage();
-    const deleteDraft = useDeleteDraft(syncedMessage);
+    const deleteDraft = useDeleteDraft();
 
     // Computed composer status
     const syncInProgress = !!syncedMessage.actionInProgress;
@@ -335,14 +337,19 @@ const Composer = ({
         setInnerModal(ComposerInnerModal.None);
     };
 
+    const handleDiscard = async () => {
+        const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtended;
+        if (messageFromCache.data?.ID) {
+            await addAction(() => deleteDraft(messageFromCache));
+        }
+        createNotification({ text: c('Info').t`Draft discarded` });
+    };
+
     const handleDelete = async () => {
         setClosing(true);
         autoSave.abort?.();
         try {
-            if (syncedMessage.data?.ID) {
-                await addAction(deleteDraft);
-            }
-            createNotification({ text: c('Info').t`Draft discarded` });
+            await handleDiscard();
         } finally {
             onClose();
         }
@@ -361,7 +368,7 @@ const Composer = ({
                             if (notificationID) {
                                 hideNotification(notificationID);
                             }
-                            void handleDelete();
+                            void handleDiscard();
                         }}
                     />
                 ),
