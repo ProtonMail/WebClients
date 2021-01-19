@@ -30,7 +30,7 @@ export const getConversationContextValue = (
     return 0;
 };
 
-export const getNumAttachments = (conversation: Conversation = {}) => conversation.NumAttachments;
+export const getNumAttachments = (conversation: Conversation = {}) => conversation.NumAttachments || 0;
 
 export const hasAttachments = (conversation: Conversation = {}) => getNumAttachments(conversation) > 0;
 
