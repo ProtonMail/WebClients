@@ -1,4 +1,4 @@
-# [4.0.0-beta.12] - 2021-01-20
+# [4.0.0-beta.12] - 2021-01-21
 ## Added
 - Add participants to Proton events
 
