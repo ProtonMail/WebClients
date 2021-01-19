@@ -83,14 +83,14 @@ export const useSaveDraft = () => {
     }, []);
 };
 
-export const useDeleteDraft = (message: MessageExtended) => {
+export const useDeleteDraft = () => {
     const api = useApi();
     const messageCache = useMessageCache();
     const { call } = useEventManager();
 
-    return useCallback(async () => {
+    return useCallback(async (message: MessageExtended) => {
         await api(deleteMessages([message.data?.ID]));
         messageCache.delete(message.localID || '');
         await call();
-    }, [message]);
+    }, []);
 };
