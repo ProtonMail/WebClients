@@ -154,12 +154,12 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                 </Href>
             </span>
             <span className="flex-item-noshrink flex">
-                {isUnsubscribed(message.data) ? null : (
-                    <InlineLinkButton
-                        disabled={loading}
-                        className="underline"
-                        onClick={() => withLoading(handleClick())}
-                    >
+                {isUnsubscribed(message.data) ? (
+                    c('Status').t`Unsubscribed`
+                ) : loading ? (
+                    c('Status').t`Unsubscribing...`
+                ) : (
+                    <InlineLinkButton className="underline" onClick={() => withLoading(handleClick())}>
                         {loading ? c('Action').t`Unsubscribing` : c('Action').t`Unsubscribe`}
                     </InlineLinkButton>
                 )}
