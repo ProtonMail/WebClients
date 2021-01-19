@@ -134,11 +134,11 @@ export const getCounterMap = (
     }, {});
 };
 
-export const hasAttachments = (element: Element, labelID: string | undefined) =>
-    isMessage(element) ? messageHasAttachments(element as Message) : conversationHasAttachments(element, labelID);
+export const hasAttachments = (element: Element) =>
+    isMessage(element) ? messageHasAttachments(element as Message) : conversationHasAttachments(element);
 
-export const getNumAttachments = (element: Element, labelID: string | undefined) =>
-    isMessage(element) ? (element as Message)?.NumAttachments || 0 : conversationNumAttachments(element, labelID);
+export const getNumAttachments = (element: Element) =>
+    isMessage(element) ? (element as Message)?.NumAttachments || 0 : conversationNumAttachments(element);
 
 /**
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
