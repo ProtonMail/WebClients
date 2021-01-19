@@ -1,3 +1,27 @@
+[4.0.0 - Beta 35] - 2021-01-20
+
+## New features
+
+-   Keyboard shortcuts are finally back, for faster inbox processing
+-   Go to Settings > General > Keyboard shortcuts to turn them on
+-   Hit ? at any point in time to view the list of applicable shortcuts
+
+## Improvements
+
+-   Improved the keyboard navigation using arrows
+-   Improved the actions based on the areas where the focus is put on
+-   Improved the way to resume the focus by hitting the Tab key
+-   Improved the tab navigation (within a modal, within a dropdown, within the composer)
+-   Added shortcut information in tooltips when shortcuts are active
+-   Added a welcome modal on the Import/Export page in settings
+-   Added the support for default system sub-folders when importing messages using the import assistant
+-   Improved the process to unsubscribe from newsletters depending on the method supported by the sender
+
+## Fixes
+
+-   Fixed an issue whereby the view profile option would not work after trusting the new key
+-   Fixed an issue whereby the banner would not be removed after trusting the new key
+
 # [4.0.0 - Beta 34] - 2021-01-13
 
 ## Improvements
