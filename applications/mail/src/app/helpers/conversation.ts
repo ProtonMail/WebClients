@@ -30,11 +30,9 @@ export const getConversationContextValue = (
     return 0;
 };
 
-export const getNumAttachments = (conversation: Conversation = {}, labelID: string | undefined) =>
-    getConversationContextValue(conversation, 'NumAttachments', labelID);
+export const getNumAttachments = (conversation: Conversation = {}) => conversation.NumAttachments;
 
-export const hasAttachments = (conversation: Conversation = {}, labelID: string | undefined) =>
-    getNumAttachments(conversation, labelID) > 0;
+export const hasAttachments = (conversation: Conversation = {}) => getNumAttachments(conversation) > 0;
 
 export const getNumUnread = (conversation: Conversation = {}, labelID: string | undefined) =>
     getConversationContextValue(conversation, 'NumUnread', labelID);

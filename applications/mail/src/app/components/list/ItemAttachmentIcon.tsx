@@ -7,12 +7,11 @@ import { Element } from '../../models/element';
 
 interface Props {
     element?: Element;
-    labelID: string;
     className?: string;
 }
 
-const ItemAttachmentIcon = ({ element = {}, labelID, className }: Props) => {
-    const numAttachments = getNumAttachments(element, labelID);
+const ItemAttachmentIcon = ({ element = {}, className }: Props) => {
+    const numAttachments = getNumAttachments(element);
 
     if (numAttachments === 0) {
         return null;

@@ -88,7 +88,7 @@ const ItemRowLayout = ({
             <span className="item-weight mtauto mbauto ml1 alignright">{!loading && size}</span>
 
             <span className="flex w2e ml0-5 aligncenter">
-                <ItemAttachmentIcon element={element} labelID={labelID} className="flex-item-noshrink" />
+                <ItemAttachmentIcon element={element} className="flex-item-noshrink" />
             </span>
 
             <span className="item-senddate-row w13e ml1 flex flex-nowrap flex-items-center flex-justify-end">

@@ -306,7 +306,7 @@ const HeaderExpanded = ({
                                 maxNumber={5}
                                 className="onmobile-pt0-25"
                             />
-                            <ItemAttachmentIcon element={message.data} labelID={labelID} className="ml0-5" />
+                            <ItemAttachmentIcon element={message.data} className="ml0-5" />
                         </div>
                     </>
                 )}
@@ -328,7 +328,7 @@ const HeaderExpanded = ({
                                     showUnlabel
                                     maxNumber={1}
                                 />
-                                <ItemAttachmentIcon element={message.data} labelID={labelID} className="ml0-5" />
+                                <ItemAttachmentIcon element={message.data} className="ml0-5" />
                             </div>
                         </>
                     ) : (

@@ -93,7 +93,7 @@ const HeaderCollapsed = ({
 
                         {!!hasAttachments(message.data) && (
                             <span className="ml0-5 flex">
-                                <ItemAttachmentIcon element={message.data} labelID={labelID} className="mauto" />
+                                <ItemAttachmentIcon element={message.data} className="mauto" />
                             </span>
                         )}
 
