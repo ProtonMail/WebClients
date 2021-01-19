@@ -38,7 +38,7 @@ const EmailUnsubscribeContainer = () => {
 
     const subscriptions = Number(subscriptionsParam);
 
-    const subscriptionBits = getBits(subscriptions, 5) as NEWS[];
+    const subscriptionBits = getBits(subscriptions) as NEWS[];
 
     const newsTypeToWording = {
         [NEWS.ANNOUNCEMENTS]: c('Label for news').t`Proton announcements`,
