@@ -1,4 +1,5 @@
 import mimemessage from 'mimemessage';
+import { encodeUtf8 } from 'pmcrypto';
 import { AttachmentDirect } from '../../interfaces/mail/crypto';
 
 /**
@@ -22,7 +23,9 @@ const buildAttachment = (attachmentData: { attachment: AttachmentDirect; data: s
     const entity = mimemessage.factory({
         contentType: `${contentTypeValue}; filename=${attachmentName}; name=${attachmentName}`,
         contentTransferEncoding: 'base64',
-        body: data,
+        // the mimemessage library requires a particular transformation of the string `data` into a binary string
+        // to produce the right body when data contains non Latin1 characters
+        body: encodeUtf8(data),
     });
 
     entity.header(
