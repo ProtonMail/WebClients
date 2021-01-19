@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
+import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
+import { traceError } from 'proton-shared/lib/helpers/sentry';
 
 import ChallengeFrame, { Props as ChallengeProps } from './ChallengeFrame';
 import { Alert } from '../alert';
@@ -10,12 +12,34 @@ import { classnames } from '../../helpers';
 const Challenge = ({ children, style, onLoaded, bodyClassName, ...rest }: Omit<ChallengeProps, 'src'>) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
+    const [errorRetry, setErrorRetry] = useState(0);
 
     const supportTeam = (
         <Href url="https://protonmail.com/support-form" title="Contact the ProtonMail support team.">
             {c('Info').t`support team`}
         </Href>
     );
+
+    const handleError = () => {
+        traceError(new Error(`Failed to load challenge frame. Retry ${errorRetry}`));
+        if (errorRetry < 2) {
+            setErrorRetry(errorRetry + 1);
+            return;
+        }
+        setHasError(true);
+        setIsLoading(false);
+        onLoaded?.();
+    };
+
+    const challengeSrc = (() => {
+        const base = 'https://secure.protonmail.com/challenge/challenge.html';
+        const queryParameters = errorRetry === 0 ? '' : `?retry=${errorRetry}`;
+        return `${base}${queryParameters}`;
+    })();
+
+    // Loading error timeouts in intervals of [7, 10], [12, 15], [17, 20]
+    const jitter = randomIntFromInterval(0, 3);
+    const errorTimeout = (10 + errorRetry * 5 - jitter) * 1000;
 
     return (
         <div style={style}>
@@ -30,7 +54,9 @@ const Challenge = ({ children, style, onLoaded, bodyClassName, ...rest }: Omit<C
                 </>
             ) : (
                 <ChallengeFrame
-                    src="https://secure.protonmail.com/challenge/challenge.html"
+                    key={errorRetry}
+                    src={challengeSrc}
+                    errorTimeout={errorTimeout}
                     className={isLoading || hasError ? 'hidden' : 'w100'}
                     innerClassName="flex-item-fluid-auto"
                     bodyClassName={classnames(['color-black bg-white', bodyClassName])}
@@ -39,11 +65,7 @@ const Challenge = ({ children, style, onLoaded, bodyClassName, ...rest }: Omit<C
                         setIsLoading(false);
                         onLoaded?.();
                     }}
-                    onError={() => {
-                        setHasError(true);
-                        setIsLoading(false);
-                        onLoaded?.();
-                    }}
+                    onError={handleError}
                     {...rest}
                 >
                     {children}
