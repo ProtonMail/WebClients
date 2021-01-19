@@ -5,7 +5,7 @@ import { useSubscription, useUser } from '../../hooks';
 import { Alert } from '../../components';
 
 import MozillaInfoPanel from './MozillaInfoPanel';
-import NewsCheckboxes from './NewsCheckboxes';
+import EditNews from './EditNews';
 
 const NewsSection = () => {
     const [{ isManagedByMozilla } = {}] = useSubscription();
@@ -23,7 +23,7 @@ const NewsSection = () => {
         <>
             <Alert>{c('Info')
                 .t`To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.`}</Alert>
-            <NewsCheckboxes />
+            <EditNews />
         </>
     );
 };

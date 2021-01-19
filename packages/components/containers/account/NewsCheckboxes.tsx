@@ -1,28 +1,22 @@
 import React from 'react';
 import { c } from 'ttag';
 import { NEWS } from 'proton-shared/lib/constants';
-import { updateNews } from 'proton-shared/lib/api/settings';
 import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
 
 import { Checkbox } from '../../components';
-import { useUserSettings, useEventManager, useNotifications, useApi, useLoading } from '../../hooks';
 
 const { ANNOUNCEMENTS, FEATURES, NEWSLETTER, BETA, BUSINESS } = NEWS;
 
-const NewsCheckboxes = () => {
-    const [{ News } = {}] = useUserSettings();
-    const { createNotification } = useNotifications();
-    const { call } = useEventManager();
-    const api = useApi();
-    const [loading, withLoading] = useLoading();
+export interface NewsCheckboxesProps {
+    disabled: boolean;
+    News: number;
+    onChange: (News: number) => void;
+}
 
-    const update = async (mask) => {
-        await api(updateNews(toggleBit(News, mask)));
-        await call();
-        createNotification({ text: c('Info').t`Emailing preference updated` });
+const NewsCheckboxes = ({ disabled, News, onChange }: NewsCheckboxesProps) => {
+    const handleChange = (mask: number) => () => {
+        onChange(toggleBit(News, mask));
     };
-
-    const handleChange = (mask) => () => withLoading(update(mask));
 
     const checkboxes = [
         {
@@ -41,7 +35,7 @@ const NewsCheckboxes = () => {
             {checkboxes.map(({ id, flag, text }) => {
                 return (
                     <li key={id} className="mb0-5">
-                        <Checkbox checked={hasBit(News, flag)} disabled={loading} onChange={handleChange(flag)}>
+                        <Checkbox checked={hasBit(News, flag)} disabled={disabled} onChange={handleChange(flag)}>
                             {text}
                         </Checkbox>
                     </li>
