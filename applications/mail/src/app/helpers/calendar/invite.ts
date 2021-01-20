@@ -48,7 +48,7 @@ import { addDays, format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from 'proton-shared/lib/date/timezone';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { cleanEmail } from 'proton-shared/lib/helpers/email';
+import { removeEmailAlias } from 'proton-shared/lib/helpers/email';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { Address } from 'proton-shared/lib/interfaces';
@@ -179,7 +179,7 @@ export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) 
         return false;
     }
     const organizerEmail = getAttendeeEmail(event.organizer);
-    return cleanEmail(organizerEmail) === cleanEmail(emailTo);
+    return removeEmailAlias(organizerEmail) === removeEmailAlias(emailTo);
 };
 
 export const getSingleEditWidgetData = ({
