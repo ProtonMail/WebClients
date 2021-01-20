@@ -10,13 +10,13 @@ interface EmailUnsubscribedProps {
 }
 
 const EmailUnsubscribed = ({ categories, onResubscribeClick, onManageClick }: EmailUnsubscribedProps) => {
-    const allCategoriesExceptTheLastOne = categories.slice(0, -1);
+    const allCategoriesExceptTheLastOne = categories.slice(0, -1).join(', ');
 
     const lastCategory = categories[categories.length - 1];
 
     const categoriesString =
         categories.length > 1
-            ? c('Email Unsubscribe').t`${allCategoriesExceptTheLastOne.join(', ')} and ${lastCategory}`
+            ? c('Email Unsubscribe').t`${allCategoriesExceptTheLastOne} and ${lastCategory}`
             : lastCategory;
 
     const categoriesJsx = (
