@@ -3,6 +3,7 @@
 ## Updates
 
 - Increase base timeout for signup iframe challenge
+
 ## Fixes
 
 - Fix addresses typo
