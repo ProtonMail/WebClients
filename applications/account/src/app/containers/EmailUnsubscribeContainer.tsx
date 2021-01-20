@@ -58,9 +58,7 @@ const EmailUnsubscribeContainer = () => {
 
             history.replace(location.pathname);
 
-            const response = await api<{ UID: string; AccessToken: string }>(authJwt({ Token: jwt }));
-
-            const { UID, AccessToken } = response;
+            const { UID, AccessToken } = await api<{ UID: string; AccessToken: string }>(authJwt({ Token: jwt }));
 
             const authApiFn: Api = (config: object) =>
                 api(withAuthHeaders(UID, AccessToken, { ...config, headers: {} }));
