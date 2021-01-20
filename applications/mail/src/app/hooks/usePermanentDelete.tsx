@@ -14,6 +14,7 @@ import { deleteMessages } from 'proton-shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { useGetElementsFromIDs } from './mailbox/useElementsCache';
 import { isConversation } from '../helpers/elements';
+import useOptimisticDelete from './optimistic/useOptimisticDelete';
 
 const { DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -98,14 +99,13 @@ export const usePermanentDelete = (labelID: string) => {
     const { call } = useEventManager();
     const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
+    const optimisticDelete = useOptimisticDelete();
 
     return async (selectedIDs: string[]) => {
         const count = selectedIDs.length;
         const draft = labelID === DRAFTS || labelID === ALL_DRAFTS;
-
         const elements = getElementsFromIDs(selectedIDs);
         const conversationMode = isConversation(elements[0]);
-
         const modalTitle = getDeleteTitle(draft, conversationMode, count);
         const modalText = getModalText(draft, conversationMode, count);
 
@@ -121,13 +121,15 @@ export const usePermanentDelete = (labelID: string) => {
                 </ConfirmModal>
             );
         });
-
-        const action = conversationMode ? deleteConversations(selectedIDs, labelID) : deleteMessages(selectedIDs);
-        await api(action);
-        await call();
-
-        const notificationText = getNotificationText(draft, conversationMode, count);
-
-        createNotification({ text: notificationText });
+        const rollback = optimisticDelete(elements, labelID);
+        try {
+            const action = conversationMode ? deleteConversations(selectedIDs, labelID) : deleteMessages(selectedIDs);
+            await api(action);
+            await call();
+            const notificationText = getNotificationText(draft, conversationMode, count);
+            createNotification({ text: notificationText });
+        } catch {
+            rollback();
+        }
     };
 };
