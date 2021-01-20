@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
-import { FullLoader, GenericError, InlineLinkButton, useApi, useLoading, useNotifications } from 'react-components';
+import { FullLoader, GenericError, useApi, useLoading, useNotifications } from 'react-components';
 import { authJwt } from 'proton-shared/lib/api/auth';
 import { getNewsExternal, updateNewsExternal } from 'proton-shared/lib/api/settings';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
@@ -164,9 +164,9 @@ const EmailUnsubscribeContainer = () => {
 
     if (error) {
         const signIn = (
-            <InlineLinkButton key="1" className="primary-link" onClick={() => history.push('/login')}>
+            <a key="1" className="primary-link" href="/login" target="_self">
                 {c('Action').t`sign in`}
-            </InlineLinkButton>
+            </a>
         );
 
         return (
