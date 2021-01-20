@@ -17,7 +17,7 @@ const EmailResubscribed = ({ categories, onUnsubscribeClick, onManageClick }: Em
     const categoriesString =
         categories.length > 1
             ? c('Email Unsubscribe Categories').t`${allCategoriesExceptTheLastOne.join(', ')} and ${lastCategory}`
-            : c('Email Unsubscribe Categories').t`${lastCategory}`;
+            : lastCategory;
 
     const categoriesJsx = (
         <span key="bold" className="bold">

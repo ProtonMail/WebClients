@@ -14,12 +14,10 @@ const EmailUnsubscribed = ({ categories, onResubscribeClick, onManageClick }: Em
 
     const lastCategory = categories[categories.length - 1];
 
-    const s = allCategoriesExceptTheLastOne.join(', ');
-
     const categoriesString =
         categories.length > 1
-            ? c('Email Unsubscribe').t`${s} and ${lastCategory}`
-            : c('Email Unsubscribe').t`${lastCategory}`;
+            ? c('Email Unsubscribe').t`${allCategoriesExceptTheLastOne.join(', ')} and ${lastCategory}`
+            : lastCategory;
 
     const categoriesJsx = (
         <span key="bold" className="bold">
