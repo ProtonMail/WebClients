@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
-import { Loader, useApi, useLoading, useNotifications } from 'react-components';
+import { FullLoader, GenericError, InlineLinkButton, useApi, useLoading, useNotifications } from 'react-components';
 import { authJwt } from 'proton-shared/lib/api/auth';
 import { getNewsExternal, updateNewsExternal } from 'proton-shared/lib/api/settings';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
@@ -32,6 +32,7 @@ const EmailUnsubscribeContainer = () => {
     const [authApi, setAuthApi] = useState<Api | null>(null);
     const [news, setNews] = useState<number | null>(null);
     const [page, setPage] = useState(PAGE.UNSUBSCRIBE);
+    const [error, setError] = useState(null);
     const [loading, withLoading] = useLoading();
     const history = useHistory();
     const location = useLocation();
@@ -62,33 +63,40 @@ const EmailUnsubscribeContainer = () => {
 
     const jwt = hash.substring(1);
 
+    const init = async () => {
+        const response = await api<{ UID: string; AccessToken: string }>(authJwt({ Token: jwt }));
+
+        const { UID, AccessToken } = response;
+
+        const authApiFn: Api = (config: object) => api(withAuthHeaders(UID, AccessToken, { ...config, headers: {} }));
+
+        const {
+            UserSettings: { News: currentNews },
+        } = await authApiFn<UserSettingsNewsResponse>(getNewsExternal());
+
+        const nextNews = subscriptionBits.reduce(clearBit, currentNews);
+
+        const {
+            UserSettings: { News: updatedNews },
+        } = await authApiFn<UserSettingsNewsResponse>(updateNewsExternal(nextNews));
+
+        /*
+         * https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-passing-an-object-or-a-function-in-setstate
+         *
+         * we want to store the 'authApiFn' here, not tell react to use the function to generate the next state
+         */
+        setAuthApi(() => authApiFn);
+
+        setNews(updatedNews);
+    };
+
     useEffect(() => {
         (async () => {
-            const response = await api<{ UID: string; AccessToken: string }>(authJwt({ Token: jwt }));
-
-            const { UID, AccessToken } = response;
-
-            const authApiFn: Api = (config: object) =>
-                api(withAuthHeaders(UID, AccessToken, { ...config, headers: {} }));
-
-            const {
-                UserSettings: { News: currentNews },
-            } = await authApiFn<UserSettingsNewsResponse>(getNewsExternal());
-
-            const nextNews = subscriptionBits.reduce(clearBit, currentNews);
-
-            const {
-                UserSettings: { News: updatedNews },
-            } = await authApiFn<UserSettingsNewsResponse>(updateNewsExternal(nextNews));
-
-            /*
-             * https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-passing-an-object-or-a-function-in-setstate
-             *
-             * we want to store the 'authApiFn' here, not tell react to use the function to generate the next state
-             */
-            setAuthApi(() => authApiFn);
-
-            setNews(updatedNews);
+            try {
+                await init();
+            } catch (e) {
+                setError(e);
+            }
         })();
     }, []);
 
@@ -108,12 +116,12 @@ const EmailUnsubscribeContainer = () => {
     };
 
     const handleResubscribeClick = async () => {
-        await update(subscriptionBits.reduce(setBit, news || 0));
+        await withLoading(update(subscriptionBits.reduce(setBit, news || 0)));
         setPage(PAGE.RESUBSCRIBE);
     };
 
     const handleUnsubscribeClick = async () => {
-        await update(subscriptionBits.reduce(clearBit, news || 0));
+        await withLoading(update(subscriptionBits.reduce(clearBit, news || 0)));
         setPage(PAGE.UNSUBSCRIBE);
     };
 
@@ -127,7 +135,11 @@ const EmailUnsubscribeContainer = () => {
 
     const renderView = () => {
         if (!news) {
-            return <Loader />;
+            return (
+                <div className="centered-absolute aligncenter">
+                    <FullLoader size={200} />
+                </div>
+            );
         }
 
         switch (page) {
@@ -137,6 +149,7 @@ const EmailUnsubscribeContainer = () => {
                         categories={categories}
                         onResubscribeClick={handleResubscribeClick}
                         onManageClick={handleManageClick}
+                        loading={loading}
                     />
                 );
             }
@@ -147,6 +160,7 @@ const EmailUnsubscribeContainer = () => {
                         categories={categories}
                         onUnsubscribeClick={handleUnsubscribeClick}
                         onManageClick={handleManageClick}
+                        loading={loading}
                     />
                 );
             }
@@ -159,6 +173,21 @@ const EmailUnsubscribeContainer = () => {
                 return null;
         }
     };
+
+    if (error) {
+        const signIn = (
+            <InlineLinkButton key="1" className="primary-link" onClick={() => history.push('/login')}>
+                {c('Action').t`sign in`}
+            </InlineLinkButton>
+        );
+
+        return (
+            <GenericError>
+                <span>{c('Error message').t`There was a problem unsubscribing you.`}</span>
+                <span>{c('Error message').jt`Please ${signIn} to update your email subscription preferences.`}</span>
+            </GenericError>
+        );
+    }
 
     return <main className="main-area email-unsubscribe-container--main">{renderView()}</main>;
 };

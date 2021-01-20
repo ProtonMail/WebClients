@@ -7,9 +7,10 @@ interface EmailUnsubscribedProps {
     categories: string[];
     onResubscribeClick: () => void;
     onManageClick: () => void;
+    loading: boolean;
 }
 
-const EmailUnsubscribed = ({ categories, onResubscribeClick, onManageClick }: EmailUnsubscribedProps) => {
+const EmailUnsubscribed = ({ categories, onResubscribeClick, onManageClick, loading }: EmailUnsubscribedProps) => {
     const allCategoriesExceptTheLastOne = categories.slice(0, -1).join(', ');
 
     const lastCategory = categories[categories.length - 1];
@@ -29,7 +30,7 @@ const EmailUnsubscribed = ({ categories, onResubscribeClick, onManageClick }: Em
         <EmailUnsubscribeLayout
             main={c('Email Unsubscribe').jt`You unsubscribed from ${categoriesJsx} emails.`}
             footer={
-                <Button onClick={onResubscribeClick} className="pm-button--link">
+                <Button className="pm-button-blue" onClick={onResubscribeClick} loading={loading}>
                     {c('Action').t`Resubscribe`}
                 </Button>
             }
