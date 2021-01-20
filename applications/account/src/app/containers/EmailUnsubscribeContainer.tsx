@@ -52,45 +52,40 @@ const EmailUnsubscribeContainer = () => {
 
     const categories = subscriptionBits.map((bit) => newsTypeToWording[bit]);
 
-    const init = async () => {
-        const jwt = location.hash.substring(1);
-
-        history.replace(location.pathname);
-
-        const response = await api<{ UID: string; AccessToken: string }>(authJwt({ Token: jwt }));
-
-        const { UID, AccessToken } = response;
-
-        const authApiFn: Api = (config: object) => api(withAuthHeaders(UID, AccessToken, { ...config, headers: {} }));
-
-        const {
-            UserSettings: { News: currentNews },
-        } = await authApiFn<UserSettingsNewsResponse>(getNewsExternal());
-
-        const nextNews = subscriptionBits.reduce(clearBit, currentNews);
-
-        const {
-            UserSettings: { News: updatedNews },
-        } = await authApiFn<UserSettingsNewsResponse>(updateNewsExternal(nextNews));
-
-        /*
-         * https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-passing-an-object-or-a-function-in-setstate
-         *
-         * we want to store the 'authApiFn' here, not tell react to use the function to generate the next state
-         */
-        setAuthApi(() => authApiFn);
-
-        setNews(updatedNews);
-    };
-
     useEffect(() => {
-        (async () => {
-            try {
-                await init();
-            } catch (e) {
-                setError(e);
-            }
-        })();
+        const init = async () => {
+            const jwt = location.hash.substring(1);
+
+            history.replace(location.pathname);
+
+            const response = await api<{ UID: string; AccessToken: string }>(authJwt({ Token: jwt }));
+
+            const { UID, AccessToken } = response;
+
+            const authApiFn: Api = (config: object) =>
+                api(withAuthHeaders(UID, AccessToken, { ...config, headers: {} }));
+
+            const {
+                UserSettings: { News: currentNews },
+            } = await authApiFn<UserSettingsNewsResponse>(getNewsExternal());
+
+            const nextNews = subscriptionBits.reduce(clearBit, currentNews);
+
+            const {
+                UserSettings: { News: updatedNews },
+            } = await authApiFn<UserSettingsNewsResponse>(updateNewsExternal(nextNews));
+
+            /*
+             * https://reactjs.org/docs/faq-state.html#what-is-the-difference-between-passing-an-object-or-a-function-in-setstate
+             *
+             * we want to store the 'authApiFn' here, not tell react to use the function to generate the next state
+             */
+            setAuthApi(() => authApiFn);
+
+            setNews(updatedNews);
+        };
+
+        init().catch(setError);
     }, []);
 
     const { createNotification } = useNotifications();
