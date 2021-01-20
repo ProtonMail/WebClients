@@ -42,7 +42,7 @@ import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { getDeleteTitle, getModalText, getNotificationText } from '../../toolbar/DeleteButton';
+import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/usePermanentDelete';
 
 const { INBOX, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
