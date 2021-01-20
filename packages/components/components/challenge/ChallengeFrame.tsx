@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { useConfig } from '../../hooks';
 import { getChallengeURL, handleEvent, normalizeSelectOptions } from './challengeHelper';
 
-export const ERROR_TIMEOUT_MS = 10000;
-export const CHALLENGE_TIMEOUT_MS = 7000;
+export const ERROR_TIMEOUT_MS = 15000;
+export const CHALLENGE_TIMEOUT_MS = 9000;
 
 export type ChallengeResult = { [key: string]: string } | undefined;
 

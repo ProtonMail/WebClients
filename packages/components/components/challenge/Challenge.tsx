@@ -37,9 +37,9 @@ const Challenge = ({ children, style, onLoaded, bodyClassName, ...rest }: Omit<C
         return `${base}${queryParameters}`;
     })();
 
-    // Loading error timeouts in intervals of [7, 10], [12, 15], [17, 20]
+    // Loading error timeouts in intervals of [12, 15], [17, 20], [22, 25]
     const jitter = randomIntFromInterval(0, 3);
-    const errorTimeout = (10 + errorRetry * 5 - jitter) * 1000;
+    const errorTimeout = (15 + errorRetry * 5 - jitter) * 1000;
 
     return (
         <div style={style}>
