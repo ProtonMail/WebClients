@@ -3,6 +3,8 @@ import CONFIG from '../../config';
 import { uniqID } from '../../../helpers/string';
 import { isIE11, isEdge } from '../../../helpers/browser';
 
+const BASE_TIMEOUT = 15; // in seconds
+
 /* @ngInject */
 function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gettextCatalog, $injector) {
     const getDomains = () => {
@@ -197,7 +199,8 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 );
 
                 if (++attempts <= 2) {
-                    timeoutID = setTimeout(checkIframeLoaded, (10 + attempts * 5 - _.random(0, 5)) * 1000);
+                    const jitter = _.random(0, 5);
+                    timeoutID = setTimeout(checkIframeLoaded, (BASE_TIMEOUT + attempts * 10 - jitter) * 1000);
                     iframe.src = `${IFRAME}?name=${name}&retry=${attempts}`;
 
                     $injector.get('bugReportApi').crash(timeoutError);
@@ -208,8 +211,8 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 $injector.get('bugReportApi').crash(timeoutError);
             };
 
-            // Wait 10 seconds to check if the iframe is properly loaded
-            timeoutID = setTimeout(checkIframeLoaded, 10 * 1000);
+            // Wait x seconds to check if the iframe is properly loaded
+            timeoutID = setTimeout(checkIframeLoaded, BASE_TIMEOUT * 1000);
 
             /**
              * Fire in the hole, iframe is loaded, give it the form config.
