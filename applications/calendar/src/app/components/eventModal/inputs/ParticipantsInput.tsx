@@ -6,9 +6,9 @@ import { uniqueBy } from 'proton-shared/lib/helpers/array';
 import { Address, Recipient } from 'proton-shared/lib/interfaces';
 import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
 import {
-    cleanEmail,
     normalizeEmail,
     normalizeInternalEmail,
+    removeEmailAlias,
     validateEmailAddress,
 } from 'proton-shared/lib/helpers/email';
 import { useContactEmailsCache } from '../../../containers/calendar/ContactEmailsProvider';
@@ -81,7 +81,7 @@ const ParticipantsInput = ({ className, placeholder, model, value = [], onChange
             selfAttendees: AttendeeModel[];
         }>(
             (acc, cur) => {
-                if (ownNormalizedEmails.includes(cleanEmail(cur.email, true))) {
+                if (ownNormalizedEmails.includes(removeEmailAlias(cur.email, true))) {
                     acc.selfAttendees.push(cur);
                 } else {
                     acc.attendees.push(cur);
