@@ -159,23 +159,11 @@ export const getEmailTo = (str: string, decode?: boolean): string => {
     }
 };
 
-export const removeDot = (email = '') => {
-    const [localPart, domain] = getEmailParts(email);
-    if (domain) {
-        return `${localPart.replace(/\./g, '')}@${domain}`;
-    }
-    return email;
-};
-
 /**
  * Remove plus alias part present in the email value
  */
 export const removeEmailAlias = (email = '', isInternal?: boolean) => {
     return normalizeEmail(email, isInternal).replace(/(\+[^@]*)@/, '@');
-};
-
-export const cleanEmail = (email = '', isInternal?: boolean) => {
-    return removeDot(removeEmailAlias(email, isInternal));
 };
 
 /**
