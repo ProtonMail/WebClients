@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-components';
 import { c } from 'ttag';
+import EmailUnsubscribeCategories from './EmailUnsubscribeCategories';
 import EmailUnsubscribeLayout from './EmailUnsubscribeLayout';
 
 interface EmailUnsubscribedProps {
@@ -11,20 +12,7 @@ interface EmailUnsubscribedProps {
 }
 
 const EmailUnsubscribed = ({ categories, onResubscribeClick, onManageClick, loading }: EmailUnsubscribedProps) => {
-    const allCategoriesExceptTheLastOne = categories.slice(0, -1).join(', ');
-
-    const lastCategory = categories[categories.length - 1];
-
-    const categoriesString =
-        categories.length > 1
-            ? c('Email Unsubscribe').t`${allCategoriesExceptTheLastOne} and ${lastCategory}`
-            : lastCategory;
-
-    const categoriesJsx = (
-        <span key="bold" className="bold">
-            {categoriesString}
-        </span>
-    );
+    const categoriesJsx = <EmailUnsubscribeCategories categories={categories} />;
 
     return (
         <EmailUnsubscribeLayout
