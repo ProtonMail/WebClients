@@ -20,7 +20,7 @@ function testVendor {
         echo "✓ We have a cache."
         npm run postinstall
     else
-        npm i karma \
+        npm i karma@^5.2.3 \
             karma-cli \
             karma-webpack \
             karma-jasmine@2  \
