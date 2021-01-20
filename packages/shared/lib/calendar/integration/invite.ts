@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { format as formatUTC } from '../../date-fns-utc';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
-import { cleanEmail, normalizeExternalEmail, normalizeInternalEmail } from '../../helpers/email';
+import { removeEmailAlias, normalizeExternalEmail, normalizeInternalEmail } from '../../helpers/email';
 import isTruthy from '../../helpers/isTruthy';
 import { omit, pick } from '../../helpers/object';
 import { dateLocale } from '../../i18n';
@@ -59,10 +59,10 @@ export const getParticipant = ({
     calendarAttendees?: Attendee[];
 }): Participant => {
     const emailAddress = getAttendeeEmail(participant);
-    const normalizedInternalEmailAddress = cleanEmail(emailAddress, true);
-    const normalizedExternalEmailAddress = cleanEmail(emailAddress, false);
+    const normalizedInternalEmailAddress = removeEmailAlias(emailAddress, true);
+    const normalizedExternalEmailAddress = removeEmailAlias(emailAddress, false);
     const selfAddress = addresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizedInternalEmailAddress);
-    const isYou = emailTo ? cleanEmail(emailTo, true) === normalizedInternalEmailAddress : !!selfAddress;
+    const isYou = emailTo ? removeEmailAlias(emailTo, true) === normalizedInternalEmailAddress : !!selfAddress;
     const contact = contactEmails.find(({ Email }) => normalizeExternalEmail(Email) === normalizedExternalEmailAddress);
     const participantName = participant?.parameters?.cn || emailAddress;
     const displayName = selfAddress?.DisplayName || contact?.Name || participantName;
@@ -199,8 +199,8 @@ export const createInviteIcs = ({
 };
 
 export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = []) => {
-    const cleanedEmail = cleanEmail(email);
-    const index = attendees.findIndex((attendee) => cleanEmail(getAttendeeEmail(attendee)) === cleanedEmail);
+    const cleanedEmail = removeEmailAlias(email);
+    const index = attendees.findIndex((attendee) => removeEmailAlias(getAttendeeEmail(attendee)) === cleanedEmail);
     const attendee = index !== -1 ? attendees[index] : undefined;
     return { index, attendee };
 };
@@ -221,12 +221,12 @@ export function getSelfAddressData({
             // old events will not have organizer
             return {};
         }
-        const organizerEmail = cleanEmail(getAttendeeEmail(organizer), true);
+        const organizerEmail = removeEmailAlias(getAttendeeEmail(organizer), true);
         return {
             selfAddress: addresses.find(({ Email }) => normalizeInternalEmail(Email) === organizerEmail),
         };
     }
-    const normalizedAttendeeEmails = attendees.map((attendee) => cleanEmail(getAttendeeEmail(attendee)));
+    const normalizedAttendeeEmails = attendees.map((attendee) => removeEmailAlias(getAttendeeEmail(attendee), true));
     // start checking active addresses
     const activeAddresses = addresses.filter(({ Status }) => Status !== 0);
     const { selfActiveAttendee, selfActiveAddress, selfActiveAttendeeIndex } = activeAddresses.reduce<{
@@ -239,8 +239,8 @@ export function getSelfAddressData({
             if (acc.answeredAttendeeFound) {
                 return acc;
             }
-            const cleanSelfEmail = cleanEmail(address.Email, true);
-            const index = normalizedAttendeeEmails.findIndex((email) => email === cleanSelfEmail);
+            const normalizedSelfEmail = removeEmailAlias(address.Email, true);
+            const index = normalizedAttendeeEmails.findIndex((email) => email === normalizedSelfEmail);
             if (index === -1) {
                 return acc;
             }
@@ -277,8 +277,8 @@ export function getSelfAddressData({
             if (acc.answeredAttendeeFound) {
                 return acc;
             }
-            const cleanSelfEmail = cleanEmail(address.Email, true);
-            const index = normalizedAttendeeEmails.findIndex((email) => email === cleanSelfEmail);
+            const normalizedSelfEmail = removeEmailAlias(address.Email, true);
+            const index = normalizedAttendeeEmails.findIndex((email) => email === normalizedSelfEmail);
             if (index === -1) {
                 return acc;
             }
