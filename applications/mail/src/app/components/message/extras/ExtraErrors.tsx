@@ -14,9 +14,12 @@ const getTranslations = (key: keyof MessageErrors, alreadyTried: boolean) => {
             return alreadyTried
                 ? c('Error').t`Sorry, Proton can't decrypt your message. Please check that all your keys are active.`
                 : c('Error').t`Decryption error: decryption of this message's encrypted content failed.`;
-        case 'common':
-        default:
+        case 'processing':
             return c('Error').t`Message processing error.`;
+        case 'signature':
+            return c('Error').t`Signature verification error.`;
+        default:
+            return c('Error').t`Unknown error.`;
     }
 };
 

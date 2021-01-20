@@ -21,7 +21,8 @@ export interface EmbeddedInfo {
 export interface MessageErrors {
     network?: Error[];
     decryption?: Error[];
-    common?: Error[];
+    processing?: Error[];
+    signature?: Error[];
 }
 
 /**

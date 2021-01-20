@@ -1,17 +1,14 @@
-import { arrayToBinaryString, getKeys, getMatchingKey, OpenPGPSignature } from 'pmcrypto';
+import { getMatchingKey, OpenPGPSignature } from 'pmcrypto';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { useCallback } from 'react';
 import { useApi, useGetEncryptionPreferences } from 'react-components';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { LARGE_KEY_SIZE } from '../../constants';
-import { get } from '../../helpers/attachment/attachmentLoader';
 import { MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useContactCache } from '../../containers/ContactProvider';
+import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();
@@ -51,29 +48,19 @@ export const useVerifyMessage = (localID: string) => {
                     encryptionPreferences.pinnedKeys
                 );
 
-                const keyAttachments =
-                    getData().Attachments.filter(
-                        ({ Name, Size }) => splitExtension(Name)[1] === 'asc' && (Size || 0) < LARGE_KEY_SIZE
-                    ) || [];
-
-                attachedPublicKeys = (
-                    await Promise.all(
-                        keyAttachments.map(async (attachment) => {
-                            try {
-                                const { data } = await get(attachment, undefined, messageKeys, attachmentsCache, api);
-                                const [key] = await getKeys(arrayToBinaryString(data));
-                                return key;
-                            } catch (e) {
-                                // Nothing
-                            }
-                        })
-                    )
-                ).filter(isTruthy);
+                const attachedKeys = await extractKeysFromAttachments(
+                    getData().Attachments,
+                    messageKeys,
+                    attachmentsCache,
+                    api
+                );
+                const autocryptKeys = await extractKeysFromAutocrypt(getData().ParsedHeaders);
 
                 const allSenderPublicKeys = [
                     ...encryptionPreferences.pinnedKeys,
                     ...encryptionPreferences.apiKeys,
-                    ...attachedPublicKeys,
+                    ...attachedKeys,
+                    ...autocryptKeys,
                 ];
 
                 const signed = verification.verified !== VERIFICATION_STATUS.NOT_SIGNED;
@@ -83,7 +70,7 @@ export const useVerifyMessage = (localID: string) => {
                         : undefined;
                 verificationStatus = verification.verified;
             } catch (error) {
-                errors.common = [error];
+                errors.signature = [error];
             } finally {
                 updateMessageCache(messageCache, localID, {
                     verification: {
