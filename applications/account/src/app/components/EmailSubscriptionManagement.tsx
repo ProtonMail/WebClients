@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import protonLogoSvg from 'design-system/assets/img/shared/proton-logo.svg';
 
 import EmailUnsubscribeBorderedContainer from './EmailUnsubscribeBorderedContainer';
+import './EmailUnsubscribeLayout.scss';
 
 interface EmailSubscriptionManagementProps {
     News: number;
@@ -17,8 +18,7 @@ const EmailSubscriptionManagement = ({ News, disabled, onChange }: EmailSubscrip
             <img
                 src={protonLogoSvg}
                 alt={c('Title').t`Proton Logo`}
-                className="bl mlauto mrauto mb2"
-                style={{ width: '90px' }}
+                className="email-unsubscribe-layout--logo bl mlauto mrauto mb2"
             />
 
             {c('Email Unsubscribe').jt`Which emails do you want to receive from Proton?`}
