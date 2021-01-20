@@ -1,3 +1,13 @@
+# [3.16.53] - 2021-01-20
+
+## Updates
+
+- Increase base timeout for signup iframe challenge
+## Fixes
+
+- Fix addresses typo
+- List all `ClientID` for sessions section
+
 # [3.16.52] - 2021-01-13
 
 ## Improvements
