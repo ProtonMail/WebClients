@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import { FullLoader, GenericError, InlineLinkButton, useApi, useLoading, useNotifications } from 'react-components';
@@ -38,16 +38,7 @@ const EmailUnsubscribeContainer = () => {
     const location = useLocation();
     const { subscriptions: subscriptionsParam } = useParams<{ subscriptions: string | undefined }>();
 
-    /**
-     * use refs because we're replacing the history after initial load and
-     * we don't want to lose these values to a re-render
-     */
-    const { current: hash } = useRef(location.hash);
-    const { current: subscriptions } = useRef(Number(subscriptionsParam));
-
-    useEffect(() => {
-        history.replace(location.pathname);
-    }, []);
+    const subscriptions = Number(subscriptionsParam);
 
     const subscriptionBits = getBits(subscriptions) as NEWS[];
 
@@ -61,9 +52,11 @@ const EmailUnsubscribeContainer = () => {
 
     const categories = subscriptionBits.map((bit) => newsTypeToWording[bit]);
 
-    const jwt = hash.substring(1);
-
     const init = async () => {
+        const jwt = location.hash.substring(1);
+
+        history.replace(location.pathname);
+
         const response = await api<{ UID: string; AccessToken: string }>(authJwt({ Token: jwt }));
 
         const { UID, AccessToken } = response;
