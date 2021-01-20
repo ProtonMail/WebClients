@@ -87,10 +87,12 @@ const useSendIcs = () => {
                 Attachments: [pick(attachment, ['Filename', 'MIMEType', 'Contents'])],
                 Flags: Sign ? MESSAGE_FLAGS.FLAG_SIGN : undefined,
             };
-            const sendPrefsMap = { ...sendPreferencesMap };
+            const sendPrefsMap: SimpleMap<SendPreferences> = {};
             await Promise.all(
                 emails.map(async (email) => {
-                    if (sendPrefsMap[email]) {
+                    const existingSendPreferences = sendPreferencesMap[email];
+                    if (existingSendPreferences) {
+                        sendPrefsMap[email] = existingSendPreferences;
                         return;
                     }
                     const encryptionPreferences = await getEncryptionPreferences(email, 0, contactEmailsMap);
