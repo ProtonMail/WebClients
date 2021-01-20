@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { c } from 'ttag';
 import { Alert, Block, LearnMore, PrimaryButton } from '../../components';
 import { useModals, useOrganization, useOrganizationKey } from '../../hooks';
@@ -6,16 +6,12 @@ import { getOrganizationKeyInfo } from './helpers/organizationKeysHelper';
 
 import ReactivateOrganizationKeysModal, { MODES } from './ReactivateOrganizationKeysModal';
 
-const RestoreAdministratorPrivileges = () => {
-    const [organization, loadingOrganization] = useOrganization();
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+const RestoreAdministratorPrivilegesView = () => {
     const { createModal } = useModals();
 
-    const { isOrganizationKeyInactive } = getOrganizationKeyInfo(organizationKey);
-
-    if (loadingOrganization || loadingOrganizationKey || !isOrganizationKeyInactive) {
-        return null;
-    }
+    useEffect(() => {
+        createModal(<ReactivateOrganizationKeysModal mode={MODES.REACTIVATE} />, 'ReactivateOrganizationKeysModal');
+    }, []);
 
     return (
         <Block>
@@ -40,6 +36,19 @@ const RestoreAdministratorPrivileges = () => {
             <LearnMore className="inbl" url="https://protonmail.com/support/knowledge-base/business/" />
         </Block>
     );
+};
+
+const RestoreAdministratorPrivileges = () => {
+    const [organization, loadingOrganization] = useOrganization();
+    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+
+    const { isOrganizationKeyInactive } = getOrganizationKeyInfo(organizationKey);
+
+    if (loadingOrganization || loadingOrganizationKey || !isOrganizationKeyInactive) {
+        return null;
+    }
+
+    return <RestoreAdministratorPrivilegesView />;
 };
 
 export default RestoreAdministratorPrivileges;
