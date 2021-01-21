@@ -1,7 +1,7 @@
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { KeyboardKey } from 'proton-shared/lib/interfaces';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useFolders, useHotkeys, useMailSettings, HotkeyTuple } from 'react-components';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { isStarred } from '../../helpers/elements';
@@ -44,7 +44,7 @@ export const useMessageHotkeys = (
     elementRef: React.RefObject<HTMLElement | undefined>,
     {
         labelID,
-        conversationIndex,
+        // conversationIndex,
         message,
         bodyLoaded,
         expanded,
@@ -53,7 +53,7 @@ export const useMessageHotkeys = (
         conversationMode,
     }: MessageHotkeysContext,
     {
-        onFocus,
+        // onFocus,
         onCompose,
         setExpanded,
         toggleOriginalMessage,
@@ -79,7 +79,7 @@ export const useMessageHotkeys = (
 
     const handleFocus = () => {
         setHasFocus(true);
-        onFocus(conversationIndex);
+        // onFocus(conversationIndex);
     };
 
     const handleBlur = () => {
@@ -314,11 +314,11 @@ export const useMessageHotkeys = (
         dependencies: [hasFocus],
     });
 
-    useEffect(() => {
-        if (hasFocus) {
-            elementRef?.current?.scrollIntoView({ block: 'nearest' });
-        }
-    }, [hasFocus]);
+    // useEffect(() => {
+    //     if (hasFocus) {
+    //         elementRef?.current?.scrollIntoView({ block: 'nearest' });
+    //     }
+    // }, [hasFocus]);
 
     return {
         hasFocus,
