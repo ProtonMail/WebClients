@@ -1,3 +1,14 @@
+# [4.0.0-beta.8] - 2021-01-21
+
+## Fixes
+- Added retry mechanism to mitigate a bug during sign up causing elements failing to load
+- Removed deprecated x-pm-apiversion header in client requests
+
+## Improvements
+- Text improvements for added clarity in the organization settings section and in the authentication logs
+- Minor UI adjustments of icons' placement and alignment
+- Prepared support for unsubscribing from newsletters without having to sign in
+
 # [4.0.0-beta.7] - 2020-12-07
 
 ## Improvements
