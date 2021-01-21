@@ -97,11 +97,21 @@ $item-container-row-height-compact-mode: 4rem !default;
 	height: $item-container-height;
 }
 
-// fix for Firefox multi-selection issue
-.item-checkbox-label > .item-checkbox {
-	width: 100%;
-	height: 100%;
-	z-index: 1;
+.item-checkbox-label {
+	.item-checkbox {
+		// this is a crazy fix for Firefox - for having ::after stuff working on it for mail conversations
+		// to have increased area around checkbox for clicking
+		/* autoprefixer: ignore next */
+		/* stylelint-disable-next-line */
+		-moz-appearance: initial;
+	}
+
+	// fix for Firefox multi-selection issue
+	> .item-checkbox {
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
 }
 
 .item-firstline,

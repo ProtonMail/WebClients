@@ -130,11 +130,6 @@ input[type='image'] {
 input[type='radio'],
 input[type='checkbox'] {
 	opacity: 0;
-	// this is a crazy fix for Firefox - for having ::after stuff working on it for mail conversations
-	// to have increased area around checkbox for clicking
-	/* autoprefixer: ignore next */
-	/* stylelint-disable-next-line */
-	-moz-appearance: initial;
 }
 
 // fix "autofill state"
