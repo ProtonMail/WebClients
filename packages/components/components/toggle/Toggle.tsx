@@ -1,5 +1,4 @@
 import React, { ChangeEvent } from 'react';
-import { c } from 'ttag';
 
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
@@ -22,10 +21,9 @@ const Toggle = ({
     disabled,
     title,
     label = (key: ToggleState) => {
-        const alt = key === ToggleState.on ? c('Toggle button').t`On` : c('Toggle button').t`Off`;
         return (
-            <span className="pm-toggle-label-text">
-                <Icon name={key} alt={alt} className="pm-toggle-label-img" />
+            <span className="pm-toggle-label-text" aria-hidden="true">
+                <Icon name={key} alt="" className="pm-toggle-label-img" />
             </span>
         );
     },
