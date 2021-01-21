@@ -448,6 +448,13 @@ export const getReceivedStatusIcon = (
                     text: c('Received email icon').t`PGP-signed message`,
                 };
             }
+            if (verificationStatus === SIGNED_AND_INVALID) {
+                return {
+                    ...result,
+                    fill: WARNING,
+                    text: c('Received email icon').t`PGP-signed message. Sender verification failed`,
+                };
+            }
         }
     }
 
@@ -470,7 +477,7 @@ export const getStatusIconName = ({ isEncrypted, fill }: Pick<Partial<StatusIcon
         return isEncrypted ? 'locks-signed' : 'locks-open-signed';
     }
     if (fill === WARNING) {
-        return 'locks-warning';
+        return isEncrypted ? 'locks-warning' : 'locks-open-warning';
     }
     if (fill === FAIL) {
         return 'attention';
