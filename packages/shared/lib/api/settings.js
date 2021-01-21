@@ -29,8 +29,24 @@ export const updateLocale = (Locale) => ({
     data: { Locale },
 });
 
+export const getNews = () => ({
+    url: 'settings/news',
+    method: 'get',
+});
+
 export const updateNews = (News) => ({
     url: 'settings/news',
+    method: 'put',
+    data: { News },
+});
+
+export const getNewsExternal = () => ({
+    url: 'settings/news/external',
+    method: 'get',
+});
+
+export const updateNewsExternal = (News) => ({
+    url: 'settings/news/external',
     method: 'put',
     data: { News },
 });

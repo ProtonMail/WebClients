@@ -17,6 +17,12 @@ export const auth2FA = ({ totp, u2f }: any) => ({
     },
 });
 
+export const authJwt = (data: { Token: String; ClientSecret?: String }) => ({
+    method: 'post',
+    url: 'auth/jwt',
+    data,
+});
+
 export const revoke = () => ({
     method: 'delete',
     url: 'auth',
