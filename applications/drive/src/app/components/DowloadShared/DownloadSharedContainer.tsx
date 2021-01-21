@@ -32,7 +32,8 @@ const DownloadSharedContainer = () => {
     const { createNotification } = useNotifications();
 
     const token = useMemo(() => pathname.replace(/\/urls\/?/, ''), [pathname]);
-    const password = useMemo(() => hash.replace('#', ''), [hash]);
+    const pass = useMemo(() => hash.replace('#', ''), [hash]);
+    const [password, setPassword] = useState(pass);
 
     const initHandshake = useCallback(async () => {
         return initSRPHandshake(token)
@@ -45,7 +46,7 @@ const DownloadSharedContainer = () => {
     }, [token, password]);
 
     const getSharedLinkInfo = useCallback(
-        async (password: string, passSubmittedManually = false) => {
+        async (password: string) => {
             if (!handshakeInfo) {
                 return;
             }
@@ -59,22 +60,17 @@ const DownloadSharedContainer = () => {
                     console.error(e);
                     const { code, status, message } = getApiError(e);
                     let errorText = message;
-                    if (passSubmittedManually) {
-                        if (code === ERROR_CODE_INVALID_SRP_PARAMS) {
-                            errorText = c('Error').t`Incorrect password. Please try again.`;
-                            // SRP session ephemerals are destroyed when you retrieve them.
-                            initHandshake().catch(console.error);
-                        } else if (code === ERROR_CODE_COULD_NOT_IDENTIFY_TARGET || status === STATUS_CODE.NOT_FOUND) {
-                            setNotFoundError(e);
-                            errorText = null;
-                        }
-                    } else {
-                        if (code === ERROR_CODE_INVALID_SRP_PARAMS || status === STATUS_CODE.NOT_FOUND) {
-                            setNotFoundError(e);
-                            errorText = null;
-                        }
-                        setHandshakeInfo(null);
+
+                    if (code === ERROR_CODE_INVALID_SRP_PARAMS) {
+                        setPassword('');
+                        errorText = c('Error').t`Incorrect password. Please try again.`;
+                        // SRP session ephemerals are destroyed when you retrieve them.
+                        initHandshake().catch(console.error);
+                    } else if (code === ERROR_CODE_COULD_NOT_IDENTIFY_TARGET || status === STATUS_CODE.NOT_FOUND) {
+                        setNotFoundError(e);
+                        errorText = null;
                     }
+
                     if (errorText) {
                         createNotification({
                             type: 'error',
@@ -104,7 +100,7 @@ const DownloadSharedContainer = () => {
     };
 
     const submitPassword = (pass: string) => {
-        return getSharedLinkInfo(pass, true).catch(console.error);
+        return getSharedLinkInfo(pass).catch(console.error);
     };
 
     useEffect(() => {
