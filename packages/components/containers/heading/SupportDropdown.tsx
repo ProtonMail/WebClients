@@ -69,7 +69,7 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false, onOpenSho
                     </DropdownMenuButton>
                     {onOpenShortcutsModal && (
                         <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={onOpenShortcutsModal}>
-                            <Icon className="mt0-25 mr0-5" name="info" />
+                            <Icon className="mt0-25 mr0-5" name="keyboard" />
                             {c('Action').t`Display keyboard shortcuts`}
                         </DropdownMenuButton>
                     )}
