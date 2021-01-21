@@ -21,12 +21,12 @@ const ThemeCards = ({ themeIdentifier, onChange, disabled, list }: Props) => {
     return (
         <Block className="flex">
             {list.map(({ identifier, label, src }) => {
+                const id = `id_${identifier}`;
                 return (
                     <ThemeCard
                         key={label}
                         label={label}
-                        id={label}
-                        alt={label}
+                        id={id}
                         src={src}
                         checked={themeIdentifier === identifier}
                         onChange={() => onChange(identifier)}
