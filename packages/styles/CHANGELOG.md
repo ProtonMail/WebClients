@@ -1,13 +1,25 @@
-# [1.8.x] - 2020-xx-xx
+# [2.0.0] - 2020-xx-xx
 
 ## New
 
-- added `z-index` helper
-- Refactor all design system arbo ^^
-- added `tv`, `broken-link` icon
+### Brand new 🎉
+
+- calendar invitation styles
+- shortcuts helpers
+- storyBook styles
+- refactor all design system arbo ^^
+
+### New helpers
+
+- added `z-index`, `min-w7e`, `onmobile-min-h0`, `mr-2e`, `flex-flex-items-center` helpers
+- added `tv`, `broken-link`, `keyboard` icon
+- added `pm-field-icon-container-empty` class (to avoid layout shift for Drive)
 
 ## Updated/fixes
 
+- fix variable override
+- fix `mirror` helper
+- fix vocalisation of toggle
 
 # [1.8.6] - 2020-12-18
 
