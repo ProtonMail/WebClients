@@ -21,6 +21,7 @@ import {
 import AccountPublicLayoutWrapper from './AccountPublicLayoutWrapper';
 import { APP_NAME } from '../config';
 import AccountPublicApp from './AccountPublicApp';
+import EmailUnsubscribeContainer from '../containers/EmailUnsubscribeContainer';
 
 interface Props {
     onLogin: ProtonLoginCallback;
@@ -112,6 +113,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     return (
         <Switch>
+            <Route path="/unsubscribe/:subscriptions">
+                <EmailUnsubscribeContainer />
+            </Route>
             <Route path={SSO_PATHS.AUTHORIZE}>
                 <SSOForkProducer onInvalidFork={handleInvalidFork} onActiveSessions={handleActiveSessionsFork} />
             </Route>
