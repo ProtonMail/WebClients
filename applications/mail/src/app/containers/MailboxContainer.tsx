@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useCallback, memo } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, useRef, memo } from 'react';
 import { History, Location } from 'history';
 import { PrivateMainArea } from 'react-components';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
@@ -64,7 +64,7 @@ const MailboxContainer = ({
     onCompose,
 }: Props) => {
     const getElementsFromIDs = useGetElementsFromIDs();
-
+    const listRef = useRef<HTMLDivElement>(null);
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
     const columnModeSetting = isColumnMode(mailSettings);
     const columnMode = columnModeSetting && !forceRowMode;
@@ -137,6 +137,9 @@ const MailboxContainer = ({
         showContentPanel,
         showContentView,
         showList,
+        listRef,
+        labelID,
+        loading,
     });
 
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
@@ -228,6 +231,7 @@ const MailboxContainer = ({
             <PrivateMainArea className="flex" hasToolbar={showToolbar} hasRowMode={!showContentPanel}>
                 {showList && (
                     <List
+                        ref={listRef}
                         conversationMode={conversationMode}
                         labelID={labelID}
                         loading={loading}

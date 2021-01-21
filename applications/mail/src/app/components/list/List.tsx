@@ -1,4 +1,13 @@
-import React, { useState, useEffect, ChangeEvent, DragEvent, useRef, useCallback, memo } from 'react';
+import React, {
+    useState,
+    useEffect,
+    ChangeEvent,
+    DragEvent,
+    useCallback,
+    memo,
+    forwardRef,
+    MutableRefObject,
+} from 'react';
 import { c, msgid } from 'ttag';
 import { useLabels, classnames, useHandler, generateUID, PaginationRow } from 'react-components';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
@@ -41,35 +50,36 @@ interface Props {
     onCheckRange: (ID: string) => void;
 }
 
-const List = ({
-    labelID,
-    loading,
-    expectedLength,
-    elementID,
-    userSettings,
-    mailSettings,
-    columnLayout,
-    elements: inputElements = defaultElements,
-    checkedIDs = defaultCheckedIDs,
-    onCheck,
-    onClick,
-    conversationMode,
-    isSearch,
-    breakpoints,
-    page: inputPage,
-    onPage,
-    onFocus,
-    onCheckElement,
-    onCheckRange,
-}: Props) => {
+const List = (
+    {
+        labelID,
+        loading,
+        expectedLength,
+        elementID,
+        userSettings,
+        mailSettings,
+        columnLayout,
+        elements: inputElements = defaultElements,
+        checkedIDs = defaultCheckedIDs,
+        onCheck,
+        onClick,
+        conversationMode,
+        isSearch,
+        breakpoints,
+        page: inputPage,
+        onPage,
+        onFocus,
+        onCheckElement,
+        onCheckRange,
+    }: Props,
+    ref: MutableRefObject<HTMLDivElement>
+) => {
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
     const [labels] = useLabels();
     const [dragElement, setDragElement] = useState<HTMLDivElement>();
     const [draggedIDs, setDraggedIDs] = useState<string[]>([]);
     const [savedCheck, setSavedCheck] = useState<string[]>();
-
-    const listRef = useRef<HTMLDivElement>(null);
 
     const elements = usePlaceholders(inputElements, loading, expectedLength);
 
@@ -89,7 +99,7 @@ const List = ({
 
     // Scroll top when changing page
     useEffect(() => {
-        listRef.current?.scroll?.({ top: 0 });
+        ref.current?.scroll?.({ top: 0 });
     }, [loading, page]);
 
     const handleCheck = useHandler((event: ChangeEvent, elementID: string) => {
@@ -174,7 +184,7 @@ const List = ({
 
     return (
         <div
-            ref={listRef}
+            ref={ref}
             className={classnames([
                 'items-column-list scroll-if-needed scroll-smooth-touch',
                 isCompactView && 'is-compact',
@@ -223,4 +233,4 @@ const List = ({
     );
 };
 
-export default memo(List);
+export default memo(forwardRef(List));
