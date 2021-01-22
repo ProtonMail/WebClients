@@ -219,6 +219,7 @@ describe('filterFutureNotifications', () => {
         const isAllDay = false;
         const atSameTimeNotifications = [
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.MINUTES,
                 type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
@@ -226,6 +227,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -233,6 +235,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
                 type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
@@ -240,6 +243,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -249,6 +253,7 @@ describe('filterFutureNotifications', () => {
         ];
         const beforeNotifications = [
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.MINUTES,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -256,6 +261,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
                 type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -263,6 +269,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -272,12 +279,14 @@ describe('filterFutureNotifications', () => {
         ];
         const afterNotifications = [
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.MINUTES,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.MINUTES,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
@@ -285,6 +294,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
                 type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
@@ -292,6 +302,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
@@ -308,6 +319,7 @@ describe('filterFutureNotifications', () => {
         const isAllDay = true;
         const onSameDayNotifications = [
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
@@ -315,6 +327,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
                 type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -322,6 +335,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
                 type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
@@ -329,6 +343,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -338,6 +353,7 @@ describe('filterFutureNotifications', () => {
         ];
         const beforeNotifications = [
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -345,6 +361,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
                 type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -352,6 +369,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -361,12 +379,14 @@ describe('filterFutureNotifications', () => {
         ];
         const afterNotifications = [
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
@@ -374,6 +394,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
                 type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
@@ -381,6 +402,7 @@ describe('filterFutureNotifications', () => {
                 isAllDay,
             },
             {
+                id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,

@@ -2,6 +2,7 @@ import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calenda
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../constants';
 
 export interface NotificationModel {
+    id: string;
     unit: NOTIFICATION_UNITS;
     type: SETTINGS_NOTIFICATION_TYPE;
     when: NOTIFICATION_WHEN;
