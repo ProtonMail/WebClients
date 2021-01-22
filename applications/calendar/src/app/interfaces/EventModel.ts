@@ -125,6 +125,7 @@ export interface EventModelErrors {
         fields: number[];
         text: string;
     };
+    participantError?: boolean;
 }
 
 export interface EventModelReadView extends EventModelView {

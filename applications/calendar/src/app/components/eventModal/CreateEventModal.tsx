@@ -4,7 +4,7 @@ import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { getIsAddressDisabled } from 'proton-shared/lib/helpers/address';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Address } from 'proton-shared/lib/interfaces';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, FormModal, PrimaryButton } from 'react-components';
 import { c } from 'ttag';
 import { EventModel } from '../../interfaces/EventModel';
@@ -43,7 +43,8 @@ const CreateEventModal = ({
     tzid,
     ...rest
 }: Props) => {
-    const errors = validateEventModel(model);
+    const [participantError, setParticipantError] = useState(false);
+    const errors = { ...validateEventModel(model), participantError };
     const { isSubmitted, loadingAction, handleDelete, handleSubmit, lastAction } = useForm({
         containerEl: document.body, // Annoying to get a ref, mostly fine to use this
         errors,
@@ -138,6 +139,7 @@ const CreateEventModal = ({
                 setModel={setModel}
                 tzid={tzid}
                 isCreateEvent={isCreateEvent}
+                setParticipantError={setParticipantError}
             />
         </FormModal>
     );
