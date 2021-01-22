@@ -58,7 +58,26 @@ module.exports = {
         reactDocgen: 'react-docgen-typescript',
         reactDocgenTypescriptOptions: {
             shouldRemoveUndefinedFromOptional: true,
-            propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+            propFilter: (property) => {
+                if (property.parent) {
+                    /**
+                     * Only generate docs for properties which are not a part of the @types
+                     * package. That way we don't get all the inherited dom attributes for
+                     * example from "React.FC<React.HTMLAttributes<HTMLDivElement>>".
+                     *
+                     * Usually examples covered in Storybook docs as well as react-docgen-typescript
+                     * itself show a different code-snippet to deal with this, one which ignores
+                     * solely based on "node_modules".
+                     *
+                     * Since we're defining the components used in our storybook outside this codebase
+                     * and importing it through node_modules, that won't do for us, we need to be
+                     * more specific.
+                     */
+                    return !property.parent.fileName.includes('/node_modules/@types/');
+                }
+
+                return true;
+            },
         },
     },
 };
