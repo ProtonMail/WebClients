@@ -3,10 +3,8 @@ import { useHandler } from 'react-components';
 
 export interface MailboxFocusContext {
     elementIDs: string[];
-    columnLayout: boolean;
     showList: boolean;
     showContentView: boolean;
-    showContentPanel: boolean;
     listRef: MutableRefObject<HTMLElement | null>;
     labelID: string;
     loading: boolean;
@@ -14,10 +12,8 @@ export interface MailboxFocusContext {
 
 export const useMailboxFocus = ({
     elementIDs,
-    columnLayout,
     showList,
     showContentView,
-    showContentPanel,
     listRef,
     labelID,
     loading,
@@ -80,10 +76,13 @@ export const useMailboxFocus = ({
         if (showList) {
             focusOnFirstListItem();
         }
+    }, [showList]);
+
+    useEffect(() => {
         if (showContentView) {
             focusOnLastMessage();
         }
-    }, [columnLayout, showContentPanel, showList, showContentView]);
+    }, [showContentView]);
 
     useEffect(() => {
         if (typeof focusIndex !== 'undefined') {

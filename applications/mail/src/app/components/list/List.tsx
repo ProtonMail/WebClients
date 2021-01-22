@@ -7,6 +7,7 @@ import React, {
     memo,
     forwardRef,
     MutableRefObject,
+    Ref,
 } from 'react';
 import { c, msgid } from 'ttag';
 import { useLabels, classnames, useHandler, generateUID, PaginationRow } from 'react-components';
@@ -72,7 +73,7 @@ const List = (
         onCheckElement,
         onCheckRange,
     }: Props,
-    ref: MutableRefObject<HTMLDivElement>
+    ref: Ref<HTMLDivElement>
 ) => {
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
@@ -99,7 +100,7 @@ const List = (
 
     // Scroll top when changing page
     useEffect(() => {
-        ref.current?.scroll?.({ top: 0 });
+        (ref as MutableRefObject<HTMLElement | null>).current?.scroll?.({ top: 0 });
     }, [loading, page]);
 
     const handleCheck = useHandler((event: ChangeEvent, elementID: string) => {
