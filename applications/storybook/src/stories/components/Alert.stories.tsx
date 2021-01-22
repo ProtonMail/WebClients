@@ -20,7 +20,9 @@ export const Basic = ({ ...args }) => (
 );
 
 Basic.args = {
-    learnMore: 'https://protonmail.com',
+    type: 'info',
+    learnMore: 'https://protonmail.com/',
+    className: '',
 };
 
 export const Types = () => (
