@@ -107,8 +107,11 @@ const getSaveRecurringEventActions = async ({
             const oldVeventWithSequence = oldVeventComponent.sequence
                 ? oldVeventWithSafeSequence
                 : withVeventSequence(oldVeventComponent, getCurrentEvent(originalVeventWithSequence, recurrence));
-            const newVeventWithSequence = withVeventSequence(newVeventComponent, oldVeventWithSequence);
-            const updateOperation = getUpdateSyncOperation(updateSingleRecurrence(newVeventWithSequence), oldEvent);
+            const newVeventWithSequence = withVeventSequence(
+                updateSingleRecurrence(newVeventComponent),
+                oldVeventWithSequence
+            );
+            const updateOperation = getUpdateSyncOperation(newVeventWithSequence, oldEvent);
 
             return {
                 multiSyncActions: [
