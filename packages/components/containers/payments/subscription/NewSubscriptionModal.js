@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    DEFAULT_CURRENCY,
-    DEFAULT_CYCLE,
-    CYCLE,
-    CURRENCIES,
-    PAYMENT_METHOD_TYPES,
-    BLACK_FRIDAY,
-    COUPON_CODES,
-} from 'proton-shared/lib/constants';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE, CURRENCIES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 import { clearPlanIDs, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
@@ -103,12 +95,7 @@ const NewSubscriptionModal = ({
         Credit: 0,
     };
 
-    const getCodes = ({ gift, coupon }) => {
-        if (coupon === COUPON_CODES.BUNDLE || !coupon) {
-            return [gift, BLACK_FRIDAY.COUPON_CODE].filter(isTruthy);
-        }
-        return [gift, coupon].filter(isTruthy);
-    };
+    const getCodes = ({ gift, coupon }) => [gift, coupon].filter(isTruthy);
 
     const handleUnsubscribe = async () => {
         if (hasBonuses(organization)) {
