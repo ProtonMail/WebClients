@@ -1,4 +1,4 @@
-import { Canvas, Story, Meta, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Canvas, Story, Meta, ArgsTable, Primary, PRIMARY_STORY } from "@storybook/addon-docs/blocks";
 import { SelectTwo} from "react-components";
 
 # Select
@@ -37,4 +37,6 @@ This component supporting complex values, together with the fact that option con
 
 To make up for this, an API anomaly is introduced for this component making the `title` prop of the option required, however, in the case that you're using Select in it's most basic form (string `value` & string `children`) you're only required to pass `title` & `value`, leaving `children` out (as can be seen in the [Basic Select](#basic-select)) example.
 
-<ArgsTable of={SelectTwo} />
+<Primary />
+
+<ArgsTable story={PRIMARY_STORY} />

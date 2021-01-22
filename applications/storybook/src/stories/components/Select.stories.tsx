@@ -12,15 +12,20 @@ export default {
     },
 };
 
-export const Basic = () => {
+export const Basic = ({ ...args }) => {
     const [value, setValue] = useState('ant');
 
     return (
-        <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
+        <SelectTwo value={value} onChange={({ value: v }) => setValue(v)} {...args}>
             <Option title="Ant" value="ant" />
             <Option title="Zebra" value="zebra" />
         </SelectTwo>
     );
+};
+
+Basic.args = {
+    placeholder: 'Animal',
+    clearSearchAfter: 500,
 };
 
 export const ControlledOpenState = () => {
