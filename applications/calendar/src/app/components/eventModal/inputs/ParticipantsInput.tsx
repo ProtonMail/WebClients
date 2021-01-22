@@ -37,9 +37,19 @@ interface Props {
     placeholder: string;
     className?: string;
     onChange: (recipients: AttendeeModel[]) => void;
+    setParticipantError?: (value: boolean) => void;
 }
 
-const ParticipantsInput = ({ className, placeholder, model, value = [], onChange, id, addresses }: Props) => {
+const ParticipantsInput = ({
+    className,
+    placeholder,
+    model,
+    value = [],
+    onChange,
+    id,
+    addresses,
+    setParticipantError,
+}: Props) => {
     const numberOfParticipants = value.length;
     const anchorRef = useRef<HTMLInputElement>(null);
 
@@ -57,6 +67,7 @@ const ParticipantsInput = ({ className, placeholder, model, value = [], onChange
     const recipientsSet = new Set(recipients.map(({ Address }) => normalizeEmail(Address)));
 
     const handleAddRecipients = (recipients: Recipient[]) => {
+        setParticipantError?.(false);
         const normalizedRecipients = recipients.map((recipient) => {
             const { Address } = recipient;
             return {
@@ -95,6 +106,7 @@ const ParticipantsInput = ({ className, placeholder, model, value = [], onChange
                 type: 'error',
                 text: c('Error').t`Self invitation not allowed`,
             });
+            setParticipantError?.(true);
         }
         if (attendees.length) {
             onChange([...attendees, ...value]);
@@ -118,6 +130,7 @@ const ParticipantsInput = ({ className, placeholder, model, value = [], onChange
     return (
         <>
             <AddressesAutocomplete
+                hasAddOnBlur
                 className={className}
                 placeholder={placeholder}
                 id={id}
@@ -130,6 +143,9 @@ const ParticipantsInput = ({ className, placeholder, model, value = [], onChange
                 recipients={recipients}
                 onAddRecipients={handleAddRecipients}
                 hasEmailValidation
+                onAddInvalidEmail={() => {
+                    setParticipantError?.(true);
+                }}
             />
             {numberOfParticipants > 100 && (
                 <Alert className="mt0-5" type="error">
@@ -149,6 +165,7 @@ const ParticipantsInput = ({ className, placeholder, model, value = [], onChange
                         {value.map((participant) => {
                             return (
                                 <ParticipantRow
+                                    key={participant.email}
                                     attendee={participant}
                                     contactEmailsMap={contactEmailsMap}
                                     onToggleOptional={toggleIsOptional}

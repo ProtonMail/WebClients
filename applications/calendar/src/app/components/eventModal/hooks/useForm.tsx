@@ -23,6 +23,11 @@ const handleValidation = (errors: EventModelErrors, containerEl: HTMLElement | n
                 return true;
             }
         }
+
+        if (errors.participantError === false) {
+            return false;
+        }
+
         return true;
     }
     return false;

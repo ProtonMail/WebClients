@@ -39,6 +39,7 @@ interface Props {
     tzid?: string;
     isMinimal?: boolean;
     isCreateEvent: boolean;
+    setParticipantError?: (value: boolean) => void;
 }
 
 const EventForm = ({
@@ -52,6 +53,7 @@ const EventForm = ({
     tzid,
     isMinimal,
     isCreateEvent,
+    setParticipantError,
     ...props
 }: Props & HTMLAttributes<HTMLDivElement>) => {
     const {
@@ -159,6 +161,7 @@ const EventForm = ({
                         id={PARTICIPANTS_INPUT_ID}
                         model={model}
                         addresses={addresses}
+                        setParticipantError={setParticipantError}
                         {...createHandlers({ model, setModel, field: 'attendees' }).model}
                     />
                 </IconRow>
