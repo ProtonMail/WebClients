@@ -72,6 +72,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions, onAddA
             if (persistedSession && persistedSession.UID) {
                 return silentApi(withUIDHeaders(persistedSession.UID, revoke())).catch(noop);
             }
+            return undefined;
         });
         onSignOutAll();
     };

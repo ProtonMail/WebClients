@@ -25,7 +25,7 @@ export interface Bundle {
     popular?: boolean;
 }
 
-interface Props<T> {
+interface Props {
     onSelect: (params: { planIDs: PlanIDs; cycle: Cycle; currency: Currency; couponCode?: string | null }) => void;
     bundles: Bundle[];
     className?: string;
@@ -40,7 +40,7 @@ interface Pricing {
     };
 }
 
-const BlackFridayModal = <T,>({ bundles = [], onSelect, ...rest }: Props<T>) => {
+const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
     const api = useApi();
     const [subscription] = useSubscription();
     const productPayer = isProductPayer(subscription);
