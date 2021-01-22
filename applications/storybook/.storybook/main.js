@@ -50,8 +50,8 @@ module.exports = {
             ],
         };
     },
-    stories: ['../src/stories/**/*.stories.*'],
-    addons: ['@storybook/addon-essentials', '@storybook/addon-storysource'],
+    stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+    addons: ['@storybook/addon-links', '@storybook/addon-storysource', '@storybook/addon-essentials'],
     typescript: {
         check: false,
         checkOptions: {},
