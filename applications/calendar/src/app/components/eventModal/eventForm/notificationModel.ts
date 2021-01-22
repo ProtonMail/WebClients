@@ -79,7 +79,7 @@ export const triggerToModel = ({
     type,
     // eslint-disable-next-line no-unused-vars
     trigger: { weeks = 0, days = 0, hours = 0, minutes = 0, isNegative = false },
-}: TriggerToModel): NotificationModel => {
+}: TriggerToModel): Omit<NotificationModel, 'id'> => {
     const parsedTrigger = {
         weeks: getInt(weeks),
         days: getInt(days),
