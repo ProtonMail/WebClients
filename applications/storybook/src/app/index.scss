@@ -41,8 +41,8 @@ body {
 .icon-ok::after {
 	content: '⚠';
 	position: absolute;
-	top: 0.5em;
-	right: 0.5em;
+	top: 0.75em;
+	right: 0;
 	padding: 0 0.5em 0 0;
 	font-size: 2em;
 	color: $pm-global-warning;
@@ -50,4 +50,7 @@ body {
 .icon-ok::after {
 	content: '✔';
 	color: $pm-global-success;
+}
+.icon-ko button {
+	display: none; // don't copy shit!
 }

@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <Meta title="CSS / Front-End helpers / Responsive / 3. Mobile" />
 
@@ -11,7 +11,14 @@ import { Meta } from '@storybook/addon-docs/blocks';
 	Applies <code>display: none</code> to the element for mobile breakpoint. (will stay hidden even on tinymobile breakpoint)
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="nomobile"</strong>&gt;…&lt;/span&gt;</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="nomobile">…</span>
+`}
+/>
   </div>
 </div>
 
@@ -22,7 +29,14 @@ import { Meta } from '@storybook/addon-docs/blocks';
 	Applies <code>float: none; display: block; width: auto;</code> to the element for mobile and smaller breakpoints.
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="automobile"</strong>&gt;…&lt;/span&gt;</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="automobile">…</span>
+`}
+/>
   </div>
 </div>
 
@@ -39,12 +53,19 @@ import { Meta } from '@storybook/addon-docs/blocks';
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-spacebetween onmobile-flex-column"</strong>&gt;<br />
-  &lt;div class="w30"&gt;div&lt;/div&gt;<br />
-  &lt;span class="w30"&gt;span&lt;/span&gt;<br />
-  &lt;em class="w30"&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-spacebetween onmobile-flex-column">
+  <div className="w30">div</div>
+  <span className="w30">span</span>
+  <em className="w30">em</em>
+</div>
+`}
+/>
+
   </div>
 </div>
 
@@ -64,7 +85,14 @@ Other flexbox helpers for mobile:
 	Applies <code>position: static</code> to the element for mobile and smaller breakpoints.
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="onmobile-static"</strong>&gt;…&lt;/span&gt;</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="onmobile-static">…</span>
+`}
+/>
   </div>
 </div>
 
@@ -124,9 +152,16 @@ These apply for mobile breakpoint and smaller.
 	Applies <code>text-align: left</code>/<code>text-align: center</code>/<code>text-align: right</code> to the element for mobile and smaller breakpoints.
   </div>
   <div class="w49">
-	<pre class=" language-markup prismjs"><code>&lt;span <strong>class="onmobile-alignleft"</strong>&gt;…&lt;/span&gt;<br />
-&lt;span <strong>class="onmobile-aligncenter"</strong>&gt;…&lt;/span&gt;<br />
-&lt;span <strong>class="onmobile-alignright"</strong>&gt;…&lt;/span&gt;</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="onmobile-alignleft">…</span>
+<span className="onmobile-aligncenter">…</span>
+<span className="onmobile-alignright">…</span>
+`}
+/>
   </div>
 </div>
 
@@ -138,11 +173,18 @@ These apply for mobile breakpoint and smaller.
 	Hides the second, third, fourth and fifth column of a table for mobile breakpoint and smaller.
   </div>
   <div class="w49">
-	<pre class=" language-markup prismjs"><code>&lt;table <strong>class="onmobile-hideTd2"</strong>&gt;…<br />
-  &lt;table <strong>class="onmobile-hideTd3"</strong>&gt;…<br />
-  &lt;table <strong>class="onmobile-hideTd4"</strong>&gt;…<br />
-  &lt;table <strong>class="onmobile-hideTd5"</strong>&gt;…<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<table className="onmobile-hideTd2">…
+<table className="onmobile-hideTd3">…
+<table className="onmobile-hideTd4">…
+<table className="onmobile-hideTd5">…
+`}
+/>
+
   </div>
 </div>
 
@@ -161,9 +203,15 @@ These apply for mobile breakpoint and smaller.
 	</ul>
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;ul <strong>class="list-2columns onmobile-list-1column"</strong>&gt;<br />
-  …<br />
-&lt;/ul&gt;
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<ul className="list-2columns onmobile-list-1column">
+…
+</ul>
+`}
+/>
   </div>
 </div>

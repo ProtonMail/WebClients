@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <Meta title="CSS / Front-End helpers / MISC - CSS table - Ratio container" />
 
@@ -50,12 +50,19 @@ For some components/special cases (responsive <code>iframe</code>, making a resp
 	  </ul>
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;div class="ratio-container-square"&gt;<br />
-  &lt;div class="inner-ratio-container p1"&gt;<br />
-    Some content in a square box <br />with ratio-container-square class.<br />
-  &lt;/div&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div class="ratio-container-square">
+  <div class="inner-ratio-container p1">
+    Some content in a square box 
+    with ratio-container-square class.
+  </div>
+</div>
+`}
+/>
   </div>
 </div>
 

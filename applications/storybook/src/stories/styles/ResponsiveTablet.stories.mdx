@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <Meta title="CSS / Front-End helpers / Responsive / 2. Tablet" />
 
@@ -12,7 +12,15 @@ import { Meta } from '@storybook/addon-docs/blocks';
 	On mobile breakpoint, will be “reseted” by <code>display: block</code>.
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="notablet"</strong>&gt;…&lt;/span&gt;</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="notablet">…</span>
+`}
+/>
+
   </div>
 </div>
 
@@ -23,7 +31,14 @@ import { Meta } from '@storybook/addon-docs/blocks';
 	Applies <code>float: none; display: block; width: auto;</code> to the element for tablet and smaller breakpoints.
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="autotablet"</strong>&gt;…&lt;/span&gt;</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="autotablet">…</span>
+`}
+/>
   </div>
 </div>
 
@@ -40,12 +55,18 @@ import { Meta } from '@storybook/addon-docs/blocks';
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-spacebetween ontablet-flex-column"</strong>&gt;<br />
-  &lt;div class="w30"&gt;div&lt;/div&gt;<br />
-  &lt;span class="w30"&gt;span&lt;/span&gt;<br />
-  &lt;em class="w30"&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-spacebetween ontablet-flex-column">
+  <div className="w30">div</div>
+  <span className="w30">span</span>
+  <em className="w30">em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -103,9 +124,16 @@ These apply for tablet breakpoint and smaller.
 	Applies <code>text-align: left</code>/<code>text-align: center</code>/<code>text-align: right</code> to the element for tablet and smaller breakpoints.
   </div>
   <div class="w49">
-	<pre class=" language-markup prismjs"><code>&lt;span <strong>class="ontablet-alignleft"</strong>&gt;…&lt;/span&gt;<br />
-&lt;span <strong>class="ontablet-aligncenter"</strong>&gt;…&lt;/span&gt;<br />
-&lt;span <strong>class="ontablet-alignright"</strong>&gt;…&lt;/span&gt;</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="ontablet-alignleft">…</span>
+<span className="ontablet-aligncenter">…</span>
+<span className="ontablet-alignright">…</span>
+`}
+/>
   </div>
 </div>
 
@@ -117,8 +145,15 @@ These apply for tablet breakpoint and smaller.
 	Hides the second and third column of a table for tablet breakpoint and smaller.
   </div>
   <div class="w49">
-	<pre class=" language-markup prismjs"><code>&lt;table <strong>class="ontablet-hideTd2 ontablet-hideTd3"</strong>&gt;…
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<table className="ontablet-hideTd2 ontablet-hideTd3">…
+`}
+/>
+
   </div>
 </div>
 
@@ -137,9 +172,15 @@ These apply for tablet breakpoint and smaller.
 	</ul>
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;ul <strong>class="list-2columns ontablet-list-1column"</strong>&gt;<br />
-  …<br />
-&lt;/ul&gt;
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<ul className="list-2columns ontablet-list-1column">
+…
+</ul>
+`}
+/>
   </div>
 </div>

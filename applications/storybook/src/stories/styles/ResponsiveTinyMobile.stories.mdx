@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <Meta title="CSS / Front-End helpers / Responsive / 4. Tiny mobile" />
 
@@ -11,7 +11,14 @@ import { Meta } from '@storybook/addon-docs/blocks';
 	Applies <code>display: none</code> to the element for tinymobile breakpoint.
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="notinymobile"</strong>&gt;…&lt;/span&gt;</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="notinymobile">…</span>
+`}
+/>
   </div>
 </div>
 
@@ -22,7 +29,14 @@ import { Meta } from '@storybook/addon-docs/blocks';
 	Applies <code>float: none; display: block; width: auto;</code> to the element for tinymobile breakpoint.
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="autotinymobile"</strong>&gt;…&lt;/span&gt;</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="autotinymobile">…</span>
+`}
+/>
   </div>
 </div>
 
@@ -39,12 +53,19 @@ import { Meta } from '@storybook/addon-docs/blocks';
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-spacebetween ontinymobile-flex-column"</strong>&gt;<br />
-  &lt;div class="w30"&gt;div&lt;/div&gt;<br />
-  &lt;span class="w30"&gt;span&lt;/span&gt;<br />
-  &lt;em class="w30"&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-spacebetween ontinymobile-flex-column">
+  <div className="w30">div</div>
+  <span className="w30">span</span>
+  <em className="w30">em</em>
+</div>
+`}
+/>
+
   </div>
 </div>
 
@@ -79,7 +100,14 @@ Examples:
 	Hides the third column of a table for tinymobile breakpoint.
   </div>
   <div class="w49">
-	<pre class=" language-markup prismjs"><code>&lt;table <strong>class="ontinymobile-hideTd3"</strong>&gt;…
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<table className="ontinymobile-hideTd3">…
+`}
+/>
+
   </div>
 </div>

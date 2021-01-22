@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <Meta title="CSS / Front-End helpers / Flexbox" />
 
@@ -17,12 +17,18 @@ Here is a set of flexbox classes, to help positionning elements only using class
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class="language-markup prismjs"><code>&lt;div <strong>class="flex"</strong>&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+  `}
+/>
   </div>
 </div>
 
@@ -37,12 +43,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-row"</strong>&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-row">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -58,12 +70,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-reverse"</strong>&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-reverse">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -78,12 +96,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-column"</strong>&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-column">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -98,12 +122,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-column-reverse"</strong>&gt;<br />
-  &lt;div class=""&gt;div&lt;/div&gt;<br />
-  &lt;span class=""&gt;span&lt;/span&gt;<br />
-  &lt;em class=""&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-column-reverse">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -118,12 +148,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-spacebetween"</strong>&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-spacebetween">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -138,12 +174,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-spacearound"</strong>&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-spacearound">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -158,12 +200,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-justify-end"</strong>&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-justify-end">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -178,12 +226,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-justify-center"</strong>&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-justify-center">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -198,12 +252,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-column flex-items-center"</strong>&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-column flex-items-center">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -218,12 +278,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-column flex-items-end"</strong>&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-column flex-items-end">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -242,12 +308,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div class="flex <strong>flex-items-center</strong>"&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-items-center">
+  <div>div</div>
+  <span>span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -260,12 +332,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
 	</div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div class="<strong>flex</strong>"&gt;<br />
-  &lt;div class="<strong>mauto</strong>"&gt;<br />
-	div with &lt;strong&gt;mauto class&lt;/strong&gt; (margin: auto)<br />
-  &lt;/div&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex">
+  <div className="mauto">
+	div with <strong>mauto class</strong> (margin: auto)
+  </div>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -280,12 +358,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div class="<strong>flex</strong>"&gt;<br />
-  &lt;div&gt;div&lt;/div&gt;<br />
-  &lt;span class="<strong>flex-self-vcenter</strong>"&gt;span&lt;/span&gt;<br />
-  &lt;em&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex">
+  <div>div</div>
+  <span className="flex-self-vcenter">span</span>
+  <em>em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -302,12 +386,18 @@ Note: <code>flex</code> class applies <code>min-width: 0</code> and <code>min-he
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex "</strong>&gt;<br />
-  &lt;div class="w150p"&gt;.w150p&lt;/div&gt;<br />
-  &lt;span class="w25"&gt;.w25&lt;/span&gt;<br />
-  &lt;em class="flex-item-fluid"&gt;.flex-item-fluid&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex ">
+  <div className="w150p">.w150p</div>
+  <span className="w25">.w25</span>
+  <em className="flex-item-fluid">.flex-item-fluid</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -360,12 +450,18 @@ If you need an element that <strong>aligns itself on the top/beginning</strong>,
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex-autogrid"</strong>&gt;<br />
-  &lt;div class="flex-autogrid-item"&gt;…&lt;/div&gt;<br />
-  &lt;div class="flex-autogrid-item"&gt;…&lt;/div&gt;<br />
-  …<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex-autogrid">
+  <div className="flex-autogrid-item">…</div>
+  <div className="flex-autogrid-item">…</div>
+  …
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -383,12 +479,18 @@ Resize the window, by default, elements take all the width on mobile thanks to <
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-spacebetween onmobile-flex-column"</strong>&gt;<br />
-  &lt;div class="w30"&gt;div&lt;/div&gt;<br />
-  &lt;span class="w30"&gt;span&lt;/span&gt;<br />
-  &lt;em class="w30"&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-spacebetween onmobile-flex-column">
+  <div className="w30">div</div>
+  <span className="w30">span</span>
+  <em className="w30">em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -403,12 +505,18 @@ This can be avoided using <code>onmobile-flex-column-nostretch</code>.
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex flex-spacebetween onmobile-flex-column-nostretch"</strong>&gt;<br />
-  &lt;div class="w30"&gt;div&lt;/div&gt;<br />
-  &lt;span class="w30"&gt;span&lt;/span&gt;<br />
-  &lt;em class="w30"&gt;em&lt;/em&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-spacebetween onmobile-flex-column-nostretch">
+  <div className="w30">div</div>
+  <span className="w30">span</span>
+  <em className="w30">em</em>
+</div>
+`}
+/>
   </div>
 </div>
 
@@ -430,10 +538,16 @@ This can be avoided using <code>onmobile-flex-column-nostretch</code>.
     </div>
   </div>
   <div class="w49 flex-self-vcenter">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="flex-autogrid onmobile-flex-column"</strong>&gt;<br />
-  &lt;div class="flex-autogrid-item"&gt;…&lt;/div&gt;<br />
-  &lt;div class="flex-autogrid-item"&gt;…&lt;/div&gt;<br />
-&lt;/div&gt;<br />
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex-autogrid onmobile-flex-column">
+  <div className="flex-autogrid-item">…</div>
+  <div className="flex-autogrid-item">…</div>
+</div>
+`}
+/>
   </div>
 </div>

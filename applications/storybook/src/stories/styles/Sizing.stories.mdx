@@ -1,9 +1,8 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <Meta title="CSS / Front-End helpers / Sizing" />
 
 # Sizing helpers
-
 
 Here is the list of available sizing helpers:
 
@@ -58,12 +57,19 @@ Some other are available, please check in your Sass files the ones used, you can
     Applies <code>height: 100%</code> to element.
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;div <strong>class="h100"</strong>&gt;
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="h100">
+`}
+/>
+
   </div>
 </div>
 
-<code>h100v</code> Applies <code>height: 100vh</code> to an element. (better <span class="uppercase">not</span> using it, thanks to mobiles that don't support it correctly)
+<code>h100v</code> applies <code>height: 100vh</code> to an element. (better <span class="uppercase">not</span> using it, thanks to mobiles that don't support it correctly)
 
 
 <div class="flex flex-spacebetween mb2 onmobile-flex-column">
@@ -71,7 +77,13 @@ Some other are available, please check in your Sass files the ones used, you can
 	  Applies <code>height: auto</code> to element. Make sure this is really needed.
 	</div>
   <div class="w49">
-	  <pre class=" language-markup prismjs"><code>&lt;div <strong>class="hauto"</strong>&gt;
-  </code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="hauto">
+`}
+/>
 	</div>
 </div>

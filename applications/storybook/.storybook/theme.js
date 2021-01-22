@@ -1,27 +1,27 @@
 import { create } from '@storybook/theming/create';
 
 export default create({
-    base: 'dark',
+    base: 'light',
 
     colorPrimary: '#657ee4',
     colorSecondary: '#526ee0',
 
-    // UI
+    // // UI
     appBg: 'rgb(247, 249, 252)',
-    appContentBg: 'white',
+    // appContentBg: 'white',
     appBorderColor: '#dde6ec',
     appBorderRadius: 3,
 
-    // Typography
+    // // Typography
     fontBase:
         '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
     fontCode: 'SFMono-Regular, Consolas, "Liberation Mono", "Menlo", monospace, monospace',
 
-    // Text colors
+    // // Text colors
     textColor: '#262a33',
     textInverseColor: 'rgba(255,255,255,0.9)',
 
-    // Toolbar default and active colors
+    // // Toolbar default and active colors
     barTextColor: '#f6f7fa',
     barSelectedColor: '#657ee4',
     barBg: '#3c414e',

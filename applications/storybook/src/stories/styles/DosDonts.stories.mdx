@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <Meta title="CSS / Front-End conventions / DOs - DONTs" />
 
@@ -16,28 +16,45 @@ import { Meta } from '@storybook/addon-docs/blocks';
 ### Sass nesting inferno
 
 <div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-css prismjs p1 relative icon-ko w100"><code>.my-module &#123;<br />
-  .blabla &#123;<br />
-    .why-not-more-complexifing &#123;<br />
-      em &#123;<br />
-        …<br />
-      }<br />
-    }<br />
-  }<br />
-}</code></pre>
-  </div>
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-css prismjs p1 relative icon-ok w100"><code>.my-module &#123;<br />
-  …<br />
-}<br />
-.my-module-title &#123;<br />
-}<br />
-.my-module-other &#123;<br />
-}<br />
-.my-module-important &#123;<br />
+  <div class="w49 icon-ko relative">
+
+<Source
+  language='css'
+  dark
+  format
+  copy={false}
+  code={`
+.my-module {
+  .blabla {
+    .why-not-more-complexifing {
+      em {
+      …
+      }
+    }
+  }
 }
-</code></pre>
+`}
+/>
+
+  </div>
+  <div class="w49 icon-ok relative">
+
+<Source
+  language='css'
+  dark
+  format
+  code={`
+.my-module {
+  …
+}
+.my-module-title {
+}
+.my-module-other {
+}
+.my-module-important {
+}
+`}
+/>
   </div>
 </div>
 
@@ -46,28 +63,43 @@ Stop doing Sass nesting inferno. The structure must <strong class="uppercase">NO
 ### Targetting elements
 
 <div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-css prismjs p1 relative icon-ko w100"><code>#my-module &#123;<br />
-  …<br />
-}<br />
-#my-module a &#123;<br />
-  …<br />
-}<br />
-.icon-30-blah, .icon-30-blahblah &#123; /* etc. */<br />
-  …<br />
-} </code></pre>
-  </div>
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-css prismjs p1 relative icon-ok w100"><code>.my-module &#123;<br />
-  …<br />
-}<br />
-.my-module-link &#123;<br />
-  …<br />
-}<br />
-[class*=icon-30] &#123;<br />
-    …<br />
+  <div class="w49 icon-ko relative">
+
+<Source
+  language='css'
+  dark
+  format
+  code={`
+#my-module {
+  …
 }
-</code></pre>
+#my-module a {
+  …
+}
+.icon-30-blah, .icon-30-blahblah { /* etc. */
+  …
+} 
+`}
+/>
+  </div>
+  <div class="w49 icon-ok relative">
+
+<Source
+  language='css'
+  dark
+  format
+  code={`
+.my-module {
+  …
+}
+.my-module-link {
+  …
+}
+[class*=icon-30] {
+    …
+}
+`}
+/>
   </div>
 </div>
 
@@ -78,13 +110,28 @@ Please avoid targetting via id and neighbour, better use a direct target via a c
 No unit for this property. Do <strong>NOT</strong> use it to center vertically text.
 
 <div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-css prismjs p1 relative icon-ko w100"><code>line-height: 36px;
-line-height: 3em;</code></pre>
+  <div class="w49 icon-ko relative">
+<Source
+  language='css'
+  dark
+  format
+  code={`
+line-height: 36px;
+line-height: 3em;
+`}
+/>
   </div>
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-css prismjs p1 relative icon-ok w100"><code>line-height: 1.5;
-line-height: normal</code></pre>
+  <div class="w49 icon-ok relative">
+
+<Source
+  language='css'
+  dark
+  format
+  code={`
+line-height: 1.5;
+line-height: normal
+`}
+/>
   </div>
 </div>
 
@@ -96,19 +143,53 @@ See <a href="https://tzi.fr/css/line-height-units/">unitless values for line-hei
 Unless you really have to, avoid mixing positionning on tables (creates bugs on some browsers).
 
 <div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-markup prismjs p1 relative icon-ko w100 m0"><code>&lt;td class="my-module-style"&gt;</code></pre>
-    <pre class=" language-css prismjs p1 relative icon-ko w100 mt0 mb1"><code>.my-module-style &#123;<br />
-  display: flex<br />
-  …<br />
-}</code></pre>
+  <div class="w49 icon-ko relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<td class="my-module-style">
+`}
+/>
   </div>
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-markup prismjs p1 relative icon-ok w100 m0"><code>&lt;td&gt;&lt;span class="my-module-style"&gt;…&lt;/span&gt;</code></pre>
-    <pre class=" language-css prismjs p1 relative icon-ok w100 mt0 mb1"><code>.my-module-style &#123;<br />
-  display: flex<br />
-  …<br />
-}</code></pre>
+  <div class="w49 icon-ok relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<td><span class="my-module-style">…</span>
+`}
+/>
+  </div>
+</div>
+<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 icon-ko relative">
+<Source
+  language='css'
+  dark
+  format
+  code={`
+.my-module-style {
+  display: flex
+  …
+}
+`}
+/>
+  </div>
+  <div class="w49 icon-ok relative">
+<Source
+  language='css'
+  dark
+  format
+  code={`
+.my-module-style {
+  display: flex
+  …
+}
+`}
+/>
   </div>
 </div>
 
@@ -118,36 +199,60 @@ A bug on v3, so trust me :)
 ## HTML
 
 <div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-markup prismjs p1 relative icon-ko w100"><code>&lt;button&gt;&lt;/button&gt;<br />
-&lt;button&gt;&lt;span&gt;&lt;/span&gt;&lt;/button&gt;
-    </code></pre>
+  <div class="w49 icon-ko relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<button></button>
+<button><span></span></button>
+`}
+/>
   </div>
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-markup prismjs p1 relative icon-ok w100"><code>&lt;button title="What it does"&gt;&lt;/button&gt;<br />
-&lt;button&gt;&lt;img alt="What it does" …&gt;&lt;/button&gt;<br />
-&lt;button&gt;<br />
-&lt;span class="sr-only"&gt;What it does&lt;/span&gt;<br />
-&lt;/button&gt;
-    </code></pre>
+  <div class="w49 icon-ok relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<button title="What it does"></button>
+<button><img alt="What it does" …></button>
+<button>
+<span class="sr-only">What it does</span>
+</button>
+`}
+/>
   </div>
 </div>
 
 Put a <code>title</code> in the button, an image with <code>alt</code> in it, a <code>span class="sr-only"</code> in it, but do not leave it empty, otherwise, will be vocalized “button” without any information for the user.
 
 <div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-markup prismjs p1 relative icon-ko w100"><code>&lt;button class="ellipsis"&gt;<br />
-    lorem dolor si amet…<br />
-    &lt;/button&gt;
-    </code></pre>
+  <div class="w49 icon-ko relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<button class="ellipsis">
+lorem dolor si amet…
+</button>
+`}
+/>
   </div>
-  <div class="w49 bg-global-highlight">
-    <pre class=" language-markup prismjs p1 relative icon-ok w100"><code>&lt;button class="ellipsis" <br />
-    &nbsp;title="lorem dolor si amet consegur"&gt;<br />
-    lorem dolor si amet…<br />
-    &lt;/button&gt;
-    </code></pre>
+  <div class="w49 icon-ok relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<button class="ellipsis" 
+ title="lorem dolor si amet consegur">
+lorem dolor si amet…
+</button>
+`}
+/>
   </div>
 </div>
 

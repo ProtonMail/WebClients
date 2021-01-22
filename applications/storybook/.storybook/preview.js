@@ -7,7 +7,6 @@ import createCache from 'proton-shared/lib/helpers/cache';
 import * as config from '../src/app/config';
 import theme from './theme';
 import '../src/app/index.scss';
-import './prismjs.css';
 import './prismjs.js';
 
 const cacheRef = createCache();

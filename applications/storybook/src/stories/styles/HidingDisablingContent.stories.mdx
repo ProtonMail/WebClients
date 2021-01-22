@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <Meta title="CSS / Front-End helpers / Hiding - Disabling elements" />
 
@@ -10,9 +10,15 @@ import { Meta } from '@storybook/addon-docs/blocks';
     Applies a <code>display: none</code> to element.
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;span <strong>hidden</strong>&gt;Lorem ipsum dolor&lt;/span&gt;<br />
-&lt;span <strong>class="hidden"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span hidden>Lorem ipsum dolor</span>
+<span className="hidden">Lorem ipsum dolor</span>
+`}
+/>
   </div>
 </div>
 
@@ -23,8 +29,14 @@ import { Meta } from '@storybook/addon-docs/blocks';
     Applies a <code>visibility: hidden</code> to element (keeps space used but hides it).
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="nonvisible"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="nonvisible">Lorem ipsum dolor</span>
+`}
+/>
   </div>
 </div>
 
@@ -35,8 +47,14 @@ import { Meta } from '@storybook/addon-docs/blocks';
     Makes element disappear but element remain vocalized by speech synthesis (<code>display: none</code>/<code>visibility: hidden</code> elements won't be vocalized)
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;span <strong>class="sr-only"</strong>&gt;Lorem ipsum dolor&lt;/span&gt;
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="sr-only">Lorem ipsum dolor</span>
+`}
+/>
   </div>
 </div>
 
@@ -48,7 +66,13 @@ import { Meta } from '@storybook/addon-docs/blocks';
     If you need to remove pointer events on all children of an element, you may use <code>no-pointer-events-children</code> class.
   </div>
   <div class="w49">
-    <pre class=" language-markup prismjs"><code>&lt;a <strong>class="no-pointer-events"</strong>&gt;Lorem ipsum dolor&lt;/a&gt;
-</code></pre>
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<a className="no-pointer-events">Lorem ipsum dolor</a>
+`}
+/>
   </div>
 </div>
