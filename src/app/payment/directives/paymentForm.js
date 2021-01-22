@@ -1,7 +1,6 @@
 import _ from 'lodash';
 
 import { getPlansMap } from '../../../helpers/paymentHelper';
-import { BLACK_FRIDAY, BUNDLE_COUPON_CODE } from '../../constants';
 import { handlePaymentToken } from '../helpers/paymentToken';
 
 /* @ngInject */
@@ -73,10 +72,6 @@ function paymentForm(
                 // Use the value of whatever we are applying, otherwise the latest valid value confirmed by the API.
                 const coupon = ctrl.coupon || MODEL.coupon;
                 const gift = ctrl.gift || MODEL.gift;
-
-                if (!coupon || coupon === BUNDLE_COUPON_CODE) {
-                    return [gift, BLACK_FRIDAY.COUPON_CODE].filter(Boolean);
-                }
 
                 return [gift, coupon].filter(Boolean);
             };
