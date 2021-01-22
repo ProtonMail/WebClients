@@ -119,6 +119,7 @@ const Toolbar = ({
                 <ToolbarSeparator />
                 <MoveButtons
                     labelID={labelID}
+                    elementID={elementID}
                     labels={labels}
                     folders={folders}
                     breakpoints={breakpoints}

@@ -16,6 +16,7 @@ const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED
 
 interface Props {
     labelID: string;
+    elementID: string | undefined;
     labels?: Label[];
     folders?: Folder[];
     breakpoints: Breakpoints;
@@ -23,7 +24,15 @@ interface Props {
     onBack: () => void;
 }
 
-const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, selectedIDs = [], onBack }: Props) => {
+const MoveButtons = ({
+    labelID = '',
+    elementID,
+    labels = [],
+    folders = [],
+    breakpoints,
+    selectedIDs = [],
+    onBack,
+}: Props) => {
     const [loading, withLoading] = useLoading();
     const moveToFolder = useMoveToFolder();
     const labelIDs = labels.map(({ ID }) => ID);
@@ -35,7 +44,9 @@ const MoveButtons = ({ labelID = '', labels = [], folders = [], breakpoints, sel
         const fromLabelID = labelIDs.includes(labelID) ? INBOX : labelID;
         const elements = getElementsFromIDs(selectedIDs);
         await moveToFolder(elements, LabelID, folderName, fromLabelID);
-        onBack();
+        if (selectedIDs.includes(elementID || '')) {
+            onBack();
+        }
     };
 
     const titleInbox = Hotkeys ? (
