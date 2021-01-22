@@ -12,9 +12,9 @@ type PendingRecord<T> = {
     promise?: Promise<T>;
 };
 
-type RejectedRecord<T> = { status: STATUS.REJECTED; value?: Error };
+type RejectedRecord = { status: STATUS.REJECTED; value?: Error };
 
-type Record<T> = ResolvedRecord<T> | PendingRecord<T> | RejectedRecord<T>;
+type Record<T> = ResolvedRecord<T> | PendingRecord<T> | RejectedRecord;
 
 type State<T> = [T | undefined, boolean, Error | undefined];
 
@@ -70,7 +70,7 @@ const usePromiseResult = <T>(miss: () => Promise<T>, dependencies: React.Depende
                 }
             )
             .catch(
-                (error): RejectedRecord<T> => {
+                (error): RejectedRecord => {
                     return {
                         status: STATUS.REJECTED,
                         value: error,
