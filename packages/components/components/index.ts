@@ -16,6 +16,7 @@ export * from './dragMoveContainer';
 export * from './dropdown';
 export * from './editableText';
 export * from './editor';
+export * from './ellipsis';
 export * from './fileIcon';
 export * from './focus';
 export * from './globalLoader';
