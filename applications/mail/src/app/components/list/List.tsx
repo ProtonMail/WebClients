@@ -83,7 +83,7 @@ const List = (
     const [savedCheck, setSavedCheck] = useState<string[]>();
 
     const elements = usePlaceholders(inputElements, loading, expectedLength);
-
+    const elementIDs = elements.map(({ ID }) => ID);
     const pagingHandlers = usePaging(inputPage, onPage);
     const { page, total } = pagingHandlers;
 
@@ -91,9 +91,9 @@ const List = (
         setDraggedIDs([]);
 
         // Reset checkedIds
-        const filteredCheckedIDs = checkedIDs.filter((id) => elements.some((elm) => elm.ID === id));
+        const filteredCheckedIDs = checkedIDs.filter((id) => elementIDs.includes(id));
 
-        if (filteredCheckedIDs !== checkedIDs) {
+        if (filteredCheckedIDs.length !== checkedIDs.length) {
             onCheck(filteredCheckedIDs, true, true);
         }
     }, [elements]);
