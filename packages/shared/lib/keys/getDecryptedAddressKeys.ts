@@ -66,9 +66,9 @@ interface Args {
 }
 
 export const getDecryptedAddressKeys = async ({
-    addressKeys,
+    addressKeys = [],
     user,
-    userKeys,
+    userKeys = [],
     keyPassword,
 }: Args): Promise<DecryptedKey[]> => {
     if (!addressKeys.length || !userKeys.length) {
