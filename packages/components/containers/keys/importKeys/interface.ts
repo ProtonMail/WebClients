@@ -1,4 +1,3 @@
-import React from 'react';
 import { OpenPGPKey } from 'pmcrypto';
 
 export enum Status {
@@ -8,14 +7,9 @@ export enum Status {
 }
 
 export interface ImportKey {
+    id: string;
     fingerprint: string;
     privateKey: OpenPGPKey;
     status: Status;
-    result?: any;
-}
-
-export type SetKeys = React.Dispatch<React.SetStateAction<ImportKey[]>>;
-export interface OnProcessArguments {
-    keysToImport: ImportKey[];
-    setKeysToImport: SetKeys;
+    result?: 'ok' | Error;
 }

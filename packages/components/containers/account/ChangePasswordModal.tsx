@@ -3,20 +3,23 @@ import { c } from 'ttag';
 import { lockSensitiveSettings } from 'proton-shared/lib/api/user';
 import { InfoAuthedResponse, TwoFaResponse } from 'proton-shared/lib/authentication/interface';
 import { getInfo, PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
-import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
+import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys';
 import { isSSOMode } from 'proton-shared/lib/constants';
 import { persistSessionWithPassword } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from 'proton-shared/lib/helpers/crossTab';
 import { getHasTOTPEnabled, getHasTOTPSettingEnabled } from 'proton-shared/lib/settings/twoFactor';
+import { updatePrivateKeyRoute } from 'proton-shared/lib/api/keys';
+import { srpVerify } from 'proton-shared/lib/srp';
+import { Address } from 'proton-shared/lib/interfaces';
+import { getUpdateKeysPayload } from 'proton-shared/lib/keys/changePassword';
+
 
 import {
     handleUnlock,
-    handleChangeMailboxPassword,
     handleChangeLoginPassword,
-    handleChangeOnePassword,
-    getArmoredPrivateKeys,
 } from './changePasswordHelper';
 import { Alert, PasswordInput, TwoFactorInput, Row, Label, Field, FormModal, Loader } from '../../components';
+
 import { GenericError } from '../error';
 import {
     useAuthentication,
@@ -26,10 +29,10 @@ import {
     useUser,
     useUserSettings,
     useGetUserKeys,
-    useGetAddressesKeys,
     useGetOrganizationKeyRaw,
     useBeforeUnload,
     useGetAddresses,
+    useGetAddressKeys,
 } from '../../hooks';
 
 export enum MODES {
@@ -70,9 +73,9 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
     const { createNotification } = useNotifications();
-    const getOrganizationKey = useGetOrganizationKeyRaw();
+    const getOrganizationKeyRaw = useGetOrganizationKeyRaw();
     const getUserKeys = useGetUserKeys();
-    const getAddressesKeys = useGetAddressesKeys();
+    const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
 
     const [User] = useUser();
@@ -281,6 +284,17 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
             };
         }
 
+        const getAddressesWithKeysList = (addresses: Address[]) => {
+            return Promise.all(
+                addresses.map(async (address) => {
+                    return {
+                        address,
+                        keys: await getAddressKeys(address.ID),
+                    };
+                })
+            );
+        };
+
         if (mode === MODES.SWITCH_TWO_PASSWORD && isSecondPhase) {
             return {
                 title: c('Title').t`Switch to two-password mode`,
@@ -293,11 +307,10 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         // Stop the event manager to prevent race conditions
                         stop();
 
-                        const [addresses, userKeysList, addressesKeysMap, organizationKey] = await Promise.all([
+                        const [addresses, userKeysList, organizationKey] = await Promise.all([
                             getAddresses(),
                             getUserKeys(),
-                            getAddressesKeys(),
-                            isAdmin ? getOrganizationKey() : undefined,
+                            isAdmin ? getOrganizationKeyRaw() : undefined,
                         ]);
 
                         validateConfirmPassword();
@@ -307,14 +320,17 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(
                             inputs.newPassword
                         );
-                        const { armoredOrganizationKey, armoredKeys } = await getArmoredPrivateKeys({
+                        const addressesKeys = await getAddressesWithKeysList(addresses);
+                        const updateKeysPayload = await getUpdateKeysPayload(
+                            addressesKeys,
                             userKeysList,
-                            addresses,
-                            addressesKeysMap,
-                            organizationKey: organizationKey?.privateKey,
+                            organizationKey?.privateKey,
                             keyPassword,
-                        });
-                        await handleChangeMailboxPassword({ api, keySalt, armoredOrganizationKey, armoredKeys });
+                            keySalt
+                        );
+
+                        await api(updatePrivateKeyRoute(updateKeysPayload));
+
                         await mutatePassword(keyPassword);
                         await api(lockSensitiveSettings());
                         await call();
@@ -335,12 +351,12 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
             try {
                 stop();
 
-                const [addresses, userKeysList, addressesKeysMap, organizationKey] = await Promise.all([
+                const [addresses, userKeysList, organizationKey] = await Promise.all([
                     getAddresses(),
                     getUserKeys(),
-                    getAddressesKeys(),
-                    isAdmin ? getOrganizationKey() : undefined,
+                    isAdmin ? getOrganizationKeyRaw() : undefined,
                 ]);
+
                 /**
                  * This is the case for a user who does not have any keys set-up.
                  * They will be in 2-password mode, but not have any keys.
@@ -357,33 +373,37 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 resetErrors();
                 setLoading(true);
 
-                const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(
-                    inputs.newPassword
-                );
-                const { armoredOrganizationKey, armoredKeys } = await getArmoredPrivateKeys({
-                    userKeysList,
-                    addresses,
-                    addressesKeysMap,
-                    organizationKey: organizationKey?.privateKey,
-                    keyPassword,
-                });
-
                 await handleUnlock({
                     api,
                     oldPassword: inputs.oldPassword,
                     totp: inputs.totp,
                 });
 
+                const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(
+                    inputs.newPassword
+                );
+
+                const addressesWithKeys = await getAddressesWithKeysList(addresses);
+                const updateKeysPayload = await getUpdateKeysPayload(
+                    addressesWithKeys,
+                    userKeysList,
+                    organizationKey?.privateKey,
+                    keyPassword,
+                    keySalt
+                );
+
+                const routeConfig = updatePrivateKeyRoute(updateKeysPayload);
+
                 if (mode === MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE) {
-                    await handleChangeMailboxPassword({ api, armoredKeys, armoredOrganizationKey, keySalt });
+                    await api(routeConfig);
                 } else {
-                    await handleChangeOnePassword({
+                    await srpVerify({
                         api,
-                        armoredKeys,
-                        armoredOrganizationKey,
-                        keySalt,
-                        newPassword: inputs.newPassword,
-                        totp: inputs.totp,
+                        credentials: {
+                            password: inputs.newPassword,
+                            totp: inputs.totp,
+                        },
+                        config: routeConfig,
                     });
                 }
                 await mutatePassword(keyPassword);

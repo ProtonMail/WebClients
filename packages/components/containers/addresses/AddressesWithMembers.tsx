@@ -112,6 +112,9 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
             .t`activate`}</AppLink>
     );
 
+    // Non-private admins targeting themselves cannot add addresses because they cannot create keys for them
+    const isNonPrivateSelf = currentMember && currentMember.Private === MEMBER_PRIVATE.READABLE && currentMember.Self;
+
     return (
         <>
             <Alert>{c('Info')
@@ -126,7 +129,7 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
                     />
                 </Block>
             ) : null}
-            {!currentMember || memberIndex === ALL_MEMBERS_ID ? null : (
+            {!currentMember || memberIndex === ALL_MEMBERS_ID || isNonPrivateSelf ? null : (
                 <Block>
                     {mustActivateOrganizationKey ? (
                         <Alert type="warning">

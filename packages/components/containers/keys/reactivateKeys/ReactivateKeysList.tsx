@@ -6,7 +6,7 @@ import { Badge, Button, LoaderIcon, Table, TableRow, TableHeader, TableBody } fr
 import SelectKeyFiles from '../shared/SelectKeyFiles';
 
 import KeysStatus from '../KeysStatus';
-import { Status, ReactivateKeys, ReactivateKey } from './interface';
+import { Status, KeyReactivationRequestStateData, KeyReactivationRequestState } from './interface';
 import { FileInputHandle } from '../../../components/input/FileInput';
 
 const getStatus = (status: Status, result: any) => {
@@ -27,11 +27,12 @@ const getStatus = (status: Status, result: any) => {
 
 interface Props {
     loading?: boolean;
-    allKeys: ReactivateKeys[];
-    onUpload?: (key: ReactivateKey, files: OpenPGPKey[]) => void;
+    states: KeyReactivationRequestState[];
+    onUpload?: (id: string, files: OpenPGPKey[]) => void;
 }
-const ReactivateKeysList = ({ loading = false, allKeys, onUpload }: Props) => {
-    const inactiveKeyRef = useRef<ReactivateKey>();
+
+const ReactivateKeysList = ({ loading = false, states, onUpload }: Props) => {
+    const inactiveKeyRef = useRef<KeyReactivationRequestStateData>();
     const selectRef = useRef<FileInputHandle>(null);
 
     const isUpload = !!onUpload;
@@ -40,16 +41,16 @@ const ReactivateKeysList = ({ loading = false, allKeys, onUpload }: Props) => {
         if (!inactiveKeyRef.current || !onUpload) {
             return;
         }
-        onUpload(inactiveKeyRef.current, files);
+        onUpload(inactiveKeyRef.current.id, files);
         inactiveKeyRef.current = undefined;
     };
 
-    const list = allKeys
-        .map(({ User, Address, keys }) => {
-            const email = Address ? Address.Email : User.Name;
+    const list = states
+        .map((state) => {
+            const email = state.address?.Email || state.user?.Name || '';
 
-            return keys.map((inactiveKey) => {
-                const { ID, fingerprint, uploadedPrivateKey, status, result } = inactiveKey;
+            return state.keysToReactivate.map((keyState) => {
+                const { Key, fingerprint, uploadedPrivateKey, status, result } = keyState;
 
                 const keyStatus = loading && !result ? <LoaderIcon /> : getStatus(status, result);
 
@@ -58,7 +59,7 @@ const ReactivateKeysList = ({ loading = false, allKeys, onUpload }: Props) => {
                 ) : (
                     <Button
                         onClick={() => {
-                            inactiveKeyRef.current = inactiveKey;
+                            inactiveKeyRef.current = keyState;
                             selectRef.current?.click();
                         }}
                     >
@@ -68,7 +69,7 @@ const ReactivateKeysList = ({ loading = false, allKeys, onUpload }: Props) => {
 
                 return (
                     <TableRow
-                        key={ID}
+                        key={Key.ID}
                         cells={[
                             <span key={0} className="mw100 inbl ellipsis">
                                 {email}

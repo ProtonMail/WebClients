@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { APP_NAMES, REQUIRES_INTERNAL_EMAIL_ADDRESS } from 'proton-shared/lib/constants';
-import { Address, Api } from 'proton-shared/lib/interfaces';
+import { Address as tsAddress, Api } from 'proton-shared/lib/interfaces';
 import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
@@ -28,7 +28,7 @@ import AccountUnlockForm from './components/AccountUnlockForm';
 import AccountSetPasswordForm from './components/AccountSetPasswordForm';
 
 interface InternalAddressGeneration {
-    externalEmailAddress: Address;
+    externalEmailAddress: tsAddress;
     keyPassword: string;
     api: Api;
     onDone: () => Promise<void>;
@@ -62,7 +62,7 @@ const AccountLoginContainer = ({ onLogin, onBack, ignoreUnlock = false, Layout, 
     const [generateInternalAddress, setGenerateInternalAddress] = useState<InternalAddressGeneration | undefined>();
 
     const handleDone = async (args: OnLoginCallbackArguments) => {
-        const { UID, LocalID, keyPassword } = args;
+        const { UID } = args;
         const uidApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
 
         const argsWithWelcome = {
@@ -71,9 +71,12 @@ const AccountLoginContainer = ({ onLogin, onBack, ignoreUnlock = false, Layout, 
         };
 
         if (toApp && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(toApp)) {
+            const Addresses =
+                args.Addresses ||
+                (await uidApi<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses));
+            const { keyPassword, LocalID } = args;
             // Since the address route is slow, and in order to make the external check more efficient, query for a smaller number of addresses
             // A user signed up with an external address should only have 1 address
-            const { Addresses } = await uidApi<{ Addresses: Address[] }>(queryAddresses({ PageSize: 5, Page: 0 }));
             if (Addresses?.length && keyPassword && getHasOnlyExternalAddresses(Addresses)) {
                 return setGenerateInternalAddress({
                     externalEmailAddress: Addresses[0],
@@ -180,7 +183,7 @@ const AccountLoginContainer = ({ onLogin, onBack, ignoreUnlock = false, Layout, 
 
         return (
             <Layout title={c('Title').t`Unlock your mailbox`} left={<BackButton onClick={handleCancel} />}>
-                <AccountUnlockForm state={state} setters={setters} onSubmit={handleSubmit} />
+                <AccountUnlockForm state={state} setters={setters} errors={errors} onSubmit={handleSubmit} />
             </Layout>
         );
     }

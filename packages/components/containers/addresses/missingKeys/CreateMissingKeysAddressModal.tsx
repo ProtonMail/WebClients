@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
-import { decryptMemberToken } from 'proton-shared/lib/keys/memberToken';
+import { missingKeysMemberProcess, missingKeysSelfProcess } from 'proton-shared/lib/keys';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { decryptPrivateKey } from 'pmcrypto';
-import { Address, Member } from 'proton-shared/lib/interfaces';
+import { Address, Member, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
+import { queryAddresses } from 'proton-shared/lib/api/members';
 
 import { FormModal, Alert, Table, TableHeader, TableBody, TableRow } from '../../../components';
-import { useApi, useAuthentication, useEventManager, useLoading, useNotifications } from '../../../hooks';
-import { OrganizationKey } from '../../../hooks/useGetOrganizationKeyRaw';
+import {
+    useApi,
+    useAuthentication,
+    useEventManager,
+    useGetAddresses,
+    useGetUserKeys,
+    useLoading,
+    useNotifications,
+} from '../../../hooks';
 
 import SelectEncryption from '../../keys/addKey/SelectEncryption';
 import MissingKeysStatus from './MissingKeysStatus';
 import { AddressWithStatus, Status } from './interface';
-import missingKeysSelfProcess from './missingKeysSelfProcess';
-import missingKeysMemberProcess from './missingKeysMemberProcess';
+import { updateAddress } from './state';
 
 enum STEPS {
     INIT = 0,
@@ -25,18 +31,33 @@ enum STEPS {
 interface Props {
     onClose?: () => void;
     member?: Member;
-    addresses: Address[];
-    organizationKey?: OrganizationKey;
+    addressesToGenerate: Address[];
+    organizationKey?: CachedOrganizationKey;
 }
-const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizationKey, ...rest }: Props) => {
+
+const getStatus = (text: 'ok' | 'loading' | 'error') => {
+    switch (text) {
+        case 'ok':
+            return Status.DONE;
+        case 'loading':
+            return Status.LOADING;
+        default:
+        case 'error':
+            return Status.FAILURE;
+    }
+};
+
+const CreateMissingKeysAddressModal = ({ onClose, member, addressesToGenerate, organizationKey, ...rest }: Props) => {
     const api = useApi();
     const authentication = useAuthentication();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [step, setStep] = useState(STEPS.INIT);
+    const getUserKeys = useGetUserKeys();
+    const getAddresses = useGetAddresses();
     const [formattedAddresses, setFormattedAddresses] = useState<AddressWithStatus[]>(() =>
-        addresses.map((address) => ({
+        addressesToGenerate.map((address) => ({
             ...address,
             status: {
                 type: Status.QUEUED,
@@ -46,47 +67,61 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
 
     const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
 
-    const processMember = async () => {
-        if (!member) {
-            throw new Error('Invalid member');
-        }
-        const PrimaryKey = member.Keys.find(({ Primary }) => Primary === 1);
-
-        if (!PrimaryKey) {
-            createNotification({ text: c('Error').t`Member keys are not set up.` });
-            return;
-        }
-        if (!PrimaryKey.Token) {
-            createNotification({ text: c('Error').t`Member token invalid.` });
-            return;
-        }
+    const processMember = async (member: Member) => {
         if (!organizationKey?.privateKey) {
             createNotification({ text: c('Error').t`Organization key is not decrypted.` });
             return;
         }
+        const memberAddresses = await api<{ Addresses: Address[] }>(queryAddresses(member.ID)).then(
+            ({ Addresses }) => Addresses
+        );
+        try {
+            const addresses = await getAddresses();
 
-        const decryptedToken = await decryptMemberToken(PrimaryKey.Token, organizationKey.privateKey);
-        const primaryMemberKey = await decryptPrivateKey(PrimaryKey.PrivateKey, decryptedToken);
-
-        await missingKeysMemberProcess({
-            api,
-            encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
-            addresses,
-            member,
-            setFormattedAddresses,
-            primaryMemberKey,
-            organizationKey: organizationKey.privateKey,
-        });
-        await call();
+            await missingKeysMemberProcess({
+                api,
+                encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
+                ownerAddresses: addresses,
+                memberAddressesToGenerate: addressesToGenerate,
+                member,
+                memberAddresses,
+                onUpdate: (addressID, event) => {
+                    setFormattedAddresses((oldState) => {
+                        return updateAddress(oldState, addressID, {
+                            status: {
+                                type: getStatus(event.status),
+                                tooltip: event.result,
+                            },
+                        });
+                    });
+                },
+                organizationKey: organizationKey.privateKey,
+            });
+            await call();
+        } catch (e) {
+            createNotification({ text: e.message });
+        }
     };
 
     const processSelf = async () => {
+        const [userKeys, addresses] = await Promise.all([getUserKeys(), getAddresses()]);
         await missingKeysSelfProcess({
             api,
+            userKeys,
             addresses,
+            addressesToGenerate,
             password: authentication.getPassword(),
             encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
-            setFormattedAddresses,
+            onUpdate: (addressID, event) => {
+                setFormattedAddresses((oldState) => {
+                    return updateAddress(oldState, addressID, {
+                        status: {
+                            type: getStatus(event.status),
+                            tooltip: event.result,
+                        },
+                    });
+                });
+            },
         });
         await call();
     };
@@ -94,7 +129,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addresses, organizatio
     const handleSubmit = () => {
         if (step === STEPS.INIT) {
             withLoading(
-                (!member || member.Self ? processSelf() : processMember())
+                (!member || member.Self ? processSelf() : processMember(member))
                     .then(() => setStep(STEPS.DONE))
                     .catch(() => setStep(STEPS.ERROR))
             );

@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
-import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
+import { getUser, queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
+import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
 import { updateUsername } from 'proton-shared/lib/api/settings';
-import { generateAddressKey } from 'proton-shared/lib/keys/keys';
-import { Api } from 'proton-shared/lib/interfaces';
+import { Api, Address as tsAddress, User as tsUser } from 'proton-shared/lib/interfaces';
+import {
+    createAddressKeyLegacy,
+    createAddressKeyV2,
+    getDecryptedUserKeys,
+    getHasMigratedAddressKeys,
+    getPrimaryKey,
+} from 'proton-shared/lib/keys';
 
 import { useErrorHandler } from '../../hooks';
 
-import createKeyHelper from '../keys/addKey/createKeyHelper';
 import handleSetupAddress from '../signup/helpers/handleSetupAddress';
 import AccountGenerateInternalAddressForm from './components/AccountGenerateInternalAddressForm';
 
@@ -19,6 +24,7 @@ interface Props {
     api: Api;
     keyPassword: string;
 }
+
 const AccountGenerateInternalAddressContainer = ({ onDone, api, keyPassword }: Props) => {
     const [username, setUsername] = useState('');
     const [usernameError, setUsernameError] = useState('');
@@ -35,6 +41,11 @@ const AccountGenerateInternalAddressContainer = ({ onDone, api, keyPassword }: P
             throw new Error(error);
         }
 
+        const [user, addresses] = await Promise.all([
+            api<{ User: tsUser }>(getUser()).then(({ User }) => User),
+            api<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses),
+        ]);
+
         try {
             await api(queryCheckUsernameAvailability(username));
         } catch (e) {
@@ -46,21 +57,30 @@ const AccountGenerateInternalAddressContainer = ({ onDone, api, keyPassword }: P
 
         const [Address] = await handleSetupAddress({ api, domains: availableDomains, username });
 
-        const { privateKey, privateKeyArmored } = await generateAddressKey({
-            email: Address.Email,
-            passphrase: keyPassword,
-            encryptionConfig: ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
-        });
-
-        await createKeyHelper({
-            api,
-            privateKeyArmored,
-            privateKey,
-            Address,
-            parsedKeys: [],
-            actionableKeys: [],
-            signingKey: privateKey,
-        });
+        if (getHasMigratedAddressKeys(addresses)) {
+            const userKeys = await getDecryptedUserKeys({
+                user,
+                userKeys: user.Keys,
+                keyPassword,
+            });
+            const primaryUserKey = getPrimaryKey(userKeys)?.privateKey;
+            if (!primaryUserKey) {
+                throw new Error('Missing primary user key');
+            }
+            await createAddressKeyV2({
+                api,
+                userKey: primaryUserKey,
+                address: Address,
+                activeKeys: [],
+            });
+        } else {
+            await createAddressKeyLegacy({
+                api,
+                passphrase: keyPassword,
+                address: Address,
+                activeKeys: [],
+            });
+        }
     };
 
     const handleSubmit = async () => {

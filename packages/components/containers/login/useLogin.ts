@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { srpVerify } from 'proton-shared/lib/srp';
 import { upgradePassword } from 'proton-shared/lib/api/settings';
 import { auth2FA, getInfo, revoke } from 'proton-shared/lib/api/auth';
-import { Api, KeySalt as tsKeySalt, User as tsUser } from 'proton-shared/lib/interfaces';
+import { Address as tsAddress, Api, KeySalt as tsKeySalt, User as tsUser } from 'proton-shared/lib/interfaces';
 import { getUser } from 'proton-shared/lib/api/user';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
 import { HTTP_ERROR_CODES } from 'proton-shared/lib/errors';
@@ -14,6 +14,10 @@ import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { maybeResumeSessionByUser, persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { MEMBER_PRIVATE, USER_ROLES } from 'proton-shared/lib/constants';
+import { queryAddresses } from 'proton-shared/lib/api/addresses';
+import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from 'proton-shared/lib/keys/upgradeKeysV2';
+import { traceError } from 'proton-shared/lib/helpers/sentry';
+import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
 import { getAuthTypes, handleUnlockKey } from './helper';
 import handleSetupAddressKeys from './handleSetupAddressKeys';
@@ -48,32 +52,42 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
         setState(INITIAL_STATE);
     };
 
+    const getCache = () => {
+        const cache = cacheRef.current;
+        if (!cache) {
+            throw new Error('Invalid state');
+        }
+        return cache;
+    };
+
     /**
      * Finalize login can be called without a key password in these cases:
      * 1) The admin panel
      * 2) Users who have no keys but are in 2-password mode
      */
-    const finalizeLogin = async (keyPassword?: string, maybeUser?: tsUser) => {
-        const cache = cacheRef.current;
-        if (!cache || cache.authResult === undefined || cache.authVersion === undefined) {
-            throw new Error('Invalid state');
-        }
+    const finalizeLogin = async ({
+        loginPassword,
+        keyPassword,
+        user: maybeUser,
+        addresses: maybeAddresess,
+    }: {
+        loginPassword: string;
+        keyPassword?: string;
+        user?: tsUser;
+        addresses?: tsAddress[];
+    }) => {
+        const { authResult, authVersion, authApi } = getCache();
         cacheRef.current = undefined;
-        const { authVersion, authResult } = cache;
 
-        const { UID, AccessToken } = authResult;
-        const { password } = state;
-
-        const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
         if (authVersion < AUTH_VERSION) {
             await srpVerify({
                 api: authApi,
-                credentials: { password },
+                credentials: { password: loginPassword },
                 config: upgradePassword(),
             });
         }
 
-        const User: tsUser = maybeUser || (await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User));
+        const User = !maybeUser ? await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User) : maybeUser;
 
         const validatedSession = await maybeResumeSessionByUser(api, User);
         if (validatedSession) {
@@ -83,60 +97,113 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
         }
 
         await persistSession({ ...authResult, User, keyPassword, api });
-        await onLogin({ ...authResult, User, keyPassword });
+        await onLogin({ ...authResult, User, Addresses: maybeAddresess, keyPassword });
+    };
+
+    const handleKeyUpgrade = async ({
+        loginPassword,
+        clearKeyPassword,
+        keyPassword,
+        user: maybeUser,
+        isOnePasswordMode,
+    }: {
+        loginPassword: string;
+        clearKeyPassword: string;
+        keyPassword: string;
+        user?: tsUser;
+        addresses?: tsAddress;
+        isOnePasswordMode?: boolean;
+    }) => {
+        const { authApi } = getCache();
+
+        const [User, Addresses] = await Promise.all([
+            maybeUser || authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
+            hasGenerateKeys
+                ? authApi<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses)
+                : undefined,
+        ]);
+
+        if (Addresses && getHasV2KeysToUpgrade(User, Addresses)) {
+            const newKeyPassword = await upgradeV2KeysHelper({
+                user: User,
+                addresses: Addresses,
+                loginPassword,
+                keyPassword,
+                clearKeyPassword,
+                isOnePasswordMode,
+                api: authApi,
+            }).catch((e) => {
+                traceError(e);
+                return undefined;
+            });
+            if (newKeyPassword !== undefined) {
+                return finalizeLogin({
+                    loginPassword,
+                    keyPassword: newKeyPassword,
+                    // undefined user and addresses to trigger a refresh
+                    user: undefined,
+                    addresses: undefined,
+                });
+            }
+        }
+
+        return finalizeLogin({
+            loginPassword,
+            keyPassword,
+            user: User,
+            addresses: Addresses,
+        });
     };
 
     /**
      * Step 3. Handle unlock.
      * Attempt to decrypt the primary private key with the password.
      */
-    const handleUnlock = async (password: string) => {
-        const cache = cacheRef.current;
-        if (!cache || !cache.userSaltResult) {
+    const handleUnlock = async (loginPassword: string, clearKeyPassword: string, isOnePasswordMode: boolean) => {
+        const { userSaltResult } = getCache();
+        if (!userSaltResult) {
             throw new Error('Invalid state');
         }
 
-        const { userSaltResult } = cache;
         const [User, KeySalts] = userSaltResult;
 
-        const result = await handleUnlockKey(User, KeySalts, password).catch(() => undefined);
+        const result = await handleUnlockKey(User, KeySalts, clearKeyPassword).catch(() => undefined);
         if (!result) {
             const error = new Error(c('Error').t`Incorrect mailbox password. Please try again`);
             error.name = 'PasswordError';
             throw error;
         }
 
-        await finalizeLogin(result.keyPassword, User);
+        await handleKeyUpgrade({
+            loginPassword,
+            clearKeyPassword,
+            keyPassword: result.keyPassword,
+            user: User,
+            isOnePasswordMode,
+        });
     };
 
     /**
      * Setup keys and address for users that have not setup.
      */
     const handleSetupPassword = async (newPassword: string) => {
-        const cache = cacheRef.current;
-        if (!cache || cache.authResult === undefined) {
-            throw new Error('Invalid state');
-        }
-        const { authResult } = cache;
-        const { UID, AccessToken } = authResult;
-        const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
+        const { authApi } = getCache();
         const keyPassword = await handleSetupAddressKeys({
             api: authApi,
             username: state.username,
             password: newPassword,
         });
-        // Undefined user to force refresh to get keys that were just setup
-        await finalizeLogin(keyPassword, undefined);
+        await finalizeLogin({
+            loginPassword: newPassword,
+            keyPassword,
+            // Undefined user to force refresh to get keys that were just setup
+            user: undefined,
+        });
     };
 
     const next = async (previousForm: FORM) => {
-        const cache = cacheRef.current;
-        if (!cache || cache.authResult === undefined) {
-            throw new Error('Invalid state');
-        }
-        const { authResult } = cache;
-        const { UID, AccessToken } = authResult;
-        const { hasTotp, hasU2F, hasUnlock } = getAuthTypes(authResult);
+        const cache = getCache();
+        const { hasTotp, hasUnlock, hasU2F, authApi } = cache;
 
         const gotoForm = (form: FORM) => {
             return setState((state: LoginModel) => ({ ...state, form }));
@@ -150,35 +217,42 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
             return gotoForm(FORM.U2F);
         }
 
+        const loginPassword = state.password;
+
         // Special case for the admin panel, return early since it can not get key salts.
         if (ignoreUnlock) {
-            return finalizeLogin();
+            return finalizeLogin({
+                loginPassword,
+            });
         }
 
         if (!cache.userSaltResult) {
-            const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
             cache.userSaltResult = await Promise.all([
                 authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
                 authApi<{ KeySalts: tsKeySalt[] }>(getKeySalts()).then(({ KeySalts }) => KeySalts),
             ]);
         }
+
         const [User] = cache.userSaltResult;
 
         if (User.Keys.length === 0) {
             if (hasGenerateKeys) {
-                if (User.Role === USER_ROLES.MEMBER_ROLE && User.Private === MEMBER_PRIVATE.UNREADABLE) {
+                if (
+                    (User.Role === USER_ROLES.ADMIN_ROLE || User.Role === USER_ROLES.MEMBER_ROLE) &&
+                    User.Private === MEMBER_PRIVATE.UNREADABLE
+                ) {
                     return gotoForm(FORM.NEW_PASSWORD);
                 }
-                return handleSetupPassword(state.password);
+                return handleSetupPassword(loginPassword);
             }
-            return finalizeLogin(undefined, User);
+            return finalizeLogin({ loginPassword, user: User });
         }
 
         if (hasUnlock) {
             return gotoForm(FORM.UNLOCK);
         }
 
-        return handleUnlock(state.password);
+        return handleUnlock(loginPassword, loginPassword, true);
     };
 
     /**
@@ -186,17 +260,13 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
      * Unless there is another auth type active, the flow will continue until it's logged in.
      */
     const handleTotp = async (totp: string) => {
-        const cache = cacheRef.current;
-        if (!cache || !cache.authResult) {
-            throw new Error('Missing cache');
-        }
+        const { authApi } = getCache();
 
-        const { authResult } = cache;
-        const { UID, AccessToken } = authResult;
-
-        await api(withAuthHeaders(UID, AccessToken, auth2FA({ totp }))).catch((e) => {
+        await authApi(auth2FA({ totp })).catch((e) => {
             if (e.status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
-                const error = new Error(e.data?.Error || c('Error').t`Incorrect login credentials. Please try again`);
+                const error = new Error(
+                    getApiErrorMessage(e) || c('Error').t`Incorrect login credentials. Please try again`
+                );
                 error.name = 'TOTPError';
                 throw error;
             }
@@ -217,10 +287,14 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
             credentials: { username, password },
             initialAuthInfo: infoResult,
         });
+        const { UID, AccessToken } = authResult;
+        const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
 
         cacheRef.current = {
             authResult,
             authVersion,
+            authApi,
+            ...getAuthTypes(authResult),
         };
 
         await next(FORM.LOGIN);
@@ -238,7 +312,6 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
         state,
         errors,
         setters,
-        setState,
         handleLogin: () => {
             const { username, password } = state;
             return handleLogin(username, password).catch((e) => {
@@ -257,8 +330,8 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
             });
         },
         handleUnlock: () => {
-            const { keyPassword } = state;
-            return handleUnlock(keyPassword).catch((e) => {
+            const { password, keyPassword } = state;
+            return handleUnlock(password, keyPassword, true).catch((e) => {
                 if (e.name !== 'PasswordError') {
                     handleCancel();
                 }
@@ -267,7 +340,10 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
         },
         handleSetNewPassword: () => {
             const { newPassword } = state;
-            return handleSetupPassword(newPassword);
+            return handleSetupPassword(newPassword).catch((e) => {
+                handleCancel();
+                throw e;
+            });
         },
         handleCancel,
     };

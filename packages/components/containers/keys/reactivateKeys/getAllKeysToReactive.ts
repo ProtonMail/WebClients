@@ -1,49 +1,43 @@
-import { Address, CachedKey } from 'proton-shared/lib/interfaces';
+import { Address, DecryptedKey, Key, UserModel } from 'proton-shared/lib/interfaces';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { KeyReactivation } from './interface';
+import { KeyReactivationRequest } from './interface';
 
-const getKeysToReactivate = (keys: CachedKey[] = []) => {
-    return keys.filter(({ privateKey }) => !privateKey);
+const getKeysToReactivate = (Keys: Key[], keys: DecryptedKey[] = []) => {
+    const set = new Set(keys.map(({ ID }) => ID));
+    return Keys.filter((Key) => {
+        return !set.has(Key.ID);
+    });
 };
 
-export const getKeysToReactivateCount = (inactiveKeys: KeyReactivation[]) => {
-    return inactiveKeys.reduce((acc, { keys }) => acc + keys.length, 0);
+export const getKeysToReactivateCount = (inactiveKeys: KeyReactivationRequest[]) => {
+    return inactiveKeys.reduce((acc, { keysToReactivate }) => acc + keysToReactivate.length, 0);
 };
 
-interface Arguments {
-    Addresses: Address[];
-    User: any;
-    userKeysList: CachedKey[];
-    addressesKeysMap: { [key: string]: CachedKey[] };
-}
-export const getAllKeysToReactivate = ({
-    Addresses = [],
-    addressesKeysMap = {},
-    User = {},
-    userKeysList = [],
-}: Arguments) => {
-    const allAddressesKeys = Addresses.map((Address) => {
-        const { ID } = Address;
-        const addressKeysList = addressesKeysMap[ID];
-        const addressKeysToReactivate = getKeysToReactivate(addressKeysList);
-        if (!addressKeysToReactivate.length) {
+export const getAllKeysReactivationRequests = (
+    addressesKeys: { address: Address; keys: DecryptedKey[] }[],
+    User: UserModel,
+    userKeys: DecryptedKey[]
+): KeyReactivationRequest[] => {
+    const allAddressesKeys = addressesKeys.map(({ address, keys }) => {
+        const inactiveAddressKeys = getKeysToReactivate(address.Keys, keys);
+        if (!inactiveAddressKeys.length) {
             return;
         }
         return {
-            Address,
-            keys: addressKeysToReactivate,
+            address,
+            keys,
+            keysToReactivate: inactiveAddressKeys,
         };
-    }, []);
+    });
 
-    const inactiveUserKeys = getKeysToReactivate(userKeysList);
+    const inactiveUserKeys = getKeysToReactivate(User.Keys, userKeys);
+    const userKeysReactivation = inactiveUserKeys.length
+        ? {
+              user: User,
+              keys: userKeys,
+              keysToReactivate: inactiveUserKeys,
+          }
+        : undefined;
 
-    return [
-        inactiveUserKeys.length
-            ? {
-                  User,
-                  keys: inactiveUserKeys,
-              }
-            : undefined,
-        ...allAddressesKeys,
-    ].filter(isTruthy);
+    return [userKeysReactivation, ...allAddressesKeys].filter(isTruthy);
 };

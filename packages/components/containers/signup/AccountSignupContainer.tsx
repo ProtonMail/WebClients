@@ -7,13 +7,12 @@ import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { c } from 'ttag';
 import { Address, HumanVerificationMethodType, User as tsUser } from 'proton-shared/lib/interfaces';
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
-import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
-import { getResetAddressesKeys } from 'proton-shared/lib/keys/resetKeys';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { useHistory } from 'react-router-dom';
 import { updateLocale } from 'proton-shared/lib/api/settings';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { handleSetupKeys } from 'proton-shared/lib/keys';
 import { localeCode } from 'proton-shared/lib/i18n';
 import {
     getUser,
@@ -56,7 +55,6 @@ import handleCreateUser from './helpers/handleCreateUser';
 import handleCreateExternalUser from './helpers/handleCreateExternalUser';
 import createAuthApi from './helpers/authApi';
 import handleSetupAddress from './helpers/handleSetupAddress';
-import handleSetupKeys from './helpers/handleSetupKeys';
 import OneAccountIllustration from '../illustration/OneAccountIllustration';
 
 interface Props {
@@ -253,13 +251,13 @@ const AccountSignupContainer = ({ toApp, onLogin, onBack, Layout }: Props) => {
                 ? await handleSetupAddress({ api: authApi.api, domains, username })
                 : await authApi.api<{ Addresses: Address[] }>(queryAddresses()).then(({ Addresses }) => Addresses);
 
-            let keyPassword;
-            if (addresses.length) {
-                const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
-                keyPassword = passphrase;
-                const newAddressesKeys = await getResetAddressesKeys({ addresses, passphrase });
-                await handleSetupKeys({ api: authApi.api, salt, addressKeys: newAddressesKeys, password });
-            }
+            const keyPassword = addresses.length
+                ? await handleSetupKeys({
+                      api: authApi.api,
+                      addresses,
+                      password,
+                  })
+                : undefined;
 
             const authResponse = authApi.getAuthResponse();
             const User = await authApi.api<{ User: tsUser }>(getUser()).then(({ User }) => User);

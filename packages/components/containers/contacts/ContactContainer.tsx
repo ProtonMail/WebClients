@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CachedKey } from 'proton-shared/lib/interfaces';
+import { DecryptedKey } from 'proton-shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts/Contact';
 
 import useContact from './useContact';
@@ -12,7 +12,7 @@ interface Props {
     contactID: string;
     contactEmails: ContactEmail[];
     contactGroupsMap: { [contactGroupID: string]: ContactGroup };
-    userKeysList: CachedKey[];
+    userKeysList: DecryptedKey[];
     ownAddresses: string[];
     isModal?: boolean;
     onDelete: () => void;

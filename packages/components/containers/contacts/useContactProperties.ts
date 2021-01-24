@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from 'react';
 
-import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { splitKeys } from 'proton-shared/lib/keys';
 import { prepareContact, CryptoProcessingError } from 'proton-shared/lib/contacts/decrypt';
-import { CachedKey } from 'proton-shared/lib/interfaces';
+import { DecryptedKey } from 'proton-shared/lib/interfaces';
 import { Contact, ContactProperties } from 'proton-shared/lib/interfaces/contacts/Contact';
 
 export type ContactPropertiesModel = {
@@ -12,7 +12,7 @@ export type ContactPropertiesModel = {
 };
 
 interface Props {
-    userKeysList: CachedKey[];
+    userKeysList: DecryptedKey[];
     contact: Contact;
 }
 

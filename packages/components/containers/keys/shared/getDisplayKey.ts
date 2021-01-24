@@ -1,20 +1,24 @@
-import { describe } from 'proton-shared/lib/keys/keysAlgorithm';
-import { KEY_FLAG } from 'proton-shared/lib/constants';
-import { Address, Key } from 'proton-shared/lib/interfaces';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-
 import { algorithmInfo } from 'pmcrypto';
+
+import { getFormattedAlgorithmName, getDefaultKeyFlags } from 'proton-shared/lib/keys';
+import { KEY_FLAG } from 'proton-shared/lib/constants';
+import { Address, Key, SignedKeyListItem, UserModel } from 'proton-shared/lib/interfaces';
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+
 import { KeyDisplay } from './interface';
 
 interface Arguments {
-    User: any;
+    User: UserModel;
     Address?: Address;
     fingerprint: string;
     isDecrypted: boolean;
     isLoading: boolean;
     Key: Key;
     algorithmInfo?: algorithmInfo;
+    signedKeyListMap: SimpleMap<SignedKeyListItem>;
 }
+
 export const getDisplayKey = ({
     User,
     Address,
@@ -22,18 +26,24 @@ export const getDisplayKey = ({
     fingerprint,
     isDecrypted,
     isLoading,
-    Key: { ID, Primary, Flags },
+    signedKeyListMap,
+    Key,
 }: Arguments): KeyDisplay => {
-    const { Status } = Address || {};
     const { isSubUser, isPrivate } = User;
+    const signedKeyListItem = signedKeyListMap[fingerprint];
 
-    const isAddressDisabled = Status === 0;
+    const { ID, Flags, Primary } = Key;
+
+    const flags = signedKeyListItem?.Flags ?? Flags ?? getDefaultKeyFlags();
+    const primary = signedKeyListItem?.Primary ?? Primary ?? 0;
+
+    const isAddressDisabled = Address?.Status === 0;
     const isAddressKey = !!Address;
-    const isPrimary = Primary === 1;
+    const isPrimary = primary === 1;
 
     // Flags undefined for user keys
-    const canEncrypt = Flags === undefined ? true : hasBit(Flags, KEY_FLAG.FLAG_NOT_OBSOLETE);
-    const canSign = Flags === undefined ? true : hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED);
+    const canEncrypt = flags === undefined ? true : hasBit(flags, KEY_FLAG.FLAG_NOT_OBSOLETE);
+    const canSign = flags === undefined ? true : hasBit(flags, KEY_FLAG.FLAG_NOT_COMPROMISED);
 
     const canEncryptAndSign = canEncrypt && canSign;
     const isObsolete = isDecrypted && !isAddressDisabled && !canEncrypt;
@@ -67,7 +77,9 @@ export const getDisplayKey = ({
         ID,
         fingerprint,
         algorithmInfo,
-        algorithm: describe(algorithmInfo),
+        flags,
+        primary,
+        algorithm: getFormattedAlgorithmName(algorithmInfo),
         status,
         permissions,
     };

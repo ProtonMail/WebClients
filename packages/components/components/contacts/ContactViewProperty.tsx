@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { clearType, getType, formatAdr } from 'proton-shared/lib/contacts/property';
 import { getTypeLabels } from 'proton-shared/lib/helpers/contacts';
-import { CachedKey } from 'proton-shared/lib/interfaces';
+import { DecryptedKey } from 'proton-shared/lib/interfaces';
 import {
     ContactProperty,
     ContactProperties,
@@ -34,7 +34,7 @@ interface Props {
     contactEmail: ContactEmail;
     contactGroups: ContactGroup[];
     ownAddresses: string[];
-    userKeysList: CachedKey[];
+    userKeysList: DecryptedKey[];
     leftBlockWidth?: string;
     rightBlockWidth?: string;
     isPreview: boolean;

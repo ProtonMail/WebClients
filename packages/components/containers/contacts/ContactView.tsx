@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ContactProperties, ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts/Contact';
-import { CachedKey } from 'proton-shared/lib/interfaces';
+import { DecryptedKey } from 'proton-shared/lib/interfaces';
 import { CryptoProcessingError } from 'proton-shared/lib/contacts/decrypt';
 import { singleExport } from 'proton-shared/lib/contacts/export';
 
@@ -20,7 +20,7 @@ interface Props {
     contactGroupsMap: { [contactGroupID: string]: ContactGroup };
     ownAddresses: string[];
     properties: ContactProperties;
-    userKeysList: CachedKey[];
+    userKeysList: DecryptedKey[];
     errors?: CryptoProcessingError[];
     isModal: boolean;
     onDelete: () => void;

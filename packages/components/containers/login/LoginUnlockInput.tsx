@@ -6,9 +6,10 @@ interface Props {
     password: string;
     setPassword: (password: string) => void;
     id: string;
+    error?: string;
 }
 
-const LoginUnlockInput = ({ password, setPassword, id }: Props) => {
+const LoginUnlockInput = ({ password, setPassword, id, error }: Props) => {
     return (
         <PasswordInput
             name="password"
@@ -16,6 +17,7 @@ const LoginUnlockInput = ({ password, setPassword, id }: Props) => {
             autoCapitalize="off"
             autoCorrect="off"
             id={id}
+            error={error}
             required
             className="w100"
             value={password}
