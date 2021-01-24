@@ -2,27 +2,26 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import { addIncomingDefault, updateIncomingDefault } from 'proton-shared/lib/api/incomingDefaults';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
 import { IncomingDefault } from 'proton-shared/lib/interfaces/IncomingDefault';
+import { BLACKLIST_LOCATION, WHITELIST_LOCATION } from 'proton-shared/lib/constants';
+
 import { FormModal, Radio, Row, Label, Field } from '../../components';
 import { useNotifications, useApi, useLoading } from '../../hooks';
 
 import AddEmailToList from './spamlist/AddEmailToList';
 import AddDomainToList from './spamlist/AddDomainToList';
 
-const EMAIL_MODE = 'email';
-const DOMAIN_MODE = 'domain';
-
-type WHITE_OR_BLACK_LOCATION = typeof WHITELIST_LOCATION | typeof BLACKLIST_LOCATION;
+import { WHITE_OR_BLACK_LOCATION } from './interfaces';
+import { DOMAIN_MODE, EMAIL_MODE } from './constants';
 
 interface Props {
     type: WHITE_OR_BLACK_LOCATION;
     incomingDefault?: IncomingDefault;
-    onClose: () => void;
+    onClose?: () => void;
     onAdd: (incomingDefault: IncomingDefault) => void;
 }
 
-function AddEmailToListModal({ type, incomingDefault, onAdd = noop, onClose, ...rest }: Props) {
+function AddEmailToListModal({ type, incomingDefault, onAdd = noop, onClose = noop, ...rest }: Props) {
     const I18N = {
         ADD: {
             [BLACKLIST_LOCATION]: c('Title').t`Add to Block List`,

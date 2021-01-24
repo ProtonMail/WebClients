@@ -1,13 +1,8 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 
-import { TYPES, COMPARATORS } from 'proton-shared/lib/filters/constants';
-import {
-    FilterStatement,
-    SimpleFilterModalModel,
-    ConditionType,
-    ConditionComparator,
-} from 'proton-shared/lib/filters/interfaces';
+import { getConditionTypeLabels, getComparatorLabels } from '../constants';
+import { FilterStatement, SimpleFilterModalModel, ConditionType, ConditionComparator } from '../interfaces';
 import { Icon } from '../../../components';
 import { classnames } from '../../../helpers';
 
@@ -48,8 +43,8 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
                 };
             }
 
-            const typeLabel = TYPES.find((t) => t.value === cond.type)?.label;
-            const comparatorLabel = COMPARATORS.find((t) => t.value === cond.comparator)?.label;
+            const typeLabel = getConditionTypeLabels(cond.type);
+            const comparatorLabel = getComparatorLabels(cond.comparator);
 
             const titleValues = cond?.values?.map((v, i) => {
                 return i > 0 ? ` or ${v}` : v;

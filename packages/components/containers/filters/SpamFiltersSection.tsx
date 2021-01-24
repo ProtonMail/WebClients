@@ -6,15 +6,22 @@ import {
     deleteIncomingDefaults,
 } from 'proton-shared/lib/api/incomingDefaults';
 import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
+import { IncomingDefault } from 'proton-shared/lib/interfaces/IncomingDefault';
+
 import { Alert, SearchInput } from '../../components';
 import { useApiResult, useApiWithoutResult, useApi, useNotifications, useModals } from '../../hooks';
 
 import useSpamList from '../../hooks/useSpamList';
 import SpamListItem from './spamlist/SpamListItem';
 import AddEmailToListModal from './AddEmailToListModal';
+import { WHITE_OR_BLACK_LOCATION } from './interfaces';
 
 const getWhiteList = () => getIncomingDefaults({ Location: WHITELIST_LOCATION });
 const getBlackList = () => getIncomingDefaults({ Location: BLACKLIST_LOCATION });
+
+interface SpamList {
+    IncomingDefaults?: IncomingDefault[];
+}
 
 function SpamFiltersSection() {
     const api = useApi();
@@ -33,10 +40,25 @@ function SpamFiltersSection() {
         edit,
     } = useSpamList();
 
-    const { result: white = {}, loading: loadingWhite } = useApiResult(getWhiteList, []);
-    const { result: black = {}, loading: loadingBlack } = useApiResult(getBlackList, []);
+    const {
+        result: white = {},
+        loading: loadingWhite,
+    }: {
+        result?: SpamList;
+        loading: boolean;
+    } = useApiResult(getWhiteList, []);
+    const {
+        result: black = {},
+        loading: loadingBlack,
+    }: {
+        result?: SpamList;
+        loading: boolean;
+    } = useApiResult(getBlackList, []);
 
-    const [loader, setLoader] = useState({});
+    const [loader, setLoader] = useState<{ white: boolean; black: boolean }>({
+        white: false,
+        black: false,
+    });
 
     useEffect(() => {
         refreshWhiteList(white.IncomingDefaults || []);
@@ -48,38 +70,43 @@ function SpamFiltersSection() {
         setLoader({ ...loader, black: loadingBlack });
     }, [black.IncomingDefaults]);
 
-    const handleSearchChange = async (Keyword) => {
+    const handleSearchChange = async (Keyword: string) => {
         if (!Keyword) {
-            return search();
+            return search(Keyword);
         }
 
         setLoader({ white: true, black: true });
+
         try {
             const [whiteResult, blackResult] = await Promise.all([
                 reqSearch.request({ Keyword, Location: WHITELIST_LOCATION, PageSize: 100 }),
                 reqSearch.request({ Keyword, Location: BLACKLIST_LOCATION, PageSize: 100 }),
             ]);
-            search(Keyword, [...whiteResult.IncomingDefaults, ...blackResult.IncomingDefaults]);
+
+            search(Keyword, [
+                ...((whiteResult as SpamList).IncomingDefaults || []),
+                ...((blackResult as SpamList).IncomingDefaults || []),
+            ]);
         } finally {
             setLoader({ white: false, black: false });
         }
     };
 
-    const handleCreate = async (type) => {
-        const data = await new Promise((resolve) => {
+    const handleCreate = async (type: WHITE_OR_BLACK_LOCATION) => {
+        const data: IncomingDefault = await new Promise((resolve) => {
             createModal(<AddEmailToListModal type={type} onAdd={resolve} />);
         });
         create(type, data);
     };
 
-    const handleEdit = async (type, incomingDefault) => {
-        const data = await new Promise((resolve) => {
+    const handleEdit = async (type: WHITE_OR_BLACK_LOCATION, incomingDefault: IncomingDefault) => {
+        const data: IncomingDefault = await new Promise((resolve) => {
             createModal(<AddEmailToListModal type={type} onAdd={resolve} incomingDefault={incomingDefault} />);
         });
         edit(type, data);
     };
 
-    const handleMove = async (incomingDefault) => {
+    const handleMove = async (incomingDefault: IncomingDefault) => {
         const { Email, Domain, ID, Location } = incomingDefault;
         const type = Location === WHITELIST_LOCATION ? BLACKLIST_LOCATION : WHITELIST_LOCATION;
         const { IncomingDefault: data } = await api(updateIncomingDefault(ID, { Location: type }));
@@ -97,7 +124,7 @@ function SpamFiltersSection() {
         move(type, data);
     };
 
-    const handleRemove = async (incomingDefault) => {
+    const handleRemove = async (incomingDefault: IncomingDefault) => {
         const { Email, Domain, ID } = incomingDefault;
         await api(deleteIncomingDefaults([ID]));
         const domainTxt = c('Moved to black/whitelist').t`${Domain} removed`;

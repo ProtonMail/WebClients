@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { SimpleFilterModalModel, Step, Errors } from 'proton-shared/lib/filters/interfaces';
+import { SimpleFilterModalModel, Step, Errors } from '../interfaces';
 
 interface Props {
     model: SimpleFilterModalModel;

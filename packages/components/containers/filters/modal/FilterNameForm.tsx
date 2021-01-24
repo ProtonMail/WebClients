@@ -1,11 +1,10 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { SimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
 
 import { Alert, Field, Input } from '../../../components';
 import { classnames } from '../../../helpers';
 
-import { AdvancedSimpleFilterModalModel } from './advanced/interfaces';
+import { SimpleFilterModalModel, AdvancedSimpleFilterModalModel, Step, StepSieve } from '../interfaces';
 
 interface Errors {
     name: string;
@@ -17,9 +16,30 @@ interface Props {
     errors: Errors;
     onChange: (newModel: SimpleFilterModalModel | AdvancedSimpleFilterModalModel) => void;
     isSieveFilter?: boolean;
+    loading: boolean;
 }
 
-const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChange }: Props) => {
+const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChange, loading }: Props) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' && !loading && !errors.name) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (isSieveFilter) {
+                onChange({
+                    ...model,
+                    step: StepSieve.SIEVE,
+                } as AdvancedSimpleFilterModalModel);
+
+                return;
+            }
+            onChange({
+                ...model,
+                step: Step.CONDITIONS,
+            } as SimpleFilterModalModel);
+        }
+    };
+
     return (
         <>
             <Alert>
@@ -42,6 +62,7 @@ const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChan
                         onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
                             onChange({ ...model, name: target.value })
                         }
+                        onKeyDown={handleKeyDown}
                         autoFocus
                         required
                     />
