@@ -1,9 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Actions } from 'proton-shared/lib/filters/interfaces';
 import { Checkbox, Button, Tooltip, Icon } from '../../../components';
 import { classnames } from '../../../helpers';
+
+import { Actions } from '../interfaces';
 
 interface Props {
     isNarrow: boolean;

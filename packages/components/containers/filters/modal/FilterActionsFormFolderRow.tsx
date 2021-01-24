@@ -2,41 +2,14 @@ import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
-import { Actions } from 'proton-shared/lib/filters/interfaces';
 import { Button, Select, Tooltip, Icon } from '../../../components';
 import { useModals } from '../../../hooks';
 import { classnames } from '../../../helpers';
 
 import EditLabelModal from '../../labels/modals/EditLabelModal';
 
-export const DEFAULT_FOLDERS: SelectOption[] = [
-    {
-        group: c('Option group').t`Move to...`,
-        text: c('Filter Actions').t`Select a folder`,
-        value: '',
-        disabled: true,
-    },
-    {
-        group: c('Option group').t`Default folders`,
-        text: c('Filter Actions').t`Archive`,
-        value: 'archive',
-    },
-    {
-        group: c('Option group').t`Default folders`,
-        text: c('Filter Actions').t`Inbox`,
-        value: 'inbox',
-    },
-    {
-        group: c('Option group').t`Default folders`,
-        text: c('Filter Actions').t`Spam`,
-        value: 'spam',
-    },
-    {
-        group: c('Option group').t`Default folders`,
-        text: c('Filter Actions').t`Trash`,
-        value: 'trash',
-    },
-];
+import { Actions } from '../interfaces';
+import { getDefaultFolders } from '../constants';
 
 interface Props {
     folders: Folder[];
@@ -82,7 +55,8 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
         return reducer(acc, folder, 0);
     }, []);
 
-    const options = [...DEFAULT_FOLDERS].concat(reducedFolders);
+    const defaultFolders = getDefaultFolders();
+    const options = [...defaultFolders].concat(reducedFolders);
 
     const { moveTo } = actions;
     const { isOpen } = moveTo;

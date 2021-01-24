@@ -1,16 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { isComplex } from 'proton-shared/lib/filters/utils';
 import { FILTER_STATUS } from 'proton-shared/lib/constants';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { toggleEnable, deleteFilter } from 'proton-shared/lib/api/filters';
+
 import { Alert, Toggle, DropdownActions, ConfirmModal, OrderableTableRow, ErrorButton } from '../../components';
 import { useApi, useModals, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 import FilterModal from './modal/FilterModal';
 import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
 
-function FilterItemRow({ filter, ...rest }) {
+import { Filter } from './interfaces';
+import { isSieve } from './utils';
+
+interface Props {
+    filter: Filter;
+    index: number;
+}
+
+function FilterItemRow({ filter, index, ...rest }: Props) {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
@@ -20,7 +28,7 @@ function FilterItemRow({ filter, ...rest }) {
     const { ID, Name, Status } = filter;
 
     const confirmDelete = async () => {
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             createModal(
                 <ConfirmModal
                     title={c('Title').t`Delete ${filter.Name}`}
@@ -36,7 +44,7 @@ function FilterItemRow({ filter, ...rest }) {
         });
     };
 
-    const handleChangeStatus = async ({ target }) => {
+    const handleChangeStatus = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         await api(toggleEnable(ID, target.checked));
         await call();
         createNotification({
@@ -51,7 +59,7 @@ function FilterItemRow({ filter, ...rest }) {
         createNotification({ text: c('Success notification').t`Filter removed` });
     };
 
-    const handleEdit = (type) => () => {
+    const handleEdit = (type?: 'sieve') => () => {
         if (type === 'sieve') {
             return createModal(<AdvancedFilterModal filter={filter} />);
         }
@@ -59,7 +67,7 @@ function FilterItemRow({ filter, ...rest }) {
     };
 
     const list = [
-        !isComplex(filter) && {
+        !isSieve(filter) && {
             text: c('Action').t`Edit`,
             onClick: handleEdit(),
         },
@@ -71,11 +79,12 @@ function FilterItemRow({ filter, ...rest }) {
             text: c('Action').t`Delete`,
             actionType: 'delete',
             onClick: handleRemove,
-        },
-    ].filter(Boolean);
+        } as const,
+    ].filter(isTruthy);
 
     return (
         <OrderableTableRow
+            index={index}
             cells={[
                 <div key="name" className="text-ellipsis max-w100" title={Name}>
                     {Name}
@@ -95,9 +104,5 @@ function FilterItemRow({ filter, ...rest }) {
         />
     );
 }
-
-FilterItemRow.propTypes = {
-    filter: PropTypes.object.isRequired,
-};
 
 export default FilterItemRow;

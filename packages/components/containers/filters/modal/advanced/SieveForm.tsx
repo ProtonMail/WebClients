@@ -4,8 +4,9 @@ import { isDarkTheme } from 'proton-shared/lib/themes/helpers';
 import { UserSettings } from 'proton-shared/lib/interfaces';
 import { Alert } from '../../../../components';
 
-import { AdvancedSimpleFilterModalModel } from './interfaces';
 import SieveEditor from './SieveEditor';
+
+import { AdvancedSimpleFilterModalModel } from '../../interfaces';
 
 interface Props {
     model: AdvancedSimpleFilterModalModel;

@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import {
-    Condition,
-    FilterStatement,
-    ConditionType,
-    ConditionComparator,
-    SimpleFilterModalModel,
-} from 'proton-shared/lib/filters/interfaces';
+import { Condition, FilterStatement, ConditionType, ConditionComparator, SimpleFilterModalModel } from '../interfaces';
 import { Radio, LinkButton } from '../../../components';
 import { classnames, generateUID } from '../../../helpers';
 
@@ -25,9 +19,10 @@ interface Props {
     model: SimpleFilterModalModel;
     onChange: (newModel: SimpleFilterModalModel) => void;
     isDark: boolean;
+    isEdit: boolean;
 }
 
-const FilterConditionsForm = ({ isNarrow, model, isDark, onChange }: Props) => {
+const FilterConditionsForm = ({ isEdit, isNarrow, model, isDark, onChange }: Props) => {
     const [conditions, setConditions] = useState<Condition[]>(
         model.conditions.length ? model.conditions : [generateNewCondition()]
     );
@@ -100,6 +95,7 @@ const FilterConditionsForm = ({ isNarrow, model, isDark, onChange }: Props) => {
             <div className="mb0-5">
                 {conditions.map((condition, i) => (
                     <FilterConditionsFormRow
+                        isEdit={isEdit}
                         key={condition.id}
                         isNarrow={isNarrow}
                         condition={condition}

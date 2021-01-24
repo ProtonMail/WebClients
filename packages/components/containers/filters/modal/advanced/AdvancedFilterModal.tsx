@@ -1,14 +1,12 @@
 import React, { useState, FormEvent, useMemo } from 'react';
 import { c } from 'ttag';
-import { FILTER_VERSION } from 'proton-shared/lib/filters/constants';
-import { Filter } from 'proton-shared/lib/filters/interfaces';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { checkSieveFilter, addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
-import { convertModel } from 'proton-shared/lib/filters/utils';
-import { templates as sieveTemplates } from 'proton-shared/lib/filters/sieve';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import { StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from './interfaces';
+import { FILTER_VERSION } from '../../constants';
+import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
+import { sieveTemplates, convertModel } from '../../utils';
 
 import { FormModal, ConfirmModal, Alert, useDebounceInput, ErrorButton } from '../../../../components';
 
@@ -30,8 +28,8 @@ import FooterAdvancedFilterModal from './FooterAdvancedFilterModal';
 import SieveForm from './SieveForm';
 
 interface Props {
-    filter: Filter;
-    onClose: () => void;
+    filter?: Filter;
+    onClose?: () => void;
 }
 
 const checkNameErrors = (name: string, filters: Filter[]): string => {
@@ -185,6 +183,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                     onChange={(newModel) => setModel(newModel as AdvancedSimpleFilterModalModel)}
                     isNarrow={isNarrow}
                     errors={errors}
+                    loading={loading}
                     isSieveFilter
                 />
             )}

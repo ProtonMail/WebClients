@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import codemirror, { Annotation, Linter } from 'codemirror';
 import { Controlled as CodeMirror } from 'react-codemirror2';
-import { normalize } from 'proton-shared/lib/filters/sieve';
+import { normalize } from '../../utils';
 
 import 'codemirror/addon/display/autorefresh';
 import 'codemirror/addon/lint/lint';
