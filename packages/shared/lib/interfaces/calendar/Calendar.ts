@@ -1,6 +1,6 @@
 import { Member } from './Member';
 import { Passphrase } from './Passphrase';
-import { Key } from './Key';
+import { CalendarKey } from './CalendarKey';
 
 export interface Calendar {
     ID: string;
@@ -49,7 +49,7 @@ export interface CalendarSettings {
 }
 
 export interface CalendarBootstrap {
-    Keys: Key[];
+    Keys: CalendarKey[];
     Passphrase: Passphrase;
     Members: Member[];
     CalendarSettings: CalendarSettings;

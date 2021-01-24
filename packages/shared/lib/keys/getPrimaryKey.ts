@@ -1,9 +1,5 @@
-import { CachedKey } from '../interfaces';
+import { KeyPair } from '../interfaces';
 
-/**
- * Get primary address or user key.
- * The API returns a sorted list, with the first key being the primary key.
- */
-export default (keys: CachedKey[] = []): CachedKey | undefined => {
+export const getPrimaryKey = (keys: KeyPair[] = []): KeyPair | undefined => {
     return keys[0];
 };
