@@ -1,6 +1,6 @@
-import { OrganizationKey } from '../../../hooks/useGetOrganizationKeyRaw';
+import { CachedOrganizationKey } from 'proton-shared/lib/interfaces';
 
-export const getOrganizationKeyInfo = (organizationKey?: OrganizationKey) => {
+export const getOrganizationKeyInfo = (organizationKey?: CachedOrganizationKey) => {
     // If the member has the organization key (not the organization itself).
     const hasOrganizationKey = !!organizationKey?.Key.PrivateKey;
     return {

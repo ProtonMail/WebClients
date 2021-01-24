@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { updateOrganizationKeys } from 'proton-shared/lib/api/organization';
 import { OpenPGPKey } from 'pmcrypto';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
-import { generateOrganizationKeys, reEncryptOrganizationTokens } from 'proton-shared/lib/keys/organizationKeys';
+import { generateOrganizationKeys, reEncryptOrganizationTokens } from 'proton-shared/lib/keys';
 import { queryAddresses } from 'proton-shared/lib/api/members';
 import { Address, Member } from 'proton-shared/lib/interfaces';
 import { FormModal, Alert, Row, Label, Field, PasswordInput } from '../../components';
@@ -26,6 +26,7 @@ interface Props {
     nonPrivateMembers: Member[];
     organizationKey: OpenPGPKey;
 }
+
 const ChangeOrganizationKeysModal = ({
     onClose,
     hasOtherAdmins,

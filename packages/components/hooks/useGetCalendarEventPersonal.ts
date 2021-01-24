@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { getPersonalPartMap, readPersonalPart } from 'proton-shared/lib/calendar/deserialize';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { splitKeys } from 'proton-shared/lib/keys';
 import { getAddressesMembersMap } from 'proton-shared/lib/keys/calendarKeys';
 import {
     CalendarEvent,

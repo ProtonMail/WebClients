@@ -5,7 +5,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { PrimaryButton } from '../../../components/button';
 import SignupSubmitRow from '../../signup/SignupSubmitRow';
 import { LoginModel } from '../interface';
-import { LoginSetters } from '../useLoginHelpers';
+import { LoginErrors, LoginSetters } from '../useLoginHelpers';
 import { useLoading } from '../../../hooks';
 import SignupLabelInputRow from '../../signup/SignupLabelInputRow';
 import { Label } from '../../../components/label';
@@ -14,9 +14,11 @@ import LoginUnlockInput from '../LoginUnlockInput';
 interface Props {
     state: LoginModel;
     setters: LoginSetters;
+    errors: LoginErrors;
     onSubmit: () => Promise<void>;
 }
-const AccountUnlockForm = ({ onSubmit, state, setters }: Props) => {
+
+const AccountUnlockForm = ({ onSubmit, state, setters, errors }: Props) => {
     const [loading, withLoading] = useLoading();
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -31,6 +33,7 @@ const AccountUnlockForm = ({ onSubmit, state, setters }: Props) => {
                 input={
                     <LoginUnlockInput
                         password={state.keyPassword}
+                        error={errors.keyPassword}
                         setPassword={loading ? noop : setters.keyPassword}
                         id="password"
                     />

@@ -4,7 +4,7 @@ import { encryptPrivateKey } from 'pmcrypto';
 
 import { activateOrganizationKey, getOrganizationBackupKeys } from 'proton-shared/lib/api/organization';
 import { OrganizationModel } from 'proton-shared/lib/models';
-import { decryptPrivateKeyWithSalt } from 'proton-shared/lib/keys/keys';
+import { decryptPrivateKeyWithSalt } from 'proton-shared/lib/keys';
 import { FormModal, LearnMore, Alert, Row, Label, Field, PasswordInput } from '../../components';
 import { useCache, useLoading, useNotifications, useAuthentication, useEventManager, useApi } from '../../hooks';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { createAddress } from 'proton-shared/lib/api/addresses';
 import { ADDRESS_TYPE, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
-import { Member } from 'proton-shared/lib/interfaces';
+import { Member, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
 import { FormModal, Alert, Row, Field, Label, Input } from '../../components';
 import {
     useLoading,
@@ -18,12 +18,11 @@ import {
 import useAddressModal from './useAddressModal';
 import DomainsSelect from './DomainsSelect';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
-import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
 
 interface Props {
     onClose?: () => void;
     member: Member;
-    organizationKey?: OrganizationKey;
+    organizationKey?: CachedOrganizationKey;
 }
 const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
     const { createModal } = useModals();
@@ -69,7 +68,7 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
                 <CreateMissingKeysAddressModal
                     organizationKey={organizationKey}
                     member={member}
-                    addresses={[Address]}
+                    addressesToGenerate={[Address]}
                 />
             );
         }

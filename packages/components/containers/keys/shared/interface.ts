@@ -36,6 +36,8 @@ export interface KeyStatus {
 export interface KeyDisplay {
     ID: string;
     fingerprint: string;
+    flags: number;
+    primary: 0 | 1;
     algorithm: string;
     algorithmInfo?: algorithmInfo;
     status: KeyStatus;

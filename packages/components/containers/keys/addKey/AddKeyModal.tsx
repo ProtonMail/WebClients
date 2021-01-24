@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { algorithmInfo } from 'pmcrypto';
-import { getAlgorithmExists } from 'proton-shared/lib/keys/keysAlgorithm';
+import { getAlgorithmExists } from 'proton-shared/lib/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
 import { EncryptionConfig } from 'proton-shared/lib/interfaces';
 import { Alert, FormModal } from '../../../components';
@@ -22,6 +22,7 @@ interface Props {
     existingAlgorithms: algorithmInfo[];
     onAdd: (config: EncryptionConfig) => Promise<string>;
 }
+
 const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => {
     const [step, setStep] = useState(STEPS.SELECT_ENCRYPTION);
     const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
@@ -69,7 +70,8 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                     setStep(STEPS.GENERATE_KEY);
                     handleProcess();
                 },
-                submit: c('Action').t`Yes`,
+                close: c('Action').t`No`,
+                submit: c('Action').t`Continue`,
                 children: (
                     <Alert type="warning">
                         {c('Info')
@@ -81,8 +83,8 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
 
         if (step === STEPS.GENERATE_KEY) {
             return {
-                submit: c('Action').t`Done`,
                 loading: true,
+                submit: c('Action').t`Continue`,
                 children: (
                     <Alert>
                         {c('alert')
@@ -95,14 +97,14 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
         if (step === STEPS.SUCCESS) {
             const fp = <code key="0">{newKeyFingerprint}</code>;
             return {
-                submit: c('Action').t`Done`,
+                submit: null,
                 children: <Alert>{c('Info').jt`Key with fingerprint ${fp} successfully created.`}</Alert>,
             };
         }
 
         if (step === STEPS.FAILURE) {
             return {
-                submit: c('Action').t`Ok`,
+                submit: null,
                 children: <GenericError />,
             };
         }
@@ -114,7 +116,6 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
         <FormModal
             title={c('Title').t`Create key`}
             close={c('Action').t`Close`}
-            submit={c('Action').t`Submit`}
             onClose={onClose}
             onSubmit={onClose}
             {...stepProps}

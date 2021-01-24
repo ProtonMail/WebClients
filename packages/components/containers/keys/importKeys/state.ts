@@ -1,10 +1,10 @@
 import { ImportKey } from './interface';
 
-export const updateKey = (oldKeys: ImportKey[], key: ImportKey, newKey: Partial<ImportKey>) => {
+export const updateKey = (oldKeys: ImportKey[], id: string, newKey: Partial<ImportKey>): ImportKey[] => {
     return oldKeys.map((oldKey) => {
-        if (oldKey === key) {
-            return { ...oldKey, ...newKey };
+        if (oldKey.id !== id) {
+            return oldKey;
         }
-        return oldKey;
+        return { ...oldKey, ...newKey };
     });
 };

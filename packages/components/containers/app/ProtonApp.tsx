@@ -3,6 +3,7 @@ import { Router } from 'react-router';
 import { History, createBrowserHistory as createHistory } from 'history';
 import createAuthentication from 'proton-shared/lib/authentication/createAuthenticationStore';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
+import { AddressesModel } from 'proton-shared/lib/models';
 import { formatUser, UserModel } from 'proton-shared/lib/models/userModel';
 import { STATUS } from 'proton-shared/lib/models/cache';
 import createSecureSessionStorage from 'proton-shared/lib/authentication/createSecureSessionStorage';
@@ -123,7 +124,16 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
     });
 
     const handleLogin = useCallback(
-        ({ UID: newUID, EventID, keyPassword, User, LocalID: newLocalID, path, flow }: OnLoginCallbackArguments) => {
+        ({
+            UID: newUID,
+            EventID,
+            keyPassword,
+            User,
+            Addresses,
+            LocalID: newLocalID,
+            path,
+            flow,
+        }: OnLoginCallbackArguments) => {
             authentication.setUID(newUID);
             authentication.setPassword(keyPassword);
             if (newLocalID !== undefined) {
@@ -141,6 +151,14 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
             if (User) {
                 cache.set(UserModel.key, {
                     value: formatUser(User),
+                    status: STATUS.RESOLVED,
+                });
+            }
+
+            // If addresses was received from the login call, pre-set it directly.
+            if (Addresses) {
+                cache.set(AddressesModel.key, {
+                    value: Addresses,
                     status: STATUS.RESOLVED,
                 });
             }

@@ -1,9 +1,13 @@
 import { useCallback } from 'react';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { splitKeys } from 'proton-shared/lib/keys';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { decryptCalendarKeys, decryptPassphrase, getAddressesMembersMap } from 'proton-shared/lib/keys/calendarKeys';
+import {
+    decryptPassphrase,
+    getAddressesMembersMap,
+    getDecryptedCalendarKeys,
+} from 'proton-shared/lib/keys/calendarKeys';
 import { Address } from 'proton-shared/lib/interfaces';
-import { MemberPassphrase } from 'proton-shared/lib/interfaces/calendar';
+import { DecryptedCalendarKey, MemberPassphrase } from 'proton-shared/lib/interfaces/calendar';
 import useCache from './useCache';
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
@@ -12,7 +16,7 @@ import { getPromiseValue } from './useCachedModelResult';
 
 export const CACHE_KEY = 'CALENDAR_KEYS';
 
-const useGetCalendarKeysRaw = () => {
+const useGetCalendarKeysRaw = (): ((key: string) => Promise<DecryptedCalendarKey[]>) => {
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const getCalendarBootstrap = useGetCalendarBootstrap();
@@ -50,18 +54,18 @@ const useGetCalendarKeysRaw = () => {
             const { ID: PassphraseID, MemberPassphrases } = Passphrase;
             const addressesMembersMap = getAddressesMembersMap(Members, Addresses);
             const passphrase = await getCalendarKeyPassphrase(MemberPassphrases, addressesMembersMap);
-            return decryptCalendarKeys(Keys, { [PassphraseID]: passphrase });
+            return getDecryptedCalendarKeys(Keys, { [PassphraseID]: passphrase });
         },
         [getAddresses, getAddressKeys, getCalendarBootstrap]
     );
 };
 
-export const useGetCalendarKeys = () => {
+export const useGetCalendarKeys = (): ((key: string) => Promise<DecryptedCalendarKey[]>) => {
     const cache = useCache();
     const miss = useGetCalendarKeysRaw();
 
     return useCallback(
-        (key) => {
+        (key: string) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
             }

@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { OpenPGPKey, getKeys, algorithmInfo as tsAlgorithmInfo } from 'pmcrypto';
-import { describe } from 'proton-shared/lib/keys/keysAlgorithm';
-import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
+import { CachedOrganizationKey } from 'proton-shared/lib/interfaces';
+import { getFormattedAlgorithmName } from 'proton-shared/lib/keys';
 
-const useDisplayOrganizationKey = (organizationKey?: OrganizationKey) => {
+const useDisplayOrganizationKey = (organizationKey?: CachedOrganizationKey) => {
     const [parsedKey, setParsedKey] = useState<OpenPGPKey>();
 
     useEffect(() => {
@@ -16,8 +16,12 @@ const useDisplayOrganizationKey = (organizationKey?: OrganizationKey) => {
                 setParsedKey(organizationKey.privateKey);
                 return;
             }
-            const [key] = await getKeys(organizationKey.Key.PrivateKey).catch(() => []);
-            setParsedKey(key);
+            if (organizationKey.Key.PrivateKey) {
+                const [key] = await getKeys(organizationKey.Key.PrivateKey).catch(() => []);
+                setParsedKey(key);
+                return;
+            }
+            setParsedKey(undefined);
         })();
     }, [organizationKey]);
 
@@ -26,7 +30,7 @@ const useDisplayOrganizationKey = (organizationKey?: OrganizationKey) => {
         const fingerprint = parsedKey?.getFingerprint() ?? '';
         const isDecrypted = parsedKey?.isDecrypted() ?? false;
         return {
-            algorithm: describe(algorithmInfo),
+            algorithm: getFormattedAlgorithmName(algorithmInfo),
             fingerprint,
             isDecrypted,
         };

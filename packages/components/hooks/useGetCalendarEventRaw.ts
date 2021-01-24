@@ -6,7 +6,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { useCallback } from 'react';
 import { readCalendarEvent, readSessionKeys } from 'proton-shared/lib/calendar/deserialize';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { splitKeys } from 'proton-shared/lib/keys';
 import { CalendarEvent, CalendarEventData } from 'proton-shared/lib/interfaces/calendar';
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';

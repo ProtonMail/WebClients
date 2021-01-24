@@ -11,7 +11,7 @@ import {
     MEMBER_SUBSCRIBER,
 } from 'proton-shared/lib/constants';
 import memberLogin from 'proton-shared/lib/authentication/memberLogin';
-import { Address, Member, Organization, User as tsUser } from 'proton-shared/lib/interfaces';
+import { Address, CachedOrganizationKey, Member, Organization, User as tsUser } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { revoke } from 'proton-shared/lib/api/auth';
@@ -39,17 +39,16 @@ import {
 import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
 import DeleteMemberModal from './DeleteMemberModal';
-import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
 import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
 
 interface Props {
     member: Member;
     addresses: Address[];
     organization: Organization;
-    organizationKey: OrganizationKey | undefined;
+    organizationKey: CachedOrganizationKey | undefined;
 }
 
-const validateMemberLogin = (organizationKey: OrganizationKey | undefined) => {
+const validateMemberLogin = (organizationKey: CachedOrganizationKey | undefined) => {
     const { hasOrganizationKey, isOrganizationKeyActive } = getOrganizationKeyInfo(organizationKey);
     if (!hasOrganizationKey) {
         return c('Error').t`The organization key must be activated first.`;

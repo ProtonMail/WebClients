@@ -1,42 +1,74 @@
-import { useEffect, useMemo, useState } from 'react';
-import { CachedKey, Address } from 'proton-shared/lib/interfaces';
-import getParsedKeys from 'proton-shared/lib/keys/getParsedKeys';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { algorithmInfo, getKeys, OpenPGPKey } from 'pmcrypto';
+import { Address, DecryptedKey, UserModel, Key } from 'proton-shared/lib/interfaces';
+import { getParsedSignedKeyList, getSignedKeyListMap } from 'proton-shared/lib/keys';
 import { getDisplayKey } from './getDisplayKey';
 
 interface Props {
-    keys: CachedKey[];
-    User: any;
+    keys: DecryptedKey[] | undefined;
+    User: UserModel;
     Address?: Address;
     loadingKeyID?: string;
 }
-const useDisplayKeys = ({ keys, User, Address, loadingKeyID }: Props) => {
-    const [parsedKeys, setParsedKeys] = useState<CachedKey[]>([]);
+
+interface ParsedKey {
+    Key: Key;
+    privateKey?: OpenPGPKey;
+    fingerprint: string;
+    algorithmInfo: algorithmInfo;
+    isDecrypted: boolean;
+}
+
+const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props) => {
+    const [state, setState] = useState<ParsedKey[]>([]);
+    const ref = useRef(0);
 
     useEffect(() => {
-        (async () => {
-            setParsedKeys(await getParsedKeys(keys));
-        })();
-    }, [keys]);
+        if (!maybeKeys) {
+            return;
+        }
+        const run = async () => {
+            const Keys = Address ? Address.Keys : User.Keys;
+            return Promise.all(
+                Keys.map(async (Key) => {
+                    const privateKey =
+                        maybeKeys.find(({ ID }) => ID === Key.ID)?.privateKey ||
+                        (await getKeys(Key.PrivateKey).then(([r]) => r));
+                    return {
+                        Key,
+                        fingerprint: privateKey?.getFingerprint() || '',
+                        algorithmInfo: (privateKey?.getAlgorithmInfo() as algorithmInfo) || { algorithm: '' },
+                        isDecrypted: privateKey?.isDecrypted() || false,
+                    };
+                })
+            );
+        };
+        const current = ++ref.current;
+        run()
+            .then((result) => {
+                if (current === ref.current) {
+                    setState(result);
+                }
+            })
+            .catch(() => {
+                if (current === ref.current) {
+                    setState([]);
+                }
+            });
+    }, [maybeKeys]);
 
     return useMemo(() => {
-        return parsedKeys.map(({ Key, privateKey }) => {
-            const algorithmInfo = privateKey?.getAlgorithmInfo() ?? { algorithm: '' };
-            const fingerprint = privateKey?.getFingerprint() ?? '';
-            const isDecrypted = privateKey?.isDecrypted() ?? false;
-
+        const signedKeyListMap = getSignedKeyListMap(getParsedSignedKeyList(Address?.SignedKeyList?.Data));
+        return state.map((data) => {
             return getDisplayKey({
                 User,
                 Address,
-                Key,
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore - openpgp typings are incorrect for getAlgorithmInfo, todo
-                algorithmInfo,
-                fingerprint,
-                isLoading: loadingKeyID === Key.ID,
-                isDecrypted,
+                isLoading: loadingKeyID === data.Key.ID,
+                signedKeyListMap,
+                ...data,
             });
         });
-    }, [User, Address, parsedKeys, loadingKeyID]);
+    }, [User, Address, state, loadingKeyID]);
 };
 
 export default useDisplayKeys;

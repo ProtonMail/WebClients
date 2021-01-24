@@ -3,11 +3,10 @@ import { c } from 'ttag';
 import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
 import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Address, UserModel, Member } from 'proton-shared/lib/interfaces';
+import { Address, UserModel, Member, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
 
 import { DropdownActions, Alert, ErrorButton, ConfirmModal } from '../../components';
 import { useModals, useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
-import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
 
 import EditAddressModal from './EditAddressModal';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
@@ -17,7 +16,7 @@ interface Props {
     address: Address;
     member?: Member; // undefined if self
     user: UserModel;
-    organizationKey?: OrganizationKey;
+    organizationKey?: CachedOrganizationKey;
 }
 const AddressActions = ({ address, member, user, organizationKey }: Props) => {
     const api = useApi();
@@ -79,7 +78,11 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
 
     const handleGenerate = async () => {
         createModal(
-            <CreateMissingKeysAddressModal member={member} addresses={[address]} organizationKey={organizationKey} />
+            <CreateMissingKeysAddressModal
+                member={member}
+                addressesToGenerate={[address]}
+                organizationKey={organizationKey}
+            />
         );
     };
 
