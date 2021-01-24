@@ -1,33 +1,55 @@
 import { SignedKeyList } from '../interfaces';
 
-export const setupMemberKeyRoute = ({
-    MemberID,
-    ...rest
-}: {
+interface SetupMemberKeyAddressKeyPayload {
+    AddressID: string;
+    SignedKeyList: SignedKeyList;
+    UserKey: string;
+    MemberKey: string;
+    Token: string;
+}
+
+interface SetupMemberKeyUserKeyPayload {
+    UserKey: string;
+    MemberKey: string;
+    Token: string;
+}
+
+interface SetupMemberKeyPayload {
     MemberID: string;
-    AddressKeys: {
-        AddressID: string;
-        SignedKeyList: SignedKeyList;
-        UserKey: string;
-        MemberKey: string;
-        Token: string;
-    }[];
+    AddressKeys: SetupMemberKeyAddressKeyPayload[];
     KeySalt: string;
-    PrimaryKey: {
-        UserKey: string;
-        MemberKey: string;
-        Token: string;
-    };
-}) => ({
+    PrimaryKey: SetupMemberKeyUserKeyPayload;
+}
+
+interface SetupMemberKeyUserKeyPayloadV2 {
+    PrivateKey: string;
+    OrgPrivateKey: string;
+    OrgToken: string;
+}
+
+interface SetupMemberKeyAddressKeyPayloadV2 {
+    AddressID: string;
+    PrivateKey: string;
+    Token: string;
+    Signature: string;
+    OrgSignature: string;
+    SignedKeyList: SignedKeyList;
+}
+
+interface SetupMemberKeyPayloadV2 {
+    MemberID: string;
+    AddressKeys: SetupMemberKeyAddressKeyPayloadV2[];
+    KeySalt: string;
+    UserKey: SetupMemberKeyUserKeyPayloadV2;
+}
+
+export const setupMemberKeyRoute = ({ MemberID, ...data }: SetupMemberKeyPayload | SetupMemberKeyPayloadV2) => ({
     url: `members/${MemberID}/keys/setup`,
     method: 'post',
-    data: rest,
+    data,
 });
 
-export const createMemberKeyRoute = ({
-    MemberID,
-    ...rest
-}: {
+interface CreateMemberKeyPayload {
     MemberID: string;
     Activation: string;
     Token: string;
@@ -36,8 +58,16 @@ export const createMemberKeyRoute = ({
     MemberKey: string;
     Primary: number;
     SignedKeyList: SignedKeyList;
-}) => ({
+}
+
+interface CreateMemberKeyPayloadV2 extends Omit<CreateMemberKeyPayload, 'UserKey' | 'MemberKey' | 'Activation'> {
+    Signature: string;
+    OrgSignature: string;
+    PrivateKey: string;
+}
+
+export const createMemberKeyRoute = ({ MemberID, ...data }: CreateMemberKeyPayload | CreateMemberKeyPayloadV2) => ({
     url: `members/${MemberID}/keys`,
     method: 'post',
-    data: rest,
+    data,
 });

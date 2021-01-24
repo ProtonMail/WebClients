@@ -17,7 +17,8 @@ import { ENCRYPTION_TYPES, ENCRYPTION_CONFIGS } from '../constants';
 import { normalize } from '../helpers/string';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { Address, EncryptionConfig } from '../interfaces';
-import { Key as tsKey, Member } from '../interfaces/calendar';
+import { DecryptedCalendarKey, CalendarKey as tsKey, Member } from '../interfaces/calendar';
+import isTruthy from '../helpers/isTruthy';
 
 export const generatePassphrase = () => {
     const value = getRandomValues(new Uint8Array(32));
@@ -120,10 +121,10 @@ export const getAddressesMembersMap = (Members: Member[], Addresses: Address[]) 
  * @param Keys - the calendar keys as coming from the API
  * @param passphrasesMap - The decrypted passphrases map
  */
-export const decryptCalendarKeys = async (
+export const getDecryptedCalendarKeys = async (
     Keys: tsKey[],
     passphrasesMap: { [key: string]: string | undefined } = {}
-) => {
+): Promise<DecryptedCalendarKey[]> => {
     const process = async (Key: tsKey) => {
         try {
             const { PrivateKey, PassphraseID } = Key;
@@ -135,13 +136,12 @@ export const decryptCalendarKeys = async (
                 publicKey: privateKey.toPublic(),
             };
         } catch (e) {
-            return {
-                Key,
-                error: e,
-            };
+            return undefined;
         }
     };
-    return Promise.all(Keys.map(process));
+    return Promise.all(Keys.map(process)).then((result) => {
+        return result.filter(isTruthy);
+    });
 };
 
 /**

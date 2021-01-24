@@ -1,7 +1,7 @@
-import { encryptMessage, encryptPrivateKey, generateKey, OpenPGPKey } from 'pmcrypto';
+import { encryptMessage, encryptPrivateKey, generateKey, OpenPGPKey, reformatKey } from 'pmcrypto';
 import { computeKeyPassword, generateKeySalt } from 'pm-srp';
 
-import { generateAddressKey } from './keys';
+import { generateAddressKey } from './addressKeys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
 import { Member, EncryptionConfig, Address } from '../interfaces';
 
@@ -22,29 +22,40 @@ export const getBackupKeyData = async ({
     };
 };
 
+export const ORGANIZATION_USERID = 'not_for_email_use@domain.tld';
+
 interface GenerateOrganizationKeysArguments {
     keyPassword: string;
     backupPassword: string;
     encryptionConfig: EncryptionConfig;
 }
+
 export const generateOrganizationKeys = async ({
     keyPassword,
     backupPassword,
     encryptionConfig,
 }: GenerateOrganizationKeysArguments) => {
     const { key: privateKey, privateKeyArmored } = await generateKey({
-        userIds: [{ name: 'not_for_email_use@domain.tld', email: 'not_for_email_use@domain.tld' }],
+        userIds: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
         passphrase: keyPassword,
         ...encryptionConfig,
     });
-
     await privateKey.decrypt(keyPassword);
-
     return {
         privateKey,
         privateKeyArmored,
         ...(await getBackupKeyData({ backupPassword, organizationKey: privateKey })),
     };
+};
+
+export const reformatOrganizationKey = async (privateKey: OpenPGPKey, passphrase: string) => {
+    const { key: reformattedPrivateKey, privateKeyArmored } = await reformatKey({
+        userIds: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
+        passphrase,
+        privateKey,
+    });
+    await reformattedPrivateKey.decrypt(passphrase);
+    return { privateKey: reformattedPrivateKey, privateKeyArmored };
 };
 
 interface ReEncryptOrganizationTokens {
@@ -53,6 +64,7 @@ interface ReEncryptOrganizationTokens {
     oldOrganizationKey: OpenPGPKey;
     newOrganizationKey: OpenPGPKey;
 }
+
 export const reEncryptOrganizationTokens = ({
     nonPrivateMembers = [],
     nonPrivateMembersAddresses = [],
@@ -98,6 +110,7 @@ interface GenerateMemberAddressKeyArguments {
     organizationKey: OpenPGPKey;
     encryptionConfig: EncryptionConfig;
 }
+
 export const generateMemberAddressKey = async ({
     email,
     primaryKey,

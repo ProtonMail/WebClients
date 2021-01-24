@@ -753,6 +753,8 @@ export const isStandaloneMode = APP_MODE === 'standalone';
 declare const WEBPACK_PUBLIC_PATH: string;
 export const PUBLIC_PATH = typeof WEBPACK_PUBLIC_PATH === 'undefined' ? '' : WEBPACK_PUBLIC_PATH;
 
+export const hasAddressKeyMigration = FEATURE_FLAGS.includes('address-key-migration');
+
 interface OpenPGPFile {
     filepath: string;
     integrity?: string;

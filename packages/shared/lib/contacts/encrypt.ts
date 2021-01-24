@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { generateProtonWebUID } from '../helpers/uid';
 import { toICAL } from './vcard';
 import { hasCategories, sanitizeProperties, addPref, addGroup } from './properties';
-import { KeyPair, CachedKey } from '../interfaces';
+import { KeyPair, DecryptedKey } from '../interfaces';
 import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts/Contact';
 import { CONTACT_CARD_TYPE } from '../constants';
 import { CLEAR_FIELDS, SIGNED_FIELDS } from './constants';
@@ -148,7 +148,7 @@ export const prepareContact = async (
  */
 export const prepareContacts = async (
     contacts: ContactProperties[] = [],
-    { privateKey, publicKey }: CachedKey
+    { privateKey, publicKey }: DecryptedKey
 ): Promise<Pick<Contact, 'Cards'>[]> => {
     const promises = contacts.reduce<Promise<Pick<Contact, 'Cards'>>[]>((acc, properties) => {
         if (privateKey && publicKey) {
