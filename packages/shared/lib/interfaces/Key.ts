@@ -23,3 +23,21 @@ export interface KeysPair {
     privateKeys: OpenPGPKey[];
     publicKeys: OpenPGPKey[];
 }
+
+export interface DecryptedKey extends KeyPair {
+    ID: string;
+}
+
+export interface InactiveKey {
+    Key: Key;
+    privateKey?: OpenPGPKey;
+    publicKey?: OpenPGPKey;
+    fingerprint?: string;
+}
+
+export interface ActiveKey extends DecryptedKey {
+    fingerprint: string;
+    flags: number;
+    primary: 1 | 0;
+    sha256Fingerprints: string[];
+}
