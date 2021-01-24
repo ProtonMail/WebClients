@@ -14,7 +14,7 @@ import {
 } from 'proton-shared/lib/keys/publicKeys';
 import { uniqueBy } from 'proton-shared/lib/helpers/array';
 import { getKeyInfoFromProperties, toKeyProperty } from 'proton-shared/lib/contacts/keyProperties';
-import { CachedKey, Api, ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
+import { DecryptedKey, Api, ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
 import { ContactProperties, ContactProperty } from 'proton-shared/lib/interfaces/contacts/Contact';
 
 import { VCARD_KEY_FIELDS, CATEGORIES } from 'proton-shared/lib/contacts/constants';
@@ -44,7 +44,7 @@ const { PGP_INLINE } = PGP_SCHEMES;
 const { INCLUDE, IGNORE } = CATEGORIES;
 
 interface Props {
-    userKeysList: CachedKey[];
+    userKeysList: DecryptedKey[];
     contactID: string;
     properties: ContactProperties;
     emailProperty: ContactProperty;

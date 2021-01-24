@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { OTHER_INFORMATION_FIELDS } from 'proton-shared/lib/contacts/constants';
-import { CachedKey } from 'proton-shared/lib/interfaces';
+import { DecryptedKey } from 'proton-shared/lib/interfaces';
 import { ContactEmail, ContactProperties, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 
 import ContactViewProperty from './ContactViewProperty';
@@ -32,7 +32,7 @@ interface Props {
     contactGroupsMap?: { [contactGroupID: string]: ContactGroup };
     ownAddresses: string[];
     field?: string;
-    userKeysList: CachedKey[];
+    userKeysList: DecryptedKey[];
     leftBlockWidth?: string;
     rightBlockWidth?: string;
     isPreview?: boolean;

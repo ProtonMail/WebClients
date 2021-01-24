@@ -1,17 +1,25 @@
 import React from 'react';
 import { c } from 'ttag';
-import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
-import getCachedKeyByID from 'proton-shared/lib/keys/getCachedKeyByID';
+import { getPrimaryKey, reactivateKeysProcess } from 'proton-shared/lib/keys';
+
 import { Alert, Button, Block, Loader } from '../../components';
-import { useUser, useModals, useUserKeys, useEventManager, useAuthentication, useApi } from '../../hooks';
+import {
+    useUser,
+    useModals,
+    useUserKeys,
+    useEventManager,
+    useAuthentication,
+    useApi,
+    useGetAddresses,
+} from '../../hooks';
 
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import KeysTable from './KeysTable';
 import useDisplayKeys from './shared/useDisplayKeys';
-import { KeyReactivation, OnProcessArguments as ReactivateProcessArguments } from './reactivateKeys/interface';
-import reactivateKeysProcess from './reactivateKeys/reactivateKeysProcess';
+import { KeyReactivationRequest } from './reactivateKeys/interface';
+import { getKeyByID } from './shared/helper';
 
 const UserKeysSections = () => {
     const { createModal } = useModals();
@@ -19,73 +27,75 @@ const UserKeysSections = () => {
     const api = useApi();
     const authentication = useAuthentication();
     const [User] = useUser();
-    const [userKeysList, loadingUserKeys] = useUserKeys();
-    const userKeysDisplay = useDisplayKeys({ keys: userKeysList, User });
+    const [userKeys, loadingUserKeys] = useUserKeys();
+    const getAddresses = useGetAddresses();
+    const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
 
-    if (loadingUserKeys && !Array.isArray(userKeysList)) {
+    if (loadingUserKeys || !Array.isArray(userKeys)) {
         return <Loader />;
     }
 
     // E.g. vpn user
-    if (!userKeysList.length) {
+    if (!userKeys.length) {
         return <Alert>{c('Info').t`No contact encryption keys exist`}</Alert>;
     }
 
     const { Name: userName } = User;
 
     const handleExportPrivate = (ID: string) => {
-        const userKey = getCachedKeyByID(userKeysList, ID);
-        if (!userKey || !userKey.privateKey) {
-            return;
+        const userKey = getKeyByID(userKeys, ID);
+        if (!userKey?.privateKey) {
+            throw new Error('Could not find key');
         }
         return createModal(<ExportPrivateKeyModal name={userName} privateKey={userKey.privateKey} />);
     };
 
     const handleExportPublic = (ID: string) => {
-        const userKey = getCachedKeyByID(userKeysList, ID);
-        if (!userKey) {
-            return;
+        const userKey = getKeyByID(userKeys, ID);
+        const Key = getKeyByID(User.Keys, ID);
+        if (!Key) {
+            throw new Error('Could not find key');
         }
         return createModal(
-            <ExportPublicKeyModal name={userName} PrivateKey={userKey.Key.PrivateKey} publicKey={userKey.publicKey} />
+            <ExportPublicKeyModal name={userName} fallbackPrivateKey={Key.PrivateKey} publicKey={userKey?.publicKey} />
         );
     };
 
-    const handleReactivateKeys = (initialKeysToReactivate: KeyReactivation[]) => {
-        const onProcess = async ({
-            keysToReactivate,
-            setKeysToReactivate,
-            isUploadMode,
-            oldPassword,
-        }: ReactivateProcessArguments) => {
-            await reactivateKeysProcess({
-                api,
-                keysToReactivate,
-                setKeysToReactivate,
-                isUploadMode,
-                newPassword: authentication.getPassword(),
-                oldPassword,
-                userKeysList,
-            });
-            await call();
-        };
-        return createModal(<ReactivateKeysModal onProcess={onProcess} allKeys={initialKeysToReactivate} />);
+    const handleReactivateKeys = async (keyReactivationRequests: KeyReactivationRequest[]) => {
+        const addresses = await getAddresses();
+        return createModal(
+            <ReactivateKeysModal
+                keyReactivationRequests={keyReactivationRequests}
+                onProcess={async (keyReactivationRecords, oldPassword, cb) => {
+                    await reactivateKeysProcess({
+                        api,
+                        user: User,
+                        userKeys,
+                        addresses,
+                        keyReactivationRecords,
+                        keyPassword: authentication.getPassword(),
+                        onReactivation: cb,
+                    });
+                    return call();
+                }}
+            />
+        );
     };
-
     const handleReactivateKey = (ID: string) => {
-        const userKey = getCachedKeyByID(userKeysList, ID);
-        if (!userKey) {
-            return;
+        const Key = getKeyByID(User.Keys, ID);
+        if (!Key) {
+            throw new Error('Missing key');
         }
         return handleReactivateKeys([
             {
-                User,
-                keys: [userKey],
+                user: User,
+                keys: userKeys,
+                keysToReactivate: [Key],
             },
         ]);
     };
 
-    const primaryPrivateKey = getPrimaryKey(userKeysList);
+    const primaryPrivateKey = getPrimaryKey(userKeys);
     const canExportPrimaryPrivateKey = !!primaryPrivateKey?.privateKey;
 
     return (

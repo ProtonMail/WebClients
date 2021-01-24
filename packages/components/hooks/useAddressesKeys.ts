@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
-import { CachedKey } from 'proton-shared/lib/interfaces';
+import { Address, DecryptedKey } from 'proton-shared/lib/interfaces';
+import { Unwrap } from 'proton-shared/lib/interfaces/utils';
 import useCache from './useCache';
 import { useGetAddresses } from './useAddresses';
 import useCachedModelResult from './useCachedModelResult';
@@ -7,22 +8,23 @@ import { useGetAddressKeys } from './useGetAddressKeys';
 
 export const KEY = 'ADDRESSES_KEYS';
 
-export const useGetAddressesKeys = (): (() => Promise<{ [key: string]: CachedKey[] }>) => {
+export const useGetAddressesKeys = (): (() => Promise<{ address: Address; keys: DecryptedKey[] }[]>) => {
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     return useCallback(async () => {
         const addresses = await getAddresses();
-        const keys = await Promise.all(addresses.map(({ ID: addressID }) => getAddressKeys(addressID)));
-        return addresses.reduce((acc, { ID }, i) => {
-            return {
-                ...acc,
-                [ID]: keys[i],
-            };
-        }, {});
+        return Promise.all(
+            addresses.map(async (address) => {
+                return {
+                    address,
+                    keys: await getAddressKeys(address.ID),
+                };
+            })
+        );
     }, [getAddresses, getAddressKeys]);
 };
 
-export const useAddressesKeys = (): [{ [key: string]: CachedKey[] }, boolean, any] => {
+export const useAddressesKeys = (): [Unwrap<ReturnType<typeof useGetAddressesKeys>>, boolean, any] => {
     const cache = useCache();
     const miss = useGetAddressesKeys();
     return useCachedModelResult(cache, KEY, miss);

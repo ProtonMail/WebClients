@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { move, uniqueBy } from 'proton-shared/lib/helpers/array';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { describe } from 'proton-shared/lib/keys/keysAlgorithm';
+import { getFormattedAlgorithmName } from 'proton-shared/lib/keys';
 import { ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
 
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
@@ -59,7 +59,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                 const creationTime = publicKey.getCreationTime();
                 const expirationTime = await publicKey.getExpirationTime('encrypt');
                 const algoInfo = publicKey.getAlgorithmInfo();
-                const algo = describe(algoInfo as algorithmInfo);
+                const algo = getFormattedAlgorithmName(algoInfo as algorithmInfo);
                 const isTrusted = model.trustedFingerprints.has(fingerprint);
                 const isExpired = model.expiredFingerprints.has(fingerprint);
                 const isRevoked = model.revokedFingerprints.has(fingerprint);

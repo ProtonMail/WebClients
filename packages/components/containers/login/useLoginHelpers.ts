@@ -25,6 +25,7 @@ export const getLoginErrors = (state: LoginModel) => {
         username: state.username ? '' : required,
         password: state.password ? '' : required,
         newPassword: state.newPassword ? '' : required,
+        keyPassword: state.keyPassword ? '' : required,
         confirmNewPassword: state.confirmNewPassword
             ? state.newPassword !== state.confirmNewPassword
                 ? c('Signup error').t`Passwords do not match`

@@ -1,15 +1,14 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { removeKeyAction, setFlagsKeyAction, setPrimaryKeyAction } from 'proton-shared/lib/keys/keysAction';
-import getActionableKeysList from 'proton-shared/lib/keys/getActionableKeysList';
-import { generateAddressKey } from 'proton-shared/lib/keys/keys';
-import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
-import { removeKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from 'proton-shared/lib/api/keys';
-import getSignedKeyList from 'proton-shared/lib/keys/getSignedKeyList';
-import getCachedKeyByID from 'proton-shared/lib/keys/getCachedKeyByID';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { EncryptionConfig } from 'proton-shared/lib/interfaces';
-import getParsedKeys from 'proton-shared/lib/keys/getParsedKeys';
+import {
+    reactivateKeysProcess,
+    importKeysProcess,
+    deleteAddressKey,
+    setPrimaryAddressKey,
+    addAddressKeysProcess,
+    setAddressKeyFlags,
+} from 'proton-shared/lib/keys';
 
 import { Alert, Block, Loader, PrimaryButton, Select } from '../../components';
 import {
@@ -23,7 +22,7 @@ import {
     useUserKeys,
 } from '../../hooks';
 
-import { getAllKeysToReactivate, getKeysToReactivateCount } from './reactivateKeys/getAllKeysToReactive';
+import { getAllKeysReactivationRequests, getKeysToReactivateCount } from './reactivateKeys/getAllKeysToReactive';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
@@ -32,18 +31,11 @@ import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import DeleteKeyModal from './deleteKey/DeleteKeyModal';
 import useDisplayKeys from './shared/useDisplayKeys';
 import AddKeyModal from './addKey/AddKeyModal';
-import createKeyHelper from './addKey/createKeyHelper';
-import importKeysProcess from './importKeys/importKeysProcess';
 import ImportKeyModal from './importKeys/ImportKeyModal';
-import { OnProcessArguments as ImportProcessArguments } from './importKeys/interface';
 import { getNewKeyFlags } from './shared/flags';
-import { FlagAction, KeyDisplay } from './shared/interface';
-import reactivateKeysProcess from './reactivateKeys/reactivateKeysProcess';
-import { KeyReactivation, OnProcessArguments as ReactivateProcessArguments } from './reactivateKeys/interface';
-
-const getDisplayKeyByID = (keys: KeyDisplay[], ID: string) => {
-    return keys.find(({ ID: otherID }) => ID === otherID);
-};
+import { FlagAction } from './shared/interface';
+import { KeyReactivationRequest } from './reactivateKeys/interface';
+import { getKeyByID } from './shared/helper';
 
 const AddressKeysSection = () => {
     const { createModal } = useModals();
@@ -52,14 +44,15 @@ const AddressKeysSection = () => {
     const api = useApi();
     const [User] = useUser();
     const [Addresses, loadingAddresses] = useAddresses();
-    const [userKeysList] = useUserKeys();
-    const [addressesKeysMap, loadingAddressesKeys] = useAddressesKeys();
+    const [userKeys] = useUserKeys();
+    const [addressesKeys, loadingAddressesKeys] = useAddressesKeys();
     const [loadingKeyID, setLoadingKeyID] = useState<string>('');
     const [addressIndex, setAddressIndex] = useState(() => (Array.isArray(Addresses) ? 0 : -1));
 
     const Address = Addresses ? Addresses[addressIndex] : undefined;
     const { ID: addressID = '', Email: addressEmail = '' } = Address || {};
-    const addressKeys = addressesKeysMap && addressesKeysMap[addressID];
+    const addressWithKeys = addressesKeys?.find(({ address }) => address.ID === addressID);
+    const addressKeys = addressWithKeys?.keys;
     const addressKeysDisplay = useDisplayKeys({
         keys: addressKeys,
         Address,
@@ -88,64 +81,43 @@ const AddressKeysSection = () => {
     const isLoadingKey = loadingKeyID !== '';
 
     const handleSetPrimaryKey = async (ID: string) => {
-        const addressKey = getCachedKeyByID(addressKeys, ID);
-        if (!addressKey || isLoadingKey || !addressKey.privateKey) {
+        if (isLoadingKey || !addressKeys) {
             return;
         }
-        const { privateKey: newPrimaryKew } = addressKey;
-
-        const process = async () => {
-            const updatedKeys = setPrimaryKeyAction({
-                actionableKeys: await getActionableKeysList(addressKeys),
-                ID,
-            });
-            await api(
-                setKeyPrimaryRoute({
-                    ID,
-                    SignedKeyList: await getSignedKeyList(updatedKeys, newPrimaryKew),
-                })
-            );
-            await call();
-        };
+        const addressKey = getKeyByID(addressKeys, ID);
+        if (!addressKey || !Address) {
+            throw new Error('Key not found');
+        }
 
         try {
             setLoadingKeyID(ID);
-            await process();
+            await setPrimaryAddressKey(api, Address, addressKeys, ID);
+            await call();
         } finally {
             setLoadingKeyID('');
         }
     };
 
     const handleSetFlag = async (ID: string, flagAction: FlagAction) => {
-        const addressKey = getCachedKeyByID(addressKeys, ID);
-        if (!addressKey || isLoadingKey) {
+        if (isLoadingKey || !addressKeys) {
             return;
         }
-        const { privateKey: primaryPrivateKey, Key } = getPrimaryKey(addressKeys) || {};
-        if (!primaryPrivateKey || !Key) {
-            return;
-        }
+        const addressDisplayKey = getKeyByID(addressKeysDisplay, ID);
 
-        const process = async () => {
-            const newKeyFlags = getNewKeyFlags(addressKey.Key.Flags, flagAction);
-            const updatedKeys = setFlagsKeyAction({
-                actionableKeys: await getActionableKeysList(addressKeys),
-                ID,
-                flags: newKeyFlags,
-            });
-            await api(
-                setKeyFlagsRoute({
-                    ID,
-                    Flags: newKeyFlags,
-                    SignedKeyList: await getSignedKeyList(updatedKeys, primaryPrivateKey),
-                })
-            );
-            await call();
-        };
+        if (!addressDisplayKey || !Address) {
+            throw new Error('Key not found');
+        }
 
         try {
             setLoadingKeyID(ID);
-            await process();
+            await setAddressKeyFlags(
+                api,
+                Address,
+                addressKeys,
+                ID,
+                getNewKeyFlags(addressDisplayKey.flags, flagAction)
+            );
+            await call();
         } finally {
             setLoadingKeyID('');
         }
@@ -157,26 +129,19 @@ const AddressKeysSection = () => {
     const handleSetNotCompromised = (ID: string) => handleSetFlag(ID, FlagAction.MARK_NOT_COMPROMISED);
 
     const handleDeleteKey = (ID: string) => {
-        const addressKey = getCachedKeyByID(addressKeys, ID);
-        const addressDisplayKey = getDisplayKeyByID(addressKeysDisplay, ID);
-        if (!addressDisplayKey || !addressKey || isLoadingKey) {
+        if (isLoadingKey || !addressKeys) {
             return;
         }
-        const { privateKey } = addressKey;
-        const { privateKey: primaryPrivateKey } = getPrimaryKey(addressKeys) || {};
-        if (!primaryPrivateKey) {
-            return;
+        const addressKey = getKeyByID(addressKeys, ID);
+        const addressDisplayKey = getKeyByID(addressKeysDisplay, ID);
+        if (!addressDisplayKey || !Address) {
+            throw new Error('Key not found');
         }
-
         const { fingerprint } = addressDisplayKey;
+        const privateKey = addressKey?.privateKey;
 
         const onDelete = async (): Promise<void> => {
-            const updatedKeys = removeKeyAction({
-                actionableKeys: await getActionableKeysList(addressKeys),
-                ID,
-            });
-            const signedKeyList = await getSignedKeyList(updatedKeys, primaryPrivateKey);
-            await api(removeKeyRoute({ ID, SignedKeyList: signedKeyList }));
+            await deleteAddressKey(api, Address, addressKeys, ID);
             await call();
         };
 
@@ -206,126 +171,136 @@ const AddressKeysSection = () => {
     };
 
     const handleAddKey = () => {
-        if (isLoadingKey || !Address) {
+        if (isLoadingKey || !addressKeys) {
             return;
         }
-        const { privateKey: primaryPrivateKey } = getPrimaryKey(addressKeys) || {};
-
-        const onAdd = async (encryptionConfig: EncryptionConfig): Promise<string> => {
-            const { privateKey, privateKeyArmored } = await generateAddressKey({
-                email: Address.Email,
-                passphrase: authentication.getPassword(),
-                encryptionConfig,
-            });
-            // If there is no primary private key, assume there exists no keys and this new key should be used to sign
-            const signingKey = primaryPrivateKey || privateKey;
-            await createKeyHelper({
-                api,
-                privateKeyArmored,
-                privateKey,
-                Address,
-                parsedKeys: await getParsedKeys(addressKeys),
-                actionableKeys: await getActionableKeysList(addressKeys),
-                signingKey,
-            });
-            await call();
-            return privateKey.getFingerprint();
-        };
+        if (!Address) {
+            throw new Error('Keys not found');
+        }
 
         const existingAlgorithms = addressKeysDisplay.map(({ algorithmInfo }) => algorithmInfo).filter(isTruthy);
-        createModal(<AddKeyModal existingAlgorithms={existingAlgorithms} onAdd={onAdd} />);
-    };
-
-    const handleImportKey = () => {
-        if (isLoadingKey || !Address) {
-            return;
-        }
-        const { privateKey: primaryPrivateKey } = getPrimaryKey(addressKeys) || {};
-
-        const onProcess = async ({ keysToImport, setKeysToImport }: ImportProcessArguments) => {
-            await importKeysProcess({
-                keysToImport,
-                setKeysToImport,
-                api,
-                password: authentication.getPassword(),
-                actionableKeys: await getActionableKeysList(addressKeys),
-                parsedKeys: await getParsedKeys(addressKeys),
-                signingKey: primaryPrivateKey,
-                Address,
-            });
-            await call();
-        };
-
-        createModal(<ImportKeyModal onProcess={onProcess} />);
-    };
-
-    const handleExportPrivate = (ID: string) => {
-        const addressKey = getCachedKeyByID(addressKeys, ID);
-        if (!addressKey || !addressKey.privateKey || isLoadingKey) {
-            return;
-        }
-        return createModal(<ExportPrivateKeyModal name={addressEmail} privateKey={addressKey.privateKey} />);
-    };
-
-    const handleExportPublic = (ID: string) => {
-        const addressKey = getCachedKeyByID(addressKeys, ID);
-        if (!addressKey || isLoadingKey) {
-            return;
-        }
-        return createModal(
-            <ExportPublicKeyModal
-                name={addressEmail}
-                PrivateKey={addressKey.Key.PrivateKey}
-                publicKey={addressKey.publicKey}
+        createModal(
+            <AddKeyModal
+                existingAlgorithms={existingAlgorithms}
+                onAdd={async (encryptionConfig) => {
+                    const [newKey] = await addAddressKeysProcess({
+                        api,
+                        userKeys,
+                        encryptionConfig,
+                        addresses: Addresses,
+                        address: Address,
+                        addressKeys,
+                        keyPassword: authentication.getPassword(),
+                    });
+                    await call();
+                    return newKey.fingerprint;
+                }}
             />
         );
     };
 
-    const handleReactivateKeys = (initialKeysToReactivate: KeyReactivation[]) => {
-        const onProcess = async ({
-            keysToReactivate,
-            setKeysToReactivate,
-            isUploadMode,
-            oldPassword,
-        }: ReactivateProcessArguments) => {
-            await reactivateKeysProcess({
-                api,
-                keysToReactivate,
-                setKeysToReactivate,
-                isUploadMode,
-                newPassword: authentication.getPassword(),
-                oldPassword,
-                addressesKeysMap,
-                userKeysList,
-            });
-            await call();
-        };
-        return createModal(<ReactivateKeysModal onProcess={onProcess} allKeys={initialKeysToReactivate} />);
+    const handleImportKey = () => {
+        if (isLoadingKey || !addressKeys) {
+            return;
+        }
+        if (!Address) {
+            throw new Error('Keys not found');
+        }
+        createModal(
+            <ImportKeyModal
+                onProcess={async (keyImportRecords, cb) => {
+                    await importKeysProcess({
+                        api,
+                        address: Address,
+                        addressKeys,
+                        addresses: Addresses,
+                        userKeys,
+                        keyImportRecords,
+                        keyPassword: authentication.getPassword(),
+                        onImport: cb,
+                    });
+                    return call();
+                }}
+            />
+        );
+    };
+
+    const handleExportPrivate = (ID: string) => {
+        if (isLoadingKey || !addressKeys) {
+            return;
+        }
+        const decryptedAddressKey = getKeyByID(addressKeys, ID);
+        if (!decryptedAddressKey) {
+            throw new Error('Key not found');
+        }
+        return createModal(<ExportPrivateKeyModal name={addressEmail} privateKey={decryptedAddressKey.privateKey} />);
+    };
+
+    const handleExportPublic = (ID: string) => {
+        if (isLoadingKey || !addressKeys) {
+            return;
+        }
+        const decryptedAddressKey = getKeyByID(addressKeys, ID);
+        const Key = getKeyByID(Address?.Keys || [], ID);
+        if (!Key) {
+            throw new Error('Key not found');
+        }
+        return createModal(
+            <ExportPublicKeyModal
+                name={addressEmail}
+                fallbackPrivateKey={Key.PrivateKey}
+                publicKey={decryptedAddressKey?.publicKey}
+            />
+        );
+    };
+
+    const handleReactivateKeys = (keyReactivationRequests: KeyReactivationRequest[]) => {
+        return createModal(
+            <ReactivateKeysModal
+                keyReactivationRequests={keyReactivationRequests}
+                onProcess={async (keyReactivationRecords, oldPassword, onReactivation) => {
+                    await reactivateKeysProcess({
+                        api,
+                        user: User,
+                        userKeys,
+                        addresses: Addresses,
+                        keyReactivationRecords,
+                        keyPassword: authentication.getPassword(),
+                        onReactivation,
+                    });
+                    return call();
+                }}
+            />
+        );
     };
 
     const handleReactivateKey = (ID: string) => {
-        const addressKey = getCachedKeyByID(addressKeys, ID);
-        if (!addressKey || isLoadingKey) {
+        if (isLoadingKey || !addressKeys) {
             return;
+        }
+        const Key = getKeyByID(Address?.Keys || [], ID);
+        if (!Address || !Key) {
+            throw new Error('Key not found');
         }
         return handleReactivateKeys([
             {
-                Address,
-                keys: [addressKey],
+                address: Address,
+                keys: addressKeys,
+                keysToReactivate: [Key],
             },
         ]);
     };
 
-    const allInactiveKeys = getAllKeysToReactivate({ Addresses, User, addressesKeysMap, userKeysList });
-    const totalInactiveKeys = getKeysToReactivateCount(allInactiveKeys);
+    const allKeysToReactivate = getAllKeysReactivationRequests(addressesKeys, User, userKeys);
+    const numberOfKeysToReactivate = getKeysToReactivateCount(allKeysToReactivate);
 
     const { isSubUser, isPrivate } = User;
-    const canReactivate = !isSubUser && totalInactiveKeys >= 1;
+    const canReactivate = !isSubUser && numberOfKeysToReactivate >= 1;
 
     const canAdd = !isSubUser && isPrivate;
     const canImport = canAdd;
 
-    const primaryPrivateKey = getPrimaryKey(addressKeys);
+    const primaryPrivateKey = addressKeys?.[0];
     const canExportPrimaryPrivateKey = !!primaryPrivateKey?.privateKey;
     const canExportPrimaryPublicKey = !!primaryPrivateKey;
 
@@ -340,7 +315,7 @@ const AddressKeysSection = () => {
                     <PrimaryButton
                         onClick={() => {
                             if (!isLoadingKey) {
-                                handleReactivateKeys(allInactiveKeys);
+                                handleReactivateKeys(allKeysToReactivate);
                             }
                         }}
                     >
@@ -364,12 +339,12 @@ const AddressKeysSection = () => {
                 onImportKey={canImport ? handleImportKey : undefined}
                 onExportPrivate={
                     canExportPrimaryPrivateKey && primaryPrivateKey
-                        ? () => handleExportPrivate(primaryPrivateKey.Key.ID)
+                        ? () => handleExportPrivate(primaryPrivateKey.ID)
                         : undefined
                 }
                 onExportPublic={
                     canExportPrimaryPublicKey && primaryPrivateKey
-                        ? () => handleExportPublic(primaryPrivateKey.Key.ID)
+                        ? () => handleExportPublic(primaryPrivateKey.ID)
                         : undefined
                 }
             />

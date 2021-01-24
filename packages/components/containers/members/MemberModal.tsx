@@ -3,29 +3,30 @@ import { c } from 'ttag';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA } from 'proton-shared/lib/constants';
 import { createMember, createMemberAddress } from 'proton-shared/lib/api/members';
 import { srpVerify } from 'proton-shared/lib/srp';
-import { Domain, Organization, Address } from 'proton-shared/lib/interfaces';
-import { useApi, useNotifications, useEventManager } from '../../hooks';
+import { Domain, Organization, Address, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
+import { setupMemberKey } from 'proton-shared/lib/keys';
+import { useApi, useNotifications, useEventManager, useGetAddresses } from '../../hooks';
 import { FormModal, Row, Field, Label, PasswordInput, Input, Checkbox, Select } from '../../components';
 
 import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
 import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';
-import { setupMemberKey } from './actionHelper';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
-import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
 
 const FIVE_GIGA = 5 * GIGA;
 
 interface Props {
     onClose?: () => void;
     organization: Organization;
-    organizationKey: OrganizationKey;
+    organizationKey: CachedOrganizationKey;
     domains: Domain[];
     domainsAddressesMap: any; // TODO: better typing
 }
+
 const MemberModal = ({ onClose, organization, organizationKey, domains, domainsAddressesMap, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
+    const getAddresses = useGetAddresses();
     const storageRange = getStorageRange({}, organization);
     const vpnRange = getVPNRange({}, organization);
     const [model, updateModel] = useState({
@@ -76,10 +77,12 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
             if (!organizationKey.privateKey) {
                 throw new Error('Organization key is not decrypted');
             }
+            const ownerAddresses = await getAddresses();
             await setupMemberKey({
                 api,
-                Member,
-                Address,
+                ownerAddresses,
+                member: Member,
+                address: Address,
                 organizationKey: organizationKey.privateKey,
                 encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
                 password: model.password,

@@ -15,18 +15,19 @@ const handleExport = (name: string, publicKey: OpenPGPKey) => {
 
 interface Props {
     name: string;
-    PrivateKey: string;
+    fallbackPrivateKey: string;
     publicKey?: OpenPGPKey;
     onSuccess?: () => void;
     onClose?: () => void;
 }
-const ExportPublicKeyModal = ({ name, PrivateKey, publicKey, onClose, ...rest }: Props) => {
+
+const ExportPublicKeyModal = ({ name, fallbackPrivateKey, publicKey, onClose, ...rest }: Props) => {
     const handleSubmit = async () => {
         if (publicKey) {
             handleExport(name, publicKey);
         } else {
-            // If there is no publickey, it means the private key couldn't be decrypted, so we're just gonna use whatever was received from the server
-            const [key] = await getKeys(PrivateKey);
+            // If there is no publicKey, it means the private key couldn't be decrypted, so just use whatever was received from the server
+            const [key] = await getKeys(fallbackPrivateKey);
             const publicKey = key.toPublic();
             handleExport(name, publicKey);
         }

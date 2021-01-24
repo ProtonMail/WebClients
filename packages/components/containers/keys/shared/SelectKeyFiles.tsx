@@ -1,6 +1,6 @@
 import React, { forwardRef, useRef, useEffect, useImperativeHandle, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { parseKeyFiles } from 'proton-shared/lib/keys/keyImport';
+import { parseKeyFiles } from 'proton-shared/lib/keys';
 import { OpenPGPKey } from 'pmcrypto';
 import FileInput, { FileInputHandle } from '../../../components/input/FileInput';
 
@@ -10,6 +10,7 @@ interface Props {
     multiple: boolean;
     className?: string;
 }
+
 const SelectKeyFiles = forwardRef<FileInputHandle, Props>(
     ({ onFiles, autoClick = false, multiple = false, className = '' }: Props, ref) => {
         const fileRef = useRef<HTMLInputElement>(null);
