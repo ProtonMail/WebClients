@@ -39,14 +39,27 @@ import {
 import EditMemberModal from './EditMemberModal';
 import AuthModal from '../password/AuthModal';
 import DeleteMemberModal from './DeleteMemberModal';
+import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
+import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
 
 interface Props {
     member: Member;
     addresses: Address[];
     organization: Organization;
+    organizationKey: OrganizationKey | undefined;
 }
 
-const MemberActions = ({ member, addresses = [], organization }: Props) => {
+const validateMemberLogin = (organizationKey: OrganizationKey | undefined) => {
+    const { hasOrganizationKey, isOrganizationKeyActive } = getOrganizationKeyInfo(organizationKey);
+    if (!hasOrganizationKey) {
+        return c('Error').t`The organization key must be activated first.`;
+    }
+    if (!isOrganizationKeyActive) {
+        return c('Error').t`Permission denied, administrator privileges have been restricted.`;
+    }
+};
+
+const MemberActions = ({ member, addresses = [], organization, organizationKey }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const authentication = useAuthentication();
@@ -64,6 +77,10 @@ const MemberActions = ({ member, addresses = [], organization }: Props) => {
     };
 
     const login = async () => {
+        const error = validateMemberLogin(organizationKey);
+        if (error) {
+            return createNotification({ type: 'error', text: error });
+        }
         const apiConfig = authMember(member.ID);
         const { UID, LocalID } = await new Promise((resolve, reject) => {
             createModal(

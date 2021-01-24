@@ -219,6 +219,7 @@ const MembersSection = () => {
                                         member={member}
                                         addresses={memberAddresses}
                                         organization={organization}
+                                        organizationKey={organizationKey}
                                     />,
                                 ]}
                                 className="ontablet-hideTd3 onmobile-hideTd5"
