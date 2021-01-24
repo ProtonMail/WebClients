@@ -31,6 +31,7 @@ interface Props extends Omit<InputProps, 'value' | 'onChange'> {
     hasEmailPasting?: boolean;
     hasAddOnBlur?: boolean;
     limit?: number;
+    onAddInvalidEmail?: () => void;
 }
 
 const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
@@ -48,6 +49,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             hasEmailPasting = false,
             hasAddOnBlur = false,
             limit = 20,
+            onAddInvalidEmail,
             ...rest
         }: Props,
         ref
@@ -119,6 +121,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             if (isValidEmail) {
                 handleAddRecipient([newRecipient]);
             } else {
+                onAddInvalidEmail?.();
                 setEmailError(c('Error').t`Invalid email address`);
             }
         };
