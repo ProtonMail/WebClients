@@ -33,7 +33,7 @@ interface Args {
     keyPassword: string;
 }
 
-export const getDecryptedUserKeys = async ({ user, userKeys, keyPassword }: Args): Promise<DecryptedKey[]> => {
+export const getDecryptedUserKeys = async ({ user, userKeys = [], keyPassword }: Args): Promise<DecryptedKey[]> => {
     if (userKeys.length === 0) {
         return [];
     }
