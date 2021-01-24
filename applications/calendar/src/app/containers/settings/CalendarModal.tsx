@@ -22,7 +22,7 @@ import {
     updateCalendarUserSettings,
     CalendarCreateData,
 } from 'proton-shared/lib/api/calendars';
-import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
+import { getPrimaryKey } from 'proton-shared/lib/keys';
 
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 import { noop } from 'proton-shared/lib/helpers/function';

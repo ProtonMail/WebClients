@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { Calendar, Member } from 'proton-shared/lib/interfaces/calendar';
 import { queryMembers, setupCalendar } from 'proton-shared/lib/api/calendars';
-import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
+import { getPrimaryKey } from 'proton-shared/lib/keys';
 import { generateCalendarKeyPayload, getKeysMemberMap } from 'proton-shared/lib/keys/calendarKeys';
 import { getMemberAddressWithAdminPermissions } from '../../../helpers/getMemberWithAdmin';
 

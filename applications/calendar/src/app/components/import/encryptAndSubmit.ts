@@ -3,9 +3,13 @@ import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import { wait } from 'proton-shared/lib/helpers/promise';
-import { Api, CachedKey } from 'proton-shared/lib/interfaces';
+import { Api, DecryptedKey } from 'proton-shared/lib/interfaces';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { SyncMultipleApiResponses, SyncMultipleApiResponse } from 'proton-shared/lib/interfaces/calendar';
+import {
+    SyncMultipleApiResponses,
+    SyncMultipleApiResponse,
+    DecryptedCalendarKey,
+} from 'proton-shared/lib/interfaces/calendar';
 import { API_CODES } from 'proton-shared/lib/constants';
 import upsertCalendarApiEvent from '../../containers/calendar/eventStore/cache/upsertCalendarApiEvent';
 import { CalendarEventsCache } from '../../containers/calendar/eventStore/interface';
@@ -19,8 +23,8 @@ const BATCH_SIZE = 10;
 
 const encryptEvent = async (
     eventComponent: VcalVeventComponent,
-    addressKeys: CachedKey[],
-    calendarKeys: CachedKey[]
+    addressKeys: DecryptedKey[],
+    calendarKeys: DecryptedCalendarKey[]
 ) => {
     const uid = eventComponent.uid.value;
     try {
@@ -80,8 +84,8 @@ interface ProcessData {
     events: VcalVeventComponent[];
     calendarID: string;
     memberID: string;
-    addressKeys: CachedKey[];
-    calendarKeys: CachedKey[];
+    addressKeys: DecryptedKey[];
+    calendarKeys: DecryptedCalendarKey[];
     api: Api;
     signal: AbortSignal;
     onProgress: (encrypted: EncryptedEvent[], imported: EncryptedEvent[], errors: ImportEventError[]) => void;
