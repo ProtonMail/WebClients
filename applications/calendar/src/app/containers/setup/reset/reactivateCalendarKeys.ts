@@ -8,7 +8,7 @@ import {
 } from 'proton-shared/lib/api/calendars';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
-import { Calendar, Key, Member, Passphrase } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, CalendarKey, Member, Passphrase } from 'proton-shared/lib/interfaces/calendar';
 import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
 import { getMemberAddressWithAdminPermissions } from '../../../helpers/getMemberWithAdmin';
 
@@ -33,7 +33,7 @@ const reactivateCalendarKeys = async ({
     addresses,
 }: ReactivateCalendarKeysArguments) => {
     const [{ Keys = [] }, { Passphrases = [] }, { Members = [] }] = await Promise.all([
-        api<{ Keys: Key[] }>(getAllCalendarKeys(CalendarID)),
+        api<{ Keys: CalendarKey[] }>(getAllCalendarKeys(CalendarID)),
         api<{ Passphrases: Passphrase[] }>(getPassphrases(CalendarID)),
         api<{ Members: Member[] }>(queryMembers(CalendarID)),
     ]);

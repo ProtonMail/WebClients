@@ -7,7 +7,6 @@ import {
 } from 'proton-shared/lib/api/calendars';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
-import { CachedKey } from 'proton-shared/lib/interfaces';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { useGetAddressKeys, useGetCalendarKeys } from 'react-components';
@@ -104,12 +103,12 @@ const getRequiredKeys = ({
         return acc;
     }, new Set([calendarID]));
 
-    const getKeysMap = async (set: Set<string>, cb: (id: string) => Promise<CachedKey[]>) => {
+    const getKeysMap = async <T>(set: Set<string>, cb: (id: string) => Promise<T[]>) => {
         const ids = [...set];
 
         const result = await Promise.all(ids.map(cb));
 
-        return ids.reduce<{ [id: string]: CachedKey[] }>((acc, id, i) => {
+        return ids.reduce<{ [id: string]: T[] }>((acc, id, i) => {
             acc[id] = result[i];
             return acc;
         }, {});

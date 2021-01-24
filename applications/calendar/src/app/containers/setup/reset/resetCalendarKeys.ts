@@ -2,7 +2,7 @@ import { Address, Api } from 'proton-shared/lib/interfaces';
 import { Calendar, Member } from 'proton-shared/lib/interfaces/calendar';
 import { useGetAddressKeys } from 'react-components';
 import { getCalendarGroupReset, queryMembers, resetCalendarGroup } from 'proton-shared/lib/api/calendars';
-import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
+import { getPrimaryKey } from 'proton-shared/lib/keys';
 import { c } from 'ttag';
 import { generateCalendarKeyPayload } from 'proton-shared/lib/keys/calendarKeys';
 import { getKeys } from 'pmcrypto';

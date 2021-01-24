@@ -4,7 +4,7 @@ import { Address, Api } from 'proton-shared/lib/interfaces';
 import { createCalendar, updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
-import getPrimaryKey from 'proton-shared/lib/keys/getPrimaryKey';
+import { getPrimaryKey } from 'proton-shared/lib/keys';
 
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 import { DEFAULT_CALENDAR } from '../../../constants';
