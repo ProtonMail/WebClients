@@ -1,7 +1,7 @@
 import { DecryptResultPmcrypto } from 'pmcrypto';
 import createCache from 'proton-shared/lib/helpers/cache';
 import { STATUS } from 'proton-shared/lib/models/cache';
-import { Address, CachedKey, Key } from 'proton-shared/lib/interfaces';
+import { Address, DecryptedKey, Key } from 'proton-shared/lib/interfaces';
 import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 import { MessageExtended } from '../../models/message';
 import { ConversationResult } from '../../hooks/conversation/useConversation';
@@ -24,7 +24,7 @@ export const cache = createCache();
 export const messageCache = createCache<string, MessageExtended>();
 export const conversationCache = createCache<string, ConversationResult>();
 export const attachmentsCache = createCache<string, DecryptResultPmcrypto>();
-export const addressKeysCache = createCache<string, { status: number; value: Partial<CachedKey>[] }>();
+export const addressKeysCache = createCache<string, { status: number; value: Partial<DecryptedKey>[] }>();
 
 export const elementsCache = { elements: {}, params: { sort: {} }, pages: [], page: {}, updatedElements: [] };
 export const contactCache = {
