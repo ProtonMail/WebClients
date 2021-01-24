@@ -1,17 +1,17 @@
 import { c } from 'ttag';
-import getPrimaryKey from '../../keys/getPrimaryKey';
 import { hasBit } from '../../helpers/bitset';
 import { readSessionKeys } from '../deserialize';
-import { splitKeys } from '../../keys/keys';
-import { CalendarEvent, KeyFlags } from '../../interfaces/calendar';
-import { CachedKey } from '../../interfaces';
+import { splitKeys, getPrimaryKey } from '../../keys';
+import { CalendarEvent, DecryptedCalendarKey, CalendarKeyFlags } from '../../interfaces/calendar';
+import { DecryptedKey } from '../../interfaces';
 
 interface GetCreationKeysArguments {
     Event?: CalendarEvent;
-    addressKeys: CachedKey[];
-    newCalendarKeys: CachedKey[];
-    oldCalendarKeys?: CachedKey[];
+    addressKeys: DecryptedKey[];
+    newCalendarKeys: DecryptedCalendarKey[];
+    oldCalendarKeys?: DecryptedCalendarKey[];
 }
+
 export const getCreationKeys = async ({
     Event,
     addressKeys,
@@ -25,7 +25,7 @@ export const getCreationKeys = async ({
     }
 
     const { privateKey: primaryPrivateCalendarKey, publicKey: primaryPublicCalendarKey } =
-        newCalendarKeys.find(({ Key: { Flags } }) => hasBit(Flags, KeyFlags.PRIMARY)) || {};
+        newCalendarKeys.find(({ Key: { Flags } }) => hasBit(Flags, CalendarKeyFlags.PRIMARY)) || {};
     if (!primaryPrivateCalendarKey || !primaryPublicCalendarKey) {
         throw new Error(c('Error').t`Calendar primary private key is not decrypted`);
     }

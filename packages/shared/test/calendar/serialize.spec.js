@@ -6,6 +6,7 @@ import { unwrap, wrap } from '../../lib/calendar/helper';
 import { toCRLF } from './veventHelper.spec';
 import { ATTENDEE_STATUS_API } from '../../lib/calendar/constants';
 import { EVENT_VERIFICATION_STATUS } from '../../lib/calendar/interface';
+import { initRandomMock, disableRandomMock } from '../mockRandomValues';
 
 const veventComponent = {
     component: 'vevent',
@@ -93,6 +94,8 @@ const transformToExternal = (data, publicAddressKey, sharedSessionKey, calendarS
 };
 
 describe('calendar encryption', () => {
+    beforeAll(initRandomMock);
+    afterAll(disableRandomMock);
     it('should encrypt and sign calendar events', async () => {
         const primaryCalendarKey = await decryptPrivateKey(DecryptableKey.PrivateKey, '123');
         const data = await createCalendarEvent({
