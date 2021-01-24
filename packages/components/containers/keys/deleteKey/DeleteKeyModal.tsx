@@ -18,6 +18,7 @@ interface Props {
     onDelete: () => Promise<void>;
     onExport?: () => Promise<void>;
 }
+
 const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: Props) => {
     const [step, setStep] = useState(STEPS.WARNING);
 
@@ -37,10 +38,10 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
     const { children, ...stepProps } = (() => {
         if (step === STEPS.WARNING) {
             return {
+                submit: <ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>,
                 onSubmit: () => {
                     setStep(onExport ? STEPS.EXPORT_KEY : STEPS.DELETE_KEY);
                 },
-                submit: <ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>,
                 children: (
                     <>
                         <Alert>
@@ -57,13 +58,13 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
 
         if (step === STEPS.EXPORT_KEY) {
             return {
+                title: c('Action').t`Export key`,
+                submit: c('Action').t`Export`,
                 onSubmit: async () => {
                     await onExport?.();
                     setStep(STEPS.DELETE_KEY);
                 },
-                title: c('Action').t`Export key`,
                 close: <Button onClick={() => setStep(STEPS.CONFIRM_DELETE)}>{c('Action').t`No`}</Button>,
-                submit: c('Action').t`Export`,
                 children: (
                     <>
                         <Alert>
@@ -78,12 +79,13 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
 
         if (step === STEPS.CONFIRM_DELETE) {
             return {
+                title: c('Action').t`Warning`,
+                submit: <ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>,
                 onSubmit: async () => {
                     setStep(STEPS.DELETE_KEY);
                 },
-                title: c('Action').t`Warning`,
-                close: <Button onClick={() => setStep(STEPS.EXPORT_KEY)}>{c('Action').t`No`}</Button>,
-                submit: <ErrorButton type="submit">{c('Action').t`Yes`}</ErrorButton>,
+                close: c('Action').t`No`,
+                onClose: () => setStep(STEPS.EXPORT_KEY),
                 children: (
                     <>
                         <Alert type="error">
@@ -99,8 +101,8 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
 
         if (step === STEPS.DELETE_KEY) {
             return {
-                submit: c('Action').t`Done`,
                 loading: true,
+                submit: <ErrorButton type="submit" loading>{c('Action').t`Delete`}</ErrorButton>,
                 children: <Alert>{c('alert').t`The key for your address is now being deleted.`}</Alert>,
             };
         }
@@ -108,14 +110,14 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
         if (step === STEPS.SUCCESS) {
             const fp = <code key="0">{fingerprint}</code>;
             return {
-                submit: c('Action').t`Done`,
+                submit: null,
                 children: <Alert>{c('Info').jt`Key with fingerprint ${fp} has been deleted.`}</Alert>,
             };
         }
 
         if (step === STEPS.FAILURE) {
             return {
-                submit: c('Action').t`Ok`,
+                submit: null,
                 children: <GenericError />,
             };
         }
@@ -124,7 +126,14 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
     })();
 
     return (
-        <FormModal title={c('Title').t`Delete key`} onClose={onClose} onSubmit={onClose} {...stepProps} {...rest}>
+        <FormModal
+            close={c('Title').t`Close`}
+            title={c('Title').t`Delete key`}
+            onClose={onClose}
+            onSubmit={onClose}
+            {...stepProps}
+            {...rest}
+        >
             {children}
         </FormModal>
     );

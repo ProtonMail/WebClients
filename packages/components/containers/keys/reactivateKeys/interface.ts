@@ -1,6 +1,5 @@
-import React from 'react';
 import { OpenPGPKey } from 'pmcrypto';
-import { Address, CachedKey } from 'proton-shared/lib/interfaces';
+import { Address, DecryptedKey, Key, UserModel } from 'proton-shared/lib/interfaces';
 
 export enum Status {
     INACTIVE = 1,
@@ -10,31 +9,40 @@ export enum Status {
     ERROR = 5,
 }
 
-export interface KeyReactivation {
-    Address?: Address;
-    User?: any;
-    keys: CachedKey[];
-}
-
-export interface ReactivateKey {
-    ID: string;
-    fingerprint?: string;
+export interface KeyReactivationRequestStateData {
+    id: string;
+    Key: Key;
+    key?: OpenPGPKey;
+    fingerprint: string;
     uploadedPrivateKey?: OpenPGPKey;
     status: Status;
-    result?: any;
+    result?: 'ok' | Error;
 }
 
-export interface ReactivateKeys {
-    Address?: Address;
-    User?: any;
-    keys: ReactivateKey[];
-}
+export type KeyReactivationRequestState =
+    | {
+          user: UserModel;
+          address: undefined;
+          keys: DecryptedKey[];
+          keysToReactivate: KeyReactivationRequestStateData[];
+      }
+    | {
+          user: undefined;
+          address: Address;
+          keys: DecryptedKey[];
+          keysToReactivate: KeyReactivationRequestStateData[];
+      };
 
-export type SetKeysToReactivate = React.Dispatch<React.SetStateAction<ReactivateKeys[]>>;
-
-export interface OnProcessArguments {
-    keysToReactivate: ReactivateKeys[];
-    setKeysToReactivate: SetKeysToReactivate;
-    isUploadMode: boolean;
-    oldPassword?: string;
-}
+export type KeyReactivationRequest =
+    | {
+          user: UserModel;
+          address?: undefined;
+          keys: DecryptedKey[];
+          keysToReactivate: Key[];
+      }
+    | {
+          user?: undefined;
+          address: Address;
+          keys: DecryptedKey[];
+          keysToReactivate: Key[];
+      };

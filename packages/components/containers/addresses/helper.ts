@@ -1,6 +1,5 @@
 import { ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_PRIVATE, RECEIVE_ADDRESS } from 'proton-shared/lib/constants';
-import { Address, Member, UserModel } from 'proton-shared/lib/interfaces';
-import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
+import { Address, Member, UserModel, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
 
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 const { READABLE } = MEMBER_PRIVATE;
@@ -25,23 +24,25 @@ export const getStatus = (address: Address, i: number) => {
 export const getPermissions = ({
     member,
     address: { Status, HasKeys, Type, Order },
-    user: { isAdmin },
+    user: { isAdmin, isPrivate },
     organizationKey,
 }: {
     member?: Member;
     address: Address;
     user: UserModel;
-    organizationKey?: OrganizationKey;
+    organizationKey?: CachedOrganizationKey;
 }) => {
     const isSpecialAddress = Type === TYPE_ORIGINAL || Type === TYPE_PREMIUM;
     const isPrimaryAddress = Order === 1;
 
     const isSelf = !member || !!member.Self;
-    const isReadable = member?.Private === READABLE;
+    const isMemberReadable = member?.Private === READABLE;
 
-    const canGenerateMember = organizationKey && isAdmin && isReadable;
+    // non-private admins cannot generate keys for themselves
+    const canGenerateMember = organizationKey && isAdmin && isMemberReadable && !isSelf;
+    const canGenerateSelf = isSelf && isPrivate;
     return {
-        canGenerate: !HasKeys && (canGenerateMember || isSelf),
+        canGenerate: !HasKeys && (canGenerateMember || canGenerateSelf),
         canDisable: Status === ADDRESS_STATUS.STATUS_ENABLED && isAdmin && !isSpecialAddress && !isPrimaryAddress,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
         canDelete: Type === TYPE_CUSTOM_DOMAIN && isAdmin,

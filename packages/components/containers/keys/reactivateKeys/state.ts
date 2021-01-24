@@ -1,71 +1,87 @@
-import { getKeys } from 'pmcrypto';
+import { getKeys, OpenPGPKey } from 'pmcrypto';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { KeyReactivation, ReactivateKey, ReactivateKeys, Status } from './interface';
+import { getRandomString } from 'proton-shared/lib/helpers/string';
+import {
+    KeyReactivationRequestStateData,
+    Status,
+    KeyReactivationRequestState,
+    KeyReactivationRequest,
+} from './interface';
 
-export const getInitialState = async (keys: KeyReactivation[]): Promise<ReactivateKeys[]> => {
-    if (keys.length === 0) {
+export const getInitialStates = async (initial: KeyReactivationRequest[]): Promise<KeyReactivationRequestState[]> => {
+    if (initial.length === 0) {
         throw new Error('Keys to reactivate needed');
     }
 
     return Promise.all(
-        keys.map(async ({ User, Address, keys }) => {
-            const parsedKeys = await Promise.all(
-                keys.map(({ Key: { PrivateKey } }) => {
-                    return getKeys(PrivateKey).catch(() => []);
-                })
+        initial.map(async (record) => {
+            const keyStates = await Promise.all(
+                record.keysToReactivate.map(
+                    async (Key): Promise<KeyReactivationRequestStateData> => {
+                        try {
+                            const [key] = await getKeys(Key.PrivateKey);
+                            return {
+                                id: getRandomString(12),
+                                Key,
+                                key,
+                                fingerprint: key.getFingerprint(),
+                                status: Status.INACTIVE,
+                                result: undefined,
+                            };
+                        } catch (e) {
+                            return {
+                                id: getRandomString(12),
+                                Key,
+                                fingerprint: '-',
+                                status: Status.ERROR,
+                                result: undefined,
+                            };
+                        }
+                    }
+                )
             );
-
             return {
-                User,
-                Address,
-                keys: parsedKeys.map(([privateKey], i) => {
-                    return {
-                        ID: keys[i].Key.ID,
-                        PrivateKey: keys[i].Key.PrivateKey,
-                        fingerprint: privateKey?.getFingerprint(),
-                        status: privateKey ? Status.INACTIVE : Status.ERROR,
-                        result: undefined,
-                    };
-                }),
+                ...record,
+                keysToReactivate: keyStates,
             };
         })
     );
 };
 
-export const updateKey = (oldAllKeys: ReactivateKeys[], key: ReactivateKey, newKey: Partial<ReactivateKey>) => {
-    return oldAllKeys.map((toReactivate) => {
-        const { keys: oldInactiveKeys } = toReactivate;
-
-        if (!oldInactiveKeys.some((oldKey) => oldKey === key)) {
-            return toReactivate;
-        }
-
+export const updateKey = (
+    oldStates: KeyReactivationRequestState[],
+    id: string,
+    newKeyState: Partial<KeyReactivationRequestStateData>
+): KeyReactivationRequestState[] => {
+    return oldStates.map((oldState) => {
         return {
-            ...toReactivate,
-            keys: oldInactiveKeys.map((oldKey) => {
-                if (oldKey !== key) {
-                    return oldKey;
+            ...oldState,
+            keysToReactivate: oldState.keysToReactivate.map((oldKeyState) => {
+                if (oldKeyState.id !== id) {
+                    return oldKeyState;
                 }
                 return {
-                    ...oldKey,
-                    ...newKey,
+                    ...oldKeyState,
+                    ...newKeyState,
                 };
             }),
         };
     });
 };
 
-export const getUploadedKeys = (keys: ReactivateKeys[]): ReactivateKeys[] => {
-    return keys
-        .map((toReactivate) => {
-            const { keys } = toReactivate;
-            const uploadedKeys = keys.filter(({ uploadedPrivateKey }) => !!uploadedPrivateKey);
-            if (!uploadedKeys.length) {
+export const getUploadedPrivateKeys = (oldStates: KeyReactivationRequestState[]) => {
+    return oldStates
+        .map((oldState) => {
+            const uploadedPrivateKeys = oldState.keysToReactivate.filter(
+                (keyData): keyData is KeyReactivationRequestStateData & { uploadedPrivateKey: OpenPGPKey } =>
+                    !!keyData.uploadedPrivateKey
+            );
+            if (!uploadedPrivateKeys.length) {
                 return;
             }
             return {
-                ...toReactivate,
-                keys: uploadedKeys,
+                ...oldState,
+                keysToReactivate: uploadedPrivateKeys,
             };
         })
         .filter(isTruthy);

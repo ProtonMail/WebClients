@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { DOMAIN_STATE } from 'proton-shared/lib/constants';
-import { Organization as tsOrganization, Domain } from 'proton-shared/lib/interfaces';
+import { Organization as tsOrganization, Domain, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
 import {
     Table,
     TableCell,
@@ -34,11 +34,10 @@ import RestoreAdministratorPrivileges from '../organization/RestoreAdministrator
 import MemberModal from './MemberModal';
 import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
 import useDomainsAddresses from '../../hooks/useDomainsAddresses';
-import { OrganizationKey } from '../../hooks/useGetOrganizationKeyRaw';
 
 const validateAddUser = (
     organization: tsOrganization,
-    organizationKey: OrganizationKey | undefined,
+    organizationKey: CachedOrganizationKey | undefined,
     verifiedDomains: Domain[]
 ) => {
     const { isOrganizationKeyActive, hasOrganizationKey } = getOrganizationKeyInfo(organizationKey);

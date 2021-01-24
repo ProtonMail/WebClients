@@ -1,15 +1,29 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import { FormModal, Alert } from '../../../components';
-import { useNotifications, useModals } from '../../../hooks';
+import { getRandomString } from 'proton-shared/lib/helpers/string';
+import { OnKeyImportCallback } from 'proton-shared/lib/keys';
+
+import { Alert, FormModal } from '../../../components';
+import { useModals, useNotifications } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 
 import ImportKeysList from './ImportKeysList';
 import SelectKeyFiles from '../shared/SelectKeyFiles';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
-import { ImportKey, OnProcessArguments, Status } from './interface';
+import { ImportKey, Status } from './interface';
 import { FileInputHandle } from '../../../components/input/FileInput';
+import { updateKey } from './state';
+
+const getNewKey = (privateKey: OpenPGPKey) => {
+    return {
+        id: getRandomString(12),
+        privateKey,
+        fingerprint: privateKey.getFingerprint(),
+        status: Status.LOADING,
+        result: undefined,
+    };
+};
 
 enum STEPS {
     WARNING = 1,
@@ -21,19 +35,20 @@ enum STEPS {
 
 interface Props {
     onClose?: () => void;
-    onProcess: (args: OnProcessArguments) => Promise<void>;
+    onProcess: (keys: ImportKey[], cb: OnKeyImportCallback) => Promise<void>;
 }
+
 const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const selectRef = useRef<FileInputHandle>(null);
 
     const [step, setStep] = useState<STEPS>(STEPS.WARNING);
-    const [keys, setKeys] = useState<ImportKey[]>([]);
+    const [state, setState] = useState<ImportKey[]>([]);
 
-    const handleSubmit = (keysToImport: ImportKey[]) => {
+    const handleSubmit = (promise: Promise<void>) => {
         setStep(STEPS.PROCESS);
-        onProcess({ keysToImport, setKeysToImport: setKeys })
+        promise
             .then(() => {
                 setStep(STEPS.DONE);
             })
@@ -46,19 +61,22 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
         const [first, ...rest] = privateKeys;
 
         if (privateKeys.length === 0) {
-            handleSubmit(acc);
+            handleSubmit(
+                onProcess(acc, (id: string, result) => {
+                    setState((oldKeys) => {
+                        return updateKey(oldKeys, id, {
+                            status: result === 'ok' ? Status.SUCCESS : Status.ERROR,
+                            result,
+                        });
+                    });
+                })
+            );
             return;
         }
 
-        const handleAddKey = (decryptedPrivateKey: OpenPGPKey, fingerprint: string) => {
-            const newKey = {
-                privateKey: decryptedPrivateKey,
-                fingerprint,
-                status: Status.LOADING,
-                result: undefined,
-            };
-            const newList = [...acc, newKey];
-            setKeys(newList);
+        const handleAddKey = (decryptedPrivateKey: OpenPGPKey) => {
+            const newList = [...acc, getNewKey(decryptedPrivateKey)];
+            setState(newList);
             handleUpload(rest, newList);
         };
 
@@ -68,7 +86,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                 // @ts-ignore - validate does not exist in the openpgp typings, todo
                 .validate()
                 .then(() => {
-                    handleAddKey(first.privateKey, first.fingerprint);
+                    handleAddKey(first.privateKey);
                 })
                 .catch((e: Error) => {
                     createNotification({
@@ -83,7 +101,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
             <DecryptFileKeyModal
                 privateKey={first.privateKey}
                 onSuccess={(decryptedPrivateKey) => {
-                    handleAddKey(decryptedPrivateKey, first.fingerprint);
+                    handleAddKey(decryptedPrivateKey);
                 }}
             />
         );
@@ -97,13 +115,8 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
                 text: c('Error').t`Invalid private key file`,
             });
         }
-        const list = privateKeys.map((privateKey) => {
-            return {
-                fingerprint: privateKey.getFingerprint(),
-                privateKey,
-                status: Status.LOADING,
-                result: undefined,
-            };
+        const list = privateKeys.map<ImportKey>((privateKey) => {
+            return getNewKey(privateKey);
         });
         handleUpload(list, []);
     };
@@ -111,7 +124,7 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
     const { children, ...stepProps } = (() => {
         if (step === STEPS.WARNING) {
             return {
-                submit: c('Action').t`Yes`,
+                submit: c('Action').t`Import`,
                 onSubmit: () => {
                     setStep(STEPS.SELECT_FILES);
                 },
@@ -139,22 +152,22 @@ const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
 
         if (step === STEPS.PROCESS) {
             return {
-                submit: c('Action').t`Done`,
+                submit: c('Action').t`Select files`,
                 loading: true,
-                children: <ImportKeysList keys={keys} />,
+                children: <ImportKeysList keys={state} />,
             };
         }
 
         if (step === STEPS.DONE) {
             return {
-                submit: c('Action').t`Done`,
-                children: <ImportKeysList keys={keys} />,
+                submit: null,
+                children: <ImportKeysList keys={state} />,
             };
         }
 
         if (step === STEPS.FAILURE) {
             return {
-                submit: c('Action').t`Ok`,
+                submit: null,
                 children: <GenericError />,
             };
         }

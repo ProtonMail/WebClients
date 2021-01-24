@@ -1,41 +1,18 @@
 import { useCallback } from 'react';
-import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { OrganizationKey } from 'proton-shared/lib/interfaces';
+import { getDecryptedOrganizationKey } from 'proton-shared/lib/keys';
 import { getOrganizationKeys } from 'proton-shared/lib/api/organization';
+
 import useApi from './useApi';
 import useAuthentication from './useAuthentication';
 
-export interface OrganizationKey {
-    Key: {
-        PrivateKey: string;
-        PublicKey: string;
-    };
-    privateKey?: OpenPGPKey;
-    error?: Error;
-}
-export const useGetOrganizationKeyRaw = (): (() => Promise<OrganizationKey>) => {
+export const useGetOrganizationKeyRaw = () => {
     const authentication = useAuthentication();
     const api = useApi();
 
     return useCallback(async () => {
-        const Key = await api<{ PublicKey: string; PrivateKey: string }>(getOrganizationKeys());
-        if (!Key.PrivateKey) {
-            return {
-                Key,
-            };
-        }
-        try {
-            const mailboxPassword = authentication.getPassword();
-            const privateKey = await decryptPrivateKey(Key.PrivateKey, mailboxPassword);
-            return {
-                Key,
-                privateKey,
-            };
-        } catch (e) {
-            return {
-                Key,
-                error: e,
-            };
-        }
+        const Key = await api<OrganizationKey>(getOrganizationKeys());
+        return getDecryptedOrganizationKey({ keyPassword: authentication.getPassword(), Key });
     }, []);
 };
 

@@ -6,11 +6,14 @@ import { ImportKey, Status } from './interface';
 interface Props {
     keys: ImportKey[];
 }
+
 const ImportKeysList = ({ keys }: Props) => {
     const list = keys.map(({ status, fingerprint, result }, i) => {
         const keyStatus = (() => {
             if (status === Status.ERROR) {
-                return <Badge type="error" tooltip={result.message}>{c('Title').t`Error`}</Badge>;
+                return (
+                    <Badge type="error" tooltip={result === 'ok' ? '' : result?.message}>{c('Title').t`Error`}</Badge>
+                );
             }
             if (status === Status.SUCCESS) {
                 return <Badge type="success">{c('Title').t`Success`}</Badge>;

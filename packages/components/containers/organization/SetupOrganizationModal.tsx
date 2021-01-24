@@ -6,7 +6,7 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { updateOrganizationName, updateOrganizationKeys } from 'proton-shared/lib/api/organization';
 import { updateVPN, updateQuota } from 'proton-shared/lib/api/members';
 
-import { generateOrganizationKeys } from 'proton-shared/lib/keys/organizationKeys';
+import { generateOrganizationKeys } from 'proton-shared/lib/keys';
 import { FormModal, Button, Row, Label, Input, PasswordInput, Alert, Select } from '../../components';
 import {
     useUser,

@@ -44,7 +44,9 @@ const PmMeButton = () => {
         );
         await call();
         createNotification({ text: c('Success').t`Premium address created` });
-        createModal(<CreateMissingKeysAddressModal organizationKey={organizationKey} addresses={[Address]} />);
+        createModal(
+            <CreateMissingKeysAddressModal organizationKey={organizationKey} addressesToGenerate={[Address]} />
+        );
     };
 
     return (
