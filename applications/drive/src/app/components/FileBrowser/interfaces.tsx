@@ -24,6 +24,7 @@ export interface FileBrowserItem {
     Location?: string;
     Disabled?: boolean;
     SharedURLShareID?: string;
+    UrlsExpired: boolean;
 }
 
 export interface ItemProps {

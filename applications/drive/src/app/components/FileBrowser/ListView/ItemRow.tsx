@@ -8,12 +8,9 @@ import {
     DragMoveContainer,
     FileIcon,
     TableCell,
-    Tooltip,
-    Icon,
 } from 'react-components';
 import { isEquivalent, pick } from 'proton-shared/lib/helpers/object';
 import { shallowEqual } from 'proton-shared/lib/helpers/array';
-import { c } from 'ttag';
 import { ItemProps } from '../interfaces';
 import { LinkType } from '../../../interfaces/link';
 import ItemContextMenu from '../ItemContextMenu';
@@ -23,6 +20,7 @@ import DescriptiveTypeCell from './Cells/DescriptiveTypeCell';
 import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
+import SharedURLIcon from '../SharedURLIcon';
 
 const ItemRow = ({
     item,
@@ -99,11 +97,7 @@ const ItemRow = ({
                 <TableCell className="m0 flex flex-items-center flex-nowrap flex-item-fluid">
                     <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
                     <NameCell name={item.Name} />
-                    {item.SharedURLShareID && (
-                        <Tooltip title={c('Tooltip').t`Shared`} className="ml1 flex flex-item-noshrink">
-                            <Icon className="color-primary" name="link" />
-                        </Tooltip>
-                    )}
+                    {item.SharedURLShareID && <SharedURLIcon expired={item.UrlsExpired} />}
                 </TableCell>
 
                 {showLocation && (
