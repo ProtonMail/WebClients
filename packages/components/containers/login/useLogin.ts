@@ -4,7 +4,13 @@ import { c } from 'ttag';
 import { srpVerify } from 'proton-shared/lib/srp';
 import { upgradePassword } from 'proton-shared/lib/api/settings';
 import { auth2FA, getInfo, revoke } from 'proton-shared/lib/api/auth';
-import { Address as tsAddress, Api, KeySalt as tsKeySalt, User as tsUser } from 'proton-shared/lib/interfaces';
+import {
+    Address as tsAddress,
+    Api,
+    KeySalt as tsKeySalt,
+    Member as tsMember,
+    User as tsUser,
+} from 'proton-shared/lib/interfaces';
 import { getUser } from 'proton-shared/lib/api/user';
 import { getKeySalts } from 'proton-shared/lib/api/keys';
 import { HTTP_ERROR_CODES } from 'proton-shared/lib/errors';
@@ -17,6 +23,7 @@ import { MEMBER_PRIVATE, USER_ROLES } from 'proton-shared/lib/constants';
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from 'proton-shared/lib/keys/upgradeKeysV2';
 import { traceError } from 'proton-shared/lib/helpers/sentry';
+import { getMember } from 'proton-shared/lib/api/members';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
 import { getAuthTypes, handleUnlockKey } from './helper';
@@ -237,11 +244,19 @@ const useLogin = ({ api, onLogin, ignoreUnlock, hasGenerateKeys = false }: Props
 
         if (User.Keys.length === 0) {
             if (hasGenerateKeys) {
-                if (
-                    (User.Role === USER_ROLES.ADMIN_ROLE || User.Role === USER_ROLES.MEMBER_ROLE) &&
-                    User.Private === MEMBER_PRIVATE.UNREADABLE
-                ) {
+                if (User.Role === USER_ROLES.MEMBER_ROLE && User.Private === MEMBER_PRIVATE.UNREADABLE) {
                     return gotoForm(FORM.NEW_PASSWORD);
+                }
+                if (User.Role === USER_ROLES.ADMIN_ROLE && User.Private === MEMBER_PRIVATE.UNREADABLE) {
+                    // Attempt to find out if this was an admin member added to an organization
+                    const selfMember = await authApi<{ Member: tsMember }>(getMember('me')).then(
+                        ({ Member }) => Member
+                    );
+                    // If the member is not the super owner, then he was probably added to the organization, and we can display the new password selection screen
+                    if (!selfMember.Subscriber) {
+                        return gotoForm(FORM.NEW_PASSWORD);
+                    }
+                    // If the member is the super owner, then fall through to the automatic setup
                 }
                 return handleSetupPassword(loginPassword);
             }
