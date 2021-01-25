@@ -1,6 +1,15 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useRef } from 'react';
 import { c } from 'ttag';
-import { HeaderModal, FooterModal, ContentModal, InnerModal, ResetButton, PrimaryButton } from 'react-components';
+import {
+    HeaderModal,
+    FooterModal,
+    ContentModal,
+    InnerModal,
+    ResetButton,
+    PrimaryButton,
+    useFocusTrap,
+    useHotkeys,
+} from 'react-components';
 
 interface Props {
     title: ReactNode;
@@ -11,8 +20,27 @@ interface Props {
 }
 
 const ComposerInnerModal = ({ title, disabled = false, children, onCancel, onSubmit }: Props) => {
+    const rootRef = useRef<HTMLDivElement>(null);
+    const focusTrapProps = useFocusTrap({
+        rootRef,
+    });
+
+    useHotkeys(rootRef, [
+        [
+            'Escape',
+            (e) => {
+                e.stopPropagation();
+                onCancel?.();
+            },
+        ],
+    ]);
+
     return (
-        <div className="composer-inner-modal absolute w100 h100 flex flex-justify-center flex-items-center">
+        <div
+            className="composer-inner-modal absolute w100 h100 flex flex-justify-center flex-items-center"
+            ref={rootRef}
+            {...focusTrapProps}
+        >
             <div className="pm-modal">
                 <HeaderModal modalTitleID="" hasClose={false} onClose={onCancel}>
                     {title}
