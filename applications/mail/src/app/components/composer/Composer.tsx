@@ -1,20 +1,19 @@
+import React, { useState, useEffect, useRef, useCallback, DragEvent } from 'react';
+import { c } from 'ttag';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getRecipients } from 'proton-shared/lib/mail/messages';
-import React, { useState, useEffect, useRef, useCallback, DragEvent } from 'react';
 import { classnames, useToggle, useNotifications, useMailSettings, useHandler } from 'react-components';
-import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 import { COMPOSER_MODE } from 'proton-shared/lib/constants';
 import { wait } from 'proton-shared/lib/helpers/promise';
-
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import ComposerTitleBar from './ComposerTitleBar';
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
 import ComposerActions from './ComposerActions';
 import { mergeMessages } from '../../helpers/message/messages';
-import { setContent } from '../../helpers/message/messageContent';
+import { getContent, setContent } from '../../helpers/message/messageContent';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
 import { useMessage } from '../../hooks/message/useMessage';
@@ -273,7 +272,7 @@ const Composer = ({
         });
     });
 
-    const handleChangeContent = useHandler((content: string, refreshEditor = false) => {
+    const handleChangeContent = useHandler((content: string, refreshEditor: boolean = false) => {
         setModelMessage((modelMessage) => {
             setContent(modelMessage, content);
             const newModelMessage = { ...modelMessage };
@@ -285,7 +284,7 @@ const Composer = ({
         });
     });
 
-    const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo = false) => {
+    const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo: boolean = false) => {
         handleChange((message) => {
             let Flags = message.data?.Flags || 0;
             changes.forEach((isAdd, flag) => {
@@ -295,6 +294,25 @@ const Composer = ({
             return { data: { Flags } };
         }, shouldReloadSendInfo);
     });
+
+    /**
+     * In some rare situations, Squire can miss an input event.
+     * A missed event can lead to not sending the expected content which is serious.
+     * This function perform an ultimate content check before sending especially.
+     */
+    const ensureMessageContent = () => {
+        // Should not be possible, more to satisfy TS
+        if (!editorActionsRef.current) {
+            return true;
+        }
+
+        const actualContent = editorActionsRef.current.getContent();
+        const modelContent = getContent(modelMessage);
+
+        if (actualContent !== modelContent) {
+            handleChangeContent(actualContent);
+        }
+    };
 
     /**
      * Ensure the draft is saved before continue
@@ -385,6 +403,7 @@ const Composer = ({
     });
 
     const handleManualSave = async () => {
+        ensureMessageContent();
         await promiseUploadInProgress.current;
         // Split handlers to have the updated version of the message
         await handleManualSaveAfterUploads();
@@ -430,6 +449,7 @@ const Composer = ({
     });
 
     const handleSend = useHandler(async () => {
+        ensureMessageContent();
         setSending(true);
         await promiseUploadInProgress.current;
         // Split handlers to have the updated version of the message
@@ -443,6 +463,7 @@ const Composer = ({
         onFocus();
     };
     const handleClose = async () => {
+        ensureMessageContent();
         setClosing(true);
         try {
             if (pendingSave.current || uploadInProgress) {

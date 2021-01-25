@@ -36,7 +36,9 @@ import { mergeMessages } from '../../helpers/message/messages';
 import { addApiContact } from '../../helpers/test/contact';
 import { arrayToBase64 } from '../../helpers/base64';
 import { createEmbeddedMap } from '../../helpers/embedded/embeddeds';
+import { getContent } from '../../helpers/message/messageContent';
 
+const getHTML = squire().getHTML as jest.Mock;
 const setHTML = squire().setHTML as jest.Mock;
 
 jest.setTimeout(20000);
@@ -141,6 +143,8 @@ describe('Composer', () => {
             if (!apiKeys.has(toAddress)) {
                 addApiKeys(false, toAddress, []);
             }
+
+            getHTML.mockImplementation(() => getContent(message));
 
             const renderResult = await render(<Composer {...props} messageID={message.localID} />, useMinimalCache);
 
