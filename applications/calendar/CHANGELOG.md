@@ -1,6 +1,10 @@
+# [4.0.0-beta.13] - 2021-01-27
+## Updated
+- Add participants to events without pressing enter
+
 # [4.0.0-beta.12] - 2021-01-21
 ## Added
-- Add participants to Proton events
+- Send invitations from ProtonCalendar
 
 ## Updated
 - Harmonise answer for recurring events with single edits for all other calendar providers
