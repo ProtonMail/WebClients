@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
     OrganizationSection,
     MembersSection,
@@ -8,10 +8,16 @@ import {
     CatchAllSection,
     SettingsPropsShared,
     useOrganization,
+    useOrganizationKey,
+    useModals,
 } from 'react-components';
 import { c } from 'ttag';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
 import { Organization } from 'proton-shared/lib/interfaces';
+import { getOrganizationKeyInfo } from 'react-components/containers/organization/helpers/organizationKeysHelper';
+import ReactivateOrganizationKeysModal, {
+    MODES,
+} from 'react-components/containers/organization/ReactivateOrganizationKeysModal';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
@@ -60,6 +66,25 @@ export const getOrganizationPage = (organization: Organization) => {
 
 const OrganizationContainer = ({ location, setActiveSection }: SettingsPropsShared) => {
     const [organization] = useOrganization();
+    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const onceRef = useRef(false);
+    const { createModal } = useModals();
+
+    useEffect(() => {
+        if (onceRef.current || !organizationKey || loadingOrganizationKey) {
+            return;
+        }
+        const { hasOrganizationKey, isOrganizationKeyInactive } = getOrganizationKeyInfo(organizationKey);
+        if (!hasOrganizationKey) {
+            createModal(<ReactivateOrganizationKeysModal mode={MODES.ACTIVATE} />);
+            onceRef.current = true;
+        }
+        if (isOrganizationKeyInactive) {
+            createModal(<ReactivateOrganizationKeysModal mode={MODES.REACTIVATE} />);
+            onceRef.current = true;
+        }
+    }, [organizationKey]);
+
     return (
         <PrivateMainSettingsAreaWithPermissions
             location={location}
