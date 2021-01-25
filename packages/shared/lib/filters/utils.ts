@@ -5,7 +5,7 @@ import {
     FilterActions,
     SimpleFilterModalModel,
     Filter,
-    AdvancedSimpleFilterModalModel,
+    FilterModalModelBase,
 } from './interfaces';
 import { toMap } from '../helpers/object';
 import { computeTree, computeFromTree } from './sieve';
@@ -45,10 +45,7 @@ const convertActions = ({ actions }: SimpleFilterModalModel): FilterActions => {
     };
 };
 
-export const convertModel = (
-    modalModel: SimpleFilterModalModel | AdvancedSimpleFilterModalModel,
-    isSieve = false
-): Filter => {
+export const convertModel = (modalModel: FilterModalModelBase, isSieve = false): Filter => {
     const config = {
         ID: modalModel.id || '',
         Name: modalModel.name || '',
@@ -57,7 +54,7 @@ export const convertModel = (
     };
 
     if (isSieve) {
-        const model = modalModel as AdvancedSimpleFilterModalModel;
+        const model = modalModel as FilterModalModelBase & { sieve: string };
 
         return {
             ...config,

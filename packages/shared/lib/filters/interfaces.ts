@@ -66,42 +66,18 @@ export interface Condition {
     id: string;
 }
 
-export interface SimpleFilterModalModel {
+export interface FilterModalModelBase {
     id?: string;
     status?: number;
     version?: 1 | 2;
-    step: Step;
     name: string;
+}
+
+export interface SimpleFilterModalModel extends FilterModalModelBase {
+    step: Step;
     statement: FilterStatement;
     actions: Actions;
     conditions: Condition[];
-}
-
-/* Advanced (Sieve) Modal filter model interfaces */
-
-export enum StepSieve {
-    NAME,
-    SIEVE,
-}
-
-export interface SieveIssue {
-    message: string;
-    severity: string;
-}
-
-export interface ErrorsSieve {
-    name: string;
-    sieve: string;
-}
-
-export interface AdvancedSimpleFilterModalModel {
-    id?: string;
-    status?: number;
-    version?: 1 | 2;
-    step: StepSieve;
-    name: string;
-    sieve: string;
-    issues: SieveIssue[];
 }
 
 /* Expected API Format */
