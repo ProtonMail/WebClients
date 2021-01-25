@@ -30,7 +30,7 @@ import {
 } from '../../models/event';
 import { useExpirationCheck } from '../useExpiration';
 import { ElementsCache, ElementsCacheParams, useElementsCache, useSetElementsCache } from './useElementsCache';
-import { PAGE_SIZE } from '../../constants';
+import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../constants';
 
 interface Options {
     conversationMode: boolean;
@@ -203,7 +203,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             ...query({
                 Page: pageFromUrl,
                 PageSize: PAGE_SIZE,
-                Limit: PAGE_SIZE,
+                Limit: ELEMENTS_CACHE_REQUEST_SIZE,
                 LabelID: labelID,
                 Sort: sort.sort,
                 Desc: sort.desc ? 1 : 0,
