@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { Organization } from 'proton-shared/lib/interfaces';
 
-import { Alert, Row, Field, Label, PrimaryButton } from '../../components';
+import { Alert, Row, Field, Label, PrimaryButton, Loader } from '../../components';
 import { useModals } from '../../hooks';
 import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
 import OrganizationNameModal from './OrganizationNameModal';
@@ -14,9 +14,12 @@ interface Props {
 
 const OrganizationSection = ({ organization }: Props) => {
     const { createModal } = useModals();
-    const { Name = '', HasKeys } = organization || {};
 
-    if (!HasKeys) {
+    if (!organization) {
+        return <Loader />;
+    }
+
+    if (!organization.HasKeys) {
         return (
             <>
                 <Alert learnMore="https://protonmail.com/support/knowledge-base/business/">{c('Info')
@@ -26,6 +29,8 @@ const OrganizationSection = ({ organization }: Props) => {
         );
     }
 
+    const organizationName = organization.Name;
+
     return (
         <>
             <RestoreAdministratorPrivileges />
@@ -33,12 +38,12 @@ const OrganizationSection = ({ organization }: Props) => {
             <Row>
                 <Label>{c('Label').t`Organization name`}</Label>
                 <Field className="pt0-5">
-                    <div className="bold ellipsis">{Name}</div>
+                    <div className="bold ellipsis">{organizationName}</div>
                 </Field>
                 <div className="ml1 onmobile-ml0">
-                    <PrimaryButton onClick={() => createModal(<OrganizationNameModal organizationName={Name} />)}>{c(
-                        'Action'
-                    ).t`Edit`}</PrimaryButton>
+                    <PrimaryButton
+                        onClick={() => createModal(<OrganizationNameModal organizationName={organizationName} />)}
+                    >{c('Action').t`Edit`}</PrimaryButton>
                 </div>
             </Row>
         </>

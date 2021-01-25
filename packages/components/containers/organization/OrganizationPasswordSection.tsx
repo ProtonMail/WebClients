@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { USER_ROLES } from 'proton-shared/lib/constants';
 import { Alert, Block, Loader, PrimaryButton, Table, TableBody, TableHeader, TableRow } from '../../components';
@@ -9,29 +9,6 @@ import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';
 import ReactivateOrganizationKeysModal, { MODES } from './ReactivateOrganizationKeysModal';
 import { getOrganizationKeyInfo } from './helpers/organizationKeysHelper';
 import useDisplayOrganizationKey from './useDisplayOrganizationKey';
-
-const ActivateOrganizationKeysView = () => {
-    const { createModal } = useModals();
-
-    useEffect(() => {
-        createModal(<ReactivateOrganizationKeysModal mode={MODES.ACTIVATE} />, 'ReactivateOrganizationKeysModal');
-    }, []);
-
-    return (
-        <>
-            <Alert type="error">
-                {c('Error')
-                    .t`You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`}
-            </Alert>
-            <PrimaryButton
-                onClick={() => createModal(<ReactivateOrganizationKeysModal mode={MODES.ACTIVATE} />)}
-                className="mr1"
-            >
-                {c('Action').t`Activate organization key`}
-            </PrimaryButton>
-        </>
-    );
-};
 
 const OrganizationSection = () => {
     const [organization, loadingOrganization] = useOrganization();
@@ -121,7 +98,20 @@ const OrganizationSection = () => {
                         </PrimaryButton>
                     </>
                 )}
-                {!hasOrganizationKey && <ActivateOrganizationKeysView />}
+                {!hasOrganizationKey && (
+                    <>
+                        <Alert type="error">
+                            {c('Error')
+                                .t`You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`}
+                        </Alert>
+                        <PrimaryButton
+                            onClick={() => createModal(<ReactivateOrganizationKeysModal mode={MODES.ACTIVATE} />)}
+                            className="mr1"
+                        >
+                            {c('Action').t`Activate organization key`}
+                        </PrimaryButton>
+                    </>
+                )}
             </Block>
             {hasOrganizationKey && (
                 <Table>
