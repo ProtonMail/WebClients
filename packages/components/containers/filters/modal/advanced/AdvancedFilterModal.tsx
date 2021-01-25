@@ -1,13 +1,15 @@
-import React, { useState, FormEvent, useMemo, useEffect } from 'react';
+import React, { useState, FormEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { FILTER_VERSION } from 'proton-shared/lib/filters/constants';
-import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from 'proton-shared/lib/filters/interfaces';
+import { Filter } from 'proton-shared/lib/filters/interfaces';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { checkSieveFilter, addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
 import { convertModel } from 'proton-shared/lib/filters/utils';
 import { templates as sieveTemplates } from 'proton-shared/lib/filters/sieve';
-
 import { noop } from 'proton-shared/lib/helpers/function';
+
+import { StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from './interfaces';
+
 import { FormModal, ConfirmModal, Alert, useDebounceInput, ErrorButton } from '../../../../components';
 
 import {
@@ -81,7 +83,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
 
     const errors = useMemo<ErrorsSieve>(() => {
         return {
-            name: model.name !== initialModel.name ? checkNameErrors(model.name, filters) : '',
+            name: !model.name || model.name !== initialModel.name ? checkNameErrors(model.name, filters) : '',
             sieve: checkSieveErrors(model.sieve, model.issues.length),
         };
     }, [model.name, model.sieve, model.issues]);
@@ -98,22 +100,41 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         } finally {
             // Some failed request will add the filter but in disabled mode
             // So we have to refresh the list in both cases
-            call();
+            await call();
             onClose();
         }
     };
 
     const editFilter = async (filter: Filter) => {
         const { Filter } = await reqUpdate.request(filter.ID, filter);
-        call();
+        await call();
         createNotification({
             text: c('Filter notification').t`Filter ${Filter.Name} updated`,
         });
         onClose();
     };
 
+    const checkSieve = async () => {
+        const { Issues = [] } = await api(checkSieveFilter({ Version: FILTER_VERSION, Sieve: sieve }));
+
+        const issues = Issues.length ? Issues : [];
+
+        setModel({
+            ...model,
+            issues,
+        });
+
+        return issues;
+    };
+
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+
+        const issues = await checkSieve();
+
+        if (issues.length) {
+            return;
+        }
 
         if (isEdit) {
             await editFilter(convertModel(model, true));
@@ -139,22 +160,6 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             </ConfirmModal>
         );
     };
-
-    const checkSieve = async () => {
-        const { Issues = [] } = await api(checkSieveFilter({ Version: FILTER_VERSION, Sieve: sieve }));
-        setModel({
-            ...model,
-            issues: Issues.length ? Issues : [],
-        });
-    };
-
-    useEffect(() => {
-        if (sieve) {
-            withLoading(checkSieve());
-        } else {
-            setModel({ ...model, issues: [] });
-        }
-    }, [sieve]);
 
     return (
         <FormModal
