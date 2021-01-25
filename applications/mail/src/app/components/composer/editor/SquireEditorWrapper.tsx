@@ -25,6 +25,7 @@ import EditorToolbarExtension from './EditorToolbarExtension';
 import { findCIDsInContent } from '../../../helpers/embedded/embeddedFinder';
 
 interface ExternalEditorActions {
+    getContent: () => string;
     setContent: (message: MessageExtended) => void;
     insertEmbedded: (embeddeds: EmbeddedMap) => void;
     removeEmbedded: (attachments: Attachment[]) => void;
@@ -227,6 +228,7 @@ const SquireEditorWrapper = ({
     });
     useEffect(() => {
         editorActionsRef.current = {
+            getContent: () => squireEditorRef.current?.value || '',
             setContent: handleSetContent,
             insertEmbedded: handleInsertEmbedded,
             removeEmbedded: handleRemoveEmbedded,

@@ -2,6 +2,7 @@
 // But I'm stuck into a use of window.Range inside of Squire which seems not to work in JSDom
 
 const instance = {
+    getHTML: jest.fn(),
     setHTML: jest.fn(),
     getFontInfo: jest.fn(() => ({})),
     addEventListener: jest.fn(),

@@ -18,7 +18,7 @@ import {
 } from '../../helpers/test/helper';
 import { ConversationLabel, Conversation } from '../../models/conversation';
 import { Event } from '../../models/event';
-import { PAGE_SIZE } from '../../constants';
+import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../constants';
 
 interface SetupArgs {
     elements?: Element[];
@@ -147,7 +147,7 @@ describe('useElements', () => {
                 ...queryConversations({
                     LabelID: labelID,
                     Sort: 'Time',
-                    Limit: page.limit,
+                    Limit: ELEMENTS_CACHE_REQUEST_SIZE,
                     PageSize: page.size,
                 } as any),
                 signal: new AbortController().signal,
