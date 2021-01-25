@@ -57,6 +57,14 @@ describe('getSupportedUntil', () => {
         ];
         expect(untils.map((until) => getSupportedUntil(until, false, tzid))).toEqual(expected);
     });
+
+    it('should keep the right date for all-day events when a guess tzid is passed', () => {
+        const tzid = 'Pacific/Niue';
+        const guessTzid = 'Asia/Taipei';
+        const until = { year: 2020, month: 11, day: 24, hours: 16, minutes: 0, seconds: 0, isUTC: true };
+        const expected = { year: 2020, month: 11, day: 25 };
+        expect(getSupportedUntil(until, true, tzid, guessTzid)).toEqual(expected);
+    });
 });
 
 describe('getIsRruleSimple', () => {
