@@ -1,9 +1,9 @@
 import React from 'react';
-import { FileIcon, Checkbox, classnames, DragMoveContainer, Icon, Tooltip } from 'react-components';
-import { c } from 'ttag';
+import { FileIcon, Checkbox, classnames, DragMoveContainer } from 'react-components';
 import { LinkType } from '../../../interfaces/link';
 import { ItemProps } from '../interfaces';
 import ItemContextMenu from '../ItemContextMenu';
+import SharedURLIcon from '../SharedURLIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
 
 export interface Props extends Omit<ItemProps, 'isPreview' | 'showLocation'> {
@@ -91,11 +91,7 @@ function ItemCell({
                         />
                     </div>
 
-                    {item.SharedURLShareID && (
-                        <Tooltip title={c('Tooltip').t`Shared`} className="flex flex-item-noshrink">
-                            <Icon className="color-primary" name="link" />
-                        </Tooltip>
-                    )}
+                    {item.SharedURLShareID && <SharedURLIcon expired={item.UrlsExpired} />}
                 </div>
                 <div className="p0-5 flex flex-item-fluid flex-column">
                     <div className="flex flex-item-fluid flex-justify-center flex-items-center">

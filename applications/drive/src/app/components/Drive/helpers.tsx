@@ -24,7 +24,7 @@ export const mapLinksToChildren = (
     isDisabled: (linkId: string) => boolean
 ): FileBrowserItem[] => {
     return decryptedLinks.map(
-        ({ LinkID, Type, Name, ModifyTime, Size, MIMEType, ParentLinkID, Trashed, ShareIDs, Shared }) => ({
+        ({ LinkID, Type, Name, ModifyTime, Size, MIMEType, ParentLinkID, Trashed, ShareIDs, Shared, UrlsExpired }) => ({
             Name,
             LinkID,
             Type,
@@ -35,6 +35,7 @@ export const mapLinksToChildren = (
             Trashed,
             Disabled: isDisabled(LinkID),
             SharedURLShareID: Shared ? ShareIDs[0] : undefined,
+            UrlsExpired,
         })
     );
 };

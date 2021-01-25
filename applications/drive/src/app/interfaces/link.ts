@@ -45,6 +45,7 @@ interface DriveLink {
     FileProperties: FileProperties | null;
     FolderProperties: FolderProperties | null;
     Shared: number;
+    UrlsExpired: boolean;
     ShareIDs: string[];
 }
 
