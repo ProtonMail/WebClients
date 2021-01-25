@@ -23,7 +23,7 @@ const usePromoModalState = (featureID: string, fallbackValue = true) => {
 
     useEffect(() => {
         withLoading(fetchFeature());
-    }, []);
+    }, [featureID]);
 
     const onChange = async (Value: boolean) => {
         await api(updateFeatureValue(featureID, Value));
