@@ -1,3 +1,15 @@
+# [4.0.0-beta.9] - 2021-01-26
+
+## Fixes
+- Fixed a bug blocking some users from upgrading their subscription
+- Display organization password prompt when administrator privileges required
+- Minor accessibility fix on vocalization bug
+
+## Improvements
+- Prepared support for new address key encryption scheme
+
+---
+
 # [4.0.0-beta.8] - 2021-01-21
 
 ## Fixes
@@ -8,6 +20,8 @@
 - Text improvements for added clarity in the organization settings section and in the authentication logs
 - Minor UI adjustments of icons' placement and alignment
 - Prepared support for unsubscribing from newsletters without having to sign in
+
+---
 
 # [4.0.0-beta.7] - 2020-12-07
 
