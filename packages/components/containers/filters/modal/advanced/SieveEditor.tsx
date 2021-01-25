@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import codemirror from 'codemirror';
+import codemirror, { Annotation, Linter } from 'codemirror';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import { normalize } from 'proton-shared/lib/filters/sieve';
-import { SieveIssue } from 'proton-shared/lib/filters/interfaces';
+
 import 'codemirror/addon/display/autorefresh';
 import 'codemirror/addon/lint/lint';
 import 'codemirror/mode/sieve/sieve';
@@ -10,25 +10,24 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/addon/lint/lint.css';
 import 'codemirror/theme/base16-dark.css';
 
+import './SieveEditor.scss';
+
 interface Props {
     value: string;
-    issues?: SieveIssue[];
+    issues?: Annotation[];
     onChange: (editor: codemirror.Editor, data: codemirror.EditorChange, value: string) => void;
     theme?: string;
 }
 
+let uglyGlobalLintRef: ((content: string) => Annotation[]) | undefined;
+
 const clean = normalize();
 
-let uglyGlobal: ((text: string) => SieveIssue[]) | undefined;
+const customLint: Linter = (content = '') => {
+    const lint = uglyGlobalLintRef;
 
-const lint = (text = '') => {
-    const lint = uglyGlobal;
-    return lint ? lint(clean(text)) : [];
+    return lint ? lint(clean(content)) : [];
 };
-
-if (typeof window !== 'undefined') {
-    codemirror.registerHelper('lint', 'sieve', lint);
-}
 
 const SieveEditor = ({ value, issues = [], onChange, theme }: Props) => {
     const editorRef = useRef<codemirror.Editor>();
@@ -39,6 +38,9 @@ const SieveEditor = ({ value, issues = [], onChange, theme }: Props) => {
         readOnly: false,
         fixedGutter: false,
         gutters: ['CodeMirror-lint-markers'],
+        lint: {
+            getAnnotations: customLint,
+        },
         ...(theme ? { theme } : {}),
     };
 
@@ -47,10 +49,10 @@ const SieveEditor = ({ value, issues = [], onChange, theme }: Props) => {
             Ugly hack to avoid broken context with react lifecycle as we can't
             unregister the hook and we need to have the right API for the hook
          */
-        uglyGlobal = () => issues;
+        uglyGlobalLintRef = () => issues;
 
         return () => {
-            uglyGlobal = undefined;
+            uglyGlobalLintRef = undefined;
         };
     }, [issues]);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { AdvancedSimpleFilterModalModel, StepSieve, ErrorsSieve } from 'proton-shared/lib/filters/interfaces';
+import { AdvancedSimpleFilterModalModel, StepSieve, ErrorsSieve } from './interfaces';
 
 interface Props {
     model: AdvancedSimpleFilterModalModel;

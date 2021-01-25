@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { AdvancedSimpleFilterModalModel, StepSieve, ErrorsSieve } from 'proton-shared/lib/filters/interfaces';
+import { StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from './interfaces';
 import { Button, PrimaryButton } from '../../../../components';
 
 interface Props {
@@ -26,9 +26,13 @@ const FooterAdvancedFilterModal = ({ model, errors, onClose, onChange, loading }
     const handleNext = () => {
         onChange({ ...model, step: NEXT_STEP[model.step] });
     };
+
     const handleBack = () => {
         onChange({ ...model, step: BACK_STEP[model.step] });
     };
+
+    const disabled = loading || !!errors.name;
+
     return (
         <>
             {model.step === StepSieve.NAME ? (
@@ -38,11 +42,9 @@ const FooterAdvancedFilterModal = ({ model, errors, onClose, onChange, loading }
             )}
             <div>
                 {model.step === StepSieve.NAME && (
-                    <Button disabled={loading || !!errors.name} onClick={handleNext} className="mr1">{c('Action')
-                        .t`Next`}</Button>
+                    <Button disabled={disabled} onClick={handleNext} className="mr1">{c('Action').t`Next`}</Button>
                 )}
-                <PrimaryButton disabled={loading || !!errors.name || !!errors.sieve} type="submit">{c('Action')
-                    .t`Save`}</PrimaryButton>
+                <PrimaryButton disabled={disabled} type="submit">{c('Action').t`Save`}</PrimaryButton>
             </div>
         </>
     );

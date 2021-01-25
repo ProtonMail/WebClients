@@ -1,8 +1,11 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { SimpleFilterModalModel, AdvancedSimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
+import { SimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
+
 import { Alert, Field, Input } from '../../../components';
 import { classnames } from '../../../helpers';
+
+import { AdvancedSimpleFilterModalModel } from './advanced/interfaces';
 
 interface Errors {
     name: string;
