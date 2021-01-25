@@ -117,9 +117,14 @@ const SquireIframe = (
         onInput(content);
     });
     const handlePaste = useHandler((event: ClipboardEvent) => {
-        // Some paste action will not trigger an input event
-        // And it can be down without the keyboard, there is no other place to catch it
-        handleInput();
+        // The point is to catch the editor content after the paste is actually performed
+        // There is no official event for that, so we have to artificially wait a bit after the event
+        // Ref: https://css-tricks.com/snippets/jquery/paste-events/
+        setTimeout(() => {
+            // Some paste action will not trigger an input event
+            // And it can be down without the keyboard, there is no other place to catch it
+            handleInput();
+        }, 100);
         if (metadata.supportImages) {
             pasteFileHandler(event, onAddImages);
         }
