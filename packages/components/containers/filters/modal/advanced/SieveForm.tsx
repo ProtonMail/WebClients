@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import { isDarkTheme } from 'proton-shared/lib/themes/helpers';
-import { AdvancedSimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
 import { UserSettings } from 'proton-shared/lib/interfaces';
 import { Alert } from '../../../../components';
 
+import { AdvancedSimpleFilterModalModel } from './interfaces';
 import SieveEditor from './SieveEditor';
 
 interface Props {
