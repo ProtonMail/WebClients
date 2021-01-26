@@ -102,6 +102,16 @@ const SquireEditorWrapper = ({
         }
     }, [isPlainText, message.plainText, message.document?.innerHTML]);
 
+    const handleGetContent = () => {
+        const editorContent = squireEditorRef.current?.value || '';
+
+        if (!blockquoteExpanded && blockquoteSaved !== '') {
+            return editorContent + blockquoteSaved;
+        }
+
+        return editorContent;
+    };
+
     const handleSetContent = (message: MessageExtended) => {
         let content;
 
@@ -228,7 +238,7 @@ const SquireEditorWrapper = ({
     });
     useEffect(() => {
         editorActionsRef.current = {
-            getContent: () => squireEditorRef.current?.value || '',
+            getContent: handleGetContent,
             setContent: handleSetContent,
             insertEmbedded: handleInsertEmbedded,
             removeEmbedded: handleRemoveEmbedded,
