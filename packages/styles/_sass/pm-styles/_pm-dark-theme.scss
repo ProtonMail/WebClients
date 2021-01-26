@@ -119,6 +119,11 @@ select.pm-field {
 	}
 }
 
+.pm-checkbox:focus + .pm-checkbox-fakecheck,
+.pm-radio:focus + .pm-radio-fakeradio {
+	box-shadow: 0 0 10px 0 $input-shadow-color-darkmode;
+}
+
 // loading
 [aria-busy='true'] {
 	background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
