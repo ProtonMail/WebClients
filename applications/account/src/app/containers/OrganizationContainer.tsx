@@ -10,6 +10,7 @@ import {
     useOrganization,
     useOrganizationKey,
     useModals,
+    useUser,
 } from 'react-components';
 import { c } from 'ttag';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
@@ -65,13 +66,22 @@ export const getOrganizationPage = (organization: Organization) => {
 };
 
 const OrganizationContainer = ({ location, setActiveSection }: SettingsPropsShared) => {
-    const [organization] = useOrganization();
+    const [user] = useUser();
+    const [organization, loadingOrganization] = useOrganization();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const onceRef = useRef(false);
     const { createModal } = useModals();
 
     useEffect(() => {
-        if (onceRef.current || !organizationKey || loadingOrganizationKey) {
+        if (
+            onceRef.current ||
+            !organization ||
+            loadingOrganization ||
+            !organizationKey ||
+            loadingOrganizationKey ||
+            !user.isAdmin ||
+            !organization.HasKeys
+        ) {
             return;
         }
         const { hasOrganizationKey, isOrganizationKeyInactive } = getOrganizationKeyInfo(organizationKey);
@@ -83,7 +93,7 @@ const OrganizationContainer = ({ location, setActiveSection }: SettingsPropsShar
             createModal(<ReactivateOrganizationKeysModal mode={MODES.REACTIVATE} />);
             onceRef.current = true;
         }
-    }, [organizationKey]);
+    }, [organization, organizationKey, user]);
 
     return (
         <PrivateMainSettingsAreaWithPermissions
