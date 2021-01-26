@@ -10,7 +10,7 @@ import { STATUS_ICONS_FILLS } from '../../models/crypto';
 import { MessageExtended, MessageVerification } from '../../models/message';
 import { getReceivedStatusIcon, getSendStatusIcon, getSentStatusIconInfo } from './icon';
 
-const { NOT_VERIFIED } = VERIFICATION_STATUS;
+const { NOT_VERIFIED, SIGNED_AND_VALID, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
 
 const fakeKey1: OpenPGPKey = {
     getFingerprint() {
@@ -581,6 +581,7 @@ describe('icon', () => {
                 ParsedHeaders: headers,
             } as Message;
             const verification = {
+                senderVerified: true,
                 senderPinnedKeys,
                 verificationStatus,
             } as MessageVerification;
@@ -626,6 +627,34 @@ describe('icon', () => {
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'PGP-encrypted message',
+            });
+        });
+
+        it('should return a green open lock in case of not encrypted, signed and verified (on-delivery signed)', () => {
+            const headers = {
+                'X-Pm-Origin': 'external',
+                'X-Pm-Content-Encryption': 'on-delivery',
+            };
+            const icon = getIconFromHeaders(headers, [fakeKey1], SIGNED_AND_VALID);
+            expect(icon).toMatchObject({
+                colorClassName: 'color-global-success',
+                isEncrypted: false,
+                fill: STATUS_ICONS_FILLS.CHECKMARK,
+                text: 'PGP-signed message from verified sender',
+            });
+        });
+
+        it('should return a green open lock with warning sign in case of not encrypted, signed and not verified (on-delivery signed)', () => {
+            const headers = {
+                'X-Pm-Origin': 'external',
+                'X-Pm-Content-Encryption': 'on-delivery',
+            };
+            const icon = getIconFromHeaders(headers, [fakeKey1], SIGNED_AND_INVALID);
+            expect(icon).toMatchObject({
+                colorClassName: 'color-global-success',
+                isEncrypted: false,
+                fill: STATUS_ICONS_FILLS.WARNING,
+                text: 'PGP-signed message. Sender verification failed',
             });
         });
 
