@@ -6,12 +6,14 @@ import {
     OpenPGPKey,
     SessionKey,
     VERIFICATION_STATUS,
+    binaryStringToArray,
+    concatArrays,
 } from 'pmcrypto';
 import { getAttachment } from 'proton-shared/lib/api/attachments';
+import { decodeBase64 } from 'proton-shared/lib/helpers/base64';
 import { Api } from 'proton-shared/lib/interfaces';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
-
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageKeys, MessageVerification } from '../../models/message';
 
@@ -56,13 +58,14 @@ export const getDecryptedAttachment = async (
         const publicKeys = verification?.senderVerified ? verification.senderPinnedKeys : undefined;
         return await decrypt(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
     } catch (error) {
-        // const blob = concatArrays([
-        //     binaryStringToArray(decodeBase64(attachment.KeyPackets) || ''),
-        //     new Uint8Array(encryptedBinary),
-        // ]);
+        const blob = concatArrays([
+            binaryStringToArray(decodeBase64(attachment.KeyPackets) || ''),
+            new Uint8Array(encryptedBinary),
+        ]);
         // Fallback download raw attachment
-        // throw { data: attachment, binary: blob, error };
-        throw new Error('Error while decrypting attachment');
+        const newError = new Error('Attachment decryption error');
+        Object.assign(newError, { data: attachment, binary: blob, error });
+        throw newError;
     }
 };
 
