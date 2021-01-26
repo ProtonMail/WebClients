@@ -127,7 +127,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
 
     return (
         <FormModal
-            close={c('Title').t`Close`}
+            close={c('Action').t`Close`}
             title={c('Title').t`Delete key`}
             onClose={onClose}
             onSubmit={onClose}
