@@ -387,8 +387,10 @@ export const getHasConsistentRrule = (vevent: VcalVeventComponent) => {
         return false;
     }
 
+    // UNTIL should happen before DTSTART
+    // Although this condition should be covered by the next check,
+    // this check is cheaper and can help discard invalid RRULEs more efficiently
     if (until) {
-        // UNTIL should happen before DTSTART
         const startDateUTC = propertyToUTCDate(dtstart);
         const untilDateUTC = toUTCDate(until);
         if (+startDateUTC > +untilDateUTC) {
