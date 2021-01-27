@@ -14,7 +14,14 @@ export const getResetAddressesKeys = async ({
     addresses: Address[];
     passphrase: string;
     encryptionConfig?: EncryptionConfig;
-}): Promise<{ userKeyPayload: string; addressKeysPayload: AddressKeyPayload[] }> => {
+}): Promise<
+    | { userKeyPayload: string; addressKeysPayload: AddressKeyPayload[] }
+    | { userKeyPayload: undefined; addressKeysPayload: undefined }
+> => {
+    if (!addresses.length) {
+        return { userKeyPayload: undefined, addressKeysPayload: undefined };
+    }
+
     const addressKeysPayload = await Promise.all(
         addresses.map(async (address) => {
             const { ID: AddressID, Email } = address;
@@ -50,7 +57,13 @@ export const getResetAddressesKeysV2 = async ({
     addresses: Address[];
     passphrase: string;
     encryptionConfig?: EncryptionConfig;
-}): Promise<{ userKeyPayload: string; addressKeysPayload: AddressKeyPayloadV2[] }> => {
+}): Promise<
+    | { userKeyPayload: string; addressKeysPayload: AddressKeyPayloadV2[] }
+    | { userKeyPayload: undefined; addressKeysPayload: undefined }
+> => {
+    if (!addresses.length) {
+        return { userKeyPayload: undefined, addressKeysPayload: undefined };
+    }
     const { privateKey: userKey, privateKeyArmored: userKeyPayload } = await generateUserKey({
         passphrase,
         encryptionConfig,
