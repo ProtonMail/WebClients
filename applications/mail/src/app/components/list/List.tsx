@@ -118,6 +118,10 @@ const List = (
             document.body.removeChild(dragElement);
             setDragElement(undefined);
         }
+
+        [...document.body.querySelectorAll('.drag-element')].forEach((elm) => {
+            document.body.removeChild(elm);
+        });
     });
 
     const handleDragCanceled = useHandler(() => {
