@@ -381,7 +381,12 @@ export const getHasConsistentRrule = (vevent: VcalVeventComponent) => {
         return true;
     }
 
-    const { until } = rrule.value;
+    const { until, count } = rrule.value;
+
+    if (until && count !== undefined) {
+        return false;
+    }
+
     if (until) {
         // UNTIL should happen before DTSTART
         const startDateUTC = propertyToUTCDate(dtstart);
