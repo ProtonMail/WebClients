@@ -455,6 +455,60 @@ describe('getHasConsistentRrule', () => {
         value: { year: 2020, month: 5, day: 11, hours: 12, minutes: 30, seconds: 0, isUTC: true },
     };
 
+    it('should not allow count and until together', () => {
+        const dtstart = {
+            value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+            parameters: {
+                tzid: 'Europe/Paris',
+            },
+        };
+        const dtend = {
+            value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
+            parameters: {
+                tzid: 'Europe/Paris',
+            },
+        };
+        const until = { year: 2015, month: 8, day: 30, hours: 16, minutes: 29, seconds: 59, isUTC: true };
+
+        expect(
+            getHasConsistentRrule({
+                dtstart,
+                dtend,
+                rrule: {
+                    value: {
+                        freq: 'DAILY',
+                        until,
+                    },
+                },
+            })
+        ).toEqual(true);
+        expect(
+            getHasConsistentRrule({
+                dtstart,
+                dtend,
+                rrule: {
+                    value: {
+                        freq: 'DAILY',
+                        count: 1,
+                    },
+                },
+            })
+        ).toEqual(true);
+        expect(
+            getHasConsistentRrule({
+                dtstart,
+                dtend,
+                rrule: {
+                    value: {
+                        freq: 'DAILY',
+                        until,
+                        count: 1,
+                    },
+                },
+            })
+        ).toEqual(false);
+    });
+
     it('should filter out inconsistent rrules', () => {
         const rrules = [
             {
