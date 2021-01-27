@@ -90,6 +90,9 @@ export const useHotkeys = (
     const sequence = useRef<Sequence>([]);
 
     const handleKeyDown = (e: KeyboardEvent) => {
+        if (!e.key) {
+            return;
+        }
         const key = e.key.toLowerCase() as KeyboardKey;
 
         if (Date.now() - msSinceLastEvent.current > sequenceResetTime) {
