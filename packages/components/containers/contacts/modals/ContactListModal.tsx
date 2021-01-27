@@ -7,7 +7,7 @@ import { toMap } from 'proton-shared/lib/helpers/object';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { Checkbox, SearchInput, PrimaryButton, FormModal } from '../../../components';
-import { useActiveBreakpoint, useContactEmails, useUserSettings } from '../../../hooks';
+import { useActiveBreakpoint, useUserSettings, useContactEmailsSortedByName } from '../../../hooks';
 import ContactList from '../ContactList';
 import ContactListModalRow from '../../../components/contacts/ContactListModalRow';
 import EmptyContacts from '../../../components/contacts/EmptyContacts';
@@ -34,7 +34,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
     const { isNarrow } = useActiveBreakpoint();
 
     const searchInputRef: RefObject<HTMLInputElement> = createRef();
-    const [contactEmails, loadingContactEmails] = useContactEmails();
+    const [contactEmails, loadingContactEmails] = useContactEmailsSortedByName();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
 
@@ -139,7 +139,7 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
 
     useEffect(() => {
         setIsAllChecked(
-            filteredContactEmails.length &&
+            !!filteredContactEmails.length &&
                 filteredContactEmails.every((c: ContactEmail) => !!checkedContactEmailMap[c.ID])
         );
     }, [filteredContactEmails, checkedContactEmailMap]);
