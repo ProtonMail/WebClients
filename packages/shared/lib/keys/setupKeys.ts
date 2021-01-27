@@ -24,6 +24,10 @@ export const handleSetupKeys = async ({ api, addresses, password }: Args) => {
           })
         : await getResetAddressesKeys({ addresses, passphrase });
 
+    if (!userKeyPayload || !addressKeysPayload) {
+        throw new Error('Invalid setup');
+    }
+
     await srpVerify({
         api,
         credentials: { password },

@@ -165,17 +165,21 @@ export const updatePrivateKeyRoute = (data: UpdatePrivateKeyPayload | UpdatePriv
 
 export interface ResetKeysPayload {
     Username: string;
-    PrimaryKey?: string;
     Token: string;
     KeySalt: string;
+}
+
+export interface ResetKeysPayloadWithKeys extends ResetKeysPayload {
+    PrimaryKey: string;
     AddressKeys: AddressKeyPayload[];
 }
 
-export interface ResetKeysPayloadV2 extends Omit<ResetKeysPayload, 'AddressKeys'> {
+export interface ResetKeysPayloadV2 extends ResetKeysPayload {
+    PrimaryKey: string;
     AddressKeys: AddressKeyPayloadV2[];
 }
 
-export const resetKeysRoute = (data: ResetKeysPayload | ResetKeysPayloadV2) => ({
+export const resetKeysRoute = (data: ResetKeysPayloadWithKeys | ResetKeysPayloadV2 | ResetKeysPayload) => ({
     url: 'keys/reset',
     method: 'post',
     data,
