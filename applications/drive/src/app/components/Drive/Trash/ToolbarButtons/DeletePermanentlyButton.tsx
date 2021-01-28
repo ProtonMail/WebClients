@@ -20,7 +20,7 @@ const DeletePermanentlyButton = ({ shareId, disabled }: Props) => {
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Delete permanently`}
-            icon="trash"
+            icon="delete"
             onClick={() => openDeletePermanently(shareId, selectedItems)}
             data-testid="toolbar-delete"
         />
