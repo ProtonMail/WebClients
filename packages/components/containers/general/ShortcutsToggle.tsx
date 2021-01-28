@@ -1,21 +1,21 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { updateHotkeys } from 'proton-shared/lib/api/mailSettings';
+import { updateShortcuts } from 'proton-shared/lib/api/mailSettings';
 import { useToggle, useEventManager, useApiWithoutResult, useNotifications } from '../../hooks';
 import { Toggle } from '../../components';
 
 interface Props {
     id: string;
-    hotkeys: number;
+    shortcuts: number;
     className?: string;
     onChange: (value: number) => void;
 }
 
-const ShortcutsToggle = ({ id, hotkeys, onChange, className }: Props) => {
+const ShortcutsToggle = ({ id, shortcuts, onChange, className }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const { request, loading } = useApiWithoutResult(updateHotkeys);
-    const { state, toggle } = useToggle(!!hotkeys);
+    const { request, loading } = useApiWithoutResult(updateShortcuts);
+    const { state, toggle } = useToggle(!!shortcuts);
     const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         await request(+target.checked);
         call();
