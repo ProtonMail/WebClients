@@ -125,6 +125,12 @@ export const updateHotkeys = (Hotkeys: number) => ({
     data: { Hotkeys },
 });
 
+export const updateShortcuts = (Shortcuts: number) => ({
+    url: 'mail/v4/settings/shortcuts',
+    method: 'put',
+    data: { Shortcuts },
+});
+
 export const updateAutoresponder = (AutoResponder: tsAutoResponder) => ({
     url: 'mail/v4/settings/autoresponder',
     method: 'put',
