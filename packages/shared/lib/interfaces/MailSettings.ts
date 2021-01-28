@@ -25,7 +25,8 @@ export interface MailSettings {
     SwipeLeft: number;
     SwipeRight: number;
     AlsoArchive: number;
-    Hotkeys: number;
+    Hotkeys: number; // used by v3 (Angular)
+    Shortcuts: number; // used by v4
     PMSignature: number;
     ImageProxy: number;
     TLS: number;
