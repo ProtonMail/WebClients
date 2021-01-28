@@ -11,25 +11,31 @@ interface Props {
 }
 
 const ShortcutsSection = ({ onOpenShortcutsModal }: Props) => {
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
-    const [hotkeys, setHotkeys] = useState(Hotkeys);
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
+    const [shortcuts, setShortcuts] = useState(Shortcuts);
 
     // Handle updates from the Event Manager.
     useEffect(() => {
-        setHotkeys(Hotkeys);
-    }, [Hotkeys]);
+        setShortcuts(Shortcuts);
+    }, [Shortcuts]);
 
-    const handleChange = (newValue: number) => setHotkeys(newValue);
+    const handleChange = (newValue: number) => setShortcuts(newValue);
 
     return (
         <Row>
-            <Label htmlFor="hotkeysToggle">{c('Title').t`Keyboard shortcuts`}</Label>
+            <Label htmlFor="shortcutsToggle">{c('Title').t`Keyboard shortcuts`}</Label>
             <Field>
                 <div>
-                    <ShortcutsToggle className="mr1" id="hotkeysToggle" hotkeys={hotkeys} onChange={handleChange} />
+                    <ShortcutsToggle
+                        className="mr1"
+                        id="shortcutsToggle"
+                        shortcuts={shortcuts}
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="mt1">
-                    <SmallButton onClick={onOpenShortcutsModal}>{c('Action').t`Display keyboard shortcuts`}</SmallButton>
+                    <SmallButton onClick={onOpenShortcutsModal}>{c('Action')
+                        .t`Display keyboard shortcuts`}</SmallButton>
                 </div>
             </Field>
         </Row>
