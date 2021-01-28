@@ -28,6 +28,7 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
         download,
         openDeletePermanently,
         openDetails,
+        openFilesDetails,
         openMoveToFolder,
         openMoveToTrash,
         openRename,
@@ -75,6 +76,13 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
             icon: 'info',
             testId: 'context-menu-details',
             action: () => openDetails(item),
+        },
+        {
+            hidden: !isMultiSelect || hasFoldersSelected,
+            name: c('Action').t`Details`,
+            icon: 'info',
+            testId: 'context-menu-details',
+            action: () => openFilesDetails(selectedItems),
         },
         {
             hidden: false,
