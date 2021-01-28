@@ -19,6 +19,7 @@ import DetailsModal from '../../components/DetailsModal';
 import MoveToFolderModal from '../../components/MoveToFolderModal';
 import CreateFolderModal from '../../components/CreateFolderModal';
 import SharingModal from '../../components/SharingModal/SharingModal';
+import FilesDetailsModal from '../../components/FilesDetailsModal';
 
 function useToolbarActions() {
     const { navigateToLink } = useNavigate();
@@ -101,6 +102,14 @@ function useToolbarActions() {
         createModal(<DetailsModal item={item} activeFolder={folder} />);
     };
 
+    const openFilesDetails = (selectedItems: FileBrowserItem[]) => {
+        if (!folder || !selectedItems.length) {
+            return;
+        }
+
+        createModal(<FilesDetailsModal selectedItems={selectedItems} />);
+    };
+
     const openMoveToTrash = async (itemsToTrash: FileBrowserItem[]) => {
         if (!folder || !itemsToTrash.length) {
             return;
@@ -169,6 +178,7 @@ function useToolbarActions() {
         openCreateFolder,
         openDeletePermanently,
         openDetails,
+        openFilesDetails,
         openMoveToTrash,
         openMoveToFolder,
         openRename,

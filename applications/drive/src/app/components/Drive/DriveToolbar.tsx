@@ -81,7 +81,7 @@ const DriveToolbar = ({ activeFolder }: Props) => {
                 ) : (
                     <>
                         <RenameButton disabled={isMultiSelect} />
-                        <DetailsButton disabled={isMultiSelect} />
+                        <DetailsButton disabled={isMultiSelect && hasFoldersSelected} />
                         <ToolbarSeparator />
                         <MoveToTrashButton />
                         <MoveToFolderButton />

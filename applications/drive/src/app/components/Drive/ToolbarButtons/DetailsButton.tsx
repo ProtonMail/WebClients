@@ -11,7 +11,8 @@ interface Props {
 }
 
 const DetailsButton = ({ disabled }: Props) => {
-    const { openDetails } = useToolbarActions();
+    const { openDetails, openFilesDetails } = useToolbarActions();
+
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
 
@@ -21,8 +22,10 @@ const DetailsButton = ({ disabled }: Props) => {
             title={c('Action').t`Details`}
             icon="info"
             onClick={() => {
-                if (selectedItems.length) {
+                if (selectedItems.length === 1) {
                     openDetails(selectedItems[0]);
+                } else if (selectedItems.length > 1) {
+                    openFilesDetails(selectedItems);
                 }
             }}
             data-testid="toolbar-details"
