@@ -3,10 +3,10 @@ const fs = require('fs');
 const data = fs.readFileSync('/dev/stdin', 'utf-8');
 
 const message =
-    'New CHANGELOG updates:'
+    'New changelog entries:'
     + '\n'
     + `\n>${data.replace(/\n/g, '\n>')}`
     + '\n'
-    + '\n<https://pepesad.netlify.app/?path=/story/introduction--page|Full CHANGELOG>'
+    + '\n<https://design-system.protontech.ch/|documentation> | <https://pepesad.netlify.app/?path=/story/introduction--page|changelog>'
 
 console.log(JSON.stringify(message));
