@@ -16,4 +16,5 @@ export default {
 const textToEllipsis = `mySuperLoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongFile.jpg`;
 
 export const Basic = () => <MiddleEllipsis text={textToEllipsis} />;
-export const Notitle = () => <MiddleEllipsis displayTitle={false} text={textToEllipsis} />;
+export const Title = () => <MiddleEllipsis displayTitle={false} text={textToEllipsis} />;
+export const Classes = () => <MiddleEllipsis className="w50" text={textToEllipsis} />;

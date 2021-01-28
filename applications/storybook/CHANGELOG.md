@@ -1,3 +1,7 @@
+# 0.0.4 (28 January, 2021)
+
+Completed `README` and `MiddleEllipsis` doc
+
 # 0.0.3 (28 January, 2021)
 
 Not really a design system documentation changelog entry but still :)
