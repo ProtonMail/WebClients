@@ -99,7 +99,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             if (isApiError(error)) {
                 errors.network = error;
             } else {
-                errors.common = error;
+                errors.processing = error;
             }
         } finally {
             updateMessageCache(messageCache, localID, {

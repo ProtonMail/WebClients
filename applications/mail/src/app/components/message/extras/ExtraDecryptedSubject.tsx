@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ExtraDecryptedSubject = ({ message }: Props) => {
-    if (!message.decryptedSubject) {
+    if (message.data?.Subject !== '...' || !message.decryptedSubject) {
         return null;
     }
 
