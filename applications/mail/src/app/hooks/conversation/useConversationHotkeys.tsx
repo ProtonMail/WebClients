@@ -78,7 +78,6 @@ export const useConversationHotkeys = (
         [
             'Enter',
             (e) => {
-                e.preventDefault();
                 e.stopPropagation();
                 const id = getFocusedId();
                 if (id) {
