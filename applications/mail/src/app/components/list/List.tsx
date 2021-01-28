@@ -118,10 +118,6 @@ const List = (
             document.body.removeChild(dragElement);
             setDragElement(undefined);
         }
-
-        [...document.body.querySelectorAll('.drag-element')].forEach((elm) => {
-            document.body.removeChild(elm);
-        });
     });
 
     const handleDragCanceled = useHandler(() => {
@@ -149,6 +145,8 @@ const List = (
 
     const handleDragStart = useCallback(
         (event: DragEvent, element: Element) => {
+            clearDragElement();
+
             const elementID = element.ID || '';
             const dragInSelection = checkedIDs.includes(elementID);
             const selection = dragInSelection ? checkedIDs : [elementID];
