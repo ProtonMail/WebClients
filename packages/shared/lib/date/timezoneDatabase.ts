@@ -573,7 +573,7 @@ export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
     'izhevsk, samara': 'Europe/Samara',
     'port louis': 'Indian/Mauritius',
     saratov: 'Europe/Saratov',
-    'ashgabat, toshkent': 'Asia/Tashkent',
+    'ashgabat, tashkent': 'Asia/Tashkent',
     'islamabad, karachi': 'Asia/Karachi',
     'chennai, kolkata, mumbai, new delhi': 'Asia/Kolkata',
     'sri jayawardenepura': 'Asia/Colombo',
