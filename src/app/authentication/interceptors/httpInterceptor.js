@@ -160,9 +160,12 @@ function httpInterceptor($q, $injector, AppModel, networkUtils, loggedOutSession
             return unlockUser().then(() => $http(config));
         }
 
-        if (status === 429) {
+        if (status === 429 && !config.url.endsWith('api/auth')) {
             const handle429 = $injector.get('handle429');
-            return handle429(error);
+            return handle429(error).catch((e) => {
+                handleCustomError(error);
+                return $q.reject(e);
+            });
         }
 
         if (status === 504) {
