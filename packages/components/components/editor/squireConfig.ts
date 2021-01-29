@@ -336,14 +336,19 @@ export const initSquire = async (document: Document, onEllipseClick: () => void)
     ellipsisButton?.addEventListener('click', onEllipseClick);
     const fallbackElements = [document.documentElement, document.body, ellipsisContainer];
     document.addEventListener('click', (event) => {
-        if (
-            fallbackElements.includes(event.target as Element | null) &&
-            // Prevent to deselect an ongoing selection
-            !document.defaultView?.getSelection()?.toString().length
-        ) {
-            squire.moveCursorToEnd();
+        if (fallbackElements.includes(event.target as Element | null)) {
+            // Reproduce the native selection after the click
+            // Quite magically works for differents needs:
+            // - Keeping selection if cursor is out of the iframe when finishing
+            // - Puting the cursor at the end of the document
+            // - Not puting the cursor in a hidden div (empty signatures)
+            // Reproducing manually the selection is mandatory unless the focus will clear it up
+            const currentSelection = document.defaultView?.getSelection();
+            const range = currentSelection?.getRangeAt(0);
+            if (range) {
+                squire.setSelection(range);
+            }
             squire.focus();
-            squire.insertHTML(''); // Needed for FF to show the cursor
         }
     });
 
