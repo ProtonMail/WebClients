@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { c } from 'ttag';
 import Header from './Header';
 import ImagePreview from './ImagePreview';
@@ -7,7 +7,8 @@ import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import PDFPreview from './PDFPreview';
 import { isPreviewAvailable, isSupportedImage, isSupportedText, isPDF } from './helpers';
-import useKeyPress from '../../hooks/useKeyPress';
+import { useHotkeys } from '../../hooks';
+import { useFocusTrap } from '../../components';
 
 interface Props {
     loading: boolean;
@@ -20,11 +21,20 @@ interface Props {
 }
 
 const FilePreview = ({ contents, fileName, mimeType, loading, navigationControls, onClose, onSave }: Props) => {
-    useKeyPress((e) => {
-        if (e.key === 'Escape') {
-            onClose?.();
-        }
-    }, []);
+    const rootRef = useRef<HTMLDivElement>(null);
+    const focusTrapProps = useFocusTrap({
+        rootRef,
+    });
+
+    useHotkeys(rootRef, [
+        [
+            'Escape',
+            (e) => {
+                e.stopPropagation();
+                onClose?.();
+            },
+        ],
+    ]);
 
     const renderPreview = () => {
         if (!mimeType || !isPreviewAvailable(mimeType)) {
@@ -51,7 +61,7 @@ const FilePreview = ({ contents, fileName, mimeType, loading, navigationControls
     };
 
     return (
-        <div className="pd-file-preview">
+        <div className="pd-file-preview" ref={rootRef} {...focusTrapProps}>
             <Header mimeType={mimeType} name={fileName} onClose={onClose} onSave={onSave}>
                 {navigationControls}
             </Header>
