@@ -17,7 +17,7 @@
     }
 
     .protonmail_quote {
-        padding: .2em 0 .2em 1.2em;
+        padding: 0.2em 0 0.2em 1.2em;
         border-color: #657ee4;
         border-left-width: 3px;
         border-left-style: solid;
@@ -25,7 +25,7 @@
     .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote {
         padding-left: 0;
         padding-right: 0;
-	    border-left-width: 0;
+        border-left-width: 0;
     }
 
     // This is needed by the link handler (useLinkHandler.ts)
@@ -55,6 +55,10 @@
     border: 1px solid;
     border-color: #444 #ccc #ccc #444;
     background: url('../../assets/broken-img.png') no-repeat 0 50% #fff;
+}
+
+.protonmail_signature_block-empty {
+    display: none;
 }
 
 /** safari can't override the img border on non-src img
@@ -107,4 +111,3 @@
         min-width: 0;
     }
 }
-
