@@ -30,3 +30,21 @@ export const Basic = ({ ...args }) => {
 };
 
 Basic.args = {};
+
+const dragEventArg = {
+    type: { required: true },
+    table: {
+        type: {
+            summary: '(event: DragEvent<Element>) => void',
+        },
+    },
+    control: {
+        type: null,
+    },
+};
+
+Basic.argTypes = {
+    onDragEnter: dragEventArg,
+    onDragLeave: dragEventArg,
+    onDrop: dragEventArg,
+};
