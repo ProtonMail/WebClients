@@ -109,7 +109,7 @@ describe('email', () => {
             ];
             const normalized = [
                 'testing@pm.me',
-                'testing@PM.ME',
+                'testing@pm.me',
                 'abc;;@pm.me',
                 'moretesting@pm.me',
                 'bad@email@this.is',
