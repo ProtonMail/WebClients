@@ -59,6 +59,20 @@ describe('auth handlers', () => {
         expect(handleError).toHaveBeenCalledTimes(0);
     });
 
+    it('should not retry 429 status if disabled', async () => {
+        const call = jasmine
+            .createSpy('call')
+            .and.returnValues(Promise.reject(getApiError({ status: 429 })), Promise.resolve(getApiResult('123')));
+        const handleError = jasmine.createSpy('error').and.callFake((e) => {
+            throw e;
+        });
+        const api = withApiHandlers({ call, onError: handleError });
+        const error = await api({ ignoreHandler: [429] }).catch((e) => e);
+        expect(error.status).toBe(429);
+        expect(call).toHaveBeenCalledTimes(1);
+        expect(handleError).toHaveBeenCalledTimes(1);
+    });
+
     it('should retry maximum 5 times', async () => {
         const call = jasmine
             .createSpy('call')

@@ -234,7 +234,9 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
                     );
                 }
 
-                if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                const ignoreTooManyRequests =
+                    Array.isArray(ignoreHandler) && ignoreHandler.includes(HTTP_ERROR_CODES.TOO_MANY_REQUESTS);
+                if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS && !ignoreTooManyRequests) {
                     return retryHandler(e).then(
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
                         () => onError(e)
