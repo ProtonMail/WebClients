@@ -7,6 +7,6 @@ const message =
     + '\n'
     + `\n>${data.replace(/\n/g, '\n>')}`
     + '\n'
-    + '\n<https://design-system.protontech.ch/|documentation> | <https://pepesad.netlify.app/?path=/story/introduction--page|changelog>'
+    + '\n<https://design-system.protontech.ch/|documentation> | <https://design-system.protontech.ch/?path=/docs/changelog--page|changelog>'
 
 console.log(JSON.stringify(message));
