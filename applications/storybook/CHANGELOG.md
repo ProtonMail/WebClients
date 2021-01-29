@@ -1,3 +1,7 @@
+# 0.0.5 (28 January, 2021)
+
+Add missing favicon!
+
 # 0.0.4 (28 January, 2021)
 
 Completed `README` and `MiddleEllipsis` doc
