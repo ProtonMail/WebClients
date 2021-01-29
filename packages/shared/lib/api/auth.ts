@@ -1,4 +1,5 @@
 import { CLIENT_ID_KEYS } from '../constants';
+import { HTTP_ERROR_CODES } from '../errors';
 
 export const PASSWORD_WRONG_ERROR = 8002;
 
@@ -6,6 +7,7 @@ export const auth = (data: any) => ({
     method: 'post',
     url: 'auth',
     data,
+    ignoreHandler: [HTTP_ERROR_CODES.TOO_MANY_REQUESTS],
 });
 
 export const auth2FA = ({ totp, u2f }: any) => ({
