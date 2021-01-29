@@ -74,7 +74,7 @@ export const useMailboxHotkeys = (
     const [labels] = useLabels();
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
 
-    const { Hotkeys = 0 } = mailSettings || {};
+    const { Shortcuts = 0 } = mailSettings || {};
     const labelIDs = labels?.map(({ ID }) => ID);
     const elementIDForList = checkedIDs.length ? undefined : elementID;
 
@@ -88,11 +88,10 @@ export const useMailboxHotkeys = (
     const emptyLabel = useEmptyLabel();
     const permanentDelete = usePermanentDelete(labelID);
 
-    const hotkeysEnabledAndListView = useMemo(() => Hotkeys && (columnLayout || (!columnLayout && !showContentView)), [
-        columnLayout,
-        showContentView,
-        Hotkeys,
-    ]);
+    const hotkeysEnabledAndListView = useMemo(
+        () => Shortcuts && (columnLayout || (!columnLayout && !showContentView)),
+        [columnLayout, showContentView, Shortcuts]
+    );
 
     const emptyFolder = async () => {
         if (labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL)) {
@@ -198,7 +197,7 @@ export const useMailboxHotkeys = (
         [
             ['Meta', 'A'],
             (e) => {
-                if (Hotkeys) {
+                if (Shortcuts) {
                     e.preventDefault();
                     e.stopPropagation();
                     const allChecked = elementIDs.length === checkedIDs.length;
@@ -209,7 +208,7 @@ export const useMailboxHotkeys = (
         [
             'X',
             (e) => {
-                if (Hotkeys) {
+                if (Shortcuts) {
                     const id = getFocusedId();
                     if (id) {
                         e.preventDefault();
@@ -221,7 +220,7 @@ export const useMailboxHotkeys = (
         [
             ['Shift', 'X'],
             (e) => {
-                if (Hotkeys) {
+                if (Shortcuts) {
                     const id = getFocusedId();
                     if (id) {
                         e.preventDefault();
@@ -271,7 +270,7 @@ export const useMailboxHotkeys = (
         [
             ['Shift', 'A'],
             (e) => {
-                if (Hotkeys) {
+                if (Shortcuts) {
                     e.stopPropagation();
                     handleFilter({});
                 }
@@ -280,7 +279,7 @@ export const useMailboxHotkeys = (
         [
             ['Shift', 'U'],
             (e) => {
-                if (Hotkeys) {
+                if (Shortcuts) {
                     e.stopPropagation();
                     handleFilter({ Unread: 1 });
                 }
@@ -408,7 +407,7 @@ export const useMailboxHotkeys = (
         [
             'K',
             (e) => {
-                if (Hotkeys && elementID) {
+                if (Shortcuts && elementID) {
                     e.preventDefault();
                     const index = elementIDs.findIndex((id: string) => id === elementID);
                     const previousIndex = index !== null ? Math.max(0, index - 1) : elementIDs.length - 1;
@@ -420,7 +419,7 @@ export const useMailboxHotkeys = (
         [
             'J',
             (e) => {
-                if (Hotkeys && elementID) {
+                if (Shortcuts && elementID) {
                     e.preventDefault();
                     const index = elementIDs.findIndex((id: string) => id === elementID);
                     const nextIndex = index !== null ? Math.min(elementIDs.length - 1, index + 1) : 0;

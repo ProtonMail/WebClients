@@ -21,7 +21,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
     const [loading, withLoading] = useLoading();
     const markAs = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const handleMarkAs = async (status: MARK_AS_STATUS) => {
         const isUnread = status === UNREAD;
@@ -32,7 +32,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
         await markAs(elements, labelID, status);
     };
 
-    const titleRead = Hotkeys ? (
+    const titleRead = Shortcuts ? (
         <>
             {c('Action').t`Mark as read`}
             <br />
@@ -42,7 +42,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
         c('Action').t`Mark as read`
     );
 
-    const titleUnread = Hotkeys ? (
+    const titleUnread = Shortcuts ? (
         <>
             {c('Action').t`Mark as unread`}
             <br />

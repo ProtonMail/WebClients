@@ -22,9 +22,9 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
         history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);
     };
 
-    const { Hotkeys = 0 } = mailSettings || {};
+    const { Shortcuts = 0 } = mailSettings || {};
 
-    return Hotkeys
+    return Shortcuts
         ? [
               [
                   'G',

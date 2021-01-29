@@ -13,14 +13,14 @@ interface Props {
 
 const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
     const [loading, withLoading] = useLoading();
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
     const permanentDelete = usePermanentDelete(labelID);
 
     const handleDelete = async () => {
         await permanentDelete(selectedIDs);
     };
 
-    const titleDelete = Hotkeys ? (
+    const titleDelete = Shortcuts ? (
         <>
             {c('Action').t`Delete permanently`}
             <br />

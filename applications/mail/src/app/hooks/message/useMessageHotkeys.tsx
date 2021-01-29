@@ -73,7 +73,7 @@ export const useMessageHotkeys = (
     const moveToFolder = useMoveToFolder();
     const star = useStar();
 
-    const { Hotkeys = 0 } = mailSettings || {};
+    const { Shortcuts = 0 } = mailSettings || {};
 
     const [hasFocus, setHasFocus] = useState(false);
 
@@ -87,7 +87,7 @@ export const useMessageHotkeys = (
     };
 
     const isMessageReady = messageLoaded && bodyLoaded;
-    const hotkeysEnabledAndMessageReady = Hotkeys && isMessageReady && expanded && !message.actionInProgress;
+    const hotkeysEnabledAndMessageReady = Shortcuts && isMessageReady && expanded && !message.actionInProgress;
 
     const moveElementTo = async (e: KeyboardEvent, LabelID: MAILBOX_LABEL_IDS) => {
         if (!message.data) {
@@ -102,7 +102,7 @@ export const useMessageHotkeys = (
 
     const shouldStopPropagation = (e: KeyboardEvent, direction: ARROW_SCROLL_DIRECTIONS) => {
         const { bottom: topLimit } =
-            document.querySelector('[data-shortcut-target="message-conversation-summary"')?.getBoundingClientRect() ||
+            document.querySelector('[data-shortcut-target="message-conversation-summary"]')?.getBoundingClientRect() ||
             {};
         const bottomLimit = window.innerHeight;
 
@@ -162,7 +162,7 @@ export const useMessageHotkeys = (
         [
             'O',
             () => {
-                if (Hotkeys && isMessageReady && expanded) {
+                if (Shortcuts && isMessageReady && expanded) {
                     toggleOriginalMessage();
                 }
             },

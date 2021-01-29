@@ -20,16 +20,16 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCo
     const handleCompose = useCallback(() => {
         onCompose({ action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
-    const titlePrimaryButton = Hotkeys ? (
+    const titlePrimaryButton = Shortcuts ? (
         <>
             {c('Title').t`New message`}
             <br />
             <kbd className="bg-global-altgrey noborder">N</kbd>
         </>
     ) : null;
-    const sideBarPrimaryButton = Hotkeys ? (
+    const sideBarPrimaryButton = Shortcuts ? (
         <Tooltip title={titlePrimaryButton} originalPlacement="top">
             <SidebarPrimaryButton className="nomobile" onClick={handleCompose} data-test-id="sidebar:compose">
                 {c('Action').t`New message`}

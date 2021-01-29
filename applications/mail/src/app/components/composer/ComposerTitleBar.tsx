@@ -48,7 +48,7 @@ const ComposerTitleBar = ({
     onClose,
 }: Props) => {
     const title = message.data?.Subject || c('Title').t`New message`;
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const handleDoubleClick = () => {
         if (minimized) {
@@ -58,7 +58,7 @@ const ComposerTitleBar = ({
         toggleMaximized();
     };
 
-    const titleMinimize = Hotkeys ? (
+    const titleMinimize = Shortcuts ? (
         <>
             {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
             <br />
@@ -71,7 +71,7 @@ const ComposerTitleBar = ({
         c('Action').t`Minimize composer`
     );
 
-    const titleMaximize = Hotkeys ? (
+    const titleMaximize = Shortcuts ? (
         <>
             {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
             <br />
@@ -85,7 +85,7 @@ const ComposerTitleBar = ({
         c('Action').t`Expand composer`
     );
 
-    const titleClose = Hotkeys ? (
+    const titleClose = Shortcuts ? (
         <>
             {c('Action').t`Close composer`}
             <br />

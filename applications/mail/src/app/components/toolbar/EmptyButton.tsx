@@ -22,7 +22,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
     const [loading, withLoading] = useLoading();
     const [labels = []] = useLabels();
     const emptyLabel = useEmptyLabel();
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const displayEmpty =
         !breakpoints.isNarrow &&
@@ -35,7 +35,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
     const handleClick = () => withLoading(emptyLabel(labelID));
 
     const isLabel = isCustomLabel(labelID, labels);
-    let title = '';
+    let title;
     if (labelID === TRASH) {
         title = c('Action').t`Empty trash`;
     } else if (labelID === SPAM) {
@@ -46,7 +46,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
         title = c('Action').t`Empty folder`;
     }
 
-    const titleEmpty = Hotkeys ? (
+    const titleEmpty = Shortcuts ? (
         <>
             {title}
             <br />

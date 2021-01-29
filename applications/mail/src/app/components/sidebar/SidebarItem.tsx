@@ -62,7 +62,7 @@ const SidebarItem = ({
     const { call } = useEventManager();
     const cache = useCache();
     const history = useHistory();
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
@@ -124,7 +124,7 @@ const SidebarItem = ({
                 onClick={handleClick}
                 {...dragProps}
                 onDrop={handleDrop}
-                title={shortcutText !== undefined && Hotkeys ? `${text} ${shortcutText}` : text}
+                title={shortcutText !== undefined && Shortcuts ? `${text} ${shortcutText}` : text}
                 ref={elementRef}
                 data-test-id={id}
                 data-shortcut-target={['navigation-link', id].filter(isTruthy).join(' ')}

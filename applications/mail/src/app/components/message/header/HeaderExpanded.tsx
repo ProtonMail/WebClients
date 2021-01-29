@@ -107,7 +107,7 @@ const HeaderExpanded = ({
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const selectedIDs = [message.data?.ID || ''];
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const handleClick = (event: MouseEvent) => {
         if (
@@ -145,7 +145,7 @@ const HeaderExpanded = ({
 
     const { isNarrow } = breakpoints;
 
-    const titleReply = Hotkeys ? (
+    const titleReply = Shortcuts ? (
         <>
             {c('Title').t`Reply`}
             <br />
@@ -154,7 +154,7 @@ const HeaderExpanded = ({
     ) : (
         c('Title').t`Reply`
     );
-    const titleReplyAll = Hotkeys ? (
+    const titleReplyAll = Shortcuts ? (
         <>
             {c('Title').t`Reply all`}
             <br />
@@ -164,7 +164,7 @@ const HeaderExpanded = ({
     ) : (
         c('Title').t`Reply all`
     );
-    const titleForward = Hotkeys ? (
+    const titleForward = Shortcuts ? (
         <>
             {c('Title').t`Forward`}
             <br />
@@ -174,7 +174,7 @@ const HeaderExpanded = ({
     ) : (
         c('Title').t`Forward`
     );
-    const titleFilterOn = Hotkeys ? (
+    const titleFilterOn = Shortcuts ? (
         <>
             {c('Title').t`Filter on`}
             <br />
@@ -183,7 +183,7 @@ const HeaderExpanded = ({
     ) : (
         c('Title').t`Filter on`
     );
-    const titleMoveTo = Hotkeys ? (
+    const titleMoveTo = Shortcuts ? (
         <>
             {c('Title').t`Move to`}
             <br />
@@ -192,7 +192,7 @@ const HeaderExpanded = ({
     ) : (
         c('Title').t`Move to`
     );
-    const titleLabelAs = Hotkeys ? (
+    const titleLabelAs = Shortcuts ? (
         <>
             {c('Title').t`Label as`}
             <br />

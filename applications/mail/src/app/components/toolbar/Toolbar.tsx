@@ -73,9 +73,9 @@ const Toolbar = ({
     const [folders] = useFolders();
     const listInView = columnMode || !elementID;
 
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
-    const titleMove = Hotkeys ? (
+    const titleMove = Shortcuts ? (
         <>
             {c('Title').t`Move to`}
             <br />
@@ -85,7 +85,7 @@ const Toolbar = ({
         c('Title').t`Move to`
     );
 
-    const titleLabel = Hotkeys ? (
+    const titleLabel = Shortcuts ? (
         <>
             {c('Title').t`Label as`}
             <br />

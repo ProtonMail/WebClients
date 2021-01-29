@@ -13,7 +13,7 @@ interface Props {
 const ItemStar = ({ element = {} }: Props) => {
     const [loading, withLoading] = useLoading();
     const star = useStar();
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const isStarred = testIsStarred(element);
 
@@ -37,7 +37,7 @@ const ItemStar = ({ element = {} }: Props) => {
     return (
         <Tooltip
             title={
-                Hotkeys ? (
+                Shortcuts ? (
                     <>
                         {title}
                         <br />

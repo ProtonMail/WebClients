@@ -13,7 +13,7 @@ const MailShortCutsModal = ({ ...rest }: Props) => {
     const appName = getAppName(APPS.PROTONMAIL);
     const title = c('Title').t`${appName} Keyboard Shortcuts`;
 
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const alwaysOnSections = mailShortcuts.filter((section) => section.alwaysActive);
     const shortcutEnabledSections = mailShortcuts.filter((section) => !section.alwaysActive);
@@ -39,14 +39,14 @@ const MailShortCutsModal = ({ ...rest }: Props) => {
             <hr className="mt2 mb2 border-bottom" />
 
             <Alert>
-                {Hotkeys
+                {Shortcuts
                     ? c('Info').t`Your keyboard shortcuts are active`
                     : c('Info').jt`To activate your keyboard shortcuts, go to ${settingsLink}`}
             </Alert>
             <div
                 className={classnames([
                     'list-2columns onmobile-list-1column mr-2e onmobile-mr0',
-                    !Hotkeys && 'opacity-50',
+                    !Shortcuts && 'opacity-50',
                 ])}
             >
                 {shortcutEnabledSections.map((section) => {

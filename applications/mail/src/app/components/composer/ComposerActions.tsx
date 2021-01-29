@@ -75,9 +75,9 @@ const ComposerActions = ({
     const isExpiration = !!message.expiresIn;
     const hasRecipients = getRecipients(message.data).length > 0;
     const sendDisabled = !hasRecipients || lock;
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
-    let dateMessage: string | string[] = '';
+    let dateMessage: string | string[];
     if (opening) {
         const ellipsis = <EllipsisLoader key="ellipsis1" />;
         dateMessage = c('Action').jt`Loading${ellipsis}`;
@@ -102,7 +102,7 @@ const ComposerActions = ({
         buttonSendLabel = c('Action').t`Sending`;
     }
 
-    const titleAttachment = Hotkeys ? (
+    const titleAttachment = Shortcuts ? (
         <>
             {c('Title').t`Attachments`}
             <br />
@@ -113,7 +113,7 @@ const ComposerActions = ({
     ) : (
         c('Title').t`Attachments`
     );
-    const titleExpiration = Hotkeys ? (
+    const titleExpiration = Shortcuts ? (
         <>
             {c('Title').t`Expiration time`}
             <br />
@@ -124,7 +124,7 @@ const ComposerActions = ({
     ) : (
         c('Title').t`Expiration time`
     );
-    const titleEncryption = Hotkeys ? (
+    const titleEncryption = Shortcuts ? (
         <>
             {c('Title').t`Encryption`}
             <br />
@@ -135,7 +135,7 @@ const ComposerActions = ({
     ) : (
         c('Title').t`Encryption`
     );
-    const titleDeleteDraft = Hotkeys ? (
+    const titleDeleteDraft = Shortcuts ? (
         <>
             {c('Title').t`Delete draft`}
             <br />
@@ -146,7 +146,7 @@ const ComposerActions = ({
     ) : (
         c('Title').t`Delete draft`
     );
-    const titleSendButton = Hotkeys ? (
+    const titleSendButton = Shortcuts ? (
         <>
             {c('Title').t`Send email`}
             <br />
@@ -155,7 +155,7 @@ const ComposerActions = ({
         </>
     ) : null;
 
-    const sendButton = Hotkeys ? (
+    const sendButton = Shortcuts ? (
         <Tooltip title={titleSendButton}>
             <Button
                 className="pm-button--primary composer-send-button"

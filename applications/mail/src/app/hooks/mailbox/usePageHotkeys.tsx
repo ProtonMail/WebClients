@@ -17,7 +17,7 @@ export const usePageHotkeys = ({ onCompose, onOpenShortcutsModal }: PageHotkeysH
 
     const documentRef = useRef(window.document);
 
-    const { Hotkeys = 0 } = mailSettings || {};
+    const { Shortcuts = 0 } = mailSettings || {};
 
     const shortcutHandlers: HotkeyTuple[] = [
         ...folderNavigationHotkeys,
@@ -47,7 +47,7 @@ export const usePageHotkeys = ({ onCompose, onOpenShortcutsModal }: PageHotkeysH
         [
             KeyboardKey.Slash,
             (e) => {
-                if (Hotkeys && !isTargetEditable(e)) {
+                if (Shortcuts && !isTargetEditable(e)) {
                     e.preventDefault();
                     const searchbox = document.querySelector('[data-shorcut-target="searchbox-field"]') as HTMLElement;
                     searchbox?.focus();
@@ -57,7 +57,7 @@ export const usePageHotkeys = ({ onCompose, onOpenShortcutsModal }: PageHotkeysH
         [
             'N',
             (e) => {
-                if (Hotkeys && !isTargetEditable(e)) {
+                if (Shortcuts && !isTargetEditable(e)) {
                     onCompose({ action: MESSAGE_ACTIONS.NEW });
                 }
             },

@@ -31,7 +31,7 @@ export const useComposerHotkeys = ({
     const composerRef = useRef<HTMLDivElement>(null);
     const attachmentTriggerRef = useRef<() => void>(noop);
 
-    const { Hotkeys = 0 } = mailSettings || {};
+    const { Shortcuts = 0 } = mailSettings || {};
 
     const keyHandlers = {
         close: async (e: KeyboardEvent) => {
@@ -88,27 +88,27 @@ export const useComposerHotkeys = ({
     const squireKeydownHandler = useHandler(async (e: KeyboardEvent) => {
         switch (e.key.toLowerCase()) {
             case 'escape':
-                if (Hotkeys) {
+                if (Shortcuts) {
                     await keyHandlers?.close(e);
                 }
                 break;
             case 'enter':
-                if (Hotkeys && ctrlOrMetaKey(e)) {
+                if (Shortcuts && ctrlOrMetaKey(e)) {
                     await keyHandlers?.send(e);
                 }
                 break;
             case 'backspace':
-                if (Hotkeys && ctrlOrMetaKey(e) && e.altKey) {
+                if (Shortcuts && ctrlOrMetaKey(e) && e.altKey) {
                     await keyHandlers?.delete(e);
                 }
                 break;
             case 's':
-                if (Hotkeys && ctrlOrMetaKey(e)) {
+                if (Shortcuts && ctrlOrMetaKey(e)) {
                     await keyHandlers?.save(e);
                 }
                 break;
             case 'm':
-                if (Hotkeys && ctrlOrMetaKey(e)) {
+                if (Shortcuts && ctrlOrMetaKey(e)) {
                     if (e.shiftKey) {
                         keyHandlers?.maximize(e);
                         return;
@@ -117,17 +117,17 @@ export const useComposerHotkeys = ({
                 }
                 break;
             case 'a':
-                if (Hotkeys && ctrlOrMetaKey(e) && e.shiftKey) {
+                if (Shortcuts && ctrlOrMetaKey(e) && e.shiftKey) {
                     keyHandlers?.addAttachment(e);
                 }
                 break;
             case 'e':
-                if (Hotkeys && ctrlOrMetaKey(e) && e.shiftKey) {
+                if (Shortcuts && ctrlOrMetaKey(e) && e.shiftKey) {
                     keyHandlers?.encrypt(e);
                 }
                 break;
             case 'x':
-                if (Hotkeys && ctrlOrMetaKey(e) && e.shiftKey) {
+                if (Shortcuts && ctrlOrMetaKey(e) && e.shiftKey) {
                     keyHandlers?.addExpiration(e);
                 }
                 break;

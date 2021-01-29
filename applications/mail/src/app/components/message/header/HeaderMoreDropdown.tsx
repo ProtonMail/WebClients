@@ -78,7 +78,7 @@ const HeaderMoreDropdown = ({
     const [labels = []] = useLabels();
     const markAs = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
@@ -186,7 +186,7 @@ const HeaderMoreDropdown = ({
           ]
         : undefined;
 
-    const titleMoveInboxNotSpam = Hotkeys ? (
+    const titleMoveInboxNotSpam = Shortcuts ? (
         <>
             {c('Title').t`Move to inbox (not spam)`}
             <br />
@@ -195,7 +195,7 @@ const HeaderMoreDropdown = ({
     ) : (
         c('Title').t`Move to inbox (not spam)`
     );
-    const titleUnread = Hotkeys ? (
+    const titleUnread = Shortcuts ? (
         <>
             {c('Title').t`Mark as unread`}
             <br />
@@ -204,7 +204,7 @@ const HeaderMoreDropdown = ({
     ) : (
         c('Title').t`Mark as unread`
     );
-    const titleMoveInbox = Hotkeys ? (
+    const titleMoveInbox = Shortcuts ? (
         <>
             {c('Title').t`Move to inbox`}
             <br />
@@ -213,7 +213,7 @@ const HeaderMoreDropdown = ({
     ) : (
         c('Title').t`Move to inbox`
     );
-    const titleMoveTrash = Hotkeys ? (
+    const titleMoveTrash = Shortcuts ? (
         <>
             {c('Title').t`Move to trash`}
             <br />

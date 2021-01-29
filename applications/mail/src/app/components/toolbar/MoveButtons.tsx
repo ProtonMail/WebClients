@@ -37,7 +37,7 @@ const MoveButtons = ({
     const moveToFolder = useMoveToFolder();
     const labelIDs = labels.map(({ ID }) => ID);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const handleMove = async (LabelID: string) => {
         const folderName = getFolderName(LabelID, folders);
@@ -49,7 +49,7 @@ const MoveButtons = ({
         }
     };
 
-    const titleInbox = Hotkeys ? (
+    const titleInbox = Shortcuts ? (
         <>
             {c('Action').t`Move to inbox`}
             <br />
@@ -73,7 +73,7 @@ const MoveButtons = ({
         </ToolbarButton>
     );
 
-    const titleArchive = Hotkeys ? (
+    const titleArchive = Shortcuts ? (
         <>
             {c('Action').t`Move to archive`}
             <br />
@@ -97,7 +97,7 @@ const MoveButtons = ({
         </ToolbarButton>
     );
 
-    const titleSpam = Hotkeys ? (
+    const titleSpam = Shortcuts ? (
         <>
             {c('Action').t`Move to spam`}
             <br />
@@ -121,7 +121,7 @@ const MoveButtons = ({
         </ToolbarButton>
     );
 
-    const titleNoSpam = Hotkeys ? (
+    const titleNoSpam = Shortcuts ? (
         <>
             {c('Action').t`Move to inbox (not spam)`}
             <br />
@@ -145,7 +145,7 @@ const MoveButtons = ({
         </ToolbarButton>
     );
 
-    const titleTrash = Hotkeys ? (
+    const titleTrash = Shortcuts ? (
         <>
             {c('Action').t`Move to trash`}
             <br />

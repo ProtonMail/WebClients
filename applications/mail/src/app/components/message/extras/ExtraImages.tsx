@@ -18,7 +18,7 @@ const ExtraImages = ({
     onLoadImages,
 }: Props) => {
     const [mailSettings] = useMailSettings();
-    const [{ Hotkeys } = { Hotkeys: 0 }] = useMailSettings();
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     if (type === 'embedded' && hasShowEmbedded(mailSettings)) {
         return null;
@@ -53,7 +53,7 @@ const ExtraImages = ({
             </>
         );
 
-    const loadButton = Hotkeys ? (
+    const loadButton = Shortcuts ? (
         <>
             <Tooltip title={titleButtonLoad} className="flex flex-item-noshrink">
                 <button type="button" onClick={onLoadImages} className="underline link">{c('Action').t`Load`}</button>
