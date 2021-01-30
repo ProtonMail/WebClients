@@ -21,8 +21,8 @@ import { isMessage } from './elements';
  * Remove + alias and transform to lower case
  */
 export const getByEmail = (addresses: Address[], email = '') => {
-    const cleanEmail = removeEmailAlias(email);
-    return addresses.find(({ Email }) => removeEmailAlias(Email) === cleanEmail);
+    const value = removeEmailAlias(email, true);
+    return addresses.find(({ Email }) => removeEmailAlias(Email, true) === value);
 };
 
 /**
@@ -131,7 +131,7 @@ export const getAddressFromPlusAlias = (addresses: Address[], email = ''): Addre
     }
 
     // Remove the plus alias part to find a match with existing addresses
-    const address = getByEmail(addresses, removeEmailAlias(email));
+    const address = getByEmail(addresses, email);
     const { Status, Receive, Send } = address || {};
 
     if (!Status || !Receive || !Send) {
@@ -141,7 +141,7 @@ export const getAddressFromPlusAlias = (addresses: Address[], email = ''): Addre
 
     const plusPart = email.substring(plusIndex + 1, atIndex);
 
-    // Returns an address where the Email is build to respect the exising capitalization and add the plus part
+    // Returns an address where the Email is build to respect the existing capitalization and add the plus part
     return { ...(address as Address), Email: addPlusAlias(address?.Email, plusPart) };
 };
 
@@ -155,16 +155,14 @@ export const getAddressFromEmail = (addresses: Address[], email = '') => {
         return addressForPlusAlias;
     }
 
-    const address = getByEmail(addresses, email);
-
-    return address;
+    return getByEmail(addresses, email);
 };
 
 /**
  * Return list of addresses available in the FROM select
  * Reference: Angular/src/app/composer/factories/composerFromModel.js
  */
-export const getFromAdresses = (addresses: Address[], originalTo = '') => {
+export const getFromAddresses = (addresses: Address[], originalTo = '') => {
     const result = addresses
         .filter(({ Status, Receive, Send }) => Status === 1 && Receive === 1 && Send === 1)
         .sort((a1, a2) => (a1.Order || 0) - (a2.Order || 0));
@@ -183,7 +181,7 @@ export const getFromAdresses = (addresses: Address[], originalTo = '') => {
  * Get address to use as sender for a new draft
  */
 export const getFromAddress = (addresses: Address[], originalTo = '', addressID: string | undefined) => {
-    const fromAddresses = getFromAdresses(addresses, originalTo);
+    const fromAddresses = getFromAddresses(addresses, originalTo);
     return fromAddresses.find((address) => address.ID === addressID) || fromAddresses[0];
 };
 
@@ -211,7 +209,7 @@ export const findSender = (
 };
 
 export const getNumParticipants = (element: Element) => {
-    let recipients: Recipient[] = [];
+    let recipients: Recipient[];
 
     if (isMessage(element)) {
         const { ToList = [], CCList = [], BCCList = [], Sender = {} } = element as Message;
@@ -221,5 +219,5 @@ export const getNumParticipants = (element: Element) => {
         recipients = [...Recipients, ...Senders];
     }
 
-    return unique(recipients.map(({ Address }: Recipient) => removeEmailAlias(Address))).length;
+    return unique(recipients.map(({ Address }: Recipient) => removeEmailAlias(Address, true))).length;
 };
