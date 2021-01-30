@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, MutableRefObject } from 'react';
 import { Select, generateUID, useAddresses, useMailSettings } from 'react-components';
 import { MessageExtended } from '../../../models/message';
-import { getAddressFromEmail, getFromAdresses } from '../../../helpers/addresses';
+import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
 import { MessageChange } from '../Composer';
 import { changeSignature } from '../../../helpers/message/messageSignature';
 
@@ -19,7 +19,7 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
 
     const [uid] = useState(generateUID('select-sender'));
 
-    const addressesOptions = getFromAdresses(addresses, message.originalTo).map((address) => ({
+    const addressesOptions = getFromAddresses(addresses, message.originalTo).map((address) => ({
         text: address.Email,
         value: address.Email, // Because of + addresses, the ID can not be unique while the email is
     }));

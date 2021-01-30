@@ -2,7 +2,14 @@ import { Address } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { findSender, getRecipientGroupLabel, getRecipientLabel, recipientsToRecipientOrGroup } from './addresses';
+import {
+    findSender,
+    getNumParticipants,
+    getRecipientGroupLabel,
+    getRecipientLabel,
+    recipientsToRecipientOrGroup,
+} from './addresses';
+import { Element } from '../models/element';
 
 const recipient1: Recipient = { Name: '', Address: 'address1' };
 const recipient2: Recipient = { Name: 'recipient2', Address: 'address2' };
@@ -104,6 +111,18 @@ describe('addresses', () => {
         it('should compute group size with contact list', () => {
             const result = getRecipientGroupLabel({ group: group1, recipients: [recipient3, recipient4] }, 8);
             expect(result).toEqual('GroupName1 (2/8 Members)');
+        });
+    });
+
+    describe('getNumParticipants', () => {
+        it('should not count same participant', () => {
+            const sender: Recipient = { Name: 'Panda', Address: 'panda@pm.me' };
+            const recipient1: Recipient = { Name: 'Panda', Address: 'panda@pm.me' };
+            const recipient2: Recipient = { Name: 'Panda', Address: 'p.an.da@pm.me' };
+            const recipient3: Recipient = { Name: 'Panda', Address: 'panda+panda@pm.me' };
+            const conversation: Element = { Senders: [sender], Recipients: [recipient1, recipient2, recipient3] };
+            const result = getNumParticipants(conversation);
+            expect(result).toEqual(1);
         });
     });
 });
