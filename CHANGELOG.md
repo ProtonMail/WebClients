@@ -1,3 +1,9 @@
+# [3.16.54] - 2021-01-31
+
+## Fixes
+
+- Improve error notification handling
+
 # [3.16.53] - 2021-01-20
 
 ## Updates
