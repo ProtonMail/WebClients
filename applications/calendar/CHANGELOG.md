@@ -1,6 +1,9 @@
-# [4.0.0-beta.13] - 2021-01-27
+# [4.0.0-beta.13] - 2021-02-03
 ## Updated
 - Add participants to events without pressing enter
+
+## Fixed
+- Recognize properly capitalized email addresses in invites
 
 # [4.0.0-beta.12] - 2021-01-21
 ## Added
