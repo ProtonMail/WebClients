@@ -20,6 +20,30 @@ function main({ SENTRY_DSN, COMMIT_RELEASE, APP_VERSION }) {
         dsn,
         release: isProduction(host) ? APP_VERSION : COMMIT_RELEASE,
         environment: host,
+        beforeSend(event) {
+            if (event && 'error' in event && event.error?.stack) {
+                // Filter out broken ferdi errors
+                if (event.error.stack.includes(/ferdi/i)) {
+                    return null;
+                }
+            }
+            return event;
+        },
+        ignoreErrors: [
+            // Ignore random plugins/extensions
+            'top.GLOBALS',
+            'canvas.contentDocument',
+            'MyApp_RemoveAllHighlights',
+            'atomicFindClose',
+            'conduitPage',
+            // https://bugzilla.mozilla.org/show_bug.cgi?id=1678243
+            'XDR encoding failure',
+            'Request timed out',
+            'No network connection',
+            'Failed to fetch',
+            'NetworkError when attempting to fetch resource.',
+            'No network connection',
+        ],
     });
 
     Sentry.configureScope((scope) => {
