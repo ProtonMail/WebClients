@@ -5,9 +5,9 @@ import { PrivateAppContainer, useToggle, MainLogo } from 'react-components';
 import AppErrorBoundary from '../../components/AppErrorBoundary';
 import DriveHeader from '../../components/layout/DriveHeader';
 import DriveSidebar from '../../components/layout/DriveSidebar/DriveSidebar';
-import UploadButton from '../../components/uploads/UploadButton';
 import SharedURLsContainerView from './SharedURLsContainerView';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
+import ShareFileButton from '../../components/SharedLinks/ShareFileButton';
 
 const SharedURLsContainer = ({ match }: RouteComponentProps<{ shareId?: string }>) => {
     const cache = useDriveCache();
@@ -25,7 +25,7 @@ const SharedURLsContainer = ({ match }: RouteComponentProps<{ shareId?: string }
     const header = (
         <DriveHeader
             logo={logo}
-            floatingPrimary={<UploadButton floating />}
+            floatingPrimary={<ShareFileButton floating shareId={shareId} />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />
@@ -34,7 +34,7 @@ const SharedURLsContainer = ({ match }: RouteComponentProps<{ shareId?: string }
     const sidebar = (
         <DriveSidebar
             logo={logo}
-            primary={<UploadButton className="nomobile" />}
+            primary={<ShareFileButton className="nomobile" shareId={shareId} />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />

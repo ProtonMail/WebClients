@@ -1,11 +1,14 @@
 import React, { useState, ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
 import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy, FileIcon } from 'react-components';
+import { LinkType } from '../../interfaces/link';
 
 interface Props {
     linkId: string;
     name: string;
     depth: number;
+    type: LinkType;
+    mimeType: string;
     disabled?: boolean;
     isSelected: boolean;
     isExpanded: boolean;
@@ -19,6 +22,8 @@ const ExpandableRow = ({
     linkId,
     name,
     depth,
+    type,
+    mimeType,
     disabled = false,
     isSelected,
     isExpanded,
@@ -78,6 +83,7 @@ const ExpandableRow = ({
                     <div className="pd-folder-tree-listItem-expand flex-item-noshrink relative">
                         <Button
                             disabled={disabled}
+                            style={{ visibility: type === LinkType.FILE ? 'hidden' : 'visible' }}
                             className="pd-folder-tree-listItem-expand-button increase-surface-click"
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -89,7 +95,7 @@ const ExpandableRow = ({
                         </Button>
                     </div>
                     <div key="Name" className="pd-folder-tree-listItem-name flex flex-items-center flex-nowrap w100">
-                        <FileIcon mimeType="Folder" />
+                        <FileIcon mimeType={type === LinkType.FOLDER ? 'Folder' : mimeType} />
                         <span className="ellipsis" title={name}>
                             {name}
                         </span>
