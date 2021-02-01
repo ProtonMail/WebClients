@@ -1,5 +1,5 @@
 import React, { memo, useMemo, useRef } from 'react';
-import { AddressesAutocomplete, useNotifications, Alert } from 'react-components';
+import { AddressesAutocomplete, Alert } from 'react-components';
 import { c, msgid } from 'ttag';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { uniqueBy } from 'proton-shared/lib/helpers/array';
@@ -54,7 +54,6 @@ const ParticipantsInput = ({
     const anchorRef = useRef<HTMLInputElement>(null);
 
     const { contactEmails, contactGroups, contactEmailsMap } = useContactEmailsCache();
-    const { createNotification } = useNotifications();
 
     const ownNormalizedEmails = useMemo(() => {
         return addresses.map(({ Email }) => normalizeInternalEmail(Email));
@@ -87,27 +86,13 @@ const ParticipantsInput = ({
         if (!newAttendees.length) {
             return;
         }
-        const { attendees, selfAttendees } = newAttendees.reduce<{
-            attendees: AttendeeModel[];
-            selfAttendees: AttendeeModel[];
-        }>(
-            (acc, cur) => {
-                if (ownNormalizedEmails.includes(removeEmailAlias(cur.email, true))) {
-                    acc.selfAttendees.push(cur);
-                } else {
-                    acc.attendees.push(cur);
-                }
-                return acc;
-            },
-            { attendees: [], selfAttendees: [] }
-        );
-        if (selfAttendees.length) {
-            createNotification({
-                type: 'error',
-                text: c('Error').t`Self invitation not allowed`,
-            });
-            setParticipantError?.(true);
-        }
+        const attendees = newAttendees.reduce<AttendeeModel[]>((acc, cur) => {
+            if (!ownNormalizedEmails.includes(removeEmailAlias(cur.email, true))) {
+                acc.push(cur);
+            }
+
+            return acc;
+        }, []);
         if (attendees.length) {
             onChange([...attendees, ...value]);
         }
@@ -142,9 +127,22 @@ const ParticipantsInput = ({
                 contactEmailsMap={contactEmailsMap}
                 recipients={recipients}
                 onAddRecipients={handleAddRecipients}
-                hasEmailValidation
                 onAddInvalidEmail={() => {
                     setParticipantError?.(true);
+                }}
+                onChange={(event) => {
+                    if (!event.currentTarget.value.trimStart() && setParticipantError) {
+                        setParticipantError(false);
+                    }
+                }}
+                validate={(email) => {
+                    if (ownNormalizedEmails.includes(removeEmailAlias(email, true))) {
+                        return c('Error').t`Self invitation not allowed`;
+                    }
+
+                    if (!validateEmailAddress(email)) {
+                        return c('Error').t`Invalid email address`;
+                    }
                 }}
             />
             {numberOfParticipants > 100 && (
