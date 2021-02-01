@@ -87,6 +87,9 @@ export const validateEmailAddress = (email: string) => {
  */
 export const normalizeInternalEmail = (email: string) => {
     const [localPart, domain] = getEmailParts(email);
+    if (!domain) {
+        return email.replace(/[._-]/g, '').toLowerCase();
+    }
     const normalizedLocalPart = localPart.replace(/[._-]/g, '').toLowerCase();
     const normalizedDomain = domain.toLocaleLowerCase();
     return `${normalizedLocalPart}@${normalizedDomain}`;
