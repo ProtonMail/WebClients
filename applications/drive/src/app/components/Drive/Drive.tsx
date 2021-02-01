@@ -74,6 +74,7 @@ function Drive({ activeFolder }: Props) {
         <EmptyFolder />
     ) : (
         <FileBrowser
+            type="drive"
             layout={layout}
             scrollAreaRef={scrollAreaRef}
             caption={folderName}

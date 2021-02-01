@@ -16,7 +16,7 @@ const FileBrowser = ({
     shareId,
     scrollAreaRef,
     selectedItems,
-    isTrash = false,
+    type,
     isPreview = false,
     onToggleItemSelected,
     onToggleAllSelected,
@@ -41,10 +41,11 @@ const FileBrowser = ({
             onShiftClick={onShiftClick}
             selectItem={selectItem}
             getDragMoveControls={getDragMoveControls}
+            type={type}
         />
     ) : (
         <ListView
-            isTrash={isTrash}
+            type={type}
             isPreview={isPreview}
             scrollAreaRef={scrollAreaRef}
             caption={caption}

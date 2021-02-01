@@ -1,19 +1,20 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { c } from 'ttag';
-import EmptyTrash from '../../FileBrowser/EmptyTrash';
-import useOnScrollEnd from '../../../hooks/util/useOnScrollEnd';
-import { useTrashContent } from './TrashContentProvider';
-import FileBrowser from '../../FileBrowser/FileBrowser';
-import useUserSettings from '../../../hooks/drive/useUserSettings';
+import useUserSettings from '../../hooks/drive/useUserSettings';
+import FileBrowser from '../FileBrowser/FileBrowser';
+import { useSharedLinksContent } from './SharedLinksContentProvider';
+import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
 
-interface Props {
+type Props = {
     shareId: string;
-}
+};
 
-function Trash({ shareId }: Props) {
+// TODO: empty view
+
+const SharedLinks = ({ shareId }: Props) => {
     const { layout } = useUserSettings();
     const scrollAreaRef = useRef<HTMLDivElement>(null);
-    const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls } = useTrashContent();
+    const { loadNextPage, loading, initialized, complete, contents, fileBrowserControls } = useSharedLinksContent();
 
     const {
         clearSelections,
@@ -35,13 +36,13 @@ function Trash({ shareId }: Props) {
     useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents, layout]);
 
     return complete && !contents.length && !loading ? (
-        <EmptyTrash />
+        <></>
     ) : (
         <FileBrowser
-            type="trash"
+            type="sharing"
             layout={layout}
             scrollAreaRef={scrollAreaRef}
-            caption={c('Title').t`Trash`}
+            caption={c('Title').t`Shared`}
             shareId={shareId}
             loading={loading}
             contents={contents}
@@ -53,6 +54,6 @@ function Trash({ shareId }: Props) {
             selectItem={selectItem}
         />
     );
-}
+};
 
-export default Trash;
+export default SharedLinks;

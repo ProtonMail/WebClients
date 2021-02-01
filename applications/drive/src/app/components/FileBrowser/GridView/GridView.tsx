@@ -81,7 +81,7 @@ const GridItemCell = ({
 };
 
 function GridView({
-    isTrash,
+    type,
     shareId,
     contents,
     onItemClick,
@@ -174,7 +174,7 @@ function GridView({
                 </FixedSizeGrid>
             )}
 
-            {!isTrash && (
+            {type === 'drive' && (
                 <FolderContextMenu
                     isOpen={isContextMenuOpen}
                     open={openContextMenu}

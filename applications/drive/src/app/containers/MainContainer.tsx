@@ -16,6 +16,7 @@ import useDrive from '../hooks/drive/useDrive';
 import NoAccessContainer from './NoAccessContainer/NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
 import { RESPONSE_CODE } from '../constants';
+import SharedURLsContainer from './SharedURLsContainer/SharedURLsContainer';
 
 enum ERROR_TYPES {
     STANDARD,
@@ -67,6 +68,7 @@ const InitContainer = () => {
             <TransferManager />
             <Switch>
                 <Route path="/trash" component={TrashContainer} />
+                <Route path="/shared-urls" component={SharedURLsContainer} />
                 <Route path="/" component={DriveContainer} />
                 <Redirect to="/" />
             </Switch>

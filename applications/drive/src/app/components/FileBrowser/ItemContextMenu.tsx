@@ -39,7 +39,7 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
 
     const isMultiSelect = selectedItems.length > 1;
     const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
-    const hasSharedLink = selectedItems[0]?.SharedURLShareID;
+    const hasSharedLink = !!selectedItems[0]?.SharedUrl;
     const isPreviewHidden = isMultiSelect || hasFoldersSelected || !item.MIMEType || !isPreviewAvailable(item.MIMEType);
 
     useEffect(() => {

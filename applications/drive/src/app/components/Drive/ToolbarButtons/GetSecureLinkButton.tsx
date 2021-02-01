@@ -16,7 +16,7 @@ const GetSecureLinkButton = ({ shareId, disabled }: Props) => {
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
 
-    const hasSharedLink = selectedItems[0]?.SharedURLShareID;
+    const hasSharedLink = !!selectedItems[0]?.SharedUrl;
 
     return (
         <ToolbarButton

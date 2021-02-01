@@ -3,10 +3,11 @@ import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect } fro
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { buffer } from 'proton-shared/lib/helpers/function';
 import ItemRow from './ItemRow';
-import { FileBrowserProps, FileBrowserItem, DragMoveControls } from '../interfaces';
+import { FileBrowserProps, FileBrowserItem, DragMoveControls, FileBrowserLayouts } from '../interfaces';
 import FolderContextMenu from '../FolderContextMenu';
 import useFileBrowserView from '../useFileBrowserView';
 import ListHeader from './ListHeader';
+import { fileBrowserColumns } from '../constants';
 
 type ListItemData = {
     itemCount: number;
@@ -18,7 +19,7 @@ type ListItemData = {
     onShiftClick?: (item: string) => void;
     onItemClick?: (item: FileBrowserItem) => void;
     loading?: boolean;
-    isTrash?: boolean;
+    type: FileBrowserLayouts;
     isPreview?: boolean;
     isDesktop?: boolean;
     secondaryActionActive?: boolean;
@@ -39,7 +40,7 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
         onShiftClick,
         onItemClick,
         isPreview,
-        isTrash,
+        type,
         selectItem,
         secondaryActionActive,
         getDragMoveControls,
@@ -47,7 +48,7 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
     } = data;
 
     if (loading && index === itemCount - 1) {
-        const colSpan = 4 + Number(isDesktop) + Number(isTrash);
+        const colSpan = (type === 'trash' ? 5 : 4) + Number(isDesktop);
         return (
             <tr aria-busy="true" style={style} className="w100">
                 <td colSpan={colSpan} className="m0 flex" />
@@ -66,7 +67,7 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
             onToggleSelect={onToggleItemSelected}
             onShiftClick={onShiftClick}
             onClick={onItemClick}
-            showLocation={isTrash}
+            columns={fileBrowserColumns[type]}
             selectItem={selectItem}
             secondaryActionActive={secondaryActionActive}
             dragMoveControls={getDragMoveControls?.(item)}
@@ -99,7 +100,7 @@ const ListView = ({
     shareId,
     scrollAreaRef,
     selectedItems,
-    isTrash = false,
+    type,
     isPreview = false,
     onToggleItemSelected,
     onToggleAllSelected,
@@ -148,7 +149,7 @@ const ListView = ({
                         onToggleAllSelected={onToggleAllSelected}
                         scrollAreaRef={scrollAreaRef}
                         selectedItems={selectedItems}
-                        isTrash={isTrash}
+                        type={type}
                         setSorting={setSorting}
                         sortParams={sortParams}
                     />
@@ -171,7 +172,7 @@ const ListView = ({
                             onShiftClick,
                             onItemClick,
                             isPreview,
-                            isTrash,
+                            type,
                             selectItem,
                             secondaryActionActive,
                             getDragMoveControls,
@@ -195,7 +196,7 @@ const ListView = ({
                     </FixedSizeList>
                 )}
             </div>
-            {!isPreview && !isTrash && (
+            {!isPreview && type === 'drive' && (
                 <FolderContextMenu
                     isOpen={isContextMenuOpen}
                     open={openContextMenu}
