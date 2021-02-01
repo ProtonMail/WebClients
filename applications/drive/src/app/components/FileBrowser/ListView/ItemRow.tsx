@@ -11,6 +11,7 @@ import {
 } from 'react-components';
 import { isEquivalent, pick } from 'proton-shared/lib/helpers/object';
 import { shallowEqual } from 'proton-shared/lib/helpers/array';
+import { c } from 'ttag';
 import { ItemProps } from '../interfaces';
 import { LinkType } from '../../../interfaces/link';
 import ItemContextMenu from '../ItemContextMenu';
@@ -30,7 +31,7 @@ const ItemRow = ({
     onToggleSelect,
     onClick,
     onShiftClick,
-    showLocation,
+    columns,
     selectItem,
     secondaryActionActive,
     dragMoveControls,
@@ -97,28 +98,49 @@ const ItemRow = ({
                 <TableCell className="m0 flex flex-items-center flex-nowrap flex-item-fluid">
                     <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
                     <NameCell name={item.Name} />
-                    {item.SharedURLShareID && <SharedURLIcon expired={item.UrlsExpired} />}
+                    {item.SharedUrl && <SharedURLIcon expired={item.UrlsExpired} />}
                 </TableCell>
 
-                {showLocation && (
+                {columns.includes('location') && (
                     <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])}>
                         <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} />
                     </TableCell>
                 )}
 
-                <TableCell className="m0 w20">
-                    <DescriptiveTypeCell mimeType={item.MIMEType} linkType={item.Type} />
-                </TableCell>
+                {columns.includes('type') && (
+                    <TableCell className="m0 w20">
+                        <DescriptiveTypeCell mimeType={item.MIMEType} linkType={item.Type} />
+                    </TableCell>
+                )}
 
-                {isDesktop && (
+                {isDesktop && columns.includes('modified') && (
                     <TableCell className="m0 w25">
                         <TimeCell time={item.ModifyTime} />
                     </TableCell>
                 )}
 
-                <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])}>
-                    {isFolder ? '-' : <SizeCell size={item.Size} />}
-                </TableCell>
+                {isDesktop && columns.includes('share_created') && (
+                    <TableCell className="m0 w20">
+                        {item.SharedUrl?.CreateTime && <TimeCell time={item.SharedUrl.CreateTime} />}
+                    </TableCell>
+                )}
+
+                {columns.includes('share_expires') && (
+                    <TableCell className="m0 w20">
+                        {item.SharedUrl &&
+                            (item.SharedUrl.ExpireTime ? (
+                                <TimeCell time={item.SharedUrl.ExpireTime} />
+                            ) : (
+                                c('Label').t`Never`
+                            ))}
+                    </TableCell>
+                )}
+
+                {columns.includes('size') && (
+                    <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])}>
+                        {isFolder ? '-' : <SizeCell size={item.Size} />}
+                    </TableCell>
+                )}
             </TableRow>
             {!isPreview && !item.Disabled && (
                 <ItemContextMenu
@@ -140,7 +162,6 @@ export default React.memo(ItemRow, (a, b) => {
 
     const cheapPropsToCheck: (keyof ItemProps)[] = [
         'shareId',
-        'showLocation',
         'secondaryActionActive',
         'style',
         'onToggleSelect',
@@ -149,7 +170,12 @@ export default React.memo(ItemRow, (a, b) => {
     ];
     const cheapPropsEqual = isEquivalent(pick(a, cheapPropsToCheck), pick(b, cheapPropsToCheck));
 
-    if (!cheapPropsEqual || !isEquivalent(a.item, b.item) || !shallowEqual(a.selectedItems, b.selectedItems)) {
+    if (
+        !cheapPropsEqual ||
+        !isEquivalent(a.item, b.item) ||
+        !shallowEqual(a.selectedItems, b.selectedItems) ||
+        !shallowEqual(a.columns, b.columns)
+    ) {
         return false;
     }
 

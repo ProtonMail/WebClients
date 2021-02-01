@@ -3,10 +3,11 @@ import { TableRowSticky, TableHeaderCell, Checkbox, useActiveBreakpoint } from '
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { SortKeys, SortParams } from '../../../interfaces/link';
-import { FileBrowserItem } from '../interfaces';
+import { FileBrowserItem, FileBrowserLayouts } from '../interfaces';
+import { fileBrowserColumns } from '../constants';
 
 interface Props {
-    isTrash?: boolean;
+    type: FileBrowserLayouts;
     sortParams?: SortParams;
     setSorting?: (sortField: SortKeys, sortOrder: SORT_DIRECTION) => void;
     selectedItems: FileBrowserItem[];
@@ -16,7 +17,7 @@ interface Props {
 }
 
 const ListHeader = ({
-    isTrash,
+    type,
     setSorting,
     sortParams,
     contents,
@@ -25,7 +26,7 @@ const ListHeader = ({
     scrollAreaRef,
 }: Props) => {
     const { isDesktop } = useActiveBreakpoint();
-    const unlessIsTrash = (fn?: () => void) => (isTrash ? undefined : fn);
+    const canSort = (fn?: () => void) => (type === 'drive' ? undefined : fn);
 
     const handleSort = (key: SortKeys) => {
         if (!sortParams || !setSorting) {
@@ -44,7 +45,7 @@ const ListHeader = ({
         sortParams?.sortField === key ? sortParams.sortOrder : undefined;
 
     const allSelected = !!contents.length && contents.length === selectedItems.length;
-    const modifiedHeader = isTrash ? c('TableHeader').t`Deleted` : c('TableHeader').t`Modified`;
+    const columns = fileBrowserColumns[type];
 
     return (
         <thead onContextMenu={(e) => e.stopPropagation()}>
@@ -59,39 +60,46 @@ const ListHeader = ({
                         />
                     </div>
                 </TableHeaderCell>
-                <TableHeaderCell
-                    onSort={unlessIsTrash(() => handleSort('Name'))}
-                    direction={getSortDirectionForKey('Name')}
-                >
+                <TableHeaderCell onSort={canSort(() => handleSort('Name'))} direction={getSortDirectionForKey('Name')}>
                     {c('TableHeader').t`Name`}
                 </TableHeaderCell>
-                {isTrash && (
+                {columns.includes('location') && (
                     <TableHeaderCell className={isDesktop ? 'w20' : 'w25'}>{c('TableHeader')
                         .t`Location`}</TableHeaderCell>
                 )}
-                <TableHeaderCell
-                    direction={getSortDirectionForKey('MIMEType')}
-                    onSort={unlessIsTrash(() => handleSort('MIMEType'))}
-                    className="w20"
-                >
-                    {c('TableHeader').t`Type`}
-                </TableHeaderCell>
-                {isDesktop && (
+                {columns.includes('type') && (
+                    <TableHeaderCell
+                        direction={getSortDirectionForKey('MIMEType')}
+                        onSort={canSort(() => handleSort('MIMEType'))}
+                        className="w20"
+                    >
+                        {c('TableHeader').t`Type`}
+                    </TableHeaderCell>
+                )}
+                {isDesktop && columns.includes('modified') && (
                     <TableHeaderCell
                         className="w25"
                         direction={getSortDirectionForKey('ModifyTime')}
-                        onSort={unlessIsTrash(() => handleSort('ModifyTime'))}
+                        onSort={canSort(() => handleSort('ModifyTime'))}
                     >
-                        {modifiedHeader}
+                        {type === 'drive' ? c('TableHeader').t`Modified` : c('TableHeader').t`Deleted`}
                     </TableHeaderCell>
                 )}
-                <TableHeaderCell
-                    direction={getSortDirectionForKey('Size')}
-                    onSort={unlessIsTrash(() => handleSort('Size'))}
-                    className={isDesktop ? 'w10' : 'w15'}
-                >
-                    {c('TableHeader').t`Size`}
-                </TableHeaderCell>
+                {columns.includes('size') && (
+                    <TableHeaderCell
+                        direction={getSortDirectionForKey('Size')}
+                        onSort={canSort(() => handleSort('Size'))}
+                        className={isDesktop ? 'w10' : 'w15'}
+                    >
+                        {c('TableHeader').t`Size`}
+                    </TableHeaderCell>
+                )}
+                {isDesktop && columns.includes('share_created') && (
+                    <TableHeaderCell className="w20">{c('TableHeader').t`Created`}</TableHeaderCell>
+                )}
+                {columns.includes('share_expires') && (
+                    <TableHeaderCell className="w20">{c('TableHeader').t`Expires`}</TableHeaderCell>
+                )}
             </TableRowSticky>
         </thead>
     );

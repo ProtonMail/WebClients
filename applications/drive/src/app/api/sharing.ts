@@ -24,10 +24,11 @@ export const queryCreateSharedLink = (shareId: string, data: CreateSharedURL) =>
     };
 };
 
-export const querySharedLinks = (shareId: string) => {
+export const querySharedLinks = (shareId: string, params: { Page: number; PageSize?: number; Recursive?: 1 | 0 }) => {
     return {
         method: 'get',
         url: `drive/shares/${shareId}/urls`,
+        params,
     };
 };
 

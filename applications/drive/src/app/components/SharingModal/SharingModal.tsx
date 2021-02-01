@@ -70,8 +70,8 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         };
 
         const getToken = async () => {
-            const shareUrlInfo = item.SharedURLShareID
-                ? await getSharedURLs(item.SharedURLShareID).then(async ([sharedUrl]) => {
+            const shareUrlInfo = item.ShareUrlShareID
+                ? await getSharedURLs(item.ShareUrlShareID).then(async ({ ShareURLs: [sharedUrl] }) => {
                       return decryptSharedLink(sharedUrl);
                   })
                 : await getShareMetaShort(shareId).then(async ({ VolumeID }) => {
@@ -91,7 +91,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             .finally(() => {
                 setModalState(SharingModalState.GeneratedLink);
             });
-    }, [shareId, item.LinkID, item.SharedURLShareID, shareUrlInfo?.ShareURL.ShareID]);
+    }, [shareId, item.LinkID, item.SharedUrl, shareUrlInfo?.ShareURL.ShareID]);
 
     const handleSaveExpirationTime = async (duration: EXPIRATION_DAYS) => {
         if (!shareUrlInfo) {
@@ -187,7 +187,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
 
     const renderModalState = () => {
         if (loading) {
-            return <LoadingState generated={!!item.SharedURLShareID} />;
+            return <LoadingState generated={!!item.SharedUrl} />;
         }
 
         if (error || !shareUrlInfo || !item) {

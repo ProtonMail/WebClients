@@ -13,15 +13,18 @@ import {
 } from '../../api/sharing';
 import useDrive from './useDrive';
 import useDriveCrypto from './useDriveCrypto';
-import { DEFAULT_SHARE_MAX_ACCESSES, EXPIRATION_DAYS } from '../../constants';
+import { DEFAULT_SHARE_MAX_ACCESSES, EXPIRATION_DAYS, FOLDER_PAGE_SIZE } from '../../constants';
 import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import { validateSharedURLPassword, ValidationError } from '../../utils/validation';
 import { getDurationInSeconds } from '../../components/Drive/helpers';
+import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
+import { LinkMeta } from '../../interfaces/link';
 
 function useSharing() {
     const { getPrimaryAddressKey } = useDriveCrypto();
-    const { createShare } = useDrive();
+    const { createShare, decryptLink, getLinkKeys, getShareKeys } = useDrive();
+    const cache = useDriveCache();
     const api = useApi();
     const debouncedRequest = useDebouncedRequest();
 
@@ -175,8 +178,58 @@ function useSharing() {
     };
 
     const getSharedURLs = async (sharedURLShareId: string) => {
-        const { ShareURLs } = await debouncedRequest<{ ShareURLs: ShareURL[] }>(querySharedLinks(sharedURLShareId));
-        return ShareURLs;
+        const { ShareURLs = [] } = await debouncedRequest<{
+            ShareURLs: ShareURL[];
+            Links?: { [id: string]: LinkMeta };
+        }>(querySharedLinks(sharedURLShareId, { Page: 0, Recursive: 0, PageSize: FOLDER_PAGE_SIZE }));
+
+        return {
+            ShareURLs,
+        };
+    };
+
+    const fetchSharedURLs = async (sharedURLShareId: string, Page = 0, PageSize = FOLDER_PAGE_SIZE) => {
+        const { Links = {}, ShareURLs = [] } = await debouncedRequest<{
+            ShareURLs: ShareURL[];
+            Links?: { [id: string]: LinkMeta };
+        }>(querySharedLinks(sharedURLShareId, { Page, Recursive: 1, PageSize }));
+
+        const allSharedLinks = Object.values(Links).filter(({ Shared }) => Shared);
+        const sharedLinks = ShareURLs.map(
+            ({ ShareID }) => allSharedLinks.find(({ ShareIDs }) => ShareIDs.includes(ShareID))!
+        );
+
+        const decryptedLinks = await Promise.all(
+            sharedLinks.map(async (meta) => {
+                const { privateKey } = meta.ParentLinkID
+                    ? await getLinkKeys(sharedURLShareId, meta.ParentLinkID, {
+                          fetchLinkMeta: async (id) => Links[id],
+                          preventRerenders: true,
+                      })
+                    : await getShareKeys(sharedURLShareId);
+
+                return decryptLink(meta, privateKey);
+            })
+        );
+
+        cache.set.sharedLinkMetas(
+            decryptedLinks,
+            sharedURLShareId,
+            decryptedLinks.length < PageSize ? 'complete' : 'incremental'
+        );
+
+        return {
+            ShareURLs,
+            metas: decryptedLinks,
+        };
+    };
+
+    const fetchNextPage = async (sharedURLShareId: string) => {
+        const loadedItems = cache.get.sharedLinks(sharedURLShareId) || [];
+        const PageSize = FOLDER_PAGE_SIZE;
+        const Page = Math.floor(loadedItems.length / PageSize);
+
+        await fetchSharedURLs(sharedURLShareId, Page, PageSize);
     };
 
     const decryptShareSessionKey = async (keyPacket: string | Uint8Array, password: string) => {
@@ -225,6 +278,7 @@ function useSharing() {
         createSharedLink,
         getSharedURLs,
         deleteSharedLink,
+        fetchNextPage,
     };
 }
 

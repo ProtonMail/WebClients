@@ -12,6 +12,9 @@ const DriveSidebarList = ({ shareId }: Props) => (
         <DriveSidebarListItem to="/" icon="inbox" shareId={shareId}>
             {c('Link').t`My files`}
         </DriveSidebarListItem>
+        <DriveSidebarListItem to="/shared-urls" icon="link" shareId={shareId}>
+            {c('Link').t`Shared`}
+        </DriveSidebarListItem>
         <DriveSidebarListItem to="/trash" icon="trash" shareId={shareId}>
             {c('Link').t`Trash`}
         </DriveSidebarListItem>

@@ -1,5 +1,5 @@
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import { LinkType, SortParams, SortKeys } from '../../interfaces/link';
+import { LinkType, SortParams, SortKeys, SharedUrlInfo } from '../../interfaces/link';
 import { LayoutSetting } from '../../interfaces/userSettings';
 
 export interface DragMoveControls {
@@ -23,9 +23,13 @@ export interface FileBrowserItem {
     ParentLinkID: string;
     Location?: string;
     Disabled?: boolean;
-    SharedURLShareID?: string;
     UrlsExpired: boolean;
+    ShareUrlShareID?: string;
+    SharedUrl?: SharedUrlInfo;
 }
+
+export type ItemRowColumns = 'type' | 'location' | 'share_created' | 'share_expires' | 'modified' | 'size';
+export type FileBrowserLayouts = 'trash' | 'sharing' | 'drive';
 
 export interface ItemProps {
     style?: React.CSSProperties;
@@ -36,7 +40,7 @@ export interface ItemProps {
     selectItem: (item: string) => void;
     onShiftClick?: (item: string) => void;
     onClick?: (item: FileBrowserItem) => void;
-    showLocation?: boolean;
+    columns: ItemRowColumns[];
     secondaryActionActive?: boolean;
     dragMoveControls?: DragMoveControls;
     isPreview?: boolean;
@@ -50,7 +54,7 @@ export interface FileBrowserProps {
     caption?: string;
     contents: FileBrowserItem[];
     selectedItems: FileBrowserItem[];
-    isTrash?: boolean;
+    type: FileBrowserLayouts;
     isPreview?: boolean;
     sortParams?: SortParams;
     onToggleItemSelected: (item: string) => void;

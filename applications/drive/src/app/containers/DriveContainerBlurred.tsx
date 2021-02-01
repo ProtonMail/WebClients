@@ -63,6 +63,7 @@ const DriveContainerBlurred = () => {
                     </div>
                     <ListView
                         isPreview
+                        type="drive"
                         scrollAreaRef={scrollAreaRef}
                         caption={dummyFolderTitle}
                         shareId="dummy-share"

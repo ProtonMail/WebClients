@@ -6,7 +6,7 @@ import ItemContextMenu from '../ItemContextMenu';
 import SharedURLIcon from '../SharedURLIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
 
-export interface Props extends Omit<ItemProps, 'isPreview' | 'showLocation'> {
+export interface Props extends Omit<ItemProps, 'isPreview' | 'showLocation' | 'columns'> {
     style: React.CSSProperties;
     className?: string;
 }
@@ -91,7 +91,7 @@ function ItemCell({
                         />
                     </div>
 
-                    {item.SharedURLShareID && <SharedURLIcon expired={item.UrlsExpired} />}
+                    {item.SharedUrl && <SharedURLIcon expired={item.UrlsExpired} />}
                 </div>
                 <div className="p0-5 flex flex-item-fluid flex-column">
                     <div className="flex flex-item-fluid flex-justify-center flex-items-center">
