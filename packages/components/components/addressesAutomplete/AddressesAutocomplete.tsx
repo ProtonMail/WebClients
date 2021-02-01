@@ -2,9 +2,9 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { Recipient } from 'proton-shared/lib/interfaces';
 import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
-import { normalizeEmail, validateEmailAddress } from 'proton-shared/lib/helpers/email';
+import { normalizeEmail } from 'proton-shared/lib/helpers/email';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { c } from 'ttag';
+import { noop } from 'proton-shared/lib/helpers/function';
 
 import Input, { Props as InputProps } from '../input/Input';
 import { Option } from '../option';
@@ -18,7 +18,7 @@ import {
     getMajorListAutocompleteItems,
 } from './helper';
 
-interface Props extends Omit<InputProps, 'value' | 'onChange'> {
+interface Props extends Omit<InputProps, 'value'> {
     id: string;
     onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
     onAddRecipients: (recipients: Recipient[]) => void;
@@ -27,11 +27,11 @@ interface Props extends Omit<InputProps, 'value' | 'onChange'> {
     contactEmails?: ContactEmail[];
     contactGroups?: ContactGroup[];
     contactEmailsMap?: SimpleMap<ContactEmail>;
-    hasEmailValidation?: boolean;
     hasEmailPasting?: boolean;
     hasAddOnBlur?: boolean;
     limit?: number;
     onAddInvalidEmail?: () => void;
+    validate?: (email: string) => string | void;
 }
 
 const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
@@ -45,11 +45,12 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             recipients,
             onAddRecipients,
             anchorRef,
-            hasEmailValidation = false,
             hasEmailPasting = false,
             hasAddOnBlur = false,
             limit = 20,
             onAddInvalidEmail,
+            onChange,
+            validate = noop,
             ...rest
         }: Props,
         ref
@@ -76,7 +77,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             return [
                 ...getContactsAutocompleteItems(
                     contactEmails,
-                    ({ Email }) => !recipientsByAddress.has(normalizeEmail(Email))
+                    ({ Email }) => !recipientsByAddress.has(normalizeEmail(Email)) && !validate(Email)
                 ),
                 ...getContactGroupsAutocompleteItems(contactGroups, ({ Path }) => !recipientsByGroup.has(Path)),
             ];
@@ -85,19 +86,19 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
         const majorList = useMemo(() => {
             return getMajorListAutocompleteItems(input, (email) => {
                 const normalizedEmail = normalizeEmail(email);
-                return !recipientsByAddress.has(normalizedEmail) && !contactEmailsMap?.[normalizedEmail];
+                return (
+                    !recipientsByAddress.has(normalizedEmail) &&
+                    !contactEmailsMap?.[normalizedEmail] &&
+                    !validate(normalizedEmail)
+                );
             });
         }, [input, contactEmailsMap, recipientsByAddress]);
 
         const options = [...contactsAutocompleteItems, ...majorList];
 
-        const getIsValidEmail = (input = '') => {
-            return !hasEmailValidation ? true : validateEmailAddress(input);
-        };
-
         const safeAddRecipients = (newRecipients: Recipient[]) => {
             const uniqueNewRecipients = newRecipients.filter(({ Address }) => {
-                return getIsValidEmail(Address);
+                return !validate(Address || '');
             });
             if (!uniqueNewRecipients.length) {
                 return;
@@ -117,12 +118,13 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
                 return;
             }
             const newRecipient = inputToRecipient(trimmedInput);
-            const isValidEmail = getIsValidEmail(newRecipient.Address || '');
-            if (isValidEmail) {
+            const error = validate(newRecipient.Address || '');
+
+            if (!error) {
                 handleAddRecipient([newRecipient]);
             } else {
                 onAddInvalidEmail?.();
-                setEmailError(c('Error').t`Invalid email address`);
+                setEmailError(error);
             }
         };
 
@@ -172,6 +174,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
                     value={input}
                     onChange={(event) => {
                         handleInputChange(event.currentTarget.value.trimStart());
+                        onChange?.(event);
                     }}
                     onKeyDown={(event) => {
                         setEmailError('');
