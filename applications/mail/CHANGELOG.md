@@ -1,3 +1,22 @@
+# [4.0.0 - Beta 36] - 2021-02-03
+
+## Improvements
+
+-   Introduced a modal to inform the user about an attachment that cannot be decrypted when opening it
+-   The contact list accessible by pressing on the "To" links from the composer is now sorted alphabetically
+-   Improved "Message processing error" to be more precise if the error is related to signature verification
+-   Added ability to view the password set when encrypting a message for non-ProtonMail users on MacOS
+
+## Fixes
+
+-   Fixed an issue where the "Undo" action does not appear when clicking on the "Sending message" banner
+-   Fixed an issue where the username was not displayed when the language is set to Portuguese
+-   Fixed an issue where empty rows appeared in sent emails
+-   Fixed an issue where the composer inserted an unnecessary row if there is no signature
+-   Fixed an issue where a banner would display "Message moved to inbox" for a message that's marked as phishing
+-   Fixed an issue where "No preview available" error would show if the preview is closed by the user before the content loads
+-   Various UX and alignment fixes
+
 # [4.0.0 - Beta 35] - 2021-01-21
 
 ## New features
