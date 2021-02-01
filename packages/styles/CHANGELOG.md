@@ -12,7 +12,7 @@
 ### New helpers
 
 - added `z-index`, `min-w7e`, `onmobile-min-h0`, `mr-2e`, `flex-flex-items-center` helpers
-- added `tv`, `broken-link`, `keyboard` icon
+- added `tv`, `broken-link`, `keyboard`, `netshield`, `nologs` icons
 - added `pm-field-icon-container-empty` class (to avoid layout shift for Drive)
 
 ## Updated/fixes
@@ -20,6 +20,8 @@
 - fix variable override
 - fix `mirror` helper
 - fix vocalisation of toggle
+- fix minicalendar range border radius
+- fix focus style for radio/checkboxes in dark mode
 
 # [1.8.6] - 2020-12-18
 
