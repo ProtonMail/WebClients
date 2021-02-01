@@ -1,35 +1,39 @@
 import React from 'react';
 import { TableRowBusy } from 'react-components';
+import { LinkType } from '../../interfaces/link';
 import ExpandableRow from './ExpandableRow';
 
 export interface FolderTreeItem {
     linkId: string;
     name: string;
+    type: LinkType;
+    mimeType: string;
     children: { list: FolderTreeItem[]; complete: boolean };
 }
 
 interface Props {
-    folders: FolderTreeItem[];
-    itemsToMove: string[];
+    items: FolderTreeItem[];
     initiallyExpandedFolders: string[];
-    selectedFolderId?: string;
+    selectedItemId?: string;
     loading?: boolean;
     onSelect: (LinkID: string) => void;
     loadChildren: (LinkID: string, loadNextPage?: boolean) => Promise<void>;
+    rowIsDisabled?: (item: FolderTreeItem) => boolean;
 }
 
 const FolderTree = ({
-    folders,
-    itemsToMove,
+    items,
     initiallyExpandedFolders,
-    selectedFolderId,
+    selectedItemId,
     loading = false,
     onSelect,
     loadChildren,
+    rowIsDisabled,
 }: Props) => {
-    const generateRows = (folders: FolderTreeItem[], depth = 0) => {
-        const rows = folders.map(({ linkId, name, children }: FolderTreeItem) => {
-            const disabled = itemsToMove.includes(linkId);
+    const generateRows = (items: FolderTreeItem[], depth = 0) => {
+        const rows = items.map((item: FolderTreeItem) => {
+            const { linkId, name, type, mimeType, children } = item;
+            const disabled = rowIsDisabled ? rowIsDisabled(item) : false;
             const childrenRows = children.list.length ? generateRows(children.list, depth + 1) : null;
             const isExpanded = initiallyExpandedFolders.includes(linkId);
 
@@ -38,8 +42,10 @@ const FolderTree = ({
                     key={linkId}
                     linkId={linkId}
                     name={name}
+                    type={type}
+                    mimeType={mimeType}
                     depth={depth}
-                    isSelected={selectedFolderId === linkId}
+                    isSelected={selectedItemId === linkId}
                     isExpanded={isExpanded}
                     disabled={disabled}
                     onSelect={onSelect}
@@ -54,7 +60,7 @@ const FolderTree = ({
         return <>{rows}</>;
     };
 
-    const rows = generateRows(folders);
+    const rows = generateRows(items);
 
     return (
         <div className="pd-folder-tree">
