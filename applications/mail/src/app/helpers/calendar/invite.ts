@@ -179,7 +179,7 @@ export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) 
         return false;
     }
     const organizerEmail = getAttendeeEmail(event.organizer);
-    return removeEmailAlias(organizerEmail) === removeEmailAlias(emailTo);
+    return removeEmailAlias(organizerEmail, true) === removeEmailAlias(emailTo, true);
 };
 
 export const getSingleEditWidgetData = ({
