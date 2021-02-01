@@ -5,6 +5,56 @@ import { isIE11, isEdge } from '../../../helpers/browser';
 
 const BASE_TIMEOUT = 15; // in seconds
 
+const get = (url) => {
+    return new Promise((resolve, reject) => {
+        const req = new XMLHttpRequest();
+        req.open('GET', url);
+
+        req.timeout = 15000;
+
+        const getErrorInfo = (e) => {
+            return {
+                status: req.status,
+                statusText: req.statusText,
+                readyState: req.readyState,
+                loaded: e.loaded,
+                type: e.type
+            };
+        };
+
+        req.onload = (e) => {
+            if (req.status === 200) {
+                resolve(req.response);
+                return;
+            }
+
+            const error = Error(req.statusText);
+            error.info = getErrorInfo(e);
+            reject(error);
+        };
+
+        req.ontimeout = (e) => {
+            const error = Error('Request timed out');
+            error.info = getErrorInfo(e);
+            reject(error);
+        };
+
+        req.onabort = (e) => {
+            const error = Error('Request aborted');
+            error.info = getErrorInfo(e);
+            reject(error);
+        };
+
+        req.onerror = (e) => {
+            const error = Error('Network error');
+            error.info = getErrorInfo(e);
+            reject(error);
+        };
+
+        req.send();
+    });
+};
+
 /* @ngInject */
 function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gettextCatalog, $injector) {
     const getDomains = () => {
@@ -16,6 +66,8 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
 
     const ORIGIN = iframeVerifWizard.getOrigin();
     const IFRAME = `${ORIGIN.iframe}/abuse.iframe.html`;
+
+    const successCache = {};
 
     const getConfig = (name, { username = '' } = {}) => {
         const I18N = {
@@ -160,14 +212,16 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
      * @param {String} name
      * @return {String}
      */
-    const createIframe = (name) =>
-        `<iframe
-            title="Registration form"
-            scrolling="no"
-            class="${name}"
-            data-name="${name}"
-            sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation"
-            src="${IFRAME}?name=${name}"></iframe>`;
+    const createIframe = (name) => {
+        const el = document.createElement('iframe');
+        el.title = 'Registration form';
+        el.scrolling = 'no';
+        el.className = name;
+        el.dataset.name = name;
+        el.sandbox = 'allow-scripts allow-same-origin allow-popups allow-top-navigation';
+        el.src = `${IFRAME}?name=${name}`;
+        return el;
+    };
 
     return {
         replace: true,
@@ -180,51 +234,85 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             let attempts = 0;
 
             const name = mode || 'top';
-            el[0].querySelector('.signupIframe-iframe').innerHTML = createIframe(name);
-            const iframe = el[0].querySelector('iframe');
+            const iframe = createIframe(name);
             let timeoutID;
+            let assets;
 
             const handleLoadError = () => {
                 el[0].classList.add('signupIframe-loaded');
                 el[0].classList.add('signupIframe-error');
             };
 
-            const checkIframeLoaded = () => {
+            const getAssetsURLs = () => {
+                if (!assets) {
+                    return [iframe.src];
+                }
+                return [iframe.src, ...assets.scripts, ...assets.styles];
+            };
+
+            const checkRequestAndReport = async (error) => {
+                if (window.location.origin !== 'https://mail.protonmail.com') {
+                    return $injector.get('bugReportApi').crash(error);
+                }
+
+                const result = await Promise.all(
+                    getAssetsURLs().map(async (asset) => {
+                        if (successCache[asset]) {
+                            return [asset, 'ok'];
+                        }
+                        return get(asset)
+                            .then(() => [asset, 'ok'])
+                            .catch((e) => [asset, { message: e.message, info: e.info }]);
+                    })
+                );
+
+                error.info = Object.fromEntries(result);
+                error.info.attempts = attempts;
+
+                result
+                    .filter(([, result]) => result === 'ok')
+                    .forEach(([asset]) => {
+                        successCache[asset] = true;
+                    });
+                return $injector.get('bugReportApi').crash(error);
+            };
+
+            const handleRetry = (error) => {
                 if (loaded) {
                     return;
                 }
-
-                const timeoutError = new Error(
-                    `[signupIframe] ${name} -Cannot load  ${iframe.src} attempt ${attempts}`
-                );
-
                 if (++attempts <= 2) {
+                    clearTimeout(timeoutID);
                     const jitter = _.random(0, 5);
-                    timeoutID = setTimeout(checkIframeLoaded, (BASE_TIMEOUT + attempts * 10 - jitter) * 1000);
+                    timeoutID = setTimeout(() => {
+                        handleRetry(new Error(error));
+                    }, (BASE_TIMEOUT + attempts * 10 - jitter) * 1000);
+                    checkRequestAndReport(error);
                     iframe.src = `${IFRAME}?name=${name}&retry=${attempts}`;
-
-                    $injector.get('bugReportApi').crash(timeoutError);
                     return;
                 }
 
                 handleLoadError();
-                $injector.get('bugReportApi').crash(timeoutError);
+                checkRequestAndReport(error);
             };
 
             // Wait x seconds to check if the iframe is properly loaded
-            timeoutID = setTimeout(checkIframeLoaded, BASE_TIMEOUT * 1000);
+            timeoutID = setTimeout(() => {
+                handleRetry(new Error(`[signupIframe] ${name} -Cannot load  ${iframe.src}`));
+            }, BASE_TIMEOUT * 1000);
 
             /**
              * Fire in the hole, iframe is loaded, give it the form config.
              */
             const onLoad = () => {
+                assets = createIframeAssets(name);
                 dispatcher.signup('iframe.loaded');
                 iframe.contentWindow.postMessage(
                     {
                         type: 'init.iframe',
                         data: {
                             name,
-                            ...createIframeAssets(name),
+                            ...assets,
                             config: getConfig(name, scope.account || scope.model)
                         }
                     },
@@ -242,26 +330,38 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 return { fingerprint, user };
             });
 
-            wizard.onLoad(name, (isError, { name, file } = {}) => {
-                loaded = !isError;
+            let retryID;
 
-                el[0].classList.add('signupIframe-loaded');
-
-                // Throw error to track it
-                if (isError) {
-                    handleLoadError();
-                    const error = new Error(`[signupIframe] ${name} -Cannot load  ${file}`);
-                    $injector.get('bugReportApi').crash(error);
-                    throw error;
-                }
+            wizard.onError((info) => {
+                const error = new Error('[signupIframe] onerror');
+                error.info = info;
+                return $injector.get('bugReportApi').crash(error);
             });
 
-            iframe.addEventListener('load', onLoad);
-            iframe.contentWindow.addEventListener('message', console.log);
+            wizard.onLoad(name, (isError, { name, file } = {}) => {
+                clearTimeout(timeoutID);
+                if (isError) {
+                    // Since this is more or less instant, delay it slightly
+                    retryID = setTimeout(() => {
+                        handleRetry(new Error(`[signupIframe] ${name} -Cannot load  ${file}`));
+                        retryID = undefined;
+                    }, (2 + _.random(0, 5)) * 1000);
+                    return;
+                }
+                if (retryID) {
+                    return;
+                }
+                loaded = true;
+                el[0].classList.add('signupIframe-loaded');
+            });
+
+            iframe.addEventListener('load', onLoad, true);
+            el[0].querySelector('.signupIframe-iframe').appendChild(iframe);
 
             scope.$on('$destroy', () => {
                 clearTimeout(timeoutID);
-                iframe.removeEventListener('load', onLoad);
+                clearTimeout(retryID);
+                iframe.removeEventListener('load', onLoad, true);
             });
         }
     };

@@ -168,6 +168,12 @@ function iframeVerifWizard(dispatchers, User, $q) {
                 action && action(true, { name, file });
             }
 
+            if (e.data.type === 'app.onerror') {
+                const data = e.data.data || {};
+                const action = CACHE[id].onError;
+                action && action(data);
+            }
+
             if (['usernameInput.info', 'emailInput.info'].includes(e.data.type)) {
                 LOCAL_CACHE.fallback = e.data.data.fallback;
                 if (e.data.data.isEnter && !e.data.data.isError) {
@@ -269,9 +275,13 @@ function iframeVerifWizard(dispatchers, User, $q) {
             CACHE[id].onLoad[mode] = cb;
         };
 
+        const onError = (cb) => {
+            CACHE[id].onError = cb;
+        };
+
         const triggerSubmit = () => askIframeToSubmit(CACHE[id].callbacks);
 
-        return { register, listen, onLoad, triggerSubmit };
+        return { register, listen, onLoad, onError, triggerSubmit };
     }
 
     main.getOrigin = getOrigin;
