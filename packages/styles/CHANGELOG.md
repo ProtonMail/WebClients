@@ -12,7 +12,7 @@
 ### New helpers
 
 - added `z-index`, `min-w7e`, `onmobile-min-h0`, `mr-2e`, `flex-flex-items-center` helpers
-- added `tv`, `broken-link`, `keyboard`, `netshield`, `nologs` icons
+- added `tv`, `broken-link`, `keyboard`, `netshield`, `nologs`, `world` icons
 - added `pm-field-icon-container-empty` class (to avoid layout shift for Drive)
 
 ## Updated/fixes
