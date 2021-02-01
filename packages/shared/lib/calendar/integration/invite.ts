@@ -199,8 +199,12 @@ export const createInviteIcs = ({
 };
 
 export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = []) => {
-    const cleanedEmail = removeEmailAlias(email);
-    const index = attendees.findIndex((attendee) => removeEmailAlias(getAttendeeEmail(attendee)) === cleanedEmail);
+    // treat all emails as internal. This is not fully correct (TO BE IMPROVED),
+    // but it's better to have some false positives rather than many false negatives
+    const cleanedEmail = removeEmailAlias(email, true);
+    const index = attendees.findIndex(
+        (attendee) => removeEmailAlias(getAttendeeEmail(attendee), true) === cleanedEmail
+    );
     const attendee = index !== -1 ? attendees[index] : undefined;
     return { index, attendee };
 };
