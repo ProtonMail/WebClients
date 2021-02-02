@@ -1,12 +1,12 @@
 import React, { useState, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { ACCOUNT_DELETION_REASONS } from 'proton-shared/lib/constants';
+import { ACCOUNT_DELETION_REASONS, APPS } from 'proton-shared/lib/constants';
 import { deleteUser, canDelete, unlockPasswordChanges } from 'proton-shared/lib/api/user';
 import { reportBug } from 'proton-shared/lib/api/reports';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { getClientID } from 'proton-shared/lib/apps/helper';
+import { getAppName, getClientID } from 'proton-shared/lib/apps/helper';
 import { getHasTOTPSettingEnabled } from 'proton-shared/lib/settings/twoFactor';
 import { omit } from 'proton-shared/lib/helpers/object';
 
@@ -60,6 +60,11 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
     const ClientID = getClientID(APP_NAME);
     const Client = getClient(ClientID);
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
+    const driveAppName = getAppName(APPS.PROTONDRIVE);
+    const calendarAppName = getAppName(APPS.PROTONCALENDAR);
+    const contactsAppName = getAppName(APPS.PROTONCONTACTS);
+    const mailAppName = getAppName(APPS.PROTONMAIL);
+    const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
 
     const isDisabled = useMemo(() => {
         if (!model.check || !model.reason || !model.feedback || !model.email || !model.password) {
@@ -161,7 +166,8 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
             </Alert>
             <Alert type="warning">
                 <div className="bold uppercase">{c('Info').t`Warning: This also deletes all connected services`}</div>
-                <div>{c('Info').t`Example: ProtonMail, ProtonContacts, ProtonVPN, ProtonDrive, ProtonCalendar`}</div>
+                <div>{c('Info')
+                    .t`Example: ${mailAppName}, ${contactsAppName}, ${vpnAppName}, ${driveAppName}, ${calendarAppName}`}</div>
             </Alert>
             <Row>
                 <Label htmlFor="reason">{c('Label').t`What is the main reason you are deleting your account?`}</Label>
