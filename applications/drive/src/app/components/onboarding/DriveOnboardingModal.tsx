@@ -19,7 +19,7 @@ const DriveOnboardingModal = (props: any) => {
 
     const learnMoreLink = (
         <Href key="learnMoreLink" url="https://protonmail.com/blog/protondrive-security/">
-            {c('Onboarding ProtonDrive').t`Learn about ProtonDrive security`}
+            {c('Onboarding Proton Drive').t`Learn about ${appName} security`}
         </Href>
     );
 
@@ -27,8 +27,8 @@ const DriveOnboardingModal = (props: any) => {
         <OnboardingModal {...props}>
             {({ onClose }: OnboardingStepRenderCallback) => (
                 <OnboardingStep
-                    title={c('Onboarding ProtonDrive Title').t`Welcome to ${appName} early access`}
-                    submit={c('Onboarding ProtonDrive Action').t`Start using ${appName} beta`}
+                    title={c('Onboarding Proton Drive Title').t`Welcome to ${appName} early access`}
+                    submit={c('Onboarding Proton Drive Action').t`Start using ${appName} beta`}
                     onSubmit={onClose}
                     close={null}
                 >
@@ -36,11 +36,11 @@ const DriveOnboardingModal = (props: any) => {
                         description={
                             <>
                                 <div className="mb1">
-                                    {c('Onboarding ProtonDrive Info')
+                                    {c('Onboarding Proton Drive Info')
                                         .t`Your support powers our mission to ensure privacy for all. As a way of saying thanks, you now have early access to our new encrypted cloud storage service.`}
                                 </div>
                                 <div>
-                                    {c('Onboarding ProtonDrive Info')
+                                    {c('Onboarding Proton Drive Info')
                                         .jt`${appName} currently lets you upload and manage your files, secure your data with end-to-end encryption, and access your account from any device through your web browser. ${learnMoreLink}`}
                                 </div>
                             </>

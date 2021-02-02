@@ -5,6 +5,8 @@ import { c } from 'ttag';
 import { useLoading, LoaderPage, Icon, usePreventLeave, Bordered, useNotifications } from 'react-components';
 import { getApiError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
+import { getAppName } from 'proton-shared/lib/apps/helper';
+import { APPS } from 'proton-shared/lib/constants';
 import usePublicSharing from '../../hooks/drive/usePublicSharing';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import DownloadSharedInfo from './DownloadSharedInfo';
@@ -30,6 +32,7 @@ const DownloadSharedContainer = () => {
     const { hash, pathname } = useLocation();
     const { preventLeave } = usePreventLeave();
     const { createNotification } = useNotifications();
+    const appName = getAppName(APPS.PROTONDRIVE);
 
     const token = useMemo(() => pathname.replace(/\/urls\/?/, ''), [pathname]);
     const pass = useMemo(() => hash.replace('#', ''), [hash]);
@@ -157,7 +160,7 @@ const DownloadSharedContainer = () => {
                             <h3>
                                 <span className="flex flex-nowrap flex-items-center">
                                     <Icon name="protondrive" className="mr0-25" size={20} />
-                                    <b>ProtonDrive</b>
+                                    <b>{appName}</b>
                                 </span>
                             </h3>
                             {content}

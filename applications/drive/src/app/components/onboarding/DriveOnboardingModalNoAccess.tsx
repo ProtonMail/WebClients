@@ -22,16 +22,16 @@ const DriveOnboardingModalNoAccess = (props: any) => {
         <OnboardingModal setWelcomeFlags={false} {...props}>
             {() => (
                 <OnboardingStep
-                    title={c('Onboarding ProtonDrive Title').t`Welcome to ${appName}`}
+                    title={c('Onboarding Proton Drive Title').t`Welcome to ${appName}`}
                     close={null}
-                    submit={c('Onboarding ProtonDrive Action').t`Back to your dashboard`}
+                    submit={c('Onboarding Proton Drive Action').t`Back to your dashboard`}
                     onSubmit={handleBack}
                 >
                     <OnboardingContent
-                        description={c('Onboarding ProtonDrive Info')
+                        description={c('Onboarding Proton Drive Info')
                             .t`${appName} is currently in early access and only available to invited users of ${mailAppName}.`}
                         img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
-                        text={c('Onboarding ProtonDrive Info')
+                        text={c('Onboarding Proton Drive Info')
                             .t`${appName} will be available to all users upon launch.`}
                     />
                 </OnboardingStep>
