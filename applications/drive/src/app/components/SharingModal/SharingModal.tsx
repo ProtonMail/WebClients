@@ -177,7 +177,8 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         openConfirmModal({
             title: c('Title').t`Stop sharing`,
             confirm: c('Action').t`Stop sharing`,
-            message: c('Info').t`This will delete the link and remove access to your file for anyone with the link.`,
+            message: c('Info')
+                .t`This will delete the link(s) and remove access to your file(s) for anyone with the link(s).`,
             canUndo: true,
             onConfirm: () => withDeleting(deleteLink()),
         });

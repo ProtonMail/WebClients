@@ -24,7 +24,7 @@ const ShareFileButton = ({ shareId, floating, className }: Props) => {
                 <FloatingButton
                     onClick={onShareFile}
                     title={c('Action').t`Share file`}
-                    icon="empty-folder"
+                    icon="link"
                     disabled={!shareId}
                 />
             ) : (
