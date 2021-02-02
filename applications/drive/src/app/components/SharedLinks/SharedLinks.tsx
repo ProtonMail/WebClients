@@ -10,8 +10,6 @@ type Props = {
     shareId: string;
 };
 
-// TODO: empty view
-
 const SharedLinks = ({ shareId }: Props) => {
     const { layout } = useUserSettings();
     const scrollAreaRef = useRef<HTMLDivElement>(null);

@@ -10,6 +10,7 @@ import {
     querySharedLinks,
     queryUpdateSharedLink,
     queryDeleteSharedLink,
+    queryDeleteMultipleSharedLinks,
 } from '../../api/sharing';
 import useDrive from './useDrive';
 import useDriveCrypto from './useDriveCrypto';
@@ -271,6 +272,10 @@ function useSharing() {
         return api(queryDeleteSharedLink(sharedURLShareId, token));
     };
 
+    const deleteMultipleSharedLinks = (shareId: string, ids: string[]) => {
+        return api(queryDeleteMultipleSharedLinks(shareId, ids));
+    };
+
     return {
         updateSharedLinkExpirationTime,
         updateSharedLinkPassword,
@@ -279,6 +284,7 @@ function useSharing() {
         getSharedURLs,
         deleteSharedLink,
         fetchNextPage,
+        deleteMultipleSharedLinks,
     };
 }
 

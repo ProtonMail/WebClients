@@ -64,6 +64,7 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
             item={item}
             shareId={shareId}
             selectedItems={selectedItems}
+            layoutType={type}
             onToggleSelect={onToggleItemSelected}
             onShiftClick={onShiftClick}
             onClick={onItemClick}

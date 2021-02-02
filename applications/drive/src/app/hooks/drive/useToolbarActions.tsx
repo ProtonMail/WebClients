@@ -8,6 +8,9 @@ import useTrash from './useTrash';
 import useNavigate from './useNavigate';
 import useListNotifications from '../util/useListNotifications';
 import useConfirm from '../util/useConfirm';
+import useSharing from './useSharing';
+import useDrive from './useDrive';
+import useEvents from './useEvents';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from '../../utils/transfer';
 import { logSettledErrors } from '../../utils/async';
@@ -28,12 +31,17 @@ function useToolbarActions() {
     const { preventLeave } = usePreventLeave();
     const { createModal } = useModals();
     const { deleteTrashedLinks, restoreLinks, trashLinks } = useTrash();
+    const { deleteMultipleSharedLinks } = useSharing();
+    const { deleteShare } = useDrive();
+
     const {
         createDeleteLinksNotifications,
         createRestoredLinksNotifications,
         createTrashLinksNotifications,
+        createDeleteSharedLinksNotifications,
     } = useListNotifications();
     const { openConfirmModal } = useConfirm();
+    const events = useEvents();
 
     const download = async (itemsToDownload: FileBrowserItem[]) => {
         if (!folder) {
@@ -173,6 +181,41 @@ function useToolbarActions() {
         createModal(<SharingModal shareId={shareId} item={itemToShare} />);
     };
 
+    const openStopSharing = (shareId: string, itemsToStopSharing: FileBrowserItem[]) => {
+        if (!itemsToStopSharing.length) {
+            return;
+        }
+
+        const deleteLinks = async (links: FileBrowserItem[]) => {
+            const urlShareIds: string[] = [];
+            const deleteSharePrimises: Promise<any>[] = [];
+
+            links.forEach((link) => {
+                if (link.SharedUrl && link.ShareUrlShareID) {
+                    urlShareIds.push(link.SharedUrl.ShareUrlID);
+                    deleteSharePrimises.push(deleteShare(link.ShareUrlShareID));
+                }
+            });
+
+            // TODO: Implement file is deleted check, when backed will return deleted ids.
+
+            await deleteMultipleSharedLinks(shareId, urlShareIds);
+            await Promise.all(deleteSharePrimises);
+            await events.call(shareId);
+            return urlShareIds;
+        };
+
+        openConfirmModal({
+            title: c('Title').t`Stop sharing`,
+            confirm: c('Title').t`Stop sharing`,
+            message: c('Info').t`This will delete the link and remove access to your file for anyone with the link.`,
+            onConfirm: async () => {
+                const deletedIds = await deleteLinks(itemsToStopSharing);
+                createDeleteSharedLinksNotifications(deletedIds.length);
+            },
+        });
+    };
+
     return {
         download,
         openCreateFolder,
@@ -185,6 +228,7 @@ function useToolbarActions() {
         preview,
         restoreFromTrash,
         openLinkSharing,
+        openStopSharing,
     };
 }
 
