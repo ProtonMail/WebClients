@@ -234,7 +234,9 @@ function attachedPublicKey(
                 return false;
             });
 
-        const buffers = await Promise.all(candidates.map((c) => AttachmentLoader.get(c, message)));
+        const buffers = (
+            await Promise.all(candidates.map((c) => AttachmentLoader.get(c, message).catch(() => false)))
+        ).filter(Boolean);
         const armoredFiles = buffers.map(arrayToBinaryString);
         const keyInfos = _.filter(await Promise.all(armoredFiles.map(isKey)));
 
