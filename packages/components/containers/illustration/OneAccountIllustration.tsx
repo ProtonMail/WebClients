@@ -1,14 +1,18 @@
+import { getAppName } from 'proton-shared/lib/apps/helper';
+import { APPS } from 'proton-shared/lib/constants';
 import React from 'react';
 import { c } from 'ttag';
 
 import { Icon } from '../../components';
 
 const OneAccountIllustration = () => {
+    const driveAppName = getAppName(APPS.PROTONDRIVE);
+
     return (
         <div className="center flex flex-column flex-items-center">
             <div className="inline-flex">
                 <span className="bg-global-altgrey icon-28p rounded50 flex">
-                    <Icon name="protondrive" className="color-global-light mauto" alt="ProtonDrive" />
+                    <Icon name="protondrive" className="color-global-light mauto" alt={driveAppName} />
                 </span>
                 <span className="w40p" />
                 <span className="bg-global-altgrey icon-20p rounded50 flex mt2">
