@@ -337,17 +337,23 @@ export const initSquire = async (document: Document, onEllipseClick: () => void)
     const fallbackElements = [document.documentElement, document.body, ellipsisContainer];
     document.addEventListener('click', (event) => {
         if (fallbackElements.includes(event.target as Element | null)) {
-            // Reproduce the native selection after the click
-            // Quite magically works for differents needs:
-            // - Keeping selection if cursor is out of the iframe when finishing
-            // - Puting the cursor at the end of the document
-            // - Not puting the cursor in a hidden div (empty signatures)
-            // Reproducing manually the selection is mandatory unless the focus will clear it up
-            const currentSelection = document.defaultView?.getSelection();
-            const range = currentSelection?.getRangeAt(0);
-            if (range) {
+            // Prevent to deselect an ongoing selection
+            if (!document.defaultView?.getSelection()?.toString().length) {
+                const lines = document.querySelectorAll('#squire > div:not(.protonmail_signature_block)');
+                const lastLine = lines.length > 0 ? lines[lines.length - 1] : undefined;
+                const brs = lastLine?.querySelectorAll('br') || [];
+                const lastBr = brs?.length > 0 ? brs[brs?.length - 1] : undefined;
+
+                const range = document.createRange();
+                if (lastBr) {
+                    range.setStartBefore(lastBr);
+                } else if (lastLine) {
+                    range.selectNode(lastLine);
+                    range.collapse(false);
+                }
                 squire.setSelection(range);
             }
+
             squire.focus();
         }
     });
