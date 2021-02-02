@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { SECOND } from 'proton-shared/lib/constants';
+import { APPS, SECOND } from 'proton-shared/lib/constants';
 import { isCyberMonday } from 'proton-shared/lib/helpers/blackfriday';
+import { getAppName } from 'proton-shared/lib/apps/helper';
 
 const EVERY_SECOND = SECOND;
 
 const useBlackFridayModalTitle = (productPayer: boolean) => {
     const [now, setNow] = useState(new Date());
+    const driveAppName = getAppName(APPS.PROTONDRIVE);
 
     useEffect(() => {
         const intervalID = setInterval(() => {
@@ -19,7 +21,7 @@ const useBlackFridayModalTitle = (productPayer: boolean) => {
     }, []);
 
     if (productPayer) {
-        return c('blackfriday Title').t`ProtonDrive early access offer`;
+        return c('blackfriday Title').t`${driveAppName} early access offer`;
     }
 
     if (now && isCyberMonday()) {

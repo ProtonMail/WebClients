@@ -6,6 +6,7 @@ import { orderBy } from 'proton-shared/lib/helpers/array';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { PLAN_SERVICES, PLAN_TYPES, CYCLE, PLANS, ADDON_NAMES, APPS, BLACK_FRIDAY } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { getAppName } from 'proton-shared/lib/apps/helper';
 import { Price, Info, Badge } from '../../../components';
 import { useConfig } from '../../../hooks';
 import { classnames } from '../../../helpers';
@@ -45,6 +46,7 @@ CheckoutRow.propTypes = {
 /** @type any */
 const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, setModel, checkResult, loading }) => {
     const { APP_NAME } = useConfig();
+    const driveAppName = getAppName(APPS.PROTONDRIVE);
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
     const plansMap = toMap(plans);
@@ -191,7 +193,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                         hasVpnPlus &&
                         [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle)) ? (
                         <div className="border-top border-top--dashed pt0-5">
-                            <CheckoutRow className="bold" title={c('Info').t`ProtonDrive`} amount={0} />
+                            <CheckoutRow className="bold" title={driveAppName} amount={0} />
                         </div>
                     ) : null}
                 </div>
