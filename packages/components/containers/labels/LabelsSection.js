@@ -35,7 +35,9 @@ function LabelsSection() {
     const getScrollContainer = () => document.querySelector('.main-area');
 
     const handleSortLabel = async () => {
-        const LabelIDs = [...labels].sort((a, b) => a.Name.localeCompare(b.Name)).map(({ ID }) => ID);
+        const LabelIDs = [...labels]
+            .sort((a, b) => a.Name.localeCompare(b.Name, undefined, { numeric: true }))
+            .map(({ ID }) => ID);
         await api(orderLabels({ LabelIDs }));
         await call();
         createNotification({ text: c('Success message after sorting labels').t`Labels sorted` });
