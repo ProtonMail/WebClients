@@ -3,7 +3,7 @@ import { MAIN_KEY } from '../../constants';
 import { getKeyInfo } from '../../../helpers/key';
 
 /* @ngInject */
-function activateKeys(keysModel, setupKeys, Key) {
+function activateKeys(keysModel, setupKeys, Key, $injector) {
     const formatKey = ({ key, pkg, address }) => {
         key.decrypted = true;
         return getKeyInfo(key).then((key) => ({ address, key, pkg }));
@@ -29,7 +29,7 @@ function activateKeys(keysModel, setupKeys, Key) {
             return;
         }
 
-        const primaryUserKey = keysModel.getPrivateKeys(MAIN_KEY)[0];
+        const userKeys = keysModel.getPrivateKeys(MAIN_KEY);
 
         const activateAddressKeys = async (address) => {
             for (const Key of address.Keys) {
@@ -38,10 +38,14 @@ function activateKeys(keysModel, setupKeys, Key) {
                     // eslint-disable-next-line no-continue
                     continue;
                 }
-                const decryptedKey = await setupKeys.decryptMemberKey(Key, primaryUserKey);
-                await activateKey({ key: Key, pkg: decryptedKey, mailboxPassword, address });
-                const formattedKey = await formatKey({ key: Key, pkg: decryptedKey, address });
-                keysModel.storeKeys([formattedKey]);
+                try {
+                    const decryptedKey = await setupKeys.decryptMemberKey(Key, userKeys);
+                    await activateKey({ key: Key, pkg: decryptedKey, mailboxPassword, address });
+                    const formattedKey = await formatKey({ key: Key, pkg: decryptedKey, address });
+                    keysModel.storeKeys([formattedKey]);
+                } catch (error) {
+                    $injector.get('bugReportApi').crash(error);
+                }
             }
         };
 

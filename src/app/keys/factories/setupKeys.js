@@ -75,14 +75,14 @@ function setupKeys(Key, keysModel, memberApi) {
     /**
      * Decrypts a member token with the organization private key
      * @param  {String} Token or Activation  member key token
-     * @param  {Object} privateKey           organization private key
+     * @param  {Array} privateKeys           organization or member private keys
      * @return {Object}                      {PrivateKey, decryptedToken}
      */
-    async function decryptMemberToken({ Token, Activation, PrivateKey } = {}, orgPrivateKey = {}) {
+    async function decryptMemberToken({ Token, Activation, PrivateKey } = {}, privateKeys) {
         const { data: decryptedToken, verified } = await decryptMessage({
             message: await getMessage(Token || Activation),
-            privateKeys: [orgPrivateKey],
-            publicKeys: orgPrivateKey.toPublic()
+            privateKeys,
+            publicKeys: privateKeys.map((x) => x.toPublic())
         });
 
         if (verified !== 1) {
@@ -97,8 +97,8 @@ function setupKeys(Key, keysModel, memberApi) {
      * @param  {Object} signingKey           organization private key
      * @return {Object}                      decrypted member key object
      */
-    async function decryptMemberKey(key = {}, signingKey = {}) {
-        const { PrivateKey, decryptedToken } = await decryptMemberToken(key, signingKey);
+    async function decryptMemberKey(key = {}, privateKeys) {
+        const { PrivateKey, decryptedToken } = await decryptMemberToken(key, privateKeys);
         return decryptPrivateKey(PrivateKey, decryptedToken);
     }
 
@@ -113,7 +113,7 @@ function setupKeys(Key, keysModel, memberApi) {
             throw new Error('User not set up');
         }
 
-        return decryptMemberKey(Keys[0], organizationKey);
+        return decryptMemberKey(Keys[0], [organizationKey]);
     }
 
     /**

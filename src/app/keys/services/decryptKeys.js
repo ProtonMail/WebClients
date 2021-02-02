@@ -65,7 +65,9 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, tr
         const { Keys = [] } = user;
         const list = Keys.map((key, index) => {
             if (isSubUser) {
-                return setupKeys.decryptMemberKey(key, organizationKey).then((pkg) => formatKey({ key, pkg, address }));
+                return setupKeys
+                    .decryptMemberKey(key, [organizationKey])
+                    .then((pkg) => formatKey({ key, pkg, address }));
             }
             return decryptPrivateKey(key.PrivateKey, mailboxPassword).then(
                 (pkg) => formatKey({ key, pkg, address }),
@@ -103,7 +105,7 @@ function decryptKeys(notification, Key, keysModel, setupKeys, gettextCatalog, tr
                         }
                         if (isSubUser) {
                             return setupKeys
-                                .decryptMemberKey(key, organizationKey)
+                                .decryptMemberKey(key, [organizationKey])
                                 .then((pkg) => formatKey({ key, pkg, address }));
                         }
                         if (Activation) {

@@ -68,7 +68,7 @@ function generateOrganizationModal(
                                 _.each(memberKeys, (key) => {
                                     promises.push(
                                         setupKeys
-                                            .decryptMemberToken(key, params.existingKey)
+                                            .decryptMemberToken(key, [params.existingKey])
                                             .then(({ decryptedToken }) =>
                                                 encryptMessage({
                                                     data: decryptedToken,
