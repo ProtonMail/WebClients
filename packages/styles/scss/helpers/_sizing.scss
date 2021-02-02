@@ -97,6 +97,13 @@
 	}
 }
 
+// .mw48r { max-width: 48rem; }
+@each $max-width in (48) {
+	.mw#{$max-width}r {
+		max-width: #{$max-width}rem;
+	}
+}
+
 // .min-w50e { min-width: 50em; }
 @each $min-width in (1.4, 3, 5, 7, 14, 35) {
 	// inspect to convert to string
