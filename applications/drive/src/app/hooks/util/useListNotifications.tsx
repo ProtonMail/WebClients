@@ -292,11 +292,29 @@ const useListNotifications = () => {
         });
     };
 
+    const createDeleteSharedLinksNotifications = (deletedSharedLinksCount: number) => {
+        if (!deletedSharedLinksCount) {
+            return;
+        }
+
+        const notificationText =
+            deletedSharedLinksCount === 1
+                ? c('Notification').t`The link to your file was deleted.`
+                : c('Notification').ngettext(
+                      msgid`${deletedSharedLinksCount} links to your files were deleted.`,
+                      `${deletedSharedLinksCount} links to your files were deleted.`,
+                      deletedSharedLinksCount
+                  );
+
+        createNotification({ text: notificationText });
+    };
+
     return {
         createRestoredLinksNotifications,
         createTrashLinksNotifications,
         createMoveLinksNotifications,
         createDeleteLinksNotifications,
+        createDeleteSharedLinksNotifications,
     };
 };
 

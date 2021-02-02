@@ -46,3 +46,13 @@ export const queryDeleteSharedLink = (shareId: string, token: string) => {
         url: `drive/shares/${shareId}/urls/${token}`,
     };
 };
+
+export const queryDeleteMultipleSharedLinks = (shareId: string, shareURLIds: string[]) => {
+    return {
+        method: 'post',
+        url: `drive/shares/${shareId}/urls/delete_multiple`,
+        data: {
+            ShareURLIDs: shareURLIds,
+        },
+    };
+};

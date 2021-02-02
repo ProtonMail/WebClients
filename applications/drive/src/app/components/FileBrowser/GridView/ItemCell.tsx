@@ -17,6 +17,7 @@ function ItemCell({
     className,
     item,
     selectedItems,
+    layoutType,
     onToggleSelect,
     onClick,
     onShiftClick,
@@ -56,6 +57,7 @@ function ItemCell({
             {!item.Disabled && (
                 <ItemContextMenu
                     item={item}
+                    layoutType={layoutType}
                     selectedItems={selectedItems}
                     shareId={shareId}
                     position={contextMenuPosition}

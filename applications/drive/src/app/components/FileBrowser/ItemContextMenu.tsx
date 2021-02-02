@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { ContextMenu, DropdownMenuButton, Icon, isPreviewAvailable } from 'react-components';
 
-import { FileBrowserItem } from './interfaces';
+import { FileBrowserItem, FileBrowserLayouts } from './interfaces';
 import { LinkType } from '../../interfaces/link';
 import useToolbarActions from '../../hooks/drive/useToolbarActions';
 
@@ -11,6 +11,7 @@ interface Props {
     item: FileBrowserItem;
     selectedItems: FileBrowserItem[];
     shareId: string;
+    layoutType: FileBrowserLayouts;
     anchorRef: React.RefObject<HTMLElement>;
     isOpen: boolean;
     position:
@@ -23,7 +24,17 @@ interface Props {
     close: () => void;
 }
 
-const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, position, open, close }: Props) => {
+const ItemContextMenu = ({
+    item,
+    selectedItems,
+    shareId,
+    layoutType,
+    anchorRef,
+    isOpen,
+    position,
+    open,
+    close,
+}: Props) => {
     const {
         download,
         openDeletePermanently,
@@ -35,6 +46,7 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
         preview,
         restoreFromTrash,
         openLinkSharing,
+        openStopSharing,
     } = useToolbarActions();
 
     const isMultiSelect = selectedItems.length > 1;
@@ -124,7 +136,30 @@ const ItemContextMenu = ({ item, selectedItems, shareId, anchorRef, isOpen, posi
         },
     ];
 
-    const menuButtons = (item.Trashed ? trashMenuItems : driveMenuItems)
+    const shareMenuItems = [
+        {
+            hidden: isMultiSelect,
+            name: c('Action').t`Sharing options`,
+            icon: 'link',
+            testId: 'context-menu-share',
+            action: () => openLinkSharing(shareId, item),
+        },
+        {
+            hidden: false,
+            name: c('Action').t`Stop sharing`,
+            icon: 'broken-link',
+            testId: 'context-menu-stop-sharing',
+            action: () => openStopSharing(shareId, selectedItems),
+        },
+    ];
+
+    const menuItems = {
+        drive: driveMenuItems,
+        sharing: shareMenuItems,
+        trash: trashMenuItems,
+    };
+
+    const menuButtons = menuItems[layoutType]
         .filter((menuItem) => !menuItem.hidden)
         .map((button) => (
             <DropdownMenuButton

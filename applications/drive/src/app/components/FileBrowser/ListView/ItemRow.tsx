@@ -28,6 +28,7 @@ const ItemRow = ({
     style,
     shareId,
     selectedItems,
+    layoutType,
     onToggleSelect,
     onClick,
     onShiftClick,
@@ -147,6 +148,7 @@ const ItemRow = ({
                     item={item}
                     selectedItems={selectedItems}
                     shareId={shareId}
+                    layoutType={layoutType}
                     position={contextMenuPosition}
                     {...contextMenu}
                 />

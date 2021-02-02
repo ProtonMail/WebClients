@@ -124,6 +124,7 @@ function GridView({
             item,
             shareId,
             selectedItems,
+            layoutType: type,
             onToggleSelect: onToggleItemSelected,
             onShiftClick,
             onClick: onItemClick,
