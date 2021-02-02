@@ -1,9 +1,9 @@
 module.exports = {
     logo: 'src/assets/protondrive.svg',
     favicons: {
-        appName: 'ProtonDrive',
+        appName: 'Proton Drive',
         appDescription:
-            "ProtonMail is the world's largest secure email service, developed by CERN and MIT scientists.We are open source and protected by Swiss privacy law",
+            'Proton Drive allows you to securely store and share your sensitive documents and access them anywhere.',
         developerName: 'Proton Technologies AG',
         developerURL: 'https://github.com/ProtonMail/proton-drive',
         background: '#262a33',

@@ -11,6 +11,8 @@ import {
 } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { getAppName } from 'proton-shared/lib/apps/helper';
+import { APPS } from 'proton-shared/lib/constants';
 import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
 import DriveHeader from '../components/layout/DriveHeader';
 import ListView from '../components/FileBrowser/ListView/ListView';
@@ -19,6 +21,7 @@ import { LinkType } from '../interfaces/link';
 const DriveContainerBlurred = () => {
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: toggleExpanded } = useToggle();
+    const appName = getAppName(APPS.PROTONDRIVE);
 
     const logo = <MainLogo to="/" />;
     const dummyUploadButton = (
@@ -84,7 +87,7 @@ const DriveContainerBlurred = () => {
                                 LinkID: 'dummy-link-2',
                                 ParentLinkID: '',
                                 MIMEType: 'text/plain',
-                                Name: 'Welcome to ProtonDrive.txt',
+                                Name: `Welcome to ${appName}.txt`,
                                 ModifyTime: Date.now() / 1000,
                                 Trashed: null,
                                 Size: 1024 * 1024,
