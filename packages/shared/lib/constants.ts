@@ -59,7 +59,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONDRIVE]: {
         publicPath: '/drive',
         subdomain: 'drive',
-        name: 'ProtonDrive',
+        name: 'Proton Drive',
         clientID: 'WebDrive',
         icon: 'protondrive',
     },
