@@ -36,9 +36,9 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
         if (userPermissions.includes(MEMBER) && pagePermissions.includes(ADMIN)) {
             const passwordSvg = getLightOrDark(passwordSvgLight, passwordSvgDark);
             return (
-                <div id="page-error" className="aligncenter">
+                <div id="page-error" className="text-center">
                     <img src={passwordSvg} alt={c('Title').t`Password`} className="mb2" />
-                    <h3 className="bold">{c('Title').t`Sorry, you can't access this page`}</h3>
+                    <h3 className="text-bold">{c('Title').t`Sorry, you can't access this page`}</h3>
                     <Paragraph>
                         {c('Info')
                             .t`Users can't make changes to organization settings. If you need admin priviledges, reach out to your system administrator.`}
@@ -50,7 +50,7 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
         if (!hasPermission(userPermissions, pagePermissions)) {
             const upgradeSvg = getLightOrDark(upgradeSvgLight, upgradeSvgDark);
             return (
-                <div id="page-error" className="aligncenter">
+                <div id="page-error" className="text-center">
                     <img src={upgradeSvg} alt={c('Title').t`Upgrade`} className="mb2" />
                     <Paragraph>
                         {c('Info')
@@ -59,7 +59,7 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
                     <AppLink
                         to="/subscription"
                         toApp={getAccountSettingsApp()}
-                        className="pm-button--primary pm-button--large mtauto"
+                        className="button--primary button--large mtauto"
                     >{c('Action').t`Upgrade now`}</AppLink>
                 </div>
             );

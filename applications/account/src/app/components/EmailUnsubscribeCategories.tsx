@@ -12,7 +12,7 @@ const EmailUnsubscribeCategories = ({ categories }: { categories: string[] }) =>
             : lastCategory;
 
     return (
-        <span key="bold" className="bold">
+        <span key="bold" className="text-bold">
             {categoriesString}
         </span>
     );

@@ -122,7 +122,7 @@ const EmailUnsubscribeContainer = () => {
     const renderView = () => {
         if (news === null) {
             return (
-                <div className="centered-absolute aligncenter">
+                <div className="centered-absolute text-center">
                     <FullLoader size={200} />
                 </div>
             );
