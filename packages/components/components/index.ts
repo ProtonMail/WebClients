@@ -56,3 +56,4 @@ export * from './toolbar';
 export * from './tooltip';
 export * from './treeview';
 export * from './version';
+export * from './dropzone';
