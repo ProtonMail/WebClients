@@ -34,6 +34,7 @@ const SharedURLsContainer = ({ match }: RouteComponentProps<{ shareId?: string }
     const sidebar = (
         <DriveSidebar
             logo={logo}
+            shareId={shareId}
             primary={<ShareFileButton className="nomobile" shareId={shareId} />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}

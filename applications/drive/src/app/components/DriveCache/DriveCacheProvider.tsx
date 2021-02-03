@@ -93,7 +93,7 @@ const useDriveCacheState = () => {
         shareId: string,
         { isNew = false, rerender = true }: { isNew?: boolean; rerender?: boolean } = {}
     ) => {
-        const { links } = cacheRef.current[shareId];
+        const { links, shared } = cacheRef.current[shareId];
         const linkMetas = Array.isArray(metas) ? metas : [metas];
 
         linkMetas.forEach((meta) => {
@@ -123,10 +123,26 @@ const useDriveCacheState = () => {
                       }
                     : { meta };
             }
+
+            if (!shared) {
+                return;
+            }
+
+            if (
+                meta.ShareUrls.length &&
+                shared.list.every((id) => id !== meta.LinkID) &&
+                shared.unlisted.every((id) => id !== meta.LinkID)
+            ) {
+                shared.unlisted = [...shared.unlisted, meta.LinkID];
+            } else if (!meta.ShareUrls.length) {
+                shared.list = shared.list.filter((id) => id !== meta.LinkID);
+                shared.unlisted = shared.unlisted.filter((id) => id !== meta.LinkID);
+            }
         });
 
         cacheRef.current[shareId] = {
             ...cacheRef.current[shareId],
+            shared: shared && { ...shared },
             links,
         };
 
@@ -521,33 +537,14 @@ const useDriveCacheState = () => {
         method: 'complete' | 'incremental' | 'unlisted' | 'unlisted_create',
         sortParams = DEFAULT_SORT_PARAMS
     ) => {
-        const { links, shared } = cacheRef.current[shareId];
+        const { links } = cacheRef.current[shareId];
         const parent = links[linkId];
 
         setLinkMeta(metas, shareId, { rerender: false, isNew: method === 'unlisted_create' });
 
         if (isCachedFolderLink(parent)) {
             const existing = getChildLinks(shareId, linkId, sortParams) || [];
-            const linkIds: string[] = [];
-
-            metas.forEach((meta) => {
-                linkIds.push(meta.LinkID);
-
-                if (!shared) {
-                    return;
-                }
-
-                if (
-                    meta.Shared &&
-                    shared.list.every((id) => id !== meta.LinkID) &&
-                    shared.unlisted.every((id) => id !== meta.LinkID)
-                ) {
-                    shared.unlisted = [...shared.unlisted, meta.LinkID];
-                } else if (!meta.Shared) {
-                    shared.list = shared.list.filter((id) => id !== meta.LinkID);
-                    shared.unlisted = shared.unlisted.filter((id) => id !== meta.LinkID);
-                }
-            });
+            const linkIds = metas.map(({ LinkID }) => LinkID);
 
             if (['unlisted', 'unlisted_create'].includes(method)) {
                 parent.children.unlisted = [
@@ -582,7 +579,6 @@ const useDriveCacheState = () => {
 
         cacheRef.current[shareId] = {
             ...cacheRef.current[shareId],
-            shared: shared && { ...shared },
             links,
         };
 

@@ -26,7 +26,7 @@ const LocationCell = ({ shareId, parentLinkId }: Props) => {
             .then((items: string[]) => `/${items.join('/')}`)
             .then(setLocation)
             .catch(console.error);
-    }, []);
+    }, [shareId, parentLinkId]);
 
     return (
         <div key="location" title={location} className="ellipsis">
