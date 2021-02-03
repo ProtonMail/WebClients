@@ -30,7 +30,7 @@ export const getGeneralSettingsPage = () => {
 };
 
 const testDefaultNotification = () => {
-    const text = c('Alarm notification').t`Requested test will start at 12:00`;
+    const text = c('Alarm notification').t`Desktop notifications are enabled`;
     return displayNotification({ text });
 };
 
@@ -49,7 +49,10 @@ const SettingsGeneralPage = ({ setActiveSection, calendarUserSettings, location 
         >
             <TimeSection calendarUserSettings={calendarUserSettings} />
             <LayoutSection calendarUserSettings={calendarUserSettings} />
-            <DesktopNotificationSection onTest={testDefaultNotification} />
+            <DesktopNotificationSection
+                onTest={testDefaultNotification}
+                infoURL="https://protonmail.com/support/knowledge-base/calendar-notifications/"
+            />
         </PrivateMainSettingsArea>
     );
 };
