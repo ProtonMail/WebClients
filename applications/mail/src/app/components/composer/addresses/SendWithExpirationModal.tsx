@@ -40,7 +40,7 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
                         key={index} // eslint-disable-line react/no-array-index-key
                         className={classnames([index !== emails.length && 'mb0-5'])}
                     >
-                        <span className="bl mw100">{email}</span>
+                        <span className="block max-w100">{email}</span>
                     </li>
                 ))}
             </ul>

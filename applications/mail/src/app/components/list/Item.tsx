@@ -148,7 +148,7 @@ const Item = ({
             onDragStart={(event) => onDragStart(event, element)}
             onDragEnd={handleDragEnd}
             className={classnames([
-                'flex flex-nowrap flex-items-center cursor-pointer',
+                'flex flex-nowrap flex-align-items-center cursor-pointer',
                 columnLayout ? 'item-container' : 'item-container-row',
                 isSelected && 'item-is-selected',
                 !unread && 'read',

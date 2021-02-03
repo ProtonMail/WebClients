@@ -25,7 +25,7 @@ const MessageHeadersModal = ({ message, onClose, ...rest }: Props) => {
             onClose={onClose}
             {...rest}
         >
-            <pre className="break">{content}</pre>
+            <pre className="text-break">{content}</pre>
         </FormModal>
     );
 };

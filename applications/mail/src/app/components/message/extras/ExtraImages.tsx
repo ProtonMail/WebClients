@@ -41,26 +41,27 @@ const ExtraImages = ({
             <>
                 {c('Title').t`Load remote content`}
                 <br />
-                <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
-                <kbd className="bg-global-altgrey noborder">C</kbd>
+                <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
+                <kbd className="bg-global-altgrey no-border">C</kbd>
             </>
         ) : (
             <>
                 {c('Title').t`Load embedded images`}
                 <br />
-                <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
-                <kbd className="bg-global-altgrey noborder">E</kbd>
+                <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
+                <kbd className="bg-global-altgrey no-border">E</kbd>
             </>
         );
 
     const loadButton = Shortcuts ? (
         <>
             <Tooltip title={titleButtonLoad} className="flex flex-item-noshrink">
-                <button type="button" onClick={onLoadImages} className="underline link">{c('Action').t`Load`}</button>
+                <button type="button" onClick={onLoadImages} className="text-underline link">{c('Action')
+                    .t`Load`}</button>
             </Tooltip>
         </>
     ) : (
-        <button type="button" onClick={onLoadImages} className="underline link">{c('Action').t`Load`}</button>
+        <button type="button" onClick={onLoadImages} className="text-underline link">{c('Action').t`Load`}</button>
     );
 
     return (

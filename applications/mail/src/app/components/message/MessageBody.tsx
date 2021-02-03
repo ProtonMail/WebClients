@@ -60,10 +60,10 @@ const MessageBody = ({
             {sourceMode && <pre>{message.decryptedBody}</pre>}
             {(loadingMode || decryptingMode) && (
                 <>
-                    <div className="message-content-loading-placeholder mb0-25 mw15e" />
-                    <div className="message-content-loading-placeholder mb0-25 mw40e" />
-                    <div className="message-content-loading-placeholder mb0-25 mw50e" />
-                    <div className="message-content-loading-placeholder mw8e" />
+                    <div className="message-content-loading-placeholder mb0-25 max-w15e" />
+                    <div className="message-content-loading-placeholder mb0-25 max-w40e" />
+                    <div className="message-content-loading-placeholder mb0-25 max-w50e" />
+                    <div className="message-content-loading-placeholder max-w8e" />
                 </>
             )}
             {contentMode && (
@@ -80,7 +80,7 @@ const MessageBody = ({
                                             : c('Info').t`Show original message`
                                     }
                                 >
-                                    <Button className="pm-button--small m0-5" onClick={() => toggleOriginalMessage?.()}>
+                                    <Button className="button--small m0-5" onClick={() => toggleOriginalMessage?.()}>
                                         ...
                                     </Button>
                                 </Tooltip>

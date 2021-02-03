@@ -29,7 +29,7 @@ const AttachmentsButton = ({ onAddAttachments, disabled, className, attachmentTr
             <label // eslint-disable-line
                 role="button" // eslint-disable-line
                 className={classnames([
-                    'pm-button pm-button--for-icon inline-flex flex-items-center',
+                    'button button--for-icon inline-flex flex-align-items-center',
                     disabled && 'is-disabled',
                     className,
                 ])}

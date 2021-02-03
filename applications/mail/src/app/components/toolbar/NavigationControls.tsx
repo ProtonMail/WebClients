@@ -25,7 +25,7 @@ const NavigationControls = ({ loading, conversationMode, elementID, elementIDs, 
                 disabled={index <= 0}
                 title={conversationMode ? c('Title').t`Previous conversation` : c('Title').t`Previous message`}
                 onClick={handlePrevious}
-                className="notablet nomobile"
+                className="no-tablet no-mobile"
             >
                 <Icon className="toolbar-icon rotateZ-90 mauto" name="caret" />
                 <span className="sr-only">
@@ -37,7 +37,7 @@ const NavigationControls = ({ loading, conversationMode, elementID, elementIDs, 
                 disabled={index >= elementIDs.length - 1}
                 title={conversationMode ? c('Title').t`Next conversation` : c('Title').t`Next message`}
                 onClick={handleNext}
-                className="notablet nomobile"
+                className="no-tablet no-mobile"
             >
                 <Icon className="toolbar-icon rotateZ-270 mauto" name="caret" />
                 <span className="sr-only">

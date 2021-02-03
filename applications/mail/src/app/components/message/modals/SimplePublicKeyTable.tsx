@@ -38,7 +38,7 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
                 emailAddress={contact.emailAddress}
                 isInternal={contact.isInternal}
             />
-            <span className="flex-item-fluid ellipsis">{fingerprint}</span>
+            <span className="flex-item-fluid text-ellipsis">{fingerprint}</span>
         </div>
     );
     const creationCell = isNarrow
@@ -57,13 +57,13 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
     const cells = [fingerprintCell, creationCell, expirationCell, algorithmCell];
 
     return (
-        <Table className="pm-simple-table">
+        <Table className="simple-table">
             <thead>
                 <tr>
-                    <th scope="col" className="ellipsis">{c('Table header').t`Fingerprint`}</th>
-                    {!isNarrow && <th scope="col" className="ellipsis">{c('Table header').t`Created`}</th>}
-                    {!isTinyMobile && <th scope="col" className="ellipsis">{c('Table header').t`Expires`}</th>}
-                    {!isNarrow && <th scope="col" className="ellipsis">{c('Table header').t`Type`}</th>}
+                    <th scope="col" className="text-ellipsis">{c('Table header').t`Fingerprint`}</th>
+                    {!isNarrow && <th scope="col" className="text-ellipsis">{c('Table header').t`Created`}</th>}
+                    {!isTinyMobile && <th scope="col" className="text-ellipsis">{c('Table header').t`Expires`}</th>}
+                    {!isNarrow && <th scope="col" className="text-ellipsis">{c('Table header').t`Type`}</th>}
                 </tr>
             </thead>
             <TableBody>

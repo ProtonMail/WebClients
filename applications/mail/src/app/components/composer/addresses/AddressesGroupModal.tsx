@@ -63,7 +63,7 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
                     return (
                         <li key={contact.ID} className="mb0-5">
                             <Checkbox id={id} checked={isChecked(contact)} onChange={handleChange(contact)} />
-                            <span className="min-w1-4e inline-flex alignmiddle">
+                            <span className="min-w1-4e inline-flex align-middle">
                                 {(icon || loading) && <EncryptionStatusIcon loading={loading} {...icon} />}
                             </span>
                             <Label

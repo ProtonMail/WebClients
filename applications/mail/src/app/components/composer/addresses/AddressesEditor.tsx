@@ -47,9 +47,9 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
     };
 
     return (
-        <div className="flex flex-column flex-nowrap flex-items-start m0-5 pl0-5 pr0-5">
+        <div className="flex flex-column flex-nowrap flex-align-items-start m0-5 pl0-5 pr0-5">
             <div className={classnames(['flex flex-row w100 relative', expanded && 'mb0-5'])}>
-                <Label htmlFor={`to-${uid}`} className="composer-meta-label bold">
+                <Label htmlFor={`to-${uid}`} className="composer-meta-label text-bold">
                     <Tooltip title={c('Title').t`Add contacts`}>
                         <InlineLinkButton onClick={handleContactModal('ToList')}>{c('Title').t`To`}</InlineLinkButton>
                     </Tooltip>
@@ -66,7 +66,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                 />
                 {!expanded && (
                     <LinkButton
-                        className="composer-addresses-ccbcc nodecoration strong"
+                        className="composer-addresses-ccbcc text-no-decoration text-strong"
                         title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
                         onClick={toggleExpanded}
                     >
@@ -79,7 +79,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                     <div className="flex flex-row w100 mb0-5">
                         <Label
                             htmlFor={`cc-${uid}`}
-                            className="composer-meta-label bold"
+                            className="composer-meta-label text-bold"
                             title={c('Label').t`Carbon Copy`}
                         >
                             <Tooltip title={c('Title').t`Add contacts`}>
@@ -100,7 +100,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                     <div className="flex flex-row w100">
                         <Label
                             htmlFor={`bcc-${uid}`}
-                            className="composer-meta-label bold"
+                            className="composer-meta-label text-bold"
                             title={c('Label').t`Blind Carbon Copy`}
                         >
                             <Tooltip title={c('Title').t`Add contacts`}>

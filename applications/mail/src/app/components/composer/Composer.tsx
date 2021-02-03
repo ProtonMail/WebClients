@@ -545,14 +545,14 @@ const Composer = ({
                 )}
                 <div
                     className={classnames([
-                        'composer-blur-container flex flex-column flex-item-fluid mw100',
+                        'composer-blur-container flex flex-column flex-item-fluid max-w100',
                         // Only hide the editor not to unload it each time a modal is on top
                         innerModal === ComposerInnerModal.None ? 'flex' : 'hidden',
                     ])}
                 >
                     <div
                         ref={bodyRef}
-                        className="composer-body-container flex flex-column flex-nowrap flex-item-fluid mw100 mt0-5"
+                        className="composer-body-container flex flex-column flex-nowrap flex-item-fluid max-w100 mt0-5"
                     >
                         <ComposerMeta
                             message={modelMessage}

@@ -59,7 +59,7 @@ describe('MailboxContainer', () => {
 
         const { container } = await render(<MailboxContainer {...props} />);
 
-        const checkAll = container.querySelector('.toolbar .pm-checkbox') as Element;
+        const checkAll = container.querySelector('.toolbar .checkbox') as Element;
         fireEvent.click(checkAll);
 
         const allChecks = container.querySelectorAll('input.item-checkbox') as NodeListOf<HTMLInputElement>;

@@ -48,16 +48,16 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount, e
             id={id}
             onFocus={onFocus}
             content={
-                <div className="flex flex-nowrap flex-items-center" data-level={level}>
+                <div className="flex flex-nowrap flex-align-items-center" data-level={level}>
                     <Icon
-                        className="mr0-5 navigation__icon flex-item-noshrink"
+                        className="mr0-5 navigation-icon flex-item-noshrink"
                         name={folder.subfolders?.length ? 'parent-folder' : 'folder'}
                     />
-                    <span className="ellipsis pr0-5">{formatFolderName(level, folder.Name)}</span>
+                    <span className="text-ellipsis pr0-5">{formatFolderName(level, folder.Name)}</span>
                     {folder.subfolders?.length ? (
                         <button
                             type="button"
-                            className="mr0-5 flex-item-noshrink navigation__link--expand"
+                            className="mr0-5 flex-item-noshrink navigation-link--expand"
                             aria-expanded={!!folder.Expanded}
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -68,7 +68,7 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount, e
                             <Icon
                                 name="caret"
                                 className={classnames([
-                                    'navigation__icon navigation__icon--expand',
+                                    'navigation-icon navigation-icon--expand',
                                     !!folder.Expanded && 'rotateX-180',
                                 ])}
                             />

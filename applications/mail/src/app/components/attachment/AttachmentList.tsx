@@ -143,12 +143,12 @@ const AttachmentList = ({
                 message={message}
                 onDownload={handlePreviewDownload}
             />
-            <div className="flex flex-row flex-spacebetween w100 p0-5">
+            <div className="flex flex-row flex-justify-space-between w100 p0-5">
                 <TagButton
                     type="button"
                     title={titleButton}
                     tabIndex={-1}
-                    className="flex flex-items-center no-outline"
+                    className="flex flex-align-items-center no-outline"
                     onClick={handleToggleExpand}
                 >
                     {size !== 0 && <strong className="mr0-5">{sizeLabel}</strong>}
@@ -156,16 +156,16 @@ const AttachmentList = ({
                         <span className="mr0-5">
                             <Icon name="attach" className="mr0-25" />
                             <span>{pureAttachmentsCount}</span>&nbsp;
-                            <span className="nomobile">
+                            <span className="no-mobile">
                                 {c('Info').ngettext(msgid`file attached`, `files attached`, pureAttachmentsCount)}
                             </span>
                         </span>
                     )}
                     {embeddedAttachmentsCount > 0 && (
-                        <span className="mr0-5 inline-flex flex-items-center">
+                        <span className="mr0-5 inline-flex flex-align-items-center">
                             <Icon name="file-image" className="mr0-25" />
                             <span>{embeddedAttachmentsCount}</span>&nbsp;
-                            <span className="nomobile">
+                            <span className="no-mobile">
                                 {c('Info').ngettext(msgid`embedded image`, `embedded images`, embeddedAttachmentsCount)}
                             </span>
                         </span>
@@ -187,7 +187,7 @@ const AttachmentList = ({
                         <button
                             type="button"
                             onClick={handleDownloadAll}
-                            className="link strong mr0-5"
+                            className="link text-strong mr0-5"
                             disabled={!message.initialized}
                         >
                             {c('Download attachments').t`Download all`}

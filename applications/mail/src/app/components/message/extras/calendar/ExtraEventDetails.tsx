@@ -75,11 +75,11 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                 return (
                     <div
                         key={key}
-                        className={classnames(['flex onmobile-flex-column', index < properties.length - 1 && 'mb0-5'])}
+                        className={classnames(['flex on-mobile-flex-column', index < properties.length - 1 && 'mb0-5'])}
                     >
                         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                        <span className="mr1 w20 onmobile-w100 onmobile-mr0">{label}</span>
-                        <div className="flex-item-fluid onmobile-pl1 hyphens">{value}</div>
+                        <span className="mr1 w20 on-mobile-w100 on-mobile-mr0">{label}</span>
+                        <div className="flex-item-fluid on-mobile-pl1 text-hyphens">{value}</div>
                     </div>
                 );
             })}

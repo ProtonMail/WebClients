@@ -18,7 +18,7 @@ const RecipientsSimple = ({ message, isLoading }: Props) => {
     return (
         <div className="flex flex-nowrap">
             <span className="message-header-to container-to pl0-5">{!isLoading && c('Label').t`To:`}</span>
-            <span className="message-header-contact ellipsis">
+            <span className="message-header-contact text-ellipsis">
                 {!isLoading && (
                     <>
                         {recipients.length

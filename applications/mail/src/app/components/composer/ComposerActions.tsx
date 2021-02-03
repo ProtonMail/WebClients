@@ -106,9 +106,9 @@ const ComposerActions = ({
         <>
             {c('Title').t`Attachments`}
             <br />
-            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">A</kbd>
+            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">A</kbd>
         </>
     ) : (
         c('Title').t`Attachments`
@@ -117,9 +117,9 @@ const ComposerActions = ({
         <>
             {c('Title').t`Expiration time`}
             <br />
-            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">X</kbd>
+            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">X</kbd>
         </>
     ) : (
         c('Title').t`Expiration time`
@@ -128,9 +128,9 @@ const ComposerActions = ({
         <>
             {c('Title').t`Encryption`}
             <br />
-            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">E</kbd>
+            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">E</kbd>
         </>
     ) : (
         c('Title').t`Encryption`
@@ -139,9 +139,9 @@ const ComposerActions = ({
         <>
             {c('Title').t`Delete draft`}
             <br />
-            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">{altKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">Backspace</kbd>
+            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">{altKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">Backspace</kbd>
         </>
     ) : (
         c('Title').t`Delete draft`
@@ -150,41 +150,41 @@ const ComposerActions = ({
         <>
             {c('Title').t`Send email`}
             <br />
-            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">Enter</kbd>
+            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">Enter</kbd>
         </>
     ) : null;
 
     const sendButton = Shortcuts ? (
         <Tooltip title={titleSendButton}>
             <Button
-                className="pm-button--primary composer-send-button"
+                className="button--primary composer-send-button"
                 disabled={sendDisabled}
                 loading={sending}
                 onClick={onSend}
                 data-testid="send-button"
             >
-                <Icon name="sent" className="nodesktop notablet onmobile-flex" />
-                <span className="pl1 pr1 nomobile">{buttonSendLabel}</span>
+                <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
+                <span className="pl1 pr1 no-mobile">{buttonSendLabel}</span>
             </Button>
         </Tooltip>
     ) : (
         <Button
-            className="pm-button--primary composer-send-button"
+            className="button--primary composer-send-button"
             disabled={sendDisabled}
             loading={sending}
             onClick={onSend}
             data-testid="send-button"
         >
-            <Icon name="sent" className="nodesktop notablet onmobile-flex" />
-            <span className="pl1 pr1 nomobile">{buttonSendLabel}</span>
+            <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
+            <span className="pl1 pr1 no-mobile">{buttonSendLabel}</span>
         </Button>
     );
 
     return (
         <footer
             className={classnames([
-                'composer-actions flex-item-noshrink flex flex-reverse flex-self-vcenter w100 pl1 pr1 mb0-5',
+                'composer-actions flex-item-noshrink flex flex-row-reverse flex-align-self-center w100 pl1 pr1 mb0-5',
                 className,
             ])}
             onClick={addressesBlurRef.current}
@@ -194,7 +194,7 @@ const ComposerActions = ({
                 <div className="flex">
                     <Tooltip title={titleAttachment} className="flex">
                         <AttachmentsButton
-                            className={classnames([isAttachments && 'pm-button--primaryborder'])}
+                            className={classnames([isAttachments && 'button--primaryborder'])}
                             disabled={lock}
                             onAddAttachments={onAddAttachments}
                             attachmentTriggerRef={attachmentTriggerRef}
@@ -204,8 +204,8 @@ const ComposerActions = ({
                         <Button
                             icon="expiration"
                             className={classnames([
-                                'inline-flex flex-items-center pm-button--for-icon',
-                                isExpiration && 'pm-button--primaryborder',
+                                'inline-flex flex-align-items-center button--for-icon',
+                                isExpiration && 'button--primaryborder',
                             ])}
                             onClick={onExpiration}
                             disabled={lock}
@@ -217,8 +217,8 @@ const ComposerActions = ({
                         <Button
                             icon="lock-alone"
                             className={classnames([
-                                'inline-flex flex-items-center pm-button--for-icon',
-                                isPassword && 'pm-button--primaryborder',
+                                'inline-flex flex-align-items-center button--for-icon',
+                                isPassword && 'button--primaryborder',
                             ])}
                             onClick={onPassword}
                             disabled={lock}
@@ -228,10 +228,10 @@ const ComposerActions = ({
                     </Tooltip>
                 </div>
                 <div className="flex mlauto">
-                    <span className="mr0-5 mtauto mbauto nomobile">{dateMessage}</span>
+                    <span className="mr0-5 mtauto mbauto no-mobile">{dateMessage}</span>
                     <Tooltip title={titleDeleteDraft} className="flex mr0-5">
                         <Button
-                            className="inline-flex flex-items-center pm-button--for-icon"
+                            className="inline-flex flex-align-items-center button--for-icon"
                             icon="trash"
                             disabled={lock}
                             onClick={handleDelete}

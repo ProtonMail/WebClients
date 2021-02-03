@@ -32,7 +32,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort 
     return (
         <ToolbarDropdown
             content={
-                <span className="flex flex-items-center">
+                <span className="flex flex-align-items-center">
                     <Icon className="toolbar-icon" name={ICONS[sort][desc ? DESC : ASC]} />
                 </span>
             }
@@ -42,7 +42,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort 
                 <DropdownMenu>
                     <DropdownMenuButton
                         disabled={sort === SIZE && !desc}
-                        className="alignleft"
+                        className="text-left"
                         loading={loading}
                         onClick={() => onSort({ sort: SIZE, desc: false })}
                     >
@@ -51,7 +51,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort 
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         disabled={sort === SIZE && desc}
-                        className="alignleft"
+                        className="text-left"
                         loading={loading}
                         onClick={() => onSort({ sort: SIZE, desc: true })}
                     >
@@ -60,7 +60,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort 
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         disabled={sort === TIME && desc}
-                        className="alignleft"
+                        className="text-left"
                         loading={loading}
                         onClick={() => onSort({ sort: TIME, desc: true })}
                     >
@@ -69,7 +69,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort 
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         disabled={sort === TIME && !desc}
-                        className="alignleft"
+                        className="text-left"
                         loading={loading}
                         onClick={() => onSort({ sort: TIME, desc: false })}
                     >

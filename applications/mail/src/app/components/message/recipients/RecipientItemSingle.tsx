@@ -128,29 +128,29 @@ const RecipientItemSingle = ({
                     </button>
                     <Dropdown id={uid} originalPlacement="bottom" isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                         <DropdownMenu>
-                            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleCompose}>
+                            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCompose}>
                                 <Icon name="email" className="mr0-5 mt0-25" />
                                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`New message`}</span>
                             </DropdownMenuButton>
-                            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleCopy}>
+                            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCopy}>
                                 <Icon name="copy" className="mr0-5 mt0-25" />
                                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy address`}</span>
                             </DropdownMenuButton>
                             {ContactID ? (
-                                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleClickContact}>
+                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickContact}>
                                     <Icon name="contact" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                         .t`View contact details`}</span>
                                 </DropdownMenuButton>
                             ) : (
-                                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleClickContact}>
+                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickContact}>
                                     <Icon name="contact-add" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                         .t`Create new contact`}</span>
                                 </DropdownMenuButton>
                             )}
                             {showTrustPublicKey && (
-                                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleClickTrust}>
+                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleClickTrust}>
                                     <Icon name="contact" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                         .t`Trust Public Key`}</span>

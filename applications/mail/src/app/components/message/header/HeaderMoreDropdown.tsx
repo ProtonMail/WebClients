@@ -190,7 +190,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to inbox (not spam)`}
             <br />
-            <kbd className="bg-global-altgrey noborder">I</kbd>
+            <kbd className="bg-global-altgrey no-border">I</kbd>
         </>
     ) : (
         c('Title').t`Move to inbox (not spam)`
@@ -199,7 +199,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Mark as unread`}
             <br />
-            <kbd className="bg-global-altgrey noborder">U</kbd>
+            <kbd className="bg-global-altgrey no-border">U</kbd>
         </>
     ) : (
         c('Title').t`Mark as unread`
@@ -208,7 +208,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to inbox`}
             <br />
-            <kbd className="bg-global-altgrey noborder">I</kbd>
+            <kbd className="bg-global-altgrey no-border">I</kbd>
         </>
     ) : (
         c('Title').t`Move to inbox`
@@ -217,7 +217,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to trash`}
             <br />
-            <kbd className="bg-global-altgrey noborder">T</kbd>
+            <kbd className="bg-global-altgrey no-border">T</kbd>
         </>
     ) : (
         c('Title').t`Move to trash`
@@ -229,15 +229,15 @@ const HeaderMoreDropdown = ({
                 <ButtonGroup
                     disabled={!messageLoaded}
                     onClick={handleMove(INBOX, SPAM)}
-                    className="pm-button--for-icon relative"
+                    className="button--for-icon relative"
                 >
-                    <Tooltip title={titleMoveInboxNotSpam} className="flex increase-surface-click">
+                    <Tooltip title={titleMoveInboxNotSpam} className="flex increase-click-surface">
                         <Icon name="nospam" alt={c('Title').t`Move to inbox (not spam)`} />
                     </Tooltip>
                 </ButtonGroup>
             ) : (
-                <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="pm-button--for-icon relative">
-                    <Tooltip title={titleUnread} className="flex increase-surface-click">
+                <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="button--for-icon relative">
+                    <Tooltip title={titleUnread} className="flex increase-click-surface">
                         <Icon name="unread" alt={c('Title').t`Mark as unread`} />
                     </Tooltip>
                 </ButtonGroup>
@@ -246,9 +246,9 @@ const HeaderMoreDropdown = ({
                 <ButtonGroup
                     disabled={!messageLoaded}
                     onClick={handleMove(INBOX, TRASH)}
-                    className="pm-button--for-icon relative"
+                    className="button--for-icon relative"
                 >
-                    <Tooltip title={titleMoveInbox} className="flex increase-surface-click">
+                    <Tooltip title={titleMoveInbox} className="flex increase-click-surface">
                         <Icon name="inbox" alt={c('Title').t`Move to inbox`} />
                     </Tooltip>
                 </ButtonGroup>
@@ -256,9 +256,9 @@ const HeaderMoreDropdown = ({
                 <ButtonGroup
                     disabled={!messageLoaded}
                     onClick={handleMove(TRASH, fromFolderID)}
-                    className="pm-button--for-icon relative"
+                    className="button--for-icon relative"
                 >
-                    <Tooltip title={titleMoveTrash} className="flex increase-surface-click">
+                    <Tooltip title={titleMoveTrash} className="flex increase-click-surface">
                         <Icon name="trash" alt={c('Title').t`Move to trash`} />
                     </Tooltip>
                 </ButtonGroup>
@@ -266,7 +266,7 @@ const HeaderMoreDropdown = ({
 
             <HeaderDropdown
                 disabled={!messageLoaded}
-                className="pm-button pm-button--for-icon pm-group-button"
+                className="button button--for-icon grouped-button"
                 autoClose
                 title={c('Title').t`More`}
                 content={<Icon name="caret" className="caret-like" alt={c('Title').t`More options`} />}
@@ -279,7 +279,7 @@ const HeaderMoreDropdown = ({
                         <DropdownMenu>
                             {isNarrow && (
                                 <DropdownMenuButton
-                                    className="alignleft flex flex-nowrap"
+                                    className="text-left flex flex-nowrap"
                                     onClick={() => onOpenAdditionnal(0)}
                                 >
                                     <Icon name="filter" className="mr0-5 mt0-25" />
@@ -288,7 +288,7 @@ const HeaderMoreDropdown = ({
                             )}
                             {isNarrow && (
                                 <DropdownMenuButton
-                                    className="alignleft flex flex-nowrap"
+                                    className="text-left flex flex-nowrap"
                                     onClick={() => onOpenAdditionnal(1)}
                                 >
                                     <Icon name="folder" className="mr0-5 mt0-25" />
@@ -297,7 +297,7 @@ const HeaderMoreDropdown = ({
                             )}
                             {isNarrow && (
                                 <DropdownMenuButton
-                                    className="alignleft flex flex-nowrap"
+                                    className="text-left flex flex-nowrap"
                                     onClick={() => onOpenAdditionnal(2)}
                                 >
                                     <Icon name="label" className="mr0-5 mt0-25" />
@@ -305,14 +305,14 @@ const HeaderMoreDropdown = ({
                                 </DropdownMenuButton>
                             )}
                             {isSpam ? (
-                                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleUnread}>
+                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleUnread}>
                                     <Icon name="unread" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                         .t`Mark as unread`}</span>
                                 </DropdownMenuButton>
                             ) : (
                                 <DropdownMenuButton
-                                    className="alignleft flex flex-nowrap"
+                                    className="text-left flex flex-nowrap"
                                     onClick={handleMove(SPAM, fromFolderID)}
                                 >
                                     <Icon name="spam" className="mr0-5 mt0-25" />
@@ -320,18 +320,18 @@ const HeaderMoreDropdown = ({
                                 </DropdownMenuButton>
                             )}
                             {isInTrash ? (
-                                <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleDelete}>
+                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleDelete}>
                                     <Icon name="delete" className="mr0-5 mt0-25" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Delete`}</span>
                                 </DropdownMenuButton>
                             ) : null}
-                            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handlePhishing}>
+                            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handlePhishing}>
                                 <Icon name="phishing" className="mr0-5 mt0-25" />
                                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Report phishing`}</span>
                             </DropdownMenuButton>
                             {!sourceMode && (
                                 <DropdownMenuButton
-                                    className="alignleft flex flex-nowrap"
+                                    className="text-left flex flex-nowrap"
                                     onClick={() => onSourceMode(true)}
                                 >
                                     <Icon name="view-source-code" className="mr0-5 mt0-25" />
@@ -341,7 +341,7 @@ const HeaderMoreDropdown = ({
                             )}
                             {sourceMode && (
                                 <DropdownMenuButton
-                                    className="alignleft flex flex-nowrap"
+                                    className="text-left flex flex-nowrap"
                                     onClick={() => onSourceMode(false)}
                                 >
                                     <Icon name="view-html-code" className="mr0-5 mt0-25" />
@@ -349,15 +349,15 @@ const HeaderMoreDropdown = ({
                                         .t`View rendered HTML`}</span>
                                 </DropdownMenuButton>
                             )}
-                            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleHeaders}>
+                            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleHeaders}>
                                 <Icon name="view-headers" className="mr0-5 mt0-25" />
                                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View headers`}</span>
                             </DropdownMenuButton>
-                            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleExport}>
+                            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleExport}>
                                 <Icon name="export" className="mr0-5 mt0-25" />
                                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Export`}</span>
                             </DropdownMenuButton>
-                            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handlePrint}>
+                            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handlePrint}>
                                 <Icon name="print" className="mr0-5 mt0-25" />
                                 <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Print`}</span>
                             </DropdownMenuButton>

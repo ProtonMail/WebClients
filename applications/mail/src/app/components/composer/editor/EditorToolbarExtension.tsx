@@ -3,7 +3,7 @@ import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 import {
     isAttachPublicKey as testIsAttachPublicKey,
     isRequestReadReceipt as testIsRequestReadReceipt,
-    isSign as testIsSign
+    isSign as testIsSign,
 } from 'proton-shared/lib/mail/messages';
 import React, { memo } from 'react';
 import { DropdownMenuButton, Icon, classnames } from 'react-components';
@@ -13,7 +13,7 @@ import { MessageChangeFlag } from '../Composer';
 
 const { FLAG_SIGN, FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
 
-const getClassname = (status: boolean) => (status ? undefined : 'nonvisible');
+const getClassname = (status: boolean) => (status ? undefined : 'visibility-hidden');
 
 interface Props {
     message: Message | undefined;
@@ -42,15 +42,15 @@ const EditorToolbarExtension = ({ message, onChangeFlag }: Props) => {
 
     return (
         <>
-            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleToggleSign}>
+            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleToggleSign}>
                 <Icon name="on" className={classnames(['mt0-25', getClassname(isSign)])} />
                 <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Sign message`}</span>
             </DropdownMenuButton>
-            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleTogglePublicKey}>
+            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleTogglePublicKey}>
                 <Icon name="on" className={classnames(['mt0-25', getClassname(isAttachPublicKey)])} />
                 <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Attach Public Key`}</span>
             </DropdownMenuButton>
-            <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleToggleReceiptRequest}>
+            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleToggleReceiptRequest}>
                 <Icon name="on" className={classnames(['mt0-25', getClassname(isReceiptRequest)])} />
                 <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Request Read Receipt`}</span>
             </DropdownMenuButton>

@@ -39,7 +39,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                     .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!`}</span>
                 <span className="flex-item-noshrink flex">
                     <Href
-                        className="underline color-currentColor"
+                        className="text-underline color-currentColor"
                         url="https://protonmail.com/support/knowledge-base/email-has-failed-its-domains-authentication-requirements-warning/"
                     >
                         {c('Info').t`Learn more`}

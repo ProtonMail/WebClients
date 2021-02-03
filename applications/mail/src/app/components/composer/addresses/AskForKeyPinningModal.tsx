@@ -100,7 +100,7 @@ const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError
                         const fingerprint = bePinnedPublicKey.getFingerprint();
                         return (
                             <li key={contactID} className={classnames([index !== totalContacts && 'mb0-5'])}>
-                                <span className="bl mw100 ellipsis">{`${emailAddress}: ${fingerprint}`}</span>
+                                <span className="block max-w100 text-ellipsis">{`${emailAddress}: ${fingerprint}`}</span>
                             </li>
                         );
                     })}

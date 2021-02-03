@@ -1,7 +1,7 @@
 @import '~design-system/scss/config/';
 
-.labelDropdown {
-    .dropDown-content {
+.label-dropdown {
+    .dropdown-content {
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-start;
@@ -16,7 +16,7 @@
             max-height: 12em;
         }
 
-        .pm-checkbox-fakecheck {
+        .checkbox-fakecheck {
             margin-right: 0;
         }
     }

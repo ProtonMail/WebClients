@@ -15,28 +15,33 @@ const RecipientItemLayout = ({ button, label, showAddress = true, address, title
     return (
         <span
             className={classnames([
-                'flex flex-items-center flex-nowrap message-recipient-item',
+                'flex flex-align-items-center flex-nowrap message-recipient-item',
                 isLoading && 'flex-item-fluid',
             ])}
         >
-            <span className="container-to container-to--item noprint">{button}</span>
+            <span className="container-to container-to--item no-print">{button}</span>
             <span
                 className={classnames([
-                    'flex flex-items-center flex-nowrap ellipsis mw100',
+                    'flex flex-align-items-center flex-nowrap text-ellipsis max-w100',
                     isLoading && 'flex-item-fluid',
                 ])}
             >
                 <span
-                    className="flex-item-fluid message-recipient-item-label-address ellipsis mw100 inbl"
+                    className="flex-item-fluid message-recipient-item-label-address text-ellipsis max-w100 inline-block"
                     title={title}
                 >
-                    <span className={classnames(['message-recipient-item-label', isLoading && 'inbl'])}>{label}</span>
+                    <span className={classnames(['message-recipient-item-label', isLoading && 'inline-block'])}>
+                        {label}
+                    </span>
                     {
                         ` ` /** I need a real space in source here, as everything is inline, no margin/padding to have correct ellipsis applied :-| * */
                     }
                     {showAddress && (
                         <span
-                            className={classnames(['message-recipient-item-address opacity-50', isLoading && 'inbl'])}
+                            className={classnames([
+                                'message-recipient-item-address opacity-50',
+                                isLoading && 'inline-block',
+                            ])}
                         >
                             {address}
                         </span>

@@ -117,7 +117,7 @@ const SidebarItem = ({
     useHotkeys(elementRef, shortcutHandlers);
 
     return (
-        <SidebarListItem className={classnames([dragOver && 'navigation__dragover'])}>
+        <SidebarListItem className={classnames([dragOver && 'navigation-dragover'])}>
             <SidebarListItemLink
                 aria-current={ariaCurrent}
                 to={link}

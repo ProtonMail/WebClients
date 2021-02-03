@@ -53,7 +53,7 @@ const MoveButtons = ({
         <>
             {c('Action').t`Move to inbox`}
             <br />
-            <kbd className="bg-global-altgrey noborder">I</kbd>
+            <kbd className="bg-global-altgrey no-border">I</kbd>
         </>
     ) : (
         c('Action').t`Move to inbox`
@@ -77,7 +77,7 @@ const MoveButtons = ({
         <>
             {c('Action').t`Move to archive`}
             <br />
-            <kbd className="bg-global-altgrey noborder">A</kbd>
+            <kbd className="bg-global-altgrey no-border">A</kbd>
         </>
     ) : (
         c('Action').t`Move to archive`
@@ -101,7 +101,7 @@ const MoveButtons = ({
         <>
             {c('Action').t`Move to spam`}
             <br />
-            <kbd className="bg-global-altgrey noborder">S</kbd>
+            <kbd className="bg-global-altgrey no-border">S</kbd>
         </>
     ) : (
         c('Action').t`Move to spam`
@@ -125,7 +125,7 @@ const MoveButtons = ({
         <>
             {c('Action').t`Move to inbox (not spam)`}
             <br />
-            <kbd className="bg-global-altgrey noborder">I</kbd>
+            <kbd className="bg-global-altgrey no-border">I</kbd>
         </>
     ) : (
         c('Action').t`Move to inbox (not spam)`
@@ -149,7 +149,7 @@ const MoveButtons = ({
         <>
             {c('Action').t`Move to trash`}
             <br />
-            <kbd className="bg-global-altgrey noborder">T</kbd>
+            <kbd className="bg-global-altgrey no-border">T</kbd>
         </>
     ) : (
         c('Action').t`Move to trash`

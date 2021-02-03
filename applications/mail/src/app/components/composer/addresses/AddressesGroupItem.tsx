@@ -104,7 +104,7 @@ const AddressesGroupItem = ({
         <>
             <div
                 className={classnames([
-                    'composer-addresses-item mt0-25 mb0-25 mr0-5 bordered-container flex flex-nowrap flex-row mw100 stop-propagation cursor-grab',
+                    'composer-addresses-item mt0-25 mb0-25 mr0-5 bordered-container flex flex-nowrap flex-row max-w100 stop-propagation cursor-grab',
                     dragged && 'composer-addresses-item-dragged',
                 ])}
                 draggable
@@ -118,7 +118,7 @@ const AddressesGroupItem = ({
                 </span>
                 <Tooltip className="flex" title={c('Info').t`Click to view group details`}>
                     <span
-                        className="composer-addresses-item-label mtauto mbauto pl0-25 ellipsis pr0-5"
+                        className="composer-addresses-item-label mtauto mbauto pl0-25 text-ellipsis pr0-5"
                         onClick={handleOpenGroupModal}
                         onContextMenu={handleContextMenu}
                     >
@@ -154,17 +154,17 @@ const AddressesGroupItem = ({
                 anchorRef={itemRef}
             >
                 <DropdownMenu>
-                    <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleCopy}>
+                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCopy}>
                         <Icon name="copy" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="alignleft flex flex-nowrap" onClick={handleOpenGroupModal}>
+                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleOpenGroupModal}>
                         <Icon name="contact" className="mr0-5 mt0-25" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="alignleft flex flex-nowrap"
-                        liClassName="dropDown-item--delete"
+                        className="text-left flex flex-nowrap"
+                        liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
                         <Icon name="delete" className="mr0-5 mt0-25" />

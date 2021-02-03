@@ -22,10 +22,10 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(getRecipients(message))).join(', ');
 
     return (
-        <div className="flex flex-row flex-nowrap flex-items-center m0-5 pl0-5 pr0-5" onClick={onFocus}>
-            <Label className="composer-meta-label pr0-5 pt0 bold">{c('Title').t`To`}</Label>
-            <div className="pm-field flex composer-addresses-fakefield flex-row flex-item-fluid w100 relative">
-                <span className="ellipsis composer-addresses-fakefield-inner" title={title}>
+        <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5" onClick={onFocus}>
+            <Label className="composer-meta-label pr0-5 pt0 text-bold">{c('Title').t`To`}</Label>
+            <div className="field flex composer-addresses-fakefield flex-row flex-item-fluid w100 relative">
+                <span className="text-ellipsis composer-addresses-fakefield-inner" title={title}>
                     {getRecipients(message).length === 0 ? (
                         <span className="placeholder">{c('Placeholder').t`Email address`}</span>
                     ) : null}
@@ -60,7 +60,7 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
                                         <span
                                             key={i} // eslint-disable-line react/no-array-index-key
                                             className={classnames([
-                                                'mr0-5 aligntop',
+                                                'mr0-5 align-top',
                                                 cannotSend && 'color-global-warning',
                                             ])}
                                         >
@@ -68,7 +68,7 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
                                                 <span className="composer-addresses-addressIcon relative mr0-25">
                                                     {icon && <EncryptionStatusIcon {...icon} />}
                                                 </span>
-                                                <span className="mw100 ellipsis">
+                                                <span className="max-w100 text-ellipsis">
                                                     {getRecipientOrGroupLabel(recipientOrGroup)}
                                                 </span>
                                             </span>
@@ -81,7 +81,7 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
                     })}
                 </span>
                 <LinkButton
-                    className="composer-addresses-ccbcc nodecoration strong"
+                    className="composer-addresses-ccbcc text-no-decoration text-strong"
                     title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
                     onClick={toggleExpanded}
                 >

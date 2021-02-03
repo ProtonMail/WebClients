@@ -29,7 +29,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
     return (
         <header
             className={classnames([
-                'border-bottom mw100 message-conversation-summary p0-5 pb1 flex-item-noshrink',
+                'border-bottom max-w100 message-conversation-summary p0-5 pb1 flex-item-noshrink',
                 loading && 'message-conversation-summary-is-loading',
                 className,
             ])}
@@ -37,7 +37,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
         >
             <div className="flex flex-nowrap mb1">
                 <h1
-                    className="message-conversation-summary-header mb0 h3 ellipsis-two-lines lh-standard flex-item-fluid pr1"
+                    className="message-conversation-summary-header mb0 h3 text-ellipsis-two-lines lh-rg flex-item-fluid pr1"
                     title={element.Subject}
                 >
                     {!loading ? (
@@ -54,10 +54,10 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                 </div>
             </div>
             <div className="flex flex-nowrap">
-                <div className="flex flex-items-center flex-nowrap">
-                    <span className="message-conversation-summary-stat mr1 flex flex-items-center flex-item-noshrink">
+                <div className="flex flex-align-items-center flex-nowrap">
+                    <span className="message-conversation-summary-stat mr1 flex flex-align-items-center flex-item-noshrink">
                         {!loading && (
-                            <span className="flex flex-items-center">
+                            <span className="flex flex-align-items-center">
                                 <Icon
                                     name="email-address"
                                     className="opacity-50"
@@ -67,9 +67,9 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                             </span>
                         )}
                     </span>
-                    <span className="message-conversation-summary-stat mr1 flex flex-items-center flex-item-noshrink">
+                    <span className="message-conversation-summary-stat mr1 flex flex-align-items-center flex-item-noshrink">
                         {!loading ? (
-                            <span className="flex flex-items-center">
+                            <span className="flex flex-align-items-center">
                                 <Icon
                                     name="contact"
                                     className="opacity-50"
@@ -83,7 +83,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                     </span>
                 </div>
                 {!loading && (
-                    <div className="flex-item-fluid alignright no-scroll">
+                    <div className="flex-item-fluid text-right no-scroll">
                         <ItemLabels
                             labels={labels}
                             element={element}

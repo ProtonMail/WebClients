@@ -187,7 +187,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
                 <Icon name="attention" className="flex-item-noshrink mtauto mbauto" />
                 <span className="pl0-5 pr0-5 flex-item-fluid">{message}</span>
                 <span className="flex-item-noshrink flex">
-                    <InlineLinkButton onClick={handleRetry} className="underline color-currentColor">
+                    <InlineLinkButton onClick={handleRetry} className="text-underline color-currentColor">
                         {c('Action').t`Try again`}
                     </InlineLinkButton>
                 </span>

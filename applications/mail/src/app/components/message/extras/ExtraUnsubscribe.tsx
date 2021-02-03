@@ -132,7 +132,7 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                         <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
                             {c('Info')
                                 .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:`}
-                            <div className="bold">{c('Info').t`URL: ${unsubscribeMethods.HttpClient}`}</div>
+                            <div className="text-bold">{c('Info').t`URL: ${unsubscribeMethods.HttpClient}`}</div>
                         </Alert>
                     </ConfirmModal>
                 );
@@ -149,7 +149,10 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
             <Icon name="email" className="flex-item-noshrink mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">
                 <span className="mr0-25">{c('Info').t`This message is from a mailing list.`}</span>
-                <Href className="inbl mr1" href="https://protonmail.com/support/knowledge-base/auto-unsubscribe">
+                <Href
+                    className="inline-block mr1"
+                    href="https://protonmail.com/support/knowledge-base/auto-unsubscribe"
+                >
                     {c('Info').t`Learn more`}
                 </Href>
             </span>
@@ -159,7 +162,7 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                 ) : loading ? (
                     c('Status').t`Unsubscribing...`
                 ) : (
-                    <InlineLinkButton className="underline" onClick={() => withLoading(handleClick())}>
+                    <InlineLinkButton className="text-underline" onClick={() => withLoading(handleClick())}>
                         {loading ? c('Action').t`Unsubscribing` : c('Action').t`Unsubscribe`}
                     </InlineLinkButton>
                 )}

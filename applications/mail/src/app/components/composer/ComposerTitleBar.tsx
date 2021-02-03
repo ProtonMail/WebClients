@@ -62,8 +62,8 @@ const ComposerTitleBar = ({
         <>
             {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
             <br />
-            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">M</kbd>
+            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">M</kbd>
         </>
     ) : minimized ? (
         c('Action').t`Maximize composer`
@@ -75,9 +75,9 @@ const ComposerTitleBar = ({
         <>
             {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
             <br />
-            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">M</kbd>
+            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">M</kbd>
         </>
     ) : maximized ? (
         c('Action').t`Contract composer`
@@ -89,7 +89,7 @@ const ComposerTitleBar = ({
         <>
             {c('Action').t`Close composer`}
             <br />
-            <kbd className="bg-global-altgrey noborder">Escape</kbd>
+            <kbd className="bg-global-altgrey no-border">Escape</kbd>
         </>
     ) : (
         c('Action').t`Close composer`
@@ -97,20 +97,20 @@ const ComposerTitleBar = ({
 
     return (
         <header
-            className="composer-title-bar flex flex-row flex-items-center flex-nowrap pl0-5 pr0-5 w100 color-global-light"
+            className="composer-title-bar flex flex-row flex-align-items-center flex-nowrap pl0-5 pr0-5 w100 color-global-light"
             onDoubleClick={handleDoubleClick}
         >
-            <span className="flex-item-fluid p0-5 pr1 ellipsis">{title}</span>
+            <span className="flex-item-fluid p0-5 pr1 text-ellipsis">{title}</span>
             <TitleBarButton
                 iconName="minimize"
-                className={classnames(['nomobile', minimized && 'rotateX-180'])}
+                className={classnames(['no-mobile', minimized && 'rotateX-180'])}
                 title={titleMinimize}
                 onClick={toggleMinimized}
             />
             <TitleBarButton
                 iconName={maximized ? 'contract-window' : 'expand'}
                 title={titleMaximize}
-                className="nomobile"
+                className="no-mobile"
                 onClick={toggleMaximized}
             />
             <TitleBarButton iconName="close" title={titleClose} onClick={onClose} disabled={closing} />

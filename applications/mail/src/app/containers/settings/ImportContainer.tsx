@@ -65,7 +65,7 @@ const ImportContainer = ({ setActiveSection, location }: SettingsPropsShared) =>
                         icon: 'contacts',
                         text: c('Info').t`Import your address book or individual contacts into ProtonContacts.`,
                         link: (
-                            <AppLink to="/" toApp={APPS.PROTONCONTACTS} className="pm-button--primary mtauto">
+                            <AppLink to="/" toApp={APPS.PROTONCONTACTS} className="button--primary mtauto">
                                 {c('Action').t`Import contacts`}
                             </AppLink>
                         ),
@@ -77,7 +77,7 @@ const ImportContainer = ({ setActiveSection, location }: SettingsPropsShared) =>
                             <AppLink
                                 to="/settings/calendars"
                                 toApp={APPS.PROTONCALENDAR}
-                                className="pm-button--primary mtauto"
+                                className="button--primary mtauto"
                             >
                                 {c('Action').t`Import calendar`}
                             </AppLink>

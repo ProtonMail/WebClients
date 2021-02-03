@@ -113,7 +113,7 @@ const HeaderExpanded = ({
         if (
             (event.target as HTMLElement).closest('.stop-propagation') ||
             window.getSelection()?.toString().length ||
-            document.querySelector('.dropDown')
+            document.querySelector('.dropdown')
         ) {
             event.stopPropagation();
             return;
@@ -149,7 +149,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Reply`}
             <br />
-            <kbd className="bg-global-altgrey noborder">R</kbd>
+            <kbd className="bg-global-altgrey no-border">R</kbd>
         </>
     ) : (
         c('Title').t`Reply`
@@ -158,8 +158,8 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Reply all`}
             <br />
-            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">R</kbd>
+            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">R</kbd>
         </>
     ) : (
         c('Title').t`Reply all`
@@ -168,8 +168,8 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Forward`}
             <br />
-            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">F</kbd>
+            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">F</kbd>
         </>
     ) : (
         c('Title').t`Forward`
@@ -178,7 +178,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Filter on`}
             <br />
-            <kbd className="bg-global-altgrey noborder">F</kbd>
+            <kbd className="bg-global-altgrey no-border">F</kbd>
         </>
     ) : (
         c('Title').t`Filter on`
@@ -187,7 +187,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Move to`}
             <br />
-            <kbd className="bg-global-altgrey noborder">M</kbd>
+            <kbd className="bg-global-altgrey no-border">M</kbd>
         </>
     ) : (
         c('Title').t`Move to`
@@ -196,7 +196,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Label as`}
             <br />
-            <kbd className="bg-global-altgrey noborder">L</kbd>
+            <kbd className="bg-global-altgrey no-border">L</kbd>
         </>
     ) : (
         c('Title').t`Label as`
@@ -211,13 +211,13 @@ const HeaderExpanded = ({
                 !messageLoaded && 'is-loading',
             ])}
         >
-            <div className="flex flex-nowrap flex-items-center cursor-pointer" onClick={handleClick}>
+            <div className="flex flex-nowrap flex-align-items-center cursor-pointer" onClick={handleClick}>
                 <span className="flex flex-item-fluid flex-nowrap mr0-5">
                     {showDetails ? (
                         <RecipientType
                             label={c('Label').t`From:`}
                             className={classnames([
-                                'flex flex-items-start flex-nowrap',
+                                'flex flex-align-items-start flex-nowrap',
                                 !messageLoaded && 'flex-item-fluid',
                             ])}
                         >
@@ -231,8 +231,8 @@ const HeaderExpanded = ({
                 </span>
                 <div
                     className={classnames([
-                        'message-header-metas-container flex flex-items-center flex-item-noshrink',
-                        isNarrow && 'flex-self-start',
+                        'message-header-metas-container flex flex-align-items-center flex-item-noshrink',
+                        isNarrow && 'flex-align-self-start',
                     ])}
                 >
                     {messageLoaded && !showDetails && (
@@ -258,11 +258,11 @@ const HeaderExpanded = ({
             </div>
             <div
                 className={classnames([
-                    'flex flex-nowrap flex-items-center mb0-5 onmobile-flex-wrap',
+                    'flex flex-nowrap flex-align-items-center mb0-5 on-mobile-flex-wrap',
                     !showDetails && 'mt0-5',
                 ])}
             >
-                <div className="flex-item-fluid flex flex-nowrap mr0-5 onmobile-mr0 message-header-recipients">
+                <div className="flex-item-fluid flex flex-nowrap mr0-5 on-mobile-mr0 message-header-recipients">
                     {showDetails ? (
                         <RecipientsDetails
                             message={message}
@@ -276,14 +276,14 @@ const HeaderExpanded = ({
                     <span
                         className={classnames([
                             'message-show-hide-link-container flex-item-noshrink',
-                            showDetails ? 'mt0-25 onmobile-mt0-5' : 'ml0-5',
+                            showDetails ? 'mt0-25 on-mobile-mt0-5' : 'ml0-5',
                         ])}
                     >
                         {messageLoaded && (
                             <button
                                 type="button"
                                 onClick={toggleDetails}
-                                className="message-show-hide-link pm-button--link alignbaseline"
+                                className="message-show-hide-link button--link align-baseline"
                                 disabled={!messageLoaded}
                             >
                                 {showDetails
@@ -297,14 +297,14 @@ const HeaderExpanded = ({
                 </div>
                 {messageLoaded && !showDetails && !isNarrow && (
                     <>
-                        <div className="flex-item-noshrink flex flex-items-center message-header-expanded-label-container">
+                        <div className="flex-item-noshrink flex flex-align-items-center message-header-expanded-label-container">
                             <ItemLabels
                                 element={message.data}
                                 labelID={labelID}
                                 labels={labels}
                                 showUnlabel
                                 maxNumber={5}
-                                className="onmobile-pt0-25"
+                                className="on-mobile-pt0-25"
                             />
                             <ItemAttachmentIcon element={message.data} className="ml0-5" />
                         </div>
@@ -313,10 +313,10 @@ const HeaderExpanded = ({
             </div>
 
             {!showDetails && isNarrow && (
-                <div className="flex flex-spacebetween flex-items-center border-top pt0-5 mb0-5">
+                <div className="flex flex-justify-space-between flex-align-items-center border-top pt0-5 mb0-5">
                     {messageLoaded ? (
                         <>
-                            <div className="flex flex-nowrap flex-items-center">
+                            <div className="flex flex-nowrap flex-align-items-center">
                                 <Icon name="calendar" className="ml0-5 mr0-5" />
                                 <ItemDate element={message.data} labelID={labelID} />
                             </div>
@@ -357,7 +357,7 @@ const HeaderExpanded = ({
                 onCompose={onCompose}
             />
 
-            <div className="pt0-5 flex flex-spacebetween border-top">
+            <div className="pt0-5 flex flex-justify-space-between border-top">
                 <div className="flex">
                     <HeaderMoreDropdown
                         labelID={labelID}
@@ -375,7 +375,7 @@ const HeaderExpanded = ({
                             <HeaderDropdown
                                 autoClose={false}
                                 content={<Icon name="filter" alt={c('Action').t`Custom filter`} />}
-                                className="pm-button pm-group-button pm-button--for-icon messageFilterDropdownButton"
+                                className="button grouped-button button--for-icon messageFilterDropdownButton"
                                 dropDownClassName="customFilterDropdown"
                                 title={titleFilterOn}
                                 loading={!messageLoaded}
@@ -389,8 +389,8 @@ const HeaderExpanded = ({
                                 autoClose={false}
                                 noMaxSize
                                 content={<Icon name="folder" alt={c('Action').t`Move to`} />}
-                                className="pm-button pm-group-button pm-button--for-icon messageMoveDropdownButton"
-                                dropDownClassName="moveDropdown"
+                                className="button grouped-button button--for-icon messageMoveDropdownButton"
+                                dropDownClassName="move-dropdown"
                                 title={titleMoveTo}
                                 loading={!messageLoaded}
                                 externalToggleRef={moveDropdownToggleRef}
@@ -411,8 +411,8 @@ const HeaderExpanded = ({
                                 autoClose={false}
                                 noMaxSize
                                 content={<Icon name="label" alt={c('Action').t`Label as`} />}
-                                className="pm-button pm-group-button pm-button--for-icon messageLabelDropdownButton"
-                                dropDownClassName="labelDropdown"
+                                className="button grouped-button button--for-icon messageLabelDropdownButton"
+                                dropDownClassName="label-dropdown"
                                 title={titleLabelAs}
                                 loading={!messageLoaded}
                                 externalToggleRef={labelDropdownToggleRef}
@@ -435,28 +435,28 @@ const HeaderExpanded = ({
                 <Group className="mb0-5">
                     <ButtonGroup
                         disabled={!messageLoaded || !bodyLoaded}
-                        className="pm-button--for-icon pm-button--primary flex flex-items-center relative"
+                        className="button--for-icon button--primary flex flex-align-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                     >
-                        <Tooltip title={titleReply} className="flex increase-surface-click">
+                        <Tooltip title={titleReply} className="flex increase-click-surface">
                             <Icon name="reply" size={20} alt={c('Title').t`Reply`} />
                         </Tooltip>
                     </ButtonGroup>
                     <ButtonGroup
                         disabled={!messageLoaded || !bodyLoaded}
-                        className="pm-button--for-icon pm-button--primary flex flex-items-center relative"
+                        className="button--for-icon button--primary flex flex-align-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                     >
-                        <Tooltip title={titleReplyAll} className="flex increase-surface-click">
+                        <Tooltip title={titleReplyAll} className="flex increase-click-surface">
                             <Icon name="reply-all" size={20} alt={c('Title').t`Reply all`} />
                         </Tooltip>
                     </ButtonGroup>
                     <ButtonGroup
                         disabled={!messageLoaded || !bodyLoaded}
-                        className=" pm-button--for-icon pm-button--primary flex flex-items-center relative"
+                        className=" button--for-icon button--primary flex flex-align-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                     >
-                        <Tooltip title={titleForward} className="flex increase-surface-click">
+                        <Tooltip title={titleForward} className="flex increase-click-surface">
                             <Icon name="forward" size={20} alt={c('Title').t`Forward`} />
                         </Tooltip>
                     </ButtonGroup>

@@ -51,7 +51,7 @@ const getList = ({ MaxMembers = 0, MaxAddresses = 0 } = {}) => {
                 icon: 'contacts-group-people',
                 text: c('Info').t`Manage all custom domains and addresses for your organization.`,
                 link: (
-                    <AppLink to="/organization" toApp={getAccountSettingsApp()} className="pm-button--primary mtauto">
+                    <AppLink to="/organization" toApp={getAccountSettingsApp()} className="button--primary mtauto">
                         {c('Action').t`Manage organization`}
                     </AppLink>
                 ),
@@ -72,7 +72,7 @@ const getList = ({ MaxMembers = 0, MaxAddresses = 0 } = {}) => {
                 text: c('Info')
                     .t`Upgrade to a multi-user plan if you want to create and manage the users of your organization.`,
                 link: (
-                    <AppLink to="/subscription" toApp={getAccountSettingsApp()} className="pm-button--primary mtauto">
+                    <AppLink to="/subscription" toApp={getAccountSettingsApp()} className="button--primary mtauto">
                         {c('Action').t`Upgrade`}
                     </AppLink>
                 ),
@@ -85,7 +85,7 @@ const getList = ({ MaxMembers = 0, MaxAddresses = 0 } = {}) => {
             icon: 'domains',
             text: c('Info').t`Upgrade to a paid plan if you want to create and manage custom domains.`,
             link: (
-                <AppLink to="/subscription" toApp={getAccountSettingsApp()} className="pm-button--primary mtauto">
+                <AppLink to="/subscription" toApp={getAccountSettingsApp()} className="button--primary mtauto">
                     {c('Action').t`Upgrade`}
                 </AppLink>
             ),
@@ -95,7 +95,7 @@ const getList = ({ MaxMembers = 0, MaxAddresses = 0 } = {}) => {
             text: c('Info')
                 .t`Upgrade to a multi-user plan if you want to create and manage the users of your organization.`,
             link: (
-                <AppLink to="/subscription" toApp={getAccountSettingsApp()} className="pm-button--primary mtauto">
+                <AppLink to="/subscription" toApp={getAccountSettingsApp()} className="button--primary mtauto">
                     {c('Action').t`Upgrade`}
                 </AppLink>
             ),

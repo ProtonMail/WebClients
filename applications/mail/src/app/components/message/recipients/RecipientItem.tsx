@@ -37,7 +37,9 @@ const RecipientItem = ({
         return (
             <RecipientItemLayout
                 isLoading
-                button={<span className="message-recipient-item-icon item-icon flex-item-noshrink rounded bl mr0-5" />}
+                button={
+                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5" />
+                }
                 showAddress={showAddress}
             />
         );
@@ -74,7 +76,7 @@ const RecipientItem = ({
         <RecipientItemLayout
             button={
                 <Tooltip title={c('Title').t`All recipients were added to the BCC field and cannot be disclosed`}>
-                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded bl mr0-5 flex flex-justify-center flex-items-center">
+                    <span className="message-recipient-item-icon item-icon flex-item-noshrink rounded block mr0-5 flex flex-justify-center flex-align-items-center">
                         ?
                     </span>
                 </Tooltip>

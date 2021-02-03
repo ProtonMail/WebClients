@@ -118,7 +118,7 @@ const ComposerContent = ({
                 {fileHover && (
                     <div
                         onDragLeave={handleHover(false)}
-                        className="composer-editor-dropzone covered-absolute flex flex-justify-center flex-items-center"
+                        className="composer-editor-dropzone covered-absolute flex flex-justify-center flex-align-items-center"
                     >
                         <span className="composer-editor-dropzone-text no-pointer-events">
                             {c('Info').t`Drop a file here to upload`}

@@ -100,7 +100,7 @@
 }
 
 .composer-meta-label,
-.pm-label.composer-meta-label {
+.label.composer-meta-label {
     max-width: 8em;
     width: 15%;
     @include respond-to($breakpoint-small) {
@@ -128,7 +128,7 @@
     overflow-y: auto;
     overflow-x: hidden;
 
-    &.pm-field {
+    &.field {
         padding: 0.25em 0.5em;
         height: auto !important;
     }
@@ -144,7 +144,7 @@
         height: 0.1rem;
     }
 
-    .pm-field {
+    .field {
         border: none;
         padding: 0;
         min-width: 10rem;
@@ -210,7 +210,7 @@
 }
 
 .composer-addresses-input-container {
-    // Here I tried to keep pm-field height only with margin calculations
+    // Here I tried to keep field height only with margin calculations
     margin: calc(#{em(6)} - 0.25em) 0.5em calc(#{em(6)} - 0.25em) calc(#{em(16)} - 0.5em);
 }
 
@@ -266,17 +266,17 @@
         backdrop-filter: blur(3px);
     }
 
-    .pm-modal {
+    .modal {
         z-index: 667;
         footer {
             padding-bottom: 0.5em;
         }
     }
-    .pm-modalHeader {
+    .modal-header {
         padding-top: 0.5em;
     }
 
-    .pm-modalTitle {
+    .modal-title {
         padding-right: 0;
     }
 
@@ -316,14 +316,14 @@
         opacity: 0;
     }
 
-    input[type='file']:hover + .pm-button,
-    input[type='file']:focus + .pm-button,
-    input[type='file']:focus-within + .pm-button {
+    input[type='file']:hover + .button,
+    input[type='file']:focus + .button,
+    input[type='file']:focus-within + .button {
         color: $pm-global-grey;
         box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
     }
 
-    input[type='file']:active + .pm-button {
+    input[type='file']:active + .button {
         background: radial-gradient(closest-side, $white, $pm-global-border 90%);
         box-shadow: none;
     }
@@ -371,7 +371,7 @@
     }
 }
 
-.composer-inner-modal .pm-modal {
+.composer-inner-modal .modal {
     width: 90%;
     height: 90%;
     max-height: 90%;
