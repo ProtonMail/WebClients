@@ -120,7 +120,7 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
 
     const clickHere = (
         <LinkButton
-            className="alignbaseline p0"
+            className="align-baseline p0"
             key="click-here"
             onClick={() => withLoadingVerification(handleClick(paypalCreditRef.current))}
         >

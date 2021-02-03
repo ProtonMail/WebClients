@@ -136,7 +136,7 @@ const PlansSection = () => {
 
     return (
         <>
-            <div className="flex flew-nowrap onmobile-flex-column">
+            <div className="flex flew-nowrap on-mobile-flex-column">
                 <Alert
                     className="flex-item-fluid"
                     learnMore="https://protonmail.com/support/knowledge-base/paid-plans/"
@@ -147,7 +147,7 @@ const PlansSection = () => {
                     ) : null}
                     {Plans.length ? <div>{c('Info').t`You are currently subscribed to ${names}.`}</div> : null}
                 </Alert>
-                <div className="flex-noMinChildren flex-nowrap">
+                <div className="flex-no-min-children flex-nowrap">
                     <CycleSelector
                         cycle={cycle}
                         onSelect={setCycle}

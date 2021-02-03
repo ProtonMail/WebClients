@@ -10,14 +10,14 @@ import DomainAddresses from './DomainAddresses';
 
 const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false }) => {
     return (
-        <Table className="pm-simple-table--has-actions">
+        <Table className="simple-table--has-actions">
             <TableHeader
                 cells={[
                     c('Header for addresses table').t`Domain`,
                     c('Header for addresses table').t`Status`,
                     <span
                         key="addresses"
-                        className="ellipsis inbl alignbottom mw100"
+                        className="text-ellipsis inline-block align-bottom max-w100"
                         title={c('Header for addresses table').t`Addresses`}
                     >{c('Header for addresses table').t`Addresses`}</span>,
                     c('Header for addresses table').t`Actions`,

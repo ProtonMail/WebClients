@@ -26,7 +26,7 @@ const EmptyContacts = ({ onClose = noop }: Props) => {
     };
 
     return (
-        <div className="flex flex-column flex-items-center flex-item-fluid p0-5">
+        <div className="flex flex-column flex-align-items-center flex-item-fluid p0-5">
             <span className="mb1">{c('Error message')
                 .t`You do not have any contact yet. Start by creating a new contact`}</span>
             <img src={image} alt={title} className="p1 mb1" />

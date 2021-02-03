@@ -28,10 +28,10 @@ const SubscriptionPrices = ({ cycle, currency, plan = FREE_PLAN, suffix = c('Suf
                 {plan.Pricing[cycle] / cycle}
             </Price>
             {cycle === CYCLE.YEARLY && (
-                <div className="small mt0 mb0">{c('Details').jt`Billed as ${billiedAmount} per year`}</div>
+                <div className="text-sm mt0 mb0">{c('Details').jt`Billed as ${billiedAmount} per year`}</div>
             )}
             {cycle === CYCLE.TWO_YEARS && (
-                <div className="small mt0 mb0">{c('Details').jt`Billed as ${billiedAmount} every 2 years`}</div>
+                <div className="text-sm mt0 mb0">{c('Details').jt`Billed as ${billiedAmount} every 2 years`}</div>
             )}
         </>
     );

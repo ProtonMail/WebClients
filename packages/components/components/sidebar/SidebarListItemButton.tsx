@@ -13,7 +13,7 @@ const SidebarListItemButton = ({ children, className, onFocus, ...rest }: Props)
         <button
             ref={buttonRef}
             onFocus={onFocus}
-            className={classnames(['navigation__link w100 alignleft', className])}
+            className={classnames(['navigation-link w100 text-left', className])}
             type="button"
             {...rest}
         >

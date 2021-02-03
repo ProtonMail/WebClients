@@ -80,7 +80,7 @@ const SessionsSection = () => {
         <>
             <Alert learnMore="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/">{c('Info')
                 .t`Unless you explicitly sign out or change your password, sessions remain active and only expire after 30 days of inactivity.`}</Alert>
-            <Block className="flex flex-spacebetween">
+            <Block className="flex flex-justify-space-between">
                 <div>
                     <Button onClick={handleOpenModal} loading={loadingRevokeAll}>{c('Action')
                         .t`Revoke all other sessions`}</Button>

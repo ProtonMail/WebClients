@@ -7,7 +7,7 @@ interface Props extends React.HTMLAttributes<HTMLUListElement> {
     children?: ReactNode;
 }
 
-const SidebarList = ({ className, listClassName = 'navigation__list', children, ...rest }: Props) => {
+const SidebarList = ({ className, listClassName = 'navigation-list', children, ...rest }: Props) => {
     return (
         <ul className={classnames(['unstyled mt0', listClassName, className])} {...rest}>
             {children}
@@ -17,7 +17,7 @@ const SidebarList = ({ className, listClassName = 'navigation__list', children, 
 
 export const SubSidebarList = ({ children, ...rest }: Props) => {
     return (
-        <SidebarList listClassName="navigation__sublist" {...rest}>
+        <SidebarList listClassName="navigation-sublist" {...rest}>
             {children}
         </SidebarList>
     );

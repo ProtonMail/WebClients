@@ -38,7 +38,7 @@ function SpamListItem({ list, type, onCreate, onEdit, onMove, onRemove, classNam
 
     return (
         <Bordered className={classnames(['flex-item-fluid', className])}>
-            <header className="flex flex-spacebetween flex-items-center">
+            <header className="flex flex-justify-space-between flex-align-items-center">
                 <h3 className="mb0">{I18N[type]}</h3>
                 <div>
                     <PrimaryButton onClick={() => onCreate(type)}>{c('Action').t`Add`}</PrimaryButton>
@@ -51,12 +51,15 @@ function SpamListItem({ list, type, onCreate, onEdit, onMove, onRemove, classNam
                 <ul className="unstyled scroll-if-needed SpamListItem-list m0 mt1">
                     {list.map((item) => {
                         return (
-                            <li className="flex flex-nowrap flex-items-center flex-spacebetween mb0-5" key={item.ID}>
-                                <span className="flex-item-fluid ellipsis mr0-5" title={item.Email || item.Domain}>
+                            <li
+                                className="flex flex-nowrap flex-align-items-center flex-justify-space-between mb0-5"
+                                key={item.ID}
+                            >
+                                <span className="flex-item-fluid text-ellipsis mr0-5" title={item.Email || item.Domain}>
                                     {item.Email || item.Domain}
                                 </span>
                                 <DropdownActions
-                                    className="pm-button--small"
+                                    className="button--small"
                                     list={[
                                         {
                                             text: c('Action').t`Edit`,

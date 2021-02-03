@@ -70,7 +70,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
                         title={c('Title').t`Enter your password`}
                     />
                 </div>
-                <div className="flex flex-spacebetween">
+                <div className="flex flex-justify-space-between">
                     {needHelp}
                     <PrimaryButton type="submit" loading={loading} data-cy-login="submit">
                         {c('Action').t`Log in`}
@@ -97,7 +97,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
                 <div className="mb1">
                     <LoginTotpInput totp={totp} setTotp={loading ? noop : setters.totp} id="twoFa" />
                 </div>
-                <div className="flex flex-spacebetween">
+                <div className="flex flex-justify-space-between">
                     {cancelButton}
                     <PrimaryButton
                         type="submit"
@@ -127,7 +127,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
                         id="password"
                     />
                 </div>
-                <div className="flex flex-spacebetween">
+                <div className="flex flex-justify-space-between">
                     {cancelButton}
                     <PrimaryButton type="submit" loading={loading} data-cy-login="submit mailbox password">
                         {c('Action').t`Submit`}

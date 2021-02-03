@@ -47,7 +47,7 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false, onOpenSho
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom">
                 <DropdownMenu>
                     <DropdownMenuLink
-                        className="flex flex-nowrap alignleft"
+                        className="flex flex-nowrap text-left"
                         href={
                             APP_NAME === APPS.PROTONVPN_SETTINGS
                                 ? 'https://protonvpn.com/support/'
@@ -63,18 +63,18 @@ const SupportDropdown = ({ className, content, hasButtonCaret = false, onOpenSho
                         <Icon className="mt0-25 mr0-5" name="help-answer" />
                         {c('Action').t`Request a feature`}
                     </DropdownMenuLink>
-                    <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={handleBugReportClick}>
+                    <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>
                         <Icon className="mt0-25 mr0-5" name="report-bug" />
                         {c('Action').t`Report bug`}
                     </DropdownMenuButton>
                     {onOpenShortcutsModal && (
-                        <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={onOpenShortcutsModal}>
+                        <DropdownMenuButton className="flex flex-nowrap text-left" onClick={onOpenShortcutsModal}>
                             <Icon className="mt0-25 mr0-5" name="keyboard" />
                             {c('Action').t`Display keyboard shortcuts`}
                         </DropdownMenuButton>
                     )}
                     {APP_NAME !== APPS.PROTONVPN_SETTINGS && (
-                        <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={handleTourClick}>
+                        <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleTourClick}>
                             <Icon className="mt0-25 mr0-5" name="tour" />
                             {c('Action').t`${BRAND_NAME} introduction`}
                         </DropdownMenuButton>

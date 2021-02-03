@@ -52,9 +52,9 @@ const SubscriptionCancellationModal = ({ onSubmit, onClose, onSkip, ...rest }: P
             onClose={onClose}
             {...rest}
         >
-            <div className="w75 onmobile-w100">
+            <div className="w75 on-mobile-w100">
                 <div className="mb2">
-                    <label className="mb1 bl" htmlFor="reason">{c('Label')
+                    <label className="mb1 block" htmlFor="reason">{c('Label')
                         .t`What is the main reason you are cancelling?`}</label>
                     <SelectTwo
                         id="reason"
@@ -96,7 +96,7 @@ const SubscriptionCancellationModal = ({ onSubmit, onClose, onSkip, ...rest }: P
                 </div>
 
                 <div className="mb2">
-                    <label className="mb1 bl" id="score-label">{c('Label')
+                    <label className="mb1 block" id="score-label">{c('Label')
                         .t`How likely are you to recommend ${BRAND_NAME} to others?`}</label>
                     <Scale
                         from={0}
@@ -110,7 +110,7 @@ const SubscriptionCancellationModal = ({ onSubmit, onClose, onSkip, ...rest }: P
                 </div>
 
                 <div>
-                    <label className="mb1 bl" htmlFor="feedback">{c('Label')
+                    <label className="mb1 block" htmlFor="feedback">{c('Label')
                         .t`How do you think we could improve our products or service in the future?`}</label>
                     <TextArea
                         id="feedback"

@@ -14,14 +14,14 @@ const CircularProgress = ({ children, className, progress, rootRef, size = 32, .
             {...rest}
         >
             <circle
-                className="circle-chart__background"
+                className="circle-chart-background"
                 strokeDasharray="100, 100"
                 cx="17.91549431"
                 cy="17.91549431"
                 r="15.91549431"
             />
             <circle
-                className="circle-chart__circle"
+                className="circle-chart-circle"
                 strokeDasharray={`${progress}, 100`}
                 strokeLinecap="butt"
                 cx="17.91549431"

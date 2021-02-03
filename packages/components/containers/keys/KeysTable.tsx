@@ -23,9 +23,9 @@ const KeysTable = ({
     onSetNotObsolete,
 }: Props) => {
     const headerCells = [
-        { node: c('Title header for keys table').t`Fingerprint`, className: 'ellipsis' },
-        { node: c('Title header for keys table').t`Key type`, className: 'w15 nomobile' },
-        { node: c('Title header for keys table').t`Status`, className: 'w10e notinymobile' },
+        { node: c('Title header for keys table').t`Fingerprint`, className: 'text-ellipsis' },
+        { node: c('Title header for keys table').t`Key type`, className: 'w15 no-mobile' },
+        { node: c('Title header for keys table').t`Status`, className: 'w10e no-tiny-mobile' },
         { node: c('Title header for keys table').t`Actions`, className: 'w10e' },
     ].map(({ node, className = '' }, i) => {
         return (
@@ -36,7 +36,7 @@ const KeysTable = ({
     });
 
     return (
-        <Table className="pm-simple-table--has-actions">
+        <Table className="simple-table--has-actions">
             <thead>
                 <tr>{headerCells}</tr>
             </thead>
@@ -46,12 +46,12 @@ const KeysTable = ({
                         <TableRow
                             key={ID}
                             cells={[
-                                <div key={1} className="flex flex-row flex-nowrap flex-items-center">
+                                <div key={1} className="flex flex-row flex-nowrap flex-align-items-center">
                                     <Copy
                                         value={fingerprint}
-                                        className="pm-button--small flex-item-noshrink notinymobile mr1 onmobile-mr0-5 ontinymobile-m0"
+                                        className="button--small flex-item-noshrink no-tiny-mobile mr1 on-mobile-mr0-5 on-tiny-mobile-m0"
                                     />
-                                    <code className="mw100 inbl ellipsis" title={fingerprint}>
+                                    <code className="max-w100 inline-block text-ellipsis" title={fingerprint}>
                                         {fingerprint}
                                     </code>
                                 </div>,
@@ -76,7 +76,7 @@ const KeysTable = ({
                                     onSetNotObsolete={permissions.canSetNotObsolete ? onSetNotObsolete : undefined}
                                 />,
                             ]}
-                            className="onmobile-hideTd2 ontinymobile-hideTd3"
+                            className="on-mobile-hide-td2 on-tiny-mobile-hide-td3"
                         />
                     );
                 })}

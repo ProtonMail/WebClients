@@ -27,7 +27,7 @@ const ChangelogModal = ({ changelog = '', ...rest }: Props) => {
 
     return (
         <FormModal title={c('Title').t`Release notes`} close={c('Action').t`Close`} submit={null} {...rest}>
-            <div className="pm-modalContentInner-changelog" dangerouslySetInnerHTML={html} />
+            <div className="modal-content-inner-changelog" dangerouslySetInnerHTML={html} />
         </FormModal>
     );
 };

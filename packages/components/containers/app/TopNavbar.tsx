@@ -12,7 +12,7 @@ export const TopNavbarItem = ({ className = 'flex-item-noshrink', children }: Pr
         return null;
     }
     const clonedElement = React.cloneElement(children, {
-        className: 'topnav-link inline-flex flex-nowrap nodecoration',
+        className: 'topnav-link inline-flex flex-nowrap text-no-decoration',
     });
     return <li className={className}>{clonedElement}</li>;
 };
@@ -23,13 +23,13 @@ const TopNavbar = ({ children, className = '' }: Props) => {
     return (
         <div
             className={classnames([
-                'flex flex-justify-end topnav-container onmobile-no-flex flex-item-centered-vert flex-item-fluid',
+                'flex flex-justify-end topnav-container on-mobile-no-flex flex-item-centered-vert flex-item-fluid',
                 className,
             ])}
         >
             <ul
                 className={classnames([
-                    'topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap flex-items-center',
+                    'topnav-list unstyled mt0 mb0 ml1 flex flex-nowrap flex-align-items-center',
                     navIconsLength >= 4 && 'topnav-list--four-elements',
                 ])}
             >

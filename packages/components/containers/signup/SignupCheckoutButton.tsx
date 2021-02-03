@@ -21,7 +21,7 @@ const SignupCheckoutButton = ({ className, paypal, canPay, loading, method, chec
         return (
             <PayPalButton
                 paypal={paypal}
-                className={classnames(['pm-button--primary', className])}
+                className={classnames(['button--primary', className])}
                 amount={checkResult ? checkResult.AmountDue : 0}
             >{c('Action').t`Pay`}</PayPalButton>
         );

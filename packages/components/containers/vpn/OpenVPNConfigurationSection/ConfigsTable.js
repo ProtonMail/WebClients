@@ -24,7 +24,7 @@ export const CATEGORY = {
 const PlusBadge = () => (
     <span className="ml0-5">
         <Tooltip title="Plus">
-            <div className="aligncenter color-white rounded bg-plus" style={{ width: 22, height: 22 }}>
+            <div className="text-center color-white rounded bg-plus" style={{ width: 22, height: 22 }}>
                 P
             </div>
         </Tooltip>
@@ -77,11 +77,11 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
     };
 
     return (
-        <Table className="pm-simple-table--has-actions">
+        <Table className="simple-table--has-actions">
             <thead>
                 <tr>
                     <TableCell
-                        className={classnames(['onmobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        className={classnames(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
                         type="header"
                     >
                         {[CATEGORY.SERVER, CATEGORY.FREE].includes(category)
@@ -89,14 +89,14 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                             : c('TableHeader').t`Country`}
                     </TableCell>
                     {category === CATEGORY.SERVER ? (
-                        <TableCell className="onmobile-wauto w25" type="header">{c('TableHeader').t`City`}</TableCell>
+                        <TableCell className="on-mobile-wauto w25" type="header">{c('TableHeader').t`City`}</TableCell>
                     ) : null}
                     <TableCell
-                        className={classnames(['onmobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        className={classnames(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
                         type="header"
                     >{c('TableHeader').t`Status`}</TableCell>
                     <TableCell
-                        className={classnames(['onmobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        className={classnames(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
                         type="header"
                     >{c('TableHeader').t`Action`}</TableCell>
                 </tr>
@@ -133,14 +133,14 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                     }
                                 >
                                     <Link
-                                        className="pm-button--primary pm-button--small"
+                                        className="button--primary button--small"
                                         to={`/dashboard${hasPaidVpn ? '?plan=vpnplus' : ''}`}
                                     >{c('Action').t`Upgrade`}</Link>
                                 </Tooltip>
                             ) : (
                                 <DropdownActions
                                     key="dropdown"
-                                    className="pm-button--small"
+                                    className="button--small"
                                     list={[
                                         {
                                             text: c('Action').t`Download`,
@@ -148,7 +148,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                         },
                                         category !== CATEGORY.SECURE_CORE && {
                                             text: (
-                                                <div className="flex flex-nowrap flex-items-center flex-spacebetween">
+                                                <div className="flex flex-nowrap flex-align-items-center flex-justify-space-between">
                                                     <span className="mr0-5">{server.Domain}</span>
                                                     <Icon name="clipboard" title={c('Action').t`Copy`} />
                                                 </div>

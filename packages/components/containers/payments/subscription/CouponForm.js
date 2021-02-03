@@ -13,7 +13,7 @@ const CouponForm = ({ onChange, model }) => {
     };
 
     return (
-        <div className="flex flex-spacebetween mb1">
+        <div className="flex flex-justify-space-between mb1">
             <div className="mr1">
                 <Input
                     autoFocus

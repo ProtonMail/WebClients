@@ -32,13 +32,13 @@ const VerifySection = ({ domain }) => {
                         cells={[
                             <code key="txt">TXT</code>,
                             <code key="at">@</code>,
-                            <div className="flex flex-nowrap flex-items-center" key="value">
+                            <div className="flex flex-nowrap flex-align-items-center" key="value">
                                 <Copy
                                     onCopy={handleCopy}
-                                    className="flex-item-noshrink pm-button--small mr0-5"
+                                    className="flex-item-noshrink button--small mr0-5"
                                     value={domain.VerifyCode}
                                 />{' '}
-                                <code className="ellipsis" title={domain.VerifyCode}>
+                                <code className="text-ellipsis" title={domain.VerifyCode}>
                                     {domain.VerifyCode}
                                 </code>
                             </div>,

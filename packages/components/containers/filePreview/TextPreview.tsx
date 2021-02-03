@@ -9,8 +9,8 @@ const TextPreview = ({ contents = [] }: Props) => {
     const string = new TextDecoder().decode(mergeUint8Arrays(contents));
 
     return (
-        <div className="pd-file-preview-container">
-            <div className="pd-file-preview-text">{string}</div>
+        <div className="file-preview-container">
+            <div className="file-preview-text">{string}</div>
         </div>
     );
 };

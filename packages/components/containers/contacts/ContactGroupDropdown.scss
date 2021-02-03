@@ -1,7 +1,7 @@
 @import '~design-system/scss/config/';
 
 .contactGroupDropdown {
-	.dropDown-content {
+	.dropdown-content {
 		@include respond-to($breakpoint-small, 'max') {
 			display: flex;
 			flex-flow: column nowrap;

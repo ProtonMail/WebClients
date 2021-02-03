@@ -1,12 +1,12 @@
 @import '~design-system/scss/config/';
 
-.credits-modal .pm-field-container.payment-right {
+.credits-modal .field-container.payment-right {
 	width: 70%;
 }
 
 @include respond-to($breakpoint-small) {
-	.credits-modal .pm-label.payment-left,
-	.credits-modal .pm-field-container.payment-right {
+	.credits-modal .label.payment-left,
+	.credits-modal .field-container.payment-right {
 		width: 100%;
 	}
 }

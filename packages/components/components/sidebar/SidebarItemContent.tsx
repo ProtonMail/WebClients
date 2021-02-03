@@ -13,17 +13,17 @@ interface Props {
 
 const SidebarItemContent = ({ icon, iconColor, iconSize = 16, title, text, aside }: Props) => {
     return (
-        <span className="flex flex-nowrap w100 flex-items-center" title={title}>
+        <span className="flex flex-nowrap w100 flex-align-items-center" title={title}>
             {icon && (
                 <Icon
                     color={iconColor}
                     name={icon}
                     size={iconSize}
-                    className="navigation__icon flex-item-noshrink mr0-5 flex-item-centered-vert"
+                    className="navigation-icon flex-item-noshrink mr0-5 flex-item-centered-vert"
                 />
             )}
-            <span className="flex-item-fluid ellipsis mw100">{text}</span>
-            {aside && <span className="flex flex-items-center">{aside}</span>}
+            <span className="flex-item-fluid text-ellipsis max-w100">{text}</span>
+            {aside && <span className="flex flex-align-items-center">{aside}</span>}
         </span>
     );
 };

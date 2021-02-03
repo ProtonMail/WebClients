@@ -11,9 +11,9 @@ function ActionsFilterToolbar() {
 
     return (
         <>
-            <PrimaryButton onClick={() => createModal(<FilterModal />)} className="onmobile-mb0-5 mr1">{c('Action')
+            <PrimaryButton onClick={() => createModal(<FilterModal />)} className="on-mobile-mb0-5 mr1">{c('Action')
                 .t`Add Filter`}</PrimaryButton>
-            <Button onClick={() => createModal(<AdvancedFilterModal />)} className="onmobile-mb0-5">
+            <Button onClick={() => createModal(<AdvancedFilterModal />)} className="on-mobile-mb0-5">
                 {c('Action').t`Add Sieve filter`}
             </Button>
         </>

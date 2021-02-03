@@ -38,7 +38,7 @@ const OnboardingSetDisplayName = ({
             {...rest}
         >
             {!hideDisplayName && (
-                <div className="signLayout-container">
+                <div className="sign-layout-container">
                     <SignupLabelInputRow
                         label={<Label htmlFor="displayName">{c('Label').t`Display name`}</Label>}
                         input={

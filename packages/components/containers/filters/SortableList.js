@@ -6,7 +6,7 @@ import { OrderableTable, OrderableTableHeader, OrderableTableBody } from '../../
 import FilterItemRow from './FilterItemRow';
 
 const FilterSortableList = ({ items, ...rest }) => (
-    <OrderableTable className="noborder border-collapse mt1 pm-simple-table--has-actions" {...rest}>
+    <OrderableTable className="no-border border-collapse mt1 simple-table--has-actions" {...rest}>
         <caption className="sr-only">{c('Settings/filters').t`Filters`}</caption>
         <OrderableTableHeader>
             <tr>
@@ -14,7 +14,7 @@ const FilterSortableList = ({ items, ...rest }) => (
                     <span className="sr-only">{c('Settings/filters - table').t`Order`}</span>
                 </th>
                 <th scope="col">{c('Settings/filters - table').t`Name`}</th>
-                <th scope="col" className="w8e nomobile">
+                <th scope="col" className="w8e no-mobile">
                     {c('Settings/filters - table').t`Status`}
                 </th>
                 <th scope="col" className="w10e">

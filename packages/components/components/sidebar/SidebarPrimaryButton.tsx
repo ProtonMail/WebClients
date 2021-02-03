@@ -6,7 +6,7 @@ import { classnames } from '../../helpers';
 
 const SidebarPrimaryButton = ({ children, className = '', ...rest }: ButtonProps) => {
     return (
-        <PrimaryButton className={classnames(['pm-button--large bold mt0-25 w100', className])} {...rest}>
+        <PrimaryButton className={classnames(['button--large text-bold mt0-25 w100', className])} {...rest}>
             {children}
         </PrimaryButton>
     );

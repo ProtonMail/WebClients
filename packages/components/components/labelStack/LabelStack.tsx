@@ -27,28 +27,28 @@ const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, 
     return (
         <ul
             className={classnames([
-                'label-stack unstyled m0 inline-flex flew-row flex-items-center stop-propagation',
+                'label-stack unstyled m0 inline-flex flew-row flex-align-items-center stop-propagation',
                 isStacked && 'is-stacked',
                 className,
             ])}
         >
             {labelsToShow.map((label: LabelDescription) => (
                 <li
-                    className="label-stack-item flex flex-row flex-items-center flex-justify-start flex-nowrap"
+                    className="label-stack-item flex flex-row flex-align-items-center flex-justify-start flex-nowrap"
                     style={{ '--color': label.color }}
                     key={label.name}
                 >
                     {label.onClick ? (
                         <button
                             type="button"
-                            className="label-stack-item-button ellipsis"
+                            className="label-stack-item-button text-ellipsis"
                             onClick={label.onClick}
                             title={label.title}
                         >
                             <span className="label-stack-item-button-text">{label.name}</span>
                         </button>
                     ) : (
-                        <span className="label-stack-item-button ellipsis" title={label.title}>
+                        <span className="label-stack-item-button text-ellipsis" title={label.title}>
                             <span className="label-stack-item-button-text">{label.name}</span>
                         </span>
                     )}

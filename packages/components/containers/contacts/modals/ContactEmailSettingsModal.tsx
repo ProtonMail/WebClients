@@ -211,14 +211,14 @@ const ContactEmailSettingsModal = ({
     }, [isMimeTypeFixed, hasPGPInline]);
 
     return (
-        // we cannot use the FormModal component because we need to introduce the class ellipsis inside the header
+        // we cannot use the FormModal component because we need to introduce the class text-ellipsis inside the header
         <DialogModal modalTitleID="modalTitle" onClose={onClose} {...rest}>
-            <header className="pm-modalHeader">
-                <button type="button" className="pm-modalClose" title={c('Action').t`Close modal`} onClick={onClose}>
-                    <Icon className="pm-modalClose-icon" name="close" />
+            <header className="modal-header">
+                <button type="button" className="modal-close" title={c('Action').t`Close modal`} onClick={onClose}>
+                    <Icon className="modal-close-icon" name="close" />
                     <span className="sr-only">{c('Action').t`Close modal`}</span>
                 </button>
-                <h1 id="modalTitle" className="pm-modalTitle ellipsis">
+                <h1 id="modalTitle" className="modal-title text-ellipsis">
                     {c('Title').t`Email settings (${emailAddress})`}
                 </h1>
             </header>

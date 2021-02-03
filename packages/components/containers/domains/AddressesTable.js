@@ -39,7 +39,7 @@ const AddressesTable = ({ domain, domainAddresses }) => {
                         <TableRow
                             key={key}
                             cells={[
-                                <div key={key} className="ellipsis" title={address.Email}>
+                                <div key={key} className="text-ellipsis" title={address.Email}>
                                     {address.Email}
                                 </div>,
                                 <AddressStatus key={key} address={address} />,

@@ -73,14 +73,14 @@ function CollapsedBreadcrumb({ breadcrumbs }: Props) {
                             <DropdownMenuButton
                                 {...omit(breadcrumbProps, ['noShrink'])}
                                 className={classnames([
-                                    'flex alignleft flex-nowrap no-pointer-events-children',
-                                    highlighted && 'strong',
+                                    'flex text-left flex-nowrap no-pointer-events-children',
+                                    highlighted && 'text-strong',
                                 ])}
                                 title={text}
                                 key={key}
                             >
                                 {typeof collapsedText === 'string' ? (
-                                    <span title={collapsedText} className="ellipsis">
+                                    <span title={collapsedText} className="text-ellipsis">
                                         {collapsedText}
                                     </span>
                                 ) : (

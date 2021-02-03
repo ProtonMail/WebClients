@@ -15,7 +15,7 @@ const DomainName = ({ domain }) => {
     return (
         <span className="flex flex-nowrap">
             {ICONS[domain.State]}
-            <span className="ellipsis ml0-5" title={domain.DomainName}>
+            <span className="text-ellipsis ml0-5" title={domain.DomainName}>
                 {domain.DomainName}
             </span>
         </span>

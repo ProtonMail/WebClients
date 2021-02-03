@@ -19,6 +19,6 @@ describe('Alert component', () => {
 
     it('should have error class for warning type', () => {
         const { container } = render(<Alert type="warning">{text}</Alert>);
-        expect(container.firstChild).toHaveClass('mb1 block-info-standard-warning');
+        expect(container.firstChild).toHaveClass('mb1 block-info-standard--warning');
     });
 });

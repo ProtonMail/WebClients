@@ -38,7 +38,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
     }, [editorVisible]);
 
     return (
-        <div className="flex flex-nowrap onmobile-flex-column align-items-center pt1 pb1">
+        <div className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
             {user.hasPaidMail ? (
                 <>
                     <label htmlFor="autoReply" className={classnames(['w20 pt0-5', isNarrow && 'mb1'])}>

@@ -11,7 +11,7 @@ interface Props {
 const ImportMailWizard = ({ step = 0, steps = [] }: Props) => {
     return (
         <div className="wizard-container import-mail-wizard-container">
-            <ul className="wizard import-mail-wizard unstyled flex flex-nowrap flex-spacebetween">
+            <ul className="wizard import-mail-wizard unstyled flex flex-nowrap flex-justify-space-between">
                 {steps.map((text = '', index) => {
                     return (
                         <li

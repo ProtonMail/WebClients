@@ -57,8 +57,8 @@ const NewSubscriptionModal = ({
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
         [SUBSCRIPTION_STEPS.CUSTOMIZATION]: c('Title').t`Plan customization`,
         [SUBSCRIPTION_STEPS.PAYMENT]: c('Title').t`Checkout`,
-        [SUBSCRIPTION_STEPS.UPGRADE]: <div className="aligncenter">{c('Title').t`Processing...`}</div>,
-        [SUBSCRIPTION_STEPS.THANKS]: <div className="aligncenter">{c('Title').t`Thank you!`}</div>,
+        [SUBSCRIPTION_STEPS.UPGRADE]: <div className="text-center">{c('Title').t`Processing...`}</div>,
+        [SUBSCRIPTION_STEPS.THANKS]: <div className="text-center">{c('Title').t`Thank you!`}</div>,
     };
 
     const api = useApi();
@@ -262,7 +262,7 @@ const NewSubscriptionModal = ({
             }
             className={classnames([
                 'subscription-modal',
-                [SUBSCRIPTION_STEPS.CUSTOMIZATION, SUBSCRIPTION_STEPS.PAYMENT].includes(step) && 'pm-modal--full',
+                [SUBSCRIPTION_STEPS.CUSTOMIZATION, SUBSCRIPTION_STEPS.PAYMENT].includes(step) && 'modal--full',
                 user.isFree && 'is-free-user',
             ])}
             title={TITLE[step]}
@@ -273,8 +273,8 @@ const NewSubscriptionModal = ({
         >
             {step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
             {step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
-                <div className="flex flex-spacebetween onmobile-flex-column">
-                    <div className="w75 onmobile-w100 pr4 ontablet-landscape-pr1 onmobile-pr0">
+                <div className="flex flex-justify-space-between on-mobile-flex-column">
+                    <div className="w75 on-mobile-w100 pr4 on-tablet-landscape-pr1 on-mobile-pr0">
                         <SubscriptionCustomization
                             organization={organization}
                             vpnCountries={vpnCountries}
@@ -285,7 +285,7 @@ const NewSubscriptionModal = ({
                             setModel={setModel}
                         />
                     </div>
-                    <div className="w25 onmobile-w100">
+                    <div className="w25 on-mobile-w100">
                         <div className="subscriptionCheckout-container">
                             <SubscriptionCheckout
                                 submit={
@@ -313,8 +313,8 @@ const NewSubscriptionModal = ({
                 </div>
             )}
             {step === SUBSCRIPTION_STEPS.PAYMENT && (
-                <div className="flex flex-spacebetween onmobile-flex-column">
-                    <div className="w75 onmobile-w100 ontablet-landscape-pr1 pr4 onmobile-pr0">
+                <div className="flex flex-justify-space-between on-mobile-flex-column">
+                    <div className="w75 on-mobile-w100 on-tablet-landscape-pr1 pr4 on-mobile-pr0">
                         <h3>{c('Title').t`Payment method`}</h3>
                         {checkResult.AmountDue ? (
                             <>
@@ -348,7 +348,7 @@ const NewSubscriptionModal = ({
                             </>
                         )}
                     </div>
-                    <div className="w25 onmobile-w100">
+                    <div className="w25 on-mobile-w100">
                         <SubscriptionCheckout
                             method={method}
                             submit={
@@ -377,7 +377,7 @@ const NewSubscriptionModal = ({
                 </div>
             )}
             {step === SUBSCRIPTION_STEPS.UPGRADE && (
-                <div className="aligncenter">
+                <div className="text-center">
                     <SubscriptionUpgrade />
                 </div>
             )}

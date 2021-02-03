@@ -6,8 +6,8 @@ $default-height-fields: 4.1rem;
 
 /* fields */
 .signup-container,
-.signLayout-container {
-	.pm-label {
+.sign-layout-container {
+	.label {
 		font-weight: 600;
 		font-size: 1.2rem;
 		padding-bottom: 0.2em;
@@ -15,7 +15,7 @@ $default-height-fields: 4.1rem;
 	}
 }
 
-.signLayout-container {
+.sign-layout-container {
 	// selector to improve
 	.signup-label-field-container {
 		flex-direction: column;
@@ -24,21 +24,21 @@ $default-height-fields: 4.1rem;
 		}
 	}
 
-	.pm-field-icon-container:not(textarea) {
+	.field-icon-container:not(textarea) {
 		height: auto;
 	}
-	.pm-field {
+	.field {
 		padding: em(10) em(16); // design want 42px height (actually 42 to avoid .5px)
 	}
-	.pm-field-icon-container:focus-within,
-	.pm-field:focus {
+	.field-icon-container:focus-within,
+	.field:focus {
 		box-shadow: none;
 		border-color: $pm-primary;
 	}
 	.right-icon,
 	.right-text,
-	select.pm-field,
-	.pm-field:not(textarea) {
+	select.field,
+	.field:not(textarea) {
 		height: $default-height-fields;
 	}
 	.right-text-inner {
@@ -50,13 +50,13 @@ $default-height-fields: 4.1rem;
 		min-height: 35em;
 
 		// fix for plans, same as in subscription flow
-		&:not(.mw50e) {
+		&:not(.max-w50e) {
 			max-width: 150rem;
 		}
 
 		@include respond-to($breakpoint-medium-landscape, 'min') {
 			@include respond-to(800, 'min-height') {
-				&.mw50e {
+				&.max-w50e {
 					margin-top: 10em;
 				}
 			}
@@ -120,7 +120,7 @@ $default-height-fields: 4.1rem;
 	}
 }
 
-.signLayout-main {
+.sign-layout-main {
 	padding: em(24) em(48);
 }
 
@@ -142,7 +142,7 @@ $default-height-fields: 4.1rem;
 	@include respond-to(1100) {
 		&.flex-nowrap {
 			flex-wrap: wrap;
-			.pm-field {
+			.field {
 				width: 100%;
 				margin-right: 0;
 				margin-bottom: 0.25em;
@@ -152,7 +152,7 @@ $default-height-fields: 4.1rem;
 }
 
 // Hide icons (caret, support1) in <SupportDropdown>
-.signLayout-container {
+.sign-layout-container {
 	.subscriptionTable-customize-button {
 		display: none;
 	}

@@ -105,7 +105,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
     const getFooter = () => {
         if (productPayer) {
             return (
-                <p className="smaller opacity-50 aligncenter">
+                <p className="text-xs opacity-50 text-center">
                     (1){' '}
                     {c('blackfriday Info')
                         .t`This subscription will automatically renew after 2 years at the same rate until it is cancelled.`}
@@ -123,14 +123,14 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                         </Price>
                     );
                     return (
-                        <p key={key} className="smaller mt0 mb0 opacity-50 aligncenter">
+                        <p key={key} className="text-xs mt0 mb0 opacity-50 text-center">
                             {AFTER_INFO({ notice: index + 1, amount })}
                         </p>
                     );
                 })}
-                <p className="smaller mt1 mb0 opacity-50 aligncenter">{c('blackfriday Info')
+                <p className="text-xs mt1 mb0 opacity-50 text-center">{c('blackfriday Info')
                     .t`Discounts are based on monthly pricing.`}</p>
-                <p className="smaller mt0 mb0 opacity-50 aligncenter">{c('blackfriday Info')
+                <p className="text-xs mt0 mb0 opacity-50 text-center">{c('blackfriday Info')
                     .t`Offer valid only for first-time paid subscriptions.`}</p>
             </>
         );
@@ -190,7 +190,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
     return (
         <FormModal title={title} loading={loading} footer={null} {...rest}>
             {loading ? (
-                <div className="aligncenter">
+                <div className="text-center">
                     <FullLoader size={50} className="center flex mb2" />
                 </div>
             ) : (
@@ -198,7 +198,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                     <BlackFridayModalDescription isProductPayer={productPayer} />
                     <div
                         className={classnames([
-                            'flex flex-nowrap flex-spacearound onmobile-flex-column',
+                            'flex flex-nowrap flex-justify-space-around on-mobile-flex-column',
                             productPayer ? 'mt2' : 'mt4',
                         ])}
                     >
@@ -222,7 +222,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                 </Price>
                             );
                             const regularPrice = (
-                                <span className="strike" key={key}>
+                                <span className="text-strike" key={key}>
                                     <Price currency={currency}>{withoutCouponMonthly * cycle}</Price>
                                 </span>
                             );
@@ -239,7 +239,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                     {percentage ? (
                                         <span
                                             className={classnames([
-                                                'uppercase bold absolute color-white blackfriday-percentage aligncenter',
+                                                'text-uppercase text-bold absolute color-white blackfriday-percentage text-center',
                                                 popular ? 'bg-global-warning' : 'bg-primary',
                                             ])}
                                         >
@@ -247,24 +247,24 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                         </span>
                                     ) : null}
                                     {popular ? (
-                                        <div className="uppercase absolute bold bg-primary color-white pt0-75 pb0-5 mt0 mb0 aligncenter blackfriday-mostPopular">{c(
+                                        <div className="text-uppercase absolute text-bold bg-primary color-white pt0-75 pb0-5 mt0 mb0 text-center blackfriday-mostPopular">{c(
                                             'blackfriday Title'
                                         ).t`Most popular`}</div>
                                     ) : null}
                                     <div
                                         className={classnames([
-                                            'blackfriday-plan w100 bordered-container p1 mb1 flex flex-column flex-items-center flex-justify-end',
-                                            popular && 'borderColor-primary',
+                                            'blackfriday-plan w100 bordered-container p1 mb1 flex flex-column flex-align-items-center flex-justify-end',
+                                            popular && 'border-color-primary',
                                         ])}
                                     >
                                         <div className="blackfriday-plan-namePeriod">
-                                            <strong className="blackfriday-plan-name bl aligncenter big mt0-5 mb0">
+                                            <strong className="blackfriday-plan-name block text-center text-lg mt0-5 mb0">
                                                 {name}
                                             </strong>
-                                            <strong className="bl aligncenter">{DEAL_TITLE[cycle]}</strong>
+                                            <strong className="block text-center">{DEAL_TITLE[cycle]}</strong>
                                         </div>
-                                        <div className="mb1 mt1 aligncenter lh130">{monthlyPrice}</div>
-                                        <div className="aligncenter flex-item-fluid-auto">
+                                        <div className="mb1 mt1 text-center lh130">{monthlyPrice}</div>
+                                        <div className="text-center flex-item-fluid-auto">
                                             {Object.keys(planIDs).length > 1 ? (
                                                 <>
                                                     <p className="m0">{c('blackfriday Info').t`Includes`}</p>
@@ -282,8 +282,8 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                                             buttonClass="inline-flex color-currentColor ml0-25 mb0-1"
                                                             url="https://protonmail.com/support/knowledge-base/protondrive-early-access/?utm_campaign=ww-en-2c-mail-coms_inapp-protondrive_learn_more&utm_source=webmail&utm_medium=app_ad&utm_content=tooltip_v4"
                                                         />
-                                                        <span className="bl">
-                                                            <span className="blackfriday-protonDrive-free bg-global-success uppercase color-white bold pl0-5 pr0-5">
+                                                        <span className="block">
+                                                            <span className="blackfriday-protonDrive-free bg-global-success text-uppercase color-white text-bold pl0-5 pr0-5">
                                                                 {c('blackfriday Info').t`Free`}
                                                             </span>
                                                         </span>
@@ -293,10 +293,10 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                         </div>
                                         <Button
                                             className={classnames([
-                                                'mb1 uppercase',
+                                                'mb1 text-uppercase',
                                                 popular || productPayer
-                                                    ? 'pm-button--primary'
-                                                    : 'pm-button--primaryborderEvenInDarkMode',
+                                                    ? 'button--primary'
+                                                    : 'button--primaryborderEvenInDarkMode',
                                             ])}
                                             onClick={() => {
                                                 rest.onClose?.();
@@ -305,7 +305,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                         >
                                             {getCTA()}
                                         </Button>
-                                        <small className="bold">
+                                        <small className="text-bold">
                                             {BILLED_DESCRIPTION({ cycle, amount: amountDue, notice: index + 1 })}
                                         </small>
                                         <small className="opacity-50 blackfriday-standardPrice mb1">{c(
@@ -316,7 +316,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                             );
                         })}
                     </div>
-                    <div className="mb1 aligncenter">
+                    <div className="mb1 text-center">
                         <CurrencySelector
                             id="currency-select"
                             mode="buttons"

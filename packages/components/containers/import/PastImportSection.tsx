@@ -67,7 +67,7 @@ const DeleteButton = ({ ID }: DeleteButtonProps) => {
     return (
         <Button
             loading={loadingActions}
-            className="pm-button--small"
+            className="button--small"
             onClick={() => withLoadingActions(handleDelete())}
         >{c('Action').t`Delete record`}</Button>
     );
@@ -88,10 +88,10 @@ const PastImportsSection = () => {
 
     const headerCells = [
         { node: c('Title header').t`Import` },
-        { node: c('Title header').t`Status`, className: 'onmobile-w33 onmobile-aligncenter' },
-        { node: c('Title header').t`Date`, className: 'nomobile' },
-        { node: c('Title header').t`Size`, className: 'nomobile' },
-        { node: c('Title header').t`Actions`, className: 'nomobile' },
+        { node: c('Title header').t`Status`, className: 'on-mobile-w33 on-mobile-text-center' },
+        { node: c('Title header').t`Date`, className: 'no-mobile' },
+        { node: c('Title header').t`Size`, className: 'no-mobile' },
+        { node: c('Title header').t`Actions`, className: 'no-mobile' },
     ].map(({ node, className = '' }, i) => {
         return (
             <TableCell key={i.toString()} className={className} type="header">
@@ -103,7 +103,7 @@ const PastImportsSection = () => {
     return (
         <>
             <Alert>{c('Info').t`Check the records of your past imports.`}</Alert>
-            <Table className="onmobile-hideTd3 onmobile-hideTd4 onmobile-hideTd5 pm-simple-table--has-actions">
+            <Table className="on-mobile-hide-td3 on-mobile-hide-td4 on-mobile-hide-td5 simple-table--has-actions">
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
@@ -114,14 +114,14 @@ const PastImportsSection = () => {
                                 key={ID}
                                 cells={[
                                     <>
-                                        <div key="email" className="w100 ellipsis">
+                                        <div key="email" className="w100 text-ellipsis">
                                             {Email}
                                         </div>
-                                        <time key="importDate" className="nodesktop notablet">
+                                        <time key="importDate" className="no-desktop no-tablet">
                                             {format(EndTime * 1000, 'PPp')}
                                         </time>
                                     </>,
-                                    <div className="onmobile-aligncenter">
+                                    <div className="on-mobile-text-center">
                                         <ImportStatus key="status" status={State} />
                                     </div>,
                                     <time key="importDate">{format(EndTime * 1000, 'PPp')}</time>,

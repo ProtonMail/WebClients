@@ -24,7 +24,7 @@ const SignupVerificationCodeForm = ({ model, onChange, onSubmit, onResend, error
             <div className="mb1">{c('Info')
                 .jt`Enter the verification code that was sent to ${destinationBold}. If you don't find the email in your inbox, please check your spam folder.`}</div>
 
-            <label className="pm-label" htmlFor="verification-code">{c('Label').t`Verification code`}</label>
+            <label className="label" htmlFor="verification-code">{c('Label').t`Verification code`}</label>
             <VerificationCodeInput
                 id="verification-code"
                 className="mb0-5"
@@ -41,7 +41,7 @@ const SignupVerificationCodeForm = ({ model, onChange, onSubmit, onResend, error
                     .t`Did not receive the code?`}</InlineLinkButton>
             </div>
             <SignupSubmitRow>
-                <PrimaryButton className="pm-button--large" type="submit" disabled={disableSubmit} loading={loading}>
+                <PrimaryButton className="button--large" type="submit" disabled={disableSubmit} loading={loading}>
                     {c('Action').t`Verify`}
                 </PrimaryButton>
             </SignupSubmitRow>

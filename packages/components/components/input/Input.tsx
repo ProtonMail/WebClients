@@ -54,8 +54,8 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
                 <div
                     ref={containerRef}
                     className={classnames([
-                        'relative pm-field-icon-container w100',
-                        hasError && 'pm-field-icon-container--invalid',
+                        'relative field-icon-container w100',
+                        hasError && 'field-icon-container--invalid',
                     ])}
                 >
                     {child}
@@ -75,7 +75,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
                 ) : null}
                 {addIconWrapper(
                     <input
-                        className={classnames(['pm-field w100', className, statusClasses])}
+                        className={classnames(['field w100', className, statusClasses])}
                         aria-invalid={hasError}
                         aria-describedby={uid}
                         id={id}

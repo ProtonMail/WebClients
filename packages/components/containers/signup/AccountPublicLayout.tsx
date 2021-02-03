@@ -42,31 +42,31 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
     return (
         <div className="scroll-if-needed h100v">
             <PublicTopBanners />
-            <div className="pt1 pb1 pl2 pr2 onmobile-p0 signLayout-container flex flex-nowrap flex-column flex-spacebetween">
-                <div className="flex-item-fluid-auto signLayout flex-item-noshrink flex flex-column flex-nowrap">
-                    <div className="flex flex-column flex-nowrap flex-item-noshrink onmobile-flex-item-fluid-auto">
+            <div className="pt1 pb1 pl2 pr2 on-mobile-p0 sign-layout-container flex flex-nowrap flex-column flex-justify-space-between">
+                <div className="flex-item-fluid-auto sign-layout flex-item-noshrink flex flex-column flex-nowrap">
+                    <div className="flex flex-column flex-nowrap flex-item-noshrink on-mobile-flex-item-fluid-auto">
                         <div
                             className={classnames([
-                                'center bg-white-dm color-global-grey-dm mt2 mb2 onmobile-mt0 onmobile-mb0 onmobile-pb1 w100 mw100 bordered-container flex-item-noshrink flex flex-nowrap signup-container',
-                                larger ? '' : 'mw50e',
+                                'center bg-white-dm color-global-grey-dm mt2 mb2 on-mobile-mt0 on-mobile-mb0 on-mobile-pb1 w100 max-w100 bordered-container flex-item-noshrink flex flex-nowrap signup-container',
+                                larger ? '' : 'max-w50e',
                             ])}
                         >
-                            <main className="onmobile-p1 flex-item-fluid signLayout-main flex-noMinChildren flex-column flex-nowrap">
-                                <header className="flex flex-items-center flex-nowrap mb2">
+                            <main className="on-mobile-p1 flex-item-fluid sign-layout-main flex-no-min-children flex-column flex-nowrap">
+                                <header className="flex flex-align-items-center flex-nowrap mb2">
                                     <span className="flex-item-fluid flex">{left}</span>
-                                    <span className="aligncenter flex w70p">{center}</span>
-                                    <span className="flex-item-fluid flex alignright" />
+                                    <span className="text-center flex w70p">{center}</span>
+                                    <span className="flex-item-fluid flex text-right" />
                                 </header>
-                                <div className="mb2 flex-item-fluid signLayout-main-content">
+                                <div className="mb2 flex-item-fluid sign-layout-main-content">
                                     {title ? (
-                                        <h1 className={classnames(['h4 bold mt0', subtitle ? 'mb0-25' : 'mb1'])}>
+                                        <h1 className={classnames(['h4 text-bold mt0', subtitle ? 'mb0-25' : 'mb1'])}>
                                             {title}
                                         </h1>
                                     ) : null}
                                     {subtitle ? <div className="mb1">{subtitle}</div> : null}
                                     {children}
                                 </div>
-                                <footer className="flex flex-items-center flex-nowrap">
+                                <footer className="flex flex-align-items-center flex-nowrap">
                                     <span className="flex-item-fluid">
                                         {locales ? (
                                             <PublicLanguageSelect
@@ -75,31 +75,31 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                                             />
                                         ) : null}
                                     </span>
-                                    <span className="flex-item-fluid alignright">{right}</span>
+                                    <span className="flex-item-fluid text-right">{right}</span>
                                 </footer>
                             </main>
                             {aside ? (
-                                <aside className="nomobile bg-global-highlight w33 p2 flex flex-items-center flex-justify-center small m0 signLayout-aside">
+                                <aside className="no-mobile bg-global-highlight w33 p2 flex flex-align-items-center flex-justify-center text-sm m0 sign-layout-aside">
                                     {aside}
                                 </aside>
                             ) : null}
                         </div>
                     </div>
                 </div>
-                <footer className="aligncenter small m0 pt0-5 pb0-5 flex-item-noshrink">
-                    <span className="opacity-50 automobile">{c('Info').t`Made globally - Hosted in Switzerland`}</span>
-                    <span className="opacity-50 pl0-75 pr0-75 nomobile" aria-hidden="true">
+                <footer className="text-center text-sm m0 pt0-5 pb0-5 flex-item-noshrink">
+                    <span className="opacity-50 auto-mobile">{c('Info').t`Made globally - Hosted in Switzerland`}</span>
+                    <span className="opacity-50 pl0-75 pr0-75 no-mobile" aria-hidden="true">
                         |
                     </span>
-                    <span className="automobile">{termsLink}</span>
-                    <span className="opacity-50 pl0-75 pr0-75 nomobile" aria-hidden="true">
+                    <span className="auto-mobile">{termsLink}</span>
+                    <span className="opacity-50 pl0-75 pr0-75 no-mobile" aria-hidden="true">
                         |
                     </span>
-                    <span className="automobile">{privacyLink}</span>
-                    <span className="opacity-50 pl0-75 pr0-75 nomobile" aria-hidden="true">
+                    <span className="auto-mobile">{privacyLink}</span>
+                    <span className="opacity-50 pl0-75 pr0-75 no-mobile" aria-hidden="true">
                         |
                     </span>
-                    <span className="opacity-50 automobile">{c('Info').jt`Version ${appVersion}`}</span>
+                    <span className="opacity-50 auto-mobile">{c('Info').jt`Version ${appVersion}`}</span>
                 </footer>
             </div>
         </div>

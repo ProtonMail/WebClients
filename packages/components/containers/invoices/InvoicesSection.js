@@ -62,11 +62,11 @@ const InvoicesSection = () => {
         return <Alert>{c('Error').t`You have no invoices.`}</Alert>;
     }
     const headerCells = [
-        { node: 'ID', className: 'ellipsis' },
+        { node: 'ID', className: 'text-ellipsis' },
         { node: c('Title').t`Amount` },
-        { node: c('Title').t`Type`, className: 'notablet nomobile' },
-        { node: c('Title').t`Status`, className: 'nomobile' },
-        { node: c('Title').t`Date`, className: 'nomobile' },
+        { node: c('Title').t`Type`, className: 'no-tablet no-mobile' },
+        { node: c('Title').t`Status`, className: 'no-mobile' },
+        { node: c('Title').t`Date`, className: 'no-mobile' },
         { node: c('Title').t`Action` },
     ].map(({ node, className = '' }, i) => {
         return (
@@ -83,7 +83,7 @@ const InvoicesSection = () => {
                 <Alert type="error">{c('Error')
                     .t`Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.`}</Alert>
             ) : null}
-            <Block className="flex flex-spacebetween">
+            <Block className="flex flex-justify-space-between">
                 <div>
                     {user.isPaid ? (
                         <Group className="mr1">
@@ -107,7 +107,7 @@ const InvoicesSection = () => {
                     onSelect={onSelect}
                 />
             </Block>
-            <Table className="pm-simple-table--has-actions">
+            <Table className="simple-table--has-actions">
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
@@ -125,7 +125,7 @@ const InvoicesSection = () => {
                                     <Time key={key}>{invoice.CreateTime}</Time>,
                                     <InvoiceActions key={key} invoice={invoice} fetchInvoices={request} />,
                                 ]}
-                                className="ontablet-hideTd3 onmobile-hideTd4 onmobile-hideTd5"
+                                className="on-tablet-hide-td3 on-mobile-hide-td4 on-mobile-hide-td5"
                             />
                         );
                     })}

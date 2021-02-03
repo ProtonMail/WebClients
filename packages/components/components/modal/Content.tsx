@@ -31,7 +31,7 @@ const Content = ({
             onSubmit={handleSubmit}
             onReset={onReset}
             autoComplete={autoComplete}
-            className={classnames(['pm-modalContent', className])}
+            className={classnames(['modal-content', className])}
             noValidate={noValidate}
             method="post"
             {...rest}

@@ -66,28 +66,28 @@ const ContactModalRow = forwardRef<HTMLInputElement, Props>(
                 {isOrderable ? (
                     <OrderableHandle key="icon">
                         <div className="cursor-row-resize mr0-5 flex flex-item-noshrink mb1">
-                            <Icon name="text-justify" className="mt0-75 onmobile-mt2" />
+                            <Icon name="text-justify" className="mt0-75 on-mobile-mt2" />
                         </div>
                     </OrderableHandle>
                 ) : (
-                    <div className="mr0-5 flex flex-items-center flex-item-noshrink">
-                        <Icon name="text-justify nonvisible" />
+                    <div className="mr0-5 flex flex-align-items-center flex-item-noshrink">
+                        <Icon name="text-justify visibility-hidden" />
                     </div>
                 )}
-                <div className="flex flex-nowrap onmobile-flex-column w95 flex-items-start">
+                <div className="flex flex-nowrap on-mobile-flex-column w95 flex-align-items-start">
                     {field && !(isNarrow && field === 'fn') && (
                         <span
                             className={classnames([
-                                'w30 contact-modal-select flex flex-nowrap mb1 flex-items-start onmobile-mb0-5 onmobile-flex-self-start',
+                                'w30 contact-modal-select flex flex-nowrap mb1 flex-align-items-start on-mobile-mb0-5 on-mobile-flex-align-self-start',
                                 field === 'fn' && 'pt0-5',
                             ])}
                         >
                             <ContactModalLabel field={field} type={type} uid={property.uid} onChange={onChange} />
                         </span>
                     )}
-                    <div className="flex flex-nowrap flex-items-start flex-item-noshrink">
+                    <div className="flex flex-nowrap flex-align-items-start flex-item-noshrink">
                         <span className="flex-item-fluid mb1">
-                            <div className="pr1 w100 onmobile-pr0-5">
+                            <div className="pr1 w100 on-mobile-pr0-5">
                                 <ContactFieldProperty
                                     ref={ref}
                                     field={field}
@@ -101,8 +101,8 @@ const ContactModalRow = forwardRef<HTMLInputElement, Props>(
                         <span className="mb1">
                             <div className="min-w3e">
                                 {list.length > 0 && (
-                                    <div className="flex flex-item-noshrink flex-items-start">
-                                        <DropdownActions className="pm-button--for-icon" list={list} />
+                                    <div className="flex flex-item-noshrink flex-align-items-start">
+                                        <DropdownActions className="button--for-icon" list={list} />
                                     </div>
                                 )}
                             </div>

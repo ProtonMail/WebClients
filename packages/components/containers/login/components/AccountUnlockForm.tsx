@@ -42,7 +42,7 @@ const AccountUnlockForm = ({ onSubmit, state, setters, errors }: Props) => {
             <SignupSubmitRow>
                 <PrimaryButton
                     type="submit"
-                    className="pm-button--large"
+                    className="button--large"
                     disabled={!state.keyPassword}
                     loading={loading}
                     data-cy-login="submit mailbox password"

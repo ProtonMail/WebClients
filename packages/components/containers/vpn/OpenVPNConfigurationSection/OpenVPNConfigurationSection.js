@@ -108,7 +108,7 @@ const OpenVPNConfigurationSection = () => {
             </Alert>
 
             <h3 className="mt2">{c('Title').t`1. Select platform`}</h3>
-            <div className="flex onmobile-flex-column mb1">
+            <div className="flex on-mobile-flex-column mb1">
                 {[
                     {
                         value: PLATFORM.ANDROID,
@@ -151,7 +151,7 @@ const OpenVPNConfigurationSection = () => {
                             >
                                 {label}
                             </Radio>
-                            <Href url={link} className="small m0 bl" style={{ paddingLeft: '2.1rem' }}>{c('Link')
+                            <Href url={link} className="text-sm m0 block" style={{ paddingLeft: '2.1rem' }}>{c('Link')
                                 .t`View guide`}</Href>
                         </div>
                     );
@@ -159,7 +159,7 @@ const OpenVPNConfigurationSection = () => {
             </div>
 
             <h3 className="mt2">{c('Title').t`2. Select protocol`}</h3>
-            <div className="flex onmobile-flex-column mb0-5">
+            <div className="flex on-mobile-flex-column mb0-5">
                 <RadioGroup
                     name="protocol"
                     value={protocol}
@@ -171,12 +171,12 @@ const OpenVPNConfigurationSection = () => {
                 />
             </div>
             <div className="mb1">
-                <Href url="https://protonvpn.com/support/udp-tcp/" className="small m0">{c('Link')
+                <Href url="https://protonvpn.com/support/udp-tcp/" className="text-sm m0">{c('Link')
                     .t`What is the difference between UDP and TCP protocols?`}</Href>
             </div>
 
             <h3 className="mt2">{c('Title').t`3. Select config file and download`}</h3>
-            <div className="flex onmobile-flex-column mb1-5">
+            <div className="flex on-mobile-flex-column mb1-5">
                 <RadioGroup
                     name="category"
                     value={category}
@@ -269,33 +269,33 @@ const OpenVPNConfigurationSection = () => {
                     )}
                 </div>
                 {userVPN.PlanName === 'trial' || !hasPaidVpn ? (
-                    <div className="bordered-container p2 aligncenter">
+                    <div className="bordered-container p2 text-center">
                         <h3 className="color-pv-green mt0 mb1">{c('Title')
                             .t`Get ProtonVPN Plus to access all servers`}</h3>
-                        <ul className="unstyled inline-flex mt0 mb2 onmobile-flex-column">
-                            <li className="flex flex-nowrap flex-items-center mr1">
+                        <ul className="unstyled inline-flex mt0 mb2 on-mobile-flex-column">
+                            <li className="flex flex-nowrap flex-align-items-center mr1">
                                 <Icon name="on" className="color-global-success mr0-5" />
-                                <span className="bold">{c('Feature').t`Access to all countries`}</span>
+                                <span className="text-bold">{c('Feature').t`Access to all countries`}</span>
                             </li>
-                            <li className="flex flex-nowrap flex-items-center mr1">
+                            <li className="flex flex-nowrap flex-align-items-center mr1">
                                 <Icon name="on" className="color-global-success mr0-5" />
-                                <span className="bold">{c('Feature').t`Secure Core servers`}</span>
+                                <span className="text-bold">{c('Feature').t`Secure Core servers`}</span>
                             </li>
-                            <li className="flex flex-nowrap flex-items-center mr1">
+                            <li className="flex flex-nowrap flex-align-items-center mr1">
                                 <Icon name="on" className="color-global-success mr0-5" />
-                                <span className="bold">{c('Feature').t`Fastest VPN servers`}</span>
+                                <span className="text-bold">{c('Feature').t`Fastest VPN servers`}</span>
                             </li>
-                            <li className="flex flex-nowrap flex-items-center mr1">
+                            <li className="flex flex-nowrap flex-align-items-center mr1">
                                 <Icon name="on" className="color-global-success mr0-5" />
-                                <span className="bold">{c('Feature').t`Torrenting support (P2P)`}</span>
+                                <span className="text-bold">{c('Feature').t`Torrenting support (P2P)`}</span>
                             </li>
-                            <li className="flex flex-nowrap flex-items-center mr1">
+                            <li className="flex flex-nowrap flex-align-items-center mr1">
                                 <Icon name="on" className="color-global-success mr0-5" />
-                                <span className="bold">{c('Feature').t`Connection for up to 5 devices`}</span>
+                                <span className="text-bold">{c('Feature').t`Connection for up to 5 devices`}</span>
                             </li>
-                            <li className="flex flex-nowrap flex-items-center ">
+                            <li className="flex flex-nowrap flex-align-items-center ">
                                 <Icon name="on" className="color-global-success mr0-5" />
-                                <span className="bold mr0-5">{c('Feature').t`Secure streaming support`}</span>
+                                <span className="text-bold mr0-5">{c('Feature').t`Secure streaming support`}</span>
                                 <Info
                                     url="https://protonvpn.com/support/streaming-guide/"
                                     title={c('VPN info')
@@ -304,7 +304,7 @@ const OpenVPNConfigurationSection = () => {
                             </li>
                         </ul>
                         <div>
-                            <Link className="pm-button pm-button--primary" to="/dashboard?plan=vpnplus">{c('Action')
+                            <Link className="button button--primary" to="/dashboard?plan=vpnplus">{c('Action')
                                 .t`Get ProtonVPN Plus`}</Link>
                         </div>
                     </div>

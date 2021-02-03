@@ -19,7 +19,7 @@ const AddressesSection = ({ onClose }: Props) => {
                     .t`Add a new user to your organization and create an address for it.`}</Alert>
                 <Block>
                     <AppLink
-                        className="pm-button pm-button--primary"
+                        className="button button--primary"
                         onClick={() => onClose?.()}
                         to="/organization#members"
                         toApp={APPS.PROTONACCOUNT}
@@ -28,7 +28,7 @@ const AddressesSection = ({ onClose }: Props) => {
                 <Alert>{c('Info for domain modal').t`Add a new address for any user of your organization.`}</Alert>
                 <Block>
                     <AppLink
-                        className="pm-button pm-button--primary"
+                        className="button button--primary"
                         onClick={() => onClose?.()}
                         to="/organization#addresses"
                         toApp={APPS.PROTONACCOUNT}
@@ -41,7 +41,7 @@ const AddressesSection = ({ onClose }: Props) => {
     return (
         <Block>
             <AppLink
-                className="pm-button pm-button--primary"
+                className="button button--primary"
                 onClick={() => onClose?.()}
                 to="/organization#addresses"
                 toApp={APPS.PROTONACCOUNT}

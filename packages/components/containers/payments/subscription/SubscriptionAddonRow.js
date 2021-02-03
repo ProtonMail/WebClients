@@ -25,12 +25,12 @@ const SubscriptionAddonRow = ({
     }));
 
     return (
-        <div className="flex flex-nowrap flex-spacebetween flex-items-center ontablet-w100 mb1">
-            <label htmlFor={idRef} className="w10e onmobile-w25 pr1">
+        <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center on-tablet-w100 mb1">
+            <label htmlFor={idRef} className="w10e on-mobile-w25 pr1">
                 {label}
             </label>
-            <div className="flex flex-nowrap w16e ontinymobile-wauto">
-                <div className="notinymobile">
+            <div className="flex flex-nowrap w16e on-tiny-mobile-wauto">
+                <div className="no-tiny-mobile">
                     <Button
                         className="flex-item-noshrink w100"
                         onClick={() => onChange(quantity - 1)}
@@ -40,7 +40,7 @@ const SubscriptionAddonRow = ({
                         <span className="sr-only">{c('Action').t`Decrease`}</span>
                     </Button>
                 </div>
-                <div className="w10e ontinymobile-wauto pl0-5 pr0-5">
+                <div className="w10e on-tiny-mobile-wauto pl0-5 pr0-5">
                     <Select
                         disabled={loading}
                         className="w100"
@@ -50,7 +50,7 @@ const SubscriptionAddonRow = ({
                         value={quantity}
                     />
                 </div>
-                <div className="notinymobile">
+                <div className="no-tiny-mobile">
                     <Button
                         className="flex-item-noshrink w100"
                         onClick={() => onChange(quantity + 1)}
@@ -61,7 +61,7 @@ const SubscriptionAddonRow = ({
                     </Button>
                 </div>
             </div>
-            <div className="w8e ontablet-w25 big mb0 mt0 alignright">
+            <div className="w8e on-tablet-w25 text-lg mb0 mt0 text-right">
                 {quantity ? (
                     price
                 ) : (

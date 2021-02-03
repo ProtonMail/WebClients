@@ -18,7 +18,7 @@ const LoaderPage = ({ text, loaderClassName = 'color-global-light' }: Props) => 
     useDocumentTitle(appName);
 
     return (
-        <div className="centered-absolute aligncenter">
+        <div className="centered-absolute text-center">
             <FullLoader className={loaderClassName} size={200} />
             <TextLoader>{textToDisplay}</TextLoader>
         </div>

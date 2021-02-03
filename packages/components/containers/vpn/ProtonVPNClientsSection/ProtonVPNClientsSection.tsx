@@ -19,7 +19,7 @@ const ProtonVPNClientsSection = () => {
         },
     ].map(({ href, children }) => {
         return (
-            <Group className="flex flex-items-center">
+            <Group className="flex flex-align-items-center">
                 <DropdownMenuLink href={href}>{children}</DropdownMenuLink>
                 <Copy value={href} className="pt0-25 pb0-25 pl0-5 pr0-5 mr0-5" />
             </Group>
@@ -27,7 +27,7 @@ const ProtonVPNClientsSection = () => {
     });
 
     return (
-        <div className="flex onmobile-flex-column">
+        <div className="flex on-mobile-flex-column">
             <VPNClientCard
                 title={c('VPNClient').t`Android`}
                 icon="android"

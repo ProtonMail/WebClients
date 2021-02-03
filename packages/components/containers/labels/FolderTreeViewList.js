@@ -18,12 +18,12 @@ const BEFORE = 'before';
 const Header = ({ isNarrow }) => {
     return (
         <div className="flex flex-nowrap w100 border-bottom pb0-5">
-            <span className="bold uppercase flex-item-fluid">
+            <span className="text-bold text-uppercase flex-item-fluid">
                 {isNarrow ? null : <Icon name="arrow-cross" className="mr1" />}
                 {c('Header').t`Name`}
             </span>
-            <span className="bold uppercase w10e nomobile">{c('Header').t`Notification`}</span>
-            <span className="bold uppercase w10e alignright">{c('Header').t`Actions`}</span>
+            <span className="text-bold text-uppercase w10e no-mobile">{c('Header').t`Notification`}</span>
+            <span className="text-bold text-uppercase w10e text-right">{c('Header').t`Actions`}</span>
         </div>
     );
 };
@@ -124,14 +124,14 @@ const FolderTreeViewList = ({ items = [] }) => {
                             content={
                                 <div
                                     className={classnames([
-                                        'flex flex-nowrap flex-items-center flex-spacebetween w100 pt0-5 pb0-5 treeview-item relative',
-                                        isOverred && position === BEFORE && 'treeview-item--moveTop',
-                                        isOverred && position === AFTER && 'treeview-item--moveBottom',
-                                        isOverred && position === INSIDE && 'treeview-item--moveInside',
-                                        grabbed && grabbed.ID === item.ID && 'treeview-item--selfGrabbed',
+                                        'flex flex-nowrap flex-align-items-center flex-justify-space-between w100 pt0-5 pb0-5 treeview-item relative',
+                                        isOverred && position === BEFORE && 'treeview-item--move-top',
+                                        isOverred && position === AFTER && 'treeview-item--move-bottom',
+                                        isOverred && position === INSIDE && 'treeview-item--move-inside',
+                                        grabbed && grabbed.ID === item.ID && 'treeview-item--self-grabbed',
                                     ])}
                                 >
-                                    <div className="treeview-item-name flex flex-nowrap flex-items-center flex-item-fluid">
+                                    <div className="treeview-item-name flex flex-nowrap flex-align-items-center flex-item-fluid">
                                         {isNarrow ? null : (
                                             <Icon
                                                 name="text-justify"
@@ -142,14 +142,14 @@ const FolderTreeViewList = ({ items = [] }) => {
                                             name={hasSubFolders ? 'parent-folder' : 'folder'}
                                             className="mr0-5 flex-item-noshrink"
                                         />
-                                        <span className="ellipsis" title={item.Name}>
+                                        <span className="text-ellipsis" title={item.Name}>
                                             {item.Name}
                                         </span>
                                     </div>
-                                    <div className="treeview-toggle w10e nomobile">
+                                    <div className="treeview-toggle w10e no-mobile">
                                         <ToggleNotify label={item} />
                                     </div>
-                                    <div className="treeview-actions w10e flex flex-column flex-items-end">
+                                    <div className="treeview-actions w10e flex flex-column flex-align-items-end">
                                         <div className="mtauto mbauto">
                                             <ActionsLabel label={item} />
                                         </div>

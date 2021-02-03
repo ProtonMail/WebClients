@@ -16,7 +16,7 @@ const ZoomControl = ({ scale, onZoomIn, onZoomOut, onReset }: Props) => {
 
     return (
         <div className="w100 p2 flex">
-            <div className="center flex flex-items-center">
+            <div className="center flex flex-align-items-center">
                 <button
                     type="button"
                     disabled={isZoomOutDisabled}

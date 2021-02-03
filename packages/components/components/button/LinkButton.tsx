@@ -5,7 +5,7 @@ import { classnames } from '../../helpers';
 
 const LinkButton = ({ children, className = '', ...rest }: ButtonProps) => {
     return (
-        <Button className={classnames(['pm-button--link', className])} {...rest}>
+        <Button className={classnames(['button--link', className])} {...rest}>
             {children}
         </Button>
     );

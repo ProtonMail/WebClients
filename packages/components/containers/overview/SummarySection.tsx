@@ -43,34 +43,34 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
 
     return (
         <div className="bordered-container bg-white-dm tiny-shadow-container p2">
-            <div className="mb2 aligncenter">
-                <span className="dropDown-logout-initials rounded semibold p0-25 mb0-5 inline-flex bg-global-grey color-white">
-                    <span className="dropDown-logout-text center">{initials}</span>
+            <div className="mb2 text-center">
+                <span className="dropdown-logout-initials rounded text-semibold p0-25 mb0-5 inline-flex bg-global-grey color-white">
+                    <span className="dropdown-logout-text center">{initials}</span>
                 </span>
-                <h3 className="mb0-5 lh-standard ellipsis" title={DisplayName || Name}>
+                <h3 className="mb0-5 lh-rg text-ellipsis" title={DisplayName || Name}>
                     {DisplayName || Name}
                 </h3>
                 {organization?.Name ? (
-                    <p className="mt0 mb0-5 ellipsis" title={organization.Name}>
+                    <p className="mt0 mb0-5 text-ellipsis" title={organization.Name}>
                         {organization.Name}
                     </p>
                 ) : null}
-                <p className="mt0 mb0 ellipsis" title={Email}>
+                <p className="mt0 mb0 text-ellipsis" title={Email}>
                     {Email}
                 </p>
             </div>
             {canPay ? (
                 <div className="mb1">
-                    <strong className="bl mb0-5">{c('Title').t`Plans`}</strong>
+                    <strong className="block mb0-5">{c('Title').t`Plans`}</strong>
                     {!subscription ? (
                         <Loader />
                     ) : (
                         <ul className="unstyled mt0 mb0">
-                            <li className="flex flex-nowrap flex-items-center">
+                            <li className="flex flex-nowrap flex-align-items-center">
                                 <Icon name="protonvpn" className="mr0-5 flex-item-noshrink" />
                                 <span className="flex-item-fluid">{getPlanTitle(vpnPlan, 'ProtonVPN')}</span>
                             </li>
-                            <li className="flex flex-nowrap flex-items-center">
+                            <li className="flex flex-nowrap flex-align-items-center">
                                 <Icon name="protonmail" className="mr0-5 flex-item-noshrink" />
                                 <span className="flex-item-fluid">{getPlanTitle(mailPlan, 'ProtonMail')}</span>
                             </li>
@@ -80,9 +80,9 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
             ) : null}
             {languageText ? (
                 <div className="mb1">
-                    <strong className="bl mb0-5">{c('Title').t`Default language`}</strong>
+                    <strong className="block mb0-5">{c('Title').t`Default language`}</strong>
                     <ul className="unstyled mt0 mb0">
-                        <li className="flex flex-nowrap flex-items-center">
+                        <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="globe" className="mr0-5 flex-item-noshrink" />
                             <span className="flex-item-fluid">{languageText}</span>
                         </li>
@@ -91,7 +91,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
             ) : null}
             {isAdmin ? (
                 <div className="mb1">
-                    <strong className="bl mb0-5">{c('Title').t`Your organization`}</strong>
+                    <strong className="block mb0-5">{c('Title').t`Your organization`}</strong>
                     {!organization ? (
                         <Loader />
                     ) : (
@@ -116,19 +116,19 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
             ) : null}
             {APP_NAME === APPS.PROTONACCOUNT ? (
                 <div className="mb1">
-                    <strong className="bl mb0-5">{c('Title').t`Application settings`}</strong>
+                    <strong className="block mb0-5">{c('Title').t`Application settings`}</strong>
                     <ul className="unstyled mt0 mb0">
-                        <li className="flex flex-nowrap flex-items-center">
+                        <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="protonmail" className="mr0-5 flex-item-noshrink" />
                             <AppLink to="/settings/overview" toApp={APPS.PROTONMAIL}>{c('Link')
                                 .t`ProtonMail settings`}</AppLink>
                         </li>
-                        <li className="flex flex-nowrap flex-items-center">
+                        <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="protoncalendar" className="mr0-5 flex-item-noshrink" />
                             <AppLink to="/settings/overview" toApp={APPS.PROTONCALENDAR}>{c('Link')
                                 .t`ProtonCalendar settings`}</AppLink>
                         </li>
-                        <li className="flex flex-nowrap flex-items-center">
+                        <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="protoncontacts" className="mr0-5 flex-item-noshrink" />
                             <AppLink to="/settings/overview" toApp={APPS.PROTONCONTACTS}>{c('Link')
                                 .t`ProtonContacts settings`}</AppLink>

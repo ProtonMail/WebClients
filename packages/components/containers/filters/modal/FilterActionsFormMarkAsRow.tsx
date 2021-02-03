@@ -50,13 +50,13 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions, is
         return (
             <div className="pt0-5">
                 {markAs?.read && (
-                    <span className="inline-flex flex-items-center mr2">
+                    <span className="inline-flex flex-align-items-center mr2">
                         <Icon name="read" className="mr0-5" />
                         {c('Label').t`Read`}
                     </span>
                 )}
                 {markAs?.starred && (
-                    <span className="inline-flex flex-items-center">
+                    <span className="inline-flex flex-align-items-center">
                         <Icon name="star" className="mr0-5" />
                         {c('Label').t`Starred`}
                     </span>
@@ -66,8 +66,8 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions, is
     };
 
     return (
-        <div className="border-bottom flex flex-nowrap onmobile-flex-column align-items-center pt1 pb1">
-            <button type="button" className={classnames(['w20 alignleft', isNarrow && 'mb1'])} onClick={toggleSection}>
+        <div className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
+            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
                 <Icon name="caret" className={classnames([isOpen && 'rotateX-180'])} />
                 <span className={classnames(['ml0-5', actions.error && 'color-global-warning'])}>
                     {c('Label').t`Mark as`}
@@ -104,7 +104,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions, is
                 <Button
                     disabled={!markAs?.read && !markAs?.starred}
                     onClick={handleClear}
-                    className={classnames(['pm-button--for-icon', isNarrow ? 'mt1' : 'ml1'])}
+                    className={classnames(['button--for-icon', isNarrow ? 'mt1' : 'ml1'])}
                 >
                     <Tooltip
                         title={c('Action').t`Reset`}
