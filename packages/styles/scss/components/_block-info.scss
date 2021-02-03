@@ -22,15 +22,15 @@ $block-info-border-width: 3px !default;
 	border-color: $pm-primary;
 }
 
-.block-info-error {
+.block-info--error {
 	border-color: $pm-global-warning;
 }
 
-.block-info-warning {
+.block-info--warning {
 	border-color: $pm-global-attention;
 }
 
-.block-info-success {
+.block-info--success {
 	border-color: $pm-global-success;
 }
 
@@ -43,15 +43,15 @@ $block-info-border-width: 3px !default;
 	border-color: $pm-primary;
 }
 
-.block-info-standard-error {
+.block-info-standard--error {
 	border-color: $pm-global-warning;
 }
 
-.block-info-standard-warning {
+.block-info-standard--warning {
 	border-color: $pm-global-attention;
 }
 
-.block-info-standard-success {
+.block-info-standard--success {
 	border-color: $pm-global-success;
 }
 

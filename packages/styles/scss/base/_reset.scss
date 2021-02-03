@@ -56,8 +56,8 @@ menu,
 td,
 th {
 	font-size: 1em;
-	line-height: $l-h;
-	margin: $l-h * 1em 0;
+	line-height: $base-line-height;
+	margin: $base-line-height * 1em 0;
 }
 
 @if $use-reset-button==true {

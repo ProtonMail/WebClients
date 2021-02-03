@@ -1,7 +1,7 @@
 /*
  * Shared for placeholder loading
  */
-@keyframes loadingItem {
+@keyframes anime-loading-item {
 	from {
 		opacity: 0.05;
 	}
@@ -20,15 +20,15 @@
 }
 
 %appearing-container {
-	animation: itemFadeIn 0.5s easing(easeOutQuint);
+	animation: anime-item-fade-in 0.5s easing(easeOutQuint);
 }
 
 %placeholder-loading {
-	animation: loadingItem 0.5s calc(var(--index, 0) * 20ms) easing(easeOutSine)
-		infinite alternate;
+	animation: anime-loading-item 0.5s calc(var(--index, 0) * 20ms)
+		easing(easeOutSine) infinite alternate;
 }
 
-@keyframes itemFadeIn {
+@keyframes anime-item-fade-in {
 	from {
 		opacity: 0;
 	}

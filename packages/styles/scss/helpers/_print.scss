@@ -46,8 +46,8 @@
 		--bgcolor-highlight: initial;
 		--color-input: initial;
 
-		.pm-button:not(.pm-button--primary):not(.pm-button--link),
-		.pm-button--info {
+		.button:not(.button--primary):not(.button--link),
+		.button--info {
 			border-color: $pm-global-border;
 			background: $white;
 			color: $pm-global-grey;
@@ -55,37 +55,35 @@
 	}
 
 	/* hide unnecessary elements */
-	.noprint {
+	.no-print {
 		display: none;
 	}
 
 	.is-printed-version {
-		.pm-modalContainer,
-		.pm-modal,
-		.pm-modalContentInner,
-		.pm-modalContent {
+		.modal-container,
+		.modal,
+		.modal-content-inner,
+		.modal-content {
 			@extend .reset4print;
 		}
 
-		.pm-modalContentInner::before,
-		.pm-modalContentInner::after {
+		.modal-content-inner::before,
+		.modal-content-inner::after {
 			content: none;
 		}
 
 		.app-root,
-		.pm-modalOverlay,
-		.pm-modalHeader,
-		.pm-modalFooter,
-		.pm-modalContentInnerTopShadow,
-		.pm-modalContentInnerBottomShadow,
+		.modal-overlay,
+		.modal-header,
+		.modal-footer,
 		.item-icon,
 		[class^='scrollshadow-'] {
-			@extend .noprint;
+			@extend .no-print;
 		}
 	}
 
 	/* display specific elements for print */
-	.onprint {
+	.on-print {
 		display: block;
 	}
 

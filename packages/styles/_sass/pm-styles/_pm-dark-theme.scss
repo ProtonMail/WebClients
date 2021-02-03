@@ -5,32 +5,32 @@
 @import './pm-buttons-mixins';
 
 // forms/buttons
-.pm-button:not(.pm-button-blue):not(.pv-button-green):not(.pm-button--primary):not(.pm-button--primaryborderEvenInDarkMode):not(.pm-button--link):not(.pm-button--error):not(.pm-button--warning):not(.pm-button--redborder):not(.pm-button--primaryborder),
-.pm-button--info {
-	@include pm-button-dark;
+.button:not(.button-blue):not(.pv-button-green):not(.button--primary):not(.button--primaryborderEvenInDarkMode):not(.button--link):not(.button--error):not(.button--warning):not(.button--redborder):not(.button--primaryborder),
+.button--info {
+	@include button-dark;
 }
 
 // didn’t used extend, not possible in @media for design system website
-$primary-border-blue-selectors: '.pm-button-blueborder';
+$primary-border-blue-selectors: '.button-blueborder';
 @if ($pm-primary == $pm-blue) {
 	$primary-border-blue-selectors: $primary-border-blue-selectors +
-		', .pm-button--primaryborder';
+		', .button--primaryborder';
 }
 #{$primary-border-blue-selectors} {
-	@include pm-button-blueborder-dark;
+	@include button-blueborder-dark;
 }
 
 $primary-border-green-selectors: '.pv-button-greenborder';
 @if ($pm-primary == $pv-green) {
 	$primary-border-green-selectors: $primary-border-green-selectors +
-		', .pm-button--primaryborder';
+		', .button--primaryborder';
 }
 #{$primary-border-green-selectors} {
 	@include pv-button-greenborder-dark;
 }
 
-.pm-button--redborder,
-.pm-button.pm-button--redborder {
+.button--redborder,
+.button.button--redborder {
 	background-color: transparent;
 	&:focus,
 	&:hover,
@@ -40,10 +40,10 @@ $primary-border-green-selectors: '.pv-button-greenborder';
 	}
 }
 
-.pm-button--link,
+.button--link,
 a,
 .link,
-.pm-button.pm-button--link {
+.button.button--link {
 	&:focus,
 	&:hover,
 	&:not(div):active,
@@ -56,13 +56,13 @@ a,
 	}
 }
 
-.pm-group-button {
+.grouped-button {
 	&[disabled],
 	&.is-disabled {
-		&.pm-button {
+		&.button {
 			border-color: var(--bordercolor-input, $pm-global-border);
 		}
-		&.pm-button-blueborder {
+		&.button-blueborder {
 			border-color: $pm-primary-light;
 		}
 		&.pv-button-greenborder {
@@ -71,39 +71,39 @@ a,
 	}
 }
 
-.pm-field {
+.field {
 	&[type='search'] {
 		background-image: url('#{$path-images}sprite-for-css-only.svg#css-search-white');
 	}
 }
 @if $rtl-option == true {
 	[dir='rtl'] {
-		[type='search'].pm-field {
+		[type='search'].field {
 			background-image: url('#{$path-images}sprite-for-css-only.svg#css-search-rtl-white');
 		}
 	}
 }
 
-.pm-field[disabled] {
+.field[disabled] {
 	color: #{rgba($white, 0.5)};
 	opacity: 0.6;
 }
 
-select.pm-field {
+select.field {
 	background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret-white');
 }
-.pm-checkbox {
-	&:indeterminate + .pm-checkbox-fakecheck {
+.checkbox {
+	&:indeterminate + .checkbox-fakecheck {
 		background-image: url('#{$path-images}sprite-for-css-only.svg#css-dash-white');
 	}
 }
-.pm-toggle-checkbox {
-	&[aria-busy='true'] + .pm-toggle-label {
+.toggle-checkbox {
+	&[aria-busy='true'] + .toggle-label {
 		&::before {
 			background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
 		}
 	}
-	&[disabled] + .pm-toggle-label {
+	&[disabled] + .toggle-label {
 		background-color: transparent;
 		opacity: 0.6;
 	}
@@ -113,14 +113,14 @@ select.pm-field {
 	background-image: none;
 }
 
-.pm-toggle-label {
-	& > .pm-toggle-label-text:first-child .pm-toggle-label-img {
+.toggle-label {
+	& > .toggle-label-text:first-child .toggle-label-img {
 		fill: $white;
 	}
 }
 
-.pm-checkbox:focus + .pm-checkbox-fakecheck,
-.pm-radio:focus + .pm-radio-fakeradio {
+.checkbox:focus + .checkbox-fakecheck,
+.radio:focus + .radio-fakeradio {
 	box-shadow: 0 0 10px 0 $input-shadow-color-darkmode;
 }
 
@@ -142,11 +142,11 @@ td[aria-busy='true'] {
 
 .progressive[aria-busy='true'] {
 	&::before {
-		animation-name: backgroundLoading-dark;
+		animation-name: anime-background-loading-dark;
 	}
 }
 
-@keyframes backgroundLoading-dark {
+@keyframes anime-background-loading-dark {
 	0% {
 		background-color: $pm-secondary-grey;
 	}
@@ -211,5 +211,5 @@ summary {
 	--bgcolor-highlight: #{$pm-global-altgrey};
 	--color-input: #{$white};
 	--dropdown-box-shadow: rgb(0 0 0 / 0.75);
-	--bgcolor-meterbar: rgb(0 0 0 / 0.375);
+	--bgcolor-meter-bar: rgb(0 0 0 / 0.375);
 }

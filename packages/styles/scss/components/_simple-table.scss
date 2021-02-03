@@ -1,6 +1,6 @@
-.pm-simple-table {
+.simple-table {
 	@extend .border-collapse;
-	@extend .noborder;
+	@extend .no-border;
 	@extend .w100;
 
 	caption {
@@ -14,20 +14,20 @@
 	}
 
 	th:not(#{&}-row-th) {
-		@extend .uppercase;
-		@extend .alignleft;
+		@extend .text-uppercase;
+		@extend .text-left;
 
-		&.aligncenter {
-			@extend .aligncenter;
+		&.text-center {
+			@extend .text-center;
 		}
 
-		&.alignright {
-			@extend .alignright;
+		&.text-right {
+			@extend .text-right;
 		}
 
 		@include respond-to($breakpoint-small) {
-			&.onmobile-aligncenter {
-				@extend .onmobile-aligncenter;
+			&.on-mobile-text-center {
+				@extend .on-mobile-text-center;
 			}
 		}
 	}
@@ -42,7 +42,7 @@
 		background-color: var(--bgcolor-input, $pm-global-light);
 	}
 
-	&--isHoverable tbody tr {
+	&--is-hoverable tbody tr {
 		@media (hover: hover) {
 			&:hover,
 			&:focus-within {
@@ -51,7 +51,7 @@
 		}
 	}
 
-	tr#{&}-stickyRow {
+	tr#{&}-sticky-row {
 		td,
 		th {
 			position: sticky;
@@ -78,7 +78,7 @@
 		}
 	}
 
-	tr#{&}-stickyRow#{&}-stickyRow--isOnTop {
+	tr#{&}-sticky-row#{&}-sticky-row--is-on-top {
 		td,
 		th {
 			&::after {
@@ -113,11 +113,4 @@
 		@extend .relative;
 		top: -0.15em;
 	}
-}
-
-/*
- * specifics case
- */
-.pm-plans-table-row--highlighted {
-	background-color: var(--bgcolor-input, $pm-global-light);
 }

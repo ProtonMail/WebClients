@@ -18,14 +18,14 @@
 	color: inherit;
 	border-bottom: 2px solid transparent;
 	padding: 0.5em;
-	@extend .nodecoration;
+	@extend .text-no-decoration;
 	@extend .relative;
 	top: 1px;
 	transition: color 0.15s ease-out, border-bottom 0.15s ease-out;
 
 	&:focus,
 	&:hover {
-		@extend .nodecoration;
+		@extend .text-no-decoration;
 		color: var(--color-main-area, $pm-global-grey);
 		border-bottom: 2px solid var(--bordercolor-input, $pm-global-border);
 	}

@@ -1,6 +1,6 @@
-.pd-collapsing-breadcrumbs {
+.collapsing-breadcrumbs {
 	@extend .flex-nowrap;
-	@extend .flex-items-center;
+	@extend .flex-align-items-center;
 	@extend .pt0-25;
 	@extend .pb0-25;
 	@extend .pl0;
@@ -9,12 +9,12 @@
 	display: flex;
 }
 
-.pd-collapsing-breadcrumb {
+.collapsing-breadcrumb {
 	@extend .flex-nowrap;
 	display: flex;
 	flex: 0 1 auto;
 
-	&:not(#{&}--noShrink) {
+	&:not(#{&}--no-shrink) {
 		min-width: 1.5em;
 	}
 }

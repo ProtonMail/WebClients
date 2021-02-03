@@ -9,13 +9,13 @@ $stroke-map: (
 	xbold: 15,
 ) !default;
 
-.loadingAnimation {
+.full-loader {
 	// We need a different duration than each circle for the whole loader
 	// to have an animation that seems visually "random", so here, duration +20% and ease.
-	animation: loaderRotation #{$animation-duration * 1.2} ease-in-out infinite;
+	animation: anime-loader-rotation #{$animation-duration * 1.2} ease-in-out infinite;
 	will-change: transform;
 
-	@keyframes loaderRotation {
+	@keyframes anime-loader-rotation {
 		from {
 			transform: rotate(0);
 		}
@@ -33,11 +33,11 @@ $stroke-map: (
 		animation: $animation-duration linear infinite;
 
 		&:nth-of-type(1) {
-			animation-name: loaderOrbitX;
+			animation-name: anime-loader-orbit-x;
 		}
 
 		&:nth-of-type(2) {
-			animation-name: loaderOrbitY;
+			animation-name: anime-loader-orbit-y;
 			animation-delay: $second-circle-time-offset;
 		}
 	}
@@ -48,17 +48,17 @@ $stroke-map: (
 				stroke-width: $value;
 
 				&:nth-of-type(1) {
-					animation-name: #{'loaderOrbitX-' + $name};
+					animation-name: #{'anime-loader-orbit-x-' + $name};
 				}
 
 				&:nth-of-type(2) {
-					animation-name: #{'loaderOrbitY-' + $name};
+					animation-name: #{'anime-loader-orbit-y-' + $name};
 				}
 			}
 		}
 
-		@each $axis in (X, Y) {
-			@keyframes #{'loaderOrbit' + $axis + if($name == 'default', '', '-' + $name)} {
+		@each $axis in (x, y) {
+			@keyframes #{'anime-loader-orbit-' + $axis + if($name == 'default', '', '-' + $name)} {
 				from {
 					transform: #{'rotate' + $axis + '(0)'};
 					stroke-width: $value;

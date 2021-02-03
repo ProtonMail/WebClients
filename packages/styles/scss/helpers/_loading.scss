@@ -11,17 +11,16 @@ button[aria-busy='true'] {
 	background-repeat: no-repeat;
 }
 
-.pm-button[aria-busy="true"] {
+.button[aria-busy='true'] {
 	padding-left: em(5);
 	padding-right: em(27);
 }
 
-.dropDown-item-button[aria-busy="true"] {
+.dropdown-item-button[aria-busy='true'] {
 	padding-right: em(27);
 }
 
-
-.pm-button--small[aria-busy='true'] {
+.button--small[aria-busy='true'] {
 	padding-left: em(2);
 	padding-right: em(22);
 	background-size: 1.25em;
@@ -73,11 +72,11 @@ svg[aria-busy='true'] {
 		left: 0;
 		bottom: 0;
 		background-image: none;
-		animation: backgroundLoading 1s linear infinite alternate;
+		animation: anime-background-loading 1s linear infinite alternate;
 	}
 }
 
-@keyframes backgroundLoading {
+@keyframes anime-background-loading {
 	0% {
 		background-color: $white;
 	}

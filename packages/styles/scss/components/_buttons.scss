@@ -27,7 +27,7 @@
 	}
 }
 
-@mixin pm-button-dark {
+@mixin button-dark {
 	color: $white;
 	background-color: $pm-global-grey;
 	border-color: var(--bordercolor-input, $pm-global-border);
@@ -56,7 +56,7 @@
 	}
 }
 
-@mixin pm-button-blueborder-dark {
+@mixin button-blueborder-dark {
 	border-color: $pm-primary-light;
 	color: $pm-primary-light;
 	background-color: $pm-global-grey;
@@ -117,8 +117,7 @@
  * CLASSES
  ****************************************/
 
-[class*='pm-button'],
-[class*='pv-button'] {
+%button {
 	border-radius: $global-border-radius;
 	padding: em(5) em(16) em(6); // design want 34px height
 	border-style: solid;
@@ -139,7 +138,8 @@
 	}
 }
 
-.pm-button {
+.button {
+	@extend %button;
 	border-color: $pm-global-border;
 	background-color: $white;
 	color: $pm-global-grey;
@@ -194,17 +194,18 @@
 		}
 		.mr0-5 {
 			flex: 1 1 0px;
-			@extend .ellipsis;
+			@extend .text-ellipsis;
 		}
 	}
 }
 
-.pm-button-dark {
-	@include pm-button-dark;
+.button-dark {
+	@extend %button;
+	@include button-dark;
 }
 
-.pm-button-blue,
-.pm-button.pm-button-blue {
+.button-blue {
+	@extend %button;
 	color: $white;
 	background-color: $pm-primary;
 	border: 1px solid $pm-primary;
@@ -238,7 +239,8 @@
 	}
 }
 
-.pm-button-blueborder {
+.button-blueborder {
+	@extend %button;
 	border-color: $pm-primary;
 	color: $pm-primary;
 	background-color: $white;
@@ -271,12 +273,13 @@
 	}
 }
 
-.pm-button-blueborder-dark {
-	@include pm-button-blueborder-dark;
+.button-blueborder-dark {
+	@extend %button;
+	@include button-blueborder-dark;
 }
 
-.pv-button-green,
-.pm-button.pv-button-green {
+.pv-button-green {
+	@extend %button;
 	color: $white;
 	background-color: $pv-green;
 	border: 1px solid $pv-green;
@@ -311,6 +314,7 @@
 }
 
 .pv-button-greenborder {
+	@extend %button;
 	border-color: $pv-green;
 	color: $pv-green;
 	background-color: $white;
@@ -344,69 +348,49 @@
 }
 
 .pv-button-greenborder-dark {
+	@extend %button;
 	@include pv-button-greenborder-dark;
 }
 
-/* modifiers */
-.pm-button--large {
-	padding: em(10) em(20) em(9); // design want 42px height
-}
-
-.pm-button--small {
-	padding: em(1) em(12) em(2); // design want 26px height
-}
-
-.pm-button--for-icon {
-	padding-left: 0.75em;
-	padding-right: 0.75em;
-}
-
-.pm-button--for-smallicon {
-	padding-left: 0.25em;
-	padding-right: 0.25em;
-}
-
 /* button group */
-.pm-group-buttons {
+.grouped-buttons {
 	@extend .inline-flex;
 	@extend .flex-nowrap;
 }
 
-.pm-group-button,
-.pm-group-button.is-active,
-.pm-group-button:hover,
-.pm-group-button:focus,
-.pm-group-button:active {
+.grouped-button,
+.grouped-button.is-active,
+.grouped-button:hover,
+.grouped-button:focus,
+.grouped-button:active {
 	border-radius: 0;
 	border-left-width: 0;
 }
 
-.pm-group-button:hover,
-.pm-group-button:focus,
-.pm-group-button:active {
+.grouped-button:hover,
+.grouped-button:focus,
+.grouped-button:active {
 	position: relative;
 }
 
-.pm-group-buttons > .pm-group-button:first-child {
+.grouped-buttons > .grouped-button:first-child {
 	border-radius: $global-border-radius 0 0 $global-border-radius;
 	border-left-width: 1px;
 }
 
-.pm-group-buttons > .pm-group-button:last-child {
+.grouped-buttons > .grouped-button:last-child {
 	border-radius: 0 $global-border-radius $global-border-radius 0;
 }
 
 @if $rtl-option==true {
 	[dir='rtl'] {
-		.pm-group-buttons
-			> .pm-group-button:not(.pagination-expand):first-child {
+		.grouped-buttons > .grouped-button:not(.pagination-expand):first-child {
 			border-radius: 0 $global-border-radius $global-border-radius 0;
 			border-right-width: 1px;
 			border-left-width: 0;
 		}
 
-		.pm-group-buttons
-			> .pm-group-button:not(.pagination-expand):last-child {
+		.grouped-buttons > .grouped-button:not(.pagination-expand):last-child {
 			border-radius: $global-border-radius 0 0 $global-border-radius;
 			border-left-width: 1px;
 		}
@@ -414,7 +398,7 @@
 }
 
 /* special case for group button with primary colors */
-.pm-group-buttons > .pm-group-button.pm-button--primary {
+.grouped-buttons > .grouped-button.button--primary {
 	border-color: $pm-primary;
 	border-left-width: 0;
 
@@ -428,14 +412,14 @@
 }
 
 /* exception for group buttons, disabled state should keep the border */
-.pm-group-button {
+.grouped-button {
 	&[disabled],
 	&.is-disabled {
-		&.pm-button {
+		&.button {
 			border-color: $pm-global-border;
 		}
 
-		&.pm-button-blueborder {
+		&.button-blueborder {
 			border-color: $pm-primary;
 		}
 
@@ -448,35 +432,36 @@
 /* aliases for buttons => different per project */
 /* primary/link/error/warning/info */
 @if ($pm-primary==$pm-blue) {
-	.pm-button--primary {
-		@extend .pm-button-blue;
+	.button--primary {
+		@extend .button-blue;
 	}
 
-	.pm-button--primaryborder,
-	.pm-button--primaryborderEvenInDarkMode {
-		@extend .pm-button-blueborder;
+	.button--primaryborder,
+	.button--primaryborderEvenInDarkMode {
+		@extend .button-blueborder;
 	}
 
-	.pm-button--primaryborder-dark {
-		@extend .pm-button-blueborder-dark;
+	.button--primaryborder-dark {
+		@extend .button-blueborder-dark;
 	}
 } @else {
-	.pm-button--primary {
+	.button--primary {
 		@extend .pv-button-green;
 	}
 
-	.pm-button--primaryborder,
-	.pm-button--primaryborderEvenInDarkMode {
+	.button--primaryborder,
+	.button--primaryborderEvenInDarkMode {
 		@extend .pv-button-greenborder;
 	}
 
-	.pm-button--primaryborder-dark {
+	.button--primaryborder-dark {
 		@extend .pv-button-greenborder-dark;
 	}
 }
 
-.pm-button--link,
-.pm-button.pm-button--link {
+.button--link,
+.button.button--link {
+	@extend %button;
 	color: $color-links;
 	border-width: 0;
 	box-shadow: none;
@@ -503,18 +488,18 @@
 		background-color: transparent; // to avoid heriting from other classes
 	}
 
-	&.nodecoration {
+	&.text-no-decoration {
 		text-decoration: none;
 	}
 
-	&.pm-button--currentColor {
+	&.button--currentColor {
 		color: currentColor;
 	}
 }
 
-.pm-button--error,
-.pm-button.pm-button--error {
-	@extend .pm-button-blue;
+.button--error,
+.button.button--error {
+	@extend .button-blue;
 	background-color: $pm-global-warning;
 	border-color: $pm-global-warning;
 
@@ -532,9 +517,9 @@
 	}
 }
 
-.pm-button--warning,
-.pm-button.pm-button--warning {
-	@extend .pm-button-blue;
+.button--warning,
+.button.button--warning {
+	@extend .button-blue;
 	background-color: $pm-global-attention;
 	border-color: $pm-global-attention;
 
@@ -552,14 +537,14 @@
 	}
 }
 
-.pm-button--info {
-	@extend .pm-button;
+.button--info {
+	@extend .button;
 }
 
 /* other aliases requested */
-.pm-button--redborder,
-.pm-button.pm-button--redborder {
-	@extend .pm-button;
+.button--redborder,
+.button.button--redborder {
+	@extend .button;
 	border-color: $pm-global-warning;
 	color: $pm-global-warning;
 
@@ -571,26 +556,46 @@
 	}
 }
 
-.pm-button--whiteborder,
-.pm-button--primary.pm-button.pm-button--whiteborder {
+.button--whiteborder,
+.button--primary.button.button--whiteborder {
 	border: 1px solid $white;
 }
 
+/* modifiers */
+.button--large {
+	padding: em(10) em(20) em(9); // design want 42px height
+}
+
+.button--small {
+	padding: em(1) em(12) em(2); // design want 26px height
+}
+
+.button--for-icon {
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+}
+
+.button--for-smallicon {
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+}
+
 /* other modifiers requested */
-.pm-button--noborder {
+.button--no-border {
 	border: 0;
 }
 
-.pm-button--currentColor {
+.button--currentColor {
 	color: currentColor;
 }
 
-.pm-button--pill {
+.button--pill {
 	border-radius: 2em;
 }
 
-.pm-button--transparent {
+.button--transparent {
 	/* When using currentColor, you need to set the color you want on a container */
+	@extend %button;
 	border: 1px solid currentColor;
 	color: currentColor;
 

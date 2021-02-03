@@ -46,22 +46,22 @@
 		color: $white;
 	}
 
-	&In {
+	&--in {
 		animation-duration: 1s;
 		animation-fill-mode: forwards;
 		animation-timing-function: ease;
-		animation-name: notificationIn;
+		animation-name: anime-notification-in;
 	}
 
-	&Out {
+	&--out {
 		animation-duration: 1s;
 		animation-fill-mode: forwards;
 		animation-timing-function: ease;
-		animation-name: notificationOut;
+		animation-name: anime-notification-out;
 	}
 }
 
-@keyframes notificationIn {
+@keyframes anime-notification-in {
 	0% {
 		opacity: 0;
 		transform: translateY(-50px);
@@ -73,7 +73,7 @@
 	}
 }
 
-@keyframes notificationOut {
+@keyframes anime-notification-out {
 	0% {
 		opacity: 1;
 		transform: scale(1);

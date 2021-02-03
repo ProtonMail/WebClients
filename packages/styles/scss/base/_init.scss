@@ -43,7 +43,7 @@ body {
 			font-size: rem($base-font);
 		}
 
-		line-height: $l-h;
+		line-height: $base-line-height;
 		min-height: 100%;
 	}
 }
@@ -111,7 +111,7 @@ svg {
 }
 
 textarea {
-	min-height: $default-height-fields; // Equals pm-field inputs height
+	min-height: $default-height-fields; // Equals field inputs height
 }
 
 /*

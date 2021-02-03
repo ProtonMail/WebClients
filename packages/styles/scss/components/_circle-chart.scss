@@ -4,7 +4,7 @@ $stroke-width: 3px !default;
 // this component is used for VPN
 // and for the moment on Angular/React sidebar
 .circle-chart {
-	&__background {
+	&-background {
 		stroke: var(--color-main-area, $pm-global-grey);
 		opacity: 0.2;
 		stroke-width: $stroke-width;
@@ -16,16 +16,16 @@ $stroke-width: 3px !default;
 		}
 	}
 
-	&__circle {
+	&-circle {
 		stroke: $pm-global-success;
 		stroke-width: $stroke-width;
 		fill: transparent;
-		animation: circle-chart-fill 2s reverse;
+		animation: anime-circle-chart-fill 2s reverse;
 		transform: rotate(-90deg);
 		transform-origin: center;
 	}
 
-	&__percent {
+	&-percent {
 		fill: var(--color-main-area, #{rgba($pm-global-grey, 0.5)});
 	}
 
@@ -33,16 +33,16 @@ $stroke-width: 3px !default;
 		color: var(--color-standard-text, $pm-global-light);
 	}
 
-	.circle-bar--medium &__circle {
+	.circle-bar--medium &-circle {
 		stroke: $pm-global-attention;
 	}
 
-	.circle-bar--full &__circle {
+	.circle-bar--full &-circle {
 		stroke: $pm-global-warning;
 	}
 }
 
-@keyframes circle-chart-fill {
+@keyframes anime-circle-chart-fill {
 	to {
 		stroke-dasharray: 0 100;
 	}

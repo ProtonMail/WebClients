@@ -1,7 +1,7 @@
 $border-width: 2px !default;
 
-[class*='badgeLabel'] {
-	@extend .uppercase;
+[class*='badge-label'] {
+	@extend .text-uppercase;
 	@extend .inline-flex;
 	font-size: rem(11); // to be sure this is the same height everywhere
 	padding: 0 em(2) em(1);
@@ -12,53 +12,53 @@ $border-width: 2px !default;
 	color: white;
 }
 
-.badgeLabel-success {
+.badge-label--success {
 	@extend .bg-global-success;
 	border-color: $pm-global-success;
 }
 
-.badgeLabel-blue {
+.badge-label--blue {
 	@extend .bg-pm-blue;
 	border-color: $pm-blue;
 }
 
-.badgeLabel-green {
+.badge-label--green {
 	@extend .bg-pv-green;
 	border-color: $pv-green;
 }
 
 @if ($pm-primary==$pm-blue) {
-	.badgeLabel-primary,
-	.badgeLabel {
+	.badge-label--primary,
+	.badge-label {
 		@extend .bg-pm-blue;
 		border-color: $pm-blue;
 	}
 } @else {
-	.badgeLabel-primary,
-	.badgeLabel {
+	.badge-label--primary,
+	.badge-label {
 		@extend .bg-pv-green;
 		border-color: $pv-green;
 	}
 }
 
-.badgeLabel-grey {
+.badge-label--grey {
 	@extend .bg-global-grey;
 	border-color: $pm-global-grey;
 }
 
-.badgeLabel-greylight {
+.badge-label--greylight {
 	background: var(--bordercolor-input, $pm-global-muted);
 	border-color: var(--bordercolor-input, $pm-global-muted);
 	color: var(--color-main-area, $black);
 }
 
-.badgeLabel-warning {
+.badge-label--warning {
 	@extend .bg-global-attention;
 	border-color: $pm-global-attention;
 	color: $black;
 }
 
-.badgeLabel-error {
+.badge-label--error {
 	@extend .bg-global-warning;
 	border-color: $pm-global-warning;
 }
