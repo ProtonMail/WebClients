@@ -17,7 +17,7 @@ const WarningModalContent = ({ model }: Props) => {
     const totalEvents = totalSupported + totalEventsDiscarded;
 
     const learnMore = model.failure ? '' : IMPORT_CALENDAR_FAQ_URL;
-    const forNow = <span key="for-now" className="bold">{c('Import calendar warning').t`for now`}</span>;
+    const forNow = <span key="for-now" className="text-bold">{c('Import calendar warning').t`for now`}</span>;
     const summary =
         totalEventsDiscarded === totalEvents
             ? c('Import warning').t`No event can be imported. Click for details`

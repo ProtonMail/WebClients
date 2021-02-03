@@ -12,7 +12,7 @@ const DayButtons = ({ days, now, date, onClickDate, weekdaysLong }: Props) => {
     const result = days.map((day) => {
         return (
             <button
-                className="flex-item-fluid aligncenter calendar-grid-heading p0-5"
+                className="flex-item-fluid text-center calendar-grid-heading p0-5"
                 type="button"
                 key={day.getUTCDate()}
                 aria-current={isSameDay(day, now) ? 'date' : undefined}
@@ -23,10 +23,10 @@ const DayButtons = ({ days, now, date, onClickDate, weekdaysLong }: Props) => {
                     <span className="mauto">{day.getUTCDate()}</span>
                 </span>
 
-                <span className="calendar-grid-heading-day ellipsis bl mt0 mb0 big">
+                <span className="calendar-grid-heading-day text-ellipsis block mt0 mb0 text-lg">
                     <span className="calendar-grid-heading-day-fullname">{weekdaysLong[day.getUTCDay()]}</span>
 
-                    <span className="calendar-grid-heading-day-shortname nodesktop notablet" aria-hidden="true">
+                    <span className="calendar-grid-heading-day-shortname no-desktop no-tablet" aria-hidden="true">
                         {weekdaysLong[day.getUTCDay()][0]}
                     </span>
                 </span>

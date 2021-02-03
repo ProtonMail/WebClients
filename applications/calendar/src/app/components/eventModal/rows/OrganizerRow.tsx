@@ -24,11 +24,11 @@ const OrganizerRow = ({ model, addresses }: Props) => {
             <div className="flex flex-item-fluid p0-5" title={displayFull ? `${name} <${email}>` : email}>
                 {displayFull ? (
                     <>
-                        <div className="mw50 ellipsis">{name}</div>
-                        <div className="ml0-25 mw50 ellipsis">{`<${email}>`}</div>
+                        <div className="max-w50 text-ellipsis">{name}</div>
+                        <div className="ml0-25 max-w50 text-ellipsis">{`<${email}>`}</div>
                     </>
                 ) : (
-                    <div className="mw100 ellipsis">{email}</div>
+                    <div className="max-w100 text-ellipsis">{email}</div>
                 )}
                 <span className="color-subheader w100">{c('Label').t`Organizer`}</span>
             </div>

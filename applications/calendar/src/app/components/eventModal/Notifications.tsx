@@ -31,7 +31,7 @@ const Notifications = ({
         <>
             {notifications.map((notification, index) => {
                 return (
-                    <div className="mb0-5 flex flex-nowrap flex-items-center" key={notification.id}>
+                    <div className="mb0-5 flex flex-nowrap flex-align-items-center" key={notification.id}>
                         <NotificationInput
                             hasWhen={hasWhen}
                             hasType={hasType}

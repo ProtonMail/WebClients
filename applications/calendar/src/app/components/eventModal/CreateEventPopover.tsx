@@ -68,7 +68,7 @@ const CreateEventPopover = ({
                     e.preventDefault();
                     handleSubmit(inviteActions);
                 }}
-                className="pm-form--iconLabels"
+                className="form--icon-labels"
                 ref={formRef}
             >
                 <PopoverHeader onClose={onClose} />

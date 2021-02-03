@@ -10,7 +10,7 @@ interface Props {
     id?: string;
 }
 const IconRow = ({ children, icon, iconColor, className, title, id }: Props) => (
-    <div className="flex flex-nowrap flex-items-start mb1 pm-form--iconLabels">
+    <div className="flex flex-nowrap flex-align-items-start mb1 form--icon-labels">
         <Label className="pb0-5" htmlFor={id} title={title}>
             {icon ? (
                 <Icon name={icon} alt={title} color={iconColor} />

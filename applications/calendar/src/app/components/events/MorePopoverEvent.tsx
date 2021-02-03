@@ -60,7 +60,7 @@ const MorePopoverEvent = ({
                 formatTime={formatTime}
                 event={event}
                 key={event.id}
-                className="calendar-dayeventcell w100 alignleft"
+                className="calendar-dayeventcell w100 text-left"
                 isSelected={isSelected}
                 tzid={tzid}
                 isBeforeNow={isBeforeNow}
@@ -85,7 +85,10 @@ const MorePopoverEvent = ({
             ref={popoverRef}
         >
             <PopoverHeader onClose={onClose} className="flex-item-noshrink">
-                <h1 className="eventpopover-title lh-standard ellipsis-four-lines cut" title={`${date.getUTCDate()}`}>
+                <h1
+                    className="eventpopover-title lh-rg text-ellipsis-four-lines text-cut"
+                    title={`${date.getUTCDate()}`}
+                >
                     {dateString}
                 </h1>
             </PopoverHeader>

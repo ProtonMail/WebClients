@@ -260,7 +260,7 @@ const CalendarModal = ({
     })();
 
     return (
-        <FormModal className="pm-modal--shorterLabels w100" close={null} onClose={noop} {...modalProps} {...rest}>
+        <FormModal className="modal--shorter-labels w100" close={null} onClose={noop} {...modalProps} {...rest}>
             {section}
         </FormModal>
     );

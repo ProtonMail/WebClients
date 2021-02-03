@@ -16,7 +16,7 @@ const DayButtons = ({ days, now, date, formattedDates, onClickDate }: Props) => 
                     <button
                         type="button"
                         aria-label={formattedDates[dayIndex]}
-                        className="flex-item-fluid aligncenter calendar-monthgrid-day p0-25"
+                        className="flex-item-fluid text-center calendar-monthgrid-day p0-25"
                         key={day.getUTCDate()}
                         aria-current={isSameDay(day, now) ? 'date' : undefined}
                         aria-pressed={isSameDay(day, date) ? true : undefined}

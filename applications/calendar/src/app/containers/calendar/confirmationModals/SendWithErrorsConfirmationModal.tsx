@@ -215,11 +215,11 @@ const SendWithErrorsConfirmationModal = ({
         const error = errorMap[email];
         return (
             <li key={email}>
-                <span className="flex mw100 flex-nowrap onmobile-flex-column">
-                    <strong className="mr0-25 ellipsis" title={email}>
+                <span className="flex max-w100 flex-nowrap on-mobile-flex-column">
+                    <strong className="mr0-25 text-ellipsis" title={email}>
                         {`${email}:`}
                     </strong>
-                    <span className="ellipsis inbl mw100" title={error}>
+                    <span className="text-ellipsis inline-block max-w100" title={error}>
                         {`${error}`}
                     </span>
                 </span>

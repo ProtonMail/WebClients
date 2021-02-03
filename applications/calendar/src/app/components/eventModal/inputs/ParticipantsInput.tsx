@@ -151,7 +151,7 @@ const ParticipantsInput = ({
                 </Alert>
             )}
             {value.length > 0 && (
-                <details className="noborder mt0-25" open>
+                <details className="no-border mt0-25" open>
                     <summary>
                         {c('Event form').ngettext(
                             msgid`${numberOfParticipants} participant`,

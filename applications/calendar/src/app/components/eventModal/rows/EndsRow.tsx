@@ -59,7 +59,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
         <div className="flex-item-fluid">
             <label htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
 
-            <div className="flex flex-nowrap flex-item-fluid ontinymobile-flex-column">
+            <div className="flex flex-nowrap flex-item-fluid on-tiny-mobile-flex-column">
                 <div className="flex-item-fluid mt0-5">
                     <Select
                         value={frequencyModel.ends.type}
@@ -73,7 +73,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
                 </div>
 
                 {frequencyModel.ends.type === UNTIL && (
-                    <div className="flex-item-fluid mt0-5 ml0-5 ontinymobile-ml0">
+                    <div className="flex-item-fluid mt0-5 ml0-5 on-tiny-mobile-ml0">
                         <DateInput
                             id={UNTIL_ID}
                             value={frequencyModel.ends.until}
@@ -92,8 +92,8 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
                 )}
 
                 {frequencyModel.ends.type === AFTER_N_TIMES && (
-                    <div className="flex flex-nowrap flex-items-center flex-item-fluid mt0-5 ml0-5 ontinymobile-ml0">
-                        <div className="flex-item-fluid mw5e">
+                    <div className="flex flex-nowrap flex-align-items-center flex-item-fluid mt0-5 ml0-5 on-tiny-mobile-ml0">
+                        <div className="flex-item-fluid max-w5e">
                             <IntegerInput
                                 id={COUNT_ID}
                                 value={frequencyModel.ends.count}

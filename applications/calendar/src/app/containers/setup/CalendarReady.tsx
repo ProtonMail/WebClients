@@ -8,7 +8,7 @@ const CalendarReady = () => {
         <>
             <Alert>{c('Info')
                 .t`Your new calendar is now ready. All events in your calendar are encrypted and inaccessible to anybody other than you.`}</Alert>
-            <div className="aligncenter mb1">
+            <div className="text-center mb1">
                 <img src={calendarSvg} alt="" />
             </div>
             <Alert>{c('Info')

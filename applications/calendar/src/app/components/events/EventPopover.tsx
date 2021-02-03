@@ -68,7 +68,7 @@ const MoreButtons = ({
                     hasCaret
                     caretClassName=""
                     loading={loadingAction && !isOpen}
-                    className="flex-item-noshrink pm-button pm-button--small"
+                    className="flex-item-noshrink button button--small"
                 >
                     {emptyContent}
                 </DropdownButton>
@@ -85,14 +85,14 @@ const MoreButtons = ({
                     <DropdownMenuButton
                         data-test-id="event-popover:edit"
                         disabled={loadingAction || isCalendarDisabled}
-                        className="alignleft"
+                        className="text-left"
                         onClick={onEdit}
                     >
                         {c('Action').t`Edit`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         data-test-id="event-popover:delete"
-                        className="alignleft"
+                        className="text-left"
                         onClick={loadingAction ? noop : onDelete}
                         loading={loadingAction}
                     >
@@ -280,7 +280,7 @@ const EventPopover = ({
                         {c('Title').t`CANCELLED`}
                     </Badge>
                 )}
-                <h1 className="eventpopover-title lh-standard hyphens scroll-if-needed mb0-25" title={eventTitleSafe}>
+                <h1 className="eventpopover-title lh-rg text-hyphens scroll-if-needed mb0-25" title={eventTitleSafe}>
                     {eventTitleSafe}
                 </h1>
             </PopoverHeader>

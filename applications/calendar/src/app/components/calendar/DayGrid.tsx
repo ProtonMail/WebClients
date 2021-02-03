@@ -117,7 +117,7 @@ const DayGrid = ({
                     {rows[0].map((day) => {
                         return (
                             <div
-                                className="flex-item-fluid aligncenter calendar-daygrid-day big m0 p0-75 ellipsis"
+                                className="flex-item-fluid text-center calendar-daygrid-day text-lg m0 p0-75 text-ellipsis"
                                 key={day.getUTCDate()}
                                 aria-current={
                                     day.getUTCDay() === now.getUTCDay() && isSameMonth(date, now) ? 'true' : undefined
@@ -127,7 +127,7 @@ const DayGrid = ({
                                     {weekdaysLong[day.getUTCDay()]}
                                 </span>
                                 <span
-                                    className="calendar-grid-heading-day-shortname nodesktop notablet"
+                                    className="calendar-grid-heading-day-shortname no-desktop no-tablet"
                                     aria-hidden="true"
                                 >
                                     {weekdaysLong[day.getUTCDay()][0]}
@@ -150,7 +150,7 @@ const DayGrid = ({
                                         key={+monday}
                                         className="flex-item-fluid flex flex-column flex relative calendar-daygrid-weeknumber"
                                     >
-                                        <span className="mauto opacity-40 small">{week}</span>
+                                        <span className="mauto opacity-40 text-sm">{week}</span>
                                     </div>
                                 );
                             })}

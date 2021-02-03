@@ -24,7 +24,7 @@ const MoreRow = ({
         <Row collapseOnMobile={collapseOnMobile}>
             <Label> </Label>
             <div className="flex-item-fluid">
-                <div className="flex flex-spacebetween flex-nowrap flex-items-center">
+                <div className="flex flex-justify-space-between flex-nowrap flex-align-items-center">
                     {children}
                     {displayMore ? (
                         <LinkButton onClick={() => onChange(!hasMore)}>{hasMore ? lessText : moreText}</LinkButton>

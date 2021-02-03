@@ -63,8 +63,8 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
     return (
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Time of the event`}>
-            <div className={classnames([isAllDay && 'w50 onmobile-w100'])}>
-                <div className="flex flex-nowrap onmobile-flex-column mb0-5">
+            <div className={classnames([isAllDay && 'w50 on-mobile-w100'])}>
+                <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
                     <div className="flex flex-nowrap flex-item-fluid flex-item-grow-2">
                         <DateInput
                             id={DATE_INPUT_ID}
@@ -92,7 +92,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                     {!isAllDay && showTzSelector && (
                         <TimezoneSelector
-                            className="pm-field ml0-5 onmobile-ml0 onmobile-mt0-5 onmobile-mb0-5 flex-item-fluid"
+                            className="field ml0-5 on-mobile-ml0 on-mobile-mt0-5 on-mobile-mb0-5 flex-item-fluid"
                             id="event-start-timezone-select"
                             data-test-id="create-event-modal/start:time-zone-dropdown"
                             timezone={start.tzid}
@@ -103,7 +103,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                     )}
                 </div>
 
-                <div className="flex flex-nowrap onmobile-flex-column mb0-5">
+                <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
                     <div className="flex flex-nowrap flex-item-fluid flex-item-grow-2">
                         <DateInput
                             id="event-endDate"
@@ -135,7 +135,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                     {!isAllDay && showTzSelector && (
                         <TimezoneSelector
-                            className="pm-field ml0-5 onmobile-ml0 onmobile-mt0-5 onmobile-mb0-5 flex-item-fluid"
+                            className="field ml0-5 on-mobile-ml0 on-mobile-mt0-5 on-mobile-mb0-5 flex-item-fluid"
                             id="event-end-timezone-select"
                             data-test-id="create-event-modal/end:time-zone-dropdown"
                             timezone={end.tzid}
@@ -147,7 +147,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 </div>
             </div>
 
-            <div className="flex flex-spacebetween">
+            <div className="flex flex-justify-space-between">
                 <AllDayCheckbox
                     title={
                         model.isAllDay
