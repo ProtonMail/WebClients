@@ -53,14 +53,14 @@ const HeaderCollapsed = ({
     return (
         <div
             className={classnames([
-                'message-header message-header-collapsed flex flex-nowrap flex-items-center cursor-pointer',
+                'message-header message-header-collapsed flex flex-nowrap flex-align-items-center cursor-pointer',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'is-unread',
                 !messageLoaded && 'is-loading',
             ])}
             onClick={handleClick}
         >
-            <div className="flex flex-item-fluid flex-nowrap flex-items-center mr0-5">
+            <div className="flex flex-item-fluid flex-nowrap flex-align-items-center mr0-5">
                 <RecipientItem
                     recipientOrGroup={{ recipient: message.data?.Sender }}
                     showAddress={false}
@@ -73,17 +73,17 @@ const HeaderCollapsed = ({
                 )}
 
                 {messageLoaded && isDraftMessage && (
-                    <span className="badgeLabel-success ml0-5 flex-item-noshrink">{c('Info').t`Draft`}</span>
+                    <span className="badge-label--success ml0-5 flex-item-noshrink">{c('Info').t`Draft`}</span>
                 )}
                 {messageLoaded && isOutboxMessage && (
-                    <span className="badgeLabel-primary ml0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
+                    <span className="badge-label--primary ml0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
                 )}
             </div>
-            <div className="flex flex-items-center flex-nowrap flex-item-noshrink">
+            <div className="flex flex-align-items-center flex-nowrap flex-item-noshrink">
                 {messageLoaded ? (
                     <>
                         <ItemLabels
-                            className="nomobile"
+                            className="no-mobile"
                             element={message.data}
                             labels={labels}
                             labelID={labelID}

@@ -31,7 +31,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
     return (
         <ToolbarDropdown
             content={
-                <span className="flex flex-items-center">
+                <span className="flex flex-align-items-center">
                     <Icon className="toolbar-icon" name="bullet-points" />
                 </span>
             }
@@ -41,7 +41,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
                 <DropdownMenu>
                     <DropdownMenuButton
                         disabled={Object.values(filter).length === 0}
-                        className="alignleft"
+                        className="text-left"
                         loading={loading}
                         onClick={() => onFilter({})}
                     >
@@ -50,7 +50,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         disabled={filter.Unread === 1}
-                        className="alignleft"
+                        className="text-left"
                         loading={loading}
                         onClick={() => onFilter({ Unread: 1 })}
                     >
@@ -59,7 +59,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         disabled={filter.Unread === 0}
-                        className="alignleft"
+                        className="text-left"
                         loading={loading}
                         onClick={() => onFilter({ Unread: 0 })}
                     >
@@ -69,7 +69,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
                     {showMovedMessage && [
                         <DropdownMenuButton
                             key={0}
-                            className="alignleft"
+                            className="text-left"
                             loading={loading}
                             disabled={isShowMoved}
                             onClick={handleMovedMessage}
@@ -79,7 +79,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
                         </DropdownMenuButton>,
                         <DropdownMenuButton
                             key={1}
-                            className="alignleft"
+                            className="text-left"
                             loading={loading}
                             disabled={!isShowMoved}
                             onClick={handleMovedMessage}

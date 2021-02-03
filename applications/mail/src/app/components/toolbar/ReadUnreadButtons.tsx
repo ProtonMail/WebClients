@@ -36,7 +36,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
         <>
             {c('Action').t`Mark as read`}
             <br />
-            <kbd className="bg-global-altgrey noborder">R</kbd>
+            <kbd className="bg-global-altgrey no-border">R</kbd>
         </>
     ) : (
         c('Action').t`Mark as read`
@@ -46,7 +46,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
         <>
             {c('Action').t`Mark as unread`}
             <br />
-            <kbd className="bg-global-altgrey noborder">U</kbd>
+            <kbd className="bg-global-altgrey no-border">U</kbd>
         </>
     ) : (
         c('Action').t`Mark as unread`
@@ -59,7 +59,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
             loading={loading}
             disabled={!selectedIDs.length}
             onClick={() => withLoading(handleMarkAs(READ))}
-            className="notablet nomobile"
+            className="no-tablet no-mobile"
             data-test-id="toolbar:read"
         >
             <Icon className="toolbar-icon mauto" name="read" />

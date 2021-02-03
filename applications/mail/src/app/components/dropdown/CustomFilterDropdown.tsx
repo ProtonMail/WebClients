@@ -148,7 +148,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
     return (
         <>
             <div className="m1">
-                <span className="bold" tabIndex={-2}>
+                <span className="text-bold" tabIndex={-2}>
                     {c('CustomFilter').t`Filter on`}
                 </span>
             </div>
@@ -156,7 +156,7 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
                 {FILTER_TYPES.map((filterType: FilterType) => (
                     <li
                         key={filterType.value}
-                        className="dropDown-item w100 flex flex-nowrap flex-items-center p0-5 pl1 pr1"
+                        className="dropdown-item w100 flex flex-nowrap flex-align-items-center p0-5 pl1 pr1"
                     >
                         <Checkbox
                             className="flex-item-noshrink"
@@ -164,7 +164,11 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
                             checked={filtersState[filterType.value]}
                             onChange={() => toggleFilterType(filterType.value)}
                         />
-                        <label htmlFor={filterType.value} title={filterType.label} className="flex-item-fluid ellipsis">
+                        <label
+                            htmlFor={filterType.value}
+                            title={filterType.label}
+                            className="flex-item-fluid text-ellipsis"
+                        >
                             {filterType.label}
                         </label>
                     </li>

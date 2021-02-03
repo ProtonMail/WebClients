@@ -10,8 +10,8 @@ interface Props {
 
 const TrashWarning = ({ inTrash, filter, onToggle }: Props) => {
     return (
-        <div className="bordered-container m0-5 mb1 p1 flex flex-nowrap flex-items-center flex-spacebetween trashed-messages">
-            <div className="flex flex-nowrap flex-items-center">
+        <div className="bordered-container m0-5 mb1 p1 flex flex-nowrap flex-align-items-center flex-justify-space-between trashed-messages">
+            <div className="flex flex-nowrap flex-align-items-center">
                 <Icon name="trash" className="mr1" />
                 <span>
                     {inTrash
@@ -19,7 +19,7 @@ const TrashWarning = ({ inTrash, filter, onToggle }: Props) => {
                         : c('Info').t`This conversation contains trashed messages.`}
                 </span>
             </div>
-            <InlineLinkButton onClick={onToggle} className="ml0-5 underline">
+            <InlineLinkButton onClick={onToggle} className="ml0-5 text-underline">
                 {inTrash
                     ? filter
                         ? c('Action').t`Show messages`

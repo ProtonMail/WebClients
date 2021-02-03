@@ -30,7 +30,7 @@ const EncryptionStatusIcon = ({
     const tooltip = useTooltip ? text : undefined;
 
     return (
-        <Tooltip title={tooltip} className={classnames(['inline-flex flex-item-noshrink alignmiddle', className])}>
+        <Tooltip title={tooltip} className={classnames(['inline-flex flex-item-noshrink align-middle', className])}>
             <Href href={href} className="flex flex-item-noshrink mauto">
                 <Icon
                     viewBox={iconName === 'attention' ? '0 0 16 16' : '0 0 18 18'}

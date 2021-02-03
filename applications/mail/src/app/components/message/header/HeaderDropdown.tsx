@@ -69,7 +69,7 @@ const HeaderDropdown = ({
                 disabled={loading}
                 {...rest}
             >
-                <Tooltip className="increase-surface-click" title={title}>
+                <Tooltip className="increase-click-surface" title={title}>
                     {content}
                 </Tooltip>
             </DropdownButton>

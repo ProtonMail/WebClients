@@ -37,11 +37,11 @@ const ComposerInnerModal = ({ title, disabled = false, children, onCancel, onSub
 
     return (
         <div
-            className="composer-inner-modal absolute w100 h100 flex flex-justify-center flex-items-center"
+            className="composer-inner-modal absolute w100 h100 flex flex-justify-center flex-align-items-center"
             ref={rootRef}
             {...focusTrapProps}
         >
-            <div className="pm-modal">
+            <div className="modal">
                 <HeaderModal modalTitleID="" hasClose={false} onClose={onCancel}>
                     {title}
                 </HeaderModal>

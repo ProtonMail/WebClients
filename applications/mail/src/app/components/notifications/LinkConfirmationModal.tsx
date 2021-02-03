@@ -44,9 +44,9 @@ const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
             {...rest}
             {...additionalModalProps}
         >
-            <Alert type="warning" className="break">
+            <Alert type="warning" className="text-break">
                 {`${c('Info').t`You are about to open another browser tab and visit:`} `}
-                <span className="bold">{link}</span>
+                <span className="text-bold">{link}</span>
             </Alert>
 
             {punyCodeLink && (

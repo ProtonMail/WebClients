@@ -179,7 +179,7 @@
 	// display of email default none except when details
 	.message-recipient-item-address,
 	.message-recipient-item-label {
-		@extend .ellipsis;
+		@extend .text-ellipsis;
 
 		@include respond-to($breakpoint-small) {
 			display: block;

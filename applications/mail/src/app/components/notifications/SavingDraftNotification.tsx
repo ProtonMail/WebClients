@@ -24,7 +24,7 @@ const SavingDraftNotification = ({ promise, onDiscard }: Props) => {
             <>
                 <span className="mr1">{c('Info').t`Draft saved`}</span>
                 <LinkButton
-                    className="alignbaseline p0 nodecoration bold pm-button--currentColor"
+                    className="align-baseline p0 text-no-decoration text-bold button--currentColor"
                     onClick={onDiscard}
                 >{c('Action').t`Discard`}</LinkButton>
             </>

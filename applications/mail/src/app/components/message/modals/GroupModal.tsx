@@ -43,7 +43,7 @@ const GroupModal = ({ recipientGroup, group, globalIcon, mapStatusIcons, onClose
                     return (
                         <li key={contact.ID} className="mb0-5">
                             <Checkbox id={id} checked={isChecked(contact)} disabled />
-                            <span className="min-w1-4e inline-flex alignmiddle">
+                            <span className="min-w1-4e inline-flex align-middle">
                                 {icon && <EncryptionStatusIcon {...icon} />}
                             </span>
                             <Label htmlFor={id} className="pt0 pl0-5">

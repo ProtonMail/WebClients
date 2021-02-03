@@ -35,7 +35,7 @@ const ExtraReadReceipt = ({ message }: Props) => {
                 <InlineLinkButton
                     onClick={() => withLoading(handleClick())}
                     disabled={loading}
-                    className="color-currentColor underline"
+                    className="color-currentColor text-underline"
                 >{c('Action').t`Send receipt`}</InlineLinkButton>
             </span>
         </div>

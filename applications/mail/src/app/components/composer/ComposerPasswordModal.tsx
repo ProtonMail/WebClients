@@ -77,7 +77,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                     {c('Info').t`Learn more`}
                 </Href>
             </Alert>
-            <div className="flex flex-nowrap mb1 onmobile-flex-column">
+            <div className="flex flex-nowrap mb1 on-mobile-flex-column">
                 <Label htmlFor={`composer-password-${uid}`}>{c('Info').t`Message Password`}</Label>
                 <div className="flex-item-fluid">
                     <PasswordInput
@@ -90,7 +90,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                     />
                 </div>
             </div>
-            <div className="flex flex-nowrap mb1 onmobile-flex-column">
+            <div className="flex flex-nowrap mb1 on-mobile-flex-column">
                 <Label htmlFor={`composer-password-verif-${uid}`}>{c('Info').t`Confirm Password`}</Label>
                 <div className="flex-item-fluid">
                     <PasswordInput
@@ -103,7 +103,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                     />
                 </div>
             </div>
-            <div className="flex flex-nowrap mb1 onmobile-flex-column">
+            <div className="flex flex-nowrap mb1 on-mobile-flex-column">
                 <Label htmlFor={`composer-password-hint-${uid}`}>{c('Info').t`Password Hint (Optional)`}</Label>
                 <div className="flex-item-fluid">
                     <Input

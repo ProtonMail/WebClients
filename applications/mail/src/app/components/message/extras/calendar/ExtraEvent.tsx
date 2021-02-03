@@ -258,7 +258,7 @@ const ExtraEvent = ({
                 <span className="pl0-5 pr0-5 flex-item-fluid">{message}</span>
                 {canTryAgain && (
                     <span className="flex-item-noshrink flex">
-                        <InlineLinkButton onClick={handleRetry} className="underline color-currentColor">
+                        <InlineLinkButton onClick={handleRetry} className="text-underline color-currentColor">
                             {c('Action').t`Try again`}
                         </InlineLinkButton>
                     </span>
@@ -273,9 +273,9 @@ const ExtraEvent = ({
 
     return (
         <div className="rounded bordered bg-white-dm mb1 pl1 pr1 pt0-5 pb0-5 scroll-if-needed">
-            <header className="flex flex-nowrap flex-items-center">
+            <header className="flex flex-nowrap flex-align-items-center">
                 <Icon name="calendar" className="mr0-5 flex-item-noshrink" />
-                <strong className="ellipsis flex-item-fluid" title={title}>
+                <strong className="text-ellipsis flex-item-fluid" title={title}>
                     {title}
                 </strong>
             </header>

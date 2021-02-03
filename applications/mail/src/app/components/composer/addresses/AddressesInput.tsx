@@ -111,7 +111,7 @@ const AddressesInput = ({
 
     const dragPlaceholder = (
         <div
-            className="composer-addresses-item-drag-placeholder mt0-25 mb0-25 mr0-5 mw100 no-pointer-events"
+            className="composer-addresses-item-drag-placeholder mt0-25 mb0-25 mr0-5 max-w100 no-pointer-events"
             style={{ width: `${placeholderSize?.width}px`, height: `${placeholderSize?.height}px` }}
         />
     );
@@ -120,7 +120,7 @@ const AddressesInput = ({
         <div className="composer-addresses-autocomplete w100 flex-item-fluid relative" ref={anchorRef}>
             <div
                 className={classnames([
-                    'composer-addresses-container pm-field flex-item-fluid bordered-container',
+                    'composer-addresses-container field flex-item-fluid bordered-container',
                     !expanded && 'composer-addresses-container-closed',
                 ])}
                 onClick={handleClick}
@@ -151,7 +151,7 @@ const AddressesInput = ({
                     </Fragment>
                 ))}
                 {placeholderPosition === recipientsOrGroups.length && dragPlaceholder}
-                <div className="flex-item-fluid flex flex-items-center composer-addresses-input-container">
+                <div className="flex-item-fluid flex flex-align-items-center composer-addresses-input-container">
                     <AddressesAutocomplete
                         id={id}
                         anchorRef={anchorRef}

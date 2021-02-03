@@ -194,12 +194,12 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
 
     return (
         <>
-            <div className="flex flex-spacebetween flex-items-center m1 mb0">
-                <span className="bold" tabIndex={-2}>
+            <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
+                <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Label as`}
                 </span>
                 <Tooltip title={c('Title').t`Create label`}>
-                    <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
+                    <PrimaryButton className="button--small button--for-smallicon" onClick={handleCreate}>
                         <Icon name="label" className="flex-item-noshrink mr0-25" />+
                     </PrimaryButton>
                 </Tooltip>
@@ -213,17 +213,17 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                     autoFocus={autoFocusSearch}
                 />
             </div>
-            <div className="scroll-if-needed scroll-smooth-touch mt1 labelDropdown-list-container">
+            <div className="scroll-if-needed scroll-smooth-touch mt1 label-dropdown-list-container">
                 <ul className="unstyled mt0 mb0">
                     {list.map(({ ID = '', Name = '', Color = '' }) => (
                         <li
                             key={ID}
-                            className="dropDown-item dropDown-item-button relative cursor-pointer w100 flex flex-nowrap flex-items-center pt0-5 pb0-5 pl1 pr1"
+                            className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
                         >
                             <label
                                 htmlFor={labelCheckID(ID)}
                                 title={Name}
-                                className="flex flex-nowrap flex-items-center increase-surface-click flex-item-fluid"
+                                className="flex flex-nowrap flex-align-items-center increase-click-surface flex-item-fluid"
                             >
                                 <Icon
                                     name="circle"
@@ -232,7 +232,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                                     className="flex-item-noshrink relative ml0-25 mr0-5"
                                     onClick={handleClickIcon(ID)}
                                 />
-                                <span className="ellipsis">
+                                <span className="text-ellipsis">
                                     <Mark value={search}>{Name}</Mark>
                                 </span>
                             </label>
@@ -246,7 +246,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                         </li>
                     ))}
                     {list.length === 0 && (
-                        <li key="empty" className="dropDown-item w100 pt0-5 pb0-5 pl1 pr1">
+                        <li key="empty" className="dropdown-item w100 pt0-5 pb0-5 pl1 pr1">
                             {c('Info').t`No label found`}
                         </li>
                     )}

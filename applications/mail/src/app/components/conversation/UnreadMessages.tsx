@@ -51,7 +51,7 @@ const UnreadMessages = ({ conversationID, messages, onClick }: Props) => {
     return (
         <span className="absolute centered-absolute-horizontal bottom pb1" aria-live="assertive" aria-atomic="true">
             <button
-                className="pm-button pm-button--primary pm-button--pill flex flex-nowrap flex-items-center conversation-unread-messages"
+                className="button button--primary button--pill flex flex-nowrap flex-align-items-center conversation-unread-messages"
                 type="button"
                 onClick={handleClick}
             >

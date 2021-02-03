@@ -67,7 +67,7 @@ const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onC
                 breakpoints={breakpoints}
             />
             <div
-                className={classnames(['scroll-if-needed flex-item-fluid pt0-5 mw100', hidden && 'hidden'])}
+                className={classnames(['scroll-if-needed flex-item-fluid pt0-5 max-w100', hidden && 'hidden'])}
                 ref={messageRef}
                 tabIndex={-1}
                 style={{ outline: 'none' }}

@@ -21,7 +21,7 @@ const EmptyView = ({ labelID, isSearch }: Props) => {
 
     return (
         <div className="mauto p1">
-            <figure className="flex-item-fluid aligncenter p3">
+            <figure className="flex-item-fluid text-center p3">
                 {isSearch && (
                     <img src={noResultSearchSvg} className="hauto" alt={c('Search - no results').t`No results found`} />
                 )}
@@ -37,7 +37,7 @@ const EmptyView = ({ labelID, isSearch }: Props) => {
                 )}
 
                 <figcaption className="mt2">
-                    <h3 className="bold">
+                    <h3 className="text-bold">
                         {isSearch
                             ? c('Search - no results').t`No results found`
                             : isFolder

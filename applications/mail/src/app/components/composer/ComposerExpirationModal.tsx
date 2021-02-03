@@ -94,12 +94,12 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                 <br />
                 <Href url="https://protonmail.com/support/knowledge-base/expiration/">{c('Info').t`Learn more`}</Href>
             </Alert>
-            <div className="flex flex-nowrap mt2 flex-items-center onmobile-flex-column">
+            <div className="flex flex-nowrap mt2 flex-align-items-center on-mobile-flex-column">
                 <Label>{c('Info').t`This message will expire in`}</Label>
                 <span>
                     <select
                         id={`composer-expiration-days-${uid}`}
-                        className="pm-field mr0-25"
+                        className="field mr0-25"
                         value={days}
                         onChange={handleChange(setDays)}
                         placeholder={c('Info').t`Days`}
@@ -109,7 +109,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                     <label htmlFor={`composer-expiration-days-${uid}`} className="mr0-5">{c('Info').t`Days`}</label>
                     <select
                         id={`composer-expiration-hours-${uid}`}
-                        className="pm-field mr0-25"
+                        className="field mr0-25"
                         value={hours}
                         onChange={handleChange(setHours)}
                         disabled={days === 28}

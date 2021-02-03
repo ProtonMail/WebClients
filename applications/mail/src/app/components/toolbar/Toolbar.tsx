@@ -79,7 +79,7 @@ const Toolbar = ({
         <>
             {c('Title').t`Move to`}
             <br />
-            <kbd className="bg-global-altgrey noborder">M</kbd>
+            <kbd className="bg-global-altgrey no-border">M</kbd>
         </>
     ) : (
         c('Title').t`Move to`
@@ -89,14 +89,14 @@ const Toolbar = ({
         <>
             {c('Title').t`Label as`}
             <br />
-            <kbd className="bg-global-altgrey noborder">L</kbd>
+            <kbd className="bg-global-altgrey no-border">L</kbd>
         </>
     ) : (
         c('Title').t`Label as`
     );
 
     return (
-        <nav className="toolbar toolbar--heavy flex noprint flex-spacebetween">
+        <nav className="toolbar toolbar--heavy flex no-print flex-justify-space-between">
             <div className="flex">
                 {listInView ? (
                     <SelectAll
@@ -132,12 +132,12 @@ const Toolbar = ({
                     noMaxSize
                     disabled={!selectedIDs || !selectedIDs.length}
                     content={
-                        <span className="flex flex-items-center">
+                        <span className="flex flex-align-items-center">
                             <Icon className="toolbar-icon" name="folder" />
                         </span>
                     }
-                    dropDownClassName="moveDropdown"
-                    className="moveDropdownButton"
+                    dropDownClassName="move-dropdown"
+                    className="move-dropdown-button"
                     title={titleMove}
                     data-test-id="toolbar:moveto"
                     externalToggleRef={moveDropdownToggleRef}
@@ -159,12 +159,12 @@ const Toolbar = ({
                     noMaxSize
                     disabled={!selectedIDs || !selectedIDs.length}
                     content={
-                        <span className="flex flex-items-center">
+                        <span className="flex flex-align-items-center">
                             <Icon className="toolbar-icon" name="label" />
                         </span>
                     }
-                    dropDownClassName="labelDropdown"
-                    className="labelDropdownButton"
+                    dropDownClassName="label-dropdown"
+                    className="label-dropdown-button"
                     title={titleLabel}
                     data-test-id="toolbar:labelas"
                     externalToggleRef={labelDropdownToggleRef}

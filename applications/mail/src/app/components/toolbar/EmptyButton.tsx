@@ -50,9 +50,9 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
         <>
             {title}
             <br />
-            <kbd className="bg-global-altgrey noborder">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey noborder">Backspace</kbd>
+            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="bg-global-altgrey no-border">Backspace</kbd>
         </>
     ) : (
         title

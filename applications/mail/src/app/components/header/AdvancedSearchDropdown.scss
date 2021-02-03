@@ -5,7 +5,7 @@
     @include respond-to(1200, 'min') {
         max-width: calc(100vw * #{$conversations-column-width/100%} - 1em);
     }
-    &-label.pm-label {
+    &-label.label {
         width: 11em;
     }
     .composer-addresses-container.composer-addresses-container-closed {

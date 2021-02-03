@@ -11,7 +11,7 @@ const ExtraEventParticipants = ({ list = [] }: Props) => {
     }
 
     return (
-        <div className="break">
+        <div className="text-break">
             {list.map((participant, i) => {
                 const { displayEmail, displayName } = participant;
                 const isLast = i === list.length - 1;

@@ -11,32 +11,32 @@ interface Props {
 
 const EditorEmbeddedModal = ({ files, onClose, onSelect }: Props) => {
     return (
-        <div className="composer-editor-embedded absolute w100 h100 flex flex-justify-center flex-items-center">
-            <div className="pm-modal pm-modal--smaller">
+        <div className="composer-editor-embedded absolute w100 h100 flex flex-justify-center flex-align-items-center">
+            <div className="modal modal--smaller">
                 <HeaderModal modalTitleID="" hasClose={false} onClose={onClose}>
                     {c('Info').ngettext(msgid`Insert image as`, `Insert images as`, files.length)}
                 </HeaderModal>
                 <footer className="p2 pt0 flex flex-column flex-nowrap">
-                    <span className="mb0-5 w100 flex flex-row flex-items-center autotinymobile">
-                        <span className="flex-item-fluid autotinymobile">
+                    <span className="mb0-5 w100 flex flex-row flex-align-items-center auto-tiny-mobile">
+                        <span className="flex-item-fluid auto-tiny-mobile">
                             <Button
-                                className="pm-button--primary w100"
+                                className="button--primary w100"
                                 onClick={() => onSelect(ATTACHMENT_ACTION.ATTACHMENT)}
                             >
                                 {c('Action').t`Attachment`}
                             </Button>
                         </span>
-                        <span className="ml1 mr1 w5e autotinymobile ontinymobile-mt1 ontinymobile-mb1">{c('Info')
+                        <span className="ml1 mr1 w5e auto-tiny-mobile on-tiny-mobile-mt1 on-tiny-mobile-mb1">{c('Info')
                             .t`or`}</span>
-                        <span className="flex-item-fluid autotinymobile">
+                        <span className="flex-item-fluid auto-tiny-mobile">
                             <Button
-                                className="pm-button--primary w100"
+                                className="button--primary w100"
                                 onClick={() => onSelect(ATTACHMENT_ACTION.INLINE)}
                             >{c('Action').t`Inline`}</Button>
                         </span>
                     </span>
                     <span className="w100">
-                        <Button className="pm-button--link nodecoration" onClick={onClose}>
+                        <Button className="button--link text-no-decoration" onClick={onClose}>
                             {c('Action').t`Cancel action`}
                         </Button>
                     </span>

@@ -56,11 +56,11 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
     return (
         <div className="message-detailed-header-extra border-top pt0-5">
             {icon && (
-                <div className="mb0-5 flex flex-nowrap flex-items-center">
+                <div className="mb0-5 flex flex-nowrap flex-align-items-center">
                     <span className="container-to flex flex-justify-center">
                         <EncryptionStatusIcon useTooltip={false} {...icon} />
                     </span>
-                    <span className="ellipsis" title={icon.text}>
+                    <span className="text-ellipsis" title={icon.text}>
                         {icon.text}
                     </span>
                 </div>
@@ -69,7 +69,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                 <span className="container-to flex">
                     <Icon name="calendar" className="mauto" alt={c('Label').t`Date:`} />
                 </span>
-                <span className="flex-self-vcenter mr0-5 ellipsis">
+                <span className="flex-align-self-center mr0-5 text-ellipsis">
                     <ItemDate element={message.data} labelID={labelID} mode="full" />
                 </span>
             </div>
@@ -85,7 +85,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                         />
                     </span>
                 </span>
-                <span className="flex-self-vcenter mr0-5 ellipsis" title={locationText}>
+                <span className="flex-align-self-center mr0-5 text-ellipsis" title={locationText}>
                     {locationText}
                 </span>
             </div>
@@ -93,7 +93,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                 <span className="container-to flex">
                     <Icon name="user-storage" className="mauto" alt={c('Label').t`Size:`} />
                 </span>
-                <span className="flex-self-vcenter mr0-5 ellipsis" title={sizeText}>
+                <span className="flex-align-self-center mr0-5 text-ellipsis" title={sizeText}>
                     {sizeText}
                 </span>
             </div>
@@ -102,7 +102,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
                     <span className="container-to flex">
                         <Icon name="attach" className="mauto" alt={c('Alt').t`Has attachments`} />
                     </span>
-                    <span className="flex-self-vcenter mr0-5 ellipsis" title={attachmentsText}>
+                    <span className="flex-align-self-center mr0-5 text-ellipsis" title={attachmentsText}>
                         {attachmentsText}
                     </span>
                 </div>

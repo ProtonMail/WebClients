@@ -114,12 +114,12 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
 
     return (
         <>
-            <div className="flex flex-spacebetween flex-items-center m1 mb0">
-                <span className="bold" tabIndex={-2}>
+            <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
+                <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
                 </span>
                 <Tooltip title={c('Title').t`Create folder`}>
-                    <PrimaryButton className="pm-button--small pm-button--for-smallicon" onClick={handleCreate}>
+                    <PrimaryButton className="button--small button--for-smallicon" onClick={handleCreate}>
                         <Icon name="folder" className="flex-item-noshrink mr0-25" />+
                     </PrimaryButton>
                 </Tooltip>
@@ -133,20 +133,20 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     autoFocus={autoFocusSearch}
                 />
             </div>
-            <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch mt1 moveDropdown-list-container">
+            <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch mt1 move-dropdown-list-container">
                 <ul className="unstyled mt0 mb0">
                     {list.map((folder: FolderItem) => {
                         return (
-                            <li key={folder.ID} className="dropDown-item">
+                            <li key={folder.ID} className="dropdown-item">
                                 <button
                                     data-level={folder.level}
                                     type="button"
                                     disabled={loading}
-                                    className="dropDown-item-button w100 flex flex-nowrap flex-items-center pl1 pr1 pt0-5 pb0-5"
+                                    className="dropdown-item-button w100 flex flex-nowrap flex-align-items-center pl1 pr1 pt0-5 pb0-5"
                                     onClick={() => withLoading(handleMove(folder))}
                                 >
                                     <Icon name={folder.icon || 'folder'} className="flex-item-noshrink mr0-5" />
-                                    <span className="ellipsis" title={folder.Name}>
+                                    <span className="text-ellipsis" title={folder.Name}>
                                         <Mark value={search}>{folder.Name}</Mark>
                                     </span>
                                 </button>
@@ -154,7 +154,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                         );
                     })}
                     {list.length === 0 && (
-                        <li key="empty" className="dropDown-item w100 pt0-5 pb0-5 pl1 pr1">
+                        <li key="empty" className="dropdown-item w100 pt0-5 pb0-5 pl1 pr1">
                             {c('Info').t`No folder found`}
                         </li>
                     )}

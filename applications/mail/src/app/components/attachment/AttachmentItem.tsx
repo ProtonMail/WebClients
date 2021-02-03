@@ -134,9 +134,9 @@ const AttachmentItem = ({
                         type="button"
                         onClick={handleAction(true)}
                     >
-                        <span className="mtauto mbauto flex flex-items-center flex-nowrap">
-                            <span className="ellipsis pr0-25 alignbaseline inbl">{name}</span>
-                            <span className="message-attachmentSize alignbaseline inbl flex-item-noshrink">
+                        <span className="mtauto mbauto flex flex-align-items-center flex-nowrap">
+                            <span className="text-ellipsis pr0-25 align-baseline inline-block">{name}</span>
+                            <span className="message-attachmentSize align-baseline inline-block flex-item-noshrink">
                                 {humanAttachmentSize}
                             </span>
                         </span>

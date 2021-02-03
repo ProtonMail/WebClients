@@ -43,12 +43,12 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
             onEnter={handlePrint}
             onSubmit={handlePrint}
             onClose={handleClose}
-            className="pm-modal--wider "
+            className="modal--wider "
             {...rest}
         >
             <div className="message-print">
                 <div className="message-print-header pb1 mb1">
-                    <h2 className="message-print-subject bold pb0-5 mb0-5">{message.data?.Subject}</h2>
+                    <h2 className="message-print-subject text-bold pb0-5 mb0-5">{message.data?.Subject}</h2>
                     <RecipientType label={c('Label').t`From:`}>
                         {getRecipientLabel(sender as Recipient, true)}{' '}
                         <span className="opacity-50">&lt;{sender?.Address}&gt;</span>

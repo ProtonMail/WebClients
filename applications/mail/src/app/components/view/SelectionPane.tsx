@@ -62,9 +62,9 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const text = isCustomLabel ? labelText : folderText;
 
     return (
-        <div className="mauto aligncenter p2 mw100">
+        <div className="mauto text-center p2 max-w100">
             {checkeds === 0 && labelName && (
-                <h3 className="bold lh-standard ellipsis" title={labelName}>
+                <h3 className="text-bold lh-rg text-ellipsis" title={labelName}>
                     {labelName}
                 </h3>
             )}
