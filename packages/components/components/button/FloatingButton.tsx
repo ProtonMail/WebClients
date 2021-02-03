@@ -10,7 +10,7 @@ interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLB
 }
 const FloatingButton = ({ icon, title, className, ...rest }: Props) => {
     return (
-        <PrimaryButton className={classnames(['compose-fab flex', className])} {...rest}>
+        <PrimaryButton className={classnames(['fab flex', className])} {...rest}>
             <Icon size={24} className="mauto" name={icon} />
             {title ? <span className="sr-only">{title}</span> : null}
         </PrimaryButton>

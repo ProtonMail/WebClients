@@ -141,7 +141,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                 <div className="mb1">
                     <Button
                         onClick={() => changeProvider(PROVIDER_INSTRUCTIONS.GMAIL)}
-                        className="inline-flex flex-items-center"
+                        className="inline-flex flex-align-items-center"
                     >
                         <Icon name="gmail" className="mr0-5" />
                         <span>{c('Provider').t`Gmail`}</span>
@@ -158,7 +158,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                 <div className="mb1">
                     <Button
                         onClick={() => changeProvider(PROVIDER_INSTRUCTIONS.YAHOO)}
-                        className="inline-flex flex-items-center"
+                        className="inline-flex flex-align-items-center"
                     >
                         <Icon name="yahoo" className="mr0-5" />
                         <span>{c('Provider').t`Yahoo Mail`}</span>

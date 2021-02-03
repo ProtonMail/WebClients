@@ -100,7 +100,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions, onAddA
         }
     };
 
-    const listItemClassName = 'flex flex-items-center w100 pl1 pr1 pt0-75 pb0-75 border-bottom alignleft';
+    const listItemClassName = 'flex flex-align-items-center w100 pl1 pr1 pt0-75 pb0-75 border-bottom text-left';
 
     const inner = () => {
         if (error) {
@@ -121,23 +121,23 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions, onAddA
             return (
                 <button
                     key={LocalID}
-                    className={`${listItemClassName} button-showOnHover button-account`}
+                    className={`${listItemClassName} button-show-on-hover button-account`}
                     onClick={() => handleClickSession(LocalID)}
                 >
-                    <span className="dropDown-logout-initials rounded p0-25 inline-flex bg-global-grey color-white">
-                        <span className="dropDown-logout-text center semibold" aria-hidden="true">
+                    <span className="dropdown-logout-initials rounded p0-25 inline-flex bg-global-grey color-white">
+                        <span className="dropdown-logout-text center text-semibold" aria-hidden="true">
                             {initials}
                         </span>
                     </span>
                     <span className="flex-item-fluid flex flex-column pl1 pr1">
-                        <span className="semibold ellipsis inbl mw100" title={nameToDisplay}>
+                        <span className="text-semibold text-ellipsis inline-block max-w100" title={nameToDisplay}>
                             {nameToDisplay}
                         </span>
-                        <span className="ellipsis inbl mw100" title={PrimaryEmail}>
+                        <span className="text-ellipsis inline-block max-w100" title={PrimaryEmail}>
                             {PrimaryEmail}
                         </span>
                     </span>
-                    <span className="nonvisible bl no-scroll button-showOnHover-element button-account-login semibold small m0">
+                    <span className="visibility-hidden block no-scroll button-show-on-hover-element button-account-login text-semibold text-sm m0">
                         {loadingMap[LocalID] ? <LoaderIcon /> : c('Action').t`Sign in`}
                     </span>
                 </button>
@@ -157,7 +157,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions, onAddA
                 <div className="button-account-container-inner">
                     {inner()}
                     <div className="relative p1">
-                        <LinkButton className="semibold increase-surface-click" onClick={onAddAccount}>{c('Action')
+                        <LinkButton className="text-semibold increase-click-surface" onClick={onAddAccount}>{c('Action')
                             .t`Add account`}</LinkButton>
                     </div>
                 </div>

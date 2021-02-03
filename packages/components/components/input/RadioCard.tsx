@@ -14,7 +14,7 @@ interface Props {
 const RadioCard = ({ label, name, id, checked, children, onChange, ...rest }: Props) => {
     return (
         <Radio
-            className="mr1 mb1 bordered-container p1 inbl"
+            className="mr1 mb1 bordered-container p1 inline-block"
             name={name}
             id={id}
             onChange={onChange}

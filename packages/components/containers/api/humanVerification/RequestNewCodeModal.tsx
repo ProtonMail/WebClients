@@ -19,12 +19,13 @@ const RequestNewCodeModal = ({ email, phone, onEdit, onResend, ...rest }: Props)
             title={c('Title').t`Request new verification code`}
             footer={
                 <>
-                    <div className="flex flex-spacebetween flex-nowrap ontinymobile-flex-wrap w100 ontinymobile-flex-column">
-                        <ResetButton className="onmobile-flex-self-end onmobile-mt3-5 ontinymobile-mb1">{c('Action')
-                            .t`Cancel`}</ResetButton>
-                        <div className="flex onmobile-flex-column onmobile-ml1 ontinymobile-ml0">
+                    <div className="flex flex-justify-space-between flex-nowrap on-tiny-mobile-flex-wrap w100 on-tiny-mobile-flex-column">
+                        <ResetButton className="on-mobile-flex-align-self-end on-mobile-mt3-5 on-tiny-mobile-mb1">{c(
+                            'Action'
+                        ).t`Cancel`}</ResetButton>
+                        <div className="flex on-mobile-flex-column on-mobile-ml1 on-tiny-mobile-ml0">
                             <Button
-                                className="mr1 onmobile-mb1"
+                                className="mr1 on-mobile-mb1"
                                 onClick={() => {
                                     rest.onClose();
                                     onEdit();

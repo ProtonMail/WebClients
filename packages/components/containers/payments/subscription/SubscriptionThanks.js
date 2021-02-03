@@ -15,17 +15,17 @@ const SubscriptionThanks = ({ method = '', onClose }) => {
 
     return (
         <>
-            <p className="aligncenter mb1">
+            <p className="text-center mb1">
                 {[PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method)
                     ? c('Info').t`Your account will be updated once the payment is cleared.`
                     : c('Info').t`Your account has been successfully updated.`}
             </p>
-            <p className="aligncenter mb2">{c('Info')
+            <p className="text-center mb2">{c('Info')
                 .t`Download your favorite app today and take privacy with you everywhere you go.`}</p>
-            <div className="aligncenter mb2">
+            <div className="text-center mb2">
                 <img src={isVPN ? vpnLandscapeSvg : mailLandscapeSvg} alt="landscape" />
             </div>
-            <div className="mb2 aligncenter">
+            <div className="mb2 text-center">
                 <Href
                     url={
                         isVPN
@@ -46,7 +46,7 @@ const SubscriptionThanks = ({ method = '', onClose }) => {
                     <img width="150" src={appStoreSvg} alt="App Store" />
                 </Href>
             </div>
-            <div className="aligncenter mb2">
+            <div className="text-center mb2">
                 <PrimaryButton onClick={onClose}>{c('Action').t`Close`}</PrimaryButton>
             </div>
         </>

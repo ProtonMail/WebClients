@@ -50,13 +50,13 @@ const AccountSupportDropdown = ({ className, children, noCaret = false }: Props)
                         <>
                             <Link
                                 to="/reset-password"
-                                className="dropDown-item-link w100 pr1 pl1 pt0-5 pb0-5 bl nodecoration flex flex-nowrap alignleft"
+                                className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration flex flex-nowrap text-left"
                             >
                                 {c('Link').t`Reset password`}
                             </Link>
                             <Link
                                 to="/forgot-username"
-                                className="dropDown-item-link w100 pr1 pl1 pt0-5 pb0-5 bl nodecoration flex flex-nowrap alignleft"
+                                className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration flex flex-nowrap text-left"
                             >
                                 {c('Link').t`Forgot username?`}
                             </Link>
@@ -67,32 +67,32 @@ const AccountSupportDropdown = ({ className, children, noCaret = false }: Props)
                                         : 'https://protonmail.com/support/knowledge-base/common-login-problems/'
                                 }
                                 target="_blank"
-                                className="flex flex-nowrap alignleft"
+                                className="flex flex-nowrap text-left"
                             >
                                 {c('Link').t`Common sign in problems`}
                             </DropdownMenuLink>
                             <DropdownMenuLink
                                 href={isVPN ? 'https://protonvpn.com/support/' : 'https://protonmail.com/support/'}
                                 target="_blank"
-                                className="flex flex-nowrap alignleft"
+                                className="flex flex-nowrap text-left"
                             >
                                 {c('Link').t`Contact support`}
                             </DropdownMenuLink>
-                            <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={handleBugReportClick}>
+                            <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>
                                 {c('Action').t`Report bug`}
                             </DropdownMenuButton>
                         </>
                     ) : (
                         <>
                             <DropdownMenuLink
-                                className="flex flex-nowrap alignleft"
+                                className="flex flex-nowrap text-left"
                                 href={isVPN ? 'https://protonvpn.com/support/' : 'https://protonmail.com/support/'}
                                 target="_blank"
                             >
                                 <Icon className="mt0-25 mr0-5" name="what-is-this" />
                                 {c('Action').t`I have a question`}
                             </DropdownMenuLink>
-                            <DropdownMenuButton className="flex flex-nowrap alignleft" onClick={handleBugReportClick}>
+                            <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>
                                 <Icon className="mt0-25 mr0-5" name="report-bug" />
                                 {c('Action').t`Report bug`}
                             </DropdownMenuButton>

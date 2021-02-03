@@ -18,7 +18,7 @@ export interface Props
 const DropdownButton = ({
     children,
     buttonRef,
-    className = 'pm-button',
+    className = 'button',
     hasCaret = false,
     isOpen = false,
     caretClassName = '',

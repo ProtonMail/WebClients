@@ -59,7 +59,7 @@ const CreditsModal = (props) => {
     const submit =
         debouncedAmount >= MIN_CREDIT_AMOUNT ? (
             method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-                <PayPalButton paypal={paypal} className="pm-button--primary" amount={debouncedAmount}>{c('Action')
+                <PayPalButton paypal={paypal} className="button--primary" amount={debouncedAmount}>{c('Action')
                     .t`Continue`}</PayPalButton>
             ) : (
                 <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action')

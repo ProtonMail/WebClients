@@ -44,7 +44,7 @@ const ProtonMailBridgeSection = () => {
         <>
             <Alert learnMore="https://protonmail.com/bridge/">{c('Info')
                 .t`ProtonMail supports IMAP/SMTP via the ProtonMail Bridge application. Thunderbird, Microsoft Outlook, and Apple Mail are officially supported on both Windows and macOS.`}</Alert>
-            <Table className="pm-simple-table--has-actions">
+            <Table className="simple-table--has-actions">
                 <TableHeader
                     cells={[
                         c('Title for downloads section').t`Platform`,
@@ -59,7 +59,7 @@ const ProtonMailBridgeSection = () => {
                             <TableRow
                                 key={key}
                                 cells={[
-                                    <span key="platform" className="inline-flex flex-items-center">
+                                    <span key="platform" className="inline-flex flex-align-items-center">
                                         <Icon name={icon} className="mr0-5" />
                                         <span>{platform}</span>
                                     </span>,

@@ -62,7 +62,7 @@ const Dropzone = ({
         >
             <div
                 className={classnames([
-                    'dropzone covered-absolute flex flex-justify-center flex-items-center',
+                    'dropzone covered-absolute flex flex-justify-center flex-align-items-center',
                     allowHover && isHovered && 'is-hovered',
                 ])}
                 onDragLeave={onDragLeave}
@@ -70,7 +70,7 @@ const Dropzone = ({
                 <span className="dropzone-text no-pointer-events">{content}</span>
             </div>
 
-            <div className="dropzone-content flex flex-items-center flex-justify-center w100">{children}</div>
+            <div className="dropzone-content flex flex-align-items-center flex-justify-center w100">{children}</div>
         </div>
     );
 };

@@ -36,13 +36,12 @@ const IdentitySection = () => {
             <Alert learnMore="https://protonmail.com/support/knowledge-base/display-name-and-signature/">{c('Info')
                 .t`Click the Edit button to personalize your email address. Your Display Name appears in the From field when people receive an email from you. Your Signature is appended at the bottom of your messages. Or leave each field empty for more privacy.`}</Alert>
             <EditableSection>
-                <Label className="border-bottom onmobile-pb0 onmobile-no-border" htmlFor="addressSelector">{c('Label')
+                <Label className="border-bottom on-mobile-pb0 on-mobile-no-border" htmlFor="addressSelector">{c('Label')
                     .t`Select an address`}</Label>
-                <Field className="auto border-bottom onmobile-pb0 onmobile-no-border flex flex-row flex-nowrap">
+                <Field className="wauto border-bottom on-mobile-pb0 on-mobile-no-border flex flex-row flex-nowrap">
                     <Select id="addressSelector" options={options} onChange={handleChange} />
                     <span className="flex-item-noshrink">
-                        <Button className="pm-button--primary ml1" onClick={handleOpenModal}>{c('Action')
-                            .t`Edit`}</Button>
+                        <Button className="button--primary ml1" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
                     </span>
                 </Field>
                 <Label>
@@ -51,7 +50,7 @@ const IdentitySection = () => {
                 </Label>
                 <Field className="bordered-container bg-global-muted-dm auto">
                     <div
-                        className="pl1 pr1 pt0-5 pb0-5 ellipsis cursor-pointer"
+                        className="pl1 pr1 pt0-5 pb0-5 text-ellipsis cursor-pointer"
                         title={address.DisplayName}
                         onClick={handleOpenModal}
                     >
@@ -63,7 +62,7 @@ const IdentitySection = () => {
                 <Field className="bordered-container bg-global-muted-dm auto">
                     {address.Signature ? (
                         <div
-                            className="break pl1 pr1 pt0-5 pb0-5 cursor-pointer"
+                            className="text-break pl1 pr1 pt0-5 pb0-5 cursor-pointer"
                             dangerouslySetInnerHTML={{ __html: address.Signature }}
                             onClick={handleOpenModal}
                             title={c('Action').t`Edit`}

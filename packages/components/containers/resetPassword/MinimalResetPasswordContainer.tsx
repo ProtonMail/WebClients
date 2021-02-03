@@ -91,7 +91,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                 <div className="mb1">
                     <ResetPasswordEmailInput id="email" value={email} setValue={setEmail} />
                 </div>
-                <div className="flex flex-nowrap flex-spacebetween mb1">
+                <div className="flex flex-nowrap flex-justify-space-between mb1">
                     <Link to="/login">{c('Link').t`Back to login`}</Link>
                     <PrimaryButton loading={loading} type="submit">{c('Action').t`Get a new password`}</PrimaryButton>
                 </div>
@@ -117,7 +117,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                 </div>
                 <Alert type="warning">{c('Info')
                     .t`IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.`}</Alert>
-                <div className="alignright mb1">
+                <div className="text-right mb1">
                     <PrimaryButton loading={loading} type="submit">{c('Action').t`Reset password`}</PrimaryButton>
                 </div>
             </form>
@@ -150,7 +150,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                         'Info'
                     ).t`If you remember your old password later, you can recover your existing messages.`}</Alert>
                 )}
-                <div className="alignright mb1">
+                <div className="text-right mb1">
                     <PrimaryButton type="submit">{c('Action').t`Reset my password`}</PrimaryButton>
                 </div>
             </form>
@@ -194,7 +194,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                 </div>
                 <Alert type="warning">{c('Info')
                     .t`Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.`}</Alert>
-                <div className="alignright mb1">
+                <div className="text-right mb1">
                     <PrimaryButton loading={loading} type="submit">{c('Action').t`Submit`}</PrimaryButton>
                 </div>
             </form>

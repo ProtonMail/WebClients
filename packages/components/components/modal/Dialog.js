@@ -7,10 +7,15 @@ import { useFocusTrap } from '../focus';
 import { useHotkeys } from '../../hooks';
 
 const CLASSES = {
-    MODAL: 'pm-modal',
-    MODAL_IN: 'pm-modalIn',
-    MODAL_OUT: 'pm-modalOut',
-    MODAL_SMALL: 'pm-modal--smaller',
+    MODAL: 'modal',
+    MODAL_IN: 'modal--in',
+    MODAL_OUT: 'modal--out',
+    MODAL_SMALL: 'modal--smaller',
+};
+
+const ANIMATIONS = {
+    MODAL_IN: 'anime-modal-in',
+    MODAL_OUT: 'anime-modal-out',
 };
 
 /** @type any */
@@ -37,11 +42,11 @@ const Dialog = ({
     const focusTrapProps = useFocusTrap({ rootRef });
 
     const handleAnimationEnd = ({ animationName }) => {
-        if (animationName === CLASSES.MODAL_OUT && isClosing) {
+        if (animationName === ANIMATIONS.MODAL_OUT && isClosing) {
             hasCalledExit.current = true;
             onExit?.();
         }
-        if (animationName === CLASSES.MODAL_IN && !isClosing) {
+        if (animationName === ANIMATIONS.MODAL_IN && !isClosing) {
             onEnter?.();
         }
     };
@@ -76,7 +81,7 @@ const Dialog = ({
 
     return (
         <Portal>
-            <div className={classnames(['pm-modalContainer', isBehind && 'pm-modalContainer--inBackground'])}>
+            <div className={classnames(['modal-container', isBehind && 'modal-container--in-background'])}>
                 <dialog
                     aria-labelledby={modalTitleID}
                     aria-modal="true"
@@ -84,7 +89,7 @@ const Dialog = ({
                     className={classnames([
                         CLASSES.MODAL,
                         isSmall && CLASSES.MODAL_SMALL,
-                        isSmall && 'pm-modal--shorterLabels',
+                        isSmall && 'modal--shorter-labels',
                         isClosing && CLASSES.MODAL_OUT,
                         extraClassNames,
                         'no-outline',

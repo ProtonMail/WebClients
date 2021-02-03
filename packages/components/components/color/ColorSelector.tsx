@@ -14,13 +14,13 @@ interface Props {
 
 const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS }: Props) => {
     return (
-        <ul className={classnames(['ColorSelector-container unstyled', className])}>
+        <ul className={classnames(['color-selector-container unstyled', className])}>
             {colors.map((color, i) => {
                 const isSelected = selected?.toLowerCase() === color?.toLowerCase();
                 return (
                     <li
                         key={`mykey${i}`}
-                        className={classnames(['ColorSelector-item', isSelected && 'selected'])}
+                        className={classnames(['color-selector-item', isSelected && 'is-selected'])}
                         style={{ color }}
                     >
                         <Input
@@ -29,10 +29,10 @@ const ColorSelector = ({ selected, onChange, className, colors = LABEL_COLORS }:
                             value={color}
                             name="paletteColor"
                             aria-labelledby={`Color ${color}`}
-                            className="ColorSelector-input-color"
+                            className="color-selector-input-color"
                             data-test-id={`color-selector:${color}`}
                         />
-                        <div className="ColorSelector-item-mask">
+                        <div className="color-selector-item-mask">
                             <Icon name="on" className="mauto" />
                         </div>
                     </li>

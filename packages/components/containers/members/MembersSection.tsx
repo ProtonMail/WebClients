@@ -127,7 +127,7 @@ const MembersSection = () => {
             node: (
                 <>
                     <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
-                    <span className="nomobile">
+                    <span className="no-mobile">
                         <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
                     </span>
                 </>
@@ -140,13 +140,13 @@ const MembersSection = () => {
                     <Info url="https://protonmail.com/support/knowledge-base/private-members/" />
                 </>
             ),
-            className: 'notablet nomobile',
+            className: 'no-tablet no-mobile',
         },
         {
             node: (
                 <>
                     <span
-                        className="ellipsis inbl alignbottom mw100"
+                        className="text-ellipsis inline-block align-bottom max-w100"
                         title={c('Title header for members table').t`Addresses`}
                     >{c('Title header for members table').t`Addresses`}</span>
                 </>
@@ -156,12 +156,12 @@ const MembersSection = () => {
             node: (
                 <>
                     <span
-                        className="ellipsis inbl alignbottom mw100"
+                        className="text-ellipsis inline-block align-bottom max-w100"
                         title={c('Title header for members table').t`Features`}
                     >{c('Title header for members table').t`Features`}</span>
                 </>
             ),
-            className: 'nomobile',
+            className: 'no-mobile',
         },
         { node: c('Title').t`Action` },
     ].map(({ node, className = '' }, i) => {
@@ -177,11 +177,11 @@ const MembersSection = () => {
             <RestoreAdministratorPrivileges />
             <Alert learnMore="https://protonmail.com/support/knowledge-base/user-roles/">{c('Info for members section')
                 .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more.`}</Alert>
-            <Block className="flex flex-spacebetween">
+            <Block className="flex flex-justify-space-between">
                 <PrimaryButton
                     disabled={loadingOrganization || loadingDomains || loadingDomainAddresses || loadingOrganizationKey}
                     onClick={handleAddUser}
-                    className="onmobile-mb0-5"
+                    className="on-mobile-mb0-5"
                 >
                     {c('Action').t`Add user`}
                 </PrimaryButton>
@@ -194,7 +194,7 @@ const MembersSection = () => {
                     />
                 </div>
             </Block>
-            <Table className="pm-simple-table--has-actions">
+            <Table className="simple-table--has-actions">
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
@@ -206,7 +206,7 @@ const MembersSection = () => {
                             <TableRow
                                 key={key}
                                 cells={[
-                                    <span className="ellipsis mw100 inbl" key={key} title={member.Name}>
+                                    <span className="text-ellipsis max-w100 inline-block" key={key} title={member.Name}>
                                         {member.Name}
                                     </span>,
                                     <MemberRole key={key} member={member} />,
@@ -221,7 +221,7 @@ const MembersSection = () => {
                                         organizationKey={organizationKey}
                                     />,
                                 ]}
-                                className="ontablet-hideTd3 onmobile-hideTd5"
+                                className="on-tablet-hide-td3 on-mobile-hide-td5"
                             />
                         );
                     })}

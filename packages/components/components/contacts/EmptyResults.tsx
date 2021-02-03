@@ -15,13 +15,13 @@ const EmptyResults = ({ query = '', onClearSearch }: Props) => {
     const title = c('Error message').t`No results found for "${query}"`;
     const image = getLightOrDark(noResultsImgLight, noResultsImgDark);
     const button = (
-        <LinkButton key="button" className="bold p0" onClick={onClearSearch}>
+        <LinkButton key="button" className="text-bold p0" onClick={onClearSearch}>
             {c('Action').t`clear it`}
         </LinkButton>
     );
 
     return (
-        <div className="flex flex-column flex-items-center flex-item-fluid p0-5">
+        <div className="flex flex-column flex-align-items-center flex-item-fluid p0-5">
             <h2>{title}</h2>
             <img src={image} alt={title} className="pl1 pr1 pb1 mb1" />
             <span>{c('Info').jt`You can either update your search query or ${button}`}</span>

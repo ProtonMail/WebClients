@@ -36,7 +36,7 @@ const EditorToolbarFontSizeDropdown = ({ squireRef, editorReady }: Props) => {
                     <DropdownMenuButton
                         key={size}
                         isSelected={size === value}
-                        className="alignleft"
+                        className="text-left"
                         onClick={handleClick(size)}
                     >
                         {size}

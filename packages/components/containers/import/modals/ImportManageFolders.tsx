@@ -214,11 +214,11 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
             <Alert className="mt2 mb1">{c('Info').t`Please select the folders you would like to import:`}</Alert>
 
             <div className="flex">
-                <div className="w40 ellipsis pt1">
+                <div className="w40 text-ellipsis pt1">
                     <strong>{c('Label').t`From: ${modalModel.email}`}</strong>
                 </div>
 
-                <div className="w40 ellipsis pt1">
+                <div className="w40 text-ellipsis pt1">
                     <strong>{c('Label').t`To: ${address.Email}`}</strong>
                 </div>
 

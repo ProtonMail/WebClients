@@ -58,7 +58,7 @@ const Bitcoin = ({ amount, currency, type }) => {
             <figure role="group" className="bordered-container bg-global-highlight mb1">
                 <div className="p1 border-bottom">
                     <BitcoinQRCode
-                        className="flex flex-items-center flex-column"
+                        className="flex flex-align-items-center flex-column"
                         amount={model.amountBitcoin}
                         address={model.address}
                     />

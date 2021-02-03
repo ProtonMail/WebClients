@@ -9,15 +9,18 @@ interface Props extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'onClick'> {
 }
 
 const Breadcrumb = ({ children, onClick, active, noShrink, className, ...rest }: Props, ref: Ref<HTMLLIElement>) => {
-    const textClass = classnames(['pre p0-25 m0 ellipsis no-pointer-events-children', active && 'strong']);
+    const textClass = classnames([
+        'text-pre p0-25 m0 text-ellipsis no-pointer-events-children',
+        active && 'text-strong',
+    ]);
     return (
         <li
             {...rest}
             ref={ref}
             className={classnames([
-                'pd-collapsing-breadcrumb',
+                'collapsing-breadcrumb',
                 active && 'flex-item-fluid-auto',
-                noShrink && 'pd-collapsing-breadcrumb--noShrink',
+                noShrink && 'collapsing-breadcrumb--no-shrink',
                 className,
             ])}
         >

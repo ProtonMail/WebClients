@@ -182,15 +182,15 @@ const CustomizeImportModal = ({
                     .t`Create a label for the imported messages, a time range for this import, and the folders you would like to import.`}
             </Alert>
 
-            <div className="mb1 pt1 border-bottom flex-items-center">
+            <div className="mb1 pt1 border-bottom flex-align-items-center">
                 <Row>
-                    <FormLabel className="flex flex-items-center">
+                    <FormLabel className="flex flex-align-items-center">
                         {c('Label').t`Label messages as`}
                         <Tooltip title={c('Tooltip').t`Each imported email will have this label`}>
                             <Icon name="info" className="ml0-5" />
                         </Tooltip>
                     </FormLabel>
-                    <Field className="auto flex flex-items-center flex-nowrap">
+                    <Field className="wauto flex flex-align-items-center flex-nowrap">
                         {customizedPayload.ImportLabel && customizedPayload.ImportLabel.Name && (
                             <LabelStack
                                 labels={[
@@ -200,7 +200,7 @@ const CustomizeImportModal = ({
                                         title: customizedPayload.ImportLabel.Name,
                                     },
                                 ]}
-                                className="mw100"
+                                className="max-w100"
                             />
                         )}
                         <Button className="flex-item-noshrink ml1" onClick={handleEditLabel}>
@@ -210,9 +210,9 @@ const CustomizeImportModal = ({
                 </Row>
             </div>
 
-            <div className="mb1 pt1 border-bottom flex-items-center">
+            <div className="mb1 pt1 border-bottom flex-align-items-center">
                 <Row>
-                    <FormLabel className="flex flex-items-center">
+                    <FormLabel className="flex flex-align-items-center">
                         {c('Label').t`Import messages since`}
                         <Tooltip title={c('Tooltip').t`The import will start with the most recent messages.`}>
                             <Icon name="info" className="ml0-5" />
@@ -248,10 +248,10 @@ const CustomizeImportModal = ({
                 </Row>
             </div>
 
-            <div className="mb1 pt1 flex-items-center">
+            <div className="mb1 pt1 flex-align-items-center">
                 <Row>
                     <FormLabel>{c('Label').t`Manage folders`}</FormLabel>
-                    <div className="flex flex-items-center">
+                    <div className="flex flex-align-items-center">
                         <Icon name="parent-folder" className="mr0-5" />
                         {selectedFoldersCount === totalFoldersCount ? (
                             <span>

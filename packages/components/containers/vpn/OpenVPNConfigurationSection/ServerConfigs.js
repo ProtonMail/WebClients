@@ -51,7 +51,7 @@ const ServerConfigs = ({ servers, category, ...rest }) => {
                 return (
                     <Details key={server.Country} open={server.open}>
                         <Summary>
-                            <div className="ml0-5 flex flex-nowrap flex-items-center">
+                            <div className="ml0-5 flex flex-nowrap flex-align-items-center">
                                 <div className={classnames([category === CATEGORY.SERVER ? 'w33' : ''])}>
                                     <Country server={server} />
                                 </div>
@@ -61,7 +61,7 @@ const ServerConfigs = ({ servers, category, ...rest }) => {
                                     </div>
                                 ) : null}
                                 {category === CATEGORY.SERVER ? (
-                                    <div className="w33 flex flex-spacebetween">
+                                    <div className="w33 flex flex-justify-space-between">
                                         <CityNumber group={group} />
                                         <div className={classnames([category === CATEGORY.SERVER ? 'flex' : ''])}>
                                             {group.some(({ Features }) => isP2PEnabled(Features)) ? <P2PIcon /> : null}

@@ -45,9 +45,9 @@ const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange
                     </InputButton>
                 ))}
             </div>
-            <div id={scaleFromToId} className="flex flex-spacebetween mt0-5">
-                <span className="small m0">{fromLabel}</span>
-                <span className="small m0">{toLabel}</span>
+            <div id={scaleFromToId} className="flex flex-justify-space-between mt0-5">
+                <span className="text-sm m0">{fromLabel}</span>
+                <span className="text-sm m0">{toLabel}</span>
             </div>
         </div>
     );

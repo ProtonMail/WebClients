@@ -11,7 +11,7 @@ const GiftCodeForm = ({ code, loading, disabled, onChange, onSubmit }) => {
         }
     };
     return (
-        <div className="flex flex-nowrap flex-items-center flex-items-start">
+        <div className="flex flex-nowrap flex-align-items-center flex-align-items-start">
             <div className="pr1 flex-item-fluid">
                 <Input
                     value={code}

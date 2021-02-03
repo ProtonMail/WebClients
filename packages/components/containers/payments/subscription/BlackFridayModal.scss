@@ -5,18 +5,18 @@ $price-size: 21;
 $modal-background: #1c1736;
 
 // overrides for dark/light mode => same design
-.blackfriday-mail-modal.pm-modal {
+.blackfriday-mail-modal.modal {
 	background: $modal-background;
 
 	width: 80rem;
 	max-width: 80rem;
 
-	.pm-modalContentInner,
-	.pm-modalTitle,
-	.pm-modalHeader {
+	.modal-content-inner,
+	.modal-title,
+	.modal-header {
 		color: $white;
 	}
-	.pm-modalContentInner {
+	.modal-content-inner {
 		background: $modal-background url(#{$path-images}world.svg) 50% 50%;
 	}
 	.scrollshadow-static {
@@ -32,10 +32,10 @@ $modal-background: #1c1736;
 		}
 	}
 
-	.pm-modalHeader {
+	.modal-header {
 		padding-bottom: 0.5em;
 	}
-	.pm-modalTitle {
+	.modal-title {
 		text-align: center;
 		padding-right: 0;
 	}
@@ -45,8 +45,8 @@ $modal-background: #1c1736;
 	}
 
 	// currency
-	.pm-group-buttons {
-		.pm-button {
+	.grouped-buttons {
+		.button {
 			background: transparent !important; // I said I'm God.
 			color: $white;
 			border-color: $pm-tertiary-grey;

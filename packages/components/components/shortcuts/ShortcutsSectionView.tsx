@@ -13,12 +13,12 @@ interface Props {
 
 const ShortcutsSectionView = ({ name, shortcuts }: Props) => {
     return (
-        <div className="pr2 onmobile-pr0 mb2">
+        <div className="pr2 on-mobile-pr0 mb2">
             <h2 className="h5 mb0-5">{name}</h2>
             {shortcuts.length > 0 && (
-                <ul className="unstyled mt1 onmobile-pr0 list-2columns-nobreak">
+                <ul className="unstyled mt1 on-mobile-pr0 list-2columns-no-break">
                     {shortcuts.map(({ name, keys }) => (
-                        <li key={name} className="flex flex-items-center flex-spacebetween mb0-5">
+                        <li key={name} className="flex flex-align-items-center flex-justify-space-between mb0-5">
                             <span>{name}</span>
                             {typeof keys === 'string' ? (
                                 <kbd>{keys}</kbd>

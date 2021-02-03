@@ -14,7 +14,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
     return (
         <>
             <Block>
-                <Label className="mb0-5 bl cut" htmlFor="ccname">{c('Label').t`Name on card`}</Label>
+                <Label className="mb0-5 block text-cut" htmlFor="ccname">{c('Label').t`Name on card`}</Label>
                 <Input
                     autoComplete="cc-name"
                     id="ccname"
@@ -28,7 +28,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                 />
             </Block>
             <Block>
-                <Label className="mb0-5 bl cut" htmlFor="ccnumber">{c('Label').t`Card number`}</Label>
+                <Label className="mb0-5 block text-cut" htmlFor="ccnumber">{c('Label').t`Card number`}</Label>
                 <CardNumberInput
                     id="ccnumber"
                     value={card.number}
@@ -40,7 +40,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
             </Block>
             <div className="payment-side-fields mb1">
                 <div>
-                    <Label className="mb0-5 bl" htmlFor="exp">{c('Label').t`Expiry date`}</Label>
+                    <Label className="mb0-5 block" htmlFor="exp">{c('Label').t`Expiry date`}</Label>
                     <ExpInput
                         id="exp"
                         month={card.month}
@@ -55,7 +55,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                     />
                 </div>
                 <div>
-                    <Label className="mb0-5 bl flex flex-items-center cut" htmlFor="cvc">
+                    <Label className="mb0-5 block flex flex-align-items-center text-cut" htmlFor="cvc">
                         <span className="mr0-25">{c('Label').t`Security code`}</span>
                         <Info
                             title={c('Info')
@@ -77,7 +77,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
             </div>
             <div className="payment-side-fields mb1">
                 <div>
-                    <Label className="mb0-5 bl" htmlFor="country">{c('Label').t`Country`}</Label>
+                    <Label className="mb0-5 block" htmlFor="country">{c('Label').t`Country`}</Label>
                     <Select
                         id="country"
                         value={card.country}
@@ -89,7 +89,7 @@ const Card = ({ card, errors, onChange, loading = false }) => {
                     />
                 </div>
                 <div>
-                    <Label className="mb0-5 bl" htmlFor="postalcode">
+                    <Label className="mb0-5 block" htmlFor="postalcode">
                         {card.country === 'US' ? c('Label').t`ZIP` : c('Label').t`Postal code`}
                     </Label>
                     <Input

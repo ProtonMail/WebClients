@@ -31,14 +31,14 @@ const DropdownMenuButton = React.forwardRef<HTMLButtonElement, Props>(
                 type="button"
                 disabled={disabled || loading}
                 className={classnames([
-                    'dropDown-item-button w100 pr1 pl1 pt0-5 pb0-5',
-                    isSelected && 'dropDown-item--isSelected',
+                    'dropdown-item-button w100 pr1 pl1 pt0-5 pb0-5',
+                    isSelected && 'dropdown-item--is-selected',
                     className,
                 ])}
                 aria-busy={loading}
                 {...rest}
             >
-                {loading ? <span className="bl ellipsis">{children}</span> : children}
+                {loading ? <span className="block text-ellipsis">{children}</span> : children}
             </button>
         );
     }

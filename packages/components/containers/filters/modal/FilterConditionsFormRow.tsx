@@ -107,7 +107,7 @@ const FilterConditionsRow = ({
                 <Radio
                     id={`condition-${conditionIndex}-with-attachment`}
                     name={`attachment-condition-${conditionIndex}`}
-                    className="flex flex-nowrap pm-radio--onTop mr1"
+                    className="flex flex-nowrap radio--ontop mr1"
                     checked={withAttachment}
                     onChange={toggleAttachment}
                 >
@@ -116,7 +116,7 @@ const FilterConditionsRow = ({
                 <Radio
                     id={`condition-${conditionIndex}-without-attachment`}
                     name={`attachment-condition-${conditionIndex}`}
-                    className="flex flex-nowrap pm-radio--onTop"
+                    className="flex flex-nowrap radio--ontop"
                     checked={!withAttachment}
                     onChange={toggleAttachment}
                 >
@@ -131,10 +131,10 @@ const FilterConditionsRow = ({
             {i > 0 && <span className="ml0-5 mr0-5">{c('Label').t`or`}</span>}
             <span
                 key={`condition-${conditionIndex}-token-${i}`}
-                className="inline-flex flex-row flex-items-center mb0-5 condition-token"
+                className="inline-flex flex-row flex-align-items-center mb0-5 condition-token"
                 role="listitem"
             >
-                <span className="ellipsis nodecoration" title={token}>
+                <span className="text-ellipsis text-no-decoration" title={token}>
                     {token}
                 </span>
                 <button type="button" className="flex flex-item-noshrink ml0-5" onClick={() => onRemoveToken(i)}>
@@ -164,9 +164,8 @@ const FilterConditionsRow = ({
                             }}
                         />
                     </span>
-                    <Button disabled={!inputValue.trim()} onClick={onAddNewToken} className="pm-button-blue">{c(
-                        'Action'
-                    ).t`Insert`}</Button>
+                    <Button disabled={!inputValue.trim()} onClick={onAddNewToken} className="button-blue">{c('Action')
+                        .t`Insert`}</Button>
                 </div>
             </div>
         );
@@ -219,7 +218,7 @@ const FilterConditionsRow = ({
         }
 
         return (
-            <span className="mw100 pt0-5 ellipsis" title={title}>
+            <span className="max-w100 pt0-5 text-ellipsis" title={title}>
                 {label}
             </span>
         );
@@ -229,10 +228,10 @@ const FilterConditionsRow = ({
 
     return (
         <div className="border-bottom">
-            <div className="flex flex-nowrap onmobile-flex-column align-items-center pt1 pb1">
+            <div className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
                 <button
                     type="button"
-                    className={classnames(['w20 alignleft', isNarrow && 'mb1'])}
+                    className={classnames(['w20 text-left', isNarrow && 'mb1'])}
                     onClick={toggleSection}
                 >
                     <Icon name="caret" className={classnames([isOpen && 'rotateX-180'])} />
@@ -286,7 +285,7 @@ const FilterConditionsRow = ({
                     <div>
                         <Button
                             onClick={() => handleDelete(conditionIndex)}
-                            className={classnames(['pm-button--for-icon', isNarrow ? 'mt1' : 'ml1'])}
+                            className={classnames(['button--for-icon', isNarrow ? 'mt1' : 'ml1'])}
                         >
                             <Tooltip title={c('Action').t`Delete`} className="color-global-warning">
                                 <Icon name="trash" />

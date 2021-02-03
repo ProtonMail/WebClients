@@ -63,7 +63,7 @@ const ContactViewProperties = ({
 
     return (
         <div className="border-bottom mb1">
-            <h3 className="mb1 flex flex-nowrap flex-items-center">
+            <h3 className="mb1 flex flex-nowrap flex-align-items-center">
                 <Icon name={iconName} className="mr0-5" />
                 <span className="mr0-5">{title}</span>
                 {field && ['email', 'fn'].includes(field) ? null : <EncryptedIcon className="flex" />}

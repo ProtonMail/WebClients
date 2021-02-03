@@ -73,7 +73,7 @@ const ContactModalProperties = forwardRef<HTMLInputElement, Props>(
 
         return (
             <div className="border-bottom mb1">
-                <h3 className="mb1 flex flex-nowrap flex-items-center flex-item-noshrink">
+                <h3 className="mb1 flex flex-nowrap flex-align-items-center flex-item-noshrink">
                     <Icon className="mr0-5 flex-item-noshrink" name={iconName} />
                     <span className="mr0-5">{title}</span>
                     {field && !['fn', 'email'].includes(field) && (
@@ -95,12 +95,11 @@ const ContactModalProperties = forwardRef<HTMLInputElement, Props>(
                 )}
                 {canAdd && (
                     <div className="flex flex-nowrap flex-item-noshrink">
-                        <div className="mr0-5 flex flex-items-center flex-item-noshrink">
-                            <Icon name="text-justify nonvisible" />
+                        <div className="mr0-5 flex flex-align-items-center flex-item-noshrink">
+                            <Icon name="text-justify visibility-hidden" />
                         </div>
                         <div className="flex flex-nowrap w95">
-                            <Button className="pm-button--primaryborder mb1" onClick={onAdd}>{c('Action')
-                                .t`Add`}</Button>
+                            <Button className="button--primaryborder mb1" onClick={onAdd}>{c('Action').t`Add`}</Button>
                         </div>
                     </div>
                 )}

@@ -7,7 +7,7 @@ export interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 const SidebarListItemDiv = ({ children, className = '', ...rest }: Props) => {
     return (
-        <div className={classnames(['navigation__link', className])} {...rest}>
+        <div className={classnames(['navigation-link', className])} {...rest}>
             {children}
         </div>
     );

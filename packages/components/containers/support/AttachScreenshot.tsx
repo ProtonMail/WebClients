@@ -47,7 +47,7 @@ const AttachScreenshot = ({ id, onUpload, onReset }: Props) => {
     if (attached) {
         return (
             <>
-                <div className="flex flex-nowrap flex-items-center">
+                <div className="flex flex-nowrap flex-align-items-center">
                     <Icon name="insert-image" className="mr0-5" />
                     <span className="mr1 flex-item-fluid">{c('Info').t`Screenshot(s) attached`}</span>
                     <Button onClick={handleClick}>{c('Action').t`Clear`}</Button>

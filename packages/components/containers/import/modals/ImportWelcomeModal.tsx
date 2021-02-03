@@ -38,7 +38,7 @@ const ImportWelcomeModal = ({ onClose = noop, ...rest }: Props) => {
     return (
         <FormModal
             title={
-                <h1 className="pm-modalTitle aligncenter">{c('Title').t`Your smooth transition to digital privacy`}</h1>
+                <h1 className="modal-title text-center">{c('Title').t`Your smooth transition to digital privacy`}</h1>
             }
             submit={
                 <PrimaryButton type="submit" data-focus-fallback={1}>{c('Action')
@@ -49,7 +49,7 @@ const ImportWelcomeModal = ({ onClose = noop, ...rest }: Props) => {
             onClose={onClose}
             {...rest}
         >
-            <div className="aligncenter">
+            <div className="text-center">
                 <div className="mt1 mb1">{c('Info')
                     .t`Shelter your data behind Proton encryption with our email transfer feature Import Assistant.`}</div>
                 <img src={importWelcomeSvg} alt="" className="mb1" />

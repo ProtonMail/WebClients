@@ -73,7 +73,7 @@ const InvoiceActions = ({ invoice, fetchInvoices }: Props) => {
         },
     ].filter(isTruthy);
 
-    return <DropdownActions loading={loading} list={list} className="pm-button--small" />;
+    return <DropdownActions loading={loading} list={list} className="button--small" />;
 };
 
 export default InvoiceActions;

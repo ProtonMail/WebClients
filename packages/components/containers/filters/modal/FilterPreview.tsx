@@ -23,15 +23,15 @@ const FilterPreview = ({ isNarrow, labels, folders, model }: Props) => {
     return (
         <>
             <div className="border-bottom">
-                <div className="flex flex-nowrap onmobile-flex-column align-items-center pb1">
+                <div className="flex flex-nowrap on-mobile-flex-column align-items-center pb1">
                     <div className={classnames(['w20 pt0-5', isNarrow && 'mb1'])}>
                         <span className={classnames(['mr0-5', !isNarrow && 'ml0-5'])}>{c('Label').t`Filter Name`}</span>
                     </div>
                     <div
                         title={model.name}
-                        className={classnames(['pt0-5 flex flex-column flex-item-fluid mw100', !isNarrow && 'ml1'])}
+                        className={classnames(['pt0-5 flex flex-column flex-item-fluid max-w100', !isNarrow && 'ml1'])}
                     >
-                        <span className="mw100 ellipsis">{model.name}</span>
+                        <span className="max-w100 text-ellipsis">{model.name}</span>
                     </div>
                 </div>
             </div>

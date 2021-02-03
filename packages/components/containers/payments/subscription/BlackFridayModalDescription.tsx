@@ -27,12 +27,12 @@ const BlackFridayModalDescription = ({ isProductPayer }: Props) => {
 
     if (isProductPayer) {
         return (
-            <p className="aligncenter m0">{c('blackfriday Info')
+            <p className="text-center m0">{c('blackfriday Info')
                 .t`Get early access to our new encrypted drive for FREE by upgrading to a Plus bundle now.`}</p>
         );
     }
     return (
-        <div className="bold aligncenter mt0 blackfriday-countdown-container pb1 mb2">
+        <div className="text-bold text-center mt0 blackfriday-countdown-container pb1 mb2">
             <Countdown
                 end={
                     isBefore(now, BLACK_FRIDAY.CYBER_START)

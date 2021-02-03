@@ -9,7 +9,7 @@ interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
 
 const SettingsTitle = ({ children, onTop = true, ...rest }: Props) => {
     return (
-        <h1 className={classnames(['sticky-title', onTop && 'sticky-title--onTop'])} {...rest}>
+        <h1 className={classnames(['sticky-title', onTop && 'sticky-title--on-top'])} {...rest}>
             {children}
         </h1>
     );

@@ -61,7 +61,7 @@ const ImportExportSection = () => {
                 {c('Info').t`Import and export your messages for local backups with Proton's dedicated desktop app.`}
             </Alert>
 
-            <Table className="pm-simple-table--has-actions">
+            <Table className="simple-table--has-actions">
                 <TableHeader
                     cells={[
                         c('Title for downloads section').t`Platform`,
@@ -76,7 +76,7 @@ const ImportExportSection = () => {
                             <TableRow
                                 key={key}
                                 cells={[
-                                    <span key="platform" className="inline-flex flex-items-center">
+                                    <span key="platform" className="inline-flex flex-align-items-center">
                                         <Icon name={icon} className="mr0-5" />
                                         <span>{platform}</span>
                                     </span>,

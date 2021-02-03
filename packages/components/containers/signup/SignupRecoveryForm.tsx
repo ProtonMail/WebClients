@@ -85,7 +85,7 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
         if (model.step === RECOVERY_EMAIL) {
             const challenge = (
                 <Challenge
-                    bodyClassName="signLayout-container"
+                    bodyClassName="sign-layout-container"
                     challengeRef={challengeRefRecovery}
                     type={1}
                     onLoaded={handleChallengeLoaded}
@@ -161,7 +161,7 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
     return (
         <>
             {model.step === RECOVERY_EMAIL && challengeLoading ? (
-                <div className="aligncenter">
+                <div className="text-center">
                     <FullLoader className="color-primary" size={200} />
                 </div>
             ) : null}
@@ -176,12 +176,12 @@ const SignupRecoveryForm = ({ model, onChange, onSubmit, onSkip, errors, loading
                 {inner}
                 <SignupSubmitRow>
                     <LinkButton
-                        className="mr2 onmobile-mr0 pm-button--large"
+                        className="mr2 on-mobile-mr0 button--large"
                         disabled={loading || loadingChallenge}
                         onClick={handleSkip}
                     >{c('Action').t`Skip`}</LinkButton>
                     <PrimaryButton
-                        className="pm-button--large"
+                        className="button--large"
                         loading={loading || loadingChallenge}
                         disabled={disableSubmit}
                         type="submit"

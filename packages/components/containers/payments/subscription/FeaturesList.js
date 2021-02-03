@@ -7,13 +7,13 @@ const FeaturesList = ({ features = [] }) => {
         return null;
     }
     return (
-        <ul className="unstyled mt0-5 mb0-5 flex flex-nowrap flex-spacebetween">
+        <ul className="unstyled mt0-5 mb0-5 flex flex-nowrap flex-justify-space-between">
             {features.map((text, index) => {
                 const key = `${index}`;
                 return (
-                    <li key={key} className="aligncenter flex-item-fluid pl1 pr1">
+                    <li key={key} className="text-center flex-item-fluid pl1 pr1">
                         <Icon name="check-circle" size={24} className="color-primary" />
-                        <span className="bl">{text}</span>
+                        <span className="block">{text}</span>
                     </li>
                 );
             })}

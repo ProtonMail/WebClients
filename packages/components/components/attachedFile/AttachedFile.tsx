@@ -24,7 +24,7 @@ const AttachedFile = ({ file, iconName, className, clear = c('Action').t`Delete`
             </div>
             <div className="message-attachmentInfo p0-5 flex flex-nowrap w90">
                 <div className="flex-item-fluid pr1">
-                    <div className="ellipsis" title={fileName}>
+                    <div className="text-ellipsis" title={fileName}>
                         {fileName}
                     </div>
                     <div>{`${extension.toUpperCase()} - ${humanSize(file.size)}`}</div>

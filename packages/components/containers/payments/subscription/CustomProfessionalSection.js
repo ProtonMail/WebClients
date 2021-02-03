@@ -27,7 +27,7 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
 
     return (
         <>
-            <div className="flex flex-spacebetween pb1 mb1 border-bottom">
+            <div className="flex flex-justify-space-between pb1 mb1 border-bottom">
                 <div>ProtonMail Professional</div>
                 <div>
                     <PlanPrice
@@ -38,7 +38,7 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
                     />
                 </div>
             </div>
-            <div className="flex flex-spacebetween pb1 mb1 border-bottom">
+            <div className="flex flex-justify-space-between pb1 mb1 border-bottom">
                 <div>
                     <Select
                         title={c('Tooltip')
@@ -61,7 +61,7 @@ const CustomProfessionalSection = ({ plans, model, onChange }) => {
                     )}
                 </div>
             </div>
-            <div className="flex flex-spacebetween pb1 mb1 border-bottom">
+            <div className="flex flex-justify-space-between pb1 mb1 border-bottom">
                 <div>
                     <Select
                         title={c('Tooltip')

@@ -218,7 +218,7 @@ const SelectTwo = <V extends any>({
 
     const ariaLabel = selectedChild?.props?.title;
 
-    const dropdownButtonClassName = classnames(['alignleft ellipsis no-outline pm-select pm-button', className]);
+    const dropdownButtonClassName = classnames(['text-left text-ellipsis no-outline pm-select button', className]);
 
     return (
         <>

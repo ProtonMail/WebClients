@@ -46,11 +46,11 @@ const SimpleSidebarListItemHeader = ({
     useHotkeys(buttonRef, shortcutHandlers);
 
     return (
-        <SidebarListItem className="navigation__link--groupHeader">
+        <SidebarListItem className="navigation-link-header-group">
             <div className="flex flex-nowrap">
                 <button
                     ref={buttonRef}
-                    className="uppercase flex-item-fluid alignleft navigation__link--groupHeader-link"
+                    className="text-uppercase flex-item-fluid text-left navigation-link-header-group-link"
                     type="button"
                     onClick={() => onToggle(!toggle)}
                     title={title}
@@ -58,11 +58,11 @@ const SimpleSidebarListItemHeader = ({
                     onFocus={onFocus}
                     data-shortcut-target={id}
                 >
-                    <span className="mr0-5 small">{text}</span>
+                    <span className="mr0-5 text-sm">{text}</span>
                     {hasCaret && (
                         <Icon
                             name="caret"
-                            className={classnames(['navigation__icon--expand', toggle && 'rotateX-180'])}
+                            className={classnames(['navigation-icon--expand', toggle && 'rotateX-180'])}
                         />
                     )}
                 </button>

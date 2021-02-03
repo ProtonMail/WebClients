@@ -5,7 +5,7 @@ import Toggle from './Toggle';
 
 describe('Toggle component', () => {
     const id = 'pref';
-    const getInput = (container) => container.querySelector('.pm-toggle-checkbox');
+    const getInput = (container) => container.querySelector('.toggle-checkbox');
 
     it('should be checked', () => {
         const mockOnChange = jest.fn();

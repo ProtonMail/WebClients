@@ -53,7 +53,7 @@ const AccountLoginForm = ({ onSubmit, state, setters }: Props) => {
                 </AccountSupportDropdown>
             </div>
             <SignupSubmitRow>
-                <PrimaryButton type="submit" className="pm-button--large" loading={loading} data-cy-login="submit">
+                <PrimaryButton type="submit" className="button--large" loading={loading} data-cy-login="submit">
                     {c('Action').t`Sign in`}
                 </PrimaryButton>
             </SignupSubmitRow>

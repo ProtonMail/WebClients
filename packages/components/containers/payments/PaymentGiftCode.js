@@ -24,14 +24,14 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }) => {
 
     if (gift) {
         return (
-            <div className="aligncenter">
-                <div className="inline-flex flex-nowrap flex-items-center">
-                    <span className="mr1 flex flex-nowrap flex-items-center">
+            <div className="text-center">
+                <div className="inline-flex flex-nowrap flex-align-items-center">
+                    <span className="mr1 flex flex-nowrap flex-align-items-center">
                         <Icon name="gift" className="mr0-5 mb0-25" />
                         <code>{gift.match(/.{1,4}/g).join('-')}</code>
                     </span>
                     <LinkButton
-                        className="flex flex-items-center ml0-25"
+                        className="flex flex-align-items-center ml0-25"
                         onClick={() => onApply('')}
                         title={c('Action').t`Remove gift code`}
                     >
@@ -57,7 +57,12 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }) => {
                 <div className="flex-item-fluid mr1">
                     <GiftCodeForm code={code} onChange={setCode} onSubmit={handleSubmit} loading={loading} />
                 </div>
-                <Button onClick={handleCancel} title={c('Action').t`Cancel`} className="flex-self-start" icon="off">
+                <Button
+                    onClick={handleCancel}
+                    title={c('Action').t`Cancel`}
+                    className="flex-align-self-start"
+                    icon="off"
+                >
                     <span className="sr-only">{c('Action').t`Cancel`}</span>
                 </Button>
             </div>
@@ -65,7 +70,7 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }) => {
     }
 
     return (
-        <div className="aligncenter">
+        <div className="text-center">
             <LinkButton onClick={toggle} icon={gift}>{c('Link').t`Add a gift code`}</LinkButton>
         </div>
     );

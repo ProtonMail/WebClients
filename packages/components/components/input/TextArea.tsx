@@ -54,7 +54,7 @@ const TextArea = ({
             <textarea
                 ref={textAreaRef}
                 rows={rows}
-                className={classnames(['pm-field w100', className, statusClasses])}
+                className={classnames(['field w100', className, statusClasses])}
                 aria-invalid={hasError}
                 aria-describedby={uid}
                 {...rest}
