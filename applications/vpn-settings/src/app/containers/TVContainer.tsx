@@ -45,14 +45,14 @@ const TVContainer = () => {
         if (step === STEP.ENTER_CODE) {
             return (
                 <form onSubmit={(event) => withLoading(handleSubmit(event))}>
-                    <label className="h3 aligncenter" htmlFor="code-input">{c('Label')
+                    <label className="h3 text-center" htmlFor="code-input">{c('Label')
                         .t`Enter the code displayed on your TV`}</label>
                     <TVCodeInputs value={code} setValue={setCode} />
                     {error ? (
                         <>
-                            <p className="mt2 mb0 pl1 aligncenter color-global-warning">{c('Error')
+                            <p className="mt2 mb0 pl1 text-center color-global-warning">{c('Error')
                                 .t`Code wrong or not valid anymore`}</p>
-                            <p className="m0 aligncenter noborder color-global-light">{c('Error')
+                            <p className="m0 text-center no-border color-global-light">{c('Error')
                                 .t`If the time on your TV has expired, click on Refresh on your TV and enter your code again.`}</p>
                         </>
                     ) : null}
@@ -60,7 +60,7 @@ const TVContainer = () => {
                         <PrimaryButton
                             loading={loading}
                             type="submit"
-                            className="uppercase bold pm-button--pill mt2 mb1-5 center"
+                            className="text-uppercase text-bold button--pill mt2 mb1-5 center"
                         >
                             <span className="p0-5 inline-flex">
                                 {error ? c('Action').t`Verify code again` : c('Action').t`Verify code`}
@@ -88,17 +88,17 @@ const TVContainer = () => {
     };
 
     return (
-        <div className="background-container h100 flex-noMinChildren flex-column flex-nowrap flex-items-center scroll-if-needed">
-            <div className="flex flex-justify-center flex-items-center pt2">
+        <div className="background-container h100 flex-no-min-children flex-column flex-nowrap flex-align-items-center scroll-if-needed">
+            <div className="flex flex-justify-center flex-align-items-center pt2">
                 <div className="w150p">
                     <Href url="https://protonvpn.com" target="_self">
                         <VpnLogo className="fill-primary" />
                     </Href>
                 </div>
-                <h3 className="mb0 pl0-25 uppercase bold">{c('Title').t`TV log in`}</h3>
+                <h3 className="mb0 pl0-25 text-uppercase text-bold">{c('Title').t`TV log in`}</h3>
             </div>
             <div className="flex flex-column flex-item-fluid flex-nowrap flex-item-noshrink">
-                <div className="mauto p2 flex-item-noshrink mw30e">{render()}</div>
+                <div className="mauto p2 flex-item-noshrink max-w30e">{render()}</div>
             </div>
         </div>
     );

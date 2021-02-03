@@ -12,11 +12,7 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
         <Button
             disabled={isDisabled}
             onClick={onSelect}
-            className={classnames([
-                'w100 mtauto',
-                !isActive && 'pm-button--primaryborder',
-                isActive && 'pm-button--primary',
-            ])}
+            className={classnames(['w100 mtauto', !isActive && 'button--primaryborder', isActive && 'button--primary'])}
         >
             {c('Plan Action').t`Get ${plan.title}`}
         </Button>
@@ -26,24 +22,24 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
         <div
             className={classnames([
                 'plan-card flex-item-fluid flex flex-column relative',
-                isActive ? 'plan-card--active' : 'nomobile',
+                isActive ? 'plan-card--active' : 'no-mobile',
             ])}
         >
-            <div className="mb1 plan-card-image flex flex-items-end nomobile">{plan.image}</div>
-            <div className="flex flex-items-center relative">
-                <strong className="biggest mt0 mb0">{plan.title}</strong>
+            <div className="mb1 plan-card-image flex flex-align-items-end no-mobile">{plan.image}</div>
+            <div className="flex flex-align-items-center relative">
+                <strong className="text-2xl mt0 mb0">{plan.title}</strong>
                 {plan.isBest && (
                     <div className="mlauto plan-card-mostPopular">
                         <Badge>{c('Plan info').t`Most popular`}</Badge>
                     </div>
                 )}
             </div>
-            <div className="flex-item-fluid-auto pt1 pb1 flex-noMinChildren flex-column">
+            <div className="flex-item-fluid-auto pt1 pb1 flex-no-min-children flex-column">
                 <PlanPrice plan={plan} cycle={cycle} currency={currency} />
                 {plan.description && (
                     <strong
                         className={classnames([
-                            'min-h5e border-top mt1 pt1 mb1 big break',
+                            'min-h5e border-top mt1 pt1 mb1 text-lg text-break',
                             isActive && 'color-primary',
                         ])}
                     >

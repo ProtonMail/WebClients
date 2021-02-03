@@ -33,7 +33,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                 <div>
                     <Alert>{c('Info').t`Your payment details are protected with TLS encryption and Swiss laws`}</Alert>
                     <Payment
-                        fieldClassName="auto flex-item-fluid-auto"
+                        fieldClassName="wauto flex-item-fluid-auto"
                         type="signup"
                         method={method}
                         amount={paymentAmount}
@@ -63,7 +63,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                         )}
                         {method === PAYMENT_METHOD_TYPES.PAYPAL && (
                             <Field>
-                                <PayPalButton paypal={paypal} className="pm-button--primary" amount={paymentAmount}>{c(
+                                <PayPalButton paypal={paypal} className="button--primary" amount={paymentAmount}>{c(
                                     'Action'
                                 ).t`Continue`}</PayPalButton>
                             </Field>

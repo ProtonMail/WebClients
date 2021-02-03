@@ -13,7 +13,7 @@ const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destin
             <HeaderModal hasClose modalTitleID={modalTitleID} onClose={onClose}>
                 {c('Title').t`Resend code`}
             </HeaderModal>
-            <div className="pm-modalContent">
+            <div className="modal-content">
                 <InnerModal>
                     <p>
                         {c('Info')
@@ -21,7 +21,7 @@ const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destin
                     </p>
                 </InnerModal>
                 <FooterModal>
-                    <div className="flex w100 flex-spacebetween">
+                    <div className="flex w100 flex-justify-space-between">
                         <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                         <div>
                             <Button

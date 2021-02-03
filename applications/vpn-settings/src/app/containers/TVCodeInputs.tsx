@@ -51,8 +51,8 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
 
     return (
         <>
-            <div className="code-input-container flex flex-justify-center automobile">
-                <div className="code-input-div flex-item-fluid flex flex-column aligncenter onmobile-pb1 onmobile-pt0-5">
+            <div className="code-input-container flex flex-justify-center auto-mobile">
+                <div className="code-input-div flex-item-fluid flex flex-column text-center on-mobile-pb1 on-mobile-pt0-5">
                     <Input
                         ref={refFirstInput}
                         minLength={4}
@@ -61,13 +61,13 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={handleOnChangeFirst}
                         onKeyUp={handleKeyUpFirst}
                         placeholder="1234"
-                        className="bold mw15e flex-self-end mauto"
+                        className="text-bold max-w15e flex-align-self-end mauto"
                         required
                         autoFocus
                     />
                 </div>
-                <hr className="w5 tv-hr ml1 mr1 mt1-5 mbauto nomobile" />
-                <div className="code-input-div flex-item-fluid flex flex-column aligncenter onmobile-pb1 onmobile-pt0-5">
+                <hr className="w5 tv-hr ml1 mr1 mt1-5 mbauto no-mobile" />
+                <div className="code-input-div flex-item-fluid flex flex-column text-center on-mobile-pb1 on-mobile-pt0-5">
                     <Input
                         ref={refSecondInput}
                         minLength={4}
@@ -76,7 +76,7 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={handleOnChangeSecond}
                         onKeyUp={handleKeyUpSecond}
                         placeholder="ABCD"
-                        className="bold mw15e mauto"
+                        className="text-bold max-w15e mauto"
                         required
                     />
                 </div>

@@ -44,7 +44,7 @@ const RedeemCouponForm = ({ history }) => {
                 loading={loading}
                 disabled={!couponCode}
                 type="submit"
-                className="redeem-submit-button pm-button--noborder uppercase bold mt2 pt1 pb1"
+                className="redeem-submit-button button--no-border text-uppercase text-bold mt2 pt1 pb1"
             >
                 {c('Action').t`Activate my coupon`}
             </PrimaryButton>

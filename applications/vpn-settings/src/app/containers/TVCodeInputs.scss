@@ -7,9 +7,9 @@
     background-size: 1200px 800px;
 }
 .code-input-div {
-    .pm-field,
-    .pm-field:focus,
-    .pm-field:active {
+    .field,
+    .field:focus,
+    .field:active {
         letter-spacing: 1.5rem;
         text-indent: 1.9rem;
         border: none;
@@ -24,9 +24,9 @@
 }
 @include respond-to($breakpoint-small) {
     .code-input-div {
-        .pm-field,
-        .pm-field:focus,
-        .pm-field:active {
+        .field,
+        .field:focus,
+        .field:active {
             letter-spacing: 2.6rem;
             text-indent: 3.5rem;
         }

@@ -4,7 +4,7 @@ import { PublicTopBanners } from 'react-components';
 
 const PublicLayout = ({ children }) => {
     return (
-        <main className="main-full flex-noMinChildren flex-column flex-nowrap reset4print">
+        <main className="main-full flex-no-min-children flex-column flex-nowrap reset4print">
             <PublicTopBanners />
             {children}
         </main>

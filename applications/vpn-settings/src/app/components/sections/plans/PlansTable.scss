@@ -24,7 +24,7 @@
 		border: 0;
 	}
 
-	th:not(.pm-simple-table-row-th) {
+	th:not(.simple-table-row-th) {
 		text-transform: uppercase;
 	}
 
@@ -47,7 +47,7 @@
 
 	tbody {
 		tr {
-			&:first-of-type .pm-simple-table-row-th {
+			&:first-of-type .simple-table-row-th {
 				border-top-left-radius: $global-border-radius;
 			}
 
@@ -66,7 +66,7 @@
 				}
 			}
 
-			.pm-simple-table-row-th {
+			.simple-table-row-th {
 				padding-left: 2em;
 
 				@include respond-to(1100) {

@@ -4,12 +4,12 @@ import { Href, VpnLogo } from 'react-components';
 import { c } from 'ttag';
 
 const PublicHeader = ({ action }) => (
-    <header className="flex-item-noshrink flex flex-items-center noprint mb2">
-        <div className="nomobile flex-item-fluid">
+    <header className="flex-item-noshrink flex flex-align-items-center no-print mb2">
+        <div className="no-mobile flex-item-fluid">
             <span className="opacity-50">{c('Label').t`Back to:`}</span>{' '}
             <Href
                 url="https://protonvpn.com"
-                className="inbl color-white nodecoration hover-same-color"
+                className="inline-block color-white text-no-decoration hover-same-color"
                 target="_self"
             >{c('Link').t`protonvpn.com`}</Href>
         </div>
@@ -18,7 +18,7 @@ const PublicHeader = ({ action }) => (
                 <VpnLogo className="fill-primary" />
             </Href>
         </div>
-        <div className="nomobile flex-item-fluid alignright">{action}</div>
+        <div className="no-mobile flex-item-fluid text-right">{action}</div>
     </header>
 );
 
