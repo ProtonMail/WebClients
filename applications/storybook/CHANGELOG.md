@@ -1,6 +1,6 @@
 # 0.0.7 (3 February, 2021)
 
-Added `Dropzone` component
+Added [Dropzone](https://design-system.protontech.ch/?path=/story/components-dropdown--basic), a component for drag and drop uploading.
 
 # 0.0.6 (29 January, 2021)
 
