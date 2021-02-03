@@ -62,9 +62,13 @@ const ChallengeFrame = ({
         let errorTimeoutHandle = window.setTimeout(handleError, errorTimeout);
 
         const challengeUrlSrc = getChallengeURL(config.API_URL, type).toString();
-        const styleSrcs = [...document.querySelectorAll<HTMLLinkElement>('link[rel=stylesheet]')].map((x) => {
-            return new URL(x.href, window.location.origin).toString();
-        });
+        const styleSrcs = [...document.querySelectorAll<HTMLLinkElement>('link[rel=stylesheet]')]
+            .map((x) => {
+                return new URL(x.href, window.location.origin).toString();
+            })
+            .filter((url) => {
+                return url.startsWith(window.location.origin);
+            });
         const scriptSrcs = [challengeUrlSrc];
         let challengeError = false;
 
