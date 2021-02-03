@@ -18,7 +18,7 @@ const EmailSubscriptionManagement = ({ News, disabled, onChange }: EmailSubscrip
             <img
                 src={protonLogoSvg}
                 alt={c('Title').t`Proton Logo`}
-                className="email-unsubscribe-layout--logo bl mlauto mrauto mb2"
+                className="email-unsubscribe-layout--logo block mlauto mrauto mb2"
             />
 
             {c('Email Unsubscribe').jt`Which emails do you want to receive from Proton?`}
