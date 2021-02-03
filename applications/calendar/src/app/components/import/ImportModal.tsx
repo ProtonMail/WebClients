@@ -2,8 +2,8 @@ import { updateCalendar } from 'proton-shared/lib/api/calendars';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import React, { ChangeEvent, MutableRefObject, useState } from 'react';
-import { FormModal, PrimaryButton, useApi, useEventManager } from 'react-components';
+import React, { ChangeEvent, MutableRefObject, useState, DragEvent } from 'react';
+import { FormModal, PrimaryButton, useApi, useEventManager, onlyDragFiles } from 'react-components';
 import { c } from 'ttag';
 
 import { MAX_IMPORT_FILE_SIZE } from '../../constants';
@@ -39,6 +39,7 @@ const ImportModal = ({ calendars, defaultCalendar, calendarsEventsCacheRef, ...r
     const api = useApi();
     const { call } = useEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
+    const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
 
     const { content, ...modalProps } = (() => {
         if (model.step <= IMPORT_STEPS.ATTACHED) {
@@ -52,22 +53,51 @@ const ImportModal = ({ calendars, defaultCalendar, calendarsEventsCacheRef, ...r
                 setModel(getInitialState(model.calendar));
             };
 
+            const handleFiles = (files: File[]) => {
+                const [file] = files;
+                const filename = file.name;
+                const [, extension] = splitExtension(filename);
+                const fileAttached = extension.toLowerCase() === 'ics' ? file : null;
+                if (!fileAttached) {
+                    throw new ImportFileError(IMPORT_ERROR_TYPE.NO_ICS_FILE, filename);
+                }
+                if (fileAttached.size > MAX_IMPORT_FILE_SIZE) {
+                    throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_TOO_BIG, filename);
+                }
+                setModel({ ...model, step: IMPORT_STEPS.ATTACHED, fileAttached, failure: undefined });
+            };
+
+            const handleHover = (hover: boolean) =>
+                onlyDragFiles((event: DragEvent) => {
+                    setIsDropzoneHovered(hover);
+                    event.stopPropagation();
+                });
+
+            const onAddFiles = (files: File[]) => {
+                try {
+                    if (!files) {
+                        throw new ImportFileError(IMPORT_ERROR_TYPE.NO_FILE_SELECTED);
+                    }
+
+                    handleFiles(files);
+                } catch (e) {
+                    setModel({ ...model, failure: e });
+                }
+            };
+
+            const handleDrop = onlyDragFiles((event: DragEvent) => {
+                event.preventDefault();
+                setIsDropzoneHovered(false);
+                onAddFiles([...event.dataTransfer.files]);
+            });
+
             const handleAttach = ({ target }: ChangeEvent<HTMLInputElement>) => {
                 try {
                     if (!target.files) {
                         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_FILE_SELECTED);
                     }
-                    const [file] = target.files;
-                    const filename = file.name;
-                    const [, extension] = splitExtension(filename);
-                    const fileAttached = extension.toLowerCase() === 'ics' ? file : null;
-                    if (!fileAttached) {
-                        throw new ImportFileError(IMPORT_ERROR_TYPE.NO_ICS_FILE, filename);
-                    }
-                    if (fileAttached.size > MAX_IMPORT_FILE_SIZE) {
-                        throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_TOO_BIG, filename);
-                    }
-                    setModel({ ...model, step: IMPORT_STEPS.ATTACHED, fileAttached, failure: undefined });
+
+                    handleFiles([...target.files]);
                 } catch (e) {
                     setModel({ ...model, failure: e });
                 }
@@ -117,6 +147,10 @@ const ImportModal = ({ calendars, defaultCalendar, calendarsEventsCacheRef, ...r
                         onSelectCalendar={handleSelectCalendar}
                         onAttach={handleAttach}
                         onClear={handleClear}
+                        isDropzoneHovered={isDropzoneHovered}
+                        onDrop={handleDrop}
+                        onDragEnter={handleHover(true)}
+                        onDragLeave={handleHover(false)}
                     />
                 ),
                 submit,
