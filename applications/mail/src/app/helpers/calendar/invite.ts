@@ -618,11 +618,7 @@ export const getSupportedEventInvitation = (
 
         const hasXWrTimezone = !!xWrTimezone?.value;
         const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone.value) : undefined;
-        const isAllDayStart = getIsPropertyAllDay(validated.dtstart);
-        const isAllDayEnd = dtend ? getIsPropertyAllDay(dtend) : undefined;
-        if (isAllDayEnd !== undefined && +isAllDayStart ^ +isAllDayEnd) {
-            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
-        }
+
         validated.dtstart = getSupportedDateOrDateTimeProperty({
             property: dtstart,
             hasXWrTimezone,
@@ -630,54 +626,13 @@ export const getSupportedEventInvitation = (
             isRecurring,
             method: supportedMethod,
         });
+        const isAllDayStart = getIsPropertyAllDay(validated.dtstart);
+        const startTzid = getPropertyTzid(validated.dtstart);
         if (!getIsWellFormedDateOrDateTime(validated.dtstart)) {
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
         }
         if (getIsDateOutOfBounds(validated.dtstart)) {
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                method: supportedMethod,
-            });
-        }
-        if (exdate) {
-            if (!rrule) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
-                    method: supportedMethod,
-                });
-            }
-            const supportedExdate = exdate.map((property) =>
-                getSupportedDateOrDateTimeProperty({
-                    property,
-                    hasXWrTimezone,
-                    calendarTzid,
-                    isRecurring,
-                    method: supportedMethod,
-                })
-            );
-            validated.exdate = supportedExdate.map((property) =>
-                getLinkedDateTimeProperty({
-                    property,
-                    isAllDay: getIsPropertyAllDay(validated.dtstart),
-                    tzid: getPropertyTzid(validated.dtstart),
-                    method: supportedMethod,
-                })
-            );
-        }
-        if (recurrenceId) {
-            if (rrule) {
-                if (method.value === ICAL_METHOD.REPLY) {
-                    // the external provider forgot to remove the RRULE
-                    ignoreRrule = true;
-                } else {
-                    throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                        method: supportedMethod,
-                    });
-                }
-            }
-            validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
-                property: recurrenceId,
-                hasXWrTimezone,
-                calendarTzid,
-                isRecurring,
                 method: supportedMethod,
             });
         }
@@ -703,7 +658,7 @@ export const getSupportedEventInvitation = (
             const endDateUTC = propertyToUTCDate(supportedDtend);
             // allow a non-RFC-compliant all-day event with DTSTART = DTEND
             const modifiedEndDateUTC =
-                !isAllDayEnd || +startDateUTC === +endDateUTC ? endDateUTC : addDays(endDateUTC, -1);
+                !getIsPropertyAllDay(dtend) || +startDateUTC === +endDateUTC ? endDateUTC : addDays(endDateUTC, -1);
             const duration = +modifiedEndDateUTC - +startDateUTC;
 
             if (duration > 0) {
@@ -712,6 +667,58 @@ export const getSupportedEventInvitation = (
         } else if (duration) {
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
                 method: supportedMethod,
+            });
+        }
+        const isAllDayEnd = validated.dtend ? getIsPropertyAllDay(validated.dtend) : undefined;
+        if (isAllDayEnd !== undefined && +isAllDayStart ^ +isAllDayEnd) {
+            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
+        }
+        if (exdate) {
+            if (!rrule) {
+                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                    method: supportedMethod,
+                });
+            }
+            const supportedExdate = exdate.map((property) =>
+                getSupportedDateOrDateTimeProperty({
+                    property,
+                    hasXWrTimezone,
+                    calendarTzid,
+                    isRecurring,
+                    method: supportedMethod,
+                })
+            );
+            validated.exdate = supportedExdate.map((property) =>
+                getLinkedDateTimeProperty({
+                    property,
+                    isAllDay: isAllDayStart,
+                    tzid: startTzid,
+                    method: supportedMethod,
+                })
+            );
+        }
+        if (recurrenceId) {
+            if (rrule) {
+                if (method.value === ICAL_METHOD.REPLY) {
+                    // the external provider forgot to remove the RRULE
+                    ignoreRrule = true;
+                } else {
+                    throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
+                        method: supportedMethod,
+                    });
+                }
+            }
+            const supportedRecurrenceId = getSupportedDateOrDateTimeProperty({
+                property: recurrenceId,
+                hasXWrTimezone,
+                calendarTzid,
+                isRecurring,
+                method: supportedMethod,
+            });
+            validated['recurrence-id'] = getLinkedDateTimeProperty({
+                property: supportedRecurrenceId,
+                isAllDay: isAllDayStart,
+                tzid: startTzid,
             });
         }
 
