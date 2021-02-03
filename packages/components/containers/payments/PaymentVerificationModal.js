@@ -113,9 +113,9 @@ const PaymentVerificationModal = ({
                 {
                     [STEPS.REDIRECT]: (
                         <>
-                            <p className="aligncenter">{c('Info')
+                            <p className="text-center">{c('Info')
                                 .t`Your bank requires 3-D Secure verification for security purposes.`}</p>
-                            <p className="aligncenter">
+                            <p className="text-center">
                                 <PaymentVerificationImage payment={payment} type={type} />
                             </p>
                             <Alert>
@@ -128,7 +128,7 @@ const PaymentVerificationModal = ({
                     ),
                     [STEPS.REDIRECTING]: (
                         <>
-                            <p className="aligncenter">
+                            <p className="text-center">
                                 {isPayPal
                                     ? c('Info').t`You will soon be redirected to PayPal to verify your payment.`
                                     : c('Info').t`You will be soon redirected to your bank to verify your payment.`}
@@ -140,13 +140,13 @@ const PaymentVerificationModal = ({
                     ),
                     [STEPS.REDIRECTED]: (
                         <>
-                            <p className="aligncenter">
+                            <p className="text-center">
                                 {isAddCard && !isPayPal
                                     ? c('Info').t`Please verify the card in the new tab which was opened.`
                                     : c('Info').t`Please verify payment at the new tab which was opened.`}
                             </p>
                             <Loader />
-                            <p className="aligncenter">
+                            <p className="text-center">
                                 <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                             </p>
                             <Alert>
@@ -163,7 +163,7 @@ const PaymentVerificationModal = ({
                         </>
                     ),
                     [STEPS.FAIL]: (
-                        <div className="aligncenter">
+                        <div className="text-center">
                             <p>
                                 {isPayPal
                                     ? c('Info')

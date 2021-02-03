@@ -222,7 +222,7 @@ const MemberActions = ({ member, addresses = [], organization, organizationKey }
         },
     ].filter(isTruthy);
 
-    return <DropdownActions loading={loading} list={list} className="pm-button--small" />;
+    return <DropdownActions loading={loading} list={list} className="button--small" />;
 };
 
 export default MemberActions;

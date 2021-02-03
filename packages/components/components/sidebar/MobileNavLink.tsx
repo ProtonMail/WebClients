@@ -9,7 +9,7 @@ interface Props extends AppLinkProps {
 const MobileNavLink = ({ icon = '', current = false, ...rest }: Props) => {
     return (
         <AppLink aria-current={current} className="flex aside-link" {...rest}>
-            <Icon name={icon} className="aside-linkIcon mauto" />
+            <Icon name={icon} className="aside-link-icon mauto" />
         </AppLink>
     );
 };

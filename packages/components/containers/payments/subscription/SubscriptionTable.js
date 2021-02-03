@@ -18,34 +18,34 @@ const SubscriptionTable = ({
 }) => {
     return (
         <div className="mt2 subscriptionTable">
-            <div className="flex-autogrid ontablet-flex-column">
+            <div className="flex-autogrid on-tablet-flex-column">
                 {plans.map(({ name, title, price, imageSrc, description, features = [], canCustomize }, index) => {
                     return (
                         <div key={title} className="flex-autogrid-item flex" data-plan-name={name}>
                             <div
-                                className="bordered-container subscriptionTable-plan onmobile-mb2 pt2 pb2 pl0-75 pr0-75 flex-noMinChildren flex-column relative w100"
+                                className="bordered-container subscriptionTable-plan on-mobile-mb2 pt2 pb2 pl0-75 pr0-75 flex-no-min-children flex-column relative w100"
                                 data-current-plan={index === currentPlanIndex}
                                 data-most-popular={index === mostPopularIndex}
                             >
                                 <header className="flex flex-column flex-justify-end subscriptionTable-header">
                                     {index === currentPlanIndex ? (
-                                        <div className="subscriptionTable-currentPlan-container aligncenter uppercase bold smaller mb0 mt0">
+                                        <div className="subscriptionTable-currentPlan-container text-center text-uppercase text-bold text-xs mb0 mt0">
                                             {currentPlan}
                                         </div>
                                     ) : null}
                                     {index === mostPopularIndex ? (
-                                        <div className="mb0-5 aligncenter color-global-success bold small mt0 uppercase subscriptionTable-mostPopular">{c(
+                                        <div className="mb0-5 text-center color-global-success text-bold text-sm mt0 text-uppercase subscriptionTable-mostPopular">{c(
                                             'Title for subscription plan'
                                         ).t`Most popular`}</div>
                                     ) : null}
-                                    <div className="bold aligncenter mb0-5 uppercase">{title}</div>
-                                    <div className="aligncenter mb0-5">{price}</div>
-                                    <div className="flex flex-items-center flex-justify-center subscriptionTable-image-container">
+                                    <div className="text-bold text-center mb0-5 text-uppercase">{title}</div>
+                                    <div className="text-center mb0-5">{price}</div>
+                                    <div className="flex flex-align-items-center flex-justify-center subscriptionTable-image-container">
                                         <img src={imageSrc} alt={title} />
                                     </div>
                                 </header>
-                                <p className="aligncenter mt0 mb1 bold min-h5e">{description}</p>
-                                <ul className="unstyled small mb2 flex-item-fluid-auto">
+                                <p className="text-center mt0 mb1 text-bold min-h5e">{description}</p>
+                                <ul className="unstyled text-sm mb2 flex-item-fluid-auto">
                                     {features.map(({ icon, content }, index) => {
                                         return (
                                             <li className="subscriptionTable-feature flex flex-nowrap" key={index}>
@@ -59,18 +59,18 @@ const SubscriptionTable = ({
                                         );
                                     })}
                                 </ul>
-                                <footer className="subscriptionTable-footer aligncenter flex flex-column">
+                                <footer className="subscriptionTable-footer text-center flex flex-column">
                                     {mode === 'radio' ? (
                                         <Button
                                             disabled={disabled || index === currentPlanIndex}
-                                            className={classnames([index !== currentPlanIndex && 'pm-button--primary'])}
+                                            className={classnames([index !== currentPlanIndex && 'button--primary'])}
                                             onClick={() => onSelect(index)}
                                         >
                                             {index === currentPlanIndex ? selected : select}
                                         </Button>
                                     ) : null}
                                     {mode === 'button' ? (
-                                        <Button className="pm-button--primary" onClick={() => onSelect(index)}>
+                                        <Button className="button--primary" onClick={() => onSelect(index)}>
                                             {select}
                                         </Button>
                                     ) : null}

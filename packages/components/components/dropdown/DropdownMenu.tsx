@@ -14,8 +14,8 @@ const DropdownMenu = ({ children, className = '', listRef }: Props) => {
                 return React.isValidElement(child) ? (
                     <li
                         className={classnames([
-                            'dropDown-item',
-                            child.props.actionType === 'delete' && 'dropDown-item--delete',
+                            'dropdown-item',
+                            child.props.actionType === 'delete' && 'dropdown-item--delete',
                             child.props.liClassName,
                         ])}
                         key={child.key || i}

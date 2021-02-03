@@ -4,7 +4,7 @@ import { classnames } from '../../helpers';
 
 const WarningButton = ({ children, className = '', ...rest }: ButtonProps) => {
     return (
-        <Button className={classnames(['pm-button--warning', className])} {...rest}>
+        <Button className={classnames(['button--warning', className])} {...rest}>
             {children}
         </Button>
     );

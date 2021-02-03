@@ -9,7 +9,7 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElem
 const EditableSection = ({ children, className = '', ...rest }: Props) => {
     return (
         <div
-            className={classnames(['inline-grid-container onmobile-w100 editableSection-container', className])}
+            className={classnames(['inline-grid-container on-mobile-w100 editable-section-container', className])}
             {...rest}
         >
             {children}

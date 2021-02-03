@@ -30,7 +30,7 @@ const FileInput = forwardRef<FileInputHandle, Props>(
         }));
 
         return (
-            <label className={classnames(['pm-button', className])} htmlFor={id}>
+            <label className={classnames(['button', className])} htmlFor={id}>
                 <input id={id} type="file" className="hidden" onChange={handleChange} {...rest} ref={inputRef} />
                 {children}
             </label>

@@ -125,7 +125,7 @@ const ContactViewProperty = ({
                 return (
                     <>
                         {!isOwnAddress && (
-                            <Button onClick={handleSettings} className="ml0-5 pm-button--for-icon">
+                            <Button onClick={handleSettings} className="ml0-5 button--for-icon">
                                 <Tooltip title={c('Title').t`Email settings`}>
                                     <Icon name="settings-singular" alt={c('Action').t`Email settings`} />
                                 </Tooltip>
@@ -133,7 +133,7 @@ const ContactViewProperty = ({
                         )}
                         {hasPaidMail ? (
                             <ContactGroupDropdown
-                                className="ml0-5 pm-button pm-button--for-icon"
+                                className="ml0-5 button button--for-icon"
                                 contactEmails={[contactEmail]}
                             >
                                 <Tooltip title={c('Title').t`Contact group`}>
@@ -143,7 +143,7 @@ const ContactViewProperty = ({
                         ) : (
                             <Button
                                 onClick={() => createModal(<ContactUpgradeModal />)}
-                                className="ml0-5 pm-button--for-icon"
+                                className="ml0-5 button--for-icon"
                             >
                                 <Tooltip title={c('Title').t`Contact group`}>
                                     <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
@@ -151,7 +151,7 @@ const ContactViewProperty = ({
                             </Button>
                         )}
                         <Copy
-                            className="ml0-5 pm-button--for-icon"
+                            className="ml0-5 button--for-icon"
                             value={value}
                             onCopy={() => {
                                 createNotification({ text: c('Success').t`Email address copied to clipboard` });
@@ -163,7 +163,7 @@ const ContactViewProperty = ({
             case 'tel':
                 return (
                     <Copy
-                        className="ml0-5 pm-button--for-icon"
+                        className="ml0-5 button--for-icon"
                         value={value}
                         onCopy={() => {
                             createNotification({ text: c('Success').t`Phone number copied to clipboard` });
@@ -173,7 +173,7 @@ const ContactViewProperty = ({
             case 'adr':
                 return (
                     <Copy
-                        className="ml0-5 pm-button--for-icon"
+                        className="ml0-5 button--for-icon"
                         value={formatAdr(property?.value as string[])}
                         onCopy={() => {
                             createNotification({ text: c('Success').t`Address copied to clipboard` });
@@ -187,11 +187,13 @@ const ContactViewProperty = ({
 
     return (
         <Row>
-            <div className={classnames(['flex flex-items-center', leftBlockWidth])}>
+            <div className={classnames(['flex flex-align-items-center', leftBlockWidth])}>
                 <ContactLabelProperty field={field} type={type} />
             </div>
-            <div className={classnames(['flex flex-nowrap flex-items-center pl1 onmobile-pl0', rightBlockWidth])}>
-                <span className={classnames(['mr0-5 flex-item-fluid', !['note'].includes(field) && 'ellipsis'])}>
+            <div
+                className={classnames(['flex flex-nowrap flex-align-items-center pl1 on-mobile-pl0', rightBlockWidth])}
+            >
+                <span className={classnames(['mr0-5 flex-item-fluid', !['note'].includes(field) && 'text-ellipsis'])}>
                     {getContent()}
                 </span>
                 <span className="flex-item-noshrink flex">{getActions()}</span>

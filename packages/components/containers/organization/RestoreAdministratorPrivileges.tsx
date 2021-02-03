@@ -37,7 +37,7 @@ const RestoreAdministratorPrivileges = () => {
             >
                 {c('Action').t`Restore administrator privileges`}
             </PrimaryButton>
-            <LearnMore className="inbl" url="https://protonmail.com/support/knowledge-base/business/" />
+            <LearnMore className="inline-block" url="https://protonmail.com/support/knowledge-base/business/" />
         </Block>
     );
 };

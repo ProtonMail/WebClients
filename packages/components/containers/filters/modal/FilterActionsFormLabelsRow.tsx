@@ -88,8 +88,8 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
     };
 
     return (
-        <div className="border-bottom flex flex-nowrap onmobile-flex-column align-items-center pt1 pb1">
-            <button type="button" className={classnames(['w20 alignleft', isNarrow && 'mb1'])} onClick={toggleSection}>
+        <div className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
+            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
                 <Icon name="caret" className={classnames([isOpen && 'rotateX-180'])} />
                 <span className={classnames(['ml0-5', actions.error && 'color-global-warning'])}>
                     {c('Label').t`Label as`}
@@ -101,7 +101,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                         <div className="w100">
                             {labels.length ? (
                                 labels.map((label: Label) => (
-                                    <div className="mb0-5 inbl ellipsis" key={label.Name}>
+                                    <div className="mb0-5 inline-block text-ellipsis" key={label.Name}>
                                         <Checkbox
                                             className="mr1 flex-nowrap"
                                             checked={labelAs.labels.includes(label.Name)}
@@ -116,7 +116,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                             }}
                                             labelOnClick={(e) => e.stopPropagation()}
                                         >
-                                            <span className="inline-flex alignmiddle">
+                                            <span className="inline-flex align-middle">
                                                 <LabelStack
                                                     labels={[
                                                         {
@@ -146,7 +146,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                 <Button
                     disabled={!labelAs?.labels.length}
                     onClick={handleClear}
-                    className={classnames(['pm-button--for-icon', isNarrow ? 'mt1' : 'ml1'])}
+                    className={classnames(['button--for-icon', isNarrow ? 'mt1' : 'ml1'])}
                 >
                     <Tooltip
                         title={c('Action').t`Reset`}

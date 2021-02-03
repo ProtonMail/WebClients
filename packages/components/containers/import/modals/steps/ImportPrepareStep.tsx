@@ -239,12 +239,12 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
             )}
 
             <div className="flex pb1 mb1 border-bottom">
-                <div className="flex-item-fluid ellipsis mr0-5">
+                <div className="flex-item-fluid text-ellipsis mr0-5">
                     <span>{c('Label').t`From`}</span>
                     {`: `}
                     <strong>{modalModel.email}</strong>
                 </div>
-                <div className="flex-item-fluid ellipsis ml0-5 alignright">
+                <div className="flex-item-fluid text-ellipsis ml0-5 text-right">
                     <span>{c('Label').t`To`}</span>
                     {`: `}
                     <strong>{address.Email}</strong>
@@ -252,12 +252,12 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
             </div>
 
             <div className="pb1 mb1 border-bottom">
-                <div className="mb1 flex flex-items-center">
+                <div className="mb1 flex flex-align-items-center">
                     <Icon className="mr0-5" name="mailbox" />
                     {c('Info').t`Import mailbox`}
                 </div>
 
-                <div className="mb1 ml1 flex flex-items-center">
+                <div className="mb1 ml1 flex flex-align-items-center">
                     <Icon className="mr0-5" name="parent-folder" />
                     {c('Info').ngettext(
                         msgid`${providerFoldersNumLocalized} folder found`,
@@ -276,7 +276,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                 </div>
 
                 {selectedFolders.length !== providerFoldersNum && (
-                    <div className="mb1 ml2 flex flex-items-center">
+                    <div className="mb1 ml2 flex flex-align-items-center">
                         <strong>
                             <Icon className="mr0-5" name="parent-folder" />
                             {c('Info').ngettext(
@@ -288,7 +288,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                     </div>
                 )}
 
-                <div className="mb1 ml1 flex flex-items-center">
+                <div className="mb1 ml1 flex flex-align-items-center">
                     <Icon className="mr0-5" name="clock" />
                     {selectedPeriod === TIME_UNIT.BIG_BANG ? (
                         c('Info').t`Import all messages since ${selectedPeriodLowerCased}`
@@ -301,7 +301,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                     )}
                 </div>
 
-                <div className="mb1 ml1 flex flex-items-center flex-nowrap">
+                <div className="mb1 ml1 flex flex-align-items-center flex-nowrap">
                     <Icon className="flex-item-noshrink mr0-5" name="label" />
                     <span className="flex-item-noshrink">{c('Info').t`Label all imported messages as`}</span>
                     {payload.ImportLabel && payload.ImportLabel.Name && (
@@ -314,13 +314,13 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                                         title: payload.ImportLabel.Name,
                                     },
                                 ]}
-                                className="mw100"
+                                className="max-w100"
                             />
                         </span>
                     )}
                 </div>
 
-                <div className="mt0-5 flex flex-items-center">
+                <div className="mt0-5 flex flex-align-items-center">
                     <Button onClick={handleClickCustomize}>{c('Action').t`Customize import`}</Button>
                     {showFoldersNameError && (
                         <Tooltip title={c('Tooltip').t`Edit folder names`} className="ml0-5" originalPlacement="right">

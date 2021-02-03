@@ -97,8 +97,8 @@ const MiniCalendar = ({
         setTemporaryDate(undefined);
     }, [selectedDate]);
 
-    const classWeekNumber = displayWeekNumbers ? 'minicalendar-grid--displayWeekNumber' : '';
-    const classDark = displayedOnDarkBackground ? 'minicalendar--onDarkBackground' : '';
+    const classWeekNumber = displayWeekNumbers ? 'minicalendar-grid--display-week-number' : '';
+    const classDark = displayedOnDarkBackground ? 'minicalendar--on-dark-background' : '';
 
     const preventLeaveFocus = (e: FormEvent<HTMLElement>) => e.preventDefault();
 
@@ -108,7 +108,7 @@ const MiniCalendar = ({
             onMouseDown={preventLeaveFocus}
             aria-label={monthLabel}
         >
-            <div className="flex flex-items-center p1">
+            <div className="flex flex-align-items-center p1">
                 {hasCursors ? (
                     <>
                         <button
@@ -122,7 +122,7 @@ const MiniCalendar = ({
                         </button>
                     </>
                 ) : null}
-                <span className="bold flex-item-fluid aligncenter ellipsis">{monthLabel}</span>
+                <span className="text-bold flex-item-fluid text-center text-ellipsis">{monthLabel}</span>
                 {hasCursors ? (
                     <>
                         <button

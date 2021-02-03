@@ -7,7 +7,7 @@ import { classnames } from '../../../helpers';
 const IntlTelInput = ({ containerClassName, inputClassName, ...rest }) => (
     <ReactIntlTelInput
         containerClassName={classnames(['intl-tel-input', containerClassName])}
-        inputClassName={classnames(['pm-field', inputClassName])}
+        inputClassName={classnames(['field', inputClassName])}
         {...rest}
     />
 );

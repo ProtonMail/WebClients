@@ -44,7 +44,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
 
     const submit =
         method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-            <PayPalButton paypal={paypal} type="invoice" className="pm-button--primary" amount={AmountDue}>{c('Action')
+            <PayPalButton paypal={paypal} type="invoice" className="button--primary" amount={AmountDue}>{c('Action')
                 .t`Continue`}</PayPalButton>
         ) : (
             <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action').t`Pay`}</PrimaryButton>
@@ -63,8 +63,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
                 <>
                     <Row>
                         <Label>{c('Label').t`Amount`}</Label>
-                        <Field className="alignright">
-                            <Price className="pm-label" currency={Currency}>
+                        <Field className="text-right">
+                            <Price className="label" currency={Currency}>
                                 {Amount}
                             </Price>
                         </Field>
@@ -72,8 +72,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
                     {Credit ? (
                         <Row>
                             <Label>{c('Label').t`Credits used`}</Label>
-                            <Field className="alignright">
-                                <Price className="pm-label" currency={Currency}>
+                            <Field className="text-right">
+                                <Price className="label" currency={Currency}>
                                     {Credit}
                                 </Price>
                             </Field>
@@ -83,7 +83,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
                         <Label>{c('Label').t`Amount due`}</Label>
                         <Field>
                             <Input
-                                className="pm-field--highlight no-pointer-events strong alignright"
+                                className="field--highlight no-pointer-events text-strong text-right"
                                 readOnly
                                 value={toPrice(AmountDue, Currency)}
                             />

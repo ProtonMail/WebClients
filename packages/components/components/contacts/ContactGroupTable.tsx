@@ -14,7 +14,7 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
     return (
         <>
             <div className="flex flex-column" style={{ minHeight: 180 }}>
-                <Table className="noborder">
+                <Table className="no-border">
                     <TableHeader>
                         <tr>
                             <TableCell type="header">{c('Table header').t`Name`}</TableCell>
@@ -28,13 +28,13 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                         <TableBody>
                             {contactEmails.map(({ ID, Name, Email }) => {
                                 const cells = [
-                                    <div className="ellipsis mw100" key={ID} title={Name}>
+                                    <div className="text-ellipsis max-w100" key={ID} title={Name}>
                                         {Name}
                                     </div>,
-                                    <div className="ellipsis mw100" key={ID} title={Email}>
+                                    <div className="text-ellipsis max-w100" key={ID} title={Email}>
                                         {Email}
                                     </div>,
-                                    <SmallButton key={ID} onClick={() => onDelete(ID)} className="pm-button--redborder">
+                                    <SmallButton key={ID} onClick={() => onDelete(ID)} className="button--redborder">
                                         {c('Action').t`Remove`}
                                     </SmallButton>,
                                 ];
@@ -45,7 +45,7 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                 </Table>
 
                 {!contactEmails.length ? (
-                    <div className="flex flex-items-center flex-justify-center" style={{ minHeight: 150 }}>
+                    <div className="flex flex-align-items-center flex-justify-center" style={{ minHeight: 150 }}>
                         {c('Info').t`No contacts added yet`}
                     </div>
                 ) : null}

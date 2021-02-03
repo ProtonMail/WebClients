@@ -35,12 +35,12 @@
 	min-height: auto;
 }
 
-.subscription-modal .pm-label.payment-left {
+.subscription-modal .label.payment-left {
 	width: 30%;
 	min-width: var(--label-width, 18em);
 }
 
-.subscription-modal .pm-field-container.payment-right {
+.subscription-modal .field-container.payment-right {
 	width: 70%;
 }
 
@@ -53,7 +53,7 @@
 @include respond-to(1100) {
 	.cycle-currency-selectors.flex-nowrap {
 		flex-wrap: wrap;
-		.pm-field {
+		.field {
 			width: 100%;
 			margin-right: 0;
 			margin-bottom: 0.25em;
@@ -62,8 +62,8 @@
 }
 
 @include respond-to($breakpoint-small) {
-	.subscription-modal .pm-label.payment-left,
-	.subscription-modal .pm-field-container.payment-right {
+	.subscription-modal .label.payment-left,
+	.subscription-modal .field-container.payment-right {
 		width: 100%;
 	}
 }

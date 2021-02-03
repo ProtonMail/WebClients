@@ -28,19 +28,19 @@ const Header = ({
     const closeText = !closeTextModal ? c('Action').t`Close modal` : closeTextModal;
     return (
         <header
-            className={classnames(['pm-modalHeader', !displayTitle && 'pm-modalHeader--no-title', className])}
+            className={classnames(['modal-header', !displayTitle && 'modal-header--no-title', className])}
             {...rest}
         >
             {hasClose ? (
                 <button
                     type="button"
-                    className="pm-modalClose"
+                    className="modal-close"
                     title={closeText}
                     onClick={onClose}
                     data-focus-fallback="-3"
                 >
                     <span className={classnames(['mr0-25', !closeTextVisible && 'sr-only'])}>{closeText}</span>
-                    <Icon className="pm-modalClose-icon" name="close" />
+                    <Icon className="modal-close-icon" name="close" />
                 </button>
             ) : null}
             {typeof children === 'string' ? (

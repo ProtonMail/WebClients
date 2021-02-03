@@ -7,10 +7,10 @@ interface Props {
 }
 
 const PublicHeader = ({ left, middle, right }: Props) => (
-    <header className="flex-item-noshrink flex flex-items-center noprint mb2">
-        <div className="nomobile flex-item-fluid">{left}</div>
+    <header className="flex-item-noshrink flex flex-align-items-center no-print mb2">
+        <div className="no-mobile flex-item-fluid">{left}</div>
         <div className="w150p center">{middle}</div>
-        <div className="flex-item-fluid alignright">{right}</div>
+        <div className="flex-item-fluid text-right">{right}</div>
     </header>
 );
 

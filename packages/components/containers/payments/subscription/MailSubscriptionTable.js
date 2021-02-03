@@ -180,15 +180,15 @@ const MailSubscriptionTable = ({
                 }
                 {...rest}
             />
-            <p className="small mt1 mb0">* {c('Info concerning plan features').t`Customizable features`}</p>
-            <p className="small mt0 mb1">
+            <p className="text-sm mt1 mb0">* {c('Info concerning plan features').t`Customizable features`}</p>
+            <p className="text-sm mt0 mb1">
                 **{' '}
                 {c('Info concerning plan features')
                     .t`ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.`}
             </p>
-            <div className="aligncenter pb1 onmobile-pb2 subscriptionTable-show-features-container">
+            <div className="text-center pb1 on-mobile-pb2 subscriptionTable-show-features-container">
                 <LinkButton
-                    className="pm-button--small"
+                    className="button--small"
                     onClick={() => createModal(<SubscriptionFeaturesModal currency={currency} cycle={cycle} />)}
                 >
                     {c('Action').t`Show all features`}

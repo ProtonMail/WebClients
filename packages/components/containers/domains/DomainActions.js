@@ -49,7 +49,7 @@ const DomainActions = ({ domain, domainAddresses }) => {
         },
     ].filter(Boolean);
 
-    return <DropdownActions className="pm-button--small" list={list} />;
+    return <DropdownActions className="button--small" list={list} />;
 };
 
 DomainActions.propTypes = {

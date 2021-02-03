@@ -126,7 +126,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
 
         if (['archive', 'inbox', 'spam', 'trash'].includes(moveTo?.folder)) {
             selectedFolder = (
-                <span className="inline-flex flex-items-center mr2">
+                <span className="inline-flex flex-align-items-center mr2">
                     <Icon name={moveTo?.folder} className="mr0-5" />
                     {options.find((o) => o.value === moveTo?.folder)?.text}
                 </span>
@@ -144,10 +144,13 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                         />
                     )}
                     <span
-                        className={classnames(['mw100 flex-nowrap inline-flex flex-items-center', i !== 0 && 'ml0-5'])}
+                        className={classnames([
+                            'max-w100 flex-nowrap inline-flex flex-align-items-center',
+                            i !== 0 && 'ml0-5',
+                        ])}
                     >
                         <Icon name="folder" className="mr0-5" />
-                        <span className="ellipsis" title={f}>
+                        <span className="text-ellipsis" title={f}>
                             {f}
                         </span>
                     </span>
@@ -155,12 +158,12 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
             ));
         }
 
-        return <div className="pt0-5 flex flex-items-center mw100">{selectedFolder}</div>;
+        return <div className="pt0-5 flex flex-align-items-center max-w100">{selectedFolder}</div>;
     };
 
     return (
-        <div className="border-bottom flex flex-nowrap onmobile-flex-column align-items-center pt1 pb1">
-            <button type="button" className={classnames(['w20 alignleft', isNarrow && 'mb1'])} onClick={toggleSection}>
+        <div className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
+            <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
                 <Icon name="caret" className={classnames([isOpen && 'rotateX-180'])} />
                 <span className={classnames(['ml0-5', actions.error && 'color-global-warning'])}>{c('Label')
                     .t`Move to`}</span>
@@ -188,7 +191,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                 <Button
                     disabled={!moveTo?.folder}
                     onClick={handleClear}
-                    className={classnames(['pm-button--for-icon', isNarrow ? 'mt1' : 'ml1'])}
+                    className={classnames(['button--for-icon', isNarrow ? 'mt1' : 'ml1'])}
                 >
                     <Tooltip
                         title={c('Action').t`Reset`}

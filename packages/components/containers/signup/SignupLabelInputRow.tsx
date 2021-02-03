@@ -8,7 +8,7 @@ interface Props {
 }
 const SignupLabelInputRow = ({ label, input, className }: Props) => {
     return (
-        <div className={classnames(['flex onmobile-flex-column signup-label-field-container mb1', className])}>
+        <div className={classnames(['flex on-mobile-flex-column signup-label-field-container mb1', className])}>
             {label}
             <div className="flex-item-fluid">{input}</div>
         </div>

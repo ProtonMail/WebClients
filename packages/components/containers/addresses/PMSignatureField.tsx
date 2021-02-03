@@ -35,7 +35,7 @@ const PMSignatureField = ({ id, mailSettings = {} }: Props) => {
                 />
             </Field>
             {isMandatory ? null : (
-                <div className="ml1 onmobile-ml0">
+                <div className="ml1 on-mobile-ml0">
                     <Toggle loading={loading} id={id} checked={state} onChange={handleChange} />
                 </div>
             )}

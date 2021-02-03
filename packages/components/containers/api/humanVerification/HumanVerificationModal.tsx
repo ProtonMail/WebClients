@@ -47,7 +47,7 @@ const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, 
     };
 
     return (
-        <FormModal className="human-verification-modal pm-modal--heightAuto" title={title} footer={null} {...rest}>
+        <FormModal className="human-verification-modal modal--height-auto" title={title} footer={null} {...rest}>
             <HumanVerificationForm
                 onSubmit={(...args) => withLoading(handleSubmit(...args))}
                 methods={methods}

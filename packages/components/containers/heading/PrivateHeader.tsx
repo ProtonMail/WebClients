@@ -73,12 +73,12 @@ const PrivateHeader = ({
 
     return (
         <Header>
-            <div className="logo-container flex flex-spacebetween flex-items-center flex-nowrap nomobile">
+            <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
                 {logo}
                 {hasAppsDropdown ? <AppsDropdown /> : null}
             </div>
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-            {title && isNarrow ? <span className="big lh-standard mtauto mbauto ellipsis">{title}</span> : null}
+            {title && isNarrow ? <span className="text-lg lh-rg mtauto mbauto text-ellipsis">{title}</span> : null}
             {isNarrow ? null : searchBox}
             <TopNavbar>
                 {isNarrow && searchDropdown ? <TopNavbarItem>{searchDropdown}</TopNavbarItem> : null}

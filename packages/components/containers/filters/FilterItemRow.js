@@ -77,7 +77,7 @@ function FilterItemRow({ filter, ...rest }) {
     return (
         <OrderableTableRow
             cells={[
-                <div key="name" className="ellipsis mw100" title={Name}>
+                <div key="name" className="text-ellipsis max-w100" title={Name}>
                     {Name}
                 </div>,
                 <div key="toggle" className="w10">
@@ -88,10 +88,10 @@ function FilterItemRow({ filter, ...rest }) {
                         onChange={(e) => withLoading(handleChangeStatus(e))}
                     />
                 </div>,
-                <DropdownActions key="dropdown" className="pm-button--small" list={list} />,
+                <DropdownActions key="dropdown" className="button--small" list={list} />,
             ]}
             {...rest}
-            className="onmobile-hideTd3"
+            className="on-mobile-hide-td3"
         />
     );
 }

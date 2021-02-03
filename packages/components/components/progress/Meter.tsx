@@ -34,7 +34,7 @@ const Meter = ({ min = 0, low = 50, high = 80, max = 100, optimum = 0, value = 5
             optimum={optimum}
             value={value}
             aria-describedby={id}
-            className={classnames(['meterbar', className])}
+            className={classnames(['meter-bar', className])}
         />
     );
 };

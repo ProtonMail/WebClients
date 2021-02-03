@@ -15,7 +15,7 @@ const FullLoader = ({ size = 50, color, className }: Props) => {
     return (
         <>
             <svg
-                className={classnames(['loadingAnimation', isSmall && 'is-xbold', isMedium && 'is-bold', className])}
+                className={classnames(['full-loader', isSmall && 'is-xbold', isMedium && 'is-bold', className])}
                 style={color ? { color } : undefined}
                 viewBox="0 0 200 200"
                 width={size}
@@ -24,8 +24,8 @@ const FullLoader = ({ size = 50, color, className }: Props) => {
                 aria-hidden="true"
                 focusable="false"
             >
-                <circle cx="100" cy="100" r="80" className="loadingAnimation-circle" />
-                <circle cx="100" cy="100" r="80" className="loadingAnimation-circle" />
+                <circle cx="100" cy="100" r="80" className="full-loader-circle" />
+                <circle cx="100" cy="100" r="80" className="full-loader-circle" />
             </svg>
             <span className="sr-only">{c('Info').t`Loading`}</span>
         </>

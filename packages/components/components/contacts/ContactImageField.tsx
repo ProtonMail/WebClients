@@ -12,7 +12,7 @@ const ContactImageField = ({ value, onChange }: Props) => {
     return (
         <div>
             {value ? (
-                <img className="mw13e" src={value} referrerPolicy="no-referrer" />
+                <img className="max-w13e" src={value} referrerPolicy="no-referrer" />
             ) : (
                 <Button onClick={onChange}>{c('Action').t`Upload picture`}</Button>
             )}

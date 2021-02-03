@@ -5,7 +5,7 @@ import { classnames } from '../../helpers';
 const SidebarListItemContentIcon = ({ className, ...rest }: Props) => {
     return (
         <Icon
-            className={classnames(['navigation__icon flex-item-noshrink mr0-5 flex-item-centered-vert', className])}
+            className={classnames(['navigation-icon flex-item-noshrink mr0-5 flex-item-centered-vert', className])}
             {...rest}
         />
     );

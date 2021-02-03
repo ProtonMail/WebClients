@@ -66,7 +66,7 @@ const AccountForgotUsernameContainer = ({ Layout, onBack }: Props) => {
                 />
                 <SignupSubmitRow>
                     <PrimaryButton
-                        className="pm-button--large onmobile-w100"
+                        className="button--large on-mobile-w100"
                         disabled={!email}
                         loading={loading}
                         type="submit"

@@ -80,15 +80,15 @@ const Payment = ({
     return (
         <>
             <Row className="payment-container">
-                <div className="pm-label payment-left mr1 onmobile-mr0">
-                    <label className="mb0-5 bl">{c('Label').t`Select a method`}</label>
+                <div className="label payment-left mr1 on-mobile-mr0">
+                    <label className="mb0-5 block">{c('Label').t`Select a method`}</label>
                     {options.map(({ text, value, disabled, icon }) => {
                         return (
                             <label
                                 htmlFor={value}
                                 key={value}
                                 className={classnames([
-                                    'pt0-5 pb0-5 flex flex-nowrap flex-items-center',
+                                    'pt0-5 pb0-5 flex flex-nowrap flex-align-items-center',
                                     lastCustomMethod && lastCustomMethod.value === value && 'border-bottom',
                                 ])}
                             >
@@ -100,13 +100,13 @@ const Payment = ({
                                     onChange={() => onMethod(value)}
                                 />
                                 <Icon className="mr0-5" name={icon} />
-                                <span className="cut">{text}</span>
+                                <span className="text-cut">{text}</span>
                             </label>
                         );
                     })}
                 </div>
                 <div className="payment-right mr0-25">
-                    <div className="mw37e onmobile-mw100">
+                    <div className="max-w37e on-mobile-max-w100">
                         <Method
                             loading={loading}
                             paypal={paypal}

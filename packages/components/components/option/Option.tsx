@@ -41,14 +41,14 @@ const Option = <V,>({
     };
 
     return (
-        <li className="dropDown-item">
+        <li className="dropdown-item">
             <DropdownMenuButton
                 ref={ref}
                 type={type}
                 isSelected={selected}
                 onClick={handleClick}
                 title={title}
-                className={classnames(['bl w100 ellipsis alignleft no-outline', active && 'active'])}
+                className={classnames(['block w100 text-ellipsis text-left no-outline', active && 'active'])}
                 {...rest}
             >
                 {children}

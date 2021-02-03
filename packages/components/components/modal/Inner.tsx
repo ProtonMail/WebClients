@@ -8,7 +8,7 @@ interface Props {
 }
 const Inner = ({ children, className = '' }: Props) => {
     return (
-        <div className={classnames(['pm-modalContentInner', className])}>
+        <div className={classnames(['modal-content-inner', className])}>
             <ScrollShadows>{children}</ScrollShadows>
         </div>
     );

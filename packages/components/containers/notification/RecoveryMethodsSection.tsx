@@ -103,7 +103,7 @@ const RecoveryMethodsSection = () => {
                         <>
                             <Alert>{c('Info')
                                 .t`The selected method can be used to recover an account in the event you forget your password and to be notified about missed emails.`}</Alert>
-                            <Row className="flex-items-center">
+                            <Row className="flex-align-items-center">
                                 <Label className="pt0">{c('Label').t`Email address`}</Label>
                                 <RecoveryEmail email={userSettings.Email.Value} onClick={handleRecoveryEmail} />
                             </Row>
@@ -151,7 +151,7 @@ const RecoveryMethodsSection = () => {
                         <>
                             <Alert>{c('Info')
                                 .t`The selected method can be used to recover an account in the event you forget your password.`}</Alert>
-                            <Row className="flex-items-center">
+                            <Row className="flex-align-items-center">
                                 <Label className="pt0">{c('Label').t`Phone number`}</Label>
                                 <RecoveryPhone phone={userSettings.Phone.Value} onClick={handleRecoveryPhone} />
                             </Row>

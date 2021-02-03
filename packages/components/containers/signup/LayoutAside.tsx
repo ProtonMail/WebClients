@@ -11,7 +11,7 @@ const LayoutAside = ({ children, aside }: Props) => {
             <main className="flex flex-justify-center flex-item-fluid bg-white color-global-grey p2 scroll-if-need">
                 {children}
             </main>
-            <aside className="flex-item-fluid bg-global-light color-global-grey nomobile notablet">{aside}</aside>
+            <aside className="flex-item-fluid bg-global-light color-global-grey no-mobile no-tablet">{aside}</aside>
         </div>
     );
 };

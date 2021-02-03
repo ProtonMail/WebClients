@@ -21,12 +21,12 @@ const StepDot = ({ index, className, onChange, active, role = 'presentation', ..
     }
 
     return (
-        <li className="stepDots-item" role={role}>
+        <li className="step-dots-item" role={role}>
             <button
                 type="button"
                 role="tab"
                 aria-selected={active}
-                className={classnames([className, 'stepDots-dot', 'rounded50'])}
+                className={classnames([className, 'step-dots-dot', 'rounded50'])}
                 title={c('Action').t`Go to panel ${index}`}
                 onClick={handleClick}
                 {...rest}

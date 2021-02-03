@@ -55,12 +55,12 @@ const BlackFridayButton = ({ plans, subscription }: Props) => {
 
     // span is required because TopNavbarItem erase className prop
     return (
-        <span className="flex flex-items-center relative">
+        <span className="flex flex-align-items-center relative">
             <button
                 type="button"
                 title={text}
                 className={classnames([
-                    'topnav-link inline-flex flex-nowrap nodecoration',
+                    'topnav-link inline-flex flex-nowrap text-no-decoration',
                     hasRedDot && 'topnav-link--blackfriday',
                 ])}
                 onClick={() => {

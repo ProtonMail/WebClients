@@ -8,7 +8,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 const SidebarNav = ({ children, className, ...rest }: Props) => {
     return (
-        <nav className={classnames(['navigation mw100 flex-item-fluid-auto', className])} {...rest}>
+        <nav className={classnames(['navigation max-w100 flex-item-fluid-auto', className])} {...rest}>
             {children}
         </nav>
     );
