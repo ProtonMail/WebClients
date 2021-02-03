@@ -1,3 +1,9 @@
+# [3.16.56] - 2021-02-03
+
+## Fixes
+
+- Fix incorrect message decryption in certain cases
+
 # [3.16.55] - 2021-02-01
 
 ## Improvements
