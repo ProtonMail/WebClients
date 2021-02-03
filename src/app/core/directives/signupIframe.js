@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import CONFIG from '../../config';
 import { uniqID } from '../../../helpers/string';
-import { isIE11, isEdge } from '../../../helpers/browser';
+import { isIE11, isEdge, getBrowser, getDevice, getOS } from '../../../helpers/browser';
 
 const BASE_TIMEOUT = 15; // in seconds
 
@@ -66,8 +66,6 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
 
     const ORIGIN = iframeVerifWizard.getOrigin();
     const IFRAME = `${ORIGIN.iframe}/abuse.iframe.html`;
-
-    const successCache = {};
 
     const getConfig = (name, { username = '' } = {}) => {
         const I18N = {
@@ -237,6 +235,8 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             const iframe = createIframe(name);
             let timeoutID;
             let assets;
+            const errors = [];
+            const steps = [];
 
             const handleLoadError = () => {
                 el[0].classList.add('signupIframe-loaded');
@@ -250,61 +250,73 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 return [iframe.src, ...assets.scripts, ...assets.styles];
             };
 
-            const checkRequestAndReport = async (error) => {
+            const getRequestInfo = async () => {
                 if (window.location.origin !== 'https://mail.protonmail.com') {
-                    return $injector.get('bugReportApi').crash(error);
+                    return {
+                        attempts
+                    };
                 }
 
                 const result = await Promise.all(
                     getAssetsURLs().map(async (asset) => {
-                        if (successCache[asset]) {
-                            return [asset, 'ok'];
-                        }
                         return get(asset)
                             .then(() => [asset, 'ok'])
                             .catch((e) => [asset, { message: e.message, info: e.info }]);
                     })
                 );
 
-                error.info = Object.fromEntries(result);
-                error.info.attempts = attempts;
-
-                result
-                    .filter(([, result]) => result === 'ok')
-                    .forEach(([asset]) => {
-                        successCache[asset] = true;
-                    });
-                return $injector.get('bugReportApi').crash(error);
+                return {
+                    result,
+                    attempts
+                };
             };
 
-            const handleRetry = (error) => {
+            const log = async () => {
+                if (!errors.length) {
+                    return;
+                }
+                const info = await getRequestInfo();
+                const data = {
+                    info,
+                    steps,
+                    errors,
+                    browser: getBrowser(),
+                    device: getDevice(),
+                    os: getOS()
+                };
+                $injector.get('bugReportApi').message('Failed to load signupiframe', { extra: data });
+            };
+
+            const handleRetry = () => {
                 if (loaded) {
                     return;
                 }
+                steps.push(`retry ${attempts}`);
                 if (++attempts <= 2) {
                     clearTimeout(timeoutID);
                     const jitter = _.random(0, 5);
                     timeoutID = setTimeout(() => {
-                        handleRetry(new Error(error));
+                        handleRetry();
                     }, (BASE_TIMEOUT + attempts * 10 - jitter) * 1000);
-                    checkRequestAndReport(error);
                     iframe.src = `${IFRAME}?name=${name}&retry=${attempts}`;
                     return;
                 }
 
                 handleLoadError();
-                checkRequestAndReport(error);
+                log();
             };
 
             // Wait x seconds to check if the iframe is properly loaded
             timeoutID = setTimeout(() => {
-                handleRetry(new Error(`[signupIframe] ${name} -Cannot load  ${iframe.src}`));
+                errors.push(new Error(`${name} ${iframe.src} timed out after ${BASE_TIMEOUT}s`));
+                handleRetry();
             }, BASE_TIMEOUT * 1000);
 
             /**
              * Fire in the hole, iframe is loaded, give it the form config.
              */
             const onLoad = () => {
+                steps.push('iframe onload');
                 assets = createIframeAssets(name);
                 dispatcher.signup('iframe.loaded');
                 iframe.contentWindow.postMessage(
@@ -333,17 +345,19 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             let retryID;
 
             wizard.onError((info) => {
-                const error = new Error('[signupIframe] onerror');
-                error.info = info;
-                return $injector.get('bugReportApi').crash(error);
+                errors.push({
+                    message: 'onerror',
+                    ...info
+                });
             });
 
             wizard.onLoad(name, (isError, { name, file } = {}) => {
                 clearTimeout(timeoutID);
                 if (isError) {
+                    errors.push(new Error(`${name} file onerror for ${file}`));
                     // Since this is more or less instant, delay it slightly
                     retryID = setTimeout(() => {
-                        handleRetry(new Error(`[signupIframe] ${name} -Cannot load  ${file}`));
+                        handleRetry();
                         retryID = undefined;
                     }, (2 + _.random(0, 5)) * 1000);
                     return;
@@ -353,6 +367,8 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 }
                 loaded = true;
                 el[0].classList.add('signupIframe-loaded');
+                steps.push('iframe loaded');
+                log();
             });
 
             iframe.addEventListener('load', onLoad, true);

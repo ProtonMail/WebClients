@@ -148,6 +148,10 @@ function bugReportApi(
         Raven.captureException(error, { appVersion: CONFIG.app_version });
     };
 
+    const message = (message, options) => {
+        Raven.captureMessage(message, { ...options, appVersion: CONFIG.app_version });
+    };
+
     const phishing = (message) => {
         const { ID: MessageID, MIMEType } = message;
         const Body = message.getDecryptedBody();
@@ -160,6 +164,6 @@ function bugReportApi(
         });
     };
 
-    return { getForm, report, getClient, crash, toFormData, phishing };
+    return { getForm, report, getClient, crash, message, toFormData, phishing };
 }
 export default bugReportApi;
