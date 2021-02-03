@@ -159,7 +159,7 @@ const AccountLoginContainer = ({ onLogin, onBack, ignoreUnlock = false, Layout, 
                 left={onBack && <BackButton onClick={onBack} />}
             >
                 <AccountLoginForm onSubmit={handleSubmit} state={state} setters={setters} />
-                <div className="mb2 alignright">{c('Info').jt`New to Proton? ${signupLink}`}</div>
+                <div className="mb2 text-right">{c('Info').jt`New to Proton? ${signupLink}`}</div>
             </Layout>
         );
     }

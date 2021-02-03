@@ -67,7 +67,7 @@ const AddressesUser = ({ user }: Props) => {
     }
 
     return (
-        <OrderableTable onSortEnd={handleSortEnd} className="pm-simple-table--has-actions">
+        <OrderableTable onSortEnd={handleSortEnd} className="simple-table--has-actions">
             <OrderableTableHeader
                 cells={[
                     c('Header for addresses table').t`Address`,
@@ -82,7 +82,7 @@ const AddressesUser = ({ user }: Props) => {
                             index={i}
                             key={address.ID}
                             cells={[
-                                <div key={0} className="ellipsis" title={address.Email}>
+                                <div key={0} className="text-ellipsis" title={address.Email}>
                                     {address.Email}
                                 </div>,
                                 <AddressStatus key={1} {...getStatus(address, i)} />,

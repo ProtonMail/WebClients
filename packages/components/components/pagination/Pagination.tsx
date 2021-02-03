@@ -43,7 +43,7 @@ const Pagination = ({
                 key={index}
                 onClick={() => onSelect(index)}
                 disabled={index === page}
-                className={index === page ? 'is-active aligncenter' : 'aligncenter'}
+                className={index === page ? 'is-active text-center' : 'text-center'}
             >
                 {index.toString()}
             </DropdownMenuButton>
@@ -58,13 +58,13 @@ const Pagination = ({
             {hasPrevious ? (
                 <Button
                     icon="arrow-left"
-                    className="previous-button pm-group-button"
+                    className="previous-button grouped-button"
                     disabled={disablePrevious}
                     onClick={onPrevious}
                 />
             ) : null}
             <SimpleDropdown
-                className="pm-button pm-group-button pm-button--for-icon"
+                className="button grouped-button button--for-icon"
                 title={c('Title').t`Open pagination`}
                 content={page}
             >
@@ -73,7 +73,7 @@ const Pagination = ({
             {hasNext ? (
                 <Button
                     icon="arrow-right"
-                    className="next-button pm-group-button"
+                    className="next-button grouped-button"
                     disabled={disableNext}
                     onClick={onNext}
                 />

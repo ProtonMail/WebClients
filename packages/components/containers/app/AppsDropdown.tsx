@@ -16,13 +16,13 @@ const AppsDropdown = () => {
     return (
         <SimpleDropdown
             hasCaret={false}
-            content={<Icon name="more" className="appsDropdown-button-icon flex-item-noshrink" />}
-            className="appsDropdown-button"
-            dropdownClassName="appsDropdown"
+            content={<Icon name="more" className="apps-dropdown-button-icon flex-item-noshrink" />}
+            className="apps-dropdown-button"
+            dropdownClassName="apps-dropdown"
             originalPlacement="bottom-right"
             title={c('Apps dropdown').t`Proton applications`}
         >
-            <ul className="appsDropdown-list unstyled m0 scroll-if-needed">
+            <ul className="apps-dropdown-list unstyled m0 scroll-if-needed">
                 {apps.map(({ toApp, icon, title }, index) => {
                     const key = `${index}`;
                     return (
@@ -30,7 +30,7 @@ const AppsDropdown = () => {
                             <AppLink
                                 to="/"
                                 toApp={toApp}
-                                className="appsDropdown-link big m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-items-center"
+                                className="apps-dropdown-link text-lg m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-align-items-center"
                                 title={c('Apps dropdown').t`Go to ${title}`}
                             >
                                 <Icon name={icon} size={20} className="mr0-5" />
@@ -42,7 +42,7 @@ const AppsDropdown = () => {
                 <li>
                     <Href
                         url="https://account.protonvpn.com/login"
-                        className="appsDropdown-link big m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-items-center"
+                        className="apps-dropdown-link text-lg m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-align-items-center"
                         title={c('Apps dropdown').t`Go to ProtonVPN`}
                     >
                         <Icon name="protonvpn" size={20} className="mr0-5" />

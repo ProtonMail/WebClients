@@ -21,7 +21,7 @@ const PaymentMethodsTable = ({ methods, loading }) => {
                 return (
                     <>
                         <span className="mr0-5">PayPal</span>
-                        <span className="autotablet ellipsis mw100" title={method.Details.Payer}>
+                        <span className="auto-tablet text-ellipsis max-w100" title={method.Details.Payer}>
                             {method.Details.Payer}
                         </span>
                     </>
@@ -34,7 +34,7 @@ const PaymentMethodsTable = ({ methods, loading }) => {
     const orderedMethods = orderBy(methods, 'Order');
 
     return (
-        <Table className="pm-simple-table--has-actions">
+        <Table className="simple-table--has-actions">
             <TableHeader
                 cells={[
                     c('Title for payment methods table').t`Method`,

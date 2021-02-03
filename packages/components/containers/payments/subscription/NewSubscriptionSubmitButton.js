@@ -27,7 +27,7 @@ const NewSubscriptionSubmitButton = ({ className, paypal, canPay, step, loading,
         return (
             <PayPalButton
                 paypal={paypal}
-                className={classnames(['pm-button--primary', className])}
+                className={classnames(['button--primary', className])}
                 amount={checkResult.AmountDue}
             >{c('Action').t`Pay`}</PayPalButton>
         );

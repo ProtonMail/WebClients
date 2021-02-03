@@ -160,12 +160,12 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
             {...rest}
         >
             <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/combine-accounts/">
-                <div className="bold uppercase">{c('Info').t`Warning: deletion is permanent`}</div>
+                <div className="text-bold text-uppercase">{c('Info').t`Warning: deletion is permanent`}</div>
                 <div>{c('Info')
                     .t`If you wish to delete this account in order to combine it with another one, do NOT delete it.`}</div>
             </Alert>
             <Alert type="warning">
-                <div className="bold uppercase">{c('Info').t`Warning: This also deletes all connected services`}</div>
+                <div className="text-bold text-uppercase">{c('Info').t`Warning: This also deletes all connected services`}</div>
                 <div>{c('Info')
                     .t`Example: ${mailAppName}, ${contactsAppName}, ${vpnAppName}, ${driveAppName}, ${calendarAppName}`}</div>
             </Alert>
@@ -210,7 +210,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                             placeholder={c('Placeholder').t`Email address`}
                         />
                     </div>
-                    <div className="small m0">{c('Info')
+                    <div className="text-sm m0">{c('Info')
                         .t`Please provide an email address in case we need to contact you.`}</div>
                 </Field>
             </Row>
@@ -226,7 +226,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                             placeholder={c('Placeholder').t`Password`}
                         />
                     </div>
-                    <div className="small m0">{c('Info').t`Enter your login password to confirm your identity.`}</div>
+                    <div className="text-sm m0">{c('Info').t`Enter your login password to confirm your identity.`}</div>
                 </Field>
             </Row>
             {hasTOTPEnabled ? (

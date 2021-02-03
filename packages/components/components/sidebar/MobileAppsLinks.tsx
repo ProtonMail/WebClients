@@ -23,7 +23,7 @@ const MobileAppsLinks = () => {
                 return <MobileNavLink key={index} to="/" toApp={toApp} icon={icon} current={isCurrent} />;
             })}
             <Href url="https://account.protonvpn.com/login" className="flex aside-link">
-                <Icon name="protonvpn" className="aside-linkIcon mauto" />
+                <Icon name="protonvpn" className="aside-link-icon mauto" />
             </Href>
         </MobileNavServices>
     );

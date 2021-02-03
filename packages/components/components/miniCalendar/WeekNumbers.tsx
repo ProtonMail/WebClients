@@ -27,7 +27,7 @@ const WeekNumbers = ({ days, numberOfWeeks }: Props) => {
             const monday = getMonday(days, idx, idx + 7) || days[idx];
             const weekNumber = getISOWeek(monday);
             return (
-                <span className="italic flex-item-fluid flex minicalendar-weeknumbers-number" key={+monday}>
+                <span className="text-italic flex-item-fluid flex minicalendar-weeknumbers-number" key={+monday}>
                     <span className="mauto">{weekNumber}</span>
                 </span>
             );
@@ -35,7 +35,7 @@ const WeekNumbers = ({ days, numberOfWeeks }: Props) => {
     }, [days]);
 
     return (
-        <div className="aligncenter minicalendar-weeknumbers flex flex-column" style={style}>
+        <div className="text-center minicalendar-weeknumbers flex flex-column" style={style}>
             <span>
                 <span className="minicalendar-weeknumbers-heading">{c('Info').t`Week`}</span>
             </span>

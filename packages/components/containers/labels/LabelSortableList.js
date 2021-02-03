@@ -8,7 +8,7 @@ import LabelSortableItem from './LabelSortableItem';
 
 function LabelSortableList({ items, onEditLabel = noop, onRemoveLabel = noop, ...rest }) {
     return (
-        <OrderableTable className="noborder pm-simple-table--has-actions border-collapse mt1" {...rest}>
+        <OrderableTable className="no-border simple-table--has-actions border-collapse mt1" {...rest}>
             <caption className="sr-only">{c('Settings/labels').t`Labels/Folders`}</caption>
             <OrderableTableHeader>
                 <tr>

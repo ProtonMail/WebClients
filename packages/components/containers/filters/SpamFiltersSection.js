@@ -119,7 +119,7 @@ function SpamFiltersSection() {
                 />
             </div>
 
-            <div className="flex onmobile-flex-column">
+            <div className="flex on-mobile-flex-column">
                 <SpamListItem
                     list={whiteList}
                     type={WHITELIST_LOCATION}
@@ -132,7 +132,7 @@ function SpamFiltersSection() {
                 <SpamListItem
                     list={blackList}
                     type={BLACKLIST_LOCATION}
-                    className="ml1 onmobile-ml0"
+                    className="ml1 on-mobile-ml0"
                     loading={loader.black}
                     onCreate={handleCreate}
                     onEdit={handleEdit}

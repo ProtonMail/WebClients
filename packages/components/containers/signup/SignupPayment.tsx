@@ -45,8 +45,8 @@ const SignupPayment = ({
         <form name="payment-form" onSubmit={onSubmit} method="post">
             <Alert>{c('Info')
                 .t`Please note that depending on the total amount due, some payment options may not be available.`}</Alert>
-            <div className="flex-noMinChildren flex-nowrap onmobile-flex-column onmobile-flex-wrap">
-                <div className="flex-item-fluid no-min-dims onmobile-w100 pr1 onmobile-pr0">
+            <div className="flex-no-min-children flex-nowrap on-mobile-flex-column on-mobile-flex-wrap">
+                <div className="flex-item-fluid no-min-dimensions on-mobile-w100 pr1 on-mobile-pr0">
                     <Payment
                         type="signup"
                         paypal={paypal}
@@ -60,7 +60,7 @@ const SignupPayment = ({
                         errors={errors}
                     />
                 </div>
-                <div className="w25 min-w14e onmobile-w100">
+                <div className="w25 min-w14e on-mobile-w100">
                     <SubscriptionCheckout
                         method={method}
                         submit={

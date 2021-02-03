@@ -13,8 +13,8 @@ interface Props {
 }
 
 const ImportStartedStep = ({ modalModel, address }: Props) => (
-    <div className="aligncenter">
-        <img src={importStartedSvg} alt="" className="mw80" />
+    <div className="text-center">
+        <img src={importStartedSvg} alt="" className="max-w80" />
         <h3>{c('Info').t`Your import has started!`}</h3>
         <div className="mt1">{c('Info').t`Your messages are being imported from`}</div>
         <div className="mt1">

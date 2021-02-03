@@ -13,11 +13,11 @@ describe('Badge component', () => {
     });
 
     it('has default class', () => {
-        expect(badge).toHaveClass('badgeLabel');
+        expect(badge).toHaveClass('badge-label');
     });
 
     it('should have success class', () => {
         const { container } = render(<Badge type="success">{text}</Badge>);
-        expect(container.firstChild).toHaveClass('badgeLabel-success');
+        expect(container.firstChild).toHaveClass('badge-label--success');
     });
 });

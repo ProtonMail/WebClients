@@ -37,7 +37,7 @@ const AccountGenerateInternalAddressForm = ({
             <SignupLabelInputRow
                 label={<Label htmlFor="login">{c('Label').t`Username`}</Label>}
                 input={
-                    <div className="flex flex-nowrap flex-items-center flex-item-fluid relative mb0-5">
+                    <div className="flex flex-nowrap flex-align-items-center flex-item-fluid relative mb0-5">
                         <div className="flex-item-fluid">
                             <Input
                                 id="username"
@@ -53,7 +53,7 @@ const AccountGenerateInternalAddressForm = ({
                                 }}
                                 error={usernameError}
                                 placeholder={USERNAME_PLACEHOLDER}
-                                className="pm-field--username"
+                                className="field--username"
                                 required
                             />
                         </div>
@@ -68,7 +68,7 @@ const AccountGenerateInternalAddressForm = ({
             <SignupSubmitRow>
                 <PrimaryButton
                     type="submit"
-                    className="pm-button--large"
+                    className="button--large"
                     disabled={!availableDomains}
                     loading={loading}
                     data-cy-login="submit"

@@ -80,7 +80,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>(
         return (
             <>
                 <select
-                    className={classnames(['pm-field w100', className, statusClasses])}
+                    className={classnames(['field w100', className, statusClasses])}
                     size={size}
                     multiple={multiple}
                     disabled={loading || rest.disabled}

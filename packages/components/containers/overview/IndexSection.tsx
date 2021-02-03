@@ -20,9 +20,9 @@ const IndexSection = ({ pages, limit = 4 }: { pages: SectionConfig[]; limit?: nu
                             subsections.length > limit && 'overview-grid-item--tall',
                         ])}
                     >
-                        <h2 className="h6 mb1 flex flex-items-center flex-nowrap">
+                        <h2 className="h6 mb1 flex flex-align-items-center flex-nowrap">
                             <Icon name={icon} className="mr0-5 flex-item-noshrink" />
-                            <strong className="ellipsis" title={text}>
+                            <strong className="text-ellipsis" title={text}>
                                 {text}
                             </strong>
                         </h2>

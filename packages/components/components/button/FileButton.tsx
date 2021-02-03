@@ -33,8 +33,8 @@ const FileButton = ({ onAddFiles, icon = 'attach', disabled, className, children
                 role="button"
                 tabIndex={0}
                 className={classnames([
-                    'pm-button inline-flex relative flex-items-center',
-                    icon && !children && 'pm-button--for-icon',
+                    'button inline-flex relative flex-align-items-center',
+                    icon && !children && 'button--for-icon',
                     disabled && 'is-disabled',
                     className,
                 ])}

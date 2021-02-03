@@ -5,7 +5,7 @@ import { classnames } from '../../helpers';
 
 const LargeButton = ({ children, className = '', ...rest }: ButtonProps) => {
     return (
-        <Button className={classnames(['pm-button--large', className])} {...rest}>
+        <Button className={classnames(['button--large', className])} {...rest}>
             {children}
         </Button>
     );

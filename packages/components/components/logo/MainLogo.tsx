@@ -32,7 +32,7 @@ const getLogoText = (subscription: Subscription, APP_NAME: APP_NAMES) => {
 const MainLogo = ({ className = '', ...rest }: AppLinkProps) => {
     const { APP_NAME } = useConfig();
     const [subscription] = useSubscription();
-    const classNames = classnames(['logo-link flex nodecoration', className]);
+    const classNames = classnames(['logo-link flex text-no-decoration', className]);
     const planName = getLogoText(subscription, APP_NAME);
 
     const logo = (() => {
@@ -58,9 +58,9 @@ const MainLogo = ({ className = '', ...rest }: AppLinkProps) => {
     })();
 
     return (
-        <AppLink {...rest} className={classnames([classNames, planName && `color-${planName}`, 'nodecoration'])}>
+        <AppLink {...rest} className={classnames([classNames, planName && `color-${planName}`, 'text-no-decoration'])}>
             {logo}
-            {planName && <span className="plan uppercase bold">{planName}</span>}
+            {planName && <span className="plan text-uppercase text-bold">{planName}</span>}
         </AppLink>
     );
 };

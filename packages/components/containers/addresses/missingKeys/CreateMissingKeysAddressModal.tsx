@@ -173,7 +173,7 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addressesToGenerate, o
                         <TableRow
                             key={address.ID}
                             cells={[
-                                <span key={0} className="ellipsis bl pr1" title={address.Email}>
+                                <span key={0} className="text-ellipsis block pr1" title={address.Email}>
                                     {address.Email}
                                 </span>,
                                 <MissingKeysStatus key={1} {...address.status} />,

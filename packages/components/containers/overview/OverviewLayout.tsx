@@ -36,15 +36,15 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
     };
 
     return (
-        <div className="flex flex-item-fluid ondesktop-h100 autotablet flex-nowrap">
+        <div className="flex flex-item-fluid on-desktop-h100 auto-tablet flex-nowrap">
             <div
                 ref={mainAreaRef}
                 onScroll={handleScroll}
-                className="relative flex-nowrap flex-item-fluid bg-global-highlight ondesktop-h100 scroll-if-needed"
+                className="relative flex-nowrap flex-item-fluid bg-global-highlight on-desktop-h100 scroll-if-needed"
             >
                 <SettingsTitle onTop={!scrollTop}>{title}</SettingsTitle>
                 <div className="container-section-sticky pt0">
-                    <div className="flex onmobile-flex-column pb2">
+                    <div className="flex on-mobile-flex-column pb2">
                         <div className="flex-item-fluid">
                             {children ? (
                                 <section className="overview-grid-item overview-grid-item--full bordered-container bg-white-dm tiny-shadow-container p2 mb1-5">
@@ -56,7 +56,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     </div>
                 </div>
             </div>
-            <aside className="context-bar ondesktop-h100 scroll-if-needed p2">
+            <aside className="context-bar on-desktop-h100 scroll-if-needed p2">
                 <SummarySection
                     user={user}
                     userSettings={userSettings}
@@ -64,14 +64,14 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     organization={organization}
                 />
                 {subscription && hasMailPlus(subscription) ? (
-                    <div className="bg-pm-blue-gradient color-white rounded aligncenter p1 mt2 relative">
+                    <div className="bg-pm-blue-gradient color-white rounded text-center p1 mt2 relative">
                         <p className="mt0 mb1">
                             {c('Info')
                                 .t`Upgrade to a paid plan with multi-user support to add more users to your organization.`}
                         </p>
                         <div>
                             <AppLink
-                                className="pm-button--transparent inbl increase-surface-click"
+                                className="button--transparent inline-block increase-click-surface"
                                 to="/subscription"
                                 toApp={getAccountSettingsApp()}
                             >
@@ -81,14 +81,14 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     </div>
                 ) : null}
                 {hasPaidMail ? null : (
-                    <div className="bg-pm-blue-gradient color-white rounded aligncenter p1 mt2 relative">
+                    <div className="bg-pm-blue-gradient color-white rounded text-center p1 mt2 relative">
                         <p className="mt0 mb1">
                             {c('Info')
                                 .t`Upgrade to a paid plan to unlock premium features and increase your storage space.`}
                         </p>
                         <div>
                             <AppLink
-                                className="pm-button--transparent inbl increase-surface-click"
+                                className="button--transparent inline-block increase-click-surface"
                                 to="/subscription"
                                 toApp={getAccountSettingsApp()}
                             >

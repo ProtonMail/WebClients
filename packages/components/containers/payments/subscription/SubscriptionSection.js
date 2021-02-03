@@ -17,7 +17,7 @@ import UnsubscribeButton from './UnsubscribeButton';
 const AddonRow = ({ label, used, max, format = identity }) => {
     const percentage = Math.round((used * 100) / max);
     return (
-        <div className="flex-autogrid onmobile-flex-column w100 mb1">
+        <div className="flex-autogrid on-mobile-flex-column w100 mb1">
             <div className="flex-autogrid-item pl1">{label}</div>
             <div className="flex-autogrid-item">
                 <strong>
@@ -112,8 +112,8 @@ const SubscriptionSection = ({ permission }) => {
             <Alert>{c('Info')
                 .t`To manage your subscription, including billing frequency and currency, or to switch to another plan, click on Manage subscription.`}</Alert>
             <div className="shadow-container mb1">
-                <div className="border-bottom pt1 pl1 pr1 onmobile-pb1">
-                    <div className="flex-autogrid flex-items-center onmobile-flex-column w100 mb1">
+                <div className="border-bottom pt1 pl1 pr1 on-mobile-pb1">
+                    <div className="flex-autogrid flex-align-items-center on-mobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">ProtonMail plan</div>
                         <div className="flex-autogrid-item">
                             <strong>
@@ -138,7 +138,7 @@ const SubscriptionSection = ({ permission }) => {
                 </div>
                 {mailPlanName === 'visionary' ? null : (
                     <div className="pt1 pl1 pr1">
-                        <div className="flex-autogrid onmobile-flex-column w100 mb1">
+                        <div className="flex-autogrid on-mobile-flex-column w100 mb1">
                             <div className="flex-autogrid-item">ProtonVPN plan</div>
                             <div className="flex-autogrid-item">
                                 <strong>{hasPaidVpn ? PLAN_NAMES[vpnPlanName] : c('Plan').t`Free`}</strong>
@@ -154,7 +154,7 @@ const SubscriptionSection = ({ permission }) => {
                 )}
                 {isPaid ? (
                     <div className="pl1 pr1 pt0-5 pb0-5">
-                        <UnsubscribeButton className="pm-button--link pm-button--redborder">{c('Action')
+                        <UnsubscribeButton className="button--link button--redborder">{c('Action')
                             .t`Cancel subscription`}</UnsubscribeButton>
                     </div>
                 ) : null}

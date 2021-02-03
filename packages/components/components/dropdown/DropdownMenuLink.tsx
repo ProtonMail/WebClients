@@ -11,7 +11,7 @@ interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
 const DropdownMenuLink = ({ className = '', children, target = '_blank', ...rest }: Props) => {
     return (
         <a
-            className={classnames(['dropDown-item-link w100 pr1 pl1 pt0-5 pb0-5 bl nodecoration', className])}
+            className={classnames(['dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration', className])}
             rel="noopener noreferrer"
             target={target}
             {...rest}

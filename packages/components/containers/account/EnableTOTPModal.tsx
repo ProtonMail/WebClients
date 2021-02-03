@@ -118,7 +118,7 @@ const EnableTOTPModal = (props: any) => {
                             {c('Info')
                                 .jt`Scan this code with your two-factor authentication device to set up your account. ${switchButton}.`}
                         </Alert>
-                        <div className="aligncenter">
+                        <div className="text-center">
                             <QRCode className="qr-code" value={uri} size={200} includeMargin={false} renderAs="svg" />
                         </div>
                     </>
@@ -142,21 +142,21 @@ const EnableTOTPModal = (props: any) => {
                                 .jt`Manually enter this information into your two-factor authentication device to set up your account. ${switchButton}.`}
                         </Alert>
                         <div>
-                            <div className="flex flex-spacebetween mb0-5">
+                            <div className="flex flex-justify-space-between mb0-5">
                                 <div className="w20">{c('Label').t`Key`}</div>
-                                <div className="w80 flex-self-vcenter bold">
+                                <div className="w80 flex-align-self-center text-bold">
                                     <code>{sharedSecret}</code>
                                 </div>
                             </div>
-                            <div className="flex flex-spacebetween mb0-5">
+                            <div className="flex flex-justify-space-between mb0-5">
                                 <div className="w20">{c('Label').t`Interval`}</div>
-                                <div className="w80 flex-self-vcenter bold">
+                                <div className="w80 flex-align-self-center text-bold">
                                     <code>{period}</code>
                                 </div>
                             </div>
-                            <div className="flex flex-spacebetween mb0-5">
+                            <div className="flex flex-justify-space-between mb0-5">
                                 <div className="w20">{c('Label').t`Digits`}</div>
-                                <div className="w80 flex-self-vcenter bold">
+                                <div className="w80 flex-align-self-center text-bold">
                                     <code>{digits}</code>
                                 </div>
                             </div>
@@ -220,14 +220,14 @@ const EnableTOTPModal = (props: any) => {
                 section: (
                     <>
                         <Alert>
-                            <span className="bold">{c('Info')
+                            <span className="text-bold">{c('Info')
                                 .t`Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.`}</span>
                             <br />
                             <br />
                             {c('Info')
                                 .t`If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.`}
                         </Alert>
-                        <div className="flex aligncenter">
+                        <div className="flex text-center">
                             {recoveryCodes.map((code) => {
                                 return (
                                     <code key={code} className="w49 p0-5">
@@ -236,7 +236,7 @@ const EnableTOTPModal = (props: any) => {
                                 );
                             })}
                         </div>
-                        <div className="aligncenter">
+                        <div className="text-center">
                             <Button
                                 onClick={() => {
                                     const blob = new Blob([recoveryCodes.join('\r\n')], {

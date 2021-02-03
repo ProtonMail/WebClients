@@ -11,8 +11,13 @@ const TYPES_CLASS = {
 
 const CLASSES = {
     NOTIFICATION: 'notification',
-    NOTIFICATION_IN: 'notificationIn',
-    NOTIFICATION_OUT: 'notificationOut',
+    NOTIFICATION_IN: 'notification--in',
+    NOTIFICATION_OUT: 'notification--out',
+};
+
+const ANIMATIONS = {
+    NOTIFICATION_IN: 'anime-notification-in',
+    NOTIFICATION_OUT: 'anime-notification-out',
 };
 
 interface Props {
@@ -25,7 +30,7 @@ interface Props {
 
 const Notification = ({ children, type, isClosing, onClick, onExit }: Props) => {
     const handleAnimationEnd = ({ animationName }: React.AnimationEvent<HTMLDivElement>) => {
-        if (animationName === CLASSES.NOTIFICATION_OUT && isClosing) {
+        if (animationName === ANIMATIONS.NOTIFICATION_OUT && isClosing) {
             onExit();
         }
     };

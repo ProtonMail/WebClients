@@ -127,8 +127,8 @@ const LogsSection = () => {
         <>
             <Alert>{c('Info')
                 .t`Logs includes authentication attempts for all Proton services that use your Proton credentials.`}</Alert>
-            <Block className="flex flex-spacebetween flex-items-center">
-                <div className="flex flex-items-center">
+            <Block className="flex flex-justify-space-between flex-align-items-center">
+                <div className="flex flex-align-items-center">
                     <Group className="mr1 mb0-5">
                         <ButtonGroup
                             className={logAuth === DISABLE ? 'is-active' : ''}

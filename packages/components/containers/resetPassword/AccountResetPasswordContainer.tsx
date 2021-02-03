@@ -76,7 +76,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     />
                     <SignupSubmitRow>
                         <PrimaryButton
-                            className="pm-button--large flex-item-noshrink onmobile-w100"
+                            className="button--large flex-item-noshrink on-mobile-w100"
                             disabled={!username}
                             loading={loading}
                             type="submit"
@@ -97,13 +97,13 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                 <form className="signup-form">
                     <SignupSubmitRow>
                         <Href
-                            className="mr2 nodecoration onmobile-aligncenter onmobile-p1 onmobile-mr0"
+                            className="mr2 text-no-decoration on-mobile-text-center on-mobile-p1 on-mobile-mr0"
                             url="https://protonmail.com/support-form"
                             target="_self"
                         >{c('Action').t`Contact support`}</Href>
                         <Link
                             to="/login"
-                            className="pm-button--primary pm-button--large flex-item-noshrink onmobile-w100 onmobile-aligncenter"
+                            className="button--primary button--large flex-item-noshrink on-mobile-w100 on-mobile-text-center"
                         >{c('Action').t`Return to login`}</Link>
                     </SignupSubmitRow>
                 </form>
@@ -169,7 +169,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     <Tabs tabs={tabs} value={tabIndex} onChange={handleChangeIndex} />
                     <SignupSubmitRow>
                         <PrimaryButton
-                            className="pm-button--large onmobile-w100"
+                            className="button--large on-mobile-w100"
                             disabled={!email && !phone}
                             loading={loading}
                             type="submit"
@@ -192,7 +192,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
         const handleSubmit = async () => {
             await new Promise<void>((resolve, reject) => {
                 const loseAllData = (
-                    <span className="bold">{c('Info').t`lose access to all current encrypted data`}</span>
+                    <span className="text-bold">{c('Info').t`lose access to all current encrypted data`}</span>
                 );
                 createModal(
                     <ConfirmModal
@@ -253,7 +253,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     ) : null}
                     <SignupSubmitRow>
                         <PrimaryButton
-                            className="pm-button--large onmobile-w100"
+                            className="button--large on-mobile-w100"
                             disabled={!token}
                             loading={loading}
                             type="submit"
@@ -274,9 +274,9 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                         handleNewPassword();
                     }}
                 >
-                    <div className="flex flex-nowrap onmobile-flex-column mb1">
+                    <div className="flex flex-nowrap on-mobile-flex-column mb1">
                         <SignupLabelInputRow
-                            className="mr0-5 flex-item-fluid onmobile-mr0"
+                            className="mr0-5 flex-item-fluid on-mobile-mr0"
                             label={<Label htmlFor="new-password">{c('Label').t`Password`}</Label>}
                             input={
                                 <PasswordInput
@@ -290,7 +290,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                             }
                         />
                         <SignupLabelInputRow
-                            className="ml0-5 flex-item-fluid onmobile-ml0"
+                            className="ml0-5 flex-item-fluid on-mobile-ml0"
                             label={<Label htmlFor="confirm-password">{c('Label').t`Confirm`}</Label>}
                             input={
                                 <PasswordInput
@@ -308,7 +308,7 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     </div>
                     <SignupSubmitRow>
                         <PrimaryButton
-                            className="pm-button--large onmobile-w100"
+                            className="button--large on-mobile-w100"
                             disabled={!password || password !== confirmPassword}
                             loading={loading}
                             type="submit"
@@ -327,13 +327,13 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     <Alert type="error">{error}</Alert>
                     <SignupSubmitRow>
                         <Href
-                            className="mr2 nodecoration onmobile-aligncenter onmobile-p1 onmobile-mr0"
+                            className="mr2 text-no-decoration on-mobile-text-center on-mobile-p1 on-mobile-mr0"
                             url="https://protonmail.com/support-form"
                             target="_self"
                         >{c('Action').t`Contact support`}</Href>
                         <Link
                             to="/login"
-                            className="pm-button--primary pm-button--large flex-item-noshrink onmobile-w100 onmobile-aligncenter"
+                            className="button--primary button--large flex-item-noshrink on-mobile-w100 on-mobile-text-center"
                         >{c('Action').t`Return to login`}</Link>
                     </SignupSubmitRow>
                 </Layout>

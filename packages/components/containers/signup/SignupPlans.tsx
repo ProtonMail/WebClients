@@ -17,8 +17,8 @@ interface Props {
 const SignupPlans = ({ plans = [], planNameSelected = '', model, onChange, onSelectPlan, loading }: Props) => {
     return (
         <>
-            <div className="flex flex-nowrap flex-items-center onmobile-flex-column">
-                <h1 className="h2 mb0 flex-item-fluid onmobile-mb1">{c('Title').t`Choose a plan`}</h1>
+            <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-column">
+                <h1 className="h2 mb0 flex-item-fluid on-mobile-mb1">{c('Title').t`Choose a plan`}</h1>
                 <div className="account-form-cycle-currency-selectors flex flex-nowrap">
                     <CycleSelector
                         className="mr1"

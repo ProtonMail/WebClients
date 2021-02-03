@@ -80,7 +80,7 @@ const SquireIframe = (
                         <>
                             {`${c('Error').t`The composer failed to load.`} `}
                             <LinkButton
-                                className="alignbaseline nodecoration bold pm-button--currentColor"
+                                className="align-baseline text-no-decoration text-bold button--currentColor"
                                 onClick={() => {
                                     window.location.reload();
                                 }}

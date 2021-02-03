@@ -50,7 +50,7 @@ const SquireToolbarDropdown = ({
                     hasCaret
                     disabled={disabled}
                     caretClassName="editor-toolbar-icon"
-                    className="editor-toolbar-button composer-toolbar-fontDropDown mw100"
+                    className="editor-toolbar-button composer-toolbar-fontDropDown max-w100"
                     tabIndex={-1}
                     {...rest}
                 >

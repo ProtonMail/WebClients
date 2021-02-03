@@ -19,8 +19,8 @@ const StepDots = ({ value, onChange, children, className, ...rest }: Props) => {
     );
 
     return (
-        <nav {...rest} className={classnames([className, 'stepDots-container'])}>
-            <ul className="stepDots-list unstyled inline-flex flex-row" role="tablist">
+        <nav {...rest} className={classnames([className, 'step-dots-container'])}>
+            <ul className="step-dots-list unstyled inline-flex flex-row" role="tablist">
                 {clonedChildren}
             </ul>
         </nav>

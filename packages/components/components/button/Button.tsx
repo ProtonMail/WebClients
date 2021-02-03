@@ -22,13 +22,13 @@ const Button = ({
     ...rest
 }: Props) => {
     const iconComponent = typeof icon === 'string' ? <Icon className="flex-item-noshrink" name={icon} /> : icon;
-    const iconButtonClass = !children ? 'pm-button--for-icon' : '';
+    const iconButtonClass = !children ? 'button--for-icon' : '';
 
     return (
         <button
             role={role}
             disabled={loading ? true : disabled}
-            className={classnames(['pm-button', iconButtonClass, className])}
+            className={classnames(['button', iconButtonClass, className])}
             type={type}
             tabIndex={disabled ? -1 : tabIndex}
             ref={buttonRef}

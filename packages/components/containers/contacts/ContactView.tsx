@@ -59,7 +59,7 @@ const ContactView = ({
         ownAddresses,
         properties,
         contactGroupsMap,
-        leftBlockWidth: 'w100 mw100p',
+        leftBlockWidth: 'w100 max-w100p',
         rightBlockWidth: 'w100',
     };
 
@@ -71,7 +71,7 @@ const ContactView = ({
                 handleEdit={handleEdit}
                 handleDelete={handleDelete}
                 properties={properties}
-                leftBlockWidth={isNarrow ? 'mauto mw100p' : 'w100 mw100p'}
+                leftBlockWidth={isNarrow ? 'mauto max-w100p' : 'w100 max-w100p'}
                 isPreview={isPreview}
             />
             <div className="pl1 pr1">

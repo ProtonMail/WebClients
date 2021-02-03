@@ -30,7 +30,7 @@ const PublicLanguageSelect = ({ className, locales = {} }: Props) => {
         forceRefresh();
     };
     const languages = Object.keys(LOCALES).map((value) => (
-        <DropdownMenuButton className="alignleft" key={value} onClick={() => handleChange(value)}>
+        <DropdownMenuButton className="text-left" key={value} onClick={() => handleChange(value)}>
             {LOCALES[value]}
         </DropdownMenuButton>
     ));

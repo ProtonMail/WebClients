@@ -69,7 +69,7 @@ const DeleteModal = ({ contactIDs = [], deleteAll, onDelete, onClose = noop, ...
             onClose={onClose}
             submit={submit}
             loading={loadingDelete}
-            className="pm-modal--smaller"
+            className="modal--smaller"
             {...rest}
         >
             <Alert type="error">{text}</Alert>

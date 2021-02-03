@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Group = ({ children, className = '' }: Props) => (
-    <div className={classnames(['pm-group-buttons', className])}>{children}</div>
+    <div className={classnames(['grouped-buttons', className])}>{children}</div>
 );
 
 export default Group;

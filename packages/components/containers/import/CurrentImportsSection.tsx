@@ -95,7 +95,7 @@ const RowActions = ({ currentImport }: RowActionsProps) => {
         disabled: State === ImportMailStatus.CANCELED,
     });
 
-    return <DropdownActions key="actions" className="pm-button--small" list={list} />;
+    return <DropdownActions key="actions" className="button--small" list={list} />;
 };
 
 const sortByDate = (a: Importer, b: Importer) => {
@@ -141,9 +141,9 @@ const CurrentImportsSection = () => {
 
     const headerCells = [
         { node: c('Title header').t`Import` },
-        { node: c('Title header').t`Progress`, className: 'onmobile-w33 onmobile-aligncenter' },
-        { node: c('Title header').t`Started`, className: 'nomobile' },
-        { node: c('Title header').t`Actions`, className: 'nomobile' },
+        { node: c('Title header').t`Progress`, className: 'on-mobile-w33 on-mobile-text-center' },
+        { node: c('Title header').t`Started`, className: 'no-mobile' },
+        { node: c('Title header').t`Actions`, className: 'no-mobile' },
     ].map(({ node, className = '' }, i) => {
         return (
             <TableCell key={i.toString()} className={className} type="header">
@@ -190,7 +190,7 @@ const CurrentImportsSection = () => {
                     {bandwidthMessage}
                 </Alert>
             )}
-            <Table className="onmobile-hideTd3 onmobile-hideTd4 pm-simple-table--has-actions">
+            <Table className="on-mobile-hide-td3 on-mobile-hide-td4 simple-table--has-actions">
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
@@ -255,7 +255,7 @@ const CurrentImportsSection = () => {
                                 );
                             }
 
-                            return <div className="onmobile-aligncenter">{badge}</div>;
+                            return <div className="on-mobile-text-center">{badge}</div>;
                         };
 
                         return (
@@ -263,10 +263,10 @@ const CurrentImportsSection = () => {
                                 key={ID}
                                 cells={[
                                     <>
-                                        <div key="email" className="w100 ellipsis">
+                                        <div key="email" className="w100 text-ellipsis">
                                             {Email}
                                         </div>
-                                        <time key="importDate" className="nodesktop notablet">
+                                        <time key="importDate" className="no-desktop no-tablet">
                                             {format(CreateTime * 1000, 'PPp')}
                                         </time>
                                     </>,

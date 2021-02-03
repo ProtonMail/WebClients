@@ -22,8 +22,8 @@ const CompatibilityCheckView = ({ appName = APPS.PROTONMAIL, incompatibilities }
     const app = getAppName(appName);
 
     return (
-        <div className="w50 p2 mt2 center big automobile">
-            <div className="aligncenter">
+        <div className="w50 p2 mt2 center text-lg auto-mobile">
+            <div className="text-center">
                 <h1>Compatibility check</h1>
                 <p>
                     {app} requires a modern web browser with cutting edge support for{' '}
@@ -36,11 +36,11 @@ const CompatibilityCheckView = ({ appName = APPS.PROTONMAIL, incompatibilities }
                     </Href>
                     .
                 </p>
-                <Href className="primary-link bold" url={kbUrl} target="_self">
+                <Href className="primary-link text-bold" url={kbUrl} target="_self">
                     More info
                 </Href>
             </div>
-            <div className="mt2 aligncenter">
+            <div className="mt2 text-center">
                 <img src={unsupportedBrowserSettings} alt="Compatibility check" />
             </div>
             <ul>

@@ -63,12 +63,12 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
             const challenge = (
                 <>
                     <Challenge
-                        bodyClassName="signLayout-container"
+                        bodyClassName="sign-layout-container"
                         challengeRef={challengeRefLogin}
                         type={0}
                         onLoaded={handleChallengeLoaded}
                     >
-                        <div className="flex flex-nowrap flex-items-center flex-item-fluid relative mb0-5">
+                        <div className="flex flex-nowrap flex-align-items-center flex-item-fluid relative mb0-5">
                             <div className="flex-item-fluid">
                                 <Input
                                     id="login"
@@ -90,7 +90,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                                     }}
                                     error={errors.username}
                                     placeholder={USERNAME_PLACEHOLDER}
-                                    className="pm-field--username"
+                                    className="field--username"
                                     required
                                 />
                             </div>
@@ -101,7 +101,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                     </Challenge>
                     {hasExternalSignup ? (
                         <InlineLinkButton
-                            className="nodecoration mt0-25"
+                            className="text-no-decoration mt0-25"
                             id="existing-email-button"
                             onClick={() => onChange({ ...model, username: '', step: ACCOUNT_CREATION_EMAIL })}
                         >{c('Action').t`Use your current email address instead`}</InlineLinkButton>
@@ -121,7 +121,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                 <>
                     <div className="flex-item-fluid">
                         <Challenge
-                            bodyClassName="signLayout-container"
+                            bodyClassName="sign-layout-container"
                             challengeRef={challengeRefLogin}
                             type={0}
                             onLoad={handleChallengeLoaded}
@@ -151,7 +151,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                     <InsecureEmailInfo email={model.email} />
                     <InlineLinkButton
                         id="proton-email-button"
-                        className="nodecoration mt0-25"
+                        className="text-no-decoration mt0-25"
                         onClick={() => onChange({ ...model, email: '', step: ACCOUNT_CREATION_USERNAME })}
                     >{c('Action').t`Create a secure ProtonMail address instead`}</InlineLinkButton>
                 </>
@@ -170,7 +170,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
     return (
         <>
             {challengeLoading ? (
-                <div className="aligncenter">
+                <div className="text-center">
                     <FullLoader className="color-primary" size={200} />
                 </div>
             ) : null}
@@ -186,7 +186,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                 method="post"
             >
                 {inner}
-                <div className="flex flex-nowrap onmobile-flex-column mb2">
+                <div className="flex flex-nowrap on-mobile-flex-column mb2">
                     <SignupLabelInputRow
                         className="mr0-5"
                         label={<Label htmlFor="password">{c('Signup label').t`Password`}</Label>}
@@ -207,7 +207,7 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                         }
                     />
                     <SignupLabelInputRow
-                        className="ml0-5 onmobile-ml0"
+                        className="ml0-5 on-mobile-ml0"
                         label={<Label htmlFor="password-repeat">{c('Signup label').t`Confirm`}</Label>}
                         input={
                             <PasswordInput
@@ -228,13 +228,13 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                 </div>
                 <SignupSubmitRow>
                     <PrimaryButton
-                        className="pm-button--large flex-item-noshrink onmobile-w100"
+                        className="button--large flex-item-noshrink on-mobile-w100"
                         loading={loading || loadingChallenge}
                         disabled={disableSubmit}
                         type="submit"
                     >{c('Action').t`Create account`}</PrimaryButton>
                 </SignupSubmitRow>
-                <div className="alignright">
+                <div className="text-right">
                     <span>{c('Info').jt`Already have an account? ${loginLink}`}</span>
                 </div>
             </form>

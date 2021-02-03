@@ -71,10 +71,10 @@ const ReactivateKeysList = ({ loading = false, states, onUpload }: Props) => {
                     <TableRow
                         key={Key.ID}
                         cells={[
-                            <span key={0} className="mw100 inbl ellipsis">
+                            <span key={0} className="max-w100 inline-block text-ellipsis">
                                 {email}
                             </span>,
-                            <code key={1} className="mw100 inbl ellipsis">
+                            <code key={1} className="max-w100 inline-block text-ellipsis">
                                 {fingerprint}
                             </code>,
                             keyStatus,
@@ -97,7 +97,7 @@ const ReactivateKeysList = ({ loading = false, states, onUpload }: Props) => {
                     autoClick={false}
                 />
             ) : null}
-            <Table className="pm-simple-table--has-actions">
+            <Table className="simple-table--has-actions">
                 <TableHeader
                     cells={[
                         c('Title header for keys table').t`Email`,

@@ -38,7 +38,13 @@ interface Props {
     autoFocus?: boolean;
 }
 
-const DropdownActions = ({ loading = false, disabled = false, list = [], className = '', autoFocus = false }: Props) => {
+const DropdownActions = ({
+    loading = false,
+    disabled = false,
+    list = [],
+    className = '',
+    autoFocus = false,
+}: Props) => {
     if (!list.length) {
         return null;
     }
@@ -63,7 +69,7 @@ const DropdownActions = ({ loading = false, disabled = false, list = [], classNa
                 originalPlacement="bottom-right"
                 disabled={disabled}
                 loading={loading}
-                className={classnames(['pm-button pm-group-button pm-button--for-icon', className])}
+                className={classnames(['button grouped-button button--for-icon', className])}
                 title={c('Title').t`Open actions dropdown`}
                 content=""
                 data-test-id="dropdown:open"
@@ -71,7 +77,7 @@ const DropdownActions = ({ loading = false, disabled = false, list = [], classNa
                 <DropdownMenu>
                     {restList.map(({ text, tooltip, ...restProps }, index) => {
                         return (
-                            <DropdownMenuButton className="alignleft" key={index} {...restProps}>
+                            <DropdownMenuButton className="text-left" key={index} {...restProps}>
                                 {wrapTooltip(text, tooltip)}
                             </DropdownMenuButton>
                         );

@@ -103,21 +103,21 @@ const UserDropdown = ({ ...rest }) => {
                             <li className="pl1 pr1">
                                 {organizationName ? (
                                     <>
-                                        <div className="opacity-50 small m0">{c('Label').t`Organization`}</div>
+                                        <div className="opacity-50 text-sm m0">{c('Label').t`Organization`}</div>
                                         <div className="mb1">{organizationName}</div>
                                     </>
                                 ) : null}
-                                <div className="opacity-50 small m0">{c('Label').t`Storage space`}</div>
-                                <div className="flex flex-items-baseline flex-nowrap flex-spacebetween">
+                                <div className="opacity-50 text-sm m0">{c('Label').t`Storage space`}</div>
+                                <div className="flex flex-align-items-baseline flex-nowrap flex-justify-space-between">
                                     <span>
-                                        <span className="semibold">{humanSize(UsedSpace)} </span>
+                                        <span className="text-semibold">{humanSize(UsedSpace)} </span>
                                         /&nbsp;{humanSize(MaxSpace)}
                                     </span>
                                     {canAddStorage ? (
                                         <AppLink
                                             to="/subscription"
                                             toApp={getAccountSettingsApp()}
-                                            className="small link m0 ml0-5"
+                                            className="text-sm link m0 ml0-5"
                                             title={c('Apps dropdown').t`Add storage space`}
                                             onClick={() => close()}
                                         >
@@ -125,24 +125,24 @@ const UserDropdown = ({ ...rest }) => {
                                         </AppLink>
                                     ) : null}
                                 </div>
-                                <Meter className="is-thin bl mt0-5 mb1" value={spacePercentage} />
+                                <Meter className="is-thin block mt0-5 mb1" value={spacePercentage} />
                                 <AppLink
                                     to="/"
-                                    className="bl w100 mt1-5 mb1-5 aligncenter pm-button pm-button--primaryborder"
+                                    className="block w100 mt1-5 mb1-5 text-center button button--primaryborder"
                                     toApp={getAccountSettingsApp()}
                                     onClick={() => close()}
                                 >
                                     {c('Action').t`Manage account`}
                                 </AppLink>
                             </li>
-                            <li className="dropDown-item-hr mt0-5 mb0-5" aria-hidden="false" />
+                            <li className="dropdown-item-hr mt0-5 mb0-5" aria-hidden="false" />
                         </>
                     ) : null}
                     {isSSOMode ? (
                         <li>
                             <button
                                 type="button"
-                                className="w100 flex dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
+                                className="w100 flex dropdown-item-link pl1 pr1 pt0-5 pb0-5 text-left"
                                 onClick={handleSwitchAccount}
                             >
                                 <Icon className="mt0-25 mr0-5" name="organization-users" />
@@ -152,7 +152,7 @@ const UserDropdown = ({ ...rest }) => {
                     ) : null}
                     <li>
                         <Href
-                            className="w100 flex flex-nowrap dropDown-item-link nodecoration pl1 pr1 pt0-5 pb0-5"
+                            className="w100 flex flex-nowrap dropdown-item-link text-no-decoration pl1 pr1 pt0-5 pb0-5"
                             url="https://shop.protonmail.com"
                             onClick={() => close()}
                         >
@@ -164,7 +164,7 @@ const UserDropdown = ({ ...rest }) => {
                         <li>
                             <button
                                 type="button"
-                                className="w100 flex dropDown-item-link pl1 pr1 pt0-5 pb0-5 alignleft"
+                                className="w100 flex dropdown-item-link pl1 pr1 pt0-5 pb0-5 text-left"
                                 onClick={handleSupportUsClick}
                             >
                                 <Icon className="mt0-25 mr0-5" name="donate" />
@@ -172,13 +172,13 @@ const UserDropdown = ({ ...rest }) => {
                             </button>
                         </li>
                     ) : null}
-                    <li className="dropDown-item-hr mt0-5" aria-hidden="false" />
+                    <li className="dropdown-item-hr mt0-5" aria-hidden="false" />
                     <li>
-                        <div className="pl1 pr1 pt0-5 pb0-5 w100 flex flex-nowrap flex-spacebetween flex-items-center">
+                        <div className="pl1 pr1 pt0-5 pb0-5 w100 flex flex-nowrap flex-justify-space-between flex-align-items-center">
                             <label htmlFor="theme-toggle" className="mr1">{c('Action').t`Display mode`}</label>
                             <Toggle
                                 id="theme-toggle"
-                                className="pm-toggle-label--theme-toggle"
+                                className="toggle-label--theme-toggle"
                                 title={c('Title').t`Toggle display mode`}
                                 checked={userSettings.ThemeType === ThemeTypes.Dark}
                                 loading={loading}
@@ -189,11 +189,11 @@ const UserDropdown = ({ ...rest }) => {
                                             ? c('Toggle button').t`Normal`
                                             : c('Toggle button').t`Dark`;
                                     return (
-                                        <span className="pm-toggle-label-text">
+                                        <span className="toggle-label-text">
                                             <Icon
                                                 name={key === ToggleState.on ? 'crescent-moon' : 'half-moon'}
                                                 alt={alt}
-                                                className="pm-toggle-label-img"
+                                                className="toggle-label-img"
                                             />
                                         </span>
                                     );
@@ -201,10 +201,10 @@ const UserDropdown = ({ ...rest }) => {
                             />
                         </div>
                     </li>
-                    <li className="dropDown-item-hr mb0-5" aria-hidden="false" />
+                    <li className="dropdown-item-hr mb0-5" aria-hidden="false" />
                     <li className="pt0-5 pb0-5 pl1 pr1 flex">
                         <PrimaryButton
-                            className="w100 aligncenter navigationUser-logout"
+                            className="w100 text-center navigationUser-logout"
                             onClick={handleLogout}
                             data-cy-header-user-dropdown="logout"
                         >

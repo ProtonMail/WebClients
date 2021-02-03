@@ -20,14 +20,14 @@ import DiscountBadge from '../DiscountBadge';
 const CheckoutRow = ({ title, amount = 0, currency, className = '' }) => {
     if (amount === 0 && !currency) {
         return (
-            <div className={classnames(['flex flex-nowrap flex-spacebetween mb0-5', className])}>
+            <div className={classnames(['flex flex-nowrap flex-justify-space-between mb0-5', className])}>
                 <div className="pr0-5">{title}</div>
-                <span className="color-global-success uppercase">{c('Price').t`Free`}</span>
+                <span className="color-global-success text-uppercase">{c('Price').t`Free`}</span>
             </div>
         );
     }
     return (
-        <div className={classnames(['flex flex-nowrap flex-spacebetween mb0-5', className])}>
+        <div className={classnames(['flex flex-nowrap flex-justify-space-between mb0-5', className])}>
             <div className="pr0-5">{title}</div>
             <Price className={amount < 0 ? 'color-global-success' : ''} currency={currency}>
                 {amount}
@@ -117,14 +117,14 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                 return (
                     <CheckoutRow
                         key={ID}
-                        className={Type === PLAN_TYPES.PLAN ? 'bold' : ''}
+                        className={Type === PLAN_TYPES.PLAN ? 'text-bold' : ''}
                         title={
                             <>
                                 <span className="mr0-5 pr0-5">
                                     {Type === PLAN_TYPES.PLAN ? Title : getTitle(Name, quantity)}
                                 </span>
                                 {[CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle) && (
-                                    <span className="nobold">
+                                    <span className="text-no-bold">
                                         <CycleDiscountBadge cycle={model.cycle} />
                                     </span>
                                 )}
@@ -157,7 +157,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                 />
             </div>
             <div className="rounded mb1">
-                <header className="small mt0 mb0 bg-global-border uppercase pl1 pr1 pt0-5 pb0-5">{c('Title')
+                <header className="text-sm mt0 mb0 bg-global-border text-uppercase pl1 pr1 pt0-5 pb0-5">{c('Title')
                     .t`Plan summary`}</header>
                 <div className="bg-global-highlight p1">
                     <div className="">
@@ -165,7 +165,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                             printSummary(PLAN_SERVICES.MAIL)
                         ) : (
                             <CheckoutRow
-                                className="bold"
+                                className="text-bold"
                                 title={c('Info').t`ProtonMail Free`}
                                 amount={0}
                                 currency={model.currency}
@@ -178,7 +178,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                                 printSummary(PLAN_SERVICES.VPN)
                             ) : (
                                 <CheckoutRow
-                                    className="bold"
+                                    className="text-bold"
                                     title={c('Info').t`ProtonVPN Free`}
                                     amount={0}
                                     currency={model.currency}
@@ -193,7 +193,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                         hasVpnPlus &&
                         [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle)) ? (
                         <div className="border-top border-top--dashed pt0-5">
-                            <CheckoutRow className="bold" title={driveAppName} amount={0} />
+                            <CheckoutRow className="text-bold" title={driveAppName} amount={0} />
                         </div>
                     ) : null}
                 </div>
@@ -203,7 +203,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                     {model.coupon ? (
                         <div className="border-bottom border-bottom--dashed border-bottom--currentColor mb0-5">
                             <CheckoutRow
-                                className="bigger m0"
+                                className="text-xl m0"
                                 title={c('Title').t`Subtotal`}
                                 amount={subTotal}
                                 currency={model.currency}
@@ -217,7 +217,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                                 }
                                 amount={discount}
                                 currency={model.currency}
-                                className="small mt0 mb0"
+                                className="text-sm mt0 mb0"
                             />
                         </div>
                     ) : null}
@@ -227,16 +227,16 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                                 title={c('Title').t`Total (monthly)`}
                                 amount={monthlyTotal}
                                 currency={model.currency}
-                                className="bigger mt0 mb0"
+                                className="text-xl mt0 mb0"
                             />
                         ) : null}
                         <CheckoutRow
-                            className="bigger m0"
+                            className="text-xl m0"
                             title={
                                 <>
                                     <span className="mr0-5 pr0-5">{c('Title').t`Total`}</span>
                                     {[CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(model.cycle) ? (
-                                        <span className="bold">
+                                        <span className="text-bold">
                                             <Badge type="success">{`${totalDiscount}%`}</Badge>
                                         </span>
                                     ) : null}
@@ -264,7 +264,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                                     }
                                     amount={checkResult.Proration}
                                     currency={model.currency}
-                                    className="small mt0 mb0"
+                                    className="text-sm mt0 mb0"
                                 />
                             ) : null}
                             {checkResult.Credit ? (
@@ -272,7 +272,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                                     title={c('Title').t`Credits`}
                                     amount={checkResult.Credit}
                                     currency={model.currency}
-                                    className="small mt0 mb0"
+                                    className="text-sm mt0 mb0"
                                 />
                             ) : null}
                             {checkResult.Gift ? (
@@ -280,7 +280,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                                     title={c('Title').t`Gift code`}
                                     amount={checkResult.Gift}
                                     currency={model.currency}
-                                    className="small mt0 mb0"
+                                    className="text-sm mt0 mb0"
                                 />
                             ) : null}
                         </div>
@@ -289,7 +289,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                         title={c('Title').t`Amount due`}
                         amount={checkResult.AmountDue}
                         currency={model.currency}
-                        className="bold bigger m0"
+                        className="text-bold text-xl m0"
                     />
                     <div className="mt1">{submit}</div>
                 </div>

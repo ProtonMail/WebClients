@@ -3,13 +3,13 @@ import Tooltip from '../tooltip/Tooltip';
 import { classnames } from '../../helpers';
 
 const CLASSNAMES = {
-    success: 'badgeLabel-success',
-    default: 'badgeLabel',
-    origin: 'badgeLabel-grey',
-    light: 'badgeLabel-greylight',
-    warning: 'badgeLabel-warning',
-    error: 'badgeLabel-error',
-    primary: 'badgeLabel-primary',
+    success: 'badge-label--success',
+    default: 'badge-label',
+    origin: 'badge-label--grey',
+    light: 'badge-label--greylight',
+    warning: 'badge-label--warning',
+    error: 'badge-label--error',
+    primary: 'badge-label--primary',
 } as const;
 
 const wrapTooltip = (children: React.ReactNode, title: string, className?: string) => (

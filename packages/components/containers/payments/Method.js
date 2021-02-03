@@ -27,7 +27,7 @@ const Alert3DS = () => {
     return (
         <p>
             <div className="mb0-5">{c('Info').t`We use 3-D Secure to protect your payments.`}</div>
-            <div className="flex flex-nowrap flex-items-center">
+            <div className="flex flex-nowrap flex-align-items-center">
                 <img width="60" alt="" className="mr1" src={verifiedByVisaSvg} />
                 <img width="60" alt="" className="mr1" src={mastercardSecurecodeSvg} />
                 <img width="60" alt="" className="mr1" src={discoverProtectBuySvg} />

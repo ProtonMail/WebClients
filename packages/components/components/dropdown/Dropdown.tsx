@@ -143,11 +143,11 @@ const Dropdown = ({
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
     const popperClassName = classnames([
-        'dropDown',
-        noMaxSize && 'dropDown--noMaxSize',
-        `dropDown--${placement}`,
-        isClosing && `is-dropdownOut`,
-        noCaret && 'dropDown--noCaret',
+        'dropdown',
+        noMaxSize && 'dropdown--no-max-size',
+        `dropdown--${placement}`,
+        isClosing && `is-dropdown-out`,
+        noCaret && 'dropdown--no-caret',
         className,
         'no-outline',
     ]);
@@ -170,11 +170,11 @@ const Dropdown = ({
             : {};
 
     const handleAnimationEnd = ({ animationName }: React.AnimationEvent) => {
-        if (animationName.includes('dropdownOut') && isClosing) {
+        if (animationName.includes('anime-dropdown-out') && isClosing) {
             setIsClosed();
             setContentRect(undefined);
         }
-        if (animationName.includes('dropdownIn') && isOpen && contentRef.current && !contentRect) {
+        if (animationName.includes('anime-dropdown-in') && isOpen && contentRef.current && !contentRect) {
             const contentClientRect = contentRef.current?.getBoundingClientRect();
             setContentRect(contentClientRect);
         }
@@ -207,7 +207,7 @@ const Dropdown = ({
                 {/* Backdrop button, meant to override 'autoClose' option on mobile */}
                 <button
                     type="button"
-                    className="dropDown-backdrop"
+                    className="dropdown-backdrop"
                     title={c('Action').t`Close`}
                     onClick={onClose}
                     data-focus-fallback={-1}
@@ -217,7 +217,7 @@ const Dropdown = ({
                 <div
                     ref={contentRef}
                     style={contentStyle}
-                    className={classnames(['dropDown-content'])}
+                    className={classnames(['dropdown-content'])}
                     {...contentProps}
                 >
                     {children}

@@ -39,7 +39,7 @@ const FilePreview = ({ contents, fileName, mimeType, loading, navigationControls
     const renderPreview = () => {
         if (!mimeType || !isPreviewAvailable(mimeType)) {
             return (
-                <div className="pd-file-preview-container">
+                <div className="file-preview-container">
                     <UnsupportedPreview onSave={onSave} />
                 </div>
             );
@@ -61,7 +61,7 @@ const FilePreview = ({ contents, fileName, mimeType, loading, navigationControls
     };
 
     return (
-        <div className="pd-file-preview" ref={rootRef} {...focusTrapProps}>
+        <div className="file-preview" ref={rootRef} {...focusTrapProps}>
             <Header mimeType={mimeType} name={fileName} onClose={onClose} onSave={onSave}>
                 {navigationControls}
             </Header>

@@ -53,19 +53,19 @@ const NewSubscriptionModalFooter = ({ submit, step, model, plans, onClose, metho
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
     const upsells = [
         step === SUBSCRIPTION_STEPS.CUSTOMIZATION && model.cycle === CYCLE.MONTHLY && (
-            <div key="upsell-1" className="nomobile flex flex-nowrap flex-items-center pl1 pr1">
+            <div key="upsell-1" className="no-mobile flex flex-nowrap flex-align-items-center pl1 pr1">
                 <PercentageIcon />
                 <span className="flex-item-fluid">{c('Info').t`Save 20% by switching to annual billing`}</span>
             </div>
         ),
         step === SUBSCRIPTION_STEPS.CUSTOMIZATION && model.cycle === CYCLE.YEARLY && (
-            <div key="upsell-2" className="nomobile flex flex-nowrap flex-items-center pl1 pr1">
+            <div key="upsell-2" className="no-mobile flex flex-nowrap flex-align-items-center pl1 pr1">
                 <TickIcon />
                 <span className="flex-item-fluid">{c('Info').t`You are saving 20% with annual billing`}</span>
             </div>
         ),
         step === SUBSCRIPTION_STEPS.CUSTOMIZATION && model.cycle === CYCLE.TWO_YEARS && (
-            <div key="upsell-3" className="nomobile flex flex-nowrap flex-items-center pl1 pr1">
+            <div key="upsell-3" className="no-mobile flex flex-nowrap flex-align-items-center pl1 pr1">
                 <TickIcon />
                 <span className="flex-item-fluid">{c('Info').t`You are saving 33% with 2-year billing`}</span>
             </div>
@@ -74,7 +74,7 @@ const NewSubscriptionModalFooter = ({ submit, step, model, plans, onClose, metho
             hasAddresses &&
             model.coupon !== COUPON_CODES.BUNDLE &&
             !isVisionary && (
-                <div key="upsell-4" className="nomobile flex flex-nowrap flex-items-center pl1 pr1">
+                <div key="upsell-4" className="no-mobile flex flex-nowrap flex-align-items-center pl1 pr1">
                     <PercentageIcon />
                     <span className="flex-item-fluid">{c('Info').t`Save an extra 20% by combining Mail and VPN`}</span>
                 </div>
@@ -83,7 +83,7 @@ const NewSubscriptionModalFooter = ({ submit, step, model, plans, onClose, metho
             hasAddresses &&
             model.coupon === COUPON_CODES.BUNDLE &&
             !isVisionary && (
-                <div key="upsell-5" className="nomobile flex flex-nowrap flex-items-center pl1 pr1">
+                <div key="upsell-5" className="no-mobile flex flex-nowrap flex-align-items-center pl1 pr1">
                     <TickIcon />
                     <span className="flex-item-fluid">
                         {c('Info').t`You are saving an extra 20% with the bundle discount`}
@@ -91,13 +91,13 @@ const NewSubscriptionModalFooter = ({ submit, step, model, plans, onClose, metho
                 </div>
             ),
         step === SUBSCRIPTION_STEPS.PAYMENT && onlyVPN && (
-            <div key="upsell-6" className="nomobile flex flex-nowrap flex-items-center pl1 pr1">
+            <div key="upsell-6" className="no-mobile flex flex-nowrap flex-align-items-center pl1 pr1">
                 <ClockIcon />
                 <span className="flex-item-fluid">{c('Info').t`30-days money back guaranteed`}</span>
             </div>
         ),
         step === SUBSCRIPTION_STEPS.PAYMENT && protectedPayment && (
-            <div key="upsell-7" className="nomobile flex flex-nowrap flex-items-center pl1 pr1">
+            <div key="upsell-7" className="no-mobile flex flex-nowrap flex-align-items-center pl1 pr1">
                 <ShieldIcon />
                 <span className="flex-item-fluid">
                     {c('Info').t`Payments are protected with TLS encryption and Swiss privacy laws`}

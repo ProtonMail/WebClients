@@ -73,7 +73,7 @@ function ActionsLabel({ label, onChange }) {
         },
     ];
 
-    return <DropdownActions className="pm-button--small" list={list} />;
+    return <DropdownActions className="button--small" list={list} />;
 }
 
 ActionsLabel.propTypes = {

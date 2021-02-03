@@ -99,7 +99,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
     const breadcrumbIcons = [
         !domainModel.State || domainModel.State === DOMAIN_STATE.DOMAIN_STATE_DEFAULT ? null : (
             <RoundedIcon
-                className="mr0-5 onmobile-p0-25 onmobile-mr0-25"
+                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="domain-icon"
                 type={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'success' : 'error'}
                 name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_ACTIVE ? 'on' : 'off'}
@@ -107,7 +107,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
         ),
         !domainModel.VerifyState || domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT ? null : (
             <RoundedIcon
-                className="mr0-5 onmobile-p0-25 onmobile-mr0-25"
+                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="verify-icon"
                 type={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'success' : 'error'}
                 name={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'on' : 'off'}
@@ -115,7 +115,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
         ),
         !domainModel.MxState || domainModel.MxState === MX_STATE.MX_STATE_DEFAULT ? null : (
             <RoundedIcon
-                className="mr0-5 onmobile-p0-25 onmobile-mr0-25"
+                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="mx-icon"
                 type={domainModel.MxState === MX_STATE.MX_STATE_GOOD ? 'success' : 'error'}
                 name={domainModel.MxState === MX_STATE.MX_STATE_GOOD ? 'on' : 'off'}
@@ -123,7 +123,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
         ),
         !domainModel.SpfState || domainModel.SpfState === SPF_STATE.SPF_STATE_DEFAULT ? null : (
             <RoundedIcon
-                className="mr0-5 onmobile-p0-25 onmobile-mr0-25"
+                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="spf-icon"
                 type={domainModel.SpfState === SPF_STATE.SPF_STATE_GOOD ? 'success' : 'error'}
                 name={domainModel.SpfState === SPF_STATE.SPF_STATE_GOOD ? 'on' : 'off'}
@@ -136,7 +136,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
             : null,
         !domainModel.DmarcState || domainModel.DmarcState === DMARC_STATE.DMARC_STATE_DEFAULT ? null : (
             <RoundedIcon
-                className="mr0-5 onmobile-p0-25 onmobile-mr0-25"
+                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="dmarc-icon"
                 type={domainModel.DmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'success' : 'error'}
                 name={domainModel.DmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'on' : 'off'}
@@ -144,7 +144,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
         ),
         domainAddresses.length ? (
             <RoundedIcon
-                className="mr0-5 onmobile-p0-25 onmobile-mr0-25"
+                className="mr0-5 on-mobile-p0-25 on-mobile-mr0-25"
                 key="addresses-icon"
                 type="success"
                 name="on"
@@ -246,7 +246,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
             submit={c('Action').t`Next`}
             title={domainModel.ID ? c('Title').t`Edit domain` : c('Title').t`Add domain`}
             loading={loading}
-            className="pm-modal--full"
+            className="modal--full"
             {...rest}
             {...modalProps}
         >
@@ -255,7 +255,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
                     <ButtonGroup
                         key={index}
                         className={classnames([
-                            'flex flex-nowrap flex-items-center pm-button--for-icon onmobile-pl0-25 onmobile-pr0-25',
+                            'flex flex-nowrap flex-align-items-center button--for-icon on-mobile-pl0-25 on-mobile-pr0-25',
                             index === step && 'is-active',
                         ])}
                         disabled={
@@ -266,7 +266,7 @@ const DomainModal = ({ onClose, domain = {}, domainAddresses = [], ...rest }) =>
                         title={label}
                     >
                         {breadcrumbIcons[index]}
-                        <span className="ellipsis mw100">{label}</span>
+                        <span className="text-ellipsis max-w100">{label}</span>
                     </ButtonGroup>
                 ))}
             </Group>

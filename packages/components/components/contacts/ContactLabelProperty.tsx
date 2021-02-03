@@ -12,7 +12,7 @@ const ContactLabelProperty = ({ field, type, ...rest }: Props) => {
     const label: string = labels[type] || type || labels[field];
 
     return (
-        <label className="capitalize" {...rest}>
+        <label className="text-capitalize" {...rest}>
             {label}
         </label>
     );

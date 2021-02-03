@@ -7,7 +7,7 @@ import './OrderableTable.scss';
 import { classnames } from '../../helpers';
 
 const OrderableTable = ({ children = [], className = '', caption = undefined, ...props }) => (
-    <OrderableContainer helperClass="orderableHelper pm-simple-table" useDragHandle {...props}>
+    <OrderableContainer helperClass="orderableHelper simple-table" useDragHandle {...props}>
         <Table caption={caption} className={classnames(['orderableTable', className])}>
             {children}
         </Table>

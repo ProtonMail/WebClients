@@ -65,7 +65,7 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
             }
             {...rest}
         >
-            <div className="flex flex-nowrap mb1 onmobile-flex-column">
+            <div className="flex flex-nowrap mb1 on-mobile-flex-column">
                 <Label htmlFor={`editor-image-address-${uid}`}>{c('Info').t`Web address`}</Label>
                 <div className="flex-item-fluid">
                     <Input
@@ -77,7 +77,7 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
                     />
                 </div>
             </div>
-            <div className="flex flex-nowrap mb1 onmobile-flex-column">
+            <div className="flex flex-nowrap mb1 on-mobile-flex-column">
                 <Label htmlFor={`editor-image-preview-${uid}`}>{c('Info').t`Image preview`}</Label>
                 <div className="flex-item-fluid">
                     <ReactiveImage

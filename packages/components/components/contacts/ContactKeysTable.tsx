@@ -103,15 +103,15 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
     }, [model.publicKeys, model.trustedFingerprints, model.encrypt]);
 
     return (
-        <Table className="pm-simple-table--has-actions">
+        <Table className="simple-table--has-actions">
             <thead>
                 <tr>
-                    <th scope="col" className="ellipsis">{c('Table header').t`Fingerprint`}</th>
-                    {!isNarrow && <th scope="col" className="ellipsis">{c('Table header').t`Created`}</th>}
-                    {!isTinyMobile && <th scope="col" className="ellipsis">{c('Table header').t`Expires`}</th>}
-                    {!isNarrow && <th scope="col" className="ellipsis">{c('Table header').t`Type`}</th>}
-                    <th scope="col" className="ellipsis">{c('Table header').t`Status`}</th>
-                    <th scope="col" className={classnames(['ellipsis', isNarrow && 'w40'])}>{c('Table header')
+                    <th scope="col" className="text-ellipsis">{c('Table header').t`Fingerprint`}</th>
+                    {!isNarrow && <th scope="col" className="text-ellipsis">{c('Table header').t`Created`}</th>}
+                    {!isTinyMobile && <th scope="col" className="text-ellipsis">{c('Table header').t`Expires`}</th>}
+                    {!isNarrow && <th scope="col" className="text-ellipsis">{c('Table header').t`Type`}</th>}
+                    <th scope="col" className="text-ellipsis">{c('Table header').t`Status`}</th>
+                    <th scope="col" className={classnames(['text-ellipsis', isNarrow && 'w40'])}>{c('Table header')
                         .t`Actions`}</th>
                 </tr>
             </thead>
@@ -253,7 +253,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                     emailAddress={model.emailAddress}
                                     isInternal={model.isPGPInternal}
                                 />
-                                <span className="flex-item-fluid ellipsis">{fingerprint}</span>
+                                <span className="flex-item-fluid text-ellipsis">{fingerprint}</span>
                             </div>,
                             !isNarrow && (isValid(creation) ? format(creation, 'PP', { locale: dateLocale }) : '-'),
                             !isTinyMobile &&
@@ -269,7 +269,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 {isRevoked ? <Badge type="error">{c('Key badge').t`Revoked`}</Badge> : null}
                                 {isExpired ? <Badge type="error">{c('Key badge').t`Expired`}</Badge> : null}
                             </React.Fragment>,
-                            <DropdownActions key={fingerprint} className="pm-button--small" list={list} />,
+                            <DropdownActions key={fingerprint} className="button--small" list={list} />,
                         ].filter(Boolean);
                         return <TableRow key={fingerprint} cells={cells} />;
                     }

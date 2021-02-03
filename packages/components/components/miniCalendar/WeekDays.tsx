@@ -30,7 +30,7 @@ const WeekDays = ({ weekdaysShort, weekdaysLong, weekStartsOn = 1, numberOfDays 
     }, [weekdaysShort, weekStartsOn]);
 
     return (
-        <div className="aligncenter minicalendar-weekdays" style={style}>
+        <div className="text-center minicalendar-weekdays" style={style}>
             {weekDaysLabels}
         </div>
     );

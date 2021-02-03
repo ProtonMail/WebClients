@@ -25,7 +25,7 @@ function LabelItem({ label, onEditLabel = noop, onRemoveLabel = noop, ...rest })
                         style={{ fill: Color }}
                         className="icon-16p flex-item-noshrink mr1 mtauto mbauto"
                     />
-                    <span className="ellipsis" title={Name} data-test-id="folders/labels:item-name">
+                    <span className="text-ellipsis" title={Name} data-test-id="folders/labels:item-name">
                         {Name}
                     </span>
                 </div>,
