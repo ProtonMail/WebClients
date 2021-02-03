@@ -448,8 +448,8 @@ END:VEVENT`;
             },
             sequence: { value: 0 },
             'recurrence-id': {
-                value: { year: 2003, month: 1, day: 2, hours: 0, minutes: 30, seconds: 0, isUTC: false },
-                parameters: { tzid: 'Europe/Sarajevo' },
+                value: { year: 2003, month: 1, day: 1, hours: 16, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/Denver' },
             },
             location: { value: '1CP Conference Room 4350' },
         });
