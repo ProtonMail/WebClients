@@ -1,7 +1,5 @@
-// base size for text
-$base-font: 14 !default;  // if "14" then 1em = 14px
-// default line-height
-$l-h: 1.5 !default;
+$base-font: 14 !default; // if "14" then 1em = 14px
+$base-line-height: 1.5 !default;
 
 $size-h1: 36 !default;
 $size-h2: 28 !default;
@@ -11,29 +9,34 @@ $size-h5: 17 !default;
 $size-h6: 16 !default;
 
 // Use typo helpers on demand
-$use-other-typo-helpers       : true !default;
+$use-other-typo-helpers: true !default;
 $use-other-line-height-helpers: true !default;
 
-$size-smallest                : 9 !default;
-$size-smaller                 : 10 !default;
-$size-small                   : 12 !default;
-$size-big                     : 16 !default;
-$size-bigger                  : 18 !default;
-$size-biggest                 : 20 !default;
+$text-sizes: (
+	2xs: 9,
+	xs: 10,
+	sm: 12,
+	rg: 14,
+	lg: 16,
+	xl: 18,
+	2xl: 20,
+);
 
 // fonts
-$font-family          : -apple-system,  BlinkMacSystemFont, 'Segoe UI',        Roboto,  Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !default;
-$font-family-monospace: SFMono-Regular, Consolas,           'Liberation Mono', 'Menlo', monospace,   monospace !default;
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
+	Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !default;
+$font-family-monospace: SFMono-Regular, Consolas, 'Liberation Mono', 'Menlo',
+	monospace, monospace !default;
 // explanation for double monospace http://code.iamkate.com/html-and-css/fixing-browsers-broken-monospace-font-handling/
 
 $global-border-radius: 3px !default;
 
 // main breakpoints
-$breakpoint-large           : 1500 !default;
+$breakpoint-large: 1500 !default;
 $breakpoint-medium-landscape: 1100 !default;
-$breakpoint-medium          : 910 !default;
-$breakpoint-small           : 680 !default;
-$breakpoint-tiny            : 450 !default;
+$breakpoint-medium: 910 !default;
+$breakpoint-small: 680 !default;
+$breakpoint-tiny: 450 !default;
 
 // RTL
 $rtl-option: false !default;
@@ -44,14 +47,13 @@ $rtl-option: false !default;
 // Custom scrollbar everywhere
 $custom-scroll: true !default;
 
-
 // hyphens
 $hyphenation: false !default;
 
 // clear floats
 $use-clearleft_right: false !default;
-$use-clearhidden    : false !default;
-$use-clearfix       : false !default;
+$use-clearhidden: false !default;
+$use-clearfix: false !default;
 
 // vertical rhythm
 // possible values     : 'double_top_single_bottom', 'single_top_single_bottom', 'single_top', 'single_bottom'
@@ -72,27 +74,26 @@ $root-default-font-size: 16 !default;
 $apply-body-styles: true !default;
 
 // others
-$use-reset-button         : true !default;
+$use-reset-button: true !default;
 $use-ie-calc-font-fallback: false !default;
-$use-old-ie-fallbacks     : true !default;
-$use-height-auto-img      : true !default;
-$use-height-auto-td       : true !default;
-$use-height-auto-table    : true !default;
+$use-old-ie-fallbacks: true !default;
+$use-height-auto-img: true !default;
+$use-height-auto-td: true !default;
+$use-height-auto-table: true !default;
 
 // default config for webpack, can be overriden by "global config" in styles-pm.scss
 $path-images: '../../assets/img/shared/' !default;
 
-
 // variables for global layouts, allowing you to use calc for components and adapt quickly if needed
-$header-height        : 8rem !default;
-$width-sidebar        : 24rem !default;  // main navigation
-$toolbar-height       : 5rem !default;
-$context-bar-width    : 25vw !default;   // context bar on the right
+$header-height: 8rem !default;
+$width-sidebar: 24rem !default; // main navigation
+$toolbar-height: 5rem !default;
+$context-bar-width: 25vw !default; // context bar on the right
 $context-bar-min-width: 30rem !default;
 $context-bar-max-width: 40rem !default;
 
 $default-height-fields: 3.5rem !default;
 
-$conversations-column-width: 35% !default;  // used also to align search bar on top
+$conversations-column-width: 35% !default; // used also to align search bar on top
 
 $pm-label-width: 18em !default;

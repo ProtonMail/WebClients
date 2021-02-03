@@ -21,7 +21,7 @@ $container-to-width: 3em !default;
 	min-height: 100%;
 }
 
-.items-column-list-inner--noborder {
+.items-column-list-inner--no-border {
 	// fix for Contact and ReactVirtualized__Grid
 	border: 0;
 }
@@ -209,7 +209,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 		}
 
 		.item-icon,
-		.pm-checkbox-fakecheck {
+		.checkbox-fakecheck {
 			opacity: 0;
 		}
 	}
@@ -358,7 +358,7 @@ $conversation-icon-size: 3.2rem !default;
 
 		& > .item-icon-fakecheck {
 			display: flex;
-			animation: conversationIconIn ease 0.15s;
+			animation: anime-conversation-icon-in ease 0.15s;
 		}
 
 		.item-icon-fakecheck-icon {
@@ -381,7 +381,7 @@ $conversation-icon-size: 3.2rem !default;
 	}
 }
 
-@keyframes conversationIconIn {
+@keyframes anime-conversation-icon-in {
 	0% {
 		transform: scale(0);
 	}

@@ -7,11 +7,11 @@
 	&::before {
 		content: '\00a0';
 		font-family: monospace;
-		animation: ellipsis-loading linear 1s infinite;
+		animation: anime-ellipsis-loading linear 1s infinite;
 	}
 }
 
-@keyframes ellipsis-loading {
+@keyframes anime-ellipsis-loading {
 	0% {
 		content: '\00a0';
 	}

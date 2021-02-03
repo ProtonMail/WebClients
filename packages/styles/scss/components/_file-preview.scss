@@ -1,4 +1,4 @@
-.pd-file-preview {
+.file-preview {
 	@extend .color-white;
 	@extend .bg-global-grey;
 	@extend .flex-item-fluid-auto;
@@ -16,7 +16,7 @@
 		@extend .flex-column;
 		@extend .flex-item-fluid-auto;
 		@extend .scroll-if-needed;
-		@extend .flex-noMinChildren;
+		@extend .flex-no-min-children;
 	}
 
 	&-filename {

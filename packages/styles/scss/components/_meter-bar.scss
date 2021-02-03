@@ -1,4 +1,4 @@
-@mixin meterbar-size($size: 1.5rem) {
+@mixin meter-bar-size($size: 1.5rem) {
 	height: $size;
 	border-radius: #{$size/2};
 
@@ -23,11 +23,11 @@
 	}
 }
 
-.meterbar {
-	@include meterbar-size;
+.meter-bar {
+	@include meter-bar-size;
 
 	width: 100%;
-	background: var(--bgcolor-meterbar, $pm-global-muted);
+	background: var(--bgcolor-meter-bar, $pm-global-muted);
 
 	//-webkit-appearance: none; // Can't. Well, because Chrome.
 	// -moz-appearance: none;
@@ -82,6 +82,6 @@
 	}
 
 	&.is-thin {
-		@include meterbar-size(0.375em);
+		@include meter-bar-size(0.375em);
 	}
 }

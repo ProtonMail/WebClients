@@ -1,4 +1,4 @@
-@mixin progressbar-size($size: 0.5em) {
+@mixin progress-bar-size($size: 0.5em) {
 	height: $size;
 	border-radius: #{$size/2};
 
@@ -15,8 +15,8 @@
 	}
 }
 
-.progressbar {
-	@include progressbar-size();
+.progress-bar {
+	@include progress-bar-size();
 
 	background: var(--bordercolor-input, $pm-global-border);
 	color: $pm-primary;
@@ -64,6 +64,6 @@
 	}
 
 	&.is-thin {
-		@include progressbar-size(0.25em);
+		@include progress-bar-size(0.25em);
 	}
 }

@@ -12,12 +12,12 @@
 		background: $white;
 		color: $pm-primary;
 
-		.aside-linkIcon {
+		.aside-link-icon {
 			fill: $pm-primary;
 		}
 	}
 
-	&Icon {
+	&-icon {
 		width: 17px;
 		height: 17px;
 		fill: var(--fillcolor-icons, $pm-global-light);

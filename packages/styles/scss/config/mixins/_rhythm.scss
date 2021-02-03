@@ -15,6 +15,6 @@
 		font-size: rem($value);
 	}
 
-	line-height: line-height($value, $l-h, $base-font);
-	margin: margin-em($value, $l-h, $base-font, $type-vr);
+	line-height: line-height($value, $base-line-height, $base-font);
+	margin: margin-em($value, $base-line-height, $base-font, $type-vr);
 }

@@ -1,4 +1,4 @@
-// these mixins are present to be called from pm-buttons and pm-darkmode
+// these mixins are present to be called from buttons and pm-darkmode
 @import '../../scss/config/';
 
 @mixin button-disabled-state($color: null) {
@@ -25,7 +25,7 @@
 	}
 }
 
-@mixin pm-button-dark {
+@mixin button-dark {
 	color: $white;
 	background-color: $pm-global-grey;
 	border-color: var(--bordercolor-input, $pm-global-border);
@@ -50,7 +50,7 @@
 	}
 }
 
-@mixin pm-button-blueborder-dark {
+@mixin button-blueborder-dark {
 	border-color: $pm-primary-light;
 	color: $pm-primary-light;
 	background-color: $pm-global-grey;

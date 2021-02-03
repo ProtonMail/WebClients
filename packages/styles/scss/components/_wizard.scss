@@ -10,7 +10,7 @@ $size-current-pin: 16px !default;
 		padding-top: 1.5em;
 		padding-left: 2px; // "optical" alignment, difficult to align text and circle ^^
 
-		&--noTextDisplayed {
+		&--no-text-displayed {
 			padding-top: 0;
 		}
 	}
@@ -121,7 +121,7 @@ $size-current-pin: 16px !default;
 		}
 	}
 
-	&-container--noTextDisplayed &-item[aria-current='step'] &-item-inner {
+	&-container--no-text-displayed &-item[aria-current='step'] &-item-inner {
 		@extend .invisible;
 	}
 }

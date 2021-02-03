@@ -164,7 +164,7 @@ html,
 	}
 }
 
-.main-area--withToolbar {
+.main-area--with-toolbar {
 	// only for Angular this one
 	@extend .main-area;
 	border-radius: 0;
@@ -174,11 +174,11 @@ html,
 $height-for-tablet: 5em !default;
 $height-for-mobile: 8em !default;
 
-.main-area--paddingFix {
+.main-area--padding-fix {
 	padding-bottom: $height-for-tablet;
 }
 
-.main-area-content--paddingFix::after {
+.main-area-content--padding-fix::after {
 	content: '';
 	display: flex;
 	width: 100%;
@@ -186,12 +186,12 @@ $height-for-mobile: 8em !default;
 }
 
 @include respond-to($breakpoint-small) {
-	.main-area--paddingFix {
+	.main-area--padding-fix {
 		padding-bottom: $height-for-mobile;
 		// thanks Apple for the fixed toolbar at the bottom
 	}
 
-	.main-area-content--paddingFix::after {
+	.main-area-content--padding-fix::after {
 		height: $height-for-mobile;
 	}
 }
@@ -202,16 +202,20 @@ $height-for-mobile: 8em !default;
 	@extend .bg-global-altgrey-gradient;
 }
 
-.main-area--noHeader {
+.main-area--no-header {
 	@extend .main-area;
 	//height: 100vh; // create a crazy bug on Safari on VPN
 	max-height: 100%;
 }
 
-.main-area--withToolbar--noHeader {
-	@extend .main-area--withToolbar;
+.main-area--with-toolbar--no-header {
+	@extend .main-area--with-toolbar;
 }
 
 .main-area-content {
 	background: var(--bgcolor-main-area, #{$white});
+}
+
+.main-area--row-mode .items-column-list {
+	width: 100%;
 }

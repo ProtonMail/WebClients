@@ -1,4 +1,4 @@
-.ColorSelector {
+.color-selector {
 	&-container {
 		@include respond-to($breakpoint-small, 'min') {
 			max-width: 13em;
@@ -33,7 +33,7 @@
 			transition: border 0.1s ease-out;
 		}
 
-		&.selected &-mask {
+		&.is-selected &-mask {
 			border: 3px solid rgb(0 0 0 / 0.1);
 		}
 
@@ -48,7 +48,7 @@
 			opacity: 0.75;
 		}
 
-		&.selected svg {
+		&.is-selected svg {
 			opacity: 1;
 		}
 	}

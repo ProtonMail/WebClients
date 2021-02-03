@@ -8,11 +8,11 @@ $sticky-title-height: 10rem !default;
 	background: inherit;
 	z-index: 11;
 
-	&--onTop {
+	&--on-top {
 		box-shadow: none;
 	}
 
-	&--noPadding {
+	&--no-padding {
 		padding: 0;
 	}
 }
@@ -27,7 +27,7 @@ $sticky-title-height: 10rem !default;
 		max-width: 75vw;
 	}
 
-	&--fullwidth {
+	&--full-width {
 		max-width: none;
 	}
 
@@ -44,7 +44,7 @@ $sticky-title-height: 10rem !default;
 
 // not sticky on mobile
 @include respond-to($breakpoint-small) {
-	.sticky-title:not(.onmobile-remain-sticky) {
+	.sticky-title:not(.on-mobile-remain-sticky) {
 		position: static;
 		box-shadow: none;
 	}

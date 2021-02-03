@@ -1,8 +1,8 @@
-.dropDown {
+.dropdown {
 	--dropdown-border-color: var(--bordercolor-input, transparent);
 	--dropdown-bg-color: var(--bgcolor-main-area, #{$white});
 
-	&:not(#{&}--noMaxSize) {
+	&:not(#{&}--no-max-size) {
 		--min-width: 10em;
 		--max-width: 20em;
 		--max-height: 20em;
@@ -25,9 +25,9 @@
 		justify-content: center;
 		align-items: center;
 		background-color: #{rgba(black, 0.4)};
-		animation-name: dropdownInSmall;
+		animation-name: anime-dropdown-in-small;
 
-		@keyframes dropdownInSmall {
+		@keyframes anime-dropdown-in-small {
 			from {
 				opacity: 0;
 			}
@@ -37,10 +37,10 @@
 		}
 
 		// Out animation
-		&.is-dropdownOut {
-			animation-name: dropdownOutSmall;
+		&.is-dropdown-out {
+			animation-name: anime-dropdown-out-small;
 
-			@keyframes dropdownOutSmall {
+			@keyframes anime-dropdown-out-small {
 				from {
 					opacity: 1;
 				}
@@ -63,9 +63,9 @@
 		box-shadow: 0 0.5rem 1.5rem 0
 			var(--dropdown-box-shadow, $input-shadow-color);
 		background: var(--dropdown-bg-color);
-		animation-name: dropdownInLarge;
+		animation-name: anime-dropdown-in-large;
 
-		@keyframes dropdownInLarge {
+		@keyframes anime-dropdown-in-large {
 			from {
 				transform: scale(0.75);
 				opacity: 0;
@@ -92,10 +92,10 @@
 		}
 
 		// Out animation
-		&.is-dropdownOut {
-			animation-name: dropdownOutLarge;
+		&.is-dropdown-out {
+			animation-name: anime-dropdown-out-large;
 
-			@keyframes dropdownOutLarge {
+			@keyframes anime-dropdown-out-large {
 				from {
 					transform: scale(1);
 					opacity: 1;
@@ -107,7 +107,7 @@
 			}
 		}
 
-		// Transform origins regarding dropDown position
+		// Transform origins regarding dropdown position
 		@each $position,
 			$origin
 				in (
@@ -202,16 +202,16 @@
 			background: var(--dropdown-bg-color);
 		}
 
-		button:not(.pm-button) {
+		button:not(.button) {
 			color: currentColor;
 		}
 	}
 
 	@include respond-to($breakpoint-small, 'max') {
 		&-content {
-			animation: dropdownContentScaleIn 0.15s ease-out both;
+			animation: anime-dropdown-content-scale-in 0.15s ease-out both;
 
-			@keyframes dropdownContentScaleIn {
+			@keyframes anime-dropdown-content-scale-in {
 				from {
 					transform: scale(0.8);
 				}
@@ -221,10 +221,10 @@
 			}
 		}
 
-		&.is-dropdownOut &-content {
-			animation-name: dropdownContentScaleOut;
+		&.is-dropdown-out &-content {
+			animation-name: anime-dropdown-content-scale-out;
 
-			@keyframes dropdownContentScaleOut {
+			@keyframes anime-dropdown-content-scale-out {
 				from {
 					transform: scale(1);
 				}
@@ -266,14 +266,14 @@
 			&,
 			&:hover,
 			&:focus {
-				.dropDown-item-button {
+				.dropdown-item-button {
 					color: $pm-global-warning;
 				}
 			}
 		}
 
 		& [aria-current='true'],
-		& &--isSelected {
+		& &--is-selected {
 			// Specificity -_-v
 			&,
 			&:hover,
@@ -299,7 +299,7 @@
 
 	/* Arrow for wide screens */
 	@include respond-to($breakpoint-small, 'min') {
-		&:not(#{&}--noCaret)::before {
+		&:not(#{&}--no-caret)::before {
 			--size: 1.5rem;
 			--offset: #{2.12rem - 1.5rem}; // Pythagore powa for middle line alignement!
 
@@ -386,7 +386,7 @@
 /* TODO: REMOVE THIS!! */
 /* TODO: REMOVE THIS!! */
 /* TODO: REMOVE THIS!! */
-.isDarkMode .dropDown-item {
+.isDarkMode .dropdown-item {
 	&-button,
 	&-link {
 		&[disabled],

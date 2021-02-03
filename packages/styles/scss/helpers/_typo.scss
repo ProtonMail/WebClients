@@ -1,33 +1,14 @@
 @if $use-other-typo-helpers==true {
-	/* other useful classes */
-	.smallest {
-		@include rhythm(
-			$size-smallest,
-			'double_top_double_bottom_without_coef'
-		);
+	@each $name,
+		$size
+			in (2xs: 9, xs: 10, sm: 12, rg: $base-font, lg: 16, xl: 18, 2xl: 20)
+	{
+		.text-#{$name} {
+			@include rhythm($size, 'double_top_double_bottom_without_coef');
+		}
 	}
 
-	.smaller {
-		@include rhythm($size-smaller, 'double_top_double_bottom_without_coef');
-	}
-
-	.small {
-		@include rhythm($size-small, 'double_top_double_bottom_without_coef');
-	}
-
-	.big {
-		@include rhythm($size-big, 'double_top_double_bottom_without_coef');
-	}
-
-	.bigger {
-		@include rhythm($size-bigger, 'double_top_double_bottom_without_coef');
-	}
-
-	.biggest {
-		@include rhythm($size-biggest, 'double_top_double_bottom_without_coef');
-	}
-
-	.size-40 {
+	.text-40 {
 		font-size: 4rem;
 	}
 }
@@ -45,19 +26,19 @@
 		line-height: 1.3;
 	}
 
-	.lh-standard {
-		line-height: $l-h;
+	.lh-rg {
+		line-height: $base-line-height;
 	}
 }
 
 /* Hyphenation: Thou shalt not pass (Moïse or Gandalf, don’t remember) */
 @if $hyphenation==false {
-	.cut {
+	.text-cut {
 		word-break: break-word;
 	}
 
 	@supports (-webkit-hyphens: auto) or (hyphens: auto) {
-		.cut {
+		.text-cut {
 			word-break: normal;
 			@include vendor-prefix(hyphens, auto, webkit);
 		}
@@ -69,75 +50,57 @@
 }
 
 /* remove hyphenation if needed */
-.nocut {
+.text-no-cut {
 	word-wrap: normal;
 }
 
 @supports (-webkit-hyphens: auto) or (hyphens: auto) {
-	.nocut {
+	.text-no-cut {
 		@include vendor-prefix(hyphens, none, webkit);
 	}
 }
 
-.break {
+.text-break {
 	word-break: break-word;
 }
 
-.hyphens {
+.text-hyphens {
 	@include vendor-prefix(hyphens, auto, webkit);
 }
 
-.alignright {
-	text-align: right;
+@each $align in (left, center, right) {
+	.text-#{$align} {
+		text-align: $align;
+	}
 }
 
-.aligncenter {
-	text-align: center;
-}
-
-.alignleft {
-	text-align: left;
-}
-
-.aligntop {
-	vertical-align: top;
-}
-
-.alignbottom {
-	vertical-align: bottom;
-}
-
-.alignmiddle {
-	vertical-align: middle;
-}
-
-.alignbaseline {
-	vertical-align: baseline;
-}
-
-.alignsub {
-	vertical-align: sub;
+@each $align
+	in (baseline, sub, super, text-top, text-bottom, middle, top, bottom)
+{
+	.align-#{$align} {
+		vertical-align: $align;
+	}
 }
 
 @if $rtl-option==true {
 	/* RTL */
-	[dir='rtl'] .alignright {
+	[dir='rtl'] .text-right {
 		text-align: left;
 	}
 
-	[dir='rtl'] .alignleft {
+	[dir='rtl'] .text-left {
 		text-align: right;
 	}
 }
 
-.ellipsis {
+.text-ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
-.ellipsis-two-lines,
-.ellipsis-four-lines {
+.text-ellipsis-two-lines,
+.text-ellipsis-four-lines {
 	/* stylelint-disable-next-line */
 	display: -webkit-box;
 	/* stylelint-disable-next-line */
@@ -145,23 +108,23 @@
 	overflow: hidden;
 }
 
-.ellipsis-two-lines {
+.text-ellipsis-two-lines {
 	-webkit-line-clamp: 2;
 }
 
-.ellipsis-four-lines {
+.text-ellipsis-four-lines {
 	-webkit-line-clamp: 4;
 }
 
-.uppercase {
+.text-uppercase {
 	text-transform: uppercase;
 }
 
-.capitalize {
-	text-transform: capitalize;
+.text-capitalize {
+	text-transform: text-capitalize;
 }
 
-.capitalize-block {
+.text-capitalize-block {
 	text-transform: lowercase;
 
 	&::first-letter {
@@ -169,20 +132,20 @@
 	}
 }
 
-.strong,
-.bold {
+.text-strong,
+.text-bold {
 	@extend %bold;
 }
 
-.nobold {
+.text-no-bold {
 	font-weight: normal;
 }
 
-.semibold {
+.text-semibold {
 	font-weight: 600;
 }
 
-.italic {
+.text-italic {
 	font-style: italic;
 }
 
@@ -190,31 +153,31 @@
 	outline: 0;
 }
 
-.strike {
+.text-strike {
 	text-decoration: line-through;
 }
 
-.pre-wrap {
-	white-space: pre-wrap;
-}
-
-.no-wrap {
-	white-space: nowrap;
-}
-
-.pre {
+.text-pre {
 	white-space: pre;
 }
 
-.nodecoration {
+.text-pre-wrap {
+	white-space: pre-wrap;
+}
+
+.text-no-wrap {
+	white-space: nowrap;
+}
+
+.text-no-decoration {
 	text-decoration: none;
 }
 
-.underline {
+.text-underline {
 	text-decoration: underline;
 }
 
-.underline-hover {
+.text-underline-on-hover {
 	&:hover,
 	&:focus {
 		text-decoration: underline;
@@ -241,10 +204,10 @@
 	}
 }
 
-.button-showOnHover {
+.button-show-on-hover {
 	&:focus,
 	&:hover {
-		.button-showOnHover-element {
+		& &-element {
 			visibility: visible;
 		}
 	}

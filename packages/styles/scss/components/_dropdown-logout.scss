@@ -1,4 +1,4 @@
-.dropDown-logout {
+.dropdown-logout {
 	&-button {
 		border-radius: $global-border-radius;
 		color: var(--color-nav-link, $white);
@@ -11,13 +11,13 @@
 
 		&:focus,
 		&:hover {
-			.dropDown-logout-initials {
+			.dropdown-logout-initials {
 				background-color: rgb(0 0 0 / 0.2);
 			}
 		}
 
 		&[aria-expanded='true'] {
-			.dropDown-logout-initials {
+			.dropdown-logout-initials {
 				background-color: rgb(0 0 0 / 0.5);
 			}
 		}

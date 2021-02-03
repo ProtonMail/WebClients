@@ -1,7 +1,3 @@
-.label {
-	display: inline-block;
-}
-
 .placeholder,
 ::placeholder {
 	color: var(--color-input, #{rgba($pm-global-grey, 0.65)});
@@ -11,10 +7,10 @@
 
 $field-container: 26rem !default;
 
-.pm-field-container {
+.field-container {
 	width: $field-container;
-	@extend .mw100;
-	@extend .inbl;
+	@extend .max-w100;
+	@extend .inline-block;
 	@extend .relative;
 
 	&.auto {
@@ -22,7 +18,7 @@ $field-container: 26rem !default;
 	}
 }
 
-.pm-field {
+.field {
 	filter: none; // fixes Firefox autofill color
 	border: 1px solid var(--bordercolor-input, $input-defaut-border);
 	padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
@@ -32,9 +28,9 @@ $field-container: 26rem !default;
 	outline: 0;
 	height: $default-height-fields;
 
-	&.pm-field--tiny,
-	&.pm-field--small,
-	&.pm-field--large {
+	&.field--tiny,
+	&.field--small,
+	&.field--large {
 		height: auto;
 	}
 
@@ -90,7 +86,7 @@ $field-container: 26rem !default;
 
 @if $rtl-option==true {
 	[dir='rtl'] {
-		[type='search'].pm-field {
+		[type='search'].field {
 			padding-left: 0;
 			padding-right: 2em;
 			background: url('#{$path-images}sprite-for-css-only.svg#css-search-rtl')
@@ -101,7 +97,7 @@ $field-container: 26rem !default;
 	}
 }
 
-select.pm-field {
+select.field {
 	background: var(--bgcolor-input, $pm-input-background)
 		url('#{$path-images}sprite-for-css-only.svg#css-caret') calc(100% - 6px)
 		50% no-repeat;
@@ -119,57 +115,20 @@ select.pm-field {
 	& > optgroup {
 		background-color: var(--bgcolor-highlight, $pm-global-light);
 	}
-
-	&.pm-field--linkSelect {
-		border: 1px solid transparent;
-		padding-left: 0;
-		width: auto;
-		color: $pm-primary;
-		padding-right: 2.5rem;
-
-		@if ($pm-primary==$pm-blue) {
-			background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret-primary-blue');
-		} @else {
-			background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret-primary-green');
-		}
-
-		&,
-		&:focus,
-		&.focus,
-		&:focus-within,
-		&:hover {
-			background-color: transparent;
-			box-shadow: none;
-		}
-
-		&:focus,
-		&.focus,
-		&:focus-within,
-		&:hover {
-			background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret');
-			border-color: transparent;
-			text-decoration: underline;
-			color: $color-hover;
-		}
-
-		& > * {
-			color: $pm-primary;
-		}
-	}
 }
 
-textarea.pm-field {
+textarea.field {
 	height: auto;
 }
 
 /* firefox bug */
-textarea[required].pm-field.field-pristine:invalid {
+textarea[required].field.field-pristine:invalid {
 	box-shadow: none;
 }
 
 @if $rtl-option==true {
 	[dir='rtl'] {
-		select.pm-field {
+		select.field {
 			background-position: 6px 50%;
 			padding-right: 1em;
 			padding-left: 20px;
@@ -189,33 +148,33 @@ textarea[required].pm-field.field-pristine:invalid {
 }
 
 // general rule: if focus is on the field => don't display error yet
-.pm-field-icon-container:focus-within + .error-zone,
-.pm-field:focus + .error-zone {
+.field-icon-container:focus-within + .error-zone,
+.field:focus + .error-zone {
 	transform: scaleY(0);
 	max-height: 0;
 }
 
 /* sizes/other modifiers */
-.pm-field--tiny {
+.field--tiny {
 	padding: em(6); // useful for address group
 }
 
-.pm-field--small {
+.field--small {
 	padding: em(2) em(16); // design want 26px height (actually 27 to avoid .5px)
 }
 
-.pm-field--large {
+.field--large {
 	padding: em(10) em(16); // design want 42px height (actually 43 to avoid .5px)
 }
 
-.pm-field--highlight {
+.field--highlight {
 	border-color: $pm-primary;
 	border-width: 2px;
 	background-color: #{rgba($pm-primary, 0.1)};
 }
 
 /* checkboxes */
-.pm-checkbox-fakecheck {
+.checkbox-fakecheck {
 	display: inline-flex;
 	border: 1px solid var(--bordercolor-input, $pm-global-border);
 	border-radius: 2px;
@@ -225,37 +184,37 @@ textarea[required].pm-field.field-pristine:invalid {
 	margin: auto 0.5rem auto 0;
 }
 
-.item-icon-compact .pm-checkbox-fakecheck {
+.item-icon-compact .checkbox-fakecheck {
 	margin: auto;
 	background: var(--bgcolor-input, $white);
 }
 
-.pm-checkbox-fakecheck-img {
+.checkbox-fakecheck-img {
 	margin: auto;
 	// width: 1rem;
 	transform: scale(0);
 	transition: 0.15s transform linear;
 }
 
-.pm-checkbox {
+.checkbox {
 	@extend .sr-only;
 
-	&:checked + .pm-checkbox-fakecheck {
-		.pm-checkbox-fakecheck-img {
+	&:checked + .checkbox-fakecheck {
+		.checkbox-fakecheck-img {
 			transform: scale(1);
 		}
 	}
 
-	&:focus + .pm-checkbox-fakecheck {
+	&:focus + .checkbox-fakecheck {
 		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
-	&[disabled] + .pm-checkbox-fakecheck,
-	&:indeterminate + .pm-checkbox-fakecheck {
+	&[disabled] + .checkbox-fakecheck,
+	&:indeterminate + .checkbox-fakecheck {
 		background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
 	}
 
-	&:indeterminate + .pm-checkbox-fakecheck {
+	&:indeterminate + .checkbox-fakecheck {
 		content: '';
 		width: 1.6rem;
 		height: 1.6rem;
@@ -265,28 +224,28 @@ textarea[required].pm-field.field-pristine:invalid {
 }
 
 // exception for toolbar
-.pm-select-all {
-	.pm-checkbox-fakecheck {
+.select-all {
+	.checkbox-fakecheck {
 		border: 1px solid #585c67;
 		background-color: var(--bgcolor-aside-link, #484e59);
 	}
 
-	.pm-checkbox-fakecheck-img {
+	.checkbox-fakecheck-img {
 		fill: var(--fillcolor-icons, $white);
 	}
 }
 
 /* radios */
-.pm-radio-fakeradio {
-	@extend .pm-checkbox-fakecheck;
+.radio-fakeradio {
+	@extend .checkbox-fakecheck;
 	border-radius: 50%;
 }
 
-.pm-radio--onTop .pm-radio-fakeradio {
+.radio--ontop .radio-fakeradio {
 	margin-top: 0.25em;
 }
 
-.pm-radio-fakeradio::before {
+.radio-fakeradio::before {
 	content: '';
 	margin: auto;
 	width: 0.8rem;
@@ -297,19 +256,19 @@ textarea[required].pm-field.field-pristine:invalid {
 	transition: 0.15s transform linear;
 }
 
-.pm-radio {
+.radio {
 	@extend .sr-only;
 
-	&:checked + .pm-radio-fakeradio::before {
+	&:checked + .radio-fakeradio::before {
 		background: $pm-primary;
 		transform: scale(1);
 	}
 
-	&:focus + .pm-radio-fakeradio {
+	&:focus + .radio-fakeradio {
 		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
-	&[disabled] + .pm-radio-fakeradio {
+	&[disabled] + .radio-fakeradio {
 		background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
 	}
 }
@@ -317,7 +276,7 @@ textarea[required].pm-field.field-pristine:invalid {
 /* toggle */
 $width: 5.5em !default;
 
-.pm-toggle-label {
+.toggle-label {
 	margin-top: 0.15em;
 	// height: 2em;
 	width: $width;
@@ -344,7 +303,7 @@ $width: 5.5em !default;
 		border: 1px solid var(--bordercolor-input, $pm-global-border);
 	}
 
-	& > .pm-toggle-label-text {
+	& > .toggle-label-text {
 		align-self: center;
 		margin: 0;
 		text-align: center;
@@ -355,7 +314,7 @@ $width: 5.5em !default;
 		z-index: 2;
 		display: inline-flex;
 
-		& .pm-toggle-label-img {
+		& .toggle-label-img {
 			transition: fill 0.1s steps(1, end);
 		}
 	}
@@ -363,7 +322,7 @@ $width: 5.5em !default;
 
 @if $rtl-option==true {
 	[dir='rtl'] {
-		.pm-toggle-label {
+		.toggle-label {
 			&::before {
 				left: auto;
 				right: 0;
@@ -373,27 +332,27 @@ $width: 5.5em !default;
 	}
 }
 
-.pm-toggle-label-img {
+.toggle-label-img {
 	margin: auto;
 	width: 1.6rem;
 	height: 1.6rem;
 	fill: var(--bordercolor-input, $black);
 
-	.pm-toggle-label--theme-toggle & {
+	.toggle-label--theme-toggle & {
 		fill: black;
 	}
 }
 
 // checked state
-.pm-toggle-checkbox {
+.toggle-checkbox {
 	@extend .invisible;
 
-	&:checked + .pm-toggle-label {
-		& > .pm-toggle-label-text:first-child .pm-toggle-label-img {
+	&:checked + .toggle-label {
+		& > .toggle-label-text:first-child .toggle-label-img {
 			fill: var(--bordercolor-input, $black);
 		}
 
-		& > .pm-toggle-label-text:last-child .pm-toggle-label-img {
+		& > .toggle-label-text:last-child .toggle-label-img {
 			fill: $white;
 		}
 
@@ -405,9 +364,9 @@ $width: 5.5em !default;
 		}
 	}
 
-	&:checked + .pm-toggle-label--theme-toggle {
+	&:checked + .toggle-label--theme-toggle {
 		// Theme toggle inside user dropdown
-		& > .pm-toggle-label-text:last-child .pm-toggle-label-img {
+		& > .toggle-label-text:last-child .toggle-label-img {
 			fill: #fce988;
 		}
 
@@ -417,19 +376,19 @@ $width: 5.5em !default;
 		}
 	}
 
-	&:focus + .pm-toggle-label {
+	&:focus + .toggle-label {
 		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
-	&[disabled] + .pm-toggle-label {
+	&[disabled] + .toggle-label {
 		background: #{rgba($pm-global-muted, 0.6)};
 
-		.pm-toggle-label-text {
+		.toggle-label-text {
 			opacity: 0.3;
 		}
 	}
 
-	&[aria-busy='true'] + .pm-toggle-label {
+	&[aria-busy='true'] + .toggle-label {
 		border-color: $pm-global-border;
 
 		&::before {
@@ -439,7 +398,7 @@ $width: 5.5em !default;
 				50% 50% no-repeat;
 		}
 
-		& > .pm-toggle-label-text {
+		& > .toggle-label-text {
 			opacity: 0;
 		}
 	}
@@ -447,14 +406,14 @@ $width: 5.5em !default;
 
 @if $rtl-option==true {
 	[dir='rtl'] {
-		.pm-toggle-checkbox {
-			&:checked + .pm-toggle-label {
+		.toggle-checkbox {
+			&:checked + .toggle-label {
 				&::before {
 					transform: translateX(-#{$width/2}) translateX(2px);
 				}
 			}
 
-			&[aria-busy='true'] + .pm-toggle-label {
+			&[aria-busy='true'] + .toggle-label {
 				&::before {
 					//background-color: $pm-primary;
 					transform: translateX(-#{$width/4}) translateX(2px);
@@ -464,11 +423,11 @@ $width: 5.5em !default;
 	}
 }
 
-.pm-toggle-label--small {
+.toggle-label--small {
 	margin-top: 0.25em;
 	font-size: 0.8em;
 
-	& .pm-toggle-label-img {
+	& .toggle-label-img {
 		width: 1.3rem;
 		height: 1.3rem;
 	}
@@ -476,7 +435,7 @@ $width: 5.5em !default;
 
 /* label */
 // $pm-label-width defined in global vars
-.pm-label {
+.label {
 	padding-top: 0.5em;
 	width: var(--label-width, $pm-label-width);
 	padding-right: 0.5em;
@@ -500,21 +459,21 @@ $width: 5.5em !default;
 // case for forms labelled only with icons (calendar popover, etc.)
 $pm-label-icon-width: 2.4em !default;
 
-.pm-form--iconLabels .pm-label {
+.form--icon-labels .label {
 	width: $pm-label-icon-width;
 }
 
 /* container address */
-.pm-field-container--address {
+.field-container--address {
 	margin-top: -1.6em;
 }
 
 /* field with icon */
-.pm-field-icon-container {
-	@extend .pm-field; // added focus-within inside on pm-field for this fake-field :)
+.field-icon-container {
+	@extend .field; // added focus-within inside on field for this fake-field :)
 	padding: 0;
 
-	> .pm-field {
+	> .field {
 		border: 0;
 		width: calc(100% - 1.5em);
 	}
@@ -525,7 +484,7 @@ $pm-label-icon-width: 2.4em !default;
 	}
 
 	&:focus-within {
-		> .pm-field {
+		> .field {
 			background-color: transparent;
 			box-shadow: none;
 			outline: 0;
@@ -533,48 +492,23 @@ $pm-label-icon-width: 2.4em !default;
 	}
 }
 
-.pm-field-icon-container--invalid:not(:focus-within) {
+.field-icon-container--invalid:not(:focus-within) {
 	border-color: $pm-global-warning;
 
-	> .pm-field {
+	> .field {
 		border-color: $pm-global-warning;
 	}
 }
 
 /* @protonmail.com field */
-.pm-field--username,
-.signLayout-container .pm-field--username.pm-field--username {
+.field--username,
+.sign-layout-container .field--username.field--username {
 	padding-right: var(--padding-right-field-above, 9em);
 }
 
-/* special case for very large inputs in modals, like rich text editor */
-.pm-modalContainer .pm-field-container--full {
-	width: calc(100% - var(--label-width, #{$pm-label-width}));
-}
-
-@include respond-to(1360) {
-	.pm-modalContainer .pm-field-container--full {
-		width: $field-container;
-	}
-}
-
-@include respond-to(830) {
-	.pm-modalContainer .pm-field-container--full {
-		width: calc(100% - var(--label-width, #{$pm-label-width}));
-	}
-}
-
-@include respond-to($breakpoint-small) {
-	.pm-modalContainer .pm-field-container--full {
-		width: 100%;
-	}
-}
-
-/* end special case */
-
 /* special stupid case for signup iframe challenge... not using same styles for the moment */
-.signLayout-container {
-	.pm-field--username {
+.sign-layout-container {
+	.field--username {
 		padding: em(10) em(16); // design want 42px height (actually 41 to avoid .5px)
 	}
 }

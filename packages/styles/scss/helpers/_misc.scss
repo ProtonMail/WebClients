@@ -1,4 +1,4 @@
-.noborder {
+.no-border {
 	border: 0;
 }
 
@@ -36,7 +36,7 @@
 	top: 0; // needed for Safari dumb and 💩 behaviour
 }
 
-.nonvisible {
+.visibility-hidden {
 	visibility: hidden;
 }
 
@@ -75,7 +75,7 @@
 }
 
 /* increase surface click/tap */
-.increase-surface-click::before {
+.increase-click-surface::before {
 	content: '';
 	position: absolute;
 	top: 0;

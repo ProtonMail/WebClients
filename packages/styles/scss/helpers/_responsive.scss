@@ -1,17 +1,21 @@
-/* general case */
+// For global structure adaptation in JS (page / skip links / header / main content / footer)
 @include body-before('desktop', true);
+
+.no-desktop {
+	display: none;
+}
 
 /**
  * medium/tablet landscape minor breakpoint
  */
 @include respond-to($breakpoint-medium-landscape) {
-	$list-paddings-medium-landscape: p, pt, pr, pb, pl !default;
-	$list-paddings-medium-landscape-values: 0, 1 !default; // specify 2.5 if needed
-
 	@include padding-generator(
-		$list-paddings-medium-landscape,
-		$list-paddings-medium-landscape-values,
-		'ontablet-landscape-'
+		// coordinates
+		(p, pt, pr, pb, pl),
+		// padding sizes
+		(0, 1),
+		// prefix
+		'on-tablet-landscape-'
 	);
 }
 
@@ -19,7 +23,7 @@
  * medium/tablet breakpoint
  */
 @include respond-to($breakpoint-medium, 'min') {
-	.ondesktop {
+	.on-desktop {
 		&-h100 {
 			height: 100%;
 		}
@@ -30,61 +34,55 @@
  * medium/tablet breakpoint
  */
 @include respond-to($breakpoint-medium) {
-	/**
-   * layout/modules
-   */
+	// For global structure adaptation in JS (page / skip links / header / main content / footer)
+	@include body-before('tablet');
 
-	/* display elements */
-	.nodesktop {
+	.no-desktop {
 		display: block;
 	}
 
-	/* hide unnecessary elements */
-	.notablet {
+	.no-tablet {
 		display: none;
 	}
 
-	/* linearization of floating content/table-layout */
-	.autotablet {
+	.auto-tablet {
 		float: none;
 		display: block;
 		width: auto;
 	}
 
-	/* margins */
-	$list-margins-tablet: m, mt, mr, mb, ml !default;
-	$list-margins-tablet-values: 0, 1, 2 !default; // specify 2.5 if needed
-
 	@include margin-generator(
-		$list-margins-tablet,
-		$list-margins-tablet-values,
-		'ontablet-'
+		// coordinates
+		(m, mt, mr, mb, ml),
+		// margin sizes
+		(0, 1, 2),
+		// prefix
+		'on-tablet-'
 	);
-
-	/* paddings */
-	$list-paddings-tablet: p, pt, pr, pb, pl !default;
-	$list-paddings-tablet-values: 0, 1, 2 !default; // specify 2.5 if needed
 
 	@include padding-generator(
-		$list-paddings-tablet,
-		$list-paddings-tablet-values,
-		'ontablet-'
+		// coordinates
+		(p, pt, pr, pb, pl),
+		// padding sizes
+		(0, 1, 2),
+		// prefix
+		'on-tablet-'
 	);
 
-	.ontablet- {
-		&alignleft {
+	.on-tablet {
+		&-text-left {
 			text-align: left;
 		}
 
-		&aligncenter {
+		&-text-center {
 			text-align: center;
 		}
 
-		&alignright {
+		&-text-right {
 			text-align: right;
 		}
 
-		&flex-column {
+		&-flex-column {
 			flex-direction: column;
 
 			& > * {
@@ -93,101 +91,89 @@
 			}
 		}
 
-		&w25 {
+		&-w25 {
 			width: 25%;
 		}
 
-		&w100 {
+		&-w100 {
 			width: 100%;
 		}
 
-		&mw100 {
+		&-max-w100 {
 			max-width: 100%;
 		}
 
-		&wauto {
+		&-wauto {
 			width: auto;
 		}
 
 		@for $i from 2 through 3 {
-			&hideTd#{$i} {
-				td:nth-child(#{$i}) {
-					display: none;
-				}
+			&-hide-td#{$i} td:nth-child(#{$i}) {
+				display: none;
 			}
 		}
 
-		&list-1column {
+		&-list-1column {
 			column-count: 1;
 		}
 	}
-
-	/**
-	 * global structure adaptation (page / skip links / header / main content / footer)
-	 */
-	@include body-before('tablet');
 }
 
 /**
  * small/mobile breakpoint
  */
 @include respond-to($breakpoint-small) {
-	/**
-	 * layout/modules
-	 */
+	// For global structure adaptation in JS (page / skip links / header / main content / footer)
+	@include body-before('mobile');
 
-	/* display elements */
-	.notablet {
+	.no-tablet {
 		display: block;
 	}
 
-	/* hide unnecessary elements */
-	.nomobile {
+	.no-mobile {
 		display: none;
 	}
 
 	/* linearization of floating content/table-layout */
-	.automobile {
+	// 🚗
+	.auto-mobile {
 		float: none;
 		display: block;
 		width: auto;
 	}
 
-	/* margins */
-	$list-margins-mobile: m, mt, mr, mb, ml !default;
-	$list-margins-mobile-values: 0, 0.25, 0.5, 1, 2, 3.5 !default; // specify 2.5 if needed
-
 	@include margin-generator(
-		$list-margins-mobile,
-		$list-margins-mobile-values,
-		'onmobile-'
+		// coordinates
+		(m, mt, mr, mb, ml),
+		// margin sizes
+		(0, 0.25, 0.5, 1, 2, 3.5),
+		// prefix
+		'on-mobile-'
 	);
-
-	/* paddings */
-	$list-paddings-mobile: p, pt, pr, pb, pl !default;
-	$list-paddings-mobile-values: 0, 0.25, 0.5, 1, 2 !default; // specify 2.5 if needed
 
 	@include padding-generator(
-		$list-paddings-mobile,
-		$list-paddings-mobile-values,
-		'onmobile-'
+		// coordinates
+		(p, pt, pr, pb, pl),
+		// padding sizes
+		(0, 0.25, 0.5, 1, 2),
+		// prefix
+		'on-mobile-'
 	);
 
-	/* text aligns */
-	.onmobile- {
-		&alignleft {
+	.on-mobile {
+		&-text-left {
 			text-align: left;
 		}
 
-		&aligncenter {
+		&-text-center {
 			text-align: center;
 		}
 
-		&alignright {
+		&-text-right {
 			text-align: right;
 		}
 
-		&flex-column {
+		&-flex-column {
 			flex-direction: column;
 
 			& > * {
@@ -209,7 +195,7 @@
 			}
 		}
 
-		&flex-column-nostretch {
+		&-flex-column-no-stretch {
 			flex-direction: column;
 
 			& > * {
@@ -217,117 +203,106 @@
 			}
 		}
 
-		&flex-item-fluid {
+		&-flex-item-fluid {
 			flex: 1 1 0px;
 		}
 
-		&flex-item-fluid-auto {
+		&-flex-item-fluid-auto {
 			flex: 1 1 auto;
 		}
 
-		&no-flex {
+		&-no-flex {
 			flex: 0 0 auto;
 		}
 
-		&flex-shrink {
+		&-flex-shrink {
 			flex-shrink: 1;
 		}
 
-		&flex-self-start {
+		&-flex-align-self-start {
 			align-self: start;
 		}
 
-		&flex-wrap {
+		&-flex-wrap {
 			flex-wrap: wrap;
 		}
 
-		&mw100 {
+		&-max-w100 {
 			max-width: 100%;
 		}
 
-		&min-w100 {
+		&-min-w100 {
 			min-width: 100%;
 		}
-		&min-h0 {
+
+		&-min-h0 {
 			min-height: 0;
 		}
 
-		&wauto {
+		&-wauto {
 			width: auto;
 		}
 
-		&w25 {
+		&-w25 {
 			width: 25%;
 		}
 
-		&w33 {
+		&-w33 {
 			width: 33%;
 		}
 
-		&w100 {
+		&-w100 {
 			width: 100%;
 		}
 
-		&no-border {
+		&-no-border {
 			border: 0;
 		}
 
-		&static {
+		&-static {
 			position: static;
 		}
 
 		@for $i from 2 through 5 {
-			&hideTd#{$i} {
-				td:nth-child(#{$i}) {
-					display: none;
-				}
+			&-hide-td#{$i} td:nth-child(#{$i}) {
+				display: none;
 			}
 		}
 
-		&list-1column {
+		&-list-1column {
 			column-count: 1;
 		}
 	}
-
-	/**
-	 * global structure adaptation (page / skip links / header / main content / footer)
-	 */
-	@include body-before('mobile');
 }
 
 /**
  * tiny/small mobile breakpoint
  */
 @include respond-to($breakpoint-tiny) {
-	/**
-	 * layout/modules
-	 */
+	// For global structure adaptation in JS (page / skip links / header / main content / footer)
+	@include body-before('tinymobile');
 
-	/* display elements */
-	/*.nomobile { display: block; }*/
-
-	/* hide unnecessary elements */
-	.notinymobile {
+	.no-tiny-mobile {
 		display: none;
 	}
 
 	/* linearization of floating content/table-layout */
-	.autotinymobile {
+	.auto-tiny-mobile {
 		float: none;
 		display: block;
 		width: auto;
 	}
 
-	.ontinymobile- {
-		&wauto {
+	.on-tiny-mobile {
+		&-wauto {
 			width: auto;
 		}
 
-		&flex-self-start {
+		&-flex-align-self-start {
 			align-self: flex-start;
 		}
 
-		&flex-column {
+		&-flex-column {
 			flex-direction: column;
 
 			& > * {
@@ -336,31 +311,28 @@
 			}
 		}
 
-		&hideTd3 {
-			td:nth-child(3) {
-				display: none;
-			}
+		&-hide-td3 td:nth-child(3) {
+			display: none;
 		}
 	}
 
-	/* margins */
-	$list-margins-tinymobile: m, mt, mr, mb, ml !default;
-	$list-margins-tinymobile-values: 0, 1 !default;
-
 	@include margin-generator(
-		$list-margins-tinymobile,
-		$list-margins-tinymobile-values,
-		'ontinymobile-'
+		// coordinates
+		(m, mt, mr, mb, ml),
+		// margin sizes
+		(0, 1),
+		// prefix
+		'on-tiny-mobile-'
 	);
 
-	/* paddings */
-	//$list-paddings-tinymobile: p, pt, pr, pb, pl !default;
-	//$list-paddings-tinymobile-values: 0, 1, 2 !default; // specify 2.5 if needed
-
-	//@include padding-generator($list-paddings-tinymobile, $list-paddings-tinymobile-values, "ontinymobile-");
-
-	/**
-	 * global structure adaptation (page / skip links / header / main content / footer)
-	 */
-	@include body-before('tinymobile');
+	/*
+	@include padding-generator(
+		// coordinates
+		(p, pt, pr, pb, pl),
+		// padding sizes
+		(0, 1, 2),
+		// prefix
+		"on-tiny-mobile-"
+	);
+	*/
 }

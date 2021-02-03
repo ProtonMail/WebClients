@@ -12,9 +12,9 @@
 }
 
 .toolbar-button,
-.pm-button.toolbar-button {
+.button.toolbar-button {
 	// to avoid issues in darkmode
-	// resets to avoid pm-button styles
+	// resets to avoid button styles
 	padding: unset;
 	background: unset;
 	border: unset;

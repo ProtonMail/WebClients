@@ -8,7 +8,7 @@ $minicalendar-bg-color-range-selection: #51555f !default;
 	font-size: $minicalendar-fontsize;
 }
 
-.minicalendar-grid--displayWeekNumber {
+.minicalendar-grid--display-week-number {
 	display: grid;
 	grid-template-columns: 30px auto;
 	grid-template-rows: auto;
@@ -69,7 +69,7 @@ $minicalendar-bg-color-range-selection: #51555f !default;
 	transform: scale(0.7);
 }
 
-.minicalendar-grid--displayWeekNumber .minicalendar-day {
+.minicalendar-grid--display-week-number .minicalendar-day {
 	min-width: $minicalendar-cell-size;
 	min-height: $minicalendar-cell-size;
 
@@ -102,7 +102,7 @@ $mini-calendar-currentDay-size: 2.5em !default;
 	max-width: $mini-calendar-currentDay-size;
 }
 
-.minicalendar--onDarkBackground {
+.minicalendar--on-dark-background {
 	.minicalendar-day {
 		color: $minicalendar-day-color-on-dark-background;
 		&:focus,
