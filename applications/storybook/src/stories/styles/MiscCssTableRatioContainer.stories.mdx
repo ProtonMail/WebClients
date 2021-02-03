@@ -11,11 +11,11 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 - <code>.inline-row</code> = <code>display: inline-table; table-layout: fixed </code>.
 - <code>.line</code> = <code>display: table-row</code>.
 - <code>.col</code> = <code>display: table-cell; vertical-align: top</code>.
-- <code>.col-noalign</code> = <code>display: table-cell</code>.
+- <code>.col-no-align</code> = <code>display: table-cell</code>.
 
 <div class="row w100 mt2 mb2">
-  <div class="col alignbottom w30 bg-pm-blue-light color-global-light">
-    alignbottom
+  <div class="col align-bottom w30 bg-pm-blue-light color-global-light">
+    align-bottom
   </div>
   <div class="col w5"></div>
   <div class="col w30 bg-pm-blue-light color-global-light">
@@ -30,11 +30,11 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   </div>
 </div>
 
-- <code>.aligntop</code> = <code>vertical-align: top</code>.
-- <code>.alignbottom</code> = <code>vertical-align: bottom</code>.
-- <code>.alignmiddle</code> = <code>vertical-align: middle</code>.
-- <code>.alignsub</code> = <code>vertical-align: sub</code>.
-- <code>.alignbaseline</code> = <code>vertical-align: baseline</code>.
+- <code>.align-top</code> = <code>vertical-align: top</code>.
+- <code>.align-bottom</code> = <code>vertical-align: bottom</code>.
+- <code>.align-middle</code> = <code>vertical-align: middle</code>.
+- <code>.align-sub</code> = <code>vertical-align: sub</code>.
+- <code>.align-baseline</code> = <code>vertical-align: baseline</code>.
 
 These vertical alignments also work for simple texts or inline-positionned stuff.
 
@@ -42,8 +42,8 @@ These vertical alignments also work for simple texts or inline-positionned stuff
 
 For some components/special cases (responsive <code>iframe</code>, making a responsive square shape, responsive typography with SVG, etc.), we have to use the “padding-hack” technique, which is basically:
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
     <ul>
 		<li>A container uses padding-hack to get the desired ratio</li>
 		<li>And content inside is positionned in absolute and takes all available space.</li>
@@ -68,7 +68,7 @@ For some components/special cases (responsive <code>iframe</code>, making a resp
 
 <br /><br />
 
-<div class="flex flex-spacebetween flex-items-center mb2">
+<div class="flex flex-justify-space-between flex-align-items-center mb2">
   <div class="bordered-container w30">
     <div class="ratio-container-square">
       <div class="inner-ratio-container p1">

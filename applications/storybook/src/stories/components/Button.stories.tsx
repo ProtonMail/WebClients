@@ -26,8 +26,8 @@ export default {
 export const Basic = () => (
     <>
         <Button className="mr1">Button</Button>
-        <Button className="pm-button--primaryborder mr1">Button</Button>
-        <Button className="pm-button--pill mr1">Button</Button>
+        <Button className="button--primaryborder mr1">Button</Button>
+        <Button className="button--pill mr1">Button</Button>
         <PrimaryButton className="mr1">Button</PrimaryButton>
         <ErrorButton className="mr1">Button</ErrorButton>
         <WarningButton className="mr1">Button</WarningButton>

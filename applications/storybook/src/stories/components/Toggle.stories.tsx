@@ -24,8 +24,8 @@ export const WithIcon = () => {
     const handleLabel = (key: ToggleState) => {
         const iconName = key === ToggleState.on ? 'key' : 'keys';
         return (
-            <span className="pm-toggle-label-text">
-                <Icon name={iconName} alt={key} className="pm-toggle-label-img" />
+            <span className="toggle-label-text">
+                <Icon name={iconName} alt={key} className="toggle-label-img" />
             </span>
         );
     };

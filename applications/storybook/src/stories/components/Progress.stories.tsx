@@ -16,7 +16,7 @@ export default {
 export const Basic = () => {
     const [value, setValue] = useState(0);
     const increment = () => setValue(value + 5);
-    const className = value < 50 ? 'progressbar--warning' : 'progressbar--error';
+    const className = value < 50 ? 'progress-bar--warning' : 'progress-bar--error';
 
     useEffect(() => {
         const intervalID = setInterval(increment, 5000);

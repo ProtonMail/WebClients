@@ -4,11 +4,11 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 # Typographic helpers
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-    <span class="ellipsis inbl mw100p">Lorem sit amet, consectetur adipiscing elit. Duis auctor lectus eu massa fermentum scelerisque. Praesent vitae massa vel nulla sodales consectetur in vitae urna.</span><br />
-    To be used with <code>mw100</code> and <code>inbl</code> (or with flexbox helpers).<br /><br />
-    If you need a multiline ellipsis, use <code>ellipsis-four-lines</code>/<code>ellipsis-two-lines</code> helper.
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <span class="text-ellipsis inline-block max-w100p">Lorem sit amet, consectetur adipiscing elit. Duis auctor lectus eu massa fermentum scelerisque. Praesent vitae massa vel nulla sodales consectetur in vitae urna.</span><br />
+    To be used with <code>max-w100</code> and <code>inline-block</code> (or with flexbox helpers).<br /><br />
+    If you need a multiline ellipsis, use <code>text-ellipsis-four-lines</code>/<code>text-ellipsis-two-lines</code> helper.
   </div>
   <div class="w49">
 <Source
@@ -16,7 +16,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="ellipsis">…</span>
+<span className="text-ellipsis">…</span>
 `}
 />
   </div>
@@ -24,9 +24,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-      Applies a <code>text-transform: uppercase</code> to element: <span class="uppercase">Uppercase</span>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies a <code>text-transform: uppercase</code> to element: <span class="text-uppercase">Uppercase</span>
   </div>
   <div class="w49">
 <Source
@@ -34,7 +34,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="uppercase">…</span>
+<span className="text-uppercase">…</span>
 `}
 />
   </div>
@@ -42,9 +42,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-      Applies a <code>text-transform: capitalize</code> to element: <span class="capitalize">Capitalize</span>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies a <code>text-transform: capitalize</code> to element: <span class="text-capitalize">Capitalize</span>
   </div>
   <div class="w49">
 <Source
@@ -52,7 +52,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="capitalize">…</span>
+<span className="text-capitalize">…</span>
 `}
 />
   </div>
@@ -60,9 +60,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-      Unlike previous rule capitalizes only the first word, element has to be block: <div class="capitalize-block">Cap Italize</div>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Unlike previous rule capitalizes only the first word, element has to be block: <div class="text-capitalize-block">Cap Italize</div>
   </div>
   <div class="w49">
 <Source
@@ -70,7 +70,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="capitalize-sentence">…</span>
+<span className="text-capitalize-sentence">…</span>
 `}
 />
   </div>
@@ -78,9 +78,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-      <span class="strong">if you need to be bold</span> without using <code>strong</code> tag. <code>bold</code> class is an alias for this.
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      <span class="text-strong">if you need to be bold</span> without using <code>strong</code> tag. <code>text-bold</code> class is an alias for this.
   </div>
   <div class="w49">
 <Source
@@ -88,8 +88,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="strong">…</span>
-<span className="bold">…</span>
+<span className="text-strong">…</span>
+<span className="text-bold">…</span>
 `}
 />
   </div>
@@ -97,9 +97,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-      If you need to be semibold: <span class="semibold">Semibold</span>.
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      If you need to be semibold: <span class="text-semibold">Semibold</span>.
   </div>
   <div class="w49">
 <Source
@@ -107,7 +107,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="semibold">…</span>
+<span className="text-semibold">…</span>
 `}
 />
 
@@ -116,9 +116,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-      <span class="italic">if you need to be italic</span> without using <code>em</code> or <code>i</code> tag
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      <span class="text-italic">if you need to be italic</span> without using <code>em</code> or <code>i</code> tag
   </div>
   <div class="w49">
 <Source
@@ -126,7 +126,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="italic">…</span>
+<span className="text-italic">…</span>
 `}
 />
   </div>
@@ -134,9 +134,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-	<div class="w49 flex-self-vcenter">
-		<span class="strike">if you need to be strike</span>, please use wisely.
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+	<div class="w49 flex-align-self-center">
+		<span class="text-strike">if you need to be strike</span>, please use wisely.
 	</div>
   <div class="w49">
 <Source
@@ -144,7 +144,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="strike">…</span>
+<span className="text-strike">…</span>
 `}
 />
 	</div>
@@ -152,9 +152,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-      Applies standard <code>line-height</code> (defined with Sass variable <code>$l-h</code> in <code>design-system-config</code>) to element.<br /> 
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies standard <code>line-height</code> (defined with Sass variable <code>$base-line-height</code> in <code>design-system-config</code>) to element.<br /> 
       This helps to fix some issues caused by vertical rhythm formulas (if you want to reduce <code>line-height</code>, you may use <code>lh100</code>, but use it wisely, it may create issues with user-generated content).
   </div>
   <div class="w49">
@@ -163,7 +163,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="lh-standard">…</span>
+<span className="lh-rg">…</span>
 `}
 />
   </div>
@@ -171,8 +171,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
 	  For browsers that do <strong>not</strong> support <code>hyphens: auto</code>: applies <code>word-wrap: break-word</code>.<br />
 	  For browsers that <strong>do</strong> support <code>hyphens: auto</code>: no <code>word-wrap: break-word</code>, only hyphenation.<br />
 	  = to break a text, at any price.
@@ -183,7 +183,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="cut">…</span>
+<span className="text-cut">…</span>
 `}
 />
   </div>
@@ -191,8 +191,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
       Applies hyphenation only to content (no fallback with <code>word-break</code>).
   </div>
   <div class="w49">
@@ -201,7 +201,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="hyphens">…</span>
+<span className="text-hyphens">…</span>
 `}
 />
   </div>
@@ -209,8 +209,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
       Applies only <code>word-wrap: break-word;</code> to element (when hyphenation is not needed)
   </div>
   <div class="w49">
@@ -219,7 +219,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="break">…</span>
+<span className="text-break">…</span>
 `}
 />
   </div>
@@ -227,8 +227,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
       Applies <code>text-decoration: none</code> to element
   </div>
   <div class="w49">
@@ -237,7 +237,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="nodecoration">…</span>
+<span className="text-no-decoration">…</span>
 `}
 />
   </div>
@@ -245,8 +245,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
       Applies <code>text-decoration: underline</code> to element
   </div>
   <div class="w49">
@@ -255,7 +255,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="underline">…</span>
+<span className="text-underline">…</span>
 `}
 />
   </div>
@@ -263,8 +263,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
       Applies <code>text-decoration: underline</code> to element only when hovered/focused.
   </div>
   <div class="w49">
@@ -273,7 +273,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="underline-hover">…</span>
+<span className="text-underline-on-hover">…</span>
 `}
 />
   </div>
@@ -281,9 +281,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-    <p class="alignright">Right-aligned text</p>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <p class="text-right">Right-aligned text</p>
   </div>
   <div class="w49">
 <Source
@@ -291,7 +291,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<p className="alignright">Right-aligned text.</p>
+<p className="text-right">Right-aligned text.</p>
 `}
 />
   </div>
@@ -299,9 +299,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-    <p class="aligncenter">Centered-aligned text</p>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <p class="text-center">Centered-aligned text</p>
   </div>
   <div class="w49">
 <Source
@@ -309,7 +309,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<p className="aligncenter">Centered-aligned text.</p>
+<p className="text-center">Centered-aligned text.</p>
 `}
 />
   </div>
@@ -317,9 +317,9 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-    <p class="alignleft">Left-aligned text</p>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <p class="text-left">Left-aligned text</p>
   </div>
   <div class="w49">
 <Source
@@ -327,17 +327,17 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<p className="alignleft">Left-aligned text.</p>
+<p className="text-left">Left-aligned text.</p>
 `}
 />
   </div>
 </div>
 
-Other text alignment helpers: <code>aligntop</code>,<code>alignbottom</code>, <code>alignmiddle</code> may be used (<code>alignsub</code> and <code>alignbaseline</code> are also available).
+Other text alignment helpers: <code>align-top</code>,<code>align-bottom</code>, <code>align-middle</code> may be used (<code>align-sub</code> and <code>align-baseline</code> are also available).
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-    <p class="alignleft">Example of <button type="button" class="link alignbaseline">why <code>alignbaseline</code> is useful</button> (fixes some alignments)</p>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <p class="text-left">Example of <button type="button" class="link align-baseline">why <code>align-baseline</code> is useful</button> (fixes some alignments)</p>
   </div>
   <div class="w49">
 <Source
@@ -346,8 +346,8 @@ Other text alignment helpers: <code>aligntop</code>,<code>alignbottom</code>, <c
   format
   code={`
 <p>Example of 
-  <button className="link alignbaseline">
-  why alignbaseline is useful
+  <button className="link align-baseline">
+  why align-baseline is useful
   </button>…</p>
 `}
 />
@@ -356,9 +356,9 @@ Other text alignment helpers: <code>aligntop</code>,<code>alignbottom</code>, <c
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-	<div class="w49 flex-self-vcenter">
-	  <p class="pre-wrap">A text with
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+	<div class="w49 flex-align-self-center">
+	  <p class="text-pre-wrap">A text with
 new lines<br />
 and long      spaces</p>
 	</div>
@@ -368,7 +368,7 @@ and long      spaces</p>
   dark
   format
   code={`
-<p className="pre-wrap">A text with new lines
+<p className="text-pre-wrap">A text with new lines
 and long      spaces</p>
 `}
 />
@@ -377,9 +377,9 @@ and long      spaces</p>
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-	<div class="w49 flex-self-vcenter">
-	  <p class="pre">A text with  spaces</p>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+	<div class="w49 flex-align-self-center">
+	  <p class="text-pre">A text with  spaces</p>
 	</div>
   <div class="w49">
 <Source
@@ -387,7 +387,7 @@ and long      spaces</p>
   dark
   format
   code={`
-<p className="pre">A text with  spaces</p>
+<p className="text-pre">A text with  spaces</p>
 `}
 />
 	</div>
@@ -395,9 +395,9 @@ and long      spaces</p>
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-    <p class="alignleft">Applies <code>white-space: no-wrap</code>, for some very rare use-cases (better use <code>ellipsis)</code></p>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <p class="text-left">Applies <code>white-space: no-wrap</code>, for some very rare use-cases (better use <code>text-ellipsis)</code></p>
   </div>
   <div class="w49">
 <Source
@@ -405,18 +405,18 @@ and long      spaces</p>
   dark
   format
   code={`
-<p className="no-wrap">no wrapping.</p>
+<p className="text-no-wrap">no wrapping.</p>
 `}
 />
   </div>
 </div>
 
-If you want to apply <code>ellipsis</code> and <code>pre</code> classes, you need to wrap your content like this:
+If you want to apply <code>text-ellipsis</code> and <code>pre</code> classes, you need to wrap your content like this:
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-    <span class="ellipsis inbl mw100p"><span class="pre">Lorem    ipsum dolor sit amet</span></span><br />
-    To be used with <code>mw100</code> and <code>inbl</code> (or with flexbox helpers).
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <span class="text-ellipsis inline-block max-w100p"><span class="text-pre">Lorem    ipsum dolor sit amet</span></span><br />
+    To be used with <code>max-w100</code> and <code>inline-block</code> (or with flexbox helpers).
   </div>
   <div class="w49">
 <Source
@@ -424,8 +424,8 @@ If you want to apply <code>ellipsis</code> and <code>pre</code> classes, you nee
   dark
   format
   code={`
-<span className="ellipsis">
-  <span className="pre">
+<span className="text-ellipsis">
+  <span className="text-pre">
   Lorem    ipsum dolor sit amet
   </span>
   </span>
@@ -435,5 +435,5 @@ If you want to apply <code>ellipsis</code> and <code>pre</code> classes, you nee
   </div>
 </div>
 
-These helpers may be prefixed by <code>ontablet-/onmobile-</code> to apply them only for tablets/mobiles.
+These helpers may be prefixed by <code>on-tablet-/on-mobile-</code> to apply them only for tablets/mobiles.
 

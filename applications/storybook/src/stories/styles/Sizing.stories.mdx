@@ -6,7 +6,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 Here is the list of available sizing helpers:
 
-<ul class="list-2columns ontablet-list-1column">
+<ul class="list-2columns on-tablet-list-1column">
   <li><code>.w0 </code> = <code> width: 0;</code></li>
   <li><code>.w1 </code> = <code> width: 1%;</code></li>
   <li><code>.w2 </code> = <code> width: 2%;</code></li>
@@ -30,30 +30,30 @@ Here is the list of available sizing helpers:
   <li><code>.w90 </code> = <code> width: 90%;</code></li>
   <li><code>.w95 </code> = <code> width: 95%;</code></li>
   <li><code>.w100 </code> = <code> width: 100%;</code></li>
-  <li><code>.mw50 </code> = <code> max-width: 50%;</code></li>
-  <li><code>.mw60 </code> = <code> max-width: 60%;</code></li>
-  <li><code>.mw80 </code> = <code> max-width: 80%;</code></li>
-  <li><code>.mw100 </code> = <code> max-width: 100%;</code></li>
+  <li><code>.max-w50 </code> = <code> max-width: 50%;</code></li>
+  <li><code>.max-w60 </code> = <code> max-width: 60%;</code></li>
+  <li><code>.max-w80 </code> = <code> max-width: 80%;</code></li>
+  <li><code>.max-w100 </code> = <code> max-width: 100%;</code></li>
   <li><code>.h100 </code> = <code> height: 100%;</code></li>
   <li><code>.h100v </code> = <code> height: 100vh;</code></li>
 </ul>
 
 Some other are available, please check in your Sass files the ones used, you can define Sass variables to generate the ones your need:
 
-<ul class="list-2columns ontablet-list-1column">
+<ul class="list-2columns on-tablet-list-1column">
   <li><code>$list-width-px</code></li>
   <li><code>$list-width-rem</code></li>
   <li><code>$list-width-em</code></li>
-  <li><code>$list-max-widths</code><br /> (ex.: <code>.mw100 </code> = <code>max-width: 100%</code>)</li>
+  <li><code>$list-max-widths</code><br /> (ex.: <code>.max-w100 </code> = <code>max-width: 100%</code>)</li>
   <li><code>$list-max-width-px</code></li>
-  <li><code>$list-max-width-em</code><br />  (ex.: <code>.mw15e </code> = <code>max-width: 15em;</code>)</li>
+  <li><code>$list-max-width-em</code><br />  (ex.: <code>.max-w15e </code> = <code>max-width: 15em;</code>)</li>
   <li><code>$list-min-width-em</code></li>
 </ul>
 
 <h2>Height helpers</h2>
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
     Applies <code>height: 100%</code> to element.
   </div>
   <div class="w49">
@@ -69,11 +69,11 @@ Some other are available, please check in your Sass files the ones used, you can
   </div>
 </div>
 
-<code>h100v</code> applies <code>height: 100vh</code> to an element. (better <span class="uppercase">not</span> using it, thanks to mobiles that don't support it correctly)
+<code>h100v</code> applies <code>height: 100vh</code> to an element. (better <span class="text-uppercase">not</span> using it, thanks to mobiles that don't support it correctly)
 
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-	<div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+	<div class="w49 flex-align-self-center">
 	  Applies <code>height: auto</code> to element. Make sure this is really needed.
 	</div>
   <div class="w49">

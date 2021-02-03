@@ -25,7 +25,7 @@ export const Basic = () => (
     </>
 );
 
-export const WithClassName = () => <Badge className="bold">Bold</Badge>;
+export const WithClassName = () => <Badge className="text-bold">Bold</Badge>;
 
 export const WithTooltip = () => (
     <Badge tooltip="Boo!" type="warning">
