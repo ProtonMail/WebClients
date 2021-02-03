@@ -301,7 +301,7 @@ const useListNotifications = () => {
             deletedSharedLinksCount === 1
                 ? c('Notification').t`The link to your file was deleted.`
                 : c('Notification').ngettext(
-                      msgid`${deletedSharedLinksCount} links to your files were deleted.`,
+                      msgid`${deletedSharedLinksCount} link to your file was deleted.`,
                       `${deletedSharedLinksCount} links to your files were deleted.`,
                       deletedSharedLinksCount
                   );

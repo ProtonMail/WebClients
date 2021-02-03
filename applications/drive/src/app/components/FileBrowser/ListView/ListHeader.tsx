@@ -26,7 +26,7 @@ const ListHeader = ({
     scrollAreaRef,
 }: Props) => {
     const { isDesktop } = useActiveBreakpoint();
-    const canSort = (fn?: () => void) => (type === 'drive' ? undefined : fn);
+    const canSort = (fn?: () => void) => (type === 'drive' ? fn : undefined);
 
     const handleSort = (key: SortKeys) => {
         if (!sortParams || !setSorting) {
