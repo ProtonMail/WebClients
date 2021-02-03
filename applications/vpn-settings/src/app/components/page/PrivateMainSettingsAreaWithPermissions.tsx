@@ -26,7 +26,7 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
         if (!hasPermission(userPermissions, pagePermissions)) {
             const upgradeSvg = getLightOrDark(upgradeSvgLight, upgradeSvgDark);
             return (
-                <div id="page-error" className="aligncenter">
+                <div id="page-error" className="text-center">
                     <img src={upgradeSvg} alt={c('Title').t`Upgrade`} className="mb2" />
                     <Paragraph>
                         {c('Info')

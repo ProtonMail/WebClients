@@ -110,7 +110,7 @@ const AccountForm = ({ model, onSubmit }) => {
     return (
         <>
             {challengeLoading ? (
-                <div className="aligncenter mb2">
+                <div className="text-center mb2">
                     <FullLoader className="color-primary" size={200} />
                 </div>
             ) : null}
@@ -132,7 +132,7 @@ const AccountForm = ({ model, onSubmit }) => {
                                 .t`Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.`}
                         />
                     </Label>
-                    <Field className="auto flex-item-fluid">
+                    <Field className="wauto flex-item-fluid">
                         <Challenge challengeRef={challengeRefUsername} type="0" onLoaded={handleChallengeLoaded}>
                             <Input
                                 error={usernameError}
@@ -156,7 +156,7 @@ const AccountForm = ({ model, onSubmit }) => {
                                 .t`If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.`}
                         />
                     </Label>
-                    <Field className="auto flex-item-fluid">
+                    <Field className="wauto flex-item-fluid">
                         <div className="mb1">
                             <PasswordInput
                                 id="password"
@@ -190,7 +190,7 @@ const AccountForm = ({ model, onSubmit }) => {
                                 .t`Your email is not shared with third parties and is only used for recovery and account-related questions or communication.`}
                         />
                     </Label>
-                    <Field className="auto flex-item-fluid">
+                    <Field className="wauto flex-item-fluid">
                         <div className="mb1">
                             <Challenge challengeRef={challengeRefEmail} type="1" onLoaded={handleChallengeLoaded}>
                                 <EmailInput

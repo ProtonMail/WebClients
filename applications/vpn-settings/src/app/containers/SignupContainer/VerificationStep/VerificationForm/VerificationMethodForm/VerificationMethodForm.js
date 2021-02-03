@@ -32,7 +32,7 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
             {allowedMethods.length ? (
                 <Row>
                     <Label>{c('Label').t`Verification method`}</Label>
-                    <Field className="auto flex-item-fluid-auto">
+                    <Field className="wauto flex-item-fluid-auto">
                         <div className="pt0-5 mb1">
                             {isMethodAllowed(VERIFICATION_METHOD.EMAIL) ? (
                                 <Radio

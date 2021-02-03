@@ -29,11 +29,11 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
 
     return (
         <>
-            <Row className="flex-items-center pt2 mb2">
+            <Row className="flex-align-items-center pt2 mb2">
                 <div className="flex-item-fluid-auto">
                     <SubTitle className="m0">{c('Title').t`Select a plan`}</SubTitle>
                 </div>
-                <div className="mlauto onmobile-alignright">
+                <div className="mlauto on-mobile-text-right">
                     <Field className="mr1 auto">
                         <CycleSelector
                             cycle={model.cycle}
@@ -45,12 +45,12 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
                             ]}
                         />
                     </Field>
-                    <Field className="auto">
+                    <Field className="wauto">
                         <CurrencySelector currency={model.currency} onSelect={onChangeCurrency} />
                     </Field>
                 </div>
             </Row>
-            <div className="mb2 nodesktop notablet">
+            <div className="mb2 no-desktop no-tablet">
                 <PlansGroupButtons plans={plans} model={model} onSelectPlan={onSelectPlan} />
             </div>
             <div className="flex flex-nowrap">
@@ -67,21 +67,21 @@ const PlanStep = ({ plans, onSelectPlan, onChangeCurrency, onChangeCycle, model,
                 ))}
             </div>
             {model.cycle === CYCLE.YEARLY && (
-                <strong className="mt2 bl big aligncenter color-primary">{c('Info')
+                <strong className="mt2 block text-lg text-center color-primary">{c('Info')
                     .t`You are saving 20% with an annual plan`}</strong>
             )}
             {model.cycle === CYCLE.TWO_YEARS && (
-                <strong className="mt2 bl big aligncenter color-primary">{c('Info')
+                <strong className="mt2 block text-lg text-center color-primary">{c('Info')
                     .t`You are saving 33% with an two-year plan`}</strong>
             )}
             <div className="mt2">
-                <LinkButton className="bl center" onClick={handleComparisonClick}>{c('Action')
+                <LinkButton className="block center" onClick={handleComparisonClick}>{c('Action')
                     .t`View full plan comparison`}</LinkButton>
             </div>
-            <div className="mt2 aligncenter">
-                <span className="automobile">{c('Info').jt`All plans support: ${supportedOS}`}</span>
-                <span className="ml2 mr2 bordered nomobile" />
-                <span className="automobile">{c('Info').t`30-days money back guarantee`}</span>
+            <div className="mt2 text-center">
+                <span className="auto-mobile">{c('Info').jt`All plans support: ${supportedOS}`}</span>
+                <span className="ml2 mr2 bordered no-mobile" />
+                <span className="auto-mobile">{c('Info').t`30-days money back guarantee`}</span>
             </div>
         </>
     );

@@ -29,7 +29,7 @@ const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycl
 
     return (
         <div className="flex mt1 flex-column bordered-container">
-            <h6 className="p0-5 mb0 w100 aligncenter color-primary">
+            <h6 className="p0-5 mb0 w100 text-center color-primary">
                 {[PLAN.FREE, PLAN.BASIC].includes(planName)
                     ? c('Title').t`Upgrade and get more`
                     : c('Title').t`Summary`}
@@ -37,15 +37,15 @@ const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycl
             <div className="p1">
                 {upsellCycle && (
                     <>
-                        <div className="flex flex-spacebetween">
+                        <div className="flex flex-justify-space-between">
                             <span className="mr0-25">{c('Plan upsell').t`Monthly plan`}</span>
                             <s>
-                                <Price className="strike" currency={currency} suffix={c('Suffix').t`/ month`}>
+                                <Price className="text-strike" currency={currency} suffix={c('Suffix').t`/ month`}>
                                     {selectedPlan.price.totalMonthly}
                                 </Price>
                             </s>
                         </div>
-                        <div className="flex flex-spacebetween">
+                        <div className="flex flex-justify-space-between">
                             <span className="mr0-25">{c('Plan upsell').t`Yearly plan`}</span>
                             <Price currency={currency} suffix={c('Suffix').t`/ month`}>
                                 {yearlyPlan.price.totalMonthly}

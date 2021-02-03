@@ -29,7 +29,7 @@ const PriceInfo = ({ plan, cycle, currency }) => {
     return (
         <>
             {plan.price.monthly > 0 && (
-                <div className="flex flex-spacebetween">
+                <div className="flex flex-justify-space-between">
                     <span className="mr0-25">
                         {plan.title} - {billingCycleI18n.label}
                     </span>
@@ -37,7 +37,7 @@ const PriceInfo = ({ plan, cycle, currency }) => {
                 </div>
             )}
             {(plan.couponDiscount || billingCycleI18n.discount) && (
-                <div className="flex color-global-success flex-spacebetween">
+                <div className="flex color-global-success flex-justify-space-between">
                     <span className="mr0-25">
                         {plan.couponDiscount
                             ? `${plan.couponDescription} (${discountPercentage}%)`
@@ -46,7 +46,7 @@ const PriceInfo = ({ plan, cycle, currency }) => {
                     <Price currency={currency}>{-discount}</Price>
                 </div>
             )}
-            <strong className="flex flex-spacebetween">
+            <strong className="flex flex-justify-space-between">
                 <span className="mr0-25">{billingCycleI18n.total}</span>
                 <Price currency={currency}>{plan.price.total}</Price>
             </strong>

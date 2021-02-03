@@ -43,7 +43,7 @@ const VerificationCodeForm = ({ onSubmit, onResend, onBack, destination }) => {
             <form onSubmit={handleSubmit}>
                 <Row>
                     <Label htmlFor="code">{c('Label').t`6-digit code`}</Label>
-                    <Field className="mr1 auto flex-item-fluid">
+                    <Field className="mr1 wauto flex-item-fluid">
                         <Input
                             id="code"
                             className="mb1"

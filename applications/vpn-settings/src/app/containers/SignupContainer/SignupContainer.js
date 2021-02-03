@@ -164,7 +164,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
     };
 
     const selectedPlanComponent = (
-        <div className="ml2 onmobile-ml0 flex-item-fluid-auto onmobile-mt2 selected-plan">
+        <div className="ml2 on-mobile-ml0 flex-item-fluid-auto on-mobile-mt2 selected-plan">
             <PlanDetails selectedPlan={selectedPlan} cycle={model.cycle} currency={model.currency} />
             {!upsellDone && (
                 <PlanUpsell
@@ -184,25 +184,25 @@ const SignupContainer = ({ match, history, onLogin }) => {
 
     return (
         <PublicPage title={c('Title').t`Sign up`}>
-            <main className="flex flex-item-fluid main-area--noHeader main-area-content--paddingFix">
-                <div className="center p2 container-plans-signup onmobile-pl1 onmobile-pr1 onmobile-pt1">
-                    <div className="flex flex-nowrap flex-items-center onmobile-flex-wrap mb1">
+            <main className="flex flex-item-fluid main-area--no-header main-area-content--padding-fix">
+                <div className="center p2 container-plans-signup on-mobile-pl1 on-mobile-pr1 on-mobile-pt1">
+                    <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-wrap mb1">
                         <div className="flex-item-fluid plan-back-button">
                             {!creatingAccount &&
                                 (signupState && signupState !== SignupState.Plan && !isBlackFridayCoupon ? (
                                     <Button onClick={() => history.goBack()}>{c('Action').t`Back`}</Button>
                                 ) : (
-                                    <Href className="pm-button" url={homepageUrl} target="_self">
+                                    <Href className="button" url={homepageUrl} target="_self">
                                         {isBlackFridayCoupon ? c('Action').t`Back` : c('Action').t`Homepage`}
                                     </Href>
                                 ))}
                         </div>
-                        <div className="onmobile-min-w100 onmobile-aligncenter onmobile-mt0-5">
-                            <Href url={homepageUrl} target="_self" className="w150p inbl">
+                        <div className="on-mobile-min-w100 on-mobile-text-center on-mobile-mt0-5">
+                            <Href url={homepageUrl} target="_self" className="w150p inline-block">
                                 <VpnLogo className="fill-primary" />
                             </Href>
                         </div>
-                        <div className="flex-item-fluid alignright plan-help-button">
+                        <div className="flex-item-fluid text-right plan-help-button">
                             <SupportDropdown className="inline-flex" content={c('Action').t`Need help`} />
                         </div>
                     </div>
@@ -210,7 +210,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
                     <Title className="signup-title mt1-5">{c('Title').t`Sign up`}</Title>
 
                     {isLoading || creatingAccount ? (
-                        <div className="aligncenter mt2">
+                        <div className="text-center mt2">
                             <FullLoader className="color-primary" size={200} />
                             <TextLoader>
                                 {isLoading ? c('Info').t`Loading` : c('Info').t`Creating your account`}

@@ -21,13 +21,13 @@ const RedeemContainer = ({ history }) => (
             <PublicHeader />
         </div>
         <div className="redeem-heading-bg pt1 pl2 pr2">
-            <div className="mw80 ontablet-mw100 center">
-                <Title className="redeem-heading-title mt2 mb1-5 color-white bold">
+            <div className="max-w80 on-tablet-max-w100 center">
+                <Title className="redeem-heading-title mt2 mb1-5 color-white text-bold">
                     {c('Title').t`Redeem your coupon and start protecting your online privacy`}
                 </Title>
                 <div className="flex">
                     <RedeemCouponForm history={history} />
-                    <div className="col center nomobile notablet">
+                    <div className="col center no-mobile no-tablet">
                         <img
                             src={GadgetImage}
                             alt={c('Image alt').t`Laptop & smartphone shown connected to ProtonVPN network.`}
@@ -37,7 +37,7 @@ const RedeemContainer = ({ history }) => (
             </div>
         </div>
         <div className="bg-global-light p2">
-            <div className="flex flex-spacebetween onmobile-flex-column aligncenter ontablet-mw100 mw80 center mt2">
+            <div className="flex flex-justify-space-between on-mobile-flex-column text-center on-tablet-max-w100 max-w80 center mt2">
                 {[
                     {
                         icon: SwissBasedIcon,
