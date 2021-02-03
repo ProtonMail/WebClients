@@ -66,7 +66,7 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONCALENDAR]: {
         publicPath: '/calendar',
         subdomain: 'calendar',
-        name: 'ProtonCalendar',
+        name: 'Proton Calendar',
         clientID: 'WebCalendar',
         icon: 'protoncalendar',
     },
