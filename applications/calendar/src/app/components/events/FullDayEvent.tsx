@@ -24,7 +24,7 @@ interface Props {
 const FullDayEvent = ({
     style,
     formatTime,
-    className = 'calendar-dayeventcell absolute alignleft',
+    className = 'calendar-dayeventcell absolute text-left',
     event,
     isSelected,
     isBeforeNow,
@@ -75,7 +75,7 @@ const FullDayEvent = ({
     })();
 
     const content = (
-        <div className="flex flex-nowrap flex-item-fluid flex-items-center">
+        <div className="flex flex-nowrap flex-item-fluid flex-align-items-center">
             {!isAllDay ? (
                 <Icon className="mr0-5 flex-item-noshrink calendar-dayeventcell-circle" size={12} name="circle" />
             ) : null}
@@ -84,7 +84,7 @@ const FullDayEvent = ({
 
             {eventReadError ? <Icon name="lock" className="calendar-dayeventcell-lock-icon" /> : null}
 
-            <span data-test-id="calendar-view:all-day-event" className="flex-item-fluid ellipsis">
+            <span data-test-id="calendar-view:all-day-event" className="flex-item-fluid text-ellipsis">
                 {titleString}
             </span>
 
@@ -104,7 +104,7 @@ const FullDayEvent = ({
                 role="button"
                 tabIndex={0}
                 className={classnames([
-                    'calendar-dayeventcell-inner alignleft flex',
+                    'calendar-dayeventcell-inner text-left flex',
                     !isAllDay && 'isNotAllDay',
                     !isEventReadLoading && 'isLoaded',
                     !isEventReadLoading && isBeforeNow && 'isPast',

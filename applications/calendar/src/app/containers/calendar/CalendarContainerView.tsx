@@ -161,7 +161,7 @@ const CalendarContainerView = ({
     );
 
     const loader = isLoading ? (
-        <div className="calendar-loader-container aligncenter p1">
+        <div className="calendar-loader-container text-center p1">
             <FullLoader size={60} />
             <TextLoader className="m0">{c('Info').t`Loading events`}</TextLoader>
         </div>
@@ -194,7 +194,7 @@ const CalendarContainerView = ({
                 timezoneSelector={
                     <TimezoneSelector
                         data-test-id="calendar-view:time-zone-dropdown"
-                        className="toolbar-select nomobile notablet"
+                        className="toolbar-select no-mobile no-tablet"
                         date={utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate}
                         timezone={tzid}
                         onChange={setTzid}

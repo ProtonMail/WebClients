@@ -86,22 +86,22 @@ const PopoverEventContent = ({
 
     const calendarString = useMemo(() => {
         if (isCalendarDisabled) {
-            const disabledText = <span className="italic">({c('Disabled calendar').t`Disabled`})</span>;
+            const disabledText = <span className="text-italic">({c('Disabled calendar').t`Disabled`})</span>;
             const tooltipText = c('Disabled calendar')
                 .t`The event belongs to a disabled calendar and you cannot modify it. Please enable your email address again to enable the calendar.`;
             return (
                 <>
-                    <span className="ellipsis flex-item-fluid-auto flex-item-nogrow mr0-5" title={calendarName}>
+                    <span className="text-ellipsis flex-item-fluid-auto flex-item-nogrow mr0-5" title={calendarName}>
                         {calendarName}
                     </span>
-                    <span className="no-wrap flex-item-noshrink">
+                    <span className="text-no-wrap flex-item-noshrink">
                         {disabledText} <Info title={tooltipText} />
                     </span>
                 </>
             );
         }
         return (
-            <span className="ellipsis" title={calendarName}>
+            <span className="text-ellipsis" title={calendarName}>
                 {calendarName}
             </span>
         );
@@ -121,7 +121,7 @@ const PopoverEventContent = ({
             {trimmedLocation ? (
                 <div className={wrapClassName}>
                     <Icon name="address" className={iconClassName} />
-                    <span className="hyphens scroll-if-needed">{trimmedLocation}</span>
+                    <span className="text-hyphens scroll-if-needed">{trimmedLocation}</span>
                 </div>
             ) : null}
             {hasOrganizer && (isInvitation || numberOfParticipants) ? (
@@ -129,7 +129,7 @@ const PopoverEventContent = ({
                     <Icon name="contact" className={iconClassName} />
                     <span className="mr0-5r">{organizerString}</span>
                     <span className="flex-item-fluid">
-                        <Tooltip className="mw100 inbl ellipsis" title={organizerTitle}>
+                        <Tooltip className="max-w100 inline-block text-ellipsis" title={organizerTitle}>
                             {organizerName}
                         </Tooltip>
                     </span>
@@ -157,7 +157,10 @@ const PopoverEventContent = ({
             {htmlString ? (
                 <div className={wrapClassName}>
                     <Icon name="text-align-left" className={iconClassName} />
-                    <div className="break mt0 mb0 pre-wrap" dangerouslySetInnerHTML={{ __html: htmlString }} />
+                    <div
+                        className="text-break mt0 mb0 text-pre-wrap"
+                        dangerouslySetInnerHTML={{ __html: htmlString }}
+                    />
                 </div>
             ) : null}
         </>
@@ -216,7 +219,7 @@ const PopoverEventContent = ({
                             <div className="mb0-25 flex flex-nowrap">
                                 <span className="flex-item-noshrink">{icon}</span>
                                 <span className="flex-item-fluid">
-                                    <Tooltip className="mw100 inbl ellipsis" title={title}>
+                                    <Tooltip className="max-w100 inline-block text-ellipsis" title={title}>
                                         {text}
                                     </Tooltip>
                                 </span>

@@ -15,7 +15,7 @@ interface Props {
 }
 const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, onDelete, loadingMap }: Props) => {
     return (
-        <Table className="pm-simple-table--has-actions">
+        <Table className="simple-table--has-actions">
             <TableHeader cells={[c('Header').t`Name`, c('Header').t`Status`, c('Header').t`Actions`]} />
             <TableBody>
                 {(calendars || []).map((calendar) => {
@@ -46,9 +46,9 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
                         <TableRow
                             key={ID}
                             cells={[
-                                <div key="id" className="flex flex-nowrap flex-items-center">
+                                <div key="id" className="flex flex-nowrap flex-align-items-center">
                                     <Icon name="calendar" color={Color} className="mr0-5 flex-item-noshrink" />
-                                    <span className="ellipsis" title={Name}>
+                                    <span className="text-ellipsis" title={Name}>
                                         {Name}
                                     </span>
                                 </div>,
@@ -58,7 +58,7 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
                                     {isDisabled && <Badge type="warning">{c('Calendar status').t`Disabled`}</Badge>}
                                 </div>,
                                 <DropdownActions
-                                    className="pm-button--small"
+                                    className="button--small"
                                     key="actions"
                                     list={list}
                                     loading={!!loadingMap[ID]}

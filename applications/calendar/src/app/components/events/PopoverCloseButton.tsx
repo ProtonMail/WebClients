@@ -8,8 +8,8 @@ interface Props {
 
 const PopoverCloseButton = ({ onClose }: Props) => {
     return (
-        <button type="button" className="pm-modalClose" title={c('Action').t`Close popover`} onClick={onClose}>
-            <Icon className="pm-modalClose-icon" name="close" />
+        <button type="button" className="modal-close" title={c('Action').t`Close popover`} onClick={onClose}>
+            <Icon className="modal-close-icon" name="close" />
             <span className="sr-only">{c('Action').t`Close popover`}</span>
         </button>
     );

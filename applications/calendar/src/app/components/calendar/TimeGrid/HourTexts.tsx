@@ -11,7 +11,7 @@ const HourTexts = ({ className, hours }: Props) => {
                 return (
                     <div className="calendar-grid-timeBlock" key={text}>
                         {i === 0 ? null : (
-                            <span className="calendar-grid-timeText aligncenter bl relative">{text}</span>
+                            <span className="calendar-grid-timeText text-center block relative">{text}</span>
                         )}
                     </div>
                 );

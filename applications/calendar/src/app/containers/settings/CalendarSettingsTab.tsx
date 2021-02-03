@@ -37,7 +37,7 @@ const CalendarSettingsTab = ({ isSubmitted, errors, model, setModel }: Props) =>
                 </Field>
             </Row>
             <Row>
-                <span className="pm-label">{c('Label').t`Choose a color`}</span>
+                <span className="label">{c('Label').t`Choose a color`}</span>
                 <Field>
                     <ColorPicker color={model.color} onChange={(color) => setModel({ ...model, color })} />
                 </Field>

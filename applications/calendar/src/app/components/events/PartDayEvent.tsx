@@ -60,19 +60,24 @@ const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, event
     const content = (() => {
         if (eventReadError) {
             return (
-                <div className="flex flex-nowrap flex-items-center">
+                <div className="flex flex-nowrap flex-align-items-center">
                     <Icon name="lock" className="calendar-eventcell-lock-icon" />
-                    <span className="flex-item-fluid ellipsis">&nbsp;</span>
+                    <span className="flex-item-fluid text-ellipsis">&nbsp;</span>
                 </div>
             );
         }
 
         return (
             <>
-                <div data-test-id="calendar-day-week-view:part-day-event" className="ellipsis calendar-eventcell-title">
+                <div
+                    data-test-id="calendar-day-week-view:part-day-event"
+                    className="text-ellipsis calendar-eventcell-title"
+                >
                     {titleString}
                 </div>
-                <div className={classnames(['ellipsis calendar-eventcell-timestring', shouldHideTime && 'hidden'])}>
+                <div
+                    className={classnames(['text-ellipsis calendar-eventcell-timestring', shouldHideTime && 'hidden'])}
+                >
                     {timeString}
                 </div>
             </>

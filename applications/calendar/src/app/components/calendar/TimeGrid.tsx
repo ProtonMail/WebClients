@@ -264,20 +264,20 @@ const TimeGrid = ({
                 <div
                     ref={titleRef}
                     className={classnames([
-                        'sticky-title sticky-title--noPadding onmobile-remain-sticky',
-                        !scrollTop && 'sticky-title--onTop',
+                        'sticky-title sticky-title--no-padding on-mobile-remain-sticky',
+                        !scrollTop && 'sticky-title--on-top',
                     ])}
                 >
                     <div data-test-id="calendar-day-week-view:week-header" className="flex calendar-first-row-heading">
                         {displaySecondaryTimezone ? (
-                            <div className="calendar-aside aligncenter flex flex-column flex-justify-end">
+                            <div className="calendar-aside text-center flex flex-column flex-justify-end">
                                 <div className="calendar-secondary-timezone-cell calendar-secondary-timezone-cell--header">
                                     {secondaryTimezone}
                                 </div>
                             </div>
                         ) : null}
                         <div className="calendar-aside flex flex-column flex-justify-end">
-                            <div className="aligncenter">{primaryTimezone}</div>
+                            <div className="text-center">{primaryTimezone}</div>
                         </div>
                         <DayButtons
                             days={days}
@@ -290,7 +290,7 @@ const TimeGrid = ({
 
                     <div className="flex calendar-fullday-row">
                         {displaySecondaryTimezone ? <div className="calendar-aside" /> : null}
-                        <div className="calendar-aside calendar-aside-weekNumber aligncenter" />
+                        <div className="calendar-aside calendar-aside-weekNumber text-center" />
                         <div className="flex-item-fluid relative">
                             <DayLines days={daysRows[0]} />
                             <div

@@ -69,7 +69,7 @@ const AttachingModalContent = ({
                 )}
             </Bordered>
             {calendars.length > 1 && (
-                <div className="flex-nowrap mb1 onmobile-flex-column">
+                <div className="flex-nowrap mb1 on-mobile-flex-column">
                     <Label className="mr1" htmlFor="import-calendar-select">{c('Label').t`Import to:`}</Label>
                     <Field>
                         <Select

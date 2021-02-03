@@ -56,7 +56,7 @@ const NotificationInput = ({
     const errorProps = typeof error === 'string' ? { 'aria-invalid': true } : {};
 
     return (
-        <div className={classnames(['flex flex-nowrap flex-item-fluid onmobile-flex-column', className])}>
+        <div className={classnames(['flex flex-nowrap flex-item-fluid on-mobile-flex-column', className])}>
             <span className="flex flex-nowrap flex-item-fluid">
                 {hasValueInput && (
                     <span className="flex-item-fluid mr0-5">
@@ -104,10 +104,10 @@ const NotificationInput = ({
                 />
             </span>
             {((isAllDay && at) || hasType) && (
-                <span className="flex ontinymobile-flex-column flex-nowrap flex-item-fluid">
+                <span className="flex on-tiny-mobile-flex-column flex-nowrap flex-item-fluid">
                     {isAllDay && at && (
-                        <span className="flex flex-nowrap flex-item-fluid flex-items-center onmobile-mt0-5">
-                            <span className="flex-item-noshrink ml0-5 onmobile-ml0 mr0-5">{c('Notification time input')
+                        <span className="flex flex-nowrap flex-item-fluid flex-align-items-center on-mobile-mt0-5">
+                            <span className="flex-item-noshrink ml0-5 on-mobile-ml0 mr0-5">{c('Notification time input')
                                 .t`at`}</span>
                             <TimeInput
                                 data-test-id="notification-time-at"
@@ -121,8 +121,8 @@ const NotificationInput = ({
                     {hasType && (
                         <span
                             className={classnames([
-                                'flex flex-nowrap flex-item-fluid onmobile-mt0-5 ml0-5',
-                                isAllDay && at ? 'ontinymobile-ml0' : 'onmobile-ml0',
+                                'flex flex-nowrap flex-item-fluid on-mobile-mt0-5 ml0-5',
+                                isAllDay && at ? 'on-tiny-mobile-ml0' : 'on-mobile-ml0',
                             ])}
                         >
                             <Select

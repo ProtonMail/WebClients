@@ -11,7 +11,7 @@ interface Props {
     onChange: (view: SETTINGS_VIEW) => void;
 }
 const ViewPreferenceSelector = ({
-    className = 'pm-field w100',
+    className = 'field w100',
     loading = false,
     disabled = false,
     view,

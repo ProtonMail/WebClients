@@ -79,7 +79,7 @@ const SettingsCalendarPage = ({
                             <AppLink
                                 to="/settings/import#start-import"
                                 toApp={APPS.PROTONMAIL}
-                                className="pm-button--primary mtauto"
+                                className="button--primary mtauto"
                             >
                                 {c('Action').t`Import mailbox`}
                             </AppLink>
@@ -92,7 +92,7 @@ const SettingsCalendarPage = ({
                             <AppLink
                                 to="/settings/import"
                                 toApp={APPS.PROTONCONTACTS}
-                                className="pm-button--primary mtauto"
+                                className="button--primary mtauto"
                             >
                                 {c('Action').t`Import contacts`}
                             </AppLink>
