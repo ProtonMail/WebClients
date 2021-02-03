@@ -15,7 +15,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 ### Sass nesting inferno
 
-<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 icon-ko relative">
 
 <Source
@@ -58,11 +58,11 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   </div>
 </div>
 
-Stop doing Sass nesting inferno. The structure must <strong class="uppercase">NOT</strong> be so complex and intricated with CSS, and it is a pain to surcharge (and the weight of the CSS will be far lighter not doing this). Let's be flexible!
+Stop doing Sass nesting inferno. The structure must <strong class="text-uppercase">NOT</strong> be so complex and intricated with CSS, and it is a pain to surcharge (and the weight of the CSS will be far lighter not doing this). Let's be flexible!
 
 ### Targetting elements
 
-<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 icon-ko relative">
 
 <Source
@@ -109,7 +109,7 @@ Please avoid targetting via id and neighbour, better use a direct target via a c
 
 No unit for this property. Do <strong>NOT</strong> use it to center vertically text.
 
-<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 icon-ko relative">
 <Source
   language='css'
@@ -142,7 +142,7 @@ See <a href="https://tzi.fr/css/line-height-units/">unitless values for line-hei
 
 Unless you really have to, avoid mixing positionning on tables (creates bugs on some browsers).
 
-<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 icon-ko relative">
 <Source
   language='html'
@@ -164,7 +164,7 @@ Unless you really have to, avoid mixing positionning on tables (creates bugs on 
 />
   </div>
 </div>
-<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 icon-ko relative">
 <Source
   language='css'
@@ -198,7 +198,7 @@ A bug on v3, so trust me :)
 
 ## HTML
 
-<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 icon-ko relative">
 <Source
   language='html'
@@ -228,14 +228,14 @@ A bug on v3, so trust me :)
 
 Put a <code>title</code> in the button, an image with <code>alt</code> in it, a <code>span class="sr-only"</code> in it, but do not leave it empty, otherwise, will be vocalized “button” without any information for the user.
 
-<div class="flex flex-nowrap flex-spacebetween mb2 onmobile-flex-column">
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 icon-ko relative">
 <Source
   language='html'
   dark
   format
   code={`
-<button class="ellipsis">
+<button class="text-ellipsis">
 lorem dolor si amet…
 </button>
 `}
@@ -247,7 +247,7 @@ lorem dolor si amet…
   dark
   format
   code={`
-<button class="ellipsis" 
+<button class="text-ellipsis" 
  title="lorem dolor si amet consegur">
 lorem dolor si amet…
 </button>
@@ -256,4 +256,4 @@ lorem dolor si amet…
   </div>
 </div>
 
-When using the class <code>ellipsis</code>, add a <code>title</code> attribute with the full version.
+When using the class <code>text-ellipsis</code>, add a <code>title</code> attribute with the full version.

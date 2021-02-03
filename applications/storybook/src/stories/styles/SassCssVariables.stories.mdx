@@ -29,9 +29,9 @@ For color variables, have a look at <a href="/colors/">colors section</a>.
 
 ### Overwriting variables
 
-If you need (for your project) to set up different values than the default one of the design system, do overwrite variables in <code>styles-pm.scss</code>, <strong class="uppercase">not</strong> in Sass partials, as they could be updated later.
+If you need (for your project) to set up different values than the default one of the design system, do overwrite variables in <code>styles-pm.scss</code>, <strong class="text-uppercase">not</strong> in Sass partials, as they could be updated later.
 
-Each variable in Sass partials <strong class="uppercase">must</strong> have <code>!default</code>, in order to avoid break layout on each project with different settings.
+Each variable in Sass partials <strong class="text-uppercase">must</strong> have <code>!default</code>, in order to avoid break layout on each project with different settings.
 
 ## CSS variables (custom properties)
 
@@ -87,7 +87,7 @@ These CSS custom properties are present to allow easy theming of the interface.
 
 - <code>--bgcolor-highlight</code>: background-color of highlight helper
 - <code>--bgcolor-muted</code>: background-color of muted color
-- <code>--bgcolor-meterbar</code>: the background color of <code>meter</code>
+- <code>--bgcolor-meter-bar</code>: the background color of <code>meter</code>
 - <code>--bgcolor-mark</code>: the background color of <code>mark</code>
 - <code>--color-mark</code>: the color of <code>mark</code>
 - <code>--bgcolor-calendar-now-indicator</code>: background-color for now hour line indicator
@@ -100,4 +100,4 @@ These CSS custom properties are present to allow easy theming of the interface.
 
 Updating these custom properties allows to create simple themes without surcharging all the CSS stuff.
 
-If you need to check where they are used, perform a search of have a look at <code>design-system-website/_themes.scss</code>, it contains all rules that are using them. This partial should <strong class="uppercase">not</strong> be used in production, it is only for testing and reference purposes.
+If you need to check where they are used, perform a search of have a look at <code>design-system-website/_themes.scss</code>, it contains all rules that are using them. This partial should <strong class="text-uppercase">not</strong> be used in production, it is only for testing and reference purposes.

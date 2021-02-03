@@ -22,17 +22,17 @@ body {
 }
 
 @include respond-to($breakpoint-medium) {
-	.ontablet-m1 {
+	.on-tablet-m1 {
 		margin: 1em !important;
 	}
 }
 @include respond-to($breakpoint-small) {
-	.onmobile-m1 {
+	.on-mobile-m1 {
 		margin: 1em !important;
 	}
 }
 @include respond-to($breakpoint-tiny) {
-	.ontinymobile-m1 {
+	.on-tiny-mobile-m1 {
 		margin: 1em !important;
 	}
 }

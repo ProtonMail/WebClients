@@ -6,8 +6,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 ## Lists
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
     Removes styles for <code>ul</code> or <code>ol</code>. Example:
     <div class="flex-autogrid">
       <div class="flex-autogrid-item">
@@ -38,10 +38,10 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
-    Will use css multicolumn to display the list on 2 columns. On tablet, the list will be put on one column. Same helper exists also for mobile <code>onmobile-list-1column</code>.
-    <ul class="list-2columns ontablet-list-1column">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Will use css multicolumn to display the list on 2 columns. On tablet, the list will be put on one column. Same helper exists also for mobile <code>on-mobile-list-1column</code>.
+    <ul class="list-2columns on-tablet-list-1column">
       <li>Normal</li>
       <li>list</li>
       <li>list</li>
@@ -56,7 +56,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<ul className="list-2columns ontablet-list-1column">
+<ul className="list-2columns on-tablet-list-1column">
 …
 </ul>
 `}
@@ -68,8 +68,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 ## Increase click/tap surface
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
     Increase link/button tap/click zone to the closest parent that has <code>position: relative</code>.<br />
     (used in <a href="/drop-down/#pagination-dropdown">pagination drop down</a>)
   </div>
@@ -80,7 +80,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   format
   code={`
 <div className="relative">
-  <a className="increase-surface-click">
+  <a className="increase-click-surface">
 `}
 />
 
@@ -91,11 +91,11 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 ## Something that should appear on <code>hover</code> in a parent
 
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter relative">
-    <button class="button-showOnHover increase-surface-click" type="button">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center relative">
+    <button class="button-show-on-hover increase-click-surface" type="button">
       hover me, pikaaaaa…
-      <span class="nonvisible button-showOnHover-element">CHU</span>
+      <span class="visibility-hidden button-show-on-hover-element">CHU</span>
       </button>
       <br /><br />
     Careful when using this, might create issues with some tap devices like iPhone/iPads, etc.
@@ -107,10 +107,10 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<button className="button-showOnHover">
+<button className="button-show-on-hover">
   hover me, pikaaaaa…
   <span 
-    className="nonvisible button-showOnHover-element">
+    className="visibility-hidden button-show-on-hover-element">
   CHU</span>
 `}
 />
@@ -121,8 +121,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 ## For media print
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
     Applies a big reset of all properties for <code>@media print</code>
   </div>
   <div class="w49">
@@ -140,8 +140,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
     Applies <code>display: none</code> for <code>@media print</code> (element won't be printed)
   </div>
   <div class="w49">
@@ -150,7 +150,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="noprint">Lorem ipsum dolor</span>
+<span className="no-print">Lorem ipsum dolor</span>
 `}
 />
 
@@ -159,8 +159,8 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 
 <br /><br />
 
-<div class="flex flex-spacebetween mb2 onmobile-flex-column">
-  <div class="w49 flex-self-vcenter">
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
     Applies <code>display: block</code> for <code>@media print</code> (hidden elements will be printed)
   </div>
   <div class="w49">
@@ -169,7 +169,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   dark
   format
   code={`
-<span className="onprint">Lorem ipsum dolor</span>
+<span className="on-print">Lorem ipsum dolor</span>
 `}
 />
 
