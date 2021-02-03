@@ -308,7 +308,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
 
             // Wait x seconds to check if the iframe is properly loaded
             timeoutID = setTimeout(() => {
-                errors.push(new Error(`${name} ${iframe.src} timed out after ${BASE_TIMEOUT}s`));
+                errors.push(`${name} ${iframe.src} timed out after ${BASE_TIMEOUT}s`);
                 handleRetry();
             }, BASE_TIMEOUT * 1000);
 
@@ -354,7 +354,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             wizard.onLoad(name, (isError, { name, file } = {}) => {
                 clearTimeout(timeoutID);
                 if (isError) {
-                    errors.push(new Error(`${name} file onerror for ${file}`));
+                    errors.push(`${name} file onerror for ${file}`);
                     // Since this is more or less instant, delay it slightly
                     retryID = setTimeout(() => {
                         handleRetry();
