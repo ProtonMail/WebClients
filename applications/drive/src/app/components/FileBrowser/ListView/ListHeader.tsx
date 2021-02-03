@@ -53,7 +53,7 @@ const ListHeader = ({
                 <TableHeaderCell>
                     <div role="presentation" key="select-all" className="flex" onClick={(e) => e.stopPropagation()}>
                         <Checkbox
-                            className="increase-surface-click"
+                            className="increase-click-surface"
                             disabled={!contents.length}
                             checked={allSelected}
                             onChange={onToggleAllSelected}

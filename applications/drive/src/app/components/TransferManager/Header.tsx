@@ -146,7 +146,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
     const closeTitle = c('Action').t`Close transfers`;
 
     return (
-        <div className="pd-transfers-heading flex flex-items-center flex-nowrap pl0-5 pr0-5 color-global-light">
+        <div className="transfers-manager-heading flex flex-align-items-center flex-nowrap pl0-5 pr0-5 color-global-light">
             <div
                 role="presentation"
                 className="flex-item-fluid p0-5"
@@ -156,11 +156,11 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
             >
                 {getHeadingText()}
             </div>
-            <Tooltip title={minMaxTitle} className="pd-transfers-headingTooltip flex-item-noshrink flex">
+            <Tooltip title={minMaxTitle} className="transfers-manager-heading-tooltip flex-item-noshrink flex">
                 <button
                     ref={minimizeRef}
                     type="button"
-                    className="pd-transfers-headingButton p0-5 flex"
+                    className="transfers-manager-heading-button p0-5 flex"
                     onClick={() => {
                         onToggleMinimize();
                         minimizeRef.current?.blur();
@@ -171,8 +171,11 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
                     <span className="sr-only">{minMaxTitle}</span>
                 </button>
             </Tooltip>
-            <Tooltip title={closeTitle} className={classnames(['pd-transfers-headingTooltip flex-item-noshrink flex'])}>
-                <button type="button" className="pd-transfers-headingButton flex p0-5" onClick={onClose}>
+            <Tooltip
+                title={closeTitle}
+                className={classnames(['transfers-manager-heading-tooltip flex-item-noshrink flex'])}
+            >
+                <button type="button" className="transfers-manager-heading-button flex p0-5" onClick={onClose}>
                     <Icon className="mauto" name="off" />
                     <span className="sr-only">{closeTitle}</span>
                 </button>

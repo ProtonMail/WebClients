@@ -16,7 +16,10 @@ interface Props {
 }
 
 const ProgressBar = ({ status = ProgressBarStatus.Success, ...rest }: Props) => (
-    <Progress className={classnames(['pd-transfers-listItem-progress is-thin', `progressbar--${status}`])} {...rest} />
+    <Progress
+        className={classnames(['transfers-manager-list-item-progress is-thin', `progress-bar--${status}`])}
+        {...rest}
+    />
 );
 
 export default ProgressBar;

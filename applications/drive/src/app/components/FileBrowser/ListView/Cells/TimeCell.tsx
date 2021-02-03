@@ -9,8 +9,8 @@ interface Props {
 
 const TimeCell = ({ time: modifyTime }: Props) => {
     return (
-        <div className="ellipsis" title={readableTime(modifyTime, 'PP', { locale: dateLocale })}>
-            <span className="pre">
+        <div className="text-ellipsis" title={readableTime(modifyTime, 'PP', { locale: dateLocale })}>
+            <span className="text-pre">
                 <Time key="dateModified" format="PPp">
                     {modifyTime}
                 </Time>

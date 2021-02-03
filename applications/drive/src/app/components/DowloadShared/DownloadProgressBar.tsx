@@ -15,7 +15,7 @@ const DownloadProgressBar = ({ latestStats, download }: Props) => {
     const status = getProgressBarStatus(download.state);
     return (
         <>
-            <Progress className={`progressbar--${status}`} value={percentageDone} />
+            <Progress className={`progress-bar--${status}`} value={percentageDone} />
             <div className="mt1">{percentageDone} %</div>
         </>
     );

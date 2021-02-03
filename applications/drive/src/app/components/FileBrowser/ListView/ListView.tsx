@@ -85,7 +85,10 @@ const TableBodyRenderer = ({
     return (
         <Table
             {...props}
-            className={classnames(['pd-fb-table pm-simple-table--isHoverable noborder border-collapse', className])}
+            className={classnames([
+                'file-browser-table simple-table--is-hoverable no-border border-collapse',
+                className,
+            ])}
         >
             <TableBody>{children}</TableBody>
         </Table>
@@ -144,7 +147,7 @@ const ListView = ({
             className="flex flex-column flex-item-fluid"
         >
             <div>
-                <Table caption={caption} className="pd-fb-table m0">
+                <Table caption={caption} className="file-browser-table m0">
                     <ListHeader
                         contents={contents}
                         onToggleAllSelected={onToggleAllSelected}
@@ -157,7 +160,7 @@ const ListView = ({
                 </Table>
             </div>
 
-            <div className="flex-noMinChildren flex-column flex-item-fluid w100 no-scroll" ref={containerRef}>
+            <div className="flex-no-min-children flex-column flex-item-fluid w100 no-scroll" ref={containerRef}>
                 {rect && (
                     <FixedSizeList
                         itemCount={itemCount}

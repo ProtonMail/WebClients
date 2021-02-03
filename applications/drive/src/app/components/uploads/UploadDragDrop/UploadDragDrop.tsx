@@ -140,19 +140,19 @@ const UploadDragDrop = ({ children, className, disabled }: UploadDragDropProps) 
             {children}
             {overlayEnabled && overlayIsVisible && (
                 <div
-                    className="pd-drag-drop"
+                    className="upload-drag-drop"
                     onDragLeave={handleDragLeave}
                     onDragOver={preventDefaultEvent}
                     onDrop={handleDrop}
                 >
-                    <section className="pd-drag-drop-infobox p2">
+                    <section className="upload-drag-drop-infobox p2">
                         <img
-                            className="pd-drag-drop-image"
+                            className="upload-drag-drop-image"
                             src={getLightOrDark(dragdropImageSvgLight, dragdropImageSvgDark)}
                             alt=""
                             aria-hidden="true"
                         />
-                        <h2 className="bold m0">{c('Title').t`Drop to upload`}</h2>
+                        <h2 className="text-bold m0">{c('Title').t`Drop to upload`}</h2>
                         <p className="m0">{c('Info').t`Your files will be encrypted and then saved.`}</p>
                     </section>
                 </div>

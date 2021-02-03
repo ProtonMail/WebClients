@@ -8,8 +8,8 @@ interface Props {
 const SizeCell = ({ size }: Props) => {
     const readableSize = humanSize(size);
     return (
-        <div className="ellipsis" title={readableSize}>
-            <span className="pre">{readableSize}</span>
+        <div className="text-ellipsis" title={readableSize}>
+            <span className="text-pre">{readableSize}</span>
         </div>
     );
 };

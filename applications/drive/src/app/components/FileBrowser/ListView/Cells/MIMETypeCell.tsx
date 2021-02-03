@@ -5,8 +5,8 @@ interface Props {
 }
 
 const MIMETypeCell = ({ mimeType }: Props) => (
-    <div key="mimeType" title={mimeType} className="ellipsis">
-        <span className="pre">{mimeType}</span>
+    <div key="mimeType" title={mimeType} className="text-ellipsis">
+        <span className="text-pre">{mimeType}</span>
     </div>
 );
 

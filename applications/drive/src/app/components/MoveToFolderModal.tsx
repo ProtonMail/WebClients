@@ -194,7 +194,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
         ),
         footer: (
             <FooterModal>
-                <div className="flex flex-spacebetween w100 flex-nowrap">
+                <div className="flex flex-justify-space-between w100 flex-nowrap">
                     {isNarrow ? (
                         <Button
                             icon="folder-new"

@@ -25,16 +25,16 @@ const DiscountBanner = ({ contentState, onClose }: Props) => {
     const appName = getAppName(APPS.PROTONDRIVE);
 
     return (
-        <div className="pd-discount-banner bg-primary color-white-dm p0-25 mb1 mr1 w100 onmobile-m0 onmobile-mw100">
+        <div className="discount-banner bg-primary color-white-dm p0-25 mb1 mr1 w100 on-mobile-m0 on-mobile-max-w100">
             {onClose ? (
-                <button type="button" className="right mr0-25" onClick={onClose}>
+                <button type="button" className="float-right mr0-25" onClick={onClose}>
                     <Icon name="off" size={12} />
                 </button>
             ) : null}
-            <div className="flex flex-column flex-nowrap flex-items-center aligncenter p1 w100">
-                <h3 className="uppercase bold m0">{c('Title').t`Get your own ${appName}`}</h3>
-                <p className="mt1 mb1 small">{c('Label').t`Up to 47% off on new subscriptions`}</p>
-                <Href url={url} className="pm-button--primary pm-button--large mt0-25 mb1">
+            <div className="flex flex-column flex-nowrap flex-align-items-center text-center p1 w100">
+                <h3 className="text-uppercase text-bold m0">{c('Title').t`Get your own ${appName}`}</h3>
+                <p className="mt1 mb1 text-sm">{c('Label').t`Up to 47% off on new subscriptions`}</p>
+                <Href url={url} className="button--primary button--large mt0-25 mb1">
                     {c('Action').t`Get the deal`}
                 </Href>
             </div>

@@ -41,18 +41,18 @@ function EditExpirationTimeState({ hasExpirationTime, saving, onBack, onSave, on
     return (
         <>
             <HeaderModal
-                className="flex flex-items-center"
+                className="flex flex-align-items-center"
                 onClose={onClose}
                 hasClose={!saving}
                 modalTitleID={modalTitleID}
             >
-                <div className="flex flex-items-center">
+                <div className="flex flex-align-items-center">
                     <BackButtonModal onClick={onBack} />
                     <TitleModal id={modalTitleID}>{c('Title').t`Expiration date`}</TitleModal>
                 </div>
             </HeaderModal>
             <form
-                className="pm-modalContent"
+                className="modal-content"
                 onReset={onBack}
                 onSubmit={(e) => {
                     e.preventDefault();
@@ -68,13 +68,13 @@ function EditExpirationTimeState({ hasExpirationTime, saving, onBack, onSave, on
                     <Row>
                         <Label htmlFor="expiration-time-dropdown">{c('Label').t`Link expires`}</Label>
                         <Field className="w100">
-                            <div className="flex flex-nowrap flex-items-center onmobile-flex-column">
-                                <span className="flex-item-fluid mw50 onmobile-mw100">
+                            <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-column">
+                                <span className="flex-item-fluid max-w50 on-mobile-max-w100">
                                     <ExpirationTimeDropdown value={duration} onChange={handleChangeExpirationDate} />
                                 </span>
-                                <span className="flex-item-noshrink inline-flex onmobile-mt0-25">
+                                <span className="flex-item-noshrink inline-flex on-mobile-mt0-25">
                                     {expirationTime && (
-                                        <span className="ml2 flex-item-noshrink onmobile-ml0 inline-flex flex-row flex-nowrap">
+                                        <span className="ml2 flex-item-noshrink on-mobile-ml0 inline-flex flex-row flex-nowrap">
                                             <span className="mr0-5">{c('Info').t`on`}</span>
                                             <DateTime key="expirationTime" value={expirationTime} />
                                         </span>

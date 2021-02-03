@@ -8,9 +8,9 @@ interface Props {
 
 function LoadingState({ generated }: Props) {
     return (
-        <div className="pm-modalContent pt2 pb2">
+        <div className="modal-content pt2 pb2">
             <InnerModal className="mt2 mb2">
-                <div className="flex flex-column flex-items-center">
+                <div className="flex flex-column flex-align-items-center">
                     <Loader size="medium" className="mt1 mb1" />
                     <TextLoader className="m0">
                         {generated ? c('Info').t`Preparing link to file` : c('Info').t`Creating link to file`}

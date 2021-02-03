@@ -55,7 +55,7 @@ const FolderContextMenu = ({ anchorRef, isOpen, position, open, close }: Props) 
         <DropdownMenuButton
             key={button.name}
             onContextMenu={(e) => e.stopPropagation()}
-            className="flex flex-nowrap alignleft"
+            className="flex flex-nowrap text-left"
             onClick={button.action}
             data-testid={button.testId}
         >

@@ -26,7 +26,7 @@ const UploadButton = ({ floating, className }: Props) => {
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
             {floating ? (
                 <FloatingButton
-                    className={classnames([isTransferring && 'compose-fab--is-higher'])}
+                    className={classnames([isTransferring && 'fab--is-higher'])}
                     disabled={!folder?.shareId}
                     onClick={handleClick}
                     title={c('Action').t`New upload`}

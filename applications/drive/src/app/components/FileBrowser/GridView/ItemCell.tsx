@@ -71,15 +71,15 @@ function ItemCell({
                 draggable={draggable}
                 aria-disabled={item.Disabled}
                 className={classnames([
-                    'pd-fb-grid-item m0-5 flex flex-column w100 rounded bordered cursor-pointer text-align-left no-outline',
+                    'file-browser-grid-item m0-5 flex flex-column w100 rounded bordered cursor-pointer text-align-left no-outline',
                     (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) &&
-                        'pd-fb-grid-item--highlight',
+                        'file-browser-grid-item--highlight',
                     (dragging || item.Disabled) && 'opacity-50',
                 ])}
                 {...itemHandlers}
             >
-                <div className="flex flex-items-center">
+                <div className="flex flex-align-items-center">
                     <div
                         role="presentation"
                         className="pl0-5 pt0-5 pb0-5 pr0-25 flex relative"
@@ -87,7 +87,7 @@ function ItemCell({
                     >
                         <Checkbox
                             disabled={item.Disabled}
-                            className="increase-surface-click"
+                            className="increase-click-surface"
                             checked={isSelected}
                             {...checkboxHandlers}
                         />
@@ -96,7 +96,7 @@ function ItemCell({
                     {item.SharedUrl && <SharedURLIcon expired={item.UrlsExpired} />}
                 </div>
                 <div className="p0-5 flex flex-item-fluid flex-column">
-                    <div className="flex flex-item-fluid flex-justify-center flex-items-center">
+                    <div className="flex flex-item-fluid flex-justify-center flex-align-items-center">
                         <FileIcon
                             size={28}
                             mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
@@ -104,8 +104,8 @@ function ItemCell({
                         />
                     </div>
                 </div>
-                <div className="w100 pt0-25 pb0-25 pl0-5 pr0-5 border-top ellipsis" title={item.Name}>
-                    <span className="pre">{item.Name}</span>
+                <div className="w100 pt0-25 pb0-25 pl0-5 pr0-5 border-top text-ellipsis" title={item.Name}>
+                    <span className="text-pre">{item.Name}</span>
                 </div>
             </div>
         </div>

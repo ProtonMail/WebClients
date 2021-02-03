@@ -6,9 +6,9 @@ import changelog from '../../../../../CHANGELOG.md';
 
 const DriveSidebarFooter = () => (
     <>
-        <div className="aligncenter opacity-50 mr4 ml4">
+        <div className="text-center opacity-50 mr4 ml4">
             <Icon name="lock-check" size={20} />
-            <div className="small m0">{c('Label').jt`End-to-end Encryption by Proton`}</div>
+            <div className="text-sm m0">{c('Label').jt`End-to-End Encryption by Proton`}</div>
             <hr className="opacity-30 m0-25" />
         </div>
         <AppVersion changelog={changelog} />

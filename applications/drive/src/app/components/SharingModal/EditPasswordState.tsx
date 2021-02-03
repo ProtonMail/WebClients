@@ -39,18 +39,18 @@ function EditPasswordState({ modalTitleID, onBack, onSave, onClose, saving, init
     return (
         <>
             <HeaderModal
-                className="flex flex-items-center"
+                className="flex flex-align-items-center"
                 onClose={onClose}
                 hasClose={!saving}
                 modalTitleID={modalTitleID}
             >
-                <div className="flex flex-items-center">
+                <div className="flex flex-align-items-center">
                     <BackButtonModal onClick={onBack} />
                     <TitleModal id={modalTitleID}>{c('Title').t`Change password`}</TitleModal>
                 </div>
             </HeaderModal>
             <form
-                className="pm-modalContent"
+                className="modal-content"
                 onReset={onBack}
                 onSubmit={(e) => {
                     e.preventDefault();

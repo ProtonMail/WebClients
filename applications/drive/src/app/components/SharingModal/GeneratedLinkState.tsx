@@ -71,7 +71,7 @@ function GeneratedLinkState({
     };
 
     const boldNameText = (
-        <b key="name" className="break">
+        <b key="name" className="text-break">
             {`"${itemName}"`}
         </b>
     );
@@ -86,35 +86,35 @@ function GeneratedLinkState({
             <HeaderModal modalTitleID={modalTitleID} onClose={onClose}>
                 {c('Title').t`Share with link`}
             </HeaderModal>
-            <div ref={contentRef} className="pm-modalContent">
+            <div ref={contentRef} className="modal-content">
                 <InnerModal>
                     <Alert>
                         {c('Info').jt`Anyone with this link can download the file ${boldNameText}.`}
                         <br />
                         {c('Info').t`Protect the link with a password.`}
                     </Alert>
-                    <Row className="onmobile-mb0-5">
-                        <div className="flex flex-item-fluid onmobile-mb0-5">
+                    <Row className="on-mobile-mb0-5">
+                        <div className="flex flex-item-fluid on-mobile-mb0-5">
                             <Input
                                 readOnly
                                 value={url}
-                                className="no-scroll ellipsis"
+                                className="no-scroll text-ellipsis"
                                 data-testid="sharing-modal-url"
                             />
                         </div>
-                        <div className="flex-noMinChildren flex-justify-end ml0-5 onmobile-ml0">
+                        <div className="flex-no-min-children flex-justify-end ml0-5 on-mobile-ml0">
                             <PrimaryButton id="copy-url-button" onClick={handleClickCopyURL} className="min-w7e">{c(
                                 'Action'
                             ).t`Copy`}</PrimaryButton>
                         </div>
                     </Row>
-                    <div className="flex-noMinChildren flex-nowrap mb1 onmobile-flex-column onmobile-mb0-5">
+                    <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
                         <Label htmlFor="passwordModeToggle">
                             <span className="mr0-5">{c('Label').t`Password protection`}</span>
                         </Label>
-                        <div className="flex flex-justify-start mr0-5 onmobile-mr0">
+                        <div className="flex flex-justify-start mr0-5 on-mobile-mr0">
                             <Toggle
-                                className="onmobile-mb0-5"
+                                className="on-mobile-mb0-5"
                                 disabled={customPassword}
                                 id="passwordModeToggle"
                                 checked={!includePassword}
@@ -122,7 +122,7 @@ function GeneratedLinkState({
                                 data-testid="sharing-modal-passwordModeToggle"
                             />
                         </div>
-                        <div className="flex-noMinChildren flex-item-fluid flex-items-center onmobile-mb0-5 pm-field-icon-container-empty onmobile-min-h0">
+                        <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 field-icon-container-empty on-mobile-min-h0">
                             {!includePassword ? (
                                 <>
                                     <Label htmlFor="sharing-modal-password" className="sr-only">
@@ -132,7 +132,7 @@ function GeneratedLinkState({
                                         id="sharing-modal-password"
                                         data-testid="sharing-modal-password"
                                         readOnly
-                                        className="no-scroll ellipsis"
+                                        className="no-scroll text-ellipsis"
                                         value={password}
                                         onClick={onEditPasswordClick}
                                         icon={
@@ -148,11 +148,11 @@ function GeneratedLinkState({
                                     />
                                 </>
                             ) : (
-                                <span className="pl1 onmobile-pl0">{c('Label')
+                                <span className="pl1 on-mobile-pl0">{c('Label')
                                     .t`Your file isn't password protected`}</span>
                             )}
                         </div>
-                        <div className="flex-noMinChildren flex-justify-end ml0-5 onmobile-ml0">
+                        <div className="flex-no-min-children flex-justify-end ml0-5 on-mobile-ml0">
                             <Button
                                 id="edit-password-button"
                                 hidden={includePassword}
@@ -172,11 +172,11 @@ function GeneratedLinkState({
                                 data-testid="sharing-modal-expiration-time"
                                 readOnly
                                 value={expirationDate}
-                                className="w100 onmobile-mb0-5 ellipsis"
+                                className="w100 on-mobile-mb0-5 text-ellipsis"
                                 onClick={onEditExpirationTimeClick}
                             />
                         </div>
-                        <div className="flex-noMinChildren flex-justify-end ml0-5 onmobile-ml0">
+                        <div className="flex-no-min-children flex-justify-end ml0-5 on-mobile-ml0">
                             <Button
                                 id="edit-expiration-time-button"
                                 onClick={onEditExpirationTimeClick}
@@ -186,7 +186,7 @@ function GeneratedLinkState({
                     </Row>
                 </InnerModal>
                 <FooterModal>
-                    <div className="flex flex-spacebetween w100 flex-nowrap">
+                    <div className="flex flex-justify-space-between w100 flex-nowrap">
                         <Button loading={deleting} onClick={onDeleteLinkClick}>{c('Action').t`Stop sharing`}</Button>
                         <Button onClick={onClose}>{c('Action').t`Done`}</Button>
                     </div>
