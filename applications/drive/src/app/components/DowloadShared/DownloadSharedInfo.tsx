@@ -37,12 +37,12 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
         info: (
             <>
                 {c('Info').t`Link expires: `}
-                <span className="ml0-25 no-wrap">{expirationDate}</span>
+                <span className="ml0-25 text-no-wrap">{expirationDate}</span>
             </>
         ),
         content: (
             <div className="flex flex-column w200p">
-                <LargeButton className="pm-button--primary ml2 mr2" onClick={onDownload}>
+                <LargeButton className="button--primary ml2 mr2" onClick={onDownload}>
                     {c('Action').t`Download`}
                 </LargeButton>
             </div>
@@ -67,15 +67,15 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
 
     return (
         <>
-            <h3 className="bold mt2 mb0-25">{contents.title}</h3>
+            <h3 className="text-bold mt2 mb0-25">{contents.title}</h3>
             <p className="m0">{contents.info}</p>
             <div
                 style={{ height: '7em' }}
-                className="flex flex-column flex-nowrap flex-items-center flex-justify-center mt1 mb1 w100"
+                className="flex flex-column flex-nowrap flex-align-items-center flex-justify-center mt1 mb1 w100"
             >
                 {contents.content}
             </div>
-            <div style={{ maxHeight: '6em' }} title={name} className="bold mb0-5 scroll-if-needed w100">
+            <div style={{ maxHeight: '6em' }} title={name} className="text-bold mb0-5 scroll-if-needed w100">
                 {name}
             </div>
             <SizeCell size={size} />

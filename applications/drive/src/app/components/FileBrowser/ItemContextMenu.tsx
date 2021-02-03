@@ -165,7 +165,7 @@ const ItemContextMenu = ({
             <DropdownMenuButton
                 key={button.name}
                 onContextMenu={(e) => e.stopPropagation()}
-                className="flex flex-nowrap alignleft"
+                className="flex flex-nowrap text-left"
                 onClick={(e) => {
                     e.stopPropagation();
                     button.action();

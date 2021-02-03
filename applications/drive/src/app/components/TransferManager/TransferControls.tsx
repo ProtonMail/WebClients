@@ -121,13 +121,13 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
     const isRestartAvailable = isFailed;
 
     return (
-        <div className="pd-transfers-listItem-controls flex flex-nowrap flex-justify-end">
+        <div className="transfers-manager-list-item-controls flex flex-nowrap flex-justify-end">
             {isPauseResumeAvailable && (
                 <button
                     type="button"
                     onClick={togglePause}
                     disabled={pauseInProgress}
-                    className="pd-transfers-listItem-controls-button pm-button pm-button--for-icon flex flex-item-noshrink"
+                    className="transfers-manager-list-item-controls-button button button--for-icon flex flex-item-noshrink"
                     title={isTransferPaused(transfer) ? resumeText : pauseText}
                 >
                     <Icon size={12} name={isTransferPaused(transfer) ? 'resume' : 'pause'} />
@@ -137,7 +137,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 <button
                     type="button"
                     onClick={restartTransfer}
-                    className="pd-transfers-listItem-controls-button pm-button pm-button--for-icon flex flex-item-noshrink"
+                    className="transfers-manager-list-item-controls-button button button--for-icon flex flex-item-noshrink"
                     title={restartText}
                 >
                     <Icon size={12} name="repeat" />
@@ -147,7 +147,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 type="button"
                 disabled={isFinalizing}
                 onClick={handleCancelClick}
-                className="pd-transfers-listItem-controls-button pm-button pm-button--for-icon flex flex-item-noshrink"
+                className="transfers-manager-list-item-controls-button button button--for-icon flex flex-item-noshrink"
                 title={isFinished ? removeText : cancelText}
             >
                 <Icon size={12} name={isFinished ? 'swipe' : 'off'} />

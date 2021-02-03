@@ -147,7 +147,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
         ),
         footer: (
             <FooterModal>
-                <div className="flex flex-spacebetween w100 flex-nowrap">
+                <div className="flex flex-justify-space-between w100 flex-nowrap">
                     <ResetButton className="w8e" disabled={loading} autoFocus>
                         {c('Action').t`Cancel`}
                     </ResetButton>
@@ -162,7 +162,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
     if (initializing) {
         modalContents = {
             content: (
-                <div className="flex flex-column flex-items-center pt2 pb3">
+                <div className="flex flex-column flex-align-items-center pt2 pb3">
                     <Loader size="medium" className="mt1 mb1" />
                     <TextLoader className="m0">{c('Info').t`Loading`}</TextLoader>
                 </div>

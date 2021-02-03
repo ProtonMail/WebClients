@@ -5,8 +5,8 @@ interface Props {
 }
 
 const NameCell = ({ name }: Props) => (
-    <div key="name" title={name} className="ellipsis">
-        <span className="pre">{name}</span>
+    <div key="name" title={name} className="text-ellipsis">
+        <span className="text-pre">{name}</span>
     </div>
 );
 

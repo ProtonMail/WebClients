@@ -78,7 +78,7 @@ const ItemRow = ({
                 ref={contextMenu.anchorRef}
                 aria-disabled={item.Disabled}
                 className={classnames([
-                    'pd-fb-list-item no-outline flex',
+                    'file-browser-list-item no-outline flex',
                     (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-global-highlight',
                     (dragging || item.Disabled) && 'opacity-50',
@@ -86,17 +86,17 @@ const ItemRow = ({
                 {...itemHandlers}
             >
                 <TableCell className="m0 flex">
-                    <div role="presentation" className="flex flex-items-center" {...checkboxWrapperHandlers}>
+                    <div role="presentation" className="flex flex-align-items-center" {...checkboxWrapperHandlers}>
                         <Checkbox
                             disabled={item.Disabled}
-                            className="increase-surface-click"
+                            className="increase-click-surface"
                             checked={isSelected}
                             {...checkboxHandlers}
                         />
                     </div>
                 </TableCell>
 
-                <TableCell className="m0 flex flex-items-center flex-nowrap flex-item-fluid">
+                <TableCell className="m0 flex flex-align-items-center flex-nowrap flex-item-fluid">
                     <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
                     <NameCell name={item.Name} />
                     {item.SharedUrl && <SharedURLIcon expired={item.UrlsExpired} />}

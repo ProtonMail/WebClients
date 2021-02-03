@@ -1,15 +1,15 @@
-.pd-fb-list-item td,
-.pd-fb-table th {
+.file-browser-list-item td,
+.file-browser-table th {
     &:first-of-type {
         // Checkbox cell
-        position: relative; // Because of .increase-surface-click
+        position: relative; // Because of .increase-click-surface
         padding-left: 1em;
         padding-right: 1em;
         width: calc(1.6rem + 2em);
     }
 }
 
-.pd-fb-grid-item {
+.file-browser-grid-item {
     background-color: var(--bgcolor-input, $pm-input-background);
 
     &:hover,
@@ -18,10 +18,10 @@
     }
 }
 
-.isDarkMode .pd-fb-grid-item {
+.isDarkMode .file-browser-grid-item {
     @extend .bg-global-grey;
 }
 
-.pd-fb-grid-item.pd-fb-grid-item--highlight {
+.file-browser-grid-item.file-browser-grid-item--highlight {
     @extend .bg-global-highlight;
 }

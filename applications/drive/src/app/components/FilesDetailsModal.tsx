@@ -20,7 +20,7 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...rest }: Props) => {
             <HeaderModal modalTitleID={modalTitleID} onClose={onClose}>
                 {c('Title').t`Files details`}
             </HeaderModal>
-            <div className="pm-modalContent">
+            <div className="modal-content">
                 <InnerModal>
                     <Row>
                         <Label style={{ cursor: 'default' }}>{c('Title').t`Number of files`}</Label>

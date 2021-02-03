@@ -12,8 +12,8 @@ const DescriptiveTypeCell = ({ mimeType, linkType }: Props) => {
     const type = linkType === LinkType.FILE ? getMimeTypeDescription(mimeType) : c('Label').t`Folder`;
 
     return (
-        <div key="Type" title={type} className="ellipsis">
-            <span className="pre">{type}</span>
+        <div key="Type" title={type} className="text-ellipsis">
+            <span className="text-pre">{type}</span>
         </div>
     );
 };

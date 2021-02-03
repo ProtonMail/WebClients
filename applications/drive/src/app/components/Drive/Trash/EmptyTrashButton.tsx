@@ -47,14 +47,14 @@ const EmptyTrashButton = ({ shareId, floating, className }: Props) => {
             {floating ? (
                 <FloatingButton
                     disabled={disabled}
-                    className="pm-button--error"
+                    className="button--error"
                     onClick={handleEmptyTrashClick}
                     title={c('Action').t`Empty trash`}
                     icon="empty-folder"
                 />
             ) : (
                 <SidebarPrimaryButton
-                    className={classnames(['pm-button--error', className])}
+                    className={classnames(['button--error', className])}
                     disabled={disabled}
                     onClick={handleEmptyTrashClick}
                 >{c('Action').t`Empty trash`}</SidebarPrimaryButton>

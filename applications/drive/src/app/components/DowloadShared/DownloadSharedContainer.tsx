@@ -154,11 +154,11 @@ const DownloadSharedContainer = () => {
                         }}
                     />
                 )}
-                <div className="flex flex-column flex-nowrap flex-item-noshrink flex-items-center scroll-if-needed h100v">
-                    <Bordered className="bg-white-dm color-global-grey-dm flex flex-items-center flex-item-noshrink w100 mw40e mbauto mtauto">
-                        <div className="flex flex-column flex-nowrap flex-items-center aligncenter p2 w100">
+                <div className="flex flex-column flex-nowrap flex-item-noshrink flex-align-items-center scroll-if-needed h100v">
+                    <Bordered className="bg-white-dm color-global-grey-dm flex flex-align-items-center flex-item-noshrink w100 max-w40e mbauto mtauto">
+                        <div className="flex flex-column flex-nowrap flex-align-items-center text-center p2 w100">
                             <h3>
-                                <span className="flex flex-nowrap flex-items-center">
+                                <span className="flex flex-nowrap flex-align-items-center">
                                     <Icon name="protondrive" className="mr0-25" size={20} />
                                     <b>{appName}</b>
                                 </span>
@@ -166,12 +166,12 @@ const DownloadSharedContainer = () => {
                             {content}
                         </div>
                     </Bordered>
-                    <div className="color-global-light flex flex-item-noshrink flex-items-end onmobile-pt1">
-                        <div className="aligncenter opacity-50 mb2">
+                    <div className="color-global-light flex flex-item-noshrink flex-align-items-end on-mobile-pt1">
+                        <div className="text-center opacity-50 mb2">
                             <Icon name="lock-check" size={20} />
-                            <div className="small m0">{c('Label').jt`End-to-end Encryption by Proton`}</div>
+                            <div className="text-sm m0">{c('Label').jt`End-to-End Encryption by Proton`}</div>
                             <a
-                                className="small signup-footer-link"
+                                className="text-sm signup-footer-link"
                                 href={`mailto:${REPORT_ABUSE_EMAIL}`}
                                 title={c('Label').t`Report abuse`}
                             >

@@ -46,7 +46,7 @@ const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
             <HeaderModal modalTitleID={modalTitleID} onClose={onClose}>
                 {title}
             </HeaderModal>
-            <div className="pm-modalContent">
+            <div className="modal-content">
                 <InnerModal>
                     <DetailsRow label={c('Title').t`Name`}>
                         <NameCell name={item.Name} />

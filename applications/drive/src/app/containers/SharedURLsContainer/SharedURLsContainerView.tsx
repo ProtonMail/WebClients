@@ -13,8 +13,8 @@ const SharedURLsContainerView = ({ shareId }: Props) => {
     return (
         <SharedLinksContentProvider shareId={shareId}>
             <SharedLinksToolbar shareId={shareId} />
-            <PrivateMainArea hasToolbar className="flex-noMinChildren flex-column flex-nowrap">
-                <div className="p1 strong border-bottom">{c('Info').t`My Links`}</div>
+            <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
+                <div className="p1 text-strong border-bottom">{c('Info').t`My Links`}</div>
                 <SharedLinks shareId={shareId} />
             </PrivateMainArea>
         </SharedLinksContentProvider>

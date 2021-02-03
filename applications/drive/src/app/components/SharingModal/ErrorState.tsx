@@ -13,7 +13,7 @@ function ErrorState({ modalTitleID, onClose }: Props) {
             <HeaderModal modalTitleID={modalTitleID} onClose={onClose}>
                 {c('Title').t`Manage secure link`}
             </HeaderModal>
-            <div className="pm-modalContent">
+            <div className="modal-content">
                 <InnerModal>
                     <Alert type="error">{c('Info').t`Failed to generate a secure link. Try again later.`}</Alert>
                 </InnerModal>

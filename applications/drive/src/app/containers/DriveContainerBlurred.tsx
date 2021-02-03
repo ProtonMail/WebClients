@@ -25,7 +25,7 @@ const DriveContainerBlurred = () => {
 
     const logo = <MainLogo to="/" />;
     const dummyUploadButton = (
-        <SidebarPrimaryButton className="nomobile">{c('Action').t`New upload`}</SidebarPrimaryButton>
+        <SidebarPrimaryButton className="no-mobile">{c('Action').t`New upload`}</SidebarPrimaryButton>
     );
     const dummyFolderTitle = c('Title').t`My files`;
 
@@ -51,8 +51,8 @@ const DriveContainerBlurred = () => {
         <>
             <ModalsChildren />
             <PrivateAppContainer isBlurred header={header} sidebar={sidebar}>
-                <PrivateMainArea hasToolbar className="flex-noMinChildren flex-column flex-nowrap">
-                    <div className="mw100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
+                <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
+                    <div className="max-w100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
                         <CollapsingBreadcrumbs
                             breadcrumbs={[
                                 {

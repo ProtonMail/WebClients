@@ -91,7 +91,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
                 key={item.name}
                 hidden={item.hidden}
                 onContextMenu={(e) => e.stopPropagation()}
-                className="flex flex-nowrap alignleft"
+                className="flex flex-nowrap text-left"
                 onClick={(e) => {
                     e.stopPropagation();
                     item.action();

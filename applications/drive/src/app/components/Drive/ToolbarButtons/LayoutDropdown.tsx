@@ -35,14 +35,14 @@ const LayoutDropdown = () => {
             <Dropdown id={id} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom">
                 <DropdownMenu>
                     <DropdownMenuButton
-                        className="flex flex-nowrap alignleft"
+                        className="flex flex-nowrap text-left"
                         onClick={() => changeLayout(LayoutSetting.List)}
                     >
                         <Icon className="mt0-25 mr0-5" name="layout-rows" />
                         {c('Action').t`List layout`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="flex flex-nowrap alignleft"
+                        className="flex flex-nowrap text-left"
                         onClick={() => changeLayout(LayoutSetting.Grid)}
                     >
                         <Icon className="mt0-25 mr0-5" name="layout-columns" />

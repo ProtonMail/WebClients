@@ -1,4 +1,4 @@
-.pd-folder-tree {
+.folder-tree {
     @extend .bordered-container;
     @extend .scroll-if-needed;
 
@@ -11,7 +11,7 @@
         max-width: initial;
     }
 
-    &-listItem {
+    &-list-item {
         td {
             padding-top: 0;
             padding-bottom: 0;
@@ -21,8 +21,8 @@
             padding: .85em;
 
             &-button {
-                @extend .pm-button;
-                @extend .pm-button--for-icon;
+                @extend .button;
+                @extend .button--for-icon;
 
                 display: flex;
                 padding: 0;
@@ -30,11 +30,11 @@
         }
     }
 
-    &-listItem-name {
+    &-list-item-name {
         min-width: 10em;
     }
 
-    &-listItem-selected {
+    &-list-item-selected {
         justify-content: center;
         min-width: 3em;
 

@@ -13,14 +13,14 @@ const EnterPasswordInfo = ({ submitPassword }: Props) => {
 
     return (
         <>
-            <h3 className="bold mt1 mb2">{c('Title').t`Enter file password to download`}</h3>
+            <h3 className="text-bold mt1 mb2">{c('Title').t`Enter file password to download`}</h3>
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
                     withLoading(submitPassword(password)).catch(console.error);
                 }}
             >
-                <div className="alignleft">
+                <div className="text-left">
                     <Label htmlFor="password">{c('Label').t`Password`}</Label>
                 </div>
 
@@ -35,7 +35,7 @@ const EnterPasswordInfo = ({ submitPassword }: Props) => {
                     onChange={({ target: { value } }) => setPassword(value)}
                 />
                 <PrimaryButton
-                    className="pm-button--large center mt2 w150p"
+                    className="button--large center mt2 w150p"
                     disabled={!password}
                     loading={loading}
                     type="submit"

@@ -63,8 +63,8 @@ const FolderTree = ({
     const rows = generateRows(items);
 
     return (
-        <div className="pd-folder-tree">
-            <table className="pd-folder-tree-table pm-simple-table pm-simple-table--isHoverable ">
+        <div className="folder-tree">
+            <table className="folder-tree-table simple-table simple-table--is-hoverable ">
                 <tbody>{loading ? <TableRowBusy /> : rows}</tbody>
             </table>
         </div>

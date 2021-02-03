@@ -29,8 +29,8 @@ const LocationCell = ({ shareId, parentLinkId }: Props) => {
     }, [shareId, parentLinkId]);
 
     return (
-        <div key="location" title={location} className="ellipsis">
-            <span className="pre">{location}</span>
+        <div key="location" title={location} className="text-ellipsis">
+            <span className="text-pre">{location}</span>
         </div>
     );
 };

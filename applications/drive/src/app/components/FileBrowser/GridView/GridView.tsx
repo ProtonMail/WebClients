@@ -138,7 +138,7 @@ function GridView({
         <div
             ref={containerRef}
             role="presentation"
-            className="flex-noMinChildren flex-item-fluid flex-column no-scroll"
+            className="flex-no-min-children flex-item-fluid flex-column no-scroll"
             onContextMenu={handleContextMenu}
             onClick={clearSelections}
         >

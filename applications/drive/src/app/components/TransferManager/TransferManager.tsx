@@ -152,7 +152,7 @@ function TransferManager() {
     const maxVisibleTransfers = isNarrow ? MAX_VISIBLE_TRANSFERS_MOBILE : MAX_VISIBLE_TRANSFERS;
 
     return (
-        <div className={classnames(['pd-transfers', minimized && 'pd-transfers--minimized'])}>
+        <div className={classnames(['transfers-manager', minimized && 'transfers-manager--minimized'])}>
             <Header
                 downloads={downloads}
                 uploads={uploads}
@@ -162,7 +162,7 @@ function TransferManager() {
                 onClose={handleCloseClick}
             />
 
-            <div className="pd-transfers-list" ref={containerRef}>
+            <div className="transfers-manager-list" ref={containerRef}>
                 {rect && (
                     <FixedSizeList
                         className="no-outline"

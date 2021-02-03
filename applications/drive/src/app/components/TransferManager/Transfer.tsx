@@ -42,14 +42,14 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
     return (
         <div
             className={classnames([
-                'pd-transfers-listItem pb1 pt1 pl1 pr1',
-                isCanceled && 'pd-transfers-listItem--canceled',
+                'transfers-manager-list-item pb1 pt1 pl1 pr1',
+                isCanceled && 'transfers-manager-list-item--canceled',
                 className,
             ])}
             {...rest}
         >
-            <div className="pd-transfers-listItem-name flex flex-nowrap flex-items-center ellipsis">
-                <span className="pd-transfers-listItem-icon flex flex-item-noshrink">
+            <div className="transfers-manager-list-item-name flex flex-nowrap flex-align-items-center text-ellipsis">
+                <span className="transfers-manager-list-item-icon flex flex-item-noshrink">
                     {isInitializing ? (
                         <Loader className="mr0-5" size="small" />
                     ) : (
@@ -57,19 +57,19 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
                     )}
                 </span>
                 <span
-                    className={classnames(['ellipsis', isNameUnresolved && 'opacity-50'])}
+                    className={classnames(['text-ellipsis', isNameUnresolved && 'opacity-50'])}
                     title={transfer.meta.filename}
                 >
-                    <span className="pre">{transfer.meta.filename}</span>
+                    <span className="text-pre">{transfer.meta.filename}</span>
                 </span>
             </div>
 
-            <div className="pd-transfers-listItem-size alignright ellipsis" title={`${percentageDone}%`}>
-                {(isProgress || isPaused) && <span className="notablet nomobile">{humanSize(progress)} / </span>}
+            <div className="transfers-manager-list-item-size text-right text-ellipsis" title={`${percentageDone}%`}>
+                {(isProgress || isPaused) && <span className="no-tablet no-mobile">{humanSize(progress)} / </span>}
                 {fileSize !== undefined && humanSize(fileSize)}
             </div>
 
-            <div className="pd-transfers-listItem-status flex flex-nowrap flex-items-center flex-justify-end ellipsis">
+            <div className="transfers-manager-list-item-status flex flex-nowrap flex-align-items-center flex-justify-end text-ellipsis">
                 <TransferStateIndicator transfer={transfer} type={type} speed={speed} />
             </div>
 

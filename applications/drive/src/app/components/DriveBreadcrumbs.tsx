@@ -44,7 +44,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                 collapsedText: (
                     <>
                         <Icon name="folder" className="mt0-25 mr0-5 mr0-25 flex-item-noshrink color-global-attention" />
-                        <span title={text} className="ellipsis">
+                        <span title={text} className="text-ellipsis">
                             {text}
                         </span>
                     </>

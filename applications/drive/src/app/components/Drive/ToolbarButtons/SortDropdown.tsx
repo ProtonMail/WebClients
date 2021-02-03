@@ -83,7 +83,7 @@ const SortDropdown = () => {
     const dropdownMenuButtons = menuItems.map((item) => (
         <DropdownMenuButton
             key={item.name}
-            className="flex flex-nowrap alignleft"
+            className="flex flex-nowrap text-left"
             onClick={() => setSorting(item.sortField, item.sortOrder)}
         >
             <Icon className="mt0-25 mr0-5" name={item.icon} />
@@ -110,7 +110,7 @@ const SortDropdown = () => {
                 anchorRef={anchorRef}
                 onClose={close}
                 originalPlacement="bottom"
-                className="dropDown--noMaxSize"
+                className="dropdown--no-max-size"
             >
                 <DropdownMenu>{dropdownMenuButtons}</DropdownMenu>
             </Dropdown>

@@ -1,11 +1,11 @@
-.pm-field.pm-field--accented,
+.field.field--accented,
 .accented {
     @extend .color-primary;
-    @extend .strong;
+    @extend .text-strong;
 }
 
 .isDarkMode {
-    .pm-field.pm-field--accented,
+    .field.field--accented,
     .accented {
         @extend .color-white;
     }
