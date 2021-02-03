@@ -570,7 +570,7 @@ describe('getHasConsistentRrule', () => {
         expect(getHasConsistentRrule(vevent)).toEqual(true);
     });
 
-    it('should filter out events that generate no occurrence ', () => {
+    it('should filter out events that generate no occurrence', () => {
         const vevent = {
             dtstart: {
                 value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
@@ -604,6 +604,31 @@ describe('getHasConsistentRrule', () => {
                     },
                 },
             ],
+        };
+        expect(getHasConsistentRrule(vevent)).toEqual(false);
+    });
+
+    it('should filter out events with an UNTIL earlier than DTSTART', () => {
+        const vevent = {
+            dtstart: {
+                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+                parameters: {
+                    tzid: 'Europe/Paris',
+                },
+            },
+            dtend: {
+                value: { year: 2015, month: 8, day: 25, hours: 18, minutes: 35, seconds: 0, isUTC: false },
+                parameters: {
+                    tzid: 'Europe/Paris',
+                },
+            },
+            rrule: {
+                value: {
+                    freq: 'DAILY',
+                    count: 2,
+                    until: { year: 2015, month: 8, day: 25, hours: 16, minutes: 0, seconds: 0, isUTC: true },
+                },
+            },
         };
         expect(getHasConsistentRrule(vevent)).toEqual(false);
     });
