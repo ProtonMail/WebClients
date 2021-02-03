@@ -195,7 +195,7 @@
 
 ## Fixes
 
--   In some cases, after opening en email that contains a meeting invitation, the widget will continue to appear when opening other emails
+-   In some cases, after opening en email that contains an invitation, the widget will continue to appear when opening other emails
 -   When receiving a plain text message with the < character in the body of the message, the end of the message would get stripped out
 
 # [4.0.0-beta.25] - 2020-10-14

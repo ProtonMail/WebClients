@@ -229,40 +229,40 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
 
         if (partstat === NEEDS_ACTION) {
             if (role === REQUIRED) {
-                return c('Calendar invite info').t`Your attendance to this meeting is required.`;
+                return c('Calendar invite info').t`Your attendance at this event is required.`;
             }
             if (role === OPTIONAL) {
-                return c('Calendar invite info').t`Your attendance to this meeting is optional.`;
+                return c('Calendar invite info').t`Your attendance at this event is optional.`;
             }
         }
         if (partstat === ACCEPTED) {
             if (role === REQUIRED) {
                 return c('Calendar invite info')
-                    .t`Your attendance to this meeting is required. You already accepted this meeting invite.`;
+                    .t`Your attendance at this event is required. You already accepted this invitation.`;
             }
             if (role === OPTIONAL) {
                 return c('Calendar invite info')
-                    .t`Your attendance to this meeting is optional. You already accepted this meeting invite.`;
+                    .t`Your attendance at this event is optional. You already accepted this invitation.`;
             }
         }
         if (partstat === TENTATIVE) {
             if (role === REQUIRED) {
                 return c('Calendar invite info')
-                    .t`Your attendance to this meeting is required. You already tentatively accepted this meeting invite.`;
+                    .t`Your attendance at this event is required. You already tentatively accepted this invitation.`;
             }
             if (role === OPTIONAL) {
                 return c('Calendar invite info')
-                    .t`Your attendance to this meeting is optional. You already tentatively accepted this meeting invite.`;
+                    .t`Your attendance at this event is optional. You already tentatively accepted this invitation.`;
             }
         }
         if (partstat === DECLINED) {
             if (role === REQUIRED) {
                 return c('Calendar invite info')
-                    .t`Your attendance to this meeting is required. You already declined this meeting invite.`;
+                    .t`Your attendance at this event is required. You already declined this invitation.`;
             }
             if (role === OPTIONAL) {
                 return c('Calendar invite info')
-                    .t`Your attendance to this meeting is optional. You already declined this meeting invite.`;
+                    .t`Your attendance at this event is optional. You already declined this invitation.`;
             }
         }
     }
