@@ -18,5 +18,13 @@
 
 	table {
 		margin-bottom: 0;
-	}
+    }
+
+    blockquote {
+        &::after,
+        &::before {
+            content: none;
+        }
+
+    }
 }
