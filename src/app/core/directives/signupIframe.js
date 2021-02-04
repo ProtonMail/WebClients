@@ -2,6 +2,7 @@ import _ from 'lodash';
 import CONFIG from '../../config';
 import { uniqID } from '../../../helpers/string';
 import { isIE11, isEdge, getBrowser, getDevice, getOS } from '../../../helpers/browser';
+import { formatLocale } from '../../../helpers/momentHelper';
 
 const BASE_TIMEOUT = 15; // in seconds
 
@@ -226,7 +227,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
         restrict: 'E',
         templateUrl: require('../../../templates/core/signupIframe.tpl.html'),
         link(scope, el, { mode }) {
-            const { dispatcher } = dispatchers(['signup']);
+            const { dispatcher } = dispatchers(['bugReport']);
             const wizard = iframeVerifWizard('signupUserForm');
             let loaded = false;
             let attempts = 0;
@@ -237,6 +238,14 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             let assets;
             const errors = [];
             const steps = [];
+
+            const addError = (text, extra) => {
+                errors.push({ text: `${new Date().toISOString()} ${text}`, extra });
+            };
+
+            const addStep = (text, extra) => {
+                steps.push({ text: `${new Date().toISOString()} ${text}`, extra });
+            };
 
             const handleLoadError = () => {
                 el[0].classList.add('signupIframe-loaded');
@@ -271,27 +280,30 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 };
             };
 
-            const log = async () => {
+            const log = async (fatal = false) => {
                 if (!errors.length) {
                     return;
                 }
                 const info = await getRequestInfo();
-                const data = {
+                const extra = {
                     info,
                     steps,
                     errors,
                     browser: getBrowser(),
                     device: getDevice(),
-                    os: getOS()
+                    os: getOS(),
+                    locale: formatLocale(),
+                    time: new Date().toString()
                 };
-                $injector.get('bugReportApi').message('Failed to load signupiframe', { extra: data });
+                const message = fatal ? 'Failed to load signupiframe fatally' : 'Failed to load signupiframe partially';
+                $injector.get('bugReportApi').message(message, { extra });
             };
 
             const handleRetry = () => {
                 if (loaded) {
                     return;
                 }
-                steps.push(`retry ${attempts}`);
+                addStep(`retry ${attempts}`);
                 if (++attempts <= 2) {
                     clearTimeout(timeoutID);
                     const jitter = _.random(0, 5);
@@ -303,12 +315,12 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 }
 
                 handleLoadError();
-                log();
+                log(true);
             };
 
             // Wait x seconds to check if the iframe is properly loaded
             timeoutID = setTimeout(() => {
-                errors.push(`${name} ${iframe.src} timed out after ${BASE_TIMEOUT}s`);
+                addError(`${name} ${iframe.src} timed out after ${BASE_TIMEOUT}s`);
                 handleRetry();
             }, BASE_TIMEOUT * 1000);
 
@@ -316,9 +328,22 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
              * Fire in the hole, iframe is loaded, give it the form config.
              */
             const onLoad = () => {
-                steps.push('iframe onload');
+                if (!iframe.contentWindow) {
+                    clearTimeout(timeoutID);
+                    handleRetry();
+                    addError('Missing contentWindow');
+                    return;
+                }
+
+                addStep('iframe onload');
                 assets = createIframeAssets(name);
-                dispatcher.signup('iframe.loaded');
+
+                clearTimeout(timeoutID);
+                timeoutID = setTimeout(() => {
+                    addError(`${name} ${iframe.src} no response after ${BASE_TIMEOUT}s`);
+                    handleRetry();
+                }, BASE_TIMEOUT * 1000);
+
                 iframe.contentWindow.postMessage(
                     {
                         type: 'init.iframe',
@@ -345,16 +370,13 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             let retryID;
 
             wizard.onError((info) => {
-                errors.push({
-                    message: 'onerror',
-                    ...info
-                });
+                addError('onerror', info);
             });
 
             wizard.onLoad(name, (isError, { name, file } = {}) => {
                 clearTimeout(timeoutID);
                 if (isError) {
-                    errors.push(`${name} file onerror for ${file}`);
+                    addError(`${name} file onerror for ${file}`);
                     // Since this is more or less instant, delay it slightly
                     retryID = setTimeout(() => {
                         handleRetry();
@@ -367,17 +389,25 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 }
                 loaded = true;
                 el[0].classList.add('signupIframe-loaded');
-                steps.push('iframe loaded');
+                addStep('iframe loaded');
                 log();
             });
 
             iframe.addEventListener('load', onLoad, true);
             el[0].querySelector('.signupIframe-iframe').appendChild(iframe);
+            addStep('added iframe');
+
+            const helpButton = el[0].querySelector('[data-action="help"]');
+            const onClick = () => {
+                dispatcher.bugReport('new');
+            };
+            helpButton.addEventListener('click', onClick);
 
             scope.$on('$destroy', () => {
                 clearTimeout(timeoutID);
                 clearTimeout(retryID);
                 iframe.removeEventListener('load', onLoad, true);
+                helpButton.removeEventListener('click', onClick);
             });
         }
     };
