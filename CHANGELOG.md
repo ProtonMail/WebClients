@@ -1,3 +1,9 @@
+# [3.16.57] - 2021-02-04
+
+## Fixes
+
+-   Various UI/UX improvements Fixes
+
 # [3.16.56] - 2021-02-03
 
 ## Fixes
