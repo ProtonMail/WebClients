@@ -267,12 +267,21 @@ const SubscriptionCustomization = ({
             <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All Professional features`} />,
         ],
         [PLANS.VISIONARY]: [
-            <SubscriptionFeatureRow key="user" icon="organization-users" feature={c('Feature').t`6 users`} />,
-            <SubscriptionFeatureRow key="storage" icon="user-storage" feature={c('Feature').t`20 GB storage`} />,
-            <SubscriptionFeatureRow key="address" icon="email-address" feature={c('Feature').t`50 email addresses`} />,
-            <SubscriptionFeatureRow key="domain" icon="domains" feature={c('Feature').t`10 custom domains`} />,
+            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All ProtonVPN Plus features`} />,
             <SubscriptionFeatureRow key="vpn" icon="vpn-connx" feature={c('Feature').t`10 VPN connections`} />,
-            <SubscriptionFeatureRow key="all" icon="add" feature={c('Feature').t`All Visionary features`} />,
+            <SubscriptionFeatureRow
+                key="mail"
+                icon="protonmail"
+                feature={c('Plan Feature').t`ProtonMail Visionary account`}
+                info={c('Info')
+                    .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`}
+                url="https://protonmail.com"
+            />,
+            <SubscriptionFeatureRow
+                key="user"
+                icon="organization-users"
+                feature={c('Feature').t`6 ProtonMail users`}
+            />,
         ],
         [VPNFREE]: [
             <SubscriptionFeatureRow key="connection" icon="vpn-connx" feature={c('Feature').t`1 VPN connection`} />,
@@ -280,13 +289,20 @@ const SubscriptionCustomization = ({
                 key="country"
                 icon="servers-country"
                 feature={c('Feature').ngettext(
-                    msgid`${vpnCountries.free.length} country`,
-                    `${vpnCountries.free.length} countries`,
+                    msgid`Servers in ${vpnCountries.free.length} country`,
+                    ` Servers in ${vpnCountries.free.length} countries`,
                     vpnCountries.free.length
                 )}
             />,
-            <SubscriptionFeatureRow key="speed" icon="speed-low" feature={c('Feature').t`Medium speed`} />,
             <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`Unlimited bandwidth`} />,
+            <SubscriptionFeatureRow
+                key="nologs"
+                icon="nologs"
+                info={c('Info')
+                    .t`"ProtonVPN keeps no logs about your internet activity that can compromise your privacy. We don’t store your IP address, physical location, or any other identifiable data."`}
+                feature={c('Feature').t`Strict no-logs policy`}
+                url="https://protonvpn.com/support/no-logs-vpn/"
+            />,
         ],
         [PLANS.VPNBASIC]: [
             <SubscriptionFeatureRow key="connection" icon="vpn-connx" feature={c('Feature').t`2 VPN connections`} />,
@@ -294,13 +310,34 @@ const SubscriptionCustomization = ({
                 key="country"
                 icon="servers-country"
                 feature={c('Feature').ngettext(
-                    msgid`${vpnCountries.basic.length} country`,
-                    `${vpnCountries.basic.length} countries`,
+                    msgid`Servers in ${vpnCountries.basic.length} country`,
+                    `Servers in ${vpnCountries.basic.length} countries`,
                     vpnCountries.basic.length
                 )}
             />,
-            <SubscriptionFeatureRow key="speed" icon="speed-medium" feature={c('Feature').t`High speed`} />,
-            <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`P2P/BitTorrent support`} />,
+            <SubscriptionFeatureRow
+                key="netshield"
+                icon="netshield"
+                feature={c('Feature').t`Adblocker (NetShield)`}
+                url="https://protonvpn.com/support/netshield/"
+                info={c('Info')
+                    .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
+            />,
+            <SubscriptionFeatureRow
+                key="p2p"
+                icon="p2p"
+                url="https://protonvpn.com/support/p2p-vpn-redirection/"
+                info={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                feature={c('Feature').t`P2P/BitTorrent support`}
+            />,
+            <SubscriptionFeatureRow
+                key="nologs"
+                icon="nologs"
+                info={c('Info')
+                    .t`"ProtonVPN keeps no logs about your internet activity that can compromise your privacy. We don’t store your IP address, physical location, or any other identifiable data."`}
+                feature={c('Feature').t`Strict no-logs policy`}
+                url="https://protonvpn.com/support/no-logs-vpn/"
+            />,
         ],
         [PLANS.VPNPLUS]: [
             <SubscriptionFeatureRow
@@ -313,20 +350,40 @@ const SubscriptionCustomization = ({
                 )}
             />,
             <SubscriptionFeatureRow
-                key="country"
+                key="exclusive"
                 icon="servers-country"
-                feature={c('Feature').ngettext(
-                    msgid`${vpnCountries.all.length} country`,
-                    `${vpnCountries.all.length} countries`,
-                    vpnCountries.all.length
-                )}
+                feature={c('Feature').t`Plus-exclusive servers`}
             />,
-            <SubscriptionFeatureRow key="speed" icon="speed-fast" feature={c('Feature').t`Highest speed`} />,
-            <SubscriptionFeatureRow key="bandwidth" icon="p2p" feature={c('Feature').t`P2P/BitTorrent support`} />,
+            <SubscriptionFeatureRow
+                key="netshield"
+                icon="netshield"
+                feature={c('Feature').t`Adblocker (NetShield)`}
+                url="https://protonvpn.com/support/netshield/"
+                info={c('Info')
+                    .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
+            />,
+            <SubscriptionFeatureRow
+                key="secure"
+                url="https://protonvpn.com/support/secure-core-vpn/"
+                info={c('Info')
+                    .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
+                icon="protonvpn"
+                feature={c('Feature').t`Secure Core`}
+            />,
+            <SubscriptionFeatureRow
+                key="p2p"
+                icon="p2p"
+                url="https://protonvpn.com/support/p2p-vpn-redirection/"
+                info={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                feature={c('Feature').t`P2P/BitTorrent support`}
+            />,
             <SubscriptionFeatureRow
                 key="blocked-content"
                 icon="blocked-content"
-                feature={c('Feature').t`Access blocked content`}
+                feature={c('Feature').t`Access geoblocked content`}
+                info={c('Info')
+                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.`}
+                url="https://protonvpn.com/support/streaming-guide/"
             />,
         ],
     };
