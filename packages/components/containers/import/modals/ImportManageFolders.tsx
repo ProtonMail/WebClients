@@ -56,7 +56,8 @@ const ImportManageFolders = ({ modalModel, address, payload, toggleEditing, onCh
                 const level = getLevel(f.Source, f.Separator);
                 return (
                     currentLevel + 1 === level &&
-                    f.Source.split(f.Separator).slice(0, -1).join(f.Separator) === folder.Source
+                    (f.Source.split(f.Separator).slice(0, -1).join(f.Separator) === folder.Source ||
+                        f.Source.startsWith(folder.Source))
                 );
             })
             .map((f) => f.Source);
