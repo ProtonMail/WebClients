@@ -1,4 +1,4 @@
-[class*='icon-'] {
+%icon {
 	display: inline-block;
 	vertical-align: middle;
 	fill: currentColor;
@@ -6,6 +6,7 @@
 
 @each $width in (6, 8, 10, 11, 12, 14, 16, 18, 20, 24, 28, 40, 42, 60, 100) {
 	.icon-#{$width}p {
+		@extend %icon; // 🤔
 		width: #{$width}px;
 		height: #{$width}px;
 	}
@@ -13,6 +14,7 @@
 
 @each $width in (50) {
 	.icon-#{$width} {
+		@extend %icon; // 🤔
 		width: percentage($width / 100);
 		height: percentage($width / 100);
 	}
