@@ -54,7 +54,7 @@ const MailHeader = ({
     // Update the search input field when the keyword in the url is changed
     useEffect(() => updateValue(keyword), [keyword]);
 
-    const searchDropdown = <AdvancedSearchDropdown labelID={labelID} keyword={value} isNarrow={breakpoints.isNarrow} />;
+    const searchDropdown = <AdvancedSearchDropdown keyword={value} isNarrow={breakpoints.isNarrow} />;
 
     const searchBox = (
         <Searchbox

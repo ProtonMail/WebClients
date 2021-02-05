@@ -91,12 +91,11 @@ const folderReducer = (acc: LabelInfo[], folder: FolderWithSubFolders, level = 0
 };
 
 interface Props {
-    labelID: string;
     keyword?: string;
     isNarrow: boolean;
 }
 
-const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', isNarrow }: Props) => {
+const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) => {
     const history = useHistory();
     const [uid] = useState(generateUID('advanced-search-dropdown'));
     const [mailSettings, loadingMailSettings] = useMailSettings();
@@ -152,9 +151,8 @@ const AdvancedSearchDropdown = ({ labelID, keyword: fullInput = '', isNarrow }: 
                 );
 
                 return {
-                    ...DEFAULT_MODEL,
+                    ...DEFAULT_MODEL, // labelID re-initialized to ALL_MAIL
                     keyword: keyword || '',
-                    labelID,
                     address,
                     attachments,
                     wildcard,
