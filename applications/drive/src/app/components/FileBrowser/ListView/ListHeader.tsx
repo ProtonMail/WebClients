@@ -98,7 +98,7 @@ const ListHeader = ({
                     <TableHeaderCell className="w20">{c('TableHeader').t`Created`}</TableHeaderCell>
                 )}
                 {columns.includes('share_expires') && (
-                    <TableHeaderCell className="w20">{c('TableHeader').t`Expires`}</TableHeaderCell>
+                    <TableHeaderCell className="w30">{c('TableHeader').t`Expires`}</TableHeaderCell>
                 )}
             </TableRowSticky>
         </thead>
