@@ -85,8 +85,6 @@ function SignupController(
         confirmationType: ''
     };
 
-    authentication.logout(false, authentication.isLoggedIn());
-
     const setStep = (step) => {
         $scope.$applyAsync(() => {
             $scope.step = step;
