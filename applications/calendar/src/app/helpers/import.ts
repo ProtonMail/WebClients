@@ -384,20 +384,14 @@ export const getSupportedEvent = ({
             if (rrule) {
                 throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', componentId);
             }
-            const supportedRecurrenceId = getSupportedDateOrDateTimeProperty({
+            // we will link RECURRENCE-ID with DTSTART later in the import flow, when we know who the parent event is
+            validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
                 property: recurrenceId,
                 component: 'vevent',
                 componentId,
                 hasXWrTimezone,
                 calendarTzid,
                 isRecurring,
-            });
-            validated['recurrence-id'] = getLinkedDateTimeProperty({
-                property: supportedRecurrenceId,
-                component: 'vevent',
-                componentId,
-                isAllDay: isAllDayStart,
-                tzid: startTzid,
             });
         }
 
