@@ -10,7 +10,7 @@ import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
-import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit, pick } from 'proton-shared/lib/helpers/object';
@@ -201,14 +201,14 @@ const InteractiveCalendarView = ({
     const contacts = (useContactEmails()[0] as ContactEmail[]) || [];
     const displayNameEmailMap = useMemo(() => {
         const result = contacts.reduce<SimpleMap<DisplayNameEmail>>((acc, { Email, Name }) => {
-            const normalizedEmail = normalizeEmail(Email);
-            if (!acc[normalizedEmail]) {
-                acc[normalizedEmail] = { displayName: Name, displayEmail: Email };
+            const canonicalEmail = canonizeEmailByGuess(Email);
+            if (!acc[canonicalEmail]) {
+                acc[canonicalEmail] = { displayName: Name, displayEmail: Email };
             }
             return acc;
         }, {});
         addresses.forEach(({ DisplayName, Email }) => {
-            const normalizedEmail = normalizeInternalEmail(Email);
+            const normalizedEmail = canonizeInternalEmail(Email);
             if (!result[normalizedEmail]) {
                 result[normalizedEmail] = { displayName: DisplayName, displayEmail: Email };
             }

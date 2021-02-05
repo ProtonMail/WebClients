@@ -1,16 +1,16 @@
+import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { uniqueBy } from 'proton-shared/lib/helpers/array';
+import {
+    CANONIZE_SCHEME,
+    canonizeEmail,
+    canonizeInternalEmail,
+    validateEmailAddress,
+} from 'proton-shared/lib/helpers/email';
+import { Address, Recipient } from 'proton-shared/lib/interfaces';
+import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
 import React, { memo, useMemo, useRef } from 'react';
 import { AddressesAutocomplete, Alert } from 'react-components';
 import { c, msgid } from 'ttag';
-import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { uniqueBy } from 'proton-shared/lib/helpers/array';
-import { Address, Recipient } from 'proton-shared/lib/interfaces';
-import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
-import {
-    normalizeEmail,
-    normalizeInternalEmail,
-    removeEmailAlias,
-    validateEmailAddress,
-} from 'proton-shared/lib/helpers/email';
 import { useContactEmailsCache } from '../../../containers/calendar/ContactEmailsProvider';
 
 import { AttendeeModel, EventModel } from '../../../interfaces/EventModel';
@@ -56,14 +56,14 @@ const ParticipantsInput = ({
     const { contactEmails, contactGroups, contactEmailsMap } = useContactEmailsCache();
 
     const ownNormalizedEmails = useMemo(() => {
-        return addresses.map(({ Email }) => normalizeInternalEmail(Email));
+        return addresses.map(({ Email }) => canonizeInternalEmail(Email));
     }, [addresses]);
 
     const recipients = value.map((attendee) => {
         return inputToRecipient(attendee.email);
     });
 
-    const recipientsSet = new Set(recipients.map(({ Address }) => normalizeEmail(Address)));
+    const recipientsSet = new Set(recipients.map(({ Address }) => canonizeEmail(Address)));
 
     const handleAddRecipients = (recipients: Recipient[]) => {
         setParticipantError?.(false);
@@ -71,7 +71,7 @@ const ParticipantsInput = ({
             const { Address } = recipient;
             return {
                 recipient,
-                normalizedAddress: normalizeEmail(Address),
+                normalizedAddress: canonizeEmail(Address),
                 valid: validateEmailAddress(Address),
             };
         });
@@ -87,7 +87,7 @@ const ParticipantsInput = ({
             return;
         }
         const attendees = newAttendees.reduce<AttendeeModel[]>((acc, cur) => {
-            if (!ownNormalizedEmails.includes(removeEmailAlias(cur.email, true))) {
+            if (!ownNormalizedEmails.includes(canonizeEmail(cur.email, CANONIZE_SCHEME.PROTON))) {
                 acc.push(cur);
             }
 
@@ -136,7 +136,7 @@ const ParticipantsInput = ({
                     }
                 }}
                 validate={(email) => {
-                    if (ownNormalizedEmails.includes(removeEmailAlias(email, true))) {
+                    if (ownNormalizedEmails.includes(canonizeInternalEmail(email))) {
                         return c('Error').t`Self invitation not allowed`;
                     }
 
