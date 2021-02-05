@@ -15,7 +15,7 @@ function useTrash() {
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
     const cache = useDriveCache();
-    const { getLinkKeys, decryptLink, getShareKeys } = useDrive();
+    const { getLinkMeta } = useDrive();
     const events = useEvents();
 
     const fetchTrash = async (shareId: string, Page: number, PageSize: number) => {
@@ -25,16 +25,12 @@ function useTrash() {
         }>(queryTrashList(shareId, { Page, PageSize }));
 
         const decryptedLinks = await Promise.all(
-            Links.map(async (meta) => {
-                const { privateKey } = meta.ParentLinkID
-                    ? await getLinkKeys(shareId, meta.ParentLinkID, {
-                          fetchLinkMeta: async (id) => Parents[id],
-                          preventRerenders: true,
-                      })
-                    : await getShareKeys(shareId);
-
-                return decryptLink(meta, privateKey);
-            })
+            Links.map((meta) =>
+                getLinkMeta(shareId, meta.LinkID, {
+                    fetchLinkMeta: async (id) => (id === meta.LinkID ? meta : Parents[id]),
+                    preventRerenders: true,
+                })
+            )
         );
 
         cache.set.trashLinkMetas(decryptedLinks, shareId, Links.length < PageSize ? 'complete' : 'incremental');

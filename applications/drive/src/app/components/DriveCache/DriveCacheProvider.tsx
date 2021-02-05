@@ -300,15 +300,11 @@ const useDriveCacheState = () => {
 
         setLinkMeta(metas, shareId, { rerender: false });
 
-        const linkIds = metas.map(({ LinkID }) => LinkID);
-
         // Non primary shares can have shares, but we only show list for primary ones
         if (!shared) {
             throw new Error('Trying to set shared list on a non primary share');
         }
 
-        shared.list = [...shared.list, ...linkIds.filter((id) => !shared.list.includes(id))];
-        shared.unlisted = shared.unlisted.filter((id) => !linkIds.includes(id));
         shared.complete = method === 'complete' || shared.complete;
 
         // TODO: locking for individual lines when stopping sharing

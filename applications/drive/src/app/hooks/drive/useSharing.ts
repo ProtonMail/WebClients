@@ -24,7 +24,7 @@ import { LinkMeta } from '../../interfaces/link';
 
 function useSharing() {
     const { getPrimaryAddressKey } = useDriveCrypto();
-    const { createShare, decryptLink, getLinkKeys, getShareKeys } = useDrive();
+    const { createShare, getLinkMeta } = useDrive();
     const cache = useDriveCache();
     const api = useApi();
     const debouncedRequest = useDebouncedRequest();
@@ -201,16 +201,12 @@ function useSharing() {
         );
 
         const decryptedLinks = await Promise.all(
-            sharedLinks.map(async (meta) => {
-                const { privateKey } = meta.ParentLinkID
-                    ? await getLinkKeys(sharedURLShareId, meta.ParentLinkID, {
-                          fetchLinkMeta: async (id) => Links[id],
-                          preventRerenders: true,
-                      })
-                    : await getShareKeys(sharedURLShareId);
-
-                return decryptLink(meta, privateKey);
-            })
+            sharedLinks.map((meta) =>
+                getLinkMeta(sharedURLShareId, meta.LinkID, {
+                    fetchLinkMeta: async (id) => Links[id],
+                    preventRerenders: true,
+                })
+            )
         );
 
         cache.set.sharedLinkMetas(
