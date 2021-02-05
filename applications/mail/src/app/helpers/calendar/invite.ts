@@ -708,17 +708,13 @@ export const getSupportedEventInvitation = (
                     });
                 }
             }
-            const supportedRecurrenceId = getSupportedDateOrDateTimeProperty({
+            // RECURRENCE-ID cannot be linked with DTSTART of the parent event at this point since we do not have access to it
+            validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
                 property: recurrenceId,
                 hasXWrTimezone,
                 calendarTzid,
                 isRecurring,
                 method: supportedMethod,
-            });
-            validated['recurrence-id'] = getLinkedDateTimeProperty({
-                property: supportedRecurrenceId,
-                isAllDay: isAllDayStart,
-                tzid: startTzid,
             });
         }
 
