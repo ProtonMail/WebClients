@@ -5,8 +5,16 @@ export interface OrganizationKey {
     PublicKey: string;
 }
 
-export interface CachedOrganizationKey {
-    Key: OrganizationKey;
-    privateKey?: OpenPGPKey;
-    error?: Error;
-}
+export type CachedOrganizationKey =
+    | {
+          Key: OrganizationKey;
+          privateKey?: undefined;
+          publicKey?: undefined;
+          error?: Error;
+      }
+    | {
+          Key: OrganizationKey;
+          privateKey: OpenPGPKey;
+          publicKey: OpenPGPKey;
+          error?: undefined;
+      };
