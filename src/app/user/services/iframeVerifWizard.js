@@ -30,7 +30,8 @@ function iframeVerifWizard(dispatchers, User, $q) {
         if (!CACHE[id]) {
             CACHE[id] = {
                 callbacks: [],
-                onLoad: {}
+                onLoad: {},
+                onDone: {}
             };
             // CLEAR ON DESTROY
         }
@@ -155,17 +156,14 @@ function iframeVerifWizard(dispatchers, User, $q) {
 
             updateIframes(list, e.data);
 
-            // Iframe loaded the micro app
-            if (e.data.type === 'app.loaded') {
+            if (e.data.type === 'iframe.loaded') {
                 const action = CACHE[id].onLoad[e.data.data.name];
                 action && action();
             }
 
-            // Iframe failed to load the micro app
-            if (e.data.type === 'app.loaded.error') {
-                const { name, file } = e.data.data || {};
-                const action = CACHE[id].onLoad[name];
-                action && action(true, { name, file });
+            if (e.data.type === 'app.loaded') {
+                const action = CACHE[id].onDone[e.data.data.name];
+                action && action();
             }
 
             if (e.data.type === 'app.onerror') {
@@ -275,13 +273,17 @@ function iframeVerifWizard(dispatchers, User, $q) {
             CACHE[id].onLoad[mode] = cb;
         };
 
+        const onDone = (mode, cb) => {
+            CACHE[id].onDone[mode] = cb;
+        };
+
         const onError = (cb) => {
             CACHE[id].onError = cb;
         };
 
         const triggerSubmit = () => askIframeToSubmit(CACHE[id].callbacks);
 
-        return { register, listen, onLoad, onError, triggerSubmit };
+        return { register, listen, onLoad, onDone, onError, triggerSubmit };
     }
 
     main.getOrigin = getOrigin;

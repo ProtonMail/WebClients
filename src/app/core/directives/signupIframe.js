@@ -1,60 +1,9 @@
 import _ from 'lodash';
 import CONFIG from '../../config';
-import { uniqID } from '../../../helpers/string';
 import { isIE11, isEdge, getBrowser, getDevice, getOS } from '../../../helpers/browser';
 import { formatLocale } from '../../../helpers/momentHelper';
 
 const BASE_TIMEOUT = 15; // in seconds
-
-const get = (url) => {
-    return new Promise((resolve, reject) => {
-        const req = new XMLHttpRequest();
-        req.open('GET', url);
-
-        req.timeout = 15000;
-
-        const getErrorInfo = (e) => {
-            return {
-                status: req.status,
-                statusText: req.statusText,
-                readyState: req.readyState,
-                loaded: e.loaded,
-                type: e.type
-            };
-        };
-
-        req.onload = (e) => {
-            if (req.status === 200) {
-                resolve(req.response);
-                return;
-            }
-
-            const error = Error(req.statusText);
-            error.info = getErrorInfo(e);
-            reject(error);
-        };
-
-        req.ontimeout = (e) => {
-            const error = Error('Request timed out');
-            error.info = getErrorInfo(e);
-            reject(error);
-        };
-
-        req.onabort = (e) => {
-            const error = Error('Request aborted');
-            error.info = getErrorInfo(e);
-            reject(error);
-        };
-
-        req.onerror = (e) => {
-            const error = Error('Network error');
-            error.info = getErrorInfo(e);
-            reject(error);
-        };
-
-        req.send();
-    });
-};
 
 /* @ngInject */
 function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gettextCatalog, $injector) {
@@ -66,7 +15,8 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
     };
 
     const ORIGIN = iframeVerifWizard.getOrigin();
-    const IFRAME = `${ORIGIN.iframe}/abuse.iframe.html`;
+    const IFRAME =
+        isIE11() || isEdge() ? `${ORIGIN.iframe}/abusev2.ie11.iframe.html` : `${ORIGIN.iframe}/abusev2.iframe.html`;
 
     const getConfig = (name, { username = '' } = {}) => {
         const I18N = {
@@ -165,43 +115,9 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
 
     const getChallenge = (mode) => {
         const id = mode === 'top' ? 0 : 1;
-
-        // If you want to run the local version
-        // if (CONFIG.debug) {
-        //     return ['vendors~challenge.js', 'challenge.js?id=$id&token=pR0t0n_secretkey'].map((key, i) => {
-        //         const file = key.replace('$id', i);
-        //         return `http://localhost:3333/dist/${file}`;
-        //     });
-        // }
-        //
-
         const { apiUrl } = CONFIG;
         const url = apiUrl.startsWith('/') ? `${window.location.origin}${apiUrl}` : apiUrl;
-        return [`${url}/challenge/js?Type=${id}`];
-    };
-
-    /**
-     * We create the list of script we want inside the iframe,
-     * we create a unique token for main.js as if we use only main.js,
-     * iframes won't work anymore. It's a weird edge case when you
-     * load content from the same domain :/ Cache ?
-     * @param  {String} name Type of iframe
-     * @return {Object}  { scripts: <Array>, styles: <Array> }
-     */
-    const createIframeAssets = (name) => {
-        const token = uniqID();
-        const challenge = getChallenge(name);
-        const origin = window.location.origin;
-
-        // Compatibility bundle for IE
-        const appFile = !isIE11() && !isEdge() ? 'main' : 'main.ie11';
-        const scripts = [`${origin}/form/${appFile}.js?test=${token}`, ...challenge];
-        const styles = [`${origin}/form/main.css?test=${token}`];
-
-        return {
-            scripts,
-            styles
-        };
+        return `${url}/challenge/js?Type=${id}`;
     };
 
     /**
@@ -235,16 +151,14 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             const name = mode || 'top';
             const iframe = createIframe(name);
             let timeoutID;
-            let assets;
-            const errors = [];
             const steps = [];
 
-            const addError = (text, extra) => {
-                errors.push({ text: `${new Date().toISOString()} ${text}`, extra });
+            const addStep = (text, extra, type = 'step') => {
+                steps.push({ text: `${new Date().toISOString()} ${text}`, extra, type });
             };
 
-            const addStep = (text, extra) => {
-                steps.push({ text: `${new Date().toISOString()} ${text}`, extra });
+            const addError = (text, extra) => {
+                addStep(text, extra, 'error');
             };
 
             const handleLoadError = () => {
@@ -252,43 +166,12 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 el[0].classList.add('signupIframe-error');
             };
 
-            const getAssetsURLs = () => {
-                if (!assets) {
-                    return [iframe.src];
-                }
-                return [iframe.src, ...assets.scripts, ...assets.styles];
-            };
-
-            const getRequestInfo = async () => {
-                if (window.location.origin !== 'https://mail.protonmail.com') {
-                    return {
-                        attempts
-                    };
-                }
-
-                const result = await Promise.all(
-                    getAssetsURLs().map(async (asset) => {
-                        return get(asset)
-                            .then(() => [asset, 'ok'])
-                            .catch((e) => [asset, { message: e.message, info: e.info }]);
-                    })
-                );
-
-                return {
-                    result,
-                    attempts
-                };
-            };
-
             const log = async (fatal = false) => {
-                if (!errors.length) {
+                if (!steps.filter((x) => x.type === 'error').length) {
                     return;
                 }
-                const info = await getRequestInfo();
                 const extra = {
-                    info,
                     steps,
-                    errors,
                     browser: getBrowser(),
                     device: getDevice(),
                     os: getOS(),
@@ -314,6 +197,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                     return;
                 }
 
+                addError(`${name} ${iframe.src} gave up`);
                 handleLoadError();
                 log(true);
             };
@@ -323,39 +207,6 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 addError(`${name} ${iframe.src} timed out after ${BASE_TIMEOUT}s`);
                 handleRetry();
             }, BASE_TIMEOUT * 1000);
-
-            /**
-             * Fire in the hole, iframe is loaded, give it the form config.
-             */
-            const onLoad = () => {
-                if (!iframe.contentWindow) {
-                    clearTimeout(timeoutID);
-                    handleRetry();
-                    addError('Missing contentWindow');
-                    return;
-                }
-
-                addStep('iframe onload');
-                assets = createIframeAssets(name);
-
-                clearTimeout(timeoutID);
-                timeoutID = setTimeout(() => {
-                    addError(`${name} ${iframe.src} no response after ${BASE_TIMEOUT}s`);
-                    handleRetry();
-                }, BASE_TIMEOUT * 1000);
-
-                iframe.contentWindow.postMessage(
-                    {
-                        type: 'init.iframe',
-                        data: {
-                            name,
-                            ...assets,
-                            config: getConfig(name, scope.account || scope.model)
-                        }
-                    },
-                    ORIGIN.iframe
-                );
-            };
 
             // Register hook onMessage from the iframe for this namespace.
             wizard.register(mode, iframe, ({ data: dataEvent }) => {
@@ -373,27 +224,31 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 addError('onerror', info);
             });
 
-            wizard.onLoad(name, (isError, { name, file } = {}) => {
+            wizard.onLoad(name, () => {
+                addStep('iframe onload');
+                const challengeSrc = getChallenge(name);
+
+                iframe.contentWindow.postMessage(
+                    {
+                        type: 'init.challenge',
+                        data: {
+                            name,
+                            src: challengeSrc,
+                            config: getConfig(name, scope.account || scope.model)
+                        }
+                    },
+                    ORIGIN.iframe
+                );
+            });
+
+            wizard.onDone(name, () => {
                 clearTimeout(timeoutID);
-                if (isError) {
-                    addError(`${name} file onerror for ${file}`);
-                    // Since this is more or less instant, delay it slightly
-                    retryID = setTimeout(() => {
-                        handleRetry();
-                        retryID = undefined;
-                    }, (2 + _.random(0, 5)) * 1000);
-                    return;
-                }
-                if (retryID) {
-                    return;
-                }
                 loaded = true;
                 el[0].classList.add('signupIframe-loaded');
                 addStep('iframe loaded');
                 log();
             });
 
-            iframe.addEventListener('load', onLoad, true);
             el[0].querySelector('.signupIframe-iframe').appendChild(iframe);
             addStep('added iframe');
 
@@ -406,7 +261,6 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             scope.$on('$destroy', () => {
                 clearTimeout(timeoutID);
                 clearTimeout(retryID);
-                iframe.removeEventListener('load', onLoad, true);
                 helpButton.removeEventListener('click', onClick);
             });
         }
