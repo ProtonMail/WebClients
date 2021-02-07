@@ -1,7 +1,15 @@
 import { decryptPrivateKey } from 'pmcrypto';
 import { CachedOrganizationKey, OrganizationKey } from '../interfaces';
 
-export const getDecryptedOrganizationKey = async ({
+export const getDecryptedOrganizationKey = async (OrganizationPrivateKey: string, keyPassword: string) => {
+    const privateKey = await decryptPrivateKey(OrganizationPrivateKey, keyPassword);
+    return {
+        privateKey,
+        publicKey: privateKey.toPublic(),
+    };
+};
+
+export const getCachedOrganizationKey = async ({
     keyPassword,
     Key,
 }: {
@@ -14,10 +22,11 @@ export const getDecryptedOrganizationKey = async ({
         };
     }
     try {
-        const privateKey = await decryptPrivateKey(Key.PrivateKey, keyPassword);
+        const { privateKey, publicKey } = await getDecryptedOrganizationKey(Key.PrivateKey, keyPassword);
         return {
             Key,
             privateKey,
+            publicKey,
         };
     } catch (e) {
         return {
