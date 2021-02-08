@@ -1,6 +1,4 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
-import { useSortedList } from 'react-components';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 import useSelection from '../../hooks/util/useSelection';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
@@ -29,15 +27,10 @@ const SharedLinksContentProvider = ({ children, shareId }: { children: React.Rea
 
     const sharedLinks = cache.get.sharedLinkMetas(shareId);
     const complete = cache.get.sharedLinksComplete(shareId);
-    const { sortedList } = useSortedList(
-        mapLinksToChildren(sharedLinks, (linkId) => cache.get.isLinkLocked(shareId, linkId)),
-        {
-            key: 'ModifyTime',
-            direction: SORT_DIRECTION.ASC,
-        }
-    );
+    const contents = mapLinksToChildren(sharedLinks, (linkId) => cache.get.isLinkLocked(shareId, linkId));
+
     const selectionControls = useSelection(
-        sortedList.map((data) => ({
+        contents.map((data) => ({
             id: data.LinkID,
             disabled: data.Disabled,
             data,
@@ -111,7 +104,7 @@ const SharedLinksContentProvider = ({ children, shareId }: { children: React.Rea
                 loading,
                 fileBrowserControls,
                 loadNextPage,
-                contents: sortedList,
+                contents,
                 complete,
                 initialized,
             }}
