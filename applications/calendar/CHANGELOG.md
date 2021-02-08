@@ -1,4 +1,4 @@
-# [4.0.0-beta.13] - 2021-02-03
+# [4.0.0-beta.13] - 2021-02-09
 ## Updated
 - Add participants to events without pressing enter
 
