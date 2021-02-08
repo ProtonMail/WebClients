@@ -1,3 +1,20 @@
+# [4.0.0-beta.9] - 2021-02-10
+
+Improvements and fixes to make your everyday experience with Proton Drive better.
+
+## Fixed
+
+- Sort by clicking column headers
+- Password protection layout and copy updates
+- The Proton security label updated
+
+## Added
+
+- Transfer progress in the transfer manager is now displayed in parentheses
+- View file details modal for multiple files selected: number of them, and the total size
+- Delete permanently from trash icon is now aligned with the one in ProtonMail
+- Improved downloading process by implementing a retry
+
 # [4.0.0-beta.8] - 2021-01-13
 
 With this update we bring you more convenience by remembering which layout you chose to browse your files. Also, numerous bug fixes and improvements.
