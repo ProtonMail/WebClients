@@ -6,7 +6,7 @@ import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { usePopper } from '../popper';
 import { ALL_PLACEMENTS, Position } from '../popper/utils';
 import Portal from '../portal/Portal';
-import { useCombinedRefs } from '../../hooks';
+import { useCombinedRefs, useHotkeys } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import useIsClosing from './useIsClosing';
 
@@ -96,6 +96,22 @@ const Dropdown = ({
 
     const focusTrapProps = useFocusTrap({ rootRef, active: isOpen && !disableFocusTrap, enableInitialFocus: false });
 
+    useHotkeys(
+        rootRef,
+        [
+            [
+                'Escape',
+                (e) => {
+                    e.stopPropagation();
+                    onClose?.();
+                },
+            ],
+        ],
+        {
+            dependencies: [isOpen],
+        }
+    );
+
     useLayoutEffect(() => {
         if (!isOpen) {
             return;
@@ -109,12 +125,6 @@ const Dropdown = ({
         if (!isOpen) {
             return;
         }
-
-        const handleKeydown = (event: KeyboardEvent) => {
-            if (event.key === 'Escape' && event.target === document.activeElement) {
-                onClose();
-            }
-        };
 
         const handleClickOutside = ({ target }: MouseEvent) => {
             const targetNode = target as Node;
@@ -132,12 +142,10 @@ const Dropdown = ({
 
         document.addEventListener('dropdownclose', onClose);
         document.addEventListener('click', handleClickOutside);
-        document.addEventListener('keydown', handleKeydown);
 
         return () => {
             document.removeEventListener('dropdownclose', onClose);
             document.removeEventListener('click', handleClickOutside);
-            document.removeEventListener('keydown', handleKeydown);
         };
     }, [isOpen, autoCloseOutside, onClose, anchorRef.current, popperEl]);
 
