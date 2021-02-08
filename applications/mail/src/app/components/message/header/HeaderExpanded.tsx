@@ -14,7 +14,7 @@ import {
 } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
-import { isInternal } from 'proton-shared/lib/mail/messages';
+import { isInternal, isOutbox } from 'proton-shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { shiftKey } from 'proton-shared/lib/helpers/browser';
 
@@ -108,6 +108,7 @@ const HeaderExpanded = ({
     const selectedIDs = [message.data?.ID || ''];
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
+    const inOutbox = isOutbox(message.data);
 
     const handleClick = (event: MouseEvent) => {
         if (
@@ -434,7 +435,7 @@ const HeaderExpanded = ({
 
                 <Group className="mb0-5">
                     <ButtonGroup
-                        disabled={!messageLoaded || !bodyLoaded}
+                        disabled={!messageLoaded || !bodyLoaded || inOutbox}
                         className="button--for-icon button--primary flex flex-align-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                     >
@@ -443,7 +444,7 @@ const HeaderExpanded = ({
                         </Tooltip>
                     </ButtonGroup>
                     <ButtonGroup
-                        disabled={!messageLoaded || !bodyLoaded}
+                        disabled={!messageLoaded || !bodyLoaded || inOutbox}
                         className="button--for-icon button--primary flex flex-align-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                     >
@@ -452,7 +453,7 @@ const HeaderExpanded = ({
                         </Tooltip>
                     </ButtonGroup>
                     <ButtonGroup
-                        disabled={!messageLoaded || !bodyLoaded}
+                        disabled={!messageLoaded || !bodyLoaded || inOutbox}
                         className=" button--for-icon button--primary flex flex-align-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                     >
