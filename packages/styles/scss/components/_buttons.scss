@@ -562,11 +562,13 @@
 }
 
 /* modifiers */
-.button--large {
+.button--large,
+.button.button--large {
 	padding: em(10) em(20) em(9); // design want 42px height
 }
 
-.button--small {
+.button--small,
+.button.button--small {
 	padding: em(1) em(12) em(2); // design want 26px height
 }
 
