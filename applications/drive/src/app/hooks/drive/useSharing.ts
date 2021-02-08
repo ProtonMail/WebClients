@@ -58,13 +58,21 @@ function useSharing() {
         };
     };
 
-    const createSharedLink = async (shareId: string, volumeId: string, linkId: string, password: string) => {
+    const createSharedLink = async (
+        shareId: string,
+        volumeId: string,
+        linkId: string,
+        password: string,
+        shareInfo?: { ID: string; sessionKey: SessionKey }
+    ) => {
         const credentials = { password };
 
-        const {
-            Share: { ID },
-            keyInfo: { sessionKey },
-        } = await createShare(shareId, volumeId, linkId);
+        const { ID, sessionKey } = shareInfo
+            ? { ID: shareInfo.ID, sessionKey: shareInfo.sessionKey }
+            : await createShare(shareId, volumeId, linkId).then(({ Share: { ID }, keyInfo: { sessionKey } }) => ({
+                  ID,
+                  sessionKey,
+              }));
 
         const getSharedLinkPassphraseAndKeyPacket = async () => {
             const { salt: SharePasswordSalt, passphrase: sharedLinkPassword } = await generateKeySaltAndPassphrase(
@@ -268,7 +276,10 @@ function useSharing() {
         return api(queryDeleteSharedLink(sharedURLShareId, token));
     };
 
-    const deleteMultipleSharedLinks = (shareId: string, ids: string[]) => {
+    const deleteMultipleSharedLinks = (
+        shareId: string,
+        ids: string[]
+    ): Promise<{ Responses: { ShareURLID: string; Response: { Code: number } }[] }> => {
         return api(queryDeleteMultipleSharedLinks(shareId, ids));
     };
 

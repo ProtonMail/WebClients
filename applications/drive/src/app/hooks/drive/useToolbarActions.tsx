@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { usePreventLeave, useModals } from 'react-components';
 
+import useQueuedFunction from '../util/useQueuedFunction';
 import useFiles from './useFiles';
 import useTrash from './useTrash';
 import useNavigate from './useNavigate';
@@ -13,7 +14,7 @@ import useDrive from './useDrive';
 import useEvents from './useEvents';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from '../../utils/transfer';
-import { logSettledErrors } from '../../utils/async';
+import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
 import { LinkType } from '../../interfaces/link';
 import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
@@ -23,8 +24,10 @@ import MoveToFolderModal from '../../components/MoveToFolderModal';
 import CreateFolderModal from '../../components/CreateFolderModal';
 import SharingModal from '../../components/SharingModal/SharingModal';
 import FilesDetailsModal from '../../components/FilesDetailsModal';
+import { RESPONSE_CODE } from '../../constants';
 
 function useToolbarActions() {
+    const queuedFunction = useQueuedFunction();
     const { navigateToLink } = useNavigate();
     const { folder } = useDriveActiveFolder();
     const { startFileTransfer, startFolderTransfer } = useFiles();
@@ -188,21 +191,35 @@ function useToolbarActions() {
 
         const deleteLinks = async (links: FileBrowserItem[]) => {
             const urlShareIds: string[] = [];
-            const deleteSharePrimises: Promise<any>[] = [];
+            const deleteSharePromiseList: Promise<any>[] = [];
+            const deleteShareQueued = queuedFunction(
+                'deleteShare',
+                async (shareId: string) => {
+                    return deleteShare(shareId);
+                },
+                5
+            );
 
-            links.forEach((link) => {
-                if (link.SharedUrl && link.ShareUrlShareID) {
-                    urlShareIds.push(link.SharedUrl.ShareUrlID);
-                    deleteSharePrimises.push(deleteShare(link.ShareUrlShareID));
+            links.forEach(({ SharedUrl }) => {
+                if (SharedUrl) {
+                    urlShareIds.push(SharedUrl.ShareUrlID);
                 }
             });
 
-            // TODO: Implement file is deleted check, when backed will return deleted ids.
+            const deletedSharedUrlIds = (await deleteMultipleSharedLinks(shareId, urlShareIds)).Responses.filter(
+                (res) => res.Response.Code === RESPONSE_CODE.SUCCESS
+            ).map(({ ShareURLID }) => ShareURLID);
 
-            await deleteMultipleSharedLinks(shareId, urlShareIds);
-            await Promise.all(deleteSharePrimises);
+            links.forEach(({ ShareUrlShareID, SharedUrl }) => {
+                if (ShareUrlShareID && SharedUrl?.ShareUrlID && deletedSharedUrlIds.includes(SharedUrl?.ShareUrlID)) {
+                    deleteSharePromiseList.push(deleteShareQueued(ShareUrlShareID));
+                }
+            });
+
+            const deletedCount = (await Promise.allSettled(deleteSharePromiseList).then(getSuccessfulSettled)).length;
+
             await events.call(shareId);
-            return urlShareIds;
+            return deletedCount;
         };
 
         openConfirmModal({
@@ -211,8 +228,9 @@ function useToolbarActions() {
             message: c('Info')
                 .t`This will delete the link(s) and remove access to your file(s) for anyone with the link(s).`,
             onConfirm: async () => {
-                const deletedIds = await deleteLinks(itemsToStopSharing);
-                createDeleteSharedLinksNotifications(deletedIds.length);
+                const deletedCount = await deleteLinks(itemsToStopSharing);
+                const failedCount = itemsToStopSharing.length - deletedCount;
+                createDeleteSharedLinksNotifications(deletedCount, failedCount);
             },
         });
     };
