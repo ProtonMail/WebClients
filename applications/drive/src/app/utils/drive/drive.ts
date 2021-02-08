@@ -238,11 +238,12 @@ export const getShareKeysAsync = async (
     }
 
     const meta = await getShareMetaAsync(api, cache, subscribeToEvents, shareId);
-    const { decryptedPassphrase } = await decryptSharePassphrase(meta);
+    const { decryptedPassphrase, sessionKey } = await decryptSharePassphrase(meta);
 
     const privateKey = await decryptPrivateKey(meta.Key, decryptedPassphrase);
     const keys = {
         privateKey,
+        sessionKey,
     };
     cache.set.shareKeys(keys, shareId);
 

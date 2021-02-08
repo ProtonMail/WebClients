@@ -23,6 +23,7 @@ export type LinkKeys = FileLinkKeys | FolderLinkKeys;
 
 export interface ShareKeys {
     privateKey: OpenPGPKey;
+    sessionKey: SessionKey;
 }
 
 interface SortedChildrenList {
