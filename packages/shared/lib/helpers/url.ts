@@ -116,6 +116,25 @@ export const stripLinkPrefix = (input = '') => {
     return input.replace(prefix, '');
 };
 
+/**
+ * Try to add link prefix if missing
+ */
+export const addLinkPrefix = (input = '', type: LINK_TYPES) => {
+    const prefix = getLinkPrefix(input);
+
+    if (prefix) {
+        return input;
+    }
+
+    const { defaultPrefix } = TYPE_TO_PREFIX[type] || {};
+
+    if (defaultPrefix) {
+        return `${defaultPrefix}${input}`;
+    }
+
+    return input;
+};
+
 export const getSecondLevelDomain = () => {
     const { hostname } = window.location;
     return hostname.substr(hostname.indexOf('.') + 1);
