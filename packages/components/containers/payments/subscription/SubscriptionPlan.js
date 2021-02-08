@@ -48,7 +48,7 @@ const SubscriptionPlan = ({
             </div>
             {canCustomize ? (
                 <div className="mb1">
-                    <LinkButton className="flex flex-nowrap flex-align-items-center" onClick={toggle}>
+                    <LinkButton className="flex flex-nowrap no-outline flex-align-items-center" onClick={toggle}>
                         <Icon name="caret" className={state ? 'rotateZ-90' : 'rotateZ-270'} />
                         <span>
                             {state
