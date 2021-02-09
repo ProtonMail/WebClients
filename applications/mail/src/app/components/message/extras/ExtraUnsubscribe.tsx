@@ -1,3 +1,4 @@
+import { canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { getOriginalTo, isUnsubscribed } from 'proton-shared/lib/mail/messages';
 import React from 'react';
 import {
@@ -17,7 +18,6 @@ import {
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { openNewTab } from 'proton-shared/lib/helpers/browser';
-import { removeEmailAlias } from 'proton-shared/lib/helpers/email';
 import { oneClickUnsubscribe, markAsUnsubscribed } from 'proton-shared/lib/api/messages';
 
 import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from '../../../models/message';
@@ -43,7 +43,7 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
     const [loading, withLoading] = useLoading();
     const toAddress = getOriginalTo(message.data);
     const { Address: senderAddress, Name: senderName } = message.data?.Sender || {};
-    const address = addresses.find(({ Email }) => removeEmailAlias(Email) === removeEmailAlias(toAddress));
+    const address = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(toAddress));
     const unsubscribeMethods = message?.data?.UnsubscribeMethods || {};
 
     if (!Object.keys(unsubscribeMethods).length || !address) {

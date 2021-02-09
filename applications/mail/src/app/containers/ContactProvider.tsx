@@ -1,9 +1,9 @@
+import { canonizeEmail } from 'proton-shared/lib/helpers/email';
 import React, { createContext, ReactNode, useContext, useMemo } from 'react';
 import { useContactEmails, useContactGroups } from 'react-components';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { normalizeEmail } from 'proton-shared/lib/helpers/email';
 
 export type ContactsMap = SimpleMap<ContactEmail>;
 export type ContactsMapWithDuplicates = SimpleMap<ContactEmail[]>;
@@ -52,7 +52,7 @@ interface Props {
 
 const toMapWithDuplicates = (contacts: ContactEmail[]) => {
     const contactsMapWithDuplicates = contacts.reduce<ContactsMapWithDuplicates>((acc, contact) => {
-        const email = normalizeEmail(contact.Email);
+        const email = canonizeEmail(contact.Email);
         const contacts = acc[email];
         if (!contacts) {
             acc[email] = [contact];

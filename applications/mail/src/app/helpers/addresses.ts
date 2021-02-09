@@ -1,11 +1,6 @@
 import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
-import {
-    addPlusAlias,
-    normalizeEmail,
-    normalizeInternalEmail,
-    removeEmailAlias,
-} from 'proton-shared/lib/helpers/email';
+import { addPlusAlias, canonizeEmail, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { Address, Key } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
@@ -21,15 +16,15 @@ import { isMessage } from './elements';
  * Remove + alias and transform to lower case
  */
 export const getByEmail = (addresses: Address[], email = '') => {
-    const value = removeEmailAlias(email, true);
-    return addresses.find(({ Email }) => removeEmailAlias(Email, true) === value);
+    const value = canonizeInternalEmail(email);
+    return addresses.find(({ Email }) => canonizeInternalEmail(Email) === value);
 };
 
 /**
  * Return the matching ContactEmail in the map taking care of email normalization
  */
 export const getContactEmail = (contactsMap: ContactsMap, email: string | undefined) => {
-    const normalizedEmail = normalizeEmail(email || '');
+    const normalizedEmail = canonizeEmail(email || '');
     return contactsMap[normalizedEmail];
 };
 
@@ -44,7 +39,7 @@ export const isDirtyAddress = ({ Keys, Status }: Address) => !Keys.length || Sta
 export const isOwnAddress = (address?: Address, keys: Key[] = []) => !!address && !isFallbackAddress(address, keys);
 
 export const isSelfAddress = (email: string | undefined, addresses: Address[]) =>
-    !!addresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(email || ''));
+    !!addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(email || ''));
 
 export const recipientsWithoutGroup = (recipients: Recipient[], groupPath?: string) =>
     recipients.filter((recipient) => recipient.Group !== groupPath);
@@ -219,5 +214,5 @@ export const getNumParticipants = (element: Element) => {
         recipients = [...Recipients, ...Senders];
     }
 
-    return unique(recipients.map(({ Address }: Recipient) => removeEmailAlias(Address, true))).length;
+    return unique(recipients.map(({ Address }: Recipient) => canonizeInternalEmail(Address))).length;
 };
