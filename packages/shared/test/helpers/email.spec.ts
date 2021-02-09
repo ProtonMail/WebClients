@@ -1,9 +1,11 @@
 import {
-    normalizeEmail,
-    normalizeInternalEmail,
+    CANONIZE_SCHEME,
+    canonizeEmail,
+    canonizeEmailByGuess,
+    canonizeInternalEmail,
     parseMailtoURL,
-    validateEmailAddress,
     validateDomain,
+    validateEmailAddress,
 } from '../../lib/helpers/email';
 
 describe('email', () => {
@@ -91,31 +93,93 @@ describe('email', () => {
         });
     });
 
-    describe('normalizeEmail', () => {
-        it('should lower case external emails', () => {
-            const emails = ['testing@myDomain', 'TeS.--TinG@MYDOMAIN', 'ABC;;@cde', 'bad@email@this.is'];
-            const expected = emails.map((email) => email.toLowerCase());
-            expect(emails.map((email) => normalizeEmail(email))).toEqual(expected);
-            expect(emails.map((email) => normalizeEmail(email, false))).toEqual(expected);
-        });
-
-        it('should normalize internal emails properly', () => {
+    describe('canonize', () => {
+        it('should canonize internal emails properly', () => {
             const emails = [
                 'testing@pm.me',
                 'TeS.--TinG@PM.ME',
-                'ABC;;@pm.me',
-                'mo____.-..reTes--_---ting@pm.me',
-                'bad@email@this.is',
+                'ABC+DEF@protonmail.com',
+                'mo____.-.reTes--_---ting+AlIas@protonmail.ch',
+                'a.custom-Domain@this.is',
+                'no-DOM.a.in+one',
+                'NO_DOMAIN+two@',
             ];
-            const normalized = [
+            const canonized = [
                 'testing@pm.me',
                 'testing@pm.me',
-                'abc;;@pm.me',
-                'moretesting@pm.me',
-                'bad@email@this.is',
+                'abc@protonmail.com',
+                'moretesting@protonmail.ch',
+                'acustomdomain@this.is',
+                'nodomain',
+                'nodomain@',
             ];
-            expect(emails.map((email) => normalizeEmail(email, true))).toEqual(normalized);
-            expect(emails.map(normalizeInternalEmail)).toEqual(normalized);
+            expect(emails.map((email) => canonizeInternalEmail(email))).toEqual(canonized);
+        });
+
+        it('should canonize with the gmail scheme', () => {
+            const emails = [
+                'testing@pm.me',
+                'TeS.--TinG@PM.ME',
+                'ABC+DEF@protonmail.com',
+                'mo____.-.reTes--_---ting+AlIas@protonmail.ch',
+                'a.custom-Domain@this.is',
+                'no-DOM.a.in+one',
+                'NO_DOMAIN+two@',
+            ];
+            const canonized = [
+                'testing@pm.me',
+                'tes--ting@pm.me',
+                'abc@protonmail.com',
+                'mo____-retes--_---ting@protonmail.ch',
+                'acustom-domain@this.is',
+                'no-domain',
+                'no_domain@',
+            ];
+            expect(emails.map((email) => canonizeEmail(email, CANONIZE_SCHEME.GMAIL))).toEqual(canonized);
+        });
+
+        it('should canonize with the plus scheme', () => {
+            const emails = [
+                'testing@pm.me',
+                'TeS.--TinG@PM.ME',
+                'ABC+DEF@protonmail.com',
+                'mo____.-.reTes--_---ting+AlIas@protonmail.ch',
+                'a.custom-Domain@this.is',
+                'no-DOM.a.in+one',
+                'NO_DOMAIN+two@',
+            ];
+            const canonized = [
+                'testing@pm.me',
+                'tes.--ting@pm.me',
+                'abc@protonmail.com',
+                'mo____.-.retes--_---ting@protonmail.ch',
+                'a.custom-domain@this.is',
+                'no-dom.a.in',
+                'no_domain@',
+            ];
+            expect(emails.map((email) => canonizeEmail(email, CANONIZE_SCHEME.PLUS))).toEqual(canonized);
+        });
+
+        it('should canonize guessing the scheme', () => {
+            const emails = [
+                'testing+1@pm.me',
+                'TeS.--TinG+2@PM.ME',
+                'A.B.C-+D.E.F@GMAIL.com',
+                'mo____.-.reTes--_---ting+AlIas@MAIL.RU',
+                'a.custom-Domain+cool@this.is',
+                'no-DOM.a.in+one',
+                'NO_DOMAIN+two@',
+            ];
+            const canonized = [
+                'testing@pm.me',
+                'testing@pm.me',
+                'abc-@gmail.com',
+                'mo____.-.retes--_---ting@mail.ru',
+                'a.custom-domain+cool@this.is',
+                'no-dom.a.in+one',
+                'no_domain+two@',
+            ];
+            expect(emails.map((email) => canonizeEmailByGuess(email))).toEqual(canonized);
         });
     });
 

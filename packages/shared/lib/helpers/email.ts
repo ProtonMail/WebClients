@@ -12,6 +12,13 @@ import isTruthy from './isTruthy';
 import { MAJOR_DOMAINS } from '../constants';
 import { Recipient } from '../interfaces';
 
+export enum CANONIZE_SCHEME {
+    DEFAULT,
+    PLUS,
+    GMAIL,
+    PROTON,
+}
+
 export const validateLocalPart = (localPart: string) => {
     // remove comments first
     const match = localPart.match(/(^\(.+?\))?([^()]*)(\(.+?\)$)?/);
@@ -61,10 +68,10 @@ export const validateDomain = (domain: string) => {
 /**
  * Split an email into local part plus domain.
  */
-export const getEmailParts = (email: string): string[] => {
+export const getEmailParts = (email: string) => {
     const endIdx = email.lastIndexOf('@');
     if (endIdx === -1) {
-        return [email];
+        return [email, ''];
     }
     return [email.slice(0, endIdx), email.slice(endIdx + 1)];
 };
@@ -81,36 +88,83 @@ export const validateEmailAddress = (email: string) => {
     return validateLocalPart(localPart) && validateDomain(domain);
 };
 
+const removePlusAliasLocalPart = (localPart = '') => {
+    const [cleanLocalPart] = localPart.split('+');
+    return cleanLocalPart;
+};
+
 /**
- * Normalize an internal email. This is needed to compare when two internal emails should be considered equivalent
- * See documentation at https://confluence.protontech.ch/display/MAILFE/Email+normalization
+ * Add plus alias part for an email
  */
-export const normalizeInternalEmail = (email: string) => {
-    const [localPart, domain] = getEmailParts(email);
-    if (!domain) {
-        return email.replace(/[._-]/g, '').toLowerCase();
+export const addPlusAlias = (email = '', plus = '') => {
+    const atIndex = email.indexOf('@');
+    const plusIndex = email.indexOf('+');
+
+    if (atIndex === -1 || plusIndex > -1) {
+        return email;
     }
-    const normalizedLocalPart = localPart.replace(/[._-]/g, '').toLowerCase();
-    const normalizedDomain = domain.toLocaleLowerCase();
-    return `${normalizedLocalPart}@${normalizedDomain}`;
+
+    const name = email.substring(0, atIndex);
+    const domain = email.substring(atIndex, email.length);
+
+    return `${name}+${plus}${domain}`;
 };
 
 /**
- * Normalize an external email. This is needed to compare when two external emails should be considered equivalent.
- * Ideally we should have a set of normalization rules per provider. Until we have that, we simply lower case the
- * email address, as most providers are case-insensitive
- * See documentation at https://confluence.protontech.ch/display/MAILFE/Email+normalization for more information
+ * Canonize an email address following one of the known schemes
+ * Emails that have the same canonical form end up in the same inbox
+ * See https://confluence.protontech.ch/display/MBE/Canonize+email+addresses
  */
-export const normalizeExternalEmail = (email: string) => {
-    return email.toLowerCase().trim();
+export const canonizeEmail = (email: string, scheme = CANONIZE_SCHEME.DEFAULT) => {
+    const [localPart, domain] = getEmailParts(email);
+    const at = email[email.length - domain.length - 1] === '@' ? '@' : '';
+    if (scheme === CANONIZE_SCHEME.PROTON) {
+        const cleanLocalPart = removePlusAliasLocalPart(localPart);
+        const normalizedLocalPart = cleanLocalPart.replace(/[._-]/g, '').toLowerCase();
+        const normalizedDomain = domain.toLowerCase();
+
+        return `${normalizedLocalPart}${at}${normalizedDomain}`;
+    }
+    if (scheme === CANONIZE_SCHEME.GMAIL) {
+        const cleanLocalPart = removePlusAliasLocalPart(localPart);
+        const normalizedLocalPart = cleanLocalPart.replace(/[.]/g, '').toLowerCase();
+        const normalizedDomain = domain.toLowerCase();
+
+        return `${normalizedLocalPart}${at}${normalizedDomain}`;
+    }
+    if (scheme === CANONIZE_SCHEME.PLUS) {
+        const cleanLocalPart = removePlusAliasLocalPart(localPart);
+        const normalizedLocalPart = cleanLocalPart.toLowerCase();
+        const normalizedDomain = domain.toLowerCase();
+
+        return `${normalizedLocalPart}${at}${normalizedDomain}`;
+    }
+
+    return email.toLowerCase();
 };
 
+export const canonizeInternalEmail = (email: string) => canonizeEmail(email, CANONIZE_SCHEME.PROTON);
+
 /**
- * Normalize an email. This is needed to compare when two emails should be considered equivalent
- * See documentation at https://confluence.protontech.ch/display/MAILFE/Email+normalization
+ * Canonize an email by guessing the scheme that should be applied
+ * ATTENTION: This helper will never be able to guess that Proton scheme must be applied on custom domains;
+ * Only the back-end knows about custom domains. Use GET /addresses/canonical in those cases
  */
-export const normalizeEmail = (email: string, isInternal?: boolean) => {
-    return isInternal ? normalizeInternalEmail(email) : normalizeExternalEmail(email);
+export const canonizeEmailByGuess = (email: string) => {
+    const [, domain] = getEmailParts(email);
+    const normalizedDomain = domain.toLowerCase();
+    if (['protonmail.com', 'protonmail.ch', 'pm.me'].includes(normalizedDomain)) {
+        return canonizeEmail(email, CANONIZE_SCHEME.PROTON);
+    }
+    if (['gmail.com', 'googlemail.com', 'google.com'].includes(normalizedDomain)) {
+        return canonizeEmail(email, CANONIZE_SCHEME.GMAIL);
+    }
+    if (
+        ['hotmail.com', 'hotmail.co.uk', 'hotmail.fr', 'outlook.com', 'yandex.ru', 'mail.ru'].includes(normalizedDomain)
+    ) {
+        return canonizeEmail(email, CANONIZE_SCHEME.PLUS);
+    }
+    return canonizeEmail(email, CANONIZE_SCHEME.DEFAULT);
 };
 
 const extractStringItems = (str: string) => {
@@ -161,30 +215,6 @@ export const getEmailTo = (str: string, decode?: boolean): string => {
     } catch (e) {
         return str;
     }
-};
-
-/**
- * Remove plus alias part present in the email value
- */
-export const removeEmailAlias = (email = '', isInternal?: boolean) => {
-    return normalizeEmail(email, isInternal).replace(/(\+[^@]*)@/, '@');
-};
-
-/**
- * Add plus alias part for an email
- */
-export const addPlusAlias = (email = '', plus = '') => {
-    const atIndex = email.indexOf('@');
-    const plusIndex = email.indexOf('+');
-
-    if (atIndex === -1 || plusIndex > -1) {
-        return email;
-    }
-
-    const name = email.substring(0, atIndex);
-    const domain = email.substring(atIndex, email.length);
-
-    return `${name}+${plus}${domain}`;
 };
 
 export const majorDomainsMatcher = (inputValue: string) => {
