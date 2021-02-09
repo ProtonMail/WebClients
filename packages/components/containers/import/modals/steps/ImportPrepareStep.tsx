@@ -185,7 +185,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
         }));
 
         const ImportLabel = {
-            Name: `${modalModel.email.split('@')[1]} ${format(new Date(), 'dd/MM/yyyy HH:mm')}`,
+            Name: `${modalModel.email.split('@')[1]} ${format(new Date(), 'dd-MM-yyyy HH:mm')}`,
             Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             Type: LABEL_TYPE.MESSAGE_LABEL,
             Order: 0,
