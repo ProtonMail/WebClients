@@ -1,7 +1,7 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { CALENDAR_CARD_TYPE } from 'proton-shared/lib/calendar/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
-import { normalizeEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { useCallback } from 'react';
@@ -35,13 +35,13 @@ const useGetCalendarEventRaw = () => {
                                 // no need to fetch keys in this case
                                 return;
                             }
-                            return normalizeEmail(Author);
+                            return canonizeInternalEmail(Author);
                         })
                         .filter(isTruthy)
                 );
                 const normalizedAddresses = addresses.map((address) => ({
                     ...address,
-                    normalizedEmailAddress: normalizeEmail(address.Email),
+                    normalizedEmailAddress: canonizeInternalEmail(address.Email),
                 }));
                 const promises = authors.map(async (author) => {
                     const ownAddress = normalizedAddresses.find(
@@ -70,7 +70,7 @@ const useGetCalendarEventRaw = () => {
             );
             const withNormalizedAuthor = (x: CalendarEventData) => ({
                 ...x,
-                Author: normalizeEmail(x.Author),
+                Author: canonizeInternalEmail(x.Author),
             });
             const withNormalizedAuthors = (x: CalendarEventData[]) => {
                 if (!x) {
