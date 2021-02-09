@@ -1,5 +1,5 @@
 import { MINUTE, RECIPIENT_TYPES } from 'proton-shared/lib/constants';
-import { removeEmailAlias, normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmail, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { useCallback } from 'react';
 import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
@@ -42,10 +42,8 @@ const useGetEncryptionPreferences = () => {
     const getEncryptionPreferences = useCallback<GetEncryptionPreferences>(
         async (emailAddress, lifetime, contactEmailsMap) => {
             const [addresses, mailSettings] = await Promise.all([getAddresses(), getMailSettings()]);
-            const normalizedInternalEmail = removeEmailAlias(emailAddress, true);
-            const selfAddress = addresses.find(
-                ({ Email }) => normalizeInternalEmail(Email) === normalizedInternalEmail
-            );
+            const canonicalEmail = canonizeInternalEmail(emailAddress);
+            const selfAddress = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonicalEmail);
             let selfSend;
             let apiKeysConfig;
             let pinnedKeysConfig;
@@ -87,9 +85,9 @@ const useGetEncryptionPreferences = () => {
             // By normalizing email here, we consider that it could not exists different encryption preferences
             // For 2 addresses identical but for the cases.
             // If a provider does different one day, this would have to evolve.
-            const normalizedEmail = normalizeEmail(email);
-            const miss = () => getEncryptionPreferences(normalizedEmail, lifetime, contactEmailsMap);
-            return getPromiseValue(subCache, normalizedEmail, miss, lifetime);
+            const canonicalEmail = canonizeEmail(email);
+            const miss = () => getEncryptionPreferences(canonicalEmail, lifetime, contactEmailsMap);
+            return getPromiseValue(subCache, canonicalEmail, miss, lifetime);
         },
         [cache, getEncryptionPreferences]
     );

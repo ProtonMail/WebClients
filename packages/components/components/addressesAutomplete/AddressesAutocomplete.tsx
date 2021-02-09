@@ -1,8 +1,8 @@
+import { canonizeEmail } from 'proton-shared/lib/helpers/email';
 import React, { useCallback, useMemo, useState } from 'react';
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { Recipient } from 'proton-shared/lib/interfaces';
 import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
-import { normalizeEmail } from 'proton-shared/lib/helpers/email';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { noop } from 'proton-shared/lib/helpers/function';
 
@@ -62,7 +62,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             return recipients.reduce<[Set<string>, Set<string>]>(
                 (acc, { Address, Group }) => {
                     if (Address) {
-                        acc[0].add(normalizeEmail(Address));
+                        acc[0].add(canonizeEmail(Address));
                     }
                     if (Group) {
                         acc[1].add(Group);
@@ -77,7 +77,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             return [
                 ...getContactsAutocompleteItems(
                     contactEmails,
-                    ({ Email }) => !recipientsByAddress.has(normalizeEmail(Email)) && !validate(Email)
+                    ({ Email }) => !recipientsByAddress.has(canonizeEmail(Email)) && !validate(Email)
                 ),
                 ...getContactGroupsAutocompleteItems(contactGroups, ({ Path }) => !recipientsByGroup.has(Path)),
             ];
@@ -85,11 +85,11 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
 
         const majorList = useMemo(() => {
             return getMajorListAutocompleteItems(input, (email) => {
-                const normalizedEmail = normalizeEmail(email);
+                const canonicalEmail = canonizeEmail(email);
                 return (
-                    !recipientsByAddress.has(normalizedEmail) &&
-                    !contactEmailsMap?.[normalizedEmail] &&
-                    !validate(normalizedEmail)
+                    !recipientsByAddress.has(canonicalEmail) &&
+                    !contactEmailsMap?.[canonicalEmail] &&
+                    !validate(canonicalEmail)
                 );
             });
         }, [input, contactEmailsMap, recipientsByAddress]);
