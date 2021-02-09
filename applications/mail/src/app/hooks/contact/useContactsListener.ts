@@ -1,3 +1,4 @@
+import { canonizeEmail } from 'proton-shared/lib/helpers/email';
 import { useEffect } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
 import { useEventManager, useUserKeys, useCache } from 'react-components';
@@ -8,7 +9,6 @@ import { parse } from 'proton-shared/lib/contacts/vcard';
 import { Contact } from 'proton-shared/lib/interfaces/contacts';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { CACHE_KEY } from 'react-components/hooks/useGetEncryptionPreferences';
-import { normalizeEmail } from 'proton-shared/lib/helpers/email';
 import { MessageCache, updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { Event } from '../../models/event';
 
@@ -34,7 +34,7 @@ const processContactUpdate = async (
     const { data: signedVcard } = await readSigned(signedCard, { publicKeys });
     const properties = parse(signedVcard);
     const emailProperties = properties.filter(({ field, group }) => field === 'email' && group !== undefined);
-    const emails = emailProperties.map((property) => normalizeEmail(property.value as string));
+    const emails = emailProperties.map((property) => canonizeEmail(property.value as string));
 
     // Looking in the EncryptionPreference cache
     const encryptionPreferenceCache = globalCache.get(CACHE_KEY) as Map<string, any>;
@@ -47,7 +47,7 @@ const processContactUpdate = async (
 
     // Looking in the Message cache to check if there is message signed from one of the contact addresses
     messageCache.forEach((message, localID) => {
-        const senderAddress = normalizeEmail(message.data?.Sender.Address || '');
+        const senderAddress = canonizeEmail(message.data?.Sender.Address || '');
         if (emails.includes(senderAddress)) {
             updateMessageCache(messageCache, localID, { verification: undefined });
         }

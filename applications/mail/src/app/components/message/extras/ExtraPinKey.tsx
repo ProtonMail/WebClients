@@ -1,5 +1,5 @@
 import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
-import { normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
@@ -47,7 +47,7 @@ const getPromptKeyPinningType = ({
     addresses,
     senderAddress,
 }: Params): PROMPT_KEY_PINNING_TYPE | undefined => {
-    if (addresses.find(({ Email }) => normalizeInternalEmail(Email) === normalizeInternalEmail(senderAddress))) {
+    if (addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(senderAddress))) {
         // Do not pin keys for own addresses
         return undefined;
     }

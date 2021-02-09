@@ -1,7 +1,7 @@
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { setBit } from 'proton-shared/lib/helpers/bitset';
-import { removeEmailAlias } from 'proton-shared/lib/helpers/email';
+import { canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
@@ -114,9 +114,9 @@ const replyAll = (
     const ToList = data.ReplyTos;
 
     // Remove user address in CCList and ToList
-    const userAddresses = addresses.map(({ Email = '' }) => removeEmailAlias(Email));
+    const userAddresses = addresses.map(({ Email = '' }) => canonizeInternalEmail(Email));
     const CCListAll: Recipient[] = unique([...(data.ToList || []), ...(data.CCList || [])]);
-    const CCList = CCListAll.filter(({ Address = '' }) => !userAddresses.includes(removeEmailAlias(Address)));
+    const CCList = CCListAll.filter(({ Address = '' }) => !userAddresses.includes(canonizeInternalEmail(Address)));
 
     return { data: { Subject, ToList, CCList, Attachments }, embeddeds };
 };
