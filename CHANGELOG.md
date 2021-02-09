@@ -1,3 +1,9 @@
+# [3.16.58] - 2021-02-09
+
+## Improvements
+
+-   Improve signup loading time
+
 # [3.16.57] - 2021-02-04
 
 ## Fixes
