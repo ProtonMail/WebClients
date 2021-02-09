@@ -218,12 +218,11 @@ const SelectTwo = <V extends any>({
 
     const ariaLabel = selectedChild?.props?.title;
 
-    const dropdownButtonClassName = classnames(['text-left text-ellipsis no-outline pm-select button', className]);
+    const dropdownButtonClassName = classnames(['alignleft ellipsis no-outline pm-select pm-field w100', className]);
 
     return (
         <>
             <DropdownButton
-                style={{ minWidth: 200 }}
                 className={dropdownButtonClassName}
                 isOpen={isOpen}
                 hasCaret
