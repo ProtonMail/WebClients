@@ -4,7 +4,7 @@ import { CRYPTO_PROCESSING_TYPES } from '../../contacts/constants';
 import { readSigned } from '../../contacts/decrypt';
 import { getKeyInfoFromProperties } from '../../contacts/keyProperties';
 import { parse } from '../../contacts/vcard';
-import { normalizeEmail } from '../../helpers/email';
+import { CANONIZE_SCHEME, canonizeEmail } from '../../helpers/email';
 
 import { Api, PinnedKeysConfig } from '../../interfaces';
 import { Contact as tsContact, ContactEmail } from '../../interfaces/contacts';
@@ -16,12 +16,12 @@ const getContactEmail = async (
     api: Api
 ) => {
     // Simple normalize here, internal version is to aggressive relative to contacts emails
-    const normalizedEmailAddress = normalizeEmail(emailAddress);
-    if (contactEmailsMap[normalizedEmailAddress]) {
-        return contactEmailsMap[normalizedEmailAddress];
+    const canonicalEmail = canonizeEmail(emailAddress);
+    if (contactEmailsMap[canonicalEmail]) {
+        return contactEmailsMap[canonicalEmail];
     }
     const { ContactEmails = [] } = await api<{ ContactEmails: ContactEmail[] }>(
-        queryContactEmails({ Email: normalizedEmailAddress } as any)
+        queryContactEmails({ Email: canonicalEmail } as any)
     );
     return ContactEmails[0];
 };
@@ -60,11 +60,10 @@ const getPublicKeysVcardHelper = async (
         const { type, data: signedVcard } = await readSigned(signedCard, { publicKeys });
         isContactSignatureVerified = type === CRYPTO_PROCESSING_TYPES.SUCCESS;
         const properties = parse(signedVcard);
-        const emailProperty = properties.find(
-            ({ field, value }) =>
-                field === 'email' &&
-                normalizeEmail(value as string, isInternal) === normalizeEmail(emailAddress, isInternal)
-        );
+        const emailProperty = properties.find(({ field, value }) => {
+            const scheme = isInternal ? CANONIZE_SCHEME.PROTON : CANONIZE_SCHEME.DEFAULT;
+            return field === 'email' && canonizeEmail(value as string, scheme) === canonizeEmail(emailAddress, scheme);
+        });
         if (!emailProperty || !emailProperty.group) {
             throw new Error('Invalid vcard');
         }
