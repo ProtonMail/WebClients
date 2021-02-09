@@ -11,7 +11,7 @@ const LinkDoesNotExistInfo = () => {
                 style={{ height: '9em' }}
                 className="flex flex-column flex-align-items-center flex-justify-center w100 mt2 mb1"
             >
-                <Icon name="attention-circle" size={110} className="color-primary" />
+                <Icon name="attention-circle" size={110} className="fill-primary" />
             </div>
         </>
     );
