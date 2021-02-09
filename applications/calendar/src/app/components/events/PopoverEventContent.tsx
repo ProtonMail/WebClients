@@ -1,7 +1,7 @@
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
@@ -179,8 +179,10 @@ const PopoverEventContent = ({
                 const attendeeEmail = attendee.email;
                 const selfEmail = model.selfAddress?.Email;
                 const displayName =
-                    displayNameEmailMap[normalizeEmail(attendeeEmail)]?.displayName || attendee.cn || attendeeEmail;
-                const isYou = selfEmail && normalizeInternalEmail(selfEmail) === normalizeInternalEmail(attendeeEmail);
+                    displayNameEmailMap[canonizeEmailByGuess(attendeeEmail)]?.displayName ||
+                    attendee.cn ||
+                    attendeeEmail;
+                const isYou = selfEmail && canonizeInternalEmail(selfEmail) === canonizeInternalEmail(attendeeEmail);
                 const name = isYou ? c('Participant name').t`You` : displayName;
                 const title = name === attendee.email || isYou ? attendeeEmail : `${name} (${attendeeEmail})`;
                 return {

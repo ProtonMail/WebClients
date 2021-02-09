@@ -1,6 +1,6 @@
+import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { c } from 'ttag';
 import { toIcsPartstat } from 'proton-shared/lib/calendar/attendees';
-import { normalizeEmail, normalizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { CalendarEvent, CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
@@ -54,14 +54,14 @@ export const getOrganizerDisplayData = (
     if (!email) {
         return { name: '', title: '' };
     }
-    const normalizedEmail = isInvitation ? normalizeEmail(email) : normalizeInternalEmail(email);
+    const canonicalEmail = isInvitation ? canonizeEmailByGuess(email) : canonizeInternalEmail(email);
     if (!isInvitation) {
         return {
             name: c('Event info. Organizer name').t`You`,
             title: `${email}`,
         };
     }
-    const { displayName } = displayNameEmailMap[normalizedEmail] || {};
+    const { displayName } = displayNameEmailMap[canonicalEmail] || {};
     const name = displayName || cn || email;
     const title = name === email ? email : `${name} (${email})`;
     return { name, title };

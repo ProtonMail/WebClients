@@ -1,5 +1,5 @@
 import { ICAL_ATTENDEE_ROLE } from 'proton-shared/lib/calendar/constants';
-import { normalizeEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmail } from 'proton-shared/lib/helpers/email';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import React from 'react';
@@ -17,7 +17,7 @@ interface Props {
 const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete }: Props) => {
     const { email: attendeeEmail, role } = attendee;
     const isOptional = role === ICAL_ATTENDEE_ROLE.OPTIONAL;
-    const { Name: contactName, Email: contactEmail } = contactEmailsMap[normalizeEmail(attendeeEmail)] || {};
+    const { Name: contactName, Email: contactEmail } = contactEmailsMap[canonizeEmail(attendeeEmail)] || {};
     const email = contactEmail || attendeeEmail;
     const optionalText = isOptional
         ? c('Action').t`Make this participant required`
