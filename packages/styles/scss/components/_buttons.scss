@@ -187,7 +187,14 @@
 	}
 
 	&.pm-select {
-		padding-right: 0.6rem;
+		border: 1px solid var(--bordercolor-input, $input-defaut-border);
+		padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
+		background-color: var(--bgcolor-input, $pm-input-background);
+		border-radius: $global-border-radius;
+		color: var(--color-input, $pm-global-grey);
+		outline: 0;
+		height: $default-height-fields;
+
 		.mauto {
 			display: flex;
 			width: 100%;

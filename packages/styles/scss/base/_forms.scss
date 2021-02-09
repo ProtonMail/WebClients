@@ -82,6 +82,19 @@ $field-container: 26rem !default;
 	&[type='number'] {
 		padding-right: 0.25em;
 	}
+
+	&.pm-select {
+		@extend .pm-field;
+		padding-right: 0.6rem;
+		.mauto {
+			display: flex;
+			width: 100%;
+		}
+		.mr0-5 {
+			flex: 1 1 0px;
+			@extend .ellipsis;
+		}
+	}
 }
 
 @if $rtl-option==true {
