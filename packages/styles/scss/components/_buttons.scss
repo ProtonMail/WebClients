@@ -186,7 +186,7 @@
 		@extend .rotateX-180;
 	}
 
-	&.pm-select {
+	&.select {
 		border: 1px solid var(--bordercolor-input, $input-defaut-border);
 		padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
 		background-color: var(--bgcolor-input, $pm-input-background);
