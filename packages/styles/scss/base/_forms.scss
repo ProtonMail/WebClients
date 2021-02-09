@@ -84,7 +84,7 @@ $field-container: 26rem !default;
 	}
 
 	&.pm-select {
-		@extend .pm-field;
+		@extend .field;
 		padding-right: 0.6rem;
 		.mauto {
 			display: flex;
@@ -92,7 +92,7 @@ $field-container: 26rem !default;
 		}
 		.mr0-5 {
 			flex: 1 1 0px;
-			@extend .ellipsis;
+			@extend .text-ellipsis;
 		}
 	}
 }
