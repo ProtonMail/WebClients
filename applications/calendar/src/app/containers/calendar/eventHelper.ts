@@ -86,6 +86,7 @@ export const getTemporaryEvent = (
     tzid: string
 ): CalendarViewEventTemporaryEvent => {
     const tmpDataOriginal = temporaryEvent.tmpDataOriginal || model;
+
     return {
         ...temporaryEvent,
         ...modelToEventProperties(temporaryEvent, model, tzid),
