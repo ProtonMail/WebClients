@@ -28,11 +28,6 @@
         border-left-width: 0;
     }
 
-    // This is needed by the link handler (useLinkHandler.ts)
-    a *:not(img) {
-        pointer-events: none;
-    }
-
     // fix for some embedded images bugs
     img {
         max-width: none;
@@ -41,7 +36,9 @@
     * {
         line-height: normal;
     }
+
 }
+
 
 .bodyDecrypted.plain {
     white-space: pre-wrap;

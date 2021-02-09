@@ -90,24 +90,14 @@ export const useLinkHandler = (onCompose: OnCompose) => {
     };
 
     const handleClick = useHandler(async (event: Event) => {
-        const target = event.target as Element;
+        const originalTarget = event.target as Element;
+        const target = originalTarget.closest('a');
 
-        /*
-         * We can click on an image inside a link. more informations inside the css, look at:
-         * .bodyDecrypted a *:not(img)
-         */
-        if (!['A', 'IMG'].includes(target?.nodeName)) {
+        if (!target) {
             return;
         }
 
-        const isIMG = target.nodeName === 'IMG';
-        const node = !isIMG ? target : (target.parentElement as Element);
-
-        if (node.nodeName !== 'A') {
-            return;
-        }
-
-        const src = getSrc(node);
+        const src = getSrc(target);
 
         // IE11 and Edge random env bug... (╯°□°）╯︵ ┻━┻
         if (!src) {
