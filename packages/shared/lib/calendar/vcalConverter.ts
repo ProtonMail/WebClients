@@ -1,6 +1,6 @@
 import { addDays, isNextDay } from '../date-fns-utc';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
-import { buildMailTo, removeEmailAlias, getEmailTo } from '../helpers/email';
+import { buildMailTo, canonizeEmail, getEmailTo } from '../helpers/email';
 import { mod } from '../helpers/math';
 import { Participant } from '../interfaces/calendar';
 import { DateTime } from '../interfaces/calendar/Date';
@@ -230,10 +230,10 @@ export const getHasModifiedAttendees = ({
     }
     // We check if attendees other than the invitation attendees have been modified
     const otherAttendeesIcs = attendeesIcs.filter(
-        (attendee) => removeEmailAlias(getAttendeeEmail(attendee)) !== removeEmailAlias(attendeeIcs.emailAddress)
+        (attendee) => canonizeEmail(getAttendeeEmail(attendee)) !== canonizeEmail(attendeeIcs.emailAddress)
     );
     const otherAttendeesApi = attendeesApi.filter(
-        (attendee) => removeEmailAlias(getAttendeeEmail(attendee)) !== removeEmailAlias(attendeeApi.emailAddress)
+        (attendee) => canonizeEmail(getAttendeeEmail(attendee)) !== canonizeEmail(attendeeApi.emailAddress)
     );
     return otherAttendeesIcs.reduce((acc, attendee) => {
         if (acc === true) {
