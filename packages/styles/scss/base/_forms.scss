@@ -83,7 +83,7 @@ $field-container: 26rem !default;
 		padding-right: 0.25em;
 	}
 
-	&.pm-select {
+	&.select {
 		@extend .field;
 		padding-right: 0.6rem;
 		.mauto {
