@@ -8,6 +8,7 @@
 - shortcuts helpers
 - storyBook styles
 - refactor all design system arbo ^^
+- refactor numerous namespaces ^^
 
 ### New helpers
 
@@ -22,6 +23,8 @@
 - fix vocalisation of toggle
 - fix minicalendar range border radius
 - fix focus style for radio/checkboxes in dark mode
+- hotfix for Drive - `icon-110p`
+- fix failing specificity for Drive
 
 # [1.8.6] - 2020-12-18
 
