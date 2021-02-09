@@ -1,7 +1,7 @@
 import { OpenPGPKey, serverTime } from 'pmcrypto';
 import { c } from 'ttag';
 import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
-import { normalizeEmail } from '../helpers/email';
+import { canonizeEmailByGuess, canonizeInternalEmail } from '../helpers/email';
 import isTruthy from '../helpers/isTruthy';
 import { toBitMap } from '../helpers/object';
 import { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
@@ -21,7 +21,7 @@ export const isDisabledUser = (config: ApiKeysConfig): boolean =>
     getIsInternalUser(config) && !config.Keys.some(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_OBSOLETE));
 
 export const getEmailMismatchWarning = (publicKey: OpenPGPKey, emailAddress: string, isInternal: boolean): string[] => {
-    const normalizedEmail = normalizeEmail(emailAddress, isInternal);
+    const canonicalEmail = isInternal ? canonizeInternalEmail(emailAddress) : canonizeEmailByGuess(emailAddress);
     const users = publicKey.users || [];
     const keyEmails = users.reduce<string[]>((acc, { userId = {} } = {}) => {
         if (!userId?.userid) {
@@ -33,8 +33,10 @@ export const getEmailMismatchWarning = (publicKey: OpenPGPKey, emailAddress: str
         acc.push(email);
         return acc;
     }, []);
-    const normalizedKeyEmails = keyEmails.map((email) => normalizeEmail(email, isInternal));
-    if (!normalizedKeyEmails.includes(normalizedEmail)) {
+    const canonicalKeyEmails = keyEmails.map((email) =>
+        isInternal ? canonizeInternalEmail(email) : canonizeEmailByGuess(email)
+    );
+    if (!canonicalKeyEmails.includes(canonicalEmail)) {
         const keyUserIds = keyEmails.join(', ');
         return [c('PGP key warning').t`Email address not found among user ids defined in sending key (${keyUserIds})`];
     }

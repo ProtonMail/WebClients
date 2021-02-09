@@ -1,7 +1,7 @@
 import { OpenPGPKey, signMessage } from 'pmcrypto';
 import { c } from 'ttag';
 import { CONTACT_CARD_TYPE } from '../constants';
-import { normalizeEmail } from '../helpers/email';
+import { CANONIZE_SCHEME, canonizeEmail } from '../helpers/email';
 import isTruthy from '../helpers/isTruthy';
 import { generateProtonWebUID } from '../helpers/uid';
 import { ContactCard, ContactProperty } from '../interfaces/contacts';
@@ -51,17 +51,16 @@ export const pinKeyUpdateContact = async ({
 
     // get the key properties that correspond to the email address
     const signedProperties = parse(signedVcard);
-    const emailProperty = signedProperties.find(
-        ({ field, value }) =>
-            field === 'email' &&
-            normalizeEmail(value as string, isInternal) === normalizeEmail(emailAddress, isInternal)
-    );
+    const emailProperty = signedProperties.find(({ field, value }) => {
+        const scheme = isInternal ? CANONIZE_SCHEME.PROTON : CANONIZE_SCHEME.DEFAULT;
+        return field === 'email' && canonizeEmail(value as string, scheme) === canonizeEmail(emailAddress, scheme);
+    });
     const emailGroup = emailProperty?.group as string;
-    const keyProperties =
-        emailGroup &&
-        (signedProperties.filter(({ field, group }) => field === 'key' && group === emailGroup) as Required<
-            ContactProperty
-        >[]);
+    const keyProperties = emailGroup
+        ? signedProperties.filter((prop): prop is Required<ContactProperty> => {
+              return prop.field === 'key' && prop.group === emailGroup;
+          })
+        : undefined;
     if (!keyProperties) {
         throw new Error(c('Error').t`The key properties for ${emailAddress} could not be extracted`);
     }
