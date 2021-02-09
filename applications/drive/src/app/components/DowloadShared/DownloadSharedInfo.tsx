@@ -53,7 +53,7 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
         if (download.state === TransferState.Done) {
             contents.title = c('Title').t`Download completed`;
             contents.info = c('Info').t`Your file has finished downloading.`;
-            contents.content = <Icon name="check-circle" size={100} className="color-primary" />;
+            contents.content = <Icon name="check-circle" size={100} className="fill-primary" />;
         } else {
             contents.title = c('Title').t`Downloading`;
             contents.info = c('Info').t`Your file is being downloaded.`;

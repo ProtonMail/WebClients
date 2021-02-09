@@ -4,7 +4,6 @@ Improvements and fixes to make your everyday experience with Proton Drive better
 
 ## Fixed
 
-- Sort by clicking column headers
 - Password protection layout and copy updates
 - The Proton security label updated
 
