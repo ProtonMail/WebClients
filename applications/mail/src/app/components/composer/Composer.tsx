@@ -272,17 +272,21 @@ const Composer = ({
         });
     });
 
-    const handleChangeContent = useHandler((content: string, refreshEditor: boolean = false) => {
-        setModelMessage((modelMessage) => {
-            setContent(modelMessage, content);
-            const newModelMessage = { ...modelMessage };
-            void autoSave(newModelMessage);
-            if (refreshEditor) {
-                editorActionsRef.current?.setContent(newModelMessage);
-            }
-            return newModelMessage;
-        });
-    });
+    const handleChangeContent = useHandler(
+        (content: string, refreshEditor: boolean = false, silent: boolean = false) => {
+            setModelMessage((modelMessage) => {
+                setContent(modelMessage, content);
+                const newModelMessage = { ...modelMessage };
+                if (!silent) {
+                    void autoSave(newModelMessage);
+                }
+                if (refreshEditor) {
+                    editorActionsRef.current?.setContent(newModelMessage);
+                }
+                return newModelMessage;
+            });
+        }
+    );
 
     const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo: boolean = false) => {
         handleChange((message) => {
@@ -309,7 +313,7 @@ const Composer = ({
         const actualContent = editorActionsRef.current.getContent();
         const modelContent = getContent(modelMessage);
 
-        if (actualContent !== modelContent) {
+        if (actualContent.trim() !== modelContent.trim()) {
             handleChangeContent(actualContent);
         }
     };

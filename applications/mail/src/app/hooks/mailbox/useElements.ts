@@ -7,7 +7,6 @@ import { toMap } from 'proton-shared/lib/helpers/object';
 import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { noop } from 'proton-shared/lib/helpers/function';
-
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import {
     sort as sortElements,
@@ -67,7 +66,7 @@ const emptyCache = (
         invalidated: false,
         pendingRequest: false,
         params,
-        page: { page: pageFromUrl, total, size: PAGE_SIZE, limit: PAGE_SIZE },
+        page: { page: pageFromUrl, total, size: PAGE_SIZE },
         elements: {},
         pages: [],
         updatedElements: [],

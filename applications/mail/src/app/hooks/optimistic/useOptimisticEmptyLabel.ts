@@ -58,7 +58,6 @@ export const useOptimisticEmptyLabel = () => {
             ...rollbackElements,
             elements: {},
             page: {
-                limit: PAGE_SIZE,
                 page: 0,
                 size: PAGE_SIZE,
                 total: 0,
