@@ -56,8 +56,8 @@ const getModel = (contactGroups: ContactGroup[] = [], contactEmails: ContactEmai
 /**
  * Collect contacts having multiple emails
  * Used for <SelectEmailsModal />
- * @param {Array} contactEmails
- * @returns {Array} result.contacts
+ * @param contactEmails
+ * @returns result.contacts
  */
 const collectContacts = (contactEmails: ContactEmail[] = [], contacts: Contact[]) => {
     return contactEmails.reduce(
@@ -98,7 +98,7 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
     const { createModal } = useModals();
     const [contacts] = useContacts();
     const [contactGroups = []] = useContactGroups();
-    const [model, setModel] = useState(Object.create(null));
+    const [model, setModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [uid] = useState(generateUID('contactGroupDropdown'));
 
     const handleAdd = () => {
@@ -113,8 +113,18 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
         const { contacts: collectedContacts } = collectContacts(contactEmails, contacts);
 
         if (collectedContacts.length) {
+            const groupIDs = Object.entries(model)
+                .filter(([, isChecked]) => isChecked)
+                .map(([groupID]) => groupID);
             selectedContactEmails = await new Promise<ContactEmail[]>((resolve, reject) => {
-                createModal(<SelectEmailsModal contacts={collectedContacts} onSubmit={resolve} onClose={reject} />);
+                createModal(
+                    <SelectEmailsModal
+                        groupIDs={groupIDs}
+                        contacts={collectedContacts}
+                        onSubmit={resolve}
+                        onClose={reject}
+                    />
+                );
             });
         }
         const groupEntries = Object.entries(model);
