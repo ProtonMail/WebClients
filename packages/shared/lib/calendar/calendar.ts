@@ -27,6 +27,19 @@ export const getDefaultCalendar = (calendars: Calendar[] = [], defaultCalendarID
     return calendars.find(({ ID }) => ID === defaultCalendarID) || calendars[0];
 };
 
-export const getCanCreateCalendar = (activeCalendars: Calendar[], disabledCalendars: Calendar[]) => {
-    return activeCalendars.length + disabledCalendars.length < MAX_CALENDARS_PER_USER;
+export const getCanCreateCalendar = (
+    activeCalendars: Calendar[],
+    disabledCalendars: Calendar[],
+    calendars: Calendar[]
+) => {
+    const totalActionableCalendars = activeCalendars.length + disabledCalendars.length;
+    if (totalActionableCalendars < calendars.length) {
+        // calendar keys need to be reactivated before being able to create a calendar
+        return false;
+    }
+    return totalActionableCalendars < MAX_CALENDARS_PER_USER;
+};
+
+export const getMaxUserCalendarsDisabled = (disabledCalendars: Calendar[]) => {
+    return disabledCalendars.length === MAX_CALENDARS_PER_USER;
 };
