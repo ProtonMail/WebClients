@@ -290,7 +290,7 @@ const SubscriptionCustomization = ({
                 icon="servers-country"
                 feature={c('Feature').ngettext(
                     msgid`Servers in ${vpnCountries.free.length} country`,
-                    ` Servers in ${vpnCountries.free.length} countries`,
+                    `Servers in ${vpnCountries.free.length} countries`,
                     vpnCountries.free.length
                 )}
             />,
