@@ -39,7 +39,7 @@ interface Props {
     breakpoints: Breakpoints;
     onReady: () => void;
     onChange: MessageChange;
-    onChangeContent: (content: string) => void;
+    onChangeContent: (content: string, refreshEditor?: boolean, silent?: boolean) => void;
     onChangeFlag: (changes: Map<number, boolean>) => void;
     onFocus: () => void;
     onAddAttachments: (files: File[]) => void;
@@ -102,7 +102,7 @@ const SquireEditorWrapper = ({
         }
     }, [isPlainText, message.plainText, message.document?.innerHTML]);
 
-    const handleGetContent = () => {
+    const handleGetContent = useHandler(() => {
         const editorContent = squireEditorRef.current?.value || '';
 
         if (!blockquoteExpanded && blockquoteSaved !== '') {
@@ -110,7 +110,7 @@ const SquireEditorWrapper = ({
         }
 
         return editorContent;
-    };
+    });
 
     const handleSetContent = (message: MessageExtended) => {
         let content;
@@ -145,6 +145,8 @@ const SquireEditorWrapper = ({
         if (documentReady && (isPlainText || editorReady)) {
             handleSetContent(message);
             onReady();
+            // This setTimeout is needed to have changes from handleSetContent reflected inside handleGetContent
+            setTimeout(() => onChangeContent(handleGetContent(), false, true));
         }
     }, [editorReady, documentReady, isPlainText]);
 

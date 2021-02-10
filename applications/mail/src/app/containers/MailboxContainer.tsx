@@ -76,7 +76,6 @@ const MailboxContainer = ({
         page: pageFromUrl(location),
         total: 0,
         size: PAGE_SIZE,
-        limit: PAGE_SIZE,
     });
 
     const searchParams = getSearchParams(location.search);
