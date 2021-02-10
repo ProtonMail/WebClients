@@ -7,6 +7,7 @@ import {
     TimeFormatSection,
     DateFormatSection,
     WeekStartSection,
+    EarlyAccessSection,
 } from 'react-components';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import locales from 'proton-shared/lib/i18n/locales';
@@ -42,6 +43,10 @@ export const getGeneralPage = () => {
                 text: c('Title').t`Week start`,
                 id: 'week-start',
             },
+            {
+                text: c('Title').t`Early Access`,
+                id: 'early-access',
+            },
         ].filter(isTruthy),
     };
 };
@@ -58,6 +63,7 @@ const GeneralContainer = ({ location, setActiveSection }: SettingsPropsShared) =
             <TimeFormatSection />
             {IS_DATE_FORMAT_ENABLED ? <DateFormatSection /> : null}
             <WeekStartSection />
+            <EarlyAccessSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
