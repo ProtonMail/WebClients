@@ -165,7 +165,8 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
                     .t`If you wish to delete this account in order to combine it with another one, do NOT delete it.`}</div>
             </Alert>
             <Alert type="warning">
-                <div className="text-bold text-uppercase">{c('Info').t`Warning: This also deletes all connected services`}</div>
+                <div className="text-bold text-uppercase">{c('Info')
+                    .t`Warning: This also deletes all connected services`}</div>
                 <div>{c('Info')
                     .t`Example: ${mailAppName}, ${contactsAppName}, ${vpnAppName}, ${driveAppName}, ${calendarAppName}`}</div>
             </Alert>
