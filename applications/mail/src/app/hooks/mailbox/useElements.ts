@@ -175,9 +175,14 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const shouldResetCache = () => paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated();
 
+    // When there is less than a page of elements, we want to prevents calling the API
+    // And we should be able to rely on elements updated from the event manager
+    // So it's ok to ignore length mismatch in that case
+    const shouldLoadBasedOnExpectedLength = () => expectedLengthMismatch !== 0 && cache.page.total > PAGE_SIZE;
+
     const shouldSendRequest = () =>
         shouldResetCache() ||
-        (!cache.pendingRequest && (cache.invalidated || expectedLengthMismatch > 0 || !pageCached()));
+        (!cache.pendingRequest && (cache.invalidated || shouldLoadBasedOnExpectedLength() || !pageCached()));
 
     const shouldUpdatePage = () => pageChanged() && pageCached();
 

@@ -17,7 +17,7 @@ import {
     addToCache,
 } from '../../helpers/test/helper';
 import { ConversationLabel, Conversation } from '../../models/conversation';
-import { Event } from '../../models/event';
+import { Event, ConversationEvent } from '../../models/event';
 import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../constants';
 
 loudRejection();
@@ -265,19 +265,37 @@ describe('useElements', () => {
             expect(api.mock.calls.length).toBe(2);
         });
 
-        it('should reload the list on count event and expected length not matched', async () => {
-            // The updated counter should trigger a check on the expected length
+        it('should reload the list on count event and expected length not matched when several pages of elements', async () => {
+            // Removing 5 elements should trigger an expected length mismatch and trigger a new request
 
+            const total = PAGE_SIZE + 3;
             const page = 0;
-            const total = 3;
             const elements = getElements(total);
             await setup({ elements, page });
 
             await sendEvent({
-                ConversationCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }],
+                Conversations: elements
+                    .slice(0, 5)
+                    .map((element) => ({ ID: element.ID, Action: EVENT_ACTIONS.DELETE } as ConversationEvent)),
             });
 
             expect(api.mock.calls.length).toBe(2);
+        });
+
+        it('should not reload the list on count event and expected length not matched when only one page of elements', async () => {
+            // The updated counter should trigger a check on the expected length
+            // But being under the page size, it should not reload the list
+
+            const total = 3;
+            const page = 0;
+            const elements = getElements(total);
+            await setup({ elements, page });
+
+            await sendEvent({
+                ConversationCounts: [{ LabelID: labelID, Total: total + 3, Unread: 10 }],
+            });
+
+            expect(api.mock.calls.length).toBe(1);
         });
 
         it('should not reload the list on count event when a search is active', async () => {
