@@ -1,5 +1,4 @@
 .calendar-monthgrid {
-
 	&-day {
 		color: var(--color-main-area, $pm-global-grey);
 
@@ -19,6 +18,13 @@
 		&[aria-pressed='true'] &-number {
 			background-color: $calendar-selected-day-color;
 			color: $white;
+
+			&:not([aria-current='date'] .calendar-monthgrid-day-number) {
+				@include respond-to($breakpoint-small, 'min') {
+					background-color: inherit;
+					color: inherit;
+				}
+			}
 		}
 	}
 }
