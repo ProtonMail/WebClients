@@ -23,6 +23,7 @@ interface Args {
     attendee?: Participant;
     organizer?: Participant;
     subject: string;
+    messageID?: string;
     calendarData?: CalendarWidgetData;
     calendarEvent?: CalendarEvent;
     onEmailSuccess: () => void;
@@ -42,6 +43,7 @@ const useInviteButtons = ({
     attendee,
     organizer,
     subject,
+    messageID,
     calendarData,
     calendarEvent,
     onEmailSuccess,
@@ -88,6 +90,7 @@ const useInviteButtons = ({
                     method: ICAL_METHOD.REPLY,
                     ics,
                     addressID: attendee.addressID,
+                    parentID: messageID,
                     from: { Address: attendee.emailAddress, Name: attendee.name || attendee.emailAddress },
                     to: [{ Address: organizer.emailAddress, Name: organizer.name }],
                     subject,

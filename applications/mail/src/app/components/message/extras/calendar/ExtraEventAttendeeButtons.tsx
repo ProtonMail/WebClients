@@ -154,6 +154,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         attendee,
         organizer,
         subject: formatSubject(message.data?.Subject, RE_PREFIX),
+        messageID: message.data?.ID,
         calendarData,
         onEmailSuccess: handleEmailSuccess,
         onCreateEventSuccess: handleCreateEventSuccess,
