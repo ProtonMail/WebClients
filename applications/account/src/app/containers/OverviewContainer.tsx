@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { PrivateMainArea, useAppTitle, useUser, useOrganization, OverviewLayout } from 'react-components';
+import { PrivateMainArea, useAppTitle, useUser, useOrganization, OverviewLayout, FeatureCode } from 'react-components';
+import { useFeature } from 'react-components/hooks';
 
 import { getPages } from '../pages';
 import './OverviewContainer.scss';
@@ -8,7 +9,9 @@ import './OverviewContainer.scss';
 const OverviewContainer = () => {
     const [user] = useUser();
     const [organization] = useOrganization();
-    const pages = getPages(user, organization).filter(({ to }) => to !== '/overview');
+    const { feature: { Value: earlyAccess } = {} } = useFeature(FeatureCode.EarlyAccess);
+    const hasEarlyAccess = earlyAccess === 'alpha' || earlyAccess === 'beta';
+    const pages = getPages(user, organization, hasEarlyAccess).filter(({ to }) => to !== '/overview');
     useAppTitle(c('Title').t`Overview`);
 
     return (

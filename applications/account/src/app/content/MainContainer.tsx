@@ -15,6 +15,8 @@ import {
     useOrganization,
     useModals,
     useWelcomeFlags,
+    useFeature,
+    FeatureCode,
 } from 'react-components';
 
 import { getPages } from '../pages';
@@ -36,6 +38,8 @@ const MainContainer = () => {
     const { isNarrow } = useActiveBreakpoint();
     const [welcomeFlags, setWelcomeFlagDone] = useWelcomeFlags();
     const { createModal } = useModals();
+    const { feature: { Value: earlyAccess } = {} } = useFeature(FeatureCode.EarlyAccess);
+    const hasEarlyAccess = earlyAccess === 'alpha' || earlyAccess === 'beta';
 
     useEffect(() => {
         setExpand(false);
@@ -64,7 +68,7 @@ const MainContainer = () => {
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
-                        list={getPages(user, organization)}
+                        list={getPages(user, organization, hasEarlyAccess)}
                         pathname={location.pathname}
                         activeSection={activeSection}
                     />

@@ -17,12 +17,16 @@ export const getOverviewPage = () => {
     };
 };
 
-export const getPages = (user: UserModel, organization: Organization): SectionConfig[] =>
+export const getPages = (
+    user: UserModel,
+    organization: Organization,
+    hasEarlyAccess: boolean = false
+): SectionConfig[] =>
     [
         getOverviewPage(),
         getAccountPage(user),
         user.canPay && getSubscriptionPage(user),
-        getGeneralPage(),
+        getGeneralPage({ hasEarlyAccess }),
         getSecurityPage(),
         user.isAdmin && !user.isSubUser && getOrganizationPage(organization),
     ].filter(isTruthy);
