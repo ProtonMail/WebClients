@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { LINK_TYPES } from 'proton-shared/lib/constants';
-import { linkToType } from 'proton-shared/lib/helpers/url';
+import { linkToType, addLinkPrefix } from 'proton-shared/lib/helpers/url';
 
 import FormModal from '../../modal/FormModal';
 import { PrimaryButton } from '../../button';
@@ -14,9 +14,6 @@ import Href from '../../link/Href';
 import { Select } from '../../select';
 
 import { LinkData } from '../squireConfig';
-
-const getActualUrl = (url: string, type: LINK_TYPES) =>
-    type === LINK_TYPES.WEB ? url : type === LINK_TYPES.EMAIL ? `mailto:${url}` : `tel:${url}`;
 
 interface Props {
     inputLink: LinkData;
@@ -65,7 +62,7 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, ...rest }: Props) => {
     };
 
     const handleSubmit = () => {
-        onSubmit({ link: getActualUrl(url, type), title: label });
+        onSubmit({ link: addLinkPrefix(url, type), title: label });
         onClose?.();
     };
 
@@ -129,7 +126,7 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, ...rest }: Props) => {
                 <Label>{c('Info').t`Test link`}</Label>
                 <Field className="pt0-5">
                     {url && label ? (
-                        <Href url={getActualUrl(url, type)}>{label}</Href>
+                        <Href url={addLinkPrefix(url, type)}>{label}</Href>
                     ) : (
                         <span className="placeholder">{i18n[type]['test-placeholder']}</span>
                     )}
