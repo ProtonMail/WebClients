@@ -3,7 +3,7 @@ import { Alert, ShortcutsModal, ShortcutsSectionView, useMailSettings, classname
 import { APPS } from 'proton-shared/lib/constants';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { c } from 'ttag';
-import mailShortcuts from './shortcuts';
+import { getShortcuts } from './shortcuts';
 
 interface Props {
     onClose?: () => void;
@@ -15,6 +15,7 @@ const MailShortCutsModal = ({ ...rest }: Props) => {
 
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
+    const mailShortcuts = getShortcuts();
     const alwaysOnSections = mailShortcuts.filter((section) => section.alwaysActive);
     const shortcutEnabledSections = mailShortcuts.filter((section) => !section.alwaysActive);
 
