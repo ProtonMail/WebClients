@@ -131,8 +131,8 @@ const ParticipantsInput = ({
                     setParticipantError?.(true);
                 }}
                 onChange={(event) => {
-                    if (!event.currentTarget.value.trimStart() && setParticipantError) {
-                        setParticipantError(false);
+                    if (!event.currentTarget.value.trimStart()) {
+                        setParticipantError?.(false);
                     }
                 }}
                 validate={(email) => {
