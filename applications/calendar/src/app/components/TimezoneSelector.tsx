@@ -1,12 +1,10 @@
-import React, { ChangeEvent, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { c } from 'ttag';
 import { getTimeZoneOptions } from 'proton-shared/lib/date/timezone';
+import { Option, SelectTwo } from 'react-components';
+import { Props as SelectProps } from 'react-components/components/selectTwo/SelectTwo';
 
-interface Props
-    extends Omit<
-        React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>,
-        'onChange'
-    > {
+interface Props extends Omit<SelectProps<string>, 'onChange' | 'children'> {
     timezone?: string;
     onChange: (tzid: string) => void;
     className?: string;
@@ -26,26 +24,23 @@ const TimezoneSelector = ({
 }: Props) => {
     const timezoneOptions = useMemo(() => {
         const options = getTimeZoneOptions(date || new Date());
-        return options.map(({ text, value, key }) => (
-            <option key={key} value={value}>
-                {text}
-            </option>
-        ));
+
+        return options.map(({ text, value, key }) => <Option key={key} value={value} title={text} />);
     }, [date]);
 
     return (
-        <select
+        <SelectTwo
             disabled={loading || disabled}
             className={className}
             title={c('Action').t`Select timezone`}
             value={timezone}
-            onChange={({ target }: ChangeEvent<HTMLSelectElement>) => {
-                onChange(target.value);
+            onChange={({ value }) => {
+                onChange(value);
             }}
             {...rest}
         >
             {timezoneOptions}
-        </select>
+        </SelectTwo>
     );
 };
 

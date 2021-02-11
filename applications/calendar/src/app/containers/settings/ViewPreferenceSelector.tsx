@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { SETTINGS_VIEW } from 'proton-shared/lib/interfaces/calendar';
+import { Option, SelectTwo } from 'react-components';
 
 interface Props {
     id: string;
@@ -28,22 +29,18 @@ const ViewPreferenceSelector = ({
     ].filter(Boolean);
 
     return (
-        <select
+        <SelectTwo
             disabled={loading || disabled}
             className={className}
             title={c('Action').t`Select calendar view`}
             value={view}
-            onChange={({ target }) => onChange(+target.value)}
+            onChange={({ value }) => onChange(+value)}
             {...rest}
         >
-            {options.map(({ text, value }) => {
-                return (
-                    <option key={value} value={value}>
-                        {text}
-                    </option>
-                );
-            })}
-        </select>
+            {options.map(({ text, value }) => (
+                <Option key={value} value={value} title={text} />
+            ))}
+        </SelectTwo>
     );
 };
 

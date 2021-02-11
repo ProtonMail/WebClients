@@ -1,12 +1,12 @@
 import { FREQUENCY } from 'proton-shared/lib/calendar/constants';
 import { c } from 'ttag';
-import { Select } from 'react-components';
-import { Props as SelectProps } from 'react-components/components/select/Select';
-import React, { ChangeEvent } from 'react';
+import { Option, SelectTwo } from 'react-components';
+import { Props as SelectProps } from 'react-components/components/selectTwo/SelectTwo';
+import React from 'react';
 
 const { ONCE, DAILY, WEEKLY, MONTHLY, YEARLY, CUSTOM } = FREQUENCY;
 
-interface Props extends Omit<SelectProps, 'onChange' | 'options'> {
+interface Props extends Omit<SelectProps<FREQUENCY>, 'onChange' | 'children'> {
     value: FREQUENCY;
     onChange: (value: FREQUENCY) => void;
 }
@@ -22,14 +22,17 @@ const FrequencyInput = ({ value, onChange, ...rest }: Props) => {
     ];
 
     return (
-        <Select
+        <SelectTwo
             value={value}
-            options={frequencies}
-            onChange={({ target }: ChangeEvent<HTMLSelectElement>) => {
-                onChange(target.value as FREQUENCY);
+            onChange={({ value }) => {
+                onChange(value as FREQUENCY);
             }}
             {...rest}
-        />
+        >
+            {frequencies.map(({ value, text }) => (
+                <Option key={value} value={value} title={text} />
+            ))}
+        </SelectTwo>
     );
 };
 

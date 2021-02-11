@@ -1,13 +1,13 @@
 import React from 'react';
-import { useLoading, useGetCalendarBootstrap, Select, useGetAddresses } from 'react-components';
-import { Props as SelectProps } from 'react-components/components/select/Select';
+import { useLoading, useGetCalendarBootstrap, SelectTwo, Option, useGetAddresses } from 'react-components';
+import { Props as SelectProps } from 'react-components/components/selectTwo/SelectTwo';
 import CalendarIcon from '../../CalendarIcon';
 import { notificationsToModel } from '../../../helpers/notificationsToModel';
 import { getInitialMemberModel } from '../eventForm/state';
 import { getDeviceNotifications } from '../eventForm/notificationModel';
 import { EventModel } from '../../../interfaces/EventModel';
 
-export interface Props extends Omit<SelectProps, 'options' | 'value'> {
+export interface Props extends Omit<SelectProps<string>, 'children'> {
     withIcon?: boolean;
     model: EventModel;
     setModel: (value: EventModel) => void;
@@ -33,8 +33,8 @@ const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, froz
         );
     }
 
-    const handleChangeCalendar = async ({ target }: React.ChangeEvent<HTMLSelectElement>) => {
-        const { value: newId, color: newColor } = options[target.selectedIndex];
+    const handleChangeCalendar = async (selectedIndex: number) => {
+        const { color: newColor, value: newId } = options[selectedIndex];
 
         // grab members and default settings for the new calendar
         const {
@@ -83,13 +83,16 @@ const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, froz
     return (
         <>
             {withIcon !== false && <CalendarIcon className="mr1" color={color} />}
-            <Select
-                options={options}
+            <SelectTwo
                 value={id}
                 loading={loading}
-                onChange={(e) => withLoading(handleChangeCalendar(e))}
+                onChange={({ selectedIndex }) => withLoading(handleChangeCalendar(selectedIndex))}
                 {...rest}
-            />
+            >
+                {options.map(({ value, text }) => (
+                    <Option value={value} title={text} key={value} />
+                ))}
+            </SelectTwo>
         </>
     );
 };

@@ -1,8 +1,8 @@
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from 'proton-shared/lib/calendar/constants';
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { c, msgid } from 'ttag';
-import { Select, IntegerInput } from 'react-components';
+import { IntegerInput, SelectTwo, Option } from 'react-components';
 
 import RepeatOnRow from './RepeatOnRow';
 import SelectMonthlyType from '../inputs/SelectMonthlyType';
@@ -68,16 +68,17 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
                             />
                         </span>
                         <span className="flex-item-fluid ml0-5">
-                            <Select
+                            <SelectTwo
                                 id="event-custom-frequency-select"
                                 data-test-id="event-modal/custom-frequency/interval:frequency"
                                 value={frequencyModel.frequency}
-                                options={intervalOptions}
-                                onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
-                                    handleChangeFrequency(target.value as FREQUENCY)
-                                }
+                                onChange={({ value }) => handleChangeFrequency(value as FREQUENCY)}
                                 title={c('Title').t`Select event frequency interval`}
-                            />
+                            >
+                                {intervalOptions.map(({ text, value }) => (
+                                    <Option key={value} value={value} title={text} />
+                                ))}
+                            </SelectTwo>
                         </span>
                     </div>
                     {isMonthly && (

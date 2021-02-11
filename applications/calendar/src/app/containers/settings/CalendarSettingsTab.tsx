@@ -1,6 +1,6 @@
 import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
 import React, { ChangeEvent, useMemo } from 'react';
-import { Row, Label, Field, Select, Toggle, ColorPicker, Input, TextArea } from 'react-components';
+import { Row, Label, Field, Toggle, ColorPicker, Input, TextArea, SelectTwo, Option } from 'react-components';
 import { c } from 'ttag';
 import { CalendarErrors, CalendarModel } from '../../interfaces/CalendarModel';
 
@@ -52,14 +52,15 @@ const CalendarSettingsTab = ({ isSubmitted, errors, model, setModel }: Props) =>
                             <span className="pt0-5 flex">{addressText}</span>
                         </>
                     ) : (
-                        <Select
+                        <SelectTwo
                             id="calendar-address-select"
                             value={model.addressID}
-                            onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
-                                setModel({ ...model, addressID: target.value })
-                            }
-                            options={model.addressOptions}
-                        />
+                            onChange={({ value }) => setModel({ ...model, addressID: value })}
+                        >
+                            {model.addressOptions.map(({ value, text }) => (
+                                <Option key={value} value={value} title={text} />
+                            ))}
+                        </SelectTwo>
                     )}
                 </Field>
             </Row>
