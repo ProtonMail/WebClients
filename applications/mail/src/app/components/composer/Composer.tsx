@@ -105,6 +105,9 @@ const Composer = ({
     // Some behavior has to change, example, stop auto saving
     const [sending, setSending] = useState(false);
 
+    // Indicates that the composer is saving a draft
+    const [saving, setSaving] = useState(false);
+
     // Indicates that the composer is open but the edited message is not yet ready
     // Needed to prevent edition while data is not ready
     const [editorReady, setEditorReady] = useState(false);
@@ -399,10 +402,12 @@ const Composer = ({
             if (notificationID) {
                 hideNotification(notificationID);
             }
+            setSaving(false);
         }
     });
 
     const handleManualSave = async () => {
+        setSaving(true);
         ensureMessageContent();
         await promiseUploadInProgress.current;
         // Split handlers to have the updated version of the message
@@ -502,6 +507,7 @@ const Composer = ({
         toggleMinimized,
         toggleMaximized,
         lock: lock || !hasRecipients,
+        saving,
     });
 
     return (

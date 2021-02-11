@@ -13,6 +13,7 @@ export interface ComposerHotkeysHandlers {
     handlePassword: () => void;
     handleExpiration: () => void;
     lock: boolean;
+    saving: boolean;
 }
 
 export const useComposerHotkeys = ({
@@ -25,6 +26,7 @@ export const useComposerHotkeys = ({
     handlePassword,
     handleExpiration,
     lock,
+    saving,
 }: ComposerHotkeysHandlers) => {
     const [mailSettings] = useMailSettings();
 
@@ -54,7 +56,9 @@ export const useComposerHotkeys = ({
         save: async (e: KeyboardEvent) => {
             e.preventDefault();
             e.stopPropagation();
-            await handleManualSave();
+            if (!saving) {
+                await handleManualSave();
+            }
         },
         minimize: (e: KeyboardEvent) => {
             e.preventDefault();
