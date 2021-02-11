@@ -1,6 +1,17 @@
 import { c } from 'ttag';
 import React, { ChangeEvent, DragEvent } from 'react';
-import { Bordered, FileInput, Alert, Label, Field, Select, AttachedFile, classnames, Dropzone } from 'react-components';
+import {
+    Bordered,
+    FileInput,
+    Alert,
+    Label,
+    Field,
+    AttachedFile,
+    classnames,
+    SelectTwo,
+    Option,
+    Dropzone,
+} from 'react-components';
 
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ImportCalendarModel } from '../../interfaces/Import';
@@ -30,9 +41,10 @@ const AttachingModalContent = ({
     onDragEnter,
     onDragLeave,
 }: Props) => {
-    const options = calendars.map(({ Name, ID }) => ({ text: Name, value: ID }));
-    const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {
-        const calendar = calendars.find(({ ID }) => ID === target.value);
+    const options = calendars.map(({ Name, ID, Color }) => ({ text: Name, value: ID, color: Color }));
+    const handleChange = ({ value }: { value: string }) => {
+        const calendar = calendars.find(({ ID }) => ID === value);
+
         if (calendar) {
             onSelectCalendar(calendar);
         }
@@ -69,16 +81,19 @@ const AttachingModalContent = ({
                 )}
             </Bordered>
             {calendars.length > 1 && (
-                <div className="flex-nowrap mb1 on-mobile-flex-column">
-                    <Label className="mr1" htmlFor="import-calendar-select">{c('Label').t`Import to:`}</Label>
+                <div className="flex-nowrap mb1 onmobile-flex-column">
+                    <Label className="pt0 mr1" htmlFor="import-calendar-select">{c('Label').t`Import to:`}</Label>
                     <Field>
-                        <Select
+                        <SelectTwo
                             id="import-calendar-select"
                             loading={false}
                             onChange={handleChange}
                             value={model.calendar.ID}
-                            options={options}
-                        />
+                        >
+                            {options.map(({ value, text }) => (
+                                <Option value={value} title={text} key={value} />
+                            ))}
+                        </SelectTwo>
                     </Field>
                 </div>
             )}

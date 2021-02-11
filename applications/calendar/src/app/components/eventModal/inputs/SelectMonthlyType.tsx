@@ -1,6 +1,6 @@
 import { MONTHLY_TYPE } from 'proton-shared/lib/calendar/constants';
-import React, { ChangeEvent, useMemo } from 'react';
-import { Select } from 'react-components';
+import React, { useMemo } from 'react';
+import { SelectTwo, Option } from 'react-components';
 import { capitalize } from 'proton-shared/lib/helpers/string';
 import { getOnDayString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 import { getNegativeSetpos, getPositiveSetpos } from 'proton-shared/lib/calendar/helper';
@@ -44,17 +44,20 @@ const SelectMonthlyType = ({ id, value, date, className, title, onChange }: Prop
     }, [date]);
 
     return (
-        <Select
+        <SelectTwo
             className={className}
             title={title}
             id={id}
             value={value}
-            options={options}
-            onChange={({ target }: ChangeEvent<HTMLSelectElement>) => {
-                const newValue = +target.value as MONTHLY_TYPE;
+            onChange={({ value }) => {
+                const newValue = +value as MONTHLY_TYPE;
                 onChange?.(newValue);
             }}
-        />
+        >
+            {options.map(({ text, value }) => (
+                <Option key={value} value={value} title={text} />
+            ))}
+        </SelectTwo>
     );
 };
 

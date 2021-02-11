@@ -1,8 +1,8 @@
 import { END_TYPE, FREQUENCY_COUNT_MAX, MAXIMUM_DATE } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { c, msgid } from 'ttag';
-import { DateInput, IntegerInput, Select } from 'react-components';
+import { DateInput, IntegerInput, SelectTwo, Option } from 'react-components';
 import { isValid } from 'date-fns';
 
 import { DateTimeModel, FrequencyModel, EventModelErrors } from '../../../interfaces/EventModel';
@@ -61,15 +61,18 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
 
             <div className="flex flex-nowrap flex-item-fluid on-tiny-mobile-flex-column">
                 <div className="flex-item-fluid mt0-5">
-                    <Select
+                    <SelectTwo
                         value={frequencyModel.ends.type}
-                        options={options}
-                        onChange={({ target }: ChangeEvent<HTMLSelectElement>) => {
-                            const newValue = target.value as END_TYPE;
+                        onChange={({ value }) => {
+                            const newValue = value as END_TYPE;
                             handleChangeEndType?.(newValue);
                         }}
                         title={c('Title').t`Select when this event will stop happening`}
-                    />
+                    >
+                        {options.map(({ value, text }) => (
+                            <Option key={value} value={value} title={text} />
+                        ))}
+                    </SelectTwo>
                 </div>
 
                 {frequencyModel.ends.type === UNTIL && (

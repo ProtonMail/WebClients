@@ -1,5 +1,5 @@
-import React, { ChangeEvent } from 'react';
-import { classnames, IntegerInput, Select, TimeInput } from 'react-components';
+import React from 'react';
+import { classnames, IntegerInput, Option, SelectTwo, TimeInput } from 'react-components';
 import { c } from 'ttag';
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
 
@@ -83,13 +83,12 @@ const NotificationInput = ({
                         />
                     </span>
                 )}
-                <Select
+                <SelectTwo
                     data-test-id="notification-time-dropdown"
                     className="flex-item-fluid flex-item-grow-2"
                     value={optionsValue}
-                    options={textOptions}
-                    onChange={({ target }: ChangeEvent<HTMLSelectElement>) => {
-                        const optionIndex = +target.value;
+                    onChange={({ value }) => {
+                        const optionIndex = +value;
                         const option = options[optionIndex];
                         if (!option) {
                             return;
@@ -101,7 +100,11 @@ const NotificationInput = ({
                     }}
                     title={c('Title').t`Select when you want this notification to be sent`}
                     {...errorProps}
-                />
+                >
+                    {textOptions.map(({ value, text }) => (
+                        <Option key={value} value={value} title={text} />
+                    ))}
+                </SelectTwo>
             </span>
             {((isAllDay && at) || hasType) && (
                 <span className="flex on-tiny-mobile-flex-column flex-nowrap flex-item-fluid">
@@ -125,19 +128,20 @@ const NotificationInput = ({
                                 isAllDay && at ? 'on-tiny-mobile-ml0' : 'on-mobile-ml0',
                             ])}
                         >
-                            <Select
+                            <SelectTwo
                                 value={type}
-                                options={[
+                                onChange={({ value }) => onChange({ ...notification, type: +value })}
+                                title={c('Title').t`Select the way to send this notification`}
+                                {...errorProps}
+                            >
+                                {[
                                     { text: c('Notification type').t`via notification`, value: DEVICE },
                                     { text: c('Notification type').t`by email`, value: EMAIL },
                                     // { text: c('Notification type').t`both notification and email`, value: BOTH },
-                                ]}
-                                onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
-                                    onChange({ ...notification, type: +target.value })
-                                }
-                                title={c('Title').t`Select the way to send this notification`}
-                                {...errorProps}
-                            />
+                                ].map(({ value, text }) => (
+                                    <Option value={value} title={text} />
+                                ))}
+                            </SelectTwo>
                         </span>
                     )}
                 </span>

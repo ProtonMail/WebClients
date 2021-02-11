@@ -1,5 +1,5 @@
-import React, { ChangeEvent } from 'react';
-import { Row, Label, Field, Select } from 'react-components';
+import React from 'react';
+import { Row, Label, Field, SelectTwo, Option } from 'react-components';
 import { c } from 'ttag';
 import Notifications from '../../components/eventModal/Notifications';
 
@@ -17,19 +17,20 @@ const EventSettingsTab = ({ model, setModel }: Props) => {
             <Row>
                 <Label>{c('Label').t`Default event duration`}</Label>
                 <Field>
-                    <Select
+                    <SelectTwo
                         data-test-id="create-calendar/event-settings:event-duration"
                         value={model.duration}
-                        options={[
+                        onChange={({ value }) => setModel({ ...model, duration: +value })}
+                    >
+                        {[
                             { text: c('Duration').t`30 minutes`, value: 30 },
                             { text: c('Duration').t`60 minutes`, value: 60 },
                             { text: c('Duration').t`90 minutes`, value: 90 },
                             { text: c('Duration').t`120 minutes`, value: 120 },
-                        ]}
-                        onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
-                            setModel({ ...model, duration: +target.value })
-                        }
-                    />
+                        ].map(({ value, text }) => (
+                            <Option key={value} value={value} title={text} />
+                        ))}
+                    </SelectTwo>
                 </Field>
             </Row>
             <Row>

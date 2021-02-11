@@ -128,7 +128,7 @@ const EventForm = ({
             {!isMinimal && canEditSharedEventData && (
                 <IconRow icon="reload" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
                     <FrequencyInput
-                        className={classnames([isCustomFrequencySet && 'mb0-5'])}
+                        className={classnames([isCustomFrequencySet && 'mb0-5', 'w100'])}
                         id={FREQUENCY_INPUT_ID}
                         data-test-id="event-modal/frequency:select"
                         value={frequencyModel.type}
@@ -234,6 +234,7 @@ const EventForm = ({
                     <CalendarSelect
                         withIcon={false}
                         id={CALENDAR_INPUT_ID}
+                        className="w100"
                         title={c('Title').t`Select which calendar to add this event to`}
                         frozen={!canChangeCalendar}
                         model={model}
