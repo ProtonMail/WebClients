@@ -538,10 +538,10 @@ const InteractiveCalendarView = ({
             if (!newTemporaryModel) {
                 return;
             }
-            const { start: initialStart, end: initialEnd } = newTemporaryModel;
+            const { start: initialStart, end: initialEnd, isAllDay } = newTemporaryModel;
             let newTemporaryEvent = temporaryEvent || getCreateTemporaryEvent(defaultCalendar, newTemporaryModel, tzid);
 
-            const eventDuration = +getTimeInUtc(initialEnd, false) - +getTimeInUtc(initialStart, false);
+            const eventDuration = +getTimeInUtc(initialEnd, isAllDay) - +getTimeInUtc(initialStart, isAllDay);
 
             return (mouseUpAction: MouseUpAction) => {
                 if (

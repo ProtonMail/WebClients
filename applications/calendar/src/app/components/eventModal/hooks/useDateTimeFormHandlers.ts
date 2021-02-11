@@ -20,8 +20,8 @@ interface UseDateTimeFormHandlersArgs {
 const useDateTimeFormHandlers = ({ model, setModel }: UseDateTimeFormHandlersArgs) => {
     const { isAllDay, start, end } = model;
 
-    const startUtcDate = getTimeInUtc(start, false);
-    const endUtcDate = getTimeInUtc(end, false);
+    const startUtcDate = getTimeInUtc(start, isAllDay);
+    const endUtcDate = getTimeInUtc(end, isAllDay);
 
     const isDuration = +endUtcDate - +startUtcDate < 24 * 60 * MILLISECONDS_IN_MINUTE;
     const minEndTimeInTimezone = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startUtcDate), end.tzid));
@@ -30,14 +30,14 @@ const useDateTimeFormHandlers = ({ model, setModel }: UseDateTimeFormHandlersArg
     const getMinEndDate = () => {
         const { date: minDate } = getDateTimeState(minEndTimeInTimezone, '');
         // If the minDate with the currently selected end time would lead to an error, don't allow it to be selected
-        const minTimeUtcDate = getTimeInUtc({ ...end, date: minDate, time: end.time }, false);
+        const minTimeUtcDate = getTimeInUtc({ ...end, date: minDate, time: end.time }, isAllDay);
         return startUtcDate > minTimeUtcDate ? addDays(minDate, 1) : minDate;
     };
 
     const minEndDate = isAllDay ? start.date : getMinEndDate();
 
     const getStartChange = (newStart: DateTimeModel) => {
-        const newStartUtcDate = getTimeInUtc(newStart, false);
+        const newStartUtcDate = getTimeInUtc(newStart, isAllDay);
         const diffInMs = +newStartUtcDate - +startUtcDate;
 
         const newEndDate = new Date(+endUtcDate + diffInMs);
@@ -87,7 +87,7 @@ const useDateTimeFormHandlers = ({ model, setModel }: UseDateTimeFormHandlersArg
     };
 
     const handleEndUpdate = (newEnd: DateTimeModel) => {
-        const endTime = getTimeInUtc(newEnd, false);
+        const endTime = getTimeInUtc(newEnd, isAllDay);
         if (startUtcDate > endTime) {
             return;
         }
