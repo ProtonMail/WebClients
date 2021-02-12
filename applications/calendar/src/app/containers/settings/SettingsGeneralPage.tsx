@@ -1,13 +1,20 @@
 import React from 'react';
-import { DesktopNotificationSection, PrivateMainSettingsArea, SettingsPropsShared } from 'react-components';
+import {
+    DesktopNotificationSection,
+    EarlyAccessSection,
+    PrivateMainSettingsArea,
+    SettingsPropsShared,
+    useEarlyAccess,
+} from 'react-components';
 import { c } from 'ttag';
 import { CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import TimeSection from './section/TimeSection';
 import LayoutSection from './section/LayoutSection';
 import { displayNotification } from '../alarms/AlarmWatcher';
 
-export const getGeneralSettingsPage = () => {
+export const getGeneralSettingsPage = ({ hasEarlyAccess }: { hasEarlyAccess: boolean }) => {
     return {
         to: '/settings/general',
         icon: 'settings-master',
@@ -25,7 +32,13 @@ export const getGeneralSettingsPage = () => {
                 text: c('Title').t`Desktop notifications`,
                 id: 'desktop-notifications',
             },
-        ],
+            hasEarlyAccess
+                ? {
+                      text: c('Title').t`Early Access`,
+                      id: 'early-access',
+                  }
+                : undefined,
+        ].filter(isTruthy),
     };
 };
 
@@ -39,7 +52,9 @@ interface Props extends SettingsPropsShared {
 }
 
 const SettingsGeneralPage = ({ setActiveSection, calendarUserSettings, location }: Props) => {
-    const { text, subsections } = getGeneralSettingsPage();
+    const { hasEarlyAccess } = useEarlyAccess();
+
+    const { text, subsections } = getGeneralSettingsPage({ hasEarlyAccess });
     return (
         <PrivateMainSettingsArea
             title={text}
@@ -53,6 +68,7 @@ const SettingsGeneralPage = ({ setActiveSection, calendarUserSettings, location 
                 onTest={testDefaultNotification}
                 infoURL="https://protonmail.com/support/knowledge-base/calendar-notifications/"
             />
+            {hasEarlyAccess ? <EarlyAccessSection /> : null}
         </PrivateMainSettingsArea>
     );
 };

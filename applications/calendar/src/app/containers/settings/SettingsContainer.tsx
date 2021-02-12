@@ -9,6 +9,7 @@ import {
     PrivateHeader,
     SidebarBackButton,
     MainLogo,
+    useEarlyAccess,
 } from 'react-components';
 import { useLocation, Redirect, Route, Switch } from 'react-router-dom';
 import { c } from 'ttag';
@@ -46,6 +47,7 @@ const SettingsContainer = ({
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
+    const { hasEarlyAccess } = useEarlyAccess();
 
     useEffect(() => {
         setExpand(false);
@@ -74,7 +76,11 @@ const SettingsContainer = ({
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
-                        list={[getOverviewSettingsPage(), getGeneralSettingsPage(), getCalendarSettingsPage()]}
+                        list={[
+                            getOverviewSettingsPage(),
+                            getGeneralSettingsPage({ hasEarlyAccess }),
+                            getCalendarSettingsPage(),
+                        ]}
                         pathname={location.pathname}
                         activeSection={activeSection}
                     />
