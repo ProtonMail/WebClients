@@ -1,3 +1,4 @@
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { useLoading } from 'react-components';
 import { useState } from 'react';
 import { InviteActions } from '../../../interfaces/Invite';
@@ -11,7 +12,7 @@ const focusInput = (el: HTMLElement | null, id: string) => {
 };
 
 const handleValidation = (errors: EventModelErrors, containerEl: HTMLElement | null) => {
-    if (Object.keys(errors).length > 0) {
+    if (Object.values(errors).filter(isTruthy).length > 0) {
         for (const [errorId, formId] of [
             ['title', TITLE_INPUT_ID],
             ['until', UNTIL_ID],
@@ -22,10 +23,6 @@ const handleValidation = (errors: EventModelErrors, containerEl: HTMLElement | n
                 focusInput(containerEl, formId);
                 return true;
             }
-        }
-
-        if (errors.participantError === false) {
-            return false;
         }
 
         return true;
