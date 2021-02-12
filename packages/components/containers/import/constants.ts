@@ -16,3 +16,8 @@ export const IMAPS = {
 export const INVALID_CREDENTIALS_ERROR_LABEL = 'Invalid credentials';
 export const IMAP_CONNECTION_ERROR_LABEL = 'Cannot establish connection with IMAP server';
 export const IMAP_AUTHENTICATION_ERROR_LABEL = 'Authentication failed with IMAP server';
+
+/* The following constants are use to forge OAuth URL in the import assistant */
+export const G_OAUTH_CLIENT_ID = '923746734024-4rggv7tvusv9c0fi9tvh5elnuj5o067b.apps.googleusercontent.com';
+export const G_OAUTH_SCOPE = ['email', 'openid', 'https://mail.google.com/'].join(' ');
+export const G_OAUTH_REDIRECT_PATH = '/settings/import';
