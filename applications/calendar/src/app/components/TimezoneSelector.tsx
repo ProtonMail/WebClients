@@ -14,7 +14,7 @@ interface Props extends Omit<SelectProps<string>, 'onChange' | 'children'> {
     loading?: boolean;
 }
 const TimezoneSelector = ({
-    className = 'field w100',
+    className,
     loading = false,
     disabled = false,
     date,
