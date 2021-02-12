@@ -11,6 +11,7 @@ interface Props {
     url?: string;
     title?: string;
     buttonClass?: string;
+    buttonTabIndex?: number;
     className?: string;
 }
 const Info = ({
@@ -18,6 +19,7 @@ const Info = ({
     title = undefined,
     originalPlacement = 'top',
     buttonClass = 'inline-flex color-currentColor',
+    buttonTabIndex,
     className = '',
     ...rest
 }: Props) => {
@@ -49,7 +51,7 @@ const Info = ({
     return (
         <>
             <button
-                tabIndex={-1}
+                tabIndex={buttonTabIndex}
                 className={buttonClass}
                 onClick={handleClick}
                 ref={anchorRef}
