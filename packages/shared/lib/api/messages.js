@@ -128,10 +128,10 @@ export const markMessageAsUnread = (IDs) => ({
     data: { IDs },
 });
 
-export const deleteMessages = (IDs) => ({
+export const deleteMessages = (IDs, CurrentLabelID) => ({
     method: 'put',
     url: 'mail/v4/messages/delete',
-    data: { IDs },
+    data: { IDs, CurrentLabelID },
 });
 
 export const undeleteMessages = (IDs) => ({
