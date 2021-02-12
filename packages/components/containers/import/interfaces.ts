@@ -168,6 +168,10 @@ export enum PROVIDER_INSTRUCTIONS {
     YAHOO = 'yahoo',
 }
 
+export enum OAUTH_PROVIDER {
+    GMAIL = 'GMAIL',
+}
+
 export enum GMAIL_INSTRUCTIONS {
     IMAP = 1,
     LABELS = 2,
