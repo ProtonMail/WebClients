@@ -14,6 +14,7 @@ import { isTransferCancelError } from '../../utils/transfer';
 
 const MAX_TOTAL_BUFFER_SIZE = 10; // number of blocks
 const MAX_RETRIES_BEFORE_FAIL = 3;
+const PAGE_SIZE = 150;
 
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
@@ -30,7 +31,13 @@ export interface DownloadControls {
 }
 
 export interface DownloadCallbacks {
-    getBlocks: (abortSignal: AbortSignal) => Promise<DriveFileBlock[] | Uint8Array[]>;
+    getBlocks: (
+        abortSignal: AbortSignal,
+        pagination?: {
+            FromBlockIndex: number;
+            PageSize: number;
+        }
+    ) => Promise<DriveFileBlock[] | Uint8Array[]>;
     onStart?: (stream: ReadableStream<Uint8Array>) => void;
     onFinish?: () => void;
     onError?: (err: any) => void;
@@ -60,32 +67,64 @@ export const initDownload = ({
         }
 
         const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
-        let blocksOrBuffer: DriveFileBlock[] | Uint8Array[];
+        let blocksOrBuffer: DriveFileBlock[] | Uint8Array[] = [];
+        let fromBlockIndex = 1;
 
-        try {
-            blocksOrBuffer = await getBlocks(abortController.signal);
-        } catch (err) {
-            // If paused before blocks/meta is fetched (DOM Error), restart on resume pause
-            if (paused && isTransferCancelError(err)) {
-                await waitUntil(() => paused === false);
-                await start(api);
-                return;
+        const hasMorePages = (currentPageLength: number) => currentPageLength === PAGE_SIZE;
+
+        const getBlocksPaged = async (pagination: { FromBlockIndex: number; PageSize: number }) => {
+            try {
+                blocksOrBuffer = await getBlocks(abortController.signal, pagination);
+            } catch (err) {
+                // If paused before blocks/meta is fetched (DOM Error), restart on resume pause
+                if (paused && isTransferCancelError(err)) {
+                    await waitUntil(() => paused === false);
+                    await start(api);
+                    return false;
+                }
+                throw err;
             }
-            throw err;
+
+            return true;
+        };
+
+        // Downloads initial page
+        if (!(await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: PAGE_SIZE }))) {
+            return false;
         }
 
         await fsWriter.ready;
         onStart?.(fileStream.readable);
 
-        // If initialized with preloaded buffer instead of blocks to download
-        if (areUint8Arrays(blocksOrBuffer)) {
+        const preloadBuffer = async () => {
             for (const buffer of blocksOrBuffer) {
                 await fsWriter.write(buffer as Uint8Array);
             }
+
+            while (hasMorePages(blocksOrBuffer.length)) {
+                fromBlockIndex += PAGE_SIZE;
+
+                if (await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: PAGE_SIZE })) {
+                    for (const buffer of blocksOrBuffer) {
+                        await fsWriter.write(buffer as Uint8Array);
+                    }
+                } else {
+                    return;
+                }
+            }
+
             await fsWriter.ready;
             await fsWriter.close();
+        };
+
+        // If initialized with preloaded buffer instead of blocks to download
+        if (areUint8Arrays(blocksOrBuffer)) {
+            await preloadBuffer();
             return;
         }
+
+        let blocks = blocksOrBuffer as DriveFileBlock[];
+        let activeIndex = 1;
 
         const flushBuffer = async (Index: number) => {
             const currentBuffer = buffers.get(Index);
@@ -115,9 +154,6 @@ export const initDownload = ({
                 onProgress(-progressToRevert);
             }
         };
-
-        let blocks = blocksOrBuffer;
-        let activeIndex = 1;
 
         const getBlockQueue = (startIndex = 1) => orderBy(blocks, 'Index').filter(({ Index }) => Index >= startIndex);
 
@@ -227,7 +263,26 @@ export const initDownload = ({
             }
         };
 
+        const downloadTheRestOfBlocks = async () => {
+            while (hasMorePages(blocksOrBuffer.length)) {
+                fromBlockIndex += PAGE_SIZE;
+
+                if (await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: PAGE_SIZE })) {
+                    blocks = blocksOrBuffer as DriveFileBlock[];
+                    activeIndex = 1;
+                    await startDownload(getBlockQueue());
+                } else {
+                    return false;
+                }
+            }
+
+            return true;
+        };
+
         await startDownload(getBlockQueue());
+        if (!(await downloadTheRestOfBlocks())) {
+            return;
+        }
 
         // Wait for stream to be flushed
         await fsWriter.ready;
