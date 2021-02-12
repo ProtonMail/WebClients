@@ -52,7 +52,7 @@ import { IMPORT_ERROR_TYPE, ImportFileError } from '../components/import/ImportF
 import { MAX_IMPORT_EVENTS, MAX_NOTIFICATIONS } from '../constants';
 import getComponentFromCalendarEvent from '../containers/calendar/eventStore/cache/getComponentFromCalendarEvent';
 import { EncryptedEvent, VcalCalendarComponentOrError } from '../interfaces/Import';
-import { getSupportedAlarm } from './alarms';
+import { dedupeAlarmsWithNormalizedTriggers, getSupportedAlarm } from './alarms';
 
 const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
     return !!(component as { error: Error }).error;
@@ -408,9 +408,10 @@ export const getSupportedEvent = ({
 
         const alarms = components?.filter(({ component }) => component === 'valarm') || [];
         const supportedAlarms = getSupportedAlarms(alarms, dtstart);
+        const dedupedAlarms = dedupeAlarmsWithNormalizedTriggers(supportedAlarms);
 
-        if (supportedAlarms.length) {
-            validated.components = supportedAlarms;
+        if (dedupedAlarms.length) {
+            validated.components = dedupedAlarms;
         }
 
         return validated;

@@ -14,6 +14,7 @@ import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalM
 import modelToFrequencyProperties from './modelToFrequencyProperties';
 import { modelToValarmComponent } from './modelToValarm';
 import { DateTimeModel, EventModel } from '../../../interfaces/EventModel';
+import { dedupeNotifications } from '../../../helpers/alarms';
 
 const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: boolean) => {
     const dateObject = {
@@ -108,10 +109,8 @@ const modelToAttendeeProperties = ({ attendees }: EventModel) => {
     };
 };
 
-const modelToValarmComponents = ({ isAllDay, fullDayNotifications, partDayNotifications }: EventModel) => {
-    const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
-    return notifications.map((notification) => modelToValarmComponent(notification));
-};
+export const modelToValarmComponents = ({ isAllDay, fullDayNotifications, partDayNotifications }: EventModel) =>
+    dedupeNotifications(isAllDay ? fullDayNotifications : partDayNotifications).map(modelToValarmComponent);
 
 export const modelToVeventComponent = (model: EventModel) => {
     const dateProperties = modelToDateProperties(model);

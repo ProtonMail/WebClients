@@ -15,7 +15,6 @@ import {
     CalendarViewEventTemporaryEvent,
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
-import { sortNotifications } from '../../containers/calendar/sortNotifications';
 import { EventModelReadView } from '../../interfaces/EventModel';
 import ParticipantStatusIcon from './ParticipantStatusIcon';
 import PopoverNotification from './PopoverNotification';
@@ -141,16 +140,17 @@ const PopoverEventContent = ({
                     {calendarString}
                 </div>
             ) : null}
-            {Array.isArray(model.notifications) && model.notifications.length ? (
+            {model.notifications?.length ? (
                 <div className={wrapClassName}>
                     <Icon name="notifications-enabled" className={iconClassName} />
                     <div className="flex flex-column">
-                        {sortNotifications(model.notifications).map((notification, i) => {
-                            const key = `${i}`;
-                            return (
-                                <PopoverNotification key={key} notification={notification} formatTime={formatTime} />
-                            );
-                        })}
+                        {model.notifications.map((notification) => (
+                            <PopoverNotification
+                                key={notification.id}
+                                notification={notification}
+                                formatTime={formatTime}
+                            />
+                        ))}
                     </div>
                 </div>
             ) : null}

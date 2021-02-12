@@ -2,7 +2,7 @@ import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calenda
 import { VcalValarmComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { generateUID } from 'react-components';
 
-import { filterFutureNotifications } from '../../../helpers/alarms';
+import { filterFutureNotifications, sortNotificationsByAscendingTrigger } from '../../../helpers/alarms';
 import { triggerToModel } from './notificationModel';
 import { NotificationModel } from '../../../interfaces/NotificationModel';
 
@@ -28,5 +28,5 @@ export const propertiesToNotificationModel = (
             };
         });
     // Filter out future alarms
-    return filterFutureNotifications(modelNotifications);
+    return sortNotificationsByAscendingTrigger(filterFutureNotifications(modelNotifications));
 };
