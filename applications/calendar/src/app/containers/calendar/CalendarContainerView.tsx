@@ -194,7 +194,7 @@ const CalendarContainerView = ({
                 timezoneSelector={
                     <TimezoneSelector
                         data-test-id="calendar-view:time-zone-dropdown"
-                        className="toolbar-select no-mobile no-tablet"
+                        className="no-mobile no-tablet"
                         date={utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate}
                         timezone={tzid}
                         onChange={setTzid}
