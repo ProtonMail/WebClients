@@ -17,11 +17,7 @@ export const getOverviewPage = () => {
     };
 };
 
-export const getPages = (
-    user: UserModel,
-    organization: Organization,
-    hasEarlyAccess: boolean = false
-): SectionConfig[] =>
+export const getPages = (user: UserModel, organization: Organization, hasEarlyAccess: boolean): SectionConfig[] =>
     [
         getOverviewPage(),
         getAccountPage(user),

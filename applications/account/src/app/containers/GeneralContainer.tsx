@@ -8,9 +8,8 @@ import {
     DateFormatSection,
     WeekStartSection,
     EarlyAccessSection,
-    FeatureCode,
+    useEarlyAccess,
 } from 'react-components';
-import { useFeature } from 'react-components/hooks';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import locales from 'proton-shared/lib/i18n/locales';
 import { IS_DATE_FORMAT_ENABLED } from 'proton-shared/lib/i18n/dateFnLocale';
@@ -56,9 +55,7 @@ export const getGeneralPage = ({ hasEarlyAccess }: { hasEarlyAccess: boolean }) 
 };
 
 const GeneralContainer = ({ location, setActiveSection }: SettingsPropsShared) => {
-    const { feature: { Value: earlyAccess } = {} } = useFeature(FeatureCode.EarlyAccess);
-
-    const hasEarlyAccess = earlyAccess === 'alpha' || earlyAccess === 'beta';
+    const { hasEarlyAccess } = useEarlyAccess();
 
     return (
         <PrivateMainSettingsAreaWithPermissions

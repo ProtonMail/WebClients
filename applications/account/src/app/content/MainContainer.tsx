@@ -15,8 +15,7 @@ import {
     useOrganization,
     useModals,
     useWelcomeFlags,
-    useFeature,
-    FeatureCode,
+    useEarlyAccess,
 } from 'react-components';
 
 import { getPages } from '../pages';
@@ -38,8 +37,7 @@ const MainContainer = () => {
     const { isNarrow } = useActiveBreakpoint();
     const [welcomeFlags, setWelcomeFlagDone] = useWelcomeFlags();
     const { createModal } = useModals();
-    const { feature: { Value: earlyAccess } = {} } = useFeature(FeatureCode.EarlyAccess);
-    const hasEarlyAccess = earlyAccess === 'alpha' || earlyAccess === 'beta';
+    const { hasEarlyAccess } = useEarlyAccess();
 
     useEffect(() => {
         setExpand(false);
