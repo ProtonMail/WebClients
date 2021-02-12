@@ -1,7 +1,7 @@
 export const getItem = (key: string, defaultValue: string) => {
     try {
         const value = window.sessionStorage.getItem(key);
-        return value === undefined ? defaultValue : value;
+        return value === null ? defaultValue : value;
     } catch (e) {
         return defaultValue;
     }
