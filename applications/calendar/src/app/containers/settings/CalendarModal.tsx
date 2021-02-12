@@ -39,6 +39,7 @@ import {
 import { setupCalendarKey } from '../setup/reset/setupCalendarKeys';
 import EventSettingsTab from './EventSettingsTab';
 import CalendarSettingsTab from './CalendarSettingsTab';
+import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '../../helpers/alarms';
 
 interface Props {
     calendar?: Calendar;
@@ -207,12 +208,21 @@ const CalendarModal = ({
     const errors = validate(formattedModel);
 
     const handleProcessCalendar = async () => {
-        const calendarPayload = getCalendarPayload(formattedModel);
-        const calendarSettingsPayload = getCalendarSettingsPayload(formattedModel);
+        const formattedModelWithFormattedNotifications = {
+            ...formattedModel,
+            partDayNotifications: sortNotificationsByAscendingTrigger(dedupeNotifications(model.partDayNotifications)),
+            fullDayNotifications: sortNotificationsByAscendingTrigger(dedupeNotifications(model.fullDayNotifications)),
+        };
+        const calendarPayload = getCalendarPayload(formattedModelWithFormattedNotifications);
+        const calendarSettingsPayload = getCalendarSettingsPayload(formattedModelWithFormattedNotifications);
         if (calendar) {
             return handleUpdateCalendar(calendar, calendarPayload, calendarSettingsPayload);
         }
-        return handleCreateCalendar(formattedModel.addressID, calendarPayload, calendarSettingsPayload);
+        return handleCreateCalendar(
+            formattedModelWithFormattedNotifications.addressID,
+            calendarPayload,
+            calendarSettingsPayload
+        );
     };
 
     const { section, ...modalProps } = (() => {

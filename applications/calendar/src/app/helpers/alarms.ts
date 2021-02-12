@@ -12,11 +12,15 @@ import {
     VcalTriggerProperty,
     VcalValarmComponent,
     VcalVeventComponent,
+    VcalValarmRelativeComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { uniqueBy } from 'proton-shared/lib/helpers/array';
+import { omit } from 'proton-shared/lib/helpers/object';
 import { DAY, HOUR, MINUTE, NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN, WEEK } from '../constants';
 import { DateTimeValue } from '../interfaces/DateTime';
 import { NotificationModel } from '../interfaces/NotificationModel';
 import getAlarmMessageText from './getAlarmMessageText';
+import { getValarmTrigger } from '../components/eventModal/eventForm/getValarmTrigger';
 
 /**
  * Given a raw event, (optionally) its starting date, the date now and a timezone id,
@@ -150,7 +154,7 @@ export const getIsValidAlarm = (alarm: VcalValarmComponent) => {
 export const getSupportedAlarm = (
     alarm: VcalValarmComponent,
     dtstart: VcalDateOrDateTimeProperty
-): VcalValarmComponent | undefined => {
+): VcalValarmRelativeComponent | undefined => {
     if (!getIsValidAlarm(alarm)) {
         return;
     }
@@ -195,4 +199,64 @@ export const filterFutureNotifications = (notifications: NotificationModel[]) =>
         }
         return value === 0;
     });
+};
+
+export const sortNotificationsByAscendingTrigger = (notifications: NotificationModel[]) =>
+    [...notifications].sort((a: NotificationModel, b: NotificationModel) => {
+        const triggerA = getValarmTrigger(a);
+        const triggerB = getValarmTrigger(b);
+        const triggerAMinutes =
+            normalizeDurationToUnit(triggerA, NOTIFICATION_UNITS.MINUTES) * (triggerA.isNegative ? -1 : 1);
+        const triggerBMinutes =
+            normalizeDurationToUnit(triggerB, NOTIFICATION_UNITS.MINUTES) * (triggerB.isNegative ? -1 : 1);
+
+        return triggerAMinutes - triggerBMinutes;
+    });
+
+const sortNotificationsByAscendingValue = (a: NotificationModel, b: NotificationModel) =>
+    (a.value || 0) - (b.value || 0);
+
+const uniqueNotificationComparator = (notification: NotificationModel) => {
+    const trigger = getValarmTrigger(notification);
+
+    return `${notification.type}-${
+        normalizeDurationToUnit(trigger, NOTIFICATION_UNITS.MINUTES) * (trigger.isNegative ? -1 : 1)
+    }`;
+};
+
+export const dedupeNotifications = (notifications: NotificationModel[]) => {
+    const sortedNotifications = [...notifications].sort(sortNotificationsByAscendingValue);
+
+    return uniqueBy(sortedNotifications, uniqueNotificationComparator);
+};
+
+const getSmallestNonZeroNumericValueFromDurationValue = (object: VcalDurationValue) =>
+    Math.min(...Object.values(omit(object, ['isNegative'])).filter(Boolean));
+
+const sortAlarmsByAscendingTriggerValue = (a: VcalValarmRelativeComponent, b: VcalValarmRelativeComponent) => {
+    const aMin = getSmallestNonZeroNumericValueFromDurationValue(a.trigger.value);
+    const bMin = getSmallestNonZeroNumericValueFromDurationValue(b.trigger.value);
+
+    return aMin - bMin;
+};
+
+const uniqueAlarmComparator = (alarm: VcalValarmRelativeComponent) => {
+    const triggerValue = alarm.trigger.value;
+    const isTriggerNegative = 'isNegative' in triggerValue && triggerValue.isNegative;
+
+    return `${alarm.action.value}-${
+        normalizeDurationToUnit(triggerValue, NOTIFICATION_UNITS.MINUTES) * (isTriggerNegative ? -1 : 1)
+    }`;
+};
+
+/*
+ * ATTENTION
+ * This function will deduplicate alarms with any type of relative trigger,
+ * but if you expect it to pick the nicest triggers (i.e. 2 days instead of 1 day and 24 hours)
+ * you must pass normalized triggers
+ */
+export const dedupeAlarmsWithNormalizedTriggers = (alarms: VcalValarmRelativeComponent[]) => {
+    const sortedAlarms = [...alarms].sort(sortAlarmsByAscendingTriggerValue);
+
+    return uniqueBy(sortedAlarms, uniqueAlarmComparator);
 };
