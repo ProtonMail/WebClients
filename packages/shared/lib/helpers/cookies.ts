@@ -33,12 +33,14 @@ export const setCookie = ({
 }: SetCookieArguments) => {
     const cookieValue = maybeCookieValue === undefined ? '' : maybeCookieValue;
 
-    let expirationDate = maybeExpirationDate === undefined ? new Date(0).toUTCString() : maybeExpirationDate;
+    let expirationDate;
 
     if (expirationDate === 'max') {
         /* https://en.wikipedia.org/wiki/Year_2038_problem */
         expirationDate = new Date(2147483647000).toUTCString();
     }
+
+    expirationDate = maybeCookieValue === undefined ? new Date(0).toUTCString() : maybeExpirationDate;
 
     document.cookie = [
         `${cookieName}=${cookieValue}`,
