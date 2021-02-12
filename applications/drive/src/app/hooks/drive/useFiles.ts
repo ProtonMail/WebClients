@@ -564,7 +564,11 @@ function useFiles() {
     const getFileRevision = async (
         shareId: string,
         linkId: string,
-        abortSignal?: AbortSignal
+        abortSignal?: AbortSignal,
+        pagination?: {
+            FromBlockIndex: number;
+            PageSize: number;
+        }
     ): Promise<DriveFileRevisionResult> => {
         let fileMeta = await getLinkMeta(shareId, linkId, { abortSignal });
 
@@ -579,13 +583,21 @@ function useFiles() {
         }
 
         return debouncedRequest<DriveFileRevisionResult>({
-            ...queryFileRevision(shareId, linkId, revision.ID),
+            ...queryFileRevision(shareId, linkId, revision.ID, pagination),
             signal: abortSignal,
         });
     };
 
-    const getFileBlocks = async (shareId: string, linkId: string, abortSignal?: AbortSignal) => {
-        const { Revision } = await getFileRevision(shareId, linkId, abortSignal);
+    const getFileBlocks = async (
+        shareId: string,
+        linkId: string,
+        abortSignal?: AbortSignal,
+        pagination?: {
+            FromBlockIndex: number;
+            PageSize: number;
+        }
+    ) => {
+        const { Revision } = await getFileRevision(shareId, linkId, abortSignal, pagination);
         return Revision.Blocks;
     };
 
@@ -600,7 +612,7 @@ function useFiles() {
 
         const { downloadControls } = initDownload({
             transformBlockStream: decryptBlockStream(shareId, linkId),
-            getBlocks: (abortSignal) => getFileBlocks(shareId, linkId, abortSignal),
+            getBlocks: (abortSignal, pagination) => getFileBlocks(shareId, linkId, abortSignal, pagination),
             onStart: (stream) => resolve(streamToBuffer(stream)),
         });
 
@@ -624,7 +636,7 @@ function useFiles() {
             { ShareID: shareId, LinkID: linkId },
             {
                 transformBlockStream: decryptBlockStream(shareId, linkId),
-                getBlocks: async (abortSignal) => getFileBlocks(shareId, linkId, abortSignal),
+                getBlocks: async (abortSignal, pagination) => getFileBlocks(shareId, linkId, abortSignal, pagination),
             }
         );
     };
@@ -667,7 +679,8 @@ function useFiles() {
                             getMetaForTransfer(child),
                             { ShareID: shareId, LinkID: linkId },
                             {
-                                getBlocks: (abortSignal) => getFileBlocks(shareId, child.LinkID, abortSignal),
+                                getBlocks: (abortSignal, pagination) =>
+                                    getFileBlocks(shareId, child.LinkID, abortSignal, pagination),
                                 transformBlockStream: decryptBlockStream(shareId, child.LinkID),
                                 onStart: (stream) => {
                                     cb.onStartFileTransfer({
