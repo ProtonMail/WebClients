@@ -14,7 +14,7 @@ import {
 } from 'react-components';
 import { OpenPGPKey } from 'pmcrypto';
 import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
-import { getInitial } from 'proton-shared/lib/helpers/string';
+import { getInitials } from 'proton-shared/lib/helpers/string';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import { Recipient } from 'proton-shared/lib/interfaces';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
@@ -56,7 +56,7 @@ const RecipientItemSingle = ({
     const { ContactID } = getContactEmail(contactsMap, recipient.Address) || {};
     const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined);
     const label = getRecipientLabel(recipient, true);
-    const initial = getInitial(label);
+    const initial = getInitials(label);
     const showTrustPublicKey = !!signingPublicKey;
 
     const handleCompose = (event: MouseEvent) => {
