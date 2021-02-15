@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { getInitial } from 'proton-shared/lib/helpers/string';
+import { getInitials } from 'proton-shared/lib/helpers/string';
 
 import { resizeImage, toImage } from 'proton-shared/lib/helpers/image';
 import { isBase64Image } from 'proton-shared/lib/helpers/validators';
@@ -65,7 +65,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
         return (
             <div className="bordered bg-white-dm ratio-container-square mb0">
                 <span className="inner-ratio-container flex">
-                    <span className="mauto color-global-border h1">{getInitial(name)}</span>
+                    <span className="mauto color-global-border h1">{getInitials(name)}</span>
                 </span>
             </div>
         );
