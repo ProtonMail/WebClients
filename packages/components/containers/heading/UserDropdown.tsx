@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import { APPS, isSSOMode, SSO_PATHS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp, getAppHref } from 'proton-shared/lib/apps/helper';
@@ -6,8 +6,6 @@ import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { updateThemeType } from 'proton-shared/lib/api/settings';
 import { ThemeTypes } from 'proton-shared/lib/themes/themes';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/subscription';
 
 import {
     useAuthentication,
@@ -19,9 +17,8 @@ import {
     useEventManager,
     useUserSettings,
     useOrganization,
-    useSubscription,
 } from '../../hooks';
-import { usePopperAnchor, Dropdown, Icon, Toggle, PrimaryButton, AppLink, Meter, Href } from '../../components';
+import { usePopperAnchor, Dropdown, Icon, Toggle, PrimaryButton, AppLink, Href } from '../../components';
 import { generateUID } from '../../helpers';
 import { ToggleState } from '../../components/toggle/Toggle';
 import UserDropdownButton from './UserDropdownButton';
@@ -32,32 +29,15 @@ const UserDropdown = ({ ...rest }) => {
     const api = useApi();
     const { call } = useEventManager();
     const [organization] = useOrganization();
-    const [subscription] = useSubscription();
     const { Name: organizationName } = organization || {};
     const [user] = useUser();
     const [userSettings] = useUserSettings();
-    const { UsedSpace, MaxSpace, isMember, canPay, isSubUser } = user;
-    const spacePercentage = Math.round((UsedSpace * 100) / MaxSpace);
+    const { canPay, isSubUser } = user;
     const { logout } = useAuthentication();
     const { createModal } = useModals();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [loading, withLoading] = useLoading();
-    const canAddStorage = useMemo(() => {
-        if (!subscription) {
-            return false;
-        }
-        if (isSubUser) {
-            return false;
-        }
-        if (isMember) {
-            return false;
-        }
-        if (hasVisionary(subscription) || hasMailProfessional(subscription)) {
-            return false;
-        }
-        return true;
-    }, [subscription, user]);
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
@@ -107,25 +87,6 @@ const UserDropdown = ({ ...rest }) => {
                                         <div className="mb1">{organizationName}</div>
                                     </>
                                 ) : null}
-                                <div className="opacity-50 text-sm m0">{c('Label').t`Storage space`}</div>
-                                <div className="flex flex-align-items-baseline flex-nowrap flex-justify-space-between">
-                                    <span>
-                                        <span className="text-semibold">{humanSize(UsedSpace)} </span>
-                                        /&nbsp;{humanSize(MaxSpace)}
-                                    </span>
-                                    {canAddStorage ? (
-                                        <AppLink
-                                            to="/subscription"
-                                            toApp={getAccountSettingsApp()}
-                                            className="text-sm link m0 ml0-5"
-                                            title={c('Apps dropdown').t`Add storage space`}
-                                            onClick={() => close()}
-                                        >
-                                            {c('Action').t`Add storage`}
-                                        </AppLink>
-                                    ) : null}
-                                </div>
-                                <Meter className="is-thin block mt0-5 mb1" value={spacePercentage} />
                                 <AppLink
                                     to="/"
                                     className="block w100 mt1-5 mb1-5 text-center button button--primaryborder"
