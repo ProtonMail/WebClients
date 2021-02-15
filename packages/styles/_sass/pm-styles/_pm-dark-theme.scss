@@ -5,7 +5,7 @@
 @import './pm-buttons-mixins';
 
 // forms/buttons
-.button:not(.button-blue):not(.pv-button-green):not(.button--primary):not(.button--primaryborderEvenInDarkMode):not(.button--link):not(.button--error):not(.button--warning):not(.button--redborder):not(.button--primaryborder),
+.button:not(.button-blue):not(.pv-button-green):not(.button--primary):not(.button--primaryborderEvenInDarkMode):not(.button--link):not(.button--error):not(.button--warning):not(.button--redborder):not(.button--primaryborder):not(.button--primaryborder-dark),
 .button--info {
 	@include button-dark;
 }
