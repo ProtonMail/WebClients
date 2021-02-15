@@ -192,9 +192,9 @@ kbd {
 }
 
 hr {
-	background-color: $color-hr;
+	background-color: var(--bordercolor-input, $color-hr);
 	border: 0;
-	color: $color-hr;
+	color: var(--bordercolor-input, $color-hr);
 	height: $hr-height;
 	margin: 0 0 1em;
 	padding: 0;
