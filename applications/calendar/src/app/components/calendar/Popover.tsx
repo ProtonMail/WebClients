@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 import { useRect } from '../../hooks/useRect';
@@ -7,6 +7,7 @@ import { Rect } from '../../hooks/observeRect';
 export interface PopoverRenderData {
     ref: (el: HTMLElement | null) => void;
     style: { left: number; top: number };
+    textareaMaxHeight: number;
 }
 
 interface Props {
@@ -28,6 +29,22 @@ const Popover = ({ targetEl, containerEl, children, isOpen, once = false, when }
         useMemo(() => [when, containerRect], [when, containerRect])
     );
     const popoverRect = useRect(popoverEl, isOpen);
+    const textAreaEl = useMemo(() => popoverEl?.querySelector('textarea') || null, [popoverEl]);
+    const textAreaRect = useRect(textAreaEl, true);
+    const prevMaxTextareaHeight = useRef(0);
+    const textareaMaxHeight = useMemo(() => {
+        const availableHeight = window.innerHeight - (popoverRect?.height || 0);
+
+        if (popoverRect && textAreaRect && availableHeight > 0) {
+            const maxHeight = Math.round(availableHeight + textAreaRect.height);
+
+            prevMaxTextareaHeight.current = maxHeight;
+
+            return maxHeight;
+        }
+
+        return prevMaxTextareaHeight.current;
+    }, [popoverRect, textAreaRect]);
 
     const value = useMemo(() => {
         if (!containerEl || !containerRect) {
@@ -91,6 +108,7 @@ const Popover = ({ targetEl, containerEl, children, isOpen, once = false, when }
                 top: Math.round(style.top),
                 left: Math.round(style.left),
             },
+            textareaMaxHeight,
         };
     }, [popoverEl, targetEl, containerEl, containerRect, popoverRect, targetRect]);
 

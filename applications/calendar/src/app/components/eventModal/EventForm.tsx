@@ -40,6 +40,7 @@ interface Props {
     isMinimal?: boolean;
     isCreateEvent: boolean;
     setParticipantError?: (value: boolean) => void;
+    textareaMaxHeight?: number;
 }
 
 const EventForm = ({
@@ -54,6 +55,7 @@ const EventForm = ({
     isMinimal,
     isCreateEvent,
     setParticipantError,
+    textareaMaxHeight,
     ...props
 }: Props & HTMLAttributes<HTMLDivElement>) => {
     const {
@@ -251,6 +253,7 @@ const EventForm = ({
                         autoGrow
                         placeholder={c('Placeholder').t`Add description`}
                         maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
+                        style={{ maxHeight: textareaMaxHeight }}
                         title={c('Title').t`Add more information related to this event`}
                         {...createHandlers({ model, setModel, field: 'description' }).native}
                     />
