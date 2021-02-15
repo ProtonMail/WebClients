@@ -1,4 +1,8 @@
 import React from 'react';
+import { APPS } from 'proton-shared/lib/constants';
+import { getAppName } from 'proton-shared/lib/apps/helper';
+
+const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
 interface Props {
     className?: string;
@@ -33,7 +37,7 @@ const CalendarLogo = ({ className = 'logo' }: Props) => {
                 <path d="M3.5,11.3c-0.4,0-0.7-0.2-1-0.5l-0.6,0.6c0.4,0.5,1.1,0.8,1.7,0.7c1.2,0,1.9-0.7,1.9-1.5l0,0C4.9,10.5,4.4,10,4.4,9.3c0-0.5,0.4-1,0.9-1.1C5.3,7.5,4.6,7,3.9,7H3.8C3.1,7,2.5,7.3,2.1,7.7l0.5,0.6C2.8,8,3.2,7.9,3.5,7.9c0.4,0,0.7,0.2,0.7,0.5c0,0.4-0.3,0.7-0.7,0.7H3.2L3.1,9.9h0.4c0.5,0,0.8,0.2,0.8,0.7c0,0,0,0,0,0.1C4.2,11,3.9,11.3,3.5,11.3z" />
                 <path d="M7.8,12.2c1.2,0,1.9-0.9,1.9-2.6S9,7.1,7.8,7.1S5.9,7.9,5.9,9.6S6.6,12.2,7.8,12.2z M7.9,7.9c0.4,0,0.7,0.4,0.7,1.7s-0.2,1.7-0.7,1.7c-0.4,0-0.7-0.4-0.7-1.7S7.4,7.9,7.9,7.9z" />
             </g>
-            <title id="logo__title">ProtonCalendar</title>
+            <title id="logo__title">{calendarAppName}</title>
         </svg>
     );
 };
