@@ -24,7 +24,6 @@ import MoveToFolderModal from '../../components/MoveToFolderModal';
 import CreateFolderModal from '../../components/CreateFolderModal';
 import SharingModal from '../../components/SharingModal/SharingModal';
 import FilesDetailsModal from '../../components/FilesDetailsModal';
-import { RESPONSE_CODE } from '../../constants';
 
 function useToolbarActions() {
     const queuedFunction = useQueuedFunction();
@@ -206,9 +205,7 @@ function useToolbarActions() {
                 }
             });
 
-            const deletedSharedUrlIds = (await deleteMultipleSharedLinks(shareId, urlShareIds)).Responses.filter(
-                (res) => res.Response.Code === RESPONSE_CODE.SUCCESS
-            ).map(({ ShareURLID }) => ShareURLID);
+            const deletedSharedUrlIds = await deleteMultipleSharedLinks(shareId, urlShareIds);
 
             links.forEach(({ ShareUrlShareID, SharedUrl }) => {
                 if (ShareUrlShareID && SharedUrl?.ShareUrlID && deletedSharedUrlIds.includes(SharedUrl?.ShareUrlID)) {

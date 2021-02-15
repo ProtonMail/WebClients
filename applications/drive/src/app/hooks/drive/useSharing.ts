@@ -3,8 +3,9 @@ import { encryptSessionKey, splitMessage, decryptSessionKey, getMessage, Session
 import { computeKeyPassword } from 'pm-srp';
 import { srpGetVerify } from 'proton-shared/lib/srp';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
-import { useApi } from 'react-components';
+import { chunk } from 'proton-shared/lib/helpers/array';
 import { decryptUnsigned, encryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
+import { useApi, usePreventLeave } from 'react-components';
 import {
     queryCreateSharedLink,
     querySharedLinks,
@@ -14,13 +15,21 @@ import {
 } from '../../api/sharing';
 import useDrive from './useDrive';
 import useDriveCrypto from './useDriveCrypto';
-import { DEFAULT_SHARE_MAX_ACCESSES, EXPIRATION_DAYS, FOLDER_PAGE_SIZE } from '../../constants';
-import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
+import runInQueue from '../../utils/runInQueue';
 import useDebouncedRequest from '../util/useDebouncedRequest';
+import {
+    BATCH_REQUEST_SIZE,
+    DEFAULT_SHARE_MAX_ACCESSES,
+    EXPIRATION_DAYS,
+    FOLDER_PAGE_SIZE,
+    MAX_THREADS_PER_REQUEST,
+    RESPONSE_CODE,
+} from '../../constants';
+import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
+import { LinkMeta } from '../../interfaces/link';
 import { validateSharedURLPassword, ValidationError } from '../../utils/validation';
 import { getDurationInSeconds } from '../../components/Drive/helpers';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
-import { LinkMeta } from '../../interfaces/link';
 
 function useSharing() {
     const { getPrimaryAddressKey } = useDriveCrypto();
@@ -28,6 +37,7 @@ function useSharing() {
     const cache = useDriveCache();
     const api = useApi();
     const debouncedRequest = useDebouncedRequest();
+    const { preventLeave } = usePreventLeave();
 
     const encryptSymmetricSessionKey = async (sessionKey: SessionKey, password: string) => {
         const { message } = await encryptSessionKey({
@@ -276,11 +286,21 @@ function useSharing() {
         return api(queryDeleteSharedLink(sharedURLShareId, token));
     };
 
-    const deleteMultipleSharedLinks = (
-        shareId: string,
-        ids: string[]
-    ): Promise<{ Responses: { ShareURLID: string; Response: { Code: number } }[] }> => {
-        return api(queryDeleteMultipleSharedLinks(shareId, ids));
+    const deleteMultipleSharedLinks = async (shareId: string, sharedUrlIds: string[]) => {
+        const batches = chunk(sharedUrlIds, BATCH_REQUEST_SIZE);
+
+        const deleteSharedQueue = batches.map((batch) => () =>
+            debouncedRequest<{ Responses: { ShareURLID: string; Response: { Code: number } }[] }>(
+                queryDeleteMultipleSharedLinks(shareId, batch)
+            ).then(({ Responses }) =>
+                Responses.filter((res) => res.Response.Code === RESPONSE_CODE.SUCCESS).map(
+                    ({ ShareURLID }) => ShareURLID
+                )
+            )
+        );
+
+        const deletedIds = await preventLeave(runInQueue(deleteSharedQueue, MAX_THREADS_PER_REQUEST));
+        return ([] as string[]).concat(...deletedIds);
     };
 
     return {
