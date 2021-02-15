@@ -1,3 +1,8 @@
+# 0.0.8 (15 February, 2021)
+
+Added "variant" property to meter (default, thin).
+Enhanced documentation for [Meter](https://design-system.protontech.ch/?path=/docs/components-meter) with props table & additional examples for different meter variants.
+
 # 0.0.7 (3 February, 2021)
 
 Added [Dropzone](https://design-system.protontech.ch/?path=/story/components-dropdown--basic), a component for drag and drop uploading.

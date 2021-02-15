@@ -1,4 +1,4 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from "@storybook/addon-docs/blocks";
 import { Meter } from "react-components"
 
 # Meter
@@ -9,4 +9,14 @@ The `Meter` component must only be used for a visual rendering of a graduated an
     <Story id="components-meter--basic" />
 </Canvas>
 
-<ArgsTable of={Meter} />
+### Variants
+
+The meter comes in two different variants "default" (thick) & "thin".
+
+<Canvas>
+    <Story id="components-meter--variants" />
+</Canvas>
+
+<Primary />
+
+<ArgsTable story={PRIMARY_STORY} />
