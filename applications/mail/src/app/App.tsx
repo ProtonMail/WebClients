@@ -1,5 +1,8 @@
-import React from 'react';
-import { ProtonApp, StandardSetup } from 'react-components';
+import React, { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import { LoaderPage, ProtonApp, StandardSetup } from 'react-components';
+
 import sentry from 'proton-shared/lib/helpers/sentry';
 import locales from 'proton-shared/lib/i18n/locales';
 
@@ -15,10 +18,23 @@ const enhancedConfig = {
 
 sentry(enhancedConfig);
 
+const PUBLIC_PATH_PREFIX = '/oauth/callback';
+
 const App = () => {
+    const [hasInitialAuth] = useState(() => {
+        return !window.location.pathname.startsWith(PUBLIC_PATH_PREFIX);
+    });
+
     return (
-        <ProtonApp config={enhancedConfig}>
-            <StandardSetup PrivateApp={PrivateApp} locales={locales} />
+        <ProtonApp config={enhancedConfig} hasInitialAuth={hasInitialAuth}>
+            <Switch>
+                <Route path={PUBLIC_PATH_PREFIX}>
+                    <LoaderPage />
+                </Route>
+                <Route path="*">
+                    <StandardSetup PrivateApp={PrivateApp} locales={locales} />
+                </Route>
+            </Switch>
         </ProtonApp>
     );
 };
