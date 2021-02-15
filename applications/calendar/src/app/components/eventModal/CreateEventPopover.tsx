@@ -24,6 +24,7 @@ interface Props {
     style: CSSProperties;
     popoverRef: Ref<HTMLDivElement>;
     setModel: (value: EventModel) => void;
+    textareaMaxHeight: number;
 }
 
 const CreateEventPopover = ({
@@ -38,6 +39,7 @@ const CreateEventPopover = ({
     weekStartsOn,
     addresses,
     isNarrow,
+    textareaMaxHeight,
 }: Props) => {
     const errors = validateEventModel(model);
     const formRef = useRef<HTMLFormElement>(null);
@@ -82,6 +84,7 @@ const CreateEventPopover = ({
                     setModel={setModel}
                     isMinimal
                     isCreateEvent
+                    textareaMaxHeight={textareaMaxHeight}
                 />
                 <PopoverFooter>
                     <Button
