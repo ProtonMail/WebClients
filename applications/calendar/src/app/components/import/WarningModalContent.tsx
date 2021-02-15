@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Alert } from 'react-components';
-import { IMPORT_CALENDAR_FAQ_URL } from '../../constants';
+import { CALENDAR_APP_NAME, IMPORT_CALENDAR_FAQ_URL } from '../../constants';
 import { ImportCalendarModel } from '../../interfaces/Import';
 
 import ErrorDetails from './ErrorDetails';
@@ -29,7 +29,7 @@ const WarningModalContent = ({ model }: Props) => {
     return (
         <>
             <Alert type="warning" learnMore={learnMore}>
-                <div>{c('Import calendar warning').jt`ProtonCalendar does not support ${forNow}:`}</div>
+                <div>{c('Import calendar warning').jt`${CALENDAR_APP_NAME} does not support ${forNow}:`}</div>
                 <ul>
                     <li>{c('Import calendar warning').t`Attendees`}</li>
                     <li>{c('Import calendar warning').t`Complex recurring rules`}</li>

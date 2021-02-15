@@ -1,4 +1,7 @@
-import { BASE_SIZE } from 'proton-shared/lib/constants';
+import { BASE_SIZE, APPS } from 'proton-shared/lib/constants';
+import { getAppName } from 'proton-shared/lib/apps/helper';
+
+export const CALENDAR_APP_NAME = getAppName(APPS.PROTONCALENDAR);
 
 export const DEFAULT_CALENDAR = {
     name: 'My calendar',
