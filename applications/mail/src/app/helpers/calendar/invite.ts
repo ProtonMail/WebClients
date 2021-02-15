@@ -43,7 +43,7 @@ import {
     getPropertyTzid,
     getSequence,
 } from 'proton-shared/lib/calendar/vcalHelper';
-import { SECOND } from 'proton-shared/lib/constants';
+import { SECOND, APPS } from 'proton-shared/lib/constants';
 import { addDays, format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from 'proton-shared/lib/date/timezone';
 import { unique } from 'proton-shared/lib/helpers/array';
@@ -73,9 +73,12 @@ import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
 import { getOriginalTo } from 'proton-shared/lib/mail/messages';
 import { c } from 'ttag';
+import { getAppName } from 'proton-shared/lib/apps/helper';
 import { MessageExtendedWithData } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import { FetchAllEventsByUID } from './inviteApi';
+
+const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
 export enum EVENT_TIME_STATUS {
     PAST,
@@ -833,7 +836,9 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
     }
     return {
         to: linkTo,
-        text: isOutdated ? c('Link').t`Open updated event in ProtonCalendar` : c('Link').t`Open in ProtonCalendar`,
+        text: isOutdated
+            ? c('Link').t`Open updated event in ${calendarAppName}`
+            : c('Link').t`Open in ${calendarAppName}`,
     };
 };
 
