@@ -5,6 +5,7 @@ import { Alert, PrimaryButton, useModals } from 'react-components';
 
 import { CalendarsEventsCache } from '../../calendar/eventStore/interface';
 import ImportModal from '../../../components/import/ImportModal';
+import { CALENDAR_APP_NAME } from '../../../constants';
 
 interface Props {
     defaultCalendar?: Calendar;
@@ -34,7 +35,7 @@ const ImportSection = ({ activeCalendars, defaultCalendar, calendarsEventsCacheR
             <Alert learnMore="https://protonmail.com/support/knowledge-base/import-calendar-to-protoncalendar/">{c(
                 'Info'
             )
-                .t`You can import ICS files from another calendar to ProtonCalendar. This lets you quickly import one event or your entire agenda.`}</Alert>
+                .t`You can import ICS files from another calendar to ${CALENDAR_APP_NAME}. This lets you quickly import one event or your entire agenda.`}</Alert>
             <div>
                 <PrimaryButton onClick={handleImport} disabled={!canImport}>{c('Action')
                     .t`Import calendar`}</PrimaryButton>

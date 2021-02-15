@@ -26,21 +26,21 @@ const CalendarOnboardingModalFree = (props: any) => {
         <OnboardingModal setWelcomeFlags={false} {...props}>
             {() => (
                 <OnboardingStep
-                    title={c('Onboarding ProtonCalendar').t`A calendar for your eyes only`}
-                    submit={c('Onboarding ProtonCalendar').t`Get ${appName}`}
+                    title={c(`Onboarding Proton Calendar`).t`A calendar for your eyes only`}
+                    submit={c(`Onboarding Proton Calendar`).t`Get ${appName}`}
                     onSubmit={handleSubmit}
-                    close={c('Onboarding ProtonCalendar').t`Back to your Dashboard`}
+                    close={c(`Onboarding Proton Calendar`).t`Back to your Dashboard`}
                     onClose={handleClose}
                 >
                     <OnboardingContent
                         description={
                             <>
                                 <div className="mb1">
-                                    {c('Onboarding ProtonCalendar')
+                                    {c(`Onboarding Proton Calendar`)
                                         .t`${appName} is currently in beta and only available to paid users of ${mailAppName}.`}
                                 </div>
                                 <div>
-                                    {c('Onboarding ProtonCalendar')
+                                    {c(`Onboarding Proton Calendar`)
                                         .t`To start keeping your plans private now, consider upgrading to a paid plan. ${appName} will be available to Free plan users when it launches.`}
                                 </div>
                             </>

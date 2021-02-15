@@ -1,7 +1,12 @@
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { c } from 'ttag';
 
-import { MAX_FILENAME_CHARS_DISPLAY, MAX_IMPORT_EVENTS_STRING, MAX_IMPORT_FILE_SIZE_STRING } from '../../constants';
+import {
+    CALENDAR_APP_NAME,
+    MAX_FILENAME_CHARS_DISPLAY,
+    MAX_IMPORT_EVENTS_STRING,
+    MAX_IMPORT_FILE_SIZE_STRING,
+} from '../../constants';
 
 export enum IMPORT_ERROR_TYPE {
     NO_FILE_SELECTED,
@@ -36,7 +41,8 @@ const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
         return c('Error importing calendar').t`Your file ${formattedFilename} is not a calendar.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.INVALID_VERSION) {
-        return c('Error importing calendar').t`ProtonCalendar only supports importing calendars with iCal version 2.0.`;
+        return c('Error importing calendar')
+            .t`${CALENDAR_APP_NAME} only supports importing calendars with iCal version 2.0.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.INVALID_METHOD) {
         return c('Error importing calendar').t`Your file ${formattedFilename} is an invitation and cannot be imported.`;
