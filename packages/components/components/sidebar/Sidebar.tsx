@@ -1,5 +1,14 @@
-import React, { ReactNode, useRef } from 'react';
+import React, { ReactNode, useRef, useMemo } from 'react';
+import { c } from 'ttag';
 
+import { APPS } from 'proton-shared/lib/constants';
+import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/subscription';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
+import { AppLink } from '../link';
+import { Meter } from '../progress';
+import { Tooltip } from '../tooltip';
+import { useUser, useSubscription, useConfig } from '../../hooks';
 import Hamburger from './Hamburger';
 import MobileAppsLinks from './MobileAppsLinks';
 import { useFocusTrap } from '../focus';
@@ -20,6 +29,34 @@ const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, p
         active: expanded,
         rootRef,
     });
+    const { APP_NAME } = useConfig();
+    const [user] = useUser();
+    const [subscription] = useSubscription();
+    const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
+    const spacePercentage = Math.round((UsedSpace * 100) / MaxSpace);
+
+    const canAddStorage = useMemo(() => {
+        if (!subscription) {
+            return false;
+        }
+        if (isSubUser) {
+            return false;
+        }
+        if (isMember) {
+            return false;
+        }
+        if (hasVisionary(subscription) || hasMailProfessional(subscription)) {
+            return false;
+        }
+        return true;
+    }, [subscription, user]);
+
+    const storageText = (
+        <>
+            {humanSize(UsedSpace)}&nbsp;/&nbsp;{humanSize(MaxSpace)}
+        </>
+    );
+
     return (
         <div
             ref={rootRef}
@@ -38,6 +75,25 @@ const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, p
             <div className="flex-item-fluid flex-nowrap flex flex-column scroll-if-needed customScrollBar-container pb1">
                 {children}
             </div>
+            {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
+                <div className="flex flex-column flex-align-items-center">
+                    {canAddStorage ? (
+                        <Tooltip title={c('Storage').t`Upgrade storage`}>
+                            <AppLink
+                                to="/subscription"
+                                toApp={getAccountSettingsApp()}
+                                className="button--link button--currentColor text-no-decoration text-underline-on-hover text-xs text-center inline-block mt0 mb0-5"
+                                title={c('Storage').t`Add storage space`}
+                            >
+                                {storageText}
+                            </AppLink>
+                        </Tooltip>
+                    ) : (
+                        <span className="text-xs text-center mt0 mb0-5">{storageText}</span>
+                    )}
+                    <Meter variant="thin" className="mb0-5 w70" value={spacePercentage} />
+                </div>
+            ) : null}
             {version}
             {hasAppLinks ? <MobileAppsLinks /> : null}
         </div>
