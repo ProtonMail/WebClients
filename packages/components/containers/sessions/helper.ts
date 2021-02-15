@@ -1,4 +1,8 @@
+import { getAppName } from 'proton-shared/lib/apps/helper';
+import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+
+const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
 export const getClientsI18N = () => ({
     Web: c('Badge').t`ProtonMail for web`,
@@ -13,7 +17,7 @@ export const getClientsI18N = () => ({
     WebMailSettings: c('Badge').t`ProtonMail settings for web`,
     WebContacts: c('Badge').t`ProtonContacts for web`,
     WebVPNSettings: c('Badge').t`ProtonVPN settings for web`,
-    WebCalendar: c('Badge').t`ProtonCalendar for web`,
+    WebCalendar: c('Badge').t`${calendarAppName} for web`,
     WebDrive: c('Badge').t`Proton Drive for web`,
     // WebWallet: c('Badge').t`ProtonWallet for web`,
     WebAdmin: c('Badge').t`Admin`,
@@ -21,11 +25,11 @@ export const getClientsI18N = () => ({
     iOSDrive: c('Badge').t`Proton Drive for iOS`,
     iOSMail: c('Badge').t`ProtonMail for iOS`,
     iOSVPN: c('Badge').t`ProtonVPN for iOS`,
-    iOSCalendar: c('Badge').t`ProtonCalendar for iOS`,
+    iOSCalendar: c('Badge').t`${calendarAppName} for iOS`,
     AndroidMail: c('Badge').t`ProtonMail for Android`,
     AndroidVPN: c('Badge').t`ProtonVPN for Android`,
     AndroidTvVPN: c('Badge').t`ProtonVPN for Android TV`,
-    AndroidCalendar: c('Badge').t`ProtonCalendar for Android`,
+    AndroidCalendar: c('Badge').t`${calendarAppName} for Android`,
     AndroidDrive: c('Badge').t`Proton Drive for Android`,
     WindowsVPN: c('Badge').t`ProtonVPN for Windows`,
     WindowsImportExport: c('Badge').t`ProtonMail Import-Export for Windows`,

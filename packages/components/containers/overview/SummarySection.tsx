@@ -4,7 +4,7 @@ import { UserModel, UserSettings, Organization, Subscription, Plan } from 'proto
 import { getInitial } from 'proton-shared/lib/helpers/string';
 import { getPlan } from 'proton-shared/lib/helpers/subscription';
 import { PLAN_SERVICES, APPS, PLANS } from 'proton-shared/lib/constants';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
+import { getAccountSettingsApp, getAppName } from 'proton-shared/lib/apps/helper';
 import { getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
 
 import { AppLink, Icon, Loader } from '../../components';
@@ -16,6 +16,8 @@ interface Props {
     organization?: Partial<Organization>;
     subscription?: Subscription;
 }
+
+const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
 const SummarySection = ({ user, userSettings, organization, subscription }: Props) => {
     const { APP_NAME, LOCALES = {} } = useConfig();
@@ -126,7 +128,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                         <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="protoncalendar" className="mr0-5 flex-item-noshrink" />
                             <AppLink to="/settings/overview" toApp={APPS.PROTONCALENDAR}>{c('Link')
-                                .t`ProtonCalendar settings`}</AppLink>
+                                .t`${calendarAppName} settings`}</AppLink>
                         </li>
                         <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="protoncontacts" className="mr0-5 flex-item-noshrink" />
