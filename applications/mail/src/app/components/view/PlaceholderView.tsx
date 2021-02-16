@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
-import { Location } from 'history';
-import { useConversationCounts, useMessageCounts } from 'react-components';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { useLocation } from 'react-router';
+import { useConversationCounts, useMailSettings, useMessageCounts } from 'react-components';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import WelcomePane from './WelcomePane';
 import SelectionPane from './SelectionPane';
 import { ELEMENT_TYPES } from '../../constants';
@@ -13,19 +13,12 @@ interface Props {
     welcomeFlag: boolean;
     labelID: string;
     checkedIDs?: string[];
-    onUncheckAll: () => void;
-    mailSettings: MailSettings;
-    location: Location;
+    onCheckAll: (checked: boolean) => void;
 }
 
-const PlaceholderView = ({
-    welcomeFlag,
-    labelID = '',
-    checkedIDs = [],
-    onUncheckAll,
-    mailSettings,
-    location,
-}: Props) => {
+const PlaceholderView = ({ welcomeFlag, labelID = '', checkedIDs = [], onCheckAll }: Props) => {
+    const location = useLocation();
+    const [mailSettings] = useMailSettings() as [MailSettings, boolean, any];
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const type = getCurrentType({ mailSettings, labelID, location });
@@ -49,7 +42,7 @@ const PlaceholderView = ({
             location={location}
             labelCount={labelCount}
             checkedIDs={checkedIDs}
-            onUncheckAll={onUncheckAll}
+            onCheckAll={onCheckAll}
         />
     );
 };

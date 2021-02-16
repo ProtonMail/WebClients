@@ -37,8 +37,8 @@ export interface MailboxHotkeysHandlers {
     focusOnLastMessage: () => void;
     handleElement: (ID: string) => void;
     handleCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
-    handleUncheckAll: () => void;
-    handleCheckElement: (ID: string) => void;
+    handleCheckAll: (checked: boolean) => void;
+    handleCheckOnlyOne: (ID: string) => void;
     handleCheckRange: (ID: string) => void;
     handleFilter: (filter: Filter) => void;
 }
@@ -61,8 +61,8 @@ export const useMailboxHotkeys = (
         focusOnLastMessage,
         handleElement,
         handleCheck,
-        handleUncheckAll,
-        handleCheckElement,
+        handleCheckAll,
+        handleCheckOnlyOne,
         handleCheckRange,
         handleFilter,
     }: MailboxHotkeysHandlers
@@ -212,7 +212,7 @@ export const useMailboxHotkeys = (
                     const id = getFocusedId();
                     if (id) {
                         e.preventDefault();
-                        handleCheckElement(id);
+                        handleCheckOnlyOne(id);
                     }
                 }
             },
@@ -236,7 +236,7 @@ export const useMailboxHotkeys = (
                 const { activeElement } = document;
                 if (id && activeElement?.tagName.toLocaleLowerCase() !== 'button') {
                     e.preventDefault();
-                    handleCheckElement(id);
+                    handleCheckOnlyOne(id);
                 }
             },
         ],
@@ -255,7 +255,7 @@ export const useMailboxHotkeys = (
             (e) => {
                 if (checkedIDs.length) {
                     e.stopPropagation();
-                    handleUncheckAll();
+                    handleCheckAll(false);
                 }
 
                 const tmpIndex = focusIndex;

@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef, memo } from 'react';
 import { History, Location } from 'history';
-import { PrivateMainArea } from 'react-components';
+import { PrivateMainArea, useItemsSelection } from 'react-components';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { isDraft } from 'proton-shared/lib/mail/messages';
 import { VIEW_MODE } from 'proton-shared/lib/constants';
@@ -35,7 +35,6 @@ import { pageCount } from '../helpers/paging';
 import { useDeepMemo } from '../hooks/useDeepMemo';
 import { useGetElementsFromIDs } from '../hooks/mailbox/useElementsCache';
 import { useMailboxHotkeys } from '../hooks/mailbox/useMailboxHotkeys';
-import { useMailboxSelection } from '../hooks/mailbox/useMailboxSelection';
 import { useMailboxFocus } from '../hooks/mailbox/useMailboxFocus';
 
 import './MailboxContainer.scss';
@@ -116,12 +115,13 @@ const MailboxContainer = ({
         checkedIDs,
         selectedIDs,
         handleCheck,
-        handleUncheckAll,
-        handleCheckElement,
+        handleCheckAll,
+        handleCheckOne,
+        handleCheckOnlyOne,
         handleCheckRange,
-    } = useMailboxSelection(labelID, elementID, elementIDs);
+    } = useItemsSelection(elementID, elementIDs, [elementID, labelID]);
 
-    useNewEmailNotification(() => handleUncheckAll());
+    useNewEmailNotification(() => handleCheckAll(false));
 
     const showToolbar = !breakpoints.isNarrow || !elementID;
     const showList = columnMode || !elementID;
@@ -161,7 +161,7 @@ const MailboxContainer = ({
                 history.push(setParamsInLocation(history.location, { labelID, elementID: element.ID }));
             }
             focusOnLastMessage();
-            handleUncheckAll();
+            handleCheckAll(false);
         },
         [onCompose, isConversationContentView, labelID]
     );
@@ -190,11 +190,11 @@ const MailboxContainer = ({
             getFocusedId,
             handleBack,
             handleCheck,
-            handleCheckElement,
+            handleCheckOnlyOne,
             handleCheckRange,
             handleElement,
             handleFilter,
-            handleUncheckAll,
+            handleCheckAll,
             setFocusIndex,
         }
     );
@@ -246,8 +246,7 @@ const MailboxContainer = ({
                         page={page}
                         onPage={handlePage}
                         onFocus={handleFocus}
-                        onCheckElement={handleCheckElement}
-                        onCheckRange={handleCheckRange}
+                        onCheckOne={handleCheckOne}
                     />
                 )}
                 {showContentPanel && (
@@ -255,11 +254,9 @@ const MailboxContainer = ({
                         {showPlaceholder && (
                             <PlaceholderView
                                 welcomeFlag={welcomeFlag}
-                                location={location}
                                 labelID={labelID}
-                                mailSettings={mailSettings}
                                 checkedIDs={checkedIDs}
-                                onUncheckAll={handleUncheckAll}
+                                onCheckAll={handleCheckAll}
                             />
                         )}
                         {showContentView &&
