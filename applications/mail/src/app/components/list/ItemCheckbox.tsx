@@ -13,7 +13,10 @@ const ItemCheckbox = ({ children, className, ...rest }: Props) => {
         // eslint-disable-next-line jsx-a11y/label-has-associated-control
         <label className={classnames(['relative stop-propagation', className])}>
             <input type="checkbox" className="item-checkbox inner-ratio-container cursor-pointer m0" {...rest} />
-            <span className="item-icon flex-item-noshrink relative rounded inline-flex">
+            <span
+                className="item-icon flex-item-noshrink relative rounded inline-flex"
+                data-test-id="element-list:message-checkbox"
+            >
                 <span className="mauto item-abbr">{children}</span>
                 <span className="item-icon-fakecheck mauto">
                     <Icon name="on" className="item-icon-fakecheck-icon" />

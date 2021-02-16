@@ -438,6 +438,7 @@ const HeaderExpanded = ({
                         disabled={!messageLoaded || !bodyLoaded || inOutbox}
                         className="button--for-icon button--primary flex flex-align-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
+                        data-test-id="message-view:reply"
                     >
                         <Tooltip title={titleReply} className="flex increase-click-surface">
                             <Icon name="reply" size={20} alt={c('Title').t`Reply`} />
@@ -447,6 +448,7 @@ const HeaderExpanded = ({
                         disabled={!messageLoaded || !bodyLoaded || inOutbox}
                         className="button--for-icon button--primary flex flex-align-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
+                        data-test-id="message-view:reply-all"
                     >
                         <Tooltip title={titleReplyAll} className="flex increase-click-surface">
                             <Icon name="reply-all" size={20} alt={c('Title').t`Reply all`} />
@@ -456,6 +458,7 @@ const HeaderExpanded = ({
                         disabled={!messageLoaded || !bodyLoaded || inOutbox}
                         className=" button--for-icon button--primary flex flex-align-items-center relative"
                         onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
+                        data-test-id="message-view:forward"
                     >
                         <Tooltip title={titleForward} className="flex increase-click-surface">
                             <Icon name="forward" size={20} alt={c('Title').t`Forward`} />

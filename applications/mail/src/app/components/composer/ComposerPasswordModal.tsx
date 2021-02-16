@@ -81,6 +81,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                 <Label htmlFor={`composer-password-${uid}`}>{c('Info').t`Message Password`}</Label>
                 <div className="flex-item-fluid">
                     <PasswordInput
+                        data-test-id="encryption-modal:password-input"
                         id={`composer-password-${uid}`}
                         value={password}
                         onChange={handleChange(setPassword)}
@@ -94,6 +95,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                 <Label htmlFor={`composer-password-verif-${uid}`}>{c('Info').t`Confirm Password`}</Label>
                 <div className="flex-item-fluid">
                     <PasswordInput
+                        data-test-id="encryption-modal:confirm-password-input"
                         id={`composer-password-verif-${uid}`}
                         value={passwordVerif}
                         onChange={handleChange(setPasswordVerif)}

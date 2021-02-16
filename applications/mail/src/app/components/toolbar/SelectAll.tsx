@@ -53,6 +53,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, selectedIDs, onChec
                     disabled={disabled}
                     loading={loading}
                     onChange={({ target }) => handleAll(target.checked)()}
+                    data-test-id="toolbar:select-all"
                 >
                     <span className="sr-only">
                         {checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}

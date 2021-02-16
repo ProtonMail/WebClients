@@ -80,7 +80,11 @@ const MessageBody = ({
                                             : c('Info').t`Show original message`
                                     }
                                 >
-                                    <Button className="button--small m0-5" onClick={() => toggleOriginalMessage?.()}>
+                                    <Button
+                                        className="button--small m0-5"
+                                        onClick={() => toggleOriginalMessage?.()}
+                                        data-test-id="message-view:expand-codeblock"
+                                    >
                                         ...
                                     </Button>
                                 </Tooltip>

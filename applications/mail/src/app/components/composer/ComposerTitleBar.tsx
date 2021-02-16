@@ -20,6 +20,7 @@ const TitleBarButton = ({ onClick, iconName, className = '', title, disabled = f
                 className={classnames(['composer-title-bar-button flex p0-5', className])}
                 onClick={onClick}
                 disabled={disabled}
+                data-test-id="composer:close-composer"
             >
                 <Icon className="mauto" name={iconName} />
                 <span className="sr-only">{title}</span>

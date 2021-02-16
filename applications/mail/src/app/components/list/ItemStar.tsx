@@ -49,6 +49,7 @@ const ItemStar = ({ element = {} }: Props) => {
             }
         >
             <button
+                data-test-id="message-list:star-button"
                 type="button"
                 className={classnames([
                     'starbutton relative item-star flex stop-propagation',
