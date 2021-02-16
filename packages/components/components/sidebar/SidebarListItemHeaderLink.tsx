@@ -8,7 +8,7 @@ interface Props extends LinkProps {
 }
 export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props) => {
     return (
-        <AppLink className="navigation-link-header-group-link flex-item-noshrink" type="button" {...rest}>
+        <AppLink className="flex navigation-link-header-group-link flex-item-noshrink" type="button" {...rest}>
             <Icon name={icon} className="navigation-icon" />
             <span className="sr-only">{info}</span>
         </AppLink>
