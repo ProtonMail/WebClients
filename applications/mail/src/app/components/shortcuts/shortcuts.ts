@@ -1,7 +1,10 @@
 import { c } from 'ttag';
-import { metaKey, altKey, shiftKey } from 'proton-shared/lib/helpers/browser';
+import { metaKey, altKey, shiftKey, isSafari as checkIsSafari } from 'proton-shared/lib/helpers/browser';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 export const getShortcuts = () => {
+    const isSafari = checkIsSafari();
+
     return [
         {
             name: c('Keyboard shortcut section name').t`Basic navigation`,
@@ -107,11 +110,11 @@ export const getShortcuts = () => {
                     name: c('Keyboard shortcut name').t`Close draft`,
                     keys: `Escape`,
                 },
-                {
+                !isSafari && {
                     name: c('Keyboard shortcut name').t`Minimize / maximize composer`,
                     keys: `${metaKey} + M`,
                 },
-                {
+                !isSafari && {
                     name: c('Keyboard shortcut name').t`Expand / contract composer`,
                     keys: `${metaKey} + ${shiftKey} + M`,
                 },
@@ -131,7 +134,7 @@ export const getShortcuts = () => {
                     name: c('Keyboard shortcut name').t`Discard draft`,
                     keys: `${metaKey} + ${altKey} + Backspace`,
                 },
-            ],
+            ].filter(isTruthy),
         },
         {
             name: c('Keyboard shortcut section name').t`List shortcuts`,

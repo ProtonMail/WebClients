@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Icon, Tooltip, classnames, useMailSettings } from 'react-components';
-import { metaKey, shiftKey } from 'proton-shared/lib/helpers/browser';
+import { metaKey, shiftKey, isSafari as checkIsSafari } from 'proton-shared/lib/helpers/browser';
 import { MessageExtended } from '../../models/message';
 
 interface ButtonProps {
@@ -48,6 +48,8 @@ const ComposerTitleBar = ({
     toggleMaximized,
     onClose,
 }: Props) => {
+    const isSafari = checkIsSafari();
+
     const title = message.data?.Subject || c('Title').t`New message`;
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
@@ -59,32 +61,34 @@ const ComposerTitleBar = ({
         toggleMaximized();
     };
 
-    const titleMinimize = Shortcuts ? (
-        <>
-            {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
-            <br />
-            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">M</kbd>
-        </>
-    ) : minimized ? (
-        c('Action').t`Maximize composer`
-    ) : (
-        c('Action').t`Minimize composer`
-    );
+    const titleMinimize =
+        Shortcuts && !isSafari ? (
+            <>
+                {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
+                <br />
+                <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
+                <kbd className="bg-global-altgrey no-border">M</kbd>
+            </>
+        ) : minimized ? (
+            c('Action').t`Maximize composer`
+        ) : (
+            c('Action').t`Minimize composer`
+        );
 
-    const titleMaximize = Shortcuts ? (
-        <>
-            {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
-            <br />
-            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">M</kbd>
-        </>
-    ) : maximized ? (
-        c('Action').t`Contract composer`
-    ) : (
-        c('Action').t`Expand composer`
-    );
+    const titleMaximize =
+        Shortcuts && !isSafari ? (
+            <>
+                {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
+                <br />
+                <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
+                <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
+                <kbd className="bg-global-altgrey no-border">M</kbd>
+            </>
+        ) : maximized ? (
+            c('Action').t`Contract composer`
+        ) : (
+            c('Action').t`Expand composer`
+        );
 
     const titleClose = Shortcuts ? (
         <>
