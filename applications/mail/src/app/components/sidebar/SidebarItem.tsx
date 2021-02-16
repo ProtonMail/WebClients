@@ -1,4 +1,4 @@
-import React, { DragEvent, ReactNode, useRef, memo } from 'react';
+import React, { ReactNode, useRef, memo } from 'react';
 import {
     classnames,
     SidebarListItem,
@@ -11,17 +11,16 @@ import {
     HotkeyTuple,
     useHotkeys,
     useMailSettings,
+    useItemsDroppable,
 } from 'react-components';
 import { useHistory } from 'react-router-dom';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-
 import LocationAside from './LocationAside';
-import { LABEL_IDS_TO_HUMAN, DRAG_ELEMENT_KEY, DRAG_ELEMENT_ID_KEY } from '../../constants';
+import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
-import { useDragOver } from '../../hooks/useDragOver';
 import { ELEMENTS_CACHE_KEY } from '../../hooks/mailbox/useElementsCache';
 
 const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
@@ -66,14 +65,6 @@ const SidebarItem = ({
 
     const [refreshing, withRefreshing] = useLoading(false);
 
-    const [dragOver, dragProps] = useDragOver(
-        (event: DragEvent) =>
-            event.dataTransfer.types.includes(DRAG_ELEMENT_KEY) &&
-            currentLabelID !== labelID && // Never on current label
-            !noDrop.includes(labelID), // Some destinations has no sense
-        isFolder ? 'move' : 'link'
-    );
-
     const applyLabel = useApplyLabels();
     const moveToFolder = useMoveToFolder();
 
@@ -91,33 +82,28 @@ const SidebarItem = ({
         }
     };
 
-    const handleDrop = async (event: DragEvent) => {
-        // Avoid useElementsCache for perf issues
-        const elementsCache = cache.get(ELEMENTS_CACHE_KEY);
-
-        dragProps.onDrop(event);
-
-        // Manual trigger of the dragend event on the drag element because native event is not reliable
-        const dragElement = document.getElementById(event.dataTransfer.getData(DRAG_ELEMENT_ID_KEY));
-        const dragendEvent = new Event('dragend') as any;
-        dragendEvent.dataTransfer = event.dataTransfer;
-        dragendEvent.dataTransfer.dropEffect = isFolder ? 'move' : 'link'; // Chrome is losing the original dropEffect
-        dragElement?.dispatchEvent(dragendEvent);
-
-        const elementIDs = JSON.parse(event.dataTransfer.getData(DRAG_ELEMENT_KEY)) as string[];
-        const elements = elementIDs.map((elementID) => elementsCache.elements[elementID]);
-        if (isFolder) {
-            void moveToFolder(elements, labelID, text, currentLabelID);
-        } else {
-            void applyLabel(elements, { [labelID]: true });
+    const { dragOver, dragProps, handleDrop } = useItemsDroppable(
+        () =>
+            currentLabelID !== labelID && // Never on current label
+            !noDrop.includes(labelID), // Some destinations has no sense
+        isFolder ? 'move' : 'link',
+        (itemIDs) => {
+            // Avoid useElementsCache for perf issues
+            const elementsCache = cache.get(ELEMENTS_CACHE_KEY);
+            const elements = itemIDs.map((itemID) => elementsCache.elements[itemID]);
+            if (isFolder) {
+                void moveToFolder(elements, labelID, text, currentLabelID);
+            } else {
+                void applyLabel(elements, { [labelID]: true });
+            }
         }
-    };
+    );
 
     const elementRef = useRef<HTMLAnchorElement>(null);
     useHotkeys(elementRef, shortcutHandlers);
 
     return (
-        <SidebarListItem className={classnames([dragOver && 'navigation-dragover'])}>
+        <SidebarListItem className={classnames([dragOver && 'navigation__dragover'])}>
             <SidebarListItemLink
                 aria-current={ariaCurrent}
                 to={link}

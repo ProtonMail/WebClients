@@ -6,7 +6,6 @@ import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } fro
 import { MAILBOX_LABEL_IDS, DENSITY, VIEW_MODE } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
-
 import ItemCheckbox from './ItemCheckbox';
 import { isUnread, isMessage } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
@@ -35,7 +34,7 @@ interface Props {
     onCheck: (event: ChangeEvent, elementID: string) => void;
     onClick: (elementID: string | undefined) => void;
     onDragStart: (event: DragEvent, element: Element) => void;
-    onDragCanceled: () => void;
+    onDragEnd: (event: DragEvent) => void;
     dragged: boolean;
     index: number;
     breakpoints: Breakpoints;
@@ -56,7 +55,7 @@ const Item = ({
     onCheck,
     onClick,
     onDragStart,
-    onDragCanceled,
+    onDragEnd,
     dragged,
     index,
     breakpoints,
@@ -104,12 +103,6 @@ const Item = ({
         onClick(element.ID);
     };
 
-    const handleDragEnd = (event: DragEvent) => {
-        if (event.dataTransfer.dropEffect === 'none') {
-            return onDragCanceled();
-        }
-    };
-
     const handleCheck = (event: ChangeEvent) => {
         onCheck(event, element.ID || '');
     };
@@ -146,7 +139,7 @@ const Item = ({
             onClick={handleClick}
             draggable
             onDragStart={(event) => onDragStart(event, element)}
-            onDragEnd={handleDragEnd}
+            onDragEnd={onDragEnd}
             className={classnames([
                 'flex flex-nowrap flex-align-items-center cursor-pointer',
                 columnLayout ? 'item-container' : 'item-container-row',

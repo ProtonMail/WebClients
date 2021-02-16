@@ -10,12 +10,12 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     useNotifications,
+    useDragOver,
 } from 'react-components';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import AddressesGroupModal from './AddressesGroupModal';
 import { RecipientGroup } from '../../../models/address';
 import { useUpdateGroupSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
-import { useDragOver } from '../../../hooks/useDragOver';
 import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { useContactCache } from '../../../containers/ContactProvider';
@@ -57,9 +57,7 @@ const AddressesGroupItem = ({
         close: closeContextMenu,
     } = usePopperAnchor<HTMLDivElement>();
 
-    // const contactsInGroup = getContactsOfGroup(contacts, recipientGroup?.group?.ID);
     const contactsInGroup = groupsWithContactsMap[recipientGroup?.group?.ID || '']?.contacts || [];
-    // const label = getRecipientGroupLabel(recipientGroup, contactsInGroup.length);
     const label = getGroupLabel(recipientGroup);
 
     const { handleRemove } = useUpdateGroupSendInfo(messageSendInfo, contactsInGroup, onRemove);

@@ -11,6 +11,7 @@ import {
     DropdownMenu,
     useNotifications,
     ContactModal,
+    useDragOver,
 } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -23,7 +24,6 @@ import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { useUpdateRecipientSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
 import { DRAG_ADDRESS_KEY } from '../../../constants';
-import { useDragOver } from '../../../hooks/useDragOver';
 import { useContactCache } from '../../../containers/ContactProvider';
 
 interface Props {
