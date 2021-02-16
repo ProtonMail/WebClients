@@ -31,7 +31,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
     return (
         <ToolbarDropdown
             content={
-                <span className="flex flex-align-items-center">
+                <span className="flex flex-align-items-center" data-test-id="toolbar:filter-dropdown">
                     <Icon className="toolbar-icon" name="bullet-points" />
                 </span>
             }
@@ -40,6 +40,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
             {() => (
                 <DropdownMenu>
                     <DropdownMenuButton
+                        data-test-id="filter-dropdown:show-all"
                         disabled={Object.values(filter).length === 0}
                         className="text-left"
                         loading={loading}
@@ -49,6 +50,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
                         {c('Action').t`Show all`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
+                        data-test-id="filter-dropdown:show-unread"
                         disabled={filter.Unread === 1}
                         className="text-left"
                         loading={loading}
@@ -58,6 +60,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
                         {c('Action').t`Show unread`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
+                        data-test-id="filter-dropdown:show-read"
                         disabled={filter.Unread === 0}
                         className="text-left"
                         loading={loading}
@@ -68,6 +71,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
                     </DropdownMenuButton>
                     {showMovedMessage && [
                         <DropdownMenuButton
+                            data-test-id="filter-dropdown:show-moved"
                             key={0}
                             className="text-left"
                             loading={loading}
@@ -78,6 +82,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate }:
                             {c('Action').t`Show moved message`}
                         </DropdownMenuButton>,
                         <DropdownMenuButton
+                            data-test-id="filter-dropdown:show-unmoved"
                             key={1}
                             className="text-left"
                             loading={loading}

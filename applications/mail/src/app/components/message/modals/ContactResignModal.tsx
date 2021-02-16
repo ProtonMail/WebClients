@@ -146,7 +146,7 @@ const ContactResignModal = ({
     const loadingContacts = Object.values(loadingMap).some((loading) => loading === true);
     const emailsWithKeys = Object.values(contactFingerprintsByEmailMap);
     const renderSubmit = (
-        <PrimaryButton disabled={loadingContacts} loading={loadingResign} type="submit">
+        <PrimaryButton disabled={loadingContacts} loading={loadingResign} type="submit" data-test-id="resign-contact">
             {submit}
         </PrimaryButton>
     );

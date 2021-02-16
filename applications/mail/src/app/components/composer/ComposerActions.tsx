@@ -215,6 +215,7 @@ const ComposerActions = ({
                     </Tooltip>
                     <Tooltip title={titleEncryption} className="flex ml0-5">
                         <Button
+                            data-test-id="composer:encryption-lock"
                             icon="lock-alone"
                             className={classnames([
                                 'inline-flex flex-align-items-center button--for-icon',
