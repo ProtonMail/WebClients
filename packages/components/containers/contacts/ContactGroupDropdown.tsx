@@ -59,7 +59,7 @@ const getModel = (contactGroups: ContactGroup[] = [], contactEmails: ContactEmai
  * @param contactEmails
  * @returns result.contacts
  */
-const collectContacts = (contactEmails: ContactEmail[] = [], contacts: Contact[]) => {
+export const collectContacts = (contactEmails: ContactEmail[] = [], contacts: Contact[]) => {
     return contactEmails.reduce(
         (acc, { ContactID }) => {
             acc.duplicate[ContactID] = (acc.duplicate[ContactID] || 0) + 1;

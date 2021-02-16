@@ -1,7 +1,5 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { c } from 'ttag';
-import { History } from 'history';
-
 import { addContacts } from 'proton-shared/lib/api/contacts';
 import { randomIntFromInterval, noop } from 'proton-shared/lib/helpers/function';
 import { hasCategories } from 'proton-shared/lib/contacts/properties';
@@ -14,7 +12,7 @@ import {
     ContactProperty,
     ContactPropertyChange,
 } from 'proton-shared/lib/interfaces/contacts/Contact';
-
+import { useHistory } from 'react-router';
 import ContactModalProperties from '../ContactModalProperties';
 import { useUserKeys, useApi, useNotifications, useLoading, useEventManager } from '../../../hooks';
 import { Alert, FormModal, PrimaryButton } from '../../../components';
@@ -46,7 +44,6 @@ interface Props {
     properties?: ContactProperties;
     onAdd?: () => void;
     onClose?: () => void;
-    history?: History;
     newField?: string;
 }
 
@@ -55,10 +52,10 @@ const ContactModal = ({
     properties: initialProperties = [],
     onAdd = noop,
     onClose = noop,
-    history,
     newField,
     ...rest
 }: Props) => {
+    const history = useHistory();
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
