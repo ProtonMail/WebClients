@@ -2,6 +2,7 @@ import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { getInitials } from 'proton-shared/lib/helpers/string';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
@@ -16,14 +17,18 @@ import {
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
 import { EventModelReadView } from '../../interfaces/EventModel';
-import ParticipantStatusIcon from './ParticipantStatusIcon';
+import AttendeeStatusIcon from './AttendeeStatusIcon';
 import PopoverNotification from './PopoverNotification';
+import Participant from './Participant';
+import getAttendanceTooltip from './getAttendanceTooltip';
 
 type AttendeeViewModel = {
     title: string;
     text: string;
     icon: JSX.Element | null;
     partstat: ICAL_ATTENDEE_STATUS;
+    initials: string;
+    tooltip: string;
 };
 type GroupedAttendees = {
     [key: string]: AttendeeViewModel[];
@@ -182,14 +187,21 @@ const PopoverEventContent = ({
                     displayNameEmailMap[canonizeEmailByGuess(attendeeEmail)]?.displayName ||
                     attendee.cn ||
                     attendeeEmail;
-                const isYou = selfEmail && canonizeInternalEmail(selfEmail) === canonizeInternalEmail(attendeeEmail);
+                const isYou = !!(
+                    selfEmail && canonizeInternalEmail(selfEmail) === canonizeInternalEmail(attendeeEmail)
+                );
                 const name = isYou ? c('Participant name').t`You` : displayName;
                 const title = name === attendee.email || isYou ? attendeeEmail : `${name} (${attendeeEmail})`;
+                const initials = getInitials(displayName);
+                const tooltip = getAttendanceTooltip({ partstat: attendee.partstat, name, isYou });
+
                 return {
                     title,
                     text: name,
-                    icon: <ParticipantStatusIcon name={name} partstat={attendee.partstat} />,
+                    icon: <AttendeeStatusIcon partstat={attendee.partstat} />,
                     partstat: attendee.partstat,
+                    initials,
+                    tooltip,
                 };
             })
             .reduce<GroupedAttendees>(
@@ -217,15 +229,15 @@ const PopoverEventContent = ({
             content: (
                 <>
                     {[...attendees[ACCEPTED], ...attendees[TENTATIVE], ...attendees[DECLINED], ...attendees.other].map(
-                        ({ icon, text, title }) => (
-                            <div className="mb0-25 flex flex-nowrap">
-                                <span className="flex-item-noshrink">{icon}</span>
-                                <span className="flex-item-fluid">
-                                    <Tooltip className="max-w100 inline-block text-ellipsis" title={title}>
-                                        {text}
-                                    </Tooltip>
-                                </span>
-                            </div>
+                        ({ icon, text, title, initials, tooltip }) => (
+                            <Participant
+                                key={title}
+                                title={title}
+                                initials={initials}
+                                icon={icon}
+                                text={text}
+                                tooltip={tooltip}
+                            />
                         )
                     )}
                 </>
