@@ -264,6 +264,11 @@ const Composer = ({
     } = useDebouncedHandler(actualSave, 2000);
 
     const handleChange: MessageChange = useHandler((update, shouldReloadSendInfo) => {
+        // On rare occasion, composer can trigger events after sending or closing
+        // We should absolutely avoid calling auto save and can forget about these events
+        if (closing || sending) {
+            return;
+        }
         setModelMessage((modelMessage) => {
             const messageChanges = update instanceof Function ? update(modelMessage) : update;
             const newModelMessage = mergeMessages(modelMessage, messageChanges);
@@ -277,6 +282,11 @@ const Composer = ({
 
     const handleChangeContent = useHandler(
         (content: string, refreshEditor: boolean = false, silent: boolean = false) => {
+            // On rare occasion, composer can trigger events after sending or closing
+            // We should absolutely avoid calling auto save and can forget about these events
+            if (closing || sending) {
+                return;
+            }
             setModelMessage((modelMessage) => {
                 setContent(modelMessage, content);
                 const newModelMessage = { ...modelMessage };
