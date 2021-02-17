@@ -56,7 +56,7 @@ const PlansTable = ({
 
     return (
         <table
-            className="pm-plans-table pm-table--highlight no-border w100 min-w35e"
+            className="pm-plans-table pm-table--highlight no-border w100 min-w35e pt3"
             data-plan-number={PLAN_NUMBERS[planName]}
         >
             <thead>
@@ -132,7 +132,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                    <th scope="row" className="simple-table-row-th text-left bg-global-highlight text-cut">
                         <span className="mr0-5">{c('Header').t`P2P filesharing/BitTorrent support`}</span>
                         <Info
                             title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
