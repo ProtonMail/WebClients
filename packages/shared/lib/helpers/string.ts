@@ -99,15 +99,14 @@ export const truncateMore = ({ string = '', charsToDisplayStart = 0, charsToDisp
     return strBegin + omission + strEnd;
 };
 
-/**
- * Extract 2 first initials
- */
-export const getInitial = (value = '') => {
-    const [first = '', second = ''] = value
+export const getInitials = (fullName = '') => {
+    const [first = '', ...rest] = fullName
         .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, '') // Remove specific punctuation
-        .replace(/\s{2,}/g, ' ') // Remove any extra spaces
+        .replace(/\s{2,}/g, ' ')
         .split(' ');
-    return [first, second]
+    const last = rest[rest.length - 1];
+
+    return [first, last]
         .filter(Boolean)
         .map((letter = '') => [...letter.toUpperCase()][0]) // We use the spread operator to support Unicode characters
         .join('');
