@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
 import { classnames, Checkbox } from 'react-components';
-import { getInitial } from 'proton-shared/lib/helpers/string';
+import { getInitials } from 'proton-shared/lib/helpers/string';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from 'proton-shared/lib/mail/messages';
 import { MAILBOX_LABEL_IDS, DENSITY, VIEW_MODE } from 'proton-shared/lib/constants';
@@ -124,7 +124,7 @@ const Item = ({
             checked={checked}
             onChange={handleCheck}
         >
-            {getInitial(displayRecipients ? recipientsLabels[0] : sendersLabels[0])}
+            {getInitials(displayRecipients ? recipientsLabels[0] : sendersLabels[0])}
         </ItemCheckbox>
     );
 

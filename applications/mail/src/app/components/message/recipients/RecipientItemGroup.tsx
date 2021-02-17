@@ -11,7 +11,7 @@ import {
     useNotifications,
 } from 'react-components';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import { getInitial } from 'proton-shared/lib/helpers/string';
+import { getInitials } from 'proton-shared/lib/helpers/string';
 
 import { RecipientGroup } from '../../../models/address';
 import RecipientItemLayout from './RecipientItemLayout';
@@ -38,7 +38,7 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showAddress = t
     const [uid] = useState(generateUID('dropdown-group'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const label = getGroupLabel(group);
-    const initial = getInitial(group.group?.Name);
+    const initial = getInitials(group.group?.Name);
 
     let addresses = group.recipients.map((recipient) => recipient.Address).join(', ');
     const allAddresses = addresses;
