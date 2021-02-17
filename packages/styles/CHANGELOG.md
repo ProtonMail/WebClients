@@ -25,6 +25,11 @@
 - fix focus style for radio/checkboxes in dark mode
 - hotfix for Drive - `icon-110p`
 - fix failing specificity for Drive
+- extract `item-icon` for Calendar
+- hotfix - back to mailbox button in Dark mode
+- change `is-thin` meterbar class
+- fixes for new select
+- add sizing values
 
 # [1.8.6] - 2020-12-18
 
